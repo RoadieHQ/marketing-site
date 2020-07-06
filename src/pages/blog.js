@@ -1,10 +1,10 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { createUseStyles } from "react-jss"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import { createUseStyles } from 'react-jss';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { rhythm } from '../utils/typography';
 
 const useStyles = createUseStyles({
   h3: {
@@ -12,20 +12,20 @@ const useStyles = createUseStyles({
   },
 
   link: {
-    boxShadow: "none",
+    boxShadow: 'none',
   },
-})
+});
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
-  const classes = useStyles()
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
+  const classes = useStyles();
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
             <header>
@@ -44,13 +44,13 @@ const BlogIndex = ({ data, location }) => {
               />
             </section>
           </article>
-        )
+        );
       })}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -75,4 +75,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

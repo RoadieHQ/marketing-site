@@ -6,10 +6,10 @@ module.exports = {
     node: true,
   },
 
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
 
   globals: {
-    __PATH_PREFIX__: "readonly",
+    __PATH_PREFIX__: 'readonly',
   },
 
   parserOptions: {
@@ -18,18 +18,18 @@ module.exports = {
     },
 
     ecmaVersion: 11,
-    sourceType: "module",
+    sourceType: 'module',
   },
 
-  plugins: ["react"],
+  plugins: ['react'],
 
   rules: {
-    "react/prop-types": 0,
+    'react/prop-types': 0,
   },
 
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
-}
+};
