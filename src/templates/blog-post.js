@@ -1,41 +1,13 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm, scale } from '../utils/typography';
-
-const useStyles = createUseStyles({
-  h1: {
-    marginTop: rhythm(1),
-    marginBottom: 0,
-  },
-
-  p: {
-    ...scale(-1 / 5),
-    display: `block`,
-    marginBottom: rhythm(1),
-  },
-
-  hr: {
-    marginBottom: rhythm(1),
-  },
-
-  ul: {
-    display: `flex`,
-    flexWrap: `wrap`,
-    justifyContent: `space-between`,
-    listStyle: `none`,
-    padding: 0,
-  },
-});
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
-  const classes = useStyles();
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -45,15 +17,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         <header>
-          <h1 className={classes.h1}>{post.frontmatter.title}</h1>
-          <p className={classes.p}>{post.frontmatter.date}</p>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr className={classes.hr} />
+        <hr />
       </article>
 
       <nav>
-        <ul className={classes.ul}>
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
