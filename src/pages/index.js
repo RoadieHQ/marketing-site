@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Hero from './home/Hero';
 
-const Home = ({ data, location }) => {
+const Home = ({ data, }) => {
   const siteTitle = data.site.siteMetadata.title;
+
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="Home page" />
-      <Link to="/blog">Blog</Link>
-    </Layout>
+    <>
+      <SEO title={`Hosted, managed, enterprise Backstage | ${siteTitle}`} />
+      <Hero />
+    </>
   );
 };
 

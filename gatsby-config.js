@@ -1,14 +1,14 @@
+const theme = require('./src/theme');
+
+const SITE_TITLE = 'Roadie';
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    title: SITE_TITLE,
+    description: 'Hosted, managed, enterprise Backstage',
+    siteUrl: 'https://roadie.io',
     social: {
-      twitter: `kylemathews`,
+      twitter: 'RoadieHQ',
     },
   },
   plugins: [
@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: SITE_TITLE,
+        short_name: SITE_TITLE,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
@@ -70,7 +70,10 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-jss',
+    {
+      resolve: 'gatsby-plugin-jss',
+      options: { theme },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
