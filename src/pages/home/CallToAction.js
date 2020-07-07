@@ -46,11 +46,13 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const encode = (data) => (
-  Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-);
+const encode = (data) => {
+  const formData = new FormData();
+  Object.keys(data).forEach((k)=>{
+    formData.append(k,data[k])
+  });
+  return formData
+};
 
 const CallToAction = ({
   placeholderText = 'Work email',
@@ -61,31 +63,33 @@ const CallToAction = ({
   const [email, setEmail] = useState('');
 
   const onSubmit = async (e) => {
-    e.preventDefault();
-
-    const response = await fetch('/', {
+    await fetch('/', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
+      // headers: {
+      //   'Content-Type': 'application/x-www-form-urlencoded',
+      // },
       body: encode({
-        'form-name': 'landing-page-notify-me',
+        'form-name': 'contact',
         email,
+        name: 'David Tuite',
+        message: 'sfjksf',
       }),
     });
 
-    const result = await response.json();
+    console.log('hello');
 
-    console.log('resp', result);
+    e.preventDefault();
+
+    // const result = await response.json();
+
+    // console.log('resp', result);
   };
 
   const INPUT_NAME = 'email';
 
   return (
-    <form onSubmit={onSubmit} name="landing-page-notify-me" netlify netlify-honeypot="bot-field">
+    <form onSubmit={onSubmit}>
       <div className={classes.inputWrapper}>
-        <input type="hidden" name="form-name" value="landing-page-notify-me" />
-
         <input
           type={inputType}
           name={INPUT_NAME}
