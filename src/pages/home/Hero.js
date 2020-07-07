@@ -8,47 +8,44 @@ import CallToAction from './CallToAction';
 import DemoLink from './DemoLink';
 import LayoutControl from '../LayoutControl';
 
-const useStyles = createUseStyles((theme) => {
-  console.log('theme', theme);
-  return {
-    root: {
-      display: 'flex',
-      paddingTop: 108,
-    },
+const useStyles = createUseStyles((theme) => ({
+  root: {
+    display: 'flex',
+    paddingTop: 108,
+  },
 
-    col: {
-      flex: 1,
-    },
+  col: {
+    flex: 1,
+  },
 
+  rightCol: {
+    marginLeft: 100,
+    display: 'none',
+  },
+
+  leadWrapper: {
+    marginBottom: 24,
+  },
+
+  callToActionWrapper: {
+    marginBottom: 16,
+  },
+
+  image: {},
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     rightCol: {
-      marginLeft: 100,
-      display: 'none',
+      display: 'block',
     },
 
-    leadWrapper: {
-      marginBottom: 24,
+    image: {
+      backgroundImage: 'url(undraw/undraw_content_team_3epn.svg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'contain',
     },
-
-    callToActionWrapper: {
-      marginBottom: 16,
-    },
-
-    image: {},
-
-    [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-      rightCol: {
-        display: 'block',
-      },
-
-      image: {
-        backgroundImage: 'url(undraw/undraw_content_team_3epn.svg)',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundSize: 'contain',
-      },
-    },
-  };
-});
+  },
+}));
 
 
 const Hero = () => {
