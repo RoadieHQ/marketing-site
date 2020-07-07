@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import Hero from './home/Hero';
+import SitewideHeader from './home/SitewideHeader';
 
 const Home = ({ data, }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -10,6 +11,7 @@ const Home = ({ data, }) => {
   return (
     <>
       <SEO title={`Hosted, managed, enterprise Backstage | ${siteTitle}`} />
+      <SitewideHeader />
       <Hero />
     </>
   );

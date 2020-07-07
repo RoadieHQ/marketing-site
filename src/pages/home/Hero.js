@@ -7,7 +7,7 @@ import Lead from './Lead';
 import CallToAction from './CallToAction';
 import DemoLink from './DemoLink';
 
-const useHeroStyles = createUseStyles((theme) => {
+const useStyles = createUseStyles((theme) => {
   console.log('theme', theme);
   return {
     root: {
@@ -41,7 +41,7 @@ const useHeroStyles = createUseStyles((theme) => {
 
 
 const Hero = () => {
-  const classes = useHeroStyles();
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
