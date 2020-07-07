@@ -63,6 +63,9 @@ const CallToAction = ({
   const [email, setEmail] = useState('');
 
   const onSubmit = async (e) => {
+
+    e.preventDefault();
+
     await fetch('/', {
       method: 'POST',
       // headers: {
@@ -77,8 +80,6 @@ const CallToAction = ({
     });
 
     console.log('hello');
-
-    e.preventDefault();
 
     // const result = await response.json();
 
