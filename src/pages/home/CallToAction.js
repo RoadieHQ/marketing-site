@@ -1,22 +1,43 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import deepOrange from '@material-ui/core/colors/deepOrange';
+import grey from '@material-ui/core/colors/grey';
+import indigo from '@material-ui/core/colors/indigo'; 
 
-const useStyles = createUseStyles((theme) => ({
+import Button from './Button';
+
+const useStyles = createUseStyles(() => ({
   input: {
-    backgroundColor: '#eae5e7',
-    padding: '1.5rem 1.25rem',
-    border: 'none',
-    borderLeft: '2px solid #145cc6',
-    color: '#49475f',
-    fontFamily: 'Moderat Mono, Courier New, monospace',
-    lineHeight: 1,
-    fontSize: '0.875rem',
     display: 'inline-block',
-  },
 
-  button: {
-    height: 48,
-    backgroundColor: '#fb3728',
+    border: 'none',
+    borderLeft: `2px solid ${deepOrange[600]}`,
+    borderRadius: 0,
+    padding: '0.5rem 1rem',
+
+    backgroundColor: grey[100],
+    color: indigo[900],
+
+    fontSize: '1rem',
+    fontWeight: 700,
+    fontFamily: 'Moderat Mono, Courier New, monospace',
+    lineHeight: 2,
+
+    minWidth: '20rem',
+
+    '&:focus': {
+      borderRadius: 0,
+    },
+
+    '&::placeholder': {
+      fontWeight: 700,
+      color: indigo[900],
+      fontFamily: 'Moderat Mono, Courier New, monospace',
+      lineHeight: 2,
+      fontSize: '0.875rem',
+      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+      opacity: 1,
+    },
   },
 }));
 
@@ -31,7 +52,7 @@ const CallToAction = () => {
           placeholder="Work email"
           className={classes.input}
         />
-        <input type="submit" value="Talk to us" className={classes.button} />
+        <Button />
       </form>
     </div>
   );
