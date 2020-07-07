@@ -13,11 +13,7 @@ const useStyles = createUseStyles((theme) => ({
 
 const LayoutControl = ({ children }) => {
   const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      {children}
-    </div>
-  );
+  return <div className={classes.root}>{children}</div>;
 };
 
 export default LayoutControl;

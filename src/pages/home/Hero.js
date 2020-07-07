@@ -47,7 +47,6 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-
 const Hero = () => {
   const classes = useStyles();
 

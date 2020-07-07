@@ -17,9 +17,7 @@ const BlogIndex = ({ data, location }) => {
           <article key={node.fields.slug}>
             <header>
               <h3>
-                <Link to={node.fields.slug}>
-                  {title}
-                </Link>
+                <Link to={node.fields.slug}>{title}</Link>
               </h3>
               <small>{node.frontmatter.date}</small>
             </header>

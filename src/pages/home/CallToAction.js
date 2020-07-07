@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import grey from '@material-ui/core/colors/grey';
-import indigo from '@material-ui/core/colors/indigo'; 
+import indigo from '@material-ui/core/colors/indigo';
 
 import Button from './Button';
 import { FORM_NAME } from '../../contactFormConstants';
@@ -49,21 +49,23 @@ const useStyles = createUseStyles(() => ({
 
 const encode = (data) => {
   const formData = new FormData();
-  Object.keys(data).forEach((k)=>{
-    formData.append(k,data[k])
+  Object.keys(data).forEach((k) => {
+    formData.append(k, data[k]);
   });
-  return formData
+  return formData;
 };
 
-const CallToAction = ({
-  placeholderText = 'Work email',
-  buttonText = 'Notify me',
-}) => {
+const CallToAction = ({ placeholderText = 'Work email', buttonText = 'Notify me' }) => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
+    // TODO: Don't submit if the email is blank or not set.
+    // TODO: Disable the button until the email field has a value.
+    // TODO: Disable the button while the submission is ocurring.
+    // TODO: Show a success and failure message.
 
     const resp = await fetch('/', {
       method: 'POST',
@@ -73,11 +75,12 @@ const CallToAction = ({
       }),
     });
 
-    console.log('hello', resp);
-
-    const result = await resp.json();
-
-    console.log('resp', result);
+    if (resp.ok) {
+      // Show success
+      setEmail('');
+    } else {
+      // Show failure
+    }
   };
 
   return (

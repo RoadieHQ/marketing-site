@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 import Hero from './home/Hero';
 import SitewideHeader from './home/SitewideHeader';
 
-const Home = ({ data, }) => {
+const Home = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (

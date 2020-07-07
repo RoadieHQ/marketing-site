@@ -40,7 +40,6 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-
 const Button = ({ text = 'Submit', type = 'submit' }) => {
   const classes = useStyles();
 

@@ -27,7 +27,6 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-
 const Hero = () => {
   const classes = useStyles();
 
@@ -40,31 +39,19 @@ const Hero = () => {
 
         <span>
           <span>
-            <a
-              href="https://twitter.com/RoadieHQ"
-              target="__blank"
-              className={classes.iconLink}
-            >
+            <a href="https://twitter.com/RoadieHQ" target="__blank" className={classes.iconLink}>
               <FaTwitter />
             </a>
           </span>
 
           <span className={classes.leftSpace}>
-            <a
-              href="https://github.com/RoadieHQ"
-              target="__blank"
-              className={classes.iconLink}
-            >
+            <a href="https://github.com/RoadieHQ" target="__blank" className={classes.iconLink}>
               <FaGithub />
             </a>
           </span>
 
           <span className={classes.leftSpace}>
-            <a
-              href="https://backstage.io"
-              target="__blank"
-              className={classes.iconLink}
-            >
+            <a href="https://backstage.io" target="__blank" className={classes.iconLink}>
               <FaSpotify />
             </a>
           </span>

@@ -38,13 +38,7 @@ exports.onRenderBody = ({
   // then it doesn't work. I believe that form is rendered too dynamically to trigger the netlify
   // bot. This form doesn't do any actual work on the site for users.
   setPostBodyComponents([
-    <form
-      name={FORM_NAME}
-      netlify="true"
-      netlify-honeypot="bot-field"
-      hidden
-      key="form"
-    >
+    <form name={FORM_NAME} netlify="true" netlify-honeypot="bot-field" hidden key="form">
       <input type="email" name="email" />
     </form>,
   ]);
