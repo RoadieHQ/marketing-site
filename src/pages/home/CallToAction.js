@@ -7,13 +7,18 @@ import indigo from '@material-ui/core/colors/indigo';
 import Button from './Button';
 
 const useStyles = createUseStyles(() => ({
+  inputWrapper: {
+    width: '100%',
+    display: 'flex',
+  },
+
   input: {
-    display: 'inline-block',
+    flex: 1,
 
     border: 'none',
     borderLeft: `2px solid ${deepOrange[600]}`,
     borderRadius: 0,
-    padding: '0.5rem 1rem',
+    padding: '0.5rem 0.5rem',
 
     backgroundColor: grey[100],
     color: indigo[900],
@@ -23,10 +28,10 @@ const useStyles = createUseStyles(() => ({
     fontFamily: 'Moderat Mono, Courier New, monospace',
     lineHeight: 2,
 
-    minWidth: '20rem',
-
     '&:focus': {
       borderRadius: 0,
+      // Just change the color of the border so the cursor in the input doesn't move.
+      borderLeftColor: 'transparent',
     },
 
     '&::placeholder': {
@@ -45,14 +50,16 @@ const CallToAction = () => {
   const classes = useStyles();
 
   return (
-      <form>
+    <form>
+      <div className={classes.inputWrapper}>
         <input
           type="email"
           placeholder="Work email"
           className={classes.input}
         />
         <Button />
-      </form>
+      </div>
+    </form>
   );
 };
 

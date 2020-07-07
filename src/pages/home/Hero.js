@@ -8,8 +8,8 @@ import CallToAction from './CallToAction';
 import DemoLink from './DemoLink';
 import LayoutControl from '../LayoutControl';
 
-const useStyles = createUseStyles(() => {
-  // console.log('theme', theme);
+const useStyles = createUseStyles((theme) => {
+  console.log('theme', theme);
   return {
     root: {
       display: 'flex',
@@ -21,7 +21,7 @@ const useStyles = createUseStyles(() => {
     },
 
     rightCol: {
-      marginLeft: 24,
+      marginLeft: 100,
       display: 'none',
     },
 
@@ -29,11 +29,9 @@ const useStyles = createUseStyles(() => {
       marginBottom: 16,
     },
 
-    image: {
+    image: {},
 
-    },
-
-    '@media (min-width: 1024px)': {
+    [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
       rightCol: {
         display: 'block',
       },
@@ -55,7 +53,7 @@ const Hero = () => {
   return (
     <LayoutControl>
       <div className={classes.root}>
-        <div className={classes.col} style={{ minWidth: 500 }}>
+        <div className={classes.col}>
           <Headline />
           <Lead />
           <div className={classes.callToActionWrapper}>
