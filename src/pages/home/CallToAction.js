@@ -5,7 +5,7 @@ import grey from '@material-ui/core/colors/grey';
 import indigo from '@material-ui/core/colors/indigo'; 
 
 import Button from './Button';
-import { FORM_NAME } from './contactFormConstants';
+import { FORM_NAME } from '../../contactFormConstants';
 
 const useStyles = createUseStyles(() => ({
   inputWrapper: {

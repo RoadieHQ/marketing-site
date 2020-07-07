@@ -1,6 +1,6 @@
 const React = require('react');
 
-const { FORM_NAME } = require('./src/pages/home/contactFormConstants');
+const { FORM_NAME } = require('./src/contactFormConstants');
 
 const STYLE_RESET = { width: '100%', height: '100%', margin: 0 };
 
@@ -46,6 +46,6 @@ exports.onRenderBody = ({
       key="form"
     >
       <input type="email" name="email" />
-    </form>
+    </form>,
   ]);
 };
