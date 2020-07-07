@@ -20,7 +20,7 @@ const Headline = ({ text }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <h1 className={classes.h1}>{text}</h1>
+      <h1 className={classes.h1}>{text} 💪</h1>
     </div>
   );
 };
