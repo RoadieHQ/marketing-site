@@ -82,28 +82,22 @@ const CallToAction = ({
   const INPUT_NAME = 'email';
 
   return (
-    <>
-      <form onSubmit={onSubmit} name="landing-page-notify-me">
-        <div className={classes.inputWrapper}>
-          <input
-            type={inputType}
-            name={INPUT_NAME}
-            placeholder={placeholderText}
-            className={classes.input}
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-          <Button text={buttonText} />
-        </div>
-      </form>
+    <form onSubmit={onSubmit} name="landing-page-notify-me" netlify netlify-honeypot="bot-field">
+      <div className={classes.inputWrapper}>
+        <input type="hidden" name="form-name" value="landing-page-notify-me" />
 
-      {/* This helps Netlify to automatically handle the form submission which happens in
-          the onSubmit handler
-      */}
-      <form name="landing-page-notify-me" netlify netlify-honeypot="bot-field" hidden>
-        <input type={inputType} name={INPUT_NAME} />
-      </form>
-    </>
+        <input
+          type={inputType}
+          name={INPUT_NAME}
+          placeholder={placeholderText}
+          className={classes.input}
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+
+        <Button text={buttonText} />
+      </div>
+    </form>
   );
 };
 
