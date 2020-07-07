@@ -4,7 +4,7 @@ const STYLE_RESET = { width: '100%', height: '100%', margin: 0 };
 
 exports.onRenderBody = ({
   setHeadComponents,
-  setBodyComponents,
+  setPostBodyComponents,
   setBodyAttributes,
   setHtmlAttributes,
 }) => {
@@ -31,8 +31,8 @@ exports.onRenderBody = ({
     style: STYLE_RESET,
   });
 
-  setBodyComponents([
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden key="form">
+  setPostBodyComponents([
+    <form name="contact" netlify="true" netlify-honeypot="bot-field" hidden key="form">
       <input type="email" name="email" />
     </form>
   ]);
