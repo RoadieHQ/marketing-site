@@ -45,7 +45,6 @@ const CallToAction = () => {
   const classes = useStyles();
 
   return (
-    <div>
       <form>
         <input
           type="email"
@@ -54,7 +53,6 @@ const CallToAction = () => {
         />
         <Button />
       </form>
-    </div>
   );
 };
 

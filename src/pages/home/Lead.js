@@ -1,14 +1,15 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import grey from '@material-ui/core/colors/grey';
 
-const useStyles = createUseStyles((theme) => ({
+const useStyles = createUseStyles(() => ({
   root: {
     marginBottom: 24,
   },
 
   p: {
     fontSize: '1.25rem',
-    color: theme.palette.text.secondary,
+    color: grey[700],
     lineHeight: 1.7,
   },
 }));

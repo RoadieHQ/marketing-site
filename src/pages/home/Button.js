@@ -22,7 +22,7 @@ const useStyles = createUseStyles(() => ({
     borderRadius: 0,
 
     '&:hover': {
-      color: '#bada55',
+      backgroundColor: deepOrange[500],
     },
 
     '&:focus': {
