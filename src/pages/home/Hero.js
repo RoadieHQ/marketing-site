@@ -6,16 +6,14 @@ import Headline from './Headline';
 import Lead from './Lead';
 import CallToAction from './CallToAction';
 import DemoLink from './DemoLink';
+import LayoutControl from '../LayoutControl';
 
-const useStyles = createUseStyles((theme) => {
-  console.log('theme', theme);
+const useStyles = createUseStyles(() => {
+  // console.log('theme', theme);
   return {
     root: {
       display: 'flex',
       paddingTop: 108,
-      maxWidth: theme.breakpoints.values.lg,
-      marginLeft: 'auto',
-      marginRight: 'auto',
     },
 
     col: {
@@ -24,6 +22,7 @@ const useStyles = createUseStyles((theme) => {
 
     rightCol: {
       marginLeft: 24,
+      display: 'none',
     },
 
     callToActionWrapper: {
@@ -31,10 +30,20 @@ const useStyles = createUseStyles((theme) => {
     },
 
     image: {
-      backgroundImage: 'url(undraw/undraw_content_team_3epn.svg)',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundSize: 'contain',
+
+    },
+
+    '@media (min-width: 1024px)': {
+      rightCol: {
+        display: 'block',
+      },
+
+      image: {
+        backgroundImage: 'url(undraw/undraw_content_team_3epn.svg)',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'contain',
+      },
     },
   };
 });
@@ -44,19 +53,21 @@ const Hero = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <div className={classes.col}>
-        <Headline />
-        <Lead />
-        <div className={classes.callToActionWrapper}>
-          <CallToAction />
+    <LayoutControl>
+      <div className={classes.root}>
+        <div className={classes.col} style={{ minWidth: 500 }}>
+          <Headline />
+          <Lead />
+          <div className={classes.callToActionWrapper}>
+            <CallToAction />
+          </div>
+          <div>
+            <DemoLink />
+          </div>
         </div>
-        <div>
-          <DemoLink />
-        </div>
+        <div className={classnames(classes.col, classes.rightCol, classes.image)} />
       </div>
-      <div className={classnames(classes.col, classes.rightCol, classes.image)} />
-    </div>
+    </LayoutControl>
   );
 };
 

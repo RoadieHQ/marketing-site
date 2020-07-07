@@ -3,12 +3,11 @@ import { createUseStyles } from 'react-jss';
 import grey from '@material-ui/core/colors/grey';
 import { FaTwitter, FaGithub } from 'react-icons/fa';
 
-const useStyles = createUseStyles((theme) => ({
+import LayoutControl from '../LayoutControl';
+
+const useStyles = createUseStyles(() => ({
   root: {
     fontFamily: 'Moderat, Overpass, Helvetica Neue, Arial',
-    maxWidth: theme.breakpoints.values.lg,
-    marginLeft: 'auto',
-    marginRight: 'auto',
     color: grey[900],
     display: 'flex',
     alignItems: 'center',
@@ -33,33 +32,35 @@ const Hero = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <span>
-        <h2>Roadie</h2>
-      </span>
-
-      <span>
+    <LayoutControl>
+      <div className={classes.root}>
         <span>
-          <a
-            href="https://twitter.com/RoadieHQ"
-            target="__blank"
-            className={classes.iconLink}
-          >
-            <FaTwitter />
-          </a>
+          <h2>Roadie</h2>
         </span>
 
-        <span className={classes.leftSpace}>
-          <a
-            href="https://github.com/RoadieHQ"
-            target="__blank"
-            className={classes.iconLink}
-          >
-            <FaGithub />
-          </a>
+        <span>
+          <span>
+            <a
+              href="https://twitter.com/RoadieHQ"
+              target="__blank"
+              className={classes.iconLink}
+            >
+              <FaTwitter />
+            </a>
+          </span>
+
+          <span className={classes.leftSpace}>
+            <a
+              href="https://github.com/RoadieHQ"
+              target="__blank"
+              className={classes.iconLink}
+            >
+              <FaGithub />
+            </a>
+          </span>
         </span>
-      </span>
-    </div>
+      </div>
+    </LayoutControl>
   );
 };
 
