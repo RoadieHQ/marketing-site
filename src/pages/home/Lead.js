@@ -4,9 +4,10 @@ import grey from '@material-ui/core/colors/grey';
 
 const useStyles = createUseStyles(() => ({
   root: {
-    fontSize: '1.25rem',
+    fontSize: '1.15rem',
     color: grey[700],
     lineHeight: 1.7,
+    fontFamily: 'Moderat, Overpass, Helvetica Neue, Arial',
   },
 }));
 
