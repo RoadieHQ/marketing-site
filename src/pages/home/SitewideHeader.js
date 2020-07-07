@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import grey from '@material-ui/core/colors/grey';
-import { FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaSpotify } from 'react-icons/fa';
 
 import LayoutControl from '../LayoutControl';
 
@@ -56,6 +56,16 @@ const Hero = () => {
               className={classes.iconLink}
             >
               <FaGithub />
+            </a>
+          </span>
+
+          <span className={classes.leftSpace}>
+            <a
+              href="https://backstage.io"
+              target="__blank"
+              className={classes.iconLink}
+            >
+              <FaSpotify />
             </a>
           </span>
         </span>

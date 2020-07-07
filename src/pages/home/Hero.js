@@ -25,6 +25,10 @@ const useStyles = createUseStyles((theme) => {
       display: 'none',
     },
 
+    leadWrapper: {
+      marginBottom: 24,
+    },
+
     callToActionWrapper: {
       marginBottom: 16,
     },
@@ -54,11 +58,23 @@ const Hero = () => {
     <LayoutControl>
       <div className={classes.root}>
         <div className={classes.col}>
-          <Headline />
-          <Lead />
+          <Headline text="Get a grip on your microservices" />
+
+          <div className={classes.leadWrapper}>
+            <Lead
+              text={`
+                Track your services and teams with the world-class technology which powers
+                the development and operation of Spotify's 2000+ microservices.
+              `}
+            />
+
+            <Lead text="Coming soon..." />
+          </div>
+
           <div className={classes.callToActionWrapper}>
             <CallToAction />
           </div>
+
           <div>
             <DemoLink />
           </div>

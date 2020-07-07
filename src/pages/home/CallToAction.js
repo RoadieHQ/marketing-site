@@ -46,18 +46,22 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const CallToAction = () => {
+const CallToAction = ({
+  placeholderText = 'Work email',
+  buttonText = 'Notify me',
+  inputType = 'email',
+}) => {
   const classes = useStyles();
 
   return (
     <form>
       <div className={classes.inputWrapper}>
         <input
-          type="email"
-          placeholder="Work email"
+          type={inputType}
+          placeholder={placeholderText}
           className={classes.input}
         />
-        <Button />
+        <Button text={buttonText} />
       </div>
     </form>
   );

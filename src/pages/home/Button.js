@@ -41,12 +41,12 @@ const useStyles = createUseStyles(() => ({
 }));
 
 
-const Button = () => {
+const Button = ({ text = 'Submit', type = 'submit' }) => {
   const classes = useStyles();
 
   return (
-    <button type="submit" className={classes.root}>
-      <span>Talk to us</span>
+    <button type={type} className={classes.root}>
+      <span>{text}</span>
     </button>
   );
 };
