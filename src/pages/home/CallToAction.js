@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import grey from '@material-ui/core/colors/grey';
@@ -46,24 +46,64 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
+const encode = (data) => (
+  Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+);
+
 const CallToAction = ({
   placeholderText = 'Work email',
   buttonText = 'Notify me',
   inputType = 'email',
 }) => {
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: encode({
+        'form-name': 'landing-page-notify-me',
+        email,
+      }),
+    });
+
+    const result = await response.json();
+
+    console.log('resp', result);
+  };
+
+  const INPUT_NAME = 'email';
 
   return (
-    <form>
-      <div className={classes.inputWrapper}>
-        <input
-          type={inputType}
-          placeholder={placeholderText}
-          className={classes.input}
-        />
-        <Button text={buttonText} />
-      </div>
-    </form>
+    <>
+      <form onSubmit={onSubmit} name="landing-page-notify-me">
+        <div className={classes.inputWrapper}>
+          <input
+            type={inputType}
+            name={INPUT_NAME}
+            placeholder={placeholderText}
+            className={classes.input}
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+          <Button text={buttonText} />
+        </div>
+      </form>
+
+      {/* This helps Netlify to automatically handle the form submission which happens in
+          the onSubmit handler
+      */}
+      <form name="landing-page-notify-me" netlify netlify-honeypot="bot-field" hidden>
+        <input type={inputType} name={INPUT_NAME} />
+      </form>
+    </>
   );
 };
 
