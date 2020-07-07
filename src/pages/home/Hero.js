@@ -11,7 +11,7 @@ import LayoutControl from '../LayoutControl';
 const useStyles = createUseStyles((theme) => ({
   root: {
     display: 'flex',
-    paddingTop: 108,
+    paddingTop: 60,
   },
 
   col: {

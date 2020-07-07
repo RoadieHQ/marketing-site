@@ -5,6 +5,7 @@ import grey from '@material-ui/core/colors/grey';
 import indigo from '@material-ui/core/colors/indigo'; 
 
 import Button from './Button';
+import { FORM_NAME } from './contactFormConstants';
 
 const useStyles = createUseStyles(() => ({
   inputWrapper: {
@@ -57,43 +58,34 @@ const encode = (data) => {
 const CallToAction = ({
   placeholderText = 'Work email',
   buttonText = 'Notify me',
-  inputType = 'email',
 }) => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
 
   const onSubmit = async (e) => {
-
     e.preventDefault();
 
-    await fetch('/', {
+    const resp = await fetch('/', {
       method: 'POST',
-      // headers: {
-      //   'Content-Type': 'application/x-www-form-urlencoded',
-      // },
       body: encode({
-        'form-name': 'contact',
+        'form-name': FORM_NAME,
         email,
-        name: 'David Tuite',
-        message: 'sfjksf',
       }),
     });
 
-    console.log('hello');
+    console.log('hello', resp);
 
-    // const result = await response.json();
+    const result = await resp.json();
 
-    // console.log('resp', result);
+    console.log('resp', result);
   };
-
-  const INPUT_NAME = 'email';
 
   return (
     <form onSubmit={onSubmit}>
       <div className={classes.inputWrapper}>
         <input
-          type={inputType}
-          name={INPUT_NAME}
+          type="email"
+          name="email"
           placeholder={placeholderText}
           className={classes.input}
           onChange={(e) => setEmail(e.target.value)}
