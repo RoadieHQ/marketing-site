@@ -1,53 +1,9 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-const useHeadlineStyles = createUseStyles({
-  root: {
-    marginBottom: 30,
-  },
-
-  h1: {
-    fontSize: '3.75rem',
-    fontWeight: 900,
-    lineHeight: 1.25,
-    fontFamily: 'Moderat, Helvetica Neue, Arial',
-    color: '#1a182a',
-  },
-});
-
-const Headline = () => {
-  const classes = useHeadlineStyles();
-  return (
-    <div className={classes.root}>
-      <h1 className={classes.h1}>Backstage without the hassle</h1>
-    </div>
-  );
-};
-
-const useLeadStyles = createUseStyles({
-  root: {
-    marginBottom: 20,
-  },
-
-  p: {
-    fontSize: '1.25rem',
-    color: '#49475f',
-    lineHeight: 1.7,
-    fontFamily: 'overpass, Arial',
-  },
-});
-
-const Lead = () => {
-  const classes = useLeadStyles();
-  return (
-    <div className={classes.root}>
-      <p className={classes.p}>
-        {`Use Backstage without worrying about the cost of operation,
-          upgrading plugins or making it fit with your internal tools.`}
-      </p>
-    </div>
-  );
-};
+import Headline from './Headline';
+import Lead from './Lead';
+import CallToAction from './CallToAction';
 
 const useHeroStyles = createUseStyles((theme) => {
   console.log('theme', theme);
@@ -59,19 +15,25 @@ const useHeroStyles = createUseStyles((theme) => {
       marginLeft: 'auto',
       marginRight: 'auto',
     },
+
+    col: {
+      flex: 1,
+    },
   };
 });
+
 
 const Hero = () => {
   const classes = useHeroStyles();
 
   return (
     <div className={classes.root}>
-      <div>
+      <div className={classes.col}>
         <Headline />
         <Lead />
+        <CallToAction />
       </div>
-      <div>
+      <div className={classes.col}>
         <p>Image goes here</p>
       </div>
     </div>
