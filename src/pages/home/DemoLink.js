@@ -30,7 +30,7 @@ const CallToAction = () => {
   const classes = useStyles();
 
   return (
-    <a href="https://demo.upstage.dev" target="__blank" className={classes.root}>
+    <a href="https://backstage-demo.roadie.io" target="__blank" className={classes.root}>
       <span>Play with a demo of Backstage</span>
       &nbsp;
       <span className={classes.caretEmpty}>▷</span>

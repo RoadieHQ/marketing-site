@@ -61,7 +61,7 @@ const FormSubmissionModal = ({ modalOpen, handleCloseModal }) => {
             follow Roadie on Twitter
           </a>
           &nbsp;or play with the&nbsp;
-          <a href="https://demo.upstage.dev" target="__blank" className={classes.link}>
+          <a href="https://backstage-demo.roadie.io" target="__blank" className={classes.link}>
             Backstage demo
           </a>
           .
