@@ -94,7 +94,7 @@ const CallToAction = ({
       }),
     });
 
-    if (!resp.ok) {
+    if (resp.ok) {
       setModalOpen(true);
       setEmail('');
     } else {
