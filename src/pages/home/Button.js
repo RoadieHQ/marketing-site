@@ -35,16 +35,21 @@ const useStyles = createUseStyles(() => ({
     },
 
     '&:disabled': {
-      opacity: 0.65,
+      backgroundColor: grey[300],
+      color: grey[500],
     },
   },
 }));
 
-const Button = ({ text = 'Submit', type = 'submit' }) => {
+const Button = ({
+  text = 'Submit',
+  type = 'submit',
+  disabled = false,
+}) => {
   const classes = useStyles();
 
   return (
-    <button type={type} className={classes.root}>
+    <button type={type} className={classes.root} disabled={disabled}>
       <span>{text}</span>
     </button>
   );

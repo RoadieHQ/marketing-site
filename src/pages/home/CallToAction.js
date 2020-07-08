@@ -58,13 +58,12 @@ const encode = (data) => {
 const CallToAction = ({ placeholderText = 'Work email', buttonText = 'Notify me' }) => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
 
-    // TODO: Don't submit if the email is blank or not set.
-    // TODO: Disable the button until the email field has a value.
-    // TODO: Disable the button while the submission is ocurring.
     // TODO: Show a success and failure message.
 
     const resp = await fetch('/', {
@@ -81,7 +80,15 @@ const CallToAction = ({ placeholderText = 'Work email', buttonText = 'Notify me'
     } else {
       // Show failure
     }
+
+    setSubmitting(false);
   };
+
+  const onInputChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const disabled = submitting || !email || email === '';
 
   return (
     <form onSubmit={onSubmit}>
@@ -91,11 +98,11 @@ const CallToAction = ({ placeholderText = 'Work email', buttonText = 'Notify me'
           name="email"
           placeholder={placeholderText}
           className={classes.input}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={onInputChange}
           value={email}
         />
 
-        <Button text={buttonText} />
+        <Button text={buttonText} disabled={disabled} />
       </div>
     </form>
   );
