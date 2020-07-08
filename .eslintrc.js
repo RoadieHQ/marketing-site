@@ -6,7 +6,13 @@ module.exports = {
     node: true,
   },
 
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:jsx-a11y/recommended',
+  ],
 
   globals: {
     __PATH_PREFIX__: 'readonly',
@@ -21,7 +27,7 @@ module.exports = {
     sourceType: 'module',
   },
 
-  plugins: ['react', 'import'],
+  plugins: ['react'],
 
   rules: {
     'react/prop-types': 0,
