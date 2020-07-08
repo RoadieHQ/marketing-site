@@ -7,7 +7,6 @@ const useStyles = createUseStyles(() => ({
     fontSize: '1.15rem',
     color: grey[700],
     lineHeight: 1.7,
-    fontFamily: 'Moderat, Overpass, Helvetica Neue, Arial',
   },
 }));
 

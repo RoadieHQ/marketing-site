@@ -28,7 +28,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   callToActionWrapper: {
-    marginBottom: 16,
+    marginBottom: 24,
   },
 
   image: {},
@@ -47,7 +47,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Hero = () => {
+const Hero = ({ setModalOpen }) => {
   const classes = useStyles();
 
   return (
@@ -60,7 +60,7 @@ const Hero = () => {
             <Lead
               text={`
                 Track your services and teams with the world-class technology which powers
-                the development and operation of Spotify's 2000+ microservices.
+                the development and operation of Spotify's 2,000 microservices.
               `}
             />
 
@@ -68,7 +68,7 @@ const Hero = () => {
           </div>
 
           <div className={classes.callToActionWrapper}>
-            <CallToAction />
+            <CallToAction setModalOpen={setModalOpen} />
           </div>
 
           <div>

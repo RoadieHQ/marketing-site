@@ -1,0 +1,25 @@
+/* DO NOT put general styling in here. Use JSS for that instead.
+ *
+ * This is a place to put styles which need to go inline in the document head for every page
+ * of the site. It is a good place to put reset styles and styling which we want to apply
+ * before the page is rendered. For example, it could be useful to prevent flashes of unstyled
+ * content.
+ */
+
+@font-face: {
+  font-family: Overpass, Arial;
+  font-style: normal,
+  font-display: swap,
+  font-weight: 400,
+  src: url(Overpass/Overpass-Regular.ttf),
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Overpass, Arial;
+}
