@@ -35,12 +35,16 @@ const useStyles = createUseStyles(() => ({
       borderRadius: 0,
       // Just change the color of the border so the cursor in the input doesn't move.
       borderLeftColor: 'transparent',
+      outlineWidth: 2,
+      outlineStyle: 'solid',
+      outlineColor: deepOrange[600],
+      // Fixes issue in Firefox where outline is outside the input vs Chrome where it is inside.
+      outlineOffset: -2,
     },
 
     '&::placeholder': {
       color: indigo[700],
       fontFamily: 'Moderat Mono, Courier New, monospace',
-      lineHeight: 2,
       fontSize: '0.875rem',
       // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
       opacity: 0.5,
@@ -104,7 +108,6 @@ const CallToAction = ({
   };
 
   const onInputChange = (e) => {
-    setModalOpen(true);
     setEmail(e.target.value);
   };
 
