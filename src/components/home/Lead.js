@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
+    ...theme.typography.body,
     fontSize: '1.35rem',
     color: theme.palette.grey[700],
     lineHeight: 1.7,
