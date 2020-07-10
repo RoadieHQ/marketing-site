@@ -1,15 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
+import classnames from 'classnames';
 
-import SEO from 'components/seo';
-import SitewideHeader from 'components/SitewideHeader';
-import LayoutControl from 'components/LayoutControl';
+import { SEO, SitewideHeader, LayoutControl } from 'components';
 import PostHeader from './Header';
 
 export const postInnerStyles = (theme) => ({
-  ...theme.typography.content,
-
   '& p': {
     marginBottom: '1.75rem',
     lineHeight: '1.75rem',
@@ -65,7 +62,7 @@ const BlogPostTemplate = ({ data }) => {
       </LayoutControl>
 
       <LayoutControl maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT}>
-        <main className={classes.main}>
+        <main className={classnames('typography-content', classes.main)}>
           <article>
             <PostHeader post={post} />
             <section dangerouslySetInnerHTML={{ __html: post.html }} />

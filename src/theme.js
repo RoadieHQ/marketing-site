@@ -83,32 +83,8 @@ const theme = {
   },
 
   typography: {
-    headline: {
-      fontFamily: 'LuloCleanOne',
-      fontWeight: 700,
-    },
-
-    body: {
-      fontFamily: "Overpass, 'Helvetica Neue', Arial, sans-serif",
-      fontWeight: 400,
-    },
-
-    content: {
-      fontFamily: 'Merriweather, Georgia, serif',
-      fontWeight: 400,
-      fontFeatureSettings: ['"kern"', '"liga"', '"clig"', '"calt"'],
-      fontKerning: 'normal',
-      fontSize: '1.1rem',
-      color: 'hsla(0, 0%, 0%, 0.9)',
-    },
-
     mono: {
       fontFamily: 'Courier New, monospace',
-      fontWeight: 700,
-    },
-
-    logo: {
-      fontFamily: 'LuloCleanOutline',
       fontWeight: 700,
     },
   },

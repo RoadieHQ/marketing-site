@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
+import classnames from 'classnames';
 
 import { postInnerStyles } from '../../templates/BlogPost';
 
@@ -48,7 +49,7 @@ const PostSummary = ({ post }) => {
         </h3>
         <small className={classes.date}>{post.frontmatter.date}</small>
       </header>
-      <section className={classes.summary}>
+      <section className={classnames('typography-content', classes.summary)}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />
       </section>
     </article>

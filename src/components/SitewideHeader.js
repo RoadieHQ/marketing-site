@@ -2,6 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { FaTwitter, FaGithub, FaSpotify } from 'react-icons/fa';
+import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -11,7 +12,6 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   logoH2: {
-    ...theme.typography.logo,
     color: theme.palette.grey[900],
   },
 
@@ -46,7 +46,9 @@ const SitewideHeader = () => {
     <header className={classes.root}>
       <span>
         <Link to="/" className={classes.logoLink}>
-          <h2 className={classes.logoH2}>{data.site.siteMetadata.title}</h2>
+          <h2 className={classnames('typography-logo', classes.logoH2)}>
+            {data.site.siteMetadata.title}
+          </h2>
         </Link>
       </span>
 
