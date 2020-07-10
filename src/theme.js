@@ -82,12 +82,7 @@ const theme = {
     },
   },
 
-  typography: {
-    mono: {
-      fontFamily: 'Courier New, monospace',
-      fontWeight: 700,
-    },
-  },
+  typography: {},
 };
 
 module.exports = theme;

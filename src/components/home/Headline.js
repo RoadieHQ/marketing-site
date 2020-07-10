@@ -8,11 +8,11 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   h1: {
-    fontSize: '2.75rem',
+    fontSize: '3.75rem',
     lineHeight: 1.25,
-    letterSpacing: -6,
     color: theme.palette.grey[900],
     marginBottom: 0,
+    fontWeight: 700,
   },
 }));
 
@@ -20,7 +20,7 @@ const Headline = ({ text }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <h1 className={classnames('typography-headline', classes.h1)}>
+      <h1 className={classnames('typography-body', classes.h1)}>
         {text}{' '}
         <span role="img" aria-label="Flexed biceps">
           💪

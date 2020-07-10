@@ -8,16 +8,6 @@
  * The dev server needs restarting to pick up changes in this file.
  */
 
-/* Overpass is nice for short paragraphs in the main application.
- */
-@font-face: {
-  font-family: Overpass;
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url(/fonts/Overpass/Overpass-Regular.ttf);
-}
-
 /* Merriweather is good for blog posts */
 @font-face {
   font-family: Merriweather;
@@ -27,7 +17,6 @@
   src: url(/fonts/Merriweather/Merriweather-Regular.ttf);
 }
 
-
 @font-face {
   font-family: LuloCleanOutline;
   font-style: normal;
@@ -35,23 +24,6 @@
   font-weight: 700;
   src: url(/fonts/lulo-clean/LuloCleanOutline-Bold.ttf);
 }
-
-@font-face {
-  font-family: LuloCleanOne;
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url(/fonts/lulo-clean/LuloCleanOne.ttf);
-}
-
-@font-face {
-  font-family: LuloCleanOne;
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url(/fonts/lulo-clean/LuloCleanOne-Bold.ttf);
-}
-
 
 .typography-content {
   font-family: Merriweather, Georgia, serif;
@@ -62,19 +34,24 @@
   color: hsla(0, 0%, 0%, 0.9);
 }
 
-.typography-headline {
-  font-family: LuloCleanOne;
-  font-weight: 700;
-}
-
 .typography-logo {
   font-family: LuloCleanOutline;
   font-weight: 700;
 }
 
 .typography-body {
-  font-family: Overpass, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
+}
+
+.typography-mono {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+
+.typography-mono::placeholder {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
 }
 
 html, body {

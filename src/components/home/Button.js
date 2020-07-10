@@ -1,10 +1,9 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    ...theme.typography.mono,
-
     display: 'inline-block',
     lineHeight: 1.5,
     color: theme.palette.grey[100],
@@ -43,7 +42,7 @@ const Button = ({ text = 'Submit', type = 'submit', disabled = false }) => {
   const classes = useStyles();
 
   return (
-    <button type={type} className={classes.root} disabled={disabled}>
+    <button type={type} className={classnames('typography-mono', classes.root)} disabled={disabled}>
       <span>{text}</span>
     </button>
   );

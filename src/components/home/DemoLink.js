@@ -1,11 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import deepOrange from '@material-ui/core/colors/deepOrange';
+import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    ...theme.typography.mono,
-    color: deepOrange[600],
+    color: theme.palette.primary.main,
     textDecoration: 'none',
 
     '&:hover $caretFull': {
@@ -30,7 +29,11 @@ const CallToAction = () => {
   const classes = useStyles();
 
   return (
-    <a href="https://backstage-demo.roadie.io" target="__blank" className={classes.root}>
+    <a
+      href="https://backstage-demo.roadie.io"
+      target="__blank"
+      className={classnames('typography-mono', classes.root)}
+    >
       <span>Play with a demo of Backstage</span>
       &nbsp;
       <span className={classes.caretEmpty}>▷</span>

@@ -24,7 +24,6 @@ const useStyles = createUseStyles((theme) => ({
     color: theme.palette.secondary.dark,
 
     fontSize: '1rem',
-    ...theme.typography.mono,
     fontWeight: 700,
     lineHeight: 2,
 
@@ -40,7 +39,6 @@ const useStyles = createUseStyles((theme) => ({
     },
 
     '&::placeholder': {
-      ...theme.typography.mono,
       color: theme.palette.secondary.light,
       fontSize: '0.875rem',
       // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
@@ -119,7 +117,7 @@ const CallToAction = ({
           type="email"
           name="email"
           placeholder={placeholderText}
-          className={classes.input}
+          className={classnames('typography-monoo', classes.input)}
           onChange={onInputChange}
           value={email}
         />
