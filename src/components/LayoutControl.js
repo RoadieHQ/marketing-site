@@ -10,7 +10,7 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const LayoutControl = ({ children, maxWidthBreakpoint = 'lg' }) => {
+const LayoutControl = ({ children, maxWidthBreakpoint = 'xl' }) => {
   const theme = useTheme();
   const classes = useStyles();
 

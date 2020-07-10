@@ -11,7 +11,7 @@
 /* Overpass is nice for short paragraphs in the main application.
  */
 @font-face: {
-  font-family: Overpass, Arial;
+  font-family: Overpass, Arial, sans-serif;
   font-style: normal,
   font-display: swap,
   font-weight: 400,
@@ -20,7 +20,7 @@
 
 /* Merriweather is good for blog posts */
 @font-face {
-  font-family: Merriweather, Arial;
+  font-family: Merriweather, Georgia, serif;
   font-style: normal,
   font-display: swap,
   font-weight: 400,

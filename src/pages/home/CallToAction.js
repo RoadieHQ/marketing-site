@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import deepOrange from '@material-ui/core/colors/deepOrange';
-import grey from '@material-ui/core/colors/grey';
-import indigo from '@material-ui/core/colors/indigo';
 import classnames from 'classnames';
 
 import Button from './Button';
 import { FORM_NAME } from '../../contactFormConstants';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   inputWrapper: {
     width: '100%',
     display: 'flex',
@@ -19,12 +16,12 @@ const useStyles = createUseStyles(() => ({
     flex: 1,
 
     border: 'none',
-    borderLeft: `2px solid ${deepOrange[600]}`,
+    borderLeft: `2px solid ${theme.palette.primary.main}`,
     borderRadius: 0,
     padding: '0.5rem 0.5rem',
 
-    backgroundColor: grey[100],
-    color: indigo[900],
+    backgroundColor: theme.palette.grey[100],
+    color: theme.palette.secondary.dark,
 
     fontSize: '1rem',
     fontWeight: 700,
@@ -37,13 +34,13 @@ const useStyles = createUseStyles(() => ({
       borderLeftColor: 'transparent',
       outlineWidth: 2,
       outlineStyle: 'solid',
-      outlineColor: deepOrange[600],
+      outlineColor: theme.palette.primary.main,
       // Fixes issue in Firefox where outline is outside the input vs Chrome where it is inside.
       outlineOffset: -2,
     },
 
     '&::placeholder': {
-      color: indigo[700],
+      color: theme.palette.secondary.light,
       fontFamily: 'Moderat Mono, Courier New, monospace',
       fontSize: '0.875rem',
       // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
@@ -53,11 +50,11 @@ const useStyles = createUseStyles(() => ({
 
   subForm: {
     fontSize: '0.875rem',
-    color: grey[400],
+    color: theme.palette.grey[400],
   },
 
   subFormerror: {
-    color: deepOrange[700],
+    color: theme.palette.deepOrange[700],
   },
 }));
 

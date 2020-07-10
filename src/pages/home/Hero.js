@@ -6,7 +6,7 @@ import Headline from './Headline';
 import Lead from './Lead';
 import CallToAction from './CallToAction';
 import DemoLink from './DemoLink';
-import LayoutControl from '../../components/LayoutControl';
+import LayoutControl from 'components/LayoutControl';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
