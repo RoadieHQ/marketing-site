@@ -37,5 +37,16 @@ module.exports = {
     react: {
       version: 'detect',
     },
+
+    'import/resolver': {
+      node: {
+        moduleDirectory: [
+          'node_modules',
+          // Allows importing from the ./src directory without long relative paths. The
+          // gatsby-plugin-module-resolver is related to this config. See gatsby-config.js
+          'src',
+        ],
+      },
+    },
   },
 };

@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
-import SitewideHeader from '../components/SitewideHeader';
-import LayoutControl from '../components/LayoutControl';
+import SitewideHeader from 'components/SitewideHeader';
+import LayoutControl from 'components/LayoutControl';
 
 const PostHeader = ({ post }) => {
   return (
