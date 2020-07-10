@@ -4,14 +4,27 @@
  * of the site. It is a good place to put reset styles and styling which we want to apply
  * before the page is rendered. For example, it could be useful to prevent flashes of unstyled
  * content.
+ *
+ * The dev server needs restarting to pick up changes in this file.
  */
 
+/* Overpass is nice for short paragraphs in the main application.
+ */
 @font-face: {
   font-family: Overpass, Arial;
   font-style: normal,
   font-display: swap,
   font-weight: 400,
   src: url(Overpass/Overpass-Regular.ttf),
+}
+
+/* Merriweather is good for blog posts */
+@font-face {
+  font-family: Merriweather, Arial;
+  font-style: normal,
+  font-display: swap,
+  font-weight: 400,
+  src: url(Merriweather/Merriweather-Regular.ttf),
 }
 
 html, body {
