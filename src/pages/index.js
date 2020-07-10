@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/seo';
-import Hero from './home/Hero';
-import SitewideHeader from '../components/SitewideHeader';
-import FormSubmissionModal from './home/FormSubmissionModal';
-import LayoutControl from '../components/LayoutControl';
+import SEO from 'components/seo';
+import SitewideHeader from 'components/SitewideHeader';
+import LayoutControl from 'components/LayoutControl';
+import FormSubmissionModal from 'components/home/FormSubmissionModal';
+import Hero from 'components/home/Hero';
 
 const Home = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;

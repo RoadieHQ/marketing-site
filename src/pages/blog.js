@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import LayoutControl from 'components/LayoutControl';
 import SEO from 'components/seo';
 import SitewideHeader from 'components/SitewideHeader';
-import PostSummary from './PostSummary';
+import PostSummary from 'components/blog/PostSummary';
 
 const MAX_WIDTH_BREAKPOINT = 'md';
 
@@ -39,6 +39,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
