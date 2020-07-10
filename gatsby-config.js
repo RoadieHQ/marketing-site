@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: 'https://roadie.io',
     social: {
       twitter: 'RoadieHQ',
+      github: 'RoadieHQ',
     },
   },
   plugins: [

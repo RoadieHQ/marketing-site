@@ -1,48 +1,43 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
+import SitewideHeader from '../components/SitewideHeader';
+import LayoutControl from '../components/LayoutControl';
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+const PostHeader = ({ post }) => {
+  return (
+    <header>
+      <h1>{post.frontmatter.title}</h1>
+      <p>{post.frontmatter.date}</p>
+    </header>
+  );
+};
+
+const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata.title;
-  const { previous, next } = pageContext;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <div>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-      </article>
 
-      <nav>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
+      <LayoutControl maxWidthBreakpoint="sm">
+        <SitewideHeader />
+      </LayoutControl>
+
+      <LayoutControl maxWidthBreakpoint="sm">
+        <main>
+          <article>
+            <PostHeader post={post} />
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            <hr />
+          </article>
+        </main>
+      </LayoutControl>
+    </div>
   );
 };
 

@@ -3,8 +3,9 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import Hero from './home/Hero';
-import SitewideHeader from './home/SitewideHeader';
+import SitewideHeader from '../components/SitewideHeader';
 import FormSubmissionModal from './home/FormSubmissionModal';
+import LayoutControl from '../components/LayoutControl';
 
 const Home = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -18,7 +19,11 @@ const Home = ({ data }) => {
     <>
       <SEO title={`Hosted, managed, enterprise Backstage | ${siteTitle}`} />
       <FormSubmissionModal modalOpen={modalOpen} handleCloseModal={handleCloseModal} />
-      <SitewideHeader />
+
+      <LayoutControl>
+        <SitewideHeader />
+      </LayoutControl>
+
       <Hero setModalOpen={setModalOpen} />
     </>
   );
