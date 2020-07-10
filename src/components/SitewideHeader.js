@@ -11,8 +11,21 @@ const useStyles = createUseStyles((theme) => ({
     justifyContent: 'space-between',
   },
 
+  nav: {
+    display: 'flex',
+  },
+
+  textLinkWrapper: {
+    marginTop: -2,
+  },
+
   logoH2: {
     color: theme.palette.grey[900],
+  },
+
+  link: {
+    color: theme.palette.grey[900],
+    textDecoration: 'none',
   },
 
   logoLink: {
@@ -26,7 +39,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   leftSpace: {
-    marginLeft: 8,
+    marginLeft: 16,
   },
 
   iconLink: {
@@ -38,7 +51,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const SitewideHeader = () => {
+const SitewideHeader = ({ location }) => {
   const classes = useStyles();
   const data = useStaticQuery(query);
 
@@ -52,8 +65,16 @@ const SitewideHeader = () => {
         </Link>
       </span>
 
-      <span>
-        <span>
+      <nav className={classes.nav}>
+        {location && !location.pathname.includes('/blog') && (
+          <span className={classnames('typography-body', classes.textLinkWrapper)}>
+            <Link to="/blog" className={classes.link}>
+              Blog
+            </Link>
+          </span>
+        )}
+
+        <span className={classes.leftSpace}>
           <a
             href={`https://twitter.com/${data.site.siteMetadata.social.twitter}`}
             target="__blank"
@@ -78,7 +99,7 @@ const SitewideHeader = () => {
             <FaSpotify />
           </a>
         </span>
-      </span>
+      </nav>
     </header>
   );
 };

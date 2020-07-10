@@ -7,7 +7,7 @@ import LayoutControl from 'components/LayoutControl';
 import FormSubmissionModal from 'components/home/FormSubmissionModal';
 import Hero from 'components/home/Hero';
 
-const Home = ({ data }) => {
+const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -21,7 +21,7 @@ const Home = ({ data }) => {
       <FormSubmissionModal modalOpen={modalOpen} handleCloseModal={handleCloseModal} />
 
       <LayoutControl>
-        <SitewideHeader />
+        <SitewideHeader location={location} />
       </LayoutControl>
 
       <Hero setModalOpen={setModalOpen} />

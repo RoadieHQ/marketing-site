@@ -8,7 +8,7 @@ import PostSummary from 'components/blog/PostSummary';
 
 const MAX_WIDTH_BREAKPOINT = 'md';
 
-const BlogIndex = ({ data }) => {
+const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
@@ -16,7 +16,7 @@ const BlogIndex = ({ data }) => {
       <SEO title="All posts" />
 
       <LayoutControl maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT}>
-        <SitewideHeader />
+        <SitewideHeader location={location} />
       </LayoutControl>
 
       <LayoutControl maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT}>
