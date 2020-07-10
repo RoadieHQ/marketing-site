@@ -89,12 +89,12 @@ const theme = {
     },
 
     body: {
-      fontFamily: 'Overpass',
+      fontFamily: "Overpass, 'Helvetica Neue', Arial, sans-serif",
       fontWeight: 400,
     },
 
     content: {
-      fontFamily: 'Merriweather',
+      fontFamily: 'Merriweather, Georgia, serif',
       fontWeight: 400,
       fontFeatureSettings: ['"kern"', '"liga"', '"clig"', '"calt"'],
       fontKerning: 'normal',

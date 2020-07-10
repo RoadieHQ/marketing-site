@@ -11,7 +11,7 @@
 /* Overpass is nice for short paragraphs in the main application.
  */
 @font-face: {
-  font-family: Overpass;
+  font-family: Overpass, 'Helvetica Neue', Arial, sans-serif;
   font-style: normal;
   font-display: swap;
   font-weight: 400;
@@ -20,7 +20,7 @@
 
 /* Merriweather is good for blog posts */
 @font-face {
-  font-family: Merriweather;
+  font-family: Merriweather, Georgia, serif;
   font-style: normal;
   font-display: swap;
   font-weight: 400;
@@ -31,7 +31,7 @@
 @font-face {
   font-family: LuloCleanOutline;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
   font-weight: 700;
   src: url(/fonts/lulo-clean/LuloCleanOutline-Bold.ttf);
 }
