@@ -45,14 +45,14 @@ const theme = {
     deepOrange,
 
     primary: {
-      light: deepOrange[300],
+      light: deepOrange[400],
       main: deepOrange[600],
       dark: deepOrange[900],
       contrastText: '#fff',
     },
 
     secondary: {
-      light: indigo[300],
+      light: indigo[400],
       main: indigo[600],
       dark: indigo[900],
       contrastText: '#fff',
@@ -82,7 +82,36 @@ const theme = {
     },
   },
 
-  typography: {},
+  typography: {
+    headline: {
+      fontFamily: 'LuloCleanOne',
+      fontWeight: 700,
+    },
+
+    body: {
+      fontFamily: 'Overpass',
+      fontWeight: 400,
+    },
+
+    content: {
+      fontFamily: 'Merriweather',
+      fontWeight: 400,
+      fontFeatureSettings: ['"kern"', '"liga"', '"clig"', '"calt"'],
+      fontKerning: 'normal',
+      fontSize: '1.1rem',
+      color: 'hsla(0, 0%, 0%, 0.9)',
+    },
+
+    mono: {
+      fontFamily: 'Courier New, monospace',
+      fontWeight: 700,
+    },
+
+    logo: {
+      fontFamily: 'LuloCleanOutline',
+      fontWeight: 700,
+    },
+  },
 };
 
 module.exports = theme;

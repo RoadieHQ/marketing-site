@@ -24,8 +24,8 @@ const useStyles = createUseStyles((theme) => ({
     color: theme.palette.secondary.dark,
 
     fontSize: '1rem',
+    ...theme.typography.mono,
     fontWeight: 700,
-    fontFamily: 'Moderat Mono, Courier New, monospace',
     lineHeight: 2,
 
     '&:focus': {
@@ -40,8 +40,8 @@ const useStyles = createUseStyles((theme) => ({
     },
 
     '&::placeholder': {
+      ...theme.typography.mono,
       color: theme.palette.secondary.light,
-      fontFamily: 'Moderat Mono, Courier New, monospace',
       fontSize: '0.875rem',
       // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
       opacity: 0.5,

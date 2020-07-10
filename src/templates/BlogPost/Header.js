@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
     marginBottom: '2rem',
   },
@@ -13,6 +13,10 @@ const useStyles = createUseStyles(() => ({
   },
 
   h1: {
+    fontFamily: 'Merriweather',
+    fontWeight: 700,
+    fontSize: '2.75rem',
+    color: theme.palette.grey[900],
     marginBottom: 0,
   },
 }));

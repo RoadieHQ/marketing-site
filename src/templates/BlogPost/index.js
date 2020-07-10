@@ -8,11 +8,7 @@ import LayoutControl from 'components/LayoutControl';
 import PostHeader from './Header';
 
 export const postInnerStyles = (theme) => ({
-  fontFamily: 'Merriweather, Georgia, serif',
-  fontFeatureSettings: ['"kern"', '"liga"', '"clig"', '"calt"'],
-  fontKerning: 'normal',
-  color: 'hsla(0,0%,0%,0.9)',
-  fontSize: '1.1rem',
+  ...theme.typography.content,
 
   '& p': {
     marginBottom: '1.75rem',
@@ -39,11 +35,11 @@ export const postInnerStyles = (theme) => ({
   },
 
   '& a': {
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.main,
   },
 
   '& a:visited': {
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.main,
   },
 });
 

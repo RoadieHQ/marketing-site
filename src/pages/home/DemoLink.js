@@ -2,10 +2,10 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import deepOrange from '@material-ui/core/colors/deepOrange';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
+    ...theme.typography.mono,
     color: deepOrange[600],
-    fontFamily: 'Moderat Mono, Courier New, monospace',
     textDecoration: 'none',
 
     '&:hover $caretFull': {

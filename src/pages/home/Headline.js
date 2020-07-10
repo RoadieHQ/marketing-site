@@ -1,18 +1,18 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import grey from '@material-ui/core/colors/grey';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
     marginBottom: 30,
   },
 
   h1: {
-    fontSize: '3.75rem',
-    fontWeight: 700,
+    ...theme.typography.headline,
+    fontSize: '2.75rem',
     lineHeight: 1.25,
-    fontFamily: 'Moderat, Overpass, Helvetica Neue, Arial',
-    color: grey[900],
+    letterSpacing: -6,
+    color: theme.palette.grey[900],
+    marginBottom: 0,
   },
 }));
 
@@ -20,7 +20,12 @@ const Headline = ({ text }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <h1 className={classes.h1}>{text} <span role="img" aria-label="Flexed biceps">💪</span></h1>
+      <h1 className={classes.h1}>
+        {text}{' '}
+        <span role="img" aria-label="Flexed biceps">
+          💪
+        </span>
+      </h1>
     </div>
   );
 };

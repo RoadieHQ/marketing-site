@@ -1,16 +1,28 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import grey from '@material-ui/core/colors/grey';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { FaTwitter, FaGithub, FaSpotify } from 'react-icons/fa';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
-    fontFamily: 'Moderat, Overpass, Helvetica Neue, Arial',
-    color: grey[900],
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+
+  logoH2: {
+    ...theme.typography.logo,
+    color: theme.palette.grey[900],
+  },
+
+  logoLink: {
+    color: theme.palette.grey[900],
+    textDecoration: 'none',
+
+    '& a:visited': {
+      color: theme.palette.grey[900],
+      textDecoration: 'none',
+    },
   },
 
   leftSpace: {
@@ -18,10 +30,10 @@ const useStyles = createUseStyles(() => ({
   },
 
   iconLink: {
-    color: grey[700],
+    color: theme.palette.grey[700],
 
     '&:hover': {
-      color: grey[600],
+      color: theme.palette.grey[600],
     },
   },
 }));
@@ -33,8 +45,8 @@ const SitewideHeader = () => {
   return (
     <header className={classes.root}>
       <span>
-        <Link to="/">
-          <h2>{data.site.siteMetadata.title}</h2>
+        <Link to="/" className={classes.logoLink}>
+          <h2 className={classes.logoH2}>{data.site.siteMetadata.title}</h2>
         </Link>
       </span>
 

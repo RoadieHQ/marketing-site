@@ -1,20 +1,18 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import grey from '@material-ui/core/colors/grey';
-import deepOrange from '@material-ui/core/colors/deepOrange';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
+    ...theme.typography.mono,
+
     display: 'inline-block',
-    fontFamily: 'Moderat Mono, Courier New, monospace',
-    fontWeight: 700,
     lineHeight: 1.5,
-    color: grey[100],
+    color: theme.palette.grey[100],
     textAlign: 'center',
     cursor: 'pointer',
     userSelect: 'none',
     border: 'none',
-    backgroundColor: deepOrange[600],
+    backgroundColor: theme.palette.primary.main,
 
     // lg
     padding: '0.5rem 1rem',
@@ -22,30 +20,26 @@ const useStyles = createUseStyles(() => ({
     borderRadius: 0,
 
     '&:hover': {
-      backgroundColor: deepOrange[500],
+      backgroundColor: theme.palette.primary.light,
     },
 
     '&:focus': {
       outline: 'none',
-      boxShadow: `inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba(${grey[900]}, .075)`,
+      boxShadow: `inset 0 1px 0 rgba(0, 0, 0, .15), 0 1px 1px rgba(${theme.palette.grey[900]}, .075)`,
     },
 
     '&:active': {
-      boxShadow: `inset 0 3px 5px rgba(${grey[900]}, .125)`,
+      boxShadow: `inset 0 3px 5px rgba(${theme.palette.grey[900]}, .125)`,
     },
 
     '&:disabled': {
-      backgroundColor: grey[300],
-      color: grey[500],
+      backgroundColor: theme.palette.grey[300],
+      color: theme.palette.grey[500],
     },
   },
 }));
 
-const Button = ({
-  text = 'Submit',
-  type = 'submit',
-  disabled = false,
-}) => {
+const Button = ({ text = 'Submit', type = 'submit', disabled = false }) => {
   const classes = useStyles();
 
   return (

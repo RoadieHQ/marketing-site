@@ -15,8 +15,13 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   titleLink: {
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.main,
     textDecoration: 'none',
+
+    '&:hover': {
+      color: theme.palette.primary.main,
+      textDecoration: 'underline',
+    },
   },
 
   date: {

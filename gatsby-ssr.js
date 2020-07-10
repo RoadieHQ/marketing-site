@@ -17,7 +17,8 @@ const embeddedForm = (
 
 exports.onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   // Getting these into the head so the fonts start loading fast and we don't have a FoUC.
-  setHeadComponents([<style key="inline-styles">{HEAD_CSS}</style>]);
+  // Have to use dangerouslySetInnerHTML to prevent escaping of quotation marks in the CSS.
+  setHeadComponents([<style key="inline-styles" dangerouslySetInnerHTML={{ __html: HEAD_CSS }} />]);
 
   setPostBodyComponents([embeddedForm]);
 };

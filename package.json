@@ -34,9 +34,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.10.0",
     "react-jss": "^10.3.0",
-    "react-modal": "^3.11.2",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "react-modal": "^3.11.2"
   },
   "devDependencies": {
     "eslint": "^7.4.0",

@@ -11,21 +11,47 @@
 /* Overpass is nice for short paragraphs in the main application.
  */
 @font-face: {
-  font-family: Overpass, Arial, sans-serif;
-  font-style: normal,
-  font-display: swap,
-  font-weight: 400,
-  src: url(Overpass/Overpass-Regular.ttf),
+  font-family: Overpass;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/Overpass/Overpass-Regular.ttf);
 }
 
 /* Merriweather is good for blog posts */
 @font-face {
-  font-family: Merriweather, Georgia, serif;
-  font-style: normal,
-  font-display: swap,
-  font-weight: 400,
-  src: url(Merriweather/Merriweather-Regular.ttf),
+  font-family: Merriweather;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/Merriweather/Merriweather-Regular.ttf);
 }
+
+
+@font-face {
+  font-family: LuloCleanOutline;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/fonts/lulo-clean/LuloCleanOutline-Bold.ttf);
+}
+
+@font-face {
+  font-family: LuloCleanOne;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/lulo-clean/LuloCleanOne.ttf);
+}
+
+@font-face {
+  font-family: LuloCleanOne;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/fonts/lulo-clean/LuloCleanOne-Bold.ttf);
+}
+
 
 html, body {
   width: 100%;
@@ -34,5 +60,5 @@ html, body {
 }
 
 body {
-  font-family: Overpass, Arial;
+  font-family: Overpass;
 }
