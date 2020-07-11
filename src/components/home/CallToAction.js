@@ -118,7 +118,7 @@ const CallToAction = ({
         <input
           type="email"
           name="email"
-          ariaLabel="Work email address"
+          aria-label="Work email address"
           placeholder={placeholderText}
           className={classnames('typography-monoo', classes.input)}
           onChange={onInputChange}

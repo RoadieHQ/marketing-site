@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -13,7 +14,6 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   h1: {
-    fontFamily: 'Merriweather',
     fontWeight: 700,
     fontSize: '2.75rem',
     color: theme.palette.grey[900],
@@ -26,8 +26,8 @@ const PostHeader = ({ post }) => {
 
   return (
     <header className={classes.root}>
-      <h1 className={classes.h1}>{post.frontmatter.title}</h1>
-      <p className={classes.date}>{post.frontmatter.date}</p>
+      <h1 className={classnames('typography-content', classes.h1)}>{post.frontmatter.title}</h1>
+      <p className={classnames('typography-content', classes.date)}>{post.frontmatter.date}</p>
     </header>
   );
 };

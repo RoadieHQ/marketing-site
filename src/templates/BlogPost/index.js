@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
 import { SEO, SitewideHeader, LayoutControl } from 'components';
-import PostHeader from './Header';
+import PostHeader from 'components/blog/PostHeader';
 
 export const postInnerStyles = (theme) => ({
   '& p': {
@@ -46,7 +46,7 @@ const useStyles = createUseStyles((theme) => ({
 
 const MAX_WIDTH_BREAKPOINT = 'md';
 
-const BlogPostTemplate = ({ data }) => {
+const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
   const classes = useStyles();
 
@@ -58,7 +58,7 @@ const BlogPostTemplate = ({ data }) => {
       />
 
       <LayoutControl maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT}>
-        <SitewideHeader />
+        <SitewideHeader location={location} />
       </LayoutControl>
 
       <LayoutControl maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT}>

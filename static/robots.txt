@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+Disallow: /terms
+Disallow: /privacy

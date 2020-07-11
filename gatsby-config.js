@@ -1,4 +1,7 @@
 const theme = require('./src/theme');
+const fs = require('fs');
+
+const termsAndConditionsText = fs.readFileSync('./private/termsAndConditionsText.html').toString();
 
 const SITE_TITLE = 'Roadie';
 
@@ -10,6 +13,10 @@ module.exports = {
     social: {
       twitter: 'RoadieHQ',
       github: 'RoadieHQ',
+    },
+
+    content: {
+      termsAndConditionsText,
     },
   },
   plugins: [
