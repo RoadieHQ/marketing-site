@@ -54,6 +54,10 @@ const useStyles = createUseStyles((theme) => ({
   subFormerror: {
     color: theme.palette.deepOrange[700],
   },
+
+  label: {
+    display: 'none',
+  },
 }));
 
 const encode = (data) => {
@@ -116,6 +120,7 @@ const CallToAction = ({
         <input
           type="email"
           name="email"
+          ariaLabel="Work email address"
           placeholder={placeholderText}
           className={classnames('typography-monoo', classes.input)}
           onChange={onInputChange}
