@@ -2,6 +2,7 @@ const theme = require('./src/theme');
 const fs = require('fs');
 
 const termsAndConditionsText = fs.readFileSync('./private/termsAndConditionsText.html').toString();
+const privacyPolicyText = fs.readFileSync('./private/privacyPolicyText.html').toString();
 
 const SITE_TITLE = 'Roadie';
 
@@ -17,8 +18,10 @@ module.exports = {
 
     content: {
       termsAndConditionsText,
+      privacyPolicyText,
     },
   },
+
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

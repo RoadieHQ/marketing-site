@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, SitewideHeader, LayoutControl, SitewideFooter } from 'components';
+import StickyFooter from 'components/layouts/StickyFooter';
+import { SEO } from 'components';
 import FormSubmissionModal from 'components/home/FormSubmissionModal';
 import Hero from 'components/home/Hero';
 
@@ -18,13 +19,9 @@ const Home = ({ data, location }) => {
       <SEO title={`Hosted, managed, enterprise Backstage | ${siteTitle}`} />
       <FormSubmissionModal modalOpen={modalOpen} handleCloseModal={handleCloseModal} />
 
-      <LayoutControl>
-        <SitewideHeader location={location} />
-      </LayoutControl>
-
-      <Hero setModalOpen={setModalOpen} />
-
-      <SitewideFooter />
+      <StickyFooter location={location}>
+        <Hero setModalOpen={setModalOpen} />
+      </StickyFooter>
     </>
   );
 };

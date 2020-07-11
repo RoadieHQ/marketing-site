@@ -17,24 +17,26 @@ const useStyles = createUseStyles((theme) => ({
  * the content should not come from the blog posts directory.
  *
  * This page should be Disallowed in the robots.txt.
+ *
+ * There is a large amount of duplication between this page and the terms page.
  */
 
-const TermsAndConditions = ({ data, location }) => {
+const PrivacyPolicy = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const classes = useStyles();
 
   const mockPost = {
     frontmatter: {
-      title: 'Roadie Terms of service',
+      title: `${data.site.siteMetadata.title} Privacy Policy`,
       date: 'July 11, 2020',
     },
 
-    html: data.site.siteMetadata.content.termsAndConditionsText,
+    html: data.site.siteMetadata.content.privacyPolicyText,
   };
 
   return (
     <>
-      <SEO title={`Terms and Conditions | ${siteTitle}`} />
+      <SEO title={`Privacy Policy | ${siteTitle}`} />
 
       <StickyFooter location={location}>
         <PostHeader post={mockPost} />
@@ -49,7 +51,7 @@ const TermsAndConditions = ({ data, location }) => {
   );
 };
 
-export default TermsAndConditions;
+export default PrivacyPolicy;
 
 export const pageQuery = graphql`
   query {
@@ -58,7 +60,7 @@ export const pageQuery = graphql`
         title
 
         content {
-          termsAndConditionsText
+          privacyPolicyText
         }
       }
     }

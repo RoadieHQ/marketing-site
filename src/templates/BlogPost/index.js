@@ -3,7 +3,8 @@ import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-import { SEO, SitewideHeader, LayoutControl } from 'components';
+import { SEO } from 'components';
+import StickyFooter from 'components/layouts/StickyFooter';
 import PostHeader from 'components/blog/PostHeader';
 
 export const postInnerStyles = (theme) => ({
@@ -51,25 +52,21 @@ const BlogPostTemplate = ({ data, location }) => {
   const classes = useStyles();
 
   return (
-    <div>
+    <>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <LayoutControl maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT}>
-        <SitewideHeader location={location} />
-      </LayoutControl>
-
-      <LayoutControl maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT}>
+      <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         <main className={classnames('typography-content', classes.main)}>
           <article>
             <PostHeader post={post} />
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
           </article>
         </main>
-      </LayoutControl>
-    </div>
+      </StickyFooter>
+    </>
   );
 };
 
