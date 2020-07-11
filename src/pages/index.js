@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from 'components/seo';
-import SitewideHeader from 'components/SitewideHeader';
-import LayoutControl from 'components/LayoutControl';
+import { SEO, SitewideHeader, LayoutControl, SitewideFooter } from 'components';
 import FormSubmissionModal from 'components/home/FormSubmissionModal';
 import Hero from 'components/home/Hero';
 
@@ -25,6 +23,8 @@ const Home = ({ data, location }) => {
       </LayoutControl>
 
       <Hero setModalOpen={setModalOpen} />
+
+      <SitewideFooter />
     </>
   );
 };

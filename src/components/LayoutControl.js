@@ -7,6 +7,7 @@ const useStyles = createUseStyles(() => ({
     marginRight: 'auto',
     paddingLeft: 16,
     paddingRight: 16,
+    width: '100%',
   },
 }));
 

@@ -26,8 +26,8 @@ const TermsAndConditions = ({ data, location }) => {
 
   const mockPost = {
     frontmatter: {
-      title: 'Roadie Terms & Conditions',
-      date: 'July 11, 20202',
+      title: 'Roadie Terms of service',
+      date: 'July 11, 2020',
     },
 
     html: data.site.siteMetadata.content.termsAndConditionsText,
