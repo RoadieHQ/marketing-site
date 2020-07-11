@@ -4,6 +4,8 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { FaTwitter, FaGithub, FaSpotify } from 'react-icons/fa';
 import classnames from 'classnames';
 
+import IconLink from './IconLink';
+
 const useStyles = createUseStyles((theme) => ({
   root: {
     display: 'flex',
@@ -24,7 +26,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   link: {
-    color: theme.palette.grey[900],
+    color: theme.palette.grey[700],
     textDecoration: 'none',
   },
 
@@ -40,14 +42,6 @@ const useStyles = createUseStyles((theme) => ({
 
   leftSpace: {
     marginLeft: 16,
-  },
-
-  iconLink: {
-    color: theme.palette.grey[700],
-
-    '&:hover': {
-      color: theme.palette.grey[600],
-    },
   },
 }));
 
@@ -75,29 +69,21 @@ const SitewideHeader = ({ location }) => {
         )}
 
         <span className={classes.leftSpace}>
-          <a
-            href={`https://twitter.com/${data.site.siteMetadata.social.twitter}`}
-            target="__blank"
-            className={classes.iconLink}
-          >
+          <IconLink url={`https://twitter.com/${data.site.siteMetadata.social.twitter}`}>
             <FaTwitter />
-          </a>
+          </IconLink>
         </span>
 
         <span className={classes.leftSpace}>
-          <a
-            href={`https://github.com/${data.site.siteMetadata.social.github}`}
-            target="__blank"
-            className={classes.iconLink}
-          >
+          <IconLink url={`https://github.com/${data.site.siteMetadata.social.github}`}>
             <FaGithub />
-          </a>
+          </IconLink>
         </span>
 
         <span className={classes.leftSpace}>
-          <a href="https://backstage.io" target="__blank" className={classes.iconLink}>
+          <IconLink url="https://backstage.io">
             <FaSpotify />
-          </a>
+          </IconLink>
         </span>
       </nav>
     </header>
