@@ -48,7 +48,8 @@ const useStyles = createUseStyles((theme) => ({
 
   subForm: {
     fontSize: '0.875rem',
-    color: theme.palette.grey[400],
+    color: theme.palette.grey[600],
+    minHeight: 16,
   },
 
   subFormerror: {
@@ -76,10 +77,7 @@ const CallToAction = ({
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const [subForm, setSubForm] = useState({
-    state: 'help',
-    message: 'Emails are stored on netlify.com and never sold or shared.',
-  });
+  const [subForm, setSubForm] = useState({});
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -93,7 +91,7 @@ const CallToAction = ({
       }),
     });
 
-    if (resp.ok) {
+    if (!resp.ok) {
       setModalOpen(true);
       setEmail('');
     } else {
@@ -129,7 +127,9 @@ const CallToAction = ({
 
         <Button text={buttonText} disabled={disabled} />
       </div>
-      <span className={classnames(subFormStateClass, classes.subForm)}>{subForm.message}</span>
+      <div className={classnames('typography-body', subFormStateClass, classes.subForm)}>
+        {subForm.message}
+      </div>
     </form>
   );
 };
