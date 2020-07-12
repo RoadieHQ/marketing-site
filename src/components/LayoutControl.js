@@ -5,8 +5,6 @@ const useStyles = createUseStyles(() => ({
   root: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 }));
 

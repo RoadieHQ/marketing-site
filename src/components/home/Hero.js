@@ -6,7 +6,6 @@ import Headline from './Headline';
 import Lead from './Lead';
 import CallToAction from './CallToAction';
 import DemoLink from './DemoLink';
-import LayoutControl from 'components/LayoutControl';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -16,6 +15,10 @@ const useStyles = createUseStyles((theme) => ({
 
   col: {
     flex: 1,
+  },
+
+  leftCol: {
+    paddingRight: 16,
   },
 
   rightCol: {
@@ -34,6 +37,10 @@ const useStyles = createUseStyles((theme) => ({
   image: {},
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    leftCol: {
+      paddingRight: 0,
+    },
+
     rightCol: {
       display: 'block',
     },
@@ -51,33 +58,31 @@ const Hero = ({ setModalOpen }) => {
   const classes = useStyles();
 
   return (
-    <LayoutControl>
-      <div className={classes.root}>
-        <div className={classes.col}>
-          <Headline text="Get a grip on your microservices" />
+    <div className={classes.root}>
+      <div className={classnames(classes.col, classes.leftCol)}>
+        <Headline text="Get a grip on your microservices" />
 
-          <div className={classes.leadWrapper}>
-            <Lead
-              text={`
-                Track your services and teams with the world-class technology which powers
-                the development and operation of Spotify's 2,000 microservices.
-              `}
-            />
+        <div className={classes.leadWrapper}>
+          <Lead
+            text={`
+              Track your services and teams with the world-class technology which powers
+              the development and operation of Spotify's 2,000 microservices.
+            `}
+          />
 
-            <Lead text="Coming soon..." />
-          </div>
-
-          <div className={classes.callToActionWrapper}>
-            <CallToAction setModalOpen={setModalOpen} />
-          </div>
-
-          <div>
-            <DemoLink />
-          </div>
+          <Lead text="Coming soon..." />
         </div>
-        <div className={classnames(classes.col, classes.rightCol, classes.image)} />
+
+        <div className={classes.callToActionWrapper}>
+          <CallToAction setModalOpen={setModalOpen} />
+        </div>
+
+        <div>
+          <DemoLink />
+        </div>
       </div>
-    </LayoutControl>
+      <div className={classnames(classes.col, classes.rightCol, classes.image)} />
+    </div>
   );
 };
 

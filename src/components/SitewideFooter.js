@@ -4,17 +4,23 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles((theme) => ({
   inner: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     minHeight: 40,
 
     color: theme.palette.grey[700],
     textDecoration: 'none',
+    lineHeight: 1.75,
 
     '& a': {
       color: theme.palette.grey[700],
       textDecoration: 'none',
+    },
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    inner: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
     },
   },
 
@@ -27,9 +33,9 @@ const SitewideFooter = () => {
   const classes = useStyles();
 
   return (
-    <footer className={classes.root}>
+    <footer>
       <div className={classes.inner}>
-        <span>© {new Date().getFullYear()} Larder, Inc. All rights reserved.</span>
+        <div>© {new Date().getFullYear()} Larder, Inc. All rights reserved.</div>
 
         <nav>
           <Link to="/terms">Terms of service</Link>

@@ -8,10 +8,14 @@ const useStyles = createUseStyles(() => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 
   expandVertically: {
     flex: '1 0 auto',
+    marginBottom: 40,
   },
 
   noShrink: {
