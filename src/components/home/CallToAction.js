@@ -120,7 +120,7 @@ const CallToAction = ({
           name="email"
           aria-label="Work email address"
           placeholder={placeholderText}
-          className={classnames('typography-monoo', classes.input)}
+          className={classnames('typography-mono', classes.input)}
           onChange={onInputChange}
           value={email}
         />

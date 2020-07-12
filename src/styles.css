@@ -45,12 +45,12 @@
 }
 
 .typography-mono {
-  font-family: 'Courier New', monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: 700;
 }
 
 .typography-mono::placeholder {
-  font-family: 'Courier New', monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: 700;
 }
 
