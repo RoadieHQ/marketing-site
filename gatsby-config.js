@@ -1,9 +1,13 @@
 const fs = require('fs');
+var { minify } = require('html-minifier');
+const camelCase = require('lodash/camelCase');
 
 const theme = require('./src/theme');
 
-const termsAndConditionsText = fs.readFileSync('./raw-html/termsAndConditionsText.html').toString();
-const privacyPolicyText = fs.readFileSync('./raw-html/privacyPolicyText.html').toString();
+const loadHtml = (path) => minify(fs.readFileSync(path).toString());
+
+const termsAndConditionsText = loadHtml('./manual-loaded-content/termsAndConditionsText.html');
+const privacyPolicyText = loadHtml('./manual-loaded-content/privacyPolicyText.html');
 
 const SITE_TITLE = 'Roadie';
 
@@ -29,6 +33,8 @@ module.exports = {
       options: {
         path: `${__dirname}/content`,
         name: `blog`,
+        // Ignore stuff like Vim swp files, .DS_Store etc.
+        ignore: ['**/.*'],
       },
     },
     {
@@ -36,8 +42,26 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+        ignore: ['**/.*'],
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/plugins/descriptions`,
+        name: `pluginDescriptions`,
+        ignore: ['**/template*', '**/.*'],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/plugins/notes`,
+        name: `pluginNotes`,
+        ignore: ['**/template*', '**/.*'],
+      },
+    },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -60,6 +84,16 @@ module.exports = {
         ],
       },
     },
+
+    {
+      resolve: 'gatsby-transformer-plugin-descriptions',
+      options: {
+        // Without this, the query would just be 'descriptionsYaml'. It's a bit too generic
+        // and likely to clash as the site gets more complex.
+        typeName: ({ node }) => `${camelCase(node.relativeDirectory)}Yaml`,
+      },
+    },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -68,7 +102,6 @@ module.exports = {
         trackingId: 'UA-166771003-3',
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -76,7 +109,7 @@ module.exports = {
         short_name: SITE_TITLE,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: theme.palette.primary.main,
         display: `minimal-ui`,
         icon: `content/assets/roadie-r-764x764.png`,
       },

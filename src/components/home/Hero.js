@@ -1,9 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
+import { Lead, Headline } from 'components';
 
-import Headline from './Headline';
-import Lead from './Lead';
 import CallToAction from './CallToAction';
 import DemoLink from './DemoLink';
 
@@ -19,6 +18,7 @@ const useStyles = createUseStyles((theme) => ({
 
   leftCol: {
     paddingRight: 16,
+    paddingTop: 30,
   },
 
   rightCol: {
@@ -60,7 +60,12 @@ const Hero = ({ setModalOpen }) => {
   return (
     <div className={classes.root}>
       <div className={classnames(classes.col, classes.leftCol)}>
-        <Headline text="Get a grip on your microservices" />
+        <Headline>
+          <span>Get a grip on your microservices</span>{' '}
+          <span role="img" aria-label="Flexed biceps">
+            💪
+          </span>
+        </Headline>
 
         <div className={classes.leadWrapper}>
           <Lead

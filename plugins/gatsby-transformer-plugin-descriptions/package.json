@@ -1,0 +1,12 @@
+{
+  "name": "gatsby-transformer-plugin-descriptions",
+  "version": "1.0.0",
+  "description": "Transform plugin desctiptions into Gatsby nodes",
+  "main": "gatsby-node.js",
+  "author": "david@roadie.io",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "js-yaml": "^3.14.0"
+  }
+}
