@@ -105,7 +105,7 @@ export { plugin as LighthousePlugin } from '@backstage/plugin-lighthouse';
 
 In `packages/app/src/apis.ts` you should see that the Lighthouse plugin is configured to send requests to port `3003`.
 
-```type
+```typescript
 builder.add(lighthouseApiRef, new LighthouseRestApi('http://localhost:3003'));
 ```
 

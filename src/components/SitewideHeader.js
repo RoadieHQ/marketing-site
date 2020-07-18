@@ -28,6 +28,11 @@ const useStyles = createUseStyles((theme) => ({
   link: {
     color: theme.palette.grey[700],
     textDecoration: 'none',
+
+    '&:hover': {
+      textDecoration: 'underline',
+      color: theme.palette.grey[600],
+    },
   },
 
   logoLink: {
@@ -41,7 +46,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   leftSpace: {
-    marginLeft: 16,
+    marginLeft: 32,
   },
 }));
 
@@ -60,8 +65,18 @@ const SitewideHeader = ({ location }) => {
       </span>
 
       <nav className={classes.nav}>
-        {location && !location.pathname.includes('/blog') && (
+        {location && !location.pathname.match('\\/backstage\\/plugins\\/?$') && (
           <span className={classnames('typography-body', classes.textLinkWrapper)}>
+            <Link to="/backstage/plugins" className={classes.link}>
+              Backstage Plugins
+            </Link>
+          </span>
+        )}
+
+        {location && !location.pathname.includes('/blog') && (
+          <span
+            className={classnames('typography-body', classes.textLinkWrapper, classes.leftSpace)}
+          >
             <Link to="/blog" className={classes.link}>
               Blog
             </Link>
