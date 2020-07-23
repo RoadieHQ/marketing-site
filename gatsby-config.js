@@ -1,8 +1,9 @@
-const theme = require('./src/theme');
 const fs = require('fs');
 
-const termsAndConditionsText = fs.readFileSync('./private/termsAndConditionsText.html').toString();
-const privacyPolicyText = fs.readFileSync('./private/privacyPolicyText.html').toString();
+const theme = require('./src/theme');
+
+const termsAndConditionsText = fs.readFileSync('./raw-html/termsAndConditionsText.html').toString();
+const privacyPolicyText = fs.readFileSync('./raw-html/privacyPolicyText.html').toString();
 
 const SITE_TITLE = 'Roadie';
 
