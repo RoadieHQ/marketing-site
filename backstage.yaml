@@ -8,6 +8,6 @@ metadata:
   annotations:
     github.com/slug: RoadieHQ/marketing-site
 spec:
-  type: static-site-generator
+  type: website
   owner: david@roadie.io
   lifecycle: production
