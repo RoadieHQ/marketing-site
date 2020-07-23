@@ -8,6 +8,10 @@
  * The dev server needs restarting to pick up changes in this file.
  */
 
+* {
+  box-sizing: border-box;
+}
+
 /* Merriweather is good for blog posts */
 @font-face {
   font-family: Merriweather;
