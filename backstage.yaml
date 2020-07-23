@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: marketing-site
+  description: |
+    A Gatsby application for generating the Roadie marketing site. Includes
+    blog posts, legal policies, landing pages etc.
+  annotations:
+    github.com/slug: RoadieHQ/marketing-site
+spec:
+  type: static-site-generator
+  owner: david@roadie.io
+  lifecycle: production
