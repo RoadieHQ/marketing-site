@@ -95,7 +95,13 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        // Excluded pages should also be Disallowed by the robots.txt
+        exclude: ['/terms', '/privacy'],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

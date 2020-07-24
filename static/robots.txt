@@ -1,3 +1,6 @@
+# Pages which are disallowed here should also be excluded from the sitemap. The configuration
+# for this is with the 'gatsby-plugin-sitemap' plugin.
+
 User-agent: *
 Disallow: /terms
 Disallow: /privacy
