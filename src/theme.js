@@ -8,6 +8,8 @@ const deepOrange = require('@material-ui/core/colors/deepOrange').default;
 const grey = require('@material-ui/core/colors/grey').default;
 const indigo = require('@material-ui/core/colors/indigo').default;
 
+const PALETTE_PRIMARY_MAIN = deepOrange[600];
+
 const theme = {
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -46,7 +48,7 @@ const theme = {
 
     primary: {
       light: deepOrange[400],
-      main: deepOrange[600],
+      main: PALETTE_PRIMARY_MAIN,
       dark: deepOrange[900],
       contrastText: '#fff',
     },
@@ -83,6 +85,39 @@ const theme = {
   },
 
   typography: {},
+
+  preMadeStyles: {
+    content: {
+      '& p': {
+        marginTop: 0,
+        marginBottom: '1.75rem',
+        lineHeight: '1.75rem',
+      },
+
+      '& ol': {
+        marginBottom: '1.75rem',
+        listStylePosition: 'outside',
+        listStyleImage: 'none',
+        paddingLeft: 0,
+      },
+
+      '& li': {
+        marginBottom: 'calc(1.75rem / 2)',
+        display: 'list-item',
+        textAlign: '-webkit-match-parent',
+        paddingLeft: 0,
+        lineHeight: '1.75rem',
+      },
+
+      '& code': {
+        fontSize: '0.875rem',
+      },
+
+      '& a, & a:visited': {
+        color: PALETTE_PRIMARY_MAIN,
+      },
+    },
+  },
 };
 
 module.exports = theme;

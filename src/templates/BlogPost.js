@@ -7,42 +7,8 @@ import { SEO } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
 import PostHeader from 'components/blog/PostHeader';
 
-export const postInnerStyles = (theme) => ({
-  '& p': {
-    marginBottom: '1.75rem',
-    lineHeight: '1.75rem',
-  },
-
-  '& ol': {
-    marginBottom: '1.75rem',
-    listStylePosition: 'outside',
-    listStyleImage: 'none',
-    paddingLeft: 0,
-  },
-
-  '& li': {
-    marginBottom: 'calc(1.75rem / 2)',
-    display: 'list-item',
-    textAlign: '-webkit-match-parent',
-    paddingLeft: 0,
-    lineHeight: '1.75rem',
-  },
-
-  '& code': {
-    fontSize: '0.875rem',
-  },
-
-  '& a': {
-    color: theme.palette.primary.main,
-  },
-
-  '& a:visited': {
-    color: theme.palette.primary.main,
-  },
-});
-
 const useStyles = createUseStyles((theme) => ({
-  main: postInnerStyles(theme),
+  main: theme.preMadeStyles.content,
 }));
 
 const MAX_WIDTH_BREAKPOINT = 'md';

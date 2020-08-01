@@ -21,9 +21,8 @@ import Logo from 'components/backstage/plugins/Logo';
 import FormSubmissionModal from 'components/home/FormSubmissionModal';
 
 import theme from '../theme';
-import { postInnerStyles } from './BlogPost';
 
-const useStyles = createUseStyles((localTheme) => ({
+const useStyles = createUseStyles((theme) => ({
   header: {
     textAlign: 'center',
     paddingBottom: 40,
@@ -40,7 +39,7 @@ const useStyles = createUseStyles((localTheme) => ({
     paddingBottom: 40,
   },
 
-  notes: postInnerStyles(localTheme),
+  notes: theme.preMadeStyles.content,
 }));
 
 const PluginTemplate = ({ data, location }) => {
