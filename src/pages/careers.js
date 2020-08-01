@@ -10,9 +10,10 @@ import {
   InterstitialTitle,
   SitewideHeader,
   TwoColumnPoints,
+  Headline,
+  Lead,
 } from 'components';
 import Mission from '../components/careers/Mission';
-import Hero from '../components/careers/Hero';
 
 const useStyles = createUseStyles((theme) => ({
   hero: {
@@ -31,7 +32,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const VALUES = [
+export const VALUES = [
   [
     {
       title: 'Sustainability',
@@ -100,7 +101,11 @@ const Careers = ({ data, location }) => {
       <main className={classnames('typography-body', classes.content)}>
         <div className={classnames(classes.spacing, classes.hero)}>
           <LayoutControl maxWidthBreakpoint="lg">
-            <Hero siteTitle={siteTitle} />
+            <Headline>
+              <span>Careers @ {siteTitle}</span>
+            </Headline>
+
+            <Lead text="Change the lives of engineers all over the world" />
           </LayoutControl>
         </div>
 
