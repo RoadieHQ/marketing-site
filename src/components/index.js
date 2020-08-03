@@ -11,3 +11,6 @@ export { default as InterstitialTitle } from './InterstitialTitle';
 
 export { default as CodeBlock } from './CodeBlock';
 export { default as TwoColumnPoints } from './TwoColumnPoints';
+export { default as UnorderedList } from './UnorderedList';
+export { default as OrderedList } from './OrderedList';
+export { default as ButtonLink } from './ButtonLink';

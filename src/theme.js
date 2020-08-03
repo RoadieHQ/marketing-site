@@ -94,6 +94,13 @@ const theme = {
         lineHeight: '1.75rem',
       },
 
+      '& ul': {
+        marginBottom: '1.75rem',
+        listStylePosition: 'outside',
+        listStyleImage: 'none',
+        paddingLeft: 0,
+      },
+
       '& ol': {
         marginBottom: '1.75rem',
         listStylePosition: 'outside',

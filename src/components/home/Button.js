@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-const useStyles = createUseStyles((theme) => ({
+export const useStyles = createUseStyles((theme) => ({
   root: {
     display: 'inline-block',
     lineHeight: 1.5,
@@ -12,6 +12,7 @@ const useStyles = createUseStyles((theme) => ({
     userSelect: 'none',
     border: 'none',
     backgroundColor: theme.palette.primary.main,
+    textDecoration: 'none',
 
     // lg
     padding: '0.5rem 1rem',
@@ -38,11 +39,11 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Button = ({ text = 'Submit', type = 'submit', disabled = false }) => {
+const Button = ({ text = 'Submit', ...props }) => {
   const classes = useStyles();
 
   return (
-    <button type={type} className={classnames('typography-mono', classes.root)} disabled={disabled}>
+    <button className={classnames('typography-mono', classes.root)} {...props}>
       <span>{text}</span>
     </button>
   );

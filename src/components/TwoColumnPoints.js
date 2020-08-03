@@ -49,7 +49,7 @@ const TwoColumnPoints = ({ content = [[], []] }) => {
       </div>
 
       <div className={classnames(classes.col, classes.rightCol)}>
-        {content[0].map((props) => (
+        {content[1].map((props) => (
           <Point {...props} key={props.title} classes={classes} />
         ))}
       </div>

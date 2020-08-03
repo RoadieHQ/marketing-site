@@ -35,17 +35,17 @@ const useStyles = createUseStyles((theme) => ({
 export const VALUES = [
   [
     {
-      title: 'Sustainability',
+      title: '⏰ Sustainability',
       text:
         'Building a company is a marathon, not a sprint. We maintain a sustainable, family friendly pace.',
     },
     {
-      title: 'Curiosity',
+      title: '😻 Curiosity',
       text:
         'Get so close to your customers that they feel like your friends. Find that small tweak that can wow a user.',
     },
     {
-      title: 'Over to you...',
+      title: '👉 Over to you...',
       text:
         "Larder is an early stage startup. We haven't got it all figured out yet. Help define the future.",
     },
@@ -53,12 +53,12 @@ export const VALUES = [
 
   [
     {
-      title: 'Autonomy',
+      title: '🤖 Autonomy',
       text:
         'Your ideas and opinions will be heard. You will have the freedom to lead projects. We want you to feel invested in your work and be proud of it.',
     },
     {
-      title: 'Freedom',
+      title: '🦚 Freedom',
       text: 'Work from anywhere in the world. Choose your own hours and get ample time off.',
     },
   ],
@@ -68,20 +68,13 @@ const OPEN_ROLES = [
   [
     {
       title() {
-        return <Link to="/careers/frontend-engineer">Frontend Engineer</Link>;
-      },
-      text: 'Lorem ipsum',
-    },
-  ],
-
-  [
-    {
-      title() {
         return <Link to="/careers/backend-engineer">Backend Engineer</Link>;
       },
       text: 'Lorem ipsum',
     },
   ],
+
+  [],
 ];
 
 const Careers = ({ data, location }) => {
