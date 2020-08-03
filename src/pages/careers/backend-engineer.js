@@ -118,7 +118,7 @@ const PROCESS = (() => [
 ])();
 
 const APPLICATION_HREF =
-  '"https://larder.typeform.com/to/cdF3Ls?roleslug=backend-engineer&utm_source=roadie.io"';
+  'https://larder.typeform.com/to/cdF3Ls?roleslug=backend-engineer&utm_source=roadie.io';
 
 const BackendEngineer = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
