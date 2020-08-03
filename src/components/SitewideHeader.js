@@ -50,7 +50,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const SitewideHeader = ({ location }) => {
+const SitewideHeader = () => {
   const classes = useStyles();
   const data = useStaticQuery(query);
 
@@ -64,24 +64,26 @@ const SitewideHeader = ({ location }) => {
         </Link>
       </span>
 
-      <nav className={classes.nav}>
-        {location && !location.pathname.match('\\/backstage\\/plugins\\/?$') && (
-          <span className={classnames('typography-body', classes.textLinkWrapper)}>
+      <nav className={classnames('typography-body', classes.nav)}>
+        <span className={classes.textLinkWrapper}>
+          <span className={classes.leftSpace}>
             <Link to="/backstage/plugins" className={classes.link}>
               Backstage Plugins
             </Link>
           </span>
-        )}
 
-        {location && !location.pathname.includes('/blog') && (
-          <span
-            className={classnames('typography-body', classes.textLinkWrapper, classes.leftSpace)}
-          >
+          <span className={classes.leftSpace}>
+            <Link to="/careers" className={classes.link}>
+              Careers
+            </Link>
+          </span>
+
+          <span className={classes.leftSpace}>
             <Link to="/blog" className={classes.link}>
               Blog
             </Link>
           </span>
-        )}
+        </span>
 
         <span className={classes.leftSpace}>
           <IconLink url={`https://twitter.com/${data.site.siteMetadata.social.twitter}`}>
