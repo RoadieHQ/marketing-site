@@ -77,33 +77,32 @@ const ROLE = (() => {
     'Sub-5 employee at a fast-paced, VC-backed startup.',
     `Architect and build a foundational software stack from almost nothing.`,
     `You&apos;ll build new product features from start to finish: through conception, 
-     research, maintenance, and polish.`,
+     research, maintenance, operation, and polish.`,
     `Set the tone of the Roadie&apos;s engineering organization for the next 5+ years.`,
     `Contribute back to ${backstageLink} that Roadie is built on.`,
-    `Get stuck-in with customers and the broader community to gather feedback and help your work
-     gain widespread adoption.`,
-    `Happy to support relocation to Ireland if desired under the ${skillsLink}.`,
+    `Get stuck-in with customers, investors, and the broader community to gather feedback and
+     help your work gain widespread adoption.`,
+    `Happy to support relocation to Ireland under the ${skillsLink}.`,
   ];
 })();
 
 const REQUIREMENTS = (() => {
   return [
-    `You&apos;ve built and maintained quality user interfaces that have reached a large audience.`,
-    `You can readily learn most technologies as you go. To you, technologies are about tools and
+    `You&apos;ve built and maintained codebases that have operated at high-scale.`,
+    `You can readily learn most technologies as you go. To you, technologies are tools and
      tradeoffs, not an ideology.`,
     `You care about the business implications of anything you build. You&apos;re not just going
      after cool stuff — you understand the balance between craft, speed, and the bottom line.`,
     `You like to work iteratively and in small chunks. Roadie is moving fast while searching for
      product market fit. In the short term, done is better than perfect.`,
-    `You&apos;ve spent meaningful time as a senior engineer or tech lead — or even better,
-     you&apos;ve managed a team before.`,
-    `Bonus: You&apos;re fluent with Typescript, NodeJS, Postgres, Docker.`,
-    `A software engineering degree is ${renderToString(<strong>NOT</strong>)} required.`,
+    `You&apos;ve spent meaningful time as a senior engineer or tech lead.`,
+    `Bonus: You&apos;re fluent with Go, Kotlin, Postgres, Docker or Kubernetes.`,
+    `A college degree is ${renderToString(<strong>NOT</strong>)} required.`,
   ];
 })();
 
 const OFFER = (() => [
-  `$90,000 to $130,000 base salary (or equivalent in your currency).`,
+  `$90,000 to $110,000 base salary (or equivalent in your currency).`,
   `0.25% to 1.25% stock options`,
   `28 days paid time off`,
   `Work remotely from anywhere in the world. Choose your own hours.`,
@@ -111,11 +110,11 @@ const OFFER = (() => [
 ])();
 
 const PROCESS = (() => [
-  `$90,000 to $130,000 base salary (or equivalent in your currency).`,
-  `0.25% to 1.25% stock options`,
-  `28 days paid time off`,
-  `Work remotely from anywhere in the world. Choose your own hours.`,
-  `Support for health insurance, remote work and health and wellness.`,
+  `Application via Typeform. Click the big button below!`,
+  `Meet with Roadie's founder, to see if we're a mutual fit.`,
+  `Technical assessment.`,
+  `Culture fit assessment.`,
+  `Yes/No decision.`,
 ])();
 
 const APPLICATION_HREF =

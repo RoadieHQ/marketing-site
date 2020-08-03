@@ -70,7 +70,7 @@ const OPEN_ROLES = [
       title() {
         return <Link to="/careers/backend-engineer">Backend Engineer</Link>;
       },
-      text: 'Lorem ipsum',
+      text: `Build and manage critical infrastructure to keep Roadie's customers online and productive.`,
     },
   ],
 
