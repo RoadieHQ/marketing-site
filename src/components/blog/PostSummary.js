@@ -3,16 +3,18 @@ import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-import { postInnerStyles } from '../../templates/BlogPost';
-
 const useStyles = createUseStyles((theme) => ({
   root: {
     marginBottom: '4rem',
   },
 
+  header: {
+    marginBottom: '0.5rem',
+  },
+
   h3: {
     fontSize: '2rem',
-    marginBottom: 0,
+    marginBottom: '0.2rem',
   },
 
   titleLink: {
@@ -31,7 +33,7 @@ const useStyles = createUseStyles((theme) => ({
     marginBottom: 0,
   },
 
-  summary: postInnerStyles(theme),
+  summary: theme.preMadeStyles.content,
 }));
 
 const PostSummary = ({ post }) => {
@@ -41,13 +43,15 @@ const PostSummary = ({ post }) => {
 
   return (
     <article className={classes.root}>
-      <header>
+      <header className={classes.header}>
         <h3 className={classes.h3}>
           <Link to={post.fields.slug} className={classes.titleLink}>
             {title}
           </Link>
         </h3>
-        <small className={classes.date}>{post.frontmatter.date}</small>
+        <small className={classnames('typography-body', classes.date)}>
+          {post.frontmatter.date}
+        </small>
       </header>
       <section className={classnames('typography-content', classes.summary)}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />

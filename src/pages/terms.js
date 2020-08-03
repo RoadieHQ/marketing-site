@@ -3,13 +3,11 @@ import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-import { SEO } from 'components';
-import StickyFooter from 'components/layouts/StickyFooter';
+import { SEO, StickyFooter } from 'components';
 import PostHeader from 'components/blog/PostHeader';
-import { postInnerStyles } from '../templates/BlogPost';
 
 const useStyles = createUseStyles((theme) => ({
-  content: postInnerStyles(theme),
+  content: theme.preMadeStyles.content,
 }));
 
 /* There should be a way to programatically create this page using the BlogPost template. It's
