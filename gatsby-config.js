@@ -70,6 +70,12 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              // I was having a problem with screenshots which have a white background. Because the
+              // background of the blog posts is also white, there was no way to see where the image
+              // ended and the blog post began. It all just blurred together. This shadow defins
+              // the edge of the image.
+              wrapperStyle: 'box-shadow:0 0 5px -2px rgba(0,0,0,0.75);',
+              withWebp: true,
             },
           },
           {
@@ -78,6 +84,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-external-links`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,

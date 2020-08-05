@@ -16,9 +16,9 @@ import {
   SitewideFooter,
   SEO,
 } from 'components';
-import CallToAction from 'components/home/CallToAction';
+import CallToAction from 'components/actions/CallToAction';
 import Logo from 'components/backstage/plugins/Logo';
-import FormSubmissionModal from 'components/home/FormSubmissionModal';
+import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 
 import theme from '../theme';
 

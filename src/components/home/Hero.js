@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 import { Lead, Headline } from 'components';
 
-import CallToAction from './CallToAction';
+import CallToAction from '../actions/CallToAction';
 import DemoLink from './DemoLink';
 
 const useStyles = createUseStyles((theme) => ({

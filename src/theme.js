@@ -84,9 +84,17 @@ const theme = {
     },
   },
 
-  typography: {},
+  typography: {
+    bold: {
+      // We have a real Soehne font for this weight
+      fontWeight: 600,
+    },
+  },
 
   preMadeStyles: {
+    // These styles are set on the root element of HTML nodes which have compiled Markdown injected
+    // into then with dangerouslySetInnerHTML. There is no good way to use JSS with markdown
+    // so styling the root element is all we can do.
     content: {
       '& p': {
         marginTop: 0,
@@ -122,6 +130,14 @@ const theme = {
 
       '& a, & a:visited': {
         color: PALETTE_PRIMARY_MAIN,
+      },
+
+      '& dt': {
+        fontWeight: 600,
+      },
+
+      '& dd': {
+        lineHeight: '2rem',
       },
     },
   },

@@ -12,13 +12,10 @@
   box-sizing: border-box;
 }
 
-/* Merriweather is good for blog posts */
-@font-face {
-  font-family: Merriweather;
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url(/fonts/Merriweather/Merriweather-Regular.ttf);
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 @font-face {
@@ -29,8 +26,33 @@
   src: url(/fonts/lulo-clean/LuloCleanOutline-Bold.ttf);
 }
 
+@font-face {
+  font-family: Soehne;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  /* woff2 on its own will cover 95% of browsers in Aug 2020. Add woff format to cover everything */
+  src: url(/fonts/soehne/soehne-web-buch.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: Soehne;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/fonts/soehne/soehne-web-halbfett.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: Soehne-Mono;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/soehne/soehne-mono-web-buch.woff2) format('woff2');
+}
+
 .typography-content {
-  font-family: Merriweather, Georgia, serif;
+  font-family: Soehne, sans-serif;
   font-weight: 400;
   font-feature-settings: kern, liga, clig, calt;
   font-kerning: normal;
@@ -44,22 +66,16 @@
 }
 
 .typography-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: Soehne, sans-serif;
   font-weight: 400;
 }
 
 .typography-mono {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-weight: 700;
+  font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: 400;
 }
 
 .typography-mono::placeholder {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-weight: 700;
-}
-
-html, body, #___gatsby, #gatsby-focus-wrapper {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+  font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: 400;
 }
