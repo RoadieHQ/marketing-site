@@ -84,7 +84,7 @@ export const pageQuery = graphql`
       }
     }
 
-    plugins: allPluginsDescriptionsYaml(filter: { name: { ne: "template" } }) {
+    plugins: allYaml(filter: { name: { ne: "template" } }) {
       edges {
         node {
           name

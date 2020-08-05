@@ -30,8 +30,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-
-      filter: { fields: { slug: { regex: "//blog*/" } } }
+      filter: { fileAbsolutePath: { regex: "/.+/blog/.+/" } }
     ) {
       edges {
         node {

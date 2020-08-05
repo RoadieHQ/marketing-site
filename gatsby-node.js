@@ -3,7 +3,16 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const MARKDOWN_QUERY = `
 {
-  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+  allMarkdownRemark(
+    sort: {
+      fields: [frontmatter___date],
+      order: DESC
+    },
+    limit: 1000,
+    filter: {
+      fileAbsolutePath: {regex: "/.+/blog/.+/"}
+    }
+  ) {
     edges {
       node {
         fields {
@@ -20,7 +29,7 @@ const MARKDOWN_QUERY = `
 
 const YAML_QUERY = `
 {
-  allPluginsDescriptionsYaml {
+  allYaml {
     edges {
       node {
         name
@@ -38,7 +47,7 @@ const pluginDescriptionCreatePageOptions = async ({ graphql }) => {
     throw errors;
   }
 
-  const pluginDescriptions = data.allPluginsDescriptionsYaml.edges;
+  const pluginDescriptions = data.allYaml.edges;
 
   return pluginDescriptions.map(({ node: { name } }) => ({
     path: `/backstage/plugins/${name}/`,
@@ -51,22 +60,22 @@ const pluginDescriptionCreatePageOptions = async ({ graphql }) => {
 
 const blogPostCreatePageOptions = async ({ graphql }) => {
   const blogPostTemplate = path.resolve(`./src/templates/BlogPost.js`);
-  const result = await graphql(MARKDOWN_QUERY);
+  const { errors, data } = await graphql(MARKDOWN_QUERY);
 
-  if (result.errors) {
-    throw result.errors;
+  if (errors) {
+    throw errors;
   }
 
-  const posts = result.data.allMarkdownRemark.edges;
-  return posts.map((post, index) => {
+  const posts = data.allMarkdownRemark.edges;
+  return posts.map(({ node }, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
 
     return {
-      path: post.node.fields.slug,
+      path: node.fields.slug,
       component: blogPostTemplate,
       context: {
-        slug: post.node.fields.slug,
+        slug: node.fields.slug,
         previous,
         next,
       },
@@ -93,10 +102,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
+
+    if (/blog/.test(node.fileAbsolutePath)) {
+      createNodeField({
+        name: `slug`,
+        node,
+        value: `/blog${value}`,
+      });
+    } else {
+      createNodeField({
+        name: `slug`,
+        node,
+        value,
+      });
+    }
   }
 };

@@ -130,7 +130,7 @@ export const pageQuery = graphql`
       }
     }
 
-    plugin: pluginsDescriptionsYaml(name: { eq: $name }) {
+    plugin: yaml(name: { eq: $name }) {
       heading
       lead
 
