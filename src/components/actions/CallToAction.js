@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-import Button from './Button';
+import Button from '../home/Button';
 import { FORM_NAME } from '../../contactFormConstants';
 
 const useStyles = createUseStyles((theme) => ({
@@ -24,7 +24,6 @@ const useStyles = createUseStyles((theme) => ({
     color: theme.palette.secondary.dark,
 
     fontSize: '1rem',
-    fontWeight: 700,
     lineHeight: 2,
 
     '&:focus': {

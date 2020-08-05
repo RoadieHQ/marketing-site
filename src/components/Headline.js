@@ -4,12 +4,12 @@ import classnames from 'classnames';
 
 import theme from '../theme';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   h1: {
     fontSize: '3.75rem',
     lineHeight: 1.25,
     marginBottom: 0,
-    fontWeight: 700,
+    fontWeight: theme.typography.bold.fontWeight,
     marginTop: 0,
   },
 }));

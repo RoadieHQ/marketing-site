@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { createUseStyles } from 'react-jss';
-import deepOrange from '@material-ui/core/colors/deepOrange';
 
 const modalStyles = {
   overlay: {
@@ -23,13 +22,13 @@ const modalStyles = {
 
 Modal.setAppElement(`#___gatsby`);
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   modalContentWrapper: {
     padding: 16,
   },
 
   link: {
-    color: deepOrange[600],
+    color: theme.palette.primary.main,
   },
 }));
 

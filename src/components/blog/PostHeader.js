@@ -14,7 +14,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   h1: {
-    fontWeight: 700,
+    fontWeight: theme.typography.bold.fontWeight,
     fontSize: '2.75rem',
     color: theme.palette.grey[900],
     marginBottom: 0,
