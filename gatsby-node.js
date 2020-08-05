@@ -1,7 +1,7 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-const MARKDOWN_QUERY = `
+const BLOGS_QUERY = `
 {
   allMarkdownRemark(
     sort: {
@@ -10,16 +10,13 @@ const MARKDOWN_QUERY = `
     },
     limit: 1000,
     filter: {
-      fileAbsolutePath: {regex: "/.+/blog/.+/"}
+      fileAbsolutePath: {regex: "/.+content/blog/.+/"}
     }
   ) {
     edges {
       node {
         fields {
           slug
-        }
-        frontmatter {
-          title
         }
       }
     }
@@ -39,8 +36,31 @@ const YAML_QUERY = `
 }
 `;
 
+const PAGES_QUERY = `
+{
+  pages: allMarkdownRemark(
+    sort: {
+      fields: [frontmatter___date],
+      order: DESC
+    },
+    limit: 1000,
+    filter: {
+      fileAbsolutePath: {regex: "/.+/content/pages/.+/"}
+    }
+  ) {
+    edges {
+      node {
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+`;
+
 const pluginDescriptionCreatePageOptions = async ({ graphql }) => {
-  const pluginDescriptionTemplate = path.resolve(`./src/templates/Plugin.js`);
+  const component = path.resolve(`./src/templates/Plugin.js`);
   const { data, errors } = await graphql(YAML_QUERY);
 
   if (errors) {
@@ -51,7 +71,7 @@ const pluginDescriptionCreatePageOptions = async ({ graphql }) => {
 
   return pluginDescriptions.map(({ node: { name } }) => ({
     path: `/backstage/plugins/${name}/`,
-    component: pluginDescriptionTemplate,
+    component,
     context: {
       name,
     },
@@ -59,8 +79,8 @@ const pluginDescriptionCreatePageOptions = async ({ graphql }) => {
 };
 
 const blogPostCreatePageOptions = async ({ graphql }) => {
-  const blogPostTemplate = path.resolve(`./src/templates/BlogPost.js`);
-  const { errors, data } = await graphql(MARKDOWN_QUERY);
+  const component = path.resolve(`./src/templates/BlogPost.js`);
+  const { errors, data } = await graphql(BLOGS_QUERY);
 
   if (errors) {
     throw errors;
@@ -73,7 +93,7 @@ const blogPostCreatePageOptions = async ({ graphql }) => {
 
     return {
       path: node.fields.slug,
-      component: blogPostTemplate,
+      component,
       context: {
         slug: node.fields.slug,
         previous,
@@ -81,6 +101,24 @@ const blogPostCreatePageOptions = async ({ graphql }) => {
       },
     };
   });
+};
+
+const pagesCreatePageOptions = async ({ graphql }) => {
+  const component = path.resolve('./src/templates/Page.js');
+  const { errors, data } = await graphql(PAGES_QUERY);
+
+  if (errors) {
+    throw errors;
+  }
+
+  const pages = data.pages.edges;
+  return pages.map(({ node }) => ({
+    path: node.fields.slug,
+    component,
+    context: {
+      slug: node.fields.slug,
+    },
+  }));
 };
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -91,8 +129,13 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage(options);
   });
 
-  const createPageOptions = await pluginDescriptionCreatePageOptions({ graphql });
-  createPageOptions.forEach((options) => {
+  const yamlCreatePageOptions = await pluginDescriptionCreatePageOptions({ graphql });
+  yamlCreatePageOptions.forEach((options) => {
+    createPage(options);
+  });
+
+  const _pagesCreatePageOptions = await pagesCreatePageOptions({ graphql });
+  _pagesCreatePageOptions.forEach((options) => {
     createPage(options);
   });
 };

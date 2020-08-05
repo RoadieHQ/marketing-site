@@ -1,13 +1,6 @@
-const fs = require('fs');
-var { minify } = require('html-minifier');
 const camelCase = require('lodash/camelCase');
 
 const theme = require('./src/theme');
-
-const loadHtml = (path) => minify(fs.readFileSync(path).toString());
-
-const termsAndConditionsText = loadHtml('./manual-loaded-content/termsAndConditionsText.html');
-const privacyPolicyText = loadHtml('./manual-loaded-content/privacyPolicyText.html');
 
 const SITE_TITLE = 'Roadie';
 
@@ -19,11 +12,6 @@ module.exports = {
     social: {
       twitter: 'RoadieHQ',
       github: 'RoadieHQ',
-    },
-
-    content: {
-      termsAndConditionsText,
-      privacyPolicyText,
     },
   },
 
@@ -59,6 +47,15 @@ module.exports = {
         path: `${__dirname}/content/plugins/notes`,
         name: `pluginNotes`,
         ignore: ['**/template*', '**/.*'],
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pages`,
+        name: `pages`,
+        ignore: ['**/.*'],
       },
     },
 
