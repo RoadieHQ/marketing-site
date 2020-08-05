@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content`,
+        path: `${__dirname}/content/blog`,
         name: `blog`,
         // Ignore stuff like Vim swp files, .DS_Store etc.
         ignore: ['**/.*'],
