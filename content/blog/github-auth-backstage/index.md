@@ -1,7 +1,7 @@
 ---
 title: Using GitHub Auth with Backstage
-date: '2020-07-05T21:00:00.0Z'
-description:
+date: '2020-08-05T21:00:00.0Z'
+description: Setting up GitHub autententication can be a little tricky, but this post will tell you everything you need to know.
 ---
 
 GitHub is one of the most popular Backstage authentication mechanisms going. There's a good reason for this, Backstage ultimately needs to pull service catalog information from YAML files, those YAML files usually live in git, and the git repos usually live on GitHub.
