@@ -9,17 +9,13 @@ import DemoLink from './DemoLink';
 const useStyles = createUseStyles((theme) => ({
   root: {
     display: 'flex',
-    paddingTop: 60,
   },
 
   col: {
     flex: 1,
   },
 
-  leftCol: {
-    paddingRight: 16,
-    paddingTop: 30,
-  },
+  leftCol: {},
 
   rightCol: {
     marginLeft: 100,
@@ -37,7 +33,12 @@ const useStyles = createUseStyles((theme) => ({
   image: {},
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    root: {
+      paddingTop: 60,
+    },
+
     leftCol: {
+      paddingTop: 30,
       paddingRight: 0,
     },
 

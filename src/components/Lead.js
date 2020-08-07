@@ -6,8 +6,14 @@ import theme from '../theme';
 
 const useStyles = createUseStyles(() => ({
   root: {
-    fontSize: '1.35rem',
-    lineHeight: 1.7,
+    fontSize: '1.15rem',
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    root: {
+      fontSize: '1.35rem',
+      lineHeight: 1.7,
+    },
   },
 }));
 

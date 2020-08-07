@@ -1,38 +1,23 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
-import get from 'lodash/get';
 
-import StickyFooter from 'components/layouts/StickyFooter';
-import Logo from 'components/backstage/plugins/Logo';
-import { SEO } from 'components';
+import ListItem from 'components/backstage/plugins/ListItem';
+import { SEO, StickyFooter } from 'components';
 
 import theme from '../../theme';
 
 const useStyles = createUseStyles(() => ({
   ul: {
-    display: 'flex',
-    flexWrap: 'wrap',
     listStyle: 'none',
     paddingLeft: 0,
   },
 
-  li: {
-    flexGrow: 1,
-    maxWidth: 300,
-    display: 'inline-block',
-    marginLeft: 24,
-
-    '&:first-child': {
-      marginLeft: 0,
+  [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
+    ul: {
+      display: 'flex',
+      flexWrap: 'wrap',
     },
-  },
-
-  link: {
-    textAlign: 'center',
-    textDecoration: 'none',
-    textTransform: 'capitalize',
   },
 }));
 
@@ -51,23 +36,9 @@ const Home = ({ data, location }) => {
 
       <StickyFooter location={location}>
         <ul className={classes.ul}>
-          {plugins.edges.map(({ node: { name, childrenLogoImage, style } }) => {
-            const backgroundColor = get(style, 'primaryColor', theme.palette.primary.light);
-            const color = get(style, 'contrastingColor', theme.palette.text.primary);
-
-            return (
-              <li
-                className={classnames('typography-body', classes.li)}
-                key={name}
-                style={{ backgroundColor }}
-              >
-                <Link to={`/backstage/plugins/${name}`} className={classes.link} style={{ color }}>
-                  <Logo sharpImage={childrenLogoImage[0].childImageSharp} />
-                  <h2>{name}</h2>
-                </Link>
-              </li>
-            );
-          })}
+          {plugins.edges.map(({ node }) => (
+            <ListItem {...node} key={node.name} />
+          ))}
         </ul>
       </StickyFooter>
     </>

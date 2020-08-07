@@ -21,6 +21,8 @@ import Mission from '../../components/careers/Mission';
 const useStyles = createUseStyles((theme) => ({
   hero: {
     textAlign: 'center',
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 
   spacing: {
@@ -29,21 +31,15 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   content: {
+    paddingLeft: 16,
+    paddingRight: 16,
     ...theme.preMadeStyles.content,
-
-    '& ul': {
-      ...theme.preMadeStyles.content['& ul'],
-      paddingLeft: '3em',
-    },
-
-    '& ol': {
-      ...theme.preMadeStyles.content['& ol'],
-      paddingLeft: '3em',
-    },
   },
 
   sitewideHeaderWrapper: {
     marginBottom: 40,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 
   link: {
@@ -146,7 +142,7 @@ const BackendEngineer = ({ data, location }) => {
             text="Apply for this role"
             href={APPLICATION_HREF}
             target="__blank"
-            disabled
+            rel="noopener noreferrer"
           />
         </LayoutControl>
       </div>
@@ -193,12 +189,7 @@ const BackendEngineer = ({ data, location }) => {
         <LayoutControl maxWidthBreakpoint="lg">
           <InterstitialTitle text="Sound good?" />
           <div>
-            <ButtonLink
-              text="Apply for this role"
-              href={APPLICATION_HREF}
-              target="__blank"
-              disabled
-            />
+            <ButtonLink text="Apply for this role" href={APPLICATION_HREF} target="__blank" />
 
             <Link to="/careers" className={classnames('typography-mono', classes.link)}>
               See all roles
