@@ -24,17 +24,19 @@ const SitewideHeader = () => {
       <Logo />
 
       <nav className={classes.fullScreenNav}>
-        <NavItemSpacer>
-          <TextLink to="/backstage/plugins" text="Backstage Plugins" />
-        </NavItemSpacer>
+        <span className={classes.textLinkWrapper}>
+          <NavItemSpacer>
+            <TextLink to="/backstage/plugins" text="Backstage Plugins" />
+          </NavItemSpacer>
 
-        <NavItemSpacer>
-          <TextLink to="/careers" text="Careers" />
-        </NavItemSpacer>
+          <NavItemSpacer>
+            <TextLink to="/careers" text="Careers" />
+          </NavItemSpacer>
 
-        <NavItemSpacer>
-          <TextLink to="/blog" text="Blog" />
-        </NavItemSpacer>
+          <NavItemSpacer>
+            <TextLink to="/blog" text="Blog" />
+          </NavItemSpacer>
+        </span>
 
         <NavItemSpacer>
           <IconLink to={TWITTER_URL} target="_blank">

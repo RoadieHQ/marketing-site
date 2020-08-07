@@ -9,6 +9,10 @@ export default (theme) => ({
     display: 'none',
   },
 
+  textLinkWrapper: {
+    marginTop: -4,
+  },
+
   hamburgerMenuWrapper: {},
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
