@@ -23,12 +23,16 @@ const useStyles = createUseStyles((theme) => ({
   spacing: {
     paddingBottom: 24,
     marginBottom: 40,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 
   content: theme.preMadeStyles.content,
 
   sitewideHeaderWrapper: {
     marginBottom: 40,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 }));
 

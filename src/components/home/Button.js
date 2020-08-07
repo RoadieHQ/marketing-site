@@ -5,7 +5,6 @@ import classnames from 'classnames';
 export const useStyles = createUseStyles((theme) => ({
   root: {
     display: 'inline-block',
-    lineHeight: 1.5,
     color: theme.palette.grey[100],
     textAlign: 'center',
     cursor: 'pointer',
@@ -15,9 +14,9 @@ export const useStyles = createUseStyles((theme) => ({
     textDecoration: 'none',
 
     // lg
-    padding: '0.5rem 1rem',
-    fontSize: '1.25rem',
+    fontSize: '1rem',
     borderRadius: 0,
+    padding: '0.1rem 0.8rem',
 
     '&:hover': {
       backgroundColor: theme.palette.primary.light,
@@ -35,6 +34,15 @@ export const useStyles = createUseStyles((theme) => ({
     '&:disabled': {
       backgroundColor: theme.palette.grey[300],
       color: theme.palette.grey[500],
+    },
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    root: {
+      lineHeight: 1.5,
+      fontSize: '1.25rem',
+
+      padding: '0.5rem 1rem',
     },
   },
 }));

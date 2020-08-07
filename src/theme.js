@@ -23,26 +23,7 @@ const theme = {
   },
 
   palette: {
-    background: {
-      paper: '#fff',
-      default: '#fafafa',
-    },
-
-    error: {
-      light: '#e57373',
-      main: '#f44336',
-      dark: '#d32f2f',
-      contrastText: '#fff',
-    },
-
     grey,
-
-    info: {
-      light: '#64b5f6',
-      main: '#2196f3',
-      dark: '#1976d2',
-      contrastText: '#fff',
-    },
 
     deepOrange,
 
@@ -50,37 +31,23 @@ const theme = {
       light: deepOrange[400],
       main: PALETTE_PRIMARY_MAIN,
       dark: deepOrange[900],
-      contrastText: '#fff',
     },
 
     secondary: {
       light: indigo[400],
       main: indigo[600],
       dark: indigo[900],
-      contrastText: '#fff',
     },
 
-    success: {
-      light: '#81c784',
-      main: '#4caf50',
-      dark: '#388e3c',
-      contrastText: 'rgba(0, 0, 0, 0.87)',
-    },
-
+    // TODO: Names are confusing. secondary is basically a lighter primary, but then primary
+    // light is extremely light. "Light" is supposed to mean "this contrasts on a dark background".
     text: {
+      // Black on white
       primary: 'rgba(0, 0, 0, 0.87)',
       secondary: 'rgba(0, 0, 0, 0.54)',
-      disabled: 'rgba(0, 0, 0, 0.38)',
-      hint: 'rgba(0, 0, 0, 0.38)',
-    },
-  },
-
-  transitions: {
-    easing: {
-      easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
-      easeOut: 'cubic-bezier(0.0, 0, 0.2, 1)',
-      easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
-      sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
+      // White on Black
+      primaryLight: 'rgba(255, 255, 255, 0.87)',
+      secondaryLight: 'rgba(247, 247, 247, 0.87)',
     },
   },
 
@@ -106,14 +73,14 @@ const theme = {
         marginBottom: '1.75rem',
         listStylePosition: 'outside',
         listStyleImage: 'none',
-        paddingLeft: 0,
+        paddingLeft: '1em',
       },
 
       '& ol': {
         marginBottom: '1.75rem',
         listStylePosition: 'outside',
         listStyleImage: 'none',
-        paddingLeft: 0,
+        paddingLeft: '1em',
       },
 
       '& li': {
@@ -132,12 +99,27 @@ const theme = {
         color: PALETTE_PRIMARY_MAIN,
       },
 
+      '& dl': {
+        // The whole page will scroll horizontally without this.
+        overflowX: 'scroll',
+      },
+
       '& dt': {
         fontWeight: 600,
       },
 
       '& dd': {
         lineHeight: '2rem',
+      },
+
+      '@media (min-width: 720px)': {
+        '& ul': {
+          paddingLeft: '3em',
+        },
+
+        '& ol': {
+          paddingLeft: '3em',
+        },
       },
     },
   },

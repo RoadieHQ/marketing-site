@@ -18,13 +18,13 @@ const useStyles = createUseStyles((theme) => ({
     border: 'none',
     borderLeft: `2px solid ${theme.palette.primary.main}`,
     borderRadius: 0,
-    padding: '0.5rem 0.5rem',
 
     backgroundColor: theme.palette.grey[100],
     color: theme.palette.secondary.dark,
 
     fontSize: '1rem',
     lineHeight: 2,
+    padding: '0.1rem 0.5rem',
 
     '&:focus': {
       borderRadius: 0,
@@ -57,6 +57,12 @@ const useStyles = createUseStyles((theme) => ({
 
   label: {
     display: 'none',
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    input: {
+      padding: '0.5rem 0.5rem',
+    },
   },
 }));
 

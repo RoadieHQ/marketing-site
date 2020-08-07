@@ -1,37 +1,40 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { Link } from 'gatsby';
+import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
-  link: {
+  root: {
     color: ({ color }) =>
       color === 'contrasting' ? theme.palette.text.secondaryLight : theme.palette.text.secondary,
+    textDecoration: 'none',
     outline: 'none',
-    cursor: 'pointer',
 
     '&:hover': {
+      textDecoration: 'underline',
       color: ({ color }) =>
         color === 'contrasting' ? theme.palette.text.primaryLight : theme.palette.text.primary,
     },
   },
 }));
 
-const IconLink = ({ to, children, color }) => {
+const TextLink = ({ to, text, color }) => {
   const classes = useStyles({ color });
+  const rootClassList = classnames('typography-body', classes.root);
 
   if (to.startsWith('/')) {
     return (
-      <Link to={to} className={classes.root}>
-        {children}
+      <Link to={to} className={rootClassList}>
+        {text}
       </Link>
     );
   }
 
   return (
-    <a href={to} target="_blank" rel="noopener noreferrer" className={classes.link}>
-      {children}
+    <a href={to} className={rootClassList} target="_blank" rel="noreferrer noopener">
+      {text}
     </a>
   );
 };
 
-export default IconLink;
+export default TextLink;
