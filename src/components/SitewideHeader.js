@@ -13,12 +13,12 @@ const useStyles = createUseStyles((theme) => ({
     justifyContent: 'space-between',
   },
 
-  nav: {
-    display: 'flex',
-  },
-
   textLinkWrapper: {
     marginTop: -2,
+  },
+
+  nav: {
+    display: 'none',
   },
 
   logoH2: {
@@ -47,6 +47,12 @@ const useStyles = createUseStyles((theme) => ({
 
   leftSpace: {
     marginLeft: 32,
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    nav: {
+      display: 'flex',
+    },
   },
 }));
 

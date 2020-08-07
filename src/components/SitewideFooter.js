@@ -4,6 +4,7 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles((theme) => ({
   inner: {
+    display: 'none',
     minHeight: 40,
 
     color: theme.palette.grey[700],
