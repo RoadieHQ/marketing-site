@@ -61,6 +61,7 @@ const styles = {
 
 const useStyles = createUseStyles(() => ({
   '@global': {
+    // Prevent the page scrolling while the menu is open.
     '.no-scroll': {
       overflow: 'hidden',
     },
@@ -72,6 +73,11 @@ const useStyles = createUseStyles(() => ({
 
   iconSpacer: {
     marginLeft: 16,
+  },
+
+  textLink: {
+    // Make the links easier to click.
+    display: 'block',
   },
 }));
 
@@ -90,15 +96,20 @@ const HamburgerMenu = () => {
     >
       <div>
         <div className={classes.spacer}>
-          <TextLink to="/backstage/plugins" text="Backstage Plugins" color="contrasting" />
+          <TextLink
+            to="/backstage/plugins"
+            text="Backstage Plugins"
+            color="contrasting"
+            className={classes.textLink}
+          />
         </div>
 
         <div className={classes.spacer}>
-          <TextLink to="/careers" text="Careers" color="contrasting" />
+          <TextLink to="/careers" text="Careers" color="contrasting" className={classes.textLink} />
         </div>
 
         <div className={classes.spacer}>
-          <TextLink to="/blog" text="Blog" color="contrasting" />
+          <TextLink to="/blog" text="Blog" color="contrasting" className={classes.textLink} />
         </div>
       </div>
 
@@ -123,11 +134,21 @@ const HamburgerMenu = () => {
 
         <div>
           <div className={classes.spacer}>
-            <TextLink to="/terms" text="Terms of service" color="contrasting" />
+            <TextLink
+              to="/terms"
+              text="Terms of service"
+              color="contrasting"
+              className={classes.textLink}
+            />
           </div>
 
           <div className={classes.spacer}>
-            <TextLink to="/privacy" text="Privacy" color="contrasting" />
+            <TextLink
+              to="/privacy"
+              text="Privacy"
+              color="contrasting"
+              className={classes.textLink}
+            />
           </div>
         </div>
       </div>
