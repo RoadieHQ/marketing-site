@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
+import { FaPaperPlane } from 'react-icons/fa';
 
 import Button from '../home/Button';
 import { FORM_NAME } from '../../contactFormConstants';
@@ -76,7 +77,7 @@ const encode = (data) => {
 
 const CallToAction = ({
   placeholderText = 'Work email',
-  buttonText = 'Notify me',
+  buttonText = 'Click here',
   setModalOpen,
 }) => {
   const classes = useStyles();
@@ -130,7 +131,7 @@ const CallToAction = ({
           value={email}
         />
 
-        <Button text={buttonText} disabled={disabled} />
+        <Button text={buttonText} disabled={disabled} icon={<FaPaperPlane />} />
       </div>
       <div className={classnames('typography-body', subFormStateClass, classes.subForm)}>
         {subForm.message}

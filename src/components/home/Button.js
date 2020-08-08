@@ -37,6 +37,21 @@ export const useStyles = createUseStyles((theme) => ({
     },
   },
 
+  prefixIconWrapper: {
+    marginRight: 8,
+    verticalAlign: 'middle',
+  },
+
+  textWrapper: {
+    display: 'none',
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
+    textWrapper: {
+      display: 'inline',
+    },
+  },
+
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
       lineHeight: 1.5,
@@ -47,12 +62,18 @@ export const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Button = ({ text = 'Submit', ...props }) => {
+const Button = ({ text = 'Submit', icon, ...props }) => {
   const classes = useStyles();
+
+  let prefixIcon;
+  if (icon) {
+    prefixIcon = <span className={classes.prefixIconWrapper}>{icon}</span>;
+  }
 
   return (
     <button className={classnames('typography-mono', classes.root)} {...props}>
-      <span>{text}</span>
+      {prefixIcon}
+      <span className={classes.textWrapper}>{text}</span>
     </button>
   );
 };
