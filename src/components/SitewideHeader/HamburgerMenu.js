@@ -5,6 +5,7 @@ import { createUseStyles } from 'react-jss';
 
 import IconLink from '../IconLink';
 import TextLink from './TextLink';
+import { LINE_HEIGHT } from './Logo';
 
 const styles = {
   bmBurgerButton: {
@@ -12,7 +13,13 @@ const styles = {
     position: 'relative',
     // The hamburger menu tends to sit too close to the scrollbar on mobile if we don't apply
     // some padding. It can be difficult to tap when the scrollbar is in the way.
-    padding: 8,
+    paddingRight: 4,
+    // Forcing the width prevents a bug on Android Chrome where the icon would
+    // grow massive when a user navigated to another page using the sidebar navigation. I
+    // couldn't adequately debug the root cause due to a lack of dev toops on Android Chrome
+    // so fixing it with the brute force approach.
+    width: 20,
+    lineHeight: LINE_HEIGHT,
   },
 
   bmCrossButton: {

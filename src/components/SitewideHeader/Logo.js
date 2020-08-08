@@ -3,9 +3,14 @@ import { createUseStyles } from 'react-jss';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 
+export const LINE_HEIGHT = 2;
+
 const useStyles = createUseStyles((theme) => ({
   h2: {
     color: theme.palette.text.primary,
+    margin: 0,
+    padding: 0,
+    lineHeight: LINE_HEIGHT,
   },
 
   link: {
