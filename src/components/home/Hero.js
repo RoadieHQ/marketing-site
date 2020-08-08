@@ -76,11 +76,11 @@ const Hero = ({ setModalOpen }) => {
             `}
           />
 
-          <Lead text="Coming soon..." />
+          <Lead text="Get early access..." />
         </div>
 
         <div className={classes.callToActionWrapper}>
-          <CallToAction setModalOpen={setModalOpen} />
+          <CallToAction setModalOpen={setModalOpen} buttonText="Let me in!" />
         </div>
 
         <div>
