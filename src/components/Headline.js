@@ -6,7 +6,7 @@ import theme from '../theme';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    fontSize: '2.75rem',
+    fontSize: '3.75rem',
     lineHeight: 1.25,
     marginBottom: 0,
     fontWeight: theme.typography.bold.fontWeight,
@@ -15,17 +15,17 @@ const useStyles = createUseStyles((theme) => ({
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
-      fontSize: '3.75rem',
+      fontSize: '6.75rem',
     },
   },
 }));
 
 const DEFAULT_COLOR = theme.palette.text.primary;
 
-const Headline = ({ children, color = DEFAULT_COLOR }) => {
+const Headline = ({ children, className, color = DEFAULT_COLOR }) => {
   const classes = useStyles();
   return (
-    <h1 className={classnames('typography-body', classes.root)} style={{ color }}>
+    <h1 className={classnames(classes.root, className)} style={{ color }}>
       {children}
     </h1>
   );

@@ -4,7 +4,6 @@ import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import get from 'lodash/get';
-import classnames from 'classnames';
 
 import {
   Lead,
@@ -126,16 +125,13 @@ const PluginTemplate = ({ data, location }) => {
           {notes && notes !== '' && (
             <div>
               <InterstitialTitle text="Things to know" />
-              <div
-                className={classnames('typography-content', classes.notes)}
-                dangerouslySetInnerHTML={{ __html: notes.html }}
-              />
+              <div className={classes.notes} dangerouslySetInnerHTML={{ __html: notes.html }} />
             </div>
           )}
 
           <div className={classes.callToActionWrapper}>
             <InterstitialTitle text="Backstage without the headaches" />
-            <CallToAction setModalOpen={setModalOpen} />
+            <CallToAction setModalOpen={setModalOpen} buttonText="Sign me up!" />
           </div>
         </LayoutControl>
       </div>

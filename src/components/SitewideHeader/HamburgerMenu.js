@@ -75,16 +75,24 @@ const useStyles = createUseStyles(() => ({
   },
 
   spacer: {
-    marginBottom: 16,
+    marginBottom: '1em',
   },
 
   iconSpacer: {
-    marginLeft: 16,
+    marginLeft: '1em',
   },
 
   textLink: {
     // Make the links easier to click.
     display: 'block',
+  },
+
+  legalLinks: {
+    fontSize: '1rem',
+  },
+
+  legalSpacer: {
+    marginBottom: '0.7em',
   },
 }));
 
@@ -139,8 +147,8 @@ const HamburgerMenu = () => {
           </span>
         </div>
 
-        <div>
-          <div className={classes.spacer}>
+        <div className={classes.legalLinks}>
+          <div className={classes.legalSpacer}>
             <TextLink
               to="/terms"
               text="Terms of service"

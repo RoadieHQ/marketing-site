@@ -1,20 +1,19 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    marginBottom: '4rem',
+    marginBottom: '4em',
   },
 
   header: {
-    marginBottom: '0.5rem',
+    marginBottom: '0.5em',
   },
 
   h3: {
     fontSize: '2rem',
-    marginBottom: '0.2rem',
+    marginBottom: '0.2em',
   },
 
   titleLink: {
@@ -28,12 +27,18 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   date: {
-    fontSize: '0.875rem',
     marginTop: 0,
     marginBottom: 0,
   },
 
   summary: theme.preMadeStyles.content,
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    h3: {
+      fontSize: '2.7rem',
+      marginBottom: '0.2em',
+    },
+  },
 }));
 
 const PostSummary = ({ post }) => {
@@ -49,11 +54,9 @@ const PostSummary = ({ post }) => {
             {title}
           </Link>
         </h3>
-        <small className={classnames('typography-body', classes.date)}>
-          {post.frontmatter.date}
-        </small>
+        <small className={classes.date}>{post.frontmatter.date}</small>
       </header>
-      <section className={classnames('typography-content', classes.summary)}>
+      <section className={classes.summary}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />
       </section>
     </article>

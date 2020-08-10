@@ -1,14 +1,12 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    marginBottom: '2rem',
+    marginBottom: '2em',
   },
 
   date: {
-    fontSize: '0.875rem',
     marginTop: 0,
     marginBottom: 0,
   },
@@ -19,6 +17,12 @@ const useStyles = createUseStyles((theme) => ({
     color: theme.palette.grey[900],
     marginBottom: 0,
   },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    h1: {
+      fontSize: '3.75rem',
+    },
+  },
 }));
 
 const PostHeader = ({ post }) => {
@@ -26,8 +30,8 @@ const PostHeader = ({ post }) => {
 
   return (
     <header className={classes.root}>
-      <h1 className={classnames('typography-content', classes.h1)}>{post.frontmatter.title}</h1>
-      <p className={classnames('typography-content', classes.date)}>{post.frontmatter.date}</p>
+      <h1 className={classes.h1}>{post.frontmatter.title}</h1>
+      <p className={classes.date}>{post.frontmatter.date}</p>
     </header>
   );
 };

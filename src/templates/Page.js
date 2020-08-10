@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
 
 import { SEO } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
@@ -14,7 +13,6 @@ const useStyles = createUseStyles((theme) => ({
 const Page = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const classes = useStyles();
-  console.log(data);
   const post = data.markdownRemark;
 
   return (
@@ -24,7 +22,7 @@ const Page = ({ data, location }) => {
       <StickyFooter location={location}>
         <PostHeader post={post} />
         <article
-          className={classnames('typography-content', classes.content)}
+          className={classes.content}
           dangerouslySetInnerHTML={{
             __html: post.html,
           }}

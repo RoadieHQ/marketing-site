@@ -147,7 +147,7 @@ const BackendEngineer = ({ data, location }) => {
         </LayoutControl>
       </div>
 
-      <main className={classnames('typography-body', classes.content)}>
+      <main className={classes.content}>
         <div className={classes.spacing}>
           <LayoutControl maxWidthBreakpoint="lg">
             <InterstitialTitle text="Our mission" />

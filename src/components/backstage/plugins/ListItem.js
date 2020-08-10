@@ -1,6 +1,5 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
 import get from 'lodash/get';
 import { Link } from 'gatsby';
 
@@ -42,7 +41,7 @@ const ListItem = (props) => {
   const sharpImage = props.childrenLogoImage[0].childImageSharp;
 
   return (
-    <li className={classnames('typography-body', classes.root)}>
+    <li className={classes.root}>
       <Link to={`/backstage/plugins/${props.name}`} className={classes.link}>
         <Logo sharpImage={sharpImage} />
         <h2 className={classes.h2}>{props.name}</h2>

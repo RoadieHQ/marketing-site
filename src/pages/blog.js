@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO } from 'components';
-import StickyFooter from 'components/layouts/StickyFooter';
+import { SEO, StickyFooter } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 
 const MAX_WIDTH_BREAKPOINT = 'md';
