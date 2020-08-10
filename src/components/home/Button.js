@@ -14,7 +14,6 @@ export const useStyles = createUseStyles((theme) => ({
     textDecoration: 'none',
 
     // lg
-    fontSize: '1rem',
     borderRadius: 0,
     padding: '0.1rem 0.8rem',
 
@@ -42,21 +41,9 @@ export const useStyles = createUseStyles((theme) => ({
     verticalAlign: 'middle',
   },
 
-  textWrapper: {
-    display: 'none',
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
-    textWrapper: {
-      display: 'inline',
-    },
-  },
-
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
       lineHeight: 1.5,
-      fontSize: '1.25rem',
-
       padding: '0.5rem 1rem',
     },
   },
@@ -73,7 +60,7 @@ const Button = ({ text = 'Submit', icon, ...props }) => {
   return (
     <button className={classnames('typography-mono', classes.root)} {...props}>
       {prefixIcon}
-      <span className={classes.textWrapper}>{text}</span>
+      <span>{text}</span>
     </button>
   );
 };

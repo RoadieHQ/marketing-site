@@ -3,7 +3,7 @@ import React from 'react';
 const CodeBlock = ({ language, code, intro }) => {
   return (
     <div>
-      {intro && intro !== '' && <p className="typography-body">{intro.trim()}</p>}
+      {intro && intro !== '' && <p>{intro.trim()}</p>}
 
       {code && code !== '' && (
         <div className="gatsby-highlight" data-language={language}>

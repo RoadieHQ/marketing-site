@@ -6,12 +6,12 @@ import theme from '../theme';
 
 const useStyles = createUseStyles(() => ({
   root: {
-    fontSize: '1.15rem',
+    fontSize: '1.6rem',
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
-      fontSize: '1.35rem',
+      fontSize: '1.8rem',
       lineHeight: 1.7,
     },
   },
@@ -19,11 +19,11 @@ const useStyles = createUseStyles(() => ({
 
 const DEFAULT_COLOR = theme.palette.text.primary;
 
-const Lead = ({ text = 'Some attention grabbing text', color = DEFAULT_COLOR }) => {
+const Lead = ({ className, text = 'Some attention grabbing text', color = DEFAULT_COLOR }) => {
   const classes = useStyles();
 
   return (
-    <p className={classnames('typography-body', classes.root)} style={{ color }}>
+    <p className={classnames(classes.root, className)} style={{ color }}>
       {text}
     </p>
   );

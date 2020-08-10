@@ -65,34 +65,18 @@ const theme = {
     content: {
       '& p': {
         marginTop: 0,
-        marginBottom: '1.75rem',
-        lineHeight: '1.75rem',
       },
 
       '& ul': {
-        marginBottom: '1.75rem',
-        listStylePosition: 'outside',
-        listStyleImage: 'none',
         paddingLeft: '1em',
       },
 
       '& ol': {
-        marginBottom: '1.75rem',
-        listStylePosition: 'outside',
-        listStyleImage: 'none',
         paddingLeft: '1em',
       },
 
       '& li': {
         marginBottom: 'calc(1.75rem / 2)',
-        display: 'list-item',
-        textAlign: '-webkit-match-parent',
-        paddingLeft: 0,
-        lineHeight: '1.75rem',
-      },
-
-      '& code': {
-        fontSize: '0.875rem',
       },
 
       '& a, & a:visited': {

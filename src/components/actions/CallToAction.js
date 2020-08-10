@@ -23,7 +23,6 @@ const useStyles = createUseStyles((theme) => ({
     backgroundColor: theme.palette.grey[100],
     color: theme.palette.secondary.dark,
 
-    fontSize: '1rem',
     lineHeight: 2,
     padding: '0.1rem 0.5rem',
 
@@ -40,14 +39,13 @@ const useStyles = createUseStyles((theme) => ({
 
     '&::placeholder': {
       color: theme.palette.secondary.light,
-      fontSize: '0.875rem',
       // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
       opacity: 0.5,
     },
   },
 
   subForm: {
-    fontSize: '0.875rem',
+    fontSize: '1.2rem',
     color: theme.palette.grey[600],
     minHeight: 16,
   },
@@ -62,6 +60,7 @@ const useStyles = createUseStyles((theme) => ({
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     input: {
+      fontSize: '2rem',
       padding: '0.5rem 0.5rem',
     },
   },
@@ -126,7 +125,7 @@ const CallToAction = ({
           name="email"
           aria-label="Work email address"
           placeholder={placeholderText}
-          className={classnames('typography-mono', classes.input)}
+          className={classes.input}
           onChange={onInputChange}
           value={email}
         />

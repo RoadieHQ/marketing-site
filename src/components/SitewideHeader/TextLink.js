@@ -20,7 +20,7 @@ const useStyles = createUseStyles((theme) => ({
 
 const TextLink = ({ to, text, color, className }) => {
   const classes = useStyles({ color });
-  const rootClassList = classnames('typography-body', classes.root, className);
+  const rootClassList = classnames(classes.root, className);
 
   if (to.startsWith('/')) {
     return (

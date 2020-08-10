@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
 
 import { SEO, InterstitialTitle } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
@@ -39,7 +38,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <FormSubmissionModal modalOpen={modalOpen} handleCloseModal={handleCloseModal} />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <main className={classnames('typography-content', classes.main)}>
+        <main className={classes.main}>
           <article>
             <PostHeader post={post} />
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -48,7 +47,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
         <div className={classes.callToActionWrapper}>
           <InterstitialTitle text="Backstage without the headaches" />
-          <CallToAction setModalOpen={setModalOpen} />
+          <CallToAction setModalOpen={setModalOpen} buttonText="Sign me up!" />
         </div>
       </StickyFooter>
     </>

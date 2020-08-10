@@ -3,7 +3,8 @@ export default (theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 24,
+    marginBottom: '1em',
+    paddingTop: '1em',
   },
 
   fullScreenNav: {

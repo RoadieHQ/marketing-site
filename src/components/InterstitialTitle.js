@@ -10,11 +10,11 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const InterstitialTitle = ({ text }) => {
+const InterstitialTitle = ({ text, className }) => {
   const classes = useStyles();
 
   return (
-    <div className={classnames('typography-body', classes.root)}>
+    <div className={classnames(classes.root, className)}>
       <h2>{text}</h2>
     </div>
   );

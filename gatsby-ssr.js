@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const { FORM_NAME } = require('./src/contactFormConstants');
 
-const HEAD_CSS = fs.readFileSync('src/styles.css').toString();
+const HEAD_CSS = fs.readFileSync('src/head-loaded-styles.css').toString();
 
 // <form netlify... /> is here to trigger the netlify bot into making form submissions available
 // for this website. If I put the tags on the form which actually performs the submission

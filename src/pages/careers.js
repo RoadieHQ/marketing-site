@@ -95,7 +95,7 @@ const Careers = ({ data, location }) => {
         </LayoutControl>
       </div>
 
-      <main className={classnames('typography-body', classes.content)}>
+      <main className={classes.content}>
         <div className={classnames(classes.spacing, classes.hero)}>
           <LayoutControl maxWidthBreakpoint="lg">
             <Headline>

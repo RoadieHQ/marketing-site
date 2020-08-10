@@ -1,0 +1,229 @@
+/* DO NOT put general styling in here. Use JSS for that instead.
+ *
+ * This is a place to put styles which need to go inline in the document head for every page
+ * of the site. It is a good place to put reset styles and styling which we want to apply
+ * before the page is rendered. For example, it could be useful to prevent flashes of unstyled
+ * content.
+ *
+ * The dev server needs restarting to pick up changes in this file.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Soehne;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  /* woff2 on its own will cover 95% of browsers in Aug 2020. Add woff format to cover everything */
+  src: url(/fonts/soehne/soehne-web-buch.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: Soehne;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/fonts/soehne/soehne-web-halbfett.woff2) format('woff2');
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  font-size: 63.5%;
+}
+
+body, #___gatsby, #gatsby-focus-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Soehne, sans-serif;
+  font-weight: 400;
+  font-kerning: normal;
+  color: hsla(0, 0%, 0%, 0.9);
+}
+
+@font-face {
+  font-family: LuloCleanOutline;
+  font-style: normal;
+  font-display: block;
+  font-weight: 700;
+  src: url(/fonts/lulo-clean/LuloCleanOutline-Bold.ttf);
+}
+
+@font-face {
+  font-family: Soehne-Mono;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/soehne/soehne-mono-web-buch.woff2) format('woff2');
+}
+
+.typography-logo {
+  font-family: LuloCleanOutline;
+  font-weight: 700;
+}
+
+.typography-mono {
+  font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: 400;
+}
+
+.typography-mono::placeholder {
+  font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: 400;
+}
+
+/**
+ * This is here because I wanted to change the font-size and font-family of code blocks
+ * and I couldn't figure out how to override them with JSS.
+ * TODO: Figure out how to load CSS files in a sensible way.
+ */
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+  font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1.4rem;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
