@@ -1,6 +1,7 @@
 # The server must be restarted to pick up changes in ths file.
 
-# Required. Must be unique across all files in the directory.
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+# separators.
 name: template
 heading: 'Backstage Template Plugin'
 # Keep it short
