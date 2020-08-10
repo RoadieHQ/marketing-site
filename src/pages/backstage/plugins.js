@@ -32,7 +32,8 @@ const Home = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={`Hosted, managed, enterprise Backstage | ${title}`} />
+      <SEO title={`Backstage Plugin Directory | ${title}`} />
+      <SEO description="A comprehensive list of Backstage plugins, with screenshots, installation instructions and usage guides." />
 
       <StickyFooter location={location}>
         <ul className={classes.ul}>
