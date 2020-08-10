@@ -1,0 +1,41 @@
+name: travis-ci
+heading: 'Backstage Travis CI Plugin'
+lead: 'See builds in Backstage'
+
+seo:
+  title: 'Backstage Travis CI Plugin | Roadie'
+  description: |
+    The Backstage Travis CI plugin integrates with Travis CI to show your builds
+    information inside Backstage and associate it with your services.
+
+logo:
+  fileSystemPath: './content/assets/logos/travis-ci/travis-ci-mascot-200x200.png'
+  width: 200
+  height: 200
+
+coverImage:
+  fileSystemPath: './content/assets/travis-ci-plugin-1642x1027.png'
+  alt: 'A screenshot of the Travis CI plugin. It is showing a list of builds for a sample service.'
+
+gettingStarted:
+  - intro: 'Install the plugin in your Backstage instance'
+    language: 'bash'
+    code: 'yarn add @roadiehq/backstage-plugin-travis-ci'
+  - intro: 'Add the plugin to the list of plugins'
+    language: 'typescript'
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as TravisCI } from '@roadiehq/backstage-plugin-travis-ci';
+  - intro: 'Add the API to your Backstage instance'
+    language: 'typescript'
+    code: |
+      // packages/app/src/api.ts
+      import { TravisCIApi, travisCIApiRef } from '@roadiehq/backstage-plugin-travis-ci';
+
+      // ...
+
+      builder.add(travisCIApiRef, new TravisCIApi());
+
+style:
+  primaryColor: 'rgb(46, 169, 72)'
+  contrastingColor: '#fff'

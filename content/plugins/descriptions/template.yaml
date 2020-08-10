@@ -16,8 +16,11 @@ seo:
 
 logo:
   # This must be a relative path. It should start without a slash or with ./
+  # The overall size of the file should be approximately 200 by 200.
+  # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+  # The image will be made grayscale by Gatsby Image Sharp.
   fileSystemPath: './content/assets/logos/sentry/sentry-glyph-light-200x184.png'
-  # The dimensions are required.
+  # The dimensions are required. They are the outer dimensions of the image file.
   width: 200
   height: 184
 
