@@ -54,9 +54,9 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const ROLE_NAME = 'Backend Engineer';
-const TYPEFORM_SLUG = 'backend-engineer';
-const HEADLINE = 'Set the technical direction of Roadie';
+const ROLE_NAME = 'Frontend Engineer';
+const TYPEFORM_SLUG = 'frontend-engineer';
+const HEADLINE = 'Become a top open-source contributor';
 
 const ROLE = (() => {
   const backstageLink = renderToString(
@@ -67,12 +67,10 @@ const ROLE = (() => {
 
   return [
     'Founding engineer at an early stage, VC-backed startup.',
-    `Architect and build a foundational software stack from almost nothing.`,
+    `Become a top contributor to the ${backstageLink} that Roadie is built on.`,
     `You'll build new product features from start to finish: through conception, 
      research, maintenance, operation, and polish.`,
-    `Set the tone of Roadie's engineering organization for the next 5+ years.
-     Influence the roadmap from an early stage.`,
-    `Contribute back to ${backstageLink} that Roadie is built on.`,
+    `Set the tone of Roadie's engineering organization for the next 5+ years.`,
     `Get stuck-in with customers, investors, and the broader community to gather feedback and
      help your work gain widespread adoption.`,
   ];
@@ -80,15 +78,14 @@ const ROLE = (() => {
 
 const REQUIREMENTS = (() => {
   return [
-    `You've built and maintained codebases that have operated at high-scale.`,
     `You can readily learn most technologies as you go. To you, technologies are tools and
      trade-offs, not an ideology.`,
     `You care about the business implications of anything you build. You're not just going
      after cool stuff — you understand the balance between craft, speed, and the bottom line.`,
     `You like to work iteratively and in small chunks. Roadie is moving fast while searching for
      product market fit. In the short term, done is better than perfect.`,
-    `You've spent meaningful time as a senior engineer or tech lead.`,
-    `Bonus: You're fluent with Go or Kotlin and cloud-native technologies.`,
+    `You've spent time as a senior engineer or equivalent role.`,
+    `You're fluent with JavaScript. TypeScript and React experience is a bonus.`,
     `You should be located within the timezone band: UTC-1 to UTC+2`,
     `A college degree is ${renderToString(<strong>NOT</strong>)} required.`,
   ];

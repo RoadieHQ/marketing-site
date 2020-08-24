@@ -51,7 +51,7 @@ export const VALUES = [
     {
       title: '👉 Over to you...',
       text:
-        "Larder is an early stage startup. We haven't got it all figured out yet. Help define the future.",
+        "Roadie is an early stage startup. We haven't got it all figured out yet. Help define the future.",
     },
   ],
 
@@ -63,7 +63,7 @@ export const VALUES = [
     },
     {
       title: '🦚 Freedom',
-      text: 'Work from anywhere in the world. Choose your own hours and get ample time off.',
+      text: 'Work remotely. Choose your own hours and get ample time off.',
     },
   ],
 ];
@@ -78,7 +78,14 @@ const OPEN_ROLES = [
     },
   ],
 
-  [],
+  [
+    {
+      title() {
+        return <Link to="/careers/frontend-engineer">Frontend Engineer</Link>;
+      },
+      text: `Become a top contributor to the open-source software that Roadie is built on.`,
+    },
+  ],
 ];
 
 const Careers = ({ data, location }) => {
@@ -87,7 +94,13 @@ const Careers = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={`Careers | ${siteTitle}`} />
+      <SEO
+        title={`Join a VC-backed startup | Careers at ${siteTitle}`}
+        description={`
+          Get in on the ground floor of a VC-backed startup. Drive the roadmap,
+          influence the vision and build the culture.
+        `}
+      />
 
       <div className={classes.sitewideHeaderWrapper}>
         <LayoutControl maxWidthBreakpoint="lg">
@@ -102,7 +115,7 @@ const Careers = ({ data, location }) => {
               <span>Careers @ {siteTitle}</span>
             </Headline>
 
-            <Lead text="Change the lives of engineers all over the world" />
+            <Lead text="Turn software development upside-down forever" />
           </LayoutControl>
         </div>
 
