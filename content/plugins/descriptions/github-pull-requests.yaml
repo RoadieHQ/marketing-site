@@ -1,0 +1,62 @@
+# The server must be restarted to pick up changes in ths file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+# separators.
+name: github-pull-requests
+humanName: GitHub Pull Requests
+heading: 'Backstage GitHub Pull Requests Plugin'
+# Keep it short
+lead: 'See Pull Requests for your service in Backstage'
+
+seo:
+  # Don't forget to end with "| Roadie"
+  title: 'Backstage GitHub Pull Requests Plugin | Roadie'
+  description: |
+    See GitHub Pull Requests in Backstage. Supports filtering, search and statistics
+    on your pull requests.
+
+logo:
+  # This must be a relative path. It should start without a slash or with ./
+  # The overall size of the file should be approximately 200 by 200.
+  # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+  # The image will be made greyscale by Gatsby Image Sharp.
+  fileSystemPath: './content/assets/logos/github/PNG/GitHub-Mark-Light-120px-plus.png'
+  # The dimensions are required. They are the outer dimensions of the image file.
+  width: 120
+  height: 120
+
+coverImage:
+  # This must be a relative path. It should start without a slash or with ./
+  fileSystemPath: './content/assets/github-pull-requests-cover.png'
+  alt: |
+    Pull requests for Backstage rendered inside a Backstage plugin.
+    The statistics widget is alongside, showing the average time to merge a PR.
+
+# Instructions for someone who wants to use this plugin.
+# languages used here must be listed in the .babelrc
+gettingStarted:
+    # What will this step accomplish?
+  - intro: Install the plugin into Backstage.
+    language: bash
+    code: 'yarn add @roadiehq/backstage-plugin-github-pull-requests'
+  - intro: Import it into your Backstage application.
+    language: typescript
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as GithubPullRequests } from '@roadiehq/backstage-plugin-github-pull-requests';
+  - intro: Load the plugin and add its APIs to the builder.
+    language: typescript
+    code: |
+      // packages/app/src/apis.ts
+      import { GithubPullRequestsClient, githubPullRequestsApiRef } from '@roadiehq/backstage-plugin-github-pull-requests';
+
+      export const apis = (config: ConfigApi) => {
+        // ... existing code here.
+        builder.add(githubPullRequestsApiRef, new GithubPullRequestsClient());
+      };
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+style:
+  # These colors will fall back to a default if omitted.
+  primaryColor: 'rgb(36, 41, 46)'
+  contrastingColor: '#fff'
