@@ -1,4 +1,5 @@
 name: travis-ci
+humanName: Travis CI
 heading: 'Backstage Travis CI Plugin'
 lead: 'See builds in Backstage'
 

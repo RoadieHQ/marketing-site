@@ -44,7 +44,7 @@ const ListItem = (props) => {
     <li className={classes.root}>
       <Link to={`/backstage/plugins/${props.name}`} className={classes.link}>
         <Logo sharpImage={sharpImage} />
-        <h2 className={classes.h2}>{props.name}</h2>
+        <h2 className={classes.h2}>{props.humanName}</h2>
       </Link>
     </li>
   );

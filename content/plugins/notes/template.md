@@ -1,4 +1,5 @@
 ---
+# The name must match that of the corresponding description YAML.
 name: template
 ---
 

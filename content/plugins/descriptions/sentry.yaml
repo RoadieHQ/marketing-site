@@ -1,4 +1,5 @@
 name: sentry
+humanName: Sentry
 heading: 'Backstage Sentry Plugin'
 lead: 'Correlate services with problems in production'
 

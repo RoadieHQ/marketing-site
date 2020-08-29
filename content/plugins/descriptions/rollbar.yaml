@@ -1,4 +1,5 @@
 name: rollbar
+humanName: Rollbar
 heading: 'Backstage Rollbar Plugin'
 lead: 'Correlate services with problems in production'
 

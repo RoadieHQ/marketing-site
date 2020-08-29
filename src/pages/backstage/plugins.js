@@ -56,10 +56,14 @@ export const pageQuery = graphql`
       }
     }
 
-    plugins: allYaml(filter: { name: { ne: "template" } }) {
+    plugins: allYaml(
+      filter: { name: { ne: "template" } }
+      sort: { fields: humanName, order: ASC }
+    ) {
       edges {
         node {
           name
+          humanName
 
           style {
             primaryColor

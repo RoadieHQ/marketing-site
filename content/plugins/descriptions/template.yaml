@@ -1,8 +1,10 @@
-# The server must be restarted to pick up changes in ths file.
+# The server must be restarted to pick up changes in this file.
 
 # Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
 # separators.
 name: template
+# Required. Can have whitespace. Should be titleized.
+humanName: Template
 heading: 'Backstage Template Plugin'
 # Keep it short
 lead: 'Describe the problem that the plugin will solve for users'
@@ -18,7 +20,7 @@ logo:
   # This must be a relative path. It should start without a slash or with ./
   # The overall size of the file should be approximately 200 by 200.
   # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
-  # The image will be made grayscale by Gatsby Image Sharp.
+  # The image will be made greyscale by Gatsby Image Sharp.
   fileSystemPath: './content/assets/logos/sentry/sentry-glyph-light-200x184.png'
   # The dimensions are required. They are the outer dimensions of the image file.
   width: 200
@@ -33,12 +35,14 @@ coverImage:
 # languages used here must be listed in the .babelrc
 gettingStarted:
     # What will this step accomplish?
-  - intro: 'Install the plugin'
-    language: 'bash'
-    code: 'yarn add @backstage/plugin-template'
-  - intro: 'Import it into your Backstage application'
-    language: 'typescript'
-    code: ""
+  - intro: Install the plugin
+    language: bash
+    code: yarn add @roadiehq/backstage-plugin-github-pull-requests
+  - intro: Import it into your Backstage application
+    language: typescript
+    code: |
+      // packages/app/src/apis.ts
+      import { GithubPullRequestsClient, githubPullRequestsApiRef } from '@roadiehq/backstage-plugin-github-pull-requests';
   - intro: 'Heres where things get good...'
     language: 'typescript'
     code: |
