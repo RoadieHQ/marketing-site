@@ -6,7 +6,7 @@ lead: 'See builds in Backstage'
 seo:
   title: 'Backstage Travis CI Plugin | Roadie'
   description: |
-    The Backstage Travis CI plugin integrates with Travis CI to show your builds
+    The Backstage Travis CI plugin integrates with Travis CI to show your build
     information inside Backstage and associate it with your services.
 
 logo:

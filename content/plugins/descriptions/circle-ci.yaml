@@ -2,34 +2,34 @@
 
 # Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
 # separators.
-name: template
+name: circle-ci
 # Required. Can have whitespace. Should be titleized.
-humanName: Template
-heading: 'Backstage Template Plugin'
+humanName: Circle CI
+heading: 'Backstage Circle CI Plugin'
 # Keep it short
-lead: 'Describe the problem that the plugin will solve for users'
+lead: 'See Circle CI Builds in Backstage'
 
 seo:
   # Don't forget to end with "| Roadie"
-  title: 'Backstage Template Plugin | Roadie'
+  title: 'Backstage Circle CI Plugin | Roadie'
   description: |
-    What would you want to know before clicking this in Google. Think about searcher intent.
-    Don't forget to keep it under 160 chars.
+    The Backstage Circle CI plugin integrates with Circle CI to show your build
+    information inside Backstage where it can be associated with your services.
 
 logo:
   # This must be a relative path. It should start without a slash or with ./
   # The overall size of the file should be approximately 200 by 200.
   # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
   # The image will be made greyscale by Gatsby Image Sharp.
-  fileSystemPath: './content/assets/logos/sentry/sentry-glyph-light-200x184.png'
+  fileSystemPath: './content/assets/logos/circle-ci/circle-logo-stacked-white-28.png'
   # The dimensions are required. They are the outer dimensions of the image file.
-  width: 200
-  height: 184
+  width: 583
+  height: 572
 
 coverImage:
   # This must be a relative path. It should start without a slash or with ./
-  fileSystemPath: './content/assets/sentry-plugin-1604x716.png'
-  alt: 'Explain what is in the image'
+  fileSystemPath: './content/assets/circle-ci-plugin.png'
+  alt: 'A list of builds in a table along with a status and retry button for each build.'
 
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc
@@ -37,20 +37,24 @@ gettingStarted:
     # What will this step accomplish?
   - intro: Install the plugin
     language: bash
-    code: yarn add @roadiehq/backstage-plugin-github-pull-requests
+    code: yarn add @backstage/plugin-circleci
   - intro: Import it into your Backstage application
     language: typescript
     code: |
-      // packages/app/src/apis.ts
-      import { GithubPullRequestsClient, githubPullRequestsApiRef } from '@roadiehq/backstage-plugin-github-pull-requests';
-  - intro: 'Heres where things get good...'
+      // packages/app/src/plugins.ts
+      export { plugin as Circleci } from '@backstage/plugin-circleci';
+  - intro: 'Add the plugin API to your API builder'
     language: typescript
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Template } from '@backstage/plugin-template';
+      // packages/app/src/apis.ts
+      import { CircleCIApi, circleCIApiRef } from '@backstage/plugin-circleci';
+
+      export const apis = (config: ConfigApi) => {
+        builder.add(circleCIApiRef, new CircleCIApi(/* optional custom url for your own CircleCI instance */));
+      };
 
 # Optional. Use this to suit the brand of the tool that the plugin integrates with.
 style:
   # These colors will fall back to a default if omitted.
-  primaryColor: 'hsl(30.6, 97.1%, 58.8%)'
+  primaryColor: '#161616'
   contrastingColor: '#fff'
