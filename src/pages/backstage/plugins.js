@@ -5,19 +5,11 @@ import { createUseStyles } from 'react-jss';
 import ListItem from 'components/backstage/plugins/ListItem';
 import { SEO, StickyFooter } from 'components';
 
-import theme from '../../theme';
-
 const useStyles = createUseStyles(() => ({
-  ul: {
-    listStyle: 'none',
-    paddingLeft: 0,
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
-    ul: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gridGap: '1rem',
   },
 }));
 
@@ -36,11 +28,11 @@ const Home = ({ data, location }) => {
       <SEO description="A comprehensive list of Backstage plugins, with screenshots, installation instructions and usage guides." />
 
       <StickyFooter location={location}>
-        <ul className={classes.ul}>
+        <div className={classes.grid}>
           {plugins.edges.map(({ node }) => (
             <ListItem {...node} key={node.name} />
           ))}
-        </ul>
+        </div>
       </StickyFooter>
     </>
   );
