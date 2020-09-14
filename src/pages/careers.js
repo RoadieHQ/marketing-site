@@ -72,20 +72,13 @@ const OPEN_ROLES = [
   [
     {
       title() {
-        return <Link to="/careers/backend-engineer">Backend Engineer</Link>;
-      },
-      text: `Build and manage critical infrastructure to keep Roadie's customers online and productive.`,
-    },
-  ],
-
-  [
-    {
-      title() {
         return <Link to="/careers/frontend-engineer">Frontend Engineer</Link>;
       },
       text: `Become a top contributor to the open-source software that Roadie is built on.`,
     },
   ],
+
+  [],
 ];
 
 const Careers = ({ data, location }) => {
