@@ -50,7 +50,7 @@ const FormSubmissionModal = ({
       <div className={classes.modalContentWrapper}>
         <h2>
           {titleText}{' '}
-          <span aria-label="Party Steamers" role="img">
+          <span aria-label="Party Streamers" role="img">
             🎉
           </span>
         </h2>
