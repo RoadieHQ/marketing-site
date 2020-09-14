@@ -6,7 +6,7 @@ import { SEO, InterstitialTitle } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
 import PostHeader from 'components/blog/PostHeader';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-import CallToAction from 'components/actions/CallToAction';
+import SubscribeToNewsletter from 'components/actions/SubscribeToNewsletter';
 
 const useStyles = createUseStyles((theme) => ({
   main: theme.preMadeStyles.content,
@@ -14,6 +14,12 @@ const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
     paddingTop: 40,
     paddingBottom: 40,
+    textAlign: 'center',
+  },
+
+  callToActionParagraph: {
+    marginBottom: 24,
+    marginTop: 0,
   },
 }));
 
@@ -35,7 +41,12 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <FormSubmissionModal modalOpen={modalOpen} handleCloseModal={handleCloseModal} />
+      <FormSubmissionModal
+        modalOpen={modalOpen}
+        handleCloseModal={handleCloseModal}
+        titleText="You're subscribed!"
+        bodyText="Your inbox should receive the first edition within a few days."
+      />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         <main className={classes.main}>
@@ -46,8 +57,11 @@ const BlogPostTemplate = ({ data, location }) => {
         </main>
 
         <div className={classes.callToActionWrapper}>
-          <InterstitialTitle text="Backstage without the headaches" />
-          <CallToAction setModalOpen={setModalOpen} buttonText="Sign me up!" />
+          <InterstitialTitle text="Become a Backstage expert" />
+          <p className={classes.callToActionParagraph}>
+            Get the latest Backstage news in your inbox each week.
+          </p>
+          <SubscribeToNewsletter setModalOpen={setModalOpen} buttonText="Subscribe" />
         </div>
       </StickyFooter>
     </>

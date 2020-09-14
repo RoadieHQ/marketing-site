@@ -32,7 +32,12 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const FormSubmissionModal = ({ modalOpen, handleCloseModal }) => {
+const FormSubmissionModal = ({
+  modalOpen,
+  handleCloseModal,
+  titleText = 'Thank you!',
+  bodyText = `We'll be in touch to learn more about your stack and the problems you're trying to solve.`,
+}) => {
   const classes = useStyles();
 
   return (
@@ -44,15 +49,12 @@ const FormSubmissionModal = ({ modalOpen, handleCloseModal }) => {
     >
       <div className={classes.modalContentWrapper}>
         <h2>
-          Thank you!{' '}
+          {titleText}{' '}
           <span aria-label="Party Steamers" role="img">
             🎉
           </span>
         </h2>
-        <p>
-          {`We'll be in touch to learn more about your stack
-            and the problems you're trying to solve.`}
-        </p>
+        <p>{bodyText}</p>
 
         <p>
           In the meantime, you could&nbsp;

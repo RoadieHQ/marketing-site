@@ -5,86 +5,22 @@ import { FaPaperPlane } from 'react-icons/fa';
 
 import Button from '../home/Button';
 import { FORM_NAMES } from '../../contactFormConstants';
-
-export const styles = (theme) => ({
-  inputWrapper: {
-    width: '100%',
-    display: 'flex',
-    marginBottom: 8,
-  },
-
-  input: {
-    flex: 1,
-
-    border: 'none',
-    borderLeft: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: 0,
-
-    backgroundColor: theme.palette.grey[100],
-    color: theme.palette.secondary.dark,
-
-    lineHeight: 2,
-    padding: '0.1rem 0.5rem',
-
-    '&:focus': {
-      borderRadius: 0,
-      // Just change the color of the border so the cursor in the input doesn't move.
-      borderLeftColor: 'transparent',
-      outlineWidth: 2,
-      outlineStyle: 'solid',
-      outlineColor: theme.palette.primary.main,
-      // Fixes issue in Firefox where outline is outside the input vs Chrome where it is inside.
-      outlineOffset: -2,
-    },
-
-    '&::placeholder': {
-      color: theme.palette.secondary.light,
-      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
-      opacity: 0.5,
-    },
-  },
-
-  subForm: {
-    fontSize: '1.2rem',
-    color: theme.palette.grey[600],
-    minHeight: 16,
-  },
-
-  subFormerror: {
-    color: theme.palette.deepOrange[700],
-  },
-
-  label: {
-    display: 'none',
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    input: {
-      fontSize: '2rem',
-      padding: '0.5rem 0.5rem',
-    },
-  },
-});
+import { styles, encode } from './CallToAction';
 
 const useStyles = createUseStyles(styles);
 
-export const encode = (data) => {
-  const formData = new FormData();
-  Object.keys(data).forEach((k) => {
-    formData.append(k, data[k]);
-  });
-  return formData;
-};
-
-const CallToAction = ({
-  placeholderText = 'Work email',
+const SubscribeToNewsletter = ({
+  placeholderText = 'human@company.com',
   buttonText = 'Click here',
+  subFormMessage = 'We will never sell or share your email address.',
   setModalOpen,
 }) => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const [subForm, setSubForm] = useState({});
+  const [subForm, setSubForm] = useState({
+    message: subFormMessage,
+  });
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -93,7 +29,7 @@ const CallToAction = ({
     const resp = await fetch('/', {
       method: 'POST',
       body: encode({
-        'form-name': FORM_NAMES.notifyMe,
+        'form-name': FORM_NAMES.subscribeToNewsletter,
         email,
       }),
     });
@@ -141,4 +77,4 @@ const CallToAction = ({
   );
 };
 
-export default CallToAction;
+export default SubscribeToNewsletter;
