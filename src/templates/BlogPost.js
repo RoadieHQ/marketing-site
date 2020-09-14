@@ -45,7 +45,7 @@ const BlogPostTemplate = ({ data, location }) => {
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
         titleText="You're subscribed!"
-        bodyText="Your inbox should receive the first edition within a few days."
+        bodyText="You should receive the first edition within a few days."
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
