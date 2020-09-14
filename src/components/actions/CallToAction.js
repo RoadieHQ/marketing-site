@@ -134,9 +134,7 @@ const CallToAction = ({
 
         <Button text={buttonText} disabled={disabled} icon={<FaPaperPlane />} />
       </div>
-      <div className={classnames('typography-body', subFormStateClass, classes.subForm)}>
-        {subForm.message}
-      </div>
+      <div className={classnames(subFormStateClass, classes.subForm)}>{subForm.message}</div>
     </form>
   );
 };
