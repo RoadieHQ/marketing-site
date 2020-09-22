@@ -31,7 +31,7 @@ Read the [official announcement on the Backstage website](https://backstage.io/b
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mOLCgdPw1iA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Merged last week...
+## Merged last week...
 
 95 pull requests have been merged to Backstage in the last week. Here are the highlights…
 
