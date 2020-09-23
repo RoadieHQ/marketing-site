@@ -45,7 +45,7 @@ const BlogPostTemplate = ({ data, location }) => {
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
         titleText="You're subscribed!"
-        bodyText="You should receive the first edition within a few days."
+        bodyText="You should receive the first edition within a week."
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
@@ -59,7 +59,11 @@ const BlogPostTemplate = ({ data, location }) => {
         <div className={classes.callToActionWrapper}>
           <InterstitialTitle text="Become a Backstage expert" />
           <p className={classes.callToActionParagraph}>
-            Get the latest Backstage news in your inbox each week.
+            To get the latest news, deep dives into Backstage features, and a roundup of recent
+            open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
+            <a href="https://backstage-weekly.roadie.io" target="_blank" rel="noopener noreferrer">
+              See recent editions.
+            </a>
           </p>
           <SubscribeToNewsletter setModalOpen={setModalOpen} buttonText="Subscribe" />
         </div>
