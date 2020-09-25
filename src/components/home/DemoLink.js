@@ -25,7 +25,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const CallToAction = ({ siteMetadata }) => {
+const DemoLink = ({ siteMetadata }) => {
   const classes = useStyles();
 
   return (
@@ -43,4 +43,4 @@ const CallToAction = ({ siteMetadata }) => {
   );
 };
 
-export default CallToAction;
+export default DemoLink;
