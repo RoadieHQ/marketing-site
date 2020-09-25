@@ -32,14 +32,63 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
+const twitterUrl = ({ social }) => `https://twitter.com/${social.twitter}`;
+
+const NewsletterAndTwitterInner = ({ siteMetadata, classes }) => (
+  <p>
+    Learn more about Backstage via{' '}
+    <a
+      href={siteMetadata.newsletterUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.link}
+    >
+      our newsletter
+    </a>{' '}
+    or follow{' '}
+    <a
+      href={twitterUrl(siteMetadata)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.link}
+    >
+      @RoadieHQ
+    </a>
+    .
+  </p>
+);
+
+const TwitterInner = ({ siteMetadata, classes }) => (
+  <p>
+    Follow{' '}
+    <a
+      href={twitterUrl(siteMetadata)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.link}
+    >
+      @RoadieHQ
+    </a>
+    .
+  </p>
+);
+
 const FormSubmissionModal = ({
   modalOpen,
   handleCloseModal,
   titleText = 'Thank you!',
   bodyText = `We'll be in touch to learn more about your stack and the problems you're trying to solve.`,
   siteMetadata,
+  followOn = 'NEWSLETTER_AND_TWITTER',
 }) => {
   const classes = useStyles();
+
+  let followOnContent = <NewsletterAndTwitterInner siteMetadata={siteMetadata} classes={classes} />;
+  if (followOn === 'TWITTER') {
+    // Doesn't make sense to offer to let people sign up to the newsletter immediately after
+    // they have just signed up to the newsletter.
+    followOnContent = <TwitterInner siteMetadata={siteMetadata} classes={classes} />;
+  }
 
   return (
     <Modal
@@ -56,28 +105,7 @@ const FormSubmissionModal = ({
           </span>
         </h2>
         <p>{bodyText}</p>
-
-        <p>
-          In the meantime, you could&nbsp;
-          <a
-            href={`https://twitter.com/${siteMetadata.social.twitter}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.link}
-          >
-            follow Roadie on Twitter
-          </a>
-          &nbsp;or play with the&nbsp;
-          <a
-            href={siteMetadata.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.link}
-          >
-            Backstage demo
-          </a>
-          .
-        </p>
+        {followOnContent}
       </div>
     </Modal>
   );

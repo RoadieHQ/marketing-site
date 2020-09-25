@@ -21,6 +21,8 @@ const Home = ({ data, location }) => {
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
         siteMetadata={data.site.siteMetadata}
+        bodyText={`We'll be in touch via email to schedule your demo.`}
+        titleText="Fantastic!"
       />
 
       <StickyFooter location={location}>
@@ -37,7 +39,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        demoUrl
+        newsletterUrl
         social {
           twitter
         }

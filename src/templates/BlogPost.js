@@ -6,7 +6,8 @@ import { SEO, InterstitialTitle } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
 import PostHeader from 'components/blog/PostHeader';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-import SubscribeToNewsletter from 'components/actions/SubscribeToNewsletter';
+import CallToAction from 'components/actions/CallToAction';
+import { FORM_NAMES } from '../contactFormConstants';
 
 const useStyles = createUseStyles((theme) => ({
   main: theme.preMadeStyles.content,
@@ -28,7 +29,7 @@ const MAX_WIDTH_BREAKPOINT = 'md';
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
   const classes = useStyles();
-  const siteTitle = data.site.siteMetadata.title;
+  const { title: siteTitle, newsletterUrl } = data.site.siteMetadata;
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -48,6 +49,7 @@ const BlogPostTemplate = ({ data, location }) => {
         titleText="You're subscribed!"
         bodyText="You should receive the first edition within a week."
         siteMetadata={data.site.siteMetadata}
+        followOn="TWITTER"
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
@@ -60,14 +62,21 @@ const BlogPostTemplate = ({ data, location }) => {
 
         <div className={classes.callToActionWrapper}>
           <InterstitialTitle text="Become a Backstage expert" />
+
           <p className={classes.callToActionParagraph}>
             To get the latest news, deep dives into Backstage features, and a roundup of recent
             open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
-            <a href="https://backstage-weekly.roadie.io" target="_blank" rel="noopener noreferrer">
+            <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">
               See recent editions.
             </a>
           </p>
-          <SubscribeToNewsletter setModalOpen={setModalOpen} buttonText="Subscribe" />
+
+          <CallToAction
+            setModalOpen={setModalOpen}
+            buttonText="Subscribe"
+            netlifyFormName={FORM_NAMES.subscribeToNewsletter}
+            followOn="TWITTER"
+          />
         </div>
       </StickyFooter>
     </>
@@ -81,7 +90,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        demoUrl
+        newsletterUrl
         social {
           twitter
         }

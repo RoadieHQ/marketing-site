@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles((theme) => ({
@@ -32,6 +32,8 @@ const useStyles = createUseStyles((theme) => ({
 
 const SitewideFooter = () => {
   const classes = useStyles();
+  const data = useStaticQuery(query);
+  const { newsletterUrl } = data.site.siteMetadata;
 
   return (
     <footer>
@@ -39,7 +41,12 @@ const SitewideFooter = () => {
         <div>© {new Date().getFullYear()} Larder, Inc. All rights reserved.</div>
 
         <nav>
-          <Link to="/terms">Terms of service</Link>
+          <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">
+            Backstage Weekly
+          </a>
+          <Link to="/terms" className={classes.nonFirstLink}>
+            Terms of service
+          </Link>
           <Link to="/privacy" className={classes.nonFirstLink}>
             Privacy
           </Link>
@@ -50,3 +57,14 @@ const SitewideFooter = () => {
 };
 
 export default SitewideFooter;
+
+export const query = graphql`
+  query SitewideFooter {
+    site {
+      siteMetadata {
+        title
+        newsletterUrl
+      }
+    }
+  }
+`;

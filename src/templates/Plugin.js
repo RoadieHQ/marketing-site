@@ -19,6 +19,7 @@ import CallToAction from 'components/actions/CallToAction';
 import Logo from 'components/backstage/plugins/Logo';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 
+import { FORM_NAMES } from '../contactFormConstants';
 import theme from '../theme';
 
 const useStyles = createUseStyles((theme) => ({
@@ -80,7 +81,7 @@ const Header = ({ plugin }) => {
 const PluginTemplate = ({ data, location }) => {
   const classes = useStyles();
   const { plugin, notes, site } = data;
-  const siteTitle = site.siteMetadata.title;
+  const { title: siteTitle, newsletterUrl } = site.siteMetadata;
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -99,6 +100,7 @@ const PluginTemplate = ({ data, location }) => {
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
         siteMetadata={data.site.siteMetadata}
+        followOn="TWITTER"
       />
 
       <div className={classes.siteWideHeaderWrapper}>
@@ -135,8 +137,21 @@ const PluginTemplate = ({ data, location }) => {
           )}
 
           <div className={classes.callToActionWrapper}>
-            <InterstitialTitle text="Backstage without the headaches" />
-            <CallToAction setModalOpen={setModalOpen} buttonText="Sign me up!" />
+            <InterstitialTitle text="Become a Backstage expert" />
+
+            <p className={classes.callToActionParagraph}>
+              To get the latest news, deep dives into Backstage features, and a roundup of recent
+              open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
+              <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">
+                See recent editions.
+              </a>
+            </p>
+
+            <CallToAction
+              setModalOpen={setModalOpen}
+              buttonText="Subscribe"
+              netlifyFormName={FORM_NAMES.subscribeToNewsletter}
+            />
           </div>
         </LayoutControl>
       </div>
@@ -155,7 +170,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        demoUrl
+        newsletterUrl
         social {
           twitter
         }

@@ -79,12 +79,16 @@ export const encode = (data) => {
 const CallToAction = ({
   placeholderText = 'Work email',
   buttonText = 'Click here',
+  subFormMessage = 'We will never sell or share your email address.',
+  netlifyFormName = FORM_NAMES.notifyMe,
   setModalOpen,
 }) => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const [subForm, setSubForm] = useState({});
+  const [subForm, setSubForm] = useState({
+    message: subFormMessage,
+  });
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -93,10 +97,12 @@ const CallToAction = ({
     const resp = await fetch('/', {
       method: 'POST',
       body: encode({
-        'form-name': FORM_NAMES.notifyMe,
+        'form-name': netlifyFormName,
         email,
       }),
     });
+
+    console.log('resp', resp);
 
     if (resp.ok) {
       setModalOpen(true);

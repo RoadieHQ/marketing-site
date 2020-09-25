@@ -96,8 +96,11 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({ siteMetadata }) => {
   const classes = useStyles();
+
+  const TWITTER_URL = `https://twitter.com/${siteMetadata.social.twitter}`;
+  const GITHUB_URL = `https://github.com/${siteMetadata.social.github}`;
 
   return (
     <Menu
@@ -126,16 +129,25 @@ const HamburgerMenu = () => {
         <div className={classes.spacer}>
           <TextLink to="/blog" text="Blog" color="contrasting" className={classes.textLink} />
         </div>
+
+        <div className={classes.spacer}>
+          <TextLink
+            to={siteMetadata.newsletterUrl}
+            text="Backstage Weekly"
+            color="contrasting"
+            className={classes.textLink}
+          />
+        </div>
       </div>
 
       <div>
         <div className={classes.spacer}>
-          <IconLink to="https://twitter.com/RoadieHQ" text="Twitter" color="contrasting">
+          <IconLink to={TWITTER_URL} text="Twitter" color="contrasting">
             <FaTwitter />
           </IconLink>
 
           <span className={classes.iconSpacer}>
-            <IconLink to="https://github.com/RoadieHQ" text="GitHub" color="contrasting">
+            <IconLink to={GITHUB_URL} text="GitHub" color="contrasting">
               <FaGithub />
             </IconLink>
           </span>
