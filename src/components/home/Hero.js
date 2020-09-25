@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Lead, Headline } from 'components';
 
 import CallToAction from '../actions/CallToAction';
-import DemoLink from './DemoLink';
+import { FORM_NAMES } from '../../contactFormConstants';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -55,7 +55,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Hero = ({ setModalOpen, siteMetadata }) => {
+const Hero = ({ setModalOpen }) => {
   const classes = useStyles();
 
   return (
@@ -64,27 +64,27 @@ const Hero = ({ setModalOpen, siteMetadata }) => {
         <Headline>
           <span>Get a grip on your microservices</span>{' '}
           <span role="img" aria-label="Flexed biceps">
-            💪
+            ⚡️
           </span>
         </Headline>
 
         <div className={classes.leadWrapper}>
           <Lead
             text={`
-              Track your services and teams with the world-class technology which powers
+              Track your services with the world-class technology which powers
               the development and operation of Spotify's 2,000 microservices.
             `}
           />
 
-          <Lead text="Get early access..." />
+          <Lead text="Get a demo of Backstage..." />
         </div>
 
         <div className={classes.callToActionWrapper}>
-          <CallToAction setModalOpen={setModalOpen} buttonText="Let me in!" />
-        </div>
-
-        <div>
-          <DemoLink siteMetadata={siteMetadata} />
+          <CallToAction
+            setModalOpen={setModalOpen}
+            buttonText="Get a demo"
+            netlifyFormName={FORM_NAMES.getDemo}
+          />
         </div>
       </div>
       <div className={classnames(classes.col, classes.rightCol, classes.image)} />

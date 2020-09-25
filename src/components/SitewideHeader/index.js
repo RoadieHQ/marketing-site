@@ -39,26 +39,26 @@ const SitewideHeader = () => {
         </span>
 
         <NavItemSpacer>
-          <IconLink to={TWITTER_URL} target="_blank">
+          <IconLink to={TWITTER_URL} target="_blank" rel="noopener noreferrer">
             <FaTwitter />
           </IconLink>
         </NavItemSpacer>
 
         <NavItemSpacer>
-          <IconLink to={GITHUB_URL} target="_blank">
+          <IconLink to={GITHUB_URL} target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </IconLink>
         </NavItemSpacer>
 
         <NavItemSpacer>
-          <IconLink to="https://backstage.io" target="_blank">
+          <IconLink to="https://backstage.io" target="_blank" rel="noopener noreferrer">
             <FaSpotify />
           </IconLink>
         </NavItemSpacer>
       </nav>
 
       <span className={classes.hamburgerMenuWrapper}>
-        <HamburgerMenu />
+        <HamburgerMenu siteMetadata={data.site.siteMetadata} />
       </span>
     </header>
   );
@@ -71,6 +71,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        newsletterUrl
         social {
           twitter
           github
