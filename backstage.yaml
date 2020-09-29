@@ -6,7 +6,7 @@ metadata:
     A Gatsby application for generating the Roadie marketing site. Includes
     blog posts, legal policies, landing pages etc.
   annotations:
-    github.com/project-slug: RoadieHQ/marketing-site
+    github.com/project-slug-a: RoadieHQ/marketing-site
     lighthouse.com/website-url: https://roadie.io/
 spec:
   type: website
