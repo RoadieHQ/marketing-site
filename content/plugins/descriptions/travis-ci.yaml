@@ -19,6 +19,36 @@ coverImage:
   alt: 'A screenshot of the Travis CI plugin. It is showing a list of builds for a sample service.'
 
 gettingStarted:
+  - intro: 'In the `backstage/packages/app` project add the plugin as a `package.json` dependency:'
+    language: 'bash'
+    code: 'yarn add @roadiehq/backstage-plugin-travis-ci'
+  - intro: 'add travis-ci to the proxy object in `app-config.yaml` file in the root directory:'
+    language: 'yaml'
+    code: |
+      proxy:
+
+      ...
+
+        '/travisci/api':
+          target: https://api.travis-ci.com
+          changeOrigin: true
+          headers:
+            Authorization:
+              $secret:
+                env: TRAVISCI_AUTH_TOKEN
+            travis-api-version: 3
+  - intro: 'Add plugin to the list of plugins:'
+    language: 'ts'
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as TravisCI } from '@roadiehq/backstage-plugin-travis-ci';
+  - intro: 'Add plugin to the `entitytPage.tsx` source file:'
+    language: 'tsx'
+    code: |
+      // packages/app/src/components/catalog/EntityPage.tsx
+      case isTravisCIAvailable(entity):
+        content = <>RecentTravisCIBuildsWidget entity={entity} />;
+        break;
   - intro: 'add annotation to the yaml config file of a component'
     language: 'yaml'
     code: 'travis-ci.com/repo-slug: owner-name/project-name'
