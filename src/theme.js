@@ -104,6 +104,13 @@ const theme = {
         '& ol': {
           paddingLeft: '3em',
         },
+
+        '& blockquote': {
+          background: grey[100],
+          borderLeft: '10px solid #ccc',
+          margin: '1.5em 10px',
+          padding: '0.5em 10px',
+        },
       },
     },
   },
