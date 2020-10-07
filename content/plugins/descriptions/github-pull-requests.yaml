@@ -58,7 +58,7 @@ gettingStarted:
           &lt;EntityPageLayout.Content
             path="/github-pull-requests"
             title="Github Pull Requests"
-            element={<GithubPullRequestsRouter entity={entity} />}
+            element={&lt;GithubPullRequestsRouter entity={entity} />}
           />
           &lt;/EntityPageLayout>
         &lt;/EntityPageLayout>
