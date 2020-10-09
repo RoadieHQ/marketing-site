@@ -1,0 +1,92 @@
+# The server must be restarted to pick up changes in ths file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+# separators.
+name: code-insights
+humanName: Code Insights
+heading: 'Backstage Code Insights Plugin'
+# Keep it short
+lead: 'See Code Insights for your service in Backstage'
+
+seo:
+  # Don't forget to end with "| Roadie"
+  title: 'Backstage Code Insights Plugin | Roadie'
+  description: |
+    See Code Insights in Backstage. Supports contributors, languages, readme and releases.
+
+logo:
+  # This must be a relative path. It should start without a slash or with ./
+  # The overall size of the file should be approximately 200 by 200.
+  # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+  # The image will be made greyscale by Gatsby Image Sharp.
+  fileSystemPath: './content/assets/logos/code-insights/code-icon.png'
+  # The dimensions are required. They are the outer dimensions of the image file.
+  width: 128
+  height: 128
+
+coverImage:
+  fileSystemPath: './content/assets/code-insights-plugin.png'
+  alt: 'A screenshot of the Code Insights plugin. It is showing a code details for a sample service.'
+
+# Instructions for someone who wants to use this plugin.
+# languages used here must be listed in the .babelrc
+gettingStarted:
+    # What will this step accomplish?
+  - intro: Install the plugin into Backstage.
+    language: bash
+    code: 'yarn add @roadiehq/backstage-plugin-code-insights'
+  - intro: Import it into your Backstage application.
+    language: typescript
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as CodeInsights } from '@roadiehq/backstage-plugin-code-insights';
+  - intro: Add plugin API to your Backstage instance.
+    language: typescript
+    code: |
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import { Router as CodeInsightsRouter } from '@roadiehq/backstage-plugin-code-insights';
+
+      const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
+        ...
+        &lt;EntityPageLayout>
+          &lt;EntityPageLayout.Content
+            path="/code-insights"
+            title="Code Insights"
+            element={&lt;CodeInsightsRouter entity={entity} />}
+          />
+          &lt;/EntityPageLayout>
+        &lt;/EntityPageLayout>
+      )
+  - intro: Run backstage app with and navigate to services tabs.
+    language: bash
+    code: |
+      yarn start
+  - intro: Widgets setup.
+  - intro: You must install plugin by following the steps above to add widgets to your Overview. You might add only selected widgets or all of them.
+  - intro: Add widgets to your Overview tab.
+    language: typescript
+    code: |
+        // packages/app/src/components/catalog/EntityPage.tsx
+        import { ContributorsCard, LanguagesCard, ReadMeCard, ReleasesCard } from '@roadiehq/backstage-plugin-code-insights';
+        
+        ...
+
+        const OverviewContent = ({ entity }: { entity: Entity }) => (
+          &lt;Grid container spacing={3}>
+            ...
+            &lt;Grid item md={6}>
+              &lt;ContributorsCard entity={entity} />
+              &lt;LanguagesCard entity={entity} />
+              &lt;ReleasesCard entity={entity} />
+            &lt;/Grid>
+            &lt;Grid item md={6}>
+              &lt;ReadMeCard entity={entity} />
+            &lt;/Grid>
+          &lt;/Grid>
+        );
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+style:
+  # These colors will fall back to a default if omitted.
+  primaryColor: 'rgb(36, 41, 46)'
+  contrastingColor: '#fff'
