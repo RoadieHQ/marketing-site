@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: marketing-site
+  description: The Gatsby app that builds roadie.io.
+  annotations:
+    github.com/project-slug: roadiehq/marketing-site
+    lighthouse.com/website-url: https://roadie.io
+spec:
+  type: website
+  owner: david@roadie.io
+  lifecycle: production
