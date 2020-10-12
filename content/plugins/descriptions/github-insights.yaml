@@ -2,17 +2,17 @@
 
 # Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
 # separators.
-name: code-insights
-humanName: Code Insights
-heading: 'Backstage Code Insights Plugin'
+name: github-insights
+humanName: GitHub Insights
+heading: 'Backstage GitHub Insights Plugin'
 # Keep it short
-lead: 'See Code Insights for your service in Backstage'
+lead: 'See GitHub Insights for your service in Backstage'
 
 seo:
   # Don't forget to end with "| Roadie"
-  title: 'Backstage Code Insights Plugin | Roadie'
+  title: 'Backstage GitHub Insights Plugin | Roadie'
   description: |
-    See Code Insights in Backstage. Supports contributors, languages, readme and releases.
+    See GitHub Insights in Backstage. Supports contributors, languages, readme and releases.
 
 logo:
   # This must be a relative path. It should start without a slash or with ./
@@ -26,7 +26,7 @@ logo:
 
 coverImage:
   fileSystemPath: './content/assets/code-insights-plugin.png'
-  alt: 'A screenshot of the Code Insights plugin. It is showing a code details for a sample service.'
+  alt: 'A screenshot of the GitHub Insights plugin. It is showing a code details for a sample service.'
 
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc
@@ -34,17 +34,17 @@ gettingStarted:
     # What will this step accomplish?
   - intro: Install the plugin into Backstage.
     language: bash
-    code: 'yarn add @roadiehq/backstage-plugin-code-insights'
+    code: 'yarn add @roadiehq/backstage-plugin-github-insights'
   - intro: Import it into your Backstage application.
     language: typescript
     code: |
       // packages/app/src/plugins.ts
-      export { plugin as CodeInsights } from '@roadiehq/backstage-plugin-code-insights';
+      export { plugin as GitHubInsights } from '@roadiehq/backstage-plugin-github-insights';
   - intro: Add plugin API to your Backstage instance.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { Router as CodeInsightsRouter } from '@roadiehq/backstage-plugin-code-insights';
+      import { Router as GitHubInsightsRouter } from '@roadiehq/backstage-plugin-github-insights';
 
       const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
         ...
@@ -52,7 +52,7 @@ gettingStarted:
           &lt;EntityPageLayout.Content
             path="/code-insights"
             title="Code Insights"
-            element={&lt;CodeInsightsRouter entity={entity} />}
+            element={&lt;GitHubInsightsRouter entity={entity} />}
           />
           &lt;/EntityPageLayout>
         &lt;/EntityPageLayout>
@@ -67,21 +67,31 @@ gettingStarted:
     language: typescript
     code: |
         // packages/app/src/components/catalog/EntityPage.tsx
-        import { ContributorsCard, LanguagesCard, ReadMeCard, ReleasesCard } from '@roadiehq/backstage-plugin-code-insights';
+        import {
+          ContributorsCard,
+          LanguagesCard,
+          ReadMeCard,
+          ReleasesCard,
+          isPluginApplicableToEntity as isGitHubAvailable,
+        } from '@roadiehq/backstage-plugin-github-insights';
         
         ...
 
         const OverviewContent = ({ entity }: { entity: Entity }) => (
           &lt;Grid container spacing={3}>
             ...
-            &lt;Grid item md={6}>
-              &lt;ContributorsCard entity={entity} />
-              &lt;LanguagesCard entity={entity} />
-              &lt;ReleasesCard entity={entity} />
-            &lt;/Grid>
-            &lt;Grid item md={6}>
-              &lt;ReadMeCard entity={entity} />
-            &lt;/Grid>
+            {isGitHubAvailable(entity) && (
+              &lt;>
+                &lt;Grid item md={6}>
+                  &lt;ContributorsCard entity={entity} />
+                  &lt;LanguagesCard entity={entity} />
+                  &lt;ReleasesCard entity={entity} />
+                &lt;/Grid>
+                &lt;Grid item md={6}>
+                  &lt;ReadMeCard entity={entity} />
+                &lt;/Grid>
+              &lt;/>
+            )}
           &lt;/Grid>
         );
 
