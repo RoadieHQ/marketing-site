@@ -79,7 +79,8 @@ const Header = ({ plugin }) => {
 
 const PluginTemplate = ({ data, location }) => {
   const classes = useStyles();
-  const { plugin, notes } = data;
+  const { plugin, notes, site } = data;
+  const siteTitle = site.siteMetadata.title;
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -93,7 +94,7 @@ const PluginTemplate = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={plugin.seo.title} description={plugin.seo.description} />
+      <SEO title={`${plugin.seo.title} | ${siteTitle}`} description={plugin.seo.description} />
       <FormSubmissionModal modalOpen={modalOpen} handleCloseModal={handleCloseModal} />
 
       <div className={classes.siteWideHeaderWrapper}>
