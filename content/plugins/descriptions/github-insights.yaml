@@ -26,7 +26,7 @@ logo:
 
 coverImage:
   fileSystemPath: './content/assets/code-insights-plugin.png'
-  alt: 'A screenshot of the GitHub Insights plugin. It is showing a code details for a sample service.'
+  alt: 'A screenshot of the GitHub Insights plugin. It is showing a code details for a sample component.'
 
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc
