@@ -29,7 +29,7 @@ Enter the following values:
   <dt>Application description</dt>
   <dd class="typography-mono">Login to Backstage on localhost</dd>
   <dt>Authorization callback URL</dt>
-  <dd class="typography-mono">http://localhost:7000/auth/github/handler/frame</dd>
+  <dd class="typography-mono">http://localhost:7000/api/auth/github/handler/frame</dd>
 </dl>
 
 Your form should now look something like this:
