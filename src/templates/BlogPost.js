@@ -28,6 +28,7 @@ const MAX_WIDTH_BREAKPOINT = 'md';
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
   const classes = useStyles();
+  const siteTitle = data.site.siteMetadata.title;
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -38,7 +39,7 @@ const BlogPostTemplate = ({ data, location }) => {
   return (
     <>
       <SEO
-        title={post.frontmatter.title}
+        title={`${post.frontmatter.title} | ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt}
       />
       <FormSubmissionModal
