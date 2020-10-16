@@ -53,7 +53,7 @@ gettingStarted:
           &lt;Grid container spacing={3}>
             ...
             {isLambdaWidgetAvailable(entity) && (
-              &lt;Grid item>
+              &lt;Grid item md={6}>
                 &lt;AWSLambdaOverviewWidget entity={entity} />
               &lt;/Grid>
             )}
