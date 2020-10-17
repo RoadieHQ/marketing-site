@@ -25,12 +25,12 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const CallToAction = () => {
+const CallToAction = ({ siteMetadata }) => {
   const classes = useStyles();
 
   return (
     <a
-      href="https://backstage-demo.roadie.io"
+      href={siteMetadata.demoUrl}
       target="__blank"
       className={classnames('typography-mono', classes.root)}
     >

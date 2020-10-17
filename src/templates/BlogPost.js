@@ -47,6 +47,7 @@ const BlogPostTemplate = ({ data, location }) => {
         handleCloseModal={handleCloseModal}
         titleText="You're subscribed!"
         bodyText="You should receive the first edition within a week."
+        siteMetadata={data.site.siteMetadata}
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
@@ -80,6 +81,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        demoUrl
       }
     }
 

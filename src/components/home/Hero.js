@@ -55,7 +55,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Hero = ({ setModalOpen }) => {
+const Hero = ({ setModalOpen, siteMetadata }) => {
   const classes = useStyles();
 
   return (
@@ -84,7 +84,7 @@ const Hero = ({ setModalOpen }) => {
         </div>
 
         <div>
-          <DemoLink />
+          <DemoLink siteMetadata={siteMetadata} />
         </div>
       </div>
       <div className={classnames(classes.col, classes.rightCol, classes.image)} />
