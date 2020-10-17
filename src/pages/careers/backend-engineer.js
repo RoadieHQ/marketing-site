@@ -60,7 +60,7 @@ const HEADLINE = 'Set the technical direction of Roadie';
 
 const ROLE = (() => {
   const backstageLink = renderToString(
-    <a href="https://github.com/spotify/backstage" target="__blank">
+    <a href="https://github.com/spotify/backstage" target="_blank" rel="noopener noreferrer">
       the open-source platform
     </a>
   );
@@ -141,7 +141,7 @@ const Engineer = ({ data, location }) => {
           <ButtonLink
             text="Apply for this role"
             href={APPLICATION_HREF}
-            target="__blank"
+            target="_blank"
             rel="noopener noreferrer"
           />
         </LayoutControl>
@@ -189,7 +189,12 @@ const Engineer = ({ data, location }) => {
         <LayoutControl maxWidthBreakpoint="lg">
           <InterstitialTitle text="Sound good?" />
           <div>
-            <ButtonLink text="Apply for this role" href={APPLICATION_HREF} target="__blank" />
+            <ButtonLink
+              text="Apply for this role"
+              href={APPLICATION_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
 
             <Link to="/careers" className={classnames('typography-mono', classes.link)}>
               See all roles

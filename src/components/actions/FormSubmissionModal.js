@@ -61,13 +61,19 @@ const FormSubmissionModal = ({
           In the meantime, you could&nbsp;
           <a
             href={`https://twitter.com/${siteMetadata.social.twitter}`}
-            target="__blank"
+            target="_blank"
+            rel="noopener noreferrer"
             className={classes.link}
           >
             follow Roadie on Twitter
           </a>
           &nbsp;or play with the&nbsp;
-          <a href={siteMetadata.demoUrl} target="__blank" className={classes.link}>
+          <a
+            href={siteMetadata.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.link}
+          >
             Backstage demo
           </a>
           .
