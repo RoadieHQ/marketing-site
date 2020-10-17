@@ -31,7 +31,8 @@ const CallToAction = ({ siteMetadata }) => {
   return (
     <a
       href={siteMetadata.demoUrl}
-      target="__blank"
+      target="_blank"
+      rel="noopener noreferrer"
       className={classnames('typography-mono', classes.root)}
     >
       <span>Play with a demo of Backstage</span>
