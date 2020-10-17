@@ -17,10 +17,14 @@ const Home = ({ data, location }) => {
   return (
     <>
       <SEO title={`Hosted, managed, enterprise Backstage | ${siteTitle}`} />
-      <FormSubmissionModal modalOpen={modalOpen} handleCloseModal={handleCloseModal} />
+      <FormSubmissionModal
+        modalOpen={modalOpen}
+        handleCloseModal={handleCloseModal}
+        siteMetadata={data.site.siteMetadata}
+      />
 
       <StickyFooter location={location}>
-        <Hero setModalOpen={setModalOpen} />
+        <Hero setModalOpen={setModalOpen} siteMetadata={data.site.siteMetadata} />
       </StickyFooter>
     </>
   );
@@ -33,6 +37,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        demoUrl
       }
     }
   }

@@ -95,7 +95,11 @@ const PluginTemplate = ({ data, location }) => {
   return (
     <>
       <SEO title={`${plugin.seo.title} | ${siteTitle}`} description={plugin.seo.description} />
-      <FormSubmissionModal modalOpen={modalOpen} handleCloseModal={handleCloseModal} />
+      <FormSubmissionModal
+        modalOpen={modalOpen}
+        handleCloseModal={handleCloseModal}
+        siteMetadata={data.site.siteMetadata}
+      />
 
       <div className={classes.siteWideHeaderWrapper}>
         <LayoutControl>
@@ -151,6 +155,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        demoUrl
       }
     }
 

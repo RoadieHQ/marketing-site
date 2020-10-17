@@ -37,6 +37,7 @@ const FormSubmissionModal = ({
   handleCloseModal,
   titleText = 'Thank you!',
   bodyText = `We'll be in touch to learn more about your stack and the problems you're trying to solve.`,
+  siteMetadata,
 }) => {
   const classes = useStyles();
 
@@ -62,7 +63,7 @@ const FormSubmissionModal = ({
             follow Roadie on Twitter
           </a>
           &nbsp;or play with the&nbsp;
-          <a href="https://backstage-demo.roadie.io" target="__blank" className={classes.link}>
+          <a href={siteMetadata.demoUrl} target="__blank" className={classes.link}>
             Backstage demo
           </a>
           .
