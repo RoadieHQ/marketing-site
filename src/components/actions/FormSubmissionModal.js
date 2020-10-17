@@ -59,7 +59,11 @@ const FormSubmissionModal = ({
 
         <p>
           In the meantime, you could&nbsp;
-          <a href="https://twitter.com/RoadieHQ" target="__blank" className={classes.link}>
+          <a
+            href={`https://twitter.com/${siteMetadata.social.twitter}`}
+            target="__blank"
+            className={classes.link}
+          >
             follow Roadie on Twitter
           </a>
           &nbsp;or play with the&nbsp;
