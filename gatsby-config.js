@@ -9,7 +9,7 @@ module.exports = {
     title: SITE_TITLE,
     description: 'Hosted, managed, enterprise Backstage',
     siteUrl: 'https://roadie.io',
-    demoUrl: 'https://backstage-demo.roadie.io',
+    demoUrl: 'https://demo.roadie.so',
     social: {
       twitter: 'RoadieHQ',
       github: 'RoadieHQ',
