@@ -38,6 +38,9 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         demoUrl
+        social {
+          twitter
+        }
       }
     }
   }
