@@ -32,6 +32,7 @@ coverImage:
 # languages used here must be listed in the .babelrc
 gettingStarted:
   # What will this step accomplish?
+  - intro: Before you start please make sure that you installed @roadiehq/backstage-plugin-aws-auth plugin first.
   - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @roadiehq/backstage-plugin-aws-lambda'
