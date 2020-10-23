@@ -57,12 +57,12 @@ gettingStarted:
           &lt;/EntityPageLayout>
         &lt;/EntityPageLayout>
       )
-  - intro: Run backstage app with and navigate to services tabs.
+  - intro: Run the backstage app with the following command and navigate to the services tab.
     language: bash
     code: |
       yarn start
   - intro: Widgets setup.
-  - intro: You must install plugin by following the steps above to add widget to your Overview.
+  - intro: You must install this plugin by following the steps above to add the widget to your Overview.
   - intro: Add widget to your Overview tab.
     language: typescript
     code: |
