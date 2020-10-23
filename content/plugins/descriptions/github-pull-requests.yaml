@@ -63,10 +63,10 @@ gettingStarted:
           &lt;/EntityPageLayout>
         &lt;/EntityPageLayout>
       )
-  - intro: Run backstage app with and navigate to services tabs.
+  - intro: Run the backstage app with the following command and navigate to the services tab.
     code: |
       yarn start
-  - intro: Add the widget into Overview.
+  - intro: Add widget to your Overview tab.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
