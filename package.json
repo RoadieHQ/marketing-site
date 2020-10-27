@@ -32,7 +32,7 @@
     "gatsby-transformer-plugin-descriptions": "./plugins/gatsby-transformer-plugin-descriptions",
     "gatsby-transformer-remark": "^2.8.20",
     "gatsby-transformer-sharp": "^2.5.7",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "react": "^16.12.0",
     "react-burger-menu": "^2.7.1",
     "react-dom": "^16.12.0",
