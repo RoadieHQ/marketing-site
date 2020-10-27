@@ -52,7 +52,7 @@ const NewsletterAndTwitterInner = ({ siteMetadata, classes }) => (
       rel="noopener noreferrer"
       className={classes.link}
     >
-      @RoadieHQ
+      @{siteMetadata.social.twitter}
     </a>
     .
   </p>
@@ -67,7 +67,7 @@ const TwitterInner = ({ siteMetadata, classes }) => (
       rel="noopener noreferrer"
       className={classes.link}
     >
-      @RoadieHQ
+      @{siteMetadata.social.twitter}
     </a>
     .
   </p>
