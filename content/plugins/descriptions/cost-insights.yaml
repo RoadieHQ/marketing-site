@@ -19,7 +19,7 @@ logo:
   # The overall size of the file should be approximately 200 by 200.
   # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
   # The image will be made greyscale by Gatsby Image Sharp.
-  fileSystemPath: './content/assets/logos/cost-insights/logo.png'
+  fileSystemPath: './content/assets/logos/cost-insights/logo-cost.png'
   # The dimensions are required. They are the outer dimensions of the image file.
   width: 192
   height: 192
