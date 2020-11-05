@@ -35,11 +35,13 @@ gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @backstage/plugin-jenkins'
+    
   - intro: Add plugin to the list of plugins.
     language: typescript
     code: |
       // packages/app/src/plugins.ts
       export { plugin as Jenkins } from '@backstage/plugin-jenkins';
+
   - intro: Add plugin API to your Backstage instance.
     language: typescript
     code: | 
@@ -58,6 +60,7 @@ gettingStarted:
           ...
         }
       }
+
   - intro: Add proxy configuration
     language: YAML
     code: |  
@@ -68,6 +71,7 @@ gettingStarted:
           headers:
             Authorization:
               $env: JENKINS_BASIC_AUTH_HEADER
+
   - intro: Add annotation to your component-info.yaml file.
     language: YAML
     code: | 
@@ -79,5 +83,5 @@ gettingStarted:
 # Optional. Use this to suit the brand of the tool that the plugin integrates with.
 style:
   # These colors will fall back to a default if omitted.
-  primaryColor: 'rgb(240, 214, 183)'
+  primaryColor: 'rgb(0, 70, 67)'
   contrastingColor: '#fff'
