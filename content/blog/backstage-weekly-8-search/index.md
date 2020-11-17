@@ -41,7 +41,7 @@ As mentioned, 23 pull requests were merged this week. Here are the highlights...
 
 ### Tooltips for Cost Insights
 
-Ryan Vazquez added tooltips to a bunch of functions in the cost insights plugin. Hovering a particular product shows how usage is up or down and you can click to get a cost breakdown. [#3268](https://github.com/backstage/backstage/pull/3268)
+Ryan Vazquez added tooltips to some functions in the cost insights plugin. Hovering a particular product shows how usage is up or down and you can click to get a cost breakdown. [#3268](https://github.com/backstage/backstage/pull/3268)
 
 ![a chart showing the cost of compute for different Backstage entities](./cost-tooltips.png)
 
