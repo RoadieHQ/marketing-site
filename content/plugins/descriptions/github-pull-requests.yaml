@@ -75,7 +75,7 @@ gettingStarted:
       ...
 
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
+        &lt;Grid container spacing={3}>
           ...
           &lt;Grid item md={6}>
             &lt;PullRequestsStatsCard entity={entity} />
