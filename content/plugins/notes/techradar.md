@@ -4,27 +4,27 @@ name: techradar
 
 ## How do I load in my own data?
 
-To pass own data to plugin use a `getData` prop which expects a `Promise<TechRadarLoaderResponse>` signature.
+Passing own data is simple through a `getData` prop which expects a `Promise<TechRadarLoaderResponse>` signature.
 
-For example:
+Here's an example:
 
 ```tsx
-const getFireBaseData = () =>
+const getHardCodedData = () =>
   Promise.resolve({
     quadrants: [{ id: 'infrastructure', name: 'Infrastructure' }],
-    rings: [{ id: 'use', name: 'USE', color: '#91c49d' }],
+    rings: [{ id: 'use', name: 'USE', color: '#93c47d' }],
     entries: [
       {
         moved: 0,
         ring: 'use',
         url: '#',
-        key: 'firebase-function',
-        id: 'firebase-function',
-        title: 'FireBase Function',
+        key: 'github-actions',
+        id: 'github-actions',
+        title: 'GitHub Actions',
         quadrant: 'infrastructure',
       },
     ],
   });
 
-<TechRadarComponent width={1500} height={900} getData={getFireBaseData} />;
+<TechRadarComponent width={1400} height={800} getData={getHardCodedData} />;
 ```

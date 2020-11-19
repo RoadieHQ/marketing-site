@@ -40,5 +40,5 @@ gettingStarted:
     language: 'yaml'
     code: 'cloud.google.com/function-ids: projects/project-name/locations/region-name/functions/function-name'
 style:
-  primaryColor: 'rgb(0, 70, 67)'
+  primaryColor: 'rgb(46, 169, 72)'
   contrastingColor: '#fff'

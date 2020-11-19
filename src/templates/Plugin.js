@@ -192,7 +192,7 @@ export const pageQuery = graphql`
 
       childrenLogoImage {
         childImageSharp {
-          fixed(width: 200, grayscale: false) {
+          fixed(width: 200, grayscale: true) {
             ...GatsbyImageSharpFixed
           }
         }

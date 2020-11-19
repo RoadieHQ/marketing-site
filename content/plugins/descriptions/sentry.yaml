@@ -32,5 +32,5 @@ gettingStarted:
       export { plugin as Sentry } from '@backstage/plugin-sentry';
 
 style:
-  primaryColor: 'rgb(0, 70, 67)'
+  primaryColor: '#310f32'
   contrastingColor: '#fff'
