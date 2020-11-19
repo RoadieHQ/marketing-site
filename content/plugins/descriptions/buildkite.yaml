@@ -4,16 +4,16 @@
 # separators.
 name: buildkite
 # Required. Can have whitespace. Should be titleized.
-humanName: Buildkite
-heading: 'Backstage Buildkite Plugin'
+humanName: BuildKite
+heading: 'Backstage BuildKite Plugin'
 # Keep it short
-lead: 'See Buildkite Builds in Backstage'
+lead: 'See BuildKite Builds in Backstage'
 
 seo:
   # Don't forget to end with "| Roadie"
-  title: 'Backstage Buildkite Plugin | Roadie'
+  title: 'Backstage BuildKite Plugin | Roadie'
   description: |
-    The Backstage Buildkite plugin integrates with Buildkite to show your builds
+    The Backstage BuildKite plugin integrates with BuildKite to show your builds
     information inside Backstage where it can be associated with your services.
 
 logo:
@@ -43,7 +43,7 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/plugins.ts
-      export { plugin as Buildkite } from '@roadiehq/backstage-plugin-buildkite';
+      export { plugin as BuildKite } from '@roadiehq/backstage-plugin-buildkite';
   
   - intro: Add proxy configuration'
     language: 'yaml'
@@ -64,15 +64,15 @@ gettingStarted:
     code: | 
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        Router as BuildkiteRouter,
-        isPluginApplicableToEntity as isBuildkiteAvailable,
+        Router as BuildKiteRouter,
+        isPluginApplicableToEntity as isBuildKiteAvailable,
       } from '@roadiehq/backstage-plugin-buildkite';
 
       const CICDSwitcher = ({ entity }: { entity: Entity }) => {
         switch (true) {
           ...
-          case isBuildkiteAvailable(entity):
-            return <BuildkiteRouter entity={entity} />;
+          case isBuildKiteAvailable(entity):
+            return <BuildKiteRouter entity={entity} />;
           ...
         }
       }
