@@ -10,7 +10,7 @@ seo:
     your production services, directly inside Backstage.
 
 logo:
-  fileSystemPath: './content/assets/logos/sentry/sentry-glyph-dark.png'
+  fileSystemPath: './content/assets/logos/sentry/sentry-glyph-light-200x184.png'
   width: 200
   height: 184
 
