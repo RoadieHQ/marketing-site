@@ -75,7 +75,7 @@ gettingStarted:
         ...
 
         const OverviewContent = ({ entity }: { entity: Entity }) => (
-          &lt;Grid container spacing={3} alignItems="stretch">
+          &lt;Grid container spacing={3}>
             ...
             {isSecurityInsightsAvailable(entity) && (
               &lt;>
