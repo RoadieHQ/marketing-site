@@ -27,7 +27,7 @@ logo:
 
 coverImage:
   # This must be a relative path. It should start without a slash or with ./
-  fileSystemPath: './content/assets/pull-requests-cover.png'
+  fileSystemPath: './content/assets/github-pull-requests-cover.png'
   alt: |
     Pull requests for Backstage rendered inside a Backstage plugin.
     The statistics widget is alongside, showing the average time to merge a PR.
