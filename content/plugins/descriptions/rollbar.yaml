@@ -10,7 +10,7 @@ seo:
     your production services, directly inside Backstage.
 
 logo:
-  fileSystemPath: './content/assets/logos/rollbar/logo-white-120x21.png'
+  fileSystemPath: './content/assets/logos/rollbar/rollbar-logo-color.png'
   width: 120
   height: 21
 
