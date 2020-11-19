@@ -21,7 +21,7 @@ logo:
   # The overall size of the file should be approximately 200 by 200.
   # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
   # The image will be made greyscale by Gatsby Image Sharp.
-  fileSystemPath: './content/assets/logos/circle-ci/circle-ci-logo-only-black.png'
+  fileSystemPath: './content/assets/logos/circle-ci/circle-logo-stacked-white-28.png'
   # The dimensions are required. They are the outer dimensions of the image file.
   width: 583
   height: 572

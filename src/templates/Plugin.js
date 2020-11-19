@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import get from 'lodash/get';
 
 import {
   Lead,
@@ -19,6 +20,7 @@ import Logo from 'components/backstage/plugins/Logo';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 
 import { FORM_NAMES } from '../contactFormConstants';
+import theme from '../theme';
 
 const useStyles = createUseStyles((theme) => ({
   siteWideHeaderWrapper: {
@@ -49,7 +51,7 @@ const useStyles = createUseStyles((theme) => ({
 const useHeaderStyles = createUseStyles(() => ({
   root: {
     textAlign: 'center',
-    paddingBottom: 90,
+    paddingBottom: 40,
     paddingTop: 40,
     paddingLeft: 16,
     paddingRight: 16,
@@ -57,13 +59,21 @@ const useHeaderStyles = createUseStyles(() => ({
 }));
 
 const Header = ({ plugin }) => {
+  const headerBackgroundColor = get(plugin, 'style.primaryColor', theme.palette.primary.light);
+  const headerColor = get(plugin, 'style.contrastingColor', theme.palette.text.primary);
   const classes = useHeaderStyles();
 
   return (
-    <header className={classes.root}>
+    <header
+      className={classes.root}
+      style={{
+        backgroundColor: headerBackgroundColor,
+        color: headerColor,
+      }}
+    >
       <Logo sharpImage={plugin.childrenLogoImage[0].childImageSharp} />
-      <Headline>{plugin.heading}</Headline>
-      <Lead text={plugin.lead} />
+      <Headline color={headerColor}>{plugin.heading}</Headline>
+      <Lead text={plugin.lead} color={headerColor} />
     </header>
   );
 };
@@ -200,6 +210,11 @@ export const pageQuery = graphql`
         language
         code
         intro
+      }
+
+      style {
+        primaryColor
+        contrastingColor
       }
     }
 
