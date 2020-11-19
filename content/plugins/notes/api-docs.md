@@ -2,10 +2,13 @@
 name: api-docs
 ---
 
-## API formats supported right now:
+## Supported API formats:
 
+- OpenAPI 2 & 3
 - AsyncAPI
 - GraphQL
-- OpenAPI 2 & 3
 
-All other formats are displayed as plain text right now, but it could be easily extended.
+Other formats are displayed as plain text, but this can easily be extended.
+
+To fill the catalog with APIs, [provide entities of kind API](https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api).
+To link that an component implements an API, see [`implementsApis` property on components](https://backstage.io/docs/features/software-catalog/descriptor-format#specimplementsapis-optional).
