@@ -52,5 +52,5 @@ gettingStarted:
 # Optional. Use this to suit the brand of the tool that the plugin integrates with.
 style:
   # These colors will fall back to a default if omitted.
-  primaryColor: 'hsl(30.6, 97.1%, 58.8%)'
+  primaryColor: 'rgb(0, 70, 67)'
   contrastingColor: '#fff'
