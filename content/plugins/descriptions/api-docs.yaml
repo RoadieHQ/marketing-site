@@ -1,0 +1,65 @@
+# The server must be restarted to pick up changes in ths file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+# separators.
+name: api-docs
+humanName: API Docs
+heading: 'Backstage API Docs Plugin'
+# Keep it short
+lead: 'Discover and display API entities for your components in Backstage'
+
+seo:
+  # Don't forget to end with "| Roadie"
+  title: 'Backstage AWS Lambda Plugin | Roadie'
+  description: |
+    Components to discover and display API entities as an extension to the catalog plugin.
+
+logo:
+  # This must be a relative path. It should start without a slash or with ./
+  # The overall size of the file should be approximately 200 by 200.
+  # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+  # The image will be made greyscale by Gatsby Image Sharp.
+  fileSystemPath: './content/assets/logos/api-docs/logo.png'
+  # The dimensions are required. They are the outer dimensions of the image file.
+  width: 200
+  height: 200
+
+coverImage:
+  fileSystemPath: './content/assets/api-docs-plugin.png'
+  alt: 'A screenshot of the API Docs. It is showing a available endpoints for a sample component.'
+
+# Instructions for someone who wants to use this plugin.
+# languages used here must be listed in the .babelrc
+gettingStarted:
+  # What will this step accomplish?
+  - intro: Install the plugin into Backstage.
+    language: bash
+    code: 'yarn add @backstage/plugin-api-docs'
+  - intro: Add plugin to the list of plugins.
+    language: typescript
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as ApiDocs } from '@backstage/plugin-api-docs';
+  - intro: Add plugin API to your Backstage instance.
+    language: typescript
+    code: |
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import { Router as ApiDocsRouter } from '@backstage/plugin-api-docs';
+
+        const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
+          &lt;EntityPageLayout>
+            ...
+            &lt;EntityPageLayout.Content
+              path="/docs/*"
+              title="Docs"
+              element={&lt;DocsRouter entity={entity} />}
+            />
+            ...
+          &lt;/EntityPageLayout>
+        );
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+style:
+  # These colors will fall back to a default if omitted.
+  primaryColor: 'rgb(73, 163, 43)'
+  contrastingColor: '#fff'
