@@ -91,7 +91,7 @@ gettingStarted:
       } from '@backstage/plugin-lighthouse';
 
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3}>
+        &lt;Grid container spacing={3} alignItems="stretch">
           ...
           {isLighthouseAvailable(entity) && (
             &lt;Grid item sm={4}>
