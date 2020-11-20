@@ -1,0 +1,97 @@
+# The server must be restarted to pick up changes in this file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+# separators.
+name: jira
+# Required. Can have whitespace. Should be titleized.
+humanName: Jira
+heading: 'Backstage Jira Plugin'
+# Keep it short
+lead: 'See Jira summary in Backstage'
+
+seo:
+  # Don't forget to end with "| Roadie"
+  title: 'Backstage Jira Plugin | Roadie'
+  description: |
+    The Backstage Jira plugin integrates with Jira to show Jira
+    information inside Backstage where it can be associated with your project.
+
+logo:
+  # This must be a relative path. It should start without a slash or with ./
+  # The overall size of the file should be approximately 200 by 200.
+  # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+  # The image will be made greyscale by Gatsby Image Sharp.
+  fileSystemPath: './content/assets/logos/jira/jira_logo.png'
+  # The dimensions are required. They are the outer dimensions of the image file.
+  width: 200
+  height: 200
+
+coverImage:
+  # This must be a relative path. It should start without a slash or with ./
+  fileSystemPath: './content/assets/jira-plugin.png'
+  alt: 'A preview of Jira plugin including tasks summary, project information and Activity Stream.'
+
+# Instructions for someone who wants to use this plugin.
+# languages used here must be listed in the .babelrc
+gettingStarted:
+    # What will this step accomplish?
+  - intro: Install the plugin into Backstage.
+    language: bash
+    code: yarn add @roadiehq/backstage-plugin-jira
+  - intro: Add proxy config
+    language: yaml
+    code: |
+      // app-config.yaml
+      proxy:
+        '/jira/api':
+          target: [JIRA_URL]
+          headers:
+            Authorization:
+              $env: JIRA_TOKEN
+            Accept: 'application/json'
+            Content-Type: 'application/json'
+            X-Atlassian-Token: 'no-check'
+            User-Agent: "MY-UA-STRING"
+  - intro: Add plugin to the list of plugins
+    language: typescript
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as Jira } from '@roadiehq/backstage-plugin-jira';
+  - intro: 'Add plugin API to your Backstage instance'
+    language: typescript
+    code: |
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        JiraCard
+        isPluginApplicableToEntity as isJiraAvailable,
+      } from '@roadiehq/backstage-plugin-jira';
+
+      const OverviewContent = ({ entity }: { entity: Entity }) => (
+        &lt;Grid container spacing={3} alignItems="stretch">
+          ...
+          {isJiraAvailable(entity) && (
+            &lt;Grid item md={6}>
+              &lt;JiraCard entity={entity} />
+            &lt;/Grid>
+          )}
+          ...
+        &lt;/Grid>
+      );
+  - intro: Add annotation to the yaml config file of a component
+    language: yaml
+    code: | 
+      metadata:
+        annotations:
+          jira/project-key: [example-jira-project-key]
+          jira/component: [example-component] // optional, you might skip this value to fetch data for all components
+  - intro: Get and provide `JIRA_TOKEN` as env variable in following format
+    language: yaml
+    code: |
+      "Basic base64(jira-mail@example.com:JIRA_TOKEN)"
+      e.g. `Basic: ZXhhbXBsZV9qaXJhQGV4YW1wbGUuY29tOjU1Q3NUSEoxWW1oTVdJSFptdGJXNUUxOA==`
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+style:
+  # These colors will fall back to a default if omitted.
+  primaryColor: '#1963D1'
+  contrastingColor: '#fff'
