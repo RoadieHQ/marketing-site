@@ -1,6 +1,5 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import get from 'lodash/get';
 import { Link } from 'gatsby';
 
 import Logo from './Logo';
@@ -14,14 +13,14 @@ const useStyles = createUseStyles(() => ({
   },
 
   h2: {
-    color: ({ style }) => get(style, 'contrastingColor', theme.palette.text.primary),
+    color: theme.palette.text.primary,
     paddingBottom: 16,
   },
 
   root: {
-    backgroundColor: ({ style }) => get(style, 'primaryColor', theme.palette.primary.light),
     padding: '1rem',
     height: 300,
+    border: `1px solid ${theme.palette.grey[300]}`,
 
     '&::before': {
       content: '',
