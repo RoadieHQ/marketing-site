@@ -57,11 +57,6 @@ export const pageQuery = graphql`
           name
           humanName
 
-          style {
-            primaryColor
-            contrastingColor
-          }
-
           childrenLogoImage {
             childImageSharp {
               fixed(width: 200, grayscale: false) {
