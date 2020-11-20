@@ -22,9 +22,10 @@ gettingStarted:
   - intro: 'In the `backstage/packages/app` project add the plugin as a `package.json` dependency:'
     language: 'bash'
     code: 'yarn add @roadiehq/backstage-plugin-travis-ci'
-  - intro: 'add travis-ci to the proxy object in `app-config.yaml` file in the root directory:'
+  - intro: Add proxy configuration'
     language: 'yaml'
     code: |
+      // app-config.yaml
       proxy:
 
       ...
@@ -56,5 +57,5 @@ gettingStarted:
     language: 'yaml'
     code: 'TRAVISCI_AUTH_TOKEN="token your-api-key"'
 style:
-  primaryColor: 'rgb(46, 169, 72)'
+  primaryColor: 'rgb(0, 70, 67)'
   contrastingColor: '#fff'

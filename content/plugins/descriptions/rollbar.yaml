@@ -50,5 +50,5 @@ gettingStarted:
       // builder.add(rollbarApiRef, new RollbarMockClient());
 
 style:
-  primaryColor: '#104c91'
+  primaryColor: 'rgb(0, 70, 67)'
   contrastingColor: '#fff'
