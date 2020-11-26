@@ -72,7 +72,7 @@ const OPEN_ROLES = [
   [
     {
       title() {
-        return <Link to="/careers/frontend-engineer">Frontend Engineer</Link>;
+        return <Link to="/careers/javascript-engineer">JavaScript Engineer</Link>;
       },
       text: `Become a top contributor to the open-source software that Roadie is built on.`,
     },

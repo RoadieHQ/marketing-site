@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
 import { LayoutControl, Lead, Headline, ButtonLink } from 'components';
-import applicationHref from './applicationHref';
+import { applicationHref } from './links';
 
 const useStyles = createUseStyles(() => ({
   hero: {

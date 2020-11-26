@@ -4,10 +4,10 @@ import { createUseStyles } from 'react-jss';
 import { renderToString } from 'react-dom/server';
 
 import { SEO, SitewideFooter, LayoutControl, SitewideHeader } from 'components';
-import CriticalSkillsLink from 'components/careers/CriticalSkillsLink';
 import Hero from 'components/careers/Hero';
 import Footer from 'components/careers/Footer';
 import Main from 'components/careers/Main';
+import { backstageLink } from 'components/careers/links';
 
 const useStyles = createUseStyles(() => ({
   sitewideHeaderWrapper: {
@@ -17,37 +17,26 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const ROLE_NAME = 'Frontend Engineer';
-const TYPEFORM_SLUG = 'frontend-engineer';
-const HEADLINE = 'Become a top open-source contributor';
+const ROLE_NAME = 'JavaScript & TypeScript Engineer';
+const TYPEFORM_SLUG = 'javascript-engineer';
+const HEADLINE = 'Get paid to become a top open-source contributor';
 
 const ROLE = (() => {
-  const backstageLink = renderToString(
-    <a href="https://github.com/spotify/backstage" target="_blank" rel="noopener noreferrer">
-      the open-source platform
-    </a>
-  );
-
   return [
     'Founding engineer at an early stage, VC-backed startup.',
     `Become a top contributor to the ${backstageLink} that Roadie is built on.`,
     `You'll build new product features from start to finish: through conception, 
      research, maintenance, operation, and polish.`,
-    `Set the tone of Roadie's engineering organization for the next 5+ years.`,
-    `Get stuck-in with customers, investors, and the broader community to gather feedback and
-     help your work gain widespread adoption.`,
+    `Learn rapidly and work in all parts of the stack.`,
+    `Work closely with experienced engineers who previously worked at Workday and Spotify.`,
   ];
 })();
 
 const REQUIREMENTS = (() => {
   return [
-    `You can readily learn most technologies as you go. To you, technologies are tools and
-     trade-offs, not an ideology.`,
-    `You care about the business implications of anything you build. You're not just going
-     after cool stuff — you understand the balance between craft, speed, and the bottom line.`,
-    `You like to work iteratively and in small chunks. Roadie is moving fast while searching for
-     product market fit. In the short term, done is better than perfect.`,
-    `You've spent time as a senior engineer or equivalent role.`,
+    `You're excited to learn and apply new technical skills. Bonus: You share your enthusiasm with the world.`,
+    `You love open source and community. You will do a ton of open source contribution in this role.`,
+    `You've spent time as an engineer or equivalent role. It doesn't have to be loads of experience but some is essential.`,
     `You're fluent with JavaScript. TypeScript and React experience is a bonus.`,
     `You should be located within the timezone band: UTC-1 to UTC+2`,
     `A college degree is ${renderToString(<strong>NOT</strong>)} required.`,
@@ -55,14 +44,11 @@ const REQUIREMENTS = (() => {
 })();
 
 const OFFER = (() => {
-  const skillsLink = renderToString(<CriticalSkillsLink />);
-
   return [
-    `$80,000 to $100,000 base salary (or equivalent in your currency).`,
-    `0.25% to 1.25% stock options`,
+    `$50,000 to $80,000 base salary (or equivalent in your currency).`,
+    `0.25% to 0.75% stock options`,
     `27 days paid time off`,
-    `Work remotely. Choose your own hours.`,
-    `Happy to support relocation to Ireland under the ${skillsLink}.`,
+    `Work remotely with flexible working hours.`,
   ];
 })();
 
