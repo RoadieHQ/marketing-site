@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
 import { LayoutControl, Lead, Headline, ButtonLink } from 'components';
+import applicationHref from './applicationHref';
 
 const useStyles = createUseStyles(() => ({
   hero: {
@@ -17,7 +18,7 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const CareersHero = ({ headline, roleName, applicationHref }) => {
+const CareersHero = ({ headline, roleName, typeformSlug }) => {
   const classes = useStyles();
 
   return (
@@ -31,7 +32,7 @@ const CareersHero = ({ headline, roleName, applicationHref }) => {
 
         <ButtonLink
           text="Apply for this role"
-          href={applicationHref}
+          href={applicationHref(typeformSlug)}
           target="_blank"
           rel="noopener noreferrer"
         />

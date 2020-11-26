@@ -3,28 +3,13 @@ import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import { renderToString } from 'react-dom/server';
 
-import {
-  SEO,
-  SitewideFooter,
-  LayoutControl,
-  InterstitialTitle,
-  SitewideHeader,
-  Lead,
-  UnorderedList,
-  OrderedList,
-} from 'components';
-import Mission from 'components/careers/Mission';
+import { SEO, SitewideFooter, LayoutControl, SitewideHeader } from 'components';
 import CriticalSkillsLink from 'components/careers/CriticalSkillsLink';
 import Hero from 'components/careers/Hero';
 import Footer from 'components/careers/Footer';
+import Main from 'components/careers/Main';
 
-const useStyles = createUseStyles((theme) => ({
-  content: {
-    paddingLeft: 16,
-    paddingRight: 16,
-    ...theme.preMadeStyles.content,
-  },
-
+const useStyles = createUseStyles(() => ({
   sitewideHeaderWrapper: {
     marginBottom: 40,
     paddingLeft: 16,
@@ -89,8 +74,6 @@ const PROCESS = (() => [
   `Yes/No decision.`,
 ])();
 
-const APPLICATION_HREF = `https://roadiehq.typeform.com/to/cdF3Ls?roleslug=${TYPEFORM_SLUG}&utm_source=roadie.io`;
-
 const Engineer = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const classes = useStyles();
@@ -105,47 +88,11 @@ const Engineer = ({ data, location }) => {
         </LayoutControl>
       </div>
 
-      <Hero headline={HEADLINE} roleName={ROLE_NAME} applicationHref={APPLICATION_HREF} />
+      <Hero headline={HEADLINE} roleName={ROLE_NAME} typeformSlug={TYPEFORM_SLUG} />
 
-      <main className={classes.content}>
-        <div className={classes.spacing}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="Our mission" />
-            <Mission classes={classes} />
-          </LayoutControl>
-        </div>
+      <Main role={ROLE} requirements={REQUIREMENTS} offer={OFFER} process={PROCESS} />
 
-        <div className={classes.spacing}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="The role" />
-            <UnorderedList content={ROLE} />
-          </LayoutControl>
-        </div>
-
-        <div className={classes.spacing}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="The requirements" />
-            <UnorderedList content={REQUIREMENTS} />
-          </LayoutControl>
-        </div>
-
-        <div className={classes.spacing}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="The offer" />
-            <UnorderedList content={OFFER} />
-          </LayoutControl>
-        </div>
-
-        <div className={classes.spacing}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="The process" />
-            <Lead text="All applicants will receive a response within 3 days. We can't always be perfect, but we can be quick." />
-            <OrderedList content={PROCESS} />
-          </LayoutControl>
-        </div>
-      </main>
-
-      <Footer applicationHref={APPLICATION_HREF} />
+      <Footer typeformSlug={TYPEFORM_SLUG} />
 
       <LayoutControl maxWidthBreakpoint="lg">
         <SitewideFooter />

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { Link } from 'gatsby';
 
 import { LayoutControl, ButtonLink, InterstitialTitle } from 'components';
+import applicationHref from './applicationHref';
 
 const useStyles = createUseStyles((theme) => ({
   hero: {
@@ -28,7 +29,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const CareersFooter = ({ applicationHref }) => {
+const CareersFooter = ({ typeformSlug }) => {
   const classes = useStyles();
 
   return (
@@ -38,7 +39,7 @@ const CareersFooter = ({ applicationHref }) => {
         <div>
           <ButtonLink
             text="Apply for this role"
-            href={applicationHref}
+            href={applicationHref(typeformSlug)}
             target="_blank"
             rel="noopener noreferrer"
           />
