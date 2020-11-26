@@ -1,7 +1,6 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
 import { renderToString } from 'react-dom/server';
 
 import {
@@ -11,26 +10,15 @@ import {
   InterstitialTitle,
   SitewideHeader,
   Lead,
-  Headline,
   UnorderedList,
   OrderedList,
-  ButtonLink,
 } from 'components';
-import Mission from '../../components/careers/Mission';
-import CriticalSkillsLink from '../../components/careers/CriticalSkillsLink';
+import Mission from 'components/careers/Mission';
+import CriticalSkillsLink from 'components/careers/CriticalSkillsLink';
+import Hero from 'components/careers/Hero';
+import Footer from 'components/careers/Footer';
 
 const useStyles = createUseStyles((theme) => ({
-  hero: {
-    textAlign: 'center',
-    paddingLeft: 16,
-    paddingRight: 16,
-  },
-
-  spacing: {
-    paddingBottom: 24,
-    marginBottom: 40,
-  },
-
   content: {
     paddingLeft: 16,
     paddingRight: 16,
@@ -41,16 +29,6 @@ const useStyles = createUseStyles((theme) => ({
     marginBottom: 40,
     paddingLeft: 16,
     paddingRight: 16,
-  },
-
-  link: {
-    color: theme.palette.primary.main,
-    textDecoration: 'none',
-    marginLeft: 16,
-
-    '&:hover': {
-      textDecoration: 'underline',
-    },
   },
 }));
 
@@ -127,22 +105,7 @@ const Engineer = ({ data, location }) => {
         </LayoutControl>
       </div>
 
-      <div className={classnames(classes.spacing, classes.hero)}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <Headline>
-            <span>{HEADLINE}</span>
-          </Headline>
-
-          <Lead text={`Careers / ${ROLE_NAME}`} />
-
-          <ButtonLink
-            text="Apply for this role"
-            href={APPLICATION_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-          />
-        </LayoutControl>
-      </div>
+      <Hero headline={HEADLINE} roleName={ROLE_NAME} applicationHref={APPLICATION_HREF} />
 
       <main className={classes.content}>
         <div className={classes.spacing}>
@@ -182,23 +145,7 @@ const Engineer = ({ data, location }) => {
         </div>
       </main>
 
-      <div className={classnames(classes.spacing, classes.hero)}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="Sound good?" />
-          <div>
-            <ButtonLink
-              text="Apply for this role"
-              href={APPLICATION_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-            />
-
-            <Link to="/careers" className={classnames('typography-mono', classes.link)}>
-              See all roles
-            </Link>
-          </div>
-        </LayoutControl>
-      </div>
+      <Footer applicationHref={APPLICATION_HREF} />
 
       <LayoutControl maxWidthBreakpoint="lg">
         <SitewideFooter />
