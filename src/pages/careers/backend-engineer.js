@@ -8,6 +8,7 @@ import CriticalSkillsLink from 'components/careers/CriticalSkillsLink';
 import Hero from 'components/careers/Hero';
 import Footer from 'components/careers/Footer';
 import Main from 'components/careers/Main';
+import { backstageLink } from 'components/careers/links';
 
 const useStyles = createUseStyles(() => ({
   sitewideHeaderWrapper: {
@@ -22,12 +23,6 @@ const TYPEFORM_SLUG = 'backend-engineer';
 const HEADLINE = 'Set the technical direction of Roadie';
 
 const ROLE = (() => {
-  const backstageLink = renderToString(
-    <a href="https://github.com/spotify/backstage" target="_blank" rel="noopener noreferrer">
-      the open-source platform
-    </a>
-  );
-
   return [
     'Founding engineer at an early stage, VC-backed startup.',
     `Architect and build a foundational software stack from almost nothing.`,

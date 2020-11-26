@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Link } from 'gatsby';
 
 import { LayoutControl, ButtonLink, InterstitialTitle } from 'components';
-import applicationHref from './applicationHref';
+import { applicationHref } from './links';
 
 const useStyles = createUseStyles((theme) => ({
   hero: {
