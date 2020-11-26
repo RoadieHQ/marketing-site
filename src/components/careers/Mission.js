@@ -3,7 +3,7 @@ import React from 'react';
 const Mission = () => (
   <div>
     <p>
-      Roadie enables companies to get a grip on their microservices by helping them adopt{' '}
+      Roadie enables companies manage their internal services by making it easy to adopt{' '}
       <a href="https://backstage.io" target="_blank" rel="noopener noreferrer">
         Backstage
       </a>
@@ -13,9 +13,9 @@ const Mission = () => (
     </p>
 
     <p>
-      We are a talented group of engineers who experienced the problems of microservice sprawl
-      first-hand and decided that there is a better way. By unlocking the power of Backstage, we can
-      make software development easier, faster and more enjoyable.
+      We are a talented group of engineers who experienced the problems of service sprawl first-hand
+      and decided that there is a better way. By unlocking the power of Backstage, we can make
+      software development easier, faster and more enjoyable.
     </p>
   </div>
 );
