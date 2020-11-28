@@ -56,6 +56,7 @@ const OFFER = (() => {
 const PROCESS = (() => [
   `Application via Typeform. Click the big button below!`,
   `Meet with Roadie's founder, to see if we're a mutual fit.`,
+  `Management skills assessment`,
   `Technical assessment.`,
   `Culture fit assessment.`,
   `Yes/No decision.`,
