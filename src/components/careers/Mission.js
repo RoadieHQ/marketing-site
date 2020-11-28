@@ -3,7 +3,7 @@ import React from 'react';
 const Mission = () => (
   <div>
     <p>
-      Roadie enables companies manage their internal services by making it easy to adopt{' '}
+      Roadie helps companies manage their internal services by making it easy to adopt{' '}
       <a href="https://backstage.io" target="_blank" rel="noopener noreferrer">
         Backstage
       </a>
