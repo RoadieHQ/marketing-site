@@ -58,7 +58,7 @@ const PROCESS = (() => [
   `Meet with Roadie's founder, to see if we're a mutual fit.`,
   `Management skills assessment`,
   `Technical assessment.`,
-  `Culture fit assessment.`,
+  `Culture add assessment.`,
   `Yes/No decision.`,
 ])();
 

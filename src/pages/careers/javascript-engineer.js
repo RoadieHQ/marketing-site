@@ -56,7 +56,7 @@ const PROCESS = (() => [
   `Application via Typeform. Click the big button below!`,
   `Meet with Roadie's founder, to see if we're a mutual fit.`,
   `Technical assessment.`,
-  `Culture fit assessment.`,
+  `Culture add assessment.`,
   `Yes/No decision.`,
 ])();
 
