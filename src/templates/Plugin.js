@@ -71,7 +71,7 @@ const Header = ({ plugin }) => {
 const PluginTemplate = ({ data, location }) => {
   const classes = useStyles();
   const { plugin, notes, site } = data;
-  const { title: siteTitle, newsletterUrl } = site.siteMetadata;
+  const { newsletterUrl } = site.siteMetadata;
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -85,7 +85,7 @@ const PluginTemplate = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={`${plugin.seo.title} | ${siteTitle}`} description={plugin.seo.description} />
+      <SEO title={plugin.seo.title} description={plugin.seo.description} />
       <FormSubmissionModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
@@ -159,7 +159,6 @@ export const pageQuery = graphql`
   query PluginDescriptionByName($name: String!) {
     site {
       siteMetadata {
-        title
         newsletterUrl
         social {
           twitter
