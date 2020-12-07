@@ -14,3 +14,4 @@ export { default as TwoColumnPoints } from './TwoColumnPoints';
 export { default as UnorderedList } from './UnorderedList';
 export { default as OrderedList } from './OrderedList';
 export { default as ButtonLink } from './ButtonLink';
+export { default as Link } from './Link';

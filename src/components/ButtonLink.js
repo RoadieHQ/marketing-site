@@ -1,15 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
+import Link from './Link';
 
 import { useStyles } from './home/Button';
 
-const ButtonLink = ({ text = 'Go', ...props }) => {
+const ButtonLink = ({ children, ...props }) => {
   const classes = useStyles();
 
   return (
-    <a className={classnames('typography-mono', classes.root)} {...props}>
-      <span>{text}</span>
-    </a>
+    <Link className={classnames('typography-mono', classes.root)} {...props}>
+      {children}
+    </Link>
   );
 };
 
