@@ -38,15 +38,14 @@ gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
     code: yarn add @roadiehq/backstage-plugin-argo-cd
-  - intro: Add proxy config
+  - intro: Add proxy config to the app-config.yaml file
     language: yaml
     code: |
-      // app-config.yaml
       proxy:
         '/argocd/api':
           target: https://&lt;your-argocd-instance>/api/v1/
           changeOrigin: true
-          // only if your argocd api has self-signed cert
+          # only if your argocd api has self-signed cert
           secure: false
           headers:
             Cookie:
@@ -85,7 +84,7 @@ gettingStarted:
   - intro: Get and provide `ARGOCD_AUTH_TOKEN` as env variable in following format
     language: yaml
     code: |
-      `argocd.token=&lt;token>`
+      ARGOCD_AUTH_TOKEN='argocd.token=&lt;token>'
 
 # Optional. Use this to suit the brand of the tool that the plugin integrates with.
 style:
