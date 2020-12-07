@@ -8,6 +8,9 @@ humanName: Circle CI
 heading: 'Backstage Circle CI Plugin'
 # Keep it short
 lead: 'See Circle CI Builds in Backstage'
+attribution:
+  text: Spotify
+  href: https://spotify.com
 
 seo:
   # Don't forget to end with "| Roadie"

@@ -7,7 +7,10 @@ humanName: Tech Radar
 heading: 'Backstage Tech Radar Plugin'
 # Keep it short
 lead: | 
-  'Visualize the your company's official guidelines of different areas of software development.'
+  Visualize the your company's official guidelines of different areas of software development.
+attribution:
+  text: Spotify
+  href: https://spotify.com
 
 seo:
   # Don't forget to end with "| Roadie"

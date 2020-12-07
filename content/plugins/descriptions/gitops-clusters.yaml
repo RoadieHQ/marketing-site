@@ -7,6 +7,9 @@ humanName: GitOps Clusters
 heading: 'Backstage GitOps Clusters Projects Plugin'
 # Keep it short
 lead: 'Create GitOps-managed Kubernetes clusters. Currently, it supports provisioning EKS clusters on GitHub via GitHub Actions.'
+attribution:
+  text: Weaveworks
+  href: https://weave.works
 
 seo:
   # Don't forget to end with "| Roadie"

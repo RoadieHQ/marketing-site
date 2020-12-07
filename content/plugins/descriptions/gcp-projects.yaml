@@ -7,6 +7,9 @@ humanName: GPC Project Creator
 heading: 'Backstage Google Cloud Platform Projects Plugin'
 # Keep it short
 lead: 'Create, list and manage your Google Cloud Projects.'
+attribution:
+  text: trivago
+  href: https://www.trivago.com
 
 seo:
   # Don't forget to end with "| Roadie"
