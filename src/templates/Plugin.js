@@ -17,6 +17,7 @@ import {
 import CallToAction from 'components/actions/CallToAction';
 import Logo from 'components/backstage/plugins/Logo';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
+import TextLink from 'components/SitewideHeader/TextLink';
 
 import { FORM_NAMES } from '../contactFormConstants';
 
@@ -56,6 +57,31 @@ const useHeaderStyles = createUseStyles(() => ({
   },
 }));
 
+const useAttributionStyles = createUseStyles((theme) => ({
+  link: {
+    color: theme.palette.primary.main,
+
+    '&:visited': {
+      color: theme.palette.primary.main,
+    },
+  },
+}));
+
+const Attribution = ({ attribution }) => {
+  const classes = useAttributionStyles();
+  if (!attribution) return null;
+
+  if (!attribution.href || attribution.href === '') {
+    return <p>by {attribution.text}</p>;
+  }
+
+  return (
+    <p>
+      by <TextLink to={attribution.href} text={attribution.text} className={classes.link} />
+    </p>
+  );
+};
+
 const Header = ({ plugin }) => {
   const classes = useHeaderStyles();
 
@@ -64,6 +90,7 @@ const Header = ({ plugin }) => {
       <Logo sharpImage={plugin.childrenLogoImage[0].childImageSharp} />
       <Headline>{plugin.heading}</Headline>
       <Lead text={plugin.lead} />
+      <Attribution attribution={plugin.attribution} />
     </header>
   );
 };
@@ -169,6 +196,10 @@ export const pageQuery = graphql`
     plugin: yaml(name: { eq: $name }) {
       heading
       lead
+      attribution {
+        text
+        href
+      }
 
       seo {
         title
