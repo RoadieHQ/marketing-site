@@ -12,6 +12,7 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:jsx-a11y/recommended',
+    'plugin:cypress/recommended',
   ],
 
   globals: {

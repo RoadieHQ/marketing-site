@@ -42,7 +42,9 @@
     "react-modal": "^3.11.2"
   },
   "devDependencies": {
+    "cypress": "^6.0.1",
     "eslint": "^7.4.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
@@ -63,9 +65,9 @@
   },
   "scripts": {
     "build": "yarn run clean && gatsby build",
-    "develop": "yarn run clean && gatsby develop",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "yarn run clean && gatsby develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
