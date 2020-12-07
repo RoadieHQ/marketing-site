@@ -7,6 +7,9 @@ humanName: New Relic
 heading: 'Backstage New Relic Plugin'
 # Keep it short
 lead: 'Observability platform built to help engineers create and monitor their software.'
+attribution:
+  text: '@timwheelercorn'
+  href: https://github.com/timwheelercom
 
 seo:
   # Don't forget to end with "| Roadie"

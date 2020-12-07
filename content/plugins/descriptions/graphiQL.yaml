@@ -7,6 +7,9 @@ humanName: GraphiQL
 heading: 'Backstage GraphiQL Plugin'
 # Keep it short
 lead: 'Integrates GraphiQL as a tool to browse GraphQL API endpoints inside Backstage.'
+attribution:
+  text: Spotify
+  href: https://spotify.com
 
 seo:
   # Don't forget to end with "| Roadie"

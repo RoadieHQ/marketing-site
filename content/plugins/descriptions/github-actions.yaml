@@ -8,6 +8,9 @@ humanName: GitHub Actions
 heading: 'Backstage GitHub Actions Plugin'
 # Keep it short
 lead: 'See GitHub Actions builds in Backstage'
+attribution:
+  text: Spotify
+  href: https://spotify.com
 
 seo:
   # Don't forget to end with "| Roadie"

@@ -7,6 +7,9 @@ humanName: Lighthouse
 heading: 'Backstage Lighthouse Plugin'
 # Keep it short
 lead: 'Integrates Lighthouse inside Backstage.'
+attribution:
+  text: Spotify
+  href: https://spotify.com
 
 seo:
   # Don't forget to end with "| Roadie"

@@ -7,6 +7,9 @@ humanName: SonarQube
 heading: 'Backstage SonarQube and SonarCloud Plugin'
 # Keep it short
 lead: 'Components to display code quality metrics from SonarCloud and SonarQube.'
+attribution:
+  text: SDA-SE
+  href: https://sda.se/
 
 seo:
   # Don't forget to end with "| Roadie"

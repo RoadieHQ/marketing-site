@@ -2,6 +2,9 @@ name: rollbar
 humanName: Rollbar
 heading: 'Backstage Rollbar Plugin'
 lead: 'Correlate services with problems in production'
+attribution:
+  text: '@andrewthauer'
+  href: https://github.com/andrewthauer
 
 seo:
   title: 'Backstage Rollbar Plugin | Roadie'

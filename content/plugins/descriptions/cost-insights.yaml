@@ -7,6 +7,9 @@ humanName: Cost Insights
 heading: 'Backstage Cost Insights Plugin'
 # Keep it short
 lead: 'Cost Insights is a plugin to help engineers visualize, understand and optimize their cloud costs.'
+attribution:
+  text: Spotify
+  href: https://spotify.com
 
 seo:
   # Don't forget to end with "| Roadie"
