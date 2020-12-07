@@ -131,6 +131,7 @@ const CallToAction = ({
         <input
           type="email"
           name="email"
+          id={`${netlifyFormName}-email-input`}
           aria-label="Work email address"
           placeholder={placeholderText}
           className={classes.input}
@@ -138,7 +139,12 @@ const CallToAction = ({
           value={email}
         />
 
-        <Button text={buttonText} disabled={disabled} icon={<FaPaperPlane />} />
+        <Button
+          text={buttonText}
+          disabled={disabled}
+          icon={<FaPaperPlane />}
+          id={`${netlifyFormName}-email-button`}
+        />
       </div>
       <div className={classnames(subFormStateClass, classes.subForm)}>{subForm.message}</div>
     </form>
