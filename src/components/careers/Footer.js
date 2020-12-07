@@ -1,9 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
-import { Link } from 'gatsby';
-
-import { LayoutControl, ButtonLink, InterstitialTitle } from 'components';
+import { LayoutControl, ButtonLink, InterstitialTitle, Link } from 'components';
 import { applicationHref } from './links';
 
 const useStyles = createUseStyles((theme) => ({
@@ -37,12 +35,9 @@ const CareersFooter = ({ typeformSlug }) => {
       <LayoutControl maxWidthBreakpoint="lg">
         <InterstitialTitle text="Sound good?" />
         <div>
-          <ButtonLink
-            text="Apply for this role"
-            href={applicationHref(typeformSlug)}
-            target="_blank"
-            rel="noopener noreferrer"
-          />
+          <ButtonLink to={applicationHref(typeformSlug)}>
+            <span>Apply for this role</span>
+          </ButtonLink>
 
           <Link to="/careers" className={classnames('typography-mono', classes.link)}>
             See all roles

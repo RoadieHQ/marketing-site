@@ -30,12 +30,9 @@ const CareersHero = ({ headline, roleName, typeformSlug }) => {
 
         <Lead text={`Careers / ${roleName}`} />
 
-        <ButtonLink
-          text="Apply for this role"
-          href={applicationHref(typeformSlug)}
-          target="_blank"
-          rel="noopener noreferrer"
-        />
+        <ButtonLink to={applicationHref(typeformSlug)}>
+          <span>Apply for this role</span>
+        </ButtonLink>
       </LayoutControl>
     </div>
   );

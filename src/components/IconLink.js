@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { Link } from 'gatsby';
+import Link from './Link';
 
 const useStyles = createUseStyles((theme) => ({
   link: {
@@ -18,19 +18,10 @@ const useStyles = createUseStyles((theme) => ({
 
 const IconLink = ({ to, children, color }) => {
   const classes = useStyles({ color });
-
-  if (to.startsWith('/')) {
-    return (
-      <Link to={to} className={classes.root}>
-        {children}
-      </Link>
-    );
-  }
-
   return (
-    <a href={to} target="_blank" rel="noopener noreferrer" className={classes.link}>
+    <Link to={to} className={classes.link}>
       {children}
-    </a>
+    </Link>
   );
 };
 
