@@ -1,9 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { Link } from 'gatsby';
+import { Link } from 'components';
 
 import Logo from './Logo';
 import theme from '../../../theme';
+import Attribution from './Attribution';
 
 const useStyles = createUseStyles(() => ({
   link: {
@@ -17,9 +18,13 @@ const useStyles = createUseStyles(() => ({
     paddingBottom: 16,
   },
 
+  attributionWrapper: {
+    textAlign: 'center',
+  },
+
   root: {
     padding: '1rem',
-    height: 300,
+    height: 350,
     border: `1px solid ${theme.palette.grey[300]}`,
 
     '&::before': {
@@ -40,6 +45,9 @@ const ListItem = (props) => {
         <Logo sharpImage={sharpImage} />
         <h2 className={classes.h2}>{props.humanName}</h2>
       </Link>
+      <div className={classes.attributionWrapper}>
+        <Attribution attribution={props.attribution} />
+      </div>
     </div>
   );
 };
