@@ -24,8 +24,10 @@ const Home = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={`Backstage Plugin Directory | ${title}`} />
-      <SEO description="A comprehensive list of Backstage plugins, with screenshots, installation instructions and usage guides." />
+      <SEO
+        title={`Backstage Plugin Directory | ${title}`}
+        description="A comprehensive list of Backstage plugins, with screenshots, installation instructions and usage guides."
+      />
 
       <StickyFooter location={location}>
         <div className={classes.grid}>
