@@ -7,6 +7,9 @@ humanName: GitHub Pull Requests
 heading: 'Backstage GitHub Pull Requests Plugin'
 # Keep it short
 lead: 'See Pull Requests for your service in Backstage'
+attribution:
+  text: Roadie
+  href: https://roadie.io
 
 seo:
   # Don't forget to end with "| Roadie"

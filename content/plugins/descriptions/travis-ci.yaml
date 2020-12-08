@@ -2,6 +2,9 @@ name: travis-ci
 humanName: Travis CI
 heading: 'Backstage Travis CI Plugin'
 lead: 'See builds in Backstage'
+attribution:
+  text: Roadie
+  href: https://roadie.io
 
 seo:
   title: 'Backstage Travis CI Plugin | Roadie'

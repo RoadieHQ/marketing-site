@@ -8,7 +8,6 @@ humanName: Template
 heading: 'Backstage Template Plugin'
 # Keep it short
 lead: 'Describe the problem that the plugin will solve for users'
-# Attribution should be omitted for Roadie created plugins.
 attribution:
   text: Spotify
   href: https://spotify.com

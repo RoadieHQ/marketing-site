@@ -7,6 +7,9 @@ humanName: GitHub Insights
 heading: 'Backstage GitHub Insights Plugin'
 # Keep it short
 lead: 'See GitHub Insights for your components in Backstage'
+attribution:
+  text: Roadie
+  href: https://roadie.io
 
 seo:
   # Don't forget to end with "| Roadie"

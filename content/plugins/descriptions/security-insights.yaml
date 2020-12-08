@@ -7,6 +7,9 @@ humanName: Security Insights
 heading: 'Backstage Security Insights Plugin'
 # Keep it short
 lead: 'See Security Insights for your components in Backstage'
+attribution:
+  text: Roadie
+  href: https://roadie.io
 
 seo:
   # Don't forget to end with "| Roadie"
