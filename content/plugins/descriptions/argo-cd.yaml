@@ -8,6 +8,9 @@ humanName: Argo CD
 heading: 'Backstage Argo CD Plugin'
 # Keep it short
 lead: 'See Argo CD status in Backstage'
+attribution:
+  text: Roadie
+  href: https://roadie.io
 
 seo:
   # Don't forget to end with "| Roadie"
