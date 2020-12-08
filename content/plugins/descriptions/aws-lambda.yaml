@@ -7,6 +7,9 @@ humanName: AWS Lambda
 heading: 'Backstage AWS Lambda Plugin'
 # Keep it short
 lead: 'See AWS Lambda functions for your components in Backstage'
+attribution:
+  text: Roadie
+  href: https://roadie.io
 
 seo:
   # Don't forget to end with "| Roadie"

@@ -8,6 +8,9 @@ humanName: Buildkite
 heading: 'Backstage Buildkite Plugin'
 # Keep it short
 lead: 'See Buildkite Builds in Backstage'
+attribution:
+  text: Roadie
+  href: https://roadie.io
 
 seo:
   # Don't forget to end with "| Roadie"
