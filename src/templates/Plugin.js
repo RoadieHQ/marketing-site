@@ -15,9 +15,8 @@ import {
   SEO,
 } from 'components';
 import CallToAction from 'components/actions/CallToAction';
-import Logo from 'components/backstage/plugins/Logo';
+import { Logo, Attribution } from 'components/backstage/plugins';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-import TextLink from 'components/SitewideHeader/TextLink';
 
 import { FORM_NAMES } from '../contactFormConstants';
 
@@ -56,31 +55,6 @@ const useHeaderStyles = createUseStyles(() => ({
     paddingRight: 16,
   },
 }));
-
-const useAttributionStyles = createUseStyles((theme) => ({
-  link: {
-    color: theme.palette.primary.main,
-
-    '&:visited': {
-      color: theme.palette.primary.main,
-    },
-  },
-}));
-
-const Attribution = ({ attribution }) => {
-  const classes = useAttributionStyles();
-  if (!attribution) return null;
-
-  if (!attribution.href || attribution.href === '') {
-    return <p>by {attribution.text}</p>;
-  }
-
-  return (
-    <p>
-      by <TextLink to={attribution.href} text={attribution.text} className={classes.link} />
-    </p>
-  );
-};
 
 const Header = ({ plugin }) => {
   const classes = useHeaderStyles();
