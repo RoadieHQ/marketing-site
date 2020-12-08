@@ -37,7 +37,7 @@ coverImage:
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc
 gettingStarted:
-    # What will this step accomplish?
+  # What will this step accomplish?
   - intro: Install the plugin into Backstage.
     language: bash
     code: yarn add @roadiehq/backstage-plugin-jira
@@ -47,7 +47,7 @@ gettingStarted:
       // app-config.yaml
       proxy:
         '/jira/api':
-          target: [JIRA_URL]
+          target: &lt;JIRA_URL>
           headers:
             Authorization:
               $env: JIRA_TOKEN
@@ -82,16 +82,16 @@ gettingStarted:
       );
   - intro: Add annotation to the yaml config file of a component
     language: yaml
-    code: | 
+    code: |
       metadata:
         annotations:
-          jira/project-key: [example-jira-project-key]
-          jira/component: [example-component] // optional, you might skip this value to fetch data for all components
+          jira/project-key: &lt;example-jira-project-key>
+          jira/component: &lt;example-component> # optional, you might skip this value to fetch data for all components
   - intro: Get and provide `JIRA_TOKEN` as env variable in following format
     language: yaml
     code: |
       "Basic base64(jira-mail@example.com:JIRA_TOKEN)"
-      e.g. `Basic: ZXhhbXBsZV9qaXJhQGV4YW1wbGUuY29tOjU1Q3NUSEoxWW1oTVdJSFptdGJXNUUxOA==`
+      e.g. `Basic ZXhhbXBsZV9qaXJhQGV4YW1wbGUuY29tOjU1Q3NUSEoxWW1oTVdJSFptdGJXNUUxOA==`
 
 # Optional. Use this to suit the brand of the tool that the plugin integrates with.
 style:
