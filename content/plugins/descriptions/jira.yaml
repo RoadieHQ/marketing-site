@@ -87,11 +87,10 @@ gettingStarted:
         annotations:
           jira/project-key: &lt;example-jira-project-key>
           jira/component: &lt;example-component> # optional, you might skip this value to fetch data for all components
-  - intro: Get and provide `JIRA_TOKEN` as env variable in following format
-    language: yaml
-    code: |
-      "Basic base64(jira-mail@example.com:JIRA_TOKEN)"
-      e.g. `Basic ZXhhbXBsZV9qaXJhQGV4YW1wbGUuY29tOjU1Q3NUSEoxWW1oTVdJSFptdGJXNUUxOA==`
+  - intro: Get and provide `JIRA_TOKEN` as env variable.
+  - intro: Obtain you personal token from jira - https://id.atlassian.com/manage-profile/security/api-tokens
+  - intro: Create a base64-encoded string by converting "<your-atlassian-account-mail>:<your-jira-token>", for example `jira-mail@example.com:hTBgqVcrcxRYpT5TCzTA9C0F` converts to `amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==`
+  - intro: Save the environmental variable `JIRA_TOKEN` with `Basic ` prefix, eg `JIRA_TOKEN='Basic amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg=='`
 
 # Optional. Use this to suit the brand of the tool that the plugin integrates with.
 style:
