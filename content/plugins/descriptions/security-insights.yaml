@@ -22,7 +22,7 @@ logo:
   # The overall size of the file should be approximately 200 by 200.
   # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
   # The image will be made greyscale by Gatsby Image Sharp.
-  fileSystemPath: './content/assets/logos/github/PNG/GitHub-Mark-120px-plus.png'
+  fileSystemPath: './content/assets/logos/github/PNG/GitHub-Mark-120px-plus3.png'
   # The dimensions are required. They are the outer dimensions of the image file.
   width: 120
   height: 120
@@ -34,7 +34,7 @@ coverImage:
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc
 gettingStarted:
-    # What will this step accomplish?
+  # What will this step accomplish?
   - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @roadiehq/backstage-plugin-security-insights'
@@ -69,26 +69,26 @@ gettingStarted:
   - intro: Add widget to your Overview tab.
     language: typescript
     code: |
-        // packages/app/src/components/catalog/EntityPage.tsx
-        import {
-          SecurityInsightsWidget,
-          isPluginApplicableToEntity as isSecurityInsightsAvailable,
-        } from '@roadiehq/backstage-plugin-security-insights';
-        
-        ...
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        SecurityInsightsWidget,
+        isPluginApplicableToEntity as isSecurityInsightsAvailable,
+      } from '@roadiehq/backstage-plugin-security-insights';
 
-        const OverviewContent = ({ entity }: { entity: Entity }) => (
-          &lt;Grid container spacing={3} alignItems="stretch">
-            ...
-            {isSecurityInsightsAvailable(entity) && (
-              &lt;>
-                &lt;Grid item md={6}>
-                  &lt;SecurityInsightsWidget entity={entity} />
-                &lt;/Grid>
-              &lt;/>
-            )}
-          &lt;/Grid>
-        );
+      ...
+
+      const OverviewContent = ({ entity }: { entity: Entity }) => (
+        &lt;Grid container spacing={3} alignItems="stretch">
+          ...
+          {isSecurityInsightsAvailable(entity) && (
+            &lt;>
+              &lt;Grid item md={6}>
+                &lt;SecurityInsightsWidget entity={entity} />
+              &lt;/Grid>
+            &lt;/>
+          )}
+        &lt;/Grid>
+      );
 
 # Optional. Use this to suit the brand of the tool that the plugin integrates with.
 style:
