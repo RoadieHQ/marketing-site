@@ -18,10 +18,7 @@ seo:
     See Security Insights in Backstage.
 
 logo:
-  # This must be a relative path. It should start without a slash or with ./
-  # The overall size of the file should be approximately 200 by 200.
-  # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
-  # The image will be made greyscale by Gatsby Image Sharp.
+  # Duplicated image file to avoid bug that overwrites CoverImage for all plugin pages that use the same logo file
   fileSystemPath: './content/assets/logos/github/PNG/GitHub-Mark-120px-plus3.png'
   # The dimensions are required. They are the outer dimensions of the image file.
   width: 120
