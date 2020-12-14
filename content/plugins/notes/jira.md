@@ -26,3 +26,9 @@ name: jira
    ```
    JIRA_TOKEN='Basic amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg=='
    ```
+
+   Alternatively, if you are running backstage locally, you can provide the variable by the command
+
+   ```
+   env JIRA_TOKEN='Basic amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==' yarn dev
+   ```
