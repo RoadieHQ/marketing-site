@@ -84,6 +84,7 @@ gettingStarted:
         annotations:
           jira/project-key: &lt;example-jira-project-key>
           jira/component: &lt;example-component> # optional, you might skip this value to fetch data for all components
+  - intro: Provide the JIRA_TOKEN environmental variable (instructions at the notes below)
 
 # Optional. Use this to suit the brand of the tool that the plugin integrates with.
 style:
