@@ -14,10 +14,13 @@ const Page = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const classes = useStyles();
   const post = data.markdownRemark;
+  const {
+    frontmatter: { title, description },
+  } = post;
 
   return (
     <>
-      <SEO title={`${post.title} | ${siteTitle}`} />
+      <SEO title={`${title} | ${siteTitle}`} description={description} />
 
       <StickyFooter location={location}>
         <PostHeader post={post} />

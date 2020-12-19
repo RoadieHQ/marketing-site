@@ -1,7 +1,7 @@
 ---
 title: Terms of Service
 date: '2020-07-11T21:00:00.0Z'
-description:
+description: Please read these terms and conditions carefully before using Our Service.
 ---
 
 Please read these terms and conditions carefully before using Our Service.
