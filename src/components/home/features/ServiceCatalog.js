@@ -16,10 +16,10 @@ const Text = () => {
   return (
     <div>
       <h2>Service catalog for discoverability</h2>
-      <p className={classes.p}>300 GitHub repos and no idea what they do?</p>
+      <p className={classes.p}>Got more repos than you can keep up with?</p>
       <p className={classes.p}>
-        Get control of the sprawl and improve your onboarding by making it easy to understand what
-        each service is and who owns it.
+        Get control of the sprawl and improve new hire onboarding by making it easy to understand
+        what each service is and who owns it.
       </p>
     </div>
   );

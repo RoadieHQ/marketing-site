@@ -53,9 +53,7 @@ const Home = ({ data, location }) => {
 
         <ResponsiveSpacer>
           <InterstitialTitle fontSize="3em">
-            Do away with tribal knowledge
-            <br />
-            which slows development
+            Turn tribal knowledge into shared context
           </InterstitialTitle>
         </ResponsiveSpacer>
 
