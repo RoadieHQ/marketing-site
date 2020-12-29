@@ -78,14 +78,7 @@ const OPEN_ROLES = [
     },
   ],
 
-  [
-    {
-      title() {
-        return <Link to="/careers/engineering-manager">Engineering Manager</Link>;
-      },
-      text: `Build a top-performing startup engineering team.`,
-    },
-  ],
+  [],
 ];
 
 const Careers = ({ data, location }) => {
