@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
+import { CookieConsent } from 'components';
 
 const useStyles = createUseStyles((theme) => ({
   inner: {
@@ -52,6 +53,8 @@ const SitewideFooter = () => {
           </Link>
         </nav>
       </div>
+
+      <CookieConsent />
     </footer>
   );
 };
