@@ -2,160 +2,272 @@
 title: Running the Backstage service catalog with Docker Compose
 date: '2020-06-09T21:00:00.0Z'
 description: How to build and run Backstage Docker containers to get started with the service catalog in Docker Compose.
+lastValidated: '2021-01-09T21:00:00.0Z'
 ---
 
-At the time of writing, early June 2020, Backstage is under heavy development. Many features are non-functional and there is no official application packaging which makes it easy to install or use Backstage in a production setup.
+In this tutorial, we're going to build and run a basic Backstage application with Docker Compose. The application will be able to store data in a PostgreSQL database, and connect to GitHub to pull in repositories. We will also make a config change in the Backstage application and re-run it.
 
-I wanted to see what it would take to start up Backstage with the service catalog and backend using Docker Compose so I could figure out the steps to host it on a VM or in Kubernetes.
+## Prerequisites
 
-**This setup is in no way suitable for a production Backstage installation**. It uses development servers and localhost extensively and won't work on a domain name without some severe editing of the Backstage source code. Use at your own risk!
+To complete this tutorial, you will need:
 
-The Backstage architecture looks something like this
+- [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/) installed and running on your local machine.
+- [NodeJS](https://nodejs.org/en/) installed on your local machine.
+- The [Yarn package manager](https://classic.yarnpkg.com/en/docs/install/#mac-stable) installed. You can use `npm` if you like, although you will have to modify the shell commands somewhat.
 
-![Backstage architecture showing plugins and the proxy](./backstage-arch.png)
+## Step 1 - Scaffold a Backstage application
 
-The important components for the purposes of this exercise are:
+To run Backstage on Docker Compose, we need to create a Backstage instance to work with. The main Backstage codebase does ship with a sample application we can run, but best practices dictate that we should create our own so we can configure it with our company name and other attributes.
 
-1. The **UI** layer. This is what we are will be referring to as the frontend. Typically it runs on `http://localhost:3000`.
-2. The **Proxy**. This accepts certain requests which go to `http://localhost:3000` and forwards them to other places. For example, it forwards any `localhost:3000` request which contains the path `/catalog/` over to `http://localhost:7000`. This is configured in `packages/app/package.json` [[source code](https://github.com/spotify/backstage/blob/f44c609244182df9b877deda6224c78b11f1b170/packages/app/package.json#L68)]. It also handles requests for the CircleCI plugin although we won't be dealing with that in this post.
-3. The **Backend**. This is the service catalog. It typically run on `http://localhost:7000`. [[source code](https://github.com/spotify/backstage/tree/f44c609244182df9b877deda6224c78b11f1b170/packages/backend)]
+Backstage requires a database to store information about the components, websites and other entities you want to track in the catalog. There are two built in database options, Sqlite and PostgreSQL. We're going to use PostgreSQL for this tutorial.
 
-In order to run this setup with Docker Compose, we need to dockerize the UI in a way which preserves the proxy, dockerize the backend, and then connect them all together so they can talk to each other.
+Backstage comes with a CLI for creating Backstage instances. Let's use it to scaffold a new instance and configure it for PostgreSQL. We'll call this instance `scaffolded-app`, but you can choose a name that makes more sense for you.
 
-## Dockerizing the Frontend
+This tutorial uses version `0.3.2` of the Backstage CLI to create this application. You may see different results if you're using a different version.
 
-The `Dockerfile` which is included with Backstage [[source code](https://github.com/spotify/backstage/blob/f44c609244182df9b877deda6224c78b11f1b170/Dockerfile)] simply takes compiled JavaScript files from the `packages/app/dist` directory and hosts them behind an Nginx server in the container it creates. This is fine for running the frontend assets in the browser but it is missing the proxy.
+```bash
+» npx @backstage/create-app --version
+0.3.2
 
-To get around this, we're going to create a Docker container which runs the app with `yarn start`, just like you would do in development.
+» npx @backstage/create-app
+npx: installed 68 in 14.197s
+? Enter a name for the app [required] scaffolded-app
+? Select database for the backend [required] PostgreSQL
 
-First, delete the `Dockerfile` in the Backstage root directory and create a new one with this content:
+Creating the app...
 
-```dockerfile
-# We are going to run a NodeJS process so we need to
-# inherit from node rather than nginx.
-FROM node:lts
+ Checking if the directory is available:
+  checking      scaffolded-app ✔
 
-WORKDIR /usr/src/app
-# This is copying a bunch of unnecessary stuff from the root
-# directory into the container but we won't worry about that
-# for the purposes of this experiment.
-COPY . .
-RUN yarn install
+ Creating a temporary app directory:
+  creating      temporary directory ✔
 
-# Allow external connections to the webpack dev server.
-EXPOSE 3000
+ Preparing files:
+  copying       README.md ✔
+  copying       .npmignore ✔
+  copying       lerna.json ✔
+  templating    app-config.yaml.hbs ✔
+  templating    package.json.hbs ✔
+  copying       tsconfig.json ✔
+  copying       .eslintrc.js ✔
+  copying       cypress.json ✔
+  templating    package.json.hbs ✔
+  copying       .eslintrc.js ✔
+  copying       android-chrome-192x192.png ✔
+  copying       favicon-16x16.png ✔
+  copying       apple-touch-icon.png ✔
+  copying       favicon-32x32.png ✔
+  copying       favicon.ico ✔
+  copying       manifest.json ✔
+  copying       index.html ✔
+  copying       safari-pinned-tab.svg ✔
+  copying       robots.txt ✔
+  copying       App.tsx ✔
+  copying       App.test.tsx ✔
+  copying       index.tsx ✔
+  copying       apis.ts ✔
+  copying       plugins.ts ✔
+  copying       sidebar.tsx ✔
+  copying       setupTests.ts ✔
+  copying       .eslintrc.json ✔
+  copying       app.js ✔
+  copying       .eslintrc.js ✔
+  copying       Dockerfile ✔
+  copying       README.md ✔
+  templating    package.json.hbs ✔
+  copying       index.ts ✔
+  copying       types.ts ✔
+  copying       index.test.ts ✔
+  copying       auth.ts ✔
+  copying       catalog.ts ✔
+  copying       identity.ts ✔
+  copying       proxy.ts ✔
+  copying       scaffolder.ts ✔
+  copying       techdocs.ts ✔
 
-CMD ["yarn", "start"]
+ Moving to final location:
+  moving        scaffolded-app ✔
+
+ Building the app:
+  executing     yarn install ✔
+  executing     yarn tsc ✔
+  executing     yarn build ✔
+
+🥇  Successfully created scaffolded-app
 ```
 
-We can build this container now and run it with Docker Compose, but we will hit a problem. The proxy service will attempt to direct frontend traffic destined for the service catalog to `localhost:7000`. Unfortunately, `localhost` is no good for [inter-service communication in docker-compose](https://docs.docker.com/compose/networking/).
+If we `cd` into the `scaffolded-app` directory which was just created, we can see the directory structure which was created for us.
 
-Instead, we have to use the hostname provided by Docker. Later on, when we get to the `docker-compose.yml`, we're going to specifically label the frontend `frontend` and the backend `backend`. Before we build the frontend container, we have to instruct the proxy service to send traffic to `http://backend:7000` instead of `http://localhost:7000`.
-
-To do that, open up `packages/app/package.json` and edit the proxy config.
-
-```json
-{
-  // ... stuff omitted for berevity
-  "/catalog/api": {
-    // "target" used to be "http://localhost:7000
-    "target": "http://backend:7000", // CHANGE THIS LINE
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/catalog/api/": "/catalog/"
-    }
-  }
-}
+```bash
+» ls -al                                                                                                                                                                                                                                                                                                                            146 ↵
+total 1776
+drwxr-xr-x    19 myuser  staff     608  9 Jan 20:20 .
+drwxr-xr-x     3 myuser  staff      96  9 Jan 19:17 ..
+-rw-r--r--     1 myuser  staff      36  9 Jan 19:17 .eslintrc.js
+-rw-r--r--     1 myuser  staff     420  9 Jan 19:17 .gitignore
+-rw-r--r--     1 myuser  staff      93  9 Jan 19:17 README.md
+-rw-r--r--     1 myuser  staff     184  9 Jan 19:17 app-config.production.yaml
+-rw-r--r--     1 myuser  staff    3250  9 Jan 19:17 app-config.yaml
+-rw-r--r--     1 myuser  staff     399  9 Jan 19:17 catalog-info.yaml
+drwxr-xr-x     4 myuser  staff     128  9 Jan 19:19 dist-types
+-rw-r--r--     1 myuser  staff     116  9 Jan 19:17 lerna.json
+drwxr-xr-x  1698 myuser  staff   54336  9 Jan 19:19 node_modules
+-rw-r--r--     1 myuser  staff    1339  9 Jan 19:17 package.json
+drwxr-xr-x     4 myuser  staff     128  9 Jan 19:17 packages
+-rw-r--r--     1 myuser  staff     272  9 Jan 19:17 tsconfig.json
+-rw-r--r--     1 myuser  staff  829904  9 Jan 19:19 yarn.lock
 ```
 
-Eventually, this type of configuration will be possible without manaully modifying the Backstage source code. Configuration features are still in development unfortunately so this will have to do for now.
+The main bulk of the application is in the `packages` directory. This contains two subdirectories.
 
-With that, we can run the Backstage frontend with Docker.
-
-```shell
-» docker build . -t spotify/backstage-frontend
-» docker run -p 3000:3000 spotify/backstage-frontend
+```bash
+» ls -al packages
+total 0
+drwxr-xr-x   4 myuser  staff  128  9 Jan 19:17 .
+drwxr-xr-x  19 myuser  staff  608  9 Jan 22:23 ..
+drwxr-xr-x  10 myuser  staff  320  9 Jan 19:40 app
+drwxr-xr-x   9 myuser  staff  288  9 Jan 19:50 backend
 ```
 
-Of course, the service catalog doesn't work because we haven't run the backend yet.
+The `app` subdirectory contains the frontend UI of Backstage and the `backend`, as you might expect, contains the API layer and parts that connect to the database.
 
-![Backstage catalog not working](./backstage-frontend-docker.png)
+## Step 2 - Building a Docker image
 
-## Dockerizing the Backend
+Backstage comes with a built in command to help you build a Docker image which you can run with Docker Compose.
 
-Even though the backend source code lives in `packages/backend`, and you would run `yarn start` within that directory to run the backend in development, we need to create a Dockerfile in the root directory of Backstage to dockerize it.
+For simple deployments, the Backstage `backend` has the ability to serve the frontend `app` to the browser, so you only have to build one Docker image.
 
-The backend relies on various node libraries which are not actually present in `packages/backend/package.json` and I ran into dependency problems when attempting to Dockerize from that subdirectory.
-
-Instead, edit the `Dockerfile` again to the following content:
-
-```dockerfile
-FROM node:lts
-
-WORKDIR /usr/src/app
-COPY . .
-RUN yarn install
-# This time we have to build the backend.
-RUN yarn build
-
-# Change the working directory before executing yarn start
-# so that the backend runs instead of the frontend.
-WORKDIR /usr/src/app/packages/backend
-EXPOSE 7000
-
-CMD ["yarn", "start"]
+```bash
+» yarn workspace backend build-image
+yarn workspace v1.22.10
+yarn run v1.22.10
+$ backstage-cli backend:build-image --build --tag backstage
+# Lots of output omitted...
+=> => naming to docker.io/library/backstage                                                                                                                                                                                                                                                                                                                                           0.0s
+✨  Done in 114.02s.
 ```
 
-Build it with Docker just like before and we now have a Dockerized Backstage backend.
+Check the image has been built successfully.
 
-```shell
-» docker build . -t spotify/backstage-backend
+```bash
+» docker images                                                                                                                                                                                                                                                                                                                                                                                                                                       1 ↵
+REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
+backstage          latest    7b452013e713   3 minutes ago   1.1GB
 ```
 
-## Running everything together
+Now that we have a Docker image, let's try to run it.
 
-Now that we have our two Docker containers built, we just need to hook them up and run them so they can communicate. Here's the `docker-compose.yml` file you need.
+```yaml
+» docker run backstage
+2021-01-09T19:51:13.883Z backstage info Loaded config from app-config.yaml, app-config.production.yaml
+2021-01-09T19:51:13.887Z backstage info Created UrlReader predicateMux{readers=azure{host=dev.azure.com,authed=false},bitbucket{host=bitbucket.org,authed=false},github{host=github.com,authed=false},gitlab{host=gitlab.com,authed=false},fallback=fetch{}}
+Backend failed to start up, Error: connect ECONNREFUSED 127.0.0.1:5432
+```
+
+This fails because the Backstage backend cannot connect to port `5432`. Backstage needs to connect to the database in order to store catalog items and other data. It expects to find PostgreSQL running on port `5432`. When it can't, it fails and bails out.
+
+To fix this, let's use Docker Compose to make PostgreSQL available to our Backstage backend.
+
+## Step 2 - Adding PostgreSQL
+
+Below is a simple `docker-compose.yaml` file which runs the Backstage image we just created and a default PostgreSQL database. Create this file inside your Backstage application and save it.
 
 ```yaml
 version: '3'
 services:
-  frontend:
-    # This is the name of the container image we built
-    image: spotify/backstage-frontend
-    ports:
-      - '3000:3000'
-    depends_on:
-      - backend
-
-  # Here's the label we mentioned earlier. Any requests
-  # to http://backend* will automatically be routed to
-  # this service by Docker Compose.
-  backend:
-    image: spotify/backstage-backend
-    # All these environment variables are required to
-    # allow the JS to run. They can be dummy values.
+  backstage:
+    image: backstage
     environment:
-      AUTH_GOOGLE_CLIENT_ID: a
-      AUTH_GOOGLE_CLIENT_SECRET: b
-      AUTH_GITHUB_CLIENT_ID: c
-      AUTH_GITHUB_CLIENT_SECRET: d
-      SENTRY_TOKEN: e
+      # This value must match the name of the postgres configuration block.
+      POSTGRES_HOST: db
+      POSTGRES_USER: postgres
     ports:
       - '7000:7000'
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+			# NOT RECOMMENDED for a production environment. Trusts all incomming
+      # connections.
+      POSTGRES_HOST_AUTH_METHOD: trust
 ```
 
-Stick that in a file, run it with `docker-compose up` and you should be ready to go.
+Once you've done that, you can use Docker Compose to start both of these Docker images.
 
-![The catalog successfully returns](./catalog-working.png)
-
-We can now see the service catalog. Of course, we haven't actually put any data into it yet so there are no services listed in the table.
-
-Luckily, the Backstage folk have created a quick solution to this problem. Run this command to put some dummy data in your catalog and refresh the browser.
-
-```shell
-» curl -i -H "Content-Type: application/json" -d '{"type":"github","target":"https://github.com/spotify/backstage/blob/master/plugins/catalog-backend/fixtures/two_components.yaml"}' localhost:7000/catalog/locations
+```bash
+» docker-compose up
+Creating network "blog-post-test_default" with the default driver
+Creating blog-post-test_db_1        ... done
+Creating blog-post-test_backstage_1 ... done
+Attaching to blog-post-test_backstage_1, blog-post-test_db_1
+# Lots of output omitted...
+backstage_1  | Backend failed to start up, Error: Failed to initialize github scaffolding provider, Missing required config value at 'scaffolder.github.token'
+blog-post-test_backstage_1 exited with code 1
 ```
 
-![The catalog displaying dummy data](./with-dummy-data.png)
+It still fails, but we've made progress. Backstage has successfully connected to the database and then failed because of a missing GitHub token.
 
-If you want to see how to add the Lighthouse plugin and a Postgres database to this setup, check out [this post](/backstage-docker-compose).
+## Step 3 - Configuring GitHub
+
+Backstage needs a GitHub token in order to authenticate with the GitHub API for tasks like templating new applications and reading the `catalog-info.yaml` files it uses to store metadata.
+
+Head over to the GitHub docs to learn how to [create a Personal Access Token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token). If you don't want to use GitHub, you can use a nonsense value like `abc` in place of the GitHub token value.
+
+Once you have your token, pass it into Backstage via the environment variables.
+
+```yaml
+version: '3'
+services:
+  backstage:
+    image: backstage
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_USER: postgres
+      # Add your token here
+      GITHUB_TOKEN: <your-github-token>
+    ports:
+      - '7000:7000'
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+```
+
+Once that's done, let's give it one more go.
+
+```bash
+» docker-compose up
+Creating network "blog-post-test_default" with the default driver
+Creating blog-post-test_db_1        ... done
+Creating blog-post-test_backstage_1 ... done
+Attaching to blog-post-test_backstage_1, blog-post-test_db_1
+# Lots of output omitted...
+backstage_1  | 2021-01-09T22:42:27.061Z backstage info Initializing http server
+backstage_1  | 2021-01-09T22:42:27.065Z backstage info Listening on :7000
+```
+
+Hurray! 🎉 Now, if you visit `localhost:7000`, you should see Backstage.
+
+![Backstage running in the browser](./backstage-running.png)
+
+## Step 4 - Making a change
+
+Our Backstage instance isn't quite as perfect as it could be. You'll notice the header says "My Company Service Catalog". Let's change that to include the name of our company, Roadie.
+
+This is a simple change to make. Fire up your text editor and open the `app-config.yaml` file.
+
+In there, you'll see the following two lines
+
+```yaml
+organization:
+  name: My Company
+```
+
+Simply change "My Company" to something like "Roadie", rebuild the docker image, run `docker-compose up` and refresh your browser window to see the change.
+
+## Conclusion
+
+In this tutorial you learned how to get Backstage running locally and change it's configuration. As a next step, you may wish to try [adding the Lighthouse plugin](https://roadie.io/blog/backstage-docker-compose/) to the deployment.
