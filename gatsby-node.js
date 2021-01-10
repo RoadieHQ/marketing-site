@@ -1,5 +1,6 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const kebabCase = require('lodash/kebabCase');
 
 const BLOGS_QUERY = `
 {
@@ -54,6 +55,16 @@ const PAGES_QUERY = `
           slug
         }
       }
+    }
+  }
+}
+`;
+
+const TAGS_QUERY = `
+{
+  tagsGroup: allMarkdownRemark(limit: 2000) {
+    group(field: frontmatter___tags) {
+      fieldValue
     }
   }
 }
@@ -121,6 +132,25 @@ const pagesCreatePageOptions = async ({ graphql }) => {
   }));
 };
 
+const tagsCreatePagesOptions = async ({ graphql }) => {
+  const component = path.resolve('./src/templates/Tag.js');
+
+  const { errors, data } = await graphql(TAGS_QUERY);
+
+  if (errors) {
+    throw errors;
+  }
+
+  const tags = data.tagsGroup.group;
+  return tags.map(({ fieldValue }) => ({
+    path: `/tags/${kebabCase(fieldValue)}`,
+    component,
+    context: {
+      tag: fieldValue,
+    },
+  }));
+};
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -136,6 +166,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const _pagesCreatePageOptions = await pagesCreatePageOptions({ graphql });
   _pagesCreatePageOptions.forEach((options) => {
+    createPage(options);
+  });
+
+  const _tagsCreatePagesOptions = await tagsCreatePagesOptions({ graphql });
+  _tagsCreatePagesOptions.forEach((options) => {
     createPage(options);
   });
 };

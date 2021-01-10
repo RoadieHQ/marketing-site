@@ -2,6 +2,7 @@
 title: Backstage Weekly 11 - TechDocs Production Architecture
 date: '2020-11-30T21:00:00.0Z'
 description: When to use various TechDocs architectures and a look at their roadmap for the next 6 months. 🛣
+tags: ['newsletter']
 ---
 
 The TechDocs team have produced a [useful document](https://backstage.io/docs/features/techdocs/architecture) which discusses the pros and cons of various TechDocs generation architectures and explains their roadmap for the next 6 months.

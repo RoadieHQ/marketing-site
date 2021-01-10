@@ -3,6 +3,7 @@ title: Running the Backstage service catalog with Docker Compose
 date: '2020-06-09T21:00:00.0Z'
 description: How to build and run Backstage Docker containers to get started with the service catalog in Docker Compose.
 lastValidated: '2021-01-09T21:00:00.0Z'
+tags: ['tutorial']
 ---
 
 In this tutorial, we're going to build and run a basic Backstage application with Docker Compose. The application will be able to store data in a PostgreSQL database, and connect to GitHub to pull in repositories. We will also make a config change in the Backstage application and re-run it.

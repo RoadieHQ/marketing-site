@@ -2,6 +2,7 @@
 title: Backstage Weekly 12 - Pagerduty plugin, Org plugin and external TechDocs storage
 date: '2020-12-14T21:00:00.0Z'
 description: The Pagerduty plugin, API graphs and an update to the Sentry plugin also included.
+tags: ['newsletter']
 ---
 
 146 pull requests were merged in the last 2 weeks. Here are the highlights.

@@ -2,6 +2,7 @@
 title: Roadie Rundown 2 - New Backstage version released
 date: '2020-09-21T21:00:00.0Z'
 description: The first edition of the Roadie Newsletter. The pieces are starting to come together.
+tags: ['newsletter']
 ---
 
 A hotly anticipated Backstage alpha 22 was released last week.
