@@ -2,6 +2,7 @@
 title: Backstage Weekly 3 - CNCF Sandbox
 date: '2020-09-28T21:00:00.0Z'
 description: The third edition of the Roadie Backstage Weekly newsletter. Backstage has been donated to the CNCF.
+tags: ['newsletter']
 ---
 
 Backstage has been accepted into the CNCF Sandbox. 🎉

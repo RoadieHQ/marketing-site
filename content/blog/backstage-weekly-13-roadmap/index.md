@@ -2,6 +2,7 @@
 title: Backstage Weekly 13 - Updated roadmap for 2021
 date: '2021-01-11T21:00:00.0Z'
 description: A look forward at the Backstage roadmap in H1 2021 and backwards to the merges that happened in December.
+tags: ['newsletter']
 ---
 
 > This content was originally published on Roadie's Backstage Weekly newsletter. [Sign up here](https://backstage-weekly.roadie.io).

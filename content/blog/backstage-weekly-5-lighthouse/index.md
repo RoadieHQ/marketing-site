@@ -2,6 +2,7 @@
 title: Backstage Weekly 5 - Backstage for websites
 date: '2020-10-12T21:00:00.0Z'
 description: The fifth edition of the Roadie Backstage Weekly newsletter. Tracking website performance over time with Backstage.
+tags: ['newsletter']
 ---
 
 Backstage is not just a tool for handling microservices. It can also manage websites, libraries and any other software assets you might have lying around.

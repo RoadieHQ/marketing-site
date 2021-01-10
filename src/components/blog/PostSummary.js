@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
 import DatePublished from './DatePublished';
+import Tags from './Tags';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -28,6 +29,14 @@ const useStyles = createUseStyles((theme) => ({
     },
   },
 
+  byline: {
+    marginBottom: 8,
+  },
+
+  datePublishedWrapper: {
+    marginRight: 8,
+  },
+
   summary: theme.preMadeStyles.content,
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
@@ -51,7 +60,12 @@ const PostSummary = ({ post }) => {
             {title}
           </Link>
         </h3>
-        <DatePublished frontmatter={post.frontmatter} relative={true} />
+        <div className={classes.byline}>
+          <span className={classes.datePublishedWrapper}>
+            <DatePublished frontmatter={post.frontmatter} relative={true} />
+          </span>
+          <Tags post={post} />
+        </div>
       </header>
       <section className={classes.summary}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />

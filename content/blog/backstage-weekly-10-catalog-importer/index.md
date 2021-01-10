@@ -2,6 +2,7 @@
 title: Backstage Weekly 10 - Easier service onboarding
 date: '2020-11-23T21:00:00.0Z'
 description: Onboard your services to Backstage by using the GitHub repo importer that Roadie has developed and contributed.
+tags: ['newsletter']
 ---
 
 The Backstage service catalog can unlock productivity gains across your entire engineering organization. However, it's only useful when the catalog data is complete and correct. Users who search Backstage for services and come up empty will be less likely to continue using it.

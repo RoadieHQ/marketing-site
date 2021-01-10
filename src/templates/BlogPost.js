@@ -53,10 +53,10 @@ const BlogPostTemplate = ({ data, location }) => {
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <main className={classes.main}>
+        <main>
           <article>
             <PostHeader post={post} />
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            <section className={classes.main} dangerouslySetInnerHTML={{ __html: post.html }} />
           </article>
         </main>
 
@@ -106,6 +106,7 @@ export const pageQuery = graphql`
         date
         description
         lastValidated
+        tags
       }
     }
   }

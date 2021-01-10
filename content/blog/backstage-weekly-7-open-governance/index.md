@@ -2,6 +2,7 @@
 title: Backstage Weekly 7 - Open Governance
 date: '2020-11-06T21:00:00.0Z'
 description: Backstage joins Kubernetes and other notable projects in adopting an open governance model. 🤝
+tags: ['newsletter']
 ---
 
 Backstage continues to take big strides towards becoming a community controlled CNCF sandbox project. This week, the project joined peers like Helm, Envoy Proxy and Kubernetes in adopting an open governance model.
