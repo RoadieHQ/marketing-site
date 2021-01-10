@@ -1,14 +1,11 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
+import DatePublished from './DatePublished';
+
 const useStyles = createUseStyles((theme) => ({
   root: {
     marginBottom: '2em',
-  },
-
-  date: {
-    marginTop: 0,
-    marginBottom: 0,
   },
 
   h1: {
@@ -31,7 +28,7 @@ const PostHeader = ({ post }) => {
   return (
     <header className={classes.root}>
       <h1 className={classes.h1}>{post.frontmatter.title}</h1>
-      <p className={classes.date}>{post.frontmatter.date}</p>
+      <DatePublished frontmatter={post.frontmatter} showLastValidated={true} />
     </header>
   );
 };

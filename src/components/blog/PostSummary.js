@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
+import DatePublished from './DatePublished';
+
 const useStyles = createUseStyles((theme) => ({
   root: {
     marginBottom: '4em',
@@ -24,11 +26,6 @@ const useStyles = createUseStyles((theme) => ({
       color: theme.palette.primary.main,
       textDecoration: 'underline',
     },
-  },
-
-  date: {
-    marginTop: 0,
-    marginBottom: 0,
   },
 
   summary: theme.preMadeStyles.content,
@@ -54,7 +51,7 @@ const PostSummary = ({ post }) => {
             {title}
           </Link>
         </h3>
-        <small className={classes.date}>{post.frontmatter.date}</small>
+        <DatePublished frontmatter={post.frontmatter} relative={true} />
       </header>
       <section className={classes.summary}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />
