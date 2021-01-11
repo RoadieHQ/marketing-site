@@ -188,7 +188,7 @@ services:
     image: postgres
     restart: always
     environment:
-			# NOT RECOMMENDED for a production environment. Trusts all incomming
+	# NOT RECOMMENDED for a production environment. Trusts all incomming
       # connections.
       POSTGRES_HOST_AUTH_METHOD: trust
 ```
