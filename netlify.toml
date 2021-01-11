@@ -1,0 +1,8 @@
+# When Backstage was first released, it didn't have a service catalog at all. I wrote
+# one blog post before the service catalog came along and another afterwards.
+# Now that the service catalog is part of the default Backstage experience, these posts are
+# essentially duplicate content.
+[[redirects]]
+  from = "/blog/backstage-docker-compose/"
+  to = "/blog/backstage-docker-service-catalog/"
+  force = true
