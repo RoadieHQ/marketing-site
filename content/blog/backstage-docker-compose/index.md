@@ -1,4 +1,5 @@
 ---
+# DEPRECATED. This page is redirected to /blog/backstage-docker-service-catalog/ via netlify.toml
 title: Running Backstage with Docker Compose
 date: '2020-05-25T21:00:00.0Z'
 description: Docker Compose is an easy way to run Backstage for development or light use. Here's a setup which will get you started with Backstage quickly.
