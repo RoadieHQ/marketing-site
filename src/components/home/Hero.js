@@ -14,6 +14,10 @@ const useStyles = createUseStyles(() => ({
   callToActionWrapper: {
     marginBottom: 24,
   },
+
+  backgroundImage: {
+    backgroundSize: '70%',
+  },
 }));
 
 const Hero = ({ setModalOpen }) => {
@@ -47,7 +51,7 @@ const Hero = ({ setModalOpen }) => {
           </div>
         </>
       }
-      rightContent={<BackgroundImage />}
+      rightContent={<BackgroundImage className={classes.backgroundImage} />}
     />
   );
 };
