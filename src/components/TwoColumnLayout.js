@@ -14,7 +14,6 @@ const useStyles = createUseStyles((theme) => ({
   leftCol: {},
 
   rightCol: {
-    marginLeft: 100,
     display: 'none',
   },
 
