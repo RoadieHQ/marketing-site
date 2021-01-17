@@ -10,7 +10,7 @@ const useStyles = createUseStyles(() => ({
   },
 
   backgroundImage: {
-    height: 300,
+    height: 250,
   },
 }));
 

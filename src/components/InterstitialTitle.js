@@ -11,23 +11,17 @@ const useStyles = createUseStyles(() => ({
 
   h2: {
     margin: 0,
-    fontSize: ({ fontSize }) => fontSize,
+    fontSize: '1.5em',
   },
 }));
 
-const InterstitialTitle = ({
-  text,
-  className,
-  children,
-  paddingBottom = 8,
-  fontSize = '1.5em',
-}) => {
-  const classes = useStyles({ paddingBottom, fontSize });
+const InterstitialTitle = ({ text, className = {}, children, paddingBottom = 8 }) => {
+  const classes = useStyles({ paddingBottom });
   const inner = text ? text : children;
 
   return (
-    <div className={classnames(classes.root, className)}>
-      <h2 className={classes.h2}>{inner}</h2>
+    <div className={classnames(classes.root, className.root)}>
+      <h2 className={classnames(classes.h2, className.h2)}>{inner}</h2>
     </div>
   );
 };

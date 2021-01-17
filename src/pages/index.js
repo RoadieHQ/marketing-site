@@ -13,10 +13,20 @@ import {
   FeatureDocsLikeCode,
 } from 'components/home/features';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
     maxWidth: 600,
     margin: 'auto',
+  },
+
+  interstitialTitleH2: {
+    fontSize: '1.5em',
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    interstitialTitleH2: {
+      fontSize: '3em',
+    },
   },
 }));
 
@@ -52,7 +62,7 @@ const Home = ({ data, location }) => {
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <InterstitialTitle fontSize="3em">
+          <InterstitialTitle className={{ h2: classes.interstitialTitleH2 }}>
             Turn tribal knowledge into shared context
           </InterstitialTitle>
         </ResponsiveSpacer>
