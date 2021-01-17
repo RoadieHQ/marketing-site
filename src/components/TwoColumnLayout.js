@@ -5,6 +5,7 @@ import classnames from 'classnames';
 const useStyles = createUseStyles((theme) => ({
   root: {
     display: 'flex',
+    flexDirection: 'column',
   },
 
   col: {
@@ -13,32 +14,29 @@ const useStyles = createUseStyles((theme) => ({
 
   leftCol: {},
 
-  rightCol: {
-    display: 'none',
-  },
-
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    root: {
+      flexDirection: 'row',
+    },
+
     leftCol: {
       paddingTop: 30,
       paddingRight: 0,
     },
-
-    rightCol: {
-      display: 'block',
-    },
   },
 }));
 
-const TwoColumnLayout = ({ leftContent, rightContent }) => {
+const TwoColumnLayout = ({ leftContent, rightContent, className = {} }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <div className={classnames(classes.col, classes.leftCol)}>{leftContent}</div>
+    <div className={classnames(classes.root, className.root)}>
+      <div className={classnames(classes.col, classes.leftCol, className.leftCol)}>
+        {leftContent}
+      </div>
 
-      <div className={classnames(classes.col, classes.rightCol)}>
+      <div className={classnames(classes.col, classes.rightCol, className.rightCol)}>
         {rightContent}
-        <div className={classes.image} />
       </div>
     </div>
   );
