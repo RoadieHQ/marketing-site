@@ -143,7 +143,7 @@ const tagsCreatePagesOptions = async ({ graphql }) => {
 
   const tags = data.tagsGroup.group;
   return tags.map(({ fieldValue }) => ({
-    path: `/tags/${kebabCase(fieldValue)}`,
+    path: `/tags/${kebabCase(fieldValue)}/`,
     component,
     context: {
       tag: fieldValue,
