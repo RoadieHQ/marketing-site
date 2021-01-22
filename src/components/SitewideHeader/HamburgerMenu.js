@@ -115,7 +115,7 @@ const HamburgerMenu = ({ siteMetadata }) => {
       <div>
         <div className={classes.spacer}>
           <TextLink
-            to="/backstage/plugins"
+            to="/backstage/plugins/"
             text="Backstage Plugins"
             color="contrasting"
             className={classes.textLink}
@@ -123,11 +123,16 @@ const HamburgerMenu = ({ siteMetadata }) => {
         </div>
 
         <div className={classes.spacer}>
-          <TextLink to="/careers" text="Careers" color="contrasting" className={classes.textLink} />
+          <TextLink
+            to="/careers/"
+            text="Careers"
+            color="contrasting"
+            className={classes.textLink}
+          />
         </div>
 
         <div className={classes.spacer}>
-          <TextLink to="/blog" text="Blog" color="contrasting" className={classes.textLink} />
+          <TextLink to="/blog/" text="Blog" color="contrasting" className={classes.textLink} />
         </div>
 
         <div className={classes.spacer}>
@@ -162,7 +167,7 @@ const HamburgerMenu = ({ siteMetadata }) => {
         <div className={classes.legalLinks}>
           <div className={classes.legalSpacer}>
             <TextLink
-              to="/terms"
+              to="/terms/"
               text="Terms of service"
               color="contrasting"
               className={classes.textLink}
@@ -171,7 +176,7 @@ const HamburgerMenu = ({ siteMetadata }) => {
 
           <div className={classes.spacer}>
             <TextLink
-              to="/privacy"
+              to="/privacy/"
               text="Privacy"
               color="contrasting"
               className={classes.textLink}

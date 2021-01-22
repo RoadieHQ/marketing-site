@@ -26,32 +26,32 @@ const SitewideHeader = () => {
       <nav className={classes.fullScreenNav}>
         <span className={classes.textLinkWrapper}>
           <NavItemSpacer>
-            <TextLink to="/backstage/plugins" text="Backstage Plugins" />
+            <TextLink to="/backstage/plugins/" text="Backstage Plugins" />
           </NavItemSpacer>
 
           <NavItemSpacer>
-            <TextLink to="/careers" text="Careers" />
+            <TextLink to="/careers/" text="Careers" />
           </NavItemSpacer>
 
           <NavItemSpacer>
-            <TextLink to="/blog" text="Blog" />
+            <TextLink to="/blog/" text="Blog" />
           </NavItemSpacer>
         </span>
 
         <NavItemSpacer>
-          <IconLink to={TWITTER_URL} target="_blank" rel="noopener noreferrer">
+          <IconLink to={TWITTER_URL}>
             <FaTwitter />
           </IconLink>
         </NavItemSpacer>
 
         <NavItemSpacer>
-          <IconLink to={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+          <IconLink to={GITHUB_URL}>
             <FaGithub />
           </IconLink>
         </NavItemSpacer>
 
         <NavItemSpacer>
-          <IconLink to="https://backstage.io" target="_blank" rel="noopener noreferrer">
+          <IconLink to="https://backstage.io">
             <FaSpotify />
           </IconLink>
         </NavItemSpacer>

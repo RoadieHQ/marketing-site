@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
@@ -12,6 +12,7 @@ import {
   TwoColumnPoints,
   Headline,
   Lead,
+  Link,
 } from 'components';
 import Mission from '../components/careers/Mission';
 
@@ -72,7 +73,7 @@ const OPEN_ROLES = [
   [
     {
       title() {
-        return <Link to="/careers/javascript-engineer">JavaScript Engineer</Link>;
+        return <Link to="/careers/javascript-engineer/">JavaScript Engineer</Link>;
       },
       text: `Become a top contributor to the open-source software that Roadie is built on.`,
     },

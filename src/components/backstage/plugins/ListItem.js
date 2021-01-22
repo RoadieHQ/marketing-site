@@ -41,7 +41,7 @@ const ListItem = (props) => {
 
   return (
     <div className={classes.root}>
-      <Link to={`/backstage/plugins/${props.name}`} className={classes.link}>
+      <Link to={`/backstage/plugins/${props.name}/`} className={classes.link}>
         <Logo sharpImage={sharpImage} />
         <h2 className={classes.h2}>{props.humanName}</h2>
       </Link>
