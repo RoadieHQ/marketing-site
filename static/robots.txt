@@ -3,4 +3,8 @@
 
 User-agent: *
 Disallow: /terms
+Disallow: /terms/
 Disallow: /privacy
+Disallow: /privacy/
+
+Sitemap: https://roadie.io/sitemap.xml
