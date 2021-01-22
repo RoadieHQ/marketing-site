@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import { CookieConsent } from 'components';
+import { CookieConsent, Link } from 'components';
 
 const useStyles = createUseStyles((theme) => ({
   inner: {
@@ -42,9 +42,7 @@ const SitewideFooter = () => {
         <div>© {new Date().getFullYear()} Larder, Inc. All rights reserved.</div>
 
         <nav>
-          <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">
-            Backstage Weekly
-          </a>
+          <Link to={newsletterUrl}>Backstage Weekly</Link>
           <Link to="/terms/" className={classes.nonFirstLink}>
             Terms of service
           </Link>
