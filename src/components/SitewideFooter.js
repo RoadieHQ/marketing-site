@@ -45,10 +45,10 @@ const SitewideFooter = () => {
           <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">
             Backstage Weekly
           </a>
-          <Link to="/terms" className={classes.nonFirstLink}>
+          <Link to="/terms/" className={classes.nonFirstLink}>
             Terms of service
           </Link>
-          <Link to="/privacy" className={classes.nonFirstLink}>
+          <Link to="/privacy/" className={classes.nonFirstLink}>
             Privacy
           </Link>
         </nav>

@@ -43,7 +43,7 @@ const Tags = ({ post: { frontmatter } }) => {
       {frontmatter.tags.map((tag) => {
         return (
           <span className={classes.tag} key={tag}>
-            <Link to={`/tags/${kebabCase(tag)}`} className={classes.link}>
+            <Link to={`/tags/${kebabCase(tag)}/`} className={classes.link}>
               {tag.toLowerCase()}
             </Link>
           </span>

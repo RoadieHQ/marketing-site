@@ -39,7 +39,7 @@ const CareersFooter = ({ typeformSlug }) => {
             <span>Apply for this role</span>
           </ButtonLink>
 
-          <Link to="/careers" className={classnames('typography-mono', classes.link)}>
+          <Link to="/careers/" className={classnames('typography-mono', classes.link)}>
             See all roles
           </Link>
         </div>
