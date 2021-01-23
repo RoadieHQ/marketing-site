@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss';
 import { Lead, Headline, TwoColumnLayout } from 'components';
 
 import CallToAction from '../actions/CallToAction';
-import { FORM_NAMES } from '../../contactFormConstants';
 import BackgroundImage from './BackgroundImage';
 
 const useStyles = createUseStyles(() => ({
@@ -20,7 +19,7 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const Hero = ({ setModalOpen }) => {
+const Hero = ({ setModalOpen, headline, lead, netlifyFormName }) => {
   const classes = useStyles();
 
   return (
@@ -28,17 +27,11 @@ const Hero = ({ setModalOpen }) => {
       leftContent={
         <>
           <Headline>
-            <span>Supercharge your internal platform</span>{' '}
+            <span>{headline}</span>{' '}
           </Headline>
 
           <div className={classes.leadWrapper}>
-            <Lead
-              text={`
-                Delight your devs with the world-class technology that powers
-                the development and operation of Spotify's 2,000 microservices.
-              `}
-            />
-
+            <Lead text={lead} />
             <Lead text="Get a demo of Backstage..." />
           </div>
 
@@ -46,7 +39,7 @@ const Hero = ({ setModalOpen }) => {
             <CallToAction
               setModalOpen={setModalOpen}
               buttonText="Get a demo"
-              netlifyFormName={FORM_NAMES.getDemo}
+              netlifyFormName={netlifyFormName}
             />
           </div>
         </>

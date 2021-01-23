@@ -8,4 +8,5 @@ exports.FORM_NAMES = {
   notifyMe: 'landing-page/notify-me',
   subscribeToNewsletter: 'subscribe-to-newsletter',
   getDemo: 'get-demo',
+  getDemoOnboarding: 'get-demo-onboarding',
 };
