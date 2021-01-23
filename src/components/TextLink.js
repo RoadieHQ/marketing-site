@@ -21,6 +21,7 @@ const useStyles = createUseStyles((theme) => ({
 const TextLink = ({ to, text, color, className }) => {
   const classes = useStyles({ color });
   const rootClassList = classnames(classes.root, className);
+
   return (
     <Link to={to} className={rootClassList}>
       {text}

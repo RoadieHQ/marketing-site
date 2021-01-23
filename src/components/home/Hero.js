@@ -31,8 +31,8 @@ const Hero = ({ setModalOpen, headline, lead, netlifyFormName }) => {
           </Headline>
 
           <div className={classes.leadWrapper}>
-            <Lead text={lead} />
-            <Lead text="Get a demo of Backstage..." />
+            <Lead>{lead}</Lead>
+            <Lead>Get a demo of Backstage...</Lead>
           </div>
 
           <div className={classes.callToActionWrapper}>

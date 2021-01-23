@@ -2,10 +2,10 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FaTwitter, FaGithub, FaSpotify } from 'react-icons/fa';
+import { TextLink } from 'components';
 
 import IconLink from '../IconLink';
 import styles from './styles';
-import TextLink from './TextLink';
 import NavItemSpacer from './NavItemSpacer';
 import Logo from './Logo';
 import HamburgerMenu from './HamburgerMenu';

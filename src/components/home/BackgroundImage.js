@@ -13,7 +13,7 @@ const useStyles = createUseStyles(() => ({
 }));
 
 const BackgroundImage = ({
-  backgroundImage = 'url(undraw/undraw_content_team_3epn.svg)',
+  backgroundImage = 'url(/undraw/undraw_content_team_3epn.svg)',
   className,
 }) => {
   const classes = useStyles();

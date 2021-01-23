@@ -109,7 +109,7 @@ const Careers = ({ data, location }) => {
               <span>Careers @ {siteTitle}</span>
             </Headline>
 
-            <Lead text="Turn software development upside-down forever" />
+            <Lead>Turn software development upside-down forever</Lead>
           </LayoutControl>
         </div>
 

@@ -63,7 +63,7 @@ const Header = ({ plugin }) => {
     <header className={classes.root}>
       <Logo sharpImage={plugin.childrenLogoImage[0].childImageSharp} />
       <Headline>{plugin.heading}</Headline>
-      <Lead text={plugin.lead} />
+      <Lead>{plugin.lead}</Lead>
       <Attribution attribution={plugin.attribution} />
     </header>
   );

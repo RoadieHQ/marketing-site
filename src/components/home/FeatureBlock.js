@@ -13,7 +13,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   backgroundImage: {
-    height: 250,
+    height: ({ backgroundImageHeight }) => backgroundImageHeight,
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
@@ -28,8 +28,8 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const FeatureBlock = ({ text, backgroundImageUrl, imageSide }) => {
-  const classes = useStyles();
+const FeatureBlock = ({ text, backgroundImageUrl, imageSide, backgroundImageHeight = 250 }) => {
+  const classes = useStyles({ backgroundImageHeight });
   const className = {
     root: classes.twoColumnLayoutRoot,
   };

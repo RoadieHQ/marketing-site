@@ -19,12 +19,12 @@ const useStyles = createUseStyles(() => ({
 
 const DEFAULT_COLOR = theme.palette.text.primary;
 
-const Lead = ({ className, text = 'Some attention grabbing text', color = DEFAULT_COLOR }) => {
+const Lead = ({ className, children, color = DEFAULT_COLOR }) => {
   const classes = useStyles();
 
   return (
     <p className={classnames(classes.root, className)} style={{ color }}>
-      {text}
+      {children}
     </p>
   );
 };

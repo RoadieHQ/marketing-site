@@ -79,7 +79,7 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl="url(undraw/undraw_the_search_s0xf.svg)"
+            backgroundImageUrl="url(/undraw/undraw_the_search_s0xf.svg)"
             text={
               <div>
                 <h2>Service catalog for discoverability</h2>
@@ -96,7 +96,7 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="left"
-            backgroundImageUrl="url(undraw/undraw_education_f8ru.svg)"
+            backgroundImageUrl="url(/undraw/undraw_education_f8ru.svg)"
             text={
               <div>
                 <h2>Docs that get read</h2>
@@ -122,7 +122,7 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl="url(undraw/undraw_building_websites_i78t.svg)"
+            backgroundImageUrl="url(/undraw/undraw_building_websites_i78t.svg)"
             text={
               <div>
                 <h2>Custom plugins</h2>

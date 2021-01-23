@@ -18,3 +18,4 @@ export { default as ButtonLink } from './ButtonLink';
 export { default as Link } from './Link';
 export { default as TwoColumnLayout } from './TwoColumnLayout';
 export { default as ResponsiveSpacer } from './ResponsiveSpacer';
+export { default as TextLink } from './TextLink';
