@@ -30,7 +30,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Home = ({ data, location }) => {
+const OnboardingLandingPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
   const classes = useStyles();
@@ -42,10 +42,10 @@ const Home = ({ data, location }) => {
   return (
     <>
       <SEO
-        title={`Hosted, managed Backstage | ${siteTitle}`}
+        title={`Onboard engineers faster with Backstage| ${siteTitle}`}
         description={`
-          Delight your devs with the world-class technology that powers
-          the development and operation of Spotify's 2,000 microservices.
+          Reduce your team's time to 10th commit by up to 55% with the
+          open source service catalog and developer platform from Spotify.
         `}
       />
       <FormSubmissionModal
@@ -61,12 +61,12 @@ const Home = ({ data, location }) => {
           <Hero
             setModalOpen={setModalOpen}
             siteMetadata={data.site.siteMetadata}
-            headline="Supercharge your internal platform"
+            headline="Onboard engineers faster"
             lead={`
-              Delight your devs with the world-class technology that powers
-              the development and operation of Spotify's 2,000 microservices.
+              Cut time to 10th commit by up to 55% with Backstage, the
+              open source service catalog and developer platform from Spotify.
             `}
-            netlifyFormName={FORM_NAMES.getDemo}
+            netlifyFormName={FORM_NAMES.getDemoOnboarding}
           />
         </ResponsiveSpacer>
 
@@ -94,7 +94,7 @@ const Home = ({ data, location }) => {
             <CallToAction
               setModalOpen={setModalOpen}
               buttonText="Get a demo"
-              netlifyFormName={FORM_NAMES.getDemo}
+              netlifyFormName={FORM_NAMES.getDemoOnboarding}
             />
           </div>
         </ResponsiveSpacer>
@@ -103,7 +103,7 @@ const Home = ({ data, location }) => {
   );
 };
 
-export default Home;
+export default OnboardingLandingPage;
 
 export const pageQuery = graphql`
   query {
