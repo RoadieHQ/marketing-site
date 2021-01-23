@@ -54,7 +54,10 @@ const CareersMain = ({ role, requirements, offer, process }) => {
       <div className={classes.spacing}>
         <LayoutControl maxWidthBreakpoint="lg">
           <InterstitialTitle text="The process" />
-          <Lead text="All applicants will receive a response within 3 days. We can't always be perfect, but we can be quick." />
+          <Lead>
+            All applicants will receive a response within 3 days. We can&apos;t always be perfect,
+            but we can be quick.
+          </Lead>
           <OrderedList content={process} />
         </LayoutControl>
       </div>

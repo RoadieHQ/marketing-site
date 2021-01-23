@@ -2,9 +2,9 @@ import React from 'react';
 import { FaBars, FaTimes, FaTwitter, FaGithub, FaSpotify } from 'react-icons/fa';
 import Menu from 'react-burger-menu/lib/menus/slide';
 import { createUseStyles } from 'react-jss';
+import { TextLink } from 'components';
 
 import IconLink from '../IconLink';
-import TextLink from './TextLink';
 import { LINE_HEIGHT } from './Logo';
 
 const styles = {

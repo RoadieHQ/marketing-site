@@ -138,7 +138,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         // Excluded pages should also be Disallowed by the robots.txt
-        exclude: ['/terms', '/privacy'],
+        exclude: ['/terms', '/privacy', '/onboarding'],
       },
     },
     `gatsby-plugin-force-trailing-slashes`,

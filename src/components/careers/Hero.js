@@ -28,7 +28,7 @@ const CareersHero = ({ headline, roleName, typeformSlug }) => {
           <span>{headline}</span>
         </Headline>
 
-        <Lead text={`Careers / ${roleName}`} />
+        <Lead>Careers / {roleName}</Lead>
 
         <ButtonLink to={applicationHref(typeformSlug)}>
           <span>Apply for this role</span>

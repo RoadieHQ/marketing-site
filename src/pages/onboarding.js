@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import { SEO, InterstitialTitle, StickyFooter, ResponsiveSpacer } from 'components';
+import { SEO, InterstitialTitle, StickyFooter, ResponsiveSpacer, TextLink } from 'components';
 
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 import CallToAction from 'components/actions/CallToAction';
@@ -62,10 +62,13 @@ const OnboardingLandingPage = ({ data, location }) => {
             setModalOpen={setModalOpen}
             siteMetadata={data.site.siteMetadata}
             headline="Onboard engineers 55% faster"
-            lead={`
-              Cut time to 10th commit by up to 55% with Backstage, the
-              open source service catalog and developer platform from Spotify.
-            `}
+            lead={
+              <span>
+                Cut the time to 10<sup>th</sup> commit by up to 55% with{' '}
+                <TextLink to="https://backstage.io" text="Backstage" />, the open source service
+                catalog and developer platform from Spotify.
+              </span>
+            }
             netlifyFormName={FORM_NAMES.getDemoOnboarding}
           />
         </ResponsiveSpacer>
@@ -79,14 +82,17 @@ const OnboardingLandingPage = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl="url(undraw/undraw_the_search_s0xf.svg)"
+            backgroundImageUrl="url(/undraw/undraw_people_search_wctu.svg)"
             text={
               <div>
-                <h2>Service catalog for discoverability</h2>
-                <p className={classes.p}>Got more repos than you can keep up with?</p>
+                <h2>&quot;Who knows how the CI system works?&quot;</h2>
                 <p className={classes.p}>
-                  Get control of the sprawl and improve new hire onboarding by making it easy to
-                  understand what each service is and who owns it.
+                  Pull your org chart from your HR system and assign services to teams so you can
+                  quickly look up any engineering team and know who&apos;s on it, what they own and
+                  what their KPIs are.
+                </p>
+                <p className={classes.p}>
+                  KPIs roll up through the org so it&apos;s easy to get a birds-eye view.
                 </p>
               </div>
             }
@@ -96,23 +102,18 @@ const OnboardingLandingPage = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="left"
-            backgroundImageUrl="url(undraw/undraw_education_f8ru.svg)"
+            backgroundImageUrl="url(/undraw/undraw_education_f8ru.svg)"
             text={
               <div>
-                <h2>Docs that get read</h2>
+                <h2>&quot;Where are the docs for X?&quot;</h2>
                 <p className={classes.p}>
-                  <span role="img" aria-label="one">
-                    1️⃣
-                  </span>
-                  {'  '}
-                  Commit markdown docs and API specs alongside your code.
+                  Easy access to information means fewer repetitive questions and increased
+                  velocity.
                 </p>
                 <p className={classes.p}>
-                  <span role="img" aria-label="two">
-                    2️⃣
-                  </span>
-                  {'  '}
-                  Beautiful technical documentation appears with the services in your catalog.
+                  Docs live on GitHub as markdown but are searched and read in one location so
+                  people can find them. API specs, tutorials, runbooks and more.{' '}
+                  <TextLink to="https://changelog.com/podcast/415" text="Learn how" />.
                 </p>
               </div>
             }
@@ -122,14 +123,14 @@ const OnboardingLandingPage = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl="url(undraw/undraw_building_websites_i78t.svg)"
+            backgroundImageUrl="url(/undraw/undraw_Search_re_x5gq.svg)"
             text={
               <div>
-                <h2>Custom plugins</h2>
-                <p className={classes.p}>Ready to roll, easy to extend.</p>
+                <h2>&quot;Do we have a geocoding API?&quot;</h2>
                 <p className={classes.p}>
-                  Common SaaS tools come baked in. When you need to break out you can roll your own
-                  and deploy with a simple push.
+                  Find APIs you can depend on by making it easy to search the fleet and quickly
+                  answer questions like &apos;Is this maintained?&apos;, &apos;Are the builds
+                  passing?&apos; and &apos;Is there an SLO defined?&apos;.
                 </p>
               </div>
             }
