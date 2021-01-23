@@ -7,11 +7,7 @@ import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 import CallToAction from 'components/actions/CallToAction';
 import { FORM_NAMES } from '../contactFormConstants';
 import Hero from 'components/home/Hero';
-import {
-  FeatureCustomPlugins,
-  FeatureServiceCatalog,
-  FeatureDocsLikeCode,
-} from 'components/home/features';
+import FeatureBlock from 'components/home/FeatureBlock';
 
 const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
@@ -21,6 +17,10 @@ const useStyles = createUseStyles((theme) => ({
 
   interstitialTitleH2: {
     fontSize: '1.5em',
+  },
+
+  p: {
+    fontSize: '2rem',
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
@@ -61,7 +61,7 @@ const OnboardingLandingPage = ({ data, location }) => {
           <Hero
             setModalOpen={setModalOpen}
             siteMetadata={data.site.siteMetadata}
-            headline="Onboard engineers faster"
+            headline="Onboard engineers 55% faster"
             lead={`
               Cut time to 10th commit by up to 55% with Backstage, the
               open source service catalog and developer platform from Spotify.
@@ -77,15 +77,63 @@ const OnboardingLandingPage = ({ data, location }) => {
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <FeatureServiceCatalog imageSide="right" />
+          <FeatureBlock
+            imageSide="right"
+            backgroundImageUrl="url(undraw/undraw_the_search_s0xf.svg)"
+            text={
+              <div>
+                <h2>Service catalog for discoverability</h2>
+                <p className={classes.p}>Got more repos than you can keep up with?</p>
+                <p className={classes.p}>
+                  Get control of the sprawl and improve new hire onboarding by making it easy to
+                  understand what each service is and who owns it.
+                </p>
+              </div>
+            }
+          />
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <FeatureDocsLikeCode imageSide="left" />
+          <FeatureBlock
+            imageSide="left"
+            backgroundImageUrl="url(undraw/undraw_education_f8ru.svg)"
+            text={
+              <div>
+                <h2>Docs that get read</h2>
+                <p className={classes.p}>
+                  <span role="img" aria-label="one">
+                    1️⃣
+                  </span>
+                  {'  '}
+                  Commit markdown docs and API specs alongside your code.
+                </p>
+                <p className={classes.p}>
+                  <span role="img" aria-label="two">
+                    2️⃣
+                  </span>
+                  {'  '}
+                  Beautiful technical documentation appears with the services in your catalog.
+                </p>
+              </div>
+            }
+          />
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <FeatureCustomPlugins imageSide="right" />
+          <FeatureBlock
+            imageSide="right"
+            backgroundImageUrl="url(undraw/undraw_building_websites_i78t.svg)"
+            text={
+              <div>
+                <h2>Custom plugins</h2>
+                <p className={classes.p}>Ready to roll, easy to extend.</p>
+                <p className={classes.p}>
+                  Common SaaS tools come baked in. When you need to break out you can roll your own
+                  and deploy with a simple push.
+                </p>
+              </div>
+            }
+          />
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
