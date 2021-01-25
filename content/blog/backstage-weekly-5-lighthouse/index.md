@@ -45,7 +45,7 @@ Backstage Alpha 24 was released. [#2756](https://github.com/spotify/backstage/pu
 
 ## Other news...
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Listening the <a href="https://twitter.com/changelog?ref_src=twsrc%5Etfw">@changelog</a> episode on Spotify’s “dev everything” portal, Backstage <a href="https://t.co/CD8j2JCMSf">https://t.co/CD8j2JCMSf</a><br><br>Backstage seems to be “infra as a platform” with plugins at Spotify: everything from service ownership, deploys, API docs... impressive. I’ll be checking it out more closely.</p>&mdash; Gergely Orosz (@GergelyOrosz) <a href="https://twitter.com/GergelyOrosz/status/1315615504099356673?ref_src=twsrc%5Etfw">October 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Listening the <a href="https://twitter.com/changelog?ref_src=twsrc%5Etfw">@changelog</a> episode on Spotify’s “dev everything” portal, Backstage <a href="https://t.co/CD8j2JCMSf">https://t.co/CD8j2JCMSf</a><br><br>Backstage seems to be “infra as a platform” with plugins at Spotify: everything from service ownership, deploys, API docs... impressive. I’ll be checking it out more closely.</p>&mdash; Gergely Orosz (@GergelyOrosz) <a href="https://twitter.com/GergelyOrosz/status/1315615504099356673?ref_src=twsrc%5Etfw">October 12, 2020</a></blockquote>
 
 Stefan Ålund and Jim Haughwout appeared on The Changelog podcast and talked about the evolution of Backstage internally and the scale they operate at. Don’t miss the section on documentation near the end! [Here’s the link](https://changelog.com/podcast/415).
 
