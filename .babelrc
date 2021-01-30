@@ -1,8 +1,11 @@
 {
   "presets": ["babel-preset-gatsby"],
   "plugins": [
-    ["prismjs", {
-      "languages": ["javascript", "css", "bash", "typescript"],
-    }]
+    [
+      "prismjs",
+      {
+        "languages": ["javascript", "css", "bash", "yaml", "typescript"]
+      }
+    ]
   ]
 }

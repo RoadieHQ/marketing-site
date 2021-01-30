@@ -105,9 +105,21 @@ const PluginTemplate = ({ data, location }) => {
         <LayoutControl maxWidthBreakpoint="md">
           <InterstitialTitle text="Getting started is simple" />
 
-          {plugin.gettingStarted.map(({ language, code, intro }, index) => (
-            <CodeBlock language={language} code={code} intro={intro} key={`key-${index}`} />
-          ))}
+          {plugin.gettingStarted.map((section, index) => {
+            switch (section.type) {
+              case 'section':
+                return <InterstitialTitle text={section.title} key={`key-${index}`} />;
+              default:
+                return (
+                  <CodeBlock
+                    language={section.language}
+                    code={section.code}
+                    intro={section.intro}
+                    key={`key-${index}`}
+                  />
+                );
+            }
+          })}
 
           <InterstitialTitle text="How it looks" />
 
@@ -197,6 +209,10 @@ export const pageQuery = graphql`
       }
 
       gettingStarted {
+        # Title section
+        type
+        title
+        # Code Block section
         language
         code
         intro
