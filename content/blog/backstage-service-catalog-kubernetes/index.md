@@ -19,7 +19,7 @@ To complete this tutorial, you will need:
 
 ## Step 1 - Scaffold a Backstage application
 
-To run Backstage on Kuberentes, we first need to scaffold a Backstage application to work with. e main Backstage codebase does ship with a sample application we can run, but best practices dictate that we should create our own so we can customize it with our company name and other attributes.
+To run Backstage on Kuberentes, we first need to scaffold a Backstage application to work with. The main Backstage codebase does ship with a sample application we can run, but best practices dictate that we should create our own so we can customize it with our company name and other attributes.
 
 Backstage requires a database to store information about the components, websites and other entities you want to track in the catalog. There are two built in database options, Sqlite and PostgreSQL. We're going to use Sqlite3 for this tutorial.
 
