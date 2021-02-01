@@ -23,7 +23,7 @@ export const styles = (theme) => ({
     backgroundColor: theme.palette.grey[100],
     color: theme.palette.secondary.dark,
 
-    lineHeight: 2,
+    lineHeight: 3,
     padding: '0.1rem 0.5rem',
 
     '&:focus': {
@@ -82,6 +82,7 @@ const CallToAction = ({
   subFormMessage = 'We will never sell or share your email address.',
   netlifyFormName = FORM_NAMES.notifyMe,
   setModalOpen,
+  autoFocus = false,
 }) => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
@@ -101,8 +102,6 @@ const CallToAction = ({
         email,
       }),
     });
-
-    console.log('resp', resp);
 
     if (resp.ok) {
       setModalOpen(true);
@@ -125,6 +124,7 @@ const CallToAction = ({
   const subFormStateClass =
     `subForm${subForm.state}` in classes && classes[`subForm${subForm.state}`];
 
+  /* eslint-disable jsx-a11y/no-autofocus */
   return (
     <form onSubmit={onSubmit}>
       <div className={classes.inputWrapper}>
@@ -137,6 +137,7 @@ const CallToAction = ({
           className={classes.input}
           onChange={onInputChange}
           value={email}
+          autoFocus={autoFocus}
         />
 
         <Button
@@ -149,6 +150,7 @@ const CallToAction = ({
       <div className={classnames(subFormStateClass, classes.subForm)}>{subForm.message}</div>
     </form>
   );
+  /* eslint-enable jsx-a11y/no-autofocus */
 };
 
 export default CallToAction;

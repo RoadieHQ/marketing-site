@@ -67,4 +67,4 @@ These new docs cover the purpose of the change, the new API, migration steps and
 
 ## Roadie news
 
-We have refreshed our most popular blog post to date. This tutorial walks you through [all the steps needed to get Backstage running with Docker Compose](https://www.notion.so/Newsletter-draft-18th-Jan-2021-8dc81662436440af9cd2e54a9e7e9e4b).
+We have refreshed our most popular blog post to date. This tutorial walks you through [all the steps needed to get Backstage running with Docker Compose](/blog/backstage-docker-service-catalog/).

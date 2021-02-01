@@ -72,7 +72,6 @@ const Header = ({ plugin }) => {
 const PluginTemplate = ({ data, location }) => {
   const classes = useStyles();
   const { plugin, notes, site } = data;
-  const { newsletterUrl } = site.siteMetadata;
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -90,7 +89,7 @@ const PluginTemplate = ({ data, location }) => {
       <FormSubmissionModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
-        siteMetadata={data.site.siteMetadata}
+        siteMetadata={site.siteMetadata}
         followOn="TWITTER"
       />
 
@@ -133,9 +132,7 @@ const PluginTemplate = ({ data, location }) => {
             <p className={classes.callToActionParagraph}>
               To get the latest news, deep dives into Backstage features, and a roundup of recent
               open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
-              <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">
-                See recent editions.
-              </a>
+              <a href="/backstage-weekly/">See recent editions.</a>
             </p>
 
             <CallToAction
@@ -160,7 +157,6 @@ export const pageQuery = graphql`
   query PluginDescriptionByName($name: String!) {
     site {
       siteMetadata {
-        newsletterUrl
         social {
           twitter
         }

@@ -12,7 +12,13 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={`All blog posts | ${siteTitle}`} />
+      <SEO
+        title={`All blog posts | ${siteTitle}`}
+        description={`
+          The Backstage service catalog from Spotify is an amazing tool for tracking your
+          services and APIs. We write about it here.
+        `}
+      />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         {posts.map(({ node }) => (

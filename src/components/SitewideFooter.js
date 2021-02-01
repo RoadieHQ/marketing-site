@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import { CookieConsent, Link } from 'components';
 
@@ -33,16 +32,14 @@ const useStyles = createUseStyles((theme) => ({
 
 const SitewideFooter = () => {
   const classes = useStyles();
-  const data = useStaticQuery(query);
-  const { newsletterUrl } = data.site.siteMetadata;
 
   return (
     <footer>
       <div className={classes.inner}>
-        <div>© {new Date().getFullYear()} Larder, Inc. All rights reserved.</div>
+        <div>© {new Date().getFullYear()} Larder Software Limited. All rights reserved.</div>
 
         <nav>
-          <Link to={newsletterUrl}>Backstage Weekly</Link>
+          <Link to="/backstage-weekly/">Backstage Weekly</Link>
           <Link to="/terms/" className={classes.nonFirstLink}>
             Terms of service
           </Link>
@@ -58,14 +55,3 @@ const SitewideFooter = () => {
 };
 
 export default SitewideFooter;
-
-export const query = graphql`
-  query SitewideFooter {
-    site {
-      siteMetadata {
-        title
-        newsletterUrl
-      }
-    }
-  }
-`;
