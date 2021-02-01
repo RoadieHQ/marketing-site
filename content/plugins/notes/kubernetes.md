@@ -167,13 +167,13 @@ annotations:
 1. Get the Kubernetes master base url `kubectl cluster-info`
 2. Get the service account token
 
-```bash
-kubectl get secret $(kubectl get sa <SERVICE_ACCOUNT_NAME> -o=json \
-| jq -r '.secrets[0].name') -o=json \
-| jq -r '.data["token"]' \
-| base64 --decode \
-| pbcopy
-```
+    ```bash
+    kubectl get secret $(kubectl get sa <SERVICE_ACCOUNT_NAME> -o=json \
+    | jq -r '.secrets[0].name') -o=json \
+    | jq -r '.data["token"]' \
+    | base64 --decode \
+    | pbcopy
+    ```
 
 3. Register existing component in Backstage
 
