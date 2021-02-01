@@ -36,8 +36,7 @@ coverImage:
 # languages used here must be listed in the .babelrc
 gettingStarted:
   # What will this step accomplish?
-  - type: section
-    title: Frontend plugin
+  - title: Frontend plugin
   - intro: Install the Kubernetes frontend plugin into Backstage.
     language: bash
     code: |
@@ -64,8 +63,7 @@ gettingStarted:
           />
         &lt;/EntityPageLayout>
       );
-  - type: section
-    title: Backend plugin
+  - title: Backend plugin
   - intro: Install the Kubernetes Backend plugin into Backstage.
     language: bash
     code: |
