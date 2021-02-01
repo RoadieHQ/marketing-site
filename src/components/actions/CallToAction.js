@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 import { FaPaperPlane } from 'react-icons/fa';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import Button from '../home/Button';
 import { FORM_NAMES } from '../../contactFormConstants';
@@ -101,6 +102,12 @@ const CallToAction = ({
         'form-name': netlifyFormName,
         email,
       }),
+    });
+
+    trackCustomEvent({
+      category: 'form',
+      action: 'submit',
+      label: netlifyFormName,
     });
 
     if (resp.ok) {
