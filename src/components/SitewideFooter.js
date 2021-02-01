@@ -39,7 +39,7 @@ const SitewideFooter = () => {
         <div>© {new Date().getFullYear()} Larder Software Limited. All rights reserved.</div>
 
         <nav>
-          <Link to="/backstage-weekly/">Backstage Weekly</Link>
+          <Link to="/careers/">Careers</Link>
           <Link to="/terms/" className={classes.nonFirstLink}>
             Terms of service
           </Link>
