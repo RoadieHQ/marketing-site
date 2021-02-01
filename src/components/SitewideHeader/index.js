@@ -30,7 +30,7 @@ const SitewideHeader = () => {
           </NavItemSpacer>
 
           <NavItemSpacer>
-            <TextLink to="/careers/" text="Careers" />
+            <TextLink to="/backstage-weekly/" text="Backstage Weekly" />
           </NavItemSpacer>
 
           <NavItemSpacer>
