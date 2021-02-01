@@ -12,7 +12,12 @@ const BlogIndex = ({ pageContext, data, location }) => {
 
   return (
     <>
-      <SEO title={`All ${tag} blog posts | ${siteTitle}`} />
+      <SEO
+        title={`All ${tag} blog posts | ${siteTitle}`}
+        description={`
+          Blog posts relating to the Backstage service catalog which are tagged with ${tag}.
+        `}
+      />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         {posts.map(({ node }) => (
@@ -51,7 +56,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        newsletterUrl
         social {
           twitter
         }

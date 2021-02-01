@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { createUseStyles } from 'react-jss';
+import { Link } from 'components';
 
 const modalStyles = {
   overlay: {
@@ -37,23 +38,13 @@ const twitterUrl = ({ social }) => `https://twitter.com/${social.twitter}`;
 const NewsletterAndTwitterInner = ({ siteMetadata, classes }) => (
   <p>
     Learn more about Backstage via{' '}
-    <a
-      href={siteMetadata.newsletterUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={classes.link}
-    >
+    <Link to="/backstage-weekly/" className={classes.link}>
       our newsletter
-    </a>{' '}
+    </Link>{' '}
     or follow{' '}
-    <a
-      href={twitterUrl(siteMetadata)}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={classes.link}
-    >
+    <Link to={twitterUrl(siteMetadata)} className={classes.link}>
       @{siteMetadata.social.twitter}
-    </a>
+    </Link>
     .
   </p>
 );
@@ -61,14 +52,9 @@ const NewsletterAndTwitterInner = ({ siteMetadata, classes }) => (
 const TwitterInner = ({ siteMetadata, classes }) => (
   <p>
     Follow{' '}
-    <a
-      href={twitterUrl(siteMetadata)}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={classes.link}
-    >
+    <Link to={twitterUrl(siteMetadata)} className={classes.link}>
       @{siteMetadata.social.twitter}
-    </a>
+    </Link>
     .
   </p>
 );

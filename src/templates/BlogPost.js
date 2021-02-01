@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
-import { SEO, InterstitialTitle } from 'components';
+import { SEO, InterstitialTitle, Link } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
 import PostHeader from 'components/blog/PostHeader';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
@@ -29,7 +29,7 @@ const MAX_WIDTH_BREAKPOINT = 'md';
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
   const classes = useStyles();
-  const { title: siteTitle, newsletterUrl } = data.site.siteMetadata;
+  const { title: siteTitle } = data.site.siteMetadata;
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -66,9 +66,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <p className={classes.callToActionParagraph}>
             To get the latest news, deep dives into Backstage features, and a roundup of recent
             open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
-            <a href={newsletterUrl} target="_blank" rel="noopener noreferrer">
-              See recent editions.
-            </a>
+            <Link to="/backstage-weekly/">See recent editions.</Link>
           </p>
 
           <CallToAction
@@ -90,7 +88,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        newsletterUrl
         social {
           twitter
         }

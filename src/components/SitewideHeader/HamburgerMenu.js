@@ -137,7 +137,7 @@ const HamburgerMenu = ({ siteMetadata }) => {
 
         <div className={classes.spacer}>
           <TextLink
-            to={siteMetadata.newsletterUrl}
+            to="/backstage-weekly/"
             text="Backstage Weekly"
             color="contrasting"
             className={classes.textLink}

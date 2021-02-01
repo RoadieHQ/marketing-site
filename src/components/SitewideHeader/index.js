@@ -71,7 +71,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-        newsletterUrl
         social {
           twitter
           github
