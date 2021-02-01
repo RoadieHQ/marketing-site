@@ -36,6 +36,7 @@ coverImage:
 # languages used here must be listed in the .babelrc
 gettingStarted:
   # What will this step accomplish?
+  - intro: The Kubernetes plugin is made up of @backstage/plugin-kubernetes and @backstage/plugin-kubernetes-backend. To make it work, you will need to install and configure them.
   - title: Frontend plugin
   - intro: Install the Kubernetes frontend plugin into Backstage.
     language: bash
