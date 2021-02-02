@@ -2,12 +2,12 @@
 name: kubernetes
 ---
 
-You have added the two Kubernetes plugins to your Backstage application:
+The Backstage Kubernetes plugin has two separate components:
 
 -   **frontend**: it will take care of displaying the information to the user.
 -   **backend**: it will take care of connecting to the Kubernetes clusters and sending the information to the frontend.
 
-After installing the plugings, you have to configure them in two steps:
+After installing the plugins, you have to configure them in two steps:
 
 1. Allow the backend to collect objects from your Kubernetes cluster(s).
 2. Surfacing your Kubernetes objects in catalog entities
@@ -33,60 +33,7 @@ kubernetes:
           authProvider: 'google'
 ```
 
-Here is the list of fields in detail:
-
--   `serviceLocatorMethod`
-
-    Configures how to determine which clusters a component is running in.
-
-    **Valid values:**
-
-    -   `multiTenant` - This configuration assumes that all components run on all the
-        provided clusters.
-
--   `clusterLocatorMethods`
-
-    An array used to determine where to retrieve **cluster configuration** from.
-
-    **Valid values:**
-
-    -   `config` - This will read cluster information from your app-config.
-
--   `clusters`
-
-    Used by the `config` cluster locator method to construct Kubernetes clients.
-
-    -   `url`
-
-        The **base URL** to the Kubernetes control plane.
-
-        You can find it using the `kubectl cluster-info` command and taking the "Kubernetes master" value.  
-        The output should be similar to this:
-
-        ```
-        Kubernetes master is running at ...
-        ```
-
-    -   `name`
-
-        A name to **represent this cluster**, this must be unique within the `clusters`
-        array. This value will be displayed to the final User in the Service Catalog Kubernetes plugin.
-
-    -   `authProvider`
-
-        Determines how the Kubernetes client authenticates with the Kubernetes
-        cluster.
-
-        **Valid values:**
-
-        -   `serviceAccount` - Use of a Kubernetes [service account](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/) to access the Kubernetes API.  
-            **NOTE:** when this is used the `serviceAccountToken` field should also be set (see bellow).
-
-        -   `google` - Use of a user's Google auth token from the [Google auth plugin](https://backstage.io/docs/auth/) to access the Kubernetes API.
-
-    -   `serviceAccountToken` - _optional_
-
-        The Kubernetes service account token to be used when `authProvider` is set to `serviceAccount`.
+You can find the complete list of fields in the [the official Backstage documentation](https://backstage.io/docs/features/kubernetes/configuration).
 
 ### Using RBAC Authorization
 
