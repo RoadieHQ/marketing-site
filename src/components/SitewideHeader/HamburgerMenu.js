@@ -167,8 +167,8 @@ const HamburgerMenu = ({ siteMetadata }) => {
         <div className={classes.legalLinks}>
           <div className={classes.legalSpacer}>
             <TextLink
-              to="/terms/"
-              text="Terms of service"
+              to="/legal-notices/website-terms/"
+              text="Legal"
               color="contrasting"
               className={classes.textLink}
             />
@@ -176,7 +176,7 @@ const HamburgerMenu = ({ siteMetadata }) => {
 
           <div className={classes.spacer}>
             <TextLink
-              to="/privacy/"
+              to="/legal-notices/privacy-policy/"
               text="Privacy"
               color="contrasting"
               className={classes.textLink}

@@ -18,13 +18,14 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const TextLink = ({ to, text, color, className }) => {
+const TextLink = ({ to, text, color, className, children, ...rest }) => {
   const classes = useStyles({ color });
   const rootClassList = classnames(classes.root, className);
+  const inner = text || children;
 
   return (
-    <Link to={to} className={rootClassList}>
-      {text}
+    <Link to={to} className={rootClassList} {...rest}>
+      {inner}
     </Link>
   );
 };

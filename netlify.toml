@@ -6,3 +6,13 @@
   from = "/blog/backstage-docker-compose/"
   to = "/blog/backstage-docker-service-catalog/"
   force = true
+
+[[redirects]]
+  from = "/terms/"
+  to = "/legal-notices/website-terms/"
+  force = true
+
+[[redirects]]
+  from = "/privacy/"
+  to = "/legal-notices/privacy-policy/"
+  force = true
