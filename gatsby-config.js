@@ -54,8 +54,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/pages`,
-        name: `pages`,
+        path: `${__dirname}/content/legal-notices`,
+        name: `legal-notices`,
+        // Ignore stuff like Vim swp files, .DS_Store etc.
         ignore: ['**/.*'],
       },
     },
@@ -137,7 +138,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         // Excluded pages should also be Disallowed by the robots.txt
-        exclude: ['/terms', '/privacy', '/onboarding'],
+        exclude: ['/onboarding'],
       },
     },
     `gatsby-plugin-force-trailing-slashes`,

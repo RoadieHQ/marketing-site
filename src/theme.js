@@ -96,6 +96,17 @@ const theme = {
         lineHeight: '2rem',
       },
 
+      '& table': {
+        borderCollapse: 'collapse',
+        marginBottom: '1em',
+      },
+
+      '& th, & td': {
+        border: '1px solid #999',
+        padding: '0.5rem',
+        textAlign: 'left',
+      },
+
       '@media (min-width: 720px)': {
         '& ul': {
           paddingLeft: '3em',

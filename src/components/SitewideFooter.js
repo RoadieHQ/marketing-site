@@ -40,10 +40,10 @@ const SitewideFooter = () => {
 
         <nav>
           <Link to="/careers/">Careers</Link>
-          <Link to="/terms/" className={classes.nonFirstLink}>
-            Terms of service
+          <Link to="/legal-notices/website-terms/" className={classes.nonFirstLink}>
+            Legal
           </Link>
-          <Link to="/privacy/" className={classes.nonFirstLink}>
+          <Link to="/legal-notices/privacy-policy/" className={classes.nonFirstLink}>
             Privacy
           </Link>
         </nav>
