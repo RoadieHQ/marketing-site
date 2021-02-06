@@ -105,6 +105,11 @@ const theme = {
         border: '1px solid #999',
         padding: '0.5rem',
         textAlign: 'left',
+      }, 
+
+      '& twitter-tweet': {
+        marginLeft: 'auto',
+        marginRight: 'auto',
       },
 
       '@media (min-width: 720px)': {
