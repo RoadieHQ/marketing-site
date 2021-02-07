@@ -37,7 +37,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-export const VALUES = [
+const VALUES = [
   [
     {
       title: '⏰ Sustainability',
