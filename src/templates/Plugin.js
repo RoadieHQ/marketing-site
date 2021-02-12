@@ -73,10 +73,12 @@ const PluginTemplate = ({ data, location }) => {
   const classes = useStyles();
   const { plugin, notes, site } = data;
 
+  const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleCloseModal = () => {
     setModalOpen(false);
+    setEmail('');
   };
 
   useEffect(() => {
@@ -89,8 +91,18 @@ const PluginTemplate = ({ data, location }) => {
       <FormSubmissionModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
+        bodyText={
+          <>
+            <p>We publish most Mondays so you&apos;ll receive your first edition soon.</p>
+            <p>
+              In the meantime, we&apos;d love to hear why you&apos;re excited about Backstage.
+              Please fill out this short survey...
+            </p>
+          </>
+        }
         siteMetadata={site.siteMetadata}
-        followOn="TWITTER"
+        followOn="NEEDS_ANALYSIS_SURVEY"
+        email={email}
       />
 
       <div className={classes.siteWideHeaderWrapper}>
@@ -148,6 +160,8 @@ const PluginTemplate = ({ data, location }) => {
               setModalOpen={setModalOpen}
               buttonText="Subscribe"
               netlifyFormName={FORM_NAMES.subscribeToNewsletter}
+              email={email}
+              setEmail={setEmail}
             />
           </div>
         </LayoutControl>

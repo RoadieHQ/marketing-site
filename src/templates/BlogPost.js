@@ -31,10 +31,12 @@ const BlogPostTemplate = ({ data, location }) => {
   const classes = useStyles();
   const { title: siteTitle } = data.site.siteMetadata;
 
+  const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleCloseModal = () => {
     setModalOpen(false);
+    setEmail('');
   };
 
   return (
@@ -47,9 +49,18 @@ const BlogPostTemplate = ({ data, location }) => {
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
         titleText="You're subscribed!"
-        bodyText="You should receive the first edition within a week."
+        bodyText={
+          <>
+            <p>We publish most Mondays so you&apos;ll receive your first edition soon.</p>
+            <p>
+              In the meantime, we&apos;d love to hear why you&apos;re excited about Backstage.
+              Please fill out this short survey...
+            </p>
+          </>
+        }
         siteMetadata={data.site.siteMetadata}
-        followOn="TWITTER"
+        followOn="NEEDS_ANALYSIS_SURVEY"
+        email={email}
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
@@ -73,7 +84,8 @@ const BlogPostTemplate = ({ data, location }) => {
             setModalOpen={setModalOpen}
             buttonText="Subscribe"
             netlifyFormName={FORM_NAMES.subscribeToNewsletter}
-            followOn="TWITTER"
+            email={email}
+            setEmail={setEmail}
           />
         </div>
       </StickyFooter>

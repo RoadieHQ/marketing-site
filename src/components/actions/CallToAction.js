@@ -84,9 +84,10 @@ const CallToAction = ({
   netlifyFormName = FORM_NAMES.notifyMe,
   setModalOpen,
   autoFocus = false,
+  email,
+  setEmail,
 }) => {
   const classes = useStyles();
-  const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [subForm, setSubForm] = useState({
     message: subFormMessage,
@@ -112,7 +113,7 @@ const CallToAction = ({
 
     if (resp.ok) {
       setModalOpen(true);
-      setEmail('');
+      // DO NOT reset the email input here. It is already happening higher in the state chain.
     } else {
       setSubForm({
         state: 'error',

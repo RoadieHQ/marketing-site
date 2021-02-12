@@ -2,6 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import { createUseStyles } from 'react-jss';
 import { Link } from 'components';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+import Button from 'components/home/Button';
 
 const modalStyles = {
   overlay: {
@@ -59,13 +61,30 @@ const TwitterInner = ({ siteMetadata, classes }) => (
   </p>
 );
 
+const NeedsAnalysisSurveyInner = ({ referredEmail }) => (
+  <p>
+    <Button
+      link={true}
+      to={`/onboarding-survey/?referred_email=${encodeURIComponent(referredEmail)}`}
+      icon={<FaExternalLinkAlt />}
+      text="Onwards"
+    />
+  </p>
+);
+
 const FormSubmissionModal = ({
   modalOpen,
   handleCloseModal,
   titleText = 'Thank you!',
-  bodyText = `We'll be in touch to learn more about your stack and the problems you're trying to solve.`,
+  bodyText = (
+    <p>
+      We&apos;ll be in touch to learn more about your stack and the problems you&apos;re trying to
+      solve.
+    </p>
+  ),
   siteMetadata,
   followOn = 'NEWSLETTER_AND_TWITTER',
+  email,
 }) => {
   const classes = useStyles();
 
@@ -74,6 +93,8 @@ const FormSubmissionModal = ({
     // Doesn't make sense to offer to let people sign up to the newsletter immediately after
     // they have just signed up to the newsletter.
     followOnContent = <TwitterInner siteMetadata={siteMetadata} classes={classes} />;
+  } else if (followOn === 'NEEDS_ANALYSIS_SURVEY') {
+    followOnContent = <NeedsAnalysisSurveyInner referredEmail={email} />;
   }
 
   return (
@@ -90,7 +111,7 @@ const FormSubmissionModal = ({
             🎉
           </span>
         </h2>
-        <p>{bodyText}</p>
+        {bodyText}
         {followOnContent}
       </div>
     </Modal>
