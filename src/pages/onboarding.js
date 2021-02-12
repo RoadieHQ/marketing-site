@@ -33,10 +33,12 @@ const useStyles = createUseStyles((theme) => ({
 const OnboardingLandingPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
+  const [email, setEmail] = useState('');
   const classes = useStyles();
 
   const handleCloseModal = () => {
     setModalOpen(false);
+    setEmail('');
   };
 
   return (
@@ -52,8 +54,15 @@ const OnboardingLandingPage = ({ data, location }) => {
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
         siteMetadata={data.site.siteMetadata}
-        bodyText={`We'll be in touch via email to schedule your demo.`}
+        bodyText={
+          <>
+            <p>Check your email to see how to book a Backstage demo.</p>
+            <p>To help us address your questions correctly, please fill out this short survey...</p>
+          </>
+        }
         titleText="Fantastic!"
+        followOn="NEEDS_ANALYSIS_SURVEY"
+        email={email}
       />
 
       <StickyFooter location={location}>
@@ -144,6 +153,8 @@ const OnboardingLandingPage = ({ data, location }) => {
               setModalOpen={setModalOpen}
               buttonText="Get a demo"
               netlifyFormName={FORM_NAMES.getDemoOnboarding}
+              email={email}
+              setEmail={setEmail}
             />
           </div>
         </ResponsiveSpacer>

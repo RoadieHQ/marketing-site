@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { Link } from 'components';
 import classnames from 'classnames';
 
 export const useStyles = createUseStyles((theme) => ({
@@ -49,12 +50,21 @@ export const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Button = ({ text = 'Submit', icon, ...props }) => {
+const Button = ({ text = 'Submit', icon, link = false, ...props }) => {
   const classes = useStyles();
 
   let prefixIcon;
   if (icon) {
     prefixIcon = <span className={classes.prefixIconWrapper}>{icon}</span>;
+  }
+
+  if (link) {
+    return (
+      <Link className={classnames('typography-mono', classes.root)} {...props}>
+        {prefixIcon}
+        <span>{text}</span>
+      </Link>
+    );
   }
 
   return (

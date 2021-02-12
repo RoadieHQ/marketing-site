@@ -33,10 +33,16 @@ const useStyles = createUseStyles((theme) => ({
 const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
+  const [email, setEmail] = useState('');
   const classes = useStyles();
 
   const handleCloseModal = () => {
     setModalOpen(false);
+    // Have to do this here rather than in the CallToAction because we need to
+    // send the email over to the Needs Analysis Typeform survey which is linked from
+    // the FormSubmissionModal. If we clear it out of state too early it won't be recorded
+    // in Typeform.
+    setEmail('');
   };
 
   return (
@@ -52,8 +58,15 @@ const Home = ({ data, location }) => {
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
         siteMetadata={data.site.siteMetadata}
-        bodyText={`We'll be in touch via email to schedule your demo.`}
+        bodyText={
+          <>
+            <p>Check your email to see how to book a Backstage demo.</p>
+            <p>To help us address your questions correctly, please fill out this short survey...</p>
+          </>
+        }
         titleText="Fantastic!"
+        followOn="NEEDS_ANALYSIS_SURVEY"
+        email={email}
       />
 
       <StickyFooter location={location}>
@@ -67,6 +80,8 @@ const Home = ({ data, location }) => {
               the development and operation of Spotify's 2,000 microservices.
             `}
             netlifyFormName={FORM_NAMES.getDemo}
+            email={email}
+            setEmail={setEmail}
           />
         </ResponsiveSpacer>
 
