@@ -10,5 +10,5 @@ metadata:
     lighthouse.com/website-url: https://roadie.io/
 spec:
   type: website
-  owner: dtuite
+  owner: group:roadie
   lifecycle: production
