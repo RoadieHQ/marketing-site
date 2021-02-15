@@ -53,8 +53,21 @@ gettingStarted:
               $env: JIRA_TOKEN
             Accept: 'application/json'
             Content-Type: 'application/json'
-            X-Atlassian-Token: 'no-check'
+            X-Atlassian-Token: 'nocheck'
             User-Agent: "MY-UA-STRING"
+  - intro: Set img-src in Content Security Policy
+    language: yaml
+    code: |
+      // app-config.yaml
+      backend:
+        # ...
+        csp:
+          img-src: 
+            # "'self'" and 'data' are from the backstage default but must be set since img-src is overriden
+            - "'self'"
+            - 'data:'
+            # Allow your Jira instance for @roadiehq/backstage-plugin-jira
+            - 'JIRA_URL'
   - intro: Add plugin to the list of plugins
     language: typescript
     code: |
@@ -65,7 +78,7 @@ gettingStarted:
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        JiraCard
+        JiraCard,
         isPluginApplicableToEntity as isJiraAvailable,
       } from '@roadiehq/backstage-plugin-jira';
 
