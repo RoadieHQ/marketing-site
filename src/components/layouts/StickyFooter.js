@@ -18,8 +18,9 @@ const useStyles = createUseStyles(() => ({
     marginBottom: 40,
   },
 
-  noShrink: {
+  footerWrapper: {
     flexShrink: 0,
+    borderTop: '1px solid #777',
   },
 }));
 
@@ -36,7 +37,7 @@ const StickyFooter = ({ children, maxWidthBreakpoint, location }) => {
         </LayoutControl>
       </div>
 
-      <div className={classes.noShrink}>
+      <div className={classes.footerWrapper}>
         <LayoutControl maxWidthBreakpoint={maxWidthBreakpoint}>
           <SitewideFooter />
         </LayoutControl>

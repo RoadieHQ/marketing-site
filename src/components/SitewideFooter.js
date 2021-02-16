@@ -3,9 +3,13 @@ import { createUseStyles } from 'react-jss';
 import { CookieConsent, Link } from 'components';
 
 const useStyles = createUseStyles((theme) => ({
+  root: {
+    paddingTop: 16,
+  },
+
   inner: {
     display: 'none',
-    minHeight: 40,
+    minHeight: 100,
 
     color: theme.palette.grey[700],
     textDecoration: 'none',
@@ -21,7 +25,6 @@ const useStyles = createUseStyles((theme) => ({
     inner: {
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center',
     },
   },
 
@@ -34,7 +37,7 @@ const SitewideFooter = () => {
   const classes = useStyles();
 
   return (
-    <footer>
+    <footer className={classes.root}>
       <div className={classes.inner}>
         <div>© {new Date().getFullYear()} Larder Software Limited. All rights reserved.</div>
 
