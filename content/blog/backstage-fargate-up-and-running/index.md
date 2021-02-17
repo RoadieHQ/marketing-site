@@ -1,6 +1,6 @@
 ---
 title: Deploying Backstage application to AWS ECS Fargate
-date: '2021-02-14T16:00:00.0Z'
+date: '2021-02-17T16:00:00.0Z'
 description: How to deploy Backstage to AWS Elastic Container Service (ECS) using the Fargate serverless computing engine to run Docker containers 
 tags: ['tutorial']
 ---
@@ -115,6 +115,7 @@ The last policy we want to create is to allow Fargate to download the Docker ima
 Finally, now that we have our policies set up, we can create a Role that we can attach to the running Fargate task.
 
 We'll jump into the Roles section of IAM console and click the 'Create role' button. We select trusted entity type to be 'Elastic Container Service' and our use case to be 'Elastic Container Service Task'. On the next page where a list of permissions are displayed we select the three policies we created above. 
+
 ![fargate_instance_role.png](./fargate_instance_role.png) 
 
 When we navigate to the role we should make sure that the correct trust policy JSON has been assigned to it. We don't want to use this same role to be used by our running tasks, only the ECS service itself, so out trust policy is pointing to ecs.amazonaws.com only.
@@ -167,6 +168,7 @@ The last scaffolding bit we want to do to support our Fargate Backstage is to se
 Let's navigate to [AWS Load Balancer section](https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#LoadBalancers) in the console and spin one up. 
 
 We want to create an Application Load balancer that is internet facing. It is a good idea to select all subnets, so the load balancer is able to target our containers even if they are spread out across different AWS Availability Zones. For now the only listener we attach to the load balancer is listening to HTTP traffic through port 80, but if you have a domain that you control and can create certificates for, you should be using HTTPS and port 443.  
+
 ![lb_basic_setup.png](./lb_basic_setup.png)
 
 
@@ -331,6 +333,7 @@ It will take few minutes before it reaches 'RUNNING' status. Unfortunately it do
 We can investigate and debug why the running container fails to stay up by checking [CloudWatch logs](https://eu-west-1.console.aws.amazon.com/cloudwatch/home?region=eu-west-1#logsV2:log-groups) that our task has written. In cases where the task doesn't start at all we can take a look at the task itself from the ECS pages to see what prevents it from starting. These could be something like IAM policy issues or perhaps a wrong URL to the image that we have defined.
 
 When we take a look at the logs we can see that the container starts up and Backstage itself within the container tries its best to start up. It fails on Knex timeout error, telling us that Knex is unable to connect to the database.
+
 ![db_connectivity_error.png](./db_connectivity_error.png)
 
 There is one thing we want to do to fix that. In the first step we spun up an RDS database and created a new security group for it. This security group does not allow our container to access the database, so we need to make some modifications to it. We can navigate to the security group via RDS and modify the inbound rules of it. We will add a new line allowing traffic to port `5432` from security group that we have created to our Fargate service. After clicking save, the change to the firewall is immediate, and the next task ECS spins up for us should be able to connect to the database and stay up and running.
@@ -342,5 +345,5 @@ We can now navigate to our load balancer URL and we should be seeing a running B
 ## Conclusion
 
 
-Setting Backstage up and running on AWS Fargate requires multiple steps and configurations but provides a secure and manageable Backstage instance after the initial configuration is done. 
+Setting Backstage up and running on AWS Fargate requires multiple steps and configurations but provides a secure and manageable Backstage instance after the initial configuration is done. There are few avenues where this solution can evolve from here. Things like high availability and monitoring are something to think about when spinning up a Backstage instance as well and will eventually bring more complexity into the solution. With this tutorial you can get going and start experimenting with Backstage before moving into more complex architectures.  
 
