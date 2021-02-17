@@ -19,7 +19,7 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const Hero = ({ setModalOpen, headline, lead, netlifyFormName }) => {
+const Hero = ({ setModalOpen, headline, lead, netlifyFormName, email, setEmail }) => {
   const classes = useStyles();
 
   return (
@@ -40,6 +40,8 @@ const Hero = ({ setModalOpen, headline, lead, netlifyFormName }) => {
               setModalOpen={setModalOpen}
               buttonText="Get a demo"
               netlifyFormName={netlifyFormName}
+              email={email}
+              setEmail={setEmail}
             />
           </div>
         </>
