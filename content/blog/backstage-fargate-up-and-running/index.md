@@ -18,7 +18,7 @@ To complete this tutorial, you will need:
 - [AWS account](https://aws.amazon.com/console/) with permissions to create IAM policies, RDS databases, Load Balancers, ECS Fargate Clusters and managed ECR repositories.
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) set up locally with your AWS credentials.
 
-## Step 1. - Spinning up your RDS Database instance
+## Step 1 - Spinning up your RDS Database instance
 
 To run properly, Backstage needs a database to store and handle data. In AWS environment we can spin up an RDS PostgreSQL database to handle that for us. 
 
@@ -182,7 +182,7 @@ For target groups we just change the port to 7000, which will be the one our Bac
 The load balancer will take few a minutes to spin up. While waiting for that we will take note of the DNS name of the balancer, this will be the entry we'll modify our application configuration with. Of course, if you have added an CNAME/Alias entry of your own domain to point to the load balancer, you should use that instead. 
 
 
-## Step 5. - Creating your Backstage image
+## Step 5 - Creating your Backstage image
 
 To deploy the Backstage application we want to have it packaged into a docker image with configurations best suitable for our environment. We'll start this journey in the Backstage repository. For more information how to scaffold the initial application you can take a look at the post to get [Backstage running with Docker compose](https://roadie.io/blog/backstage-docker-service-catalog/).
 For this post we start the same way and scaffold a new fresh Backstage application by running `npx @backstage/create-app`. After we have figured out a good name for the app and selected PostgreSQL as our database provider, we are ready to massage our configuration files to match what we want our environment to look like.
