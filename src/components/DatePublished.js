@@ -3,13 +3,15 @@ import format from 'date-fns/format';
 import formatDistance from 'date-fns/formatDistance';
 
 const DatePublished = ({
-  frontmatter: { date, lastValidated },
+  frontmatter,
   relative = false,
   showLastValidated = false,
+  dateKey = 'date',
 }) => {
   const FORMAT_TOKEN = 'MMMM do, yyyy';
+  const date = frontmatter[dateKey];
   const dateTimestamp = Date.parse(date);
-  const lastValidatedTimestamp = Date.parse(lastValidated);
+  const lastValidatedTimestamp = Date.parse(frontmatter.lastValidated);
 
   let text = '';
   let formattedDate = formatDistance(dateTimestamp, new Date());

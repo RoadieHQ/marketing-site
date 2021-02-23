@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
-import DatePublished from './DatePublished';
-import Tags from './Tags';
+import DatePublished from '../DatePublished';
+import Tags from '../Tags';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -64,7 +64,7 @@ const PostSummary = ({ post }) => {
           <span className={classes.datePublishedWrapper}>
             <DatePublished frontmatter={post.frontmatter} relative={true} />
           </span>
-          <Tags post={post} />
+          <Tags tags={post.frontmatter.tags} />
         </div>
       </header>
       <section className={classes.summary}>

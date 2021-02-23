@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import isEmpty from 'lodash/isEmpty';
 
 import DatePublished from './DatePublished';
 import Tags from './Tags';
@@ -14,6 +15,7 @@ const useStyles = createUseStyles((theme) => ({
     fontSize: '2.75rem',
     color: theme.palette.grey[900],
     marginBottom: 8,
+    marginTop: 0,
   },
 
   tagsWrapper: {
@@ -27,18 +29,26 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const PostHeader = ({ post }) => {
+const ContentHeader = ({ frontmatter, showLastValidated = true, dateKey }) => {
   const classes = useStyles();
 
   return (
     <header className={classes.root}>
-      <h1 className={classes.h1}>{post.frontmatter.title}</h1>
-      <div className={classes.tagsWrapper}>
-        <Tags post={post} />
-      </div>
-      <DatePublished frontmatter={post.frontmatter} showLastValidated={true} />
+      <h1 className={classes.h1}>{frontmatter.title}</h1>
+
+      {!isEmpty(frontmatter.tags) && (
+        <div className={classes.tagsWrapper}>
+          <Tags tags={frontmatter.tags} />
+        </div>
+      )}
+
+      <DatePublished
+        frontmatter={frontmatter}
+        showLastValidated={showLastValidated}
+        dateKey={dateKey}
+      />
     </header>
   );
 };
 
-export default PostHeader;
+export default ContentHeader;

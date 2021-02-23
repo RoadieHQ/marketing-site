@@ -67,6 +67,14 @@ const theme = {
         marginTop: 0,
       },
 
+      '& h2': {
+        marginTop: '4em',
+      },
+
+      '& h3': {
+        marginTop: '2em',
+      },
+
       '& ul': {
         paddingLeft: '1em',
       },
@@ -105,7 +113,7 @@ const theme = {
         border: '1px solid #999',
         padding: '0.5rem',
         textAlign: 'left',
-      }, 
+      },
 
       '& twitter-tweet': {
         marginLeft: 'auto',

@@ -69,7 +69,7 @@ const Home = ({ data, location }) => {
         email={email}
       />
 
-      <StickyFooter location={location}>
+      <StickyFooter location={location} headerBottomBorder={false}>
         <ResponsiveSpacer>
           <Hero
             setModalOpen={setModalOpen}

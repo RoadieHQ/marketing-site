@@ -1,9 +1,14 @@
 export default (theme) => ({
   root: {
+    marginBottom: '1em',
+    borderBottom: ({ bottomBorder }) =>
+      bottomBorder ? `1px solid ${theme.palette.grey[300]}` : 'none',
+  },
+
+  header: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: '1em',
     paddingTop: '1em',
   },
 

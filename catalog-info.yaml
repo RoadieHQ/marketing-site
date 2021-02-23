@@ -8,6 +8,7 @@ metadata:
   annotations:
     github.com/project-slug: RoadieHQ/marketing-site
     lighthouse.com/website-url: https://roadie.io/
+    backstage.io/techdocs-ref: url:https://github.com/RoadieHQ/marketing-site/tree/main
 spec:
   type: website
   owner: user:david

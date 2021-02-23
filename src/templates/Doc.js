@@ -3,47 +3,34 @@ import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import { SEO, StickyFooter, ContentHeader } from 'components';
 
-import { Sidebar } from 'components/legal-notice';
+import { Sidebar } from 'components/doc';
 
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
-
-  main: {},
-
-  aside: {
-    paddingTop: 16,
-  },
 
   article: {
     paddingLeft: 32,
     paddingTop: 32,
   },
 
-  ul: {
-    listStyle: 'none',
-    padding: 0,
-  },
+  main: {},
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     main: {
       display: 'flex',
     },
-
-    aside: {
-      minWidth: 250,
-    },
   },
 }));
 
-const LegalNotice = ({ data: { notice, site }, location }) => {
+const Doc = ({ data: { doc, site }, location }) => {
   const siteTitle = site.siteMetadata.title;
   const classes = useStyles();
 
   return (
     <>
       <SEO
-        title={`${notice.frontmatter.title} | ${siteTitle}`}
-        description={notice.frontmatter.description}
+        title={`${doc.frontmatter.title} | ${siteTitle}`}
+        description={doc.frontmatter.description}
       />
 
       <StickyFooter location={location}>
@@ -51,12 +38,8 @@ const LegalNotice = ({ data: { notice, site }, location }) => {
           <Sidebar location={location} />
 
           <article className={classes.article}>
-            <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
-
-            <section
-              className={classes.content}
-              dangerouslySetInnerHTML={{ __html: notice.html }}
-            />
+            <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+            <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
           </article>
         </main>
       </StickyFooter>
@@ -64,10 +47,10 @@ const LegalNotice = ({ data: { notice, site }, location }) => {
   );
 };
 
-export default LegalNotice;
+export default Doc;
 
 export const pageQuery = graphql`
-  query LegalNoticeBySlug($slug: String!) {
+  query DocBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -77,7 +60,7 @@ export const pageQuery = graphql`
       }
     }
 
-    notice: markdownRemark(fields: { slug: { eq: $slug } }) {
+    doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       frontmatter {

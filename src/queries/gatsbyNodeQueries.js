@@ -61,3 +61,22 @@ module.exports.LEGAL_NOTICES_QUERY = `
   }
 }
 `;
+
+module.exports.DOCS_QUERY = `
+{
+  docs: allMarkdownRemark(
+    limit: 1000,
+    filter: {
+      fileAbsolutePath: {regex: "/.+/content/docs/.+/"}
+    }
+  ) {
+    edges {
+      node {
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+`;
