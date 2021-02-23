@@ -89,10 +89,10 @@ exports.createPages = async ({ graphql, actions }) => {
     actions,
     graphql,
     processor: ({ node }, component) => ({
-      path: `/legal-notices/${node.frontmatter.name}/`,
+      path: `/legal-notices${node.fields.slug}`,
       component,
       context: {
-        name: node.frontmatter.name,
+        slug: node.fields.slug,
       },
     }),
   });

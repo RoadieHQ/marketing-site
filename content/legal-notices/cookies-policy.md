@@ -1,5 +1,4 @@
 ---
-name: cookies-policy
 title: Cookies Policy
 lastUpdated: '2021-02-05T21:00:00.0Z'
 description: A list of cookies used on the Roadie website.

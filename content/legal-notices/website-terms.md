@@ -1,5 +1,4 @@
 ---
-name: website-terms
 title: Website Terms of Use
 lastUpdated: '2020-07-11T21:00:00.0Z'
 description: Please read these terms and conditions carefully before using Our Service.
