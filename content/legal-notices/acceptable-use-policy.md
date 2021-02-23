@@ -1,5 +1,4 @@
 ---
-name: acceptable-use-policy
 title: Acceptable Use Policy
 lastUpdated: '2021-02-05T21:00:00.0Z'
 description: How you may and may not use our services.

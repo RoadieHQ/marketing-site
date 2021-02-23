@@ -1,5 +1,4 @@
 ---
-name: sub-processors
 title: Sub-Processors
 lastUpdated: '2021-02-05T21:00:00.0Z'
 description: A list of sub-processors we use.

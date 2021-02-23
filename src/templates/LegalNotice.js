@@ -113,7 +113,7 @@ const LegalNotice = ({ data: { notice, site }, location }) => {
 export default LegalNotice;
 
 export const pageQuery = graphql`
-  query LegalNoticeByName($name: String!) {
+  query LegalNoticeBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -123,11 +123,10 @@ export const pageQuery = graphql`
       }
     }
 
-    notice: markdownRemark(frontmatter: { name: { eq: $name } }) {
+    notice: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       frontmatter {
-        name
         description
         title
         lastUpdated

@@ -56,10 +56,6 @@ module.exports.LEGAL_NOTICES_QUERY = `
         fields {
           slug
         }
-
-        frontmatter {
-          name
-        }
       }
     }
   }
