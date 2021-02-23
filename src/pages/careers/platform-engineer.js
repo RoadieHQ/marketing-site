@@ -17,36 +17,39 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const ROLE_NAME = 'JavaScript & TypeScript Engineer';
-const TYPEFORM_SLUG = 'javascript-engineer';
-const HEADLINE = 'Get paid to become a top open-source contributor';
+const ROLE_NAME = 'Platform Engineer';
+const TYPEFORM_SLUG = 'platform-engineer';
+const HEADLINE = 'Help companies adopt backstage.io';
 
 const ROLE = (() => {
   return [
-    'Founding engineer at an early stage, VC-backed startup.',
-    `Become a top contributor to the ${backstageLink} that Roadie is built on.`,
-    `You'll build new product features from start to finish: through conception, 
-     research, maintenance, operation, and polish.`,
-    `Learn rapidly and work in all parts of the stack.`,
-    `Work closely with experienced engineers who previously worked at Workday and Spotify.`,
+    `As one of our engineers you will build out a scalable, secure and highly available solution built on the cloud (currently AWS) that will host ${backstageLink} for our customers.`,
+    `You will build new product features from start to finish: through conception, research, maintenance, operation, and polish.`,
+    `You will define the monitoring requirements and implement incident resolution solutions.`,
+    `You get to collaborate with talented engineers that used to work in Spotify and Workday.`,
   ];
 })();
 
 const REQUIREMENTS = (() => {
   return [
-    `You're excited to learn and apply new technical skills. Bonus: You share your enthusiasm with the world.`,
-    `You love open source and community. You will do a ton of open source contribution in this role.`,
-    `You've spent time as an engineer or equivalent role. It doesn't have to be loads of experience but some is essential.`,
-    `You're fluent with JavaScript. TypeScript and React experience is a bonus.`,
-    `You should be located within the timezone band: UTC-1 to UTC+2`,
+    `Proficiency in a high level programming language.`,
+    `Familiarity with Amazon Web Services products.`,
+    `Experience with Kubernetes.`,
+    `Experience operating highly available and highly secure systems.`,
+    `Knowledge of building infrastructure through Infrastructure as code.`,
     `A college degree is ${renderToString(<strong>NOT</strong>)} required.`,
+    `You're excited to learn and apply new technical skills. Bonus: You share your enthusiasm with the world.`,
+    `2 years or more working in a similar role.`,
+    `Bonus: Worked with AWS EKS.`,
+    `Bonus: Have experience in Typescript/Javascript.`,
+    `Bonus: Have Pulumi or Terraform experience.`,
   ];
 })();
 
 const OFFER = (() => {
   return [
-    `€50,000 to €70,000 base salary (or equivalent in your currency).`,
-    `0.25% to 0.75% stock options`,
+    `€60,000 to €80,000 base salary (or equivalent in your currency).`,
+    `0.25% to 0.5% stock options`,
     `27 days paid time off`,
     `Work remotely with flexible working hours.`,
   ];
@@ -55,7 +58,7 @@ const OFFER = (() => {
 const PROCESS = (() => [
   `Application via Typeform. Click the big button below!`,
   `Meet with the engineering manager, to see if we're a mutual fit.`,
-  `Technical assessment.`,
+  `Technical assessment which is broken up into two parts, a programming part and a system design part.`,
   `Meet the founder.`,
   `Yes/No decision.`,
 ])();
