@@ -78,14 +78,7 @@ const OPEN_ROLES = [
       text: `Become a top contributor to the open-source software that Roadie is built on.`,
     },
   ],
-  [
-    {
-      title() {
-        return <Link to="/careers/platform-engineer/">Platform Engineer</Link>;
-      },
-      text: `Come build Roadies platform`,
-    },
-  ],
+  [],
 ];
 
 const Careers = ({ data, location }) => {
