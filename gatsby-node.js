@@ -7,6 +7,7 @@ const {
   YAML_QUERY,
   TAGS_QUERY,
   LEGAL_NOTICES_QUERY,
+  DOCS_QUERY,
 } = require('./src/queries/gatsbyNodeQueries');
 
 const createPagesFromQuery = async ({
@@ -86,6 +87,21 @@ exports.createPages = async ({ graphql, actions }) => {
     templatePath: './src/templates/LegalNotice.js',
     query: LEGAL_NOTICES_QUERY,
     resultName: 'notices.edges',
+    actions,
+    graphql,
+    processor: ({ node }, component) => ({
+      path: node.fields.slug,
+      component,
+      context: {
+        slug: node.fields.slug,
+      },
+    }),
+  });
+
+  await createPagesFromQuery({
+    templatePath: './src/templates/Doc.js',
+    query: DOCS_QUERY,
+    resultName: 'docs.edges',
     actions,
     graphql,
     processor: ({ node }, component) => ({

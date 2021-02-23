@@ -3,14 +3,11 @@ import { createUseStyles } from 'react-jss';
 
 import { LayoutControl, SitewideHeader, SitewideFooter } from 'components';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 
   expandVertically: {
@@ -20,21 +17,24 @@ const useStyles = createUseStyles(() => ({
 
   footerWrapper: {
     flexShrink: 0,
-    borderTop: '1px solid #777',
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    footerWrapper: {
+      borderTop: `1px solid ${theme.palette.grey[300]}`,
+    },
   },
 }));
 
-const StickyFooter = ({ children, maxWidthBreakpoint, location }) => {
+const StickyFooter = ({ children, maxWidthBreakpoint, location, headerBottomBorder }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <div className={classes.expandVertically}>
-        <LayoutControl maxWidthBreakpoint={maxWidthBreakpoint}>
-          <SitewideHeader location={location} />
+        <SitewideHeader location={location} bottomBorder={headerBottomBorder} />
 
-          {children}
-        </LayoutControl>
+        <LayoutControl maxWidthBreakpoint={maxWidthBreakpoint}>{children}</LayoutControl>
       </div>
 
       <div className={classes.footerWrapper}>

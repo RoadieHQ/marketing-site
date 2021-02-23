@@ -43,11 +43,21 @@ const SitewideFooter = () => {
 
         <nav>
           <Link to="/careers/">Careers</Link>
+
           <Link to="/legal-notices/website-terms/" className={classes.nonFirstLink}>
             Legal
           </Link>
+
           <Link to="/legal-notices/privacy-policy/" className={classes.nonFirstLink}>
             Privacy
+          </Link>
+
+          <Link
+            to="/docs/getting-started/getting-started-for-admins/"
+            className={classes.nonFirstLink}
+            id="sitewide-footer-documentation"
+          >
+            Documentation
           </Link>
         </nav>
       </div>

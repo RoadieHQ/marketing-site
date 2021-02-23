@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
-import { SEO, InterstitialTitle, Link } from 'components';
+import { SEO, InterstitialTitle, Link, ContentHeader } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
-import PostHeader from 'components/blog/PostHeader';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 import CallToAction from 'components/actions/CallToAction';
 import { FORM_NAMES } from '../contactFormConstants';
@@ -66,7 +65,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         <main>
           <article>
-            <PostHeader post={post} />
+            <ContentHeader frontmatter={post.frontmatter} />
             <section className={classes.main} dangerouslySetInnerHTML={{ __html: post.html }} />
           </article>
         </main>

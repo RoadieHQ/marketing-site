@@ -33,14 +33,14 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Tags = ({ post: { frontmatter } }) => {
+const Tags = ({ tags }) => {
   const classes = useStyles();
 
-  if (isEmpty(frontmatter.tags)) return null;
+  if (isEmpty(tags)) return null;
 
   return (
     <>
-      {frontmatter.tags.map((tag) => {
+      {tags.map((tag) => {
         return (
           <span className={classes.tag} key={tag}>
             <Link to={`/tags/${kebabCase(tag)}/`} className={classes.link}>

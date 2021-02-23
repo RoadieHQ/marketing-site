@@ -29,7 +29,7 @@ const Home = ({ data, location }) => {
         description="A comprehensive list of Backstage plugins, with screenshots, installation instructions and usage guides."
       />
 
-      <StickyFooter location={location}>
+      <StickyFooter location={location} headerBottomBorder={false}>
         <div className={classes.grid}>
           {plugins.edges.map(({ node }) => (
             <ListItem {...node} key={node.name} />

@@ -3,6 +3,8 @@ const camelCase = require('lodash/camelCase');
 const theme = require('./src/theme');
 
 const SITE_TITLE = 'Roadie';
+// Ignore stuff like Vim swp files, .DS_Store etc.
+const GATSBY_SOURCE_FILESYSTEM_IGNORE_LIST = ['**/.*'];
 
 module.exports = {
   siteMetadata: {
@@ -22,24 +24,25 @@ module.exports = {
       options: {
         path: `${__dirname}/content`,
         name: 'content',
-        // Ignore stuff like Vim swp files, .DS_Store etc.
-        ignore: ['**/.*', '**/plugins'],
+        ignore: [...GATSBY_SOURCE_FILESYSTEM_IGNORE_LIST, '**/plugins'],
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/plugins/descriptions`,
         name: `pluginDescriptions`,
-        ignore: ['**/template*', '**/.*'],
+        ignore: [...GATSBY_SOURCE_FILESYSTEM_IGNORE_LIST, '**/template*'],
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/plugins/notes`,
         name: `pluginNotes`,
-        ignore: ['**/template*', '**/.*'],
+        ignore: [...GATSBY_SOURCE_FILESYSTEM_IGNORE_LIST, '**/template*'],
       },
     },
 
@@ -55,7 +58,11 @@ module.exports = {
               // background of the blog posts is also white, there was no way to see where the image
               // ended and the blog post began. It all just blurred together. This shadow defins
               // the edge of the image.
-              wrapperStyle: 'box-shadow:0 0 5px -2px rgba(0,0,0,0.75);',
+              //
+              // I've also disabled margin-left:auto because there are some situations where we
+              // need images to be against the left edge. Docs are a good example of this.
+              wrapperStyle:
+                'box-shadow:0 0 5px -2px rgba(0,0,0,0.75); margin-left:unset; margin-right:unset',
               withWebp: true,
             },
           },
@@ -65,6 +72,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          'gatsby-remark-autolink-headers',
           `gatsby-remark-external-links`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
