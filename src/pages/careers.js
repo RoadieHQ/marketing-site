@@ -83,7 +83,7 @@ const OPEN_ROLES = [
       title() {
         return <Link to="/careers/platform-engineer/">Platform Engineer</Link>;
       },
-      text: `Come build Roadies platform`,
+      text: `Take an active role in shaping the future of our platform`,
     },
   ],
 ];
