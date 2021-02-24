@@ -19,7 +19,7 @@ const useStyles = createUseStyles(() => ({
 
 const ROLE_NAME = 'Platform Engineer';
 const TYPEFORM_SLUG = 'platform-engineer';
-const HEADLINE = 'Help companies adopt backstage.io';
+const HEADLINE = 'Take an active role in shaping the future of our platform';
 
 const ROLE = (() => {
   return [
