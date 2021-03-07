@@ -6,17 +6,19 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ description, lang, meta, title }) => {
+import roadieLogo from '../../content/assets/roadie-r-764x764.png';
+
+const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
+            siteUrl
             description
             social {
               twitter
@@ -57,6 +59,21 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `summary`,
         },
         {
+          name: `twitter:site`,
+          content: site.siteMetadata.social.twitter,
+        },
+        {
+          name: `twitter:image`,
+          // This may not work in development or a staging or preview environment but it is only
+          // really required to work in production. Twitter should not be linking to our preview
+          // URLs.
+          content: `${site.siteMetadata.siteUrl}${roadieLogo}`,
+        },
+        {
+          name: `twitter:image:alt`,
+          content: 'The Roadie logo. An uppercase R outline against a black background.',
+        },
+        {
           name: `twitter:creator`,
           content: site.siteMetadata.social.twitter,
         },
@@ -71,19 +88,6 @@ const SEO = ({ description, lang, meta, title }) => {
       ].concat(meta)}
     />
   );
-};
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 };
 
 export default SEO;
