@@ -55,6 +55,10 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `${site.siteMetadata.siteUrl}${roadieLogo}`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
