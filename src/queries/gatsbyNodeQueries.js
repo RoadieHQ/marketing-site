@@ -21,12 +21,19 @@ module.exports.BLOGS_QUERY = `
 }
 `;
 
-module.exports.YAML_QUERY = `
+module.exports.PLUGINS_QUERY = `
 {
-  allYaml {
+  plugins: allMarkdownRemark(
+    limit: 1000,
+    filter: {
+      fileAbsolutePath: {regex: "/.+/content/backstage/plugins/.+/"}
+    }
+  ) {
     edges {
       node {
-        name
+        fields {
+          slug
+        }
       }
     }
   }

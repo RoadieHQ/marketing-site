@@ -61,17 +61,17 @@ const Header = ({ plugin }) => {
 
   return (
     <header className={classes.root}>
-      <Logo sharpImage={plugin.childrenLogoImage[0].childImageSharp} />
-      <Headline>{plugin.heading}</Headline>
-      <Lead>{plugin.lead}</Lead>
-      <Attribution attribution={plugin.attribution} />
+      <Logo sharpImage={plugin.frontmatter.logoImage.childImageSharp} />
+      <Headline>{plugin.frontmatter.heading}</Headline>
+      <Lead>{plugin.frontmatter.lead}</Lead>
+      <Attribution attribution={plugin.frontmatter.attribution} />
     </header>
   );
 };
 
 const PluginTemplate = ({ data, location }) => {
   const classes = useStyles();
-  const { plugin, notes, site } = data;
+  const { plugin, site } = data;
 
   const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
@@ -87,7 +87,7 @@ const PluginTemplate = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={plugin.seo.title} description={plugin.seo.description} />
+      <SEO title={plugin.frontmatter.seo.title} description={plugin.frontmatter.seo.description} />
       <FormSubmissionModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
@@ -117,7 +117,7 @@ const PluginTemplate = ({ data, location }) => {
         <LayoutControl maxWidthBreakpoint="md">
           <InterstitialTitle text="Getting started is simple" />
 
-          {plugin.gettingStarted.map((section, index) =>
+          {plugin.frontmatter.gettingStarted.map((section, index) =>
             section.title && section.title !== '' ? (
               <InterstitialTitle text={section.title} key={`key-${index}`} />
             ) : (
@@ -134,16 +134,16 @@ const PluginTemplate = ({ data, location }) => {
 
           <div>
             <Img
-              fluid={plugin.childrenCoverImage[0].childImageSharp.fluid}
-              alt={plugin.coverImage.alt}
+              fluid={plugin.frontmatter.coverImage.childImageSharp.fluid}
+              alt={plugin.frontmatter.coverImageAlt}
               className={classes.coverImage}
             />
           </div>
 
-          {notes && notes !== '' && (
+          {plugin.notes && plugin.notes !== '' && (
             <div>
               <InterstitialTitle text="Things to know" />
-              <div className={classes.notes} dangerouslySetInnerHTML={{ __html: notes.html }} />
+              <div className={classes.notes} dangerouslySetInnerHTML={{ __html: plugin.notes }} />
             </div>
           )}
 
@@ -177,7 +177,7 @@ const PluginTemplate = ({ data, location }) => {
 export default PluginTemplate;
 
 export const pageQuery = graphql`
-  query PluginDescriptionByName($name: String!) {
+  query PluginBySlug($slug: String!) {
     site {
       siteMetadata {
         social {
@@ -186,51 +186,46 @@ export const pageQuery = graphql`
       }
     }
 
-    plugin: yaml(name: { eq: $name }) {
-      heading
-      lead
-      attribution {
-        text
-        href
-      }
+    plugin: markdownRemark(fields: { slug: { eq: $slug } }) {
+      notes: html
 
-      seo {
-        title
-        description
-      }
-
-      coverImage {
-        alt
-      }
-
-      childrenLogoImage {
-        childImageSharp {
-          fixed(width: 200, grayscale: false) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-
-      childrenCoverImage {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
-      gettingStarted {
-        title
-        language
-        code
-        intro
-      }
-    }
-
-    notes: markdownRemark(frontmatter: { name: { eq: $name } }) {
-      html
       frontmatter {
-        name
+        humanName
+        lead
+        heading
+
+        attribution {
+          href
+          text
+        }
+
+        logoImage {
+          childImageSharp {
+            fixed(width: 200) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+
+        coverImage {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        coverImageAlt
+
+        seo {
+          title
+          description
+        }
+
+        gettingStarted {
+          intro
+          code
+          language
+        }
       }
     }
   }
