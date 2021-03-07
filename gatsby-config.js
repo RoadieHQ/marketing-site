@@ -12,6 +12,7 @@ module.exports = {
     description: 'Hosted, managed, enterprise Backstage',
     siteUrl: 'https://roadie.io',
     demoUrl: 'https://demo.roadie.so',
+    sourceCodeUrl: 'https://github.com/RoadieHQ/marketing-site/blob/main',
     social: {
       twitter: 'RoadieHQ',
       github: 'RoadieHQ',

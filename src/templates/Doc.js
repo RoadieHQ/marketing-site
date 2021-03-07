@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import { SEO, StickyFooter, ContentHeader } from 'components';
+import { SEO, StickyFooter, ContentHeader, TextLink as Link } from 'components';
 
 import { Sidebar } from 'components/doc';
 
@@ -15,6 +15,13 @@ const useStyles = createUseStyles((theme) => ({
 
   main: {},
 
+  articleFooter: {
+    borderTop: `1px solid ${theme.palette.grey[300]}`,
+    marginTop: 48,
+    marginBottom: 48,
+    paddingTop: 24,
+  },
+
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     main: {
       display: 'flex',
@@ -22,14 +29,28 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Doc = ({ data: { doc, site }, location }) => {
-  const siteTitle = site.siteMetadata.title;
+const editOnGitHubUrl = ({ siteMetadata, doc }) => {
+  const charStart = doc.fileAbsolutePath.indexOf('/content/docs');
+  const projectRootPath = doc.fileAbsolutePath.slice(charStart, doc.fileAbsolutePath.length);
+  // This URL will be incorrect until the document has been merged to the 'main' branch on
+  // GitHub because `blob/main` is hardcoded into the sourceCodeUrl. We only need this link
+  // to work in production though so that's ok.
+  return `${siteMetadata.sourceCodeUrl}${projectRootPath}`;
+};
+
+const Doc = ({
+  data: {
+    doc,
+    site: { siteMetadata },
+  },
+  location,
+}) => {
   const classes = useStyles();
 
   return (
     <>
       <SEO
-        title={`${doc.frontmatter.title} | ${siteTitle}`}
+        title={`${doc.frontmatter.title} | ${siteMetadata.title}`}
         description={doc.frontmatter.description}
       />
 
@@ -40,6 +61,10 @@ const Doc = ({ data: { doc, site }, location }) => {
           <article className={classes.article}>
             <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
             <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
+
+            <footer className={classes.articleFooter}>
+              <Link to={editOnGitHubUrl({ siteMetadata, doc })}>Edit this page on GitHub</Link>
+            </footer>
           </article>
         </main>
       </StickyFooter>
@@ -54,6 +79,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        sourceCodeUrl
         social {
           twitter
         }
@@ -63,6 +89,8 @@ export const pageQuery = graphql`
     doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      fileAbsolutePath
+
       frontmatter {
         description
         title
