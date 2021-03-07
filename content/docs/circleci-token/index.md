@@ -4,6 +4,12 @@ lastUpdated: '2021-02-23T21:00:00.0Z'
 description: How to create a CircleCI personal access token for use with Backstage.
 ---
 
+## Introduction
+
+In oeder to make requests to the CircleCI API, you must provide Roadie with an API key.
+
+## Steps
+
 1. Make sure you are logged in to Circleci as the user you want to use for Backstage. We recommend creating a Github bot account for this.
 
 2. Go to https://app.circleci.com/settings/user/tokens and select Create New Token.

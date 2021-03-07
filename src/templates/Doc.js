@@ -60,6 +60,12 @@ const Doc = ({
 
           <article className={classes.article}>
             <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+
+            <div className={classes.content}>
+              <h2>Table of Contents</h2>
+              <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
+            </div>
+
             <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
 
             <footer className={classes.articleFooter}>
@@ -90,6 +96,7 @@ export const pageQuery = graphql`
       id
       html
       fileAbsolutePath
+      tableOfContents(maxDepth: 2)
 
       frontmatter {
         description
