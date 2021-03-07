@@ -89,7 +89,7 @@ exports.createPages = async ({ graphql, actions }) => {
     actions,
     graphql,
     processor: ({ node }, component) => ({
-      path: `/legal-notices${node.fields.slug}`,
+      path: node.fields.slug,
       component,
       context: {
         slug: node.fields.slug,
@@ -103,19 +103,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
-
-    if (/blog/.test(node.fileAbsolutePath)) {
-      createNodeField({
-        name: `slug`,
-        node,
-        value: `/blog${value}`,
-      });
-    } else {
-      createNodeField({
-        name: `slug`,
-        node,
-        value,
-      });
-    }
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    });
   }
 };

@@ -20,18 +20,10 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content`,
+        name: 'content',
         // Ignore stuff like Vim swp files, .DS_Store etc.
-        ignore: ['**/.*'],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-        ignore: ['**/.*'],
+        ignore: ['**/.*', '**/plugins'],
       },
     },
     {
@@ -48,16 +40,6 @@ module.exports = {
         path: `${__dirname}/content/plugins/notes`,
         name: `pluginNotes`,
         ignore: ['**/template*', '**/.*'],
-      },
-    },
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/legal-notices`,
-        name: `legal-notices`,
-        // Ignore stuff like Vim swp files, .DS_Store etc.
-        ignore: ['**/.*'],
       },
     },
 
