@@ -4,6 +4,12 @@ lastUpdated: '2021-02-23T21:00:00.0Z'
 description: How to create a Sentry Token with permissions for use in Backstage.
 ---
 
+## Introduction
+
+In order to use the Backstage Sentry plugin with Roadie, you must securely provide Roadie with an API key which it can use to access the Sentry API.
+
+## Steps
+
 1. Create an internal application in the Sentry UI. Do this at the organization level, rather than the personal level.
 
 2. Give the application a name and a Webhook URL.

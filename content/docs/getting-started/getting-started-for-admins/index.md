@@ -4,6 +4,8 @@ lastUpdated: '2021-02-23T21:00:00.0Z'
 description: How to get started with Backstage on Roadie
 ---
 
+## Introduction
+
 This tutorial will guide you through the steps required to populate Roadie with a component which is owned by you.
 
 3 kinds of Backstage resource are used in this tutorial.
