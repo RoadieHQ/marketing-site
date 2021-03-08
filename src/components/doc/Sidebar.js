@@ -54,10 +54,18 @@ const DocSidebar = ({ location }) => {
         <p>Integrations</p>
 
         <ul className={classes.ul}>
-          <SidebarItem to="/docs/sentry-token/" text="Sentry" location={location} />
-          <SidebarItem to="/docs/github-token/" text="GitHub Token" location={location} />
-          <SidebarItem to="/docs/circleci-token/" text="CircleCI" location={location} />
-          <SidebarItem to="/docs/github-client/" text="GitHub Client" location={location} />
+          <SidebarItem
+            to="/docs/integrations/github-token/"
+            text="GitHub via Token"
+            location={location}
+          />
+          <SidebarItem
+            to="/docs/integrations/github-client/"
+            text="GitHub via Oauth"
+            location={location}
+          />
+          <SidebarItem to="/docs/integrations/sentry/" text="Sentry" location={location} />
+          <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" location={location} />
         </ul>
       </div>
     </aside>
