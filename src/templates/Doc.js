@@ -8,23 +8,28 @@ import { Sidebar } from 'components/doc';
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
 
-  article: {
-    paddingLeft: 32,
-    paddingTop: 32,
-  },
+  article: {},
 
   main: {},
 
   articleFooter: {
     borderTop: `1px solid ${theme.palette.grey[300]}`,
     marginTop: 48,
-    marginBottom: 48,
     paddingTop: 24,
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    article: {
+      paddingTop: 32,
+      paddingLeft: 32,
+    },
+
     main: {
       display: 'flex',
+    },
+
+    articleFooter: {
+      marginBottom: 48,
     },
   },
 }));
