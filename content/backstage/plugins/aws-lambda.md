@@ -12,7 +12,7 @@ seo:
   description: |
     See AWS Lambda functions for your components in Backstage.
 
-logoImage:'../../assets/logos/aws-lambda/logo-lambda.png'
+logoImage: '../../assets/logos/aws-lambda/logo-lambda.png'
 
 coverImage: '../../assets/lambda-widget.png'
 coverImageAlt: 'A screenshot of the AWS Lambda. It is showing a AWS Lambda function details for a sample component.'
