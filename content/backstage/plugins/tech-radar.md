@@ -1,85 +1,72 @@
-# The server must be restarted to pick up changes in ths file.
-
-# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
-
-# separators.
-
-name: techradar
+---
 humanName: Tech Radar
 heading: 'Backstage Tech Radar Plugin'
-
-# Keep it short
-
 lead: |
-Visualize the your company's official guidelines of different areas of software development.
+  Visualize the your company's official guidelines of different areas of software development.
 attribution:
-text: Spotify
-href: https://spotify.com
+  text: Spotify
+  href: https://spotify.com
 
 seo:
+  title: 'Backstage Tech Radar Plugin | Roadie'
+  description: |
+    Visualize the your company's official guidelines of different areas of software development.
 
-# Don't forget to end with "| Roadie"
+logoImage: '../../assets/logos/tech-radar/radar.png'
 
-title: 'Backstage Tech Radar Plugin | Roadie'
-description: |
-Visualize the your company's official guidelines of different areas of software development.
-
-logo:
-
-# This must be a relative path. It should start without a slash or with ./
-
-# The overall size of the file should be approximately 200 by 200.
-
-# The image in the file should be approximately 100 by 100 pixels. It needs space around it.
-
-# The image will be made greyscale by Gatsby Image Sharp.
-
-fileSystemPath: './content/assets/logos/tech-radar/radar.png'
-
-# The dimensions are required. They are the outer dimensions of the image file.
-
-width: 192
-height: 192
-
-coverImage:
-fileSystemPath: './content/assets/tech-radar-plugin.png'
-alt: 'A screenshot of the Tech Radar plugin.'
-
-# Instructions for someone who wants to use this plugin.
-
-# languages used here must be listed in the .babelrc
+coverImage: '../../assets/tech-radar-plugin.png'
+coverImageAlt: 'A screenshot of the Tech Radar plugin.'
 
 gettingStarted:
+  - intro: Install the plugin into Backstage.
+    language: bash
+    code: 'yarn add @backstage/plugin-tech-radar'
 
-# What will this step accomplish?
+  - intro: Add plugin to the list of plugins.
+    language: typescript
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as TechRadar } from '@backstage/plugin-tech-radar';
 
-- intro: Install the plugin into Backstage.
-  language: bash
-  code: 'yarn add @backstage/plugin-tech-radar'
-- intro: Add plugin to the list of plugins.
-  language: typescript
-  code: |
-  // packages/app/src/plugins.ts
-  export { plugin as TechRadar } from '@backstage/plugin-tech-radar';
-- intro: Modify your app routes to include the Router component exported from the tech radar, for example
-  language: typescript
-  code: |
-  // packages/app/src/App.tsx
-  import { Router as TechRadarRouter } from '@backstage/plugin-tech-radar';
-  &lt;Routes>
-  {/_ other routes ... _/}
-  &lt;Route
-  path="/tech-radar"
-  element={&lt;TechRadarRouter width={1500} height={800} />}
-  />
-  {/_ other routes ... _/}
-  &lt;/Routes>;
+  - intro: Modify your app routes to include the Router component exported from the tech radar, for example
+    language: typescript
+    code: |
+      // packages/app/src/App.tsx
+      import { Router as TechRadarRouter } from '@backstage/plugin-tech-radar';
 
-# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+      &lt;Routes>
+        {/_ other routes ... _/}
+        &lt;Route
+          path="/tech-radar"
+          element={&lt;TechRadarRouter width={1500} height={800} />}
+        />
+        {/_ other routes ... _/}
+      &lt;/Routes>;
+---
 
-style:
+## How do I load in my own data?
 
-# These colors will fall back to a default if omitted.
+To pass own data to plugin use a `getData` prop which expects a `Promise<TechRadarLoaderResponse>` signature.
 
-primaryColor: 'rgb(0, 70, 67)'
-contrastingColor: '#fff'
+For example:
+
+```tsx
+const getFireBaseData = () =>
+  Promise.resolve({
+    quadrants: [{ id: 'infrastructure', name: 'Infrastructure' }],
+    rings: [{ id: 'use', name: 'USE', color: '#91c49d' }],
+    entries: [
+      {
+        moved: 0,
+        ring: 'use',
+        url: '#',
+        key: 'firebase-function',
+        id: 'firebase-function',
+        title: 'FireBase Function',
+        quadrant: 'infrastructure',
+      },
+    ],
+  });
+
+<TechRadarComponent width={1500} height={900} getData={getFireBaseData} />;
+```
