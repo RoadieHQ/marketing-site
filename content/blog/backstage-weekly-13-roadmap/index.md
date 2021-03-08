@@ -5,7 +5,7 @@ description: A look forward at the Backstage roadmap in H1 2021 and backwards to
 tags: ['newsletter']
 ---
 
-> This content was originally published on Roadie's Backstage Weekly newsletter. [Sign up here](https://backstage-weekly.roadie.io).
+> This content was originally published on Roadie's Backstage Weekly newsletter. [Sign up here](/backstage-weekly/).
 
 Backstage development slowed but didn't stop over the holidays so there is a lot to get through in our first week back.
 

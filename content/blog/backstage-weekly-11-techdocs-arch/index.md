@@ -9,7 +9,7 @@ The TechDocs team have produced a [useful document](https://backstage.io/docs/fe
 
 Currently, only a development setup for TechDocs is available but the team are working to productionize it and the improvements they have in the pipeline look great.
 
-Documentation served by Backstage is generated from markdown files which [live in the code repository along side your code](https://backstage-weekly.roadie.io/issues/roadie-s-backstage-weekly-internal-docs-that-actually-help-290463). In the standard development setup these docs are served from the local filesystem of the Backstage instance. This works, but isn't ideal for a production setup because it leads to slow page loads for end users. 🐌
+Documentation served by Backstage is generated from markdown files which live in the code repository along side your code. In the standard development setup these docs are served from the local filesystem of the Backstage instance. This works, but isn't ideal for a production setup because it leads to slow page loads for end users. 🐌
 
 That first-pass conversion of docs from markdown to HTML can take quite a bit of time. In the development setup, markdown to HTML conversion happens when the first request to view the docs is sent to the Backstage server. For one anecdotal data point, my demo Backstage instance takes 1 minute and 22 seconds to render the Backstage docs in Backstage.
 
