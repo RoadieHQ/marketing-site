@@ -47,6 +47,12 @@ const DocSidebar = ({ location }) => {
             text="For admins"
             location={location}
           />
+
+          <SidebarItem
+            to="/docs/getting-started/technical-documentation/"
+            text="Using TechDocs"
+            location={location}
+          />
         </ul>
       </div>
 
