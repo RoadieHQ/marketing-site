@@ -184,6 +184,6 @@ Click the Home link in the Backstage sidebar to go back to the catalog where you
 
 ![our component visible on the other tab of Backstage](./component-on-other-tab.png)
 
-## Conclusion
+## Next steps
 
-You now have enough knowledge to add users, groups and components to the Backstage service catalog. In a future guide, we will explore how you can use this information to improve discoverability.
+You now have enough knowledge to add users, groups and components to the Backstage service catalog. Next, let's [add some documentation for the component we just created](/docs/getting-started/technical-documentation/).
