@@ -1,87 +1,40 @@
-# The server must be restarted to pick up changes in this file.
-
-# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
-
-# separators.
-
-name: github-actions
-
-# Required. Can have whitespace. Should be titleized.
-
+---
 humanName: GitHub Actions
 heading: 'Backstage GitHub Actions Plugin'
-
-# Keep it short
-
 lead: 'See GitHub Actions builds in Backstage'
 attribution:
-text: Spotify
-href: https://spotify.com
+  text: Spotify
+  href: https://spotify.com
 
 seo:
+  title: 'Backstage GitHub Actions Plugin | Roadie'
+  description: |
+    The Backstage GitHub Actions plugin integrates with GitHub Actions to show your build
+    information inside Backstage where it can be associated with your services.
 
-# Don't forget to end with "| Roadie"
+logoImage: './content/assets/logos/github/PNG/GitHub-Mark-120px-plus.png'
 
-title: 'Backstage GitHub Actions Plugin | Roadie'
-description: |
-The Backstage GitHub Actions plugin integrates with GitHub Actions to show your build
-information inside Backstage where it can be associated with your services.
-
-logo:
-
-# This must be a relative path. It should start without a slash or with ./
-
-# The overall size of the file should be approximately 200 by 200.
-
-# The image in the file should be approximately 100 by 100 pixels. It needs space around it.
-
-# The image will be made greyscale by Gatsby Image Sharp.
-
-fileSystemPath: './content/assets/logos/github/PNG/GitHub-Mark-120px-plus.png'
-
-# The dimensions are required. They are the outer dimensions of the image file.
-
-width: 120
-height: 120
-
-coverImage:
-
-# This must be a relative path. It should start without a slash or with ./
-
-fileSystemPath: './content/assets/github-actions-plugin-cover.png'
-alt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
-
-# Instructions for someone who wants to use this plugin.
-
-# languages used here must be listed in the .babelrc
+coverImage: './content/assets/github-actions-plugin-cover.png'
+coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
 
 gettingStarted: # What will this step accomplish?
+  - intro: Install the plugin
+    language: bash
+    code: yarn add @backstage/plugin-github-actions
+  - intro: Import it into your Backstage application
+    language: typescript
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as GithubActions } from '@backstage/plugin-github-actions';
 
-- intro: Install the plugin
-  language: bash
-  code: yarn add @backstage/plugin-github-actions
-- intro: Import it into your Backstage application
-  language: typescript
-  code: |
-  // packages/app/src/plugins.ts
-  export { plugin as GithubActions } from '@backstage/plugin-github-actions';
+  - intro: 'Heres where things get good...'
+    language: typescript
+    code: |
+      // packages/app/src/apis.ts
+      import { GithubActionsClient, githubActionsApiRef } from '@backstage/plugin-github-actions';
 
-- intro: 'Heres where things get good...'
-  language: typescript
-  code: |
-  // packages/app/src/apis.ts
-  import { GithubActionsClient, githubActionsApiRef } from '@backstage/plugin-github-actions';
-
-  export const apis = (config: ConfigApi) => {
-  // ... existing code here.
-  builder.add(githubActionsApiRef, new GithubActionsClient());
-  };
-
-# Optional. Use this to suit the brand of the tool that the plugin integrates with.
-
-style:
-
-# These colors will fall back to a default if omitted.
-
-primaryColor: 'rgb(0, 70, 67)'
-contrastingColor: '#fff'
+      export const apis = (config: ConfigApi) => {
+        // ... existing code here.
+        builder.add(githubActionsApiRef, new GithubActionsClient());
+      };
+---
