@@ -6,7 +6,7 @@ description: How to create a CircleCI personal access token for use with Backsta
 
 ## Introduction
 
-In oeder to make requests to the CircleCI API, you must provide Roadie with an API key.
+In order to make requests to the CircleCI API, you must provide Roadie with an API key.
 
 ## Steps
 
