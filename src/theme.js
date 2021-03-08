@@ -67,14 +67,6 @@ const theme = {
         marginTop: 0,
       },
 
-      '& h2': {
-        marginTop: '4em',
-      },
-
-      '& h3': {
-        marginTop: '2em',
-      },
-
       '& ul': {
         paddingLeft: '1em',
       },
@@ -127,6 +119,14 @@ const theme = {
 
         '& ol': {
           paddingLeft: '3em',
+        },
+
+        '& h2': {
+          marginTop: '4em',
+        },
+
+        '& h3': {
+          marginTop: '2em',
         },
 
         '& blockquote': {
