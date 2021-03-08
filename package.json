@@ -44,9 +44,6 @@
     "react-jss": "^10.5.1",
     "react-modal": "^3.12.1"
   },
-  "resolutions": {
-    "sharp": "0.24.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "cypress": "^6.0.1",
