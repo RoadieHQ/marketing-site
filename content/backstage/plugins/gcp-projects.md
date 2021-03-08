@@ -1,0 +1,72 @@
+# The server must be restarted to pick up changes in ths file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+
+# separators.
+
+name: gpc-projects
+humanName: GPC Project Creator
+heading: 'Backstage Google Cloud Platform Projects Plugin'
+
+# Keep it short
+
+lead: 'Create, list and manage your Google Cloud Projects.'
+attribution:
+text: trivago
+href: https://www.trivago.com
+
+seo:
+
+# Don't forget to end with "| Roadie"
+
+title: 'Backstage Google Cloud Platform Projects Plugin | Roadie'
+description: |
+Create, list and manage your Google Cloud Projects.
+
+logo:
+
+# This must be a relative path. It should start without a slash or with ./
+
+# The overall size of the file should be approximately 200 by 200.
+
+# The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+
+# The image will be made greyscale by Gatsby Image Sharp.
+
+fileSystemPath: './content/assets/logos/gcp-projects/logo-gcp.png'
+
+# The dimensions are required. They are the outer dimensions of the image file.
+
+width: 200
+height: 200
+
+coverImage:
+fileSystemPath: './content/assets/gcp-projects-plugin.png'
+alt: 'A screenshot of the GCP Projects plugin.'
+
+# Instructions for someone who wants to use this plugin.
+
+# languages used here must be listed in the .babelrc
+
+gettingStarted:
+
+# What will this step accomplish?
+
+- intro: Install the plugin into Backstage.
+  language: bash
+  code: 'yarn add @backstage/plugin-gcp-projects'
+- intro: Add plugin to the list of plugins.
+  language: typescript
+  code: |
+  // packages/app/src/plugins.ts
+  export { plugin as GcpProjects } from '@backstage/plugin-gcp-projects';
+- intro: Navigate to youdomain.com/gcp-projects.
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+
+style:
+
+# These colors will fall back to a default if omitted.
+
+primaryColor: 'rgb(0, 70, 67)'
+contrastingColor: '#fff'

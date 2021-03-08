@@ -1,0 +1,83 @@
+# The server must be restarted to pick up changes in ths file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+
+# separators.
+
+name: newrelic
+humanName: New Relic
+heading: 'Backstage New Relic Plugin'
+
+# Keep it short
+
+lead: 'Observability platform built to help engineers create and monitor their software.'
+attribution:
+text: '@timwheelercorn'
+href: https://github.com/timwheelercom
+
+seo:
+
+# Don't forget to end with "| Roadie"
+
+title: 'Backstage New Relic Plugin | Roadie'
+description: |
+Observability platform built to help engineers create and monitor their software.
+
+logo:
+
+# This must be a relative path. It should start without a slash or with ./
+
+# The overall size of the file should be approximately 200 by 200.
+
+# The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+
+# The image will be made greyscale by Gatsby Image Sharp.
+
+fileSystemPath: './content/assets/logos/new-relic/logo-relic.png'
+
+# The dimensions are required. They are the outer dimensions of the image file.
+
+width: 200
+height: 200
+
+coverImage:
+fileSystemPath: './content/assets/new-relic-plugin.png'
+alt: 'A screenshot of the GCP Projects plugin.'
+
+# Instructions for someone who wants to use this plugin.
+
+# languages used here must be listed in the .babelrc
+
+gettingStarted:
+
+# What will this step accomplish?
+
+- intro: Install the plugin into Backstage.
+  language: bash
+  code: 'yarn add @backstage/plugin-newrelic'
+- intro: Add plugin to the list of plugins.
+  language: typescript
+  code: |
+  // packages/app/src/plugins.ts
+  export { plugin as Newrelic } from '@backstage/plugin-newrelic';
+- intro: Add the proxy config
+  language: YAML
+  code: |
+  // app-config.yaml
+  proxy:
+  '/newrelic/apm/api':
+  target: https://api.newrelic.com/v2
+  headers:
+  X-Api-Key:
+  $env: NEW_RELIC_REST_API_KEY
+
+- intro: Navigate to youdomain.com/newrelic.
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+
+style:
+
+# These colors will fall back to a default if omitted.
+
+primaryColor: 'rgb(0, 70, 67)'
+contrastingColor: '#fff'

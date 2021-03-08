@@ -1,0 +1,110 @@
+# The server must be restarted to pick up changes in ths file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+
+# separators.
+
+name: github-pull-requests
+humanName: GitHub Pull Requests
+heading: 'Backstage GitHub Pull Requests Plugin'
+
+# Keep it short
+
+lead: 'See Pull Requests for your service in Backstage'
+attribution:
+text: Roadie
+href: https://roadie.io
+
+seo:
+
+# Don't forget to end with "| Roadie"
+
+title: 'Backstage GitHub Pull Requests Plugin | Roadie'
+description: |
+See GitHub Pull Requests in Backstage. Supports filtering, search and statistics
+on your pull requests.
+
+logo:
+
+# Duplicated image file to avoid bug that overwrites CoverImage for all plugin pages that use the same logo file
+
+fileSystemPath: './content/assets/logos/github/PNG/GitHub-Mark-120px-plus2.png'
+
+# The dimensions are required. They are the outer dimensions of the image file.
+
+width: 120
+height: 120
+
+coverImage:
+
+# This must be a relative path. It should start without a slash or with ./
+
+fileSystemPath: './content/assets/pull-requests-cover.png'
+alt: |
+Pull requests for Backstage rendered inside a Backstage plugin.
+The statistics widget is alongside, showing the average time to merge a PR.
+
+# Instructions for someone who wants to use this plugin.
+
+# languages used here must be listed in the .babelrc
+
+gettingStarted:
+
+# What will this step accomplish?
+
+- intro: Install the plugin into Backstage.
+  language: bash
+  code: 'yarn add @roadiehq/backstage-plugin-github-pull-requests'
+- intro: Import it into your Backstage application.
+  language: typescript
+  code: |
+  // packages/app/src/plugins.ts
+  export { plugin as GithubPullRequests } from '@roadiehq/backstage-plugin-github-pull-requests';
+- intro: Add plugin API to your Backstage instance.
+  language: typescript
+  code: |
+  // packages/app/src/components/catalog/EntityPage.tsx
+  import { Router as GithubPullRequestsRouter } from '@roadiehq/backstage-plugin-github-pull-requests';
+
+  ...
+
+  const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
+  ...
+  &lt;EntityPageLayout>
+  &lt;EntityPageLayout.Content
+  path="/github-pull-requests"
+  title="Github Pull Requests"
+  element={&lt;GithubPullRequestsRouter entity={entity} />}
+  />
+  &lt;/EntityPageLayout>
+  &lt;/EntityPageLayout>
+  )
+
+- intro: Run the backstage app with the following command and navigate to the services tab.
+  code: |
+  yarn start
+- intro: Add widget to your Overview tab.
+  language: typescript
+  code: |
+  // packages/app/src/components/catalog/EntityPage.tsx
+  import { PullRequestsStatsCard } from '@roadiehq/backstage-plugin-github-pull-requests';
+
+  ...
+
+  const OverviewContent = ({ entity }: { entity: Entity }) => (
+  &lt;Grid container spacing={3} alignItems="stretch">
+  ...
+  &lt;Grid item md={6}>
+  &lt;PullRequestsStatsCard entity={entity} />
+  &lt;/Grid>
+  &lt;/Grid>
+  );
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+
+style:
+
+# These colors will fall back to a default if omitted.
+
+primaryColor: 'rgb(0, 70, 67)'
+contrastingColor: '#fff'
