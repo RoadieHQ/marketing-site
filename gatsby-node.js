@@ -54,21 +54,6 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   await createPagesFromQuery({
-    templatePath: './src/templates/Plugin.js',
-    query: PLUGINS_QUERY,
-    resultName: 'plugins.edges',
-    actions,
-    graphql,
-    processor: ({ node }, component) => ({
-      path: node.fields.slug,
-      component,
-      context: {
-        slug: node.fields.slug,
-      },
-    }),
-  });
-
-  await createPagesFromQuery({
     templatePath: './src/templates/Tag.js',
     query: TAGS_QUERY,
     resultName: 'tagsGroup.group',
@@ -79,6 +64,21 @@ exports.createPages = async ({ graphql, actions }) => {
       component,
       context: {
         tag: fieldValue,
+      },
+    }),
+  });
+
+  await createPagesFromQuery({
+    templatePath: './src/templates/Plugin.js',
+    query: PLUGINS_QUERY,
+    resultName: 'plugins.edges',
+    actions,
+    graphql,
+    processor: ({ node }, component) => ({
+      path: node.fields.slug,
+      component,
+      context: {
+        slug: node.fields.slug,
       },
     }),
   });
