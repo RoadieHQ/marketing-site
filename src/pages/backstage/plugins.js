@@ -32,7 +32,7 @@ const Home = ({ data, location }) => {
       <StickyFooter location={location} headerBottomBorder={false}>
         <div className={classes.grid}>
           {plugins.edges.map(({ node }) => (
-            <ListItem {...node} key={node.name} />
+            <ListItem frontmatter={node.frontmatter} key={node.frontmatter.name} />
           ))}
         </div>
       </StickyFooter>
@@ -50,25 +50,29 @@ export const pageQuery = graphql`
       }
     }
 
-    plugins: allYaml(
-      filter: { name: { ne: "template" } }
-      sort: { fields: humanName, order: ASC }
+    plugins: allMarkdownRemark(
+      sort: { fields: frontmatter___name, order: ASC }
+      filter: { fileAbsolutePath: { regex: "/.+/content/backstage/plugins/.+/" } }
     ) {
       edges {
         node {
-          name
-          humanName
+          html
 
-          attribution {
-            text
-            href
-          }
+          frontmatter {
+            name
+            humanName
 
-          childrenLogoImage {
-            childImageSharp {
-              fixed(width: 200, grayscale: false) {
-                ...GatsbyImageSharpFixed
+            logoImage {
+              childImageSharp {
+                fixed(width: 200) {
+                  ...GatsbyImageSharpFixed
+                }
               }
+            }
+
+            attribution {
+              text
+              href
             }
           }
         }

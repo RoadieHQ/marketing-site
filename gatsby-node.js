@@ -4,7 +4,7 @@ const kebabCase = require('lodash/kebabCase');
 const get = require('lodash/get');
 const {
   BLOGS_QUERY,
-  YAML_QUERY,
+  PLUGINS_QUERY,
   TAGS_QUERY,
   LEGAL_NOTICES_QUERY,
   DOCS_QUERY,
@@ -55,15 +55,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
   await createPagesFromQuery({
     templatePath: './src/templates/Plugin.js',
-    query: YAML_QUERY,
-    resultName: 'allYaml.edges',
+    query: PLUGINS_QUERY,
+    resultName: 'plugins.edges',
     actions,
     graphql,
-    processor: ({ node: { name } }, component) => ({
-      path: `/backstage/plugins/${name}/`,
+    processor: ({ node }, component) => ({
+      path: node.fields.slug,
       component,
       context: {
-        name,
+        slug: node.fields.slug,
       },
     }),
   });

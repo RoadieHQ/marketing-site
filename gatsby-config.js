@@ -1,10 +1,6 @@
-const camelCase = require('lodash/camelCase');
-
 const theme = require('./src/theme');
 
 const SITE_TITLE = 'Roadie';
-// Ignore stuff like Vim swp files, .DS_Store etc.
-const GATSBY_SOURCE_FILESYSTEM_IGNORE_LIST = ['**/.*'];
 
 module.exports = {
   siteMetadata: {
@@ -25,25 +21,8 @@ module.exports = {
       options: {
         path: `${__dirname}/content`,
         name: 'content',
-        ignore: [...GATSBY_SOURCE_FILESYSTEM_IGNORE_LIST, '**/plugins'],
-      },
-    },
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/plugins/descriptions`,
-        name: `pluginDescriptions`,
-        ignore: [...GATSBY_SOURCE_FILESYSTEM_IGNORE_LIST, '**/template*'],
-      },
-    },
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/plugins/notes`,
-        name: `pluginNotes`,
-        ignore: [...GATSBY_SOURCE_FILESYSTEM_IGNORE_LIST, '**/template*'],
+        // Ignore stuff like Vim swp files, .DS_Store etc.
+        ignore: ['**/.*'],
       },
     },
 
@@ -79,15 +58,6 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
-      },
-    },
-
-    {
-      resolve: 'gatsby-transformer-plugin-descriptions',
-      options: {
-        // Without this, the query would just be 'descriptionsYaml'. It's a bit too generic
-        // and likely to clash as the site gets more complex.
-        typeName: ({ node }) => `${camelCase(node.relativeDirectory)}Yaml`,
       },
     },
 

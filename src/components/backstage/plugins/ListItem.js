@@ -35,18 +35,18 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const ListItem = (props) => {
-  const classes = useStyles(props);
-  const sharpImage = props.childrenLogoImage[0].childImageSharp;
+const ListItem = ({ frontmatter: { logoImage, name, humanName, attribution } }) => {
+  const classes = useStyles();
+  const sharpImage = logoImage.childImageSharp;
 
   return (
     <div className={classes.root}>
-      <Link to={`/backstage/plugins/${props.name}/`} className={classes.link}>
+      <Link to={`/backstage/plugins/${name}/`} className={classes.link}>
         <Logo sharpImage={sharpImage} />
-        <h2 className={classes.h2}>{props.humanName}</h2>
+        <h2 className={classes.h2}>{humanName}</h2>
       </Link>
       <div className={classes.attributionWrapper}>
-        <Attribution attribution={props.attribution} />
+        <Attribution attribution={attribution} />
       </div>
     </div>
   );

@@ -1,7 +1,4 @@
-# The server must be restarted to pick up changes in this file.
-
-# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
-# separators.
+---
 name: jira
 # Required. Can have whitespace. Should be titleized.
 humanName: Jira
@@ -19,20 +16,13 @@ seo:
     The Backstage Jira plugin integrates with Jira to show Jira
     information inside Backstage where it can be associated with your project.
 
-logo:
-  # This must be a relative path. It should start without a slash or with ./
-  # The overall size of the file should be approximately 200 by 200.
-  # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
-  # The image will be made greyscale by Gatsby Image Sharp.
-  fileSystemPath: './content/assets/logos/jira/jira_logo.png'
-  # The dimensions are required. They are the outer dimensions of the image file.
+logoImage: '../../assets/logos/jira/jira_logo.png'
+logoDimensions:
   width: 200
   height: 200
 
-coverImage:
-  # This must be a relative path. It should start without a slash or with ./
-  fileSystemPath: './content/assets/jira-plugin.png'
-  alt: 'A preview of Jira plugin including tasks summary, project information and Activity Stream.'
+coverImage: '../../assets/jira-plugin.png'
+coverImageAlt: 'A preview of Jira plugin including tasks summary, project information and Activity Stream.'
 
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc
@@ -107,3 +97,35 @@ style:
   # These colors will fall back to a default if omitted.
   primaryColor: '#1963D1'
   contrastingColor: '#fff'
+---
+
+## Get and provide `JIRA_TOKEN` as env variable.
+
+1. Obtain you personal token from jira - https://id.atlassian.com/manage-profile/security/api-tokens
+2. Create a base64-encoded string by converting a string in format
+
+   "&lt;your-atlassian-account-mail>:&lt;your-jira-token>"
+
+   for example:
+
+   ```
+   jira-mail@example.com:hTBgqVcrcxRYpT5TCzTA9C0F
+   ```
+
+   converts to base64
+
+   ```
+   amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==
+   ```
+
+3. Save it as the environmental variable `JIRA_TOKEN` with `Basic` prefix, for example:
+
+   ```
+   JIRA_TOKEN='Basic amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg=='
+   ```
+
+   Alternatively, if you are running backstage locally, you can provide the variable by the command
+
+   ```
+   env JIRA_TOKEN='Basic amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==' yarn dev
+   ```
