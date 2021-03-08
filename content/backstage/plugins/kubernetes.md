@@ -14,7 +14,7 @@ seo:
 
 logoImage: '../../assets/logos/kubernetes/logo-kubernetes.png'
 
-coverImage: './content/assets/kubernetes-plugin.png'
+coverImage: '../../assets/kubernetes-plugin.png'
 coverImageAlt: 'A screenshot of the Kubernetes plugin.'
 
 gettingStarted:
@@ -46,7 +46,7 @@ gettingStarted:
           &lt;EntityPageLayout.Content
             path="/kubernetes/\*"
             title="Kubernetes"
-            element={<KubernetesRouter entity={entity} />}
+            element={&lt;KubernetesRouter entity={entity} />}
           />
         &lt;/EntityPageLayout>
       );

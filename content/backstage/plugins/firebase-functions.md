@@ -21,13 +21,15 @@ gettingStarted:
   - intro: 'In the `backstage/packages/app` project add the plugin as a `package.json` dependency:'
     language: 'bash'
     code: 'yarn add @roadiehq/backstage-plugin-firebase-functions'
+
   - intro: 'Add plugin to the list of plugins:'
     language: 'ts'
     code: |
       // packages/app/src/plugins.ts
       export { plugin as FirebaseFunctionsPlugin } from '@roadiehq/backstage-plugin-travis-ci';
+
   - intro: 'Add plugin to the `entitytPage.tsx` source file:'
-    language: 'tsx'
+    language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       &lt;EntityPageLayout.Content
@@ -35,6 +37,7 @@ gettingStarted:
         title="Firebase Functions"
         element={&lt;FirebaseFunctionsRouter entity={entity} /&gt;}
       /&gt;
+
   - intro: 'add annotation to the yaml config file of a component'
     language: 'yaml'
     code: 'cloud.google.com/function-ids: projects/project-name/locations/region-name/functions/function-name'

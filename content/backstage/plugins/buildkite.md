@@ -19,7 +19,6 @@ coverImage: '../../assets/buildkite-plugin-overview.png'
 coverImageAlt: 'A list of builds in a table along with a status and retry button for each build.'
 
 gettingStarted:
-  # What will this step accomplish?
   - intro: Install the plugin
     language: bash
     code: yarn add @roadiehq/backstage-plugin-buildkite
@@ -31,18 +30,15 @@ gettingStarted:
       export { plugin as Buildkite } from '@roadiehq/backstage-plugin-buildkite';
 
   - intro: Add proxy configuration'
-    language: 'yaml'
+    language: YAML
     code: |
-      // app-config.yaml
+      # app-config.yaml
       proxy:
-
-      ...
-
-      '/buildkite/api':
-        target: https://api.buildkite.com/v2/
-        headers:
-          Authorization: 
-            $env: BUILDKITE_TOKEN
+        '/buildkite/api':
+          target: https://api.buildkite.com/v2/
+          headers:
+            Authorization: 
+              $env: BUILDKITE_TOKEN
 
   - intro: Add plugin API to your Backstage instance.
     language: typescript

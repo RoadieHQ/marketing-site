@@ -22,7 +22,7 @@ module.exports = {
         path: `${__dirname}/content`,
         name: 'content',
         // Ignore stuff like Vim swp files, .DS_Store etc.
-        ignore: ['**/.*'],
+        ignore: ['**/.*', '**/template.md'],
       },
     },
 

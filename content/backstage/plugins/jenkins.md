@@ -38,10 +38,10 @@ gettingStarted:
 
       const CICDSwitcher = ({ entity }: { entity: Entity }) => {
         switch (true) {
-        ...
-        case isJenkinsAvailable(entity):
-          return <JenkinsRouter entity={entity} />;
-        ...
+          ...
+          case isJenkinsAvailable(entity):
+            return <JenkinsRouter entity={entity} />;
+          ...
         }
       }
 

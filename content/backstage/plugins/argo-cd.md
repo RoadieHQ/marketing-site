@@ -67,7 +67,7 @@ gettingStarted:
         annotations:
           argocd/app-name: &lt;your-app-name>
   - intro: Get and provide `ARGOCD_AUTH_TOKEN` as env variable in following format
-    language: yaml
+    language: bash
     code: |
       ARGOCD_AUTH_TOKEN='argocd.token=&lt;token>'
 ---

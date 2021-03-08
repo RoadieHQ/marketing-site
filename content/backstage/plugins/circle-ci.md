@@ -22,11 +22,13 @@ gettingStarted:
   - intro: Install the plugin
     language: bash
     code: yarn add @backstage/plugin-circleci
+
   - intro: Import it into your Backstage application
     language: typescript
     code: |
       // packages/app/src/plugins.ts
       export { plugin as Circleci } from '@backstage/plugin-circleci';
+
   - intro: 'Add the plugin API to your API builder'
     language: typescript
     code: |

@@ -86,9 +86,9 @@ gettingStarted:
           ...
           {isLighthouseAvailable(entity) && (
             &lt;Grid item sm={4}>
-          &lt;LastLighthouseAuditCard />
-          &lt;/Grid>
-        )}
+              &lt;LastLighthouseAuditCard />
+            &lt;/Grid>
+          )}
         &lt;/Grid>
       );
 ---

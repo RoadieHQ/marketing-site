@@ -13,7 +13,7 @@ seo:
 
 logoImage: '../../assets/logos/github/PNG/GitHub-Mark-120px-plus3.png'
 
-coverImage: './content/assets/roadie-backstage-security-plugin.jpg'
+coverImage: '../../assets/roadie-backstage-security-plugin.jpg'
 coverImageAlt: 'A screenshot of the Security Insights plugin. It is showing a security insights for a sample component.'
 
 gettingStarted:
@@ -69,12 +69,12 @@ gettingStarted:
         &lt;Grid container spacing={3} alignItems="stretch">
           ...
           {isSecurityInsightsAvailable(entity) && (
-          &lt;>
-          &lt;Grid item md={6}>
-            &lt;SecurityInsightsWidget entity={entity} />
-          &lt;/Grid>
-          &lt;/>
-        )}
+            &lt;>
+              &lt;Grid item md={6}>
+                &lt;SecurityInsightsWidget entity={entity} />
+              &lt;/Grid>
+            &lt;/>
+          )}
         &lt;/Grid>
       );
 ---

@@ -12,9 +12,9 @@ seo:
     The Backstage Travis CI plugin integrates with Travis CI to show your build
     information inside Backstage and associate it with your services.
 
-logoImage: './content/assets/logos/travis-ci/travis-ci-mascot-200x200.png'
+logoImage: '../../assets/logos/travis-ci/travis-ci-mascot-200x200.png'
 
-coverImage: './content/assets/travis-ci-plugin-1642x1027.png'
+coverImage: '../../assets/travis-ci-plugin-1642x1027.png'
 coverImageAlt: 'A screenshot of the Travis CI plugin. It is showing a list of builds for a sample service.'
 
 gettingStarted:
@@ -45,7 +45,7 @@ gettingStarted:
       export { plugin as TravisCI } from '@roadiehq/backstage-plugin-travis-ci';
 
   - intro: 'Add plugin to the `entitytPage.tsx` source file:'
-    language: 'tsx'
+    language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       case isTravisCIAvailable(entity):
@@ -53,11 +53,11 @@ gettingStarted:
         break;
 
   - intro: 'add annotation to the yaml config file of a component'
-    language: 'yaml'
+    language: yaml
     code: 'travis-ci.com/repo-slug: owner-name/project-name'
 
   - intro: 'add your developer api key (from https://travis-ci.com/account/preferences) to the environmental variables for your backstage backend server'
-    language: 'yaml'
+    language: bash
     code: 'TRAVISCI_AUTH_TOKEN="token your-api-key"'
 ---
 

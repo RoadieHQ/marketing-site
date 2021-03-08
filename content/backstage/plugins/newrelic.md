@@ -11,9 +11,9 @@ seo:
   description: |
     Observability platform built to help engineers create and monitor their software.
 
-logoImage: './content/assets/logos/new-relic/logo-relic.png'
+logoImage: '../../assets/logos/new-relic/logo-relic.png'
 
-coverImage: './content/assets/new-relic-plugin.png'
+coverImage: '../../assets/new-relic-plugin.png'
 coverImageAlt: 'A screenshot of the GCP Projects plugin.'
 
 gettingStarted:

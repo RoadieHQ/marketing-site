@@ -59,8 +59,6 @@ const useHeaderStyles = createUseStyles(() => ({
 const Header = ({ plugin }) => {
   const classes = useHeaderStyles();
 
-  console.log('plugin', plugin);
-
   return (
     <header className={classes.root}>
       <Logo sharpImage={plugin.frontmatter.logoImage.childImageSharp} />
@@ -82,8 +80,6 @@ const PluginTemplate = ({ data, location }) => {
     setModalOpen(false);
     setEmail('');
   };
-
-  console.log('plugin', plugin);
 
   useEffect(() => {
     Prism.highlightAll();

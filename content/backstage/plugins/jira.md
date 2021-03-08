@@ -21,10 +21,11 @@ gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
     code: yarn add @roadiehq/backstage-plugin-jira
+
   - intro: Add proxy config
     language: yaml
     code: |
-      // app-config.yaml
+      # app-config.yaml
       proxy:
         '/jira/api':
           target: &lt;JIRA_URL>
@@ -35,6 +36,7 @@ gettingStarted:
             Content-Type: 'application/json'
             X-Atlassian-Token: 'nocheck'
             User-Agent: "MY-UA-STRING"
+
   - intro: Set img-src in Content Security Policy
     language: yaml
     code: |
@@ -48,11 +50,13 @@ gettingStarted:
             - 'data:'
             # Allow your Jira instance for @roadiehq/backstage-plugin-jira
             - 'JIRA_URL'
+
   - intro: Add plugin to the list of plugins
     language: typescript
     code: |
       // packages/app/src/plugins.ts
       export { plugin as Jira } from '@roadiehq/backstage-plugin-jira';
+
   - intro: 'Add plugin API to your Backstage instance'
     language: typescript
     code: |
