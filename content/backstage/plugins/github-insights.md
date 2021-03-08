@@ -17,7 +17,6 @@ coverImage: '../../assets/code-insights-plugin.png'
 coverImageAlt: 'A screenshot of the GitHub Insights plugin. It is showing a code details for a sample component.'
 
 gettingStarted: # What will this step accomplish?
-
   - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @roadiehq/backstage-plugin-github-insights'
@@ -34,17 +33,17 @@ gettingStarted: # What will this step accomplish?
       // packages/app/src/components/catalog/EntityPage.tsx
       import { Router as GitHubInsightsRouter } from '@roadiehq/backstage-plugin-github-insights';
 
-    const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-      ...
-      &lt;EntityPageLayout>
-        &lt;EntityPageLayout.Content
-          path="/code-insights"
-          title="Code Insights"
-          element={&lt;GitHubInsightsRouter entity={entity} />}
-        />
+      const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
+        // ...
+        &lt;EntityPageLayout>
+          &lt;EntityPageLayout.Content
+            path="/code-insights"
+            title="Code Insights"
+            element={&lt;GitHubInsightsRouter entity={entity} />}
+          />
+          &lt;/EntityPageLayout>
         &lt;/EntityPageLayout>
-      &lt;/EntityPageLayout>
-    )
+      )
 
   - intro: Run the backstage app with the following command and navigate to the services tab.
     language: bash
