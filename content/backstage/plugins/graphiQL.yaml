@@ -1,0 +1,53 @@
+# The server must be restarted to pick up changes in ths file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+# separators.
+name: graphiql
+humanName: GraphiQL
+heading: 'Backstage GraphiQL Plugin'
+# Keep it short
+lead: 'Integrates GraphiQL as a tool to browse GraphQL API endpoints inside Backstage.'
+attribution:
+  text: Spotify
+  href: https://spotify.com
+
+seo:
+  # Don't forget to end with "| Roadie"
+  title: 'Backstage GraphiQL Plugin | Roadie'
+  description: |
+    Integrates GraphiQL as a tool to browse GraphQL API endpoints inside Backstage.
+
+logo:
+  # This must be a relative path. It should start without a slash or with ./
+  # The overall size of the file should be approximately 200 by 200.
+  # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+  # The image will be made greyscale by Gatsby Image Sharp.
+  fileSystemPath: './content/assets/logos/graphiql/logo-ql.png'
+  # The dimensions are required. They are the outer dimensions of the image file.
+  width: 200
+  height: 200
+
+coverImage:
+  fileSystemPath: './content/assets/graphiql-plugin.png'
+  alt: 'A screenshot of the GraphiQL plugin.'
+
+# Instructions for someone who wants to use this plugin.
+# languages used here must be listed in the .babelrc
+gettingStarted:
+  # What will this step accomplish?
+  - intro: Install the plugin into Backstage.
+    language: bash
+    code: 'yarn add @backstage/plugin-graphiql'
+  - intro: Add plugin to the list of plugins.
+    language: typescript
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as GraphiQL } from '@backstage/plugin-graphiql';
+  - intro: Navigate to youdomain.com/graphiql.
+
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+style:
+  # These colors will fall back to a default if omitted.
+  primaryColor: 'rgb(0, 70, 67)'
+  contrastingColor: '#fff'
