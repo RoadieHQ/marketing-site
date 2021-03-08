@@ -28,7 +28,7 @@ It looks like Matthew is just getting revved up too 🏍. Many awesome features 
 
 Roadie engineer [Martina](https://github.com/martina-if) added 1,500 lines of Helm charts to Backstage. 😇 These charts let anyone deploy Backstage to a Kubernetes cluster in less than 5 minutes. TLS and a number of useful plugins are baked in. We’ll do a deep dive on this feature in an upcoming issue. [#2663](https://github.com/spotify/backstage/pull/2663)
 
-The Cost Insights plugin, which we wrote about in [Issue #4 of Backstage Weekly](https://backstage-weekly.roadie.io/issues/roadie-s-backstage-weekly-cost-management-in-backstage-281679), got some more love. Backstage users can now compare costs against other metrics like Daily Active Users or whatever metrics your company cares most about. [Go here](https://demo.roadie.so/cost-insights?group=pied-piper&project&duration=P90D&metric=DAU&utm_campaign=Roadie%27s%20Backstage%20Weekly&utm_medium=email&utm_source=Revue%20newsletter&products%5B0%5D%5Bduration%5D=P1M&products%5B0%5D%5BproductType%5D=computeEngine&products%5B1%5D%5Bduration%5D=P1M&products%5B1%5D%5BproductType%5D=cloudDataflow&products%5B2%5D%5Bduration%5D=P1M&products%5B2%5D%5BproductType%5D=cloudStorage&products%5B3%5D%5Bduration%5D=P1M&products%5B3%5D%5BproductType%5D=bigQuery) to see this on our public Backstage demo.
+The Cost Insights plugin, which we wrote about in [Issue #4 of Backstage Weekly](/blog/backstage-weekly-4-cost-insights/), got some more love. Backstage users can now compare costs against other metrics like Daily Active Users or whatever metrics your company cares most about.
 
 ![a screenshot of the cost insights plugin showing cost vs. daily active users](./cost-insights.png)
 
