@@ -1,0 +1,40 @@
+name: sentry
+humanName: Sentry
+heading: 'Backstage Sentry Plugin'
+lead: 'Correlate services with problems in production'
+attribution:
+text: Spotify
+href: https://spotify.com
+
+seo:
+title: 'Backstage Sentry Plugin | Roadie'
+description: |
+The Backstage Sentry plugin alerts you to errors which are affecting
+your production services, directly inside Backstage.
+
+logo:
+fileSystemPath: './content/assets/logos/sentry/sentry-glyph-dark.png'
+width: 200
+height: 184
+
+coverImage:
+fileSystemPath: './content/assets/sentry-plugin-1604x716.png'
+alt: 'A screenshot of the Sentry plugin. It is showing a list of errors.'
+
+gettingStarted:
+
+- intro: |
+  Ensure you have the Sentry Backend plugin installed. See the notes below to learn how
+  to add a Sentry API token to Backstage.
+- intro: 'Install the plugin in your Backstage instance'
+  language: 'bash'
+  code: 'yarn add @backstage/plugin-sentry'
+- intro: 'Add the plugin to the list of plugins'
+  language: 'typescript'
+  code: |
+  // packages/app/src/plugins.ts
+  export { plugin as Sentry } from '@backstage/plugin-sentry';
+
+style:
+primaryColor: 'rgb(0, 70, 67)'
+contrastingColor: '#fff'

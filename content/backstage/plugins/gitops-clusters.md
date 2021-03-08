@@ -1,0 +1,72 @@
+# The server must be restarted to pick up changes in ths file.
+
+# Required. Must be unique across all files in the directory. No whitespace. Use hyphens as
+
+# separators.
+
+name: gitops-clusters
+humanName: GitOps Clusters
+heading: 'Backstage GitOps Clusters Projects Plugin'
+
+# Keep it short
+
+lead: 'Create GitOps-managed Kubernetes clusters. Currently, it supports provisioning EKS clusters on GitHub via GitHub Actions.'
+attribution:
+text: Weaveworks
+href: https://weave.works
+
+seo:
+
+# Don't forget to end with "| Roadie"
+
+title: 'Backstage GitOps Clusters Plugin | Roadie'
+description: |
+Create GitOps-managed Kubernetes clusters. Currently, it supports provisioning EKS clusters on GitHub via GitHub Actions.
+
+logo:
+
+# This must be a relative path. It should start without a slash or with ./
+
+# The overall size of the file should be approximately 200 by 200.
+
+# The image in the file should be approximately 100 by 100 pixels. It needs space around it.
+
+# The image will be made greyscale by Gatsby Image Sharp.
+
+fileSystemPath: './content/assets/logos/gitops-cluster/logo-gitops.png'
+
+# The dimensions are required. They are the outer dimensions of the image file.
+
+width: 200
+height: 200
+
+coverImage:
+fileSystemPath: './content/assets/gitops-cluster-plugin.png'
+alt: 'A screenshot of the GitOps Clusters plugin.'
+
+# Instructions for someone who wants to use this plugin.
+
+# languages used here must be listed in the .babelrc
+
+gettingStarted:
+
+# What will this step accomplish?
+
+- intro: Install the plugin into Backstage.
+  language: bash
+  code: 'yarn add @backstage/plugin-gcp-projects'
+- intro: Add plugin to the list of plugins.
+  language: typescript
+  code: |
+  // packages/app/src/plugins.ts
+  export { plugin as GcpProjects } from '@backstage/plugin-gcp-projects';
+- intro: Navigate to youdomain.com/gitops-clusters.
+
+# Optional. Use this to suit the brand of the tool that the plugin integrates with.
+
+style:
+
+# These colors will fall back to a default if omitted.
+
+primaryColor: 'rgb(0, 70, 67)'
+contrastingColor: '#fff'
