@@ -35,13 +35,13 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const ListItem = ({ frontmatter: { logoImage, name, humanName, attribution } }) => {
+const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attribution } }) => {
   const classes = useStyles();
   const sharpImage = logoImage.childImageSharp;
 
   return (
     <div className={classes.root}>
-      <Link to={`/backstage/plugins/${name}/`} className={classes.link}>
+      <Link to={slug} className={classes.link}>
         <Logo sharpImage={sharpImage} />
         <h2 className={classes.h2}>{humanName}</h2>
       </Link>

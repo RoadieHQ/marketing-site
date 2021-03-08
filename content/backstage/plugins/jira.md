@@ -1,5 +1,4 @@
 ---
-name: jira
 humanName: Jira
 heading: 'Backstage Jira Plugin'
 lead: 'See Jira summary in Backstage'
@@ -8,22 +7,17 @@ attribution:
   href: https://roadie.io
 
 seo:
-  # Don't forget to end with "| Roadie"
   title: 'Backstage Jira Plugin | Roadie'
   description: |
     The Backstage Jira plugin integrates with Jira to show Jira
     information inside Backstage where it can be associated with your project.
 
 logoImage: '../../assets/logos/jira/jira_logo.png'
-logoDimensions:
-  width: 200
-  height: 200
 
 coverImage: '../../assets/jira-plugin.png'
 coverImageAlt: 'A preview of Jira plugin including tasks summary, project information and Activity Stream.'
 
 gettingStarted:
-  # What will this step accomplish?
   - intro: Install the plugin into Backstage.
     language: bash
     code: yarn add @roadiehq/backstage-plugin-jira

@@ -211,11 +211,6 @@ export const pageQuery = graphql`
           }
         }
 
-        logoDimensions {
-          height
-          width
-        }
-
         coverImage {
           childImageSharp {
             fluid {
