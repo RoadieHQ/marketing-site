@@ -196,6 +196,7 @@ export const pageQuery = graphql`
       frontmatter {
         humanName
         lead
+        heading
 
         attribution {
           href

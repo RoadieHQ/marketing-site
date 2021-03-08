@@ -1,9 +1,7 @@
 ---
 name: jira
-# Required. Can have whitespace. Should be titleized.
 humanName: Jira
 heading: 'Backstage Jira Plugin'
-# Keep it short
 lead: 'See Jira summary in Backstage'
 attribution:
   text: Roadie
@@ -24,8 +22,6 @@ logoDimensions:
 coverImage: '../../assets/jira-plugin.png'
 coverImageAlt: 'A preview of Jira plugin including tasks summary, project information and Activity Stream.'
 
-# Instructions for someone who wants to use this plugin.
-# languages used here must be listed in the .babelrc
 gettingStarted:
   # What will this step accomplish?
   - intro: Install the plugin into Backstage.
@@ -91,12 +87,6 @@ gettingStarted:
           jira/project-key: &lt;example-jira-project-key>
           jira/component: &lt;example-component> # optional, you might skip this value to fetch data for all components
   - intro: Provide the JIRA_TOKEN environmental variable (instructions at the notes below)
-
-# Optional. Use this to suit the brand of the tool that the plugin integrates with.
-style:
-  # These colors will fall back to a default if omitted.
-  primaryColor: '#1963D1'
-  contrastingColor: '#fff'
 ---
 
 ## Get and provide `JIRA_TOKEN` as env variable.
