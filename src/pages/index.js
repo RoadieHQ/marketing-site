@@ -30,6 +30,13 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
+const SEO_TITLE = 'SaaS Backstage hosting';
+const HEADLINE = 'Discoverability for growing engineering teams';
+const LEAD = `
+Roadie's SaaS Backstage platform handles hosting and upgrades and ensures
+you always have access to the latest Backstage features.
+`;
+
 const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
@@ -47,13 +54,7 @@ const Home = ({ data, location }) => {
 
   return (
     <>
-      <SEO
-        title={`Hosted, managed Backstage | ${siteTitle}`}
-        description={`
-          Delight your devs with the world-class technology that powers
-          the development and operation of Spotify's 2,000 microservices.
-        `}
-      />
+      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
       <FormSubmissionModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
@@ -74,11 +75,8 @@ const Home = ({ data, location }) => {
           <Hero
             setModalOpen={setModalOpen}
             siteMetadata={data.site.siteMetadata}
-            headline="Supercharge your internal platform"
-            lead={`
-              Delight your devs with the world-class technology that powers
-              the development and operation of Spotify's 2,000 microservices.
-            `}
+            headline={HEADLINE}
+            lead={LEAD}
             netlifyFormName={FORM_NAMES.getDemo}
             email={email}
             setEmail={setEmail}

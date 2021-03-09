@@ -15,7 +15,7 @@ const useStyles = createUseStyles((theme) => ({
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
-      fontSize: '6.75rem',
+      fontSize: '5.75rem',
     },
   },
 }));

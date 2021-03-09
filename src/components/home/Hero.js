@@ -16,6 +16,7 @@ const useStyles = createUseStyles(() => ({
 
   backgroundImage: {
     backgroundSize: '70%',
+    backgroundPosition: 'right',
   },
 }));
 
@@ -32,7 +33,7 @@ const Hero = ({ setModalOpen, headline, lead, netlifyFormName, email, setEmail }
 
           <div className={classes.leadWrapper}>
             <Lead>{lead}</Lead>
-            <Lead>Get a demo of Backstage...</Lead>
+            <Lead>Get a demo...</Lead>
           </div>
 
           <div className={classes.callToActionWrapper}>
@@ -46,7 +47,12 @@ const Hero = ({ setModalOpen, headline, lead, netlifyFormName, email, setEmail }
           </div>
         </>
       }
-      rightContent={<BackgroundImage className={classes.backgroundImage} />}
+      rightContent={
+        <BackgroundImage
+          className={classes.backgroundImage}
+          backgroundImage="url(/undraw/undraw_Onboarding_re_6osc.png)"
+        />
+      }
     />
   );
 };
