@@ -1,3 +1,6 @@
+require('dotenv').config();
+const has = require('lodash/has');
+const agoliaQueries = require('./src/queries/agolia');
 const theme = require('./src/theme');
 
 const SITE_TITLE = 'Roadie';
@@ -23,6 +26,17 @@ module.exports = {
         name: 'content',
         // Ignore stuff like Vim swp files, .DS_Store etc.
         ignore: ['**/.*', '**/template.md'],
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries: agoliaQueries,
+        // Indexing will be run by netlify on deployment.
+        skipIndexing: has(process.env, 'GITHUB_ACTIONS'),
       },
     },
 

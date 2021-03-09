@@ -20,6 +20,8 @@ const styles = {
     // so fixing it with the brute force approach.
     width: 20,
     lineHeight: LINE_HEIGHT,
+    // It defaults to 1000, which makes it appear above the Agolia search autocomplete dialog.
+    zIndex: 20,
   },
 
   bmCrossButton: {
