@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "algoliasearch": "^4.8.6",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^0.12.1",
     "classnames": "^2.2.6",
@@ -42,6 +43,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "react-instantsearch-dom": "^6.10.3",
     "react-jss": "^10.5.1",
     "react-modal": "^3.12.1"
   },
