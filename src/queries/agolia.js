@@ -1,6 +1,6 @@
-import escapeStringRegexp from 'escape-string-regexp';
+const escapeStringRegexp = require('escape-string-regexp');
 
-const pagePath = `content`;
+const pagePath = `content/docs`;
 const indexName = `roadie.io`;
 
 const pageQuery = `{
@@ -42,4 +42,4 @@ const queries = [
   },
 ];
 
-export default queries;
+module.exports = queries;
