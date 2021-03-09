@@ -1,0 +1,17 @@
+:root {
+  --aa-primary-color: rgb(244, 81, 30);
+  /* Used for the search dialog overlay */
+  --aa-muted-color: rgba(0, 0, 0, 0.78);
+  --aa-selected-color: rgba(244, 81, 30, 0.2);
+  --aa-text-color: rgba(0, 0, 0, 0.87);
+}
+
+/* There doesn't seem to be a variable for overriding this one */
+.aa-Item .aa-ItemContent .aa-ItemContentDescription mark {
+  background: rgba(244, 81, 30, 0.2);
+}
+
+.aa-DetachedSearchButton {
+  border-radius: 0;
+  border: 1px solid #e0e0e0;
+}

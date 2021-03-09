@@ -21,10 +21,10 @@ const useStyles = createUseStyles((theme) => ({
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     article: {
-      paddingTop: 32,
       paddingLeft: 32,
       paddingRight: 32,
       flex: 1,
+      paddingTop: 32,
     },
 
     main: {

@@ -1,11 +1,62 @@
 import React from 'react';
 import { Sidebar, SidebarSection, SidebarSectionList, SidebarItem } from 'components/Sidebar';
+import { createUseStyles } from 'react-jss';
+import algoliasearch from 'algoliasearch/lite';
+import { getAlgoliaHits } from '@algolia/autocomplete-js';
+import Search, { SearchResult } from 'components/AlgoliaAutocomplete';
+
+const searchClient = algoliasearch(
+  process.env.GATSBY_ALGOLIA_APP_ID,
+  process.env.GATSBY_ALGOLIA_SEARCH_KEY
+);
+
+const useStyles = createUseStyles(() => ({
+  searchWrapper: {
+    paddingRight: 8,
+  },
+
+  title: {
+    marginBottom: 4,
+  },
+}));
+
+const getSearchSources = ({ query }) => {
+  return [{
+    sourceId: 'docs',
+    getItemUrl({ item }) {
+      return item.slug;
+    },
+    getItems() {
+      return getAlgoliaHits({
+        searchClient,
+        queries: [{
+          indexName: 'docs',
+          query,
+        }],
+      });
+    },
+    templates: {
+      item({ item }) {
+        return <SearchResult hit={item} />;
+      }
+    }
+  }];
+};
 
 const DocSidebar = () => {
+  const classes = useStyles();
   return (
     <Sidebar>
       <SidebarSection>
-        <strong>Documentation</strong>
+        <div className={classes.title}>
+          <strong>Documentation</strong>
+        </div>
+        <div className={classes.searchWrapper}>
+          <Search
+            placeholder="Search"
+            getSources={getSearchSources}
+          />
+        </div>
       </SidebarSection>
 
       <SidebarSectionList title="Getting started">
