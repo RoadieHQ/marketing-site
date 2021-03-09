@@ -2,9 +2,6 @@ require('dotenv').config();
 const agoliaQueries = require('./src/queries/agolia');
 const theme = require('./src/theme');
 
-console.log('agoliaQueries', agoliaQueries);
-console.log('app id', process.env.GATSBY_ALGOLIA_APP_ID);
-
 const SITE_TITLE = 'Roadie';
 
 module.exports = {
