@@ -12,8 +12,7 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles(() => ({
   root: {
-    // display: ${props => (props.show ? `block` : `none`)},
-    display: 'block',
+    display: ({ show = false } = {}) => (show ? 'block' : 'none'),
     maxHeight: '80vh',
     overflow: 'scroll',
     '-webkit-overflow-scrolling': 'touch',
@@ -27,7 +26,7 @@ const useStyles = createUseStyles(() => ({
     boxShadow: '0 0 5px 0',
     padding: '1em',
     borderRadius: 2,
-    // background: ${({ theme }) => theme.background};
+    background: 'white',
   },
 
   hitCount: {
@@ -88,13 +87,17 @@ const HitsInIndex = ({ index }) => {
   );
 };
 
-const SearchResult = ({ indices, className }) => (
-  <div className={className}>
-    {indices.map((index) => (
-      <HitsInIndex index={index} key={index.name} />
-    ))}
-    <PoweredBy />
-  </div>
-);
+const SearchResult = ({ indices, show = false }) => {
+  const classes = useStyles({ show });
+
+  return (
+    <div className={classes.root}>
+      {indices.map((index) => (
+        <HitsInIndex index={index} key={index.name} />
+      ))}
+      <PoweredBy />
+    </div>
+  );
+};
 
 export default SearchResult;
