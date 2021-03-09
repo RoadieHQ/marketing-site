@@ -2,8 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import { SEO, StickyFooter, ContentHeader, TextLink as Link } from 'components';
-
+import Search from 'components/search';
 import { Sidebar } from 'components/doc';
+
+const searchIndices = [{ name: `roadie.io`, title: `Pages` }];
 
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
@@ -64,6 +66,7 @@ const Doc = ({
           <Sidebar location={location} />
 
           <article className={classes.article}>
+            <Search indices={searchIndices} />
             <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
 
             <div className={classes.content}>

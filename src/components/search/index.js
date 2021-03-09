@@ -1,6 +1,6 @@
+import React, { createRef, useState } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { createUseStyles } from 'react-jss';
-import { createRef, React, useState } from 'react';
 import { InstantSearch } from 'react-instantsearch-dom';
 import useClickOutside from './useClickOutside';
 import SearchBox from './SearchBox';

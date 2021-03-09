@@ -14,6 +14,7 @@ const useStyles = createUseStyles(() => ({
   input: {
     outline: 'none',
     // border: ${({ hasFocus }) => (hasFocus ? "auto" : "none")};
+    border: ({ hasFocus }) => (hasFocus ? 'auto' : 'none'),
     fontSize: '1em',
     transition: '100ms',
     borderRadius: '2px',
@@ -33,8 +34,8 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-export default connectSearchBox(({ refine, currentRefinement, onFocus }) => {
-  const classes = useStyles();
+export default connectSearchBox(({ refine, currentRefinement, onFocus, hasFocus }) => {
+  const classes = useStyles({ hasFocus });
 
   return (
     <form className={classes.root}>
