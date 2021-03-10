@@ -4,6 +4,7 @@ import { Lead, Headline, TwoColumnLayout } from 'components';
 
 import CallToAction from '../actions/CallToAction';
 import BackgroundImage from './BackgroundImage';
+import backstageScreenshot from '../../../content/assets/backstage-screenshot-screenly-march-21.png';
 
 const useStyles = createUseStyles(() => ({
   leadWrapper: {
@@ -15,8 +16,16 @@ const useStyles = createUseStyles(() => ({
   },
 
   backgroundImage: {
-    backgroundSize: '70%',
-    backgroundPosition: 'right',
+    backgroundPosition: 'right top',
+    backgroundSize: '85%',
+  },
+
+  leftCol: {
+    paddingTop: 0,
+  },
+
+  rightCol: {
+    flexGrow: 1.1,
   },
 }));
 
@@ -25,6 +34,10 @@ const Hero = ({ setModalOpen, headline, lead, netlifyFormName, email, setEmail }
 
   return (
     <TwoColumnLayout
+      className={{
+        leftCol: classes.leftCol,
+        rightCol: classes.rightCol,
+      }}
       leftContent={
         <>
           <Headline>
@@ -50,7 +63,7 @@ const Hero = ({ setModalOpen, headline, lead, netlifyFormName, email, setEmail }
       rightContent={
         <BackgroundImage
           className={classes.backgroundImage}
-          backgroundImage="url(/undraw/undraw_Onboarding_re_6osc.png)"
+          backgroundImage={`url(${backstageScreenshot})`}
         />
       }
     />
