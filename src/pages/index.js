@@ -31,9 +31,9 @@ const useStyles = createUseStyles((theme) => ({
 }));
 
 const SEO_TITLE = 'SaaS Backstage hosting';
-const HEADLINE = 'Discoverability for growing engineering teams';
+const HEADLINE = 'Backstage for growing engineering teams';
 const LEAD = `
-Roadie's SaaS Backstage platform handles hosting and upgrades and ensures
+Roadie's SaaS platform handles hosting and upgrades and ensures
 you always have access to the latest Backstage features.
 `;
 
