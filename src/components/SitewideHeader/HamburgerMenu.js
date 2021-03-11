@@ -143,6 +143,15 @@ const HamburgerMenu = ({ siteMetadata }) => {
             className={classes.textLink}
           />
         </div>
+
+        <div className={classes.spacer}>
+          <TextLink
+            to="/docs/getting-started/getting-started-for-admins/"
+            text="Documentation"
+            color="contrasting"
+            className={classes.textLink}
+          />
+        </div>
       </div>
 
       <div>
