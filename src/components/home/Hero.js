@@ -4,7 +4,7 @@ import { Lead, Headline, TwoColumnLayout } from 'components';
 
 import CallToAction from '../actions/CallToAction';
 import BackgroundImage from './BackgroundImage';
-import backstageScreenshot from '../../../content/assets/backstage-screenshot-screenly-march-21.png';
+import backstageScreenshot from '../../../content/assets/backstage-screenshot.png';
 
 const useStyles = createUseStyles(() => ({
   leadWrapper: {
