@@ -1,7 +1,5 @@
-const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const kebabCase = require('lodash/kebabCase');
-const get = require('lodash/get');
 const {
   BLOGS_QUERY,
   PLUGINS_QUERY,
@@ -10,26 +8,7 @@ const {
   DOCS_QUERY,
 } = require('./src/queries/gatsbyNodeQueries');
 const createLatestLegalNotices = require('./src/pageCreation/createLatestLegalNotices');
-
-const createPagesFromQuery = async ({
-  graphql,
-  templatePath,
-  query,
-  processor,
-  actions: { createPage },
-  resultName = 'result.edges',
-}) => {
-  const component = path.resolve(templatePath);
-  const { data, errors } = await graphql(query);
-
-  if (errors) {
-    throw errors;
-  }
-
-  get(data, resultName).map((edge, index) =>
-    createPage(processor(edge, component, get(data, resultName), index))
-  );
-};
+const createPagesFromQuery = require('./src/pageCreation/createPagesFromQuery');
 
 exports.createPages = async ({ graphql, actions }) => {
   await createPagesFromQuery({
