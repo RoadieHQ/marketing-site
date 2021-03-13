@@ -9,6 +9,7 @@ const {
   LEGAL_NOTICES_QUERY,
   DOCS_QUERY,
 } = require('./src/queries/gatsbyNodeQueries');
+const createLatestLegalNotices = require('./src/pageCreation/createLatestLegalNotices');
 
 const createPagesFromQuery = async ({
   graphql,
@@ -111,6 +112,11 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: node.fields.slug,
       },
     }),
+  });
+
+  await createLatestLegalNotices({
+    graphql,
+    actions,
   });
 };
 
