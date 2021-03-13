@@ -10,27 +10,16 @@ const useStyles = createUseStyles((theme) => ({
 
   main: {},
 
-  aside: {
-    paddingTop: 16,
-  },
-
-  article: {
-    paddingLeft: 32,
-    paddingTop: 32,
-  },
-
-  ul: {
-    listStyle: 'none',
-    padding: 0,
-  },
+  article: {},
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    main: {
-      display: 'flex',
+    article: {
+      paddingTop: 32,
+      paddingLeft: 32,
     },
 
-    aside: {
-      minWidth: 250,
+    main: {
+      display: 'flex',
     },
   },
 }));
