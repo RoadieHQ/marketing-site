@@ -2,7 +2,7 @@
 title: Backstage Weekly 6 - Backstage Kubernetes Plugin
 date: '2020-10-22T21:00:00.0Z'
 description: The Backstage Kubernetes plguin - What it does and how it can help you.
-tags: ['newsletter']
+tags: ['newsletter', 'kubernetes']
 ---
 
 Kubernetes has been a humongous force in the infrastructure world over the last few years so it was obvious from Day 1 that Backstage would need to integrate with it in some fashion.

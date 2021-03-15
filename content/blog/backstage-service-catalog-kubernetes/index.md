@@ -2,7 +2,7 @@
 title: How to deploy Backstage on KIND Kubernetes
 date: '2021-02-01T21:00:00.0Z'
 description: How to build and run Backstage on a local Kubernetes cluster created with KIND.
-tags: ['tutorial']
+tags: ['tutorial', 'kubernetes']
 ---
 
 In this tutorial, we're going to build a basic Backstage application and deploy it to a local Kubernetes cluster created with Kind. The application will be able to store data, such as the services in the Backstage catalog, in an in-memory Sqlite3 database.
