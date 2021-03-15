@@ -99,8 +99,6 @@ const theme = {
       '& table': {
         borderCollapse: 'collapse',
         marginBottom: '1em',
-        marginLeft: 'auto',
-        marginRight: 'auto',
         display: 'block',
         maxWidth: 'fit-content',
         overflowX: 'auto',
