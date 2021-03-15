@@ -32,7 +32,11 @@ const StickyFooter = ({ children, maxWidthBreakpoint, location, headerBottomBord
   return (
     <div className={classes.root}>
       <div className={classes.expandVertically}>
-        <SitewideHeader location={location} bottomBorder={headerBottomBorder} />
+        <SitewideHeader
+          location={location}
+          bottomBorder={headerBottomBorder}
+          maxWidthBreakpoint={maxWidthBreakpoint}
+        />
 
         <LayoutControl maxWidthBreakpoint={maxWidthBreakpoint}>{children}</LayoutControl>
       </div>
