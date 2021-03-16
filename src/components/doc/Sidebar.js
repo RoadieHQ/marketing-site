@@ -51,7 +51,13 @@ const DocSidebar = ({ location }) => {
           <ul className={classes.ul}>
             <SidebarItem
               to="/docs/getting-started/getting-started-for-admins/"
-              text="First 30 minutes"
+              text="Configuring Roadie"
+              location={location}
+            />
+
+            <SidebarItem
+              to="/docs/getting-started/adding-components/"
+              text="Adding components"
               location={location}
             />
 

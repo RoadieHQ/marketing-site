@@ -52,7 +52,7 @@ Copy the URL of the YAML spec on GitHub, paste it into the catalog importer at `
 
 Review the action the importer is going to take, then press Import.
 
-![a chance to review the URL which is going to be added and the name of the API which will lbe created](./catalog-import-review.png)
+![a chance to review the URL which is going to be added and the name of the API which will be created](./catalog-import-review.png)
 
 Click the name of the API to view it in Backstage.
 
