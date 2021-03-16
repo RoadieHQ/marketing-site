@@ -79,6 +79,7 @@ const DocSidebar = ({ location }) => {
             />
             <SidebarItem to="/docs/integrations/sentry/" text="Sentry" location={location} />
             <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" location={location} />
+            <SidebarItem to="/docs/integrations/jira-token/" text="Jira" location={location} />
           </ul>
         </div>
       </div>
