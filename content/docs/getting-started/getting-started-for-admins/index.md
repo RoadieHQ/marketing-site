@@ -1,7 +1,7 @@
 ---
-title: Getting Started for admins
-lastUpdated: '2021-02-23T21:00:00.0Z'
-description: How to get started with Backstage on Roadie
+title: Configuring Roadie
+lastUpdated: '2021-03-16T21:00:00.0Z'
+description: How to set up Roadie before rolling it out across your organization.
 ---
 
 ## Introduction
@@ -142,48 +142,6 @@ Your group and user has now been imported. Click the link for `group:admin` to v
 
 ![the admin group and users that we just imported](./imported-admin-page.png)
 
-## Add a Component to the catalog
-
-We can also add components (such as services or websites) to Roadie using the same importer.
-
-This time we don't need to manually craft the YAML. Instead, Roadie will open a pull request into a repository to add the metadata file that Backstage needs.
-
-### Step 1. Open a PR
-
-Visit `https://your-company.roadie.so/catalog-import`.
-
-Enter the URL of a GitHub repository into the Repository URL input field and click Analyze. The next screen will allow you to customize the pull request before it is opened.
-
-![Catalog importer with URL in the input](./catalog-import-with-url.png)
-
-Ensure the Name of the created component will make sense to you and your team. This is how other users will refer to your component in Backstage.
-
-![An input which allows setting the name of the component to be imported](./preparing-pull-request-name-component.png)
-
-Set the owner of the component. You should be able to choose the admin group from the dropdown.
-
-![An input which allows setting the owner of the component to be imported](./preparing-pull-request-owner-component.png)
-
-Click Create PR. This will open a pull request against your repository.
-
-Import the component into Backstage by clicking the Import button. You can import the component before the pull request is merged. Backstage will automatically detect when the pull request is merged.
-
-Click the displayed link to view the pull request on GitHub. Review it and merge it to add the component to Backstage.
-
-![](./review-pr.png)
-
-### Step 2. Review the PR
-
-Review the pull request that Backstage opens by clicking the link.
-
-![An open PR on GitHub which will add a catalog-info.yaml file once merged](./opened-pr-on-github.png)
-
-### Step 3. View your component
-
-Click the Home link in the Backstage sidebar to go back to the catalog where you should see your component. Depending on the type of component you imported, you might have to cycle through the tabs until you see your component.
-
-![our component visible on the other tab of Backstage](./component-on-other-tab.png)
-
 ## Next steps
 
-You now have enough knowledge to add users, groups and components to the Backstage service catalog. Next, let's [add some documentation for the component we just created](/docs/getting-started/technical-documentation/).
+Let's [add a component to Backstage](/docs/getting-started/adding-components/).

@@ -1,7 +1,7 @@
 ---
-title: Adding TechDocs
-lastUpdated: '2021-03-08T21:00:00.0Z'
-description: How to set up Roadie Backstage for TechDocs.
+title: Using TechDocs
+lastUpdated: '2021-03-16T21:00:00.0Z'
+description: How to add technical documentation to components tracked in Backstage.
 ---
 
 ## Introduction
@@ -114,3 +114,7 @@ Commit and merge these changes to the default branch of your repo on GitHub and 
 
 1. Backstage TechDocs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/) will broadly apply to your Backstage documentation setup.
 2. The [official Backstage TechDocs guide](https://backstage.io/docs/features/techdocs/techdocs-overview).
+
+## Next steps
+
+If you use OpenAPI specs in your organization you can [learn how to associate them with your components](/docs/getting-started/technical-documentation).
