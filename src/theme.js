@@ -63,6 +63,8 @@ const theme = {
     // into then with dangerouslySetInnerHTML. There is no good way to use JSS with markdown
     // so styling the root element is all we can do.
     content: {
+      maxWidth: '70rem',
+
       '& p': {
         marginTop: 0,
       },
@@ -126,11 +128,11 @@ const theme = {
         },
 
         '& h2': {
-          marginTop: '4em',
+          marginTop: '4rem',
         },
 
         '& h3': {
-          marginTop: '2em',
+          marginTop: '2rem',
         },
 
         '& blockquote': {
