@@ -1,42 +1,48 @@
 ---
 title: Installing Custom Plugins
-lastUpdated: '2021-03-16T17:55:00.0Z'
+lastUpdated: '2021-03-17T12:11:00.0Z'
 description: How to add a custom Backstage plugin to Roadie
 ---
 
-# Introduction
+## Introduction
 
-Your plugins can be installed via npm or yarn, like publishing a normal package. We will provide you a unique scope for
+Your plugins can be published via npm or yarn, like publishing a normal package. We will provide you a unique scope for
 your plugins, and we host a dedicated npm registry which you can publish to.
 
-## Prerequisites
+### Prerequisites
 
-- For our alpha release you'll need to give us some information upfront about your plugin. We plan to make all of this
-  self-service going forward but currently backstage doesn't support this out-of-the-box. For now, we will need you to
-  fill out [this form][form].
+For our alpha release you'll need to give us some information upfront about your plugin. We plan to make all of this
+self-service going forward but currently Roadie doesn't support this out-of-the-box. For now, we will need you to
+fill out [this form][form].
 
-- Get your credentials for the npm registry. Follow [this link][forgot-password] to reset your password. The username is
-  `<your-company>-roadie`. This will send a reset link to the email we have associated with your account. You can
-  change this email as you wish.
+### Pushing the plugin to Roadie
 
-- Configure npm. There are two options:
+#### 1. Get credentials
 
-  - Interactively using npm login. Suitable for a developer testing the process.
-    <pre>
-    npm config set @<b>&lt;your-company&gt;</b>-roadie:registry https://roadiehq.jfrog.io/artifactory/api/npm/<b>&lt;your-company&gt;</b>-roadie/
-    npm login --scope=@<b>&lt;your-company&gt;</b>-roadie 
-    # This will prompt for your username, password and email
-    </pre>
+Get your credentials for the npm registry. Follow [this link][forgot-password] to reset your password. The username is
+`<your-company>-roadie`. This will send a reset link to the email we have associated with your account. You can
+change this email as you wish.
 
-  - In a CI/CD environment you can write a local `.npmrc` file
-    <pre>
-    @<b>&lt;your-company&gt;</b>-roadie:registry &lt;https://roadiehq.jfrog.io/artifactory/api/npm/<b>&lt;your-company&gt;</b>-roadie/&gt;
-    _auth = username:password # converted to base64
-    # _auth = ${NPM_AUTH} # You can also use an environment variable
-    always-auth = true
-    </pre>
+#### 2. Configure NPM
 
-## Publishing
+To configure NPM there are two options:
+
+- Interactively using npm login. Suitable for a developer testing the process.
+  <pre>
+  npm config set @<b>&lt;your-company&gt;</b>-roadie:registry https://roadiehq.jfrog.io/artifactory/api/npm/<b>&lt;your-company&gt;</b>-roadie/
+  npm login --scope=@<b>&lt;your-company&gt;</b>-roadie 
+  # This will prompt for your username, password and email
+  </pre>
+
+- In a CI/CD environment you can write a local `.npmrc` file
+  <pre>
+  @<b>&lt;your-company&gt;</b>-roadie:registry &lt;https://roadiehq.jfrog.io/artifactory/api/npm/<b>&lt;your-company&gt;</b>-roadie/&gt;
+  _auth = username:password # converted to base64
+  # _auth = ${NPM_AUTH} # You can also use an environment variable
+  always-auth = true
+  </pre>
+
+#### 3. Publishing
 
 Once you're ready to publish your plugin these are the steps you'll need to follow:
 
