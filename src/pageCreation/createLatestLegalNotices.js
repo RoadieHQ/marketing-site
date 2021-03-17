@@ -31,10 +31,6 @@ const createLatestLegalNotices = async ({ graphql, actions: { createPage } }) =>
 
     if (!has(accumulator, noticeType) || version > accumulator[noticeType]) {
       accumulator[noticeType] = version;
-    } else if (version === accumulator[noticeType]) {
-      throw new Error(
-        `Duplicate version number v${version} found for legal-notice type: ${noticeType}`
-      );
     }
 
     return accumulator;
