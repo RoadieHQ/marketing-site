@@ -12,8 +12,6 @@ import { backstageLink } from 'components/careers/links';
 const useStyles = createUseStyles(() => ({
   sitewideHeaderWrapper: {
     marginBottom: 40,
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 }));
 

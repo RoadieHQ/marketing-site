@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
 
 import {
   SEO,
@@ -21,19 +20,10 @@ const useStyles = createUseStyles((theme) => ({
     textAlign: 'center',
   },
 
-  spacing: {
-    paddingBottom: 24,
-    marginBottom: 40,
-    paddingLeft: 16,
-    paddingRight: 16,
-  },
-
   content: theme.preMadeStyles.content,
 
   sitewideHeaderWrapper: {
     marginBottom: 40,
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 
   mainWrapper: {
@@ -115,7 +105,7 @@ const Careers = ({ data, location }) => {
 
       <div className={classes.mainWrapper}>
         <main className={classes.content}>
-          <div className={classnames(classes.spacing, classes.hero)}>
+          <div className={classes.hero}>
             <LayoutControl maxWidthBreakpoint="lg">
               <Headline>
                 <span>Careers @ {siteTitle}</span>
@@ -125,26 +115,20 @@ const Careers = ({ data, location }) => {
             </LayoutControl>
           </div>
 
-          <div className={classes.spacing}>
-            <LayoutControl maxWidthBreakpoint="lg">
-              <InterstitialTitle text="Our mission" />
-              <Mission classes={classes} />
-            </LayoutControl>
-          </div>
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="Our mission" />
+            <Mission classes={classes} />
+          </LayoutControl>
 
-          <div className={classes.spacing}>
-            <LayoutControl maxWidthBreakpoint="lg">
-              <InterstitialTitle text="Our values" />
-              <TwoColumnPoints content={VALUES} />
-            </LayoutControl>
-          </div>
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="Our values" />
+            <TwoColumnPoints content={VALUES} />
+          </LayoutControl>
 
-          <div className={classes.spacing}>
-            <LayoutControl maxWidthBreakpoint="lg">
-              <InterstitialTitle text="Open roles" />
-              <TwoColumnPoints content={OPEN_ROLES} />
-            </LayoutControl>
-          </div>
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="Open roles" />
+            <TwoColumnPoints content={OPEN_ROLES} />
+          </LayoutControl>
         </main>
       </div>
 

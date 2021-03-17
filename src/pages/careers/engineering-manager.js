@@ -11,8 +11,6 @@ import Main from 'components/careers/Main';
 const useStyles = createUseStyles(() => ({
   sitewideHeaderWrapper: {
     marginBottom: 40,
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 }));
 
