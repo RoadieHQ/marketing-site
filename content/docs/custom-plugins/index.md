@@ -54,11 +54,17 @@ Once you're ready to publish your plugin these are the steps you'll need to foll
 4. Publish your plugin npm publish
 5. (Optional) Check the registry npm info `@<your-company>-roadie/<package-name>`
 
-## Conclusion
-
 We will notify you via Slack once the plugin is ready in your Roadie Backstage instance. Further updates to the npm
 package will be picked up and released automatically and you can expect the changes to appear in Backstage after 15-20
 minutes.
+
+## Conclusion
+
+Once the steps above have been completed successfully and you have been notified that your plugin is ready to use, you
+should be able to log into your Backstage instance and use the plugin just like any other plugin.
+
+You can update your plugin at will and the changes will appear in Backstage. The form is only required when installing a
+new plugin for the first time.
 
 [forgot-password]: https://roadiehq.jfrog.io/ui/login/forgot-password
 [form]: https://docs.google.com/forms/d/e/1FAIpQLSdSNr4Ps_RpKEx0V2QbxWaKLb3-DKi0W7U09Wth0SXHQoPyXQ/viewform
