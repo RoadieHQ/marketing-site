@@ -94,6 +94,18 @@ const DocSidebar = ({ location }) => {
             <SidebarItem to="/docs/integrations/jira/" text="Jira" location={location} />
           </ul>
         </div>
+
+        <div className={classes.section}>
+          <p>Custom Plugins</p>
+
+          <ul className={classes.ul}>
+            <SidebarItem
+              to="/docs/custom-plugins/"
+              text="Installing Custom Plugins"
+              location={location}
+            />
+          </ul>
+        </div>
       </div>
     </aside>
   );
