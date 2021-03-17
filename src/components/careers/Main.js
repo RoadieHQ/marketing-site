@@ -16,52 +16,59 @@ const useStyles = createUseStyles((theme) => ({
     paddingLeft: 16,
     paddingRight: 16,
   },
+
+  mainWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 }));
 
 const CareersMain = ({ role, requirements, offer, process }) => {
   const classes = useStyles();
 
   return (
-    <main className={classes.content}>
-      <div className={classes.spacing}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="Our mission" />
-          <Mission classes={classes} />
-        </LayoutControl>
-      </div>
+    <div className={classes.mainWrapper}>
+      <main className={classes.content}>
+        <div className={classes.spacing}>
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="Our mission" />
+            <Mission classes={classes} />
+          </LayoutControl>
+        </div>
 
-      <div className={classes.spacing}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="The role" />
-          <UnorderedList content={role} />
-        </LayoutControl>
-      </div>
+        <div className={classes.spacing}>
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="The role" />
+            <UnorderedList content={role} />
+          </LayoutControl>
+        </div>
 
-      <div className={classes.spacing}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="The requirements" />
-          <UnorderedList content={requirements} />
-        </LayoutControl>
-      </div>
+        <div className={classes.spacing}>
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="The requirements" />
+            <UnorderedList content={requirements} />
+          </LayoutControl>
+        </div>
 
-      <div className={classes.spacing}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="The offer" />
-          <UnorderedList content={offer} />
-        </LayoutControl>
-      </div>
+        <div className={classes.spacing}>
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="The offer" />
+            <UnorderedList content={offer} />
+          </LayoutControl>
+        </div>
 
-      <div className={classes.spacing}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="The process" />
-          <Lead>
-            All applicants will receive a response within 3 days. We can&apos;t always be perfect,
-            but we can be quick.
-          </Lead>
-          <OrderedList content={process} />
-        </LayoutControl>
-      </div>
-    </main>
+        <div className={classes.spacing}>
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="The process" />
+            <Lead>
+              All applicants will receive a response within 3 days. We can&apos;t always be perfect,
+              but we can be quick.
+            </Lead>
+            <OrderedList content={process} />
+          </LayoutControl>
+        </div>
+      </main>
+    </div>
   );
 };
 

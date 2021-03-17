@@ -35,6 +35,11 @@ const useStyles = createUseStyles((theme) => ({
     paddingLeft: 16,
     paddingRight: 16,
   },
+
+  mainWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 }));
 
 const VALUES = [
@@ -108,38 +113,40 @@ const Careers = ({ data, location }) => {
         </LayoutControl>
       </div>
 
-      <main className={classes.content}>
-        <div className={classnames(classes.spacing, classes.hero)}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <Headline>
-              <span>Careers @ {siteTitle}</span>
-            </Headline>
+      <div className={classes.mainWrapper}>
+        <main className={classes.content}>
+          <div className={classnames(classes.spacing, classes.hero)}>
+            <LayoutControl maxWidthBreakpoint="lg">
+              <Headline>
+                <span>Careers @ {siteTitle}</span>
+              </Headline>
 
-            <Lead>Turn software development upside-down forever</Lead>
-          </LayoutControl>
-        </div>
+              <Lead>Turn software development upside-down forever</Lead>
+            </LayoutControl>
+          </div>
 
-        <div className={classes.spacing}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="Our mission" />
-            <Mission classes={classes} />
-          </LayoutControl>
-        </div>
+          <div className={classes.spacing}>
+            <LayoutControl maxWidthBreakpoint="lg">
+              <InterstitialTitle text="Our mission" />
+              <Mission classes={classes} />
+            </LayoutControl>
+          </div>
 
-        <div className={classes.spacing}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="Our values" />
-            <TwoColumnPoints content={VALUES} />
-          </LayoutControl>
-        </div>
+          <div className={classes.spacing}>
+            <LayoutControl maxWidthBreakpoint="lg">
+              <InterstitialTitle text="Our values" />
+              <TwoColumnPoints content={VALUES} />
+            </LayoutControl>
+          </div>
 
-        <div className={classes.spacing}>
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="Open roles" />
-            <TwoColumnPoints content={OPEN_ROLES} />
-          </LayoutControl>
-        </div>
-      </main>
+          <div className={classes.spacing}>
+            <LayoutControl maxWidthBreakpoint="lg">
+              <InterstitialTitle text="Open roles" />
+              <TwoColumnPoints content={OPEN_ROLES} />
+            </LayoutControl>
+          </div>
+        </main>
+      </div>
 
       <LayoutControl maxWidthBreakpoint="lg">
         <SitewideFooter />
