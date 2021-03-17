@@ -92,6 +92,11 @@ const DocSidebar = ({ location }) => {
             <SidebarItem to="/docs/integrations/sentry/" text="Sentry" location={location} />
             <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" location={location} />
             <SidebarItem to="/docs/integrations/jira/" text="Jira" location={location} />
+            <SidebarItem
+              to="/docs/integrations/gcp/"
+              text="Google Cloud Platform"
+              location={location}
+            />
           </ul>
         </div>
 
