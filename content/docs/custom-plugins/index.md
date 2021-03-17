@@ -9,21 +9,22 @@ description: How to add a custom Backstage plugin to Roadie
 Your plugins can be published via npm or yarn, like publishing a normal package. We will provide you a unique scope for
 your plugins, and we host a dedicated npm registry which you can publish to.
 
-### Prerequisites
+## Prerequisites
 
 For our alpha release you'll need to give us some information upfront about your plugin. We plan to make all of this
 self-service going forward but currently Roadie doesn't support this out-of-the-box. For now, we will need you to
-fill out [this form][form].
+fill out [this form][form] the first time you want to add a new plugin and pushing new versions will not require you
+to fill the form again.
 
-### Pushing the plugin to Roadie
+## Pushing the plugin to Roadie
 
-#### 1. Get credentials
+### Step 1. Get credentials
 
 Get your credentials for the npm registry. Follow [this link][forgot-password] to reset your password. The username is
 `<your-company>-roadie`. This will send a reset link to the email we have associated with your account. You can
 change this email as you wish.
 
-#### 2. Configure NPM
+### Step 2. Configure NPM
 
 To configure NPM there are two options:
 
@@ -42,7 +43,7 @@ To configure NPM there are two options:
   always-auth = true
   </pre>
 
-#### 3. Publishing
+### Step 3. Publishing
 
 Once you're ready to publish your plugin these are the steps you'll need to follow:
 
@@ -52,6 +53,12 @@ Once you're ready to publish your plugin these are the steps you'll need to foll
 3. Build your plugin (e.g. yarn install && yarn tsc && yarn build)
 4. Publish your plugin npm publish
 5. (Optional) Check the registry npm info `@<your-company>-roadie/<package-name>`
+
+## Conclusion
+
+We will notify you via Slack once the plugin is ready in your Roadie Backstage instance. Further updates to the npm
+package will be picked up and released automatically and you can expect the changes to appear in Backstage after 15-20
+minutes.
 
 [forgot-password]: https://roadiehq.jfrog.io/ui/login/forgot-password
 [form]: https://docs.google.com/forms/d/e/1FAIpQLSdSNr4Ps_RpKEx0V2QbxWaKLb3-DKi0W7U09Wth0SXHQoPyXQ/viewform
