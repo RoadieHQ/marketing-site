@@ -13,7 +13,7 @@ your plugins, and we host a dedicated npm registry which you can publish to.
 
 For our alpha release you'll need to give us some information upfront about your plugin. We plan to make all of this
 self-service going forward but currently Roadie doesn't support this out-of-the-box. For now, we will need you to
-fill out [this form][form] the first time you want to add a new plugin and pushing new versions will not require you
+fill out [this form][form] the first time you want to add a new plugin. Pushing new versions will not require you
 to fill the form again.
 
 ## Pushing the plugin to Roadie
