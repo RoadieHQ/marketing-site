@@ -5,11 +5,7 @@ import isFunction from 'lodash/isFunction';
 
 const useStyles = createUseStyles((theme) => ({
   root: {},
-
-  col: {
-    paddingLeft: 16,
-    paddingEight: 16,
-  },
+  col: {},
 
   strong: {
     marginTop: 0,
@@ -24,6 +20,7 @@ const useStyles = createUseStyles((theme) => ({
 
     col: {
       flex: 1,
+      paddingLeft: 16,
     },
   },
 }));
