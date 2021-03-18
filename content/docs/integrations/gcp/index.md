@@ -9,7 +9,7 @@ description: How to configure a Google Cloud service account to connect Backstag
 This Google Cloud Platform (GCP) client in Roadie may be used to periodically to collect Backstage catalog information from Google Cloud
 Storage. These settings are configured in `https://<tenant-name>.roadie.so/secrets`.
 
-This page describes how to get the client id and private key for gcp.
+This page describes how to get the client id and private key for GCP.
 
 ## Steps
 
