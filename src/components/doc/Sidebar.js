@@ -28,7 +28,7 @@ const useStyles = createUseStyles((theme) => ({
     },
 
     inner: {
-      paddingTop: 32,
+      paddingTop: 8,
       position: 'sticky',
       top: 0,
     },

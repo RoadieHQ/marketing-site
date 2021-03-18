@@ -53,10 +53,6 @@ const styles = (theme) => ({
     color: theme.palette.deepOrange[700],
   },
 
-  label: {
-    display: 'none',
-  },
-
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     input: {
       fontSize: '2rem',
