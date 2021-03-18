@@ -1,8 +1,9 @@
-import React, { createRef, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import algoliasearch from 'algoliasearch/lite';
+import useClickAway from 'react-use/lib/useClickAway';
 import { createUseStyles } from 'react-jss';
 import { InstantSearch } from 'react-instantsearch-dom';
-import useClickOutside from './useClickOutside';
+
 import SearchBox from './SearchBox';
 import SearchResult from './results';
 
@@ -13,9 +14,9 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-export default function Search({ indices }) {
+const Search = ({ indices }) => {
   const classes = useStyles();
-  const rootRef = createRef();
+  const rootRef = useRef(null);
   const [query, setQuery] = useState();
   const [hasFocus, setFocus] = useState(false);
   const searchClient = algoliasearch(
@@ -23,10 +24,12 @@ export default function Search({ indices }) {
     process.env.GATSBY_ALGOLIA_SEARCH_KEY
   );
 
-  useClickOutside(rootRef, () => setFocus(false));
+  useClickAway(rootRef, () => {
+    setFocus(false);
+  });
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} ref={rootRef}>
       <InstantSearch
         searchClient={searchClient}
         indexName={indices[0].name}
@@ -37,4 +40,6 @@ export default function Search({ indices }) {
       </InstantSearch>
     </div>
   );
-}
+};
+
+export default Search;

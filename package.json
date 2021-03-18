@@ -45,7 +45,8 @@
     "react-icons": "^4.2.0",
     "react-instantsearch-dom": "^6.10.3",
     "react-jss": "^10.5.1",
-    "react-modal": "^3.12.1"
+    "react-modal": "^3.12.1",
+    "react-use": "^17.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
