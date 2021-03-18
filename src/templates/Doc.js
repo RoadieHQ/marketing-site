@@ -2,16 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import { SEO, StickyFooter, ContentHeader, TextLink as Link } from 'components';
-import Search from 'components/search';
 import { Sidebar } from 'components/doc';
-
-const searchIndices = [{ name: `roadie.io`, title: `Pages` }];
 
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
 
-  articleWrapper: {},
-  searchWrapper: {},
+  article: {},
   main: {},
 
   articleFooter: {
@@ -21,12 +17,9 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    articleWrapper: {
+    article: {
       paddingLeft: 32,
-    },
-
-    searchWrapper: {
-      marginBottom: 32,
+      paddingTop: 32,
     },
 
     main: {
@@ -68,26 +61,20 @@ const Doc = ({
         <main className={classes.main}>
           <Sidebar location={location} />
 
-          <div className={classes.articleWrapper}>
-            <div className={classes.searchWrapper}>
-              <Search indices={searchIndices} />
+          <article className={classes.article}>
+            <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+
+            <div className={classes.content}>
+              <h2>Table of Contents</h2>
+              <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
             </div>
 
-            <article>
-              <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+            <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
 
-              <div className={classes.content}>
-                <h2>Table of Contents</h2>
-                <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
-              </div>
-
-              <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
-
-              <footer className={classes.articleFooter}>
-                <Link to={editOnGitHubUrl({ siteMetadata, doc })}>Edit this page on GitHub</Link>
-              </footer>
-            </article>
-          </div>
+            <footer className={classes.articleFooter}>
+              <Link to={editOnGitHubUrl({ siteMetadata, doc })}>Edit this page on GitHub</Link>
+            </footer>
+          </article>
         </main>
       </StickyFooter>
     </>

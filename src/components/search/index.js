@@ -10,7 +10,6 @@ import SearchResult from './results';
 const useStyles = createUseStyles(() => ({
   root: {
     position: 'relative',
-    margin: '0.6em 0',
   },
 }));
 
@@ -35,7 +34,12 @@ const Search = ({ indices }) => {
         indexName={indices[0].name}
         onSearchStateChange={({ query }) => setQuery(query)}
       >
-        <SearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} />
+        <SearchBox
+          onFocus={() => setFocus(true)}
+          hasFocus={hasFocus}
+          placeholder="Search"
+          aria-label="Search docs"
+        />
         <SearchResult show={query && query.length > 0 && hasFocus} indices={indices} />
       </InstantSearch>
     </div>

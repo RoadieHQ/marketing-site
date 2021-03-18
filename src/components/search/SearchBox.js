@@ -32,15 +32,14 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-export default connectSearchBox(({ refine, currentRefinement, onFocus, hasFocus }) => {
+export default connectSearchBox(({ refine, currentRefinement, onFocus, hasFocus, ...rest }) => {
   const classes = useStyles({ hasFocus });
 
   return (
     <form noValidate autoComplete="off">
       <input
         type="text"
-        placeholder="Search docs"
-        aria-label="Search docs"
+        {...rest}
         onChange={(e) => refine(e.target.value)}
         value={currentRefinement}
         onFocus={onFocus}

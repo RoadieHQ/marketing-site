@@ -1,7 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
+import Search from 'components/search';
 import SidebarItem from './SidebarItem';
+
+const searchIndices = [{ name: `roadie.io`, title: `Pages` }];
 
 const useStyles = createUseStyles((theme) => ({
   root: {},
@@ -28,7 +31,7 @@ const useStyles = createUseStyles((theme) => ({
     },
 
     inner: {
-      paddingTop: 8,
+      paddingTop: 40,
       position: 'sticky',
       top: 0,
     },
@@ -43,6 +46,7 @@ const DocSidebar = ({ location }) => {
       <div className={classes.inner}>
         <div className={classes.section}>
           <strong>Documentation</strong>
+          <Search indices={searchIndices} />
         </div>
 
         <div className={classes.section}>

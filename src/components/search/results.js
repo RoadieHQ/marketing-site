@@ -1,16 +1,9 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import {
-  connectStateResults,
-  Highlight,
-  Hits,
-  Index,
-  Snippet,
-  PoweredBy,
-} from 'react-instantsearch-dom';
+import { connectStateResults, Highlight, Hits, Index, Snippet } from 'react-instantsearch-dom';
 import { createUseStyles } from 'react-jss';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
     display: ({ show = false } = {}) => (show ? 'block' : 'none'),
     maxHeight: '80vh',
@@ -18,13 +11,12 @@ const useStyles = createUseStyles(() => ({
     '-webkit-overflow-scrolling': 'touch',
     position: 'absolute',
     zIndex: 2,
-    right: 0,
+    left: 0,
     top: '100%',
-    marginTop: '0.5em',
     width: '80vw',
     maxWidth: '30em',
     boxShadow: '0 0 5px 0',
-    padding: '1em',
+    padding: 8,
     borderRadius: 2,
     background: 'white',
   },
@@ -32,20 +24,31 @@ const useStyles = createUseStyles(() => ({
   hitCount: {
     display: 'flex',
     justifyContent: 'flex-end',
+    fontSize: '1.3rem',
   },
 
   hits: {
     '& ul': {
       listStyle: 'none',
       marginLeft: 0,
+      paddingLeft: 0,
     },
 
     '& li.ais-Hits-item': {
       marginBottom: '1em',
     },
 
+    '& mark.ais-Highlight-highlighted': {
+      backgroundColor: theme.palette.deepOrange[100],
+      color: theme.palette.primary.main,
+    },
+
+    '& mark.ais-Snippet-highlighted': {
+      backgroundColor: theme.palette.deepOrange[100],
+    },
+
     '& a': {
-      // color: ${({ theme }) => theme.foreground};
+      color: theme.palette.primary.main,
     },
 
     '& h4': {
@@ -95,7 +98,6 @@ const SearchResult = ({ indices, show = false }) => {
       {indices.map((index) => (
         <HitsInIndex index={index} key={index.name} />
       ))}
-      <PoweredBy />
     </div>
   );
 };
