@@ -91,7 +91,7 @@ const DocSidebar = ({ location }) => {
             />
             <SidebarItem
               to="/docs/integrations/github-org/"
-              text="Loading Github Organization Teams"
+              text="GitHub Teams"
               location={location}
             />
             <SidebarItem to="/docs/integrations/sentry/" text="Sentry" location={location} />
