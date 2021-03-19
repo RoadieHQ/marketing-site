@@ -89,6 +89,11 @@ const DocSidebar = ({ location }) => {
               text="GitHub via Oauth"
               location={location}
             />
+            <SidebarItem
+              to="/docs/integrations/github-org/"
+              text="Loading Github Organization Teams"
+              location={location}
+            />
             <SidebarItem to="/docs/integrations/sentry/" text="Sentry" location={location} />
             <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" location={location} />
             <SidebarItem to="/docs/integrations/jira/" text="Jira" location={location} />
