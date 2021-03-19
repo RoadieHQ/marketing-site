@@ -1,26 +1,26 @@
 ---
-title: Configuring the GitHub Organization
+title: Loading Github Organization Teams
 lastUpdated: '2021-03-19T12:14:39.0Z'
 description: How to configure backstage to read teams from github
 ---
 
 ## Introduction
 
-You may want to load you organization team structure from github teams.
+Roadie can load your organization team structure and employees from GitHub teams.
 
 This page describes how to do that.
 
 ## Prerequisites
 
 - You will need a git repository for the configuration of Backstage. In the examples
-  below, I am calling this backstage-configuration
-- The github token configured in the backstage secrets must have the read:user and user:email scopes.
+  below, I am calling this backstage-configuration.
+- The github token configured in the backstage secrets must have the `read:user` and `user:email` scopes.
 
 ## Steps
 
 1. If the name of your organization was "acme", you would create a file in the github repository called github-org.yaml with the following contents:
 
-```
+```yaml
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
