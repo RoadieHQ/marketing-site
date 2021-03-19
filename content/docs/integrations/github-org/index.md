@@ -13,7 +13,7 @@ This page describes how to do that.
 ## Prerequisites
 
 - You will need a git repository for the configuration of Backstage. In the examples
-  below, I am calling this backstage-configuration.
+  below.
 - The github token configured in the backstage secrets must have the `read:user` and `user:email` scopes.
 
 ## Steps
