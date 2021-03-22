@@ -35,7 +35,7 @@ If you wish to tightly restrict the access that Roadie has, please [follow this 
 
 ### Step 1. Create a Personal Access Token (PAT)
 
-Visit the [developer settings of your GitHub account](https://github.com/settings/tokens) and create a PAT which has the scopes `repo` and `user`.
+Visit the [developer settings of your GitHub account](https://github.com/settings/tokens) and create a PAT which has the scopes `repo`, `user`, `read:org` and `read:discussion` .
 
 The official GitHub docs for creating a Personal Access Token are [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
