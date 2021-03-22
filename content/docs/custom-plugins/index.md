@@ -37,9 +37,10 @@ To configure NPM there are two options:
 
 - In a CI/CD environment you can write a local `.npmrc` file
   <pre>
-  @<b>&lt;your-company&gt;</b>-roadie:registry &lt;https://roadiehq.jfrog.io/artifactory/api/npm/<b>&lt;your-company&gt;</b>-roadie/&gt;
-  _auth = username:password # converted to base64
-  # _auth = ${NPM_AUTH} # You can also use an environment variable
+  @<b>&lt;your-company&gt;</b>-roadie:registry=&lt;https://roadiehq.jfrog.io/artifactory/api/npm/<b>&lt;your-company&gt;</b>-roadie/&gt;
+  #_auth = base64(username:password)
+  _auth = ${NPM_AUTH} # You can also use an environment variable
+  email = <b>your-artifactory-account-email-address</b>
   always-auth = true
   </pre>
 
