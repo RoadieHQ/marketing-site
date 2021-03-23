@@ -71,7 +71,7 @@ Once added, people can more easily navigate to Backstage from GitHub repos and d
 
 The first ever [Backstage Open Mic](https://backstage-openmic.com/) will take place on the 31st of March. This is a community organized Backstage event where people share the experiences with Backstage and help each other out. There will be two talks:
 
-- Roadie engineer Iain Billet will present on how we're deploying Backstage on Kuberentes using flux and Terraform.
+- Roadie engineer Iain Billett will present on how we're deploying Backstage on Kuberentes using flux and Terraform.
 - SDA SE regular Dominik Henneke will show how to use the Backstage API docs plugin to discover APIs.
 
 This was advertised as the 25th of March in a previous newsletter. It was rescheduled after publishing.
