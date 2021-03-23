@@ -43,7 +43,7 @@ The official GitHub docs for creating a Personal Access Token are [here](https:/
 
 **NOTE**
 
-If you will be using this PAT to collect organization teams and memebers, then the token's owner must be a member of the organization.
+⚠️ The token's owner must be a member of the organization, rather than an outside collaborator or other relation.
 
 ---
 
