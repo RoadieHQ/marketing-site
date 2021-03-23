@@ -33,7 +33,6 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
               // I was having a problem with screenshots which have a white background. Because the
               // background of the blog posts is also white, there was no way to see where the image
               // ended and the blog post began. It all just blurred together. This shadow defins
