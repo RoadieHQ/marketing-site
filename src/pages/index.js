@@ -23,6 +23,19 @@ const useStyles = createUseStyles((theme) => ({
     fontSize: '2rem',
   },
 
+  topBannerRoot: {
+    textAlign: 'center',
+    backgroundColor: '#121212',
+    color: 'white',
+    padding: '8px 16px',
+  },
+
+  topBannerImage: {
+    height: 16,
+    verticalAlign: 'middle',
+    marginRight: 8,
+  },
+
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     interstitialTitleH2: {
       fontSize: '3em',
