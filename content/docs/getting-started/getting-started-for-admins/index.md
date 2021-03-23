@@ -39,13 +39,7 @@ Visit the [developer settings of your GitHub account](https://github.com/setting
 
 The official GitHub docs for creating a Personal Access Token are [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
----
-
-**NOTE**
-
 ⚠️ The token's owner must be a member of the organization, rather than an outside collaborator or other relation.
-
----
 
 ### Step 2. Create OAuth Credentials
 
