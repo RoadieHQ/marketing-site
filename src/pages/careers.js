@@ -4,10 +4,9 @@ import { createUseStyles } from 'react-jss';
 
 import {
   SEO,
-  SitewideFooter,
+  StickyFooter,
   LayoutControl,
   InterstitialTitle,
-  SitewideHeader,
   TwoColumnPoints,
   Headline,
   Lead,
@@ -21,10 +20,6 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   content: theme.preMadeStyles.content,
-
-  sitewideHeaderWrapper: {
-    marginBottom: 40,
-  },
 
   mainWrapper: {
     display: 'flex',
@@ -97,44 +92,36 @@ const Careers = ({ data, location }) => {
         `}
       />
 
-      <div className={classes.sitewideHeaderWrapper}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <SitewideHeader location={location} />
-        </LayoutControl>
-      </div>
+      <StickyFooter maxWidthBreakpoint="lg" location={location}>
+        <div className={classes.mainWrapper}>
+          <main className={classes.content}>
+            <div className={classes.hero}>
+              <LayoutControl maxWidthBreakpoint="lg">
+                <Headline>
+                  <span>Careers @ {siteTitle}</span>
+                </Headline>
 
-      <div className={classes.mainWrapper}>
-        <main className={classes.content}>
-          <div className={classes.hero}>
+                <Lead>Turn software development upside-down forever</Lead>
+              </LayoutControl>
+            </div>
+
             <LayoutControl maxWidthBreakpoint="lg">
-              <Headline>
-                <span>Careers @ {siteTitle}</span>
-              </Headline>
-
-              <Lead>Turn software development upside-down forever</Lead>
+              <InterstitialTitle text="Our mission" />
+              <Mission classes={classes} />
             </LayoutControl>
-          </div>
 
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="Our mission" />
-            <Mission classes={classes} />
-          </LayoutControl>
+            <LayoutControl maxWidthBreakpoint="lg">
+              <InterstitialTitle text="Our values" />
+              <TwoColumnPoints content={VALUES} />
+            </LayoutControl>
 
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="Our values" />
-            <TwoColumnPoints content={VALUES} />
-          </LayoutControl>
-
-          <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="Open roles" />
-            <TwoColumnPoints content={OPEN_ROLES} />
-          </LayoutControl>
-        </main>
-      </div>
-
-      <LayoutControl maxWidthBreakpoint="lg">
-        <SitewideFooter />
-      </LayoutControl>
+            <LayoutControl maxWidthBreakpoint="lg">
+              <InterstitialTitle text="Open roles" />
+              <TwoColumnPoints content={OPEN_ROLES} />
+            </LayoutControl>
+          </main>
+        </div>
+      </StickyFooter>
     </>
   );
 };

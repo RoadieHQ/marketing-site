@@ -1,19 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
 import { renderToString } from 'react-dom/server';
 
-import { SEO, SitewideFooter, LayoutControl, SitewideHeader } from 'components';
+import { SEO, StickyFooter } from 'components';
 import Hero from 'components/careers/Hero';
 import Footer from 'components/careers/Footer';
 import Main from 'components/careers/Main';
 import { backstageLink } from 'components/careers/links';
-
-const useStyles = createUseStyles(() => ({
-  sitewideHeaderWrapper: {
-    marginBottom: 40,
-  },
-}));
 
 const ROLE_NAME = 'Platform Engineer';
 const TYPEFORM_SLUG = 'platform-engineer';
@@ -63,27 +56,18 @@ const PROCESS = (() => [
 
 const Engineer = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const classes = useStyles();
 
   return (
     <>
       <SEO title={`${ROLE_NAME} | Careers at ${siteTitle}`} description={HEADLINE} />
 
-      <div className={classes.sitewideHeaderWrapper}>
-        <LayoutControl maxWidthBreakpoint="lg">
-          <SitewideHeader location={location} />
-        </LayoutControl>
-      </div>
+      <StickyFooter maxWidthBreakpoint="lg" location={location}>
+        <Hero headline={HEADLINE} roleName={ROLE_NAME} typeformSlug={TYPEFORM_SLUG} />
 
-      <Hero headline={HEADLINE} roleName={ROLE_NAME} typeformSlug={TYPEFORM_SLUG} />
+        <Main role={ROLE} requirements={REQUIREMENTS} offer={OFFER} process={PROCESS} />
 
-      <Main role={ROLE} requirements={REQUIREMENTS} offer={OFFER} process={PROCESS} />
-
-      <Footer typeformSlug={TYPEFORM_SLUG} />
-
-      <LayoutControl maxWidthBreakpoint="lg">
-        <SitewideFooter />
-      </LayoutControl>
+        <Footer typeformSlug={TYPEFORM_SLUG} />
+      </StickyFooter>
     </>
   );
 };
