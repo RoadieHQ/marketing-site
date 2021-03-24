@@ -73,7 +73,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test": "cypress run",
     "lint": "eslint src",
     "preview": "yarn run build && netlify deploy --dir public"
   },
