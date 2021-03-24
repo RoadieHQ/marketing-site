@@ -27,7 +27,7 @@ gettingStarted:
   - intro: Setup a new proxy endpoint for the PagerDuty API. The PAGERDUTY_TOKEN environment variable will be used to specify a secret access token required to access the PagerDuty API.
     language: yaml
     code: |
-      // app-config.yaml
+      # app-config.yaml
       proxy:
         '/pagerduty':
           target: https://api.pagerduty.com
