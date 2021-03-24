@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import { SEO, InterstitialTitle, StickyFooter, ResponsiveSpacer } from 'components';
-
-import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-import CallToAction from 'components/actions/NetlifyFormCallToAction';
-import { FORM_NAMES } from '../contactFormConstants';
+import Button from 'components/home/Button';
 import Hero from 'components/home/Hero';
 import FeatureBlock from 'components/home/FeatureBlock';
 
 const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
-    maxWidth: 600,
-    margin: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
   },
 
   interstitialTitleH2: {
@@ -21,19 +18,6 @@ const useStyles = createUseStyles((theme) => ({
 
   p: {
     fontSize: '2rem',
-  },
-
-  topBannerRoot: {
-    textAlign: 'center',
-    backgroundColor: '#121212',
-    color: 'white',
-    padding: '8px 16px',
-  },
-
-  topBannerImage: {
-    height: 16,
-    verticalAlign: 'middle',
-    marginRight: 8,
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
@@ -52,48 +36,14 @@ you always have access to the latest Backstage features.
 
 const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const [modalOpen, setModalOpen] = useState(false);
-  const [email, setEmail] = useState('');
   const classes = useStyles();
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
-    // Have to do this here rather than in the CallToAction because we need to
-    // send the email over to the Needs Analysis Typeform survey which is linked from
-    // the FormSubmissionModal. If we clear it out of state too early it won't be recorded
-    // in Typeform.
-    setEmail('');
-  };
 
   return (
     <>
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
-      <FormSubmissionModal
-        modalOpen={modalOpen}
-        handleCloseModal={handleCloseModal}
-        siteMetadata={data.site.siteMetadata}
-        bodyText={
-          <>
-            <p>Check your email to see how to book a Backstage demo.</p>
-            <p>To help us address your questions correctly, please fill out this short survey...</p>
-          </>
-        }
-        titleText="Fantastic!"
-        followOn="NEEDS_ANALYSIS_SURVEY"
-        email={email}
-      />
-
       <StickyFooter location={location}>
         <ResponsiveSpacer>
-          <Hero
-            setModalOpen={setModalOpen}
-            siteMetadata={data.site.siteMetadata}
-            headline={HEADLINE}
-            lead={LEAD}
-            netlifyFormName={FORM_NAMES.getDemo}
-            email={email}
-            setEmail={setEmail}
-          />
+          <Hero siteMetadata={data.site.siteMetadata} headline={HEADLINE} lead={LEAD} />
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
@@ -163,13 +113,8 @@ const Home = ({ data, location }) => {
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <InterstitialTitle text="Get a demo and get control" />
           <div className={classes.callToActionWrapper}>
-            <CallToAction
-              setModalOpen={setModalOpen}
-              buttonText="Get a demo"
-              netlifyFormName={FORM_NAMES.getDemo}
-            />
+            <Button to="/evaluation-request/" link={true} text="Join the waitlist" />
           </div>
         </ResponsiveSpacer>
       </StickyFooter>

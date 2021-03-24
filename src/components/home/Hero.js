@@ -1,8 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { Lead, Headline, TwoColumnLayout } from 'components';
+import Button from 'components/home/Button';
 
-import CallToAction from '../actions/NetlifyFormCallToAction';
 import BackgroundImage from './BackgroundImage';
 import backstageScreenshot from '../../../content/assets/backstage-screenshot.png';
 
@@ -29,7 +29,7 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const Hero = ({ setModalOpen, headline, lead, netlifyFormName, email, setEmail }) => {
+const Hero = ({ headline, lead }) => {
   const classes = useStyles();
 
   return (
@@ -49,12 +49,11 @@ const Hero = ({ setModalOpen, headline, lead, netlifyFormName, email, setEmail }
           </div>
 
           <div className={classes.callToActionWrapper}>
-            <CallToAction
-              setModalOpen={setModalOpen}
-              buttonText="Get a demo"
-              netlifyFormName={netlifyFormName}
-              email={email}
-              setEmail={setEmail}
+            <Button
+              to="/evaluation-request/"
+              link={true}
+              text="Join the waitlist"
+              id="evaluation-request-link-button"
             />
           </div>
         </>
