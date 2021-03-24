@@ -13,7 +13,7 @@ import {
   CodeBlock,
   SEO,
 } from 'components';
-import CallToAction from 'components/actions/CallToAction';
+import CallToAction from 'components/actions/NetlifyFormCallToAction';
 import { Logo, Attribution } from 'components/backstage/plugins';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 

@@ -5,7 +5,7 @@ import { createUseStyles } from 'react-jss';
 import { Lead, SEO, StickyFooter, InterstitialTitle } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-import CallToAction from 'components/actions/CallToAction';
+import CallToAction from 'components/actions/NetlifyFormCallToAction';
 import { FORM_NAMES } from '../contactFormConstants';
 import roadieRLogo from '../../content/assets/roadie-r-764x764.png';
 

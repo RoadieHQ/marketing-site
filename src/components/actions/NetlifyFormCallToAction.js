@@ -77,7 +77,7 @@ export const encode = (data) => {
   return formData;
 };
 
-const CallToAction = ({
+const NetlifyFormCallToAction = ({
   placeholderText = 'Work email',
   buttonText = 'Click here',
   subFormMessage = 'We will never sell or share your email address.',
@@ -161,4 +161,4 @@ const CallToAction = ({
   /* eslint-enable jsx-a11y/no-autofocus */
 };
 
-export default CallToAction;
+export default NetlifyFormCallToAction;
