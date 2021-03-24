@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 import { FaPaperPlane } from 'react-icons/fa';
 
-import Button from '../home/Button';
+import Button from '../Button';
 
 const styles = (theme) => ({
   inputWrapper: {

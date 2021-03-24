@@ -1,8 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { LayoutControl, Lead, Headline } from 'components';
-import Button from 'components/home/Button';
+import { LayoutControl, Lead, Headline, Button } from 'components';
 import { applicationHref } from './links';
 
 const useStyles = createUseStyles(() => ({
