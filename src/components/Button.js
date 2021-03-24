@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { Link } from 'components';
 import classnames from 'classnames';
 
-export const useStyles = createUseStyles((theme) => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
     display: 'inline-block',
     color: theme.palette.grey[100],

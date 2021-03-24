@@ -1,7 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { Lead, Headline, TwoColumnLayout } from 'components';
-import Button from 'components/home/Button';
+import { Lead, Headline, TwoColumnLayout, Button } from 'components';
 
 import BackgroundImage from './BackgroundImage';
 import backstageScreenshot from '../../../content/assets/backstage-screenshot.png';

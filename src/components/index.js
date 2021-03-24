@@ -15,6 +15,7 @@ export { default as TwoColumnPoints } from './TwoColumnPoints';
 export { default as UnorderedList } from './UnorderedList';
 export { default as OrderedList } from './OrderedList';
 export { default as Link } from './Link';
+export { default as Button } from './Button';
 export { default as TwoColumnLayout } from './TwoColumnLayout';
 export { default as ResponsiveSpacer } from './ResponsiveSpacer';
 export { default as TextLink } from './TextLink';

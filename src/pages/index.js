@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import { SEO, InterstitialTitle, StickyFooter, ResponsiveSpacer } from 'components';
-import Button from 'components/home/Button';
+import { Button, SEO, InterstitialTitle, StickyFooter, ResponsiveSpacer } from 'components';
 import Hero from 'components/home/Hero';
 import FeatureBlock from 'components/home/FeatureBlock';
 

@@ -1,9 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { createUseStyles } from 'react-jss';
-import { Link } from 'components';
+import { Link, Button } from 'components';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import Button from 'components/home/Button';
 
 const modalStyles = {
   overlay: {

@@ -1,8 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
-import { LayoutControl, InterstitialTitle, Link } from 'components';
-import Button from 'components/home/Button';
+import { Button, LayoutControl, InterstitialTitle, Link } from 'components';
 import { applicationHref } from './links';
 
 const useStyles = createUseStyles((theme) => ({
