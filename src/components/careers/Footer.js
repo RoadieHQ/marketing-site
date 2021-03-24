@@ -1,7 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
-import { LayoutControl, ButtonLink, InterstitialTitle, Link } from 'components';
+import { LayoutControl, InterstitialTitle, Link } from 'components';
+import Button from 'components/home/Button';
 import { applicationHref } from './links';
 
 const useStyles = createUseStyles((theme) => ({
@@ -35,9 +36,7 @@ const CareersFooter = ({ typeformSlug }) => {
       <LayoutControl maxWidthBreakpoint="lg">
         <InterstitialTitle text="Sound good?" />
         <div>
-          <ButtonLink to={applicationHref(typeformSlug)}>
-            <span>Apply for this role</span>
-          </ButtonLink>
+          <Button to={applicationHref(typeformSlug)} link={true} text="Apply for this role" />
 
           <Link to="/careers/" className={classnames('typography-mono', classes.link)}>
             See all roles

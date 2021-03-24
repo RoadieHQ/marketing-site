@@ -1,7 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { LayoutControl, Lead, Headline, ButtonLink } from 'components';
+import { LayoutControl, Lead, Headline } from 'components';
+import Button from 'components/home/Button';
 import { applicationHref } from './links';
 
 const useStyles = createUseStyles(() => ({
@@ -22,9 +23,7 @@ const CareersHero = ({ headline, roleName, typeformSlug }) => {
 
         <Lead>Careers / {roleName}</Lead>
 
-        <ButtonLink to={applicationHref(typeformSlug)}>
-          <span>Apply for this role</span>
-        </ButtonLink>
+        <Button to={applicationHref(typeformSlug)} link={true} text="Apply for this role" />
       </LayoutControl>
     </div>
   );
