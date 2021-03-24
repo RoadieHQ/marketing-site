@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 import { SEO, InterstitialTitle, StickyFooter, ResponsiveSpacer, TextLink } from 'components';
 
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-import CallToAction from 'components/actions/CallToAction';
+import CallToAction from 'components/actions/NetlifyFormCallToAction';
 import { FORM_NAMES } from '../contactFormConstants';
 import Hero from 'components/home/Hero';
 import FeatureBlock from 'components/home/FeatureBlock';

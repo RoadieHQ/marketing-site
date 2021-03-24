@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { Lead, Headline, TwoColumnLayout } from 'components';
 
-import CallToAction from '../actions/CallToAction';
+import CallToAction from '../actions/NetlifyFormCallToAction';
 import BackgroundImage from './BackgroundImage';
 import backstageScreenshot from '../../../content/assets/backstage-screenshot.png';
 
@@ -46,7 +46,6 @@ const Hero = ({ setModalOpen, headline, lead, netlifyFormName, email, setEmail }
 
           <div className={classes.leadWrapper}>
             <Lead>{lead}</Lead>
-            <Lead>Get a demo...</Lead>
           </div>
 
           <div className={classes.callToActionWrapper}>

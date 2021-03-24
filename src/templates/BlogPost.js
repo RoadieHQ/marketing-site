@@ -5,7 +5,7 @@ import { createUseStyles } from 'react-jss';
 import { SEO, InterstitialTitle, Link, ContentHeader } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-import CallToAction from 'components/actions/CallToAction';
+import CallToAction from 'components/actions/NetlifyFormCallToAction';
 import { FORM_NAMES } from '../contactFormConstants';
 
 const useStyles = createUseStyles((theme) => ({
