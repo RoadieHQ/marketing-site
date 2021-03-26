@@ -7,11 +7,13 @@
   to = "/blog/backstage-docker-service-catalog/"
   force = true
 
+# Supporting a legacy URL scheme which existed when the site was first published.
 [[redirects]]
   from = "/terms/"
   to = "/legal-notices/website-terms/"
   force = true
 
+# Supporting a legacy URL scheme which existed when the site was first published.
 [[redirects]]
   from = "/privacy/"
   to = "/legal-notices/privacy-policy/"

@@ -47,8 +47,8 @@ const DocSidebar = ({ location }) => {
         <div className={classes.section}>
           <ul className={classes.ul}>
             <SidebarItem
-              to="/legal-notices/website-terms/"
-              text="Website Terms of Use"
+              to="/legal-notices/terms-of-service/"
+              text="Terms of Service & DPA"
               location={location}
             />
 
