@@ -18,3 +18,8 @@
   from = "/privacy/"
   to = "/legal-notices/privacy-policy/"
   force = true
+
+[[redirects]]
+  from = "/docs/"
+  to = "/docs/getting-started/getting-started-for-admins/"
+  force = true
