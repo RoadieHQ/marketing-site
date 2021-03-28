@@ -1,8 +1,8 @@
-const { LEGAL_NOTICES_QUERY } = require('../queries/gatsbyNodeQueries');
-const path = require(`path`);
 const has = require('lodash/has');
 const map = require('lodash/map');
 const get = require('lodash/get');
+
+const { LEGAL_NOTICES_QUERY } = require('../queries/gatsbyNodeQueries');
 
 /*
  * Legal notices are immutable and versioned so they show up under different routes such as
@@ -16,8 +16,7 @@ const get = require('lodash/get');
  * This function finds all different types of legal notices, then figures out the latest one
  * based on the version number, then makes that the "default" one.
  */
-const createLatestLegalNotices = async ({ graphql, actions: { createPage } }) => {
-  const component = path.resolve(__dirname, '../templates/LegalNotice.js');
+const createLatestLegalNotices = async ({ graphql, actions: { createRedirect } }) => {
   const { data, errors } = await graphql(LEGAL_NOTICES_QUERY);
 
   if (errors) {
@@ -37,12 +36,10 @@ const createLatestLegalNotices = async ({ graphql, actions: { createPage } }) =>
   }, {});
 
   map(maxVersionForType, (maxVersion, noticeType) => {
-    createPage({
-      path: `/legal-notices/${noticeType}/`,
-      component,
-      context: {
-        slug: `/legal-notices/${noticeType}/v${maxVersion}/`,
-      },
+    createRedirect({
+      fromPath: `/legal-notices/${noticeType}/`,
+      toPath: `/legal-notices/${noticeType}/v${maxVersion}/`,
+      isPermanent: true,
     });
   });
 };
