@@ -3,7 +3,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const Link = ({ to, children, ...rest }) => {
-  if (to.startsWith('/')) {
+  if (to.startsWith('/') || to.startsWith('#')) {
     return (
       <GatsbyLink to={to} {...rest}>
         {children}

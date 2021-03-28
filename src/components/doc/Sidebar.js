@@ -17,13 +17,9 @@ const useStyles = createUseStyles((theme) => ({
     padding: 0,
   },
 
-  spacer: {
-    marginBottom: '1em',
-  },
-
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
-      minWidth: 250,
+      minWidth: 220,
       borderRight: `1px solid ${theme.palette.grey[300]}`,
     },
 
