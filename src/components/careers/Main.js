@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 import { LayoutControl, InterstitialTitle, Lead, UnorderedList, OrderedList } from 'components';
 import Mission from './Mission';
+import OpenSourceMission from './OpenSourceMission';
 
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
@@ -13,34 +14,47 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const CareersMain = ({ role, requirements, offer, process }) => {
+const CareersMain = ({ showOpenSource, role, requirements, offer, process }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.mainWrapper}>
       <main className={classes.content}>
+        {showOpenSource ? (
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="What's the opportunity? 🤔" />
+            <OpenSourceMission classes={classes} />
+          </LayoutControl>
+        ) : (
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="What is the company's mission 🤔" />
+            <Mission classes={classes} />
+          </LayoutControl>
+        )}
         <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="Our mission" />
-          <Mission classes={classes} />
-        </LayoutControl>
-
-        <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="The role" />
+          <InterstitialTitle text="What does my day to day look like? 📅" />
           <UnorderedList content={role} />
         </LayoutControl>
 
         <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="The requirements" />
+          <InterstitialTitle text="What skills do I need? ✨" />
           <UnorderedList content={requirements} />
         </LayoutControl>
 
         <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="The offer" />
+          <InterstitialTitle text="What is the offer? 💙" />
           <UnorderedList content={offer} />
         </LayoutControl>
 
+        {showOpenSource && (
+          <LayoutControl maxWidthBreakpoint="lg">
+            <InterstitialTitle text="What is the company's mission? 🤔" />
+            <Mission classes={classes} />
+          </LayoutControl>
+        )}
+
         <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="The process" />
+          <InterstitialTitle text="What is the process? 📖" />
           <Lead>
             All applicants will receive a response within 3 days. We can&apos;t always be perfect,
             but we can be quick.

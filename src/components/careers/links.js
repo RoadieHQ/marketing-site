@@ -6,6 +6,6 @@ export const applicationHref = (typeformSlug) =>
 
 export const backstageLink = renderToString(
   <a href="https://github.com/backstage/backstage" target="_blank" rel="noopener noreferrer">
-    the open-source platform
+    Backstage
   </a>
 );
