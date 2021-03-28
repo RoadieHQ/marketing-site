@@ -29,7 +29,7 @@ change this email as you wish.
 To configure NPM there are two options:
 
 - Interactively using npm login. Suitable for a developer testing the process.
-  <pre>
+  <pre style="overflow:auto">
   npm config set @<b>&lt;your-company&gt;</b>-roadie:registry https://roadiehq.jfrog.io/artifactory/api/npm/<b>&lt;your-company&gt;</b>-roadie/
   npm login --scope=@<b>&lt;your-company&gt;</b>-roadie 
   # This will prompt for your username, password and email
@@ -37,11 +37,11 @@ To configure NPM there are two options:
 
 - For a CI/CD engironment you can write a local `.npmrc` file. Start by creating the authentication token by applying
   base64 to the username and password. Example:
-  <pre>
+  <pre style="overflow:auto">
   printf "%s:%s" <username> <password> | base64 --wrap 0
   </pre>
   Then create the `.npmrc` file like in the following example:
-  <pre>
+  <pre style="overflow:auto">
   @<b>&lt;your-company&gt;</b>-roadie:registry=&lt;https://roadiehq.jfrog.io/artifactory/api/npm/<b>&lt;your-company&gt;</b>-roadie/&gt;
   #_auth = base64(username:password)
   _auth = ${NPM_AUTH} # You can also use an environment variable

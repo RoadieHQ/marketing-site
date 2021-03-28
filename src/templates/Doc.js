@@ -3,12 +3,13 @@ import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import { SEO, StickyFooter, ContentHeader, TextLink as Link } from 'components';
 
-import { Sidebar } from 'components/doc';
+import { Sidebar, TableOfContentsSidebar } from 'components/doc';
 
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
 
   article: {},
+  tocWrapper: {},
 
   main: {},
 
@@ -22,6 +23,7 @@ const useStyles = createUseStyles((theme) => ({
     article: {
       paddingTop: 32,
       paddingLeft: 32,
+      paddingRight: 32,
     },
 
     main: {
@@ -30,6 +32,12 @@ const useStyles = createUseStyles((theme) => ({
 
     articleFooter: {
       marginBottom: 48,
+    },
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.xl}px)`]: {
+    tocWrapper: {
+      display: 'none',
     },
   },
 }));
@@ -59,7 +67,7 @@ const Doc = ({
         description={doc.frontmatter.description}
       />
 
-      <StickyFooter location={location}>
+      <StickyFooter location={location} maxWidthBreakpoint="xl">
         <main className={classes.main}>
           <Sidebar location={location} />
 
@@ -67,8 +75,10 @@ const Doc = ({
             <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
 
             <div className={classes.content}>
-              <h2>Table of Contents</h2>
-              <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
+              <div className={classes.tocWrapper}>
+                <h2>Table of Contents</h2>
+                <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
+              </div>
             </div>
 
             <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
@@ -77,6 +87,8 @@ const Doc = ({
               <Link to={editOnGitHubUrl({ siteMetadata, doc })}>Edit this page on GitHub</Link>
             </footer>
           </article>
+
+          <TableOfContentsSidebar headings={doc.headings} />
         </main>
       </StickyFooter>
     </>
@@ -102,6 +114,10 @@ export const pageQuery = graphql`
       html
       fileAbsolutePath
       tableOfContents(maxDepth: 2)
+      headings(depth: h2) {
+        id
+        value
+      }
 
       frontmatter {
         description
