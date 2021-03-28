@@ -103,5 +103,6 @@ module.exports = {
     },
     `gatsby-plugin-force-trailing-slashes`,
     'gatsby-plugin-twitter',
+    'gatsby-plugin-netlify',
   ],
 };
