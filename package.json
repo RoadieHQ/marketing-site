@@ -10,7 +10,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "babel-plugin-prismjs": "^2.0.1",
-    "babel-preset-gatsby": "^0.12.1",
+    "babel-preset-gatsby": "^1.1.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
     "gatsby": "^3.1.2",
@@ -45,7 +45,7 @@
     "react-modal": "^3.12.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.13",
+    "@babel/core": "^7.13.13",
     "cypress": "^6.0.1",
     "eslint": "^7.4.0",
     "eslint-plugin-cypress": "^2.11.2",
