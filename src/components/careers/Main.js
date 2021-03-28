@@ -27,7 +27,7 @@ const CareersMain = ({ showOpenSource, role, requirements, offer, process }) => 
           </LayoutControl>
         ) : (
           <LayoutControl maxWidthBreakpoint="lg">
-            <InterstitialTitle text="What is the company's mission 🤔" />
+            <InterstitialTitle text="What is the company's mission? 🤔" />
             <Mission classes={classes} />
           </LayoutControl>
         )}
