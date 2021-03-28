@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn eslint --cache --fix *.js
+yarn prettier --write *.{js,json,md}
