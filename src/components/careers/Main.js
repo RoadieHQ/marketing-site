@@ -37,7 +37,7 @@ const CareersMain = ({ showOpenSource, role, requirements, offer, process }) => 
         </LayoutControl>
 
         <LayoutControl maxWidthBreakpoint="lg">
-          <InterstitialTitle text="What skills do I need? ✨" />
+          <InterstitialTitle text="What skills would we like to see? ✨" />
           <UnorderedList content={requirements} />
         </LayoutControl>
 

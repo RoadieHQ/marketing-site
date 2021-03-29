@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'components';
 
 const OpenSourceMission = () => (
   <div>
@@ -8,9 +9,7 @@ const OpenSourceMission = () => (
     </p>
     <p>
       Open-source is vital to Roadie.{' '}
-      <a href="https://backstage.io" target="_blank" rel="noopener noreferrer">
-        Backstage
-      </a>{' '}
+      <Link to="https://github.com/backstage/backstage">Backstage</Link>
       is an open-source service catalog created in Spotify. We rely on Backstage and other notable
       projects from the open-source community in our day to day operations. We want to share what we
       build and ensure that we give back to the community. We are hiring staff dedicated to making
