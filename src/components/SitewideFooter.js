@@ -44,7 +44,8 @@ const SitewideFooter = () => {
         <nav>
           <Link to="/careers/">Careers</Link>
 
-          <Link to="/legal-notices/website-terms/" className={classes.nonFirstLink}>
+          {/* This link will work in production but not in development. Netlify does the 301. */}
+          <Link to="/legal-notices/terms-of-service/" className={classes.nonFirstLink}>
             Legal
           </Link>
 

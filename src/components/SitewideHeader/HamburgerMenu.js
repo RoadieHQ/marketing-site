@@ -175,8 +175,9 @@ const HamburgerMenu = ({ siteMetadata }) => {
 
         <div className={classes.legalLinks}>
           <div className={classes.legalSpacer}>
+            {/* This link will work in production but not in development. Netlify does the 301. */}
             <TextLink
-              to="/legal-notices/website-terms/"
+              to="/legal-notices/terms-of-service/"
               text="Legal"
               color="contrasting"
               className={classes.textLink}
