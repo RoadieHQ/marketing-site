@@ -14,7 +14,7 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const ROLE_NAME = 'Senior Open Source Engineer';
+const ROLE_NAME = 'Senior open-source engineer';
 const TYPEFORM_SLUG = 'sr-open-source-engineer';
 const HEADLINE = 'Become an integral part of leading our open-source efforts.';
 
