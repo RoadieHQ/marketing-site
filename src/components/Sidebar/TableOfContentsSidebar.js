@@ -1,10 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
-import Sidebar, { SidebarSection, SidebarSectionList } from 'components/Sidebar';
 
+import Sidebar from './Sidebar';
+import { SidebarSection, SidebarSectionList } from './Section';
 import useScrollSpy from '../../hooks/useScrollSpy';
-
 import Link from '../TextLink';
 
 const useStyles = createUseStyles((theme) => ({
@@ -34,7 +34,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const DocTableOfContentsSidebar = ({ headings }) => {
+const TableOfContentsSidebar = ({ headings }) => {
   const classes = useStyles();
 
   const activeSection = useScrollSpy({
@@ -63,4 +63,4 @@ const DocTableOfContentsSidebar = ({ headings }) => {
   );
 };
 
-export default DocTableOfContentsSidebar;
+export default TableOfContentsSidebar;

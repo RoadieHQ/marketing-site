@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import { SEO, StickyFooter, ContentHeader, TextLink as Link } from 'components';
-
-import { Sidebar, TableOfContentsSidebar } from 'components/doc';
+import { TableOfContentsSidebar } from 'components/Sidebar';
+import { Sidebar } from 'components/doc';
 
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,

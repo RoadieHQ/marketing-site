@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar, { SidebarSection, SidebarSectionList, SidebarItem } from 'components/Sidebar';
+import { Sidebar, SidebarSection, SidebarSectionList, SidebarItem } from 'components/Sidebar';
 
 const LegalNoticeSidebar = () => {
   return (
