@@ -10,8 +10,8 @@ const useStyles = createUseStyles((theme) => ({
 
   article: {},
   tocWrapper: {},
-
   main: {},
+  tocSidebar: {},
 
   articleFooter: {
     borderTop: `1px solid ${theme.palette.grey[300]}`,
@@ -24,6 +24,7 @@ const useStyles = createUseStyles((theme) => ({
       paddingTop: 32,
       paddingLeft: 32,
       paddingRight: 32,
+      flex: 1,
     },
 
     main: {
@@ -32,6 +33,11 @@ const useStyles = createUseStyles((theme) => ({
 
     articleFooter: {
       marginBottom: 48,
+    },
+
+    tocSidebar: {
+      minWidth: '20%',
+      maxWidth: '20%',
     },
   },
 
@@ -67,7 +73,7 @@ const Doc = ({
         description={doc.frontmatter.description}
       />
 
-      <StickyFooter location={location} maxWidthBreakpoint="xl">
+      <StickyFooter location={location} maxWidthBreakpoint="none">
         <main className={classes.main}>
           <Sidebar />
 
@@ -88,7 +94,7 @@ const Doc = ({
             </footer>
           </article>
 
-          <TableOfContentsSidebar headings={doc.headings} />
+          <TableOfContentsSidebar headings={doc.headings} className={classes.tocSidebar} />
         </main>
       </StickyFooter>
     </>
