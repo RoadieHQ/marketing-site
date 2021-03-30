@@ -34,7 +34,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const DocSidebar = ({ location }) => {
+const DocSidebar = () => {
   const classes = useStyles();
 
   return (
@@ -49,30 +49,25 @@ const DocSidebar = ({ location }) => {
             <SidebarItem
               to="/legal-notices/terms-of-service/"
               text="Terms of Service & DPA"
-              location={location}
             />
 
             <SidebarItem
               to="/legal-notices/sub-processors/"
               text="List of Sub-Processors"
-              location={location}
             />
 
             <SidebarItem
               to="/legal-notices/privacy-policy/"
               text="Privacy Policy"
-              location={location}
             />
 
             <SidebarItem
               to="/legal-notices/cookies-policy/"
               text="Cookies Policy"
-              location={location}
             />
 
             <SidebarItem
               to="/legal-notices/acceptable-use-policy/"
-              location={location}
               text="Acceptable Use Policy"
             />
           </ul>

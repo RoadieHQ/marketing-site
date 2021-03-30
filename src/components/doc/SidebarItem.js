@@ -3,37 +3,28 @@ import { createUseStyles } from 'react-jss';
 
 import Link from '../TextLink';
 
-const isCurrentPage = ({ location, to }) => location.pathname === to;
-
 const useStyles = createUseStyles((theme) => ({
-  spacer: {
+  link: {
     paddingLeft: '0.5em',
     paddingTop: '0.2em',
     paddingBottom: '0.2em',
-    backgroundColor: ({ location, to }) => {
-      if (isCurrentPage({ location, to })) return theme.palette.grey[200];
-      return 'inherit';
-    },
+    display: 'block',
   },
 
   currentLink: {
-    color: ({ location, to }) => {
-      if (isCurrentPage({ location, to })) return theme.palette.primary.main;
-      return 'inherit';
-    },
+    color: theme.palette.primary.main,
+    backgroundColor: theme.palette.grey[200],
   },
 }));
 
-const SidebarItem = ({ to, text, location }) => {
-  const classes = useStyles({ location, to });
+const SidebarItem = ({ to, text }) => {
+  const classes = useStyles();
 
   return (
     <li>
-      <div className={classes.spacer}>
-        <Link to={to} className={classes.currentLink}>
-          {text}
-        </Link>
-      </div>
+      <Link to={to} className={classes.link} activeClassName={classes.currentLink}>
+        {text}
+      </Link>
     </li>
   );
 };

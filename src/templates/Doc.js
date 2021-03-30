@@ -69,7 +69,7 @@ const Doc = ({
 
       <StickyFooter location={location} maxWidthBreakpoint="xl">
         <main className={classes.main}>
-          <Sidebar location={location} />
+          <Sidebar />
 
           <article className={classes.article}>
             <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />

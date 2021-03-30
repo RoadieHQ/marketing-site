@@ -31,7 +31,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const DocSidebar = ({ location }) => {
+const DocSidebar = () => {
   const classes = useStyles();
 
   return (
@@ -48,26 +48,16 @@ const DocSidebar = ({ location }) => {
             <SidebarItem
               to="/docs/getting-started/getting-started-for-admins/"
               text="Configuring Roadie"
-              location={location}
             />
 
-            <SidebarItem
-              to="/docs/getting-started/adding-components/"
-              text="Adding components"
-              location={location}
-            />
+            <SidebarItem to="/docs/getting-started/adding-components/" text="Adding components" />
 
             <SidebarItem
               to="/docs/getting-started/technical-documentation/"
               text="Using TechDocs"
-              location={location}
             />
 
-            <SidebarItem
-              to="/docs/getting-started/openapi-specs/"
-              text="Using OpenAPI specs"
-              location={location}
-            />
+            <SidebarItem to="/docs/getting-started/openapi-specs/" text="Using OpenAPI specs" />
           </ul>
         </div>
 
@@ -75,29 +65,13 @@ const DocSidebar = ({ location }) => {
           <p>Integrations</p>
 
           <ul className={classes.ul}>
-            <SidebarItem
-              to="/docs/integrations/github-token/"
-              text="GitHub via Token"
-              location={location}
-            />
-            <SidebarItem
-              to="/docs/integrations/github-client/"
-              text="GitHub via Oauth"
-              location={location}
-            />
-            <SidebarItem
-              to="/docs/integrations/github-org/"
-              text="GitHub Teams"
-              location={location}
-            />
-            <SidebarItem to="/docs/integrations/sentry/" text="Sentry" location={location} />
-            <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" location={location} />
-            <SidebarItem to="/docs/integrations/jira/" text="Jira" location={location} />
-            <SidebarItem
-              to="/docs/integrations/gcp/"
-              text="Google Cloud Platform"
-              location={location}
-            />
+            <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
+            <SidebarItem to="/docs/integrations/github-client/" text="GitHub via Oauth" />
+            <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
+            <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
+            <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
+            <SidebarItem to="/docs/integrations/jira/" text="Jira" />
+            <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
           </ul>
         </div>
 
@@ -105,11 +79,7 @@ const DocSidebar = ({ location }) => {
           <p>Custom Plugins</p>
 
           <ul className={classes.ul}>
-            <SidebarItem
-              to="/docs/custom-plugins/"
-              text="Installing Custom Plugins"
-              location={location}
-            />
+            <SidebarItem to="/docs/custom-plugins/" text="Installing Custom Plugins" />
           </ul>
         </div>
       </div>
