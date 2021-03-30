@@ -10,12 +10,16 @@ const useStyles = createUseStyles((theme) => ({
     root: {
       minWidth: 220,
       borderRight: `1px solid ${theme.palette.grey[300]}`,
-    },
-
-    inner: {
       paddingTop: 32,
       position: 'sticky',
       top: 0,
+      // Supports scrolling inside the sidebar if the content is very long. Simply pass in
+      // an override class with overflowY: 'auto' to enable.
+      height: '100vh',
+    },
+
+    inner: {
+      height: '100vh',
     },
   },
 }));
