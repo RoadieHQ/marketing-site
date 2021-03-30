@@ -8,7 +8,7 @@ const useStyles = createUseStyles((theme) => ({
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
-      minWidth: 220,
+      minWidth: 250,
       borderRight: `1px solid ${theme.palette.grey[300]}`,
       paddingTop: 32,
       position: 'sticky',

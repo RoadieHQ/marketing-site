@@ -10,7 +10,6 @@ const useStyles = createUseStyles((theme) => ({
 
   main: {},
   article: {},
-  sidebar: {},
   tocSidebar: {},
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
@@ -23,10 +22,6 @@ const useStyles = createUseStyles((theme) => ({
 
     main: {
       display: 'flex',
-    },
-
-    sidebar: {
-      minWidth: 250,
     },
 
     tocSidebar: {
@@ -51,7 +46,7 @@ const LegalNotice = ({ data: { notice, site }, location }) => {
 
       <StickyFooter location={location} maxWidthBreakpoint="none">
         <main className={classes.main}>
-          <Sidebar className={classes.sidebar} />
+          <Sidebar />
 
           <article className={classes.article}>
             <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
