@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {},
@@ -19,11 +20,11 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Sidebar = ({ children }) => {
+const Sidebar = ({ children, className }) => {
   const classes = useStyles();
 
   return (
-    <aside className={classes.root}>
+    <aside className={classnames(classes.root, className)}>
       <div className={classes.inner}>
         {children}
       </div>
