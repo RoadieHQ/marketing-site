@@ -12,13 +12,14 @@ const PALETTE_PRIMARY_MAIN = deepOrange[600];
 
 const theme = {
   breakpoints: {
-    keys: ['xs', 'sm', 'md', 'lg', 'xl'],
+    keys: ['xs', 'sm', 'md', 'lg', 'xl', 'none'],
     values: {
       xs: 0,
       sm: 600,
       md: 720,
       lg: 960,
       xl: 1280,
+      none: 'none',
     },
   },
 

@@ -34,7 +34,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const TableOfContentsSidebar = ({ headings }) => {
+const TableOfContentsSidebar = ({ headings, className }) => {
   const classes = useStyles();
 
   const activeSection = useScrollSpy({
@@ -43,7 +43,7 @@ const TableOfContentsSidebar = ({ headings }) => {
   });
 
   return (
-    <Sidebar className={classes.root}>
+    <Sidebar className={classnames(classes.root, className)}>
       <SidebarSection>
         <strong>Table of Contents</strong>
       </SidebarSection>

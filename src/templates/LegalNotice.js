@@ -9,18 +9,31 @@ const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
 
   main: {},
-
   article: {},
+  sidebar: {},
+  tocSidebar: {},
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     article: {
       paddingTop: 32,
       paddingLeft: 32,
       paddingRight: 32,
+      flex: 1,
     },
 
     main: {
       display: 'flex',
+    },
+
+    sidebar: {
+      minWidth: 250,
+    },
+
+    tocSidebar: {
+      minWidth: '25%',
+      // The table of contents can get very long on the Terms of Service page.
+      overflowY: 'auto',
+      maxWidth: '25%',
     },
   },
 }));
@@ -36,9 +49,9 @@ const LegalNotice = ({ data: { notice, site }, location }) => {
         description={notice.frontmatter.description}
       />
 
-      <StickyFooter location={location}>
+      <StickyFooter location={location} maxWidthBreakpoint="none">
         <main className={classes.main}>
-          <Sidebar />
+          <Sidebar className={classes.sidebar} />
 
           <article className={classes.article}>
             <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
@@ -49,7 +62,7 @@ const LegalNotice = ({ data: { notice, site }, location }) => {
             />
           </article>
 
-          <TableOfContentsSidebar headings={notice.headings} />
+          <TableOfContentsSidebar headings={notice.headings} className={classes.tocSidebar} />
         </main>
       </StickyFooter>
     </>

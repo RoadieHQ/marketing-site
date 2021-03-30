@@ -1,9 +1,9 @@
 import React from 'react';
 import { Sidebar, SidebarSection, SidebarSectionList, SidebarItem } from 'components/Sidebar';
 
-const LegalNoticeSidebar = () => {
+const LegalNoticeSidebar = ({ className }) => {
   return (
-    <Sidebar>
+    <Sidebar className={className}>
       <SidebarSection>
         <strong>Legal Notices</strong>
       </SidebarSection>
