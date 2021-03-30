@@ -37,7 +37,7 @@ const LegalNotice = ({ data: { notice, site }, location }) => {
 
       <StickyFooter location={location}>
         <main className={classes.main}>
-          <Sidebar location={location} />
+          <Sidebar />
 
           <article className={classes.article}>
             <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
