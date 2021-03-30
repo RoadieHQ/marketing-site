@@ -1,7 +1,5 @@
 import React from 'react';
-import Sidebar, { SidebarSection, SidebarSectionList } from 'components/Sidebar';
-
-import SidebarItem from './SidebarItem';
+import Sidebar, { SidebarSection, SidebarSectionList, SidebarItem } from 'components/Sidebar';
 
 const LegalNoticeSidebar = () => {
   return (
@@ -11,11 +9,31 @@ const LegalNoticeSidebar = () => {
       </SidebarSection>
 
       <SidebarSectionList>
-        <SidebarItem to="/legal-notices/terms-of-service/" text="Terms of Service & DPA" />
-        <SidebarItem to="/legal-notices/sub-processors/" text="List of Sub-Processors" />
-        <SidebarItem to="/legal-notices/privacy-policy/" text="Privacy Policy" />
-        <SidebarItem to="/legal-notices/cookies-policy/" text="Cookies Policy" />
-        <SidebarItem to="/legal-notices/acceptable-use-policy/" text="Acceptable Use Policy" />
+        <SidebarItem
+          to="/legal-notices/terms-of-service/"
+          text="Terms of Service & DPA"
+          partiallyActive={true}
+        />
+        <SidebarItem
+          to="/legal-notices/sub-processors/"
+          text="List of Sub-Processors"
+          partiallyActive={true}
+        />
+        <SidebarItem
+          to="/legal-notices/privacy-policy/"
+          text="Privacy Policy"
+          partiallyActive={true}
+        />
+        <SidebarItem
+          to="/legal-notices/cookies-policy/"
+          text="Cookies Policy"
+          partiallyActive={true}
+        />
+        <SidebarItem
+          to="/legal-notices/acceptable-use-policy/"
+          text="Acceptable Use Policy"
+          partiallyActive={true}
+        />
       </SidebarSectionList>
     </Sidebar>
   );

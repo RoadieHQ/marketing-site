@@ -17,12 +17,17 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const SidebarItem = ({ to, text }) => {
+const SidebarItem = ({ to, text, partiallyActive }) => {
   const classes = useStyles();
 
   return (
     <li>
-      <Link to={to} className={classes.link} activeClassName={classes.currentLink}>
+      <Link
+        to={to}
+        className={classes.link}
+        activeClassName={classes.currentLink}
+        partiallyActive={partiallyActive}
+      >
         {text}
       </Link>
     </li>
