@@ -20,4 +20,3 @@ export { default as TwoColumnLayout } from './TwoColumnLayout';
 export { default as ResponsiveSpacer } from './ResponsiveSpacer';
 export { default as TextLink } from './TextLink';
 export { default as ContentHeader } from './ContentHeader';
-export { default as Sidebar } from './Sidebar';
