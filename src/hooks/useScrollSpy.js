@@ -41,7 +41,7 @@ const useScrollSpy = ({
   });
 
   useEffect(() => {
-    const sectionElements = headings.map(({ id }) => document.querySelector(`#${id}`));
+    const sectionElements = headings.map(({ id }) => document.getElementById(id));
     const listener = () => handle(sectionElements);
     window.addEventListener('scroll', listener);
 
