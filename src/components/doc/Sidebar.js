@@ -1,7 +1,5 @@
 import React from 'react';
-import Sidebar, { SidebarSection, SidebarSectionList } from 'components/Sidebar';
-
-import SidebarItem from './SidebarItem';
+import Sidebar, { SidebarSection, SidebarSectionList, SidebarItem } from 'components/Sidebar';
 
 const DocSidebar = () => {
   return (

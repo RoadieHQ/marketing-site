@@ -33,3 +33,4 @@ const Sidebar = ({ children }) => {
 
 export default Sidebar;
 export { SidebarSection, SidebarSectionList } from './Section';
+export { default as SidebarItem } from './Item';
