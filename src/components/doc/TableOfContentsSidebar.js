@@ -12,15 +12,14 @@ const useStyles = createUseStyles((theme) => ({
     display: 'none',
   },
 
-  li: {
+  link: {
+    display: 'block',
     paddingTop: '0.2em',
     paddingBottom: '0.2em',
   },
 
-  activeSection: {
-    '& a': {
-      color: theme.palette.primary.main,
-    },
+  activeLink: {
+    color: theme.palette.primary.main,
   },
 
   [`@media (min-width: ${theme.breakpoints.values.xl}px)`]: {
@@ -52,10 +51,10 @@ const DocTableOfContentsSidebar = ({ headings }) => {
       <SidebarSectionList>
         {headings.map(({ value, id }, index) => {
           const isActive = activeSection === index;
-          const className = classnames(classes.li, isActive && classes.activeSection);
+          const className = classnames(classes.link, isActive && classes.activeLink);
           return (
-            <li className={className} key={id}>
-              <Link to={`#${id}`}>{value}</Link>
+            <li key={id}>
+              <Link to={`#${id}`} className={className}>{value}</Link>
             </li>
           );
         })}
