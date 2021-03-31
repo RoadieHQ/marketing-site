@@ -42,6 +42,9 @@ const TableOfContentsSidebar = ({ headings, className }) => {
     offsetPx: -200,
   });
 
+  // There's no point in showing the ToC if there are very few headings.
+  if (!headings || headings.length < 2) return null;
+
   return (
     <Sidebar className={classnames(classes.root, className)}>
       <SidebarSection>
