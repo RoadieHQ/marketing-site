@@ -36,10 +36,11 @@ const REQUIREMENTS = (() => {
 
 const OFFER = (() => {
   return [
-    `€50,000 to €70,000 base salary (or equivalent in your currency).`,
-    `0.25% to 0.75% stock options`,
-    `27 days paid time off`,
-    `Work remotely with flexible working hours.`,
+    `This is an excellent opportunity to join a fast-growing venture-backed start-up`,
+    `We offer a competitive salary based on experience`,
+    `We provide a meaningful stock options package`,
+    `27 days paid time off`,   
+    `Working remotely flexible working arrangements.`
   ];
 })();
 
