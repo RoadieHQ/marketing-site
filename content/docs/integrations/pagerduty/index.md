@@ -41,6 +41,9 @@ You will see the API key you have created in a modal window.
 
 Visit `https://<tenant-name>.roadie.so/secrets` and enter the API Key value from above into `PAGERDUTY_TOKEN`.
 
+
+**Note:** We just need you configure the token as it is from PagerDuty. If you are familiar with the way to configure PagerDuty in backstage on prem or locally you maybe using a more complicated format.
+
 ## References
 
 - [PagerDuty docs for creating API tokens](https://support.pagerduty.com/docs/generating-api-keys)
