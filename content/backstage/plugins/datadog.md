@@ -60,16 +60,16 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/plugins.ts
-        const OverviewContent = ({ entity }: { entity: Entity }) => (
-          &lt;Grid container spacing={3} alignItems="stretch">
-           ...
-           {isDatadogWidgetAvailable(entity) && (
-             &lt;Grid item>
-                 &lt;DatadogGraphWidget entity={entity} />
-             &lt;/Grid>
-             )}
-           ...
-           &lt;/Grid>
+      const OverviewContent = ({ entity }: { entity: Entity }) => (
+        &lt;Grid container spacing={3} alignItems="stretch">
+          ...
+          {isDatadogWidgetAvailable(entity) && (
+            &lt;Grid item>
+               &lt;DatadogGraphWidget entity={entity} />
+            &lt;/Grid>
+          )}
+          ...
+        &lt;/Grid>
       );
 
 ---       
