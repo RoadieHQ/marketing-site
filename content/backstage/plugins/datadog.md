@@ -62,14 +62,14 @@ gettingStarted:
       // packages/app/src/plugins.ts
         const OverviewContent = ({ entity }: { entity: Entity }) => (
           &lt;Grid container spacing={3} alignItems="stretch">
-          ...
-          {isDatadogWidgetAvailable(entity) && (
-            &lt;Grid item>
-                &lt;DatadogGraphWidget entity={entity} />
-            &lt;/Grid>
-            )}
-          ...
-          &lt;/Grid>
+           ...
+           {isDatadogWidgetAvailable(entity) && (
+             &lt;Grid item>
+                 &lt;DatadogGraphWidget entity={entity} />
+             &lt;/Grid>
+             )}
+           ...
+           &lt;/Grid>
       );
 
 ---       
