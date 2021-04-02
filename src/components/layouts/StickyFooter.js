@@ -2,7 +2,6 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 import { LayoutControl, SitewideHeader, SitewideFooter } from 'components';
-import TopBanner from 'components/home/TopBanner';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -33,8 +32,6 @@ const StickyFooter = ({ children, maxWidthBreakpoint, location, headerBottomBord
   return (
     <div className={classes.root}>
       <div className={classes.expandVertically}>
-        <TopBanner />
-
         <SitewideHeader
           location={location}
           bottomBorder={headerBottomBorder}
