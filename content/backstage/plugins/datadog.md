@@ -54,8 +54,6 @@ gettingStarted:
           &lt;/EntityPageLayout>
         &lt;/EntityPageLayout>
       );
-  
-
   - intro: Add widget to your Overview tab.
     language: typescript
     code: |
@@ -71,8 +69,6 @@ gettingStarted:
           ...
         &lt;/Grid>
       );
-
----       
 ---
 
 ## How to embed a datadog dashboard in Backstage
@@ -90,7 +86,6 @@ gettingStarted:
 * Within the dashboard you have chosen, click the settings cog on the screen's right-hand side, circled in red.
 
 ![dashboard](../../assets/dd-dashboard.png)
-
 
 * Copy the URL from the Sharing textbox.
 
@@ -148,4 +143,3 @@ metadata:
 Sharing Datadog dashboards and graphs makes them public on the internet and accessible by anyone with the URL. 
 
 Make sure you do not share these URLs with untrusted actors.
-
