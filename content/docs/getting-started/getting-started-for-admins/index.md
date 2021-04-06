@@ -88,13 +88,13 @@ There are automated ways to pull users and teams from GitHub, Active Directory a
 
 ### Step 1. Define a user and admin group
 
-On your local machine, create a YAML file named `admins.yaml` with the following content.
+On your local machine, create a YAML file named `roadie-backstage-admin.yaml` with the following content.
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: admins
+  name: roadie-backstage-admin # It must be this name
   description: Backstage administrators
 spec:
   type: team
@@ -111,7 +111,7 @@ spec:
   profile:
     displayName: # {NAME}
     email: # {EMAIL}
-  memberOf: [admins]
+  memberOf: [roadie-backstage-admin]
 ```
 
 Replace the placeholder values as described:
@@ -140,7 +140,7 @@ Click import on the confirmation screen which appears.
 
 ![confirmation panel showing what will be imported if we proceed](./admin-import-confirmation.png)
 
-Your group and user has now been imported. Click the link for `group:admin` to view your imported Group.
+Your group and user has now been imported. Click the link for `group:roadie-backstage-admin` to view your imported Group.
 
 ![the admin group and users that we just imported](./imported-admin-page.png)
 
