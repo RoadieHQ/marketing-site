@@ -132,17 +132,17 @@ Open the importer in Roadie Backstage by visiting `https://your-company.roadie.s
 
 Paste the path to the YAML file into the input and click Analyze.
 
-![an input with the URL of the yaml file we just created inside](./analyze-admins.png)
+![an input with the URL of the yaml file we just created inside](./add-admin-analyze-step.png)
 
 If you see a "Login Required" dialog, click GitHub to log in to GitHub via OAuth.
 
 Click import on the confirmation screen which appears.
 
-![confirmation panel showing what will be imported if we proceed](./admin-import-confirmation.png)
+![confirmation panel showing what will be imported if we proceed](./add-admin-confirm-step.png)
 
 Your group and user has now been imported. Click the link for `group:roadie-backstage-admin` to view your imported Group.
 
-![the admin group and users that we just imported](./imported-admin-page.png)
+![the admin group and users that we just imported](./add-admin-entity-page.png)
 
 ## Next steps
 
