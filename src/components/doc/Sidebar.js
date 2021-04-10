@@ -1,22 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Sidebar, SidebarSection, SidebarSectionList, SidebarItem } from 'components/Sidebar';
-import { createUseStyles } from 'react-jss';
+import { FaArrowCircleDown, FaArrowCircleUp } from 'react-icons/fa';
+import { Button } from 'components';
+import { createUseStyles, useTheme } from 'react-jss';
 import algoliasearch from 'algoliasearch/lite';
 import { getAlgoliaHits } from '@algolia/autocomplete-js';
 import Search, { SearchResult } from 'components/AlgoliaAutocomplete';
+import useMedia from 'react-use/lib/useMedia';
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_KEY
 );
 
-const useStyles = createUseStyles(() => ({
-  searchWrapper: {
-    paddingRight: 8,
+const useStyles = createUseStyles((theme) => ({
+  searchWrapper: {},
+
+  titleSection: {
+    marginBottom: 16,
   },
 
   title: {
     marginBottom: 4,
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+
+  slider: {
+    overflowY: 'hidden',
+    height: ({ isSliderOpen }) => isSliderOpen ? '100%' : 0,
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    searchWrapper: {
+      paddingRight: 8,
+    },
   },
 }));
 
@@ -44,51 +62,79 @@ const getSearchSources = ({ query }) => {
 };
 
 const DocSidebar = () => {
-  const classes = useStyles();
+  const theme = useTheme();
+  const isWide = useMedia(`(min-width: ${theme.breakpoints.values.md}px)`);
+  const [isOpen, setOpen] = useState(isWide);
+  const classes = useStyles({ isSliderOpen: isOpen });
+
+  const toggleSliderOpen = () => {
+    // It should never be possible to hide the nav on big screens. The feature only makes
+    // selse on mobile.
+    if (isOpen && !isWide) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  };
+
   return (
     <Sidebar>
-      <SidebarSection>
+      <div className={classes.titleSection}>
         <div className={classes.title}>
-          <strong>Documentation</strong>
+          <span>
+            <strong>Documentation</strong>
+          </span>
+          <span>
+            {!isWide && (
+              <Button
+                onClick={toggleSliderOpen}
+                text={isOpen ? 'Hide nav' : 'Show nav'}
+                icon={isOpen ? <FaArrowCircleUp /> : <FaArrowCircleDown />}
+              />
+            )}
+          </span>
         </div>
+
         <div className={classes.searchWrapper}>
           <Search
             placeholder="Search"
             getSources={getSearchSources}
           />
         </div>
-      </SidebarSection>
+      </div>
 
-      <SidebarSectionList title="Getting started">
-        <SidebarItem
-          to="/docs/getting-started/getting-started-for-admins/"
-          text="Configuring Roadie"
-        />
+      <nav className={classes.slider}>
+        <SidebarSectionList title="Getting started">
+          <SidebarItem
+            to="/docs/getting-started/getting-started-for-admins/"
+            text="Configuring Roadie"
+          />
 
-        <SidebarItem to="/docs/getting-started/adding-components/" text="Adding components" />
+          <SidebarItem to="/docs/getting-started/adding-components/" text="Adding components" />
 
-        <SidebarItem
-          to="/docs/getting-started/technical-documentation/"
-          text="Using TechDocs"
-        />
+          <SidebarItem
+            to="/docs/getting-started/technical-documentation/"
+            text="Using TechDocs"
+          />
 
-        <SidebarItem to="/docs/getting-started/openapi-specs/" text="Using OpenAPI specs" />
-      </SidebarSectionList>
+          <SidebarItem to="/docs/getting-started/openapi-specs/" text="Using OpenAPI specs" />
+        </SidebarSectionList>
 
-      <SidebarSectionList title="Integrations">
-        <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
-        <SidebarItem to="/docs/integrations/github-client/" text="GitHub via Oauth" />
-        <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
-        <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
-        <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
-        <SidebarItem to="/docs/integrations/jira/" text="Jira" />
-        <SidebarItem to="/docs/integrations/pagerduty/" text="PagerDuty" />
-        <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
-      </SidebarSectionList>
+        <SidebarSectionList title="Integrations">
+          <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
+          <SidebarItem to="/docs/integrations/github-client/" text="GitHub via Oauth" />
+          <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
+          <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
+          <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
+          <SidebarItem to="/docs/integrations/jira/" text="Jira" />
+          <SidebarItem to="/docs/integrations/pagerduty/" text="PagerDuty" />
+          <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
+        </SidebarSectionList>
 
-      <SidebarSectionList title="Custom plugins">
-        <SidebarItem to="/docs/custom-plugins/" text="Installing Custom Plugins" />
-      </SidebarSectionList>
+        <SidebarSectionList title="Custom plugins">
+          <SidebarItem to="/docs/custom-plugins/" text="Installing Custom Plugins" />
+        </SidebarSectionList>
+      </nav>
     </Sidebar>
   );
 };
