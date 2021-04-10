@@ -113,7 +113,12 @@ const Home = ({ data, location }) => {
 
         <ResponsiveSpacer>
           <div className={classes.callToActionWrapper}>
-            <Button to="/evaluation-request/" link={true} text="Join the waitlist" />
+            <Button
+              to="/evaluation-request/"
+              link={true}
+              text="Join the waitlist"
+              color="primary"
+            />
           </div>
         </ResponsiveSpacer>
       </StickyFooter>

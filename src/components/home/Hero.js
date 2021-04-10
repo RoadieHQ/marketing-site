@@ -53,6 +53,7 @@ const Hero = ({ headline, lead }) => {
               link={true}
               text="Join the waitlist"
               id="evaluation-request-link-button"
+              color="primary"
             />
           </div>
         </>
