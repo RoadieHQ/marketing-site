@@ -67,6 +67,7 @@ const NeedsAnalysisSurveyInner = ({ referredEmail }) => (
       to={`/onboarding-survey/?referred_email=${encodeURIComponent(referredEmail)}`}
       icon={<FaExternalLinkAlt />}
       text="Onwards"
+      color="primary"
     />
   </p>
 );

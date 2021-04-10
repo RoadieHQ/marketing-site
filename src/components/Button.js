@@ -6,20 +6,30 @@ import classnames from 'classnames';
 const useStyles = createUseStyles((theme) => ({
   root: {
     display: 'inline-block',
-    color: theme.palette.grey[100],
+
+    color: ({ color }) => {
+      if (color === 'primary') return theme.palette.grey[100];
+      return theme.palette.text.primary;
+    },
+
     textAlign: 'center',
     cursor: 'pointer',
     userSelect: 'none',
     border: 'none',
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: ({ color }) => {
+      if (color === 'primary') return theme.palette.primary.main;
+      return theme.palette.grey[300];
+    },
+
     textDecoration: 'none',
 
     // lg
     borderRadius: 0,
     padding: '0.1rem 0.8rem',
 
-    '&:hover': {
-      backgroundColor: theme.palette.primary.light,
+    '&:hover': ({ color }) => {
+      if (color === 'primary') return theme.palette.primary.light;
+      return theme.palette.grey[600];
     },
 
     '&:focus': {
@@ -50,8 +60,8 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Button = ({ text = 'Submit', icon, link = false, ...props }) => {
-  const classes = useStyles();
+const Button = ({ text = 'Submit', icon, link = false, color = 'default', ...props }) => {
+  const classes = useStyles({ color });
 
   let prefixIcon;
   if (icon) {

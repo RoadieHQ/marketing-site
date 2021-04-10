@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sidebar, SidebarSection, SidebarSectionList, SidebarItem } from 'components/Sidebar';
+import { Sidebar, SidebarSectionList, SidebarItem } from 'components/Sidebar';
 import { FaArrowCircleDown, FaArrowCircleUp } from 'react-icons/fa';
 import { Button } from 'components';
 import { createUseStyles, useTheme } from 'react-jss';

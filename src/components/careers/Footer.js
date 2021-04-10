@@ -35,7 +35,12 @@ const CareersFooter = ({ typeformSlug }) => {
       <LayoutControl maxWidthBreakpoint="lg">
         <InterstitialTitle text="Sound good?" />
         <div>
-          <Button to={applicationHref(typeformSlug)} link={true} text="Apply for this role" />
+          <Button
+            to={applicationHref(typeformSlug)}
+            link={true}
+            text="Apply for this role"
+            color="primary"
+          />
 
           <Link to="/careers/" className={classnames('typography-mono', classes.link)}>
             See all roles
