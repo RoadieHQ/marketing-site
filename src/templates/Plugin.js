@@ -28,16 +28,9 @@ const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
     paddingTop: 40,
     paddingBottom: 40,
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 
   notes: theme.preMadeStyles.content,
-
-  contentWrapper: {
-    paddingLeft: 16,
-    paddingRight: 16,
-  },
 }));
 
 const useHeaderStyles = createUseStyles(() => ({
@@ -45,8 +38,6 @@ const useHeaderStyles = createUseStyles(() => ({
     textAlign: 'center',
     paddingBottom: 90,
     paddingTop: 40,
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 }));
 
@@ -99,61 +90,57 @@ const PluginTemplate = ({ data, location }) => {
         email={email}
       />
 
-      <StickyFooter location={location}>
+      <StickyFooter location={location} maxWidthBreakpoint="md">
         <Header plugin={plugin} />
 
-        <div className={classes.contentWrapper}>
-          <LayoutControl maxWidthBreakpoint="md">
-            <InterstitialTitle text="Getting started is simple" />
+        <InterstitialTitle text="Getting started is simple" />
 
-            {plugin.frontmatter.gettingStarted.map((section, index) =>
-              section.title && section.title !== '' ? (
-                <InterstitialTitle text={section.title} key={`key-${index}`} />
-              ) : (
-                <CodeBlock
-                  language={section.language}
-                  code={section.code}
-                  intro={section.intro}
-                  key={`key-${index}`}
-                />
-              )
-            )}
+        {plugin.frontmatter.gettingStarted.map((section, index) =>
+          section.title && section.title !== '' ? (
+            <InterstitialTitle text={section.title} key={`key-${index}`} />
+          ) : (
+            <CodeBlock
+              language={section.language}
+              code={section.code}
+              intro={section.intro}
+              key={`key-${index}`}
+            />
+          )
+        )}
 
-            <InterstitialTitle text="How it looks" />
+        <InterstitialTitle text="How it looks" />
 
-            <div>
-              <Img
-                fluid={plugin.frontmatter.coverImage.childImageSharp.fluid}
-                alt={plugin.frontmatter.coverImageAlt}
-                className={classes.coverImage}
-              />
-            </div>
+        <div>
+          <Img
+            fluid={plugin.frontmatter.coverImage.childImageSharp.fluid}
+            alt={plugin.frontmatter.coverImageAlt}
+            className={classes.coverImage}
+          />
+        </div>
 
-            {plugin.notes && plugin.notes !== '' && (
-              <div>
-                <InterstitialTitle text="Things to know" />
-                <div className={classes.notes} dangerouslySetInnerHTML={{ __html: plugin.notes }} />
-              </div>
-            )}
+        {plugin.notes && plugin.notes !== '' && (
+          <div>
+            <InterstitialTitle text="Things to know" />
+            <div className={classes.notes} dangerouslySetInnerHTML={{ __html: plugin.notes }} />
+          </div>
+        )}
 
-            <div className={classes.callToActionWrapper}>
-              <InterstitialTitle text="Become a Backstage expert" />
+        <div className={classes.callToActionWrapper}>
+          <InterstitialTitle text="Become a Backstage expert" />
 
-              <p className={classes.callToActionParagraph}>
-                To get the latest news, deep dives into Backstage features, and a roundup of recent
-                open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
-                <a href="/backstage-weekly/">See recent editions.</a>
-              </p>
+          <p className={classes.callToActionParagraph}>
+            To get the latest news, deep dives into Backstage features, and a roundup of recent
+            open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
+            <a href="/backstage-weekly/">See recent editions.</a>
+          </p>
 
-              <CallToAction
-                setModalOpen={setModalOpen}
-                buttonText="Subscribe"
-                netlifyFormName={FORM_NAMES.subscribeToNewsletter}
-                email={email}
-                setEmail={setEmail}
-              />
-            </div>
-          </LayoutControl>
+          <CallToAction
+            setModalOpen={setModalOpen}
+            buttonText="Subscribe"
+            netlifyFormName={FORM_NAMES.subscribeToNewsletter}
+            email={email}
+            setEmail={setEmail}
+          />
         </div>
       </StickyFooter>
     </>
