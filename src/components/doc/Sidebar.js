@@ -31,9 +31,17 @@ const useStyles = createUseStyles((theme) => ({
     height: ({ isSliderOpen }) => isSliderOpen ? '100%' : 0,
   },
 
+  sliderToggleWrapper: {
+    display: 'inline',
+  },
+
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     searchWrapper: {
       paddingRight: 8,
+    },
+
+    sliderToggleWrapper: {
+      display: 'none',
     },
   },
 }));
@@ -84,14 +92,12 @@ const DocSidebar = () => {
           <span>
             <strong>Documentation</strong>
           </span>
-          <span>
-            {!isWide && (
-              <Button
-                onClick={toggleSliderOpen}
-                text={isOpen ? 'Hide nav' : 'Show nav'}
-                icon={isOpen ? <FaArrowCircleUp /> : <FaArrowCircleDown />}
-              />
-            )}
+          <span className={classes.sliderToggleWrapper}>
+            <Button
+              onClick={toggleSliderOpen}
+              text={isOpen ? 'Hide nav' : 'Show nav'}
+              icon={isOpen ? <FaArrowCircleUp /> : <FaArrowCircleDown />}
+            />
           </span>
         </div>
 
