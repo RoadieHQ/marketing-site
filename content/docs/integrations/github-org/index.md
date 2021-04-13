@@ -12,12 +12,14 @@ This page describes how to do that.
 
 ## Prerequisites
 
+- You must be using *Okta* for sign-in 
 - You will need a git repository for the configuration of Backstage.
 - The github token configured in the backstage secrets must have the `read:user` and `user:email` scopes.
 
 ## Steps
 
-1. If the name of your organization was "acme", you would create a file in the github repository called github-org.yaml with the following contents:
+1. Configure okta to return a field `githubUsername` in the ID token with profile scope.
+2. If the name of your organization was "acme", you would create a file in the github repository called github-org.yaml with the following contents:
 
    ```yaml
    apiVersion: backstage.io/v1alpha1
