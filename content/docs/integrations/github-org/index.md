@@ -18,7 +18,7 @@ This page describes how to do that.
 
 ## Steps
 
-1. Configure okta to return a field `githubUsername` in the ID token with profile scope.
+1. If using Okta configure okta to return a field `githubUsername` in the ID token with profile scope.
 2. If the name of your organization was "acme", you would create a file in the github repository called github-org.yaml with the following contents:
 
    ```yaml
