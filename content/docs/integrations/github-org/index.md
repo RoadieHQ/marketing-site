@@ -12,7 +12,7 @@ This page describes how to do that.
 
 ## Prerequisites
 
-- You must be using *Github or Okta* for sign-in 
+- You must be using *GitHub* or *Okta* for sign-in 
 - You will need a git repository for the configuration of Backstage.
 - The github token configured in the backstage secrets must have the `read:user` and `user:email` scopes.
 
