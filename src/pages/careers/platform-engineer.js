@@ -31,7 +31,7 @@ const REQUIREMENTS = (() => {
     `A college degree is ${renderToString(<strong>NOT</strong>)} required.`,
     `You're excited to learn and apply new technical skills. Bonus: You share your enthusiasm with the world.`,
     `Bonus: Worked with AWS EKS.`,
-    `Bonus: Have experience in Typescript/Javascript.`,
+    `Bonus: Have experience in TypeScript/JavaScript.`,
     `Bonus: Have Pulumi or Terraform experience.`,
   ];
 })();
