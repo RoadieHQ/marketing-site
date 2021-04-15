@@ -1,6 +1,6 @@
 ---
 title: Adding Components to Backstage
-lastUpdated: '2021-03-16T21:00:00.0Z'
+lastUpdated: '2021-04-15T21:00:00.0Z'
 description: How to add components such as services or websites to the Backstage catalog.
 ---
 
@@ -52,13 +52,9 @@ Click Create PR. This will open a pull request against your repository.
 
 Import the component into Backstage by clicking the Import button. You can import the component before the pull request is merged. Backstage will automatically detect when the pull request is merged.
 
-Click the displayed link to view the pull request on GitHub. Review it and merge it to add the component to Backstage.
+### Step 2. Merge the PR
 
-![the page on GitHub.com which allows you to review and comment on a pull request before merging it](./review-pr.png)
-
-### Step 2. Review the PR
-
-Review the pull request that Backstage opens by clicking the link.
+Review and merge the pull request that Backstage opens on your behalf.
 
 ![An open PR on GitHub which will add a catalog-info.yaml file once merged](./opened-pr-on-github.png)
 
