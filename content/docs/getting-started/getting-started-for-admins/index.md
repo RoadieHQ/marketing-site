@@ -1,14 +1,17 @@
 ---
 title: Configuring Roadie
-lastUpdated: '2021-03-16T21:00:00.0Z'
+lastUpdated: '2021-04-15T21:00:00.0Z'
 description: How to set up Roadie before rolling it out across your organization.
 ---
 
 ## Introduction
 
-This tutorial will guide you through the steps required to populate Roadie with a component which is owned by you.
+This tutorial will guide you through the steps required to set Roadie up for basic use within your organization. Once completed, you will:
 
-3 kinds of Backstage resource are used in this tutorial.
+ 1. Be an admin user of Roadie.
+ 2. Have connected Roadie to your organization's GitHub account.
+
+There are 3 kinds of Backstage resource used in this tutorial.
 
 1. The `User` entity represents an employee at your company.
 2. The `Group` entity represents a team or larger organizational structure.
@@ -18,20 +21,20 @@ This tutorial will guide you through the steps required to populate Roadie with 
 
 In order to complete this guide, you will need the following things:
 
-1. Access to a Roadie account. If you do not yet have access, please [sign up for a demo](/).
-2. A GitHub Cloud or GitHub Enterprise Cloud account. Roadie also supports Bitbucket and GitLab but you must contact us directly to discuss your needs.
+1. Access to a Roadie account. If you do not yet have access, please [join the waiting list](/).
+2. A GitHub Cloud or GitHub Enterprise Cloud account.
 3. A test service on GitHub which you can make changes to.
 
 ## Connect Roadie to GitHub
 
 Roadie needs 2 connections to GitHub in order to function.
 
-1.  It needs a Personal Access Token to access the YAML metadata files that Backstage needs to operate.
-2.  It needs an OAuth client ID and Secret so that your user can make requests from the browser to the GitHub API.
+1.  A Personal Access Token to access the YAML metadata files that Backstage needs to operate.
+2.  An OAuth client ID and secret so that your user can make requests from the browser to the GitHub API.
 
-Use the steps below to create a Client ID and secret and Personal Access Token (PAT) for Roadie.
+Use the steps below to create a client ID and secret and Personal Access Token (PAT) for Roadie.
 
-If you wish to tightly restrict the access that Roadie has, please [follow this guide](/docs/github-token/).
+If you wish to tightly restrict the access that Roadie has, perhaps for evaluation purposes, please [follow this guide](/docs/github-token/).
 
 ### Step 1. Create a Personal Access Token (PAT)
 
@@ -60,13 +63,13 @@ Click "Register Application" and then "Generate a new client secret".
 
 ![generate client secret button on the GitHub interface](./generate-client-secret.png)
 
-Take a note of the Client ID and the generated Client Secret. You will need these in the next step.
+Take a note of the client ID and the generated client Secret. You will need these in the next step.
 
 ![Generated client ID and secret on GitHub](./github-client-id-and-secret.png)
 
 ### Step 3. Add the PAT and OAuth credentials to Roadie
 
-Visit the Secrets management interface on Roadie Backstage at `https://your-company.roadie.so/secrets`.
+Visit the Secrets management interface on Roadie Backstage at `https://your-company.roadie.so/administration`.
 
 Find the `GITHUB_TOKEN` field. Click the Pencil Icon to edit the field.
 
@@ -82,67 +85,25 @@ Wait until Roadie has activated the token before proceeding.
 
 ## Add an admin group and user
 
-Now that Roadie has GitHub access, we can load in a User and Group.
+Roadie admins have special powers such as the ability to add and remove Backstage plugins. We will use GitHub teams to create an admin group for Roadie.
 
-There are automated ways to pull users and teams from GitHub, Active Directory and other places. For the purposes of this tutorial, we will do it manually.
+ℹ️  Admin groups are **not** a security measure. They hide certain UX features from regular users in order to simplify the experience. Backstage does not currently support role based access control (RBAC).
 
-### Step 1. Define a user and admin group
+### Step 1. Create an admin group on GitHub teams
 
-On your local machine, create a YAML file named `roadie-backstage-admin.yaml` with the following content.
+Visit GitHub Teams in your organization's GitHub account and click the New Team button.
 
-```yaml
-apiVersion: backstage.io/v1alpha1
-kind: Group
-metadata:
-  name: roadie-backstage-admin # It must be this name
-  description: Backstage administrators
-spec:
-  type: team
-  profile:
-    displayName: Backstage Admins
-    email: # {EMAIL}
-  children: []
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: # {LOGIN}
-spec:
-  profile:
-    displayName: # {NAME}
-    email: # {EMAIL}
-  memberOf: [roadie-backstage-admin]
-```
+Set the Team name to `roadie-backstage-admin`. This is a special value and must be an exact match.
 
-Replace the placeholder values as described:
+Enter a Description such as "Users with Backstage administration abilities.".
 
-| Placeholder | Value                                                                                  |
-| ----------- | -------------------------------------------------------------------------------------- |
-| `{NAME}`    | Your full name. This helps your colleagues recognise you inside Backstage.             |
-| `{LOGIN}`   | The portion of the email address that you use to log into Roadie up to the `@` symbol. |
-| `{EMAIL}`   | Your company email address. This helps your colleagues contact you if needed.          |
+Leave Parent team unselected and click the Create team button.
 
-### Step 2. Put the file on GitHub
+![Form for creating a team on GitHub](./github-create-team-form.png)
 
-Put this file on GitHub in a respository that Roadie can access. Take a note of the full path to the file on GitHub. It will look like this: `https://github.com/your-org/your-repo/blob/main/admins.yaml`.
+By default, GitHub adds your account to the team as a member. You are now an admin on Roadie.
 
-### Step 3. Import the group to Roadie
-
-Open the importer in Roadie Backstage by visiting `https://your-company.roadie.so/catalog-import`.
-
-Paste the path to the YAML file into the input and click Analyze.
-
-![an input with the URL of the yaml file we just created inside](./add-admin-analyze-step.png)
-
-If you see a "Login Required" dialog, click GitHub to log in to GitHub via OAuth.
-
-Click import on the confirmation screen which appears.
-
-![confirmation panel showing what will be imported if we proceed](./add-admin-confirm-step.png)
-
-Your group and user has now been imported. Click the link for `group:roadie-backstage-admin` to view your imported Group.
-
-![the admin group and users that we just imported](./add-admin-entity-page.png)
+ℹ️  It can take some time for Roadie to refresh the list of teams from GitHub teams. If you do not see admin functions immediately, please wait a few minutes and try again.
 
 ## Next steps
 

@@ -12,7 +12,7 @@ For example
 
 1. Roadie uses the access token to read the `catalog-info.yaml` files in the root of each repo.
 1. Roadie uses the access token to create repos and write code to them when users use the scaffolder to create new services.
-1. Roadie uses the access token to read users and teams from your GitHub organization so it can associate teams with the services they own. (This functionality is coming soon).
+1. Roadie uses the access token to read users and teams from your GitHub organization so it can associate teams with the services they own.
 
 There are multiple ways to create and grant scopes on the access token, depending on the level of access that you wish Backstage to have.
 
