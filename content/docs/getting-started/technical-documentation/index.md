@@ -40,7 +40,7 @@ This is the documentation.
 
 Your component's directory structure should now look something like this:
 
-```plain
+```
 ├── README.md
 ├── catalog-info.yaml
 ├── docs
