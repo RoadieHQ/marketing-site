@@ -105,7 +105,6 @@ const theme = {
         display: 'block',
         maxWidth: 'fit-content',
         overflowX: 'auto',
-        whiteSpace: 'nowrap',
       },
 
       '& th, & td': {
