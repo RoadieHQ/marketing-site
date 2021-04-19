@@ -35,7 +35,6 @@ On the modal window you can give the token a label, so you can recognize it late
 
 The Jira plugin handles authentication using Basic auth so the token needs to be converted into a compatible format. First we need to prefix the token with the Jira user email and base64 encode it. For example `jira-mail@example.com:hTBgqVcrcxRYpT5TCzTA9C0F` converts to `amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==`
 
-Next step is to to prefix base64 encoded token value with `Basic `. For example the above token would finally become `Basic amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==`
 ### Step 3: Store the credentials and Jira URL in Roadie
 Visit `https://<tenant-name>.roadie.so/secrets` and enter the base64 encoded and prefixed token value from above into `JIRA_API_TOKEN`.
 
