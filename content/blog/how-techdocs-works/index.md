@@ -5,7 +5,7 @@ description: TechDocs converts markdown files to Backstage docs so your engineer
 tags: ['tutorial', 'techdocs']
 ---
 
-TechDocs is the process by which markdown documentation is transformed into HTML and displayed inside Backstage where your engineering teams can find and reference it.
+TechDocs is the core Backstage feature which transforms markdown documentation into HTML and displays it inside Backstage where your engineering teams can find it.
 
 There are two ways to set up TechDocs in Backstage, the Basic approach and the Recommended approache. But how do they work and which should you use?
 
