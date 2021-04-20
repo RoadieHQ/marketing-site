@@ -11,5 +11,5 @@ metadata:
     backstage.io/techdocs-ref: url:https://github.com/RoadieHQ/marketing-site/tree/main
 spec:
   type: website
-  owner: user:david
+  owner: roadie
   lifecycle: production
