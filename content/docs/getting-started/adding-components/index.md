@@ -64,6 +64,18 @@ Click the Home link in the Backstage sidebar to go back to the catalog where you
 
 ![our component visible on the other tab of Backstage](./component-on-other-tab.png)
 
+## Configuring Backstage to auto discover github repositories using the github discovery processor
+
+The Roadie team can configure your backstage instance to auto discover catalog yaml files created in your github repositories. To do this, please contact one of us and we will be happy to configure it for you.
+
+We will need a url pattern to discover the catalog files.
+
+```text
+https://github.com/AcmeInc/*/blob/main/catalog-info.yaml
+```
+
+You can use regular regex syntax in the repository name part of the github url as shown above.
+
 ## Next steps
 
 Let's [add some documentation for the component we just created](/docs/getting-started/technical-documentation/) so that others in your organization can easily learn how to use it.
