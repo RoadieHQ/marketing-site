@@ -68,7 +68,7 @@ Click the Home link in the Backstage sidebar to go back to the catalog where you
 
 The Roadie team can configure your Backstage instance to auto discover `catalog-info.yaml` files created in your GitHub repositories. To do this, please contact us via Slack and we will be happy to configure it for you.
 
-We will need a url pattern to discover the catalog files.
+We will need a URL pattern to discover the catalog files.
 
 ```text
 https://github.com/AcmeInc/*/blob/main/catalog-info.yaml
