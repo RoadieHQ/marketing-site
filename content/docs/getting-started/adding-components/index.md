@@ -74,7 +74,7 @@ We will need a URL pattern to discover the catalog files.
 https://github.com/AcmeInc/*/blob/main/catalog-info.yaml
 ```
 
-You can use regular regex syntax in the repository name part of the github url as shown above.
+You can use regular regex syntax in the repository name part of the GitHub URL as shown above.
 
 ## Next steps
 
