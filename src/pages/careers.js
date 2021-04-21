@@ -63,7 +63,7 @@ const OPEN_ROLES = [
   [
     {
       title() {
-        return <Link to="/careers/sr-open-source-engineer/">Senior Open Source Engineer</Link>;
+        return <Link to="/careers/sr-open-source-engineer/">Open Source Engineer</Link>;
       },
       text: `Become an integral part of leading our open-source efforts.  `,
     },
