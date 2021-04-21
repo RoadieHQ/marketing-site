@@ -9,7 +9,7 @@ import Main from 'components/careers/Main';
 import { backstageLink } from 'components/careers/links';
 import {renderToString} from "react-dom/server";
 
-const ROLE_NAME = 'Senior open-source engineer';
+const ROLE_NAME = 'Open-source engineer';
 const TYPEFORM_SLUG = 'sr-open-source-engineer';
 const HEADLINE = 'Become an integral part of leading our open-source efforts.';
 
