@@ -1,9 +1,19 @@
 require('dotenv').config();
 const has = require('lodash/has');
+const get = require('lodash/get');
 const agoliaQueries = require('./src/queries/agolia');
 const theme = require('./src/theme');
 
 const SITE_TITLE = 'Roadie';
+
+const skipAlgoliaIndexing =
+  has(process.env, 'GITHUB_ACTIONS') ||
+  // Set this environment variable to the string 'true' if you want to emulate a production 
+  // build but skip indexing.
+  get(process.env, 'ALGOLIA_SKIP_INDEXING', 'false') === 'true' ||
+  // This environment variable exists in netlify builds.
+  // https://docs.netlify.com/configure-builds/environment-variables/#build-metadata
+  get(process.env, 'CONTEXT', 'false') === 'production';
 
 module.exports = {
   siteMetadata: {
@@ -36,7 +46,7 @@ module.exports = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: agoliaQueries,
         // Indexing will be run by netlify on deployment.
-        skipIndexing: has(process.env, 'GITHUB_ACTIONS'),
+        skipIndexing: skipAlgoliaIndexing,
       },
     },
 
