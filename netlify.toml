@@ -23,3 +23,9 @@
   from = "/docs/"
   to = "/docs/getting-started/getting-started-for-admins/"
   force = true
+
+[build]
+  publish = "public"
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
