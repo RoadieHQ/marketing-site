@@ -18,7 +18,7 @@
     "date-fns": "^2.19.0",
     "gatsby": "^3.2.1",
     "gatsby-image": "^3.2.0",
-    "gatsby-plugin-algolia": "^0.16.4",
+    "gatsby-plugin-algolia": "^0.18.0",
     "gatsby-plugin-force-trailing-slashes": "^1.0.5",
     "gatsby-plugin-google-analytics": "^3.2.0",
     "gatsby-plugin-jss": "^3.2.0",
