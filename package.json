@@ -14,7 +14,7 @@
     "algoliasearch": "^4.9.0",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^1.2.0",
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.0",
     "date-fns": "^2.20.0",
     "gatsby": "^3.2.1",
     "gatsby-image": "^3.2.0",
