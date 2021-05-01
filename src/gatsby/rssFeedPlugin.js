@@ -19,6 +19,7 @@ module.exports = [{
         return allMarkdownRemark.edges.map((edge) => ({
           title: edge.node.frontmatter.title,
           date: edge.node.frontmatter.date,
+          description: edge.node.frontmatter.description,
           url: site.siteMetadata.siteUrl + edge.node.fields.slug,
           guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
           custom_elements: [{
@@ -28,7 +29,7 @@ module.exports = [{
       },
 
       query: `
-        query {
+        query AllBlogPostsForRss {
           allMarkdownRemark(
             sort: { fields: [frontmatter___date], order: DESC }
             filter: { fileAbsolutePath: { regex: "/.+/blog/.+/" } }
@@ -44,6 +45,7 @@ module.exports = [{
                 frontmatter {
                   date
                   title
+                  description
                 }
               }
             }
