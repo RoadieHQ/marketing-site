@@ -3,6 +3,7 @@ const has = require('lodash/has');
 const get = require('lodash/get');
 const agoliaQueries = require('./src/queries/agolia');
 const theme = require('./src/theme');
+const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
 
 const SITE_TITLE = 'Roadie';
 
@@ -128,5 +129,7 @@ module.exports = {
     `gatsby-plugin-force-trailing-slashes`,
     'gatsby-plugin-twitter',
     'gatsby-plugin-netlify',
+
+    ...rssFeedPlugin,
   ],
 };
