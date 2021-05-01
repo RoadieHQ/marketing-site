@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 
 import { SEO, StickyFooter } from 'components';
 import PostSummary from 'components/blog/PostSummary';
+import HeadRssLink from 'components/blog/HeadRssLink';
 
 const MAX_WIDTH_BREAKPOINT = 'md';
 
@@ -21,14 +21,7 @@ const BlogIndex = ({ data, location }) => {
         `}
       />
 
-      <Helmet>
-        <link
-          rel="alternate"
-          type="application/rss+xml" 
-          title="Subscribe to the Roadie blog"
-          href="/blog/rss.xml"
-        />
-      </Helmet>
+      <HeadRssLink />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         {posts.map(({ node }) => (

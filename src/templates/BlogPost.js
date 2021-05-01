@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import { Helmet } from 'react-helmet';
 
-import { SEO, InterstitialTitle, Link, ContentHeader } from 'components';
-import StickyFooter from 'components/layouts/StickyFooter';
+import { SEO, InterstitialTitle, Link, ContentHeader, StickyFooter } from 'components';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 import CallToAction from 'components/actions/NetlifyFormCallToAction';
+import HeadRssLink from 'components/blog/HeadRssLink';
 import { FORM_NAMES } from '../contactFormConstants';
 
 const useStyles = createUseStyles((theme) => ({
@@ -46,14 +45,7 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <Helmet>
-        <link
-          rel="alternate"
-          type="application/rss+xml" 
-          title="Subscribe to the Roadie blog"
-          href="/blog/rss.xml"
-        />
-      </Helmet>
+      <HeadRssLink />
 
       <FormSubmissionModal
         modalOpen={modalOpen}
