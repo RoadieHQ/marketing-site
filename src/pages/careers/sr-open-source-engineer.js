@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
 
 import { SEO, StickyFooter } from 'components';
 import Hero from 'components/careers/Hero';
@@ -11,7 +10,7 @@ import {renderToString} from "react-dom/server";
 
 const ROLE_NAME = 'Open-source engineer';
 const TYPEFORM_SLUG = 'sr-open-source-engineer';
-const HEADLINE = 'Become an integral part of leading our open-source efforts.';
+const HEADLINE = 'Drive our open-source efforts.';
 
 const ROLE = (() => {
   return [
