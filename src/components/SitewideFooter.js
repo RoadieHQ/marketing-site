@@ -39,7 +39,7 @@ const SitewideFooter = () => {
   return (
     <footer className={classes.root}>
       <div className={classes.inner}>
-        <div>© {new Date().getFullYear()} Larder Software Limited. All rights reserved.</div>
+        <div>© {new Date().getFullYear()} Larder Software Limited</div>
 
         <nav>
           <Link to="/careers/">Careers</Link>
