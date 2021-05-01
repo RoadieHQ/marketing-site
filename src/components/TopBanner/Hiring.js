@@ -21,7 +21,7 @@ const useStyles = createUseStyles((theme) => ({
 const Hiring = () => {
   const classes = useStyles();
   return (
-    <Link to="/careers/" className={classes.link}>
+    <Link to="/careers/sr-open-source-engineer/" className={classes.link}>
       <span className={classes.highlight}>We&apos;re hiring! </span>
       <span>Become a Backstage contributor</span>
     </Link>
