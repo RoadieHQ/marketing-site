@@ -6,6 +6,7 @@ import { Lead, SEO, StickyFooter, InterstitialTitle } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 import CallToAction from 'components/actions/NetlifyFormCallToAction';
+import HeadRssLink from 'components/blog/HeadRssLink';
 import { FORM_NAMES } from '../contactFormConstants';
 import roadieRLogo from '../../content/assets/roadie-r-764x764.png';
 
@@ -50,6 +51,8 @@ const BlogIndex = ({ data, location }) => {
           releases and changes in this service catalog from Spotify.
         `}
       />
+
+      <HeadRssLink />
 
       <FormSubmissionModal
         modalOpen={modalOpen}
