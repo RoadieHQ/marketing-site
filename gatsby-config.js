@@ -8,7 +8,7 @@ const SITE_TITLE = 'Roadie';
 
 const skipAlgoliaIndexing =
   has(process.env, 'GITHUB_ACTIONS') ||
-  // Set this environment variable to the string 'true' if you want to emulate a production 
+  // Set this environment variable to the string 'true' if you want to emulate a production
   // build but skip indexing.
   get(process.env, 'ALGOLIA_SKIP_INDEXING', 'false') === 'true' ||
   // This environment variable exists in netlify builds.
