@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
+import { Helmet } from 'react-helmet';
 
 import { SEO, InterstitialTitle, Link, ContentHeader } from 'components';
 import StickyFooter from 'components/layouts/StickyFooter';
@@ -44,6 +45,16 @@ const BlogPostTemplate = ({ data, location }) => {
         title={`${post.frontmatter.title} | ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt}
       />
+
+      <Helmet>
+        <link
+          rel="alternate"
+          type="application/rss+xml" 
+          title="Subscribe to the Roadie blog"
+          href="/blog/rss.xml"
+        />
+      </Helmet>
+
       <FormSubmissionModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}

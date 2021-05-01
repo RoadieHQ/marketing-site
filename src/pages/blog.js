@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 import { SEO, StickyFooter } from 'components';
 import PostSummary from 'components/blog/PostSummary';
@@ -19,6 +20,15 @@ const BlogIndex = ({ data, location }) => {
           services and APIs. We write about it here.
         `}
       />
+
+      <Helmet>
+        <link
+          rel="alternate"
+          type="application/rss+xml" 
+          title="Subscribe to the Roadie blog"
+          href="/blog/rss.xml"
+        />
+      </Helmet>
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         {posts.map(({ node }) => (
