@@ -1,11 +1,12 @@
 import React from 'react';
-import { FaBars, FaTimes, FaTwitter, FaGithub, FaSpotify } from 'react-icons/fa';
+import { FaBars, FaTimes, FaTwitter, FaGithub } from 'react-icons/fa';
 import Menu from 'react-burger-menu/lib/menus/slide';
 import { createUseStyles } from 'react-jss';
 import { TextLink } from 'components';
 
 import IconLink from '../IconLink';
 import { LINE_HEIGHT } from './Logo';
+import BackstageLogo from './BackstageLogo';
 
 const styles = {
   bmBurgerButton: {
@@ -170,7 +171,7 @@ const HamburgerMenu = ({ siteMetadata }) => {
 
           <span className={classes.iconSpacer}>
             <IconLink to="https://backstage.io" text="Backstage" color="contrasting">
-              <FaSpotify />
+              <BackstageLogo />
             </IconLink>
           </span>
         </div>

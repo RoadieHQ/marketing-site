@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { graphql, useStaticQuery } from 'gatsby';
-import { FaTwitter, FaGithub, FaSpotify } from 'react-icons/fa';
+import { FaTwitter, FaGithub } from 'react-icons/fa';
 import { TextLink, LayoutControl } from 'components';
 
 import IconLink from '../IconLink';
@@ -9,6 +9,7 @@ import styles from './styles';
 import NavItemSpacer from './NavItemSpacer';
 import Logo from './Logo';
 import HamburgerMenu from './HamburgerMenu';
+import BackstageLogo from './BackstageLogo';
 
 const useStyles = createUseStyles(styles);
 
@@ -54,7 +55,7 @@ const SitewideHeader = ({ maxWidthBreakpoint, bottomBorder = true }) => {
 
             <NavItemSpacer>
               <IconLink to="https://backstage.io">
-                <FaSpotify />
+                <BackstageLogo />
               </IconLink>
             </NavItemSpacer>
           </nav>
