@@ -171,7 +171,7 @@ const HamburgerMenu = ({ siteMetadata }) => {
 
           <span className={classes.iconSpacer}>
             <IconLink to="https://backstage.io" text="Backstage" color="contrasting">
-              <BackstageLogo />
+              <BackstageLogo color="light" />
             </IconLink>
           </span>
         </div>
