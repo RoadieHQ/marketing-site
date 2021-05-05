@@ -8,6 +8,8 @@ tags: ['tutorial']
 
 In this tutorial, we're going to build and run a basic Backstage application with Docker Compose. The application will be able to store data in a PostgreSQL database, and connect to GitHub to pull in repositories. We will also make a config change in the Backstage application and re-run it.
 
+**Just want to get started quickly?** Check out our community [Backstage Docker image](/backstage/docker-image/).
+
 ## Prerequisites
 
 To complete this tutorial, you will need:

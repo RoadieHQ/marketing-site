@@ -7,7 +7,6 @@ import Img from 'gatsby-image';
 import {
   Lead,
   Headline,
-  LayoutControl,
   StickyFooter,
   InterstitialTitle,
   CodeBlock,
