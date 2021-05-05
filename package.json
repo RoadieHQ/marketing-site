@@ -48,7 +48,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-jss": "^10.6.0",
-    "react-modal": "^3.12.1",
+    "react-modal": "^3.13.1",
     "react-use": "^17.2.3"
   },
   "devDependencies": {
