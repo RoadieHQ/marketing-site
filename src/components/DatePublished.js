@@ -1,6 +1,7 @@
 import React from 'react';
 import format from 'date-fns/format';
 import formatDistance from 'date-fns/formatDistance';
+import has from 'lodash/has';
 
 const DatePublished = ({
   frontmatter,
@@ -9,6 +10,7 @@ const DatePublished = ({
   dateKey = 'date',
 }) => {
   const FORMAT_TOKEN = 'MMMM do, yyyy';
+  if (!has(frontmatter, dateKey)) return null;
   const date = frontmatter[dateKey];
   const dateTimestamp = Date.parse(date);
   const lastValidatedTimestamp = Date.parse(frontmatter.lastValidated);
