@@ -8,6 +8,9 @@ import CallToAction from 'components/actions/NetlifyFormCallToAction';
 import { FORM_NAMES } from '../contactFormConstants';
 import Hero from 'components/home/Hero';
 import FeatureBlock from 'components/home/FeatureBlock';
+import undrawSearch from '../../content/assets/undraw/undraw_Search_re_x5gq.svg';
+import undrawEducation from '../../content/assets/undraw/undraw_education_f8ru.svg';
+import undrawPeopleSearch from '../../content/assets/undraw/undraw_people_search_wctu.svg';
 
 const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
@@ -91,7 +94,7 @@ const OnboardingLandingPage = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl="url(/undraw/undraw_people_search_wctu.svg)"
+            backgroundImageUrl={`url(${undrawPeopleSearch})`}
             text={
               <div>
                 <h2>&quot;Who knows how the CI system works?&quot;</h2>
@@ -111,7 +114,7 @@ const OnboardingLandingPage = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="left"
-            backgroundImageUrl="url(/undraw/undraw_education_f8ru.svg)"
+            backgroundImageUrl={`url(${undrawEducation})`}
             text={
               <div>
                 <h2>&quot;Where are the docs for X?&quot;</h2>
@@ -132,7 +135,7 @@ const OnboardingLandingPage = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl="url(/undraw/undraw_Search_re_x5gq.svg)"
+            backgroundImageUrl={`url(${undrawSearch})`}
             text={
               <div>
                 <h2>&quot;Do we have a geocoding API?&quot;</h2>
