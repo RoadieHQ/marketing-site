@@ -2,6 +2,8 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
+import undrawContentTeam from '../../../content/assets/undraw/undraw_content_team_3epn.svg';
+
 const useStyles = createUseStyles(() => ({
   image: {
     backgroundSize: 'contain',
@@ -13,7 +15,7 @@ const useStyles = createUseStyles(() => ({
 }));
 
 const BackgroundImage = ({
-  backgroundImage = 'url(/undraw/undraw_content_team_3epn.svg)',
+  backgroundImage = `url(${undrawContentTeam})`,
   className,
 }) => {
   const classes = useStyles();

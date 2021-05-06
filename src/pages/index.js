@@ -5,6 +5,10 @@ import { Button, SEO, InterstitialTitle, StickyFooter, ResponsiveSpacer } from '
 import Hero from 'components/home/Hero';
 import FeatureBlock from 'components/home/FeatureBlock';
 
+import undrawEducation from '../../content/assets/undraw/undraw_education_f8ru.svg';
+import undrawSearch from '../../content/assets/undraw/undraw_the_search_s0xf.svg';
+import undrawBuildingWebsites from '../../content/assets/undraw/undraw_building_websites_i78t.svg';
+
 const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
     display: 'flex',
@@ -54,7 +58,7 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl="url(/undraw/undraw_the_search_s0xf.svg)"
+            backgroundImageUrl={`url(${undrawSearch})`}
             text={
               <div>
                 <h2>Service catalog for discoverability</h2>
@@ -71,7 +75,7 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="left"
-            backgroundImageUrl="url(/undraw/undraw_education_f8ru.svg)"
+            backgroundImageUrl={`url(${undrawEducation})`}
             text={
               <div>
                 <h2>Docs that get read</h2>
@@ -97,7 +101,7 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl="url(/undraw/undraw_building_websites_i78t.svg)"
+            backgroundImageUrl={`url(${undrawBuildingWebsites})`}
             text={
               <div>
                 <h2>Custom plugins</h2>
