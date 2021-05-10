@@ -39,35 +39,37 @@ gettingStarted:
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        Router as DatadogRouter,
-        GraphWidget as DatadogGraphWidget,
-        isDatadogGraphAvailable as isDatadogWidgetAvailable,
-      } from '@backstage/backstage-plugin-datadog';
+       EntityDatadogContent,
+       EntityDatadogGraphCard,
+       isDatadogGraphAvailable
+      } from '@roadiehq/backstage-plugin-datadog';
+      
+     const serviceEntityPage = (
+      <EntityPageLayout>
+       ...
+        <EntityLayout.Route path="/datadog" title="Datadog">
+         <EntityDatadogContent />
+        </EntityLayout.Route>
+       ...
+      </EntityPageLayout>
+      )
 
-      const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-        &lt;EntityPageLayout>
-          &lt;EntityPageLayout.Content
-            path="/datadog/*"
-            title="datadog"
-            element={<DatadogRouter entity={entity} />}
-          />
-          &lt;/EntityPageLayout>
-        &lt;/EntityPageLayout>
-      );
   - intro: Add widget to your Overview tab.
     language: typescript
     code: |
       // packages/app/src/plugins.ts
-      const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
-          ...
-          {isDatadogWidgetAvailable(entity) && (
-            &lt;Grid item>
-               &lt;DatadogGraphWidget entity={entity} />
-            &lt;/Grid>
-          )}
-          ...
-        &lt;/Grid>
+      const overviewContent = (
+       <Grid container spacing={3} alignItems="stretch">
+        ...
+        <EntitySwitch>
+         <EntitySwitch.Case if={isDatadogGraphAvailable}>
+          <Grid item>
+           <EntityDatadogGraphCard/>
+          </Grid>
+         </EntitySwitch.Case>
+        </EntitySwitch>
+        ...
+       </Grid>
       );
 ---
 
