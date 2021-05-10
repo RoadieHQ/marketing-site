@@ -46,11 +46,9 @@ gettingStarted:
       
       const serviceEntityPage = (
         <EntityPageLayout>
-         ...
           <EntityLayout.Route path="/datadog" title="Datadog">
             <EntityDatadogContent />
           </EntityLayout.Route>
-         ...
         </EntityPageLayout>
        )
 
@@ -60,7 +58,6 @@ gettingStarted:
       // packages/app/src/plugins.ts
       const overviewContent = (
        <Grid container spacing={3} alignItems="stretch">
-        ...
         <EntitySwitch>
          <EntitySwitch.Case if={isDatadogGraphAvailable}>
           <Grid item>
@@ -68,7 +65,6 @@ gettingStarted:
           </Grid>
          </EntitySwitch.Case>
         </EntitySwitch>
-        ...
        </Grid>
       );
 ---
