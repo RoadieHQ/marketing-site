@@ -1,4 +1,3 @@
-require('dotenv').config();
 const has = require('lodash/has');
 const get = require('lodash/get');
 const agoliaQueries = require('./src/queries/agolia');
