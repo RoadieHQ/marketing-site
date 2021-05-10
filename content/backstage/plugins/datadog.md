@@ -45,11 +45,12 @@ gettingStarted:
       } from '@roadiehq/backstage-plugin-datadog';
       
       const serviceEntityPage = (
-        <EntityPageLayout>
-          <EntityLayout.Route path="/datadog" title="Datadog">
-            <EntityDatadogContent />
-          </EntityLayout.Route>
-        </EntityPageLayout>
+       // ...
+        &lt;EntityPageLayout>
+          &lt;EntityLayout.Route path="/datadog" title="Datadog">
+            &lt;EntityDatadogContent />
+          &lt;/EntityLayout.Route>
+        &lt;/EntityPageLayout>
        )
 
   - intro: Add widget to your Overview tab.
