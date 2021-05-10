@@ -41,10 +41,7 @@ Charity Majors explains how to get there.
 
 102 pull requests were merged in last 2 weeks. 
 
-High visibility changes are a little sparse right now because the catalog is undergoing a rewrite and search is under heavy development. Here's two new abilities Backstage didn't have before.
-
-### JSON API Support
-API docs written in the JSON schema format can now be displayed inside Backstage thanks to [#5532](https://github.com/backstage/backstage/pull/5532) from Oliver Sand.
+High visibility changes are a little sparse right now because the catalog is undergoing a rewrite and search is under heavy development.
 
 ### Organization Diagram
 
