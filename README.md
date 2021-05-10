@@ -14,7 +14,9 @@ Open http://localhost:8000 in your browser.
 ## Building for production
 
 ```shell
-yarn build
+cp .env.sample .env
+# Optionally, edit the environment variables in the .env file.
+env $(cat .env | xargs) yarn build
 yarn serve
 ```
 
