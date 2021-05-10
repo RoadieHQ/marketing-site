@@ -58,15 +58,16 @@ gettingStarted:
     code: |
       // packages/app/src/plugins.ts
       const overviewContent = (
-       <Grid container spacing={3} alignItems="stretch">
-        <EntitySwitch>
-         <EntitySwitch.Case if={isDatadogGraphAvailable}>
-          <Grid item>
-           <EntityDatadogGraphCard/>
-          </Grid>
-         </EntitySwitch.Case>
-        </EntitySwitch>
-       </Grid>
+      // ...
+       &lt;Grid container spacing={3} alignItems="stretch">
+         &lt;EntitySwitch>
+           &lt;EntitySwitch.Case if={isDatadogGraphAvailable}>
+             &lt;Grid item>
+               &lt;EntityDatadogGraphCard/>
+             &lt;/Grid>
+           &lt;/EntitySwitch.Case>
+          &lt;/EntitySwitch>
+       &lt;/Grid>
       );
 ---
 
