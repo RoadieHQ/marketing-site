@@ -53,14 +53,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.13",
+    "@babel/register": "^7.13.16",
+    "chai": "^4.3.4",
     "cypress": "^6.8.0",
     "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.4.0",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.23.1",
     "husky": ">=5.2.0",
+    "mocha": "^8.4.0",
     "prettier": "2.2.1"
   },
   "homepage": "https://roadie.io",
@@ -82,6 +87,7 @@
     "clean": "gatsby clean",
     "test": "cypress run",
     "lint": "eslint src",
-    "preview": "yarn run build && netlify deploy --dir public"
+    "preview": "yarn run build && netlify deploy --dir public",
+    "test:unit": "mocha --require @babel/register src/**/*.test.js"
   }
 }
