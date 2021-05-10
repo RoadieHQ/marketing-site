@@ -7,7 +7,15 @@ import Link from './Link';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Link', function() {
+describe('Link', function () {
+  beforeEach(function () {
+    global.window = {
+      location: {
+        origin: 'http://example.com',
+      },
+    };
+  });
+
   it('should return a ForwardRef for links starting with a slash', function () {
     const wrapper = shallow(
       <Link to="/">Hello</Link>
@@ -43,5 +51,29 @@ describe('Link', function() {
     );
 
     expect(wrapper.props().rel).to.equal('noopener noreferrer');
+  });
+
+  it('should force internal links to end with a slash', function () {
+    const wrapper = shallow(
+      <Link to="/blog/post">Hello</Link>
+    );
+
+    expect(wrapper.props().to).to.equal('/blog/post/');
+  });
+
+  it('should force internal links with a hash to end with a slash', function () {
+    const wrapper = shallow(
+      <Link to="/blog/post#content-id">Hello</Link>
+    );
+
+    expect(wrapper.props().to).to.equal('/blog/post/#content-id');
+  });
+
+  it('should leave internal links with hash only alone', function () {
+    const wrapper = shallow(
+      <Link to="#content-id">Hello</Link>
+    );
+
+    expect(wrapper.props().to).to.equal('#content-id');
   });
 });
