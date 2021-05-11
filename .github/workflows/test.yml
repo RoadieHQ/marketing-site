@@ -8,6 +8,7 @@ jobs:
 
     env:
       CI: true
+      NODE_ENV: test
 
     steps:
       - name: Log node version
@@ -17,10 +18,19 @@ jobs:
         with:
           fetch-depth: '0'
 
-      # Install NPM dependencies, cache them correctly and run all Cypress tests
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Unit test
+        run: yarn test:unit
+
+      - name: Build static site
+        run: yarn build
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          install-command: yarn --frozen-lockfile
-          build: yarn run build
-          start: yarn run serve --port 8001
+          start: yarn serve --port 8001
