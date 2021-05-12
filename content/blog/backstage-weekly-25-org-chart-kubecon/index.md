@@ -2,6 +2,8 @@
 title: Backstage Weekly 25 - View your org chart inside Backstage
 date: '2021-05-10T21:00:00.0Z'
 description: How Spotify use Backstage to form a collective knowledge graph and control cloud costs.
+author:
+  name: David Tuite
 tags: ['newsletter']
 ---
 
