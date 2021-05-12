@@ -53,6 +53,9 @@ export const pageQuery = graphql`
             description
             lastValidated
             tags
+            author {
+              name
+            }
           }
         }
       }

@@ -60,13 +60,20 @@ const PostSummary = ({ post }) => {
             {title}
           </Link>
         </h3>
+
         <div className={classes.byline}>
           <span className={classes.datePublishedWrapper}>
             <DatePublished frontmatter={post.frontmatter} relative={true} />
+
+            {post.frontmatter.author && (
+              <span> by {post.frontmatter.author.name}</span>
+            )}
           </span>
+
           <Tags tags={post.frontmatter.tags} />
         </div>
       </header>
+
       <section className={classes.summary}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />
       </section>
