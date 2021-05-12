@@ -28,7 +28,7 @@ plugins:
   - techdocs-core
 ```
 
-⚠️ The extension of the `mkdocs.yml` file must be `yml`, not `yaml`.
+⚠️ The extension of the `mkdocs.yml` file **must** be `yml`, not `yaml`.
 
 ### Step 2: Add markdown documentation
 
@@ -56,7 +56,7 @@ Ensure you publish this new content to GitHub.
 
 We can use the `catalog-info.yaml` file of our component to tell Backstage where to find the documentation.
 
-To do this, add the `backstage.io/techdocs-ref` annotation to the list of annotations. The value of the annotation should be composed of
+To do this, add the `backstage.io/techdocs-ref` annotation to the list of annotations. The value of the annotation should be composed of:
 
 1. The `url:` prefix to tell Backstage to parse this value as a URL.
 2. The path to the root of the component on GitHub.
@@ -74,6 +74,8 @@ spec:
   owner: engineering
   lifecycle: experimental
 ```
+
+⚠️  The GitHub URL **must** be prefixed with `url:` or the documentation will not render in Backstage.
 
 ### Step 4: Publish your documentation
 
