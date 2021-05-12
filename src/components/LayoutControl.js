@@ -11,7 +11,9 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const LayoutControl = ({ children, maxWidthBreakpoint = 'xl' }) => {
+export const DEFAULT_MAX_WIDTH_BREAKPOINT = 'xl';
+
+const LayoutControl = ({ children, maxWidthBreakpoint = DEFAULT_MAX_WIDTH_BREAKPOINT }) => {
   const theme = useTheme();
   const classes = useStyles();
   const style = { maxWidth: theme.breakpoints.values[maxWidthBreakpoint] };
