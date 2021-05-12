@@ -4,6 +4,7 @@ import { createUseStyles } from 'react-jss';
 import { LayoutControl, SitewideHeader, SitewideFooter } from 'components';
 import TopBanner from 'components/TopBanner';
 import Hiring from 'components/TopBanner/Hiring';
+import { DEFAULT_MAX_WIDTH_BREAKPOINT } from 'components/LayoutControl';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -28,7 +29,12 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const StickyFooter = ({ children, maxWidthBreakpoint, location, headerBottomBorder }) => {
+const StickyFooter = ({
+  children,
+  location,
+  headerBottomBorder,
+  maxWidthBreakpoint = DEFAULT_MAX_WIDTH_BREAKPOINT,
+}) => {
   const classes = useStyles();
 
   return (

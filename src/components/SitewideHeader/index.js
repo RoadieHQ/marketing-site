@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FaTwitter, FaGithub } from 'react-icons/fa';
 import { TextLink, LayoutControl } from 'components';
+import { DEFAULT_MAX_WIDTH_BREAKPOINT } from 'components/LayoutControl';
 
 import IconLink from '../IconLink';
 import styles from './styles';
@@ -13,7 +14,14 @@ import BackstageLogo from './BackstageLogo';
 
 const useStyles = createUseStyles(styles);
 
-const SitewideHeader = ({ maxWidthBreakpoint, bottomBorder = true }) => {
+const canFitDocsLinkInHeader = (maxWidthBreakpoint) => (
+  ['xl', 'none'].includes(maxWidthBreakpoint)
+);
+
+const SitewideHeader = ({
+  maxWidthBreakpoint = DEFAULT_MAX_WIDTH_BREAKPOINT,
+  bottomBorder = true,
+}) => {
   const classes = useStyles({ bottomBorder });
   const data = useStaticQuery(query);
 
@@ -39,6 +47,15 @@ const SitewideHeader = ({ maxWidthBreakpoint, bottomBorder = true }) => {
               <NavItemSpacer>
                 <TextLink to="/blog/" text="Blog" />
               </NavItemSpacer>
+
+              {canFitDocsLinkInHeader(maxWidthBreakpoint) && (
+                <NavItemSpacer>
+                  <TextLink
+                    to="/docs/getting-started/getting-started-for-admins/"
+                    text="Documentation"
+                  />
+                </NavItemSpacer>
+              )}
             </span>
 
             <NavItemSpacer>
