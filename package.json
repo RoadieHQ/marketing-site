@@ -10,7 +10,7 @@
   "dependencies": {
     "@algolia/autocomplete-js": "^1.0.0-alpha.44",
     "@algolia/autocomplete-theme-classic": "^1.0.0-alpha.44",
-    "@material-ui/core": "^4.11.3",
+    "@material-ui/core": "^4.11.4",
     "algoliasearch": "^4.9.0",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^1.2.0",
