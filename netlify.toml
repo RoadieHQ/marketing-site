@@ -24,6 +24,11 @@
   to = "/docs/getting-started/getting-started-for-admins/"
   force = true
 
+[[redirects]]
+  from = "/careers/"
+  to = "https://careers.roadie.io"
+  force = true
+
 [build]
   publish = "public"
 
