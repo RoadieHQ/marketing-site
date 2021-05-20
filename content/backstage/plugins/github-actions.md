@@ -14,10 +14,13 @@ seo:
 
 logoImage: '../../assets/logos/github/PNG/GitHub-Mark-120px-plus.png'
 
-coverImage: '../../assets/backstage/plugins/github-actions-plugin-cover.png'
+coverImage: '../../assets/backstage/plugins/github-actions/cover.png'
 coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
 
 gettingStarted: # What will this step accomplish?
+  - intro: |
+      Follow our [instructions to create a GitHub OAuth app for Backstage](/blog/github-auth-backstage/).
+
   - intro: Install the plugin into your Backstage instance.
     language: bash
     code: yarn add @backstage/plugin-github-actions
@@ -50,8 +53,32 @@ gettingStarted: # What will this step accomplish?
         </Grid>
       );
 
+  - intro: |
+      Annotate a component with the `github.com/project-slug` key and value so that Backstage
+      knows which builds correspond to your component.
+    language: yaml
+    code: |
+      apiVersion: backstage.io/v1alpha1
+      kind: Component
+      metadata:
+        name: sample-service
+        description: Component with GitHub actions enabled.
+        annotations:
+          github.com/project-slug: 'RoadieHQ/sample-service'
+      spec:
+        type: service
+        lifecycle: production
+        owner: engineering-team
 
 ---
+
+### Authentication
+
+The GitHub actions plugin makes requests to the GitHub API directly from your browser. It
+will authenticate as your GitHub user via OAuth. You may see this pop-up periodically
+as you browse around Backstage. You must log in via OAuth before GitHub actions can work.
+
+![pop-up asking the user to log in with GitHub](../../assets/backstage/plugins/github-actions/oauth-login.png)
 
 ### Multiple CI systems setup
 
