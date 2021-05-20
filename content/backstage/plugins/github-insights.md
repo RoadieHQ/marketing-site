@@ -35,14 +35,14 @@ gettingStarted: # What will this step accomplish?
 
       const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
         // ...
-        &lt;EntityPageLayout>
-          &lt;EntityPageLayout.Content
+        <EntityPageLayout>
+          <EntityPageLayout.Content
             path="/code-insights"
             title="Code Insights"
-            element={&lt;GitHubInsightsRouter entity={entity} />}
+            element={<GitHubInsightsRouter entity={entity} />}
           />
-          &lt;/EntityPageLayout>
-        &lt;/EntityPageLayout>
+          </EntityPageLayout>
+        </EntityPageLayout>
       )
 
   - intro: Run the backstage app with the following command and navigate to the services tab.
@@ -69,20 +69,20 @@ gettingStarted: # What will this step accomplish?
       // ...
 
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
+        <Grid container spacing={3} alignItems="stretch">
           ...
           {isGitHubAvailable(entity) && (
-            &lt;>
-              &lt;Grid item md={6}>
-                &lt;ContributorsCard entity={entity} />
-                &lt;LanguagesCard entity={entity} />
-                &lt;ReleasesCard entity={entity} />
-              &lt;/Grid>
-              &lt;Grid item md={6}>
-                &lt;ReadMeCard entity={entity} />
-              &lt;/Grid>
-            &lt;/>
+            <>
+              <Grid item md={6}>
+                <ContributorsCard entity={entity} />
+                <LanguagesCard entity={entity} />
+                <ReleasesCard entity={entity} />
+              </Grid>
+              <Grid item md={6}>
+                <ReadMeCard entity={entity} />
+              </Grid>
+            </>
           )}
-        &lt;/Grid>
+        </Grid>
       );
 ---

@@ -62,14 +62,14 @@ gettingStarted:
 
       const WebsiteEntityPage = ({ entity }: { entity: Entity }) => (
         ...
-        &lt;EntityPageLayout>
-          &lt;EntityPageLayout.Content
+        <EntityPageLayout>
+          <EntityPageLayout.Content
             path="/lighthouse"
             title="Lighthouse"
-            element={&lt;LighthouseRouter entity={entity} />}
+            element={<LighthouseRouter entity={entity} />}
           />
-          &lt;/EntityPageLayout>
-        &lt;/EntityPageLayout>
+          </EntityPageLayout>
+        </EntityPageLayout>
       )
 
   - intro: Optionally you might add Lighthouse widget to the overview tab on the EntityPage
@@ -82,14 +82,14 @@ gettingStarted:
       } from '@backstage/plugin-lighthouse';
 
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
+        <Grid container spacing={3} alignItems="stretch">
           ...
           {isLighthouseAvailable(entity) && (
-            &lt;Grid item sm={4}>
-              &lt;LastLighthouseAuditCard />
-            &lt;/Grid>
+            <Grid item sm={4}>
+              <LastLighthouseAuditCard />
+            </Grid>
           )}
-        &lt;/Grid>
+        </Grid>
       );
 ---
 
