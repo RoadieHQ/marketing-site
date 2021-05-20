@@ -23,7 +23,8 @@ gettingStarted:
     code: 'yarn add @backstage/plugin-cost-insights'
 
   - intro: Create a CostInsights client which implements the CostInsightsApi interface.
-  - intro: Cost Insights currently does not provide a CostInsightsApi client out of the box, but there are templates and expamples provided in the Backstage repo.
+  - intro:
+      Cost Insights currently does not provide a CostInsightsApi client out of the box, but there are templates and examples in the Backstage repo. Here's an exploration into [Cost Insights for AWS](https://github.com/backstage/backstage/blob/master/plugins/cost-insights/contrib/aws-cost-explorer-api.md).
     language: typescript
     code: |
       // path/to/CostInsightsClient.ts
@@ -70,7 +71,7 @@ gettingStarted:
       )
 ---
 
-To learn more about the Cost Insights plugin and how it is used inside Spotify, check out this interview with Cost Insights product manager Janisa Anandamohan and her engineering colleague Tim Hansen. We also have brief notes from the video in [this edition of our newsletter](https://roadie.io/blog/backstage-weekly-25-org-chart-kubecon/#cost-insights-on-redmonk).
+To learn more about the Cost Insights plugin and how it is used inside Spotify, check out this [RedMonk](https://redmonk.com) interview with Cost Insights product manager Janisa Anandamohan and her engineering colleague Tim Hansen. We also have brief notes from the video in [this edition of our newsletter](https://roadie.io/blog/backstage-weekly-25-org-chart-kubecon/#cost-insights-on-redmonk).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5GN2ucN1Lxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
