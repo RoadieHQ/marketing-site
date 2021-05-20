@@ -10,8 +10,6 @@ const useStyles = createUseStyles((theme) => ({
 const CodeBlock = ({ language, code, intro }) => {
   const classes = useStyles();
 
-      console.log('code', code);
-
   return (
     <div>
       {intro && intro !== '' && (
