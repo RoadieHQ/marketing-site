@@ -36,15 +36,15 @@ gettingStarted:
       import { Router as ApiDocsRouter } from '@backstage/plugin-api-docs';
 
         const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-          &lt;EntityPageLayout>
+          <EntityPageLayout>
             ...
-            &lt;EntityPageLayout.Content
+            <EntityPageLayout.Content
               path="/docs/*"
               title="Docs"
-              element={&lt;DocsRouter entity={entity} />}
+              element={<DocsRouter entity={entity} />}
             />
             ...
-          &lt;/EntityPageLayout>
+          </EntityPageLayout>
         );
 ---
 

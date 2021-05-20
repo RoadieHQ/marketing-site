@@ -54,20 +54,20 @@ gettingStarted:
       // packages/app/App.tsx
       import { CostInsightsPage } from '@backstage/plugin-cost-insights';
 
-      &#60;FlatRoutes>
+      <FlatRoutes>
         ...
-        &#60;Route path="/cost-insights" element={<CostInsightsPage />} />
+        <Route path="/cost-insights" element={<CostInsightsPage />} />
         ...
-      &#60;/FlatRoutes>
+      </FlatRoutes>
 
   - intro: Add plugin to your sidebar.
     language: typescript
     code: |
       // packages/app/src/sidebar.tsx
       export const AppSidebar = () => (
-        &#60;Sidebar> 
-          &#60;SidebarItem icon={MoneyIcon} to="cost-insights" text="Cost Insights" />
-        &#60;/Sidebar>
+        <Sidebar> 
+          <SidebarItem icon={MoneyIcon} to="cost-insights" text="Cost Insights" />
+        </Sidebar>
       )
 ---
 
