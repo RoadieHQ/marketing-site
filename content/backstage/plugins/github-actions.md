@@ -14,27 +14,72 @@ seo:
 
 logoImage: '../../assets/logos/github/PNG/GitHub-Mark-120px-plus.png'
 
-coverImage: '../../assets/github-actions-plugin-cover.png'
+coverImage: '../../assets/backstage/plugins/github-actions-plugin-cover.png'
 coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
 
 gettingStarted: # What will this step accomplish?
-  - intro: Install the plugin
+  - intro: Install the plugin into your Backstage instance.
     language: bash
     code: yarn add @backstage/plugin-github-actions
-  - intro: Import it into your Backstage application
+
+  - intro: 'Add the tab to your entity pages.'
     language: typescript
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as GithubActions } from '@backstage/plugin-github-actions';
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import { EntityGithubActionsContent } from '@backstage/plugin-github-actions';
 
-  - intro: 'Heres where things get good...'
+      const serviceEntityPage = (
+        <EntityLayout.Route path="/ci-cd" title="CI/CD">
+          <EntityGithubActionsContent />
+        </EntityLayout.Route>
+      );
+
+  - intro: 'Optionally add the recent runs card to the overview page'
     language: typescript
     code: |
-      // packages/app/src/apis.ts
-      import { GithubActionsClient, githubActionsApiRef } from '@backstage/plugin-github-actions';
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import { EntityRecentGithubActionsRunsCard } from '@backstage/plugin-github-actions';
 
-      export const apis = (config: ConfigApi) => {
-        // ... existing code here.
-        builder.add(githubActionsApiRef, new GithubActionsClient());
-      };
+      const overviewContent = (
+        <Grid container spacing={3} alignItems="stretch">
+          ...
+
+          <Grid item sm={6}>
+            <EntityRecentGithubActionsRunsCard limit={4} variant="gridItem" />
+          </Grid>
+        </Grid>
+      );
+
+
 ---
+
+### Multiple CI systems setup
+
+Use the switch pattern to work with multiple CI systems simultaneously in Backstage.
+
+```typescript
+// packages/app/src/components/catalog/EntityPage.tsx
+import {
+  EntityRecentGithubActionsRunsCard,
+  isGithubActionsAvailable,
+} from '@backstage/plugin-github-actions';
+
+const cicdCard = (
+  <EntitySwitch>
+    <EntitySwitch.Case if={isGithubActionsAvailable}>
+      <Grid item sm={6}>
+        <EntityRecentGithubActionsRunsCard limit={4} variant="gridItem" />
+      </Grid>
+    </EntitySwitch.Case>
+  </EntitySwitch>
+);
+
+const overviewContent = (
+  <Grid container spacing={3} alignItems="stretch">
+    ...
+
+    {cicdCard}
+  </Grid>
+);
+
+```

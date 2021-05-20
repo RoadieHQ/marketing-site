@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import lodashEscape from 'lodash/escape';
 
 const useStyles = createUseStyles((theme) => ({
   intro: theme.preMadeStyles.content,
@@ -8,6 +9,8 @@ const useStyles = createUseStyles((theme) => ({
 
 const CodeBlock = ({ language, code, intro }) => {
   const classes = useStyles();
+
+      console.log('code', code);
 
   return (
     <div>
@@ -21,7 +24,7 @@ const CodeBlock = ({ language, code, intro }) => {
             <code
               className={`language-${language}`}
               dangerouslySetInnerHTML={{
-                __html: code.trim(),
+                __html: lodashEscape(code.trim()),
               }}
             />
           </pre>
