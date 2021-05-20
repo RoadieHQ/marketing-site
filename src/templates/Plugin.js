@@ -13,7 +13,7 @@ import {
   SEO,
 } from 'components';
 import CallToAction from 'components/actions/NetlifyFormCallToAction';
-import { Logo, Attribution } from 'components/backstage/plugins';
+import { Logo, Attribution, EditOnGitHubLink } from 'components/backstage/plugins';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 
 import { FORM_NAMES } from '../contactFormConstants';
@@ -55,7 +55,7 @@ const Header = ({ plugin }) => {
 
 const PluginTemplate = ({ data, location }) => {
   const classes = useStyles();
-  const { plugin, site } = data;
+  const { plugin, site: { siteMetadata } } = data;
 
   const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
@@ -84,7 +84,7 @@ const PluginTemplate = ({ data, location }) => {
             </p>
           </>
         }
-        siteMetadata={site.siteMetadata}
+        siteMetadata={siteMetadata}
         followOn="NEEDS_ANALYSIS_SURVEY"
         email={email}
       />
@@ -106,6 +106,10 @@ const PluginTemplate = ({ data, location }) => {
             />
           )
         )}
+
+        <p>
+          Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
+        </p>
 
         <InterstitialTitle text="How it looks" />
 
@@ -160,6 +164,7 @@ export const pageQuery = graphql`
 
     plugin: markdownRemark(fields: { slug: { eq: $slug } }) {
       notes: html
+      fileAbsolutePath
 
       frontmatter {
         humanName

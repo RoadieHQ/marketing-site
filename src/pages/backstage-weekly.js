@@ -89,7 +89,6 @@ const BlogIndex = ({ data, location }) => {
             setModalOpen={setModalOpen}
             buttonText="Subscribe"
             netlifyFormName={FORM_NAMES.subscribeToNewsletter}
-            followOn="TWITTER"
             autoFocus={true}
             email={email}
             setEmail={setEmail}

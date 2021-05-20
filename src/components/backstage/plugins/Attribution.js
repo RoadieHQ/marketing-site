@@ -1,19 +1,7 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
-import { Link } from 'components';
-
-const useStyles = createUseStyles((theme) => ({
-  link: {
-    color: theme.palette.primary.main,
-
-    '&:visited': {
-      color: theme.palette.primary.main,
-    },
-  },
-}));
+import { TextLink as Link } from 'components';
 
 const Attribution = ({ attribution }) => {
-  const classes = useStyles();
   if (!attribution) return null;
 
   if (!attribution.href || attribution.href === '') {
@@ -23,7 +11,7 @@ const Attribution = ({ attribution }) => {
   return (
     <div>
       by{' '}
-      <Link to={attribution.href} className={classes.link}>
+      <Link to={attribution.href} color="primary">
         {attribution.text}
       </Link>
     </div>
