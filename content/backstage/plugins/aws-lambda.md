@@ -38,14 +38,14 @@ gettingStarted:
       } from '@roadiehq/backstage-plugin-aws-lambda';
 
         const OverviewContent = ({ entity }: { entity: Entity }) => (
-          &lt;Grid container spacing={3} alignItems="stretch">
+          <Grid container spacing={3} alignItems="stretch">
             ...
             {isLambdaWidgetAvailable(entity) && (
-              &lt;Grid item md={6}>
-                &lt;AWSLambdaOverviewWidget entity={entity} />
-              &lt;/Grid>
+              <Grid item md={6}>
+                <AWSLambdaOverviewWidget entity={entity} />
+              </Grid>
             )}
-          &lt;/Grid>
+          </Grid>
         );
 ---
 

@@ -34,14 +34,14 @@ gettingStarted:
       // packages/app/src/App.tsx
       import { Router as TechRadarRouter } from '@backstage/plugin-tech-radar';
 
-      &lt;Routes>
+      <Routes>
         {/_ other routes ... _/}
-        &lt;Route
+        <Route
           path="/tech-radar"
-          element={&lt;TechRadarRouter width={1500} height={800} />}
+          element={<TechRadarRouter width={1500} height={800} />}
         />
         {/_ other routes ... _/}
-      &lt;/Routes>;
+      </Routes>;
 ---
 
 ## How do I load in my own data?

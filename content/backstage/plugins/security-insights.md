@@ -35,14 +35,14 @@ gettingStarted:
 
       const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
         ...
-        &lt;EntityPageLayout>
-          &lt;EntityPageLayout.Content
+        <EntityPageLayout>
+          <EntityPageLayout.Content
             path="/security-insights"
             title="Security Insights"
-            element={&lt;SecurityInsightsRouter entity={entity} />}
+            element={<SecurityInsightsRouter entity={entity} />}
           />
-          &lt;/EntityPageLayout>
-        &lt;/EntityPageLayout>
+          </EntityPageLayout>
+        </EntityPageLayout>
       )
 
   - intro: Run the backstage app with the following command and navigate to the services tab.
@@ -66,15 +66,15 @@ gettingStarted:
       // ...
 
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
+        <Grid container spacing={3} alignItems="stretch">
           ...
           {isSecurityInsightsAvailable(entity) && (
-            &lt;>
-              &lt;Grid item md={6}>
-                &lt;SecurityInsightsWidget entity={entity} />
-              &lt;/Grid>
-            &lt;/>
+            <>
+              <Grid item md={6}>
+                <SecurityInsightsWidget entity={entity} />
+              </Grid>
+            </>
           )}
-        &lt;/Grid>
+        </Grid>
       );
 ---

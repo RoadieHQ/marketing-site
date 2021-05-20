@@ -46,11 +46,11 @@ gettingStarted:
       
       const serviceEntityPage = (
        // ...
-        &lt;EntityPageLayout>
-          &lt;EntityLayout.Route path="/datadog" title="Datadog">
-            &lt;EntityDatadogContent />
-          &lt;/EntityLayout.Route>
-        &lt;/EntityPageLayout>
+        <EntityPageLayout>
+          <EntityLayout.Route path="/datadog" title="Datadog">
+            <EntityDatadogContent />
+          </EntityLayout.Route>
+        </EntityPageLayout>
        )
 
   - intro: Add widget to your Overview tab.
@@ -59,15 +59,15 @@ gettingStarted:
       // packages/app/src/plugins.ts
       const overviewContent = (
       // ...
-       &lt;Grid container spacing={3} alignItems="stretch">
-         &lt;EntitySwitch>
-           &lt;EntitySwitch.Case if={isDatadogGraphAvailable}>
-             &lt;Grid item>
-               &lt;EntityDatadogGraphCard/>
-             &lt;/Grid>
-           &lt;/EntitySwitch.Case>
-          &lt;/EntitySwitch>
-       &lt;/Grid>
+       <Grid container spacing={3} alignItems="stretch">
+         <EntitySwitch>
+           <EntitySwitch.Case if={isDatadogGraphAvailable}>
+             <Grid item>
+               <EntityDatadogGraphCard/>
+             </Grid>
+           </EntitySwitch.Case>
+          </EntitySwitch>
+       </Grid>
       );
 ---
 

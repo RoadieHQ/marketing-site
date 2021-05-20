@@ -32,11 +32,11 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      &lt;EntityPageLayout.Content
+      <EntityPageLayout.Content
         path="/firebase-functions/\*"
         title="Firebase Functions"
-        element={&lt;FirebaseFunctionsRouter entity={entity} /&gt;}
-      /&gt;
+        element={<FirebaseFunctionsRouter entity={entity} />}
+      />
 
   - intro: 'add annotation to the yaml config file of a component'
     language: 'yaml'

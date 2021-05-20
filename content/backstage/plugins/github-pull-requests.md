@@ -39,14 +39,14 @@ gettingStarted:
 
       const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
         // ...
-        &lt;EntityPageLayout>
-          &lt;EntityPageLayout.Content
+        <EntityPageLayout>
+          <EntityPageLayout.Content
             path="/github-pull-requests"
             title="Github Pull Requests"
-            element={&lt;GithubPullRequestsRouter entity={entity} />}
+            element={<GithubPullRequestsRouter entity={entity} />}
           />
-          &lt;/EntityPageLayout>
-        &lt;/EntityPageLayout>
+          </EntityPageLayout>
+        </EntityPageLayout>
       )
 
   - intro: Run the backstage app with the following command and navigate to the services tab.
@@ -60,11 +60,11 @@ gettingStarted:
       import { PullRequestsStatsCard } from '@roadiehq/backstage-plugin-github-pull-requests';
         // ...
         const OverviewContent = ({ entity }: { entity: Entity }) => (
-          &lt;Grid container spacing={3} alignItems="stretch">
+          <Grid container spacing={3} alignItems="stretch">
           ...
-          &lt;Grid item md={6}>
-            &lt;PullRequestsStatsCard entity={entity} />
-          &lt;/Grid>
-        &lt;/Grid>
+          <Grid item md={6}>
+            <PullRequestsStatsCard entity={entity} />
+          </Grid>
+        </Grid>
       );
 ---

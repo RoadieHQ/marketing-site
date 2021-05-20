@@ -41,14 +41,14 @@ gettingStarted:
       import { Router as KubernetesRouter } from '@backstage/plugin-kubernetes';
 
       const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-        &lt;EntityPageLayout>
+        <EntityPageLayout>
           // ...
-          &lt;EntityPageLayout.Content
+          <EntityPageLayout.Content
             path="/kubernetes/\*"
             title="Kubernetes"
-            element={&lt;KubernetesRouter entity={entity} />}
+            element={<KubernetesRouter entity={entity} />}
           />
-        &lt;/EntityPageLayout>
+        </EntityPageLayout>
       );
 
   - title: Backend plugin

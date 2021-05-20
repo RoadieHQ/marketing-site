@@ -28,7 +28,7 @@ gettingStarted:
     code: |
       proxy:
         '/argocd/api':
-          target: https://&lt;your-argocd-instance>/api/v1/
+          target: https://<your-argocd-instance>/api/v1/
           changeOrigin: true
           # only if your argocd api has self-signed cert
           secure: false
@@ -50,24 +50,24 @@ gettingStarted:
       } from '@roadiehq/backstage-plugin-argo-cd';
 
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
+        <Grid container spacing={3} alignItems="stretch">
           ...
           {isArgoCDAvailable(entity) && (
-            &lt;Grid item md={6}>
-              &lt;ArgoCDDetailsWidget entity={entity} />
-            &lt;/Grid>
+            <Grid item md={6}>
+              <ArgoCDDetailsWidget entity={entity} />
+            </Grid>
           )}
           ...
-        &lt;/Grid>
+        </Grid>
       );
   - intro: Add annotation to the yaml config file of a component
     language: yaml
     code: |
       metadata:
         annotations:
-          argocd/app-name: &lt;your-app-name>
+          argocd/app-name: <your-app-name>
   - intro: Get and provide `ARGOCD_AUTH_TOKEN` as env variable in following format
     language: bash
     code: |
-      ARGOCD_AUTH_TOKEN='argocd.token=&lt;token>'
+      ARGOCD_AUTH_TOKEN='argocd.token=<token>'
 ---
