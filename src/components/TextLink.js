@@ -5,15 +5,41 @@ import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    color: ({ color }) =>
-      color === 'contrasting' ? theme.palette.text.secondaryLight : theme.palette.text.secondary,
+    color: ({ color }) => {
+      if (color === 'contrasting') {
+        return theme.palette.text.secondaryLight;
+      } else if (color === 'primary') {
+        return theme.palette.primary.main;
+      }
+
+      return theme.palette.text.secondary;
+    },
     textDecoration: 'none',
     outline: 'none',
 
     '&:hover': {
       textDecoration: 'underline',
-      color: ({ color }) =>
-        color === 'contrasting' ? theme.palette.text.primaryLight : theme.palette.text.primary,
+      color: ({ color }) => {
+        if (color === 'contrasting') {
+          return theme.palette.text.primaryLight;
+        } else if (color === 'primary') {
+          return theme.palette.primary.main;
+        }
+
+        return theme.palette.text.primary;
+      },
+    },
+
+    '&visited': {
+      color: ({ color }) => {
+        if (color === 'contrasting') {
+          return theme.palette.text.primaryLight;
+        } else if (color === 'primary') {
+          return theme.palette.primary.main;
+        }
+
+        return theme.palette.text.primary;
+      },
     },
   },
 }));

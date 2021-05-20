@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
+import { TextLink } from 'components';
 
 import DatePublished from '../DatePublished';
 import Tags from '../Tags';
@@ -17,16 +17,6 @@ const useStyles = createUseStyles((theme) => ({
   h3: {
     fontSize: '2rem',
     marginBottom: '0.2em',
-  },
-
-  titleLink: {
-    color: theme.palette.primary.main,
-    textDecoration: 'none',
-
-    '&:hover': {
-      color: theme.palette.primary.main,
-      textDecoration: 'underline',
-    },
   },
 
   byline: {
@@ -56,9 +46,9 @@ const PostSummary = ({ post }) => {
     <article className={classes.root}>
       <header className={classes.header}>
         <h3 className={classes.h3}>
-          <Link to={post.fields.slug} className={classes.titleLink}>
+          <TextLink to={post.fields.slug} color="primary">
             {title}
-          </Link>
+          </TextLink>
         </h3>
 
         <div className={classes.byline}>
