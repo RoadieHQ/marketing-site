@@ -27,26 +27,29 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/plugins.ts
-      export { plugin as AWSLambdaWidget } from '@roadiehq/backstage-plugin-aws-lambda';
-  - intro: Add Widget API to your Backstage instance.
+      export { awsLambdaPlugin } from '@roadiehq/backstage-plugin-aws-lambda';
+  - intro: Add Card to your Backstage catalog pages.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        AWSLambdaOverviewWidget,
-        isPluginApplicableToEntity as isLambdaWidgetAvailable,
+        EntityAWSLambdaOverviewCard,
+        isAWSLambdaAvailable,
       } from '@roadiehq/backstage-plugin-aws-lambda';
-
-        const OverviewContent = ({ entity }: { entity: Entity }) => (
-          <Grid container spacing={3} alignItems="stretch">
-            ...
-            {isLambdaWidgetAvailable(entity) && (
+      // ...
+      const OverviewContent = ({ entity }: { entity: Entity }) => (
+        <Grid container spacing={3} alignItems="stretch">
+          <EntitySwitch>
+            <EntitySwitch.Case if={isAWSLambdaAvailable}>
               <Grid item md={6}>
-                <AWSLambdaOverviewWidget entity={entity} />
+                <EntityAWSLambdaOverviewCard />
               </Grid>
-            )}
-          </Grid>
-        );
+            </EntitySwitch.Case>
+            {/*...*/}
+          </EntitySwitch>
+          {/*...*/}
+        </Grid>
+      );
 ---
 
 ## Authentication
