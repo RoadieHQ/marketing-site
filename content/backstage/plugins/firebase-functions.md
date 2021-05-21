@@ -22,12 +22,6 @@ gettingStarted:
     language: 'bash'
     code: 'yarn add @roadiehq/backstage-plugin-firebase-functions'
 
-  - intro: 'Add plugin to the list of plugins:'
-    language: 'ts'
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as FirebaseFunctionsPlugin } from '@roadiehq/backstage-plugin-firebase-functions';
-
   - intro: 'Add plugin to the `entityPage.tsx` source file:'
     language: typescript
     code: |
