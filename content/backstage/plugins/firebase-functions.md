@@ -26,17 +26,52 @@ gettingStarted:
     language: 'ts'
     code: |
       // packages/app/src/plugins.ts
-      export { plugin as FirebaseFunctionsPlugin } from '@roadiehq/backstage-plugin-travis-ci';
+      export { plugin as FirebaseFunctionsPlugin } from '@roadiehq/backstage-plugin-firebase-functions';
 
-  - intro: 'Add plugin to the `entitytPage.tsx` source file:'
+  - intro: 'Add plugin to the `entityPage.tsx` source file:'
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      <EntityPageLayout.Content
-        path="/firebase-functions/\*"
-        title="Firebase Functions"
-        element={<FirebaseFunctionsRouter entity={entity} />}
-      />
+      import {
+        EntityFirebaseFunctionsContent
+      } from '@roadiehq/backstage-plugin-firebase-functions';
+
+        ...
+      const serviceEntityPage = (
+        <EntityLayoutWrapper>
+          ...
+          <EntityLayout.Route 
+           path="/firebase-functions"
+           title="Firebase Functions">
+          <EntityFirebaseFunctionsContent />
+          </EntityLayout.Route>
+          ...
+        </EntityLayoutWrapper>
+      );
+
+  - intro: 'Add widget to the `entityPage.tsx` source file:'
+    language: typescript
+    code: |
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        isFirebaseFunctionsAvailable,
+        EntityFirebaseFunctionsCard
+      } from '@roadiehq/backstage-plugin-firebase-functions';
+
+        ...
+        const overviewContent = (
+          <Grid container spacing={3}>
+            ...
+            <EntitySwitch>
+              <EntitySwitch.Case if={isFirebaseFunctionsAvailable}>
+                <Grid item md={6}>
+                  <EntityFirebaseFunctionsCard />
+                </Grid>
+              </EntitySwitch.Case>
+            </EntitySwitch>
+            ...
+          </Grid>
+        );
 
   - intro: 'add annotation to the yaml config file of a component'
     language: 'yaml'
