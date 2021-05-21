@@ -23,12 +23,6 @@ gettingStarted:
     language: bash
     code: 'yarn add @roadiehq/backstage-plugin-github-pull-requests'
 
-  - intro: Import it into your Backstage application.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { githubPullRequestsPlugin } from '@roadiehq/backstage-plugin-github-pull-requests';
-
   - intro: Add plugin API to your Backstage instance.
     language: typescript
     code: |

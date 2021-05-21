@@ -21,12 +21,6 @@ gettingStarted: # What will this step accomplish?
     language: bash
     code: 'yarn add @roadiehq/backstage-plugin-github-insights'
 
-  - intro: Import it into your Backstage application.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { githubInsightsPlugin } from '@roadiehq/backstage-plugin-github-insights';
-
   - intro: Add plugin API to your Backstage instance.
     language: typescript
     code: |
