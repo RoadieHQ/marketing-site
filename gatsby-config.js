@@ -122,7 +122,11 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         // Excluded pages should also be Disallowed by the robots.txt
-        exclude: ['/onboarding'],
+        excludes: [
+          // The onboarding page is an experiment for sending directly to friendly
+          // users. We don't want it showing up in Google.
+          '/onboarding/',
+        ],
       },
     },
     `gatsby-plugin-force-trailing-slashes`,
