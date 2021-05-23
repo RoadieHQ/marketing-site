@@ -10,13 +10,15 @@ const indigo = require('@material-ui/core/colors/indigo').default;
 
 const PALETTE_PRIMARY_MAIN = deepOrange[600];
 
+const MD_BREAKPOINT = 720;
+
 const theme = {
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl', 'none'],
     values: {
       xs: 0,
       sm: 600,
-      md: 720,
+      md: MD_BREAKPOINT,
       lg: 960,
       xl: 1280,
       none: 'none',
@@ -66,8 +68,14 @@ const theme = {
     content: {
       maxWidth: '70rem',
 
+      '& h1, & h2, & h3, & h4': {
+        marginTop: '2rem',
+        marginBottom: '1.1rem',
+      },
+
       '& p': {
-        marginTop: 0,
+        marginBottom: '1.1rem',
+        lineHeight: 1.7,
       },
 
       '& ul': {
@@ -79,7 +87,7 @@ const theme = {
       },
 
       '& li': {
-        marginBottom: 'calc(1.75rem / 2)',
+        marginBottom: '1.1rem',
       },
 
       '& a, & a:visited': {
@@ -118,7 +126,7 @@ const theme = {
         marginRight: 'auto',
       },
 
-      '@media (min-width: 720px)': {
+      [`@media (min-width: ${MD_BREAKPOINT}px)`]: {
         '& ul': {
           paddingLeft: '3em',
         },

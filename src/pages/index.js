@@ -19,8 +19,13 @@ const useStyles = createUseStyles((theme) => ({
     fontSize: '1.5em',
   },
 
+  h2: {
+    marginBottom: '2rem',
+  },
+
   p: {
     fontSize: '2rem',
+    marginBottom: '1rem',
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
@@ -61,7 +66,7 @@ const Home = ({ data, location }) => {
             backgroundImageUrl={`url(${undrawSearch})`}
             text={
               <div>
-                <h2>Service catalog for discoverability</h2>
+                <h2 className={classes.h2}>Service catalog for discoverability</h2>
                 <p className={classes.p}>Got more repos than you can keep up with?</p>
                 <p className={classes.p}>
                   Get control of the sprawl and improve new hire onboarding by making it easy to
@@ -78,7 +83,7 @@ const Home = ({ data, location }) => {
             backgroundImageUrl={`url(${undrawEducation})`}
             text={
               <div>
-                <h2>Docs that get read</h2>
+                <h2 className={classes.h2}>Docs that get read</h2>
                 <p className={classes.p}>
                   <span role="img" aria-label="one">
                     1️⃣
@@ -104,7 +109,7 @@ const Home = ({ data, location }) => {
             backgroundImageUrl={`url(${undrawBuildingWebsites})`}
             text={
               <div>
-                <h2>Custom plugins</h2>
+                <h2 className={classes.h2}>Custom plugins</h2>
                 <p className={classes.p}>Ready to roll, easy to extend.</p>
                 <p className={classes.p}>
                   Common SaaS tools come baked in. When you need to break out you can roll your own
