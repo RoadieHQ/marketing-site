@@ -19,6 +19,7 @@ import BackstageLogo from './BackstageLogo';
 const useStyles = createUseStyles((theme) => ({
   root: {
     overflow: 'hidden',
+    position: 'relative',
 
     '&:hover $triggerWrapper': {
       color: theme.palette.text.primary,
@@ -26,7 +27,9 @@ const useStyles = createUseStyles((theme) => ({
     },
 
     '&:hover $content': {
-      display: 'block',
+      opacity: 1,
+      transform: 'rotateX(0) translateX(-30%)',
+      visibility: 'visible',
     },
   },
 
@@ -43,6 +46,11 @@ const useStyles = createUseStyles((theme) => ({
 
   triggerWrapper: {
     color: theme.palette.text.secondary,
+    // Clear the native button styles.
+    border: 'none',
+    backgroundColor: 'transparent',
+    fontFamily: 'inherit',
+    fontSize: '1.6rem',
   },
 
   divider: {
@@ -51,15 +59,29 @@ const useStyles = createUseStyles((theme) => ({
     marginBottom: 8,
   },
 
+  // The following blog post was very helpful when attempting to create an accessible,
+  // animated and reliable (almost) CSS-only dropdown.
+  // https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/
   content: {
-    display: 'none',
     position: 'absolute',
     background: 'white',
     boxShadow: `0px 8px 16px 0px ${theme.palette.grey[300]}`,
-    marginLeft: 32,
+    minWidth: '30ch',
+    // Use the left from absolute position to shift the left side
+    left: '50%',
+    // Use translateX to shift the menu 50% of it's width back to the left
+    // RotateX helps to hide the dropdown without using display none.
+    transform: 'rotateX(-90deg) translateX(-30%)',
     padding: 16,
     border: `1px solid ${theme.palette.grey[300]}`,
+    // Without this I found that other elements (images specifically) would appear in front
+    // of the open dropdown.
     zIndex: 1,
+    transformOrigin: 'top center',
+    opacity: 0.3,
+    // Animate opening the dropdown.
+    transition: '280ms all 120ms ease-out',
+    visibility: 'hidden',
   },
 
   contentItem: {
@@ -99,11 +121,17 @@ const DropdownMenuItem = ({ title, siteMetadata }) => {
 
   return (
     <span className={classes.root}>
-      <span className={classes.triggerWrapper}>
+      <button
+        className={classes.triggerWrapper}
+        type="button"
+        aria-expanded={false}
+        aria-controls="resources-dropdown"
+      >
         <span>{title}</span>
         <span className={classes.iconPostfix}><FaCaretDown /></span>
-      </span>
-      <div className={classes.content}>
+      </button>
+
+      <div className={classes.content} id="resources-dropdown">
         <ListItem to="/backstage/plugins/" icon={<FaPlug />} text="Backstage Plugins" />
         <ListItem
           to="/backstage-weekly/"
