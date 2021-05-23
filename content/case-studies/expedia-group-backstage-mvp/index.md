@@ -1,7 +1,7 @@
 ---
-title: Deploying Backstage at Expedia Group
+title: Backstage at Expedia Group
 date: '2021-05-24T12:11:00.0Z'
-description: 
+description: Expedia Group recently rolled out Backstage company wide to more than 5,000 developers as their designated internal service catalog, API catalog, documentation library and developer portal.
 logo:
   image: './EG_CompleteLogo1_White-on-Transparent-01.png'
   alt: Expedia Group Logo
