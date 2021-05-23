@@ -11,12 +11,9 @@ import NavItemSpacer from './NavItemSpacer';
 import Logo from './Logo';
 import HamburgerMenu from './HamburgerMenu';
 import BackstageLogo from './BackstageLogo';
+import DropdownMenuItem from './DropdownMenuItem';
 
 const useStyles = createUseStyles(styles);
-
-const canFitDocsLinkInHeader = (maxWidthBreakpoint) => (
-  ['xl', 'none'].includes(maxWidthBreakpoint)
-);
 
 const SitewideHeader = ({
   maxWidthBreakpoint = DEFAULT_MAX_WIDTH_BREAKPOINT,
@@ -37,25 +34,15 @@ const SitewideHeader = ({
           <nav className={classes.fullScreenNav}>
             <span className={classes.textLinkWrapper}>
               <NavItemSpacer>
-                <TextLink to="/backstage/plugins/" text="Backstage Plugins" />
+                <DropdownMenuItem title="Resources" />
               </NavItemSpacer>
 
               <NavItemSpacer>
-                <TextLink to="/backstage-weekly/" text="Backstage Weekly" />
+                <TextLink
+                  to="/docs/getting-started/getting-started-for-admins/"
+                  text="Documentation"
+                />
               </NavItemSpacer>
-
-              <NavItemSpacer>
-                <TextLink to="/blog/" text="Blog" />
-              </NavItemSpacer>
-
-              {canFitDocsLinkInHeader(maxWidthBreakpoint) && (
-                <NavItemSpacer>
-                  <TextLink
-                    to="/docs/getting-started/getting-started-for-admins/"
-                    text="Documentation"
-                  />
-                </NavItemSpacer>
-              )}
             </span>
 
             <NavItemSpacer>
