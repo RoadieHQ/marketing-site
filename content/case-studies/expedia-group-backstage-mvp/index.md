@@ -20,6 +20,8 @@ I sat down with engineering manager Erik Lindgren and product manager Mike Turne
 
 Expedia Group is a global travel company which has grown via acquisitions over its 20 year history. Currently more than 15 brands are part of the group.
 
+![Logos of all the companies which make up Expedia Group](./the-power-of-platform-logos-updated.png)
+
 ## Becoming a platform company
 
 
