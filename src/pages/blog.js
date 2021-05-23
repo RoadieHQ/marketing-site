@@ -4,20 +4,28 @@ import { graphql } from 'gatsby';
 import { SEO, StickyFooter } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 import HeadRssLink from 'components/blog/HeadRssLink';
+import { createUseStyles } from 'react-jss';
+
+const useStyles = createUseStyles(() => ({
+  summaryWrapper: {
+    marginBottom: '4em',
+  },
+}));
 
 const MAX_WIDTH_BREAKPOINT = 'md';
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
   const siteTitle = data.site.siteMetadata.title;
+  const classes = useStyles();
 
   return (
     <>
       <SEO
         title={`All blog posts | ${siteTitle}`}
         description={`
-          The Backstage service catalog from Spotify is an amazing tool for tracking your
-          services and APIs. We write about it here.
+          Backstage content. Everything from technical how-tos to recaps of community sessions and 
+          general engineering effectiveness content.
         `}
       />
 
@@ -25,7 +33,9 @@ const BlogIndex = ({ data, location }) => {
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         {posts.map(({ node }) => (
-          <PostSummary key={node.fields.slug} post={node} />
+          <div className={classes.summaryWrapper} key={node.fields.slug}>
+            <PostSummary post={node} />
+          </div>
         ))}
       </StickyFooter>
     </>

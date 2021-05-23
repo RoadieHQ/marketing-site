@@ -21,6 +21,30 @@ module.exports.BLOGS_QUERY = `
 }
 `;
 
+module.exports.CASE_STUDIES_QUERY = `
+{
+  caseStudies: allMarkdownRemark(
+    sort: {
+      fields: [frontmatter___date],
+      order: DESC
+    },
+    limit: 1000,
+    filter: {
+      fileAbsolutePath: {regex: "/.+content/case-studies/.+/"}
+    }
+  ) {
+    edges {
+      node {
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+`;
+
+
 module.exports.PLUGINS_QUERY = `
 {
   plugins: allMarkdownRemark(

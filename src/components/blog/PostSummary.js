@@ -6,10 +6,6 @@ import DatePublished from '../DatePublished';
 import Tags from '../Tags';
 
 const useStyles = createUseStyles((theme) => ({
-  root: {
-    marginBottom: '4em',
-  },
-
   header: {
     marginBottom: '0.5em',
   },
@@ -43,7 +39,7 @@ const PostSummary = ({ post }) => {
   const classes = useStyles();
 
   return (
-    <article className={classes.root}>
+    <>
       <header className={classes.header}>
         <h3 className={classes.h3}>
           <TextLink to={post.fields.slug} color="primary">
@@ -67,7 +63,7 @@ const PostSummary = ({ post }) => {
       <section className={classes.summary}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />
       </section>
-    </article>
+    </>
   );
 };
 

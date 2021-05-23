@@ -25,6 +25,10 @@ const useStyles = createUseStyles(() => ({
     marginBottom: 40,
     marginTop: 0,
   },
+
+  summaryWrapper: {
+    marginBottom: '4em',
+  },
 }));
 
 const MAX_WIDTH_BREAKPOINT = 'md';
@@ -98,7 +102,9 @@ const BlogIndex = ({ data, location }) => {
 
         <Lead>Previous editions</Lead>
         {posts.map(({ node }) => (
-          <PostSummary key={node.fields.slug} post={node} />
+          <div className={classes.summaryWrapper} key={node.fields.slug}>
+            <PostSummary post={node} />
+          </div>
         ))}
       </StickyFooter>
     </>
