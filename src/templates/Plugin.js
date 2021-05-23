@@ -4,19 +4,12 @@ import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+import { StickyFooter, InterstitialTitle, CodeBlock, SEO } from 'components';
+import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
-  Lead,
-  Headline,
-  StickyFooter,
-  InterstitialTitle,
-  CodeBlock,
-  SEO,
-} from 'components';
-import CallToAction from 'components/actions/NetlifyFormCallToAction';
-import { Logo, Attribution, EditOnGitHubLink } from 'components/backstage/plugins';
-import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-
-import { FORM_NAMES } from '../contactFormConstants';
+  SubscribeToNewsletterSuccessModal,
+  SubscribeToNewsletterCTA,
+} from 'components/actions/SubscribeToNewsletter';
 
 const useStyles = createUseStyles((theme) => ({
   coverImage: {
@@ -24,34 +17,8 @@ const useStyles = createUseStyles((theme) => ({
     maxHeight: '100%',
   },
 
-  callToActionWrapper: {
-    paddingTop: 40,
-    paddingBottom: 40,
-  },
-
   notes: theme.preMadeStyles.content,
 }));
-
-const useHeaderStyles = createUseStyles(() => ({
-  root: {
-    textAlign: 'center',
-    paddingBottom: 90,
-    paddingTop: 40,
-  },
-}));
-
-const Header = ({ plugin }) => {
-  const classes = useHeaderStyles();
-
-  return (
-    <header className={classes.root}>
-      <Logo sharpImage={plugin.frontmatter.logoImage.childImageSharp} />
-      <Headline>{plugin.frontmatter.heading}</Headline>
-      <Lead>{plugin.frontmatter.lead}</Lead>
-      <Attribution attribution={plugin.frontmatter.attribution} />
-    </header>
-  );
-};
 
 const PluginTemplate = ({ data, location }) => {
   const classes = useStyles();
@@ -72,20 +39,10 @@ const PluginTemplate = ({ data, location }) => {
   return (
     <>
       <SEO title={plugin.frontmatter.seo.title} description={plugin.frontmatter.seo.description} />
-      <FormSubmissionModal
+      <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
-        bodyText={
-          <>
-            <p>We publish most Mondays so you&apos;ll receive your first edition soon.</p>
-            <p>
-              In the meantime, we&apos;d love to hear why you&apos;re excited about Backstage.
-              Please fill out this short survey...
-            </p>
-          </>
-        }
-        siteMetadata={siteMetadata}
-        followOn="NEEDS_ANALYSIS_SURVEY"
+        siteMetadata={data.site.siteMetadata}
         email={email}
       />
 
@@ -128,23 +85,11 @@ const PluginTemplate = ({ data, location }) => {
           </div>
         )}
 
-        <div className={classes.callToActionWrapper}>
-          <InterstitialTitle text="Become a Backstage expert" />
-
-          <p className={classes.callToActionParagraph}>
-            To get the latest news, deep dives into Backstage features, and a roundup of recent
-            open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
-            <a href="/backstage-weekly/">See recent editions.</a>
-          </p>
-
-          <CallToAction
-            setModalOpen={setModalOpen}
-            buttonText="Subscribe"
-            netlifyFormName={FORM_NAMES.subscribeToNewsletter}
-            email={email}
-            setEmail={setEmail}
-          />
-        </div>
+        <SubscribeToNewsletterCTA
+          setModalOpen={setModalOpen}
+          email={email}
+          setEmail={setEmail}
+        />
       </StickyFooter>
     </>
   );
