@@ -15,6 +15,10 @@ const useStyles = createUseStyles((theme) => ({
   backgroundImage: {
     height: ({ backgroundImageHeight }) => backgroundImageHeight,
   },
+  
+  imageWrapper: {
+    marginBottom: '2em',
+  },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
@@ -35,7 +39,9 @@ const FeatureBlock = ({ text, backgroundImageUrl, imageSide, backgroundImageHeig
   };
 
   const image = (
-    <BackgroundImage backgroundImage={backgroundImageUrl} className={classes.backgroundImage} />
+    <div className={classes.imageWrapper}>
+      <BackgroundImage backgroundImage={backgroundImageUrl} className={classes.backgroundImage} />
+    </div>
   );
 
   if (imageSide === 'right') {

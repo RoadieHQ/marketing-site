@@ -7,8 +7,12 @@ import HeadRssLink from 'components/blog/HeadRssLink';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles(() => ({
+  header: {
+    marginBottom: '3em',
+  },
+
   summaryWrapper: {
-    marginBottom: '4em',
+    marginBottom: '3em',
   },
 }));
 
@@ -32,6 +36,10 @@ const BlogIndex = ({ data, location }) => {
       <HeadRssLink />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
+        <header className={classes.header}>
+          <h2>Blog</h2>
+        </header>
+
         {posts.map(({ node }) => (
           <div className={classes.summaryWrapper} key={node.fields.slug}>
             <PostSummary post={node} />

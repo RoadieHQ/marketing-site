@@ -5,18 +5,21 @@ import { createUseStyles } from 'react-jss';
 import ListItem from 'components/backstage/plugins/ListItem';
 import { SEO, StickyFooter } from 'components';
 
+const GRID_GAP = '1rem';
+
 const useStyles = createUseStyles((theme) => ({
   header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     fontSize: '1rem',
+    marginBottom: GRID_GAP,
   },
 
   grid: {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-    gridGap: '1rem',
+    gridGap: GRID_GAP,
   },
 
   input: {
@@ -47,7 +50,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Home = ({ data, location }) => {
+const BackstagePlugins = ({ data, location }) => {
   const {
     plugins,
     site: {
@@ -104,7 +107,7 @@ const Home = ({ data, location }) => {
   );
 };
 
-export default Home;
+export default BackstagePlugins;
 
 export const pageQuery = graphql`
   query {

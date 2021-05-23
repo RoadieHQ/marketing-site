@@ -9,6 +9,10 @@ import PostSummary from 'components/blog/PostSummary';
 const MAX_WIDTH_BREAKPOINT = 'md';
 
 const useStyles = createUseStyles(() => ({
+  header: {
+    marginBottom: '1em',
+  },
+
   summaryRoot: {
     display: 'flex',
   },
@@ -39,7 +43,7 @@ const CaseStudiesIndex = ({ data, location }) => {
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <header>
+        <header className={classes.header}>
           <h2>Case Studies</h2>
         </header>
 

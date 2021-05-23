@@ -129,7 +129,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     node = transformPageFrontmatter({ node });
     const value = createFilePath({ node, getNode });
-    
+
     createNodeField({
       name: `slug`,
       node,
