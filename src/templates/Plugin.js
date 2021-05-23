@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { StickyFooter, InterstitialTitle, CodeBlock, SEO } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
@@ -71,8 +71,8 @@ const PluginTemplate = ({ data, location }) => {
         <InterstitialTitle text="How it looks" />
 
         <div>
-          <Img
-            fluid={plugin.frontmatter.coverImage.childImageSharp.fluid}
+          <GatsbyImage
+            image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
             alt={plugin.frontmatter.coverImageAlt}
             className={classes.coverImage}
           />
@@ -123,17 +123,13 @@ export const pageQuery = graphql`
 
         logoImage {
           childImageSharp {
-            fixed(width: 200) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(layout: FIXED, width: 140)
           }
         }
 
         coverImage {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         coverImageAlt
