@@ -149,6 +149,15 @@ const HamburgerMenu = ({ siteMetadata }) => {
 
         <div className={classes.spacer}>
           <TextLink
+            to="/case-studies/"
+            text="Case Studies"
+            color="contrasting"
+            className={classes.textLink}
+          />
+        </div>
+
+        <div className={classes.spacer}>
+          <TextLink
             to="/docs/getting-started/getting-started-for-admins/"
             text="Documentation"
             color="contrasting"
