@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { createUseStyles } from 'react-jss';
 
 import { SEO, StickyFooter } from 'components';
@@ -60,9 +60,10 @@ const CaseStudiesIndex = ({ data, location }) => {
               className={classes.summaryImageWrapper}
               style={{ backgroundColor: node.frontmatter.logo.backgroundColor }}
             >
-              <Img
-                fixed={node.frontmatter.logo.image.childImageSharp.fixed}
+              <GatsbyImage
+                image={node.frontmatter.logo.image.childImageSharp.gatsbyImageData}
                 backgroundColor={node.frontmatter.logo.backgroundColor}
+                alt={node.frontmatter.logo.alt}
               />
             </span>
             <span className={classes.summaryWrapper}>
@@ -103,9 +104,7 @@ export const pageQuery = graphql`
               backgroundColor
               image {
                 childImageSharp {
-                  fixed(width: 140) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(layout: FIXED, width: 140)
                 }
               }
             }
