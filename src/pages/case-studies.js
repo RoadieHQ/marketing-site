@@ -6,9 +6,9 @@ import { createUseStyles } from 'react-jss';
 import { SEO, StickyFooter } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 
-const MAX_WIDTH_BREAKPOINT = 'md';
+const MAX_WIDTH_BREAKPOINT = 'lg';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   header: {
     marginBottom: '1em',
   },
@@ -17,16 +17,23 @@ const useStyles = createUseStyles(() => ({
     display: 'flex',
   },
 
-  summaryWrapper: {
-    marginLeft: 16,
-  },
+  summaryWrapper: {},
 
   summaryImageWrapper: {
-    display: 'flex',
     alignItems: 'center',
+    display: 'none',
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    summaryImageWrapper: {
+      display: 'flex',
+    },
+
+    summaryWrapper: {
+      marginLeft: 16,
+    },
   },
 }));
-
 
 const CaseStudiesIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -96,7 +103,7 @@ export const pageQuery = graphql`
               backgroundColor
               image {
                 childImageSharp {
-                  fixed(width: 100) {
+                  fixed(width: 140) {
                     ...GatsbyImageSharpFixed
                   }
                 }
