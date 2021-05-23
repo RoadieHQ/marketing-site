@@ -14,7 +14,7 @@ Expedia Group recently rolled out Backstage company wide to more than 5,000 deve
 
 I sat down with engineering manager Erik Lindgren and product manager Mike Turner to hear Expedia’s reasons for choosing Backstage and the lessons they have learned so far.
 
-[Erik][erik linkedin] is a Senior Engineering Manager leading the Developer Experience (DX) Team at Expedia group. He previously worked in infrastructure and platform roles, building out self-service platform capabilities for [Hotelsa.com][hotels dot com].
+[Erik][erik linkedin] is a Senior Engineering Manager leading the Developer Experience (DX) Team at Expedia group. He previously worked in infrastructure and platform roles, building out self-service platform capabilities for [Hotels.com][hotels dot com].
 
 [Mike][mike linkedin] is a 22 year veteran of the software industry and currently works as a Senior Manager of Product Management.
 
