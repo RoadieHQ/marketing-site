@@ -25,7 +25,7 @@ const SitewideHeader = ({
         <header className={classes.header}>
           <Logo />
 
-          <nav className={classes.fullScreenNav}>
+          <nav className={classes.fullScreenNav} aria-label="Sitewide navigation">
             <span className={classes.textLinkWrapper}>
               <NavItemSpacer>
                 <DropdownMenuItem title="Learn" siteMetadata={data.site.siteMetadata} />
