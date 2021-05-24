@@ -8,7 +8,7 @@ attribution:
 
 seo:
   # Don't forget to end with "| Roadie"
-  title: 'Backstage AWS Lambda Plugin | Roadie'
+  title: 'Backstage API Docs Plugin | Roadie'
   description: |
     Components to discover and display API entities as an extension to the catalog plugin.
 
@@ -24,28 +24,103 @@ gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @backstage/plugin-api-docs'
-  - intro: Add plugin to the list of plugins.
+  - intro: Add the ApiExplorerPage extension to the app:.
     language: typescript
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as ApiDocs } from '@backstage/plugin-api-docs';
-  - intro: Add plugin API to your Backstage instance.
+      // In packages/app/src/App.tsx
+      import { ApiExplorerPage } from '@backstage/plugin-api-docs';
+      <Route path="/api-docs" element={<ApiExplorerPage />} />;
+  - intro: Add one of the provided widgets to the EntityPage:.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { Router as ApiDocsRouter } from '@backstage/plugin-api-docs';
+      
+        import {
+          EntityAboutCard,
+          EntityApiDefinitionCard,
+          EntityConsumingComponentsCard,
+          EntityProvidingComponentsCard,
+        } from '@backstage/plugin-api-docs';
 
-        const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-          <EntityPageLayout>
+
+        const apiPage = (
+          <EntityLayout>
             ...
-            <EntityPageLayout.Content
-              path="/docs/*"
-              title="Docs"
-              element={<DocsRouter entity={entity} />}
-            />
-            ...
-          </EntityPageLayout>
+            <EntityLayout.Route path="/" title="Overview">
+              <Grid container spacing={3}>
+                <Grid item md={6}>
+                  <EntityAboutCard />
+                </Grid>
+                <Grid container item md={12}>
+                  <Grid item md={6}>
+                    <EntityProvidingComponentsCard />
+                  </Grid>
+                  <Grid item md={6}>
+                    <EntityConsumingComponentsCard />
+                  </Grid>
+                </Grid>
+              </Grid>
+           </EntityLayout.Route>
+           <EntityLayout.Route path="/definition" title="Definition">
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <EntityApiDefinitionCard />
+                </Grid>
+              </Grid>
+            </EntityLayout.Route>
+         </EntityLayout>
         );
+
+        // ...
+
+        export const entityPage = (
+          <EntitySwitch>
+            // ...
+            <EntitySwitch.Case if={isKind('api')} children={apiPage} />
+            // ...
+          </EntitySwitch>
+        );
+
+  - intro: Custom API Renderings
+    language: typescript
+    code: |
+      // packages/app/src/apis.tsx
+      
+        import { ApiEntity } from '@backstage/catalog-model';
+        import {
+          ApiDefinitionWidget,
+          apiDocsConfigRef,
+          defaultDefinitionWidgets,
+        } from '@backstage/plugin-api-docs';
+        import { SqlRenderer } from '...';
+
+        // ...
+
+        export const apis: AnyApiFactory[] = [
+          createApiFactory({
+          api: apiDocsConfigRef,
+          deps: {},
+          factory: () => {
+            // load the default widgets
+            const definitionWidgets = defaultDefinitionWidgets();
+            return {
+              getApiDefinitionWidget: (apiEntity: ApiEntity) => {
+                // custom rendering for sql
+                if (apiEntity.spec.type === 'sql') {
+                  return {
+                    type: 'sql',
+                    title: 'SQL',
+                    component: definition => <SqlRenderer definition={definition} />,
+                  } as ApiDefinitionWidget;
+                }
+
+                // fallback to the defaults
+                return definitionWidgets.find(d => d.type === apiEntity.spec.type);
+              },
+            };
+          },
+        }),
+      ]
 ---
 
 ## API formats supported right now:
