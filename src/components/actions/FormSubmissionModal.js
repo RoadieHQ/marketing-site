@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { createUseStyles } from 'react-jss';
-import { Link, Button } from 'components';
+import { TextLink as Link, Button } from 'components';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const modalStyles = {
@@ -24,36 +24,32 @@ const modalStyles = {
 
 Modal.setAppElement(`#___gatsby`);
 
-const useStyles = createUseStyles((theme) => ({
+const useStyles = createUseStyles(() => ({
   modalContentWrapper: {
     padding: 16,
-  },
-
-  link: {
-    color: theme.palette.primary.main,
   },
 }));
 
 const twitterUrl = ({ social }) => `https://twitter.com/${social.twitter}`;
 
-const NewsletterAndTwitterInner = ({ siteMetadata, classes }) => (
+const NewsletterAndTwitterInner = ({ siteMetadata }) => (
   <p>
     Learn more about Backstage via{' '}
-    <Link to="/backstage-weekly/" className={classes.link}>
+    <Link to="/backstage-weekly/" color="primary">
       our newsletter
     </Link>{' '}
     or follow{' '}
-    <Link to={twitterUrl(siteMetadata)} className={classes.link}>
+    <Link to={twitterUrl(siteMetadata)} color="primary">
       @{siteMetadata.social.twitter}
     </Link>
     .
   </p>
 );
 
-const TwitterInner = ({ siteMetadata, classes }) => (
+const TwitterInner = ({ siteMetadata }) => (
   <p>
     Follow{' '}
-    <Link to={twitterUrl(siteMetadata)} className={classes.link}>
+    <Link to={twitterUrl(siteMetadata)} color="primary">
       @{siteMetadata.social.twitter}
     </Link>
     .

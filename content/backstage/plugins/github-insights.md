@@ -21,29 +21,22 @@ gettingStarted: # What will this step accomplish?
     language: bash
     code: 'yarn add @roadiehq/backstage-plugin-github-insights'
 
-  - intro: Import it into your Backstage application.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as GitHubInsights } from '@roadiehq/backstage-plugin-github-insights';
-
   - intro: Add plugin API to your Backstage instance.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { Router as GitHubInsightsRouter } from '@roadiehq/backstage-plugin-github-insights';
+      import { EntityGithubInsightsContent } from '@roadiehq/backstage-plugin-github-insights';
 
-      const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-        // ...
-        &lt;EntityPageLayout>
-          &lt;EntityPageLayout.Content
+      const serviceEntityPage = (
+        <EntityLayoutWrapper>
+          ...
+          <EntityLayout.Route 
             path="/code-insights"
-            title="Code Insights"
-            element={&lt;GitHubInsightsRouter entity={entity} />}
-          />
-          &lt;/EntityPageLayout>
-        &lt;/EntityPageLayout>
-      )
+            title="Code Insights">
+            <EntityGithubInsightsContent />
+          </EntityLayout.Route>
+        </EntityLayoutWrapper>
+      );
 
   - intro: Run the backstage app with the following command and navigate to the services tab.
     language: bash
@@ -59,30 +52,28 @@ gettingStarted: # What will this step accomplish?
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        ContributorsCard,
-        LanguagesCard,
-        ReadMeCard,
-        ReleasesCard,
-        isPluginApplicableToEntity as isGitHubAvailable,
+      EntityGithubInsightsContent,
+      EntityGithubInsightsLanguagesCard,
+      EntityGithubInsightsReadmeCard,
+      EntityGithubInsightsReleasesCard,
+      isGithubInsightsAvailable,
       } from '@roadiehq/backstage-plugin-github-insights';
 
       // ...
-
-      const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
-          ...
-          {isGitHubAvailable(entity) && (
-            &lt;>
-              &lt;Grid item md={6}>
-                &lt;ContributorsCard entity={entity} />
-                &lt;LanguagesCard entity={entity} />
-                &lt;ReleasesCard entity={entity} />
-              &lt;/Grid>
-              &lt;Grid item md={6}>
-                &lt;ReadMeCard entity={entity} />
-              &lt;/Grid>
-            &lt;/>
-          )}
-        &lt;/Grid>
+      
+      const overviewContent = (
+        <Grid container spacing={3} alignItems="stretch">
+        <EntitySwitch>
+            <EntitySwitch.Case if={e => Boolean(isGithubInsightsAvailable(e))}>
+              <Grid item md={6}>
+                <EntityGithubInsightsLanguagesCard />
+                <EntityGithubInsightsReleasesCard />
+              </Grid>
+              <Grid item md={6}>
+                <EntityGithubInsightsReadmeCard maxHeight={350} />
+              </Grid>
+            </EntitySwitch.Case>
+          </EntitySwitch>
+        </Grid>
       );
 ---

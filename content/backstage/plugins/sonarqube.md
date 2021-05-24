@@ -34,13 +34,13 @@ gettingStarted:
       import { SonarQubeCard } from '@backstage/plugin-sonarqube';
 
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
+        <Grid container spacing={3} alignItems="stretch">
           ...
-          &lt;Grid item md={6}>
-            &lt;SonarQubeCard  entity={entity} />
-          &lt;/Grid>
+          <Grid item md={6}>
+            <SonarQubeCard  entity={entity} />
+          </Grid>
           ...
-        &lt;/Grid>
+        </Grid>
       );
 
   - intro: Add the proxy config for SonarCloud

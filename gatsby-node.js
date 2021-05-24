@@ -9,6 +9,7 @@ const {
 } = require('./src/queries/gatsbyNodeQueries');
 const createLatestLegalNotices = require('./src/pageCreation/createLatestLegalNotices');
 const createPagesFromQuery = require('./src/pageCreation/createPagesFromQuery');
+const transformPageFrontmatter = require('./src/pageCreation/transformPageFrontmatter');
 
 exports.createPages = async ({ graphql, actions }) => {
   await createPagesFromQuery({
@@ -103,7 +104,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
+    node = transformPageFrontmatter({ node });
     const value = createFilePath({ node, getNode });
+    
     createNodeField({
       name: `slug`,
       node,

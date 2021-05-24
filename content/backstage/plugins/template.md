@@ -21,7 +21,7 @@ seo:
 logoImage: '../../assets/logos/sentry/sentry-glyph-light-200x184.png'
 
 # This must be a relative path. It should start with ../
-coverImage: '../../assets/sentry-plugin-1604x716.png'
+coverImage: '../../assets/backstage/plugins/sentry-plugin-1604x716.png'
 coverImageAlt: 'Explain what is in the image'
 
 # Instructions for someone who wants to use this plugin.

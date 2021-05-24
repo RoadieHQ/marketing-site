@@ -49,7 +49,7 @@ gettingStarted:
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       case isTravisCIAvailable(entity):
-        content = &lt;RecentTravisCIBuildsWidget entity={entity} /&gt;;
+        content = <RecentTravisCIBuildsWidget entity={entity} />;
         break;
 
   - intro: 'add annotation to the yaml config file of a component'

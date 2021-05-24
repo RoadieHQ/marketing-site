@@ -1,29 +1,20 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
-import { Button, LayoutControl, InterstitialTitle, Link } from 'components';
+import { Button, LayoutControl, InterstitialTitle, TextLink } from 'components';
 import { applicationHref } from './links';
 
-const useStyles = createUseStyles((theme) => ({
+const useStyles = createUseStyles(() => ({
   hero: {
     textAlign: 'center',
     paddingLeft: 16,
     paddingRight: 16,
-  },
-
-  spacing: {
     paddingBottom: 24,
     marginBottom: 40,
   },
 
-  link: {
-    color: theme.palette.primary.main,
-    textDecoration: 'none',
+  spacer: {
     marginLeft: 16,
-
-    '&:hover': {
-      textDecoration: 'underline',
-    },
   },
 }));
 
@@ -42,9 +33,15 @@ const CareersFooter = ({ typeformSlug }) => {
             color="primary"
           />
 
-          <Link to="/careers/" className={classnames('typography-mono', classes.link)}>
-            See all roles
-          </Link>
+          <span className={classes.spacer}>
+            <TextLink
+              to="/careers/"
+              color="primary"
+              className="typography-mono"
+            >
+              See all roles
+            </TextLink>
+          </span>
         </div>
       </LayoutControl>
     </div>

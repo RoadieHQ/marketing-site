@@ -23,30 +23,22 @@ gettingStarted:
     language: bash
     code: 'yarn add @roadiehq/backstage-plugin-github-pull-requests'
 
-  - intro: Import it into your Backstage application.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as GithubPullRequests } from '@roadiehq/backstage-plugin-github-pull-requests';
-
   - intro: Add plugin API to your Backstage instance.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { Router as GithubPullRequestsRouter } from '@roadiehq/backstage-plugin-github-pull-requests';
+      import { EntityGithubPullRequestsContent } from '@roadiehq/backstage-plugin-github-pull-requests';
 
       // ...
 
-      const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-        // ...
-        &lt;EntityPageLayout>
-          &lt;EntityPageLayout.Content
-            path="/github-pull-requests"
-            title="Github Pull Requests"
-            element={&lt;GithubPullRequestsRouter entity={entity} />}
-          />
-          &lt;/EntityPageLayout>
-        &lt;/EntityPageLayout>
+      const serviceEntityPage = (
+        <EntityLayout>
+          ...
+          <EntityLayout.Route path="/pull-requests" title="Pull Requests">
+            <EntityGithubPullRequestsContent />
+          </EntityLayout.Route>
+          ...
+        </EntityLayout>
       )
 
   - intro: Run the backstage app with the following command and navigate to the services tab.
@@ -57,14 +49,16 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { PullRequestsStatsCard } from '@roadiehq/backstage-plugin-github-pull-requests';
+      import { EntityGithubPullRequestsOverviewCard } from '@roadiehq/backstage-plugin-github-pull-requests';
+
         // ...
-        const OverviewContent = ({ entity }: { entity: Entity }) => (
-          &lt;Grid container spacing={3} alignItems="stretch">
-          ...
-          &lt;Grid item md={6}>
-            &lt;PullRequestsStatsCard entity={entity} />
-          &lt;/Grid>
-        &lt;/Grid>
-      );
+        const overviewContent = (
+          <Grid container spacing={3}>
+            ...
+            <Grid item md={6}>
+              <EntityGithubPullRequestsOverviewCard />
+            </Grid>
+            ...
+          </Grid>
+        );
 ---

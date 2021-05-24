@@ -28,7 +28,7 @@ gettingStarted:
       # app-config.yaml
       proxy:
         '/jira/api':
-          target: &lt;JIRA_URL>
+          target: <JIRA_URL>
           headers:
             Authorization:
               $env: JIRA_TOKEN
@@ -67,23 +67,23 @@ gettingStarted:
       } from '@roadiehq/backstage-plugin-jira';
 
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
+        <Grid container spacing={3} alignItems="stretch">
           ...
           {isJiraAvailable(entity) && (
-            &lt;Grid item md={6}>
-              &lt;JiraCard entity={entity} />
-            &lt;/Grid>
+            <Grid item md={6}>
+              <JiraCard entity={entity} />
+            </Grid>
           )}
           ...
-        &lt;/Grid>
+        </Grid>
       );
   - intro: Add annotation to the yaml config file of a component
     language: yaml
     code: |
       metadata:
         annotations:
-          jira/project-key: &lt;example-jira-project-key>
-          jira/component: &lt;example-component> # optional, you might skip this value to fetch data for all components
+          jira/project-key: <example-jira-project-key>
+          jira/component: <example-component> # optional, you might skip this value to fetch data for all components
   - intro: Provide the JIRA_TOKEN environmental variable (instructions at the notes below)
 ---
 
@@ -92,7 +92,7 @@ gettingStarted:
 1. Obtain you personal token from jira - https://id.atlassian.com/manage-profile/security/api-tokens
 2. Create a base64-encoded string by converting a string in format
 
-   "&lt;your-atlassian-account-mail>:&lt;your-jira-token>"
+   "<your-atlassian-account-mail>:<your-jira-token>"
 
    for example:
 

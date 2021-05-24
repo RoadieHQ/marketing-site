@@ -2,7 +2,7 @@
 name: cost-insights
 humanName: Cost Insights
 heading: 'Backstage Cost Insights Plugin'
-lead: 'Cost Insights is a plugin to help engineers visualize, understand and optimize their cloud costs.'
+lead: 'Visualize, understand and optimize your cloud costs.'
 attribution:
   text: Spotify
   href: https://spotify.com
@@ -14,15 +14,17 @@ seo:
 
 logoImage: '../../assets/logos/cost-insights/money-bag.png'
 
-coverImage: '../../assets/cost-insights-plugin.png'
-coverImageAlt: 'A screenshot of the Cost Insights plugin.'
+coverImage: '../../assets/backstage/plugins/cost-insights.png'
+coverImageAlt: 'Charts showing cloud costs over time and compared to other services.'
 
 gettingStarted:
-  - intro: Install the plugin into Backstage.
+  - intro: Install the plugin into your Backstage instance.
     language: bash
     code: 'yarn add @backstage/plugin-cost-insights'
 
-  - intro: Create a CostInsights client. Clients must implement the CostInsightsApi interface. See the API file for required methods and documentation.
+  - intro: Create a CostInsights client which implements the CostInsightsApi interface.
+  - intro:
+      Cost Insights currently does not provide a CostInsightsApi client out of the box, but there are templates and examples in the Backstage repo. Here's an exploration into [Cost Insights for AWS](https://github.com/backstage/backstage/blob/master/plugins/cost-insights/contrib/aws-cost-explorer-api.md).
     language: typescript
     code: |
       // path/to/CostInsightsClient.ts
@@ -46,9 +48,30 @@ gettingStarted:
         }),
       ];
 
-  - intro: Add plugin to the list of plugins.
+  - intro: Add the CostInsightsPage extension to your App.tsx file.
     language: typescript
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as CostInsights } from '@backstage/plugin-cost-insights';
+      // packages/app/App.tsx
+      import { CostInsightsPage } from '@backstage/plugin-cost-insights';
+
+      <FlatRoutes>
+        ...
+        <Route path="/cost-insights" element={<CostInsightsPage />} />
+        ...
+      </FlatRoutes>
+
+  - intro: Add plugin to your sidebar.
+    language: typescript
+    code: |
+      // packages/app/src/sidebar.tsx
+      export const AppSidebar = () => (
+        <Sidebar> 
+          <SidebarItem icon={MoneyIcon} to="cost-insights" text="Cost Insights" />
+        </Sidebar>
+      )
 ---
+
+To learn more about the Cost Insights plugin and how it is used inside Spotify, check out this [RedMonk](https://redmonk.com) interview with Cost Insights product manager Janisa Anandamohan and her engineering colleague Tim Hansen. We also have brief notes from the video in [this edition of our newsletter](https://roadie.io/blog/backstage-weekly-25-org-chart-kubecon/#cost-insights-on-redmonk).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5GN2ucN1Lxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

@@ -4,6 +4,7 @@ import { createUseStyles } from 'react-jss';
 import { SEO, StickyFooter, ContentHeader, TextLink as Link } from 'components';
 import { TableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/doc';
+import editOnGitHubUrl from '../editOnGitHubUrl';
 
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
@@ -48,15 +49,6 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const editOnGitHubUrl = ({ siteMetadata, doc }) => {
-  const charStart = doc.fileAbsolutePath.indexOf('/content/docs');
-  const projectRootPath = doc.fileAbsolutePath.slice(charStart, doc.fileAbsolutePath.length);
-  // This URL will be incorrect until the document has been merged to the 'main' branch on
-  // GitHub because `blob/main` is hardcoded into the sourceCodeUrl. We only need this link
-  // to work in production though so that's ok.
-  return `${siteMetadata.sourceCodeUrl}${projectRootPath}`;
-};
-
 const Doc = ({
   data: {
     doc,
@@ -90,7 +82,11 @@ const Doc = ({
             <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
 
             <footer className={classes.articleFooter}>
-              <Link to={editOnGitHubUrl({ siteMetadata, doc })}>Edit this page on GitHub</Link>
+              <Link
+                to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
+              >
+                Edit this page on GitHub
+              </Link>
             </footer>
           </article>
 

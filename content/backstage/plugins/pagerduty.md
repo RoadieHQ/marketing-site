@@ -54,18 +54,18 @@ gettingStarted:
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       const OverviewContent = ({ entity }: { entity: Entity }) => (
-        &lt;Grid container spacing={3} alignItems="stretch">
-          &lt;Grid item md={6}>
-            &lt;AboutCard entity={entity} variant="gridItem" />
-          &lt;/Grid>
+        <Grid container spacing={3} alignItems="stretch">
+          <Grid item md={6}>
+            <AboutCard entity={entity} variant="gridItem" />
+          </Grid>
           {
             isPagerDutyAvailable(entity) && (
-              &lt;Grid item md={6}>
-                &lt;EntityPagerDutyCard />
-              &lt;/Grid>
+              <Grid item md={6}>
+                <EntityPagerDutyCard />
+              </Grid>
             )
           }
-        &lt;/Grid>
+        </Grid>
       );
 ---
 

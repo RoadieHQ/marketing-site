@@ -49,7 +49,8 @@
     "react-icons": "^4.2.0",
     "react-jss": "^10.6.0",
     "react-modal": "^3.13.1",
-    "react-use": "^17.2.4"
+    "react-use": "^17.2.4",
+    "remark-html": "^13.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.13",
