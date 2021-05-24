@@ -87,12 +87,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-166771003-3',
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: SITE_TITLE,
@@ -135,5 +129,20 @@ module.exports = {
     'gatsby-plugin-image',
 
     ...rssFeedPlugin,
+
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-166771003-3',
+      },
+    },
+
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-WFBJD3P',
+        includeInDevelopment: true,
+      },
+    },
   ],
 };
