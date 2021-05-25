@@ -21,6 +21,14 @@ gettingStarted:
   - intro: |
       Ensure you have the Rollbar Backend plugin installed. See the notes below to learn how
       to add a Rollbar API token to Backstage.
+  - intro: 'Add Rollbar configuration to your Backstage app'
+    language: 'yaml'
+    code: |
+      # app.config.yaml
+      rollbar:
+        organization: organization-name
+        # used by rollbar-backend
+        accountToken: ${ROLLBAR_ACCOUNT_TOKEN}
   - intro: 'Install the plugin in your Backstage instance'
     language: 'bash'
     code: 'yarn add @backstage/plugin-rollbar'
@@ -28,34 +36,32 @@ gettingStarted:
     language: 'typescript'
     code: |
       // packages/app/src/plugins.ts
-      export { plugin as Rollbar } from '@backstage/plugin-rollbar';
-  - intro: 'Add the plugin API to your Backstage instance.'
+      export { rollbarPlugin } from '@backstage/plugin-rollbar';
+  - intro: 'Add the plugin to your Backstage instance.'
     language: 'typescript'
     code: |
-      // packages/app/src/api.ts
-      import { RollbarClient, rollbarApiRef } from '@backstage/plugin-rollbar';
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import { EntityRollbarContent } from '@backstage/plugin-rollbar';
 
-      // ...
-
-      builder.add(
-        rollbarApiRef,
-        new RollbarClient({
-          apiOrigin: backendUrl,
-          basePath: '/rollbar',
-        }),
+      const serviceEntityPage = (
+        <EntityLayout>
+          ...
+          <EntityLayout.Route path="/rollbar" title="Rollbar">
+            <EntityRollbarContent />
+          </EntityLayout.Route>
+          ...
+        </EntityLayout>
       );
-
-      // Alternatively you can use the mock client
-      // builder.add(rollbarApiRef, new RollbarMockClient());
+  - intro: Annotate entities with the rollbar project slug
+    language: 'yaml'
+    code: |
+      # catalog-info.yaml
+      metadata:
+        annotations:
+          rollbar.com/project-slug: organization-name/project-name
 ---
 
-At the time of writing, in July 2020, Rollbar are rolling out a new UI which doesn't seem to
-have the ability to create API keys.
+You can find account access tokens by navigating to your organization settings -> Account Access Tokens in your Rollbar account.
 
-To switch back to the old UI temporarily, click your organization's name in the bottom left
-corner and select "Switch to old UI".
 
-Once there, go to your Account settings and click Account access tokens in the sidebar. Here
-you can "Add new access token". Make sure it has the `read` scope.
-
-![Rollbar access token page](./rollbar-accounts-access-tokens-1590x1397.png)
+![Rollbar access token page](./rollbar-access-tokens.png)

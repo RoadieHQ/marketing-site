@@ -21,12 +21,38 @@ gettingStarted:
     language: bash
     code: 'yarn add @backstage/plugin-newrelic'
 
-  - intro: Add plugin to the list of plugins.
+  - intro: Add New Relic page to your Backstage instance
     language: typescript
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Newrelic } from '@backstage/plugin-newrelic';
+      // packages/app/src/App.tsx
+      import { NewRelicPage } from '@backstage/plugin-newrelic';
 
+      ...
+      const routes = (
+        <FlatRoutes>
+          ...
+          <Route path="/newrelic" element={<NewRelicPage />} />
+          ...
+        </FlatRoutes>
+      );
+      ...
+    
+  - intro: Add link to New Relic to your sidebar
+    language: typescript
+    code: |
+      // packages/app/src/components/Root/Root.tsx
+      ...
+    
+      export const Root = ({ children }: PropsWithChildren<{}>) => (
+        <SidebarPage>
+          <Sidebar>
+            ...
+            <SidebarItem icon={ExtensionIcon} to="graphiql" text="GraphiQL" />
+            ...
+          </Sidebar>
+        </SidebarPage>
+      );
+        
   - intro: Add the proxy config
     language: YAML
     code: |
