@@ -47,7 +47,7 @@ gettingStarted:
         <SidebarPage>
           <Sidebar>
             ...
-            <SidebarItem icon={ExtensionIcon} to="graphiql" text="GraphiQL" />
+            <SidebarItem icon={ExtensionIcon} to="newrelic" text="New Relic" />
             ...
           </Sidebar>
         </SidebarPage>
