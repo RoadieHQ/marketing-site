@@ -38,33 +38,32 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/plugins.ts
-      export { plugin as Pagerduty } from '@backstage/plugin-pagerduty';
+      export { pagerDutyPlugin } from '@backstage/plugin-pagerduty';
 
   - intro: Import the required functions and components into the Backstage entity page.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        isPluginApplicableToEntity as isPagerDutyAvailable,
-        EntityPagerDutyCard
+        isPagerDutyAvailable,
+        EntityPagerDutyCard,
       } from '@backstage/plugin-pagerduty';
 
   - intro: Add the EntityPagerDutyCard component to one or more entity page components depending on where you want the PagerDuty UI to appear. For example, display the PagerDuty UI on the existing Overview tab which is rendered for all types of entities.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      const OverviewContent = ({ entity }: { entity: Entity }) => (
+      const overviewContent = (
         <Grid container spacing={3} alignItems="stretch">
-          <Grid item md={6}>
-            <AboutCard entity={entity} variant="gridItem" />
-          </Grid>
-          {
-            isPagerDutyAvailable(entity) && (
+          ...
+          <EntitySwitch>
+            <EntitySwitch.Case if={isPagerDutyAvailable}>
               <Grid item md={6}>
                 <EntityPagerDutyCard />
               </Grid>
-            )
-          }
+            </EntitySwitch.Case>
+          </EntitySwitch>
+          ...
         </Grid>
       );
 ---

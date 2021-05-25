@@ -39,25 +39,27 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/plugins.ts
-      export { plugin as ArgoCD } from '@roadiehq/backstage-plugin-argo-cd';
+      export { argocdPlugin } from '@roadiehq/backstage-plugin-argo-cd';
   - intro: 'Add argoCD widget to your overview page'
     language: typescript
-    code: |
+    code: | 
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        ArgoCDDetailsWidget
-        isPluginApplicableToEntity as isArgoCDAvailable,
+        EntityArgoCDOverviewCard,
+        isArgocdAvailable
       } from '@roadiehq/backstage-plugin-argo-cd';
-
-      const OverviewContent = ({ entity }: { entity: Entity }) => (
+    
+      const overviewContent = (
         <Grid container spacing={3} alignItems="stretch">
-          ...
-          {isArgoCDAvailable(entity) && (
-            <Grid item md={6}>
-              <ArgoCDDetailsWidget entity={entity} />
-            </Grid>
-          )}
-          ...
+        ...
+          <EntitySwitch>
+            <EntitySwitch.Case if={e => Boolean(isArgocdAvailable(e))}>
+              <Grid item sm={4}>
+                <EntityArgoCDOverviewCard />
+              </Grid>
+            </EntitySwitch.Case>
+          </EntitySwitch>
+        ...
         </Grid>
       );
   - intro: Add annotation to the yaml config file of a component
