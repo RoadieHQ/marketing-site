@@ -45,7 +45,7 @@ gettingStarted:
     code: | 
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        EntityArgoCDOverviewCard,
+        EntityArgoCDHistoryCard,
         isArgocdAvailable
       } from '@roadiehq/backstage-plugin-argo-cd';
     
