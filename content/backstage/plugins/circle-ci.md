@@ -26,16 +26,49 @@ gettingStarted:
   - intro: Import it into your Backstage application
     language: typescript
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Circleci } from '@backstage/plugin-circleci';
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        EntityCircleCIContent,
+        isCircleCIAvailable,
+      } from '@backstage/plugin-circleci';
 
-  - intro: 'Add the plugin API to your API builder'
+  - intro: 'Add the plugin to the CI/CD section'
     language: typescript
     code: |
-      // packages/app/src/apis.ts
-      import { CircleCIApi, circleCIApiRef } from '@backstage/plugin-circleci';
+      // packages/app/src/components/catalog/EntityPage.tsx
+      const cicdContent = (
+        <EntitySwitch>
+          <EntitySwitch.Case if={isCircleCIAvailable}>
+            <EntityCircleCIContent />
+          </EntitySwitch.Case>
+          ...
+        </EntitySwitch>
 
-      export const apis = (config: ConfigApi) => {
-        builder.add(circleCIApiRef, new CircleCIApi(/* optional custom url for your own CircleCI instance */));
-      };
+  - intro: 'Add proxy configuration'
+    language: yaml
+    code: |
+      # app-config.yaml
+      proxy:
+        '/circleci/api':
+          target: https://circleci.com/api/v1.1
+          headers:
+            Circle-Token: ${CIRCLECI_AUTH_TOKEN}
+
+  - intro: 'Get and provide a CIRCLECI_AUTH_TOKEN as an environment variable (see the [CircleCI docs](https://circleci.com/docs/api/#add-an-api-token))'
+  
+  - intro: 'Add a circleci.com/project-slug annotation to your respective catalog-info.yaml files following [the Component format](https://backstage.io/docs/architecture-decisions/adrs-adr002#format)'
+    language: yaml
+    code: |
+      # Example catalog-info.yaml entity definition file
+      apiVersion: backstage.io/v1alpha1
+      kind: Component
+      metadata:
+        # ...
+        annotations:
+          # This also supports bitbucket/xxx/yyy
+          circleci.com/project-slug: github/my-org/my-repo
+      spec:
+        type: service
+        # ...
+
 ---
