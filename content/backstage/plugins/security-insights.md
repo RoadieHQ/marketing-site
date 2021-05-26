@@ -25,11 +25,7 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import {
-        EntitySecurityInsightsContent,
-        EntitySecurityInsightsCard,
-        isSecurityInsightsAvailable
-      } from '@roadiehq/backstage-plugin-security-insights';
+      import { EntitySecurityInsightsContent } from '@roadiehq/backstage-plugin-security-insights';
 
       const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
         <EntityLayout>
@@ -44,6 +40,13 @@ gettingStarted:
   - intro: Add the Sentry card to the component overview (optional)
     language: bash
     code: |
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        EntitySecurityInsightsCard,
+        isSecurityInsightsAvailable
+      } from '@roadiehq/backstage-plugin-security-insights';
+
+      // ...
       const overviewContent = (
         <Grid container spacing={3} alignItems="stretch">
           //...
