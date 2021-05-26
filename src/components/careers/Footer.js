@@ -35,7 +35,7 @@ const CareersFooter = ({ typeformSlug }) => {
 
           <span className={classes.spacer}>
             <TextLink
-              to="/careers/"
+              to="https://careers.roadie.io"
               color="primary"
               className="typography-mono"
             >

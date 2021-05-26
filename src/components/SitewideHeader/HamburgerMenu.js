@@ -127,7 +127,7 @@ const HamburgerMenu = ({ siteMetadata }) => {
 
         <div className={classes.spacer}>
           <TextLink
-              to="/careers/"
+            to="https://careers.roadie.io"
             text="Careers"
             color="contrasting"
             className={classes.textLink}
