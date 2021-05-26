@@ -42,7 +42,7 @@ const SitewideFooter = () => {
         <div>© {new Date().getFullYear()} Larder Software Limited</div>
 
         <nav>
-          <Link to="/careers/">Careers</Link>
+          <Link to="https://careers.roadie.io">Careers</Link>
 
           {/* This link will work in production but not in development. Netlify does the 301. */}
           <Link to="/legal-notices/terms-of-service/" className={classes.nonFirstLink}>
