@@ -22,7 +22,7 @@ gettingStarted:
     language: 'bash'
     code: 'yarn add @roadiehq/backstage-plugin-travis-ci'
 
-  - intro: Add proxy configuration'
+  - intro: Add proxy configurations
     language: 'yaml'
     code: |
       // app-config.yaml
@@ -38,25 +38,35 @@ gettingStarted:
                 env: TRAVISCI_AUTH_TOKEN
             travis-api-version: 3
 
-  - intro: 'Add plugin to the list of plugins:'
-    language: 'ts'
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as TravisCI } from '@roadiehq/backstage-plugin-travis-ci';
-
-  - intro: 'Add plugin to the `entitytPage.tsx` source file:'
+  - intro: Import it into your Backstage application
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      case isTravisCIAvailable(entity):
-        content = <RecentTravisCIBuildsWidget entity={entity} />;
-        break;
+      import {
+        EntityTravisCIContent,
+        EntityTravisCIOverviewCard,
+        isTravisciAvailable,
+      } from '@roadiehq/backstage-plugin-travis-ci';
 
-  - intro: 'add annotation to the yaml config file of a component'
+  - intro: Add plugin API to your Backstage instance
+    language: typescript
+    code: |
+     // packages/app/src/components/catalog/EntityPage.tsx
+
+     export const cicdContent = (
+       <EntitySwitch>
+         <EntitySwitch.Case if={isTravisciAvailable}>
+           <EntityTravisCIContent />
+         </EntitySwitch.Case>
+         ...
+       </EntitySwitch>
+     );
+
+  - intro: Add annotation to the yaml config file of a component
     language: yaml
     code: 'travis-ci.com/repo-slug: owner-name/project-name'
 
-  - intro: 'add your developer api key (from https://travis-ci.com/account/preferences) to the environmental variables for your backstage backend server'
+  - intro: Add your developer api key (from [Travis Preferences](https://travis-ci.com/account/preferences)) to the environmental variables for your backstage backend server
     language: bash
     code: 'TRAVISCI_AUTH_TOKEN="token your-api-key"'
 ---
@@ -66,7 +76,7 @@ gettingStarted:
 - List Travis CI Builds
 - Retrigger builds
 
-To use the Travis CI Backstage plugin, first visit Travis CI to get an API token: https://travis-ci.com/account/preferences
+To use the Travis CI Backstage plugin, first visit Travis CI to get an API token: [Travis Preferences](https://travis-ci.com/account/preferences)
 
 There are two versions of Travis CI: https://travis-ci.com and https://travis-ci.org. travis-ci.org is deprecated and not supported in this plugin.
 
