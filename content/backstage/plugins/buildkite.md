@@ -23,7 +23,7 @@ gettingStarted:
     language: bash
     code: yarn add @roadiehq/backstage-plugin-buildkite
 
-  - intro: Add proxy configuration'
+  - intro: Add proxy configurations
     language: YAML
     code: |
       # app-config.yaml
@@ -34,32 +34,30 @@ gettingStarted:
             Authorization: 
               $env: BUILDKITE_TOKEN
 
-  - intro: Add plugin to the list of your plugins
+  - intro: Import it into your Backstage application
     language: typescript
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Buildkite } from '@roadiehq/backstage-plugin-buildkite';
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        EntityBuildkiteContent,
+        isBuildkiteAvailable,
+      } from '@roadiehq/backstage-plugin-buildkite';
 
-  - intro: Add plugin API to your Backstage instance.
+  - intro: Add plugin API to your Backstage instance
     language: typescript
     code: |
      // packages/app/src/components/catalog/EntityPage.tsx
-     import {
-       EntityBuildkiteContent,
-       isPluginApplicableToEntity as isBuildkiteAvailable,
-     } from '@roadiehq/backstage-plugin-buildkite';
 
-     const CICDSwitcher = ({ entity }: { entity: Entity }) => {
-       // This component is just an example of how you can implement your company's logic in entity page.
-       // You can for example enforce that all components of type 'service' should use GitHubActions
-       switch (true) {
-         case isBuildkiteAvailable(entity):
-           return <BuildkiteRouter entity={entity} />;
-       ...
-       }
-     };
+     export const cicdContent = (
+       <EntitySwitch>
+         <EntitySwitch.Case if={isBuildkiteAvailable}>
+           <EntityBuildkiteContent />
+         </EntitySwitch.Case>
+         ...
+       </EntitySwitch>
+     );
 
-  - intro: Add annotation to your component-info.yaml file.
+  - intro: Add annotation to your component-info.yaml file
     language: YAML
     code: |
       metadata:
