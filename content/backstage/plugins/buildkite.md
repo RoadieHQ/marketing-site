@@ -23,13 +23,7 @@ gettingStarted:
     language: bash
     code: yarn add @roadiehq/backstage-plugin-buildkite
 
-  - intro: Import it into your Backstage application
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Buildkite } from '@roadiehq/backstage-plugin-buildkite';
-
-  - intro: Add proxy configuration'
+  - intro: Add proxy configurations
     language: YAML
     code: |
       # app-config.yaml
@@ -40,30 +34,37 @@ gettingStarted:
             Authorization: 
               $env: BUILDKITE_TOKEN
 
-  - intro: Add plugin API to your Backstage instance.
+  - intro: Import it into your Backstage application
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        Router as BuildkiteRouter,
-        isPluginApplicableToEntity as isBuildkiteAvailable,
+        EntityBuildkiteContent,
+        isBuildkiteAvailable,
       } from '@roadiehq/backstage-plugin-buildkite';
 
-      const CICDSwitcher = ({ entity }: { entity: Entity }) => {
-        switch (true) {
-          ...
-          case isBuildkiteAvailable(entity):
-            return <BuildkiteRouter entity={entity} />;
-          ...
-        }
-      }
+  - intro: Add plugin API to your Backstage instance
+    language: typescript
+    code: |
+     // packages/app/src/components/catalog/EntityPage.tsx
 
-  - intro: Add annotation to your component-info.yaml file.
+     export const cicdContent = (
+       <EntitySwitch>
+         <EntitySwitch.Case if={isBuildkiteAvailable}>
+           <EntityBuildkiteContent />
+         </EntitySwitch.Case>
+         ...
+       </EntitySwitch>
+     );
+
+  - intro: Add annotation to your component-info.yaml file
     language: YAML
     code: |
       metadata:
         annotations:
           buildkite.com/project-slug: [exampleorganization/exampleproject]
+
+  - intro: Get and provide BUILDKITE_TOKEN as env variable. Note that the token needs to be in format Bearer TOKEN 
 ---
 
 ## Features
