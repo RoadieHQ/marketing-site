@@ -93,4 +93,3 @@ $ export SONARQUBE_AUTH=$(base64 <<< "<YOUR_SONARQUBE_TOKEN>:") # Note it is imp
 ```
 
 You can then add these token(s) to a `.env` file or keep it as an exported variable.
-
