@@ -23,12 +23,6 @@ gettingStarted:
     language: bash
     code: yarn add @roadiehq/backstage-plugin-buildkite
 
-  - intro: Import it into your Backstage application
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Buildkite } from '@roadiehq/backstage-plugin-buildkite';
-
   - intro: Add proxy configuration'
     language: YAML
     code: |
@@ -40,23 +34,30 @@ gettingStarted:
             Authorization: 
               $env: BUILDKITE_TOKEN
 
+  - intro: Add plugin to the list of your plugins
+    language: typescript
+    code: |
+      // packages/app/src/plugins.ts
+      export { plugin as Buildkite } from '@roadiehq/backstage-plugin-buildkite';
+
   - intro: Add plugin API to your Backstage instance.
     language: typescript
     code: |
-      // packages/app/src/components/catalog/EntityPage.tsx
-      import {
-        Router as BuildkiteRouter,
-        isPluginApplicableToEntity as isBuildkiteAvailable,
-      } from '@roadiehq/backstage-plugin-buildkite';
+     // packages/app/src/components/catalog/EntityPage.tsx
+     import {
+       EntityBuildkiteContent,
+       isPluginApplicableToEntity as isBuildkiteAvailable,
+     } from '@roadiehq/backstage-plugin-buildkite';
 
-      const CICDSwitcher = ({ entity }: { entity: Entity }) => {
-        switch (true) {
-          ...
-          case isBuildkiteAvailable(entity):
-            return <BuildkiteRouter entity={entity} />;
-          ...
-        }
-      }
+     const CICDSwitcher = ({ entity }: { entity: Entity }) => {
+       // This component is just an example of how you can implement your company's logic in entity page.
+       // You can for example enforce that all components of type 'service' should use GitHubActions
+       switch (true) {
+         case isBuildkiteAvailable(entity):
+           return <BuildkiteRouter entity={entity} />;
+       ...
+       }
+     };
 
   - intro: Add annotation to your component-info.yaml file.
     language: YAML
@@ -64,6 +65,8 @@ gettingStarted:
       metadata:
         annotations:
           buildkite.com/project-slug: [exampleorganization/exampleproject]
+
+  - intro: Get and provide BUILDKITE_TOKEN as env variable. Note that the token needs to be in format Bearer TOKEN 
 ---
 
 ## Features
