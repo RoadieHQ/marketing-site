@@ -43,7 +43,7 @@ gettingStarted:
         </Grid>
       );
 
-  - intro: Add the proxy config for SonarCloud
+  - intro: Add the proxy config for SonarCloud (auth token is read from the environment variables)
     language: YAML
     code: |
       # app-config.yaml
@@ -54,7 +54,7 @@ gettingStarted:
           headers:
             Authorization: Basic ${SONARCLOUD_AUTH}
 
-  - intro: Add the proxy config for SonarQube
+  - intro: Add the proxy config for SonarQube (auth token is read from the environment variables)
     language: YAML
     code: |
       proxy:
@@ -67,7 +67,7 @@ gettingStarted:
       sonarQube:
         baseUrl: https://your.sonarqube.instance.com
 
-  - intro: Get and provide SONARQUBE_AUTH/SONARCLOUD_AUTH as env variables (see Notes for more details)
+  - intro: Get and provide SONARQUBE_AUTH/SONARCLOUD_AUTH as env variables (see Notes on how to generate these values)
 
   - intro: Add annotation to your component-info.yaml file.
     language: YAML
