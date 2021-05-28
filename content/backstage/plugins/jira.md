@@ -51,32 +51,24 @@ gettingStarted:
             # Allow your Jira instance for @roadiehq/backstage-plugin-jira
             - 'JIRA_URL'
 
-  - intro: Add plugin to the list of plugins
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Jira } from '@roadiehq/backstage-plugin-jira';
-
   - intro: 'Add plugin API to your Backstage instance'
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import {
-        JiraCard,
-        isPluginApplicableToEntity as isJiraAvailable,
-      } from '@roadiehq/backstage-plugin-jira';
+      import { EntityJiraOverviewCard, isJiraAvailable } from '@roadiehq/backstage-plugin-jira';
 
-      const OverviewContent = ({ entity }: { entity: Entity }) => (
+      const overviewContent = (
         <Grid container spacing={3} alignItems="stretch">
-          ...
-          {isJiraAvailable(entity) && (
-            <Grid item md={6}>
-              <JiraCard entity={entity} />
-            </Grid>
-          )}
-          ...
+          <EntitySwitch>
+            <EntitySwitch.Case if={isJiraAvailable}>
+              <Grid item md={6}>
+                <EntityJiraOverviewCard />
+              </Grid>
+            </EntitySwitch.Case>
+          </EntitySwitch>
         </Grid>
       );
+
   - intro: Add annotation to the yaml config file of a component
     language: yaml
     code: |
