@@ -22,12 +22,6 @@ gettingStarted:
     language: bash
     code: 'yarn add @backstage/plugin-lighthouse'
 
-  - intro: Add plugin to the list of plugins.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as LighthousePlugin } from '@backstage/plugin-lighthouse';
-
   - intro: 'Add the plugin API to your API builder'
     language: typescript
     code: |
@@ -41,9 +35,21 @@ gettingStarted:
         builder.add(lighthouseApiRef, LighthouseRestApi.fromConfig(config));
       };
 
+  - intro: 'Modify your app routes to include the LighthousePage component exported from the plugin.'
+    language: typescript
+    code: |
+      // packages/app/src/App.tsx
+      import { LighthousePage } from '@backstage/plugin-lighthouse'; from '@backstage/plugin-lighthouse';
+
+      const routes = (
+      <FlatRoutes>
+      {/* ...other routes */}
+      <Route path="/lighthouse" element={<LighthousePage />} />
+
   - intro: Configure lighthouse service url
     language: YAML
     code: |
+      // app-config.yaml
       lighthouse:
         baseUrl: [your-website-url]
 
@@ -58,17 +64,14 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { EmbeddedRouter as LighthouseRouter } from '@backstage/plugin-lighthouse';
+      import { EntityLighthouseContent} from '@backstage/plugin-lighthouse';
 
-      const WebsiteEntityPage = ({ entity }: { entity: Entity }) => (
+      const websiteEntityPage = (
         ...
-        <EntityPageLayout>
-          <EntityPageLayout.Content
-            path="/lighthouse"
-            title="Lighthouse"
-            element={<LighthouseRouter entity={entity} />}
-          />
-          </EntityPageLayout>
+        <EntityLayout>>
+          <EntityLayout.Route path="/lighthouse" title="Lighthouse">
+            <EntityLighthouseContent />
+          </EntityLayout.Route>
         </EntityPageLayout>
       )
 
@@ -77,18 +80,18 @@ gettingStarted:
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       import {
-        LastLighthouseAuditCard,
-        isPluginApplicableToEntity as isLighthouseAvailable,
+        EntityLastLighthouseAuditCard,
+        isLighthouseAvailable,
       } from '@backstage/plugin-lighthouse';
 
-      const OverviewContent = ({ entity }: { entity: Entity }) => (
+      const overviewContent = (
         <Grid container spacing={3} alignItems="stretch">
           ...
-          {isLighthouseAvailable(entity) && (
-            <Grid item sm={4}>
-              <LastLighthouseAuditCard />
-            </Grid>
-          )}
+          <EntitySwitch>
+            <EntitySwitch.Case if={isLighthouseAvailable}>
+           </EntitySwitch.Case>
+          </EntitySwitch>
+          ... 
         </Grid>
       );
 ---

@@ -21,6 +21,11 @@ coverImageAlt: 'A screenshot of the API Docs. It is showing a available endpoint
 # languages used here must be listed in the .babelrc
 gettingStarted:
   # What will this step accomplish?
+  - language: bash
+    code: |
+      The plugin is already added when using `npx @backstage/create-app` 
+      so you can skip these steps. However, if you are not using create-app
+      you can follow the steps below.
   - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @backstage/plugin-api-docs'
@@ -30,97 +35,58 @@ gettingStarted:
       // In packages/app/src/App.tsx
       import { ApiExplorerPage } from '@backstage/plugin-api-docs';
       <Route path="/api-docs" element={<ApiExplorerPage />} />;
-  - intro: Add one of the provided widgets to the EntityPage:.
+  - intro: 'Add one of the provided widgets to the EntityPage:'
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       
-        import {
-          EntityAboutCard,
-          EntityApiDefinitionCard,
-          EntityConsumingComponentsCard,
-          EntityProvidingComponentsCard,
-        } from '@backstage/plugin-api-docs';
+      import {
+        EntityAboutCard,
+        EntityApiDefinitionCard,
+        EntityConsumingComponentsCard,
+        EntityProvidingComponentsCard,
+      } from '@backstage/plugin-api-docs';
 
 
-        const apiPage = (
-          <EntityLayout>
-            ...
-            <EntityLayout.Route path="/" title="Overview">
-              <Grid container spacing={3}>
+      const apiPage = (
+        <EntityLayout>
+          ...
+          <EntityLayout.Route path="/" title="Overview">
+            <Grid container spacing={3}>
+              <Grid item md={6}>
+                <EntityAboutCard />
+              </Grid>
+              <Grid container item md={12}>
                 <Grid item md={6}>
-                  <EntityAboutCard />
+                  <EntityProvidingComponentsCard />
                 </Grid>
-                <Grid container item md={12}>
-                  <Grid item md={6}>
-                    <EntityProvidingComponentsCard />
-                  </Grid>
-                  <Grid item md={6}>
-                    <EntityConsumingComponentsCard />
-                  </Grid>
+                <Grid item md={6}>
+                  <EntityConsumingComponentsCard />
                 </Grid>
               </Grid>
-           </EntityLayout.Route>
-           <EntityLayout.Route path="/definition" title="Definition">
-              <Grid container spacing={3}>
-                <Grid item xs={12}>
-                  <EntityApiDefinitionCard />
-                </Grid>
+            </Grid>
+          </EntityLayout.Route>
+          <EntityLayout.Route path="/definition" title="Definition">
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <EntityApiDefinitionCard />
               </Grid>
-            </EntityLayout.Route>
-         </EntityLayout>
-        );
+            </Grid>
+          </EntityLayout.Route>
+        </EntityLayout>
+      );
 
-        // ...
+      // ...
 
-        export const entityPage = (
-          <EntitySwitch>
-            // ...
-            <EntitySwitch.Case if={isKind('api')} children={apiPage} />
-            // ...
-          </EntitySwitch>
-        );
-
-  - intro: Custom API Renderings
-    language: typescript
-    code: |
-      // packages/app/src/apis.tsx
-      
-        import { ApiEntity } from '@backstage/catalog-model';
-        import {
-          ApiDefinitionWidget,
-          apiDocsConfigRef,
-          defaultDefinitionWidgets,
-        } from '@backstage/plugin-api-docs';
-        import { SqlRenderer } from '...';
-
-        // ...
-
-        export const apis: AnyApiFactory[] = [
-          createApiFactory({
-          api: apiDocsConfigRef,
-          deps: {},
-          factory: () => {
-            // load the default widgets
-            const definitionWidgets = defaultDefinitionWidgets();
-            return {
-              getApiDefinitionWidget: (apiEntity: ApiEntity) => {
-                // custom rendering for sql
-                if (apiEntity.spec.type === 'sql') {
-                  return {
-                    type: 'sql',
-                    title: 'SQL',
-                    component: definition => <SqlRenderer definition={definition} />,
-                  } as ApiDefinitionWidget;
-                }
-
-                // fallback to the defaults
-                return definitionWidgets.find(d => d.type === apiEntity.spec.type);
-              },
-            };
-          },
-        }),
-      ]
+      export const entityPage = (
+        <EntitySwitch>
+          // ...
+          <EntitySwitch.Case if={isKind('api')} children={apiPage} />
+          // ...
+        </EntitySwitch>
+      );
+  
+  - intro: 'There are other components to discover in `./src/components` that are also added by the default app.'
 ---
 
 ## API formats supported right now:
