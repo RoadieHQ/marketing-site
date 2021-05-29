@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: netlify-cms # Branch to update (optional; defaults to master)
+
+media_folder: static/images/netlify-cms-uploads
+public_folder: /
+
+display_url: https://roadie.io
+
+collections:
+  - name: 'cms-blog'
+    label: 'CMS Blog'
+    folder: 'content/cms-blog'
+    create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}/index'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - label: 'Author'
+        name: 'author'
+        widget: 'object'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

@@ -144,5 +144,7 @@ module.exports = {
         includeInDevelopment: true,
       },
     },
+
+    'gatsby-plugin-netlify-cms',
   ],
 };
