@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { CookieConsent, Link } from 'components';
+import { Link } from 'components';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -62,8 +62,6 @@ const SitewideFooter = () => {
           </Link>
         </nav>
       </div>
-
-      <CookieConsent />
     </footer>
   );
 };
