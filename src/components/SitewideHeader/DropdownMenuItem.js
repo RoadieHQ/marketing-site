@@ -9,6 +9,7 @@ import {
   FaTwitter,
   FaGithub,
   FaGraduationCap,
+  FaDiscord,
 } from 'react-icons/fa';
 import { TextLink } from 'components';
 
@@ -144,6 +145,12 @@ const DropdownMenuItem = ({ title, siteMetadata }) => {
           to="/docs/getting-started/getting-started-for-admins/"
           text="Documentation"
           icon={<FaGraduationCap />}
+        />
+
+        <ListItem
+          to="https://discord.gg/W3qEMhmx4f"
+          text="Chat with us on Discord"
+          icon={<FaDiscord />}
         />
 
         <div className={classes.divider} />
