@@ -7,7 +7,7 @@ author:
 tags: ['newsletter']
 ---
 
-Having talked to many companies who are adopting Backstage, one thing is clear... Backstage means different things to different people. Because Backstage is a flexible and highly customizable framework, it can be tricky to figure out where to start.
+Having talked to many companies who are adopting Backstage, one thing is clear... Backstage means different things to different people. Because Backstage is a flexible and highly customizable framework, it can be tricky to figure out how to get started with it.
 
 Clear direction and implementation guidance is part of the value we bring at [Roadie](https://roadie.io), but it's also a concern for the Backstage core team.
 
@@ -15,7 +15,7 @@ To help companies orient themselves, Austin Lamon — Director of Product for Pl
 
 Austin's guide describes three key of a software engineer — create, manage and explore — and explains how Backstage can help with each job. It also provides headcount tailored recommendations on which job to target with your Backstage MVP.
 
-It's a fascinating read I believe it goes a long way towards filling a gap in the communities collective knowledge graph.
+It's a fascinating read which goes a long way towards filling a gap in the communities collective knowledge graph.
 
 [Read the guide on the Backstage blog](https://backstage.io/blog/2021/05/20/adopting-backstage)
 
