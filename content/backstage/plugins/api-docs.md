@@ -29,7 +29,7 @@ gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @backstage/plugin-api-docs'
-  - intro: Add the ApiExplorerPage extension to the app:.
+  - intro: 'Add the ApiExplorerPage extension to the app:'
     language: typescript
     code: |
       // In packages/app/src/App.tsx
