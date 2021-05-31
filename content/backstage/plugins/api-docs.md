@@ -8,7 +8,7 @@ attribution:
 
 seo:
   # Don't forget to end with "| Roadie"
-  title: 'Backstage AWS Lambda Plugin | Roadie'
+  title: 'Backstage API Docs Plugin | Roadie'
   description: |
     Components to discover and display API entities as an extension to the catalog plugin.
 
@@ -21,31 +21,72 @@ coverImageAlt: 'A screenshot of the API Docs. It is showing a available endpoint
 # languages used here must be listed in the .babelrc
 gettingStarted:
   # What will this step accomplish?
+  - language: bash
+    code: |
+      The plugin is already added when using `npx @backstage/create-app` 
+      so you can skip these steps. However, if you are not using create-app
+      you can follow the steps below.
   - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @backstage/plugin-api-docs'
-  - intro: Add plugin to the list of plugins.
+  - intro: 'Add the ApiExplorerPage extension to the app:'
     language: typescript
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as ApiDocs } from '@backstage/plugin-api-docs';
-  - intro: Add plugin API to your Backstage instance.
+      // In packages/app/src/App.tsx
+      import { ApiExplorerPage } from '@backstage/plugin-api-docs';
+      <Route path="/api-docs" element={<ApiExplorerPage />} />;
+  - intro: 'Add one of the provided widgets to the EntityPage:'
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { Router as ApiDocsRouter } from '@backstage/plugin-api-docs';
+      
+      import {
+        EntityAboutCard,
+        EntityApiDefinitionCard,
+        EntityConsumingComponentsCard,
+        EntityProvidingComponentsCard,
+      } from '@backstage/plugin-api-docs';
 
-        const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-          <EntityPageLayout>
-            ...
-            <EntityPageLayout.Content
-              path="/docs/*"
-              title="Docs"
-              element={<DocsRouter entity={entity} />}
-            />
-            ...
-          </EntityPageLayout>
-        );
+
+      const apiPage = (
+        <EntityLayout>
+          ...
+          <EntityLayout.Route path="/" title="Overview">
+            <Grid container spacing={3}>
+              <Grid item md={6}>
+                <EntityAboutCard />
+              </Grid>
+              <Grid container item md={12}>
+                <Grid item md={6}>
+                  <EntityProvidingComponentsCard />
+                </Grid>
+                <Grid item md={6}>
+                  <EntityConsumingComponentsCard />
+                </Grid>
+              </Grid>
+            </Grid>
+          </EntityLayout.Route>
+          <EntityLayout.Route path="/definition" title="Definition">
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <EntityApiDefinitionCard />
+              </Grid>
+            </Grid>
+          </EntityLayout.Route>
+        </EntityLayout>
+      );
+
+      // ...
+
+      export const entityPage = (
+        <EntitySwitch>
+          // ...
+          <EntitySwitch.Case if={isKind('api')} children={apiPage} />
+          // ...
+        </EntitySwitch>
+      );
+  
+  - intro: 'There are other components to discover in `./src/components` that are also added by the default app.'
 ---
 
 ## API formats supported right now:

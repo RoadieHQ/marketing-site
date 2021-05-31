@@ -28,27 +28,19 @@ gettingStarted:
       cd packages/app
       yarn add @backstage/plugin-kubernetes
 
-  - intro: Add Kubernetes frontend plugin to the list of plugins.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Kubernetes } from '@backstage/plugin-kubernetes';
-
   - intro: Add plugin API to your Backstage instance.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { Router as KubernetesRouter } from '@backstage/plugin-kubernetes';
+      import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
 
-      const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-        <EntityPageLayout>
+      const serviceEntityPage = (
+        <EntityLayoutWrapper>
           // ...
-          <EntityPageLayout.Content
-            path="/kubernetes/\*"
-            title="Kubernetes"
-            element={<KubernetesRouter entity={entity} />}
-          />
-        </EntityPageLayout>
+          <EntityLayout.Route path="/kubernetes" title="Kubernetes">
+            <EntityKubernetesContent />
+         </EntityLayout.Route>
+        <EntityLayoutWrapper>
       );
 
   - title: Backend plugin
@@ -59,7 +51,7 @@ gettingStarted:
       cd packages/backend
       yarn add @backstage/plugin-kubernetes-backend
 
-  - intro: Create a new file with the following content.
+  - intro: Create a new file called `kubernetes.ts` with the following content.
     language: typescript
     code: |
       // packages/backend/src/plugins/kubernetes.ts
@@ -73,7 +65,7 @@ gettingStarted:
         return await createRouter({ logger, config });
       }
 
-  - intro: Register the plugin.
+  - intro: Import the plugin.
     language: typescript
     code: |
       // packages/backend/src/index.ts
