@@ -22,26 +22,21 @@ gettingStarted:
     language: bash
     code: 'yarn add @backstage/plugin-tech-radar'
 
-  - intro: Add plugin to the list of plugins.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { plugin as TechRadar } from '@backstage/plugin-tech-radar';
-
-  - intro: Modify your app routes to include the Router component exported from the tech radar, for example
+  - intro: Modify your app to include the plugin component exported from the tech radar, for example
     language: typescript
     code: |
       // packages/app/src/App.tsx
-      import { Router as TechRadarRouter } from '@backstage/plugin-tech-radar';
+      import { TechRadarPage } from '@backstage/plugin-tech-radar';
 
-      <Routes>
-        {/_ other routes ... _/}
-        <Route
-          path="/tech-radar"
-          element={<TechRadarRouter width={1500} height={800} />}
-        />
-        {/_ other routes ... _/}
-      </Routes>;
+      const routes = (
+        <FlatRoutes>
+          {/* ...other routes */}
+          <Route
+            path="/tech-radar"
+            element={<TechRadarPage width={1500} height={800} />}
+          />
+        </FlatRoutes>
+      );
 ---
 
 ## How do I load in my own data?
@@ -51,7 +46,7 @@ To pass own data to plugin use a `getData` prop which expects a `Promise<TechRad
 For example:
 
 ```tsx
-const getFireBaseData = () =>
+const getData = () =>
   Promise.resolve({
     quadrants: [{ id: 'infrastructure', name: 'Infrastructure' }],
     rings: [{ id: 'use', name: 'USE', color: '#91c49d' }],
@@ -68,5 +63,5 @@ const getFireBaseData = () =>
     ],
   });
 
-<TechRadarComponent width={1500} height={900} getData={getFireBaseData} />;
+<TechRadarComponent width={1500} height={900} getData={getData} />;
 ```
