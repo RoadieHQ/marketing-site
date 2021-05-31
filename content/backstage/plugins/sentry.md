@@ -18,19 +18,42 @@ coverImage: '../../assets/sentry-plugin-1604x716.png'
 coverImageAlt: 'A screenshot of the Sentry plugin. It is showing a list of errors.'
 
 gettingStarted:
-  - intro: |
-      Ensure you have the Sentry Backend plugin installed. See the notes below to learn how
-      to add a Sentry API token to Backstage.
-
-  - intro: 'Install the plugin in your Backstage instance'
+  - intro: 'Install the plugin package in your Backstage app'
     language: 'bash'
     code: 'yarn add @backstage/plugin-sentry'
-
-  - intro: 'Add the plugin to the list of plugins'
-    language: 'typescript'
+  - intro: 'Configure your proxy to add credentials to requests to sentry.'
+    language: 'bash'
     code: |
-      // packages/app/src/plugins.ts
-      export { plugin as Sentry } from '@backstage/plugin-sentry';
+      // app-config.yaml
+      proxy:
+        '/sentry/api':
+        target: https://sentry.io/api/
+        allowedMethods: [ 'GET' ]
+        headers:
+          Authorization: Bearer ${SENTRY_TOKEN}
+      sentry:
+        organization: 'your org'
+  - intro: 'Add the plugin components to your entity page'
+    language: 'bash'
+    code: |
+      import { EntitySentryContent, EntitySentryCard } from '@backstage/plugin-sentry';
+      // Add to the overview grid
+      const overviewContent = (
+        <Grid container spacing={3} alignItems="stretch">
+           {/* ...other routes */}
+           <Grid item md={6}>
+             <EntitySentryCard />
+           </Grid>
+        </Grid>
+      );
+     // Add a Sentry Tab
+    const serviceEntityPage = (
+      <EntityLayout>
+        <EntityLayout.Route path="/sentry" title="Sentry">
+          <EntitySentryContent />
+        </EntityLayout.Route>
+      </EntityLayout>
+    );
 ---
 
 The Backstage backend must have access to a `SENTRY_TOKEN` API key environment variable.
