@@ -7,13 +7,13 @@ author:
 tags: ['newsletter']
 ---
 
-Having talked to many companies who are adopting Backstage, one thing is clear... Backstage means different things to different people. Because Backstage is a flexible and highly customizable framework, it can be tricky to figure out how to get started with it.
+Having talked to many companies who are adopting Backstage, one thing is clear... Backstage means different things to different people. Because Backstage is a flexible and highly customizable platform, it can be tricky to figure out how to get started with it.
 
 Clear direction and implementation guidance is part of the value we bring at [Roadie](https://roadie.io), but it's also a concern for the Backstage core team.
 
 To help companies orient themselves, Austin Lamon — Director of Product for Platform at Spotify — recently published a guide to adopting Backstage on the official Backstage blog.
 
-Austin's guide describes three key of a software engineer — create, manage and explore — and explains how Backstage can help with each job. It also provides headcount tailored recommendations on which job to target with your Backstage MVP.
+Austin's guide describes three key jobs of a software engineer — create, manage and explore — and explains how Backstage can help with each job. It also provides headcount tailored recommendations on which job to target with your Backstage MVP.
 
 It's a fascinating read which goes a long way towards filling a gap in the communities collective knowledge graph.
 
