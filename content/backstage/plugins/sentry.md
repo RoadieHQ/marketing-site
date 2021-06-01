@@ -46,14 +46,14 @@ gettingStarted:
            </Grid>
         </Grid>
       );
-     // Add a Sentry Tab
-    const serviceEntityPage = (
-      <EntityLayout>
-        <EntityLayout.Route path="/sentry" title="Sentry">
-          <EntitySentryContent />
-        </EntityLayout.Route>
-      </EntityLayout>
-    );
+      // Add a Sentry Tab
+      const serviceEntityPage = (
+        <EntityLayout>
+          <EntityLayout.Route path="/sentry" title="Sentry">
+            <EntitySentryContent />
+          </EntityLayout.Route>
+        </EntityLayout>
+      );
 ---
 
 The Backstage backend must have access to a `SENTRY_TOKEN` API key environment variable.
