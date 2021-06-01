@@ -45,7 +45,7 @@ To pass own data to plugin use a `getData` prop which expects a `Promise<TechRad
 
 For example:
 
-```tsx
+```ts
 const getData = () =>
   Promise.resolve({
     quadrants: [{ id: 'infrastructure', name: 'Infrastructure' }],
