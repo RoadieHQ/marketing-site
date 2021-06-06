@@ -99,6 +99,7 @@ const theme = {
 
       '& li': {
         marginBottom: '1.1rem',
+        lineHeight: 1.6,
       },
 
       '& a, & a:visited': {

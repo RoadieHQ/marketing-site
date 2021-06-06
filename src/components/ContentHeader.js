@@ -25,6 +25,11 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    root: {
+      marginBottom: '3em',
+      marginTop: '2em',
+    },
+
     h1: {
       fontSize: '3.75rem',
     },
