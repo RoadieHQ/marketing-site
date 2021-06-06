@@ -57,15 +57,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // I was having a problem with screenshots which have a white background. Because the
-              // background of the blog posts is also white, there was no way to see where the image
-              // ended and the blog post began. It all just blurred together. This shadow defins
-              // the edge of the image.
-              //
-              // I've also disabled margin-left:auto because there are some situations where we
-              // need images to be against the left edge. Docs are a good example of this.
-              wrapperStyle:
-                'box-shadow:0 0 5px -2px rgba(0,0,0,0.75); margin-left:unset; margin-right:unset',
+              wrapperStyle: theme.preMadeStyles.gatsbyRemarkImages.wrapperStyle,
               withWebp: true,
             },
           },
