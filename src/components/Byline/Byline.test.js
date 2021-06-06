@@ -4,11 +4,11 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import sinon from 'sinon';
 
-import DatePublished from './DatePublished';
+import Byline from './Byline';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('DatePublished', function () {
+describe('Byline', function () {
   let clock;
 
   beforeEach(function () {
@@ -24,7 +24,7 @@ describe('DatePublished', function () {
     describe('and relative=false', function () {
       it('should say the date', function () {
         const wrapper = shallow(
-          <DatePublished frontmatter={{ date: '2021-05-10T21:00:00.0Z' }} />
+          <Byline frontmatter={{ date: '2021-05-10T21:00:00.0Z' }} />
         );
 
         expect(wrapper.text()).to.equal('Published on May 10th, 2021');
@@ -34,7 +34,7 @@ describe('DatePublished', function () {
     describe('and relative=true', function () {
       it('should say the relative date', function () {
         const wrapper = shallow(
-          <DatePublished frontmatter={{ date: '2021-05-10T21:00:00.0Z' }} relative={true} />
+          <Byline frontmatter={{ date: '2021-05-10T21:00:00.0Z' }} relative={true} />
         );
 
         expect(wrapper.text()).to.equal('Published 27 days ago');
@@ -46,7 +46,7 @@ describe('DatePublished', function () {
     describe('and relative=false', function () {
       it('should say the dates', function () {
         const wrapper = shallow(
-          <DatePublished
+          <Byline
             frontmatter={{
               date: '2021-05-10T21:00:00.0Z',
               lastValidated: '2021-05-22T21:00:00.0Z',
@@ -63,7 +63,7 @@ describe('DatePublished', function () {
     describe('and relative=true', function () {
       it('should say relative dates', function () {
         const wrapper = shallow(
-          <DatePublished
+          <Byline
             frontmatter={{
               date: '2021-05-10T21:00:00.0Z',
               lastValidated: '2021-05-22T21:00:00.0Z',

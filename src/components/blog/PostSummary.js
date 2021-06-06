@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { TextLink } from 'components';
 
-import DatePublished from '../DatePublished';
+import Byline from '../Byline';
 import Tags from '../Tags';
 
 const useStyles = createUseStyles((theme) => ({
@@ -49,7 +49,7 @@ const PostSummary = ({ post }) => {
 
         <div className={classes.byline}>
           <span className={classes.datePublishedWrapper}>
-            <DatePublished frontmatter={post.frontmatter} relative={true} />
+            <Byline frontmatter={post.frontmatter} relative={true} />
 
             {post.frontmatter.author && (
               <span> by {post.frontmatter.author.name}</span>
