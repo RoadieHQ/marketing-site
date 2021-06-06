@@ -44,6 +44,8 @@ The official GitHub docs for creating a Personal Access Token are [here](https:/
 
 ⚠️ The token's owner must be a member of the organization, rather than an outside collaborator or other relation.
 
+Want to use a token with more restrictive scopes? Use [this guide](/docs/integrations/github-token/).
+
 ### Step 2. Create OAuth Credentials
 
 Visit the Developer Settings of your GitHub organization account. Click "New OAuth App".
