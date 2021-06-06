@@ -62,6 +62,17 @@ const theme = {
   },
 
   preMadeStyles: {
+    gatsbyRemarkImages: {
+      // I was having a problem with screenshots which have a white background. Because the
+      // background of the blog posts is also white, there was no way to see where the image
+      // ended and the blog post began. It all just blurred together. This shadow defins
+      // the edge of the image.
+      //
+      // I've also disabled margin-left:auto because there are some situations where we
+      // need images to be against the left edge. Docs are a good example of this.
+      wrapperStyle: 'box-shadow:0 0 5px -2px rgba(0,0,0,0.75); margin-left:unset; margin-right:unset',
+    },
+
     // These styles are set on the root element of HTML nodes which have compiled Markdown injected
     // into then with dangerouslySetInnerHTML. There is no good way to use JSS with markdown
     // so styling the root element is all we can do.
@@ -75,7 +86,7 @@ const theme = {
 
       '& p': {
         marginBottom: '1.1rem',
-        lineHeight: 1.7,
+        lineHeight: 1.6,
       },
 
       '& ul': {

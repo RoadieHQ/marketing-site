@@ -16,6 +16,8 @@ const useStyles = createUseStyles((theme) => ({
     color: theme.palette.grey[900],
     marginBottom: 8,
     marginTop: 0,
+    letterSpacing: -1.15,
+    lineHeight: '43px',
   },
 
   tagsWrapper: {
