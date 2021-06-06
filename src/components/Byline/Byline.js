@@ -35,6 +35,10 @@ const Byline = ({
     }
   }
 
+  if (frontmatter.author && frontmatter.author.name) {
+    text += ` by ${frontmatter.author.name}`;
+  }
+
   return <span>{text}</span>;
 };
 
