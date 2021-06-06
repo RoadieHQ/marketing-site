@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import isEmpty from 'lodash/isEmpty';
 
-import DatePublished from './DatePublished';
+import Byline from './Byline';
 import Tags from './Tags';
 
 const useStyles = createUseStyles((theme) => ({
@@ -52,7 +52,7 @@ const ContentHeader = ({ frontmatter, showLastValidated = true, dateKey }) => {
         <div className={classes.authorWrapper}>By {frontmatter.author.name}</div>
       )}
 
-      <DatePublished
+      <Byline
         frontmatter={frontmatter}
         showLastValidated={showLastValidated}
         dateKey={dateKey}

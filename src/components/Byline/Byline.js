@@ -3,7 +3,7 @@ import format from 'date-fns/format';
 import formatDistance from 'date-fns/formatDistance';
 import has from 'lodash/has';
 
-const DatePublished = ({
+const Byline = ({
   frontmatter,
   relative = false,
   showLastValidated = false,
@@ -38,4 +38,4 @@ const DatePublished = ({
   return <span>{text}</span>;
 };
 
-export default DatePublished;
+export default Byline;
