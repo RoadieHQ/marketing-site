@@ -50,10 +50,6 @@ const PostSummary = ({ post }) => {
         <div className={classes.byline}>
           <span className={classes.datePublishedWrapper}>
             <Byline frontmatter={post.frontmatter} relative={true} />
-
-            {post.frontmatter.author && (
-              <span> by {post.frontmatter.author.name}</span>
-            )}
           </span>
 
           <Tags tags={post.frontmatter.tags} />

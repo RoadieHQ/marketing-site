@@ -24,10 +24,6 @@ const useStyles = createUseStyles((theme) => ({
     marginBottom: 8,
   },
 
-  authorWrapper: {
-    marginBottom: 4,
-  },
-
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     h1: {
       fontSize: '3.75rem',
@@ -46,10 +42,6 @@ const ContentHeader = ({ frontmatter, showLastValidated = true, dateKey }) => {
         <div className={classes.tagsWrapper}>
           <Tags tags={frontmatter.tags} />
         </div>
-      )}
-
-      {frontmatter.author && (
-        <div className={classes.authorWrapper}>By {frontmatter.author.name}</div>
       )}
 
       <Byline
