@@ -56,17 +56,17 @@ gettingStarted:
       // catalog-info.yaml
       metadata:
         annotations:
-          jenkins.io/github-folder: '[github-organization-item-name/job-name]
+          jenkins.io/github-folder: '[github-organization-project-name/job-name]
 
 ---
 
 ### Jenkins plugin features
 
-The Jenkins plugin can pull bulid information from a GitHub organization item in Jenkins. Other Jenkins item types like Freestyle project and Pipeline are not supported yet.
+The Jenkins plugin can pull bulid information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
 
 ![Jenkins menu to create new items](../../assets/backstage/plugins/jenkins/jenkins-new-item-options.png)
 
-The plugin shows a list of the most recent builds in Backstage. This list includes builds from all projects that are available in the GitHub organization item in Jenkins.
+The plugin shows a list of the most recent builds in Backstage. This list includes builds from all projects that are available in the GitHub Organization project in Jenkins.
 
 ![Jenkins and Backstage side-by-side](../../assets/backstage/plugins/jenkins/jenkins-and-backstage-side-by-side.png)
 
