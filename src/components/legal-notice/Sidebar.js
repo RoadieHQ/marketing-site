@@ -14,21 +14,31 @@ const LegalNoticeSidebar = ({ className }) => {
           text="Terms of Service & DPA"
           partiallyActive={true}
         />
+
+        <SidebarItem
+          to="/legal-notices/evaluation-licence/"
+          text="Evaluation Licence"
+          partiallyActive={true}
+        />
+
         <SidebarItem
           to="/legal-notices/sub-processors/"
           text="List of Sub-Processors"
           partiallyActive={true}
         />
+
         <SidebarItem
           to="/legal-notices/privacy-policy/"
           text="Privacy Policy"
           partiallyActive={true}
         />
+
         <SidebarItem
           to="/legal-notices/cookies-policy/"
           text="Cookies Policy"
           partiallyActive={true}
         />
+
         <SidebarItem
           to="/legal-notices/acceptable-use-policy/"
           text="Acceptable Use Policy"
