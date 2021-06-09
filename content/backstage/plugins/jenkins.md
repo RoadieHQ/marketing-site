@@ -39,7 +39,7 @@ gettingStarted:
         </EntityLayout>
       );
 
-  - intro: Add proxy configuration to your Backstage app's config. A Jenkins API token is required.
+  - intro: Add proxy configuration to your Backstage app's config. A Jenkins API token is required. See [how to get a Jenkins API token](#how-to-get-a-jenkins-api-token) below.
     language: YAML
     code: |
       // app-config.yaml
