@@ -105,6 +105,7 @@ export const pageQuery = graphql`
           twitter
         }
       }
+      sourceCodeUrl
     }
 
     plugin: markdownRemark(fields: { slug: { eq: $slug } }) {
