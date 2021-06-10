@@ -101,6 +101,7 @@ export const pageQuery = graphql`
   query PluginBySlug($slug: String!) {
     site {
       siteMetadata {
+        sourceCodeUrl
         social {
           twitter
         }
