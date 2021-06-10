@@ -2,7 +2,7 @@ site_name: 'marketing-site'
 
 nav:
   - Home: index.md
-  - Customer facing docs: docs/customer-facing-documentation.md
+  - Customer facing docs: customer-facing-documentation.md
 
 plugins:
   - techdocs-core
