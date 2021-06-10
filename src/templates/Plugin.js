@@ -101,11 +101,11 @@ export const pageQuery = graphql`
   query PluginBySlug($slug: String!) {
     site {
       siteMetadata {
+        sourceCodeUrl
         social {
           twitter
         }
       }
-      sourceCodeUrl
     }
 
     plugin: markdownRemark(fields: { slug: { eq: $slug } }) {
