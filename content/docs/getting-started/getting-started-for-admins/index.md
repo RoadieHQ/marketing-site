@@ -42,7 +42,7 @@ Visit the [developer settings of your GitHub account](https://github.com/setting
 
 The official GitHub docs for creating a Personal Access Token are [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
-⚠️ The token's owner must be a member of the organization, rather than an outside collaborator or other relation.
+⚠️ &nbsp;The token's owner must be a member of the organization, rather than an outside collaborator or other relation.
 
 Want to use a token with more restrictive scopes? Use [this guide](/docs/integrations/github-token/).
 
@@ -89,7 +89,7 @@ Wait until Roadie has activated the token before proceeding.
 
 Roadie admins have special powers such as the ability to add and remove Backstage plugins. We will use GitHub teams to create an admin group for Roadie.
 
-ℹ️  Admin groups are **not** a security measure. They hide certain UX features from regular users in order to simplify the experience. Backstage does not currently support role based access control (RBAC).
+ℹ️  &nbsp;Admin groups are **not** a security measure. They hide certain UX features from regular users in order to simplify the experience. Backstage does not currently support role based access control (RBAC).
 
 ### Step 1. Create an admin group on GitHub teams
 
@@ -103,9 +103,14 @@ Leave Parent team unselected and click the Create team button.
 
 ![Form for creating a team on GitHub](./github-create-team-form.png)
 
-By default, GitHub adds your account to the team as a member. You are now an admin on Roadie.
+By default, GitHub adds your account to the team as a member. You are now an admin on Roadie and should have access to two main features:
 
-ℹ️  It can take some time for Roadie to refresh the list of teams from GitHub teams. If you do not see admin functions immediately, please wait a few minutes and try again.
+1. Access to the Secrets panel via the "Administration" link in the sidebar.
+2. The ability to add and remove plugin cards and tabs (see red-circled icons).
+
+![Standard Backstage interface with some admin features highlighted with circles](./admin-features-edit-page.png)
+
+ℹ️  &nbsp;It can take some time for Roadie to refresh the list of teams from GitHub teams. If you do not see admin functions immediately, please wait a few minutes and try again.
 
 ## Next steps
 
