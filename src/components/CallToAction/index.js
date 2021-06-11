@@ -5,7 +5,7 @@ export const ButtonLinkCallToAction = () => (
   <Button
     to="/evaluation-request/"
     link={true}
-    text="Join the waitlist"
+    text="Request a demo"
     id="evaluation-request-link-button"
     color="primary"
   />
