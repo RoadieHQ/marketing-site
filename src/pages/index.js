@@ -1,7 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import { Button, SEO, InterstitialTitle, StickyFooter, ResponsiveSpacer } from 'components';
+import {
+  ButtonLinkCallToAction,
+  SEO,
+  InterstitialTitle,
+  StickyFooter,
+  ResponsiveSpacer,
+} from 'components';
 import Hero from 'components/home/Hero';
 import FeatureBlock from 'components/home/FeatureBlock';
 
@@ -122,12 +128,7 @@ const Home = ({ data, location }) => {
 
         <ResponsiveSpacer>
           <div className={classes.callToActionWrapper}>
-            <Button
-              to="/evaluation-request/"
-              link={true}
-              text="Join the waitlist"
-              color="primary"
-            />
+            <ButtonLinkCallToAction />
           </div>
         </ResponsiveSpacer>
       </StickyFooter>
