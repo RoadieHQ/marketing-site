@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Button, LayoutControl } from 'components';
+import { ButtonLinkCallToAction, LayoutControl } from 'components';
 import { DEFAULT_MAX_WIDTH_BREAKPOINT } from 'components/LayoutControl';
 
 import styles from './styles';
@@ -32,13 +32,7 @@ const SitewideHeader = ({
               </NavItemSpacer>
 
               <NavItemSpacer>
-                <Button
-                  to="/evaluation-request/"
-                  link={true}
-                  text="Join the waitlist"
-                  id="evaluation-request-link-button"
-                  color="primary"
-                />
+                <ButtonLinkCallToAction />
               </NavItemSpacer>
             </span>
           </nav>

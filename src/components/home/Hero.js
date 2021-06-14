@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { Lead, Headline, TwoColumnLayout, Button } from 'components';
+import { Lead, Headline, TwoColumnLayout, ButtonLinkCallToAction } from 'components';
 
 import BackgroundImage from './BackgroundImage';
 import backstageScreenshot from '../../../content/assets/backstage-screenshot.png';
@@ -48,13 +48,7 @@ const Hero = ({ headline, lead }) => {
           </div>
 
           <div className={classes.callToActionWrapper}>
-            <Button
-              to="/evaluation-request/"
-              link={true}
-              text="Join the waitlist"
-              id="evaluation-request-link-button"
-              color="primary"
-            />
+            <ButtonLinkCallToAction />
           </div>
         </>
       }
