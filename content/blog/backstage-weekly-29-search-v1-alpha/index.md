@@ -50,7 +50,7 @@ We are prolific plugin authors here at Roadie and we really appreciate this chan
 
 ### Conditional scaffolder steps
 
-Oliver Sand from SDA SE added the ability to include conditional steps in your scaffolder templates - [#5849](https://github.com/backstage/backstage/pull/5849). Here's how it looks in code:
+Oliver Sand from SDA SE added the ability to include conditional steps in your scaffolder templates - [#5849](https://github.com/backstage/backstage/pull/5849). Code like the example below will add a checkbox to the scaffolder UI. Check the box and the step runs, leave it empty and it is skipped.
 
 ```yaml
 - id: register
