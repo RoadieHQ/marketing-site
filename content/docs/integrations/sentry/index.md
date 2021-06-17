@@ -42,7 +42,7 @@ Copy the token that Sentry displays.
 
 Visit `https://your-company.roadie.so/secrets`.
 
-Click the pencil icon beside `SENTRY_TOKEN`. Enter the token you copied from the Sentry UI into the input in the dialog that pops up.
+Click the pencil icon beside `SENTRY_TOKEN`. Prefix the token you copied from the Sentry UI with `Bearer `, and enter it into the input in the dialog that pops up.
 
 ![a dialog box with an input called Secret Value. The Sentry token is pasted inside.](./dialog-on-roadie-secrets.png)
 
