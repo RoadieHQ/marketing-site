@@ -50,7 +50,7 @@ Want to use a token with more restrictive scopes? Use [this guide](/docs/integra
 
 Visit the Developer Settings of your GitHub organization account. Click "New OAuth App".
 
-Fill out the following information in the form. Be sure to replace `your-company` with your Roadie subdomain.
+Fill out the following information in the form. ⚠️ &nbsp;Be sure to replace `your-company` with your Roadie subdomain.
 
 | Form Field                 | Value                                                                    |
 | -------------------------- | ------------------------------------------------------------------------ |
