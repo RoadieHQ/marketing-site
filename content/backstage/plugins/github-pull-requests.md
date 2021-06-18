@@ -21,7 +21,9 @@ coverImageAlt: |
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
-    code: 'yarn add @roadiehq/backstage-plugin-github-pull-requests'
+    code: |
+      // packages/app
+      'yarn add @roadiehq/backstage-plugin-github-pull-requests'
 
   - intro: Add plugin API to your Backstage instance.
     language: typescript
@@ -62,3 +64,15 @@ gettingStarted:
           </Grid>
         );
 ---
+
+
+## Repository migration notice
+
+In order to make testing and deployment of our plugins easier we are migrating all Roadie plugins to a monorepo at https://github.com/RoadieHQ/backstage-roadie-plugins.
+The plugins will still be published to the same place on NPM and will have the same package names so nothing should change for consumers of these plugins.
+
+## Plugin Configuration Requirements
+
+This plugin relies on the [GitHub Authentication Provider](https://backstage.io/docs/auth/github/provider) for its access to GitHub.
+
+
