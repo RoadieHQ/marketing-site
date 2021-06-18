@@ -29,8 +29,27 @@ jobs:
 
       - name: Build static site
         run: yarn build
+        env:
+          GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
+          GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
+          ALGOLIA_SKIP_INDEXING: true
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           start: yarn serve --port 8001
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Upload videos
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+

@@ -4,7 +4,7 @@ import { FaArrowCircleDown, FaArrowCircleUp } from 'react-icons/fa';
 import { Button } from 'components';
 import { createUseStyles, useTheme } from 'react-jss';
 import algoliasearch from 'algoliasearch/lite';
-import { getAlgoliaHits } from '@algolia/autocomplete-js';
+import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import Search, { SearchResult } from 'components/AlgoliaAutocomplete';
 import useMedia from 'react-use/lib/useMedia';
 
@@ -53,7 +53,7 @@ const getSearchSources = ({ query }) => {
       return item.slug;
     },
     getItems() {
-      return getAlgoliaHits({
+      return getAlgoliaResults({
         searchClient,
         queries: [{
           indexName: 'docs',
@@ -62,8 +62,8 @@ const getSearchSources = ({ query }) => {
       });
     },
     templates: {
-      item({ item }) {
-        return <SearchResult hit={item} />;
+      item({ item, components }) {
+        return <SearchResult hit={item} components={components} />;
       }
     }
   }];
