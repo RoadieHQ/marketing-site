@@ -13,7 +13,7 @@ const CodeBlock = ({ language, code, intro }) => {
   return (
     <div>
       {intro && intro !== '' && (
-        <p className={classes.intro} dangerouslySetInnerHTML={{ __html: intro.trim() }} />
+        <div className={classes.intro} dangerouslySetInnerHTML={{ __html: intro.trim() }} />
       )}
 
       {code && code !== '' && (
