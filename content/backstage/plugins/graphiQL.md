@@ -66,7 +66,13 @@ gettingStarted:
         })
       ];
 
-  - intro: Navigate to youdomain.com/graphiql, select the tab for your API and start submitting GraphQL queries.
+  - intro: Add a link to the sidebar.
+    language: typescript
+    code: |
+      // packages/app/src/components/Root/Root.tsx
+      <SidebarItem icon={ExtensionIcon} to="/graphiql" text="GraphiQL" />
+
+  - intro: Select the GraphiQL link on the sidebar, select an API tab and start submitting GraphQL queries.
 
 ---
 
