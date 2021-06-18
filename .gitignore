@@ -75,6 +75,7 @@ yarn-error.log
 # Local Netlify folder
 .netlify
 cypress/videos
+cypress/screenshots
 
 # VSCode workspace metadata
 .vscode

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, createElement, Fragment } from 'react';
 import { render } from 'react-dom';
 import { navigate } from 'gatsby';
-import { autocomplete, snippetHit, highlightHit } from '@algolia/autocomplete-js';
+import { autocomplete } from '@algolia/autocomplete-js';
 import { Link } from 'components';
 import { createUseStyles } from 'react-jss';
 
@@ -26,19 +26,29 @@ const destroySearchOverlay = () => {
  * CSS for these components is loaded in gatsby-browser.js
  */
 
-export const SearchResult = ({ hit }) => {
+export const SearchResult = ({ hit, components }) => {
   const classes = useStyles();
+  console.log('hit', hit);
   return (
-    <Link to={hit.slug} className={classes.link} onClick={destroySearchOverlay}>
-      <div className="aa-ItemContent">
-        <div className="aa-ItemContentTitle">
-          {highlightHit({ hit, attribute: 'title', createElement })}
+    <div className="aa-ItemWrapper">
+      <Link
+        to={hit.slug}
+        className={classes.link}
+        onClick={destroySearchOverlay}
+        data-testid={`algolia-search-result-link-${hit.slug.replaceAll('/', '-')}`}
+      >
+        <div className="aa-ItemContent">
+          <div className="aa-ItemContentBody">
+            <div className="aa-ItemContentTitle">
+              <components.Snippet hit={hit} attribute="title" />
+            </div>
+            <div className="aa-ItemContentDescription">
+              <components.Snippet hit={hit} attribute="excerpt" />
+            </div>
+          </div>
         </div>
-        <div className="aa-ItemContentDescription">
-          {snippetHit({ hit, attribute: 'excerpt', createElement })}
-        </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
