@@ -11,10 +11,7 @@ your plugins, and we host a dedicated npm registry which you can publish to.
 
 ## Prerequisites
 
-For our alpha release you'll need to give us some information upfront about your plugin. We plan to make all of this
-self-service going forward but currently Roadie doesn't support this out-of-the-box. For now, we will need you to
-fill out [this form][form] the first time you want to add a new plugin. Pushing new versions will not require you
-to fill the form again.
+To be able to use private artifactory and it's automated workflow in your Roadie instance, we need to set it up. You can contact us to set up a repository for you. After the repository is set up, your plugins will be hosted securely on Roadie artifactory and are usable in your Roadie instance.
 
 ## Pushing the plugin to Roadie
 
@@ -69,8 +66,7 @@ minutes.
 Once the steps above have been completed successfully and you have been notified that your plugin is ready to use, you
 should be able to log into your Backstage instance and use the plugin just like any other plugin.
 
-You can update your plugin at will and the changes will appear in Backstage. The form is only required when installing a
-new plugin for the first time.
+You can update your plugin at will and modify it's versions if needed in the [custom plugin configuration page](/docs/custom-plugins/configuring). Using the version keyword `latest` will always update plugins automatically with the latest version when new plugin is published to Artifactory. 
 
 [forgot-password]: https://roadiehq.jfrog.io/ui/login/forgot-password
 [form]: https://docs.google.com/forms/d/e/1FAIpQLSdSNr4Ps_RpKEx0V2QbxWaKLb3-DKi0W7U09Wth0SXHQoPyXQ/viewform
