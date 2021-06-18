@@ -138,7 +138,8 @@ const DocSidebar = () => {
         </SidebarSectionList>
 
         <SidebarSectionList title="Custom plugins">
-          <SidebarItem to="/docs/custom-plugins/" text="Installing Custom Plugins" />
+          <SidebarItem to="/docs/custom-plugins/configuring" text="Configuring Custom Plugins" />
+          <SidebarItem to="/docs/custom-plugins/artifactory" text="Using Private Roadie Repository" />
         </SidebarSectionList>
       </nav>
     </Sidebar>
