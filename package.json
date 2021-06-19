@@ -15,7 +15,7 @@
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^1.6.0",
     "classnames": "^2.3.0",
-    "date-fns": "^2.20.0",
+    "date-fns": "^2.22.1",
     "gatsby": "^3.6.0",
     "gatsby-plugin-algolia": "^0.20.0",
     "gatsby-plugin-feed": "^3.6.0",
