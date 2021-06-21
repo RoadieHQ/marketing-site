@@ -18,7 +18,7 @@ Custom plugins need to be enabled for your Roadie instance. You can enable this 
 
 ### Step 1. Create plugin definition in Roadie
 
-You can navigate to <span>https://your-company.roadie.so/administration/custom-plugins</span> where you will find a collection of cards detailing custom plugins configured for the Roadie instance. 
+You can navigate to h<gatsbyhack>tt</gatsbyhack>ps://your-company.roadie.so/administration/custom-plugins where you will find a collection of cards detailing custom plugins configured for the Roadie instance. 
 
 ![custom_plugins_page](custom_plugins_page.png)
 
