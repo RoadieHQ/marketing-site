@@ -57,7 +57,7 @@ Each plugin exposes a status field indicating if they are available to be used w
 Newly added plugin configuration. An attempt will be made to install this plugin during the next application installation cycle.
 
 ##### Updated
-Updated plugin configuration. An older version of the plugin is still available to be used in the application and updates to version or components will be added during the next application installation cycle
+Updated plugin configuration. An older version of the plugin is still available to be used in the application and updates to version or components will be added during the next application installation cycle.
 
 ##### Installed successfully
 Application installation cycle has started and has successfully updated the application code. The plugin and components will be available to use when the next version of the application is rolled out.
