@@ -6,7 +6,9 @@ description: How to configure a custom Backstage plugin to Roadie
 
 ## Introduction
 
-Roadie supports all standard Backstage plugin types that can be built using instructions defined in [Backstage documentation][backstage-plugin-documentation]. Your plugins can be published via npm or yarn, like publishing a normal package. We will provide you functionality to automatically add custom plugins from repositories to your Roadie instance. If you want to have a private hosted repository for your Roadie plugins with automatic update workflow you can follow instructions on [setting up private secure Artifactory for Roadie plugins.](/docs/custom-plugins/artifactory/)
+Roadie supports all standard Backstage frontend plugin types that can be built using instructions defined in [Backstage documentation][backstage-plugin-documentation]. Your plugins can be published via npm or yarn, like publishing a normal package. We will provide you functionality to automatically add custom plugins from repositories to your Roadie instance. 
+
+If you want to have a private hosted repository for your Roadie plugins with automatic update workflow you can follow instructions on [setting up private secure Artifactory for Roadie plugins.](/docs/custom-plugins/artifactory/)
 
 ## Prerequisites
 
@@ -16,7 +18,7 @@ Custom plugins need to be enabled for your Roadie instance. You can enable this 
 
 ### Step 1. Create plugin definition in Roadie
 
-You can navigate to https://your-company.roadie.so/administration/custom-plugins where you will find a collection of cards detailing custom plugins configured for the Roadie instance. 
+You can navigate to <span>https://your-company.roadie.so/administration/custom-plugins</span> where you will find a collection of cards detailing custom plugins configured for the Roadie instance. 
 
 ![custom_plugins_page](custom_plugins_page.png)
 
@@ -40,12 +42,15 @@ Semantic versioning definition for the plugin to use. This can be defined with s
 
 
 ##### Components
-List of components that the plugin exposes. These are defined as a type and name pair. The type is  one of Card, Content or Page. The name needs to match the component name in code that is built into the plugin package.
+List of components that the plugin exposes. These are defined as a type and name pair. The type is one of Card, Content or Page. The name needs to match the component name in code that is exported from the plugin package.
 
 
 ### Step 2. Installing
 
-Custom plugins are installed within the application from an external workflow. This can be triggered either by calling a webhook from your CI pipeline or manually or automatically when a new NPM package is published to private, secure Roadie Artifactory. Note that this installation step may take up to 20 minutes at the moment, though we are tirelessly working on bringing that number down.
+Custom plugins are installed within the application from an external workflow. This can be triggered in a number of ways:
+1. By calling a webhook from your CI pipeline,
+2. By calling a webhook manually
+3. Automatically when a new NPM package is published to private, secure Roadie Artifactory.
 
 
 ## Additional information
@@ -60,7 +65,7 @@ Newly added plugin configuration. An attempt will be made to install this plugin
 Updated plugin configuration. An older version of the plugin is still available to be used in the application and updates to version or components will be added during the next application installation cycle.
 
 ##### Installed successfully
-Application installation cycle has started and has successfully updated the application code. The plugin and components will be available to use when the next version of the application is rolled out.
+Backstage application installation cycle has started and has successfully updated the application code. The plugin and components will be available to use when the next version of your Roadie instance is rolled out.
 
 ##### Installation failed
 Application installation cycle has tried to install this plugin but was unable to find the plugin package from NPM or private secure Roadie Artifactory.
