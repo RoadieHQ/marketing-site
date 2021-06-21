@@ -31,7 +31,7 @@ The values that need to be added are as follows:
 Package field corresponds to the name of the NPM package. This can be a public NPM package hosted in npmjs.com or a private package securely hosted in Roadie Artifactory. If the package is hosted in Roadie Artifactory, the name of the package needs to start with `@<your-company>-roadie/`.
 
 
-##### Plugin Name
+##### Plugin name
 The name of the plugin. This field can be arbitrarily chosen and will be used as a identifier when adding components from the plugin to Roadie as Cards, Tabs or Pages.
 
 
