@@ -1,5 +1,17 @@
 import React from 'react';
-import { FaBars, FaTimes, FaTwitter, FaGithub } from 'react-icons/fa';
+import {
+  FaBars,
+  FaTimes,
+  FaTwitter,
+  FaGithub,
+  FaDiscord,
+  FaPlug,
+  FaNewspaper,
+  FaMagic,
+  FaGraduationCap,
+  FaBlog,
+  FaBriefcase,
+} from 'react-icons/fa';
 import Menu from 'react-burger-menu/lib/menus/slide';
 import { createUseStyles } from 'react-jss';
 import { TextLink } from 'components';
@@ -7,6 +19,7 @@ import { TextLink } from 'components';
 import IconLink from '../IconLink';
 import { LINE_HEIGHT } from './Logo';
 import BackstageLogo from './BackstageLogo';
+import ListItem from './ListItemLink';
 
 const styles = {
   bmBurgerButton: {
@@ -51,7 +64,7 @@ const styles = {
   },
 
   bmItemList: {
-    padding: '0.8em',
+    padding: '0.8em 0',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -78,7 +91,7 @@ const useStyles = createUseStyles(() => ({
   },
 
   spacer: {
-    marginBottom: '1em',
+    marginBottom: '0.2em',
   },
 
   iconSpacer: {
@@ -113,55 +126,55 @@ const HamburgerMenu = ({ siteMetadata }) => {
       right
       htmlClassName={'no-scroll'}
       bodyClassName={'no-scroll'}
-      width={250}
+      width={300}
     >
       <div>
         <div className={classes.spacer}>
-          <TextLink
+          <ListItem
             to="/backstage/plugins/"
             text="Backstage Plugins"
             color="contrasting"
-            className={classes.textLink}
+            icon={<FaPlug />}
           />
         </div>
 
         <div className={classes.spacer}>
-          <TextLink
+          <ListItem
             to="https://careers.roadie.io"
             text="Careers"
             color="contrasting"
-            className={classes.textLink}
+            icon={<FaBriefcase />}
           />
         </div>
 
         <div className={classes.spacer}>
-          <TextLink to="/blog/" text="Blog" color="contrasting" className={classes.textLink} />
+          <ListItem to="/blog/" text="Blog" color="contrasting" icon={<FaBlog />} />
         </div>
 
         <div className={classes.spacer}>
-          <TextLink
+          <ListItem
             to="/backstage-weekly/"
             text="Backstage Weekly"
             color="contrasting"
-            className={classes.textLink}
+            icon={<FaNewspaper />}
           />
         </div>
 
         <div className={classes.spacer}>
-          <TextLink
+          <ListItem
             to="/case-studies/"
             text="Case Studies"
             color="contrasting"
-            className={classes.textLink}
+            icon={<FaMagic />}
           />
         </div>
 
         <div className={classes.spacer}>
-          <TextLink
+          <ListItem
             to="/docs/getting-started/getting-started-for-admins/"
             text="Documentation"
             color="contrasting"
-            className={classes.textLink}
+            icon={<FaGraduationCap />}
           />
         </div>
       </div>
@@ -175,6 +188,12 @@ const HamburgerMenu = ({ siteMetadata }) => {
           <span className={classes.iconSpacer}>
             <IconLink to={GITHUB_URL} text="GitHub" color="contrasting">
               <FaGithub />
+            </IconLink>
+          </span>
+
+          <span className={classes.iconSpacer}>
+            <IconLink to="https://discord.gg/W3qEMhmx4f" text="Discord" color="contrasting">
+              <FaDiscord />
             </IconLink>
           </span>
 
