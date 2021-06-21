@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss';
 import {
   FaCaretDown,
   FaPlug,
-  FaNewspaper,
   FaBlog,
   FaMagic,
   FaTwitter,
@@ -11,11 +10,11 @@ import {
   FaGraduationCap,
   FaDiscord,
 } from 'react-icons/fa';
-import { TextLink } from 'components';
 
 import IconLink from '../IconLink';
 import NavItemSpacer from './NavItemSpacer';
 import BackstageLogo from './BackstageLogo';
+import ListItem from './ListItemLink';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -38,11 +37,6 @@ const useStyles = createUseStyles((theme) => ({
     // Get the icon to line up with the text.
     verticalAlign: 'middle',
     marginLeft: 4,
-  },
-
-  iconPrefix: {
-    verticalAlign: 'middle',
-    marginRight: 16,
   },
 
   triggerWrapper: {
@@ -85,11 +79,6 @@ const useStyles = createUseStyles((theme) => ({
     visibility: 'hidden',
   },
 
-  contentItem: {
-    display: 'block',
-    padding: 8,
-  },
-
   // https://css-tricks.com/a-complete-guide-to-links-and-buttons/#icon-only-links
   visuallyHidden: {
     border: 0,
@@ -103,16 +92,6 @@ const useStyles = createUseStyles((theme) => ({
     width: 1,
   },
 }));
-
-const ListItem = ({ icon, text, to }) => {
-  const classes = useStyles();
-  return (
-    <TextLink to={to} className={classes.contentItem}>
-      <span className={classes.iconPrefix}>{icon}</span>
-      <span>{text}</span>
-    </TextLink>
-  );
-};
 
 const DropdownMenuItem = ({ title, siteMetadata }) => {
   const classes = useStyles();
