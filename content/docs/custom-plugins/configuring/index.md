@@ -12,7 +12,7 @@ If you you would like to use our private hosted repository for your Roadie plugi
 
 ## Prerequisites
 
-Custom plugins need to be enabled for your Roadie instance. You can enable this by contacting us.
+Contact us to have the custom plugins feature enabled for your Roadie instance.
 
 ## Configuring a plugin for your Roadie instance
 
