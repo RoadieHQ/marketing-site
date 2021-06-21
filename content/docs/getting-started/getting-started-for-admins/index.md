@@ -27,14 +27,15 @@ In order to complete this guide, you will need the following things:
 
 ## Connect Roadie to GitHub
 
-There are two ways to configure GitHub integration with Backstage
+Roadie needs 2 connections to GitHub in order to function.
 
-1. Installing a GitHub App
-2. Using a GitHub Oauth App and personal access token
+1.  A GitHub app installation to access the YAML metadata files that Backstage needs to operate.
+2.  An OAuth client ID and secret so that your user can make requests from the browser to the GitHub API.
 
-### Install the Roadie GitHub App
+Use the steps below to install the GitHub App.
 
-Roadie needs the "Roadie Backstage" GitHub app to be installed in your GitHub organization so that it can index your repositories.
+### Step 1. Install the GitHub App
+
 
 You can find a link to install the GitHub app in the Backstage application:
 
@@ -44,28 +45,7 @@ You can find a link to install the GitHub app in the Backstage application:
 
 ![Install GitHub App](./install-github-app.png)
 
-### Use a custom GitHub and Personal Access Token
-
-Roadie needs 2 connections to GitHub in order to function.
-
-1.  A Personal Access Token to access the YAML metadata files that Backstage needs to operate.
-2.  An OAuth client ID and secret so that your user can make requests from the browser to the GitHub API.
-
-Use the steps below to create a client ID and secret and Personal Access Token (PAT) for Roadie.
-
-If you wish to tightly restrict the access that Roadie has, perhaps for evaluation purposes, please [follow this guide](/docs/integrations/github-token).
-
-#### Step 1. Create a Personal Access Token (PAT)
-
-Visit the [developer settings of your GitHub account](https://github.com/settings/tokens) and create a PAT which has the scopes `repo`, `user`, `read:org` and `read:discussion`.
-
-The official GitHub docs for creating a Personal Access Token are [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
-
-⚠️ &nbsp;The token's owner must be a member of the organization, rather than an outside collaborator or other relation.
-
-Want to use a token with more restrictive scopes? Use [this guide](/docs/integrations/github-token/).
-
-#### Step 2. Create OAuth Credentials
+### Step 2. Create OAuth Credentials
 
 Visit the Developer Settings of your GitHub organization account. Click "New OAuth App".
 
@@ -88,19 +68,19 @@ Take a note of the client ID and the generated client Secret. You will need thes
 
 ![Generated client ID and secret on GitHub](./github-client-id-and-secret.png)
 
-#### Step 3. Add the PAT and OAuth credentials to Roadie
+### Step 3. Add the OAuth credentials to Roadie
 
 Visit the Secrets management interface on Roadie Backstage at `https://your-company.roadie.so/administration`.
 
-Find the `GITHUB_TOKEN` field. Click the Pencil Icon to edit the field.
+Find the `GITHUB_CLIENT_ID` field. Click the Pencil Icon to edit the field.
 
-![a table with a row for the GitHub token. There is a description, a status indicator and an edit icon](./github-token-field.png)
+![a table with a row for the GitHub token. There is a description, a status indicator and an edit icon](./github-client-id-field.png)
 
-Enter the PAT into the input and click the Save button.
+Enter the Client ID into the input and click the Save button.
 
-![A dialog with a starred out input and a save button](./pat-in-dialog.png)
+![A dialog with a starred out input and a save button](./client-id-in-dialog.png)
 
-Do the same thing for the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` values.
+Do the same thing for the `GITHUB_CLIENT_SECRET` value.
 
 Wait until Roadie has activated the token before proceeding.
 
