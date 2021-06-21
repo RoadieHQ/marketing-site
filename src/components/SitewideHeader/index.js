@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { graphql, useStaticQuery } from 'gatsby';
-import { ButtonLinkCallToAction, LayoutControl } from 'components';
+import { ButtonLinkCallToAction, LayoutControl, TextLink } from 'components';
 import { DEFAULT_MAX_WIDTH_BREAKPOINT } from 'components/LayoutControl';
 
 import styles from './styles';
@@ -27,6 +27,10 @@ const SitewideHeader = ({
 
           <nav className={classes.fullScreenNav} aria-label="Sitewide navigation">
             <span className={classes.textLinkWrapper}>
+              <NavItemSpacer>
+                <TextLink to="/backstage-weekly/" text="Backstage Weekly" />
+              </NavItemSpacer>
+
               <NavItemSpacer>
                 <DropdownMenuItem title="Learn" siteMetadata={data.site.siteMetadata} />
               </NavItemSpacer>
