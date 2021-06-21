@@ -58,7 +58,7 @@ Custom plugins are installed within the application from an external workflow. T
 ### Plugin Statuses
 Each plugin exposes a status field indicating if they are available to be used within the Roadie instance. The statuses are as follows:
 
-#### Added
+##### Added
 Newly added plugin configuration. An attempt will be made to install this plugin during the next application installation cycle.
 
 ##### Updated
