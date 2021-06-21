@@ -65,7 +65,7 @@ Newly added plugin configuration. The new configuration will be installed when t
 Updated plugin configuration. An older version of the plugin is still available to be used in the application and updates to version or components will be added during the next application installation cycle.
 
 ##### Installed successfully
-Backstage application installation cycle has started and has successfully updated the application code. The plugin and components will be available to use when the next version of your Roadie instance is rolled out.
+The installation workflow, as described in Step 2, has been triggered and has successfully updated the application code. The plugin and components will be available to use when the next version of your Roadie instance is rolled out.
 
 ##### Installation failed
 Application installation cycle has tried to install this plugin but was unable to find the plugin package from NPM or private secure Roadie Artifactory.
