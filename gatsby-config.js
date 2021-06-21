@@ -6,8 +6,6 @@ const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
 
 const SITE_TITLE = 'Roadie';
 
-console.log('searchclient', process.env.GATSBY_ALGOLIA_APP_ID);
-
 const skipAlgoliaIndexing =
   has(process.env, 'GITHUB_ACTIONS') ||
   // Set this environment variable to the string 'true' if you want to emulate a production
