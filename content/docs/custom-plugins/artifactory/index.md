@@ -11,7 +11,7 @@ your plugins, and we host a dedicated npm registry which you can publish to.
 
 ## Prerequisites
 
-To be able to use private artifactory and it's automated workflow in your Roadie instance, we need to set it up. You can contact us to set up a repository for you. After the repository is set up, your plugins will be hosted securely on Roadie artifactory and are usable in your Roadie instance.
+Contact us to get added to our private and secure plugin artefact repository.
 
 ## Pushing the plugin to Roadie
 
