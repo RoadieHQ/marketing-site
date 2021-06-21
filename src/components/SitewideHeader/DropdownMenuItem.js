@@ -134,11 +134,6 @@ const DropdownMenuItem = ({ title, siteMetadata }) => {
 
       <div className={classes.content} id="resources-dropdown">
         <ListItem to="/backstage/plugins/" icon={<FaPlug />} text="Backstage Plugins" />
-        <ListItem
-          to="/backstage-weekly/"
-          icon={<FaNewspaper />}
-          text="Backstage Weekly Newsletter"
-        />
         <ListItem to="/blog/" icon={<FaBlog />} text="Blog" />
         <ListItem to="/case-studies/" icon={<FaMagic />} text="Case Studies" />
         <ListItem
