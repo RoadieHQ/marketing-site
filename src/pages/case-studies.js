@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { createUseStyles } from 'react-jss';
+import get from 'lodash/get';
 
 import { SEO, StickyFooter } from 'components';
 import PostSummary from 'components/blog/PostSummary';
@@ -10,11 +11,12 @@ const MAX_WIDTH_BREAKPOINT = 'lg';
 
 const useStyles = createUseStyles((theme) => ({
   header: {
-    marginBottom: '1em',
+    marginBottom: '2em',
   },
 
   summaryRoot: {
     display: 'flex',
+    marginBottom: '2em',
   },
 
   summaryWrapper: {},
@@ -54,23 +56,27 @@ const CaseStudiesIndex = ({ data, location }) => {
           <h2>Case Studies</h2>
         </header>
 
-        {posts.map(({ node }) => (
-          <div key={node.fields.slug} className={classes.summaryRoot}>
-            <span
-              className={classes.summaryImageWrapper}
-              style={{ backgroundColor: node.frontmatter.logo.backgroundColor }}
-            >
-              <GatsbyImage
-                image={node.frontmatter.logo.image.childImageSharp.gatsbyImageData}
-                backgroundColor={node.frontmatter.logo.backgroundColor}
-                alt={node.frontmatter.logo.alt}
-              />
-            </span>
-            <span className={classes.summaryWrapper}>
-              <PostSummary post={node} />
-            </span>
-          </div>
-        ))}
+        {posts.map(({ node }) => {
+          const logoBackgroundColor = get(node, 'frontmatter.logo.backgroundColor', null);
+
+          return (
+            <div key={node.fields.slug} className={classes.summaryRoot}>
+              <span
+                className={classes.summaryImageWrapper}
+                style={{ backgroundColor: node.frontmatter.logo.backgroundColor }}
+              >
+                <GatsbyImage
+                  image={node.frontmatter.logo.image.childImageSharp.gatsbyImageData}
+                  backgroundColor={logoBackgroundColor}
+                  alt={node.frontmatter.logo.alt}
+                />
+              </span>
+              <span className={classes.summaryWrapper}>
+                <PostSummary post={node} />
+              </span>
+            </div>
+          );
+        })}
       </StickyFooter>
     </>
   );
