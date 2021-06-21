@@ -62,7 +62,7 @@ Each plugin exposes a status field indicating if they are available to be used w
 Newly added plugin configuration. The new configuration will be installed when the installation workflow is triggered, as described in Step 2 above.
 
 ##### Updated
-Updated plugin configuration. An older version of the plugin is still available to be used in the application and updates to version or components will be added during the next application installation cycle.
+Updated plugin configuration. An older version of the plugin is still available to be used in your Roadie instance. Updates to versions or components will be added when the installation workflow is triggered, as described in Step 2 above.
 
 ##### Installed successfully
 The installation workflow, as described in Step 2, has been triggered and has successfully updated the application code. The plugin and components will be available to use when the next version of your Roadie instance is rolled out.
