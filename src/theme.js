@@ -70,7 +70,7 @@ const theme = {
       //
       // I've also disabled margin-left:auto because there are some situations where we
       // need images to be against the left edge. Docs are a good example of this.
-      wrapperStyle: 'box-shadow:0 0 5px -2px rgba(0,0,0,0.75); margin-left:unset; margin-right:unset',
+      wrapperStyle: 'box-shadow: 0 0 5px -2px rgba(0,0,0,0.75); margin-left:unset; margin-right:unset',
     },
 
     // These styles are set on the root element of HTML nodes which have compiled Markdown injected
