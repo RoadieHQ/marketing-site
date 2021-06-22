@@ -28,11 +28,22 @@ gettingStarted:
       cd packages/app
       yarn add @roadiehq/backstage-plugin-datadog
 
-  - intro: Add the Datadog plugin to the list of plugins.
+  - intro: Add Datadog widget to your Overview tab.
     language: typescript
     code: |
       // packages/app/src/plugins.ts
-      export { plugin as Datadog } from '@roadiehq/backstage-plugin-datadog';
+      const overviewContent = (
+      // ...
+        <Grid container spacing={3} alignItems="stretch">
+          <EntitySwitch>
+            <EntitySwitch.Case if={isDatadogGraphAvailable}>
+              <Grid item>
+                <EntityDatadogGraphCard/>
+              </Grid>
+            </EntitySwitch.Case>
+          </EntitySwitch>
+        </Grid>
+      );
 
   - intro: Add a Datadog card to the overview tab of the EntityPage.tsx source file
     language: typescript
@@ -53,23 +64,24 @@ gettingStarted:
         </EntityPageLayout>
        )
 
-  - intro: Add widget to your Overview tab.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      const overviewContent = (
-      // ...
-       <Grid container spacing={3} alignItems="stretch">
-         <EntitySwitch>
-           <EntitySwitch.Case if={isDatadogGraphAvailable}>
-             <Grid item>
-               <EntityDatadogGraphCard/>
-             </Grid>
-           </EntitySwitch.Case>
-          </EntitySwitch>
-       </Grid>
-      );
 ---
+
+## Specify datadog domain
+
+Datadog embedded graph is using datadoghq.eu as default top-level domain, when other is not specified. If you are using other domain, you must specify it with corresponding annotations datadoghq.com/site.
+
+### Adding the annotations and the values from Datadog to your component's metadata file.
+
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sample-service
+  description: |
+    A sample service
+  annotations:
+    datadoghq.com/site: <<DATADOGDOMAIN>>
+```
 
 ## How to embed a datadog dashboard in Backstage
 
@@ -124,6 +136,20 @@ metadata:
 * this token is the value you need for the `datadoghq.com/graph-token` annotation
 
 ![dashboard](../../assets/dd-graph-share.png)
+
+### Customize graph size.
+
+In order to customize size of the graph you may specify datadoghq.com/graph-size annotations and specify one of the following options:
+
+* 'small'
+
+* 'medium'
+
+* 'large'
+
+* 'x-large';
+
+If not specified, your graph will be 'medium' size per default.
 
 ### Adding the annotations and the values from Datadog to your component's metadata file.
 
