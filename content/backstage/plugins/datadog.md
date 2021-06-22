@@ -68,7 +68,7 @@ gettingStarted:
 
 ## Specify datadog domain
 
-Datadog embedded graph is using datadoghq.euas default top-level domain, when other is not specified. If you are using other domain, you need to specify it with corresponding annotations datadoghq.com/site.
+Datadog embedded graph is using datadoghq.eu as default top-level domain, when other is not specified. If you are using other domain, you must specify it with corresponding annotations datadoghq.com/site.
 
 ### Adding the annotations and the values from Datadog to your component's metadata file.
 
