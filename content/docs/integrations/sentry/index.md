@@ -18,7 +18,9 @@ Copy the value of the Organization Slug from the settings. The value shown here 
 
 ![organizaton setting in Sentry UI](./sentry-organization-settings.png)
 
-Currently, this must be set manually in Roadie. Please share this non-private value with us via your dedicated support Slack channel and we will be happy to accomodate you.
+Go to the Administration Settings page and set the Sentry organization name.
+
+![sentry-settings-page.png](sentry-settings-page.png)
 
 ### Step 2: Get a Sentry token
 
