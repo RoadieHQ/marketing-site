@@ -12,7 +12,7 @@ In order to use the PagerDuty plugin, Roadie needs an API token to communicate w
 These are set within backstage at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/secrets
+https://<tenant-name>.roadie.so/administration/settings/secrets
 ```
 
 This page describes how to create and set up the API token.
@@ -39,7 +39,7 @@ You will see the API key you have created in a modal window.
 
 ### Step 3: Store the credentials and PagerDuty URL in Roadie
 
-Visit `https://<tenant-name>.roadie.so/secrets` and enter the API Key value from above into `PAGERDUTY_TOKEN`.
+Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the API Key value from above into `PAGERDUTY_TOKEN`.
 
 
 **Note:** We just need you configure the token as it is from PagerDuty. If you are familiar with the way to configure PagerDuty in backstage on prem or locally you maybe using a more complicated format.

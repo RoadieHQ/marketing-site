@@ -42,7 +42,7 @@ Copy the token that Sentry displays.
 
 ### Step 3: Add the token to Roadie
 
-Visit `https://your-company.roadie.so/secrets`.
+Visit `https://your-company.roadie.so/administration/settings/secrets`.
 
 Click the pencil icon beside `SENTRY_TOKEN`. Prefix the token you copied from the Sentry UI with `Bearer `, and enter it into the input in the dialog that pops up.
 
