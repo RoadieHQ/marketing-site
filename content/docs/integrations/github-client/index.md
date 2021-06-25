@@ -11,7 +11,7 @@ In order to enable user driven front end operations against GitHub APIs (e.g. vi
 These are set within backstage at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/secrets
+https://<tenant-name>.roadie.so/administration/settings/secrets
 ```
 
 This page describes how to get the client id and secret.
@@ -26,4 +26,4 @@ This page describes how to get the client id and secret.
 
 4. Click Generate a new secret
 5. Copy the client id and client secret
-6. Visit `https://<tenant-name>.roadie.so/secrets` and enter these values into `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
+6. Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter these values into `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
