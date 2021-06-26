@@ -63,14 +63,13 @@ const theme = {
 
   preMadeStyles: {
     gatsbyRemarkImages: {
-      // I was having a problem with screenshots which have a white background. Because the
-      // background of the blog posts is also white, there was no way to see where the image
-      // ended and the blog post began. It all just blurred together. This shadow defins
-      // the edge of the image.
-      //
       // I've also disabled margin-left:auto because there are some situations where we
       // need images to be against the left edge. Docs are a good example of this.
-      wrapperStyle: 'box-shadow: 0 0 5px -2px rgba(0,0,0,0.75); margin-left:unset; margin-right:unset',
+      //
+      // This can't be moved into the content block in this theming object because the
+      // Gatsby remark images plugin will add inline styles into the element which override
+      // anything we try to set.
+      wrapperStyle: 'margin-left:unset; margin-right:unset',
     },
 
     // These styles are set on the root element of HTML nodes which have compiled Markdown injected
@@ -78,6 +77,14 @@ const theme = {
     // so styling the root element is all we can do.
     content: {
       maxWidth: '70rem',
+
+      '& .gatsby-resp-image-wrapper': {
+        // I was having a problem with screenshots which have a white background. Because the
+        // background of the blog posts is also white, there was no way to see where the image
+        // ended and the blog post began. It all just blurred together. This shadow defins
+        // the edge of the image.
+        boxShadow: '0 0 5px -2px rgba(0,0,0,0.75)',
+      },
 
       '& h1, & h2, & h3, & h4': {
         marginTop: '2rem',
