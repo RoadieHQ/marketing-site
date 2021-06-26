@@ -138,11 +138,11 @@ module.exports = {
     },
 
     {
-      resolve: "@sentry/gatsby",
+      resolve: '@sentry/gatsby',
       options: {
         // DSNs are safe to keep public.
         // https://docs.sentry.io/product/sentry-basics/dsn-explainer/#dsn-utilization
-        dsn: "https://1798396e863a4fc0b412438bac2c8528@o416326.ingest.sentry.io/5823815",
+        dsn: 'https://1798396e863a4fc0b412438bac2c8528@o416326.ingest.sentry.io/5823815',
         sampleRate: 0.7,
       },
     },

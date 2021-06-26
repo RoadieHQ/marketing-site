@@ -13,6 +13,7 @@ import {
 
 const useStyles = createUseStyles((theme) => ({
   coverImage: {
+    ...theme.preMadeStyles.content['& .gatsby-resp-image-wrapper'],
     maxWidth: '100%',
     maxHeight: '100%',
   },
