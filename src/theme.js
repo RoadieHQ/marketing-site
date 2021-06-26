@@ -86,6 +86,18 @@ const theme = {
         boxShadow: '0 0 5px -2px rgba(0,0,0,0.75)',
       },
 
+      // A box-shadow is added to images by default. To remove it, wrap the markdown image in
+      // a div with the no-box-shadow class. The empty lines are required.
+      //
+      // <div class="no-box-shadow">
+      //
+      // ![list of components resources and APIs which are dependencies of a system](./system-cards.png)
+      //
+      // </div>
+      '& .no-box-shadow .gatsby-resp-image-wrapper': {
+        boxShadow: 'none',
+      },
+
       '& h1, & h2, & h3, & h4': {
         marginTop: '2rem',
         marginBottom: '1.1rem',

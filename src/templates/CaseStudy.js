@@ -9,23 +9,7 @@ import {
 } from 'components/actions/SubscribeToNewsletter';
 
 const useStyles = createUseStyles((theme) => ({
-  main: {
-    ...theme.preMadeStyles.content,
-
-    '& .gatsby-resp-image-wrapper': {
-      // This is a complete hack that I (David) am putting in place because I need to publish
-      // the newsletter and I don't have time to fix this properly.
-      //
-      // The Gatsby Remark images plugin is adding a box-shadow to all images it renders by
-      // default. See gatsby-config.js to see how this happens. In most cases, this looks
-      // great. However, the Lunar team supplied me with images which already have a box shadow
-      // on them. It looks terrible when they are wrapped in a second shadow.
-      //
-      // My hack is to force box shadow off for all case-studies. Later I can come up with
-      // a more nuanced approach.
-      boxShadow: 'none !important',
-    },
-  },
+  main: theme.preMadeStyles.content,
 }));
 
 const MAX_WIDTH_BREAKPOINT = 'md';

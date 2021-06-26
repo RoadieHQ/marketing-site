@@ -15,13 +15,21 @@ I met with Lead Platform Architect and CNCF ambassador [Kasper Nissen][kasper] a
 
 Lunar deploys their microservices architecture on AWS based kubernetes. They had about 40 engineers in total when they started adopting Backstage in late 2020 and have grown to between 50 and 60 engineers today.
 
+<div class="no-box-shadow">
+
 ![Lunars Backstage catalog](./lunar-catalog.png)
+
+</div>
 
 ## Growing pains
 
 One of the challenges that comes with being a successful early stage startup is scaling and onboarding new engineers at a rapid pace. When Lunar raised their Series C in late 2020, they quickly put together plans to double the engineering team over the next 12 months.
 
+<div class="no-box-shadow">
+
 ![Lunar has grown from 100 employees to 300 employees in the past 2 years](./lunar-headcount-growth.png)
+
+</div>
 
 They knew that relying on tribal knowledge wouldn’t cut it when growing this rapidly, especially given the remote working style that the global pandemic had hoisted upon the company. It takes time to get new engineers up to speed with the internal tooling and architecture, and educating them can put a drain on existing teams.
 
@@ -35,7 +43,11 @@ Since adopting Backstage 9 months ago, Kasper and Bjørn say the service catalog
 
 Backstage has helped their internal deployment platform become truly self-service and has reduced the support load on the team who maintain it. All new Lunar engineers go through an orientation program where they learn about Lunar’s platform and how to use it. These days, this program is just a trip around Backstage. New hires can sometimes create their first new service within an hour of beginning the platform orientation.
 
+<div class="no-box-shadow">
+
 ![Lunars developer onboarding documentation is written with the TechDocs feature](./lunar-developer-onboarding.png)
+
+</div>
 
 Despite having almost 60 engineers on staff, Lunar have found the need to write only one bespoke Backstage plugin — a UI which helps engineers discover RabbitMQ messages which are experiencing delivery problems. In what can only be described as a win for the Backstage community, everything else they use is open-source and community contributed. 
 
