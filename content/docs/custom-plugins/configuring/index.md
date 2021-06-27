@@ -6,35 +6,35 @@ description: How to configure a custom Backstage plugin to Roadie
 
 ## Introduction
 
-Roadie supports all standard Backstage frontend plugin types that can be built using instructions defined in [Backstage documentation][backstage-plugin-documentation]. Your plugins can be published via npm or yarn, like publishing a normal package. We will provide you functionality to automatically add custom plugins from repositories to your Roadie instance. 
+Roadie supports all standard Backstage frontend plugin types that can be built using instructions defined in [Backstage documentation][backstage-plugin-documentation]. Your plugins can be published via npm or yarn, like publishing a normal package. We will provide you functionality to automatically add custom plugins from repositories to your Roadie instance.
 
-If you you would like to use our private hosted repository for your Roadie plugins, complete with automatic update workflow, you can follow instructions on [setting up private secure Artifactory for Roadie plugins.](/docs/custom-plugins/artifactory/)
+If you want to have a private hosted repository for your Roadie plugins with automatic update workflow you can follow instructions on [setting up private secure Artifactory for Roadie plugins.](/docs/custom-plugins/artifactory/)
 
 ## Prerequisites
 
-Contact us to have the custom plugins feature enabled for your Roadie instance.
+Custom plugins need to be enabled for your Roadie instance. You can enable this by contacting us.
 
 ## Configuring a plugin for your Roadie instance
 
 ### Step 1. Create plugin definition in Roadie
 
-You can navigate to h<gatsbyhack>tt</gatsbyhack>ps://your-company.roadie.so/administration/custom-plugins where you will find a collection of cards detailing custom plugins configured for the Roadie instance. 
+You can navigate to h<gatsbyhack>tt</gatsbyhack>ps://your-company.roadie.so/administration/custom-plugins where you will find a collection of cards detailing custom plugins configured for the Roadie instance.
 
 ![custom_plugins_page](custom_plugins_page.png)
 
 ### Form
 
-You can create a new custom plugin definition by clicking "Add New Plugin" floating button. 
+You can create a new custom plugin definition by clicking "Add New Plugin" floating button.
 ![custom_plugin_form](custom_plugin_form.png)
 
-The required values are as follows:
+The values that need to be added are as follows:
 
 ##### Package name
 Package field corresponds to the name of the NPM package. This can be a public NPM package hosted in npmjs.com or a private package securely hosted in Roadie Artifactory. If the package is hosted in Roadie Artifactory, the name of the package needs to start with `@<your-company>-roadie/`.
 
 
 ##### Plugin name
-The name of the plugin. This field can be arbitrarily chosen and will be used as an identifier when adding components from the plugin to Roadie as Cards, Tabs or Pages.
+The name of the plugin. This field can be arbitrarily chosen and will be used as a identifier when adding components from the plugin to Roadie as Cards, Tabs or Pages.
 
 
 ##### Plugin version
@@ -47,33 +47,51 @@ List of components that the plugin exposes. These are defined as a type and name
 
 ### Step 2. Installing
 
-Custom plugins are installed within the application from an external workflow. This can be triggered in a number of ways:
+Custom plugins are installed when the application is rebuilt.  This rebuilding phase and plugin installation happens on an external workflow. This workflow can be triggered in a number of ways:
 1. By calling a webhook from your CI pipeline,
 2. By calling a webhook manually
 3. Automatically when a new NPM package is published to private, secure Roadie Artifactory.
 
+Application update process happens automatically after the workflow is triggered and has run successfully.
+
+After the application has been updated you will have your custom plugins ready to be used in your Roadie instance. To synchronize the packaged application code and components that are set up to be used, you can refresh component statuses manually from the UI. This refresh functionality located next to the component list displayed when you are adding them to Roadie either as a Page, Tab or as a Card for to entity dashboard tabs.
+
+![custom_plugin_component_refresh](custom_plugin_component_refresh.png)
 
 ## Additional information
 
-### Plugin Statuses
-Each plugin exposes a status field indicating if they are available to be used within the Roadie instance. The statuses are as follows:
 
-##### Added
-Newly added plugin configuration. The new configuration will be installed when the installation workflow is triggered, as described in Step 2 above.
+Components from custom plugins are available in the list of dynamic
+UI components with their current status within the application. To
+refresh the status of these components from custom plugins you can
+click the refresh icon next to the component selection dropdown. Below is a listing of component statuses that are displayed in the drop down list
 
-##### Updated
-Updated plugin configuration. An older version of the plugin is still available to be used in your Roadie instance. Updates to versions or components will be added when the installation workflow is triggered, as described in Step 2 above.
 
-##### Installed successfully
-The installation workflow, as described in Step 2, has been triggered and has successfully updated the application code. The plugin and components will be available to use when the next version of your Roadie instance is rolled out.
 
-##### Installation failed
-Application installation cycle has tried to install this plugin but was unable to find the plugin package from NPM or private secure Roadie Artifactory.
+### Component statuses
+
+#### Pending
+
+Plugin and its components have been configured in the application
+but they are not yet usable. This status will be changed when the
+application is rebuilt.
+
+
+#### Pending Deletion
+
+Component or plugin has been marked as deleted in the configuration.
+All components and their related configuration will be removed in
+the next refresh event.
+
+#### Available
+
+Component has been successfully installed in the application and can
+be used as part of the UI.
 
 
 ### Notifications and logs
 
-Build notifications are sent onto a Slack channel where you can see the time that the build took, as well as possible versions of the plugins that have been installed to your Roadie instance. 
+Build notifications are sent onto a Slack channel where you can see the time that the build took, as well as possible versions of the plugins that have been installed to your Roadie instance.
 
 ## Conclusion
 
