@@ -24,7 +24,7 @@ You can navigate to h<gatsbyhack>tt</gatsbyhack>ps://your-company.roadie.so/admi
 
 ### Form
 
-You can create a new custom plugin definition by clicking "Add New Plugin" floating button.
+You can create a new custom plugin definition by clicking "Add New Plugin" floating button. 
 ![custom_plugin_form](custom_plugin_form.png)
 
 The required values are as follows:
