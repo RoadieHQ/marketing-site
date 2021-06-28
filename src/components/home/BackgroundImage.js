@@ -17,9 +17,16 @@ const useStyles = createUseStyles(() => ({
 const BackgroundImage = ({
   backgroundImage = `url(${undrawContentTeam})`,
   className,
+  ...props
 }) => {
   const classes = useStyles();
-  return <div className={classnames(classes.image, className)} style={{ backgroundImage }} />;
+  return (
+    <div
+      className={classnames(classes.image, className)}
+      style={{ backgroundImage }}
+      {...props}
+    />
+  );
 };
 
 export default BackgroundImage;
