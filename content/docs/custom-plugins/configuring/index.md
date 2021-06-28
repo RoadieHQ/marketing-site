@@ -34,7 +34,7 @@ Package field corresponds to the name of the NPM package. This can be a public N
 
 
 ##### Plugin name
-The name of the plugin. This field can be arbitrarily chosen and will be used as a identifier when adding components from the plugin to Roadie as Cards, Tabs or Pages.
+The name of the plugin. This field can be arbitrarily chosen and will be used as an identifier when adding components from the plugin to Roadie as Cards, Tabs or Pages.
 
 
 ##### Plugin version
