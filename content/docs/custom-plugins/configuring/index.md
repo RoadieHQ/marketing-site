@@ -27,7 +27,7 @@ You can navigate to h<gatsbyhack>tt</gatsbyhack>ps://your-company.roadie.so/admi
 You can create a new custom plugin definition by clicking "Add New Plugin" floating button.
 ![custom_plugin_form](custom_plugin_form.png)
 
-The values that need to be added are as follows:
+The required values are as follows:
 
 ##### Package name
 Package field corresponds to the name of the NPM package. This can be a public NPM package hosted in npmjs.com or a private package securely hosted in Roadie Artifactory. If the package is hosted in Roadie Artifactory, the name of the package needs to start with `@<your-company>-roadie/`.
