@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 import BackgroundImage from '../BackgroundImage';
 import backstageScreenshot from '../../../../content/assets/backstage-screenshot-long.png';
-import playIcon from '../../../../content/assets/play-icon.png';
+import playIcon from '../../../../content/assets/play-icon-dark.png';
 
 const useStyles = createUseStyles((theme) => ({
   button: {
@@ -33,7 +33,6 @@ const useStyles = createUseStyles((theme) => ({
     },
   },
 }));
-
 
 const Adornment = ({ openModal }) => {
   const classes = useStyles();
