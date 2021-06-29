@@ -1,53 +1,49 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import Modal from 'react-modal';
 import { Lead, Headline, TwoColumnLayout, ButtonLinkCallToAction } from 'components';
 import { Helmet } from 'react-helmet';
 
 import BackgroundImage from './BackgroundImage';
-import backstageScreenshot from '../../../content/assets/backstage-screenshot.png';
+import backstageScreenshot from '../../../content/assets/backstage-screenshot-long.png';
+import playIcon from '../../../content/assets/play-icon.png';
+import Modal, { modalStyles } from 'components/Modal';
 
-const modalStyles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.58)',
+const useStyles = createUseStyles((theme) => ({
+  headlineWrapper: {
+    marginBottom: 32,
   },
 
-  content: {
-    position: 'relative',
-    top: 'auto',
-    left: 'auto',
-    right: 'auto',
-    bottom: 'auto',
-    maxWidth: '860px',
-    margin: '80px auto',
-    padding: 0,
-    border: 0,
-  },
-};
-
-Modal.setAppElement(`#___gatsby`);
-
-
-const useStyles = createUseStyles(() => ({
   leadWrapper: {
-    marginBottom: 24,
+    marginBottom: 32,
   },
 
   callToActionWrapper: {
     marginBottom: 24,
   },
 
-  backgroundImage: {
-    backgroundPosition: 'right top',
-    backgroundSize: '85%',
+  screenshotButton: {
+    height: '100%',
+  },
+
+  backgroundImageScreenshot: {
+    cursor: 'pointer',
+    backgroundSize: 'contain',
+    backgroundPosition: 'center top',
+    borderRadius: '4px 4px 0 0',
+  },
+
+  backgroundImagePlayIcon: {
+    backgroundSize: '20%',
+    backgroundPosition: 'center',
   },
 
   leftCol: {
     paddingTop: 0,
+    paddingRight: 32,
   },
 
   rightCol: {
-    flexGrow: 1.1,
+    paddingLeft: 32,
   },
 
   videoWrapper: {
@@ -62,13 +58,20 @@ const useStyles = createUseStyles(() => ({
     width: '100%',
     height: '100%',
   },
+
+  [`@media (min-width: ${theme.breakpoints.values.lg}px)`]: {
+    backgroundImageScreenshot: {
+      backgroundSize: 'cover',
+      borderRadius: '8px 8px 0 0',
+    },
+  },
 }));
 
 const Hero = ({ headline, lead }) => {
   const classes = useStyles();
   const [modalOpen, setModalOpen] = useState(false);
 
-  const onClick = () => {
+  const openModal = () => {
     setModalOpen(true);
   };
 
@@ -81,9 +84,10 @@ const Hero = ({ headline, lead }) => {
       <Helmet>
         <script src="https://player.vimeo.com/api/player.js" />
       </Helmet>
+
       <Modal
         isOpen={modalOpen}
-        style={modalStyles}
+        style={modalStyles()}
         contentLabel="Modal"
         onRequestClose={handleCloseModal}
       >
@@ -99,7 +103,6 @@ const Hero = ({ headline, lead }) => {
         </div>
       </Modal>
 
-
       <TwoColumnLayout
         className={{
           leftCol: classes.leftCol,
@@ -107,9 +110,11 @@ const Hero = ({ headline, lead }) => {
         }}
         leftContent={
           <>
-            <Headline>
-              <span>{headline}</span>{' '}
-            </Headline>
+            <div className={classes.headlineWrapper}>
+              <Headline>
+                <span>{headline}</span>{' '}
+              </Headline>
+            </div>
 
             <div className={classes.leadWrapper}>
               <Lead>{lead}</Lead>
@@ -121,11 +126,23 @@ const Hero = ({ headline, lead }) => {
           </>
         }
         rightContent={
-          <BackgroundImage
-            className={classes.backgroundImage}
-            backgroundImage={`url(${backstageScreenshot})`}
-            onClick={onClick}
-          />
+          <div
+            role="button"
+            onClick={openModal}
+            onKeyPress={openModal}
+            className={classes.screenshotButton}
+            tabIndex={0}
+          >
+            <BackgroundImage
+              className={classes.backgroundImageScreenshot}
+              backgroundImage={`url(${backstageScreenshot})`}
+            >
+              <BackgroundImage
+                backgroundImage={`url(${playIcon})`}
+                className={classes.backgroundImagePlayIcon}
+              />
+            </BackgroundImage>
+          </div>
         }
       />
     </>
