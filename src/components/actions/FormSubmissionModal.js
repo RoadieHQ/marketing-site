@@ -1,28 +1,8 @@
 import React from 'react';
-import Modal from 'react-modal';
 import { createUseStyles } from 'react-jss';
 import { TextLink as Link, Button } from 'components';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-
-const modalStyles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.58)',
-  },
-
-  content: {
-    position: 'relative',
-    top: 'auto',
-    left: 'auto',
-    right: 'auto',
-    bottom: 'auto',
-    maxWidth: '660px',
-    margin: '80px auto',
-    padding: 0,
-    border: 0,
-  },
-};
-
-Modal.setAppElement(`#___gatsby`);
+import Modal, { modalStyles } from 'components/Modal';
 
 const useStyles = createUseStyles(() => ({
   modalContentWrapper: {
@@ -96,7 +76,7 @@ const FormSubmissionModal = ({
   return (
     <Modal
       isOpen={modalOpen}
-      style={modalStyles}
+      style={modalStyles({ maxWidth: 660 })}
       contentLabel="Modal"
       onRequestClose={handleCloseModal}
     >
