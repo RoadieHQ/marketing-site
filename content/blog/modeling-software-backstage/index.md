@@ -28,7 +28,7 @@ We have also ignored the other fundamental pillar of modeling in Backstage — h
 Let's start with a simple concept like a typical backend service, the Passenger Backend. This could be a NodeJS or Go application perhaps. It probably has some API endpoints, some business logic, a connection to a database and a bunch of libraries installed into it.
 
 
-![](./passenger-backend.png)
+![the same diagram as above with all boxes removed except for one](./passenger-backend.png)
 
 Backstage represents services like this using three properties, the `kind`, `type` and `name`.
 
@@ -46,7 +46,7 @@ A good rule of thumb is to draw the boundaries between pieces of software by con
 
 Components can be composed of other components. For example, our Passenger Backend has two important libraries installed into it. The Core Queuing Library is used to pass jobs over a shared queuing service and the Core Auth Module is used to authenticate incoming requests.
 
-![](./libraries.png)
+![two boxes have been added under the box that already existed. They represent libraries and are connected by arrows.](./libraries.png)
 
 The Core Queueing Library is represented as a library component.
 
@@ -68,7 +68,7 @@ dependsOn:
 
 Once that relationship is defined, we can show it off in Backstage by adding the `EntityDependsOnComponentsCard` to the interface.
 
-![](./entity-depends-on-components-card.png)
+![A table with text for the name of the library, the owner, the lifecycle state - production - and the description of the library](./entity-depends-on-components-card.png)
 
 You typically wouldn't attempt to represent all dependencies of a service like this. Some services will have hundreds of libraries they depend on, and trying to account for all of them will introduce too much fragility into the model. 
 
@@ -86,13 +86,13 @@ isDependencyOf:
 
 With this change in place, we can add the `EntityDependencyOfComponentsCard` to the Core Queuing Library page in Backstage and we will see the following:
 
-![](./entity-dependency-of-components-card.png)
+![a table with text describing the passenger-backend service with a description and lifecycle state](./entity-dependency-of-components-card.png)
 
 ## Representing an API
 
 The Passenger Backend service exposes a RESTful HTTP API so that other software in the company can communicate with it. They may use this API to look up the current location of a passenger for example.
 
-![](./api.png)
+![a 4th box has been added to represent an API. It is connected to passenger-backend via an arrow](./api.png)
 
 APIs are represented in Backstage using the same three properties as components.
 
@@ -116,13 +116,13 @@ providesApi:
 
 Once we have indicated this relationship, we can show it off in the Backstage UI by adding the `EntityProvidedApisCard`. We would typically add this card to a tab on the Passenger Backend component so that people can look that component up in the catalog in order to read its API definition.
 
-![](./provided-apis-card.png)
+![a table element with text showing the API which is provided by the passenger-backend. The description, lifecycle and other attributes are there.](./provided-apis-card.png)
 
 ## Combining things into systems
 
 Together, the Passenger Backend and Passenger API make up a logical system. They are a group of entities with a well defined purpose, providing and managing information on passengers.
 
-![](./one-system.png)
+![A box has been added above everything else to indicate a hierarchy. Passenger backend and the API have arrows up to the new box.](./one-system.png)
 
 To represent them as a logical group in Backstage, we can define a system. Systems don't have types, they are just systems.
 
@@ -151,23 +151,23 @@ system: passenger-backend
 
 Once the system exists in Backstage, it will get it's own page in the UI where we can represent its relationships. For example we can add the `EntityHasApisCard` to see the APIs which are part of this system.
 
-![](./entity-has-apis-card.png)
+![A table listing the one API which is part of the system](./entity-has-apis-card.png)
 
 Similarly, we can add the EntityHasComponentsCard to see the components which are part of the system.
 
-![](./entity-has-components-card.png)
+![A table listing the one component which is part of the system.](./entity-has-components-card.png)
 
 It's important to note that the Core Queueing Library and the Core Auth Module are not considered to be part of the Passengers system. This is because they are shared libraries which are used in a large number of components throughout the org. The are probably owned and developed by a different organization, within our ride-sharing company.
 
 Now that we have defined a system, Backstage can diagram it for us. When we add the `EntitySystemDiagramCard`, we see something like the following:
 
-![](./system-diagram.png)
+![An architecture diagram which was produced programatically by Backstage. It has boxes with arrows between them.](./system-diagram.png)
 
 ## Consuming APIs
 
 Of course, it takes more than just a Passengers system to make a ride-sharing company hum. Those passengers need to go on trips, and we need to count the trips to see how rich we're going to get. Let's add the Trips system into Backstage, give it a Component and connect it up to the Passenger API.
 
-![](./consuming-apis.png)
+![A second system has been added with two boxes. One to represent the system and another to represent the trips counter. There is an arrow pointing to the passenger API to show consumption.](./consuming-apis.png)
 
 The key properties required to represent this in Backstage are as follows:
 
@@ -192,7 +192,7 @@ After some time, upper management decides that our ride sharing company should b
 
 To differentiate the systems we have created to move passengers around from those required to move takeout around, we can create a Domain in Backstage. Domains represent collections of systems which make up a coherent business unit.
 
-![](./everything.png)
+![The same image as at the start of the page. All of the boxes in place with all of the arrows between them.](./everything.png)
 
 ## Conclusion
 
