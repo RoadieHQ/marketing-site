@@ -60,10 +60,10 @@ The relationship between the the Core Queuing Library and the Passenger Backend 
 
 ```yaml
 kind: Component
-type: library
+type: service
 name: passenger-backend
 dependsOn:
-  - passenger-backend
+  - core-queuing-library
 ```
 
 Once that relationship is defined, we can show it off in Backstage by adding the `EntityDependsOnComponentsCard` to the interface.
