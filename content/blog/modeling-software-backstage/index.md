@@ -15,7 +15,7 @@ A more understandable architecture is easier to onboard engineers onto and faste
 
 To see how different types of software asset are represented in Backstage, we're going to model part of the architecture you might find in a hypothetical ride-sharing company. We'll also see how Backstage models the relationships between software and how it can diagram the network of dependencies.
 
-Here's how our hypothetical architecture looks. We have two backend services. One of them, Passenger Backend, is depends on two important libraries, the Core Queueing Library and the Core Auth Module. The second backend service, Trips Counter, calls the API of the Passenger Backend.
+Here's how our hypothetical architecture looks. We have two backend services. One of them, Passenger Backend, is dependent on two important libraries, the Core Queueing Library and the Core Auth Module. The second backend service, Trips Counter, calls the API of the Passenger Backend.
 
 ![rectangles with arrows pointing between them to represent the architecture](./everything.png)
 
@@ -44,7 +44,7 @@ A good rule of thumb is to draw the boundaries between pieces of software by con
 
 ## Adding libraries
 
-Components can be composed of other components. For example, our Passenger Backend has two important libraries installed into it. The Core Queuing Library is used to pass jobs over a shared queuing service and the Core Auth Module is used to authenticate incoming requests.
+Components can depend other components. For example, our Passenger Backend has two important libraries installed into it. The Core Queuing Library is used to pass jobs over a shared queuing service and the Core Auth Module is used to authenticate incoming requests.
 
 ![two boxes have been added under the box that already existed. They represent libraries and are connected by arrows.](./libraries.png)
 
@@ -74,17 +74,7 @@ You typically wouldn't attempt to represent all dependencies of a service like t
 
 However, it might be appropriate to indicate a dependency on important libraries which are developed in-house and are found in lots of other components across the company.
 
-It's important to realize that saying that the Passenger Backend depends on the Core Queuing Library doesn't give Backstage enough information to establish an inverse relationship. To do that, we have to indicate that the Core Queuing Library is a dependency of the Passenger Backend service.
-
-```yaml
-kind: Component
-type: library
-name: core-queuing-library
-isDependencyOf:
-  - passenger-backend
-```
-
-With this change in place, we can add the `EntityDependencyOfComponentsCard` to the Core Queuing Library page in Backstage and we will see the following:
+Once we indicate that the Passenger Backend depends on the Core Queuing Library, Backstage has enough information to establish an inverse relationship. If we add the `EntityDependencyOfComponentsCard` and visit the Core Queueing Library in the Backstage catalog, we should see that it is a dependency of Passenger Backend.
 
 ![a table with text describing the passenger-backend service with a description and lifecycle state](./entity-dependency-of-components-card.png)
 
@@ -145,15 +135,15 @@ providesApi:
 ```yaml
 kind: API
 type: openapi
-name: passengers
-system: passenger-backend
+name: passenger-api
+system: passengers
 ```
 
 Once the system exists in Backstage, it will get it's own page in the UI where we can represent its relationships. For example we can add the `EntityHasApisCard` to see the APIs which are part of this system.
 
 ![A table listing the one API which is part of the system](./entity-has-apis-card.png)
 
-Similarly, we can add the EntityHasComponentsCard to see the components which are part of the system.
+Similarly, we can add the `EntityHasComponentsCard` to see the components which are part of the system.
 
 ![A table listing the one component which is part of the system.](./entity-has-components-card.png)
 
