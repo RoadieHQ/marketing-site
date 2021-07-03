@@ -2,6 +2,5 @@
 # for this is with the 'gatsby-plugin-sitemap' plugin.
 
 User-agent: *
-Disallow: /onboarding/
 
 Sitemap: https://roadie.io/sitemap.xml
