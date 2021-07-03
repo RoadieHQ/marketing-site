@@ -7,13 +7,15 @@ const EvaluationRequest = ({ data, location }) => {
 
   const params = new URLSearchParams(location.search.substring(1));
   const referredEmail = params.get('referred_email');
+  const clickedButtonLabel = params.get('clicked_button_label');
+  const hashParams = `referred_email=${referredEmail}&clicked_button_label=${clickedButtonLabel}`;
   const BASE_FORM_URL = 'https://form.typeform.com/to/tydAeJns';
 
   return (
     <>
       <SEO
-        title={`Join the evaluation wait list | ${siteTitle}`}
-        description="Sign up for a free trial of Roadie's SaaS Backstage platform."
+        title={`Learn about Roadie | ${siteTitle}`}
+        description="Sign up for a demo or free trial of Roadie's SaaS Backstage platform."
       />
 
       <iframe
@@ -22,7 +24,7 @@ const EvaluationRequest = ({ data, location }) => {
         width="100%"
         height="100%"
         frameBorder="0"
-        src={`${BASE_FORM_URL}?typeform-medium=embed-snippet#referred_email=${referredEmail}`}
+        src={`${BASE_FORM_URL}?typeform-medium=embed-snippet#${hashParams}`}
       />
       <script type="text/javascript" src="https://embed.typeform.com/embed.js" />
     </>
