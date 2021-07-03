@@ -17,22 +17,27 @@ const useStyles = createUseStyles(() => ({
     marginBottom: 24,
     marginTop: 0,
   },
+
+  p: {
+    marginBottom: '1em',
+  },
 }));
 
 export const SubscribeToNewsletterSuccessModal = (props) => {
+  const classes = useStyles();
+
   return (
     <FormSubmissionModal
       titleText="You're subscribed!"
       bodyText={
         <>
-          <p>We publish most Mondays so you&apos;ll receive your first edition soon.</p>
-          <p>
-            In the meantime, we&apos;d love to hear why you&apos;re excited about Backstage.
-            Please fill out this short survey...
+          <p className={classes.p}>We publish most Mondays so you&apos;ll receive your first edition soon.</p>
+          <p className={classes.p}>
+            In the meantime, we&apos;d love to show you our flexible SaaS Backstage platform...
           </p>
         </>
       }
-      followOn="NEEDS_ANALYSIS_SURVEY"
+      followOn="GET_DEMO_SURVEY"
       {...props}
     />
   );

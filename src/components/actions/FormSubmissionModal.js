@@ -8,6 +8,10 @@ const useStyles = createUseStyles(() => ({
   modalContentWrapper: {
     padding: 16,
   },
+
+  h2: {
+    marginBottom: '0.5em',
+  },
 }));
 
 const twitterUrl = ({ social }) => `https://twitter.com/${social.twitter}`;
@@ -48,6 +52,18 @@ const NeedsAnalysisSurveyInner = ({ referredEmail }) => (
   </p>
 );
 
+const GetDemoSurveyInner = ({ referredEmail }) => (
+  <p>
+    <Button
+      link={true}
+      to={`/evaluation-request/?referred_email=${encodeURIComponent(referredEmail)}`}
+      icon={<FaExternalLinkAlt />}
+      text="Request a demo"
+      color="primary"
+    />
+  </p>
+);
+
 const FormSubmissionModal = ({
   modalOpen,
   handleCloseModal,
@@ -71,6 +87,8 @@ const FormSubmissionModal = ({
     followOnContent = <TwitterInner siteMetadata={siteMetadata} classes={classes} />;
   } else if (followOn === 'NEEDS_ANALYSIS_SURVEY') {
     followOnContent = <NeedsAnalysisSurveyInner referredEmail={email} />;
+  } else if (followOn === 'GET_DEMO_SURVEY') {
+    followOnContent = <GetDemoSurveyInner referredEmail={email} />;
   }
 
   return (
@@ -81,7 +99,7 @@ const FormSubmissionModal = ({
       onRequestClose={handleCloseModal}
     >
       <div className={classes.modalContentWrapper}>
-        <h2>
+        <h2 className={classes.h2}>
           {titleText}{' '}
           <span aria-label="Party Streamers" role="img">
             🎉
