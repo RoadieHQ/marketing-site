@@ -15,6 +15,14 @@ const skipAlgoliaIndexing =
   // https://docs.netlify.com/configure-builds/environment-variables/#build-metadata
   get(process.env, 'CONTEXT', 'false') === 'production';
 
+const getSentryEnvironment = () => {
+  if (get(process.env, 'NODE_ENV') === 'production') return 'production';
+  if (get(process.env, 'CONTEXT') === 'production') return 'production';
+  if (get(process.env, 'CONTEXT') === 'deploy-preview') return 'preview';
+  if (get(process.env, 'CONTEXT') === 'branch-deploy') return 'preview';
+  return 'development';
+};
+
 module.exports = {
   siteMetadata: {
     title: SITE_TITLE,
@@ -134,6 +142,7 @@ module.exports = {
         // https://docs.sentry.io/product/sentry-basics/dsn-explainer/#dsn-utilization
         dsn: 'https://1798396e863a4fc0b412438bac2c8528@o416326.ingest.sentry.io/5823815',
         sampleRate: 0.7,
+        environment: getSentryEnvironment(),
       },
     },
   ],
