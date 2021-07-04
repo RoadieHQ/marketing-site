@@ -11,9 +11,9 @@ import Hero from 'components/home/Hero';
 import FeatureBlock from 'components/home/FeatureBlock';
 import { GetInstanceFormCallToAction } from 'components/CallToAction';
 
-import undrawEducation from '../../content/assets/undraw/undraw_education_f8ru.svg';
-import undrawSearch from '../../content/assets/undraw/undraw_the_search_s0xf.svg';
-import undrawBuildingWebsites from '../../content/assets/undraw/undraw_building_websites_i78t.svg';
+import customPluginsIllustration from '../../content/assets/home/custom-plugin-illustration.svg';
+import dragDropIllustration from '../../content/assets/home/drag-drop-illustration.svg';
+import securityMaintenanceIllustration from '../../content/assets/home/security-maintenance-illustration.svg';
 
 const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
@@ -67,47 +67,37 @@ const Home = ({ data, location }) => {
 
         <ResponsiveSpacer>
           <InterstitialTitle className={{ h2: classes.interstitialTitleH2 }}>
-            Turn tribal knowledge into shared context
+            The power of Backstage, plus...
           </InterstitialTitle>
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl={`url(${undrawSearch})`}
+            imageSrc={customPluginsIllustration}
             text={
               <div>
-                <h2 className={classes.h2}>Service catalog for discoverability</h2>
-                <p className={classes.p}>Got more repos than you can keep up with?</p>
+                <h2 className={classes.h2}>Bring your own plugins</h2>
+                <p className={classes.p}>Our custom plugins pipeline lets you use your own bespoke and private plugins inside hosted Backstage.</p>
                 <p className={classes.p}>
-                  Get control of the sprawl and improve new hire onboarding by making it easy to
-                  understand what each service is and who owns it.
+                  Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
                 </p>
               </div>
             }
           />
         </ResponsiveSpacer>
 
+
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="left"
-            backgroundImageUrl={`url(${undrawEducation})`}
+            imageSrc={dragDropIllustration}
             text={
               <div>
-                <h2 className={classes.h2}>Docs that get read</h2>
+                <h2 className={classes.h2}>Drag and drop setup</h2>
+                <p className={classes.p}>Customize Backstage to your needs using our drag-and-drop composer.</p>
                 <p className={classes.p}>
-                  <span role="img" aria-label="one">
-                    1️⃣
-                  </span>
-                  {'  '}
-                  Commit markdown docs and API specs alongside your code.
-                </p>
-                <p className={classes.p}>
-                  <span role="img" aria-label="two">
-                    2️⃣
-                  </span>
-                  {'  '}
-                  Beautiful technical documentation appears with the services in your catalog.
+                  Adding plugins to Backstage is as simple as picking them from a list and placing then where you want them. All types of frontend plugins are supported - cards, tabs and pages.
                 </p>
               </div>
             }
@@ -117,19 +107,25 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock
             imageSide="right"
-            backgroundImageUrl={`url(${undrawBuildingWebsites})`}
+            imageSrc={securityMaintenanceIllustration}
             text={
               <div>
-                <h2 className={classes.h2}>Custom plugins</h2>
-                <p className={classes.p}>Ready to roll, easy to extend.</p>
+                <h2 className={classes.h2}>Maintenance and Security built in</h2>
+                <p className={classes.p}>Backstage moves quickly and it takes effort to stay up to date.</p>
                 <p className={classes.p}>
-                  Common SaaS tools come baked in. When you need to break out you can roll your own
-                  and deploy with a simple push.
+                  Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
                 </p>
               </div>
             }
           />
         </ResponsiveSpacer>
+
+        <ResponsiveSpacer>
+          <InterstitialTitle className={{ h2: classes.interstitialTitleH2 }}>
+            Turn tribal knowledge into shared context
+          </InterstitialTitle>
+        </ResponsiveSpacer>
+
 
         <ResponsiveSpacer>
           <div className={classes.callToActionWrapper}>

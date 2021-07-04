@@ -2,8 +2,6 @@ import React from 'react';
 import { TwoColumnLayout } from 'components';
 import { createUseStyles } from 'react-jss';
 
-import BackgroundImage from './BackgroundImage';
-
 const useStyles = createUseStyles((theme) => ({
   root: {},
 
@@ -12,10 +10,6 @@ const useStyles = createUseStyles((theme) => ({
     flexDirection: 'column-reverse',
   },
 
-  backgroundImage: {
-    height: ({ backgroundImageHeight }) => backgroundImageHeight,
-  },
-  
   imageWrapper: {
     marginBottom: '2em',
   },
@@ -32,15 +26,15 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const FeatureBlock = ({ text, backgroundImageUrl, imageSide, backgroundImageHeight = 250 }) => {
-  const classes = useStyles({ backgroundImageHeight });
+const FeatureBlock = ({ text, imageSrc, imageSide, imageAlt }) => {
+  const classes = useStyles();
   const className = {
     root: classes.twoColumnLayoutRoot,
   };
 
   const image = (
     <div className={classes.imageWrapper}>
-      <BackgroundImage backgroundImage={backgroundImageUrl} className={classes.backgroundImage} />
+      <img src={imageSrc} alt={imageAlt} />
     </div>
   );
 
