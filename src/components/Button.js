@@ -23,9 +23,9 @@ const useStyles = createUseStyles((theme) => ({
 
     textDecoration: 'none',
 
-    // lg
     borderRadius: 0,
     padding: '0.1rem 0.8rem',
+    fontSize: '2rem',
 
     '&:hover': ({ color }) => {
       if (color === 'primary') return theme.palette.primary.light;

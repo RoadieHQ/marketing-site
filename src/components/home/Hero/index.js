@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import { Lead, Headline, TwoColumnLayout, ButtonLinkCallToAction } from 'components';
+import { Lead, Headline, TwoColumnLayout } from 'components';
 import { Helmet } from 'react-helmet';
+import { GetInstanceFormCallToAction } from 'components/CallToAction';
 
 import IntroToRoadieModal from './IntroToRoadieModal';
 import Adornment from './Adornment';
@@ -67,7 +67,10 @@ const Hero = ({ headline, lead }) => {
             </div>
 
             <div className={classes.callToActionWrapper}>
-              <ButtonLinkCallToAction />
+              <GetInstanceFormCallToAction
+                emailInputId="get-instance-email-input"
+                buttonId="get-instance-email-button"
+              />
             </div>
           </>
         }

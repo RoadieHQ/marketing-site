@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import {
-  ButtonLinkCallToAction,
   SEO,
   InterstitialTitle,
   StickyFooter,
@@ -10,6 +9,7 @@ import {
 } from 'components';
 import Hero from 'components/home/Hero';
 import FeatureBlock from 'components/home/FeatureBlock';
+import { GetInstanceFormCallToAction } from 'components/CallToAction';
 
 import undrawEducation from '../../content/assets/undraw/undraw_education_f8ru.svg';
 import undrawSearch from '../../content/assets/undraw/undraw_the_search_s0xf.svg';
@@ -19,6 +19,11 @@ const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
     display: 'flex',
     justifyContent: 'center',
+  },
+
+  callToActionWrapperInner: {
+    maxWidth: 700,
+    width: '100%',
   },
 
   interstitialTitleH2: {
@@ -128,7 +133,9 @@ const Home = ({ data, location }) => {
 
         <ResponsiveSpacer>
           <div className={classes.callToActionWrapper}>
-            <ButtonLinkCallToAction />
+            <div className={classes.callToActionWrapperInner}>
+              <GetInstanceFormCallToAction />
+            </div>
           </div>
         </ResponsiveSpacer>
       </StickyFooter>
