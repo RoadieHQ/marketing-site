@@ -101,7 +101,13 @@ const EmailCaptureForm = ({
           autoFocus={autoFocus}
         />
 
-        <Button text={buttonText} disabled={disabled} icon={<FaPaperPlane />} id={buttonId} />
+        <Button
+          text={buttonText}
+          disabled={disabled}
+          icon={<FaPaperPlane />}
+          id={buttonId}
+          color="primary"
+        />
       </div>
       <div className={classnames(subFormStateClass, classes.subForm)}>{subForm.message}</div>
     </form>

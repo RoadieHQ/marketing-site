@@ -3,10 +3,10 @@ import { graphql } from 'gatsby';
 import { SEO } from 'components';
 import { Helmet } from 'react-helmet';
 
-const TYPEFORM_ID = 'tydAeJns';
+const TYPEFORM_ID = 'tR5Cpfis';
 const BASE_FORM_URL = 'https://form.typeform.com/to';
 
-const EvaluationRequest = ({ data, location }) => {
+const GetInstanceRequest = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
 
   const params = new URLSearchParams(location.search.substring(1));
@@ -21,7 +21,7 @@ const EvaluationRequest = ({ data, location }) => {
       </Helmet>
 
       <SEO
-        title={`Learn about Roadie | ${siteTitle}`}
+        title={`Get a Roadie Backstage instance | ${siteTitle}`}
         description="Sign up for a demo or free trial of Roadie's SaaS Backstage platform."
       />
 
@@ -37,7 +37,7 @@ const EvaluationRequest = ({ data, location }) => {
   );
 };
 
-export default EvaluationRequest;
+export default GetInstanceRequest;
 
 export const pageQuery = graphql`
   query {
