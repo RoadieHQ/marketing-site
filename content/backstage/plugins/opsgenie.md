@@ -23,7 +23,7 @@ gettingStarted:
       yarn add @k-phoen/backstage-plugin-opsgenie
   
   - intro: |
-      Configure the plugin in `app-config.yaml`. Add a proxy API endpoint and OpsGenie domain name. See [Creating an OpsGenie API key](#creating-an-opsgenie-api-key) for more info.
+      Configure the plugin in `app-config.yaml`. Add a proxy API endpoint and OpsGenie domain name. See [Creating an OpsGenie API key](#creating-an-opsgenie-api-key) for more information.
     language: YAML
     code: |
       # app-config.yaml
@@ -132,7 +132,7 @@ The `EntityOpsgenieAlertsCard` component can be added to `EntityPage.tsx` to dis
 
     ![Create an OpsGenie alert](../../assets/backstage/plugins/opsgenie/opsgenie-create-alert.png)
 
-    Make sure the alert's tag matches the tag in the annotation added to your component's `catalog-info.yaml` file. 
+    Make sure the alert's tag matches the tag in the annotation added in step 2.
 
 4. View the component in Backstage to see the list of alerts:
 
