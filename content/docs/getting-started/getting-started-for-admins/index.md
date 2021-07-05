@@ -39,9 +39,11 @@ Use the steps below to install the GitHub App.
 
 You can find a link to install the GitHub app in the Backstage application:
 
-1. Click the Adminisatration settings link in the bottom left
-2. Click the Integrations tab along the top of the Administration settings page
+1. Click the Administration link in the bottom left
+2. Click the Settings tab along the top of the Administration page and then the Integrations link
 3. Click on the link to install the GitHub app.
+4. Follow the steps to install the App
+5. You may need to wait up to 2 minutes for the GitHub integration to become active
 
 ![Install GitHub App](./install-github-app.png)
 
