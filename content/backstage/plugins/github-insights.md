@@ -21,7 +21,7 @@ gettingStarted: # What will this step accomplish?
     language: bash
     code: |
      // packages/app
-     'yarn add @roadiehq/backstage-plugin-github-insights'
+     yarn add @roadiehq/backstage-plugin-github-insights
 
   - intro: Add plugin API to your Backstage instance.
     language: typescript
