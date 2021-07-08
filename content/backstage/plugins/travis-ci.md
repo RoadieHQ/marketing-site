@@ -33,10 +33,15 @@ gettingStarted:
           target: https://api.travis-ci.com
           changeOrigin: true
           headers:
-            Authorization:
-              $secret:
-                env: TRAVISCI_AUTH_TOKEN
+            Authorization:${TRAVISCI_AUTH_TOKEN}
             travis-api-version: 3
+      
+  - intro: Add a separate configuration object.
+    language: 'yaml'
+    code: |
+      // app-config.yaml
+      travisci:
+        baseUrl: 'https://travis-ci.com/'
 
   - intro: Import it into your Backstage application
     language: typescript
@@ -66,7 +71,7 @@ gettingStarted:
     language: yaml
     code: 'travis-ci.com/repo-slug: owner-name/project-name'
 
-  - intro: Add your developer api key (from [Travis Preferences](https://travis-ci.com/account/preferences)) to the environmental variables for your backstage backend server
+  - intro: Add your developer api key to the environment variables of your backstage backend server (you can find it in https://travis-ci.com/account/preferences), in the form of the word 'token' followed by your api key. So it should look like this
     language: bash
     code: 'TRAVISCI_AUTH_TOKEN="token your-api-key"'
 ---
