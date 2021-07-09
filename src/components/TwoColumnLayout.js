@@ -20,7 +20,6 @@ const useStyles = createUseStyles((theme) => ({
     },
 
     leftCol: {
-      paddingTop: 30,
       paddingRight: 0,
     },
   },
