@@ -33,7 +33,7 @@ gettingStarted:
           target: https://api.travis-ci.com
           changeOrigin: true
           headers:
-            Authorization:${TRAVISCI_AUTH_TOKEN}
+            Authorization: ${TRAVISCI_AUTH_TOKEN}
             travis-api-version: 3
       
   - intro: Add a separate configuration object.
