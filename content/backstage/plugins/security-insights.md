@@ -19,25 +19,29 @@ coverImageAlt: 'A screenshot of the Security Insights plugin. It is showing a se
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
-    code: 'yarn add @roadiehq/backstage-plugin-security-insights'
+    code: |
+    // packages/app
+    yarn add @roadiehq/backstage-plugin-security-insights
 
-  - intro: Add a Sentry tab to your Backstage components.
+  - intro: Add a Security Insights tab to your Backstage components.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
       import { EntitySecurityInsightsContent } from '@roadiehq/backstage-plugin-security-insights';
 
-      const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
-        <EntityLayout>
-          //...
-          <EntityLayout.Route path="/security-insights" title="Security">
+      const serviceEntityPage = (
+        <EntityPageLayout>
+          ...
+          <EntityLayout.Route
+            path="/security-insights"
+            title="Security Insights">
             <EntitySecurityInsightsContent />
           </EntityLayout.Route>
-          //...
-        </EntityLayout>
+          ...
+        </EntityPageLayout>
       )
 
-  - intro: Add the Sentry card to the component overview (optional)
+  - intro: Add the Security insights widget to the component overview (optional)
     language: bash
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
