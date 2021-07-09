@@ -20,8 +20,8 @@ gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
     code: |
-    // packages/app
-    yarn add @roadiehq/backstage-plugin-security-insights
+      // packages/app
+      yarn add @roadiehq/backstage-plugin-security-insights
 
   - intro: Add a Security Insights tab to your Backstage components.
     language: typescript
