@@ -2,13 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 import {
+  TwoColumnLayout,
   SEO,
   InterstitialTitle,
   StickyFooter,
   ResponsiveSpacer,
 } from 'components';
 import Hero from 'components/home/Hero';
-import FeatureBlock from 'components/home/FeatureBlock';
 import { GetInstanceFormCallToAction } from 'components/CallToAction';
 
 import customPluginsIllustration from '../../content/assets/home/custom-plugin-illustration.svg';
@@ -39,9 +39,36 @@ const useStyles = createUseStyles((theme) => ({
     marginBottom: '1rem',
   },
 
+  featureBlockRoot: {},
+
+  twoColumnLayoutRoot: {
+    display: 'flex',
+    flexDirection: 'column-reverse',
+  },
+
+  rightSideFeatureBlockImgWrapper: {},
+  leftSideFeatureBlockImgWrapper: {},
+
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     interstitialTitleH2: {
       fontSize: '3em',
+    },
+
+    featureBlockRoot: {
+      paddingLeft: 100,
+      paddingRight: 100,
+    },
+
+    twoColumnLayoutRoot: {
+      flexDirection: 'row',
+    },
+
+    rightSideFeatureBlockImgWrapper: {
+      float: 'right',
+    },
+
+    leftSideFeatureBlockImgWrapper: {
+      float: 'left',
     },
   },
 }));
@@ -72,52 +99,72 @@ const Home = ({ data, location }) => {
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <FeatureBlock
-            imageSide="right"
-            imageSrc={customPluginsIllustration}
-            text={
-              <div>
-                <h2 className={classes.h2}>Bring your own plugins</h2>
-                <p className={classes.p}>Our custom plugins pipeline lets you use your own bespoke and private plugins inside hosted Backstage.</p>
-                <p className={classes.p}>
-                  Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
-                </p>
-              </div>
-            }
-          />
-        </ResponsiveSpacer>
-
-
-        <ResponsiveSpacer>
-          <FeatureBlock
-            imageSide="left"
-            imageSrc={dragDropIllustration}
-            text={
-              <div>
-                <h2 className={classes.h2}>Drag and drop setup</h2>
-                <p className={classes.p}>Customize Backstage to your needs using our drag-and-drop composer.</p>
-                <p className={classes.p}>
-                  Adding plugins to Backstage is as simple as picking them from a list and placing then where you want them. All types of frontend plugins are supported - cards, tabs and pages.
-                </p>
-              </div>
-            }
-          />
+          <div className={classes.featureBlockRoot}>
+            <TwoColumnLayout
+              className={{
+                root: classes.twoColumnLayoutRoot,
+              }}
+              rightContent={
+                <div className={classes.rightSideFeatureBlockImgWrapper}>
+                  <img src={customPluginsIllustration} alt="" />
+                </div>
+              }
+              leftContent={
+                <div>
+                  <h2 className={classes.h2}>Bring your own plugins</h2>
+                  <p className={classes.p}>Our custom plugins pipeline lets you use your own bespoke and private plugins inside hosted Backstage.</p>
+                  <p className={classes.p}>
+                    Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
+                  </p>
+                </div>
+              }
+            />
+          </div>
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <FeatureBlock
-            imageSide="right"
-            imageSrc={securityMaintenanceIllustration}
-            text={
-              <div>
-                <h2 className={classes.h2}>Maintenance and Security built in</h2>
-                <p className={classes.p}>Backstage moves quickly and it takes effort to stay up to date.</p>
-                <p className={classes.p}>
-                  Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
-                </p>
-              </div>
-            }
-          />
+          <div className={classes.featureBlockRoot}>
+            <TwoColumnLayout
+              rightContent={
+                <div>
+                  <h2 className={classes.h2}>Drag and drop setup</h2>
+                  <p className={classes.p}>Customize Backstage to your needs using our drag-and-drop composer.</p>
+                  <p className={classes.p}>
+                    Adding plugins to Backstage is as simple as picking them from a list and placing then where you want them. All types of frontend plugins are supported - cards, tabs and pages.
+                  </p>
+                </div>
+              }
+              leftContent={
+                <div className={classes.leftSideFeatureBlockImgWrapper}>
+                  <img src={dragDropIllustration} alt="" />
+                </div>
+              }
+            />
+          </div>
+        </ResponsiveSpacer>
+
+        <ResponsiveSpacer>
+          <div className={classes.featureBlockRoot}>
+            <TwoColumnLayout
+              className={{
+                root: classes.twoColumnLayoutRoot,
+              }}
+              rightContent={
+                <div className={classes.rightSideFeatureBlockImgWrapper}>
+                  <img src={securityMaintenanceIllustration} alt="" />
+                </div>
+              }
+              leftContent={
+                <div>
+                  <h2 className={classes.h2}>Maintenance and Security built in</h2>
+                  <p className={classes.p}>Backstage moves quickly and it takes effort to stay up to date.</p>
+                  <p className={classes.p}>
+                    Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
+                  </p>
+                </div>
+              }
+            />
+          </div>
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>

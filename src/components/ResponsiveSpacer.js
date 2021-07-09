@@ -2,10 +2,17 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
-    paddingTop: 60,
-    paddingBottom: 60,
+    paddingTop: 24,
+    paddingBottom: 24,
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    root: {
+      paddingTop: 60,
+      paddingBottom: 60,
+    },
   },
 }));
 
