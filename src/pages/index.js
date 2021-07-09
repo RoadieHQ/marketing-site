@@ -14,6 +14,7 @@ import { GetInstanceFormCallToAction } from 'components/CallToAction';
 import customPluginsIllustration from '../../content/assets/home/custom-plugin-illustration.svg';
 import dragDropIllustration from '../../content/assets/home/drag-drop-illustration.svg';
 import securityMaintenanceIllustration from '../../content/assets/home/security-maintenance-illustration.svg';
+import serviceCatalogIllustration from '../../content/assets/home/service-catalog-illustration.svg';
 
 const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
@@ -173,6 +174,27 @@ const Home = ({ data, location }) => {
           </InterstitialTitle>
         </ResponsiveSpacer>
 
+
+        <ResponsiveSpacer>
+          <div className={classes.featureBlockRoot}>
+            <TwoColumnLayout
+              rightContent={
+                <div>
+                  <h2 className={classes.h2}>Service catalog for discoverability</h2>
+                  <p className={classes.p}>Customize Backstage to your needs using our drag-and-drop composer.</p>
+                  <p className={classes.p}>
+                    Adding plugins to Backstage is as simple as picking them from a list and placing then where you want them. All types of frontend plugins are supported - cards, tabs and pages.
+                  </p>
+                </div>
+              }
+              leftContent={
+                <div className={classes.leftSideFeatureBlockImgWrapper}>
+                  <img src={serviceCatalogIllustration} alt="" />
+                </div>
+              }
+            />
+          </div>
+        </ResponsiveSpacer>
 
         <ResponsiveSpacer>
           <div className={classes.callToActionWrapper}>
