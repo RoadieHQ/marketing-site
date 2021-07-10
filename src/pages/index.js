@@ -15,6 +15,7 @@ import customPluginsIllustration from '../../content/assets/home/custom-plugin-i
 import dragDropIllustration from '../../content/assets/home/drag-drop-illustration.svg';
 import securityMaintenanceIllustration from '../../content/assets/home/security-maintenance-illustration.svg';
 import serviceCatalogIllustration from '../../content/assets/home/service-catalog-illustration.svg';
+import mikeExpediaGroupQuote from '../../content/assets/home/mike-expedia-quote.svg';
 
 const useStyles = createUseStyles((theme) => ({
   callToActionWrapper: {
@@ -126,18 +127,21 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <div className={classes.featureBlockRoot}>
             <TwoColumnLayout
+              className={{
+                root: classes.twoColumnLayoutRoot,
+              }}
               rightContent={
+                <div className={classes.rightSideFeatureBlockImgWrapper}>
+                  <img src={dragDropIllustration} alt="" />
+                </div>
+              }
+              leftContent={
                 <div>
                   <h2 className={classes.h2}>Drag and drop setup</h2>
                   <p className={classes.p}>Customize Backstage to your needs using our drag-and-drop composer.</p>
                   <p className={classes.p}>
                     Adding plugins to Backstage is as simple as picking them from a list and placing then where you want them. All types of frontend plugins are supported - cards, tabs and pages.
                   </p>
-                </div>
-              }
-              leftContent={
-                <div className={classes.leftSideFeatureBlockImgWrapper}>
-                  <img src={dragDropIllustration} alt="" />
                 </div>
               }
             />
@@ -174,22 +178,72 @@ const Home = ({ data, location }) => {
           </InterstitialTitle>
         </ResponsiveSpacer>
 
+        <ResponsiveSpacer>
+          <div className={classes.featureBlockRoot}>
+            <TwoColumnLayout
+              className={{
+                root: classes.twoColumnLayoutRoot,
+              }}
+              rightContent={
+                <div className={classes.rightSideFeatureBlockImgWrapper}>
+                  <img src={mikeExpediaGroupQuote} alt="" />
+                </div>
+              }
+              leftContent={
+                <div>
+                  <h2 className={classes.h2}>Built on Backstage</h2>
+                  <p className={classes.p}>Grown from 4+ years of experience in production at Spotify.</p>
+                  <p className={classes.p}>
+                    Backstage is a developer portal and service catalog which lorem ipsum.
+                  </p>
+                </div>
+              }
+            />
+          </div>
+        </ResponsiveSpacer>
 
         <ResponsiveSpacer>
           <div className={classes.featureBlockRoot}>
             <TwoColumnLayout
+              className={{
+                root: classes.twoColumnLayoutRoot,
+              }}
               rightContent={
+                <div className={classes.rightSideFeatureBlockImgWrapper}>
+                  <img src={serviceCatalogIllustration} alt="" />
+                </div>
+              }
+              leftContent={
+                <div>
+                  <h2 className={classes.h2}>Cut onboarding time with discoverability</h2>
+                  <p className={classes.p}>Talk about how people can search for techdocs and other things.</p>
+                  <p className={classes.p}>
+                    Include that fact about reducing the time to production.
+                  </p>
+                </div>
+              }
+            />
+          </div>
+        </ResponsiveSpacer>
+
+        <ResponsiveSpacer>
+          <div className={classes.featureBlockRoot}>
+            <TwoColumnLayout
+              className={{
+                root: classes.twoColumnLayoutRoot,
+              }}
+              rightContent={
+                <div className={classes.rightSideFeatureBlockImgWrapper}>
+                  <img src={serviceCatalogIllustration} alt="" />
+                </div>
+              }
+              leftContent={
                 <div>
                   <h2 className={classes.h2}>Service catalog for discoverability</h2>
                   <p className={classes.p}>Customize Backstage to your needs using our drag-and-drop composer.</p>
                   <p className={classes.p}>
                     Adding plugins to Backstage is as simple as picking them from a list and placing then where you want them. All types of frontend plugins are supported - cards, tabs and pages.
                   </p>
-                </div>
-              }
-              leftContent={
-                <div className={classes.leftSideFeatureBlockImgWrapper}>
-                  <img src={serviceCatalogIllustration} alt="" />
                 </div>
               }
             />
