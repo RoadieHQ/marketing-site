@@ -9,7 +9,7 @@ import {
 } from 'components';
 import Hero from 'components/home/Hero';
 import { GetInstanceFormCallToAction } from 'components/CallToAction';
-import FeatureBlock from 'components/FeatureBlock';
+import { FeatureBlock, FeatureBlockTitle, FeatureBlockParagraph } from 'components/FeatureBlock';
 
 import customPluginsIllustration from '../../content/assets/home/custom-plugin-illustration.svg';
 import dragDropIllustration from '../../content/assets/home/drag-drop-illustration.svg';
@@ -30,15 +30,6 @@ const useStyles = createUseStyles((theme) => ({
 
   interstitialTitleH2: {
     fontSize: '1.5em',
-  },
-
-  h2: {
-    marginBottom: '2rem',
-  },
-
-  p: {
-    fontSize: '2rem',
-    marginBottom: '1rem',
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
@@ -76,11 +67,11 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={customPluginsIllustration}>
             <div>
-              <h2 className={classes.h2}>Bring your own plugins</h2>
-              <p className={classes.p}>Our custom plugins pipeline lets you use your own bespoke and private plugins inside hosted Backstage.</p>
-              <p className={classes.p}>
+              <FeatureBlockTitle>Bring your own plugins</FeatureBlockTitle>
+              <FeatureBlockParagraph>Our custom plugins pipeline lets you use your own bespoke and private plugins inside hosted Backstage.</FeatureBlockParagraph>
+              <FeatureBlockParagraph>
                 Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
-              </p>
+              </FeatureBlockParagraph>
             </div>
           </FeatureBlock>
         </ResponsiveSpacer>
@@ -88,11 +79,11 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={dragDropIllustration}>
             <div>
-              <h2 className={classes.h2}>Drag and drop setup</h2>
-              <p className={classes.p}>Customize Backstage to your needs using our drag-and-drop composer.</p>
-              <p className={classes.p}>
+              <FeatureBlockTitle>Drag and drop setup</FeatureBlockTitle>
+              <FeatureBlockParagraph>Customize Backstage to your needs using our drag-and-drop composer.</FeatureBlockParagraph>
+              <FeatureBlockParagraph>
                 Adding plugins to Backstage is as simple as picking them from a list and placing then where you want them. All types of frontend plugins are supported - cards, tabs and pages.
-              </p>
+              </FeatureBlockParagraph>
             </div>
           </FeatureBlock>
         </ResponsiveSpacer>
@@ -100,11 +91,11 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={securityMaintenanceIllustration}>
             <div>
-              <h2 className={classes.h2}>Maintenance and Security built in</h2>
-              <p className={classes.p}>Backstage moves quickly and it takes effort to stay up to date.</p>
-              <p className={classes.p}>
+              <FeatureBlockTitle>Maintenance and Security built in</FeatureBlockTitle>
+              <FeatureBlockParagraph>Backstage moves quickly and it takes effort to stay up to date.</FeatureBlockParagraph>
+              <FeatureBlockParagraph>
                 Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
-              </p>
+              </FeatureBlockParagraph>
             </div>
           </FeatureBlock>
         </ResponsiveSpacer>
@@ -118,11 +109,11 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={mikeExpediaGroupQuote}>
             <div>
-              <h2 className={classes.h2}>Built on Backstage</h2>
-              <p className={classes.p}>Grown from 4+ years of experience in production at Spotify.</p>
-              <p className={classes.p}>
+              <FeatureBlockTitle>Built on Backstage</FeatureBlockTitle>
+              <FeatureBlockParagraph>Grown from 4+ years of experience in production at Spotify.</FeatureBlockParagraph>
+              <FeatureBlockParagraph>
                 Backstage is a developer portal and service catalog which lorem ipsum. <a href="/case-studies/">Read more case studies</a>
-              </p>
+              </FeatureBlockParagraph>
             </div>
           </FeatureBlock>
         </ResponsiveSpacer>
@@ -130,11 +121,11 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={serviceCatalogIllustration}>
             <div>
-              <h2 className={classes.h2}>Cut onboarding time with discoverability</h2>
-              <p className={classes.p}>Talk about how people can search for techdocs and other things.</p>
-              <p className={classes.p}>
+              <FeatureBlockTitle>Cut onboarding time with discoverability</FeatureBlockTitle>
+              <FeatureBlockParagraph>Talk about how people can search for techdocs and other things.</FeatureBlockParagraph>
+              <FeatureBlockParagraph>
                 Include that fact about reducing the time to production.
-              </p>
+              </FeatureBlockParagraph>
             </div>
           </FeatureBlock>
         </ResponsiveSpacer>
@@ -142,11 +133,11 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={serviceCatalogIllustration}>
             <div>
-              <h2 className={classes.h2}>Improve production consistency</h2>
-              <p className={classes.p}>Here is where we talk about the scaffolder</p>
-              <p className={classes.p}>
+              <FeatureBlockTitle>Improve production consistency</FeatureBlockTitle>
+              <FeatureBlockParagraph>Here is where we talk about the scaffolder</FeatureBlockParagraph>
+              <FeatureBlockParagraph>
                 Talk about how service teams can use templates to scaffold their services in ways wihch have the best practices built in.
-              </p>
+              </FeatureBlockParagraph>
             </div>
           </FeatureBlock>
         </ResponsiveSpacer>
@@ -154,11 +145,11 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={serviceCatalogIllustration}>
             <div>
-              <h2 className={classes.h2}>Docs that get read</h2>
-              <p className={classes.p}>This is where we talk about techdocs</p>
-              <p className={classes.p}>
+              <FeatureBlockTitle>Docs that get read</FeatureBlockTitle>
+              <FeatureBlockParagraph>This is where we talk about techdocs</FeatureBlockParagraph>
+              <FeatureBlockParagraph>
                 Talk about why this model works. Markdown files committed with the code, but centralised in Backstage where people can find them.
-              </p>
+              </FeatureBlockParagraph>
             </div>
           </FeatureBlock>
         </ResponsiveSpacer>
