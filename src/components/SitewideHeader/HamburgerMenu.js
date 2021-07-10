@@ -17,7 +17,6 @@ import { createUseStyles } from 'react-jss';
 import { TextLink } from 'components';
 
 import IconLink from '../IconLink';
-import { LINE_HEIGHT } from './Logo';
 import BackstageLogo from './BackstageLogo';
 import ListItem from './ListItemLink';
 
@@ -25,22 +24,17 @@ const styles = {
   bmBurgerButton: {
     // Removing the position prop will cause the burger to fill the whole screen.
     position: 'relative',
-    // The hamburger menu tends to sit too close to the scrollbar on mobile if we don't apply
-    // some padding. It can be difficult to tap when the scrollbar is in the way.
-    paddingRight: 4,
     // Forcing the width prevents a bug on Android Chrome where the icon would
     // grow massive when a user navigated to another page using the sidebar navigation. I
     // couldn't adequately debug the root cause due to a lack of dev toops on Android Chrome
     // so fixing it with the brute force approach.
     width: 20,
-    lineHeight: LINE_HEIGHT,
     // It defaults to 1000, which makes it appear above the Agolia search autocomplete dialog.
     zIndex: 20,
   },
 
   bmCrossButton: {
     color: 'white',
-    // Trying to get the close button into the exact same spot as the open button.
     top: 22,
     right: 17,
     position: 'fixed',

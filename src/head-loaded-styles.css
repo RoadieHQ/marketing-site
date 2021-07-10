@@ -53,24 +53,11 @@ body {
 }
 
 @font-face {
-  font-family: LuloCleanOutline;
-  font-style: normal;
-  font-display: block;
-  font-weight: 700;
-  src: url(/fonts/lulo-clean/LuloCleanOutline-Bold.ttf);
-}
-
-@font-face {
   font-family: Soehne-Mono;
   font-style: normal;
   font-display: swap;
   font-weight: 400;
   src: url(/fonts/soehne/soehne-mono-web-buch.woff2) format('woff2');
-}
-
-.typography-logo {
-  font-family: LuloCleanOutline;
-  font-weight: 700;
 }
 
 .typography-mono {
