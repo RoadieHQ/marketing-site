@@ -9,7 +9,7 @@ export default (theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: '1em',
+    paddingTop: '0.4em',
   },
 
   fullScreenNav: {

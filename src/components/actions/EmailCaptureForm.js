@@ -10,6 +10,7 @@ const styles = (theme) => ({
     width: '100%',
     display: 'flex',
     marginBottom: 8,
+    flexDirection: 'column',
   },
 
   input: {
@@ -22,8 +23,10 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.grey[100],
     color: theme.palette.secondary.dark,
 
-    lineHeight: 3,
-    padding: '0.1rem 0.5rem',
+    lineHeight: 2,
+    fontSize: '2rem',
+    padding: '0.5rem',
+    marginBottom: 8,
 
     '&:focus': {
       borderRadius: 0,
@@ -57,6 +60,11 @@ const styles = (theme) => ({
     input: {
       fontSize: '2rem',
       padding: '0.5rem 0.5rem',
+      marginBottom: 0,
+    },
+
+    inputWrapper: {
+      flexDirection: 'row',
     },
   },
 });
