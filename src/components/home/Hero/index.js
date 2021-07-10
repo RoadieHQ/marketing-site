@@ -7,7 +7,7 @@ import { GetInstanceFormCallToAction } from 'components/CallToAction';
 import IntroToRoadieModal from './IntroToRoadieModal';
 import Adornment from './Adornment';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   headlineWrapper: {
     marginBottom: 32,
   },
@@ -22,11 +22,16 @@ const useStyles = createUseStyles(() => ({
 
   leftCol: {
     paddingTop: 0,
-    paddingRight: 32,
   },
 
   rightCol: {
     paddingLeft: 32,
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    leftCol: {
+      paddingRight: 32,
+    },
   },
 }));
 
