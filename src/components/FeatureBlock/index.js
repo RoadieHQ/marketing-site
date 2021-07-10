@@ -3,27 +3,51 @@ import { createUseStyles } from 'react-jss';
 import TwoColumnLayout from '../TwoColumnLayout';
 
 const useStyles = createUseStyles((theme) => ({
-  featureBlockRoot: {},
+  leftCol: {
+    marginBottom: 16,
+  },
+
+  rightCol: {
+    textAlign: 'center',
+  },
 
   twoColumnLayoutRoot: {
     display: 'flex',
-    flexDirection: 'column-reverse',
+    flexDirection: 'column',
   },
 
-  rightSideFeatureBlockImgWrapper: {},
+  img: {
+    // Makes the img smaller rather than overflowing horizontally on mobile.
+    maxWidth: '100%',
+  },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    featureBlockRoot: {
-      paddingLeft: 100,
-      paddingRight: 100,
+    leftCol: {
+      marginBottom: 0,
+      paddingRight: 8,
+    },
+
+    rightCol: {
+      paddingLeft: 8,
+      textAlign: 'left',
     },
 
     twoColumnLayoutRoot: {
       flexDirection: 'row',
     },
 
-    rightSideFeatureBlockImgWrapper: {
+    img: {
       float: 'right',
+    },
+  },
+
+  [`@media (min-width: ${theme.breakpoints.values.lg}px)`]: {
+    leftCol: {
+      paddingLeft: 88,
+    },
+
+    rightCol: {
+      paddingRight: 88,
     },
   },
 }));
@@ -31,15 +55,15 @@ const useStyles = createUseStyles((theme) => ({
 const FeatureBlock = ({ imgSrc, imgAlt, children }) => {
   const classes = useStyles();
   return (
-    <div className={classes.featureBlockRoot}>
+    <div>
       <TwoColumnLayout
         className={{
           root: classes.twoColumnLayoutRoot,
+          leftCol: classes.leftCol,
+          rightCol: classes.rightCol,
         }}
         rightContent={
-          <div className={classes.rightSideFeatureBlockImgWrapper}>
-            <img src={imgSrc} alt={imgAlt} />
-          </div>
+          <img src={imgSrc} alt={imgAlt} className={classes.img} />
         }
         leftContent={children}
       />
