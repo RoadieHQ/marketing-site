@@ -28,7 +28,7 @@ const SitewideHeader = ({
           <Logo />
 
           <nav className={classes.fullScreenNav} aria-label="Sitewide navigation">
-            <span className={classes.textLinkWrapper}>
+            <span>
               <NavItemSpacer>
                 <TextLink to="/backstage-weekly/" text="Backstage Weekly" />
               </NavItemSpacer>

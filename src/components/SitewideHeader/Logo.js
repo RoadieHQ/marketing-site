@@ -1,16 +1,25 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { Link } from 'gatsby';
-import classnames from 'classnames';
 
-export const LINE_HEIGHT = 2;
+import roadieLogo from '../../../content/assets/logos/roadie/roadie-word.svg';
 
 const useStyles = createUseStyles((theme) => ({
   h2: {
     color: theme.palette.text.primary,
     margin: 0,
     padding: 0,
-    lineHeight: LINE_HEIGHT,
+    display: 'none',
+  },
+
+  logo: {
+    backgroundImage: `url(${roadieLogo})`,
+    backgroundPosition: 'center left',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    // These are calculated based on the dimensions of the logo in Figma.
+    width: 130,
+    height: 20,
   },
 
   link: {
@@ -29,7 +38,8 @@ const Logo = () => {
 
   return (
     <Link to="/" className={classes.link}>
-      <h2 className={classnames('typography-logo', classes.h2)}>Roadie</h2>
+      <div className={classes.logo} />
+      <h2 className={classes.h2}>Roadie</h2>
     </Link>
   );
 };
