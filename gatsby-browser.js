@@ -7,5 +7,8 @@
  * results and use JSS there. There is limited advantage to doing that when we would need to
  * import these files anyway.
  */
-require('@algolia/autocomplete-theme-classic');
-require('./src/algolia-autocomplete-theme-overrides.css');
+import '@algolia/autocomplete-theme-classic';
+import './src/algolia-autocomplete-theme-overrides.css';
+
+import 'prismjs/themes/prism.css';
+import './src/stylesheets/prismjs-theme-overrides.css';
