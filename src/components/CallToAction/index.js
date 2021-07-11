@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'components';
 import { navigate } from 'gatsby';
+
 import EmailCaptureForm from '../actions/EmailCaptureForm';
+import trackPlausibleEvent from '../../plausible';
 
 export const ButtonLinkCallToAction = ({ text = 'Request a  demo', ...props }) => {
   const codedText = encodeURIComponent(text);
@@ -26,6 +28,9 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
     e.preventDefault();
     const codedEmail = encodeURIComponent(email);
     const codedLabel = encodeURIComponent(ctaButtonLabel);
+
+    trackPlausibleEvent('submit-get-instance-form');
+
     navigate(`/get-instance/?referred_email=${codedEmail}&clicked_button_label=${codedLabel}`);
   };
 

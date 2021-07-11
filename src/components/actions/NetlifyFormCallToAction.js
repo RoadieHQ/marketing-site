@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
+import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES } from '../../contactFormConstants';
 
@@ -44,6 +45,8 @@ const NetlifyFormCallToAction = ({
       action: 'submit',
       label: netlifyFormName,
     });
+
+    trackPlausibleEvent(netlifyFormName);
 
     if (resp.ok) {
       setModalOpen(true);
