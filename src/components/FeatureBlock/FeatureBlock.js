@@ -3,11 +3,29 @@ import { createUseStyles } from 'react-jss';
 import TwoColumnLayout from '../TwoColumnLayout';
 
 const useStyles = createUseStyles((theme) => ({
-  leftCol: {
+  textCol: {
     marginBottom: 16,
+
+    '& ul': {
+      fontSize: '2rem',
+    },
+
+    '& li': {
+      marginBottom: '1.5em',
+      listStyle: 'none',
+    },
+
+    '& p': {
+      fontSize: '2rem',
+      marginBottom: '1.5em',
+    },
+
+    '& h2': {
+      marginBottom: '2rem',
+    },
   },
 
-  rightCol: {
+  imgCol: {
     textAlign: 'center',
   },
 
@@ -22,12 +40,12 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    leftCol: {
+    textCol: {
       marginBottom: 0,
       paddingRight: 8,
     },
 
-    rightCol: {
+    imgCol: {
       paddingLeft: 8,
       textAlign: 'left',
     },
@@ -42,11 +60,11 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   [`@media (min-width: ${theme.breakpoints.values.lg}px)`]: {
-    leftCol: {
+    textCol: {
       paddingLeft: 88,
     },
 
-    rightCol: {
+    imgCol: {
       paddingRight: 88,
     },
   },
@@ -59,8 +77,8 @@ const FeatureBlock = ({ imgSrc, imgAlt, children }) => {
       <TwoColumnLayout
         className={{
           root: classes.twoColumnLayoutRoot,
-          leftCol: classes.leftCol,
-          rightCol: classes.rightCol,
+          leftCol: classes.textCol,
+          rightCol: classes.imgCol,
         }}
         rightContent={
           <img src={imgSrc} alt={imgAlt} className={classes.img} />
