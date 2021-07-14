@@ -67,6 +67,20 @@ gettingStarted:
        </EntitySwitch>
      );
 
+  - intro: Add recent Travis-CI builds widget/card to your    Overview card.
+    language: typescript
+    code: |
+      // packages/app/src/components/catalog/EntityPage.tsx
+
+      export const cicdCard = (
+        <EntitySwitch>
+          <EntitySwitch.Case if={isTravisciAvailable}>
+            <EntityTravisCIOverviewCard />
+          </EntitySwitch.Case>
+          ...
+        </EntitySwitch>
+      );
+
   - intro: Add annotation to the yaml config file of a component
     language: yaml
     code: 'travis-ci.com/repo-slug: owner-name/project-name'
