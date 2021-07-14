@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { graphql, useStaticQuery } from 'gatsby';
-import { ButtonLinkCallToAction, LayoutControl, TextLink } from 'components';
+import { LayoutControl, TextLink } from 'components';
 import { DEFAULT_MAX_WIDTH_BREAKPOINT } from 'components/LayoutControl';
 
 import styles from './styles';
@@ -18,6 +18,8 @@ const SitewideHeader = ({
 }) => {
   const classes = useStyles({ bottomBorder });
   const data = useStaticQuery(query);
+  const getDemoLinkText = 'Request a demo';
+  const codedGetDemoLinkText = encodeURIComponent(getDemoLinkText);
 
   return (
     <div className={classes.root}>
@@ -26,7 +28,7 @@ const SitewideHeader = ({
           <Logo />
 
           <nav className={classes.fullScreenNav} aria-label="Sitewide navigation">
-            <span className={classes.textLinkWrapper}>
+            <span>
               <NavItemSpacer>
                 <TextLink to="/backstage-weekly/" text="Backstage Weekly" />
               </NavItemSpacer>
@@ -36,7 +38,10 @@ const SitewideHeader = ({
               </NavItemSpacer>
 
               <NavItemSpacer>
-                <ButtonLinkCallToAction />
+                <TextLink
+                  to={`/evaluation-request/?clicked_button_label=${codedGetDemoLinkText}`}
+                  text={getDemoLinkText}
+                />
               </NavItemSpacer>
             </span>
           </nav>
