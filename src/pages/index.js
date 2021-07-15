@@ -6,7 +6,7 @@ import {
   InterstitialTitle,
   StickyFooter,
   ResponsiveSpacer,
-  Link,
+  TextLink as Link,
 } from 'components';
 import Hero from 'components/home/Hero';
 import { GetInstanceFormCallToAction } from 'components/CallToAction';
@@ -16,6 +16,7 @@ import customPluginsIllustration from '../../content/assets/home/custom-plugin-i
 import dragDropIllustration from '../../content/assets/home/drag-drop-illustration.svg';
 import securityMaintenanceIllustration from '../../content/assets/home/security-maintenance-illustration.svg';
 import serviceCatalogIllustration from '../../content/assets/home/service-catalog-illustration.svg';
+import productionConsistencyIllustration from '../../content/assets/home/production-consistency-illustration.svg';
 import mikeExpediaGroupQuote from '../../content/assets/home/mike-expedia-quote.svg';
 
 const useStyles = createUseStyles((theme) => ({
@@ -68,7 +69,7 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={dragDropIllustration}>
             <div>
-              <h2>Drag and drop setup</h2>
+              <h2>Quick and easy setup</h2>
               <p>Customize Backstage to your needs using our drag-and-drop composer.</p>
               <p>
                 Adding plugins to Backstage is as simple as picking them from a list. All types of frontend plugins are supported - cards, tabs and pages.
@@ -76,8 +77,7 @@ const Home = ({ data, location }) => {
               <p>
                 <Link
                   to="https://vimeo.com/manage/videos/569887456"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  color="primary"
                 >
                   Watch our 3 minute setup video
                 </Link>
@@ -89,11 +89,11 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={customPluginsIllustration}>
             <div>
-              <h2>Custom plugins pipeline</h2>
+              <h2>Bring your own plugins</h2>
               <ul>
-                <li>Push your own bespoke and private plugins inside hosted Backstage.</li>
-                <li>Use the usual NPM package publishing workflow you know and love.</li>
-                <li>Flexible & secure options for connecting back to your tools.</li>
+                <li>Push bespoke and private plugins into our hosted Backstage service.</li>
+                <li>Use the familiar NPM publishing workflow you know and love.</li>
+                <li>Flexible and secure options for connecting back to your tools.</li>
               </ul>
             </div>
           </FeatureBlock>
@@ -102,10 +102,10 @@ const Home = ({ data, location }) => {
         <ResponsiveSpacer>
           <FeatureBlock imgSrc={securityMaintenanceIllustration}>
             <div>
-              <h2>Maintenance and Security built in</h2>
-              <p>Backstage moves quickly and it takes effort to stay up to date.</p>
+              <h2>Maintenance and security as standard</h2>
+              <p>Backstage moves quickly and requires effort to stay up to date.</p>
               <p>
-                Enter some details about your custom plugin into Roadie, copy some credentials, then `npm publish` into our private and secure pipeline. Slack notifications included.
+                Let Roadie do the upgrades so you can stay focussed on the work you do best.
               </p>
             </div>
           </FeatureBlock>
@@ -121,9 +121,13 @@ const Home = ({ data, location }) => {
           <FeatureBlock imgSrc={mikeExpediaGroupQuote}>
             <div>
               <h2>Built on Backstage</h2>
-              <p>Grown from 4+ years of experience in production at Spotify.</p>
+              <p>Backstage has been in production for 4+ years at Spotify.</p>
               <p>
-                Backstage is a developer portal and service catalog which lorem ipsum. <a href="/case-studies/">Read more case studies</a>
+                Backstage is a developer portal and service catalog which can improve developer productivity and enable your teams to ship high-quality code quickly.
+              </p>
+
+              <p>
+                <Link to="/case-studies/" color="primary">Read more case studies</Link>
               </p>
             </div>
           </FeatureBlock>
@@ -133,33 +137,30 @@ const Home = ({ data, location }) => {
           <FeatureBlock imgSrc={serviceCatalogIllustration}>
             <div>
               <h2>Cut onboarding time with discoverability</h2>
-              <p>Talk about how people can search for techdocs and other things.</p>
+              <p>Backstage is a hub for everything developers need to do their work. Docs, runbooks, API specs and more. All just a quick search away.</p>
               <p>
-                Include that fact about reducing the time to production.
+                Spotify saw engineering onboarding time drop by 55% in the two years after deploying Backstage internally. All while onboarding hundreds of engineers each year.
+              </p>
+
+              <p>
+                <Link
+                  to="https://changelog.com/podcast/415"
+                  color="primary"
+                >
+                  Hear how Spotify document thousands of services
+                </Link>
               </p>
             </div>
           </FeatureBlock>
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <FeatureBlock imgSrc={serviceCatalogIllustration}>
+          <FeatureBlock imgSrc={productionConsistencyIllustration}>
             <div>
               <h2>Improve production consistency</h2>
-              <p>Here is where we talk about the scaffolder</p>
+              <p>Roll out the golden path to simultaneously speed up development while baking best practices into your production services.</p>
               <p>
-                Talk about how service teams can use templates to scaffold their services in ways wihch have the best practices built in.
-              </p>
-            </div>
-          </FeatureBlock>
-        </ResponsiveSpacer>
-
-        <ResponsiveSpacer>
-          <FeatureBlock imgSrc={serviceCatalogIllustration}>
-            <div>
-              <h2>Docs that get read</h2>
-              <p>This is where we talk about techdocs</p>
-              <p>
-                Talk about why this model works. Markdown files committed with the code, but centralised in Backstage where people can find them.
+                Use the built in scaffolder to create new services from templates which have your best practices built in.
               </p>
             </div>
           </FeatureBlock>

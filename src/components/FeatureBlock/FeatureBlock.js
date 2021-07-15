@@ -12,7 +12,16 @@ const useStyles = createUseStyles((theme) => ({
 
     '& li': {
       marginBottom: '1.5em',
-      listStyle: 'none',
+      marginLeft: '2.3rem',
+    },
+
+    '& li::marker': {
+      color: theme.palette.primary.main,
+    },
+
+    '& li::before': {
+      content: "•",
+      color: 'red',
     },
 
     '& p': {
@@ -43,6 +52,10 @@ const useStyles = createUseStyles((theme) => ({
     textCol: {
       marginBottom: 0,
       paddingRight: 8,
+
+      '& li': {
+        marginLeft: 0,
+      },
     },
 
     imgCol: {
