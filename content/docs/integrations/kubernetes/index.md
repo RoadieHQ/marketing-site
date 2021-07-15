@@ -6,8 +6,7 @@ description: How to add a Kubernetes cluster for the Kubernetes plugin.
 
 ![Full active cluster on roadie](./active.png)
 
-> ⚠️ Note, the Kubernetes plugin is only supported with AWS clusters. ⚠️
-> GKE support is coming soon.
+> ⚠️ Note, the Kubernetes plugin is only supported with AWS clusters. GKE support is coming soon.⚠️
 
 # AWS
 
@@ -31,7 +30,7 @@ This page describes how to create and set up the API token.
 
 In this section we will create an AWS role that will allow the roadie user to access (read only) your Kubernetes cluster's resources.
  * [Assuming Role](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
- * [Cross Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
+ * [Cross Account Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
  * [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
  * [Trust relationship](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
 
@@ -53,8 +52,8 @@ Optional: Add a tag, Key: `3rdPartyIntegration` Value: `Roadie`
 
 6. Click ”Next Review”
 
-7. For the ”Role Name” enter: ”YOUR-COMPANY-NAME-backstage-backend-role-kubernetes”
-8. For the ”Role description” enter 
+7. For the ”Role Name” enter suggested name: ”YOUR-COMPANY-NAME-backstage-backend-role-kubernetes”
+8. For the ”Role description” enter suggested description
 
 ```
 This is a role that will be assumed by roadie to gather information on our Kubernetes clusters.
@@ -152,8 +151,7 @@ subjects:
 
 3. Add this to your cluster and you should now be good to go!
 
->  ℹ️ Note you can reuse the Role if you have multiple clusters  ℹ️
->  ℹ️ You will have to configure the RBAC though  ℹ️
+>  ℹ️ Note you can reuse the Role if you have multiple clusters. You will have to configure the RBAC though. ℹ️
 
 ### Step 4: Adding a cluster to roadie
 
