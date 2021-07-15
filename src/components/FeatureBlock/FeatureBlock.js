@@ -19,11 +19,6 @@ const useStyles = createUseStyles((theme) => ({
       color: theme.palette.primary.main,
     },
 
-    '& li::before': {
-      content: "•",
-      color: 'red',
-    },
-
     '& p': {
       fontSize: '2rem',
       marginBottom: '1.5em',
