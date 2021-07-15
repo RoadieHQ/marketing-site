@@ -4,7 +4,7 @@ lastUpdated: '2021-07-15T21:00:00.0Z'
 description: How to add a Kubernetes cluster for the Kubernetes plugin.
 ---
 
-[Full active cluster on roadie](./active.png)
+![Full active cluster on roadie](./active.png)
 
 > ⚠️ Note, the Kubernetes plugin is only supported with AWS clusters. ⚠️
 > GKE support is coming soon.
@@ -35,7 +35,7 @@ In this section we will create an AWS role that will allow the roadie user to ac
  * [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
  * [Trust relationship](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
 
-### Step 1: Creating the cross federation role
+### Step 1: Creating the cross account federation role
 
 1. Sign into your AWS console and navigate to the [IAM service](https://console.aws.amazon.com/iam/home#/home).
 
