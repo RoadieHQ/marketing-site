@@ -41,9 +41,6 @@ Choosing “Only select repositories” will correctly lock down access but will
 
 We are working to contribute a fix upstream that will allow you to choose limited respositories, but for now please choose the “All repositories” option.
 
-### Step 1. Install the GitHub App
-
-
 You can find a link to install the GitHub app in the Backstage application:
 
 1. Click the Administration link in the bottom left
@@ -53,45 +50,6 @@ You can find a link to install the GitHub app in the Backstage application:
 5. You may need to wait up to 2 minutes for the GitHub integration to become active
 
 ![Install GitHub App](./install-github-app.png)
-
-### Step 2. Create OAuth Credentials
-
-Visit the Developer Settings of your GitHub organization account. Click "New OAuth App".
-
-Fill out the following information in the form. ⚠️ &nbsp;Be sure to replace `your-company` with your Roadie subdomain.
-
-| Form Field                 | Value                                                                    |
-| -------------------------- | ------------------------------------------------------------------------ |
-| Application name           | Roadie Backstage                                                         |
-| Homepage URL               | `https://your-company.roadie.so`                                         |
-| Application description    | Backstage service catalog and developer UI provided by https://roadie.io |
-| Authorization Callback URL | `https://your-company.roadie.so/api/auth/github/handler/frame`           |
-
-![Filled out OAuth values](./filled-oauth-fields.png)
-
-Click "Register Application" and then "Generate a new client secret".
-
-![generate client secret button on the GitHub interface](./generate-client-secret.png)
-
-Take a note of the client ID and the generated client Secret. You will need these in the next step.
-
-![Generated client ID and secret on GitHub](./github-client-id-and-secret.png)
-
-### Step 3. Add the OAuth credentials to Roadie
-
-Visit the Secrets management interface on Roadie Backstage at `https://your-company.roadie.so/administration`.
-
-Find the `GITHUB_CLIENT_ID` field. Click the Pencil Icon to edit the field.
-
-![a table with a row for the GitHub token. There is a description, a status indicator and an edit icon](./github-client-id-field.png)
-
-Enter the Client ID into the input and click the Save button.
-
-![A dialog with a starred out input and a save button](./client-id-in-dialog.png)
-
-Do the same thing for the `GITHUB_CLIENT_SECRET` value.
-
-Wait until Roadie has activated the token before proceeding.
 
 ## Add an admin group and user
 
