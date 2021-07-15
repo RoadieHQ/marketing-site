@@ -19,7 +19,7 @@ There are 3 kinds of Backstage resource used in this tutorial.
 
 ## Prerequisites
 
-In order to complete this guide, you will need the following things:
+In order to complete this guide, you will need the following things
 
 1. Access to a Roadie account. If you do not yet have access, please [join the waiting list](/evaluation-request).
 2. A GitHub Cloud or GitHub Enterprise Cloud account.
