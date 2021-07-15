@@ -15,7 +15,7 @@ description: How to add a Kubernetes cluster for the Kubernetes plugin.
 In order to use the Kubernetes plugin, Roadie needs:
  * An Assumed Role to fetch the resources from your cluster
  * The name of your cluster
- * URL of the loadbalancer/entry point to your Kubernetes cluster
+ * URL of your Kubernetes API Server endpoint
 
 
 These are set within Roadie at the following url:
@@ -28,11 +28,14 @@ This page describes how to create and set up the API token.
 
 ## Steps
 
-In this section we will create an AWS role that will allow the roadie user to access (read only) your Kubernetes cluster's resources.
- * [Assuming Role](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
- * [Cross Account Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
- * [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
- * [Trust relationship](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
+In this section we will create an AWS role that will grant Roadie read-only access to your Kubernetes cluster’s resources.
+
+We will use the approach which is recommended by AWS for providing this type of access. To learn more about the AWS concepts used below, you can read the following AWS documentation pages:
+
+ * Assuming Role [learn more](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
+ * Cross Account Federation [learn more](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
+ * Kubernetes RBAC [learn more](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+ * Trust relationship [learn more](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
 
 ### Step 1: Creating the cross account federation role
 
@@ -83,13 +86,15 @@ You should see a page like this
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "<ROLE FROM CONFIGURATION PAGE>"
+        "AWS": "ROLE FROM CONFIGURATION PAGE"
       },
       "Action": "sts:AssumeRole"
     }
   ]
 }
 ```
+ > In the Json fragment above, replace the "ROLE FROM CONFIGURATION PAGE" with the role that is provided to you on the Kubernetes configuration page (See below)
+
 
 ![AWS roadie role](./role-roadie.png)
 
@@ -101,11 +106,14 @@ You should see a page like this
 
 It should look something like this:
 ``` yaml
- - "groups":
+ - mapRoles:
+   - "groups":
       - "system:master"
-      "rolearn": "<ROLE ARN FROM STEP TWO>"
+      "rolearn": "ROLE ARN FROM STEP TWO"
       "username": "roadie"
 ```
+> In the yaml snippet above, replace "ROLE ARN FROM STEP TWO" with the ARN of the role created from step 2.
+
 
 2. Create an RBAC for this user:
 
@@ -159,5 +167,5 @@ subjects:
 2. Add the load balancer url, role arn and name of cluster.
 3. Click save and exit!
 
-> You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: ”backstage.io/kubernetes-label-selector: 'whatever you like'”
+> You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: ”backstage.io/kubernetes-label-selector: 'app=my-app,component=frontend'”
 > For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
