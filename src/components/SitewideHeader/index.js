@@ -29,6 +29,18 @@ const SitewideHeader = ({
 
           <nav className={classes.fullScreenNav} aria-label="Sitewide navigation">
             <span>
+              {['lg', 'xl', 'none'].includes(maxWidthBreakpoint) && (
+                <>
+                  <NavItemSpacer>
+                    <TextLink to="/#product" text="Product" />
+                  </NavItemSpacer>
+
+                  <NavItemSpacer>
+                    <TextLink to="/#solutions" text="Solutions" />
+                  </NavItemSpacer>
+                </>
+              )}
+
               <NavItemSpacer>
                 <TextLink to="/backstage-weekly/" text="Backstage Weekly" />
               </NavItemSpacer>
@@ -41,6 +53,7 @@ const SitewideHeader = ({
                 <TextLink
                   to={`/evaluation-request/?clicked_button_label=${codedGetDemoLinkText}`}
                   text={getDemoLinkText}
+                  color="primary"
                 />
               </NavItemSpacer>
             </span>
