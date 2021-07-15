@@ -19,7 +19,7 @@ There are 3 kinds of Backstage resource used in this tutorial.
 
 ## Prerequisites
 
-In order to complete this guide, you will need the following things
+In order to complete this guide, you will need the following things:
 
 1. Access to a Roadie account. If you do not yet have access, please [join the waiting list](/evaluation-request).
 2. A GitHub Cloud or GitHub Enterprise Cloud account.
@@ -33,6 +33,13 @@ Roadie needs 2 connections to GitHub in order to function.
 2.  An OAuth client ID and secret so that your user can make requests from the browser to the GitHub API.
 
 Use the steps below to install the GitHub App.
+
+### Important Note!
+When you install the GitHub app you will have an option to lock down access to a select few repositories in your GitHub org. There is currently an upstream limitation which prevents GitHub Teams from being synced into Backstage unless you select the “All repositories” option. 
+
+Choosing “Only select repositories” will correctly lock down access but will break some important functionality due to the sync problem.
+
+We are working to contribute a fix upstream that will allow you to choose limited respositories, but for now please choose the “All repositories” option.
 
 ### Step 1. Install the GitHub App
 
