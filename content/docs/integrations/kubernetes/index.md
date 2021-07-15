@@ -4,10 +4,10 @@ lastUpdated: '2021-07-15T21:00:00.0Z'
 description: How to add a Kubernetes cluster for the Kubernetes plugin.
 ---
 
-[Full active cluster on backstage](./active.png)
+[Full active cluster on roadie](./active.png)
 
-> Note, the Kubernetes plugin is only supported with AWS clusters.
-> We are currently working on trying to get GKE as another supported provider.
+> ⚠️ Note, the Kubernetes plugin is only supported with AWS clusters. ⚠️
+> GKE support is coming soon.
 
 # AWS
 
@@ -16,10 +16,10 @@ description: How to add a Kubernetes cluster for the Kubernetes plugin.
 In order to use the Kubernetes plugin, Roadie needs:
  * An Assumed Role to fetch the resources from your cluster
  * The name of your cluster
- * URL of the loadbalancer/entry point to your kubernetes cluster
+ * URL of the loadbalancer/entry point to your Kubernetes cluster
 
 
-These are set within backstage at the following url:
+These are set within Roadie at the following url:
 
 ```text
 https://<tenant-name>.roadie.so/administration/settings/kubernetes
@@ -29,46 +29,53 @@ This page describes how to create and set up the API token.
 
 ## Steps
 
+In this section we will create an AWS role that will allow the roadie user to access (read only) your Kubernetes cluster's resources.
+ * [Assuming Role](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
+ * [Cross Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
+ * [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+ * [Trust relationship](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
+
 ### Step 1: Creating the cross federation role
 
-Start off by signing into your AWS console and navigating to the IAM service.
-Once there, click on `Role` link (this should be on the left handside of your screen).
+1. Sign into your AWS console and navigate to the [IAM service](https://console.aws.amazon.com/iam/home#/home).
 
-Now that we are in the Role tab, please click on the `Create Role` button.
+2. Click on ”Role” link (this should be on the left handside of your screen).
 
-Click on `Another AWS Account` and add the account number on on the kubernetes configuration page and then click on `Next: permissions`.
+3. Click on the ”Create Role” button.
+
+4. Click on ”Another AWS Account” and add the account number on on the Kubernetes configuration page (in Roadie) and then click on ”Next: permissions”.
 
 ![Another AWS Account](./role-creation.png)
 
-Once you are on the next page, ignore attached policies and click on `Next: tags` (Roadie does not need to read your AWS resources, only access to your k8s cluster).
+5. Ignore attached policies and click on ”Next: tags” (Roadie does not need to read your AWS resources, only access to your Kubernetes cluster).
 
 Optional: Add a tag, Key: `3rdPartyIntegration` Value: `Roadie`
 
-Click `Next Review`
+6. Click ”Next Review”
 
-For the `Role Name` enter: `YOUR-COMPANY-NAME-backstage-backend-role-kubernetes`
-For the `Role description` enter 
+7. For the ”Role Name” enter: ”YOUR-COMPANY-NAME-backstage-backend-role-kubernetes”
+8. For the ”Role description” enter 
 
 ```
-This is a role that will be assumed by roadie to gather information on our kubernetes clusters.
+This is a role that will be assumed by roadie to gather information on our Kubernetes clusters.
 ```
 It should look like this
 
 ![role-confirmation](./role-confirmation.png)
 
-Click `Create role`. Your cross federation role is now created.
+9. Click ”Create role”. Your cross federation role is now created.
 
 ### Step 2: Modifying trust relationships to only include the new role
 
-Search for IAM in the services box and then click on `Roles` on the left handside tab.
+1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
 
-Search for your newly created role: `YOUR-COMPANY-NAME-backstage-backend-role-kubernetes` and click on it.
+2. Search for your newly created role: ”YOUR-COMPANY-NAME-backstage-backend-role-kubernetes” and click on it.
 
 You should see a page like this
 
 ![role-page](./role-page.png)
 
-Click on `Trust Relationships` and then `Edit relationship`.
+3. Click on ”Trust Relationships”, then ”Edit relationship” and add the text below:
 
 ``` json
 {
@@ -87,11 +94,11 @@ Click on `Trust Relationships` and then `Edit relationship`.
 
 ![AWS roadie role](./role-roadie.png)
 
-Save the changes.
+4. Save the changes.
 
 ### Step 3: Set RBAC for new role
 
-Edit your k8s aws-auth Configmap as per: https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html
+1. Edit your Kubernetes aws-auth Configmap as per: https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html
 
 It should look something like this:
 ``` yaml
@@ -101,7 +108,7 @@ It should look something like this:
       "username": "roadie"
 ```
 
-Now lets create an RBAC for this user:
+2. Create an RBAC for this user:
 
 ``` yaml
 ---
@@ -143,13 +150,16 @@ subjects:
     name: roadie
 ```
 
-Add this to your cluster and you should now be good to go!
+3. Add this to your cluster and you should now be good to go!
 
-> Note you can reuse the Role if you have multiple clusters
-> You will have to configure the RBAC though
+>  ℹ️ Note you can reuse the Role if you have multiple clusters  ℹ️
+>  ℹ️ You will have to configure the RBAC though  ℹ️
 
 ### Step 4: Adding a cluster to roadie
 
-Navigate to `https://<tenant-name>.roadie.so/administration/settings/kubernetes` and click on add item. Add the load balancer url, role arn and name of cluster. Click save and exit!
+1. Navigate to ”https://<tenant-name>.roadie.so/administration/settings/kubernetes” and click on add item.
+2. Add the load balancer url, role arn and name of cluster.
+3. Click save and exit!
 
-> You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: `backstage.io/kubernetes-label-selector: 'whatever you like'`
+> You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: ”backstage.io/kubernetes-label-selector: 'whatever you like'”
+> For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
