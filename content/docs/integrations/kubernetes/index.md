@@ -4,6 +4,8 @@ lastUpdated: '2021-07-15T21:00:00.0Z'
 description: How to add a Kubernetes cluster for the Kubernetes plugin.
 ---
 
+[Full active cluster on backstage](./active.png)
+
 > Note, the Kubernetes plugin is only supported with AWS clusters.
 > We are currently working on trying to get GKE as another supported provider.
 
@@ -34,7 +36,7 @@ Once there, click on `Role` link (this should be on the left handside of your sc
 
 Now that we are in the Role tab, please click on the `Create Role` button.
 
-Click on `Another AWS Account` and add the account number on on the kubernetes configuration page (Usually: 131774410247) and then click on `Next: permissions`.
+Click on `Another AWS Account` and add the account number on on the kubernetes configuration page and then click on `Next: permissions`.
 
 ![Another AWS Account](./role-creation.png)
 
