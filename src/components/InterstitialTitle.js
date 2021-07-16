@@ -5,7 +5,6 @@ import classnames from 'classnames';
 const useStyles = createUseStyles(() => ({
   root: {
     textAlign: 'center',
-    paddingTop: 24,
     paddingBottom: ({ paddingBottom }) => paddingBottom,
   },
 

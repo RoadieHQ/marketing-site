@@ -6,26 +6,14 @@ const useStyles = createUseStyles((theme) => ({
   textCol: {
     marginBottom: 16,
 
-    '& ul': {
-      fontSize: '2rem',
-    },
-
-    '& li': {
-      marginBottom: '1.5em',
-      marginLeft: '2.3rem',
-    },
-
-    '& li::marker': {
-      color: theme.palette.primary.main,
-    },
-
     '& p': {
-      fontSize: '2rem',
-      marginBottom: '1.5em',
+      fontSize: '1.5rem',
+      marginBottom: '1rem',
     },
 
     '& h2': {
-      marginBottom: '2rem',
+      fontSize: '2rem',
+      marginBottom: '1rem',
     },
   },
 
@@ -36,6 +24,7 @@ const useStyles = createUseStyles((theme) => ({
   twoColumnLayoutRoot: {
     display: 'flex',
     flexDirection: 'column',
+    marginBottom: '1em',
   },
 
   img: {
@@ -48,8 +37,14 @@ const useStyles = createUseStyles((theme) => ({
       marginBottom: 0,
       paddingRight: 8,
 
-      '& li': {
-        marginLeft: 0,
+      '& p': {
+        fontSize: '1.9rem',
+        marginBottom: '1.5em',
+      },
+
+      '& h2': {
+        fontSize: '2.3rem',
+        marginBottom: '2rem',
       },
     },
 
@@ -81,19 +76,17 @@ const useStyles = createUseStyles((theme) => ({
 const FeatureBlock = ({ imgSrc, imgAlt, children }) => {
   const classes = useStyles();
   return (
-    <div>
-      <TwoColumnLayout
-        className={{
-          root: classes.twoColumnLayoutRoot,
-          leftCol: classes.textCol,
-          rightCol: classes.imgCol,
-        }}
-        rightContent={
-          <img src={imgSrc} alt={imgAlt} className={classes.img} />
-        }
-        leftContent={children}
-      />
-    </div>
+    <TwoColumnLayout
+      className={{
+        root: classes.twoColumnLayoutRoot,
+        leftCol: classes.textCol,
+        rightCol: classes.imgCol,
+      }}
+      rightContent={
+        <img src={imgSrc} alt={imgAlt} className={classes.img} />
+      }
+      leftContent={children}
+    />
   );
 };
 
