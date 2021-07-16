@@ -108,7 +108,7 @@ It should look something like this:
 ``` yaml
  - mapRoles:
    - "groups":
-      - "system:master"
+      - "system:authenticated"
       "rolearn": "ROLE ARN FROM STEP TWO"
       "username": "roadie"
 ```
