@@ -104,15 +104,16 @@ You should see a page like this
 
 1. Edit your Kubernetes aws-auth Configmap as per: https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html
 
-It should look something like this:
-``` yaml
- - mapRoles:
-   - "groups":
-      - "system:authenticated"
-      "rolearn": "ROLE ARN FROM STEP TWO"
-      "username": "roadie"
+This is a suggested method using eks:
+```bash
+eksctl create iamidentitymapping --region <your-cluster-region-here>  \
+  --arn <role-from-step-2> \
+  --group system:authenticated \
+  --username roadie \
+  --cluster <your-cluster-name-here>
 ```
-> In the yaml snippet above, replace "ROLE ARN FROM STEP TWO" with the ARN of the role created from step 2.
+
+> In the yaml snippet above, replace anything begining with '<' and ending with '>' with your custom values.
 
 
 2. Create an RBAC for this user:
