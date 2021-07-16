@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    paddingTop: 24,
     paddingBottom: 24,
   },
 
