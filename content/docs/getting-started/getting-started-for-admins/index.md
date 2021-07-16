@@ -27,19 +27,12 @@ In order to complete this guide, you will need the following things:
 
 ## Connect Roadie to GitHub
 
-Roadie needs 2 connections to GitHub in order to function.
+Roadie needs to connect to GitHub in order to function. This can be setup by installing the Roadie GitHub App.
+Installing the GitHub App will allow Roadie to:
 
-1.  A GitHub app installation to access the YAML metadata files that Backstage needs to operate.
-2.  An OAuth client ID and secret so that your user can make requests from the browser to the GitHub API.
-
-Use the steps below to install the GitHub App.
-
-### Important Note!
-When you install the GitHub app you will have an option to lock down access to a select few repositories in your GitHub org. There is currently an upstream limitation which prevents GitHub Teams from being synced into Backstage unless you select the “All repositories” option. 
-
-Choosing “Only select repositories” will correctly lock down access but will break some important functionality due to the sync problem.
-
-We are working to contribute a fix upstream that will allow you to choose limited respositories, but for now please choose the “All repositories” option.
+1.  Access the YAML metadata files that Backstage needs to operate.
+2.  Read your GitHub organisation's users and team structure into backstage.  
+3.  Make requests from the browser on your behalf e.g. listing open pull requests.
 
 You can find a link to install the GitHub app in the Backstage application:
 
@@ -48,6 +41,14 @@ You can find a link to install the GitHub app in the Backstage application:
 3. Click on the link to install the GitHub app.
 4. Follow the steps to install the App
 5. You may need to wait up to 2 minutes for the GitHub integration to become active
+
+### Important Note!
+
+When you install the GitHub app you will have an option to lock down access to a select few repositories in your GitHub org. There is currently an upstream limitation which prevents GitHub Teams from being synced into Backstage unless you select the “All repositories” option. 
+
+Choosing “Only select repositories” will correctly lock down access but will break some important functionality due to the sync problem.
+
+We are working to contribute a fix upstream that will allow you to choose limited respositories, but for now please choose the “All repositories” option.
 
 ![Install GitHub App](./install-github-app.png)
 

@@ -4,6 +4,11 @@ lastUpdated: '2021-06-06T21:00:00.0Z'
 description: How to create a GitHub Personal Access Token with permissions for use in Roadie.
 ---
 
+
+> **This Page Deprecated**
+>
+> We now recommend installing the Roadie GitHub App instead.
+
 ## Introduction
 
 Roadie needs an access token to authenticate with the GitHub APIs in order to perform key functions such as:
