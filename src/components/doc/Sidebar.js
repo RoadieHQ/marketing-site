@@ -127,8 +127,6 @@ const DocSidebar = () => {
         </SidebarSectionList>
 
         <SidebarSectionList title="Integrations">
-          <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
-          <SidebarItem to="/docs/integrations/github-client/" text="GitHub via Oauth" />
           <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
           <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
           <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
@@ -136,6 +134,7 @@ const DocSidebar = () => {
           <SidebarItem to="/docs/integrations/pagerduty/" text="PagerDuty" />
           <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
           <SidebarItem to="/docs/integrations/kubernetes/" text="Kubernetes" />
+          <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Custom plugins">

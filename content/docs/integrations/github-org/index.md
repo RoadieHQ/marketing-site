@@ -14,7 +14,7 @@ This page describes how to do that.
 
 - You must be using *GitHub* or *Okta* for sign-in 
 - You will need a git repository for the configuration of Backstage.
-- The github token configured in the backstage secrets must have the `read:user` and `user:email` scopes.
+- You must install the Roadie GitHub app in your organisation with access to all repositories **or** The GitHub token configured in the backstage secrets must have the `read:user` and `user:email` scopes.
 
 ## Steps
 
