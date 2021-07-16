@@ -11,6 +11,8 @@ import {
   FaGraduationCap,
   FaBlog,
   FaBriefcase,
+  FaMedal,
+  FaMedkit,
 } from 'react-icons/fa';
 import Menu from 'react-burger-menu/lib/menus/slide';
 import { createUseStyles } from 'react-jss';
@@ -84,6 +86,10 @@ const useStyles = createUseStyles(() => ({
     },
   },
 
+  section: {
+    marginBottom: '2em',
+  },
+
   spacer: {
     marginBottom: '0.2em',
   },
@@ -123,53 +129,77 @@ const HamburgerMenu = ({ siteMetadata }) => {
       width={300}
     >
       <div>
-        <div className={classes.spacer}>
-          <ListItem
-            to="/backstage/plugins/"
-            text="Backstage Plugins"
-            color="contrasting"
-            icon={<FaPlug />}
-          />
+        <div className={classes.section}>
+          <div className={classes.spacer}>
+            <ListItem
+              to="/#product"
+              text="Product"
+              color="contrasting"
+              icon={<FaMedal />}
+            />
+          </div>
+
+          <div className={classes.spacer}>
+            <ListItem
+              to="/#solutions"
+              text="Solutions"
+              color="contrasting"
+              icon={<FaMedkit />}
+            />
+          </div>
         </div>
 
-        <div className={classes.spacer}>
-          <ListItem
-            to="https://careers.roadie.io"
-            text="Careers"
-            color="contrasting"
-            icon={<FaBriefcase />}
-          />
+        <div className={classes.section}>
+          <div className={classes.spacer}>
+            <ListItem
+              to="/backstage/plugins/"
+              text="Backstage Plugins"
+              color="contrasting"
+              icon={<FaPlug />}
+            />
+          </div>
+
+          <div className={classes.spacer}>
+            <ListItem
+              to="/backstage-weekly/"
+              text="Backstage Weekly"
+              color="contrasting"
+              icon={<FaNewspaper />}
+            />
+          </div>
+
+          <div className={classes.spacer}>
+            <ListItem to="/blog/" text="Blog" color="contrasting" icon={<FaBlog />} />
+          </div>
+
+          <div className={classes.spacer}>
+            <ListItem
+              to="/case-studies/"
+              text="Case Studies"
+              color="contrasting"
+              icon={<FaMagic />}
+            />
+          </div>
         </div>
 
-        <div className={classes.spacer}>
-          <ListItem to="/blog/" text="Blog" color="contrasting" icon={<FaBlog />} />
-        </div>
+        <div className={classes.section}>
+          <div className={classes.spacer}>
+            <ListItem
+              to="https://careers.roadie.io"
+              text="Careers"
+              color="contrasting"
+              icon={<FaBriefcase />}
+            />
+          </div>
 
-        <div className={classes.spacer}>
-          <ListItem
-            to="/backstage-weekly/"
-            text="Backstage Weekly"
-            color="contrasting"
-            icon={<FaNewspaper />}
-          />
-        </div>
-
-        <div className={classes.spacer}>
-          <ListItem
-            to="/case-studies/"
-            text="Case Studies"
-            color="contrasting"
-            icon={<FaMagic />}
-          />
-        </div>
-
-        <div className={classes.spacer}>
-          <ListItem
-            to="/docs/getting-started/getting-started-for-admins/"
-            text="Documentation"
-            color="contrasting"
-            icon={<FaGraduationCap />}
-          />
+          <div className={classes.spacer}>
+            <ListItem
+              to="/docs/getting-started/getting-started-for-admins/"
+              text="Documentation"
+              color="contrasting"
+              icon={<FaGraduationCap />}
+            />
+          </div>
         </div>
       </div>
 
