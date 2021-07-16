@@ -113,7 +113,7 @@ eksctl create iamidentitymapping --region <your-cluster-region-here>  \
   --cluster <your-cluster-name-here>
 ```
 
-> In the yaml snippet above, replace anything begining with '<' and ending with '>' with your custom values.
+> In the bash snippet above, replace role-from-step-2 with the role you created in Step 2. In this example, it would be "arn::sts::iam:role:1234567890/YOUR-COMPANY-NAME-backstage-backend-role-kubernetes". For your-cluster-name-here, replace with your cluster id.
 
 
 2. Create an RBAC for this user:
