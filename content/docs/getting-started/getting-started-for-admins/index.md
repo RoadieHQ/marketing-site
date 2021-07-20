@@ -42,14 +42,6 @@ You can find a link to install the GitHub app in the Backstage application:
 4. Follow the steps to install the App
 5. You may need to wait up to 2 minutes for the GitHub integration to become active
 
-### Important Note!
-
-When you install the GitHub app you will have an option to lock down access to a select few repositories in your GitHub org. There is currently an upstream limitation which prevents GitHub Teams from being synced into Backstage unless you select the “All repositories” option. 
-
-Choosing “Only select repositories” will correctly lock down access but will break some important functionality due to the sync problem.
-
-We are working to contribute a fix upstream that will allow you to choose limited respositories, but for now please choose the “All repositories” option.
-
 ![Install GitHub App](./install-github-app.png)
 
 ## Add an admin group and user
