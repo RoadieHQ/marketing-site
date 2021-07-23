@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme) => ({
   root: {
     textAlign: 'center',
     paddingBottom: ({ paddingBottom }) => paddingBottom,
@@ -12,6 +12,17 @@ const useStyles = createUseStyles(() => ({
     margin: 0,
     fontSize: '1.5em',
   },
+
+
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    h2: {
+      fontSize: ({ size }) => {
+        if (size === 'small') return '1.5em';
+        if (size === 'large') return '3em';
+      },
+    },
+  },
+      
 }));
 
 const InterstitialTitle = ({
@@ -20,8 +31,9 @@ const InterstitialTitle = ({
   children,
   paddingBottom = 8,
   id,
+  size = 'small',
 }) => {
-  const classes = useStyles({ paddingBottom });
+  const classes = useStyles({ paddingBottom, size });
   const inner = text ? text : children;
 
   return (
