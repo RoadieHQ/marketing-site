@@ -55,7 +55,8 @@ Optional: Add a tag, Key: `3rdPartyIntegration` Value: `Roadie`
 
 6. Click ”Next Review”
 
-7. For the ”Role Name” enter suggested name: ”YOUR-COMPANY-NAME-backstage-backend-role-kubernetes”
+7. For the ”Role Name” enter: ”YOUR-COMPANY-NAME-roadie-read-only-role” (note: it is important to format the role as the following: ”YOUR-COMPANY-NAME-roadie-read-only-role”. If you do not, the role cannot be assumed. This is for security reasons.)
+
 8. For the ”Role description” enter suggested description
 
 ```
@@ -71,7 +72,7 @@ It should look like this
 
 1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
 
-2. Search for your newly created role: ”YOUR-COMPANY-NAME-backstage-backend-role-kubernetes” and click on it.
+2. Search for your newly created role: ”YOUR-COMPANY-NAME-roadie-read-only-role” and click on it.
 
 You should see a page like this
 
@@ -86,9 +87,18 @@ You should see a page like this
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "ROLE FROM CONFIGURATION PAGE"
+        "AWS": [
+          "ACCOUNT ARN SUPPLIED ON THE CONFIGURATION PAGE"
+        ]
       },
-      "Action": "sts:AssumeRole"
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringLike": {
+          "aws:PrincipalArn": [
+            "ROLE FROM CONFIGURATION PAGE"
+          ]
+        }
+      }
     }
   ]
 }
@@ -104,16 +114,15 @@ You should see a page like this
 
 1. Edit your Kubernetes aws-auth Configmap as per: https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html
 
-This is a suggested method using eks:
-```bash
-eksctl create iamidentitymapping --region <your-cluster-region-here>  \
-  --arn <role-from-step-2> \
-  --group system:authenticated \
-  --username roadie \
-  --cluster <your-cluster-name-here>
+It should look something like this:
+``` yaml
+ - mapRoles:
+   - "groups":
+      - "system:authenticated"
+      "rolearn": "ROLE ARN FROM STEP TWO"
+      "username": "roadie"
 ```
-
-> In the bash snippet above, replace role-from-step-2 with the role you created in Step 2. In this example, it would be "arn::sts::iam:role:1234567890/YOUR-COMPANY-NAME-backstage-backend-role-kubernetes". For your-cluster-name-here, replace with your cluster id.
+> In the yaml snippet above, replace "ROLE ARN FROM STEP TWO" with the ARN of the role created from step 2.
 
 
 2. Create an RBAC for this user:
