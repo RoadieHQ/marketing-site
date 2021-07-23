@@ -55,7 +55,10 @@ Optional: Add a tag, Key: `3rdPartyIntegration` Value: `Roadie`
 
 6. Click ”Next Review”
 
-7. For the ”Role Name” enter suggested name: ”YOUR-COMPANY-NAME-backstage-backend-role-kubernetes”
+7. For the ”Role Name” enter: ”your-company-name-roadie-read-only-role”
+
+> Note: ”your-company-name” should be replaced by the lowercased value of your company and should follow the convention highlighted above. If it does not follow the convention, the role cannot be assumed. This is for security reasons.
+
 8. For the ”Role description” enter suggested description
 
 ```
@@ -71,7 +74,7 @@ It should look like this
 
 1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
 
-2. Search for your newly created role: ”YOUR-COMPANY-NAME-backstage-backend-role-kubernetes” and click on it.
+2. Search for your newly created role: ”your-company-name-roadie-read-only-role” and click on it.
 
 You should see a page like this
 
@@ -86,9 +89,18 @@ You should see a page like this
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "ROLE FROM CONFIGURATION PAGE"
+        "AWS": [
+          "ACCOUNT ARN SUPPLIED ON THE CONFIGURATION PAGE"
+        ]
       },
-      "Action": "sts:AssumeRole"
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringLike": {
+          "aws:PrincipalArn": [
+            "ROLE FROM CONFIGURATION PAGE"
+          ]
+        }
+      }
     }
   ]
 }
