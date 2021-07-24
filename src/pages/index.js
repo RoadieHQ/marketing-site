@@ -7,7 +7,7 @@ import {
   ResponsiveSpacer,
 } from 'components';
 // eslint-disable-next-line import/named
-import { Hero, FooterCTA, features } from 'components/home';
+import { Testimonial, Hero, FooterCTA, features } from 'components/home';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
 const HEADLINE = 'Backstage for growing engineering teams';
@@ -25,6 +25,10 @@ const Home = ({ data, location }) => {
       <StickyFooter location={location}>
         <ResponsiveSpacer>
           <Hero siteMetadata={data.site.siteMetadata} headline={HEADLINE} lead={LEAD} />
+        </ResponsiveSpacer>
+
+        <ResponsiveSpacer>
+          <Testimonial />
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
