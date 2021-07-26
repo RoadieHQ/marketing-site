@@ -129,6 +129,7 @@ const DocSidebar = () => {
         <SidebarSectionList title="Integrations">
           <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
           <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
+          <SidebarItem to="/docs/integrations/snyk/" text="Snyk" />
           <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
           <SidebarItem to="/docs/integrations/jira/" text="Jira" />
           <SidebarItem to="/docs/integrations/pagerduty/" text="PagerDuty" />
