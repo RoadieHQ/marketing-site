@@ -9,6 +9,8 @@ metadata:
     github.com/project-slug: RoadieHQ/marketing-site
     lighthouse.com/website-url: https://roadie.io/
     backstage.io/techdocs-ref: url:https://github.com/RoadieHQ/marketing-site/tree/main
+    snyk.io/org-name: roadie
+    snyk.io/project-ids: 4f195df9-5ddf-4a98-8955-bd687d220d0b
 spec:
   type: website
   owner: roadie
