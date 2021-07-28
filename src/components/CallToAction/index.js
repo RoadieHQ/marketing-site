@@ -3,7 +3,8 @@ import { Button } from 'components';
 import { navigate } from 'gatsby';
 
 import EmailCaptureForm from '../actions/EmailCaptureForm';
-import trackPlausibleEvent from '../../plausible';
+import { FORM_NAMES } from '../../contactFormConstants';
+import { submitEmailToNetlifyForms } from '../actions/NetlifyFormCallToAction';
 
 export const ButtonLinkCallToAction = ({ text = 'Request a  demo', ...props }) => {
   const codedText = encodeURIComponent(text);
@@ -21,23 +22,36 @@ export const ButtonLinkCallToAction = ({ text = 'Request a  demo', ...props }) =
 };
 
 export const GetInstanceFormCallToAction = ({ ...props }) => {
+  const [submitting, setSubmitting] = useState(false);
   const [email, setEmail] = useState('');
   const ctaButtonLabel = 'Get Backstage';
-
-  const visitGetBackstageForm = (e) => {
-    e.preventDefault();
-    const codedEmail = encodeURIComponent(email);
-    const codedLabel = encodeURIComponent(ctaButtonLabel);
-
-    trackPlausibleEvent('submit-get-instance-form');
-
-    navigate(`/get-instance/?referred_email=${codedEmail}&clicked_button_label=${codedLabel}`);
-  };
-
-  // This can be static because we're not making a server request which might return an error
-  // which we want to display to the user. We are simply redirecting withing in the app.
-  const subForm = {
+  const [subForm, setSubForm] = useState({
     message: 'We will never sell or share your email address',
+  });
+
+  const visitGetBackstageForm = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+
+    const resp = await submitEmailToNetlifyForms({
+      email,
+      netlifyFormName: FORM_NAMES.getInstance,
+    });
+
+    if (resp.ok) {
+      const codedEmail = encodeURIComponent(email);
+      const codedLabel = encodeURIComponent(ctaButtonLabel);
+
+      // DO NOT reset the email input here. It is already happening higher in the state chain.
+      setSubmitting(false);
+      navigate(`/get-instance/?referred_email=${codedEmail}&clicked_button_label=${codedLabel}`);
+    } else {
+      setSubmitting(false);
+      setSubForm({
+        state: 'error',
+        message: 'Something went wrong. Please try that again.',
+      });
+    }
   };
 
   return (
@@ -47,6 +61,7 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
       buttonText={ctaButtonLabel}
       onSubmit={visitGetBackstageForm}
       subForm={subForm}
+      submitting={submitting}
       {...props}
     />
   );

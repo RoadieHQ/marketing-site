@@ -9,4 +9,5 @@ exports.FORM_NAMES = {
   subscribeToNewsletter: 'subscribe-to-newsletter',
   getDemo: 'get-demo',
   getDemoOnboarding: 'get-demo-onboarding',
+  getInstance: 'submit-get-instance-form',
 };
