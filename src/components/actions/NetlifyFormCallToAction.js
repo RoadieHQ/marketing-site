@@ -5,12 +5,32 @@ import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES } from '../../contactFormConstants';
 
-export const encode = (data) => {
+const encode = (data) => {
   const formData = new FormData();
   Object.keys(data).forEach((k) => {
     formData.append(k, data[k]);
   });
   return formData;
+};
+
+export const submitEmailToNetlifyForms = async ({ email, netlifyFormName }) => {
+  const resp = await fetch('/', {
+    method: 'POST',
+    body: encode({
+      'form-name': netlifyFormName,
+      email,
+    }),
+  });
+
+  trackCustomEvent({
+    category: 'form',
+    action: 'submit',
+    label: netlifyFormName,
+  });
+
+  trackPlausibleEvent(netlifyFormName);
+
+  return resp;
 };
 
 const NetlifyFormCallToAction = ({
@@ -32,21 +52,7 @@ const NetlifyFormCallToAction = ({
     e.preventDefault();
     setSubmitting(true);
 
-    const resp = await fetch('/', {
-      method: 'POST',
-      body: encode({
-        'form-name': netlifyFormName,
-        email,
-      }),
-    });
-
-    trackCustomEvent({
-      category: 'form',
-      action: 'submit',
-      label: netlifyFormName,
-    });
-
-    trackPlausibleEvent(netlifyFormName);
+    const resp = await submitEmailToNetlifyForms({ email, netlifyFormName });
 
     if (resp.ok) {
       setModalOpen(true);
