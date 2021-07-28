@@ -39,7 +39,9 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and ente
 
 ![Token in Roadie](./secret.png)
 
-### Step 4: Set SonarQube proxy in the settings (Optional: ONLY FOR ONSIGHT CONFIGURATION)
+### Optional Step 4: Set SonarQube proxy in the settings
+
+This step is only required when integrating with an on-prem SonarCube instance.
 
 Visit `https://<tenant-name>.roadie.so/administration/settings/proxy` and create a new proxy.
 
