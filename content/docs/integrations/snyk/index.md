@@ -1,6 +1,6 @@
 ---
 title: Snyk
-lastUpdated: '2021-02-23T21:00:00.0Z'
+lastUpdated: '2021-07-21T21:00:00.0Z'
 description: How to create a Snyk Token with permissions for use in Backstage and apply it to Roadie.
 ---
 
