@@ -136,6 +136,7 @@ const DocSidebar = () => {
           <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
           <SidebarItem to="/docs/integrations/kubernetes/" text="Kubernetes" />
           <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
+          <SidebarItem to="/docs/integrations/sonarqube/" text="SonarQube" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Custom plugins">
