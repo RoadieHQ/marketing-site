@@ -34,7 +34,7 @@ gettingStarted:
           headers:
           Authorization: token ${FOSSA_API_TOKEN}
 
-  - intro: Add the FOSSA card the Overview tab on the entity page.
+  - intro: Add the FOSSA card to the Overview tab on the entity page.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
@@ -52,7 +52,7 @@ gettingStarted:
         </Grid>
       );
 
-  - intro: Add the FOSSA Component Overview page.
+  - intro: Add a new route for the FOSSA Component Overview page.
     language: typescript
     code: |
       // packages/app/src/App.tsx
@@ -65,7 +65,7 @@ gettingStarted:
         </FlatRoutes>
       );
 
-  - intro: Add a link to the FOSSA Component Overview Page to the sidebar.
+  - intro: Add a link to the FOSSA Component Overview route to the sidebar.
     language: typescript
     code: |
       // packages/app/src/components/Root/Root.tsx
@@ -81,39 +81,39 @@ gettingStarted:
       ```
 ---
 
-The FOSSA plugin is a frontend plugin that summarizes license findings for components in Backstage. The plugin includes a card component for individual components:
+The FOSSA plugin is a frontend plugin that summarizes license findings for components in Backstage. The plugin includes a card component that displays a summary of findings for individual components:
 
 ![FOSSA Card Component](../../assets/backstage/plugins/fossa/fossa-plugin-card.png)
 
-It also includes a page component that displays a summary of findings for all components in Backstage:
+It also includes a page component that displays a summary of findings for all components in Backstage that are annotated with the FOSSA plugin annotation:
 
 ![FOSSA Page Component](../../assets/backstage/plugins/fossa/fossa-plugin-page.png)
 
-Both components include direct links to findings on the FOSSA website.
+Both components allow users to link directly to findings on the FOSSA website.
 
 ### Creating a FOSSA API key
 
-A FOSSA API key is required in order for Backstage to connect to the FOSSA API and pull license findings. FOSSA API keys are associated with a specific FOSSA user account.
+A FOSSA API key is required for Backstage to connect to the FOSSA API to retrieve license findings. FOSSA API keys are associated with to FOSSA user accounts.
 
 To create a FOSSA API key:
 
 1. Open [app.fossa.com/account/settings](https://app.fossa.com/account/settings).
-1. Navigate to Integrations > API
+1. Navigate to the API section on the Integrations tab.
 1. Add a new token. Do not select the "Push Only" option.
 
     ![Create FOSSA API key](../../assets/backstage/plugins/fossa/create-fossa-api-token.png)
 
-1. Copy the token value from the API Tokens page and save it to `FOSSA_API_TOKEN` environment variable.
+1. Copy the token and save it to `FOSSA_API_TOKEN` environment variable.
 
     ![View FOSSA API key](../../assets/backstage/plugins/fossa/create-fossa-api-token2.png)
 
 ### Specifying a FOSSA organization ID
 
-You can optionally provide a FOSSA organization ID in the `app-config.yaml`:
+You can optionally provide a FOSSA organization ID in `app-config.yaml`:
 
 ```yaml
 fossa:
   organizationId: <your-fossa-organization-id>
 ```
 
-Organization ID is optional and not currently required by the functionality included with this plugin. FOSSA findings are retrieved using the `fossa.io/project-name` (FOSSA project title) in the component's `catalog-info.yml`. If an organization ID is provided, it is added as an additional filter on the FOSSA API request to retrieve project details but ultimately will not affect the response.
+Organization ID is not currently required by the functionality included with this plugin. FOSSA findings are retrieved using the `fossa.io/project-name` (FOSSA project title) in the component's `catalog-info.yml`. If an organization ID is provided, it is added as an additional filter parameter on the FOSSA API request to retrieve project details but it ultimately will not affect the data that is returned.
