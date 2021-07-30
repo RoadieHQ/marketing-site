@@ -54,7 +54,7 @@ We settled with semi-automatic process for this, so package versioning is done m
 
 All of the plugins we developed and maintain are being gradually migrated to the https://github.com/RoadieHQ/backstage-roadie-plugins repository.
 
-All of the plugins published on https://www.npmjs.com/ will work and will remain the same for consumers of the plugins, only difference will be for the contributors, but you can read more details in https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/CONTRIBUTING.md. 
+Plugins published on https://www.npmjs.com/ will still work and remain the same for consumers of the plugins, only difference will be for the contributors, but you can read more details in https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/CONTRIBUTING.md. 
 
 This type of changes are always a bit difficult at the start but we are confident this change will result in smoother experience for the users of the plugins and easier contributions, which we always welcome.
 
