@@ -4,7 +4,7 @@ import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import { StickyFooter, InterstitialTitle, CodeBlock, SEO } from 'components';
+import { StickyFooter, InterstitialTitle, CodeBlock, SEO, ResponsiveSpacer } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
   SubscribeToNewsletterSuccessModal,
@@ -50,40 +50,46 @@ const PluginTemplate = ({ data, location }) => {
       <StickyFooter location={location} maxWidthBreakpoint="md">
         <Header plugin={plugin} />
 
-        <InterstitialTitle text="Getting started is simple" />
+        <ResponsiveSpacer>
+          <InterstitialTitle text="Getting started is simple" />
 
-        {plugin.frontmatter.gettingStarted.map((section, index) =>
-          section.title && section.title !== '' ? (
-            <InterstitialTitle text={section.title} key={`key-${index}`} />
-          ) : (
-            <CodeBlock
-              language={section.language}
-              code={section.code}
-              intro={section.intro}
-              key={`key-${index}`}
+          {plugin.frontmatter.gettingStarted.map((section, index) =>
+            section.title && section.title !== '' ? (
+              <InterstitialTitle text={section.title} key={`key-${index}`} />
+            ) : (
+              <CodeBlock
+                language={section.language}
+                code={section.code}
+                intro={section.intro}
+                key={`key-${index}`}
+              />
+            )
+          )}
+
+          <p>
+            Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
+          </p>
+        </ResponsiveSpacer>
+
+        <ResponsiveSpacer>
+          <InterstitialTitle text="How it looks" />
+
+          <div>
+            <GatsbyImage
+              image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
+              alt={plugin.frontmatter.coverImageAlt}
+              className={classes.coverImage}
             />
-          )
-        )}
-
-        <p>
-          Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
-        </p>
-
-        <InterstitialTitle text="How it looks" />
-
-        <div>
-          <GatsbyImage
-            image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
-            alt={plugin.frontmatter.coverImageAlt}
-            className={classes.coverImage}
-          />
-        </div>
+          </div>
+        </ResponsiveSpacer>
 
         {plugin.notes && plugin.notes !== '' && (
-          <div>
-            <InterstitialTitle text="Things to know" />
-            <div className={classes.notes} dangerouslySetInnerHTML={{ __html: plugin.notes }} />
-          </div>
+          <ResponsiveSpacer>
+            <div>
+              <InterstitialTitle text="Things to know" />
+              <div className={classes.notes} dangerouslySetInnerHTML={{ __html: plugin.notes }} />
+            </div>
+          </ResponsiveSpacer>
         )}
 
         <SubscribeToNewsletterCTA

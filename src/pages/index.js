@@ -28,7 +28,7 @@ const Home = ({ data, location }) => {
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-            <Testimonial />
+          <Testimonial />
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
