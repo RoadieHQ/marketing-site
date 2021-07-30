@@ -19,7 +19,7 @@ There are a number of improvements we introduced by moving to monorepo.
 
 As mentioned previously, we wanted to simplify internal and third-party dependency management. Having plugins in different repositories raised concerns about having diamond dependency problem and challenges of having different versions of the same dependency in different repositories.
 
-With the monorepo approach, testing specific version of dependency is easier because it gives us the ability to test for breaking changes and backwards compatibility across entire codebase when an update is needed. Having this said, it becomes more easier and faster to make sure we follow Backstage team updates, and respond to the changes faster, making sure our plugins work with the latest versions of the Backstage packages.
+With the monorepo approach, testing specific version of dependency is easier because it gives us the ability to test for breaking changes and backwards compatibility across entire codebase when an update is needed. Having that said, it becomes easier and faster to make sure we follow Backstage team updates, and respond to the changes faster, making sure our plugins work with the latest versions of the Backstage packages.
 
 # 2) Better visibility of all the plugins.
 
@@ -35,15 +35,26 @@ We created workflow running periodically to check for the updates from Backstage
 
 ## Challenges
 
-We have been stumbled upon several challenges along the path, especially in the term of build and effective pipelines. Also, having several packages/plugins published on https://www.npmjs.com/ meant we need to make sure publishing will work and all of the plugins will remain the same for consumers of the plugins.
+We have been stumbled upon several challenges along the path, especially in the term of build and effective pipelines. Also, having several packages/plugins published on https://www.npmjs.com/ meant we need to make sure publishing will work.
+
+# 1) Build Pipelines
+
+Ensuring builds are efficient and practical is a challenge regardless of the team-size or code base. Because we will be having a lot of source code in one place, we understand it may take more time for CI to run everything in order to approve every PR. However, we still believe this isn't significally reflected in our case.
+
+We have created separate workflows for automated check for updates from Backstage team, creating PRs and running checks in order to check everything works as expected once it is merged to main branch and published. Publishing is also handled separately.
+
+
+# 2) Manage publishing of the packages
 
 We have decided to use https://lerna.js.org/ for managing and publishing packages as we needed a tool which will optimize the workflow and this seemed as a good solution for us.
+
+We settled with semi-automatic process for this, so package versioning is done manually and publish is done automatically. Lerna helps with detecting changes in the packages and only publish the ones with the updated versions. 
 
 ## Conclusion
 
 All of the plugins we developed and maintain are being gradually migrated to the https://github.com/RoadieHQ/backstage-roadie-plugins repository.
 
-As stated above, all of the plugins published on https://www.npmjs.com/ will work and will remain the same for consumers of the plugins, only difference will be for the contributors, but you can read more details in https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/CONTRIBUTING.md. 
+All of the plugins published on https://www.npmjs.com/ will work and will remain the same for consumers of the plugins, only difference will be for the contributors, but you can read more details in https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/CONTRIBUTING.md. 
 
 This type of changes are always a bit difficult at the start but we are confident this change will result in smoother experience for the users of the plugins and easier contributions, which we always welcome.
 
