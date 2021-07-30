@@ -63,7 +63,9 @@ const useStyles = createUseStyles((theme) => ({
     boxShadow: `0px 8px 16px 0px ${theme.palette.grey[300]}`,
     minWidth: '30ch',
     // Use the left from absolute position to shift the left side
-    left: '50%',
+    // Changing this value can cause horizontal scrolling of the entire page on full-width
+    // layouts.
+    left: '10%',
     // Use translateX to shift the menu 50% of it's width back to the left
     // RotateX helps to hide the dropdown without using display none.
     transform: 'rotateX(-90deg) translateX(-30%)',
