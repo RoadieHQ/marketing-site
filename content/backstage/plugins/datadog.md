@@ -169,3 +169,9 @@ metadata:
 Sharing Datadog dashboards and graphs makes them public on the internet and accessible by anyone with the URL. 
 
 Make sure you do not share these URLs with untrusted actors.
+
+## Repository migration notice (June/July 2021)
+
+In order to make testing and deployment of our plugins easier we are migrating all Roadie plugins to a monorepo at https://github.com/RoadieHQ/backstage-roadie-plugins.
+
+The plugins will still be published to the same place on NPM and will have the same package names so nothing should change for consumers of these plugins.
