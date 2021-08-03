@@ -3,6 +3,8 @@ title: Backstage TechDocs - How to embed lucid chart diagrams
 date: '2021-08-03T10:30:00.0Z'
 description: TechDocs converts markdown files to Backstage docs so your engineering teams can find them and it is very useful. But how do we embed diagrams from lucid chart.
 tags: ['tutorial', 'techdocs', 'lucid chart']
+author:
+  name: Brian Fletcher
 ---
 
 TechDocs is the core Backstage feature which transforms markdown documentation into HTML and displays it inside Backstage where your engineering teams can find it.
