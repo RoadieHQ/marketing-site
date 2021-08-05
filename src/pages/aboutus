@@ -7,13 +7,12 @@ import {
   ResponsiveSpacer,
 } from 'components';
 // eslint-disable-next-line import/named
-import { Testimonial, Hero, FooterCTA, features } from 'components/home';
+import { Hero, FooterCTA } from 'components/home';
 
-const SEO_TITLE = 'Backstage Developer Portal';
-const HEADLINE = 'Ship faster with a powerful developer portal';
+const SEO_TITLE = 'Roadie Company About Us';
+const HEADLINE = 'Who We Are';
 const LEAD = `
-Get quick and easy access to Backstage, the OSS developer portal
-which has powered Spotify's 3,000 microservices for 4+ years.
+Bringing you Backstage for growing engineering teams, deployed in under 5 minutes.
 `;
 
 const Home = ({ data, location }) => {
@@ -28,37 +27,25 @@ const Home = ({ data, location }) => {
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
-          <Testimonial />
-        </ResponsiveSpacer>
-
-        <ResponsiveSpacer>
           <InterstitialTitle
             id="product"
             size="large"
           >
-            Backstage with benefits...
+            Founded in 2020, and having raised a seed round we set out to solve the biggest hurdles of quickly growing engineering teams. We are a small, but quickly growing company. We are fully remote working across Europe.    
           </InterstitialTitle>
         </ResponsiveSpacer>
-
-        {features.quickEasySetup}
-        {features.customPlugins}
-        {features.securityMaintenance}
 
         <ResponsiveSpacer>
           <InterstitialTitle
             id="solutions"
             size="large"
           >
-            Turn tribal knowledge into shared context
+            Take a bet on us...These folks did!
           </InterstitialTitle>
         </ResponsiveSpacer>
 
-        {features.builtOnBackstage}
-        {features.discoverabilityAndOnboarding}
-        {features.productionConsistency}
-
         <ResponsiveSpacer>
-          <InterstitialTitle size="large" text="Sounds good? Let's get started..." />
+          <InterstitialTitle size="large" text="Meet The Team" />
         </ResponsiveSpacer>
 
 
