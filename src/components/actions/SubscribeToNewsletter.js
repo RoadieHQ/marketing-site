@@ -1,5 +1,5 @@
 import React from 'react';
-import { InterstitialTitle, Link } from 'components';
+import { InterstitialTitle, TextLink as Link } from 'components';
 import { createUseStyles } from 'react-jss';
 
 import FormSubmissionModal from './FormSubmissionModal';
@@ -53,7 +53,7 @@ export const SubscribeToNewsletterCTA = (props) => {
       <p className={classes.callToActionParagraph}>
         To get the latest news, deep dives into Backstage features, and a roundup of recent
         open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
-        <Link to="/backstage-weekly/">See recent editions.</Link>
+        <Link color="primary" to="/backstage-weekly/">See recent editions.</Link>
       </p>
 
       <CallToAction
