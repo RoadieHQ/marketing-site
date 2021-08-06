@@ -11,29 +11,28 @@ plugin components and the different places they can be integrated into the app.
 
 ## Prerequisites
 
-* You must be an admin to edit the UI layout. Please complete [this guide](docs/getting-started/getting-started-for-admins/) before moving on to this one.
+* You must be an admin to edit the UI layout. Please complete [this guide](/docs/getting-started/getting-started-for-admins/) before moving on to this one.
 
 ## About Plugins
 
 Backstage is a plugin based application where each plugin provides a certain piece of functionality. A plugin may
 integrate with some external system such as GitHub to display information for a certain Entity e.g. Show pull request
-information for a particular service. You can read more about Backstage plugins [here](https://backstage.io/docs/plugins/).
+information for a particular service. 
+
+You can read more about Backstage plugins [here](https://backstage.io/docs/plugins/).
 
 In terms of the Backstage layout plugins can provide [three types of component](https://backstage.io/docs/plugins/composability#naming-patterns):
 1. Card - These are tiles which can be arranged into dashboards in the software catalog. E.g. The About card.
 2. Content - These are tabs which can be integrated with the catalog. E.g. The techdocs tab.
-3. Page - These are top-level pages in Backstage, outside of the catalog. E.g. The catalog itself is a Page.
+3. Page - These are top-level pages in Backstage, outside of the catalog. Accessible via links in the sidebar. E.g. The catalog itself is a Page.
 
 ## Updating the Catalog Layout
 
-As mentioned card and content components are integrated with the catalog. A content component provides a tab which 
-entities can display. A card is displayed within a dashboard which is itself a content component. 
-
-Admin users can add card and content components to catalog pages to configure what is displayed to users. Layouts are configured
+Admin users can add components to catalog pages to configure what is displayed to users when they view an entity. Layouts are configured
 per entity **kind** except for Component entities which have layouts per **type**. For example, "User" and "Group" are each kinds
 of entity and so User entities have a different layout to Group entities. Similarly, Component entities have types such
-as "Service", "Library", "Website", etc and different types can have different layouts. However, different services or
-particular Groups can't have separate layouts. This to encourage consistency.
+as "Service", "Library", "Website", etc and different types can have different layouts. However, a particular entity can't
+have its own layout; A particular Group or service can't have a unique layout. This is to encourage a consistent UX.
 
 ### Updating Tabs
 

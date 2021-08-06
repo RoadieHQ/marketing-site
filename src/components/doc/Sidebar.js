@@ -124,6 +124,8 @@ const DocSidebar = () => {
           />
 
           <SidebarItem to="/docs/getting-started/openapi-specs/" text="Using OpenAPI specs" />
+
+          <SidebarItem to="/docs/getting-started/updating-the-ui/" text="Updating the UI" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Integrations">
