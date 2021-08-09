@@ -15,13 +15,13 @@ Here's how the search results look in Backstage. I have a component in my catalo
 
 ![a search bar with the word markdown in it and a list of Backstage pages which contain the word markdown](./techdocs-search-ui.png)
 
-### How it works
+## How it works
 
 At a high level, the search architecture is quite simple. The TechDocs plugin registers content with the Backstage search layer. The search layer periodically reaches out to index that content in a search engine of some description. The query layer can search for results in the index and display them in the search UI. 
 
 For more details, see the comprehensive diagram in the [Backstage docs](https://backstage.io/docs/features/search/architecture).
 
-### Supported search engines
+## Supported search engines
 
 Thanks to hard work by Spotify, SDA SE and Roadie, three search engines are now supported. They are Lunr, PostgreSQL and ElasticSearch.
 
@@ -55,7 +55,7 @@ This improved performance comes at the cost of having another Backstage dependen
 
 ![a table with a summary of the main pros and cons of each search engine. This image contains no information which is not covered in the text above](./backstage-search-engine-comparison.png)
 
-### What's next
+## What's next
 
 To get started with search in Backstage, check out [the official docs](https://backstage.io/docs/features/search/search-engines).
 
