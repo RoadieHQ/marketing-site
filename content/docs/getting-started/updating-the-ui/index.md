@@ -58,7 +58,7 @@ To edit a dashboard click the cog icon on the top right of the dashboard below t
 
 ![Edit Dashboard Button](./edit-grid-button.png)
 
-This will switch the dashboard into and edit view. You can drag and drop to rearrange or click the dustbin icon to remove a card. 
+This will switch the dashboard into an edit view. You can drag and drop to rearrange or click the dustbin icon to remove a card. 
 
 ![Edit dashboard view](./move-card.png)
 
