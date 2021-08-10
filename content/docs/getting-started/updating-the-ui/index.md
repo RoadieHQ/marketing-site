@@ -23,7 +23,7 @@ You can read more about Backstage plugins [here](https://backstage.io/docs/plugi
 
 In terms of the Backstage layout plugins can provide [three types of component](https://backstage.io/docs/plugins/composability#naming-patterns):
 1. Card - These are tiles which can be arranged into dashboards in the software catalog. E.g. The About card.
-2. Content - These are tabs which can be integrated with the catalog. E.g. The techdocs tab.
+2. Content - These are tabs which can be integrated with the catalog. E.g. The TechDocs tab.
 3. Page - These are top-level pages in Backstage, outside of the catalog. Accessible via links in the sidebar. E.g. The catalog itself is a Page.
 
 ## Updating the Catalog Layout
