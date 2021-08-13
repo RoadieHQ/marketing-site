@@ -49,7 +49,9 @@ We will use the approach which is recommended by AWS for providing this type of 
 
 ![Another AWS Account](./role-creation.png)
 
-5. Ignore attached policies and click on ”Next: tags” (Roadie does not need to read your AWS resources, only access to your Kubernetes cluster).
+5. Click the checkbox beside "Require External ID" and enter some value.
+
+6. Ignore attached policies and click on ”Next: tags” (Roadie does not need to read your AWS resources, only access to your Kubernetes cluster).
 
 Optional: Add a tag, Key: `3rdPartyIntegration` Value: `Roadie`
 
@@ -176,7 +178,7 @@ subjects:
 ### Step 4: Adding a cluster to roadie
 
 1. Navigate to ”https://<tenant-name>.roadie.so/administration/settings/kubernetes” and click on add item.
-2. Add the load balancer url, role arn and name of cluster.
+2. Add the load balancer url, role arn, external ID and name of cluster.
 3. Click save and exit!
 
 > You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: ”backstage.io/kubernetes-label-selector: 'app=my-app,component=frontend'”
