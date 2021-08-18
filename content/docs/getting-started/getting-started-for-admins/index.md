@@ -27,7 +27,6 @@ In order to complete this guide, you will need the following things:
 
 ## Connect Roadie to GitHub
 
-
 Roadie needs to connect to GitHub in order to function. This can be setup by installing the Roadie GitHub App.
 Installing the GitHub App will allow Roadie to:
 
