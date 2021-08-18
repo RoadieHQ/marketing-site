@@ -27,6 +27,7 @@ In order to complete this guide, you will need the following things:
 
 ## Connect Roadie to GitHub
 
+
 Roadie needs to connect to GitHub in order to function. This can be setup by installing the Roadie GitHub App.
 Installing the GitHub App will allow Roadie to:
 
@@ -41,6 +42,8 @@ You can find a link to install the GitHub app in the Backstage application:
 3. Click on the link to install the GitHub app.
 4. Follow the steps to install the App
 5. You may need to wait up to 2 minutes for the GitHub integration to become active
+
+ℹ️  &nbsp;If you are not an owner of your GitHub organization, you will need to ask an owner to approve the App installation and then contact us to enable the App.
 
 ![Install GitHub App](./install-github-app.png)
 
