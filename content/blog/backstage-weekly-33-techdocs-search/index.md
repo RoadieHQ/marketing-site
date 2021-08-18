@@ -43,7 +43,7 @@ PostgreSQL search support was [contributed by SDA SE](https://github.com/backsta
 
 It brings a nice balance of simple setup, decent results and decent scalability. It should perform well even with thousands of documents indexed. Because this search function is backed by a real database, the index isn't rebuilt every time Backstage starts up, and boot performance is improved. 
 
-PostgreSQL search requires at least PostgreSQL 11. A similar SQL based search implementation may be possible for MySQL or Sqlite in the future, but there are currently no plans for this.
+PostgreSQL search requires at least PostgreSQL 12. A similar SQL based search implementation may be possible for MySQL or Sqlite in the future, but there are currently no plans for this.
 
 **ElasticSearch**
 
