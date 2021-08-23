@@ -9,7 +9,7 @@ tags: ['updates']
 
 Contributing to the Backstage community has been one of the top goals in our roadmap. We have focused on developing plugins for developers with the goal of making their job more efficient. Over time, we produced multiple plugins contained within their own repositories. This is sometimes referred to as a multirepo approach as opposed to a monorepo with a single repository that contains multiple plugins. Our multirepo setup was a reasonable approach to begin with.
 
-Although a number of teams have embraced monorepos, there are reasons why we have stayed away up until now. We started to face challenges with the increasing number of plugins that we maintain. One of main challenges was with dependency management across all of our repositories which eventually became very complex. Instead, we wanted to have an automated, simple solution that would not be so time consuming and would give us a solid ground for additional features we have in mind. So, we made a decision to migrate all of our plugins to the https://github.com/RoadieHQ/backstage-roadie-plugins monorepo.
+Although a number of teams have embraced monorepos, there are reasons why we have stayed away up until now. We started to face challenges with the increasing number of plugins that we maintain. One of main challenges was with dependency management across all of our repositories which eventually became very complex. Instead, we wanted to have an automated, simple solution that would not be so time consuming and would give us a solid ground for additional features we have in mind. So, we made a decision to migrate all of our plugins to the [RoadieHQ/backstage-roadie-plugins](https://github.com/RoadieHQ/backstage-roadie-plugins) monorepo.
 
 ## Improvements
 
@@ -47,8 +47,8 @@ We decided to use https://lerna.js.org/ to manage our monorepo. We settled on a 
 
 ## Conclusion
 
-All of the plugins we developed and maintain are gradually being migrated to the https://github.com/RoadieHQ/backstage-roadie-plugins repository.
+All of the plugins we developed and maintain are gradually being migrated to the [RoadieHQ/backstage-roadie-plugins](https://github.com/RoadieHQ/backstage-roadie-plugins) repository.
 
-Plugin users will not notice any difference with how they consume our plugins from https://www.npmjs.com/. This migration does make a difference for plugin contributors. You can read more about contributing at https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/CONTRIBUTING.md.
+Plugin users will not notice any difference with how they consume our plugins from NPM. This migration does make a difference for plugin contributors. You can read more about contributing in our [CONTRIBUTING.md](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/CONTRIBUTING.md) file.
 
 This type of structural change is always a bit difficult at the start but we are confident it will result in a better experience for our plugin users. We always welcome contributions to our plugins and hope that this change will also make it easier to contribute.
