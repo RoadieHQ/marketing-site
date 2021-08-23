@@ -1,6 +1,6 @@
 ---
 title: Plugins migration to monorepo
-date: '2021-07-30T16:00:00.0Z'
+date: '2021-08-23T16:00:00.0Z'
 description:  Major change in the way we handle our plugins.
 author:
   name: Irma Solakovic
@@ -41,9 +41,9 @@ Ensuring builds are efficient and practical is a challenge regardless of the tea
 
 # 2) Manage publishing of the packages
 
-Although all plugins are contained within a single source code repository, each plugin is individually published to https://www.npmjs.com/. We needed a tool that would allow us to publish multiple packages but also optimize the workflow to ensure only packages that have changes are published. 
+Although all plugins are contained within a single source code repository, each plugin is individually published to NPM. We needed a tool that would allow us to publish multiple packages but also optimize the workflow to ensure only packages that have changes are published.
 
-We decided to use https://lerna.js.org/ to manage our monorepo. We settled on a semi-automatic build and publish workflow. The package versioning is done manually and the publishing is done automatically. Lerna helps with detecting changes in the packages and only publishes the ones that have updated versions.
+We decided to use [Lerna](https://lerna.js.org/) to manage our monorepo. We settled on a semi-automatic build and publish workflow. The package versioning is done manually and the publishing is done automatically. Lerna helps with detecting changes in the packages and only publishes the ones that have updated versions.
 
 ## Conclusion
 
