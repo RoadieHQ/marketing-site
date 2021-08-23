@@ -9,7 +9,7 @@ tags: ['updates']
 
 Contributing to the Backstage community has been one of the top goals in our roadmap. We have focused on developing plugins for developers with the goal of making their job more efficient. Over time, we produced multiple plugins contained within their own repositories. This is sometimes referred to as a multirepo approach as opposed to a monorepo with a single repository that contains multiple plugins. Our multirepo setup was a reasonable approach to begin with.
 
-Although a number of teams have embraced monorepos, there are reasons why we have stayed away up until now. We started to face challenges with the increasing number of plugins that we maintain. One of main challenges was with dependency management across all of our repositories which eventually became very complex. Instead, we wanted to have an automated, simple solution that would not be so time consuming and would give us a solid ground for additional features we have in mind. So, we made a decision to migrate all of our plugins to the [RoadieHQ/backstage-roadie-plugins](https://github.com/RoadieHQ/backstage-roadie-plugins) monorepo.
+Although a number of teams have embraced monorepos, there are reasons why we have stayed away up until now. We started to face challenges with the increasing number of plugins that we maintain. One of the main challenges was with dependency management across all of our repositories which eventually became very complex. Instead, we wanted to have an automated, simple solution that would not be so time consuming and would give us a solid ground for additional features we have in mind. So, we made a decision to migrate all of our plugins to the [RoadieHQ/backstage-roadie-plugins](https://github.com/RoadieHQ/backstage-roadie-plugins) monorepo.
 
 ## Improvements
 
@@ -27,7 +27,7 @@ It is easier for contributors to test against other plugins and possibly make mu
 
 We can reuse and improve CI/CD configuration and tests across all of our plugins at the same time without needing to have  separate and sometimes duplicated configuration per plugin.
 
-# 3) Easier to keep track of upstream updates.
+# 4) Easier to keep track of upstream updates.
 
 We created a workflow that runs periodically to check for updates from the Backstage team. The workflow automatically creates a pull request with updates to the package versions for all of the plugins. The workflow also runs checks to ensure everything works as expected once the changes are merged to the main branch.
 
