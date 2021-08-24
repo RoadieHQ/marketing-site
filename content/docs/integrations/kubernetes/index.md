@@ -98,7 +98,7 @@ You should see a page like this
       "Action": "sts:AssumeRole",
       "Condition": {
         "StringEquals": {
-          "sts:ExternalId": "XXXXYour ID XXXX"
+          "sts:ExternalId": "EXTERNAL ID AS CONFIGURED ABOVE"
         },
         "StringLike": {
           "aws:PrincipalArn": [
