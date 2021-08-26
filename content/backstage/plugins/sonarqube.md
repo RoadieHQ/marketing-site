@@ -53,8 +53,7 @@ gettingStarted:
         '/sonarqube':
           target: https://sonarcloud.io/api
           allowedMethods: ['GET']
-          headers:
-            Authorization: Basic ${SONARCLOUD_AUTH}
+          auth: "${SONARCLOUD_TOKEN}:"
 
   - intro: Add the proxy config for SonarQube (auth token is read from the environment variables)
     language: YAML
@@ -88,6 +87,7 @@ It is always important to base encode our tokens.
 
 ``` bash
 $ export SONARCLOUD_TOKEN="<YOUR_SONARCLOUD_TOKEN>"
+$ export SONARQUBE_TOKEN="<YOUR_SONARQUBE_TOKEN>"
 ```
 
 You can then add these token(s) to a `.env` file or keep it as an exported variable.
