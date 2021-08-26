@@ -113,4 +113,4 @@ With this example file the tech radar will be constructed to have rings `use`, `
 
 ## More information
 
-[Backstage tech radar plugin documentation](https://github.com/backstage/backstage/blob/master/plugins/tech-radar/README.md)
+[Backstage Tech Radar plugin documentation](https://github.com/backstage/backstage/blob/master/plugins/tech-radar/README.md)
