@@ -139,7 +139,10 @@ const DocSidebar = () => {
           <SidebarItem to="/docs/integrations/kubernetes/" text="Kubernetes" />
           <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
           <SidebarItem to="/docs/integrations/sonarqube/" text="SonarQube" />
-          <SidebarItem to="/docs/integrations/tech-radar/" text="Tech Radar" />
+        </SidebarSectionList>
+
+        <SidebarSectionList title="Configuration">
+          <SidebarItem to="/docs/configuration/tech-radar/" text="Tech Radar" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Custom plugins">
