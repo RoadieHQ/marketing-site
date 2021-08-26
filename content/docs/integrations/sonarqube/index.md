@@ -25,21 +25,12 @@ In order for the Backstage integration to work we must first generate our api ke
  * [Sonarcloud](https://sonarcloud.io/account/security) for your sonarcloud plugin
  * [SonarQube](https://docs.sonarqube.org/latest/user-guide/user-token/) for your sonarqube plugin
 
-### Step 2: Base64 encode the credentials 
-It is always important to base encode our tokens.
-
-``` bash
-# Note it is important to keep the trailing ':'
-$ export SONARQUBE_AUTH=$(base64 <<< "<YOUR_SONARQUBE_TOKEN>:")
-$ echo $SONARQUBE_AUTH
-````
-
-### Step 3: Store the credentials and SonarQube URL in Roadie
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the base64 encoded and prefixed token value from above into `SONARQUBE_AUTH`.
+### Step 2: Store the credentials and SonarQube URL in Roadie
+Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the token value from above into `SONARQUBE_TOKEN`.
 
 ![Token in Roadie](./secret.png)
 
-### Optional Step 4: Set SonarQube proxy in the settings
+### Optional Step 3: Set SonarQube proxy in the settings
 
 This step is only required when integrating with an on-prem SonarCube instance.
 
@@ -50,8 +41,7 @@ proxy:
   '/sonarqube':
     target: https://your.sonarqube.instance.com/api
     allowedMethods: ['GET']
-    headers:
-      Authorization: Basic ${SONARQUBE_AUTH}
+    auth: "${SONARQUBE_TOKEN}:"
 
 ```
 ![Cloud based configuration](./cloud.png)
