@@ -43,7 +43,7 @@ gettingStarted:
         </Grid>
       );
 
-  - intro: Get and provide SONARQUBE_AUTH/SONARCLOUD_AUTH as env variables (see Notes on how to generate these values)
+  - intro: Get and provide SONARQUBE_TOKEN as env variables (see Notes on how to generate these values)
 
   - intro: Add the proxy config for SonarCloud (auth token is read from the environment variables)
     language: YAML
@@ -63,8 +63,7 @@ gettingStarted:
       '/sonarqube':
         target: https://your.sonarqube.instance.com/api
         allowedMethods: ['GET']
-        headers:
-          Authorization: Basic ${SONARQUBE_AUTH}
+        auth: "${SONARQUBE_TOKEN}:"
 
       sonarQube:
         baseUrl: https://your.sonarqube.instance.com
@@ -88,8 +87,7 @@ These will then be used in our app-config.yaml and subsequently picked up by bac
 It is always important to base encode our tokens.
 
 ``` bash
-$ export SONARCLOUD_AUTH=$(base64 <<< "<YOUR_SONARCLOUD_TOKEN>:") # Note it is important to keep the trailing ':'
-$ export SONARQUBE_AUTH=$(base64 <<< "<YOUR_SONARQUBE_TOKEN>:") # Note it is important to keep the trailing ':'
+$ export SONARCLOUD_TOKEN="<YOUR_SONARCLOUD_TOKEN>"
 ```
 
 You can then add these token(s) to a `.env` file or keep it as an exported variable.
