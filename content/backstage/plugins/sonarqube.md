@@ -43,7 +43,7 @@ gettingStarted:
         </Grid>
       );
 
-  - intro: Get and provide SONARQUBE_TOKEN as env variables (see Notes on how to generate these values)
+  - intro: Get and provide SONARCLOUD_TOKEN/SONARQUBE_TOKEN as env variables (see Notes on how to generate these values)
 
   - intro: Add the proxy config for SonarCloud (auth token is read from the environment variables)
     language: YAML
