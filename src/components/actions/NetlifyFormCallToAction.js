@@ -6,7 +6,7 @@ import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
-const encode = (data) => {
+export const encode = (data) => {
   const formData = new FormData();
   Object.keys(data).forEach((k) => {
     formData.append(k, data[k]);
