@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Radio, TextLink as Link } from 'components';
+import { Button, TextField, Radio, Checkbox, TextLink as Link } from 'components';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles(() => ({
@@ -75,17 +75,12 @@ const ExtendedGetInstanceCallToAction = () => {
       </div>
 
       <div className={classes.fieldset}>
-        <label>
-          <input
-            name="sub-to-newsletter"
-            type="checkbox"
-            checked={subToNewsletter}
-            onChange={(e) => {
-              setSubToNewsletter(e.target.value);
-            }}
-          />
-          {' '} Subscribe me to the Backstage Weekly newsletter.
-        </label>
+        <Checkbox
+          name="sub-to-newsletter"
+          label="Subscribe me to the Backstage Weekly newsletter."
+          checked={subToNewsletter}
+          onChange={setSubToNewsletter}
+        />
       </div>
 
       <div className={classes.fieldset}>
