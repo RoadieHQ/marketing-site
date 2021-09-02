@@ -24,8 +24,8 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and ente
 
 ### Step 3: Configure Roadie to connect to your Opsgenie account
 
-Visit `http://localhost:3000/administration/settings/opsgenie` and enter the following:
-* The domain of your Opsgenie app (e.g. https://my-app.app.eu.opsgenie.com/)
+Visit `https://<tenant-name>.roadie.so/administration/settings/opsgenie` and enter the following:
+* The domain of your Opsgenie app (e.g. `https://my-app.app.eu.opsgenie.com/`)
 * The API endpoint you use (e.g. US / EU )
 
 ![Set Opsgenie Config](./config.png)
@@ -33,7 +33,9 @@ Visit `http://localhost:3000/administration/settings/opsgenie` and enter the fol
 ### Step $: Add the Opsgenie UI elements
 
 The Opsgenie plugin provides two type of UI elements. 
+
 The card `EntityOpsgenieAlertsCard` displays alerts for particular components and can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards). 
+
 The overview page `OpsgeniePage` can be also be [added to the sidebar](/docs/getting-started/updating-the-ui#updating-the-sidebar).
 
 ## References
