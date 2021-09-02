@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   input: {
@@ -35,6 +36,10 @@ const useStyles = createUseStyles((theme) => ({
     },
   },
 
+  label: {
+    fontWeight: 700,
+  },
+
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     input: {
       fontSize: '2rem',
@@ -45,14 +50,30 @@ const useStyles = createUseStyles((theme) => ({
 }));
 
 
-const TextField = ({ id, label, ...rest }) => {
+const TextField = ({ id, label, onChange, className = {}, ...rest }) => {
   const classes = useStyles();
   const htmlId = id ? id : Math.random().toString(36).slice(2);
 
+  const onInputChange = (e) => {
+    onChange(e.target.value);
+  };
+
   return (
     <div>
-      {label && <div><label htmlFor={htmlId}>{label}</label></div>}
-      <input id={htmlId} className={classes.input} {...rest} />
+      {label && (
+        <div>
+          <label htmlFor={htmlId} className={classes.label}>
+            {label}
+          </label>
+        </div>
+      )}
+
+      <input
+        id={htmlId}
+        onChange={onInputChange}
+        className={classnames(classes.input, className.input)}
+        {...rest}
+      />
     </div>
   );
 };

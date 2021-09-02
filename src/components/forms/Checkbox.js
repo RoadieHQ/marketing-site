@@ -40,7 +40,7 @@ const Checkbox = ({ onChange, label, ...rest }) => {
   const classes = useStyles();
 
   const onChangeValue = (e) => {
-    onChange(e.target.value);
+    onChange(e.target.checked);
   };
 
   return (
