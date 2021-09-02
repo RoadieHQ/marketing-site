@@ -30,7 +30,7 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/opsgenie` and ent
 
 ![Set Opsgenie Config](./config.png)
 
-### Step $: Add the Opsgenie UI elements
+### Step 4: Add the Opsgenie UI elements
 
 The Opsgenie plugin provides two type of UI elements. 
 
