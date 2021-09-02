@@ -122,7 +122,7 @@ const ExtendedGetInstanceCallToAction = () => {
       </div>
 
       <div className={classes.fieldset}>
-        <p>By submitting this form, you automatically agree our <Link color="primary" to="/legal-notices/evaluation-licence/">Evaluation License</Link> and acknowledge you have read our <Link color="primary" to="/legal-notices/privacy-policy/">Privacy Policy</Link>.</p>
+        <p>By submitting this form, you automatically agree to our <Link color="primary" to="/legal-notices/evaluation-licence/">Evaluation License</Link> and acknowledge you have read our <Link color="primary" to="/legal-notices/privacy-policy/">Privacy Policy</Link>.</p>
       </div>
 
       <div className={classes.fieldset}>
