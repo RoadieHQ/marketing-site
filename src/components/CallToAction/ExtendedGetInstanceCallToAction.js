@@ -57,7 +57,7 @@ const ExtendedGetInstanceCallToAction = () => {
 
         <div className={classes.radioWrapper}>
           <Radio
-            label="GitHub Enterprise (On-prem)"
+            label="GitHub Enterprise (on-prem)"
             value="github-enterprise-on-prem"
             currentValue={scmTool}
             onChange={setScmTool}
@@ -66,8 +66,44 @@ const ExtendedGetInstanceCallToAction = () => {
 
         <div className={classes.radioWrapper}>
           <Radio
-            label="GitHub"
+            label="GitHub (Not sure)"
             value="github"
+            currentValue={scmTool}
+            onChange={setScmTool}
+          />
+        </div>
+
+        <div className={classes.radioWrapper}>
+          <Radio
+            label="Bitbucket Cloud"
+            value="bitbucket-cloud"
+            currentValue={scmTool}
+            onChange={setScmTool}
+          />
+        </div>
+
+        <div className={classes.radioWrapper}>
+          <Radio
+            label="Bitbucket Server (on-prem)"
+            value="bitbucket-server"
+            currentValue={scmTool}
+            onChange={setScmTool}
+          />
+        </div>
+
+        <div className={classes.radioWrapper}>
+          <Radio
+            label="GitLab Cloud"
+            value="gitlab-cloud"
+            currentValue={scmTool}
+            onChange={setScmTool}
+          />
+        </div>
+
+        <div className={classes.radioWrapper}>
+          <Radio
+            label="GitLab On-prem"
+            value="gitlab-on-prem"
             currentValue={scmTool}
             onChange={setScmTool}
           />
