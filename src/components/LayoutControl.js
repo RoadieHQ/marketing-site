@@ -3,11 +3,9 @@ import { createUseStyles, useTheme } from 'react-jss';
 
 const useStyles = createUseStyles(() => ({
   root: {
+    height: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
-
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 }));
 

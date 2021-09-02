@@ -34,6 +34,7 @@ const StickyFooter = ({
   location,
   headerBottomBorder,
   maxWidthBreakpoint = DEFAULT_MAX_WIDTH_BREAKPOINT,
+  headerBottomMargin = '1em',
 }) => {
   const classes = useStyles();
 
@@ -48,6 +49,7 @@ const StickyFooter = ({
           location={location}
           bottomBorder={headerBottomBorder}
           maxWidthBreakpoint={maxWidthBreakpoint}
+          bottomMargin={headerBottomMargin}
         />
 
         <LayoutControl maxWidthBreakpoint={maxWidthBreakpoint}>{children}</LayoutControl>

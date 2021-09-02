@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { FaPaperPlane } from 'react-icons/fa';
 
 import { currentlyExecutingGitBranch } from '../../environment';
-import Button from '../Button';
+import { TextField, Button } from 'components';
 
 const styles = (theme) => ({
   inputWrapper: {
@@ -12,39 +12,6 @@ const styles = (theme) => ({
     display: 'flex',
     marginBottom: 8,
     flexDirection: 'column',
-  },
-
-  input: {
-    flex: 1,
-
-    border: 'none',
-    borderLeft: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: 0,
-
-    backgroundColor: theme.palette.grey[100],
-    color: theme.palette.secondary.dark,
-
-    lineHeight: 2,
-    fontSize: '2rem',
-    padding: '0.5rem',
-    marginBottom: 8,
-
-    '&:focus': {
-      borderRadius: 0,
-      // Just change the color of the border so the cursor in the input doesn't move.
-      borderLeftColor: 'transparent',
-      outlineWidth: 2,
-      outlineStyle: 'solid',
-      outlineColor: theme.palette.primary.main,
-      // Fixes issue in Firefox where outline is outside the input vs Chrome where it is inside.
-      outlineOffset: -2,
-    },
-
-    '&::placeholder': {
-      color: theme.palette.secondary.light,
-      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
-      opacity: 0.5,
-    },
   },
 
   subForm: {
@@ -58,12 +25,6 @@ const styles = (theme) => ({
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    input: {
-      fontSize: '2rem',
-      padding: '0.5rem 0.5rem',
-      marginBottom: 0,
-    },
-
     inputWrapper: {
       flexDirection: 'row',
     },
@@ -109,13 +70,12 @@ const EmailCaptureForm = ({
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
       <div className={classes.inputWrapper}>
-        <input
+        <TextField
           type="email"
           name="email"
           id={emailInputId}
           aria-label="Work email address"
           placeholder={placeholderText}
-          className={classes.input}
           onChange={onInputChange}
           value={email}
           autoFocus={autoFocus}
