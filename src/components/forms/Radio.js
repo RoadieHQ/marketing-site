@@ -3,11 +3,9 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    // fontSize: '2.25rem',
-    // color: theme.palette.primary.main,
-    display: 'grid',
-    gridTemplateColumns: 'min-content auto',
-    gridGap: '0.5em',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 
   input: {
@@ -16,12 +14,13 @@ const useStyles = createUseStyles((theme) => ({
     height: 0,
 
     '&:checked + $radioControl': {
-      background: `radial-gradient(${theme.palette.primary.main} 50%, rgba(255, 0, 0, 0) 40%)`,
+      background: `radial-gradient(${theme.palette.primary.main} 35%, rgba(255, 0, 0, 0) 40%)`,
     }
   },
 
   radioInput: {
     display: 'flex',
+    marginRight: 8,
   },
 
   radioLabel: {
@@ -30,11 +29,10 @@ const useStyles = createUseStyles((theme) => ({
 
   radioControl: {
     display: 'block',
-    width: '1.2em',
-    height: '1.2em',
+    width: 20,
+    height: 20,
     borderRadius: '50%',
-    border: `0.1em solid ${theme.palette.primary.main}`,
-    transform: 'translateY(-0.3em)',
+    boxShadow: 'inset 0 0 3px #222',
   },
 }));
 
