@@ -1,6 +1,6 @@
 export default (theme) => ({
   root: {
-    marginBottom: '1em',
+    marginBottom: ({ bottomMargin }) => bottomMargin,
     borderBottom: ({ bottomBorder }) =>
       bottomBorder ? `1px solid ${theme.palette.grey[300]}` : 'none',
   },
@@ -11,6 +11,8 @@ export default (theme) => ({
     justifyContent: 'space-between',
     paddingTop: '1em',
     paddingBottom: '1em',
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 
   fullScreenNav: {

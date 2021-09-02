@@ -5,6 +5,9 @@ import { Link } from 'components';
 const useStyles = createUseStyles((theme) => ({
   root: {
     paddingTop: 16,
+    backgroundColor: 'white',
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 
   inner: {
