@@ -7,4 +7,5 @@
 exports.FORM_NAMES = {
   subscribeToNewsletter: 'subscribe-to-newsletter',
   getInstance: 'submit-get-instance-form',
+  getInstanceExtended: 'submit-extended-get-instance-form',
 };

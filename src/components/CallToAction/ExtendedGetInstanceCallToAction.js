@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Button, TextField, Radio, Checkbox, TextLink as Link } from 'components';
 import { createUseStyles } from 'react-jss';
 
+import { FORM_NAMES } from '../../contactFormConstants';
+import { encode } from '../actions/NetlifyFormCallToAction';
+
 const useStyles = createUseStyles(() => ({
   fieldset: {
     marginBottom: '2em',
@@ -16,16 +19,53 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
+export const submitToNetlifyForms = async ({
+  email,
+  scmTool,
+  subToNewsletter,
+}) => {
+  const resp = await fetch('/', {
+    method: 'POST',
+    body: encode({
+      'form-name': FORM_NAMES.getInstanceExtended,
+      email,
+      subToNewsletter,
+      scmTool,
+    }),
+  });
+
+  return resp;
+};
+
 const ExtendedGetInstanceCallToAction = () => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [scmTool, setScmTool] = useState('github-enterprise-cloud');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
     console.log('submit', email, scmTool, subToNewsletter);
+
+    const resp = await submitToNetlifyForms({
+      email,
+      scmTool,
+      subToNewsletter,
+    });
+
+    if (resp.ok) {
+      console.log('resp ok', resp);
+      // DO NOT reset the email input here. It is already happening higher in the state chain.
+    } else {
+      console.log('error');
+    }
+
+    setSubmitting(false);
   };
+
+  const disabled = submitting || !email || email === '';
 
   return (
     <form onSubmit={onSubmit}>
@@ -126,7 +166,7 @@ const ExtendedGetInstanceCallToAction = () => {
       </div>
 
       <div className={classes.fieldset}>
-        <Button color="primary" text="Start your trial" />
+        <Button color="primary" text="Start your trial" disabled={disabled} />
       </div>
     </form>
   );
