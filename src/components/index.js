@@ -18,5 +18,5 @@ export { default as TwoColumnLayout } from './TwoColumnLayout';
 export { default as ResponsiveSpacer } from './ResponsiveSpacer';
 export { default as TextLink } from './TextLink';
 export { default as ContentHeader } from './ContentHeader';
-export { Radio, TextField, Button } from './forms';
+export { Radio, TextField, Button, Checkbox } from './forms';
 export { ButtonLinkCallToAction } from './CallToAction';
