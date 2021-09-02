@@ -79,6 +79,7 @@ const EmailCaptureForm = ({
           onChange={onInputChange}
           value={email}
           autoFocus={autoFocus}
+          color="primary"
         />
 
         <Button

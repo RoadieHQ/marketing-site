@@ -10,6 +10,10 @@ const useStyles = createUseStyles(() => ({
   radioWrapper: {
     marginBottom: '0.4em',
   },
+
+  emailInput: {
+    width: '100%',
+  },
 }));
 
 const ExtendedGetInstanceCallToAction = () => {
@@ -18,24 +22,22 @@ const ExtendedGetInstanceCallToAction = () => {
   const [scmTool, setScmTool] = useState('github-enterprise-cloud');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
 
-  const onSubmit = () => {
-    console.log('submit', email, scmTool);
-  };
-
-  const onInputChange = (e) => {
-    setEmail(e.target.value);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log('submit', email, scmTool, subToNewsletter);
   };
 
   return (
     <form onSubmit={onSubmit}>
       <div className={classes.fieldset}>
         <TextField
-          label="Work email address"
+          label="Work email address *"
           type="email"
           name="email"
           id="form-email"
-          onChange={onInputChange}
+          onChange={setEmail}
           value={email}
+          className={{ input: classes.emailInput }}
         />
       </div>
 
@@ -124,7 +126,7 @@ const ExtendedGetInstanceCallToAction = () => {
       </div>
 
       <div className={classes.fieldset}>
-        <Button color="primary" />
+        <Button color="primary" text="Start your trial" />
       </div>
     </form>
   );
