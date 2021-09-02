@@ -22,7 +22,7 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and ente
 
 ![Set OPSGENIE_API_KEY via UI](./secret.png)
 
-### Step 3: Configure Roadie to connect to your Opsgenie account
+### Step 3: Configure Roadie with your Opsgenie account details
 
 Visit `https://<tenant-name>.roadie.so/administration/settings/opsgenie` and enter the following:
 * The domain of your Opsgenie app (e.g. `https://my-app.app.eu.opsgenie.com/`)
