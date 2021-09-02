@@ -15,12 +15,12 @@ const SEO_TITLE = 'Get a free trial';
 const useStyles = createUseStyles((theme) => ({
   main: {},
   column: {},
-  leftColumn: {},
+  testimonialColumn: {},
   formInner: {},
 
   formWrapper: {
-    marginLeft: '2em',
-    marginRight: '2em',
+    marginLeft: 16,
+    marginRight: 16,
   },
 
   formTitle: {
@@ -36,15 +36,12 @@ const useStyles = createUseStyles((theme) => ({
 
     column: {
       flex: 1,
-      height: '100%',
-      paddingTop: '10em',
+      paddingTop: '1em',
     },
 
-    leftColumn: {
-      backgroundColor: '#E9F7FF',
-      display: 'flex',
+    testimonialColumn: {
       justifyContent: 'center',
-      paddingTop: '15em',
+      paddingTop: '3em',
     },
 
     formInner: {
@@ -76,7 +73,7 @@ const Home = ({ data, location }) => {
             </div>
           </div>
 
-          <div className={classnames(classes.column, classes.leftColumn)}>
+          <div className={classnames(classes.column, classes.testimonialColumn)}>
             <Testimonial />
           </div>
         </div>
