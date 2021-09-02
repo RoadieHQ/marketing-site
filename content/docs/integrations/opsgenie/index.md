@@ -6,7 +6,7 @@ description: How to configure the Opsgenie plugin on roadie.
 
 ## Introduction
 
-This page describes how to set up the Opsgenie plugin and configure Roadie to authenticate with your instance.
+This page describes how to set up the Opsgenie plugine.
 
 ## Steps
 
