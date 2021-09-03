@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import {
   SEO,
   StickyFooter,
-  InterstitialTitle,
 } from 'components';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { Testimonial } from 'components/home';
