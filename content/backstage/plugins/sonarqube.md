@@ -67,7 +67,7 @@ gettingStarted:
       sonarQube:
         baseUrl: https://your.sonarqube.instance.com
 
-  - intro: Add annotation to your component-info.yaml file.
+  - intro: Add annotation to your catalog-info.yaml file.
     language: YAML
     code: |
       metadata:
