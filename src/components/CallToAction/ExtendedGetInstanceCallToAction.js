@@ -27,7 +27,7 @@ export const submitToNetlifyForms = async ({
   const resp = await fetch('/', {
     method: 'POST',
     body: encode({
-      'form-name': FORM_NAMES.getInstanceExtended,
+      'form-name': FORM_NAMES.getInstanceExtended.name,
       email,
       subToNewsletter,
       scmTool,
