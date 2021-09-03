@@ -82,7 +82,7 @@ const BlogIndex = ({ data, location }) => {
           <CallToAction
             setModalOpen={setModalOpen}
             buttonText="Subscribe"
-            netlifyFormName={FORM_NAMES.subscribeToNewsletter}
+            netlifyFormName={FORM_NAMES.subscribeToNewsletter.name}
             autoFocus={true}
             email={email}
             setEmail={setEmail}

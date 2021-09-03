@@ -51,7 +51,7 @@ const NetlifyFormCallToAction = ({
   placeholderText = 'Work email',
   buttonText = 'Click here',
   subFormMessage = 'We will never sell or share your email address.',
-  netlifyFormName = FORM_NAMES.getInstance,
+  netlifyFormName = FORM_NAMES.subscribeToNewsletter,
   setModalOpen,
   autoFocus = false,
   email,
