@@ -10,6 +10,7 @@ import {
   CodeBlock,
   SEO,
   ResponsiveSpacer,
+  PageMargins,
 } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
@@ -54,66 +55,68 @@ const PluginTemplate = ({ data, location }) => {
       />
 
       <StickyFooter location={location} maxWidthBreakpoint="md">
-        <Header plugin={plugin} />
+        <PageMargins>
+          <Header plugin={plugin} />
 
-        <ResponsiveSpacer>
-          <InterstitialTitle text="Getting started is simple" />
-
-          <div className={classes.notes}>
-            <p>
-              Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
-              <Link to="/" color="primary">Get managed Backstage</Link> from Roadie.
-            </p>
-          </div>
-
-          <InterstitialTitle text="Installation steps" />
-
-          {plugin.frontmatter.gettingStarted.map((section, index) =>
-            section.title && section.title !== '' ? (
-              <InterstitialTitle text={section.title} key={`key-${index}`} />
-            ) : (
-              <CodeBlock
-                language={section.language}
-                code={section.code}
-                intro={section.intro}
-                key={`key-${index}`}
-              />
-            )
-          )}
-
-          <div className={classes.notes}>
-            <p>
-              Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
-            </p>
-          </div>
-        </ResponsiveSpacer>
-
-        <ResponsiveSpacer>
-          <InterstitialTitle text="How it looks" />
-
-          <div>
-            <GatsbyImage
-              image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
-              alt={plugin.frontmatter.coverImageAlt}
-              className={classes.coverImage}
-            />
-          </div>
-        </ResponsiveSpacer>
-
-        {plugin.notes && plugin.notes !== '' && (
           <ResponsiveSpacer>
-            <div>
-              <InterstitialTitle text="Things to know" />
-              <div className={classes.notes} dangerouslySetInnerHTML={{ __html: plugin.notes }} />
+            <InterstitialTitle text="Getting started is simple" />
+
+            <div className={classes.notes}>
+              <p>
+                Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
+                <Link to="/" color="primary">Get managed Backstage</Link> from Roadie.
+              </p>
+            </div>
+
+            <InterstitialTitle text="Installation steps" />
+
+            {plugin.frontmatter.gettingStarted.map((section, index) =>
+              section.title && section.title !== '' ? (
+                <InterstitialTitle text={section.title} key={`key-${index}`} />
+              ) : (
+                <CodeBlock
+                  language={section.language}
+                  code={section.code}
+                  intro={section.intro}
+                  key={`key-${index}`}
+                />
+              )
+            )}
+
+            <div className={classes.notes}>
+              <p>
+                Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
+              </p>
             </div>
           </ResponsiveSpacer>
-        )}
 
-        <SubscribeToNewsletterCTA
-          setModalOpen={setModalOpen}
-          email={email}
-          setEmail={setEmail}
-        />
+          <ResponsiveSpacer>
+            <InterstitialTitle text="How it looks" />
+
+            <div>
+              <GatsbyImage
+                image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
+                alt={plugin.frontmatter.coverImageAlt}
+                className={classes.coverImage}
+              />
+            </div>
+          </ResponsiveSpacer>
+
+          {plugin.notes && plugin.notes !== '' && (
+            <ResponsiveSpacer>
+              <div>
+                <InterstitialTitle text="Things to know" />
+                <div className={classes.notes} dangerouslySetInnerHTML={{ __html: plugin.notes }} />
+              </div>
+            </ResponsiveSpacer>
+          )}
+
+          <SubscribeToNewsletterCTA
+            setModalOpen={setModalOpen}
+            email={email}
+            setEmail={setEmail}
+          />
+        </PageMargins>
       </StickyFooter>
     </>
   );

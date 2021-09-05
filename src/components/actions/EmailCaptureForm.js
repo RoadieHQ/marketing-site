@@ -1,6 +1,5 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import classnames from 'classnames';
 import { FaPaperPlane } from 'react-icons/fa';
 
 import { currentlyExecutingGitBranch } from '../../environment';
@@ -14,14 +13,8 @@ const styles = (theme) => ({
     flexDirection: 'column',
   },
 
-  subForm: {
-    fontSize: '1.2rem',
-    color: theme.palette.grey[600],
-    minHeight: 16,
-  },
-
-  subFormerror: {
-    color: theme.palette.deepOrange[700],
+  textFieldInput: {
+    width: '100%',
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
@@ -48,13 +41,7 @@ const EmailCaptureForm = ({
 }) => {
   const classes = useStyles();
 
-  const onInputChange = (e) => {
-    setEmail(e.target.value);
-  };
-
   const disabled = submitting || !email || email === '';
-  const subFormStateClass =
-    `subForm${subForm.state}` in classes && classes[`subForm${subForm.state}`];
 
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
@@ -76,10 +63,15 @@ const EmailCaptureForm = ({
           id={emailInputId}
           aria-label="Work email address"
           placeholder={placeholderText}
-          onChange={onInputChange}
+          onChange={setEmail}
           value={email}
           autoFocus={autoFocus}
           color="primary"
+          helpText={subForm.message}
+          helpTextState={subForm.state}
+          className={{
+            input: classes.textFieldInput,
+          }}
         />
 
         <Button
@@ -90,7 +82,6 @@ const EmailCaptureForm = ({
           color="primary"
         />
       </div>
-      <div className={classnames(subFormStateClass, classes.subForm)}>{subForm.message}</div>
     </form>
   );
   /* eslint-enable jsx-a11y/no-autofocus */

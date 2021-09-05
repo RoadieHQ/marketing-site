@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
 import ListItem from 'components/backstage/plugins/ListItem';
-import { SEO, StickyFooter } from 'components';
+import { SEO, StickyFooter, PageMargins } from 'components';
 
 const GRID_GAP = '1rem';
 
@@ -82,26 +82,28 @@ const BackstagePlugins = ({ data, location }) => {
       />
 
       <StickyFooter location={location} headerBottomBorder={false}>
-        <header className={classes.header}>
-          <h1>Backstage plugins</h1>
+        <PageMargins>
+          <header className={classes.header}>
+            <h1>Backstage plugins</h1>
 
-          <form>
-            <input
-              type="text"
-              onChange={onInputChange}
-              value={query}
-              aria-label="Search"
-              className={classes.input}
-              placeholder="Search"
-            />
-          </form>
-        </header>
+            <form>
+              <input
+                type="text"
+                onChange={onInputChange}
+                value={query}
+                aria-label="Search"
+                className={classes.input}
+                placeholder="Search"
+              />
+            </form>
+          </header>
 
-        <div className={classes.grid}>
-          {filteredPlugins.map(({ node: { fields, frontmatter } }) => (
-            <ListItem frontmatter={frontmatter} fields={fields} key={fields.slug} />
-          ))}
-        </div>
+          <div className={classes.grid}>
+            {filteredPlugins.map(({ node: { fields, frontmatter } }) => (
+              <ListItem frontmatter={frontmatter} fields={fields} key={fields.slug} />
+            ))}
+          </div>
+        </PageMargins>
       </StickyFooter>
     </>
   );

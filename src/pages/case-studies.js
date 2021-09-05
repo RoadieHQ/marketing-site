@@ -4,7 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { createUseStyles } from 'react-jss';
 import get from 'lodash/get';
 
-import { SEO, StickyFooter } from 'components';
+import { SEO, StickyFooter, PageMargins } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 
 const MAX_WIDTH_BREAKPOINT = 'lg';
@@ -52,31 +52,33 @@ const CaseStudiesIndex = ({ data, location }) => {
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <header className={classes.header}>
-          <h2>Case Studies</h2>
-        </header>
+        <PageMargins>
+          <header className={classes.header}>
+            <h2>Case Studies</h2>
+          </header>
 
-        {posts.map(({ node }) => {
-          const logoBackgroundColor = get(node, 'frontmatter.logo.backgroundColor', null);
+          {posts.map(({ node }) => {
+            const logoBackgroundColor = get(node, 'frontmatter.logo.backgroundColor', null);
 
-          return (
-            <div key={node.fields.slug} className={classes.summaryRoot}>
-              <span
-                className={classes.summaryImageWrapper}
-                style={{ backgroundColor: node.frontmatter.logo.backgroundColor }}
-              >
-                <GatsbyImage
-                  image={node.frontmatter.logo.image.childImageSharp.gatsbyImageData}
-                  backgroundColor={logoBackgroundColor}
-                  alt={node.frontmatter.logo.alt}
-                />
-              </span>
-              <span className={classes.summaryWrapper}>
-                <PostSummary post={node} />
-              </span>
-            </div>
-          );
-        })}
+            return (
+              <div key={node.fields.slug} className={classes.summaryRoot}>
+                <span
+                  className={classes.summaryImageWrapper}
+                  style={{ backgroundColor: node.frontmatter.logo.backgroundColor }}
+                >
+                  <GatsbyImage
+                    image={node.frontmatter.logo.image.childImageSharp.gatsbyImageData}
+                    backgroundColor={logoBackgroundColor}
+                    alt={node.frontmatter.logo.alt}
+                  />
+                </span>
+                <span className={classes.summaryWrapper}>
+                  <PostSummary post={node} />
+                </span>
+              </div>
+            );
+          })}
+        </PageMargins>
       </StickyFooter>
     </>
   );

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
-import { SEO, ContentHeader, StickyFooter } from 'components';
+import { SEO, ContentHeader, StickyFooter, PageMargins } from 'components';
 import HeadRssLink from 'components/blog/HeadRssLink';
 import {
   SubscribeToNewsletterSuccessModal,
@@ -45,18 +45,20 @@ const BlogPostTemplate = ({ data, location }) => {
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <main>
-          <article>
-            <ContentHeader frontmatter={post.frontmatter} />
-            <section className={classes.main} dangerouslySetInnerHTML={{ __html: post.html }} />
-          </article>
-        </main>
+        <PageMargins>
+          <main>
+            <article>
+              <ContentHeader frontmatter={post.frontmatter} />
+              <section className={classes.main} dangerouslySetInnerHTML={{ __html: post.html }} />
+            </article>
+          </main>
 
-        <SubscribeToNewsletterCTA
-          setModalOpen={setModalOpen}
-          email={email}
-          setEmail={setEmail}
-        />
+          <SubscribeToNewsletterCTA
+            setModalOpen={setModalOpen}
+            email={email}
+            setEmail={setEmail}
+          />
+        </PageMargins>
       </StickyFooter>
     </>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, StickyFooter } from 'components';
+import { SEO, StickyFooter, PageMargins } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 import { createUseStyles } from 'react-jss';
 
@@ -9,7 +9,6 @@ const useStyles = createUseStyles(() => ({
     marginBottom: '4em',
   },
 }));
-
 
 const MAX_WIDTH_BREAKPOINT = 'md';
 
@@ -29,11 +28,13 @@ const BlogIndex = ({ pageContext, data, location }) => {
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        {posts.map(({ node }) => (
-          <div className={classes.summaryWrapper} key={node.fields.slug}>
-            <PostSummary post={node} />
-          </div>
-        ))}
+        <PageMargins>
+          {posts.map(({ node }) => (
+            <div className={classes.summaryWrapper} key={node.fields.slug}>
+              <PostSummary post={node} />
+            </div>
+          ))}
+        </PageMargins>
       </StickyFooter>
     </>
   );

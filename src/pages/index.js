@@ -5,6 +5,7 @@ import {
   InterstitialTitle,
   StickyFooter,
   ResponsiveSpacer,
+  PageMargins,
 } from 'components';
 // eslint-disable-next-line import/named
 import { Hero, FooterCTA, features, IntegrationsList } from 'components/home';
@@ -23,57 +24,59 @@ const Home = ({ data, location }) => {
     <>
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
       <StickyFooter location={location}>
-        <ResponsiveSpacer>
-          <Hero siteMetadata={data.site.siteMetadata} headline={HEADLINE} lead={LEAD} />
-        </ResponsiveSpacer>
+        <PageMargins>
+          <ResponsiveSpacer>
+            <Hero siteMetadata={data.site.siteMetadata} headline={HEADLINE} lead={LEAD} />
+          </ResponsiveSpacer>
 
-        <ResponsiveSpacer>
-          <InterstitialTitle
-            id="product"
-            size="large"
-          >
-            Backstage with benefits...
-          </InterstitialTitle>
-        </ResponsiveSpacer>
+          <ResponsiveSpacer>
+            <InterstitialTitle
+              id="product"
+              size="large"
+            >
+              Backstage with benefits...
+            </InterstitialTitle>
+          </ResponsiveSpacer>
 
-        {features.quickEasySetup}
-        {features.customPlugins}
-        {features.securityMaintenance}
+          {features.quickEasySetup}
+          {features.customPlugins}
+          {features.securityMaintenance}
 
-        <ResponsiveSpacer>
-          <InterstitialTitle
-            id="integrations"
-            size="large"
-          >
-            Pre-loaded with all your favorite plugins
-          </InterstitialTitle>
-        </ResponsiveSpacer>
+          <ResponsiveSpacer>
+            <InterstitialTitle
+              id="integrations"
+              size="large"
+            >
+              Pre-loaded with all your favorite plugins
+            </InterstitialTitle>
+          </ResponsiveSpacer>
 
-        <ResponsiveSpacer>
-          <IntegrationsList />
-        </ResponsiveSpacer>
+          <ResponsiveSpacer>
+            <IntegrationsList />
+          </ResponsiveSpacer>
 
-        <ResponsiveSpacer>
-          <InterstitialTitle
-            id="solutions"
-            size="large"
-          >
-            Turn tribal knowledge into shared context
-          </InterstitialTitle>
-        </ResponsiveSpacer>
+          <ResponsiveSpacer>
+            <InterstitialTitle
+              id="solutions"
+              size="large"
+            >
+              Turn tribal knowledge into shared context
+            </InterstitialTitle>
+          </ResponsiveSpacer>
 
-        {features.builtOnBackstage}
-        {features.discoverabilityAndOnboarding}
-        {features.productionConsistency}
+          {features.builtOnBackstage}
+          {features.discoverabilityAndOnboarding}
+          {features.productionConsistency}
 
-        <ResponsiveSpacer>
-          <InterstitialTitle size="large" text="Sounds good? Let's get started..." />
-        </ResponsiveSpacer>
+          <ResponsiveSpacer>
+            <InterstitialTitle size="large" text="Sounds good? Let's get started..." />
+          </ResponsiveSpacer>
 
 
-        <ResponsiveSpacer>
-          <FooterCTA />
-        </ResponsiveSpacer>
+          <ResponsiveSpacer>
+            <FooterCTA />
+          </ResponsiveSpacer>
+        </PageMargins>
       </StickyFooter>
     </>
   );

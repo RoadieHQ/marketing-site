@@ -1,7 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import { SEO, StickyFooter, ContentHeader, TextLink as Link } from 'components';
+import {
+  SEO,
+  StickyFooter,
+  ContentHeader,
+  TextLink as Link,
+  PageMargins,
+} from 'components';
 import { TableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/doc';
 import editOnGitHubUrl from '../editOnGitHubUrl';
@@ -66,32 +72,34 @@ const Doc = ({
       />
 
       <StickyFooter location={location} maxWidthBreakpoint="none">
-        <main className={classes.main}>
-          <Sidebar />
+        <PageMargins>
+          <main className={classes.main}>
+            <Sidebar />
 
-          <article className={classes.article}>
-            <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+            <article className={classes.article}>
+              <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
 
-            <div className={classes.content}>
-              <div className={classes.tocWrapper}>
-                <h2>Table of Contents</h2>
-                <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
+              <div className={classes.content}>
+                <div className={classes.tocWrapper}>
+                  <h2>Table of Contents</h2>
+                  <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
+                </div>
               </div>
-            </div>
 
-            <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
+              <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
 
-            <footer className={classes.articleFooter}>
-              <Link
-                to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
-              >
-                Edit this page on GitHub
-              </Link>
-            </footer>
-          </article>
+              <footer className={classes.articleFooter}>
+                <Link
+                  to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
+                >
+                  Edit this page on GitHub
+                </Link>
+              </footer>
+            </article>
 
-          <TableOfContentsSidebar headings={doc.headings} className={classes.tocSidebar} />
-        </main>
+            <TableOfContentsSidebar headings={doc.headings} className={classes.tocSidebar} />
+          </main>
+        </PageMargins>
       </StickyFooter>
     </>
   );
