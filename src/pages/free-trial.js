@@ -31,6 +31,7 @@ const useStyles = createUseStyles((theme) => ({
     main: {
       display: 'flex',
       height: '100%',
+      flexDirection: 'row-reverse',
     },
 
     column: {

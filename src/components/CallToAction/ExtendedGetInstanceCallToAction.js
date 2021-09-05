@@ -19,14 +19,14 @@ const useStyles = createUseStyles(() => ({
 }));
 
 const SCM_TOOLS = [{
-  value: 'github',
-  label: 'GitHub (Not sure)',
-}, {
   value: 'github-enterprise-cloud',
   label: 'GitHub Enterprise (Cloud)',
 }, {
   value: 'github-enterprise-on-prem',
   label: 'GitHub Enterprise (On-prem)',
+}, {
+  value: 'github',
+  label: 'GitHub (Not sure)',
 }, {
   value: 'gitlab-cloud',
   label: 'Gitlab Cloud',
