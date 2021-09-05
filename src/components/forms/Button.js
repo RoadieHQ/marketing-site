@@ -54,8 +54,8 @@ const useStyles = createUseStyles((theme) => ({
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
-      lineHeight: 1.5,
-      padding: '0.1rem 1rem',
+      lineHeight: 2,
+      padding: 8,
     },
   },
 }));

@@ -9,8 +9,11 @@ const styles = (theme) => ({
   inputWrapper: {
     width: '100%',
     display: 'flex',
-    marginBottom: 8,
     flexDirection: 'column',
+  },
+
+  textFieldRoot: {
+    marginBottom: 32,
   },
 
   textFieldInput: {
@@ -20,6 +23,12 @@ const styles = (theme) => ({
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     inputWrapper: {
       flexDirection: 'row',
+      justifyContent: 'center',
+    },
+
+    buttonWrapper: {
+      display: 'flex',
+      justifyContent: 'center',
     },
   },
 });
@@ -71,16 +80,19 @@ const EmailCaptureForm = ({
           helpTextState={subForm.state}
           className={{
             input: classes.textFieldInput,
+            root: classes.textFieldRoot,
           }}
         />
 
-        <Button
-          text={buttonText}
-          disabled={disabled}
-          icon={<FaPaperPlane />}
-          id={buttonId}
-          color="primary"
-        />
+        <div className={classes.buttonWrapper}>
+          <Button
+            text={buttonText}
+            disabled={disabled}
+            icon={<FaPaperPlane />}
+            id={buttonId}
+            color="primary"
+          />
+        </div>
       </div>
     </form>
   );
