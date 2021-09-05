@@ -44,7 +44,7 @@ const useStyles = createUseStyles((theme) => ({
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     input: {
       fontSize: '2rem',
-      padding: '0.5rem 0.5rem',
+      padding: 10,
       marginBottom: 0,
     },
   },
@@ -68,7 +68,7 @@ const TextField = ({
   };
 
   return (
-    <div>
+    <div className={className.root}>
       {label && (
         <div>
           <label htmlFor={htmlId} className={classes.label}>
