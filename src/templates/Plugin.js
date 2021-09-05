@@ -3,8 +3,14 @@ import { createUseStyles } from 'react-jss';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-
-import { StickyFooter, InterstitialTitle, CodeBlock, SEO, ResponsiveSpacer } from 'components';
+import {
+  TextLink as Link,
+  StickyFooter,
+  InterstitialTitle,
+  CodeBlock,
+  SEO,
+  ResponsiveSpacer,
+} from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
   SubscribeToNewsletterSuccessModal,
@@ -53,6 +59,15 @@ const PluginTemplate = ({ data, location }) => {
         <ResponsiveSpacer>
           <InterstitialTitle text="Getting started is simple" />
 
+          <div className={classes.notes}>
+            <p>
+              Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
+              <Link to="/" color="primary">Get managed Backstage</Link> from Roadie.
+            </p>
+          </div>
+
+          <InterstitialTitle text="Installation steps" />
+
           {plugin.frontmatter.gettingStarted.map((section, index) =>
             section.title && section.title !== '' ? (
               <InterstitialTitle text={section.title} key={`key-${index}`} />
@@ -66,9 +81,11 @@ const PluginTemplate = ({ data, location }) => {
             )
           )}
 
-          <p>
-            Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
-          </p>
+          <div className={classes.notes}>
+            <p>
+              Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
+            </p>
+          </div>
         </ResponsiveSpacer>
 
         <ResponsiveSpacer>
