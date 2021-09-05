@@ -36,7 +36,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Radio = ({ onChange, value, currentValue, label }) => {
+const Radio = ({ onChange, value, currentValue, label, ...rest }) => {
   const classes = useStyles();
 
   const onValueChange = (e) => {
@@ -52,6 +52,7 @@ const Radio = ({ onChange, value, currentValue, label }) => {
           value={value}
           checked={currentValue === value}
           onChange={onValueChange}
+          {...rest}
         />
         <span className={classes.radioControl} />
       </span>
