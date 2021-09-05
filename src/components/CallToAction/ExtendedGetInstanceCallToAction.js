@@ -3,7 +3,6 @@ import { Button, TextField, Radio, Checkbox, TextLink as Link } from 'components
 import { createUseStyles } from 'react-jss';
 
 import { FORM_NAMES } from '../../contactFormConstants';
-import { encode } from '../actions/NetlifyFormCallToAction';
 
 const useStyles = createUseStyles(() => ({
   fieldset: {
@@ -19,19 +18,45 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
+const SCM_TOOLS = [{
+  value: 'github',
+  label: 'GitHub (Not sure)',
+}, {
+  value: 'github-enterprise-cloud',
+  label: 'GitHub Enterprise (Cloud)',
+}, {
+  value: 'github-enterprise-on-prem',
+  label: 'GitHub Enterprise (On-prem)',
+}, {
+  value: 'gitlab-cloud',
+  label: 'Gitlab Cloud',
+}, {
+  value: 'gitlab-on-prem',
+  label: 'Gitlab On-prem',
+}, {
+  value: 'bitbucket-cloud',
+  label: 'Bitbucket Cloud',
+}, {
+  value: 'bitbucket-server',
+  label: 'Bitbucket Server',
+}];
+
 export const submitToNetlifyForms = async ({
   email,
   scmTool,
   subToNewsletter,
 }) => {
+  const formData = new FormData();
+  formData.append('form-name', FORM_NAMES.getInstanceExtended);
+  formData.append('email', email);
+  SCM_TOOLS.forEach(({ value }) => {
+    formData.append(value, value === scmTool);
+  });
+  formData.append('sub-to-newsletter', subToNewsletter);
+
   const resp = await fetch('/', {
     method: 'POST',
-    body: encode({
-      'form-name': FORM_NAMES.getInstanceExtended,
-      email,
-      subToNewsletter,
-      scmTool,
-    }),
+    body: formData,
   });
 
   return resp;
@@ -59,7 +84,7 @@ const ExtendedGetInstanceCallToAction = () => {
       console.log('resp ok', resp);
       // DO NOT reset the email input here. It is already happening higher in the state chain.
     } else {
-      console.log('error');
+      console.log('error', resp);
     }
 
     setSubmitting(false);
@@ -90,68 +115,18 @@ const ExtendedGetInstanceCallToAction = () => {
           </strong>
         </div>
 
-        <div className={classes.radioWrapper}>
-          <Radio
-            value="github-enterprise-cloud"
-            label="GitHub Enterprise (Cloud)"
-            onChange={setScmTool}
-            currentValue={scmTool}
-          />
-        </div>
-
-        <div className={classes.radioWrapper}>
-          <Radio
-            label="GitHub Enterprise (on-prem)"
-            value="github-enterprise-on-prem"
-            currentValue={scmTool}
-            onChange={setScmTool}
-          />
-        </div>
-
-        <div className={classes.radioWrapper}>
-          <Radio
-            label="GitHub (Not sure)"
-            value="github"
-            currentValue={scmTool}
-            onChange={setScmTool}
-          />
-        </div>
-
-        <div className={classes.radioWrapper}>
-          <Radio
-            label="Bitbucket Cloud"
-            value="bitbucket-cloud"
-            currentValue={scmTool}
-            onChange={setScmTool}
-          />
-        </div>
-
-        <div className={classes.radioWrapper}>
-          <Radio
-            label="Bitbucket Server (on-prem)"
-            value="bitbucket-server"
-            currentValue={scmTool}
-            onChange={setScmTool}
-          />
-        </div>
-
-        <div className={classes.radioWrapper}>
-          <Radio
-            label="GitLab Cloud"
-            value="gitlab-cloud"
-            currentValue={scmTool}
-            onChange={setScmTool}
-          />
-        </div>
-
-        <div className={classes.radioWrapper}>
-          <Radio
-            label="GitLab On-prem"
-            value="gitlab-on-prem"
-            currentValue={scmTool}
-            onChange={setScmTool}
-          />
-        </div>
+        {SCM_TOOLS.map(({ value, label }) => (
+          <div className={classes.radioWrapper} key={value}>
+            <Radio
+              value={value}
+              label={label}
+              onChange={setScmTool}
+              currentValue={scmTool}
+              name="scm"
+              id={value}
+            />
+          </div>
+        ))}
       </div>
 
       <div className={classes.fieldset}>
