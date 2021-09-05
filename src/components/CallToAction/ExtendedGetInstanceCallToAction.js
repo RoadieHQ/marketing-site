@@ -27,7 +27,7 @@ export const submitToNetlifyForms = async ({
   const resp = await fetch('/', {
     method: 'POST',
     body: encode({
-      'form-name': FORM_NAMES.getInstanceExtended.name,
+      'form-name': FORM_NAMES.getInstanceExtended,
       email,
       subToNewsletter,
       scmTool,
@@ -69,6 +69,8 @@ const ExtendedGetInstanceCallToAction = () => {
 
   return (
     <form onSubmit={onSubmit}>
+      <input type="hidden" name="form-name" value={FORM_NAMES.getInstanceExtended} />
+
       <div className={classes.fieldset}>
         <TextField
           label="Work email address *"
