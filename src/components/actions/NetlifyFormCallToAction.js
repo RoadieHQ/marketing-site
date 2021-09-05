@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
+import trackGoogleAnalyticsEvent from '../../googleAnalytics';
 import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES } from '../../contactFormConstants';
+import { currentlyExecutingGitBranch } from '../../environment';
 
 const encode = (data) => {
   const formData = new FormData();
@@ -13,16 +14,29 @@ const encode = (data) => {
   return formData;
 };
 
-export const submitEmailToNetlifyForms = async ({ email, netlifyFormName }) => {
-  const resp = await fetch('/', {
-    method: 'POST',
-    body: encode({
-      'form-name': netlifyFormName,
-      email,
-    }),
-  });
+export const submitEmailToNetlifyForms = async ({
+  email,
+  netlifyFormName,
+  submitButtonLabel = 'NOT_SUPPLIED',
+}) => {
+  const branch = currentlyExecutingGitBranch();
 
-  trackCustomEvent({
+  let resp;
+  try {
+    resp = await fetch('/', {
+      method: 'POST',
+      body: encode({
+        email,
+        'form-name': netlifyFormName,
+        'submit-button-label': submitButtonLabel,
+        'deployed-branch': branch,
+      }),
+    });
+  } catch (error) {
+    console.error('Submission failed', error, resp);
+  }
+
+  trackGoogleAnalyticsEvent({
     category: 'form',
     action: 'submit',
     label: netlifyFormName,
@@ -37,7 +51,7 @@ const NetlifyFormCallToAction = ({
   placeholderText = 'Work email',
   buttonText = 'Click here',
   subFormMessage = 'We will never sell or share your email address.',
-  netlifyFormName = FORM_NAMES.notifyMe,
+  netlifyFormName = FORM_NAMES.getInstance,
   setModalOpen,
   autoFocus = false,
   email,
@@ -52,7 +66,11 @@ const NetlifyFormCallToAction = ({
     e.preventDefault();
     setSubmitting(true);
 
-    const resp = await submitEmailToNetlifyForms({ email, netlifyFormName });
+    const resp = await submitEmailToNetlifyForms({
+      email,
+      netlifyFormName,
+      submitButtonLabel: buttonText,
+    });
 
     if (resp.ok) {
       setModalOpen(true);
@@ -80,6 +98,7 @@ const NetlifyFormCallToAction = ({
       email={email}
       buttonText={buttonText}
       autoFocus={autoFocus}
+      netlifyFormName={netlifyFormName}
     />
   );
   /* eslint-enable jsx-a11y/no-autofocus */

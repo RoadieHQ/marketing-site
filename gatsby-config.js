@@ -23,6 +23,11 @@ const getSentryEnvironment = () => {
   return 'development';
 };
 
+// Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
+// a server side variable into a runtime one. This variable is later used to determine which
+// branch of a split testing experiment we are on.
+process.env.GATSBY_GIT_BRANCH_NAME = process.env.BRANCH;
+
 module.exports = {
   siteMetadata: {
     title: SITE_TITLE,
