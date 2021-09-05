@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
-import { Lead, SEO, StickyFooter, InterstitialTitle } from 'components';
+import { Lead, SEO, StickyFooter, InterstitialTitle, PageMargins } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 import CallToAction from 'components/actions/NetlifyFormCallToAction';
 import HeadRssLink from 'components/blog/HeadRssLink';
@@ -67,35 +67,37 @@ const BlogIndex = ({ data, location }) => {
       />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <div className={classes.callToActionWrapper}>
-          <img alt="The Roadie logo" src={roadieRLogo} className={classes.logo} />
-          <InterstitialTitle text="Roadie's Backstage Weekly Newsletter" />
+        <PageMargins>
+          <div className={classes.callToActionWrapper}>
+            <img alt="The Roadie logo" src={roadieRLogo} className={classes.logo} />
+            <InterstitialTitle text="Roadie's Backstage Weekly Newsletter" />
 
-          <p className={classes.callToActionParagraph}>
-            Get the latest news, deep dives into Backstage features, and a roundup of recent
-            open-source action. Track the project without having to watch the GitHub repo.
-          </p>
+            <p className={classes.callToActionParagraph}>
+              Get the latest news, deep dives into Backstage features, and a roundup of recent
+              open-source action. Track the project without having to watch the GitHub repo.
+            </p>
 
-          {/* I feel this is ok, since subscribing to the newsletter is one of a very
-              small number of actions the user can take on this particular page */}
-          {/* eslint-disable jsx-a11y/no-autofocus */}
-          <CallToAction
-            setModalOpen={setModalOpen}
-            buttonText="Subscribe"
-            netlifyFormName={FORM_NAMES.subscribeToNewsletter}
-            autoFocus={true}
-            email={email}
-            setEmail={setEmail}
-          />
-          {/* eslint-enable jsx-a11y/no-autofocus */}
-        </div>
-
-        <Lead>Previous editions</Lead>
-        {posts.map(({ node }) => (
-          <div className={classes.summaryWrapper} key={node.fields.slug}>
-            <PostSummary post={node} />
+            {/* I feel this is ok, since subscribing to the newsletter is one of a very
+                small number of actions the user can take on this particular page */}
+            {/* eslint-disable jsx-a11y/no-autofocus */}
+            <CallToAction
+              setModalOpen={setModalOpen}
+              buttonText="Subscribe"
+              netlifyFormName={FORM_NAMES.subscribeToNewsletter}
+              autoFocus={true}
+              email={email}
+              setEmail={setEmail}
+            />
+            {/* eslint-enable jsx-a11y/no-autofocus */}
           </div>
-        ))}
+
+          <Lead>Previous editions</Lead>
+          {posts.map(({ node }) => (
+            <div className={classes.summaryWrapper} key={node.fields.slug}>
+              <PostSummary post={node} />
+            </div>
+          ))}
+        </PageMargins>
       </StickyFooter>
     </>
   );

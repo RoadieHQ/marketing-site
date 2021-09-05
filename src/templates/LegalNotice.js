@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
-import { SEO, StickyFooter, ContentHeader } from 'components';
+import { SEO, StickyFooter, ContentHeader, PageMargins } from 'components';
 import { TableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/legal-notice';
 
@@ -45,20 +45,22 @@ const LegalNotice = ({ data: { notice, site }, location }) => {
       />
 
       <StickyFooter location={location} maxWidthBreakpoint="none">
-        <main className={classes.main}>
-          <Sidebar />
+        <PageMargins>
+          <main className={classes.main}>
+            <Sidebar />
 
-          <article className={classes.article}>
-            <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
+            <article className={classes.article}>
+              <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
 
-            <section
-              className={classes.content}
-              dangerouslySetInnerHTML={{ __html: notice.html }}
-            />
-          </article>
+              <section
+                className={classes.content}
+                dangerouslySetInnerHTML={{ __html: notice.html }}
+              />
+            </article>
 
-          <TableOfContentsSidebar headings={notice.headings} className={classes.tocSidebar} />
-        </main>
+            <TableOfContentsSidebar headings={notice.headings} className={classes.tocSidebar} />
+          </main>
+        </PageMargins>
       </StickyFooter>
     </>
   );

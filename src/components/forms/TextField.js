@@ -1,6 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
+import { HelpText } from 'components';
 
 const useStyles = createUseStyles((theme) => ({
   input: {
@@ -50,7 +51,15 @@ const useStyles = createUseStyles((theme) => ({
 }));
 
 
-const TextField = ({ id, label, onChange, className = {}, ...rest }) => {
+const TextField = ({
+  id,
+  label,
+  onChange,
+  helpText,
+  helpTextState,
+  className = {},
+  ...rest
+}) => {
   const classes = useStyles();
   const htmlId = id ? id : Math.random().toString(36).slice(2);
 
@@ -74,6 +83,7 @@ const TextField = ({ id, label, onChange, className = {}, ...rest }) => {
         className={classnames(classes.input, className.input)}
         {...rest}
       />
+      <HelpText message={helpText} state={helpTextState} />
     </div>
   );
 };

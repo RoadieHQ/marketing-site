@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, StickyFooter } from 'components';
+import { SEO, StickyFooter, PageMargins } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 import HeadRssLink from 'components/blog/HeadRssLink';
 import { createUseStyles } from 'react-jss';
@@ -36,15 +36,17 @@ const BlogIndex = ({ data, location }) => {
       <HeadRssLink />
 
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <header className={classes.header}>
-          <h2>Blog</h2>
-        </header>
+        <PageMargins>
+          <header className={classes.header}>
+            <h2>Blog</h2>
+          </header>
 
-        {posts.map(({ node }) => (
-          <div className={classes.summaryWrapper} key={node.fields.slug}>
-            <PostSummary post={node} />
-          </div>
-        ))}
+          {posts.map(({ node }) => (
+            <div className={classes.summaryWrapper} key={node.fields.slug}>
+              <PostSummary post={node} />
+            </div>
+          ))}
+        </PageMargins>
       </StickyFooter>
     </>
   );

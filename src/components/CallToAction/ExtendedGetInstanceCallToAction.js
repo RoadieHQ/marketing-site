@@ -105,6 +105,7 @@ const ExtendedGetInstanceCallToAction = () => {
           onChange={setEmail}
           value={email}
           className={{ input: classes.emailInput }}
+          helpText="Your account details will be sent to this address"
         />
       </div>
 
