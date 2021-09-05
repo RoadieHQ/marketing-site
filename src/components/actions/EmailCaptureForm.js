@@ -82,6 +82,7 @@ const EmailCaptureForm = ({
   subForm,
   setEmail,
   submitting = false,
+  netlifyFormName,
 }) => {
   const classes = useStyles();
 
@@ -96,6 +97,8 @@ const EmailCaptureForm = ({
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
     <form onSubmit={onSubmit}>
+      <input type="hidden" name="form-name" value={netlifyFormName} />
+
       <div className={classes.inputWrapper}>
         <input
           type="email"

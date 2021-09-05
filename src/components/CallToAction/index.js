@@ -62,6 +62,7 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
       onSubmit={visitGetBackstageForm}
       subForm={subForm}
       submitting={submitting}
+      netlifyFormName={FORM_NAMES.getInstance}
       {...props}
     />
   );

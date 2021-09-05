@@ -37,7 +37,7 @@ const NetlifyFormCallToAction = ({
   placeholderText = 'Work email',
   buttonText = 'Click here',
   subFormMessage = 'We will never sell or share your email address.',
-  netlifyFormName = FORM_NAMES.notifyMe,
+  netlifyFormName = FORM_NAMES.getInstance,
   setModalOpen,
   autoFocus = false,
   email,
@@ -80,6 +80,7 @@ const NetlifyFormCallToAction = ({
       email={email}
       buttonText={buttonText}
       autoFocus={autoFocus}
+      netlifyFormName={netlifyFormName}
     />
   );
   /* eslint-enable jsx-a11y/no-autofocus */

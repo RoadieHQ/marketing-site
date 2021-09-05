@@ -5,9 +5,6 @@
 // These unique names allow us to figure out what a user was looking for when they submit
 // their email address. They show up in Netlify as emails sorted into different lists.
 exports.FORM_NAMES = {
-  notifyMe: 'landing-page/notify-me',
   subscribeToNewsletter: 'subscribe-to-newsletter',
-  getDemo: 'get-demo',
-  getDemoOnboarding: 'get-demo-onboarding',
   getInstance: 'submit-get-instance-form',
 };
