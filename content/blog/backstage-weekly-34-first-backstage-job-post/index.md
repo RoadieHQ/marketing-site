@@ -57,7 +57,7 @@ This feature lives at `/home` for now but it should soon replace the catalog vie
 
 We've added a cool new feature to our Backstage Security Insights plugin. It provides two views into Dependabot alerts across your components. You can deep dive into alerts in the full-page tab view, or you can quickly get a sense of the number of open vulnerabilities by adding the overview card.
 
-![0 critical severity alerts, 4 high severity alerts and 3 medium severity alerts](./dependabot-alerts.png)
+![0 critical severity alerts, 4 high severity alerts and 3 medium severity alerts](./dependabot-overview.png)
 
 ### TechDocs reaches Beta
 
