@@ -53,14 +53,14 @@ If you don't want to wait for a component to be discovered you can add component
 
 Click the Home link in the Backstage sidebar to go back to the catalog where you should see your component. Depending on the type of component you imported, you might have to cycle through the tabs until you see your component.
 
-![See your new component](content/docs/getting-started/adding-components/ViewComponent.png)
+![See your new component](./viewcomponent.png)
 
 ### TroubleShooting FAQs
 **Component Not Appearing?** </br>
 If your component is not appearing make sure Backstage has permissions to the repo that you added the yaml file too. 
 You can check this by going to the Github settings of a repo that Backstage already has access to, then follow `Settings>Integrations>Configure`, and making sure your repo is listed in the allowed repos:
 
-![repo permissions](content/docs/getting-started/adding-components/Repopermissions.png)
+![repo permissions](./repopermissions.png)
 
 ## What Next? 
 
