@@ -8,14 +8,14 @@ description: How to add components such as services or websites to the Backstage
 
 This tutorial will show you how to add components such as services or websites to the Backstage catalog.
 
-### Prerequisite 
+## Prerequisite 
 You must have installed the Github App in order to import components. If you have not done this you can find the steps to do this [here.](https://roadie.io/docs/getting-started/getting-started-for-admins/#connect-roadie-to-github) 
 
-### Step One. Create your 'catalog-info.yaml' file
+## Step One. Create your 'catalog-info.yaml' file
 Each component that Backstage tracks must be represented by a YAML file which describes it. 
 
 **Important**
-- This YAML file must be called 'catalog-info.YAML'
+- This YAML file must be called 'catalog-info.yaml'
 - This file must be located in the main branch of the repo of the component that you want to import into Backstage.
 
 ![Required location of a catalog-info.yaml file](./catalog-info.png)
