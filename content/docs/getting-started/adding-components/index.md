@@ -41,16 +41,10 @@ spec:
 **Best Practice Tip!** </br>
 Ensure the name of the component will make sense to you and your team. This is how other users will refer to your component in Backstage.
 
-**Troubleshooting Note:**
-If you have not created YAML files you may see an option for Roadie to open a PR and create YAML files for you by opening a pull request into a repository to add the file. This feature is currently disabled as it requires too many permissions. We think we can built it better so it is under construction so we can build it with less permissions.
-
 ### Step Two. Import Your Component YAML file into Backstage
-There are two ways you can get your components into Backstage:
-<ol>
-<li> You can manually add them to Backstage using the catalog importer available at `/catalog-import`, by copying and pasting the URL of the yaml file into the importer (see video below).</li>
-<li> Backstage can automatically discover them for you. Backstages scans your Github Org for new updates periodically. Once you have added a YAML file to any repo that you want to be imported to Backstage it will be found and autopopulated as a component.</li>
-</ol>
-If you are just getting started with Backstage we recomend adding your first component by method 1, as it can be faster and will get you going quicker. 
+Backstage scans your Github Org for new updates periodically, discovers YAML files and adds components automatically. Once you have added a YAML file to any repo that you want to be imported to Backstage it will be found and autopopulated as a component.
+
+If you don't want to wait for a component to be discovered you can add components manually to Backstage by using the catalog importer available at `/catalog-import`. You can do this by copying and pasting the URL of the YAML file into the importer (see video below). If you are just getting started with Backstage we recommend adding your first few files manually as it will get you going quicker. 
 
 
 [![Adding a Component](https://cdn.loom.com/sessions/thumbnails/faba9cbe1b154251a3c0f138e7146e41-with-play.gif)](https://www.loom.com/share/faba9cbe1b154251a3c0f138e7146e41 "Adding a Component")
