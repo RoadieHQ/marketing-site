@@ -1,6 +1,6 @@
 ---
 title: Adding Components to Backstage
-lastUpdated: '2021-04-15T21:00:00.0Z'
+lastUpdated: '2021-09-06T14:00:00.0Z'
 description: How to add components such as services or websites to the Backstage catalog.
 ---
 
@@ -8,7 +8,21 @@ description: How to add components such as services or websites to the Backstage
 
 This tutorial will show you how to add components such as services or websites to the Backstage catalog.
 
-Each component that Backstage tracks must be represented by a YAML file which describes it. These YAML files look something like this:
+## Prerequisite 
+You must have installed the Github App in order to import components. If you have not done this you can find the steps to do this [here.](https://roadie.io/docs/getting-started/getting-started-for-admins/#connect-roadie-to-github) 
+
+## Steps
+
+### Step One. Create your 'catalog-info.yaml' file
+Each component that Backstage tracks must be represented by a YAML file which describes it. 
+
+**Important**
+- This YAML file must be called 'catalog-info.yaml'
+- This file must be located in the main branch of the repo of the component that you want to import into Backstage.
+
+![Required location of a catalog-info.yaml file](./catalog-info.png)
+
+The basic structure that you should use for your YAML files looks like this:
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
@@ -26,56 +40,29 @@ spec:
   lifecycle: production
 ```
 
-You can manually craft these YAML files and add them to Backstage using the catalog importer available at `/catalog-import`.
+**Best Practice Tip!** </br>
+Ensure the name of the component will make sense to you and your team. This is how other users will refer to your component in Backstage.
 
-Alternatively, Roadie can open a pull request into a repository to add the file.
+### Step Two. Import Your Component YAML file into Backstage
+Backstage scans your Github Org for new updates periodically, discovers YAML files and adds components automatically. Once you have added a YAML file to any repo that you want to be imported to Backstage it will be found and autopopulated as a component.
 
-## Adding a component via automated pull request
+If you don't want to wait for a component to be discovered you can add components manually to Backstage by using the catalog importer available at `/catalog-import`. You can do this by copying and pasting the URL of the YAML file into the importer (see video below). If you are just getting started with Backstage we recommend adding your first few files manually as it will get you going quicker. 
 
-### Step 1. Open a PR
 
-Visit `https://your-company.roadie.so/catalog-import`.
+[![Adding a Component](https://cdn.loom.com/sessions/thumbnails/faba9cbe1b154251a3c0f138e7146e41-with-play.gif)](https://www.loom.com/share/faba9cbe1b154251a3c0f138e7146e41 "Adding a Component")
 
-Enter the URL of a GitHub repository into the Repository URL input field and click Analyze. The next screen will allow you to customize the pull request before it is opened.
-
-![Catalog importer with URL in the input](./catalog-import-with-url.png)
-
-Ensure the Name of the created component will make sense to you and your team. This is how other users will refer to your component in Backstage.
-
-![An input which allows setting the name of the component to be imported](./preparing-pull-request-name-component.png)
-
-Set the owner of the component. You should be able to choose the admin group from the dropdown.
-
-![An input which allows setting the owner of the component to be imported](./preparing-pull-request-owner-component.png)
-
-Click Create PR. This will open a pull request against your repository.
-
-Import the component into Backstage by clicking the Import button. You can import the component before the pull request is merged. Backstage will automatically detect when the pull request is merged.
-
-### Step 2. Merge the PR
-
-Review and merge the pull request that Backstage opens on your behalf.
-
-![An open PR on GitHub which will add a catalog-info.yaml file once merged](./opened-pr-on-github.png)
-
-### Step 3. View your component
-
+### Step 3. View your Component
 Click the Home link in the Backstage sidebar to go back to the catalog where you should see your component. Depending on the type of component you imported, you might have to cycle through the tabs until you see your component.
 
-![our component visible on the other tab of Backstage](./component-on-other-tab.png)
+![See your new component](./viewcomponent.png)
 
-## Configuring Backstage to auto discover github repositories using the github discovery processor
+## TroubleShooting FAQs
+**Component Not Appearing?** </br>
+If your component is not appearing make sure Backstage has permissions to read the repo that you added the yaml file to.
+You can check this by going to the Github settings of a repo that Backstage already has access to, then follow `Settings>Integrations>Configure`, and making sure your repo is listed in the allowed repos:
 
-The Roadie team can configure your Backstage instance to auto discover `catalog-info.yaml` files created in your GitHub repositories. To do this, please contact us via Slack and we will be happy to configure it for you.
+![repo permissions](./repopermissions.png)
 
-We will need a URL pattern to discover the catalog files.
-
-```text
-https://github.com/AcmeInc/*/blob/main/catalog-info.yaml
-```
-
-You can use regular regex syntax in the repository name part of the GitHub URL as shown above.
-
-## Next steps
+## What Next? 
 
 Let's [add some documentation for the component we just created](/docs/getting-started/technical-documentation/) so that others in your organization can easily learn how to use it.
