@@ -57,7 +57,7 @@ Click the Home link in the Backstage sidebar to go back to the catalog where you
 
 ### TroubleShooting FAQs
 **Component Not Appearing?** </br>
-If your component is not appearing make sure Backstage has permissions to the repo that you added the yaml file too. 
+If your component is not appearing make sure Backstage has permissions to read the repo that you added the yaml file to.
 You can check this by going to the Github settings of a repo that Backstage already has access to, then follow `Settings>Integrations>Configure`, and making sure your repo is listed in the allowed repos:
 
 ![repo permissions](./repopermissions.png)
