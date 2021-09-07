@@ -1,5 +1,5 @@
 ---
-humanName: GPC Project Creator
+humanName: GCP Project Creator
 heading: 'Backstage Google Cloud Platform Projects Plugin'
 lead: 'Create, list and manage your Google Cloud Projects.'
 attribution:
