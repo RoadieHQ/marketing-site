@@ -72,6 +72,7 @@ const Button = ({
   text = 'Submit',
   link = false,
   color = 'default',
+  className = {},
   ...props
 }) => {
   const classes = useStyles({ color, fullWidth });
@@ -83,7 +84,7 @@ const Button = ({
 
   if (link) {
     return (
-      <Link className={classnames('typography-mono', classes.root)} {...props}>
+      <Link className={classnames('typography-mono', classes.root, className.root)} {...props}>
         {prefixIcon}
         <span>{text}</span>
       </Link>
@@ -91,7 +92,7 @@ const Button = ({
   }
 
   return (
-    <button className={classnames('typography-mono', classes.root)} {...props}>
+    <button className={classnames('typography-mono', classes.root, className.root)} {...props}>
       {prefixIcon}
       <span>{text}</span>
     </button>

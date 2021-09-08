@@ -35,6 +35,11 @@ const useStyles = createUseStyles((theme) => ({
     display: 'inline',
   },
 
+  toggleButtonRoot: {
+    fontSize: '1.3rem',
+    padding: 6,
+  },
+
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     searchWrapper: {
       paddingRight: 8,
@@ -97,6 +102,9 @@ const DocSidebar = () => {
               onClick={toggleSliderOpen}
               text={isOpen ? 'Hide nav' : 'Show nav'}
               icon={isOpen ? <FaArrowCircleUp /> : <FaArrowCircleDown />}
+              className={{
+                root: classes.toggleButtonRoot,
+              }}
             />
           </span>
         </div>
