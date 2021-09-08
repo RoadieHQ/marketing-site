@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss';
 import { Lead, Headline, TwoColumnLayout } from 'components';
 import { Helmet } from 'react-helmet';
 import { ButtonLinkCallToAction } from 'components/CallToAction';
-// import { GetInstanceFormCallToAction } from 'components/CallToAction';
 
 import IntroToRoadieModal from './IntroToRoadieModal';
 import Adornment from './Adornment';
@@ -74,12 +73,6 @@ const Hero = ({ headline, lead }) => {
 
             <div className={classes.callToActionWrapper}>
               <ButtonLinkCallToAction text="Try it free" />
-              {/*
-              <GetInstanceFormCallToAction
-                emailInputId="get-instance-email-input"
-                buttonId="get-instance-email-button"
-              />
-              */}
             </div>
           </>
         }
