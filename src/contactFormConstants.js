@@ -7,5 +7,4 @@
 exports.FORM_NAMES = {
   subscribeToNewsletter: 'subscribe-to-newsletter',
   getInstance: 'submit-get-instance-form',
-  getInstanceSplitTesting: 'get-instance-split-testing',
 };

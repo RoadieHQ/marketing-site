@@ -25,7 +25,7 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
   const [submitting, setSubmitting] = useState(false);
   const [email, setEmail] = useState('');
   const ctaButtonLabel = 'Get Backstage';
-  const netlifyFormName = FORM_NAMES.getInstanceSplitTesting;
+  const netlifyFormName = FORM_NAMES.getInstance;
   const [subForm, setSubForm] = useState({
     message: 'We will never sell or share your email address',
   });
