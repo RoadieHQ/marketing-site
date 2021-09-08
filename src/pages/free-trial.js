@@ -35,20 +35,26 @@ const useStyles = createUseStyles((theme) => ({
     },
 
     column: {
-      flex: 1,
       paddingTop: '1em',
+    },
+
+    formColumn: {
+      flexGrow: 1,
     },
 
     testimonialColumn: {
       justifyContent: 'center',
       paddingTop: '3em',
+      backgroundColor: '#E9F7FF',
     },
 
-    formInner: {
-      border: '1px solid #222',
+    testimonialWrapper: {
       padding: '2em',
     },
 
+    formInner: {
+      paddingRight: '2em',
+    },
   },
 }));
 
@@ -61,7 +67,7 @@ const Home = ({ data, location }) => {
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description="Some descriotion" />
       <StickyFooter location={location} maxWidthBreakpoint="none" headerBottomMargin={0}>
         <div className={classes.main}>
-          <div className={classes.column}>
+          <div className={classnames(classes.column, classes.formColumn)}>
             <div className={classes.formWrapper}>
               <div className={classes.formInner}>
                 <div className={classes.formTitle}>
@@ -74,7 +80,9 @@ const Home = ({ data, location }) => {
           </div>
 
           <div className={classnames(classes.column, classes.testimonialColumn)}>
-            <Testimonial />
+            <div className={classes.testimonialWrapper}>
+              <Testimonial />
+            </div>
           </div>
         </div>
       </StickyFooter>
