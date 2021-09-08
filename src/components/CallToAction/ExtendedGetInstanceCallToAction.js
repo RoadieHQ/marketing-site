@@ -68,7 +68,7 @@ export const submitToNetlifyForms = async ({
   return resp;
 };
 
-const ExtendedGetInstanceCallToAction = () => {
+const ExtendedGetInstanceCallToAction = ({ onSuccess }) => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [scmTool, setScmTool] = useState('github-enterprise-cloud');
@@ -93,6 +93,7 @@ const ExtendedGetInstanceCallToAction = () => {
     if (resp.ok) {
       console.log('resp ok', resp);
       // DO NOT reset the email input here. It is already happening higher in the state chain.
+      onSuccess();
     } else {
       console.log('error', resp);
     }
@@ -119,7 +120,7 @@ const ExtendedGetInstanceCallToAction = () => {
           label="Work email address *"
           type="email"
           name="email"
-          id="form-email"
+          id="get-instance-email-input"
           onChange={setEmail}
           value={email}
           fullWidth
@@ -142,7 +143,7 @@ const ExtendedGetInstanceCallToAction = () => {
               onChange={setScmTool}
               currentValue={scmTool}
               name="scm"
-              id={value}
+              id={`get-instance-scm-${value}-input`}
             />
           </div>
         ))}
@@ -154,6 +155,7 @@ const ExtendedGetInstanceCallToAction = () => {
           label="Subscribe me to the Backstage Weekly newsletter."
           checked={subToNewsletter}
           onChange={setSubToNewsletter}
+          id="get-instance-sub-to-newsletter-input"
         />
       </div>
 
