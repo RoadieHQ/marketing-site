@@ -13,10 +13,6 @@ const useStyles = createUseStyles(() => ({
   radioWrapper: {
     marginBottom: '0.4em',
   },
-
-  emailInput: {
-    width: '100%',
-  },
 }));
 
 const SCM_TOOLS = [{
@@ -126,7 +122,7 @@ const ExtendedGetInstanceCallToAction = () => {
           id="form-email"
           onChange={setEmail}
           value={email}
-          className={{ input: classes.emailInput }}
+          fullWidth
           helpText="Your account details will be sent to this address"
         />
       </div>

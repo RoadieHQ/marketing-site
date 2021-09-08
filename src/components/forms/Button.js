@@ -5,7 +5,13 @@ import classnames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    display: 'inline-block',
+    display: 'flex',
+    justifyContent: 'center',
+
+    width: ({ fullWidth }) => {
+      if (fullWidth) return '100%';
+      return 'inherit';
+    },
 
     color: ({ color }) => {
       if (color === 'primary') return theme.palette.grey[100];
@@ -48,20 +54,27 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   prefixIconWrapper: {
-    marginRight: 8,
+    marginRight: 10,
     verticalAlign: 'middle',
   },
 
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     root: {
       lineHeight: 2,
-      padding: 8,
+      padding: 10,
     },
   },
 }));
 
-const Button = ({ text = 'Submit', icon, link = false, color = 'default', ...props }) => {
-  const classes = useStyles({ color });
+const Button = ({
+  icon,
+  fullWidth = false,
+  text = 'Submit',
+  link = false,
+  color = 'default',
+  ...props
+}) => {
+  const classes = useStyles({ color, fullWidth });
 
   let prefixIcon;
   if (icon) {

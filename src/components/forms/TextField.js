@@ -4,8 +4,19 @@ import classnames from 'classnames';
 import { HelpText } from 'components';
 
 const useStyles = createUseStyles((theme) => ({
+  root: {
+    width: ({ fullWidth }) => {
+      if (fullWidth) return '100%';
+      return 'inherit';
+    },
+  },
+
   input: {
     flex: 1,
+    width: ({ fullWidth }) => {
+      if (fullWidth) return '100%';
+      return 'inherit';
+    },
 
     border: 'none',
     borderLeft: `2px solid ${theme.palette.primary.main}`,
@@ -58,9 +69,10 @@ const TextField = ({
   helpText,
   helpTextState,
   className = {},
+  fullWidth = false,
   ...rest
 }) => {
-  const classes = useStyles();
+  const classes = useStyles({ fullWidth });
   const htmlId = id ? id : Math.random().toString(36).slice(2);
 
   const onInputChange = (e) => {
@@ -68,7 +80,7 @@ const TextField = ({
   };
 
   return (
-    <div className={className.root}>
+    <div className={classnames(classes.root, className.root)}>
       {label && (
         <div>
           <label htmlFor={htmlId} className={classes.label}>

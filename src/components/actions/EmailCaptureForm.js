@@ -16,10 +16,6 @@ const styles = (theme) => ({
     marginBottom: 32,
   },
 
-  textFieldInput: {
-    width: '100%',
-  },
-
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     inputWrapper: {
       flexDirection: 'row',
@@ -78,8 +74,8 @@ const EmailCaptureForm = ({
           color="primary"
           helpText={subForm.message}
           helpTextState={subForm.state}
+          fullWidth
           className={{
-            input: classes.textFieldInput,
             root: classes.textFieldRoot,
           }}
         />
@@ -90,6 +86,7 @@ const EmailCaptureForm = ({
             disabled={disabled}
             icon={<FaPaperPlane />}
             id={buttonId}
+            fullWidth
             color="primary"
           />
         </div>
