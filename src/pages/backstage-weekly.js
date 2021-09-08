@@ -16,10 +16,13 @@ const useStyles = createUseStyles(() => ({
     height: 100,
   },
 
+  center: {
+    textAlign: 'center',
+  },
+
   callToActionWrapper: {
     paddingTop: 40,
     paddingBottom: 180,
-    textAlign: 'center',
   },
 
   callToActionParagraph: {
@@ -69,13 +72,15 @@ const BlogIndex = ({ data, location }) => {
       <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
         <PageMargins>
           <div className={classes.callToActionWrapper}>
-            <img alt="The Roadie logo" src={roadieRLogo} className={classes.logo} />
-            <InterstitialTitle text="Roadie's Backstage Weekly Newsletter" />
+            <div className={classes.center}>
+              <img alt="The Roadie logo" src={roadieRLogo} className={classes.logo} />
+              <InterstitialTitle text="Roadie's Backstage Weekly Newsletter" />
 
-            <p className={classes.callToActionParagraph}>
-              Get the latest news, deep dives into Backstage features, and a roundup of recent
-              open-source action. Track the project without having to watch the GitHub repo.
-            </p>
+              <p className={classes.callToActionParagraph}>
+                Get the latest news, deep dives into Backstage features, and a roundup of recent
+                open-source action. Track the project without having to watch the GitHub repo.
+              </p>
+            </div>
 
             {/* I feel this is ok, since subscribing to the newsletter is one of a very
                 small number of actions the user can take on this particular page */}

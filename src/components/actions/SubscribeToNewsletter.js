@@ -7,10 +7,13 @@ import CallToAction from './NetlifyFormCallToAction';
 import { FORM_NAMES } from '../../contactFormConstants';
 
 const useStyles = createUseStyles(() => ({
+  center: {
+    textAlign: 'center',
+  },
+
   callToActionWrapper: {
     paddingTop: 40,
     paddingBottom: 40,
-    textAlign: 'center',
   },
 
   callToActionParagraph: {
@@ -48,13 +51,15 @@ export const SubscribeToNewsletterCTA = (props) => {
 
   return (
     <div className={classes.callToActionWrapper}>
-      <InterstitialTitle text="Become a Backstage expert" />
+      <div className={classes.center}>
+        <InterstitialTitle text="Become a Backstage expert" />
 
-      <p className={classes.callToActionParagraph}>
-        To get the latest news, deep dives into Backstage features, and a roundup of recent
-        open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
-        <Link color="primary" to="/backstage-weekly/">See recent editions.</Link>
-      </p>
+        <p className={classes.callToActionParagraph}>
+          To get the latest news, deep dives into Backstage features, and a roundup of recent
+          open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
+          <Link color="primary" to="/backstage-weekly/">See recent editions.</Link>
+        </p>
+      </div>
 
       <CallToAction
         buttonText="Subscribe"

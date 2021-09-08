@@ -18,7 +18,7 @@ const useStyles = createUseStyles((theme) => ({
       return theme.palette.text.primary;
     },
 
-    textAlign: 'center',
+    whiteSpace: 'nowrap',
     cursor: 'pointer',
     userSelect: 'none',
     border: 'none',
