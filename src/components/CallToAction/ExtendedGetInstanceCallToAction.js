@@ -3,6 +3,7 @@ import { Button, TextField, Radio, Checkbox, TextLink as Link } from 'components
 import { createUseStyles } from 'react-jss';
 
 import { FORM_NAMES } from '../../contactFormConstants';
+import { currentlyExecutingGitBranch } from '../../environment';
 
 const useStyles = createUseStyles(() => ({
   fieldset: {
@@ -45,19 +46,30 @@ export const submitToNetlifyForms = async ({
   email,
   scmTool,
   subToNewsletter,
+  netlifyFormName,
+  submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
+  const branch = currentlyExecutingGitBranch();
+
   const formData = new FormData();
-  formData.append('form-name', FORM_NAMES.getInstanceExtended);
+  formData.append('form-name', netlifyFormName);
   formData.append('email', email);
   SCM_TOOLS.forEach(({ value }) => {
     formData.append(value, value === scmTool);
   });
   formData.append('sub-to-newsletter', subToNewsletter);
+  formData.append('deployed-branch', branch);
+  formData.append('submit-button-label', submitButtonLabel);
 
-  const resp = await fetch('/', {
-    method: 'POST',
-    body: formData,
-  });
+  let resp;
+  try {
+    resp = await fetch('/', {
+      method: 'POST',
+      body: formData,
+    });
+  } catch (error) {
+    console.error('Submission failed', error, resp);
+  }
 
   return resp;
 };
@@ -68,6 +80,8 @@ const ExtendedGetInstanceCallToAction = () => {
   const [scmTool, setScmTool] = useState('github-enterprise-cloud');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+  const netlifyFormName = FORM_NAMES.getInstanceExtended;
+  const buttonText = 'Start your trial';
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -78,6 +92,8 @@ const ExtendedGetInstanceCallToAction = () => {
       email,
       scmTool,
       subToNewsletter,
+      netlifyFormName,
+      submitButtonLabel: buttonText,
     });
 
     if (resp.ok) {
@@ -93,8 +109,16 @@ const ExtendedGetInstanceCallToAction = () => {
   const disabled = submitting || !email || email === '';
 
   return (
-    <form onSubmit={onSubmit}>
-      <input type="hidden" name="form-name" value={FORM_NAMES.getInstanceExtended} />
+    <form
+      onSubmit={onSubmit}
+      name={netlifyFormName}
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value={netlifyFormName} />
+      <input type="hidden" name="submit-button-label" value={buttonText} />
+      <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
       <div className={classes.fieldset}>
         <TextField
@@ -144,7 +168,7 @@ const ExtendedGetInstanceCallToAction = () => {
       </div>
 
       <div className={classes.fieldset}>
-        <Button color="primary" text="Start your trial" disabled={disabled} />
+        <Button color="primary" text={buttonText} disabled={disabled} />
       </div>
     </form>
   );
