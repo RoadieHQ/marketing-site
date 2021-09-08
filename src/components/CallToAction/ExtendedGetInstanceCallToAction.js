@@ -54,9 +54,7 @@ export const submitToNetlifyForms = async ({
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
   formData.append('email', email);
-  SCM_TOOLS.forEach(({ value }) => {
-    formData.append(value, value === scmTool);
-  });
+  formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
