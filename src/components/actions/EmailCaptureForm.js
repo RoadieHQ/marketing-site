@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 import { FaPaperPlane } from 'react-icons/fa';
 
+import { currentlyExecutingGitBranch } from '../../environment';
 import Button from '../Button';
 
 const styles = (theme) => ({
@@ -82,6 +83,7 @@ const EmailCaptureForm = ({
   subForm,
   setEmail,
   submitting = false,
+  netlifyFormName,
 }) => {
   const classes = useStyles();
 
@@ -95,7 +97,17 @@ const EmailCaptureForm = ({
 
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
-    <form onSubmit={onSubmit}>
+    <form
+      onSubmit={onSubmit}
+      name={netlifyFormName}
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value={netlifyFormName} />
+      <input type="hidden" name="submit-button-label" value={buttonText} />
+      <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
+
       <div className={classes.inputWrapper}>
         <input
           type="email"

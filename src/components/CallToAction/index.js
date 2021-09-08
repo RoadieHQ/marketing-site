@@ -25,6 +25,7 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
   const [submitting, setSubmitting] = useState(false);
   const [email, setEmail] = useState('');
   const ctaButtonLabel = 'Get Backstage';
+  const netlifyFormName = FORM_NAMES.getInstanceSplitTesting;
   const [subForm, setSubForm] = useState({
     message: 'We will never sell or share your email address',
   });
@@ -35,7 +36,8 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
 
     const resp = await submitEmailToNetlifyForms({
       email,
-      netlifyFormName: FORM_NAMES.getInstance,
+      netlifyFormName,
+      submitButtonLabel: ctaButtonLabel,
     });
 
     if (resp.ok) {
@@ -47,6 +49,7 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
       navigate(`/get-instance/?referred_email=${codedEmail}&clicked_button_label=${codedLabel}`);
     } else {
       setSubmitting(false);
+      console.error('Error submitting form to Netlify', resp);
       setSubForm({
         state: 'error',
         message: 'Something went wrong. Please try that again.',
@@ -62,6 +65,7 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
       onSubmit={visitGetBackstageForm}
       subForm={subForm}
       submitting={submitting}
+      netlifyFormName={netlifyFormName}
       {...props}
     />
   );
