@@ -28,7 +28,7 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
   const netlifyFormName = FORM_NAMES.getInstance;
   const [subForm, setSubForm] = useState({
     message: (
-      <span>Too much commitment? Join the <Link color="primary" to="/backstage-weekly/">Backstage Weekly newsletter</Link> instead.</span>
+      <span>Just want to learn? Join the <Link color="primary" to="/backstage-weekly/">Backstage Weekly newsletter</Link> instead.</span>
     ),
   });
 
