@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'components';
+import { Button, TextLink as Link } from 'components';
 import { navigate } from 'gatsby';
 
 import EmailCaptureForm from '../actions/EmailCaptureForm';
@@ -27,7 +27,9 @@ export const GetInstanceFormCallToAction = ({ ...props }) => {
   const ctaButtonLabel = 'Get Backstage';
   const netlifyFormName = FORM_NAMES.getInstance;
   const [subForm, setSubForm] = useState({
-    message: 'We will never sell or share your email address',
+    message: (
+      <span>Too much commitment? Join the <Link color="primary" to="/backstage-weekly/">Backstage Weekly newsletter</Link> instead.</span>
+    ),
   });
 
   const visitGetBackstageForm = async (e) => {
