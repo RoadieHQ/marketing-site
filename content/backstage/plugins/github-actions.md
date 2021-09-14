@@ -19,7 +19,7 @@ coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and 
 
 gettingStarted: # What will this step accomplish?
   - intro: |
-      Follow our [instructions to create a GitHub OAuth app for Backstage](/blog/github-auth-backstage/).
+      If your Backstage instance is using a Personal Access Token to authenticate against GitHub, you will need to follow our [instructions to create a GitHub OAuth app for Backstage](/blog/github-auth-backstage/). No extra authentication mechanism is required if you are already using a GitHub app with Backstage.
 
   - intro: Install the plugin into your Backstage instance.
     language: bash
