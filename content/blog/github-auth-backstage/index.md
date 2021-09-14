@@ -1,13 +1,20 @@
 ---
 title: Using GitHub Auth with Backstage
 date: '2020-08-05T21:00:00.0Z'
-description: Setting up GitHub autententication can be a little tricky, but this post will tell you everything you need to know.
+description: Setting up GitHub authentication can be a little tricky, but this post will tell you everything you need to know.
+lastUpdated: '2021-09-14T21:00:00.0Z'
 tags: ['tutorial', 'github']
 ---
 
+**Update Sept 2021:** Backstage now supports GitHub authentication via GitHub apps. If you are using a GitHub app, you do not need to follow the steps described below. They are only valid if you are using a GitHub Personal Access Token with Backstage.
+
+<br />
+<hr />
+<br />
+
 GitHub is one of the most popular Backstage authentication mechanisms going. There's a good reason for this, Backstage ultimately needs to pull service catalog information from YAML files, those YAML files usually live in git, and the git repos usually live on GitHub.
 
-Setting up GitHub autententication can be a little tricky, but this post will tell you everything you need to know.
+Setting up GitHub authentication can be a little tricky, but this post will tell you everything you need to know.
 
 There are basically two steps:
 
