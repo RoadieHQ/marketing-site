@@ -101,7 +101,7 @@ The `GitReleaseManagerPage` component can be customized by setting the component
 
 You can pre-select the versioning strategy, owner and repository. This will prefill all inputs and make them read-only. This might be useful if you want to expose repository-specific release manager endpoints. Keep in mind that users must have access to the Git repository otherwise they will be presented with a permission error.
 
-```jsx
+```javascript
 <GitReleaseManagerPage
   project={{
     owner: 'briandesousa',
@@ -118,7 +118,7 @@ You can pre-select the versioning strategy, owner and repository. This will pref
 
 You can selectively hide sections of the Git Release Manager page:
 
-```jsx
+```javascript
 <GitReleaseManagerPage
   features={{
     createRc: {
@@ -137,7 +137,7 @@ You can selectively hide sections of the Git Release Manager page:
 
 You can build custom behaviors that are triggered after a release candidate, version or patch is created:
 
-```jsx
+```javascript
 <GitReleaseManagerPage
   features={{
     createRc: {
@@ -156,7 +156,7 @@ You can build custom behaviors that are triggered after a release candidate, ver
 
 You can add your own custom content to the Git Release Manager page too. Use the `args` object to access data about your release.
 
-```jsx
+```javascript
 <GitReleaseManagerPage
   features={{
     custom: {
