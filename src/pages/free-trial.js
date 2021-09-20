@@ -13,6 +13,7 @@ import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 const SEO_TITLE = 'Get a free trial';
 
 const useStyles = createUseStyles((theme) => ({
+  content: theme.preMadeStyles.content,
   main: {},
   column: {},
   testimonialColumn: {},
@@ -62,7 +63,7 @@ const useStyles = createUseStyles((theme) => ({
 const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const classes = useStyles();
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -73,18 +74,15 @@ const Home = ({ data, location }) => {
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description="Some descriotion" />
 
       <FormSubmissionModal
-        titleText="Thank you!"
+        titleText="Your Backstage experience is on the way"
         bodyText={
-          <>
-            <p className={classes.p}>
-              Our Roadies will get busy creating your Backstage experience.
+          <div className={classes.content}>
+            <p>
+              Once it&apos;s ready, you&apos;ll receive an email at the address provided. It typically takes a day or two to get everything ready.
             </p>
-            <p className={classes.p}>
-              Once it&apos;s ready, you&apos;ll receive an email at the address provided.
-            </p>
-          </>
+          </div>
         }
-        followOn="GET_DEMO_SURVEY"
+        followOn="NEWSLETTER_AND_TWITTER"
         handleCloseModal={handleCloseModal}
         siteMetadata={data.site.siteMetadata}
         modalOpen={modalOpen}
