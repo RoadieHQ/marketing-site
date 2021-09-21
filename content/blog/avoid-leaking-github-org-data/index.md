@@ -19,7 +19,7 @@ Backstage is a three tier application. The frontend tier runs in the browser and
 
 ![Backstage & GitHub](./three-tier.png)
 
-The Backstage backend includes the *Backstage Software Catalogue* to help bring visibility to your software components. The software catalog is a core component of Backstage. It can discover and index Git repositories hosted on GitHub and GitHub Enterprise using GitHub REST and GraphQL APIs. Indexed data is exposed via backend REST APIs to the frontend.
+The Backstage backend includes the *Backstage Software Catalog* to help bring visibility to your software components. The software catalog is a core component of Backstage. It can discover and index Git repositories hosted on GitHub and GitHub Enterprise using GitHub REST and GraphQL APIs. Indexed data is exposed via backend REST APIs to the frontend.
 
 Backstage plugins can be added to the frontend to extend the core software catalog and integrate with external services. For example, the [GitHub Pull Request plugin](https://roadie.io/backstage/plugins/github-pull-requests/) allows you to see a list of open pull requests associated with an item in the software catalog. Frontend plugins such as this one can use GitHub APIs to retrieve information and render it directly in Backstage. This is just one very specific yet common use of GitHub.
 
@@ -183,7 +183,7 @@ router.post('/installations', async (req, res) => {
  const { data } = await userGitHub.request('GET /user/installations');
 
  if(data.installations.some(installation => installation.id === installationId)) {
-  // The following is sudo-code for storing the installation Id.
+  // The following is pseudocode for storing the installation Id.
   database.saveInstallationId(installationId)
   res.sendStatus(201);
  } else {
