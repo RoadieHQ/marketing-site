@@ -11,7 +11,7 @@ Roadie provides backstage with an authentication and user management feature for
 When the tenant is created the user requesting the tenant is added as the first user in backstage. This user may choose to add another user.
 
 ## User Management
-The user management page is contained under the Administration side bar menu item. ![admin-sidebar.png](admin-sidebar.png)
+The user management page is contained under the Administration side bar menu item.
 
 ![user-management-page.png](user-management-page.png)
 
