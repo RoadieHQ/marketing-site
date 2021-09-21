@@ -20,6 +20,7 @@ To add a new user click the invite a new user button and enter the users email a
 
 ![invite-user-button.png](invite-user-button.png)
 
+
 Enter the users email and click send.
 
 ![add-user-dialog.png](add-user-dialog.png)
