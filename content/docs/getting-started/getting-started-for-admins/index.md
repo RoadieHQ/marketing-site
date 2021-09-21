@@ -87,3 +87,5 @@ The GitHub permissions that Roadie needs are all read only. You can also choose 
 ## Next steps
 
 Let's [add a component to Backstage](/docs/getting-started/adding-components/).
+
+Also you can [add add another user to Backstage](/docs/getting-started/user-management/).
