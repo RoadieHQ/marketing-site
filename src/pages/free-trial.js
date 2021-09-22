@@ -87,11 +87,10 @@ const SubmissionSuccessModal = ({ email, scmTool, classes, ...rest }) => {
       bodyText={
         <div className={classes.content}>
           <p>
-            Roadie only supports GitHub Cloud for now, so we won&apos;t be able to support your
-            systems at this time.
+            Roadie only supports GitHub Cloud for now.
           </p>
           <p>
-            We are working to support more source code management platforms in the near future,
+            We are working to support more tools in the near future,
             and you will be among the first to know when we support yours.
           </p>
         </div>
