@@ -68,19 +68,22 @@ export const submitToNetlifyForms = async ({
   return resp;
 };
 
-const ExtendedGetInstanceCallToAction = ({ onSuccess }) => {
+const ExtendedGetInstanceCallToAction = ({
+  onSuccess,
+  email,
+  setEmail,
+  scmTool,
+  setScmTool,
+}) => {
   const classes = useStyles();
-  const [email, setEmail] = useState('');
-  const [scmTool, setScmTool] = useState('github-enterprise-cloud');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
-  const buttonText = 'Start your trial';
+  const buttonText = 'Request a trial';
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    console.log('submit', email, scmTool, subToNewsletter);
 
     const resp = await submitToNetlifyForms({
       email,
@@ -91,7 +94,6 @@ const ExtendedGetInstanceCallToAction = ({ onSuccess }) => {
     });
 
     if (resp.ok) {
-      console.log('resp ok', resp);
       // DO NOT reset the email input here. It is already happening higher in the state chain.
       onSuccess();
     } else {

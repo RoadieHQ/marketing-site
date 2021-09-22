@@ -85,6 +85,11 @@ const FormSubmissionModal = ({
   siteMetadata,
   followOn = 'NEWSLETTER_AND_TWITTER',
   email,
+  titleEmoji = (
+    <span aria-label="Party Streamers" role="img">
+      🎉
+    </span>
+  ),
 }) => {
   const classes = useStyles();
 
@@ -108,10 +113,7 @@ const FormSubmissionModal = ({
     >
       <div className={classes.modalContentWrapper}>
         <h2 className={classes.h2}>
-          {titleText}{' '}
-          <span aria-label="Party Streamers" role="img">
-            🎉
-          </span>
+          {titleText}{' '}{titleEmoji}
         </h2>
         {bodyText}
         {followOnContent}
