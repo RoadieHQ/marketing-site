@@ -62,14 +62,14 @@ gettingStarted:
 
 ## How to use Bugsnag plugin in Backstage:
 
-1.  Add an annotation to the yaml config file of a component:
+Firstly, add an annotation to the yaml config file of a component:
 
 ```yml
 bugsnag.com/project-key: <organization-name>/<project-notifier-api-key>
 ```
 Both values can be found in Bugsnag settings dashboard, under organization and project settings.
 
-2. Add your Bugsnag personal auth token to the environment variables of your backstage backend server (you can find it in https://app.bugsnag.com/settings/{organizationaname}/my-account/auth-tokens), in the form of the word 'token' followed by your token. So it should look like this:
+Afterwards, proceed with adding your Bugsnag personal auth token to the environment variables of your backstage backend server (you can find it in https://app.bugsnag.com/settings/{organizationaname}/my-account/auth-tokens), in the form of the word 'token' followed by your token. So it should look like this:
 
   ```
   BUGSNAG_PERSONAL_TOKEN="token <your-api-key>"
