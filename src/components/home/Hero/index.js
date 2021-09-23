@@ -72,7 +72,7 @@ const Hero = ({ headline, lead }) => {
             </div>
 
             <div className={classes.callToActionWrapper}>
-              <ButtonLinkCallToAction text="Try it free" />
+              <ButtonLinkCallToAction text="Try it free" fullWidth />
             </div>
           </>
         }
