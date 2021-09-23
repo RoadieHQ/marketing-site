@@ -10,7 +10,7 @@ const useStyles = createUseStyles((theme) => ({
 
     width: ({ fullWidth }) => {
       if (fullWidth) return '100%';
-      return 'inherit';
+      return 'fit-content';
     },
 
     color: ({ color }) => {
