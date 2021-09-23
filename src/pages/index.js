@@ -7,7 +7,7 @@ import {
   ResponsiveSpacer,
 } from 'components';
 // eslint-disable-next-line import/named
-import { Testimonial, Hero, FooterCTA, features } from 'components/home';
+import { Testimonial, Hero, FooterCTA, features, IntegrationsList } from 'components/home';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
 const HEADLINE = 'Backstage for growing engineering teams';
@@ -43,6 +43,19 @@ const Home = ({ data, location }) => {
         {features.quickEasySetup}
         {features.customPlugins}
         {features.securityMaintenance}
+
+        <ResponsiveSpacer>
+          <InterstitialTitle
+            id="integrations"
+            size="large"
+          >
+            Pre-loaded with all your favorite plugins
+          </InterstitialTitle>
+        </ResponsiveSpacer>
+
+        <ResponsiveSpacer>
+          <IntegrationsList />
+        </ResponsiveSpacer>
 
         <ResponsiveSpacer>
           <InterstitialTitle
