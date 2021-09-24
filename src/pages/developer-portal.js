@@ -8,7 +8,7 @@ import {
   PageMargins,
 } from 'components';
 // eslint-disable-next-line import/named
-import { Testimonial, Hero, FooterCTA, features } from 'components/home';
+import { Hero, FooterCTA, features, IntegrationsList } from 'components/home';
 
 const SEO_TITLE = 'Backstage Developer Portal';
 const HEADLINE = 'Ship faster with a powerful developer portal';
@@ -30,10 +30,6 @@ const Home = ({ data, location }) => {
           </ResponsiveSpacer>
 
           <ResponsiveSpacer>
-            <Testimonial />
-          </ResponsiveSpacer>
-
-          <ResponsiveSpacer>
             <InterstitialTitle
               id="product"
               size="large"
@@ -45,6 +41,20 @@ const Home = ({ data, location }) => {
           {features.quickEasySetup}
           {features.customPlugins}
           {features.securityMaintenance}
+
+          <ResponsiveSpacer>
+            <InterstitialTitle
+              id="integrations"
+              size="large"
+            >
+              Pre-loaded with all your favorite plugins
+            </InterstitialTitle>
+          </ResponsiveSpacer>
+
+          <ResponsiveSpacer>
+            <IntegrationsList />
+          </ResponsiveSpacer>
+
 
           <ResponsiveSpacer>
             <InterstitialTitle

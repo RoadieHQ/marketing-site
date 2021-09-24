@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetInstanceFormCallToAction } from 'components/CallToAction';
+import { ButtonLinkCallToAction } from 'components/CallToAction';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles(() => ({
@@ -19,7 +19,7 @@ const FooterCTA = () => {
   return (
     <div className={classes.callToActionWrapper}>
       <div className={classes.callToActionWrapperInner}>
-        <GetInstanceFormCallToAction />
+        <ButtonLinkCallToAction text="Try it free" fullWidth />
       </div>
     </div>
   );

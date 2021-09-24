@@ -56,7 +56,7 @@ const BackstageDocker = ({ data, location }) => {
           <p>To learn how to customize Backstage, check out the <Link to="https://backstage.io/docs/getting-started/">official getting started guide</Link>.</p>
 
           <h2>Want to get started even faster?</h2>
-          <p>Check out <Link to="/">Roadie&apos;s no-code SaaS Backstage platform</Link>.</p>
+          <p>Check out <Link to="/free-trial/">Roadie&apos;s no-code SaaS Backstage platform</Link>.</p>
         </article>
 
       </StickyFooter>
