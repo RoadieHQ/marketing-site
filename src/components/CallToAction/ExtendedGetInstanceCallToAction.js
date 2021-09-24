@@ -15,27 +15,34 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const SCM_TOOLS = [{
-  value: 'github-enterprise-cloud',
-  label: 'GitHub Enterprise (Cloud)',
+export const SCM_TOOLS = [{
+  value: 'github-cloud',
+  label: 'GitHub Cloud',
+  supported: true,
 }, {
-  value: 'github-enterprise-on-prem',
-  label: 'GitHub Enterprise (On-prem)',
-}, {
-  value: 'github',
-  label: 'GitHub (Not sure)',
+  value: 'github-on-prem',
+  label: 'GitHub On-prem',
+  supported: false,
 }, {
   value: 'gitlab-cloud',
   label: 'Gitlab Cloud',
+  supported: false,
 }, {
   value: 'gitlab-on-prem',
   label: 'Gitlab On-prem',
+  supported: false,
 }, {
   value: 'bitbucket-cloud',
   label: 'Bitbucket Cloud',
+  supported: false,
 }, {
   value: 'bitbucket-server',
   label: 'Bitbucket Server',
+  supported: false,
+}, {
+  value: 'other',
+  label: 'Other',
+  supported: false,
 }];
 
 export const submitToNetlifyForms = async ({

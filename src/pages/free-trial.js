@@ -9,6 +9,7 @@ import {
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { Testimonial } from 'components/home';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
+import { SCM_TOOLS } from 'components/CallToAction/ExtendedGetInstanceCallToAction';
 
 const SEO_TITLE = 'Get a SaaS Backstage trial';
 
@@ -63,7 +64,7 @@ const useStyles = createUseStyles((theme) => ({
 }));
 
 const SubmissionSuccessModal = ({ email, scmTool, classes, ...rest }) => {
-  if (scmTool === 'github-enterprise-cloud' || scmTool === 'github') {
+  if (SCM_TOOLS.filter(({ supported }) => supported).map(({ value }) => value).includes(scmTool)) {
     return (
       <FormSubmissionModal
         titleText="Your Backstage experience is on the way"
@@ -106,7 +107,7 @@ const Home = ({ data, location }) => {
   const classes = useStyles();
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState('');
-  const [scmTool, setScmTool] = useState('github-enterprise-cloud');
+  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
 
   const handleCloseModal = () => {
     setModalOpen(false);
