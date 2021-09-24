@@ -9,7 +9,6 @@ import {
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import { Testimonial } from 'components/home';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-import { SCM_TOOLS } from '../contactFormConstants';
 
 const SEO_TITLE = 'Request a demo';
 
@@ -63,36 +62,14 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const SubmissionSuccessModal = ({ email, scmTool, classes, ...rest }) => {
-  if (SCM_TOOLS.filter(({ supported }) => supported).map(({ value }) => value).includes(scmTool)) {
-    return (
-      <FormSubmissionModal
-        titleText="Your Backstage experience is on the way"
-        bodyText={
-          <div className={classes.content}>
-            <p>
-              Once it&apos;s ready, you&apos;ll receive an email at {email}. It typically takes a day or two to get everything ready.
-            </p>
-          </div>
-        }
-        followOn="NEWSLETTER_AND_TWITTER"
-        {...rest}
-      />
-    );
-  }
-
+const SubmissionSuccessModal = ({ classes, ...rest }) => {
   return (
     <FormSubmissionModal
-      titleText="Oops! We're not ready for you yet."
-      titleEmoji={null}
+      titleText="We'll be in touch"
       bodyText={
         <div className={classes.content}>
           <p>
-            Roadie only supports GitHub Cloud for now.
-          </p>
-          <p>
-            We are working to support more tools in the near future,
-            and you will be among the first to know when we support yours.
+            Thank you for requesting a Roadie Backstage demo. We will reach out to schedule a call via the email provided.
           </p>
         </div>
       }
@@ -106,8 +83,6 @@ const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const classes = useStyles();
   const [modalOpen, setModalOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -117,12 +92,10 @@ const Home = ({ data, location }) => {
     <>
       <SEO
         title={`${SEO_TITLE} | ${siteTitle}`}
-        description="Get a SaaS Backstage experience from Roadie. We handle hosting and maintenance and let you get back to your customers."
+        description="Get a demo of the SaaS Backstage experience from Roadie."
       />
 
       <SubmissionSuccessModal
-        email={email}
-        scmTool={scmTool}
         handleCloseModal={handleCloseModal}
         modalOpen={modalOpen}
         classes={classes}
@@ -139,10 +112,6 @@ const Home = ({ data, location }) => {
                 </div>
 
                 <RequestDemoCallToAction
-                  email={email}
-                  setEmail={setEmail}
-                  scmTool={scmTool}
-                  setScmTool={setScmTool}
                   onSuccess={() => {
                     setModalOpen(true);
                   }}

@@ -49,12 +49,10 @@ export const submitToNetlifyForms = async ({
 
 const RequestDemoCallToAction = ({
   onSuccess,
-  email,
-  setEmail,
-  scmTool,
-  setScmTool,
 }) => {
   const classes = useStyles();
+  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
+  const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -115,7 +113,7 @@ const RequestDemoCallToAction = ({
           label="Work email address *"
           type="email"
           name="email"
-          id="get-instance-email-input"
+          id="request-demo-email-input"
           onChange={setEmail}
           value={email}
           fullWidth
