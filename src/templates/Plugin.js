@@ -64,7 +64,7 @@ const PluginTemplate = ({ data, location }) => {
             <div className={classes.notes}>
               <p>
                 Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
-                <Link to="/" color="primary">Get managed Backstage</Link> from Roadie.
+                <Link to="/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
               </p>
             </div>
 
