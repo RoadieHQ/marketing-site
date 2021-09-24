@@ -53,19 +53,15 @@ const NeedsAnalysisSurveyInner = ({ referredEmail }) => (
 );
 
 const GetDemoSurveyInner = ({ referredEmail }) => {
-  const buttonLabel = 'Request a demo';
   const codedEmail = encodeURIComponent(referredEmail);
-  // This is forwarded because sometimes I change the label and when I go back to contact
-  // folks I can't remember what their expectation was when they clicked the button.
-  const codedLabel = encodeURIComponent(buttonLabel);
 
   return (
     <p>
       <Button
         link={true}
-        to={`/evaluation-request/?referred_email=${codedEmail}&clicked_button_label=${codedLabel}`}
+        to={`/request-demo/?email=${codedEmail}`}
         icon={<FaExternalLinkAlt />}
-        text={buttonLabel}
+        text="Request a demo"
         color="primary"
       />
     </p>
