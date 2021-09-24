@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Radio, Checkbox, TextLink as Link } from 'components';
+import { Button, TextField, Radio, Checkbox } from 'components';
 import { createUseStyles } from 'react-jss';
 
 import { FORM_NAMES, SCM_TOOLS } from '../../contactFormConstants';
@@ -16,6 +16,7 @@ const useStyles = createUseStyles(() => ({
 }));
 
 export const submitToNetlifyForms = async ({
+  name,
   email,
   scmTool,
   subToNewsletter,
@@ -26,6 +27,7 @@ export const submitToNetlifyForms = async ({
 
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
+  formData.append('name', name);
   formData.append('email', email);
   formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
@@ -45,7 +47,7 @@ export const submitToNetlifyForms = async ({
   return resp;
 };
 
-const ExtendedGetInstanceCallToAction = ({
+const RequestDemoCallToAction = ({
   onSuccess,
   email,
   setEmail,
@@ -53,16 +55,18 @@ const ExtendedGetInstanceCallToAction = ({
   setScmTool,
 }) => {
   const classes = useStyles();
+  const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  const netlifyFormName = FORM_NAMES.getInstanceExtended;
-  const buttonText = 'Request a trial';
+  const netlifyFormName = FORM_NAMES.requestDemo;
+  const buttonText = 'Request a demo';
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
 
     const resp = await submitToNetlifyForms({
+      name,
       email,
       scmTool,
       subToNewsletter,
@@ -96,6 +100,18 @@ const ExtendedGetInstanceCallToAction = ({
 
       <div className={classes.fieldset}>
         <TextField
+          label="Full name *"
+          type="text"
+          name="name"
+          id="request-demo-name-input"
+          onChange={setName}
+          value={name}
+          fullWidth
+        />
+      </div>
+
+      <div className={classes.fieldset}>
+        <TextField
           label="Work email address *"
           type="email"
           name="email"
@@ -103,7 +119,6 @@ const ExtendedGetInstanceCallToAction = ({
           onChange={setEmail}
           value={email}
           fullWidth
-          helpText="Your account details will be sent to this address"
         />
       </div>
 
@@ -122,7 +137,7 @@ const ExtendedGetInstanceCallToAction = ({
               onChange={setScmTool}
               currentValue={scmTool}
               name="scm"
-              id={`get-instance-scm-${value}-input`}
+              id={`request-demo-scm-${value}-input`}
             />
           </div>
         ))}
@@ -134,12 +149,8 @@ const ExtendedGetInstanceCallToAction = ({
           label="Subscribe me to the Backstage Weekly newsletter."
           checked={subToNewsletter}
           onChange={setSubToNewsletter}
-          id="get-instance-sub-to-newsletter-input"
+          id="request-demo-sub-to-newsletter-input"
         />
-      </div>
-
-      <div className={classes.fieldset}>
-        <p>By submitting this form, you automatically agree to our <Link color="primary" to="/legal-notices/evaluation-licence/">Evaluation License</Link> and acknowledge you have read our <Link color="primary" to="/legal-notices/privacy-policy/">Privacy Policy</Link>.</p>
       </div>
 
       <div className={classes.fieldset}>
@@ -149,4 +160,4 @@ const ExtendedGetInstanceCallToAction = ({
   );
 };
 
-export default ExtendedGetInstanceCallToAction;
+export default RequestDemoCallToAction;
