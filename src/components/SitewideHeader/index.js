@@ -19,8 +19,6 @@ const SitewideHeader = ({
 }) => {
   const classes = useStyles({ bottomBorder, bottomMargin });
   const data = useStaticQuery(query);
-  const getDemoLinkText = 'Request a demo';
-  const codedGetDemoLinkText = encodeURIComponent(getDemoLinkText);
 
   return (
     <div className={classes.root}>
@@ -52,8 +50,8 @@ const SitewideHeader = ({
 
               <NavItemSpacer>
                 <TextLink
-                  to={`/evaluation-request/?clicked_button_label=${codedGetDemoLinkText}`}
-                  text={getDemoLinkText}
+                  to="/request-demo/"
+                  text="Request a demo"
                   color="primary"
                 />
               </NavItemSpacer>
