@@ -1,7 +1,20 @@
 describe('The landing page', () => {
-  it('has a link to request a demo', () => {
+  it('has a flow for requesting a demo', () => {
+    // We have to stub beause netlify forms don't work in this environment.
+    cy.intercept('POST', 'http://localhost:8001', {
+      statusCode: 200,
+    });
+
     cy.visit('');
-    cy.contains('Request a demo');
+    cy.contains('Request a demo').click();
+
+    cy.get('#request-demo-name-input').type('Mary Mac');
+    cy.get('#request-demo-email-input').type('test@example.com');
+    // This is a custom CSS checkbox which is technically invisble. Cypress
+    // complains so we have to force it.
+    cy.get('#request-demo-sub-to-newsletter-input').uncheck({ force: true });
+    cy.get('button').contains('Request a demo').click();
+    cy.contains("We'll be in touch");
   });
 
   it('has a flow for getting a free trial', () => {
