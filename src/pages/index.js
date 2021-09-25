@@ -2,6 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { SEO } from 'components';
 import SimpleCentered from 'components/tailwind/hero/SimpleCentered';
+import AlternativeSideBySide from 'components/tailwind/features/AlternativeSideBySide';
+import SplitGridOnRight from 'components/tailwind/logo-clouds/SplitGridOnRight';
+import SimpleCenteredCTA from 'components/tailwind/ctas/SimpleCentered';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
 const HEADLINE = 'Backstage for growing engineering teams';
@@ -18,6 +21,9 @@ const Home = ({ data, location }) => {
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
       <SimpleCentered />
+      <AlternativeSideBySide />
+      <SplitGridOnRight />
+      <SimpleCenteredCTA />
     </>
   );
 };
