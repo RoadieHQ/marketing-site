@@ -1,14 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import {
-  SEO,
-  InterstitialTitle,
-  StickyFooter,
-  ResponsiveSpacer,
-  PageMargins,
-} from 'components';
-// eslint-disable-next-line import/named
-import { Hero, FooterCTA, features, IntegrationsList } from 'components/home';
+import { SEO } from 'components';
+import SimpleCentered from 'components/tailwind/hero/SimpleCentered';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
 const HEADLINE = 'Backstage for growing engineering teams';
@@ -23,61 +16,8 @@ const Home = ({ data, location }) => {
   return (
     <>
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
-      <StickyFooter location={location}>
-        <PageMargins>
-          <ResponsiveSpacer>
-            <Hero siteMetadata={data.site.siteMetadata} headline={HEADLINE} lead={LEAD} />
-          </ResponsiveSpacer>
 
-          <ResponsiveSpacer>
-            <InterstitialTitle
-              id="product"
-              size="large"
-            >
-              Backstage with benefits...
-            </InterstitialTitle>
-          </ResponsiveSpacer>
-
-          {features.quickEasySetup}
-          {features.customPlugins}
-          {features.securityMaintenance}
-
-          <ResponsiveSpacer>
-            <InterstitialTitle
-              id="integrations"
-              size="large"
-            >
-              Pre-loaded with all your favorite plugins
-            </InterstitialTitle>
-          </ResponsiveSpacer>
-
-          <ResponsiveSpacer>
-            <IntegrationsList />
-          </ResponsiveSpacer>
-
-          <ResponsiveSpacer>
-            <InterstitialTitle
-              id="solutions"
-              size="large"
-            >
-              Turn tribal knowledge into shared context
-            </InterstitialTitle>
-          </ResponsiveSpacer>
-
-          {features.builtOnBackstage}
-          {features.discoverabilityAndOnboarding}
-          {features.productionConsistency}
-
-          <ResponsiveSpacer>
-            <InterstitialTitle size="large" text="Sounds good? Let's get started..." />
-          </ResponsiveSpacer>
-
-
-          <ResponsiveSpacer>
-            <FooterCTA />
-          </ResponsiveSpacer>
-        </PageMargins>
-      </StickyFooter>
+      <SimpleCentered />
     </>
   );
 };

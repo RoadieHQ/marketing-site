@@ -122,6 +122,7 @@ module.exports = {
     'gatsby-plugin-twitter',
     'gatsby-plugin-netlify',
     'gatsby-plugin-image',
+    'gatsby-plugin-postcss',
 
     ...rssFeedPlugin,
 
