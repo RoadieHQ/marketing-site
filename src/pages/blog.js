@@ -4,6 +4,8 @@ import { graphql } from 'gatsby';
 import { SEO, StickyFooter, PageMargins } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 import HeadRssLink from 'components/blog/HeadRssLink';
+import ThreeColWithBadges from 'components/tailwind/blog/ThreeColWithBadges';
+import SitewideHeader from 'components/tailwind/SitewideHeader';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles(() => ({
@@ -34,20 +36,8 @@ const BlogIndex = ({ data, location }) => {
       />
 
       <HeadRssLink />
-
-      <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <PageMargins>
-          <header className={classes.header}>
-            <h2>Blog</h2>
-          </header>
-
-          {posts.map(({ node }) => (
-            <div className={classes.summaryWrapper} key={node.fields.slug}>
-              <PostSummary post={node} />
-            </div>
-          ))}
-        </PageMargins>
-      </StickyFooter>
+      <SitewideHeader />
+      <ThreeColWithBadges posts={posts.map(({ node }) => node)} />
     </>
   );
 };
