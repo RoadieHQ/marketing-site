@@ -7,7 +7,7 @@ export const FORM_NAMES = {
   subscribeToNewsletter: 'subscribe-to-newsletter',
   getInstance: 'submit-get-instance-form',
   getInstanceExtended: 'submit-extended-get-instance-form',
-  requestDemo: 'submit-request-demo-form',
+  requestDemo: 'submit-extended-get-demo-form',
 };
 
 export const SCM_TOOLS = [{
