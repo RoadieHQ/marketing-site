@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
-import { Button, TextField, Radio, Checkbox, TextLink as Link } from 'components';
-import { createUseStyles } from 'react-jss';
+import { Button, TextField, Checkbox, TextLink as Link, Fieldset } from 'components';
+import ScmToolRadioGroup from 'components/forms/ScmToolRadioGroup';
 
-import { FORM_NAMES, SCM_TOOLS } from '../../contactFormConstants';
+import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
-
-const useStyles = createUseStyles(() => ({
-  fieldset: {
-    marginBottom: '2em',
-  },
-
-  radioWrapper: {
-    marginBottom: '0.4em',
-  },
-}));
 
 export const submitToNetlifyForms = async ({
   email,
@@ -52,7 +42,6 @@ const ExtendedGetInstanceCallToAction = ({
   scmTool,
   setScmTool,
 }) => {
-  const classes = useStyles();
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
@@ -94,7 +83,7 @@ const ExtendedGetInstanceCallToAction = ({
       <input type="hidden" name="submit-button-label" value={buttonText} />
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
-      <div className={classes.fieldset}>
+      <Fieldset>
         <TextField
           label="Work email address *"
           type="email"
@@ -105,30 +94,17 @@ const ExtendedGetInstanceCallToAction = ({
           fullWidth
           helpText="Your account details will be sent to this address"
         />
-      </div>
+      </Fieldset>
 
-      <div className={classes.fieldset}>
-        <div className={classes.radioWrapper}>
-          <strong>
-            Primary source code hosting tool
-          </strong>
-        </div>
+      <Fieldset>
+        <ScmToolRadioGroup
+          onChange={setScmTool}
+          currentValue={scmTool}
+          idPrefix="get-instance-"
+        />
+      </Fieldset>
 
-        {SCM_TOOLS.map(({ value, label }) => (
-          <div className={classes.radioWrapper} key={value}>
-            <Radio
-              value={value}
-              label={label}
-              onChange={setScmTool}
-              currentValue={scmTool}
-              name="scm"
-              id={`get-instance-scm-${value}-input`}
-            />
-          </div>
-        ))}
-      </div>
-
-      <div className={classes.fieldset}>
+      <Fieldset>
         <Checkbox
           name="sub-to-newsletter"
           label="Subscribe me to the Backstage Weekly newsletter."
@@ -136,15 +112,15 @@ const ExtendedGetInstanceCallToAction = ({
           onChange={setSubToNewsletter}
           id="get-instance-sub-to-newsletter-input"
         />
-      </div>
+      </Fieldset>
 
-      <div className={classes.fieldset}>
+      <Fieldset>
         <p>By submitting this form, you automatically agree to our <Link color="primary" to="/legal-notices/evaluation-licence/">Evaluation License</Link> and acknowledge you have read our <Link color="primary" to="/legal-notices/privacy-policy/">Privacy Policy</Link>.</p>
-      </div>
+      </Fieldset>
 
-      <div className={classes.fieldset}>
+      <Fieldset>
         <Button color="primary" text={buttonText} disabled={disabled} />
-      </div>
+      </Fieldset>
     </form>
   );
 };
