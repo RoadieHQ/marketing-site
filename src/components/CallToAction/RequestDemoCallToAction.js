@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
-import { Button, TextField, Radio, Checkbox } from 'components';
-import { createUseStyles } from 'react-jss';
+import { Button, TextField, Checkbox, Fieldset } from 'components';
+import ScmToolRadioGroup, { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
-import { FORM_NAMES, SCM_TOOLS } from '../../contactFormConstants';
+import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
-
-const useStyles = createUseStyles(() => ({
-  fieldset: {
-    marginBottom: '2em',
-  },
-
-  radioWrapper: {
-    marginBottom: '0.4em',
-  },
-}));
 
 export const submitToNetlifyForms = async ({
   name,
@@ -55,7 +45,6 @@ const RequestDemoCallToAction = ({
   const params = new URLSearchParams(location.search)
   const emailFromUrl = decodeURIComponent(params.get('email'));
 
-  const classes = useStyles();
   const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
   const [email, setEmail] = useState(emailFromUrl || '');
   const [name, setName] = useState('');
@@ -101,7 +90,7 @@ const RequestDemoCallToAction = ({
       <input type="hidden" name="submit-button-label" value={buttonText} />
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
-      <div className={classes.fieldset}>
+      <Fieldset>
         <TextField
           label="Full name *"
           type="text"
@@ -111,9 +100,9 @@ const RequestDemoCallToAction = ({
           value={name}
           fullWidth
         />
-      </div>
+      </Fieldset>
 
-      <div className={classes.fieldset}>
+      <Fieldset>
         <TextField
           label="Work email address *"
           type="email"
@@ -123,30 +112,17 @@ const RequestDemoCallToAction = ({
           value={email}
           fullWidth
         />
-      </div>
+      </Fieldset>
 
-      <div className={classes.fieldset}>
-        <div className={classes.radioWrapper}>
-          <strong>
-            Primary source code hosting tool
-          </strong>
-        </div>
+      <Fieldset>
+        <ScmToolRadioGroup
+          onChange={setScmTool}
+          currentValue={scmTool}
+          idPrefix="request-demo-"
+        />
+      </Fieldset>
 
-        {SCM_TOOLS.map(({ value, label }) => (
-          <div className={classes.radioWrapper} key={value}>
-            <Radio
-              value={value}
-              label={label}
-              onChange={setScmTool}
-              currentValue={scmTool}
-              name="scm"
-              id={`request-demo-scm-${value}-input`}
-            />
-          </div>
-        ))}
-      </div>
-
-      <div className={classes.fieldset}>
+      <Fieldset>
         <Checkbox
           name="sub-to-newsletter"
           label="Subscribe me to the Backstage Weekly newsletter."
@@ -154,11 +130,11 @@ const RequestDemoCallToAction = ({
           onChange={setSubToNewsletter}
           id="request-demo-sub-to-newsletter-input"
         />
-      </div>
+      </Fieldset>
 
-      <div className={classes.fieldset}>
+      <Fieldset>
         <Button color="primary" text={buttonText} disabled={disabled} />
-      </div>
+      </Fieldset>
     </form>
   );
 };

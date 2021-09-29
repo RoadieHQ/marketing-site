@@ -9,8 +9,7 @@ import {
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { Testimonial } from 'components/home';
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
-
-import { SCM_TOOLS } from '../contactFormConstants';
+import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
 const SEO_TITLE = 'Get a SaaS Backstage trial';
 
