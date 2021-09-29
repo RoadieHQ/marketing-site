@@ -40,18 +40,6 @@ const TwitterInner = ({ siteMetadata }) => (
   </p>
 );
 
-const NeedsAnalysisSurveyInner = ({ referredEmail }) => (
-  <p>
-    <Button
-      link={true}
-      to={`/onboarding-survey/?referred_email=${encodeURIComponent(referredEmail)}`}
-      icon={<FaExternalLinkAlt />}
-      text="Onwards"
-      color="primary"
-    />
-  </p>
-);
-
 const GetDemoSurveyInner = ({ referredEmail }) => {
   const codedEmail = encodeURIComponent(referredEmail);
 
@@ -94,8 +82,6 @@ const FormSubmissionModal = ({
     // Doesn't make sense to offer to let people sign up to the newsletter immediately after
     // they have just signed up to the newsletter.
     followOnContent = <TwitterInner siteMetadata={siteMetadata} classes={classes} />;
-  } else if (followOn === 'NEEDS_ANALYSIS_SURVEY') {
-    followOnContent = <NeedsAnalysisSurveyInner referredEmail={email} />;
   } else if (followOn === 'GET_DEMO_SURVEY') {
     followOnContent = <GetDemoSurveyInner referredEmail={email} />;
   }

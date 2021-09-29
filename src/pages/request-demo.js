@@ -112,6 +112,7 @@ const Home = ({ data, location }) => {
                 </div>
 
                 <RequestDemoCallToAction
+                  location={location}
                   onSuccess={() => {
                     setModalOpen(true);
                   }}
