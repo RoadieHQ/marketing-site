@@ -1,6 +1,6 @@
 import React from 'react'
 import SitewideHeader from 'components/tailwind/SitewideHeader';
-import { Link } from 'components';
+import { Button } from 'components';
 
 const Main = () => {
   return (
@@ -15,20 +15,20 @@ const Main = () => {
         </p>
         <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
           <div className="rounded-md shadow">
-            <Link
+            <Button
+              link={true}
               to="/free-trial/"
-              className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-            >
-              Try it free
-            </Link>
+              color="primary"
+              text="Try it free"
+            />
           </div>
           <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-            <Link
-              to="#"
-              className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
-            >
-              Request a demo
-            </Link>
+            <Button
+              link={true}
+              to="/request-demo/"
+              color="secondary"
+              text="Request a demo"
+            />
           </div>
         </div>
       </div>
