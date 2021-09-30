@@ -117,6 +117,7 @@ const Home = ({ data }) => {
         description="Get a SaaS Backstage experience from Roadie. We handle hosting and maintenance and let you get back to your customers."
       />
       <Helmet>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <link rel="stylesheet" href="/stylesheets/tailwind.css" />
       </Helmet>
 

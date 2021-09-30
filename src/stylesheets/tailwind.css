@@ -1,3 +1,30 @@
+/*
+ * To reprocess this file after modifying, run:
+ *
+ *   yarn postcss src/stylesheets/tailwind.css --output static/stylesheets/tailwind.css
+ *
+ * and restart the server. Commit the changes.
+ *
+ * We can stop doing this when we migrate to tailwind completely.
+ *
+ */
+
+/*
+ * Removing some of the styling added in head-loaded-styles.css. They are not needed because
+ * tailwind has it's own reset and we are breaking it in head-loaded-styles.css
+ *
+ * The selctors here can be deleted once we are fully moved over to tailwind.
+ */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Inter var', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

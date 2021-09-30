@@ -1,14 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, StickyFooter, PageMargins } from 'components';
-import PostSummary from 'components/blog/PostSummary';
+import { SEO } from 'components';
 import HeadRssLink from 'components/blog/HeadRssLink';
 import ThreeColWithBadges from 'components/tailwind/blog/ThreeColWithBadges';
 import SitewideHeader from 'components/tailwind/SitewideHeader';
 import { Helmet } from 'react-helmet';
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   const siteTitle = data.site.siteMetadata.title;
 
@@ -24,6 +23,7 @@ const BlogIndex = ({ data, location }) => {
 
       <HeadRssLink />
       <Helmet>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <link rel="stylesheet" href="/stylesheets/tailwind.css" />
       </Helmet>
       <SitewideHeader />

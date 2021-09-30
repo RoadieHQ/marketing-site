@@ -8,19 +8,19 @@ import FooterCTA from 'components/tailwind/home/FooterCTA';
 import { Helmet } from 'react-helmet';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
-const HEADLINE = 'Backstage for growing engineering teams';
 const LEAD = `
 Roadie's SaaS platform handles hosting and upgrades and ensures
 you always have access to the latest Backstage features.
 `;
 
-const Home = ({ data, location }) => {
+const Home = ({ data,}) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
     <>
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
       <Helmet>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <link rel="stylesheet" href="/stylesheets/tailwind.css" />
       </Helmet>
 
