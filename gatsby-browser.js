@@ -1,5 +1,3 @@
-import './src/stylesheets/global.css';
-
 /*
  * Styles for Algolia Autocomplete. It would be preferential to remove these imports and use
  * JSS to apply styling directly to components instead so that we own the themeing end to end.

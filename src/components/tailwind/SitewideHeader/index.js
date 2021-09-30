@@ -7,7 +7,7 @@ const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Solutions', href: '#' },
   { name: 'Backstage Weekly', href: '#' },
-  { name: 'Blog', href: '/blog/' },
+  { name: 'Blog', href: '/tailwind/blog/' },
 ]
 
 const SitewideHeader = () => {

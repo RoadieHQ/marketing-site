@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'components';
+import { Button } from 'components/tailwind';
 
 const SimpleCentered = () => {
   return (
@@ -13,7 +13,7 @@ const SimpleCentered = () => {
           <div className="inline-flex">
             <Button
               link={true}
-              to="/free-trial/"
+              to="/tailwind/free-trial/"
               color="primary"
               text="Try it free"
             />
@@ -21,7 +21,7 @@ const SimpleCentered = () => {
           <div className="ml-3 inline-flex">
             <Button
               link={true}
-              to="/request-demo/"
+              to="/tailwind/request-demo/"
               color="inset"
               text="Request a demo"
             />
