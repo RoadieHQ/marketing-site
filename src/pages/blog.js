@@ -6,24 +6,10 @@ import PostSummary from 'components/blog/PostSummary';
 import HeadRssLink from 'components/blog/HeadRssLink';
 import ThreeColWithBadges from 'components/tailwind/blog/ThreeColWithBadges';
 import SitewideHeader from 'components/tailwind/SitewideHeader';
-import { createUseStyles } from 'react-jss';
-
-const useStyles = createUseStyles(() => ({
-  header: {
-    marginBottom: '3em',
-  },
-
-  summaryWrapper: {
-    marginBottom: '3em',
-  },
-}));
-
-const MAX_WIDTH_BREAKPOINT = 'md';
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
   const siteTitle = data.site.siteMetadata.title;
-  const classes = useStyles();
 
   return (
     <>
