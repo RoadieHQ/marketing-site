@@ -43,10 +43,10 @@ const RequestDemoCallToAction = ({
 }) => {
   // Provides a way to automatically populate the email input via the URL.
   const params = new URLSearchParams(location.search)
-  const emailFromUrl = decodeURIComponent(params.get('email'));
+  const emailFromUrl = decodeURIComponent(params.get('email') || '');
 
   const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
-  const [email, setEmail] = useState(emailFromUrl || '');
+  const [email, setEmail] = useState(emailFromUrl);
   const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
