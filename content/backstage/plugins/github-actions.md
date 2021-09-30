@@ -21,7 +21,7 @@ gettingStarted: # What will this step accomplish?
   - intro: |
       If you are using Roadie, or you are using a GitHub app with self-hosted Backstage, OAuth
       is already configured for use with the GitHub APIs. You can simply install the plugin and it
-      should work automatically.
+      should work automatically. Your GitHub App requires `action:read` permission.
 
       If your Backstage instance is using a Personal Access Token to authenticate against GitHub,
       you will need to follow our [instructions to create a GitHub OAuth app for Backstage](/blog/github-auth-backstage/).
