@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'components';
+import { Button } from 'components';
 
 const SplitGridOnRight = () => {
   return (
@@ -14,21 +14,21 @@ const SplitGridOnRight = () => {
               Open-source plugins are supported by default. Don&apos;t see something you need? Just let us know. Push your own custom plugins if you need something special.
             </p>
             <div className="mt-8 sm:flex">
-              <div className="rounded-md shadow">
-                <Link
-                  to="#"
-                  className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-                >
-                  Try it free
-                </Link>
-              </div>
+              <Button
+                link={true}
+                to="/free-trial/"
+                text="Try it free"
+                size="medium"
+                color="primary"
+              />
               <div className="mt-3 sm:mt-0 sm:ml-3">
-                <Link
-                  to="#"
-                  className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
-                >
-                  Request a demo
-                </Link>
+                <Button
+                  link={true}
+                  to="/request-demo/"
+                  text="Request a demo"
+                  size="medium"
+                  color="inset"
+                />
               </div>
             </div>
           </div>

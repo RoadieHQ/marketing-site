@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'components';
+import { Button } from 'components';
 
 const SimpleCentered = () => {
   return (
@@ -10,21 +10,21 @@ const SimpleCentered = () => {
           <span className="block">Start your free trial today.</span>
         </h2>
         <div className="mt-8 flex justify-center">
-          <div className="inline-flex rounded-md shadow">
-            <Link
-              to="#"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-            >
-              Try it free
-            </Link>
+          <div className="inline-flex">
+            <Button
+              link={true}
+              to="/free-trial/"
+              color="primary"
+              text="Try it free"
+            />
           </div>
           <div className="ml-3 inline-flex">
-            <Link
-              to="#"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
-            >
-              Request a demo
-            </Link>
+            <Button
+              link={true}
+              to="/request-demo/"
+              color="inset"
+              text="Request a demo"
+            />
           </div>
         </div>
       </div>
