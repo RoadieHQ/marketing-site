@@ -67,33 +67,28 @@ const useStyles = createUseStyles((theme) => ({
 }));
 
 const Button = ({
-  icon,
   fullWidth = false,
   text = 'Submit',
   link = false,
-  color = 'default',
+  color = 'primary',
   className = {},
   ...props
 }) => {
   const classes = useStyles({ color, fullWidth });
 
-  let prefixIcon;
-  if (icon) {
-    prefixIcon = <span className={classes.prefixIconWrapper}>{icon}</span>;
-  }
-
   if (link) {
     return (
-      <Link className={classnames('typography-mono', classes.root, className.root)} {...props}>
-        {prefixIcon}
-        <span>{text}</span>
+      <Link
+        className={classnames('w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10', { 'text-white bg-indigo-600 hover:bg-indigo-700': color === 'primary', '': color === 'secondary' }, className.root)}
+        {...props}
+      >
+        {text}
       </Link>
     );
   }
 
   return (
     <button className={classnames('typography-mono', classes.root, className.root)} {...props}>
-      {prefixIcon}
       <span>{text}</span>
     </button>
   );
