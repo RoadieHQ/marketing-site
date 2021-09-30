@@ -11,6 +11,7 @@ import pagerduty from '../../../content/assets/logos/pagerduty/pagerduty-logo-li
 import sonarqube from '../../../content/assets/logos/sonarqube/logo-sonar.png';
 import techRadar from '../../../content/assets/logos/tech-radar/radar.png';
 import opsgenie from '../../../content/assets/logos/opsgenie/logo-opsgenie.png';
+import bugsnag from '../../../content/assets/logos/bugsnag/bugsnag-logo.png';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -53,6 +54,7 @@ const IntegrationsList = () => {
       <Item src={sonarqube} name="SonarQube" />
       <Item src={techRadar} name="Tech radar" />
       <Item src={opsgenie} name="Opsgenie" />
+      <Item src={bugsnag} name="Bugsnag" />
     </div>
   );
 };

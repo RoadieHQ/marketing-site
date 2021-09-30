@@ -150,6 +150,7 @@ const DocSidebar = () => {
           <SidebarItem to="/docs/integrations/sonarqube/" text="SonarQube" />
           <SidebarItem to="/docs/integrations/newrelic/" text="NewRelic" />
           <SidebarItem to="/docs/integrations/opsgenie/" text="Opsgenie" />
+          <SidebarItem to="/docs/integrations/bugsnag/" text="Bugsnag" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Configuration">
