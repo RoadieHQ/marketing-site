@@ -14,20 +14,24 @@ const Main = () => {
           Roadie&apos;s SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features.
         </p>
         <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-          <div className="rounded-md shadow">
+          <div>
             <Button
               link={true}
               to="/free-trial/"
               color="primary"
               text="Try it free"
+              size="large"
+              fullWidth={true}
             />
           </div>
-          <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+          <div className="mt-3 sm:mt-0 sm:ml-3">
             <Button
               link={true}
               to="/request-demo/"
               color="secondary"
               text="Request a demo"
+              size="large"
+              fullWidth={true}
             />
           </div>
         </div>

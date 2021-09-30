@@ -72,18 +72,56 @@ const Button = ({
   link = false,
   color = 'primary',
   className = {},
+  size = 'medium',
   ...props
 }) => {
   const classes = useStyles({ color, fullWidth });
 
+  // variants
+  //
+  // sizes
+  // lg (landing page hero)
+  //   px-8 py-3 text-base font-medium md:py-4 md:text-lg md:px-10
+  //
+  // md
+  //   px-5 py-3
+  //
+  // colors
+  // primary
+  //   rounded-md shadow
+  //   text-white bg-indigo-600 hover:bg-indigo-700
+  //
+  // secondary
+  //   rounded-md shadow
+  //   text-indigo-600 bg-white hover:bg-gray-50
+  //
+  // inset
+  //
+  //   text-indigo-700 bg-indigo-100 hover:bg-indigo-200
+
+  const linkBaseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md';
+
   if (link) {
     return (
-      <Link
-        className={classnames('w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10', { 'text-white bg-indigo-600 hover:bg-indigo-700': color === 'primary', '': color === 'secondary' }, className.root)}
-        {...props}
-      >
-        {text}
-      </Link>
+      <div className={classnames({
+        'rounded-md shadow': color === 'primary' || color === 'secondary',
+      })}>
+        <Link
+          className={
+            classnames(linkBaseClassName, {
+              'text-white bg-indigo-600 hover:bg-indigo-700': color === 'primary',
+              'text-indigo-600 bg-white hover:bg-gray-50': color === 'secondary',
+              'text-indigo-700 bg-indigo-100 hover:bg-indigo-200': color === 'inset',
+              'px-5 py-3': size === 'medium',
+              'px-8 py-3 md:py-4 md:text-lg md:px-10': size === 'large',
+              'w-full': fullWidth === true,
+            }, className.root)
+          }
+          {...props}
+        >
+          {text}
+        </Link>
+      </div>
     );
   }
 
