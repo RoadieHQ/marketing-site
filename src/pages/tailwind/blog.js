@@ -4,24 +4,13 @@ import { graphql } from 'gatsby';
 import { SEO, StickyFooter, PageMargins } from 'components';
 import PostSummary from 'components/blog/PostSummary';
 import HeadRssLink from 'components/blog/HeadRssLink';
-import { createUseStyles } from 'react-jss';
-
-const useStyles = createUseStyles(() => ({
-  header: {
-    marginBottom: '3em',
-  },
-
-  summaryWrapper: {
-    marginBottom: '3em',
-  },
-}));
-
-const MAX_WIDTH_BREAKPOINT = 'md';
+import ThreeColWithBadges from 'components/tailwind/blog/ThreeColWithBadges';
+import SitewideHeader from 'components/tailwind/SitewideHeader';
+import { Helmet } from 'react-helmet';
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
   const siteTitle = data.site.siteMetadata.title;
-  const classes = useStyles();
 
   return (
     <>
@@ -34,20 +23,11 @@ const BlogIndex = ({ data, location }) => {
       />
 
       <HeadRssLink />
-
-      <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <PageMargins>
-          <header className={classes.header}>
-            <h2>Blog</h2>
-          </header>
-
-          {posts.map(({ node }) => (
-            <div className={classes.summaryWrapper} key={node.fields.slug}>
-              <PostSummary post={node} />
-            </div>
-          ))}
-        </PageMargins>
-      </StickyFooter>
+      <Helmet>
+        <link rel="stylesheet" href="/stylesheets/tailwind.css" />
+      </Helmet>
+      <SitewideHeader />
+      <ThreeColWithBadges posts={posts.map(({ node }) => node)} />
     </>
   );
 };

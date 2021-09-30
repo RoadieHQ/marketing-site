@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'components';
+import { Button } from 'components/tailwind';
 
 const SplitGridOnRight = () => {
   return (
@@ -16,7 +16,7 @@ const SplitGridOnRight = () => {
             <div className="mt-8 sm:flex">
               <Button
                 link={true}
-                to="/free-trial/"
+                to="/tailwind/free-trial/"
                 text="Try it free"
                 size="medium"
                 color="primary"
@@ -24,7 +24,7 @@ const SplitGridOnRight = () => {
               <div className="mt-3 sm:mt-0 sm:ml-3">
                 <Button
                   link={true}
-                  to="/request-demo/"
+                  to="/tailwind/request-demo/"
                   text="Request a demo"
                   size="medium"
                   color="inset"

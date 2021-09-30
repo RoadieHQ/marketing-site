@@ -1,6 +1,6 @@
 import React from 'react'
 import SitewideHeader from 'components/tailwind/SitewideHeader';
-import { Button } from 'components';
+import { Button } from 'components/tailwind';
 
 const Main = () => {
   return (
@@ -17,7 +17,7 @@ const Main = () => {
           <div>
             <Button
               link={true}
-              to="/free-trial/"
+              to="/tailwind/free-trial/"
               color="primary"
               text="Try it free"
               size="large"
@@ -27,7 +27,7 @@ const Main = () => {
           <div className="mt-3 sm:mt-0 sm:ml-3">
             <Button
               link={true}
-              to="/request-demo/"
+              to="/tailwind/request-demo/"
               color="secondary"
               text="Request a demo"
               size="large"
