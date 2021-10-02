@@ -3,7 +3,9 @@
  *
  *   yarn postcss src/stylesheets/tailwind.css --output static/stylesheets/tailwind.css
  *
- * and commit the changes. We can stop doing this when we migrate to tailwind completely.
+ * and restart the server. Commit the changes.
+ *
+ * We can stop doing this when we migrate to tailwind completely.
  *
  */
 
