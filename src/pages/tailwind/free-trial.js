@@ -12,55 +12,11 @@ const SEO_TITLE = 'Get a SaaS Backstage trial';
 
 const useStyles = createUseStyles((theme) => ({
   content: theme.preMadeStyles.content,
-  main: {},
-  column: {
-    width: '100%',
-  },
-  testimonialColumn: {},
-  formInner: {},
-
-  formWrapper: {
-    marginLeft: 16,
-    marginRight: 16,
-  },
-
-  formTitle: {
-    marginBottom: '2em',
-    marginTop: '2em',
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    main: {
-      display: 'flex',
-      height: '100%',
-      flexDirection: 'row-reverse',
-    },
-
-    column: {
-      paddingTop: '1em',
-    },
-
-    formColumn: {
-      flexGrow: 1,
-    },
-
-    testimonialColumn: {
-      justifyContent: 'center',
-      paddingTop: '3em',
-      backgroundColor: '#E9F7FF',
-    },
-
-    testimonialWrapper: {
-      padding: '2em',
-    },
-
-    formInner: {
-      paddingRight: '2em',
-    },
-  },
 }));
 
-const SubmissionSuccessModal = ({ email, scmTool, classes, ...rest }) => {
+const SubmissionSuccessModal = ({ email, scmTool, ...rest }) => {
+  const classes = useStyles();
+
   if (SCM_TOOLS.filter(({ supported }) => supported).map(({ value }) => value).includes(scmTool)) {
     return (
       <FormSubmissionModal
@@ -101,7 +57,6 @@ const SubmissionSuccessModal = ({ email, scmTool, classes, ...rest }) => {
 
 const Home = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const classes = useStyles();
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
@@ -126,7 +81,6 @@ const Home = ({ data }) => {
         scmTool={scmTool}
         handleCloseModal={handleCloseModal}
         modalOpen={modalOpen}
-        classes={classes}
         siteMetadata={data.site.siteMetadata}
       />
 
