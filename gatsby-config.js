@@ -120,9 +120,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-advanced-sitemap',
       options: {
-        exclude: [
-          /\/?tailwind\/?.+/,
-        ],
+        exclude: [/\/?tailwind\/?.+/],
       },
     },
     `gatsby-plugin-force-trailing-slashes`,
