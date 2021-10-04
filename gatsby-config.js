@@ -117,7 +117,14 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-advanced-sitemap',
+      options: {
+        exclude: [
+          /\/?tailwind\/?.+/,
+        ],
+      },
+    },
     `gatsby-plugin-force-trailing-slashes`,
     'gatsby-plugin-twitter',
     'gatsby-plugin-netlify',
