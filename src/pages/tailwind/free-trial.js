@@ -6,7 +6,7 @@ import { ExtendedGetInstanceCallToAction } from 'components/tailwind/CallToActio
 import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import SitewideHeader from 'components/tailwind/SitewideHeader';
-import { Helmet } from 'react-helmet';
+import TailwindHeadContent from 'components/tailwind/HeadContent';
 
 const SEO_TITLE = 'Get a SaaS Backstage trial';
 
@@ -71,10 +71,8 @@ const Home = ({ data }) => {
         title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get a SaaS Backstage experience from Roadie. We handle hosting and maintenance and let you get back to your customers."
       />
-      <Helmet>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        <link rel="stylesheet" href="/stylesheets/tailwind.css" />
-      </Helmet>
+
+      <TailwindHeadContent />
 
       <SubmissionSuccessModal
         email={email}

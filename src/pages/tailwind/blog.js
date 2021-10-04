@@ -5,7 +5,7 @@ import { SEO } from 'components';
 import HeadRssLink from 'components/blog/HeadRssLink';
 import ThreeColWithBadges from 'components/tailwind/blog/ThreeColWithBadges';
 import SitewideHeader from 'components/tailwind/SitewideHeader';
-import { Helmet } from 'react-helmet';
+import TailwindHeadContent from 'components/tailwind/HeadContent';
 
 const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -22,10 +22,7 @@ const BlogIndex = ({ data }) => {
       />
 
       <HeadRssLink />
-      <Helmet>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        <link rel="stylesheet" href="/stylesheets/tailwind.css" />
-      </Helmet>
+      <TailwindHeadContent />
       <SitewideHeader />
       <ThreeColWithBadges posts={posts.map(({ node }) => node)} />
     </>
