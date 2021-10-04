@@ -5,7 +5,7 @@ import SimpleCentered from 'components/tailwind/hero/SimpleCentered';
 import AlternativeSideBySide from 'components/tailwind/features/AlternativeSideBySide';
 import SplitGridOnRight from 'components/tailwind/logo-clouds/SplitGridOnRight';
 import FooterCTA from 'components/tailwind/home/FooterCTA';
-import { Helmet } from 'react-helmet';
+import TailwindHeadContent from 'components/tailwind/HeadContent';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
 const LEAD = `
@@ -19,10 +19,7 @@ const Home = ({ data,}) => {
   return (
     <>
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
-      <Helmet>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        <link rel="stylesheet" href="/stylesheets/tailwind.css" />
-      </Helmet>
+      <TailwindHeadContent />
 
       <SimpleCentered />
       <AlternativeSideBySide />
