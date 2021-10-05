@@ -73,16 +73,26 @@ By default, GitHub adds your account to the team as a member. You are now an adm
 
 ℹ️  &nbsp;It can take some time for Roadie to refresh the list of teams from GitHub teams. If you do not see admin functions immediately, please wait a few minutes and try again.
 
-### More Information on Permissions Needed
-The GitHub permissions that Roadie needs are all read only. You can also choose to allow access to all repos, or select the repos that you would like to give permission to.
+### Required GitHub App permissions
+The Roadie GitHub app requires both read and write access to GitHub in order to support the normal features of Backstage. You can also choose to allow access to all repos, or select the repos that you would like to give permission to.
 
-**Here is a description of each of the permissions requested:**
-- **Actions (read)** - enables the Backstage plugin that renders Github workflow actions on the component page.
-- **Code (read)** - backstage makes use of a yaml config file, generally kept in the root directory of a GitHub project. Backstage needs read access to the code so  that it can read the backstage catalog config file.
-- **Members (read)** - This allows Backstage to authenticate users of your Github org and ensure only users of your organisation can access it. It also allows for ownership to be assigned and displayed for each service. 
-- **Metadata (read)** - This gives Roadie read only access to various pieces of metadata about the  GitHub organisation used only in order to enable functionality.
-- **Organisation administration (read)** - Enables the API to show Roadie the interaction limits for a user. 
-- **Security events (read)** - This allows Backstage to render a security insights plugin on the component page.
+These are the repository permissions required:
+
+| Name              | Access level | Reason required |
+| ----------------- | ------------ | ------- |
+| Contents          | Read & Write | Used by Backstage to read the `catalog-info.yaml` files it requires to function, and to open pull requests to create `catalog-info.yaml` files. |
+| Pull requests     | Read & Write | Required for the GitHub Pull Requests plugin and to open pull requests to create `catalog-info.yaml` files. |
+| Actions           | Read         | Enables the Backstage plugin that renders Github workflow actions on the component page. |
+| Metadata          | Read         | This gives Roadie read only access to various pieces of metadata about the  GitHub organisation used only in order to enable functionality. This permission is mandatory for all GitHub apps. |
+| Security events   | Read         | This allows Backstage to render a security insights plugin on the component page. |
+| Dependabot alerts | Read         | Required by the GitHub Dependabot plugin. |
+
+These are the organization permissions required:
+
+| Name              | Access level | Reason required |
+| ----------------- | ------------ | ------- |
+| Members           | Read         | This allows Backstage to authenticate users of your Github org and ensure only users of your organisation can access it. It also allows for ownership to be assigned and displayed for each service. |
+| Administration    | Read         | Enables the API to show Roadie the interaction limits for a user. |
 
 ## Next steps
 
