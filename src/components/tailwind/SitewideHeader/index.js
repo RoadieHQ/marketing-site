@@ -16,6 +16,7 @@ import {
 import { Link } from 'components';
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import classnames from 'classnames';
+import Logo, { LogoImg } from '../Logo';
 
 const learn = [{
   name: 'Backstage Plugins',
@@ -77,23 +78,6 @@ const mobileNavLinks = [{
   to: 'https://careers.roadie.io',
   icon: BriefcaseIcon,
 }];
-
-const LogoImg = (props) => (
-  <img
-    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-    alt="Workflow"
-    {...props}
-  />
-);
-
-const Logo = () => (
-  <div className="flex justify-start lg:w-0 lg:flex-1">
-    <Link to="/tailwind/">
-      <span className="sr-only">Workflow</span>
-      <LogoImg className="h-8 w-auto sm:h-10" />
-    </Link>
-  </div>
-);
 
 const DropdownNavItem = ({ item }) => (
   <Link

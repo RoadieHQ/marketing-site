@@ -6,6 +6,7 @@ import AlternativeSideBySide from 'components/tailwind/features/AlternativeSideB
 import SplitGridOnRight from 'components/tailwind/logo-clouds/SplitGridOnRight';
 import FooterCTA from 'components/tailwind/home/FooterCTA';
 import TailwindHeadContent from 'components/tailwind/HeadContent';
+import SitewideFooter from 'components/tailwind/SitewideFooter';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
 const LEAD = `
@@ -25,6 +26,7 @@ const Home = ({ data,}) => {
       <AlternativeSideBySide />
       <SplitGridOnRight />
       <FooterCTA />
+      <SitewideFooter />
     </>
   );
 };
