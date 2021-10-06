@@ -138,19 +138,21 @@ const DocSidebar = () => {
         </SidebarSectionList>
 
         <SidebarSectionList title="Integrations">
-          <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
-          <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
-          <SidebarItem to="/docs/integrations/snyk/" text="Snyk" />
+          {/* Alphabetical ordering */}
+          <SidebarItem to="/docs/integrations/bugsnag/" text="Bugsnag" />
           <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
-          <SidebarItem to="/docs/integrations/jira/" text="Jira" />
-          <SidebarItem to="/docs/integrations/pagerduty/" text="PagerDuty" />
-          <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
-          <SidebarItem to="/docs/integrations/kubernetes/" text="Kubernetes" />
+          <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
           <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
-          <SidebarItem to="/docs/integrations/sonarqube/" text="SonarQube" />
+          <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
+          <SidebarItem to="/docs/integrations/jira/" text="Jira" />
+          <SidebarItem to="/docs/integrations/kubernetes/" text="Kubernetes" />
           <SidebarItem to="/docs/integrations/newrelic/" text="NewRelic" />
           <SidebarItem to="/docs/integrations/opsgenie/" text="Opsgenie" />
-          <SidebarItem to="/docs/integrations/bugsnag/" text="Bugsnag" />
+          <SidebarItem to="/docs/integrations/pagerduty/" text="PagerDuty" />
+          <SidebarItem to="/docs/integrations/prometheus/" text="Prometheus" />
+          <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
+          <SidebarItem to="/docs/integrations/snyk/" text="Snyk" />
+          <SidebarItem to="/docs/integrations/sonarqube/" text="SonarQube" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Configuration">
