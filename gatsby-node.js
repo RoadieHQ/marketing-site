@@ -96,6 +96,21 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   await createPagesFromQuery({
+    templatePath: './src/templates/Doc.js',
+    query: DOCS_QUERY,
+    resultName: 'docs.edges',
+    actions,
+    graphql,
+    processor: ({ node }, component) => ({
+      path: node.fields.slug,
+      component,
+      context: {
+        slug: node.fields.slug,
+      },
+    }),
+  });
+
+  await createPagesFromQuery({
     templatePath: './src/templates/CaseStudy.js',
     query: CASE_STUDIES_QUERY,
     resultName: 'caseStudies.edges',
