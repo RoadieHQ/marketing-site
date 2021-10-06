@@ -21,7 +21,7 @@ To configure the URL of your Prometheus instance you need to create a proxy or a
 https://<tenant-name>.roadie.so/administration/settings/proxy
 ```
 
-Prometheus plugin is using the URL `/prometheus/api` so you need to put that as the path for the proxy. The target will be the URL of your Prometheus instance and the path to the API of it. Additionally you can add headers to the request, depending how the authentication is implemented for your Prometheus instance.
+Prometheus plugin is using the URL `/prometheus/api` so you need to put that as the path for the proxy. The target will be the URL of your Prometheus instance and the path to the API of it. Additionally, you can add headers to the request, depending how the authentication is implemented for your Prometheus instance.
 
 
 ![Prometheus proxy configuration](prom_proxy_config.png)
