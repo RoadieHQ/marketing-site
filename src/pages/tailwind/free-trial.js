@@ -7,6 +7,7 @@ import FormSubmissionModal from 'components/actions/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import SitewideHeader from 'components/tailwind/SitewideHeader';
 import TailwindHeadContent from 'components/tailwind/HeadContent';
+import SitewideFooter from 'components/tailwind/SitewideFooter';
 
 const SEO_TITLE = 'Get a SaaS Backstage trial';
 
@@ -108,6 +109,7 @@ const Home = ({ data }) => {
             </defs>
             <rect width={404} height={404} fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)" />
           </svg>
+
           <svg
             className="absolute right-full bottom-0 transform -translate-x-1/2"
             width={404}
@@ -130,6 +132,7 @@ const Home = ({ data }) => {
             </defs>
             <rect width={404} height={404} fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)" />
           </svg>
+
           <div className="text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Get a free trial</h2>
             <p className="mt-4 text-lg leading-6 text-gray-500">
@@ -137,6 +140,7 @@ const Home = ({ data }) => {
               arcu.
             </p>
           </div>
+
           <div className="mt-12">
             <ExtendedGetInstanceCallToAction
               email={email}
@@ -148,6 +152,8 @@ const Home = ({ data }) => {
           </div>
         </div>
       </div>
+
+      <SitewideFooter />
     </>
   );
 };

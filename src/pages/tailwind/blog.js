@@ -6,6 +6,7 @@ import HeadRssLink from 'components/blog/HeadRssLink';
 import ThreeColWithBadges from 'components/tailwind/blog/ThreeColWithBadges';
 import SitewideHeader from 'components/tailwind/SitewideHeader';
 import TailwindHeadContent from 'components/tailwind/HeadContent';
+import SitewideFooter from 'components/tailwind/SitewideFooter';
 
 const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -25,6 +26,7 @@ const BlogIndex = ({ data }) => {
       <TailwindHeadContent />
       <SitewideHeader />
       <ThreeColWithBadges posts={posts.map(({ node }) => node)} />
+      <SitewideFooter />
     </>
   );
 };
