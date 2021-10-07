@@ -81,6 +81,9 @@ Afterwards, proceed with adding your Bugsnag personal auth token to the environm
    env BUGSNAG_PERSONAL_TOKEN="token <your-api-key>" yarn dev
    ```
 
+## API Rate Limit in Bugsnag:
+
+Since Bugsnag has a policy around API rate limits (https://bugsnagapiv2.docs.apiary.io/#introduction/rate-limiting), we are not displaying error trends in the table. However, you can visit error details page in Bugsnag for more details, including error trend.
 
 
 
