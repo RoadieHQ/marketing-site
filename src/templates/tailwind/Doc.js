@@ -7,7 +7,7 @@ import {
   TextLink as Link,
 } from 'components';
 import { TableOfContentsSidebar } from 'components/Sidebar';
-import { Sidebar } from 'components/doc';
+import { Sidebar } from 'components/tailwind/doc';
 import editOnGitHubUrl from '../../editOnGitHubUrl';
 import Sitewideheader from 'components/tailwind/SitewideHeader';
 import HeadContent from 'components/tailwind/HeadContent';
@@ -71,11 +71,12 @@ const Doc = ({
       />
       <HeadContent />
 
-      <Sitewideheader />
+      <Sitewideheader maxWidth="full" />
 
       <main className={classes.main}>
         <Sidebar />
 
+        {/*
         <article className={classes.article}>
           <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
 
@@ -98,6 +99,7 @@ const Doc = ({
         </article>
 
         <TableOfContentsSidebar headings={doc.headings} className={classes.tocSidebar} />
+        */}
       </main>
     </>
   );
