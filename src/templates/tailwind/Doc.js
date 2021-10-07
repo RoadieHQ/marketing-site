@@ -86,7 +86,7 @@ const Doc = ({
         */}
 
           <section
-            className={classes.content}
+            className="prose prose-indigo"
             dangerouslySetInnerHTML={{ __html: doc.html }}
           />
 
