@@ -5,7 +5,7 @@ import { Button } from 'components';
 import { createUseStyles, useTheme } from 'react-jss';
 import algoliasearch from 'algoliasearch/lite';
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
-import Search, { SearchResult } from 'components/AlgoliaAutocomplete';
+import { AlgoliaAutocomplete as Search, SearchResult } from 'components/AlgoliaAutocomplete';
 import useMedia from 'react-use/lib/useMedia';
 
 const searchClient = algoliasearch(

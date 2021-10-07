@@ -4,7 +4,7 @@ import { FaArrowCircleDown, FaArrowCircleUp } from 'react-icons/fa';
 import Button from 'components/tailwind/forms/Button';
 import algoliasearch from 'algoliasearch/lite';
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
-import Search, { SearchResult } from 'components/AlgoliaAutocomplete';
+import { AlgoliaAutocomplete as Search, SearchResult } from 'components/AlgoliaAutocomplete';
 import useMedia from 'react-use/lib/useMedia';
 import classnames from 'classnames';
 
