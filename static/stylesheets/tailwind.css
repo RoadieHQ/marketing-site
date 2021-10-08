@@ -33393,10 +33393,25 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* 
+ * Helps the icons created by the gatsby-autolink-headers plugin to sit in the correct spot
+ * next to their links.
+ */
+
 .anchor {
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+/*
+ * Prevent the tailwind-typography from messing up code blocks which have already been
+ * styled by the prism.css theme which is loaded in gatsby-browser.
+ */
+
+.prose pre {
+  color: black;
+  background-color: #f5f2f0;
 }
 
 @media (min-width: 640px) {

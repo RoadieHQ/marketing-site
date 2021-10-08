@@ -55,7 +55,7 @@ const DocSidebar = () => {
 
   return (
     <Sidebar>
-      <div className="px-3 my-3">
+      <div className="px-2 my-3">
         <div className="mb-1 flex justify-between items-center">
           <span>
             <strong>Documentation</strong>
@@ -66,6 +66,7 @@ const DocSidebar = () => {
               text={isOpen ? 'Hide nav' : 'Show nav'}
               icon={isOpen ? <FaArrowCircleUp /> : <FaArrowCircleDown />}
               color="inset"
+              size="small"
             />
           </span>
         </div>

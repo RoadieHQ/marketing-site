@@ -27,15 +27,8 @@ const Doc = ({
     <main className="md:flex">
       <Sidebar />
 
-      <article className="md:px-6 md:pt-7 md:flex-1">
+      <article className="px-2 md:px-6 md:pt-7 md:flex-1">
         <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
-
-        <div className="prose prose-indigo">
-          <div className="xl:hidden">
-            <h2>Table of Contents</h2>
-            <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
-          </div>
-        </div>
 
         <section
           className="prose prose-indigo"
@@ -76,7 +69,6 @@ export const pageQuery = graphql`
       id
       html
       fileAbsolutePath
-      tableOfContents(maxDepth: 2)
       headings(depth: h2) {
         id
         value
