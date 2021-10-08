@@ -42,7 +42,7 @@ const Doc = ({
           dangerouslySetInnerHTML={{ __html: doc.html }}
         />
 
-        <footer className="border-t-2 border-gray-100 mt-3 pt-3">
+        <footer className="border-t-2 border-gray-100 my-3 py-3">
           <Link
             to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
           >
@@ -54,7 +54,7 @@ const Doc = ({
       <TableOfContentsSidebar headings={doc.headings} />
     </main>
 
-    <SitewideFooter />
+    <SitewideFooter maxWidth="full" />
   </>
 );
 
