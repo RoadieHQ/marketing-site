@@ -9,6 +9,11 @@ import { AlgoliaAutocomplete as Search } from 'components/AlgoliaAutocomplete';
 import SearchResult from 'components/tailwind/AlgoliaAutocomplete/SearchResult';
 import useMedia from 'react-use/lib/useMedia';
 import classnames from 'classnames';
+import resolveConfig from 'tailwindcss/resolveConfig';
+
+import tailwindConfig from '../../../../tailwind.config.js';
+
+const fullTailwindConfig = resolveConfig(tailwindConfig);
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -39,8 +44,7 @@ const getSearchSources = ({ query }) => {
 };
 
 const DocSidebar = () => {
-  // TODO: Use resolveConfig to dynaically get this 768px value from the tailwind config.
-  const isWide = useMedia(`(min-width: 768px)`);
+  const isWide = useMedia(`(min-width: ${fullTailwindConfig.theme.screens.md})`);
   const [isOpen, setOpen] = useState(isWide);
 
   const toggleSliderOpen = () => {
