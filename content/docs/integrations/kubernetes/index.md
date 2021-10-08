@@ -6,7 +6,7 @@ description: How to add a Kubernetes cluster for the Kubernetes plugin.
 
 ![Full active cluster on roadie](./active.png)
 
-> ⚠️ Note, the Kubernetes plugin is only supported with AWS clusters. GKE support is coming soon.⚠️
+ℹ️ Note, the Kubernetes plugin is only supported with AWS clusters. GKE support is coming soon.
 
 # AWS
 
@@ -119,9 +119,10 @@ You should see a page like this
 
 ### Step 3: Set RBAC for new role
 
-1. Edit your Kubernetes aws-auth Configmap as per: https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html
+1. Edit your Kubernetes aws-auth Configmap as per [the EKS docs](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html).
 
 It should look something like this:
+
 ``` yaml
  - mapRoles:
    - "groups":
@@ -129,7 +130,8 @@ It should look something like this:
       "rolearn": "ROLE ARN FROM STEP TWO"
       "username": "roadie"
 ```
-> In the yaml snippet above, replace "ROLE ARN FROM STEP TWO" with the ARN of the role created from step 2.
+
+⚠️ In the yaml snippet above, be sure to replace "ROLE ARN FROM STEP TWO" with the ARN of the role created from step 2.
 
 
 2. Create an RBAC for this user:
@@ -176,11 +178,16 @@ subjects:
 
 3. Add this to your cluster and you should now be good to go!
 
->  ℹ️ Note you can reuse the Role if you have multiple clusters. You will have to configure the RBAC though. ℹ️
+ℹ️ Note you can reuse the Role if you have multiple clusters. You will have to configure the RBAC though.
 
 ### Step 4: Adding a cluster to roadie
 
-1. Navigate to ”https://<tenant-name>.roadie.so/administration/settings/kubernetes” and click on add item.
+1. Navigate to your Kubernetes settings in Roadie and click on add item.
+
+   ```
+   https://<tenant-name>.roadie.so/administration/settings/kubernetes" 
+   ```
+
 2. Add the load balancer url, role arn, external ID and name of cluster.
 3. Click save and exit!
 
