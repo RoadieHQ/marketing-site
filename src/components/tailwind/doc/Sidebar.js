@@ -81,48 +81,48 @@ const DocSidebar = () => {
       <nav className={classnames('overflow-y-hidden h-0', { 'h-full': isOpen })}>
         <SidebarSectionList title="Getting started">
           <SidebarItem
-            to="/docs/getting-started/getting-started-for-admins/"
+            to="/tailwind/docs/getting-started/getting-started-for-admins/"
             text="Configuring Roadie"
           />
 
-          <SidebarItem to="/docs/getting-started/adding-components/" text="Adding components" />
-          <SidebarItem to="/docs/getting-started/user-management/" text="Adding users" />
+          <SidebarItem to="/tailwind/docs/getting-started/adding-components/" text="Adding components" />
+          <SidebarItem to="/tailwind/docs/getting-started/user-management/" text="Adding users" />
 
           <SidebarItem
             to="/docs/getting-started/technical-documentation/"
             text="Using TechDocs"
           />
 
-          <SidebarItem to="/docs/getting-started/openapi-specs/" text="Using OpenAPI specs" />
+          <SidebarItem to="/tailwind/docs/getting-started/openapi-specs/" text="Using OpenAPI specs" />
 
-          <SidebarItem to="/docs/getting-started/updating-the-ui/" text="Updating the UI" />
+          <SidebarItem to="/tailwind/docs/getting-started/updating-the-ui/" text="Updating the UI" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Integrations">
           {/* Alphabetical ordering */}
-          <SidebarItem to="/docs/integrations/bugsnag/" text="Bugsnag" />
-          <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
-          <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
-          <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
-          <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
-          <SidebarItem to="/docs/integrations/jira/" text="Jira" />
-          <SidebarItem to="/docs/integrations/kubernetes/" text="Kubernetes" />
-          <SidebarItem to="/docs/integrations/newrelic/" text="NewRelic" />
-          <SidebarItem to="/docs/integrations/opsgenie/" text="Opsgenie" />
-          <SidebarItem to="/docs/integrations/pagerduty/" text="PagerDuty" />
-          <SidebarItem to="/docs/integrations/prometheus/" text="Prometheus" />
-          <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
-          <SidebarItem to="/docs/integrations/snyk/" text="Snyk" />
-          <SidebarItem to="/docs/integrations/sonarqube/" text="SonarQube" />
+          <SidebarItem to="/tailwind/docs/integrations/bugsnag/" text="Bugsnag" />
+          <SidebarItem to="/tailwind/docs/integrations/circleci/" text="CircleCI" />
+          <SidebarItem to="/tailwind/docs/integrations/github-org/" text="GitHub Teams" />
+          <SidebarItem to="/tailwind/docs/integrations/github-token/" text="GitHub via Token" />
+          <SidebarItem to="/tailwind/docs/integrations/gcp/" text="Google Cloud Platform" />
+          <SidebarItem to="/tailwind/docs/integrations/jira/" text="Jira" />
+          <SidebarItem to="/tailwind/docs/integrations/kubernetes/" text="Kubernetes" />
+          <SidebarItem to="/tailwind/docs/integrations/newrelic/" text="NewRelic" />
+          <SidebarItem to="/tailwind/docs/integrations/opsgenie/" text="Opsgenie" />
+          <SidebarItem to="/tailwind/docs/integrations/pagerduty/" text="PagerDuty" />
+          <SidebarItem to="/tailwind/docs/integrations/prometheus/" text="Prometheus" />
+          <SidebarItem to="/tailwind/docs/integrations/sentry/" text="Sentry" />
+          <SidebarItem to="/tailwind/docs/integrations/snyk/" text="Snyk" />
+          <SidebarItem to="/tailwind/docs/integrations/sonarqube/" text="SonarQube" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Configuration">
-          <SidebarItem to="/docs/configuration/tech-radar/" text="Tech Radar" />
+          <SidebarItem to="/tailwind/docs/configuration/tech-radar/" text="Tech Radar" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Custom plugins">
-          <SidebarItem to="/docs/custom-plugins/configuring" text="Configuring Custom Plugins" />
-          <SidebarItem to="/docs/custom-plugins/artifactory" text="Using Private Roadie Repository" />
+          <SidebarItem to="/tailwind/docs/custom-plugins/configuring" text="Configuring Custom Plugins" />
+          <SidebarItem to="/tailwind/docs/custom-plugins/artifactory" text="Using Private Roadie Repository" />
         </SidebarSectionList>
       </nav>
     </Sidebar>
