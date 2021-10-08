@@ -44,12 +44,15 @@ const getSearchSources = ({ query }) => {
 };
 
 const DocSidebar = () => {
+  console.log('fullTailwindConfig', fullTailwindConfig.theme.screens);
   const isWide = useMedia(`(min-width: ${fullTailwindConfig.theme.screens.md})`);
+  console.log('isWide', isWide);
   const [isOpen, setOpen] = useState(isWide);
+  console.log('isOpen', isOpen);
 
   const toggleSliderOpen = () => {
     // It should never be possible to hide the nav on big screens. The feature only makes
-    // selse on mobile.
+    // sense on mobile.
     if (isOpen && !isWide) {
       setOpen(false);
     } else {
