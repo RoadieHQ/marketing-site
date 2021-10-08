@@ -86,7 +86,7 @@ const DocSidebar = () => {
         </div>
       </div>
 
-      <nav className={classnames('overflow-y-hidden', { 'h-full': isOpen, 'h-0': !isOpen })}>
+      <nav className={classnames('overflow-y-hidden h-full', { 'h-0': !isOpen })}>
         <SidebarSectionList title="Getting started">
           <SidebarItem
             to="/tailwind/docs/getting-started/getting-started-for-admins/"
