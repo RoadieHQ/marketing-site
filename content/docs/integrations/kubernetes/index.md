@@ -6,13 +6,11 @@ description: How to add a Kubernetes cluster for the Kubernetes plugin.
 
 ![Full active cluster on roadie](./active.png)
 
-ℹ️ Note, the Kubernetes plugin is only supported with AWS clusters. GKE support is coming soon.
-
 # AWS
 
 ## Introduction
 
-In order to use the Kubernetes plugin, Roadie needs:
+In order to use the Kubernetes plugin for AWS, Roadie needs:
  * An Assumed Role to fetch the resources from your cluster
  * The name of your cluster
  * URL of your Kubernetes API Server endpoint
@@ -188,8 +186,52 @@ subjects:
    https://<tenant-name>.roadie.so/administration/settings/kubernetes" 
    ```
 
-2. Add the load balancer url, role arn, external ID and name of cluster.
-3. Click save and exit!
+2. Select the AWS provider
+3. Add the load balancer url, role arn, external ID and name of cluster.
+4. Click save and exit!
+
+# GKE
+
+## Introduction
+
+In order to use the Kubernetes plugin for GKE, Roadie needs:
+ * OAuth app credentials
+ * The name of your cluster
+ * URL of your Kubernetes API Server endpoint
+
+ >  ℹ️  Note you will need read access (`Kubernetes engine viewer`) at a minimum to a cluster. Without read access, you will be unable to see your Kubernetes resources, with this configuration. ℹ️
+
+These are set within Roadie at the following url:
+
+```
+https://<tenant-name>.roadie.so/administration/settings/kubernetes
+```
+
+This page describes how to create and set up the API token.
+
+## Steps
+
+In this tutorial, we will show you how to:
+
+* Create a google OAuth client [learn more](https://developers.google.com/identity/protocols/oauth2)
+* Setup OAuth client in backstage
+* Setup Kubernetes clusters in Backstage
+
+### Step 1: Creating an OAuth app
+
+Follow step 1 from [here](https://roadie.io/docs/integrations/google-oauth-client/)
+
+### Step 2: Adding secrets to backstage
+
+Follow step 2 from [here](https://roadie.io/docs/integrations/google-oauth-client/)
+
+
+### Step 3: Adding a cluster to roadie
+
+1. Navigate to ”https://<tenant-name>.roadie.so/administration/settings/kubernetes” and click on add item.
+2. Select the Google provider
+3. Add the load balancer url and name of cluster.
+4. Click save and exit!
 
 > You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: ”backstage.io/kubernetes-label-selector: 'app=my-app,component=frontend'”
 > For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
