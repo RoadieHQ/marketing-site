@@ -107,6 +107,7 @@ const DocSidebar = () => {
           <SidebarItem to="/tailwind/docs/integrations/github-org/" text="GitHub Teams" />
           <SidebarItem to="/tailwind/docs/integrations/github-token/" text="GitHub via Token" />
           <SidebarItem to="/tailwind/docs/integrations/gcp/" text="Google Cloud Platform" />
+          <SidebarItem to="/tailwind/docs/integrations/google-oauth-client/" text="Google OAuth client" />
           <SidebarItem to="/tailwind/docs/integrations/jira/" text="Jira" />
           <SidebarItem to="/tailwind/docs/integrations/kubernetes/" text="Kubernetes" />
           <SidebarItem to="/tailwind/docs/integrations/newrelic/" text="NewRelic" />
