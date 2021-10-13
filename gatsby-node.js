@@ -81,7 +81,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   await createPagesFromQuery({
-    templatePath: './src/templates/tailwind/Doc.js',
+    templatePath: './src/templates/Doc.js',
     query: DOCS_QUERY,
     resultName: 'docs.edges',
     actions,
@@ -96,13 +96,13 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   await createPagesFromQuery({
-    templatePath: './src/templates/Doc.js',
+    templatePath: './src/templates/tailwind/Doc.js',
     query: DOCS_QUERY,
     resultName: 'docs.edges',
     actions,
     graphql,
     processor: ({ node }, component) => ({
-      path: node.fields.slug,
+      path: `/tailwind${node.fields.slug}`,
       component,
       context: {
         slug: node.fields.slug,
