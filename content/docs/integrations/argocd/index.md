@@ -39,9 +39,19 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/argo-CD` and ente
 
 The ArgoCD plugin provides two type of UI elements. 
 
-The `EntityArgoCDOverviewCard` and the `EntityArgoCDHistoryCard` can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards). 
+The `EntityArgoCDOverviewCard` presents the current status of an application: 
 
-The `EntityArgoCDContent` can be [added as a tab](/docs/getting-started/updating-the-ui#updating-tabs) to component layouts.
+![ArgoCD Overview Card](./argo-overview.png)
+
+The `EntityArgoCDHistoryCard` displays the deployment history of an appliction:
+
+![ArgoCD History Card](./argo-history.png)
+
+Both can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards).
+
+The `EntityArgoCDContent` displays similar information to the history card and can be [added as a tab](/docs/getting-started/updating-the-ui#updating-tabs) to component layouts.
+
+![ArgoCD Tab](./argo-tab.png)
 
 ## Multiple ArgoCD Instances
 
