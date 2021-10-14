@@ -3,8 +3,8 @@ import { createUseStyles } from 'react-jss';
 
 import { LayoutControl, SitewideHeader, SitewideFooter } from 'components';
 import TopBanner from 'components/TopBanner';
-import Hiring from 'components/TopBanner/Hiring';
 import { DEFAULT_MAX_WIDTH_BREAKPOINT } from 'components/LayoutControl';
+import Unconference from "../TopBanner/Unconference";
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -42,7 +42,7 @@ const StickyFooter = ({
     <div className={classes.root}>
       <div className={classes.expandVertically}>
         <TopBanner>
-          <Hiring />
+          <Unconference />
         </TopBanner>
 
         <SitewideHeader
