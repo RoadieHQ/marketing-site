@@ -139,6 +139,7 @@ const DocSidebar = () => {
 
         <SidebarSectionList title="Integrations">
           {/* Alphabetical ordering */}
+          <SidebarItem to="/docs/integrations/argocd/" text="ArgoCD" />
           <SidebarItem to="/docs/integrations/bugsnag/" text="Bugsnag" />
           <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
           <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />

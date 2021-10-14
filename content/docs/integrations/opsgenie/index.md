@@ -6,7 +6,7 @@ description: How to configure the Opsgenie plugin on roadie.
 
 ## Introduction
 
-This page describes how to set up the Opsgenie plugine.
+This page describes how to set up the Opsgenie plugin.
 
 ## Steps
 
