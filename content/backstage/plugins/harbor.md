@@ -22,7 +22,6 @@ gettingStarted:
     code: |
       cd packages/app
       yarn add @bestsellerit/backstage-plugin-harbor
-      yarn add styled-components
 
   - intro: Add a new Harbor tab to the entity page.
     language: typescript
