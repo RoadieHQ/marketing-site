@@ -37,9 +37,9 @@ const navigation = {
   ],
 
   legal: [
-    { name: 'Terms', href: '/tailwind/legal-terms/terms-of-service/' },
-    { name: 'Privacy', href: '/tailwind/legal-terms/privacy-policy/' },
-    { name: 'Cookies', href: '/tailwind/legal-terms/cookies-policy/' },
+    { name: 'Terms', href: '/tailwind/legal-notices/terms-of-service/' },
+    { name: 'Privacy', href: '/tailwind/legal-notices/privacy-policy/' },
+    { name: 'Cookies', href: '/tailwind/legal-notices/cookies-policy/' },
   ],
 
   social: [{

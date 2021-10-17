@@ -1,13 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, TextLink as Link } from 'components';
-import ContentHeader from 'components/tailwind/ContentHeader';
+import {
+  SEO,
+  TextLink as Link,
+  ContentHeader,
+  SitewideHeader,
+  SitewideFooter,
+  TailwindHeadContent,
+} from 'components/tailwind';
 import { TableOfContentsSidebar } from 'components/tailwind/Sidebar';
 import { Sidebar } from 'components/tailwind/doc';
 import editOnGitHubUrl from '../../editOnGitHubUrl';
-import SitewideHeader from 'components/tailwind/SitewideHeader';
-import SitewideFooter from 'components/tailwind/SitewideFooter';
-import HeadContent from 'components/tailwind/HeadContent';
 
 const Doc = ({
   data: {
@@ -20,15 +23,17 @@ const Doc = ({
       title={`${doc.frontmatter.title} | ${siteMetadata.title}`}
       description={doc.frontmatter.description}
     />
-    <HeadContent />
+    <TailwindHeadContent />
 
     <SitewideHeader maxWidth="full" />
 
-    <main className="md:flex">
+    <main className="md:flex pt-4 md:pt-0">
       <Sidebar />
 
       <article className="px-2 md:px-6 md:pt-7 md:flex-1">
-        <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+        <div className="mb-8">
+          <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+        </div>
 
         <section
           className="prose prose-indigo"
