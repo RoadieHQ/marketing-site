@@ -6,5 +6,6 @@ export { default as TextLink } from './TextLink';
 export { default as ResponsiveSpacer } from './ResponsiveSpacer';
 export { default as InterstitialTitle } from './InterstitialTitle';
 export { default as CodeBlock } from './CodeBlock';
+export { default as DotPatternSvg } from './DotPatternSvg';
 // Including here for convenience when importing
 export { default as SEO } from '../seo';
