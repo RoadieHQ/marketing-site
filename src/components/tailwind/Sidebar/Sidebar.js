@@ -1,8 +1,14 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const Sidebar = ({ children, className }) => (
-  <aside className={classnames('md:w-72 border-gray-100 md:border-r-2 md:pt-5 md:pl-3 md:sticky md:top-0 md:h-screen', className)}>
+const ROOT_STYLES = 'md:w-72 border-gray-100 md:pt-5 md:h-screen';
+
+const Sidebar = ({ children, className, side = 'left', sticky = false }) => (
+  <aside className={classnames(ROOT_STYLES, {
+    'md:border-r-2': side === 'left',
+    'md:border-l-2': side === 'right',
+    'md:sticky md:top-0': sticky,
+  }, className)}>
     <div className="md:h-screen">
       {children}
     </div>
