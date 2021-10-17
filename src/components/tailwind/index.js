@@ -10,5 +10,6 @@ export { default as DotPatternSvg } from './DotPatternSvg';
 export { default as ContentHeader } from './ContentHeader';
 export { default as SitewideFooter } from './SitewideFooter';
 export { default as TailwindHeadContent } from './HeadContent';
+export { default as Tags } from './Tags';
 // Including here for convenience when importing
 export { default as SEO } from '../seo';
