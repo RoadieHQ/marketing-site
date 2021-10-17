@@ -16,7 +16,13 @@ const TableOfContentsSidebar = ({ headings, className }) => {
   if (!headings || headings.length < 2) return null;
 
   return (
-    <Sidebar className={classnames('hidden xl:block xl:pl-3 xl:max-w-md xl:border-l-2 border-gray-100', className)}>
+    <Sidebar
+      side="right"
+      sticky={true}
+      className={
+        classnames('hidden xl:block md:w-96 pr-3', className)
+      }
+    >
       <SidebarSection>
         <strong>Table of Contents</strong>
       </SidebarSection>
