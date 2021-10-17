@@ -104,7 +104,10 @@ const PluginTemplate = ({ data }) => {
             <ResponsiveSpacer>
               <div>
                 <InterstitialTitle text="Things to know" />
-                <div className="prose prose-indigo" dangerouslySetInnerHTML={{ __html: plugin.notes }} />
+                <div
+                  className="prose prose-indigo max-w-full"
+                  dangerouslySetInnerHTML={{ __html: plugin.notes }}
+                />
               </div>
             </ResponsiveSpacer>
           )}
