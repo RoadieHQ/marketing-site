@@ -5,6 +5,7 @@ description: Backstage now supports searching TechDocs in three different search
 tags: ['newsletter']
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 TechDocs search is possibly the most hotly anticipated Backstage feature of the last few months. We've heard it from Roadie customers, we heard it in [the Lunar case study](https://roadie.io/case-studies/lunar-backstage-adoption/), and we've heard it from the community.

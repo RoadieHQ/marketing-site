@@ -3,6 +3,9 @@ title: Backstage Weekly 23 - Plugin composability update
 date: '2021-04-19T21:00:00.0Z'
 description: The last pieces are in place for the new Backstage plugin composability API. All the links you need are below. We also have a technical TechDocs deep dive. Try saying that 10 times fast!
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 This week we're pulling in a few links from around the web which relate to developer productivity and engineering effectiveness. After all, that's probably why you're using Backstage.

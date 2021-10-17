@@ -4,6 +4,7 @@ date: '2021-05-17T21:00:00.0Z'
 description: 
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 tags: ['newsletter']
 ---
 

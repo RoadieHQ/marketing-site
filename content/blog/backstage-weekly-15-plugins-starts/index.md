@@ -3,6 +3,9 @@ title: Backstage Weekly 15 - Happy 1 year anniversary to Backstage 🎂
 date: '2021-01-25T21:00:00.0Z'
 description: Three new plugins were launched in the last week. Plus, 3 great features have kicked off.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Today marks the one year anniversary of the [very first commit](https://github.com/backstage/backstage/commit/1a19a01c4beee7d869765a43d1b57b1b450017a7) to open source Backstage 🍾 Since then it has been... _busy_, with as many as 99 pull requests merged each week.

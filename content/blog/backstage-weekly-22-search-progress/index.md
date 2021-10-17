@@ -3,6 +3,9 @@ title: Backstage Weekly 22 - Progress made on Backstage search
 date: '2021-04-06T21:00:00.0Z'
 description: Search begins its migration to the backend, read only mode and some catalog importer improvements.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 ## Merged in the last 2 weeks

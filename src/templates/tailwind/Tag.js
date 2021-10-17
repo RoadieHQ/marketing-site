@@ -60,10 +60,19 @@ export const pageQuery = graphql`
           }
 
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date
             title
             description
             tags
+
+            author {
+              name
+              avatar {
+                childImageSharp {
+                  gatsbyImageData(layout: FIXED, width: 40)
+                }
+              }
+            }
           }
         }
       }

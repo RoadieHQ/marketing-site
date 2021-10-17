@@ -3,6 +3,9 @@ title: Backstage Weekly 21 - Spotify story - Why OSS Backstage succeeded
 date: '2021-03-22T21:00:00.0Z'
 description: Backstage was announced 1 year ago. We look at how Spotify developed the internal skills required to launch Backstage to its current heights.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Last week marked the 1 year anniversary of Backstage being [announced to the world](https://engineering.atspotify.com/2020/03/17/what-the-heck-is-backstage-anyway/) on the Spotify Engineering blog.

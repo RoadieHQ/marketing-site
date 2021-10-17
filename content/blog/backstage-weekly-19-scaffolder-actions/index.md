@@ -3,6 +3,9 @@ title: Backstage Weekly 19 - Custom actions for the scaffolder
 date: '2021-03-08T21:00:00.0Z'
 description: The latest beta of the scaffolder opens up a world of potential for templating applications. We run through an example below.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 The Backstage scaffolder is an easy way for engineering organisations to bake best practices into a set of software templates and encourage their use for creating new services and components. This helps improve production consistency and reduce lead time for new services.

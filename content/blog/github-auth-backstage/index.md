@@ -4,6 +4,9 @@ date: '2020-08-05T21:00:00.0Z'
 description: Setting up GitHub authentication can be a little tricky, but this post will tell you everything you need to know.
 lastUpdated: '2021-09-14T21:00:00.0Z'
 tags: ['tutorial', 'github']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 **Update Sept 2021:** Backstage now supports GitHub authentication via GitHub apps. If you are using a GitHub app, you do not need to follow the steps described below. They are only valid if you are using a GitHub Personal Access Token with Backstage.

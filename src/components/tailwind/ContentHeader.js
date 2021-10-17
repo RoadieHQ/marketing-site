@@ -11,7 +11,7 @@ const ContentHeader = ({ frontmatter, showLastValidated = true, dateKey }) => (
     </h1>
 
     {!isEmpty(frontmatter.tags) && (
-      <div className="b-2">
+      <div className="mb-2">
         <Tags tags={frontmatter.tags} />
       </div>
     )}

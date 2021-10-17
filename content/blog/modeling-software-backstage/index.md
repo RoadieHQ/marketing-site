@@ -4,6 +4,7 @@ date: '2021-06-29T21:00:00.0Z'
 description: How to use Backstage concepts — components, APIs, systems and domains — to model software and represent the relationships between different pieces of code.
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 tags: ['tutorial']
 ---
 

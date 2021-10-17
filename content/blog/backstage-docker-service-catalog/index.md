@@ -4,6 +4,7 @@ date: '2020-06-09T21:00:00.0Z'
 description: How to build and run Backstage Docker containers to get started with the service catalog in Docker Compose.
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 lastValidated: '2021-01-09T21:00:00.0Z'
 tags: ['tutorial']
 ---

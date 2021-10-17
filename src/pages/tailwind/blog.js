@@ -67,8 +67,14 @@ export const pageQuery = graphql`
             description
             lastValidated
             tags
+
             author {
               name
+              avatar {
+                childImageSharp {
+                  gatsbyImageData(layout: FIXED, width: 40)
+                }
+              }
             }
           }
         }

@@ -3,6 +3,9 @@ title: How to use the Backstage Lighthouse plugin.
 date: '2020-05-23T21:00:00.0Z'
 description: The first plugin shipped by the Backstage team is a Lighthouse plugin. It allows you to track your website speed over time in Backstage.
 tags: ['tutorial']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Lighthouse is an open-source, automated tool for improving the quality of web pages. You give it the URL of a web page, it loads the page and runs tests to check the page's quality.

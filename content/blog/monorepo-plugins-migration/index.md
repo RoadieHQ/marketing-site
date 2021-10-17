@@ -4,6 +4,7 @@ date: '2021-08-23T16:00:00.0Z'
 description:  Major change in the way we handle our plugins.
 author:
   name: Irma Solakovic
+  avatar: '../../assets/team/irma.jpeg'
 tags: ['updates']
 ---
 

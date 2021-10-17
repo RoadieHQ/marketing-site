@@ -3,6 +3,9 @@ title: Backstage Weekly 4 - Cost Insights
 date: '2020-10-07T21:00:00.0Z'
 description: The fourth edition of the Roadie Backstage Weekly newsletter. Managing cloud costs by shifting left with Backstage.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Last week, Spotify unveiled the Cost Insights plugin for Backstage. This plugin allows Backstage users to pull cloud costs into Backstage and associate them with services.

@@ -5,6 +5,7 @@ description: Multiple companies demo their internal Backstage deployments and we
 tags: ['newsletter']
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 This week we're covering:

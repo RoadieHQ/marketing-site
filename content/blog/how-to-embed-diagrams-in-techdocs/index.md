@@ -5,6 +5,7 @@ description: TechDocs converts markdown files to Backstage docs so your engineer
 tags: ['tutorial', 'techdocs', 'lucid chart']
 author:
   name: Brian Fletcher
+  avatar: '../../assets/team/brian.jpeg'
 ---
 
 TechDocs is the core Backstage feature which transforms markdown documentation into HTML and displays it inside Backstage where your engineering teams can find it.

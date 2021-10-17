@@ -3,6 +3,9 @@ title: Backstage Weekly 14 - 3 high potential internal Backstage features
 date: '2021-01-18T21:00:00.0Z'
 description: So much has happened in the year since Backstage was released. Let's look forward to see what the future might have in store.
 tags: ['newsletter', 'kubernetes']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 The one year anniversary of the first commit to open source Backstage is next week so I thought it would be fun to explore the remaining delta between Spotify's internal Backstage deployment and the OSS version we all know and love.

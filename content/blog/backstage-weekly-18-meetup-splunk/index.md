@@ -3,6 +3,9 @@ title: Backstage Weekly 18 - How Spotify drove Backstage adoption
 date: '2021-02-22T21:00:00.0Z'
 description: A recap of the first Backstage community session and a look at some new features which dropped last week.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 The first Backstage community session took place last Wednesday and was a resounding success. 117 people joined the core team on Zoom to hear Spotify explain the drivers behind the huge success of Backstage there.

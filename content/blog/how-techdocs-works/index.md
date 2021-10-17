@@ -3,6 +3,9 @@ title: Backstage TechDocs - How it works
 date: '2021-04-18T21:00:00.0Z'
 description: TechDocs converts markdown files to Backstage docs so your engineering teams can find them. But how does it work and how do you set it up?
 tags: ['tutorial', 'techdocs']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 TechDocs is the core Backstage feature which transforms markdown documentation into HTML and displays it inside Backstage where your engineering teams can find it.

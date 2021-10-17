@@ -3,6 +3,9 @@ title: Backstage Weekly 17 - Next steps for the scaffolder
 date: '2021-02-15T21:00:00.0Z'
 description: A look at Spotify's plans for the scaffolder in the early part of 2021.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Engineering organisations often face a dilemma. When there is a lot of freedom to choose technologies and tools, the developer ecosystem ends up with high variability and few opportunities to optimize developer flows. On the other hand, if too much constraint is applied then innovation is stifled and creativity suffers.
