@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { HelpText } from 'components';
+import { HelpText } from 'components/tailwind';
 
 const TextField = ({
   id,
@@ -22,7 +22,7 @@ const TextField = ({
       <label htmlFor={htmlId} className="block text-sm font-medium text-gray-700">
         {label}
       </label>
-      <div className="mt-1">
+      <div>
         <input
           id={htmlId}
           onChange={onInputChange}

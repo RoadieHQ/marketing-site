@@ -22,7 +22,6 @@ const useStyles = createUseStyles((theme) => ({
       },
     },
   },
-      
 }));
 
 const InterstitialTitle = ({

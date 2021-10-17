@@ -33404,6 +33404,10 @@ select {
   align-items: center;
 }
 
+pre, code {
+  font-size: 1em !important;
+}
+
 /*
  * Prevent the tailwind-typography from messing up code blocks which have already been
  * styled by the prism.css theme which is loaded in gatsby-browser.
