@@ -16,7 +16,7 @@ import {
 } from 'components/actions/SubscribeToNewsletter';
 import SitewideHeader from 'components/tailwind/SitewideHeader';
 import SitewideFooter from 'components/tailwind/SitewideFooter';
-import HeadContent from 'components/tailwind/HeadContent';
+import TailwindHeadContent from 'components/tailwind/HeadContent';
 
 // const useStyles = createUseStyles((theme) => ({
 //   coverImage: {
@@ -44,7 +44,7 @@ const PluginTemplate = ({ data }) => {
   return (
     <>
       <SEO title={plugin.frontmatter.seo.title} description={plugin.frontmatter.seo.description} />
-      <HeadContent />
+      <TailwindHeadContent />
 
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
@@ -55,60 +55,65 @@ const PluginTemplate = ({ data }) => {
 
       <SitewideHeader />
 
-      <Header plugin={plugin} />
+      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-80">
+        <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
 
-      <ResponsiveSpacer>
-        <InterstitialTitle text="Getting started is simple" />
+          <Header plugin={plugin} />
 
-        <div className="prose prose-indigo">
-          <p>
-            Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
-            <Link to="/tailwind/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
-          </p>
+          <ResponsiveSpacer>
+            <InterstitialTitle text="Getting started is simple" />
+
+            <div className="prose prose-indigo max-w-none">
+              <p>
+                Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
+                <Link to="/tailwind/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
+              </p>
+            </div>
+
+            <InterstitialTitle text="Installation steps" />
+
+            {plugin.frontmatter.gettingStarted.map((section, index) =>
+              section.title && section.title !== '' ? (
+                <InterstitialTitle text={section.title} key={`key-${index}`} />
+              ) : (
+                <CodeBlock
+                  language={section.language}
+                  code={section.code}
+                  intro={section.intro}
+                  key={`key-${index}`}
+                />
+              )
+            )}
+
+            <div className="prose prose-indigo">
+              <p>
+                Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
+              </p>
+            </div>
+          </ResponsiveSpacer>
+
+          <ResponsiveSpacer>
+            <InterstitialTitle text="How it looks" />
+
+            <div>
+              <GatsbyImage
+                image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
+                alt={plugin.frontmatter.coverImageAlt}
+                className="max-w-full max-h-full shadow-small"
+              />
+            </div>
+          </ResponsiveSpacer>
+
+          {plugin.notes && plugin.notes !== '' && (
+            <ResponsiveSpacer>
+              <div>
+                <InterstitialTitle text="Things to know" />
+                <div className="prose prose-indigo" dangerouslySetInnerHTML={{ __html: plugin.notes }} />
+              </div>
+            </ResponsiveSpacer>
+          )}
         </div>
-
-        <InterstitialTitle text="Installation steps" />
-
-        {plugin.frontmatter.gettingStarted.map((section, index) =>
-          section.title && section.title !== '' ? (
-            <InterstitialTitle text={section.title} key={`key-${index}`} />
-          ) : (
-            <CodeBlock
-              language={section.language}
-              code={section.code}
-              intro={section.intro}
-              key={`key-${index}`}
-            />
-          )
-        )}
-
-        <div className="prose prose-indigo">
-          <p>
-            Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
-          </p>
-        </div>
-      </ResponsiveSpacer>
-
-      <ResponsiveSpacer>
-        <InterstitialTitle text="How it looks" />
-
-        <div>
-          <GatsbyImage
-            image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
-            alt={plugin.frontmatter.coverImageAlt}
-            className="max-w-full max-h-full shadow-small"
-          />
-        </div>
-      </ResponsiveSpacer>
-
-      {plugin.notes && plugin.notes !== '' && (
-        <ResponsiveSpacer>
-          <div>
-            <InterstitialTitle text="Things to know" />
-            <div className="prose prose-indigo" dangerouslySetInnerHTML={{ __html: plugin.notes }} />
-          </div>
-        </ResponsiveSpacer>
-      )}
+      </div>
 
       <SubscribeToNewsletterCTA
         setModalOpen={setModalOpen}

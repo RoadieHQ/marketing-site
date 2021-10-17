@@ -40,6 +40,19 @@ body {
 }
 
 /*
+ * The defualt prism styling loaded in gatsby-browser.js sets the pre and code font sizes to
+ * 1.4rem. Combined with the styling in head-loaded-styles.css, this looks huge on the page.
+ * This CSS below forces a more reasonable font-size in code blocks.
+ *
+ * !important is needed to override the styling in head-loaded-styles.css. Once we cut over
+ * completely to Tailwind, the head-loaded-styles.css file will disappear completely and this
+ * CSS rule can go with it
+ */
+pre, code {
+  font-size: 1em !important;
+}
+
+/*
  * Prevent the tailwind-typography from messing up code blocks which have already been
  * styled by the prism.css theme which is loaded in gatsby-browser.
  */

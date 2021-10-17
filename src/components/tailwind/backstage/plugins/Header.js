@@ -5,13 +5,14 @@ import Logo from './Logo';
 import Attribution from './Attribution';
 
 const Header = ({ plugin }) => (
-  <header className="text-center pt-32 pb-72">
-    <Logo
-      sharpImage={plugin.frontmatter.logoImage.childImageSharp}
-      alt={`${plugin.frontmatter.heading} logo`}
-    />
-    <Headline>{plugin.frontmatter.heading}</Headline>
-    <Lead>{plugin.frontmatter.lead}</Lead>
+  <header className="text-center pt-4 pb-24">
+    <Logo sharpImage={plugin.frontmatter.logoImage.childImageSharp} />
+    <div className="mb-4">
+      <Headline>{plugin.frontmatter.heading}</Headline>
+    </div>
+    <div className="mb-4">
+      <Lead>{plugin.frontmatter.lead}</Lead>
+    </div>
     <Attribution attribution={plugin.frontmatter.attribution} />
   </header>
 );
