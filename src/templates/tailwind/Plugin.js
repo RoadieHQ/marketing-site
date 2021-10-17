@@ -13,18 +13,10 @@ import { EditOnGitHubLink, Header } from 'components/tailwind/backstage/plugins'
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
-} from 'components/actions/SubscribeToNewsletter';
+} from 'components/tailwind/CallToAction/SubscribeToNewsletter';
 import SitewideHeader from 'components/tailwind/SitewideHeader';
 import SitewideFooter from 'components/tailwind/SitewideFooter';
 import TailwindHeadContent from 'components/tailwind/HeadContent';
-
-// const useStyles = createUseStyles((theme) => ({
-//   coverImage: {
-//     ...theme.preMadeStyles.content['& .gatsby-resp-image-wrapper'],
-//     maxWidth: '100%',
-//     maxHeight: '100%',
-//   },
-// }));
 
 const PluginTemplate = ({ data }) => {
   const { plugin, site: { siteMetadata } } = data;
@@ -55,8 +47,8 @@ const PluginTemplate = ({ data }) => {
 
       <SitewideHeader />
 
-      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-80">
-        <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+      <div className="bg-white pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-80">
+        <div className="relative max-w-lg mx-auto lg:max-w-7xl">
 
           <Header plugin={plugin} />
 
@@ -69,7 +61,9 @@ const PluginTemplate = ({ data }) => {
                 <Link to="/tailwind/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
               </p>
             </div>
+          </ResponsiveSpacer>
 
+          <ResponsiveSpacer>
             <InterstitialTitle text="Installation steps" />
 
             {plugin.frontmatter.gettingStarted.map((section, index) =>
@@ -84,7 +78,9 @@ const PluginTemplate = ({ data }) => {
                 />
               )
             )}
+          </ResponsiveSpacer>
 
+          <ResponsiveSpacer>
             <div className="prose prose-indigo">
               <p>
                 Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
@@ -115,11 +111,13 @@ const PluginTemplate = ({ data }) => {
         </div>
       </div>
 
-      <SubscribeToNewsletterCTA
-        setModalOpen={setModalOpen}
-        email={email}
-        setEmail={setEmail}
-      />
+      <div className="pt-4 pb-8 px-4 md:mb-24">
+        <SubscribeToNewsletterCTA
+          setModalOpen={setModalOpen}
+          email={email}
+          setEmail={setEmail}
+        />
+      </div>
 
       <SitewideFooter />
     </>

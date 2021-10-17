@@ -1,4 +1,4 @@
-export { Switch, Radio, TextField, Button } from './forms';
+export { Switch, Radio, TextField, Button, HelpText } from './forms';
 export { default as SitewideHeader } from './SitewideHeader';
 export { default as Lead } from './Lead';
 export { default as Headline } from './Headline';

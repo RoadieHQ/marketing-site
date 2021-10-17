@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 import trackGoogleAnalyticsEvent from '../../googleAnalytics';
 import trackPlausibleEvent from '../../plausible';
-import EmailCaptureForm from './EmailCaptureForm';
+import EmailCaptureForm from 'components/actions/EmailCaptureForm';
+import TailwindEmailCaptureForm from 'components/tailwind/CallToAction/EmailCaptureForm';
 import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
@@ -56,6 +57,7 @@ const NetlifyFormCallToAction = ({
   autoFocus = false,
   email,
   setEmail,
+  formStyle = 'default',
 }) => {
   const [submitting, setSubmitting] = useState(false);
   const [subForm, setSubForm] = useState({
@@ -85,23 +87,28 @@ const NetlifyFormCallToAction = ({
     setSubmitting(false);
   };
 
-  /* eslint-disable jsx-a11y/no-autofocus */
-  return (
-    <EmailCaptureForm
-      onSubmit={onSubmit}
-      submitting={submitting}
-      emailInputId={`${netlifyFormName}-email-input`}
-      buttonId={`${netlifyFormName}-email-button`}
-      subForm={subForm}
-      setEmail={setEmail}
-      placeholderText={placeholderText}
-      email={email}
-      buttonText={buttonText}
-      autoFocus={autoFocus}
-      netlifyFormName={netlifyFormName}
-    />
-  );
-  /* eslint-enable jsx-a11y/no-autofocus */
+  const propsToPass = {
+    onSubmit: onSubmit,
+    submitting: submitting,
+    emailInputId: `${netlifyFormName}-email-input`,
+    buttonId: `${netlifyFormName}-email-button`,
+    subForm: subForm,
+    setEmail: setEmail,
+    placeholderText: placeholderText,
+    email: email,
+    buttonText: buttonText,
+    autoFocus: autoFocus,
+    netlifyFormName: netlifyFormName,
+  };
+
+  // This is pretty hacky but allows me to avoid duplicating all the logic in this file into
+  // the tailwind directory. This complonent doesn't have any of it's own styling associated
+  // with it, it just happens to pass down logic to a styled component.
+  if (formStyle === 'tailwind') {
+    return <TailwindEmailCaptureForm {...propsToPass} />;
+  }
+
+  return <EmailCaptureForm {...propsToPass} />;
 };
 
 export default NetlifyFormCallToAction;
