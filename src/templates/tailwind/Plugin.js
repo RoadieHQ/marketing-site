@@ -47,8 +47,8 @@ const PluginTemplate = ({ data }) => {
 
       <SitewideHeader />
 
-      <div className="bg-white pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-80">
-        <div className="relative max-w-lg mx-auto lg:max-w-7xl">
+      <div className="pt-4 pb-8 px-4 lg:pt-24 lg:pb-28">
+        <div className="relative max-w-lg mx-auto lg:max-w-3xl">
 
           <Header plugin={plugin} />
 
