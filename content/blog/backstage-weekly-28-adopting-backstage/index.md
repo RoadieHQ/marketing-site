@@ -4,6 +4,7 @@ date: '2021-05-31T21:00:00.0Z'
 description: Plus... a recap of community session 4 and a look at the new Backstage catalog UI.
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 tags: ['newsletter']
 ---
 

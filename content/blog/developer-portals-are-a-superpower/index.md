@@ -4,6 +4,7 @@ date: '2021-05-12T21:00:00.0Z'
 description: A rebuttal of a post by AWS guru Corey Quinn, who claims that developer portals are an anti-pattern.
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Last week, Cloud Economist and AWS guru Corey Quinn, wrote a blog post declaring that [developer portals are an anti-pattern](https://www.lastweekinaws.com/blog/developer-portals-are-an-anti-pattern/). He mentioned Backstage, and explained why he believed that it was taking the industry in the wrong direction.

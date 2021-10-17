@@ -5,6 +5,7 @@ description: How to avoid leaking your customer’s source code with GitHub apps
 tags: ['github']
 author:
   name: Brian Fletcher
+  avatar: '../../assets/team/brian.jpeg'
 ---
 
 Security, tenant isolation and protecting our customer’s intellectual property is important to us at Roadie. While investigating options for integrating with GitHub APIs we recognized that you have to work hard to do it securely. There are a number of ways to access GitHub APIs. It is quite easy to integrate with them incorrectly and potentially leak data between customers.

@@ -3,6 +3,9 @@ title: Backstage Weekly 16 - Upcoming Backstage community meetup 👯
 date: '2021-02-08T21:00:00.0Z'
 description: Make sure you don't miss the first community meetup of 2021. Also, get a preview of an upcoming Roadie feature.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 The first Backstage community meetup of 2021 has been announced on the new [Backstage community GitHub repo](https://github.com/backstage/community).

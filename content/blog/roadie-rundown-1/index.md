@@ -3,6 +3,9 @@ title: Roadie Rundown 1 - Docs in Backstage
 date: '2020-09-15T21:00:00.0Z'
 description: The first edition of the Roadie Newsletter. Find service documentation without NSA-level discovery skills.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Everyone wishes that great docs for internal services were the norm, but few people are willing to spend the time to make these docs a reality.

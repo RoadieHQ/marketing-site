@@ -6,6 +6,7 @@ description: |
 tags: ['newsletter']
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 The Backstage maintainers were on summer vacation for the month of July, but this didn't stop the contributions from flowing. 200 pull requests were merged during this holiday month.

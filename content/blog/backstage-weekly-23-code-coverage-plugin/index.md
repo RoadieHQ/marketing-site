@@ -3,6 +3,9 @@ title: Backstage Weekly 24 - Code coverage plugin and growing Backstage team
 date: '2021-04-26T21:00:00.0Z'
 description: Code coverage plugin, use cases for security and compliance, and both the Spotify and Roadie teams are growing.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Two pretty exciting plugin changes were merged last week:

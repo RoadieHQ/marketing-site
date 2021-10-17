@@ -3,6 +3,9 @@ title: Backstage Weekly 20 - Upcoming meetups and Kubernetes CRD support
 date: '2021-03-15T21:00:00.0Z'
 description: Heads up on two upcoming Backstage meetups and a roundup of the latest merged pull requests.
 tags: ['newsletter', 'kubernetes']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Believe it or not there are **two** Backstage meetups happening over the next 2 weeks! 📅

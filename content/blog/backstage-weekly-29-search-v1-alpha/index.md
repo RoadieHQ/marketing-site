@@ -5,6 +5,7 @@ description: Backstage search reaches the v1 alpha milestone and plugin maintena
 tags: ['newsletter']
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 There were some important milestones reached over the last 2 weeks so we're going to skip past the pre-amble and get straight into the new features.

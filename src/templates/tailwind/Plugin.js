@@ -8,15 +8,15 @@ import {
   CodeBlock,
   SEO,
   ResponsiveSpacer,
+  SitewideHeader,
+  SitewideFooter,
+  TailwindHeadContent,
 } from 'components/tailwind';
 import { EditOnGitHubLink, Header } from 'components/tailwind/backstage/plugins';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
 } from 'components/tailwind/CallToAction/SubscribeToNewsletter';
-import SitewideHeader from 'components/tailwind/SitewideHeader';
-import SitewideFooter from 'components/tailwind/SitewideFooter';
-import TailwindHeadContent from 'components/tailwind/HeadContent';
 
 const PluginTemplate = ({ data }) => {
   const { plugin, site: { siteMetadata } } = data;
@@ -105,7 +105,7 @@ const PluginTemplate = ({ data }) => {
               <div>
                 <InterstitialTitle text="Things to know" />
                 <div
-                  className="prose prose-indigo max-w-full"
+                  className="prose prose-indigo max-w-none"
                   dangerouslySetInnerHTML={{ __html: plugin.notes }}
                 />
               </div>

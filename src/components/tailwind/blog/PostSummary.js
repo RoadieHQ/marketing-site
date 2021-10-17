@@ -1,18 +1,24 @@
 import React from 'react';
 import { Tags } from 'components/tailwind';
-import classnames from 'classnames';
+import has from 'lodash/has';
 import format from 'date-fns/format';
 import { Link } from 'components';
+import { GatsbyImage } from 'gatsby-plugin-image';
+
+const hasAvatar = (author) => (
+  has(author, 'avatar.childImageSharp.gatsbyImageData')
+);
 
 const AuthorAvatar = ({ author }) => {
-  if (!author) return null;
+  if (!hasAvatar(author)) return null;
 
   return (
-    <div className="flex-shrink-0">
+    <div className="flex-shrink-0 mr-3">
       <span className="sr-only">{author.name}</span>
-      <img
-        className="h-10 w-10 rounded-full"
-        src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""
+      <GatsbyImage
+        className="rounded-full"
+        image={author.avatar.childImageSharp.gatsbyImageData}
+        alt={`${author.name} headshot`}
       />
     </div>
   );
@@ -49,7 +55,7 @@ const Attribution = ({ post }) => {
     <div className="mt-6 flex items-center">
       <AuthorAvatar author={post.frontmatter.author} />
 
-      <div className={classnames({ 'ml-3': post.frontmatter.author })}>
+      <div>
         <AuthorName author={post.frontmatter.author} />
         <ReadInfo post={post} />
       </div>

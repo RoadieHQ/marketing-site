@@ -3,6 +3,9 @@ title: Backstage Weekly 8 - The search for search is almost over
 date: '2020-11-16T21:00:00.0Z'
 description: Lots of potential building up as we near year's end. The Backstage search plugin is nearly ready.
 tags: ['newsletter']
+author:
+  name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 It's been a quiet week in the Backstage world with only 23 pull requests merged instead of the usual 70 to 100 📉 . Of course, that doesn't mean that nothing good was happening...

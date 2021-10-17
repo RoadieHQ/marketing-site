@@ -3,6 +3,9 @@ title: Deploying Backstage application to AWS ECS Fargate
 date: '2021-02-17T16:00:00.0Z'
 description: How to deploy Backstage to AWS Elastic Container Service (ECS) using the Fargate serverless computing engine to run Docker containers 
 tags: ['tutorial']
+author:
+  name: Jussi Hallila
+  avatar: '../../assets/team/jussi.jpeg'
 ---
 
 In this tutorial, we're going to deploy a basic Backstage application to AWS. The application will be using a stack of AWS resources to its advantage. We'll set up a database to run PostgreSQL on AWS RDS, store our environment variables to AWS SSM Parameter Store, route our traffic through an AWS Application Load Balancer and last but not least, run our Backstage application on AWS Fargate compute engine.
