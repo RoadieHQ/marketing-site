@@ -28,7 +28,7 @@ const ThreeColWithBadges = ({ posts }) => {
                 )}
               </div>
 
-              <Link to={post.fields.slug} className="block mt-4">
+              <Link to={`/tailwind${post.fields.slug}`} className="block mt-4">
                 <p className="text-xl font-semibold text-gray-900">{post.frontmatter.title}</p>
                 <p className="mt-3 text-base text-gray-500">{post.frontmatter.description}</p>
               </Link>

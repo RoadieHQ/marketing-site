@@ -36,6 +36,28 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   await createPagesFromQuery({
+    templatePath: './src/templates/tailwind/BlogPost.js',
+    query: BLOGS_QUERY,
+    resultName: 'blogs.edges',
+    actions,
+    graphql,
+    processor: ({ node }, component, allEdges, index) => {
+      const previous = index === allEdges.length - 1 ? null : allEdges[index + 1].node;
+      const next = index === 0 ? null : allEdges[index - 1].node;
+
+      return {
+        path: `/tailwind${node.fields.slug}`,
+        component,
+        context: {
+          slug: node.fields.slug,
+          previous,
+          next,
+        },
+      };
+    },
+  });
+
+  await createPagesFromQuery({
     templatePath: './src/templates/Tag.js',
     query: TAGS_QUERY,
     resultName: 'tagsGroup.group',
