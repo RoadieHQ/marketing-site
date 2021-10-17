@@ -73,6 +73,21 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   await createPagesFromQuery({
+    templatePath: './src/templates/tailwind/Tag.js',
+    query: TAGS_QUERY,
+    resultName: 'tagsGroup.group',
+    actions,
+    graphql,
+    processor: ({ fieldValue }, component) => ({
+      path: `/tailwind/tags/${kebabCase(fieldValue)}/`,
+      component,
+      context: {
+        tag: fieldValue,
+      },
+    }),
+  });
+
+  await createPagesFromQuery({
     templatePath: './src/templates/Plugin.js',
     query: PLUGINS_QUERY,
     resultName: 'plugins.edges',
