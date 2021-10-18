@@ -13,3 +13,4 @@ export { default as TailwindHeadContent } from './HeadContent';
 export { default as Tags } from './Tags';
 // Including here for convenience when importing
 export { default as SEO } from '../seo';
+export { default as Link } from '../Link';

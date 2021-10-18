@@ -1,8 +1,6 @@
 import React from 'react';
-import { Tags } from 'components/tailwind';
 import has from 'lodash/has';
 import format from 'date-fns/format';
-import { Link } from 'components';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const hasAvatar = (author) => (
@@ -63,22 +61,4 @@ const Attribution = ({ post }) => {
   );
 };
 
-
-const PostSummary = ({ post }) => {
-  return (
-    <div key={post.frontmatter.title}>
-      <div>
-        <Tags tags={post.frontmatter.tags} />
-      </div>
-
-      <Link to={`/tailwind${post.fields.slug}`} className="block mt-4">
-        <p className="text-xl font-semibold text-gray-900">{post.frontmatter.title}</p>
-        <p className="mt-3 text-base text-gray-500">{post.frontmatter.description}</p>
-      </Link>
-
-      <Attribution post={post} />
-    </div>
-  );
-};
-
-export default PostSummary;
+export default Attribution;

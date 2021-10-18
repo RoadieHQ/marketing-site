@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components/tailwind';
-import PostSummary from 'components/tailwind/blog/PostSummary';
+import { PostSummary } from 'components/tailwind/article';
 
 const BlogIndex = ({ pageContext, data }) => {
   const { tag } = pageContext;
