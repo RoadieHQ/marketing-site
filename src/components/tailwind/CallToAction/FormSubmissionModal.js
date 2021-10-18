@@ -33,15 +33,13 @@ const GetDemoSurveyInner = ({ referredEmail }) => {
   const codedEmail = encodeURIComponent(referredEmail);
 
   return (
-    <p>
-      <Button
-        link={true}
-        to={`/tailwind/request-demo/?email=${codedEmail}`}
-        icon={<FaExternalLinkAlt />}
-        text="Request a demo"
-        color="primary"
-      />
-    </p>
+    <Button
+      link={true}
+      to={`/tailwind/request-demo/?email=${codedEmail}`}
+      icon={<FaExternalLinkAlt />}
+      text="Request a demo"
+      color="primary"
+    />
   );
 };
 
@@ -81,10 +79,12 @@ const FormSubmissionModal = ({
       onRequestClose={handleCloseModal}
     >
       <div className="p-4">
-        <h2 className="mb-1">
-          {titleText}{' '}{titleEmoji}
-        </h2>
-        {bodyText}
+        <div className="prose prose-indigo max-w-none mb-1">
+          <h2 className="mb-1">
+            {titleText}{' '}{titleEmoji}
+          </h2>
+          {bodyText}
+        </div>
         {followOnContent}
       </div>
     </Modal>

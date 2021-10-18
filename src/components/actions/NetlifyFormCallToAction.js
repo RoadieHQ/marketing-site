@@ -58,6 +58,7 @@ const NetlifyFormCallToAction = ({
   email,
   setEmail,
   formStyle = 'default',
+  ...rest
 }) => {
   const [submitting, setSubmitting] = useState(false);
   const [subForm, setSubForm] = useState({
@@ -99,6 +100,7 @@ const NetlifyFormCallToAction = ({
     buttonText: buttonText,
     autoFocus: autoFocus,
     netlifyFormName: netlifyFormName,
+    ...rest,
   };
 
   // This is pretty hacky but allows me to avoid duplicating all the logic in this file into
