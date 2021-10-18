@@ -6,7 +6,7 @@ description: How setup Backstage to display graphs and dashboards from Datadog
 
 ## Introduction
 
-With this plugin, you can embed Datadog graphs and dashboards into your instance of Backstage. Datadog is a monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services through a SaaS-based data analytics platform.
+With this plugin, you can embed Datadog graphs and dashboards into Roadie Backstage. Datadog is a monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services through a SaaS-based data analytics platform.
 
 ## Add a Datadog card to the overview tab of the Entity Page
 
