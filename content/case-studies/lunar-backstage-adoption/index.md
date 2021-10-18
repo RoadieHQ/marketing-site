@@ -7,6 +7,7 @@ logo:
   alt: Lunar logo
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Lunar is a Nordic challenger bank who raised a $40 million dollar Series C in October 2020 and looked to Backstage to help them rapidly onboard the engineers they planned to hire on the back of this fundraising event.

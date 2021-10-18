@@ -41,6 +41,12 @@ const createLatestLegalNotices = async ({ graphql, actions: { createRedirect } }
       toPath: `/legal-notices/${noticeType}/v${maxVersion}/`,
       isPermanent: true,
     });
+
+    createRedirect({
+      fromPath: `/tailwind/legal-notices/${noticeType}/`,
+      toPath: `/tailwind/legal-notices/${noticeType}/v${maxVersion}/`,
+      isPermanent: true,
+    });
   });
 };
 

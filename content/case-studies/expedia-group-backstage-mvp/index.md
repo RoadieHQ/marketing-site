@@ -8,6 +8,7 @@ logo:
   backgroundColor: '#031899'
 author:
   name: David Tuite
+  avatar: '../../assets/team/david-tuite.jpg'
 ---
 
 Expedia Group recently rolled out Backstage company wide to more than 5,000 developers as their designated internal service catalog, API catalog, documentation library and developer portal.
