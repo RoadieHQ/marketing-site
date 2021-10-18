@@ -21,7 +21,7 @@ Select the datadog graph card from the drop down and Click add. Press save to su
 
 ## Specify datadog domain
 
-Datadog embedded graph is using datadoghq.eu as default top-level domain, when other is not specified. If you are using other domain, you must specify it with corresponding annotations datadoghq.com/site.
+The Datadog Backstage plugin uses `datadoghq.eu` as the default top-level domain. If you would like to use a different Datadog domain, you must specify it with a corresponding annotation on your `catalog-info.yaml` file.
 
 ### Adding the annotations and the values from Datadog to your component's metadata file.
 
