@@ -221,7 +221,6 @@ exports.createPages = async ({ graphql, actions }) => {
     },
   });
 
-
   await createLatestLegalNotices({
     graphql,
     actions,

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
 
 import {
   SEO,
