@@ -119,6 +119,6 @@ metadata:
 
 ## Security
 
-Sharing Datadog dashboards and graphs makes them public on the internet and accessible by anyone with the URL.
+⚠️ Sharing Datadog dashboards and graphs makes them public on the internet and accessible by anyone with the URL.
 
 Make sure you do not share these URLs with untrusted actors.
