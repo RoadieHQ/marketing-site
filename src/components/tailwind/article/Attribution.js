@@ -1,7 +1,8 @@
 import React from 'react';
 import has from 'lodash/has';
-import format from 'date-fns/format';
 import { GatsbyImage } from 'gatsby-plugin-image';
+
+import PubDate from './PubDate';
 
 const hasAvatar = (author) => (
   has(author, 'avatar.childImageSharp.gatsbyImageData')
@@ -33,16 +34,10 @@ const AuthorName = ({ author }) => {
 };
 
 const ReadInfo = ({ post }) => {
-  const FORMAT_TOKEN = 'MMMM do, yyyy';
-
   return (
     <div className="flex space-x-1 text-sm text-gray-500">
-      <time dateTime={post.frontmatter.date}>
-        {format(Date.parse(post.frontmatter.date), FORMAT_TOKEN)}
-      </time>
-
+      <PubDate post={post} />
       <span aria-hidden="true">&middot;</span>
-
       <span>{post.timeToRead} min read</span>
     </div>
   );

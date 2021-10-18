@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
+import classnames from 'classnames';
 
 import { currentlyExecutingGitBranch } from '../../../environment';
 import { TextField, Button } from 'components/tailwind';
@@ -16,6 +17,7 @@ const EmailCaptureForm = ({
   setEmail,
   submitting = false,
   netlifyFormName,
+  className = 'md:justify-center',
 }) => {
   const disabled = submitting || !email || email === '';
 
@@ -32,7 +34,7 @@ const EmailCaptureForm = ({
       <input type="hidden" name="submit-button-label" value={buttonText} />
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
-      <div className="flex flex-col md:flex-row md:justify-center">
+      <div className={classnames('flex flex-col md:flex-row', className)}>
         <div className="mb-4 md:mb-0">
           <TextField
             type="email"
