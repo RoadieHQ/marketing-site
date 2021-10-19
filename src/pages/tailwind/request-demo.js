@@ -6,18 +6,30 @@ import {
   TailwindHeadContent,
   SitewideFooter,
 } from 'components/tailwind';
-import { ExtendedGetInstanceCallToAction } from 'components/tailwind/CallToAction';
-import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
-import SubmissionSuccessModal from 'components/tailwind/free-trial/SubmissionSuccessModal';
+import FormSubmissionModal from 'components/tailwind/CallToAction/FormSubmissionModal';
+import { RequestDemoCallToAction } from 'components/tailwind/CallToAction';
 import FormWithTestimonial from 'components/tailwind/layouts/FormWithTestimonial';
 
-const SEO_TITLE = 'Get a SaaS Backstage trial';
+const SEO_TITLE = 'Request a demo of Roadie Backstage';
 
-const RequestTrial = ({ data }) => {
+const SubmissionSuccessModal = ({ ...rest }) => {
+  return (
+    <FormSubmissionModal
+      titleText="We'll be in touch"
+      bodyText={
+        <p>
+          Thank you for requesting a Roadie Backstage demo. We will reach out to schedule a call via the email provided.
+        </p>
+      }
+      followOn="NEWSLETTER_AND_TWITTER"
+      {...rest}
+    />
+  );
+};
+
+const RequestDemo = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -27,14 +39,11 @@ const RequestTrial = ({ data }) => {
     <>
       <SEO
         title={`${SEO_TITLE} | ${siteTitle}`}
-        description="Get a SaaS Backstage experience from Roadie. We handle hosting and maintenance and let you get back to your customers."
+        description="Get a demo of the SaaS Backstage experience from Roadie."
       />
-
       <TailwindHeadContent />
 
       <SubmissionSuccessModal
-        email={email}
-        scmTool={scmTool}
         handleCloseModal={handleCloseModal}
         modalOpen={modalOpen}
         siteMetadata={data.site.siteMetadata}
@@ -44,16 +53,15 @@ const RequestTrial = ({ data }) => {
         <SitewideHeader />
 
         <FormWithTestimonial
-          title="Free trial"
-          description="Try Roadie Backstage free for 30 days."
-          subTitle="Request a trial"
+          title="Request a demo"
+          description="Bring your team to a fully featured demo of Roadie and Backstage."
+          subTitle="Request a demo"
         >
-          <ExtendedGetInstanceCallToAction
-            email={email}
-            onSuccess={setModalOpen}
-            setEmail={setEmail}
-            scmTool={scmTool}
-            setScmTool={setScmTool}
+          <RequestDemoCallToAction
+            location={location}
+            onSuccess={() => {
+              setModalOpen(true);
+            }}
           />
         </FormWithTestimonial>
 
@@ -63,7 +71,7 @@ const RequestTrial = ({ data }) => {
   );
 };
 
-export default RequestTrial;
+export default RequestDemo;
 
 export const pageQuery = graphql`
   query {

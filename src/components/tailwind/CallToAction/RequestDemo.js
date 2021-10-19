@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'components';
 import {
-  Switch,
   Button,
   TextField,
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
 } from 'components/tailwind';
+import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
 import { FORM_NAMES } from '../../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../../environment';
 
 export const submitToNetlifyForms = async ({
+  name,
   email,
   scmTool,
   subToNewsletter,
@@ -22,6 +22,7 @@ export const submitToNetlifyForms = async ({
 
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
+  formData.append('name', name);
   formData.append('email', email);
   formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
@@ -41,24 +42,28 @@ export const submitToNetlifyForms = async ({
   return resp;
 };
 
-const ExtendedGetInstanceCallToAction = ({
+const RequestDemoCallToAction = ({
   onSuccess,
-  email,
-  setEmail,
-  scmTool,
-  setScmTool,
+  location,
 }) => {
+  // Provides a way to automatically populate the email input via the URL.
+  const params = new URLSearchParams(location.search)
+  const emailFromUrl = decodeURIComponent(params.get('email') || '');
+
+  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
+  const [email, setEmail] = useState(emailFromUrl);
+  const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
-  const [agreed, setAgreed] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  const netlifyFormName = FORM_NAMES.getInstanceExtended;
-  const buttonText = 'Request a trial';
+  const netlifyFormName = FORM_NAMES.requestDemo;
+  const buttonText = 'Request a demo';
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
 
     const resp = await submitToNetlifyForms({
+      name,
       email,
       scmTool,
       subToNewsletter,
@@ -92,53 +97,36 @@ const ExtendedGetInstanceCallToAction = ({
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
       <TextField
-        id="get-instance-email-input"
+        label="Full name *"
+        type="text"
+        name="name"
+        id="request-demo-name-input"
+        onChange={setName}
+        value={name}
+        fullWidth
+      />
+
+      <TextField
         label="Work email address *"
-        name="email"
         type="email"
-        autoComplete="email"
-        fullWidth={true}
+        name="email"
+        id="request-demo-email-input"
         onChange={setEmail}
         value={email}
+        fullWidth
       />
 
       <ScmToolRadioGroup
         onChange={setScmTool}
         currentValue={scmTool}
-        idPrefix="get-instance-"
+        idPrefix="request-demo-"
       />
 
       <SubscribeToNewsletterSwitch
         checked={subToNewsletter}
         onChange={setSubToNewsletter}
-        idPrefix="get-instance-"
+        idPrefix="request-demo-"
       />
-
-      <div className="sm:col-span-2">
-        <div className="flex items-start">
-          <div className="flex-shrink-0">
-            <Switch
-              checked={agreed}
-              onChange={setAgreed}
-              srTitle="Agree to policies"
-            />
-          </div>
-
-          <div className="ml-3">
-            <p className="text-base text-gray-500">
-              By selecting this, you agree to our{' '}
-              <Link to="/legal-notices/evaluation-license/" className="font-medium text-gray-700 underline">
-                Evaluation License
-              </Link>{' '}
-              and acknowledge you have read our{' '}
-              <Link to="/legal-notices/privacy-policy/" className="font-medium text-gray-700 underline">
-                Privacy Policy
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </div>
 
       <div className="sm:col-span-2">
         <Button
@@ -154,4 +142,4 @@ const ExtendedGetInstanceCallToAction = ({
   );
 };
 
-export default ExtendedGetInstanceCallToAction;
+export default RequestDemoCallToAction;
