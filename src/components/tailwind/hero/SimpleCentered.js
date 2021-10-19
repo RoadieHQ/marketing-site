@@ -1,6 +1,6 @@
 import React from 'react'
 import SitewideHeader from 'components/tailwind/SitewideHeader';
-import { Button, Lead, Headline, DotPatternSvg } from 'components/tailwind';
+import { Button, Lead, Headline, DotPattern } from 'components/tailwind';
 
 const Main = () => {
   return (
@@ -51,14 +51,14 @@ const SimpleCentered = () => {
     <div className="relative bg-gray-50 overflow-hidden">
       <div className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
         <div className="relative h-full max-w-7xl mx-auto">
-          <DotPatternSvg
+          <DotPattern
             className="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2"
             id="f210dbf6-a58d-4871-961e-36d5016a0f49"
             width={404}
             height={784}
           />
 
-          <DotPatternSvg
+          <DotPattern
             className="absolute left-full transform -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2"
             id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b"
             width={404}
