@@ -79,7 +79,7 @@ const SubmissionSuccessModal = ({ classes, ...rest }) => {
   );
 };
 
-const Home = ({ data, location }) => {
+const RequestDemo = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const classes = useStyles();
   const [modalOpen, setModalOpen] = useState(false);
@@ -132,7 +132,7 @@ const Home = ({ data, location }) => {
   );
 };
 
-export default Home;
+export default RequestDemo;
 
 export const pageQuery = graphql`
   query {

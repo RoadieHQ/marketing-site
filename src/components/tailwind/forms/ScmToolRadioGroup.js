@@ -9,16 +9,13 @@ const ScmToolRadioGroup = ({
   label = 'Primary source code hosting tool',
   idPrefix = '',
 }) => (
-  <>
-    <div className="mb-1">
-      <strong>
-        {label}
-      </strong>
-    </div>
+  <fieldset className="sm:col-span-2">
+    <legend className="block text-sm font-medium text-gray-700">{label}</legend>
 
-    {SCM_TOOLS.map(({ value, label }) => (
-      <div className="mb-1" key={value}>
+    <div className="mt-4 grid grid-cols-1 gap-y-4">
+      {SCM_TOOLS.map(({ value, label }) => (
         <Radio
+          key={value}
           value={value}
           label={label}
           onChange={onChange}
@@ -26,9 +23,9 @@ const ScmToolRadioGroup = ({
           name="scm"
           id={`${idPrefix}scm-${value}-input`}
         />
-      </div>
-    ))}
-  </>
+      ))}
+    </div>
+  </fieldset>
 );
 
 export default ScmToolRadioGroup;
