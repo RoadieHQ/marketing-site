@@ -1,50 +1,5 @@
 import React from 'react'
-import SitewideHeader from 'components/tailwind/SitewideHeader';
 import { Button, Lead, Headline, DotPattern } from 'components/tailwind';
-
-const Main = () => {
-  return (
-    <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
-      <div className="text-center">
-
-        <Headline>
-          <span className="block xl:inline">Backstage for</span>{' '}
-          <span className="block text-indigo-600 xl:inline">scale-ups</span>
-        </Headline>
-
-        <div className="mt-3 max-w-md mx-auto md:mt-5 md:max-w-3xl">
-          <Lead>
-            Roadie&apos;s SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features.
-          </Lead>
-        </div>
-
-        <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-          <div>
-            <Button
-              link={true}
-              to="/tailwind/free-trial/"
-              color="primary"
-              text="Try it free"
-              size="large"
-              fullWidth={true}
-            />
-          </div>
-
-          <div className="mt-3 sm:mt-0 sm:ml-3">
-            <Button
-              link={true}
-              to="/tailwind/request-demo/"
-              color="secondary"
-              text="Request a demo"
-              size="large"
-              fullWidth={true}
-            />
-          </div>
-        </div>
-      </div>
-    </main>
-  );
-};
 
 const SimpleCentered = () => {
   return (
@@ -67,9 +22,46 @@ const SimpleCentered = () => {
         </div>
       </div>
 
-      <div className="relative pt-6 pb-16 sm:pb-24">
-        <SitewideHeader />
-        <Main />
+      <div className="relative pb-16 sm:pb-24">
+        <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+          <div className="text-center">
+
+            <Headline>
+              <span className="block xl:inline">Backstage for</span>{' '}
+              <span className="block text-indigo-600 xl:inline">scale-ups</span>
+            </Headline>
+
+            <div className="mt-3 max-w-md mx-auto md:mt-5 md:max-w-3xl">
+              <Lead>
+                Roadie&apos;s SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features.
+              </Lead>
+            </div>
+
+            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+              <div>
+                <Button
+                  link={true}
+                  to="/tailwind/free-trial/"
+                  color="primary"
+                  text="Try it free"
+                  size="large"
+                  fullWidth={true}
+                />
+              </div>
+
+              <div className="mt-3 sm:mt-0 sm:ml-3">
+                <Button
+                  link={true}
+                  to="/tailwind/request-demo/"
+                  color="secondary"
+                  text="Request a demo"
+                  size="large"
+                  fullWidth={true}
+                />
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   )

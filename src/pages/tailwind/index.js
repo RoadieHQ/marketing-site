@@ -1,12 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO } from 'components';
+import {
+  SEO,
+  TailwindHeadContent,
+  SitewideFooter,
+  SitewideHeader,
+} from 'components/tailwind';
 import SimpleCentered from 'components/tailwind/hero/SimpleCentered';
 import AlternativeSideBySide from 'components/tailwind/features/AlternativeSideBySide';
 import SplitGridOnRight from 'components/tailwind/logo-clouds/SplitGridOnRight';
 import FooterCTA from 'components/tailwind/home/FooterCTA';
-import TailwindHeadContent from 'components/tailwind/HeadContent';
-import SitewideFooter from 'components/tailwind/SitewideFooter';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
 const LEAD = `
@@ -22,6 +25,7 @@ const Home = ({ data,}) => {
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
       <TailwindHeadContent />
 
+      <SitewideHeader />
       <SimpleCentered />
       <AlternativeSideBySide />
       <SplitGridOnRight />
