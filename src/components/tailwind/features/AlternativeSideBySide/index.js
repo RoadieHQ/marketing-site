@@ -6,7 +6,7 @@ import {
   MailIcon,
   ScaleIcon,
 } from '@heroicons/react/outline'
-import { Lead, InterstitialTitle, DotPatternSvg } from 'components/tailwind';
+import { Lead, InterstitialTitle, DotPattern } from 'components/tailwind';
 
 import dragDropIllustration from '../../../../../content/assets/home/drag-drop-illustration.svg';
 import securityMaintenanceIllustration from '../../../../../content/assets/home/security-maintenance-illustration.svg';
@@ -67,7 +67,7 @@ const AlternativeSideBySide = () => {
   return (
     <div className="py-16 bg-gray-50 overflow-hidden lg:py-24">
       <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-        <DotPatternSvg
+        <DotPattern
           width={404}
           height={784}
           className="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
@@ -103,7 +103,7 @@ const AlternativeSideBySide = () => {
           </div>
 
           <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-            <DotPatternSvg
+            <DotPattern
               className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
               width={784}
               height={404}
@@ -114,7 +114,7 @@ const AlternativeSideBySide = () => {
           </div>
         </div>
 
-        <DotPatternSvg
+        <DotPattern
           className="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
           width={404}
           height={784}
@@ -141,7 +141,7 @@ const AlternativeSideBySide = () => {
             </div>
 
             <div className="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
-              <DotPatternSvg
+              <DotPattern
                 className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
                 width={784}
                 height={404}
