@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.1.0",
-    "@algolia/autocomplete-theme-classic": "^1.1.0",
+    "@algolia/autocomplete-theme-classic": "^1.4.0",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
     "@material-ui/core": "^4.11.3",
