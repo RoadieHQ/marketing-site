@@ -6,7 +6,7 @@ import {
   SitewideFooter,
   SitewideHeader,
 } from 'components/tailwind';
-import SimpleCentered from 'components/tailwind/hero/SimpleCentered';
+import Hero from 'components/tailwind/landing/Hero';
 import AlternativeSideBySide from 'components/tailwind/features/AlternativeSideBySide';
 import SplitGridOnRight from 'components/tailwind/logo-clouds/SplitGridOnRight';
 import FooterCTA from 'components/tailwind/home/FooterCTA';
@@ -26,7 +26,7 @@ const Home = ({ data,}) => {
       <TailwindHeadContent />
 
       <SitewideHeader />
-      <SimpleCentered />
+      <Hero />
       <AlternativeSideBySide />
       <SplitGridOnRight />
       <FooterCTA />

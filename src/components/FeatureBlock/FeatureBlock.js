@@ -73,7 +73,7 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const FeatureBlock = ({ imgSrc, imgAlt, children }) => {
+const FeatureBlock = ({ illustration, children }) => {
   const classes = useStyles();
   return (
     <TwoColumnLayout
@@ -83,7 +83,9 @@ const FeatureBlock = ({ imgSrc, imgAlt, children }) => {
         rightCol: classes.imgCol,
       }}
       rightContent={
-        <img src={imgSrc} alt={imgAlt} className={classes.img} />
+        <div className={classes.img}>
+          {illustration}
+        </div>
       }
       leftContent={children}
     />

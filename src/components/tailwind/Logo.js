@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'components';
 
-export const LogoImg = ({ color = 'indigo-600', ...rest }) => (
-  <img
-    src={`https://tailwindui.com/img/logos/workflow-mark-${color}.svg`}
-    alt="Workflow"
-    {...rest}
-  />
+import RoadieHand from '../../../content/assets/logos/roadie/hand.inline.svg';
+
+export const LogoImg = (props) => (
+  <RoadieHand {...props} />
 );
 
 const Logo = ({ color = 'indigo-600' }) => (

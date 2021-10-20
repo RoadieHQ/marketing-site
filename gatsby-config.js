@@ -104,10 +104,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+
     {
       resolve: 'gatsby-plugin-jss',
       options: { theme },
     },
+
     {
       resolve: 'gatsby-plugin-module-resolver',
       options: {
@@ -117,12 +119,23 @@ module.exports = {
         },
       },
     },
+
     {
       resolve: 'gatsby-plugin-advanced-sitemap',
       options: {
         exclude: [/\/?tailwind\/?.+/],
       },
     },
+
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg/
+        }
+      }
+    },
+
     `gatsby-plugin-force-trailing-slashes`,
     'gatsby-plugin-twitter',
     'gatsby-plugin-netlify',
