@@ -1,49 +1,5 @@
 import React from 'react';
-import {
-  AnnotationIcon,
-  GlobeAltIcon,
-  LightningBoltIcon,
-  MailIcon,
-  ScaleIcon,
-} from '@heroicons/react/outline'
 import { Lead, InterstitialTitle, DotPattern } from 'components/tailwind';
-
-import DragDropIllustration from '../../../../../content/assets/home/drag-drop-illustration.inline.svg';
-import SecurityMaintenanceIllustration from '../../../../../content/assets/home/security-maintenance-illustration.inline.svg';
-
-const easeOfUseFeatures = [{
-  id: 1,
-  name: 'All major plugin formats supported',
-  description:
-    `Roadie's drag and drop setup supports cards, tabs, sidebar links and full page plugins.`,
-  icon: GlobeAltIcon,
-}, {
-  id: 2,
-  name: 'Bring your own plugins',
-  description:
-    'Building your own internal plugins? Just publish them to our repository and they appear in your Backstage experience like magic.',
-  icon: ScaleIcon,
-}, {
-  id: 3,
-  name: 'Admins only',
-  description:
-    `Plugins would move around too frequently if everyone could edit them. We've built roles into Backstage so admins can lead the setup process.`,
-  icon: LightningBoltIcon,
-}];
-
-const maintenanceFeatures = [{
-  id: 1,
-  name: 'Automated upgrades',
-  description:
-    `Open-source community power means that Backstage moves quickly. It's easy to fall behind if you don't put the work in.`,
-  icon: AnnotationIcon,
-}, {
-  id: 2,
-  name: 'Security patches delivered',
-  description:
-    `We regularly patch vulnerabilities in the open-source code, ensuring you're using a hardened version of Backstage.`,
-  icon: MailIcon,
-}];
 
 const FeatureBulletPoint = ({ item }) => (
   <div className="relative">
@@ -138,7 +94,7 @@ const FeatureBlockImageRight = ({
   </div>
 );
 
-const AlternativeSideBySide = () => (
+const AlternatingDoubleFeatureBlock = ({ content }) => (
   <div className="py-16 bg-gray-50 overflow-hidden lg:py-24">
     <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
       <DotPattern
@@ -149,18 +105,18 @@ const AlternativeSideBySide = () => (
       />
 
       <div className="relative text-center">
-        <InterstitialTitle text="Backstage with benefits..." size="large" />
+        <InterstitialTitle text={content.title} size="large" />
         <Lead>
-          We&apos;re building on top of Backstage to make it painless to use and maintenance free.
+          {content.description}
         </Lead>
       </div>
 
       <div className="relative mt-12 sm:mt-16 lg:mt-24">
         <FeatureBlockImageRight
-          title="Quick and easy setup"
-          description="Customize Backstage to suit your needs using our drag-and-drop composer. If your company uses Pagerduty instead of Opsgenie, simply remove one plugin and replace it with the other. It takes seconds and changes roll out instantly for everyone."
-          bullets={easeOfUseFeatures}
-          illustration={<DragDropIllustration />}
+          title={content.features[0].title}
+          description={content.features[0].description}
+          bullets={content.features[0].bullets}
+          illustration={content.features[0].illustration}
         />
       </div>
 
@@ -174,14 +130,14 @@ const AlternativeSideBySide = () => (
 
       <div className="relative mt-12 sm:mt-16 lg:mt-24">
         <FeatureBlockImageLeft
-          title="Maintenance free"
-          description="Roadie handles upgrades and security so you can stay focussed on the work your team does best."
-          bullets={maintenanceFeatures}
-          illustration={<SecurityMaintenanceIllustration />}
+          title={content.features[1].title}
+          description={content.features[1].description}
+          bullets={content.features[1].bullets}
+          illustration={content.features[1].illustration}
         />
       </div>
     </div>
   </div>
 );
 
-export default AlternativeSideBySide;
+export default AlternatingDoubleFeatureBlock;
