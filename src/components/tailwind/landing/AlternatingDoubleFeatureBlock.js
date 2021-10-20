@@ -1,5 +1,6 @@
 import React from 'react';
 import { Lead, InterstitialTitle, DotPattern } from 'components/tailwind';
+import classnames from 'classnames';
 
 const FeatureBulletPoint = ({ item }) => (
   <div className="relative">
@@ -27,48 +28,15 @@ const FeatureHeader = ({ title, description }) => (
   </>
 );
 
-const FeatureBlockImageLeft = ({
+const FeatureBlockImage = ({
   title,
   description,
   bullets,
   illustration,
+  illustrationSide = 'right',
 }) => (
-  <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
-    <div className="lg:col-start-2">
-      <FeatureHeader
-        title={title}
-        description={description}
-      />
-
-      <dl className="mt-10 space-y-10">
-        {bullets.map((item) => (
-          <FeatureBulletPoint item={item} key={item.id} />
-        ))}
-      </dl>
-    </div>
-
-    <div className="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
-      <DotPattern
-        className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
-        width={784}
-        height={404}
-        aria-hidden="true"
-        id="e80155a9-dfde-425a-b5ea-1f6fadd20131"
-      />
-
-      {illustration}
-    </div>
-  </div>
-);
-
-const FeatureBlockImageRight = ({
-  title,
-  description,
-  bullets,
-  illustration,
-}) => (
-  <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-    <div className="relative">
+  <div className={classnames('lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center', { 'lg:grid-flow-row-dense': illustrationSide === 'left' })}>
+    <div className={classnames({ 'lg:col-start-2': illustrationSide === 'left', 'relative': illustrationSide === 'right' })}>
       <FeatureHeader
         title={title}
         description={description}
@@ -79,15 +47,21 @@ const FeatureBlockImageRight = ({
       </dl>
     </div>
 
-    <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+    <div
+      className={
+        classnames('mt-10 -mx-4 relative lg:mt-0', { 'lg:col-start-1': illustrationSide === 'left' })
+      }
+      aria-hidden={illustrationSide === 'right'}
+    >
       <DotPattern
         className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
         width={784}
         height={404}
+        aria-hidden={illustrationSide === 'left'}
         id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
       />
 
-      <div className="float-right">
+      <div className={classnames({ 'float-right': illustrationSide === 'right' })}>
         {illustration}
       </div>
     </div>
@@ -112,7 +86,8 @@ const AlternatingDoubleFeatureBlock = ({ content }) => (
       </div>
 
       <div className="relative mt-12 sm:mt-16 lg:mt-24">
-        <FeatureBlockImageRight
+        <FeatureBlockImage
+          illustrationSide="right"
           title={content.features[0].title}
           description={content.features[0].description}
           bullets={content.features[0].bullets}
@@ -129,7 +104,8 @@ const AlternatingDoubleFeatureBlock = ({ content }) => (
       />
 
       <div className="relative mt-12 sm:mt-16 lg:mt-24">
-        <FeatureBlockImageLeft
+        <FeatureBlockImage
+          illustrationSide="left"
           title={content.features[1].title}
           description={content.features[1].description}
           bullets={content.features[1].bullets}
