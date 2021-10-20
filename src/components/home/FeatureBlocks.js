@@ -3,12 +3,12 @@ import { ResponsiveSpacer, TextLink as Link, } from 'components';
 import { FeatureBlock } from 'components/FeatureBlock';
 import { FaHeadphones, FaVideo } from 'react-icons/fa';
 
-import customPluginsIllustration from '../../../content/assets/home/custom-plugin-illustration.svg';
-import dragDropIllustration from '../../../content/assets/home/drag-drop-illustration.svg';
-import securityMaintenanceIllustration from '../../../content/assets/home/security-maintenance-illustration.svg';
-import serviceCatalogIllustration from '../../../content/assets/home/service-catalog-illustration.svg';
-import productionConsistencyIllustration from '../../../content/assets/home/production-consistency-illustration.svg';
-import mikeExpediaGroupQuote from '../../../content/assets/home/mike-expedia-quote.svg';
+import CustomPluginsIllustration from '../../../content/assets/home/custom-plugin-illustration.inline.svg';
+import DragDropIllustration from '../../../content/assets/home/drag-drop-illustration.inline.svg';
+import SecurityMaintenanceIllustration from '../../../content/assets/home/security-maintenance-illustration.inline.svg';
+import ServiceCatalogIllustration from '../../../content/assets/home/service-catalog-illustration.inline.svg';
+import ProductionConsistencyIllustration from '../../../content/assets/home/production-consistency-illustration.inline.svg';
+import MikeExpediaGroupQuote from '../../../content/assets/home/mike-expedia-quote.inline.svg';
 
 const linkIconWrapperStyle = {
   marginLeft: '1rem',
@@ -17,7 +17,7 @@ const linkIconWrapperStyle = {
 
 export const quickEasySetup = (
   <ResponsiveSpacer>
-    <FeatureBlock imgSrc={dragDropIllustration}>
+    <FeatureBlock illustration={<DragDropIllustration />}>
       <div>
         <h2>Quick and easy setup</h2>
         <p>Customize Backstage using our drag-and-drop composer.</p>
@@ -45,7 +45,7 @@ export const quickEasySetup = (
 
 export const customPlugins = (
   <ResponsiveSpacer>
-    <FeatureBlock imgSrc={customPluginsIllustration}>
+    <FeatureBlock illustration={<CustomPluginsIllustration />}>
       <div>
         <h2>Bring your own plugins</h2>
         <p>Push bespoke plugins into the private plugin repository.</p>
@@ -58,7 +58,7 @@ export const customPlugins = (
 
 export const securityMaintenance = (
   <ResponsiveSpacer>
-    <FeatureBlock imgSrc={securityMaintenanceIllustration}>
+    <FeatureBlock illustration={<SecurityMaintenanceIllustration />}>
       <div>
         <h2>Get back to working better</h2>
         <p>Roadie handles upgrades and security so you can stay focussed on the work you do best.</p>
@@ -75,7 +75,7 @@ export const securityMaintenance = (
 
 export const builtOnBackstage = (
   <ResponsiveSpacer>
-    <FeatureBlock imgSrc={mikeExpediaGroupQuote}>
+    <FeatureBlock illustration={<MikeExpediaGroupQuote />}>
       <div>
         <h2>Built on Backstage</h2>
         <p>
@@ -95,7 +95,7 @@ export const builtOnBackstage = (
 
 export const discoverabilityAndOnboarding = (
   <ResponsiveSpacer>
-    <FeatureBlock imgSrc={serviceCatalogIllustration}>
+    <FeatureBlock illustration={<ServiceCatalogIllustration />}>
       <div>
         <h2>Cut onboarding time with discoverability</h2>
         <p>Backstage is a hub for everything developers need to do their work. Docs, runbooks, API specs and more. Everything new engineers need to get up to speed quickly.</p>
@@ -121,7 +121,7 @@ export const discoverabilityAndOnboarding = (
 
 export const productionConsistency = (
   <ResponsiveSpacer>
-    <FeatureBlock imgSrc={productionConsistencyIllustration}>
+    <FeatureBlock illustration={<ProductionConsistencyIllustration />}>
       <div>
         <h2>Improve production consistency</h2>
         <p>

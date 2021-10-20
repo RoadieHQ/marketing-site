@@ -8,8 +8,8 @@ import {
 } from '@heroicons/react/outline'
 import { Lead, InterstitialTitle, DotPattern } from 'components/tailwind';
 
-import dragDropIllustration from '../../../../../content/assets/home/drag-drop-illustration.svg';
-import securityMaintenanceIllustration from '../../../../../content/assets/home/security-maintenance-illustration.svg';
+import DragDropIllustration from '../../../../../content/assets/home/drag-drop-illustration.inline.svg';
+import SecurityMaintenanceIllustration from '../../../../../content/assets/home/security-maintenance-illustration.inline.svg';
 
 const easeOfUseFeatures = [{
   id: 1,
@@ -57,105 +57,131 @@ const FeatureBulletPoint = ({ item }) => (
   </div>
 );
 
-const FeatureIllustration = (props) => (
-  // alt-text should be passed in via props.
-  // eslint-disable-next-line jsx-a11y/alt-text
-  <img className="relative mx-auto" width={490} {...props} />
+const FeatureHeader = ({ title, description }) => (
+  <>
+    <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
+      {title}
+    </h3>
+
+    <div className="mt-3">
+      <Lead size="small">
+        {description}
+      </Lead>
+    </div>
+  </>
 );
 
-const AlternativeSideBySide = () => {
-  return (
-    <div className="py-16 bg-gray-50 overflow-hidden lg:py-24">
-      <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-        <DotPattern
-          width={404}
-          height={784}
-          className="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
-          id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
-        />
+const FeatureBlockImageLeft = ({
+  title,
+  description,
+  bullets,
+  illustration,
+}) => (
+  <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
+    <div className="lg:col-start-2">
+      <FeatureHeader
+        title={title}
+        description={description}
+      />
 
-        <div className="relative text-center">
-          <InterstitialTitle text="Backstage with benefits..." size="large" />
-          <Lead>
-            We&apos;re building on top of Backstage to make it painless to use and maintenance free.
-          </Lead>
-        </div>
+      <dl className="mt-10 space-y-10">
+        {bullets.map((item) => (
+          <FeatureBulletPoint item={item} key={item.id} />
+        ))}
+      </dl>
+    </div>
 
-        <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-          <div className="relative">
-            <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-              Quick and easy setup
-            </h3>
+    <div className="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
+      <DotPattern
+        className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
+        width={784}
+        height={404}
+        aria-hidden="true"
+        id="e80155a9-dfde-425a-b5ea-1f6fadd20131"
+      />
 
-            <div className="mt-3">
-              <Lead size="small">
-                Customize Backstage to suit your needs using our drag-and-drop composer. If your company uses Pagerduty
-                instead of Opsgenie, simply remove one plugin and replace it with the other. It takes seconds and
-                changes roll out instantly for everyone.
-              </Lead>
-            </div>
+      {illustration}
+    </div>
+  </div>
+);
 
-            <dl className="mt-10 space-y-10">
-              {easeOfUseFeatures.map((item) => (
-                <FeatureBulletPoint item={item} key={item.id} />
-              ))}
-            </dl>
-          </div>
+const FeatureBlockImageRight = ({
+  title,
+  description,
+  bullets,
+  illustration,
+}) => (
+  <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+    <div className="relative">
+      <FeatureHeader
+        title={title}
+        description={description}
+      />
 
-          <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-            <DotPattern
-              className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
-              width={784}
-              height={404}
-              id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
-            />
+      <dl className="mt-10 space-y-10">
+        {bullets.map((item) => (<FeatureBulletPoint item={item} key={item.id} />))}
+      </dl>
+    </div>
 
-            <FeatureIllustration src={dragDropIllustration} alt="" />
-          </div>
-        </div>
+    <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+      <DotPattern
+        className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
+        width={784}
+        height={404}
+        id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
+      />
 
-        <DotPattern
-          className="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
-          width={404}
-          height={784}
-          aria-hidden="true"
-          id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
-        />
-
-        <div className="relative mt-12 sm:mt-16 lg:mt-24">
-          <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="lg:col-start-2">
-              <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">Maintenance free</h3>
-
-              <div className="mt-3">
-                <Lead size="small">
-                  Roadie handles upgrades and security so you can stay focussed on the work your team does best.
-                </Lead>
-              </div>
-
-              <dl className="mt-10 space-y-10">
-                {maintenanceFeatures.map((item) => (
-                  <FeatureBulletPoint item={item} key={item.id} />
-                ))}
-              </dl>
-            </div>
-
-            <div className="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
-              <DotPattern
-                className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
-                width={784}
-                height={404}
-                aria-hidden="true"
-                id="e80155a9-dfde-425a-b5ea-1f6fadd20131"
-              />
-
-              <FeatureIllustration src={securityMaintenanceIllustration} alt="" />
-            </div>
-          </div>
-        </div>
+      <div className="float-right">
+        {illustration}
       </div>
     </div>
-  )
-};
+  </div>
+);
+
+const AlternativeSideBySide = () => (
+  <div className="py-16 bg-gray-50 overflow-hidden lg:py-24">
+    <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+      <DotPattern
+        width={404}
+        height={784}
+        className="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
+        id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
+      />
+
+      <div className="relative text-center">
+        <InterstitialTitle text="Backstage with benefits..." size="large" />
+        <Lead>
+          We&apos;re building on top of Backstage to make it painless to use and maintenance free.
+        </Lead>
+      </div>
+
+      <div className="relative mt-12 sm:mt-16 lg:mt-24">
+        <FeatureBlockImageRight
+          title="Quick and easy setup"
+          description="Customize Backstage to suit your needs using our drag-and-drop composer. If your company uses Pagerduty instead of Opsgenie, simply remove one plugin and replace it with the other. It takes seconds and changes roll out instantly for everyone."
+          bullets={easeOfUseFeatures}
+          illustration={<DragDropIllustration />}
+        />
+      </div>
+
+      <DotPattern
+        className="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
+        width={404}
+        height={784}
+        aria-hidden="true"
+        id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
+      />
+
+      <div className="relative mt-12 sm:mt-16 lg:mt-24">
+        <FeatureBlockImageLeft
+          title="Maintenance free"
+          description="Roadie handles upgrades and security so you can stay focussed on the work your team does best."
+          bullets={maintenanceFeatures}
+          illustration={<SecurityMaintenanceIllustration />}
+        />
+      </div>
+    </div>
+  </div>
+);
 
 export default AlternativeSideBySide;
