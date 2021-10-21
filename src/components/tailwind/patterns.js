@@ -25,6 +25,32 @@ export const DotPattern = ({ width, height, className, id, ...rest }) => (
   </svg>
 );
 
+export const GrayBackgroundDotsPattern = ({ width, height, className, id, ...rest }) => (
+  <svg
+    className={className}
+    width={width}
+    height={height}
+    fill="none"
+    viewBox={`0 0 ${width} ${height}`}
+    {...rest}
+  >
+    <defs>
+      <pattern
+        id={id}
+        x={118}
+        y={0}
+        width={20}
+        height={20}
+        patternUnits="userSpaceOnUse"
+      >
+        <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+      </pattern>
+    </defs>
+    <rect y={72} width={width} height={width} className="text-gray-50" fill="currentColor" />
+    <rect x={118} width={404} height={height} fill={`url(#${id})`} />
+  </svg>
+);
+
 export const SplitDiagonalPattern = () => (
   <svg
     className="absolute inset-0 w-full h-full"

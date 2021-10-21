@@ -20,6 +20,7 @@ export {
   SplitDiagonalPattern,
   HighSideAnglePattern,
   LowSideAnglePattern,
+  GrayBackgroundDotsPattern,
 } from './patterns';
 export { default as ContentHeader } from './ContentHeader';
 export { default as SitewideFooter } from './SitewideFooter';

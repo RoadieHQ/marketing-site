@@ -10,11 +10,11 @@ import {
   NewspaperIcon,
   BriefcaseIcon,
 } from '@heroicons/react/outline'
+import { LogoVector } from 'components/tailwind/Logo';
 
 import CloseMenuButton from './CloseMenuButton';
 import MobileFreeTrialButton from './MobileFreeTrialButton';
 import MobileDropdownNavItem from './MobileDropdownNavItem';
-import { LogoImg } from '../Logo';
 
 const subItems = [{
   name: 'Product',
@@ -66,7 +66,7 @@ const DrawerMenu = () => (
 
           <div className="flex items-center justify-between">
             <div>
-              <LogoImg className="h-8 w-auto" />
+              <LogoVector />
             </div>
 
             <div className="-mr-2">
