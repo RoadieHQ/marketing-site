@@ -29,8 +29,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: sample-service-1
-  description: |
-    A service for testing Backstage functionality. Configured for
+  description: A service for testing Backstage functionality. Configured for
     GitHub Actions.
   annotations:
     github.com/project-slug: roadiehq/sample-service
