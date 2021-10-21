@@ -15,7 +15,7 @@ import {
 } from '@heroicons/react/outline'
 import Hero from 'components/tailwind/landing/Hero';
 import AlternatingFeatureBlock from 'components/tailwind/landing/AlternatingFeatureBlock';
-import SplitGridOnRight from 'components/tailwind/logo-clouds/SplitGridOnRight';
+import SplitGridLogoCloud from 'components/tailwind/landing/SplitGridLogoCloud';
 import FooterCTA from 'components/tailwind/landing/FooterCTA';
 
 import DragDropIllustration from '../../../content/assets/home/drag-drop-illustration.inline.svg';
@@ -24,6 +24,12 @@ import ServiceCatalogIllustration from '../../../content/assets/home/service-cat
 import ProductionConsistencyIllustration from '../../../content/assets/home/production-consistency-illustration.inline.svg';
 import MikeExpediaGroupQuote from '../../../content/assets/home/mike-expedia-quote.inline.svg';
 
+import GitHubLogo from '../../../content/assets/logos/github/logos/modified/github.inline.svg';
+import KubernetesLogo from '../../../content/assets/logos/kubernetes/kubernetes.inline.svg';
+import CircleCiLogo from '../../../content/assets/logos/circle-ci/circleci.inline.svg';
+import PagerDutyLogo from '../../../content/assets/logos/pagerduty/pagerduty.inline.svg';
+import ArgoLogo from '../../../content/assets/logos/argo-cd/argo.inline.svg';
+import JiraSoftwareLogo from '../../../content/assets/logos/jira/jira.inline.svg';
 
 const SEO_TITLE = 'SaaS Backstage hosting';
 const LEAD = `
@@ -143,26 +149,58 @@ const SOLUTIONS = {
   }],
 };
 
+const PLUGINS_SUPPORTED = {
+  title: 'Pre-loaded with all your favorite plugins',
+  subTitle: 'Open-source plugins are supported by default. Don&apos;t see something you need? Just let us know. Push your own custom plugins if you need something special.',
+  primaryCallToAction: {
+    text: 'Try it free',
+    to: '/tailwind/free-trial/',
+  },
 
-const Home = ({ data,}) => {
-  const siteTitle = data.site.siteMetadata.title;
+  secondaryCallToAction: {
+    text: 'Request a demo',
+    to: '/tailwind/request-demo/',
+  },
 
-  return (
-    <>
-      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
-      <TailwindHeadContent />
-
-      <SitewideHeader />
-      <Hero />
-      <AlternatingFeatureBlock content={PRODUCT} />
-      <SplitGridOnRight />
-      <AlternatingFeatureBlock content={SOLUTIONS} />
-
-      <FooterCTA />
-      <SitewideFooter />
-    </>
-  );
+  logos: [{
+    src: <GitHubLogo />,
+  }, {
+    src: <KubernetesLogo />,
+  }, {
+    src: <PagerDutyLogo />
+  }, {
+    src: <CircleCiLogo />,
+  }, {
+    src: <ArgoLogo />,
+  }, {
+    src: <JiraSoftwareLogo />,
+  }],
 };
+
+
+const Home = ({
+  data: {
+    site: {
+      siteMetadata: {
+        title: siteTitle,
+      },
+    },
+  },
+}) => (
+  <>
+    <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
+    <TailwindHeadContent />
+
+    <SitewideHeader />
+    <Hero />
+    <AlternatingFeatureBlock content={PRODUCT} />
+    <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
+    <AlternatingFeatureBlock content={SOLUTIONS} />
+
+    <FooterCTA />
+    <SitewideFooter />
+  </>
+);
 
 export default Home;
 
