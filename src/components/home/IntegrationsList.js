@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 import kubernetes from '../../../content/assets/logos/kubernetes/logo-kubernetes.png';
 import jenkins from '../../../content/assets/logos/jenkins/logo-jenkins.png';
-import github from '../../../content/assets/logos/github/PNG/GitHub-Mark-120px-plus2.png';
+import github from '../../../content/assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus2.png';
 import circleci from '../../../content/assets/logos/circle-ci/circle-ci-logo-only-black.png';
 import jira from '../../../content/assets/logos/jira/jira_logo.png';
 import sentry from '../../../content/assets/logos/sentry/sentry-glyph-dark.png';
