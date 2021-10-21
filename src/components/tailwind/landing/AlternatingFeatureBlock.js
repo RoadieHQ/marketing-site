@@ -28,7 +28,7 @@ const FeatureHeader = ({ title, description }) => (
   </>
 );
 
-const FeatureBlockImage = ({
+const FeatureBlock = ({
   title,
   description,
   bullets,
@@ -61,16 +61,16 @@ const FeatureBlockImage = ({
         id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
       />
 
-      <div className={classnames({ 'float-right': illustrationSide === 'right' })}>
+      <div className={classnames('flex align-center justify-center')}>
         {illustration}
       </div>
     </div>
   </div>
 );
 
-const AlternatingDoubleFeatureBlock = ({ content }) => (
+const AlternatingFeatureBlock = ({ content }) => (
   <div className="py-16 bg-gray-50 overflow-hidden lg:py-24">
-    <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+    <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-6xl">
       <DotPattern
         width={404}
         height={784}
@@ -86,34 +86,41 @@ const AlternatingDoubleFeatureBlock = ({ content }) => (
       </div>
 
       <div className="relative mt-12 sm:mt-16 lg:mt-24">
-        <FeatureBlockImage
-          illustrationSide="right"
-          title={content.features[0].title}
-          description={content.features[0].description}
-          bullets={content.features[0].bullets}
-          illustration={content.features[0].illustration}
-        />
+        <FeatureBlock illustrationSide="right" {...content.features[0]} />
       </div>
 
-      <DotPattern
-        className="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
-        width={404}
-        height={784}
-        aria-hidden="true"
-        id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
-      />
+      {content.features[1] && (
+        <>
+          <DotPattern
+            className="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
+            width={404}
+            height={784}
+            aria-hidden="true"
+            id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
+          />
 
-      <div className="relative mt-12 sm:mt-16 lg:mt-24">
-        <FeatureBlockImage
-          illustrationSide="left"
-          title={content.features[1].title}
-          description={content.features[1].description}
-          bullets={content.features[1].bullets}
-          illustration={content.features[1].illustration}
-        />
-      </div>
+          <div className="relative mt-12 sm:mt-16 lg:mt-24">
+            <FeatureBlock illustrationSide="left" {...content.features[1]} />
+          </div>
+        </>
+      )}
+
+      {content.features[2] && (
+        <>
+          <DotPattern
+            width={404}
+            height={784}
+            className="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
+            id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
+          />
+
+          <div className="relative mt-12 sm:mt-16 lg:mt-24">
+            <FeatureBlock illustrationSide="right" {...content.features[2]} />
+          </div>
+        </>
+      )}
     </div>
   </div>
 );
 
-export default AlternatingDoubleFeatureBlock;
+export default AlternatingFeatureBlock;
