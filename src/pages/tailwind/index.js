@@ -13,7 +13,8 @@ import {
   MailIcon,
   ScaleIcon,
 } from '@heroicons/react/outline'
-import Hero from 'components/tailwind/landing/Hero';
+// import Hero from 'components/tailwind/landing/Hero';
+import { VideoHero } from 'components/tailwind/landing/VideoHero';
 import AlternatingFeatureBlock from 'components/tailwind/landing/AlternatingFeatureBlock';
 import SplitGridLogoCloud from 'components/tailwind/landing/SplitGridLogoCloud';
 import FooterCTA from 'components/tailwind/landing/FooterCTA';
@@ -38,6 +39,7 @@ you always have access to the latest Backstage features.
 `;
 
 const PRODUCT = {
+  htmlId: 'product',
   title: 'Backstage with benefits...',
   description: 'We&apos;re building on top of Backstage to make it painless to use and maintenance free.',
   features: [{
@@ -85,6 +87,7 @@ const PRODUCT = {
 };
 
 const SOLUTIONS = {
+  htmlId: 'solutions',
   title: 'Turn tribal knowledge into shared context',
   description: 'Take docs, architecture diagrams and runbooks out of impenetrable content management solutions and embed them in your engineering workflow',
   features: [{
@@ -192,7 +195,7 @@ const Home = ({
     <TailwindHeadContent />
 
     <SitewideHeader />
-    <Hero />
+    <VideoHero />
     <AlternatingFeatureBlock content={PRODUCT} />
     <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
     <AlternatingFeatureBlock content={SOLUTIONS} />

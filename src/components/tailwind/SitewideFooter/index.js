@@ -1,7 +1,8 @@
 import React from 'react';
-import { LogoImg } from '../Logo';
 import { Link } from 'components';
+
 import BackstageLogo from './BackstageLogo';
+import { LogoVector } from 'components/tailwind/Logo';
 
 const TwitterIcon = (props) => (
   <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -82,10 +83,11 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
       <div className={`max-w-${maxWidth} mx-auto py-12 px-2 sm:px-6 lg:py-16 lg:px-8`}>
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <LogoImg className="h-10" color="gray-300" />
+            {/* This color is text-gray-500 */}
+            <LogoVector fill="rgb(107, 144, 128)" />
 
             <p className="text-gray-500 text-base">
-              Backstage for growing engineering teams.
+              SaaS Backstage for scale-ups.
             </p>
 
             <div className="flex space-x-6">
