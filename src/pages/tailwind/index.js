@@ -14,11 +14,10 @@ import {
   ScaleIcon,
 } from '@heroicons/react/outline'
 import Hero from 'components/tailwind/landing/Hero';
-import AlternatingDoubleFeatureBlock from 'components/tailwind/landing/AlternatingDoubleFeatureBlock';
+import AlternatingFeatureBlock from 'components/tailwind/landing/AlternatingFeatureBlock';
 import SplitGridOnRight from 'components/tailwind/logo-clouds/SplitGridOnRight';
 import FooterCTA from 'components/tailwind/landing/FooterCTA';
 
-import CustomPluginsIllustration from '../../../content/assets/home/custom-plugin-illustration.inline.svg';
 import DragDropIllustration from '../../../content/assets/home/drag-drop-illustration.inline.svg';
 import SecurityMaintenanceIllustration from '../../../content/assets/home/security-maintenance-illustration.inline.svg';
 import ServiceCatalogIllustration from '../../../content/assets/home/service-catalog-illustration.inline.svg';
@@ -155,9 +154,9 @@ const Home = ({ data,}) => {
 
       <SitewideHeader />
       <Hero />
-      <AlternatingDoubleFeatureBlock content={PRODUCT} />
+      <AlternatingFeatureBlock content={PRODUCT} />
       <SplitGridOnRight />
-      <AlternatingDoubleFeatureBlock content={SOLUTIONS} />
+      <AlternatingFeatureBlock content={SOLUTIONS} />
 
       <FooterCTA />
       <SitewideFooter />
