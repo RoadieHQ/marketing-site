@@ -6,7 +6,7 @@ lead: |
 attribution:
   text: Roadie
   href: https://github.com/RoadieHQ/roadie-backstage-plugins
-  tags: ['frontend']
+tags: ['frontend', 'backend']
 
 seo:
   title: 'Backstage Prometheus Plugin | Roadie'

@@ -5,7 +5,7 @@ lead: 'View FOSSA license findings inside Backstage.'
 attribution:
   text: 'SDA SE'
   href: https://sda.se/
-  tags: ['frontend']
+tags: ['frontend']
 
 seo:
   title: 'Backstage FOSSA Plugin | Roadie'

@@ -5,7 +5,7 @@ lead: 'See Buildkite Builds in Backstage'
 attribution:
   text: Roadie
   href: https://roadie.io
-  tags: ['frontend']
+tags: ['frontend']
 
 seo:
   # Don't forget to end with "| Roadie"

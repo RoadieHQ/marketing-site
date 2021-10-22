@@ -97,6 +97,7 @@ export const pageQuery = graphql`
 
           frontmatter {
             humanName
+            tags
 
             logoImage {
               childImageSharp {
@@ -107,7 +108,6 @@ export const pageQuery = graphql`
             attribution {
               text
               href
-              tags
             }
           }
         }

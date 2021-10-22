@@ -5,7 +5,7 @@ lead: 'See GitHub Insights for your components in Backstage'
 attribution:
   text: Roadie
   href: https://roadie.io
-  tags: ['frontend']
+tags: ['frontend']
 
 seo:
   title: 'Backstage GitHub Insights Plugin | Roadie'

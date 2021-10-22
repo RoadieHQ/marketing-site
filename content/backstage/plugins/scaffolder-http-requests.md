@@ -6,7 +6,7 @@ lead: 'Create HTTP requests with the scaffolder'
 attribution:
   text: Roadie
   href: https://github.com/RoadieHQ/roadie-backstage-plugins
-  tags: ['scaffolder']
+tags: ['scaffolder']
 
 seo:
   # Don't forget to end with "| Roadie"
@@ -20,7 +20,9 @@ logoImage: '../../assets/logos/scaffolder-http/http.png'
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
-    code: yarn add @roadiehq/scaffolder-backend-module-http-request
+    code: |
+      cd packages/backend
+      yarn add @roadiehq/scaffolder-backend-module-http-request
   - intro: 'Add http request actions to your scaffolder backend'
     language: typescript
     code: | 

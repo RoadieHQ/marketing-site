@@ -6,7 +6,7 @@ lead: |
 attribution:
   text: Roadie
   href: https://Roadie.io
-  tags: ['frontend']
+tags: ['frontend']
 
 seo:
   title: 'Backstage Datadog Plugin | Roadie'

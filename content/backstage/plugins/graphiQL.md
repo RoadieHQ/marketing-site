@@ -5,7 +5,7 @@ lead: 'Integrates GraphiQL as a tool to browse GraphQL API endpoints inside Back
 attribution:
   text: Spotify
   href: https://spotify.com
-  tags: ['frontend']
+tags: ['frontend']
 
 seo:
   title: 'Backstage GraphiQL Plugin | Roadie'

@@ -5,7 +5,7 @@ lead: 'Create, list and manage your Google Cloud Projects.'
 attribution:
   text: trivago
   href: https://www.trivago.com
-  tags: ['frontend']
+tags: ['frontend']
 
 seo:
   title: 'Backstage Google Cloud Platform Projects Plugin | Roadie'

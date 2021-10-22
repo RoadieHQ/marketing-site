@@ -5,7 +5,7 @@ lead: 'Build, test, and deploy on Google serverless CI/CD platform.'
 attribution:
   text: Trivago
   href: https://www.trivago.com
-  tags: ['frontend']
+tags: ['frontend']
 
 seo:
   title: 'Backstage Google Cloud Build Plugin | Roadie'

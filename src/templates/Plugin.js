@@ -147,10 +147,11 @@ export const pageQuery = graphql`
         lead
         heading
 
+        tags
+
         attribution {
           href
           text
-          tags
         }
 
         logoImage {

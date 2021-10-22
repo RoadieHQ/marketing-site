@@ -6,7 +6,7 @@ lead: |
 attribution:
   text: '@Spotify'
   href: https://github.com/spotify
-  tags: ['frontend']
+tags: ['frontend']
 
 seo:
   title: 'Backstage Git Release Manager Plugin | Roadie'
