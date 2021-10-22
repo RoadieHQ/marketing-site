@@ -94,12 +94,14 @@ To add a page click the "Add Page" icon.
 
 Then select the component in the autocomplete and adjust the title and path as necessary and click "Add".
 
+NB: When choosing a name please make sure it starts with something unique. There is currently a 
+[bug in opensource backstage](https://github.com/backstage/backstage/issues/7741) which means that if you create a new 
+page that shares the same initial name as an existing one (i.e. `Api` and `Api Visualiser`), you will not be able to 
+select the new page.
+
 ![Add page screen](./add-page.png)
 
 Finally, don't forget to save your changes.
 
 ![Save sidebar](./save-sidebar.png)
 
-NB: There is currently a [bug in opensource backstage](https://github.com/backstage/backstage/issues/7741) which means 
-that if you create a new component that shares the same initial path as an existing one (i.e. `api` and 
-`api-visualiser`), you will not be able to select the new tab. 
