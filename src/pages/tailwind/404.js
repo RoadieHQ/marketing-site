@@ -2,7 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { ChevronRightIcon } from '@heroicons/react/solid';
-import { SEO, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components/tailwind';
+import {
+  SEO,
+  SitewideHeader,
+  SitewideFooter,
+  TailwindHeadContent,
+  TextLink as Link,
+} from 'components/tailwind';
 import {
   CodeIcon,
   BookOpenIcon,
@@ -78,10 +84,10 @@ export const NotFoundPage = ({ data }) => {
                     <div className="min-w-0 flex-1">
                       <h3 className="text-base font-medium text-gray-900">
                         <span className="rounded-sm focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                          <a href={link.to} className="focus:outline-none">
+                          <Link to={link.to} color="primary">
                             <span className="absolute inset-0" aria-hidden="true" />
                             {link.title}
-                          </a>
+                          </Link>
                         </span>
                       </h3>
                       <p className="text-base text-gray-500">{link.description}</p>
@@ -93,7 +99,10 @@ export const NotFoundPage = ({ data }) => {
                 ))}
               </ul>
               <div className="mt-8">
-                <a href="/" className="text-base font-medium text-indigo-600 hover:text-indigo-500">
+                <a
+                  href="/tailwind/"
+                  className="text-base font-medium text-indigo-600 hover:text-indigo-500"
+                >
                   Or go back home<span aria-hidden="true"> &rarr;</span>
                 </a>
               </div>
