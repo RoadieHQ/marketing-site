@@ -42,6 +42,11 @@ To add a tab click the plus icon at the end of the tab list.
 
 Then select the component to add via the autocomplete and give the tab a display name and click "Create".
 
+NB: When choosing a name please make sure it starts with something unique. (There is currently a
+[bug in opensource backstage](https://github.com/backstage/backstage/issues/7741) which means that if you create a new
+component that shares the same initial name as an existing one (i.e. `Api` and `Api Visualiser`), you will not be able 
+to select the new component.)
+
 ![Add tab dialog](./add-tab-screen.png)
 
 To rearrange or delete tabs select the "pencil" edit icon on the far right of the tab bar.
@@ -94,10 +99,10 @@ To add a page click the "Add Page" icon.
 
 Then select the component in the autocomplete and adjust the title and path as necessary and click "Add".
 
-NB: When choosing a name please make sure it starts with something unique. There is currently a 
+NB: When choosing a name please make sure it starts with something unique. (There is currently a 
 [bug in opensource backstage](https://github.com/backstage/backstage/issues/7741) which means that if you create a new 
 page that shares the same initial name as an existing one (i.e. `Api` and `Api Visualiser`), you will not be able to 
-select the new page.
+select the new page.)
 
 ![Add page screen](./add-page.png)
 
