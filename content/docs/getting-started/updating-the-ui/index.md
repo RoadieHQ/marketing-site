@@ -1,6 +1,6 @@
 ---
 title: Updating the Backstage UI
-lastUpdated: '2021-08-06T12:00:00.0Z'
+lastUpdated: '2021-10-22T12:00:00.0Z'
 description: How to configure the Backstage UI Layout
 ---
 
@@ -41,6 +41,11 @@ To add a tab click the plus icon at the end of the tab list.
 ![Add tab button](./add-tab-button.png)
 
 Then select the component to add via the autocomplete and give the tab a display name and click "Create".
+
+NB: When choosing a name please make sure it starts with something unique. (There is currently a
+[bug in opensource backstage](https://github.com/backstage/backstage/issues/7741) which means that if you create a new
+component that shares the same initial name as an existing one (i.e. `Api` and `Api Visualiser`), you will not be able 
+to select the new component.)
 
 ![Add tab dialog](./add-tab-screen.png)
 
@@ -99,3 +104,4 @@ Then select the component in the autocomplete and adjust the title and path as n
 Finally, don't forget to save your changes.
 
 ![Save sidebar](./save-sidebar.png)
+
