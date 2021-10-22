@@ -1,7 +1,6 @@
 ---
-title: Updating the Backstage UI
-lastUpdated: '2021-08-06T12:00:00.0Z'
-description: How to configure the Backstage UI Layout
+title: Updating the Backstage UI lastUpdated: '2021-08-06T12:00:00.0Z' description: How to configure the Backstage UI
+Layout
 ---
 
 ## Introduction
@@ -11,28 +10,33 @@ plugin components and the different places they can be integrated into the app.
 
 ## Prerequisites
 
-You must be an admin to edit the UI layout. Please complete [this guide](/docs/getting-started/getting-started-for-admins/) before moving on to this one.
+You must be an admin to edit the UI layout. Please
+complete [this guide](/docs/getting-started/getting-started-for-admins/) before moving on to this one.
 
 ## About Plugins
 
 Backstage is a plugin based application where each plugin provides a certain piece of functionality. A plugin may
 integrate with some external system such as GitHub to display information for a certain Entity e.g. Show pull request
-information for a particular service. 
+information for a particular service.
 
 You can read more about Backstage plugins [here](https://backstage.io/docs/plugins/).
 
-Backstage plugins can provide [three different types](https://backstage.io/docs/plugins/composability#naming-patterns) of UI elements:
+Backstage plugins can provide [three different types](https://backstage.io/docs/plugins/composability#naming-patterns)
+of UI elements:
+
 1. Card - These are tiles which can be arranged into dashboards in the software catalog. E.g. The About card.
 2. Content - These are tabs which can be integrated with the catalog. E.g. The TechDocs tab.
-3. Page - These are top-level pages in Backstage, outside of the catalog. Accessible via links in the sidebar. E.g. The catalog itself is a Page.
+3. Page - These are top-level pages in Backstage, outside of the catalog. Accessible via links in the sidebar. E.g. The
+   catalog itself is a Page.
 
 ## Updating the Catalog Layout
 
-Admin users can add components to catalog pages to configure what is displayed to users when they view an entity. Layouts are configured
-per entity **kind** except for Component entities which have layouts per **type**. For example, "User" and "Group" are each kinds
-of entity and so User entities have a different layout to Group entities. Similarly, Component entities have types such
-as "Service", "Library", "Website", etc and different types can have different layouts. However, a particular entity can't
-have its own layout; A particular Group or service can't have a unique layout. This is to encourage a consistent UX.
+Admin users can add components to catalog pages to configure what is displayed to users when they view an entity.
+Layouts are configured per entity **kind** except for Component entities which have layouts per **type**. For example, "
+User" and "Group" are each kinds of entity and so User entities have a different layout to Group entities. Similarly,
+Component entities have types such as "Service", "Library", "Website", etc and different types can have different
+layouts. However, a particular entity can't have its own layout; A particular Group or service can't have a unique
+layout. This is to encourage a consistent UX.
 
 ### Updating Tabs
 
@@ -58,7 +62,8 @@ To edit a dashboard click the cog icon on the top right of the dashboard below t
 
 ![Edit Dashboard Button](./edit-grid-button.png)
 
-This will switch the dashboard into an edit view. You can drag and drop to rearrange or click the dustbin icon to remove a card. 
+This will switch the dashboard into an edit view. You can drag and drop to rearrange or click the dustbin icon to remove
+a card.
 
 ![Edit dashboard view](./move-card.png)
 
@@ -74,7 +79,8 @@ You can adjust the position of the new card as above. When you're finished don't
 
 ![Save layout button](./save-layout-button.png)
 
-Entities will have one "Overview" dashboard by default but you can add others. Simply create a tab selecting "Dashboard" as the component to add. 
+Entities will have one "Overview" dashboard by default but you can add others. Simply create a tab selecting "Dashboard"
+as the component to add.
 
 ![Add a dashboard](./add-dashboard.png)
 
@@ -99,3 +105,8 @@ Then select the component in the autocomplete and adjust the title and path as n
 Finally, don't forget to save your changes.
 
 ![Save sidebar](./save-sidebar.png)
+
+
+_NB: There is currently a [bug in opensource backstage](https://github.com/backstage/backstage/issues/7741) which means
+that if you create a new component that shares the same initial path as an existing one (i.e. `api`
+and `api-visualiser`), you will not be able to select the new tab._ 
