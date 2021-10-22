@@ -107,6 +107,7 @@ export const pageQuery = graphql`
             attribution {
               text
               href
+              tags
             }
           }
         }

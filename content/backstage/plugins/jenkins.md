@@ -5,6 +5,7 @@ lead: 'Build, test, and deploy on Jenkins CI/CD platform.'
 attribution:
   text: '@timja'
   href: https://github.com/timja
+  tags: ['frontend']
 
 seo:
   title: 'Backstage Jenkins Plugin | Roadie'

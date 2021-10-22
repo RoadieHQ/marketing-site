@@ -5,6 +5,7 @@ lead: 'Monitor errors in Bugsnag for your service in Backstage'
 attribution:
   text: Roadie
   href: https://roadie.io
+  tags: ['frontend']
 
 seo:
   title: 'Backstage Bugsnag Plugin | Roadie'

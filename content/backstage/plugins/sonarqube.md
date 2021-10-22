@@ -5,6 +5,7 @@ lead: 'Components to display code quality metrics from SonarCloud and SonarQube.
 attribution:
   text: SDA-SE
   href: https://sda.se/
+  tags: ['frontend']
 
 seo:
   title: 'Backstage SonarQube and SonarCloud Plugin | Roadie'

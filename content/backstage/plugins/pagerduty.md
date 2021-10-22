@@ -6,6 +6,7 @@ lead: |
 attribution:
   text: '@samiramkr'
   href: https://github.com/samiramkr
+  tags: ['frontend']
 
 seo:
   title: 'Backstage PagerDuty Plugin | Roadie'

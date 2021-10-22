@@ -5,6 +5,7 @@ lead: 'See firebase functions status in Backstage'
 attribution:
   text: Roadie
   href: https://roadie.io
+  tags: ['frontend']
 
 seo:
   title: 'Backstage Firebase Functions Plugin | Roadie'

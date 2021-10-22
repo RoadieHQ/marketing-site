@@ -6,6 +6,7 @@ lead: "View information about your component's Docker images stored in a Harbor 
 attribution:
   text: '@BESTSELLER'
   href: https://github.com/BESTSELLER
+  tags: ['frontend']
 
 seo:
   title: 'Backstage Harbor Plugin | Roadie'

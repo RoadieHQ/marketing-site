@@ -5,6 +5,7 @@ lead: 'Correlate services with problems in production'
 attribution:
   text: Spotify
   href: https://spotify.com
+  tags: ['frontend']
 
 seo:
   title: 'Backstage Sentry Plugin | Roadie'
