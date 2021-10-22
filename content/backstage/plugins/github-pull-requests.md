@@ -12,7 +12,8 @@ seo:
     See GitHub Pull Requests in Backstage. Supports filtering, search and statistics
     on your pull requests.
 
-logoImage: '../../assets/logos/github/PNG/GitHub-Mark-120px-plus2.png'
+
+logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus2.png'
 coverImage: '../../assets/pull-requests-cover.png'
 coverImageAlt: |
   Pull requests for Backstage rendered inside a Backstage plugin.

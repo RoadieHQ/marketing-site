@@ -11,7 +11,7 @@ seo:
   description: |
     See Security Insights in Backstage.
 
-logoImage: '../../assets/logos/github/PNG/GitHub-Mark-120px-plus3.png'
+logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus3.png'
 
 coverImage: '../../assets/roadie-backstage-security-plugin.jpg'
 coverImageAlt: 'A screenshot of the Security Insights plugin. It is showing a security insights for a sample component.'
