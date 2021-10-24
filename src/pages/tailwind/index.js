@@ -47,22 +47,21 @@ you always have access to the latest Backstage features.
 const PRODUCT = {
   htmlId: 'product',
   title: 'Backstage with benefits...',
-  description: `We're building on top of Backstage to make it simple to set up and maintenance free.`,
+  description: `We're building on top of Backstage, making it simple to set up and maintenance free.`,
   features: [{
     title: 'Quick and easy setup',
-    description: 'Customize Backstage using our drag-and-drop composer. Using PagerDuty instead of Opsgenie? Simply remove one plugin and replace it with the other. It takes seconds and changes roll out instantly for everyone.',
+    description: 'Customize Backstage in a couple of clicks. Drag plugins to where you want them. Add new ones instantly.',
     illustration: <DragDropIllustration />,
     bullets: [{
       id: 1,
-      name: 'All major plugin formats supported',
+      name: 'All plugin formats supported',
       description:
         `Roadie's drag and drop setup supports cards, tabs, sidebar links and full page plugins.`,
       icon: CollectionIcon,
     }, {
       id: 2,
-      name: 'Bring your own plugins',
-      description:
-        'Building your own internal plugins? Publish them to our private repository and they appear in Roadie Backstage like magic.',
+      name: 'Install custom plugins',
+      description: 'Building your own internal plugins? Publish them to our private repository and they appear where you need them.',
       icon: BeakerIcon,
     }],
 
@@ -92,7 +91,7 @@ const SOLUTIONS = {
   description: 'Make docs, architecture diagrams and runbooks an integral part of your your engineering workflow.',
   features: [{
     title: 'Built on Backstage',
-    description: 'Backstage is the developer portal and service catalog which has enabled engineering hypergrowth at Spotify since 2016. It can improve developer productivity, reduce downtime, and enable your teams to ship high-quality code quickly.',
+    description: 'Backstage is the developer portal and service catalog which has enabled engineering hypergrowth at Spotify since 2016. It can improve developer effectiveness, reduce downtime, and enable your teams to ship high-quality code quickly.',
     illustration: <MikeExpediaGroupQuote />,
     bullets: [{
       id: 1,
@@ -102,25 +101,26 @@ const SOLUTIONS = {
     }, {
       id: 2,
       name: 'Bring order with the software catalog',
-      description: 'The searchable catalog brings frequently used tools to the developers so they have fewer places to check. Reducing context switching.',
+      description: 'The searchable catalog makes engineeering tools discoverable and reduces context switching.',
       icon: LibraryIcon,
     }, {
       id: 3,
-      name: 'Make technical documentation viral',
-      description: `TechDocs brings markdown-based technical documentation into Backstage, organises it by service, and makes it searchable. Documentation solved, finally.`,
+      name: 'Write technical docs that get read',
+      description: `TechDocs brings markdown technical documentation into Backstage, organises it by service, and makes it searchable.`,
       icon: NewspaperIcon,
     }],
 
   }, {
     title: 'Cut onboarding time with discoverability',
-    description: 'Backstage centralizes the information that new engineers need to get up to speed quickly.',
+    description: 'Backstage centralizes the information that new engineers need to get up to speed quickly. Meaning they onboard in weeks rather than months.',
     illustration: <ServiceCatalogIllustration />,
     bullets: [{
       id: 1,
-      name: 'Scale-ups have growing pains',
-      description: `Rapid growth means new engineers are joining and existing engineers are changing teams. Backstage ensures they become effective quickly and stay that way.`,
+      name: 'Rapid growth stretches knowledge',
+      description: `Rapid growth means new engineers are joining and existing engineers are changing teams. Backstage ensures they become effective quickly, and stay that way.`,
       icon: UsersIcon,
     }, {
+
       id: 2,
       name: 'Information at your fingertips',
       description: `Backstage centralises the service catalog and makes API specs, docs and tooling easy to access in one place, simplifying engineering tasks.`,
@@ -128,7 +128,7 @@ const SOLUTIONS = {
     }, {
       id: 3,
       name: 'Proven results',
-      description: `Spotify saw "time to 10th commit" drop by 55% in the two years after deploying Backstage internally. All while onboarding hundreds of engineers each year.`,
+      description: `Spotify saw "time to 10ᵗʰ commit" drop by 55% in the two years after deploying Backstage internally. All while onboarding hundreds of engineers each year.`,
       icon: PresentationChartLineIcon,
     }],
 
