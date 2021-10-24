@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Sidebar, SidebarSectionList, SidebarItem } from 'components/tailwind/Sidebar';
-import { FaArrowCircleDown, FaArrowCircleUp } from 'react-icons/fa';
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import Button from 'components/tailwind/forms/Button';
 import algoliasearch from 'algoliasearch/lite';
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
@@ -68,7 +68,7 @@ const DocSidebar = () => {
             <Button
               onClick={toggleSliderOpen}
               text={isOpen ? 'Hide nav' : 'Show nav'}
-              icon={isOpen ? <FaArrowCircleUp /> : <FaArrowCircleDown />}
+              icon={isOpen ? <ChevronDownIcon /> : <ChevronUpIcon />}
               color="inset"
               size="small"
             />
