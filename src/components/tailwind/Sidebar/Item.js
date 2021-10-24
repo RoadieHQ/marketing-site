@@ -6,7 +6,7 @@ const SidebarItem = ({ to, text, partiallyActive }) => (
     <Link
       to={to}
       className="pl-3 py-1 block"
-      activeClassName="bg-gray-200 text-indigo-700"
+      activeClassName="bg-gray-200 text-primary-700"
       partiallyActive={partiallyActive}
     >
       {text}

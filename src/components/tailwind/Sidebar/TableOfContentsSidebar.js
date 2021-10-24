@@ -30,7 +30,7 @@ const TableOfContentsSidebar = ({ headings, className }) => {
       <SidebarSectionList>
         {headings.map(({ value, id }, index) => {
           const isActive = activeSection === index;
-          const className = classnames('block py-1', { 'text-indigo-600': isActive });
+          const className = classnames('block py-1', { 'text-primary-600': isActive });
           return (
             <li key={id}>
               <Link to={`#${id}`} className={className}>{value}</Link>

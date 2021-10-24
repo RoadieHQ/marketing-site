@@ -16,7 +16,7 @@ const Issue = ({ post }) => (
     <div className="mt-3">
       <Link
         to={`/tailwind${post.fields.slug}`}
-        className="text-base font-semibold text-indigo-600 hover:text-indigo-500"
+        className="text-base font-semibold text-primary-600 hover:text-primary-500"
       >
         Read this issue
       </Link>
