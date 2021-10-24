@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BackstageLogo = (props) => {
+const BackstageIcon = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,4 +16,4 @@ const BackstageLogo = (props) => {
   );
 };
 
-export default BackstageLogo;
+export default BackstageIcon;
