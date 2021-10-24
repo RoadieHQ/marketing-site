@@ -28,7 +28,7 @@ const TextField = ({
           onChange={onInputChange}
           {...rest}
           className={
-            classnames('py-3 px-4 block shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md', {
+            classnames('py-3 px-4 block shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md', {
               'w-full': fullWidth,
             })
           }

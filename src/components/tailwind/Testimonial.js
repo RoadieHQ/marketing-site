@@ -5,7 +5,7 @@ import contentfulLogo from '../../../content/assets/home/1a-contentful-full-logo
 
 const QuoteIcon = () => (
   <svg
-    className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-600"
+    className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-primary-600"
     fill="currentColor"
     viewBox="0 0 32 32"
     aria-hidden="true"
@@ -48,7 +48,7 @@ const Testimonial = () => (
 
           <div className="ml-4">
             <div className="text-base font-medium text-white">Enrique Amodeo Rubio</div>
-            <div className="text-base font-medium text-indigo-200">Staff Software Engineer</div>
+            <div className="text-base font-medium text-primary-200">Staff Software Engineer</div>
           </div>
         </div>
       </footer>

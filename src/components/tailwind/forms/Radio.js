@@ -16,7 +16,7 @@ const Radio = ({ id, onChange, value, currentValue, label, ...rest }) => {
         value={value}
         type="radio"
         {...rest}
-        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
+        className="focus:ring-primary-500 h-4 w-4 text-primary-600 border-gray-300"
       />
       <label htmlFor={htmlId} className="ml-3">
         <span className="block text-sm text-gray-700">{label}</span>

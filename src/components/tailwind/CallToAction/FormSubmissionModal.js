@@ -79,7 +79,7 @@ const FormSubmissionModal = ({
       onRequestClose={handleCloseModal}
     >
       <div className="p-4">
-        <div className="prose prose-indigo max-w-none mb-1">
+        <div className="prose prose-primary max-w-none mb-1">
           <h2 className="mb-1">
             {titleText}{' '}{titleEmoji}
           </h2>

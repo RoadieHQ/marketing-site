@@ -55,7 +55,7 @@ const PluginTemplate = ({ data }) => {
           <ResponsiveSpacer>
             <InterstitialTitle text="Getting started is simple" />
 
-            <div className="prose prose-indigo max-w-none">
+            <div className="prose prose-primary max-w-none">
               <p>
                 Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
                 <Link to="/tailwind/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
@@ -81,7 +81,7 @@ const PluginTemplate = ({ data }) => {
           </ResponsiveSpacer>
 
           <ResponsiveSpacer>
-            <div className="prose prose-indigo">
+            <div className="prose prose-primary">
               <p>
                 Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
               </p>
@@ -105,7 +105,7 @@ const PluginTemplate = ({ data }) => {
               <div>
                 <InterstitialTitle text="Things to know" />
                 <div
-                  className="prose prose-indigo max-w-none"
+                  className="prose prose-primary max-w-none"
                   dangerouslySetInnerHTML={{ __html: plugin.notes }}
                 />
               </div>

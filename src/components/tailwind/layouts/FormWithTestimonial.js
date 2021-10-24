@@ -43,7 +43,7 @@ const FormWithTestimonial = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative bg-white shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-3">
-            <div className="relative overflow-hidden py-10 px-6 bg-gradient-to-b from-indigo-500 to-indigo-600 sm:px-10 xl:p-12">
+            <div className="relative overflow-hidden py-10 px-6 bg-gradient-to-b from-primary-500 to-primary-600 sm:px-10 xl:p-12">
               <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
                 <SplitDiagonalPattern />
               </div>

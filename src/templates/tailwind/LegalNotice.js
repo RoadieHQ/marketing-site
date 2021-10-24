@@ -29,7 +29,7 @@ const LegalNotice = ({ data: { notice, site } }) => (
         </div>
 
         <section
-          className="prose prose-indigo"
+          className="prose prose-primary"
           dangerouslySetInnerHTML={{ __html: notice.html }}
         />
       </article>

@@ -4,7 +4,7 @@ import lodashEscape from 'lodash/escape';
 const CodeBlock = ({ language, code, intro }) => (
   <div>
     {intro && intro !== '' && (
-      <div className="prose prose-indigo" dangerouslySetInnerHTML={{ __html: intro.trim() }} />
+      <div className="prose prose-primary" dangerouslySetInnerHTML={{ __html: intro.trim() }} />
     )}
 
     {code && code !== '' && (

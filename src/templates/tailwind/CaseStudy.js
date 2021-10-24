@@ -49,7 +49,7 @@ const CaseStudyTemplate = ({ data }) => {
           </div>
 
           <section
-            className="prose prose-indigo max-w-none"
+            className="prose prose-primary max-w-none"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </article>
