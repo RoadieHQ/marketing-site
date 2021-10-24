@@ -58,7 +58,7 @@ const DocSidebar = () => {
   };
 
   return (
-    <Sidebar sticky={true} side="left">
+    <Sidebar side="left">
       <div className="px-2 my-3">
         <div className="mb-1 flex justify-between items-center">
           <span>
