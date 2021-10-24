@@ -47,7 +47,7 @@ const PluginTemplate = ({ data }) => {
 
       <SitewideHeader />
 
-      <div className="pt-4 pb-8 px-4 lg:pt-24 lg:pb-28">
+      <main className="pt-4 pb-8 px-4 lg:pt-8 lg:pb-28">
         <div className="relative max-w-lg mx-auto lg:max-w-3xl">
 
           <Header plugin={plugin} />
@@ -123,15 +123,15 @@ const PluginTemplate = ({ data }) => {
             </ResponsiveSpacer>
           )}
         </div>
-      </div>
 
-      <div className="pt-4 pb-8 px-4 md:mb-24">
-        <SubscribeToNewsletterCTA
-          setModalOpen={setModalOpen}
-          email={email}
-          setEmail={setEmail}
-        />
-      </div>
+        <div className="relative max-w-lg mx-auto lg:max-w-3xl mt-24">
+          <SubscribeToNewsletterCTA
+            setModalOpen={setModalOpen}
+            email={email}
+            setEmail={setEmail}
+          />
+        </div>
+      </main>
 
       <SitewideFooter />
     </>

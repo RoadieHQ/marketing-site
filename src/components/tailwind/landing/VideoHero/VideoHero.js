@@ -1,18 +1,10 @@
 import React, { useState } from 'react'
-import { Button, GrayBackgroundDotsPattern } from 'components/tailwind';
+import { Button, GrayBackgroundDotsPattern, Headline } from 'components/tailwind';
 import { Helmet } from 'react-helmet';
 import { PlayIcon } from 'components/tailwind/icons';
 
 import IntroToRoadieModal from './IntroToRoadieModal';
 import backstageScreenshot from '../../../../../content/assets/backstage-screenshot.png';
-
-const Title = ({ children }) => (
-  <h1>
-    <span className="mt-1 block text-4xl tracking-tight font-extrabold sm:text-5xl xl:text-6xl">
-      {children}
-    </span>
-  </h1>
-);
 
 const SubTitle = ({ text }) => (
   <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
@@ -52,16 +44,16 @@ const VideoHero = () => {
           <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-32">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8">
               <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
-                <Title>
+                <Headline className="tracking-right mt-1">
                   <span className="block text-gray-900">Backstage for</span>
                   <span className="block text-primary-600">scale-ups</span>
-                </Title>
+                </Headline>
 
                 <SubTitle
                   text="Roadie&apos;s SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features."
                 />
 
-                <div className="mt-5 max-w-md sm:flex md:mt-8">
+                <div className="mt-5 sm:flex sm:justify-center lg:justify-start md:mt-8">
                   <div>
                     <Button
                       link={true}
