@@ -46,7 +46,6 @@ const RequestTrial = ({ data }) => {
         <FormWithTestimonial
           title="Free trial"
           description="Try Roadie Backstage free for 30 days."
-          subTitle="Request a trial"
         >
           <ExtendedGetInstanceCallToAction
             email={email}

@@ -153,7 +153,7 @@ const SOLUTIONS = {
 };
 
 const PLUGINS_SUPPORTED = {
-  title: 'Pre-loaded with all your favorite Backstage plugins',
+  title: 'Pre-loaded with the best plugins',
   subTitle: `Open-source plugins are supported by default. Push your own plugins if you need something bespoke.`,
   primaryCallToAction: {
     text: 'Try it free',
