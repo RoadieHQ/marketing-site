@@ -55,7 +55,6 @@ const RequestDemo = ({ data, location }) => {
         <FormWithTestimonial
           title="Request a demo"
           description="Bring your team to a fully featured demo of Roadie and Backstage."
-          subTitle="Request a demo"
         >
           <RequestDemoCallToAction
             location={location}
