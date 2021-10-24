@@ -65,7 +65,9 @@ const ListHeader = ({
     <div>
       <Headline>{title}</Headline>
       <div className="mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center">
-        <Description>{description}</Description>
+        <div className="sm:mb-4 lg:mb-0">
+          <Description>{description}</Description>
+        </div>
         <SubscribeToNewsletter siteMetadata={siteMetadata} />
       </div>
     </div>

@@ -34,8 +34,8 @@ const EmailCaptureForm = ({
       <input type="hidden" name="submit-button-label" value={buttonText} />
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
-      <div className={classnames('flex flex-col md:flex-row', className)}>
-        <div className="mb-4 md:mb-0">
+      <div className={classnames('flex flex-col lg:flex-row', className)}>
+        <div className="mb-4 lg:mb-0">
           <TextField
             type="email"
             name="email"

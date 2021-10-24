@@ -46,7 +46,7 @@ const BlogPostTemplate = ({ data }) => {
       />
 
       <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
-        <article className="relative max-w-lg mx-auto lg:max-w-2xl">
+        <article className="relative max-w-lg mx-auto lg:max-w-2xl mb-24">
           <div className="mb-8">
             <ContentHeader frontmatter={post.frontmatter} />
           </div>
@@ -56,15 +56,15 @@ const BlogPostTemplate = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </article>
-      </main>
 
-      <div className="pt-4 pb-8 px-4 md:mb-24">
-        <SubscribeToNewsletterCTA
-          setModalOpen={setModalOpen}
-          email={email}
-          setEmail={setEmail}
-        />
-      </div>
+        <div className="relative max-w-lg mx-auto lg:max-w-2xl">
+          <SubscribeToNewsletterCTA
+            setModalOpen={setModalOpen}
+            email={email}
+            setEmail={setEmail}
+          />
+        </div>
+      </main>
 
       <SitewideFooter />
     </>

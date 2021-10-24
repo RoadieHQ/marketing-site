@@ -15,8 +15,8 @@ const FormWithTestimonial = ({
 }) => (
   <main className="overflow-hidden pb-24 mb-24">
     <div className="bg-warm-gray-50">
-      <div className="py-16 lg:py-24">
-        <div className="relative z-10 max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
+      <div className="py-8 lg:py-12">
+        <div className="relative max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
           <Headline>{title}</Headline>
 
           <p className="mt-6 text-xl text-warm-gray-500 max-w-3xl">
