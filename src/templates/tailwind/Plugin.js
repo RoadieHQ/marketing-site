@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import {
   TextLink as Link,
-  InterstitialTitle,
+  Title,
   CodeBlock,
   SEO,
   ResponsiveSpacer,
@@ -53,7 +53,9 @@ const PluginTemplate = ({ data }) => {
           <Header plugin={plugin} />
 
           <ResponsiveSpacer>
-            <InterstitialTitle text="Getting started is simple" />
+            <div className="text-center pb-3">
+              <Title text="Getting started is simple" />
+            </div>
 
             <div className="prose prose-primary max-w-none">
               <p>
@@ -64,11 +66,15 @@ const PluginTemplate = ({ data }) => {
           </ResponsiveSpacer>
 
           <ResponsiveSpacer>
-            <InterstitialTitle text="Installation steps" />
+            <div className="text-center pb-3">
+              <Title text="Installation steps" />
+            </div>
 
             {plugin.frontmatter.gettingStarted.map((section, index) =>
               section.title && section.title !== '' ? (
-                <InterstitialTitle text={section.title} key={`key-${index}`} />
+                <div className="text-center pb-3">
+                  <Title text={section.title} key={`key-${index}`} />
+                </div>
               ) : (
                 <CodeBlock
                   language={section.language}
@@ -89,7 +95,9 @@ const PluginTemplate = ({ data }) => {
           </ResponsiveSpacer>
 
           <ResponsiveSpacer>
-            <InterstitialTitle text="How it looks" />
+            <div className="text-center pb-3">
+              <Title text="How it looks" />
+            </div>
 
             <div>
               <GatsbyImage
@@ -103,7 +111,10 @@ const PluginTemplate = ({ data }) => {
           {plugin.notes && plugin.notes !== '' && (
             <ResponsiveSpacer>
               <div>
-                <InterstitialTitle text="Things to know" />
+                <div className="text-center pb-3">
+                  <Title text="Things to know" />
+                </div>
+
                 <div
                   className="prose prose-primary max-w-none"
                   dangerouslySetInnerHTML={{ __html: plugin.notes }}
