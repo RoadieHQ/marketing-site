@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import SitewideHeader from 'components/tailwind/SitewideHeader';
-import TailwindHeadContent from 'components/tailwind/HeadContent';
-import SitewideFooter from 'components/tailwind/SitewideFooter';
+import {
+  SitewideHeader,
+  TailwindHeadContent,
+  SitewideFooter,
+  SEO,
+  Headline,
+} from 'components/tailwind';
 import ListItem from 'components/tailwind/backstage/plugins/ListItem';
-import { SEO } from 'components';
 
 const BackstagePlugins = ({ data }) => {
   const {
@@ -42,8 +45,10 @@ const BackstagePlugins = ({ data }) => {
 
       <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
         <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
-          <div className="flex justify-between items-center">
-            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Backstage plugins</h2>
+          <div className="lg:flex justify-between items-center">
+            <div className="sm:mb-6 lg:mb-0">
+              <Headline>Backstage plugins</Headline>
+            </div>
 
             <form>
               <input
@@ -51,7 +56,7 @@ const BackstagePlugins = ({ data }) => {
                 onChange={onInputChange}
                 value={query}
                 aria-label="Search"
-                className="bg-gray-100 color-gray-800 border-2 border-gray-300"
+                className="bg-gray-100 color-gray-800 border-2 border-gray-300 sm:w-full lg:w-56 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Search"
               />
             </form>

@@ -12,7 +12,7 @@ export { default as Lead } from './Lead';
 export { default as Headline } from './Headline';
 export { default as TextLink } from './TextLink';
 export { default as ResponsiveSpacer } from './ResponsiveSpacer';
-export { default as InterstitialTitle } from './InterstitialTitle';
+export { default as Title } from './Title';
 export { default as CodeBlock } from './CodeBlock';
 export { default as TopBanner } from './TopBanner';
 export {

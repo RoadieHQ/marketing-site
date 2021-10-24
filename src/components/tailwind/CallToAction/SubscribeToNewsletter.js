@@ -1,5 +1,5 @@
 import React from 'react';
-import { InterstitialTitle, TextLink as Link } from 'components/tailwind';
+import { Title, TextLink as Link } from 'components/tailwind';
 
 import FormSubmissionModal from './FormSubmissionModal';
 import CallToAction from 'components/actions/NetlifyFormCallToAction';
@@ -23,7 +23,9 @@ export const SubscribeToNewsletterSuccessModal = (props) => (
 
 export const SubscribeToNewsletterCTA = (props) => (
   <div className="text-center">
-    <InterstitialTitle text="Become a Backstage expert" />
+    <div className="pb-3">
+      <Title text="Become a Backstage expert" />
+    </div>
 
     <p className="prose prose-primary mb-3 max-w-62 mx-auto">
       To get the latest news, deep dives into Backstage features, and a roundup of recent

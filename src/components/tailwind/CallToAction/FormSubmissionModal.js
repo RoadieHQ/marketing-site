@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextLink as Link, Button } from 'components/tailwind';
+import { TextLink as Link, Button, Title } from 'components/tailwind';
 import { ExternalLinkIcon } from '@heroicons/react/outline'
 import Modal, { modalStyles } from 'components/Modal';
 
@@ -80,9 +80,9 @@ const FormSubmissionModal = ({
     >
       <div className="p-4">
         <div className="prose prose-primary max-w-none mb-1">
-          <h2 className="mb-1">
+          <Title>
             {titleText}{' '}{titleEmoji}
-          </h2>
+          </Title>
           {bodyText}
         </div>
         {followOnContent}

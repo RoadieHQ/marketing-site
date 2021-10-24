@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lead, InterstitialTitle, DotPattern } from 'components/tailwind';
+import { Lead, Headline, DotPattern, Title } from 'components/tailwind';
 import classnames from 'classnames';
 
 const FeatureBulletPoint = ({ item }) => (
@@ -16,9 +16,7 @@ const FeatureBulletPoint = ({ item }) => (
 
 const FeatureHeader = ({ title, description }) => (
   <>
-    <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-      {title}
-    </h3>
+    <Title el="h3">{title}</Title>
 
     <div className="mt-3">
       <Lead size="small">
@@ -79,7 +77,10 @@ const AlternatingFeatureBlock = ({ content }) => (
       />
 
       <div className="relative text-center">
-        <InterstitialTitle text={content.title} size="large" />
+        <div className="pb-3">
+          <Headline el="h2">{content.title}</Headline>
+        </div>
+
         <Lead>
           {content.description}
         </Lead>
