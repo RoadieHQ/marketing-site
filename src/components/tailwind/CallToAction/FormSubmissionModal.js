@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextLink as Link, Button } from 'components/tailwind';
-import { FaExternalLinkAlt } from 'react-icons/fa';
+import { ExternalLinkIcon } from '@heroicons/react/outline'
 import Modal, { modalStyles } from 'components/Modal';
 
 const twitterUrl = ({ social }) => `https://twitter.com/${social.twitter}`;
@@ -36,7 +36,7 @@ const GetDemoSurveyInner = ({ referredEmail }) => {
     <Button
       link={true}
       to={`/tailwind/request-demo/?email=${codedEmail}`}
-      icon={<FaExternalLinkAlt />}
+      icon={<ExternalLinkIcon />}
       text="Request a demo"
       color="primary"
     />
