@@ -10,7 +10,7 @@ import {
   NewspaperIcon,
   BriefcaseIcon,
 } from '@heroicons/react/outline'
-import { LogoVector } from 'components/tailwind/Logo';
+import { RoadieIcon } from 'components/tailwind/icons';
 
 import CloseMenuButton from './CloseMenuButton';
 import MobileFreeTrialButton from './MobileFreeTrialButton';
@@ -66,7 +66,7 @@ const DrawerMenu = () => (
 
           <div className="flex items-center justify-between">
             <div>
-              <LogoVector />
+              <RoadieIcon />
             </div>
 
             <div className="-mr-2">

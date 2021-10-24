@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import CallToAction from 'components/actions/NetlifyFormCallToAction';
+import { Headline } from 'components/tailwind';
 import { SubscribeToNewsletterSuccessModal } from 'components/tailwind/CallToAction/SubscribeToNewsletter';
 
 import { FORM_NAMES } from '../../../contactFormConstants';
-
-const Title = ({ children }) => (
-  <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-    {children}
-  </h2>
-);
 
 const SubscribeToNewsletter = ({ siteMetadata }) => {
   const [email, setEmail] = useState('');
@@ -60,7 +55,7 @@ const ListHeader = ({
   if (!subscribeToNewsletter) {
     return (
       <div>
-        <Title>{title}</Title>
+        <Headline>{title}</Headline>
         <Description className="mt-3 sm:mt-4">{description}</Description>
       </div>
     );
@@ -68,7 +63,7 @@ const ListHeader = ({
 
   return (
     <div>
-      <Title>{title}</Title>
+      <Headline>{title}</Headline>
       <div className="mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center">
         <Description>{description}</Description>
         <SubscribeToNewsletter siteMetadata={siteMetadata} />

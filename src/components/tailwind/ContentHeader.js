@@ -1,14 +1,15 @@
 import React from 'react';
 import isEmpty from 'lodash/isEmpty';
+import { Headline } from 'components/tailwind';
 
 import Byline from './Byline';
 import Tags from './Tags';
 
 const ContentHeader = ({ frontmatter, showLastValidated = true, dateKey }) => (
   <header>
-    <h1 className="font-bold text-5xl text-gray-900 mb-2 mt-0 tracking-tight">
+    <Headline className="mb-2 mt-0">
       {frontmatter.title}
-    </h1>
+    </Headline>
 
     {!isEmpty(frontmatter.tags) && (
       <div className="mb-2">
