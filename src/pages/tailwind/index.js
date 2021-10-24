@@ -7,13 +7,19 @@ import {
   SitewideHeader,
 } from 'components/tailwind';
 import {
-  AnnotationIcon,
-  GlobeAltIcon,
-  LightningBoltIcon,
-  MailIcon,
-  ScaleIcon,
+  FingerPrintIcon,
+  SparklesIcon,
+  LibraryIcon,
+  MapIcon,
+  NewspaperIcon,
+  BeakerIcon,
+  CollectionIcon,
+  ShieldCheckIcon,
+  ChipIcon,
+  UsersIcon,
+  PresentationChartLineIcon,
+  BookOpenIcon,
 } from '@heroicons/react/outline'
-// import Hero from 'components/tailwind/landing/Hero';
 import { VideoHero } from 'components/tailwind/landing/VideoHero';
 import AlternatingFeatureBlock from 'components/tailwind/landing/AlternatingFeatureBlock';
 import SplitGridLogoCloud from 'components/tailwind/landing/SplitGridLogoCloud';
@@ -41,29 +47,23 @@ you always have access to the latest Backstage features.
 const PRODUCT = {
   htmlId: 'product',
   title: 'Backstage with benefits...',
-  description: 'We&apos;re building on top of Backstage to make it painless to use and maintenance free.',
+  description: `We're building on top of Backstage to make it simple to set up and maintenance free.`,
   features: [{
     title: 'Quick and easy setup',
-    description: 'Customize Backstage to suit your needs using our drag-and-drop composer. If your company uses Pagerduty instead of Opsgenie, simply remove one plugin and replace it with the other. It takes seconds and changes roll out instantly for everyone.',
+    description: 'Customize Backstage using our drag-and-drop composer. Using PagerDuty instead of Opsgenie? Simply remove one plugin and replace it with the other. It takes seconds and changes roll out instantly for everyone.',
     illustration: <DragDropIllustration />,
     bullets: [{
       id: 1,
       name: 'All major plugin formats supported',
       description:
         `Roadie's drag and drop setup supports cards, tabs, sidebar links and full page plugins.`,
-      icon: GlobeAltIcon,
+      icon: CollectionIcon,
     }, {
       id: 2,
       name: 'Bring your own plugins',
       description:
-        'Building your own internal plugins? Just publish them to our repository and they appear in your Backstage experience like magic.',
-      icon: ScaleIcon,
-    }, {
-      id: 3,
-      name: 'Admins only',
-      description:
-        `Plugins would move around too frequently if everyone could edit them. We've built roles into Backstage so admins can lead the setup process.`,
-      icon: LightningBoltIcon,
+        'Building your own internal plugins? Publish them to our private repository and they appear in Roadie Backstage like magic.',
+      icon: BeakerIcon,
     }],
 
   }, {
@@ -74,14 +74,14 @@ const PRODUCT = {
       id: 1,
       name: 'Automated upgrades',
       description:
-        `Open-source community power means that Backstage moves quickly. It's easy to fall behind if you don't put the work in.`,
-      icon: AnnotationIcon,
+        `Open-source community power means that Backstage moves quickly. It's easy to fall behind if you don't put the work in. We do the upgrades so you don't have to.`,
+      icon: ChipIcon,
     }, {
       id: 2,
       name: 'Security patches delivered',
       description:
         `We regularly patch vulnerabilities in the open-source code, ensuring you're using a hardened version of Backstage.`,
-      icon: MailIcon,
+      icon: ShieldCheckIcon,
     }],
   }],
 };
@@ -89,29 +89,26 @@ const PRODUCT = {
 const SOLUTIONS = {
   htmlId: 'solutions',
   title: 'Turn tribal knowledge into shared context',
-  description: 'Take docs, architecture diagrams and runbooks out of impenetrable content management solutions and embed them in your engineering workflow',
+  description: 'Make docs, architecture diagrams and runbooks an integral part of your your engineering workflow.',
   features: [{
     title: 'Built on Backstage',
     description: 'Backstage is the developer portal and service catalog which has enabled engineering hypergrowth at Spotify since 2016. It can improve developer productivity, reduce downtime, and enable your teams to ship high-quality code quickly.',
     illustration: <MikeExpediaGroupQuote />,
     bullets: [{
       id: 1,
-      name: 'Scaffolder',
-      description:
-        `talk about what the scaffolder does`,
-      icon: GlobeAltIcon,
+      name: 'Scaffold new services',
+      description: `The Backstage scaffolder allows engineers to create new services from pre-defined templates. Increasing velocity and production consistency.`,
+      icon: SparklesIcon,
     }, {
       id: 2,
-      name: 'Software catalog',
-      description:
-        'Talk about this too',
-      icon: ScaleIcon,
+      name: 'Bring order with the software catalog',
+      description: 'The searchable catalog brings frequently used tools to the developers so they have fewer places to check. Reducing context switching.',
+      icon: LibraryIcon,
     }, {
       id: 3,
-      name: 'TechDocs',
-      description:
-        `What the hell is techdocs`,
-      icon: LightningBoltIcon,
+      name: 'Make technical documentation viral',
+      description: `TechDocs brings markdown-based technical documentation into Backstage, organises it by service, and makes it searchable. Documentation solved, finally.`,
+      icon: NewspaperIcon,
     }],
 
   }, {
@@ -120,15 +117,19 @@ const SOLUTIONS = {
     illustration: <ServiceCatalogIllustration />,
     bullets: [{
       id: 1,
-      name: 'Tangible results',
-      description: `Spotify saw engineering onboarding time drop by 55% in the two years after deploying Backstage internally. All while onboarding hundreds of engineers each year.`,
-      icon: AnnotationIcon,
+      name: 'Scale-ups have growing pains',
+      description: `Rapid growth means new engineers are joining and existing engineers are changing teams. Backstage ensures they become effective quickly and stay that way.`,
+      icon: UsersIcon,
     }, {
       id: 2,
-      name: 'Re-orgs handled',
-      description:
-        `Rapid growth means engineers are frequently changing teams and learning new codebases. Backstage ensures they stay effective throughout this process.`,
-      icon: MailIcon,
+      name: 'Information at your fingertips',
+      description: `Backstage centralises the service catalog and makes API specs, docs and tooling easy to access in one place, simplifying engineering tasks.`,
+      icon: BookOpenIcon,
+    }, {
+      id: 3,
+      name: 'Proven results',
+      description: `Spotify saw "time to 10th commit" drop by 55% in the two years after deploying Backstage internally. All while onboarding hundreds of engineers each year.`,
+      icon: PresentationChartLineIcon,
     }],
 
   }, {
@@ -137,24 +138,23 @@ const SOLUTIONS = {
     illustration: <ProductionConsistencyIllustration />,
     bullets: [{
       id: 1,
-      name: 'Golden path to production',
-      description: `Speed up new services`,
-      icon: AnnotationIcon,
+      name: 'Inconsistent environments slow development',
+      description: `Nobody wants obstacles on the path to production, but heterogeneous environments cause operational headaches and slow technology migrations.`,
+      icon: FingerPrintIcon,
     }, {
       id: 2,
-      name: 'Ease operations',
+      name: 'Golden path to production',
       description:
-        `As you grow more cruft in the production`,
-      icon: MailIcon,
+        `Encode your best practices in templates which service teams can use to create new services. This ensures that increasing production consistency is the path of least resistance.`,
+      icon: MapIcon,
     }],
-
 
   }],
 };
 
 const PLUGINS_SUPPORTED = {
-  title: 'Pre-loaded with all your favorite plugins',
-  subTitle: 'Open-source plugins are supported by default. Don&apos;t see something you need? Just let us know. Push your own custom plugins if you need something special.',
+  title: 'Pre-loaded with all your favorite Backstage plugins',
+  subTitle: `Open-source plugins are supported by default. Push your own plugins if you need something bespoke.`,
   primaryCallToAction: {
     text: 'Try it free',
     to: '/tailwind/free-trial/',
@@ -179,7 +179,6 @@ const PLUGINS_SUPPORTED = {
     src: <JiraSoftwareLogo />,
   }],
 };
-
 
 const Home = ({
   data: {
