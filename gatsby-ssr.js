@@ -1,8 +1,8 @@
 // const React = require('react');
 // const fs = require('fs');
-// 
+//
 // const HEAD_CSS = fs.readFileSync('src/stylesheets/head-loaded-styles.css').toString();
-// 
+//
 // exports.onRenderBody = ({ pathname, setHeadComponents }) => {
 //   if (!pathname.includes('tailwind')) {
 //     // Getting these into the head so the fonts start loading fast and we don't have a FoUC.
