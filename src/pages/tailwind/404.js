@@ -50,7 +50,7 @@ const links = [
   },
 ];
 
-export const NotFoundPage = ({ data }) => {
+const NotFoundPage = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
