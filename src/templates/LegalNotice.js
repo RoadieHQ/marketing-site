@@ -42,7 +42,7 @@ const LegalNotice = ({ data: { notice, site } }) => (
 export default LegalNotice;
 
 export const pageQuery = graphql`
-  query TailwindLegalNoticeBySlug($slug: String!) {
+  query LegalNoticeBySlug($slug: String!) {
     site {
       siteMetadata {
         title

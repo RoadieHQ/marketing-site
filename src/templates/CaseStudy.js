@@ -72,7 +72,7 @@ const CaseStudyTemplate = ({ data }) => {
 export default CaseStudyTemplate; 
 
 export const pageQuery = graphql`
-  query TailwindCaseStudyBySlug($slug: String!) {
+  query CaseStudyBySlug($slug: String!) {
     site {
       siteMetadata {
         title

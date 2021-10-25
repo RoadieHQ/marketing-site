@@ -56,7 +56,7 @@ const Doc = ({
 export default Doc;
 
 export const pageQuery = graphql`
-  query TailwindDocBySlug($slug: String!) {
+  query DocBySlug($slug: String!) {
     site {
       siteMetadata {
         title
