@@ -156,12 +156,12 @@ const PLUGINS_SUPPORTED = {
   subTitle: `Open-source plugins are supported by default. Push your own plugins if you need something bespoke.`,
   primaryCallToAction: {
     text: 'Try it free',
-    to: '/tailwind/free-trial/',
+    to: '/free-trial/',
   },
 
   secondaryCallToAction: {
     text: 'Request a demo',
-    to: '/tailwind/request-demo/',
+    to: '/request-demo/',
   },
 
   logos: [{

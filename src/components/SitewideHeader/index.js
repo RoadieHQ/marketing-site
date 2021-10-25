@@ -20,22 +20,22 @@ import DrawerMenu from './DrawerMenu';
 const learn = [{
   name: 'Backstage Plugins',
   description: 'Browse our Backstage plugin marketplace.',
-  to: '/tailwind/backstage/plugins/',
+  to: '/backstage/plugins/',
   icon: CodeIcon,
 }, {
   name: 'Blog',
   description: 'Read our posts on Backstage and Roadie.',
-  to: '/tailwind/blog/',
+  to: '/blog/',
   icon: BookOpenIcon,
 }, {
   name: 'Case Studies',
   description: "How organisations succeed with Backstage",
-  to: '/tailwind/case-studies/',
+  to: '/case-studies/',
   icon: ShieldCheckIcon
 }, {
   name: 'Documentation',
   description: "Set up your Roadie Backstage experience.",
-  to: '/tailwind/docs/',
+  to: '/docs/',
   icon: AcademicCapIcon,
 }, {
   name: 'Chat with us on Discord',
@@ -62,9 +62,9 @@ const SitewideHeader = ({ maxWidth = '7xl' }) => {
             </div>
 
             <Popover.Group as="nav" className="hidden md:flex space-x-10">
-              <TopNavItem to="/tailwind/#product" text="Product" />
-              <TopNavItem to="/tailwind/#solutions" text="Solutions" />
-              <TopNavItem to="/tailwind/backstage-weekly/" text="Backstage Weekly" />
+              <TopNavItem to="/#product" text="Product" />
+              <TopNavItem to="/#solutions" text="Solutions" />
+              <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
               <TopNavDropdownItem text="Learn" subItems={learn} />
             </Popover.Group>
 

@@ -8,7 +8,7 @@ const twitterUrl = ({ social }) => `https://twitter.com/${social.twitter}`;
 const NewsletterAndTwitterInner = ({ siteMetadata }) => (
   <p>
     Learn more about Backstage via{' '}
-    <Link to="/tailwind/backstage-weekly/" color="primary">
+    <Link to="/backstage-weekly/" color="primary">
       our newsletter
     </Link>{' '}
     or follow{' '}
@@ -35,7 +35,7 @@ const GetDemoSurveyInner = ({ referredEmail }) => {
   return (
     <Button
       link={true}
-      to={`/tailwind/request-demo/?email=${codedEmail}`}
+      to={`/request-demo/?email=${codedEmail}`}
       icon={<ExternalLinkIcon />}
       text="Request a demo"
       color="primary"
