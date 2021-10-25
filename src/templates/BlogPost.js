@@ -72,7 +72,7 @@ const BlogPostTemplate = ({ data }) => {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query TailwindBlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title

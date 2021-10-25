@@ -47,7 +47,7 @@ const BlogIndex = ({ pageContext, data }) => {
 export default BlogIndex;
 
 export const pageQuery = graphql`
-  query TailwindTag($tag: String!) {
+  query Tag($tag: String!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/.+/blog/.+/" }, frontmatter: { tags: { in: [$tag] } } }

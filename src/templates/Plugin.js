@@ -141,7 +141,7 @@ const PluginTemplate = ({ data }) => {
 export default PluginTemplate;
 
 export const pageQuery = graphql`
-  query TailwindPluginBySlug($slug: String!) {
+  query PluginBySlug($slug: String!) {
     site {
       siteMetadata {
         sourceCodeUrl
