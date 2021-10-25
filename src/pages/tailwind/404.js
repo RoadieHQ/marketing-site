@@ -99,12 +99,10 @@ export const NotFoundPage = ({ data }) => {
                 ))}
               </ul>
               <div className="mt-8">
-                <a
-                  href="/tailwind/"
-                  className="text-base font-medium text-indigo-600 hover:text-indigo-500"
-                >
+                <Link to="/tailwind/" color="primary">
+                  <span className="text-base font-medium text-indigo-600 hover:text-indigo-500" />
                   Or go back home<span aria-hidden="true"> &rarr;</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
