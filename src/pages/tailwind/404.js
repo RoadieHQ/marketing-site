@@ -6,7 +6,6 @@ import {
   SEO,
   SitewideHeader,
   SitewideFooter,
-  TailwindHeadContent,
   TextLink as Link,
 } from 'components';
 import {
@@ -56,7 +55,6 @@ const NotFoundPage = ({ data }) => {
   return (
     <>
       <SEO title={`404: Not Found | ${siteTitle}`} />
-      <TailwindHeadContent />
       <SitewideHeader />
       <div className="bg-white">
         <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">

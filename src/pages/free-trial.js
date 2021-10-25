@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import {
   SEO,
   SitewideHeader,
-  TailwindHeadContent,
   SitewideFooter,
 } from 'components';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
@@ -29,8 +28,6 @@ const RequestTrial = ({ data }) => {
         title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get a SaaS Backstage experience from Roadie. We handle hosting and maintenance and let you get back to your customers."
       />
-
-      <TailwindHeadContent />
 
       <SubmissionSuccessModal
         email={email}

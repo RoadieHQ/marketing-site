@@ -24,7 +24,6 @@ export {
 } from './patterns';
 export { default as ContentHeader } from './ContentHeader';
 export { default as SitewideFooter } from './SitewideFooter';
-export { default as TailwindHeadContent } from './HeadContent';
 export { default as Tags } from './Tags';
 export { default as Testimonial } from './Testimonial';
 // Including here for convenience when importing

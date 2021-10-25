@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import {
   SEO,
-  TailwindHeadContent,
   SitewideFooter,
   SitewideHeader,
 } from 'components';
@@ -191,7 +190,6 @@ const Home = ({
 }) => (
   <>
     <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
-    <TailwindHeadContent />
 
     <SitewideHeader />
     <VideoHero />

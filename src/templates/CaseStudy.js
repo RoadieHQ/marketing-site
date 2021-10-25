@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import {
   SEO,
   ContentHeader,
-  TailwindHeadContent,
   SitewideHeader,
   SitewideFooter,
 } from 'components';
@@ -31,7 +30,6 @@ const CaseStudyTemplate = ({ data }) => {
         title={`${post.frontmatter.title} | ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt}
       />
-      <TailwindHeadContent />
 
       <SitewideHeader />
 

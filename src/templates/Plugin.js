@@ -10,7 +10,6 @@ import {
   ResponsiveSpacer,
   SitewideHeader,
   SitewideFooter,
-  TailwindHeadContent,
 } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
@@ -36,7 +35,6 @@ const PluginTemplate = ({ data }) => {
   return (
     <>
       <SEO title={plugin.frontmatter.seo.title} description={plugin.frontmatter.seo.description} />
-      <TailwindHeadContent />
 
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}

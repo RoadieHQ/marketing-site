@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, Link, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components';
+import { SEO, Link, SitewideHeader, SitewideFooter } from 'components';
 import { ListHeader, TitleAndDescription, PubDate, HeadRssLink } from 'components/article';
 
 const Issue = ({ post }) => (
@@ -37,7 +37,6 @@ const BlogIndex = ({ data }) => {
         `}
       />
       <HeadRssLink />
-      <TailwindHeadContent />
 
       <SitewideHeader />
 
