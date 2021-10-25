@@ -57,7 +57,7 @@ const VideoHero = () => {
                   <div>
                     <Button
                       link={true}
-                      to="/tailwind/free-trial/"
+                      to="/free-trial/"
                       color="primary"
                       text="Try it free"
                       size="large"
@@ -68,7 +68,7 @@ const VideoHero = () => {
                   <div className="mt-3 sm:mt-0 sm:ml-3">
                     <Button
                       link={true}
-                      to="/tailwind/request-demo/"
+                      to="/request-demo/"
                       color="secondary"
                       text="Request a demo"
                       size="large"

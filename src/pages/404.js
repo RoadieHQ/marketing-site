@@ -20,25 +20,25 @@ const links = [
   {
     title: 'Documentation',
     description: 'Set up your Roadie Backstage experience.',
-    to: '/tailwind/docs/',
+    to: '/docs/',
     icon: AcademicCapIcon,
   },
   {
     title: 'Blog',
     description: 'Read our posts on Backstage and Roadie.',
-    to: '/tailwind/blog/',
+    to: '/blog/',
     icon: BookOpenIcon,
   },
   {
     title: 'Backstage Plugins',
     description: 'Browse our Backstage plugin marketplace.',
-    to: '/tailwind/backstage/plugins/',
+    to: '/backstage/plugins/',
     icon: CodeIcon,
   },
   {
     title: 'Case Studies',
     description: 'How organisations succeed with Backstage',
-    to: '/tailwind/case-studies/',
+    to: '/case-studies/',
     icon: ShieldCheckIcon,
   },
   {
@@ -97,7 +97,7 @@ const NotFoundPage = ({ data }) => {
                 ))}
               </ul>
               <div className="mt-8">
-                <Link to="/tailwind/" color="primary">
+                <Link to="/" color="primary">
                   <span className="text-base font-medium text-indigo-600 hover:text-indigo-500" />
                   Or go back home<span aria-hidden="true"> &rarr;</span>
                 </Link>

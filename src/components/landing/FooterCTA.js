@@ -15,7 +15,7 @@ const FooterCTA = () => (
         <div className="inline-flex">
           <Button
             link={true}
-            to="/tailwind/free-trial/"
+            to="/free-trial/"
             color="primary"
             text="Try it free"
           />
@@ -24,7 +24,7 @@ const FooterCTA = () => (
         <div className="ml-3 inline-flex">
           <Button
             link={true}
-            to="/tailwind/request-demo/"
+            to="/request-demo/"
             color="inset"
             text="Request a demo"
           />

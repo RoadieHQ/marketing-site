@@ -18,31 +18,31 @@ import MobileDropdownNavItem from './MobileDropdownNavItem';
 
 const subItems = [{
   name: 'Product',
-  to: '/tailwind/#product',
+  to: '/#product',
   icon: SparklesIcon,
 }, {
   name: 'Solutions',
-  to: '/tailwind/#solutions',
+  to: '/#solutions',
   icon: DesktopComputerIcon,
 }, {
   name: 'Backstage Plugins',
-  to: '/tailwind/backstage/plugins/',
+  to: '/backstage/plugins/',
   icon: CodeIcon,
 }, {
   name: 'Backstage Weekly',
-  to: '/tailwind/backstage-weekly/',
+  to: '/backstage-weekly/',
   icon: NewspaperIcon,
 }, {
   name: 'Blog',
-  to: '/tailwind/blog/',
+  to: '/blog/',
   icon: BookOpenIcon,
 }, {
   name: 'Case Studies',
-  to: '/tailwind/case-studies/',
+  to: '/case-studies/',
   icon: ShieldCheckIcon
 }, {
   name: 'Documentation',
-  to: '/tailwind/docs/',
+  to: '/docs/',
   icon: AcademicCapIcon,
 }, {
   name: 'Careers',

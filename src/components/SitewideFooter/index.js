@@ -9,25 +9,25 @@ const fullTailwindConfig = resolveConfig(tailwindConfig);
 
 const navigation = {
   solutions: [
-    { name: 'Product', href: '/tailwind/#product' },
-    { name: 'Solutions', href: '/tailwind/#solutions' },
+    { name: 'Product', href: '/#product' },
+    { name: 'Solutions', href: '/#solutions' },
   ],
 
   support: [
-    { name: 'Documentation', href: '/tailwind/docs/' },
-    { name: 'Case Studies', href: '/tailwind/case-studies/' },
-    { name: 'Backstage Plugins', href: '/tailwind/backstage/plugins/' },
+    { name: 'Documentation', href: '/docs/' },
+    { name: 'Case Studies', href: '/case-studies/' },
+    { name: 'Backstage Plugins', href: '/backstage/plugins/' },
   ],
 
   company: [
-    { name: 'Blog', href: '/tailwind/blog/' },
+    { name: 'Blog', href: '/blog/' },
     { name: 'Careers', href: 'https://careers.roadie.io' },
   ],
 
   legal: [
-    { name: 'Terms', href: '/tailwind/legal-notices/terms-of-service/' },
-    { name: 'Privacy', href: '/tailwind/legal-notices/privacy-policy/' },
-    { name: 'Cookies', href: '/tailwind/legal-notices/cookies-policy/' },
+    { name: 'Terms', href: '/legal-notices/terms-of-service/' },
+    { name: 'Privacy', href: '/legal-notices/privacy-policy/' },
+    { name: 'Cookies', href: '/legal-notices/cookies-policy/' },
   ],
 
   social: [{

@@ -4,7 +4,7 @@ import { RoadieIcon } from 'components/icons';
 
 const Logo = () => (
   <div className="flex justify-start lg:w-0 lg:flex-1">
-    <Link to="/tailwind/">
+    <Link to="/">
       <span className="sr-only">Roadie</span>
       <RoadieIcon />
     </Link>
