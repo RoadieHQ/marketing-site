@@ -89,7 +89,14 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          'gatsby-remark-autolink-headers',
+
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              className: 'h-full flex items-center',
+            },
+          },
+
           `gatsby-remark-external-links`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
