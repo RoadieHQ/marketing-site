@@ -1,9 +1,9 @@
 import React from 'react';
-import { Title, TextLink as Link } from 'components/tailwind';
+import { Title, TextLink as Link } from 'components';
 
 import FormSubmissionModal from './FormSubmissionModal';
-import CallToAction from 'components/actions/NetlifyFormCallToAction';
-import { FORM_NAMES } from '../../../contactFormConstants';
+import CallToAction from './NetlifyFormCallToAction';
+import { FORM_NAMES } from '../../contactFormConstants';
 
 export const SubscribeToNewsletterSuccessModal = (props) => (
   <FormSubmissionModal
@@ -36,7 +36,6 @@ export const SubscribeToNewsletterCTA = (props) => (
     <CallToAction
       buttonText="Subscribe"
       netlifyFormName={FORM_NAMES.subscribeToNewsletter}
-      formStyle="tailwind"
       {...props}
     />
   </div>

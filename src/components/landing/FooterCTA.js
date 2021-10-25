@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Headline } from 'components/tailwind';
+import { Button, Headline } from 'components';
 
 const FooterCTA = () => (
   <div className="bg-white">

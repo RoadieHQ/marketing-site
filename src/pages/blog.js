@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components/tailwind';
-import HeadRssLink from 'components/blog/HeadRssLink';
-import { PostSummary, ListHeader } from 'components/tailwind/article';
+import { SEO, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components';
+import { PostSummary, ListHeader, HeadRssLink } from 'components/article';
 
 const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;

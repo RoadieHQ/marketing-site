@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'components';
 import resolveConfig from 'tailwindcss/resolveConfig';
-import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieIcon } from 'components/tailwind/icons';
+import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieIcon } from 'components/icons';
 
-import tailwindConfig from '../../../../tailwind.config.js';
+import tailwindConfig from '../../../tailwind.config.js';
 
 const fullTailwindConfig = resolveConfig(tailwindConfig);
 

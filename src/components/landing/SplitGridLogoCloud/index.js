@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headline } from 'components/tailwind';
+import { Headline } from 'components';
 
 const SubTitle = ({ text }) => (
   <p className="mt-3 max-w-3xl text-lg text-gray-500">

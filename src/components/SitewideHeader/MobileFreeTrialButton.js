@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'components/tailwind';
+import { Link } from 'components';
 
 const MobileFreeTrialButton = () => (
   <Link

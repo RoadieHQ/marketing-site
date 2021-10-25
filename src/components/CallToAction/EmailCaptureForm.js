@@ -2,8 +2,8 @@ import React from 'react';
 import { PaperAirplaneIcon } from '@heroicons/react/outline'
 import classnames from 'classnames';
 
-import { currentlyExecutingGitBranch } from '../../../environment';
-import { TextField, Button } from 'components/tailwind';
+import { currentlyExecutingGitBranch } from '../../environment';
+import { TextField, Button } from 'components';
 
 const EmailCaptureForm = ({
   onSubmit,

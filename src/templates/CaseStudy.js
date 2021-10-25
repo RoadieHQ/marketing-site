@@ -7,11 +7,11 @@ import {
   TailwindHeadContent,
   SitewideHeader,
   SitewideFooter,
-} from 'components/tailwind';
+} from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
-} from 'components/tailwind/CallToAction/SubscribeToNewsletter';
+} from 'components/CallToAction/SubscribeToNewsletter';
 
 const CaseStudyTemplate = ({ data }) => {
   const post = data.markdownRemark;

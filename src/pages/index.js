@@ -20,10 +20,10 @@ import {
   PresentationChartLineIcon,
   BookOpenIcon,
 } from '@heroicons/react/outline'
-import { VideoHero } from 'components/tailwind/landing/VideoHero';
-import AlternatingFeatureBlock from 'components/tailwind/landing/AlternatingFeatureBlock';
-import SplitGridLogoCloud from 'components/tailwind/landing/SplitGridLogoCloud';
-import FooterCTA from 'components/tailwind/landing/FooterCTA';
+import { VideoHero } from 'components/landing/VideoHero';
+import AlternatingFeatureBlock from 'components/landing/AlternatingFeatureBlock';
+import SplitGridLogoCloud from 'components/landing/SplitGridLogoCloud';
+import FooterCTA from 'components/landing/FooterCTA';
 
 import DragDropIllustration from '../../content/assets/home/drag-drop-illustration.inline.svg';
 import SecurityMaintenanceIllustration from '../../content/assets/home/security-maintenance-illustration.inline.svg';

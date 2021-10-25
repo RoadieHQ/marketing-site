@@ -7,12 +7,12 @@ import {
   TailwindHeadContent,
   SitewideHeader,
   SitewideFooter,
-} from 'components/tailwind';
-import HeadRssLink from 'components/blog/HeadRssLink';
+} from 'components';
+import HeadRssLink from 'components/article/HeadRssLink';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
-} from 'components/tailwind/CallToAction/SubscribeToNewsletter';
+} from 'components/CallToAction/SubscribeToNewsletter';
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;

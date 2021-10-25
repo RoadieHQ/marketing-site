@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'components/tailwind';
+import { Link } from 'components';
 
 const TopNavItem = ({ to, text }) => (
   <Link to={to} className="text-base font-medium text-gray-500 hover:text-gray-900">

@@ -5,11 +5,11 @@ import {
   SitewideHeader,
   TailwindHeadContent,
   SitewideFooter,
-} from 'components/tailwind';
-import { ExtendedGetInstanceCallToAction } from 'components/tailwind/CallToAction';
+} from 'components';
+import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
-import SubmissionSuccessModal from 'components/tailwind/free-trial/SubmissionSuccessModal';
-import FormWithTestimonial from 'components/tailwind/layouts/FormWithTestimonial';
+import SubmissionSuccessModal from 'components/free-trial/SubmissionSuccessModal';
+import FormWithTestimonial from 'components/layouts/FormWithTestimonial';
 
 const SEO_TITLE = 'Get a SaaS Backstage trial';
 

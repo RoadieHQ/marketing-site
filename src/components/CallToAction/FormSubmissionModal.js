@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextLink as Link, Button, Title } from 'components/tailwind';
+import { TextLink as Link, Button, Title } from 'components';
 import { ExternalLinkIcon } from '@heroicons/react/outline'
 import Modal, { modalStyles } from 'components/Modal';
 

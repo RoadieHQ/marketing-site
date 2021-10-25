@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Button, GrayBackgroundDotsPattern, Headline } from 'components/tailwind';
+import { Button, GrayBackgroundDotsPattern, Headline } from 'components';
 import { Helmet } from 'react-helmet';
-import { PlayIcon } from 'components/tailwind/icons';
+import { PlayIcon } from 'components/icons';
 
 import IntroToRoadieModal from './IntroToRoadieModal';
-import backstageScreenshot from '../../../../../content/assets/backstage-screenshot.png';
+import backstageScreenshot from '../../../../content/assets/backstage-screenshot.png';
 
 const SubTitle = ({ text }) => (
   <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">

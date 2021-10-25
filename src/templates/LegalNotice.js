@@ -6,9 +6,9 @@ import {
   TailwindHeadContent,
   SitewideHeader,
   SitewideFooter,
-} from 'components/tailwind';
-import { TableOfContentsSidebar } from 'components/tailwind/Sidebar';
-import { Sidebar } from 'components/tailwind/legal-notice';
+} from 'components';
+import { TableOfContentsSidebar } from 'components/Sidebar';
+import { Sidebar } from 'components/legal-notice';
 
 const LegalNotice = ({ data: { notice, site } }) => (
   <>

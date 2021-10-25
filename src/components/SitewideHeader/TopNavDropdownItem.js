@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react'
 import classnames from 'classnames';
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { Link } from 'components/tailwind';
+import { Link } from 'components';
 
 const DropdownNavItem = ({ item }) => (
   <Link

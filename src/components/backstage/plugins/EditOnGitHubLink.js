@@ -1,6 +1,6 @@
 import React from 'react';
-import TextLink from 'components/tailwind/TextLink';
-import editOnGitHubUrl from '../../../../editOnGitHubUrl';
+import TextLink from 'components/TextLink';
+import editOnGitHubUrl from '../../../editOnGitHubUrl';
 
 const EditOnGitHubLink = ({ siteMetadata, plugin: node }) => {
   return (

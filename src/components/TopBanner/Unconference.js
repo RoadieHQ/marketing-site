@@ -1,5 +1,5 @@
 import React from 'react';
-import unconferenceLogo from '../../../../content/assets/backstage-unconference.png';
+import unconferenceLogo from '../../../content/assets/backstage-unconference.png';
 import { Link } from 'components';
 
 const Unconference = () => (

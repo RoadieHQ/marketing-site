@@ -5,10 +5,10 @@ import {
   SitewideHeader,
   TailwindHeadContent,
   SitewideFooter,
-} from 'components/tailwind';
-import FormSubmissionModal from 'components/tailwind/CallToAction/FormSubmissionModal';
-import { RequestDemoCallToAction } from 'components/tailwind/CallToAction';
-import FormWithTestimonial from 'components/tailwind/layouts/FormWithTestimonial';
+} from 'components';
+import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
+import { RequestDemoCallToAction } from 'components/CallToAction';
+import FormWithTestimonial from 'components/layouts/FormWithTestimonial';
 
 const SEO_TITLE = 'Request a demo of Roadie Backstage';
 

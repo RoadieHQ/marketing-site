@@ -7,8 +7,8 @@ import {
   ShieldCheckIcon,
   AcademicCapIcon,
 } from '@heroicons/react/outline'
-import TopBanner from 'components/tailwind/TopBanner';
-import Unconference from 'components/tailwind/TopBanner/Unconference';
+import TopBanner from 'components/TopBanner';
+import Unconference from 'components/TopBanner/Unconference';
 
 import Logo from '../Logo';
 import TopNavItem from './TopNavItem';
