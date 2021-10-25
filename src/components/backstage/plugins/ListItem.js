@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Title } from 'components/tailwind';
+import { Link, Title } from 'components';
 
 import Logo from './Logo';
 import Attribution from './Attribution';

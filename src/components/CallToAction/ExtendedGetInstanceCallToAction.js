@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'components';
 import {
+  Link,
   Switch,
   Button,
   TextField,
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
-} from 'components/tailwind';
+} from 'components';
 
-import { FORM_NAMES } from '../../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../../environment';
+import { FORM_NAMES } from '../../contactFormConstants';
+import { currentlyExecutingGitBranch } from '../../environment';
 
 export const submitToNetlifyForms = async ({
   email,

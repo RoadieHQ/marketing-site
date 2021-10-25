@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lead, Headline, DotPattern, Title } from 'components/tailwind';
+import { Lead, Headline, DotPattern, Title } from 'components';
 import classnames from 'classnames';
 
 const FeatureBulletPoint = ({ item }) => (

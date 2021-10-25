@@ -4,11 +4,11 @@ import {
   TextField,
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
-} from 'components/tailwind';
+} from 'components';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
-import { FORM_NAMES } from '../../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../../environment';
+import { FORM_NAMES } from '../../contactFormConstants';
+import { currentlyExecutingGitBranch } from '../../environment';
 
 export const submitToNetlifyForms = async ({
   name,

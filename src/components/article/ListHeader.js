@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import CallToAction from 'components/actions/NetlifyFormCallToAction';
-import { Headline } from 'components/tailwind';
-import { SubscribeToNewsletterSuccessModal } from 'components/tailwind/CallToAction/SubscribeToNewsletter';
+import { Headline } from 'components';
+import {
+  SubscribeToNewsletterSuccessModal,
+  NetlifyFormCallToAction,
+} from 'components/CallToAction';
 
-import { FORM_NAMES } from '../../../contactFormConstants';
+import { FORM_NAMES } from '../../contactFormConstants';
 
 const SubscribeToNewsletter = ({ siteMetadata }) => {
   const [email, setEmail] = useState('');
@@ -24,13 +26,12 @@ const SubscribeToNewsletter = ({ siteMetadata }) => {
         email={email}
       />
 
-      <CallToAction
+      <NetlifyFormCallToAction
         setModalOpen={setModalOpen}
         buttonText="Subscribe"
         netlifyFormName={FORM_NAMES.subscribeToNewsletter}
         email={email}
         setEmail={setEmail}
-        formStyle="tailwind"
         className="md:justify-end"
       />
     </>

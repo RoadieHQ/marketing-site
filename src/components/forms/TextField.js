@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { HelpText } from 'components/tailwind';
+import { HelpText } from 'components';
 
 const TextField = ({
   id,

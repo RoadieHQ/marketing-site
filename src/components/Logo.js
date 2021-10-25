@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'components/tailwind';
-import { RoadieIcon } from 'components/tailwind/icons';
+import { Link } from 'components';
+import { RoadieIcon } from 'components/icons';
 
 const Logo = () => (
   <div className="flex justify-start lg:w-0 lg:flex-1">

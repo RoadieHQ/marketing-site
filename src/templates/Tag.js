@@ -6,8 +6,8 @@ import {
   SitewideFooter,
   TailwindHeadContent,
   Headline,
-} from 'components/tailwind';
-import { PostSummary } from 'components/tailwind/article';
+} from 'components';
+import { PostSummary } from 'components/article';
 
 const BlogIndex = ({ pageContext, data }) => {
   const { tag } = pageContext;

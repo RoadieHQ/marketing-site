@@ -4,7 +4,7 @@ import {
   SidebarSection,
   SidebarSectionList,
   SidebarItem,
-} from 'components/tailwind/Sidebar';
+} from 'components/Sidebar';
 
 const LegalNoticeSidebar = () => (
   <Sidebar sticky={true} side="left">

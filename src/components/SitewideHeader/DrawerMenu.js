@@ -10,7 +10,7 @@ import {
   NewspaperIcon,
   BriefcaseIcon,
 } from '@heroicons/react/outline'
-import { RoadieIcon } from 'components/tailwind/icons';
+import { RoadieIcon } from 'components/icons';
 
 import CloseMenuButton from './CloseMenuButton';
 import MobileFreeTrialButton from './MobileFreeTrialButton';

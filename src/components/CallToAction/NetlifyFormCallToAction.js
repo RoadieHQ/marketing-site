@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 
 import trackGoogleAnalyticsEvent from '../../googleAnalytics';
 import trackPlausibleEvent from '../../plausible';
-import EmailCaptureForm from 'components/actions/EmailCaptureForm';
-import TailwindEmailCaptureForm from 'components/tailwind/CallToAction/EmailCaptureForm';
+import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
@@ -57,7 +56,6 @@ const NetlifyFormCallToAction = ({
   autoFocus = false,
   email,
   setEmail,
-  formStyle = 'default',
   ...rest
 }) => {
   const [submitting, setSubmitting] = useState(false);
@@ -102,13 +100,6 @@ const NetlifyFormCallToAction = ({
     netlifyFormName: netlifyFormName,
     ...rest,
   };
-
-  // This is pretty hacky but allows me to avoid duplicating all the logic in this file into
-  // the tailwind directory. This complonent doesn't have any of it's own styling associated
-  // with it, it just happens to pass down logic to a styled component.
-  if (formStyle === 'tailwind') {
-    return <TailwindEmailCaptureForm {...propsToPass} />;
-  }
 
   return <EmailCaptureForm {...propsToPass} />;
 };

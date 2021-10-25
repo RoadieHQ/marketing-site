@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import Sidebar from './Sidebar';
 import { SidebarSection, SidebarSectionList } from './Section';
-import useScrollSpy from '../../../hooks/useScrollSpy';
+import useScrollSpy from '../../hooks/useScrollSpy';
 import Link from '../TextLink';
 
 const TableOfContentsSidebar = ({ headings, className }) => {

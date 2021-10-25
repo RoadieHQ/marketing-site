@@ -1,6 +1,6 @@
 import React from 'react';
 import isEmpty from 'lodash/isEmpty';
-import { Headline } from 'components/tailwind';
+import { Headline } from 'components';
 
 import Byline from './Byline';
 import Tags from './Tags';

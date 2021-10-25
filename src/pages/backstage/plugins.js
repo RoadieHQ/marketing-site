@@ -7,8 +7,8 @@ import {
   SitewideFooter,
   SEO,
   Headline,
-} from 'components/tailwind';
-import ListItem from 'components/tailwind/backstage/plugins/ListItem';
+} from 'components';
+import ListItem from 'components/backstage/plugins/ListItem';
 
 const BackstagePlugins = ({ data }) => {
   const {

@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import get from 'lodash/get';
 
-import { SEO, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components/tailwind';
-import { Attribution, TitleAndDescription, ListHeader } from 'components/tailwind/article';
+import { SEO, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components';
+import { Attribution, TitleAndDescription, ListHeader } from 'components/article';
 
 const CaseStudySummary = ({ study }) => {
   const logoBackgroundColor = get(study, 'frontmatter.logo.backgroundColor', null);

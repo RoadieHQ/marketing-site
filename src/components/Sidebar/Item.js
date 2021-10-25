@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'components/tailwind/TextLink';
+import Link from 'components/TextLink';
 
 const SidebarItem = ({ to, text, partiallyActive }) => (
   <li>

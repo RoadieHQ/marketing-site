@@ -6,7 +6,7 @@ import {
   SplitDiagonalPattern,
   Testimonial,
   Headline,
-} from 'components/tailwind';
+} from 'components';
 
 const FormWithTestimonial = ({
   title,

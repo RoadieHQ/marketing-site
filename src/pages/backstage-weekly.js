@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, Link, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components/tailwind';
-import { ListHeader, TitleAndDescription, PubDate } from 'components/tailwind/article';
-import HeadRssLink from 'components/blog/HeadRssLink';
+import { SEO, Link, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components';
+import { ListHeader, TitleAndDescription, PubDate, HeadRssLink } from 'components/article';
 
 const Issue = ({ post }) => (
   <div>

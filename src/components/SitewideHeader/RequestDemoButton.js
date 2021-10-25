@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'components/tailwind';
+import { Link } from 'components';
 
 const RequestDemoButton = () => (
   <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">

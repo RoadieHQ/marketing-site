@@ -1,5 +1,5 @@
 import React from 'react';
-import FormSubmissionModal from 'components/tailwind/CallToAction/FormSubmissionModal';
+import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
 const isScmToolSupported = (tool) => (
