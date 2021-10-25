@@ -59,7 +59,7 @@ const FeatureBlock = ({
         id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
       />
 
-      <div className={classnames('flex align-center justify-center')}>
+      <div className="flex align-center justify-center px-2 sm:px-0">
         {illustration}
       </div>
     </div>
