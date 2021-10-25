@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import {
   SEO,
   ContentHeader,
-  TailwindHeadContent,
   SitewideHeader,
   SitewideFooter,
 } from 'components';
@@ -34,7 +33,6 @@ const BlogPostTemplate = ({ data }) => {
       />
 
       <HeadRssLink />
-      <TailwindHeadContent />
 
       <SitewideHeader />
 

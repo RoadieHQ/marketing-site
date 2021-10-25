@@ -4,7 +4,6 @@ import {
   SEO,
   SitewideHeader,
   SitewideFooter,
-  TailwindHeadContent,
   Headline,
 } from 'components';
 import { PostSummary } from 'components/article';
@@ -23,7 +22,6 @@ const BlogIndex = ({ pageContext, data }) => {
         `}
       />
 
-      <TailwindHeadContent />
       <SitewideHeader />
 
       <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">

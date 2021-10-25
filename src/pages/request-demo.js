@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import {
-  SEO,
-  SitewideHeader,
-  TailwindHeadContent,
-  SitewideFooter,
-} from 'components';
+import { SEO, SitewideHeader, SitewideFooter } from 'components';
 import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import FormWithTestimonial from 'components/layouts/FormWithTestimonial';
@@ -41,7 +36,6 @@ const RequestDemo = ({ data, location }) => {
         title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get a demo of the SaaS Backstage experience from Roadie."
       />
-      <TailwindHeadContent />
 
       <SubmissionSuccessModal
         handleCloseModal={handleCloseModal}

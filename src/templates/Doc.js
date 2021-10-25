@@ -6,7 +6,6 @@ import {
   ContentHeader,
   SitewideHeader,
   SitewideFooter,
-  TailwindHeadContent,
 } from 'components';
 import { TableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/doc';
@@ -23,8 +22,6 @@ const Doc = ({
       title={`${doc.frontmatter.title} | ${siteMetadata.title}`}
       description={doc.frontmatter.description}
     />
-    <TailwindHeadContent />
-
     <SitewideHeader maxWidth="full" />
 
     <main className="md:flex pt-4 md:pt-0">

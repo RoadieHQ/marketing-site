@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import {
   SEO,
   ContentHeader,
-  TailwindHeadContent,
   SitewideHeader,
   SitewideFooter,
 } from 'components';
@@ -16,7 +15,6 @@ const LegalNotice = ({ data: { notice, site } }) => (
       title={`${notice.frontmatter.title} | ${site.siteMetadata.title}`}
       description={notice.frontmatter.description}
     />
-    <TailwindHeadContent />
 
     <SitewideHeader maxWidth="full" />
 

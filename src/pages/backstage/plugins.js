@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 
 import {
   SitewideHeader,
-  TailwindHeadContent,
   SitewideFooter,
   SEO,
   Headline,
@@ -39,7 +38,6 @@ const BackstagePlugins = ({ data }) => {
         title={`Backstage Plugins Directory - All plugins | ${title}`}
         description="A comprehensive list of Backstage plugins. With screenshots, installation instructions and usage guides."
       />
-      <TailwindHeadContent />
 
       <SitewideHeader />
 

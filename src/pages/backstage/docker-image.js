@@ -4,7 +4,6 @@ import Prism from 'prismjs';
 
 import {
   SEO,
-  TailwindHeadContent,
   SitewideFooter,
   SitewideHeader,
   ContentHeader,
@@ -27,7 +26,6 @@ const BackstageDocker = ({ data }) => {
           Want to try out Backstage without any setup? Use our Backstage Docker image to get started quickly.
         `}
       />
-      <TailwindHeadContent />
 
       <SitewideHeader />
       <ContentHeader frontmatter={{ title: 'Backstage Docker Image' }} />
