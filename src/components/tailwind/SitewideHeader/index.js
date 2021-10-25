@@ -51,7 +51,7 @@ const SitewideHeader = ({ maxWidth = '7xl' }) => {
         <Unconference />
       </TopBanner>
 
-      <Popover className="relative bg-white z-10">
+      <Popover className="relative bg-white z-20">
         <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
           <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
 
