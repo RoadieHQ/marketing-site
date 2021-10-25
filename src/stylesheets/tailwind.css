@@ -9,22 +9,6 @@
  *
  */
 
-/*
- * Removing some of the styling added in head-loaded-styles.css. They are not needed because
- * tailwind has it's own reset and we are breaking it in head-loaded-styles.css
- *
- * The selctors here can be deleted once we are fully moved over to tailwind.
- */
-
-html {
-  font-size: 16px;
-}
-
-body {
-  font-size: 16px;
-  font-family: 'Inter var', sans-serif;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,23 +24,10 @@ body {
 }
 
 /*
- * The defualt prism styling loaded in gatsby-browser.js sets the pre and code font sizes to
- * 1.4rem. Combined with the styling in head-loaded-styles.css, this looks huge on the page.
- * This CSS below forces a more reasonable font-size in code blocks.
- *
- * !important is needed to override the styling in head-loaded-styles.css. Once we cut over
- * completely to Tailwind, the head-loaded-styles.css file will disappear completely and this
- * CSS rule can go with it
- */
-pre, code {
-  font-size: 13px !important;
-}
-
-/*
  * Prevent the tailwind-typography from messing up code blocks which have already been
  * styled by the prism.css theme which is loaded in gatsby-browser.
- */
 .prose pre {
   color: black;
   background-color: #f5f2f0;
 }
+ */

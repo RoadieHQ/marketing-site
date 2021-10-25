@@ -8,12 +8,6 @@
  * The dev server needs restarting to pick up changes in this file.
  */
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @font-face {
   font-family: Soehne;
   font-style: normal;
@@ -31,33 +25,9 @@
   src: url(/fonts/soehne/soehne-web-halbfett.woff2) format('woff2');
 }
 
-html {
-  width: 100%;
-  height: 100%;
-
-  font-size: 63.5%;
-  scroll-behavior: smooth;
-}
-
 body, #___gatsby, #gatsby-focus-wrapper {
   width: 100%;
   height: 100%;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: Soehne, sans-serif;
-  font-weight: 400;
-  font-kerning: normal;
-  color: hsla(0, 0%, 0%, 0.9);
-}
-
-@font-face {
-  font-family: LuloCleanOutline;
-  font-style: normal;
-  font-display: block;
-  font-weight: 700;
-  src: url(/fonts/lulo-clean/LuloCleanOutline-Bold.ttf);
 }
 
 @font-face {
@@ -66,19 +36,4 @@ body {
   font-display: swap;
   font-weight: 400;
   src: url(/fonts/soehne/soehne-mono-web-buch.woff2) format('woff2');
-}
-
-.typography-logo {
-  font-family: LuloCleanOutline;
-  font-weight: 700;
-}
-
-.typography-mono {
-  font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-weight: 400;
-}
-
-.typography-mono::placeholder {
-  font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-weight: 400;
 }

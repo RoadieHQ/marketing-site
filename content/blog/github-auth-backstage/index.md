@@ -34,13 +34,13 @@ Enter the following values:
 
 <dl>
   <dt>Application name</dt>
-  <dd class="typography-mono">Backstage local development</dd>
+  <dd class="font-mono">Backstage local development</dd>
   <dt>Homepage URL</dt>
-  <dd class="typography-mono">http://localhost:3000</dd>
+  <dd class="font-mono">http://localhost:3000</dd>
   <dt>Application description</dt>
-  <dd class="typography-mono">Login to Backstage on localhost</dd>
+  <dd class="font-mono">Login to Backstage on localhost</dd>
   <dt>Authorization callback URL</dt>
-  <dd class="typography-mono">http://localhost:7000/api/auth/github/handler/frame</dd>
+  <dd class="font-mono">http://localhost:7000/api/auth/github/handler/frame</dd>
 </dl>
 
 Your form should now look something like this:
