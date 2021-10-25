@@ -1,52 +1,22 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
 import isEmpty from 'lodash/isEmpty';
 import kebabCase from 'lodash/kebabCase';
 import { Link } from 'components';
 
-const useStyles = createUseStyles((theme) => ({
-  tag: {
-    backgroundColor: theme.palette.grey[200],
-    paddingTop: 2,
-    paddingBottom: 2,
-    paddingLeft: 8,
-    paddingRight: 8,
-    borderRadius: 4,
-    marginRight: 8,
-    marginBottom: 4,
-    display: 'inline-block',
-  },
-
-  link: {
-    textDecoration: 'none',
-    color: theme.palette.text.secondary,
-    outline: 'none',
-    cursor: 'pointer',
-
-    '&:hover': {
-      color: theme.palette.text.primary,
-    },
-
-    '&:visited': {
-      color: theme.palette.text.secondary,
-    },
-  },
-}));
-
 const Tags = ({ tags }) => {
-  const classes = useStyles();
-
   if (isEmpty(tags)) return null;
 
   return (
     <>
       {tags.map((tag) => {
         return (
-          <span className={classes.tag} key={tag}>
-            <Link to={`/tags/${kebabCase(tag)}/`} className={classes.link}>
+          <Link to={`/tailwind/tags/${kebabCase(tag)}/`} className="inline-block" key={tag}>
+            <span
+              className="bg-primary-100 text-primary-800 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium mr-2"
+            >
               {tag.toLowerCase()}
-            </Link>
-          </span>
+            </span>
+          </Link>
         );
       })}
     </>

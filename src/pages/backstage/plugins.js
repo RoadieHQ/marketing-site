@@ -1,63 +1,22 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
 
-import ListItem from 'components/backstage/plugins/ListItem';
-import { SEO, StickyFooter, PageMargins } from 'components';
+import {
+  SitewideHeader,
+  TailwindHeadContent,
+  SitewideFooter,
+  SEO,
+  Headline,
+} from 'components/tailwind';
+import ListItem from 'components/tailwind/backstage/plugins/ListItem';
 
-const GRID_GAP = '1rem';
-
-const useStyles = createUseStyles((theme) => ({
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    fontSize: '1rem',
-    marginBottom: GRID_GAP,
-  },
-
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-    gridGap: GRID_GAP,
-  },
-
-  input: {
-    backgroundColor: theme.palette.grey[100],
-    color: theme.palette.secondary.dark,
-    border: `1px solid ${theme.palette.grey[300]}`,
-
-    lineHeight: 2,
-    padding: '0.1rem 0.5rem',
-
-    '&:focus': {
-      outlineWidth: 1,
-      outlineStyle: 'solid',
-      outlineColor: theme.palette.grey[500],
-    },
-
-    '&::placeholder': {
-      color: theme.palette.secondary.light,
-      opacity: 0.5,
-      lineHeight: 2,
-    },
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    header: {
-      fontSize: 'inherit',
-    },
-  },
-}));
-
-const BackstagePlugins = ({ data, location }) => {
+const BackstagePlugins = ({ data }) => {
   const {
     plugins,
     site: {
       siteMetadata: { title },
     },
   } = data;
-  const classes = useStyles();
 
   const [query, setQuery] = useState('');
 
@@ -80,11 +39,16 @@ const BackstagePlugins = ({ data, location }) => {
         title={`Backstage Plugins Directory - All plugins | ${title}`}
         description="A comprehensive list of Backstage plugins. With screenshots, installation instructions and usage guides."
       />
+      <TailwindHeadContent />
 
-      <StickyFooter location={location} headerBottomBorder={false}>
-        <PageMargins>
-          <header className={classes.header}>
-            <h1>Backstage plugins</h1>
+      <SitewideHeader />
+
+      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+          <div className="lg:flex justify-between items-center">
+            <div className="sm:mb-6 lg:mb-0">
+              <Headline>Backstage plugins</Headline>
+            </div>
 
             <form>
               <input
@@ -92,19 +56,21 @@ const BackstagePlugins = ({ data, location }) => {
                 onChange={onInputChange}
                 value={query}
                 aria-label="Search"
-                className={classes.input}
+                className="bg-gray-100 color-gray-800 border-2 border-gray-300 sm:w-full lg:w-56 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Search"
               />
             </form>
-          </header>
+          </div>
 
-          <div className={classes.grid}>
+          <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
             {filteredPlugins.map(({ node: { fields, frontmatter } }) => (
               <ListItem frontmatter={frontmatter} fields={fields} key={fields.slug} />
             ))}
           </div>
-        </PageMargins>
-      </StickyFooter>
+        </div>
+      </div>
+
+      <SitewideFooter />
     </>
   );
 };

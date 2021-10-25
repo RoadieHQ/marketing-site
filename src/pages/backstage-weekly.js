@@ -1,54 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
 
-import { Lead, SEO, StickyFooter, InterstitialTitle, PageMargins } from 'components';
-import PostSummary from 'components/blog/PostSummary';
-import CallToAction from 'components/actions/NetlifyFormCallToAction';
+import { SEO, Link, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components/tailwind';
+import { ListHeader, TitleAndDescription, PubDate } from 'components/tailwind/article';
 import HeadRssLink from 'components/blog/HeadRssLink';
-import { SubscribeToNewsletterSuccessModal } from 'components/actions/SubscribeToNewsletter';
 
-import { FORM_NAMES } from '../contactFormConstants';
-import roadieRLogo from '../../content/assets/roadie-r-764x764.png';
+const Issue = ({ post }) => (
+  <div>
+    <p className="text-sm text-gray-500">
+      <PubDate post={post} />
+    </p>
 
-const useStyles = createUseStyles(() => ({
-  logo: {
-    height: 100,
-  },
+    <TitleAndDescription post={post} />
 
-  center: {
-    textAlign: 'center',
-  },
+    <div className="mt-3">
+      <Link
+        to={`/tailwind${post.fields.slug}`}
+        className="text-base font-semibold text-primary-600 hover:text-primary-500"
+      >
+        Read this issue
+      </Link>
+    </div>
+  </div>
+);
 
-  callToActionWrapper: {
-    paddingTop: 40,
-    paddingBottom: 180,
-  },
-
-  callToActionParagraph: {
-    marginBottom: 40,
-    marginTop: 0,
-  },
-
-  summaryWrapper: {
-    marginBottom: '4em',
-  },
-}));
-
-const MAX_WIDTH_BREAKPOINT = 'md';
-
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   const siteTitle = data.site.siteMetadata.title;
-  const classes = useStyles();
-
-  const [email, setEmail] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
-    setEmail('');
-  };
 
   return (
     <>
@@ -59,51 +37,29 @@ const BlogIndex = ({ data, location }) => {
           releases and changes in this service catalog from Spotify.
         `}
       />
-
       <HeadRssLink />
+      <TailwindHeadContent />
 
-      <SubscribeToNewsletterSuccessModal
-        modalOpen={modalOpen}
-        handleCloseModal={handleCloseModal}
-        siteMetadata={data.site.siteMetadata}
-        email={email}
-      />
+      <SitewideHeader />
 
-      <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <PageMargins>
-          <div className={classes.callToActionWrapper}>
-            <div className={classes.center}>
-              <img alt="The Roadie logo" src={roadieRLogo} className={classes.logo} />
-              <InterstitialTitle text="Roadie's Backstage Weekly Newsletter" />
+      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+          <ListHeader
+            title="Backstage Weekly"
+            description="Get the latest news, deep dives into Backstage features, and a roundup of recent open-source action."
+            subscribeToNewsletter={true}
+            siteMetadata={data.site.siteMetadata}
+          />
 
-              <p className={classes.callToActionParagraph}>
-                Get the latest news, deep dives into Backstage features, and a roundup of recent
-                open-source action. Track the project without having to watch the GitHub repo.
-              </p>
-            </div>
-
-            {/* I feel this is ok, since subscribing to the newsletter is one of a very
-                small number of actions the user can take on this particular page */}
-            {/* eslint-disable jsx-a11y/no-autofocus */}
-            <CallToAction
-              setModalOpen={setModalOpen}
-              buttonText="Subscribe"
-              netlifyFormName={FORM_NAMES.subscribeToNewsletter}
-              autoFocus={true}
-              email={email}
-              setEmail={setEmail}
-            />
-            {/* eslint-enable jsx-a11y/no-autofocus */}
+          <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+            {posts.map(({ node }) => (
+              <Issue key={node.fields.slug} post={node} />
+            ))}
           </div>
+        </div>
+      </div>
 
-          <Lead>Previous editions</Lead>
-          {posts.map(({ node }) => (
-            <div className={classes.summaryWrapper} key={node.fields.slug}>
-              <PostSummary post={node} />
-            </div>
-          ))}
-        </PageMargins>
-      </StickyFooter>
+      <SitewideFooter />
     </>
   );
 };

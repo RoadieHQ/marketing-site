@@ -1,100 +1,70 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
 import { Link } from 'components';
 import classnames from 'classnames';
 
-const useStyles = createUseStyles((theme) => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-
-    width: ({ fullWidth }) => {
-      if (fullWidth) return '100%';
-      return 'fit-content';
-    },
-
-    color: ({ color }) => {
-      if (color === 'primary') return theme.palette.grey[100];
-      return theme.palette.text.primary;
-    },
-
-    whiteSpace: 'nowrap',
-    cursor: 'pointer',
-    userSelect: 'none',
-    border: 'none',
-    backgroundColor: ({ color }) => {
-      if (color === 'primary') return theme.palette.primary.main;
-      return theme.palette.grey[300];
-    },
-
-    textDecoration: 'none',
-
-    borderRadius: 0,
-    padding: '1rem 0.8rem',
-    fontSize: '2rem',
-
-    '&:hover': ({ color }) => {
-      if (color === 'primary') return theme.palette.primary.light;
-      return theme.palette.grey[600];
-    },
-
-    '&:focus': {
-      outline: 'none',
-      boxShadow: `inset 0 1px 0 rgba(0, 0, 0, .15), 0 1px 1px rgba(${theme.palette.grey[900]}, .075)`,
-    },
-
-    '&:active': {
-      boxShadow: `inset 0 3px 5px rgba(${theme.palette.grey[900]}, .125)`,
-    },
-
-    '&:disabled': {
-      backgroundColor: theme.palette.grey[300],
-      color: theme.palette.grey[500],
-    },
-  },
-
-  prefixIconWrapper: {
-    marginRight: 10,
-    verticalAlign: 'middle',
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    root: {
-      lineHeight: 2,
-      padding: 10,
-    },
-  },
-}));
-
 const Button = ({
-  icon,
   fullWidth = false,
   text = 'Submit',
   link = false,
-  color = 'default',
+  color = 'primary',
   className = {},
+  size = 'medium',
+  icon,
   ...props
 }) => {
-  const classes = useStyles({ color, fullWidth });
+  const baseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md';
+  const buttonBaseClassName = 'shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const primaryBaseClass = 'text-white bg-primary-600 hover:bg-primary-700';
+  const secondaryBaseClass = 'text-primary-600 bg-white hover:bg-gray-50';
+  const insetBaseClass = 'text-primary-700 bg-primary-100 hover:bg-primary-200';
 
-  let prefixIcon;
-  if (icon) {
-    prefixIcon = <span className={classes.prefixIconWrapper}>{icon}</span>;
-  }
+  const smallBaseClass = 'px-3 py-1';
+  const mediumBaseClass = 'px-5 py-3';
+  const largeBaseClass = 'px-8 py-3 md:py-4 md:text-lg md:px-10';
+
+  const prefixIcon = icon && <span className="mr-2 w-6">{icon}</span>;
 
   if (link) {
     return (
-      <Link className={classnames('typography-mono', classes.root, className.root)} {...props}>
-        {prefixIcon}
-        <span>{text}</span>
-      </Link>
+      <div className={classnames({
+        'rounded-md shadow': color === 'primary' || color === 'secondary',
+      })}>
+        <Link
+          className={
+            classnames(baseClassName, {
+              [primaryBaseClass]: color === 'primary',
+              [secondaryBaseClass]: color === 'secondary',
+              [insetBaseClass]: color === 'inset',
+              [smallBaseClass]: size === 'small',
+              [mediumBaseClass]: size === 'medium',
+              [largeBaseClass]: size === 'large',
+              'w-full': fullWidth === true,
+            }, className.root)
+          }
+          {...props}
+        >
+          {prefixIcon}
+          {text}
+        </Link>
+      </div>
     );
   }
 
   return (
-    <button className={classnames('typography-mono', classes.root, className.root)} {...props}>
+    <button
+      className={classnames(baseClassName, buttonBaseClassName, {
+        [`${primaryBaseClass} focus:ring-primary-500`]: color === 'primary',
+        [secondaryBaseClass]: color === 'secondary',
+        [insetBaseClass]: color === 'inset',
+        [smallBaseClass]: size === 'small',
+        [mediumBaseClass]: size === 'medium',
+        [largeBaseClass]: size === 'large',
+        'w-full': fullWidth === true,
+      }, className.root)}
+      {...props}
+    >
       {prefixIcon}
-      <span>{text}</span>
+      {text}
     </button>
   );
 };

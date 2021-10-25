@@ -1,75 +1,50 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
-import { SEO, StickyFooter, ContentHeader, PageMargins } from 'components';
-import { TableOfContentsSidebar } from 'components/Sidebar';
-import { Sidebar } from 'components/legal-notice';
+import {
+  SEO,
+  ContentHeader,
+  TailwindHeadContent,
+  SitewideHeader,
+  SitewideFooter,
+} from 'components/tailwind';
+import { TableOfContentsSidebar } from 'components/tailwind/Sidebar';
+import { Sidebar } from 'components/tailwind/legal-notice';
 
-const useStyles = createUseStyles((theme) => ({
-  content: theme.preMadeStyles.content,
+const LegalNotice = ({ data: { notice, site } }) => (
+  <>
+    <SEO
+      title={`${notice.frontmatter.title} | ${site.siteMetadata.title}`}
+      description={notice.frontmatter.description}
+    />
+    <TailwindHeadContent />
 
-  main: {},
-  article: {},
-  tocSidebar: {},
+    <SitewideHeader maxWidth="full" />
 
-  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    article: {
-      paddingTop: 32,
-      paddingLeft: 32,
-      paddingRight: 32,
-      flex: 1,
-    },
+    <main className="md:flex pt-4 md:pt-0">
+      <Sidebar />
 
-    main: {
-      display: 'flex',
-    },
+      <article className="px-2 md:px-6 md:pt-7 md:flex-1">
+        <div className="mb-8">
+          <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
+        </div>
 
-    tocSidebar: {
-      minWidth: '25%',
-      // The table of contents can get very long on the Terms of Service page.
-      overflowY: 'auto',
-      maxWidth: '25%',
-    },
-  },
-}));
+        <section
+          className="prose prose-primary"
+          dangerouslySetInnerHTML={{ __html: notice.html }}
+        />
+      </article>
 
-const LegalNotice = ({ data: { notice, site }, location }) => {
-  const siteTitle = site.siteMetadata.title;
-  const classes = useStyles();
+      <TableOfContentsSidebar headings={notice.headings} />
+    </main>
 
-  return (
-    <>
-      <SEO
-        title={`${notice.frontmatter.title} | ${siteTitle}`}
-        description={notice.frontmatter.description}
-      />
-
-      <StickyFooter location={location} maxWidthBreakpoint="none">
-        <PageMargins>
-          <main className={classes.main}>
-            <Sidebar />
-
-            <article className={classes.article}>
-              <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
-
-              <section
-                className={classes.content}
-                dangerouslySetInnerHTML={{ __html: notice.html }}
-              />
-            </article>
-
-            <TableOfContentsSidebar headings={notice.headings} className={classes.tocSidebar} />
-          </main>
-        </PageMargins>
-      </StickyFooter>
-    </>
-  );
-};
+    <SitewideFooter maxWidth="full" />
+  </>
+);
 
 export default LegalNotice;
 
 export const pageQuery = graphql`
-  query LegalNoticeBySlug($slug: String!) {
+  query TailwindLegalNoticeBySlug($slug: String!) {
     site {
       siteMetadata {
         title

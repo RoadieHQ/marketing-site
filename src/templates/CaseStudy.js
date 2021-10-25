@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
 
-import { SEO, ContentHeader, StickyFooter, PageMargins } from 'components';
+import {
+  SEO,
+  ContentHeader,
+  TailwindHeadContent,
+  SitewideHeader,
+  SitewideFooter,
+} from 'components/tailwind';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
-} from 'components/actions/SubscribeToNewsletter';
+} from 'components/tailwind/CallToAction/SubscribeToNewsletter';
 
-const useStyles = createUseStyles((theme) => ({
-  main: theme.preMadeStyles.content,
-}));
-
-const MAX_WIDTH_BREAKPOINT = 'md';
-
-const CaseStudyTemplate = ({ data, location }) => {
+const CaseStudyTemplate = ({ data }) => {
   const post = data.markdownRemark;
-  const classes = useStyles();
   const { title: siteTitle } = data.site.siteMetadata;
 
   const [email, setEmail] = useState('');
@@ -33,6 +31,9 @@ const CaseStudyTemplate = ({ data, location }) => {
         title={`${post.frontmatter.title} | ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt}
       />
+      <TailwindHeadContent />
+
+      <SitewideHeader />
 
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
@@ -41,22 +42,31 @@ const CaseStudyTemplate = ({ data, location }) => {
         email={email}
       />
 
-      <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <PageMargins>
-          <main>
-            <article>
-              <ContentHeader frontmatter={post.frontmatter} />
-              <section className={classes.main} dangerouslySetInnerHTML={{ __html: post.html }} />
-            </article>
-          </main>
+      <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
+        <article className="relative max-w-lg mx-auto lg:max-w-2xl mb-24">
+          <div className="mb-8">
+            <ContentHeader frontmatter={post.frontmatter} />
+          </div>
 
+          <section
+            className="prose prose-primary max-w-none"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </article>
+
+        <div className="relative max-w-lg mx-auto lg:max-w-2xl">
           <SubscribeToNewsletterCTA
             setModalOpen={setModalOpen}
             email={email}
             setEmail={setEmail}
           />
-        </PageMargins>
-      </StickyFooter>
+        </div>
+      </main>
+
+      <div className="pt-4 pb-8 px-4 md:mb-24">
+      </div>
+
+      <SitewideFooter />
     </>
   );
 };
@@ -64,7 +74,7 @@ const CaseStudyTemplate = ({ data, location }) => {
 export default CaseStudyTemplate; 
 
 export const pageQuery = graphql`
-  query CaseStudyBySlug($slug: String!) {
+  query TailwindCaseStudyBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -78,6 +88,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+
       frontmatter {
         title
         date

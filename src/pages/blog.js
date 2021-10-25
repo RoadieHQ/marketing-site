@@ -1,27 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, StickyFooter, PageMargins } from 'components';
-import PostSummary from 'components/blog/PostSummary';
+import { SEO, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components/tailwind';
 import HeadRssLink from 'components/blog/HeadRssLink';
-import { createUseStyles } from 'react-jss';
+import { PostSummary, ListHeader } from 'components/tailwind/article';
 
-const useStyles = createUseStyles(() => ({
-  header: {
-    marginBottom: '3em',
-  },
-
-  summaryWrapper: {
-    marginBottom: '3em',
-  },
-}));
-
-const MAX_WIDTH_BREAKPOINT = 'md';
-
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   const siteTitle = data.site.siteMetadata.title;
-  const classes = useStyles();
 
   return (
     <>
@@ -34,20 +20,22 @@ const BlogIndex = ({ data, location }) => {
       />
 
       <HeadRssLink />
+      <TailwindHeadContent />
+      <SitewideHeader />
 
-      <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <PageMargins>
-          <header className={classes.header}>
-            <h2>Blog</h2>
-          </header>
+      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="relative max-w-lg mx-auto lg:max-w-7xl">
+          <ListHeader title="Blog" />
 
-          {posts.map(({ node }) => (
-            <div className={classes.summaryWrapper} key={node.fields.slug}>
-              <PostSummary post={node} />
-            </div>
-          ))}
-        </PageMargins>
-      </StickyFooter>
+          <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+            {posts.map(({ node }) => (
+              <PostSummary key={node.fields.slug} post={node} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <SitewideFooter />
     </>
   );
 };
@@ -63,6 +51,8 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
+          timeToRead
+
           fields {
             slug
           }
@@ -73,8 +63,14 @@ export const pageQuery = graphql`
             description
             lastValidated
             tags
+
             author {
               name
+              avatar {
+                childImageSharp {
+                  gatsbyImageData(layout: FIXED, width: 40)
+                }
+              }
             }
           }
         }

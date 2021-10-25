@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { Button, TextField, Checkbox, TextLink as Link, Fieldset } from 'components';
-import ScmToolRadioGroup from 'components/forms/ScmToolRadioGroup';
+import { Link } from 'components';
+import {
+  Switch,
+  Button,
+  TextField,
+  SubscribeToNewsletterSwitch,
+  ScmToolRadioGroup,
+} from 'components/tailwind';
 
-import { FORM_NAMES } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { FORM_NAMES } from '../../../contactFormConstants';
+import { currentlyExecutingGitBranch } from '../../../environment';
 
 export const submitToNetlifyForms = async ({
   email,
@@ -43,6 +49,7 @@ const ExtendedGetInstanceCallToAction = ({
   setScmTool,
 }) => {
   const [subToNewsletter, setSubToNewsletter] = useState(true);
+  const [agreed, setAgreed] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
@@ -78,49 +85,71 @@ const ExtendedGetInstanceCallToAction = ({
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
       <input type="hidden" name="form-name" value={netlifyFormName} />
       <input type="hidden" name="submit-button-label" value={buttonText} />
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
-      <Fieldset>
-        <TextField
-          label="Work email address *"
-          type="email"
-          name="email"
-          id="get-instance-email-input"
-          onChange={setEmail}
-          value={email}
-          fullWidth
-          helpText="Your account details will be sent to this address"
+      <TextField
+        id="get-instance-email-input"
+        label="Work email address *"
+        name="email"
+        type="email"
+        autoComplete="email"
+        fullWidth={true}
+        onChange={setEmail}
+        value={email}
+      />
+
+      <ScmToolRadioGroup
+        onChange={setScmTool}
+        currentValue={scmTool}
+        idPrefix="get-instance-"
+      />
+
+      <SubscribeToNewsletterSwitch
+        checked={subToNewsletter}
+        onChange={setSubToNewsletter}
+        idPrefix="get-instance-"
+      />
+
+      <div className="sm:col-span-2">
+        <div className="flex items-start">
+          <div className="flex-shrink-0">
+            <Switch
+              checked={agreed}
+              onChange={setAgreed}
+              srTitle="Agree to policies"
+            />
+          </div>
+
+          <div className="ml-3">
+            <p className="text-base text-gray-500">
+              By selecting this, you agree to our{' '}
+              <Link to="/legal-notices/evaluation-license/" className="font-medium text-gray-700 underline">
+                Evaluation License
+              </Link>{' '}
+              and acknowledge you have read our{' '}
+              <Link to="/legal-notices/privacy-policy/" className="font-medium text-gray-700 underline">
+                Privacy Policy
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="sm:col-span-2">
+        <Button
+          type="submit"
+          color="primary"
+          size="large"
+          fullWidth={true}
+          text={buttonText}
+          disabled={disabled}
         />
-      </Fieldset>
-
-      <Fieldset>
-        <ScmToolRadioGroup
-          onChange={setScmTool}
-          currentValue={scmTool}
-          idPrefix="get-instance-"
-        />
-      </Fieldset>
-
-      <Fieldset>
-        <Checkbox
-          name="sub-to-newsletter"
-          label="Subscribe me to the Backstage Weekly newsletter."
-          checked={subToNewsletter}
-          onChange={setSubToNewsletter}
-          id="get-instance-sub-to-newsletter-input"
-        />
-      </Fieldset>
-
-      <Fieldset>
-        <p>By submitting this form, you automatically agree to our <Link color="primary" to="/legal-notices/evaluation-licence/">Evaluation License</Link> and acknowledge you have read our <Link color="primary" to="/legal-notices/privacy-policy/">Privacy Policy</Link>.</p>
-      </Fieldset>
-
-      <Fieldset>
-        <Button color="primary" text={buttonText} disabled={disabled} />
-      </Fieldset>
+      </div>
     </form>
   );
 };

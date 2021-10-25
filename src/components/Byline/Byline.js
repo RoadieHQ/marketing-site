@@ -2,13 +2,6 @@ import React from 'react';
 import format from 'date-fns/format';
 import formatDistance from 'date-fns/formatDistance';
 import has from 'lodash/has';
-import { createUseStyles } from 'react-jss';
-
-const useStyles = createUseStyles(() => ({
-  root: {
-    color: 'hsl(205deg 6% 46%);',
-  },
-}));
 
 const Byline = ({
   frontmatter,
@@ -16,7 +9,6 @@ const Byline = ({
   showLastValidated = false,
   dateKey = 'date',
 }) => {
-  const classes = useStyles();
   const FORMAT_TOKEN = 'MMMM do, yyyy';
   if (!has(frontmatter, dateKey)) return null;
   const date = frontmatter[dateKey];
@@ -47,7 +39,7 @@ const Byline = ({
     text += ` by ${frontmatter.author.name}`;
   }
 
-  return <span className={classes.root}>{text}</span>;
+  return <span className="text-gray-400">{text}</span>;
 };
 
 export default Byline;

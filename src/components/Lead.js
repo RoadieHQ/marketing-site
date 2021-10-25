@@ -1,29 +1,14 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-import theme from '../theme';
-
-const useStyles = createUseStyles(() => ({
-  root: {
-    fontSize: '1.6rem',
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    root: {
-      fontSize: '1.8rem',
-      lineHeight: 1.7,
-    },
-  },
-}));
-
-const DEFAULT_COLOR = theme.palette.text.primary;
-
-const Lead = ({ className, children, color = DEFAULT_COLOR }) => {
-  const classes = useStyles();
+const Lead = ({ className, children, size = 'medium', ...rest }) => {
+  const rootClassName = classnames('text-gray-500', {
+    'text-base': size === 'small',
+    'text-lg md:text-xl': size === 'medium',
+  }, className);
 
   return (
-    <p className={classnames(classes.root, className)} style={{ color }}>
+    <p className={rootClassName} {...rest}>
       {children}
     </p>
   );

@@ -1,23 +1,32 @@
-export { default as LayoutControl } from './LayoutControl';
+export {
+  Switch,
+  Radio,
+  TextField,
+  Button,
+  HelpText,
+  SubscribeToNewsletterSwitch,
+  ScmToolRadioGroup,
+} from './forms';
 export { default as SitewideHeader } from './SitewideHeader';
-export { default as SitewideFooter } from './SitewideFooter';
-export { default as StickyFooter } from './layouts/StickyFooter';
-export { default as PageMargins } from './layouts/PageMargins';
-
-export { default as SEO } from './seo';
-
-export { default as Headline } from './Headline';
 export { default as Lead } from './Lead';
-export { default as InterstitialTitle } from './InterstitialTitle';
-
-export { default as CodeBlock } from './CodeBlock';
-export { default as TwoColumnPoints } from './TwoColumnPoints';
-export { default as UnorderedList } from './UnorderedList';
-export { default as OrderedList } from './OrderedList';
-export { default as Link } from './Link';
-export { default as TwoColumnLayout } from './TwoColumnLayout';
-export { default as ResponsiveSpacer } from './ResponsiveSpacer';
+export { default as Headline } from './Headline';
 export { default as TextLink } from './TextLink';
+export { default as ResponsiveSpacer } from './ResponsiveSpacer';
+export { default as Title } from './Title';
+export { default as CodeBlock } from './CodeBlock';
+export { default as TopBanner } from './TopBanner';
+export {
+  DotPattern,
+  SplitDiagonalPattern,
+  HighSideAnglePattern,
+  LowSideAnglePattern,
+  GrayBackgroundDotsPattern,
+} from './patterns';
 export { default as ContentHeader } from './ContentHeader';
-export { Radio, TextField, Button, Checkbox, HelpText, Fieldset } from './forms';
-export { ButtonLinkCallToAction } from './CallToAction';
+export { default as SitewideFooter } from './SitewideFooter';
+export { default as TailwindHeadContent } from './HeadContent';
+export { default as Tags } from './Tags';
+export { default as Testimonial } from './Testimonial';
+// Including here for convenience when importing
+export { default as SEO } from '../seo';
+export { default as Link } from '../Link';

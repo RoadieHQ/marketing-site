@@ -1,25 +1,13 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
 import classnames from 'classnames';
 
-const useStyles = createUseStyles((theme) => ({
-  root: {
-    fontSize: '1.2rem',
-    color: theme.palette.grey[600],
-    minHeight: 16,
-  },
-
-  'state-error': {
-    color: theme.palette.deepOrange[700],
-  },
-}));
-
 const HelpText = ({ className, state, message }) => {
-  const classes = useStyles();
-  const stateClass = `state-${state}` in classes && classes[`state-${state}`];
+  const rootClassName = classnames('text-gray-400 text-sm', {
+    'color-orange-700': state === 'error',
+  }, className);
 
   return (
-    <div className={classnames(classes.root, stateClass, className)}>
+    <div className={rootClassName}>
       {message}
     </div>
   );

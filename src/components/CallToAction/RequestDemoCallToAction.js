@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { Button, TextField, Checkbox, Fieldset } from 'components';
-import ScmToolRadioGroup, { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
+import {
+  Button,
+  TextField,
+  SubscribeToNewsletterSwitch,
+  ScmToolRadioGroup,
+} from 'components/tailwind';
+import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
-import { FORM_NAMES } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { FORM_NAMES } from '../../../contactFormConstants';
+import { currentlyExecutingGitBranch } from '../../../environment';
 
 export const submitToNetlifyForms = async ({
   name,
@@ -85,56 +90,54 @@ const RequestDemoCallToAction = ({
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
       <input type="hidden" name="form-name" value={netlifyFormName} />
       <input type="hidden" name="submit-button-label" value={buttonText} />
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
 
-      <Fieldset>
-        <TextField
-          label="Full name *"
-          type="text"
-          name="name"
-          id="request-demo-name-input"
-          onChange={setName}
-          value={name}
-          fullWidth
-        />
-      </Fieldset>
+      <TextField
+        label="Full name *"
+        type="text"
+        name="name"
+        id="request-demo-name-input"
+        onChange={setName}
+        value={name}
+        fullWidth
+      />
 
-      <Fieldset>
-        <TextField
-          label="Work email address *"
-          type="email"
-          name="email"
-          id="request-demo-email-input"
-          onChange={setEmail}
-          value={email}
-          fullWidth
-        />
-      </Fieldset>
+      <TextField
+        label="Work email address *"
+        type="email"
+        name="email"
+        id="request-demo-email-input"
+        onChange={setEmail}
+        value={email}
+        fullWidth
+      />
 
-      <Fieldset>
-        <ScmToolRadioGroup
-          onChange={setScmTool}
-          currentValue={scmTool}
-          idPrefix="request-demo-"
-        />
-      </Fieldset>
+      <ScmToolRadioGroup
+        onChange={setScmTool}
+        currentValue={scmTool}
+        idPrefix="request-demo-"
+      />
 
-      <Fieldset>
-        <Checkbox
-          name="sub-to-newsletter"
-          label="Subscribe me to the Backstage Weekly newsletter."
-          checked={subToNewsletter}
-          onChange={setSubToNewsletter}
-          id="request-demo-sub-to-newsletter-input"
-        />
-      </Fieldset>
+      <SubscribeToNewsletterSwitch
+        checked={subToNewsletter}
+        onChange={setSubToNewsletter}
+        idPrefix="request-demo-"
+      />
 
-      <Fieldset>
-        <Button color="primary" text={buttonText} disabled={disabled} />
-      </Fieldset>
+      <div className="sm:col-span-2">
+        <Button
+          type="submit"
+          color="primary"
+          size="large"
+          fullWidth={true}
+          text={buttonText}
+          disabled={disabled}
+        />
+      </div>
     </form>
   );
 };

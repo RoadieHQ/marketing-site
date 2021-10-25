@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextLink as Link } from 'components';
+import Link from 'components/tailwind/TextLink';
 
 const Attribution = ({ attribution }) => {
   if (!attribution) return null;
