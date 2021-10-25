@@ -18,7 +18,6 @@ import { Helmet } from 'react-helmet';
 
 const TailwindHeadContent = () => (
   <Helmet>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <meta name="robots" content="noindex" />
   </Helmet>
 );

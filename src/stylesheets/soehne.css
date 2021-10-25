@@ -1,0 +1,24 @@
+@font-face {
+  font-family: Soehne;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  /* woff2 on its own will cover 95% of browsers in Aug 2020. Add woff format to cover everything */
+  src: url(/fonts/soehne/soehne-web-buch.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: Soehne;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/fonts/soehne/soehne-web-halbfett.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: Soehne-Mono;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/soehne/soehne-mono-web-buch.woff2) format('woff2');
+}

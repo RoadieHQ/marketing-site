@@ -1,3 +1,4 @@
+import './src/stylesheets/soehne.css';
 import './src/stylesheets/tailwind.css';
 
 /*
@@ -10,8 +11,7 @@ import './src/stylesheets/tailwind.css';
  * import these files anyway.
  */
 import '@algolia/autocomplete-theme-classic';
-import './src/algolia-autocomplete-theme-overrides.css';
-
+import './src/stylesheets/algolia-autocomplete-theme-overrides.css';
 
 import 'prismjs/themes/prism.css';
 import './src/stylesheets/prismjs-theme-overrides.css';
