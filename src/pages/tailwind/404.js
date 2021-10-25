@@ -8,7 +8,7 @@ import {
   SitewideFooter,
   TailwindHeadContent,
   TextLink as Link,
-} from 'components/tailwind';
+} from 'components';
 import {
   CodeIcon,
   BookOpenIcon,

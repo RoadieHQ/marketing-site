@@ -1,8 +1,11 @@
 const has = require('lodash/has');
 const get = require('lodash/get');
 const agoliaQueries = require('./src/queries/agolia');
-const theme = require('./src/theme');
 const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
+const resolveConfig = require('tailwindcss/resolveConfig');
+const tailwindConfig = require('./tailwind.config.js');
+
+const fullTailwindConfig = resolveConfig(tailwindConfig);
 
 const SITE_TITLE = 'Roadie';
 
@@ -70,7 +73,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              wrapperStyle: theme.preMadeStyles.gatsbyRemarkImages.wrapperStyle,
+              // I've also disabled margin-left:auto because there are some situations where we
+              // need images to be against the left edge. Docs are a good example of this.
+              //
+              // This can't be moved into the content block in this theming object because the
+              // Gatsby remark images plugin will add inline styles into the element which override
+              // anything we try to set.
+              wrapperStyle: 'margin-left:unset; margin-right:unset',
               withWebp: true,
             },
           },
@@ -98,17 +107,12 @@ module.exports = {
         short_name: SITE_TITLE,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: theme.palette.primary.main,
+        theme_color: fullTailwindConfig.theme.colors.primary[500],
         display: `minimal-ui`,
         icon: 'content/assets/logos/roadie/roadie-hand.svg',
       },
     },
     `gatsby-plugin-react-helmet`,
-
-    {
-      resolve: 'gatsby-plugin-jss',
-      options: { theme },
-    },
 
     {
       resolve: 'gatsby-plugin-module-resolver',
