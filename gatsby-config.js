@@ -58,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+      appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: agoliaQueries,
         // Indexing will be run by netlify on deployment.
@@ -90,13 +90,7 @@ module.exports = {
             },
           },
 
-          {
-            resolve: 'gatsby-remark-autolink-headers',
-            options: {
-              className: 'h-full flex items-center',
-            },
-          },
-
+          'gatsby-remark-autolink-headers',
           `gatsby-remark-external-links`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
