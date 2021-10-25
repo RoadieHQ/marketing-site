@@ -57,6 +57,9 @@ const DocSidebar = () => {
     }
   };
 
+  const docToggleButtonText = isOpen ? 'Hide nav' : 'Show nav';
+  const docToggleButtonIcon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
+
   return (
     <Sidebar side="left">
       <div className="px-2 my-3">
@@ -67,8 +70,8 @@ const DocSidebar = () => {
           <span className="inline md:hidden">
             <Button
               onClick={toggleSliderOpen}
-              text={isOpen ? 'Hide nav' : 'Show nav'}
-              icon={isOpen ? <ChevronDownIcon /> : <ChevronUpIcon />}
+              text={docToggleButtonText}
+              icon={docToggleButtonIcon}
               color="inset"
               size="small"
             />
@@ -80,7 +83,7 @@ const DocSidebar = () => {
         </div>
       </div>
 
-      <nav className={classnames('overflow-y-hidden h-full', { 'h-0': !isOpen })}>
+      <nav className={classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen })}>
         <SidebarSectionList title="Getting started">
           <SidebarItem
             to="/tailwind/docs/getting-started/getting-started-for-admins/"
