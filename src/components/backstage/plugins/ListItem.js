@@ -9,7 +9,7 @@ const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attri
 
   return (
     <div className="border-2 p-4 text-center" style={{ height: 350 }}>
-      <Link to={`/tailwind${slug}`} className="underline-none capitalize">
+      <Link to={slug} className="underline-none capitalize">
         <Logo sharpImage={sharpImage} />
         <div className="pb-4">
           <Title>{humanName}</Title>
