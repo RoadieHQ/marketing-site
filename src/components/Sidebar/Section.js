@@ -1,36 +1,16 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
 
-const useStyles = createUseStyles(() => ({
-  section: {
-    marginBottom: 32,
-  },
+export const SidebarSection = ({ children }) => (
+  <div className="mb-7 pl-3">
+    {children}
+  </div>
+);
 
-  ul: {
-    listStyle: 'none',
-    padding: 0,
-  },
-}));
-
-export const SidebarSection = ({ children }) => {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.section}>
+export const SidebarSectionList = ({ title, children }) => (
+  <SidebarSection>
+    {title && <p>{title}</p>}
+    <ul className="p-0 list-none">
       {children}
-    </div>
-  );
-};
-
-export const SidebarSectionList = ({ title, children }) => {
-  const classes = useStyles();
-
-  return (
-    <SidebarSection>
-      {title && <p>{title}</p>}
-      <ul className={classes.ul}>
-        {children}
-      </ul>
-    </SidebarSection>
-  );
-};
+    </ul>
+  </SidebarSection>
+);

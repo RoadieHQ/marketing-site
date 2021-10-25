@@ -1,114 +1,65 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { createUseStyles } from 'react-jss';
 import {
   SEO,
-  StickyFooter,
-  ContentHeader,
   TextLink as Link,
-  PageMargins,
+  ContentHeader,
+  SitewideHeader,
+  SitewideFooter,
+  TailwindHeadContent,
 } from 'components';
 import { TableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/doc';
 import editOnGitHubUrl from '../editOnGitHubUrl';
-
-const useStyles = createUseStyles((theme) => ({
-  content: theme.preMadeStyles.content,
-
-  article: {},
-  tocWrapper: {},
-  main: {},
-  tocSidebar: {},
-
-  articleFooter: {
-    borderTop: `1px solid ${theme.palette.grey[300]}`,
-    marginTop: 48,
-    paddingTop: 24,
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    article: {
-      paddingLeft: 32,
-      paddingRight: 32,
-      flex: 1,
-      paddingTop: 32,
-    },
-
-    main: {
-      display: 'flex',
-    },
-
-    articleFooter: {
-      marginBottom: 48,
-    },
-
-    tocSidebar: {
-      minWidth: '20%',
-      maxWidth: '20%',
-    },
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.xl}px)`]: {
-    tocWrapper: {
-      display: 'none',
-    },
-  },
-}));
 
 const Doc = ({
   data: {
     doc,
     site: { siteMetadata },
   },
-  location,
-}) => {
-  const classes = useStyles();
+}) => (
+  <>
+    <SEO
+      title={`${doc.frontmatter.title} | ${siteMetadata.title}`}
+      description={doc.frontmatter.description}
+    />
+    <TailwindHeadContent />
 
-  return (
-    <>
-      <SEO
-        title={`${doc.frontmatter.title} | ${siteMetadata.title}`}
-        description={doc.frontmatter.description}
-      />
+    <SitewideHeader maxWidth="full" />
 
-      <StickyFooter location={location} maxWidthBreakpoint="none">
-        <PageMargins>
-          <main className={classes.main}>
-            <Sidebar />
+    <main className="md:flex pt-4 md:pt-0">
+      <Sidebar />
 
-            <article className={classes.article}>
-              <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+      <article className="px-2 md:px-6 md:pt-7 md:flex-1">
+        <div className="mb-8">
+          <ContentHeader frontmatter={doc.frontmatter} dateKey="lastUpdated" />
+        </div>
 
-              <div className={classes.content}>
-                <div className={classes.tocWrapper}>
-                  <h2>Table of Contents</h2>
-                  <section dangerouslySetInnerHTML={{ __html: doc.tableOfContents }} />
-                </div>
-              </div>
+        <section
+          className="prose prose-primary"
+          dangerouslySetInnerHTML={{ __html: doc.html }}
+        />
 
-              <section className={classes.content} dangerouslySetInnerHTML={{ __html: doc.html }} />
+        <footer className="border-t-2 border-gray-100 my-3 py-3">
+          <Link
+            to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
+          >
+            Edit this page on GitHub
+          </Link>
+        </footer>
+      </article>
 
-              <footer className={classes.articleFooter}>
-                <Link
-                  to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
-                >
-                  Edit this page on GitHub
-                </Link>
-              </footer>
-            </article>
+      <TableOfContentsSidebar headings={doc.headings} />
+    </main>
 
-            <TableOfContentsSidebar headings={doc.headings} className={classes.tocSidebar} />
-          </main>
-        </PageMargins>
-      </StickyFooter>
-    </>
-  );
-};
+    <SitewideFooter maxWidth="full" />
+  </>
+);
 
 export default Doc;
 
 export const pageQuery = graphql`
-  query DocBySlug($slug: String!) {
+  query TailwindDocBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -123,7 +74,6 @@ export const pageQuery = graphql`
       id
       html
       fileAbsolutePath
-      tableOfContents(maxDepth: 2)
       headings(depth: h2) {
         id
         value

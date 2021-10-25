@@ -1,22 +1,13 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
 import { Link } from 'components';
-import destroySearchOverlay from './destroySearchOverlay';
-
-const useStyles = createUseStyles(() => ({
-  link: {
-    textDecoration: 'none',
-  },
-}));
+import destroySearchOverlay from 'components/AlgoliaAutocomplete/destroySearchOverlay';
 
 const SearchResult = ({ hit, components }) => {
-  const classes = useStyles();
-  console.log('hit', hit);
   return (
     <div className="aa-ItemWrapper">
       <Link
         to={hit.slug}
-        className={classes.link}
+        className="no-underline"
         onClick={destroySearchOverlay}
         data-testid={`algolia-search-result-link-${hit.slug.replaceAll('/', '-')}`}
       >

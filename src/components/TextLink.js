@@ -1,52 +1,13 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
 import { Link } from 'components';
 import classnames from 'classnames';
 
-const useStyles = createUseStyles((theme) => ({
-  root: {
-    color: ({ color }) => {
-      if (color === 'contrasting') {
-        return theme.palette.text.secondaryLight;
-      } else if (color === 'primary') {
-        return theme.palette.primary.main;
-      }
-
-      return theme.palette.text.secondary;
-    },
-    textDecoration: 'none',
-    outline: 'none',
-
-    '&:hover': {
-      textDecoration: 'underline',
-      color: ({ color }) => {
-        if (color === 'contrasting') {
-          return theme.palette.text.primaryLight;
-        } else if (color === 'primary') {
-          return theme.palette.primary.main;
-        }
-
-        return theme.palette.text.primary;
-      },
-    },
-
-    '&visited': {
-      color: ({ color }) => {
-        if (color === 'contrasting') {
-          return theme.palette.text.primaryLight;
-        } else if (color === 'primary') {
-          return theme.palette.primary.main;
-        }
-
-        return theme.palette.text.primary;
-      },
-    },
-  },
-}));
-
 const TextLink = ({ to, text, color, className, children, ...rest }) => {
-  const classes = useStyles({ color });
-  const rootClassList = classnames(classes.root, className);
+  const rootClassList = classnames(
+    'no-underline outline-none text-gray-700 hover:text-primary-600 visited:text-gray-700', {
+    'text-primary-600 hover:text-primary-700 visited:text-primary-700': color === 'primary',
+    'text-gray-100 hover:text-primary-100 visited:text-primary-100': color === 'contrasting',
+  }, className);
   const inner = text || children;
 
   return (

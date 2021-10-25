@@ -1,46 +1,40 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { createUseStyles } from 'react-jss';
 import get from 'lodash/get';
 
-import { SEO, StickyFooter, PageMargins } from 'components';
-import PostSummary from 'components/blog/PostSummary';
+import { SEO, SitewideHeader, SitewideFooter, TailwindHeadContent } from 'components/tailwind';
+import { Attribution, TitleAndDescription, ListHeader } from 'components/tailwind/article';
 
-const MAX_WIDTH_BREAKPOINT = 'lg';
+const CaseStudySummary = ({ study }) => {
+  const logoBackgroundColor = get(study, 'frontmatter.logo.backgroundColor', null);
 
-const useStyles = createUseStyles((theme) => ({
-  header: {
-    marginBottom: '2em',
-  },
+  return (
+    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+      <div className="flex-shrink-0">
+        <GatsbyImage
+          className="h-48 w-full"
+          image={study.frontmatter.logo.image.childImageSharp.gatsbyImageData}
+          backgroundColor={logoBackgroundColor}
+          alt={study.frontmatter.logo.alt}
+          objectFit="contain"
+        />
+      </div>
 
-  summaryRoot: {
-    display: 'flex',
-    marginBottom: '2em',
-  },
+      <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+        <div className="flex-1">
+          <TitleAndDescription post={study} />
+        </div>
 
-  summaryWrapper: {},
+        <Attribution post={study} />
+      </div>
+    </div>
+  );
+};
 
-  summaryImageWrapper: {
-    alignItems: 'center',
-    display: 'none',
-  },
-
-  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
-    summaryImageWrapper: {
-      display: 'flex',
-    },
-
-    summaryWrapper: {
-      marginLeft: 16,
-    },
-  },
-}));
-
-const CaseStudiesIndex = ({ data, location }) => {
+const CaseStudiesIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   const siteTitle = data.site.siteMetadata.title;
-  const classes = useStyles();
 
   return (
     <>
@@ -51,35 +45,25 @@ const CaseStudiesIndex = ({ data, location }) => {
         `}
       />
 
-      <StickyFooter maxWidthBreakpoint={MAX_WIDTH_BREAKPOINT} location={location}>
-        <PageMargins>
-          <header className={classes.header}>
-            <h2>Case Studies</h2>
-          </header>
+      <TailwindHeadContent />
+      <SitewideHeader />
 
-          {posts.map(({ node }) => {
-            const logoBackgroundColor = get(node, 'frontmatter.logo.backgroundColor', null);
+      <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="relative max-w-lg mx-auto lg:max-w-7xl">
+          <ListHeader
+            title="Case studies"
+            description="Learn how organizations around the world are adopting and benefiting from Backstage."
+          />
 
-            return (
-              <div key={node.fields.slug} className={classes.summaryRoot}>
-                <span
-                  className={classes.summaryImageWrapper}
-                  style={{ backgroundColor: node.frontmatter.logo.backgroundColor }}
-                >
-                  <GatsbyImage
-                    image={node.frontmatter.logo.image.childImageSharp.gatsbyImageData}
-                    backgroundColor={logoBackgroundColor}
-                    alt={node.frontmatter.logo.alt}
-                  />
-                </span>
-                <span className={classes.summaryWrapper}>
-                  <PostSummary post={node} />
-                </span>
-              </div>
-            );
-          })}
-        </PageMargins>
-      </StickyFooter>
+          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            {posts.map(({ node }) => (
+              <CaseStudySummary key={node.fields.slug} study={node} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <SitewideFooter />
     </>
   );
 };
@@ -94,7 +78,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          timeToRead
           fields {
             slug
           }
@@ -105,6 +89,11 @@ export const pageQuery = graphql`
             description
             author {
               name
+              avatar {
+                childImageSharp {
+                  gatsbyImageData(layout: FIXED, width: 40)
+                }
+              }
             }
 
             logo {
@@ -112,7 +101,7 @@ export const pageQuery = graphql`
               backgroundColor
               image {
                 childImageSharp {
-                  gatsbyImageData(layout: FIXED, width: 140)
+                  gatsbyImageData(layout: FULL_WIDTH)
                 }
               }
             }

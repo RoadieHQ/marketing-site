@@ -1,29 +1,20 @@
 import React from 'react';
-import { Lead, Headline } from 'components';
-import { createUseStyles } from 'react-jss';
+import { Lead, Headline } from 'components/tailwind';
 
 import Logo from './Logo';
 import Attribution from './Attribution';
 
-const useStyles = createUseStyles(() => ({
-  root: {
-    textAlign: 'center',
-    paddingBottom: 90,
-    paddingTop: 40,
-  },
-}));
-
-const Header = ({ plugin }) => {
-  const classes = useStyles();
-
-  return (
-    <header className={classes.root}>
-      <Logo sharpImage={plugin.frontmatter.logoImage.childImageSharp} />
+const Header = ({ plugin }) => (
+  <header className="text-center pb-4 mb-4 md:pt-8 md:pb-24 border-b-2 border-gray-100">
+    <Logo sharpImage={plugin.frontmatter.logoImage.childImageSharp} />
+    <div className="mb-4">
       <Headline>{plugin.frontmatter.heading}</Headline>
+    </div>
+    <div className="mb-4">
       <Lead>{plugin.frontmatter.lead}</Lead>
-      <Attribution attribution={plugin.frontmatter.attribution} />
-    </header>
-  );
-};
+    </div>
+    <Attribution attribution={plugin.frontmatter.attribution} />
+  </header>
+);
 
 export default Header;

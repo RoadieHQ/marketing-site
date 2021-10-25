@@ -1,35 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { createUseStyles } from 'react-jss';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import {
   TextLink as Link,
-  StickyFooter,
-  InterstitialTitle,
+  Title,
   CodeBlock,
   SEO,
   ResponsiveSpacer,
-  PageMargins,
+  SitewideHeader,
+  SitewideFooter,
+  TailwindHeadContent,
 } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
-} from 'components/actions/SubscribeToNewsletter';
+} from 'components/CallToAction/SubscribeToNewsletter';
 
-const useStyles = createUseStyles((theme) => ({
-  coverImage: {
-    ...theme.preMadeStyles.content['& .gatsby-resp-image-wrapper'],
-    maxWidth: '100%',
-    maxHeight: '100%',
-  },
-
-  notes: theme.preMadeStyles.content,
-}));
-
-const PluginTemplate = ({ data, location }) => {
-  const classes = useStyles();
+const PluginTemplate = ({ data }) => {
   const { plugin, site: { siteMetadata } } = data;
 
   const [email, setEmail] = useState('');
@@ -47,6 +36,8 @@ const PluginTemplate = ({ data, location }) => {
   return (
     <>
       <SEO title={plugin.frontmatter.seo.title} description={plugin.frontmatter.seo.description} />
+      <TailwindHeadContent />
+
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
@@ -54,25 +45,36 @@ const PluginTemplate = ({ data, location }) => {
         email={email}
       />
 
-      <StickyFooter location={location} maxWidthBreakpoint="md">
-        <PageMargins>
+      <SitewideHeader />
+
+      <main className="pt-4 pb-8 px-4 lg:pt-8 lg:pb-28">
+        <div className="relative max-w-lg mx-auto lg:max-w-3xl">
+
           <Header plugin={plugin} />
 
           <ResponsiveSpacer>
-            <InterstitialTitle text="Getting started is simple" />
-
-            <div className={classes.notes}>
-              <p>
-                Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
-                <Link to="/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
-              </p>
+            <div className="text-center pb-3">
+              <Title text="Getting started is simple" />
             </div>
 
-            <InterstitialTitle text="Installation steps" />
+            <div className="prose prose-primary max-w-none">
+              <p>
+                Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
+                <Link to="/tailwind/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
+              </p>
+            </div>
+          </ResponsiveSpacer>
+
+          <ResponsiveSpacer>
+            <div className="text-center pb-3">
+              <Title text="Installation steps" />
+            </div>
 
             {plugin.frontmatter.gettingStarted.map((section, index) =>
               section.title && section.title !== '' ? (
-                <InterstitialTitle text={section.title} key={`key-${index}`} />
+                <div className="text-center pb-3">
+                  <Title text={section.title} key={`key-${index}`} />
+                </div>
               ) : (
                 <CodeBlock
                   language={section.language}
@@ -82,45 +84,58 @@ const PluginTemplate = ({ data, location }) => {
                 />
               )
             )}
+          </ResponsiveSpacer>
 
-            <div className={classes.notes}>
+          <ResponsiveSpacer>
+            <div className="prose prose-primary">
               <p>
                 Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
               </p>
             </div>
           </ResponsiveSpacer>
           
-          { plugin.frontmatter.coverImage &&
+          {plugin.frontmatter.coverImage && (
             <ResponsiveSpacer>
-              <InterstitialTitle text="How it looks" />
-
-              <div>
-                
-                  <GatsbyImage
-                    image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
-                    alt={plugin.frontmatter.coverImageAlt}
-                    className={classes.coverImage}
-                  />
+              <div className="text-center pb-3">
+                <Title text="How it looks" />
               </div>
-            </ResponsiveSpacer>
-          }
 
-          {plugin.notes && plugin.notes !== '' && (
-            <ResponsiveSpacer>
               <div>
-                <InterstitialTitle text="Things to know" />
-                <div className={classes.notes} dangerouslySetInnerHTML={{ __html: plugin.notes }} />
+                <GatsbyImage
+                  image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
+                  alt={plugin.frontmatter.coverImageAlt}
+                  className="max-w-full max-h-full shadow-small"
+                />
               </div>
             </ResponsiveSpacer>
           )}
 
+          {plugin.notes && plugin.notes !== '' && (
+            <ResponsiveSpacer>
+              <div>
+                <div className="text-center pb-3">
+                  <Title text="Things to know" />
+                </div>
+
+                <div
+                  className="prose prose-primary max-w-none"
+                  dangerouslySetInnerHTML={{ __html: plugin.notes }}
+                />
+              </div>
+            </ResponsiveSpacer>
+          )}
+        </div>
+
+        <div className="relative max-w-lg mx-auto lg:max-w-3xl mt-24">
           <SubscribeToNewsletterCTA
             setModalOpen={setModalOpen}
             email={email}
             setEmail={setEmail}
           />
-        </PageMargins>
-      </StickyFooter>
+        </div>
+      </main>
+
+      <SitewideFooter />
     </>
   );
 };
@@ -128,7 +143,7 @@ const PluginTemplate = ({ data, location }) => {
 export default PluginTemplate;
 
 export const pageQuery = graphql`
-  query PluginBySlug($slug: String!) {
+  query TailwindPluginBySlug($slug: String!) {
     site {
       siteMetadata {
         sourceCodeUrl
