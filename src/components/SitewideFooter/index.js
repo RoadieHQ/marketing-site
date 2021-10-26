@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'components';
-import resolveConfig from 'tailwindcss/resolveConfig';
 import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieIcon } from 'components/icons';
 
-import tailwindConfig from '../../../tailwind.config.js';
-
-const fullTailwindConfig = resolveConfig(tailwindConfig);
+import theme from '../../theme';
 
 const navigation = {
   solutions: [
@@ -91,7 +88,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
       <div className={`max-w-${maxWidth} mx-auto py-12 px-2 sm:px-6 lg:py-16 lg:px-8`}>
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <RoadieIcon fill={fullTailwindConfig.theme.colors.gray[500]} />
+            <RoadieIcon fill={theme.COLORS_GRAY_500} />
 
             <p className="text-gray-500 text-base">
               SaaS Backstage for scale-ups.

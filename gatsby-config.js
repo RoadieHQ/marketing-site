@@ -2,10 +2,7 @@ const has = require('lodash/has');
 const get = require('lodash/get');
 const agoliaQueries = require('./src/queries/agolia');
 const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
-const resolveConfig = require('tailwindcss/resolveConfig');
-const tailwindConfig = require('./tailwind.config.js');
-
-const fullTailwindConfig = resolveConfig(tailwindConfig);
+const theme = require('./src/theme');
 
 const SITE_TITLE = 'Roadie';
 
@@ -110,7 +107,7 @@ module.exports = {
         short_name: SITE_TITLE,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: fullTailwindConfig.theme.colors.primary[500],
+        theme_color: theme.COLORS_PRIMARY_500,
         display: `minimal-ui`,
         icon: 'content/assets/logos/roadie/roadie-hand.svg',
       },
