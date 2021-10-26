@@ -111,7 +111,6 @@ const ExtendedGetInstanceCallToAction = ({
       <SubscribeToNewsletterSwitch
         checked={subToNewsletter}
         onChange={setSubToNewsletter}
-        idPrefix="get-instance-"
       />
 
       <div className="sm:col-span-2">

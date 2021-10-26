@@ -14,7 +14,7 @@ const navigation = {
   ],
 
   support: [
-    { name: 'Documentation', href: '/docs/' },
+    { name: 'Documentation', href: '/docs/getting-started/getting-started-for-admins/' },
     { name: 'Case Studies', href: '/case-studies/' },
     { name: 'Backstage Plugins', href: '/backstage/plugins/' },
   ],
@@ -47,7 +47,11 @@ const navigation = {
 
 const NavItem = ({ name, href }) => (
   <li key={name}>
-    <Link to={href} className="text-base text-gray-500 hover:text-gray-900">
+    <Link
+      to={href}
+      id={`sitewide-footer-${name.toLowerCase()}`}
+      className="text-base text-gray-500 hover:text-gray-900"
+    >
       {name}
     </Link>
   </li>
