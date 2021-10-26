@@ -4,16 +4,12 @@ import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import Button from 'components/forms/Button';
 import algoliasearch from 'algoliasearch/lite';
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
-// This import doesn't have any styling or JSS attached to it.
 import { AlgoliaAutocomplete as Search } from 'components/AlgoliaAutocomplete';
 import SearchResult from 'components/AlgoliaAutocomplete/SearchResult';
 import useMedia from 'react-use/lib/useMedia';
 import classnames from 'classnames';
-import resolveConfig from 'tailwindcss/resolveConfig';
 
-import tailwindConfig from '../../../tailwind.config.js';
-
-const fullTailwindConfig = resolveConfig(tailwindConfig);
+import theme from '../../theme';
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -44,7 +40,8 @@ const getSearchSources = ({ query }) => {
 };
 
 const DocSidebar = () => {
-  const isWide = useMedia(`(min-width: ${fullTailwindConfig.theme.screens.md})`);
+  const isWide = useMedia(`(min-width: ${theme.BREAKPOINTS_MD})`);
+  // const isWide = useMedia(`(min-width: ${fullTailwindConfig.theme.screens.md})`);
   const [isOpen, setOpen] = useState(true);
 
   useEffect(() => {
