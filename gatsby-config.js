@@ -18,10 +18,7 @@ const skipAlgoliaIndexing =
   // https://docs.netlify.com/configure-builds/environment-variables/#build-metadata
   get(process.env, 'CONTEXT', 'false') === 'production';
 
-const skipWebpackAnalyzer =
-  has(process.env, 'GITHUB_ACTIONS') ||
-  has(process.env, 'NETLIFY');
-
+const skipWebpackAnalyzer = has(process.env, 'GITHUB_ACTIONS') || has(process.env, 'NETLIFY');
 
 const getSentryEnvironment = () => {
   if (get(process.env, 'NODE_ENV') === 'production') return 'production';
