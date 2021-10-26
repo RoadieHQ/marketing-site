@@ -34,20 +34,20 @@ const BackstageDocker = ({ data }) => {
 
           <ContentHeader frontmatter={{ title: 'Backstage Docker Image' }} />
 
-          <article className="prose prose-orange">
+          <article className="prose prose-primary">
             <p>Roadie maintains a public Backstage docker image for the community to use. You can find it <Link to="https://hub.docker.com/r/roadiehq/community-backstage-image">on Docker Hub</Link>. It will quickly give you a sense of what Backstage is and how you might use it.</p>
 
             <h2>Prerequisites</h2>
             <p>
               <ol>
                 <li>Docker installed and running locally on your computer.</li>
-                <li>A GitHub Personal Access Token with the <code className="language-text">repo</code>, <code className="language-text">user</code>, <code className="language-text">read:org</code> and <code className="language-text">read:discussion</code> scopes. You can find more detailed instructions <Link to="/docs/getting-started/getting-started-for-admins/#step-1-create-a-personal-access-token-pat">in our documentation</Link>.</li>
+                <li>A GitHub Personal Access Token with the <code className="language-text">repo</code>, <code className="language-text">user</code>, <code className="language-text">read:org</code> and <code className="language-text">read:discussion</code> scopes.</li>
               </ol>
             </p>
 
             <h2>Instructions</h2>
 
-            <p>Run the following command, replacing <code className="language-text">[GITHUB_TOKEN]</code> with your token. Once it starts up, Backstage will automatically open your browser on <Link to="http://localhost:7000">localhost:7000</Link>.</p>
+            <p>Run the following command, replacing <code className="language-text">[TOKEN]</code> with your token. Once it starts up, Backstage will automatically open your browser on <Link to="http://localhost:7000">localhost:7000</Link>.</p>
             <CodeBlock
               language="bash"
               code={`docker run -p 7000:7000 --env GITHUB_TOKEN=[TOKEN] roadiehq/community-backstage-image:latest`}
