@@ -10,7 +10,7 @@ With this plugin, you can embed Datadog graphs and dashboards into Roadie Backst
 
 ## Add a Datadog card to the overview tab of the Entity Page
 
-Click the cog icon on the top right of a component page. The click add card.
+Click the cog icon on the top right of a component page. Then click add card.
 
 ![edit_layout.png](edit_layout.png)
 ![add_card.png](add_card.png)
