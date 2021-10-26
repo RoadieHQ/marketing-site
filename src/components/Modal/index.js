@@ -4,7 +4,7 @@ export const modalStyles = ({ maxWidth = 860 } = {}) => ({
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.58)',
     // Otherwise the <SitewideHeader /> is on top of the overlay.
-    zIndex: 11,
+    zIndex: 20,
   },
 
   content: {
