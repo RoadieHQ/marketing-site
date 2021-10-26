@@ -60,7 +60,7 @@ const FeatureBlock = ({
       />
 
       <div className="flex align-center justify-center px-2 sm:px-0">
-        {illustration}
+        <img src={illustration} alt="" />
       </div>
     </div>
   </div>
