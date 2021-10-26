@@ -109,7 +109,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: theme.COLORS_PRIMARY_500,
         display: `minimal-ui`,
-        icon: 'content/assets/logos/roadie/roadie-hand.svg',
+        icon: 'content/assets/logos/roadie/roadie-r-round.svg',
       },
     },
     `gatsby-plugin-react-helmet`,
