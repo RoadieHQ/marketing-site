@@ -18,6 +18,11 @@ const skipAlgoliaIndexing =
   // https://docs.netlify.com/configure-builds/environment-variables/#build-metadata
   get(process.env, 'CONTEXT', 'false') === 'production';
 
+const skipWebpackAnalyzer =
+  has(process.env, 'GITHUB_ACTIONS') ||
+  has(process.env, 'NETLIFY');
+
+
 const getSentryEnvironment = () => {
   if (get(process.env, 'NODE_ENV') === 'production') return 'production';
   if (get(process.env, 'CONTEXT') === 'production') return 'production';
@@ -146,7 +151,13 @@ module.exports = {
     'gatsby-plugin-netlify',
     'gatsby-plugin-image',
     'gatsby-plugin-postcss',
-    'gatsby-plugin-webpack-bundle-analyser-v2',
+
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        disable: skipWebpackAnalyzer,
+      },
+    },
 
     ...rssFeedPlugin,
 
