@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const RoadieIcon = ({ width = 26, height = 40, fill = 'black', ...rest }) => (
+const RoadieHandIcon = ({ width = 26, height = 40, fill = 'black', ...rest }) => (
   <svg width={height} height={height} viewBox={`0 0 ${width} ${height}`} fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
     <g clipPath="url(#clip0_407:2)">
       <path d="M24.484 19.1125H23.297V20.4197L24.128 24.2238L21.1104 33.632H6.93256L5.62671 34.9392H22.0629L25.4728 24.3058L24.484 19.1125Z" fill={fill} />
@@ -20,4 +20,4 @@ export const RoadieIcon = ({ width = 26, height = 40, fill = 'black', ...rest })
   </svg>
 );
 
-export default RoadieIcon;
+export default RoadieHandIcon;

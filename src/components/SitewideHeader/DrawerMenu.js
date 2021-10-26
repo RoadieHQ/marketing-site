@@ -10,7 +10,7 @@ import {
   NewspaperIcon,
   BriefcaseIcon,
 } from '@heroicons/react/outline'
-import { RoadieIcon } from 'components/icons';
+import { RoadieRIcon } from 'components/icons';
 
 import CloseMenuButton from './CloseMenuButton';
 import MobileFreeTrialButton from './MobileFreeTrialButton';
@@ -66,7 +66,7 @@ const DrawerMenu = () => (
 
           <div className="flex items-center justify-between">
             <div>
-              <RoadieIcon />
+              <RoadieRIcon />
             </div>
 
             <div className="-mr-2">
