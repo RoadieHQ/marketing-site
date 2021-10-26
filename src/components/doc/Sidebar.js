@@ -142,6 +142,7 @@ const DocSidebar = () => {
           <SidebarItem to="/docs/integrations/argocd/" text="ArgoCD" />
           <SidebarItem to="/docs/integrations/bugsnag/" text="Bugsnag" />
           <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
+          <SidebarItem to="/docs/integrations/catalog-graph/" text="Catalog Graph" />
           <SidebarItem to="/docs/integrations/datadog/" text="Datadog" />
           <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
           <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />

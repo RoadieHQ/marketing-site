@@ -8,11 +8,12 @@ description: How to setup Backstage to display catalog entity relationship graph
 
 With this plugin, you can visualize the relations between entities, like ownership, grouping or API relationships.
 
-## Add a Datadog card to the overview tab of the Entity Page
+## Add a Catalog Graph card to a dashboard
 
 Click the cog icon on the top right of a component Dashboard (or the default Overview) page. Then click the plus icon to add a new card.
 
 ![edit_layout.png](edit_layout.png)
+
 ![add_card.png](add_card.png)
 
 Select the EntityCatalogGraph card from the drop down and click Add. Press save to submit.
@@ -20,13 +21,19 @@ Select the EntityCatalogGraph card from the drop down and click Add. Press save 
 ![select_catalog_graph.png](select_catalog_graph.png)
 
 
+
 ### Customize graph parameters.
+
 
 In order to customize size of the graph you can click the cog icon at the top right of the page and then the spanner 
 icon in the top right of the card.
 
+
 ![edit_layout.png](edit_layout.png)
+
 ![edit_card_props.png](edit_card_props.png)
+
+
 
 Then you can edit the props for the card by adding the following JSON or a subset of it depending on your preferences.
 
@@ -58,7 +65,7 @@ Then you can edit the props for the card by adding the following JSON or a subse
 
 If not specified, your graph will have a depth of 1 by default.
 
-### Viewing the graph and navigating through the relationships.
+## Viewing the graph and navigating through the relationships.
 
 You can click on any of the entities in the graph to go to the page for that entity.
 
