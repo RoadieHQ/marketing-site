@@ -124,12 +124,7 @@ module.exports = {
       },
     },
 
-    {
-      resolve: 'gatsby-plugin-advanced-sitemap',
-      options: {
-        exclude: [/\/?tailwind\/?.+/],
-      },
-    },
+    'gatsby-plugin-advanced-sitemap',
 
     {
       resolve: 'gatsby-plugin-react-svg',
