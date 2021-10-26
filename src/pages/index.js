@@ -52,13 +52,11 @@ const PRODUCT = {
     description: 'Customize Backstage in a couple of clicks. Drag plugins to where you want them. Add new ones instantly.',
     illustration: <DragDropIllustration />,
     bullets: [{
-      id: 1,
       name: 'All plugin formats supported',
       description:
         `Roadie's drag and drop setup supports cards, tabs, sidebar links and full page plugins.`,
       icon: CollectionIcon,
     }, {
-      id: 2,
       name: 'Install custom plugins',
       description: 'Building your own internal plugins? Publish them to our private repository and they appear where you need them.',
       icon: BeakerIcon,
@@ -69,13 +67,11 @@ const PRODUCT = {
     description: 'Roadie handles upgrades and security so you can stay focussed on the work your team does best.',
     illustration: <SecurityMaintenanceIllustration />,
     bullets: [{
-      id: 1,
       name: 'Automated upgrades',
       description:
         `Open-source community power means that Backstage moves quickly. It's easy to fall behind if you don't put the work in. We do the upgrades so you don't have to.`,
       icon: ChipIcon,
     }, {
-      id: 2,
       name: 'Security patches delivered',
       description:
         `We regularly patch vulnerabilities in the open-source code, ensuring you're using a hardened version of Backstage.`,
@@ -93,17 +89,14 @@ const SOLUTIONS = {
     description: 'Backstage is the developer portal and service catalog which has enabled engineering hypergrowth at Spotify since 2016. It can improve developer effectiveness, reduce downtime, and enable your teams to ship high-quality code quickly.',
     illustration: <MikeExpediaGroupQuote />,
     bullets: [{
-      id: 1,
       name: 'Scaffold new services',
       description: `The Backstage scaffolder allows engineers to create new services from pre-defined templates. Increasing velocity and production consistency.`,
       icon: SparklesIcon,
     }, {
-      id: 2,
       name: 'Bring order with the software catalog',
       description: 'The searchable catalog makes engineeering tools discoverable and reduces context switching.',
       icon: LibraryIcon,
     }, {
-      id: 3,
       name: 'Write technical docs that get read',
       description: `TechDocs brings markdown technical documentation into Backstage, organises it by service, and makes it searchable.`,
       icon: NewspaperIcon,
@@ -114,18 +107,15 @@ const SOLUTIONS = {
     description: 'Backstage centralizes the information that new engineers need to get up to speed quickly. Meaning they onboard in weeks rather than months.',
     illustration: <ServiceCatalogIllustration />,
     bullets: [{
-      id: 1,
       name: 'Rapid growth stretches knowledge',
       description: `Rapid growth means new engineers are joining and existing engineers are changing teams. Backstage ensures they become effective quickly, and stay that way.`,
       icon: UsersIcon,
     }, {
 
-      id: 2,
       name: 'Information at your fingertips',
       description: `Backstage centralises the service catalog and makes API specs, docs and tooling easy to access in one place, simplifying engineering tasks.`,
       icon: BookOpenIcon,
     }, {
-      id: 3,
       name: 'Proven results',
       description: `Spotify saw "time to 10ᵗʰ commit" drop by 55% in the two years after deploying Backstage internally. All while onboarding hundreds of engineers each year.`,
       icon: PresentationChartLineIcon,
@@ -136,12 +126,10 @@ const SOLUTIONS = {
     description: 'Use the built in scaffolder to create new services from templates which have your best practices built in.',
     illustration: <ProductionConsistencyIllustration />,
     bullets: [{
-      id: 1,
       name: 'Inconsistent environments slow development',
       description: `Nobody wants obstacles on the path to production, but heterogeneous environments cause operational headaches and slow technology migrations.`,
       icon: FingerPrintIcon,
     }, {
-      id: 2,
       name: 'Golden path to production',
       description:
         `Encode your best practices in templates which service teams can use to create new services. This ensures that increasing production consistency is the path of least resistance.`,
@@ -166,16 +154,22 @@ const PLUGINS_SUPPORTED = {
 
   logos: [{
     src: <GitHubLogo />,
+    key: 'github',
   }, {
     src: <KubernetesLogo />,
+    key: 'k8s',
   }, {
-    src: <PagerDutyLogo />
+    src: <PagerDutyLogo />,
+    key: 'pagerduty',
   }, {
     src: <CircleCiLogo />,
+    key: 'circleci',
   }, {
     src: <ArgoLogo />,
+    key: 'argocd',
   }, {
     src: <JiraSoftwareLogo />,
+    key: 'jira',
   }],
 };
 

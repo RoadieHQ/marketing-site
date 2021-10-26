@@ -24,7 +24,7 @@ const SplitGridOnRight = ({ content }) => (
 
         <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
           {content.logos.map((logo) => (
-            <LogoItem {...logo} key={logo.src} />
+            <LogoItem {...logo} key={logo.key} />
           ))}
         </div>
       </div>

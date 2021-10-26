@@ -41,7 +41,7 @@ const FeatureBlock = ({
       />
 
       <dl className="mt-10 space-y-10">
-        {bullets.map((item) => (<FeatureBulletPoint item={item} key={item.id} />))}
+        {bullets.map((item) => (<FeatureBulletPoint item={item} key={item.name} />))}
       </dl>
     </div>
 
