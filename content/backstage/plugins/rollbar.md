@@ -5,7 +5,6 @@ lead: 'Correlate services with problems in production'
 attribution:
   text: '@andrewthauer'
   href: https://github.com/andrewthauer
-tags: ['frontend']
 
 seo:
   title: 'Backstage Rollbar Plugin | Roadie'

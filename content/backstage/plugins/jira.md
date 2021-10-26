@@ -5,7 +5,6 @@ lead: 'See Jira summary in Backstage'
 attribution:
   text: Roadie
   href: https://roadie.io
-tags: ['frontend']
 
 seo:
   title: 'Backstage Jira Plugin | Roadie'

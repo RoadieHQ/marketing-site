@@ -5,7 +5,6 @@ lead: 'Observability platform built to help engineers create and monitor their s
 attribution:
   text: '@timwheelercorn'
   href: https://github.com/timwheelercom
-tags: ['frontend']
 
 seo:
   title: 'Backstage New Relic Plugin | Roadie'

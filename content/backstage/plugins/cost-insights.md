@@ -6,7 +6,6 @@ lead: 'Visualize, understand and optimize your cloud costs.'
 attribution:
   text: Spotify
   href: https://spotify.com
-tags: ['frontend']
 
 seo:
   title: 'Backstage Cost Insights Plugin | Roadie'

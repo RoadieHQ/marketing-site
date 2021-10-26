@@ -6,7 +6,6 @@ lead: |
 attribution:
   text: Spotify
   href: https://spotify.com
-tags: ['frontend', 'backend']
 
 seo:
   title: 'Backstage Kubernetes Plugin | Roadie'

@@ -5,7 +5,6 @@ lead: 'Integrates Lighthouse inside Backstage.'
 attribution:
   text: Spotify
   href: https://spotify.com
-tags: ['frontend']
 
 seo:
   title: 'Backstage Lighthouse Plugin | Roadie'

@@ -5,7 +5,6 @@ lead: 'See builds in Backstage'
 attribution:
   text: Roadie
   href: https://roadie.io
-tags: ['frontend']
 
 seo:
   title: 'Backstage Travis CI Plugin | Roadie'

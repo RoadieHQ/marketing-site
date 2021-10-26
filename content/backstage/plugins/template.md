@@ -7,7 +7,6 @@ lead: 'Describe the problem that the plugin will solve for users'
 attribution:
   text: Spotify
   href: https://spotify.com
-tags: ['frontend']
 
 seo:
   # Don't forget to end with "| Roadie"

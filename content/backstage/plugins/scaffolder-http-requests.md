@@ -1,12 +1,11 @@
 ---
-humanName: HTTP Requests
+humanName: 'Scaffolder: HTTP Requests'
 heading: 'Backstage HTTP request scaffolder actions'
 # Keep it short
 lead: 'Create HTTP requests with the scaffolder'
 attribution:
   text: Roadie
   href: https://github.com/RoadieHQ/roadie-backstage-plugins
-tags: ['scaffolder']
 
 seo:
   # Don't forget to end with "| Roadie"

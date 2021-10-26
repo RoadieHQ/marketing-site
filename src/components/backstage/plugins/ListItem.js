@@ -39,7 +39,7 @@ const useStyles = createUseStyles(() => ({
 const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attribution, tags } }) => {
   const classes = useStyles();
   const sharpImage = logoImage.childImageSharp;
-  console.log(tags);
+
   return (
     <div className={classes.root}>
       <Link to={slug} className={classes.link}>

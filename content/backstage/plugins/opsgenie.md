@@ -5,7 +5,6 @@ lead: 'View OpsGenie alerts and incidents inside Backstage.'
 attribution:
   text: K-Phoen
   href: https://github.com/K-Phoen
-tags: ['frontend']
 
 seo:
   title: 'Backstage OpsGenie Plugin | Roadie'

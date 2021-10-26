@@ -5,7 +5,6 @@ lead: 'See Pull Requests for your service in Backstage'
 attribution:
   text: Roadie
   href: https://roadie.io
-tags: ['frontend']
 
 seo:
   title: 'Backstage GitHub Pull Requests Plugin | Roadie'

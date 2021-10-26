@@ -5,7 +5,6 @@ lead: 'See Circle CI Builds in Backstage'
 attribution:
   text: Spotify
   href: https://spotify.com
-tags: ['frontend']
 
 seo:
   title: 'Backstage Circle CI Plugin | Roadie'

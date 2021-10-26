@@ -5,7 +5,6 @@ lead: 'See GitHub Actions builds in Backstage'
 attribution:
   text: Spotify
   href: https://spotify.com
-tags: ['frontend']
 
 seo:
   title: 'Backstage GitHub Actions Plugin | Roadie'

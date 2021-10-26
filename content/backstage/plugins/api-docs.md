@@ -5,7 +5,6 @@ lead: 'Discover and display API entities for your components in Backstage'
 attribution:
   text: SDA-SE
   href: https://sda.se/
-tags: ['frontend']
 
 seo:
   # Don't forget to end with "| Roadie"

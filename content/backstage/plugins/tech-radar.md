@@ -6,7 +6,6 @@ lead: |
 attribution:
   text: Spotify
   href: https://spotify.com
-tags: ['frontend']
 
 seo:
   title: 'Backstage Tech Radar Plugin | Roadie'
