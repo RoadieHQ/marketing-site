@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { Button, GrayBackgroundDotsPattern, Headline } from 'components';
-import { Helmet } from 'react-helmet';
 import { PlayIcon } from 'components/icons';
 
 import IntroToRoadieModal from './IntroToRoadieModal';
-import backstageScreenshot from '../../../../content/assets/backstage-screenshot.png';
+import backstageScreenshot from '../../../../content/assets/backstage-screenshot-512x438.webp';
 
 const SubTitle = ({ text }) => (
   <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
@@ -21,10 +20,6 @@ const VideoHero = () => {
 
   return (
     <>
-      <Helmet>
-        <script src="https://player.vimeo.com/api/player.js" />
-      </Helmet>
-
       <IntroToRoadieModal
         setModalOpen={setModalOpen}
         modalOpen={modalOpen}
@@ -110,6 +105,8 @@ const VideoHero = () => {
           </main>
         </div>
       </div>
+
+      <script async src="https://player.vimeo.com/api/player.js" />
     </>
   );
 };
