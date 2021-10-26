@@ -5,7 +5,6 @@ import { Link } from 'components';
 import Logo from './Logo';
 import theme from '../../../theme';
 import Attribution from './Attribution';
-import Tags from './Tags';
 
 const useStyles = createUseStyles(() => ({
   link: {
@@ -36,7 +35,7 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attribution, tags } }) => {
+const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attribution } }) => {
   const classes = useStyles();
   const sharpImage = logoImage.childImageSharp;
 
@@ -48,7 +47,6 @@ const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attri
       </Link>
       <div className={classes.attributionWrapper}>
         <Attribution attribution={attribution} />
-        <Tags tags={tags}/>
       </div>
     </div>
   );

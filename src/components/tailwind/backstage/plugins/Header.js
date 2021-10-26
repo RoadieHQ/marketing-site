@@ -1,6 +1,6 @@
 import React from 'react';
 import { Lead, Headline } from 'components/tailwind';
-import Tags from './Tags';
+
 import Logo from './Logo';
 import Attribution from './Attribution';
 
@@ -14,7 +14,6 @@ const Header = ({ plugin }) => (
       <Lead>{plugin.frontmatter.lead}</Lead>
     </div>
     <Attribution attribution={plugin.frontmatter.attribution} />
-    <Tags tags={plugin.frontmatter.tags}/>
   </header>
 );
 

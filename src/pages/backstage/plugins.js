@@ -131,7 +131,6 @@ export const pageQuery = graphql`
 
           frontmatter {
             humanName
-            tags
 
             logoImage {
               childImageSharp {

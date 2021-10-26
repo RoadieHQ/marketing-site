@@ -9,10 +9,10 @@ attribution:
 
 seo:
   # Don't forget to end with "| Roadie"
-  title: 'Backstage HTTP request scaffolder actions plugin | Roadie'
+  title: 'Backstage Scaffolder Actions - HTTP Requests Plugin | Roadie'
   description: |
-    The Backstage HTTP request scaffolder actions plugin integrates with the pre existing scaffolder actions. It extends them and allows you to send arbitary http requests to an given endpoint.
-    It also allows you to issue requests against your backstage instance.
+    The Backstage HTTP request scaffolder actions plugin integrates with the pre existing scaffolder actions. It extends them and allows you to send arbitary http requests to a given endpoint.
+    It also allows you to issue requests against your Backstage instance.
 
 logoImage: '../../assets/logos/scaffolder-http/http.png'
 
