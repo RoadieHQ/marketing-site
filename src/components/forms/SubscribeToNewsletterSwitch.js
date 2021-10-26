@@ -2,7 +2,7 @@ import React from 'react';
 
 import Switch from './Switch';
 
-const SubscribeToNewsletterSwitch = ({ checked, onChange, idPrefix }) => (
+const SubscribeToNewsletterSwitch = ({ checked, onChange }) => (
   <div className="sm:col-span-2">
     <div className="flex items-start">
       <div className="flex-shrink-0">
@@ -10,7 +10,6 @@ const SubscribeToNewsletterSwitch = ({ checked, onChange, idPrefix }) => (
           checked={checked}
           onChange={onChange}
           name="sub-to-newsletter"
-          id={`${idPrefix}sub-to-newsletter-input`}
           srTitle="Subscribe to newsletter"
         />
       </div>

@@ -125,7 +125,6 @@ const RequestDemoCallToAction = ({
       <SubscribeToNewsletterSwitch
         checked={subToNewsletter}
         onChange={setSubToNewsletter}
-        idPrefix="request-demo-"
       />
 
       <div className="sm:col-span-2">
