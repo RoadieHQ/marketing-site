@@ -46,7 +46,9 @@ const RequestTrial = ({ data }) => {
         >
           <ExtendedGetInstanceCallToAction
             email={email}
-            onSuccess={setModalOpen}
+            onSuccess={() => {
+              setModalOpen(true);
+            }}
             setEmail={setEmail}
             scmTool={scmTool}
             setScmTool={setScmTool}
