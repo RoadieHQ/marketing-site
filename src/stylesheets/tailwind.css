@@ -11,3 +11,7 @@
   @apply flex;
   @apply items-center;
 }
+
+html {
+  scroll-behavior: smooth;
+}
