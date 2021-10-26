@@ -1,8 +1,8 @@
 import React from 'react';
 import { QuoteIcon } from 'components/icons';
 
-import enriqueAvatar from '../../content/assets/home/enrique-avatar.jpeg';
-import contentfulLogo from '../../content/assets/home/1a-contentful-full-logo.png';
+import enriqueAvatar from '../../content/assets/home/enrique-avatar.webp';
+import contentfulLogo from '../../content/assets/home/1a-contentful-full-logo.webp';
 
 const Testimonial = () => (
   <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 lg:pr-16">

@@ -71,6 +71,7 @@
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.23.2",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "husky": ">=6.0.0",
     "mocha": "^8.4.0",
     "postcss-apply": "^0.12.0",
