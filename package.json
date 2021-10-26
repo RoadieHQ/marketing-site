@@ -7,6 +7,9 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "@algolia/autocomplete-js": "^1.1.0",
     "@algolia/autocomplete-theme-classic": "^1.1.0",
