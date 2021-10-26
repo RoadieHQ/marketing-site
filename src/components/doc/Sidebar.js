@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sidebar, SidebarSectionList, SidebarItem } from 'components/Sidebar';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import Button from 'components/forms/Button';
@@ -45,7 +45,11 @@ const getSearchSources = ({ query }) => {
 
 const DocSidebar = () => {
   const isWide = useMedia(`(min-width: ${fullTailwindConfig.theme.screens.md})`);
-  const [isOpen, setOpen] = useState(isWide);
+  const [isOpen, setOpen] = useState(true);
+
+  useEffect(() => {
+    setOpen(isWide);
+  }, [isWide]);
 
   const toggleSliderOpen = () => {
     // It should never be possible to hide the nav on big screens. The feature only makes
@@ -59,6 +63,7 @@ const DocSidebar = () => {
 
   const docToggleButtonText = isOpen ? 'Hide nav' : 'Show nav';
   const docToggleButtonIcon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
+  const docNavClassNames = classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen });
 
   return (
     <Sidebar side="left">
@@ -83,7 +88,7 @@ const DocSidebar = () => {
         </div>
       </div>
 
-      <nav className={classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen })}>
+      <nav className={docNavClassNames}>
         <SidebarSectionList title="Getting started">
           <SidebarItem
             to="/docs/getting-started/getting-started-for-admins/"
