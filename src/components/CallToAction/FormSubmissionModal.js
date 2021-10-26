@@ -78,13 +78,12 @@ const FormSubmissionModal = ({
       contentLabel="Modal"
       onRequestClose={handleCloseModal}
     >
-      <div className="p-4">
-        <div className="prose prose-primary max-w-none mb-1">
-          <Title>
-            {titleText}{' '}{titleEmoji}
-          </Title>
-          {bodyText}
-        </div>
+      <div className="p-4 prose prose-primary max-w-none mb-1">
+        <Title>
+          {titleText}{' '}{titleEmoji}
+        </Title>
+        {bodyText}
+
         {followOnContent}
       </div>
     </Modal>
