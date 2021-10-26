@@ -94,19 +94,21 @@ const PluginTemplate = ({ data }) => {
             </div>
           </ResponsiveSpacer>
 
-          <ResponsiveSpacer>
-            <div className="text-center pb-3">
-              <Title text="How it looks" />
-            </div>
+          { plugin.frontmatter.coverImage &&
+            <ResponsiveSpacer>
+              <div className="text-center pb-3">
+                <Title text="How it looks" />
+              </div>
 
-            <div>
-              <GatsbyImage
-                image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
-                alt={plugin.frontmatter.coverImageAlt}
-                className="max-w-full max-h-full shadow-small"
-              />
-            </div>
-          </ResponsiveSpacer>
+              <div>
+                <GatsbyImage
+                  image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
+                  alt={plugin.frontmatter.coverImageAlt}
+                  className="max-w-full max-h-full shadow-small"
+                />
+              </div>
+            </ResponsiveSpacer>
+          }
 
           {plugin.notes && plugin.notes !== '' && (
             <ResponsiveSpacer>
