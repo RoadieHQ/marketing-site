@@ -18,7 +18,7 @@ const TextField = ({
         {label}
       </label>
       <div>
-        <Input {...rest} />
+        <Input id={htmlId} {...rest} />
         <HelpText message={helpText} state={helpTextState} />
       </div>
     </div>
