@@ -11,12 +11,12 @@ seo:
   description: |
     Visualize relationships between the entities in your Software Catalog.
 
-logoImage: '../../assets/logos/catalog-graph/catalog-graph-logo.svg'
-coverImage: '../../assets/logos/catalog-graph/catalog-graph-logo.svg'
-coverImageAlt: 'Logo of the Backstage Catalog Graph Plugin'
+logoImage: '../../assets/logos/catalog-graph/catalog-graph-logo.png'
+coverImage: '../../assets/catalog-graph-plugin.png'
+coverImageAlt: 'Backstage Catalog Graph Plugin showing relationships between entities'
 
 gettingStarted:
-  - intro: Install the plugin into Backstage.
+  - intro: Install the [plugin](https://github.com/backstage/backstage/blob/master/plugins/catalog-graph/README.md) into Backstage.
     language: bash
     code: |
       cd packages/app
