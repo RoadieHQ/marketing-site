@@ -86,13 +86,14 @@ These are the repository permissions required:
 | Metadata          | Read         | This gives Roadie read only access to various pieces of metadata about the  GitHub organisation used only in order to enable functionality. This permission is mandatory for all GitHub apps. |
 | Security events   | Read         | This allows Backstage to render a security insights plugin on the component page. |
 | Dependabot alerts | Read         | Required by the GitHub Dependabot plugin. |
+| Workflows         | Read & Write | Allows the scaffolder feature to create workflows for new projects it creates in GitHub |
 
 These are the organization permissions required:
 
 | Name              | Access level | Reason required |
 | ----------------- | ------------ | ------- |
 | Members           | Read         | This allows Backstage to authenticate users of your Github org and ensure only users of your organisation can access it. It also allows for ownership to be assigned and displayed for each service. |
-| Administration    | Read         | Enables the API to show Roadie the interaction limits for a user. |
+| Administration    | Read & Write | Allows the scaffolder feature to create new projects in GitHub |
 
 ## Next steps
 
