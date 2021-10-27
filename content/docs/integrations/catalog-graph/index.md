@@ -8,6 +8,7 @@ description: How to setup Backstage to display catalog entity relationship graph
 
 With this plugin, you can visualize the [relations between entities](https://roadie.io/blog/modeling-software-backstage/), like ownership, grouping or API relationships.
 
+![catalog_graph_card.png](catalog_graph_card.png)
 
 ## Add a Catalog Graph card to a dashboard
 
