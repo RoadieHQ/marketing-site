@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, SitewideHeader, SitewideFooter } from 'components';
+import { SEO, Page } from 'components';
 import { PostSummary, ListHeader, HeadRssLink } from 'components/article';
 
 const BlogIndex = ({ data }) => {
@@ -19,21 +19,15 @@ const BlogIndex = ({ data }) => {
       />
 
       <HeadRssLink />
-      <SitewideHeader />
+      <Page>
+        <ListHeader title="Blog" />
 
-      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div className="relative max-w-lg mx-auto lg:max-w-7xl">
-          <ListHeader title="Blog" />
-
-          <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-            {posts.map(({ node }) => (
-              <PostSummary key={node.fields.slug} post={node} />
-            ))}
-          </div>
+        <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+          {posts.map(({ node }) => (
+            <PostSummary key={node.fields.slug} post={node} />
+          ))}
         </div>
-      </div>
-
-      <SitewideFooter />
+      </Page>
     </>
   );
 };

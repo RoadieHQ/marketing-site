@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
 import {
-  SitewideHeader,
-  SitewideFooter,
+  Page,
   SEO,
   Headline,
   Input,
@@ -36,35 +35,29 @@ const BackstagePlugins = ({ data }) => {
         description="A comprehensive list of Backstage plugins. With screenshots, installation instructions and usage guides."
       />
 
-      <SitewideHeader />
-
-      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
-          <div className="lg:flex justify-between items-center">
-            <div className="sm:mb-6 lg:mb-0">
-              <Headline>Backstage plugins</Headline>
-            </div>
-
-            <form>
-              <Input
-                type="text"
-                onChange={setQuery}
-                value={query}
-                aria-label="Search"
-                placeholder="Search"
-              />
-            </form>
+      <Page titleDivide={true}>
+        <div className="lg:flex justify-between items-center">
+          <div className="sm:mb-6 lg:mb-0">
+            <Headline>Backstage plugins</Headline>
           </div>
 
-          <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-            {filteredPlugins.map(({ node: { fields, frontmatter } }) => (
-              <ListItem frontmatter={frontmatter} fields={fields} key={fields.slug} />
-            ))}
-          </div>
+          <form>
+            <Input
+              type="text"
+              onChange={setQuery}
+              value={query}
+              aria-label="Search"
+              placeholder="Search"
+            />
+          </form>
         </div>
-      </div>
 
-      <SitewideFooter />
+        <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+          {filteredPlugins.map(({ node: { fields, frontmatter } }) => (
+            <ListItem frontmatter={frontmatter} fields={fields} key={fields.slug} />
+          ))}
+        </div>
+      </Page>
     </>
   );
 };

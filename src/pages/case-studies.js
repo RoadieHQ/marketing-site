@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import get from 'lodash/get';
 
-import { SEO, SitewideHeader, SitewideFooter } from 'components';
+import { SEO, Page } from 'components';
 import { Attribution, TitleAndDescription, ListHeader } from 'components/article';
 
 const CaseStudySummary = ({ study }) => {
@@ -45,24 +45,18 @@ const CaseStudiesIndex = ({ data }) => {
         `}
       />
 
-      <SitewideHeader />
+      <Page>
+        <ListHeader
+          title="Case studies"
+          description="Learn how organizations around the world are adopting and benefiting from Backstage."
+        />
 
-      <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div className="relative max-w-lg mx-auto lg:max-w-7xl">
-          <ListHeader
-            title="Case studies"
-            description="Learn how organizations around the world are adopting and benefiting from Backstage."
-          />
-
-          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-            {posts.map(({ node }) => (
-              <CaseStudySummary key={node.fields.slug} study={node} />
-            ))}
-          </div>
+        <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+          {posts.map(({ node }) => (
+            <CaseStudySummary key={node.fields.slug} study={node} />
+          ))}
         </div>
-      </div>
-
-      <SitewideFooter />
+      </Page>
     </>
   );
 };
