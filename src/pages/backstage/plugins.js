@@ -6,6 +6,7 @@ import {
   SitewideFooter,
   SEO,
   Headline,
+  Input,
 } from 'components';
 import ListItem from 'components/backstage/plugins/ListItem';
 
@@ -28,10 +29,6 @@ const BackstagePlugins = ({ data }) => {
     });
   }
 
-  const onInputChange = (event) => {
-    setQuery(event.target.value);
-  };
-
   return (
     <>
       <SEO
@@ -49,12 +46,11 @@ const BackstagePlugins = ({ data }) => {
             </div>
 
             <form>
-              <input
+              <Input
                 type="text"
-                onChange={onInputChange}
+                onChange={setQuery}
                 value={query}
                 aria-label="Search"
-                className="bg-gray-100 color-gray-800 border-2 border-gray-300 sm:w-full lg:w-56 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Search"
               />
             </form>
