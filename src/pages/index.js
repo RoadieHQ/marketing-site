@@ -64,7 +64,7 @@ const PRODUCT = {
 
   }, {
     title: 'Maintenance free',
-    description: 'Roadie handles upgrades and security so you can stay focussed on the work your team does best.',
+    description: 'Roadie handles upgrades and security so you can stay focused on the work your team does best.',
     illustration: SecurityMaintenanceIllustration,
     bullets: [{
       name: 'Automated upgrades',
