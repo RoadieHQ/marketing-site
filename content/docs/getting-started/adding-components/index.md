@@ -49,7 +49,7 @@ Backstage scans your Github Org for new updates periodically, discovers YAML fil
 If you don't want to wait for a component to be discovered you can add components manually to Backstage by using the catalog importer available at `/catalog-import`. You can do this by copying and pasting the URL of the YAML file into the importer (see video below). If you are just getting started with Backstage we recommend adding your first few files manually as it will get you going quicker. 
 
 
-[![Adding a Component](https://cdn.loom.com/sessions/thumbnails/faba9cbe1b154251a3c0f138e7146e41-with-play.gif)](https://www.loom.com/share/faba9cbe1b154251a3c0f138e7146e41 "Adding a Component")
+[![Adding a Component](https://cdn.loom.com/sessions/thumbnails/b96f07f0579a423f8cb762e8c1b7f3fe-with-play.gif)](https://www.loom.com/share/b96f07f0579a423f8cb762e8c1b7f3fe "Adding a Component")
 
 ### Step 3. View your Component
 Click the Home link in the Backstage sidebar to go back to the catalog where you should see your component. Depending on the type of component you imported, you might have to cycle through the tabs until you see your component.
