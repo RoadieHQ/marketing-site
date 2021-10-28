@@ -55,14 +55,15 @@ Then you can edit the props for the card by adding the following JSON or a subse
 
 ```json
 {
-  "selectedKinds": [
+  "title": "Relationship Graph",
+  "kinds": [
     "component",
     "domain",
     "system",
     "api",
     "group"
   ],
-  "selectedRelations": [
+  "relations": [
     "ownerOf",
     "ownedBy",
     "consumesApi",
@@ -75,7 +76,7 @@ Then you can edit the props for the card by adding the following JSON or a subse
     "childOf",
     "memberOf"
   ],
-  "maxDepth": 3
+  "maxDepth": 2
 }
 ```
 
