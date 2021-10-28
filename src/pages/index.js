@@ -19,16 +19,24 @@ import {
   PresentationChartLineIcon,
   BookOpenIcon,
 } from '@heroicons/react/outline'
-import { VideoHero } from 'components/landing/VideoHero';
-import AlternatingFeatureBlock from 'components/landing/AlternatingFeatureBlock';
-import SplitGridLogoCloud from 'components/landing/SplitGridLogoCloud';
-import FooterCTA from 'components/landing/FooterCTA';
+import {
+  AlternatingFeatureBlock,
+  SplitGridLogoCloud,
+  FooterCTA,
+  VideoHero,
+  CustomerLogoCloud,
+} from 'components/landing';
 
-import DragDropIllustration from '../../content/assets/home/drag-drop-illustration.webp';
-import SecurityMaintenanceIllustration from '../../content/assets/home/security-maintenance-illustration.webp';
-import ServiceCatalogIllustration from '../../content/assets/home/service-catalog-illustration.webp';
-import ProductionConsistencyIllustration from '../../content/assets/home/production-consistency-illustration.webp';
-import MikeExpediaGroupQuote from '../../content/assets/home/mike-expedia-quote.webp';
+import SnykLogo from '../../content/assets/home/customer-logos/snyk-monochrome.webp';
+import StreamElementsLogo from '../../content/assets/home/customer-logos/streamelements@3x-monochrome.webp';
+import TrackunitLogo from '../../content/assets/home/customer-logos/trackunit-monochrome.webp';
+import ContentfulLogo from '../../content/assets/home/customer-logos/contentful-monochrome.webp';
+
+import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
+import SecurityMaintenanceIllustration from '../../content/assets/home/illustrations/security-maintenance-illustration.webp';
+import ServiceCatalogIllustration from '../../content/assets/home/illustrations/service-catalog-illustration.webp';
+import ProductionConsistencyIllustration from '../../content/assets/home/illustrations/production-consistency-illustration.webp';
+import MikeExpediaGroupQuote from '../../content/assets/home/illustrations/mike-expedia-quote.webp';
 
 import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
 import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
@@ -42,6 +50,25 @@ const LEAD = `
 Roadie's SaaS platform handles hosting and upgrades and ensures
 you always have access to the latest Backstage features.
 `;
+
+
+const LOGOS = [{
+  src: SnykLogo,
+  alt: 'Snyk',
+  title: '~150 engineers',
+}, {
+  src: ContentfulLogo,
+  alt: 'Contentful',
+  title: '~150 engineers',
+}, {
+  src: StreamElementsLogo,
+  alt: 'StreamElements',
+  title: '~50 engineers',
+}, {
+  src: TrackunitLogo,
+  alt: 'Trackunit',
+  title: '~70 engineers',
+}];
 
 const PRODUCT = {
   htmlId: 'product',
@@ -187,6 +214,7 @@ const Home = ({
 
     <SitewideHeader />
     <VideoHero />
+    <CustomerLogoCloud logos={LOGOS} />
     <AlternatingFeatureBlock content={PRODUCT} />
     <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
     <AlternatingFeatureBlock content={SOLUTIONS} />
