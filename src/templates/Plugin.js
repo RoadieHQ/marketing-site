@@ -63,8 +63,9 @@ const PluginTemplate = ({ data }) => {
             </div>
           </ResponsiveSpacer>
 
+          {plugin.frontmatter.gettingStarted && (
           <ResponsiveSpacer>
-            <div className="text-center pb-3">
+            <div className="text-center pb-3" >
               <Title text="Installation steps" />
             </div>
 
@@ -83,6 +84,7 @@ const PluginTemplate = ({ data }) => {
               )
             )}
           </ResponsiveSpacer>
+          )}
 
           <ResponsiveSpacer>
             <div className="prose prose-primary">
