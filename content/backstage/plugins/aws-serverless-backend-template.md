@@ -22,7 +22,7 @@ logoImage: '../../assets/logos/scaffolder-templates/sst.png'
 The template can be found here https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/create-aws-serverless-backend/template.yaml
 
 To Use the template
-  1. intro: Create the following secrets in your GitHub Organizations secrets AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY ![AWS Credentials](aws-credentials.png)
+  1. Create the following secrets in your GitHub Organizations secrets AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY ![AWS Credentials](aws-credentials.png)
     
   2. Load the template into Backstage. ![Load Template](./load-scaffolder-template.png)
     
