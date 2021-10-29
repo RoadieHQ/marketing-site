@@ -1,0 +1,29 @@
+---
+humanName: 'Scaffolder Templates: AWS Serverless Frontend'
+heading: 'Backstage Scaffolder Task to create an AWS Serverless Frontend'
+# Keep it short
+lead: 'Create AWS Serverless Frontend'
+attribution:
+  text: Roadie
+  href: https://github.com/RoadieHQ/software-templates
+
+seo:
+  # Don't forget to end with "| Roadie"
+  title: 'Scaffolder Templates - AWS Serverless Frontend | Roadie'
+  description: |
+    This plugin adds a template to Backstage that creates a AWS Serverless frontend. It creates the stack definition using Serverless stack and creates the GitHub actions to deploy the application in an AWS account.
+
+logoImage: '../../assets/logos/scaffolder-templates/sst.png'
+
+---
+
+### Getting Started
+
+The template can be found here https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/create-aws-serverless-frontend-and-backend/template.yaml
+
+To Use the template
+  1. intro: Create the following secrets in your GitHub Organizations secrets AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY ![AWS Credentials](aws-credentials.png)
+    
+  2. Load the template into Backstage. ![Load Template](./load-scaffolder-template.png)
+    
+  3. Run the template by clicking choose on the Create Component Page ![Run the Template](create-serverless-backend-and-frontend.png)
