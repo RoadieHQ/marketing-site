@@ -125,6 +125,7 @@ const DocSidebar = () => {
           <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
           <SidebarItem to="/docs/integrations/snyk/" text="Snyk" />
           <SidebarItem to="/docs/integrations/sonarqube/" text="SonarQube" />
+          <SidebarItem to="/docs/integrations/travis-ci/" text="Travis CI" />
         </SidebarSectionList>
 
         <SidebarSectionList title="Configuration">

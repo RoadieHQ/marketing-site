@@ -1,0 +1,51 @@
+---
+title: Travis CI
+lastUpdated: '2021-11-01T11:00:00.0Z'
+description: How to create Travis CI API Token for Travis CI plugin.
+---
+
+## Introduction
+
+In order to use the Travis CI plugin, Roadie needs an API token to communicate with Travis CI APIs.
+
+This is set within backstage at the following url:
+
+```text
+https://<tenant-name>.roadie.so/administration/settings/secrets
+```
+
+This page describes how to create and set up the Travis CI API.
+
+## Steps
+
+### Step 1: Create an API token
+
+Start by visiting the account settings page in [Travis](https://www.travis-ci.com/account/preferences).
+
+Click on the "Copy token" button under the API settings section.
+
+   ![Travis CI TOKEN](./copy-token.png)
+
+
+### Step 2: Store the token in Roadie
+Visit:
+
+```text
+https://<tenant-name>.roadie.so/administration/settings/secrets
+```
+
+Enter the token value from above into `TRAVISCI_AUTH_TOKEN`.
+
+### Step 3: Adding annotations to your catalog.yaml
+
+Add annotation to the yaml config file of a component.
+Where `<owner-name>` is the owner of the project in travis and `<project-name>` is the name of the project in travis.
+
+```text
+travis-ci.com/repo-slug: owner-name/project-name
+```
+
+
+## References
+
+- [Token, Token, Token](https://blog.travis-ci.com/2013-01-28-token-token-token)
