@@ -37,10 +37,15 @@ import ContentfulLogo from '../../content/assets/home/customer-logos/contentful-
 import ContentfulLogoPng from '../../content/assets/home/customer-logos/contentful-monochrome.png';
 
 import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
+import DragDropIllustrationPng from '../../content/assets/home/illustrations/drag-drop-illustration.png';
 import SecurityMaintenanceIllustration from '../../content/assets/home/illustrations/security-maintenance-illustration.webp';
+import SecurityMaintenanceIllustrationPng from '../../content/assets/home/illustrations/security-maintenance-illustration.png';
 import ServiceCatalogIllustration from '../../content/assets/home/illustrations/service-catalog-illustration.webp';
+import ServiceCatalogIllustrationPng from '../../content/assets/home/illustrations/service-catalog-illustration.png';
 import ProductionConsistencyIllustration from '../../content/assets/home/illustrations/production-consistency-illustration.webp';
+import ProductionConsistencyIllustrationPng from '../../content/assets/home/illustrations/production-consistency-illustration.png';
 import MikeExpediaGroupQuote from '../../content/assets/home/illustrations/mike-expedia-quote.webp';
+import MikeExpediaGroupQuotePng from '../../content/assets/home/illustrations/mike-expedia-quote.png';
 
 import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
 import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
@@ -93,7 +98,10 @@ const PRODUCT = {
   features: [{
     title: 'Quick and easy setup',
     description: 'Customize Backstage in a couple of clicks. Drag plugins to where you want them. Add new ones instantly.',
-    illustration: DragDropIllustration,
+    illustration: {
+      webp: DragDropIllustration,
+      png: DragDropIllustrationPng,
+    },
     bullets: [{
       name: 'All plugin formats supported',
       description:
@@ -108,7 +116,10 @@ const PRODUCT = {
   }, {
     title: 'Maintenance free',
     description: 'Roadie handles upgrades and security so you can stay focused on the work your team does best.',
-    illustration: SecurityMaintenanceIllustration,
+    illustration: {
+      webp: SecurityMaintenanceIllustration,
+      png: SecurityMaintenanceIllustrationPng,
+    },
     bullets: [{
       name: 'Automated upgrades',
       description:
@@ -130,7 +141,10 @@ const SOLUTIONS = {
   features: [{
     title: 'Built on Backstage',
     description: 'Backstage is the developer portal and service catalog which has enabled engineering hypergrowth at Spotify since 2016. It can improve developer effectiveness, reduce downtime, and enable your teams to ship high-quality code quickly.',
-    illustration: MikeExpediaGroupQuote,
+    illustration: {
+      webp: MikeExpediaGroupQuote,
+      png: MikeExpediaGroupQuotePng,
+    },
     bullets: [{
       name: 'Scaffold new services',
       description: `The Backstage scaffolder allows engineers to create new services from pre-defined templates. Increasing velocity and production consistency.`,
@@ -148,7 +162,10 @@ const SOLUTIONS = {
   }, {
     title: 'Cut onboarding time with discoverability',
     description: 'Backstage centralizes the information that new engineers need to get up to speed quickly. Meaning they onboard in weeks rather than months.',
-    illustration: ServiceCatalogIllustration,
+    illustration: {
+      webp: ServiceCatalogIllustration,
+      png: ServiceCatalogIllustrationPng,
+    },
     bullets: [{
       name: 'Rapid growth stretches knowledge',
       description: `Rapid growth means new engineers are joining and existing engineers are changing teams. Backstage ensures they become effective quickly, and stay that way.`,
@@ -167,7 +184,10 @@ const SOLUTIONS = {
   }, {
     title: 'Improve production consistency',
     description: 'Use the built in scaffolder to create new services from templates which have your best practices built in.',
-    illustration: ProductionConsistencyIllustration,
+    illustration: {
+      webp: ProductionConsistencyIllustration,
+      png: ProductionConsistencyIllustrationPng,
+    },
     bullets: [{
       name: 'Inconsistent environments slow development',
       description: `Nobody wants obstacles on the path to production, but heterogeneous environments cause operational headaches and slow technology migrations.`,
