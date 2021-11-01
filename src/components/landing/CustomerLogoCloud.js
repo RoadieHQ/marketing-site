@@ -1,9 +1,13 @@
 import React from 'react';
 
 /* eslint-disable jsx-a11y/alt-text */
-const LogoItem = (props) => (
+const LogoItem = ({ src, ...rest }) => (
   <div className="col-span-1 flex justify-center">
-    <img className="h-10" {...props} />
+    <picture>
+      <source srcSet={src.webp} type="image/webp" />
+      <source srcSet={src.png} type="image/png" />
+      <img src={src.png} {...rest} className="h-10" />
+    </picture>
   </div>
 );
 /* eslint-enable jsx-a11y/alt-text */
