@@ -2,17 +2,24 @@ import React from 'react';
 import { QuoteIcon } from 'components/icons';
 
 import enriqueAvatar from '../../content/assets/home/testimonial/enrique-avatar.webp';
+import enriqueAvatarPng from '../../content/assets/home/testimonial/enrique-avatar.png';
 import contentfulLogo from '../../content/assets/home/testimonial/contentful-monochrome-white.webp';
+import contentfulLogoPng from '../../content/assets/home/testimonial/contentful-monochrome-white.png';
 
 const Testimonial = () => (
   <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 lg:pr-16">
     <div className="md:flex-shrink-0">
-      <img
-        src={contentfulLogo}
-        alt="Contentful logo"
-        height="33"
-        width="160"
-      />
+      <picture>
+        <source srcSet={contentfulLogo} type="image/webp" />
+        <source srcSet={contentfulLogoPng} type="image/png" />
+
+        <img
+          src={contentfulLogoPng}
+          alt="Contentful logo"
+          height="33"
+          width="160"
+        />
+      </picture>
     </div>
 
     <blockquote className="mt-6 md:flex-grow md:flex md:flex-col">
@@ -27,13 +34,19 @@ const Testimonial = () => (
       <footer className="mt-8">
         <div className="flex items-start">
           <div className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
+
+          <picture>
+            <source srcSet={enriqueAvatar} type="image/webp" />
+            <source srcSet={enriqueAvatarPng} type="image/png" />
+
             <img
-              src={enriqueAvatar}
+              src={enriqueAvatarPng}
               alt="Enrique's face"
               className="h-12 w-12 rounded-full"
               height="100"
               width="100"
             />
+          </picture>
           </div>
 
           <div className="ml-4">
