@@ -28,9 +28,13 @@ import {
 } from 'components/landing';
 
 import SnykLogo from '../../content/assets/home/customer-logos/snyk-monochrome.webp';
+import SnykLogoPng from '../../content/assets/home/customer-logos/snyk-monochrome.png';
 import StreamElementsLogo from '../../content/assets/home/customer-logos/streamelements@3x-monochrome.webp';
+import StreamElementsLogoPng from '../../content/assets/home/customer-logos/streamelements@3x-monochrome.png';
 import TrackunitLogo from '../../content/assets/home/customer-logos/trackunit-monochrome.webp';
+import TrackunitLogoPng from '../../content/assets/home/customer-logos/trackunit-monochrome.png';
 import ContentfulLogo from '../../content/assets/home/customer-logos/contentful-monochrome.webp';
+import ContentfulLogoPng from '../../content/assets/home/customer-logos/contentful-monochrome.png';
 
 import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
 import SecurityMaintenanceIllustration from '../../content/assets/home/illustrations/security-maintenance-illustration.webp';
@@ -53,19 +57,31 @@ you always have access to the latest Backstage features.
 
 
 const LOGOS = [{
-  src: SnykLogo,
+  src: {
+    webp: SnykLogo,
+    png: SnykLogoPng,
+  },
   alt: 'Snyk',
   title: '~150 engineers',
 }, {
-  src: ContentfulLogo,
+  src: {
+    webp: ContentfulLogo,
+    png: ContentfulLogoPng,
+  },
   alt: 'Contentful',
   title: '~150 engineers',
 }, {
-  src: StreamElementsLogo,
+  src: {
+    webp: StreamElementsLogo,
+    png: StreamElementsLogoPng,
+  },
   alt: 'StreamElements',
   title: '~50 engineers',
 }, {
-  src: TrackunitLogo,
+  src: {
+    webp: TrackunitLogo,
+    png: TrackunitLogoPng,
+  },
   alt: 'Trackunit',
   title: '~70 engineers',
 }];
