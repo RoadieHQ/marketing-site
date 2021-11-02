@@ -6,7 +6,12 @@ import {
   SitewideHeader,
 } from 'components';
 
-import { Team, SimpleCenteredHeading } from 'components/landing';
+import {
+  Team,
+  SimpleCenteredHeading,
+  ExplainingTheVision,
+  CustomerLogoCloud,
+} from 'components/landing';
 
 const PEOPLE = [{
   name: 'David Tuite',
@@ -109,11 +114,15 @@ const About = () => (
       lead="Software is positively impacting many facets our human life. We believe we are still early in the journey towards buinding software effectively. By making software development more effective, we can have a huge impact on humanity."
     />
 
+    <ExplainingTheVision />
+
     <Team
       headline="Our Team"
       lead="We are a small group of folks from enterprise software backgrounds. We understand the complexity of modern software development."
       people={PEOPLE}
     />
+
+    <CustomerLogoCloud />
 
     <SitewideFooter />
   </>
