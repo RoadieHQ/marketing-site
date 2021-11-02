@@ -6,7 +6,7 @@ import {
   SitewideHeader,
 } from 'components';
 
-import Team from 'components/landing/Team';
+import { Team } from 'components/landing/Team';
 
 const About = () => (
   <>
