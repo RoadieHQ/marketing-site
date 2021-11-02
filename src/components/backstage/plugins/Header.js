@@ -4,16 +4,26 @@ import { Lead, Headline } from 'components';
 import Logo from './Logo';
 import Attribution from './Attribution';
 
-const Header = ({ plugin }) => (
+const Header = ({
+  plugin: {
+    frontmatter: {
+      humanName,
+      logoImage,
+      heading,
+      lead,
+      attribution
+    },
+  },
+}) => (
   <header className="text-center pb-4 mb-4 md:pt-8 md:pb-24 border-b-2 border-gray-100">
-    <Logo sharpImage={plugin.frontmatter.logoImage.childImageSharp} />
+    <Logo sharpImage={logoImage.childImageSharp} alt={`${humanName} logo`} />
     <div className="mb-4">
-      <Headline>{plugin.frontmatter.heading}</Headline>
+      <Headline>{heading}</Headline>
     </div>
     <div className="mb-4">
-      <Lead>{plugin.frontmatter.lead}</Lead>
+      <Lead>{lead}</Lead>
     </div>
-    <Attribution attribution={plugin.frontmatter.attribution} />
+    <Attribution attribution={attribution} />
   </header>
 );
 
