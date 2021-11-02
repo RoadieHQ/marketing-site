@@ -45,6 +45,32 @@ Where `<owner-name>` is the owner of the project in travis and `<project-name>` 
 travis-ci.com/repo-slug: owner-name/project-name
 ```
 
+### Step 4: Adding travis card
+
+Navigate to the catalog entity you want to add the travis card to.
+
+Click on the edit gear on the top right of the page
+
+![Travis add card](./travis-adding-card.png)
+
+You should now see something like this:
+
+![Travis card](./travis-card.png)
+
+
+### Step 4: Adding travis tab
+
+Navigate to the catalog entity you want to add the travis tab to.
+
+Click on the `+` icon on the tabs bar (top right of the page)
+
+![Travis add tab](./travis-adding-tab.png)
+
+You should now see something like this:
+
+![Travis tab](./travis-tab.png)
+
+
 
 ## References
 
