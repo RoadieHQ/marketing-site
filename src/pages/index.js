@@ -60,7 +60,6 @@ Roadie's SaaS platform handles hosting and upgrades and ensures
 you always have access to the latest Backstage features.
 `;
 
-
 const LOGOS = [{
   src: {
     webp: SnykLogo,
@@ -101,6 +100,7 @@ const PRODUCT = {
     illustration: {
       webp: DragDropIllustration,
       png: DragDropIllustrationPng,
+      alt: 'A component from a Backstage plugin being dragged around with the mouse pointer',
     },
     bullets: [{
       name: 'All plugin formats supported',
@@ -119,6 +119,7 @@ const PRODUCT = {
     illustration: {
       webp: SecurityMaintenanceIllustration,
       png: SecurityMaintenanceIllustrationPng,
+      alt: 'A progress bar and cog to indicate an upgrade in progress.',
     },
     bullets: [{
       name: 'Automated upgrades',
@@ -144,6 +145,7 @@ const SOLUTIONS = {
     illustration: {
       webp: MikeExpediaGroupQuote,
       png: MikeExpediaGroupQuotePng,
+      alt: 'A face of a Backstage user with the quote: "We expect to see a 6x return on Backstage within a period of about 40 days."',
     },
     bullets: [{
       name: 'Scaffold new services',
@@ -151,7 +153,7 @@ const SOLUTIONS = {
       icon: SparklesIcon,
     }, {
       name: 'Bring order with the software catalog',
-      description: 'The searchable catalog makes engineeering tools discoverable and reduces context switching.',
+      description: 'The searchable catalog makes engineering tools discoverable and reduces context switching.',
       icon: LibraryIcon,
     }, {
       name: 'Write technical docs that get read',
@@ -165,6 +167,7 @@ const SOLUTIONS = {
     illustration: {
       webp: ServiceCatalogIllustration,
       png: ServiceCatalogIllustrationPng,
+      alt: 'A list of services that might exist in a company like Spotify: Pricing, Audio, Ratings etc. One service is selected and the user can see extra information about it. For example, which system it is part of, who the owner is etc.',
     },
     bullets: [{
       name: 'Rapid growth stretches knowledge',
@@ -187,6 +190,7 @@ const SOLUTIONS = {
     illustration: {
       webp: ProductionConsistencyIllustration,
       png: ProductionConsistencyIllustrationPng,
+      alt: '5 services represented by one hexagon each. The hexagons are tightly packed together in a hive-like structure and they are all the same size. This indicates that they are consistent.',
     },
     bullets: [{
       name: 'Inconsistent environments slow development',
