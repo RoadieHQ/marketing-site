@@ -21,7 +21,7 @@ const CustomerLogoCloud = ({ logos }) => (
 
       <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
         {logos.map((logo) => (
-          <LogoItem {...logo} key={logo.src} />
+          <LogoItem {...logo} key={logo.src.png} />
         ))}
       </div>
     </div>

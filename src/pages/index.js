@@ -65,28 +65,28 @@ const LOGOS = [{
     webp: SnykLogo,
     png: SnykLogoPng,
   },
-  alt: 'Snyk',
+  alt: 'Snyk logo',
   title: '~150 engineers',
 }, {
   src: {
     webp: ContentfulLogo,
     png: ContentfulLogoPng,
   },
-  alt: 'Contentful',
+  alt: 'Contentful logo',
   title: '~150 engineers',
 }, {
   src: {
     webp: StreamElementsLogo,
     png: StreamElementsLogoPng,
   },
-  alt: 'StreamElements',
+  alt: 'StreamElements logo',
   title: '~50 engineers',
 }, {
   src: {
     webp: TrackunitLogo,
     png: TrackunitLogoPng,
   },
-  alt: 'Trackunit',
+  alt: 'Trackunit logo',
   title: '~70 engineers',
 }];
 
