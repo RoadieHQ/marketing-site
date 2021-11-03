@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'components';
-import { TwitterIcon, LinkedinIcon } from 'components/icons';
+import { TwitterIcon, LinkedinIcon, GitHubIcon } from 'components/icons';
 import isUndefined from 'lodash/isUndefined';
 
 const SocialLinkIcon = ({ type }) => {
   if (type === 'twitter') {
     return <TwitterIcon className="w-5 h-5" aria-hidden="true" />;
+  } else if (type === 'github') {
+    return <GitHubIcon className="w-5 h-5" aria-hidden="true" />;
   }
 
   return <LinkedinIcon className="w-5 h-5" aria-hidden="true" />;
@@ -46,6 +48,7 @@ const Person = ({ person }) => (
       </div>
 
       <ul className="flex space-x-5">
+        <SocialLink person={person} type="github" />
         <SocialLink person={person} type="twitter" />
         <SocialLink person={person} type="linkedin" />
       </ul>

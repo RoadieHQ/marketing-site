@@ -22,6 +22,7 @@ const PEOPLE = [{
     'David worked as a software engineer and infrastructure product manager for 10+ years. Before founding Roadie, he worked on a service catalog and developer portal at Workday.',
   twitterUrl: 'https://twitter.com/dtuite',
   linkedinUrl: 'https://linkedin.com/in/davidtuite',
+  githubUrl: 'https://github.com/dtuite',
 }, {
 
   name: 'Martina Iglaseas Fernandez',
@@ -32,6 +33,7 @@ const PEOPLE = [{
     'Martina should write about herself here.',
   twitterUrl: 'https://twitter.com/martina_if',
   linkedinUrl: 'https://linkedin.com/in/martina-iglesias-fernandez',
+  githubUrl: 'https://github.com/martina-if',
 }, {
 
   name: 'Orla Tuite',
@@ -42,6 +44,7 @@ const PEOPLE = [{
     'Orla should write about herself here.',
   twitterUrl: 'https://twitter.com/OrlaChewit',
   linkedinUrl: 'https://www.linkedin.com/in/orla-t-01a80682/',
+  githubUrl: 'https://github.com/oblongcoffee',
 }, {
 
   name: 'Jussi Hallila',
@@ -52,6 +55,7 @@ const PEOPLE = [{
     'Jussi should write about himself here.',
   twitterUrl: 'https://twitter.com/Xantier',
   linkedinUrl: 'https://www.linkedin.com/in/jussihallila/',
+  githubUrl: 'https://github.com/Xantier',
 }, {
 
   name: 'Brian Fletcher',
@@ -62,6 +66,7 @@ const PEOPLE = [{
     'Brian should write about himself here.',
   twitterUrl: 'https://twitter.com/punkle',
   linkedinUrl: 'https://www.linkedin.com/in/brianjffletcher/',
+  githubUrl: 'https://github.com/punkle',
 }, {
 
   name: 'Sam Blausten',
@@ -72,6 +77,7 @@ const PEOPLE = [{
     'Sam should write about himself here.',
   twitterUrl: 'https://twitter.com/SBlausten',
   linkedinUrl: 'https://www.linkedin.com/in/samblausten/',
+  githubUrl: 'https://github.com/sblausten',
 }, {
 
   name: 'Iain Billett',
@@ -81,6 +87,7 @@ const PEOPLE = [{
   bio:
     'Iain should write about himself here.',
   linkedinUrl: 'https://www.linkedin.com/in/iain-billett-0642b531/',
+  githubUrl: 'https://github.com/iain-b',
 }, {
 
   name: 'Irma Solakovic',
@@ -90,6 +97,7 @@ const PEOPLE = [{
   bio:
     'Irma should write about herself here.',
   linkedinUrl: 'https://www.linkedin.com/in/irma-solakovic-70b13b9a/',
+  githubUrl: 'https://github.com/Irma12',
 }, {
 
   name: 'Nicolas Arnold',
@@ -99,6 +107,7 @@ const PEOPLE = [{
   bio:
     'Nicolas should write about himself here.',
   linkedinUrl: 'https://www.linkedin.com/in/nicolas-arnold-4b6021151/',
+  githubUrl: 'https://github.com/nicolasarnold12321',
 }];
 
 const About = () => (
