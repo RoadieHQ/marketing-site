@@ -6,3 +6,4 @@ export { default as VideoHero } from './VideoHero/VideoHero';
 export { default as SimpleCenteredHeading } from './SimpleCenteredHeading';
 export { CircleThreeColTeam } from './Team';
 export { default as ExplainingTheVision } from './ExplainingTheVision';
+export { default as FAQs } from './faqs';
