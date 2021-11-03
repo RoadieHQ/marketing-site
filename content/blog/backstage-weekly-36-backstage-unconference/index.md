@@ -30,7 +30,7 @@ We have already started work on some UI pieces which will display scorecards in 
 
 The Bazaar plugin, developed by folks at Axis Communications, is a place where engineers propose projects for cross-functional team development. Essentially a marketplace for internal projects suitable for [Inner Sourcing](https://en.wikipedia.org/wiki/Inner_source). 
 
-Many companies today are of high need to increase the ease of cross-team cooperation. The Bazaar allows engineers and teams to open up and announce their new and exciting projects for transparent cooperation in other parts of larger organizations.
+Many companies would like to increase the ease of cross-team cooperation. The Bazaar allows engineers and teams to open up and announce their new and exciting projects for transparent cooperation in other parts of larger organizations.
 
 Learn more in pull request [#7174](https://github.com/backstage/backstage/pull/7174).
 
