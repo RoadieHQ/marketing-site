@@ -209,14 +209,9 @@ const SOLUTIONS = {
 const PLUGINS_SUPPORTED = {
   title: 'Pre-loaded with the best plugins',
   subTitle: `Open-source plugins are supported by default. Push your own plugins if you need something bespoke.`,
-  primaryCallToAction: {
-    text: 'Try it free',
-    to: '/free-trial/',
-  },
-
-  secondaryCallToAction: {
-    text: 'Request a demo',
-    to: '/request-demo/',
+  link: {
+    text: 'See the range of Backstage plugins available',
+    to: '/backstage/plugins/',
   },
 
   logos: [{
