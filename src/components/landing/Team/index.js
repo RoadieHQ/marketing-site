@@ -1,1 +1,1 @@
-export { default as Team } from './Team';
+export { default as CircleThreeColTeam } from './CircleThreeColTeam';
