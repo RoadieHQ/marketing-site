@@ -1,7 +1,8 @@
 import React from 'react';
 import { DotPattern } from 'components';
+import teamInRoad from '../../../content/team/group/team-in-road.jpg';
 
-const HEADLINE = 'On a mission to empower teams';
+const HEADLINE = 'The potential of software';
 
 const ExplainingTheVision = () => (
   <div className="relative bg-white py-16 sm:py-24">
@@ -28,15 +29,14 @@ const ExplainingTheVision = () => (
           <div className="relative pt-64 pb-10 rounded-2xl shadow-xl overflow-hidden">
             <img
               className="absolute inset-0 h-full w-full object-cover"
-              src="https://images.unsplash.com/photo-1521510895919-46920266ddb3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&fp-x=0.5&fp-y=0.6&fp-z=3&width=1440&height=1440&sat=-100"
-              alt=""
+              src={teamInRoad}
+              alt="A number of Roadie employees talking to each other while standing in the middle of a small street"
             />
           </div>
         </div>
       </div>
 
       <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
-        {/* Content area */}
         <div className="pt-12 sm:pt-16 lg:pt-20">
           <h2 className="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
             {HEADLINE}
