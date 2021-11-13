@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'components';
 import { TwitterIcon, LinkedinIcon, GitHubIcon } from 'components/icons';
 import isUndefined from 'lodash/isUndefined';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const SocialLinkIcon = ({ type }) => {
   if (type === 'twitter') {
@@ -15,7 +16,7 @@ const SocialLinkIcon = ({ type }) => {
 
 const SocialLink = ({ person, type }) => {
   const url = person[`${type}Url`];
-  if (isUndefined(url)) return null;
+  if (!url) return null;
 
   return (
     <li>
@@ -31,11 +32,13 @@ const Person = ({ person }) => (
   <li>
     <div className="space-y-4">
       <div className="aspect-w-3 aspect-h-2">
-        <img
-          className="object-cover shadow-lg rounded-lg"
-          src={person.imageUrl}
-          alt={`${person.name} head shot`}
-        />
+        {person.headshot && (
+          <GatsbyImage
+            className="shadow-lg rounded-lg"
+            image={person.headshot.childImageSharp.gatsbyImageData}
+            alt={`${person.name} head shot`}
+          />
+        )}
       </div>
 
       <div className="text-lg leading-6 font-medium space-y-1">

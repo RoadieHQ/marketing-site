@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import {
   SEO,
@@ -110,7 +111,11 @@ const PEOPLE = [{
   githubUrl: 'https://github.com/nicolasarnold12321',
 }];
 
-const About = () => (
+const About = ({
+  data: {
+    team,
+  }
+}) => (
   <>
     <SEO
       title={`About us | Roadie`}
@@ -128,7 +133,7 @@ const About = () => (
     <Team
       headline="Our Team"
       lead="We are a small group of folks from enterprise software backgrounds. We understand the complexity of modern software development."
-      people={PEOPLE}
+      people={team.edges.map(({ node }) => node.frontmatter)}
     />
 
     <CustomerLogoCloud />
@@ -139,3 +144,34 @@ const About = () => (
 
 export default About;
 
+export const pageQuery = graphql`
+  query {
+    team: allMarkdownRemark(
+      sort: { fields: frontmatter___name, order: ASC }
+      filter: { fileAbsolutePath: { regex: "/.+/content/team/.+/" } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+
+          frontmatter {
+            name
+            role
+            bio
+            linkedinUrl
+            twitterUrl
+            githubUrl
+
+            headshot {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
