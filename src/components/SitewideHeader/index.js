@@ -7,8 +7,6 @@ import {
   ShieldCheckIcon,
   AcademicCapIcon,
 } from '@heroicons/react/outline'
-import TopBanner from 'components/TopBanner';
-import Unconference from 'components/TopBanner/Unconference';
 
 import Logo from '../Logo';
 import TopNavItem from './TopNavItem';
@@ -47,10 +45,6 @@ const learn = [{
 const SitewideHeader = ({ maxWidth = '7xl' }) => {
   return (
     <>
-      <TopBanner>
-        <Unconference />
-      </TopBanner>
-
       <Popover className="relative bg-white z-20">
         <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
           <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
