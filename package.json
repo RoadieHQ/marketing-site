@@ -15,7 +15,7 @@
     "@algolia/autocomplete-theme-classic": "^1.1.0",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
-    "@sentry/gatsby": "^6.7.1",
+    "@sentry/gatsby": "^6.13.3",
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
     "algoliasearch": "^4.9.2",
