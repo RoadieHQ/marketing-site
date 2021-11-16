@@ -107,21 +107,21 @@ Combining all the steps configured and knowledge above, we are now ready to init
 
 1. The users logs in to their aws ecosystem and receives a set of aws specific temporary credentials
 2. User signs their GetCallerIdenity request with their personal temporary credentials
-3. User sends a POST request to GCP; [https://sts.googleapis.com/v1/token](https://sts.googleapis.com/v1/token). This contains all the custom signed credentials in the requested payload. This will be used to verify the user's identity.
+3. User sends a POST request to GCP; `https://sts.googleapis.com/v1/token`. This contains all the custom signed credentials in the requested payload. This will be used to verify the user's identity.
 4. GCP calls on the AWS STS api to verify the credentials in the payload. If the signed request matches the users identity, GCP will return a federated workload identity token (this is a one time token).
-5. User now exchanges the one time token for an ephemeral service account OAuth token. This is done using a POST request to [https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/$SA-NAME@$PROJECT-ID.iam.gserviceaccount.com:generateAccessToken](https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/$SA-NAME@$PROJECT-ID.iam.gserviceaccount.com:generateAccessToken)
+5. User now exchanges the one time token for an ephemeral service account OAuth token. This is done using a POST request to `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/$SA-NAME@$PROJECT-ID.iam.gserviceaccount.com:generateAccessToken`
 6. User is now able to access all the resources the service account has access to.
 
-The following flow above is also demonstrated here in a POC Javascript project: [https://github.com/RoadieHQ/poc-gke-token-exchange](https://github.com/RoadieHQ/poc-gke-token-exchange)
+The following flow above is also demonstrated here in a [POC Javascript project](https://github.com/RoadieHQ/poc-gke-token-exchange)
 
-# Resources:
+# Resources
 
-[https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)
+Information on AWS [GetCallerIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)
 
-[https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)
+Information on AWS [Signed requests](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)
 
-[https://cloud.google.com/iam/docs/workload-identity-federation#conditions](https://cloud.google.com/iam/docs/workload-identity-federation#conditions)
+GKE workload identity federation [conditions](https://cloud.google.com/iam/docs/workload-identity-federation#conditions)
 
-[https://cloud.google.com/iam/docs/configuring-workload-identity-federation#gcloud](https://cloud.google.com/iam/docs/configuring-workload-identity-federation#gcloud)
+GKE workload identity federation [configuration of pools](https://cloud.google.com/iam/docs/configuring-workload-identity-federation#gcloud)
 
-[https://cloud.google.com/iam/docs/using-workload-identity-federation#gcloud_1](https://cloud.google.com/iam/docs/using-workload-identity-federation#gcloud_1)
+GKE workload identity federation [token exchange flow](https://cloud.google.com/iam/docs/using-workload-identity-federation#gcloud_1)
