@@ -15,13 +15,13 @@ This is set within backstage at the following url:
 https://<tenant-name>.roadie.so/administration/settings/secrets
 ```
 
-This page describes how to create and set up the FireHydrant Personal Access (API) token.
+This page describes how to create and set up the FireHydrant Bot token.
 
 ## Steps
 
 ### Step 1: Create an API token
 
-Start by visiting the [account settings page in FireHydrant](https://app.firehydrant.io/organizations/bots).
+Start by visiting the [account settings page in FireHydrant]( https://app.firehydrant.io/organizations/bots).
 
 Click on the "Create bot user" button and you should see the following screen.
 
@@ -34,7 +34,14 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and ente
 
 ### Step 3: Configure FireHydrant services to match Roadie service names
 
-FireHydrant plugin uses the fully qualified entity name to identify a service in FireHydrant. This consists of kind, name, and namespace. An example of this would be `Component:default/sample-service-5` which would be pointing to https://github.com/RoadieHQ/sample-service/blob/main/catalog-info-5.yaml.
+FireHydrant plugin uses the fully qualified entity name to identify a service in FireHydrant. This consists of kind, name, and namespace. An example of a fully qualified name would be `Component:default/sample-service`. In a catalog-info.yaml file that would have the following values:
+```yaml
+...
+kind: Component
+metadata:
+  name: sample-service
+...
+```
 
 You can create services in FireHydrant on the [New Service page](https://app.firehydrant.io/services/new).
 
