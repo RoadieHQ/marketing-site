@@ -27,7 +27,7 @@ const About = ({
     <SitewideHeader />
 
     <SimpleCenteredHeading
-      headline="Our mission is to increase the effectiveness of software engineering"
+      headline="Our mission is to increase the effectiveness of software development"
       lead="Software is positively impacting many facets of human life. We are still early in the journey towards building software effectively. By increasing the effectiveness of software development, we can have a huge impact on humanity."
     />
 

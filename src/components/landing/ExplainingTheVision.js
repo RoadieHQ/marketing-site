@@ -1,5 +1,5 @@
 import React from 'react';
-import { DotPattern } from 'components';
+import { DotPattern, TextLink as Link } from 'components';
 import teamInRoad from '../../../content/team/group/team-in-road.jpg';
 
 const HEADLINE = 'The potential of software';
@@ -44,13 +44,13 @@ const ExplainingTheVision = () => (
 
           <div className="mt-6 text-gray-500 space-y-6">
             <p className="text-lg">
-              Software is impacting everything we experience. From communications, to transportation, to green energy, every industry has more software than ever before.
+              Every industry has more software than ever before. From communications, to transportation, to green energy. 
             </p>
             <p className="text-base leading-7">
-              By accelerating the transition to a software based future, we believe we can have a huge positive influence on the world.
+              The number of developers in the world is estimated to be 26.9 million, and is projected to grow to 45 million by 2030. <Link to="https://evansdata.com/reports/viewRelease.php?reportID=9">[source]</Link>
             </p>
             <p className="text-base leading-7">
-              By accelerating the transition to a software based future, we believe we can have a huge positive influence on the world.
+              By making each of these developers more effective, we believe Roadie can have a huge positive influence on the world.
             </p>
           </div>
         </div>
