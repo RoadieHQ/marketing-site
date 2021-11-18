@@ -47,7 +47,7 @@ const ExplainingTheVision = () => (
               Every industry has more software than ever before. From communications, to transportation, to green energy. 
             </p>
             <p className="text-base leading-7">
-              The number of developers in the world is estimated to be 26.9 million, and is projected to grow to 45 million by 2030. <Link to="https://evansdata.com/reports/viewRelease.php?reportID=9">[source]</Link>
+              The number of developers in the world is estimated to be 26.9 million, and is projected to grow to 45 million by 2030. <Link to="https://slashdata-website-cms.s3.amazonaws.com/sample_reports/EiWEyM5bfZe1Kug_.pdf">[source]</Link>
             </p>
             <p className="text-base leading-7">
               By making each of these developers more effective, we believe Roadie can have a huge positive influence on the world.
