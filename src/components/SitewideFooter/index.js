@@ -17,6 +17,7 @@ const navigation = {
   ],
 
   company: [
+    { name: 'About', href: '/about/' },
     { name: 'Blog', href: '/blog/' },
     { name: 'Careers', href: 'https://careers.roadie.io' },
   ],

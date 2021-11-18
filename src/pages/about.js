@@ -1,0 +1,80 @@
+import React from 'react';
+import { graphql } from 'gatsby';
+
+import {
+  SEO,
+  SitewideFooter,
+  SitewideHeader,
+} from 'components';
+
+import {
+  CircleThreeColTeam as Team,
+  SimpleCenteredHeading,
+  ExplainingTheVision,
+  CustomerLogoCloud,
+} from 'components/landing';
+
+const About = ({
+  data: {
+    team,
+  }
+}) => (
+  <>
+    <SEO
+      title={`About us | Roadie`}
+      description="Who we are and what we care about."
+    />
+    <SitewideHeader />
+
+    <SimpleCenteredHeading
+      headline="Our mission is to increase the effectiveness of software development"
+      lead="Software is positively impacting many facets of human life. We are still early in the journey towards building software effectively. By increasing the effectiveness of software development, we can have a huge impact on humanity."
+    />
+
+    <ExplainingTheVision />
+
+    <Team
+      headline="Our Team"
+      lead="We are a small group of folks from enterprise software backgrounds. We understand the complexity of modern software development."
+      people={team.edges.map(({ node }) => node.frontmatter)}
+    />
+
+    <CustomerLogoCloud />
+
+    <SitewideFooter />
+  </>
+);
+
+export default About;
+
+export const pageQuery = graphql`
+  query {
+    team: allMarkdownRemark(
+      sort: { fields: frontmatter___name, order: ASC }
+      filter: { fileAbsolutePath: { regex: "/.+/content/team/.+/" } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+
+          frontmatter {
+            name
+            role
+            bio
+            linkedinUrl
+            twitterUrl
+            githubUrl
+
+            headshot {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
