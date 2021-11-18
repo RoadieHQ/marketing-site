@@ -36,7 +36,7 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and ente
 
 FireHydrant plugin uses the fully qualified entity name to identify a service in FireHydrant. This consists of kind, name, and namespace. An example of this would be `Component:default/sample-service-5` which would be pointing to https://github.com/RoadieHQ/sample-service/blob/main/catalog-info-5.yaml.
 
-You can create services in FireHydrant by navigating to URL https://app.firehydrant.io/services/new
+You can create services in FireHydrant on the [New Service page](https://app.firehydrant.io/services/new).
 
 ## References
 
