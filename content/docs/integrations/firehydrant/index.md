@@ -21,7 +21,7 @@ This page describes how to create and set up the FireHydrant Personal Access (AP
 
 ### Step 1: Create an API token
 
-Start by visiting the account settings page in FireHydrant :https://app.firehydrant.io/organizations/bots.
+Start by visiting the [account settings page in FireHydrant](https://app.firehydrant.io/organizations/bots).
 
 Click on the "Create bot user" button and you should see the following screen.
 
