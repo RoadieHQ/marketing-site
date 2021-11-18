@@ -1,10 +1,20 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const ROOT_CLASSES = 'text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl';
+const ROOT_CLASSES = 'tracking-tight font-extrabold text-gray-900';
 
-const Headline = ({ el = 'h1', children, className }) => (
-  React.createElement(el, { className: classnames(ROOT_CLASSES, className) }, children)
+const Headline = ({
+  el = 'h1',
+  children,
+  size = 'large',
+}) => (
+  React.createElement(el, {
+    className: classnames(ROOT_CLASSES, {
+      'text-4xl sm:text-5xl md:text-6xl': size === 'large',
+      'text-3xl sm:text-4xl md:text-5xl': size === 'medium',
+      'text-2xl sm:text-3xl md:text-4xl': size === 'small',
+    }),
+  }, children)
 );
 
 export default Headline;

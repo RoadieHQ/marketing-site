@@ -10,36 +10,10 @@ import {
 
 import { FAQs } from 'components/landing';
 
-const FAQ_CONTENT = [{
-  id: 1,
-  question: "What's the best thing about Switzerland?",
-  answer:
-    "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  
-}, {
-  id: 1,
-  question: "What's the best thing about Switzerland?",
-  answer:
-    "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-
-}, {
-  id: 1,
-  question: "What's the best thing about Switzerland?",
-  answer:
-    "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-
-}, {
-  id: 1,
-  question: "What's the best thing about Switzerland?",
-  answer:
-    "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-}];
-
 const FormWithTestimonial = ({
   title,
   description,
   children,
-  faqs = FAQ_CONTENT,
 }) => (
   <main className="overflow-hidden pb-24 mb-24">
     <div className="bg-warm-gray-50">
@@ -99,7 +73,7 @@ const FormWithTestimonial = ({
       </div>
     </section>
 
-    <FAQs faqs={faqs} />
+    <FAQs />
   </main>
 );
 
