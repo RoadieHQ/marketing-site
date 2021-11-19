@@ -35,7 +35,7 @@ const About = ({
 
     <Team
       headline="Our Team"
-      lead="We are a small group of folks from enterprise software backgrounds. We understand the complexity of modern software development."
+      lead="We are a small team from enterprise software backgrounds. We understand the complexity of modern software development."
       people={team.edges.map(({ node }) => node.frontmatter)}
     />
 

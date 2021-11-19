@@ -8,6 +8,8 @@ import {
   Headline,
 } from 'components';
 
+import { FAQs } from 'components/landing';
+
 const FormWithTestimonial = ({
   title,
   description,
@@ -70,6 +72,8 @@ const FormWithTestimonial = ({
         </div>
       </div>
     </section>
+
+    <FAQs />
   </main>
 );
 
