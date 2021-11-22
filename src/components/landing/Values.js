@@ -11,11 +11,11 @@ const VALUES = [{
 }, {
   title: 'Driven by customer compassion',
   detail:
-    `We take the time to deeply understand customer problems. We don't build things simply because they are cool. We are more focussed on the end user than the economic buyer.`,
+    `We take the time to deeply understand customer problems. We don't build things simply because we want to. We are focused on creating an excellent experience for  the end user.`,
 }, {
   title: 'Optimized for learning',
   detail:
-    'You can fuck around to find out at Roadie. Controlled failures are encouraged and psychologically safety is paramount. We are always open to new ideas and no idea will be ridiculed.',
+    'Controlled failures are encouraged at Roadie. Psychological safety is paramount. Nobody will be punished for experiments that don’t work out.  We are always open to new ideas and no idea will be ridiculed.',
 }, {
   title: 'Conscious of community',
   detail:
@@ -23,7 +23,7 @@ const VALUES = [{
 }, {
   title: 'Fulfilled by autonomy',
   detail:
-    'Each person in Roadie is given a wide remit. We trust each other to deliver results without much handholding. Decisions are made as close as possible to the edges of the organization.',
+    'Each person in Roadie is given a wide remit. We trust each other to deliver results without much hand holding. §Decisions are made by those closest to the issue rather than those with the most seniority. We operate as though most decisions are reversible.',
 }];
 
 const Values = ({ title = TITLE, lead = LEAD, values = VALUES }) => (
