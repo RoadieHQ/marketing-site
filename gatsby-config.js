@@ -25,6 +25,11 @@ const getSentryEnvironment = () => {
   return 'development';
 };
 
+const getContentfulEnvironment = () => {
+  if (has(process.env, 'GITHUB_ACTIONS')) return 'github-actions';
+  return 'master';
+};
+
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
 // a server side variable into a runtime one. This variable is later used to determine which
 // branch of a split testing experiment we are on.
@@ -188,6 +193,7 @@ module.exports = {
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         host: `preview.contentful.com`,
+        environment: getContentfulEnvironment(),
       },
     },
   ],
