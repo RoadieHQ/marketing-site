@@ -29,14 +29,17 @@ const FAQ_CONTENT = [{
   id: 5,
   question: "Do you have a status page?",
   answer: () => {
-    return (
-      <p>
+    // this looks not nice but the linter was complaining that the displayname was not set
+    function statusText(){
+      return (<p>
         Yes we do! It can be found here:{' '}
         <a href='https://status.roadie.io'>
          https://status.roadie.io/
         </a>
-      </p>
-    )
+      </p>)
+    }
+
+    return statusText();
   },
 }];
 
