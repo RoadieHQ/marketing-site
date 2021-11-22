@@ -21,6 +21,24 @@ module.exports.BLOGS_QUERY = `
 }
 `;
 
+module.exports.CONTENTFUL_BLOGS_QUERY = `
+{
+  blogs: allContentfulBlogPost(
+    sort: {
+      fields: date,
+      order: DESC
+    },
+    limit: 100,
+  ) {
+    edges {
+      node {
+        slug
+      }
+    }
+  }
+}
+`;
+
 module.exports.CASE_STUDIES_QUERY = `
 {
   caseStudies: allMarkdownRemark(

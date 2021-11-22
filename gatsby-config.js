@@ -124,7 +124,12 @@ module.exports = {
       },
     },
 
-    'gatsby-plugin-advanced-sitemap',
+    {
+      resolve: 'gatsby-plugin-advanced-sitemap',
+      options: {
+        exclude: [/\/?contentful\/?.+/],
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-react-svg',
@@ -173,6 +178,16 @@ module.exports = {
         dsn: 'https://1798396e863a4fc0b412438bac2c8528@o416326.ingest.sentry.io/5823815',
         sampleRate: 0.7,
         environment: getSentryEnvironment(),
+      },
+    },
+
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `hcqpbvoqhwhm`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: `preview.contentful.com`,
       },
     },
   ],
