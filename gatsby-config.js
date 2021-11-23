@@ -19,19 +19,33 @@ const skipWebpackAnalyzer = has(process.env, 'GITHUB_ACTIONS') || has(process.en
 
 const getSentryEnvironment = () => {
   if (get(process.env, 'NODE_ENV') === 'production') return 'production';
-  if (get(process.env, 'CONTEXT') === 'production') return 'production';
-  if (get(process.env, 'CONTEXT') === 'deploy-preview') return 'preview';
-  if (get(process.env, 'CONTEXT') === 'branch-deploy') return 'preview';
+  const context = get(process.env, 'CONTEXT');
+
+  if (context === 'production') return 'production';
+  if (context === 'deploy-preview') return 'preview';
+  if (context === 'branch-deploy') return 'preview';
   return 'development';
 };
 
 const getContentfulEnvironment = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'github-actions';
+
+  const context = get(process.env, 'CONTEXT', 'false');
+  if (context === 'production') return 'netlify-production';
+  if (context === 'deploy-preview') return 'netlify-preview';
+  if (context === 'branch-deploy') return 'netlify-preview';
+
   return 'master';
 };
 
 const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
+
+  const context = get(process.env, 'CONTEXT', 'false');
+  if (context === 'production') return 'cdn.contentful.com';
+  if (context === 'deploy-preview') return 'preview.contentful.com';
+  if (context === 'branch-deploy') return 'preview.contentful.com';
+
   // Good for local development
   return 'preview.contentful.com';
 };
