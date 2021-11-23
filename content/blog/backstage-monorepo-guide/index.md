@@ -14,6 +14,8 @@ The good news is that Backstage does support monorepos. In fact, there are multi
 
 This post will be applicable whether you're using the Roadie hosted Backstage platform or self-hosted Backstage.
 
+Huge thanks to Enrique Amodeo Rubio, Staff Engineer at Contentful ([linkedin](https://www.linkedin.com/in/enrique-amodeo/)). He did a lot of the hard work of testing the various monorepo representations in Backstage, and was kind enough to share some tips with us. These tips formed the basis of this guide.
+
 ## Combined vs Split monorepo representations
 
 There are two approaches to treating monorepos in Backstage. Combined and Split monorepos. 
