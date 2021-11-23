@@ -10,7 +10,7 @@ const convertContentfulContentModelToLocal = ({ node }) => ({
     timeToRead: node.body.childMarkdownRemark.timeToRead,
 
     fields: {
-      slug: node.slug,
+      slug: `/contentful${node.slug}`,
     },
 
     frontmatter: {
