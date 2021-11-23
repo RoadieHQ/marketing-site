@@ -164,6 +164,19 @@ metadata:
     datadoghq.com/graph-token: <<TOKEN>
 ```
 
+
+## Set frame-src in Content Security Policy
+
+```
+// app-config.yaml
+backend:
+  csp:
+    frame-src: 
+      # Allow your Datadog URL for @roadiehq/backstage-plugin-datadog
+      - 'DATADOG_SOURCE'
+      - 'DATADOG_DASBOARD_SOURCE'
+```
+
 ## Security
 
 Sharing Datadog dashboards and graphs makes them public on the internet and accessible by anyone with the URL. 
