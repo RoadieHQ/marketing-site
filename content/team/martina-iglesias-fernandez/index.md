@@ -1,5 +1,5 @@
 ---
-name: 'Martina Iglaseas Fernandez'
+name: 'Martina Iglesias Fernández'
 role: 'Enginering Manager'
 headshot: './blue-background.jpg'
 bio: 'Martina should write about herself here.'
