@@ -31,9 +31,7 @@ const getContentfulEnvironment = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'github-actions';
 
   const context = get(process.env, 'CONTEXT', 'false');
-  if (context === 'production') return 'netlify-production';
-  if (context === 'deploy-preview') return 'netlify-preview';
-  if (context === 'branch-deploy') return 'netlify-preview';
+  if (context !== 'false') return 'netlify';
 
   return 'master';
 };
@@ -42,9 +40,7 @@ const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
 
   const context = get(process.env, 'CONTEXT', 'false');
-  if (context === 'production') return 'cdn.contentful.com';
-  if (context === 'deploy-preview') return 'preview.contentful.com';
-  if (context === 'branch-deploy') return 'preview.contentful.com';
+  if (context !== 'false') return 'cdn.contentful.com';
 
   // Good for local development
   return 'preview.contentful.com';
