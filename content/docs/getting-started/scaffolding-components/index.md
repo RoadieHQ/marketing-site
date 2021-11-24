@@ -73,7 +73,7 @@ Click the "Create..." button in the Backstage menu.
 In the "Create a New Component" page, click the "Register Existing Component" button
 ![register-new-component.png](register-new-component.png)
 
-Enter the URL of the template that you created in Step Two. Click
+Enter the URL of the template that you created in Step Two.
 ![create-existing-component.png](create-existing-component.png)
 
 Click Analyze, and Import.
