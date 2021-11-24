@@ -12,6 +12,7 @@ import {
   SimpleCenteredHeading,
   ExplainingTheVision,
   CustomerLogoCloud,
+  Values,
 } from 'components/landing';
 
 const About = ({
@@ -32,6 +33,8 @@ const About = ({
     />
 
     <ExplainingTheVision />
+
+    <Values />
 
     <Team
       headline="Our Team"
