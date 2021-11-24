@@ -93,6 +93,8 @@ const DocSidebar = () => {
           />
 
           <SidebarItem to="/docs/getting-started/adding-components/" text="Adding components" />
+          <SidebarItem to="/docs/getting-started/scaffolding-components/" text="Scaffolding components" />
+
           <SidebarItem to="/docs/getting-started/user-management/" text="Adding users" />
 
           <SidebarItem
