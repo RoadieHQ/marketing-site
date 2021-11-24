@@ -7,7 +7,7 @@ import Tags from './Tags';
 
 const ContentHeader = ({ frontmatter, showLastValidated = true, dateKey }) => (
   <header>
-    <Headline className="mb-2 mt-0">
+    <Headline size="small" className="mb-1 mt-0">
       {frontmatter.title}
     </Headline>
 
