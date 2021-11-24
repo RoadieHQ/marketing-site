@@ -23,7 +23,7 @@ Visit the `Administration > Settings > Scaffolder` and make sure the enabled che
 
 ### Step Two. Create a template.yaml file in a repository
 
-You can either create the following file in your own repository or use our example that is in a public repository. https://github.com/RoadieHQ/sample-service/blob/main/demo_template.yaml
+You can either create the following file in your own repository or [use the public example](https://github.com/RoadieHQ/sample-service/blob/main/demo_template.yaml) we prepared. 
 
 <details>
   <summary>Expand here to see an example template.yaml</summary>
