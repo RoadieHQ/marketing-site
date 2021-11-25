@@ -40,7 +40,7 @@ const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
 
   const context = get(process.env, 'CONTEXT', 'false');
-  if (context !== 'false') return 'cdn.contentful.com';
+  if (context !== 'false') return 'preview.contentful.com';
 
   // Good for local development
   return 'preview.contentful.com';
