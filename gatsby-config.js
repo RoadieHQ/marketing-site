@@ -37,7 +37,6 @@ const getContentfulHost = () => {
   return 'preview.contentful.com';
 };
 
-
 const getContentfulOptions = () => {
   return {
     spaceId: `hcqpbvoqhwhm`,
