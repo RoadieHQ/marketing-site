@@ -27,23 +27,25 @@ const getSentryEnvironment = () => {
   return 'development';
 };
 
-const getContentfulEnvironment = () => {
-  if (has(process.env, 'GITHUB_ACTIONS')) return 'github-actions';
-
-  const context = get(process.env, 'CONTEXT', 'false');
-  if (context !== 'false') return 'netlify';
-
-  return 'master';
-};
-
 const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
 
   const context = get(process.env, 'CONTEXT', 'false');
-  if (context !== 'false') return 'preview.contentful.com';
+  if (context !== 'false') return 'cdn.contentful.com';
 
   // Good for local development
   return 'preview.contentful.com';
+};
+
+
+const getContentfulOptions = () => {
+  return {
+    spaceId: `hcqpbvoqhwhm`,
+    // Learn about environment variables: https://gatsby.dev/env-vars
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    host: getContentfulHost(),
+    environment: 'master',
+  };
 };
 
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
@@ -204,13 +206,7 @@ module.exports = {
 
     {
       resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `hcqpbvoqhwhm`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        host: getContentfulHost(),
-        environment: getContentfulEnvironment(),
-      },
+      options: getContentfulOptions(),
     },
   ],
 };
