@@ -44,7 +44,6 @@ exports.createPages = async ({ graphql, actions }) => {
     actions,
     graphql,
     processor: ({ node }, component) => {
-      console.log('creating page', node);
       return {
         path: `/contentful${node.slug}`,
         component,
