@@ -80,6 +80,7 @@ These are the repository permissions required:
 
 | Name              | Access level | Reason required |
 | ----------------- | ------------ | ------- |
+| Administrator     | Read & Write | Allows the scaffolder feature to create new projects in GitHub |
 | Contents          | Read & Write | Used by Backstage to read the `catalog-info.yaml` files it requires to function, and to open pull requests to create `catalog-info.yaml` files. |
 | Pull requests     | Read & Write | Required for the GitHub Pull Requests plugin and to open pull requests to create `catalog-info.yaml` files. |
 | Actions           | Read         | Enables the Backstage plugin that renders Github workflow actions on the component page. |
