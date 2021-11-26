@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, Page, TextLink as Link } from 'components';
+import { SEO, Page, TextLink as Link, Headline } from 'components';
 import { SimpleCenteredHeading } from 'components/landing';
 import format from 'date-fns/format';
 
@@ -8,27 +8,25 @@ const ChangeSet = ({
   releasedAt,
   description,
   title,
-}) => {
-  console.log('releasedAt', releasedAt);
-  return (
-    <>
-      <hr className="w-full bg-gray-100 my-12" style={{ height: 1 }} />
-      <li className="mt-10 list-reset lg:flex items-start">
-        <time className="lg:mt-1 uppercase text-xs lg:text-sm lg:leading-9 text-gray-500 font-bold w-48 flex-shrink-0">
-          {format(new Date(releasedAt), 'MMM d, yyyy')}
-        </time>
+}) => (
+  <>
+    <hr className="w-full bg-gray-100 my-12" style={{ height: 1 }} />
+    <li className="mt-10 list-reset lg:flex items-start">
+      <time className="lg:mt-1 uppercase text-xs lg:text-sm lg:leading-9 text-gray-500 font-bold w-48 flex-shrink-0">
+        {format(new Date(releasedAt), 'MMM d, yyyy')}
+      </time>
 
-        <div>
-          <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 md:text-3xl">
-            {title}
-          </h2>
+      <div>
+        <Headline size="extra-small">{title}</Headline>
 
-          <div className="mt-6 prose max-w-none" dangerouslySetInnerHTML={{ __html: description.html }} />
-        </div>
-      </li>
-    </>
-  );
-};
+        <div
+          className="mt-6 prose max-w-none"
+          dangerouslySetInnerHTML={{ __html: description.html }}
+        />
+      </div>
+    </li>
+  </>
+);
 
 const Changelog = ({
   data: {
