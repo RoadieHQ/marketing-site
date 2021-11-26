@@ -8,7 +8,6 @@ const {
   LEGAL_NOTICES_QUERY,
   DOCS_QUERY,
   CASE_STUDIES_QUERY,
-  CONTENTFUL_BLOGS_QUERY,
 } = require('./src/queries/gatsbyNodeQueries');
 const createLatestLegalNotices = require('./src/pageCreation/createLatestLegalNotices');
 const createPagesFromQuery = require('./src/pageCreation/createPagesFromQuery');
@@ -32,23 +31,6 @@ exports.createPages = async ({ graphql, actions }) => {
           slug: node.fields.slug,
           previous,
           next,
-        },
-      };
-    },
-  });
-
-  await createPagesFromQuery({
-    templatePath: './src/templates/contentful/BlogPost.js',
-    query: CONTENTFUL_BLOGS_QUERY,
-    resultName: 'blogs.edges',
-    actions,
-    graphql,
-    processor: ({ node }, component) => {
-      return {
-        path: `/contentful${node.slug}`,
-        component,
-        context: {
-          slug: node.slug,
         },
       };
     },
