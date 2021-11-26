@@ -45,32 +45,33 @@ const Changelog = ({
 }) => (
   <>
     <SEO
-      title={`All blog posts | ${siteTitle}`}
+      title={`Changelog | ${siteTitle}`}
       description={`
-        Backstage content. Everything from technical how-tos to recaps of community sessions and 
-        general engineering effectiveness content.
+        A list of all new and updated features so you can get a quick overview of what has changed in the product.
       `}
     />
 
     <Page>
-      <SimpleCenteredHeading
-        headline="What's new in Roadie"
-        lead={
-          <span>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. You can follow us on <Link color="primary" to="https://twitter.com/roadiehq">Twitter</Link> for more updates.</span>
-        }
-        headlineSize="small"
-      />
+      <main className="max-w-4xl mx-auto">
+        <SimpleCenteredHeading
+          headline="What's new in Roadie"
+          lead={
+            <span>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. You can follow us on <Link color="primary" to="https://twitter.com/roadiehq">Twitter</Link> for more updates.</span>
+          }
+          headlineSize="small"
+        />
 
-      <ul className="container mt-12">
-        {changeSets.map(({ node: { title, releasedAt, description } }) => (
-          <ChangeSet
-            key={`${title} ${releasedAt}`}
-            title={title}
-            releasedAt={releasedAt}
-            description={description.childMarkdownRemark}
-          />
-        ))}
-      </ul>
+        <ul className="container mt-12">
+          {changeSets.map(({ node: { title, releasedAt, description } }) => (
+            <ChangeSet
+              key={`${title} ${releasedAt}`}
+              title={title}
+              releasedAt={releasedAt}
+              description={description.childMarkdownRemark}
+            />
+          ))}
+        </ul>
+      </main>
     </Page>
   </>
 );
