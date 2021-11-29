@@ -7,6 +7,7 @@ const Headline = ({
   el = 'h1',
   children,
   size = 'large',
+  ...rest
 }) => (
   React.createElement(el, {
     className: classnames(ROOT_CLASSES, {
@@ -14,6 +15,7 @@ const Headline = ({
       'text-3xl sm:text-4xl md:text-5xl': size === 'medium',
       'text-2xl sm:text-3xl md:text-4xl': size === 'small',
     }),
+    ...rest,
   }, children)
 );
 
