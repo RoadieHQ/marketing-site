@@ -88,6 +88,8 @@ These are the repository permissions required:
 | Security events   | Read         | This allows Backstage to render a security insights plugin on the component page. |
 | Dependabot alerts | Read         | Required by the GitHub Dependabot plugin. |
 | Workflows         | Read & Write | Allows the scaffolder feature to create workflows for new projects it creates in GitHub |
+| Checks            | Read & Write | Allows the Github app to run checks on your backstage repositories |
+| Projects          | Read         | Allows the Github app to run checks on your backstage repositories |
 
 These are the organization permissions required:
 
