@@ -60,7 +60,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-modal": "^3.14.2",
-    "react-use": "^17.2.4",
+    "react-use": "^17.3.1",
     "remark-html": "^13.0.2",
     "tailwindcss": "^2.2.15"
   },
