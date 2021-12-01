@@ -7811,10 +7811,10 @@ gatsby-plugin-advanced-sitemap@^2.0.0:
     moment "2.29.1"
     xml "^1.0.1"
 
-gatsby-plugin-algolia@^0.20.1:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-algolia/-/gatsby-plugin-algolia-0.20.1.tgz#440460e8fc58d2189ce175caa622830a1314e045"
-  integrity sha512-Kto1kpVoB31UmQIOqNTf+4Gy2Gn6gGd+2lCUgSNcXSp+zCGweeB0psozE5DMSw3RGedcHGNq+FPb2/B6aB/UVg==
+gatsby-plugin-algolia@^0.23.0:
+  version "0.23.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-algolia/-/gatsby-plugin-algolia-0.23.1.tgz#2479f79a9f4e720c7017946ecc17143ea72fc272"
+  integrity sha512-vRExBRIPjCXYwEYCn3gFIzlK6qi5AlzpdTh0+EU7O/BryCDVDCex6nRjQoCGc8ewy8DhI8YbRlAr6P8MvfC0vg==
   dependencies:
     algoliasearch "^4.9.1"
     deep-equal "^2.0.5"

@@ -26,7 +26,7 @@
     "date-fns": "^2.22.1",
     "gatsby": "^3.6.0",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
-    "gatsby-plugin-algolia": "^0.20.1",
+    "gatsby-plugin-algolia": "^0.23.0",
     "gatsby-plugin-feed": "^3.6.0",
     "gatsby-plugin-force-trailing-slashes": "^1.0.5",
     "gatsby-plugin-google-analytics": "^3.6.0",
