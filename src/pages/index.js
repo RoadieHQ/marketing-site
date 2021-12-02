@@ -27,15 +27,6 @@ import {
   CustomerLogoCloud,
 } from 'components/landing';
 
-import SnykLogo from '../../content/assets/home/customer-logos/snyk-monochrome.webp';
-import SnykLogoPng from '../../content/assets/home/customer-logos/snyk-monochrome.png';
-import StreamElementsLogo from '../../content/assets/home/customer-logos/streamelements@3x-monochrome.webp';
-import StreamElementsLogoPng from '../../content/assets/home/customer-logos/streamelements@3x-monochrome.png';
-import TrackunitLogo from '../../content/assets/home/customer-logos/trackunit-monochrome.webp';
-import TrackunitLogoPng from '../../content/assets/home/customer-logos/trackunit-monochrome.png';
-import ContentfulLogo from '../../content/assets/home/customer-logos/contentful-monochrome.webp';
-import ContentfulLogoPng from '../../content/assets/home/customer-logos/contentful-monochrome.png';
-
 import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
 import DragDropIllustrationPng from '../../content/assets/home/illustrations/drag-drop-illustration.png';
 import SecurityMaintenanceIllustration from '../../content/assets/home/illustrations/security-maintenance-illustration.webp';
@@ -59,36 +50,6 @@ const LEAD = `
 Roadie's SaaS platform handles hosting and upgrades and ensures
 you always have access to the latest Backstage features.
 `;
-
-const LOGOS = [{
-  src: {
-    webp: SnykLogo,
-    png: SnykLogoPng,
-  },
-  alt: 'Snyk logo',
-  title: '~150 engineers',
-}, {
-  src: {
-    webp: ContentfulLogo,
-    png: ContentfulLogoPng,
-  },
-  alt: 'Contentful logo',
-  title: '~150 engineers',
-}, {
-  src: {
-    webp: StreamElementsLogo,
-    png: StreamElementsLogoPng,
-  },
-  alt: 'StreamElements logo',
-  title: '~50 engineers',
-}, {
-  src: {
-    webp: TrackunitLogo,
-    png: TrackunitLogoPng,
-  },
-  alt: 'Trackunit logo',
-  title: '~70 engineers',
-}];
 
 const PRODUCT = {
   htmlId: 'product',
@@ -209,14 +170,9 @@ const SOLUTIONS = {
 const PLUGINS_SUPPORTED = {
   title: 'Pre-loaded with the best plugins',
   subTitle: `Open-source plugins are supported by default. Push your own plugins if you need something bespoke.`,
-  primaryCallToAction: {
-    text: 'Try it free',
-    to: '/free-trial/',
-  },
-
-  secondaryCallToAction: {
-    text: 'Request a demo',
-    to: '/request-demo/',
+  link: {
+    text: 'See the range of Backstage plugins available',
+    to: '/backstage/plugins/',
   },
 
   logos: [{
@@ -254,7 +210,7 @@ const Home = ({
 
     <SitewideHeader />
     <VideoHero />
-    <CustomerLogoCloud logos={LOGOS} />
+    <CustomerLogoCloud />
     <AlternatingFeatureBlock content={PRODUCT} />
     <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
     <AlternatingFeatureBlock content={SOLUTIONS} />

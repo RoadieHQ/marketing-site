@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headline } from 'components';
+import { Headline, TextLink as Link } from 'components';
 
 const SubTitle = ({ text }) => (
   <p className="mt-3 max-w-3xl text-lg text-gray-500">
@@ -20,6 +20,11 @@ const SplitGridOnRight = ({ content }) => (
         <div>
           <Headline el="h2">{content.title}</Headline>
           <SubTitle text={content.subTitle} />
+          {content.link && (
+            <div className="mt-4">
+              <Link to={content.link.to} color="primary">{content.link.text}</Link>
+            </div>
+          )}
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">

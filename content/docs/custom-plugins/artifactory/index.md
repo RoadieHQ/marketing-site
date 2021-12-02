@@ -17,7 +17,7 @@ Contact us to get added to our private and secure plugin artefact repository.
 
 ### Step 1. Get credentials
 
-Get your credentials for the npm registry. Follow [this link][forgot-password] to reset your password. The username is
+Get your credentials for the npm registry. Follow [this link][forgot-password] and click "Forgot password?" to reset your password. The username is
 `<your-company>-roadie`. This will send a reset link to the email we have associated with your account. You can
 change this email as you wish.
 

@@ -76,6 +76,10 @@ gettingStarted:
         annotations:
           jira/project-key: <example-jira-project-key>
           jira/component: <example-component> # optional, you might skip this value to fetch data for all components
+          jira/token-type: Bearer # optional, used for Activity stream feed. If you are using Basic auth you can skip this. 
+          
+  - intro: Even though you can use Bearer token please keep in mind that Activity stream feed will only contain entries that are visible to anonymous users. In order to view restricted content you will need to authenticate via Basic authentication, as described in official documentation (https://developer.atlassian.com/server/framework/atlassian-sdk/consuming-an-activity-streams-feed/#authentication).
+
   - intro: Provide the JIRA_TOKEN environmental variable (instructions at the notes below)
 ---
 
@@ -84,7 +88,9 @@ gettingStarted:
 1. Obtain you personal token from jira - https://id.atlassian.com/manage-profile/security/api-tokens
 2. Create a base64-encoded string by converting a string in format
 
-   "<your-atlassian-account-mail>:<your-jira-token>"
+     ```
+     <your-atlassian-account-mail>:<your-jira-token>
+    ```
 
    for example:
 

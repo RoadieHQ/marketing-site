@@ -19,7 +19,7 @@ coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and 
 
 gettingStarted: # What will this step accomplish?
   - intro: |
-      If you are using Roadie, or you are using a GitHub app with self-hosted Backstage, OAuth
+      If you are **using Roadie**, or you are using a GitHub app with self-hosted Backstage, OAuth
       is already configured for use with the GitHub APIs. You can simply install the plugin and it
       should work automatically. Your GitHub App requires `action:read` permission.
 

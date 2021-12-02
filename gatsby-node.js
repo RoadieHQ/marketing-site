@@ -1,5 +1,6 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const kebabCase = require('lodash/kebabCase');
+const has = require('lodash/has');
 const {
   BLOGS_QUERY,
   PLUGINS_QUERY,
@@ -126,7 +127,9 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  // has(node, 'fileAbsolutePath') prevents this code from running on nodes which come
+  // from the Contentful CMS, rather than the local filesystem.
+  if (node.internal.type === `MarkdownRemark` && has(node, 'fileAbsolutePath')) {
     node = transformPageFrontmatter({ node });
     const value = createFilePath({ node, getNode });
 

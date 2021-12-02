@@ -14,9 +14,12 @@ const navigation = {
     { name: 'Documentation', href: '/docs/getting-started/getting-started-for-admins/' },
     { name: 'Case Studies', href: '/case-studies/' },
     { name: 'Backstage Plugins', href: '/backstage/plugins/' },
+    { name: 'FAQs', href: '/faqs/' },
+    { name: 'Changelog', href: '/changelog/' },
   ],
 
   company: [
+    { name: 'About', href: '/about/' },
     { name: 'Blog', href: '/blog/' },
     { name: 'Careers', href: 'https://careers.roadie.io' },
   ],

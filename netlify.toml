@@ -43,6 +43,20 @@
   status = 202
   force = true
 
+# Supporting external links to a policy which was orignally put on the website with a
+# mis-spelled URL.
+[[redirects]]
+  from = "/legal-notices/evaluation-licence/"
+  to = "/legal-notices/evaluation-license/"
+  force = true
+
+# Supporting external links to a policy which was orignally put on the website with a
+# mis-spelled URL.
+[[redirects]]
+  from = "/legal-notices/evaluation-licence/v1/"
+  to = "/legal-notices/evaluation-license/v1/"
+  force = true
+
 [build]
   publish = "public"
 
