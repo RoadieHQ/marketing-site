@@ -1,6 +1,6 @@
 ---
 title: 'OAuth Token Exchange: AWS → GCP'
-date: '2021-11-12T11:16:00.0Z'
+date: '2021-12-03T11:16:00.0Z'
 description: How to exchange short lived tokens between AWS and GCP
 tags: ['AWS', 'GCP', 'authentication']
 author:
@@ -112,7 +112,9 @@ Combining all the steps configured and knowledge above, we are now ready to init
 5. User now exchanges the one time token for an ephemeral service account OAuth token. This is done using a POST request to `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/$SA-NAME@$PROJECT-ID.iam.gserviceaccount.com:generateAccessToken`
 6. User is now able to access all the resources the service account has access to.
 
-The following flow above is also demonstrated here in a [POC Javascript project](https://github.com/RoadieHQ/poc-gke-token-exchange)
+The following flow above is also demonstrated here in a [POC Javascript project](https://github.com/RoadieHQ/poc-gke-token-exchange).
+
+We have also mocked up a library for you to use at your own discretion [cloud-token-exchanger](https://www.npmjs.com/package/cloud-token-exchanger).
 
 # Resources
 
