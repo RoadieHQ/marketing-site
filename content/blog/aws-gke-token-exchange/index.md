@@ -10,7 +10,7 @@ author:
 
 When working with multiple cloud providers, it can often become difficult to manage authentication. Even more so with inter communication. In this blog post, I will talk about my experience with negotiating AWS identity tokens for GCP OAuth tokens.
 
-Normally, when trying to gain access to another AWS account, we use cross federation. With this cross federation, we authorize access to certain AWS principals (roles, users etc). This is done by assuming a "role". This "role" is exclusively controlled by the owner's account. The account owners can determine exactly what access the external account has. With this, we are able to provide a secure way for two (or more) AWS accounts to communicate with each other.
+Normally, when trying to gain access to another AWS account, we use cross account federation. With this cross account federation, we authorize access to certain AWS principals (roles etc). This is done by assuming a "role". This "role" is exclusively controlled by the owner's account. The account owners can determine exactly what access the external account has. With this, we are able to provide a secure way for two (or more) AWS accounts to communicate with each other.
 
 Now between cloud providers, this is a lot more complicated. Each cloud provider has their own method of authentication as well as authorization. This is where the difficulty lies when trying to exchange an AWS role identity token for a GCP token.
 
@@ -18,7 +18,7 @@ Thankfully AWS provides a service that allows us to add authentication to our AP
 
 # GetCallerIdentity
 
-In a lot of cases when working with cloud providers, it is difficult to grasp exactly the identity a service might be using. In many cases an identity may change due to a specific behaviour.AWS provides an easy mechanism for this and it is controlled by the Security Token Service (or STS). More specifically the GetCallerIdentity API. This here returns details on the caller. This includes the unique Identity and Management (IAM) name (ARN). Using this arn, we are able to pinpoint a user and or a service. This can be valuable when trying to confirm the identity of a user.
+In a lot of cases when working with cloud providers, it is difficult to grasp exactly the identity a service might be using. In many cases an identity may change due to a specific behaviour. AWS provides an easy mechanism for this and it is controlled by the Security Token Service (or STS). More specifically the GetCallerIdentity API. This here returns details on the caller. This includes the unique Identity and Management (IAM) name (ARN). Using this ARN, we are able to pinpoint a user and or a service. This can be valuable when trying to confirm the identity of a user.
 
 # GCP
 
@@ -85,7 +85,7 @@ Note: if you would like to be more explicit about what aws role can access this 
 
 ## Combining workload federation and service accounts
 
-Now that we have the ability to gain an access token using the workload federation, we now need to allow the workload provider to assume the service account role.
+Now that we have the ability to gain an access token using the workload federation, we need to allow the workload provider to assume the service account role.
 
 ```bash
 $ gcloud iam service-accounts add-iam-policy-binding aws-service-account-demo@example-project.iam.gserviceaccount.com \
