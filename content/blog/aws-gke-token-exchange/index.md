@@ -93,7 +93,7 @@ $ gcloud iam service-accounts add-iam-policy-binding aws-service-account-demo@ex
    --member "principalSet://iam.googleapis.com/projects/$gcp_project_number/locations/global/workloadIdentityPools/aws-pool/subject/arn:aws:sts::${aws_account_id}:assumed-role/$role_name"
 ```
 
-Note: if you want to allow all resources in the workload identity pool to assume to the service account replace the --member field with the following
+Note: if you want to allow all resources in the workload identity pool to assume the service account replace the --member field with the following
 
 ```bash
 --member "principalSet://iam.googleapis.com/projects/$gcp_project_number/locations/global/workloadIdentityPools/aws-pool/*"
