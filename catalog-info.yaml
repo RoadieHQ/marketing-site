@@ -3,7 +3,6 @@ kind: Component
 metadata:
   name: marketing-site
   title: Marketing Site
-  labels:
   description: |
     A Gatsby application for generating the Roadie marketing site. Includes
     blog posts, legal policies, landing pages etc.
