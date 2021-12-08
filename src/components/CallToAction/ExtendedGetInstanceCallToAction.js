@@ -49,13 +49,16 @@ const ExtendedGetInstanceCallToAction = ({
   setScmTool,
 }) => {
   const [subToNewsletter, setSubToNewsletter] = useState(true);
-  const [agreed, setAgreed] = useState(true);
+  const [agreed, setAgreed] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
 
+  const disabled = submitting || !email || email === '' || !agreed;
+
   const onSubmit = async (e) => {
     e.preventDefault();
+    if (disabled) return false;
     setSubmitting(true);
 
     const resp = await submitToNetlifyForms({
@@ -75,8 +78,6 @@ const ExtendedGetInstanceCallToAction = ({
 
     setSubmitting(false);
   };
-
-  const disabled = submitting || !email || email === '';
 
   return (
     <form
@@ -119,6 +120,7 @@ const ExtendedGetInstanceCallToAction = ({
             <Switch
               checked={agreed}
               onChange={setAgreed}
+              name="agree-to-policies"
               srTitle="Agree to policies"
             />
           </div>
