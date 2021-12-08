@@ -12,7 +12,7 @@ const Button = ({
   icon,
   ...props
 }) => {
-  const baseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md';
+  const baseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-900';
   const buttonBaseClassName = 'shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2';
   const primaryBaseClass = 'text-white bg-primary-600 hover:bg-primary-700';
   const secondaryBaseClass = 'text-primary-600 bg-white hover:bg-gray-50';
