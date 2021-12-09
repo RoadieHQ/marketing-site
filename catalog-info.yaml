@@ -2,13 +2,14 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: marketing-site
+  title: Marketing Site
   description: |
     A Gatsby application for generating the Roadie marketing site. Includes
     blog posts, legal policies, landing pages etc.
   annotations:
     github.com/project-slug: RoadieHQ/marketing-site
     lighthouse.com/website-url: https://roadie.io/
-    backstage.io/techdocs-ref: url:https://github.com/RoadieHQ/marketing-site/tree/main
+    backstage.io/techdocs-ref: dir:.
     snyk.io/org-name: roadie
     snyk.io/project-ids: 4f195df9-5ddf-4a98-8955-bd687d220d0b
 spec:

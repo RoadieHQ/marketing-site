@@ -35,12 +35,14 @@ const ChangeSet = ({
               </h3>
             </button>
 
-            <div
-              className={classnames('mt-6 prose max-w-none', {
-                'h-0 hidden': !isOpen,
-              })}
-              dangerouslySetInnerHTML={{ __html: description.html }}
-            />
+            {description && (
+              <div
+                className={classnames('mt-6 prose max-w-none', {
+                  'h-0 hidden': !isOpen,
+                })}
+                dangerouslySetInnerHTML={{ __html: description.html }}
+              />
+            )}
           </div>
         </div>
       </li>
@@ -86,7 +88,7 @@ const Changelog = ({
             key={`${title} ${releasedAt}`}
             title={title}
             releasedAt={releasedAt}
-            description={description.childMarkdownRemark}
+            description={description && description.childMarkdownRemark}
           />
         ))}
       </ul>
