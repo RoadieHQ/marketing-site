@@ -154,6 +154,14 @@ rules:
       - "get"
       - "list"
       - "watch"
+  - apiGroups: ["batch"]
+    resources:
+      - jobs
+      - cronjobs
+    verbs: 
+      - "get"
+      - "list"
+      - "watch"
   - apiGroups: ["extensions", "apps", "autoscaling", "networking.k8s.io"]
     resources: ["deployments", "ingresses", "replicasets", "horizontalpodautoscalers"]
     verbs: 
