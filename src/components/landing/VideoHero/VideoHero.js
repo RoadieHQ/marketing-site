@@ -6,7 +6,7 @@ import IntroToRoadieModal from './IntroToRoadieModal';
 import backstageScreenshot from '../../../../content/assets/backstage-screenshot-512x438.webp';
 
 const SubTitle = ({ text }) => (
-  <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+  <p className="mt-3 text-base text-gray-500 dark:text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
     {text}
   </p>
 );
@@ -40,7 +40,7 @@ const VideoHero = () => {
             <div className="lg:grid lg:grid-cols-12 lg:gap-8">
               <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
                 <Headline className="tracking-right mt-1">
-                  <span className="block text-gray-900">Backstage for</span>
+                  <span className="block text-gray-900 dark:text-white">Backstage for</span>
                   <span className="block text-primary-600">scale-ups</span>
                 </Headline>
 

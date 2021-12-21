@@ -43,10 +43,24 @@ export const GrayBackgroundDotsPattern = ({ width, height, className, id, ...res
         height={20}
         patternUnits="userSpaceOnUse"
       >
-        <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+        <rect
+          x={0}
+          y={0}
+          width={4}
+          height={4}
+          className="text-gray-200 dark:text-gray-700"
+          fill="currentColor"
+        />
       </pattern>
     </defs>
-    <rect y={72} width={width} height={width} className="text-gray-50" fill="currentColor" />
+
+    <rect
+      y={72}
+      width={width}
+      height={width}
+      className="bg-gray-50 dark:text-gray-900"
+      fill="currentColor"
+    />
     <rect x={118} width={404} height={height} fill={`url(#${id})`} />
   </svg>
 );
