@@ -25,7 +25,7 @@ const VideoHero = () => {
         modalOpen={modalOpen}
       />
 
-      <div className="relative bg-white overflow-hidden">
+      <div className="relative dark:bg-gray-900 bg-white overflow-hidden">
         <div className="hidden lg:block lg:absolute lg:inset-0" aria-hidden="true">
           <GrayBackgroundDotsPattern
             className="absolute top-0 left-1/2 transform translate-x-64 -translate-y-8"
