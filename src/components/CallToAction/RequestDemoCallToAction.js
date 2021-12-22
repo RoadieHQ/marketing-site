@@ -10,7 +10,7 @@ import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
-export const submitToNetlifyForms = async ({
+const submitToNetlifyForms = async ({
   name,
   email,
   scmTool,

@@ -11,11 +11,12 @@ import {
 import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
-export const submitToNetlifyForms = async ({
+const submitToNetlifyForms = async ({
   email,
   scmTool,
   subToNewsletter,
   netlifyFormName,
+  agreeToPolicies,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -25,10 +26,9 @@ export const submitToNetlifyForms = async ({
   formData.append('email', email);
   formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
+  formData.append('agree-to-policies', agreeToPolicies);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
-
-  console.log('submitToNetlifyForms', subToNewsletter);
 
   let resp;
   try {
@@ -56,8 +56,6 @@ const ExtendedGetInstanceCallToAction = ({
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
 
-  console.log('render', subToNewsletter);
-
   const disabled = submitting || !email || email === '' || !agreed;
 
   const onSubmit = async (e) => {
@@ -65,12 +63,11 @@ const ExtendedGetInstanceCallToAction = ({
     if (disabled) return false;
     setSubmitting(true);
 
-    console.log('submit', subToNewsletter);
-
     const resp = await submitToNetlifyForms({
       email,
       scmTool,
-      subToNewsletter: subToNewsletter.toString(),
+      subToNewsletter,
+      agreeToPolicies: agreed,
       netlifyFormName,
       submitButtonLabel: buttonText,
     });
