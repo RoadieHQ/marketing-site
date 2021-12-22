@@ -28,6 +28,8 @@ export const submitToNetlifyForms = async ({
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
 
+  console.log('submitToNetlifyForms', subToNewsletter);
+
   let resp;
   try {
     resp = await fetch('/', {
@@ -54,6 +56,8 @@ const ExtendedGetInstanceCallToAction = ({
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
 
+  console.log('render', subToNewsletter);
+
   const disabled = submitting || !email || email === '' || !agreed;
 
   const onSubmit = async (e) => {
@@ -61,10 +65,12 @@ const ExtendedGetInstanceCallToAction = ({
     if (disabled) return false;
     setSubmitting(true);
 
+    console.log('submit', subToNewsletter);
+
     const resp = await submitToNetlifyForms({
       email,
       scmTool,
-      subToNewsletter,
+      subToNewsletter: subToNewsletter.toString(),
       netlifyFormName,
       submitButtonLabel: buttonText,
     });
