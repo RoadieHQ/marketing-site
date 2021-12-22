@@ -43,14 +43,14 @@ const BlogPostTemplate = ({ data }) => {
         email={email}
       />
 
-      <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
+      <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28 dark:bg-gray-900">
         <article className="relative max-w-lg mx-auto lg:max-w-2xl mb-24">
           <div className="mb-8">
             <ContentHeader frontmatter={post.frontmatter} />
           </div>
 
           <section
-            className="prose prose-primary max-w-none"
+            className="prose prose-primary max-w-none dark:prose-invert"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </article>

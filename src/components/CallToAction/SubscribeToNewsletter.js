@@ -27,7 +27,7 @@ export const SubscribeToNewsletterCTA = (props) => (
       <Title text="Become a Backstage expert" />
     </div>
 
-    <p className="prose prose-primary mb-3 max-w-62 mx-auto">
+    <p className="prose prose-primary mb-3 max-w-62 mx-auto dark:prose-invert">
       To get the latest news, deep dives into Backstage features, and a roundup of recent
       open-source action, sign up for Roadie&apos;s Backstage Weekly.{' '}
       <Link color="primary" to="/backstage-weekly/">See recent editions.</Link>

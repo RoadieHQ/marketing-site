@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'components';
-import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieRIcon } from 'components/icons';
-
-import theme from '../../theme';
+import { Link, Logo } from 'components';
+import { TwitterIcon, GitHubIcon, BackstageIcon } from 'components/icons';
 
 const navigation = {
   solutions: [
@@ -50,7 +48,7 @@ const NavItem = ({ name, href }) => (
     <Link
       to={href}
       id={`sitewide-footer-${name.toLowerCase()}`}
-      className="text-base text-gray-500 hover:text-gray-900"
+      className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
     >
       {name}
     </Link>
@@ -58,7 +56,7 @@ const NavItem = ({ name, href }) => (
 );
 
 const SocialItem = ({ item }) => (
-  <Link key={item.name} to={item.href} className="text-gray-400 hover:text-gray-500">
+  <Link key={item.name} to={item.href} className="text-gray-400 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-100">
     <span className="sr-only">{item.name}</span>
     <item.icon className="h-6 w-6" aria-hidden="true" />
   </Link>
@@ -66,7 +64,7 @@ const SocialItem = ({ item }) => (
 
 const TitledLinkList = ({ title, linkListKey = title.toLowerCase() }) => (
   <>
-    <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">{title}</h3>
+    <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase dark:text-gray-300">{title}</h3>
     <ul className="mt-4 space-y-4">
       {navigation[linkListKey].map((item) => (
         <NavItem {...item } key={item.name} />
@@ -76,14 +74,17 @@ const TitledLinkList = ({ title, linkListKey = title.toLowerCase() }) => (
 );
 
 const CopyrightNotice = () => (
-  <p className="text-base text-gray-400 xl:text-center">
+  <p className="text-base text-gray-400 xl:text-center dark:text-gray-300">
     &copy; {new Date().getFullYear()} Larder Software Limited. All rights reserved.
   </p>
 );
 
 const SitewideFooter = ({ maxWidth = '7xl' }) => {
   return (
-    <footer className="bg-white border-t-2 border-gray-100" aria-labelledby="footer-heading">
+    <footer
+      className="bg-white border-t-2 border-gray-100 dark:bg-gray-900 dark:border-gray-300"
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -91,9 +92,9 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
       <div className={`max-w-${maxWidth} mx-auto py-12 px-2 sm:px-6 lg:py-16 lg:px-8`}>
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <RoadieRIcon fill={theme.COLORS_GRAY_500} stroke={theme.COLORS_GRAY_500} />
+            <Logo />
 
-            <p className="text-gray-500 text-base">
+            <p className="text-gray-500 text-base dark:text-gray-300">
               SaaS Backstage for scale-ups.
             </p>
 
