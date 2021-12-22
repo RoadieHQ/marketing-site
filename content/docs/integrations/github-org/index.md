@@ -33,7 +33,7 @@ This page describes how to do that.
        - https://github.com/acme
    ```
 
-2. Next go to the catalog import page in backstage e.g. https://acme.roadie.so/catalog-import
+2. Next go to the catalog import page in backstage e.g. https://<tenant-name>.roadie.so/catalog-import
 3. Enter the url to that file you created.
 
 ## Confirming it worked
