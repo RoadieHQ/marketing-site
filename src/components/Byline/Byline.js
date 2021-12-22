@@ -39,7 +39,7 @@ const Byline = ({
     text += ` by ${frontmatter.author.name}`;
   }
 
-  return <span className="text-gray-400">{text}</span>;
+  return <span className="text-gray-400 dark:text-gray-300">{text}</span>;
 };
 
 export default Byline;

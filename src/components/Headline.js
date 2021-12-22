@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const ROOT_CLASSES = 'tracking-tight font-extrabold text-gray-900';
+const ROOT_CLASSES = 'tracking-tight font-extrabold text-gray-900 dark:text-white';
 
 const Headline = ({
   el = 'h1',

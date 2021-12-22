@@ -24,7 +24,7 @@ const Doc = ({
     />
     <SitewideHeader maxWidth="full" />
 
-    <main className="md:flex pt-4 md:pt-0">
+    <main className="md:flex pt-4 md:pt-0 dark:bg-gray-900">
       <Sidebar />
 
       <article className="px-2 md:px-6 md:pt-7 md:flex-1">
@@ -33,7 +33,7 @@ const Doc = ({
         </div>
 
         <section
-          className="prose prose-primary"
+          className="prose prose-primary dark:prose-invert"
           dangerouslySetInnerHTML={{ __html: doc.html }}
         />
 
