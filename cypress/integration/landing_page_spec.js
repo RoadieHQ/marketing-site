@@ -10,7 +10,7 @@ describe('The landing page', () => {
 
     cy.get('#request-demo-name-input').type('Mary Mac');
     cy.get('#request-demo-email-input').type('test@example.com');
-    cy.get('[name="sub-to-newsletter"]').click();
+    cy.get('button[name="sub-to-newsletter"]').click();
     cy.get('button').contains('Request a demo').click();
     cy.contains("We'll be in touch");
   });
@@ -26,7 +26,7 @@ describe('The landing page', () => {
     cy.url().should('contain', '/free-trial/');
 
     cy.get('#get-instance-email-input').type('test@example.com');
-    cy.get('[name="agree-to-policies"]').click();
+    cy.get('button[name="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
     cy.contains('Your Backstage experience is on the way');
   });
@@ -45,7 +45,7 @@ describe('The landing page', () => {
     // This is a custom CSS checkbox which is technically invisble. Cypress
     // complains so we have to force it.
     cy.get('#get-instance-scm-bitbucket-cloud-input').check({ force: true });
-    cy.get('[name="agree-to-policies"]').click();
+    cy.get('button[name="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
     cy.contains('Roadie only supports GitHub Cloud for now');
   });
