@@ -22,6 +22,7 @@ We have taken the following steps to ensure our infrastructure is not vulnerable
 
 1. Audited our cloud environment to ensure we are not running log4j in any application code directly.
 2. Upgraded all AWS EC2 Node Groups to the latest AMI version provided by Amazon.
+2. Hotpatched all AWS ECS containers with the mitigations provided by Amazon.
 3. Audited our sub-processors to ensure they are taking steps to mitigate the vulnerability in their own software stacks.
 
 Links to sub-processor responses:
