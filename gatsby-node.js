@@ -140,3 +140,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
+  if (getConfig().mode === 'production') {
+    actions.setWebpackConfig({
+      devtool: false,
+    });
+  }
+};
