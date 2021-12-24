@@ -45,7 +45,7 @@ const PluginTemplate = ({ data }) => {
 
       <SitewideHeader />
 
-      <main className="pt-4 pb-8 px-4 lg:pt-8 lg:pb-28">
+      <main className="bg-white dark:bg-gray-900 pt-4 pb-8 px-4 lg:pt-8 lg:pb-28">
         <div className="relative max-w-lg mx-auto lg:max-w-3xl">
 
           <Header plugin={plugin} />
@@ -55,7 +55,7 @@ const PluginTemplate = ({ data }) => {
               <Title text="Getting started is simple" />
             </div>
 
-            <div className="prose prose-primary max-w-none">
+            <div className="prose prose-primary dark:prose-invert max-w-none">
               <p>
                 Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
                 <Link to="/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
@@ -87,7 +87,7 @@ const PluginTemplate = ({ data }) => {
           )}
 
           <ResponsiveSpacer>
-            <div className="prose prose-primary">
+            <div className="prose prose-primary dark:prose-invert">
               <p>
                 Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
               </p>
@@ -118,7 +118,7 @@ const PluginTemplate = ({ data }) => {
                 </div>
 
                 <div
-                  className="prose prose-primary max-w-none"
+                  className="prose prose-primary max-w-none dark:prose-invert"
                   dangerouslySetInnerHTML={{ __html: plugin.notes }}
                 />
               </div>

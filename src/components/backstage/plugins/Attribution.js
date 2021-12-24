@@ -9,7 +9,7 @@ const Attribution = ({ attribution }) => {
   }
 
   return (
-    <div>
+    <div className="text-gray-500 dark:text-gray-300">
       Created by{' '}
       <Link to={attribution.href} color="primary">
         {attribution.text}
