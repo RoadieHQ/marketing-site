@@ -58,7 +58,7 @@ export const GrayBackgroundDotsPattern = ({ width, height, className, id, ...res
       y={72}
       width={width}
       height={width}
-      className="bg-gray-50 dark:text-gray-900"
+      className="text-gray-100 dark:text-gray-900"
       fill="currentColor"
     />
     <rect x={118} width={404} height={height} fill={`url(#${id})`} />

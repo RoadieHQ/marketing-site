@@ -27,7 +27,7 @@ const AuthorName = ({ author }) => {
   if (!author) return null;
 
   return (
-    <p className="text-sm font-medium text-gray-900">
+    <p className="text-sm font-medium text-gray-900 dark:text-white">
       {author.name}
     </p>
   );
@@ -35,7 +35,7 @@ const AuthorName = ({ author }) => {
 
 const ReadInfo = ({ post }) => {
   return (
-    <div className="flex space-x-1 text-sm text-gray-500">
+    <div className="flex space-x-1 text-sm text-gray-500 dark:text-gray-300">
       <PubDate post={post} />
       <span aria-hidden="true">&middot;</span>
       <span>{post.timeToRead} min read</span>
