@@ -13,5 +13,4 @@ import './src/stylesheets/tailwind.css';
 import '@algolia/autocomplete-theme-classic';
 import './src/stylesheets/algolia-autocomplete-theme-overrides.css';
 
-import 'prismjs/themes/prism.css';
-import './src/stylesheets/prismjs-theme-overrides.css';
+import './src/stylesheets/prism.css';
