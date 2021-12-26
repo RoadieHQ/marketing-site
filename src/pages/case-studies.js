@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import get from 'lodash/get';
+import classnames from 'classnames';
 
 import { SEO, Page } from 'components';
 import { Attribution, TitleAndDescription, ListHeader } from 'components/article';
@@ -13,7 +14,9 @@ const CaseStudySummary = ({ study }) => {
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
       <div className="flex-shrink-0">
         <GatsbyImage
-          className="h-48 w-full"
+          className={classnames('h-48 w-full', {
+            'dark:invert': get(study, 'frontmatter.logo.invertInDarkMode', false),
+          })}
           image={study.frontmatter.logo.image.childImageSharp.gatsbyImageData}
           backgroundColor={logoBackgroundColor}
           alt={study.frontmatter.logo.alt}
@@ -21,7 +24,7 @@ const CaseStudySummary = ({ study }) => {
         />
       </div>
 
-      <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+      <div className="flex-1 bg-white dark:bg-gray-900 p-6 flex flex-col justify-between">
         <div className="flex-1">
           <TitleAndDescription post={study} />
         </div>
@@ -92,6 +95,7 @@ export const pageQuery = graphql`
             logo {
               alt
               backgroundColor
+              invertInDarkMode
               image {
                 childImageSharp {
                   gatsbyImageData(layout: FULL_WIDTH)

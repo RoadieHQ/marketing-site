@@ -5,6 +5,7 @@ description: Lunar used Backstage to onboard engineers faster and to create a tr
 logo:
   image: './lunar.png'
   alt: Lunar logo
+  invertInDarkMode: true
 author:
   name: David Tuite
   avatar: '../../assets/team/david-tuite.jpg'
