@@ -4,13 +4,27 @@ import { Link, Title } from 'components';
 import Logo from './Logo';
 import Attribution from './Attribution';
 
-const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attribution } }) => {
+const ListItem = ({
+  fields: {
+    slug,
+  },
+  frontmatter: {
+    logoImage,
+    humanName,
+    attribution,
+    invertLogoInDarkMode,
+  },
+}) => {
   const sharpImage = logoImage.childImageSharp;
 
   return (
     <div className="border-2 p-4 text-center" style={{ height: 350 }}>
       <Link to={slug} className="underline-none capitalize">
-        <Logo sharpImage={sharpImage} alt={`${humanName} logo`} />
+        <Logo
+          sharpImage={sharpImage}
+          alt={`${humanName} logo`}
+          invertLogoInDarkMode={invertLogoInDarkMode}
+        />
         <div className="pb-4">
           <Title>{humanName}</Title>
         </div>

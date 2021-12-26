@@ -90,6 +90,7 @@ export const pageQuery = graphql`
                 gatsbyImageData(layout: FIXED, width: 140)
               }
             }
+            invertLogoInDarkMode
 
             attribution {
               text

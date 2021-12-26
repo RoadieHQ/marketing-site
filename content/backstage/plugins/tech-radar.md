@@ -13,6 +13,7 @@ seo:
     Visualize the your company's official guidelines of different areas of software development.
 
 logoImage: '../../assets/logos/tech-radar/radar.png'
+invertLogoInDarkMode: true
 
 coverImage: '../../assets/tech-radar-plugin.png'
 coverImageAlt: 'A screenshot of the Tech Radar plugin.'

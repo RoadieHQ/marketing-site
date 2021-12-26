@@ -13,6 +13,7 @@ seo:
     information inside Backstage where it can be associated with your services.
 
 logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
+invertLogoInDarkMode: true
 
 coverImage: '../../assets/backstage/plugins/github-actions/cover.png'
 coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'

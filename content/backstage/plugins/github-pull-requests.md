@@ -14,6 +14,7 @@ seo:
 
 
 logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus2.png'
+invertLogoInDarkMode: true
 coverImage: '../../assets/pull-requests-cover.png'
 coverImageAlt: |
   Pull requests for Backstage rendered inside a Backstage plugin.

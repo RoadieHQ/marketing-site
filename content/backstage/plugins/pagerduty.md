@@ -13,6 +13,7 @@ seo:
     See who is on call, view active incidents and create incidents all from within Backstage.
 
 logoImage: '../../assets/logos/pagerduty/pagerduty-logo-light-200x200.png'
+invertLogoInDarkMode: true
 coverImage: '../../assets/pagerduty-plugin-2077x955.png'
 coverImageAlt: 'PagerDuty incidents for sample-service-1 rendered in Backstage.'
 

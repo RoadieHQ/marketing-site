@@ -19,6 +19,11 @@ seo:
 # The overall size of the file should be approximately 200 by 200.
 # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
 logoImage: '../../assets/logos/sentry/sentry-glyph-light-200x184.png'
+# Logos must look good in both light and dark mode. Some images can automatically be converted
+# to a format which looks good in dark mode simply by inverting their colors using CSS.
+# Learn how: https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert()
+# Set this to true to have the image colors inverted in dark mode.
+invertLogoInDarkMode: false
 
 # This must be a relative path. It should start with ../
 coverImage: '../../assets/backstage/plugins/sentry-plugin-1604x716.png'
