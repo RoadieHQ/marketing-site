@@ -8,9 +8,9 @@ const FeatureBulletPoint = ({ item }) => (
       <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
         <item.icon className="h-6 w-6" aria-hidden="true" />
       </div>
-      <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{item.name}</p>
+      <p className="ml-16 text-lg leading-6 font-medium text-gray-900 dark:text-white">{item.name}</p>
     </dt>
-    <dd className="mt-2 ml-16 text-base text-gray-500">{item.description}</dd>
+    <dd className="mt-2 ml-16 text-base text-gray-500 dark:text-gray-300">{item.description}</dd>
   </div>
 );
 
@@ -71,7 +71,10 @@ const FeatureBlock = ({
 );
 
 const AlternatingFeatureBlock = ({ content }) => (
-  <div className="py-16 bg-gray-50 overflow-hidden lg:py-24" id={content.htmlId} >
+  <div
+    className="py-16 bg-gray-50 dark:bg-gray-900 overflow-hidden lg:py-24"
+    id={content.htmlId}
+  >
     <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-6xl">
       <DotPattern
         width={404}

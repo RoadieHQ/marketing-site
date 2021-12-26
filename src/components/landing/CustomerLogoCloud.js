@@ -52,13 +52,13 @@ const LogoItem = ({ src, ...rest }) => (
 /* eslint-enable jsx-a11y/alt-text */
 
 const CustomerLogoCloud = ({ logos = LOGOS }) => (
-  <div className="bg-white">
+  <div className="bg-white dark:bg-gray-900">
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-8 sm:mb-12 text-gray-600">
+      <div className="text-center mb-8 sm:mb-12 text-gray-500 dark:text-gray-300">
         <p>Improving engineering effectiveness at top companies</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-8 md:grid-cols-4 dark:invert">
         {logos.map((logo) => (
           <LogoItem {...logo} key={logo.src.png} />
         ))}

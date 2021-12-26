@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Headline } from 'components';
 
 const FooterCTA = () => (
-  <div className="bg-white">
+  <div className="bg-white dark:bg-gray-900">
     <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div className="pb-3">
         <Headline el="h2">
@@ -25,7 +25,7 @@ const FooterCTA = () => (
           <Button
             link={true}
             to="/request-demo/"
-            color="inset"
+            color="secondary"
             text="Request a demo"
           />
         </div>

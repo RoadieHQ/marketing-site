@@ -2,7 +2,7 @@ import React from 'react';
 import { Headline, TextLink as Link } from 'components';
 
 const SubTitle = ({ text }) => (
-  <p className="mt-3 max-w-3xl text-lg text-gray-500">
+  <p className="mt-3 max-w-3xl text-lg text-gray-500 dark:text-gray-300">
     {text}
   </p>
 );
@@ -14,7 +14,7 @@ const LogoItem = ({ src }) => (
 );
 
 const SplitGridOnRight = ({ content }) => (
-  <div className="bg-white">
+  <div className="bg-white dark:bg-gray-900">
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
         <div>
@@ -27,7 +27,7 @@ const SplitGridOnRight = ({ content }) => (
           )}
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+        <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2 dark:invert">
           {content.logos.map((logo) => (
             <LogoItem {...logo} key={logo.key} />
           ))}

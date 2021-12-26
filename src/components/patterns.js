@@ -18,7 +18,14 @@ export const DotPattern = ({ width, height, className, id, ...rest }) => (
         height={20}
         patternUnits="userSpaceOnUse"
       >
-        <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+        <rect
+          x={0}
+          y={0}
+          width={4}
+          height={4}
+          className="text-gray-200 dark:text-gray-700"
+          fill="currentColor"
+        />
       </pattern>
     </defs>
     <rect width={width} height={height} fill={`url(#${id})`} />
