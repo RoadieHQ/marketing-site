@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
+import pick from 'lodash/pick';
 
 import {
   SEO,
@@ -13,8 +14,26 @@ import {
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
 
+const mapContentfulBlogPostToMarkdownRemarkBlogPost = ({ node }) => ({
+  frontmatter: {
+    ...pick(node, ['title', 'tags', 'date', 'lastValidated']),
+
+    author: {
+      name: node.author.name,
+    },
+  },
+
+  html: node.body.childMarkdownRemark.html,
+
+  fields: {
+    slug: node.slug,
+  },
+});
+
 const BlogPostTemplate = ({ data }) => {
-  const post = data.markdownRemark;
+  const post = mapContentfulBlogPostToMarkdownRemarkBlogPost({
+    node: data.markdownRemark,
+  });
   const { title: siteTitle } = data.site.siteMetadata;
 
   const [email, setEmail] = useState('');
@@ -82,18 +101,19 @@ export const pageQuery = graphql`
       }
     }
 
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date
-        description
-        lastValidated
-        tags
-        author {
-          name
+    markdownRemark: contentfulBlogPost(slug: {eq: $slug}) {
+      title
+      date
+      author {
+        name
+      }
+      slug
+      tags
+      title
+      lastValidated
+      body {
+        childMarkdownRemark {
+          html
         }
       }
     }
