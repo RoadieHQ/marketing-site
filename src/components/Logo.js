@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'components';
 import { RoadieHandAndWordIcon } from 'components/icons';
 
-export const MarkAndWord = () => (
+const Logo = () => (
   <div className="flex justify-start lg:w-0 lg:flex-1">
     <Link to="/">
       <span className="sr-only">Roadie</span>
@@ -10,3 +10,5 @@ export const MarkAndWord = () => (
     </Link>
   </div>
 );
+
+export default Logo;
