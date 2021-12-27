@@ -31,4 +31,3 @@ export { default as Testimonial } from './Testimonial';
 export { default as SEO } from './seo';
 export { default as Link } from './Link';
 export { Page } from './layouts';
-export { default as Logo } from './Logo';

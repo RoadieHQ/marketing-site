@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, Logo } from 'components';
+import { Link } from 'components';
 import { TwitterIcon, GitHubIcon, BackstageIcon } from 'components/icons';
+import { MarkAndWord } from 'components/Logo';
 
 const navigation = {
   solutions: [
@@ -89,7 +90,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
       <div className={`max-w-${maxWidth} mx-auto py-12 px-2 sm:px-6 lg:py-16 lg:px-8`}>
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <Logo />
+            <MarkAndWord />
 
             <p className="text-gray-500 text-base">
               SaaS Backstage for scale-ups.
