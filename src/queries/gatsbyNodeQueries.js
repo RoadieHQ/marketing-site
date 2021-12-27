@@ -1,20 +1,9 @@
 module.exports.BLOGS_QUERY = `
 {
-  blogs: allMarkdownRemark(
-    sort: {
-      fields: [frontmatter___date],
-      order: DESC
-    },
-    limit: 1000,
-    filter: {
-      fileAbsolutePath: {regex: "/.+content/blog/.+/"}
-    }
-  ) {
+  blogs: allContentfulBlogPost(sort: {fields: date, order: DESC}) {
     edges {
       node {
-        fields {
-          slug
-        }
+        slug
       }
     }
   }
