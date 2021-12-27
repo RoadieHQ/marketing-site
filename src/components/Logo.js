@@ -15,7 +15,7 @@ export const MarkAndWord = () => (
   <div className="flex justify-start lg:w-0 lg:flex-1">
     <Link to="/">
       <span className="sr-only">Roadie</span>
-      <RoadieHandAndWordIcon />
+      <RoadieHandAndWordIcon height={32} width={126} />
     </Link>
   </div>
 );

@@ -131,7 +131,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: colors.orange['500'],
         display: `minimal-ui`,
-        icon: 'content/assets/logos/roadie/roadie-hand.svg',
+        icon: 'content/assets/logos/roadie/roadie-hand-orange.svg',
       },
     },
     `gatsby-plugin-react-helmet`,
