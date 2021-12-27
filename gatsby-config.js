@@ -2,7 +2,7 @@ const has = require('lodash/has');
 const get = require('lodash/get');
 const agoliaQueries = require('./src/queries/agolia');
 const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
-const theme = require('./src/theme');
+const colors = require('tailwindcss/colors');
 
 const SITE_TITLE = 'Roadie';
 
@@ -129,9 +129,9 @@ module.exports = {
         short_name: SITE_TITLE,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: theme.COLORS_PRIMARY_500,
+        theme_color: colors.orange['500'],
         display: `minimal-ui`,
-        icon: 'content/assets/logos/roadie/roadie-r-round.svg',
+        icon: 'content/assets/logos/roadie/roadie-hand.svg',
       },
     },
     `gatsby-plugin-react-helmet`,
