@@ -11,6 +11,23 @@ import { TableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/doc';
 import editOnGitHubUrl from '../editOnGitHubUrl';
 
+const EditOnGitHubFooter = ({
+  siteMetadata,
+  doc,
+}) => {
+  if (!doc.fileAbsolutePath) return null;
+
+  return (
+    <footer className="border-t-2 border-gray-100 my-3 py-3">
+      <Link
+        to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
+      >
+        Edit this page on GitHub
+      </Link>
+    </footer>
+  );
+};
+
 const Doc = ({
   data: {
     doc,
@@ -37,13 +54,7 @@ const Doc = ({
           dangerouslySetInnerHTML={{ __html: doc.html }}
         />
 
-        <footer className="border-t-2 border-gray-100 my-3 py-3">
-          <Link
-            to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
-          >
-            Edit this page on GitHub
-          </Link>
-        </footer>
+        <EditOnGitHubFooter siteMetadata={siteMetadata} doc={doc} />
       </article>
 
       <TableOfContentsSidebar headings={doc.headings} />
@@ -70,12 +81,6 @@ export const pageQuery = graphql`
     doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
-      fileAbsolutePath
-      headings(depth: h2) {
-        id
-        value
-      }
-
       frontmatter {
         description
         title

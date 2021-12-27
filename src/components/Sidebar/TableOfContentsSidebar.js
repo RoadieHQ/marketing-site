@@ -7,13 +7,13 @@ import useScrollSpy from '../../hooks/useScrollSpy';
 import Link from '../TextLink';
 
 const TableOfContentsSidebar = ({ headings, className }) => {
+  // There's no point in showing the ToC if there are very few headings.
+  if (!headings || headings.length < 2) return null;
+
   const activeSection = useScrollSpy({
     headings,
     offsetPx: -200,
   });
-
-  // There's no point in showing the ToC if there are very few headings.
-  if (!headings || headings.length < 2) return null;
 
   return (
     <Sidebar
