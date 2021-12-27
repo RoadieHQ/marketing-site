@@ -4,6 +4,8 @@ import { graphql } from 'gatsby';
 import { SEO, Link, Page } from 'components';
 import { ListHeader, TitleAndDescription, PubDate, HeadRssLink } from 'components/article';
 
+import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
+
 const Issue = ({ post }) => (
   <div>
     <p className="text-sm text-gray-500">
@@ -23,8 +25,9 @@ const Issue = ({ post }) => (
   </div>
 );
 
-const BlogIndex = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges;
+const BackstageWeekly = ({ data }) => {
+  const posts = data.allContentfulBlogPost.edges
+    .map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
   const siteTitle = data.site.siteMetadata.title;
 
   return (
@@ -56,29 +59,38 @@ const BlogIndex = ({ data }) => {
   );
 };
 
-export default BlogIndex;
+export default BackstageWeekly;
 
 export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+  query BackstageWeekly {
+    allContentfulBlogPost(
+      sort: {fields: date, order: DESC}
       filter: {
-        fileAbsolutePath: { regex: "/.+/blog/.+/" }
-        frontmatter: { tags: { in: ["newsletter"] } }
+        tags: { eq: "newsletter" }
       }
     ) {
       edges {
         node {
-          excerpt
-          fields {
-            slug
+          description {
+            childMarkdownRemark {
+              rawMarkdownBody
+            }
           }
-
-          frontmatter {
-            date
-            title
-            description
-            tags
+          date
+          author {
+            name
+            avatar {
+              gatsbyImageData(layout: FIXED, width: 40)
+            }
+          }
+          slug
+          tags
+          title
+          lastValidated
+          body {
+            childMarkdownRemark {
+              timeToRead
+            }
           }
         }
       }

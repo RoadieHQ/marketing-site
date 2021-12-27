@@ -47,7 +47,6 @@ export const pageQuery = graphql`
             childMarkdownRemark {
               rawMarkdownBody
             }
-            description
           }
           date
           author {
