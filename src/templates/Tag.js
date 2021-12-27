@@ -8,9 +8,13 @@ import {
 } from 'components';
 import { PostSummary } from 'components/article';
 
-const BlogIndex = ({ pageContext, data }) => {
+import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
+
+const BlogTag = ({ pageContext, data }) => {
   const { tag } = pageContext;
-  const posts = data.allMarkdownRemark.edges;
+
+  const posts = data.allContentfulBlogPost.edges
+    .map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
   const siteTitle = data.site.siteMetadata.title;
 
   return (
@@ -27,7 +31,7 @@ const BlogIndex = ({ pageContext, data }) => {
       <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
         <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
           <Headline>
-            All blog posts tagged with: &quot;{tag}&quot;
+            Blog posts tagged with: &quot;{tag}&quot;
           </Headline>
 
 
@@ -44,36 +48,36 @@ const BlogIndex = ({ pageContext, data }) => {
   );
 };
 
-export default BlogIndex;
+export default BlogTag;
 
 export const pageQuery = graphql`
   query Tag($tag: String!) {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/.+/blog/.+/" }, frontmatter: { tags: { in: [$tag] } } }
+    allContentfulBlogPost(
+      sort: {fields: date, order: DESC}
+      filter: {tags: {eq: $tag}}
     ) {
       edges {
         node {
-          excerpt
-          timeToRead
-
-          fields {
-            slug
-          }
-
-          frontmatter {
-            date
-            title
+          description {
+            childMarkdownRemark {
+              rawMarkdownBody
+            }
             description
-            tags
-
-            author {
-              name
-              avatar {
-                childImageSharp {
-                  gatsbyImageData(layout: FIXED, width: 40)
-                }
-              }
+          }
+          date
+          author {
+            name
+            avatar {
+              gatsbyImageData(layout: FIXED, width: 40)
+            }
+          }
+          slug
+          tags
+          title
+          lastValidated
+          body {
+            childMarkdownRemark {
+              timeToRead
             }
           }
         }
