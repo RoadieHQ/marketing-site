@@ -55,8 +55,8 @@ module.exports.PLUGINS_QUERY = `
 
 module.exports.TAGS_QUERY = `
 {
-  tagsGroup: allMarkdownRemark(limit: 2000) {
-    group(field: frontmatter___tags) {
+  tagsGroup: allContentfulBlogPost {
+    group(field: tags) {
       fieldValue
     }
   }
