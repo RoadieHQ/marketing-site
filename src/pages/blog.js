@@ -1,33 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import pick from 'lodash/pick';
-import get from 'lodash/get';
 
 import { SEO, Page } from 'components';
 import { PostSummary, ListHeader, HeadRssLink } from 'components/article';
 
-const mapContentfulBlogPostToMarkdownRemarkBlogPost = ({ node }) => ({
-  node: {
-    frontmatter: {
-      ...pick(node, ['title', 'tags', 'date', 'lastValidated']),
-
-      description: get(node, 'description.childMarkdownRemark.rawMarkdownBody', ''),
-
-      author: {
-        name: node.author.name,
-        avatar: {
-          childImageSharp: {
-            gatsbyImageData: node.author.avatar.gatsbyImageData,
-          },
-        },
-      },
-    },
-
-    fields: {
-      slug: node.slug,
-    },
-  },
-});
+import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
 
 const BlogIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -83,6 +60,11 @@ export const pageQuery = graphql`
           tags
           title
           lastValidated
+          body {
+            childMarkdownRemark {
+              timeToRead
+            }
+          }
         }
       }
     }

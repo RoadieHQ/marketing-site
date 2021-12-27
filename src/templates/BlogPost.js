@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import pick from 'lodash/pick';
 
 import {
   SEO,
@@ -14,24 +13,10 @@ import {
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
 
-const mapContentfulBlogPostToMarkdownRemarkBlogPost = ({ node }) => ({
-  frontmatter: {
-    ...pick(node, ['title', 'tags', 'date', 'lastValidated']),
-
-    author: {
-      name: node.author.name,
-    },
-  },
-
-  html: node.body.childMarkdownRemark.html,
-
-  fields: {
-    slug: node.slug,
-  },
-});
+import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
 
 const BlogPostTemplate = ({ data }) => {
-  const post = mapContentfulBlogPostToMarkdownRemarkBlogPost({
+  const { node: post } = mapContentfulBlogPostToMarkdownRemarkBlogPost({
     node: data.markdownRemark,
   });
   const { title: siteTitle } = data.site.siteMetadata;
