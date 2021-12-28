@@ -9,7 +9,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import roadieLogo from '../../content/assets/roadie-r-764x764.png';
+import roadieLogo from '../../content/assets/logos/roadie/square-764.png';
 
 const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
   const { site } = useStaticQuery(
