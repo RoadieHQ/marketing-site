@@ -38,7 +38,7 @@ have its own layout; A particular Group or service can't have a unique layout. T
 
 To add a tab click the plus icon at the end of the tab list.
 
-![Add tab button](./add-tab-button.png)
+![Add tab button](./add-tab-button.jpg)
 
 Then select the component to add via the autocomplete and give the tab a display name and click "Create".
 
@@ -47,61 +47,61 @@ NB: When choosing a name please make sure it starts with something unique. (Ther
 component that shares the same initial name as an existing one (i.e. `Api` and `Api Visualiser`), you will not be able 
 to select the new component.)
 
-![Add tab dialog](./add-tab-screen.png)
+![Add tab dialog](./add-tab-screen.jpg)
 
 To rearrange or delete tabs select the "pencil" edit icon on the far right of the tab bar.
 
-![Edit tab layout](./edit-tab-layout.png)
+![Edit tab layout](./edit-tab-layout.jpg)
 
 Then drag and drop to rearrange or click the "x" icon to remove a tab then *click the save icon* on the right hand side.
 
-![Move tab](./move-tab.png)
+![Move tab](./move-tab.jpg)
 
 ### Updating Dashboards
 
 To edit a dashboard click the cog icon on the top right of the dashboard below the tab bar.
 
-![Edit Dashboard Button](./edit-grid-button.png)
+![Edit Dashboard Button](./edit-grid-button.jpg)
 
 This will switch the dashboard into an edit view. You can drag and drop to rearrange or click the dustbin icon to remove a card. 
 
-![Edit dashboard view](./move-card.png)
+![Edit dashboard view](./move-card.jpg)
 
 To add a card click the plus icon in the menu on the top right of the dashboard.
 
-![Add card button](./add-card-button.png)
+![Add card button](./add-card-button.jpg)
 
 Then select the card to add and click "Add".
 
-![Add card dialog](./add-card-dialog.png)
+![Add card dialog](./add-card-dialog.jpg)
 
 You can adjust the position of the new card as above. When you're finished don't forget to save your changes!
 
-![Save layout button](./save-layout-button.png)
+![Save layout button](./save-layout-button.jpg)
 
 Entities will have one "Overview" dashboard by default but you can add others. Simply create a tab selecting "Dashboard" as the component to add. 
 
-![Add a dashboard](./add-dashboard.png)
+![Add a dashboard](./add-dashboard.jpg)
 
 ### Updating the Sidebar
 
 Page components are displayed in the sidebar. To edit the sidebar click the "Edit Sidebar" icon.
 
-![Edit sidebar button](./edit-pages-button.png)
+![Edit sidebar button](./edit-pages-button.jpg)
 
 You can then drag and drop to rearrange or click the "x" icon to delete.
 
-![Edit Sidebar](./move-page.png)
+![Edit Sidebar](./move-page.jpg)
 
 To add a page click the "Add Page" icon.
 
-![Add page button](./add-page-button.png)
+![Add page button](./add-page-button.jpg)
 
 Then select the component in the autocomplete and adjust the title and path as necessary and click "Add".
 
-![Add page screen](./add-page.png)
+![Add page screen](./add-page.jpg)
 
 Finally, don't forget to save your changes.
 
-![Save sidebar](./save-sidebar.png)
+![Save sidebar](./save-sidebar.jpg)
 
