@@ -1,15 +1,14 @@
 import React from 'react';
-import { Lead, Headline } from 'components';
+import { Lead, Headline, CloudinaryImage } from 'components';
 import SocialLink from './SocialLink';
-import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Person = ({ person }) => (
   <li>
     <div className="space-y-6">
       {person.headshot && (
-        <GatsbyImage
+        <CloudinaryImage
           className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-          image={person.headshot.childImageSharp.gatsbyImageData}
+          cloudinaryAsset={person.headshot.childCloudinaryAsset}
           alt={`${person.name} head shot`}
         />
       )}

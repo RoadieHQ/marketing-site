@@ -1,6 +1,7 @@
 import React from 'react';
 import has from 'lodash/has';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { CloudinaryImage } from 'components';
 
 import PubDate from './PubDate';
 
@@ -11,14 +12,29 @@ const hasAvatar = (author) => (
 const AuthorAvatar = ({ author }) => {
   if (!hasAvatar(author)) return null;
 
-  return (
-    <div className="flex-shrink-0 mr-3">
-      <span className="sr-only">{author.name}</span>
+  let image;
+  if (has(author.avatar, 'childImageSharp')) {
+    image = (
       <GatsbyImage
         className="rounded-full"
         image={author.avatar.childImageSharp.gatsbyImageData}
         alt={`${author.name} headshot`}
       />
+    );
+  } else if (has(author.avatar, 'cloudinaryAsset')) {
+    image = (
+      <CloudinaryImage
+        className="rounded-full"
+        cloudinaryAsset={author.avatar.cloudinaryAsset}
+        alt={`${author.name} headshot`}
+      />
+    );
+  }
+
+  return (
+    <div className="flex-shrink-0 mr-3">
+      <span className="sr-only">{author.name}</span>
+      {image}
     </div>
   );
 };

@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import get from 'lodash/get';
 
-import { SEO, Page } from 'components';
+import { SEO, Page, CloudinaryImage } from 'components';
 import { Attribution, TitleAndDescription, ListHeader } from 'components/article';
 
 const CaseStudySummary = ({ study }) => {
@@ -12,9 +11,9 @@ const CaseStudySummary = ({ study }) => {
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
       <div className="flex-shrink-0">
-        <GatsbyImage
+        <CloudinaryImage
           className="h-48 w-full"
-          image={study.frontmatter.logo.image.childImageSharp.gatsbyImageData}
+          cloudinaryAsset={study.frontmatter.logo.image.childCloudinaryAsset}
           backgroundColor={logoBackgroundColor}
           alt={study.frontmatter.logo.alt}
           objectFit="contain"

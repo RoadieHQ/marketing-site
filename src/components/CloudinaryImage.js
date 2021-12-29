@@ -1,6 +1,11 @@
 import React from 'react';
 import has from 'lodash/has';
 
+// TODO:
+// 
+//   1. Support the ObjectFit property like GatsbyImage.
+//   2. Support the backgroundColor property like GatsbyImage.
+
 const CloudinaryImage = ({
   cloudinaryAsset,
   alt,
@@ -28,9 +33,9 @@ const CloudinaryImage = ({
         {...rest}
       />
     );
-  } else {
-    throw new Error('');
   }
+
+  return null;
 };
 
 export default CloudinaryImage;
