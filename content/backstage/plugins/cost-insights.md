@@ -14,7 +14,7 @@ seo:
 
 logoImage: '../../assets/logos/cost-insights/money-bag.png'
 
-coverImage: '../../assets/backstage/plugins/cost-insights.png'
+coverImage: '../../assets/backstage/plugins/cost-insights.jpg'
 coverImageAlt: 'Charts showing cloud costs over time and compared to other services.'
 
 gettingStarted:

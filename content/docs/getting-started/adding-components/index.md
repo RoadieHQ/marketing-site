@@ -54,7 +54,7 @@ If you don't want to wait for a component to be discovered you can add component
 ### Step 3. View your Component
 Click the Home link in the Backstage sidebar to go back to the catalog where you should see your component. Depending on the type of component you imported, you might have to cycle through the tabs until you see your component.
 
-![See your new component](./viewcomponent.png)
+![See your new component](./viewcomponent.jpg)
 
 ## TroubleShooting FAQs
 **Component Not Appearing?** </br>
