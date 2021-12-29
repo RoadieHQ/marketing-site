@@ -101,7 +101,6 @@ module.exports = {
               // Gatsby remark images plugin will add inline styles into the element which override
               // anything we try to set.
               wrapperStyle: 'margin-left:unset; margin-right:unset',
-              withWebp: true,
             },
           },
           {
