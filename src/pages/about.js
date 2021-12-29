@@ -71,8 +71,10 @@ export const pageQuery = graphql`
             githubUrl
 
             headshot {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+              childCloudinaryAsset {
+                fluid {
+                  ...CloudinaryAssetFluid
+                }
               }
             }
           }

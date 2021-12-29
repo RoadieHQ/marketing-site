@@ -168,14 +168,18 @@ export const pageQuery = graphql`
         }
 
         logoImage {
-          childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 140)
+          childCloudinaryAsset {
+            fixed {
+              ...CloudinaryAssetFixed
+            }
           }
         }
 
         coverImage {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+          childCloudinaryAsset {
+            fluid {
+              ...CloudinaryAssetFluid
+            }
           }
         }
         coverImageAlt

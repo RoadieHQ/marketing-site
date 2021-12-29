@@ -86,8 +86,10 @@ export const pageQuery = graphql`
             humanName
 
             logoImage {
-              childImageSharp {
-                gatsbyImageData(layout: FIXED, width: 140)
+              childCloudinaryAsset {
+                fixed {
+                  ...CloudinaryAssetFixed
+                }
               }
             }
 

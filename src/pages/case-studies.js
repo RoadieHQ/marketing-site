@@ -83,8 +83,10 @@ export const pageQuery = graphql`
             author {
               name
               avatar {
-                childImageSharp {
-                  gatsbyImageData(layout: FIXED, width: 40)
+                childCloudinaryAsset {
+                  fixed {
+                    ...CloudinaryAssetFixed
+                  }
                 }
               }
             }
@@ -93,8 +95,10 @@ export const pageQuery = graphql`
               alt
               backgroundColor
               image {
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH)
+                childCloudinaryAsset {
+                  fluid {
+                    ...CloudinaryAssetFluid
+                  }
                 }
               }
             }

@@ -120,8 +120,17 @@ module.exports = {
       },
     },
 
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-sharp',
+
+    {
+      resolve: 'gatsby-transformer-cloudinary',
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        uploadFolder: 'gatsby-cloudinary',
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
