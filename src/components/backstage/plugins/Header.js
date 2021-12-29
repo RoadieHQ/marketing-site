@@ -16,7 +16,7 @@ const Header = ({
   },
 }) => (
   <header className="text-center pb-4 mb-4 md:pt-8 md:pb-24 border-b-2 border-gray-100">
-    <Logo sharpImage={logoImage.childImageSharp} alt={`${humanName} logo`} />
+    <Logo image={logoImage.childCloudinaryAsset} alt={`${humanName} logo`} />
     <div className="mb-4">
       <Headline>{heading}</Headline>
     </div>

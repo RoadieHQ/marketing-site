@@ -30,4 +30,5 @@ export { default as Testimonial } from './Testimonial';
 // Including here for convenience when importing
 export { default as SEO } from './seo';
 export { default as Link } from './Link';
+export { default as CloudinaryImage } from './CloudinaryImage';
 export { Page } from './layouts';

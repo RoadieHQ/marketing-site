@@ -1,11 +1,15 @@
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { CloudinaryImage } from 'components';
 
-const Logo = ({ sharpImage, alt, minHeight = 200 }) => {
-  const height = Math.max(minHeight, sharpImage.gatsbyImageData.height);
+const Logo = ({ image, alt, minHeight = 200 }) => {
+  const height = Math.max(minHeight, image.fixed.height);
   return (
     <div className="flex justify-center items-center" style={{ height }}>
-      <GatsbyImage image={sharpImage.gatsbyImageData} alt={alt} />
+      <CloudinaryImage
+        cloudinaryAsset={image}
+        height={height}
+        alt={alt}
+      />
     </div>
   );
 };

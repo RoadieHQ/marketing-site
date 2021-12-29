@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import {
   TextLink as Link,
   Title,
@@ -10,6 +9,7 @@ import {
   ResponsiveSpacer,
   SitewideHeader,
   SitewideFooter,
+  CloudinaryImage,
 } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
@@ -101,8 +101,8 @@ const PluginTemplate = ({ data }) => {
               </div>
 
               <div>
-                <GatsbyImage
-                  image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
+                <CloudinaryImage
+                  cloudinaryAsset={plugin.frontmatter.coverImage.childCloudinaryAsset}
                   alt={plugin.frontmatter.coverImageAlt}
                   className="max-w-full max-h-full shadow-small"
                 />
