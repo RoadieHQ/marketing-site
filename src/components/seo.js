@@ -31,6 +31,13 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
 
   const metaDescription = description || site.siteMetadata.description;
 
+  // This may not work in development or a staging or preview environment but it is only
+  // really required to work in production. Twitter should not be linking to our preview
+  // URLs.
+  //
+  // This component is server side rendered so we can't use window.location.origin here.
+  const ogImageUrl = `${site.siteMetadata.siteUrl}${roadieLogo}`;
+
   return (
     <Helmet
       htmlAttributes={{
@@ -56,7 +63,7 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
         },
         {
           property: `og:image`,
-          content: `${site.siteMetadata.siteUrl}${roadieLogo}`,
+          content: ogImageUrl,
         },
         {
           name: `twitter:card`,
@@ -68,14 +75,11 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
         },
         {
           name: `twitter:image`,
-          // This may not work in development or a staging or preview environment but it is only
-          // really required to work in production. Twitter should not be linking to our preview
-          // URLs.
-          content: `${site.siteMetadata.siteUrl}${roadieLogo}`,
+          content: ogImageUrl,
         },
         {
           name: `twitter:image:alt`,
-          content: 'The Roadie logo. An uppercase R outline against a black background.',
+          content: 'The Roadie logo. A hand making a devil horns gesture. Signifies rock music or concerts.',
         },
         {
           name: `twitter:creator`,
