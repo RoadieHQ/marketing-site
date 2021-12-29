@@ -13,7 +13,7 @@ seo:
 
 logoImage: '../../assets/logos/gcp-projects/logo-gcp.png'
 
-coverImage: '../../assets/gcp-projects-plugin.png'
+coverImage: '../../assets/gcp-projects-plugin.jpg'
 coverImageAlt: 'A screenshot of the GCP Projects plugin.'
 
 gettingStarted:

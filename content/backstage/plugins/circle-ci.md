@@ -14,7 +14,7 @@ seo:
 
 logoImage: '../../assets/logos/circle-ci/circle-ci-logo-only-black.png'
 
-coverImage: '../../assets/circle-ci-plugin.png'
+coverImage: '../../assets/circle-ci-plugin.jpg'
 coverImageAlt: 'A list of builds in a table along with a status and retry button for each build.'
 
 gettingStarted:

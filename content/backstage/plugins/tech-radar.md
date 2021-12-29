@@ -14,7 +14,7 @@ seo:
 
 logoImage: '../../assets/logos/tech-radar/radar.png'
 
-coverImage: '../../assets/tech-radar-plugin.png'
+coverImage: '../../assets/tech-radar-plugin.jpg'
 coverImageAlt: 'A screenshot of the Tech Radar plugin.'
 
 gettingStarted:

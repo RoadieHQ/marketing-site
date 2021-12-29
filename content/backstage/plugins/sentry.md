@@ -65,7 +65,7 @@ Give your application a name and a Webhook URL, then be sure to give the ability
 issues and projects. These will be displayed in Backstage so it's important that the plugin
 can access them.
 
-![Creating an internal application in the Sentry UI](./sentry-create-internal-application-1590x1621.png)
+![Creating an internal application in the Sentry UI](./sentry-create-internal-application-1590x1621.jpg)
 
 Once you have an internal application, you can create a token. Run the Backstage backend with
 this token.
