@@ -101,6 +101,10 @@ module.exports = {
               // Gatsby remark images plugin will add inline styles into the element which override
               // anything we try to set.
               wrapperStyle: 'margin-left:unset; margin-right:unset',
+              // Enabling this will add 6+ minutes to the production build time because
+              // gatsby-remark-images needs to process twice as many images. It's a good thing
+              // for end users but watch for the build times!
+              withWebp: false,
             },
           },
           {
