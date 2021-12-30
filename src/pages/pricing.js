@@ -1,106 +1,190 @@
 import React from 'react';
-/* This example requires Tailwind CSS v2.0+ */
+import { graphql } from 'gatsby';
 import { CheckIcon } from '@heroicons/react/solid'
+import { Button, SEO, SitewideHeader, SitewideFooter } from 'components';
 
-const tiers = [{
-  name: 'Hobby',
-  href: '#',
-  priceMonthly: 12,
-  description: 'All the basics for starting a new business',
-  includedFeatures: ['Potenti felis, in cras at at ligula nunc.', 'Orci neque eget pellentesque.'],
-}, {
-  name: 'Freelancer',
-  href: '#',
-  priceMonthly: 24,
-  description: 'All the basics for starting a new business',
-  includedFeatures: [
-    'Potenti felis, in cras at at ligula nunc. ',
-    'Orci neque eget pellentesque.',
-    'Donec mauris sit in eu tincidunt etiam.',
-  ],
-}, {
-  name: 'Startup',
-  href: '#',
-  priceMonthly: 32,
-  description: 'All the basics for starting a new business',
-  includedFeatures: [
-    'Potenti felis, in cras at at ligula nunc. ',
-    'Orci neque eget pellentesque.',
-    'Donec mauris sit in eu tincidunt etiam.',
-    'Faucibus volutpat magna.',
-  ],
-}, {
-  name: 'Enterprise',
-  href: '#',
-  priceMonthly: 48,
-  description: 'All the basics for starting a new business',
-  includedFeatures: [
-    'Potenti felis, in cras at at ligula nunc. ',
-    'Orci neque eget pellentesque.',
-    'Donec mauris sit in eu tincidunt etiam.',
-    'Faucibus volutpat magna.',
-    'Id sed tellus in varius quisque.',
-    'Risus egestas faucibus.',
-    'Risus cursus ullamcorper.',
-  ],
-}];
+const TierIncludedFeature = ({ feature, hasIcon = true }) => {
+  return (
+    <li className="flex space-x-3">
+      {hasIcon && (
+        <CheckIcon className="flex-shrink-0 h-5 w-5 text-gray-600" aria-hidden="true" />
+      )}
+      <span className="text-sm text-gray-600">{feature}</span>
+    </li>
+  );
+};
 
-const Pricing = () => (
-  <div className="bg-white">
-    <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
-      <div className="sm:flex sm:flex-col sm:align-center">
-        <h1 className="text-5xl font-extrabold text-gray-900 sm:text-center">Pricing Plans</h1>
-        <p className="mt-5 text-xl text-gray-500 sm:text-center">
-          Start building for free, then add a site plan to go live. Account plans unlock additional features.
-        </p>
-        <div className="relative self-center mt-6 bg-gray-100 rounded-lg p-0.5 flex sm:mt-8">
-          <button
-            type="button"
-            className="relative w-1/2 bg-white border-gray-200 rounded-md shadow-sm py-2 text-sm font-medium text-gray-900 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:z-10 sm:w-auto sm:px-8"
-          >
-            Monthly billing
-          </button>
-          <button
-            type="button"
-            className="ml-0.5 relative w-1/2 border border-transparent rounded-md py-2 text-sm font-medium text-gray-700 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:z-10 sm:w-auto sm:px-8"
-          >
-            Yearly billing
-          </button>
-        </div>
-      </div>
-      <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
-        {tiers.map((tier) => (
-          <div key={tier.name} className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
-            <div className="p-6">
-              <h2 className="text-lg leading-6 font-medium text-gray-900">{tier.name}</h2>
-              <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
-              <p className="mt-8">
-                <span className="text-4xl font-extrabold text-gray-900">${tier.priceMonthly}</span>{' '}
-                <span className="text-base font-medium text-gray-500">/mo</span>
-              </p>
-              <a
-                href={tier.href}
-                className="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
-              >
-                Buy {tier.name}
-              </a>
-            </div>
-            <div className="pt-6 pb-8 px-6">
-              <h3 className="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h3>
-              <ul role="list" className="mt-6 space-y-4">
-                {tier.includedFeatures.map((feature) => (
-                  <li key={feature} className="flex space-x-3">
-                    <CheckIcon className="flex-shrink-0 h-5 w-5 text-green-500" aria-hidden="true" />
-                    <span className="text-sm text-gray-500">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+const TierName = ({ name }) => (
+  <h2 className="text-lg leading-6 font-medium text-gray-900">{name}</h2>
+);
+
+const TierDescription = ({ description }) => (
+  <p className="mt-4 text-sm text-gray-500">{description}</p>
+);
+
+const TierPrice = ({ price, cadence }) => (
+  <p className="mt-8">
+    <span className="text-4xl font-extrabold text-gray-900">{price}</span>
+    {cadence && (
+      <span className="text-base font-medium text-gray-500">{cadence}</span>
+    )}
+  </p>
+);
+
+const TierLimitations = ({ limitations }) => (
+  <div className="pt-6 pb-8 px-6">
+    <ul className="mt-6 space-y-4">
+      {limitations.map((limitation) => (
+        <TierIncludedFeature feature={limitation} key={limitation} hasIcon={false} />
+      ))}
+    </ul>
   </div>
 );
 
+
+const TierIncludedFeatures = ({ heading, includedFeatures }) => (
+  <div className="pt-6 pb-8 px-6">
+    <h3 className="text-xs font-medium text-gray-900 tracking-wide uppercase">{heading}</h3>
+    <ul className="mt-6 space-y-4">
+      {includedFeatures.map((feature) => (
+        <TierIncludedFeature feature={feature} key={feature} />
+      ))}
+    </ul>
+  </div>
+);
+
+const PricingTier = ({ children }) => (
+  <div className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+    {children}
+  </div>
+);
+
+const SectionHeader = () => (
+  <div className="sm:flex sm:flex-col sm:align-center">
+    <h1 className="text-5xl font-extrabold text-gray-900 sm:text-center">Pricing Plans</h1>
+    <p className="mt-5 text-xl text-gray-500 sm:text-center">
+      Start building for free, then add a site plan to go live. Account plans unlock additional features.
+    </p>
+  </div>
+);
+
+const Pricing = ({
+  data: {
+    site: {
+      siteMetadata: {
+        title: siteTitle,
+      },
+    },
+  },
+}) => (
+  <>
+    <SEO
+      title={`Pricing | ${siteTitle}`}
+      description="Roadie is FREE for teams."
+    />
+
+    <SitewideHeader />
+
+    <div className="bg-white">
+      <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+        <SectionHeader />
+
+        <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto">
+          <PricingTier>
+            <div className="p-6">
+              <TierName name="Team" />
+              <TierDescription description="All the basics for starting a new business" />
+              <TierPrice price="FREE" />
+
+              <div className="mt-8">
+                <Button
+                  link={true}
+                  color="primary"
+                  text="Sign Up, It's Free"
+                  to="/"
+                />
+              </div>
+            </div>
+
+            <TierLimitations
+              limitations={[
+                'Up to 3 software components tracked.',
+                'Up to 2 scaffolder templates.',
+                'Up to 3 API specs.',
+                'Unlimited TechDocs',
+                'Unlimited Users',
+              ]}
+            />
+
+            <TierIncludedFeatures
+              heading="Key Features"
+              includedFeatures={[
+                'Backstage software catalog',
+                'TechDocs technical documentation',
+                'Locations log',
+                'Scaffolder software templating'
+              ]}
+            />
+          </PricingTier>
+
+          <PricingTier>
+            <div className="p-6">
+              <TierName name="Org" />
+              <TierDescription description="All the basics for starting a new business" />
+
+              <TierPrice price="$16" cadence="/user/month" />
+
+              <div className="mt-8">
+                <Button
+                  link={true}
+                  color="primary"
+                  text="Start a free 14-Day Trial"
+                  to="/"
+                />
+              </div>
+            </div>
+
+            <TierLimitations
+              limitations={[
+                '50 software components tracked.',
+                '6 scaffolder templates.',
+                '50 API specs.',
+                'Unlimited TechDocs',
+                'Unlimited Users',
+              ]}
+            />
+
+            <TierIncludedFeatures
+              heading="Everything in Team, plus..."
+              includedFeatures={[
+                'Kubernetes plugin',
+                'Bring your own private plugins',
+                'Slack and email Support',
+                'Single sign on',
+                'API access',
+                'Risus cursus ullamcorper.',
+              ]}
+            />
+          </PricingTier>
+        </div>
+      </div>
+    </div>
+
+    <SitewideFooter />
+  </>
+);
+
 export default Pricing;
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        social {
+          twitter
+        }
+      }
+    }
+  }
+`;
