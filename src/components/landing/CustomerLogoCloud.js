@@ -8,6 +8,8 @@ import TrackunitLogo from '../../../content/assets/home/customer-logos/trackunit
 import TrackunitLogoPng from '../../../content/assets/home/customer-logos/trackunit-monochrome.png';
 import ContentfulLogo from '../../../content/assets/home/customer-logos/contentful-monochrome.webp';
 import ContentfulLogoPng from '../../../content/assets/home/customer-logos/contentful-monochrome.png';
+import NcsaLogo from '../../../content/assets/home/customer-logos/ncsa-monochrome.webp';
+import NcsaLogoPng from '../../../content/assets/home/customer-logos/ncsa-monochrome.png';
 
 const LOGOS = [{
   src: {
@@ -37,6 +39,13 @@ const LOGOS = [{
   },
   alt: 'Trackunit logo',
   title: '~70 engineers',
+}, {
+  src: {
+    webp: NcsaLogo,
+    png: NcsaLogoPng,
+  },
+  alt: 'NCSA logo',
+  title: '~50 engineers',
 }];
 
 /* eslint-disable jsx-a11y/alt-text */
@@ -58,7 +67,7 @@ const CustomerLogoCloud = ({ logos = LOGOS }) => (
         <p>Improving engineering effectiveness at top companies</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
         {logos.map((logo) => (
           <LogoItem {...logo} key={logo.src.png} />
         ))}
