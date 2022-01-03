@@ -29,24 +29,24 @@ gettingStarted:
         // packages/backend/src/plugins/scaffolder.ts
 
         const actions = [
-            createHttpBackstageAction({ config }),
-            ...createBuiltInActions({
-                containerRunner,
-                integrations,
-                config,
-                catalogClient,
-                reader,
-            }),
+          createHttpBackstageAction({ config }),
+          ...createBuiltinActions({
+            containerRunner,
+            integrations,
+            config,
+            catalogClient,
+            reader,
+          }),
         ];
 
         return await createRouter({
-            containerRunner,
-            logger,
-            config,
-            database,
-            catalogClient,
-            reader,
-            actions,
+          containerRunner,
+          logger,
+          config,
+          database,
+          catalogClient,
+          reader,
+          actions,
         });
   - intro: Create template with http actions
     language: yaml
