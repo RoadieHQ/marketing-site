@@ -11,14 +11,14 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Backstage Scaffolder Actions - HTTP Requests Plugin | Roadie'
   description: |
-    The Backstage HTTP request scaffolder actions plugin integrates with the pre existing scaffolder actions. It extends them and allows you to send arbitary http requests to your Backstage instance.
+    The Backstage HTTP request scaffolder actions plugin integrates with the pre-existing scaffolder actions. It extends them and allows you to send arbitrary http requests to your Backstage instance.
 
     The http:backstage:request action allows the task to call any of the backstage APIs available to the user that triggers it. The action takes care of passing the authentication token of the user to the task execution so that the action can perform actions on behalf of the user that triggers it.
 
 logoImage: '../../assets/logos/scaffolder-http/http.png'
 
 gettingStarted:
-  - intro: Install the plugin into Backstage.
+  - intro: Install the plugin into your scaffolded Backstage application.
     language: bash
     code: |
       cd packages/backend
@@ -84,4 +84,6 @@ gettingStarted:
           getCode: '{{ steps.backstage_request_with_input.output.code }}'
           getHeaders: '{{ steps.backstage_request_with_input.output.headers }}'
       ...
+notes:
+  - This scaffolder action is meant to be used in a scaffolded Backstage application created by Backstage CLI. If you are using it in a Backstage monorepo, you need to modify the build process to transpile node_modules also.
 ---
