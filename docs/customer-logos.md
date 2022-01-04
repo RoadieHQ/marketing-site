@@ -4,7 +4,7 @@ Permission must be obtained from each customer before their logo is used on the 
 
 ## Steps to add a logo
 
-1. Source a high-quality version of the logo with a transparent background. Some companies have officual brand assets which must be used. Try seatching for "<customer logo> name brand" to find these.
+1. Source a high-quality version of the logo with a transparent background. Some companies have official brand assets which must be used. Try searching for "<customer logo> name brand" to find these.
 2. Find the Figma file called "Website" and open the "Logos" page in that file.
 3. Add the logo to this page and resize it to match the existing set of logos.
 4. Open the "Fill" panel in the Figma sidebar and drag the Exposure and Contrast sliders all the way to the left.
