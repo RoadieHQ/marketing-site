@@ -1,6 +1,6 @@
 # Customer logos
 
-Permission must be obtiained from each customer before their logo is used on the website. It is standard language in our order form, but customers sometimes require edits or deletions are required. Be sure to check the final version of the signed order form before adding a customer logo to the website.
+Permission must be obtained from each customer before their logo is used on the website. It is standard language in our order form, but customers sometimes require edits or deletions are required. Be sure to check the final version of the signed order form before adding a customer logo to the website.
 
 ## Steps to add a logo
 
