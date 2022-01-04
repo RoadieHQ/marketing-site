@@ -9,7 +9,7 @@ access token found here https://app.contentful.com/spaces/hcqpbvoqhwhm/api/keys/
 git clone git@github.com:RoadieHQ/marketing-site.git
 cd marketing-site
 cp .env.sample .env
-# Edit the environment variables in the .env file.
+# Edit the environment variables in the .env file. You will need to lookup the Contentful API key in 1password.
 yarn install
 env $(cat .env | xargs) yarn start
 ```
