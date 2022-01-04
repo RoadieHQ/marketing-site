@@ -10,6 +10,8 @@ import ContentfulLogo from '../../../content/assets/home/customer-logos/contentf
 import ContentfulLogoPng from '../../../content/assets/home/customer-logos/contentful-monochrome.png';
 import NcsaLogo from '../../../content/assets/home/customer-logos/ncsa-monochrome.webp';
 import NcsaLogoPng from '../../../content/assets/home/customer-logos/ncsa-monochrome.png';
+import HopperLogo from '../../../content/assets/home/customer-logos/hopper-monochrome.webp';
+import HopperLogoPng from '../../../content/assets/home/customer-logos/hopper-monochrome.png';
 
 const LOGOS = [{
   src: {
@@ -27,11 +29,11 @@ const LOGOS = [{
   title: '~150 engineers',
 }, {
   src: {
-    webp: StreamElementsLogo,
-    png: StreamElementsLogoPng,
+    webp: HopperLogo,
+    png: HopperLogoPng,
   },
-  alt: 'StreamElements logo',
-  title: '~50 engineers',
+  alt: 'Hopper logo',
+  title: '~200 engineers',
 }, {
   src: {
     webp: TrackunitLogo,
@@ -45,6 +47,13 @@ const LOGOS = [{
     png: NcsaLogoPng,
   },
   alt: 'NCSA logo',
+  title: '~50 engineers',
+}, {
+  src: {
+    webp: StreamElementsLogo,
+    png: StreamElementsLogoPng,
+  },
+  alt: 'StreamElements logo',
   title: '~50 engineers',
 }];
 
@@ -67,7 +76,7 @@ const CustomerLogoCloud = ({ logos = LOGOS }) => (
         <p>Improving engineering effectiveness at top companies</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
+      <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
         {logos.map((logo) => (
           <LogoItem {...logo} key={logo.src.png} />
         ))}
