@@ -39,7 +39,7 @@ const Doc = ({
 
         <footer className="border-t-2 border-gray-100 my-3 py-3">
           <Link
-            to={editOnGitHubUrl({ siteMetadata, node: doc, contentSourcePath: '/content/docs' })}
+            to={editOnGitHubUrl({ siteMetadata, node: doc, nodeSourcePath: '/content/docs' })}
           >
             Edit this page on GitHub
           </Link>
