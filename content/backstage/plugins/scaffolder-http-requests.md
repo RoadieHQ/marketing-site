@@ -84,6 +84,6 @@ gettingStarted:
           getCode: '{{ steps.backstage_request_with_input.output.code }}'
           getHeaders: '{{ steps.backstage_request_with_input.output.headers }}'
       ...
-notes:
-  - This scaffolder action is meant to be used in a scaffolded Backstage application created by Backstage CLI. If you are using it in a Backstage monorepo, you need to modify the build process to transpile node_modules also.
 ---
+
+This scaffolder action is meant to be used in a scaffolded Backstage application created by Backstage CLI. If you are using it in a Backstage monorepo, you need to modify the build process to transpile node_modules also.
