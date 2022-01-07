@@ -1,0 +1,7 @@
+site_name: 'Roadie Onboarding docs'
+site_description: 'Documentation for using the roadie application'
+
+plugins:
+  - techdocs-core
+
+nav:

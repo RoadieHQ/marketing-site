@@ -1,0 +1,12 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: roadie-techdocs
+  description: Used for roadie onboarding
+  annotations:
+    backstage.io/techdocs-ref: dir:./roadie-tech-docs
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:guest
