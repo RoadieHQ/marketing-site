@@ -1,5 +1,5 @@
 site_name: 'Roadie Onboarding docs'
-site_description: 'Documentation for using the roadie application'
+site_description: 'Documentation for using the Roadie application'
 
 plugins:
   - techdocs-core
@@ -39,4 +39,3 @@ nav:
     - Snyk: 'integrations/snyk/index.md'
     - Sonarqube: 'integrations/sonarqube/index.md'
     - Travis ci: 'integrations/travis-ci/index.md'
-  - Plugins: 'plugins.md'

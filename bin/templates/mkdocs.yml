@@ -1,5 +1,5 @@
 site_name: 'Roadie Onboarding docs'
-site_description: 'Documentation for using the roadie application'
+site_description: 'Documentation for using the Roadie application'
 
 plugins:
   - techdocs-core

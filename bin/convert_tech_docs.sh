@@ -21,7 +21,6 @@ for dir in $(find $TECH_DOCS_DIR/docs/* -maxdepth 0 -type d); do
         echo "    - ${subtopic[@]^}: '${tech_docs_sub_dir}/index.md'" >> $TECH_DOCS_DIR/mkdocs.yml
     done
 done
-echo "  - Plugins: 'plugins.md'" >> $TECH_DOCS_DIR/mkdocs.yml
 echo "mkdocs file generated!"
 
 echo "Removing unparsable markdown"
@@ -32,6 +31,4 @@ for filename in $(find $TECH_DOCS_DIR/docs/* -type f -print); do
       sed 's/(\/docs\/\(.*\))/(\.\.\/\.\.\/\1)/g' $filename | tail -n +6 > "$filename.tmp" &&  mv "$filename.tmp" "$filename"
     fi
 done
-
-cp $SCRIPTDIR/templates/*.md $TECH_DOCS_DIR/docs
 echo "Tech docs generation completed!"
