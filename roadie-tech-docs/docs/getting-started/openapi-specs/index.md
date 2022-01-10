@@ -10,7 +10,7 @@ Creating Open API specs is outside the scope of this documentation. Please see t
 Before starting this guide, please...
 
 1.  Prepare an OpenAPI spec to use. Alternatively, you can use one of the [APIs listed on APIs Guru](https://apis.guru/browse-apis/). In the examples below, we will use the [Spotify API Spec](https://api.apis.guru/v2/specs/spotify.com/v1/swagger.yaml).
-2.  Understand how entities are added to Backstage via YAML definitions. Please read the [Adding Components Guide](/docs/getting-started/adding-components/) to learn more.
+2.  Understand how entities are added to Backstage via YAML definitions. Please read the [Adding Components Guide](../../getting-started/adding-components/) to learn more.
 3.  Track a component in Backstage so we can add an API spec to it.
 
 ## Adding an OpenAPI spec to a component

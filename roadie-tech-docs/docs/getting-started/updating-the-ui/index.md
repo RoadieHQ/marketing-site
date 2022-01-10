@@ -6,7 +6,7 @@ plugin components and the different places they can be integrated into the app.
 
 ## Prerequisites
 
-You must be an admin to edit the UI layout. Please complete [this guide](/docs/getting-started/getting-started-for-admins/) before moving on to this one.
+You must be an admin to edit the UI layout. Please complete [this guide](../../getting-started/getting-started-for-admins/) before moving on to this one.
 
 ## About Plugins
 

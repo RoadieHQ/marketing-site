@@ -6,7 +6,7 @@ description: Configuring Tech Radar to use your data source
 
 ## Introduction
 
-If you want to use Tech Radar on your Roadie instance you can add it as a page using the steps defined in [this guide](/docs/getting-started/updating-the-ui#updating-the-sidebar). 
+If you want to use Tech Radar on your Roadie instance you can add it as a page using the steps defined in [this guide](/docs/getting-started/updating-the-ui#updating-the-sidebar).
 
 
 ## Configuration

@@ -42,9 +42,9 @@ The `EntityArgoCDHistoryCard` displays the deployment history of an appliction:
 
 ![ArgoCD History Card](./argo-history.png)
 
-Both can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards).
+Both can be [added to component dashboards](../../getting-started/updating-the-ui/#updating-dashboards).
 
-The `EntityArgoCDContent` displays similar information to the history card and can be [added as a tab](/docs/getting-started/updating-the-ui#updating-tabs) to component layouts.
+The `EntityArgoCDContent` displays similar information to the history card and can be [added as a tab](../../getting-started/updating-the-ui#updating-tabs) to component layouts.
 
 ![ArgoCD Tab](./argo-tab.png)
 

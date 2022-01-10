@@ -29,9 +29,9 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/opsgenie` and ent
 
 The Opsgenie plugin provides two type of UI elements. 
 
-The card `EntityOpsgenieAlertsCard` displays alerts for particular components and can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards). 
+The card `EntityOpsgenieAlertsCard` displays alerts for particular components and can be [added to component dashboards](../../getting-started/updating-the-ui/#updating-dashboards). 
 
-The overview page `OpsgeniePage` can be also be [added to the sidebar](/docs/getting-started/updating-the-ui#updating-the-sidebar).
+The overview page `OpsgeniePage` can be also be [added to the sidebar](../../getting-started/updating-the-ui#updating-the-sidebar).
 
 ## References
 

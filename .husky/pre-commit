@@ -3,3 +3,5 @@
 
 yarn eslint --cache --fix *.js
 yarn prettier --write *.{js,json,md}
+yarn tech-docs:build
+

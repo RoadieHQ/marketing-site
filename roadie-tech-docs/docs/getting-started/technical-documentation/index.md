@@ -114,4 +114,4 @@ Commit and merge these changes to the default branch of your repo on GitHub and 
 
 ## Next steps
 
-If you use OpenAPI specs in your organization you can [learn how to associate them with your components](/docs/getting-started/openapi-specs).
+If you use OpenAPI specs in your organization you can [learn how to associate them with your components](../../getting-started/openapi-specs).

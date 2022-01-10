@@ -16,7 +16,7 @@ There are 3 kinds of Backstage resource used in this tutorial.
 
 In order to complete this guide, you will need the following things:
 
-1. Access to a Roadie account. If you do not yet have access, please [request a free trial](/free-trial/).
+1. Access to a Roadie account. If you do not yet have access, please [request a free trial](https://roadie.io/free-trial/).
 2. A GitHub Cloud or GitHub Enterprise Cloud account.
 3. A test service on GitHub which you can make changes to.
 
@@ -95,6 +95,6 @@ These are the organization permissions required:
 
 ## Next steps
 
-Let's [add a component to Backstage](/docs/getting-started/adding-components/).
+Let's [add a component to Backstage](../../getting-started/adding-components/).
 
-Also you can [add another user to Backstage](/docs/getting-started/user-management/).
+Also you can [add another user to Backstage](../../getting-started/user-management/).

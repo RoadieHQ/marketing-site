@@ -21,7 +21,7 @@ There are 3 kinds of Backstage resource used in this tutorial.
 
 In order to complete this guide, you will need the following things:
 
-1. Access to a Roadie account. If you do not yet have access, please [request a free trial](/free-trial/).
+1. Access to a Roadie account. If you do not yet have access, please [request a free trial](https://roadie.io/free-trial/).
 2. A GitHub Cloud or GitHub Enterprise Cloud account.
 3. A test service on GitHub which you can make changes to.
 

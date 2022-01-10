@@ -1,3 +1,3 @@
 # Plugins
 
-For more information on plugins, please visit [link](https://roadie.io/backstage/plugins/).
+To view all the plugins roadie supports, please visit [link](https://roadie.io/backstage/plugins/).

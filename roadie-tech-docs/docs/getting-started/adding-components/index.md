@@ -4,7 +4,7 @@
 This tutorial will show you how to add components such as services or websites to the Backstage catalog.
 
 ## Prerequisite 
-You must have installed the Github App in order to import components in private repositories. If you have not done this you can find the steps to do this [here.](https://roadie.io/docs/getting-started/getting-started-for-admins/#connect-roadie-to-github). Components in public repositories can be added without installing the GitHub app.
+You must have installed the Github App in order to import components in private repositories. If you have not done this you can find the steps to do this [here.](../../getting-started/getting-started-for-admins/#connect-roadie-to-github). Components in public repositories can be added without installing the GitHub app.
 
 ## Steps
 
@@ -60,4 +60,4 @@ You can check this by going to the Github settings of a repo that Backstage alre
 
 ## What Next? 
 
-Let's [add some documentation for the component we just created](/docs/getting-started/technical-documentation/) so that others in your organization can easily learn how to use it.
+Let's [add some documentation for the component we just created](../../getting-started/technical-documentation/) so that others in your organization can easily learn how to use it.

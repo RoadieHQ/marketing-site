@@ -9,7 +9,7 @@ description: How to create components such as services or websites using the Bac
 This tutorial will show you how to create a basic scaffolder template in Backstage.
 
 ## Prerequisite 
-You must have installed the Github App in order to use the scaffolder. If you have not done this you can find the steps to do this [here.](https://roadie.io/docs/getting-started/getting-started-for-admins/#connect-roadie-to-github) 
+You must have installed the Github App in order to use the scaffolder. If you have not done this you can find the steps to do this [here](/docs/getting-started/getting-started-for-admins/#connect-roadie-to-github).
 
 ## Steps
 
