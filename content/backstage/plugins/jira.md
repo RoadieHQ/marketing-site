@@ -20,7 +20,7 @@ coverImageAlt: 'A preview of Jira plugin including tasks summary, project inform
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
-    code: yarn add @roadiehq/backstage-plugin-jira
+    code: yarn --cwd packages/app add @roadiehq/backstage-plugin-jira
 
   - intro: Add proxy config
     language: yaml
@@ -28,7 +28,7 @@ gettingStarted:
       # app-config.yaml
       proxy:
         '/jira/api':
-          target: <JIRA_URL>
+          target: '<JIRA_URL>'
           headers:
             Authorization:
               $env: JIRA_TOKEN
