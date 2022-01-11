@@ -31,8 +31,7 @@ gettingStarted:
         '/buildkite/api':
           target: https://api.buildkite.com/v2/
           headers:
-            Authorization: 
-              $env: BUILDKITE_TOKEN
+            Authorization: Bearer ${BUILDKITE_TOKEN}
 
   - intro: Import it into your Backstage application
     language: typescript
@@ -62,9 +61,9 @@ gettingStarted:
     code: |
       metadata:
         annotations:
-          buildkite.com/project-slug: [exampleorganization/exampleproject]
+          buildkite.com/project-slug: <buildkiteorganization/buildkitepipeline>
 
-  - intro: Get and provide BUILDKITE_TOKEN as env variable. Note that the token needs to be in format Bearer TOKEN 
+  - intro: Get and provide BUILDKITE_TOKEN as env variable. 
 ---
 
 ## Features
