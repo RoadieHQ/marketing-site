@@ -111,6 +111,7 @@ const DocSidebar = () => {
           {/* Alphabetical ordering */}
           <SidebarItem to="/docs/integrations/argocd/" text="ArgoCD" />
           <SidebarItem to="/docs/integrations/bugsnag/" text="Bugsnag" />
+          <SidebarItem to="/docs/integrations/buildkite/" text="Buildkite" />
           <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
           <SidebarItem to="/docs/integrations/catalog-graph/" text="Catalog Graph" />
           <SidebarItem to="/docs/integrations/datadog/" text="Datadog" />

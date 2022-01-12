@@ -6,9 +6,9 @@ description: How to add Buildkite pipelines to your components
 
 ## Introduction
 
-The Backstage Buildkite plugin integrates with Buildkite to show your build information inside Backstage where it can be associated with your services.
+The [Backstage Buildkite plugin](https://roadie.io/backstage/plugins/buildkite/) integrates with Buildkite to show your build information inside Backstage where it can be associated with your services.
 
-![buildkite-plugin-overview.png]('../../../assets/buildkite-plugin-overview.png')
+![buildkite-plugin-overview.png](buildkite-plugin-overview.png)
 
 ## Add Buildkite to one of your components
 
@@ -32,7 +32,7 @@ In Roadie, find and select the service via the Component Catalog or Search.
 
 Click the plus icon to add a new plugin for your component.
 
-![add_plugin.png](../../../add_plugin.png)
+![Add the plugin](../../../assets/add-plugin.png)
 
 Select the EntityBuildkiteContent card from the drop-down and click Create.
 
