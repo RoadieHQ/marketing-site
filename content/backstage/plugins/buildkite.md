@@ -10,7 +10,7 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Backstage Buildkite Plugin | Roadie'
   description: |
-    The Backstage Buildkite plugin integrates with Buildkite to show your builds
+    The Backstage Buildkite plugin integrates with Buildkite to show your build
     information inside Backstage where it can be associated with your services.
 
 logoImage: '../../assets/logos/buildkite/buildkite-logo.png'
