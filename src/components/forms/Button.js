@@ -9,7 +9,8 @@ const Button = ({
   color = 'primary',
   className = {},
   size = 'medium',
-  icon,
+  prefixIcon,
+  postfixIcon,
   ...props
 }) => {
   const baseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-900';
@@ -21,8 +22,6 @@ const Button = ({
   const smallBaseClass = 'px-3 py-1';
   const mediumBaseClass = 'px-5 py-3';
   const largeBaseClass = 'px-8 py-3 md:py-4 md:text-lg md:px-10';
-
-  const prefixIcon = icon && <span className="mr-2 w-6">{icon}</span>;
 
   if (link) {
     return (
@@ -45,6 +44,7 @@ const Button = ({
         >
           {prefixIcon}
           {text}
+          {postfixIcon}
         </Link>
       </div>
     );
@@ -65,6 +65,7 @@ const Button = ({
     >
       {prefixIcon}
       {text}
+      {postfixIcon}
     </button>
   );
 };

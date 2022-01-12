@@ -100,3 +100,18 @@ module.exports.DOCS_QUERY = `
   }
 }
 `;
+
+module.exports.CHANGELOG_QUERY = `
+{
+  result: allContentfulChangeSet(
+    sort: {fields: releasedAt, order: DESC}
+    limit: 1000
+  ) {
+    edges {
+      node {
+        title
+      }
+    }
+  }
+}
+`;
