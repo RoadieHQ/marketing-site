@@ -1,6 +1,6 @@
 ---
 title: Buildkite Plugin
-lastUpdated: '2022-11-18T21:00:00.0Z'
+lastUpdated: '2022-01-12T21:00:00.0Z'
 description: How to add Buildkite pipelines to your components
 ---
 
@@ -10,20 +10,39 @@ The Backstage Buildkite plugin integrates with Buildkite to show your build info
 
 ![buildkite-plugin-overview.png]('../../../assets/buildkite-plugin-overview.png')
 
-## Add a Catalog Graph card to a dashboard
+## Add Buildkite to one of your components
 
-Click the cog icon on the top right of a component Dashboard (or the default Overview) page. Then click the plus icon to add a new card.
-
-![edit_layout.png](edit_layout.png)
-
-![add_card.png](add_card.png)
-
-Select the EntityBuildkiteContent card from the drop down and click Create.
-
-![add-buildkite-card.png](add-buildkite-card.png)
+### Add the Buildkite annotation
+First, add an annotation in the `catalog-info.yaml` file for a service that uses Buildkite like so: 
+```yaml
+metadata:
+  annotations:
+    buildkite.com/project-slug: <buildkiteorganization/buildkitepipeline>
+```
 
 ### Add you API Key
 You will need to create an API key for your Org in Buildkite with read permissions.
-Then add it in Roadie via Administration -> Settings -> Secrets -> BUILDKITE_TOKEN 
+
+Then add it to Roadie via Administration -> Settings -> Secrets -> BUILDKITE_TOKEN
 
 ![Add BUILDKITE_TOKEN to Secrets in Settings Page](../../../assets/add-secrets.png)
+
+### Add the plugin
+In Roadie, find and select the service via the Component Catalog or Search.
+
+Click the plus icon to add a new plugin for your component.
+
+![add_plugin.png](../../../add_plugin.png)
+
+Select the EntityBuildkiteContent card from the drop-down and click Create.
+
+![add-buildkite-content.png](add-buildkite-content.png)
+
+You should now see your Buildkite pipeline runs inside Roadie!
+
+![View all builds in buildkite plugin](buildkite-plugin-overview.png)
+
+You can then click in individual builds to see more info. 
+
+![View single build in buildkite plugin](buildkite-plugin-build.png)
+
