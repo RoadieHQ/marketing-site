@@ -121,6 +121,7 @@ exports.createPages = async ({ graphql, actions }) => {
     actions,
     graphql,
     basePath: '/changelog/',
+    itemsPerPage: 20,
   });
 
   await createLatestLegalNotices({

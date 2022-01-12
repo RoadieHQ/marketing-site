@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import snakeCase from 'lodash/snakeCase';
+import kebabCase from 'lodash/kebabCase';
 import format from 'date-fns/format';
 
 const ReleasedAt = ({ releasedAt }) => (
@@ -28,7 +28,7 @@ const ChangeSet = ({
             <button onClick={toggleOpen} className="text-left">
               <h3
                 className="tracking-tight text-gray-900 text-base sm:text-xl hover:underline"
-                id={snakeCase(title)}
+                id={kebabCase(title)}
               >
                 {title}
               </h3>
