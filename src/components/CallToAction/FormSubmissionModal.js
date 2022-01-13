@@ -53,7 +53,11 @@ const FormSubmissionModal = ({
       solve.
     </p>
   ),
-  siteMetadata,
+  siteMetadata = {
+    social: {
+      twitter: 'https://twitter.com/roadiehq',
+    },
+  },
   followOn = 'NEWSLETTER_AND_TWITTER',
   email,
   titleEmoji = (
@@ -62,8 +66,10 @@ const FormSubmissionModal = ({
     </span>
   ),
 }) => {
-  let followOnContent = <NewsletterAndTwitterInner siteMetadata={siteMetadata} />;
-  if (followOn === 'TWITTER') {
+  let followOnContent;
+  if (followOn === 'NEWSLETTER_AND_TWITTER') {
+    followOnContent = <NewsletterAndTwitterInner siteMetadata={siteMetadata} />;
+  } else if (followOn === 'TWITTER') {
     // Doesn't make sense to offer to let people sign up to the newsletter immediately after
     // they have just signed up to the newsletter.
     followOnContent = <TwitterInner siteMetadata={siteMetadata} />;

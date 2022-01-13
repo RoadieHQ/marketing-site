@@ -4,11 +4,12 @@ import {
   SEO,
   SitewideHeader,
   SitewideFooter,
+  Testimonial,
 } from 'components';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import SubmissionSuccessModal from 'components/free-trial/SubmissionSuccessModal';
-import FormWithTestimonial from 'components/layouts/FormWithTestimonial';
+import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 
 const SEO_TITLE = 'Get a SaaS Backstage trial';
 
@@ -40,9 +41,10 @@ const RequestTrial = ({ data }) => {
       <div className="min-h-screen bg-white">
         <SitewideHeader />
 
-        <FormWithTestimonial
+        <FormWithLeftSidebar
           title="Free trial"
           description="Try Roadie Backstage free for 30 days."
+          sidebarChildren={<Testimonial />}
         >
           <ExtendedGetInstanceCallToAction
             email={email}
@@ -53,7 +55,7 @@ const RequestTrial = ({ data }) => {
             scmTool={scmTool}
             setScmTool={setScmTool}
           />
-        </FormWithTestimonial>
+        </FormWithLeftSidebar>
 
         <SitewideFooter />
       </div>

@@ -14,9 +14,9 @@ const TeamPricingTier = () => {
         <TierName name="Team" comingSoon={true} />
         <TierDescription description="An internal developer hub for the stuff your team builds." />
 
-        <p className="mt-12">
-          <span className="text-4xl font-extrabold text-gray-900">FREE</span>
-        </p>
+        <div className="mt-6">
+          <p className="text-4xl font-extrabold text-gray-900">FREE</p>
+        </div>
 
         <div className="mt-8">
           <Button

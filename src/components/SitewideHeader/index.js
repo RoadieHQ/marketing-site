@@ -58,6 +58,7 @@ const SitewideHeader = ({ maxWidth = '7xl' }) => {
             <Popover.Group as="nav" className="hidden md:flex space-x-10">
               <TopNavItem to="/#product" text="Product" />
               <TopNavItem to="/#solutions" text="Solutions" />
+              <TopNavItem to="/pricing/" text="Pricing" />
               <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
               <TopNavDropdownItem text="Learn" subItems={learn} />
             </Popover.Group>

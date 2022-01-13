@@ -4,16 +4,16 @@ import {
   LowSideAnglePattern,
   HighSideAnglePattern,
   SplitDiagonalPattern,
-  Testimonial,
   Headline,
 } from 'components';
 
 import { FAQs } from 'components/landing';
 
-const FormWithTestimonial = ({
+const FormWithLeftSidebar = ({
   title,
   description,
   children,
+  sidebarChildren,
 }) => (
   <main className="overflow-hidden pb-24 mb-24">
     <div className="bg-warm-gray-50">
@@ -62,7 +62,7 @@ const FormWithTestimonial = ({
                 <LowSideAnglePattern />
               </div>
 
-              <Testimonial />
+              {sidebarChildren}
             </div>
 
             <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
@@ -77,4 +77,4 @@ const FormWithTestimonial = ({
   </main>
 );
 
-export default FormWithTestimonial;
+export default FormWithLeftSidebar;
