@@ -6,5 +6,8 @@ export {
 } from './SubscribeToNewsletter';
 export { default as NetlifyFormCallToAction } from './NetlifyFormCallToAction';
 export {
-  default as RequestEnterprisePricingCallToAction
+  default as RequestEnterprisePricingCallToAction,
 } from './RequestEnterprisePricingCallToAction';
+export {
+  default as RequestTeamsEarlyAccessCallToAction,
+} from './RequestTeamsEarlyAccessCallToAction';

@@ -9,4 +9,5 @@ export const FORM_NAMES = {
   getInstanceExtended: 'submit-extended-get-instance-form',
   requestDemo: 'submit-extended-get-demo-form',
   requestEnterprisePricing: 'request-enterprise-pricing',
+  requestTeamsEarlyAccess: 'request-teams-early-access',
 };

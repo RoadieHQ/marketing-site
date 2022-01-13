@@ -23,7 +23,7 @@ const TeamPricingTier = () => {
             link={true}
             color="primary"
             text="Request early access"
-            to="/"
+            to="/pricing/teams/"
           />
         </div>
       </div>

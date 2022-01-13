@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter } from 'components';
 import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
-import { RequestEnterprisePricingCallToAction } from 'components/CallToAction';
+import { RequestTeamsEarlyAccessCallToAction } from 'components/CallToAction';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 
-const SEO_TITLE = 'Enterprise pricing for Roadie Backstage';
+const SEO_TITLE = 'Backstage for Teams';
 
 const SubmissionSuccessModal = ({ ...rest }) => {
   return (
@@ -22,7 +22,7 @@ const SubmissionSuccessModal = ({ ...rest }) => {
   );
 };
 
-const RequestEnterprisePricing = ({ data, location }) => {
+const RequestTeamsEarlyAccess = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -47,10 +47,10 @@ const RequestEnterprisePricing = ({ data, location }) => {
         <SitewideHeader />
 
         <FormWithLeftSidebar
-          title="Enterprise pricing"
-          description="Enter your information below and we will be in touch with a quote."
+          title="Backstage for Teams"
+          description="Get a developer hub for your team - docs, runbooks, API specs and more."
         >
-          <RequestEnterprisePricingCallToAction
+          <RequestTeamsEarlyAccessCallToAction
             location={location}
             onSuccess={() => {
               setModalOpen(true);
@@ -64,10 +64,10 @@ const RequestEnterprisePricing = ({ data, location }) => {
   );
 };
 
-export default RequestEnterprisePricing;
+export default RequestTeamsEarlyAccess;
 
 export const pageQuery = graphql`
-  query {
+  query PricingTeams {
     site {
       siteMetadata {
         title
@@ -78,3 +78,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+
