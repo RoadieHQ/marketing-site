@@ -9,6 +9,7 @@ const Button = ({
   color = 'primary',
   className = {},
   size = 'medium',
+  icon,
   prefixIcon,
   postfixIcon,
   ...props
@@ -22,6 +23,11 @@ const Button = ({
   const smallBaseClass = 'px-3 py-1';
   const mediumBaseClass = 'px-5 py-3';
   const largeBaseClass = 'px-8 py-3 md:py-4 md:text-lg md:px-10';
+
+  // Maintain backwards compatability.
+  if (icon) {
+    prefixIcon = icon;
+  }
 
   if (link) {
     return (
