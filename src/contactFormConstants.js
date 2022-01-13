@@ -8,4 +8,5 @@ export const FORM_NAMES = {
   getInstance: 'submit-get-instance-form',
   getInstanceExtended: 'submit-extended-get-instance-form',
   requestDemo: 'submit-extended-get-demo-form',
+  requestEnterprisePricing: 'request-enterprise-pricing',
 };
