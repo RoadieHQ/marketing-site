@@ -6,8 +6,8 @@ plugins:
 
 nav:
   - Getting started:
-    - Adding components: 'getting-started/adding-components/index.md'
     - Getting started for admins: 'getting-started/getting-started-for-admins/index.md'
+    - Adding components: 'getting-started/adding-components/index.md'
     - Openapi specs: 'getting-started/openapi-specs/index.md'
     - Scaffolding components: 'getting-started/scaffolding-components/index.md'
     - Technical documentation: 'getting-started/technical-documentation/index.md'
