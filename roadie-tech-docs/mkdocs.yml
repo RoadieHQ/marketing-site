@@ -5,11 +5,6 @@ plugins:
   - techdocs-core
 
 nav:
-  - Configuration:
-    - Tech radar: 'configuration/tech-radar/index.md'
-  - Custom plugins:
-    - Artifactory: 'custom-plugins/artifactory/index.md'
-    - Configuring: 'custom-plugins/configuring/index.md'
   - Getting started:
     - Adding components: 'getting-started/adding-components/index.md'
     - Getting started for admins: 'getting-started/getting-started-for-admins/index.md'
@@ -39,3 +34,8 @@ nav:
     - Snyk: 'integrations/snyk/index.md'
     - Sonarqube: 'integrations/sonarqube/index.md'
     - Travis ci: 'integrations/travis-ci/index.md'
+  - Configuration:
+    - Tech radar: 'configuration/tech-radar/index.md'
+  - Custom plugins:
+    - Artifactory: 'custom-plugins/artifactory/index.md'
+    - Configuring: 'custom-plugins/configuring/index.md'

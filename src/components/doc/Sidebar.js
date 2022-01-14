@@ -10,6 +10,7 @@ import useMedia from 'react-use/lib/useMedia';
 import classnames from 'classnames';
 
 import theme from '../../theme';
+import sidebar from '../../../static/docs-nav.yaml';
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -61,7 +62,7 @@ const DocSidebar = () => {
   const docToggleButtonText = isOpen ? 'Hide nav' : 'Show nav';
   const docToggleButtonIcon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
   const docNavClassNames = classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen });
-
+ 
   return (
     <Sidebar side="left">
       <div className="px-2 my-3">
@@ -86,60 +87,24 @@ const DocSidebar = () => {
       </div>
 
       <nav className={docNavClassNames}>
-        <SidebarSectionList title="Getting started">
-          <SidebarItem
-            to="/docs/getting-started/getting-started-for-admins/"
-            text="Configuring Roadie"
-          />
-
-          <SidebarItem to="/docs/getting-started/adding-components/" text="Adding components" />
-          <SidebarItem to="/docs/getting-started/scaffolding-components/" text="Scaffolding components" />
-
-          <SidebarItem to="/docs/getting-started/user-management/" text="Adding users" />
-
-          <SidebarItem
-            to="/docs/getting-started/technical-documentation/"
-            text="Using TechDocs"
-          />
-
-          <SidebarItem to="/docs/getting-started/openapi-specs/" text="Using OpenAPI specs" />
-
-          <SidebarItem to="/docs/getting-started/updating-the-ui/" text="Updating the UI" />
-        </SidebarSectionList>
-
-        <SidebarSectionList title="Integrations">
-          {/* Alphabetical ordering */}
-          <SidebarItem to="/docs/integrations/argocd/" text="ArgoCD" />
-          <SidebarItem to="/docs/integrations/bugsnag/" text="Bugsnag" />
-          <SidebarItem to="/docs/integrations/buildkite/" text="Buildkite" />
-          <SidebarItem to="/docs/integrations/circleci/" text="CircleCI" />
-          <SidebarItem to="/docs/integrations/catalog-graph/" text="Catalog Graph" />
-          <SidebarItem to="/docs/integrations/datadog/" text="Datadog" />
-          <SidebarItem to="/docs/integrations/firehydrant/" text="FireHydrant" />
-          <SidebarItem to="/docs/integrations/github-org/" text="GitHub Teams" />
-          <SidebarItem to="/docs/integrations/github-token/" text="GitHub via Token" />
-          <SidebarItem to="/docs/integrations/gcp/" text="Google Cloud Platform" />
-          <SidebarItem to="/docs/integrations/google-oauth-client/" text="Google OAuth client" />
-          <SidebarItem to="/docs/integrations/jira/" text="Jira" />
-          <SidebarItem to="/docs/integrations/kubernetes/" text="Kubernetes" />
-          <SidebarItem to="/docs/integrations/newrelic/" text="NewRelic" />
-          <SidebarItem to="/docs/integrations/opsgenie/" text="Opsgenie" />
-          <SidebarItem to="/docs/integrations/pagerduty/" text="PagerDuty" />
-          <SidebarItem to="/docs/integrations/prometheus/" text="Prometheus" />
-          <SidebarItem to="/docs/integrations/sentry/" text="Sentry" />
-          <SidebarItem to="/docs/integrations/snyk/" text="Snyk" />
-          <SidebarItem to="/docs/integrations/sonarqube/" text="SonarQube" />
-          <SidebarItem to="/docs/integrations/travis-ci/" text="Travis CI" />
-        </SidebarSectionList>
-
-        <SidebarSectionList title="Configuration">
-          <SidebarItem to="/docs/configuration/tech-radar/" text="Tech Radar" />
-        </SidebarSectionList>
-
-        <SidebarSectionList title="Custom plugins">
-          <SidebarItem to="/docs/custom-plugins/configuring" text="Configuring Custom Plugins" />
-          <SidebarItem to="/docs/custom-plugins/artifactory" text="Using Private Roadie Repository" />
-        </SidebarSectionList>
+        {
+          sidebar.nav.map((_k, v) => {
+            const entries = Object.entries(sidebar.nav[v])
+            const subheader = entries[0][0].toString()
+            return <SidebarSectionList key={subheader} title={subheader}>
+              {
+                entries[0][1].map((k) => {
+                  const subEntires =  Object.entries(k);
+                  return <SidebarItem
+                    key={subEntires[0][0]}
+                    text={subEntires[0][0].toString()}
+                    to={subEntires[0][1].toString()}
+                  />
+                })
+              }
+            </SidebarSectionList>
+          })
+        }
       </nav>
     </Sidebar>
   );

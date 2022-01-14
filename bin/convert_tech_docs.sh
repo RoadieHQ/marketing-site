@@ -6,22 +6,10 @@ TECH_DOCS_DIR=$SCRIPTDIR/../roadie-tech-docs
 # clean the directory
 rm -rf TECH_DOCS_DIR && mkdir -p $TECH_DOCS_DIR/docs
 cp -rf $ONBOARDING_DOCS_DIR $TECH_DOCS_DIR/docs
-cp $SCRIPTDIR/templates/mkdocs.yml $TECH_DOCS_DIR
+cp $SCRIPTDIR/../static/docs-nav.yaml $TECH_DOCS_DIR/mkdocs.yml
 
-echo "Generating mkdocs file...";
-# Generate mkdocs file navigation
-for dir in $(find $TECH_DOCS_DIR/docs/* -maxdepth 0 -type d); do
-    # Get base dirs
-    topic=$(basename $dir | awk '{gsub(/-/," ",$0)}1' | awk '{ print toupper(substr($0, 1, 1)) substr($0, 2) }')
-    echo "  - ${topic}:" >> $TECH_DOCS_DIR/mkdocs.yml
-    # Get nested dirs
-    for subdir in $(find $dir/* -maxdepth 1 -type d); do
-        tech_docs_sub_dir=$(echo $subdir |  awk -F 'roadie-tech-docs/docs/' '{print $2}');
-        subtopic=$(basename $subdir | awk '{gsub(/-/," ",$0)}1' | awk '{ print toupper(substr($0, 1, 1)) substr($0, 2) }')
-        echo "    - ${subtopic[@]^}: '${tech_docs_sub_dir}/index.md'" >> $TECH_DOCS_DIR/mkdocs.yml
-    done
-done
-echo "mkdocs file generated!"
+echo "Rewriting sidebar yaml nav"
+sed 's/\/docs\/\(.*\)\//\1\/index.md/g' $TECH_DOCS_DIR/mkdocs.yml > $TECH_DOCS_DIR/mkdocs.yml.tmp && mv $TECH_DOCS_DIR/mkdocs.yml.tmp $TECH_DOCS_DIR/mkdocs.yml
 
 echo "Removing unparsable markdown"
 # remove unparsable markdown
