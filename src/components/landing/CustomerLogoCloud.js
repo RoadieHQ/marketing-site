@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import SnykLogo from '../../../content/assets/home/customer-logos/snyk-monochrome.webp';
 import SnykLogoPng from '../../../content/assets/home/customer-logos/snyk-monochrome.png';
@@ -58,14 +59,12 @@ const LOGOS = [{
 }];
 
 /* eslint-disable jsx-a11y/alt-text */
-const LogoItem = ({ src, ...rest }) => (
-  <div className="col-span-1 flex justify-center">
-    <picture>
-      <source srcSet={src.webp} type="image/webp" />
-      <source srcSet={src.png} type="image/png" />
-      <img src={src.png} {...rest} className="h-8 sm:h-10" />
-    </picture>
-  </div>
+export const LogoItem = ({ src, ...rest }) => (
+  <picture>
+    <source srcSet={src.webp} type="image/webp" />
+    <source srcSet={src.png} type="image/png" />
+    <img src={src.png} {...rest} />
+  </picture>
 );
 /* eslint-enable jsx-a11y/alt-text */
 
@@ -78,7 +77,9 @@ const CustomerLogoCloud = ({ logos = LOGOS }) => (
 
       <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
         {logos.map((logo) => (
-          <LogoItem {...logo} key={logo.src.png} />
+          <div className="col-span-1 flex justify-center" key={logo.src.png}>
+            <LogoItem {...logo} className="h-8 sm:h-10" />
+          </div>
         ))}
       </div>
     </div>

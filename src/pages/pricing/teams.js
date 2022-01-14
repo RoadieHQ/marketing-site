@@ -4,6 +4,7 @@ import { SEO, SitewideHeader, SitewideFooter } from 'components';
 import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
 import { RequestTeamsEarlyAccessCallToAction } from 'components/CallToAction';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
+import { SidebarLogoContent } from 'components/pricing';
 
 const SEO_TITLE = 'Backstage for Teams';
 
@@ -49,6 +50,7 @@ const RequestTeamsEarlyAccess = ({ data, location }) => {
         <FormWithLeftSidebar
           title="Backstage for Teams"
           description="Get a developer hub for your team - docs, runbooks, API specs and more."
+          sidebarChildren={<SidebarLogoContent />}
         >
           <RequestTeamsEarlyAccessCallToAction
             location={location}

@@ -12,10 +12,10 @@ const TeamPricingTier = () => {
     <div className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
       <div className="p-6">
         <TierName name="Team" comingSoon={true} />
-        <TierDescription description="An internal developer hub for the stuff your team builds." />
+        <TierDescription description="For teams who want a home for their services, docs, runbooks, API specs and CI." />
 
         <div className="mt-6">
-          <p className="text-4xl font-extrabold text-gray-900">FREE</p>
+          <p className="text-4xl font-extrabold text-gray-900">Free</p>
         </div>
 
         <div className="mt-8">
@@ -30,7 +30,7 @@ const TeamPricingTier = () => {
 
       <TierLimitations
         limitations={[
-          'Up to 3 software components tracked.',
+          'Up to 5 software components tracked.',
           'Unlimited TechDocs',
           'Unlimited Users',
         ]}

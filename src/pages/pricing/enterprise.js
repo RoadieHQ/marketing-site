@@ -4,6 +4,7 @@ import { SEO, SitewideHeader, SitewideFooter } from 'components';
 import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
 import { RequestEnterprisePricingCallToAction } from 'components/CallToAction';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
+import { SidebarLogoContent } from 'components/pricing';
 
 const SEO_TITLE = 'Enterprise pricing for Roadie Backstage';
 
@@ -49,6 +50,7 @@ const RequestEnterprisePricing = ({ data, location }) => {
         <FormWithLeftSidebar
           title="Enterprise pricing"
           description="Enter your information below and we will be in touch with a quote."
+          sidebarChildren={<SidebarLogoContent />}
         >
           <RequestEnterprisePricingCallToAction
             location={location}

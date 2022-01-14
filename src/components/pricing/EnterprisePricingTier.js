@@ -11,9 +11,13 @@ const EnterprisePricingTier = () => {
     <div className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
       <div className="p-6">
         <TierName name="Enterprise" />
-        <TierDescription description="A single pane of glass for every engineer in your company." />
+        <TierDescription description="Dev-first discoverability and a paved path to production for every engineer in your company" />
 
-        <div className="mt-24">
+        <div className="mt-6">
+          <p className="text-4xl font-extrabold text-gray-900">Let&apos;s Talk</p>
+        </div>
+
+        <div className="mt-8">
           <Button
             text="Get a quote"
             link={true}
