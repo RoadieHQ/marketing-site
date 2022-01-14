@@ -15,6 +15,7 @@ nav:
     - User management: 'getting-started/user-management/index.md'
   - Integrations:
     - Argocd: 'integrations/argocd/index.md'
+    - BuildKite: 'integrations/buildkite/index.md'
     - Bugsnag: 'integrations/bugsnag/index.md'
     - Catalog graph: 'integrations/catalog-graph/index.md'
     - Circleci: 'integrations/circleci/index.md'

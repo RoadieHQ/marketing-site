@@ -21,6 +21,17 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Check TechDocs
+        run: |
+          yarn tech-docs:build
+          exit_code=$(git diff --exit-code --quiet roadie-tech-docs/)
+          if [ "$exit_code" != "0" ]; then
+            echo "Tech-docs not up to date"
+            git diff --name-only roadie-tech-docs/
+            echo "Please run 'yarn tech-docs:build' and add them to your commit!"
+            exit 1
+          fi
+
       - name: Lint
         run: yarn lint
 

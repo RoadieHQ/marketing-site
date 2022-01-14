@@ -6,8 +6,8 @@ plugins:
 
 nav:
   - Getting started:
-    - Adding components: '/docs/getting-started/adding-components/'
     - Getting started for admins: '/docs/getting-started/getting-started-for-admins/'
+    - Adding components: '/docs/getting-started/adding-components/'
     - Openapi specs: '/docs/getting-started/openapi-specs/'
     - Scaffolding components: '/docs/getting-started/scaffolding-components/'
     - Technical documentation: '/docs/getting-started/technical-documentation/'
@@ -15,7 +15,7 @@ nav:
     - User management: '/docs/getting-started/user-management/'
   - Integrations:
     - Argocd: '/docs/integrations/argocd/'
-    - BuildKite: '/docs/integrations/buildkite'
+    - BuildKite: '/docs/integrations/buildkite/'
     - Bugsnag: '/docs/integrations/bugsnag/'
     - Catalog graph: '/docs/integrations/catalog-graph/'
     - Circleci: '/docs/integrations/circleci/'
