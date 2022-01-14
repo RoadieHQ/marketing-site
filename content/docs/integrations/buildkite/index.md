@@ -25,14 +25,14 @@ You will need to create an API key for your Org in Buildkite with read permissio
 
 Then add it to Roadie via Administration -> Settings -> Secrets -> BUILDKITE_TOKEN
 
-![Add BUILDKITE_TOKEN to Secrets in Settings Page](../../../assets/add-secrets.png)
+![Add BUILDKITE_TOKEN to Secrets in Settings Page](add-secrets.png)
 
 ### Add the plugin
 In Roadie, find and select the service via the Component Catalog or Search.
 
 Click the plus icon to add a new plugin for your component.
 
-![Add the plugin](../../../assets/add-plugin.png)
+![Add the plugin](add-plugin.png)
 
 Select the EntityBuildkiteContent card from the drop-down and click Create.
 
