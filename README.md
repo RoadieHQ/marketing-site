@@ -16,7 +16,7 @@ env $(cat .env | xargs) yarn start
 
 Open http://localhost:8000 in your browser.
 
-For doc development, the /docs page does not work as it relies on a redirect in prod. 
+For doc development, the /docs page does not work as it relies on a redirect in prod.
 To view docs pages you are working on, enter the full url i.e. `docs/integrations/bugsnag/`
 
 ## Building for production
