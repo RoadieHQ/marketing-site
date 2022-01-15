@@ -1,34 +1,59 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, Link, Page } from 'components';
+import { SEO, Page } from 'components';
 import { ListHeader, TitleAndDescription, PubDate, HeadRssLink } from 'components/article';
 
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
+import CoverImage from '../../content/assets/blog/list-cover-image-1.png';
 
-const Issue = ({ post }) => (
-  <div>
-    <p className="text-sm text-gray-500">
-      <PubDate post={post} />
-    </p>
+const ImageIssue = ({ post }) => (
+  <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    <div className="flex-shrink-0 relative">
+      <img
+        className="h-48 w-full object-cover"
+        src={CoverImage}
+        alt="Nightclub scene with spotlights and crowd"
+      />
+      <div className="absolute bottom-0 right-px text-white text-8xl">
+        {post.frontmatter.issueNumber}
+      </div>
+    </div>
 
-    <TitleAndDescription post={post} />
+    <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+      <div className="flex-1">
+        <TitleAndDescription post={post} />
+      </div>
 
-    <div className="mt-3">
-      <Link
-        to={post.fields.slug}
-        className="text-base font-semibold text-primary-600 hover:text-primary-500"
-      >
-        Read this issue
-      </Link>
+      <div className="mt-6 flex items-center">
+        <PubDate post={post} />
+      </div>
     </div>
   </div>
 );
+
+const extractNewsletterDetailsFromPost = ({ node: { frontmatter, ...rest } }) => {
+  const mainTitle = frontmatter.title.replace(/Backstage Weekly \d\d? - /, '');
+  const matchedIssueNumber = frontmatter.title.match(/Backstage Weekly (\d\d?)/);
+  const issueNumber = matchedIssueNumber && matchedIssueNumber[1];
+
+  return {
+    node: {
+      frontmatter: {
+        ...frontmatter,
+        title: mainTitle,
+        issueNumber,
+      },
+      ...rest,
+    },
+  };
+};
 
 const BackstageWeekly = ({ data }) => {
   const posts = data.allContentfulBlogPost.edges
     .map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
   const siteTitle = data.site.siteMetadata.title;
+  const postsWithExtractedInfo = posts.map(extractNewsletterDetailsFromPost);
 
   return (
     <>
@@ -49,9 +74,9 @@ const BackstageWeekly = ({ data }) => {
           siteMetadata={data.site.siteMetadata}
         />
 
-        <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
-          {posts.map(({ node }) => (
-            <Issue key={node.fields.slug} post={node} />
+        <div className="mt-6 pt-10 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+          {postsWithExtractedInfo.map(({ node }) => (
+            <ImageIssue key={node.fields.slug} post={node} />
           ))}
         </div>
       </Page>
