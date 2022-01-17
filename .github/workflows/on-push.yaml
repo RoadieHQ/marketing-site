@@ -30,6 +30,12 @@ jobs:
     - name: Push to roadie-tech-docs repo
       run: |
         cd ./roadie-tech-docs
+
+        if [[ ! `git status --porcelain` ]]; then
+          echo "No changes to tech-docs, skipping push..."
+          exit 0
+        fi
+
         git add .
         git config user.name github-actions
         git config user.email github-actions@github.com
