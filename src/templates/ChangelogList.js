@@ -1,54 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import { SEO, TextLink as Link, SitewideHeader, SitewideFooter } from 'components';
 import { SimpleCenteredHeading } from 'components/landing';
-import format from 'date-fns/format';
-import classnames from 'classnames';
-
-const ReleasedAt = ({ releasedAt }) => (
-  <time className="uppercase text-xs lg:text-sm leading-7 lg:pt-1 text-gray-500 font-bold md:w-32 lg:w-48 flex-shrink-0">
-    {format(new Date(releasedAt), 'MMM d, yyyy')}
-  </time>
-);
-
-const ChangeSet = ({
-  releasedAt,
-  description,
-  title,
-}) => {
-  const [isOpen, setOpen] = useState(false);
-
-  const toggleOpen = () => setOpen(!isOpen);
-
-  return (
-    <>
-      <hr className="w-full bg-gray-100 my-8" style={{ height: 1 }} />
-      <li className="mt-6 list-reset lg:flex items-start">
-        <div className="md:flex">
-          <ReleasedAt releasedAt={releasedAt} />
-          <div>
-            <button onClick={toggleOpen} className="text-left">
-              <h3
-                className="tracking-tight text-gray-900 text-base sm:text-xl hover:underline"
-              >
-                {title}
-              </h3>
-            </button>
-
-            {description && (
-              <div
-                className={classnames('mt-6 prose max-w-none', {
-                  'h-0 hidden': !isOpen,
-                })}
-                dangerouslySetInnerHTML={{ __html: description.html }}
-              />
-            )}
-          </div>
-        </div>
-      </li>
-    </>
-  );
-};
+import { ChangeSet, Pagination } from 'components/changelog';
 
 const Changelog = ({
   data: {
@@ -62,6 +16,8 @@ const Changelog = ({
       edges: changeSets,
     },
   },
+
+  pageContext,
 }) => (
   <>
     <SEO
@@ -82,7 +38,7 @@ const Changelog = ({
         headlineSize="small"
       />
 
-      <ul className="container mt-12">
+      <ul className="container mt-12 mb-8">
         {changeSets.map(({ node: { title, releasedAt, description } }) => (
           <ChangeSet
             key={`${title} ${releasedAt}`}
@@ -92,6 +48,8 @@ const Changelog = ({
           />
         ))}
       </ul>
+
+      <Pagination pageContext={pageContext} />
     </main>
 
     <SitewideFooter />
@@ -101,10 +59,14 @@ const Changelog = ({
 export default Changelog;
 
 export const pageQuery = graphql`
-  query Changelog {
+  query Changelog(
+    $limit: Int!
+    $skip: Int!
+  ) {
     changeSets: allContentfulChangeSet(
       sort: {fields: releasedAt, order: DESC}
-      limit: 20
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {

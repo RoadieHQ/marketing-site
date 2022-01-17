@@ -1,5 +1,5 @@
 import React from 'react';
-import { PaperAirplaneIcon } from '@heroicons/react/outline'
+import { PaperAirplaneIcon } from '@heroicons/react/outline';
 import classnames from 'classnames';
 
 import { currentlyExecutingGitBranch } from '../../environment';
@@ -56,7 +56,7 @@ const EmailCaptureForm = ({
           <Button
             text={buttonText}
             disabled={disabled}
-            icon={<PaperAirplaneIcon />}
+            icon={<PaperAirplaneIcon className="h-4 w-4 mr-1" />}
             id={buttonId}
             fullWidth
             color="primary"

@@ -8,9 +8,11 @@ const {
   LEGAL_NOTICES_QUERY,
   DOCS_QUERY,
   CASE_STUDIES_QUERY,
+  CHANGELOG_QUERY,
 } = require('./src/queries/gatsbyNodeQueries');
 const createLatestLegalNotices = require('./src/pageCreation/createLatestLegalNotices');
 const createPagesFromQuery = require('./src/pageCreation/createPagesFromQuery');
+const createListPagesFromQuery = require('./src/pageCreation/createListPagesFromQuery');
 const transformPageFrontmatter = require('./src/pageCreation/transformPageFrontmatter');
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -111,6 +113,15 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       };
     },
+  });
+
+  await createListPagesFromQuery({
+    templatePath: './src/templates/ChangelogList.js',
+    query: CHANGELOG_QUERY,
+    actions,
+    graphql,
+    basePath: '/changelog/',
+    itemsPerPage: 20,
   });
 
   await createLatestLegalNotices({
