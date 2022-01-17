@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import RecruiteeJobsList from 'components/RecruiteeJobsList';
 
 import {
   SEO,
@@ -25,6 +26,7 @@ const About = ({
       title={`About us | Roadie`}
       description="Who we are and what we care about."
     />
+
     <SitewideHeader />
 
     <SimpleCenteredHeading
@@ -41,6 +43,8 @@ const About = ({
       lead="We are a small team from enterprise software backgrounds. We understand the complexity of modern software development."
       people={team.edges.map(({ node }) => node.frontmatter)}
     />
+
+    <RecruiteeJobsList />
 
     <CustomerLogoCloud />
 
