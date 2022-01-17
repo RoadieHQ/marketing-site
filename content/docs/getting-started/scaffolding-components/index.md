@@ -68,13 +68,13 @@ spec:
 
 Click the "Create..." button in the Backstage menu.
 
-![scaffolder-link.png](scaffolder-link.png)
+![scaffolder-link.png](./scaffolder-link.png)
 
 In the "Create a New Component" page, click the "Register Existing Component" button
-![register-new-component.png](register-new-component.png)
+![register-new-component.png](./register-new-component.png)
 
 Enter the URL of the template that you created in Step Two.
-![create-existing-component.png](create-existing-component.png)
+![create-existing-component.png](./create-existing-component.png)
 
 Click Analyze, and Import.
 
@@ -82,19 +82,19 @@ Click Analyze, and Import.
 
 Visit the "Create a New Component" page again by clicking the "Create..." menu item.
 
-![scaffolder-link.png](scaffolder-link.png)
+![scaffolder-link.png](./scaffolder-link.png)
 
 You should see the template that you have just imported. Click the choose button.
 
-![choose-template.png](choose-template.png)
+![choose-template.png](./choose-template.png)
 
 Enter a the required parameters and click "Next Step" and then "Create"
 
-![enter-paramaters.png](enter-paramaters.png)
+![enter-paramaters.png](./enter-paramaters.png)
 
 After a couple of seconds you should see the "Task Activity" page with the output of the task.
 
-![task-activity.png](task-activity.png)
+![task-activity.png](./task-activity.png)
 
 ## What Next? 
 

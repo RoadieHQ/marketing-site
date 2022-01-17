@@ -10,7 +10,7 @@ import useMedia from 'react-use/lib/useMedia';
 import classnames from 'classnames';
 
 import theme from '../../theme';
-import sidebar from '../../../static/docs-nav.yaml';
+import sidebar from '../../../content/docs/docs-nav.yaml';
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,

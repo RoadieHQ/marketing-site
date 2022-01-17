@@ -20,12 +20,12 @@ Contact us to have the custom plugins feature enabled for your Roadie instance.
 
 You can navigate to h<gatsbyhack>tt</gatsbyhack>ps://your-company.roadie.so/administration/custom-plugins where you will find a collection of cards detailing custom plugins configured for the Roadie instance.
 
-![custom_plugins_page](custom_plugins_page.png)
+![custom_plugins_page](./custom_plugins_page.png)
 
 ### Form
 
 You can create a new custom plugin definition by clicking "Add New Plugin" floating button. 
-![custom_plugin_form](custom_plugin_form.png)
+![custom_plugin_form](./custom_plugin_form.png)
 
 The required values are as follows:
 
@@ -56,7 +56,7 @@ Application update process happens automatically after the workflow is triggered
 
 After the application has been updated you will have your custom plugins ready to be used in your Roadie instance. To synchronize the packaged application code and components that are set up to be used, you can refresh component statuses manually from the UI. This refresh functionality located next to the component list displayed when you are adding them to Roadie either as a Page, Tab or as a Card for to entity dashboard tabs.
 
-![custom_plugin_component_refresh](custom_plugin_component_refresh.png)
+![custom_plugin_component_refresh](./custom_plugin_component_refresh.png)
 
 ## Additional information
 

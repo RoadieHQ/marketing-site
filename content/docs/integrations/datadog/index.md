@@ -12,12 +12,12 @@ With this plugin, you can embed Datadog graphs and dashboards into Roadie Backst
 
 Click the cog icon on the top right of a component page. Then click add card.
 
-![edit_layout.png](edit_layout.png)
-![add_card.png](add_card.png)
+![edit_layout.png](./edit_layout.png)
+![add_card.png](./add_card.png)
 
 Select the datadog graph card from the drop down and Click add. Press save to submit.
 
-![select_datadog.png](select_datadog.png)
+![select_datadog.png](./select_datadog.png)
 
 ## Specify datadog domain
 

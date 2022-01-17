@@ -26,16 +26,16 @@ In order to make requests to the NewRelic API, you must provide Roadie with an A
 
 8. Hover over the sidebar on the left and click the "Edit Sidebar" icon
 
-![edit-sidebar.png](edit-sidebar.png)
+![edit-sidebar.png](./edit-sidebar.png)
    
 9. Click "Add Card"
 
-![add-card.png](add-card.png)
+![add-card.png](./add-card.png)
 
 10. Select the option "@backstage/plugin-newrelic: NewRelicPage", pick a name for the menu item the path, and an Icon. Click Add.
 
-![select-component.png](select-component.png)
+![select-component.png](./select-component.png)
 
 11. You should see a new item in the sidebar for NewRelic, click the sidebar save button.
 
-![save-sidebar.png](save-sidebar.png)
+![save-sidebar.png](./save-sidebar.png)

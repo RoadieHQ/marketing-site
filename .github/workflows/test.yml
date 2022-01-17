@@ -32,6 +32,7 @@ jobs:
             echo "Please run 'yarn tech-docs:build' and add them to your commit!"
             exit 1
           fi
+          rm -rf roadie-tech-docs
 
       - name: Lint
         run: yarn lint

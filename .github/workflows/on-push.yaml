@@ -1,0 +1,35 @@
+on: push
+  branches:
+    - main
+
+jobs:
+  update-tech-docs:
+    runs-on: ubuntu-latest
+    name: Update TechDocs
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Checkout Tech Docs dir
+      uses: actions/checkout@master
+      with: 
+        repository: RoadieHQ/roadie-tech-docs
+        token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+        path: ./roadie-tech-docs
+
+    - name: Generate techdocs
+      run: |
+        yarn tech-docs:build
+        cp -rf tmp-roadie-tech-docs/* ./roadie-tech-docs
+    
+    - uses: kceb/pull-request-url-action@v1
+      id: pr-url
+
+    - name: Push to roadie-tech-docs repo
+      run: |
+        cd ./roadie-tech-docs
+        git add .
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git commit -am "Updating tech-docs: ${{ steps.pr-url.outputs.url }}"
+        git push
