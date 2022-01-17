@@ -35,7 +35,7 @@ const RecruiteeJobsList = () => {
     return () => {
       document.body.removeChild(rtscript);
     }
-  });
+  }, []);
 
   return (
     <div className="bg-white">
