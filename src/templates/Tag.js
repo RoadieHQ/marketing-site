@@ -80,6 +80,11 @@ export const pageQuery = graphql`
               timeToRead
             }
           }
+
+          coverImage {
+            gatsbyImageData(height: 192)
+            title
+          }
         }
       }
     }
