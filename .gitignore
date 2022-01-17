@@ -79,3 +79,5 @@ cypress/screenshots
 
 # VSCode workspace metadata
 .vscode
+
+tmp-roadie-tech-docs

@@ -227,11 +227,11 @@ In this tutorial, we will show you how to:
 
 ### Step 1: Creating an OAuth app
 
-Follow step 1 from [here](https://roadie.io/docs/integrations/google-oauth-client/)
+Follow step 1 from [here](/docs/integrations/google-oauth-client/).
 
 ### Step 2: Adding secrets to backstage
 
-Follow step 2 from [here](https://roadie.io/docs/integrations/google-oauth-client/)
+Follow step 2 from [here](/docs/integrations/google-oauth-client/).
 
 
 ### Step 3: Adding a cluster to roadie

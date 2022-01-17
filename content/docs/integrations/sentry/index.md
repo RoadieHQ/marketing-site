@@ -20,7 +20,7 @@ Copy the value of the Organization Slug from the settings. The value shown here 
 
 Go to the Administration Settings page and set the Sentry organization name.
 
-![sentry-settings-page.png](sentry-settings-page.png)
+![sentry-settings-page.png](./sentry-settings-page.png)
 
 ### Step 2: Get a Sentry token
 

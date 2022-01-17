@@ -1,0 +1,42 @@
+site_name: 'Roadie Onboarding docs'
+site_description: 'Documentation for using the Roadie application'
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Getting started:
+    - Getting started for admins: '/docs/getting-started/getting-started-for-admins/'
+    - Adding components: '/docs/getting-started/adding-components/'
+    - Using OpenAPI Specs: '/docs/getting-started/openapi-specs/'
+    - Scaffolding Components: '/docs/getting-started/scaffolding-components/'
+    - Using TechDocs: '/docs/getting-started/technical-documentation/'
+    - Updating the UI: '/docs/getting-started/updating-the-ui/'
+    - User Management in Roadie: '/docs/getting-started/user-management/'
+  - Integrations:
+    - Argocd: '/docs/integrations/argocd/'
+    - BuildKite: '/docs/integrations/buildkite/'
+    - Bugsnag: '/docs/integrations/bugsnag/'
+    - Catalog graph: '/docs/integrations/catalog-graph/'
+    - Circleci: '/docs/integrations/circleci/'
+    - Datadog: '/docs/integrations/datadog/'
+    - Firehydrant: '/docs/integrations/firehydrant/'
+    - Gcp: '/docs/integrations/gcp/'
+    - Github org: '/docs/integrations/github-org/'
+    - Github token: '/docs/integrations/github-token/'
+    - Google oauth client: '/docs/integrations/google-oauth-client/'
+    - Jira: '/docs/integrations/jira/'
+    - Kubernetes: '/docs/integrations/kubernetes/'
+    - Newrelic: '/docs/integrations/newrelic/'
+    - Opsgenie: '/docs/integrations/opsgenie/'
+    - Pagerduty: '/docs/integrations/pagerduty/'
+    - Prometheus: '/docs/integrations/prometheus/'
+    - Sentry: '/docs/integrations/sentry/'
+    - Snyk: '/docs/integrations/snyk/'
+    - Sonarqube: '/docs/integrations/sonarqube/'
+    - Travis ci: '/docs/integrations/travis-ci/'
+  - Configuration:
+    - Tech radar: '/docs/configuration/tech-radar/'
+  - Custom plugins:
+    - Artifactory: '/docs/custom-plugins/artifactory/'
+    - Configuring: '/docs/custom-plugins/configuring/'
