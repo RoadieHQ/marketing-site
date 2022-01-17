@@ -24,6 +24,8 @@ const mapContentfulBlogPostToMarkdownRemarkBlogPost = ({ node }) => ({
     fields: {
       slug: node.slug,
     },
+
+    coverImage: node.coverImage,
   },
 });
 
