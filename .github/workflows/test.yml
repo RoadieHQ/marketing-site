@@ -1,6 +1,10 @@
+---
 name: Run tests
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build_and_test:
@@ -22,17 +26,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Check TechDocs
-        run: |
-          yarn tech-docs:build
-          if [[ `git status --porcelain` ]]; then
-            echo "Tech-docs not up to date"
-            echo ""
-            git diff  --name-only roadie-tech-docs/ | cat
-            echo ""
-            echo "Please run 'yarn tech-docs:build' and add them to your commit!"
-            exit 1
-          fi
-          rm -rf roadie-tech-docs
+        run: yarn tech-docs:build
 
       - name: Lint
         run: yarn lint
