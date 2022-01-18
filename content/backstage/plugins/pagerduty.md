@@ -19,12 +19,12 @@ coverImageAlt: 'PagerDuty incidents for sample-service-1 rendered in Backstage.'
 gettingStarted:
   - intro: The PagerDuty plugin is a frontend plugin. You will need to install it, configure it and add it to an appropriate location on the entity page.
 
-  - intro: Install the PagerDuty plugin into Backstage from the root of your repository.
+  - intro: Install the PagerDuty plugin into your Backstage app.
     language: bash
     code: |
-      yarn add @backstage/plugin-pagerduty
+      yarn add --cwd packages/app @backstage/plugin-pagerduty
 
-  - intro: Setup a new proxy endpoint for the PagerDuty API. The PAGERDUTY_TOKEN environment variable will be used to specify a secret access token required to access the PagerDuty API.
+  - intro: Setup a new proxy endpoint for the PagerDuty API. The `PAGERDUTY_TOKEN` environment variable will be used to specify a secret access token required to access the PagerDuty API.
     language: yaml
     code: |
       # app-config.yaml
@@ -34,22 +34,21 @@ gettingStarted:
           headers:
             Authorization: Token token=${PAGERDUTY_TOKEN}
 
-  - intro: Add the PagerDuty plugin to the plugins list.
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { pagerDutyPlugin } from '@backstage/plugin-pagerduty';
-
-  - intro: Import the required functions and components into the Backstage entity page.
+  - intro: Import the plugin components at the top of the entity page.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
+
+      // ... other imports above
+
       import {
-        isPagerDutyAvailable,
+        isPluginApplicableToEntity as isPagerDutyAvailable,
         EntityPagerDutyCard,
       } from '@backstage/plugin-pagerduty';
 
-  - intro: Add the EntityPagerDutyCard component to one or more entity page components depending on where you want the PagerDuty UI to appear. For example, display the PagerDuty UI on the existing Overview tab which is rendered for all types of entities.
+      // ... rest of the file
+
+  - intro: Add the EntityPagerDutyCard component to one or more entity page components, depending on where you want the PagerDuty UI to appear. For example, here's how to display the PagerDuty UI on the existing Overview tab which is rendered for all types of entities.
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
