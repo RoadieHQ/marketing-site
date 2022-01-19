@@ -62,7 +62,7 @@ gettingStarted:
 
 ### Jenkins plugin features
 
-The Jenkins plugin can pull bulid information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
+The Jenkins plugin can pull build information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
 
 ![Jenkins menu to create new items](../../assets/backstage/plugins/jenkins/jenkins-new-item-options.png)
 
