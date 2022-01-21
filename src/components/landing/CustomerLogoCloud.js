@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 
 import SnykLogo from '../../../content/assets/home/customer-logos/snyk-monochrome.webp';
 import SnykLogoPng from '../../../content/assets/home/customer-logos/snyk-monochrome.png';
