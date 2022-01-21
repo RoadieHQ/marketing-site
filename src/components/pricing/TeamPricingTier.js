@@ -15,7 +15,7 @@ const TeamPricingTier = () => {
         <TierDescription description="For teams who want a home for their services, docs, runbooks, API specs and CI." />
 
         <div className="mt-6">
-          <p className="text-4xl font-extrabold text-gray-900">Free</p>
+          <p className="text-4xl font-extrabold text-gray-900">Free forever</p>
         </div>
 
         <div className="mt-8">
