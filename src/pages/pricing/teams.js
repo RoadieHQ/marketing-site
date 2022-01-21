@@ -6,6 +6,7 @@ import { RequestTeamsEarlyAccessCallToAction } from 'components/CallToAction';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 import { SidebarLogoContent } from 'components/pricing';
 import { isScmToolSupported } from 'components/free-trial/SubmissionSuccessModal';
+import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
 const SEO_TITLE = 'Backstage for Teams';
 
@@ -50,6 +51,7 @@ const SubmissionSuccessModal = ({ scmTool, ...rest }) => {
 const RequestTeamsEarlyAccess = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
+  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -66,6 +68,7 @@ const RequestTeamsEarlyAccess = ({ data, location }) => {
         handleCloseModal={handleCloseModal}
         modalOpen={modalOpen}
         siteMetadata={data.site.siteMetadata}
+        scmTool={scmTool}
       />
 
       <div className="min-h-screen bg-white">
@@ -78,6 +81,8 @@ const RequestTeamsEarlyAccess = ({ data, location }) => {
         >
           <RequestTeamsEarlyAccessCallToAction
             location={location}
+            scmTool={scmTool}
+            setScmTool={setScmTool}
             onSuccess={() => {
               setModalOpen(true);
             }}
