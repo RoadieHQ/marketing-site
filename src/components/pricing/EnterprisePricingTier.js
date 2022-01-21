@@ -40,11 +40,12 @@ const EnterprisePricingTier = () => {
         heading="Everything in Team, plus..."
         includedFeatures={[
           'Scaffolder service creator',
+          'Tech radar',
           'Kubernetes plugin',
           'Bring your own private plugins',
           'Slack and email Support',
           'Single sign on',
-          'Roadie API access',
+          'API access (coming soon)',
         ]}
       />
     </div>

@@ -44,7 +44,6 @@ const TeamPricingTier = () => {
           'TechDocs technical documentation',
           'API specs',
           'Vast array of Backstage plugins',
-          'Tech radar',
           'Locations log',
         ]}
       />
