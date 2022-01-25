@@ -100,7 +100,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
         label="Full name *"
         type="text"
         name="name"
-        id="request-demo-name-input"
+        id="request-teams-name-input"
         onChange={setName}
         value={name}
         fullWidth
@@ -110,7 +110,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
         label="Work email address *"
         type="email"
         name="email"
-        id="request-demo-email-input"
+        id="request-teams-email-input"
         onChange={setEmail}
         value={email}
         fullWidth
@@ -119,7 +119,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
       <ScmToolRadioGroup
         onChange={setScmTool}
         currentValue={scmTool}
-        idPrefix="request-demo-"
+        idPrefix="request-teams-"
       />
 
       <SubscribeToNewsletterSwitch

@@ -33,12 +33,11 @@ const SubmissionSuccessModal = ({ scmTool, ...rest }) => {
       bodyText={
         <>
           <p>
-            While we eventually want to support all source code management tools in the future,
+            While we eventually want to support all source code management tools,
             our teams product will launch with GitHub Cloud support first.
           </p>
           <p>
-            We will be working to support more tools in the near future,
-            and you will be among the first to know when we support yours.
+            You will be among the first to know when we support your toolchain.
           </p>
         </>
       }

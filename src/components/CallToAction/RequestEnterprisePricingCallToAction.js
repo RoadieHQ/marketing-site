@@ -6,7 +6,6 @@ import {
   ScmToolRadioGroup,
   NumberOfEngineers,
 } from 'components';
-import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import { OPTIONS_FOR_NUMBER_OF_ENGINEERS } from 'components/forms/NumberOfEngineers';
 
 import { FORM_NAMES } from '../../contactFormConstants';
@@ -49,12 +48,13 @@ const submitToNetlifyForms = async ({
 const RequestEnterprisePricingCallToAction = ({
   onSuccess,
   location,
+  scmTool,
+  setScmTool,
 }) => {
   // Provides a way to automatically populate the email input via the URL.
   const params = new URLSearchParams(location.search)
   const emailFromUrl = decodeURIComponent(params.get('email') || '');
 
-  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
   const [email, setEmail] = useState(emailFromUrl);
   const [name, setName] = useState('');
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
@@ -125,6 +125,7 @@ const RequestEnterprisePricingCallToAction = ({
       <NumberOfEngineers
         value={numberOfEngineers}
         onChange={setNumberOfEngineers}
+        idPrefix="request-pricing-"
       />
 
       <ScmToolRadioGroup
