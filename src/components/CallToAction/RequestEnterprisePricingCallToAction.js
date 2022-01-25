@@ -4,8 +4,10 @@ import {
   TextField,
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
+  NumberOfEngineers,
 } from 'components';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
+import { OPTIONS_FOR_NUMBER_OF_ENGINEERS } from 'components/forms/NumberOfEngineers';
 
 import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
@@ -55,7 +57,7 @@ const RequestEnterprisePricingCallToAction = ({
   const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
   const [email, setEmail] = useState(emailFromUrl);
   const [name, setName] = useState('');
-  const [numberOfEngineers, setNumberOfEngineers] = useState('');
+  const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestEnterprisePricing;
@@ -104,7 +106,7 @@ const RequestEnterprisePricingCallToAction = ({
         label="Full name *"
         type="text"
         name="name"
-        id="request-demo-name-input"
+        id="request-pricing-name-input"
         onChange={setName}
         value={name}
         fullWidth
@@ -114,31 +116,27 @@ const RequestEnterprisePricingCallToAction = ({
         label="Work email address *"
         type="email"
         name="email"
-        id="request-demo-email-input"
+        id="request-pricing-email-input"
         onChange={setEmail}
         value={email}
         fullWidth
       />
 
-      <TextField
-        label="Number of engineers *"
-        type="text"
-        name="number-of-engineers"
-        id="request-enterprise-pricing-numberOfEngineers-input"
-        onChange={setNumberOfEngineers}
+      <NumberOfEngineers
         value={numberOfEngineers}
-        fullWidth
+        onChange={setNumberOfEngineers}
       />
 
       <ScmToolRadioGroup
         onChange={setScmTool}
         currentValue={scmTool}
-        idPrefix="request-demo-"
+        idPrefix="request-pricing-"
       />
 
       <SubscribeToNewsletterSwitch
         checked={subToNewsletter}
         onChange={setSubToNewsletter}
+        idPrefix="request-pricing-"
       />
 
       <div className="sm:col-span-2">
