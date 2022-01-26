@@ -49,4 +49,35 @@ describe('The landing page', () => {
     cy.contains('Request a trial').click();
     cy.contains('Roadie only supports GitHub Cloud for now');
   });
+
+  it('has a flow for getting enterprise pricing', () => {
+    cy.intercept('POST', 'http://localhost:8001', {
+      statusCode: 200,
+    });
+
+    cy.visit('');
+    cy.contains('Pricing').click();
+    cy.contains('Get a quote').click();
+
+    cy.get('#request-pricing-name-input').type('Test 1');
+    cy.get('#request-pricing-email-input').type('test@example.com');
+    cy.get('#request-pricing-number-of-engineers').select('201');
+    cy.contains('Request a quote').click();
+    cy.contains(`We'll be in touch`);
+  });
+
+  it('has a flow for requesting teams early access', () => {
+    cy.intercept('POST', 'http://localhost:8001', {
+      statusCode: 200,
+    });
+
+    cy.visit('');
+    cy.contains('Pricing').click();
+    cy.contains('Request early access').click();
+
+    cy.get('#request-teams-name-input').type('Test 1');
+    cy.get('#request-teams-email-input').type('test@example.com');
+    cy.contains('Request early access').click();
+    cy.contains(`We'll be in touch`);
+  });
 });

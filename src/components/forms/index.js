@@ -6,3 +6,4 @@ export { default as Switch } from './Switch';
 export { default as HelpText } from './HelpText';
 export { default as SubscribeToNewsletterSwitch } from './SubscribeToNewsletterSwitch';
 export { default as ScmToolRadioGroup } from './ScmToolRadioGroup';
+export { default as NumberOfEngineers } from './NumberOfEngineers';

@@ -5,3 +5,9 @@ export {
   SubscribeToNewsletterCTA,
 } from './SubscribeToNewsletter';
 export { default as NetlifyFormCallToAction } from './NetlifyFormCallToAction';
+export {
+  default as RequestEnterprisePricingCallToAction,
+} from './RequestEnterprisePricingCallToAction';
+export {
+  default as RequestTeamsEarlyAccessCallToAction,
+} from './RequestTeamsEarlyAccessCallToAction';

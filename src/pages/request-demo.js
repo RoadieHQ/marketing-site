@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter } from 'components';
+import { SEO, SitewideHeader, SitewideFooter, Testimonial } from 'components';
 import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
 import { RequestDemoCallToAction } from 'components/CallToAction';
-import FormWithTestimonial from 'components/layouts/FormWithTestimonial';
+import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 
 const SEO_TITLE = 'Request a demo of Roadie Backstage';
 
@@ -46,9 +46,10 @@ const RequestDemo = ({ data, location }) => {
       <div className="min-h-screen bg-white">
         <SitewideHeader />
 
-        <FormWithTestimonial
+        <FormWithLeftSidebar
           title="Request a demo"
           description="Bring your team to a fully featured demo of Roadie and Backstage."
+          sidebarChildren={<Testimonial />}
         >
           <RequestDemoCallToAction
             location={location}
@@ -56,7 +57,7 @@ const RequestDemo = ({ data, location }) => {
               setModalOpen(true);
             }}
           />
-        </FormWithTestimonial>
+        </FormWithLeftSidebar>
 
         <SitewideFooter />
       </div>
