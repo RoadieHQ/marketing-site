@@ -30,8 +30,9 @@ const getSentryEnvironment = () => {
 const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
 
-  const context = get(process.env, 'CONTEXT', 'false');
-  if (context !== 'false') return 'cdn.contentful.com';
+  const netliftSiteName = get(process.env, 'SITE_NAME');
+  if (netliftSiteName === 'roadie-preview') return 'preview.contentful.com';
+  if (netliftSiteName === 'roadie') return 'cdn.contentful.com';
 
   // Good for local development
   return 'preview.contentful.com';
