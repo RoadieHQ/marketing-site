@@ -30,7 +30,8 @@ const PostSummary = ({ post, className }) => (
     </div>
 
     <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-      <div>
+      {/* min-height ensures the content below the tags is aligned even when there are no tags */}
+      <div className="min-h-[24px]">
         <Tags tags={post.frontmatter.tags} />
       </div>
 
