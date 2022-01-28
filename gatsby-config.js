@@ -30,8 +30,10 @@ const getSentryEnvironment = () => {
 const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
 
-  const context = get(process.env, 'CONTEXT', 'false');
-  if (context !== 'false') return 'cdn.contentful.com';
+  // This is an environment variable set by the Netlify build process.
+  const netlifySiteName = get(process.env, 'SITE_NAME');
+  if (netlifySiteName === 'roadie-preview') return 'preview.contentful.com';
+  if (netlifySiteName === 'roadie') return 'cdn.contentful.com';
 
   // Good for local development
   return 'preview.contentful.com';
