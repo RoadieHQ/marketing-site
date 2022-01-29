@@ -43,6 +43,20 @@ const GetDemoSurveyInner = ({ referredEmail }) => {
   );
 };
 
+const GetTrialInner = ({ referredEmail }) => {
+  const codedEmail = encodeURIComponent(referredEmail);
+
+  return (
+    <Button
+      link={true}
+      to={`/free-trial/?email=${codedEmail}`}
+      prefixIcon={<ExternalLinkIcon />}
+      text="Request a free trial"
+      color="primary"
+    />
+  );
+};
+
 const FormSubmissionModal = ({
   modalOpen,
   handleCloseModal,
@@ -75,6 +89,8 @@ const FormSubmissionModal = ({
     followOnContent = <TwitterInner siteMetadata={siteMetadata} />;
   } else if (followOn === 'GET_DEMO_SURVEY') {
     followOnContent = <GetDemoSurveyInner referredEmail={email} />;
+  } else if (followOn === 'GET_TRIAL') {
+    followOnContent = <GetTrialInner referredEmail={email} />;
   }
 
   return (
