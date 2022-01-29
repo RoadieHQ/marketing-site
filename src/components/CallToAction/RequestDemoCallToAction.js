@@ -5,7 +5,6 @@ import {
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
 } from 'components';
-import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
 import { FORM_NAMES } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
@@ -45,12 +44,13 @@ const submitToNetlifyForms = async ({
 const RequestDemoCallToAction = ({
   onSuccess,
   location,
+  scmTool,
+  setScmTool,
 }) => {
   // Provides a way to automatically populate the email input via the URL.
   const params = new URLSearchParams(location.search)
   const emailFromUrl = decodeURIComponent(params.get('email') || '');
 
-  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
   const [email, setEmail] = useState(emailFromUrl);
   const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
