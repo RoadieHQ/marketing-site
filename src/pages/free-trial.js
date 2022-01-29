@@ -13,11 +13,15 @@ import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 
 const SEO_TITLE = 'Get a SaaS Backstage trial';
 
-const RequestTrial = ({ data }) => {
+const RequestTrial = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
+
+  const params = new URLSearchParams(location.search);
+
   const [modalOpen, setModalOpen] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(params.has('email') ? params.get('email') : '');
   const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
+
 
   const handleCloseModal = () => {
     setModalOpen(false);
