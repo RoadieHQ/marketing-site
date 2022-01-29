@@ -47,7 +47,7 @@ const RequestTrial = ({ data, location }) => {
 
         <FormWithLeftSidebar
           title="Free trial"
-          description="Try Roadie Backstage free for 30 days."
+          description="Try Roadie Backstage free for 14 days."
           sidebarChildren={<Testimonial />}
         >
           <ExtendedGetInstanceCallToAction
