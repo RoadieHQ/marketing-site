@@ -74,7 +74,7 @@ const DocSidebar = () => {
             <Button
               onClick={toggleSliderOpen}
               text={docToggleButtonText}
-              icon={docToggleButtonIcon}
+              prefixIcon={docToggleButtonIcon}
               color="inset"
               size="small"
             />

@@ -26,8 +26,11 @@ const Button = ({
 
   // Maintain backwards compatability.
   if (icon) {
-    prefixIcon = icon;
+    prefixIcon = <span>{icon}</span>;
   }
+
+  if (prefixIcon) prefixIcon = <span className="h-6 w-6 mr-1">{prefixIcon}</span>;
+  if (postfixIcon) postfixIcon = <span className="h-6 w-6 ml-1">{postfixIcon}</span>;
 
   if (link) {
     return (
@@ -49,7 +52,7 @@ const Button = ({
           {...props}
         >
           {prefixIcon}
-          {text}
+          <span>{text}</span>
           {postfixIcon}
         </Link>
       </div>
@@ -70,7 +73,7 @@ const Button = ({
       {...props}
     >
       {prefixIcon}
-      {text}
+      <span>{text}</span>
       {postfixIcon}
     </button>
   );
