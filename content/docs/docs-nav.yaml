@@ -8,9 +8,9 @@ nav:
   - Getting started:
     - Initial configuration: '/docs/getting-started/getting-started-for-admins/'
     - Adding components: '/docs/getting-started/adding-components/'
-    - Adding API Specs: '/docs/getting-started/openapi-specs/'
     - Using TechDocs: '/docs/getting-started/technical-documentation/'
     - Inviting users: '/docs/getting-started/user-management/'
+    - Adding API Specs: '/docs/getting-started/openapi-specs/'
     - Scaffolding Components: '/docs/getting-started/scaffolding-components/'
     - Updating the UI: '/docs/getting-started/updating-the-ui/'
   - Backstage plugins:
