@@ -6,14 +6,14 @@ plugins:
 
 nav:
   - Getting started:
-    - Getting started for admins: '/docs/getting-started/getting-started-for-admins/'
+    - Initial configuration: '/docs/getting-started/getting-started-for-admins/'
     - Adding components: '/docs/getting-started/adding-components/'
-    - Using OpenAPI Specs: '/docs/getting-started/openapi-specs/'
-    - Scaffolding Components: '/docs/getting-started/scaffolding-components/'
+    - Adding API Specs: '/docs/getting-started/openapi-specs/'
     - Using TechDocs: '/docs/getting-started/technical-documentation/'
+    - Inviting users: '/docs/getting-started/user-management/'
+    - Scaffolding Components: '/docs/getting-started/scaffolding-components/'
     - Updating the UI: '/docs/getting-started/updating-the-ui/'
-    - User Management in Roadie: '/docs/getting-started/user-management/'
-  - Integrations:
+  - Backstage plugins:
     - Argocd: '/docs/integrations/argocd/'
     - BuildKite: '/docs/integrations/buildkite/'
     - Bugsnag: '/docs/integrations/bugsnag/'
@@ -35,8 +35,9 @@ nav:
     - Snyk: '/docs/integrations/snyk/'
     - Sonarqube: '/docs/integrations/sonarqube/'
     - Travis ci: '/docs/integrations/travis-ci/'
-  - Configuration:
     - Tech radar: '/docs/configuration/tech-radar/'
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
+  - Integrations:
+    - GitHub App Permissions: '/docs/integrations/github-app-permissions/'
