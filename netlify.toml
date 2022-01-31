@@ -57,6 +57,13 @@
   to = "/legal-notices/evaluation-license/v1/"
   force = true
 
+# Supporting US and UK spelling of modelling and modeling. The single-l version is linked from
+# few places on the web.
+[[redirects]]
+  from = "/blog/modeling-software-backstage/"
+  to = "/blog/modelling-software-backstage/"
+  force = true
+
 [build]
   publish = "public"
 
