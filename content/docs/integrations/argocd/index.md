@@ -54,7 +54,7 @@ The `EntityArgoCDOverviewCard` presents the current status of an application:
 
 ![Argo CD Overview Card](./argo-overview.png)
 
-The `EntityArgo CDHistoryCard` displays the deployment history of an appliction:
+The `EntityArgoCDHistoryCard` displays the deployment history of an appliction:
 
 ![Argo CD History Card](./argo-history.png)
 
