@@ -50,7 +50,7 @@ Enter your Argo CD server API endpoint into Roadie.
 
 The Argo CD plugin provides two type of UI elements. 
 
-The `EntityArgo CDOverviewCard` presents the current status of an application: 
+The `EntityArgoCDOverviewCard` presents the current status of an application: 
 
 ![Argo CD Overview Card](./argo-overview.png)
 
