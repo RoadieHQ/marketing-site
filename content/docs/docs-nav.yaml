@@ -11,11 +11,10 @@ nav:
     - Using TechDocs: '/docs/getting-started/technical-documentation/'
     - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
     - Inviting users: '/docs/getting-started/user-management/'
-    - Adding API Specs: '/docs/getting-started/openapi-specs/'
-    - Scaffolding Components: '/docs/getting-started/scaffolding-components/'
-    - Updating the UI: '/docs/getting-started/updating-the-ui/'
-  - Backstage plugins:
-    - Argocd: '/docs/integrations/argocd/'
+    - Adding API specs: '/docs/getting-started/openapi-specs/'
+    - Scaffolding components: '/docs/getting-started/scaffolding-components/'
+  - Using Backstage plugins:
+    - Argo CD: '/docs/integrations/argocd/'
     - BuildKite: '/docs/integrations/buildkite/'
     - Bugsnag: '/docs/integrations/bugsnag/'
     - Catalog graph: '/docs/integrations/catalog-graph/'
@@ -40,5 +39,7 @@ nav:
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
-  - Integrations:
-    - GitHub App Permissions: '/docs/integrations/github-app-permissions/'
+  - Details:
+    - GitHub app permissions: '/docs/integrations/github-app-permissions/'
+    - Setting secrets: '/docs/details/setting-secrets/'
+    - Updating the UI: '/docs/getting-started/updating-the-ui/'
