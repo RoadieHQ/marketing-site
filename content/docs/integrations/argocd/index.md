@@ -32,7 +32,7 @@ Alternatively, visit the Argo CD UI at `/settings/accounts/<your-account>` click
 
 ## Step 2: Store the API token in Roadie
 
-Visit the Roadie Secret Settings page ([show me how](/docs/details/setting-secrets/)) enter the token into the `argo-cd-token` secret.
+Visit the Roadie Secrets page ([show me how](/docs/details/setting-secrets/)) and enter the token into the `argo-cd-token` secret.
 
 ![Set argo-cd-token via UI](./argo-cd-token-dialog.png)
 
@@ -44,7 +44,7 @@ Enter your Argo CD server API endpoint into Roadie.
 2. Find "Argo CD" in the Configuration sidebar.
 3. Enter your Argo CD server API endpoint click "Save" then "Apply & Restart".
 
-![Set Argocd Config](./config.png)
+![Set Argo CD Config](./config.png)
 
 ## Step 4: Add the UI elements
 
