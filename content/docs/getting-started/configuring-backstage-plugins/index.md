@@ -44,23 +44,13 @@ Let's add the PagerDuty Card to the Component Overview page.
 
 As you can see, the PagerDuty card is complaining about a missing or invalid token. It cannot access the PagerDuty API without authentication. Let's set a token now.
 
-1. Click the Administration link in the bottom left of the application.
+1. Visit the secrets page in Roadie. [Here's how](/docs/details/setting-secrets/).
 
-![A link that says "Administration"](./administration-link.png)
-
-2. Click the Settings tab along the top of the Administration page.
-
-![A link that says "Settings"](./settings-link.png)
-
-3. Click on Secrets in the left sidebar.
-
-![A link that says "Secrets"](./secrets-link.png)
-
-4. Scroll down to find PAGERDUTY_TOKEN in the UI. 
+2. Scroll down to find PAGERDUTY_TOKEN in the UI. 
 
 ![A table row with the name PAGERDUTY_TOKEN, an edit icon as a button and a short description of what the token does](./pagerduty-secret.png)
 
-5. Click the pencil icon to open a dialog where you can set a token. Click SAVE. Please visit the [dedicated PagerDuty plugin docs](/docs/integrations/pagerduty/) to learn where to get this token from.
+3. Click the pencil icon to open a dialog where you can set a token. Click SAVE. Please visit the [dedicated PagerDuty plugin docs](/docs/integrations/pagerduty/) to learn where to get this token from.
 
 ![A modal dialog with an input where we can input a secret and a save button](./set-token-dialog.png)
 
