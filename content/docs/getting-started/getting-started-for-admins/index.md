@@ -31,7 +31,7 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 ![A button that says "Add GitHub App"](./add-github-app.png)
 
-5. Chose your GitHub organization and follow the steps to install the app.
+5. Choose your GitHub organization and follow the steps to install the app.
 
 ⚠️  &nbsp;You may need to wait up to 2 minutes for the GitHub integration to become active.
 
