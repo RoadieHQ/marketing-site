@@ -1,6 +1,6 @@
 ---
 title: Using TechDocs
-lastUpdated: '2021-03-16T21:00:00.0Z'
+lastUpdated: '2022-01-30T21:00:00.0Z'
 description: How to add technical documentation to components tracked in Backstage.
 ---
 
@@ -28,8 +28,6 @@ plugins:
   - techdocs-core
 ```
 
-⚠️ The extension of the `mkdocs.yml` file **must** be `yml`, not `yaml`.
-
 ### Step 2: Add markdown documentation
 
 Create a directory called `docs` in the root of your component. Inside that directory, create a file called `index.md` with some markdown content inside. No frontmatter is required.
@@ -52,14 +50,20 @@ Your component's directory structure should now look something like this:
 
 Ensure you publish this new content to GitHub.
 
-### Step 3: Update `catalog-info.yaml`
+### Step 3: Update the YAML metadata
 
 We can use the `catalog-info.yaml` file of our component to tell Backstage where to find the documentation.
 
-To do this, add the `backstage.io/techdocs-ref` annotation to the list of annotations. The value of the annotation should be composed of:
+To do this, add the `backstage.io/techdocs-ref` annotation to the list of annotations. 
 
-1. The `url:` prefix to tell Backstage to parse this value as a URL.
-2. The path to the root of the component on GitHub.
+If your docs are in the root of the repo, as described above, you can set the techdocs annotation to this:
+
+```yaml
+annotations:
+  backstage.io/techdocs-ref: dir:.
+```
+
+If your docs are located elsewhere, you must explicitly point to them like this:
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
@@ -89,7 +93,7 @@ On the Overview page, click Docs in the tab bar. You should now see your documen
 
 ![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
 
-## Adding more pages to your documentation
+## Adding more docs
 
 Let's add a page called Local Development to our docs.
 
