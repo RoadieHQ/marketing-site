@@ -6,11 +6,17 @@ description: How to configure the Argo CD plugin on roadie.
 
 ## Introduction
 
-This page describes how to set up the Argo CD plugin.
+The Argo CD plugin can present the current status of an application in your Roadie Backstage catalog.
 
-## Steps
+![Argo CD Overview Card](./argo-overview.png)
 
-### Step 1: Create an API token
+This page explains how to configure it in Roadie Backstage.
+
+## Prerequisites
+
+1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/getting-started-for-admins/).
+
+## Step 1: Create an API token
 
 Roadie requires an API token to be able to connect to Argo CD.
 
@@ -24,13 +30,13 @@ argocd account generate-token --account <your-account> --id <optional-id>
 
 Alternatively, visit the Argo CD UI at `/settings/accounts/<your-account>` click "Generate New" in the "Tokens" section.
 
-### Step 2: Store the API token in Roadie
+## Step 2: Store the API token in Roadie
 
 Visit the Roadie Secret Settings page ([show me how](/docs/details/setting-secrets/)) enter the token into the `argo-cd-token` secret.
 
 ![Set argo-cd-token via UI](./argo-cd-token-dialog.png)
 
-### Step 3: Configure Roadie with your Argo CD endpoint
+## Step 3: Configure Roadie with your Argo CD endpoint
 
 Enter your Argo CD server API endpoint into Roadie.
 
@@ -40,7 +46,7 @@ Enter your Argo CD server API endpoint into Roadie.
 
 ![Set Argocd Config](./config.png)
 
-### Step 4: Add the UI elements
+## Step 4: Add the UI elements
 
 The Argo CD plugin provides two type of UI elements. 
 

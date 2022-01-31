@@ -13,7 +13,7 @@ nav:
     - Inviting users: '/docs/getting-started/user-management/'
     - Adding API specs: '/docs/getting-started/openapi-specs/'
     - Scaffolding components: '/docs/getting-started/scaffolding-components/'
-  - Backstage plugins:
+  - Using Backstage plugins:
     - Argo CD: '/docs/integrations/argocd/'
     - BuildKite: '/docs/integrations/buildkite/'
     - Bugsnag: '/docs/integrations/bugsnag/'
