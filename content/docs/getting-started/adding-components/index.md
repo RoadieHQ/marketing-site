@@ -36,7 +36,7 @@ spec:
 
 Backstage scans your GitHub Org for new updates and automatically discovers YAML files which are found in the root of the default branch and are called `catalog-info.yaml`.
 
-Components cane be manually added to Backstage by using the catalog importer available at `/catalog-import`. 
+Components can be manually added to Backstage by using the catalog importer available at `/catalog-import`. 
 
 To do this, simply copy/paste the URL of the YAML file into the importer (see video below).
 
