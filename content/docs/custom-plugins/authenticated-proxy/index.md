@@ -22,7 +22,7 @@ Enter a Path and a target API as follows:
 Click save and Apply and Restart.
 
 
-### Step 2
+## Step 2
 You can call this API from the Backstage window context in a browser via a Custom Backstage plugin:
 
 ```javascript
