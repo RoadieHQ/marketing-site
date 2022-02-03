@@ -29,7 +29,7 @@ You can call this API from the Backstage window context in a browser via a Custo
 fetch('/api/authenticated-proxy/my-test')
 ```
 
-### Step 3
+## Step 3
 
 Your service will recieve a token in the authorization bearer containing an access token. This token can be sent to the roadie Authentication system to retrieve an id representing the logged in Backstage user.
 
