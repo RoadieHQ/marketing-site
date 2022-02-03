@@ -9,6 +9,7 @@ const {
   DOCS_QUERY,
   CASE_STUDIES_QUERY,
   CHANGELOG_QUERY,
+  BACKSTAGE_BITES_QUERY,
 } = require('./src/queries/gatsbyNodeQueries');
 const createLatestLegalNotices = require('./src/pageCreation/createLatestLegalNotices');
 const createPagesFromQuery = require('./src/pageCreation/createPagesFromQuery');
@@ -89,6 +90,21 @@ exports.createPages = async ({ graphql, actions }) => {
       component,
       context: {
         slug: node.fields.slug,
+      },
+    }),
+  });
+
+  await createPagesFromQuery({
+    templatePath: './src/templates/BackstageBite.js',
+    query: BACKSTAGE_BITES_QUERY,
+    resultName: 'videos.edges',
+    actions,
+    graphql,
+    processor: ({ node }, component) => ({
+      path: `/backstage-bites/${node.slug}/`,
+      component,
+      context: {
+        slug: node.slug,
       },
     }),
   });
