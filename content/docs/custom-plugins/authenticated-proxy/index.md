@@ -8,7 +8,6 @@ description: How to configure a custom proxy to identify the Backstage user for 
 
 Roadie provides a custom proxy service that can be configured to proxy through an access token minted by our own authentication system that can be validated by your third party service.
 
-## Configuring an Authenticated Proxy
 
 ### Step 1. Create an authenticated proxy configuration in Roadie
 
