@@ -50,29 +50,24 @@ const VideoSummary = ({ video, className }) => (
   </div>
 );
 
-const BackstageBites = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title;
-  const videos = data.allContentfulVideo.nodes;
-  console.log('videos', videos);
+const BackstageBites = ({ data: { site, playlist } }) => {
+  const siteTitle = site.siteMetadata.title;
 
   return (
     <>
       <SEO
-        title={`Backstage Bites | ${siteTitle}`}
-        description={`
-          Backstage content. Everything from technical how-tos to recaps of community sessions and 
-          general engineering effectiveness content.
-        `}
+        title={`${playlist.title} | ${siteTitle}`}
+        description={playlist.description.childMarkdownRemark.rawMarkdownBody}
       />
 
       <Page>
         <ListHeader
-          title="Backstage Bites"
-          description="Learn to use Backstage and Roadie with short video lessons"
+          title={playlist.title}
+          description={playlist.description.childMarkdownRemark.rawMarkdownBody}
         />
 
         <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-          {videos.map((video) => (
+          {playlist.videos.map((video) => (
             <VideoSummary key={video.slug} video={video} />
           ))}
         </div>
@@ -85,8 +80,16 @@ export default BackstageBites;
 
 export const pageQuery = graphql`
   query BackstageBites {
-    allContentfulVideo {
-      nodes {
+    playlist: contentfulPlaylist(contentfulid: {eq: 1}) {
+      title
+      contentfulid
+      description {
+        childMarkdownRemark {
+          rawMarkdownBody
+        }
+      }
+
+      videos {
         title
         shortDescription {
           childMarkdownRemark {
