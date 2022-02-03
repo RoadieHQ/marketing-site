@@ -39,6 +39,7 @@ nav:
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
+    - Authenticated Proxy: '/docs/custom-plugins/authenticated-proxy/'
   - Details:
     - GitHub app permissions: '/docs/integrations/github-app-permissions/'
     - Setting secrets: '/docs/details/setting-secrets/'
