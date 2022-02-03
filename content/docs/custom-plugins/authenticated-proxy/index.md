@@ -11,7 +11,7 @@ Roadie provides a custom proxy service that can be configured to proxy through a
 
 ## Step 1. Create an authenticated proxy configuration in Roadie
 
-You can navigate to h<gatsbyhack>tt</gatsbyhack>ps://your-company.roadie.so/administration/settings/authenticatedProxy. Click add item to add a new proxy.
+You can navigate to https://your-company.roadie.so/administration/settings/authenticatedProxy. Click add item to add a new proxy.
 
 ![authenticatedProxyConfig.png](authenticatedProxyConfig.png)
 
@@ -45,7 +45,7 @@ This will return the identity as follows:
 ```json
 {
   "sub": "248289761003",
-  "name": "Brian Fletcher",
+  "name": "John Doe",
   ...
   "updated_at": "1556845729"
 }
