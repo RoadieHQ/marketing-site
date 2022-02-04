@@ -6,7 +6,8 @@ import {
   ChatIcon,
   ShieldCheckIcon,
   AcademicCapIcon,
-} from '@heroicons/react/outline'
+  PlayIcon,
+} from '@heroicons/react/outline';
 
 import Logo from '../Logo';
 import TopNavItem from './TopNavItem';
@@ -16,6 +17,11 @@ import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
 
 const learn = [{
+  name: 'Backstage Bites',
+  description: 'Short videos to teach Backstage concepts.',
+  to: '/backstage-bites/',
+  icon: PlayIcon,
+}, {
   name: 'Backstage Plugins',
   description: 'Browse our Backstage plugin marketplace.',
   to: '/backstage/plugins/',

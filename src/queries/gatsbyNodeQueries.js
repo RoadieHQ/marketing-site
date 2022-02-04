@@ -10,6 +10,18 @@ module.exports.BLOGS_QUERY = `
 }
 `;
 
+module.exports.BACKSTAGE_BITES_QUERY = `
+{
+  videos: allContentfulVideo {
+    edges {
+      node {
+        slug
+      }
+    }
+  }
+}
+`;
+
 module.exports.CASE_STUDIES_QUERY = `
 {
   caseStudies: allMarkdownRemark(
