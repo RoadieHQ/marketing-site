@@ -12,8 +12,6 @@ This gives a custom plugin a way to interact with your own service. That service
 
 ![authenticatedProxyDiagram.png](authenticatedProxyDiagram.png)
 
-## Configuring an Authenticated Proxy
-
 ## Step 1. Create an authenticated proxy configuration in Roadie
 
 You can navigate to /administration/settings/authenticatedProxy. Click add item to add a new proxy.
