@@ -40,7 +40,7 @@
 [[redirects]]
   from = "/plaus/api/event"
   to = "https://plausible.io/api/event"
-  status = 202
+  status = 200
   force = true
 
 # Supporting external links to a policy which was orignally put on the website with a
