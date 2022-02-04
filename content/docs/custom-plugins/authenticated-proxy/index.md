@@ -1,6 +1,6 @@
 ---
 title: Configuring Authenticated Proxy for Custom Plugins
-lastUpdated: '2023-02-03T10:27:00.0Z'
+lastUpdated: '2022-02-03T10:27:00.0Z'
 description: How to configure a custom proxy to identify the Backstage user for you custom plugin.
 ---
 
