@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'components';
 import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieRIcon } from 'components/icons';
+import camelCase from 'lodash/camelCase';
 
 import theme from '../../theme';
 
@@ -24,10 +25,11 @@ const navigation = {
     { name: 'Careers', href: 'https://careers.roadie.io' },
   ],
 
-  legal: [
+  legalSecurity: [
     { name: 'Terms', href: '/legal-notices/terms-of-service/' },
     { name: 'Privacy', href: '/legal-notices/privacy-policy/' },
     { name: 'Cookies', href: '/legal-notices/cookies-policy/' },
+    { name: 'Responsible Disclosure', href: '/security/responsible-disclosure/' },
   ],
 
   social: [{
@@ -64,7 +66,7 @@ const SocialItem = ({ item }) => (
   </Link>
 );
 
-const TitledLinkList = ({ title, linkListKey = title.toLowerCase() }) => (
+const TitledLinkList = ({ title, linkListKey = camelCase(title) }) => (
   <>
     <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">{title}</h3>
     <ul className="mt-4 space-y-4">
@@ -121,7 +123,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
               </div>
 
               <div className="mt-12 md:mt-0">
-                <TitledLinkList title="Legal" />
+                <TitledLinkList title="Legal & Security" />
               </div>
             </div>
           </div>
