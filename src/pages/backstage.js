@@ -42,8 +42,8 @@ const BackstageUltimateGuide = ({ data: { page, site } }) => {
   return (
     <>
       <SEO
-        title={`${page.frontmatter.title} | ${siteTitle}`}
-        description={page.frontmatter.description || page.excerpt}
+        title={`${page.title} | ${siteTitle}`}
+        description={page.seoDescription}
       />
 
       <SitewideHeader />
@@ -102,7 +102,7 @@ const BackstageUltimateGuide = ({ data: { page, site } }) => {
         <article className="relative max-w-lg mx-auto lg:max-w-2xl mb-24">
           <section
             className="prose prose-primary max-w-none"
-            dangerouslySetInnerHTML={{ __html: page.html }}
+            dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }}
           />
         </article>
       </main>
@@ -122,15 +122,14 @@ export const pageQuery = graphql`
       }
     }
 
-    page: markdownRemark(fields: { slug: { eq: "/backstage/ultimate-guide/" } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-
-      frontmatter {
-        title
-        date
-        description
+    page: contentfulMarkdownPage(slug: { eq: "/backstage/ultimate-guide/" }) {
+      title
+      date
+      seoDescription
+      body {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }
