@@ -4,9 +4,7 @@ date: '2022-02-05T12:11:00.0Z'
 description: This is the description
 ---
 
-## Introduction
-
-### What is it?
+## What is it?
 
 Backstage is an open platform for building developer portals. It was created inside Spotify in 2015 and used internally there for a number of years before being open-sourced in March 2020. It was donated to the CNCF the same year and is currently in incubation.
 
@@ -18,11 +16,11 @@ On a practical level, Spotify Backstage is a collection of TypeScript libraries 
 
 A service catalog, or software catalog, is a list of all of the internal software available inside a company. In Backstage, this can include services, systems, resources such as S3 buckets, and other concepts. The catalog allows users to “look up” internal systems to find information about them.
 
-### Who is using it?
+## Who is using it?
 
 Backstage has been adopted by more than 85 companies, including Netflix, American Airlines, Roku, Expedia Group, GoCardless and Wayfair.
 
-### The origins of Backstage
+## The origins of Backstage
 
 *This section was written by Roadie Engineering Manager Martina Iglesias Fernández. She previously worked on the Backstage Core Team at Spotify and was in the room on the day Backstage was first conceived.*
 
