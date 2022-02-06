@@ -9,8 +9,8 @@ const SecurityResponsibleDisclosure = ({ data: { site, page } }) => {
   return (
     <>
       <SEO
-        title={`${page.frontmatter.title} | ${siteTitle}`}
-        description={page.frontmatter.description || page.excerpt}
+        title={`${page.title} | ${siteTitle}`}
+        description={page.seoDescription}
       />
 
       <SitewideHeader />
@@ -18,12 +18,12 @@ const SecurityResponsibleDisclosure = ({ data: { site, page } }) => {
       <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
         <article className="relative max-w-lg mx-auto lg:max-w-2xl mb-24">
           <div className="mb-8">
-            <ContentHeader frontmatter={page.frontmatter} />
+            <ContentHeader frontmatter={{ title: page.title, date: page.date }} />
           </div>
 
           <section
             className="prose prose-primary max-w-none"
-            dangerouslySetInnerHTML={{ __html: page.html }}
+            dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }}
           />
         </article>
       </main>
@@ -43,15 +43,14 @@ export const pageQuery = graphql`
       }
     }
 
-    page: markdownRemark(fields: { slug: { eq: "/security/responsible-disclosure/" } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-
-      frontmatter {
-        title
-        date
-        description
+    page: contentfulMarkdownPage(slug: { eq: "/security/responsible-disclosure/" }) {
+      date
+      title
+      seoDescription
+      body {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }
