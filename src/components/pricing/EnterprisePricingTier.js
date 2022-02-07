@@ -10,7 +10,7 @@ const EnterprisePricingTier = () => {
   return (
     <div className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
       <div className="p-6">
-        <TierName name="Enterprise" />
+        <TierName name="Growth" />
         <TierDescription description="A service catalog, developer portal, and paved path to production for every engineer in your company" />
 
         <div className="mt-6">
