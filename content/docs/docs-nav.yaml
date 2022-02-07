@@ -13,6 +13,8 @@ nav:
     - Inviting users: '/docs/getting-started/user-management/'
     - Adding API specs: '/docs/getting-started/openapi-specs/'
     - Scaffolding components: '/docs/getting-started/scaffolding-components/'
+  - Settings Page:
+    - Authenticated Proxy: '/docs/settings-page/authenticated-proxy/'
   - Using Backstage plugins:
     - Argo CD: '/docs/integrations/argocd/'
     - BuildKite: '/docs/integrations/buildkite/'
@@ -39,7 +41,6 @@ nav:
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
-    - Authenticated Proxy: '/docs/custom-plugins/authenticated-proxy/'
   - Details:
     - GitHub app permissions: '/docs/integrations/github-app-permissions/'
     - Setting secrets: '/docs/details/setting-secrets/'
