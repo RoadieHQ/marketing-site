@@ -11,22 +11,25 @@ import {
 import BackstageB from '../../content/assets/logos/backstage/b-stack.png';
 
 const tableOfContentItems = [{
-  to: '#what',
-  text: 'What is it?',
+  to: '#what-spotify-backstage-is',
+  text: 'What it is',
 }, {
-  to: '#who',
-  text: 'Who uses it?',
+  to: '#who-it-has-been-adopted-by',
+  text: 'Adopters',
 }, {
-  to: '#sdfjsdf',
-  text: 'The problems it solves',
+  to: '#the-origins-of-spotify-backstage',
+  text: 'The origins',
 }, {
-  to: '#kjsdfj',
+  to: '#problems-tackled-by-spotify-backstage',
+  text: 'The problems it helps solve',
+}, {
+  to: '#the-main-features-of-backstage-by-spotify',
   text: 'The main features',
 }, {
-  to: '#jdsfj',
+  to: '#the-use-cases-of-spotify-backstage',
   text: 'The use cases',
 }, {
-  to: '#akjdsf',
+  to: '#how-to-get-started-with-spotify-backstage',
   text: 'How to get started',
 }];
 
@@ -48,41 +51,43 @@ const BackstageUltimateGuide = ({ data: { page, site } }) => {
 
       <SitewideHeader />
 
-      <header className="bg-gray-900 py-24 text-white">
-        <h2 className="mb-3 mt-0 text-center text-lg sm:text-xl md:text-2xl font-extrabold">
+      <header className="bg-gray-900 pt-24 pb-12 text-white">
+        <h2 className="mb-6 mt-0 text-center text-lg sm:text-xl md:text-2xl font-extrabold">
           Backstage by Spotify
         </h2>
 
-        <div className="mb-24">
-          <h2 className="mt-0 text-center text-2xl sm:text-4xl md:text-6xl tracking-tight">
+        <div className="mb-12 lg:mb-24">
+          <h2 className="mt-0 text-center text-4xl sm:text-5xl md:text-6xl tracking-tight font-light">
             The Ultimate Guide
           </h2>
         </div>
 
         <div className="relative max-w-lg mx-auto lg:max-w-2xl mb-12">
-          <div className="flex">
+          <div className="lg:flex lg:flex-row-reverse px-4">
+            <div className="flex-1 mb-24 lg:mb-12">
+              <div className="flex justify-center items-center lg:justify-end">
+                <img src={BackstageB} alt="Backstage log" className="h-60" />
+              </div>
+            </div>
+
             <div className="flex-1 text-lg">
               <p className="mb-3">
                 This is the complete guide to using Backstage in your organization.
               </p>
 
               <p className="mb-3">
-                If you want to understand what problems Bacsktage can help solve, or use cases it can address, you&apos;re in the right place.
+                If you want to understand the problems it can solve, the features it has, or use cases it can address, you&apos;re in the right place.
               </p>
 
               <p className="mb-3">
-                Let&apos;s dive right in.
+                Let&apos;s dive right in...
               </p>
-            </div>
-
-            <div className="flex-1">
-              <img src={BackstageB} alt="Backstage log" className="h-48 m-auto" />
             </div>
           </div>
         </div>
       </header>
 
-      <nav className="text-center pt-24 pb-12">
+      <nav className="text-center py-24">
         <div className="mb-8">
           <Headline el="h2" size="small">
             Contents
