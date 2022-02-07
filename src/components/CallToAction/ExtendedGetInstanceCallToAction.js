@@ -5,6 +5,7 @@ import {
   Button,
   TextField,
   SubscribeToNewsletterSwitch,
+  HoneypotField,
   ScmToolRadioGroup,
 } from 'components';
 
@@ -88,12 +89,13 @@ const ExtendedGetInstanceCallToAction = ({
       name={netlifyFormName}
       method="post"
       data-netlify="true"
-      data-netlify-honeypot="bot-field"
+      data-netlify-honeypot="honeypot-field"
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
       <input type="hidden" name="form-name" value={netlifyFormName} />
       <input type="hidden" name="submit-button-label" value={buttonText} />
       <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
+      <HoneypotField />
 
       <TextField
         id="get-instance-email-input"

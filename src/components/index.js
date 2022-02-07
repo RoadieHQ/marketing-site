@@ -6,6 +6,7 @@ export {
   Button,
   HelpText,
   SubscribeToNewsletterSwitch,
+  HoneypotField,
   ScmToolRadioGroup,
   NumberOfEngineers,
 } from './forms';
