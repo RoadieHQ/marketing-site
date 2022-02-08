@@ -13,7 +13,7 @@ This tutorial will guide you through the steps required to set Roadie up for bas
 
 ## Step 1: Install the Roadie GitHub app
 
-Installing the GitHub App will allow Roadie to access the YAML metadata files that Backstage needs to operate. Learn more about the [permissions required](/docs/integrations/github-app-permissions/).
+Installing the GitHub App will allow Roadie to access the YAML metadata files that Backstage needs to operate. Learn more about the [permissions required](/docs/details/github-app-permissions/).
 
 1. Click the Administration link in the bottom left of the application.
 

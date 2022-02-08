@@ -80,7 +80,7 @@ Produces the following table.
 
 ### Step 3: Configure UI components for your Roadie instance
 
-You must be an admin to edit the UI layout. You can follow [this guide](/docs/getting-started/updating-the-ui/) to add new Cards and Tabs into your Roadie instance. There are 3 different components available for you to configure.
+You must be an admin to edit the UI layout. You can follow [this guide](/docs/details/updating-the-ui/) to add new Cards and Tabs into your Roadie instance. There are 3 different components available for you to configure.
 1. EntityPrometheusContent (Tab)
 2. EntityPrometheusAlertCard (Card)
 3. EntityPrometheusGraphCard (Card)
