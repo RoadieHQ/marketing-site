@@ -19,19 +19,19 @@ const Byline = ({
   let formattedDate = formatDistance(dateTimestamp, new Date());
 
   if (relative) {
-    text = `Published ${formattedDate} ago`;
+    text = `Updated ${formattedDate} ago`;
   } else {
     formattedDate = format(dateTimestamp, FORMAT_TOKEN);
-    text = `Published on ${formattedDate}`;
+    text = `Updated on ${formattedDate}`;
   }
 
   if (showLastValidated && lastValidatedTimestamp && lastValidatedTimestamp !== dateTimestamp) {
     if (relative) {
       const formattedLastvalidated = formatDistance(lastValidatedTimestamp, new Date());
-      text = `Last validated ${formattedLastvalidated} ago • Originally published ${formattedDate} ago`;
+      text = `Last validated ${formattedLastvalidated} ago • Updated ${formattedDate} ago`;
     } else {
       const formattedLastvalidated = format(lastValidatedTimestamp, FORMAT_TOKEN);
-      text = `Last validated on ${formattedLastvalidated} • Originally published on ${formattedDate}`;
+      text = `Last validated on ${formattedLastvalidated} • Updated on ${formattedDate}`;
     }
   }
 
