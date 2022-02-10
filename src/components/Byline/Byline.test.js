@@ -30,7 +30,7 @@ describe('Byline', function () {
           <Byline frontmatter={{ date: publishDateString }} />
         );
 
-        expect(wrapper.text()).to.equal('Updated on May 10th, 2021');
+        expect(wrapper.text()).to.equal('Published on May 10th, 2021');
       });
 
       it('should say the date and author when available', function () {
@@ -38,7 +38,7 @@ describe('Byline', function () {
           <Byline frontmatter={{ date: publishDateString, author }} />
         );
 
-        expect(wrapper.text()).to.equal('Updated on May 10th, 2021 by Jimmy Joe');
+        expect(wrapper.text()).to.equal('Published on May 10th, 2021 by Jimmy Joe');
       });
     });
 
@@ -48,7 +48,7 @@ describe('Byline', function () {
           <Byline frontmatter={{ date: publishDateString }} relative={true} />
         );
 
-        expect(wrapper.text()).to.equal('Updated 27 days ago');
+        expect(wrapper.text()).to.equal('Published 27 days ago');
       });
 
       it('should say the date and author when available', function () {
@@ -56,7 +56,7 @@ describe('Byline', function () {
           <Byline frontmatter={{ date: publishDateString, author }} relative={true} />
         );
 
-        expect(wrapper.text()).to.equal('Updated 27 days ago by Jimmy Joe');
+        expect(wrapper.text()).to.equal('Published 27 days ago by Jimmy Joe');
       });
     });
   });
@@ -75,7 +75,7 @@ describe('Byline', function () {
         );
 
         expect(wrapper.text()).to.equal(
-          'Last validated on May 22nd, 2021 • Updated on May 10th, 2021');
+          'Last validated on May 22nd, 2021 • Originally published on May 10th, 2021');
       });
 
       it('should say the dates and the author if available', function () {
@@ -91,7 +91,7 @@ describe('Byline', function () {
         );
 
         expect(wrapper.text()).to.equal(
-          'Last validated on May 22nd, 2021 • Updated on May 10th, 2021 by Jimmy Joe');
+          'Last validated on May 22nd, 2021 • Originally published on May 10th, 2021 by Jimmy Joe');
       });
     });
 
@@ -109,7 +109,7 @@ describe('Byline', function () {
         );
 
         expect(wrapper.text()).to.equal(
-          'Last validated 15 days ago • Updated 27 days ago');
+          'Last validated 15 days ago • Originally published 27 days ago');
       });
     });
   });
