@@ -22,7 +22,10 @@ const EmailCaptureForm = ({
 
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
-    <Form onSubmit={onSubmit} name={netlifyFormName}>
+    <Form
+      onSubmit={onSubmit}
+      name={netlifyFormName}
+    >
       <div className={classnames('flex flex-col lg:flex-row', className)}>
         <div className="mb-4 lg:mb-0">
           <TextField

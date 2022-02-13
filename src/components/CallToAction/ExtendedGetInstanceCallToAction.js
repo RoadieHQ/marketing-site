@@ -9,7 +9,7 @@ import {
   Form,
 } from 'components';
 
-import { FORM_NAMES } from '../../contactFormConstants';
+import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
 const submitToNetlifyForms = async ({
@@ -18,6 +18,7 @@ const submitToNetlifyForms = async ({
   subToNewsletter,
   netlifyFormName,
   agreeToPolicies,
+  honeypotText,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -27,6 +28,7 @@ const submitToNetlifyForms = async ({
   formData.append('email', email);
   formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
+  formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('agree-to-policies', agreeToPolicies);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
@@ -53,6 +55,7 @@ const ExtendedGetInstanceCallToAction = ({
 }) => {
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [agreed, setAgreed] = useState(false);
+  const [honeypotText, setHoneypotText] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
@@ -70,6 +73,7 @@ const ExtendedGetInstanceCallToAction = ({
       subToNewsletter,
       agreeToPolicies: agreed,
       netlifyFormName,
+      honeypotText,
       submitButtonLabel: buttonText,
     });
 
@@ -87,6 +91,8 @@ const ExtendedGetInstanceCallToAction = ({
     <Form
       onSubmit={onSubmit}
       name={netlifyFormName}
+      honeypotValue={honeypotText}
+      onHoneypotChange={setHoneypotText}
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
       <TextField

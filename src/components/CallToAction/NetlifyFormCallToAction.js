@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import trackGoogleAnalyticsEvent from '../../googleAnalytics';
 import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
-import { FORM_NAMES } from '../../contactFormConstants';
+import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
 export const encode = (data) => {
@@ -17,6 +17,7 @@ export const encode = (data) => {
 export const submitEmailToNetlifyForms = async ({
   email,
   netlifyFormName,
+  honeypotText,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -30,6 +31,7 @@ export const submitEmailToNetlifyForms = async ({
         'form-name': netlifyFormName,
         'submit-button-label': submitButtonLabel,
         'deployed-branch': branch,
+        [HONEYPOT_FIELD_NAME]: honeypotText,
       }),
     });
   } catch (error) {
@@ -59,6 +61,7 @@ const NetlifyFormCallToAction = ({
   ...rest
 }) => {
   const [submitting, setSubmitting] = useState(false);
+  const [honeypotText, setHoneypotText] = useState('');
   const [subForm, setSubForm] = useState({
     message: subFormMessage,
   });
@@ -70,6 +73,7 @@ const NetlifyFormCallToAction = ({
     const resp = await submitEmailToNetlifyForms({
       email,
       netlifyFormName,
+      honeypotText,
       submitButtonLabel: buttonText,
     });
 
@@ -98,6 +102,8 @@ const NetlifyFormCallToAction = ({
     buttonText: buttonText,
     autoFocus: autoFocus,
     netlifyFormName: netlifyFormName,
+    honeypotValue: honeypotText,
+    onHoneypotChange: setHoneypotText,
     ...rest,
   };
 

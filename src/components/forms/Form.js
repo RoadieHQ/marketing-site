@@ -11,7 +11,7 @@ const HoneypotField = ({ onChange, value }) => {
     <div className="hidden">
       <label htmlFor={HONEYPOT_FIELD_NAME}>
         Don’t fill this out if you’re human:
-        <Input name={HONEYPOT_FIELD_NAME} id="honeypot-field" value={value} />
+        <Input name={HONEYPOT_FIELD_NAME} id={HONEYPOT_FIELD_NAME} value={value} />
       </label>
     </div>
   );
@@ -23,7 +23,7 @@ const Form = ({
   name,
   children,
   onHoneypotChange,
-  honeypotText,
+  honeypotValue,
   ...rest
 }) => (
   <form
@@ -36,7 +36,7 @@ const Form = ({
     <input type="hidden" name="form-name" value={name} />
     <input type="hidden" name="submit-button-label" value={buttonText} />
     <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
-    <HoneypotField onChange={onHoneypotChange} value={honeypotText} />
+    <HoneypotField onChange={onHoneypotChange} value={honeypotValue} />
     {children}
   </form>
 );
