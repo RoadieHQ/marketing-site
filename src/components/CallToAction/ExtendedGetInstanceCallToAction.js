@@ -5,8 +5,8 @@ import {
   Button,
   TextField,
   SubscribeToNewsletterSwitch,
-  HoneypotField,
   ScmToolRadioGroup,
+  Form,
 } from 'components';
 
 import { FORM_NAMES } from '../../contactFormConstants';
@@ -84,19 +84,11 @@ const ExtendedGetInstanceCallToAction = ({
   };
 
   return (
-    <form
+    <Form
       onSubmit={onSubmit}
       name={netlifyFormName}
-      method="post"
-      data-netlify="true"
-      data-netlify-honeypot="honeypot-field"
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
-      <input type="hidden" name="form-name" value={netlifyFormName} />
-      <input type="hidden" name="submit-button-label" value={buttonText} />
-      <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
-      <HoneypotField />
-
       <TextField
         id="get-instance-email-input"
         label="Work email address *"
@@ -156,7 +148,7 @@ const ExtendedGetInstanceCallToAction = ({
           disabled={disabled}
         />
       </div>
-    </form>
+    </Form>
   );
 };
 

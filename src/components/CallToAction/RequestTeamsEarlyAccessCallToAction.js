@@ -4,6 +4,7 @@ import {
   TextField,
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
+  Form,
 } from 'components';
 
 import { FORM_NAMES } from '../../contactFormConstants';
@@ -84,12 +85,9 @@ const RequestTeamsEarlyAccessCallToAction = ({
   const disabled = submitting || !email || email === '';
 
   return (
-    <form
+    <Form
       onSubmit={onSubmit}
       name={netlifyFormName}
-      method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
       <input type="hidden" name="form-name" value={netlifyFormName} />
@@ -137,7 +135,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
           disabled={disabled}
         />
       </div>
-    </form>
+    </Form>
   );
 };
 

@@ -2,8 +2,7 @@ import React from 'react';
 import { PaperAirplaneIcon } from '@heroicons/react/outline';
 import classnames from 'classnames';
 
-import { currentlyExecutingGitBranch } from '../../environment';
-import { TextField, Button } from 'components';
+import { TextField, Button, Form } from 'components';
 
 const EmailCaptureForm = ({
   onSubmit,
@@ -23,17 +22,7 @@ const EmailCaptureForm = ({
 
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
-    <form
-      onSubmit={onSubmit}
-      name={netlifyFormName}
-      method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="form-name" value={netlifyFormName} />
-      <input type="hidden" name="submit-button-label" value={buttonText} />
-      <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
-
+    <Form onSubmit={onSubmit} name={netlifyFormName}>
       <div className={classnames('flex flex-col lg:flex-row', className)}>
         <div className="mb-4 lg:mb-0">
           <TextField
@@ -63,7 +52,7 @@ const EmailCaptureForm = ({
           />
         </div>
       </div>
-    </form>
+    </Form>
   );
   /* eslint-enable jsx-a11y/no-autofocus */
 };
