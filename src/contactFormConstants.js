@@ -11,3 +11,5 @@ export const FORM_NAMES = {
   requestEnterprisePricing: 'request-enterprise-pricing',
   requestTeamsEarlyAccess: 'request-teams-early-access',
 };
+
+export const HONEYPOT_FIELD_NAME = 'honeybot-field';
