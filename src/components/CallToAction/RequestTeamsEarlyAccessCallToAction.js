@@ -7,7 +7,7 @@ import {
   Form,
 } from 'components';
 
-import { FORM_NAMES } from '../../contactFormConstants';
+import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
 const submitToNetlifyForms = async ({
@@ -16,6 +16,7 @@ const submitToNetlifyForms = async ({
   scmTool,
   subToNewsletter,
   netlifyFormName,
+  honeypotText,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -26,6 +27,7 @@ const submitToNetlifyForms = async ({
   formData.append('email', email);
   formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
+  formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
 
@@ -56,6 +58,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
   const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+  const [honeypotText, setHoneypotText] = useState('');
   const netlifyFormName = FORM_NAMES.requestTeamsEarlyAccess;
   const buttonText = 'Request early access';
 
@@ -69,6 +72,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
       scmTool,
       subToNewsletter,
       netlifyFormName,
+      honeypotText,
       submitButtonLabel: buttonText,
     });
 
@@ -88,12 +92,10 @@ const RequestTeamsEarlyAccessCallToAction = ({
     <Form
       onSubmit={onSubmit}
       name={netlifyFormName}
+      onHoneypotChange={setHoneypotText}
+      honeypotValue={honeypotText}
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
-      <input type="hidden" name="form-name" value={netlifyFormName} />
-      <input type="hidden" name="submit-button-label" value={buttonText} />
-      <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
-
       <TextField
         label="Full name *"
         type="text"
