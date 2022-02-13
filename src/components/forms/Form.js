@@ -4,7 +4,7 @@ import { currentlyExecutingGitBranch } from '../../environment';
 import Input from './Input';
 import { HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 
-const HoneypotField = ({ onChange }) => {
+const HoneypotField = ({ onChange, value }) => {
   if (!onChange) return null;
 
   return (
@@ -14,6 +14,7 @@ const HoneypotField = ({ onChange }) => {
         <Input
           name="honeypot-field"
           id="honeypot-field"
+          value={value}
         />
       </label>
     </div>
@@ -26,6 +27,7 @@ const Form = ({
   name,
   children,
   onHoneypotChange,
+  honeypotText,
   ...rest
 }) => (
   <form
@@ -38,7 +40,7 @@ const Form = ({
     <input type="hidden" name="form-name" value={name} />
     <input type="hidden" name="submit-button-label" value={buttonText} />
     <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
-    <HoneypotField onChange={onHoneypotChange} />
+    <HoneypotField onChange={onHoneypotChange} value={honeypotText} />
     {children}
   </form>
 );
