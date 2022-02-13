@@ -11,11 +11,7 @@ const HoneypotField = ({ onChange, value }) => {
     <div className="hidden">
       <label htmlFor={HONEYPOT_FIELD_NAME}>
         Don’t fill this out if you’re human:
-        <Input
-          name="honeypot-field"
-          id="honeypot-field"
-          value={value}
-        />
+        <Input name={HONEYPOT_FIELD_NAME} id="honeypot-field" value={value} />
       </label>
     </div>
   );
