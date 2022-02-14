@@ -4,6 +4,7 @@ import {
   SEO,
   SitewideFooter,
   SitewideHeader,
+  TextLink as Link,
 } from 'components';
 import {
   FingerPrintIcon,
@@ -102,7 +103,11 @@ const SOLUTIONS = {
   description: 'Make docs, architecture diagrams and runbooks an integral part of your engineering workflow.',
   features: [{
     title: 'Built on Backstage',
-    description: 'Backstage is the developer portal and service catalog which has enabled engineering hypergrowth at Spotify since 2016. It can improve developer effectiveness, reduce downtime, and enable your teams to ship high-quality code quickly.',
+    description: (
+      <>
+        Backstage is the developer portal and service catalog which has enabled engineering hypergrowth at Spotify since 2016. It can improve developer effectiveness, reduce downtime, and enable your teams to ship high-quality code quickly. Learn more in our <Link to="/backstage-spotify/" color="primary">Ultimate Guide to Spotify Backstage</Link>.
+      </>
+    ),
     illustration: {
       webp: MikeExpediaGroupQuote,
       png: MikeExpediaGroupQuotePng,

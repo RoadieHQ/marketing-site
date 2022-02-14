@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import get from 'lodash/get';
 
-import { SEO, Page } from 'components';
+import { SEO, Page, TextLink as Link } from 'components';
 import { Attribution, TitleAndDescription, ListHeader } from 'components/article';
 
 const CaseStudySummary = ({ study }) => {
@@ -48,7 +48,11 @@ const CaseStudiesIndex = ({ data }) => {
       <Page>
         <ListHeader
           title="Case studies"
-          description="Learn how organizations around the world are adopting and benefiting from Backstage."
+          description={
+            <>
+              Learn how organizations around the world are adopting and benefiting from Backstage. Want a high-level intro to Backstage? Check out our <Link to="/backstage-spotify/" color="primary">Ultimate Guide</Link>.
+            </>
+          }
         />
 
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
