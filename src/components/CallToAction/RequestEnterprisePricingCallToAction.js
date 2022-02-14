@@ -5,10 +5,11 @@ import {
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
   NumberOfEngineers,
+  Form,
 } from 'components';
 import { OPTIONS_FOR_NUMBER_OF_ENGINEERS } from 'components/forms/NumberOfEngineers';
 
-import { FORM_NAMES } from '../../contactFormConstants';
+import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
 const submitToNetlifyForms = async ({
@@ -17,6 +18,7 @@ const submitToNetlifyForms = async ({
   scmTool,
   subToNewsletter,
   netlifyFormName,
+  honeypotText,
   numberOfEngineers,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
@@ -29,6 +31,7 @@ const submitToNetlifyForms = async ({
   formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append('number-of-engineers', numberOfEngineers);
+  formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
 
@@ -59,6 +62,7 @@ const RequestEnterprisePricingCallToAction = ({
   const [name, setName] = useState('');
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
   const [subToNewsletter, setSubToNewsletter] = useState(true);
+  const [honeypotText, setHoneypotText] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestEnterprisePricing;
   const buttonText = 'Request a quote';
@@ -73,6 +77,7 @@ const RequestEnterprisePricingCallToAction = ({
       scmTool,
       subToNewsletter,
       numberOfEngineers,
+      honeypotText,
       netlifyFormName,
       submitButtonLabel: buttonText,
     });
@@ -90,18 +95,13 @@ const RequestEnterprisePricingCallToAction = ({
   const disabled = submitting || !email || email === '' || !numberOfEngineers || numberOfEngineers === '';
 
   return (
-    <form
+    <Form
       onSubmit={onSubmit}
       name={netlifyFormName}
-      method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
+      onHoneypotChange={setHoneypotText}
+      honeypotValue={honeypotText}
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
-      <input type="hidden" name="form-name" value={netlifyFormName} />
-      <input type="hidden" name="submit-button-label" value={buttonText} />
-      <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
-
       <TextField
         label="Full name *"
         type="text"
@@ -150,7 +150,7 @@ const RequestEnterprisePricingCallToAction = ({
           disabled={disabled}
         />
       </div>
-    </form>
+    </Form>
   );
 };
 

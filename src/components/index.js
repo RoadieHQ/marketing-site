@@ -2,6 +2,7 @@ export {
   Switch,
   Radio,
   Input,
+  Form,
   TextField,
   Button,
   HelpText,

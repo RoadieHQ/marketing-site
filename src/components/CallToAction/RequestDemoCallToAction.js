@@ -4,9 +4,10 @@ import {
   TextField,
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
+  Form,
 } from 'components';
 
-import { FORM_NAMES } from '../../contactFormConstants';
+import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../environment';
 
 const submitToNetlifyForms = async ({
@@ -14,6 +15,7 @@ const submitToNetlifyForms = async ({
   email,
   scmTool,
   subToNewsletter,
+  honeypotText,
   netlifyFormName,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
@@ -25,6 +27,7 @@ const submitToNetlifyForms = async ({
   formData.append('email', email);
   formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
+  formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
 
@@ -54,6 +57,7 @@ const RequestDemoCallToAction = ({
   const [email, setEmail] = useState(emailFromUrl);
   const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
+  const [honeypotText, setHoneypotText] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestDemo;
   const buttonText = 'Request a demo';
@@ -67,6 +71,7 @@ const RequestDemoCallToAction = ({
       email,
       scmTool,
       subToNewsletter,
+      honeypotText,
       netlifyFormName,
       submitButtonLabel: buttonText,
     });
@@ -84,18 +89,13 @@ const RequestDemoCallToAction = ({
   const disabled = submitting || !email || email === '';
 
   return (
-    <form
+    <Form
       onSubmit={onSubmit}
       name={netlifyFormName}
-      method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
+      onHoneypotChange={setHoneypotText}
+      honeypotValue={honeypotText}
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
-      <input type="hidden" name="form-name" value={netlifyFormName} />
-      <input type="hidden" name="submit-button-label" value={buttonText} />
-      <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
-
       <TextField
         label="Full name *"
         type="text"
@@ -137,7 +137,7 @@ const RequestDemoCallToAction = ({
           disabled={disabled}
         />
       </div>
-    </form>
+    </Form>
   );
 };
 
