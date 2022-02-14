@@ -27,7 +27,6 @@ describe('The landing page', () => {
 
     cy.get('#get-instance-email-input').type('test@example.com');
     cy.get('button[name="agree-to-policies"]').click();
-    cy.get('button[name="sub-to-newsletter"]').click();
     cy.contains('Request a trial').click();
     cy.contains('Your Backstage experience is on the way');
   });
@@ -47,7 +46,6 @@ describe('The landing page', () => {
     // complains so we have to force it.
     cy.get('#get-instance-scm-bitbucket-cloud-input').check({ force: true });
     cy.get('button[name="agree-to-policies"]').click();
-    cy.get('button[name="sub-to-newsletter"]').click();
     cy.contains('Request a trial').click();
     cy.contains('Roadie only supports GitHub Cloud for now');
   });
@@ -64,7 +62,6 @@ describe('The landing page', () => {
     cy.get('#request-pricing-name-input').type('Test 1');
     cy.get('#request-pricing-email-input').type('test@example.com');
     cy.get('#request-pricing-number-of-engineers').select('201');
-    cy.get('button[name="sub-to-newsletter"]').click();
     cy.contains('Request a quote').click();
     cy.contains(`We'll be in touch`);
   });
@@ -80,7 +77,6 @@ describe('The landing page', () => {
 
     cy.get('#request-teams-name-input').type('Test 1');
     cy.get('#request-teams-email-input').type('test@example.com');
-    cy.get('button[name="sub-to-newsletter"]').click();
     cy.contains('Request early access').click();
     cy.contains(`We'll be in touch`);
   });
