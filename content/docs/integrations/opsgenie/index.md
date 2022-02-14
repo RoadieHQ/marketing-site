@@ -1,6 +1,6 @@
 ---
 title: Configuring Opsgenie
-lastUpdated: '2021-09-02T21:00:00.0Z'
+publishedDate: '2021-09-02T21:00:00.0Z'
 description: How to configure the Opsgenie plugin on roadie.
 ---
 

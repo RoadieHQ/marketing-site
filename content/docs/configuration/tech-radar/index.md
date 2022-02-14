@@ -1,6 +1,6 @@
 ---
 title: Configuring Tech Radar
-lastUpdated: '2021-08-25T15:00:00.0Z'
+publishedDate: '2021-08-25T15:00:00.0Z'
 description: Configuring Tech Radar to use your data source
 ---
 

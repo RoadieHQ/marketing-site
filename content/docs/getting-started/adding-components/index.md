@@ -1,6 +1,6 @@
 ---
 title: Adding Components
-lastUpdated: '2022-01-30T14:00:00.0Z'
+publishedDate: '2022-01-30T14:00:00.0Z'
 description: How to add components such as services or websites to the Backstage catalog.
 ---
 

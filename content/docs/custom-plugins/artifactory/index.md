@@ -1,6 +1,6 @@
 ---
 title: Installing Custom Plugins
-lastUpdated: '2021-03-17T12:11:00.0Z'
+publishedDate: '2021-03-17T12:11:00.0Z'
 description: How to add a custom Backstage plugin to Roadie
 ---
 

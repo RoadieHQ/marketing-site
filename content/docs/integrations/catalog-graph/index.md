@@ -1,6 +1,6 @@
 ---
 title: Catalog Graph
-lastUpdated: '2021-10-18T21:00:00.0Z'
+publishedDate: '2021-10-18T21:00:00.0Z'
 description: How to setup Backstage to display catalog entity relationship graphs
 ---
 

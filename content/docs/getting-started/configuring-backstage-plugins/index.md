@@ -1,6 +1,6 @@
 ---
 title: Adding plugins
-lastUpdated: '2022-01-30T21:00:00.0Z'
+publishedDate: '2022-01-30T21:00:00.0Z'
 description: How to add and configre Backstage plugins in Roadie
 ---
 

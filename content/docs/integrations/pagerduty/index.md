@@ -1,6 +1,6 @@
 ---
 title: Generating PagerDuty Token
-lastUpdated: '2021-03-16T21:00:00.0Z'
+publishedDate: '2021-03-16T21:00:00.0Z'
 description: How to create Token for the PagerDuty plugin.
 ---
 

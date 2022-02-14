@@ -1,6 +1,6 @@
 ---
 title: Configuring SonarQube
-lastUpdated: '2021-07-28T21:00:00.0Z'
+publishedDate: '2021-07-28T21:00:00.0Z'
 description: How to configure the SonarQube plugin on roadie.
 ---
 

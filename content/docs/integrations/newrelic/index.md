@@ -1,6 +1,6 @@
 ---
 title: Creating a NewRelic token for Roadie
-lastUpdated: '2021-09-09T21:00:00.0Z'
+publishedDate: '2021-09-09T21:00:00.0Z'
 description: How to create a NewRelic token for use with Backstage.
 ---
 

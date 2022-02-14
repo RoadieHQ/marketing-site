@@ -1,6 +1,6 @@
 ---
 title: GitHub App Permissions
-lastUpdated: '2022-01-30T21:00:00.0Z'
+publishedDate: '2022-01-30T21:00:00.0Z'
 description: The permissions required by our GitHub app and why we need them.
 ---
 

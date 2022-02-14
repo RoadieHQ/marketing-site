@@ -1,6 +1,6 @@
 ---
 title: Inviting users
-lastUpdated: '2022-01-31T14:00:00.0Z'
+publishedDate: '2022-01-31T14:00:00.0Z'
 description: How to invite your colleagues to Roadie
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Travis CI
-lastUpdated: '2021-11-01T11:00:00.0Z'
+publishedDate: '2021-11-01T11:00:00.0Z'
 description: How to create Travis CI API Token for Travis CI plugin.
 ---
 

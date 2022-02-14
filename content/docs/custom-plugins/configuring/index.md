@@ -1,6 +1,6 @@
 ---
 title: Configuring Custom Plugins
-lastUpdated: '2021-06-17T12:11:00.0Z'
+publishedDate: '2021-06-17T12:11:00.0Z'
 description: How to configure a custom Backstage plugin to Roadie
 ---
 

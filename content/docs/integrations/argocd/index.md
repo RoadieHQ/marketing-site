@@ -1,6 +1,6 @@
 ---
 title: Argo CD Plugin
-lastUpdated: '2022-01-31T21:00:00.0Z'
+publishedDate: '2022-01-31T21:00:00.0Z'
 description: How to configure the Argo CD plugin on roadie.
 ---
 

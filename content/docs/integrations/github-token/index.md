@@ -1,6 +1,6 @@
 ---
 title: GitHub Token Permissions
-lastUpdated: '2021-06-06T21:00:00.0Z'
+publishedDate: '2021-06-06T21:00:00.0Z'
 description: How to create a GitHub Personal Access Token with permissions for use in Roadie.
 ---
 
