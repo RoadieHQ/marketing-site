@@ -22,6 +22,10 @@ export const submitEmailToNetlifyForms = async ({
 }) => {
   const branch = currentlyExecutingGitBranch();
 
+  if (!email || email === '') {
+    return Promise.reject();
+  }
+
   let resp;
   try {
     resp = await fetch('/', {
@@ -36,6 +40,7 @@ export const submitEmailToNetlifyForms = async ({
     });
   } catch (error) {
     console.error('Submission failed', error, resp);
+    return Promise.reject();
   }
 
   trackGoogleAnalyticsEvent({

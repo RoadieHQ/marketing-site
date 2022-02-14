@@ -1,4 +1,13 @@
-describe('The honeypot field', () => {
+// These tests do not need to be run frequently. When run on localhost, all they really
+// do is check the existance of the 'honeybot-field'. That doesn't add much value.
+//
+// The best way to use them is to run them against the production site, then check that no
+// Netlify form submissions have been made by them. This is a good way to ensure that the
+// Netlify spam protection is set up and working correctly.
+//
+// To do this, edit cypress.json to set the "baseUrl" to "https://roadie.io", then run these
+// tests.
+describe.skip('The honeypot field', () => {
   it('should protect us from request demo spam', () => {
     cy.intercept('POST', 'http://localhost:8001', {
       statusCode: 200,
