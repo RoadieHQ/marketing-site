@@ -23,7 +23,7 @@ const LegalNotice = ({ data: { notice, site } }) => (
 
       <article className="px-2 md:px-6 md:pt-7 md:flex-1">
         <div className="mb-8">
-          <ContentHeader frontmatter={notice.frontmatter} dateKey="lastUpdated" />
+          <ContentHeader frontmatter={notice.frontmatter} dateKey="publishedDate" />
         </div>
 
         <section
@@ -62,7 +62,7 @@ export const pageQuery = graphql`
       frontmatter {
         description
         title
-        lastUpdated
+        publishedDate
       }
     }
   }

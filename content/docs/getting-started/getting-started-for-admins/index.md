@@ -1,6 +1,6 @@
 ---
 title: Initial configuration
-lastUpdated: '2022-01-31T21:00:00.0Z'
+publishedDate: '2022-01-31T21:00:00.0Z'
 description: How to set up Roadie before rolling it out across your organization.
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Setting secrets
-lastUpdated: '2022-01-31T21:00:00.0Z'
+publishedDate: '2022-01-31T21:00:00.0Z'
 description: Many Backstage plugins require authentication to work. This tutorial shows you how to set authentication tokens securely in Roadie.
 ---
 

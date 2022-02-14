@@ -1,6 +1,6 @@
 ---
 title: Configuring Google OAuth for Backstage in Roadie
-lastUpdated: '2021-10-11T15:15:00.0Z'
+publishedDate: '2021-10-11T15:15:00.0Z'
 description: How to configure a Google OAuth client for Roadie
 ---
 

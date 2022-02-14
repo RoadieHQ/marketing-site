@@ -1,6 +1,6 @@
 ---
 title: FireHydrant
-lastUpdated: '2021-11-18T11:00:00.0Z'
+publishedDate: '2021-11-18T11:00:00.0Z'
 description: How to set up FireHydrant plugin for Roadie.
 ---
 

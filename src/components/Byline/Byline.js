@@ -2,6 +2,7 @@ import React from 'react';
 import format from 'date-fns/format';
 import formatDistance from 'date-fns/formatDistance';
 import has from 'lodash/has';
+import capitalize from 'lodash/capitalize';
 
 const Byline = ({
   frontmatter,
@@ -18,20 +19,29 @@ const Byline = ({
   let text = '';
   let formattedDate = formatDistance(dateTimestamp, new Date());
 
-  if (relative) {
-    text = `Published ${formattedDate} ago`;
+  if (dateKey === 'lastUpdated') {
+    if (relative) {
+      text = `last updated ${formattedDate} ago`;
+    } else {
+      formattedDate = format(dateTimestamp, FORMAT_TOKEN);
+      text = `last updated on ${formattedDate}`;
+    }
   } else {
-    formattedDate = format(dateTimestamp, FORMAT_TOKEN);
-    text = `Published on ${formattedDate}`;
+    if (relative) {
+      text = `published ${formattedDate} ago`;
+    } else {
+      formattedDate = format(dateTimestamp, FORMAT_TOKEN);
+      text = `published on ${formattedDate}`;
+    }
   }
 
   if (showLastValidated && lastValidatedTimestamp && lastValidatedTimestamp !== dateTimestamp) {
     if (relative) {
       const formattedLastvalidated = formatDistance(lastValidatedTimestamp, new Date());
-      text = `Last validated ${formattedLastvalidated} ago • Originally published ${formattedDate} ago`;
+      text = `Last validated ${formattedLastvalidated} ago • Originally ${text}`;
     } else {
       const formattedLastvalidated = format(lastValidatedTimestamp, FORMAT_TOKEN);
-      text = `Last validated on ${formattedLastvalidated} • Originally published on ${formattedDate}`;
+      text = `Last validated on ${formattedLastvalidated} • Originally ${text}`;
     }
   }
 
@@ -39,7 +49,7 @@ const Byline = ({
     text += ` by ${frontmatter.author.name}`;
   }
 
-  return <span className="text-gray-400">{text}</span>;
+  return <span className="text-gray-400">{capitalize(text)}</span>;
 };
 
 export default Byline;

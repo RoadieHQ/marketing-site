@@ -1,6 +1,6 @@
 ---
 title: Configuring Prometheus integration
-lastUpdated: '2021-03-16T21:00:00.0Z'
+publishedDate: '2021-03-16T21:00:00.0Z'
 description: How to set up Roadie instance to work with Prometheus.
 ---
 

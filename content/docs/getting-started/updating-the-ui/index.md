@@ -1,6 +1,6 @@
 ---
 title: Updating the Backstage UI
-lastUpdated: '2021-10-22T12:00:00.0Z'
+publishedDate: '2021-10-22T12:00:00.0Z'
 description: How to configure the Backstage UI Layout
 ---
 

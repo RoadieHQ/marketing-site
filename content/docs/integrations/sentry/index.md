@@ -1,6 +1,6 @@
 ---
 title: Sentry
-lastUpdated: '2021-02-23T21:00:00.0Z'
+publishedDate: '2021-02-23T21:00:00.0Z'
 description: How to create a Sentry Token with permissions for use in Backstage and apply it to Roadie.
 ---
 
