@@ -2,7 +2,7 @@ import React from 'react';
 import format from 'date-fns/format';
 import formatDistance from 'date-fns/formatDistance';
 import has from 'lodash/has';
-import capitalize from 'lodash/capitalize';
+import upperFirst from 'lodash/upperFirst';
 
 const Byline = ({
   frontmatter,
@@ -49,7 +49,7 @@ const Byline = ({
     text += ` by ${frontmatter.author.name}`;
   }
 
-  return <span className="text-gray-400">{capitalize(text)}</span>;
+  return <span className="text-gray-400">{upperFirst(text)}</span>;
 };
 
 export default Byline;
