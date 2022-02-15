@@ -60,6 +60,11 @@ const ExtendedGetInstanceCallToAction = ({
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
 
+  const clearForm = () => {
+    setEmail('');
+    setAgreed(false);
+  };
+
   const disabled = submitting || !email || email === '' || !agreed;
 
   const onSubmit = async (e) => {
@@ -84,6 +89,7 @@ const ExtendedGetInstanceCallToAction = ({
       console.log('error', resp);
     }
 
+    clearForm('');
     setSubmitting(false);
   };
 

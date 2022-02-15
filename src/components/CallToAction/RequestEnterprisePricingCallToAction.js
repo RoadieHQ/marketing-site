@@ -67,6 +67,11 @@ const RequestEnterprisePricingCallToAction = ({
   const netlifyFormName = FORM_NAMES.requestEnterprisePricing;
   const buttonText = 'Request a quote';
 
+  const clearForm = () => {
+    setName('');
+    setEmail('');
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -89,6 +94,7 @@ const RequestEnterprisePricingCallToAction = ({
       console.log('error', resp);
     }
 
+    clearForm();
     setSubmitting(false);
   };
 

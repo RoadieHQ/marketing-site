@@ -62,6 +62,11 @@ const RequestTeamsEarlyAccessCallToAction = ({
   const netlifyFormName = FORM_NAMES.requestTeamsEarlyAccess;
   const buttonText = 'Request early access';
 
+  const clearForm = () => {
+    setName('');
+    setEmail('');
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -83,6 +88,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
       console.log('error', resp);
     }
 
+    clearForm();
     setSubmitting(false);
   };
 

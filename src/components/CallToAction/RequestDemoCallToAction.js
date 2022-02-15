@@ -62,6 +62,11 @@ const RequestDemoCallToAction = ({
   const netlifyFormName = FORM_NAMES.requestDemo;
   const buttonText = 'Request a demo';
 
+  const clearForm = () => {
+    setName('');
+    setEmail('');
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -83,6 +88,7 @@ const RequestDemoCallToAction = ({
       console.log('error', resp);
     }
 
+    clearForm();
     setSubmitting(false);
   };
 
