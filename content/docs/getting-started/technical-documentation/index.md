@@ -1,6 +1,7 @@
 ---
 title: Using TechDocs
 publishedDate: '2022-01-30T21:00:00.0Z'
+updatedAt: '2022-15-15T13:00:00.0Z'
 description: How to add technical documentation to components tracked in Backstage.
 ---
 
@@ -92,6 +93,13 @@ To view your documentation in Backstage, first find the service in your service 
 On the Overview page, click Docs in the tab bar. You should now see your documentation.
 
 ![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
+
+## Customize graphs in TechDocs
+
+When using mkdocs with TechDocs, base used for defaults such as plugins, theming etc are contained in ![mkdocs-techdocs-core](https://github.com/backstage/mkdocs-techdocs-core)
+plugin. This means markdown-inline-graphviz extension is being used to replace Graphviz definitions with inline SVGs or PNGs. As long as `graphviz` is available in the environment
+where the docs are generated this will work out of the box, but in order to customize the look you need to use the ![Graphviz]![attributes](https://graphviz.org/doc/info/attrs.html).
+
 
 ## Adding more docs
 
