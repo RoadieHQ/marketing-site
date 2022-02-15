@@ -96,9 +96,9 @@ On the Overview page, click Docs in the tab bar. You should now see your documen
 
 ## Customize graphs in TechDocs
 
-When using mkdocs with TechDocs, base used for defaults such as plugins, theming etc are contained in ![mkdocs-techdocs-core](https://github.com/backstage/mkdocs-techdocs-core)
+When using mkdocs with TechDocs, base used for defaults such as plugins, theming etc are contained in [mkdocs-techdocs-core](https://github.com/backstage/mkdocs-techdocs-core)
 plugin. This means markdown-inline-graphviz extension is being used to replace Graphviz definitions with inline SVGs or PNGs. As long as `graphviz` is available in the environment
-where the docs are generated this will work out of the box, but in order to customize the look you need to use the ![Graphviz]![attributes](https://graphviz.org/doc/info/attrs.html).
+where the docs are generated this will work out of the box, but in order to customize the look you need to use the [Graphviz attributes](https://graphviz.org/doc/info/attrs.html).
 
 
 ## Adding more docs
