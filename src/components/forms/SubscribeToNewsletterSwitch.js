@@ -3,7 +3,7 @@ import React from 'react';
 import Switch from './Switch';
 
 const SubscribeToNewsletterSwitch = ({ checked, onChange }) => (
-  <div className="sm:col-span-2">
+  <div className="sm:col-span-2 mt-4">
     <div className="flex items-start">
       <div className="flex-shrink-0">
         <Switch
