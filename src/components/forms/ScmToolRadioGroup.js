@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Radio from './Radio';
+import HelpText from './HelpText';
 
 export const SCM_TOOLS = [{
   value: 'github-cloud',
@@ -38,7 +39,7 @@ const ScmToolRadioGroup = ({
   label = 'Primary source code hosting tool',
   idPrefix = '',
 }) => (
-  <fieldset className="sm:col-span-2">
+  <fieldset className="sm:col-span-2 mt-4">
     <legend className="block text-sm font-medium text-gray-700">{label}</legend>
 
     <div className="mt-4 grid grid-cols-1 gap-y-4">
@@ -53,6 +54,7 @@ const ScmToolRadioGroup = ({
           id={`${idPrefix}scm-${value}-input`}
         />
       ))}
+      <HelpText message="Roadie only supports GitHub Cloud for now. Submit the form to be notified when we support your tool." />
     </div>
   </fieldset>
 );

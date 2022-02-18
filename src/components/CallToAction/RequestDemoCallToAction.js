@@ -133,7 +133,7 @@ const RequestDemoCallToAction = ({
         onChange={setSubToNewsletter}
       />
 
-      <div className="sm:col-span-2">
+      <div className="sm:col-span-2 mt-4">
         <Button
           type="submit"
           color="primary"
