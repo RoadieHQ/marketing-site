@@ -96,9 +96,43 @@ On the Overview page, click Docs in the tab bar. You should now see your documen
 
 ## Customize graphs in TechDocs
 
-When using mkdocs with TechDocs, base used for defaults such as plugins, theming etc are contained in [mkdocs-techdocs-core](https://github.com/backstage/mkdocs-techdocs-core)
-plugin. This means markdown-inline-graphviz extension is being used to replace Graphviz definitions with inline SVGs or PNGs. As long as `graphviz` is available in the environment
-where the docs are generated this will work out of the box, but in order to customize the look you need to use the [Graphviz attributes](https://graphviz.org/doc/info/attrs.html).
+In order to customize the look of the graphs you will need to use the [Graphviz attributes](https://graphviz.org/doc/info/attrs.html). Setting different values for specific set of attributes will result in graph being rendered that way. For example, let's say we want to change background color from white to lightblue in following graph: 
+
+![white graph background](./white-graph.png)
+
+which could be defined in TechDocs with following code:
+
+```
+{% dot attack_plan.svg
+    digraph G {
+        rankdir=LR
+        Earth [peripheries=2]
+        Mars
+        Earth -> Mars
+    }
+%}
+```
+
+Adding 'bgcolor' attribute in the Graphviz code above (so its final form is):
+
+```
+{% dot attack_plan.svg
+    digraph G {
+        bgcolor="lightblue"
+        rankdir=LR
+        Earth [peripheries=2]
+        Mars
+        Earth -> Mars
+    }
+%}
+```
+
+will result in graph being rendered in lightblue color.
+
+
+![lightblue graph in techdocs](./lightblue-graph.png)
+
+This way you can customize the graph adding or removing any attribute you want. 
 
 
 ## Adding more docs
