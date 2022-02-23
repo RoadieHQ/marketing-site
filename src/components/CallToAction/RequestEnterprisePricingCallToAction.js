@@ -104,6 +104,7 @@ const RequestEnterprisePricingCallToAction = ({
     <Form
       onSubmit={onSubmit}
       name={netlifyFormName}
+      buttonText={buttonText}
       onHoneypotChange={setHoneypotText}
       honeypotValue={honeypotText}
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
