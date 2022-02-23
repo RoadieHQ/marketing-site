@@ -1,6 +1,6 @@
 ---
 title: Required annotations
-publishedDate: '2022-02-124T09:00:00.0Z'
+publishedDate: '2022-02-24T09:00:00.0Z'
 description: List of needed annotations for each plugin.
 ---
 
