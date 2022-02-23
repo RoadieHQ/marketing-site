@@ -1,6 +1,7 @@
 ---
 title: Using TechDocs
 publishedDate: '2022-01-30T21:00:00.0Z'
+updatedAt: '2022-02-21T13:00:00.0Z'
 description: How to add technical documentation to components tracked in Backstage.
 ---
 
@@ -92,6 +93,47 @@ To view your documentation in Backstage, first find the service in your service 
 On the Overview page, click Docs in the tab bar. You should now see your documentation.
 
 ![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
+
+## Customize graphs in TechDocs
+
+In order to customize the look of the graphs you will need to use the [Graphviz attributes](https://graphviz.org/doc/info/attrs.html). Setting different values for specific set of attributes will result in graph being rendered that way. For example, let's say we want to change background color from white to lightblue in following graph: 
+
+![white graph background](./white-graph.png)
+
+which could be defined in TechDocs with following code:
+
+```
+{% dot attack_plan.svg
+    digraph G {
+        rankdir=LR
+        Earth [peripheries=2]
+        Mars
+        Earth -> Mars
+    }
+%}
+```
+
+Adding 'bgcolor' attribute in the Graphviz code above (so its final form is):
+
+```
+{% dot attack_plan.svg
+    digraph G {
+        bgcolor="lightblue"
+        rankdir=LR
+        Earth [peripheries=2]
+        Mars
+        Earth -> Mars
+    }
+%}
+```
+
+will result in graph being rendered in lightblue color.
+
+
+![lightblue graph in techdocs](./lightblue-graph.png)
+
+This way you can customize the graph adding or removing any attribute you want. 
+
 
 ## Adding more docs
 
