@@ -100,6 +100,7 @@ const RequestDemoCallToAction = ({
       name={netlifyFormName}
       onHoneypotChange={setHoneypotText}
       honeypotValue={honeypotText}
+      buttonText={buttonText}
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
       <TextField

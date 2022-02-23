@@ -17,6 +17,8 @@ const EmailCaptureForm = ({
   submitting = false,
   netlifyFormName,
   className = 'md:justify-center',
+  honeypotValue,
+  setHoneypotText,
 }) => {
   const disabled = submitting || !email || email === '';
 
@@ -25,6 +27,9 @@ const EmailCaptureForm = ({
     <Form
       onSubmit={onSubmit}
       name={netlifyFormName}
+      buttonText={buttonText}
+      honeypotValue={honeypotValue}
+      onHoneypotChange={setHoneypotText}
     >
       <div className={classnames('flex flex-col lg:flex-row', className)}>
         <div className="mb-4 lg:mb-0">
@@ -44,7 +49,7 @@ const EmailCaptureForm = ({
           />
         </div>
 
-        <div className="md:ml-1">
+        <div className="md:ml-1 mt-4">
           <Button
             text={buttonText}
             disabled={disabled}
