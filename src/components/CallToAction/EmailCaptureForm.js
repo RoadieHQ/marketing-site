@@ -49,7 +49,7 @@ const EmailCaptureForm = ({
           />
         </div>
 
-        <div className="md:ml-1">
+        <div className="md:ml-1 mt-4">
           <Button
             text={buttonText}
             disabled={disabled}
