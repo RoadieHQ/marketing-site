@@ -36,6 +36,7 @@ nav:
     - Sonarqube: '/docs/integrations/sonarqube/'
     - Travis ci: '/docs/integrations/travis-ci/'
     - Tech radar: '/docs/configuration/tech-radar/'
+    - Required annotations: '/docs/integrations/required-annotations'
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
