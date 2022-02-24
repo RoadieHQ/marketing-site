@@ -27,5 +27,7 @@ In order to use some of the plugins, you may need to add annotations in catalog-
 | @backstage/plugin-circleci |Circle CI  |circleci.com/project-slug |
 | @backstage/plugin-cloudbuild |CLoudbuild |google.com/cloudbuild-project-slug |
 | @backstage/plugin-jenkins | Jenkins |jenkins.io/github-folder |
-| @k-phoen/backstage-plugin-opsgenie |Opsgenie|opsgenie.com/component-selector |
+| @backstage/plugin-pagerduty | Pagerduty |pagerduty.com/integration-key |
 | @backstage/plugin-rollbar |Rollbar |rollbar.com/project-slug |
+| backstage-plugin-snyk | Snyk |'snyk.io/org-name' and 'snyk.io/project-ids' |
+| @k-phoen/backstage-plugin-opsgenie |Opsgenie|opsgenie.com/component-selector |
