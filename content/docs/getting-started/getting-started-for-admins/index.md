@@ -11,9 +11,9 @@ This tutorial will guide you through the steps required to set Roadie up for bas
  1. Have connected Roadie to your organization's GitHub account.
  2. Be an admin user of Roadie.
 
-### Whitelisting
+### Allow Listing
 
-If your IT department requires you to white list domains, please use the following:
+If your IT department requires an allow list of domains, please use the following:
 ```
 <yourtenant>.roadie.so
 *.roadie.systems
