@@ -11,6 +11,16 @@ This tutorial will guide you through the steps required to set Roadie up for bas
  1. Have connected Roadie to your organization's GitHub account.
  2. Be an admin user of Roadie.
 
+### Whitelisting
+
+If your IT department requires you to white list domains, please use the following:
+```
+<yourtenant>.roadie.so
+*.roadie.systems
+```
+
+If your IT department requires IP addresses, this can be provided to you by one of our support assistants.
+
 ## Step 1: Install the Roadie GitHub app
 
 Installing the GitHub App will allow Roadie to access the YAML metadata files that Backstage needs to operate. Learn more about the [permissions required](/docs/integrations/github-app-permissions/).
