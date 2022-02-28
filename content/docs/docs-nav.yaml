@@ -37,6 +37,7 @@ nav:
     - Travis ci: '/docs/integrations/travis-ci/'
     - Tech radar: '/docs/configuration/tech-radar/'
     - Required annotations: '/docs/integrations/required-annotations'
+    - Cortex: '/docs/integrations/cortex'
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
