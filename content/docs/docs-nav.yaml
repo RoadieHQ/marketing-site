@@ -25,6 +25,7 @@ nav:
     - Github org: '/docs/integrations/github-org/'
     - Github token: '/docs/integrations/github-token/'
     - Google oauth client: '/docs/integrations/google-oauth-client/'
+    - Home Page: '/docs/integrations/home-page'
     - Jira: '/docs/integrations/jira/'
     - Kubernetes: '/docs/integrations/kubernetes/'
     - Newrelic: '/docs/integrations/newrelic/'
