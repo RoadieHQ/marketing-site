@@ -1,3 +1,5 @@
+const get = require('lodash/get');
+
 module.exports = [{
   resolve: 'gatsby-plugin-feed',
   options: {
@@ -15,37 +17,43 @@ module.exports = [{
     `,
 
     feeds: [{
-      serialize: ({ query: { site, allMarkdownRemark } }) => {
-        return allMarkdownRemark.edges.map((edge) => ({
-          title: edge.node.frontmatter.title,
-          date: edge.node.frontmatter.date,
-          description: edge.node.frontmatter.description,
-          url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-          guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-          custom_elements: [{
-            'content:encoded': edge.node.html,
-          }],
-        }));
+      serialize: ({ query: { site, blogs } }) => {
+        return blogs.edges.map(({ node }) => {
+          return {
+            title: node.title,
+            date: node.date,
+            description: get(node, 'description.childMarkdownRemark.rawMarkdownBody'),
+            url: site.siteMetadata.siteUrl + node.slug,
+            guid: site.siteMetadata.siteUrl + node.slug,
+            custom_elements: [{
+              'content:encoded': get(node, 'body.childMarkdownRemark.html'),
+            }],
+          };
+        });
       },
 
       query: `
         query AllBlogPostsForRss {
-          allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fileAbsolutePath: { regex: "/.+/blog/.+/" } }
+          blogs: allContentfulBlogPost(
+            sort: {fields: date, order: DESC}
+            filter: {tags: {ne: "newsletter"}}
           ) {
             edges {
               node {
-                html
+                date
+                slug
+                title
 
-                fields {
-                  slug
+                body {
+                  childMarkdownRemark {
+                    html
+                  }
                 }
 
-                frontmatter {
-                  date
-                  title
-                  description
+                description {
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
                 }
               }
             }
