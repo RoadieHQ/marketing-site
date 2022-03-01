@@ -105,3 +105,26 @@ Finally, don't forget to save your changes.
 
 ![Save sidebar](./save-sidebar.jpg)
 
+## Updating the home page
+
+To edit the home page click the cog icon on the top right of the dashboard below the header.
+
+![Edit Home Page Button](./edit-home-page-button.png)
+
+This will switch the home page into an edit view. You can drag and drop to rearrange or resize, click the dust-bin icon 
+to remove a card then click the save icon.
+
+![Edit home page view](./edit-home-page-view.png)
+
+To add a card click the plus icon in the menu on the top right.
+
+![Add home page card button](./add-home-page-card-button.png)
+
+Then select the card to add and click "Add".
+
+![Add home page card dialog](./add-home-page-card-dialog.png)
+
+You can adjust the position of the new card as above. When you're finished don't forget to save your changes!
+
+![Save home page button](./save-home-page-button.png)
+
