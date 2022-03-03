@@ -17,9 +17,15 @@ Contact us to get added to our private and secure plugin artefact repository.
 
 ### Step 1. Get credentials
 
-Get your credentials for the npm registry. Follow [this link][forgot-password] and click "Forgot password?" to reset your password. The username is
+Get your credentials for the npm registry. 
+
+Follow [this link][forgot-password] and click "Forgot password?" to reset your password. The username is
 `<your-company>-roadie`. This will send a reset link to the email we have associated with your account. You can
-change this email as you wish.
+change this email as you wish. 
+
+When you follow the link in this email you will be asked to enter the new password. Then you will be asked to configure
+MFA. This is only required using the web interface. While the Artifactory UI suggests you must use Google Authenticator 
+other applications are accepted. We have tested with 1Password for example.
 
 ### Step 2. Configure NPM
 
