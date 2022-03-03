@@ -14,12 +14,12 @@ const EnterprisePricingTier = () => {
         <TierDescription description="A service catalog, developer portal, and paved path to production for every engineer in your company" />
 
         <div className="mt-6">
-          <p className="text-4xl font-extrabold text-gray-900">Let&apos;s Talk</p>
+          <p className="text-4xl font-extrabold text-gray-900">Let&apos;s talk</p>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-14">
           <Button
-            text="Get a quote"
+            text="Request a demo"
             link={true}
             color="primary"
             to="/pricing/enterprise/"
@@ -37,15 +37,14 @@ const EnterprisePricingTier = () => {
       />
 
       <TierIncludedFeatures
-        heading="Everything in Team, plus..."
+        heading="Everything in Pro, plus..."
         includedFeatures={[
+          'SLA',
+          '24/7 On-call',
+          'Slack and email support',
           'Scaffolder service creator',
-          'Tech radar',
-          'Kubernetes plugin',
-          'Bring your own private plugins',
-          'Slack and email Support',
-          'Single sign on',
-          'API access (coming soon)',
+          'Write your own private, custom plugins',
+          'API access',
         ]}
       />
     </div>
