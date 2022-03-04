@@ -142,8 +142,8 @@ const ExtendedGetInstanceCallToAction = ({
                 Evaluation License
               </Link>{' '}
               and acknowledge you have read our{' '}
-              <Link to="/legal-notices/privacy-policy/" className="font-medium text-gray-700 underline">
-                Privacy Policy
+              <Link to="/legal-notices/privacy-notice/" className="font-medium text-gray-700 underline">
+                Privacy Notice
               </Link>
               .
             </p>

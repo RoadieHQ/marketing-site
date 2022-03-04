@@ -32,8 +32,8 @@ const LegalNoticeSidebar = () => (
       />
 
       <SidebarItem
-        to="/legal-notices/privacy-policy/"
-        text="Privacy Policy"
+        to="/legal-notices/privacy-notice/"
+        text="Privacy Notice"
         partiallyActive={true}
       />
 
