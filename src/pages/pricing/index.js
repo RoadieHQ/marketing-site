@@ -15,7 +15,7 @@ const Pricing = ({
   <>
     <SEO
       title={`Pricing | ${siteTitle}`}
-      description="Roadie is FREE for teams."
+      description="Hosted Backstage solution pricing from Roadie. Simple, flexible pricing options to fit your Backstage needs. Free Trial."
     />
 
     <SitewideHeader />

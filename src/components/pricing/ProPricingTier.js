@@ -16,10 +16,10 @@ const ProPricingTier = () => {
         <div className="mt-6">
           <div>
             <span className="text-4xl font-extrabold text-gray-900">$14</span>
-            <span className="text-2xl text-gray-500">/user/mo</span>
+            <span className="text-2xl text-gray-500">/dev/mo</span>
           </div>
           <div>
-            <p className="text-sm text-gray-500">10 seats minimum</p>
+            <p className="text-sm text-gray-500">10 dev minimum</p>
           </div>
         </div>
 
@@ -36,7 +36,6 @@ const ProPricingTier = () => {
       <TierLimitations
         limitations={[
           'Unlimited software components tracked.',
-          'Unlimited scaffolder templates.',
           'Unlimited API specs.',
           'Unlimited TechDocs',
         ]}
