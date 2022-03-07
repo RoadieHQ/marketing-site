@@ -16,6 +16,15 @@ You'll need a Grafana account with an API key and the url of your Grafana UI and
 
 ## Adding the plugin
 
+### Configure the Grafana endpoints
+
+Configure the grafana endpoints to use via `Administration -> Settings -> Grafana`. If you're using grafana.net your
+frontend and backend endpoints should be the same e.g. `https://<your-company>.grafana.net/`. If you're using hosting
+grafana yourself you'll need to specify a url to the frontend which is used by backstage to generate links and an API
+endpoint which the plugin uses to query alerts and dashboards. 
+
+![grafana-config.png](./grafana-config.png)
+
 ### Add the Grafana secrets
 
 First, add the `GRAFANA_API_KEY` secret via `Administration -> Settings -> Secrets`. Note you'll
