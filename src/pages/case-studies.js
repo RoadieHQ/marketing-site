@@ -69,39 +69,30 @@ export default CaseStudiesIndex;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/.+/case-studies/.+/" } }
+    allContentfulCaseStudy(
+      sort: {fields: date, order: DESC}
+      filter: {tags: {eq: "case-study"}}
     ) {
       edges {
         node {
-          timeToRead
-          fields {
-            slug
+          description {
+            childMarkdownRemark {
+              rawMarkdownBody
+            }
           }
+          date
+          author {
+            name
+            avatar {
+              gatsbyImageData(layout: FIXED, width: 40)
+            }
+          }
+          slug
+          title
 
-          frontmatter {
-            date
+          coverImage {
+            gatsbyImageData(height: 192)
             title
-            description
-            author {
-              name
-              avatar {
-                childImageSharp {
-                  gatsbyImageData(layout: FIXED, width: 40)
-                }
-              }
-            }
-
-            logo {
-              alt
-              backgroundColor
-              image {
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH)
-                }
-              }
-            }
           }
         }
       }
