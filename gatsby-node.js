@@ -115,17 +115,12 @@ exports.createPages = async ({ graphql, actions }) => {
     resultName: 'caseStudies.edges',
     actions,
     graphql,
-    processor: ({ node }, component, allEdges, index) => {
-      const previous = index === allEdges.length - 1 ? null : allEdges[index + 1].node;
-      const next = index === 0 ? null : allEdges[index - 1].node;
-
+    processor: ({ node }, component) => {
       return {
-        path: node.fields.slug,
+        path: `/case-studies/${node.slug}/`,
         component,
         context: {
-          slug: node.fields.slug,
-          previous,
-          next,
+          slug: node.slug,
         },
       };
     },

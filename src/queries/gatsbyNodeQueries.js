@@ -24,21 +24,16 @@ module.exports.BACKSTAGE_BITES_QUERY = `
 
 module.exports.CASE_STUDIES_QUERY = `
 {
-  caseStudies: allMarkdownRemark(
+  caseStudies: allContentfulCaseStudy(
     sort: {
-      fields: [frontmatter___date],
+      fields: [date],
       order: DESC
     },
     limit: 1000,
-    filter: {
-      fileAbsolutePath: {regex: "/.+content/case-studies/.+/"}
-    }
   ) {
     edges {
       node {
-        fields {
-          slug
-        }
+        slug
       }
     }
   }
