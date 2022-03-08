@@ -67,7 +67,7 @@ const CaseStudiesIndex = ({ data: { caseStudies, site } }) => {
       <SEO
         title={`Roadie Backstage case studies | ${siteTitle}`}
         description={`
-          Learn how enginereing organizations are adopting Spotify Backstage. Through Roadie or natively.
+          Learn how engineereing organizations are adopting Spotify Backstage. Through Roadie or natively.
         `}
       />
 
@@ -76,7 +76,7 @@ const CaseStudiesIndex = ({ data: { caseStudies, site } }) => {
           title="Case studies"
           description={
             <>
-              Learn how enginering organizations are adopting and benefiting from Backstage & Roadie. Want a high-level intro to Backstage? Check out our <Link to="/backstage-spotify/" color="primary">Ultimate Guide</Link>.
+              Learn how engineering organizations are adopting and benefiting from Backstage & Roadie. Want a high-level intro to Backstage? Check out our <Link to="/backstage-spotify/" color="primary">Ultimate Guide</Link>.
             </>
           }
         />
