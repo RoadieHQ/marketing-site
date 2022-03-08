@@ -1,47 +1,73 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import get from 'lodash/get';
 
 import { SEO, Page, TextLink as Link } from 'components';
 import { Attribution, TitleAndDescription, ListHeader } from 'components/article';
 
+const LogoImage = ({ caseStudy, backgroundColor }) => {
+  const images = get(caseStudy, 'logo.gatsbyImageData.images');
+  const className = 'h-48 w-full object-contain';
+  if (!images) return <div className={className} />
+
+  return (
+    <img
+      className={className}
+      style={{ backgroundColor }}
+      srcSet={images.sources[0].srcSet}
+      sizes={images.sources[0].sizes}
+      src={images.fallback.src}
+      alt={caseStudy.logo.title}
+    />
+  );
+};
+
 const CaseStudySummary = ({ study }) => {
-  const logoBackgroundColor = get(study, 'frontmatter.logo.backgroundColor', null);
+  const logoBackgroundColor = get(study, 'logoBackgroundColorHex', null);
+
+  // This will be cleaned up once the remaining content pieces (excluding docs) are migrated
+  // to Contentful.
+  const shimmedCaseStudy = {
+    frontmatter: {
+      title: study.title,
+      description: study.description.childMarkdownRemark.rawMarkdownBody,
+      author: study.author,
+      date: study.date,
+    },
+
+    fields: {
+      slug: `/case-studies/${study.slug}/`,
+    },
+
+    timeToRead: study.body.childMarkdownRemark.timeToRead,
+  };
 
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
       <div className="flex-shrink-0">
-        <GatsbyImage
-          className="h-48 w-full"
-          image={study.frontmatter.logo.image.childImageSharp.gatsbyImageData}
-          backgroundColor={logoBackgroundColor}
-          alt={study.frontmatter.logo.alt}
-          objectFit="contain"
-        />
+        <LogoImage caseStudy={study} backgroundColor={logoBackgroundColor} />
       </div>
 
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
-          <TitleAndDescription post={study} />
+          <TitleAndDescription post={shimmedCaseStudy} />
         </div>
 
-        <Attribution post={study} />
+        <Attribution post={shimmedCaseStudy} />
       </div>
     </div>
   );
 };
 
-const CaseStudiesIndex = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges;
-  const siteTitle = data.site.siteMetadata.title;
+const CaseStudiesIndex = ({ data: { caseStudies, site } }) => {
+  const siteTitle = site.siteMetadata.title;
 
   return (
     <>
       <SEO
-        title={`Backstage case studies | ${siteTitle}`}
+        title={`Roadie Backstage case studies | ${siteTitle}`}
         description={`
-          Learn how organizations around the world are adopting and benefiting from Backstage.
+          Learn how engineereing organizations are adopting Spotify Backstage. Through Roadie or natively.
         `}
       />
 
@@ -50,14 +76,14 @@ const CaseStudiesIndex = ({ data }) => {
           title="Case studies"
           description={
             <>
-              Learn how organizations around the world are adopting and benefiting from Backstage. Want a high-level intro to Backstage? Check out our <Link to="/backstage-spotify/" color="primary">Ultimate Guide</Link>.
+              Learn how engineering organizations are adopting and benefiting from Backstage & Roadie. Want a high-level intro to Backstage? Check out our <Link to="/backstage-spotify/" color="primary">Ultimate Guide</Link>.
             </>
           }
         />
 
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          {posts.map(({ node }) => (
-            <CaseStudySummary key={node.fields.slug} study={node} />
+          {caseStudies.edges.map(({ node }) => (
+            <CaseStudySummary key={node.slug} study={node} />
           ))}
         </div>
       </Page>
@@ -68,40 +94,37 @@ const CaseStudiesIndex = ({ data }) => {
 export default CaseStudiesIndex;
 
 export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/.+/case-studies/.+/" } }
+  query CaseStudyIndex {
+    caseStudies: allContentfulCaseStudy(
+      sort: {fields: date, order: DESC}
     ) {
       edges {
         node {
-          timeToRead
-          fields {
-            slug
+          description {
+            childMarkdownRemark {
+              rawMarkdownBody
+            }
+          }
+          date
+          author {
+            name
+            avatar {
+              gatsbyImageData(layout: FIXED, width: 40)
+            }
+          }
+          slug
+          title
+          logoBackgroundColorHex
+
+          body {
+            childMarkdownRemark {
+              timeToRead
+            }
           }
 
-          frontmatter {
-            date
+          logo {
+            gatsbyImageData(height: 192)
             title
-            description
-            author {
-              name
-              avatar {
-                childImageSharp {
-                  gatsbyImageData(layout: FIXED, width: 40)
-                }
-              }
-            }
-
-            logo {
-              alt
-              backgroundColor
-              image {
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH)
-                }
-              }
-            }
           }
         }
       }

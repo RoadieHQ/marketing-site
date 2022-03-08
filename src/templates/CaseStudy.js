@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import {
-  SEO,
-  ContentHeader,
-  SitewideHeader,
-  SitewideFooter,
-} from 'components';
+import { SEO, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
 
-const CaseStudyTemplate = ({ data }) => {
-  const post = data.markdownRemark;
-  const { title: siteTitle } = data.site.siteMetadata;
+const CaseStudyTemplate = ({ data: { site, caseStudy } }) => {
+  const { title: siteTitle } = site.siteMetadata;
 
   const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
@@ -27,8 +21,8 @@ const CaseStudyTemplate = ({ data }) => {
   return (
     <>
       <SEO
-        title={`${post.frontmatter.title} | ${siteTitle}`}
-        description={post.frontmatter.description || post.excerpt}
+        title={`${caseStudy.title} | ${siteTitle}`}
+        description={caseStudy.description}
       />
 
       <SitewideHeader />
@@ -36,19 +30,24 @@ const CaseStudyTemplate = ({ data }) => {
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
-        siteMetadata={data.site.siteMetadata}
+        siteMetadata={site.siteMetadata}
         email={email}
       />
 
       <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
         <article className="relative max-w-lg mx-auto lg:max-w-2xl mb-24">
           <div className="mb-8">
-            <ContentHeader frontmatter={post.frontmatter} />
+            <ContentHeader
+              frontmatter={{
+                title: caseStudy.title,
+                date: caseStudy.date,
+                author: caseStudy.author,
+              }} />
           </div>
 
           <section
             className="prose prose-primary max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.html }}
+            dangerouslySetInnerHTML={{ __html: caseStudy.body.childMarkdownRemark.html }}
           />
         </article>
 
@@ -82,19 +81,21 @@ export const pageQuery = graphql`
       }
     }
 
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-
-      frontmatter {
-        title
-        date
-        description
-        author {
-          name
+    caseStudy: contentfulCaseStudy(slug: { eq: $slug }) {
+      body {
+        childMarkdownRemark {
+          html
         }
       }
+
+      date
+      author {
+        name
+        avatar {
+          gatsbyImageData(layout: FIXED, width: 40)
+        }
+      }
+      title
     }
   }
 `;
