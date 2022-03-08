@@ -18,9 +18,9 @@ You'll need a Grafana account with an API key and the url of your Grafana UI and
 
 ### Configure the Grafana endpoints
 
-Configure the grafana endpoints to use via `Administration -> Settings -> Grafana`. If you're using grafana.net your
+Configure the Grafana endpoints to use via `Administration -> Settings -> Grafana`. If you're using grafana.net your
 frontend and backend endpoints should be the same e.g. `https://<your-company>.grafana.net/`. If you're using hosting
-grafana yourself you'll need to specify a url to the frontend which is used by backstage to generate links and an API
+Grafana yourself you'll need to specify a url to the frontend which is used by backstage to generate links and an API
 endpoint which the plugin uses to query alerts and dashboards. 
 
 ![grafana-config.png](./grafana-config.png)
@@ -40,9 +40,9 @@ add components to the UI.
 The `EntityGrafanaDashboardsCard` and `EntityGrafanaAlertsCard` components can be [added to catalog dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards). These
 list dashboards and alerts respectively.
 
-### Set the grafana annotation on entities
+### Set the Grafana annotation on entities
 
-The grafana plugin uses an annotation to link entities in the Backstage catalog to data in Grafana. This annotation should
+The Grafana plugin uses an annotation to link entities in the Backstage catalog to data in Grafana. This annotation should
 have a tag in Grafana as its value. Any alerts or dashboards with this tag will be displayed once the annotation is set and 
 the components added to the UI.
 
