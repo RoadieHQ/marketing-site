@@ -16,7 +16,7 @@
 # Supporting a legacy URL scheme which existed when the site was first published.
 [[redirects]]
   from = "/privacy/"
-  to = "/legal-notices/privacy-policy/"
+  to = "/legal-notices/privacy-notice/"
   force = true
 
 [[redirects]]

@@ -27,7 +27,7 @@ const navigation = {
 
   legalSecurity: [
     { name: 'Terms', href: '/legal-notices/terms-of-service/' },
-    { name: 'Privacy', href: '/legal-notices/privacy-policy/' },
+    { name: 'Privacy', href: '/legal-notices/privacy-notice/' },
     { name: 'Cookies', href: '/legal-notices/cookies-policy/' },
     { name: 'Responsible Disclosure', href: '/security/responsible-disclosure/' },
   ],
