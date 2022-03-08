@@ -15,8 +15,6 @@ import RequestDemoButton from './RequestDemoButton';
 import OpenMenuButton from './OpenMenuButton';
 import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
-import Unconference from "../TopBanner/Unconference";
-import TopBanner from "../TopBanner";
 
 const learn = [{
   name: 'Backstage Bites',
@@ -53,10 +51,6 @@ const learn = [{
 const SitewideHeader = ({ maxWidth = '7xl' }) => {
   return (
     <>
-      <TopBanner>
-        <Unconference />
-      </TopBanner>
-
       <Popover className="relative bg-white z-20">
         <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
           <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
