@@ -11,7 +11,7 @@ import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import SubmissionSuccessModal from 'components/free-trial/SubmissionSuccessModal';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 
-const SEO_TITLE = 'Get a SaaS Backstage trial';
+const SEO_TITLE = 'Try hosted Spotify Backstage for free';
 
 const RequestTrial = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -31,7 +31,7 @@ const RequestTrial = ({ data, location }) => {
     <>
       <SEO
         title={`${SEO_TITLE} | ${siteTitle}`}
-        description="Get a SaaS Backstage experience from Roadie. We handle hosting and maintenance and let you get back to your customers."
+        description="We handle hosting and maintenance and let you get back to your customers. No credit card required."
       />
 
       <SubmissionSuccessModal
@@ -47,7 +47,7 @@ const RequestTrial = ({ data, location }) => {
 
         <FormWithLeftSidebar
           title="Free trial"
-          description="Try Roadie Backstage free for 14 days."
+          description="Try Roadie Backstage free for 30 days. No credit card required. Get set up in hours."
           sidebarChildren={<Testimonial />}
         >
           <ExtendedGetInstanceCallToAction

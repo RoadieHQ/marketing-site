@@ -8,10 +8,10 @@ import {
   AcademicCapIcon,
   PlayIcon,
 } from '@heroicons/react/outline';
+import { Button } from 'components';
 
 import Logo from '../Logo';
 import TopNavItem from './TopNavItem';
-import RequestDemoButton from './RequestDemoButton';
 import OpenMenuButton from './OpenMenuButton';
 import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
@@ -48,35 +48,48 @@ const learn = [{
   icon: ChatIcon,
 }];
 
-const SitewideHeader = ({ maxWidth = '7xl' }) => {
-  return (
-    <>
-      <Popover className="relative bg-white z-20">
-        <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
-          <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+const isLandingPage = (location) => {
+  if (!location) return false;
+  if (location.pathname !== '/') return false;
+  return true;
+};
 
-            <Logo />
+const SitewideHeader = ({ maxWidth = '7xl', location }) => (
+  <>
+    <Popover className="relative bg-white z-20">
+      <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
+        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
 
-            <div className="-mr-2 -my-2 md:hidden">
-              <OpenMenuButton />
-            </div>
+          <Logo />
 
-            <Popover.Group as="nav" className="hidden md:flex space-x-10">
-              <TopNavItem to="/#product" text="Product" />
-              <TopNavItem to="/#solutions" text="Solutions" />
-              <TopNavItem to="/pricing/" text="Pricing" />
-              <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
-              <TopNavDropdownItem text="Learn" subItems={learn} />
-            </Popover.Group>
+          <div className="-mr-2 -my-2 md:hidden">
+            <OpenMenuButton />
+          </div>
 
-            <RequestDemoButton />
+          <Popover.Group as="nav" className="hidden md:flex space-x-10">
+            <TopNavItem to="/#product" text="Product" />
+            <TopNavItem to="/#solutions" text="Solutions" />
+            <TopNavItem to="/pricing/" text="Pricing" />
+            <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
+            <TopNavDropdownItem text="Learn" subItems={learn} />
+          </Popover.Group>
+
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            {!isLandingPage(location) && (
+              <Button
+                link={true}
+                color="primary"
+                to="/free-trial/"
+                text="Try it free"
+              />
+            )}
           </div>
         </div>
+      </div>
 
-        <DrawerMenu />
-      </Popover>
-    </>
-  );
-};
+      <DrawerMenu />
+    </Popover>
+  </>
+);
 
 export default SitewideHeader;
