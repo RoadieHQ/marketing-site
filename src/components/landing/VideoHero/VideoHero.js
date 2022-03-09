@@ -40,12 +40,13 @@ const VideoHero = () => {
             <div className="lg:grid lg:grid-cols-12 lg:gap-8">
               <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
                 <Headline className="tracking-right mt-1">
-                  <span className="block text-gray-900">Backstage for</span>
-                  <span className="block text-primary-600">scale-ups</span>
+                  <span className="text-gray-900">Discoverability for</span>
+                  <span className="block text-gray-900">high performance</span>
+                  <span className="block text-gray-900">dev teams</span>
                 </Headline>
 
                 <SubTitle
-                  text="Roadie&apos;s SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features."
+                  text="The easiest and fastest way to set up Spotify's Backstage developer portal and service catalog in your org."
                 />
 
                 <div className="mt-5 sm:flex sm:justify-center lg:justify-start md:mt-8">

@@ -46,7 +46,7 @@ import PagerDutyLogo from '../../content/assets/logos/pagerduty/pagerduty.inline
 import ArgoLogo from '../../content/assets/logos/argo-cd/argo.inline.svg';
 import JiraSoftwareLogo from '../../content/assets/logos/jira/jira.inline.svg';
 
-const SEO_TITLE = 'SaaS Backstage hosting';
+const SEO_TITLE = 'The easiest way to get Spotify Backstage';
 const LEAD = `
 Roadie's SaaS platform handles hosting and upgrades and ensures
 you always have access to the latest Backstage features.
@@ -54,8 +54,8 @@ you always have access to the latest Backstage features.
 
 const PRODUCT = {
   htmlId: 'product',
-  title: 'Backstage with benefits...',
-  description: `We're building on top of Backstage, making it simple to set up and maintenance free.`,
+  title: 'Spotify Backstage, with benefits...',
+  description: `SaaS Backstage is simple to set up and maintenance free.`,
   features: [{
     title: 'Quick and easy setup',
     description: 'Customize Backstage in a couple of clicks. Drag plugins to where you want them. Add new ones instantly.',
@@ -209,16 +209,17 @@ const Home = ({
       },
     },
   },
+  location,
 }) => (
   <>
     <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
-    <SitewideHeader />
+    <SitewideHeader location={location} />
     <VideoHero />
     <CustomerLogoCloud />
-    <AlternatingFeatureBlock content={PRODUCT} />
-    <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
     <AlternatingFeatureBlock content={SOLUTIONS} />
+    <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
+    <AlternatingFeatureBlock content={PRODUCT} />
 
     <FooterCTA />
     <SitewideFooter />
