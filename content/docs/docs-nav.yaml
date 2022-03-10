@@ -27,6 +27,7 @@ nav:
     - Google oauth client: '/docs/integrations/google-oauth-client/'
     - Grafana: '/docs/integrations/grafana/'
     - Home Page: '/docs/integrations/home-page'
+    - Home Page Markdown: '/docs/integrations/home-page-markdown'
     - Jira: '/docs/integrations/jira/'
     - Kubernetes: '/docs/integrations/kubernetes/'
     - Newrelic: '/docs/integrations/newrelic/'
