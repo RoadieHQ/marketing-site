@@ -135,6 +135,24 @@ exports.createPages = async ({ graphql, actions }) => {
     itemsPerPage: 20,
   });
 
+  await createPagesFromQuery({
+    templatePath: './src/templates/ChangeSet.js',
+    query: CHANGELOG_QUERY,
+    resultName: 'result.edges',
+    actions,
+    graphql,
+    basePath: '/changelog/',
+    processor: ({ node }, component) => {
+      return {
+        path: `/changelog/${node.slug}/`,
+        component,
+        context: {
+          slug: node.slug,
+        },
+      };
+    },
+  });
+
   await createLatestLegalNotices({
     graphql,
     actions,

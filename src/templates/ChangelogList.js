@@ -39,12 +39,14 @@ const Changelog = ({
       />
 
       <ul className="container mt-12 mb-8">
-        {changeSets.map(({ node: { title, releasedAt, description } }) => (
+        {changeSets.map(({ node: { title, releasedAt, description, slug } }) => (
           <ChangeSet
             key={`${title} ${releasedAt}`}
             title={title}
             releasedAt={releasedAt}
             description={description && description.childMarkdownRemark}
+            slug={slug}
+            isCollapsible={true}
           />
         ))}
       </ul>
@@ -72,6 +74,7 @@ export const pageQuery = graphql`
         node {
           title
           releasedAt
+          slug
           description {
             childMarkdownRemark {
               html
