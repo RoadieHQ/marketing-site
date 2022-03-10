@@ -55,7 +55,7 @@ const changelogFeed = {
       return {
         title: node.title,
         date: node.releasedAt,
-        description: get(node, 'description.childMarkdownRemark.rawMarkdownBody'),
+        description: get(node, 'description.childMarkdownRemark.html'),
         url: site.siteMetadata.siteUrl + `/changelog/${node.slug}/`,
         guid: site.siteMetadata.siteUrl + `/changelog/${node.slug}/`,
         custom_elements: [{
@@ -78,7 +78,6 @@ const changelogFeed = {
             description {
               childMarkdownRemark {
                 html
-                rawMarkdownBody
               }
             }
           }
