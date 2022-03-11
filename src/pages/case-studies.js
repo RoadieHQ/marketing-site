@@ -7,7 +7,7 @@ import { Attribution, TitleAndDescription, ListHeader } from 'components/article
 
 const LogoImage = ({ caseStudy, backgroundColor }) => {
   const images = get(caseStudy, 'logo.gatsbyImageData.images');
-  const className = 'h-48 w-full object-contain';
+  const className = 'h-48 w-full object-contain p-8';
   if (!images) return <div className={className} />
 
   return (
