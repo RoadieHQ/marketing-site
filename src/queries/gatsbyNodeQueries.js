@@ -116,7 +116,7 @@ module.exports.CHANGELOG_QUERY = `
   ) {
     edges {
       node {
-        title
+        slug
       }
     }
   }

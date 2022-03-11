@@ -51,18 +51,18 @@ const blogFeed = {
 
 const changelogFeed = {
   serialize: ({ query: { site, changeSets } }) => {
-    return changeSets.edges.map(({ node }) => {
-      return {
-        title: node.title,
-        date: node.releasedAt,
-        description: get(node, 'description.childMarkdownRemark.rawMarkdownBody'),
-        url: site.siteMetadata.siteUrl + `/changelog/`,
-        guid: site.siteMetadata.siteUrl + `/changelog/${node.slug}/`,
-        custom_elements: [{
-          'content:encoded': get(node, 'description.childMarkdownRemark.html'),
-        }],
-      };
-    });
+    return changeSets.edges.map(({ node }) => ({
+      title: node.title,
+      date: node.releasedAt,
+      // This is plain so we can push it out in Slack messages, which do not support HTML
+      // or markdown.
+      description: get(node, 'description.childMarkdownRemark.excerpt'),
+      url: site.siteMetadata.siteUrl + `/changelog/${node.slug}/`,
+      guid: site.siteMetadata.siteUrl + `/changelog/${node.slug}/`,
+      custom_elements: [{
+        'content:encoded': get(node, 'description.childMarkdownRemark.html'),
+      }],
+    }));
   },
 
   query: `
@@ -78,7 +78,7 @@ const changelogFeed = {
             description {
               childMarkdownRemark {
                 html
-                rawMarkdownBody
+                excerpt(pruneLength: 160, format: PLAIN)
               }
             }
           }
