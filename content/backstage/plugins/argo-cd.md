@@ -22,7 +22,9 @@ coverImageAlt: 'A preview of Argo CD overview widget including kubernetes pod st
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
-    code: yarn add @roadiehq/backstage-plugin-argo-cd
+    code: |
+      cd packages/app
+      yarn add @roadiehq/backstage-plugin-argo-cd
   - intro: Add proxy config to the app-config.yaml file
     language: yaml
     code: |
@@ -35,11 +37,6 @@ gettingStarted:
           headers:
             Cookie:
               $env: ARGOCD_AUTH_TOKEN
-  - intro: Add plugin to the list of plugins
-    language: typescript
-    code: |
-      // packages/app/src/plugins.ts
-      export { argocdPlugin } from '@roadiehq/backstage-plugin-argo-cd';
   - intro: 'Add argoCD widget to your overview page'
     language: typescript
     code: | 
