@@ -46,7 +46,7 @@ const Changelog = ({
             releasedAt={releasedAt}
             description={description && description.childMarkdownRemark}
             slug={slug}
-            isCollapsible={true}
+            isCollapsible={false}
           />
         ))}
       </ul>
