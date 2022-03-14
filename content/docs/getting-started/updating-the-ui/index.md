@@ -34,7 +34,7 @@ of entity and so User entities have a different layout to Group entities. Simila
 as "Service", "Library", "Website", etc and different types can have different layouts. However, a particular entity can't
 have its own layout; A particular Group or service can't have a unique layout. This is to encourage a consistent UX.
 
-### Updating Tabs
+## Updating Tabs
 
 To add a tab click the plus icon at the end of the tab list.
 
@@ -57,7 +57,7 @@ Then drag and drop to rearrange or click the "x" icon to remove a tab then *clic
 
 ![Move tab](./move-tab.jpg)
 
-### Updating Dashboards
+## Updating Dashboards
 
 To edit a dashboard click the cog icon on the top right of the dashboard below the tab bar.
 
@@ -83,7 +83,7 @@ Entities will have one "Overview" dashboard by default but you can add others. S
 
 ![Add a dashboard](./add-dashboard.jpg)
 
-### Updating the Sidebar
+## Updating the Sidebar
 
 Page components are displayed in the sidebar. To edit the sidebar click the "Edit Sidebar" icon.
 
@@ -127,4 +127,19 @@ Then select the card to add and click "Add".
 You can adjust the position of the new card as above. When you're finished don't forget to save your changes!
 
 ![Save home page button](./save-home-page-button.png)
+
+## Adding props
+
+It is possible to add props to cards on the homepage and catalog dashboards. To do this, enter edit mode by clicking the
+cog icon and click the spanner icon for your desired card.
+
+![Edit props button](./edit-props-button.png)
+
+Currently, it is necessary to provide props **as JSON**. Once you have entered your props click the save icon in the card then
+again in the dashboard menu to save the layout.
+
+![Save props button](./save-props-button.png)
+
+
+
 
