@@ -78,7 +78,10 @@ const ChangeSet = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
 
-  const toggleOpen = () => setOpen(!isOpen);
+  const toggleOpen = () => {
+    console.log('toggleOpen', isOpen);
+    setOpen(!isOpen)
+  };
 
   return (
     <Wrapper isCollapsible={isCollapsible}>

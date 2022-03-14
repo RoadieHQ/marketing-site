@@ -39,6 +39,12 @@ const getContentfulHost = () => {
   return 'preview.contentful.com';
 };
 
+const getSiteUrl = () => {
+  const netlifySiteName = get(process.env, 'SITE_NAME');
+  if (netlifySiteName === 'roadie-preview') return 'https://preview.roadie.io';
+  return 'https://roadie.io';
+};
+
 const getContentfulOptions = () => {
   return {
     spaceId: `hcqpbvoqhwhm`,
@@ -58,7 +64,7 @@ module.exports = {
   siteMetadata: {
     title: SITE_TITLE,
     description: 'Hosted, managed, enterprise Backstage',
-    siteUrl: 'https://roadie.io',
+    siteUrl: getSiteUrl(),
     demoUrl: 'https://demo.roadie.so',
     sourceCodeUrl: 'https://github.com/RoadieHQ/marketing-site/blob/main',
     social: {
