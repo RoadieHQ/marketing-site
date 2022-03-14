@@ -64,6 +64,11 @@
   to = "/blog/modelling-software-backstage/"
   force = true
 
+[[redirects]]
+  from = "/docs/details/whitelisting-roadie-traffic/"
+  to = "/docs/details/allowlisting-roadie-traffic/"
+  force = true
+
 [build]
   publish = "public"
 

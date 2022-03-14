@@ -11,15 +11,9 @@ This tutorial will guide you through the steps required to set Roadie up for bas
  1. Have connected Roadie to your organization's GitHub account.
  2. Be an admin user of Roadie.
 
-### Allow Listing
+## Prerequisites
 
-If your IT department requires an allow list of domains, please use the following:
-```
-<yourtenant>.roadie.so
-*.roadie.systems
-```
-
-If your IT department requires IP addresses, this can be provided to you by one of our support assistants.
+If your IT department filters your outbound access by hostname, you may need to allow access to Roadie hostnames before proceeding. More information on this can be found [/docs/details/allowlisting-roadie-traffic/].
 
 ## Step 1: Install the Roadie GitHub app
 
