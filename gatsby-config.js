@@ -59,6 +59,7 @@ const getContentfulOptions = () => {
 // a server side variable into a runtime one. This variable is later used to determine which
 // branch of a split testing experiment we are on.
 process.env.GATSBY_GIT_BRANCH_NAME = process.env.BRANCH;
+process.env.GATSBY_NETLIFY_SITE_NAME = process.env.SITE_NAME;
 
 module.exports = {
   siteMetadata: {

@@ -73,15 +73,12 @@ const ChangeSet = ({
   releasedAt,
   description,
   title,
-  isCollapsible = false,
+  isCollapsible = true,
   slug,
 }) => {
   const [isOpen, setOpen] = useState(false);
 
-  console.log('Changeset', isOpen);
-
   const toggleOpen = () => {
-    console.log('toggleOpen', isOpen);
     setOpen(!isOpen)
   };
 
