@@ -3,6 +3,9 @@ site_name: Marketing Site
 nav:
   - Home: index.md
   - Customer facing docs: customer-facing-documentation.md
+  - Changelog: changelog.md
+  - Customer logos: customer-logos.md
+  - Legal notices: legal-notices.md
 
 plugins:
   - techdocs-core
