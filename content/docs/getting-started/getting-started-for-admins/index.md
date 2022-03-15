@@ -13,7 +13,7 @@ This tutorial will guide you through the steps required to set Roadie up for bas
 
 ## Prerequisites
 
-If your IT department filters your outbound access by hostname, you may need to allow access to Roadie hostnames before proceeding. More information on this can be found [/docs/details/allowlisting-roadie-traffic/].
+If your IT department filters your outbound access by hostname, you may need to allow access to Roadie hostnames before proceeding. More information on this can be found [here](/docs/details/allowlisting-roadie-traffic/).
 
 ## Step 1: Install the Roadie GitHub app
 
