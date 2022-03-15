@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import format from 'date-fns/format';
-import { TextLink as Link } from 'components';
+import { TextLink, Link } from 'components';
 
 const ReleasedAt = ({ releasedAt }) => (
   <time className="uppercase text-xs lg:text-sm leading-7 lg:pt-1 text-gray-500 font-bold md:w-32 lg:w-48 flex-shrink-0">
@@ -25,9 +25,9 @@ const Title = ({ isCollapsible, toggleOpen, title, slug }) => {
   if (!isCollapsible) return heading;
 
   return (
-    <button onClick={toggleOpen} className="text-left">
+    <Link to={`/changelog/${slug}`} role="button" onClick={toggleOpen} className="text-left">
       {heading}
-    </button>
+    </Link>
   );
 };
 
@@ -47,7 +47,7 @@ const CollapsiblePart = ({ description, isOpen, isCollapsible, slug }) => {
 
       {isCollapsible && (
         <div>
-          <Link to={`/changelog/${slug}`}>Permalink</Link>
+          <TextLink to={`/changelog/${slug}`}>Permalink</TextLink>
         </div>
       )}
     </div>
@@ -78,8 +78,9 @@ const ChangeSet = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
 
-  const toggleOpen = () => {
-    setOpen(!isOpen)
+  const toggleOpen = (e) => {
+    e.preventDefault();
+    setOpen(!isOpen);
   };
 
   return (
