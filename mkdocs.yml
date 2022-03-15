@@ -1,4 +1,4 @@
-site_name: 'marketing-site'
+site_name: Marketing Site
 
 nav:
   - Home: index.md
