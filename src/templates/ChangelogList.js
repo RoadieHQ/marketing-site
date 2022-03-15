@@ -13,7 +13,7 @@ import { ChangeSet, Pagination } from 'components/changelog';
 // problem, and I cannot expand the changelog items to check that the content looks as expected.
 // For this reason, I am using an env var to toggle off collapsing on the preview site but
 // nowhere else.
-// import { isPreviewSite } from '../environment';
+import { isPreviewSite } from '../environment';
 
 const Changelog = ({
   data: {
@@ -57,7 +57,7 @@ const Changelog = ({
             releasedAt={releasedAt}
             description={description && description.childMarkdownRemark}
             slug={slug}
-            isCollapsible={true}
+            isCollapsible={isPreviewSite() ? false : true}
           />
         ))}
       </ul>
