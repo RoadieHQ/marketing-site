@@ -6,6 +6,3 @@ nav:
   - Changelog: changelog.md
   - Customer logos: customer-logos.md
   - Legal notices: legal-notices.md
-
-plugins:
-  - techdocs-core
