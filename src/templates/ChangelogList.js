@@ -4,6 +4,17 @@ import { SEO, TextLink as Link, SitewideHeader, SitewideFooter } from 'component
 import { SimpleCenteredHeading } from 'components/landing';
 import { ChangeSet, Pagination } from 'components/changelog';
 
+// In the code below, this is used to prevent the changelog from being collapsed on the preview
+// site. There is basic authentication on the preview site (preview.roadie.io) to prevent it being
+// indexed by search engines. This basic authentication is preventing prefetching from working,
+// because the requests to prefetch content do not have the authentication information added.
+// For some reason I (David) cannot understand, the ChangeSet componentis being chunked and
+// prefetched. On the preview site, it never gets loaded because of the prefetch authentication
+// problem, and I cannot expand the changelog items to check that the content looks as expected.
+// For this reason, I am using an env var to toggle off collapsing on the preview site but
+// nowhere else.
+import { isPreviewSite } from '../environment';
+
 const Changelog = ({
   data: {
     site: {
@@ -46,7 +57,7 @@ const Changelog = ({
             releasedAt={releasedAt}
             description={description && description.childMarkdownRemark}
             slug={slug}
-            isCollapsible={true}
+            isCollapsible={isPreviewSite() ? false : true}
           />
         ))}
       </ul>

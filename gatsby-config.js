@@ -39,6 +39,12 @@ const getContentfulHost = () => {
   return 'preview.contentful.com';
 };
 
+const getSiteUrl = () => {
+  const netlifySiteName = get(process.env, 'SITE_NAME');
+  if (netlifySiteName === 'roadie-preview') return 'https://preview.roadie.io';
+  return 'https://roadie.io';
+};
+
 const getContentfulOptions = () => {
   return {
     spaceId: `hcqpbvoqhwhm`,
@@ -53,12 +59,13 @@ const getContentfulOptions = () => {
 // a server side variable into a runtime one. This variable is later used to determine which
 // branch of a split testing experiment we are on.
 process.env.GATSBY_GIT_BRANCH_NAME = process.env.BRANCH;
+process.env.GATSBY_NETLIFY_SITE_NAME = process.env.SITE_NAME;
 
 module.exports = {
   siteMetadata: {
     title: SITE_TITLE,
     description: 'Hosted, managed, enterprise Backstage',
-    siteUrl: 'https://roadie.io',
+    siteUrl: getSiteUrl(),
     demoUrl: 'https://demo.roadie.so',
     sourceCodeUrl: 'https://github.com/RoadieHQ/marketing-site/blob/main',
     social: {
@@ -134,6 +141,11 @@ module.exports = {
         theme_color: theme.COLORS_PRIMARY_500,
         display: `minimal-ui`,
         icon: 'content/assets/logos/roadie/roadie-r-round.svg',
+        // The request for the manifest was failing with a 401 on preview.roadie.io because
+        // of the basic authentication layer applpied to that site by Netlify. We use basic
+        // auth on the preview site to keep it hidden from search engines and (to a less
+        // important extent) people.
+        crossOrigin: `use-credentials`,
       },
     },
     `gatsby-plugin-react-helmet`,
