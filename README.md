@@ -26,3 +26,8 @@ yarn serve
 ```
 
 Open http://localhost:9000 in your browser.
+
+
+## Viewing a preview for a PR
+
+Go to https://app.netlify.com/sites/roadie/deploys and get the link generated for the preview deployment.
