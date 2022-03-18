@@ -1,7 +1,6 @@
-
 ---
 title: Allowlisting Roadie Traffic
-publishedDate: '2022-03-08T16:00:00.0Z'
+publishedDate: '2021-03-18T21:00:00.0Z'
 description: In order for Roadie to access your infrastructure you may need to allowlist our IPs in addition to other measures.
 ---
 
