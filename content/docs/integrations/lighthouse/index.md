@@ -8,7 +8,7 @@ description: How to set up the Lighthouse plugin in Roadie.
 
 Google's Lighthouse auditing tool for websites is a great open-source resource for benchmarking and improving the accessibility, performance, SEO, and best practices of your site.
 
-A frontend for lighthouse-audit-service, this plugin allows you to trigger Lighthouse audits on websites and track them.
+This plugin allows you to trigger Lighthouse audits on websites and track them.
 
 - Track multiple websites' audit performance over time using the main metrics that Lighthouse outputs:
 ![audits-overview-page.png](./audits-overview-page.png)
@@ -21,12 +21,12 @@ A frontend for lighthouse-audit-service, this plugin allows you to trigger Light
 
 ## Prerequisites
 
-In order to use the Light plugin, you need to have a running version of Spotify's Lighthouse Audit Service and a 
+In order to use the Lighthouse plugin, you need to have a running version of Spotify's Lighthouse Audit Service and a 
 publicly accessible url for it.
 
 ## Adding the plugin
 
-First, set the url of your Lighthouse Audit Service within Roadie by going to Administration->Settings->Lighthouse or at the following url:
+First, set the url of your Lighthouse Audit Service deployment within Roadie by going to Administration->Settings->Lighthouse or at the following url:
 
 ```text
 https://<tenant-name>.roadie.so/administration/settings/lighthouse
