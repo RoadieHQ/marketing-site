@@ -28,6 +28,7 @@ nav:
     - Grafana: '/docs/integrations/grafana/'
     - Home Page: '/docs/integrations/home-page'
     - Home Page Markdown: '/docs/integrations/home-page-markdown'
+    - Jenkins: '/docs/integrations/jenkins/'
     - Jira: '/docs/integrations/jira/'
     - Kubernetes: '/docs/integrations/kubernetes/'
     - Lighthouse: '/docs/integrations/lighthouse/'
@@ -50,4 +51,4 @@ nav:
     - GitHub app permissions: '/docs/integrations/github-app-permissions/'
     - Setting secrets: '/docs/details/setting-secrets/'
     - Updating the UI: '/docs/getting-started/updating-the-ui/'
-    - Whitelisting Roadie Traffic: '/docs/details/whitelisting-roadie-traffic/'
+    - Allowlisting Roadie Traffic: '/docs/details/allowlisting-roadie-traffic/'

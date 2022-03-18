@@ -56,7 +56,7 @@ gettingStarted:
       // catalog-info.yaml
       metadata:
         annotations:
-          jenkins.io/github-folder: '[github-organization-project-name/job-name]
+          jenkins.io/job-full-name: [github-organization-project-name/job-name]
 
 ---
 
