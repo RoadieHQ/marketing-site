@@ -30,6 +30,7 @@ nav:
     - Home Page Markdown: '/docs/integrations/home-page-markdown'
     - Jira: '/docs/integrations/jira/'
     - Kubernetes: '/docs/integrations/kubernetes/'
+    - Lighthouse: '/docs/integrations/lighthouse/'
     - Newrelic: '/docs/integrations/newrelic/'
     - Opsgenie: '/docs/integrations/opsgenie/'
     - Pagerduty: '/docs/integrations/pagerduty/'
