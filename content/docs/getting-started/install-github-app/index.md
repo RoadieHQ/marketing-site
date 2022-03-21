@@ -1,5 +1,5 @@
 ---
-title: Install the GitHub App
+title: Installing the GitHub App
 publishedDate: '2022-03-21T21:00:00.0Z'
 description: How to give Roadie the access it needs to your GitHub org.
 ---
