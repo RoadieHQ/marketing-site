@@ -14,7 +14,7 @@ See the sidebar for a full list of supported plugins, and dedicated instructions
 
 ## Prerequisites
 
-1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/getting-started-for-admins/).
+1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/create-admin-group/).
 
 ## Step 1: Add the UI component
 

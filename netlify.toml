@@ -21,7 +21,7 @@
 
 [[redirects]]
   from = "/docs/"
-  to = "/docs/getting-started/getting-started-for-admins/"
+  to = "/docs/getting-started/install-github-app/"
   force = true
 
 [[redirects]]
@@ -67,6 +67,11 @@
 [[redirects]]
   from = "/docs/details/whitelisting-roadie-traffic/"
   to = "/docs/details/allowlisting-roadie-traffic/"
+  force = true
+
+[[redirects]]
+  from = "/docs/getting-started/getting-started-for-admins/"
+  to = "/docs/getting-started/install-github-app/"
   force = true
 
 [build]
