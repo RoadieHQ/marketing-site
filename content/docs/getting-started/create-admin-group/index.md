@@ -1,5 +1,5 @@
 ---
-title: Create an admin group and user
+title: Designating admins
 publishedDate: '2022-03-21T21:00:00.0Z'
 description: How to designate yourself as an admin of Roadie Backstage.
 ---
