@@ -61,7 +61,7 @@ The `repo` scope provides both read and write abilities to both public and priva
 
 ## Next steps
 
-Once you have a token you can [add it to Roadie](/docs/getting-started/getting-started-for-admins/#connect-roadie-to-github).
+Once you have a token you can [add it to Roadie](/docs/getting-started/install-github-app/).
 
 ## References
 

@@ -39,7 +39,7 @@ const learn = [{
 }, {
   name: 'Documentation',
   description: "Set up your Roadie Backstage experience.",
-  to: '/docs/getting-started/getting-started-for-admins/',
+  to: '/docs/getting-started/install-github-app/',
   icon: AcademicCapIcon,
 }, {
   name: 'Chat with us on Discord',

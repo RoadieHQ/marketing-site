@@ -12,11 +12,12 @@ const navigation = {
   ],
 
   support: [
-    { name: 'Documentation', href: '/docs/getting-started/getting-started-for-admins/' },
+    { name: 'Documentation', href: '/docs/getting-started/install-github-app/' },
     { name: 'Case Studies', href: '/case-studies/' },
     { name: 'Backstage Plugins', href: '/backstage/plugins/' },
     { name: 'FAQs', href: '/faqs/' },
     { name: 'Changelog', href: '/changelog/' },
+    { name: 'Backstage Bites', href: '/backstage-bites/' },
   ],
 
   company: [
