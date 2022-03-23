@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headline } from 'components';
+import { Headline, TextLink as Link } from 'components';
 
 const FAQ_CONTENT = [{
   id: 1,
@@ -11,7 +11,7 @@ const FAQ_CONTENT = [{
   id: 2,
   question: "Does Roadie support custom plugins?",
   answer: () =>
-    "Yes. Roadie provides a private plugin repository which you can publish Backstage plugins too. They can then be manipulated and used just like ordinary open-source Backstage plugins.",
+    "Yes. Growth customers get a private plugin repository where Backstage plugins can be published. They can be manipulated and used just like ordinary open-source Backstage plugins.",
 
 }, {
   id: 3,
@@ -23,24 +23,23 @@ const FAQ_CONTENT = [{
   id: 4,
   question: "What level of support does Roadie provide?",
   answer: () =>
-    "Every Roadie customer gets a shared Slack or Discord channel. We pride ourselves on our responsiveness. We also deeply value customer feedback and prioritize your requests in our roadmap.",
-},
-{
+    "Every Growth customer gets a shared Slack or Discord channel. We pride ourselves on our responsiveness. We also deeply value customer feedback and prioritize your requests in our roadmap.",
+
+}, {
   id: 5,
   question: "Do you have a status page?",
-  answer: () => {
-    // this looks not nice but the linter was complaining that the displayname was not set
-    function statusText(){
-      return (<p>
-        Yes we do! It can be found here:{' '}
-        <a href='https://status.roadie.io'>
-         https://status.roadie.io/
-        </a>
-      </p>)
-    }
+  answer: () => (
+    <p>
+      Yes we do! It can be found at{' '}
+      <Link to="https://status.roadie.io">https://status.roadie.io/</Link>.
+    </p>
+  ),
 
-    return statusText();
-  },
+}, {
+  id: 4,
+  question: "How does Roadie count developers?",
+  answer: () =>
+    "Any user who can access Roadie is a developer. We don't mind if random read-only users access the system from time to time and won't attempt to charge for these.",
 }];
 
 

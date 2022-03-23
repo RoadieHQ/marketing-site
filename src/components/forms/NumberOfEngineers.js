@@ -17,6 +17,7 @@ const NumberOfEngineers = ({
   onChange,
   value,
   idPrefix = '',
+  options = OPTIONS_FOR_NUMBER_OF_ENGINEERS,
 }) => {
   const handleChange = (e) => {
     onChange(e.target.value);
@@ -24,7 +25,7 @@ const NumberOfEngineers = ({
 
   return (
     <fieldset className="sm:col-span-2">
-      <label htmlFor="number-of-engineers" className="block text-sm font-medium text-gray-700">
+      <label htmlFor="number-of-engineers" className="hidden" aria-hidden={true}>
         Number of engineers *
       </label>
 
@@ -36,7 +37,8 @@ const NumberOfEngineers = ({
           onChange={handleChange}
           value={value}
         >
-        {OPTIONS_FOR_NUMBER_OF_ENGINEERS.map((option) => (
+
+        {options.map((option) => (
           <option
             className="bg-gray-900"
             key={option.id}
