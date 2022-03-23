@@ -10,14 +10,11 @@ You often want to allow power users to edit the layouts and install plugins whil
 ordinary users from making unintended changes to the application setup. Roadie Backstage has a
 concept of admins to enable this.
 
- 1. Have connected Roadie to your organization's GitHub account.
- 2. Be an admin user of Roadie.
-
 ## Prerequisites
 
 You will need to have [installed the Roadie GitHub app](/docs/gettting-started/install-github-app/) before proceeding with this step.
 
-## Step 1: Create an admin group and user
+## Create an admin group and user
 
 Roadie admins have special powers such as the ability to add and remove Backstage plugins. We use GitHub Teams to designate admins.
 
@@ -36,7 +33,3 @@ Roadie admins have special powers such as the ability to add and remove Backstag
 ![A link that says "Log in to GitHub"](./sidebar-log-into-github.png)
 
 ⚠️  &nbsp;It can take some time for Roadie to refresh the list of teams from GitHub teams. If you do not see admin functions immediately, please wait a few minutes and try again.
-
-## Next steps
-
-Now that you have connected to GitHub and made yourself an admin, you can [start adding components](/docs/getting-started/adding-components/).
