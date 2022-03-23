@@ -52,4 +52,5 @@ nav:
     - Setting secrets: '/docs/details/setting-secrets/'
     - Updating the UI: '/docs/getting-started/updating-the-ui/'
     - Allowlisting Roadie Traffic: '/docs/details/allowlisting-roadie-traffic/'
+    - Accessing your AWS Resources: '/docs/details/accessing-aws-resources/'
     - Required annotations: '/docs/integrations/required-annotations'

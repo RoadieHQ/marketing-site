@@ -6,7 +6,7 @@ description: How to add a Kubernetes cluster for the Kubernetes plugin.
 
 ![Full active cluster on roadie](./active.png)
 
-# AWS
+## AWS
 
 ## Introduction
 
@@ -35,7 +35,7 @@ We will use the approach which is recommended by AWS for providing this type of 
  * Kubernetes RBAC [learn more](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
  * Trust relationship [learn more](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
 
-### Step 1: Creating the cross account federation role
+## Step 1: Creating the cross account federation role
 
 1. Sign into your AWS console and navigate to the [IAM service](https://console.aws.amazon.com/iam/home#/home).
 
@@ -70,7 +70,7 @@ It should look like this
 
 9. Click ”Create role”. Your cross federation role is now created.
 
-### Step 2: Modifying trust relationships to only include the new role
+## Step 2: Modifying trust relationships to only include the new role
 
 1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
 
@@ -115,7 +115,7 @@ You should see a page like this
 
 4. Save the changes.
 
-### Step 3: Set RBAC for new role
+## Step 3: Set RBAC for new role
 
 1. Edit your Kubernetes aws-auth Configmap as per [the EKS docs](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html).
 
@@ -186,7 +186,7 @@ subjects:
 
 ℹ️ Note you can reuse the Role if you have multiple clusters. You will have to configure the RBAC though.
 
-### Step 4: Adding a cluster to roadie
+## Step 4: Adding a cluster to roadie
 
 1. Navigate to your Kubernetes settings in Roadie and click on add item.
 
@@ -198,7 +198,7 @@ subjects:
 3. Add the load balancer url, role arn, external ID and name of cluster.
 4. Click save and exit!
 
-# GKE
+## GKE
 
 ## Introduction
 
@@ -225,16 +225,16 @@ In this tutorial, we will show you how to:
 * Setup OAuth client in backstage
 * Setup Kubernetes clusters in Backstage
 
-### Step 1: Creating an OAuth app
+## Step 1: Creating an OAuth app
 
 Follow step 1 from [here](/docs/integrations/google-oauth-client/).
 
-### Step 2: Adding secrets to backstage
+## Step 2: Adding secrets to backstage
 
 Follow step 2 from [here](/docs/integrations/google-oauth-client/).
 
 
-### Step 3: Adding a cluster to roadie
+## Step 3: Adding a cluster to roadie
 
 1. Navigate to ”https://<tenant-name>.roadie.so/administration/settings/kubernetes” and click on add item.
 2. Select the Google provider
