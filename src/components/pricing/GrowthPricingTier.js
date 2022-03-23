@@ -11,11 +11,9 @@ const GrowthPricingTier = () => (
       <TierName name="Growth" />
       <TierDescription description="For excellent engineering orgs who want to maintain effectiveness through hypergrowth" />
 
-      <div className="mt-6">
-        <p className="text-4xl font-extrabold text-gray-900">Custom</p>
-      </div>
+      <p className="text-4xl font-extrabold text-gray-900 mb-14">Custom</p>
 
-      <div className="mt-14">
+      <div className="mb-10">
         <TextField
           type="text"
           name="number-of-engineers-growth"
@@ -26,7 +24,7 @@ const GrowthPricingTier = () => (
         />
       </div>
 
-      <div className="mt-10">
+      <div className="mb-5">
         <Button
           text="Request a demo"
           link={true}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, NumberOfEngineers } from 'components';
+import { Button, NumberOfEngineers, HelpText } from 'components';
 
 import TierName from './TierName';
 import TierDescription from './TierDescription';
@@ -34,18 +34,16 @@ const ProPricingTier = () => {
         <TierName name="Pro" />
         <TierDescription description="For teams who want a home for their services, docs, runbooks, API specs and CI." />
 
-        <div className="mt-6">
-          <div className="mb-2">
-            <span className="text-4xl font-extrabold text-gray-900">{formatter.format(dollarCentCostPerDevPerMonth / 100)}</span>
-            <span className="text-base text-gray-500"> per dev/month</span>
-          </div>
-
-          <div>
-            <span className="text-base text-gray-900">{formatter.format(dollarCentCostPerMonth / 100)} billed monthly</span>
-          </div>
+        <div className="mb-2">
+          <span className="text-4xl font-extrabold text-gray-900">{formatter.format(dollarCentCostPerDevPerMonth / 100)}</span>
+          <span className="text-base text-gray-500"> per dev/month</span>
         </div>
 
-        <div className="mt-4">
+        <div className="mb-4">
+          <span className="text-base text-gray-900">{formatter.format(dollarCentCostPerMonth / 100)} billed monthly</span>
+        </div>
+
+        <div className="mb-10">
           <NumberOfEngineers
             onChange={setNumberOfEngineers}
             value={numberOfEngineers}
@@ -54,13 +52,19 @@ const ProPricingTier = () => {
           />
         </div>
 
-        <div className="mt-10">
-          <Button
-            text="Start a trial"
-            link={true}
-            color="primary"
-            to="/free-trial/"
-          />
+        <div>
+          <div className="mb-1">
+            <Button
+              text="Start a free trial"
+              link={true}
+              color="primary"
+              to="/free-trial/"
+            />
+          </div>
+
+          <div className="text-center">
+            <HelpText message="No credit card required" />
+          </div>
         </div>
       </div>
 
