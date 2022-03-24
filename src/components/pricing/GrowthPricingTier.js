@@ -45,7 +45,7 @@ const GrowthPricingTier = () => (
     />
 
     <TierBulletsSection
-      heading="Everything in Pro, plus..."
+      heading="Everything in Teams, plus..."
       bullets={[
         'SLA',
         '24/7 On-call',

@@ -16,7 +16,7 @@ export const OPTIONS_FOR_NUMBER_OF_ENGINEERS = [
   { id: 150, name: '150 developers' },
 ];
 
-const ProPricingTier = () => {
+const TeamsPricingTier = () => {
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
   const dollarCentCostPerDevPerMonth = 1500;
   const dollarCentCostPerMonth = numberOfEngineers * dollarCentCostPerDevPerMonth;
@@ -31,7 +31,7 @@ const ProPricingTier = () => {
   return (
     <div className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
       <div className="p-6">
-        <TierName name="Pro" />
+        <TierName name="Teams" />
         <TierDescription description="For teams who want a home for their services, docs, runbooks, API specs and CI." />
 
         <div className="mb-2">
@@ -48,7 +48,7 @@ const ProPricingTier = () => {
             onChange={setNumberOfEngineers}
             value={numberOfEngineers}
             options={OPTIONS_FOR_NUMBER_OF_ENGINEERS}
-            idPrefix="pro-plan-"
+            idPrefix="teams-plan-"
           />
         </div>
 
@@ -97,4 +97,4 @@ const ProPricingTier = () => {
   );
 };
 
-export default ProPricingTier;
+export default TeamsPricingTier;
