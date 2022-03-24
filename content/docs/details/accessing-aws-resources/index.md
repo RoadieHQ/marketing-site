@@ -6,7 +6,7 @@ description: How to configure permissions so that Roadie can access AWS resource
 ## Prerequisites
 
 * The roadie account ID.
-* The roadie backend role arn.
+* The roadie backend role.
 * (optional) An aws permissions policy name to associate with the role. 
 
 ## Introduction
@@ -41,7 +41,9 @@ To learn more about the AWS concepts used below, you can read the following AWS 
 
 7. Click ”Next”
 
-8. Enter a value for ”Role Name” (e.g. ”your-company-name-roadie-read-only-role”)
+8. For the ”Role Name” enter: ”<mycompany>-roadie-read-only-role”
+
+> Note: ”<mycompany>” should be replaced by the lower cased value of your company (e.g. "mycompany-roadie-read-only-role") and should follow the convention highlighted above. If it does not follow the convention, the role cannot be assumed. This is for security reasons.
 
 9. For the ”Role description” enter a description such as:
 
@@ -61,7 +63,7 @@ This is a role that will be assumed by Roadie to access AWS resources in this ac
 
 1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
 
-2. Search for your newly created role (e.g. ”your-company-name-roadie-read-only-role”) and click on it.
+2. Search for your newly created role (e.g. ”mycompany-roadie-read-only-role”) and click on it.
 
 You should see a page like this
 
@@ -87,7 +89,7 @@ You should see a page like this
         },
         "StringLike": {
           "aws:PrincipalArn": [
-            "<ROADIE BACKEND ROLE ARN>"
+            "*<ROADIE BACKEND ROLE>*"
           ]
         }
       }
@@ -95,5 +97,7 @@ You should see a page like this
   ]
 }
 ```
+
+> Note: The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
 
 4. Save the changes.
