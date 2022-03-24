@@ -57,7 +57,7 @@ This is a role that will be assumed by Roadie to access AWS resources in this ac
 
 10. Click ”Create role”. Your cross federation role is now created.
 
-## Step 2: Restrict the new role trust relationships to Raodie only
+## Step 2: Restrict the new role trust relationships to Roadie only
 
 1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
 
