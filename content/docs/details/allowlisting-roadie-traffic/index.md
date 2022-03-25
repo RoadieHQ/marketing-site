@@ -1,6 +1,7 @@
 ---
 title: Allowlisting Roadie Traffic
 publishedDate: '2021-03-18T21:00:00.0Z'
+updatedDate: '2021-03-25T08:33:00.0Z'
 description: In order to access Roadie, your IT department may need to allowlist certain IPs and hostnames.
 ---
 
@@ -27,6 +28,7 @@ If your IT department requires an allow list of domains, please use the followin
 
 ```
 <yourtenant>.roadie.so
+<yourtenant>.vouch.roadie.so
 *.roadie.systems
 
 ```
