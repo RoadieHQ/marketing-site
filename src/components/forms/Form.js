@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import { currentlyExecutingGitBranch } from '../../environment';
 import Input from './Input';
@@ -30,20 +31,26 @@ const Form = ({
   honeypotValue,
   ...rest
 }) => (
-  <form
-    method="post"
-    data-netlify="true"
-    data-netlify-honeypot={HONEYPOT_FIELD_NAME}
-    data-netlify-recaptcha="true"
-    name={name}
-    {...rest}
-  >
-    <input type="hidden" name="form-name" value={name} />
-    <input type="hidden" name="submit-button-label" value={buttonText} />
-    <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
-    <HoneypotField onChange={onHoneypotChange} value={honeypotValue} />
-    {children}
-  </form>
+  <>
+    <Helmet>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </Helmet>
+
+    <form
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot={HONEYPOT_FIELD_NAME}
+      data-netlify-recaptcha="true"
+      name={name}
+      {...rest}
+    >
+      <input type="hidden" name="form-name" value={name} />
+      <input type="hidden" name="submit-button-label" value={buttonText} />
+      <input type="hidden" name="deployed-branch" value={currentlyExecutingGitBranch()} />
+      <HoneypotField onChange={onHoneypotChange} value={honeypotValue} />
+      {children}
+    </form>
+  </>
 );
 
 export default Form;

@@ -60,6 +60,7 @@ const getContentfulOptions = () => {
 // branch of a split testing experiment we are on.
 process.env.GATSBY_GIT_BRANCH_NAME = process.env.BRANCH;
 process.env.GATSBY_NETLIFY_SITE_NAME = process.env.SITE_NAME;
+process.env.GATSBY_SITE_RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 
 module.exports = {
   siteMetadata: {

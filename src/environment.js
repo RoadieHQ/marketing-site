@@ -7,3 +7,5 @@ export const isPreviewSite = () => {
   if (process.env.GATSBY_NETLIFY_SITE_NAME === 'roadie-preview') return true;
   return false;
 };
+
+export const siteRecaptchaKey = () => process.env.GATSBY_SITE_RECAPTCHA_KEY;

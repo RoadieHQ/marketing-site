@@ -6,6 +6,7 @@ import {
   ScmToolRadioGroup,
   NumberOfEngineers,
   Form,
+  Recaptcha,
 } from 'components';
 import { OPTIONS_FOR_NUMBER_OF_ENGINEERS } from 'components/forms/NumberOfEngineers';
 
@@ -148,7 +149,7 @@ const RequestEnterprisePricingCallToAction = ({
       />
 
       <div className="sm:col-span-2 mt-4">
-        <div data-netlify-recaptcha="true" />
+        <Recaptcha />
       </div>
 
       <div className="sm:col-span-2 mt-4">
