@@ -2,7 +2,7 @@ import React from 'react';
 import { PaperAirplaneIcon } from '@heroicons/react/outline';
 import classnames from 'classnames';
 
-import { TextField, Button, Form, Recaptcha } from 'components';
+import { TextField, Button, Form } from 'components';
 
 const EmailCaptureForm = ({
   onSubmit,
@@ -30,6 +30,7 @@ const EmailCaptureForm = ({
       buttonText={buttonText}
       honeypotValue={honeypotValue}
       onHoneypotChange={setHoneypotText}
+      recaptcha={false}
     >
       <div className={classnames('flex flex-col lg:flex-row', className)}>
         <div className="mb-4 lg:mb-0">
@@ -60,8 +61,6 @@ const EmailCaptureForm = ({
           />
         </div>
       </div>
-
-      <Recaptcha />
     </Form>
   );
   /* eslint-enable jsx-a11y/no-autofocus */
