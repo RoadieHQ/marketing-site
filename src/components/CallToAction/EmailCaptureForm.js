@@ -2,7 +2,7 @@ import React from 'react';
 import { PaperAirplaneIcon } from '@heroicons/react/outline';
 import classnames from 'classnames';
 
-import { TextField, Button, Form } from 'components';
+import { TextField, Button, Form, Recaptcha } from 'components';
 
 const EmailCaptureForm = ({
   onSubmit,
@@ -16,7 +16,7 @@ const EmailCaptureForm = ({
   setEmail,
   submitting = false,
   netlifyFormName,
-  className = 'md:justify-center',
+  className,
   honeypotValue,
   setHoneypotText,
 }) => {
@@ -30,10 +30,9 @@ const EmailCaptureForm = ({
       buttonText={buttonText}
       honeypotValue={honeypotValue}
       onHoneypotChange={setHoneypotText}
-      recaptcha={false}
     >
-      <div className={classnames('flex flex-col lg:flex-row', className)}>
-        <div className="mb-4 lg:mb-0">
+      <div className={classnames('flex flex-col', className)}>
+        <div className="mb-4">
           <TextField
             type="email"
             name="email"
@@ -48,6 +47,10 @@ const EmailCaptureForm = ({
             helpTextState={subForm.state}
             fullWidth
           />
+        </div>
+
+        <div className="mb-4 flex justify-center">
+          <Recaptcha />
         </div>
 
         <div className="md:ml-1 mt-4">
