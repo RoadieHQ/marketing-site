@@ -2,7 +2,7 @@ import React from 'react';
 import { PaperAirplaneIcon } from '@heroicons/react/outline';
 import classnames from 'classnames';
 
-import { TextField, Button, Form, Recaptcha } from 'components';
+import { TextField, Button, Form } from 'components';
 
 const EmailCaptureForm = ({
   onSubmit,
@@ -60,8 +60,6 @@ const EmailCaptureForm = ({
           />
         </div>
       </div>
-
-      <Recaptcha />
     </Form>
   );
   /* eslint-enable jsx-a11y/no-autofocus */
