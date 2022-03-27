@@ -29,18 +29,21 @@ const Form = ({
   children,
   onHoneypotChange,
   honeypotValue,
+  recaptcha = true,
   ...rest
 }) => (
   <>
-    <Helmet>
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    </Helmet>
+    {recaptcha && (
+      <Helmet>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      </Helmet>
+    )}
 
     <form
       method="post"
       data-netlify="true"
       data-netlify-honeypot={HONEYPOT_FIELD_NAME}
-      data-netlify-recaptcha="true"
+      data-netlify-recaptcha={recaptcha}
       name={name}
       {...rest}
     >

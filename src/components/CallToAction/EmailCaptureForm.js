@@ -30,6 +30,7 @@ const EmailCaptureForm = ({
       buttonText={buttonText}
       honeypotValue={honeypotValue}
       onHoneypotChange={setHoneypotText}
+      recaptcha={false}
     >
       <div className={classnames('flex flex-col lg:flex-row', className)}>
         <div className="mb-4 lg:mb-0">
