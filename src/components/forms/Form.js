@@ -22,7 +22,6 @@ const HoneypotField = ({ onChange, value }) => {
   );
 };
 
-
 const Form = ({
   buttonText,
   name,
@@ -35,6 +34,7 @@ const Form = ({
     method="post"
     data-netlify="true"
     data-netlify-honeypot={HONEYPOT_FIELD_NAME}
+    data-netlify-recaptcha="true"
     name={name}
     {...rest}
   >

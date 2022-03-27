@@ -60,6 +60,8 @@ const EmailCaptureForm = ({
           />
         </div>
       </div>
+
+      <div data-netlify-recaptcha="true" />
     </Form>
   );
   /* eslint-enable jsx-a11y/no-autofocus */

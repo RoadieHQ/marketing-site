@@ -135,6 +135,10 @@ const RequestDemoCallToAction = ({
       />
 
       <div className="sm:col-span-2 mt-4">
+        <div data-netlify-recaptcha="true" />
+      </div>
+
+      <div className="sm:col-span-2 mt-4">
         <Button
           type="submit"
           color="primary"
