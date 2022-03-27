@@ -9,6 +9,7 @@ export {
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
   NumberOfEngineers,
+  Recaptcha,
 } from './forms';
 export { default as SitewideHeader } from './SitewideHeader';
 export { default as Lead } from './Lead';

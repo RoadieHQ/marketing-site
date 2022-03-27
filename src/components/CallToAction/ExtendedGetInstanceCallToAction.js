@@ -7,6 +7,7 @@ import {
   SubscribeToNewsletterSwitch,
   ScmToolRadioGroup,
   Form,
+  Recaptcha,
 } from 'components';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
@@ -152,7 +153,7 @@ const ExtendedGetInstanceCallToAction = ({
       </div>
 
       <div className="sm:col-span-2 mt-4">
-        <div data-netlify-recaptcha="true" />
+        <Recaptcha />
       </div>
 
       <div className="sm:col-span-2 mt-4">

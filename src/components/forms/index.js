@@ -8,3 +8,4 @@ export { default as HelpText } from './HelpText';
 export { default as SubscribeToNewsletterSwitch } from './SubscribeToNewsletterSwitch';
 export { default as ScmToolRadioGroup } from './ScmToolRadioGroup';
 export { default as NumberOfEngineers } from './NumberOfEngineers';
+export { default as Recaptcha } from './Recaptcha';
