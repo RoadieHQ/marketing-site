@@ -19,7 +19,7 @@ const TierBulletsSection = ({ heading, bullets, hasIcon = true }) => (
     )}
     <ul className="mt-6 space-y-3">
       {bullets.map((feature) => (
-        <TierBullet feature={feature} key={feature} hasIcon={hasIcon} />
+        <TierBullet feature={feature} key={`${heading}-${feature}`} hasIcon={hasIcon} />
       ))}
     </ul>
   </div>

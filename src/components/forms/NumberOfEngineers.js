@@ -1,26 +1,14 @@
 import React from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
-export const OPTIONS_FOR_NUMBER_OF_ENGINEERS = [
-  { id: 1, name: 'Fewer than 50' },
-  { id: 51, name: '51 to 100' },
-  { id: 101, name: '101 to 150' },
-  { id: 151, name: '151 to 200' },
-  { id: 201, name: '201 to 250' },
-  { id: 251, name: '251 to 300' },
-  { id: 301, name: '301 to 350' },
-  { id: 351, name: '351 to 400' },
-  { id: 401, name: 'More than 400' },
-];
-
 const NumberOfEngineers = ({
   onChange,
   value,
   idPrefix = '',
-  options = OPTIONS_FOR_NUMBER_OF_ENGINEERS,
+  options,
 }) => {
   const handleChange = (e) => {
-    onChange(e.target.value);
+    onChange(parseInt(e.target.value));
   };
 
   return (
