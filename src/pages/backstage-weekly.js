@@ -91,7 +91,9 @@ const BackstageWeekly = ({ data }) => {
           <div className="mb-4">
             <Headline el="h2">Backstage Weekly</Headline>
           </div>
-          <Lead>Get the latest news, deep dives into Backstage features, and a roundup of recent open-source action.</Lead>
+          <div className="mb-4">
+            <Lead>Get the latest news, deep dives into Backstage features, and a roundup of recent open-source action.</Lead>
+          </div>
 
           <NetlifyFormCallToAction
             setModalOpen={setModalOpen}

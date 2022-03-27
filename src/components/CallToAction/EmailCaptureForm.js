@@ -32,7 +32,7 @@ const EmailCaptureForm = ({
       onHoneypotChange={setHoneypotText}
     >
       <div className={classnames('flex flex-col', className)}>
-        <div className="mb-4">
+        <div className="mb-12">
           <TextField
             type="email"
             name="email"
