@@ -81,7 +81,7 @@ const BackstageBiteTemplate = ({ data: { site, video } }) => {
           />
         </div>
 
-        <div className="relative max-w-lg mx-auto lg:max-w-2xl">
+        <div className="relative max-w-lg mx-auto lg:max-w-xl">
           <SubscribeToNewsletterCTA
             setModalOpen={setModalOpen}
             email={email}

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, Page } from 'components';
-import { ListHeader, TitleAndDescription, PubDate, HeadRssLink } from 'components/article';
+import { SEO, Page, Headline, Lead } from 'components';
+import { TitleAndDescription, PubDate, HeadRssLink } from 'components/article';
+import {
+  NetlifyFormCallToAction,
+  SubscribeToNewsletterSuccessModal,
+} from 'components/CallToAction';
 
+import { FORM_NAMES } from '../contactFormConstants';
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
 import CoverImage from '../../content/assets/blog/list-cover-image-1.png';
 
@@ -49,11 +54,19 @@ const extractNewsletterDetailsFromPost = ({ node: { frontmatter, ...rest } }) =>
   };
 };
 
+
 const BackstageWeekly = ({ data }) => {
   const posts = data.allContentfulBlogPost.edges
     .map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
   const siteTitle = data.site.siteMetadata.title;
   const postsWithExtractedInfo = posts.map(extractNewsletterDetailsFromPost);
+  const [email, setEmail] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setEmail('');
+  };
 
   return (
     <>
@@ -66,15 +79,36 @@ const BackstageWeekly = ({ data }) => {
       />
       <HeadRssLink />
 
-      <Page titleDivide={true}>
-        <ListHeader
-          title="Backstage Weekly"
-          description="Get the latest news, deep dives into Backstage features, and a roundup of recent open-source action."
-          subscribeToNewsletter={true}
-          siteMetadata={data.site.siteMetadata}
-        />
+      <SubscribeToNewsletterSuccessModal
+        modalOpen={modalOpen}
+        handleCloseModal={handleCloseModal}
+        siteMetadata={data.site.siteMetadata}
+        email={email}
+      />
 
-        <div className="mt-6 pt-10 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      <Page titleDivide={false}>
+        <div className="m-auto lg:max-w-2xl mb-44">
+          <div className="mb-4">
+            <Headline el="h2">Backstage Weekly</Headline>
+          </div>
+          <div className="mb-4">
+            <Lead>Get the latest news, deep dives into Backstage features, and a roundup of recent open-source action.</Lead>
+          </div>
+
+          <NetlifyFormCallToAction
+            setModalOpen={setModalOpen}
+            buttonText="Subscribe"
+            netlifyFormName={FORM_NAMES.subscribeToNewsletter}
+            email={email}
+            setEmail={setEmail}
+          />
+        </div>
+
+        <div>
+          <Headline el="h3" size="small">Previous issues</Headline>
+        </div>
+
+        <div className="pt-10 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {postsWithExtractedInfo.map(({ node }) => (
             <ImageIssue key={node.fields.slug} post={node} />
           ))}
@@ -124,9 +158,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        social {
-          twitter
-        }
       }
     }
   }
