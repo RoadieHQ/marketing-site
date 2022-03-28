@@ -10,8 +10,7 @@ import OpenMenuButton from './OpenMenuButton';
 import DocsDrawerMenu from './DocsDrawerMenu';
 import Logo from '../Logo';
 
-const Tab = ({ startPath, tabLabel: label, isActiveMatch }) => {
-  const isActive = location.pathname.match(isActiveMatch);
+const Tab = ({ startPath, tabLabel: label, isActive }) => {
   const chipClassName = classnames('bg-primary-600 h-1 right-0 left-0 bottom-0', {
     'absolute': isActive,
     'hidden': !isActive,
@@ -61,7 +60,12 @@ const DocsHeader = ({ location }) => (
 
       <nav className="hidden border-b-2 border-gray-100 md:flex">
         {DOCS_LAYOUTS.map((props) => (
-          <Tab location={location} {...props} key={props.startPath} />
+          <Tab
+            location={location}
+            {...props}
+            key={props.startPath}
+            isActive={location.pathname.match(props.isActiveMatch)}
+          />
         ))}
       </nav>
     </div>
