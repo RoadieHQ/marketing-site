@@ -1,5 +1,5 @@
-import React from 'react'
-import { Popover } from '@headlessui/react'
+import React from 'react';
+import { Popover } from '@headlessui/react';
 import {
   CodeIcon,
   BookOpenIcon,
