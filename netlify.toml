@@ -89,6 +89,11 @@
   to = "/docs/details/required-annotations/"
   force = true
 
+[[redirects]]
+  from = "/docs/configurations/tech-radar/"
+  to = "/docs/integrations/tech-radar/"
+  force = true
+
 [build]
   publish = "public"
 
