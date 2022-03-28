@@ -6,6 +6,8 @@ import { AlgoliaAutocomplete } from 'components/AlgoliaAutocomplete';
 import { Button, Link } from 'components';
 import { DOCS_LAYOUTS } from 'components/doc';
 
+import OpenMenuButton from './OpenMenuButton';
+import DocsDrawerMenu from './DocsDrawerMenu';
 import Logo from '../Logo';
 
 const Tab = ({ startPath, tabLabel: label, isActiveMatch }) => {
@@ -32,7 +34,7 @@ const Tab = ({ startPath, tabLabel: label, isActiveMatch }) => {
 const DocsHeader = ({ location }) => (
   <Popover className="relative bg-white z-20">
     <div className="max-w-full mx-auto px-2 sm:px-6">
-      <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+      <div className="flex justify-between items-center border-b-2 border-gray-100 md:border-b-0 py-4 md:justify-start md:space-x-10">
 
         <div className="flex items-center">
           <span>
@@ -44,8 +46,12 @@ const DocsHeader = ({ location }) => (
           </span>
 
           <span className="ml-8">
-            <AlgoliaAutocomplete placeholder="Search" className="w-36 md:w-96" />
+            <AlgoliaAutocomplete placeholder="Search docs..." className="w-36 md:w-96" />
           </span>
+        </div>
+
+        <div className="-mr-2 -my-2 md:hidden">
+          <OpenMenuButton />
         </div>
 
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
@@ -53,12 +59,14 @@ const DocsHeader = ({ location }) => (
         </div>
       </div>
 
-      <nav className="border-b-2 border-gray-100 flex">
+      <nav className="hidden border-b-2 border-gray-100 md:flex">
         {DOCS_LAYOUTS.map((props) => (
           <Tab location={location} {...props} key={props.startPath} />
         ))}
       </nav>
     </div>
+
+    <DocsDrawerMenu />
   </Popover>
 );
 
