@@ -49,6 +49,7 @@ nav:
     - Authenticated Proxy: '/docs/custom-plugins/authenticated-proxy/'
   - Integrations:
       - S3: '/docs/integrations/aws-s3/'
+      - Bitbucket: '/docs/integrations/bitbucket/'
   - Details:
     - GitHub app permissions: '/docs/plugins/github-app-permissions/'
     - Setting secrets: '/docs/details/setting-secrets/'
