@@ -6,3 +6,4 @@ export { default as RoadieHandIcon } from './RoadieHandIcon';
 export { default as RoadieRIcon } from './RoadieRIcon';
 export { default as QuoteIcon } from './QuoteIcon';
 export { default as LinkedinIcon } from './LinkedinIcon';
+export { default as RoadieWordIcon } from './RoadieWordIcon';
