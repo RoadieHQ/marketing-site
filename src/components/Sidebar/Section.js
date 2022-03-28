@@ -10,8 +10,8 @@ export const SidebarSection = ({ children }) => (
 
 export const SidebarSectionList = ({ title, items = [] }) => {
   const itemComponents = items.map((item) => {
-    const [[title, path]] = Object.entries(item);
-    return <SidebarItem key={path} text={title} to={path} />;
+    const [[text, path]] = Object.entries(item);
+    return <SidebarItem key={path} text={text} to={path} />;
   });
 
   return (
