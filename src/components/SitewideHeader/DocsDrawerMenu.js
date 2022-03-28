@@ -11,7 +11,7 @@ const subItems = DOCS_LAYOUTS.map((props) => ({
   isActiveMatch: props.isActiveMatch,
 }));
 
-const DrawerMenu = () => (
+const DrawerMenu = ({ location }) => (
   <Transition
     as={Fragment}
     enter="duration-200 ease-out"

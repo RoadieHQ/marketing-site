@@ -70,7 +70,7 @@ const DocsHeader = ({ location }) => (
       </nav>
     </div>
 
-    <DocsDrawerMenu />
+    <DocsDrawerMenu location={location} />
   </Popover>
 );
 
