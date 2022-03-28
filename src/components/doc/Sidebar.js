@@ -8,7 +8,7 @@ import classnames from 'classnames';
 import theme from '../../theme';
 import sidebar from '../../../content/docs/docs-nav.yaml';
 
-const DocSidebar = () => {
+const DocSidebar = ({ location }) => {
   const isWide = useMedia(`(min-width: ${theme.BREAKPOINTS_MD})`);
   // const isWide = useMedia(`(min-width: ${fullTailwindConfig.theme.screens.md})`);
   const [isOpen, setOpen] = useState(true);
@@ -35,9 +35,6 @@ const DocSidebar = () => {
     <Sidebar side="left">
       <div className="px-2 my-3">
         <div className="mb-1 flex justify-between items-center">
-          <span>
-            <strong>Documentation</strong>
-          </span>
           <span className="inline md:hidden">
             <Button
               onClick={toggleSliderOpen}
