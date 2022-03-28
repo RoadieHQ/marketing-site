@@ -4,19 +4,25 @@ import classnames from 'classnames';
 
 import { AlgoliaAutocomplete } from 'components/AlgoliaAutocomplete';
 import { Button, Link } from 'components';
+import { DOCS_LAYOUTS } from 'components/doc';
 
 import Logo from '../Logo';
 
-const Tab = ({ to, text }) => {
-  const isActive = location.pathname === to;
+const Tab = ({ startPath, tabLabel: label, isActiveMatch }) => {
+  const isActive = location.pathname.match(isActiveMatch);
+  const chipClassName = classnames('bg-primary-600 h-1 right-0 left-0 bottom-0', {
+    'absolute': isActive,
+    'hidden': !isActive,
+  });
+
   return (
     <div className="flex">
-      <Link to={to}>
+      <Link to={startPath}>
         <div className="pb-2 relative mr-8">
           <span className={classnames('text-base text-center', { 'text-primary-600': isActive })}>
-            {text}
+            {label}
           </span>
-          <span className={classnames('bg-primary-600 h-1 right-0 left-0 bottom-0', { 'absolute': isActive, 'hidden': !isActive })} />
+          <span className={chipClassName} />
         </div>
       </Link>
     </div>
@@ -48,15 +54,9 @@ const DocsHeader = ({ location }) => (
       </div>
 
       <nav className="border-b-2 border-gray-100 flex">
-        <Tab
-          to="/docs/getting-started/install-github-app/"
-          text="Getting started"
-          isFirst={true}
-          location={location}
-        />
-
-        <Tab to="/docs/integrations/argocd/" text="Plugins" location={location} />
-        <Tab to="/docs/integrations/github-app-permissions/" text="Details" location={location} />
+        {DOCS_LAYOUTS.map((props) => (
+          <Tab location={location} {...props} key={props.startPath} />
+        ))}
       </nav>
     </div>
   </Popover>

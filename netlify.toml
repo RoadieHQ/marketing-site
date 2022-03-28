@@ -74,6 +74,21 @@
   to = "/docs/getting-started/install-github-app/"
   force = true
 
+[[redirects]]
+  from = "/docs/integrations/github-app-permissions/"
+  to = "/docs/details/github-app-permissions/"
+  force = true
+
+[[redirects]]
+  from = "/docs/getting-started/updating-the-ui/"
+  to = "/docs/details/updating-the-ui/"
+  force = true
+
+[[redirects]]
+  from = "/docs/integrations/required-annotations/"
+  to = "/docs/details/required-annotations/"
+  force = true
+
 [build]
   publish = "public"
 

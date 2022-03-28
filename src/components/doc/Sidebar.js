@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Sidebar, SidebarSectionList, SidebarItem } from 'components/Sidebar';
+import { Sidebar, SidebarSectionList } from 'components/Sidebar';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import Button from 'components/forms/Button';
 import useMedia from 'react-use/lib/useMedia';
 import classnames from 'classnames';
 
 import theme from '../../theme';
-import sidebar from '../../../content/docs/docs-nav.yaml';
+import { DOCS_LAYOUTS } from 'components/doc';
 
 const DocSidebar = ({ location }) => {
   const isWide = useMedia(`(min-width: ${theme.BREAKPOINTS_MD})`);
@@ -31,25 +31,9 @@ const DocSidebar = ({ location }) => {
   const docToggleButtonIcon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
   const docNavClassNames = classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen });
 
-  console.log(sidebar);
-
-  let sidebarNavItems = [];
-
-  if (location.pathname.match(/getting-started/)[0]) {
-    sidebarNavItems = [{ 'Getting started': sidebar.nav['Getting started'] }];
-  } else if (location.pathname.match(/integrations/)[0]) {
-    sidebarNavItems = [{
-      'Adding Backtage Plugins': sidebar.nav['Adding Backstage plugins'],
-    }, {
-      'Custom Plugins': sidebar.nav['Custom Plugins'],
-    }, {
-      'Integrations': sidebar.nav['Integrations'],
-    }];
-  } else if (location.pathname.match(/details/)) {
-    sidebarNavItems = [{
-      'Details': sidebar.nav['Details'],
-    }];
-  }
+  const sidebarNavItemGroups = DOCS_LAYOUTS.find(({ isActiveMatch }) => (
+    location.pathname.match(isActiveMatch)
+  )).sidebarNavItemGroups;
 
   return (
     <Sidebar side="left">
@@ -69,17 +53,15 @@ const DocSidebar = ({ location }) => {
 
       <nav className={docNavClassNames}>
         {
-          sidebarNavItems.map((_k, v) => {
-            const [[sectionHeader, sectionItems]] = Object.entries(sidebar.nav[v]);
-            const items = sectionItems.map((item) => {
-              const [[title, path]] = Object.entries(item);
-              return <SidebarItem key={path} text={title} to={path} />;
-            });
+          sidebarNavItemGroups.map((_k, v) => {
+            const [[sectionHeader, sectionItems]] = Object.entries(sidebarNavItemGroups[v]);
 
             return (
-              <SidebarSectionList key={sectionHeader} title={sectionHeader}>
-                {items}
-              </SidebarSectionList>
+              <SidebarSectionList
+                key={sectionHeader}
+                title={sidebarNavItemGroups.length > 1 && sectionHeader}
+                items={sectionItems}
+              />
             );
           })
         }
