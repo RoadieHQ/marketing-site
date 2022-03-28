@@ -12,7 +12,7 @@ This tutorial will guide you through the steps required to connect Roadie to you
 
 By adding a Bitbucket integration you will allow Roadie to access the YAML metadata files that Backstage needs to operate. Learn more about the [permissions required](/docs/plugins/github-app-permissions/).
 
-Roadie supports Bitbucket configuration on both Bitbucket Cloud and self-hosted Bitbucket server. The authentication methods supported are either with Token or a Username + Application Password authentication. Username + Application Password authentication provides more granular options to control the access to give to the integration.  
+Roadie supports Bitbucket configuration on both Bitbucket Cloud and self-hosted Bitbucket server. The authentication methods supported are either with Token or a Username + Application Password authentication. Username + Application Password is preferred authentication method since it provides more granular options to control the access to give to the integration. If you are connecting to a Bitbucket server Username + Application Password is the only supported connection method. 
 
 1. Click the Administration link in the bottom left of the application.
 
