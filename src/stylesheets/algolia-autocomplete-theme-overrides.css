@@ -1,4 +1,7 @@
 :root {
+  /* Same as the Roadie R Icon */
+  --aa-search-input-height: 40px;
+
   --aa-icon-color-rgb: 244, 81, 30;
 
   --aa-text-color-rgb: 0, 0, 0;

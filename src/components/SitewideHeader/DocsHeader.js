@@ -1,43 +1,10 @@
 import React from 'react';
 import { Popover } from '@headlessui/react';
-import algoliasearch from 'algoliasearch/lite';
-import { getAlgoliaResults } from '@algolia/autocomplete-js';
 
 import { AlgoliaAutocomplete } from 'components/AlgoliaAutocomplete';
-import SearchResult from 'components/AlgoliaAutocomplete/SearchResult';
-
-import Logo from '../Logo';
-import OpenMenuButton from './OpenMenuButton';
-import DrawerMenu from './DrawerMenu';
 import { Button } from 'components';
 
-const searchClient = algoliasearch(
-  process.env.GATSBY_ALGOLIA_APP_ID,
-  process.env.GATSBY_ALGOLIA_SEARCH_KEY
-);
-
-const getSearchSources = ({ query }) => {
-  return [{
-    sourceId: 'docs',
-    getItemUrl({ item }) {
-      return item.slug;
-    },
-    getItems() {
-      return getAlgoliaResults({
-        searchClient,
-        queries: [{
-          indexName: 'docs',
-          query,
-        }],
-      });
-    },
-    templates: {
-      item({ item, components }) {
-        return <SearchResult hit={item} components={components} />;
-      }
-    }
-  }];
-};
+import Logo from '../Logo';
 
 const DocsHeader = () => (
   <Popover className="relative bg-white z-20">
@@ -49,17 +16,9 @@ const DocsHeader = () => (
             <Logo />
           </span>
 
-          <span className="hidden md:inline ml-8">
-            <AlgoliaAutocomplete
-              placeholder="Search"
-              getSources={getSearchSources}
-              className="w-96"
-            />
+          <span className="ml-8">
+            <AlgoliaAutocomplete placeholder="Search" className="w-48 md:w-96" />
           </span>
-        </div>
-
-        <div className="-mr-2 -my-2 md:hidden">
-          <OpenMenuButton />
         </div>
 
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
@@ -67,8 +26,6 @@ const DocsHeader = () => (
         </div>
       </div>
     </div>
-
-    <DrawerMenu />
   </Popover>
 );
 
