@@ -30,7 +30,7 @@ You can either create the following file in your own repository or [use the publ
   <summary>Expand here to see an example template.yaml</summary>
 
 ```yaml
-apiVersion: backstage.io/v1beta2
+apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
@@ -60,7 +60,7 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: "Hello, {{ parameters.name }}"
+        message: "Hello, ${{ parameters.name }}"
 ```
 
 </details>

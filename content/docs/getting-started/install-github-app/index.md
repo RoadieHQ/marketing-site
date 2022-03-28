@@ -14,7 +14,7 @@ If your IT department filters your outbound access by hostname, you may need to 
 
 ## Step 1: Install the Roadie GitHub app
 
-Installing the GitHub App will allow Roadie to access the YAML metadata files that Backstage needs to operate. Learn more about the [permissions required](/docs/integrations/github-app-permissions/).
+Installing the GitHub App will allow Roadie to access the YAML metadata files that Backstage needs to operate. Learn more about the [permissions required](/docs/plugins/github-app-permissions/).
 
 1. Click the Administration link in the bottom left of the application.
 
@@ -28,7 +28,7 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 ![A link that says "Integrations"](./integrations-link.png)
 
-4. Click "Add GitHub App"
+4. Open the GitHub accordion and click "Add GitHub App"
 
 ![A button that says "Add GitHub App"](./add-github-app.png)
 
