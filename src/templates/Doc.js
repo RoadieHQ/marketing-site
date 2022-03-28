@@ -4,11 +4,12 @@ import {
   SEO,
   TextLink as Link,
   ContentHeader,
-  SitewideHeader,
   SitewideFooter,
 } from 'components';
 import { TableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/doc';
+
+import DocsHeader from 'components/SitewideHeader/DocsHeader';
 import editOnGitHubUrl from '../editOnGitHubUrl';
 
 const Doc = ({
@@ -22,7 +23,7 @@ const Doc = ({
       title={`${doc.frontmatter.title} | ${siteMetadata.title}`}
       description={doc.frontmatter.description}
     />
-    <SitewideHeader maxWidth="full" />
+    <DocsHeader />
 
     <main className="md:flex pt-4 md:pt-0">
       <Sidebar />

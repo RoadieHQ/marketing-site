@@ -7,7 +7,7 @@ const SearchResult = ({ hit, components }) => {
     <div className="aa-ItemWrapper">
       <Link
         to={hit.slug}
-        className="no-underline"
+        className="no-underline text-primary-600"
         onClick={destroySearchOverlay}
         data-testid={`algolia-search-result-link-${hit.slug.replaceAll('/', '-')}`}
       >

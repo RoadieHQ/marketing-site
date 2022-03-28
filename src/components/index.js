@@ -11,7 +11,7 @@ export {
   NumberOfEngineers,
   Recaptcha,
 } from './forms';
-export { default as SitewideHeader } from './SitewideHeader';
+export { SitewideHeader } from './SitewideHeader';
 export { default as Lead } from './Lead';
 export { default as Headline } from './Headline';
 export { default as TextLink } from './TextLink';
