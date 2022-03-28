@@ -8,7 +8,7 @@ import { DOCS_LAYOUTS } from 'components/doc';
 const subItems = DOCS_LAYOUTS.map((props) => ({
   name: props.tabLabel,
   to: props.startPath,
-  icon: props.icon,
+  isActiveMatch: props.isActiveMatch,
 }));
 
 const DrawerMenu = () => (
@@ -29,7 +29,11 @@ const DrawerMenu = () => (
           <div className="mt-8">
             <nav className="grid gap-y-8">
               {subItems.map((item) => (
-                <MobileDropdownNavItem item={item} key={item.name} />
+                <MobileDropdownNavItem
+                  item={item}
+                  isActive={location.pathname.match(item.isActiveMatch)}
+                  key={item.name}
+                />
               ))}
             </nav>
           </div>

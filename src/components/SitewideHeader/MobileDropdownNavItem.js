@@ -1,7 +1,8 @@
 import React from 'react'
+import classnames from 'classnames';
 import { Link } from 'components';
 
-const MobileDropdownNavItem = ({ item }) => (
+const MobileDropdownNavItem = ({ item, isActive }) => (
   <Link
     key={item.name}
     to={item.to}
@@ -10,7 +11,16 @@ const MobileDropdownNavItem = ({ item }) => (
     {item.icon && (
       <item.icon className="flex-shrink-0 h-6 w-6 text-primary-600 mr-3" aria-hidden="true" />
     )}
-    <span className="text-base font-medium text-gray-900">{item.name}</span>
+
+    <span
+      className={
+        classnames('text-base font-medium', {
+          'text-gray-900': !isActive,
+          'text-primary-600': isActive,
+      })}
+    >
+      {item.name}
+    </span>
   </Link>
 );
 
