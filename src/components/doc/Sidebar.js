@@ -30,7 +30,27 @@ const DocSidebar = ({ location }) => {
   const docToggleButtonText = isOpen ? 'Hide nav' : 'Show nav';
   const docToggleButtonIcon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
   const docNavClassNames = classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen });
- 
+
+  console.log(sidebar);
+
+  let sidebarNavItems = [];
+
+  if (location.pathname.match(/getting-started/)[0]) {
+    sidebarNavItems = [{ 'Getting started': sidebar.nav['Getting started'] }];
+  } else if (location.pathname.match(/integrations/)[0]) {
+    sidebarNavItems = [{
+      'Adding Backtage Plugins': sidebar.nav['Adding Backstage plugins'],
+    }, {
+      'Custom Plugins': sidebar.nav['Custom Plugins'],
+    }, {
+      'Integrations': sidebar.nav['Integrations'],
+    }];
+  } else if (location.pathname.match(/details/)) {
+    sidebarNavItems = [{
+      'Details': sidebar.nav['Details'],
+    }];
+  }
+
   return (
     <Sidebar side="left">
       <div className="px-2 my-3">
@@ -49,21 +69,18 @@ const DocSidebar = ({ location }) => {
 
       <nav className={docNavClassNames}>
         {
-          sidebar.nav.map((_k, v) => {
-            const entries = Object.entries(sidebar.nav[v])
-            const subheader = entries[0][0].toString()
-            return <SidebarSectionList key={subheader} title={subheader}>
-              {
-                entries[0][1].map((k) => {
-                  const subEntires =  Object.entries(k);
-                  return <SidebarItem
-                    key={subEntires[0][0]}
-                    text={subEntires[0][0].toString()}
-                    to={subEntires[0][1].toString()}
-                  />
-                })
-              }
-            </SidebarSectionList>
+          sidebarNavItems.map((_k, v) => {
+            const [[sectionHeader, sectionItems]] = Object.entries(sidebar.nav[v]);
+            const items = sectionItems.map((item) => {
+              const [[title, path]] = Object.entries(item);
+              return <SidebarItem key={path} text={title} to={path} />;
+            });
+
+            return (
+              <SidebarSectionList key={sectionHeader} title={sectionHeader}>
+                {items}
+              </SidebarSectionList>
+            );
           })
         }
       </nav>

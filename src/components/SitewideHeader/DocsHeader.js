@@ -55,8 +55,8 @@ const DocsHeader = ({ location }) => (
           location={location}
         />
 
-        <Tab to="/docs/plugins/argocd/" text="Plugins" location={location} />
-        <Tab to="/docs/plugins/github-app-permissions/" text="Details" location={location} />
+        <Tab to="/docs/integrations/argocd/" text="Plugins" location={location} />
+        <Tab to="/docs/integrations/github-app-permissions/" text="Details" location={location} />
       </nav>
     </div>
   </Popover>
