@@ -59,7 +59,9 @@ const SitewideHeader = ({ maxWidth = '7xl', location }) => (
     <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
       <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
 
-        <Logo />
+        <div className="flex justify-start lg:w-0 lg:flex-1">
+          <Logo />
+        </div>
 
         <div className="-mr-2 -my-2 md:hidden">
           <OpenMenuButton />

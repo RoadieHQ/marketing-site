@@ -2,43 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Sidebar, SidebarSectionList, SidebarItem } from 'components/Sidebar';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import Button from 'components/forms/Button';
-import algoliasearch from 'algoliasearch/lite';
-import { getAlgoliaResults } from '@algolia/autocomplete-js';
-import { AlgoliaAutocomplete as Search } from 'components/AlgoliaAutocomplete';
-import SearchResult from 'components/AlgoliaAutocomplete/SearchResult';
 import useMedia from 'react-use/lib/useMedia';
 import classnames from 'classnames';
 
 import theme from '../../theme';
 import sidebar from '../../../content/docs/docs-nav.yaml';
-
-const searchClient = algoliasearch(
-  process.env.GATSBY_ALGOLIA_APP_ID,
-  process.env.GATSBY_ALGOLIA_SEARCH_KEY
-);
-
-const getSearchSources = ({ query }) => {
-  return [{
-    sourceId: 'docs',
-    getItemUrl({ item }) {
-      return item.slug;
-    },
-    getItems() {
-      return getAlgoliaResults({
-        searchClient,
-        queries: [{
-          indexName: 'docs',
-          query,
-        }],
-      });
-    },
-    templates: {
-      item({ item, components }) {
-        return <SearchResult hit={item} components={components} />;
-      }
-    }
-  }];
-};
 
 const DocSidebar = () => {
   const isWide = useMedia(`(min-width: ${theme.BREAKPOINTS_MD})`);
@@ -79,10 +47,6 @@ const DocSidebar = () => {
               size="small"
             />
           </span>
-        </div>
-
-        <div className="md:pr-3">
-          <Search placeholder="Search" getSources={getSearchSources} />
         </div>
       </div>
 

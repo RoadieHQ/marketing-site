@@ -1,9 +1,16 @@
 :root {
-  --aa-primary-color: rgb(244, 81, 30);
-  /* Used for the search dialog overlay */
-  --aa-muted-color: rgba(0, 0, 0, 0.78);
-  --aa-selected-color: rgba(244, 81, 30, 0.2);
-  --aa-text-color: rgba(0, 0, 0, 0.87);
+  --aa-icon-color-rgb: 244, 81, 30;
+
+  --aa-text-color-rgb: 0, 0, 0;
+  --aa-text-color-alpha: 0.87;
+
+  --aa-primary-color-rgb: 244, 81, 30;
+
+  --aa-muted-color-rgb: 0, 0, 0;
+  --aa-muted-color-alpha: 0.78;
+
+  --aa-selected-color-rgb: 344, 81, 30;
+  --aa-selected-color-alpha: 0.2;
 }
 
 /* There doesn't seem to be a variable for overriding this one */

@@ -4,7 +4,7 @@ import { navigate } from 'gatsby';
 import { autocomplete } from '@algolia/autocomplete-js';
 import destroySearchOverlay from './destroySearchOverlay';
 
-const AlgoliaAutocomplete = (props) => {
+const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
   const searchBoxRef = useRef();
 
   useEffect(() => {
@@ -23,15 +23,15 @@ const AlgoliaAutocomplete = (props) => {
       render({ children }, root) {
         render(children, root);
       },
-      ...props,
-    }, [props]);
+      ...rest,
+    }, [rest]);
 
     return () => {
       search.destroy();
     };
   });
 
-  return <div ref={searchBoxRef} />
+  return React.createElement(as, { ref: searchBoxRef, className });
 };
 
 export default AlgoliaAutocomplete;
