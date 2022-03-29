@@ -17,6 +17,8 @@ const EmailCaptureForm = ({
   setEmail,
   recaptchaResponse,
   setRecaptchaResponse,
+  recaptchaExpired,
+  setRecaptchaExpired,
   submitting = false,
   netlifyFormName,
   className,
@@ -25,7 +27,7 @@ const EmailCaptureForm = ({
 }) => {
   let disabled = submitting || !email || email === '';
   if (recaptchaEnabled()) {
-    disabled = disabled || !recaptchaResponse || recaptchaResponse === '';
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
   /* eslint-disable jsx-a11y/no-autofocus */
@@ -55,7 +57,11 @@ const EmailCaptureForm = ({
           />
         </div>
 
-        <Recaptcha onChange={setRecaptchaResponse} wrapperClassName="mb-4 flex justify-center" />
+        <Recaptcha
+          onChange={setRecaptchaResponse}
+          wrapperClassName="mb-4 flex justify-center"
+          setRecaptchaExpired={setRecaptchaExpired}
+        />
 
         <div className="md:ml-1 mt-4">
           <Button

@@ -32,15 +32,17 @@ const Form = ({
   ...rest
 }) => (
   <>
-    <Helmet>
-      <script src="https://www.google.com/recaptcha/api.js" async defer />
-    </Helmet>
+    {recaptchaEnabled() && (
+      <Helmet>
+        <script src="https://www.google.com/recaptcha/api.js" async defer />
+      </Helmet>
+    )}
 
     <form
       method="post"
       data-netlify="true"
       data-netlify-honeypot={HONEYPOT_FIELD_NAME}
-      data-netlify-recaptcha={recaptchaEnabled() ? 'true' : 'false'}
+      data-netlify-recaptcha={recaptchaEnabled() ? 'true' : undefined}
       name={name}
       {...rest}
     >

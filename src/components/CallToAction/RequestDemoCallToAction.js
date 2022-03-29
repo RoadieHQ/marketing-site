@@ -32,7 +32,9 @@ const submitToNetlifyForms = async ({
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
-  formData.append('g-recaptcha-response', recaptchaResponse);
+  if (recaptchaEnabled()) {
+    formData.append('g-recaptcha-response', recaptchaResponse);
+  }
 
   let resp;
   try {
@@ -62,6 +64,7 @@ const RequestDemoCallToAction = ({
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [honeypotText, setHoneypotText] = useState('');
   const [recaptchaResponse, setRecaptchaResponse] = useState('');
+  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestDemo;
   const buttonText = 'Request a demo';
@@ -99,7 +102,7 @@ const RequestDemoCallToAction = ({
 
   let disabled = submitting || !email || email === '';
   if (recaptchaEnabled()) {
-    disabled = disabled || !recaptchaResponse || recaptchaResponse === '';
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
   return (
@@ -142,7 +145,7 @@ const RequestDemoCallToAction = ({
         onChange={setSubToNewsletter}
       />
 
-      <Recaptcha onChange={setRecaptchaResponse} />
+      <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
 
       <div className="sm:col-span-2 mt-4">
         <Button
