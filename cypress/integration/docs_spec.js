@@ -11,7 +11,7 @@ describe('The documentation', () => {
     cy.get('.aa-DetachedSearchButton').click();
     cy.get('.aa-Input').type('github');
 
-    cy.get('[data-testid="algolia-search-result-link--docs-plugins-github-token-"]').click();
+    cy.get('[data-testid="algolia-search-result-link--docs-integrations-github-token-"]').click();
     // This is obviously brittle, but we should test that we actually got to the right page.
     cy.contains('Creating a token');
   });
