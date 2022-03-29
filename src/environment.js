@@ -11,7 +11,8 @@ export const isPreviewSite = () => {
 };
 
 export const recaptchaEnabled = () => {
-  return Boolean(get(process.env, 'GATSBY_RECAPTCHAS_ENABLED', true));
+  if (process.env.GATSBY_RECAPTCHAS_ENABLED === 'false') return false;
+  return true;
 };
 
 export const siteRecaptchaKey = () => process.env.GATSBY_SITE_RECAPTCHA_KEY;
