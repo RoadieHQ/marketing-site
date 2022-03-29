@@ -5,8 +5,8 @@ description: How to configure permissions so that Roadie can access AWS resource
 ---
 ## Prerequisites
 
-* The roadie account ID.
-* The roadie backend role.
+* The Roadie account ID.
+* The Roadie backend role.
 * (optional) An aws permissions policy name to associate with the role. 
 
 ## Introduction
@@ -25,15 +25,15 @@ To learn more about the AWS concepts used below, you can read the following AWS 
 
 1. Sign into your AWS console and navigate to the [IAM service](https://console.aws.amazon.com/iam/home#/home).
 
-2. Click on ”Role” link (this should be on the left handside of your screen).
+2. Click on ”Role” link (this should be on the left-hand side of your screen).
 
 3. Click on the ”Create Role” button.
 
-4. Click on ”Another AWS Account” and add the account number on on the Kubernetes configuration page (in Roadie) and then click on ”Next: permissions”.
+4. Click on ”Another AWS Account” and add the Roadie account ID and then click on ”Next: permissions”.
 
 ![Another AWS Account](./role-creation.png)
 
-5. Click the checkbox beside "Require External ID" and enter some value. Make a note of this value as you'll need it later.
+5. Click the checkbox beside "Require External ID" and enter some unique value (e.g. a uuid). Make a note of this value as you'll need it later.
 
 6. Attach any desired policies and click on ”Next”.  
    Note: You may not need to add any policies at this stage.
@@ -51,19 +51,17 @@ To learn more about the AWS concepts used below, you can read the following AWS 
 This is a role that will be assumed by Roadie to access AWS resources in this account.
 ```
 
-10. 
-
-11. It should look like this
+10. It should look like this
 
 ![role-confirmation](./role-confirmation.png)
 
-10. Click ”Create role”. Your cross federation role is now created.
+11. Click ”Create role”. Your cross federation role is now created.
 
 ## Step 2: Restrict the new role trust relationships to Roadie only
 
 1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
 
-2. Search for your newly created role (e.g. ”mycompany-roadie-read-only-role”) and click on it.
+2. Search for your newly created role (e.g. ”roadie-read-only-role”) and click on it.
 
 You should see a page like this
 
@@ -98,6 +96,6 @@ You should see a page like this
 }
 ```
 
-> Note: The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
+ℹ️ The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
 
 4. Save the changes.
