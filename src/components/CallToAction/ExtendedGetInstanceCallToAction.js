@@ -20,6 +20,7 @@ const submitToNetlifyForms = async ({
   netlifyFormName,
   agreeToPolicies,
   honeypotText,
+  recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -33,6 +34,7 @@ const submitToNetlifyForms = async ({
   formData.append('agree-to-policies', agreeToPolicies);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  formData.append('g-recaptcha-response', recaptchaResponse);
 
   let resp;
   try {
@@ -58,8 +60,11 @@ const ExtendedGetInstanceCallToAction = ({
   const [agreed, setAgreed] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
+
+  console.log('recaptchaResponse', recaptchaResponse);
 
   const clearForm = () => {
     setEmail('');
@@ -81,6 +86,7 @@ const ExtendedGetInstanceCallToAction = ({
       netlifyFormName,
       honeypotText,
       submitButtonLabel: buttonText,
+      recaptchaResponse,
     });
 
     if (resp.ok) {
@@ -153,7 +159,7 @@ const ExtendedGetInstanceCallToAction = ({
       </div>
 
       <div className="sm:col-span-2 mt-4">
-        <Recaptcha />
+        <Recaptcha onChange={setRecaptchaResponse} />
       </div>
 
       <div className="sm:col-span-2 mt-4">
