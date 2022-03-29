@@ -32,9 +32,11 @@ const Form = ({
   ...rest
 }) => (
   <>
-    <Helmet>
-      <script src="https://www.google.com/recaptcha/api.js" async defer />
-    </Helmet>
+    {recaptchaEnabled() && (
+      <Helmet>
+        <script src="https://www.google.com/recaptcha/api.js" async defer />
+      </Helmet>
+    )}
 
     <form
       method="post"

@@ -70,6 +70,7 @@ const NetlifyFormCallToAction = ({
   const [submitting, setSubmitting] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
   const [recaptchaResponse, setRecaptchaResponse] = useState('');
+  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const [subForm, setSubForm] = useState({
     message: subFormMessage,
   });
@@ -115,6 +116,8 @@ const NetlifyFormCallToAction = ({
     onHoneypotChange: setHoneypotText,
     recaptchaResponse,
     setRecaptchaResponse,
+    recaptchaExpired,
+    setRecaptchaExpired,
     ...rest,
   };
 

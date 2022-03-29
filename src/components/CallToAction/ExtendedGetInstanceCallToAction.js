@@ -61,6 +61,7 @@ const ExtendedGetInstanceCallToAction = ({
   const [honeypotText, setHoneypotText] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [recaptchaResponse, setRecaptchaResponse] = useState('');
+  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
 
@@ -71,7 +72,7 @@ const ExtendedGetInstanceCallToAction = ({
 
   let disabled = submitting || !email || email === '' || !agreed;
   if (recaptchaEnabled()) {
-    disabled = disabled || !recaptchaResponse || recaptchaResponse === '';
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
   const onSubmit = async (e) => {
@@ -159,7 +160,7 @@ const ExtendedGetInstanceCallToAction = ({
         </div>
       </div>
 
-      <Recaptcha onChange={setRecaptchaResponse} />
+      <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
 
       <div className="sm:col-span-2 mt-4">
         <Button

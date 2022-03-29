@@ -67,6 +67,7 @@ const RequestEnterprisePricingCallToAction = ({
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [honeypotText, setHoneypotText] = useState('');
   const [recaptchaResponse, setRecaptchaResponse] = useState('');
+  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestEnterprisePricing;
   const buttonText = 'Request a quote';
@@ -105,7 +106,7 @@ const RequestEnterprisePricingCallToAction = ({
 
   let disabled = submitting || !email || email === '' || !numberOfEngineers || numberOfEngineers === '';
   if (recaptchaEnabled()) {
-    disabled = disabled || !recaptchaResponse || recaptchaResponse === '';
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
   return (
@@ -155,7 +156,7 @@ const RequestEnterprisePricingCallToAction = ({
         idPrefix="request-pricing-"
       />
 
-      <Recaptcha onChange={setRecaptchaResponse} />
+      <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
 
       <div className="sm:col-span-2 mt-4">
         <Button
