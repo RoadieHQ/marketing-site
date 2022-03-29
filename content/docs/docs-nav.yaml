@@ -47,9 +47,9 @@ nav:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
     - Authenticated Proxy: '/docs/custom-plugins/authenticated-proxy/'
-  - Details:
-    - GitHub app permissions: '/docs/integrations/github-app-permissions/'
+  - In-depth:
+    - GtHub app permissions: '/docs/details/github-app-permissions/'
     - Setting secrets: '/docs/details/setting-secrets/'
-    - Updating the UI: '/docs/getting-started/updating-the-ui/'
+    - Updating the UI: '/docs/details/updating-the-ui/'
     - Allowlisting Roadie Traffic: '/docs/details/allowlisting-roadie-traffic/'
-    - Required annotations: '/docs/integrations/required-annotations'
+    - Required annotations: '/docs/details/required-annotations/'
