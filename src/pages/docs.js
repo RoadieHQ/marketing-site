@@ -28,7 +28,7 @@ const Doc = ({
           <Lead>Explore our guides and examples to learn how to use Roadie.</Lead>
         </header>
 
-        <section className="border-b-2 border-gray-100 flex mb-24">
+        <section className="md:border-b-2 md:border-gray-100 flex mb-24">
           <div>
             <div className="mb-2">
               <Headline el="h2" size="xs">Developer portal</Headline>
@@ -100,7 +100,7 @@ const Doc = ({
               </Lead>
             </div>
 
-            <ul className="list-disc">
+            <ul className="list-disc pl-4">
               <li>
                 <p className="text-base text-gray-500">
                   Read about the effort we put into{' '}
