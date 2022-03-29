@@ -2,7 +2,7 @@ describe('The documentation', () => {
   it('is accessible from the footer and searchable', () => {
     cy.visit('');
     cy.get('#sitewide-footer-documentation').click();
-    cy.contains('Installing the GitHub App');
+    cy.contains('Explore our guides and examples');
 
     // Matching on class names is not ideal, because an upgrade of the algolia autocomplete
     // library could break the test. Matching on IDs was considered, but the IDs are dynamic
