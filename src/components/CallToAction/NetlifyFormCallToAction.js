@@ -4,7 +4,7 @@ import trackGoogleAnalyticsEvent from '../../googleAnalytics';
 import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 
 export const encode = (data) => {
   const formData = new FormData();
@@ -29,16 +29,21 @@ export const submitEmailToNetlifyForms = async ({
 
   let resp;
   try {
+    const bodyParams = {
+      email,
+      'form-name': netlifyFormName,
+      'submit-button-label': submitButtonLabel,
+      'deployed-branch': branch,
+      [HONEYPOT_FIELD_NAME]: honeypotText,
+    };
+
+    if (recaptchaEnabled()) {
+      bodyParams['g-recaptcha-response'] = recaptchaResponse;
+    }
+
     resp = await fetch('/', {
       method: 'POST',
-      body: encode({
-        email,
-        'form-name': netlifyFormName,
-        'submit-button-label': submitButtonLabel,
-        'g-recaptcha-response': recaptchaResponse,
-        'deployed-branch': branch,
-        [HONEYPOT_FIELD_NAME]: honeypotText,
-      }),
+      body: encode(bodyParams),
     });
   } catch (error) {
     console.error('Submission failed', error, resp);
