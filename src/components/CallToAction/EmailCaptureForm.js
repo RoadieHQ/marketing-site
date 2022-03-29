@@ -3,6 +3,7 @@ import { PaperAirplaneIcon } from '@heroicons/react/outline';
 import classnames from 'classnames';
 
 import { TextField, Button, Form, Recaptcha } from 'components';
+import { recaptchaEnabled } from '../../environment';
 
 const EmailCaptureForm = ({
   onSubmit,
@@ -14,13 +15,18 @@ const EmailCaptureForm = ({
   buttonId = 'email-capture-form-button',
   subForm,
   setEmail,
+  recaptchaResponse,
+  setRecaptchaResponse,
   submitting = false,
   netlifyFormName,
   className,
   honeypotValue,
   setHoneypotText,
 }) => {
-  const disabled = submitting || !email || email === '';
+  let disabled = submitting || !email || email === '';
+  if (recaptchaEnabled()) {
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '';
+  }
 
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
@@ -49,9 +55,7 @@ const EmailCaptureForm = ({
           />
         </div>
 
-        <div className="mb-4 flex justify-center">
-          <Recaptcha />
-        </div>
+        <Recaptcha onChange={setRecaptchaResponse} wrapperClassName="mb-4 flex justify-center" />
 
         <div className="md:ml-1 mt-4">
           <Button

@@ -11,7 +11,7 @@ import {
 } from 'components';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 
 const submitToNetlifyForms = async ({
   email,
@@ -20,6 +20,7 @@ const submitToNetlifyForms = async ({
   netlifyFormName,
   agreeToPolicies,
   honeypotText,
+  recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -33,6 +34,7 @@ const submitToNetlifyForms = async ({
   formData.append('agree-to-policies', agreeToPolicies);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  formData.append('g-recaptcha-response', recaptchaResponse);
 
   let resp;
   try {
@@ -58,6 +60,7 @@ const ExtendedGetInstanceCallToAction = ({
   const [agreed, setAgreed] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
 
@@ -66,7 +69,10 @@ const ExtendedGetInstanceCallToAction = ({
     setAgreed(false);
   };
 
-  const disabled = submitting || !email || email === '' || !agreed;
+  let disabled = submitting || !email || email === '' || !agreed;
+  if (recaptchaEnabled()) {
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '';
+  }
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -81,6 +87,7 @@ const ExtendedGetInstanceCallToAction = ({
       netlifyFormName,
       honeypotText,
       submitButtonLabel: buttonText,
+      recaptchaResponse,
     });
 
     if (resp.ok) {
@@ -152,9 +159,7 @@ const ExtendedGetInstanceCallToAction = ({
         </div>
       </div>
 
-      <div className="sm:col-span-2 mt-4">
-        <Recaptcha />
-      </div>
+      <Recaptcha onChange={setRecaptchaResponse} />
 
       <div className="sm:col-span-2 mt-4">
         <Button

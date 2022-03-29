@@ -8,4 +8,9 @@ export const isPreviewSite = () => {
   return false;
 };
 
+export const recaptchaEnabled = () => {
+  if (process.env.GATSBY_RECAPTCHAS_ENABLED === 'false') return false;
+  return true;
+};
+
 export const siteRecaptchaKey = () => process.env.GATSBY_SITE_RECAPTCHA_KEY;

@@ -9,7 +9,7 @@ import {
 } from 'components';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 
 const submitToNetlifyForms = async ({
   name,
@@ -18,6 +18,7 @@ const submitToNetlifyForms = async ({
   subToNewsletter,
   honeypotText,
   netlifyFormName,
+  recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -31,6 +32,7 @@ const submitToNetlifyForms = async ({
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  formData.append('g-recaptcha-response', recaptchaResponse);
 
   let resp;
   try {
@@ -59,6 +61,7 @@ const RequestDemoCallToAction = ({
   const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [honeypotText, setHoneypotText] = useState('');
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestDemo;
   const buttonText = 'Request a demo';
@@ -79,6 +82,7 @@ const RequestDemoCallToAction = ({
       subToNewsletter,
       honeypotText,
       netlifyFormName,
+      recaptchaResponse,
       submitButtonLabel: buttonText,
     });
 
@@ -93,7 +97,10 @@ const RequestDemoCallToAction = ({
     setSubmitting(false);
   };
 
-  const disabled = submitting || !email || email === '';
+  let disabled = submitting || !email || email === '';
+  if (recaptchaEnabled()) {
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '';
+  }
 
   return (
     <Form
@@ -135,9 +142,7 @@ const RequestDemoCallToAction = ({
         onChange={setSubToNewsletter}
       />
 
-      <div className="sm:col-span-2 mt-4">
-        <Recaptcha />
-      </div>
+      <Recaptcha onChange={setRecaptchaResponse} />
 
       <div className="sm:col-span-2 mt-4">
         <Button
