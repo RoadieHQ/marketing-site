@@ -96,6 +96,6 @@ You should see a page like this
 }
 ```
 
-ℹ️ The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
+ℹ️  The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
 
 4. Save the changes.
