@@ -40,6 +40,7 @@ nav:
     - Tech radar: '/docs/configuration/tech-radar/'
     - Cortex: '/docs/integrations/cortex'
   - Integrations:
+    - AWS S3: '/docs/integrations/aws-s3/'
     - GitHub org: '/docs/integrations/github-org/'
     - GitHub token: '/docs/integrations/github-token/'
     - Google Cloud Platform: '/docs/integrations/gcp/'
