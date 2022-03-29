@@ -30,12 +30,16 @@ which restricts access to only certain buckets. e.g.
     {
       "Effect": "Allow",
       "Action": [
-        "s3:Get*",
-        "s3:List*",
-        "s3-object-lambda:Get*",
-        "s3-object-lambda:List*"
+        "s3:GetObject"
       ],
       "Resource": "arn:aws:s3:::my-bucket/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:listObject"
+      ],
+      "Resource": "arn:aws:s3:::my-bucket"
     }
   ]
 }
