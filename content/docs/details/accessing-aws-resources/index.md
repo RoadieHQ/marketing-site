@@ -43,7 +43,7 @@ To learn more about the AWS concepts used below, you can read the following AWS 
 
 8. For the ”Role Name” enter: ”<mycompany>-roadie-read-only-role”
 
-> Note: ”<mycompany>” should be replaced by the lower cased value of your company (e.g. "mycompany-roadie-read-only-role") and should follow the convention highlighted above. If it does not follow the convention, the role cannot be assumed. This is for security reasons.
+⚠️ ”<mycompany>” should be replaced by the lower cased value of your company (e.g. "mycompany-roadie-read-only-role") and should follow the convention highlighted above. If it does not follow the convention, the role cannot be assumed. This is for security reasons.
 
 9. For the ”Role description” enter a description such as:
 
