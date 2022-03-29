@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { currentlyExecutingGitBranch } from '../../environment';
+import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 import Input from './Input';
 import { HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 
@@ -40,7 +40,7 @@ const Form = ({
       method="post"
       data-netlify="true"
       data-netlify-honeypot={HONEYPOT_FIELD_NAME}
-      data-netlify-recaptcha="true"
+      data-netlify-recaptcha={recaptchaEnabled() ? 'true' : 'false'}
       name={name}
       {...rest}
     >

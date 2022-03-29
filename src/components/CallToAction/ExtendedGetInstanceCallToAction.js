@@ -11,7 +11,7 @@ import {
 } from 'components';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 
 const submitToNetlifyForms = async ({
   email,
@@ -69,7 +69,10 @@ const ExtendedGetInstanceCallToAction = ({
     setAgreed(false);
   };
 
-  const disabled = submitting || !email || email === '' || !agreed || !recaptchaResponse || recaptchaResponse === '';
+  let disabled = submitting || !email || email === '' || !agreed;
+  if (recaptchaEnabled()) {
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '';
+  }
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -156,9 +159,7 @@ const ExtendedGetInstanceCallToAction = ({
         </div>
       </div>
 
-      <div className="sm:col-span-2 mt-4">
-        <Recaptcha onChange={setRecaptchaResponse} />
-      </div>
+      <Recaptcha onChange={setRecaptchaResponse} />
 
       <div className="sm:col-span-2 mt-4">
         <Button
