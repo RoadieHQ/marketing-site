@@ -42,7 +42,7 @@ const Form = ({
       method="post"
       data-netlify="true"
       data-netlify-honeypot={HONEYPOT_FIELD_NAME}
-      data-netlify-recaptcha={recaptchaEnabled() ? 'true' : 'false'}
+      data-netlify-recaptcha={recaptchaEnabled() ? 'true' : undefined}
       name={name}
       {...rest}
     >

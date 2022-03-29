@@ -34,7 +34,9 @@ const submitToNetlifyForms = async ({
   formData.append('agree-to-policies', agreeToPolicies);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
-  formData.append('g-recaptcha-response', recaptchaResponse);
+  if (recaptchaEnabled()) {
+    formData.append('g-recaptcha-response', recaptchaResponse);
+  }
 
   let resp;
   try {
