@@ -18,6 +18,7 @@ const submitToNetlifyForms = async ({
   subToNewsletter,
   netlifyFormName,
   honeypotText,
+  recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -31,6 +32,7 @@ const submitToNetlifyForms = async ({
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  formData.append('g-recaptcha-response', recaptchaResponse);
 
   let resp;
   try {
@@ -60,6 +62,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
   const netlifyFormName = FORM_NAMES.requestTeamsEarlyAccess;
   const buttonText = 'Request early access';
 
@@ -93,7 +96,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
     setSubmitting(false);
   };
 
-  const disabled = submitting || !email || email === '';
+  const disabled = submitting || !email || email === '' || recaptchaResponse || recaptchaResponse === '';
 
   return (
     <Form
@@ -136,7 +139,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
       />
 
       <div className="sm:col-span-2 mt-4">
-        <Recaptcha />
+        <Recaptcha onChange={setRecaptchaResponse} />
       </div>
 
       <div className="sm:col-span-2 mt-4">

@@ -18,6 +18,7 @@ export const submitEmailToNetlifyForms = async ({
   email,
   netlifyFormName,
   honeypotText,
+  recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -34,6 +35,7 @@ export const submitEmailToNetlifyForms = async ({
         email,
         'form-name': netlifyFormName,
         'submit-button-label': submitButtonLabel,
+        'g-recaptcha-response': recaptchaResponse,
         'deployed-branch': branch,
         [HONEYPOT_FIELD_NAME]: honeypotText,
       }),
@@ -67,6 +69,7 @@ const NetlifyFormCallToAction = ({
 }) => {
   const [submitting, setSubmitting] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
   const [subForm, setSubForm] = useState({
     message: subFormMessage,
   });
@@ -79,6 +82,7 @@ const NetlifyFormCallToAction = ({
       email,
       netlifyFormName,
       honeypotText,
+      recaptchaResponse,
       submitButtonLabel: buttonText,
     });
 
@@ -109,6 +113,8 @@ const NetlifyFormCallToAction = ({
     netlifyFormName: netlifyFormName,
     honeypotValue: honeypotText,
     onHoneypotChange: setHoneypotText,
+    recaptchaResponse,
+    setRecaptchaResponse,
     ...rest,
   };
 

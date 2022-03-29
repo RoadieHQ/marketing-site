@@ -14,13 +14,15 @@ const EmailCaptureForm = ({
   buttonId = 'email-capture-form-button',
   subForm,
   setEmail,
+  recaptchaResponse,
+  setRecaptchaResponse,
   submitting = false,
   netlifyFormName,
   className,
   honeypotValue,
   setHoneypotText,
 }) => {
-  const disabled = submitting || !email || email === '';
+  const disabled = submitting || !email || email === '' || !recaptchaResponse || recaptchaResponse === '';
 
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
@@ -50,7 +52,7 @@ const EmailCaptureForm = ({
         </div>
 
         <div className="mb-4 flex justify-center">
-          <Recaptcha />
+          <Recaptcha onChange={setRecaptchaResponse} />
         </div>
 
         <div className="md:ml-1 mt-4">

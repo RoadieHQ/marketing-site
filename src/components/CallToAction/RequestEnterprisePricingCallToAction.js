@@ -20,6 +20,7 @@ const submitToNetlifyForms = async ({
   subToNewsletter,
   netlifyFormName,
   honeypotText,
+  recaptchaResponse,
   numberOfEngineers,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
@@ -35,6 +36,7 @@ const submitToNetlifyForms = async ({
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  formData.append('g-recaptcha-response', recaptchaResponse);
 
   let resp;
   try {
@@ -64,6 +66,7 @@ const RequestEnterprisePricingCallToAction = ({
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [honeypotText, setHoneypotText] = useState('');
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestEnterprisePricing;
   const buttonText = 'Request a quote';
@@ -85,6 +88,7 @@ const RequestEnterprisePricingCallToAction = ({
       numberOfEngineers,
       honeypotText,
       netlifyFormName,
+      recaptchaResponse,
       submitButtonLabel: buttonText,
     });
 
@@ -149,7 +153,7 @@ const RequestEnterprisePricingCallToAction = ({
       />
 
       <div className="sm:col-span-2 mt-4">
-        <Recaptcha />
+        <Recaptcha onChange={setRecaptchaResponse} />
       </div>
 
       <div className="sm:col-span-2 mt-4">

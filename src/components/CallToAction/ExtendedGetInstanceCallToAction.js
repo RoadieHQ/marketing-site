@@ -64,14 +64,12 @@ const ExtendedGetInstanceCallToAction = ({
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
 
-  console.log('recaptchaResponse', recaptchaResponse);
-
   const clearForm = () => {
     setEmail('');
     setAgreed(false);
   };
 
-  const disabled = submitting || !email || email === '' || !agreed;
+  const disabled = submitting || !email || email === '' || !agreed || !recaptchaResponse || recaptchaResponse === '';
 
   const onSubmit = async (e) => {
     e.preventDefault();
