@@ -14,7 +14,7 @@ nav:
     - Designating admins: '/docs/getting-started/create-admin-group/'
     - Adding API specs: '/docs/getting-started/openapi-specs/'
     - Scaffolding components: '/docs/getting-started/scaffolding-components/'
-  - Adding Backstage plugins:
+  - Backstage plugins:
     - Argo CD: '/docs/integrations/argocd/'
     - BuildKite: '/docs/integrations/buildkite/'
     - Bugsnag: '/docs/integrations/bugsnag/'
@@ -22,10 +22,6 @@ nav:
     - CircleCI: '/docs/integrations/circleci/'
     - Datadog: '/docs/integrations/datadog/'
     - FireHydrant: '/docs/integrations/firehydrant/'
-    - Google Cloud Platform: '/docs/integrations/gcp/'
-    - GitHub org: '/docs/integrations/github-org/'
-    - Github token: '/docs/integrations/github-token/'
-    - Google oauth client: '/docs/integrations/google-oauth-client/'
     - Grafana: '/docs/integrations/grafana/'
     - Home Page: '/docs/integrations/home-page'
     - Home Page Markdown: '/docs/integrations/home-page-markdown'
@@ -43,6 +39,11 @@ nav:
     - Travis CI: '/docs/integrations/travis-ci/'
     - Tech radar: '/docs/configuration/tech-radar/'
     - Cortex: '/docs/integrations/cortex'
+  - Integrations:
+    - Google Cloud Platform: '/docs/integrations/gcp/'
+    - GitHub org: '/docs/integrations/github-org/'
+    - Github token: '/docs/integrations/github-token/'
+    - Google oauth client: '/docs/integrations/google-oauth-client/'
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
