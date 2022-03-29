@@ -34,9 +34,12 @@ const Button = ({
 
   if (link) {
     return (
-      <div className={classnames({
-        'rounded-md shadow': color === 'primary' || color === 'secondary',
-      })}>
+      <div
+        className={classnames({
+          'rounded-md shadow': color === 'primary' || color === 'secondary',
+          'inline-block': fullWidth === false,
+        })}
+      >
         <Link
           className={
             classnames(baseClassName, {

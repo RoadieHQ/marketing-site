@@ -12,7 +12,7 @@ const navigation = {
   ],
 
   support: [
-    { name: 'Documentation', href: '/docs/getting-started/install-github-app/' },
+    { name: 'Documentation', href: '/docs/' },
     { name: 'Case Studies', href: '/case-studies/' },
     { name: 'Backstage Plugins', href: '/backstage/plugins/' },
     { name: 'FAQs', href: '/faqs/' },

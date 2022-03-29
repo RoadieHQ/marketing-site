@@ -31,6 +31,8 @@ const DocSidebar = ({ location }) => {
   const docToggleButtonIcon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
   const docNavClassNames = classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen });
 
+  console.log(DOCS_LAYOUTS);
+
   const sidebarNavItemGroups = DOCS_LAYOUTS.find(({ isActiveMatch }) => (
     location.pathname.match(isActiveMatch)
   )).sidebarNavItemGroups;
