@@ -1,10 +1,9 @@
-// import React from 'react';
+import React from 'react';
 
-// import { siteRecaptchaKey } from '../../environment';
+import { siteRecaptchaKey } from '../../environment';
 
-const Recaptcha = () => {
-  return null;
-  // return <div className="g-recaptcha" data-sitekey={siteRecaptchaKey()} />;
-};
+const Recaptcha = () => (
+  <div className="g-recaptcha" data-sitekey={siteRecaptchaKey()}></div>
+);
 
 export default Recaptcha;
