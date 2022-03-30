@@ -41,7 +41,7 @@ nav:
     - Cortex: '/docs/integrations/cortex'
   - Integrations:
     - AWS S3: '/docs/integrations/aws-s3/'
-    - Bitbucket: '/docs/integrations/github-org/'
+    - Bitbucket: '/docs/integrations/bitbucket/'
     - GitHub org: '/docs/integrations/github-org/'
     - GitHub token: '/docs/integrations/github-token/'
     - Google Cloud Platform: '/docs/integrations/gcp/'
