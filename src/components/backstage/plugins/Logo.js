@@ -2,10 +2,17 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Logo = ({ sharpImage, alt, minHeight = 200 }) => {
-  const height = Math.max(minHeight, sharpImage.gatsbyImageData.height);
+  let image = <img src="http://placehold.jp/140x140.png" alt="Placeholder" />;
+  let height = minHeight;
+
+  if (sharpImage) {
+    height = Math.max(minHeight, sharpImage.gatsbyImageData.height);
+    image = <GatsbyImage image={sharpImage.gatsbyImageData} alt={alt} />;
+  }
+
   return (
     <div className="flex justify-center items-center" style={{ height }}>
-      <GatsbyImage image={sharpImage.gatsbyImageData} alt={alt} />
+      {image}
     </div>
   );
 };

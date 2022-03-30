@@ -2,6 +2,10 @@
 title: Argo CD Plugin
 publishedDate: '2022-01-31T21:00:00.0Z'
 description: How to configure the Argo CD plugin on Roadie.
+
+humanName: Argo CD
+logoImage: '../../../assets/logos/argo-cd/argo-cd-logo.png'
+integrationType: oss-plugin
 ---
 
 ## Introduction

@@ -1,24 +1,13 @@
 import React from 'react';
-import { Link, Title } from 'components';
 
-import Logo from './Logo';
 import Attribution from './Attribution';
+import ListItemHeader from './ListItemHeader';
 
 const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attribution } }) => {
-  const sharpImage = logoImage.childImageSharp;
-
-  return (
-    <div className="border-2 p-4 text-center" style={{ height: 350 }}>
-      <Link to={slug} className="underline-none capitalize">
-        <Logo sharpImage={sharpImage} alt={`${humanName} logo`} />
-        <div className="pb-4">
-          <Title>{humanName}</Title>
-        </div>
-      </Link>
-
-      <Attribution attribution={attribution} />
-    </div>
-  );
+  <div className="border-2 p-4 text-center" style={{ height: 350 }}>
+    <ListItemHeader slub={slug} logoImage={logoImage} humanName={humanName} />
+    <Attribution attribution={attribution} />
+  </div>
 };
 
 export default ListItem;
