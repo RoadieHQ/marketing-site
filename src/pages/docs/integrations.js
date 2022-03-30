@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideFooter, Headline, Input, Lead, TextLink } from 'components';
+import classnames from 'classnames';
 
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
 import ListItemHeader from 'components/backstage/plugins/ListItemHeader';
+import customPluginsLogoImagePath from '../../../content/assets/logos/code/code.png';
+
+console.log(customPluginsLogoImagePath);
 
 const ListItem = ({
   fields: { slug },
@@ -12,8 +16,16 @@ const ListItem = ({
     humanName,
     integrationType,
   },
+  dashed = false
 }) => (
-  <div className="border-2 p-4 text-center" style={{ height: 350 }}>
+  <div
+    className={
+      classnames('border-2 p-4 text-center', {
+        'border-dashed': dashed,
+      })
+    }
+    style={{ height: 350 }}
+  >
     <ListItemHeader slug={slug} logoImage={logoImage} humanName={humanName} />
 
     <span
@@ -79,6 +91,32 @@ const DocsIntegrations = ({
             {filteredIntegrations.map(({ fields, frontmatter }) => (
               <ListItem frontmatter={frontmatter} fields={fields} key={fields.slug} />
             ))}
+
+            <ListItem
+              dashed={true}
+              frontmatter={{
+                humanName: 'Write your own',
+                integrationType: 'Custom',
+                logoImage: {
+                  childImageSharp: {
+                    gatsbyImageData: {
+                      height: 100,
+                      images: {
+                        fallback: {
+                          src: customPluginsLogoImagePath,
+                        },
+                      },
+                      layout: 'fixed',
+                      width: 100,
+                    },
+                  },
+                },
+              }}
+              fields={{
+                slug: '/docs/custom-plugins/artifactory/',
+              }}
+              key="/docs/custom-plugins/artifactory/"
+            />
           </div>
         </article>
       </main>
