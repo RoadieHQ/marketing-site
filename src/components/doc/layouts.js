@@ -12,7 +12,7 @@ export const DOCS_LAYOUTS = [{
   sidebarNavItemGroups: [sidebar.nav[0]],
 }, {
   tabLabel: 'Plugins & Integrations',
-  startPath: '/docs/integrations/argocd/',
+  startPath: '/docs/integrations/',
   isActiveMatch: '/docs/(?:custom-plugins|integrations)',
   sidebarNavItemGroups: [sidebar.nav[1], sidebar.nav[2], sidebar.nav[3]],
 }, {

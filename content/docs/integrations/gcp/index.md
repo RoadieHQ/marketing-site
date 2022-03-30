@@ -2,6 +2,10 @@
 title: Configuring GCP Service Account for Backstage in Roadie
 publishedDate: '2021-03-16T15:15:00.0Z'
 description: How to configure a Google Cloud service account to connect Backstage with Google Cloud Storage
+
+humanName: Google Cloud Platform
+logoImage: '../../../assets/logos/google-cloud-build/logo-cloud.png'
+integrationType: Integration
 ---
 
 ## Introduction

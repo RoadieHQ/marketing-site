@@ -2,6 +2,9 @@
 title: Configuring SonarQube
 publishedDate: '2021-07-28T21:00:00.0Z'
 description: How to configure the SonarQube plugin on roadie.
+humanName: SonarQube
+logoImage: '../../../assets/logos/sonarqube/logo-sonar.png'
+integrationType: OSS plugin
 ---
 
 ## Introduction

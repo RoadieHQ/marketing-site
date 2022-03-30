@@ -5,7 +5,7 @@ import ListItemHeader from './ListItemHeader';
 
 const ListItem = ({ fields: { slug }, frontmatter: { logoImage, humanName, attribution } }) => {
   <div className="border-2 p-4 text-center" style={{ height: 350 }}>
-    <ListItemHeader slub={slug} logoImage={logoImage} humanName={humanName} />
+    <ListItemHeader slug={slug} logoImage={logoImage} humanName={humanName} />
     <Attribution attribution={attribution} />
   </div>
 };

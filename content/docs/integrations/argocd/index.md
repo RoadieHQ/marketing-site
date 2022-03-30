@@ -5,7 +5,7 @@ description: How to configure the Argo CD plugin on Roadie.
 
 humanName: Argo CD
 logoImage: '../../../assets/logos/argo-cd/argo-cd-logo.png'
-integrationType: oss-plugin
+integrationType: OSS plugin
 ---
 
 ## Introduction

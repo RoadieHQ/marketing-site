@@ -2,6 +2,10 @@
 title: Creating a CircleCI token for Roadie
 publishedDate: '2021-02-23T21:00:00.0Z'
 description: How to create a CircleCI personal access token for use with Backstage.
+
+humanName: CircleCI
+logoImage: '../../../assets/logos/circle-ci/circle-ci-logo-only-black.png'
+integrationType: OSS plugin
 ---
 
 ## Introduction

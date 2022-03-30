@@ -1,9 +1,28 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideFooter, Headline, Input } from 'components';
+import { SEO, SitewideFooter, Headline, Input, Lead, TextLink } from 'components';
 
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
-import ListItem from 'components/backstage/plugins/ListItem';
+import ListItemHeader from 'components/backstage/plugins/ListItemHeader';
+
+const ListItem = ({
+  fields: { slug },
+  frontmatter: {
+    logoImage,
+    humanName,
+    integrationType,
+  },
+}) => (
+  <div className="border-2 p-4 text-center" style={{ height: 350 }}>
+    <ListItemHeader slug={slug} logoImage={logoImage} humanName={humanName} />
+
+    <span
+      className="bg-primary-100 text-primary-800 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium mr-2"
+    >
+      {integrationType}
+    </span>
+  </div>
+);
 
 const DocsIntegrations = ({
   data: {
@@ -32,10 +51,15 @@ const DocsIntegrations = ({
       <DocsHeader location={location} />
 
       <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
-        <article className="relative max-w-lg mx-auto lg:max-w-7xl mb-24">
+        <article className="relative mx-auto lg:max-w-7xl mb-24">
           <div className="lg:flex justify-between items-center mb-12">
-            <div className="sm:mb-6 lg:mb-0">
-              <Headline>Plugins & Integrations</Headline>
+            <div className="mb-6 lg:mb-0">
+              <div className="mb-2">
+                <Headline size="small">Plugins & Integrations</Headline>
+              </div>
+              <Lead>Roadie supports all of these plugins and integrations out of the box.</Lead>
+              <Lead>Please contact support if you need a plugin which is currently not supported.</Lead>
+              <Lead>Customers on the Growth plan can <TextLink color="primary" to="/docs/custom-plugins/artifactory/">write their own plugins</TextLink>.</Lead>
             </div>
 
             <form>
@@ -45,12 +69,13 @@ const DocsIntegrations = ({
                 value={query}
                 aria-label="Filter"
                 placeholder="Filter"
+                className="w-96"
               />
             </form>
           </div>
 
 
-          <div className="grid gap-16 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-12">
+          <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-12">
             {filteredIntegrations.map(({ fields, frontmatter }) => (
               <ListItem frontmatter={frontmatter} fields={fields} key={fields.slug} />
             ))}

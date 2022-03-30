@@ -2,6 +2,10 @@
 title: Generating PagerDuty Token
 publishedDate: '2021-03-16T21:00:00.0Z'
 description: How to create Token for the PagerDuty plugin.
+
+humanName: PagerDuty
+logoImage: '../../../assets/logos/pagerduty/pagerduty-logo-light-200x200.png'
+integrationType: OSS plugin
 ---
 
 ## Introduction

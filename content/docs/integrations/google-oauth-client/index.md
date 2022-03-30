@@ -2,6 +2,10 @@
 title: Configuring Google OAuth for Backstage in Roadie
 publishedDate: '2021-10-11T15:15:00.0Z'
 description: How to configure a Google OAuth client for Roadie
+
+humanName: Google OAuth
+logoImage: '../../../assets/logos/google-cloud-build/logo-cloud.png'
+integrationType: Integration
 ---
 
 ## Introduction

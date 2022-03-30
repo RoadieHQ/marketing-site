@@ -2,6 +2,10 @@
 title: Loading Github Organization Teams
 publishedDate: '2021-03-19T12:14:39.0Z'
 description: How to configure backstage to read teams from github
+
+humanName: GitHub Org
+logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
+integrationType: Integration
 ---
 
 ## Introduction
