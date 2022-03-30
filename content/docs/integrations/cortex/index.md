@@ -4,7 +4,7 @@ publishedDate: '2022-02-28T10:00:00.0Z'
 description: How to add Cortex to Backstage
 
 humanName: Cortex
-logoImage: '../../../assets/logos/jira/jira_logo.png'
+logoImage: '../../../assets/logos/cortex/cortex-logo.png'
 integrationType: OSS plugin
 ---
 

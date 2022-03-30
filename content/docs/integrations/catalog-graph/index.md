@@ -4,7 +4,7 @@ publishedDate: '2021-10-18T21:00:00.0Z'
 description: How to setup Backstage to display catalog entity relationship graphs
 
 humanName: Catalog Graph
-logoImage: '../../../assets/logos/jira/jira_logo.png'
+logoImage: '../../../assets/logos/catalog-graph/catalog-graph-logo.jpeg'
 integrationType: OSS plugin
 ---
 

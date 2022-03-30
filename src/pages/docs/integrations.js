@@ -57,7 +57,7 @@ const DocsIntegrations = ({
               <div className="mb-2">
                 <Headline size="small">Plugins & Integrations</Headline>
               </div>
-              <Lead>Roadie supports all of these plugins and integrations out of the box.</Lead>
+              <Lead>Roadie supports many plugins and integrations out of the box.</Lead>
               <Lead>Please contact support if you need a plugin which is currently not supported.</Lead>
               <Lead>Customers on the Growth plan can <TextLink color="primary" to="/docs/custom-plugins/artifactory/">write their own plugins</TextLink>.</Lead>
             </div>

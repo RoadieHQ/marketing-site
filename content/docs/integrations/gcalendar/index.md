@@ -4,7 +4,7 @@ publishedDate: '2022-03-29T14:00:00.0Z'
 description: How to use the Google calendar plugin
 
 humanName: Google Calendar
-logoImage: '../../../assets/logos/jira/jira_logo.png'
+logoImage: '../../../assets/logos/google-calendar/Google-Calendar-Logo-700x394.png'
 integrationType: OSS plugin
 ---
 

@@ -4,7 +4,7 @@ publishedDate: '2022-03-01T10:00:00.0Z'
 description: How to enable the home page plugin
 
 humanName: Home Page
-logoImage: '../../../assets/logos/jira/jira_logo.png'
+logoImage: '../../../assets/logos/home-page/home.png'
 integrationType: OSS plugin
 ---
 
