@@ -7,8 +7,6 @@ import DocsHeader from 'components/SitewideHeader/DocsHeader';
 import ListItemHeader from 'components/backstage/plugins/ListItemHeader';
 import customPluginsLogoImagePath from '../../../content/assets/logos/code/code.png';
 
-console.log(customPluginsLogoImagePath);
-
 const ListItem = ({
   fields: { slug },
   frontmatter: {
