@@ -42,10 +42,11 @@ nav:
     - Cortex: '/docs/integrations/cortex'
   - Integrations:
     - AWS S3: '/docs/integrations/aws-s3/'
+    - Bitbucket: '/docs/integrations/bitbucket/'
     - GitHub org: '/docs/integrations/github-org/'
     - GitHub token: '/docs/integrations/github-token/'
     - Google Cloud Platform: '/docs/integrations/gcp/'
-    - Google oauth client: '/docs/integrations/google-oauth-client/'
+    - Google OAuth client: '/docs/integrations/google-oauth-client/'
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
