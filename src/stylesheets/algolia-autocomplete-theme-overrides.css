@@ -1,6 +1,5 @@
 :root {
-  /* Same as the Roadie R Icon */
-  --aa-search-input-height: 40px;
+  --aa-search-input-height: 36px;
 
   --aa-icon-color-rgb: 244, 81, 30;
 
@@ -9,8 +8,7 @@
 
   --aa-primary-color-rgb: 244, 81, 30;
 
-  --aa-muted-color-rgb: 0, 0, 0;
-  --aa-muted-color-alpha: 0.78;
+  --aa-muted-color-rgb: 156, 163, 175;
 
   --aa-selected-color-rgb: 344, 81, 30;
   --aa-selected-color-alpha: 0.2;

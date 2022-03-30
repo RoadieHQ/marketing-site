@@ -10,11 +10,10 @@ import {
   NewspaperIcon,
   BriefcaseIcon,
 } from '@heroicons/react/outline'
-import { RoadieRIcon } from 'components/icons';
 
-import CloseMenuButton from './CloseMenuButton';
 import MobileFreeTrialButton from './MobileFreeTrialButton';
 import MobileDropdownNavItem from './MobileDropdownNavItem';
+import DrawerMenuHeader from './DrawerMenuHeader';
 
 const subItems = [{
   name: 'Product',
@@ -64,15 +63,7 @@ const DrawerMenu = () => (
       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
         <div className="pt-5 pb-6 px-5">
 
-          <div className="flex items-center justify-between">
-            <div>
-              <RoadieRIcon />
-            </div>
-
-            <div className="-mr-2">
-              <CloseMenuButton />
-            </div>
-          </div>
+          <DrawerMenuHeader />
 
           <div className="mt-6">
             <nav className="grid gap-y-8">

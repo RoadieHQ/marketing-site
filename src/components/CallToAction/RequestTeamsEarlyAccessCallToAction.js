@@ -9,7 +9,7 @@ import {
 } from 'components';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 
 const submitToNetlifyForms = async ({
   name,
@@ -18,6 +18,7 @@ const submitToNetlifyForms = async ({
   subToNewsletter,
   netlifyFormName,
   honeypotText,
+  recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -31,6 +32,9 @@ const submitToNetlifyForms = async ({
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  if (recaptchaEnabled()) {
+    formData.append('g-recaptcha-response', recaptchaResponse);
+  }
 
   let resp;
   try {
@@ -60,6 +64,8 @@ const RequestTeamsEarlyAccessCallToAction = ({
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
+  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const netlifyFormName = FORM_NAMES.requestTeamsEarlyAccess;
   const buttonText = 'Request early access';
 
@@ -93,7 +99,10 @@ const RequestTeamsEarlyAccessCallToAction = ({
     setSubmitting(false);
   };
 
-  const disabled = submitting || !email || email === '';
+  let disabled = submitting || !email || email === '';
+  if (recaptchaEnabled()) {
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
+  }
 
   return (
     <Form
@@ -135,9 +144,7 @@ const RequestTeamsEarlyAccessCallToAction = ({
         onChange={setSubToNewsletter}
       />
 
-      <div className="sm:col-span-2 mt-4">
-        <Recaptcha />
-      </div>
+      <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
 
       <div className="sm:col-span-2 mt-4">
         <Button

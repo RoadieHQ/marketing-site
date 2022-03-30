@@ -4,7 +4,7 @@ import trackGoogleAnalyticsEvent from '../../googleAnalytics';
 import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 
 export const encode = (data) => {
   const formData = new FormData();
@@ -18,6 +18,7 @@ export const submitEmailToNetlifyForms = async ({
   email,
   netlifyFormName,
   honeypotText,
+  recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -28,15 +29,21 @@ export const submitEmailToNetlifyForms = async ({
 
   let resp;
   try {
+    const bodyParams = {
+      email,
+      'form-name': netlifyFormName,
+      'submit-button-label': submitButtonLabel,
+      'deployed-branch': branch,
+      [HONEYPOT_FIELD_NAME]: honeypotText,
+    };
+
+    if (recaptchaEnabled()) {
+      bodyParams['g-recaptcha-response'] = recaptchaResponse;
+    }
+
     resp = await fetch('/', {
       method: 'POST',
-      body: encode({
-        email,
-        'form-name': netlifyFormName,
-        'submit-button-label': submitButtonLabel,
-        'deployed-branch': branch,
-        [HONEYPOT_FIELD_NAME]: honeypotText,
-      }),
+      body: encode(bodyParams),
     });
   } catch (error) {
     console.error('Submission failed', error, resp);
@@ -67,6 +74,8 @@ const NetlifyFormCallToAction = ({
 }) => {
   const [submitting, setSubmitting] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
+  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const [subForm, setSubForm] = useState({
     message: subFormMessage,
   });
@@ -79,6 +88,7 @@ const NetlifyFormCallToAction = ({
       email,
       netlifyFormName,
       honeypotText,
+      recaptchaResponse,
       submitButtonLabel: buttonText,
     });
 
@@ -109,6 +119,10 @@ const NetlifyFormCallToAction = ({
     netlifyFormName: netlifyFormName,
     honeypotValue: honeypotText,
     onHoneypotChange: setHoneypotText,
+    recaptchaResponse,
+    setRecaptchaResponse,
+    recaptchaExpired,
+    setRecaptchaExpired,
     ...rest,
   };
 

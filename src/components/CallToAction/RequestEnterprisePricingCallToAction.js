@@ -11,7 +11,7 @@ import {
 import { OPTIONS_FOR_NUMBER_OF_ENGINEERS } from 'components/forms/NumberOfEngineers';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch } from '../../environment';
+import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 
 const submitToNetlifyForms = async ({
   name,
@@ -20,6 +20,7 @@ const submitToNetlifyForms = async ({
   subToNewsletter,
   netlifyFormName,
   honeypotText,
+  recaptchaResponse,
   numberOfEngineers,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
@@ -35,6 +36,9 @@ const submitToNetlifyForms = async ({
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  if (recaptchaEnabled()) {
+    formData.append('g-recaptcha-response', recaptchaResponse);
+  }
 
   let resp;
   try {
@@ -64,6 +68,8 @@ const RequestEnterprisePricingCallToAction = ({
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [honeypotText, setHoneypotText] = useState('');
+  const [recaptchaResponse, setRecaptchaResponse] = useState('');
+  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestEnterprisePricing;
   const buttonText = 'Request a quote';
@@ -85,6 +91,7 @@ const RequestEnterprisePricingCallToAction = ({
       numberOfEngineers,
       honeypotText,
       netlifyFormName,
+      recaptchaResponse,
       submitButtonLabel: buttonText,
     });
 
@@ -99,7 +106,10 @@ const RequestEnterprisePricingCallToAction = ({
     setSubmitting(false);
   };
 
-  const disabled = submitting || !email || email === '' || !numberOfEngineers || numberOfEngineers === '';
+  let disabled = submitting || !email || email === '' || !numberOfEngineers || numberOfEngineers === '';
+  if (recaptchaEnabled()) {
+    disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
+  }
 
   return (
     <Form
@@ -148,9 +158,7 @@ const RequestEnterprisePricingCallToAction = ({
         idPrefix="request-pricing-"
       />
 
-      <div className="sm:col-span-2 mt-4">
-        <Recaptcha />
-      </div>
+      <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
 
       <div className="sm:col-span-2 mt-4">
         <Button
