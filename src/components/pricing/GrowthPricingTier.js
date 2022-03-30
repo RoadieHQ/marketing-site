@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, TextField } from 'components';
+import { Button } from 'components';
 
 import TierName from './TierName';
 import TierDescription from './TierDescription';
@@ -14,14 +14,9 @@ const GrowthPricingTier = () => (
       <p className="text-4xl font-extrabold text-gray-900 mb-14">Custom</p>
 
       <div className="mb-10">
-        <TextField
-          type="text"
-          name="number-of-engineers-growth"
-          id="number-of-engineers-growth"
-          readOnly
-          value="150 developers or more"
-          fullWidth
-        />
+        <p className="pt-2 pb-4">
+          100 developers or more
+        </p>
       </div>
 
       <div className="mb-5">
@@ -30,6 +25,7 @@ const GrowthPricingTier = () => (
           link={true}
           color="primary"
           to="/request-demo/"
+          fullWidth
         />
       </div>
     </div>

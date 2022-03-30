@@ -59,6 +59,7 @@ const TeamsPricingTier = () => {
               link={true}
               color="primary"
               to="/free-trial/"
+              fullWidth
             />
           </div>
 

@@ -209,12 +209,11 @@ const Home = ({
       },
     },
   },
-  location,
 }) => (
   <>
     <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
-    <SitewideHeader location={location} />
+    <SitewideHeader />
     <VideoHero />
     <CustomerLogoCloud />
     <AlternatingFeatureBlock content={SOLUTIONS} />
