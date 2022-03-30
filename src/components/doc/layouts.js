@@ -1,6 +1,11 @@
 import sidebar from '../../../content/docs/docs-nav.yaml';
 
 export const DOCS_LAYOUTS = [{
+  tabLabel: 'Home',
+  startPath: '/docs/',
+  isActiveMatch: /^\/docs\/$/,
+  sidebarNavItemGroups: null,
+}, {
   tabLabel: 'Getting started',
   startPath: '/docs/getting-started/install-github-app/',
   isActiveMatch: /\/docs\/getting-started/,

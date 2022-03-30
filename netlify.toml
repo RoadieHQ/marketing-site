@@ -20,11 +20,6 @@
   force = true
 
 [[redirects]]
-  from = "/docs/"
-  to = "/docs/getting-started/install-github-app/"
-  force = true
-
-[[redirects]]
   from = "/careers/"
   to = "https://careers.roadie.io"
   force = true
