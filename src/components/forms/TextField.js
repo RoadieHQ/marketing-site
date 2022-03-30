@@ -17,7 +17,7 @@ const TextField = ({
       <label htmlFor={htmlId} className="block text-sm font-medium text-gray-700">
         {label}
       </label>
-      <div>
+      <div className="mt-1.5 relative">
         <Input id={htmlId} {...rest} />
         <HelpText message={helpText} state={helpTextState} />
       </div>
