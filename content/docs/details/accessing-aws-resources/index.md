@@ -9,6 +9,8 @@ description: How to configure permissions so that Roadie can access AWS resource
 * The Roadie backend role.
 * (optional) An aws permissions policy name to associate with the role. 
 
+The above are accessible via `Administration > Settings > AWS S3`.
+
 ## Introduction
 
 You may want Roadie to be able to access AWS services such as EKS or S3 in your account. In order to do this you must 
@@ -96,6 +98,6 @@ You should see a page like this
 }
 ```
 
-ℹ️ The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
+ℹ️  The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
 
 4. Save the changes.
