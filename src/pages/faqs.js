@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  SEO,
-  SitewideFooter,
-  SitewideHeader,
-} from 'components';
-import {
-  FAQs
-} from 'components/landing';
+import { SEO, SitewideFooter, SitewideHeader } from 'components';
+import { FAQs } from 'components/landing';
 
 const Faqs = () => (
   <>
