@@ -48,13 +48,7 @@ const learn = [{
   icon: ChatIcon,
 }];
 
-const isLandingPage = (location) => {
-  if (!location) return false;
-  if (location.pathname !== '/') return false;
-  return true;
-};
-
-const SitewideHeader = ({ maxWidth = '7xl', location }) => (
+const SitewideHeader = ({ maxWidth = '7xl' }) => (
   <Popover className="relative bg-white z-20">
     <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
       <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
@@ -76,14 +70,13 @@ const SitewideHeader = ({ maxWidth = '7xl', location }) => (
         </Popover.Group>
 
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          {!isLandingPage(location) && (
-            <Button
-              link={true}
-              color="primary"
-              to="/free-trial/"
-              text="Try it free"
-            />
-          )}
+          <Button
+            link={true}
+            color="primary"
+            size="small"
+            to="/free-trial/"
+            text="Try it free"
+          />
         </div>
       </div>
     </div>
