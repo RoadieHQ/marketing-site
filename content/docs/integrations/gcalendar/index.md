@@ -12,7 +12,9 @@ The Google Calendar plugin provides a home page card you can use to display your
 
 ## Installation
 
-1. Set up google auth in Roadie following [this guide](/docs/integrations/google-oauth-client)
+## Configure Google authentication
+
+1. Set up a Google OAuth app in Roadie following [this guide](/docs/integrations/google-oauth-client)
 
 2. Ensure the Google calendar API is enabled in GCP.
    1. In GCP console navigate to `APIs & Services > Library`
@@ -24,4 +26,6 @@ The Google Calendar plugin provides a home page card you can use to display your
    3. Select Google Calendar from the results and click "enable"
    ![gcp-api-search](./gcp-enable-api.png)
 
-3. Add the card `HomePageCalendar` from the `@backstage/plugin-gcalendar` package to the home page ([read how](/docs/details/updating-the-ui#updating-the-home-page)).
+## Add the calendar card to the home page
+   
+Add the card `HomePageCalendar` from the `@backstage/plugin-gcalendar` package to the home page ([read how](/docs/details/updating-the-ui#updating-the-home-page)).
