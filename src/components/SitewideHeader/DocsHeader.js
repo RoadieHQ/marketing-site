@@ -1,34 +1,21 @@
 import React from 'react';
 import { Popover } from '@headlessui/react';
-import classnames from 'classnames';
 
 import { AlgoliaAutocomplete } from 'components/AlgoliaAutocomplete';
-import { Button, Link } from 'components';
+import { Button, Link, TabInner } from 'components';
 import { DOCS_LAYOUTS } from 'components/doc';
 
 import OpenMenuButton from './OpenMenuButton';
 import DocsDrawerMenu from './DocsDrawerMenu';
 import Logo from '../Logo';
 
-const Tab = ({ startPath, tabLabel: label, isActive }) => {
-  const chipClassName = classnames('bg-primary-600 h-1 right-0 left-0 bottom-0', {
-    'absolute': isActive,
-    'hidden': !isActive,
-  });
-
-  return (
-    <div className="flex">
-      <Link to={startPath}>
-        <div className="pb-2 relative mr-8">
-          <span className={classnames('text-base text-center', { 'text-primary-600': isActive })}>
-            {label}
-          </span>
-          <span className={chipClassName} />
-        </div>
-      </Link>
-    </div>
-  );
-};
+const Tab = ({ startPath, tabLabel: label, isActive }) => (
+  <div className="flex">
+    <Link to={startPath}>
+      <TabInner label={label} isActive={isActive} />
+    </Link>
+  </div>
+);
 
 const DocsHeader = ({ location }) => (
   <Popover className="relative bg-white z-20">

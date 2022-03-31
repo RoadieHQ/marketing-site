@@ -10,7 +10,7 @@ const Input = ({ onChange, className, fullWidth = false, ...rest }) => {
     <input
       onChange={onInputChange}
       className={
-        classnames(className, 'py-3 px-4 block shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md', {
+        classnames(className, 'py-3 px-4 block shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md placeholder:text-gray-400', {
           'w-full': fullWidth,
         })
       }
