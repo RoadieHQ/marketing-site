@@ -1,7 +1,7 @@
 import React from 'react';
 import isEmpty from 'lodash/isEmpty';
 import kebabCase from 'lodash/kebabCase';
-import { Link } from 'components';
+import { Link, Chip } from 'components';
 
 const Tags = ({ tags }) => {
   if (isEmpty(tags)) return null;
@@ -11,11 +11,7 @@ const Tags = ({ tags }) => {
       {tags.map((tag) => {
         return (
           <Link to={`/tags/${kebabCase(tag)}/`} className="inline-block" key={tag}>
-            <span
-              className="bg-primary-100 text-primary-800 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium mr-2"
-            >
-              {tag.toLowerCase()}
-            </span>
+            <Chip label={tag.toLowerCase()} />
           </Link>
         );
       })}
