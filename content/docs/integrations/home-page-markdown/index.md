@@ -2,6 +2,10 @@
 title: Home Page Markdown Plugin
 publishedDate: '2022-03-01T10:00:00.0Z'
 description: How to enable the home page markdown plugin
+
+humanName: Home Page Markdown
+logoImage: '../../../assets/logos/home-page/home.png'
+integrationType: OSS plugin
 ---
 
 ## Introduction

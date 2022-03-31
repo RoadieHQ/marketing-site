@@ -2,6 +2,10 @@
 title: Generating Jira Token
 publishedDate: '2021-03-16T21:00:00.0Z'
 description: How to create Personal Access Token for Jira plugin.
+
+humanName: Jira
+logoImage: '../../../assets/logos/jira/jira_logo.png'
+integrationType: OSS plugin
 ---
 
 ## Introduction

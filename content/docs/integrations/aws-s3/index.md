@@ -2,6 +2,10 @@
 title: Integrating with AWS S3
 publishedDate: '2022-03-29T21:00:00.0Z'
 description: How to configure Roadie to read from S3
+
+humanName: AWS S3
+logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.png'
+integrationType: Integration
 ---
 
 ## Introduction

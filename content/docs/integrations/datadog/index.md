@@ -2,6 +2,10 @@
 title: Datadog
 publishedDate: '2021-10-18T21:00:00.0Z'
 description: How setup Backstage to display graphs and dashboards from Datadog
+
+humanName: Datadog
+logoImage: '../../../assets/logos/datadog/datadog-logo-no-text.png'
+integrationType: OSS plugin
 ---
 
 ## Introduction

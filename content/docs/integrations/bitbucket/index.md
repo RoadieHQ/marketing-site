@@ -2,6 +2,10 @@
 title: Integrating with Bitbucket
 publishedDate: '2022-03-28T14:00:00.0Z'
 description: How to give Roadie the access it needs to your Bitbucket repositories.
+
+humanName: Bitbucket
+logoImage: '../../../assets/logos/bitbucket/bitbucket.png'
+integrationType: Integration
 ---
 
 ## Introduction

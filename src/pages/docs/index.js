@@ -4,7 +4,7 @@ import { Button, SEO, SitewideFooter, Headline, Lead, TextLink } from 'component
 import { ChevronRightIcon, LockClosedIcon, TerminalIcon } from '@heroicons/react/outline'
 
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
-import developerPortalIllustrationPng from '../../content/assets/docs/illustrations/developer-portal.png';
+import developerPortalIllustrationPng from '../../../content/assets/docs/illustrations/developer-portal.png';
 
 const Doc = ({
   data: {

@@ -11,7 +11,7 @@ seo:
   description: |
     Visualize relationships between the entities in your Software Catalog.
 
-logoImage: '../../assets/logos/catalog-graph/catalog-graph-logo.png'
+logoImage: '../../assets/logos/catalog-graph/catalog-graph-logo.jpeg'
 coverImage: '../../assets/catalog-graph-plugin.png'
 coverImageAlt: 'Backstage Catalog Graph Plugin showing relationships between entities'
 
