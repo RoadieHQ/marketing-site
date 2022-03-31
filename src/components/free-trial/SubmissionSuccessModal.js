@@ -10,10 +10,10 @@ const SubmissionSuccessModal = ({ email, scmTool, ...rest }) => {
   if (isScmToolSupported(scmTool)) {
     return (
       <FormSubmissionModal
-        titleText="Your Backstage experience is on the way"
+        titleText="We'll be in touch!"
         bodyText={
           <p>
-            Once it&apos;s ready, you&apos;ll receive an email at {email}. It typically takes a day or two to get everything ready.
+            Expect an email at {email}. It sometimes takes a day or two to get everything ready.
           </p>
         }
         followOn="NEWSLETTER_AND_TWITTER"
@@ -29,11 +29,11 @@ const SubmissionSuccessModal = ({ email, scmTool, ...rest }) => {
       bodyText={
         <>
           <p>
-            Roadie only supports GitHub Cloud for now.
+            Roadie only supports GitHub and Bitbucket for now.
           </p>
           <p>
-            We are working to support more tools in the near future,
-            and you will be among the first to know when we support yours.
+            We are working to support more tools in the near future.
+            You will be among the first to know when we support yours.
           </p>
         </>
       }

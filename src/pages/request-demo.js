@@ -32,11 +32,11 @@ const SubmissionSuccessModal = ({ scmTool, ...rest }) => {
       bodyText={
         <>
           <p>
-            Roadie only supports GitHub Cloud for now.
+            Roadie only supports GitHub and Bitbucket for now.
           </p>
           <p>
-            We are working to support more tools in the near future,
-            and you will be among the first to know when we support yours.
+            We are working to support more tools in the near future.
+            You will be among the first to know when we support yours.
           </p>
         </>
       }
