@@ -14,23 +14,27 @@ You must instal the GitHub App in order to import components in private reposito
 
 ## Step 1: Create your 'catalog-info.yaml' file
 
-Create a file called `catalog-info.yaml` in the root of your GitHub repo and add content like this to it:
+Create a file called `catalog-info.yaml` in the root of your GitHub repo and add the following YAML to it. 
+
+Make sure to update the following variables:
+
+ 1. Set `<github-org>` to the name of your GitHub organization.
+ 2. Set `<github-repo>` to the name of your repo.
+ 2. Set `<github-username>` to your GitHub username.
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: sample-service-1
-  title: Sample Service 1 # optional, human readable component name
-  description: |
-    A service for testing Backstage functionality. Configured for
-    GitHub Actions.
+  name: <github-repo>
+  title: Sample Service # optional, human readable component name
+  description: My first Backtstage catalog item.
   annotations:
-    github.com/project-slug: roadiehq/sample-service
+    github.com/project-slug: <github-org>/<github-repo>
 spec:
   type: service
-  owner: my-team-name
-  lifecycle: production
+  owner: user:<github-username>
+  lifecycle: experimental
 ```
 
 ## Step 2: Import Your Component YAML file into Backstage
