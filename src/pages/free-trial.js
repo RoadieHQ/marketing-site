@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
-import SubmissionSuccessModal from 'components/free-trial/SubmissionSuccessModal';
+import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 
 const SEO_TITLE = 'Try hosted Spotify Backstage for free';
@@ -35,11 +35,28 @@ const RequestTrial = ({ data, location }) => {
       />
 
       <SubmissionSuccessModal
-        email={email}
         scmTool={scmTool}
         handleCloseModal={handleCloseModal}
         modalOpen={modalOpen}
         siteMetadata={data.site.siteMetadata}
+        positiveTitle="We'll be in touch!"
+        positiveBody={(
+          <p>
+            Expect an email at {email}. It sometimes takes a day or two to get everything ready.
+          </p>
+        )}
+        negativeTitle="Oops! We're not ready for you yet."
+        negativeBody={(
+          <>
+            <p>
+              Roadie only supports GitHub and Bitbucket for now.
+            </p>
+            <p>
+              We are working to support more tools in the near future.
+              You will be among the first to know when we support yours.
+            </p>
+          </>
+        )}
       />
 
       <div className="min-h-screen bg-white">

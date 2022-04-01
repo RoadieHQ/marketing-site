@@ -1,50 +1,12 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, Testimonial } from 'components';
-import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
-import { isScmToolSupported } from 'components/free-trial/SubmissionSuccessModal';
+import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
 const SEO_TITLE = 'Request a demo of Roadie Backstage';
-
-const SubmissionSuccessModal = ({ scmTool, ...rest }) => {
-  if (isScmToolSupported(scmTool)) {
-    return (
-      <FormSubmissionModal
-        titleText="We'll be in touch"
-        bodyText={
-          <p>
-            Thank you for requesting a Roadie Backstage demo. We will reach out to schedule a call via the email provided.
-          </p>
-        }
-        followOn="NEWSLETTER_AND_TWITTER"
-        {...rest}
-      />
-    );
-  }
-
-  return (
-    <FormSubmissionModal
-      titleText="Oops! We're not ready for you yet."
-      titleEmoji={null}
-      bodyText={
-        <>
-          <p>
-            Roadie only supports GitHub and Bitbucket for now.
-          </p>
-          <p>
-            We are working to support more tools in the near future.
-            You will be among the first to know when we support yours.
-          </p>
-        </>
-      }
-      followOn="NEWSLETTER_AND_TWITTER"
-      {...rest}
-    />
-  );
-};
 
 const RequestDemo = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -63,10 +25,28 @@ const RequestDemo = ({ data, location }) => {
       />
 
       <SubmissionSuccessModal
+        scmTool={scmTool}
         handleCloseModal={handleCloseModal}
         modalOpen={modalOpen}
         siteMetadata={data.site.siteMetadata}
-        scmTool={scmTool}
+        positiveTitle="We'll be in touch!"
+        positiveBody={(
+          <p>
+            Thank you for requesting a Roadie Backstage demo. We will reach out to schedule a call via the email provided.
+          </p>
+        )}
+        negativeTitle="Oops! We're not ready for you yet."
+        negativeBody={(
+          <>
+            <p>
+              Roadie only supports GitHub and Bitbucket for now.
+            </p>
+            <p>
+              We are working to support more tools in the near future.
+              You will be among the first to know when we support yours.
+            </p>
+          </>
+        )}
       />
 
       <div className="min-h-screen bg-white">
