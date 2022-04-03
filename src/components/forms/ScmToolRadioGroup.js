@@ -10,7 +10,7 @@ export const SCM_TOOLS = [{
 }, {
   value: 'github-on-prem',
   label: 'GitHub On-prem',
-  supported: false,
+  supported: true,
 }, {
   value: 'gitlab-cloud',
   label: 'Gitlab Cloud',
@@ -22,11 +22,11 @@ export const SCM_TOOLS = [{
 }, {
   value: 'bitbucket-cloud',
   label: 'Bitbucket Cloud',
-  supported: false,
+  supported: true,
 }, {
   value: 'bitbucket-server',
   label: 'Bitbucket Server',
-  supported: false,
+  supported: true,
 }, {
   value: 'other',
   label: 'Other',
@@ -54,7 +54,7 @@ const ScmToolRadioGroup = ({
           id={`${idPrefix}scm-${value}-input`}
         />
       ))}
-      <HelpText message="Roadie only supports GitHub Cloud for now. Submit the form to be notified when we support your tool." />
+      <HelpText message="Roadie only supports GitHub and Bitbucket for now. Submit the form to be notified when we support your tool." />
     </div>
   </fieldset>
 );

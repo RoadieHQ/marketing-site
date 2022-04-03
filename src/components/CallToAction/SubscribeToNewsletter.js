@@ -1,7 +1,7 @@
 import React from 'react';
 import { Title, TextLink as Link } from 'components';
+import { FormSubmissionModal } from 'components/FormSubmissionModal';
 
-import FormSubmissionModal from './FormSubmissionModal';
 import CallToAction from './NetlifyFormCallToAction';
 import { FORM_NAMES } from '../../contactFormConstants';
 

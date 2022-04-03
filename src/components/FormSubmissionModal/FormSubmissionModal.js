@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextLink as Link, Button, Title } from 'components';
-import { ExternalLinkIcon } from '@heroicons/react/outline'
+import { ExternalLinkIcon, XIcon } from '@heroicons/react/outline'
 import Modal, { modalStyles } from 'components/Modal';
 
 const twitterUrl = ({ social }) => `https://twitter.com/${social.twitter}`;
@@ -100,13 +100,24 @@ const FormSubmissionModal = ({
       contentLabel="Modal"
       onRequestClose={handleCloseModal}
     >
-      <div className="p-4 prose prose-primary max-w-none mb-1">
-        <Title>
-          {titleText}{' '}{titleEmoji}
-        </Title>
-        {bodyText}
+      <div className="p-4">
+        <div className="mb-4 pb-4 flex items-center justify-between">
+          <Title>
+            {titleText}{' '}{titleEmoji}
+          </Title>
 
-        {followOnContent}
+          <button onClick={handleCloseModal}>
+            <XIcon className="h-8 w-8" />
+          </button>
+        </div>
+
+        <div className="prose prose-primary max-w-none mb-4 pb-8 border-b-2 border-gray-100">
+          {bodyText}
+        </div>
+
+        <div className="prose prose-primary max-w-none mb-4">
+          {followOnContent}
+        </div>
       </div>
     </Modal>
   );
