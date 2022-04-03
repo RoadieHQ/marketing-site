@@ -13,6 +13,25 @@ import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 
 const SEO_TITLE = 'Try hosted Spotify Backstage for free';
 
+const SubmissionSuccessPositiveBody = () => (
+  <p>
+    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via
+    the email provided.
+  </p>
+);
+
+const SubmissionSuccessNegativeBody = () => (
+  <>
+    <p>
+      Roadie only supports GitHub and Bitbucket for now.
+    </p>
+    <p>
+      We are working to support more tools in the near future.
+      You will be among the first to know when we support yours.
+    </p>
+  </>
+);
+
 const RequestTrial = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
 
@@ -21,7 +40,6 @@ const RequestTrial = ({ data, location }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState(params.has('email') ? params.get('email') : '');
   const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
-
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -40,23 +58,9 @@ const RequestTrial = ({ data, location }) => {
         modalOpen={modalOpen}
         siteMetadata={data.site.siteMetadata}
         positiveTitle="We'll be in touch!"
-        positiveBody={(
-          <p>
-            Expect an email at {email}. It sometimes takes a day or two to get everything ready.
-          </p>
-        )}
-        negativeTitle="Oops! We're not ready for you yet."
-        negativeBody={(
-          <>
-            <p>
-              Roadie only supports GitHub and Bitbucket for now.
-            </p>
-            <p>
-              We are working to support more tools in the near future.
-              You will be among the first to know when we support yours.
-            </p>
-          </>
-        )}
+        positiveBody={<SubmissionSuccessPositiveBody />}
+        negativeTitle="Watch this space!"
+        negativeBody={<SubmissionSuccessNegativeBody />}
       />
 
       <div className="min-h-screen bg-white">

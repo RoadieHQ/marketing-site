@@ -1,6 +1,7 @@
 import React from 'react';
-import FormSubmissionModal from 'components/CallToAction/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
+
+import FormSubmissionModal from './FormSubmissionModal';
 
 const isScmToolSupported = (tool) => (
   SCM_TOOLS.filter(({ supported }) => supported).map(({ value }) => value).includes(tool)

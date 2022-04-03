@@ -8,6 +8,25 @@ import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 
 const SEO_TITLE = 'Request a demo of Roadie Backstage';
 
+const SubmissionSuccessPositiveBody = () => (
+  <p>
+    Thank you for requesting a demo of Roadie Backstage. We&apos;ll be in touch via
+    the email provided.
+  </p>
+);
+
+const SubmissionSuccessNegativeBody = () => (
+  <>
+    <p>
+      Roadie only supports GitHub and Bitbucket for now.
+    </p>
+    <p>
+      We are working to support more tools in the near future.
+      You will be among the first to know when we support yours.
+    </p>
+  </>
+);
+
 const RequestDemo = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
@@ -30,23 +49,9 @@ const RequestDemo = ({ data, location }) => {
         modalOpen={modalOpen}
         siteMetadata={data.site.siteMetadata}
         positiveTitle="We'll be in touch!"
-        positiveBody={(
-          <p>
-            Thank you for requesting a Roadie Backstage demo. We will reach out to schedule a call via the email provided.
-          </p>
-        )}
+        positiveBody={<SubmissionSuccessPositiveBody />}
         negativeTitle="Oops! We're not ready for you yet."
-        negativeBody={(
-          <>
-            <p>
-              Roadie only supports GitHub and Bitbucket for now.
-            </p>
-            <p>
-              We are working to support more tools in the near future.
-              You will be among the first to know when we support yours.
-            </p>
-          </>
-        )}
+        negativeBody={<SubmissionSuccessNegativeBody />}
       />
 
       <div className="min-h-screen bg-white">
