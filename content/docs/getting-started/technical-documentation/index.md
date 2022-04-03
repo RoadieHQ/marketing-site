@@ -158,6 +158,31 @@ Commit and merge these changes to the default branch of your repo on GitHub and 
 
 ![a new page called local development with a code block and some navigation](./local-development-docs-backstage.png)
 
+
+## Handling Documentation Monorepos
+
+If you need to have a place to store docs that are not related to a specific codebase or component, you may want to use a single repository to collect that meta documentation.
+
+Nested file structures and sub-directories can be modeled using the [Monorepo plugin for techdocs](https://github.com/backstage/mkdocs-monorepo-plugin). 
+
+1. Add to your root `mkdocs.yaml` file.
+```yaml
+plugins:
+  - monorepo
+```
+
+2. Reference other `mkdocs.yaml` files in sub-directories using the `!include` syntax like so:
+
+```yaml
+nav:
+  - Intro: 'index.md'
+  - Authentication: 'authentication.md'
+  - API:
+    - v1: '!include ./v1/mkdocs.yml'
+    - v2: '!include ./v2/mkdocs.yml'
+```
+
+
 ## Further reading
 
 1. Backstage TechDocs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/) will broadly apply to your Backstage documentation setup.
