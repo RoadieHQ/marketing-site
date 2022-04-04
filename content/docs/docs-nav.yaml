@@ -58,3 +58,5 @@ nav:
     - Accessessing AWS Resources: '/docs/details/accessing-aws-resources/'
     - Allowlisting Roadie Traffic: '/docs/details/allowlisting-roadie-traffic/'
     - Required annotations: '/docs/details/required-annotations/'
+    - Previewing config changes: '/docs/details/previewing-changes/'
+    - Removing Components: '/docs/details/unregister-components/'
