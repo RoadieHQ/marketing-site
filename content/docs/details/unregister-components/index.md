@@ -6,7 +6,7 @@ description: How to remove a component from the catalog
 
 You can remove a component from Roadie Backstage by unregistering it. 
 
-Go to the component in question i.e. `/catalog/default/component/sample-service` and click the three vertical dots on the top right.
+Go to the component in question i.e. `/catalog/default/component/sample-service` and click the kebab menu on the top right.
 
 ![Remove item menu](./unregister-menu.png)
 
