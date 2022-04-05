@@ -176,8 +176,8 @@ const PLUGINS_SUPPORTED = {
   title: 'Pre-loaded with the best plugins',
   subTitle: `Open-source plugins are supported by default. Push your own plugins if you need something bespoke.`,
   link: {
-    text: 'See the range of Backstage plugins available',
-    to: '/backstage/plugins/',
+    text: 'Browse our plugins and integrations catalog',
+    to: '/docs/integrations/',
   },
 
   logos: [{
