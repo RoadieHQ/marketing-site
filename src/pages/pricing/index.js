@@ -1,7 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter } from 'components';
-import { GrowthPricingTier, TeamsPricingTier, SectionHeader } from 'components/pricing';
+import {
+  GrowthPricingTier,
+  TeamsPricingTier,
+  SectionHeader,
+  FeatureComparisonTable,
+} from 'components/pricing';
 import { FAQs } from 'components/landing';
 
 const Pricing = ({
@@ -29,6 +34,12 @@ const Pricing = ({
           <TeamsPricingTier />
           <GrowthPricingTier />
         </div>
+      </div>
+    </div>
+
+    <div className="bg-white">
+      <div className="max-w-4xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:px-8">
+        <FeatureComparisonTable />
       </div>
     </div>
 
