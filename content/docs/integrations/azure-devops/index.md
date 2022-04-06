@@ -36,7 +36,7 @@ You will need to set your Azure Devops Organization name in the Settings page un
 
 Then you will need to add a [Personal Access Token](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page) with read access to both Code and Build.
 
-This is set within backstage at the following url or via Settings under the Secrets section:
+This is set within Roadie at the following URL or via Settings under the Secrets section:
 
 ```text
 https://<tenant-name>.roadie.so/administration/settings/secrets
