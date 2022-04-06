@@ -47,7 +47,7 @@ You will first need to add the following annotation in your Component's `catalog
 
 ```dev.azure.com/project-repo: <project-name>/<repo-name>```
 
-Let's break this down a little: <project-name> will be the name of your Team Project and <repo-name> will be the name of your repository which needs to be part of the Team Project you entered for <project-name>.
+Let's break this down a little: `<project-name>` will be the name of your Team Project and `<repo-name>` will be the name of your repository which needs to be part of the Team Project you entered for <project-name>.
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
