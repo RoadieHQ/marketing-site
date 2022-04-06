@@ -30,5 +30,13 @@ If your IT department requires an allow list of domains, please use the followin
 <yourtenant>.roadie.so
 <yourtenant>.vouch.roadie.so
 *.roadie.systems
+```
 
+We recommend also allowing the following domains so that your users will be able to contact
+us for support:
+
+```
+*.intercomcdn.com
+*.intercom.io
+*.intercom.com
 ```
