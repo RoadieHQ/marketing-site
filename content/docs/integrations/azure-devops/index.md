@@ -19,14 +19,14 @@ Azure Pipelines is a CI/CD, testing, and deployment system that can connect to a
 
 The plugin lists the latest builds for a given Azure Repo.
 
-![Azure Piplines Builds screenshot](./azure-devops-builds.png)
+![Azure Piplines Builds screenshot](../../../assets/backstage/plugins/azure-devops/azure-devops-builds.png)
 
 ### Azure Repos
 Azure Repos is a Git repository service. 
 
 The plugin lists the latest Active, Completed, or Abandoned Pull Requests for a given repository.
 
-![Azure Repos PR screenshot](./azure-devops-pull-requests.png)
+![Azure Repos PR screenshot](../../../assets/backstage/plugins/azure-devops/azure-devops-pull-requests.png)
 
 ## Setup
 (NB: You must be a Backstage admin to add this plugin.)
