@@ -17,6 +17,7 @@ nav:
   - Backstage plugins:
     - Allure: '/docs/integrations/allure/'
     - Argo CD: '/docs/integrations/argocd/'
+    - Azure DevOps: '/docs/integrations/azure-devops/'
     - BuildKite: '/docs/integrations/buildkite/'
     - Bugsnag: '/docs/integrations/bugsnag/'
     - Catalog graph: '/docs/integrations/catalog-graph/'
