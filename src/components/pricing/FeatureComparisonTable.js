@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { CheckIcon, MinusIcon, InformationCircleIcon } from '@heroicons/react/solid';
+import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
 import { Button } from 'components';
 
 const TIERS = [{
