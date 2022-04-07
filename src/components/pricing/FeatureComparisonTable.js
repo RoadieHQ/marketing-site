@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
+import { CheckIcon, MinusIcon, InformationCircleIcon } from '@heroicons/react/solid';
 import { Button } from 'components';
 
 const TIERS = [{
@@ -12,74 +12,59 @@ const TIERS = [{
   ctaLinkTo: '/request-demo/',
 }];
 
-const sections = [ {
+const sections = [{
   name: 'Scale',
   features: [{
     name: 'Software components tracked',
-    tiers: {
-      Teams: 'Unlimited',
-      Growth: 'Unlimited',
-    },
+    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
   }, {
     name: 'API Specs',
-    tiers: {
-      Teams: 'Unlimited',
-      Growth: 'Unlimited',
-    },
+    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
   }, {
     name: 'TechDocs',
-    tiers: {
-      Teams: 'Unlimited',
-      Growth: 'Unlimited',
-    },
+    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
   }, {
     name: 'Scaffolder templates',
-    tiers: {
-      Teams: 'Unlimited',
-      Growth: 'Unlimited',
-    },
+    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
   }, {
     name: 'Minimum seats',
-    tiers: {
-      Teams: '10',
-      Growth: '100',
-    },
+    tiers: { Teams: '10', Growth: '100' },
   }],
 }, {
   name: 'Features',
   features: [{
     name: 'Software & teams catalog',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'Weekly Backstage upgrades',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'TechDocs technical documentation',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'Scaffolder service creator',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'API specs',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'Open-source Backstage plugins',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'Locations log',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'Tech radar plugin',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'Kubernetes plugin',
-    tiers: { Teams: true, Growth: true }
+    tiers: { Teams: true, Growth: true },
   }, {
     name: 'Custom, private Backstage plugins',
-    tiers: { Growth: true }
+    tiers: { Growth: true },
   }, {
     name: 'API access',
-    tiers: { Growth: true }
+    tiers: { Growth: true },
   }],
 }, {
   name: 'Support',
@@ -98,26 +83,45 @@ const sections = [ {
   }],
 }];
 
+
+const FeatureNameHeaderCell = ({ feature }) => (
+  <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
+    {feature.name}
+  </th>
+);
+
+const FeatureInTierIndicatorText = ({ text }) => (
+  <span className="block text-sm text-gray-700 text-right lg:text-left">{text}</span>
+);
+
+const FeatureInTierIndicatorIcon = ({ featureTier, tier }) => (
+  <>
+    {featureTier === true ? (
+      <CheckIcon className="ml-auto lg:ml-0 h-5 w-5 text-green-500" aria-hidden="true" />
+    ) : (
+      <MinusIcon className="ml-auto lg:ml-0 h-5 w-5 text-gray-400" aria-hidden="true" />
+    )}
+
+    <span className="sr-only">
+      {featureTier === true ? 'Included' : 'Not included'} in {tier.name}
+    </span>
+  </>
+);
+
+const FeatureTierIndicatorCell = ({ tier, featureTier}) => (
+  <td className="py-5 pr-4 lg:px-6">
+    {typeof featureTier === 'string' ? (
+      <FeatureInTierIndicatorText text={featureTier} />
+    ) : (
+      <FeatureInTierIndicatorIcon featureTier={featureTier} tier={tier} />
+    )}
+  </td>
+);
+
 const FeatureRow = ({ feature, tier }) => (
   <tr key={feature.name} className="border-t border-gray-200">
-    <th className="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
-      {feature.name}
-    </th>
-    <td className="py-5 pr-4">
-      {typeof feature.tiers[tier.name] === 'string' ? (
-        <span className="block text-sm text-gray-700 text-right">{feature.tiers[tier.name]}</span>
-      ) : (
-        <>
-          {feature.tiers[tier.name] === true ? (
-            <CheckIcon className="ml-auto h-5 w-5 text-green-500" aria-hidden="true" />
-          ) : (
-            <MinusIcon className="ml-auto h-5 w-5 text-gray-400" aria-hidden="true" />
-          )}
-
-          <span className="sr-only">{feature.tiers[tier.name] === true ? 'Yes' : 'No'}</span>
-        </>
-      )}
-    </td>
+    <FeatureNameHeaderCell feature={feature} />
+    <FeatureTierIndicatorCell featureTier={feature.tiers[tier.name]} tier={tier} />
   </tr>
 );
 
@@ -151,30 +155,52 @@ const SectionTable = ({ section, tier, tierIndex }) => (
 );
 
 const LargeFeatureRow = ({ feature }) => (
-  <tr key={feature.name}>
-    <th className="py-5 px-6 text-sm font-normal text-gray-500 text-left" scope="row">
-      {feature.name}
-    </th>
+  <tr>
+    <FeatureNameHeaderCell feature={feature} />
 
     {TIERS.map((tier) => (
-      <td key={tier.name} className="py-5 px-6">
-        {typeof feature.tiers[tier.name] === 'string' ? (
-          <span className="block text-sm text-gray-700">{feature.tiers[tier.name]}</span>
-        ) : (
-          <>
-            {feature.tiers[tier.name] === true ? (
-              <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-            ) : (
-              <MinusIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-            )}
-
-            <span className="sr-only">
-              {feature.tiers[tier.name] === true ? 'Included' : 'Not included'} in {tier.name}
-            </span>
-          </>
-        )}
-      </td>
+      <FeatureTierIndicatorCell
+        featureTier={feature.tiers[tier.name]}
+        tier={tier}
+        key={tier.name}
+      />
     ))}
+  </tr>
+);
+
+const LargeTierHeaderCell = ({ tier }) => (
+  <th
+    key={tier.name}
+    className="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left"
+    scope="col"
+  >
+    {tier.name}
+  </th>
+);
+
+const LargeTierCta = ({ tier }) => (
+  <td className="h-full py-8 px-6 align-top">
+    <div className="relative h-full table">
+      <Button
+        text={tier.ctaLabel}
+        link={true}
+        color="primary"
+        to={tier.ctaLinkTo}
+        fullWidth
+      />
+    </div>
+  </td>
+);
+
+const LargeSectionHeaderRow = ({ section }) => (
+  <tr>
+    <th
+      className="bg-gray-50 py-3 pl-6 text-sm font-medium text-gray-900 text-left"
+      colSpan={4}
+      scope="colgroup"
+    >
+      {section.name}
+    </th>
   </tr>
 );
 
@@ -207,13 +233,7 @@ const FeatureComparisonTable = () => {
                 <span>Plans</span>
               </th>
               {TIERS.map((tier) => (
-                <th
-                  key={tier.name}
-                  className="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left"
-                  scope="col"
-                >
-                  {tier.name}
-                </th>
+                <LargeTierHeaderCell tier={tier} key={tier.name} />
               ))}
             </tr>
           </thead>
@@ -225,31 +245,13 @@ const FeatureComparisonTable = () => {
               </th>
 
               {TIERS.map((tier) => (
-                <td key={tier.name} className="h-full py-8 px-6 align-top">
-                  <div className="relative h-full table">
-                    <Button
-                      text={tier.ctaLabel}
-                      link={true}
-                      color="primary"
-                      to={tier.ctaLinkTo}
-                      fullWidth
-                    />
-                  </div>
-                </td>
+                <LargeTierCta tier={tier} key={tier.name} />
               ))}
             </tr>
 
             {sections.map((section) => (
               <Fragment key={section.name}>
-                <tr>
-                  <th
-                    className="bg-gray-50 py-3 pl-6 text-sm font-medium text-gray-900 text-left"
-                    colSpan={4}
-                    scope="colgroup"
-                  >
-                    {section.name}
-                  </th>
-                </tr>
+                <LargeSectionHeaderRow section={section} />
                 {section.features.map((feature) => (
                   <LargeFeatureRow feature={feature} key={feature.name} />
                 ))}

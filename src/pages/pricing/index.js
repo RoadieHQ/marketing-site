@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter } from 'components';
+import { SEO, SitewideHeader, SitewideFooter, Headline } from 'components';
 import {
   GrowthPricingTier,
   TeamsPricingTier,
@@ -35,10 +35,11 @@ const Pricing = ({
           <GrowthPricingTier />
         </div>
       </div>
-    </div>
 
-    <div className="bg-white">
-      <div className="max-w-4xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto py-16 sm:py-24 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <Headline el="h2" size="small">Feature comparison</Headline>
+        </div>
         <FeatureComparisonTable />
       </div>
     </div>
