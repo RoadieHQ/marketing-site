@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
-import { Button } from 'components';
+import { TextLink } from 'components';
 
 const TIERS = [{
   name: 'Teams',
@@ -181,13 +181,9 @@ const LargeTierHeaderCell = ({ tier }) => (
 const LargeTierCta = ({ tier }) => (
   <td className="h-full py-8 px-6 align-top">
     <div className="relative h-full table">
-      <Button
-        text={tier.ctaLabel}
-        link={true}
-        color="primary"
-        to={tier.ctaLinkTo}
-        fullWidth
-      />
+      <TextLink color="primary" to={tier.ctaLinkTo}>
+        {tier.ctaLabel}
+      </TextLink>
     </div>
   </td>
 );
