@@ -36,7 +36,7 @@ const sections = [{
     name: 'Software & teams catalog',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'Weekly Backstage upgrades',
+    name: 'Monthly Backstage upgrades',
     tiers: { Teams: true, Growth: true },
   }, {
     name: 'TechDocs technical documentation',

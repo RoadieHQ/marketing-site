@@ -54,7 +54,7 @@ const ScmToolRadioGroup = ({
           id={`${idPrefix}scm-${value}-input`}
         />
       ))}
-      <HelpText message="Roadie only supports GitHub and Bitbucket for now. Submit the form to be notified when we support your tool." />
+      <HelpText message="Roadie supports GitHub for now. Bitbucket support is in beta. Submit the form to be notified when we support your tool." />
     </div>
   </fieldset>
 );
