@@ -83,7 +83,7 @@ const TeamsPricingTier = () => {
         heading="Key features"
         bullets={[
           'Backstage software catalog',
-          'Weekly Backstage upgrades',
+          'Monthly Backstage upgrades',
           'TechDocs technical documentation',
           'Scaffolder service creator',
           'API specs',
