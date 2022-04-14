@@ -49,7 +49,7 @@ You will first need to add the following annotation in your Component's `catalog
 
 ```dev.azure.com/project-repo: <project-name>/<repo-name>```
 
-Let's break this down a little: `<project-name>` will be the name of your Team Project and `<repo-name>` will be the name of your repository which needs to be part of the Team Project you entered for <project-name>.
+Let's break this down a little: `<project-name>` will be the name of your Team Project and `<repo-name>` will be the name of your repository which needs to be part of the Team Project you entered for `<project-name>`.
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
@@ -69,12 +69,12 @@ If you are only using Azure Pipelines along with a different SCM tool then you c
 dev.azure.com/project: <project-name>
 dev.azure.com/build-definition: <build-definition-name>
 ```
-In this case <project-name> will be the name of your Team Project and <build-definition-name> will be the name of the Build Definition you would like to see Builds for. If the Build Definition name has spaces in it make sure to put quotes around it
+In this case `<project-name>` will be the name of your Team Project and `<build-definition-name>` will be the name of the Build Definition you would like to see Builds for. If the Build Definition name has spaces in it make sure to put quotes around it
 
 
 ## Adding the Plugin
 
-The `EntityAzurePipelinesContent` and `EntityAzurePipelinesContent` components can be added as new tabs to your Components that have an annotation in their `catalog-info.yaml` files. 
+The `EntityAzurePipelinesContent` and `EntityAzurePullRequestsContent` components can be added as new tabs to your Components that have an annotation in their `catalog-info.yaml` files. 
 
 ![Add new tab](./add-new-tab.png)
 
