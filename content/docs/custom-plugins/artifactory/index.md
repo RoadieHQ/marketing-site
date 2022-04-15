@@ -6,6 +6,8 @@ description: How to add a custom Backstage plugin to Roadie
 
 ## Introduction
 
+Custom plugins are a feature of the [Growth Plan](/pricing/).
+
 Your plugins can be published via npm or yarn, like publishing a normal package. We will provide you a unique scope for
 your plugins, and we host a dedicated npm registry which you can publish to.
 
