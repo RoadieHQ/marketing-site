@@ -28,6 +28,7 @@ nav:
     - Grafana: '/docs/integrations/grafana/'
     - Home Page: '/docs/integrations/home-page'
     - Home Page Markdown: '/docs/integrations/home-page-markdown'
+    - IFrame: '/docs/integrations/iframe'
     - Jenkins: '/docs/integrations/jenkins/'
     - Jira: '/docs/integrations/jira/'
     - Kubernetes: '/docs/integrations/kubernetes/'
