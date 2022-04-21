@@ -40,7 +40,9 @@ spec:
 
 The `API` kind can take many of the normal `spec` properties such as `owner` and `lifecycle`.
 
-The `spec.definition.$text` property **must** point to the remote URL of your OpenAPI spec.
+The `spec.definition.$text` property **must** point to the remote URL of your OpenAPI spec. 
+
+_Note that if you are hosting your OpenAPI specs in GitHub and referencing them with the $text property, the link must point to the URL starting with `https://github.com` and not `https://raw.githubusercontent.com`._  
 
 ### Step 2: Add the API to Backstage
 
