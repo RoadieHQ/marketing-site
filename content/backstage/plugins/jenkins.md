@@ -51,12 +51,13 @@ gettingStarted:
             Authorization: Basic ${JENKINS_BASIC_AUTH_HEADER}
       
   - intro: Add Jenkins plugin annotation to your component's config.
+    instanceName and github-organization-project-name are optional. The value is a string and should be enclosed in double quotes "".
     language: YAML
     code: |
       // catalog-info.yaml
       metadata:
         annotations:
-          jenkins.io/job-full-name: [github-organization-project-name/job-name]
+          jenkins.io/job-full-name: "instanceName:github-organization-project-name/job-name"
 
 ---
 
