@@ -6,13 +6,17 @@ import TierDescription from './TierDescription';
 import TierBulletsSection from './TierBulletsSection';
 
 export const OPTIONS_FOR_NUMBER_OF_ENGINEERS = [
-  Object.freeze({ id: 50, name: '50 developers', dollarCentCostPerDevPerMonth: 1800 }),
-  Object.freeze({ id: 70, name: '70 developers', dollarCentCostPerDevPerMonth: 1700 }),
-  Object.freeze({ id: 100, name: '100 developers', dollarCentCostPerDevPerMonth: 1600 }),
+  Object.freeze({ id: 10, name: '10 developers', dollarCentCostPerDevPerMonth: 1800 }),
+  Object.freeze({ id: 20, name: '20 developers', dollarCentCostPerDevPerMonth: 1800 }),
+  Object.freeze({ id: 30, name: '30 developers', dollarCentCostPerDevPerMonth: 1800 }),
+  Object.freeze({ id: 40, name: '40 developers', dollarCentCostPerDevPerMonth: 1800 }),
+  Object.freeze({ id: 50, name: '50 developers', dollarCentCostPerDevPerMonth: 1600 }),
+  Object.freeze({ id: 75, name: '75 developers', dollarCentCostPerDevPerMonth: 1600 }),
+  Object.freeze({ id: 100, name: '100 developers', dollarCentCostPerDevPerMonth: 1500 }),
   Object.freeze({ id: 150, name: '150 developers', dollarCentCostPerDevPerMonth: 1500 }),
 ];
 
-const TeamsPricingTier = () => {
+const PurchaseTeamsTier = () => {
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
   const dollarCentCostPerDevPerMonth = OPTIONS_FOR_NUMBER_OF_ENGINEERS.find((opt) => opt.id === numberOfEngineers).dollarCentCostPerDevPerMonth;
   const dollarCentCostPerMonth = numberOfEngineers * dollarCentCostPerDevPerMonth;
@@ -96,4 +100,4 @@ const TeamsPricingTier = () => {
   );
 };
 
-export default TeamsPricingTier;
+export default PurchaseTeamsTier;
