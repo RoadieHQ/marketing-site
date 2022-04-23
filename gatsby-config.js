@@ -183,7 +183,10 @@ module.exports = {
       options: {
         directives: {
           'img-src': "'self' https://images.ctfassets.net",
-          'connect-src': "'self' https://*.ingest.sentry.io"
+          'connect-src': "'self' https://*.ingest.sentry.io",
+          // TODO: Only add netlify CDP loader on preview pages.
+          'script-src': "'self' https://www.googletagmanager.com https://www.google-analytics.com https://netlify-cdp-loader.netlify.app/netlify.js",
+          'style-src': "'self' unsafe-inline",
         },
       },
     },
