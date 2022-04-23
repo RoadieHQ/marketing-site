@@ -182,11 +182,13 @@ module.exports = {
       resolve: 'gatsby-plugin-csp',
       options: {
         directives: {
-          'img-src': "'self' https://images.ctfassets.net",
+          'img-src': "'self' https://images.ctfassets.net data:",
           'connect-src': "'self' https://*.ingest.sentry.io",
           // TODO: Only add netlify CDP loader on preview pages.
-          'script-src': "'self' https://www.googletagmanager.com https://www.google-analytics.com https://netlify-cdp-loader.netlify.app/netlify.js",
-          'style-src': "'self' unsafe-inline",
+          // Recaptchas are served from https://www.google.com
+          'script-src': "'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://netlify-cdp-loader.netlify.app/netlify.js",
+          'style-src': "'self' 'unsafe-inline'",
+          'frame-src': "'self' https://app.netlify.com",
         },
       },
     },
