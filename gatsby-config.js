@@ -178,6 +178,8 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-postcss',
 
+    'gatsby-plugin-csp',
+
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {

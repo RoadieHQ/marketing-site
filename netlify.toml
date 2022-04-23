@@ -94,8 +94,3 @@
 
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self' player.vimeo.com widget.intercom.io images.ctfassets.net;"
