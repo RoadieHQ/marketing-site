@@ -178,7 +178,15 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-postcss',
 
-    'gatsby-plugin-csp',
+    {
+      resolve: 'gatsby-plugin-csp',
+      options: {
+        directives: {
+          'img-src': "'self' https://images.ctfassets.net",
+          'connect-src': "'self' https://*.ingest.sentry.io"
+        },
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
