@@ -63,9 +63,10 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     // Recaptchas are served from https://www.google.com. gstatic.com is also involved.
     'https://www.google.com',
     'https://www.gstatic.com',
-    // The cookie consent we use seems to load from jsdeliver.net.
-    'https://cdn.jsdeliver.net',
+    // The cookie consent we use seems to load from jsdelivr.net.
+    'https://cdn.jsdelivr.net',
     'https://widget.intercom.io',
+    'https://js.intercomcdn.com',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
@@ -76,12 +77,11 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
 })();
 
 // Contentful serves images from https://images.ctfassets.net
-const CSP_IMG_SRC_DIRECTIVES = "'self' https://images.ctfassets.net data: https://www.google-analytics.com";
+const CSP_IMG_SRC_DIRECTIVES =
+  "'self' https://images.ctfassets.net data: https://www.google-analytics.com";
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
-  const directives = [
-    "'self'",
-  ];
+  const directives = ["'self'"];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
     directives.push('https://app.netlify.com');
@@ -96,9 +96,10 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
 // about blocked inline styles if this keyword is not in place. It's not ideal to allow
 // unsafe-inline styles but tackling all of the Gatsby inline styles doesn't seem
 // reasonable.
-// The cookie consent we use seems to load from jsdeliver.net.
-const CSP_STYLE_SRC_DIRECTIVES = "'self' 'unsafe-inline' https://cdn.jsdeliver.net";
-const CSP_CONNECT_SRC_DIRECTIVES = "'self' https://*.ingest.sentry.io https://www.google-analytics.com";
+// The cookie consent we use seems to load from jsdelivr.net.
+const CSP_STYLE_SRC_DIRECTIVES = "'self' 'unsafe-inline' https://cdn.jsdelivr.net";
+const CSP_CONNECT_SRC_DIRECTIVES =
+  "'self' https://*.ingest.sentry.io https://www.google-analytics.com https://stats.g.doubleclick.net";
 
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
 // a server side variable into a runtime one. This variable is later used to determine which
