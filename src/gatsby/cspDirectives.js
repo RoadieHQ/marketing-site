@@ -71,6 +71,8 @@ const CSP_CONNECT_SRC_DIRECTIVES = [
   'https://stats.g.doubleclick.net',
   'https://api-iam.eu.intercom.io',
   'ws://*.intercom.io',
+  'https://career.recruitee.com',
+  'https://sentry.io',
 ].join(' ');
 
 
