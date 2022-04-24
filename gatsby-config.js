@@ -55,6 +55,41 @@ const getContentfulOptions = () => {
   };
 };
 
+const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
+  const directives = [
+    "'self'",
+    'https://www.googletagmanager.com',
+    'https://www.google-analytics.com',
+    // Recaptchas are served from https://www.google.com. gstatic.com is also involved.
+    'https://www.google.com',
+    'https://www.gstatic.com',
+  ].join(' ');
+
+  if (get(process.env, 'CONTEXT') === 'deploy-preview') {
+    directives.push('https://netlify-cdp-loader.netlify.app/netlify.js');
+  }
+
+  return directives;
+})();
+
+// Contentful serves images from https://images.ctfassets.net
+const CSP_IMG_SRC_DIRECTIVES = "'self' https://images.ctfassets.net data:";
+
+const CSP_FRAME_SRC_DIRECTIVES = (() => {
+  if (get(process.env, 'CONTEXT') === 'deploy-preview') {
+    return "'self' https://app.netlify.com";
+  }
+  return "'self'";
+})(); 
+
+// Gatsby seems to use inline styles for lots of use cases. For example, any styles
+// loaded in gatsby-browser.js are added inline. There are probably 10 different errors
+// about blocked inline styles if this keyword is not in place. It's not ideal to allow
+// unsafe-inline styles but tackling all of the Gatsby inline styles doesn't seem
+// reasonable.
+const CSP_STYLE_SRC_DIRECTIVES = "'self' 'unsafe-inline'";
+const CSP_CONNECT_SRC_DIRECTIVES = "'self' https://*.ingest.sentry.io";
+
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
 // a server side variable into a runtime one. This variable is later used to determine which
 // branch of a split testing experiment we are on.
@@ -181,14 +216,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-csp',
       options: {
+        // This plugin does correctly add hashes to the 'style-src' directive. However, it doesn't
+        // seem to identify all of the required hashes, so the unsafe-inline keyword is still
+        // required. The 'unsafe-inline' keyword is ignored by browsers if any hashes are found,
+        // so we need to turn off hash inclusion to have it recognised.
+        mergeStyleHashes: false,
         directives: {
-          'img-src': "'self' https://images.ctfassets.net data:",
-          'connect-src': "'self' https://*.ingest.sentry.io",
-          // TODO: Only add netlify CDP loader on preview pages.
-          // Recaptchas are served from https://www.google.com
-          'script-src': "'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://netlify-cdp-loader.netlify.app/netlify.js",
-          'style-src': "'self' 'unsafe-inline'",
-          'frame-src': "'self' https://app.netlify.com",
+          'img-src': CSP_IMG_SRC_DIRECTIVES,
+          'connect-src': CSP_CONNECT_SRC_DIRECTIVES,
+          'script-src': CSP_SCRIPT_SRC_DIRECTIVES,
+          'style-src': CSP_STYLE_SRC_DIRECTIVES,
+          'frame-src': CSP_FRAME_SRC_DIRECTIVES,
         },
       },
     },
