@@ -63,6 +63,9 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     // Recaptchas are served from https://www.google.com. gstatic.com is also involved.
     'https://www.google.com',
     'https://www.gstatic.com',
+    // The cookie consent we use seems to load from jsdeliver.net.
+    'https://cdn.jsdeliver.net',
+    'https://widget.intercom.io',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
@@ -73,13 +76,19 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
 })();
 
 // Contentful serves images from https://images.ctfassets.net
-const CSP_IMG_SRC_DIRECTIVES = "'self' https://images.ctfassets.net data:";
+const CSP_IMG_SRC_DIRECTIVES = "'self' https://images.ctfassets.net data: https://www.google-analytics.com";
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
+  const directives = [
+    "'self'",
+  ];
+
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
-    return "'self' https://app.netlify.com";
+    directives.push('https://app.netlify.com');
+    directives.push('https://www.google.com');
   }
-  return "'self'";
+
+  return directives.join(' ');
 })();
 
 // Gatsby seems to use inline styles for lots of use cases. For example, any styles
@@ -87,8 +96,9 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
 // about blocked inline styles if this keyword is not in place. It's not ideal to allow
 // unsafe-inline styles but tackling all of the Gatsby inline styles doesn't seem
 // reasonable.
-const CSP_STYLE_SRC_DIRECTIVES = "'self' 'unsafe-inline'";
-const CSP_CONNECT_SRC_DIRECTIVES = "'self' https://*.ingest.sentry.io";
+// The cookie consent we use seems to load from jsdeliver.net.
+const CSP_STYLE_SRC_DIRECTIVES = "'self' 'unsafe-inline' https://cdn.jsdeliver.net";
+const CSP_CONNECT_SRC_DIRECTIVES = "'self' https://*.ingest.sentry.io https://www.google-analytics.com";
 
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
 // a server side variable into a runtime one. This variable is later used to determine which
