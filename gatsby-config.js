@@ -20,6 +20,7 @@ const skipWebpackAnalyzer = has(process.env, 'GITHUB_ACTIONS') || has(process.en
 
 const getSentryEnvironment = () => {
   if (get(process.env, 'NODE_ENV') === 'production') return 'production';
+  if (get(process.env, 'NODE_ENV') === 'test') return 'development';
   const context = get(process.env, 'CONTEXT');
 
   if (context === 'production') return 'production';
