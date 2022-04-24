@@ -26,11 +26,6 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     directives.push('https://netlify-cdp-loader.netlify.app/netlify.js');
   }
 
-  if (get(process.env, 'CYPRESS')) {
-    // Cypress tests fail without this.
-    directives.push("'unsafe-eval'");
-  }
-
   return directives.join(' ');
 })();
 
