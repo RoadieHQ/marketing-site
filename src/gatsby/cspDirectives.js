@@ -19,6 +19,7 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     // for now. See: https://app.shortcut.com/larder/story/8401/remove-unsafe-inline-from-csp
     "'unsafe-inline'",
     'https://*.cloudfront.net',
+    'https://cdnjs.cloudflare.com',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
