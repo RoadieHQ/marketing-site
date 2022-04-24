@@ -27,21 +27,23 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
   return directives.join(' ');
 })();
 
-// Contentful serves images from https://images.ctfassets.net
 const CSP_IMG_SRC_DIRECTIVES = [
   "'self'",
+  // Contentful serves images from https://images.ctfassets.net
   'https://images.ctfassets.net',
   'data:',
   'https://www.google-analytics.com',
   'https://www.google.com',
   'https://www.google.ie',
   'https://cdn.loom.com',
+  'https://images.contentful.com',
 ].join(' ');
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
   const directives = [
     "'self'",
     'https://player.vimeo.com',
+    'https://www.loom.com',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
