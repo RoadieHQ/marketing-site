@@ -18,6 +18,7 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     // for enabling CSP on these scripts. For this reason, I'm adding the unsafe-inline keyword
     // for now. See: https://app.shortcut.com/larder/story/8401/remove-unsafe-inline-from-csp
     "'unsafe-inline'",
+    'https://*.cloudfront.net',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
