@@ -36,7 +36,7 @@ const CSP_IMG_SRC_DIRECTIVES = [
   'https://www.google.com',
   'https://www.google.ie',
   'https://cdn.loom.com',
-];
+].join(' ');
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
   const directives = [
