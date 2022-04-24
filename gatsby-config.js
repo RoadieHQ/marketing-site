@@ -67,6 +67,12 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     'https://cdn.jsdelivr.net',
     'https://widget.intercom.io',
     'https://js.intercomcdn.com',
+    'https://player.vimeo.com',
+    // Google Tag Manager and plausible analytics will require nonces to verify script integrity.
+    // There is no weasy way to generate a nonce with Netlify, so I don't have a good solution
+    // for enabling CSP on these scripts. For this reason, I'm adding the unsafe-inline keyword
+    // for now. See: https://app.shortcut.com/larder/story/8401/remove-unsafe-inline-from-csp
+    "'unsafe-inline'",
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
@@ -78,7 +84,7 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
 
 // Contentful serves images from https://images.ctfassets.net
 const CSP_IMG_SRC_DIRECTIVES =
-  "'self' https://images.ctfassets.net data: https://www.google-analytics.com";
+  "'self' https://images.ctfassets.net data: https://www.google-analytics.com https://www.google.com https://www.google.ie";
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
   const directives = ["'self'"];
@@ -99,7 +105,7 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
 // The cookie consent we use seems to load from jsdelivr.net.
 const CSP_STYLE_SRC_DIRECTIVES = "'self' 'unsafe-inline' https://cdn.jsdelivr.net";
 const CSP_CONNECT_SRC_DIRECTIVES =
-  "'self' https://*.ingest.sentry.io https://www.google-analytics.com https://stats.g.doubleclick.net";
+  "'self' https://*.ingest.sentry.io https://www.google-analytics.com https://stats.g.doubleclick.net https://api-iam.eu.intercom.io";
 
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
 // a server side variable into a runtime one. This variable is later used to determine which
