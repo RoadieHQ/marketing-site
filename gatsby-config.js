@@ -63,13 +63,13 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     // Recaptchas are served from https://www.google.com. gstatic.com is also involved.
     'https://www.google.com',
     'https://www.gstatic.com',
-  ].join(' ');
+  ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
     directives.push('https://netlify-cdp-loader.netlify.app/netlify.js');
   }
 
-  return directives;
+  return directives.join(' ');
 })();
 
 // Contentful serves images from https://images.ctfassets.net
@@ -80,7 +80,7 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
     return "'self' https://app.netlify.com";
   }
   return "'self'";
-})(); 
+})();
 
 // Gatsby seems to use inline styles for lots of use cases. For example, any styles
 // loaded in gatsby-browser.js are added inline. There are probably 10 different errors
