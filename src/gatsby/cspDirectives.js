@@ -28,11 +28,21 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
 })();
 
 // Contentful serves images from https://images.ctfassets.net
-const CSP_IMG_SRC_DIRECTIVES =
-  "'self' https://images.ctfassets.net data: https://www.google-analytics.com https://www.google.com https://www.google.ie";
+const CSP_IMG_SRC_DIRECTIVES = [
+  "'self'",
+  'https://images.ctfassets.net',
+  'data:',
+  'https://www.google-analytics.com',
+  'https://www.google.com',
+  'https://www.google.ie',
+  'https://cdn.loom.com',
+];
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
-  const directives = ["'self'"];
+  const directives = [
+    "'self'",
+    'https://player.vimeo.com',
+  ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
     directives.push('https://app.netlify.com');
@@ -49,6 +59,7 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
 // reasonable.
 // The cookie consent we use seems to load from jsdelivr.net.
 const CSP_STYLE_SRC_DIRECTIVES = "'self' 'unsafe-inline' https://cdn.jsdelivr.net";
+
 const CSP_CONNECT_SRC_DIRECTIVES = [
   "'self'",
   'https://*.ingest.sentry.io',
