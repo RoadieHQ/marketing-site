@@ -63,8 +63,13 @@ This can be configured with [this](./#configure-iframe-props) section.
 
 Now configure the props of the plugin to display the correct url for your Iframe.
 
-1.  Click on the `wrench` icon to edit the props of the component.
-    ![](props.png)
+1.  Click on the `wrench` icon to edit the props of the component (see image below).
+
+![wrench](wrench.png)
+
+Then enter the following props.
+
+![](props.png)
 
     ```json
     {
@@ -87,10 +92,21 @@ Based on what you enter, the card should now look similar to this.
 
 ## Note
 
-This plugin does **not** support authenicated methods. You can alternatively embed credentials in the url like so
+### Authentication
+This plugin does **not** support authenticated methods. You can alternatively embed credentials in the url like so
 ```
 https://username:password@yourdomain.com
 ```
 
+### CSP
+Content Security Policy (CSP) is a layer of security added to web applications to avoid certain attacks like Cross site scripting (XSS). This is done by returning a header `Content-Security-Policy` on the server side. It restricts the access to the WebApp by adding a policy. This policy is then validated on the browser to ensure that no malicious attacks can occur on the domain.
+
+Since this is controlled by the WebPage Admins, it may happen that you are unable to load the content you wish in your IFrame. This is a limitation of this plugin.
+
+
 For more information on this plugin, please visit [here](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/frontend/backstage-plugin-iframe/README.md).
+
+## References
+
+- [Content Security Policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
 
