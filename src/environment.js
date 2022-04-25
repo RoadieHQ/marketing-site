@@ -13,4 +13,6 @@ export const recaptchaEnabled = () => {
   return true;
 };
 
+export const chargebeeSubdomain = () => process.env.GATSBY_CHARGEBEE_SUBDOMAIN;
+
 export const siteRecaptchaKey = () => process.env.GATSBY_SITE_RECAPTCHA_KEY;

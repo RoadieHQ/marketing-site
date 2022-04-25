@@ -22,6 +22,7 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     'https://cdnjs.cloudflare.com',
     // Embedded tweets in blog posts etc.
     'https://platform.twitter.com',
+    'https://js.chargebee.com/v2/chargebee.js',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
@@ -53,7 +54,10 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
     // Recaptchas https://developers.google.com/recaptcha/docs/faq
     'https://www.google.com',
     'https://recaptcha.google.com',
+    'https://roadie.chargebee.com/',
+    'https://roadie-test.chargebee.com/',
   ];
+
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
     directives.push('https://app.netlify.com');
@@ -67,8 +71,15 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
 // about blocked inline styles if this keyword is not in place. It's not ideal to allow
 // unsafe-inline styles but tackling all of the Gatsby inline styles doesn't seem
 // reasonable.
-// The cookie consent we use seems to load from jsdelivr.net.
-const CSP_STYLE_SRC_DIRECTIVES = "'self' 'unsafe-inline' https://cdn.jsdelivr.net";
+const CSP_STYLE_SRC_DIRECTIVES = [
+  "'self'",
+  "'unsafe-inline'",
+  // The cookie consent we use seems to load from jsdelivr.net.
+  'https://cdn.jsdelivr.net',
+  'https://roadie.chargebee.com/assets/hp_v3/iframe_views/',
+  'https://roadie-test.chargebee.com/assets/hp_v3/iframe_views/',
+  'https://js.chargebee.com/v2/animation.css',
+].join(' ');
 
 const CSP_CONNECT_SRC_DIRECTIVES = [
   "'self'",

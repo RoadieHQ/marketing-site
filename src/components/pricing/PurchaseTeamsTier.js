@@ -1,94 +1,38 @@
 import React, { useState } from 'react';
-import { Button, NumberOfEngineers, HelpText } from 'components';
+import { Button } from 'components';
 import { OPTIONS_FOR_NUMBER_OF_ENGINEERS } from 'components/forms/NumberOfEngineers';
+import { ExternalLinkIcon } from '@heroicons/react/outline';
 
-import TierName from './TierName';
-import TierDescription from './TierDescription';
-import TierBulletsSection from './TierBulletsSection';
+import TeamsTier from './TeamsTier';
+
+import { chargebeeSubdomain } from '../../environment';
+
+const CHARGEBEE_PLAN_NAME = 'Roadie-Teams-Plan-USD-Monthly';
 
 const PurchaseTeamsTier = () => {
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
-  const dollarCentCostPerDevPerMonth = OPTIONS_FOR_NUMBER_OF_ENGINEERS.find((opt) => opt.id === numberOfEngineers).dollarCentCostPerDevPerMonth;
-  const dollarCentCostPerMonth = numberOfEngineers * dollarCentCostPerDevPerMonth;
 
-  var formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
+  const chargebeeUrl = new URL(`https://${chargebeeSubdomain()}.chargebee.com/hosted_pages/checkout`);
+  chargebeeUrl.searchParams.append('subscription_items[item_price_id][0]', CHARGEBEE_PLAN_NAME);
+  chargebeeUrl.searchParams.append('subscription_items[quantity][0]', numberOfEngineers);
 
   return (
-    <div className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
-      <div className="p-6">
-        <TierName name="Teams" />
-        <TierDescription
-          description="For teams who want a home for their services, docs, runbooks, API specs and CI."
+    <TeamsTier
+      numberOfEngineers={numberOfEngineers}
+      setNumberOfEngineers={setNumberOfEngineers}
+      optionsForNumberOfEngineers={OPTIONS_FOR_NUMBER_OF_ENGINEERS}
+      ctaHelpText="Powered by Chargebee and Stripe"
+      ctaComponent={(
+        <Button
+          text="Buy now"
+          postfixIcon={<ExternalLinkIcon />}
+          link={true}
+          to={chargebeeUrl.toString()}
+          color="primary"
+          fullWidth
         />
-
-        <div className="mb-2">
-          <span className="text-4xl font-extrabold text-gray-900">{formatter.format(dollarCentCostPerDevPerMonth / 100)}</span>
-          <span className="text-base text-gray-500"> per dev/month</span>
-        </div>
-
-        <div className="mb-4">
-          <span className="text-base text-gray-900">{formatter.format(dollarCentCostPerMonth / 100)} billed monthly</span>
-        </div>
-
-        <div className="mb-10">
-          <NumberOfEngineers
-            onChange={setNumberOfEngineers}
-            value={numberOfEngineers}
-            options={OPTIONS_FOR_NUMBER_OF_ENGINEERS}
-            idPrefix="teams-plan-"
-          />
-        </div>
-
-        <div>
-          <div className="mb-1">
-
-            <Button
-              text="Buy now"
-              color="primary"
-              data-cb-type="checkout"
-              data-cb-item-0="Roadie-Teams-Plan-USD-Monthly"
-              data-cb-item-0-quantity="1"
-              fullWidth
-            />
-          </div>
-
-          <div className="text-center">
-            <HelpText message="Powered by Stripe and Chargebee" />
-          </div>
-        </div>
-      </div>
-
-      <TierBulletsSection
-        hasIcon={false}
-        bullets={[
-          'Unlimited software components tracked.',
-          'Unlimited API specs.',
-          'Unlimited TechDocs',
-          'Unlimited scaffolder templates.',
-        ]}
-      />
-
-      <TierBulletsSection
-        heading="Key features"
-        bullets={[
-          'Backstage software catalog',
-          'Monthly Backstage upgrades',
-          'TechDocs technical documentation',
-          'Scaffolder service creator',
-          'API specs',
-          'Vast array of open-source Backstage plugins',
-          'Locations log',
-          'Tech radar',
-          'Kubernetes plugin',
-          'Single sign on',
-        ]}
-      />
-    </div>
+      )}
+    />
   );
 };
 
