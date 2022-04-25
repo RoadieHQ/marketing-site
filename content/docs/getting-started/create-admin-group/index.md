@@ -22,7 +22,7 @@ Roadie admins have special powers such as the ability to add and remove Backstag
 
 ### Automatic discovery with GitHub teams
 
-To automatically designate admin you can use GitHub Teams which will be automatically discovered if you have installed the Roadie GitHub application.
+To automatically designate admins you can use GitHub Teams which will be automatically discovered if you have installed the Roadie GitHub application.
 
 1. Visit GitHub Teams in your organization's GitHub account and click the New Team button.
 
