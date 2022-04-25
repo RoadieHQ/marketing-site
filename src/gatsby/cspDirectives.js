@@ -20,6 +20,8 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     "'unsafe-inline'",
     'https://*.cloudfront.net',
     'https://cdnjs.cloudflare.com',
+    // Embedded tweets in blog posts etc.
+    'https://platform.twitter.com',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
@@ -44,8 +46,10 @@ const CSP_IMG_SRC_DIRECTIVES = [
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
   const directives = [
     "'self'",
+    // Embedded videos in blog posts etc.
     'https://player.vimeo.com',
     'https://www.loom.com',
+    'https://www.youtube.com',
     // Recaptchas https://developers.google.com/recaptcha/docs/faq
     'https://www.google.com',
     'https://recaptcha.google.com',
