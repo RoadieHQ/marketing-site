@@ -12,7 +12,7 @@ concept of admins to enable this.
 
 ## Prerequisites
 
-For automatic Admin group management you will need to have [installed the Roadie GitHub app](/docs/gettting-started/install-github-app/) before proceeding with this step.
+For automatic Admin group management you will need to have [installed the Roadie GitHub app](/docs/getting-started/install-github-app/) before proceeding with this step.
 
 For manual management you should be aware of the correct usernames of the users you are assigning to admin group
 
