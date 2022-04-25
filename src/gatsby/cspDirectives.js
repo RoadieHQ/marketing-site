@@ -5,7 +5,7 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     "'self'",
     'https://www.googletagmanager.com',
     'https://www.google-analytics.com',
-    // Recaptchas are served from https://www.google.com. gstatic.com is also involved.
+    // Recaptchas: https://developers.google.com/recaptcha/docs/faq
     'https://www.google.com',
     'https://www.gstatic.com',
     // The cookie consent we use seems to load from jsdelivr.net.
@@ -46,11 +46,13 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
     "'self'",
     'https://player.vimeo.com',
     'https://www.loom.com',
+    // Recaptchas https://developers.google.com/recaptcha/docs/faq
+    'https://www.google.com',
+    'https://recaptcha.google.com',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
     directives.push('https://app.netlify.com');
-    directives.push('https://www.google.com');
   }
 
   return directives.join(' ');
