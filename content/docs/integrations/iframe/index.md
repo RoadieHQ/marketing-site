@@ -1,6 +1,6 @@
 ---
 title: IFrame Plugin
-publishedDate: '2022-04-19T10:00:00.0Z'
+publishedDate: '2022-04-25T10:00:00.0Z'
 description: How to enable the IFrame plugin
 
 humanName: IFrame Plugin
@@ -10,30 +10,54 @@ integrationType: OSS plugin
 
 ## Introduction
 
-This is a plugin that renders an Iframe card that can be added to your entity page
+This is a plugin that renders an Iframe card that can be added to your entity page/homepage.
 
-### Add IFrame card to your Entity
+## Add IFrame card to your Entity
 
-1.  To enable this plugin go to your entity page
-
-    Once you are there, please click the cog item
+1.  In Roadie, find and select the service via the Component Catalog or Search.
+    Once you are there, please click the cog item.
 
     ![cogwheel](cog.png)
 
-2.  Click the plus sign to add a new Card
+2.  Click the plus sign to add a new Card.
     ![plus](plus.png)
 
 3.  Select `EntityIFrameCard` from the list.
-    ![](entity-card.png)
+    ![card](entity-card.png)
 
     Click add.
 
-You should now see a card like this
+You should now see a card like this:
 ![](no-props.png)
 
-## Configure plugin via props
+## Add IFrame card to your HomePage
 
-Now configure the props of the plugin to point to your desired location.
+### Setup
+
+To use this plugin make sure you already have the [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) enabled.
+
+### Add Markdown card to your homepage
+
+1.  To enable this plugin go to your `Home` page via the sidebar.
+
+    Once you are on the home page click on the cogwheel icon.
+
+    ![cogwheel](homepage.png)
+
+2.  Click the plus sign to add a new Card.
+    ![plus](plus.png)
+
+3.  Select `HomePageIFrameCard` from the list.
+    ![add card](add-card-homepage.png)
+
+    Click add
+
+You should now see a card like this:
+![iframe homepage](complete-home-page-card.png)
+
+## Configure Iframe props
+
+Now configure the props of the plugin to display the correct url for your Iframe.
 
 1.  Click on the `wrench` icon to edit the props of the component.
     ![](props.png)
@@ -54,8 +78,8 @@ Now configure the props of the plugin to point to your desired location.
 
 Now it should load and render the iframe card as per your specifications.
 
-Based on what you enter, the card should now look like this
-![](card.png)
+Based on what you enter, the card should now look similar to this.
+![card](card.png)
 
 ## Note
 
