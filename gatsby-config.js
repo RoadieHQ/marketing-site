@@ -3,6 +3,7 @@ const get = require('lodash/get');
 const agoliaQueries = require('./src/queries/agolia');
 const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
 const theme = require('./src/theme');
+const GATSBY_PLUGIN_CSP_DIRECTIVES = require('./src/gatsby/cspDirectives');
 
 const SITE_TITLE = 'Roadie';
 
@@ -19,6 +20,7 @@ const skipWebpackAnalyzer = has(process.env, 'GITHUB_ACTIONS') || has(process.en
 
 const getSentryEnvironment = () => {
   if (get(process.env, 'NODE_ENV') === 'production') return 'production';
+  if (get(process.env, 'NODE_ENV') === 'test') return 'development';
   const context = get(process.env, 'CONTEXT');
 
   if (context === 'production') return 'production';
@@ -177,6 +179,20 @@ module.exports = {
     'gatsby-plugin-netlify',
     'gatsby-plugin-image',
     'gatsby-plugin-postcss',
+
+    {
+      resolve: 'gatsby-plugin-csp',
+      options: {
+        // This plugin does correctly add hashes to the 'style-src' directive. However, it doesn't
+        // seem to identify all of the required hashes, so the unsafe-inline keyword is still
+        // required. The 'unsafe-inline' keyword is ignored by browsers if any hashes are found,
+        // so we need to turn off hash inclusion to have it recognised.
+        mergeStyleHashes: false,
+        // Same thing with script hashes.
+        mergeScriptHashes: false,
+        directives: GATSBY_PLUGIN_CSP_DIRECTIVES,
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
