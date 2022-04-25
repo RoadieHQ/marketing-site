@@ -30,13 +30,15 @@ This is a plugin that renders an Iframe card that can be added to your entity pa
 You should now see a card like this:
 ![](no-props.png)
 
+This can be configured with [this](./#configure-iframe-props) section.
+
 ## Add IFrame card to your HomePage
 
 ### Setup
 
 To use this plugin make sure you already have the [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) enabled.
 
-### Add Markdown card to your homepage
+### Add IFrame card to your homepage
 
 1.  To enable this plugin go to your `Home` page via the sidebar.
 
@@ -45,15 +47,17 @@ To use this plugin make sure you already have the [Backstage Home plugin](https:
     ![cogwheel](homepage.png)
 
 2.  Click the plus sign to add a new Card.
-    ![plus](plus.png)
+    ![plus](plus-homepage.png)
 
 3.  Select `HomePageIFrameCard` from the list.
-    ![add card](add-card-homepage.png)
+    ![add card](homepage-add-card.png)
 
     Click add
 
 You should now see a card like this:
-![iframe homepage](complete-home-page-card.png)
+![iframe homepage](no-props.png)
+
+This can be configured with [this](./#configure-iframe-props) section.
 
 ## Configure Iframe props
 
@@ -88,5 +92,5 @@ This plugin does **not** support authenicated methods. You can alternatively emb
 https://username:password@yourdomain.com
 ```
 
-For more information on this plugin, please visit [here](https://www.npmjs.com/package/@roadiehq/backstage-plugin-iframe).
+For more information on this plugin, please visit [here](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/frontend/backstage-plugin-iframe/README.md).
 
