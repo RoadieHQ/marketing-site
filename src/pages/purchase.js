@@ -25,10 +25,7 @@ const Pricing = ({
       description="Hosted Backstage solution pricing from Roadie. Simple, flexible pricing options to fit your Backstage needs. Free Trial."
     />
     <Helmet>
-      <script
-        src="https://js.chargebee.com/v2/chargebee.js"
-        data-cb-site="roadie-test"
-      />
+      <script src="https://js.chargebee.com/v2/chargebee.js" data-cb-site="roadie-test" />
     </Helmet>
 
     <SitewideHeader />

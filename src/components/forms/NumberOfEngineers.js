@@ -1,6 +1,20 @@
 import React from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
+export const OPTIONS_FOR_NUMBER_OF_ENGINEERS = [
+  Object.freeze({ id: 50, name: '50 developers', dollarCentCostPerDevPerMonth: 1800 }),
+  Object.freeze({ id: 60, name: '60 developers', dollarCentCostPerDevPerMonth: 1800 }),
+  Object.freeze({ id: 70, name: '70 developers', dollarCentCostPerDevPerMonth: 1700 }),
+  Object.freeze({ id: 80, name: '80 developers', dollarCentCostPerDevPerMonth: 1700 }),
+  Object.freeze({ id: 90, name: '90 developers', dollarCentCostPerDevPerMonth: 1700 }),
+  Object.freeze({ id: 100, name: '100 developers', dollarCentCostPerDevPerMonth: 1600 }),
+  Object.freeze({ id: 110, name: '110 developers', dollarCentCostPerDevPerMonth: 1600 }),
+  Object.freeze({ id: 120, name: '120 developers', dollarCentCostPerDevPerMonth: 1600 }),
+  Object.freeze({ id: 130, name: '130 developers', dollarCentCostPerDevPerMonth: 1600 }),
+  Object.freeze({ id: 140, name: '140 developers', dollarCentCostPerDevPerMonth: 1600 }),
+  Object.freeze({ id: 150, name: '150 developers', dollarCentCostPerDevPerMonth: 1500 }),
+];
+
 const NumberOfEngineers = ({
   onChange,
   value,
