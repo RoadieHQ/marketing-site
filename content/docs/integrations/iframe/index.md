@@ -10,9 +10,9 @@ integrationType: OSS plugin
 
 ## Introduction
 
-This is a plugin that renders an Iframe card that can be added to your entity page/homepage.
+This is a plugin that renders an Iframe card that can be added to your component/homepage.
 
-## Add IFrame card to your Entity
+## Add IFrame card to your Component
 
 1.  In Roadie, find and select the service via the Component Catalog or Search.
     Once you are there, please click the cog item.
