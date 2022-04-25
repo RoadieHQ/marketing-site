@@ -16,11 +16,8 @@ For automatic Admin group management you will need to have [installed the Roadie
 
 For manual management you should be aware of the correct usernames of the users you are assigning to admin group
 
-## Create an admin group and user
 
-Roadie admins have special powers such as the ability to add and remove Backstage plugins. 
-
-### Automatic discovery with GitHub teams
+## Automatic admin group discovery with GitHub teams
 
 To automatically designate admins you can use GitHub Teams which will be automatically discovered if you have installed the Roadie GitHub application.
 
@@ -41,7 +38,7 @@ To automatically designate admins you can use GitHub Teams which will be automat
 ⚠️  &nbsp;It can take some time for Roadie to refresh the list of teams from GitHub teams. If you do not see admin functions immediately, please wait a few minutes and try again.
 
 
-### Manual admin group configuration with group entities
+## Manual admin group configuration with group entities (advanced alternative)
 
 In case you don't want to install the GitHub app or don't want to manage teams via you can also manually add groups into your Roadie instance.
 
