@@ -1,12 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, Headline } from 'components';
-import {
-  GrowthPricingTier,
-  PurchaseTeamsTier,
-  SectionHeader,
-  FeatureComparisonTable,
-} from 'components/pricing';
+import { SEO, SitewideHeader, SitewideFooter } from 'components';
+import { PurchaseGrowthTier, PurchaseTeamsTier, SectionHeader } from 'components/pricing';
 import { FAQs } from 'components/landing';
 
 const Purchase = ({
@@ -32,15 +27,8 @@ const Purchase = ({
 
         <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto">
           <PurchaseTeamsTier />
-          <GrowthPricingTier />
+          <PurchaseGrowthTier />
         </div>
-      </div>
-
-      <div className="max-w-4xl mx-auto py-16 sm:py-24 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <Headline el="h2" size="small">Feature comparison</Headline>
-        </div>
-        <FeatureComparisonTable />
       </div>
     </div>
 
