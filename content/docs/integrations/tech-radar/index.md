@@ -9,10 +9,10 @@ integrationType: OSS plugin
 
 ## Introduction
 
-If you want to use Tech Radar on your Roadie instance you can add it as a page using the steps defined in [this guide](/docs/getting-started/updating-the-ui#updating-the-sidebar).
+If you want to use Tech Radar on your Roadie instance you can add it as a page using the steps defined in [this guide](/docs/details/updating-the-ui/#updating-the-sidebar).
 
 
-## Configuration
+## Step 1: Configuration
 
 The configuration for Tech Radar data can be defined at the following url:
 ```text
@@ -21,8 +21,23 @@ https://<tenant-name>.roadie.so/administration/settings/tech-radar
 
 ![Tech Radar Settings](./radar-settings.png)
 
-Roadie currently supports fetching tech radar data directly from GitHub. In the configuration you need to tell your Roadie instance the repository name, organization/user and path to the actual tech radar data file within the repository. Both CSV and JSON data files are supported, as long as they conform to the specified format. 
+Roadie currently supports fetching tech radar data directly from GitHub.  
 
+In the configuration you need to tell your Roadie instance the repository name, organization/user and path to the actual 
+tech radar data file within the repository. The ID field is used to distinguish between sources if multiple sources are 
+configured and can have any value though it may help for it to be meaningful.
+
+Both CSV and JSON data files are supported, as long as they conform to the specified format. 
+
+## Step 2: Adding the tech radar page
+
+The tech radar plugin provides a `TechRadarPage` page component which can be added to the sidebar. For more details on adding pages to the
+UI read [this guide](/docs/details/updating-the-ui/#updating-the-sidebar). 
+
+If you're adding a second tech radar you'll need to pass the `id` of the tech radar source in set one as a prop. To edit props
+click the edit pencil icon and pass your props as JSON and click the save icon. Then click the "Add" button to save the page.   
+
+![Tech Radar Page](./edit-props.png)
 
 ## Data formats
 
