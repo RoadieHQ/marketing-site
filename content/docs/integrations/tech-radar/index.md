@@ -34,7 +34,7 @@ Both CSV and JSON data files are supported, as long as they conform to the speci
 The tech radar plugin provides a `TechRadarPage` page component which can be added to the sidebar. For more details on adding pages to the
 UI read [this guide](/docs/details/updating-the-ui/#updating-the-sidebar). 
 
-If you're adding a second tech radar you'll need to pass the `id` of the tech radar source in set one as a prop. To edit props
+If you're adding a second tech radar you'll need to pass the `id` of the tech radar source in step one as a prop. To edit props
 click the edit pencil icon and pass your props as JSON and click the save icon. Then click the "Add" button to save the page.   
 
 ![Tech Radar Page](./edit-props.png)
