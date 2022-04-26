@@ -2,8 +2,8 @@ import React from 'react';
 
 import SnykLogo from '../../../content/assets/home/customer-logos/snyk-monochrome.webp';
 import SnykLogoPng from '../../../content/assets/home/customer-logos/snyk-monochrome.png';
-import StreamElementsLogo from '../../../content/assets/home/customer-logos/streamelements@3x-monochrome.webp';
-import StreamElementsLogoPng from '../../../content/assets/home/customer-logos/streamelements@3x-monochrome.png';
+import StreamElementsLogo from '../../../content/assets/home/customer-logos/streamelements-monochrome.webp';
+import StreamElementsLogoPng from '../../../content/assets/home/customer-logos/streamelements-monochrome.png';
 import TrackunitLogo from '../../../content/assets/home/customer-logos/trackunit-monochrome.webp';
 import TrackunitLogoPng from '../../../content/assets/home/customer-logos/trackunit-monochrome.png';
 import ContentfulLogo from '../../../content/assets/home/customer-logos/contentful-monochrome.webp';
@@ -12,6 +12,10 @@ import NcsaLogo from '../../../content/assets/home/customer-logos/ncsa-monochrom
 import NcsaLogoPng from '../../../content/assets/home/customer-logos/ncsa-monochrome.png';
 import HopperLogo from '../../../content/assets/home/customer-logos/hopper-monochrome.webp';
 import HopperLogoPng from '../../../content/assets/home/customer-logos/hopper-monochrome.png';
+import MyFitnessPalLogo from '../../../content/assets/home/customer-logos/myfitnesspal-monochrome.webp';
+import MyFitnessPalLogoPng from '../../../content/assets/home/customer-logos/myfitnesspal-monochrome.png';
+import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochrome.webp';
+import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
 
 const LOGOS = [{
   src: {
@@ -55,6 +59,20 @@ const LOGOS = [{
   },
   alt: 'StreamElements logo',
   title: '~50 engineers',
+}, {
+  src: {
+    webp: MyFitnessPalLogo,
+    png: MyFitnessPalLogoPng,
+  },
+  alt: 'MyFitnessPal logo',
+  title: '~100 engineers',
+}, {
+  src: {
+    webp: YotpoLogo,
+    png: YotpoLogoPng,
+  },
+  alt: 'Yotpo logo',
+  title: '~250 engineers',
 }];
 
 /* eslint-disable jsx-a11y/alt-text */
@@ -74,10 +92,10 @@ const CustomerLogoCloud = ({ logos = LOGOS }) => (
         <p>Improving engineering effectiveness at top companies</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
+      <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
         {logos.map((logo) => (
           <div className="col-span-1 flex justify-center" key={logo.src.png}>
-            <LogoItem {...logo} className="h-8 sm:h-10" />
+            <LogoItem {...logo} className="h-10" />
           </div>
         ))}
       </div>
