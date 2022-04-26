@@ -71,17 +71,17 @@ Then enter the following props.
 
 ![](props.png)
 
-    ```json
-    {
-      "src": "<your src>",
-      "title": "<card title>"
-    }
-    ```
+``` json
+{
+  "src": "<your src>",
+  "title": "<card title>"
+}
+```
 
-    - `src` is url location of the iframe (without this, it will render text)
-    - `title` the title you want to associate the iframe with (optional)
-    - `height` the height of the iframe tag (optional)
-    - `width` the wifth of the iframe tag(optional)
+- `src` is url location of the iframe (without this, it will render text)
+- `title` the title you want to associate the iframe with (optional)
+- `height` the height of the iframe tag (optional)
+- `width` the wifth of the iframe tag(optional)
 
 2.  Click Save
 
