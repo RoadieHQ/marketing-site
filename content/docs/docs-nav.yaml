@@ -41,7 +41,7 @@ nav:
     - Snyk: '/docs/integrations/snyk/'
     - Sonarqube: '/docs/integrations/sonarqube/'
     - Travis CI: '/docs/integrations/travis-ci/'
-    - Tech radar: '/docs/configuration/tech-radar/'
+    - Tech radar: '/docs/integrations/tech-radar/'
     - Cortex: '/docs/integrations/cortex'
   - Integrations:
     - AWS S3: '/docs/integrations/aws-s3/'
