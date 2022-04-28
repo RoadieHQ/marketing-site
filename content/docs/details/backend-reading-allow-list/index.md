@@ -24,5 +24,5 @@ If you want to restrict access further you can add a list of paths and only reso
 
 ## See Also
 
-[FetchUrlReader](https://backstage.io/docs/reference/backend-common.fetchurlreader#properties)
+ - [FetchUrlReader](https://backstage.io/docs/reference/backend-common.fetchurlreader#properties)
 [Substitutions In The Descriptor Format](https://backstage.io/docs/features/software-catalog/descriptor-format#substitutions-in-the-descriptor-format)
