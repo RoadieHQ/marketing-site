@@ -34,56 +34,29 @@ gettingStarted:
           headers:
           Shortcut-Token: '${SHORTCUT_API_TOKEN}'
 
-  - intro: Add plugin API to your Backstage instance.
+  - intro: Add Shortcut stories card to Home page:.
     language: typescript
     code: |
-      // packages/app/src/components/catalog/EntityPage.tsx
-      import { EntityShorcutPageContent } from '@roadiehq/backstage-plugin-shortcut';
-
+      // packages/app/src/components/home/HomePage.tsx
+      import { HomepageStoriesCard } from '@roadiehq/backstage-plugin-shortcut'
       // ...
 
-      const userPage = (
-        <EntityLayoutWrapper>
-          ...
-          <EntityLayout.Route path="/backstage-plugin-shortcut" title="Shortcut">
-            <EntityShorcutPageContent />
-          </EntityLayout.Route>
-          ...
-        </EntityLayoutWrapper>
+      const HomePage = () => {
+        <PageWithHeader title="Home" themeId="home">
+          <Content>
+            ...
+              <Grid item md={6} xs={12}>
+                <HomepageStoriesCard />
+              </Grid>
+            ...
+           </Content>
+        </PageWithHeader>
       )
 
   - intro: Run the backstage app with the following command and navigate to the user entity.
     code: |
       yarn start
-
-  - intro: Card setup.
-
-  - intro: You can use the stories card from this plugin (but make sure to install it first by following the steps above) in order to add the stories widget to your Overview page or Home page if you use Homepage plugin.
-
-  - intro: Add stories card to your Overview tab.
-    language: typescript
-    code: |
-      // packages/app/src/components/catalog/EntityPage.tsx
-     import { StoriesCard } from '@roadiehq/backstage-plugin-shortcut';
-
-      // ...
-      
-      const overviewContent = (
-        <Grid container spacing={3} alignItems="stretch">
-        <EntitySwitch>
-          <Grid item md={6} xs={12}>
-            <StoriesCard />
-          </Grid>
-          </EntitySwitch>
-        </Grid>
-      );
 ---
-
-## How to use Shortcut plugin in Backstage:
-
-1. Add your Shorcut personal auth token to the environment variables of your backstage backend server (you can find it in https://app.shortcut.com/{organisation}/settings/account/api-tokens), in the end it should look like this:
-
-   `SHORTCUT_API_TOKEN="YOUR_API_TOKEN"`
 
 ## API Rate Limit in Shortcut
 
