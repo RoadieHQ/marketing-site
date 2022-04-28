@@ -63,4 +63,4 @@ nav:
     - Required annotations: '/docs/details/required-annotations/'
     - Previewing config changes: '/docs/details/previewing-changes/'
     - Removing Components: '/docs/details/unregister-components/'
-    - Accessing Public resources from the Backend: '/docs/details/backend-reading-allow-list/'
+    - Accessing Public resources: '/docs/details/backend-reading-allow-list/'
