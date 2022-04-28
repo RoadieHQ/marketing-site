@@ -8,7 +8,7 @@ description: The Backstage backend restricts what resources can be fetched by de
 ## Introduction
 
 The Backstage backend restricts what resources can be fetched by default. 
-Backstage config can be read. This guide describes how to configure this list. This would allow you to do something like 
+This guide describes how to configure this list. This would allow you to do something like 
 fetch a public API definition in a catalog info file.
 
 ## Configuration
