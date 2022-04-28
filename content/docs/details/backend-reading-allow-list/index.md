@@ -11,6 +11,8 @@ The Backstage backend restricts what resources can be fetched by default.
 This guide describes how to configure this list. This would allow you to do something like 
 fetch a public API definition in a catalog info file.
 
+By default only *.example.com and *.mozilla.org are allowed.
+
 ## Configuration
 
 Navigate to `administration/settings/backend` in Roadie you should be able to click "add item" then enter the hostname of
