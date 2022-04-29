@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter } from 'components';
+import { SEO } from 'components';
 import { PurchaseGrowthTier, PurchaseTeamsTier, SectionHeader } from 'components/pricing';
 import { FAQs } from 'components/landing';
 
@@ -19,8 +19,6 @@ const Purchase = ({
       description="Hosted Backstage solution pricing from Roadie. Simple, flexible pricing options to fit your Backstage needs. Buy now."
     />
 
-    <SitewideHeader />
-
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
         <SectionHeader headline="Purchase Roadie" />
@@ -33,8 +31,6 @@ const Purchase = ({
     </div>
 
     <FAQs/>
-
-    <SitewideFooter />
   </>
 );
 

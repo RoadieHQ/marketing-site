@@ -9,6 +9,7 @@ const PurchaseGrowthTier = () => (
     ctaComponent={(
       <Button
         text="Talk to sales"
+        id="growth-plan-cta"
         link={true}
         color="primary"
         postfixIcon={<ExternalLinkIcon />}

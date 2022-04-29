@@ -25,10 +25,12 @@ const PurchaseTeamsTier = () => {
       ctaComponent={(
         <Button
           text="Buy now"
+          id="teams-plan-cta"
           postfixIcon={<ExternalLinkIcon />}
           link={true}
           to={chargebeeUrl.toString()}
           color="primary"
+          forceOpenInSameTab={true}
           fullWidth
         />
       )}
