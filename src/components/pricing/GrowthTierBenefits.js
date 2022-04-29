@@ -21,7 +21,8 @@ const GrowthTierBenefits = () => (
         '24/7 On-call',
         'Slack and email support',
         'Bring your own Backstage plugins',
-        'API access',
+        'API access (beta)',
+        'Infra access via broker (beta)',
       ]}
     />
   </>
