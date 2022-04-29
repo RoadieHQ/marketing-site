@@ -58,6 +58,10 @@ gettingStarted:
       yarn start
 ---
 
+## Authentication
+
+The Shortcut API uses token-based authentication so in order to retrieve results you will need it. To generate an API token, go to https://app.shortcut.com/settings/account/api-tokens.
+
 ## API Rate Limit in Shortcut
 
 The Shortcut REST API limits requests to 200 per minute. Any requests over that limit will not be processed, and will return a 429 (“Too Many Requests”) response code.
