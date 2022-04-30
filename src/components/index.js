@@ -34,5 +34,6 @@ export { default as Testimonial } from './Testimonial';
 export { default as SEO } from './seo';
 export { default as Link } from './Link';
 export { default as Chip } from './Chip';
+export { default as SensibleNavList } from './SensibleNavList';
 export { default as TabInner } from './Tabs/Inner';
 export { Page } from './layouts';
