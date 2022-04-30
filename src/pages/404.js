@@ -42,7 +42,6 @@ const NotFoundPage = ({
 
             <div className="mt-8">
               <Link to="/" color="primary">
-                <span className="text-base font-medium text-indigo-600 hover:text-indigo-500" />
                 Or go back home<span aria-hidden="true"> &rarr;</span>
               </Link>
             </div>
