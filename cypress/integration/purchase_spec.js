@@ -5,7 +5,7 @@ describe('Purchasing', () => {
 
     const quantity = 70;
     cy.get('#teams-plan-number-of-engineers').select(quantity.toString());
-    cy.contains('$1,120 billed monthly');
+    cy.contains('$1,190 billed monthly');
 
     const CHARGEBEE_URL = 'https://roadie-test.chargebee.com/hosted_pages/checkout';
     const PLAN_NAME = 'Roadie-Teams-Plan-USD-Monthly';
