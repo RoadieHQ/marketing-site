@@ -88,9 +88,3 @@
   from = "/docs/configurations/tech-radar/"
   to = "/docs/integrations/tech-radar/"
   force = true
-
-[build]
-  publish = "public"
-
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
