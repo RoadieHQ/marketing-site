@@ -1,7 +1,7 @@
 describe('Purchasing', () => {
   it('the teams plan sends the user to chargebee', () => {
     cy.visit('/purchase/');
-    cy.contains('$180 billed monthly');
+    cy.contains('$900 billed monthly');
 
     const quantity = 70;
     cy.get('#teams-plan-number-of-engineers').select(quantity.toString());
