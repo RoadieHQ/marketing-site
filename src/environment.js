@@ -1,5 +1,3 @@
-import get from 'lodash/get';
-
 // This env var is set in the gatsby-config.js file.
 export const currentlyExecutingGitBranch = () => {
   return process.env.GATSBY_GIT_BRANCH_NAME || 'NOT_SUPPLIED';
@@ -15,6 +13,8 @@ export const recaptchaEnabled = () => {
   return true;
 };
 
-export const chargebeeSubdomain = () => get(process.env, 'GATSBY_CHARGEBEE_SUBDOMAIN', 'roadie-test');
+export const chargebeeSubdomain = () => {
+  return process.env.GATSBY_CHARGEBEE_SUBDOMAIN || 'roadie-test';
+};
 
 export const siteRecaptchaKey = () => process.env.GATSBY_SITE_RECAPTCHA_KEY;
