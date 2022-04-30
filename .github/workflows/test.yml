@@ -40,8 +40,9 @@ jobs:
           GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
           GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
           ALGOLIA_SKIP_INDEXING: true
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          CONTENTFUL_ACCESS_TOKEN: aaa
           GATSBY_RECAPTCHAS_ENABLED: false
+          GATSBY_CONTENTFUL_OFFLINE: true
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
