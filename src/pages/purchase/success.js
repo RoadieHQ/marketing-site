@@ -20,7 +20,10 @@ const PurchaseSuccessPage = ({
   },
 }) => (
   <>
-    <SEO title={`404: Not Found | ${title}`} />
+    <SEO
+      title={`Welcome to Roadie | ${title}`}
+      description="Success page which is shown to people who become Roadie customers"
+    />
 
     <SitewideHeader />
 
