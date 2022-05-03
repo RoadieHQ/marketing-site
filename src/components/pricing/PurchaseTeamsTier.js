@@ -7,7 +7,8 @@ import TeamsTier from './TeamsTier';
 
 import { chargebeeSubdomain } from '../../environment';
 
-const CHARGEBEE_PLAN_NAME = 'Roadie-Teams-Plan-USD-Monthly';
+// const CHARGEBEE_PLAN_NAME = 'Roadie-Teams-Plan-USD-Monthly';
+const CHARGEBEE_PLAN_NAME = 'Temp-Test-USD-Monthly';
 
 const PurchaseTeamsTier = () => {
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
