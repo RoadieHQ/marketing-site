@@ -45,9 +45,10 @@ const Link = ({
   activeClassName,
   activeStyle,
   partiallyActive,
+  forceOpenInSameTab = false,
   ...rest
 }) => {
-  if (isRelativeTo(to)) {
+  if (forceOpenInSameTab || isRelativeTo(to)) {
     let internalTo = to;
 
     // We have to leave URLs which start with a hash alone, otherwise in-page links like

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Lead, Headline } from 'components';
 
-const SectionHeader = () => (
+const SectionHeader = ({ headline = 'Plans & Pricing' }) => (
   <div className="text-center">
-    <Headline el="h2">Plans & Pricing</Headline>
+    <Headline el="h2">{headline}</Headline>
     <div className="mt-5">
       <Lead>Developer effectiveness for teams of all sizes</Lead>
     </div>

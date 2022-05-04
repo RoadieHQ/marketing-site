@@ -183,6 +183,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-csp',
       options: {
+        disableOnDev: true,
         // This plugin does correctly add hashes to the 'style-src' directive. However, it doesn't
         // seem to identify all of the required hashes, so the unsafe-inline keyword is still
         // required. The 'unsafe-inline' keyword is ignored by browsers if any hashes are found,

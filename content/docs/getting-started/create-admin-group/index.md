@@ -75,7 +75,7 @@ Note that the name of the administration group needs to be `roadie-backstage-adm
         displayName: My Na-me
         email: my-username-before-at-symbol@domain.com
         picture: https://avatars.dicebear.com/api/avataaars/my-username-before-at-symbol.svg
-    memberOf: [roadie-backstage-admin]
+      memberOf: [roadie-backstage-admin]
     ```
 
 > Users and groups don't necessarily need to reside in different files. If you want to use a single file to import multiple entities, separate multiple yaml documents within a file with three horizontal lines `---`.
