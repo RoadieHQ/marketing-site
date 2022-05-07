@@ -60,8 +60,8 @@ const SearchAndFilterBar = ({
   handleQueryInput,
   query,
 }) => (
-  <section className="lg:flex justify-between items-center">
-    <div className="md:flex">
+  <section className="md:flex justify-between items-center">
+    <div className="flex mb-2">
       <Tab
         isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.ALL}
         label="All"
@@ -81,14 +81,14 @@ const SearchAndFilterBar = ({
       />
     </div>
 
-    <form>
+    <form className="md:w-96">
       <Input
         type="text"
         onChange={handleQueryInput}
         value={query}
         aria-label="Filter"
         placeholder="Filter"
-        className="w-96"
+        fullWidth
       />
     </form>
   </section>
