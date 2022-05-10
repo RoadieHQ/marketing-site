@@ -38,6 +38,10 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 ℹ️  &nbsp;If you are not an owner of your GitHub organization, you will need to ask an owner to approve the App installation and then contact us to enable the App.
 
+ℹ️  &nbsp;To enable the `github-org` processor, please navigate [here](/docs/integrations/github-org/).
+
+ℹ️  &nbsp;To enable the `github-discovery` processor, please navigate [here](/docs/integrations/github-discovery/).
+
 ## Next steps
 
 Now that a connection to GitHub is established, you can [make yourself an admin on Roadie](/docs/getting-started/create-admin-group/).
