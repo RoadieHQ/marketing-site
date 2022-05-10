@@ -64,3 +64,4 @@ nav:
     - Previewing config changes: '/docs/details/previewing-changes/'
     - Removing Components: '/docs/details/unregister-components/'
     - Accessing Public resources: '/docs/details/backend-reading-allow-list/'
+    - Requesting plugins: '/docs/details/requesting-plugins/'
