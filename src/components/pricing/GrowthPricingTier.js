@@ -2,15 +2,16 @@ import React from 'react';
 import { Button } from 'components';
 
 import GrowthTier from './GrowthTier';
+import TIERS from './tiers';
 
 const GrowthPricingTier = () => (
   <GrowthTier
     ctaComponent={(
       <Button
-        text="Request a demo"
+        text={TIERS.growth.ctaLabel}
         link={true}
         color="primary"
-        to="/request-demo/"
+        to={TIERS.growth.ctaLinkTo}
         fullWidth
       />
     )}

@@ -4,16 +4,18 @@ import { Button, HelpText } from 'components';
 import TeamsTierPriceDisplay from './TeamsTierPriceDisplay';
 import TeamsTierBenefits from './TeamsTierBenefits';
 import TierContainer from './TierContainer';
-import TeamsTierHeader from './TeamsTierHeader';
+import TierName from './TierName';
+import TierDescription from './TierDescription';
+import TIERS from './tiers';
 
 const TeamsTier = ({
   ctaHelpText = 'No credit card required',
   ctaComponent = (
     <Button
-      text="Start a free trial"
+      text={TIERS.teams.ctaLabel}
       link={true}
       color="primary"
-      to="/free-trial/"
+      to={TIERS.growth.ctaLinkTo}
       fullWidth
     />
   ),
@@ -23,7 +25,8 @@ const TeamsTier = ({
 }) => (
     <TierContainer>
       <div className="p-6">
-        <TeamsTierHeader />
+        <TierName name={TIERS.teams.name} />
+        <TierDescription description={TIERS.teams.description} />
 
         <TeamsTierPriceDisplay
           optionsForNumberOfEngineers={optionsForNumberOfEngineers}
