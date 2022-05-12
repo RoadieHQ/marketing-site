@@ -7,3 +7,5 @@ export { default as RoadieRIcon } from './RoadieRIcon';
 export { default as QuoteIcon } from './QuoteIcon';
 export { default as LinkedinIcon } from './LinkedinIcon';
 export { default as RoadieWordIcon } from './RoadieWordIcon';
+export { default as RoadieRacksAndWordIcon } from './RoadieRacksAndWordIcon';
+export { default as RoadieRacksIcon } from './RoadieRacksIcon';
