@@ -15,7 +15,7 @@ const TeamsTier = ({
       text={TIERS.teams.ctaLabel}
       link={true}
       color="primary"
-      to={TIERS.growth.ctaLinkTo}
+      to={TIERS.teams.ctaLinkTo}
       fullWidth
     />
   ),
