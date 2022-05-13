@@ -141,9 +141,9 @@ module.exports = {
         short_name: SITE_TITLE,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: theme.COLORS_PRIMARY_500,
+        theme_color: theme.COLORS_PRIMARY_600,
         display: `minimal-ui`,
-        icon: 'content/assets/logos/roadie/roadie-r-round.svg',
+        icon: 'content/assets/logos/roadie/roadie-racks.svg',
         // The request for the manifest was failing with a 401 on preview.roadie.io because
         // of the basic authentication layer applpied to that site by Netlify. We use basic
         // auth on the preview site to keep it hidden from search engines and (to a less
