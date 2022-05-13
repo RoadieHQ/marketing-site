@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { SEO, TextLink, ContentHeader, SitewideFooter } from 'components';
 
-import { TableOfContentsSidebar } from 'components/Sidebar';
+import { NestedTableOfContentsSidebar } from 'components/Sidebar/index';
 import { Sidebar } from 'components/doc';
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
 
@@ -44,7 +44,7 @@ const Doc = ({
         </footer>
       </article>
 
-      <TableOfContentsSidebar headings={doc.headings} />
+      <NestedTableOfContentsSidebar tableOfContents={doc.tableOfContents} />
     </main>
 
     <SitewideFooter maxWidth="full" />
@@ -65,6 +65,7 @@ export const pageQuery = graphql`
       }
     }
 
+        
     doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
@@ -73,7 +74,11 @@ export const pageQuery = graphql`
         id
         value
       }
-
+      tableOfContents(
+          absolute: false
+          pathToSlugField: "frontmatter.title"
+          maxDepth: 5
+        )
       frontmatter {
         description
         title
