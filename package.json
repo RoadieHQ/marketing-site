@@ -54,6 +54,7 @@
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
+    "html-to-react": "^1.4.8",
     "postcss": "^8.4.5",
     "prismjs": "^1.24.0",
     "react": "^17.0.2",
