@@ -39,13 +39,15 @@ spec:
 
 ## Step 2: Import Your Component YAML file into Backstage
 
-Backstage scans your GitHub Org for new updates and automatically discovers YAML files which are found in the root of the default branch and are called `catalog-info.yaml`.
-
 Components can be manually added to Backstage by using the catalog importer available at `/catalog-import`. 
 
 To do this, simply copy/paste the URL of the YAML file into the importer (see video below).
 
 [![Adding a Component](https://cdn.loom.com/sessions/thumbnails/b96f07f0579a423f8cb762e8c1b7f3fe-with-play.gif)](https://www.loom.com/share/b96f07f0579a423f8cb762e8c1b7f3fe "Adding a Component")
+
+To automatically discover `catalog-info.yaml` files, you can also set up a location entity. For more information on this, please visit [here](/docs/integrations/github-discovery/).
+
+ℹ️ Note: If you are only trialing backstage, we do not recommend setting up the discovery. It is much easier to manually add files through the catalog importer. Feedback is also much faster.
 
 ## Step 3: View your Component
 
