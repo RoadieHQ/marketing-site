@@ -1,7 +1,7 @@
 ---
 title: Scaffolder
 publishedDate: '2022-05-13T10:53:00.0Z'
-description: Initialize projects and trigger automation from within Backstage. You can prompt parameter inputs and combine scaffolder actions in oder to build a scaffolder template to run within Backstage.
+description: Initialize projects and trigger automation from within Backstage. You can prompt parameter inputs and combine scaffolder actions in order to build a scaffolder template to run within Backstage.
 ---
 
 # Overview
