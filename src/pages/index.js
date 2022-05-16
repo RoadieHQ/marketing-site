@@ -47,10 +47,7 @@ import ArgoLogo from '../../content/assets/logos/argo-cd/argo.inline.svg';
 import JiraSoftwareLogo from '../../content/assets/logos/jira/jira.inline.svg';
 
 const SEO_TITLE = 'The easiest way to get Spotify Backstage';
-const LEAD = `
-Roadie's SaaS platform handles hosting and upgrades and ensures
-you always have access to the latest Backstage features.
-`;
+const LEAD = `Roadie's SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features.`;
 
 const PRODUCT = {
   htmlId: 'product',

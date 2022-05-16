@@ -1,12 +1,12 @@
 import React from 'react';
-import { RoadieRIcon } from 'components/icons';
+import { RoadieRacksIcon } from 'components/icons';
 
 import CloseMenuButton from './CloseMenuButton';
 
 const DrawerMenuHeader = () => (
   <div className="flex items-center justify-between border-b-2 border-gray-100 pb-4">
     <div>
-      <RoadieRIcon />
+      <RoadieRacksIcon />
     </div>
 
     <div className="-mr-2">
