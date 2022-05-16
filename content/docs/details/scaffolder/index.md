@@ -7,7 +7,7 @@ description: Initialize projects and trigger automation from within Backstage. Y
 # Overview
 Imagine you’re an engineer looking to create a new microservice. You want to get started as quickly as possible, with minimal boilerplate and red-tape to jump through. At the same time, engineering organizations benefit from having consistency in production, and often put gates in place to enforce it.
 
-Instead of creating blockers for engineering teams, Spotify use the scaffolder and quickly create new microservices, while helping to ensure that production remains mostly consistent.
+Instead of creating blockers for engineering teams, you can use the Roadie scaffolder and quickly create new microservices, while helping to ensure that production remains mostly consistent.
 
 Engineers can choose a pre-defined software template, fill out a few form fields to provide values like the name of the GitHub repo that the new service will occupy, and click a button to run the template and create a new service.
 
