@@ -1,5 +1,5 @@
 ---
-title: Scaffolder - Tempalte Syntax
+title: Scaffolder - Creating Templates
 publishedDate: '2022-05-16T10:53:00.0Z'
 description: Initialize projects and trigger automation from within Backstage. You can prompt parameter inputs and combine scaffolder actions in order to build a scaffolder template.
 ---
