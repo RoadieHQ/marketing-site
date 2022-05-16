@@ -3,12 +3,8 @@ import classnames from 'classnames';
 
 import Sidebar from './Sidebar';
 import { SidebarSection } from './Section';
-import { Parser } from "html-to-react"
 
 const NestedTableOfContentsSidebar = ({ tableOfContents, className }) => {
-  const htmlToReactParser = new Parser();
-
-  const reactComponents = htmlToReactParser.parse(tableOfContents);
   return (
     <Sidebar
       side="right"
@@ -20,9 +16,7 @@ const NestedTableOfContentsSidebar = ({ tableOfContents, className }) => {
       </SidebarSection>
 
       <SidebarSection >
-        <div className="table-of-contents-sidebar">
-          {reactComponents}
-        </div>
+        <div className="table-of-contents-sidebar" dangerouslySetInnerHTML={{ __html: tableOfContents }} />
       </SidebarSection>
     </Sidebar>
   );
