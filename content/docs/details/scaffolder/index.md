@@ -12,7 +12,7 @@ Instead of creating blockers for engineering teams, you can use the Roadie scaff
 Engineers can choose a pre-defined software template, fill out a few form fields to provide values like the name of the GitHub repo that the new service will occupy, and click a button to run the template and create a new service.
 
 # Components of a Template
-You can configure a Scaffolder _template_ to be triggered on demand by Backstage users. Your template contains one or more _steps_ which run sequentially during execution of a template. You may optionally specify All _steps_ during the template execution are running inside an ephemeral container that is destroyed after the execution completes.
+You can configure a Scaffolder _template_ to be triggered on demand by Backstage users. Your template contains one or more _steps_ which run sequentially during execution of a template. You may optionally specify all _steps_ while the template execution is running inside an ephemeral container that is destroyed after the execution completes.
 
 A Scaffolder _template_ is a configurable process that will run one or more Scaffolder _steps_. The template will be run when a user visits the "Create Component" page in Backstage. `https://<tenant-name>.roadie.so/create`.
 
