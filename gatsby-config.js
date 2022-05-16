@@ -42,15 +42,12 @@ const getContentfulHost = () => {
 };
 
 const getSiteUrl = () => {
-  console.log('getSiteUrl', process.env.NETLIFY, typeof process.env.NETLIFY);
-  console.log('getSiteUrl URL', process.env.URL);
-  console.log('getSiteUrl DEPLOY_PRIME_URL', process.env.DEPLOY_PRIME_URL);
-  if (process.env.NETLIFY) {
+  if (process.env.NETLIFY === 'true') {
     // This should
     //   1. return https://roadie.io in production
     //   2. return https://preview.roadie.io on the preview site (for checking Contentful drafts).
     //   3. return https://deploy-preview-<id>--roadie.netlify.app in deploy previews.
-    return process.env.URL;
+    return process.env.DEPLOY_PRIME_URL;
   }
   return 'https://roadie.io';
 };
