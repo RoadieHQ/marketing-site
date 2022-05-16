@@ -51,7 +51,7 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: 'Hello, {{ parameters.name }}!'
+        message: 'Hello, ${{ parameters.name }}!'
 ```
 
 # Header Section
