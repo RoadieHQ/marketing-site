@@ -42,12 +42,15 @@ const getContentfulHost = () => {
 };
 
 const getSiteUrl = () => {
-  if (get(process.env, 'NETLIFY')) {
+  console.log('getSiteUrl', process.env.NETLIFY, typeof process.env.NETLIFY);
+  console.log('getSiteUrl URL', process.env.URL);
+  console.log('getSiteUrl DEPLOY_PRIME_URL', process.env.DEPLOY_PRIME_URL);
+  if (process.env.NETLIFY) {
     // This should
     //   1. return https://roadie.io in production
     //   2. return https://preview.roadie.io on the preview site (for checking Contentful drafts).
     //   3. return https://deploy-preview-<id>--roadie.netlify.app in deploy previews.
-    return get(process.env, 'URL');
+    return process.env.URL;
   }
   return 'https://roadie.io';
 };
@@ -74,7 +77,6 @@ module.exports = {
     title: SITE_TITLE,
     description: 'Hosted, managed, enterprise Backstage',
     siteUrl: getSiteUrl(),
-    demoUrl: 'https://demo.roadie.so',
     sourceCodeUrl: 'https://github.com/RoadieHQ/marketing-site/blob/main',
     social: {
       twitter: 'RoadieHQ',

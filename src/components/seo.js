@@ -35,6 +35,9 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
   const ogImageUrl = `${site.siteMetadata.siteUrl}${roadieLogo}`;
   const ogImageAlt = 'The Roadie logo. A cube in isometric projection with 3 fins cut into the right face. The word Roadie is below.';
 
+  console.log('site', site.siteMetadata);
+  console.log('ogImageUrl', ogImageUrl);
+
   return (
     <Helmet
       htmlAttributes={{
