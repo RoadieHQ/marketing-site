@@ -19,8 +19,10 @@ const NestedTableOfContentsSidebar = ({ tableOfContents, className }) => {
         <strong>Table of Contents</strong>
       </SidebarSection>
 
-      <SidebarSection>
-      {reactComponents}
+      <SidebarSection >
+        <div className="table-of-contents-sidebar">
+          {reactComponents}
+        </div>
       </SidebarSection>
     </Sidebar>
   );
