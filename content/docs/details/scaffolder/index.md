@@ -63,13 +63,13 @@ spec:
   type: service
 ```
 
-### `apiVersion`
+## `apiVersion`
 This is a required field and should be set to `scaffolder.backstage.io/v1beta3`
 
-### `kind`
+## `kind`
 A Scaffolder template is also an Entity in Backstage. In order to configure this entity as a template you must set the kind to `Template`
 
-### `metadata`
+## `metadata`
 The metadata field contains some data that appears on the template card that appears on the "Create Component" page.
 
 ## `spec`
@@ -389,6 +389,220 @@ steps
     input:
       repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
       defaultBranch: main
+```
+
+The `access` input parameter adds an admin collaborator to the repository. It can be a reference to a GitHub user or a team in GitHub.
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      access: AcmeInc/engineering
+```
+
+You can enabled code owner reviews using the `requireCodeOwnerReviews` option:
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      requireCodeOwnerReviews: true
+```
+
+The `repoVisibility` option allows the repository to be made public. By default it will be a private repository.
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      repoVisibility: "public"
+```
+
+To cause merges to delete the source branch, you can enabled the `deleteBranchOnMerge` setting.
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      deleteBranchOnMerge: true
+```
+
+If you want to disable merge commits, squash merge and rebase merge you can do that with the settings `allowMergeCommit`, `allowSquashMerge` and `allowRebaseMerge`. By default, these are enabled.
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      allowMergeCommit: false
+      allowSquashMerge: false
+      allowRebaseMerge: false
+```
+
+By default the repository will be populated with the files contained in the workspace directory. If you need to use a subdirectory, you can use the `sourcePath` option.
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      sourcePatch: "./repoRoot"
+```
+
+Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` and `access`. `username` is the GitHub username to allow collaboration. The `access` option gives the user specfic type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`.
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      collaborators:
+        - username: user1
+          access: read
+```
+
+The `topics` allows adding topics to the created repository when its created.
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      topics:
+        - java
+        - ruby
+```
+
+### `publish:github:pull-request`
+This action creates a pull request against a pre-existing repository using the files contained in the workspace directory. The most basic example is:
+
+```yaml
+steps
+  - action: publish:github:pull-request
+    id: create-pull-request
+    name: Create a pull request
+    input:
+      repoUrl: "github.com?repo=reponame&owner=AcmeInc"
+      branchName: ticketNumber-123
+      title: "Make some changes to the files"
+      description: "This pull request makes canges to the files in the reponame repository in the AcmeInc organization"
+```
+
+If the updated code is contained in a subdirectory to the workspace directory, you can use the `sourcePath` to select it. If the files you want to target to update are in a subdirectory of the repository you can use the `targetPath` option. 
+
+```yaml
+steps
+  - action: publish:github:pull-request
+    id: create-pull-request
+    name: Create a pull request
+    input:
+      repoUrl: "github.com?repo=reponame&owner=AcmeInc"
+      branchName: ticketNumber-123
+      title: "Make some changes to the files"
+      description: "This pull request makes canges to the files in the reponame repository in the AcmeInc organization"
+      sourchPath: ./subdirectory
+      targetPath: ./subdirectory
+```
+
+### `http:backstage:request`
+This action allows the Scaffolder task to run a HTTP request against the Backstage Backend API and handle the response. It can be useful for extending the scaffolder to call out to third party APIs. You can do this by configuring a proxy and then calling the proxy with this action.
+
+```yaml
+steps
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
+    input:
+      method: POST
+      path: "/api/proxy/acme/thing"
+```
+
+You can optionally add request `params`.
+
+```yaml
+steps
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
+    input:
+      method: POST
+      path: "/api/proxy/acme/thing"
+      params:
+        state: "bar"
+```
+
+The `headers` parameter allows setting headers on the request:
+
+```yaml
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
+    input:
+      method: POST
+      path: "/api/proxy/acme/thing"
+    headers:
+      Accept: "application/json"
+```
+
+The `body` param allows you to set a request body. This is most likely going to be useful for `POST` requests.
+
+```yaml
+steps
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
+    input:
+      method: POST
+      path: "/api/proxy/acme/thing"
+      body: "thingname=abc1"
+```
+
+You can also have the action generate a `json` formatted body by setting a custom "Content-Type" header to "application/json" and then providing a object to the `body` param.
+
+```yaml
+steps
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
+    input:
+      method: POST
+      path: "/api/proxy/acme/thing"
+      headers:
+        "Content-Type": "application/json"
+      body:
+        thingname: "foo"
+```
+
+### `debug:log`
+Use the `debug:log` action to print some information to the task console.
+
+```yaml
+steps
+  - action: debug:log
+    id: debug-log
+    name: Log Hello World
+    input:
+      message: "Hello, World!"
 ```
 
 ### Other Actions
