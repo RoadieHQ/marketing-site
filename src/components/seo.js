@@ -8,6 +8,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import get from 'lodash/get';
 
 import roadieLogo from '../../content/assets/logos/roadie/roadie-racks-vertical.png';
 
@@ -30,6 +31,9 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const twitterHandle = get(site, 'siteMetadata.social.twitter', 'roadiehq');
+  const ogImageUrl = `${site.siteMetadata.siteUrl}${roadieLogo}`;
+  const ogImageAlt = 'The Roadie logo. A cube in isometric projection with 3 fins cut into the right face. The word Roadie is below.';
 
   return (
     <Helmet
@@ -56,7 +60,7 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
         },
         {
           property: `og:image`,
-          content: `${site.siteMetadata.siteUrl}${roadieLogo}`,
+          content: ogImageUrl,
         },
         {
           name: `twitter:card`,
@@ -64,22 +68,19 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
         },
         {
           name: `twitter:site`,
-          content: site.siteMetadata.social.twitter,
+          content: twitterHandle,
         },
         {
           name: `twitter:image`,
-          // This may not work in development or a staging or preview environment but it is only
-          // really required to work in production. Twitter should not be linking to our preview
-          // URLs.
-          content: `${site.siteMetadata.siteUrl}${roadieLogo}`,
+          content: ogImageUrl,
         },
         {
           name: `twitter:image:alt`,
-          content: 'The Roadie logo. An uppercase R outline against a black background.',
+          content: ogImageAlt,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.social.twitter,
+          content: twitterHandle,
         },
         {
           name: `twitter:title`,

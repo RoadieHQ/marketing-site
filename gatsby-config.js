@@ -42,8 +42,13 @@ const getContentfulHost = () => {
 };
 
 const getSiteUrl = () => {
-  const netlifySiteName = get(process.env, 'SITE_NAME');
-  if (netlifySiteName === 'roadie-preview') return 'https://preview.roadie.io';
+  if (get(process.env, 'NETLIFY')) {
+    // This should
+    //   1. return https://roadie.io in production
+    //   2. return https://preview.roadie.io on the preview site (for checking Contentful drafts).
+    //   3. return https://deploy-preview-<id>--roadie.netlify.app in deploy previews.
+    return get(process.env, 'URL');
+  }
   return 'https://roadie.io';
 };
 
