@@ -1,0 +1,15 @@
+div.table-of-contents-sidebar ul li ul li {
+    text-indent: 0.5em
+}
+
+div.table-of-contents-sidebar ul li ul li ul li {
+    text-indent: 1em
+}
+
+div.table-of-contents-sidebar ul li ul li ul li ul li {
+    text-indent: 1.5em
+}
+
+div.table-of-contents-sidebar ul li ul li ul li ul li ul li {
+    text-indent: 2em
+}
