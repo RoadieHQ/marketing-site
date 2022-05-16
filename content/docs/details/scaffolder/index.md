@@ -18,7 +18,7 @@ A Scaffolder _template_ is a configurable process that will run one or more Scaf
 
 ![create-a-new-component](./create-a-new-component.png)
 
-Templates are defined by a Backstage Entity YAML file with a _Template_ kind and imported into the Backstage catalog.  You can create multiple templates, each of which can perform a different set of steps. For example, you can have one _template_ that creates a React application, and another that creates a serverless app.
+Templates are defined by a Backstage Entity YAML file with a _Template_ kind and imported into the Backstage catalog. You can create multiple templates, each of which can perform a different set of steps. For example, you can have one _template_ that creates a React application, and another that creates a serverless app.
 
 Here is an example of a very basic Scaffolder _template_ that prompts the user for a name, and then prints back the text "Hello, name!"
 
