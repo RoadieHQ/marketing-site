@@ -1,19 +1,17 @@
 ---
 title: Scaffolder
-publishedDate: '2022-05-13T10:53:00.0Z'
-description: Initialize projects and trigger automation from within Backstage. You can prompt parameter inputs and combine scaffolder actions in order to build a scaffolder template to run within Backstage.
+publishedDate: '2022-05-16T10:53:00.0Z'
+description: Initialize projects and trigger automation from within Backstage. You can prompt parameter inputs and combine scaffolder actions in order to build a scaffolder template.
 ---
 
-# Overview
-Imagine you’re an engineer looking to create a new microservice. You want to get started as quickly as possible, with minimal boilerplate and red-tape to jump through. At the same time, engineering organizations benefit from having consistency in production, and often put gates in place to enforce it.
+## Overview
+The Roadie Backstage scaffolder is a feature that allows you to define software templates to create new software projects, update existing ones or simply perform repeated tasks in a consistent manner.
 
-Instead of creating blockers for engineering teams, you can use the Roadie scaffolder and quickly create new microservices, while helping to ensure that production remains mostly consistent.
+Scaffolder templates are defined in yaml files and loaded into the Backstage catalog in the same way that other entities are loaded into Backstage. A template contains one or more `steps` which run sequentially during execution.
 
-Engineers can choose a pre-defined software template, fill out a few form fields to provide values like the name of the GitHub repo that the new service will occupy, and click a button to run the template and create a new service.
+A Scaffolder template is then run on demand by the users of Backstage to execute the software template. Roadie will execute the software template in an emphemeral container that is destroyed after the execution completes.
 
-# Components of a Template
-You can configure a Scaffolder _template_ to be triggered on demand by Roadie users. Your template contains one or more `steps` which run sequentially during execution of a template. You may optionally specify all `steps` while the template execution is running inside an ephemeral container that is destroyed after the execution completes.
-
+## Components of a Template
 A Scaffolder template is a configurable process that will run one or more Scaffolder `steps`. The template will be run when a user visits the "Create Component" page in Backstage. `https://<tenant-name>.roadie.so/create`.
 
 ![create-a-new-component](./create-a-new-component.png)
@@ -39,12 +37,7 @@ spec:
         - name
       properties:
         name:
-          title: Name
           type: string
-          description: Name to say hello to
-          ui:autofocus: true
-          ui:options:
-            rows: 5
 
   steps:
     - id: log-message
@@ -54,7 +47,7 @@ spec:
         message: 'Hello, ${{ parameters.name }}!'
 ```
 
-# Header Section
+## Header Section
 
 The header section is required for every `template` and contains information to configure the task and show details about the task on the "Create Component" page.
 
@@ -70,20 +63,19 @@ spec:
   type: service
 ```
 
-## `apiVersion`
+### `apiVersion`
 This is a required field and should be set to `scaffolder.backstage.io/v1beta3`
 
-## `kind`
+### `kind`
 A Scaffolder template is also an Entity in Backstage. In order to configure this entity as a template you must set the kind to `Template`
 
-
-## `metadata`
+### `metadata`
 The metadata field contains some data that appears on the template card that appears on the "Create Component" page.
 
 ## `spec`
 The spec field contains `owner` and `type`. Owner refers to the Backstage group or user that owns the Scaffolder task e.g. `default/engineering`. Type refers to the type of template. It can be set to anything and appears on the scaffolder template card in the "Create Component" page.
 
-# `parameters`
+## `parameters`
 The parameters property is a list of parameters that can be prompted from the user when they run a template. Each array element contains the configuration for a single page of items to be filled by the user running the template. The parameter pages must contain `title`, `required` and `properties`.
 
 You can choose to break up the parameter prompting into `form steps` or collect all of the parameters in one single step.
@@ -98,7 +90,7 @@ Here is the most basic example:
         type: string
 ```
 
-## `string`
+### `string`
 You may collect text data from the user by using the string type. Here is the most basic example. It will prompt the user for a name.
 
 ```yaml
@@ -163,7 +155,7 @@ The owner picker, allows the user to select a user / group in the Backstage cata
         ui:field: OwnerPicker
 ```
 
-## `number`
+### `number`
 You can allow the user to enter a number using the `number` type:
 
 ```yaml
@@ -173,9 +165,9 @@ You can allow the user to enter a number using the `number` type:
         type: number
 ```
 
-## `object`
+### `object`
 
-The `object` allows the collection of more complex types of data from the user. It contains the `properies` option to add variables to the object as follows:
+The `object` allows the collection of more complex types of data from the user. It contains the `properties` option to add variables to the object as follows:
 
 ```yaml
   parameters:
@@ -205,7 +197,7 @@ You may choose to make an object property to be mandatory using the `required` p
             type: number
 ```
 
-## `array`
+### `array`
 
 You can prompt for an array of properties using the array option. The `items` option can be any type: `array`, `object`, `string` or `number` as you like.
 
@@ -228,7 +220,7 @@ If you would like to prompt the user to add entity tags, you can use the `ui:fie
         ui:field: EntityTagsPicker
 ```
 
-## Common Options
+### Common Options
 
 If you would like to default the value of a field you can use the `default` option:
 
@@ -261,8 +253,8 @@ You can display a more human description to a field value by using `title` and `
         description: "Name to say hello to"
 ```
 
-## Form Steps
-It might be jarring for your user to enter a lot of parameters one after another on the same page, especially if some of the propertiers require validation. As such Backstage have provided form steps.
+### Form Steps
+It might be jarring for your user to enter a lot of parameters one after another on the same page, especially if some of the properties require validation. As such Backstage have provided form steps.
 
 You can make use of form steps using the following example.
 
@@ -278,16 +270,16 @@ You can make use of form steps using the following example.
           type: number
 ```
 
-## More Reading
+### More Reading
 
-You can read more about parameter configuration in the official backstage docs here https://backstage.io/docs/features/software-templates/writing-templates.
+You can read more about parameter configuration in the official backstage docs [here](https://backstage.io/docs/features/software-templates/writing-templates). 
 
-# `steps`
+## `steps`
 Steps define the actions that are taken by the scaffolder template when it is run as a task. The scaffolder initially creates a temporary directory referred to as the _workspace_, in which files are downloaded, generated, updated and pushed to some external system. Each step that is defined is run in order.
 
 Parameters taken from the user earlier may be used in the action steps using the syntax `${{ parameters.name }}`.
 
-## `fetch:plain`
+### `fetch:plain`
 
 Downloads content and places it in the workspace.
 
@@ -312,11 +304,11 @@ steps
       targetPath: fetched-data
 ```
 
-## `fetch:template`
+### `fetch:template`
 
 This downloads a directory containing templated files. It then renders all of the templates variables into the files and directory names and content, and places the result in the workspace.
 
-```
+```yaml
 steps
   - action: fetch:template
     id: fetch-template
@@ -327,11 +319,11 @@ steps
         name: ${{ parameters.name }}
 ```
 
-The templated files themselves can contain refererces to the values in the following way `${{ values.name }}`. It uses the nunjucks templating language name and link it here. More details can be found here: https://mozilla.github.io/nunjucks/
+The templated files themselves can contain refererces to the values in the following way `${{ values.name }}`. It uses the nunjucks templating language. More details can be found [here](https://mozilla.github.io/nunjucks/).
 
 Optionally, if you would prefer the data to be downloaded to a subdirectory in the workspace you may specify the 'targetPath' input option.
 
-```
+```yaml
 steps
   - action: fetch:template
     id: fetch-template
@@ -345,7 +337,7 @@ steps
 
 You can also choose to not template specific files downloaded by the task by using the `copyWithoutRender` option. It may use file paths or globs.
 
-```
+```yaml
 steps
   - action: fetch:template
     id: fetch-template
@@ -361,7 +353,7 @@ steps
 
 If you would like to limit the templating to very specific files, you can optionally add the `.njk` extension to the files and use the `templateFileExtension` option.
 
-```
+```yaml
 steps
   - action: fetch:template
     id: fetch-template
@@ -373,13 +365,39 @@ steps
         name: ${{ parameters.name }}
 ```
 
-## `action:n`
+### `publish:github`
+This action creates a new GitHub repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
+
+The `repoUrl` must be in the format `github.com?repo=<reponame>&owner=<owner org>`
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+```
+
+By default it will create a repository with a `master` branch. If you would prefer to use `main` you can do the following:
+
+```yaml
+steps
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      defaultBranch: main
+```
+
+### Other Actions
 You can find all of the actions available to your Backstage instance by visiting the following page from within Backstage:
 
 `https://<tenant-name>.roadie.so/create/actions`
 
-# Troubleshooting
+## Troubleshooting
 Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
 
-## Resource not accessible by integration
+### Resource not accessible by integration
 This error is referring to actions that interact GitHub. It means that the Roadie GitHub app is unable to read, create or update the resource/s that are being touched by the Scaffolder step.
