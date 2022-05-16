@@ -1,5 +1,5 @@
 ---
-title: Scaffolder
+title: Scaffolder - Tempalte Syntax
 publishedDate: '2022-05-16T10:53:00.0Z'
 description: Initialize projects and trigger automation from within Backstage. You can prompt parameter inputs and combine scaffolder actions in order to build a scaffolder template.
 ---
@@ -7,7 +7,7 @@ description: Initialize projects and trigger automation from within Backstage. Y
 ## Overview
 The Roadie Backstage scaffolder is a feature that allows you to define software templates to create new software projects, update existing ones or simply perform repeated tasks in a consistent manner.
 
-Scaffolder templates are defined in yaml files and loaded into the Backstage catalog in the same way that other entities are loaded into Backstage. A template contains one or more `steps` which run sequentially during execution.
+Scaffolder templates are defined in YAML files and loaded into the Backstage catalog in the same way that other entities are loaded into Backstage. A template contains one or more `steps` which run sequentially during execution.
 
 A Scaffolder template is then run on demand by the users of Backstage to execute the software template. Roadie will execute the software template in an emphemeral container that is destroyed after the execution completes.
 
