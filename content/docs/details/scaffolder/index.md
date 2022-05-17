@@ -146,6 +146,19 @@ The following example, will only allow the user to enter a new repository name t
             - AcmeInc
 ```
 
+The `RepoUrlPicker` uses the `allowedHosts` to decide how to build the repo url output value. If you use `bitbucket.org` it will output a valid repo url for Bitbucket.
+
+```yaml
+  parameters:
+    properties:
+      repoUrl:
+        type: string
+        ui:field: RepoUrlPicker
+        ui:options:
+          allowedHosts:
+            - bitbucket.org
+```
+
 The owner picker, allows the user to select a user / group in the Backstage catalog. e.g.
 ```yaml
   parameters:
