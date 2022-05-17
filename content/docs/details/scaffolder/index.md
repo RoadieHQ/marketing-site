@@ -284,7 +284,7 @@ Parameters taken from the user earlier may be used in the action steps using the
 Downloads content and places it in the workspace.
 
 ```yaml
-steps
+steps:
   - action: fetch:plain
     id: fetch-plain
     name: Fetch plain
@@ -295,7 +295,7 @@ steps
 Optionally, if you would prefer the data to be downloaded to a subdirectory in the workspace you may specify the 'targetPath' input option.
 
 ```yaml
-steps
+steps:
   - action: fetch:plain
     id: fetch-plain
     name: Fetch plain
@@ -309,7 +309,7 @@ steps
 This downloads a directory containing templated files. It then renders all of the templates variables into the files and directory names and content, and places the result in the workspace.
 
 ```yaml
-steps
+steps:
   - action: fetch:template
     id: fetch-template
     name: Fetch template
@@ -324,7 +324,7 @@ The templated files themselves can contain refererces to the values in the follo
 Optionally, if you would prefer the data to be downloaded to a subdirectory in the workspace you may specify the 'targetPath' input option.
 
 ```yaml
-steps
+steps:
   - action: fetch:template
     id: fetch-template
     name: Fetch template
@@ -338,7 +338,7 @@ steps
 You can also choose to not template specific files downloaded by the task by using the `copyWithoutRender` option. It may use file paths or globs.
 
 ```yaml
-steps
+steps:
   - action: fetch:template
     id: fetch-template
     name: Fetch template
@@ -354,7 +354,7 @@ steps
 If you would like to limit the templating to very specific files, you can optionally add the `.njk` extension to the files and use the `templateFileExtension` option.
 
 ```yaml
-steps
+steps:
   - action: fetch:template
     id: fetch-template
     name: Fetch template
@@ -371,7 +371,7 @@ This action creates a new GitHub repository and publishes the files in the works
 The `repoUrl` must be in the format `github.com?repo=<reponame>&owner=<owner org>`
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -382,7 +382,7 @@ steps
 By default it will create a repository with a `master` branch. If you would prefer to use `main` you can do the following:
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -394,7 +394,7 @@ steps
 The `access` input parameter adds an admin collaborator to the repository. It can be a reference to a GitHub user or a team in GitHub.
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -406,7 +406,7 @@ steps
 You can enable code owner reviews using the `requireCodeOwnerReviews` option:
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -418,7 +418,7 @@ steps
 The `repoVisibility` option allows the repository to be made public. By default it will be a private repository.
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -430,7 +430,7 @@ steps
 To cause merges to delete the source branch, you can enabled the `deleteBranchOnMerge` setting.
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -442,7 +442,7 @@ steps
 If you want to disable merge commits, squash merge and rebase merge you can do that with the settings `allowMergeCommit`, `allowSquashMerge` and `allowRebaseMerge`. By default, these are enabled.
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -456,7 +456,7 @@ steps
 By default the repository will be populated with the files contained in the workspace directory. If you need to use a subdirectory, you can use the `sourcePath` option.
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -468,7 +468,7 @@ steps
 Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` and `access`. `username` is the GitHub username to allow collaboration. The `access` option gives the user specfic type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`.
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -482,7 +482,7 @@ steps
 The `topics` allows adding topics to the created repository when its created.
 
 ```yaml
-steps
+steps:
   - action: publish:github
     id: publish-repository
     name: Publish Repository to Github
@@ -497,7 +497,7 @@ steps
 This action creates a pull request against a pre-existing repository using the files contained in the workspace directory. The most basic example is:
 
 ```yaml
-steps
+steps:
   - action: publish:github:pull-request
     id: create-pull-request
     name: Create a pull request
@@ -511,7 +511,7 @@ steps
 If the updated code is contained in a subdirectory to the workspace directory, you can use the `sourcePath` to select it. If the files you want to target to update are in a subdirectory of the repository you can use the `targetPath` option. 
 
 ```yaml
-steps
+steps:
   - action: publish:github:pull-request
     id: create-pull-request
     name: Create a pull request
@@ -524,11 +524,73 @@ steps
       targetPath: ./subdirectory
 ```
 
+### `publish:bitbucket`
+This action creates a new Bit Bucket repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
+
+The `repoUrl` must be in the format `bitbucket.org?repo=<project name>&workspace=<workspace name>&project=<project name>`
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: "bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname"
+```
+
+You can optionally add a `description` to the new repository.
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: "bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname"
+      description: "My new project"
+```
+
+By default the project will be created as a private repository. It can be made public using the `repoVisibility` option.
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: "bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname"
+      repoVisibility: "public"
+```
+
+By default the repository is created with a "master" branch. If you would like to use "main" instead you can us the `defaultBranch` option.
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: "bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname"
+      defaultBranch: "main"
+```
+
+By default the repository will be populated with the files contained in the workspace directory. If you need to use a subdirectory, you can use the `sourcePath` option.
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: "bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname"
+      sourcePatch: "./repoRoot"
+```
+
 ### `http:backstage:request`
 This action allows the Scaffolder task to run a HTTP request against the Backstage Backend API and handle the response. It can be useful for extending the scaffolder to call out to third party APIs. You can do this by configuring a proxy and then calling the proxy with this action.
 
 ```yaml
-steps
+steps:
   - action: http:backstage:request
     id: http-request
     name: Create a thing on the acme service
@@ -540,7 +602,7 @@ steps
 You can optionally add request `params`.
 
 ```yaml
-steps
+steps:
   - action: http:backstage:request
     id: http-request
     name: Create a thing on the acme service
@@ -554,6 +616,7 @@ steps
 The `headers` parameter allows setting headers on the request:
 
 ```yaml
+steps:
   - action: http:backstage:request
     id: http-request
     name: Create a thing on the acme service
@@ -567,7 +630,7 @@ The `headers` parameter allows setting headers on the request:
 The `body` param allows you to set a request body. This is most likely going to be useful for `POST` requests.
 
 ```yaml
-steps
+steps:
   - action: http:backstage:request
     id: http-request
     name: Create a thing on the acme service
@@ -580,7 +643,7 @@ steps
 You can also have the action generate a `json` formatted body by setting a custom "Content-Type" header to "application/json" and then providing a object to the `body` param.
 
 ```yaml
-steps
+steps:
   - action: http:backstage:request
     id: http-request
     name: Create a thing on the acme service
@@ -597,7 +660,7 @@ steps
 Use the `debug:log` action to print some information to the task console.
 
 ```yaml
-steps
+steps:
   - action: debug:log
     id: debug-log
     name: Log Hello World
