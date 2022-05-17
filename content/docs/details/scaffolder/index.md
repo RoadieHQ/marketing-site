@@ -232,6 +232,43 @@ If you would like to prompt the user to add entity tags, you can use the `ui:fie
         type: array
         ui:field: EntityTagsPicker
 ```
+### Outputs
+Parameters can be retrieved later on by steps using parameter outputs. Here is an example of a parameter `name` be used by a `debug:log` step.
+
+```yaml
+   parameters:
+     properties:
+       name:
+         type: string
+   steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.name }}!'
+```
+
+If you need to referene elements of an array parameter you can refer to them using the following syntax:
+
+```yaml
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.names[0] }}!'
+```
+
+An `object` parameter values can be reference in the way you might expect.
+
+```yaml
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.person.name }}!'
+```
 
 ### Common Options
 
@@ -316,6 +353,8 @@ steps:
       url: ./plain
       targetPath: fetched-data
 ```
+#### Outputs
+The `fetch:plain` action does not output any data.
 
 ### `fetch:template`
 
@@ -377,6 +416,9 @@ steps:
       values:
         name: ${{ parameters.name }}
 ```
+
+#### Outputs
+The `fetch:template` action does not output any data.
 
 ### `publish:github`
 This action creates a new GitHub repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
@@ -505,6 +547,19 @@ steps:
         - java
         - ruby
 ```
+#### Outputs
+The `publish:github` action produces two step outputs: `remoteUrl` is the url for the newly created repository; `repoContentsUrl` is a url that shows the contents of the repository.
+
+These outputs can be retrieved by a subsequent step using:
+
+```yaml
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: "RemoteURL: ${{ steps.publish-repository.output.remoteUrl }}, ${{ steps.publish-repository.output.repoContentsUrl }}!"
+```
 
 ### `publish:github:pull-request`
 This action creates a pull request against a pre-existing repository using the files contained in the workspace directory. The most basic example is:
@@ -535,6 +590,20 @@ steps:
       description: "This pull request makes canges to the files in the reponame repository in the AcmeInc organization"
       sourchPath: ./subdirectory
       targetPath: ./subdirectory
+```
+
+#### Outputs
+The `publish:github:pull-request` action produces the outputs: `remoteUrl` which shows the url to the new pull request and `pullRequestNumber` which shows the number of the pull request.
+
+They can be accessed in subsequent steps as follows:
+
+```yaml
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: "RemoteURL: ${{ steps.create-pull-request.output.remoteUrl }}, ${{ steps.create-pull-request.output.pullRequestNumber }}!"
 ```
 
 ### `publish:bitbucket`
@@ -598,6 +667,8 @@ steps:
       repoUrl: "bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname"
       sourcePatch: "./repoRoot"
 ```
+#### Outputs
+The `publish:bitbucket` action produces the following outputs: `remoteUrl` is a link to the new repository and `repoContentsUrl` is a link to the contents of the repository.
 
 ### `catalog:write`
 This action creates a `catalog-info.yaml` file into the workspace directory. It takes an object that will be serialized as YAML into the body of the file.
@@ -641,6 +712,9 @@ steps:
           owner: default/owner
 ```
 
+#### Outputs
+The `catalog:write` action does not have any outputs.
+
 ### `fs:delete`
 This action deletes items in the workspace. It has one input parameter `files` that can be provided an array of items to delete.
 
@@ -654,6 +728,9 @@ steps:
         - files/deleteme
         - otherfiletodelete
 ```
+
+#### Outputs
+The `fs:delete` action does not have any outputs.
 
 ### `fs:rename`
 This action allows you to move `files` within the workspace. The `files` option takes an array of objects containing `from` and `to` options.
@@ -670,6 +747,9 @@ steps:
         - from: copyfrom1
           to: copyfrom2
 ```
+
+#### Outputs
+The `fs:rename` action does not have any outputs.
 
 ### `github:actions:dispatch`
 The `github:actions:dispatch` action allows you to trigger the execution of a GitHub action on a repository. The `repoUrl` option is a repo url for GitHub. The `RepoUrlPicker` documented above can generate this value. The `workflowId` can be the workflow id from the GitHub API or you can just use the filename for the workflow file itself. The `branchOrTagName` indicates which commit to run the workflow against.
@@ -702,6 +782,9 @@ steps:
         parameter1: value1
         parameter2: value2
 ```
+
+#### Outputs
+The `github:actions:dispatch` action does not have any outputs.
 
 ### `github:webhook`
 You can configure a webhook on an existing repository in GitHub using this action. It takes `repoUrl` and `webhookUrl`. The `repoUrl` option needs to be in a the GitHub repo format. The `RepoUrlPicker` documented above will generate a url in the correct format.
@@ -784,6 +867,9 @@ steps:
       insecureSsl: true
 ```
 
+#### Outputs
+The `github:webhook` action does not have any outputs.
+
 ### `http:backstage:request`
 This action allows the Scaffolder task to run a HTTP request against the Backstage Backend API and handle the response. It can be useful for extending the scaffolder to call out to third party APIs. You can do this by configuring a proxy and then calling the proxy with this action.
 
@@ -854,6 +940,11 @@ steps:
         thingname: "foo"
 ```
 
+#### Outputs
+The `http:backstage:request` action has three outputs: `code` is the status code of the http response; `headers` is an object of key/values of the response headers and `body` contains the body of the response.
+
+If there is a content-type header containing `application/json` the `body` param will contain the parsed object. Otherwise it will contain an object with a single param `message` containing a string representing the body of the response.
+
 ### `debug:log`
 Use the `debug:log` action to print some information to the task console.
 
@@ -866,10 +957,36 @@ steps:
       message: "Hello, World!"
 ```
 
+#### Outputs
+The `debug:log` action does not have any outputs.
+
 ### Other Actions
 You can find all of the actions available to your Backstage instance by visiting the following page from within Backstage:
 
 `https://<tenant-name>.roadie.so/create/actions`
+
+## Advanced
+### Calling an internal API
+If you need a scaffolder step to contact a custom authenticated service or any public API for that matter that is not currently supported by a built in action, you can do that using a combination of the `http:backstage:request` action and a [backstage proxy configuration](/docs/custom-plugins/authenticated-proxy/).
+
+Start by creating an authenticated proxy configuration as described in [this page](/docs/custom-plugins/authenticated-proxy/)
+
+Then you can add a step to call that API using the `http:backstage:request` action as follows:
+
+```yaml
+steps:
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
+    input:
+      method: POST
+      path: "/api/authenticated-proxy/acme/thing"
+  - action: debug:log
+    id: log-result
+    name: Log the result of creating the thing
+    input:
+      message: "The response code was ${{ steps.http-request.output.code }}
+```
 
 ## Troubleshooting
 Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
