@@ -66,3 +66,4 @@ nav:
     - Accessing Public resources: '/docs/details/backend-reading-allow-list/'
     - Requesting plugins: '/docs/details/requesting-plugins/'
     - Scaffolder: '/docs/details/scaffolder/'
+    - Troubleshooting the Catalog: '/docs/details/troubleshooting-the-catalog'
