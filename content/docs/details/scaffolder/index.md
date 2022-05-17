@@ -599,6 +599,191 @@ steps:
       sourcePatch: "./repoRoot"
 ```
 
+### `catalog:write`
+This action creates a `catalog-info.yaml` file into the workspace directory. It takes an object that will be serialized as YAML into the body of the file.
+
+```yaml
+steps:
+  - action: catalog:write
+    id: create-catalog-info-file
+    name: Create catalog file
+    input:
+      entity:
+        apiVersion: backstage.io/v1alpha1
+        kind: Component
+        metadata:
+          name: test
+          annotations: {}
+        spec:
+          type: service
+          lifecycle: production
+          owner: default/owner
+```
+
+If you would like to create the catalog file in a custom location you can do that with the `filePath` option.
+
+```yaml
+steps:
+  - action: catalog:write
+    id: create-catalog-info-file
+    name: Create catalog file
+    input:
+      filePath: ".backstage/catalog-info.yaml"
+      entity:
+        apiVersion: backstage.io/v1alpha1
+        kind: Component
+        metadata:
+          name: test
+          annotations: {}
+        spec:
+          type: service
+          lifecycle: production
+          owner: default/owner
+```
+
+### `fs:delete`
+This action deletes items in the workspace. It has one input parameter `files` that can be provided an array of items to delete.
+
+```yaml
+steps:
+  - action: fs:delete
+    id: delete-filds
+    name: Delete files
+    input:
+      files:
+        - files/deleteme
+        - otherfiletodelete
+```
+
+### `fs:rename`
+This action allows you to move `files` within the workspace. The `files` option takes an array of objects containing `from` and `to` options.
+
+```yaml
+steps:
+  - action: fs:rename
+    id: rename-files
+    name: Rename files
+    input:
+      files:
+        - from: copyfrom
+          to: copyto
+        - from: copyfrom1
+          to: copyfrom2
+```
+
+### `github:actions:dispatch`
+The `github:actions:dispatch` action allows you to trigger the execution of a GitHub action on a repository. The `repoUrl` option is a repo url for GitHub. The `RepoUrlPicker` documented above can generate this value. The `workflowId` can by the workflow id from the GitHub API or you can just use the filename for the workflow file itself. The `branchOrTagName` indicates which commit to run the workflow against.
+
+This example will run the workflow defined in the "my-workflow-file.yaml" file on the "newreponame" repository on the "main" branch.
+
+```yaml
+steps:
+  - action: github:actions:dispatch
+    id: trigger-build
+    name: Trigger Build
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      workflowId: "my-workflow-file.yaml"
+      branchOrTagName: "main"
+```
+
+If the workflow takes additional inputs, you can pass these along with the `workflowInputs` option.
+
+```yaml
+steps:
+  - action: github:actions:dispatch
+    id: trigger-build
+    name: Trigger Build
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      workflowId: "my-workflow-file.yaml"
+      branchOrTagName: "main"
+      workflowInputs:
+        parameter1: value1
+        parameter2: value2
+```
+
+### `github:webhook`
+You can configure a webhook on an existing repository in GitHub using this action. It takes `repoUrl` and `webhookUrl`. The `repoUrl` option needs to be in a the GitHub repo format. The `RepoUrlPicker` documented above will generate a url in the correct format.
+
+```yaml
+steps:
+  - action: github:webhook
+    id: add-webhook
+    name: Add Webhook
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      webhookUrl: "https://webhook-handler-service.abc/handle-webhook"
+```
+
+You can configure a webhook secrect using the `webhookSecret` option. You will likely want to provide this via an output from a previous step.
+
+```yaml
+steps:
+  - action: github:webhook
+    id: add-webhook
+    name: Add Webhook
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      webhookUrl: "https://webhook-handler-service.abc/handle-webhook"
+      webhookSecret: "mysupersecretwebhooksecret"
+```
+
+You can configure the types of `events` that trigger the webhook.  For a full list of options see [here](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)
+
+```yaml
+steps:
+  - action: github:webhook
+    id: add-webhook
+    name: Add Webhook
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      webhookUrl: "https://webhook-handler-service.abc/handle-webhook"
+      events:
+        - push
+        - pull_request
+```
+
+If you would like the webhook to receive every event, you can set the events to contain "*".
+
+```yaml
+steps:
+  - action: github:webhook
+    id: add-webhook
+    name: Add Webhook
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      webhookUrl: "https://webhook-handler-service.abc/handle-webhook"
+      events:
+        - "*"
+```
+
+By default the payload of the webhook is form encoded, if you prefer json you can use `contentType: json`
+
+```yaml
+steps:
+  - action: github:webhook
+    id: add-webhook
+    name: Add Webhook
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      webhookUrl: "https://webhook-handler-service.abc/handle-webhook"
+      contentType: json
+```
+
+You can disable SSL on the webhook request using the `insecureSsl` option but it is not advised.
+
+```yaml
+steps:
+  - action: github:webhook
+    id: add-webhook
+    name: Add Webhook
+    input:
+      repoUrl: "github.com?repo=newreponame&owner=AcmeInc"
+      webhookUrl: "https://webhook-handler-service.abc/handle-webhook"
+      insecureSsl: true
+```
+
 ### `http:backstage:request`
 This action allows the Scaffolder task to run a HTTP request against the Backstage Backend API and handle the response. It can be useful for extending the scaffolder to call out to third party APIs. You can do this by configuring a proxy and then calling the proxy with this action.
 
