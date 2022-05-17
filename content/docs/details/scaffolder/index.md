@@ -403,7 +403,7 @@ steps
       access: AcmeInc/engineering
 ```
 
-You can enabled code owner reviews using the `requireCodeOwnerReviews` option:
+You can enable code owner reviews using the `requireCodeOwnerReviews` option:
 
 ```yaml
 steps
