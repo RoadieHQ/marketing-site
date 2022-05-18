@@ -233,7 +233,7 @@ If you would like to prompt the user to add entity tags, you can use the `ui:fie
         ui:field: EntityTagsPicker
 ```
 ### Outputs
-Parameters can be retrieved later on by steps using parameter outputs. Here is an example of a parameter `name` be used by a `debug:log` step.
+Parameters can be retrieved later on by steps using parameter outputs. Here is an example of a parameter `name` being used by a `debug:log` step.
 
 ```yaml
    parameters:
