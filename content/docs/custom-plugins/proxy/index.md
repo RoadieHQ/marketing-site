@@ -55,7 +55,6 @@ This gives a custom plugin a way to interact with your own service. That service
 
 You can navigate to /administration/settings/authenticatedProxy. Click add item to add a new proxy.
 
-
 ![authenticatedProxyConfig.png](authenticatedProxyConfig.png)
 
 Enter a Path (e.g. `/my-api`) and a target API (e.g. `https://my-api.com/api`) as follows:
@@ -74,7 +73,7 @@ fetch('/api/authenticated-proxy/my-api')
 
 #### Step 3 Authenticate the Request
 
-The API configured in the Authenticated proxy target will recieve a token in the authorization bearer containing an access token. This token can be sent to the roadie Authentication system to retrieve an id representing the logged in Backstage user.
+The API configured in the Authenticated proxy target will receive a token in the authorization header containing an access token. This token can be sent to the roadie Authentication system to retrieve an id representing the logged in Backstage user.
 
 ```bash
 curl --request GET \
