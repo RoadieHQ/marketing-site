@@ -248,7 +248,7 @@ Parameters can be retrieved later on by steps using parameter outputs. Here is a
         message: 'Hello, ${{ parameters.name }}!'
 ```
 
-If you need to referene elements of an array parameter you can refer to them using the following syntax:
+If you need to reference elements of an array parameter you can refer to them using the following syntax:
 
 ```yaml
   steps:
