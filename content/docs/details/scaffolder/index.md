@@ -548,7 +548,13 @@ steps:
         - ruby
 ```
 #### Outputs
-The `publish:github` action produces two step outputs: `remoteUrl` is the url for the newly created repository; `repoContentsUrl` is a url that shows the contents of the repository.
+The `publish:github` action produces two step outputs.
+
+| Name | Description |
+|---|---|
+| remoteUrl | Url for the newly created repository |
+| repoContentsUrl | Url that shows the contents of the repository |
+
 
 These outputs can be retrieved by a subsequent step using:
 
@@ -593,7 +599,12 @@ steps:
 ```
 
 #### Outputs
-The `publish:github:pull-request` action produces the outputs: `remoteUrl` which shows the url to the new pull request and `pullRequestNumber` which shows the number of the pull request.
+The `publish:github:pull-request` action produces two outputs.
+
+| Name | Description |
+|---|---|
+| remoteUrl | Url to the new pull request |
+| pullRequestNumber | Shows the number of the pull request |
 
 They can be accessed in subsequent steps as follows:
 
@@ -668,7 +679,12 @@ steps:
       sourcePatch: "./repoRoot"
 ```
 #### Outputs
-The `publish:bitbucket` action produces the following outputs: `remoteUrl` is a link to the new repository and `repoContentsUrl` is a link to the contents of the repository.
+The `publish:bitbucket` action produces the following outputs.
+
+| Name | Description |
+|---|---|
+| remoteUrl | Url for the newly created repository |
+| repoContentsUrl | Url that shows the contents of the repository |
 
 ### `catalog:write`
 This action creates a `catalog-info.yaml` file into the workspace directory. It takes an object that will be serialized as YAML into the body of the file.
@@ -941,7 +957,13 @@ steps:
 ```
 
 #### Outputs
-The `http:backstage:request` action has three outputs: `code` is the status code of the http response; `headers` is an object of key/values of the response headers and `body` contains the body of the response.
+The `http:backstage:request` action has three outputs.
+
+| Name | Description |
+|---|---|
+| code | Status code of the http response |
+| headers | Dictionary containing all of the response headers and their values |
+| body | Body of the response |
 
 If there is a content-type header containing `application/json` the `body` param will contain the parsed object. Otherwise it will contain an object with a single param `message` containing a string representing the body of the response.
 
