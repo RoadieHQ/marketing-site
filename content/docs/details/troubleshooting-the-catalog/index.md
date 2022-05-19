@@ -6,7 +6,7 @@ description: How to resolve issues getting data into the catalog
 
 ## About Locations
 
-The backstage catalog uses location entities to point to external sources (in version control) which defined entities.
+The backstage catalog uses location entities to point to external sources which define entities.
 The catalog backend will periodically (every few minutes) poll each location and check for any updates to the entities
 defined there. 
 
