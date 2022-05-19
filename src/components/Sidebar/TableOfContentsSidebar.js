@@ -19,7 +19,7 @@ const TableOfContentsSidebar = ({ headings, className }) => {
     <Sidebar
       side="right"
       sticky={true}
-      className={classnames('hidden xl:block md:w-96 pr-3', className)}
+      className={classnames('hidden xl:block md:w-96 xl:w-1/3 pr-3', className)}
     >
       <SidebarSection>
         <strong>Table of Contents</strong>

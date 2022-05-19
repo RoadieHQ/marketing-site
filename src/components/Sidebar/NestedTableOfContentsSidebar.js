@@ -9,14 +9,17 @@ const NestedTableOfContentsSidebar = ({ tableOfContents, className }) => {
     <Sidebar
       side="right"
       sticky={true}
-      className={classnames('hidden xl:block md:w-96 pr-3', className)}
+      className={classnames('hidden xl:block md:w-96 lg:w-3/12 pr-3', className)}
     >
       <SidebarSection>
         <strong>Table of Contents</strong>
       </SidebarSection>
 
       <SidebarSection >
-        <div className="table-of-contents-sidebar" dangerouslySetInnerHTML={{ __html: tableOfContents }} />
+        <div
+          className="table-of-contents-sidebar"
+          dangerouslySetInnerHTML={{ __html: tableOfContents }}
+        />
       </SidebarSection>
     </Sidebar>
   );
