@@ -47,7 +47,7 @@ const CSP_IMG_SRC_DIRECTIVES = [
 
   // Contentful
   'https://images.contentful.com',
-  'https://images.cftassets.net',
+  'https://images.ctfassets.net',
 
   // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
   'blob:',
