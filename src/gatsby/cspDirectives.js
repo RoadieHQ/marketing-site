@@ -38,11 +38,16 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
 const CSP_IMG_SRC_DIRECTIVES = [
   "'self'",
   'data:',
+
   'https://www.google-analytics.com',
   'https://www.google.com',
   'https://www.google.ie',
+
   'https://cdn.loom.com',
+
+  // Contentful
   'https://images.contentful.com',
+  'https://images.cftassets.net',
 
   // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
   'blob:',
@@ -79,13 +84,18 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
     'https://player.vimeo.com',
     'https://www.loom.com',
     'https://www.youtube.com',
+    //
     // Recaptchas https://developers.google.com/recaptcha/docs/faq
     'https://www.google.com',
     'https://recaptcha.google.com',
+
+    // Chargebee
     'https://roadie.chargebee.com/',
     'https://roadie-test.chargebee.com/',
-  ];
 
+    // Embedded tweets
+    'https://platform.twitter.com',
+  ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
     directives.push('https://app.netlify.com');
