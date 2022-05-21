@@ -10,8 +10,6 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     'https://www.gstatic.com',
     // The cookie consent we use seems to load from jsdelivr.net.
     'https://cdn.jsdelivr.net',
-    'https://widget.intercom.io',
-    'https://js.intercomcdn.com',
     'https://player.vimeo.com',
     // Google Tag Manager and plausible analytics will require nonces to verify script integrity.
     // There is no weasy way to generate a nonce with Netlify, so I don't have a good solution
@@ -23,6 +21,11 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     // Embedded tweets in blog posts etc.
     'https://platform.twitter.com',
     'https://js.chargebee.com/v2/chargebee.js',
+
+    // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+    'https://app.intercom.io',
+    'https://widget.intercom.io',
+    'https://js.intercomcdn.com',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
@@ -34,14 +37,46 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
 
 const CSP_IMG_SRC_DIRECTIVES = [
   "'self'",
-  // Contentful serves images from https://images.ctfassets.net
-  'https://images.ctfassets.net',
   'data:',
+
   'https://www.google-analytics.com',
   'https://www.google.com',
   'https://www.google.ie',
+
   'https://cdn.loom.com',
+
+  'https://syndication.twitter.com',
+
+  // Contentful
   'https://images.contentful.com',
+  'https://images.ctfassets.net',
+
+  // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+  'blob:',
+  'https://js.intercomcdn.com',
+  'https://static.intercomassets.com',
+  'https://downloads.intercomcdn.com',
+  'https://downloads.intercomcdn.eu',
+  'https://downloads.au.intercomcdn.com',
+  'https://uploads.intercomusercontent.com',
+  'https://gifs.intercomcdn.com',
+  'https://video-messages.intercomcdn.com',
+  'https://messenger-apps.intercom.io',
+  'https://messenger-apps.eu.intercom.io',
+  'https://messenger-apps.au.intercom.io',
+  'https://*.intercom-attachments-1.com',
+  'https://*.intercom-attachments.eu',
+  'https://*.au.intercom-attachments.com',
+  'https://*.intercom-attachments-2.com',
+  'https://*.intercom-attachments-3.com',
+  'https://*.intercom-attachments-4.com',
+  'https://*.intercom-attachments-5.com',
+  'https://*.intercom-attachments-6.com',
+  'https://*.intercom-attachments-7.com',
+  'https://*.intercom-attachments-8.com',
+  'https://*.intercom-attachments-9.com',
+  'https://static.intercomassets.eu',
+  'https://static.au.intercomassets.com',
 ].join(' ');
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
@@ -51,13 +86,18 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
     'https://player.vimeo.com',
     'https://www.loom.com',
     'https://www.youtube.com',
+    //
     // Recaptchas https://developers.google.com/recaptcha/docs/faq
     'https://www.google.com',
     'https://recaptcha.google.com',
+
+    // Chargebee
     'https://roadie.chargebee.com/',
     'https://roadie-test.chargebee.com/',
-  ];
 
+    // Embedded tweets
+    'https://platform.twitter.com',
+  ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
     directives.push('https://app.netlify.com');
@@ -73,6 +113,7 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
 // reasonable.
 const CSP_STYLE_SRC_DIRECTIVES = [
   "'self'",
+  // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
   "'unsafe-inline'",
   // The cookie consent we use seems to load from jsdelivr.net.
   'https://cdn.jsdelivr.net',
@@ -86,14 +127,64 @@ const CSP_CONNECT_SRC_DIRECTIVES = [
   'https://*.ingest.sentry.io',
   'https://www.google-analytics.com',
   'https://stats.g.doubleclick.net',
-  'https://api-iam.eu.intercom.io',
   'ws://*.intercom.io',
   'https://career.recruitee.com',
   'https://sentry.io',
   'https://*.algolia.net',
   'https://*.algolianet.com',
+
+  // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+  'https://api.intercom.io',
+  'https://api.au.intercom.io',
+  'https://api.eu.intercom.io',
+  'https://api-iam.intercom.io',
+  'https://api-iam.au.intercom.io',
+  'https://api-iam.eu.intercom.io',
+  'https://api-ping.intercom.io',
+  'https://nexus-websocket-a.intercom.io',
+  'wss://nexus-websocket-a.intercom.io',
+  'https://nexus-websocket-b.intercom.io',
+  'wss://nexus-websocket-b.intercom.io',
+  'https://nexus-europe-websocket.intercom.io',
+  'wss://nexus-europe-websocket.intercom.io',
+  'https://nexus-australia-websocket.intercom.io',
+  'wss://nexus-australia-websocket.intercom.io',
+  'https://uploads.intercomcdn.com',
+  'https://uploads.intercomcdn.eu',
+  'https://uploads.au.intercomcdn.com',
+  'https://uploads.intercomusercontent.com',
 ].join(' ');
 
+
+const CSP_FONT_SRC_DIRECTIVES = [
+  "'self'",
+  
+  // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+  'https://js.intercomcdn.com',
+  'https://fonts.intercomcdn.com',
+].join(' ');
+
+const CSP_CHILD_SRC_DIRECTIVES = [
+  // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+  'https://intercom-sheets.com',
+  'https://www.intercom-reporting.com',
+  'https://www.youtube.com',
+  'https://player.vimeo.com',
+  'https://fast.wistia.net',
+].join(' ');
+
+const CSP_FORM_ACTION_DIRECTIVES = [
+  // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+  'https://intercom.help',
+  'https://api-iam.intercom.io',
+  'https://api-iam.eu.intercom.io',
+  'https://api-iam.au.intercom.io',
+].join(' ');
+
+const CSP_MEDIA_SRC_DIRECTIVES = [
+  // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+  'https://js.intercomcdn.com',
+].join(' ');
 
 module.exports = {
   'img-src': CSP_IMG_SRC_DIRECTIVES,
@@ -101,4 +192,8 @@ module.exports = {
   'script-src': CSP_SCRIPT_SRC_DIRECTIVES,
   'style-src': CSP_STYLE_SRC_DIRECTIVES,
   'frame-src': CSP_FRAME_SRC_DIRECTIVES,
+  'font-src': CSP_FONT_SRC_DIRECTIVES,
+  'child-src': CSP_CHILD_SRC_DIRECTIVES,
+  'form-action': CSP_FORM_ACTION_DIRECTIVES,
+  'media-src': CSP_MEDIA_SRC_DIRECTIVES,
 };
