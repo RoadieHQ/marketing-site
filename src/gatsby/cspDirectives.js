@@ -45,6 +45,8 @@ const CSP_IMG_SRC_DIRECTIVES = [
 
   'https://cdn.loom.com',
 
+  'https://syndication.twitter.com',
+
   // Contentful
   'https://images.contentful.com',
   'https://images.ctfassets.net',
