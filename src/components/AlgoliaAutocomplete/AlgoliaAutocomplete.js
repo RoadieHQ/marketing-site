@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, createElement, Fragment, useCallback, useState } from 'react';
+import React, { useRef, useEffect, createElement, Fragment, useCallback } from 'react';
 import { render } from 'react-dom';
 import { navigate } from 'gatsby';
 import { autocomplete, getAlgoliaResults } from '@algolia/autocomplete-js';
