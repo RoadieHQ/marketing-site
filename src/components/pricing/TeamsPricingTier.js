@@ -4,7 +4,7 @@ import { OPTIONS_FOR_NUMBER_OF_ENGINEERS } from 'components/forms/NumberOfEngine
 
 import TeamsTier from './TeamsTier';
 
-const TeamsPricingTier = () => {
+const TeamsPricingTier = ({ currentlySetCurrency }) => {
   const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
 
   return (
@@ -12,6 +12,7 @@ const TeamsPricingTier = () => {
       numberOfEngineers={numberOfEngineers}
       setNumberOfEngineers={setNumberOfEngineers}
       optionsForNumberOfEngineers={OPTIONS_FOR_NUMBER_OF_ENGINEERS}
+      currentlySetCurrency={currentlySetCurrency}
     />
   );
 };

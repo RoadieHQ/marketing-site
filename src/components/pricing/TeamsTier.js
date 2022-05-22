@@ -22,6 +22,7 @@ const TeamsTier = ({
   optionsForNumberOfEngineers,
   numberOfEngineers,
   setNumberOfEngineers,
+  currentlySetCurrency,
 }) => (
     <TierContainer>
       <div className="p-6">
@@ -32,6 +33,7 @@ const TeamsTier = ({
           optionsForNumberOfEngineers={optionsForNumberOfEngineers}
           numberOfEngineers={numberOfEngineers}
           setNumberOfEngineers={setNumberOfEngineers}
+          currentlySetCurrency={currentlySetCurrency}
         />
 
         <div>
