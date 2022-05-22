@@ -18,7 +18,7 @@ const TeamsTierPriceDisplay = ({
     style: 'currency',
     currency: currentlySetCurrency,
     minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
+    maximumFractionDigits: 2,
   });
 
   return (
