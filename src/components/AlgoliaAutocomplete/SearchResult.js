@@ -3,6 +3,7 @@ import { Link } from 'components';
 import destroySearchOverlay from 'components/AlgoliaAutocomplete/destroySearchOverlay';
 
 const SearchResult = ({ hit, components }) => {
+  console.log('hit', hit);
   return (
     <div className="aa-ItemWrapper">
       <Link
