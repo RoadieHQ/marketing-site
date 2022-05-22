@@ -4,7 +4,16 @@ import classnames from 'classnames';
 import Sidebar from './Sidebar';
 import { SidebarSection } from './Section';
 
+const numberOfContentsItems = (tableOfContents) => (
+  (tableOfContents.match(/<li>/g) || []).length
+);
+
 const NestedTableOfContentsSidebar = ({ tableOfContents, className }) => {
+  // There's no benefit to the ToC if it's very short.
+  if (numberOfContentsItems(tableOfContents) < 3) {
+    return null;
+  }
+
   return (
     <Sidebar
       side="right"
@@ -15,7 +24,7 @@ const NestedTableOfContentsSidebar = ({ tableOfContents, className }) => {
         <strong>Table of Contents</strong>
       </SidebarSection>
 
-      <SidebarSection >
+      <SidebarSection>
         <div
           className="table-of-contents-sidebar"
           dangerouslySetInnerHTML={{ __html: tableOfContents }}
