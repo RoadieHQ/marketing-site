@@ -65,5 +65,5 @@ nav:
     - Removing Components: '/docs/details/unregister-components/'
     - Accessing Public resources: '/docs/details/backend-reading-allow-list/'
     - Requesting plugins: '/docs/details/requesting-plugins/'
-    - Scaffolder: '/docs/details/scaffolder/'
+    - Writing scaffolder templates: '/docs/details/scaffolder/'
     - Troubleshooting the Catalog: '/docs/details/troubleshooting-the-catalog'
