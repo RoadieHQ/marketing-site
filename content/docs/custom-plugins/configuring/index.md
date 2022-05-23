@@ -29,19 +29,19 @@ You can create a new custom plugin definition by clicking "Add New Plugin" float
 
 The required values are as follows:
 
-##### Package name
+##### **Package name**
 Package field corresponds to the name of the NPM package. This can be a public NPM package hosted in npmjs.com or a private package securely hosted in Roadie Artifactory. If the package is hosted in Roadie Artifactory, the name of the package needs to start with `@<your-company>-roadie/`.
 
 
-##### Plugin name
-The name of the plugin. This field can be arbitrarily chosen and will be used as an identifier when adding components from the plugin to Roadie as Cards, Tabs or Pages.
+##### **Plugin name**
+The name of the plugin. This field **needs to match the exported name of a component from the plugin entrypoint**. This will be used when adding components from the plugin to Roadie as Cards, Tabs or Pages.
 
 
-##### Plugin version
+##### **Plugin version**
 Semantic versioning definition for the plugin to use. This can be defined with standard NPM semantic versioning range identifiers like `^` or `~`, as well as keywords like `latest`.
 
 
-##### Components
+##### **Components**
 List of components that the plugin exposes. These are defined as a type and name pair. The type is one of Card, Content or Page. The name needs to match the component name in code that is exported from the plugin package.
 
 
