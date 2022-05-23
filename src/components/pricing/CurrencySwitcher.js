@@ -16,6 +16,7 @@ const CurrencySwitcherButton = ({ currentlySetCurrency, setCurrency, currency })
         [activeClassNames]: currentlySetCurrency === currency,
         [inactiveClassNames]: currentlySetCurrency !== currency,
       })}
+      id={`currency-switcher-${currency.toLowerCase()}`}
     >
       {currency}
     </button>

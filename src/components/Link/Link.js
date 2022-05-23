@@ -48,7 +48,7 @@ const Link = ({
   forceOpenInSameTab = false,
   ...rest
 }) => {
-  if (forceOpenInSameTab || isRelativeTo(to)) {
+  if (isRelativeTo(to)) {
     let internalTo = to;
 
     // We have to leave URLs which start with a hash alone, otherwise in-page links like
@@ -68,6 +68,14 @@ const Link = ({
       >
         {children}
       </GatsbyLink>
+    );
+  }
+
+  if (forceOpenInSameTab) {
+    return (
+      <OutboundLink href={to} {...rest}>
+        {children}
+      </OutboundLink>
     );
   }
 
