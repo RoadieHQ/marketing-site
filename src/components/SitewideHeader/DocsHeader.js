@@ -32,7 +32,10 @@ const DocsHeader = ({ location }) => (
           </span>
 
           <span className="ml-8">
-            <AlgoliaAutocomplete placeholder="Search docs..." className="w-48 md:w-96" />
+            <AlgoliaAutocomplete
+              placeholder="Search docs with /"
+              className="w-48 md:w-96"
+            />
           </span>
         </div>
 
