@@ -28,7 +28,7 @@ kind: Component
 metadata:
   name: <github-repo>
   title: Sample Service # optional, human readable component name
-  description: My first Backtstage catalog item.
+  description: My first Backstage catalog item.
   annotations:
     github.com/project-slug: <github-org>/<github-repo>
 spec:
