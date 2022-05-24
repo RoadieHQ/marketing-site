@@ -37,6 +37,7 @@ The GitHub *organization* integration provides the possibility to automatically 
 
 
 ![AWS S3 autodiscovery target](./s3_entry.png)
+
 AWS S3 autodiscovery can be configured to download catalog files from an S3 bucket. For this to be functionality the [integration configuration for AWS S3](/docs/integrations/aws-s3) must be done. S3 autodiscovery does not support wildcard path, it must point to a specific prefix of an S3 bucket.
 
 ### Bitbucket Autodiscovery
