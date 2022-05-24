@@ -43,6 +43,7 @@ AWS S3 autodiscovery can be configured to download catalog files from an S3 buck
 ### Bitbucket Autodiscovery
 
 ![Bitbucket autodiscovery configuration](bitbucket_entry.png)
+
 Bitbucket autodiscovery works similarly to GitHub discovery. It can be configured to use glob patterns to find individual files with a specific file name pattern. To get a working autodiscovery with Bitbucket, a configuration of Bitbucket Integration must be defined. Documentation on how to set up the integration can be found from [here](https://backstage.io/docs/integrations/bitbucket/discovery).
 
 More information about possible patterns and examples of URLs can be found from the [Backstage Bitbucket Integration documentation.](https://backstage.io/docs/integrations/bitbucket/discovery)
