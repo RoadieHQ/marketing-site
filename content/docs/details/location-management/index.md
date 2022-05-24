@@ -47,7 +47,7 @@ More information about possible patterns and examples of URLs can be found from 
 
 ## Managing Locations
 
-A list of all configured locations is located in URL `https://<your-tenant>.roadie.so/administration/locations/locations`. 
+A list of all configured locations is located in URL `https://<your-tenant>.roadie.so/administration/locations/management`. 
 ![Location management table](./location_mgmt.png)
 The list contains an entry for all locations added as an autodiscovery configuration within each integration, as well as locations imported using the Catalog Import functionality within  `https://<your-tenant>.roadie.so/catalog-import`. 
 
