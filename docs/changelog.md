@@ -5,6 +5,8 @@ a way for people to find out what features or bug fixes have been released recen
 
 The changelog can be found at: https://roadie.io/changelog/
 
+The content of the changelog lives in [Contentful](https://app.contentful.com/spaces/hcqpbvoqhwhm/home).
+
 ## RSS
 
 The changelog has an RSS feed which can be found at https://roadie.io/changelog/rss.xml
@@ -16,7 +18,7 @@ that we use to communicate with our customers and free trials.
 
 These automatic updates look like this:
 
-![a Slack message saying that Roadie has released a feature to do with missing annotations](./changelog-update-in-slack.png)
+![a Slack message saying that Roadie has released a feature to do with missing annotations](./assets/changelog-update-in-slack.png)
 
 These Slack messages are posted by Zapier tasks which watch the RSS feed and send Slack messages
 when a change is found.
@@ -33,12 +35,10 @@ The Zapier tasks can be found in [the Changelog Updates folder](https://zapier.c
 
 ## Updating the changelog
 
-The content of the changelog lives in Contentful.
-
 To create a new changelog item (called a ChangeSet), fill out the form on Contentful with the
 required attributes.
 
-![a form on Contentful](./contentful-changeset-form.png)
+![a form on Contentful](./assets/contentful-changeset-form.png)
 
 Once published, the RSS feed will update and the notifications will send into Customer channels,
 so make sure you have reviewed your text carefully before hitting the Publish button.
