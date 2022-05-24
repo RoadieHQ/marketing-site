@@ -24,6 +24,7 @@ Roadie supports autodiscovery for integrations configured in the application. Th
 GitHub integration for Roadie provides two autodiscovery targets, entities and teams/groups. 
 
 ![GitHub Autodiscovery of Catalog Files](./gh_autodiscovery.png)
+
 The GitHub *autodiscovery* integration can be configured to automatically discover catalog entities from a provided configured path pointing to GitHub. 
 
 More information about possible patterns and examples of URLs can be found from the [Backstage GitHub Discovery documentation.](https://backstage.io/docs/integrations/github/discovery#configuration)
