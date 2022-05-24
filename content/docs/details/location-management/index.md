@@ -30,6 +30,7 @@ The GitHub *autodiscovery* integration can be configured to automatically discov
 More information about possible patterns and examples of URLs can be found from the [Backstage GitHub Discovery documentation.](https://backstage.io/docs/integrations/github/discovery#configuration)
 
 ![GitHub organization autodiscovery](gh_org_ingestion.png)
+
 The GitHub *organization* integration provides the possibility to automatically import GitHub users and teams/groups from an organization. You can configure this discovery type by providing the name of the GitHub organization. Note that the GitHub app needs to be installed for that organization and needs to have permissions to access user info.
 
 ### AWS S3 Autodiscovery
