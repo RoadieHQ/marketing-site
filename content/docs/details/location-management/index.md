@@ -54,6 +54,7 @@ More information about possible patterns and examples of URLs can be found from 
 A list of all configured locations is located in URL `https://<your-tenant>.roadie.so/administration/locations/management`. 
 
 ![Location management table](./location_mgmt.png)
+
 The list contains an entry for all locations added as an autodiscovery configuration within each integration, as well as locations imported using the Catalog Import functionality within  `https://<your-tenant>.roadie.so/catalog-import`. 
 
 Note that deleting a location via the administration UI (either at the location management page or at the individual integration page) does not automatically remove individual entities that have been found from that location. If the desired effect is to remove all items from a particular location, it is better to find that location via the catalog and[ unregister it from there.](/docs/details/unregister-components)
