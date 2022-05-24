@@ -66,4 +66,5 @@ nav:
     - Accessing Public resources: '/docs/details/backend-reading-allow-list/'
     - Requesting plugins: '/docs/details/requesting-plugins/'
     - Writing scaffolder templates: '/docs/details/scaffolder/'
-    - Troubleshooting the Catalog: '/docs/details/troubleshooting-the-catalog'
+    - Managing Locations: '/docs/details/location-management/'
+    - Troubleshooting the Catalog: '/docs/details/troubleshooting-the-catalog/'
