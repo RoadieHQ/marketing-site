@@ -46,6 +46,22 @@ You can use this information to diagnose and fix errors with catalog info YAML f
 
 ## Common Errors
 
+### Entity stopped updating after moved/renamed catalog file
+
+At times the catalog might get into an inconsistent state if a catalog manifest file that was previously present is lost from the system's perspective. Common reasons for this to happen are if the name or the location of the catalog manifest has changed after it has already been registered to the catalog. 
+
+If you end up in such a situation you have an option to remove the individual stale entity which will eventually force a hard refresh of the parent location itself. Steps to do this are the following:
+
+1. Navigate to the offending, stale entity that has stopped from being automatically updated
+2. Click the kebab menu item in the top right corner of the entity
+    * ![Entity Page kebab menu opened](./kebab_menu_entity_page.png)
+3. Select Unregister Entity
+4. Click Advanced Options
+5. Click Delete Entity button at the bottom of the dialog 
+    * ![Unregister dialog popup with advanced settings open](./unregister_dialog.png)
+
+This will unregister the individual entity without affecting other entities or locations in the same discovery tree. The moved/renamed catalog manifest file will be then picked up on the catalog refresh loop. 
+
 ### Processor BuiltinKindsEntityProcessor threw an error while validating the entity
 
 This means that the entity definition in your catalog YAML file is not valid. You can solve this by reading the cause
