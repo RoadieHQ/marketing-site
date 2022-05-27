@@ -54,11 +54,11 @@ If you end up in such a situation you have an option to remove the individual st
 
 1. Navigate to the offending, stale entity that has stopped from being automatically updated
 2. Click the kebab menu item in the top right corner of the entity
-    * ![Entity Page kebab menu opened](./kebab_menu_entity_page.png)
+![Entity Page kebab menu opened](./kebab_menu_entity_page.png)
 3. Select Unregister Entity
 4. Click Advanced Options
 5. Click Delete Entity button at the bottom of the dialog 
-    * ![Unregister dialog popup with advanced settings open](./unregister_dialog.png)
+![Unregister dialog popup with advanced settings open](./unregister_dialog.png)
 
 This will unregister the individual entity without affecting other entities or locations in the same discovery tree. The moved/renamed catalog manifest file will be then picked up on the catalog refresh loop. 
 
