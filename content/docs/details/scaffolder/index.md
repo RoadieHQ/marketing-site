@@ -686,6 +686,39 @@ The `publish:bitbucket` action produces the following outputs.
 | remoteUrl | Url for the newly created repository |
 | repoContentsUrl | Url that shows the contents of the repository |
 
+### `catalog:register`
+
+This action manually registers a component with the catalog. 
+
+You may want to do this if you haven't [configured autodiscovery](../location-management) of components or if you're using a filename which doesn't match you autodiscovery pattern.
+
+It has two sets of options. The first allows you to configure the location as a complete url through `catalogInfoUrl`.
+
+```yaml
+steps:
+  - action: catalog:register
+    id: register-with-catalog
+    name: Manually register with the catalog
+    input:
+      catalogInfoUrl: https://github.com/RoadieHQ/sample-service/blob/master/catalog-info-1.yaml
+      # optional: false # default
+```
+
+The second allows you to configure the repo containing the catalog file through `repoContentsUrl` and optionally a filepath through `catalogInfoPath `. You might use this along with the publish:github action. 
+
+```yaml
+steps:
+  - action: catalog:register
+    id: register-with-catalog
+    name: Manually register with the catalog
+    input:
+      repoContentsUrl: ${{ steps.publish-repository.output.repoContentsUrl }}
+      # catalogInfoPath: catalog-info.yaml # default
+      # optional: false # default
+```
+
+In both cases you can pass an `optional` flag which determines if the location can be created before the catalog files exists.
+
 ### `catalog:write`
 This action creates a `catalog-info.yaml` file into the workspace directory. It takes an object that will be serialized as YAML into the body of the file.
 
