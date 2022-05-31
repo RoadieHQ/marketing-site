@@ -55,7 +55,7 @@ Click the Home link in the Backstage sidebar to go back to the catalog where you
 
 ![See your new component](./viewcomponent.jpg)
 
-## TroubleShooting FAQs
+## Troubleshooting FAQs
 
 **Component Not Appearing?**
 
