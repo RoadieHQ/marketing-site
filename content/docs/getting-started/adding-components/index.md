@@ -10,7 +10,7 @@ This tutorial will show you how to add components such as services or websites t
 
 ## Prerequisite 
 
-You must instal the GitHub App in order to import components in private repositories. The steps to do this are [here](/docs/getting-started/install-github-app/).
+You must install the GitHub App in order to import components in private repositories. The steps to do this are [here](/docs/getting-started/install-github-app/).
 
 ## Step 1: Create your 'catalog-info.yaml' file
 
