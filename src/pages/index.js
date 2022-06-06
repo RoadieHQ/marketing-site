@@ -211,7 +211,7 @@ const Home = ({
   <>
     <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
-    <SitewideHeader />
+    <SitewideHeader borderBottom={false} />
     <VideoHero />
     <CustomerLogoCloud />
     <TestimonialsCloud />

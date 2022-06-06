@@ -1,5 +1,6 @@
 import React from 'react';
 import { Popover } from '@headlessui/react';
+import classnames from 'classnames';
 import {
   CodeIcon,
   BookOpenIcon,
@@ -48,10 +49,12 @@ const learn = [{
   icon: ChatIcon,
 }];
 
-const SitewideHeader = ({ maxWidth = '7xl' }) => (
+const SitewideHeader = ({ maxWidth = '7xl', borderBottom = true }) => (
   <Popover className="relative bg-white z-20">
     <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
-      <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+      <div className={classnames(`flex justify-between items-center py-6 md:justify-start md:space-x-10`, {
+        'border-b-2 border-gray-100': borderBottom,
+      })}>
 
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <Logo />
