@@ -15,13 +15,18 @@ You can also check in on the progress by contacting us at support@roadie.io or v
 const GithubAppInstallHoldingPage = () => (
   <>
     <SitewideHeader />
+
+    <div className="bg-white">
       <SimpleCenteredHeading
         headline="App installation pending..."
         lead={lead}
       />
+    </div>
+
     <div className="max-w-4xl mx-auto text-center mb-24 px-8">
       <Lead>{message}</Lead>
     </div>
+
     <SitewideFooter />
   </>
 );

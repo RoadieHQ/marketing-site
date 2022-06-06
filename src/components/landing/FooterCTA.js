@@ -3,11 +3,10 @@ import { Button, Headline } from 'components';
 
 const FooterCTA = () => (
   <div className="bg-white">
-    <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-32 lg:px-8">
       <div className="pb-3">
         <Headline el="h2">
-          <span className="block">Ready to dive in?</span>
-          <span className="block">Start your free trial today.</span>
+          <span className="block">Start using Backstage today</span>
         </Headline>
       </div>
 
