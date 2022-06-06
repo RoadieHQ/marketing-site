@@ -88,7 +88,7 @@ const Testimonial = ({
 );
 
 const Testimonials = ({ testimonials = TESTIMONIALS }) => (
-  <div className="bg-primary-600">
+  <div className="bg-gray-900">
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <div className="grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
         {testimonials.map(({ text, title, author }) => (
