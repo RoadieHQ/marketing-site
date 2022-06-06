@@ -13,7 +13,12 @@ import jonAvatarJpeg from '../../../../content/assets/home/testimonial/jon-ncsa/
 
 const TESTIMONIALS = [{
   title: 'Incredible',
-  text: `The Roadie team have been incredible to work with. They’re obviously Backstage experts, and their platform provides us with a ton of flexibility and integrations. We’ve been able to start using Backstage must faster and we don’t have to worry about the maintenance.`,
+  text: (
+    <>
+      <p className="prose mb-2">The Roadie team have been incredible to work with. They’re obviously Backstage experts, and their platform provides us with a ton of flexibility and integrations.</p>
+      <p className="prose">We&apos;ve been able to start using Backstage must faster and we don’t have to worry about the maintenance.</p>
+    </>
+  ),
   author: {
     name: 'Ron Barabash',
     role: 'Team lead, Yotpo',
@@ -25,7 +30,12 @@ const TESTIMONIALS = [{
   },
 }, {
   title: 'Tremendous',
-  text: `Backstage has been pivotal for our growth. And Roadie has been pivotal in supporting us at the operations, feature enhancements / roadmap, and onboarding level. The Roadie team provides frequent updates on their offering and even more frequent answers to our questions - their support is tremendous and has eased and sped up our adoption of Backstage.`,
+  text: (
+    <>
+      <p className="prose mb-2">Backstage has been pivotal for our growth. And Roadie has been pivotal in supporting us at the operations, feature enhancements / roadmap, and onboarding level.</p>
+      <p className="prose">The Roadie team provides frequent updates on their offering and even more frequent answers to our questions - their support is tremendous and has eased and sped up our adoption of Backstage.</p>
+    </>
+  ),
   author: {
     name: 'Mark Loyzer',
     role: 'Senior Software Engineer, Hopper',
@@ -37,7 +47,12 @@ const TESTIMONIALS = [{
   },
 }, {
   title: 'Responsive',
-  text: `Having a place to gather documentation of our systems and APIs, while keeping those definitions close to the source, has been a real win. The Roadie team has been incredibly proactive in communicating updates and responsive to all our questions`,
+  text: (
+    <>
+      <p className="prose mb-2">Having a place to gather documentation of our systems and APIs, while keeping those definitions close to the source, has been a real win.</p>
+      <p className="prose">The Roadie team has been incredibly proactive in communicating updates and responsive to all our questions.</p>
+    </>
+  ),
   author: {
     name: 'Jon Stern',
     role: 'Director, NCSA',
@@ -58,7 +73,7 @@ const Testimonial = ({
     <div className="flex-1 bg-white p-6 flex flex-col justify-between">
       <div className="flex-1 mt-4 mb-12">
         <p className="mb-4 text-base text-gray-900 font-bold">{title}</p>
-        <p className="prose">{text}</p>
+        {text}
       </div>
 
       <div className="mt-6 flex items-start">
