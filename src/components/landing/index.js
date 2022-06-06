@@ -8,3 +8,5 @@ export { CircleThreeColTeam } from './Team';
 export { default as ExplainingTheVision } from './ExplainingTheVision';
 export { default as FAQs } from './faqs';
 export { default as Values } from './Values';
+export { default as TestimonialsCloud } from './Testimonials/TestimonialsCloud';
+export { default as SidebarTestimonial } from './Testimonials/SidebarTestimonial';
