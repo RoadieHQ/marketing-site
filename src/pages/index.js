@@ -10,10 +10,12 @@ import {
   UsersIcon,
   PresentationChartLineIcon,
   BookOpenIcon,
+  PencilAltIcon,
+  SearchCircleIcon,
 } from '@heroicons/react/outline'
 import {
   AlternatingFeatureBlock,
-  AlternatingTextFeatureBlock,
+  TextBasedFeatureBlock,
   SplitGridLogoCloud,
   FooterCTA,
   VideoHero,
@@ -53,7 +55,7 @@ const PRODUCT = {
     }, {
       name: 'Secure connections',
       description: 'Securely connect to SaaS services and your own infrastructure using our tunelling broker service.',
-      icon: BeakerIcon,
+      icon: ShieldCheckIcon,
     }],
 
   }, {
@@ -81,15 +83,15 @@ const PRODUCT = {
 const SOLUTIONS = {
   features: [{
     title: 'Cut onboarding time',
-    description: 'Get engineers up to speed quickly. Onboard in weeks rather than months.',
+    description: 'Get engineers up to speed in days, not months.',
     bullets: [{
-      name: 'Deal with rapid growth',
-      description: `Engineers are constantly joining or changing teams. Make sure they become effective quickly, and stay that way.`,
+      name: 'Tackle growing pains',
+      description: `Engineers are constantly joining or switching teams. Make them effective, and help them stay that way.`,
       icon: UsersIcon,
     }, {
 
-      name: 'Single pane of glass',
-      description: `Centralise the service catalog and make API specs, docs and tooling easy to access in one place`,
+      name: 'Make tools discoverable',
+      description: `Centralize around the service catalog. Make API specs, docs and tooling easy to access in one place`,
       icon: BookOpenIcon,
     }, {
       name: 'Proven results',
@@ -99,15 +101,14 @@ const SOLUTIONS = {
 
   }, {
     title: 'Standardize service creation',
-    description: 'Create new services from templates which already have your best practices built in.',
+    description: 'Create services from templates which already have your best practices built in.',
     bullets: [{
-      name: 'Increase consistency in production',
-      description: `Cut out obstacles on the path to production. Homogeneous environments are easier to operate and scale.`,
+      name: 'Increase production consistency',
+      description: `Homogeneous environments are easier to operate and scale. Cut down on snowflake services.`,
       icon: FingerPrintIcon,
     }, {
       name: 'Golden path to production',
-      description:
-        `Encode your best practices in templates. Increasing production consistency should be the path of least resistance.`,
+      description: `Encode your best practices to make production consistency the path of least resistance.`,
       icon: MapIcon,
     }],
 
@@ -115,14 +116,25 @@ const SOLUTIONS = {
     title: 'Codify service ownership',
     description: 'Track teams and software and assign one to the other.',
     bullets: [{
-      name: 'Increase uptime',
+      name: 'Improve maintainability',
       description: `Unowned services are a maintenance, security and operations nightmare.`,
       icon: FingerPrintIcon,
     }, {
-      name: 'Improve InnerSourcing',
-      description:
-        `Empower teams to contribute to the code around them. Start with a conversation with the owner.`,
+      name: 'Unlock InnerSourcing',
+      description: `Empower teams to contribute to the code around them. It starts with a conversation with the service owner.`,
       icon: MapIcon,
+    }],
+  }, {
+    title: 'Tech docs that get read',
+    description: 'Docs-like-code helps Spotify document thousands of internal components.',
+    bullets: [{
+      name: 'Write docs as code',
+      description: 'Markdown docs live alongside the code where they can be peer reviewed in pull requests.',
+      icon: PencilAltIcon,
+    }, {
+      name: 'Organized and searchable',
+      description: 'Docs are organized in the service catalog and searchable for discoverability.',
+      icon: SearchCircleIcon,
     }],
   }],
 };
@@ -169,7 +181,9 @@ const Home = ({
     <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
     <SitewideHeader borderBottom={false} />
+
     <VideoHero />
+
     <CustomerLogoCloud />
     <TestimonialsCloud />
 
@@ -187,10 +201,10 @@ const Home = ({
     <div className="pt-24 bg-gray-50 pb-32" id="solutions">
       <SimpleCenteredHeading
         headline="Turn tribal knowledge into shared context"
-        lead="Make docs, architecture diagrams and runbooks an integral part of your engineering workflow."
+        lead="A single pane of glass for your software development life cycle."
       />
 
-      <AlternatingTextFeatureBlock content={SOLUTIONS} />
+      <TextBasedFeatureBlock content={SOLUTIONS} />
     </div>
 
     <FooterCTA />

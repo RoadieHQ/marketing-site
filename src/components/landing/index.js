@@ -1,5 +1,5 @@
 export { default as AlternatingFeatureBlock } from './AlternatingFeatureBlock';
-export { default as AlternatingTextFeatureBlock } from './AlternatingTextFeatureBlock';
+export { default as TextBasedFeatureBlock } from './TextBasedFeatureBlock';
 export { default as SplitGridLogoCloud } from './SplitGridLogoCloud';
 export { default as FooterCTA } from './FooterCTA';
 export { default as CustomerLogoCloud } from './CustomerLogoCloud';
