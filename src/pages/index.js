@@ -124,6 +124,7 @@ const SOLUTIONS = {
       description: `Empower teams to contribute to the code around them. It starts with a conversation with the service owner.`,
       icon: MapIcon,
     }],
+
   }, {
     title: 'Tech docs that get read',
     description: 'Docs-like-code helps Spotify document thousands of internal components.',
@@ -134,6 +135,10 @@ const SOLUTIONS = {
     }, {
       name: 'Organized and searchable',
       description: 'Docs are organized in the service catalog and searchable for discoverability.',
+      icon: SearchCircleIcon,
+    }, {
+      name: 'Demonstrated at scale',
+      description: 'Spotify experienced an explosion of docs writing after adopting this methodology internally.',
       icon: SearchCircleIcon,
     }],
   }],
