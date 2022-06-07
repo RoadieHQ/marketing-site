@@ -39,7 +39,7 @@ const Testimonial = () => (
             avatar={{
               webp: enriqueAvatar,
               png: enriqueAvatarPng,
-              alt: `The fact of a man with a slight beard and glasses. He is looking up and to the right slightly.`,
+              alt: `The face of a man with a slight beard and glasses. He is looking up and to the right slightly.`,
             }}
           />
 
