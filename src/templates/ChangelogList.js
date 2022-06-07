@@ -45,7 +45,7 @@ const Changelog = ({
         <SimpleCenteredHeading
           headline="What's new in Roadie"
           lead={
-            <span>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. You can follow us on <Link color="primary" to="https://twitter.com/roadiehq">Twitter</Link> for more updates.</span>
+            <span>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. Subscribe via <Link color="primary" to="rss.xml">RSS</Link> or follow us on <Link color="primary" to="https://twitter.com/roadiehq">Twitter</Link> for more updates.</span>
           }
           headlineSize="small"
         />
