@@ -139,7 +139,7 @@ const SOLUTIONS = {
     }, {
       name: 'Demonstrated at scale',
       description: 'Spotify experienced an explosion of docs writing after adopting this methodology internally.',
-      icon: SearchCircleIcon,
+      icon: PresentationChartLineIcon,
     }],
   }],
 };
