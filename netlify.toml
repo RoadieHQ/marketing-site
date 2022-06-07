@@ -88,3 +88,9 @@
   from = "/docs/configurations/tech-radar/"
   to = "/docs/integrations/tech-radar/"
   force = true
+
+# We are inundated by spam security reports since we added this. It's not worth it.
+[[redirects]]
+  from = "/security/responsible-discosure/"
+  to = "/"
+  force = true
