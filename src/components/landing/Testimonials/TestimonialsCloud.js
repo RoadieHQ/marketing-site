@@ -59,7 +59,7 @@ const TESTIMONIALS = [{
     avatar: {
       webp: jonAvatar,
       jpeg: jonAvatarJpeg,
-      alt: `A sketch of some carachters playing an early form of football`,
+      alt: `A sketch of some characters playing an early form of football`,
     },
   },
 }];
