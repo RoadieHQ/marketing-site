@@ -15,8 +15,8 @@ const TESTIMONIALS = [{
   title: 'Incredible',
   text: (
     <>
-      <p className="prose mb-2">The Roadie team have been incredible to work with. They’re obviously Backstage experts, and their platform provides us with a ton of flexibility and integrations.</p>
-      <p className="prose">We&apos;ve been able to start using Backstage must faster and we don’t have to worry about the maintenance.</p>
+      <p className="prose mb-2">The Roadie team have been incredible to work with. They&apos;re obviously Backstage experts, and their platform provides us with a ton of flexibility and integrations.</p>
+      <p className="prose">We&apos;ve been able to start using Backstage must faster and we don&apos;t have to worry about the maintenance.</p>
     </>
   ),
   author: {
