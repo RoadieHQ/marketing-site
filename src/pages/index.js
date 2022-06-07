@@ -26,6 +26,7 @@ import {
   FooterCTA,
   VideoHero,
   CustomerLogoCloud,
+  TestimonialsCloud,
 } from 'components/landing';
 
 import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
@@ -213,6 +214,7 @@ const Home = ({
     <SitewideHeader />
     <VideoHero />
     <CustomerLogoCloud />
+    <TestimonialsCloud />
     <AlternatingFeatureBlock content={SOLUTIONS} />
     <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
     <AlternatingFeatureBlock content={PRODUCT} />

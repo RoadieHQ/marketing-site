@@ -1,10 +1,12 @@
 import React from 'react';
 import { QuoteIcon } from 'components/icons';
 
-import enriqueAvatar from '../../content/assets/home/testimonial/enrique-avatar.webp';
-import enriqueAvatarPng from '../../content/assets/home/testimonial/enrique-avatar.png';
-import contentfulLogo from '../../content/assets/home/testimonial/contentful-monochrome-white.webp';
-import contentfulLogoPng from '../../content/assets/home/testimonial/contentful-monochrome-white.png';
+import Avatar from './Avatar';
+
+import enriqueAvatar from '../../../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.webp';
+import enriqueAvatarPng from '../../../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.png';
+import contentfulLogo from '../../../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome-white.webp';
+import contentfulLogoPng from '../../../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome-white.png';
 
 const Testimonial = () => (
   <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 lg:pr-16">
@@ -33,21 +35,13 @@ const Testimonial = () => (
 
       <footer className="mt-8">
         <div className="flex items-start">
-          <div className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-
-          <picture>
-            <source srcSet={enriqueAvatar} type="image/webp" />
-            <source srcSet={enriqueAvatarPng} type="image/png" />
-
-            <img
-              src={enriqueAvatarPng}
-              alt="Enrique's face"
-              className="h-12 w-12 rounded-full"
-              height="100"
-              width="100"
-            />
-          </picture>
-          </div>
+          <Avatar
+            avatar={{
+              webp: enriqueAvatar,
+              png: enriqueAvatarPng,
+              alt: `The face of a man with a slight beard and glasses. He is looking up and to the right slightly.`,
+            }}
+          />
 
           <div className="ml-4">
             <div className="text-base font-medium text-white">Enrique Amodeo Rubio</div>

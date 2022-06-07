@@ -29,7 +29,6 @@ export {
 export { default as ContentHeader } from './ContentHeader';
 export { default as SitewideFooter } from './SitewideFooter';
 export { default as Tags } from './Tags';
-export { default as Testimonial } from './Testimonial';
 // Including here for convenience when importing
 export { default as SEO } from './seo';
 export { default as Link } from './Link';
