@@ -1,18 +1,7 @@
 import React from 'react';
 import { Lead, Headline } from 'components';
 
-// TODO: Extract this shared code
-const FeatureBulletPoint = ({ item }) => (
-  <div className="relative">
-    <dt>
-      <div className="absolute flex items-center justify-center text-primary-600">
-        <item.icon className="h-10 w-10" aria-hidden="true" />
-      </div>
-      <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{item.name}</p>
-    </dt>
-    <dd className="mt-2 ml-16 text-base text-gray-500">{item.description}</dd>
-  </div>
-);
+import Bullet from './FeatureBullet';
 
 const FeatureBlock = ({
   title,
@@ -32,7 +21,7 @@ const FeatureBlock = ({
 
     <div className="mx-4 relative lg:mt-0 lg:col-start-2">
       <dl className="mt-10 space-y-10">
-        {bullets.map((item) => (<FeatureBulletPoint item={item} key={item.name} />))}
+        {bullets.map((item) => (<Bullet item={item} key={item.name} boxedIcons={false} />))}
       </dl>
     </div>
   </div>
