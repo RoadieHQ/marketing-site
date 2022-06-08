@@ -54,7 +54,7 @@ const PRODUCT = {
       icon: BeakerIcon,
     }, {
       name: 'Secure connections',
-      description: 'Securely connect to SaaS services and your own infrastructure using our tunelling broker service.',
+      description: 'Securely connect to SaaS services and your own infrastructure using our tunneling broker service.',
       icon: ShieldCheckIcon,
     }],
 
