@@ -28,7 +28,7 @@ const Pricing = ({
         description="Hosted Backstage solution pricing from Roadie. Simple, flexible pricing options to fit your Backstage needs. Free Trial."
       />
 
-      <SitewideHeader />
+      <SitewideHeader borderBottom={false} />
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">

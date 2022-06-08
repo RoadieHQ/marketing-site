@@ -21,7 +21,8 @@ const TESTIMONIALS = [{
   ),
   author: {
     name: 'Ron Barabash',
-    role: 'Team lead, Yotpo',
+    role: 'Team lead',
+    company: 'Yotpo',
     avatar: {
       webp: ronAvatar,
       jpeg: ronAvatarJpeg,
@@ -38,7 +39,8 @@ const TESTIMONIALS = [{
   ),
   author: {
     name: 'Mark Loyzer',
-    role: 'Senior Software Engineer, Hopper',
+    role: 'Senior Software Engineer',
+    company: 'Hopper',
     avatar: {
       webp: markAvatar,
       jpeg: markAvatarJpeg,
@@ -55,7 +57,8 @@ const TESTIMONIALS = [{
   ),
   author: {
     name: 'Jon Stern',
-    role: 'Director, NCSA',
+    role: 'Director of engineering',
+    company: 'NCSA',
     avatar: {
       webp: jonAvatar,
       jpeg: jonAvatarJpeg,
@@ -79,8 +82,9 @@ const Testimonial = ({
       <div className="mt-6 flex items-start">
         <Avatar avatar={author.avatar} borderColor="primary-600" />
         <div className="ml-4">
-          <div className="text-base font-medium text-gray-900">{author.name}</div>
-          <div className="text-base font-medium text-gray-500">{author.role}</div>
+          <div className="text-base text-gray-900">{author.name}</div>
+          <div className="text-base text-gray-500">{author.role}</div>
+          <div className="text-base text-gray-500">{author.company}</div>
         </div>
       </div>
     </div>
@@ -89,10 +93,14 @@ const Testimonial = ({
 
 const Testimonials = ({ testimonials = TESTIMONIALS }) => (
   <div className="bg-gray-900">
-    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto py-12 lg:py-32 px-4 sm:px-6 lg:px-32">
+      <div className="text-center mb-8 sm:mb-12 text-white">
+        <p>What our customers say</p>
+      </div>
+
       <div className="grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-        {testimonials.map(({ text, title, author }) => (
-          <Testimonial author={author} text={text} title={title} key={author.name} />
+        {testimonials.map((props) => (
+          <Testimonial {...props} key={props.author.name} />
         ))}
       </div>
     </div>
