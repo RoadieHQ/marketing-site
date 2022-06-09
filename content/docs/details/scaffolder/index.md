@@ -336,7 +336,7 @@ parameters:
 
 ### Previewing parameters
 
-Tools section provides a preview page for templates, where you can see a live preview of the template form. This is done in order to provide an easy way to preview scaffolder template form UIs without running your own local instance of the plugin or committing changes to the template.
+Template Preview, which is accessible via `Administration > Tools > Template Preview` provides a preview page for templates, where you can see a live preview of the template form. This is done in order to provide an easy way to preview scaffolder template form UIs without running your own local instance of the plugin or committing changes to the template.
 
 ![parameters-preview](./parameters-preview.png)
 
