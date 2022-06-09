@@ -1,6 +1,6 @@
 ---
-title: Shortcur Plugin
-publishedDate: '2022-04-29T10:00:00.0Z'
+title: Shortcut Plugin
+publishedDate: '2022-06-09T10:00:00.0Z'
 description: How to enable the Shortcut plugin
 
 humanName: Shortcut Plugin
@@ -10,7 +10,7 @@ integrationType: OSS plugin
 
 ## Introduction
 
-This plugin provides an overview of Shortcut user stories which are currently in progress. It can be added as a card for your Homepage so you easily preview your ongoing stories.
+This plugin provides an overview of Shortcut user stories which are currently in progress. It can be added as a card for your Home page so you easily preview your ongoing stories.
 
 ## Authentication
 
@@ -40,19 +40,15 @@ To use this plugin make sure you already have the [Backstage Home plugin](https:
 
     Once you are on the home page click on the cogwheel icon.
 
-    ![cog](cog.png)
+    ![cog icon leading to adding cards in home page](cog.png)
 
 2.  Click the plus sign to add a new Card.
-    ![plus](plus-homepage.png)
+    ![add new card plus sign](plus-homepage.png)
 
 3.  Select `HomepageStoriesCard` from the list.
-    ![add card](homepage-add-card.png)
+    ![add shortcut card](homepage-add-card.png)
 
     Click add
 
     You should see card like this:
-    ![card](card.png)
-
-```
-
-```
+    ![Shortcut card](card.png)
