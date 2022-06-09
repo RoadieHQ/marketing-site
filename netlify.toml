@@ -89,8 +89,8 @@
   to = "/docs/integrations/tech-radar/"
   force = true
 
-[build]
-  publish = "public"
-
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+# We are inundated by spam security reports since we added this. It's not worth it.
+[[redirects]]
+  from = "/security/responsible-disclosure/"
+  to = "/"
+  force = true

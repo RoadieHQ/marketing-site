@@ -86,7 +86,7 @@ const BackstageWeekly = ({ data }) => {
         email={email}
       />
 
-      <Page titleDivide={false}>
+      <Page titleDivide={false} headerBorderBottom={false}>
         <div className="m-auto lg:max-w-2xl mb-44">
           <div className="mb-4">
             <Headline el="h2">Backstage Weekly</Headline>

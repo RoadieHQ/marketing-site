@@ -1,5 +1,6 @@
 import './src/stylesheets/soehne.css';
 import './src/stylesheets/tailwind.css';
+import './src/stylesheets/table-of-contents-sidebar.css';
 
 /*
  * Styles for Algolia Autocomplete. It would be preferential to remove these imports and use

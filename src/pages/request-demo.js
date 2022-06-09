@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, Testimonial } from 'components';
+import { SEO, SitewideHeader, SitewideFooter } from 'components';
+import { SidebarTestimonial as Testimonial } from 'components/landing';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';

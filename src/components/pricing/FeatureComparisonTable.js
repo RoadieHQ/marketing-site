@@ -2,15 +2,7 @@ import React, { Fragment } from 'react';
 import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
 import { TextLink } from 'components';
 
-const TIERS = [{
-  name: 'Teams',
-  ctaLabel: 'Start a free trial',
-  ctaLinkTo: '/free-trial/',
-}, {
-  name: 'Growth',
-  ctaLabel: 'Request a demo',
-  ctaLinkTo: '/request-demo/',
-}];
+import TIERS from './tiers';
 
 const sections = [{
   name: 'Scale',
@@ -28,7 +20,7 @@ const sections = [{
     tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
   }, {
     name: 'Minimum seats',
-    tiers: { Teams: '10', Growth: '100' },
+    tiers: { Teams: TIERS.teams.minSeats.toString(), Growth: TIERS.growth.minSeats.toString() },
   }],
 }, {
   name: 'Features',
@@ -63,7 +55,10 @@ const sections = [{
     name: 'Custom, private Backstage plugins',
     tiers: { Growth: true },
   }, {
-    name: 'API access',
+    name: 'API access (beta)',
+    tiers: { Growth: true },
+  }, {
+    name: 'Infra access via broker (beta)',
     tiers: { Growth: true },
   }],
 }, {
@@ -158,13 +153,15 @@ const LargeFeatureRow = ({ feature }) => (
   <tr>
     <FeatureNameHeaderCell feature={feature} />
 
-    {TIERS.map((tier) => (
-      <FeatureTierIndicatorCell
-        featureTier={feature.tiers[tier.name]}
-        tier={tier}
-        key={tier.name}
-      />
-    ))}
+    <FeatureTierIndicatorCell
+      featureTier={feature.tiers[TIERS.teams.name]}
+      tier={TIERS.teams}
+    />
+
+    <FeatureTierIndicatorCell
+      featureTier={feature.tiers[TIERS.growth.name]}
+      tier={TIERS.growth}
+    />
   </tr>
 );
 
@@ -205,17 +202,25 @@ const FeatureComparisonTable = () => {
     <>
       {/* xs to lg */}
       <div className="max-w-2xl mx-auto space-y-16 lg:hidden">
-        {TIERS.map((tier, tierIndex) => (
-          <section key={tier.name}>
-            <div className="px-4 mb-8">
-              <h2 className="text-lg leading-6 font-medium text-gray-900">{tier.name}</h2>
-            </div>
+        <section>
+          <div className="px-4 mb-8">
+            <h2 className="text-lg leading-6 font-medium text-gray-900">{TIERS.teams.name}</h2>
+          </div>
 
-            {sections.map((section) => (
-              <SectionTable section={section} key={section.name} tier={tier} tierIndex={tierIndex} />
-            ))}
-          </section>
-        ))}
+          {sections.map((section) => (
+            <SectionTable section={section} key={section.name} tier={TIERS.teams} tierIndex={0} />
+          ))}
+        </section>
+
+        <section>
+          <div className="px-4 mb-8">
+            <h2 className="text-lg leading-6 font-medium text-gray-900">{TIERS.growth.name}</h2>
+          </div>
+
+          {sections.map((section) => (
+            <SectionTable section={section} key={section.name} tier={TIERS.growth} tierIndex={1} />
+          ))}
+        </section>
       </div>
 
       {/* lg+ */}
@@ -228,9 +233,8 @@ const FeatureComparisonTable = () => {
                 <span className="sr-only">Feature by</span>
                 <span>Plans</span>
               </th>
-              {TIERS.map((tier) => (
-                <LargeTierHeaderCell tier={tier} key={tier.name} />
-              ))}
+              <LargeTierHeaderCell tier={TIERS.teams} />
+              <LargeTierHeaderCell tier={TIERS.growth}  />
             </tr>
           </thead>
 
@@ -240,9 +244,8 @@ const FeatureComparisonTable = () => {
                 Get started
               </th>
 
-              {TIERS.map((tier) => (
-                <LargeTierCta tier={tier} key={tier.name} />
-              ))}
+              <LargeTierCta tier={TIERS.teams} />
+              <LargeTierCta tier={TIERS.growth} />
             </tr>
 
             {sections.map((section) => (

@@ -1,4 +1,5 @@
-export { default as AlternatingFeatureBlock } from './AlternatingFeatureBlock';
+export { default as AlternatingFeatureBlock } from './FeatureBlocks/AlternatingFeatureBlock';
+export { default as TextBasedFeatureBlock } from './FeatureBlocks/TextBasedFeatureBlock';
 export { default as SplitGridLogoCloud } from './SplitGridLogoCloud';
 export { default as FooterCTA } from './FooterCTA';
 export { default as CustomerLogoCloud } from './CustomerLogoCloud';
@@ -8,3 +9,5 @@ export { CircleThreeColTeam } from './Team';
 export { default as ExplainingTheVision } from './ExplainingTheVision';
 export { default as FAQs } from './faqs';
 export { default as Values } from './Values';
+export { default as TestimonialsCloud } from './Testimonials/TestimonialsCloud';
+export { default as SidebarTestimonial } from './Testimonials/SidebarTestimonial';

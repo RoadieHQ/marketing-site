@@ -43,14 +43,13 @@ const Tab = ({ label, isActive, onClick }) => (
   </div>
 );
 
-const Header = () => (
+const Header = ({ count }) => (
   <header className="mb-6 lg:mb-28">
     <div className="mb-2">
       <Headline size="small">Plugins & Integrations</Headline>
     </div>
-    <Lead>Roadie supports many plugins and integrations out of the box.</Lead>
-    <Lead>Please contact support if you need a plugin which is currently not supported.</Lead>
-    <Lead>Customers on the Growth plan can <TextLink color="primary" to="/docs/custom-plugins/artifactory/">write their own plugins</TextLink>.</Lead>
+    <Lead>Roadie supports {count} plugins and integrations out of the box. If we&apos;re missing something, <TextLink to="/docs/details/requesting-plugins/" color="primary">request it</TextLink>.</Lead>
+    <Lead>Growth plan customers can <TextLink color="primary" to="/docs/custom-plugins/artifactory/">write their own plugins</TextLink>.</Lead>
   </header>
 );
 
@@ -60,8 +59,8 @@ const SearchAndFilterBar = ({
   handleQueryInput,
   query,
 }) => (
-  <section className="lg:flex justify-between items-center">
-    <div className="md:flex">
+  <section className="md:flex justify-between items-center">
+    <div className="flex mb-2">
       <Tab
         isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.ALL}
         label="All"
@@ -81,14 +80,14 @@ const SearchAndFilterBar = ({
       />
     </div>
 
-    <form>
+    <form className="md:w-96">
       <Input
         type="text"
         onChange={handleQueryInput}
         value={query}
         aria-label="Filter"
         placeholder="Filter"
-        className="w-96"
+        fullWidth
       />
     </form>
   </section>
@@ -134,6 +133,8 @@ const DocsIntegrations = ({
     CUSTOM_PLUGIN_PLACEHOLDER,
   ];
 
+  const count = integrations.nodes.length;
+
   let filteredIntegrations = [];
   if (query === '') {
     if (integrationTypeFilter === INTEGRATION_TYPE_FILTERS.ALL) {
@@ -166,7 +167,7 @@ const DocsIntegrations = ({
 
       <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
         <div className="relative mx-auto lg:max-w-7xl mb-24">
-          <Header />
+          <Header count={count} />
 
           <div className="border-b-2 border-gray-100 mb-6 pb-6">
             <SearchAndFilterBar

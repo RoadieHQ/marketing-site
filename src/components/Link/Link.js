@@ -45,6 +45,7 @@ const Link = ({
   activeClassName,
   activeStyle,
   partiallyActive,
+  forceOpenInSameTab = false,
   ...rest
 }) => {
   if (isRelativeTo(to)) {
@@ -67,6 +68,14 @@ const Link = ({
       >
         {children}
       </GatsbyLink>
+    );
+  }
+
+  if (forceOpenInSameTab) {
+    return (
+      <OutboundLink href={to} {...rest}>
+        {children}
+      </OutboundLink>
     );
   }
 

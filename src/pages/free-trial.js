@@ -4,8 +4,8 @@ import {
   SEO,
   SitewideHeader,
   SitewideFooter,
-  Testimonial,
 } from 'components';
+import { SidebarTestimonial as Testimonial } from 'components/landing';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';

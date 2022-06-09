@@ -41,13 +41,15 @@ const Changelog = ({
     <SitewideHeader />
 
     <main className="max-w-5xl sm:max-w-4xl mx-auto px-8 pb-20 lg:pt-8 lg:pb-28">
-      <SimpleCenteredHeading
-        headline="What's new in Roadie"
-        lead={
-          <span>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. You can follow us on <Link color="primary" to="https://twitter.com/roadiehq">Twitter</Link> for more updates.</span>
-        }
-        headlineSize="small"
-      />
+      <div className="bg-white">
+        <SimpleCenteredHeading
+          headline="What's new in Roadie"
+          lead={
+            <span>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. Subscribe via <Link color="primary" to="rss.xml">RSS</Link> or follow us on <Link color="primary" to="https://twitter.com/roadiehq">Twitter</Link> for more updates.</span>
+          }
+          headlineSize="small"
+        />
+      </div>
 
       <ul className="container mt-12 mb-8">
         {changeSets.map(({ node: { title, releasedAt, description, slug } }) => (

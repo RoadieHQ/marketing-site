@@ -13,4 +13,8 @@ export const recaptchaEnabled = () => {
   return true;
 };
 
+export const chargebeeSubdomain = () => {
+  return process.env.GATSBY_CHARGEBEE_SUBDOMAIN || 'roadie-test';
+};
+
 export const siteRecaptchaKey = () => process.env.GATSBY_SITE_RECAPTCHA_KEY;

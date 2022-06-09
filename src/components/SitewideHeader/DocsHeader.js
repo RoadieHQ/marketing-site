@@ -23,16 +23,19 @@ const DocsHeader = ({ location }) => (
       <div className="flex justify-between items-center border-b-2 border-gray-100 md:border-b-0 py-4 md:justify-start md:space-x-10">
 
         <div className="flex items-center">
-          <span>
+          <span className="mr-1">
             <Logo />
           </span>
 
-          <span className="text-2xl text-bold">
+          <span className="text-2xl text-bold" style={{ marginTop: 2 }}>
             Docs
           </span>
 
           <span className="ml-8">
-            <AlgoliaAutocomplete placeholder="Search docs..." className="w-48 md:w-96" />
+            <AlgoliaAutocomplete
+              placeholder="Search docs with /"
+              className="w-48 md:w-96"
+            />
           </span>
         </div>
 

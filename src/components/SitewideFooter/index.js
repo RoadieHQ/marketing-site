@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'components';
-import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieWordIcon } from 'components/icons';
+import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieRacksIcon } from 'components/icons';
 import camelCase from 'lodash/camelCase';
 
 import theme from '../../theme';
@@ -30,7 +30,6 @@ const navigation = {
     { name: 'Terms', href: '/legal-notices/terms-of-service/' },
     { name: 'Privacy', href: '/legal-notices/privacy-notice/' },
     { name: 'Cookies', href: '/legal-notices/cookies-policy/' },
-    { name: 'Responsible Disclosure', href: '/security/responsible-disclosure/' },
   ],
 
   social: [{
@@ -94,7 +93,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
       <div className={`max-w-${maxWidth} mx-auto py-12 px-2 sm:px-6 lg:py-16 lg:px-8`}>
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-4 xl:col-span-1">
-            <RoadieWordIcon fill={theme.COLORS_GRAY_500} />
+            <RoadieRacksIcon fill={theme.COLORS_GRAY_500} />
 
             <p className="text-gray-500 text-base">
               SaaS Backstage for scale-ups.
