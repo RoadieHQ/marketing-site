@@ -49,12 +49,6 @@ spec:
         message: 'Hello, ${{ parameters.name }}!'
 ```
 
-## Template preview
-
-Tools section provides a preview page for templates, where you can see a live preview of the template form. This is done in order to provide an easy way to preview scaffolder template form UIs without running your own local instance of the plugin or committing changes to the template.
-
-![template-preview](./template-preview.png)
-
 ## Header Section
 
 The header section is required for every `template` and contains information to configure the task and show details about the task on the "Create Component" page.
@@ -339,6 +333,12 @@ parameters:
       age:
         type: number
 ```
+
+### Previewing parameters
+
+Tools section provides a preview page for templates, where you can see a live preview of the template form. This is done in order to provide an easy way to preview scaffolder template form UIs without running your own local instance of the plugin or committing changes to the template.
+
+![parameters-preview](./parameters-preview.png)
 
 ### More Reading
 
