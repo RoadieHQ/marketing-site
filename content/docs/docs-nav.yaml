@@ -45,17 +45,16 @@ nav:
     - Tech radar: '/docs/integrations/tech-radar/'
     - Cortex: '/docs/integrations/cortex'
   - Integrations:
-      - AWS S3: '/docs/integrations/aws-s3/'
-      - Bitbucket: '/docs/integrations/bitbucket/'
-      - GitHub org: '/docs/integrations/github-org/'
-      - GitHub token: '/docs/integrations/github-token/'
-      - Google Cloud Platform: '/docs/integrations/gcp/'
-      - Google OAuth client: '/docs/integrations/google-oauth-client/'
+    - AWS S3: '/docs/integrations/aws-s3/'
+    - Bitbucket: '/docs/integrations/bitbucket/'
+    - GitHub org: '/docs/integrations/github-org/'
+    - GitHub token: '/docs/integrations/github-token/'
+    - Google Cloud Platform: '/docs/integrations/gcp/'
+    - Google OAuth client: '/docs/integrations/google-oauth-client/'
   - Custom plugins:
     - Artifactory: '/docs/custom-plugins/artifactory/'
     - Configuring: '/docs/custom-plugins/configuring/'
     - Proxy: '/docs/custom-plugins/proxy/'
-
   - In-depth:
     - GtHub app permissions: '/docs/details/github-app-permissions/'
     - Setting secrets: '/docs/details/setting-secrets/'
