@@ -12,6 +12,11 @@ import {
   BookOpenIcon,
   PencilAltIcon,
   SearchCircleIcon,
+  SparklesIcon,
+  UserGroupIcon,
+  ChartBarIcon,
+  BadgeCheckIcon,
+  CubeTransparentIcon,
 } from '@heroicons/react/outline'
 import {
   AlternatingFeatureBlock,
@@ -23,6 +28,7 @@ import {
   TestimonialsCloud,
   SimpleCenteredHeading,
 } from 'components/landing';
+
 
 import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
 import DragDropIllustrationPng from '../../content/assets/home/illustrations/drag-drop-illustration.png';
@@ -118,11 +124,11 @@ const SOLUTIONS = {
     bullets: [{
       name: 'Improve maintainability',
       description: `Unowned services are a maintenance, security and operations nightmare.`,
-      icon: FingerPrintIcon,
+      icon: BadgeCheckIcon,
     }, {
       name: 'Unlock InnerSourcing',
       description: `Empower teams to contribute to the code around them. It starts with a conversation with the service owner.`,
-      icon: MapIcon,
+      icon: CubeTransparentIcon,
     }],
 
   }, {
@@ -140,6 +146,23 @@ const SOLUTIONS = {
       name: 'Demonstrated at scale',
       description: 'Spotify experienced an explosion of docs writing after adopting this methodology internally.',
       icon: PresentationChartLineIcon,
+    }],
+  }, {
+    title: 'Track engineering maturity and migrations',
+    description: 'Define engineering standards and initiatives that get checked automatically across your ecosystem.',
+    prompt: 'Coming soon',
+    bullets: [{
+      name: 'A Roadie Exclusive Feature',
+      description: 'Standards and initiatives tracking is not available to self-hosted Backstage users.',
+      icon: SparklesIcon,
+    }, {
+      name: 'Find out which teams are experiencing challenges',
+      description: 'Standards adherence can be grouped by teams, offering insight into who may need more support to adopt new practices.',
+      icon: UserGroupIcon,
+    }, {
+      name: 'Understand your migration’s progress',
+      description: 'Initiatives are designed to keep track of wide-org migrations, offering insights about the change across software components. ',
+      icon: ChartBarIcon,
     }],
   }],
 };
