@@ -7,10 +7,16 @@ const FeatureBlock = ({
   title,
   description,
   bullets,
+  prompt,
 }) => (
   <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center lg:grid-flow-row-dense">
     <div className="lg:col-start-1">
       <div className="lg:pr-20">
+        {prompt && (
+          <p className="mb-5">
+            <span className="px-4 py-2 border-2 border-primary-600 text-primary-600 text-sm font-bold rounded-full">{prompt}</span>
+          </p>
+        )}
         <Headline el="h3" size="small">{title}</Headline>
 
         <div className="mt-3">
