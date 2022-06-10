@@ -12,7 +12,6 @@ import {
   BookOpenIcon,
   PencilAltIcon,
   SearchCircleIcon,
-  SparklesIcon,
   UserGroupIcon,
   ChartBarIcon,
   BadgeCheckIcon,
@@ -152,10 +151,6 @@ const SOLUTIONS = {
     description: 'Define engineering standards and initiatives that get checked automatically across your ecosystem.',
     prompt: 'Coming soon',
     bullets: [{
-      name: 'A Roadie Exclusive Feature',
-      description: 'Standards and initiatives tracking is not available to self-hosted Backstage users.',
-      icon: SparklesIcon,
-    }, {
       name: 'Find out which teams are experiencing challenges',
       description: 'Standards adherence can be grouped by teams, offering insight into who may need more support to adopt new practices.',
       icon: UserGroupIcon,
