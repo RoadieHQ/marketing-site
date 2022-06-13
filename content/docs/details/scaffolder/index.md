@@ -20,6 +20,10 @@ A Scaffolder template is a configurable process that will run one or more Scaffo
 
 Templates are defined by a Backstage Entity YAML file with a `Template` kind and imported into the Backstage catalog. You can create multiple templates, each of which can perform a different set of steps. For example, you can have one template that creates a React application, and another that creates a serverless app.
 
+Template YAML input forms can be tested at `/administration/tools` using a live template preview viewer. 
+
+![preview-template](./template-preview-tool.png)
+
 Here is an example of a very basic Scaffolder template that prompts the user for a name, and then prints back the text "Hello, name!"
 
 ```yaml
@@ -1091,9 +1095,17 @@ steps:
       message: "The response code was ${{ steps.http-request.output.code }}
 ```
 
+### Escaping syntax
+
+If you need to pass variable substitution syntax through without it being interpreted you can escape the syntax by wrapping it like so `${{ '${{ parameters.something }}' }}`.
+
 ## Troubleshooting
 
 Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
+
+Template YAML input forms can also be tested at `/administration/tools` using a live template preview viewer which speeds up the testing cycle.
+
+![preview-template](./template-preview-tool.png)
 
 ### Resource not accessible by integration
 
