@@ -545,7 +545,7 @@ steps:
       sourcePatch: './repoRoot'
 ```
 
-Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` and `access`. `username` is the GitHub username to allow collaboration. The `access` option gives the user specfic type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`.
+Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` and `access`. `username` is the GitHub username to allow collaboration. The `access` option gives the user specific type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`.
 
 ```yaml
 steps:
@@ -556,7 +556,7 @@ steps:
       repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
       collaborators:
         - username: user1
-          access: read
+          access: admin
 ```
 
 The `topics` allows adding topics to the created repository when its created.
