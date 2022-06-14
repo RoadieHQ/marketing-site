@@ -67,5 +67,5 @@ nav:
     - Requesting plugins: '/docs/details/requesting-plugins/'
     - Writing scaffolder templates: '/docs/details/scaffolder/'
     - Managing locations: '/docs/details/location-management/'
-    - Modelling dependancies: '/docs/details/showing-dependencies/'
+    - Modelling dependencies: '/docs/details/showing-dependencies/'
     - Troubleshooting the catalog: '/docs/details/troubleshooting-the-catalog/'
