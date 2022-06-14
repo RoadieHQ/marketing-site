@@ -38,6 +38,7 @@ nav:
     - PagerDuty: '/docs/integrations/pagerduty/'
     - Prometheus: '/docs/integrations/prometheus/'
     - Sentry: '/docs/integrations/sentry/'
+    - Shortcut: '/docs/integrations/shortcut-plugin/'
     - Snyk: '/docs/integrations/snyk/'
     - Sonarqube: '/docs/integrations/sonarqube/'
     - Travis CI: '/docs/integrations/travis-ci/'
