@@ -11,7 +11,8 @@ const Header = ({
       logoImage,
       heading,
       lead,
-      attribution
+      attribution,
+      intro,
     },
   },
 }) => (
@@ -24,6 +25,13 @@ const Header = ({
       <Lead>{lead}</Lead>
     </div>
     <Attribution attribution={attribution} />
+    {intro &&
+      <div className="mb-4 mt-8 text-center">
+        <p className="prose prose-primary mr-auto ml-auto">
+          {intro}
+        </p>
+      </div>
+    }
   </header>
 );
 

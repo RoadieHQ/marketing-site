@@ -64,26 +64,26 @@ const PluginTemplate = ({ data }) => {
           </ResponsiveSpacer>
 
           {plugin.frontmatter.gettingStarted && (
-          <ResponsiveSpacer>
-            <div className="text-center pb-3" >
-              <Title text="Installation steps" />
-            </div>
+            <ResponsiveSpacer>
+              <div className="text-center pb-3" >
+                <Title text="Installation steps" />
+              </div>
 
-            {plugin.frontmatter.gettingStarted.map((section, index) =>
-              section.title && section.title !== '' ? (
-                <div className="text-center pb-3">
-                  <Title text={section.title} key={`key-${index}`} />
-                </div>
-              ) : (
-                <CodeBlock
-                  language={section.language}
-                  code={section.code}
-                  intro={section.intro}
-                  key={`key-${index}`}
-                />
-              )
-            )}
-          </ResponsiveSpacer>
+              {plugin.frontmatter.gettingStarted.map((section, index) =>
+                section.title && section.title !== '' ? (
+                  <div className="text-center pb-3">
+                    <Title text={section.title} key={`key-${index}`} />
+                  </div>
+                ) : (
+                  <CodeBlock
+                    language={section.language}
+                    code={section.code}
+                    intro={section.intro}
+                    key={`key-${index}`}
+                  />
+                )
+              )}
+            </ResponsiveSpacer>
           )}
 
           <ResponsiveSpacer>
@@ -93,7 +93,7 @@ const PluginTemplate = ({ data }) => {
               </p>
             </div>
           </ResponsiveSpacer>
-          
+
           {plugin.frontmatter.coverImage && (
             <ResponsiveSpacer>
               <div className="text-center pb-3">
@@ -161,6 +161,7 @@ export const pageQuery = graphql`
         humanName
         lead
         heading
+        intro
 
         attribution {
           href
