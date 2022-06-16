@@ -6,7 +6,7 @@ description: How to represent users and groups in Backstage and make ownership w
 
 ## Prerequisites
 
-You should already have a knowledge of how to add entities to the Backstage catalog as descibed [here](/docs/getting-started/adding-components/).
+You should already have a knowledge of how to add entities to the Backstage catalog as described [here](/docs/getting-started/adding-components/).
 ## Introduction
 
 Users logged in to Backstage have an identity that can be used to determine if a user has ownership over any entity. This is done using User and Group entities in Backstage. This page describes how to configure Backstage to work with ownership.
