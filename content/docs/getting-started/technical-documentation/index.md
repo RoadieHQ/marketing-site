@@ -27,6 +27,10 @@ nav:
 
 plugins:
   - techdocs-core
+
+# Uncomment to add extensions if desired
+#markdown_extensions:
+#  - markdown_inline_mermaid
 ```
 
 ### Step 2: Add markdown documentation
@@ -134,6 +138,27 @@ will result in graph being rendered in lightblue color.
 
 This way you can customize the graph adding or removing any attribute you want. 
 
+## Using Mermaid Diagrams
+
+Roadie supports using Mermaid JS to render diagrams. It must first be enabled in your `mkdocs.yaml`:
+
+```yaml
+markdown_extensions:
+  - markdown_inline_mermaid
+```
+
+Then you can add mermaid diagrams as follows:
+````
+```mermaid
+%%{init: {'theme': 'forest'}}%%
+graph LR
+  A[Start] --> B{Error?};
+  B -->|Yes| C[Hmm...];
+  C --> D[Debug];
+  D --> B;
+  B ---->|No| E[Yay!];
+```
+````
 
 ## Adding more docs
 
