@@ -129,6 +129,31 @@ Scrum,hold,processes,-1,"Framework utilizing an agile mindset for developing, de
 With this example file the tech radar will be constructed to have rings `use`, `assess`, `trial` and `hold`. Quadrants will be `infrastructure`, `frameworks`, `languages` and `processes`.
 
 
+## Testing and Previewing Tech Radars
+
+The Roadie Tech Radar implementation contains a locally hostable testing and previewing option to construct Tech Radars before publishing them to GitHub. This functionality is enabled for Administrators that have the possibility to modify 'props' values on Tech Radar pages. 
+
+### Marking Tech Radar page as preview radar
+
+To enable preview mode for your Tech Radar you need to identify the radar as `test-radar` in your Tech Radar page props. You can do this either by adding a new radar or editing an existing one to contain the needed props.
+![Preview Radar Props configuration](./preview-radar-props.png)
+
+This will indicate Roadie to use a local source for the content of the tech radar. 
+
+
+### Expose your Tech Radar from your local environment
+
+On preview mode the Roadie Tech Radar fetches radar data from a `localhost` hosted URL. Available URLs are limited to two options, depending which file format you would like to use for your Radar. The preview Tech Radar is using one of two files, in order of preference:
+1. `radar.json`
+2. `radar.csv`
+
+Setting up a local server consist of the following steps:
+1. Create a new empty folder to use as a testing ground
+2. Create either one of the above files within it with the Tech Radar data you want to include in your radar
+3. Start a local webserver on port `7328` to serve either one of the above files from the root path
+   1. If you have Node.js and NPM installed locally, the easiest way to achieve this is to run a http-server on the folder where the files are located: `npx http-server -p 7328 --cors`
+4. Navigate to your preview Tech Radar page to see results.
+
 ## More information
 
 [Backstage Tech Radar plugin documentation](https://github.com/backstage/backstage/blob/master/plugins/tech-radar/README.md)
