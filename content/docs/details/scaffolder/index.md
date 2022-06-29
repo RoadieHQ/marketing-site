@@ -834,7 +834,7 @@ steps:
         - from: copyfrom
           to: copyto
         - from: copyfrom1
-          to: copyfrom2
+          to: copyto1
 ```
 
 #### Outputs
