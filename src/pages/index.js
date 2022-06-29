@@ -22,10 +22,10 @@ import {
   TextBasedFeatureBlock,
   SplitGridLogoCloud,
   FooterCTA,
-  VideoHero,
   CustomerLogoCloud,
   TestimonialsCloud,
   SimpleCenteredHeading,
+  CenteredHero,
 } from 'components/landing';
 
 
@@ -205,7 +205,7 @@ const Home = ({
 
     <SitewideHeader borderBottom={false} />
 
-    <VideoHero />
+    <CenteredHero />
 
     <CustomerLogoCloud />
     <TestimonialsCloud />
