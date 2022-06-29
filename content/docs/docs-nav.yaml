@@ -64,6 +64,7 @@ nav:
     - Modelling Users and Groups: '/docs/details/modelling-users-and-groups/'
     - Required annotations: '/docs/details/required-annotations/'
     - Previewing component changes: '/docs/details/previewing-changes/'
+    - Validating catalog files: '/docs/details/validator/'
     - Removing components: '/docs/details/unregister-components/'
     - Accessing public resources: '/docs/details/backend-reading-allow-list/'
     - Requesting plugins: '/docs/details/requesting-plugins/'
