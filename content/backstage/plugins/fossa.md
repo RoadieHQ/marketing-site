@@ -32,7 +32,7 @@ gettingStarted:
           target: https://app.fossa.io/api
           allowedMethods: ['GET']
           headers:
-          Authorization: token ${FOSSA_API_TOKEN}
+            Authorization: token ${FOSSA_API_TOKEN}
 
   - intro: Add the FOSSA card to the Overview tab on the entity page.
     language: typescript
