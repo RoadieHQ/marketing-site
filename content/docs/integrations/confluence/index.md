@@ -1,0 +1,69 @@
+---
+title: Confluence Search
+publishedDate: '2022-06-30T10:00:00.0Z'
+description: How to enable Confluence indexing for Roadie Search
+
+humanName: Confluence
+logoImage: '../../../assets/logos/confluence/confluence-icon.svg'
+integrationType: Integration
+---
+
+## Introduction
+
+Roadie supports integration with Atlassian Confluence wiki platform to enable cross application search functionality. Roadie indexes documents from Confluence so they are available for you to search within the Roadie search bar. 
+
+
+## Prerequisites
+
+You'll need an Atlassian account with an ability to create an API token and knowledge of the name of your Confluence organization.
+
+## Configuring Confluence Integration
+
+### Generate Atlassian API token
+
+Roadie uses Atlassian Confluence API to retrieve indexable information from the wiki platform. To be able to connect to your Confluence instance, we need an API token. 
+You can create an Atlassian token by navigating to your [**Atlassian** profile security page](https://id.atlassian.com/manage-profile/security) and Clicking 'Create and Manage API Tokens'.
+![Creating an Atlassian token](./confluence_api_token_generation.png)
+
+
+On the page navigated into you are able to generate API tokens which can be used to connect Roadie to your Confluence workspaces.
+
+
+### Construct Confluence Authentication Token to Work with Roadie
+
+The Confluence API uses Basic Authentication on their API to negotiate authentication. To create a compatible token you need to **base64 encode** your username and API token pair. To achieve that you can either use any of the online encoders or a command line tool. 
+
+The format for the token to encode is `your-atlassian-email:your-token-generated-in-previous-step`.
+
+The approach for using different tools are:
+```
+// node.js
+new Buffer('jira-mail@example.com:hTBgqVcrcxRYpT5TCzTA9C0F').toString(
+  'base64',
+);
+
+// in your browser console
+btoa('jira-mail@example.com:hTBgqVcrcxRYpT5TCzTA9C0F');
+
+// bash
+echo -n 'jira-mail@example.com:hTBgqVcrcxRYpT5TCzTA9C0F' | base64
+```
+
+
+### Store Token as a Secret to Roadie
+
+When you have successfully encoded your token, you can navigate to `https://<your-roadie-instance>.roadie.so/administration/settings/secrets` and populate the secret value `CONFLUENCE_TOKEN`.
+
+![Confluence Secret Token Screen](./confluence_secret.png)
+
+### Configure Confluence Search Indexing
+
+Final step to enable the Confluence wiki for search indexing is to configure your Confluence organization name, and the cadence you want your Confluence documents to be indexed. You can navigate to `https://<your-roadie-instance>.roadie.so/administration/settings/confluence` to input the needed values. 
+![Confluence Search Indexing Configuration](./confluence_settings.png)
+
+After clicking Apply & Restart, the search engine on Roadie should start populating the search index with Confluence documents. Not that the initial retrieval of wiki pages may take some time to kick off and populate, depending on the amount of documents in Confluence.
+
+
+## More information:
+
+* Confluence API token documentation: https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/
