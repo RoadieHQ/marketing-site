@@ -1,21 +1,7 @@
-import React, { useState } from 'react';
-import { Button, GrayBackgroundDotsPattern, Headline } from 'components';
-import { PlayIcon } from 'components/icons';
-
-import backstageScreenshot from '../../../../content/assets/backstage-screenshot-512x438.webp';
-import ExtendedGetInstanceCallToAction from '../../CallToAction/ExtendedGetInstanceCallToAction';
-import HeroForm from './HeroForm';
-
-const SubTitle = ({ text }) => (
-  <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{text}</p>
-);
+import React from 'react';
+import { Button, Headline } from 'components';
 
 const CenteredHero = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
 
   return (
     <>
@@ -34,10 +20,6 @@ const CenteredHero = () => {
                 Roadie gives you a production Backstage instance with drag-and-drop plugins and
                 secure integrations
               </h2>
-
-              <div>
-                <HeroForm />
-              </div>
 
               <div className="mt-5 sm:flex sm:justify-center lg:justify-start md:mt-8">
                 <div>

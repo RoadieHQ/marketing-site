@@ -10,6 +10,7 @@ import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
+import { HeroForm } from '../components/landing';
 
 import enriqueAvatar from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.webp';
 import enriqueAvatarPng from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.png';
@@ -20,13 +21,14 @@ const SEO_TITLE = 'Try hosted Spotify Backstage for free';
 
 const SubmissionSuccessPositiveBody = () => (
   <p>
-    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via
-    the email provided.
+    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via the email
+    provided.
   </p>
 );
 
 const SubmissionSuccessNegativeBody = () => (
   <>
+    <p>Roadie only supports GitHub and Bitbucket for now.</p>
     <p>
       Roadie only supports GitHub for now.
     </p>
@@ -90,7 +92,7 @@ const RequestTrial = ({ data, location }) => {
             />
           }
         >
-          <ExtendedGetInstanceCallToAction
+          <HeroForm
             email={email}
             onSuccess={() => {
               setModalOpen(true);

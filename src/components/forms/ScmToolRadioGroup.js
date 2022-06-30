@@ -59,4 +59,32 @@ const ScmToolRadioGroup = ({
   </fieldset>
 );
 
+export const ScmToolSelect = ({
+  onChange,
+  currentValue = 'xx',
+  label = 'Primary source code host',
+  idPrefix = '',
+}) => (
+  <>
+    <legend className="block text-sm font-medium text-gray-700">{label}</legend>
+    <select
+      className="block mt-1.5 appearance-none w-full py-3 px-4 block shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md placeholder:text-gray-400"
+      id="grid-state"
+      value={currentValue}
+      onChange={onChange}
+    >
+      {SCM_TOOLS.map(({ value, label }) => (
+        <option
+          key={value}
+          value={value}
+          name="scm"
+          id={`${idPrefix}scm-${value}-input`}
+        >
+          {label}
+        </option>
+      ))}
+    </select>
+  </>
+);
+
 export default ScmToolRadioGroup;
