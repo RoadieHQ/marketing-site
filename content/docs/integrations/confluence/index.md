@@ -15,7 +15,7 @@ Roadie supports integration with Atlassian Confluence wiki platform to enable cr
 
 ## Prerequisites
 
-You'll need an Atlassian account with an ability to create an API token and knowledge of the name of your Confluence organization.
+You'll need an Atlassian account with an ability to create an API token and the name of your Confluence organization.
 
 ## Configuring Confluence Integration
 
