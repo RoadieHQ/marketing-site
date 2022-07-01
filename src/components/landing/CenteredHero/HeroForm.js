@@ -1,24 +1,11 @@
 import React, { useState } from 'react';
-import {
-  Link,
-  Switch,
-  Button,
-  TextField,
-  SubscribeToNewsletterSwitch,
-  ScmToolRadioGroup,
-  Form,
-  Recaptcha,
-} from 'components';
+import { Link, Button, TextField, Form } from 'components';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../../contactFormConstants';
-import {
-  currentlyExecutingGitBranch,
-  recaptchaEnabled,
-  siteRecaptchaKey,
-} from '../../../environment';
+import { currentlyExecutingGitBranch } from '../../../environment';
 
 import { ScmToolSelect } from '../../forms/ScmToolRadioGroup';
-import GoogleRecaptcha from 'react-google-recaptcha';
+import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 
 const submitToNetlifyForms = async ({
   email,
@@ -27,7 +14,6 @@ const submitToNetlifyForms = async ({
   netlifyFormName,
   agreeToPolicies,
   honeypotText,
-  recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
 }) => {
   const branch = currentlyExecutingGitBranch();
@@ -41,11 +27,9 @@ const submitToNetlifyForms = async ({
   formData.append('agree-to-policies', agreeToPolicies);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
-  if (recaptchaEnabled()) {
-    formData.append('g-recaptcha-response', recaptchaResponse);
-  }
 
   let resp;
+
   try {
     resp = await fetch('/', {
       method: 'POST',
@@ -58,125 +42,149 @@ const submitToNetlifyForms = async ({
   return resp;
 };
 
-const HeroForm = ({ onSuccess, email, setEmail, scmTool, setScmTool }) => {
-  const [subToNewsletter, setSubToNewsletter] = useState(false);
-  const [agreed, setAgreed] = useState(true);
+const SubmissionSuccessPositiveBody = () => (
+  <p>
+    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via the email
+    provided.
+  </p>
+);
+
+const SubmissionSuccessNegativeBody = () => (
+  <>
+    <p>Roadie only supports GitHub and Bitbucket for now.</p>
+    <p>
+      We are working to support more tools in the near future. You will be among the first to know
+      when we support yours.
+    </p>
+  </>
+);
+
+const HeroForm = () => {
   const [honeypotText, setHoneypotText] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const [recaptchaResponse, setRecaptchaResponse] = useState('');
-  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
-  const netlifyFormName = FORM_NAMES.getInstanceExtended;
+  const [email, setEmail] = useState('');
+  const [scmTool, setScmTool] = useState('github-cloud');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const netlifyFormName = FORM_NAMES.tryRoadieHomepage;
   const buttonText = 'Try Roadie Backstage';
-  const recaptchaRef = React.createRef();
-
-  const clearForm = () => {
-    setEmail('');
-    setAgreed(false);
-  };
 
   let disabled = submitting;
-  // if (recaptchaEnabled()) {
-  //   disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
-  // }
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
     if (disabled) return false;
-    debugger;
-    const token = await recaptchaRef.current.executeAsync();
-    console.log("HOLA>>>", email, scmTool, token);
-    return false;
     setSubmitting(true);
+    setShowError(false);
 
     const resp = await submitToNetlifyForms({
       email,
       scmTool,
-      subToNewsletter,
-      agreeToPolicies: agreed,
       netlifyFormName,
       honeypotText,
+      subToNewsletter: false,
+      agreeToPolicies: true,
       submitButtonLabel: buttonText,
-      recaptchaResponse,
+      recaptchaResponse: '',
     });
 
+    setSubmitting(false);
+
     if (resp.ok) {
-      // DO NOT reset the email input here. It is already happening higher in the state chain.
-      onSuccess();
+      setModalOpen(true);
+      console.log(resp);
+      setEmail('');
     } else {
+      setShowError(true);
       console.log('error', resp);
     }
 
-    clearForm('');
     setSubmitting(false);
   };
 
   return (
-    <Form
-      onSubmit={onSubmit}
-      name={netlifyFormName}
-      honeypotValue={honeypotText}
-      onHoneypotChange={setHoneypotText}
-      buttonText={buttonText}
-      className="grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-8"
-    >
-      <TextField
-        id="get-instance-email-input"
-        label="Work email"
-        name="email"
-        type="email"
-        autoComplete="email"
-        fullWidth={true}
-        onChange={setEmail}
-        value={email}
-        required={true}
+    <>
+      <SubmissionSuccessModal
+        scmTool={scmTool}
+        handleCloseModal={() => setModalOpen(false)}
+        modalOpen={modalOpen}
+        positiveTitle="We'll be in touch!"
+        positiveBody={<SubmissionSuccessPositiveBody />}
+        negativeTitle="Watch this space!"
+        negativeBody={<SubmissionSuccessNegativeBody />}
       />
-      <div className="sm:col-span-2 mt-4">
-        <ScmToolSelect
-          label="Primary source code host"
-          onChange={setScmTool}
-          currentValue={scmTool}
-          idPrefix="get-instance-"
-        />
-      </div>
-      <div className="sm:col-span-2 flex items-end">
-        <Button
-          type="submit"
-          color="primary"
-          size="medium"
+      <Form
+        onSubmit={onSubmit}
+        name={netlifyFormName}
+        honeypotValue={honeypotText}
+        onHoneypotChange={setHoneypotText}
+        buttonText={buttonText}
+        disableRecaptcha={true}
+        className="grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-8"
+      >
+        <TextField
+          id="get-instance-email-input"
+          label="Work email"
+          name="email"
+          type="email"
+          autoComplete="email"
           fullWidth={true}
-          text={buttonText}
-          disabled={disabled}
+          onChange={setEmail}
+          value={email}
           required={true}
+          color="secondary"
         />
-      </div>
-      {/* <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} /> */}
+        <div className="sm:col-span-2 mt-4">
+          <ScmToolSelect
+            label="Primary source code host"
+            onChange={setScmTool}
+            currentValue={scmTool}
+            idPrefix="get-instance-"
+            color="secondary"
+          />
+        </div>
+        <div className="sm:col-span-2 flex items-end">
+          <Button
+            type="submit"
+            color="secondary"
+            size="medium"
+            fullWidth={true}
+            text={buttonText}
+            disabled={disabled}
+            required={true}
+          />
+        </div>
 
-      <div className="sm:col-span-4">
-        <p className="text-base text-gray-500">
-          By submitting this form, you agree to our{' '}
-          <Link
-            to="/legal-notices/evaluation-license/"
-            className="font-medium text-gray-700 underline"
-          >
-            Evaluation License
-          </Link>{' '}
-          and acknowledge you have read our{' '}
-          <Link to="/legal-notices/privacy-notice/" className="font-medium text-gray-700 underline">
-            Privacy Notice
-          </Link>
-          .
-        </p>
-      </div>
-      <div className="sm:col-span-2">
-        <GoogleRecaptcha
-          ref={recaptchaRef}
-          sitekey={siteRecaptchaKey()}
-          onChange={setRecaptchaResponse}
-          onExpired={setRecaptchaExpired}
-          size="invisible"
-        />
-      </div>
-    </Form>
+        <div className="sm:col-span-4">
+          <p className="text-base text-primary-300">
+            By submitting this form, you agree to our{' '}
+            <Link
+              to="/legal-notices/evaluation-license/"
+              className="font-medium text-primary-300 underline"
+            >
+              Evaluation License
+            </Link>{' '}
+            and acknowledge you have read our{' '}
+            <Link
+              to="/legal-notices/privacy-notice/"
+              className="font-medium text-primary-300 underline"
+            >
+              Privacy Notice
+            </Link>
+            .
+          </p>
+        </div>
+
+        {showError && (
+          <div className="sm:col-span-2">
+            <p className="text-sm p-2 bg-info-800 text-info-200 text-white rounded-md">
+              Error found 😔 use the contact prompt please.
+            </p>
+          </div>
+        )}
+      </Form>
+    </>
   );
 };
 

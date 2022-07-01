@@ -39,6 +39,7 @@ const submitToNetlifyForms = async ({
   }
 
   let resp;
+
   try {
     resp = await fetch('/', {
       method: 'POST',

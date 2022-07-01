@@ -17,10 +17,17 @@ import MyFitnessPalLogoPng from '../../../content/assets/home/customer-logos/myf
 import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochrome.webp';
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
 
-const LOGOS = [{
+import HopperWhiteLogo from '../../../content/assets/home/customer-logos-white/hopper.png';
+import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.svg';
+import SnykWhiteLogo from '../../../content/assets/home/customer-logos-white/snyk.png';
+import TrackunitWhiteLogo from '../../../content/assets/home/customer-logos-white/trackunit.png';
+
+
+export const LOGOS = [{
   src: {
     webp: SnykLogo,
     png: SnykLogoPng,
+    white: SnykWhiteLogo,
   },
   alt: 'Snyk logo',
   title: '~150 engineers',
@@ -28,6 +35,7 @@ const LOGOS = [{
   src: {
     webp: ContentfulLogo,
     png: ContentfulLogoPng,
+    white: ContentfulWhiteLogo,
   },
   alt: 'Contentful logo',
   title: '~150 engineers',
@@ -35,6 +43,7 @@ const LOGOS = [{
   src: {
     webp: HopperLogo,
     png: HopperLogoPng,
+    white: HopperWhiteLogo,
   },
   alt: 'Hopper logo',
   title: '~200 engineers',
@@ -42,6 +51,7 @@ const LOGOS = [{
   src: {
     webp: TrackunitLogo,
     png: TrackunitLogoPng,
+    white: TrackunitWhiteLogo,
   },
   alt: 'Trackunit logo',
   title: '~70 engineers',

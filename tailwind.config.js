@@ -12,6 +12,7 @@ module.exports = {
       current: 'currentColor',
       gray: colors.neutral,
       primary: colors.orange,
+      info: colors.violet,
       white: '#fff',
     },
 

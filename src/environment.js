@@ -18,3 +18,4 @@ export const chargebeeSubdomain = () => {
 };
 
 export const siteRecaptchaKey = () => process.env.GATSBY_SITE_RECAPTCHA_KEY;
+export const siteRecaptchaInvisibleKey = () => process.env.GATSBY_SITE_RECAPTCHA_INIVISIBLE_KEY;

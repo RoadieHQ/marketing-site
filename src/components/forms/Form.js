@@ -11,7 +11,6 @@ const HoneypotField = ({ onChange, value }) => {
   return (
     <div className="hidden">
       <label htmlFor={HONEYPOT_FIELD_NAME}>
-        Don’t fill this out if you’re human:
         <Input
           name={HONEYPOT_FIELD_NAME}
           id={HONEYPOT_FIELD_NAME}
@@ -29,10 +28,11 @@ const Form = ({
   children,
   onHoneypotChange,
   honeypotValue,
+  disableRecaptcha = false,
   ...rest
 }) => (
   <>
-    {recaptchaEnabled() && (
+    {!disableRecaptcha && recaptchaEnabled() && (
       <Helmet>
         <script src="https://www.google.com/recaptcha/api.js" async defer />
       </Helmet>
@@ -42,7 +42,7 @@ const Form = ({
       method="post"
       data-netlify="true"
       data-netlify-honeypot={HONEYPOT_FIELD_NAME}
-      data-netlify-recaptcha={recaptchaEnabled() ? 'true' : undefined}
+      data-netlify-recaptcha={!disableRecaptcha && recaptchaEnabled() ? 'true' : undefined}
       name={name}
       {...rest}
     >

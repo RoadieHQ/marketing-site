@@ -9,3 +9,4 @@ export { default as SubscribeToNewsletterSwitch } from './SubscribeToNewsletterS
 export { default as ScmToolRadioGroup } from './ScmToolRadioGroup';
 export { default as NumberOfEngineers } from './NumberOfEngineers';
 export { default as Recaptcha } from './Recaptcha';
+export { INPUT_COLORS as INPUT_COLORS } from './input-colors';

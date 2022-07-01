@@ -10,7 +10,6 @@ import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
-import { HeroForm } from '../components/landing';
 
 import enriqueAvatar from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.webp';
 import enriqueAvatarPng from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.png';
@@ -92,7 +91,7 @@ const RequestTrial = ({ data, location }) => {
             />
           }
         >
-          <HeroForm
+          <ExtendedGetInstanceCallToAction
             email={email}
             onSuccess={() => {
               setModalOpen(true);

@@ -9,7 +9,7 @@ const FeatureHeader = ({ title, description }) => (
     <Title el="h3">{title}</Title>
 
     <div className="mt-3">
-      <Lead size="small">
+      <Lead size="medium">
         {description}
       </Lead>
     </div>
