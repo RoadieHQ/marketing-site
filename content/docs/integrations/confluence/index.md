@@ -36,7 +36,7 @@ When you have successfully generated your token, you can navigate to `https://<y
 
 ### Configure Confluence Search Indexing
 
-Final step to enable the Confluence wiki for search indexing is to configure your Confluence organization name, username tied to the token and the cadence you want your Confluence documents to be indexed. You can navigate to `https://<your-roadie-instance>.roadie.so/administration/settings/confluence` to input the needed values. The minimum interval is 15 minutes to prevent excessive load on the used API token and Confluence API. 
+To enable your Confluence wiki for search indexing,  navigate to `https://<your-roadie-instance>.roadie.so/administration/settings/confluence` and input your organization name, username, Confluence API token, and indexing interval. The fastest interval rate we support is scheduling indexes every 15 minutes to prevent excessive use of Confluence's API token.
 ![Confluence Search Indexing Configuration](./confluence_settings.png)
 
 After clicking Apply & Restart, the search engine on Roadie should start populating the search index with Confluence documents. Not that the initial retrieval of wiki pages may take some time to kick off and populate, depending on the amount of documents in Confluence.
