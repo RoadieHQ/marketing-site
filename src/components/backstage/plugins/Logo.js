@@ -2,7 +2,7 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Logo = ({ sharpImage, alt, minHeight = 200 }) => {
-  let image = <img src="http://placehold.jp/140x140.png" alt="Placeholder" />;
+  let image = <img src="https://placehold.jp/140x140.png" alt="Placeholder" />;
   let height = minHeight;
 
   if (sharpImage) {
