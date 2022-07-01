@@ -60,10 +60,10 @@ Once you're ready to publish your plugin these are the steps you'll need to foll
 
 1. Ensure your package is scoped correctly in package.json. The name field should follow this pattern
    `@<your-company>-roadie/<package-name>`
-2. Select a new package version to publish. You can't overwrite a version once published (e.g. npm version patch)
-3. Build your plugin (e.g. yarn install && yarn tsc && yarn build)
-4. Publish your plugin npm publish
-5. (Optional) Check the registry npm info `@<your-company>-roadie/<package-name>`
+2. Select a new package version to publish. You can't overwrite a version once published (e.g. `npm version patch`)
+3. Build your plugin (e.g. `yarn && yarn tsc && yarn build`)
+4. Publish your plugin `npm publish`
+5. (Optional) Check the registry `npm info @<your-company>-roadie/<package-name>`
 
 We will notify you via Slack once the plugin is ready in your Roadie Backstage instance. Further updates to the npm
 package will be picked up and released automatically and you can expect the changes to appear in Backstage after 15-20
@@ -74,7 +74,7 @@ minutes.
 Once the steps above have been completed successfully and you have been notified that your plugin is ready to use, you
 should be able to log into your Backstage instance and use the plugin just like any other plugin.
 
-You can update your plugin at will and modify it's versions if needed in the [custom plugin configuration page](/docs/custom-plugins/configuring). Using the version keyword `latest` will always update plugins automatically with the latest version when new plugin is published to Artifactory. 
+You can update your plugin at will and modify its versions if needed in the [custom plugin configuration page](/docs/custom-plugins/configuring). Using the version keyword `latest` will always update plugins automatically with the latest version when new plugin is published to Artifactory. 
 
 [forgot-password]: https://roadiehq.jfrog.io/ui/login/forgot-password
 [form]: https://docs.google.com/forms/d/e/1FAIpQLSdSNr4Ps_RpKEx0V2QbxWaKLb3-DKi0W7U09Wth0SXHQoPyXQ/viewform
