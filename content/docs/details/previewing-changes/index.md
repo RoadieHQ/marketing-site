@@ -33,7 +33,7 @@ metadata:
 
 ### Using the entity preview page
 
-An alternative way to test and preview entity definitions is to use the Roadie entity preview page. You can navigate to this page by going to `Administration > Tools > Entity Preview`.
+An alternative way to test and preview entity definitions is to use the Roadie entity preview page. You can navigate to this page by going to `Tools > Entity Preview`.
 
 ![Image of entity preview page](./entity_preview_page.png)
 
