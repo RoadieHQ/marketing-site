@@ -19,7 +19,7 @@ const TeamsTier = ({
       fullWidth
     />
   ),
-  optionsForNumberOfEngineers,
+  perSeatPrices,
   numberOfEngineers,
   setNumberOfEngineers,
   currentlySetCurrency,
@@ -30,7 +30,7 @@ const TeamsTier = ({
         <TierDescription description={TIERS.teams.description} />
 
         <TeamsTierPriceDisplay
-          optionsForNumberOfEngineers={optionsForNumberOfEngineers}
+          perSeatPrices={perSeatPrices}
           numberOfEngineers={numberOfEngineers}
           setNumberOfEngineers={setNumberOfEngineers}
           currentlySetCurrency={currentlySetCurrency}
