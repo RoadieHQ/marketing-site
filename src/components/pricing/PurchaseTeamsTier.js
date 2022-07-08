@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'components';
-import { OPTIONS_FOR_NUMBER_OF_ENGINEERS } from 'components/forms/NumberOfEngineers';
+import { PER_SEAT_PRICES } from 'components/pricing/prices';
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 
 import TeamsTier from './TeamsTier';
@@ -8,7 +8,7 @@ import TeamsTier from './TeamsTier';
 import { chargebeeSubdomain } from '../../environment';
 
 const PurchaseTeamsTier = ({ currentlySetCurrency }) => {
-  const [numberOfEngineers, setNumberOfEngineers] = useState(OPTIONS_FOR_NUMBER_OF_ENGINEERS[0].id);
+  const [numberOfEngineers, setNumberOfEngineers] = useState(PER_SEAT_PRICES[0].id);
 
   const chargebeePlanName = `Roadie-Teams-Plan-${currentlySetCurrency}-Monthly`;
   const chargebeeUrl = new URL(`https://${chargebeeSubdomain()}.chargebee.com/hosted_pages/checkout`);
@@ -20,7 +20,7 @@ const PurchaseTeamsTier = ({ currentlySetCurrency }) => {
       numberOfEngineers={numberOfEngineers}
       setNumberOfEngineers={setNumberOfEngineers}
       currentlySetCurrency={currentlySetCurrency}
-      optionsForNumberOfEngineers={OPTIONS_FOR_NUMBER_OF_ENGINEERS}
+      perSeatPrices={PER_SEAT_PRICES}
       ctaHelpText="Powered by Chargebee and Stripe"
       ctaComponent={(
         <Button
