@@ -5,7 +5,7 @@ const TITLE = 'Our values';
 const LEAD = 'The Roadie values were created by the entire team at the first Roadie off-site. They come from everyone.';
 
 const VALUES = [{
-  title: 'Focussed on collaboration',
+  title: 'Focused on collaboration',
   detail:
     'We choose to work on problems together rather than apart. We take the time to ensure everyone has the context required to contribute. Titles or experience do not fully determine who gets to work on what. There are no brilliant jerks here.',
 }, {
@@ -23,7 +23,7 @@ const VALUES = [{
 }, {
   title: 'Fulfilled by autonomy',
   detail:
-    'Each person in Roadie is given a wide remit. We trust each other to deliver results without much hand holding. §Decisions are made by those closest to the issue rather than those with the most seniority. We operate as though most decisions are reversible.',
+    'Each person in Roadie is given a wide remit. We trust each other to deliver results without much hand holding. Decisions are made by those closest to the issue rather than those with the most seniority. We operate as though most decisions are reversible.',
 }];
 
 const Values = ({ title = TITLE, lead = LEAD, values = VALUES }) => (
