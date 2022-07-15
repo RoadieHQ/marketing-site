@@ -5,11 +5,16 @@ import {
   SitewideHeader,
   SitewideFooter,
 } from 'components';
-import { SidebarTestimonial as Testimonial } from 'components/landing';
+import { SidebarTestimonial } from 'components/landing';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
+
+import enriqueAvatar from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.webp';
+import enriqueAvatarPng from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.png';
+import contentfulLogo from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome-white.webp';
+import contentfulLogoPng from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome-white.png';
 
 const SEO_TITLE = 'Try hosted Spotify Backstage for free';
 
@@ -69,7 +74,21 @@ const RequestTrial = ({ data, location }) => {
         <FormWithLeftSidebar
           title="Free trial"
           description="Try Roadie Backstage free for 30 days. No credit card required. Get set up in hours."
-          sidebarChildren={<Testimonial />}
+          sidebarChildren={
+            <SidebarTestimonial
+              companyLogo={contentfulLogo}
+              companyLogoPng={contentfulLogoPng}
+              companyLogoAlt="Contentful logo"
+              quote="Roadie helps us get the most out of Backstage, while saving time and money on setup and operation."
+              avatar={{
+                webp: enriqueAvatar,
+                png: enriqueAvatarPng,
+                alt: 'The face of a man with a slight beard and glasses. He is looking up and to the right slightly.',
+              }}
+              quoteeName="Enrique Amodeo Rubio"
+              quoteeRole="Staff Software Engineer"
+            />
+          }
         >
           <ExtendedGetInstanceCallToAction
             email={email}

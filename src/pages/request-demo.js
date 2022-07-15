@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter } from 'components';
-import { SidebarTestimonial as Testimonial } from 'components/landing';
+import { SidebarTestimonial } from 'components/landing';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
+
+import crystalAvatar from '../../content/assets/home/testimonial/crystal-snyk/crystal-avatar.webp';
+import crystalAvatarPng from '../../content/assets/home/testimonial/crystal-snyk/crystal-avatar.jpeg';
+import snykLogo from '../../content/assets/home/testimonial/crystal-snyk/snyk-monochrome.webp';
+import snykLogoPng from '../../content/assets/home/testimonial/crystal-snyk/snyk-monochrome.png';
 
 const SEO_TITLE = 'Request a demo of Roadie Backstage';
 
@@ -61,7 +66,21 @@ const RequestDemo = ({ data, location }) => {
         <FormWithLeftSidebar
           title="Request a demo"
           description="Bring your team to a fully featured demo of Roadie and Backstage."
-          sidebarChildren={<Testimonial />}
+          sidebarChildren={
+            <SidebarTestimonial
+              companyLogo={snykLogo}
+              companyLogoPng={snykLogoPng}
+              companyLogoAlt="Snyk logo"
+              quote="Roadie are amazing. I totally recommend them. They’re great to work with and super responsive and helpful."
+              avatar={{
+                webp: crystalAvatar,
+                png: crystalAvatarPng,
+                alt: 'Black and white headshot of a womain with long straight hair.',
+              }}
+              quoteeName="Crystal Hirschorn"
+              quoteeRole="Director of Engineering"
+            />
+          }
         >
           <RequestDemoCallToAction
             location={location}
