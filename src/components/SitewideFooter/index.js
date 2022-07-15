@@ -3,6 +3,8 @@ import { Link } from 'components';
 import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieRacksIcon } from 'components/icons';
 import camelCase from 'lodash/camelCase';
 
+import soc2Seal from '../../../content/assets/logos/soc2/aicpa.jpg';
+
 import theme from '../../theme';
 
 const navigation = {
@@ -103,6 +105,15 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
               {navigation.social.map((item) => (
                 <SocialItem item={item} key={item.name} />
               ))}
+            </div>
+
+            <div className="flex items-center">
+              <img
+                src={soc2Seal}
+                className="mr-2 h-8 w-8"
+                alt="AICPA seal. Blue circle with the name AICPA inside."
+              />
+              <p className="text-base text-gray-500">SOC 2 Type 2 certified</p>
             </div>
           </div>
 
