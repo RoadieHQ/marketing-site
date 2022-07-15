@@ -95,7 +95,7 @@ const Doc = ({
 
             <div className="mb-6">
               <Lead size="small">
-                Roadie is SOC 2 Type 2 certified.
+                Roadie has gained SOC2 Type 2 compliance.
               </Lead>
             </div>
 

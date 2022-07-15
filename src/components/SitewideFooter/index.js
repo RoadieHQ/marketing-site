@@ -113,7 +113,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
                 className="mr-2 h-8 w-8"
                 alt="AICPA seal. Blue circle with the name AICPA inside."
               />
-              <p className="text-base text-gray-500">SOC 2 Type 2 certified</p>
+              <p className="text-base text-gray-500">Roadie has gained SOC2 Type 2 compliance</p>
             </div>
           </div>
 
