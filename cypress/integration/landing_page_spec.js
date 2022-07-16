@@ -47,6 +47,6 @@ describe('The landing page', () => {
     cy.get('#get-instance-scm-gitlab-cloud-input').check({ force: true });
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
-    cy.contains('Roadie only supports GitHub and Bitbucket for now');
+    cy.contains('Roadie only supports GitHub for now');
   });
 });
