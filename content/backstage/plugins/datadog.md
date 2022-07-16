@@ -174,7 +174,7 @@ backend:
     frame-src: 
       # Allow your Datadog URL for @roadiehq/backstage-plugin-datadog
       - 'DATADOG_SOURCE'
-      - 'DATADOG_DASBOARD_SOURCE'
+      - 'DATADOG_DASHBOARD_SOURCE'
 ```
 
 ## Security
