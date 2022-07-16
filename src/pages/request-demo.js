@@ -19,7 +19,7 @@ const SubmissionSuccessPositiveBody = () => (
 const SubmissionSuccessNegativeBody = () => (
   <>
     <p>
-      Roadie only supports GitHub and Bitbucket for now.
+      Roadie only supports GitHub for now.
     </p>
     <p>
       We are working to support more tools in the near future.
