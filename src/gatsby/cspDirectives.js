@@ -4,13 +4,22 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
   const directives = [
     "'self'",
     'https://www.googletagmanager.com',
+
+    // Required for tag manager preview mode.
+    'https://tagmanager.google.com',
     'https://www.google-analytics.com',
+
+    // Google analytics universal analytics
+    'https://ssl.google-analytics.com',
+
     // Recaptchas: https://developers.google.com/recaptcha/docs/faq
     'https://www.google.com',
     'https://www.gstatic.com',
+
     // The cookie consent we use seems to load from jsdelivr.net.
     'https://cdn.jsdelivr.net',
     'https://player.vimeo.com',
+
     // Google Tag Manager and plausible analytics will require nonces to verify script integrity.
     // There is no weasy way to generate a nonce with Netlify, so I don't have a good solution
     // for enabling CSP on these scripts. For this reason, I'm adding the unsafe-inline keyword
@@ -18,6 +27,7 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     "'unsafe-inline'",
     'https://*.cloudfront.net',
     'https://cdnjs.cloudflare.com',
+
     // Embedded tweets in blog posts etc.
     'https://platform.twitter.com',
     'https://js.chargebee.com/v2/chargebee.js',
@@ -42,6 +52,10 @@ const CSP_IMG_SRC_DIRECTIVES = [
   'https://www.google-analytics.com',
   'https://www.google.com',
   'https://www.google.ie',
+
+  // Required for google tag manager preview mode
+  'https://ssl.gstatic.com',
+  'https://www.gstatic.com',
 
   'https://cdn.loom.com',
 
@@ -120,6 +134,10 @@ const CSP_STYLE_SRC_DIRECTIVES = [
   'https://roadie.chargebee.com/assets/hp_v3/iframe_views/',
   'https://roadie-test.chargebee.com/assets/hp_v3/iframe_views/',
   'https://js.chargebee.com/v2/animation.css',
+
+  // Required for tag manager preview mode.
+  'https://tagmanager.google.com',
+  'https://fonts.googleapis.com',
 ].join(' ');
 
 const CSP_CONNECT_SRC_DIRECTIVES = [
@@ -162,6 +180,10 @@ const CSP_FONT_SRC_DIRECTIVES = [
   // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
   'https://js.intercomcdn.com',
   'https://fonts.intercomcdn.com',
+  
+  // Required for tag manager preview mode.
+  'https://fonts.gstatic.com',
+  'data:',
 ].join(' ');
 
 const CSP_CHILD_SRC_DIRECTIVES = [
