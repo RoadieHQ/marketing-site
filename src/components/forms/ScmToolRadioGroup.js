@@ -22,11 +22,11 @@ export const SCM_TOOLS = [{
 }, {
   value: 'bitbucket-cloud',
   label: 'Bitbucket Cloud',
-  supported: true,
+  supported: false,
 }, {
   value: 'bitbucket-server',
   label: 'Bitbucket Server',
-  supported: true,
+  supported: false,
 }, {
   value: 'other',
   label: 'Other',
@@ -54,7 +54,7 @@ const ScmToolRadioGroup = ({
           id={`${idPrefix}scm-${value}-input`}
         />
       ))}
-      <HelpText message="Roadie supports GitHub for now. Bitbucket support is in beta. Submit the form to be notified when we support your tool." />
+      <HelpText message="Roadie only supports GitHub for now. Submit the form to be notified when we support your tool." />
     </div>
   </fieldset>
 );
