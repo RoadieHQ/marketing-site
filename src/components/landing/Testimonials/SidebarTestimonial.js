@@ -3,21 +3,24 @@ import { QuoteIcon } from 'components/icons';
 
 import Avatar from './Avatar';
 
-import enriqueAvatar from '../../../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.webp';
-import enriqueAvatarPng from '../../../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.png';
-import contentfulLogo from '../../../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome-white.webp';
-import contentfulLogoPng from '../../../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome-white.png';
-
-const Testimonial = () => (
+const SidebarTestimonial = ({
+  companyLogoPng,
+  companyLogo,
+  companyLogoAlt,
+  quote,
+  avatar,
+  quoteeName,
+  quoteeRole,
+}) => (
   <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 lg:pr-16">
     <div className="md:flex-shrink-0">
       <picture>
-        <source srcSet={contentfulLogo} type="image/webp" />
-        <source srcSet={contentfulLogoPng} type="image/png" />
+        <source srcSet={companyLogo} type="image/webp" />
+        <source srcSet={companyLogoPng} type="image/png" />
 
         <img
-          src={contentfulLogoPng}
-          alt="Contentful logo"
+          src={companyLogoPng}
+          alt={companyLogoAlt}
           height="33"
           width="160"
         />
@@ -29,23 +32,17 @@ const Testimonial = () => (
         <QuoteIcon />
 
         <p className="relative">
-          Roadie helps us get the most out of Backstage, while saving time and money on setup and operation.
+          {quote}
         </p>
       </div>
 
       <footer className="mt-8">
         <div className="flex items-start">
-          <Avatar
-            avatar={{
-              webp: enriqueAvatar,
-              png: enriqueAvatarPng,
-              alt: `The face of a man with a slight beard and glasses. He is looking up and to the right slightly.`,
-            }}
-          />
+          <Avatar avatar={avatar} />
 
           <div className="ml-4">
-            <div className="text-base font-medium text-white">Enrique Amodeo Rubio</div>
-            <div className="text-base font-medium text-primary-200">Staff Software Engineer</div>
+            <div className="text-base font-medium text-white">{quoteeName}</div>
+            <div className="text-base font-medium text-primary-200">{quoteeRole}</div>
           </div>
         </div>
       </footer>
@@ -53,4 +50,4 @@ const Testimonial = () => (
   </div>
 );
 
-export default Testimonial;
+export default SidebarTestimonial;
