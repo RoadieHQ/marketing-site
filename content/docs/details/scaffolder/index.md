@@ -1064,6 +1064,19 @@ steps:
 
 The `debug:log` action does not have any outputs.
 
+### Conditional Steps
+You can conditionally execute a scaffolder based on an input parameter.
+
+```yaml
+steps:
+  - action: debug:log
+    id: debug-log
+    if: ${{ parameters.name }}
+    name: Log Hello World
+    input:
+      message: 'Hello, ${{ parameters.name }}!'
+```
+
 ### Other Actions
 
 You can find all the actions available to your Backstage instance by visiting the following page from within Backstage:
