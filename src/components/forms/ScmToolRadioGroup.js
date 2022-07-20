@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Radio from './Radio';
+import Input from './Input';
 import HelpText from './HelpText';
 import { INPUT_COLORS } from '.';
 
@@ -62,7 +63,7 @@ const ScmToolRadioGroup = ({
 
 export const ScmToolSelect = ({
   onChange,
-  currentValue = '',
+  currentValue,
   label = 'Primary source code host',
   idPrefix = '',
   color = 'primary',
@@ -71,30 +72,38 @@ export const ScmToolSelect = ({
   const onInputChange = (e) => {
     onChange(e.target.value);
   };
-labelStyle
+  console.log('>>>>', currentValue);
   return (
     <>
-      <label className={`block text-sm font-medium ${labelStyle}`} htmlFor="scm-tool">{label}</label>
+      <label className={`block text-sm font-medium ${labelStyle}`} htmlFor="scm-tool">
+        {label}
+      </label>
       <select
         className={`block mt-1.5 appearance-none w-full py-3 px-4 block shadow-sm rounded-md ${background} ${text} ${accent} ${border} ${placeholder}`}
         id="scm-tool"
         value={currentValue}
-        name={label}
+        name="scm-select"
         onChange={onInputChange}
       >
         {SCM_TOOLS.map(({ value, label }) => (
           <option
             key={`sct-option-${value}`}
             value={value}
-            name="scm"
+            name={`sct-option-${value}`}
             id={`${idPrefix}scm-${value}-input`}
           >
             {label}
           </option>
         ))}
       </select>
+      {/* Netlify forms won't pick up controlled select values, so we sync it to a hidden input */}
+      <div className="hidden">
+        <label htmlFor="SCM Tool">
+          <Input name="SCM Tool" id="SCM Tool" value={currentValue} />
+        </label>
+      </div>
     </>
-  )
+  );
 };
 
 export default ScmToolRadioGroup;

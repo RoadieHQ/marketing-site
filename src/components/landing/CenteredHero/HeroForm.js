@@ -153,6 +153,7 @@ const HeroForm = () => {
             text={buttonText}
             disabled={disabled}
             required={true}
+            className="font-bold tracking-wide"
           />
         </div>
 
