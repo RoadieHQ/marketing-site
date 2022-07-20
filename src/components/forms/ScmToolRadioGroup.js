@@ -73,14 +73,14 @@ export const ScmToolSelect = ({
   };
   return (
     <>
-      <label className={`block text-sm font-medium ${labelStyle}`} htmlFor="scm-select">
+      <label className={`block text-sm font-medium ${labelStyle}`} htmlFor="scm">
         {label}
       </label>
       <select
         className={`block mt-1.5 appearance-none w-full py-3 px-4 block shadow-sm rounded-md ${background} ${text} ${accent} ${border} ${placeholder}`}
-        id="scm-select"
+        id="scm"
         value={currentValue}
-        name="scm-select"
+        name="scm"
         onChange={onInputChange}
       >
         {SCM_TOOLS.map(({ value, label }) => (

@@ -8,7 +8,7 @@ export const FORM_NAMES = {
   getInstance: 'submit-get-instance-form',
   getInstanceExtended: 'submit-extended-get-instance-form',
   requestDemo: 'submit-extended-get-demo-form',
-  tryRoadieHomepage: 'submit-try-roadie-homepage'
+  tryRoadieHomepage: 'submit-extended-get-instance-form'
 };
 
 export const HONEYPOT_FIELD_NAME = 'honeybot-field';
