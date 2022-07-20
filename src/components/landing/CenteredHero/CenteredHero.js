@@ -17,7 +17,7 @@ const CenteredHero = () => {
 
               <h2 className="mt-5 text-base text-white sm:mt-8 sm:text-xl lg:text-lg xl:text-xl">
                 Roadie gives you a production Backstage instance with{' '}
-                <nobr>drag-and-drop</nobr> plugins and secure integrations. We'll also keep you up-to-date with all security updates and new features.
+                <nobr>drag-and-drop</nobr> plugins and secure integrations. We&apos;ll also keep you up-to-date with all security updates and new features.
 
               </h2>
 
