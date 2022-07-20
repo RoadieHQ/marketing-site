@@ -93,7 +93,6 @@ const HeroForm = () => {
 
     if (resp.ok) {
       setModalOpen(true);
-      console.log(resp);
       setEmail('');
     } else {
       setShowError(true);

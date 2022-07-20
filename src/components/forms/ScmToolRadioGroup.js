@@ -72,7 +72,6 @@ export const ScmToolSelect = ({
   const onInputChange = (e) => {
     onChange(e.target.value);
   };
-  console.log('>>>>', currentValue);
   return (
     <>
       <label className={`block text-sm font-medium ${labelStyle}`} htmlFor="scm-tool">
@@ -98,8 +97,9 @@ export const ScmToolSelect = ({
       </select>
       {/* Netlify forms won't pick up controlled select values, so we sync it to a hidden input */}
       <div className="hidden">
-        <label htmlFor="SCM Tool">
-          <Input name="SCM Tool" id="SCM Tool" value={currentValue} />
+        <label htmlFor="scm-tool-text">
+          SCM Tool
+          <Input name="SCM Tool" id="scm-tool-text" value={currentValue} />
         </label>
       </div>
     </>
