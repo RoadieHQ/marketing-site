@@ -1,4 +1,6 @@
 ---
+name: Update Techdocs
+
 on:
   push:
     branches:
