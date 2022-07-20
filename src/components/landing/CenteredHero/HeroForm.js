@@ -157,18 +157,18 @@ const HeroForm = () => {
         </div>
 
         <div className="sm:col-span-4">
-          <p className="text-sm text-primary-300">
+          <p className="text-sm text-white opacity-60">
             By submitting this form, you agree to our{' '}
             <Link
               to="/legal-notices/evaluation-license/"
-              className="font-medium text-primary-300 underline"
+              className="font-medium text-white underline"
             >
               Evaluation License
             </Link>{' '}
             and acknowledge you have read our{' '}
             <Link
               to="/legal-notices/privacy-notice/"
-              className="font-medium text-primary-300 underline"
+              className="font-medium text-white underline"
             >
               Privacy Notice
             </Link>

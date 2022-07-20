@@ -9,10 +9,10 @@ export const INPUT_COLORS = {
   },
   secondary: {
     accent: 'focus:ring-white focus:border-white',
-    border: 'border-primary-300',
+    border: 'border-white',
     placeholder: 'placeholder-white',
-    background: 'bg-primary-700',
+    background: 'bg-transparent',
     text: 'text-white',
-    label: 'text-primary-100',
+    label: 'text-white',
   },
 };

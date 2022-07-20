@@ -7,17 +7,17 @@ import { LOGOS } from '../CustomerLogoCloud';
 const CenteredHero = () => {
   return (
     <>
-      <div className="relative bg-gradient-to-r from-primary-600 via-primary-700 to-primary-400 overflow-x-hidden">
+      <div className="relative landing-hero-background overflow-x-hidden">
         <div className="relative pt-6 pb-0">
           <main className="mt-14 mx-auto max-w-7xl px-4 sm:mt-20 sm:px-6 lg:mt-25">
             <div className="md:max-w-4xl md:mx-auto lg:col-span-6 lg:text-left">
               <Headline size="medium" className="text-white leading-snug">
-                Set up and deploy Backstage in minutes, <br /> forget maintenance
+                Set up Backstage in minutes. <br /> Forget maintenance.
               </Headline>
 
               <h2 className="mt-5 text-base text-white sm:mt-8 sm:text-xl lg:text-lg xl:text-xl">
                 Roadie gives you a production Backstage instance with{' '}
-                <nobr>drag-and-drop</nobr> plugins and secure integrations. We&apos;ll also keep you up-to-date with all security updates and new features.
+                <nobr>drag-and-drop</nobr> plugins, secure integrations, and automatic security and feature updates.
 
               </h2>
 

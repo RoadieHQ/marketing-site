@@ -15,3 +15,10 @@
 html {
   scroll-behavior: smooth;
 }
+
+.landing-hero-background {
+  /* background: rgb(68,94,147);
+  background: linear-gradient(45deg, rgba(68,94,147,1) 0%, rgba(9,9,121,1) 76%, rgba(100,141,229,1) 100%); */
+  background: #AA351D;
+  background: linear-gradient(45deg, #E56C1A 0%, #AA351D 76%, #F97316 120%);
+}
