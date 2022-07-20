@@ -157,7 +157,7 @@ const HeroForm = () => {
         </div>
 
         <div className="sm:col-span-4">
-          <p className="text-base text-primary-300">
+          <p className="text-sm text-primary-300">
             By submitting this form, you agree to our{' '}
             <Link
               to="/legal-notices/evaluation-license/"

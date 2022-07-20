@@ -12,12 +12,12 @@ const CenteredHero = () => {
           <main className="mt-14 mx-auto max-w-7xl px-4 sm:mt-20 sm:px-6 lg:mt-25">
             <div className="md:max-w-4xl md:mx-auto lg:col-span-6 lg:text-left">
               <Headline size="medium" className="text-white leading-snug">
-                Set up and deploy Backstage in hours
+                Set up and deploy Backstage in minutes, <br /> forget maintenance
               </Headline>
 
               <h2 className="mt-5 text-base text-white sm:mt-8 sm:text-xl lg:text-lg xl:text-xl">
                 Roadie gives you a production Backstage instance with{' '}
-                <nobr>drag-and-drop</nobr> plugins and secure integrations
+                <nobr>drag-and-drop</nobr> plugins and secure integrations. We'll also keep you up-to-date with all security updates and new features.
 
               </h2>
 

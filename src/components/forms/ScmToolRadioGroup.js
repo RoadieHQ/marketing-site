@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Radio from './Radio';
-import Input from './Input';
 import HelpText from './HelpText';
 import { INPUT_COLORS } from '.';
 
