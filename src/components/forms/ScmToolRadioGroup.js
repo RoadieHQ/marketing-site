@@ -74,12 +74,12 @@ export const ScmToolSelect = ({
   };
   return (
     <>
-      <label className={`block text-sm font-medium ${labelStyle}`} htmlFor="scm-tool">
+      <label className={`block text-sm font-medium ${labelStyle}`} htmlFor="scm-select">
         {label}
       </label>
       <select
         className={`block mt-1.5 appearance-none w-full py-3 px-4 block shadow-sm rounded-md ${background} ${text} ${accent} ${border} ${placeholder}`}
-        id="scm-tool"
+        id="scm-select"
         value={currentValue}
         name="scm-select"
         onChange={onInputChange}
@@ -95,13 +95,6 @@ export const ScmToolSelect = ({
           </option>
         ))}
       </select>
-      {/* Netlify forms won't pick up controlled select values, so we sync it to a hidden input */}
-      <div className="hidden">
-        <label htmlFor="scm-tool-text">
-          SCM Tool
-          <Input name="SCM Tool" id="scm-tool-text" value={currentValue} />
-        </label>
-      </div>
     </>
   );
 };

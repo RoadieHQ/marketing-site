@@ -21,7 +21,7 @@ const submitToNetlifyForms = async ({
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
   formData.append('email', email);
-  formData.append('scm', scmTool);
+  formData.append('scm-select', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('agree-to-policies', agreeToPolicies);
@@ -51,7 +51,7 @@ const SubmissionSuccessPositiveBody = () => (
 
 const SubmissionSuccessNegativeBody = () => (
   <>
-    <p>Roadie only supports GitHub and Bitbucket for now.</p>
+    <p>Roadie only supports GitHub for now.</p>
     <p>
       We are working to support more tools in the near future. You will be among the first to know
       when we support yours.
