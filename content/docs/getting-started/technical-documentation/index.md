@@ -15,6 +15,13 @@ The TechDocs feature of Roadie Backstage allows markdown files written alongside
 
 Under the hood, Backstage uses the popular [MkDocs library](https://www.mkdocs.org/) to render documentation.
 
+## Prerequisites
+In order to write and view changes to docs locally on your system before pushing them to backstage. You can install:
+
+- NodeJS: You will need an active [LTS release of NodeJS](https://nodejs.org/en/about/releases/).
+- Docker: Please refer to the [installation instructions for Docker](https://docs.docker.com/engine/install/).
+- npx: npm install -g npx
+
 ### Step 1: Add the mkdocs configuration file
 
 Create a file called `mkdocs.yml` in the root of a component you want to document in Backstage. Inside that YAML file, add the following content, replacing `{component-name}` with the human name of your component.
@@ -86,7 +93,21 @@ spec:
 
 ⚠️  The GitHub URL **must** be prefixed with `url:` or the documentation will not render in Backstage.
 
-### Step 4: Publish your documentation
+### Step 4: Test your documentation
+You can generate / serve your docs locally to view what they would look like when they are deployed to Roadie.
+
+To generate the docs to the site directory of the project you can run the following command:
+
+```bash
+npx @techdocs/cli generate --docker-image roadiehq/techdocs
+```
+
+To start a local server at port 3000 containing the generated docs, you can run the following command:
+```bash
+npx @techdocs/cli serve --docker-image roadiehq/techdocs
+```
+
+### Step 5: Publish your documentation
 
 Commit the changes made in steps 1 through 3 to your repository. Roadie Backstage will pick up the changes shortly after they are merged to the default branch.
 
