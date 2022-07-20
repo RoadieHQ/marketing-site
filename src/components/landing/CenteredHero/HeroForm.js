@@ -21,7 +21,7 @@ const submitToNetlifyForms = async ({
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
   formData.append('email', email);
-  formData.append('scm', scmTool);
+  formData.append('scm-select', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('agree-to-policies', agreeToPolicies);
