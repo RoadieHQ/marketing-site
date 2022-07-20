@@ -16,7 +16,7 @@ The TechDocs feature of Roadie Backstage allows markdown files written alongside
 Under the hood, Backstage uses the popular [MkDocs library](https://www.mkdocs.org/) to render documentation.
 
 ## Prerequisites
-In order to write and view changes to docs locally on your system before pushing them to backstage. You can install:
+In order to write and view changes to docs you will need to install:
 
 - NodeJS: You will need an active [LTS release of NodeJS](https://nodejs.org/en/about/releases/).
 - Docker: Please refer to the [installation instructions for Docker](https://docs.docker.com/engine/install/).
