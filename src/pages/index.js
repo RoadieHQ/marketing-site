@@ -71,7 +71,7 @@ const PRODUCT = {
     {
       title: 'Keep your Backstage ever-green',
       description:
-        'All Roadie customers are running on the latest Backstage version (1.3.0). Get the latest features from the community without the maintenance burden.',
+        'Get the latest features and secutiry updates from the community without the maintenance burden.',
       illustration: {
         webp: SecurityMaintenanceIllustration,
         png: SecurityMaintenanceIllustrationPng,
@@ -85,7 +85,7 @@ const PRODUCT = {
         },
         {
           name: 'SLAs Available',
-          description: `Downtime in Backstage can cause friction in your team and hinder adoption. We offer reliability and 24/7 support.`,
+          description: `Downtime in Backstage can cause friction in your team and hinder adoption. We offer reliability and 24/7 on-call engineers.`,
           icon: ShieldCheckIcon,
         },
       ],

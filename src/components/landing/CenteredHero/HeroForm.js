@@ -4,7 +4,7 @@ import { Link, Button, TextField, Form } from 'components';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../../contactFormConstants';
 import { currentlyExecutingGitBranch } from '../../../environment';
 
-import { ScmToolSelect } from '../../forms/ScmToolRadioGroup';
+import { ScmToolSelect } from '../../forms/ScmToolSelect';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 
 const submitToNetlifyForms = async ({
