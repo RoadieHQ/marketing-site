@@ -70,7 +70,7 @@ const RequestTrial = ({ data, location }) => {
       />
 
       <div className="min-h-screen bg-white">
-        <SitewideHeader />
+        <SitewideHeader ctaText="Get a demo" ctaTo="/request-demo/" />
 
         <FormWithLeftSidebar
           title="Free trial"
