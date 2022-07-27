@@ -49,7 +49,12 @@ const learn = [{
   icon: ChatIcon,
 }];
 
-const SitewideHeader = ({ maxWidth = '7xl', borderBottom = true }) => (
+const SitewideHeader = ({
+  maxWidth = '7xl',
+  borderBottom = true,
+  ctaTo = '/free-trial/',
+  ctaText = 'Try it free',
+}) => (
   <Popover className="relative bg-white z-20">
     <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
       <div className={classnames(`flex justify-between items-center py-6 md:justify-start md:space-x-10`, {
@@ -77,8 +82,8 @@ const SitewideHeader = ({ maxWidth = '7xl', borderBottom = true }) => (
             link={true}
             color="primary"
             size="small"
-            to="/free-trial/"
-            text="Try it free"
+            to={ctaTo}
+            text={ctaText}
           />
         </div>
       </div>

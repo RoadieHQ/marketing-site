@@ -242,11 +242,9 @@ const Home = ({
   <>
     <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
-    <SitewideHeader borderBottom={false} />
+    <SitewideHeader borderBottom={false} ctaTo="/request-demo/" ctaText="Get a demo" />
 
     <CenteredHero />
-
-    {/* <CustomerLogoCloud /> */}
 
     <div className="pt-24 pb-32 bg-gray-50 relative overflow-hidden" id="product">
       <AlternatingFeatureBlock content={PRODUCT} />
