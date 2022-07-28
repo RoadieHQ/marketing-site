@@ -28,6 +28,6 @@ Go to the secrets configuration page in Backstage `https://<your-tenant>.roadie.
 
 Now that a connection to GitHub is established, you can [make yourself an admin on Roadie](/docs/getting-started/create-admin-group/).
 
-To automatically load catalog files from repositories please see [here](/docs/integrations/github-discovery/)
+To automatically load catalog files from repositories please see [how to set up GitHub Discovery](/docs/integrations/github-discovery/)
 
 To load users and groups from GitHub Teams please see [GitHub teams documentation](/docs/integrations/github-teams/).
