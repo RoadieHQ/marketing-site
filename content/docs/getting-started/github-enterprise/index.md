@@ -22,7 +22,7 @@ Create a personal access token in GitHub https://docs.github.com/en/authenticati
 
 ## Step 3: Configure the GitHub Enterprise secrets
 
-Go to the secrets configuration page in Backstage `https://<your-tenant>.roadie.so/administration/settings/secrets` and set the secrets `GHE_TOKEN`, `GHE_CLIENT_ID` and `GHE_CLIENT_SECRET`.
+Go to the secrets configuration page in Backstage `https://<your-tenant>.roadie.so/administration/settings/secrets` and set secrets `GHE_TOKEN`, `GHE_CLIENT_ID` and `GHE_CLIENT_SECRET`.
 
 ## Next steps
 
