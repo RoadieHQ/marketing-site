@@ -13,9 +13,7 @@ If your organization uses gRPC, you might be familiar with the [protoc-gen-doc](
 
 ## Steps
 
-Configure your API entity files with a `type: grpc-docs` and point your `spec.definition` to the generated protoc-gen-doc json file.
-
-That's it, now they will be rendered in your api definition page.
+To enable gRPC API docs, configure your API entity files with a `type: grpc-docs` and point your `spec.definition` to the generated `protoc-gen-doc json` file. Roadie will automatically pick up and render your API definition page.
 
 Example entity configuration
 
