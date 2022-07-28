@@ -9,9 +9,7 @@ integrationType: OSS plugin
 
 # Introduction
 
-If you or your orgnaization uses gRPC you might be familiar with the [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc) plugin.
-
-Roadie can render your protoc-gen-doc generated json files to give a better viewing experience in your api definition page.
+If your organization uses gRPC, you might be familiar with the [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc) plugin. Roadie can render your `protoc-gen-doc` generated JSON files to give a better viewing experience for your API definition page.
 
 ## Steps
 
