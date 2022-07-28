@@ -1,6 +1,6 @@
 ---
 title: Use the grpc-docs plugin with your API entities
-publishedDate: '2022-03-07T10:00:00.0Z'
+publishedDate: '2022-07-28T13:00:00.0Z'
 description: How to use type:grpc-docs on your api entities
 
 humanName: grpc-docs
