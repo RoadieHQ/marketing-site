@@ -30,4 +30,4 @@ Now that a connection to GitHub is established, you can [make yourself an admin 
 
 To automatically load catalog files from repositories please see [here](/docs/integrations/github-discovery/)
 
-To load users and groups from GitHub Teams please see [here](/docs/integrations/github-teams/).
+To load users and groups from GitHub Teams please see [GitHub teams documentation](/docs/integrations/github-teams/).
