@@ -7,7 +7,6 @@ plugins:
 nav:
   - Getting started:
     - Installing the GitHub app: '/docs/getting-started/install-github-app/'
-    - Configure GitHub Enterprise: '/docs/getting-started/github-enterprise/'
     - Adding components: '/docs/getting-started/adding-components/'
     - Using TechDocs: '/docs/getting-started/technical-documentation/'
     - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
@@ -59,6 +58,7 @@ nav:
     - Proxy: '/docs/custom-plugins/proxy/'
   - In-depth:
     - GtHub app permissions: '/docs/details/github-app-permissions/'
+    - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
     - Setting secrets: '/docs/details/setting-secrets/'
     - Updating the UI: '/docs/details/updating-the-ui/'
     - Accessing AWS resources: '/docs/details/accessing-aws-resources/'

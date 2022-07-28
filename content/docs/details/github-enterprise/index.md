@@ -10,7 +10,8 @@ This tutorial will guide you through the steps required to connect Roadie to you
 
 ## Prerequisites
 
-Please let the Roadie support team know about your intention to configure GitHub enterprise, because we need to do some manual steps to enable it for you.
+- Please let the Roadie support team know about your intention to configure GitHub enterprise, because we need to do some manual steps to enable it for you.
+- You will need to ensure that the GitHub Enterprise instance is available to our IP addresses published [here](/docs/details/allowlisting-roadie-traffic/): 
 
 ## Step 1: Create an OAuth App in GitHub
 
