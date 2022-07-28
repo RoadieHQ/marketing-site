@@ -26,9 +26,7 @@ Example entity configuration
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: api
-  description: |
-    This component tests the grpc-docs functionality of backstage
+  name: unquie-api-1
 spec:
   type: grpc-docs
   lifecycle: production
