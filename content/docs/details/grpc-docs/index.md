@@ -4,7 +4,6 @@ publishedDate: '2022-03-07T10:00:00.0Z'
 description: How to use type:grpc-docs on your api entities
 
 humanName: grpc-docs
-# logoImage: '../../../assets/logos/grafana/grafana.png'
 integrationType: OSS plugin
 ---
 
