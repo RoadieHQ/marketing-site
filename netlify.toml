@@ -94,3 +94,9 @@
   from = "/security/responsible-disclosure/"
   to = "/"
   force = true
+
+# We'll create a dedicated landing page for people coming from KubeCon 
+[[redirects]]
+  from = "/kubernetes/"
+  to = "/backstage/plugins/kubernetes/"
+  force = true
