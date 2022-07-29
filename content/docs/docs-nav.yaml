@@ -57,7 +57,7 @@ nav:
     - Configuring: '/docs/custom-plugins/configuring/'
     - Proxy: '/docs/custom-plugins/proxy/'
   - In-depth:
-    - GtHub app permissions: '/docs/details/github-app-permissions/'
+    - GitHub app permissions: '/docs/details/github-app-permissions/'
     - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
     - Setting secrets: '/docs/details/setting-secrets/'
     - Updating the UI: '/docs/details/updating-the-ui/'
