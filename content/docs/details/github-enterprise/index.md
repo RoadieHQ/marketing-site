@@ -19,7 +19,7 @@ Create an OAuth App in GitHub https://docs.github.com/en/developers/apps/buildin
 
 ## Step 2: Create a personal access token
 
-Create a personal access token in GitHub https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token.
+Create a personal access token in GitHub with the `repo` permissions. https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token.
 
 ## Step 3: Configure the GitHub Enterprise secrets
 
