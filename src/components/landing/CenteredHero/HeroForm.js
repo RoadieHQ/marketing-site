@@ -50,11 +50,10 @@ const SubmissionSuccessPositiveBody = () => (
 );
 
 const SubmissionSuccessNegativeBody = () => (
-  <>
-    <p>
-      Unfortunately, we only support Github Cloud and Github on-prem at the moment. Providing support for Bitbucket users is in next in our roadmap. We&apos;ll let you know when we&apos;re ready to onboard you.
-    </p>
-  </>
+  <p>
+    Unfortunately, Roadie only supports GitHub for now. Providing support for Bitbucket users is
+    next in our roadmap. We&apos;ll let you know when we&apos;re ready to onboard you.
+  </p>
 );
 
 const HeroForm = () => {
@@ -164,10 +163,7 @@ const HeroForm = () => {
               Evaluation License
             </Link>{' '}
             and acknowledge you have read our{' '}
-            <Link
-              to="/legal-notices/privacy-notice/"
-              className="font-medium text-white underline"
-            >
+            <Link to="/legal-notices/privacy-notice/" className="font-medium text-white underline">
               Privacy Notice
             </Link>
             .
