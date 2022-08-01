@@ -1,12 +1,14 @@
 describe('The landing page', () => {
-  it('has a flow for requesting a demo', () => {
+  beforeEach(() => {
     // We have to stub beause netlify forms don't work in this environment.
     cy.intercept('POST', 'http://localhost:8001', {
       statusCode: 200,
     });
+  });
 
+  it('has a flow for requesting a demo', () => {
     cy.visit('');
-    cy.contains('Request a demo').click();
+    cy.contains('Get a demo').click();
 
     cy.get('#request-demo-name-input').type('Mary Mac');
     cy.get('#request-demo-email-input').type('test@example.com');
@@ -16,37 +18,20 @@ describe('The landing page', () => {
   });
 
   it('has a flow for getting a free trial', () => {
-    // We have to stub beause netlify forms don't work in this environment.
-    cy.intercept('POST', 'http://localhost:8001', {
-      statusCode: 200,
-    });
-
     cy.visit('');
-    cy.contains('Try it free').click();
-    cy.url().should('contain', '/free-trial/');
 
     cy.get('#get-instance-email-input').type('test@example.com');
-    cy.get('button[data-testid="agree-to-policies"]').click();
-    cy.contains('Request a trial').click();
+    cy.get('#scm').select('github-on-prem');
+    cy.contains('Try Roadie Backstage').click();
     cy.contains('Thank you for requesting a free trial of Roadie Backstage');
   });
 
   it('has a flow for rejecting users who use unsupported SCMs', () => {
-    // We have to stub beause netlify forms don't work in this environment.
-    cy.intercept('POST', 'http://localhost:8001', {
-      statusCode: 200,
-    });
-
     cy.visit('');
-    cy.contains('Try it free').click();
-    cy.url().should('contain', '/free-trial/');
 
     cy.get('#get-instance-email-input').type('test@example.com');
-    // This is a custom CSS checkbox which is technically invisble. Cypress
-    // complains so we have to force it.
-    cy.get('#get-instance-scm-gitlab-cloud-input').check({ force: true });
-    cy.get('button[data-testid="agree-to-policies"]').click();
-    cy.contains('Request a trial').click();
+    cy.get('#scm').select('gitlab-on-prem');
+    cy.contains('Try Roadie Backstage').click();
     cy.contains('Roadie only supports GitHub for now');
   });
 });

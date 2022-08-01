@@ -69,7 +69,7 @@ const FormSubmissionModal = ({
   ),
   siteMetadata = {
     social: {
-      twitter: 'https://twitter.com/roadiehq',
+      twitter: 'roadiehq',
     },
   },
   followOn = 'NEWSLETTER_AND_TWITTER',

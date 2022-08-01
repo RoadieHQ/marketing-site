@@ -17,63 +17,83 @@ import MyFitnessPalLogoPng from '../../../content/assets/home/customer-logos/myf
 import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochrome.webp';
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
 
-const LOGOS = [{
-  src: {
-    webp: SnykLogo,
-    png: SnykLogoPng,
+import HopperWhiteLogo from '../../../content/assets/home/customer-logos-white/hopper.png';
+import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.svg';
+import SnykWhiteLogo from '../../../content/assets/home/customer-logos-white/snyk.png';
+import TrackunitWhiteLogo from '../../../content/assets/home/customer-logos-white/trackunit.png';
+import MyFitnessPalWhiteLogo from '../../../content/assets/home/customer-logos-white/myfitnesspal.png';
+
+export const LOGOS = [
+  {
+    src: {
+      webp: SnykLogo,
+      png: SnykLogoPng,
+      white: SnykWhiteLogo,
+    },
+    alt: 'Snyk logo',
+    title: '~150 engineers',
   },
-  alt: 'Snyk logo',
-  title: '~150 engineers',
-}, {
-  src: {
-    webp: ContentfulLogo,
-    png: ContentfulLogoPng,
+  {
+    src: {
+      webp: ContentfulLogo,
+      png: ContentfulLogoPng,
+      white: ContentfulWhiteLogo,
+    },
+    alt: 'Contentful logo',
+    title: '~150 engineers',
   },
-  alt: 'Contentful logo',
-  title: '~150 engineers',
-}, {
-  src: {
-    webp: HopperLogo,
-    png: HopperLogoPng,
+  {
+    src: {
+      webp: HopperLogo,
+      png: HopperLogoPng,
+      white: HopperWhiteLogo,
+    },
+    alt: 'Hopper logo',
+    title: '~200 engineers',
   },
-  alt: 'Hopper logo',
-  title: '~200 engineers',
-}, {
-  src: {
-    webp: TrackunitLogo,
-    png: TrackunitLogoPng,
+  {
+    src: {
+      webp: MyFitnessPalLogo,
+      png: MyFitnessPalLogoPng,
+      white: MyFitnessPalWhiteLogo,
+    },
+    alt: 'MyFitnessPal logo',
+    title: '~100 engineers',
   },
-  alt: 'Trackunit logo',
-  title: '~70 engineers',
-}, {
-  src: {
-    webp: NcsaLogo,
-    png: NcsaLogoPng,
+  {
+    src: {
+      webp: TrackunitLogo,
+      png: TrackunitLogoPng,
+      white: TrackunitWhiteLogo,
+    },
+    alt: 'Trackunit logo',
+    title: '~70 engineers',
   },
-  alt: 'NCSA logo',
-  title: '~50 engineers',
-}, {
-  src: {
-    webp: StreamElementsLogo,
-    png: StreamElementsLogoPng,
+  {
+    src: {
+      webp: NcsaLogo,
+      png: NcsaLogoPng,
+    },
+    alt: 'NCSA logo',
+    title: '~50 engineers',
   },
-  alt: 'StreamElements logo',
-  title: '~50 engineers',
-}, {
-  src: {
-    webp: MyFitnessPalLogo,
-    png: MyFitnessPalLogoPng,
+  {
+    src: {
+      webp: StreamElementsLogo,
+      png: StreamElementsLogoPng,
+    },
+    alt: 'StreamElements logo',
+    title: '~50 engineers',
   },
-  alt: 'MyFitnessPal logo',
-  title: '~100 engineers',
-}, {
-  src: {
-    webp: YotpoLogo,
-    png: YotpoLogoPng,
+  {
+    src: {
+      webp: YotpoLogo,
+      png: YotpoLogoPng,
+    },
+    alt: 'Yotpo logo',
+    title: '~250 engineers',
   },
-  alt: 'Yotpo logo',
-  title: '~250 engineers',
-}];
+];
 
 /* eslint-disable jsx-a11y/alt-text */
 export const LogoItem = ({ src, ...rest }) => (

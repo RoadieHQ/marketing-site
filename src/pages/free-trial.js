@@ -20,13 +20,14 @@ const SEO_TITLE = 'Try hosted Spotify Backstage for free';
 
 const SubmissionSuccessPositiveBody = () => (
   <p>
-    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via
-    the email provided.
+    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via the email
+    provided.
   </p>
 );
 
 const SubmissionSuccessNegativeBody = () => (
   <>
+    <p>Roadie only supports GitHub and Bitbucket for now.</p>
     <p>
       Roadie only supports GitHub for now.
     </p>
@@ -69,7 +70,7 @@ const RequestTrial = ({ data, location }) => {
       />
 
       <div className="min-h-screen bg-white">
-        <SitewideHeader />
+        <SitewideHeader ctaText="Get a demo" ctaTo="/request-demo/" />
 
         <FormWithLeftSidebar
           title="Free trial"

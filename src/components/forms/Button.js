@@ -42,7 +42,7 @@ const Button = ({
       >
         <Link
           className={
-            classnames(baseClassName, {
+            classnames(className, baseClassName, {
               [primaryBaseClass]: color === 'primary',
               [secondaryBaseClass]: color === 'secondary',
               [insetBaseClass]: color === 'inset',
@@ -64,7 +64,7 @@ const Button = ({
 
   return (
     <button
-      className={classnames(baseClassName, buttonBaseClassName, {
+      className={classnames(className, baseClassName, buttonBaseClassName, {
         [`${primaryBaseClass} focus:ring-primary-500`]: color === 'primary',
         [secondaryBaseClass]: color === 'secondary',
         [insetBaseClass]: color === 'inset',
