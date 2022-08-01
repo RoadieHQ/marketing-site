@@ -51,11 +51,8 @@ const SubmissionSuccessPositiveBody = () => (
 
 const SubmissionSuccessNegativeBody = (scmTool) => (
   <>
-    <p>Roadie is not ready for your</p>
     <p>
-      Unfortunately, we only support Github Cloud and Github on-prem at the moment.
-      {(scmTool === 'bitbucket-cloud' || scmTool === 'bitbucket-server') && 'Providing support for Bitbucket users is in next in our roadmap. '}
-      We&apos;ll let you know when we&apos;re ready to onboard you.
+      Unfortunately, we only support Github Cloud and Github on-prem at the moment. Providing support for Bitbucket users is in next in our roadmap. We&apos;ll let you know when we&apos;re ready to onboard you.
     </p>
   </>
 );
