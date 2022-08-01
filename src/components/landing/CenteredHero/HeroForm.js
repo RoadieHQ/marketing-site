@@ -21,7 +21,7 @@ const submitToNetlifyForms = async ({
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
   formData.append('email', email);
-  formData.append('scm-select', scmTool);
+  formData.append('scm', scmTool);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('agree-to-policies', agreeToPolicies);
@@ -49,12 +49,13 @@ const SubmissionSuccessPositiveBody = () => (
   </p>
 );
 
-const SubmissionSuccessNegativeBody = () => (
+const SubmissionSuccessNegativeBody = (scmTool) => (
   <>
-    <p>Roadie only supports GitHub for now.</p>
+    <p>Roadie is not ready for your</p>
     <p>
-      We are working to support more tools in the near future. You will be among the first to know
-      when we support yours.
+      Unfortunately, we only support Github Cloud and Github on-prem at the moment.
+      {(scmTool === 'bitbucket-cloud' || scmTool === 'bitbucket-server') && 'Providing support for Bitbucket users is in next in our roadmap. '}
+      We&apos;ll let you know when we&apos;re ready to onboard you.
     </p>
   </>
 );
@@ -111,7 +112,7 @@ const HeroForm = () => {
         positiveTitle="We'll be in touch!"
         positiveBody={<SubmissionSuccessPositiveBody />}
         negativeTitle="Watch this space!"
-        negativeBody={<SubmissionSuccessNegativeBody />}
+        negativeBody={<SubmissionSuccessNegativeBody scmTool={scmTool} />}
       />
       <Form
         onSubmit={onSubmit}
