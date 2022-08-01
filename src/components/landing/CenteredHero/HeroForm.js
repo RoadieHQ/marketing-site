@@ -49,7 +49,7 @@ const SubmissionSuccessPositiveBody = () => (
   </p>
 );
 
-const SubmissionSuccessNegativeBody = (scmTool) => (
+const SubmissionSuccessNegativeBody = () => (
   <>
     <p>
       Unfortunately, we only support Github Cloud and Github on-prem at the moment. Providing support for Bitbucket users is in next in our roadmap. We&apos;ll let you know when we&apos;re ready to onboard you.
