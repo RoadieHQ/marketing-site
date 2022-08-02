@@ -4,7 +4,7 @@ publishedDate: '2022-08-02T17:00:00.0Z'
 description: How to configure Roadie to collect users from Okta.
 
 humanName: Okta
-logoImage: '../../../assets/logos/okta.png'
+logoImage: '../../../assets/logos/okta_logo.png'
 integrationType: OSS plugin
 ---
 
