@@ -9,9 +9,7 @@ integrationType: OSS plugin
 
 ## Introduction
 
-In order to use the Okta organization entity plugin, Roadie needs an API token, and the organization url to communicate with Okta APIs.
-
-This page describes how to create and set up the API token.
+In order to use the Okta organization plugin, Roadie needs an Okta API token, and the organization URL to communicate with Okta APIs. On this page, you'll learn how to set up this API token in your Roadie Admin panel. 
 
 ## Prerequisites
 You will need to [configure an Okta API token](https://developer.okta.com/docs/guides/create-an-api-token/) for use by Backstage.
