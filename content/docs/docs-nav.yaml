@@ -32,6 +32,7 @@ nav:
     - IFrame: '/docs/integrations/iframe'
     - Jenkins: '/docs/integrations/jenkins/'
     - Jira: '/docs/integrations/jira/'
+    - Okta: '/docs/integrations/okta/'
     - Kubernetes: '/docs/integrations/kubernetes/'
     - Lighthouse: '/docs/integrations/lighthouse/'
     - Newrelic: '/docs/integrations/newrelic/'
