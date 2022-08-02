@@ -18,7 +18,7 @@ Obtain an [Okta API token](https://developer.okta.com/docs/guides/create-an-api-
 
 ### Step 1: Set the Okta API token
 
-Visit the secrets page in the Backstage UI and set the `OKTA_TOKEN` secret.
+Set the `OKTA_TOKEN` secret in the secrete manager of your Roadie Backstage Admin panel, located in the following path:
 
 ```text
 https://<tenant-name>.roadie.so/administration/settings/secrets
