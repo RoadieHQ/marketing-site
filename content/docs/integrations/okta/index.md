@@ -26,7 +26,7 @@ https://<tenant-name>.roadie.so/administration/settings/secrets
 
 ### Step 2: Set the Okta Organization URL
 
-Visit the Okta configuration page in Backstage and set the Organization URL.
+Set the Okta Organization URL in the Okta configuration page of your Roadie Backstage Admin panel, located in the following path:
 ```text
 https://<tenant-name>.roadie.so/administration/settings/okta
 ```
