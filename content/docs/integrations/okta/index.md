@@ -11,12 +11,13 @@ integrationType: OSS plugin
 
 In order to use the Okta organization plugin, Roadie needs an Okta API token, and the organization URL to communicate with Okta APIs. On this page, you'll learn how to set up this API token in your Roadie Admin panel. 
 
-## Prerequisites
-Obtain an [Okta API token](https://developer.okta.com/docs/guides/create-an-api-token/) to use with Roadie Backstage. 
 
 ## Steps
 
-### Step 1: Set the Okta API token
+### Step 1: Obtain an Okta API token
+Obtain an [Okta API token](https://developer.okta.com/docs/guides/create-an-api-token/) to use with Roadie Backstage.
+
+### Step 2: Set the Okta API token
 
 Set the `OKTA_TOKEN` secret in the secrete manager of your Roadie Backstage Admin panel, located in the following path:
 
@@ -24,7 +25,7 @@ Set the `OKTA_TOKEN` secret in the secrete manager of your Roadie Backstage Admi
 https://<tenant-name>.roadie.so/administration/settings/secrets
 ```
 
-### Step 2: Set the Okta Organization URL
+### Step 3: Set the Okta Organization URL
 
 Set the Okta Organization URL in the Okta configuration page of your Roadie Backstage Admin panel, located in the following path:
 ```text
