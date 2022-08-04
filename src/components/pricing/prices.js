@@ -1,4 +1,4 @@
-export const USD_TO_EUR_EXCHANGE_RATE = 0.98;
+export const USD_TO_EUR_EXCHANGE_RATE = 1;
 
 export const PER_SEAT_PRICES = [
   Object.freeze({
