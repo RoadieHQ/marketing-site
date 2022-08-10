@@ -28,7 +28,7 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and ente
 
 ### Step 3: Enable private or public Stackoverflow configuration
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/stackoverflow` and select private checkbox for private Stackoverflow Teams. You also need to set up the base API URL for Stackoverflow, which is in most cases, including private Teams integration, `https://api.stackexchange.com/2.2`
+Visit `https://<tenant-name>.roadie.so/administration/settings/stackoverflow` and select the private checkbox for private Stackoverflow Teams, leave it unselected for public Stackoverflow instance. You also need to set up the base API URL for Stackoverflow. The URL in most cases, including private Teams integration, will be `https://api.stackexchange.com/2.2`
 
 ## Add Stackoverflow card to your HomePage
 
