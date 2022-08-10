@@ -37,7 +37,7 @@ https://<tenant-name>.roadie.so/administration/settings/okta
 
 ## Data
 
-This plugin uses the email from Users and the name and description from Groups. It will ingest all groups and all users in your Okta organisation. 
+It will ingest a subset of data for all groups and all users in your Okta organisation. 
 
 ## References
 
