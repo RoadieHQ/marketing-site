@@ -10,6 +10,8 @@ integrationType: OSS plugin
 
 ## Introduction
 
+Roadie Backstage can automatically ingest users and groups for your organisation from a few sources. One of these is [Okta](https://www.okta.com/) where you may already have all your users and groups/teams defined.
+
 In order to use the Okta organization plugin, Roadie needs an Okta API token, and the organization URL to communicate with Okta's APIs. On this page, you'll learn how to set up these two fields in your Roadie Admin panel. 
 
 
@@ -32,6 +34,10 @@ Set the Okta Organization URL in the Okta configuration page of your Roadie Back
 ```text
 https://<tenant-name>.roadie.so/administration/settings/okta
 ```
+
+## Data
+
+This plugin uses the email from Users and the name and description from Groups. It will ingest all groups and all users in your Okta organisation. 
 
 ## References
 
