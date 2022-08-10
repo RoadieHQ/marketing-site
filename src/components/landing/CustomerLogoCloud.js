@@ -16,6 +16,8 @@ import MyFitnessPalLogo from '../../../content/assets/home/customer-logos/myfitn
 import MyFitnessPalLogoPng from '../../../content/assets/home/customer-logos/myfitnesspal-monochrome.png';
 import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochrome.webp';
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
+import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-monochrome.webp';
+import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
 
 import HopperWhiteLogo from '../../../content/assets/home/customer-logos-white/hopper.png';
 import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.svg';
@@ -34,6 +36,8 @@ export const LOGOS = [
   },
   {
     src: {
+      webp: NetlifyLogo,
+      png: NetlifyLogoPng,
       white: NetlifyWhiteLogo,
     },
     alt: 'Netlify logo',
@@ -117,7 +121,7 @@ const CustomerLogoCloud = ({ logos = LOGOS }) => (
       </div>
 
       <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-        {logos.map((logo) => (
+        {logos.slice(0, 8).map((logo) => (
           <div className="col-span-1 flex justify-center" key={logo.src.png}>
             <LogoItem {...logo} className="h-10" />
           </div>
