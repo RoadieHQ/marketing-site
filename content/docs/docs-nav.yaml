@@ -43,6 +43,7 @@ nav:
     - Shortcut: '/docs/integrations/shortcut-plugin/'
     - Snyk: '/docs/integrations/snyk/'
     - Sonarqube: '/docs/integrations/sonarqube/'
+    - Stackoverflow: '/docs/integrations/stackoverflow'
     - Travis CI: '/docs/integrations/travis-ci/'
     - Tech radar: '/docs/integrations/tech-radar/'
     - Cortex: '/docs/integrations/cortex'

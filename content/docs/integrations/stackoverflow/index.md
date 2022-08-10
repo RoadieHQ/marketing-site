@@ -1,0 +1,71 @@
+---
+title: Stackoverflow Plugin
+publishedDate: '2022-06-09T10:00:00.0Z'
+description: How to enable the Stackoverflow plugin
+
+humanName: Stackoverflow Plugin
+logoImage: '../../../assets/logos/stackoverflow/so-logo.png'
+integrationType: OSS plugin
+---
+
+## Introduction
+
+Roadie provides integration to display public and private Stackoverflow questions and answers on the homepage. To configure this plugin for a private Stackoverflow Teams subscription, you need to be able to generate an API key for Stackoverflow. To have the possibility to generate an API key, you will need to have at least 'Basic' level subscription to Stackoverflow Teams.
+
+## Authentication
+
+The Stackoverflow API uses token-based authentication so in order to retrieve results you will need it. Follow the steps below in order to set it.
+
+### Step 1: Generate an API token
+
+To generate an API token, follow the instruction outlined in [the official documentation for Stackoverflow teams](https://stackoverflow.help/en/articles/4385859-stack-overflow-for-teams-api).
+
+Click on the "Generate token" button.
+
+### Step 2: Store the token in Roadie
+
+Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the API key value from above into `STACKOVERFLOW_API_KEY`.
+
+### Step 3: Enable private or public Stackoverflow configuration
+
+Visit `https://<tenant-name>.roadie.so/administration/settings/stackoverflow` and select private checkbox for private Stackoverflow Teams. You also need to set up the base API URL for Stackoverflow, which is in most cases, including private Teams integration, `https://api.stackexchange.com/2.2`
+
+## Add Stackoverflow card to your HomePage
+
+Now, when you added access token, you are ready to go. Follow the steps below in order to add the Shortcut plugin to your Homepage card.
+
+### Setup
+
+To use this plugin make sure you already have the [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) enabled.
+
+### Add Stackoverflow card to your homepage
+
+#### 1.  To enable this plugin go to your `Home` page via the sidebar.
+
+Once you are on the home page click on the cogwheel icon.
+
+![cog icon leading to adding cards in home page](cog.png)
+
+#### 2.  Click the plus sign to add a new Card.
+![add new card plus sign](plus-homepage.png)
+
+#### 3.  Select `HomePageStackOverflowQuestions` from the list.
+![add stackoverflow card](homepage-add-card.png)
+
+#### 4. Set up correct props for your Stackoverflow card.
+    
+The Stackoverflow Homepage card makes heavy use of custom props to set up correct queries and what to display.
+For private Stackoverflow instance you need to define your public Stackoverlow account key and the URL for your Stackoverflow Teams. ![Stackoverflow props](props.png)
+
+You can also optionally append filters to the query like `"tagged": "backstage"` to display only questions that have a tag `backstage`. For public Stackoverflow instances the key and URL props can be omitted.
+
+After you have set up props for your homepage card you should see card like this:
+![Stackoverflow card](card.png)
+
+
+## References
+
+- [Backstage Stackoverflow Plugin](https://github.com/backstage/backstage/tree/master/plugins/stack-overflow)
+- [Official API token generation instructions](https://stackoverflow.help/en/articles/4385859-stack-overflow-for-teams-api)
+- [Stackoverflow API explorer docs](https://api.stackexchange.com/docs/)
+
