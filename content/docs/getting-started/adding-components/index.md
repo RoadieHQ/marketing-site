@@ -65,6 +65,11 @@ You can check this by going to the Github settings of a repo that Backstage alre
 
 ![repo permissions](./repopermissions.png)
 
+
+**Something Else?**
+
+You can find more [common catalog issues and their fixes here](/docs/details/troubleshooting-the-catalog/). 
+
 ## What Next? 
 
 Let's [add some docs to the component we just created](/docs/getting-started/technical-documentation/) so that others in your organization can easily learn how to use it.
