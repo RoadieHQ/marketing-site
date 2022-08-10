@@ -20,8 +20,7 @@ import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-mono
 import HopperWhiteLogo from '../../../content/assets/home/customer-logos-white/hopper.png';
 import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.svg';
 import SnykWhiteLogo from '../../../content/assets/home/customer-logos-white/snyk.png';
-import TrackunitWhiteLogo from '../../../content/assets/home/customer-logos-white/trackunit.png';
-import MyFitnessPalWhiteLogo from '../../../content/assets/home/customer-logos-white/myfitnesspal.png';
+import NetlifyWhiteLogo from '../../../content/assets/home/customer-logos-white/netlify.png';
 
 export const LOGOS = [
   {
@@ -32,6 +31,13 @@ export const LOGOS = [
     },
     alt: 'Snyk logo',
     title: '~150 engineers',
+  },
+  {
+    src: {
+      white: NetlifyWhiteLogo,
+    },
+    alt: 'Netlify logo',
+    title: '~100 engineers',
   },
   {
     src: {
@@ -55,7 +61,6 @@ export const LOGOS = [
     src: {
       webp: MyFitnessPalLogo,
       png: MyFitnessPalLogoPng,
-      white: MyFitnessPalWhiteLogo,
     },
     alt: 'MyFitnessPal logo',
     title: '~100 engineers',
@@ -64,7 +69,6 @@ export const LOGOS = [
     src: {
       webp: TrackunitLogo,
       png: TrackunitLogoPng,
-      white: TrackunitWhiteLogo,
     },
     alt: 'Trackunit logo',
     title: '~70 engineers',
