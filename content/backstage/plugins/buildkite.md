@@ -3,8 +3,7 @@ humanName: Buildkite
 heading: 'Backstage Buildkite Plugin'
 lead: 'See Buildkite Builds in Backstage'
 attribution:
-  text: Roadie
-  href: https://roadie.io
+  text: Roadie, officially approved by Buildkite.
 
 seo:
   # Don't forget to end with "| Roadie"

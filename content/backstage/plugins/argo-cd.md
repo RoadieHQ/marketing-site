@@ -4,8 +4,7 @@ heading: 'Backstage Argo CD Plugin'
 # Keep it short
 lead: 'See Argo CD status in Backstage'
 attribution:
-  text: Roadie in collaboration with American Airlines
-  href: https://roadie.io
+  text: Roadie, in collaboration with American Airlines
 
 seo:
   # Don't forget to end with "| Roadie"
