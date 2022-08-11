@@ -12,26 +12,6 @@ integrationType: OSS plugin
 
 This is a plugin that renders an Iframe card that can be added to your component/homepage.
 
-## Add IFrame card to your Component
-
-1.  In Roadie, find and select the service via the Component Catalog or Search.
-    Once you are there, please click the cog item.
-
-    ![cogwheel](cog.png)
-
-2.  Click the plus sign to add a new Card.
-    ![plus](plus.png)
-
-3.  Select `EntityIFrameCard` from the list.
-    ![card](entity-card.png)
-
-    Click add.
-
-You should now see a card like this:
-![](no-props.png)
-
-This can be configured with [this](./#configure-iframe-props) section.
-
 ## Add IFrame card to your HomePage
 
 ### Setup
@@ -90,8 +70,25 @@ Now it should load and render the iframe card as per your specifications.
 Based on what you enter, the card should now look similar to this.
 ![card](card.png)
 
-## Add IFrame card to your Entity Page
-You may also add the IFrameCard to an entity page. It works in the same way as the Homepage IFrame card except that it can take the option `src` or `srcFromAnnotation`.
+## Add IFrame card to your Component
+
+1.  In Roadie, find and select the service via the Component Catalog or Search.
+    Once you are there, please click the cog item.
+
+    ![cogwheel](cog.png)
+
+2.  Click the plus sign to add a new Card.
+    ![plus](plus.png)
+
+3.  Select `EntityIFrameCard` from the list.
+    ![card](entity-card.png)
+
+    Click add.
+
+You should now see a card like this:
+![](no-props.png)
+
+It works in the same way as the Homepage IFrame card except that it can take the option `src` or `srcFromAnnotation`.
 
 - `src` is url location of the iframe
 - `srcFromAnnotation` is a refernce to an entity annotation containing a source url for the iframe.
