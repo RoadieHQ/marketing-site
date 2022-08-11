@@ -59,7 +59,7 @@ You should now see a card like this:
 
 This can be configured with [this](./#configure-iframe-props) section.
 
-## Configure Iframe props
+### Configure Iframe Homepage props
 
 Now configure the props of the plugin to display the correct url for your Iframe.
 
@@ -89,6 +89,12 @@ Now it should load and render the iframe card as per your specifications.
 
 Based on what you enter, the card should now look similar to this.
 ![card](card.png)
+
+## Add IFrame card to your Entity Page
+You may also add the IFrameCard to an entity page. It works in the same way as the Homepage IFrame card except that it can take the option `src` or `srcFromAnnotation`.
+
+- `src` is url location of the iframe
+- `srcFromAnnotation` is a refernce to an entity annotation containing a source url for the iframe.
 
 ## Note
 
