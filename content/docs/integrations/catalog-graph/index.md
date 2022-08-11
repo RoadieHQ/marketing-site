@@ -26,6 +26,59 @@ Select the EntityCatalogGraph card from the drop down and click Add. Press save 
 
 ![select_catalog_graph.png](./select_catalog_graph.png)
 
+## Add an Overview page
+
+You can also create a page in the sidebar that graphs your whole organisation or a section of it using the CatalogGraphPage component. 
+
+To make this work you need to supply some custom props when adding the card. The minimum needed is a rootEntityRef. 
+
+If you have created them already, `domains` or core `systems` can be a good way to group all the software together and graph it by specifying them as root entity references:
+
+```json
+{
+  "initialState": {
+    "rootEntityRefs": [
+      "domain:<a top level domain>"
+    ]
+  }
+}
+```
+
+If you have not created systems or domains yet you can read more [here](https://roadie.io/blog/modelling-software-backstage) and [here](https://backstage.io/docs/features/software-catalog/descriptor-format#kind-domain).
+
+The Overview page can be further customized to only show certain types of dependencies or kinds of entity using the following include lists:
+
+```json
+{
+  "initialState": {
+    "rootEntityRefs": [
+      "domain:<a top level domain>"
+    ],
+    "selectedRelations": [
+      "ownerOf",
+      "ownedBy",
+      "consumesApi",
+      "apiConsumedBy",
+      "providesApi",
+      "apiProvidedBy",
+      "dependsOn",
+      "dependencyOf",
+      "parentOf",
+      "childOf",
+      "memberOf"
+    ],
+    "selectedKinds": [
+      "component",
+      "domain",
+      "system",
+      "api",
+      "group"
+    ]
+  }
+}
+```
+
+See the full [schema of usable filters here](https://backstage.io/docs/reference/plugin-catalog-graph.cataloggraphpage).
 
 ## Viewing the graph and navigating through the relationships.
 
@@ -43,7 +96,7 @@ If you can't see any connections to your component you will first need to define
 component yaml files as explained here https://roadie.io/blog/modeling-software-backstage/.
 
 
-### Customize graph parameters.
+### Customizing graph parameters.
 
 In order to customize the breadth and depth of the graph on your dashboards you can click the cog icon at the top right 
 of the page and then the spanner icon in the top right of the card.
