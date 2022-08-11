@@ -3,8 +3,11 @@ import { Headline } from 'components';
 import CatalogScreenshot from '../../../../static/images/landing/screenshot-catalog.png';
 import HeroForm from './HeroForm';
 import { LOGOS } from '../CustomerLogoCloud';
+import has from 'lodash/has';
 
 const CenteredHero = () => {
+  const whiteLogos = [...LOGOS].filter(({ src }) => has(src, 'white')).slice(0, 4);
+
   return (
     <>
       <div className="relative landing-hero-background overflow-x-hidden">
@@ -24,8 +27,13 @@ const CenteredHero = () => {
               <div className="mt-5 md:mt-8">
                 <HeroForm />
                 <div className="flex-wrap mt-5 md:mt-20 sm:col-span-6 sm:flex-nowrap flex center justify-between">
-                  {LOGOS.slice(0, 4).map((logo, i) => (
-                    <img className="m-3 h-8 opacity-80" key={`hero-logo-${i}`} src={logo.src.white} alt={logo.alt} />
+                  {whiteLogos.map((logo) => (
+                    <img
+                      className="m-3 h-8 opacity-80"
+                      key={`hero-logo-${logo.alt}`}
+                      src={logo.src.white}
+                      alt={logo.alt}
+                    />
                   ))}
                 </div>
               </div>

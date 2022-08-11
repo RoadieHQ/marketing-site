@@ -16,12 +16,13 @@ import MyFitnessPalLogo from '../../../content/assets/home/customer-logos/myfitn
 import MyFitnessPalLogoPng from '../../../content/assets/home/customer-logos/myfitnesspal-monochrome.png';
 import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochrome.webp';
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
+import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-monochrome.webp';
+import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
 
 import HopperWhiteLogo from '../../../content/assets/home/customer-logos-white/hopper.png';
 import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.svg';
 import SnykWhiteLogo from '../../../content/assets/home/customer-logos-white/snyk.png';
-import TrackunitWhiteLogo from '../../../content/assets/home/customer-logos-white/trackunit.png';
-import MyFitnessPalWhiteLogo from '../../../content/assets/home/customer-logos-white/myfitnesspal.png';
+import NetlifyWhiteLogo from '../../../content/assets/home/customer-logos-white/netlify.png';
 
 export const LOGOS = [
   {
@@ -32,6 +33,15 @@ export const LOGOS = [
     },
     alt: 'Snyk logo',
     title: '~150 engineers',
+  },
+  {
+    src: {
+      webp: NetlifyLogo,
+      png: NetlifyLogoPng,
+      white: NetlifyWhiteLogo,
+    },
+    alt: 'Netlify logo',
+    title: '~100 engineers',
   },
   {
     src: {
@@ -55,7 +65,6 @@ export const LOGOS = [
     src: {
       webp: MyFitnessPalLogo,
       png: MyFitnessPalLogoPng,
-      white: MyFitnessPalWhiteLogo,
     },
     alt: 'MyFitnessPal logo',
     title: '~100 engineers',
@@ -64,7 +73,6 @@ export const LOGOS = [
     src: {
       webp: TrackunitLogo,
       png: TrackunitLogoPng,
-      white: TrackunitWhiteLogo,
     },
     alt: 'Trackunit logo',
     title: '~70 engineers',
@@ -113,7 +121,7 @@ const CustomerLogoCloud = ({ logos = LOGOS }) => (
       </div>
 
       <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-        {logos.map((logo) => (
+        {logos.slice(0, 8).map((logo) => (
           <div className="col-span-1 flex justify-center" key={logo.src.png}>
             <LogoItem {...logo} className="h-10" />
           </div>
