@@ -8,7 +8,7 @@ description: How to configure locations autodiscovery
 
 The Backstage catalog uses location entities to point to external sources which define entities.
 The catalog backend will periodically retrieve information about each location and check for any updates to the entities
-defined there.
+defined there. (If using Github, these updates should be nearly immediate.)
 
 Autodiscovery is the mechanism to define patterns pointing to filenames in URLs that should be queried for entity files.
 
