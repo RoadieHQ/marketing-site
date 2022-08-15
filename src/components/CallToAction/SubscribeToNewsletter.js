@@ -34,7 +34,7 @@ export const SubscribeToNewsletterCTA = (props) => (
     </p>
 
     <CallToAction
-      buttonText="Subscribe"
+      buttonText="Join 1,500+ Backstage enthusiasts"
       netlifyFormName={FORM_NAMES.subscribeToNewsletter}
       {...props}
     />

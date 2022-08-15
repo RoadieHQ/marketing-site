@@ -97,7 +97,7 @@ const BackstageWeekly = ({ data }) => {
 
           <NetlifyFormCallToAction
             setModalOpen={setModalOpen}
-            buttonText="Subscribe"
+            buttonText="Join 1,500+ Backstage enthusiasts"
             netlifyFormName={FORM_NAMES.subscribeToNewsletter}
             email={email}
             setEmail={setEmail}
