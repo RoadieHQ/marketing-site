@@ -183,18 +183,18 @@ gettingStarted:
         );      
 ---
 
-## How do I fecth fact for my own data?
+## How do I fetch facts for my own data?
 
-The Tech Insights uses Fact Retrievers to retrieve data from external sources. Any external service or API can be used as the service providing fact data that is tied to your Backstage entities. 
+Tech Insights uses Fact Retrievers to retrieve data from external sources. Any external service or API can be used as the service providing fact data that is tied to your Backstage entities. 
 
+## How do I create non-boolean checks?
 
-## How do I create other than boolean checks?
-
-The default implementation of FactChecker is implemented using JSON rules engine. In case you want to create checks using other types of logic, you can implement the `FactCheckerFactory` interface and provide your own implementation.
+The default implementation of FactChecker uses JSON rules engine. To create checks using other types of logic, you can implement the `FactCheckerFactory` interface and provide your own implementation.
 
 ## How do I retrieve and construct graphs from the facts I have in the database?
 
 Tech Insights backend exposes an API endpoint that can be queried for fact data based on datetime range and entity reference. You can construct an XHR call like the following to query individual values of graphable data:
+
 ```bash
 curl <backstage-backend>/api/tech-insights/facts/range?entity=<entity-kind>:<entity-namespace>/<entity-name>?ids[]=documentation-number-factretriever&startDatetime=2021-09-12T06:46:30&endDatetime=2021-10-21T06:46:30
 ```
@@ -211,6 +211,6 @@ const ttlWithAHumanReadableValue = { timeToLive: { weeks: 2 } }; // Deletes item
 
 ## More information
 
-* Tech Insights backend README file: https://github.com/backstage/backstage/tree/master/plugins/tech-insights-backend
-* Tech Insights frontend README file: https://github.com/backstage/backstage/tree/master/plugins/tech-insights
-* Tech Insights JSON rules engine implementation README file: https://github.com/backstage/backstage/tree/master/plugins/tech-insights-backend-module-jsonfc
+* [Tech Insights backend README file](https://github.com/backstage/backstage/tree/master/plugins/tech-insights-backend)
+* [Tech Insights frontend README file](https://github.com/backstage/backstage/tree/master/plugins/tech-insights)
+* [Tech Insights JSON rules engine implementation README file](https://github.com/backstage/backstage/tree/master/plugins/tech-insights-backend-module-jsonfc)
