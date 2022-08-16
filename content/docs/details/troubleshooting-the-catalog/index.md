@@ -32,7 +32,7 @@ the URL of a catalog info YAML file. To view details for a particular entity cli
 
 The `last refresh time` column above gives the time of the most recent update to the entity. The column `next refresh time`
 gives the time the catalog will next check for updates. However updates should come through in real time also if using 
-Github. It should be noted the last refresh time only updates when there are changes rather than on every check.
+GitHub. It should be noted the last refresh time only updates when there are changes rather than on every check.
 
 ### Viewing errors
 
