@@ -7,7 +7,7 @@ description: How to configure locations autodiscovery
 ## Introduction
 
 The Backstage catalog uses location entities to point to external sources which define entities. Roadie will update your 
-entities in backstage whenever one of the repositories defined in a location is updated. 
+entities in Backstage whenever one of the repositories defined in a location is updated. 
 
 Autodiscovery is the mechanism to define patterns pointing to filenames in URLs that should be queried for entity files.
 
