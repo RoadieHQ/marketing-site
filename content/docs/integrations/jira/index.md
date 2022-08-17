@@ -44,6 +44,18 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and ente
 
 Additionally add the URL to your Jira instance into `JIRA_API_URL`. The URL should not contain a trailing slash, e.g. `https://roadie.atlassian.net`.
 
+### Step 4: Add the required annotations to some components
+
+Edit the YAML metadata of a Backstage component to add the following annotations:
+
+```yaml
+metadata:
+  annotations:
+    jira/project-key: <example-jira-project-key>
+    jira/component: <example-component> # optional, you might skip this value to fetch data for all components
+    jira/token-type: Bearer # optional, used for Activity stream feed.
+```
+
 ## References
 
 - [Atlassian docs for creating API tokens](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/)
