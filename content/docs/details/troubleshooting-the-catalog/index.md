@@ -6,9 +6,8 @@ description: How to resolve issues getting data into the catalog
 
 ## About Locations
 
-The Backstage catalog uses location entities to point to external sources which define entities.
-The catalog backend will periodically (every few minutes) poll each location and check for any updates to the entities
-defined there. 
+The Backstage catalog uses location entities to point to external sources which define entities. Roadie will 
+update your entities in Backstage whenever one of the repositories defined in a location is updated.
 
 While locations are themselves entities they are generally considered internal to the workings of Backstage and not part 
 of your catalog (though you may need to create locations directly in some use cases).
@@ -31,8 +30,8 @@ the URL of a catalog info YAML file. To view details for a particular entity cli
 ### Checking the refresh schedule
 
 The `last refresh time` column above gives the time of the most recent update to the entity. The column `next refresh time`
-gives the time the catalog will next check for updates. It should be noted the last refresh time only updates when
-there are changes rather than on every check.
+gives the time the catalog will next check for updates. However updates should come through in real time also if using 
+GitHub. It should be noted the last refresh time only updates when there are changes rather than on every check.
 
 ### Viewing errors
 
