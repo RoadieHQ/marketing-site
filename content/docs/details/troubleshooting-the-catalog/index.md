@@ -7,7 +7,7 @@ description: How to resolve issues getting data into the catalog
 ## About Locations
 
 The Backstage catalog uses location entities to point to external sources which define entities. Roadie will 
-update your entities in backstage whenever one of the repositories defined in a location is updated.
+update your entities in Backstage whenever one of the repositories defined in a location is updated.
 
 While locations are themselves entities they are generally considered internal to the workings of Backstage and not part 
 of your catalog (though you may need to create locations directly in some use cases).
