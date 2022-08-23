@@ -42,18 +42,45 @@ This page describes how to do that.
 
 ## Example configs
 
-```yaml
-# Roadie will only add entities when a catalog-info.yaml file was added/removed to the default branch from the roadie-backstage-plugins repo in the RoadieHQ organiztion.
-- https://github.com/RoadieHQ/roadie-backstage-plugins/blob/-/catalog-info.yaml
-# Roadie will only add/remove entities when a catalog-info.yaml file was added/removed to the default branch from any repos in the RoadieHQ organization.
-- https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml
-# Roadie will add/remove any files that ends with yaml and inside a `.roadie` folder, that were added/removed to any branch from any repos in the RoadieHQ organization.
-- https://github.com/RoadieHQ/*/blob/*/.roadie/*.yaml
-# It will be expanded to the following url: `https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml` In this case roadie will add/remove every catalog-info.yaml file inside every repo that got added/removed to/from the default branch in the RoadieHQ organization.
-There is a special case if you only specify your organization like: `https://github.com/RoadieHQ`
+### Exact url
 
-`-` in the place of branch it means the configured default branch in the repository.
+If you do not specify any wildcards it will load only the specified exact path.
+
+```yaml
+https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/catalog-info.yaml
 ```
+
+Roadie will load only catalog-info.yaml file from the main branch when it got added/removed from the repo roadie-backstage-plugins in the RoadieHQ organization
+
+### Using the default branch
+
+If you have default branch configured differently for your repos you can use the - sign as a substitution in your url and it will get replaced by your repo's default branch
+
+```yaml
+https://github.com/RoadieHQ/roadie-backstage-plugins/blob/-/catalog-info.yaml
+```
+
+Roadie will load only catalog-info.yaml file from the default branch when it got added/removed from the repo roadie-backstage-plugins in the RoadieHQ organization
+
+### Using wildcards
+
+If you would like to catalog a file from all of your repos you can use the \* as a wildcard in any of the segmenets.
+
+```yaml
+https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml
+```
+
+Roadie will load only catalog-info.yaml file from the default branch when it got added/removed from any repo in the RoadieHQ organization
+
+### Putting your catalog files inside a folder
+
+You can specify a folder in the resource part of the URL any depth you would like. This gives the possibility to specify the following url.
+
+```yaml
+https://github.com/RoadieHQ/*/blob/-/.roadie/*.yaml
+```
+
+Roadie will load any yaml file inside a root level .roadie folder from the default branch when it got added/removed from any repo in the RoadieHQ organization
 
 ## Confirming it worked
 
