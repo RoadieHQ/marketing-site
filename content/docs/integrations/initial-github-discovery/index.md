@@ -1,6 +1,7 @@
 ---
 title: Performing a sync with your GitHub for your catalog files
-publishedDate: '2022-05-10T12:14:39.0Z'
+publishedDate: '2022-08-23'
+lastUpdated: '2022-08-23'
 description: How to perform a sync between roadie's catalog and your GitHub organisation
 
 humanName: Github Discovery Sync

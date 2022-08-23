@@ -2,6 +2,7 @@
 title: Loading Backstage catalog files on your installation
 publishedDate: '2022-05-10T12:14:39.0Z'
 description: How to configure backstage to read catalog files on github
+lastUpdated: '2022-08-23T15:44:39.0Z'
 
 humanName: GitHub Discovery
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
@@ -26,7 +27,11 @@ This page describes how to do that.
    ![add and remove](./add-remove.webp)
 3. Press the `+ ADD ITEM` button in the bottom right corner.
 4. In the input that appears enter a url that you'd like to have roadie to listen for additions and deletions.
-   This url accepts regexes in every segment:
+   This url accepts regex in every segment:
+5. Press `SAVE`
+6. Press `APPLY & RESTART` This will restart your instance it can take a couple of seconds.
+
+## Example configs
 
 ```yaml
 # Roadie will only add entities when a catalog-info.yaml file was added/removed to the default branch from the roadie-backstage-plugins repo in the RoadieHQ organiztion.
@@ -40,9 +45,6 @@ There is a special case if you only specify your organization like: `https://git
 
 `-` in the place of branch it means the configured default branch in the repository.
 ```
-
-5. Press `SAVE`
-6. Press `APPLY & RESTART` This will restart your instance it can take a couple of seconds.
 
 ## Confirming it worked
 
