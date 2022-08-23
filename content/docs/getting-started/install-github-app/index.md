@@ -34,12 +34,14 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 5. Choose your GitHub organization and follow the steps to install the app.
 
-ℹ️  &nbsp;If you are not an owner of your GitHub organization, you will need to ask an owner to approve the App installation and then contact us to enable the App.
+ℹ️ &nbsp;If you are not an owner of your GitHub organization, you will need to ask an owner to approve the App installation and then contact us to enable the App.
+
+Roadie will listen to your github and add any `catalog-info.yaml` files added to your repos by default. If you'd like to have more granular control(e.g. you don't want to call them catalog-info.yaml, or you'd like to have them inside a folder etc.) over what files should roadie add to the catalog go to the [github discovery docs](/docs/integrations/github-discovery/)
+
+If you used Backstage before and you already have `catalog-info.yaml` files in your repos please go to the [initial discovery](/docs/integrations/initial-github-discovery) docs.
 
 ## Next steps
 
 Now that a connection to GitHub is established, you can [make yourself an admin on Roadie](/docs/getting-started/create-admin-group/).
-
-To automatically load catalog files from repositories please see [here](/docs/integrations/github-discovery/)
 
 To load users and groups from GitHub Teams please see [here](/docs/integrations/github-teams/).

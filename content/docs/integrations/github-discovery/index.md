@@ -28,13 +28,18 @@ This page describes how to do that.
 4. In the input that appears enter a url that you'd like to have roadie to listen for additions and deletions.
    This url accepts regexes in every segment:
 
-- https://github.com/RoadieHQ/roadie-backstage-plugins/blob/-/catalog-info.yaml // Roadie will only add entities when a catalog-info.yaml file was added/removed to the default branch from the roadie-backstage-plugins repo in the RoadieHQ organiztion.
-- https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml // Roadie will only add/remove entities when a catalog-info.yaml file was added/removed to the default branch from any repos in the RoadieHQ organization.
-- https://github.com/RoadieHQ/*/blob/*/.roadie/*.yaml // Roadie will add/remove any files that ends with yaml and inside a `.roadie` folder, that were added/removed to any branch from any repos in the RoadieHQ organization.
-
-There is a special case if you only specify your organization like: `https://github.com/RoadieHQ` // It will be expanded to the following url: `https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml` In this case roadie will add/remove every catalog-info.yaml file inside every repo that got added/removed to/from the default branch in the RoadieHQ organization.
+```yaml
+# Roadie will only add entities when a catalog-info.yaml file was added/removed to the default branch from the roadie-backstage-plugins repo in the RoadieHQ organiztion.
+- https://github.com/RoadieHQ/roadie-backstage-plugins/blob/-/catalog-info.yaml
+# Roadie will only add/remove entities when a catalog-info.yaml file was added/removed to the default branch from any repos in the RoadieHQ organization.
+- https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml
+# Roadie will add/remove any files that ends with yaml and inside a `.roadie` folder, that were added/removed to any branch from any repos in the RoadieHQ organization.
+- https://github.com/RoadieHQ/*/blob/*/.roadie/*.yaml
+# It will be expanded to the following url: `https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml` In this case roadie will add/remove every catalog-info.yaml file inside every repo that got added/removed to/from the default branch in the RoadieHQ organization.
+There is a special case if you only specify your organization like: `https://github.com/RoadieHQ`
 
 `-` in the place of branch it means the configured default branch in the repository.
+```
 
 5. Press `SAVE`
 6. Press `APPLY & RESTART` This will restart your instance it can take a couple of seconds.
