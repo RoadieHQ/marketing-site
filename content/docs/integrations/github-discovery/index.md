@@ -60,7 +60,7 @@ If you have default branch configured differently for your repos you can use the
 https://github.com/RoadieHQ/roadie-backstage-plugins/blob/-/catalog-info.yaml
 ```
 
-Roadie will load only catalog-info.yaml file from the default branch when it got added/removed from the repo roadie-backstage-plugins in the RoadieHQ organization
+In this example, Roadie will only load a `catalog-info.yaml` file from the `default` branch when it gets added/removed from the repo `roadie-backstage-plugins` in the `RoadieHQ` organization.
 
 ### Using wildcards
 
