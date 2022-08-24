@@ -18,7 +18,7 @@ This page describes how to do that.
 ## Prerequisites
 
 - You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/install-github-app/)
-- You must be an Admin of Backstage
+- You must be an Admin of Roadie Backstage
 
 ## Steps
 
