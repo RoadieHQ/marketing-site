@@ -50,7 +50,7 @@ If you do not specify any wildcards it will load only the specified exact path.
 https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/catalog-info.yaml
 ```
 
-Roadie will load only catalog-info.yaml file from the main branch when it got added/removed from the repo roadie-backstage-plugins in the RoadieHQ organization
+In this example, Roadie will only load a `catalog-info.yaml` file from the `main` branch when it gets added/removed from the repo `roadie-backstage-plugins` in the `RoadieHQ` organization.
 
 ### Using the default branch
 
