@@ -80,7 +80,7 @@ You can specify a folder in the resource part of the URL any depth you would lik
 https://github.com/RoadieHQ/*/blob/-/.roadie/*.yaml
 ```
 
-Roadie will load any yaml file inside a root level .roadie folder from the default branch when it got added/removed from any repo in the RoadieHQ organization
+In this example, Roadie will load any `.yaml` file inside a root level `.roadie` folder from the default branch when it gets added/removed from any repo in the RoadieHQ organization
 
 ## Confirming it worked
 
