@@ -11,7 +11,7 @@ integrationType: Integration
 
 ## Introduction
 
-Roadie can perform on demand syncs with your organisation. This is useful in a case where you already have `catalog-info.yaml` files distributed in your organization and you'd like to have them inside roadie's catalog.
+Roadie can perform on demand syncs with your organisation. This is useful in a case where you already have `catalog-info.yaml` files distributed in your organization and you'd like to have them inside Roadie's catalog.
 
 This page describes how to do that.
 
