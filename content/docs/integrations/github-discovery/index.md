@@ -83,4 +83,4 @@ In this example, Roadie will load any `.yaml` file inside a root level `.roadie`
 
 ## Confirming it worked
 
-Add a backstage component file to a repository which matches the configured discovery url. After committing it to the correct branch, you should see it almost immediately in your catalog.
+Add a Backstage component file to a repository which matches the configured discovery url. After committing it to the correct branch, you should see it almost immediately in your catalog.
