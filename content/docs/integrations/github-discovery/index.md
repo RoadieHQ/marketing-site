@@ -69,7 +69,7 @@ If you would like to catalog a file from all of your repos you can use the \* as
 https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml
 ```
 
-In this example, Roadie will load a `catalog-info.yaml` file from the default branch when it gets added/removed from any repo in the RoadieHQ organization
+In this example, Roadie will load a `catalog-info.yaml` file from the default branch when it gets added/removed from any repo in the RoadieHQ organization.
 
 ### Putting your catalog files inside a folder
 
