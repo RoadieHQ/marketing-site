@@ -30,7 +30,7 @@ Roadie loads your `catalog-info.yaml` files automatically from GitHub. This docu
 5. Press `SAVE`
 6. Press `APPLY & RESTART` This will restart your instance it can take a couple of seconds.
 
-## Steps to remove
+## Steps to remove auto discovery paths
 
 1. Visit the Administration > Settings page and click on GitHub under Integrations
 2. Scroll down to the `Automatically add and remove entities from your Catalog` section.
