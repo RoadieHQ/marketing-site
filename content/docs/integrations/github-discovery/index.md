@@ -53,7 +53,7 @@ In this example, Roadie will only load a `catalog-info.yaml` file from the `main
 
 ### Using the default branch
 
-If you have default branch configured differently for your repos you can use the - sign as a substitution in your url and it will get replaced by your repo's default branch
+If you have default branch configured differently for your repos you can use the - sign as a substitution in your url and it will get replaced by your repo's default branch.
 
 ```yaml
 https://github.com/RoadieHQ/roadie-backstage-plugins/blob/-/catalog-info.yaml
