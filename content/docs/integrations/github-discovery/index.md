@@ -13,7 +13,6 @@ integrationType: Integration
 
 Roadie loads your `catalog-info.yaml` files automatically from GitHub. This document walks you through how to change the default setting, how to add new paths, and support for multiple organizations.
 
-This page describes how to do that.
 
 ## Prerequisites
 
