@@ -11,7 +11,7 @@ integrationType: Integration
 
 ## Introduction
 
-Roadie loads your `catalog-info.yaml` files automatically from GitHub. This document walks you through how to change the default setting, how to add new paths, and support for multiple organizations.
+Roadie loads your `catalog-info.yaml` files automatically from GitHub. This document explains how to change the default setting, how to add new paths, and how to support multiple organizations.
 
 
 ## Prerequisites
