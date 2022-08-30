@@ -19,7 +19,7 @@ Roadie loads your `catalog-info.yaml` files automatically from GitHub. This docu
 - You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/install-github-app/)
 - You must be an Admin of Backstage
 
-## Steps to add
+## Steps to add new auto discovery paths
 
 1. Visit the Administration > Settings page and click on GitHub under Integrations
 2. Scroll down to the `Automatically add and remove entities from your Catalog` section.
