@@ -25,7 +25,7 @@ Roadie loads your `catalog-info.yaml` files automatically from GitHub. This docu
 2. Scroll down to the `Automatically add and remove entities from your Catalog` section.
    ![add and remove](./default-settings.webp)
 3. Press the `+ ADD ITEM` button in the bottom right corner.
-4. In the input that appears enter a url that you'd like to have roadie to listen for additions and deletions.
+4. In the input that appears enter a url that you'd like to have Roadie to listen for additions and deletions.
    This url accepts regex in every segment
 5. Press `SAVE`
 6. Press `APPLY & RESTART` This will restart your instance it can take a couple of seconds.
