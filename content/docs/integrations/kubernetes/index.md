@@ -129,11 +129,11 @@ It should look something like this:
  - mapRoles:
    - "groups":
       - "system:authenticated"
-      "rolearn": "<ASSUMABLE ROLE ARN FROM STEP TWO>"
+      "rolearn": "<ASSUMABLE ROLE ARN>"
       "username": "roadie"
 ```
 
-⚠️ In the yaml snippet above, be sure to replace "<ASSUMABLE ROLE ARN FROM STEP TWO>" with the ARN of the asssumable role created in step 2.3
+⚠️ In the yaml snippet above, be sure to replace "<ASSUMABLE ROLE ARN>" with the ARN of the assumable role created in step 1.
 
 
 2. Create an RBAC for this user:
