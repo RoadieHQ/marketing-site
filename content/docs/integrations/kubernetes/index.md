@@ -61,7 +61,7 @@ Optional: Add a tag, Key: `3rdPartyIntegration` Value: `Roadie`
 
 8. For the ”Role Name” enter: ”<your-company-name>-roadie-read-only-role”
 
-> Note: ”<your-company-name>” should be replaced by the lowercased value of your company and should follow the convention highlighted above. If it does not follow the convention, the role cannot be assumed. This is for security reasons.
+> Note: ”<your-company-name>” should be replaced by the lowercased value of your company and must follow the convention highlighted above. If it does not follow the convention, the role cannot be assumed. This is for security reasons.
 
 9. For the ”Role description” enter suggested description
 
