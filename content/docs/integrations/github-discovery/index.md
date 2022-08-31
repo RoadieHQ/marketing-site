@@ -2,7 +2,7 @@
 title: Configuring auto discovery for your organization
 publishedDate: '2022-05-10T12:14:39.0Z'
 description: How to configure backstage to read catalog files on github
-lastUpdated: '2022-08-23T15:44:39.0Z'
+lastUpdated: '2022-08-31T14:20:39.0Z'
 
 humanName: GitHub Discovery
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
@@ -12,7 +12,6 @@ integrationType: Integration
 ## Introduction
 
 Roadie loads your `catalog-info.yaml` files automatically from GitHub. This document explains how to change the default setting, how to add new paths, and how to support multiple organizations.
-
 
 ## Prerequisites
 
@@ -24,20 +23,18 @@ Roadie loads your `catalog-info.yaml` files automatically from GitHub. This docu
 1. Visit the Administration > Settings page and click on GitHub under Integrations
 2. Scroll down to the `Automatically add and remove entities from your Catalog` section.
    ![add and remove](./default-settings.webp)
-3. Press the `+ ADD ITEM` button in the bottom right corner.
+3. Press the `+ ADD URL` button.
 4. In the input that appears enter a url that you'd like to have Roadie to listen for additions and deletions.
    This url accepts regex in every segment
-5. Press `SAVE`
-6. Press `APPLY & RESTART` This will restart your instance it can take a couple of seconds.
+5. Press `ADD`
 
 ## Steps to remove auto discovery paths
 
 1. Visit the Administration > Settings page and click on GitHub under Integrations
 2. Scroll down to the `Automatically add and remove entities from your Catalog` section.
    ![add and remove](./default-settings.webp)
-3. Press the minus sign next to the url.
-4. Press `SAVE`
-5. Press `APPLY & RESTART` This will restart your instance it can take a couple of seconds.
+3. Press the DELETE sign next to the url under the actions column.
+4. Press `DELETE`
 
 ## Example configs
 
