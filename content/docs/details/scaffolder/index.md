@@ -112,6 +112,8 @@ parameters:
       type: string
 ```
 
+#### Entity picker
+
 You can prompt the user with a list of catalog entities using the `ui:field: EntityPicker` option as follows:
 
 ```yaml
@@ -121,6 +123,8 @@ parameters:
       type: string
       ui:field: EntityPicker
 ```
+
+#### Owned entity picker
 
 Alternatively if you would like the user to only select entities that they already own, you might want to use the OwnedEntityPicker.
 
@@ -132,6 +136,8 @@ parameters:
       ui:field: OwnedEntityPicker
 ```
 
+#### Entity name picker
+
 If you would like a little validation when the user enters an Entity name, you can use the EntityNamePicker. It will prevent the user from entering an entity name that is not an acceptable entity name.
 
 ```yaml
@@ -141,6 +147,8 @@ parameters:
       type: string
       ui:field: EntityNamePicker
 ```
+
+#### Repository picker
 
 The respository picker can allow the user to select the name and location of a new repository. The picker restricts the target location of the repository to make it a little easier for the user to select a target location.
 
@@ -172,6 +180,8 @@ parameters:
           - bitbucket.org
 ```
 
+#### Owner picker
+
 The owner picker, allows the user to select a user / group in the Backstage catalog. e.g.
 
 ```yaml
@@ -180,6 +190,37 @@ parameters:
     owner:
       type: string
       ui:field: OwnerPicker
+```
+
+#### Picker from external API source
+
+This custom scaffolder field, fetches an API from the backstage backend and allows the result to be rendered to a list.
+
+```yaml
+parameters:
+  properties:
+    custom:
+      title: custom
+      type: string
+      description: Custom field from external API
+
+      # Use `SelectFieldFromApi` to configure the select field for the entry.
+      ui:field: SelectFieldFromApi
+
+      # The Path on the Backstage API and the parameters to fetch the data for the dropdown
+      ui:path: 'catalog/entity-facets'
+      ui:params:
+        facet: 'kind'
+
+      # This selects the array element from the API fetch response. It finds the array with the name kind
+      # under the facets object
+      ui:arraySelector: 'facets.kind'
+
+      # (Optional) This selects the field in the array to use for the value of each select item. If its not specified
+      # it will use the value of the item directly.
+      ui:valueSelector: 'count'
+      # (Optional) This selects the field in the array to use for the label of each select item.
+      ui:labelSelector: 'value'
 ```
 
 ### `number`
