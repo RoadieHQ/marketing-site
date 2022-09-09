@@ -194,7 +194,7 @@ parameters:
 
 #### Picker from external API source
 
-This custom scaffolder field, fetches an API from the backstage backend and allows the result to be rendered to a list.
+This custom scaffolder field, makes an API call to the Backstage backend and allows the result to be rendered to a list.
 
 ```yaml
 parameters:
