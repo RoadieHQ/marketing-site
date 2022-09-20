@@ -11,7 +11,7 @@ const CenteredHero = () => {
     <div className="relative landing-hero-background overflow-x-hidden">
       <div className="relative pt-6 pb-0">
         <main className="mt-14 mx-auto max-w-7xl px-4 sm:mt-20 sm:px-6 lg:mt-25">
-          <div className="md:max-w-4xl md:mx-auto lg:col-span-6 lg:text-left">
+          <div className="md:max-w-4xl md:mx-auto lg:col-span-6 text-center">
             <Headline size="medium" className="text-white leading-snug">
               Set up Backstage in minutes. <br /> Forget maintenance.
             </Headline>
