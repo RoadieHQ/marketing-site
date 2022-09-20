@@ -44,7 +44,7 @@ const DocsHeader = ({ location }) => (
         </div>
 
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <Button link={true} color="primary" to="/free-trial/" text="Try it free" size="small" />
+          <Button link={true} color="primary" to="/request-demo/" text="Get a demo" size="small" />
         </div>
       </div>
 

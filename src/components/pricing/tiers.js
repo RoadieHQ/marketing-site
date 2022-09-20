@@ -3,8 +3,8 @@ const TIERS = {
     name: 'Teams',
     minSeats: 50,
     description: 'For teams who want a home for their services, docs, runbooks, API specs and CI.',
-    ctaLabel: 'Start a free trial',
-    ctaLinkTo: '/free-trial/',
+    ctaLabel: 'Request a demo',
+    ctaLinkTo: '/request-demo/',
   },
 
   growth: {

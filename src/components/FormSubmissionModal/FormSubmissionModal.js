@@ -29,7 +29,7 @@ const TwitterInner = ({ siteMetadata }) => (
   </p>
 );
 
-const GetDemoSurveyInner = ({ referredEmail }) => {
+const GetDemoInner = ({ referredEmail }) => {
   const codedEmail = encodeURIComponent(referredEmail);
 
   return (
@@ -87,8 +87,8 @@ const FormSubmissionModal = ({
     // Doesn't make sense to offer to let people sign up to the newsletter immediately after
     // they have just signed up to the newsletter.
     followOnContent = <TwitterInner siteMetadata={siteMetadata} />;
-  } else if (followOn === 'GET_DEMO_SURVEY') {
-    followOnContent = <GetDemoSurveyInner referredEmail={email} />;
+  } else if (followOn === 'GET_DEMO') {
+    followOnContent = <GetDemoInner referredEmail={email} />;
   } else if (followOn === 'GET_TRIAL') {
     followOnContent = <GetTrialInner referredEmail={email} />;
   }

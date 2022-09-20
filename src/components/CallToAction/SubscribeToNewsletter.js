@@ -16,7 +16,7 @@ export const SubscribeToNewsletterSuccessModal = (props) => (
         </p>
       </>
     }
-    followOn="GET_TRIAL"
+    followOn="GET_DEMO"
     {...props}
   />
 );

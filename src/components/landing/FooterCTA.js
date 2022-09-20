@@ -14,17 +14,8 @@ const FooterCTA = () => (
         <div className="inline-flex">
           <Button
             link={true}
-            to="/free-trial/"
-            color="primary"
-            text="Try it free"
-          />
-        </div>
-
-        <div className="ml-3 inline-flex">
-          <Button
-            link={true}
             to="/request-demo/"
-            color="inset"
+            color="primary"
             text="Request a demo"
           />
         </div>
