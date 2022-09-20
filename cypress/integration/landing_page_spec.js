@@ -17,21 +17,14 @@ describe('The landing page', () => {
     cy.contains("We'll be in touch");
   });
 
-  it('has a flow for getting a free trial', () => {
-    cy.visit('');
-
-    cy.get('#get-instance-email-input').type('test@example.com');
-    cy.get('#scm').select('github-on-prem');
-    cy.contains('Try Roadie Backstage').click();
-    cy.contains('Thank you for requesting a free trial of Roadie Backstage');
-  });
-
   it('has a flow for rejecting users who use unsupported SCMs', () => {
     cy.visit('');
 
-    cy.get('#get-instance-email-input').type('test@example.com');
-    cy.get('#scm').select('gitlab-on-prem');
-    cy.contains('Try Roadie Backstage').click();
+    cy.contains('Request a demo').click();
+    cy.get('#request-demo-name-input').type('Peter pan');
+    cy.get('#request-demo-email-input').type('test@example.com');
+    cy.get('#request-demo-scm-gitlab-cloud-input').check();
+    cy.contains('Request a demo').click();
     cy.contains('Roadie only supports GitHub for now');
   });
 });
