@@ -100,9 +100,3 @@
   from = "/kubernetes/"
   to = "/backstage/plugins/kubernetes/"
   force = true
-
-# We're moving to a demo based GTM based on data.
-[[redirects]]
-  from = "/free-trial/"
-  to = "/request-demo/"
-  force = true
