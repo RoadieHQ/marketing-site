@@ -671,6 +671,8 @@ steps:
       targetPath: ./subdirectory
 ```
 
+NB: The branch you use for the pull request must be a new branch for the repo. 
+
 #### Outputs
 
 The `publish:github:pull-request` action produces two outputs.
