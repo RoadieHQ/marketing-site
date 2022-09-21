@@ -6,6 +6,15 @@ describe('The landing page', () => {
     });
   });
 
+  it('has a flow for getting a free trial', () => {
+    cy.visit('/free-trial/');
+
+    cy.get('#get-instance-email-input').type('test@example.com');
+    cy.get('button[data-testid="agree-to-policies"]').click();
+    cy.contains('Request a trial').click();
+    cy.contains('Thank you for requesting a free trial of Roadie Backstage');
+  });
+
   it('has a flow for requesting a demo', () => {
     cy.visit('');
     cy.contains('Get a demo').click();
