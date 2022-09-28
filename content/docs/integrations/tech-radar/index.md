@@ -151,7 +151,7 @@ Setting up a local server consist of the following steps:
 1. Create a new empty folder to use as a testing ground
 2. Create either one of the above files within it with the Tech Radar data you want to include in your radar
 3. Start a local webserver on port `7328` to serve either one of the above files from the root path
-   1. If you have Node.js and NPM installed locally, the easiest way to achieve this is to run a http-server on the folder where the files are located: `npx http-server -p 7328 --cors`
+   1. If you have Node.js and NPM installed locally, the easiest way to achieve this is to run a http-server on the folder where the files are located: `npx live-server --port=7328 --cors`
 4. Navigate to your preview Tech Radar page to see results.
 
 ## More information
