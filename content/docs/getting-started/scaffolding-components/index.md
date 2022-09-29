@@ -18,9 +18,11 @@ You can either follow the text or the video, or both.
 
 <div style="position: relative; padding-bottom: 52.42718446601942%; height: 0;"><iframe src="https://www.loom.com/embed/da6159c4ca39458cb5ad03138612a5a3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-### Step One. Enable the scaffolder
+### Step One. Enable and set up the scaffolder
 
-Visit the `Administration > Settings > Scaffolder` and make sure the enabled check box is selected, press save and apply and restart.
+Visit the `Administration > Settings > Scaffolder` and make sure the enabled check box is selected, press save and apply and restart. 
+
+Optionally you can also use the grouping functionality of Scaffolder templates from these settings. The scaffolder templates are grouped together if they contain tags defined in this section of settings.
 
 ### Step Two. Create a template.yaml file in a repository
 
