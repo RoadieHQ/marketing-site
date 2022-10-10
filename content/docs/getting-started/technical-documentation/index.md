@@ -228,6 +228,35 @@ nav:
     - v2: '!include ./v2/mkdocs.yml'
 ```
 
+## Including existing markdown files
+
+Mkdocs only processes markdown files in the mkdocs directory (defaults to `docs/`). If you've existing docs
+which live closer to the code e.g. a README.md in the root or at some other level they can't be referenced in the mkdocs.yaml.
+
+It is possible to use the [PyMdown snippets extension](https://facelessuser.github.io/pymdown-extensions/extensions/snippets/#snippets) to include markdown files from outside the mkdocs docs directory in markdown files within it. 
+
+To enable this extension update your mkdocs.yaml: 
+
+```yaml
+markdown_extensions:
+  # ... other extensions 
+  - pymdownx.snippets:
+      check_paths: true
+```
+
+Then you can include snippets in your markdown files. If a snippet is the only content in a file then the content is replaced
+by the referenced file. For example, to include a file TEST.md at the root of our repo we could do the following:
+ - Create a file under the docs directory e.g. `docs/test.md` 
+ - Include a nav item in mkdocs.yaml
+   ```yaml
+   nav:
+     # ....
+     - Test: test.md
+   ```
+ - Add a snippet to test.md (the snippet path is relative to the mkdocs.yaml file)
+    ```markdown
+    --8<-- "TEST.md"
+    ```
 
 ## Further reading
 
