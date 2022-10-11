@@ -99,13 +99,15 @@ You can generate / serve your docs locally to view what they would look like whe
 To generate the docs to the site directory of the project you can run the following command:
 
 ```bash
-npx @techdocs/cli generate --docker-image roadiehq/techdocs
+npx @techdocs/cli@1.2.0 generate --docker-image roadiehq/techdocs
 ```
 
 To start a local server at port 3000 containing the generated docs, you can run the following command:
 ```bash
-npx @techdocs/cli serve --docker-image roadiehq/techdocs
+npx @techdocs/cli@1.2.0 serve --docker-image roadiehq/techdocs
 ```
+
+NB: We need to pin to an earlier version until [this bug](https://github.com/backstage/backstage/issues/13813) in @techdocs/cli@1.2.1 is fixed in the Open Source project.
 
 ### Step 5: Publish your documentation
 
