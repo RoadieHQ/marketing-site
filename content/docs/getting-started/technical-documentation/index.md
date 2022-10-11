@@ -232,7 +232,7 @@ nav:
 ```
 
 Standalone repos for documentation not related to a codebase or component should still be modeled in Roadie Backstage 
-with a catalog-info.yaml file. The entity can be described with a kind of `Component` and 
+with a catalog-info.yaml file. The docs repo entity can be described with the following kind and spec type:
 
 ```yaml
 ---
