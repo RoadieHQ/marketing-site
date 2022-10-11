@@ -231,7 +231,7 @@ nav:
     - v2: '!include ./v2/mkdocs.yml'
 ```
 
-Standalone repos for documentation not related to a codebase or component should still be moddeled in Roadie Backstage 
+Standalone repos for documentation not related to a codebase or component should still be modeled in Roadie Backstage 
 with a catalog-info.yaml file. The entity can be described with a kind of `Component` and 
 
 ```yaml
