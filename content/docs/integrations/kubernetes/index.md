@@ -10,7 +10,13 @@ integrationType: OSS plugin
 
 ![Full active cluster on roadie](./active.png)
 
-# AWS
+# Introduction
+The kubernetes plugin in Backstage allows you to add details about your services, pods, deployments etc to the component dashboard pages within Backstage. The plugin supports multiple different mechanisms to connect Backstage to kubernetes. Roadie supports AWS EKS, GCloud GKE and a self deployed kubernetes cluster using a service account.
+
+# Prerequisites
+The API url of the cluster must be available to the Roadie infratructure services. You can choose to limit the availablity to our [IP networks](/docs/details/allowlisting-roadie-traffic/).
+
+# AWS EKS
 
 ## Introduction
 
@@ -202,7 +208,7 @@ subjects:
 3. Add the load balancer url, role arn, external ID and name of cluster.
 4. Click save and exit!
 
-# GKE
+# GCloud GKE
 
 ## Introduction
 
@@ -247,3 +253,23 @@ Follow step 2 from [here](/docs/integrations/google-oauth-client/).
 
 > You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: ”backstage.io/kubernetes-label-selector: 'app=my-app,component=frontend'”
 > For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
+
+# Service Account
+
+In order to use the Kubernetes plugin using a service account, Roadie needs:
+ * A service account token
+ * The name of your cluster
+ * URL of your Kubernetes API Server endpoint
+
+### Step 1: Create a Service Account token
+You will need to create a service account token for your cluster in kubernetes cluster for use by roadie.
+
+### Step 2: Set the Token in a Roadie Backstage Secret
+Navigate to the ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token you created in step 1. Alternatively, if you are congfiguring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`.
+
+### Step 3: 
+1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/kubernetes” and click on add item.
+2. Select the Service Account provider
+3. Add the url and name of cluster.
+4. If you have used a custom secret, you will need to set it in the secret name field
+5. Click save and exit!
