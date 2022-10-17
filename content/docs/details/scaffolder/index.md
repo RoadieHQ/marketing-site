@@ -1158,6 +1158,43 @@ steps:
 
 If you need to pass variable substitution syntax through without it being interpreted you can escape the syntax by wrapping it like so `${{ '${{ parameters.something }}' }}`.
 
+### Creating re-usable snippets
+
+You can inject in re-usable snippets of yaml into a template using the `$yaml` operator like so:
+
+`templates/debug-step.yaml`
+```yaml
+- name: Debug log 2
+  id: debug_log_2
+  action: "debug:log"
+  input:
+    message: Second log
+```
+
+`logging-template.yaml`
+```yaml
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: placeholder-example
+  title: Demonstrating the placeholder usage
+  description: Shows how to inject in a single re-usable step
+spec:
+  owner: default/engineering
+  type: service
+  steps:
+    - name: Debug log 1
+      id: debug_log_1
+      action: "debug:log"
+      input:
+        message: First log
+
+      $yaml: https://github.com/yourOrg/some-repo/blob/templates/debug-step.yaml
+```
+
+NB: This can only be done for a single step as the re-usable section must be valid yaml.
+
+
 ## Troubleshooting
 
 Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
