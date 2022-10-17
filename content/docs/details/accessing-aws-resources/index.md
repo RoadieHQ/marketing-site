@@ -13,9 +13,10 @@ The above are accessible via `Administration > Settings > AWS S3`.
 
 ## Introduction
 
-You may want Roadie to be able to access AWS services such as EKS or S3 in your account. In order to do this you must 
-provide us with an identity in your account which we can assume. We use roles for this purpose. This document will describe 
-how to create such a role.
+You may want Roadie to be able to access AWS services such as EKS or S3 in your account to use the associated Backstage 
+plugins that require access to infrastructure or resources hosted by AWS. In order to do this you must provide us with 
+an identity in your account which we can assume. We use roles for this purpose. This document will describe how to create 
+such a role.
 
 To learn more about the AWS concepts used below, you can read the following AWS documentation pages:
 

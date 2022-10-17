@@ -10,8 +10,9 @@ integrationType: Integration
 
 ## Introduction
 
-Backstage supports reading data from AWS S3 through the AwsS3UrlReader. This guide describes how to set up access for 
-Roadie to your S3 buckets in your infrastructure and configure the AwsS3UrlReader settings.
+S3 can be a useful place to store certain resources used by backstage plugins like OpenApi spec files.  
+
+This guide describes how to set up access for Roadie to your S3 buckets in your infrastructure and configure it.
 
 ##  Step 1: Get the roadie IAM details
 
