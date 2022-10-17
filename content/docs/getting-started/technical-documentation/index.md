@@ -107,6 +107,8 @@ To start a local server at port 3000 containing the generated docs, you can run 
 npx @techdocs/cli@1.2.0 serve --docker-image roadiehq/techdocs
 ```
 
+NB: We have seen some issues generating and serving plantuml and mermaid diagrams sometimes on M1 Macbooks due to unresolved 
+bugs in open source dependencies. Please reach out to us anyway if you run into any difficulties. 
 NB: We need to pin to an earlier version until [this bug](https://github.com/backstage/backstage/issues/13813) in @techdocs/cli@1.2.1 is fixed in the Open Source project.
 
 ### Step 5: Publish your documentation
@@ -228,6 +230,19 @@ nav:
   - API:
     - v1: '!include ./v1/mkdocs.yml'
     - v2: '!include ./v2/mkdocs.yml'
+```
+
+Standalone repos for documentation not related to a codebase or component should still be modeled in Roadie Backstage 
+with a catalog-info.yaml file. The docs repo entity can be described with the following kind and spec type:
+
+```yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+...
+spec: 
+  type: documentation
+...
 ```
 
 ## Including existing markdown files
