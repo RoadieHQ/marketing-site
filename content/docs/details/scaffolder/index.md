@@ -12,6 +12,8 @@ Scaffolder templates are defined in YAML files and loaded into the Backstage cat
 
 A Scaffolder template is then run on demand by the users of Backstage to execute the software template. Roadie will execute the software template in an ephemeral container that is destroyed after the execution completes.
 
+You can find a step by step guide to adding templates in Roadie [here](/docs/getting-started/scaffolding-components/)
+
 ## Components of a Template
 
 A Scaffolder template is a configurable process that will run one or more Scaffolder `steps`. The template will be run when a user visits the "Create Component" page in Backstage. `https://<tenant-name>.roadie.so/create`.
@@ -527,6 +529,18 @@ steps:
     input:
       repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
       access: AcmeInc/engineering
+```
+
+You can [protect the default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) from being pushed to directly by using `protectDefaultBranch` if your repository is part of a Github Pro account. 
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      protectDefaultBranch: true
 ```
 
 You can enable code owner reviews using the `requireCodeOwnerReviews` option:
@@ -1155,6 +1169,43 @@ steps:
 ### Escaping syntax
 
 If you need to pass variable substitution syntax through without it being interpreted you can escape the syntax by wrapping it like so `${{ '${{ parameters.something }}' }}`.
+
+### Creating re-usable snippets
+
+You can inject in re-usable snippets of yaml into a template using the `$yaml` operator like so:
+
+`templates/debug-step.yaml`
+```yaml
+- name: Debug log 2
+  id: debug_log_2
+  action: "debug:log"
+  input:
+    message: Second log
+```
+
+`logging-template.yaml`
+```yaml
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: placeholder-example
+  title: Demonstrating the placeholder usage
+  description: Shows how to inject in a single re-usable step
+spec:
+  owner: default/engineering
+  type: service
+  steps:
+    - name: Debug log 1
+      id: debug_log_1
+      action: "debug:log"
+      input:
+        message: First log
+
+      $yaml: https://github.com/yourOrg/some-repo/blob/templates/debug-step.yaml
+```
+
+NB: This can only be done for a single step as the re-usable section must be valid yaml.
+
 
 ## Troubleshooting
 
