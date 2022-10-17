@@ -531,6 +531,18 @@ steps:
       access: AcmeInc/engineering
 ```
 
+You can [protect the default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) from being pushed to directly by using `protectDefaultBranch` if your repository is part of a Github Pro account. 
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      protectDefaultBranch: true
+```
+
 You can enable code owner reviews using the `requireCodeOwnerReviews` option:
 
 ```yaml
