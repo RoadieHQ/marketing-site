@@ -6,7 +6,15 @@ description: How to create components such as services or websites using the Bac
 
 ## Introduction
 
-This tutorial will show you how to create a basic scaffolder template in Backstage.
+This tutorial will show you how to create a basic scaffolder template in Backstage. 
+
+The Roadie Backstage scaffolder is a feature that allows you to define software templates to create new software projects, update existing ones or simply perform repeated tasks in a consistent manner.
+
+Scaffolder templates are defined in YAML files and loaded into the Backstage catalog in the same way that other entities are loaded into Backstage. A template contains one or more `steps` which run sequentially during execution.
+
+A Scaffolder template is then run on demand by the users of Backstage to execute the software template.
+
+You can find detailed docs on writing scaffolder templates [here](/docs/details/scaffolder/).
 
 ## Prerequisite 
 
@@ -102,3 +110,5 @@ After a couple of seconds you should see the "Task Activity" page with the outpu
 ## What Next? 
 
 You can see the full list of Scaffolder Tasks that we support at Roadie by visiting `https://<tenant-name>.roadie.so/create/actions`
+
+You can find detailed docs on writing scaffolder templates [here](/docs/details/scaffolder/).
