@@ -1,7 +1,7 @@
 ---
-title: Creating a CircleCI token for Roadie
+title: Viewing CircleCI Builds in Roadie
 publishedDate: '2021-02-23T21:00:00.0Z'
-description: How to create a CircleCI personal access token for use with Backstage.
+description: How to set up the CircleCI Backstage plugin in Roadie.
 
 humanName: CircleCI
 logoImage: '../../../assets/logos/circle-ci/circle-ci-logo-only-black.png'
