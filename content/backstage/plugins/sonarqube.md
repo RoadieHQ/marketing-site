@@ -1,7 +1,7 @@
 ---
 humanName: SonarQube
 heading: 'Backstage SonarQube and SonarCloud Plugin'
-lead: 'Components to display code quality metrics from SonarCloud and SonarQube.'
+lead: 'Components to display code quality metrics from SonarCloud or SonarQube.'
 attribution:
   text: SDA-SE
   href: https://sda.se/
@@ -9,7 +9,7 @@ attribution:
 seo:
   title: 'Backstage SonarQube and SonarCloud Plugin | Roadie'
   description: |
-    Components to display code quality metrics from SonarCloud and SonarQube.
+    Components to display code quality metrics from SonarCloud or SonarQube.
 
 logoImage: '../../assets/logos/sonarqube/logo-sonar.png'
 
@@ -43,36 +43,33 @@ gettingStarted:
         </Grid>
       );
 
+  - intro: Install the sonarqube-backend-plugin into Backstage.
+    language: bash
+    code: 'Instructions found here: https://www.npmjs.com/package/@backstage/plugin-sonarqube-backend'
+ 
+ 
   - intro: Get and provide SONARCLOUD_TOKEN/SONARQUBE_TOKEN as env variables (see Notes on how to generate these values)
 
-  - intro: Add the proxy config for SonarCloud (auth token is read from the environment variables)
+  - intro: Add the configs for SonarCloud/SonarQube (auth token is read from the environment variables)
     language: YAML
     code: |
-      # app-config.yaml
-      proxy:
-        '/sonarqube':
-          target: https://sonarcloud.io/api
-          allowedMethods: ['GET']
-          auth: "${SONARCLOUD_TOKEN}:"
-
-  - intro: Add the proxy config for SonarQube (auth token is read from the environment variables)
-    language: YAML
-    code: |
-      proxy:
-      '/sonarqube':
-        target: https://your.sonarqube.instance.com/api
-        allowedMethods: ['GET']
-        auth: "${SONARQUBE_TOKEN}:"
-
-      sonarQube:
+      # app-config.yaml if configuring sonarqube
+      sonarqube:
         baseUrl: https://your.sonarqube.instance.com
-
+        apiKey: ${SONARQUBE_TOKEN}
+ 
+      # app-config.yaml if configuring sonarcloud
+      sonarqube:
+        baseUrl: https://sonarcloud.io
+        apiKey: ${SONARCLOUD_TOKEN}
+ 
   - intro: Add annotation to your catalog-info.yaml file.
     language: YAML
     code: |
       metadata:
         annotations:
-          sonarqube.org/project-key: [YOUR_PROJECT_KEY]
+          sonarqube.org/project-key: YOUR_PROJECT_INSTANCE/[YOUR_PROJECT_KEY]
+    - "YOUR_PROJECT_INSTANCE/" if not provided, the default instance will be used
 ---
 
 ## Notes
