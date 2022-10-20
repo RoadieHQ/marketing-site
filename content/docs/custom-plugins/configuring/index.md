@@ -47,10 +47,7 @@ List of components that the plugin exposes. These are defined as a type and name
 
 ### Step 2. Installing
 
-Custom plugins are installed when the application is rebuilt.  This rebuilding phase and plugin installation happens on an external workflow. This workflow can be triggered in a number of ways:
-1. By calling a webhook from your CI pipeline,
-2. By calling a webhook manually
-3. Automatically when a new NPM package is published to private, secure Roadie Artifactory.
+Custom plugins are installed when the application is rebuilt.  This rebuilding phase and plugin installation happens on an external workflow. This workflow is triggered automatically when a new NPM package is published to private, secure Roadie Artifactory.
 
 Application update process happens automatically after the workflow is triggered and has run successfully.
 
