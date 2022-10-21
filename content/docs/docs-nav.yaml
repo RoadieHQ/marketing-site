@@ -55,8 +55,8 @@ nav:
     - Google Cloud Platform: '/docs/integrations/gcp/'
     - Google OAuth client: '/docs/integrations/google-oauth-client/'
   - Custom plugins:
-    - Artifactory: '/docs/custom-plugins/artifactory/'
-    - Configuring: '/docs/custom-plugins/configuring/'
+    - Configuration: '/docs/custom-plugins/configuring/'
+    - Publishing Plugins: '/docs/custom-plugins/artifactory/'
     - Proxy: '/docs/custom-plugins/proxy/'
   - In-depth:
     - GitHub app permissions: '/docs/details/github-app-permissions/'
