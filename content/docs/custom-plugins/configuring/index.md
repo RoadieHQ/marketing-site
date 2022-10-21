@@ -47,7 +47,7 @@ List of components that the plugin exposes. These are defined as a type and name
 
 ### Step 2. Installing
 
-Custom plugins are installed when the application is rebuilt.  This rebuilding phase and plugin installation happens on an external workflow. This workflow is triggered automatically when a new NPM package is published to private, secure Roadie Artifactory.
+Custom plugins are installed when the application is rebuilt. This rebuilding phase and plugin installation happens on an external workflow. This workflow is triggered automatically when a new NPM package is published to private, secure Roadie Artifactory. To publish your plugin follow [these instructions](/docs/custom-plugins/artifactory/)
 
 Application update process happens automatically after the workflow is triggered and has run successfully.
 
@@ -90,8 +90,9 @@ be used as part of the UI.
 
 Build notifications are sent onto a Slack channel where you can see the time that the build took, as well as possible versions of the plugins that have been installed to your Roadie instance.
 
-## Conclusion
+## Next Steps
 
-After a successful installation you will be able to add components from your custom plugin into the Roadie instance. Components can be added as Cards, Tabs or Pages into component pages or to the sidebar.
+* If you haven't already [publish your plugin](/docs/custom-plugins/artifactory/) to our artifactory.
+* After a successful installation you will be able to [add components](/docs/details/updating-the-ui) from your custom plugin into the Roadie instance. Components can be added as Cards, Tabs or Pages into component pages or to the sidebar.
 
 [backstage-plugin-documentation]: https://backstage.io/docs/plugins/create-a-plugin
