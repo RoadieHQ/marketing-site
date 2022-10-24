@@ -8,24 +8,24 @@ description: How to designate yourself as an admin of Roadie Backstage.
 
 You often want to allow power users to edit the layouts and install plugins while preventing
 ordinary users from making unintended changes to the application setup. Roadie Backstage has a
-concept of admins to enable this.
+concept of admins to enable this. There are two ways to set this up - via Github teams, or manually.
 
 ## Prerequisites
 
 For automatic Admin group management you will need to have [installed the Roadie GitHub app](/docs/getting-started/install-github-app/) before proceeding with this step.
 
-For manual management you should be aware of the correct usernames of the users you are assigning to admin group
+For manual management you should be aware of the correct usernames of the users you are assigning to the admin group
 
 
 ## Automatic admin group discovery with GitHub teams
 
-To automatically designate admins you can use GitHub Teams which will be automatically discovered if you have installed the Roadie GitHub application.
+To automatically designate admins you can use a GitHub Team in your Github Org.
 
 1. Visit GitHub Teams in your organization's GitHub account and click the New Team button.
 
 2. Set the Team name to `roadie-backstage-admin`. This is a special value and must be an exact match.
 
-3. Enter a Description such as "Users with Backstage administration abilities.".
+3. Enter a Description such as "Users with Roadie Backstage administration abilities.".
 
 4. Leave Parent team unselected and click the Create Team button.
 
@@ -35,7 +35,9 @@ To automatically designate admins you can use GitHub Teams which will be automat
 
 ![A link that says "Log in to GitHub"](./sidebar-log-into-github.png)
 
-⚠️  &nbsp;It can take some time for Roadie to refresh the list of teams from GitHub teams. If you do not see admin functions immediately, please wait a few minutes and try again.
+6. Add [team discovery for your Github Org](/docs/details/location-management/#github-autodiscovery-and-organization-autodiscovery) to load the admin team in Roadie by adding it in the GitHub integration settings page at Administration > Settings > GitHub.
+
+⚠️  &nbsp;It can take some time for Roadie to refresh the list of teams from GitHub teams once the discovery location is added. If you do not see admin functions immediately, please wait a few minutes and try again.
 
 
 ## Manual admin group configuration with group entities (advanced alternative)
