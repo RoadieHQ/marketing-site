@@ -20,7 +20,7 @@ Either way, we have configured Backstage to populate the logged in users identit
 - We will take the users email address and trim off the domain part of it and use this as the users ID in backstage
 - We set the display name and the email in backstage as it appears in the login ID.
 - We associate the logged in user with the user component for the user ID in the default namespace. e.g. if my email is `fname@example.com`, my user is associated with the following user entity in backstage `user:default/fname`
-- If the user is also logged in to GitHub via the frontend of Backstage, then the user will also be associated with the entity represented by the GitHub username. e.g. if my GitHub handle is `fnamegh` then the identity will be associated with the entity `user:default/fnamegh` 
+- If the user is also logged in to GitHub via the frontend of Backstage, then the user will also be associated with the entity represented by the GitHub username. e.g. if my GitHub handle is `fnamegh` then the identity will be associated with the entity `user:default/fnamegh`
 
 You can always inspect the Backstage Identity for the logged in user by clicking the "Account" link on the bottom left of the Backstage sidebar.
 
@@ -104,4 +104,24 @@ You might also choose to load your users and groups from GitHub teams. This can 
 
 Click on the "Add" button beside "Configure Autodiscovery of teams and users". Now enter the name of your GitHub organization and click Save.
 
-In a few moments you should start to see Groups and Users loaded into the catalog. When your users login to GitHub in Backstage, they will be associated with the teams that they are a member of in Backstage.
+In a few minutes you should start to see Groups and Users loaded into the catalog. When your users login to GitHub in Backstage, they will be associated with the teams that they are a member of in Backstage.
+
+#### Deprecation Notice:
+
+To fully support using multiple Github orgs in Roadie Backstage we are switching to a different mechanism for ingesting groups from you Github orgs' team hierachy. 
+
+New discovery locations for Github teams will be added under the `github-multi-org` type. These will ingest teams using a namespace of your Github org rather than the default namespace. i.e. `group:roadiehq/engineering` rather than previously `group:default/engineering` 
+
+If you manually refer to teams in your Backstage `.yaml` files using the default namespace, you can leave the existing `github-org` locations as they are and nothing will change. 
+
+However, we recommend migrating to the new org namespaced groups as this fixes some bugs in admin management on Roadie Backstage as well as providing more clarity of the sourcing of your groups and teams.
+
+##### Migration guide:
+
+1. Search for all `group:default` code references across your Github orgs' Backstage yaml files that refer to teams sourced from your Github orgs. 
+2. Prepare PRs to modify these to reference the correct namespace for the Github org that these teams should be associated with or are sourced from. (In the case of manually defined Groups you can leave the default namespace.)
+3. Notify your users that you are migrating Groups to a new namespace system and ask them to merge the PRs by a specific day.
+4. Add new urls referencing the same Github orgs in the GitHub integration settings page at Administration > Settings > GitHub. These will appear under the new `github-multi-org` type which will use your org name as a namespace. (You will see duplicate group names in the `/explore/groups` page until you complete step 5)
+5. Once the PRs changing group namespaces are merged you can delete the `github-org` autodiscovery urls.
+
+NB: When changing Team discovery urls, it will take a few minutes for the changes to propagate through Roadie Backstage so that you can see the new teams on the `/explore/groups` page.

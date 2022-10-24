@@ -12,6 +12,7 @@ nav:
     - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
     - Inviting users: '/docs/getting-started/user-management/'
     - Designating admins: '/docs/getting-started/create-admin-group/'
+    - Modelling Users and Groups: '/docs/getting-started/modelling-users-and-groups/'
     - Adding API specs: '/docs/getting-started/openapi-specs/'
     - Scaffolding components: '/docs/getting-started/scaffolding-components/'
   - Backstage plugins:
@@ -65,7 +66,6 @@ nav:
     - Updating the UI: '/docs/details/updating-the-ui/'
     - Accessing AWS resources: '/docs/details/accessing-aws-resources/'
     - Allowlisting Roadie traffic: '/docs/details/allowlisting-roadie-traffic/'
-    - Modelling Users and Groups: '/docs/details/modelling-users-and-groups/'
     - Required annotations: '/docs/details/required-annotations/'
     - Previewing component changes: '/docs/details/previewing-changes/'
     - Validating catalog files: '/docs/details/validator/'
