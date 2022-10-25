@@ -45,8 +45,89 @@ AWS S3 autodiscovery can be configured to download catalog files from an S3 buck
 
 Bitbucket autodiscovery works similarly to GitHub discovery. It can be configured to use glob patterns to find individual files with a specific file name pattern. To get a working autodiscovery with Bitbucket, a configuration of Bitbucket Integration must be defined. Documentation on how to set up the integration can be found from [here](https://backstage.io/docs/integrations/bitbucket/discovery).
 
-More information about possible patterns and examples of URLs can be found from the [Backstage Bitbucket Integration documentation.](https://backstage.io/docs/integrations/bitbucket/discovery)
+Roadie currently uses BitbucketDiscoveryProcessor for BitBucket discovery. This expects the autodiscovery information encoded in a url. The following
+describes the url format for BitBucket Cloud (reproduced from Backstage.io):
 
+- The base URL for Bitbucket, `https://bitbucket.org`
+- The workspace name to scan (following the `workspaces/` path part), which must
+  match a workspace accessible with the username of your integration.
+- (Optional) The project key to scan (following the `projects/` path part),
+  which accepts \* wildcard tokens. If omitted, repositories from all projects
+  in the workspace are included.
+- (Optional) The repository blob to scan (following the `repos/` path part),
+  which accepts \* wildcard tokens. If omitted, all repositories in the
+  workspace are included.
+- (Optional) The `catalogPath` query argument to specify the location within
+  each repository to find the catalog YAML file. This will usually be
+  `/catalog-info.yaml` or a similar variation for catalog files stored in the
+  root directory of each repository. If omitted, the default value
+  `catalog-info.yaml` will be used.
+- (Optional) The `q` query argument to be passed through to Bitbucket for
+  filtering results via the API. This is the most flexible option and will
+  reduce the amount of API calls if you have a large workspace.
+  [See here for the specification](https://developer.atlassian.com/bitbucket/api/2/reference/meta/filtering)
+  for the query argument (will be passed as the `q` query parameter).
+- (Optional) The `search=true` query argument to activate the mode utilizing code search.
+    - Is mutually exclusive to the `q` query argument.
+    - Allows providing values at `catalogPath` for finding catalog files as allowed by the `path` filter/modifier
+      [at Bitbucket Cloud's code search](https://confluence.atlassian.com/bitbucket/code-search-in-bitbucket-873876782.html#Search-Pathmodifier).
+        - `catalogPath=/catalog-info.yaml`
+        - `catalogPath=catalog-info.yaml` (anywhere in the repository)
+        - `catalogPath=/path/catalog-info.yaml`
+        - `catalogPath=path/catalog-info.yaml`
+        - `catalogPath=/path/*/catalog-info.yaml`
+        - `catalogPath=path/*/catalog-info.yaml`
+    - Supports multiple catalog files per repository depending on the `catalogPath` value.
+    - Registers `Location` entities for existing files only vs all matching repositories.
+
+Examples:
+
+- `https://bitbucket.org/workspaces/my-workspace/projects/my-project` will find
+  all repositories in the `my-project` project in the `my-workspace` workspace.
+- `https://bitbucket.org/workspaces/my-workspace/repos/service-*` will find all
+  repositories starting with `service-` in the `my-workspace` workspace.
+- `https://bitbucket.org/workspaces/my-workspace/projects/apis-*/repos/service-*`
+  will find all repositories starting with `service-`, in all projects starting
+  with `apis-` in the `my-workspace` workspace.
+- `https://bitbucket.org/workspaces/my-workspace?q=project.key ~ "my-project"`
+  will find all repositories in a project containing `my-project` in its key.
+- `https://bitbucket.org/workspaces/my-workspace?catalogPath=my/nested/path/catalog.yaml`
+  will find all repositories in the `my-workspace` workspace and use the catalog
+  file at `my/nested/path/catalog.yaml`.
+- `https://bitbucket.org/workspaces/my-workspace?search=true&catalogPath=/catalog.yaml`
+  will find all `catalog.yaml` files located in the root of repositories in the workspace `my-workspace`.
+- `https://bitbucket.org/workspaces/my-workspace?search=true&catalogPath=catalog.yaml`
+  will find all `catalog.yaml` files located anywhere within repositories in the workspace `my-workspace`.
+- `https://bitbucket.org/workspaces/my-workspace?search=true&catalogPath=/my/nested/path/catalog.yaml`
+  will find all `catalog.yaml` files located within the directory `/my/nested/path/` within
+  repositories in the workspace `my-workspace`.
+- `https://bitbucket.org/workspaces/my-workspace?search=true&catalogPath=my/nested/path/catalog.yaml`
+  will find all `catalog.yaml` files located within the directory `my/nested/path/` located anywhere within
+  repositories in the workspace `my-workspace`.
+- `https://bitbucket.org/workspaces/my-workspace?search=true&catalogPath=/my/*/path/catalog.yaml`
+  will find all `catalog.yaml` files located within a directory `path/` located within any (recursive) directory
+  within the directory `my/` in the root of repositories in the workspace `my-workspace`
+  (`/my/nested/path/catalog.yaml`, `/my/very/nested/path/catalog.yaml`, ...).
+- `https://bitbucket.org/workspaces/my-workspace/projects/apis-*/repos/service-*?search=true&catalogPath=catalog.yaml`
+  will find all `catalog.yaml` files located anywhere within repositories starting with `service-`
+  in projects starting with `api-` in the workspace `my-workspace`.
+
+The format is slightly different for BitBucket server. The url is composed of four parts (From Backstage.io):
+
+- The base instance URL, `https://bitbucket.mycompany.com` in this case
+- The project key to scan, which accepts \* wildcard tokens. This can simply be
+  `*` to scan repositories from all projects. This example only scans for
+  repositories in the `my-project` project.
+- The repository blob to scan, which accepts \* wildcard tokens. This can simply
+  be `*` to scan all repositories in the project. This example only looks for
+  repositories prefixed with `service-`.
+- The path within each repository to find the catalog YAML file. This will
+  usually be `/catalog-info.yaml` or a similar variation for catalog files
+  stored in the root directory of each repository. If omitted, the default value
+  `catalog-info.yaml` will be used. E.g. given that `my-project`and `service-a`
+  exists, `https://bitbucket.mycompany.com/projects/my-project/repos/service-*/`
+  will result in:
+  `https://bitbucket.mycompany.com/projects/my-project/repos/service-a/catalog-info.yaml`.
 
 ## Managing Locations
 
