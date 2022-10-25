@@ -50,6 +50,7 @@ nav:
   - Integrations:
     - AWS S3: '/docs/integrations/aws-s3/'
     - Bitbucket: '/docs/integrations/bitbucket/'
+    - GitHub Discovery: '/docs/integrations/github-discovery/'
     - GitHub org: '/docs/integrations/github-teams/'
     - GitHub token: '/docs/integrations/github-token/'
     - Google Cloud Platform: '/docs/integrations/gcp/'
