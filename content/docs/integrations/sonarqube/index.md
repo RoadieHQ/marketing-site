@@ -31,8 +31,6 @@ In order for the Backstage integration to work we must first generate our api ke
 Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the token value from above into `SONARQUBE_API_TOKEN`.
 
 
-![Cloud based configuration](./cloud.png)
-
 ## References
 
 - [SonarQube backstage plugin](https://www.npmjs.com/package/@backstage/plugin-sonarqube/)
