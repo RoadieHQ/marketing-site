@@ -29,9 +29,11 @@ the URL of a catalog info YAML file. To quickly check the full value of the trun
 
 ### Checking the refresh schedule
 
-The `last discovery at` column above gives the time of the most recent update to the entity. The column `next refresh`
-gives the realtive time the catalog will next check for updates. The table is looking for updates every 30 seconds. However updates should come through in real time also if using
-GitHub. It should be noted the last discovery at only updates when there are changes rather than on every check.
+The `last discovery at` column above gives the time of the most recent update to the entity. It should be noted the `last discovery at` only updates when there are changes rather than on every check.
+
+The column `next refresh`
+gives the relative time the catalog will next check for updates. The table is looking for updates every 30 seconds. However updates should come through in real time also if using
+GitHub.
 
 ### Viewing errors
 
