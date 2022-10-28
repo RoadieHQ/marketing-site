@@ -42,7 +42,7 @@ Semantic versioning definition for the plugin to use. This can be defined with s
 
 
 ##### **Components**
-List of components that the plugin exposes. These are defined as a type and name pair. The type is one of Card, Content or Page. The name needs to match the component name in code that is exported from the plugin package.
+List of components that the plugin exposes. These are defined as a type and name pair. The type is a piece of metadata which determines where the component can be inserted in the UI (e.g. Card, Page etc). The name needs to match the component name in code that is exported from the plugin package.
 
 
 ### Step 2. Installing
