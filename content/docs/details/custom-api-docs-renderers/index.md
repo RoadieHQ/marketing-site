@@ -4,14 +4,14 @@ publishedDate: '2022-10-28T13:00:00.0Z'
 description: How to use custom plugins to render APIs
 ---
 
+## Introduction
+
+The API docs plugin supports user supplied renderers for API definitions. This page explains how you can configure such
+a renderer in roadie.
+
 ## Prerequisites
 
 * You must have custom plugins enabled for your tenant. Contact Roadie to enquire about this.
-
-## Introduction
-
-The API docs plugins supports user supplied renderers for API definitions. You might want to use this feature to render
-a custom format or to make modifications to an existing format. 
 
 ## Step 1: Write a custom renderer
 
