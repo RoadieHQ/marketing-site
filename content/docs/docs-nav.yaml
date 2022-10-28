@@ -78,3 +78,6 @@ nav:
     - Modelling dependencies: '/docs/details/showing-dependencies/'
     - Troubleshooting the catalog: '/docs/details/troubleshooting-the-catalog/'
     - Using grpc-docs: '/docs/details/grpc-docs/'
+  - Scaffolder-Cookbook:
+    - Create RFC: '/docs/scaffolder-cookbook/create-rfc/'
+    - Debug template: '/docs/scaffolder-cookbook/debug-template/'
