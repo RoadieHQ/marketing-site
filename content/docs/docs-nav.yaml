@@ -18,7 +18,7 @@ nav:
   - Backstage plugins:
     - Allure: '/docs/integrations/allure/'
     - Argo CD: '/docs/integrations/argocd/'
-    - Azure DevOps: '/docs/integrations/azure-devops/'
+    - Azure DevOps: '/docs/integration/azure-devops/'
     - Buildkite: '/docs/integrations/buildkite/'
     - Bugsnag: '/docs/integrations/bugsnag/'
     - Catalog graph: '/docs/integrations/catalog-graph/'
@@ -50,6 +50,7 @@ nav:
     - Tech radar: '/docs/integrations/tech-radar/'
   - Integrations:
     - AWS S3: '/docs/integrations/aws-s3/'
+    - Azure DevOps: '/docs/integrations/azure-devops-provider/'
     - Bitbucket: '/docs/integrations/bitbucket/'
     - GitHub Discovery: '/docs/integrations/github-discovery/'
     - GitHub org: '/docs/integrations/github-teams/'
