@@ -39,6 +39,13 @@ The GitHub *organization* integration provides the possibility to automatically 
 
 AWS S3 autodiscovery can be configured to download catalog files from an S3 bucket. For this to be functionality the [integration configuration for AWS S3](/docs/integrations/aws-s3) must be done. S3 autodiscovery does not support wildcard path, it must point to a specific prefix of an S3 bucket.
 
+### Azure DevOps
+
+
+![Azure DevOps autodiscovery target](./azure-autodiscovery.png)
+
+Azure DevOps autodiscovery can be configured to download catalog files from Azure DevOps SCM. For this to be functionality the [integration configuration for Azure Devops](/docs/integrations/azure-devops-provider) must be done. 
+
 ### Bitbucket Autodiscovery
 
 ![Bitbucket autodiscovery configuration](bitbucket_entry.png)
