@@ -1,6 +1,6 @@
 ---
 title: Integrating with Azure DevOps
-publishedDate: '2022-03-29T21:00:00.0Z'
+publishedDate: '2022-11-09T16:20:00.0Z'
 description: How to configure Roadie to read entities from Azure DevOps
 
 humanName: Azure DevOps Provider
