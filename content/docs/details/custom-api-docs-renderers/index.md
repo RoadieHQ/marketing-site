@@ -15,20 +15,59 @@ a renderer in roadie.
 
 ## Step 1: Write a custom renderer
 
-Write a [custom API docs renderer](https://www.npmjs.com/package/@backstage/plugin-api-docs#custom-api-renderings). 
-This is a React component which takes the API definition as a prop and renders it.
+A [custom API docs renderer](https://www.npmjs.com/package/@backstage/plugin-api-docs#custom-api-renderings) is a React 
+component which takes the API definition as a prop and renders it.
 
-## Step 2: Publish your custom renderer
+For example, the simplest custom renderer which just prefixes the definition would be something like this:
 
-Read [the docs on custom plugins](/docs/custom-plugins/configuring) and publish a plugin which exports your custom renderer.
-Be sure to configure the renderer as a component with ApiDocsWidget type.
+```typescript jsx
+import React from 'react';
+import { Typography } from '@material-ui/core';
 
-## Step 3: Configure the renderer in settings
+export const CustomApiDefinition = ({ definition }: { definition: string }) => (
+  <Typography>Custom format: {definition}</Typography>
+);
+```
 
-It is necessary to configure the type of entity the custom renderer applies to in settings at /administration/settings/api-docs.
-First click "add item" then enter the custom renderer information. The type should match the `spec.type` field on API entities
-this should be used to render. The title is showed as the name of the format in the API docs card. The component is then 
-specified and this should match the custom component registered in step #2 
+Ensure that the component is exported from the plugin:
+
+```typescript
+// src/index.ts
+export {
+  customApiDefinitonPlugin,
+  CustomApiDefinition,
+} from './plugin';
+```
+
+## Step 2: Configure your custom plugin
+
+Navigate to the custom plugins page `/administration/custom-plugins` and click "Add new plugin". Then enter your plugin's
+details.
+- The plugin package should match the name in your plugin's package.json matching this convention `@<tenant>-roadie/<your plugin>`.
+- The plugin name should be the name of the exported plugin variable (e.g. customApiDefinitonPlugin above)
+
+Then click "Add Component" and set the type to ApiDocsWidget and the name to the name of the exported custom renderer
+(e.g. CustomApiDefinition) and click "Save".
+
+![custom plugin config](./custom-plugin-config.png)
+
+## Step 3: Publish your custom plugin
+
+Read [the docs on custom plugins](/docs/custom-plugins/configuring) then build your package and publish to artifactory.
+
+In a nutshell:
+```
+yarn tsc && yarn build && yarn version && yarn publish
+```
+
+## Step 4: Configure the renderer in settings
+
+It is necessary to configure the type of entity the custom renderer applies to in settings at `/administration/settings/api-docs`.
+
+First click "add item" then enter the custom renderer information. 
+- The type should match the `spec.type` field on API entities this should be used to render. 
+- The title is showed as the name of the format in the API docs card. 
+- The component is then specified and this should match the custom component registered in step #2 
 (Caveat: it can take some time for a custom component to become available for use) 
 
 ![settings page](./settings.png)
