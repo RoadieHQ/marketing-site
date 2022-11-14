@@ -1,43 +1,57 @@
 ---
 title: Checks
 publishedDate: '2022-11-15'
-description: Managing Scorecard.
+description: Managing Scorecards.
 ---
 
-## Defining **Checks**
+# Managing Scorecards
 
-A Check is a rule which a service either does or does not satisfy. Checks are defined by evaluating a Fact from a Data Source against a logical operation, such as checking if services have less than 4 Low Severity Issues from Snyk.
+Scorecards are collections of multiple Checks, which may come from different Data Sources.
 
-To manage Checks, go do Tech Insights → Checks page. In this page you can view and edit existing ones, as well as adding new Checks.
+Overview and manage your Scorecards via Tech Insights → Scorecards page. In this page you can also add Scorecards.
 
-![                                                                   Overview of all checks ](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c488a7d4-88e8-4095-ac65-acb4f16c23a1/Screenshot_2022-11-07_at_22.44.10.png)
+You can also add Scorecards to the Catalog page so they’re visible to your team.
 
-                                                                   Overview of all checks
+![Scorecard overview](./scorecard-overview.png)
 
-![                                                                              Edit check](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e892419b-c84a-4fe8-aef0-3545f2f6011b/Screenshot_2022-11-08_at_09.45.20.png)
+Clicking the title of the scorecard will lead to scorecard results in Backstage catalog components.
 
-                                                                              Edit check
+![Scorecard catalog](./scorecard-result.png)
 
-Clicking a specific Check title will show you the results check results for all components.
+### Adding a Scorecard
 
-![Screenshot 2022-11-07 at 22.45.39.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3f9dd83a-6d07-4a04-b339-96ceb6c8ef4d/Screenshot_2022-11-07_at_22.45.39.png)
+Once you click in the “Add Scorecard” button, you’ll be prompted to fill in the details about the Scorecard, including the Checks you want to include and to which entities to apply it to, as shown below:
 
-### Adding a new check
+![Create Scorecard](./create-scorecard.png)
 
-After navigating to Tech Insights→ Checks page and clicking ‘Add check’ button, you’ll be asked to describe your Check as below:
+1 - General information about scorecard (Name and description).
 
-![Screenshot 2022-11-07 at 23.01.57.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/151dc907-b79e-49d2-a57e-41781dfab411/Screenshot_2022-11-07_at_23.01.57.png)
+2 - Checks you wish to include in the scorecard. These checks can be created before and added by clicking ‘Add’ button in this section, which will lead to opening this dialog, in which you select all the checks you want
 
-1 - After filling in the Name and Description, select the Data Source that you want to use for this Check.
+![Add check](./add-check.png)
 
-2 - Select the Fact that you want to use. Note that the list of Facts come from the selected Data Source.
+or added later through ‘Edit’ functionality.
 
-3 - Select a Fact operator and specify a target value. Json-rules-engine supports a limited [number of built-in operators](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md#operators) that can be used in conditions.
+![Edit Scorecard](./edit-scorecard.png)
 
-Checks are constructed using `[json-rules-engine` compatible JSON rules](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md#conditions) so you will make sure facts, operators and value align to those rules .
+3 - Select which kind and type of components this scorecard applies to.
 
-4 - You can try out your Check with the Dry Run button.
+4 - Owner which can be either a user or a group.
 
-![Screenshot 2022-11-07 at 23.02.21.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/88f0c2b8-ea7d-484a-87bc-818b72941ed5/Screenshot_2022-11-07_at_23.02.21.png)
+Once you are happy with the created scorecard, save it and you should be able to see it in overview screen.
 
-After you have added the check, make sure to refresh check results so it is taken into calculation from that moment on.
+### Adding a Scorecard to the Catalog
+
+In order to show a Scorecard in the Catalog Entity page, as shown below, you’ll have to define it from the Tech Insights → Scorecards page.
+
+![Scorecard Overview](./scorecard-overview.png)
+
+Once you’re Tech Insights → Scorecards, find a Scorecard you wish to add. From kebab menu select ‘Add to Catalog’
+
+![Add Scorecard to catalog](./add-to-catalog-scorecard.png)
+
+The select option which best applies to your use case.
+
+![Add Scorecard](./add-scorecard-to-catalog.png)
+
+Scorecard should now be visible under the layout page you have selected.

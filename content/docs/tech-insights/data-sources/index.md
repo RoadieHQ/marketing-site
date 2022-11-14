@@ -22,23 +22,23 @@ Roadie Tech Insights lets you define arbitrary Data Sources. Typically, custom D
 
 To add a Data Source, click on the “Add Data Source” button in the Data Sources page.
 
-![Screenshot 2022-11-14 at 11.07.32.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f8c20d66-ddf3-454a-82dc-e781dd616381/Screenshot_2022-11-14_at_11.07.32.png)
+![Add Data Source](./data-sources-overview.png)
 
 To set up a Data Source, you’ll be prompted to define a Data Provider and define which fields will be extracted as Facts from the data. Let’s start overviewing the options available for setting up a Data Provider:
 
-![Screenshot 2022-11-09 at 15.53.29.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/90435e70-1031-4208-ab0a-1fae081b8a03/Screenshot_2022-11-09_at_15.53.29.png)
+![Add Data Provider](./data-provider-step.png)
 
 1 - You must specify a type for that new Data Source. The _HTTP_ type lets you connect to an external API to pull in data, while the _Component repository file_ type lets you extract data from a file path in the corresponding repository of a given Component in your Catalog. As an example, let’s use “_Component repository file”_.
 
 2 - Set the path to the file you want to extract data from in repositories, starting from the root. This can be anything from JSON files to YAML files.
 
-3 - Try out what would be the response when testing specific entity from the location you have provided. If you were to get the `packsage.json` from a `sample-service` component, the Data Source would get something like this:
+3 - Try out what would be the response when testing specific entity from the location you have provided. If you were to get the `package.json` from a `sample-service` component, the Data Source would get something like this:
 
-![Screenshot 2022-11-09 at 15.53.44.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/662bbbeb-a14e-408c-8022-9dfb5662dd47/Screenshot_2022-11-09_at_15.53.44.png)
+![Dry run](./dry-run-result.png)
 
 Now that you have data, let’s define what Facts interests you. You’ll do this through the Fields Extraction.
 
-![Screenshot 2022-11-09 at 15.54.53.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d0134378-4074-4684-ab6a-c5373c0a042f/Screenshot_2022-11-09_at_15.54.53.png)
+![Fields extraction](./field-extraction.png.png)
 
 4 - Choose a parser to extract a Fact from the data obtained before. \****For the type “*Component repository file” this* can be either JSON or RegEx parser type, while for *“HTTP”\* data provider type, only JSON is supported. \*\***Keep in mind, JSON type may be used only for JSON type of files.
 
@@ -48,11 +48,11 @@ JSON type of parser uses [JSONPath Plus](https://jsonpath-plus.github.io/JSONPat
 
 An example of RegEx parser could be if we retrieved following result from location we have provided
 
-![Screenshot 2022-11-09 at 22.41.03.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d38af4e5-cccf-42cc-bbe8-51f964f457fc/Screenshot_2022-11-09_at_22.41.03.png)
+![Regex result](./dry-run-yaml-result.png)
 
 If we wanted to retrieve Node version we could write a following RegEx:
 
-![Screenshot 2022-11-09 at 22.41.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/99ed8a64-07fc-4d66-bf73-96db8e91feca/Screenshot_2022-11-09_at_22.41.19.png)
+![Field extraction Regex](./field-extraction-regex.png)
 
 6 - Select the type of the parsed value.
 
@@ -62,4 +62,4 @@ If you are happy with the created data source and checks you can proceed and cli
 
 Afterwards you will be able to select kind and type of services to which data source should apply and save newly created Data source by clicking ‘Save’ button.
 
-![Screenshot 2022-11-10 at 09.58.13.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0886f983-8bae-4fea-b442-0c680678bafd/Screenshot_2022-11-10_at_09.58.13.png)
+![Data Source Entity Filter](../data-sources//data-source-entity-filter.png)
