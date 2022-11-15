@@ -6,19 +6,19 @@ description: Managing Data Sources.
 
 ## Introduction
 
-Data Sources periodically collect Facts about your services from third-party vendors or arbitrary APIs. The Facts collected by Data Sources are used for defining Checks. Roadie comes with a handful of built-in Data Sources with predefined Facts that you can use without any setup. You can also define your own Data Sources, which are will use APIs or files in a repository as a source of truth.
+Data Sources periodically collect Facts about your services from third-party vendors or arbitrary APIs. The Facts collected by Data Sources are used for defining Checks. Roadie comes with a handful of built-in Data Sources with predefined Facts that you can use without any setup. You can also define your own Data Sources, which can use external APIs or files in a repository as a source of truth.
 
 To manage Data Sources, go to Tech Insights → Data Sources.
 
 ### Using Built-in Data Sources
 
-By default, Roadie includes 5 data sources for common vendors such as Datadog, Snyk, and GitHub. All built-in Data Sources have pre-defined Facts that you can use for defining your Checks.
+By default, Roadie includes 5 Data Sources for common vendors such as Datadog, Snyk, and GitHub. All built-in Data Sources have pre-defined Facts you can use for defining your [Checks](../checks//index.md).
 
-To use built-in Data Sources, you don’t need to do any set up. Jump to the next section to learn more about Checks. Note that you can’t delete nor trigger manual data updates on built-in Data Sources.
+To use built-in Data Sources, you don’t need to do any set up. Jump to the next section to learn more about Checks.
 
 ### Defining your own Data Source
 
-Roadie Tech Insights lets you define arbitrary Data Sources. Typically, custom Data Sources rely on pinging an API or reading a configuration file in a repository. When adding a Data Source, you’ll also specify which Facts that are extracted from said source.
+Roadie Tech Insights lets you define arbitrary Data Sources. Typically, custom Data Sources rely on calling an API or reading a configuration file in a repository. When adding a Data Source, you’ll also specify which Facts are extracted from said source.
 
 To add a Data Source, click on the “Add Data Source” button in the Data Sources page.
 
@@ -36,30 +36,36 @@ To set up a Data Source, you’ll be prompted to define a Data Provider and defi
 
 ![Dry run](./dry-run-result.png)
 
-Now that you have data, let’s define what Facts interests you. You’ll do this through the Fields Extraction.
+Now that you have data, let’s define what Facts interest you. You’ll do this through the Fields Extraction section.
 
 ![Fields extraction](./field-extraction.png)
 
-4 - Choose a parser to extract a Fact from the data obtained before. \****For the type “*Component repository file” this* can be either JSON or RegEx parser type, while for *“HTTP”\* data provider type, only JSON is supported. \*\***Keep in mind, JSON type may be used only for JSON type of files.
+4 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported. Keep in mind, JSON type may be used only for JSON type of files.
 
-JSON type of parser uses [JSONPath Plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/) syntax to extract data from JSON, while RegEx type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
+JSON type of parser uses [JSONPath Plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/) syntax to extract data from JSON, while Regex type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
 
-5 - If you’re using the JSON parser, specify a path from the root of the object. For example _“version”,_ or “_scripts.test”_. If you’re using the RegEx parser, specify a valid expression with a capture group if extracting values. Please note the RegEx does not need slashes at the start or end.
+5 - If you’re using the JSON parser, specify a path from the root of the object. For example _“version”,_ or “_scripts.test”_. If you’re using the Regex parser, specify a valid expression with a capture group if extracting values. Please note the Regex does not need slashes at the start or end.
 
-An example of RegEx parser could be if we retrieved following result from location we have provided
+Let's look how we would do it with an example. If we want to retrieve specific line from the following result:
 
 ![Regex result](./dry-run-yaml-result.png)
 
-If we wanted to retrieve Node version we could write a following RegEx:
+If we wanted to retrieve Node version we could write the following Regex:
 
-![Field extraction Regex](./field-extraction-regex.png)
+![Field extraction Regex](./field-extraction-Regex.png)
 
 6 - Select the type of the parsed value.
 
-7 - Check facts will run dry run upon data source and newly created check and let you know what would be the result if check was being run against entity you have provided as a test entity.
+7 - 'Check facts' button will run dry run upon data source and newly created check and let you know what would be the result if check was being run against entity you have provided as a test entity.
 
-If you are happy with the created data source and checks you can proceed and click ‘Add fact’.
+If you wish to add more facts you can do so by clicking ‘Add fact’.
 
 Afterwards you will be able to select kind and type of services to which data source should apply and save newly created Data source by clicking ‘Save’ button.
 
 ![Data Source Entity Filter](../data-sources//data-source-entity-filter.png)
+
+You should be able to see your newly created Data Source in the overview screen. However, make sure to click 'Trigger update' so process of collecting data starts.
+
+![Trigger update](../data-sources//trigger-update.png)
+
+Note that you can’t trigger manual data updates on built-in Data Sources.
