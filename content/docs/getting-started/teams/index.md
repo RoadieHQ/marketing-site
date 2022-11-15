@@ -121,7 +121,7 @@ However, we recommend migrating to the new org namespaced groups as this fixes s
 1. Search for all `group:default` code references across your Github orgs' Backstage yaml files that refer to teams sourced from your Github orgs. 
 2. Prepare PRs to modify these to reference the correct namespace for the Github org that these teams should be associated with or are sourced from. (In the case of manually defined Groups you can leave the default namespace.)
 3. Notify your users that you are migrating Groups to a new namespace system and ask them to merge the PRs by a specific day.
-4. Add new urls referencing the same Github orgs in the GitHub integration settings page at Administration > Settings > GitHub. These will appear under the new `github-multi-org` type which will use your org name as a namespace. (You will see duplicate group names in the `/explore/groups` page until you complete step 5)
-5. Once the PRs changing group namespaces are merged you can delete the `github-org` autodiscovery urls.
+4. Once the PRs changing group namespaces are merged, delete all the discovery locations in the GitHub integration settings page at `Administration > Settings > GitHub > Teams and Users` and wait up to 10 minutes for the cleanup to happen and for no groups to appear on the `/explore/groups` page.
+5. Add back the urls referencing the same Github orgs in the GitHub integration settings page. These will appear under the new `github-multi-org` type which will use your org name as a namespace. (NB: The first org you add will be the canonical source of any users that are in several orgs. You should not delete this org after adding it if possible.) 
 
-NB: When changing Team discovery urls, it will take a few minutes for the changes to propagate through Roadie Backstage so that you can see the new teams on the `/explore/groups` page.
+NB: When changing Team discovery urls, it will take a few minutes each time for the changes to propagate through Roadie Backstage so that you can see the new teams on the `/explore/groups` page.
