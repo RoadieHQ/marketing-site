@@ -6,7 +6,7 @@ description: Managing Data Sources.
 
 ## Introduction
 
-Data Sources periodically collect Facts about your services from third-party vendors or arbitrary APIs. The Facts collected by Data Sources are used for defining Checks. Roadie comes with a handful of built-in Data Sources with predefined Facts that you can use without any setup. You can also define your own Data Sources, which are typically APIs or files in a repository.
+Data Sources periodically collect Facts about your services from third-party vendors or arbitrary APIs. The Facts collected by Data Sources are used for defining Checks. Roadie comes with a handful of built-in Data Sources with predefined Facts that you can use without any setup. You can also define your own Data Sources, which are will use APIs or files in a repository as a source of truth.
 
 To manage Data Sources, go to Tech Insights → Data Sources.
 
@@ -38,7 +38,7 @@ To set up a Data Source, you’ll be prompted to define a Data Provider and defi
 
 Now that you have data, let’s define what Facts interests you. You’ll do this through the Fields Extraction.
 
-![Fields extraction](./field-extraction.png.png)
+![Fields extraction](./field-extraction.png)
 
 4 - Choose a parser to extract a Fact from the data obtained before. \****For the type “*Component repository file” this* can be either JSON or RegEx parser type, while for *“HTTP”\* data provider type, only JSON is supported. \*\***Keep in mind, JSON type may be used only for JSON type of files.
 
