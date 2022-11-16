@@ -29,12 +29,12 @@ Create a YAML file called `api-info.yaml` in the root of your component, alongsi
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: spotify
-  description: The official Spotify REST API
+  name: apis-guru
+  description: The apis.guru REST API
 spec:
   type: openapi
   lifecycle: production
-  owner: spotify
+  owner: user:guest
   definition:
     $openapi: https://api.apis.guru/v2/openapi.yaml
 ```
