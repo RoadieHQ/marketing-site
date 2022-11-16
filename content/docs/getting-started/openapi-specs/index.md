@@ -1,6 +1,7 @@
 ---
 title: Using OpenAPI Specs
 publishedDate: '2021-03-16T21:00:00.0Z'
+lastUpdated: '2022-11-16'
 description: How to use OpenAPI specs with Roadie Backstage.
 ---
 
@@ -35,14 +36,14 @@ spec:
   lifecycle: production
   owner: spotify
   definition:
-    $text: https://api.apis.guru/v2/specs/spotify.com/v1/swagger.yaml
+    $openapi: https://api.apis.guru/v2/specs/spotify.com/v1/swagger.yaml
 ```
 
 The `API` kind can take many of the normal `spec` properties such as `owner` and `lifecycle`.
 
-The `spec.definition.$text` property **must** point to the remote URL of your OpenAPI spec. 
+The `spec.definition.$openapi` property can point to a remote URL which is configured to be accessible(see more about allowlisting in the [docs](/docs/details/backend-reading-allow-list)), or it can be a relative path to the spec next to the API entity.
 
-_Note that if you are hosting your OpenAPI specs in GitHub and referencing them with the $text property, the link must point to the URL starting with `https://github.com` and not `https://raw.githubusercontent.com`._  
+_Note that if you are hosting your OpenAPI specs in GitHub and referencing them with the $openapi property, the link must point to the URL starting with `https://github.com` and not `https://raw.githubusercontent.com`._
 
 ### Step 2: Add the API to Backstage
 
