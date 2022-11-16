@@ -34,7 +34,7 @@ Ensure that the component is exported from the plugin:
 ```typescript
 // src/index.ts
 export {
-  customApiDefinitonPlugin,
+  customApiDefinitionPlugin,
   CustomApiDefinition,
 } from './plugin';
 ```
