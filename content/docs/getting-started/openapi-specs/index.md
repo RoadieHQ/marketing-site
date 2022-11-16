@@ -15,7 +15,7 @@ Creating Open API specs is outside the scope of this documentation. Please see t
 
 Before starting this guide, please...
 
-1.  Prepare an OpenAPI spec to use. Alternatively, you can use one of the [APIs listed on APIs Guru](https://apis.guru/browse-apis/). In the examples below, we will use the [Spotify API Spec](https://api.apis.guru/v2/specs/spotify.com/v1/swagger.yaml).
+1.  Prepare an OpenAPI spec to use. Alternatively, you can use one of the [APIs listed on APIs Guru](https://apis.guru/browse-apis/). In the examples below, we will use the [APIs Guru's openapi spec](https://api.apis.guru/v2/openapi.yaml). Make sure you add `*.apis.guru` to your [allowlist](/docs/details/backend-reading-allow-list).
 2.  Understand how entities are added to Backstage via YAML definitions. Please read the [Adding Components Guide](/docs/getting-started/adding-components/) to learn more.
 3.  Track a component in Backstage so we can add an API spec to it.
 
@@ -36,12 +36,12 @@ spec:
   lifecycle: production
   owner: spotify
   definition:
-    $openapi: https://api.apis.guru/v2/specs/spotify.com/v1/swagger.yaml
+    $openapi: https://api.apis.guru/v2/openapi.yaml
 ```
 
 The `API` kind can take many of the normal `spec` properties such as `owner` and `lifecycle`.
 
-The `spec.definition.$openapi` property can point to a remote URL which is configured to be accessible(see more about allowlisting in the [docs](/docs/details/backend-reading-allow-list)), or it can be a relative path to the spec next to the API entity.
+The `spec.definition.$openapi` property can point to a remote URL or it can be a relative path to the spec next to the API entity.
 
 _Note that if you are hosting your OpenAPI specs in GitHub and referencing them with the $openapi property, the link must point to the URL starting with `https://github.com` and not `https://raw.githubusercontent.com`._
 
