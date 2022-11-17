@@ -77,7 +77,6 @@ const BackstageWeekly = ({ data }) => {
           releases and changes in this service catalog from Spotify.
         `}
       />
-      <HeadRssLink />
 
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
