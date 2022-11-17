@@ -28,7 +28,7 @@ To set up a Data Source, you will, firtly, need to enter general information suc
 
 ![Add Data Provider](./data-provider-step.png)
 
-1 - You must specify a type for that new Data Source. The _HTTP_  type lets you connect to an external API to pull in data, while the _Component repository file_ type lets you extract data from a file path in the corresponding repository of a given Component in your Catalog. As an example, let’s use “_Component repository file”_.
+1 - You must specify a type for that new Data Source. The _HTTP_ type lets you connect to an external API to pull in data, while the _Component repository file_ type lets you extract data from a file path in the corresponding repository of a given Component in your Catalog. As an example, let’s use “_Component repository file”_.
 
 2 - Set the path to the file you want to extract data from in repositories, starting from the root. This can be anything from JSON files to YAML files.
 
@@ -40,7 +40,7 @@ Now that you have data, let’s define what Facts interest you. You’ll do this
 
 ![Fields extraction](./field-extraction.png)
 
-4 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported.
+4 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported. Even though YAML is a superset of JSON, this parser will only work on JSON files
 
 JSON type of parser uses [JSONPath Plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/) syntax to extract data from JSON, while Regex type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
 
@@ -69,5 +69,7 @@ You should be able to see the created Data Source in the overview screen. Newly 
 ![Trigger update](../data-sources//trigger-update.png)
 
 Note that you can’t trigger manual data updates on built-in Data Sources.
+
+## Next steps
 
 Now that you created the Data Source, you can define [Checks](../checks/) for that Data Source.

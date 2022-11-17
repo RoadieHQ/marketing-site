@@ -40,4 +40,6 @@ After you have added the check, make sure to refresh check results so it is take
 
 ![Refresh check](./refresh-results-check.png)
 
+## Next steps
+
 Now that you have added both Data Source and Checks, based on that Data Source, you can proceed and create a new [Scorecard](../scorecards/) which will include this check or include it in existing Scorecards.
