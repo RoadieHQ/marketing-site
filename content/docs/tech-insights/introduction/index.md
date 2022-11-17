@@ -17,7 +17,7 @@ Therefore, in order to create [Scorecards](../scorecards/index.md), you will nee
 - Roadie Tech Insights is a paid add-on. If you are not sure about whether or not you have it or would like to include it, please reach out to our sales team.
 - You must be an administrator for your Roadie instance to enable and manage Tech Insights.
 
-## Enable Roadie Tech Insights
+## Step 1: Enable Roadie Tech Insights
 
 To enable Roadie Tech Insights, go to Administration → Settings → Plugins → Tech Insights, or navigate to `https://[organisation]/administration/settings/tech-insights` and tick the enabled box as shown below:
 
@@ -27,4 +27,6 @@ Once Roadie Tech Insights is enabled, you’ll find a link in the sidebar as bel
 
 ![Sidebar Tech Insights](./sidebar-tech-insights.png)
 
-In the Tech Insights page, you’ll be able to create Data Sources, define Check for your Data Sources, and compose Scorecards with said Checks.
+## Next steps
+
+Now that you have enabled Roadie Tech Insights and verified you have access to the Tech Insights page you’ll be able to create [Data Sources](../data-sources/), define [Check](../checks/) for your Data Sources, and compose [Scorecards](../scorecards/) with said Checks.

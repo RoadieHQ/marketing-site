@@ -39,3 +39,5 @@ Checks are constructed using[json-rules-engine](https://github.com/CacheControl/
 After you have added the check, make sure to refresh check results so it is taken into calculation from that moment on.
 
 ![Refresh check](./refresh-results-check.png)
+
+Now that you have added both Data Source and Checks, based on that Data Source, you can proceed and create a new [Scorecard](../scorecards/) which will include this check or include it in existing Scorecards.
