@@ -5,6 +5,28 @@ lastUpdated: '2022-11-16'
 description: How to use OpenAPI specs with Roadie Backstage.
 ---
 
+> **_NOTE:_** To fully utilize the unfurling of all of your $ref's in your openapi specs please replace your old `$text`resolver usages inside your API kinds with the type openapi to the new `$openapi` resolver
+
+<details>
+<summary>Diff</summary>
+
+```diff
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: apis-guru
+  description: The apis.guru REST API
+spec:
+  type: openapi
+  lifecycle: production
+  owner: user:guest
+  definition:
+-    $text: https://api.apis.guru/v2/openapi.yaml
++    $openapi: https://api.apis.guru/v2/openapi.yaml
+```
+
+</details>
+
 ## Introduction
 
 The Open API spec support of Backstage allows users to look up and read the OpenAPI specs of services in the catalog.
