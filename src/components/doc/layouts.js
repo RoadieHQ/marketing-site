@@ -31,4 +31,10 @@ export const DOCS_LAYOUTS = [
     isActiveMatch: /\/docs\/scaffolder-cookbook/,
     sidebarNavItemGroups: [sidebar.nav[5]],
   },
+  {
+    tabLabel: 'Tech Insights',
+    startPath: '/docs/tech-insights/introduction',
+    isActiveMatch: /\/docs\/tech-insights/,
+    sidebarNavItemGroups: [sidebar.nav[6]],
+  },
 ];
