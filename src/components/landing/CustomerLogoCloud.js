@@ -23,8 +23,24 @@ import HopperWhiteLogo from '../../../content/assets/home/customer-logos-white/h
 import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.svg';
 import SnykWhiteLogo from '../../../content/assets/home/customer-logos-white/snyk.png';
 import NetlifyWhiteLogo from '../../../content/assets/home/customer-logos-white/netlify.png';
+import CaribouWhiteLogo from '../../../content/assets/home/customer-logos-white/caribou.png';
+import YotpoWhiteLogo from '../../../content/assets/home/customer-logos-white/yotpo.png';
 
 export const LOGOS = [
+  {
+    src: {
+      white: CaribouWhiteLogo,
+    },
+    alt: 'Caribou logo',
+    title: '~100 engineers',
+  },
+  {
+    src: {
+      white: YotpoWhiteLogo,
+    },
+    alt: 'Yotpo logo',
+    title: '~100 engineers',
+  },
   {
     src: {
       webp: SnykLogo,
@@ -32,6 +48,16 @@ export const LOGOS = [
       white: SnykWhiteLogo,
     },
     alt: 'Snyk logo',
+    title: '~150 engineers',
+  },
+
+  {
+    src: {
+      webp: ContentfulLogo,
+      png: ContentfulLogoPng,
+      white: ContentfulWhiteLogo,
+    },
+    alt: 'Contentful logo',
     title: '~150 engineers',
   },
   {
@@ -42,15 +68,6 @@ export const LOGOS = [
     },
     alt: 'Netlify logo',
     title: '~100 engineers',
-  },
-  {
-    src: {
-      webp: ContentfulLogo,
-      png: ContentfulLogoPng,
-      white: ContentfulWhiteLogo,
-    },
-    alt: 'Contentful logo',
-    title: '~150 engineers',
   },
   {
     src: {

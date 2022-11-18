@@ -6,7 +6,7 @@ import { LOGOS } from '../CustomerLogoCloud';
 import has from 'lodash/has';
 
 const CenteredHero = () => {
-  const whiteLogos = [...LOGOS].filter(({ src }) => has(src, 'white')).slice(0, 4);
+  const whiteLogos = [...LOGOS].filter(({ src }) => has(src, 'white')).slice(0, 5);
 
   return (
     <>
