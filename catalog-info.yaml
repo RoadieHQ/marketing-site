@@ -6,6 +6,8 @@ metadata:
   description: |
     A Gatsby application for generating the Roadie marketing site. Includes
     blog posts, legal policies, landing pages etc.
+  tags:
+    - oss
   links:
     - url: https://roadie.io
       title: Live site
@@ -17,6 +19,7 @@ metadata:
     snyk.io/org-name: roadie
     snyk.io/project-ids: 4f195df9-5ddf-4a98-8955-bd687d220d0b
     sentry.io/project-slug: marketing-site
+    sonarqube.org/project-key: RoadieHQ_marketing-site
 spec:
   type: website
   owner: roadie
