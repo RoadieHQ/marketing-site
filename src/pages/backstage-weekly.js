@@ -54,10 +54,8 @@ const extractNewsletterDetailsFromPost = ({ node: { frontmatter, ...rest } }) =>
   };
 };
 
-
 const BackstageWeekly = ({ data }) => {
-  const posts = data.allContentfulBlogPost.edges
-    .map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
+  const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
   const siteTitle = data.site.siteMetadata.title;
   const postsWithExtractedInfo = posts.map(extractNewsletterDetailsFromPost);
   const [email, setEmail] = useState('');
@@ -91,7 +89,10 @@ const BackstageWeekly = ({ data }) => {
             <Headline el="h2">Backstage Weekly</Headline>
           </div>
           <div className="mb-4">
-            <Lead>Get the latest news, deep dives into Backstage features, and a roundup of recent open-source action.</Lead>
+            <Lead>
+              Get the latest news, deep dives into Backstage features, and a roundup of recent
+              open-source action.
+            </Lead>
           </div>
 
           <NetlifyFormCallToAction
@@ -104,7 +105,9 @@ const BackstageWeekly = ({ data }) => {
         </div>
 
         <div>
-          <Headline el="h3" size="small">Previous issues</Headline>
+          <Headline el="h3" size="small">
+            Previous issues
+          </Headline>
         </div>
 
         <div className="pt-10 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
@@ -122,10 +125,8 @@ export default BackstageWeekly;
 export const pageQuery = graphql`
   query BackstageWeekly {
     allContentfulBlogPost(
-      sort: {fields: date, order: DESC}
-      filter: {
-        tags: { eq: "newsletter" }
-      }
+      sort: { fields: date, order: DESC }
+      filter: { tags: { eq: "newsletter" } }
     ) {
       edges {
         node {
