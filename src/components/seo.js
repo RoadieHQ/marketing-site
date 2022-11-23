@@ -5,7 +5,7 @@ import get from 'lodash/get';
 
 import roadieLogo from '../../content/assets/logos/roadie/roadie-racks-og-image.png';
 
-const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
+const SEO = ({ title, description = '', lang = 'en', headerImage = '', meta = [] }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,7 +25,7 @@ const SEO = ({ title, description = '', lang = 'en', meta = [] }) => {
 
   const metaDescription = description || site.siteMetadata.description;
   const twitterHandle = get(site, 'siteMetadata.social.twitter', 'roadiehq');
-  const ogImageUrl = `${site.siteMetadata.siteUrl}${roadieLogo}`;
+  const ogImageUrl = headerImage || `${site.siteMetadata.siteUrl}${roadieLogo}`;
   const ogImageAlt = 'The Roadie logo. A cube in isometric projection with 3 fins cut into the right face. The word Roadie is below.';
 
   const defaultMeta = [{
