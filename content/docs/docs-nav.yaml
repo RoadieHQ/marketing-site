@@ -48,6 +48,7 @@ nav:
       - Stackoverflow: '/docs/integrations/stackoverflow'
       - Travis CI: '/docs/integrations/travis-ci/'
       - Tech radar: '/docs/integrations/tech-radar/'
+      - Apache Airflow: '/docs/integrations/apache-airflow/'
   - Integrations:
       - AWS S3: '/docs/integrations/aws-s3/'
       - Azure DevOps: '/docs/integrations/azure-devops-provider/'
