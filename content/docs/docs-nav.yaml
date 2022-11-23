@@ -58,7 +58,6 @@ nav:
       - GitHub token: '/docs/integrations/github-token/'
       - Google Cloud Platform: '/docs/integrations/gcp/'
       - Google OAuth client: '/docs/integrations/google-oauth-client/'
-      - Apache Airflow: '/docs/integrations/apache-airflow/'
   - Custom plugins:
       - Configuration: '/docs/custom-plugins/configuring/'
       - Publishing Plugins: '/docs/custom-plugins/artifactory/'

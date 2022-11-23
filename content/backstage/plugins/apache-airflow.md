@@ -33,11 +33,11 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/App.tsx
-        ...
-        <Route path="/settings" element={<UserSettingsPage />} />
-    +    <Route path="/apache-airflow" element={<ApacheAirflowPage />} />
-    </FlatRoutes>
-    );
+          ...
+          <Route path="/settings" element={<UserSettingsPage />} />
+      +    <Route path="/apache-airflow" element={<ApacheAirflowPage />} />
+      </FlatRoutes>
+      
   - intro: 'Or, if you want, embed the DAGs into an existing page'
     language: typescript
     code: |
