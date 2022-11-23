@@ -48,6 +48,7 @@ nav:
       - Stackoverflow: '/docs/integrations/stackoverflow'
       - Travis CI: '/docs/integrations/travis-ci/'
       - Tech radar: '/docs/integrations/tech-radar/'
+      - Apache Airflow: '/docs/integrations/apache-airflow/'
   - Integrations:
       - AWS S3: '/docs/integrations/aws-s3/'
       - Azure DevOps: '/docs/integrations/azure-devops-provider/'
@@ -57,6 +58,7 @@ nav:
       - GitHub token: '/docs/integrations/github-token/'
       - Google Cloud Platform: '/docs/integrations/gcp/'
       - Google OAuth client: '/docs/integrations/google-oauth-client/'
+      - Apache Airflow: '/docs/integrations/apache-airflow/'
   - Custom plugins:
       - Configuration: '/docs/custom-plugins/configuring/'
       - Publishing Plugins: '/docs/custom-plugins/artifactory/'
