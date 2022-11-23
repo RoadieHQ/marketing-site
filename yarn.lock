@@ -7239,13 +7239,13 @@ gatsby-plugin-force-trailing-slashes@^1.0.5:
   dependencies:
     "@babel/runtime" "7.12.5"
 
-gatsby-plugin-google-analytics@^4.4.0:
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-4.13.0.tgz#5f7511a3c42fde1c6875c11180d4ef1901531a17"
-  integrity sha512-6Sxnah8ElfdQTtfxUw5k0iWVSKzcNYUH4hWwiO37fhJDOuFco9Wjy/eYKdb/+RlgXCJFiVrZ7PXkMRNJKxMnNA==
+gatsby-plugin-google-analytics@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-5.1.0.tgz#5b826b4e9f7a296e115b944e4a26120633a52eda"
+  integrity sha512-PEr62mGvxaFlHYz19JeUhciunZnx6sdjlHcGsmjZbEK5srazhISoguCMXSgRnVq8coVW6dovFVCC4m2AYfC3dg==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    minimatch "3.0.4"
+    minimatch "^3.1.2"
     web-vitals "^1.1.2"
 
 gatsby-plugin-google-tagmanager@^4.4.0:
