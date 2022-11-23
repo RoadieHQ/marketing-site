@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
 import { SEO, Page, Headline, Lead } from 'components';
-import { TitleAndDescription, PubDate, HeadRssLink } from 'components/article';
+import { TitleAndDescription, PubDate } from 'components/article';
 import {
   NetlifyFormCallToAction,
   SubscribeToNewsletterSuccessModal,

@@ -31,7 +31,7 @@ In order to make requests to your Apache Airflow API, you must provide Roadie wi
 1. The basic authorization token is the base64 encoding of the username and password of your instance.
 
     example:
-        echo -n "airflow:airflow" | base64 -w0
+        `echo -n "airflow:airflow" | base64 -w0`
 
 
 
