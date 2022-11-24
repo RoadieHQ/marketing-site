@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import { SEO, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
 import HeadRssLink from 'components/article/HeadRssLink';
-import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
@@ -52,7 +52,9 @@ const BlogPostTemplate = ({ data }) => {
             <ContentHeader frontmatter={post.frontmatter} />
           </div>
 
-          { coverImage && <GatsbyImage image={coverImage} alt={post.coverImage.title} className="mb-6" /> }
+          {coverImage && (
+            <GatsbyImage image={coverImage} alt={post.coverImage.title} className="mb-6" />
+          )}
 
           <section
             className="prose prose-primary max-w-none"
