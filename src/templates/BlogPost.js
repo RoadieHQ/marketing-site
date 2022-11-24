@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import {
-  SEO,
-  ContentHeader,
-  SitewideHeader,
-  SitewideFooter,
-} from 'components';
+import { SEO, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
 import HeadRssLink from 'components/article/HeadRssLink';
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
@@ -29,11 +25,14 @@ const BlogPostTemplate = ({ data }) => {
     setEmail('');
   };
 
+  const coverImage = getImage(post.coverImage);
+
   return (
     <>
       <SEO
         title={`${post.frontmatter.title} | ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt}
+        headerImage={getSrc(post.coverImage)}
       />
 
       <HeadRssLink />
@@ -53,6 +52,10 @@ const BlogPostTemplate = ({ data }) => {
             <ContentHeader frontmatter={post.frontmatter} />
           </div>
 
+          {coverImage && (
+            <GatsbyImage image={coverImage} alt={post.coverImage.title} className="mb-6" />
+          )}
+
           <section
             className="prose prose-primary max-w-none"
             dangerouslySetInnerHTML={{ __html: post.html }}
@@ -60,11 +63,7 @@ const BlogPostTemplate = ({ data }) => {
         </article>
 
         <div className="relative max-w-lg mx-auto lg:max-w-xl">
-          <SubscribeToNewsletterCTA
-            setModalOpen={setModalOpen}
-            email={email}
-            setEmail={setEmail}
-          />
+          <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
         </div>
       </main>
 
@@ -86,7 +85,7 @@ export const pageQuery = graphql`
       }
     }
 
-    markdownRemark: contentfulBlogPost(slug: {eq: $slug}) {
+    markdownRemark: contentfulBlogPost(slug: { eq: $slug }) {
       title
       date
       author {
@@ -100,6 +99,10 @@ export const pageQuery = graphql`
         childMarkdownRemark {
           html
         }
+      }
+      coverImage {
+        gatsbyImageData(height: 500)
+        title
       }
     }
   }
