@@ -263,7 +263,7 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
 
 ## Further reading
 
-1. Backstage TechDocs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/) will broadly apply to your Backstage documentation setup.
+1. Backstage TechDocs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/user-guide/) will broadly apply to your Backstage documentation setup. In particular, the ["Writing your docs"](https://www.mkdocs.org/user-guide/writing-your-docs/) page is a good place to start
 2. The [official Backstage TechDocs guide](https://backstage.io/docs/features/techdocs/techdocs-overview).
 
 ## Next steps
