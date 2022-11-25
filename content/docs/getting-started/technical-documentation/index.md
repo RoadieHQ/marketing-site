@@ -29,9 +29,6 @@ Create a file called `mkdocs.yml` in the root of a component you want to documen
 ```yaml
 site_name: '{component-name}'
 
-nav:
-  - Home: index.md
-
 plugins:
   - techdocs-core
 
@@ -189,24 +186,19 @@ graph LR
 
 Let's add a page called Local Development to our docs.
 
-First create a markdown file called `local-development.md` inside the `docs` directory of our component. Add some content to it.
+All that is required is to create a markdown file called `local-development.md` inside the `docs` directory of our component.
 
-Next, edit `mkdocs.yml` to make it aware of the newly created documentation page.
+Add some content to it.
 
-```yaml
-site_name: 'sample-service'
-
-nav:
-  - Home: index.md
-  - Local Development: local-development.md
-
-plugins:
-  - techdocs-core
-```
-
-Commit and merge these changes to the default branch of your repo on GitHub and Backstage will pick up the changes after a short period of time.
+Commit and merge these changes to the default branch of your repo on GitHub and Backstage will pick up the changes after
+a short period of time.
 
 ![a new page called local development with a code block and some navigation](./local-development-docs-backstage.png)
+
+By default, the structure of the docs pages will mirror that of the file system. You can also explicitly describe your 
+page structure using the `nav` object in your mkdocs.yaml. Both approaches are described [here](https://www.mkdocs.org/user-guide/writing-your-docs/#file-layout).
+
+Similarly, mkdocs will determine a title for your document according to [these rules](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data). 
 
 
 ## Handling Documentation Monorepos
@@ -263,13 +255,7 @@ markdown_extensions:
 
 Then you can include snippets in your markdown files. If a snippet is the only content in a file then the content is replaced
 by the referenced file. For example, to include a file TEST.md at the root of our repo we could do the following:
- - Create a file under the docs directory e.g. `docs/test.md` 
- - Include a nav item in mkdocs.yaml
-   ```yaml
-   nav:
-     # ....
-     - Test: test.md
-   ```
+ - Create a file under the docs directory e.g. `docs/test.md`
  - Add a snippet to test.md (the snippet path is relative to the mkdocs.yaml file)
     ```markdown
     --8<-- "TEST.md"
