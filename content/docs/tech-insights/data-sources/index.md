@@ -24,13 +24,19 @@ To add a Data Source, click on the “Add Data Source” button in the Data Sour
 
 ![Add Data Source](./data-sources-overview.png)
 
-To set up a Data Source, you will, firtly, need to enter general information such as name and a description. After that you will be need to define a Data Provider and which fields will be extracted as Facts from the data. Let’s start overviewing the options available for setting up a Data Provider:
+To set up a Data Source, you will, firstly, need to enter general information such as name and a description. After that you will be need to define a Data Provider and which fields will be extracted as Facts from the data. Let’s start overviewing the options available for setting up a Data Provider:
 
 ![Add Data Provider](./data-provider-step.png)
 
-1 - You must specify a type for that new Data Source. The _HTTP_ type lets you connect to an external API to pull in data, while the _Component repository file_ type lets you extract data from a file path in the corresponding repository of a given Component in your Catalog. As an example, let’s use “_Component repository file”_.
+1 - You must specify a type for that new Data Source. Roadie provides few different types of data provider configurations:
+  1. The _HTTP_ type lets you connect to an external API to pull in data
+  2. _Component repository file_ type lets you extract data from a file path in the corresponding repository of a given Component in your Catalog
+  3. _Component repository directory_ type allows you to extract a list of files from the repository
 
-2 - Set the path to the file you want to extract data from in repositories, starting from the root. This can be anything from JSON files to YAML files.
+2 - Set additional configuration options depending on the type of the data provider
+  1. For _HTTP_ type select a proxy from the provided dropdown and append a path extension to configure the URL the HTTP call should be made. The path extension should be input without the preceding slash. 
+  2. For _Component repository file_ configure the path to the file you want to extract data from in repositories, starting from the root. This can be anything from JSON files to YAML files.
+  3. For _Component repository_ configure the root folder where you want to list files from. To identify the repository root, you can use `.`. 
 
 3 - Try out what would be the response when testing specific entity from the location you have provided. If you were to get the `package.json` from a `sample-service` component, the Data Source would get something like this:
 
@@ -40,7 +46,7 @@ Now that you have data, let’s define what Facts interest you. You’ll do this
 
 ![Fields extraction](./field-extraction.png)
 
-4 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported. Even though YAML is a superset of JSON, this parser will only work on JSON files
+4 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported. Retrieved YAML files are handled as JSON. Repository directory configuration only returns a single Set type and the only configurable fields are the name and description of the field.  
 
 JSON type of parser uses [JSONPath Plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/) syntax to extract data from JSON, while Regex type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
 
@@ -62,7 +68,7 @@ If you wish to add more facts you can do so by clicking ‘Add fact’.
 
 After successfully adding a fact you will be able to select kind and type of services to which data source should apply and save newly created Data source by clicking ‘Save’ button.
 
-![Data Source Entity Filter](../data-sources//data-source-entity-filter.png)
+![Data Source Entity Filter](../data-sources/data-source-entity-filter.png)
 
 You should be able to see the created Data Source in the overview screen. Newly created Data Sources have a refresh cycle set to 24hours, but you can modify this value in 'Edit' screen, as well as trigger an update manually from the kebab menu.
 
