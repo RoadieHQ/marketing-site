@@ -29,7 +29,7 @@ const CenteredHero = () => {
                 <div className="flex-wrap mt-5 md:mt-20 sm:col-span-6 sm:flex-nowrap flex center justify-between">
                   {whiteLogos.map((logo) => (
                     <img
-                      className="m-3 h-8 opacity-80"
+                      className="m-3 h-12 opacity-80"
                       key={`hero-logo-${logo.alt}`}
                       src={logo.src.white}
                       alt={logo.alt}

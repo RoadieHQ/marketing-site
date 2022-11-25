@@ -20,7 +20,7 @@ import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-mon
 import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
 
 import HopperWhiteLogo from '../../../content/assets/home/customer-logos-white/hopper.png';
-import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.svg';
+import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.png';
 import SnykWhiteLogo from '../../../content/assets/home/customer-logos-white/snyk.png';
 import NetlifyWhiteLogo from '../../../content/assets/home/customer-logos-white/netlify.png';
 import CaribouWhiteLogo from '../../../content/assets/home/customer-logos-white/caribou.png';
