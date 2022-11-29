@@ -13,6 +13,7 @@ module.exports = {
       gray: colors.neutral,
       primary: colors.orange,
       info: colors.violet,
+      green: colors.green,
       white: '#fff',
     },
 

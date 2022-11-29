@@ -16,6 +16,9 @@ logoImage: '../../assets/logos/new-relic/logo-relic.png'
 coverImage: '../../assets/new-relic-plugin.png'
 coverImageAlt: 'A screenshot of the GCP Projects plugin.'
 
+availableOnRoadie: true
+roadieDocsPath: /newrelic/
+
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash

@@ -16,6 +16,9 @@ logoImage: '../../assets/logos/firehydrant/firehydrant.png'
 coverImage: '../../assets/backstage/plugins/firehydrant/firehydrant-service-card.png'
 coverImageAlt: 'FireHydrant in Backstage'
 
+availableOnRoadie: true
+roadieDocsPath: /firehydrant/
+
 gettingStarted:
   - intro: Install the front-end plugin.
     language: bash

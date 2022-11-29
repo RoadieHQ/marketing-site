@@ -17,6 +17,9 @@ logoImage: '../../assets/logos/sentry/sentry-glyph-dark.png'
 coverImage: '../../assets/sentry-plugin-1604x716.png'
 coverImageAlt: 'A screenshot of the Sentry plugin. It is showing a list of errors.'
 
+availableOnRoadie: true
+roadieDocsPath: /sentry/
+
 gettingStarted:
   - intro: 'Install the plugin package in your Backstage app'
     language: 'bash'

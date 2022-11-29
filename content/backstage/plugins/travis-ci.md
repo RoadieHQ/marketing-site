@@ -17,6 +17,9 @@ logoImage: '../../assets/logos/travis-ci/travis-ci-mascot-200x200.png'
 coverImage: '../../assets/travis-ci-plugin-1642x1027.png'
 coverImageAlt: 'A screenshot of the Travis CI plugin. It is showing a list of builds for a sample service.'
 
+availableOnRoadie: true
+roadieDocsPath: /travis-ci/
+
 gettingStarted:
   - intro: 'In the `backstage/packages/app` project add the plugin as a `package.json` dependency:'
     language: 'bash'

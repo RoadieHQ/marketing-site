@@ -16,6 +16,9 @@ logoImage: '../../assets/logos/sonarqube/logo-sonar.png'
 coverImage: '../../assets/sonar-plugin.png'
 coverImageAlt: 'A screenshot of the SonarQube and SonarCloud plugin.'
 
+availableOnRoadie: true
+roadieDocsPath: /snyk/
+
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash

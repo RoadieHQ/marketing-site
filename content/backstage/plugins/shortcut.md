@@ -16,6 +16,9 @@ coverImage: '../../assets/backstage/plugins/shortcut/shortcut.png'
 coverImageAlt: |
   Stories overview in Shortcut plugin.
 
+availableOnRoadie: true
+roadieDocsPath: /shortcut-plugin/
+
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash

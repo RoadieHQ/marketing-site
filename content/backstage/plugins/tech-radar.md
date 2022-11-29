@@ -17,6 +17,9 @@ logoImage: '../../assets/logos/tech-radar/radar.png'
 coverImage: '../../assets/tech-radar-plugin.jpg'
 coverImageAlt: 'A screenshot of the Tech Radar plugin.'
 
+availableOnRoadie: true
+roadieDocsPath: /tech-radar/
+
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash

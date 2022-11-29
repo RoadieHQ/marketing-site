@@ -17,6 +17,9 @@ logoImage: '../../assets/logos/datadog/datadog-logo-no-text.png'
 coverImage: '../../assets/datadog-plugin.png'
 coverImageAlt: 'A screenshot of the Datadog plugin.'
 
+availableOnRoadie: true
+roadieDocsPath: /datadog/
+
 gettingStarted:
   - intro: With this plugin, you can embed Datadog graphs and dashboards into your instance of Backstage. Datadog is a monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services through a SaaS-based data analytics platform.
 

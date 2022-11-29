@@ -15,6 +15,9 @@ logoImage: '../../assets/logos/opsgenie/logo-opsgenie.png'
 coverImage: '../../assets/backstage/plugins/opsgenie/opsgenie-plugin.png'
 coverImageAlt: 'A screenshot of the OpsGenie plugin.'
 
+availableOnRoadie: true
+roadieDocsPath: /opsgenie/
+
 gettingStarted:
   - intro: Install the plugin.
     language: bash

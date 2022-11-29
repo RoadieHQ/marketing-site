@@ -16,7 +16,8 @@ logoImage: '../../assets/prometheus/prom_logo.png'
 coverImage: '../../assets/prometheus/prom_entity_content.png'
 coverImageAlt: 'Prometheus alerts and graphs rendered in Backstage.'
 
-
+availableOnRoadie: true
+roadieDocsPath: /prometheus/
 
 gettingStarted:
   - intro: The Prometheus plugin is a frontend plugin. You will need to install it, configure it and add it to an appropriate location on the entity page.
