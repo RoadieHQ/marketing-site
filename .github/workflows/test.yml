@@ -18,7 +18,7 @@ jobs:
       - name: Log node version
         run: node --version
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: '0'
 
@@ -44,19 +44,19 @@ jobs:
           GATSBY_RECAPTCHAS_ENABLED: false
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           start: yarn serve --port 8001
 
       - name: Upload screenshots
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
 
       - name: Upload videos
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-videos
