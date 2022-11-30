@@ -21,13 +21,28 @@ https://<tenant-name>.roadie.so/administration/settings/tech-radar
 
 ![Tech Radar Settings](./radar-settings.png)
 
-Roadie currently supports fetching tech radar data directly from GitHub.  
+Roadie currently supports fetching tech radar data directly from GitHub and Bitbucket. Both CSV and JSON data files are supported, as long as they conform to the specified format which are explained below.
 
 In the configuration you need to tell your Roadie instance the repository name, organization/user and path to the actual 
 tech radar data file within the repository. The ID field is used to distinguish between sources if multiple sources are 
-configured and can have any value though it may help for it to be meaningful.
+configured and can have any value though it may help for it to be meaningful. 
 
-Both CSV and JSON data files are supported, as long as they conform to the specified format. 
+The Tech Radar uses OAuth to retrieve data files from sources. For GitHub OAuth token can be generated from the installed GitHub app but for Bitbucket configuration you need to additionally define secrets for OAuth client id and secret.
+
+### Step 1.b Bitbucket OAuth credentials
+
+To add Bitbucket Cloud authentication, you must create an OAuth Consumer in Bitbucket.
+
+Go to https://bitbucket.org/<your-project-name>/workspace/settings/api .
+
+Click Add Consumer.
+
+Needed settings:
+* Application name: Roadie
+* Callback URL: https://<tenant-name>.roadie.so/api/auth/bitbucket
+* (IMPORTANT) Permissions: Account - Read, Workspace membership - Read, Repository - Read
+
+The credentials from the created Bitbucket OAuth consumer can be stored in the secrets section of the settings page, inputting values to `AUTH_BITBUCKET_CLIENT_ID` and `AUTH_BITBUCKET_CLIENT_SECRET`.
 
 ## Step 2: Adding the tech radar page
 
