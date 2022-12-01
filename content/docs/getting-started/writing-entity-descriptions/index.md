@@ -27,6 +27,6 @@ You can see how to add this to Roadie Backstage once you've pushed it to your re
 
 ## Catalog Entity Schemas
 
-You can find all the supported schema information for representing a wide variety of entity types in Roadie Backstage in the Backstage documentation here [https://backstage.io/docs/features/software-catalog/descriptor-format#contents](https://backstage.io/docs/features/software-catalog/descriptor-format#contents
+You can find all the supported schema information for representing a wide variety of entity types (i.e. Component, API, Resource) in Roadie Backstage in the Backstage documentation here [https://backstage.io/docs/features/software-catalog/descriptor-format#contents](https://backstage.io/docs/features/software-catalog/descriptor-format#contents)
 
 
