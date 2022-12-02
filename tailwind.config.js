@@ -19,8 +19,13 @@ module.exports = {
 
     extend: {
       fontFamily: {
-        sans: ['Soehne', ...defaultTheme.fontFamily.sans],
+        sans: ['Source\\ Sans\\ 3', ...defaultTheme.fontFamily.sans],
+        highlight: ['Montserrat', 'Source\\ Sans\\ 3', ...defaultTheme.fontFamily.sans],
       },
+      letterSpacing: {
+        tighter: '0.025em',
+        tight: '0.010em',
+      }
     },
   },
 
