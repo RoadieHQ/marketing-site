@@ -56,7 +56,7 @@ const SitewideHeader = ({
   ctaText = 'Try it free',
 }) => (
   <Popover className="relative bg-white z-20">
-    <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6`}>
+    <div className={`max-w-${maxWidth} mx-auto px-2 sm:px-6 xl:py-3`}>
       <div className={classnames(`flex justify-between items-center py-6 md:justify-start md:space-x-10`, {
         'border-b-2 border-gray-100': borderBottom,
       })}>
@@ -70,11 +70,10 @@ const SitewideHeader = ({
         </div>
 
         <Popover.Group as="nav" className="hidden md:flex space-x-10">
-          <TopNavItem to="/#product" text="Product" />
-          <TopNavItem to="/#solutions" text="Solutions" />
+          <TopNavItem to="/#solutions" text="Product" />
           <TopNavItem to="/pricing/" text="Pricing" />
           <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
-          <TopNavDropdownItem text="Learn" subItems={learn} />
+          <TopNavDropdownItem text="Resources" subItems={learn} />
         </Popover.Group>
 
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">

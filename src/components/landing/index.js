@@ -13,3 +13,4 @@ export { default as TestimonialsCloud } from './Testimonials/TestimonialsCloud';
 export { default as SidebarTestimonial } from './Testimonials/SidebarTestimonial';
 export { default as CenteredHero } from './CenteredHero/CenteredHero';
 export { default as HeroForm } from './CenteredHero/HeroForm'; 
+export { default as SideBySideHero } from './SideBySideHero/SideBySideHero'; 

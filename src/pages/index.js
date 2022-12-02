@@ -24,7 +24,7 @@ import {
   FooterCTA,
   TestimonialsCloud,
   SimpleCenteredHeading,
-  CenteredHero,
+  SideBySideHero,
 } from 'components/landing';
 
 import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
@@ -244,7 +244,7 @@ const Home = ({
 
     <SitewideHeader borderBottom={false} ctaTo="/request-demo/" ctaText="Get a demo" />
 
-    <CenteredHero />
+    <SideBySideHero />
 
     <div className="pt-24 pb-32 bg-gray-50 relative overflow-hidden" id="product">
       <AlternatingFeatureBlock content={PRODUCT} />
