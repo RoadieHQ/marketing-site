@@ -3,7 +3,7 @@ This is the Gatsby generator for the Roadie marketing site. https://roadie.io
 ## Getting started for local development
 
 Export an environment variable for `CONTENTFUL_ACCESS_TOKEN` with the value set as the key for Content Preview API
-access token found here https://app.contentful.com/spaces/hcqpbvoqhwhm/api/keys/57ApCBey2YsTGSjZopsRzJ
+access token found in 1Password.
 
 ```shell
 git clone git@github.com:RoadieHQ/marketing-site.git
