@@ -25,6 +25,7 @@ import {
   TestimonialsCloud,
   SimpleCenteredHeading,
   SideBySideHero,
+  AlternatingFeatureWrapper,
 } from 'components/landing';
 
 import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
@@ -45,27 +46,16 @@ const LEAD = `Roadie's SaaS platform handles hosting and upgrades and ensures yo
 const PRODUCT = {
   features: [
     {
-      title: 'Focus on building value instead of learning Backstage internals',
-      description:
-        'Roadie manages deployments and security for you and helps you get the best out of Backstage with a few clicks.',
+      title: 'Keep your Developer Portal safe',
+      description: 'Roadie updates your Backstage instance automatically',
       illustration: {
         webp: DragDropIllustration,
         png: DragDropIllustrationPng,
         alt: 'A component from a Backstage plugin being dragged around with the mouse pointer',
       },
-      bullets: [
-        {
-          name: 'Secure connections',
-          description:
-            'Securely connect to SaaS services and your own infrastructure using our tunneling broker service.',
-          icon: ShieldCheckIcon,
-        },
-        {
-          name: 'Custom plugin support',
-          description:
-            'Building your own internal plugins? Publish them to our private repository and they appear where you need them.',
-          icon: BeakerIcon,
-        },
+      paragraphs: [
+        'As highlighted by Gartner’s report on Developer Portals, standing up and maintaining Backstage takes significant effort. Roadie gives you a production-grade Backstage instance and keeps it safe through regular upgrades and extra security layers.',
+        'Roadie is SOC2 Type 2 Certified and uses ephemeral environments for your Scaffolder actions, a common source of risk for Open Source adopters.',
       ],
     },
     {
@@ -246,9 +236,10 @@ const Home = ({
 
     <SideBySideHero />
 
-    <div className="pt-24 pb-32 bg-gray-50 relative overflow-hidden" id="product">
-      <AlternatingFeatureBlock content={PRODUCT} />
-    </div>
+    <AlternatingFeatureWrapper>
+      <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
+      <AlternatingFeatureBlock featureItem={PRODUCT.features[1]} illustrationSide="right" />
+    </AlternatingFeatureWrapper>
 
     <TestimonialsCloud />
 
