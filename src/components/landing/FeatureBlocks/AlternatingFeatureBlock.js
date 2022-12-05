@@ -14,23 +14,23 @@ const FeatureBlock = ({
   illustrationSide = 'right',
 }) => (
   <div
-    className={classnames('lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center', {
+    className={classnames('lg:grid lg:grid-cols-8 lg:items-center lg:gap-8', {
       'lg:grid-flow-row-dense': illustrationSide === 'left',
     })}
   >
     <div
-      className={classnames({
-        'lg:col-start-2': illustrationSide === 'left',
-        relative: illustrationSide === 'right',
+      className={classnames("lg:col-span-5", {
+        'lg:col-start-4': illustrationSide === 'left',
+        'lg:col-start-0': illustrationSide === 'right',
       })}
     >
-      <Title el="h3" className="text-primary-600">{title}</Title>
-      <p className="mt-5 text-xl">{description}</p>
+      <Title el="h3" className="text-primary-600 xl:text-3xl xl:tracking-tight">{title}</Title>
+      <p className="mt-3 mb-10 text-xl xl:text-2xl">{description}</p>
 
       {!!paragraphs && (
         <>
           {paragraphs.map((paragraph, i) => (
-            <p key={`feature-p-${camelCase(title)}-${i}`}>{paragraph}</p>
+            <p className="text-lg xl:text-xl mt-5" key={`feature-p-${camelCase(title)}-${i}`}>{paragraph}</p>
           ))}
         </>
       )}
@@ -45,10 +45,8 @@ const FeatureBlock = ({
     </div>
 
     <div
-      className={classnames('mt-10 -mx-4 relative lg:mt-0', {
-        'lg:col-start-1': illustrationSide === 'left',
-      })}
-      aria-hidden={illustrationSide === 'right'}
+      className={classnames('mt-10 relative lg:mt-0 lg:col-span-3')}
+      aria-hidden
     >
       <div className="flex align-center justify-center px-2 sm:px-0">
         <picture>
@@ -77,7 +75,7 @@ export const AlternatingFeatureBlock = ({ featureItem, illustrationSide = 'right
     {illustrationSide === 'right' ? (
       <DotPattern
         width={404}
-        height={784}
+        height={450}
         className="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
         id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
       />
@@ -85,7 +83,7 @@ export const AlternatingFeatureBlock = ({ featureItem, illustrationSide = 'right
       <DotPattern
         className="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
         width={404}
-        height={784}
+        height={450}
         aria-hidden="true"
         id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
       />

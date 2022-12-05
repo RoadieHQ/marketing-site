@@ -33,6 +33,11 @@ import DragDropIllustrationPng from '../../content/assets/home/illustrations/dra
 import SecurityMaintenanceIllustration from '../../content/assets/home/illustrations/security-maintenance-illustration.webp';
 import SecurityMaintenanceIllustrationPng from '../../content/assets/home/illustrations/security-maintenance-illustration.png';
 
+import KeepSafeImg from '../../content/assets/home/illustrations/home-keep-backstage-safe.png';
+import NoCodeImg from '../../content/assets/home/illustrations/home-no-code-backstage.png';
+import CustomPluginsImg from '../../content/assets/home/illustrations/home-custom-plugins.png';
+import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.png';
+
 import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
 import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
 import CircleCiLogo from '../../content/assets/logos/circle-ci/circleci.inline.svg';
@@ -49,9 +54,8 @@ const PRODUCT = {
       title: 'Keep your Developer Portal safe',
       description: 'Roadie updates your Backstage instance automatically',
       illustration: {
-        webp: DragDropIllustration,
-        png: DragDropIllustrationPng,
-        alt: 'A component from a Backstage plugin being dragged around with the mouse pointer',
+        png: KeepSafeImg,
+        alt: '',
       },
       paragraphs: [
         'As highlighted by Gartner’s report on Developer Portals, standing up and maintaining Backstage takes significant effort. Roadie gives you a production-grade Backstage instance and keeps it safe through regular upgrades and extra security layers.',
@@ -59,25 +63,39 @@ const PRODUCT = {
       ],
     },
     {
-      title: 'Keep your Backstage ever-green',
-      description:
-        'Get the latest features and secutiry updates from the community without the maintenance burden.',
+      title: 'Get all the OSS features, simplified',
+      description: 'Roadie brings no-code management to Backstage',
       illustration: {
-        webp: SecurityMaintenanceIllustration,
-        png: SecurityMaintenanceIllustrationPng,
-        alt: 'A progress bar and cog to indicate an upgrade in progress.',
+        png: NoCodeImg,
+        alt: '',
       },
-      bullets: [
-        {
-          name: 'Automated upgrades',
-          description: `Self-hosted Backstage teams can take up to 30% of their time upgrading their instance. We manage upgrades for you, whether they're security patches, minor, or major releases.`,
-          icon: ChipIcon,
-        },
-        {
-          name: 'SLAs Available',
-          description: `Downtime in Backstage can cause friction in your team and hinder adoption. We offer reliability and 24/7 on-call engineers.`,
-          icon: ShieldCheckIcon,
-        },
+      paragraphs: [
+        'With a vibrant community of contributors, Backstage keeps evolving and getting new plugins and integrations. Roadie brings you all these features, while smoothening out rough edges of OSS version like GitHub rate limits.',
+        'Roadie enables plugins and integrations through a UI, which also lets you manage access and permissions. Roadie also provides advanced debugging capabilities to make it easy to navigate the unexpected, if it happens.',
+      ],
+    },
+    {
+      title: 'Make your Developer Portal truly yours',
+      description: 'Roadie lets you install private plugins and renderers',
+      illustration: {
+        png: CustomPluginsImg,
+        alt: '',
+      },
+      paragraphs: [
+        'Your Developer Portal will only be successful if it’s tailored to the way your developers work. Roadie lets you bring your own Backstage plugins so you can integrate internal systems into your Developer Portal.',
+        'Roadie also lets you bring your own API documentation renderer so your docs are presented exactly as you want them inside your Developer Portal',
+      ],
+    },
+    {
+      title: 'Integrate with your Kubernetes Clusters',
+      description: 'Roadie lets you connect to your internal APIs using a broker ',
+      illustration: {
+        png: NoCodeImg,
+        alt: '',
+      },
+      paragraphs: [
+        'Improving your microservices discoverability is what Roadie excels at, and that includes how and where they are deployed. Roadie provides a Kubernetes view catered for developers so they understand how their services are running and can optimize from there.',
+        'To integrate with your internal APIs, including your Kubernetes clusters, Roadie relies on a Broker model, which allows us to access your endpoints without exposing them to the public internet. This is the same approach used by Snyk, the security monitoring company.',
       ],
     },
   ],
@@ -239,6 +257,8 @@ const Home = ({
     <AlternatingFeatureWrapper>
       <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
       <AlternatingFeatureBlock featureItem={PRODUCT.features[1]} illustrationSide="right" />
+      <AlternatingFeatureBlock featureItem={PRODUCT.features[2]} illustrationSide="left" />
+      <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="right" />
     </AlternatingFeatureWrapper>
 
     <TestimonialsCloud />
