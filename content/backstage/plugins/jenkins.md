@@ -15,6 +15,9 @@ logoImage: '../../assets/logos/jenkins/logo-jenkins.png'
 coverImage: '../../assets/backstage/plugins/jenkins/jenkins-plugin.png'
 coverImageAlt: 'A screenshot of the Jenkins plugin.'
 
+availableOnRoadie: true
+roadieDocsPath: /jenkins/
+
 gettingStarted:
   - intro: Install the plugin.
     language: bash

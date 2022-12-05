@@ -16,6 +16,9 @@ logoImage: '../../assets/logos/pagerduty/pagerduty-logo-light-200x200.png'
 coverImage: '../../assets/pagerduty-plugin-2077x955.png'
 coverImageAlt: 'PagerDuty incidents for sample-service-1 rendered in Backstage.'
 
+availableOnRoadie: true
+roadieDocsPath: /pagerduty/
+
 gettingStarted:
   - intro: The PagerDuty plugin is a frontend plugin. You will need to install it, configure it and add it to an appropriate location on the entity page.
 

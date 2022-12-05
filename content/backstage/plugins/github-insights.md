@@ -16,6 +16,8 @@ logoImage: '../../assets/logos/code-insights/code-icon.png'
 coverImage: '../../assets/code-insights-plugin.png'
 coverImageAlt: 'A screenshot of the GitHub Insights plugin. It is showing a code details for a sample component.'
 
+availableOnRoadie: true
+
 gettingStarted: # What will this step accomplish?
   - intro: Install the plugin into Backstage.
     language: bash

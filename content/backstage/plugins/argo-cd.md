@@ -18,6 +18,9 @@ logoImage: '../../assets/logos/argo-cd/argo-cd-logo.png'
 coverImage: '../../assets/argo-cd-plugin.png'
 coverImageAlt: 'A preview of Argo CD overview widget including kubernetes pod status.'
 
+availableOnRoadie: true
+roadieDocsPath: /argocd/
+
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash

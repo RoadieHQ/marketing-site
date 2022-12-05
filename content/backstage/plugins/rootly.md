@@ -1,6 +1,6 @@
 ---
 humanName: Rootly
-heading: Rootly Backstage Plugin
+heading: Backstage Rootly Plugin
 publishedDate: '2022-08-27T21:00:00.0Z'
 lead: Manage incidents directly from Slack
 attribution:
@@ -12,6 +12,9 @@ seo:
   description: 'See Rootly data and incidents directly inside Backstage.'
 
 logoImage: '../../assets/logos/rootly/logo.png'
+
+availableOnRoadie: true
+roadieDocsPath: /rootly/
 
 gettingStarted:
   - intro: Create a Rootly API Key. Use the steps further down in the document to do this.

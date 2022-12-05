@@ -16,7 +16,7 @@ logoImage: '../../assets/tech-insights/tech_insights.png'
 coverImage: '../../assets/tech-insights/tech_insights_scorecard.png'
 coverImageAlt: "Visualize, understand and optimize your team's tech health."
 
-
+availableOnRoadie: true
 
 gettingStarted:
   - intro: 'Install the plugin backend packages Backstage backend app'

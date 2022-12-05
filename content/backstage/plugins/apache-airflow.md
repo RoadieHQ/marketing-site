@@ -17,6 +17,9 @@ logoImage: '../../assets/logos/apache-airflow/apache-airflow-logo.png'
 coverImage: '../../assets/apache-airflow-plugin.pmg'
 coverImageAlt: 'A list of DAGs in a table along with instance versioning and status.'
 
+availableOnRoadie: true
+roadieDocsPath: /apache-airflow/
+
 gettingStarted:
   # What will this step accomplish?
   - intro: Install the plugin

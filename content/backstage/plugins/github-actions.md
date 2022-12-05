@@ -17,6 +17,8 @@ logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.p
 coverImage: '../../assets/backstage/plugins/github-actions/cover.png'
 coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
 
+availableOnRoadie: true
+
 gettingStarted: # What will this step accomplish?
   - intro: |
       If you are **using Roadie**, or you are using a GitHub app with self-hosted Backstage, OAuth

@@ -19,6 +19,8 @@ coverImageAlt: |
   Pull requests for Backstage rendered inside a Backstage plugin.
   The statistics widget is alongside, showing the average time to merge a PR.
 
+availableOnRoadie: true
+
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash

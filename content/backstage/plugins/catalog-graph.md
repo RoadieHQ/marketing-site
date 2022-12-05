@@ -15,6 +15,9 @@ logoImage: '../../assets/logos/catalog-graph/catalog-graph-logo.jpeg'
 coverImage: '../../assets/catalog-graph-plugin.png'
 coverImageAlt: 'Backstage Catalog Graph Plugin showing relationships between entities'
 
+availableOnRoadie: true
+roadieDocsPath: /catalog-graph/
+
 gettingStarted:
   - intro: Install the [plugin](https://github.com/backstage/backstage/blob/master/plugins/catalog-graph/README.md) into Backstage.
     language: bash

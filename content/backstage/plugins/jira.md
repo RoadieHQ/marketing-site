@@ -17,6 +17,9 @@ logoImage: '../../assets/logos/jira/jira_logo.png'
 coverImage: '../../assets/jira-plugin.png'
 coverImageAlt: 'A preview of Jira plugin including tasks summary, project information and Activity Stream.'
 
+availableOnRoadie: true
+roadieDocsPath: /jira/
+
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash

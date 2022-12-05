@@ -17,6 +17,9 @@ logoImage: '../../assets/logos/buildkite/buildkite-logo.png'
 coverImage: '../../assets/buildkite-plugin-overview.png'
 coverImageAlt: 'A list of builds in a table along with a status and retry button for each build.'
 
+availableOnRoadie: true
+roadieDocsPath: /buildkite/
+
 gettingStarted:
   - intro: Install the plugin
     language: bash

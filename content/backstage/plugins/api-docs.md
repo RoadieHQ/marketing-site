@@ -17,16 +17,15 @@ logoImage: '../../assets/logos/api-docs/logo-docs.png'
 coverImage: '../../assets/api-docs-plugin.png'
 coverImageAlt: 'A screenshot of the API Docs. It is showing a available endpoints for a sample component.'
 
+availableOnRoadie: true
+
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc
 gettingStarted:
-  # What will this step accomplish?
-  - language: bash
-    code: |
-      The plugin is already added when using `npx @backstage/create-app` 
-      so you can skip these steps. However, if you are not using create-app
+  - intro: |
+      This plugin is already added when using `npx @backstage/create-app` 
+      so you can usually skip these steps. However, if you are not using create-app
       you can follow the steps below.
-  - intro: Install the plugin into Backstage.
     language: bash
     code: 'yarn add @backstage/plugin-api-docs'
   - intro: 'Add the ApiExplorerPage extension to the app:'

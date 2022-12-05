@@ -17,6 +17,9 @@ logoImage: '../../assets/logos/kubernetes/logo-kubernetes.png'
 coverImage: '../../assets/kubernetes-plugin.png'
 coverImageAlt: 'A screenshot of the Kubernetes plugin.'
 
+availableOnRoadie: true
+roadieDocsPath: /kubernetes/
+
 gettingStarted:
   - intro: The Kubernetes plugin is made up of @backstage/plugin-kubernetes and @backstage/plugin-kubernetes-backend. To make it work, you will need to install and configure them.
 

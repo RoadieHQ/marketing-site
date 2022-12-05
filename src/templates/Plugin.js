@@ -52,7 +52,7 @@ const PluginTemplate = ({ data }) => {
 
           <ResponsiveSpacer>
             <div className="text-center pb-3">
-              <Title text="Getting started is simple" />
+              <Title text="Get SaaS Backstage" />
             </div>
 
             <div className="prose prose-primary max-w-none">
@@ -66,7 +66,7 @@ const PluginTemplate = ({ data }) => {
           {plugin.frontmatter.gettingStarted && (
             <ResponsiveSpacer>
               <div className="text-center pb-3" >
-                <Title text="Installation steps" />
+                <Title text="Self-hosted Backstage installation steps" />
               </div>
 
               {plugin.frontmatter.gettingStarted.map((section, index) =>
@@ -162,6 +162,8 @@ export const pageQuery = graphql`
         lead
         heading
         intro
+        availableOnRoadie
+        roadieDocsPath
 
         attribution {
           href

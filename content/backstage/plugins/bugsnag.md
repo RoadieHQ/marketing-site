@@ -16,6 +16,9 @@ coverImage: '../../assets/backstage/plugins/bugsnag/backstage-bugsnag-plugin.png
 coverImageAlt: |
   Service errors overview inside a Bugsnag plugin.
 
+availableOnRoadie: true
+roadieDocsPath: /bugsnag/
+
 gettingStarted:
   - intro: Install the plugin into Backstage.
     language: bash
