@@ -37,7 +37,7 @@ Go to https://bitbucket.org/<your-project-name>/workspace/settings/api .
 
 Click Add Consumer.
 
-Needed settings:
+Required settings:
 * Application name: Roadie
 * Callback URL: https://<tenant-name>.roadie.so/api/auth/bitbucket
 * (IMPORTANT) Permissions: Account - Read, Workspace membership - Read, Repository - Read
