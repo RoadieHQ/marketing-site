@@ -108,6 +108,6 @@
     "lint": "eslint src",
     "preview": "yarn run build && netlify deploy --dir public",
     "test:unit": "mocha --require @babel/register src/**/*.test.js",
-    "prepare": "node_modules/.bin/husky-run install"
+    "prepare": "node_modules/.bin/husky install"
   }
 }
