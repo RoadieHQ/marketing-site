@@ -55,7 +55,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'As highlighted by Gartner’s report on Developer Portals, standing up and maintaining Backstage takes significant effort. Roadie gives you a production-grade Backstage instance and keeps it safe through regular upgrades and extra security layers.',
+        'As highlighted by Gartner’s report on Developer Portals, standing up and maintaining Backstage takes significant effort. Roadie gives you a production-grade Backstage instance and keeps it safe through regular upgrades, SSO and dedicated infrastructure.',
         'Roadie is SOC2 Type 2 Certified and uses ephemeral environments for your Scaffolder actions, a common source of risk for Open Source adopters.',
       ],
     },
@@ -67,7 +67,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'With a vibrant community of contributors, Backstage keeps evolving and getting new plugins and integrations. Roadie brings you all these features, while smoothening out rough edges of the OSS version, like GitHub rate limits.',
+        'With a vibrant community of contributors, new Backstage plugins and features are popping up regularly. Roadie brings you all these features, while smoothening out rough edges, like dealing with GitHub rate limits.',
         'Roadie enables plugins and integrations through a UI, which also lets you manage access and permissions. Roadie also provides advanced debugging capabilities to make it easy to navigate the unexpected, if it happens.',
       ],
     },
@@ -91,8 +91,8 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Improving your microservices discoverability is what Roadie excels at, and that includes how and where they are deployed. Roadie provides a Kubernetes view catered for developers so they understand how their services are running and can optimize from there.',
-        'To integrate with your internal APIs, including your Kubernetes clusters, Roadie relies on a Broker model, which allows us to access your endpoints without exposing them to the public internet. This is the same approach used by Snyk, the security monitoring company.',
+        'Roadie excels at improving microservice discoverability, including how and where they are deployed. Roadie provides a Kubernetes view catered for developers so they understand how their services are running and can optimize from there.',
+        'Roadie uses a Broker to integrate with your internal APIs, including Kubernetes clusters and on-prem services. This allows us to securely access your endpoints, without exposing them to the public internet.',
       ],
     },
   ],
