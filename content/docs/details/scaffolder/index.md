@@ -398,6 +398,34 @@ Steps define the actions that are taken by the scaffolder template when it is ru
 
 Parameters taken from the user earlier may be used in the action steps using the syntax `${{ parameters.name }}`.
 
+### Step Outputs
+
+You can refer to the output of a previous step using the following syntax:
+
+```yaml
+${{ steps["publish-step-id"].output.repoContentsUrl }}
+```
+
+If the step id does not contain a special character you can also refer to it using the dot syntax.
+
+```yaml
+${{ steps["publish"].output.repoContentsUrl }}
+```
+
+### Parameter Values
+
+You can refer to the value of a parameter using the following syntax:
+
+```yaml
+${{ parameters["name"] }}
+```
+
+If the parameter id does not contain a special character you can also refer to it using the dot syntax.
+
+```yaml
+${{ parameters.name }}
+```
+
 ### `fetch:plain`
 
 Downloads content and places it in the workspace.
