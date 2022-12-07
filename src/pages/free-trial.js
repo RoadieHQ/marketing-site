@@ -72,7 +72,7 @@ const RequestTrial = ({ data, location }) => {
             Try out Roadie Backstage
           </Headline>
           <h2 className="text-lg mt-3 lg:text-xl xl:text-xl font-bold relative z-10">
-            Get a fully featured Roadie demo from a Backstage expert.
+            Get a first-hand experience of Roadie Backstage.
           </h2>
           <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">
             <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">
