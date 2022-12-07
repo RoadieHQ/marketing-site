@@ -26,14 +26,14 @@ const FeatureBlock = ({
     >
       <Title
         el="h3"
-        className={classnames('xl:text-3xl xl:tracking-tight', {
+        className={classnames('xl:text-2xl xl:tracking-tight', {
           'text-primary-600': illustrationSide === 'left',
           'text-primary-800': illustrationSide === 'right',
         })}
       >
         {title}
       </Title>
-      <p className="mt-3 mb-10 text-xl xl:text-2xl">{description}</p>
+      <p className="mt-1 mb-10 text-xl xl:text-2xl">{description}</p>
 
       {!!paragraphs && (
         <>

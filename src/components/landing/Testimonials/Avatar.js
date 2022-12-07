@@ -15,9 +15,7 @@ const Avatar = ({ avatar, borderColor = 'white' }) => (
       <img
         src={avatar.jpeg || avatar.png}
         alt={avatar.alt}
-        className="h-12 w-12 rounded-full"
-        height="100"
-        width="100"
+        className="h-16 w-16 rounded-full"
       />
     </picture>
   </div>

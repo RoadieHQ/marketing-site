@@ -16,7 +16,7 @@ const Button = ({
 }) => {
   const baseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-900';
   const buttonBaseClassName = 'shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2';
-  const primaryBaseClass = 'text-white bg-primary-600 hover:bg-primary-700';
+  const primaryBaseClass = 'text-white font-bold tracking-wide bg-primary-700 hover:bg-primary-600';
   const secondaryBaseClass = 'text-blueroadie bg-white hover:bg-gray-50';
   const insetBaseClass = 'text-primary-700 bg-primary-100 hover:bg-primary-200';
 

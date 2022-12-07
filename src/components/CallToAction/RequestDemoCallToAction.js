@@ -133,8 +133,6 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
         className="mb-10"
       />
 
-      {/* <ScmToolRadioGroup onChange={setScmTool} currentValue={scmTool} idPrefix="request-demo-" /> */}
-
       <div className="mb-10">
         <ScmToolSelect
           label="Primary source code host"
@@ -146,11 +144,11 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
         <HelpText className="mt-3" message="Roadie only supports GitHub for now. Submit the form to be notified when we support your tool." />
       </div>
 
-      <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} />
+      <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} className="mb-10" />
 
       <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
 
-      <div className="sm:col-span-2 mt-4">
+      <div className="sm:col-span-2 mt-10">
         <Button
           type="submit"
           color="primary"

@@ -241,7 +241,7 @@ const Home = ({ data }) => {
 
       <section className="backstage-background text-white max-w-xl mx-auto p-4 mt-5 sm:px-10 md:rounded-lg lg:max-w-6xl lg:grid lg:grid-cols-8 lg:items-center lg:gap-8 lg:grid-flow-row-dense">
         <div className="lg:col-start-4 lg:col-span-5">
-          <Title el="h3" className={classNames('xl:text-3xl xl:tracking-tight')}>
+          <Title el="h3" className={classNames('xl:text-2xl xl:tracking-tight')}>
             Leading architectural change through <nobr>Roadie Backstage</nobr>
           </Title>
           <p className="text-xl mt-5">
@@ -312,7 +312,7 @@ const Home = ({ data }) => {
     <FooterCTA /> */}
 
       <section className="max-w-xl mx-auto p-4 my-16 pt-10 sm:px-10 lg:max-w-7xl lg:my-28 border-t-2 border-[#F2F2F2]">
-        <Title el="h2" className="xl:text-xl xl:tracking-tight uppercase">
+        <Title el="h2" className="xl:text-xl xl:tracking-tight">
           <Link to="/blog">From Roadie's blog &rarr;</Link>
         </Title>
 
