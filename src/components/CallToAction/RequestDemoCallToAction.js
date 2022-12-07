@@ -3,7 +3,6 @@ import {
   Button,
   TextField,
   SubscribeToNewsletterSwitch,
-  ScmToolRadioGroup,
   Form,
   Recaptcha,
   HelpText,

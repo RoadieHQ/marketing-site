@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import {
-  SEO,
-  SitewideHeader,
-  SitewideFooter,
-} from 'components';
-import { SidebarTestimonial } from 'components/landing';
+import { SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
-import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
+import { FAQs } from 'components/landing';
+import { Headline } from 'components';
+import Avatar from '../components/landing/Testimonials/Avatar';
 
 import enriqueAvatar from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.webp';
 import enriqueAvatarPng from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.png';
-import contentfulLogo from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome-white.webp';
-import contentfulLogoPng from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome-white.png';
+import contentfulLogo from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome.webp';
+import contentfulLogoPng from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome.png';
 
 const SEO_TITLE = 'Try hosted Spotify Backstage for free';
 
@@ -28,12 +25,10 @@ const SubmissionSuccessPositiveBody = () => (
 const SubmissionSuccessNegativeBody = () => (
   <>
     <p>Roadie only supports GitHub and Bitbucket for now.</p>
+    <p>Roadie only supports GitHub for now.</p>
     <p>
-      Roadie only supports GitHub for now.
-    </p>
-    <p>
-      We are working to support more tools in the near future.
-      You will be among the first to know when we support yours.
+      We are working to support more tools in the near future. You will be among the first to know
+      when we support yours.
     </p>
   </>
 );
@@ -70,38 +65,64 @@ const RequestTrial = ({ data, location }) => {
       />
 
       <div className="min-h-screen bg-white">
-        <SitewideHeader ctaText="Get a demo" ctaTo="/request-demo/" />
+        <SitewideHeader ctaText="Get a Demo" ctaTo="/request-demo/" />
 
-        <FormWithLeftSidebar
-          title="Free trial"
-          description="Try Roadie Backstage free for 30 days. No credit card required. Get set up in hours."
-          sidebarChildren={
-            <SidebarTestimonial
-              companyLogo={contentfulLogo}
-              companyLogoPng={contentfulLogoPng}
-              companyLogoAlt="Contentful logo"
-              quote="Roadie helps us get the most out of Backstage, while saving time and money on setup and operation."
-              avatar={{
-                webp: enriqueAvatar,
-                png: enriqueAvatarPng,
-                alt: 'The face of a man with a slight beard and glasses. He is looking up and to the right slightly.',
-              }}
-              quoteeName="Enrique Amodeo Rubio"
-              quoteeRole="Staff Software Engineer"
-            />
-          }
-        >
-          <ExtendedGetInstanceCallToAction
-            email={email}
-            onSuccess={() => {
-              setModalOpen(true);
-            }}
-            setEmail={setEmail}
-            scmTool={scmTool}
-            setScmTool={setScmTool}
+        <section className="relative max-w-xl mx-auto p-4 mt-5 pt-10 sm:px-10 lg:max-w-7xl">
+          <Headline size="medium" className="leading-snug text-orange-600 relative z-10">
+            Try out Roadie Backstage
+          </Headline>
+          <h2 className="text-lg mt-3 lg:text-xl xl:text-xl font-bold relative z-10">
+            Get a fully featured Roadie demo from a Backstage expert.
+          </h2>
+          <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">
+            <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">
+              <ExtendedGetInstanceCallToAction
+                email={email}
+                onSuccess={() => {
+                  setModalOpen(true);
+                }}
+                setEmail={setEmail}
+                scmTool={scmTool}
+                setScmTool={setScmTool}
+              />
+            </div>
+            <div className="mt-5 p-5 lg:pl-10 lg:mt-16">
+              <picture>
+                <source srcSet={contentfulLogo} type="image/webp" />
+                <source srcSet={contentfulLogoPng} type="image/png" />
+
+                <img src={contentfulLogoPng} alt="Contentful logo" className="h-16" />
+              </picture>
+              <figure className="max-w-2xl mx-auto mt-10 mb-5">
+                <blockquote className="text-2xl font-bold tracking-wide">
+                  “Roadie helps us get the most out of Backstage, while saving time and money on
+                  setup and operation.”
+                </blockquote>
+                <figcaption className="flex text-xl mt-10">
+                  <Avatar
+                    avatar={{
+                      webp: enriqueAvatar,
+                      png: enriqueAvatarPng,
+                      alt: 'The face of a man with a slight beard and glasses. He is looking up and to the right slightly.',
+                    }}
+                  />
+                  <span className="pl-5">
+                    <strong>Enrique Amodeo Rubio</strong> <br /> Staff Software Engineer <br />{' '}
+                    Contentful
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <DotPattern
+            className="hidden absolute lg:block z-0 -top-12 right-12 transform translate-y-16 md:translate-y-24 lg:translate-y-10"
+            width={454}
+            height={274}
+            id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
           />
-        </FormWithLeftSidebar>
+        </section>
 
+        <FAQs />
         <SitewideFooter />
       </div>
     </>

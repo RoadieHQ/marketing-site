@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
 import { FAQs } from 'components/landing';
 import { RequestDemoCallToAction } from 'components/CallToAction';
-import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
 import { Headline } from 'components';
@@ -60,7 +59,7 @@ const RequestDemo = ({ data, location }) => {
         negativeBody={<SubmissionSuccessNegativeBody />}
       />
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen">
         <SitewideHeader />
 
         <section className="relative max-w-xl mx-auto p-4 mt-5 pt-10 sm:px-10 lg:max-w-7xl">
@@ -86,13 +85,10 @@ const RequestDemo = ({ data, location }) => {
                 <source srcSet={snykLogo} type="image/webp" />
                 <source srcSet={snykLogoPng} type="image/png" />
 
-                <img src={snykLogoPng} alt="Snyk logo" height="33" width="160" />
+                <img src={snykLogoPng} alt="Snyk logo" className="h-18" />
               </picture>
               <figure className="max-w-2xl mx-auto mt-10 mb-5">
-                <blockquote
-                  cite="https://youtu.be/6Ss1e-9X_JY?t=51"
-                  className="text-2xl font-bold tracking-wide"
-                >
+                <blockquote className="text-2xl font-bold tracking-wide">
                   “Roadie are amazing. I totally recommend them. They’re great to work with and
                   super responsive and helpful.”
                 </blockquote>
@@ -110,19 +106,6 @@ const RequestDemo = ({ data, location }) => {
                 </figcaption>
               </figure>
             </div>
-            {/* <SidebarTestimonial
-              companyLogo={snykLogo}
-              companyLogoPng={snykLogoPng}
-              companyLogoAlt="Snyk logo"
-              quote="Roadie are amazing. I totally recommend them. They’re great to work with and super responsive and helpful."
-              avatar={{
-                webp: crystalAvatar,
-                png: crystalAvatarPng,
-                alt: 'Black and white headshot of a womain with long straight hair.',
-              }}
-              quoteeName="Crystal Hirschorn"
-              quoteeRole="Director of Engineering"
-            /> */}
           </div>
           <DotPattern
             className="hidden absolute lg:block z-0 -top-12 right-12 transform translate-y-16 md:translate-y-24 lg:translate-y-10"
@@ -133,36 +116,6 @@ const RequestDemo = ({ data, location }) => {
         </section>
 
         <FAQs />
-
-        {/* <FormWithLeftSidebar
-          title="Request a demo"
-          description="Bring your team to a fully featured demo of Roadie and Backstage."
-          sidebarChildren={
-            <SidebarTestimonial
-              companyLogo={snykLogo}
-              companyLogoPng={snykLogoPng}
-              companyLogoAlt="Snyk logo"
-              quote="Roadie are amazing. I totally recommend them. They’re great to work with and super responsive and helpful."
-              avatar={{
-                webp: crystalAvatar,
-                png: crystalAvatarPng,
-                alt: 'Black and white headshot of a womain with long straight hair.',
-              }}
-              quoteeName="Crystal Hirschorn"
-              quoteeRole="Director of Engineering"
-            />
-          }
-        >
-          <RequestDemoCallToAction
-            location={location}
-            scmTool={scmTool}
-            setScmTool={setScmTool}
-            onSuccess={() => {
-              setModalOpen(true);
-            }}
-          />
-        </FormWithLeftSidebar> */}
-
         <SitewideFooter />
       </div>
     </>

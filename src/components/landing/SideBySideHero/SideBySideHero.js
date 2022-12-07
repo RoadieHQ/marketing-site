@@ -24,9 +24,9 @@ const SideBySideHero = () => {
           link={true}
           color="secondary"
           size="medium"
-          to="/request-demo/"
+          to="/free-trial/"
           className="font-bold tracking-wide mt-6"
-          text="Request a Demo"
+          text="Try Roadie Backstage"
         />
 
         <div className="mt-5 md:mt-8 xl:mt-16">
