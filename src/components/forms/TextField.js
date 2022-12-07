@@ -17,7 +17,7 @@ const TextField = ({
 
   return (
     <div className="sm:col-span-2 mt-4">
-      <label htmlFor={htmlId} className={`block text-sm font-medium ${labelStyle}`}>
+      <label htmlFor={htmlId} className={`block text-lg text-blueroadie font-medium ${labelStyle}`}>
         {label}
       </label>
       <div className="mt-1.5 relative">

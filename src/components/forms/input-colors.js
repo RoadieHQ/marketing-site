@@ -1,11 +1,11 @@
 export const INPUT_COLORS = {
   primary: {
-    accent: 'focus:ring-primary-500 focus:border-primary-500',
-    border: 'border-gray-300',
+    accent: 'focus:ring-blueroadie focus:border-blueroadie',
+    border: 'border-gray-400',
     placeholder: 'placeholder-text-gray-400',
     background: 'bg-white',
     text: 'text-inherit',
-    label: 'text-gray-700',
+    label: 'text-blueroadie',
   },
   secondary: {
     accent: 'focus:ring-white focus:border-white',

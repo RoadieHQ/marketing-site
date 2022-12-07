@@ -59,8 +59,8 @@ const learn = [
 const SitewideHeader = ({
   maxWidth = '7xl',
   borderBottom = true,
-  ctaTo = '/free-trial/',
-  ctaText = 'Try it free',
+  ctaTo = '/request-demo/',
+  ctaText = 'Get a Demo',
 }) => (
   <Popover as={React.Fragment}>
     <>

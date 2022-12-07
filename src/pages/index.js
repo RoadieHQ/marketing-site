@@ -228,7 +228,7 @@ const Home = ({ data }) => {
     <>
       <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
-      <SitewideHeader borderBottom={false} ctaTo="/request-demo/" ctaText="Get a demo" />
+      <SitewideHeader borderBottom={false} />
 
       <SideBySideHero />
 

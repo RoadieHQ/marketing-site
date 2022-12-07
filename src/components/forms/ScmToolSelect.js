@@ -16,7 +16,7 @@ export const ScmToolSelect = ({
   };
   return (
     <>
-      <label className={`block text-sm font-medium ${labelStyle}`} htmlFor="scm">
+      <label className={`block text-lg font-medium ${labelStyle}`} htmlFor="scm">
         {label}
       </label>
       <select

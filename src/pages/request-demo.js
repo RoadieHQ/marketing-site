@@ -6,6 +6,7 @@ import { RequestDemoCallToAction } from 'components/CallToAction';
 import FormWithLeftSidebar from 'components/layouts/FormWithLeftSidebar';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
+import { Headline } from 'components';
 
 import crystalAvatar from '../../content/assets/home/testimonial/crystal-snyk/crystal-avatar.webp';
 import crystalAvatarPng from '../../content/assets/home/testimonial/crystal-snyk/crystal-avatar.jpeg';
@@ -16,19 +17,17 @@ const SEO_TITLE = 'Request a demo of Roadie Backstage';
 
 const SubmissionSuccessPositiveBody = () => (
   <p>
-    Thank you for requesting a demo of Roadie Backstage. We&apos;ll be in touch via
-    the email provided.
+    Thank you for requesting a demo of Roadie Backstage. We&apos;ll be in touch via the email
+    provided.
   </p>
 );
 
 const SubmissionSuccessNegativeBody = () => (
   <>
+    <p>Roadie only supports GitHub for now.</p>
     <p>
-      Roadie only supports GitHub for now.
-    </p>
-    <p>
-      We are working to support more tools in the near future.
-      You will be among the first to know when we support yours.
+      We are working to support more tools in the near future. You will be among the first to know
+      when we support yours.
     </p>
   </>
 );
@@ -63,7 +62,28 @@ const RequestDemo = ({ data, location }) => {
       <div className="min-h-screen bg-white">
         <SitewideHeader />
 
-        <FormWithLeftSidebar
+        <section className="max-w-xl mx-auto p-4 mt-5 pt-10 sm:px-10 lg:max-w-7xl">
+          <Headline size="medium" className="leading-snug text-orange-600">
+            Discover Roadie Backstage
+          </Headline>
+          <h2 className="text-lg mt-3 lg:text-xl xl:text-xl font-bold">
+            Get a full-featured Roadie demo from a Backstage expert.
+          </h2>
+          <div className="lg:grid lg:grid-cols-3 mt-10">
+            <div className='bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500'>
+              <RequestDemoCallToAction
+                location={location}
+                scmTool={scmTool}
+                setScmTool={setScmTool}
+                onSuccess={() => {
+                  setModalOpen(true);
+                }}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* <FormWithLeftSidebar
           title="Request a demo"
           description="Bring your team to a fully featured demo of Roadie and Backstage."
           sidebarChildren={
@@ -90,7 +110,7 @@ const RequestDemo = ({ data, location }) => {
               setModalOpen(true);
             }}
           />
-        </FormWithLeftSidebar>
+        </FormWithLeftSidebar> */}
 
         <SitewideFooter />
       </div>
