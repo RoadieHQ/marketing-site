@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { SEO, SitewideFooter, SitewideHeader } from 'components';
 import {
   AlternatingFeatureBlock,
@@ -22,6 +22,8 @@ import AndyThumbImg from '../../content/assets/home/illustrations/home-andy-vide
 import Title from '../components/Title';
 import classNames from 'classnames';
 import Button from '../components/forms/Button';
+import { PostSummary, ListHeader } from 'components/article';
+import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
 
 const SEO_TITLE = 'The easiest way to get Spotify Backstage';
 const LEAD = `Roadie's SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features.`;
@@ -66,7 +68,7 @@ const PRODUCT = {
     },
     {
       title: 'Integrate with your Kubernetes Clusters',
-      description: 'Roadie lets you connect to your internal APIs using a broker ',
+      description: 'Roadie lets you connect to your infrastructure using a broker ',
       illustration: {
         png: KubernetesImg,
         alt: '',
@@ -218,83 +220,84 @@ const PRODUCT = {
 //   ],
 // };
 
-const Home = ({
-  data: {
-    site: {
-      siteMetadata: { title: siteTitle },
-    },
-  },
-}) => (
-  <>
-    <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
+const Home = ({ data }) => {
+  const siteTitle = data.site.siteMetadata.title;
 
-    <SitewideHeader borderBottom={false} ctaTo="/request-demo/" ctaText="Get a demo" />
+  const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
+  return (
+    <>
+      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
-    <SideBySideHero />
+      <SitewideHeader borderBottom={false} ctaTo="/request-demo/" ctaText="Get a demo" />
 
-    <AlternatingFeatureWrapper id="product">
-      <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
-      <AlternatingFeatureBlock featureItem={PRODUCT.features[1]} illustrationSide="right" />
-      <AlternatingFeatureBlock featureItem={PRODUCT.features[2]} illustrationSide="left" />
-      <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="right" />
-    </AlternatingFeatureWrapper>
+      <SideBySideHero />
 
-    <section className="backstage-background text-white max-w-xl mx-auto p-4 mt-5 sm:px-10 md:rounded-lg lg:max-w-6xl lg:grid lg:grid-cols-8 lg:items-center lg:gap-8 lg:grid-flow-row-dense">
-      <div className="lg:col-start-4 lg:col-span-5">
-        <Title el="h3" className={classNames('xl:text-3xl xl:tracking-tight')}>
-          Leading architectural change through <nobr>Roadie Backstage</nobr>
+      <AlternatingFeatureWrapper id="product">
+        <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
+        <AlternatingFeatureBlock featureItem={PRODUCT.features[1]} illustrationSide="right" />
+        <AlternatingFeatureBlock featureItem={PRODUCT.features[2]} illustrationSide="left" />
+        <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="right" />
+      </AlternatingFeatureWrapper>
+
+      <section className="backstage-background text-white max-w-xl mx-auto p-4 mt-5 sm:px-10 md:rounded-lg lg:max-w-6xl lg:grid lg:grid-cols-8 lg:items-center lg:gap-8 lg:grid-flow-row-dense">
+        <div className="lg:col-start-4 lg:col-span-5">
+          <Title el="h3" className={classNames('xl:text-3xl xl:tracking-tight')}>
+            Leading architectural change through <nobr>Roadie Backstage</nobr>
+          </Title>
+          <p className="text-xl mt-5">
+            <strong>Andy Hoffman, Caribou</strong>
+            <br />
+            BackstageCon, Detroit 2022
+          </p>
+          <p className="text-lg mt-5">
+            Yesterday you’re a scrappy startup; today, you’re funded and have 12 months to 10x your
+            team and system capacity. In this talk, Andy shows how Backstage—via Roadie—can help
+            wrangle unintuitive architectures, overwhelming options, and unfamiliar patterns for
+            teams going through hyper-growth.
+          </p>
+          <a
+            href="https://youtu.be/6Ss1e-9X_JY?t=51"
+            target="_blank"
+            className="block mt-5 font-bold uppercase text-lg tracking-wider"
+          >
+            Watch talk on YouTube &rarr;
+          </a>
+        </div>
+        <aside className="lg:col-span-3">
+          <a href="https://youtu.be/6Ss1e-9X_JY?t=51" target="_blank">
+            <img src={AndyThumbImg} alt="Andy's talk thumbnail" />
+          </a>
+        </aside>
+      </section>
+
+      <section className="text-center mt-10 xl:mt-16">
+        <Title el="h2" className="xl:text-3xl xl:tracking-tight text-orange-600">
+          Adopt Backstage through Roadie
         </Title>
-        <p className="text-xl mt-5">
-          <strong>Andy Hoffman, Caribou</strong>
-          <br />
-          BackstageCon, Detroit 2022
-        </p>
-        <p className="text-lg mt-5">
-          Yesterday you’re a scrappy startup; today, you’re funded and have 12 months to 10x your
-          team and system capacity. In this talk, Andy shows how Backstage—via Roadie—can help
-          wrangle unintuitive architectures, overwhelming options, and unfamiliar patterns for teams
-          going through hyper-growth.
-        </p>
-        <a
-          href="https://youtu.be/6Ss1e-9X_JY?t=51"
-          target="_blank"
-          className="block mt-5 font-bold uppercase text-lg tracking-wider"
-        >
-          Watch talk on YouTube &rarr;
-        </a>
-      </div>
-      <aside className="lg:col-span-3">
-        <a href="https://youtu.be/6Ss1e-9X_JY?t=51" target="_blank">
-          <img src={AndyThumbImg} alt="Andy's talk thumbnail" />
-        </a>
-      </aside>
-    </section>
+        <figure className="max-w-2xl px-4 mx-auto mt-10 mb-5">
+          <blockquote
+            cite="https://youtu.be/6Ss1e-9X_JY?t=51"
+            className="text-2xl font-bold tracking-wide"
+          >
+            “Roadie has been fantastic to work with and allowed us to adopt Backstage without the
+            overhead.”
+          </blockquote>
+          <figcaption className="text-xl mt-5">
+            Andy Hoffman, DevOps Engineer Manager, Caribou
+          </figcaption>
+        </figure>
+        <Button
+          link={true}
+          color="primary"
+          size="medium"
+          to="/request-demo/"
+          className="font-bold tracking-wide mt-6"
+          text="Request a Demo"
+        />
+      </section>
 
-    <section className="text-center mt-10 xl:mt-16">
-      <Title el="h1" className="xl:text-3xl xl:tracking-tight text-orange-600">
-        Adopt Backstage through Roadie
-      </Title>
-      <figure className="max-w-2xl px-4 mx-auto mt-10 mb-5">
-        <blockquote cite="https://youtu.be/6Ss1e-9X_JY?t=51" className="text-2xl font-bold tracking-wide">
-          “Roadie has been fantastic to work with and allowed us to adopt Backstage without the
-          overhead.”
-        </blockquote>
-        <figcaption className="text-xl mt-5">
-          Andy Hoffman, DevOps Engineer Manager, Caribou
-        </figcaption>
-      </figure>
-      <Button
-        link={true}
-        color="primary"
-        size="medium"
-        to="/request-demo/"
-        className="font-bold tracking-wide mt-6"
-        text="Request a Demo"
-      />
-    </section>
-
-    {/* <TestimonialsCloud /> */}
-    {/* 
+      {/* <TestimonialsCloud /> */}
+      {/* 
     <div className="pt-24 bg-gray-50 pb-32" id="solutions">
       <SimpleCenteredHeading
         headline="Turn tribal knowledge into shared context"
@@ -308,14 +311,63 @@ const Home = ({
 
     <FooterCTA /> */}
 
-    <SitewideFooter />
-  </>
-);
+      <section className="max-w-xl mx-auto p-4 my-16 pt-10 sm:px-10 lg:max-w-7xl lg:my-28 border-t-2 border-[#F2F2F2]">
+        <Title el="h2" className="xl:text-xl xl:tracking-tight uppercase">
+          <Link to="/blog">From Roadie's blog &rarr;</Link>
+        </Title>
+
+        <div className="mt-12 grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+          {posts.map(({ node }) => (
+            <PostSummary key={node.fields.slug} post={node} />
+          ))}
+        </div>
+      </section>
+
+      <SitewideFooter />
+    </>
+  );
+};
 
 export default Home;
 
 export const pageQuery = graphql`
-  query {
+  query IndexQuery {
+    allContentfulBlogPost(
+      sort: { fields: date, order: DESC }
+      filter: { tags: { ne: "newsletter" } }
+      limit: 3
+    ) {
+      edges {
+        node {
+          description {
+            childMarkdownRemark {
+              rawMarkdownBody
+            }
+          }
+          date
+          author {
+            name
+            avatar {
+              gatsbyImageData(layout: FIXED, width: 40)
+            }
+          }
+          slug
+          tags
+          title
+          lastValidated
+          body {
+            childMarkdownRemark {
+              timeToRead
+            }
+          }
+
+          coverImage {
+            gatsbyImageData(height: 192)
+            title
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
         title

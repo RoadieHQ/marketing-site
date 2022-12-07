@@ -87,7 +87,7 @@ const CopyrightNotice = () => (
 
 const SitewideFooter = ({ maxWidth = '7xl' }) => {
   return (
-    <footer className="bg-white border-t-2 border-gray-100" aria-labelledby="footer-heading">
+    <footer className="border-t-2 border-gray-100" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
