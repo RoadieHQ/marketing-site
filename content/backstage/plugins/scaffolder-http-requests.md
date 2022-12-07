@@ -71,7 +71,7 @@ gettingStarted:
             action: http:backstage:request
             input:
               method: 'POST'
-              path: "/api/proxy/snyk/org/org/project/project-id/aggregated-issues/get/some/job{{ steps.backstage_request.output.body.number }}"'
+              path: '/api/proxy/snyk/org/org/project/project-id/aggregated-issues/get/some/job{{ steps["backstage_request"].output.body.number }}'
               headers:
                   test: 'hello'
                   foo: 'bar'
@@ -80,9 +80,9 @@ gettingStarted:
                   bar: 'foo'
 
         output:
-          getResponse: '{{ steps.backstage_request_with_input.output.body }}'
-          getCode: '{{ steps.backstage_request_with_input.output.code }}'
-          getHeaders: '{{ steps.backstage_request_with_input.output.headers }}'
+          getResponse: '{{ steps["backstage_request_with_input"].output.body }}'
+          getCode: '{{ steps["backstage_request_with_input"].output.code }}'
+          getHeaders: '{{ steps["backstage_request_with_input"].output.headers }}'
       ...
 ---
 
