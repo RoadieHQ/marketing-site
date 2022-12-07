@@ -18,11 +18,11 @@ const SplitGridOnRight = ({ content }) => (
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-32 lg:px-8">
       <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
         <div>
-          <Headline el="h2">{content.title}</Headline>
+          <Headline el="h2" size="medium">{content.title}</Headline>
           <SubTitle text={content.subTitle} />
           {content.link && (
             <div className="mt-4">
-              <Link to={content.link.to} color="primary">{content.link.text}</Link>
+              <Link to={content.link.to} color="primary" className="font-bold text-xl">{content.link.text}  &rarr;</Link>
             </div>
           )}
         </div>
