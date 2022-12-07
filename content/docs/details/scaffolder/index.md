@@ -409,7 +409,7 @@ ${{ steps["publish-step-id"].output.repoContentsUrl }}
 If the step id does not contain a special character you can also refer to it using the dot syntax.
 
 ```yaml
-${{ steps["publish"].output.repoContentsUrl }}
+${{ steps.publish.output.repoContentsUrl }}
 ```
 
 ### Parameter Values
