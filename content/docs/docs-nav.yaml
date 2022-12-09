@@ -53,6 +53,7 @@ nav:
   - Integrations:
       - AWS S3: '/docs/integrations/aws-s3/'
       - Azure DevOps: '/docs/integrations/azure-devops-provider/'
+      - Microsoft Graph: '/docs/integrations/ms-graph-org-provider/'
       - Bitbucket: '/docs/integrations/bitbucket/'
       - GitHub Discovery: '/docs/integrations/github-discovery/'
       - GitHub org: '/docs/integrations/github-teams/'
