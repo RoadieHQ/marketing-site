@@ -41,7 +41,7 @@ It will ingest a subset of data for all groups and all users in your Okta organi
 
 ## Filter Users and Groups
 
-From the `okta` settings page, linked above, you can configure a fitler for users and groups. This filter query is passed to the `okta` API and therefore supports the [https://developer.okta.com/docs/reference/api/users/#list-users-with-a-filter](okta filter language). 
+From the `Okta` settings page, linked above, you can configure a filter for users and groups. This filter query is passed to the `Okta` API and therefore supports the [https://developer.okta.com/docs/reference/api/users/#list-users-with-a-filter](Okta filter language). 
 
 ## References
 
