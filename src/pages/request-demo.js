@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
+import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
 import { FAQs } from 'components/landing';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
-import { Headline } from 'components';
 
 import crystalAvatar from '../../content/assets/home/testimonial/crystal-snyk/crystal-avatar.webp';
 import crystalAvatarPng from '../../content/assets/home/testimonial/crystal-snyk/crystal-avatar.jpeg';

@@ -114,7 +114,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
         label="Full name"
         type="text"
         name="name"
-        id="request-demo-name-inpu"
+        id="request-demo-name-input"
         onChange={setName}
         value={name}
         fullWidth
