@@ -330,7 +330,7 @@ const Home = ({ data }) => {
 
       <section className="max-w-xl mx-auto p-4 my-16 pt-10 sm:px-10 lg:max-w-7xl lg:my-28 border-t-2 border-[#F2F2F2]">
         <Title el="h2" className="xl:text-xl xl:tracking-tight">
-          <Link to="/blog">From Roadie's blog &rarr;</Link>
+          <Link to="/blog">From Roadie&apos;s blog &rarr;</Link>
         </Title>
 
         <div className="mt-12 grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
