@@ -272,18 +272,17 @@ const Home = ({ data }) => {
             wrangle unintuitive architectures, overwhelming options, and unfamiliar patterns for
             teams going through hyper-growth.
           </p>
-          <a
+          <Link
             href="https://youtu.be/6Ss1e-9X_JY?t=51"
-            target="_blank"
             className="block mt-5 font-bold uppercase text-lg tracking-wider"
           >
             Watch talk on YouTube &rarr;
-          </a>
+          </Link>
         </div>
         <aside className="lg:col-span-3">
-          <a href="https://youtu.be/6Ss1e-9X_JY?t=51" target="_blank">
+          <Link href="https://youtu.be/6Ss1e-9X_JY?t=51">
             <img src={AndyThumbImg} alt="Andy's talk thumbnail" />
-          </a>
+          </Link>
         </aside>
       </section>
 

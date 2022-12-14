@@ -1,9 +1,8 @@
 import React from 'react';
-import { Headline } from 'components';
+import { Button, Headline } from 'components';
 import CatalogScreenshot from '../../../../content/assets/homepage/home-product-screenshot.png';
 import { LOGOS } from '../CustomerLogoCloud';
 import has from 'lodash/has';
-import { Button } from 'components';
 
 const SideBySideHero = () => {
   const whiteLogos = [...LOGOS].filter(({ src }) => has(src, 'white')).slice(0, 5);
