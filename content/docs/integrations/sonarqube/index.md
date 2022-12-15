@@ -34,7 +34,7 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and ente
 
 Add the EntitySonarQubeCard component [to the catalog](/docs/getting-started/updating-the-ui).
 
-### Annotation your entities
+### Step 4: Annotate your entities
 
 Add the following annotation to entities to link a project to the entity:
 
