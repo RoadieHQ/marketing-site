@@ -22,10 +22,20 @@ enter your basic auth token.
 
 ![Set Auth](./credentials.png)
 
-## Step 2: Create a Link to the CodeScene plugin
+
+## Step 2: Configure the CodeScene API token
+
+Navigate to `/administration/settings/codescene` and enter your CodeScene instance url then click "save" and then "Apply & restart". 
+
+![Set Config](./config.png)
+
+## Step 3: Create a Link to the CodeScene plugin
 
 Enter the [sidebar edit mode](/docs/getting-started/updating-the-ui#updating-the-sidebar) and click the add icon. Then,
 enter `Link` as the component, enter a title and set the path to `/code-scene` (exactly this value). Click Save.
+
+Note: It might take some moments for the secret you configured to be available to the backend. You can check its status
+on the secrets page.
 
 ![Create Link](./link.png)
 
