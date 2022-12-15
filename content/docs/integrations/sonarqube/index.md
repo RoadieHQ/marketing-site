@@ -30,6 +30,19 @@ In order for the Backstage integration to work we must first generate our api ke
 ### Step 2: Store the credentials and SonarQube URL in Roadie
 Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the token value from above into `SONARQUBE_API_TOKEN`.
 
+### Step 3: Add the Sonar Card
+
+Add the EntitySonarQubeCard component [to the catalog](/docs/getting-started/updating-the-ui).
+
+### Step 4: Annotate your entities
+
+Add the following annotation to entities to link a project to the entity:
+
+```yaml
+metadata:
+  annotations:
+    sonarqube.org/project-key: [YOUR_PROJECT_KEY]
+```
 
 ## References
 
