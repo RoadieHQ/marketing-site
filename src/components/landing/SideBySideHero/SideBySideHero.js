@@ -10,8 +10,8 @@ const SideBySideHero = () => {
   return (
     <section className="landing-hero-background mx-auto max-w-7xl xl:rounded-lg lg:flex items-center">
       <div className="lg:w-1/2 p-4 lg:px-10 lg:py-16">
-        <Headline size="small" className="text-white leading-snug">
-          <nobr>Backstage single-tenant SaaS:</nobr> <br /> adopt without the overhead
+        <Headline className="text-white" size="medium">
+          SaaS Backstage. Simple, safe, and more powerful.
         </Headline>
 
         <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">

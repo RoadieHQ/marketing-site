@@ -8,6 +8,7 @@ import {
   SimpleCenteredHeading,
   TextBasedFeatureBlock,
   SplitGridLogoCloud,
+  TestimonialsCloud,
 } from 'components/landing';
 import Title from '../components/Title';
 import classNames from 'classnames';
@@ -67,7 +68,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'With a vibrant community of contributors, new Backstage plugins and features are popping up regularly. Roadie brings you all these features, while smoothening out rough edges, like dealing with GitHub rate limits.',
+        'With a vibrant community of contributors, new Backstage plugins and features are popping up regularly. Roadie brings all these features, while smoothening out rough edges like GitHub rate limits.',
         'Roadie enables plugins and integrations through a UI, which also lets you manage access and permissions. Roadie also provides advanced debugging capabilities to make it easy to navigate the unexpected, if it happens.',
       ],
     },
@@ -85,14 +86,14 @@ const PRODUCT = {
     },
     {
       title: 'Integrate with your Kubernetes Clusters',
-      description: 'Roadie lets you connect to your infrastructure using a broker ',
+      description: 'Roadie connects to your infrastructure using a broker ',
       illustration: {
         png: KubernetesImg,
         alt: '',
       },
       paragraphs: [
-        'Roadie excels at improving microservice discoverability, including how and where they are deployed. Roadie provides a Kubernetes view catered for developers so they understand how their services are running and can optimize from there.',
-        'Roadie uses a Broker to integrate with your internal APIs, including Kubernetes clusters and on-prem services. This allows us to securely access your endpoints, without exposing them to the public internet.',
+        'Roadie uses a Broker to integrate with your internal APIs, including Kubernetes clusters and on-prem services. This allows secure access your endpoints without exposing them to the public internet.',
+        'The broker is open-source code with an audit log and outboound egress, meaning you can be confident that access is limited in the way that you want.',
       ],
     },
   ],
@@ -323,6 +324,8 @@ const Home = ({ data }) => {
 
         <TextBasedFeatureBlock content={SOLUTIONS} />
       </div>
+
+      <TestimonialsCloud />
 
       <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
 

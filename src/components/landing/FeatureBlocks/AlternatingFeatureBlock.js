@@ -24,13 +24,7 @@ const FeatureBlock = ({
         'lg:col-start-0': illustrationSide === 'right',
       })}
     >
-      <Title
-        el="h3"
-        className={classnames('xl:text-2xl xl:tracking-tight', {
-          'text-primary-600': illustrationSide === 'left',
-          'text-primary-800': illustrationSide === 'right',
-        })}
-      >
+      <Title el="h3" className="xl:text-2xl xl:tracking-tight text-primary-600">
         {title}
       </Title>
       <p className="mt-1 mb-10 text-xl xl:text-2xl">{description}</p>
