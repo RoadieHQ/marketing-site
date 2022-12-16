@@ -7,19 +7,23 @@ module.exports = {
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      gray: colors.neutral,
-      primary: colors.orange,
-      info: colors.violet,
-      green: colors.green,
-      white: '#fff',
-    },
-
     extend: {
       fontFamily: {
-        sans: ['Soehne', ...defaultTheme.fontFamily.sans],
+        sans: ['Source\\ Sans\\ 3', ...defaultTheme.fontFamily.sans],
+        highlight: ['Montserrat', 'Source\\ Sans\\ 3', ...defaultTheme.fontFamily.sans],
+      },
+      letterSpacing: {
+        tighter: '0.025em',
+        tight: '0.010em',
+      },
+      colors: {
+        gray: colors.neutral,
+        primary: colors.orange,
+        info: colors.violet,
+        green: colors.green,
+        white: '#fff',
+        blueroadie: '#111827',
+        elusivegray: '#FDFDFD',
       },
     },
   },

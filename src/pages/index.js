@@ -1,12 +1,24 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { SEO, SitewideFooter, SitewideHeader } from 'components';
+import {
+  AlternatingFeatureBlock,
+  SideBySideHero,
+  AlternatingFeatureWrapper,
+  SimpleCenteredHeading,
+  TextBasedFeatureBlock,
+  SplitGridLogoCloud,
+  TestimonialsCloud,
+} from 'components/landing';
+import Title from '../components/Title';
+import classNames from 'classnames';
+import Button from '../components/forms/Button';
+import { PostSummary } from 'components/article';
+import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
+
 import {
   FingerPrintIcon,
   MapIcon,
-  BeakerIcon,
-  ShieldCheckIcon,
-  ChipIcon,
   UsersIcon,
   PresentationChartLineIcon,
   BookOpenIcon,
@@ -17,20 +29,12 @@ import {
   BadgeCheckIcon,
   CubeTransparentIcon,
 } from '@heroicons/react/outline';
-import {
-  AlternatingFeatureBlock,
-  TextBasedFeatureBlock,
-  SplitGridLogoCloud,
-  FooterCTA,
-  TestimonialsCloud,
-  SimpleCenteredHeading,
-  CenteredHero,
-} from 'components/landing';
 
-import DragDropIllustration from '../../content/assets/home/illustrations/drag-drop-illustration.webp';
-import DragDropIllustrationPng from '../../content/assets/home/illustrations/drag-drop-illustration.png';
-import SecurityMaintenanceIllustration from '../../content/assets/home/illustrations/security-maintenance-illustration.webp';
-import SecurityMaintenanceIllustrationPng from '../../content/assets/home/illustrations/security-maintenance-illustration.png';
+import KeepSafeImg from '../../content/assets/home/illustrations/home-keep-backstage-safe.png';
+import NoCodeImg from '../../content/assets/home/illustrations/home-no-code-backstage.png';
+import CustomPluginsImg from '../../content/assets/home/illustrations/home-custom-plugins.png';
+import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.png';
+import AndyThumbImg from '../../content/assets/home/illustrations/home-andy-video-thumb.png';
 
 import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
 import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
@@ -45,49 +49,51 @@ const LEAD = `Roadie's SaaS platform handles hosting and upgrades and ensures yo
 const PRODUCT = {
   features: [
     {
-      title: 'Focus on building value instead of learning Backstage internals',
-      description:
-        'Roadie manages deployments and security for you and helps you get the best out of Backstage with a few clicks.',
+      title: 'Keep your Developer Portal safe',
+      description: 'Roadie updates your Backstage instance automatically',
       illustration: {
-        webp: DragDropIllustration,
-        png: DragDropIllustrationPng,
-        alt: 'A component from a Backstage plugin being dragged around with the mouse pointer',
+        png: KeepSafeImg,
+        alt: '',
       },
-      bullets: [
-        {
-          name: 'Secure connections',
-          description:
-            'Securely connect to SaaS services and your own infrastructure using our tunneling broker service.',
-          icon: ShieldCheckIcon,
-        },
-        {
-          name: 'Custom plugin support',
-          description:
-            'Building your own internal plugins? Publish them to our private repository and they appear where you need them.',
-          icon: BeakerIcon,
-        },
+      paragraphs: [
+        'As highlighted by Gartner’s report on Developer Portals, standing up and maintaining Backstage takes significant effort. Roadie gives you a production-grade Backstage instance and keeps it safe through regular upgrades, SSO and dedicated infrastructure.',
+        'Roadie is SOC2 Type 2 Certified and uses ephemeral environments for your Scaffolder actions, a common source of risk for Open Source adopters.',
       ],
     },
     {
-      title: 'Keep your Backstage ever-green',
-      description:
-        'Get the latest features and secutiry updates from the community without the maintenance burden.',
+      title: 'Get all the OSS features, simplified',
+      description: 'Roadie brings no-code management to Backstage',
       illustration: {
-        webp: SecurityMaintenanceIllustration,
-        png: SecurityMaintenanceIllustrationPng,
-        alt: 'A progress bar and cog to indicate an upgrade in progress.',
+        png: NoCodeImg,
+        alt: '',
       },
-      bullets: [
-        {
-          name: 'Automated upgrades',
-          description: `Self-hosted Backstage teams can take up to 30% of their time upgrading their instance. We manage upgrades for you, whether they're security patches, minor, or major releases.`,
-          icon: ChipIcon,
-        },
-        {
-          name: 'SLAs Available',
-          description: `Downtime in Backstage can cause friction in your team and hinder adoption. We offer reliability and 24/7 on-call engineers.`,
-          icon: ShieldCheckIcon,
-        },
+      paragraphs: [
+        'With a vibrant community of contributors, new Backstage plugins and features are popping up regularly. Roadie brings all these features, while smoothening out rough edges like GitHub rate limits.',
+        'Roadie enables plugins and integrations through a UI, which also lets you manage access and permissions. Roadie also provides advanced debugging capabilities to make it easy to navigate the unexpected, if it happens.',
+      ],
+    },
+    {
+      title: 'Make your Developer Portal truly yours',
+      description: 'Roadie lets you install private plugins and renderers',
+      illustration: {
+        png: CustomPluginsImg,
+        alt: '',
+      },
+      paragraphs: [
+        'Your Developer Portal will only be successful if it’s tailored to the way your developers work. Roadie lets you bring your own Backstage plugins so you can integrate internal systems into your Developer Portal.',
+        'Roadie also lets you bring your own API documentation renderer so your docs are presented exactly as you want them inside Backstage.',
+      ],
+    },
+    {
+      title: 'Integrate with your Kubernetes Clusters',
+      description: 'Roadie connects to your infrastructure using a broker ',
+      illustration: {
+        png: KubernetesImg,
+        alt: '',
+      },
+      paragraphs: [
+        'Roadie uses a Broker to integrate with your internal APIs, including Kubernetes clusters and on-prem services. This allows secure access your endpoints without exposing them to the public internet.',
+        'The broker is open-source code with an audit log and outboound egress, meaning you can be confident that access is limited in the way that you want.',
       ],
     },
   ],
@@ -232,47 +238,156 @@ const PLUGINS_SUPPORTED = {
   ],
 };
 
-const Home = ({
-  data: {
-    site: {
-      siteMetadata: { title: siteTitle },
-    },
-  },
-}) => (
-  <>
-    <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
+const Home = ({ data }) => {
+  const siteTitle = data.site.siteMetadata.title;
 
-    <SitewideHeader borderBottom={false} ctaTo="/request-demo/" ctaText="Get a demo" />
+  const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
+  return (
+    <>
+      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
-    <CenteredHero />
+      <SitewideHeader borderBottom={false} />
 
-    <div className="pt-24 pb-32 bg-gray-50 relative overflow-hidden" id="product">
-      <AlternatingFeatureBlock content={PRODUCT} />
-    </div>
+      <SideBySideHero />
 
-    <TestimonialsCloud />
+      <AlternatingFeatureWrapper id="product">
+        <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
+        <AlternatingFeatureBlock featureItem={PRODUCT.features[1]} illustrationSide="right" />
+        <AlternatingFeatureBlock featureItem={PRODUCT.features[2]} illustrationSide="left" />
+        <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="right" />
+      </AlternatingFeatureWrapper>
 
-    <div className="pt-24 bg-gray-50 pb-32" id="solutions">
-      <SimpleCenteredHeading
-        headline="Turn tribal knowledge into shared context"
-        lead="A single pane of glass for your software development life cycle."
-      />
+      <section className="backstage-background text-white max-w-xl mx-auto p-4 mt-5 sm:px-10 md:rounded-lg lg:max-w-6xl lg:grid lg:grid-cols-8 lg:items-center lg:gap-8 lg:grid-flow-row-dense">
+        <div className="lg:col-start-4 lg:col-span-5">
+          <Title el="h3" className={classNames('xl:text-2xl xl:tracking-tight')}>
+            Leading architectural change through <nobr>Roadie Backstage</nobr>
+          </Title>
+          <p className="text-xl mt-5">
+            <strong>Andy Hoffman, Caribou</strong>
+            <br />
+            BackstageCon, Detroit 2022
+          </p>
+          <p className="text-lg mt-5">
+            Yesterday you’re a scrappy startup; today, you’re funded and have 12 months to 10x your
+            team and system capacity. In this talk, Andy shows how Backstage—via Roadie—can help
+            wrangle unintuitive architectures, overwhelming options, and unfamiliar patterns for
+            teams going through hyper-growth.
+          </p>
+          <Link
+            href="https://youtu.be/6Ss1e-9X_JY?t=51"
+            className="block mt-5 font-bold uppercase text-lg tracking-wider"
+          >
+            Watch talk on YouTube &rarr;
+          </Link>
+        </div>
+        <aside className="lg:col-span-3">
+          <Link href="https://youtu.be/6Ss1e-9X_JY?t=51">
+            <img src={AndyThumbImg} alt="Andy's talk thumbnail" />
+          </Link>
+        </aside>
+      </section>
 
-      <TextBasedFeatureBlock content={SOLUTIONS} />
-    </div>
+      <section className="text-center mt-10 xl:mt-16">
+        <Title el="h2" className="xl:text-3xl xl:tracking-tight text-orange-600">
+          Adopt Backstage through Roadie
+        </Title>
+        <figure className="max-w-2xl px-4 mx-auto mt-10 mb-5">
+          <blockquote
+            cite="https://youtu.be/6Ss1e-9X_JY?t=51"
+            className="text-2xl font-bold tracking-wide"
+          >
+            “Roadie has been fantastic to work with and allowed us to adopt Backstage without the
+            overhead.”
+          </blockquote>
+          <figcaption className="text-xl mt-5">
+            Andy Hoffman, DevOps Engineer Manager, Caribou
+          </figcaption>
+        </figure>
+        <Button
+          link={true}
+          color="primary"
+          size="medium"
+          to="/request-demo/"
+          className="font-bold tracking-wide mt-6"
+          text="Request a Demo"
+        />
+      </section>
 
-    <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
+      {/* <TestimonialsCloud /> */}
 
-    <FooterCTA />
+      <div className="pt-28 bg-gray-50 pb-20 mt-24" id="solutions">
+        <SimpleCenteredHeading
+          headline="Turn tribal knowledge into shared context"
+          headlineSize="medium"
+          lead="A single pane of glass for your software development life cycle."
+        />
 
-    <SitewideFooter />
-  </>
-);
+        <TextBasedFeatureBlock content={SOLUTIONS} />
+      </div>
+
+      <TestimonialsCloud />
+
+      <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
+
+      {/* <FooterCTA /> */}
+
+      <section className="max-w-xl mx-auto p-4 my-16 pt-10 sm:px-10 lg:max-w-7xl lg:my-28 border-t-2 border-[#F2F2F2]">
+        <Title el="h2" className="xl:text-xl xl:tracking-tight">
+          <Link to="/blog">From Roadie&apos;s blog &rarr;</Link>
+        </Title>
+
+        <div className="mt-12 grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+          {posts.map(({ node }) => (
+            <PostSummary key={node.fields.slug} post={node} />
+          ))}
+        </div>
+      </section>
+
+      <SitewideFooter />
+    </>
+  );
+};
 
 export default Home;
 
 export const pageQuery = graphql`
-  query {
+  query IndexQuery {
+    allContentfulBlogPost(
+      sort: { fields: date, order: DESC }
+      filter: { tags: { ne: "newsletter" } }
+      limit: 3
+    ) {
+      edges {
+        node {
+          description {
+            childMarkdownRemark {
+              rawMarkdownBody
+            }
+          }
+          date
+          author {
+            name
+            avatar {
+              gatsbyImageData(layout: FIXED, width: 40)
+            }
+          }
+          slug
+          tags
+          title
+          lastValidated
+          body {
+            childMarkdownRemark {
+              timeToRead
+            }
+          }
+
+          coverImage {
+            gatsbyImageData(height: 192)
+            title
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
         title

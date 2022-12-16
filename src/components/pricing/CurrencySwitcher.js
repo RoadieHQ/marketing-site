@@ -9,7 +9,8 @@ const CurrencySwitcherButton = ({ currentlySetCurrency, setCurrency, currency })
   return (
     <button
       type="button"
-      onClick={() => {
+      onClick={(e) => {
+        e.preventDefault();
         setCurrency(currency);
       }}
       className={classnames(sharedClassNames, {

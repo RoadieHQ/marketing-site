@@ -40,7 +40,7 @@ const ScmToolRadioGroup = ({
   idPrefix = '',
 }) => (
   <fieldset className="sm:col-span-2 mt-4">
-    <legend className="block text-sm font-medium text-gray-700">{label}</legend>
+    <legend className="block text-lg text-blueroadie font-medium">{label}</legend>
 
     <div className="mt-4 grid grid-cols-1 gap-y-4">
       {SCM_TOOLS.map(({ value, label }) => (

@@ -10,9 +10,7 @@ describe('The free trial page', () => {
     cy.visit('/free-trial/');
 
     cy.get('#get-instance-email-input').type('test@example.com');
-    // This is a custom CSS checkbox which is technically invisble. Cypress
-    // complains so we have to force it.
-    cy.get('#get-instance-scm-github-on-prem-input').check({ force: true });
+    cy.get('#scm').select('GitHub On-prem');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
     cy.contains('Thank you for requesting a free trial of Roadie Backstage');
@@ -22,9 +20,7 @@ describe('The free trial page', () => {
     cy.visit('/free-trial/');
 
     cy.get('#get-instance-email-input').type('test@example.com');
-    // This is a custom CSS checkbox which is technically invisble. Cypress
-    // complains so we have to force it.
-    cy.get('#get-instance-scm-gitlab-cloud-input').check({ force: true });
+    cy.get('#scm').select('Gitlab Cloud');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
     cy.contains('Roadie only supports GitHub for now');

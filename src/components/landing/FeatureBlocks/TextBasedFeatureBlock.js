@@ -36,7 +36,7 @@ const FeatureBlock = ({
 const TextBasedFeatureBlock = ({ content }) => (
   <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-6xl">
     {content.features.map((props) => (
-      <div className="relative mt-12 pt-12 sm:mt-16 lg:mt-32 lg:pt-32 lg:first:pt-0 border-t-2 border-gray-200 first:border-t-0" key={props.title}>
+      <div className="relative mt-12 pt-12 sm:mt-16 lg:mt-20 lg:pt-20 lg:first:pt-0 border-t-2 border-gray-200 first:border-t-0" key={props.title}>
         <FeatureBlock {...props} />
       </div>
     ))}

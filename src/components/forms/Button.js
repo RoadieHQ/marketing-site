@@ -16,12 +16,12 @@ const Button = ({
 }) => {
   const baseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-900';
   const buttonBaseClassName = 'shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2';
-  const primaryBaseClass = 'text-white bg-primary-600 hover:bg-primary-700';
-  const secondaryBaseClass = 'text-primary-600 bg-white hover:bg-gray-50';
+  const primaryBaseClass = 'text-white font-bold tracking-wide bg-primary-700 hover:bg-primary-600';
+  const secondaryBaseClass = 'text-blueroadie bg-white hover:bg-gray-50';
   const insetBaseClass = 'text-primary-700 bg-primary-100 hover:bg-primary-200';
 
   const smallBaseClass = 'px-3 py-1';
-  const mediumBaseClass = 'px-5 py-3';
+  const mediumBaseClass = 'px-5 py-3 text-lg';
   const largeBaseClass = 'px-8 py-3 md:py-4 md:text-lg md:px-10';
 
   // Maintain backwards compatability.

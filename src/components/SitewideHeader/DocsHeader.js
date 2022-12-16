@@ -27,7 +27,7 @@ const DocsHeader = ({ location }) => (
             <Logo />
           </span>
 
-          <span className="text-2xl text-bold" style={{ marginTop: 2 }}>
+          <span className="text-2xl text-bold" style={{ marginTop: 6, marginBottom: 0 }}>
             Docs
           </span>
 

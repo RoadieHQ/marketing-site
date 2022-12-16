@@ -5,10 +5,11 @@ import {
   Button,
   TextField,
   SubscribeToNewsletterSwitch,
-  ScmToolRadioGroup,
   Form,
   Recaptcha,
+  HelpText
 } from 'components';
+import { ScmToolSelect } from '../forms/ScmToolSelect';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
@@ -52,13 +53,7 @@ const submitToNetlifyForms = async ({
   return resp;
 };
 
-const ExtendedGetInstanceCallToAction = ({
-  onSuccess,
-  email,
-  setEmail,
-  scmTool,
-  setScmTool,
-}) => {
+const ExtendedGetInstanceCallToAction = ({ onSuccess, email, setEmail, scmTool, setScmTool }) => {
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [agreed, setAgreed] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
@@ -125,16 +120,21 @@ const ExtendedGetInstanceCallToAction = ({
         value={email}
       />
 
-      <ScmToolRadioGroup
-        onChange={setScmTool}
-        currentValue={scmTool}
-        idPrefix="get-instance-"
-      />
+      <div className="sm:col-span-2">
+        <ScmToolSelect
+          label="Primary source code host"
+          onChange={setScmTool}
+          currentValue={scmTool}
+          idPrefix="get-instance-"
+          color="primary"
+        />
+        <HelpText
+          className="mt-3"
+          message="Roadie only supports GitHub for now. Submit the form to be notified when we support your tool."
+        />
+      </div>
 
-      <SubscribeToNewsletterSwitch
-        checked={subToNewsletter}
-        onChange={setSubToNewsletter}
-      />
+      <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} />
 
       <div className="sm:col-span-2 mt-4">
         <div className="flex items-start">
@@ -150,11 +150,17 @@ const ExtendedGetInstanceCallToAction = ({
           <div className="ml-3">
             <p className="text-base text-gray-500">
               By selecting this, you agree to our{' '}
-              <Link to="/legal-notices/evaluation-license/" className="font-medium text-gray-700 underline">
+              <Link
+                to="/legal-notices/evaluation-license/"
+                className="font-medium text-gray-700 underline"
+              >
                 Evaluation License
               </Link>{' '}
               and acknowledge you have read our{' '}
-              <Link to="/legal-notices/privacy-notice/" className="font-medium text-gray-700 underline">
+              <Link
+                to="/legal-notices/privacy-notice/"
+                className="font-medium text-gray-700 underline"
+              >
                 Privacy Notice
               </Link>
               .

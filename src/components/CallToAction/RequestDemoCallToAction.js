@@ -3,10 +3,12 @@ import {
   Button,
   TextField,
   SubscribeToNewsletterSwitch,
-  ScmToolRadioGroup,
   Form,
   Recaptcha,
+  HelpText,
 } from 'components';
+
+import { ScmToolSelect } from '../forms/ScmToolSelect';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
@@ -49,14 +51,9 @@ const submitToNetlifyForms = async ({
   return resp;
 };
 
-const RequestDemoCallToAction = ({
-  onSuccess,
-  location,
-  scmTool,
-  setScmTool,
-}) => {
+const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) => {
   // Provides a way to automatically populate the email input via the URL.
-  const params = new URLSearchParams(location.search)
+  const params = new URLSearchParams(location.search);
   const emailFromUrl = decodeURIComponent(params.get('email') || '');
 
   const [email, setEmail] = useState(emailFromUrl);
@@ -112,42 +109,45 @@ const RequestDemoCallToAction = ({
       onHoneypotChange={setHoneypotText}
       honeypotValue={honeypotText}
       buttonText={buttonText}
-      className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
       <TextField
-        label="Full name *"
+        label="Full name"
         type="text"
         name="name"
         id="request-demo-name-input"
         onChange={setName}
         value={name}
         fullWidth
+        className="mb-10"
       />
 
       <TextField
-        label="Work email address *"
+        label="Work email address"
         type="email"
         name="email"
         id="request-demo-email-input"
         onChange={setEmail}
         value={email}
         fullWidth
+        className="mb-10"
       />
 
-      <ScmToolRadioGroup
-        onChange={setScmTool}
-        currentValue={scmTool}
-        idPrefix="request-demo-"
-      />
+      <div className="mb-10">
+        <ScmToolSelect
+          label="Primary source code host"
+          onChange={setScmTool}
+          currentValue={scmTool}
+          idPrefix="request-demo-"
+          color="primary"
+        />
+        <HelpText className="mt-3" message="Roadie only supports GitHub for now. Submit the form to be notified when we support your tool." />
+      </div>
 
-      <SubscribeToNewsletterSwitch
-        checked={subToNewsletter}
-        onChange={setSubToNewsletter}
-      />
+      <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} className="mb-10" />
 
       <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
 
-      <div className="sm:col-span-2 mt-4">
+      <div className="sm:col-span-2 mt-10">
         <Button
           type="submit"
           color="primary"

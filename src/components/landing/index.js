@@ -1,4 +1,4 @@
-export { default as AlternatingFeatureBlock } from './FeatureBlocks/AlternatingFeatureBlock';
+export { AlternatingFeatureBlock, AlternatingFeatureWrapper } from './FeatureBlocks/AlternatingFeatureBlock';
 export { default as TextBasedFeatureBlock } from './FeatureBlocks/TextBasedFeatureBlock';
 export { default as SplitGridLogoCloud } from './SplitGridLogoCloud';
 export { default as FooterCTA } from './FooterCTA';
@@ -13,3 +13,4 @@ export { default as TestimonialsCloud } from './Testimonials/TestimonialsCloud';
 export { default as SidebarTestimonial } from './Testimonials/SidebarTestimonial';
 export { default as CenteredHero } from './CenteredHero/CenteredHero';
 export { default as HeroForm } from './CenteredHero/HeroForm'; 
+export { default as SideBySideHero } from './SideBySideHero/SideBySideHero'; 
