@@ -261,6 +261,50 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
     --8<-- "TEST.md"
     ```
 
+## Troubleshooting
+
+Backstage is using [MkDocs](https://www.mkdocs.org/user-guide/) and [python-markdown](https://python-markdown.github.io/) to render the markdown files for techdocs. Each markdown implementation renders html differently. e.g. markdown files as displayed in GitHub can often look different within Backstage techdocs.
+
+### Nest Markdown in a collapsable section
+
+If you would like to nest markdown in a collapsable section, you can use the HTML `details` component and the `md_in_html` markdown plugin.
+
+First add the `md_in_html` to the `mkdocs.yaml` file.
+
+```yaml
+markdown_extensions:
+  - md_in_html
+```
+
+Then add the following `details` section to the markdown file.
+
+```markdown
+<details markdown="1">
+<summary>Collabsable Title</summary>
+
+Content of the collapsable and an image below
+
+![asdf](align.jpg)
+
+</details>
+```
+
+### Nest Image within a list
+
+If you would like to nest an image within a list so that it appears as part of the list item, you will need a line break and spacing before the image. e.g.
+
+```markdown
+- Item 1
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  ![image1](image1.jpg)
+
+- Item 2
+
+  ![image2](image2.jpg)
+```
+
 ## Further reading
 
 1. Backstage TechDocs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/user-guide/) will broadly apply to your Backstage documentation setup. In particular, the ["Writing your docs"](https://www.mkdocs.org/user-guide/writing-your-docs/) page is a good place to start
