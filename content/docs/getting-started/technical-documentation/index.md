@@ -263,7 +263,7 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
 
 ## Troubleshooting
 
-Backstage is using [MkDocs](https://www.mkdocs.org/user-guide/) and [python-markdown](https://python-markdown.github.io/) to render the markdown files for techdocs. Each markdown implementation renders html differently. e.g. markdown files as displayed in GitHub can often look different within Backstage techdocs.
+Backstage is using [MkDocs](https://www.mkdocs.org/user-guide/) and [python-markdown](https://python-markdown.github.io/) to render the markdown files for TechDocs. Each markdown implementation renders HTML differently. e.g. markdown files as displayed in GitHub can often look different within Backstage TechDocs.
 
 ### Nest Markdown in a collapsable section
 
