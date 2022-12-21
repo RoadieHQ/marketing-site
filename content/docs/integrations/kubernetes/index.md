@@ -256,20 +256,189 @@ Follow step 2 from [here](/docs/integrations/google-oauth-client/).
 
 # Service Account
 
+You can also integrate with Kubernetes using a standard service account. With Service Account you can also use the [Broker connection](/docs/integration/broker) to make secure connections to your clusters.
+
 In order to use the Kubernetes plugin using a service account, Roadie needs:
  * A service account token
  * The name of your cluster
- * URL of your Kubernetes API Server endpoint
+ * URL of your Kubernetes API Server endpoint. If you are using brokered connection you can use protocol `broker://`, e.g. `broker://my-broker-token`.
 
 ### Step 1: Create a Service Account token
 You will need to create a service account token for your cluster in kubernetes cluster for use by roadie.
 
 ### Step 2: Set the Token in a Roadie Backstage Secret
-Navigate to the ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token you created in step 1. Alternatively, if you are congfiguring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`.
+Navigate to the ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token you created in step 1. Alternatively, if you are congfiguring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`. If you are using a brokered connection to access your clusters, these secrets can be placeholders since they are overridden by the Broker client.
 
 ### Step 3: 
 1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/kubernetes” and click on add item.
 2. Select the Service Account provider
 3. Add the url and name of cluster.
 4. If you have used a custom secret, you will need to set it in the secret name field
-5. Click save and exit!
+
+
+### Step 4: (Optional, for brokered connections) Configure your Broker client
+
+If you are contacting to your Kubernetes clusters via a brokered connection, you need to use the `accept.json` configuration file contents visible below:
+
+<details>
+
+<Summary>Show accept.json</Summary>
+
+```JSON
+{
+   "public": [
+      {
+         "method": "any",
+         "path": "/*"
+      }
+   ],
+   "private": [
+      {
+         "method": "GET",
+         "path": "/api/v1/pods*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/networking.k8s.io/v1/ingresses*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/networking.k8s.io/v1/namespaces*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/apps/v1/replicasets*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/apps/v1/namespaces*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/batch/v1/namespaces*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/api/v1/namespaces*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/api/v1/services*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/apps/v1/deployments*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/api/v1/configmaps*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/autoscaling/v1/horizontalpodautoscalers*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/autoscaling/v1/namespaces*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/apis/metrics.k8s.io/v1beta1/namespaces/*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      },
+      {
+         "method": "GET",
+         "path": "/api/v1/namespaces/*",
+         "origin": "${CLUSTER_ENDPOINT}",
+         "auth": {
+            "scheme": "bearer",
+            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
+         }
+      }
+   ]
+}
+
+```
+</details>
+
+
+The expected environment variables with this configuration are:
+* Standard broker env vars.
+* `CLUSTER_ENDPOINT`: The IRL to your cluster management API endpoint
+* `K8S_SERVICE_ACCOUNT_TOKEN`: ServiceAccount token generated in Step 1 above.
+
+Additionally, you might need to run your Broker client with a self-signed certificate mounted to the container. This can be achieved with a Docker run command argument ` -v ~/my-cluster-cert.crt:/home/node/cluster-cert.crt ` or equivalent. The certificate is your cluster certificate as a PEM file. This file can be for example base64 decoded from the relevant lines in your `~/.kube/config` file which is used by `kubectl`. If you are mounting a cert file, you also need to define environment variable pointing to the mounted file location:
+```
+CA_CERT:/home/node/my-cluster-cert.crt
+```
+
+If you are running into issues with using self-signed certificates, you can use Node.js environment options to tell the underlying Node.js process how to handle the certificate. The relevant options are [explicitly defining extra certificate files](https://nodejs.org/api/cli.html#cli_node_extra_ca_certs_file) or alternatively [turning off self-signed certificate validation](https://docs.snyk.io/features/snyk-broker/set-up-snyk-broker/how-to-install-and-configure-your-snyk-broker-client#disable-certificate-verification). 
+
+
+## References
+* [Backstage Kubernetes plugin docs](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
+* [Broker Configuration documentation](/docs/integration/broker)
