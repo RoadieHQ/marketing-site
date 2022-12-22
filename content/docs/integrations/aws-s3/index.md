@@ -42,7 +42,7 @@ which restricts access to only certain buckets. e.g.
     {
       "Effect": "Allow",
       "Action": [
-        "s3:ListObject"
+        "s3:ListBucket"
       ],
       "Resource": "arn:aws:s3:::my-bucket"
     }
