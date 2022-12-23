@@ -7,7 +7,7 @@ plugins:
 nav:
   - Getting started:
       - Installing the GitHub app: '/docs/getting-started/install-github-app/'
-      - Writing catalog entity descriptions: '/docs/getting-started/writing-entity-descriptions'
+      - Writing catalog entity descriptions: '/docs/getting-started/writing-entity-descriptions/'
       - Adding components: '/docs/getting-started/adding-components/'
       - Using TechDocs: '/docs/getting-started/technical-documentation/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
