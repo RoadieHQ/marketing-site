@@ -10,9 +10,7 @@ A Check is a rule which a service either does or does not satisfy. Checks are de
 
 To manage Checks, go to Tech Insights → Checks page. In this page you can view and edit existing Checks, as well as adding new Checks.
 
-![Overview of all checks](./add-check.png)
-
-![Edit check](./edit-check.png)
+![Overview of all checks](./checks-overview-page.png)
 
 Clicking a specific Check title will show you the results of that Check for all components.
 

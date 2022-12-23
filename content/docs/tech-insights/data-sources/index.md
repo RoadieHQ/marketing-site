@@ -76,6 +76,20 @@ You should be able to see the created Data Source in the overview screen. Newly 
 
 Note that you can’t trigger manual data updates on built-in Data Sources.
 
+### Overview of the Data Source results and details
+
+Once you have Data Sources set and running, click on the Data Source title in the Data Sources overview page, in order to access details page.
+
+![Data Source Details](./data-source-details.png)
+
+This page provides 'Actions' button, which holds actions such as 'Edit', 'Delete' and 'Run'.
+
+In addition to this actions, you can see which facts are part of this Data Sourcee and create checks based on those facts.
+
+Results section holds information about each entity results for facts defined in the Data Source.
+
+![Data Results](./data-source-results.png)
+
 ## Next steps
 
 Now that you created the Data Source, you can define [Checks](../checks/) for that Data Source.
