@@ -1,5 +1,6 @@
 import React from 'react';
 import lodashEscape from 'lodash/escape';
+import kebabCase from 'lodash/kebabCase';
 
 const CodeBlock = ({ language, code, intro }) => (
   <div>
@@ -21,5 +22,13 @@ const CodeBlock = ({ language, code, intro }) => (
     )}
   </div>
 );
+
+CodeBlock.generateKey = ({ code, intro }) => {
+  if (intro && intro !== '') {
+    return `key-${kebabCase(intro)}`;
+  }
+
+  return `key-${kebabCase(code)}`;
+};
 
 export default CodeBlock;

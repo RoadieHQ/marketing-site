@@ -69,20 +69,26 @@ const PluginTemplate = ({ data }) => {
                 <Title text="Self-hosted Backstage installation steps" />
               </div>
 
-              {plugin.frontmatter.gettingStarted.map((section, index) =>
-                section.title && section.title !== '' ? (
-                  <div className="text-center pb-3">
-                    <Title text={section.title} key={`key-${index}`} />
-                  </div>
-                ) : (
+              {plugin.frontmatter.gettingStarted.map((section) => {
+                const key = CodeBlock.generateKey(section);
+
+                if (section.title && section.title !== '') {
+                  return (
+                    <div className="text-center pb-3" key={key}>
+                      <Title text={section.title} />
+                    </div>
+                  );
+                } 
+
+                return (
                   <CodeBlock
                     language={section.language}
                     code={section.code}
                     intro={section.intro}
-                    key={`key-${index}`}
+                    key={key}
                   />
-                )
-              )}
+                );
+              })}
             </ResponsiveSpacer>
           )}
 
