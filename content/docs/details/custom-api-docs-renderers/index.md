@@ -20,7 +20,7 @@ component which takes the API definition as a prop and renders it.
 
 For example, the simplest custom renderer which just prefixes the definition would be something like this:
 
-```typescript jsx
+```typescript
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
