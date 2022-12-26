@@ -77,7 +77,7 @@ gettingStarted:
 
 If you want to create multiple components that fetch data from different argoCD instances, you have to add a proxy config for each instance:
 
-```
+```yaml
 proxy:
 ...
 
@@ -102,7 +102,7 @@ Add all required auth tokens to environmental variables, in this example, ARGOCD
 
 And then in the following component definition annotations add a line with the url to the desired proxy path:
 
-```
+```yaml
 argocd/proxy-url: '/argocd/api2'
 ```
 
