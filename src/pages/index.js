@@ -1,6 +1,6 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { SEO, SitewideFooter, SitewideHeader } from 'components';
+import { graphql } from 'gatsby';
+import { SEO, SitewideFooter, SitewideHeader, Link } from 'components';
 import {
   AlternatingFeatureBlock,
   SideBySideHero,
@@ -274,14 +274,14 @@ const Home = ({ data }) => {
             teams going through hyper-growth.
           </p>
           <Link
-            href="https://youtu.be/6Ss1e-9X_JY?t=51"
+            to="https://youtu.be/6Ss1e-9X_JY?t=51"
             className="block mt-5 font-bold uppercase text-lg tracking-wider"
           >
             Watch talk on YouTube &rarr;
           </Link>
         </div>
         <aside className="lg:col-span-3">
-          <Link href="https://youtu.be/6Ss1e-9X_JY?t=51">
+          <Link to="https://youtu.be/6Ss1e-9X_JY?t=51">
             <img src={AndyThumbImg} alt="Andy's talk thumbnail" />
           </Link>
         </aside>
