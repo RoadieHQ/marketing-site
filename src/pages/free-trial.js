@@ -38,7 +38,9 @@ const RequestTrial = ({ data, location }) => {
   const params = new URLSearchParams(location.search);
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [email, setEmail] = useState(params.has('email') ? params.get('email') : '');
+  const [emailValues, setEmailValues] = useState({
+    email: params.has('email') ? params.get('email') : '',
+  });
   const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
 
   const handleCloseModal = () => {
@@ -64,7 +66,7 @@ const RequestTrial = ({ data, location }) => {
       />
 
       <div className="min-h-screen bg-white">
-        <SitewideHeader ctaText="Get a Demo" ctaTo="/request-demo/" />
+        <SitewideHeader ctaText="Request a Demo" ctaTo="/request-demo/" />
 
         <section className="relative max-w-xl mx-auto p-4 mt-5 pt-10 sm:px-10 lg:max-w-7xl">
           <Headline size="medium" className="leading-snug text-orange-600 relative z-10">
@@ -76,11 +78,11 @@ const RequestTrial = ({ data, location }) => {
           <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">
             <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">
               <ExtendedGetInstanceCallToAction
-                email={email}
+                emailValues={emailValues}
                 onSuccess={() => {
                   setModalOpen(true);
                 }}
-                setEmail={setEmail}
+                setEmailValues={setEmailValues}
                 scmTool={scmTool}
                 setScmTool={setScmTool}
               />
