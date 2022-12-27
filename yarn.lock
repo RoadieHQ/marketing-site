@@ -1267,13 +1267,6 @@
     core-js-pure "^3.25.1"
     regenerator-runtime "^0.13.11"
 
-"@babel/runtime@7.12.5":
-  version "7.12.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
-  integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
 "@babel/runtime@7.14.0":
   version "7.14.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
@@ -6749,13 +6742,6 @@ gatsby-plugin-feed@^4.4.0:
     gatsby-plugin-utils "^3.19.0"
     lodash.merge "^4.6.2"
     rss "^1.2.2"
-
-gatsby-plugin-force-trailing-slashes@^1.0.5:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-force-trailing-slashes/-/gatsby-plugin-force-trailing-slashes-1.0.6.tgz#f170b5919e16e2dca52689b5430688e92bf1895e"
-  integrity sha512-fFkgLqcu0AvFiwLe/Do/pZB+k2jYx6FfHFUgPvoD2PpxSDwyUR8CONZKlhmtuJ6foaaFSsD+vvmRWhfLqpAECQ==
-  dependencies:
-    "@babel/runtime" "7.12.5"
 
 gatsby-plugin-google-analytics@^4.4.0:
   version "4.25.0"

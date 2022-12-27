@@ -76,6 +76,8 @@ module.exports = {
     },
   },
 
+  trailingSlash: 'always',
+
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -173,7 +175,6 @@ module.exports = {
       },
     },
 
-    `gatsby-plugin-force-trailing-slashes`,
     'gatsby-plugin-twitter',
     'gatsby-plugin-netlify',
     'gatsby-plugin-image',
