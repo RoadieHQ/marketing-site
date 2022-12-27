@@ -1,5 +1,5 @@
 import React from 'react';
-import { HelpText } from 'components';
+import HelpText from './HelpText';
 import { INPUT_COLORS } from './input-colors';
 
 import Input from './Input';
