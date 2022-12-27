@@ -21,7 +21,7 @@ const submitToNetlifyForms = async ({
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
   formData.append('email', email);
-  formData.append('scm', scmTool);
+  formData.append('scm', scmTool.value);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('agree-to-policies', agreeToPolicies);
@@ -131,6 +131,7 @@ const HeroForm = () => {
           required={true}
           color="secondary"
         />
+
         <div className="sm:col-span-2 mt-4">
           <ScmToolSelect
             label="Primary source code host"
@@ -138,6 +139,7 @@ const HeroForm = () => {
             currentValue={scmTool}
             idPrefix="get-instance-"
             color="secondary"
+            helpText={false}
           />
         </div>
         <div className="sm:col-span-2 flex items-end">

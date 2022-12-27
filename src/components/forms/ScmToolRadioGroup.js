@@ -2,36 +2,7 @@ import React from 'react';
 
 import Radio from './Radio';
 import HelpText from './HelpText';
-
-export const SCM_TOOLS = [{
-  value: 'github-cloud',
-  label: 'GitHub Cloud',
-  supported: true,
-}, {
-  value: 'github-on-prem',
-  label: 'GitHub On-prem',
-  supported: true,
-}, {
-  value: 'gitlab-cloud',
-  label: 'Gitlab Cloud',
-  supported: false,
-}, {
-  value: 'gitlab-on-prem',
-  label: 'Gitlab On-prem',
-  supported: false,
-}, {
-  value: 'bitbucket-cloud',
-  label: 'Bitbucket Cloud',
-  supported: false,
-}, {
-  value: 'bitbucket-server',
-  label: 'Bitbucket Server',
-  supported: false,
-}, {
-  value: 'other',
-  label: 'Other',
-  supported: false,
-}];
+import { SCM_TOOLS, SCM_SUPPORT_HELP_TEXT } from '../../contactFormConstants';
 
 const ScmToolRadioGroup = ({
   onChange,
@@ -54,7 +25,12 @@ const ScmToolRadioGroup = ({
           id={`${idPrefix}scm-${value}-input`}
         />
       ))}
-      <HelpText message="Roadie only supports GitHub for now. Submit the form to be notified when we support your tool." />
+
+      <div className="mt-3">
+        <HelpText
+          message={SCM_SUPPORT_HELP_TEXT}
+        />
+      </div>
     </div>
   </fieldset>
 );

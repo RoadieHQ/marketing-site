@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
-import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
+import { SCM_TOOLS } from '../contactFormConstants';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { FAQs } from 'components/landing';
 import Avatar from '../components/landing/Testimonials/Avatar';
@@ -16,21 +16,21 @@ const SEO_TITLE = 'Try hosted Spotify Backstage for free';
 
 const SubmissionSuccessPositiveBody = () => (
   <p>
-    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via the email
-    provided.
+    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via the email provided.
   </p>
 );
 
-const SubmissionSuccessNegativeBody = () => (
+const SubmissionSuccessNegativeBody = ({ scmTool }) => (
   <>
-    <p>Roadie only supports GitHub and Bitbucket for now.</p>
-    <p>Roadie only supports GitHub for now.</p>
+    <p>Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about your use case.</p>
     <p>
-      We are working to support more tools in the near future. You will be among the first to know
-      when we support yours.
+      We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes struggle to keep up with demand.
     </p>
+
+    <p>Thank you for requesting a demo of Roadie Backstage, and hopefully you will hear from us soon.</p>
   </>
 );
+
 
 const RequestTrial = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -61,7 +61,7 @@ const RequestTrial = ({ data, location }) => {
         siteMetadata={data.site.siteMetadata}
         positiveTitle="We'll be in touch!"
         positiveBody={<SubmissionSuccessPositiveBody />}
-        negativeTitle="Watch this space!"
+        negativeTitle="We're going to need a little more info"
         negativeBody={<SubmissionSuccessNegativeBody />}
       />
 

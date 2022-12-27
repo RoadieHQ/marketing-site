@@ -6,7 +6,6 @@ import {
   SubscribeToNewsletterSwitch,
   Form,
   Recaptcha,
-  HelpText,
 } from 'components';
 
 import { ScmToolSelect } from '../forms/ScmToolSelect';
@@ -30,7 +29,7 @@ const submitToNetlifyForms = async ({
   formData.append('form-name', netlifyFormName);
   formData.append('name', name);
   formData.append('email', email);
-  formData.append('scm', scmTool);
+  formData.append('scm', scmTool.value);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
@@ -145,7 +144,6 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
           idPrefix="request-demo-"
           color="primary"
         />
-        <HelpText className="mt-3" message="Roadie only supports GitHub for now. Submit the form to be notified when we support your tool." />
       </div>
 
       <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} className="mb-10" />

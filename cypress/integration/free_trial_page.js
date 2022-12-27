@@ -16,14 +16,14 @@ describe('The free trial page', () => {
     cy.contains('Thank you for requesting a free trial of Roadie Backstage');
   });
 
-  it('has a flow for rejecting users who use unsupported SCMs', () => {
+  it('has a flow for users who use unsupported SCMs', () => {
     cy.visit('/free-trial/');
 
     cy.get('#get-instance-email-input').type('test@example.com');
     cy.get('#scm').select('Gitlab Cloud');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
-    cy.contains('Roadie only supports GitHub for now');
+    cy.contains('Roadie support for Gitlab Cloud is in beta');
   });
 
   it('warns gmail users', () => {

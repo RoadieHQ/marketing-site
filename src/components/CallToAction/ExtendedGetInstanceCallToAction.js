@@ -29,7 +29,7 @@ const submitToNetlifyForms = async ({
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
   formData.append('email', email);
-  formData.append('scm', scmTool);
+  formData.append('scm', scmTool.value);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('agree-to-policies', agreeToPolicies);
@@ -133,10 +133,6 @@ const ExtendedGetInstanceCallToAction = ({
           currentValue={scmTool}
           idPrefix="get-instance-"
           color="primary"
-        />
-        <HelpText
-          className="mt-3"
-          message="Roadie only supports GitHub for now. Submit the form to be notified when we support your tool."
         />
       </div>
 
