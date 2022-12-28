@@ -25,6 +25,13 @@ spec:
 +    $openapi: https://api.apis.guru/v2/openapi.yaml
 ```
 
+If your OpenAPI specs are located in the same repository as the catalog metadata file, you also need to additionally tell the `$openapi` resolver the basepath where to find files from. You can do that by adding an annotation like below:
+
+```yaml
+  annotations:
+    openapi/ref-basepath: ./
+```
+
 </details>
 
 ## Introduction
