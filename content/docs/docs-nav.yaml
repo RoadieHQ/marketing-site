@@ -88,6 +88,8 @@ nav:
   - Scaffolder-Cookbook:
       - Create RFC: '/docs/scaffolder-cookbook/create-rfc/'
       - Debug template: '/docs/scaffolder-cookbook/debug-template/'
+      - Append file: '/docs/scaffolder-cookbook/append/'
+      - Re-use Parameters: '/docs/scaffolder-cookbook/global-constants/'
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
       - Data Sources: '/docs/tech-insights/data-sources/'
