@@ -8,7 +8,7 @@ import {
   Headline,
   TextLink as Link,
 } from 'components';
-import { getImage, getSrc } from 'gatsby-plugin-image';
+import { getSrc } from 'gatsby-plugin-image';
 
 import BackstageB from '../../content/assets/logos/backstage/b-stack.png';
 
