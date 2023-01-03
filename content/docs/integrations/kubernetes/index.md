@@ -264,19 +264,37 @@ In order to use the Kubernetes plugin using a service account, Roadie needs:
  * URL of your Kubernetes API Server endpoint. If you are using brokered connection you can use protocol `broker://`, e.g. `broker://my-broker-token`.
 
 ### Step 1: Create a Service Account token
-You will need to create a service account token for your cluster in kubernetes cluster for use by roadie.
+You will need to create a service account token for your cluster in kubernetes cluster for use by roadie. 
 
-### Step 2: Set the Token in a Roadie Backstage Secret
+### Step 2: See RBAC configuration and `ClusterRole` creation steps from above to identify the correct `ClusterRole` configuration. Create a `ClusterRoleBinding` to link the `ServiceAccount` you retrieved a token for in the step above to the created `ClusterRole`
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: roadie-assume-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: roadie-assume-role # The role I created for K8s plugin 
+subjects:
+  - kind: ServiceAccount
+    name: roadie # The service account I retrieved a token for in step 1
+    namespace: roadie-broker
+```
+
+
+### Step 3: Set the Token in a Roadie Backstage Secret
 Navigate to the ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token you created in step 1. Alternatively, if you are congfiguring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`. If you are using a brokered connection to access your clusters, these secrets can be placeholders since they are overridden by the Broker client.
 
-### Step 3: 
+### Step 4: 
 1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/kubernetes” and click on add item.
 2. Select the Service Account provider
 3. Add the url and name of cluster.
 4. If you have used a custom secret, you will need to set it in the secret name field
 
 
-### Step 4: (Optional, for brokered connections) Configure your Broker client
+### Step 5: (Optional, for brokered connections) Configure your Broker client
 
 If you are contacting to your Kubernetes clusters via a brokered connection, you need to use the `accept.json` configuration file contents visible below:
 

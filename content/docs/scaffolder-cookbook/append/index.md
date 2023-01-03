@@ -68,7 +68,6 @@ spec:
                 type: library
                 owner: CNCF
                 lifecycle: experimental
-
   steps:
     - id: fetch-repo
       name: Fetch repo
