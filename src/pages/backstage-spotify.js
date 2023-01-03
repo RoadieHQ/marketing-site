@@ -8,29 +8,34 @@ import {
   Headline,
   TextLink as Link,
 } from 'components';
+import { getSrc } from 'gatsby-plugin-image';
+
 import BackstageB from '../../content/assets/logos/backstage/b-stack.png';
 
 const tableOfContentItems = [{
-  to: '#what-spotify-backstage-is',
+  to: '/backstage-spotify#what-spotify-backstage-is',
   text: 'What it is',
 }, {
-  to: '#who-it-has-been-adopted-by',
+  to: '/backstage-spotify#adopters',
   text: 'Adopters',
 }, {
-  to: '#the-origins-of-spotify-backstage',
+  to: '/backstage-spotify#the-origins-of-spotify-backstage',
   text: 'The origins',
 }, {
-  to: '#problems-tackled-by-spotify-backstage',
+  to: '/backstage-spotify#problems-tackled-by-spotify-backstage',
   text: 'The problems it helps solve',
 }, {
-  to: '#the-main-features-of-backstage-by-spotify',
+  to: '/backstage-spotify#the-main-features-of-backstage-by-spotify',
   text: 'The main features',
 }, {
-  to: '#the-use-cases-of-spotify-backstage',
+  to: '/backstage-spotify#the-use-cases-of-spotify-backstage',
   text: 'The use cases',
 }, {
-  to: '#how-to-get-started-with-spotify-backstage',
+  to: '/backstage-spotify#how-to-get-started-with-spotify-backstage',
   text: 'How to get started',
+}, {
+  to: '/backstage-spotify#more-learning-resources',
+  text: 'More learning resources'
 }];
 
 const TableOfContentItem = ({ to, text }) => (
@@ -47,6 +52,11 @@ const BackstageUltimateGuide = ({ data: { page, site } }) => {
       <SEO
         title={`${page.title} | ${siteTitle}`}
         description={page.seoDescription}
+        headerImage={getSrc(page.cover)}
+        ogImageAlt={page.cover.title}
+        meta={{
+          revised: page.lastValidated
+        }}
       />
 
       <SitewideHeader />
@@ -131,10 +141,15 @@ export const pageQuery = graphql`
       title
       date
       seoDescription
+      lastValidated
       body {
         childMarkdownRemark {
           html
         }
+      }
+      cover {
+        gatsbyImageData(height: 500)
+        title
       }
     }
   }
