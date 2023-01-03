@@ -90,6 +90,7 @@ nav:
       - Debug template: '/docs/scaffolder-cookbook/debug-template/'
       - Append file: '/docs/scaffolder-cookbook/append/'
       - Re-use Parameters: '/docs/scaffolder-cookbook/global-constants/'
+      - Edit Files: '/docs/scaffolder-cookbook/edit-file/'
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
       - Data Sources: '/docs/tech-insights/data-sources/'

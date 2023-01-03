@@ -21,15 +21,15 @@ You can check the available actions if you visit `/create/actions`.
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: append-file-template-example
+  name: append-to-file-template
   title: Append To File template example
-  description: Example template to append to a file with on the given path with the given content in the workspace.
+  description: Template to append content to a file in a repo and raise a PR for the change. NB - This will create a new file if a file does not exist at the path given.
 spec:
   owner: roadie
   type: service
 
   parameters:
-    - title: Append To File 1
+    - title: PR Data
       properties:
         repository:
           title: Repository name
@@ -39,25 +39,43 @@ spec:
           title: Repository Organisation
           type: string
           description: The Github org that the repository is in
-        path:
-          title: Path
-          type: string
-          description: The path to the file
-        content:
-          title: Content
-          type: string
-          description: The content to append to the file
         pr_branch:
           title: PR Branch
           type: string
-          description: The new branch name to make a pr from
+          description: The new branch to make a pr from
+    - title: Append content
+      properties:
+        path:
+          title: Path
+          type: string
+          description: The path to the file you want to append this content to in the scaffolder workspace
+        content:
+          title: Text area input
+          type: string
+          description: Add your new entity
+          ui:widget: textarea
+          ui:options:
+            rows: 10
+          ui:help: 'Make sure it is valid by checking the schema at `/tools/entity-preview`'
+          ui:placeholder: |
+
+            ---
+            apiVersion: backstage.io/v1alpha1
+              kind: Component
+              metadata:
+                name: backstage
+              spec:
+                type: library
+                owner: CNCF
+                lifecycle: experimental
+
   steps:
     - id: fetch-repo
       name: Fetch repo
       action: fetch:plain
       input:
-        url: https://github.com/sblausten/sample-service/
-    - id: appendFile
+        url: https://github.com/${{ parameters.org }}/${{ parameters.repository }}
+    - id: append-file
       name: Append To File Or Create New
       action: roadiehq:utils:fs:append
       input:
@@ -69,11 +87,11 @@ spec:
       input:
         repoUrl: github.com?repo=${{ parameters.repository }}&owner=${{ parameters.org }}
         branchName:  ${{ parameters.pr_branch }}
-        title: Add test content to ${{ parameters.path }}
-        description: Test append or create file
+        title: Add entity to ${{ parameters.path }}
+        description: PR created from Roadie Backstage scaffolder
     - id: log-message
       name: Log PR URL
       action: debug:log
       input:
-        message: 'RemoteURL: ${{ steps["publish-pr"].output.remoteUrl }}'
+        message: 'PR url: ${{ steps["publish-pr"].output.remoteUrl }}'
 ```
