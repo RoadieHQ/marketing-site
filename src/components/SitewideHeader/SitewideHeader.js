@@ -8,6 +8,8 @@ import {
   ShieldCheckIcon,
   AcademicCapIcon,
   PlayIcon,
+  NewspaperIcon,
+  PlusCircleIcon,
 } from '@heroicons/react/outline';
 import { Button } from 'components';
 
@@ -16,6 +18,22 @@ import TopNavItem from './TopNavItem';
 import OpenMenuButton from './OpenMenuButton';
 import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
+
+const features = [
+  {
+    name: 'Catalog: software, teams & resources',
+    description: 'All your tech assets on a single glass pane.',
+    to: '/product/catalog/',
+    icon: NewspaperIcon,
+  },
+  {
+    name: 'Scaffolder: create and expand',
+    description: 'Accelerate your development initatives.',
+    to: '/backstage/plugins/',
+    icon: PlusCircleIcon,
+  },
+];
+
 
 const learn = [
   {
@@ -81,7 +99,7 @@ const SitewideHeader = ({
         </div>
 
         <Popover.Group as="nav" className="hidden md:flex space-x-10">
-          <TopNavItem to="/#product" text="Product" />
+          <TopNavDropdownItem text="Product" subItems={features} />
           <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
           <TopNavItem to="/pricing/" text="Pricing" />
           <TopNavDropdownItem text="Resources" subItems={learn} />
