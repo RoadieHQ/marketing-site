@@ -15,8 +15,8 @@ import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-i
 
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
-const SEO_TITLE = 'Roadie’s Scaffolder: a Cloud native self-service engine';
-const LEAD = `Roadie’s Backstage-based Scaffolder lets you package best practices for your developers to grab with a few clicks. `;
+const SEO_TITLE = 'Scaffolder: self-service for Cloud Native teams';
+const LEAD = `Roadie’s Backstage-based Scaffolder lets you package best practices for your developers to grab with a few clicks.`;
 
 const PRODUCT = {
   features: [
@@ -80,7 +80,7 @@ const Home = ({ data }) => {
 
       <section className="bg-white mx-auto max-w-7xl xl:rounded-lg lg:flex items-center">
         <div className="lg:w-1/2 p-4 lg:px-10 lg:py-16">
-          <strong className="block uppercase mb-8 text-xl font-highlight">Roadie Scaffolder</strong>
+          <strong className="block uppercase mb-8 text-xl font-highlight">Roadie’s Scaffolder</strong>
           <Headline size="medium">
             <span className="text-orange-600">Self-service:</span> accelerate your delivery teams,
             save DevOps from mundane tasks

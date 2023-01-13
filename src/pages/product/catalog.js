@@ -13,8 +13,8 @@ import SnykImg from '../../../content/assets/product-pages/catalog-snyk-logo.png
 
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
-const SEO_TITLE = 'The easiest way to get Spotify Backstage';
-const LEAD = `Roadie's SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features.`;
+const SEO_TITLE = 'Catalog: discoverability for your services, resources, and teams';
+const LEAD = `Roadie’s Catalog lets you organize all you track ownership and foster collaboration in your organization.`;
 
 const PRODUCT = {
   features: [
@@ -84,7 +84,7 @@ const Home = ({ data }) => {
       <div className="catalog-hero-background">
         <section className="bg-white rounded-md text-center mx-auto max-w-4xl mt-5 xl:rounded-lg lg:flex items-center justify-center catalog-pattern">
           <div className="p-4 lg:px-10 lg:py-16">
-            <strong className="block uppercase mb-8 text-xl font-highlight">Roadie Catalog</strong>
+            <strong className="block uppercase mb-8 text-xl font-highlight">Roadie’s Catalog</strong>
             <Headline size="medium" className="leading-loose">
               <span className="text-orange-500">Automated discoverability:</span> cut the{' '}
               <nobr>wild-goose</nobr> chase for your engineers
