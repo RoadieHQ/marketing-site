@@ -31,7 +31,7 @@ const FeatureBlock = ({
       </Title>
       <p className="mt-1 mb-10 text-xl xl:text-2xl">{description}</p>
 
-      {!!paragraphs && (
+      {paragraphs && (
         <>
           {paragraphs.map((paragraph, i) => (
             <p className="text-lg xl:text-xl mt-5" key={`feature-p-${camelCase(title)}-${i}`}>
@@ -41,7 +41,7 @@ const FeatureBlock = ({
         </>
       )}
 
-      {!!bullets && (
+      {bullets && (
         <dl className="mt-10 space-y-10">
           {bullets.map((item, i) => (
             <Bullet item={item} key={`feature-b-${camelCase(title)}-${i}`} />
@@ -49,9 +49,11 @@ const FeatureBlock = ({
         </dl>
       )}
 
-      {!!ctaPrompt && (
+      {ctaPrompt && (
         <p>
-          <Link to={ctaPrompt.to} className="block mt-5 font-bold text-lg tracking-wider">{ctaPrompt.text} <span className='text-orange-500'>&rarr;</span></Link>
+          <Link to={ctaPrompt.to} className="block mt-5 font-bold text-lg tracking-wider">
+            {ctaPrompt.text} <span className="text-orange-500">&rarr;</span>
+          </Link>
         </p>
       )}
     </div>
@@ -60,7 +62,7 @@ const FeatureBlock = ({
       className="mt-10 relative lg:mt-0 lg:col-span-3 flex align-center justify-center px-2 sm:px-0"
       aria-hidden
     >
-      {!!illustration.to ? (
+      {illustration.to ? (
         <Link to={illustration.to} className="block w-full">
           <img src={illustration.png} alt={illustration.alt} className="w-full" />
         </Link>

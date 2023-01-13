@@ -141,7 +141,7 @@ const Home = ({ data }) => {
         </figure>
 
         <Title el="h2" className="mt-10 xl:text-2xl xl:tracking-tight text-orange-600">
-          See Roadie's Scaffolder in action
+          See Roadie’s Scaffolder in action
         </Title>
         <Button
           link={true}

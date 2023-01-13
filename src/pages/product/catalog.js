@@ -8,7 +8,7 @@ import Title from '../../components/Title';
 import SearchImg from '../../../content/assets/product-pages/catalog-search.png';
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 import IntegrationsImg from '../../../content/assets/product-pages/catalog-integrations.png';
-import ContentfulCaseImg from '../../../content/assets/product-pages/catalog-structure.svg';;
+import ContentfulCaseImg from '../../../content/assets/product-pages/catalog-structure.svg';
 import SnykImg from '../../../content/assets/product-pages/catalog-snyk-logo.png';
 
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
