@@ -1,12 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import has from 'lodash/has';
-import { SEO, SitewideFooter, SitewideHeader, Link, Button, Headline } from 'components';
+import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import Title from '../../components/Title';
-import classNames from 'classnames';
-import { PostSummary } from 'components/article';
-import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../../mapContentfulBlogPostToMarkdownRemarkBlogPost';
 
 import SearchImg from '../../../content/assets/product-pages/catalog-search.png';
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';

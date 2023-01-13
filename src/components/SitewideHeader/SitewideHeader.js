@@ -29,7 +29,7 @@ const features = [
   {
     name: 'Scaffolder: create and expand',
     description: 'Accelerate your development initatives.',
-    to: '/backstage/plugins/',
+    to: '/product/scaffolder/',
     icon: PlusCircleIcon,
   },
 ];
