@@ -31,9 +31,9 @@ import {
 } from '@heroicons/react/outline';
 
 import KeepSafeImg from '../../content/assets/home/illustrations/home-keep-backstage-safe.png';
-import NoCodeImg from '../../content/assets/home/illustrations/home-no-code-backstage.png';
+import NoCodeImg from '../../content/assets/home/illustrations/home-no-code-backstage.svg';
 import CustomPluginsImg from '../../content/assets/home/illustrations/home-custom-plugins.png';
-import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.png';
+import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.svg';
 import AndyThumbImg from '../../content/assets/home/illustrations/home-andy-video-thumb.png';
 
 import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Headline } from 'components';
-import CatalogScreenshot from '../../../../content/assets/homepage/home-product-screenshot.png';
+import CatalogScreenshot from '../../../../content/assets/home/illustrations/home-product-screenshot.svg';
 import { LOGOS } from '../CustomerLogoCloud';
 import has from 'lodash/has';
 
