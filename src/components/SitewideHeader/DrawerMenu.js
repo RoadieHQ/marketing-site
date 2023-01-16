@@ -5,8 +5,7 @@ import {
   BookOpenIcon,
   ShieldCheckIcon,
   AcademicCapIcon,
-  SparklesIcon,
-  DesktopComputerIcon,
+  PlusCircleIcon,
   NewspaperIcon,
   BriefcaseIcon,
 } from '@heroicons/react/outline'
@@ -16,13 +15,13 @@ import MobileDropdownNavItem from './MobileDropdownNavItem';
 import DrawerMenuHeader from './DrawerMenuHeader';
 
 const subItems = [{
-  name: 'Product',
-  to: '/#product',
-  icon: SparklesIcon,
+  name: 'Roadie’s Catalog: software, teams & resources',
+  to: '/product/catalog/',
+  icon: NewspaperIcon,
 }, {
-  name: 'Solutions',
-  to: '/#solutions',
-  icon: DesktopComputerIcon,
+  name: 'Roadie’s Scaffolder: create and expand',
+  to: '/product/scaffolder/',
+  icon: PlusCircleIcon,
 }, {
   name: 'Backstage Plugins',
   to: '/backstage/plugins/',
