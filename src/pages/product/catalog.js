@@ -5,7 +5,7 @@ import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'component
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import Title from '../../components/Title';
 
-import SearchImg from '../../../content/assets/product-pages/catalog-search.png';
+import SearchImg from '../../../content/assets/product-pages/catalog-search.svg';
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 import IntegrationsImg from '../../../content/assets/product-pages/catalog-integrations.png';
 import ContentfulCaseImg from '../../../content/assets/product-pages/catalog-structure.svg';
