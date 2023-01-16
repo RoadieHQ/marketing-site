@@ -19,17 +19,24 @@ import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-mono
 import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-monochrome.webp';
 import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
 
-import HopperWhiteLogo from '../../../content/assets/home/customer-logos-white/hopper.png';
-import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-white/contentful.png';
-import SnykWhiteLogo from '../../../content/assets/home/customer-logos-white/snyk.png';
-import NetlifyWhiteLogo from '../../../content/assets/home/customer-logos-white/netlify.png';
-import CaribouWhiteLogo from '../../../content/assets/home/customer-logos-white/caribou.png';
-import YotpoWhiteLogo from '../../../content/assets/home/customer-logos-white/yotpo.png';
+import HopperWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/hopper.png';
+import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/contentful.png';
+import SnykWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/snyk.png';
+import NetlifyWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/netlify.png';
+import CaribouWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/caribou.png';
+import YotpoWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/yotpo.png';
+
+import ContentfulDarkLogo from '../../../content/assets/home/customer-logos-monochrome/contentful-dark.png';
+import SnykDarkLogo from '../../../content/assets/home/customer-logos-monochrome/snyk-dark.png';
+import NetlifyDarkLogo from '../../../content/assets/home/customer-logos-monochrome/netlify-dark.png';
+import CaribouDarkLogo from '../../../content/assets/home/customer-logos-monochrome/caribou-dark.png';
+import YotpoDarkLogo from '../../../content/assets/home/customer-logos-monochrome/yotpo-dark.png';
 
 export const LOGOS = [
   {
     src: {
       white: CaribouWhiteLogo,
+      dark: CaribouDarkLogo,
     },
     alt: 'Caribou logo',
     title: '~100 engineers',
@@ -37,6 +44,7 @@ export const LOGOS = [
   {
     src: {
       white: YotpoWhiteLogo,
+      dark: YotpoDarkLogo,
     },
     alt: 'Yotpo logo',
     title: '~100 engineers',
@@ -46,6 +54,7 @@ export const LOGOS = [
       webp: SnykLogo,
       png: SnykLogoPng,
       white: SnykWhiteLogo,
+      dark: SnykDarkLogo,
     },
     alt: 'Snyk logo',
     title: '~150 engineers',
@@ -56,6 +65,7 @@ export const LOGOS = [
       webp: ContentfulLogo,
       png: ContentfulLogoPng,
       white: ContentfulWhiteLogo,
+      dark: ContentfulDarkLogo,
     },
     alt: 'Contentful logo',
     title: '~150 engineers',
@@ -65,6 +75,7 @@ export const LOGOS = [
       webp: NetlifyLogo,
       png: NetlifyLogoPng,
       white: NetlifyWhiteLogo,
+      dark: NetlifyDarkLogo,
     },
     alt: 'Netlify logo',
     title: '~100 engineers',

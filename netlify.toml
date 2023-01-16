@@ -106,3 +106,9 @@
   from = "/techinsights-demo-backstagecon/"
   to = "/request-demo/"
   force = true
+
+# There's no generic product page so we redirect to the first one
+[[redirects]]
+  from = "/product/"
+  to = "/product/catalog"
+  force = true

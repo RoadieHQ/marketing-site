@@ -8,9 +8,9 @@ import soc2Seal from '../../../content/assets/logos/soc2/aicpa.jpg';
 import theme from '../../theme';
 
 const navigation = {
-  solutions: [
-    { name: 'Product', href: '/#product' },
-    { name: 'Solutions', href: '/#solutions' },
+  product: [
+    { name: 'Catalog', href: '/product/catalog' },
+    { name: 'Scaffolder', href: '/product/scaffolder' },
   ],
 
   support: [
@@ -120,7 +120,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
           <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <TitledLinkList title="Solutions" />
+                <TitledLinkList title="Product" />
               </div>
 
               <div className="mt-12 md:mt-0">
