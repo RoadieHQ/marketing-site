@@ -23,6 +23,7 @@ nav:
       - Bugsnag: '/docs/integrations/bugsnag/'
       - Catalog graph: '/docs/integrations/catalog-graph/'
       - CircleCI: '/docs/integrations/circleci/'
+      - Cloudsmith: 'docs/integrations/cloudsmith/'
       - Confluence: '/docs/integrations/confluence/'
       - Cortex: '/docs/integrations/cortex'
       - Datadog: '/docs/integrations/datadog/'
