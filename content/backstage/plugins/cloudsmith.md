@@ -58,6 +58,6 @@ gettingStarted:
       </Grid>
 ---
 
-## Authentication
+## Authentication
 
 In order to authenticate with Cloudsmith, make sure that you have a environmnet variable setup `$CLOUDSMITH_API_KEY` in order to authenticate with your repo.
