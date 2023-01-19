@@ -41,22 +41,21 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/components/home/Homepage.tsx
+      <Grid item xs={12} md={6}>
+        <CloudsmithStatsCard repo="repo-name" owner="org-name"/>
+      </Grid>
 
-    <Grid  item  xs={12}  md={6}>
-    <CloudsmithStatsCard  repo="repo-name"  owner="org-name"  />
-    </Grid>
+      <Grid item xs={12} md={6}>
+        <CloudsmithQuotaCard  owner='org-name'/>
+      </Grid>
 
-    <Grid  item  xs={12}  md={6}>
-    <CloudsmithQuotaCard  owner='org-name'/>
-    </Grid>
+      <Grid item xs={12} md={6}>
+        <CloudsmithRepositoryAuditLogCard owner='org-name' repo='repo-name'/>
+      </Grid>
 
-    <Grid  item  xs={12}  md={6}>
-    <CloudsmithRepositoryAuditLogCard  owner='org-name'  repo='repo-name'/>
-    </Grid>
-
-    <Grid  item  xs={12}  md={6}>
-    <CloudsmithRepositorySecurityCard  owner='org-name'  repo='repo-name'/>
-    </Grid>
+      <Grid item xs={12} md={6}>
+        <CloudsmithRepositorySecurityCard owner='org-name' repo='repo-name'/>
+      </Grid>
 ---
 
 ## Authentication
