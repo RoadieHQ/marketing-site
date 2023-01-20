@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import format from 'date-fns/format';
+import isEmpty from 'lodash/isEmpty';
 
-import { SEO, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
+import { SEO, Headline, SitewideHeader, SitewideFooter } from 'components';
 import HeadRssLink from 'components/article/HeadRssLink';
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
 import {
@@ -10,6 +12,7 @@ import {
 } from 'components/CallToAction/SubscribeToNewsletter';
 
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
+import Tags from '../components/Tags';
 
 const BlogPostTemplate = ({ data }) => {
   const { node: post } = mapContentfulBlogPostToMarkdownRemarkBlogPost({
@@ -26,6 +29,17 @@ const BlogPostTemplate = ({ data }) => {
   };
 
   const coverImage = getImage(post.coverImage);
+  const { author, title, date, tags, lastValidated } = post.frontmatter;
+
+  const FORMAT_TOKEN = 'MMMM do, yyyy';
+  const dateTimestamp = Date.parse(date);
+
+  let formattedDate = format(dateTimestamp, FORMAT_TOKEN);
+  const lastValidatedTimestamp = Date.parse(lastValidated);
+  if (lastValidated && lastValidatedTimestamp) {
+    const formattedLastvalidated = format(lastValidatedTimestamp, FORMAT_TOKEN);
+    formattedDate = `${formattedDate} — last validated on ${formattedLastvalidated}`;
+  }
 
   return (
     <>
@@ -37,7 +51,7 @@ const BlogPostTemplate = ({ data }) => {
 
       <HeadRssLink />
 
-      <SitewideHeader />
+      <SitewideHeader borderBottom={false} />
 
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
@@ -46,26 +60,47 @@ const BlogPostTemplate = ({ data }) => {
         email={email}
       />
 
-      <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
-        <article className="relative max-w-lg mx-auto lg:max-w-2xl mb-24">
-          <div className="mb-8">
-            <ContentHeader frontmatter={post.frontmatter} />
+      <article className="relative">
+        <header className="bg-white mx-auto max-w-7xl mb-5 px-4 py-10 xl:rounded-lg lg:flex lg:px-0 lg:mb-10 items-center">
+          <div className="lg:w-1/2 px-4 lg:px-10">
+            <Link
+              to="/blog"
+              className="block uppercase mb-8 text-xl font-highlight text-orange-600 font-bold"
+            >
+              Roadie’s Blog
+            </Link>
+            <Headline size="medium" className="mb-10">
+              {title}
+            </Headline>
+            <strong>{author && author.name && <>By {author.name}</>}</strong>
+            {` • `}
+            {formattedDate}
+            {!isEmpty(tags) && (
+              <div className="mt-4">
+                <Tags tags={tags} />
+              </div>
+            )}
           </div>
+          <div className="lg:w-1/2 mt-5 lg:mt-0">
+            {coverImage && (
+              <GatsbyImage
+                image={coverImage}
+                alt={post.coverImage.title}
+                className="rounded-lg lg:rounded-tr-none lg:rounded-br-none"
+              />
+            )}
+          </div>
+        </header>
 
-          {coverImage && (
-            <GatsbyImage image={coverImage} alt={post.coverImage.title} className="mb-6" />
-          )}
+        <section
+          className="prose-xl prose-primary px-4 max-w-none max-w-lg mx-auto lg:max-w-3xl mb-24"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+      </article>
 
-          <section
-            className="prose prose-primary max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-        </article>
-
-        <div className="relative max-w-lg mx-auto lg:max-w-xl">
-          <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
-        </div>
-      </main>
+      <div className="relative max-w-lg mx-auto lg:max-w-xl mb-10">
+        <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
+      </div>
 
       <SitewideFooter />
     </>
