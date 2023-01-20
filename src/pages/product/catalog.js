@@ -14,7 +14,7 @@ import SnykImg from '../../../content/assets/product-pages/catalog-snyk-logo.png
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
 const SEO_TITLE = 'Catalog: discoverability for your services, resources, and teams';
-const LEAD = `Roadie’s Catalog lets you organize all you track ownership and foster collaboration in your organization.`;
+const LEAD = `Roadie’s Catalog lets you organize all your software assets, track ownership, and foster an Inner Source culture.`;
 
 const PRODUCT = {
   features: [
