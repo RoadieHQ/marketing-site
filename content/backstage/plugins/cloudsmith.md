@@ -11,7 +11,7 @@ seo:
   description: |
     See your Cloudsmith usage, repository stats, audit logs and security scanning.
 
-logoImage: '../../assets/logos/cloudsmith/cloudsmith-mini-dark.svg'
+logoImage: '../../assets/logos/cloudsmith/cloudsmith-logo.png'
 
 coverImage: '../../assets/cloudsmith-plugin.png'
 coverImageAlt: 'A screenshot of Cloudsmith plugin showing 4 components in more detail.'
