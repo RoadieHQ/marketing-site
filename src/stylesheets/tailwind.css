@@ -43,3 +43,27 @@ html {
   background-size: cover;
   background-position: center center;
 }
+
+.prose-primary p a {
+  border-bottom: 1px dotted #E56C1A;
+}
+
+.prose-primary p a:hover {
+  border-bottom-style: solid;
+}
+
+.prose-primary h2 em, .prose-primary h3 em {
+  font-style: normal;
+}
+
+.prose-primary h3 {
+  @apply font-highlight;
+  @apply font-bold;
+  @apply text-2xl;
+}
+
+.prose-primary h2 {
+  @apply font-highlight;
+  @apply font-bold;
+  @apply text-3xl;
+}
