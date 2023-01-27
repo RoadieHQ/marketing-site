@@ -23,5 +23,5 @@ metadata:
     sonarqube.org/project-key: RoadieHQ_marketing-site
 spec:
   type: website
-  owner: roadie
+  owner: marketing
   lifecycle: production
