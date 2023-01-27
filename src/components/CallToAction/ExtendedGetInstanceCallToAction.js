@@ -3,11 +3,11 @@ import {
   Link,
   Switch,
   Button,
-  TextField,
+  EmailField,
   SubscribeToNewsletterSwitch,
   Form,
   Recaptcha,
-  HelpText
+  HelpText,
 } from 'components';
 import { ScmToolSelect } from '../forms/ScmToolSelect';
 
@@ -53,7 +53,13 @@ const submitToNetlifyForms = async ({
   return resp;
 };
 
-const ExtendedGetInstanceCallToAction = ({ onSuccess, email, setEmail, scmTool, setScmTool }) => {
+const ExtendedGetInstanceCallToAction = ({
+  onSuccess,
+  emailValues,
+  setEmailValues,
+  scmTool,
+  setScmTool,
+}) => {
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [agreed, setAgreed] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
@@ -64,11 +70,11 @@ const ExtendedGetInstanceCallToAction = ({ onSuccess, email, setEmail, scmTool, 
   const buttonText = 'Request a trial';
 
   const clearForm = () => {
-    setEmail('');
+    setEmailValues({ email: '' });
     setAgreed(false);
   };
 
-  let disabled = submitting || !email || email === '' || !agreed;
+  let disabled = submitting || !emailValues.email || emailValues.email === '' || !agreed;
   if (recaptchaEnabled()) {
     disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
@@ -79,7 +85,7 @@ const ExtendedGetInstanceCallToAction = ({ onSuccess, email, setEmail, scmTool, 
     setSubmitting(true);
 
     const resp = await submitToNetlifyForms({
-      email,
+      email: emailValues.email,
       scmTool,
       subToNewsletter,
       agreeToPolicies: agreed,
@@ -109,15 +115,15 @@ const ExtendedGetInstanceCallToAction = ({ onSuccess, email, setEmail, scmTool, 
       buttonText={buttonText}
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
-      <TextField
+      <EmailField
         id="get-instance-email-input"
         label="Work email address *"
         name="email"
         type="email"
         autoComplete="email"
         fullWidth={true}
-        onChange={setEmail}
-        value={email}
+        value={emailValues}
+        setValue={setEmailValues}
       />
 
       <div className="sm:col-span-2">

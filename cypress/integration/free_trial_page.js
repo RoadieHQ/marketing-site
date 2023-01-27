@@ -25,4 +25,11 @@ describe('The free trial page', () => {
     cy.contains('Request a trial').click();
     cy.contains('Roadie only supports GitHub for now');
   });
+
+  it('warns gmail users', () => {
+    cy.visit('/free-trial/');
+
+    cy.get('#get-instance-email-input').type('test@gmail.com');
+    cy.contains('Please use your work email');
+  });
 });

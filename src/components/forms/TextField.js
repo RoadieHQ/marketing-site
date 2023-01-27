@@ -1,5 +1,5 @@
 import React from 'react';
-import { HelpText } from 'components';
+import HelpText from './HelpText';
 import { INPUT_COLORS } from './input-colors';
 
 import Input from './Input';
@@ -22,7 +22,9 @@ const TextField = ({
       </label>
       <div className="mt-1.5 relative">
         <Input id={htmlId} color={color} {...rest} />
-        <HelpText message={helpText} state={helpTextState} />
+        <div className="mt-3">
+          <HelpText message={helpText} state={helpTextState} />
+        </div>
       </div>
     </div>
   );

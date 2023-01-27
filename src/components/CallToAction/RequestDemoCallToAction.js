@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   Button,
   TextField,
+  EmailField,
   SubscribeToNewsletterSwitch,
   Form,
   Recaptcha,
@@ -56,7 +57,9 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
   const params = new URLSearchParams(location.search);
   const emailFromUrl = decodeURIComponent(params.get('email') || '');
 
-  const [email, setEmail] = useState(emailFromUrl);
+  const [emailValues, setEmailValues] = useState({
+    email: emailFromUrl,
+  });
   const [name, setName] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [honeypotText, setHoneypotText] = useState('');
@@ -68,7 +71,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
 
   const clearForm = () => {
     setName('');
-    setEmail('');
+    setEmailValues({ email: '' });
   };
 
   const onSubmit = async (e) => {
@@ -77,7 +80,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
 
     const resp = await submitToNetlifyForms({
       name,
-      email,
+      email: emailValues.email,
       scmTool,
       subToNewsletter,
       honeypotText,
@@ -97,7 +100,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
     setSubmitting(false);
   };
 
-  let disabled = submitting || !email || email === '';
+  let disabled = submitting || !emailValues.email || emailValues.email === '';
   if (recaptchaEnabled()) {
     disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
@@ -110,27 +113,29 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
       honeypotValue={honeypotText}
       buttonText={buttonText}
     >
-      <TextField
-        label="Full name"
-        type="text"
-        name="name"
-        id="request-demo-name-input"
-        onChange={setName}
-        value={name}
-        fullWidth
-        className="mb-10"
-      />
+      <div className="mb-10">
+        <TextField
+          label="Full name"
+          type="text"
+          name="name"
+          id="request-demo-name-input"
+          onChange={setName}
+          value={name}
+          fullWidth
+        />
+      </div>
 
-      <TextField
-        label="Work email address"
-        type="email"
-        name="email"
-        id="request-demo-email-input"
-        onChange={setEmail}
-        value={email}
-        fullWidth
-        className="mb-10"
-      />
+      <div className="mb-10">
+        <EmailField
+          label="Work email address"
+          type="email"
+          name="email"
+          id="request-demo-email-input"
+          setValue={setEmailValues}
+          value={emailValues}
+          fullWidth
+        />
+      </div>
 
       <div className="mb-10">
         <ScmToolSelect
