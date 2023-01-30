@@ -28,11 +28,16 @@ const SubmissionSuccessPositiveBody = () => (
 
 const SubmissionSuccessNegativeBody = ({ scmTool }) => (
   <>
-    <p>Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about your use case.</p>
+    {!scmTool.value.contains('gitlab') ? (
+      <>
+          <p>Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about your use case.</p>
     <p>
       We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes struggle to keep up with demand.
     </p>
-
+      </>
+    ) : (
+      <p>Roadie does not support GitLab at the moment. We&apos;ll email you as soon as we do.</p>
+    )}
     <p>Thank you for requesting a demo of Roadie Backstage, and hopefully you will hear from us soon.</p>
   </>
 );

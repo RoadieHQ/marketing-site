@@ -1,7 +1,8 @@
 import React from 'react';
+import isEmpty from 'lodash/isEmpty';
 
 import { INPUT_COLORS } from '.';
-import { SCM_TOOLS, SCM_SUPPORT_HELP_TEXT } from '../../contactFormConstants';
+import { SCM_TOOLS, SCM_SUPPORT_HELP_TEXT, SCM_NO_GITLAB_TEXT } from '../../contactFormConstants';
 import { HelpText } from 'components';
 
 export const ScmToolSelect = ({
@@ -43,11 +44,14 @@ export const ScmToolSelect = ({
           </option>
         ))}
       </select>
-
-      {helpText && helpText !== '' && (
-        <div className="mt-3">
-          <HelpText message={helpText} />
-        </div>
+      {!isEmpty(helpText) && !isEmpty(currentValue.value) && (
+        <>
+          {!currentValue.value.includes('github') && (
+            <div className="mt-3">
+              <HelpText message={currentValue.value.includes('gitlab') ? SCM_NO_GITLAB_TEXT : helpText} />
+            </div>
+          )}
+        </>
       )}
     </>
   );
