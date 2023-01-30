@@ -62,8 +62,6 @@ Select the `EntityHarnessCiCdContent` card from the drop-down and click Create.
 You should now see your Harness pipeline runs inside Roadie!
 
 
-> Note that the CI/CD component within Roadie displays Harness builds by default if other CI/CD solutions are not configured for the entity
-
 ## References
 
 - [Harness Plugin Documentation](https://github.com/harness/backstage-plugins/tree/main/plugins/harness-ci-cd)
