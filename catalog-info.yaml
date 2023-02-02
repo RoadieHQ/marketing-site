@@ -21,6 +21,7 @@ metadata:
     snyk.io/project-ids: 4f195df9-5ddf-4a98-8955-bd687d220d0b
     sentry.io/project-slug: marketing-site
     sonarqube.org/project-key: RoadieHQ_marketing-site
+    betteruptime.com/monitor-url: https://roadie.io
 spec:
   type: website
   owner: marketing
