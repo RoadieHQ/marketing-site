@@ -67,7 +67,7 @@ const RequestTrial = ({ data, location }) => {
         positiveTitle="We'll be in touch!"
         positiveBody={<SubmissionSuccessPositiveBody />}
         negativeTitle="We're going to need a little more info"
-        negativeBody={<SubmissionSuccessNegativeBody />}
+        negativeBody={<SubmissionSuccessNegativeBody scmTool={scmTool} />}
       />
 
       <div className="min-h-screen bg-white">
