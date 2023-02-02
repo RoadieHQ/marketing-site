@@ -7,7 +7,6 @@ import {
   SubscribeToNewsletterSwitch,
   Form,
   Recaptcha,
-  HelpText,
 } from 'components';
 import { ScmToolSelect } from '../forms/ScmToolSelect';
 

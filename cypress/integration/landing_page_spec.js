@@ -26,7 +26,7 @@ describe('The landing page', () => {
     cy.get('#scm').select('Gitlab Cloud');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
-    cy.contains('Roadie does not support GitLab at the moment');
+    cy.contains('Roadie only offers experimental support GitLab');
   });
 
   it('has a flow for users who use unsupported SCMs', () => {
