@@ -16,10 +16,8 @@ Contact us to have the custom plugins feature enabled for your Roadie instance.
 
 ## Configuring a plugin for your Roadie instance
 
-:::warning Important
-Please follow these steps in the order specified
-:::
-
+> **Warning**
+> Please follow these steps in the order specified
 
 ### Step 1. Create plugin definition in Roadie
 
