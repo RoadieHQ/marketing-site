@@ -23,11 +23,11 @@ export const SCM_TOOLS = [{
   supported: true,
 }, {
   value: 'gitlab-cloud',
-  label: 'Gitlab Cloud',
+  label: 'GitLab Cloud',
   supported: false,
 }, {
   value: 'gitlab-on-prem',
-  label: 'Gitlab On-prem',
+  label: 'GitLab On-prem',
   supported: false,
 }, {
   value: 'bitbucket-cloud',

@@ -20,7 +20,7 @@ describe('The free trial page', () => {
     cy.visit('/free-trial/');
 
     cy.get('#get-instance-email-input').type('test@example.com');
-    cy.get('#scm').select('Gitlab Cloud');
+    cy.get('#scm').select('GitLab Cloud');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
     cy.contains('Roadie only offers experimental support GitLab');

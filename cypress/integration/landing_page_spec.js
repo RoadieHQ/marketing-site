@@ -23,7 +23,7 @@ describe('The landing page', () => {
 
     cy.get('#request-demo-name-input').type('Mary Mac');
     cy.get('#request-demo-email-input').type('test@example.com');
-    cy.get('#scm').select('Gitlab Cloud');
+    cy.get('#scm').select('GitLab Cloud');
     cy.contains('Request a demo').click();
     cy.contains('Roadie only offers experimental support GitLab');
   });
@@ -31,7 +31,7 @@ describe('The landing page', () => {
   it('has a flow for users who use unsupported SCMs', () => {
     cy.visit('');
     cy.contains('Get a Demo').click();
-g
+
     cy.get('#request-demo-name-input').type('Mary Mac');
     cy.get('#request-demo-email-input').type('test@example.com');
     cy.get('#scm').select('Bitbucket Cloud');
