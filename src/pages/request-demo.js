@@ -17,28 +17,36 @@ const SEO_TITLE = 'Request a demo of Roadie Backstage';
 const SubmissionSuccessPositiveBody = () => (
   <>
     <p>
-      Thank you for requesting a demo of Roadie Backstage. We&apos;ll be in touch via the email provided.
+      Thank you for requesting a demo of Roadie Backstage. We&apos;ll be in touch via the email
+      provided.
     </p>
 
     <p>
-      We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes struggle to keep up with demand.
+      We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes
+      struggle to keep up with demand.
     </p>
   </>
 );
 
 const SubmissionSuccessNegativeBody = ({ scmTool }) => (
   <>
-    {!scmTool.value.contains('gitlab') ? (
+    {!scmTool.value.includes('gitlab') ? (
       <>
-          <p>Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about your use case.</p>
-    <p>
-      We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes struggle to keep up with demand.
-    </p>
+        <p>
+          Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about
+          your use case.
+        </p>
+        <p>
+          We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes
+          struggle to keep up with demand.
+        </p>
       </>
     ) : (
       <p>Roadie does not support GitLab at the moment. We&apos;ll email you as soon as we do.</p>
     )}
-    <p>Thank you for requesting a demo of Roadie Backstage, and hopefully you will hear from us soon.</p>
+    <p>
+      Thank you for requesting a demo of Roadie Backstage, and hopefully you will hear from us soon.
+    </p>
   </>
 );
 

@@ -16,26 +16,32 @@ const SEO_TITLE = 'Try hosted Spotify Backstage for free';
 
 const SubmissionSuccessPositiveBody = () => (
   <p>
-    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via the email provided.
+    Thank you for requesting a free trial of Roadie Backstage. We&apos;ll be in touch via the email
+    provided.
   </p>
 );
 
 const SubmissionSuccessNegativeBody = ({ scmTool }) => (
   <>
-    {!scmTool.value.contains('gitlab') ? (
+    {!scmTool.value.includes('gitlab') ? (
       <>
-          <p>Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about your use case.</p>
-    <p>
-      We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes struggle to keep up with demand.
-    </p>
+        <p>
+          Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about
+          your use case.
+        </p>
+        <p>
+          We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes
+          struggle to keep up with demand.
+        </p>
       </>
     ) : (
       <p>Roadie does not support GitLab at the moment. We&apos;ll email you as soon as we do.</p>
     )}
-    <p>Thank you for requesting a Roadie Backstage trial, and hopefully you will hear from us soon.</p>
+    <p>
+      Thank you for requesting a Roadie Backstage trial, and hopefully you will hear from us soon.
+    </p>
   </>
 );
-
 
 const RequestTrial = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -46,7 +52,7 @@ const RequestTrial = ({ data, location }) => {
   const [emailValues, setEmailValues] = useState({
     email: params.has('email') ? params.get('email') : '',
   });
-  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
+  const [scmTool, setScmTool] = useState(SCM_TOOLS[0]);
 
   const handleCloseModal = () => {
     setModalOpen(false);
