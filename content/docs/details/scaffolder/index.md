@@ -633,7 +633,7 @@ steps:
       sourcePatch: './repoRoot'
 ```
 
-Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` and `access`. `username` is the GitHub username to allow collaboration. The `access` option gives the user specific type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`.
+Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` or `team` and `access`. `username` is the GitHub username to allow collaboration. The `access` option gives the user specific type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`.
 
 ```yaml
 steps:
@@ -644,6 +644,8 @@ steps:
       repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
       collaborators:
         - username: user1
+          access: admin
+        - team: RoadieHQ/github-team-name
           access: admin
 ```
 
@@ -711,6 +713,41 @@ steps:
       description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
       sourcePath: ./subdirectory
       targetPath: ./subdirectory
+```
+
+You can use the user that runs the scaffolder template to open the PR rather than opening it on behalf of the Roadie Github App by specifying the token field. 
+The token can be injected by the RepoUrlPicker parameter as documented [here](https://backstage.io/docs/features/software-templates/writing-templates#using-the-users-oauth-token)
+
+```yaml
+  parameters:
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            # Here's the option you can pass to the RepoUrlPicker
+            requestUserCredentials:
+              secretsKey: USER_OAUTH_TOKEN
+              additionalScopes:
+                github:
+                  - workflow
+            allowedHosts:
+              - github.com
+  steps:
+    - action: publish:github:pull-request
+      id: create-pull-request
+      name: Create a pull request
+      input:
+        repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
+        branchName: ticketNumber-123
+        title: 'Make some changes to the files'
+        description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
+        # here's where the secret can be used
+        token: ${{ secrets.USER_OAUTH_TOKEN }}
 ```
 
 NB: The branch you use for the pull request must be a new branch for the repo. 
@@ -1233,6 +1270,18 @@ spec:
 ```
 
 NB: This can only be done for a single step as the re-usable section must be valid yaml.
+
+
+## Testing
+
+Testing of templates is not well supported in Backstage currently, mostly due to the fact that many scaffolder actions perform side-effects.
+
+A limited set of functionality exists to preview and edit parameters in a sandbox, and dry-run templates (skipping steps that perform mutations).
+
+You can find these features at `/create/edit`. 
+
+It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/register-existing-component` using the version on a published feature branch. 
+This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test. 
 
 
 ## Troubleshooting
