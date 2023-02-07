@@ -5,7 +5,7 @@ lastUpdated: '2022-11-16'
 description: How to use OpenAPI specs with Roadie Backstage.
 ---
 
-> **_NOTE:_** To fully utilize the unfurling of all of your $ref's in your openapi specs please replace your old `$text`resolver usages inside your API kinds with the type openapi to the new `$openapi` resolver
+> **_NOTE:_** To fully utilize the unfurling of all of your $ref's in your openapi specs please replace your old `$text`resolver usages inside your API kinds with the type openapi to the new `$openapi` or `$asyncapi` resolver
 
 <details>
 <summary>Diff</summary>
@@ -33,6 +33,8 @@ If your OpenAPI specs are located in the same repository as the catalog metadata
 ```
 
 </details>
+
+NB: You can also use `$openapi` or `$asyncapi` as the resolver - they are aliases for the same parser.   
 
 ## Introduction
 
