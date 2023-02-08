@@ -7026,10 +7026,10 @@ gatsby-sharp@^0.19.0:
     "@types/sharp" "^0.30.5"
     sharp "^0.30.7"
 
-gatsby-source-contentful@^7.2.0:
-  version "7.23.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-7.23.0.tgz#757caf56ed37258ad821119f3855932b2f0f1cfb"
-  integrity sha512-+RUxjua4uyWxNSmM5UbGosYZ5yniZmTme/Gwrn8BH4FkdK1TiVGfQexPXpzISr/Y7KnEXPSDUeQXxmYpkJEekw==
+gatsby-source-contentful@^7.23.1:
+  version "7.23.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-7.23.1.tgz#ee941cf7ac84330838259a8ff1454d99fd0649f4"
+  integrity sha512-Jl0/6uMWLx/sWlcZJWm10sg5BULPv0SM7JeUZWEzaDsW9j5LlYDcvCZ2LOl2SbW7rChQaYFwtaXnxFYqYK6BQA==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@contentful/rich-text-react-renderer" "^15.12.1"
