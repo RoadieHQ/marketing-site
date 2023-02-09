@@ -12,3 +12,42 @@ export const FORM_NAMES = {
 };
 
 export const HONEYPOT_FIELD_NAME = 'honeybot-field';
+
+export const SCM_TOOLS = [{
+  value: 'github-cloud',
+  label: 'GitHub Cloud',
+  supported: true,
+}, {
+  value: 'github-on-prem',
+  label: 'GitHub On-prem',
+  supported: true,
+}, {
+  value: 'gitlab-cloud',
+  label: 'GitLab Cloud',
+  supported: false,
+}, {
+  value: 'gitlab-on-prem',
+  label: 'GitLab On-prem',
+  supported: false,
+}, {
+  value: 'bitbucket-cloud',
+  label: 'Bitbucket Cloud',
+  supported: false,
+}, {
+  value: 'bitbucket-server',
+  label: 'Bitbucket Server',
+  supported: false,
+}, {
+  value: 'azure-devops',
+  label: 'Azure DevOps',
+  supported: false,
+}, {
+  value: 'other',
+  label: 'Other',
+  supported: false,
+}];
+
+export const SCM_SUPPORT_HELP_TEXT = 'Roadie has limited support for non-GitHub SCMs. Are you ok with beta testing?';
+export const SCM_NO_GITLAB_TEXT = 'Roadie only offers experimental support GitLab at the moment. Are you ok with beta testing?';
+
+export const SCM_SUPPORT_FAQ_TEXT = `Roadie works best with GitHub Cloud. We have basic support for GitHub On-prem, Bitbucket and Azure DevOps. Request a demo to learn more.`;

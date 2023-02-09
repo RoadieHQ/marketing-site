@@ -16,4 +16,26 @@ describe('The landing page', () => {
     cy.get('button').contains('Request a demo').click();
     cy.contains("We'll be in touch");
   });
+
+  it('has a flow for users who use GitLab', () => {
+    cy.visit('');
+    cy.contains('Get a Demo').click();
+
+    cy.get('#request-demo-name-input').type('Mary Mac');
+    cy.get('#request-demo-email-input').type('test@example.com');
+    cy.get('#scm').select('GitLab Cloud');
+    cy.contains('Request a demo').click();
+    cy.contains('Roadie only offers experimental support GitLab');
+  });
+
+  it('has a flow for users who use unsupported SCMs', () => {
+    cy.visit('');
+    cy.contains('Get a Demo').click();
+
+    cy.get('#request-demo-name-input').type('Mary Mac');
+    cy.get('#request-demo-email-input').type('test@example.com');
+    cy.get('#scm').select('Bitbucket Cloud');
+    cy.contains('Request a demo').click();
+    cy.contains('Roadie support for Bitbucket Cloud is in beta');
+  });
 });

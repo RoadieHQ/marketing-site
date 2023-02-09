@@ -1,5 +1,6 @@
 import React from 'react';
 import { Headline, TextLink as Link } from 'components';
+import { SCM_SUPPORT_FAQ_TEXT } from '../../contactFormConstants';
 
 const FAQ_CONTENT = [
   {
@@ -52,8 +53,7 @@ const FAQ_CONTENT = [
   },
   {
     question: `What source control tools does Roadie support?`,
-    answer: () =>
-      `We primarly support GitHub cloud and self-hosted GitHub. We also have basic support for Bitbucket.`,
+    answer: () => SCM_SUPPORT_FAQ_TEXT,
   },
   {
     question: `Has Roadie gained a SOC2 compliance?`,

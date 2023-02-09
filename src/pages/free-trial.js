@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
-import { SCM_TOOLS } from 'components/forms/ScmToolRadioGroup';
+import { SCM_TOOLS } from '../contactFormConstants';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { FAQs } from 'components/landing';
 import Avatar from '../components/landing/Testimonials/Avatar';
@@ -21,13 +21,24 @@ const SubmissionSuccessPositiveBody = () => (
   </p>
 );
 
-const SubmissionSuccessNegativeBody = () => (
+const SubmissionSuccessNegativeBody = ({ scmTool }) => (
   <>
-    <p>Roadie only supports GitHub and Bitbucket for now.</p>
-    <p>Roadie only supports GitHub for now.</p>
+    {!scmTool.value.includes('gitlab') ? (
+      <>
+        <p>
+          Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about
+          your use case.
+        </p>
+        <p>
+          We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes
+          struggle to keep up with demand.
+        </p>
+      </>
+    ) : (
+      <p>Roadie does not support GitLab at the moment. We&apos;ll email you as soon as we do.</p>
+    )}
     <p>
-      We are working to support more tools in the near future. You will be among the first to know
-      when we support yours.
+      Thank you for requesting a Roadie Backstage trial, and hopefully you will hear from us soon.
     </p>
   </>
 );
@@ -41,7 +52,7 @@ const RequestTrial = ({ data, location }) => {
   const [emailValues, setEmailValues] = useState({
     email: params.has('email') ? params.get('email') : '',
   });
-  const [scmTool, setScmTool] = useState(SCM_TOOLS[0].value);
+  const [scmTool, setScmTool] = useState(SCM_TOOLS[0]);
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -61,8 +72,8 @@ const RequestTrial = ({ data, location }) => {
         siteMetadata={data.site.siteMetadata}
         positiveTitle="We'll be in touch!"
         positiveBody={<SubmissionSuccessPositiveBody />}
-        negativeTitle="Watch this space!"
-        negativeBody={<SubmissionSuccessNegativeBody />}
+        negativeTitle="We're going to need a little more info"
+        negativeBody={<SubmissionSuccessNegativeBody scmTool={scmTool} />}
       />
 
       <div className="min-h-screen bg-white">
