@@ -9,7 +9,7 @@ import SearchImg from '../../../content/assets/product-pages/catalog-search.svg'
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 import IntegrationsImg from '../../../content/assets/product-pages/catalog-integrations.png';
 import ContentfulCaseImg from '../../../content/assets/product-pages/catalog-structure.svg';
-import SnykImg from '../../../content/assets/product-pages/catalog-snyk-logo.png';
+import YotpoImg from '../../../content/assets/product-pages/catalog-yotpo-logo.svg';
 
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
@@ -84,7 +84,9 @@ const Home = ({ data }) => {
       <div className="catalog-hero-background">
         <section className="bg-white rounded-md text-center mx-auto max-w-4xl mt-5 xl:rounded-lg lg:flex items-center justify-center catalog-pattern">
           <div className="p-4 lg:px-10 lg:py-16">
-            <strong className="block uppercase mb-8 text-xl font-highlight">Roadie’s Catalog</strong>
+            <strong className="block uppercase mb-8 text-xl font-highlight">
+              Roadie’s Catalog
+            </strong>
             <Headline size="medium" className="leading-loose">
               <span className="text-orange-500">Automated discoverability:</span> cut the{' '}
               <nobr>wild-goose</nobr> chase for your engineers
@@ -101,7 +103,7 @@ const Home = ({ data }) => {
               size="medium"
               to="/free-trial/"
               className="font-bold tracking-wide mt-10"
-              text="Request a Demo"
+              text="Try Roadie’s Catalog"
             />
           </div>
         </section>
@@ -126,17 +128,13 @@ const Home = ({ data }) => {
 
       <section className="text-center bg-white py-20 mt-10 xl:mt-16">
         <figure className="max-w-2xl px-4 mx-auto mb-5">
-          <img src={SnykImg} alt="Snyk logo" className="block mx-auto mb-10" />
-          <blockquote
-            cite="https://youtu.be/6Ss1e-9X_JY?t=51"
-            className="text-2xl font-bold tracking-wide"
-          >
-            “We started moving all of our documentation into Backstage through Roadie. I totally
-            recommend them. They’re great to work with and super responsive and helpful.”
+          <img src={YotpoImg} alt="Yotpo logo" className="block mx-auto mb-10" />
+          <blockquote className="text-2xl font-bold tracking-wide">
+            “The Roadie team have been incredible to work with. Their platform provides us with a
+            ton of flexibility and integrations. We've been able to start using Backstage must
+            faster and we don't have to worry about the maintenance.”
           </blockquote>
-          <figcaption className="text-xl mt-5">
-            Crystal Hirshcorn, Director of Engineering, Snyk
-          </figcaption>
+          <figcaption className="text-xl mt-5">Ron Barabash, Team Lead, Yotpo</figcaption>
         </figure>
 
         <Title el="h2" className="mt-10 xl:text-2xl xl:tracking-tight text-orange-600">

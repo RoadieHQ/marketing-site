@@ -32,6 +32,12 @@ const features = [
     to: '/product/scaffolder/',
     icon: PlusCircleIcon,
   },
+  {
+    name: 'Docs: centralized yet distributed',
+    description: 'Find everyone’s docs in the same place.',
+    to: '/product/documentation/',
+    icon: BookOpenIcon,
+  },
 ];
 
 
