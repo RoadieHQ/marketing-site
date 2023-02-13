@@ -131,8 +131,8 @@ const Home = ({ data }) => {
           <img src={YotpoImg} alt="Yotpo logo" className="block mx-auto mb-10" />
           <blockquote className="text-2xl font-bold tracking-wide">
             “The Roadie team have been incredible to work with. Their platform provides us with a
-            ton of flexibility and integrations. We've been able to start using Backstage must
-            faster and we don't have to worry about the maintenance.”
+            ton of flexibility and integrations. We’ve been able to start using Backstage must
+            faster and we don’t have to worry about the maintenance.”
           </blockquote>
           <figcaption className="text-xl mt-5">Ron Barabash, Team Lead, Yotpo</figcaption>
         </figure>
