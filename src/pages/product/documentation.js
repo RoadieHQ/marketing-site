@@ -88,8 +88,7 @@ const Home = ({ data }) => {
           </Headline>
 
           <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-            Roadie’s Tech Docs lets your developers write their docs in their own repo, and find
-            everybody’s in their Internal Developer Portal.
+            Roadie’s Tech Docs lets developers write docs alongside code, but read them in their Internal Developer Portal
           </h2>
 
           <Button
