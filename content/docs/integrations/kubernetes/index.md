@@ -296,153 +296,20 @@ Navigate to the ”https://[tenant-name].roadie.so/administration/settings/secre
 
 ### Step 5: (Optional, for brokered connections) Configure your Broker client
 
-If you are contacting to your Kubernetes clusters via a brokered connection, you need to use the `accept.json` configuration file contents visible below:
+If you are contacting to your Kubernetes clusters via a brokered connection, you can run a container within your kubernetes cluster as a pod or you can run the container outside.
 
-<details>
+#### Running a docker conatiner
 
-<Summary>Show accept.json</Summary>
+You can run the roadie kubernetes broker client, outside of a pod, if you provide it with a service token, ca file and endpoint. As follows, please replace the `$TENANT_NAME` with your tenant name:
 
-```JSON
-{
-   "public": [
-      {
-         "method": "any",
-         "path": "/*"
-      }
-   ],
-   "private": [
-      {
-         "method": "GET",
-         "path": "/api/v1/pods*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/networking.k8s.io/v1/ingresses*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/networking.k8s.io/v1/namespaces*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/apps/v1/replicasets*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/apps/v1/namespaces*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/batch/v1/namespaces*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/api/v1/namespaces*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/api/v1/services*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/apps/v1/deployments*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/api/v1/configmaps*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/autoscaling/v1/horizontalpodautoscalers*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/autoscaling/v1/namespaces*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/apis/metrics.k8s.io/v1beta1/namespaces/*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      },
-      {
-         "method": "GET",
-         "path": "/api/v1/namespaces/*",
-         "origin": "${CLUSTER_ENDPOINT}",
-         "auth": {
-            "scheme": "bearer",
-            "token": "${K8S_SERVICE_ACCOUNT_TOKEN}"
-         }
-      }
-   ]
-}
-
+```bash
+docker run \
+  --env BROKER_TOKEN=kube-api \
+  --env BROKER_SERVER_URL=https://${TENANT_NAME}.broker.roadie.so \
+  --env K8S_SERVICE_ACCOUNT_TOKEN=<service account token> \
+  --env CLUSTER_ENDPOINT=https://kubernetes-api-url \
+  roadiehq/broker:kubernetes
 ```
-</details>
-
 
 The expected environment variables with this configuration are:
 * Standard broker env vars.
@@ -456,6 +323,97 @@ CA_CERT:/home/node/my-cluster-cert.crt
 
 If you are running into issues with using self-signed certificates, you can use Node.js environment options to tell the underlying Node.js process how to handle the certificate. The relevant options are [explicitly defining extra certificate files](https://nodejs.org/api/cli.html#cli_node_extra_ca_certs_file) or alternatively [turning off self-signed certificate validation](https://docs.snyk.io/features/snyk-broker/set-up-snyk-broker/how-to-install-and-configure-your-snyk-broker-client#disable-certificate-verification). 
 
+#### Running in a k8s pod
+
+If you would like to run the broker container within a pod in your cluster, you will need to create a service account for the pod that would allow it to access the resources neccessary to operate the backstage plugin. Here is an example of such a manifest. Please note to replace the "$TENANT_NAME" with your Roadie tenant name.
+
+<details>
+
+<Summary>Show broker-kube-manifest.yaml</Summary>
+```yaml
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: read-stuff
+rules:
+  - apiGroups: [""]
+    resources:
+      - pods
+      - configmaps
+      - services
+      - deployments
+      - replicasets
+      - horizontalpodautoscalers
+      - ingresses
+    verbs: 
+      - "get"
+      - "list"
+      - "watch"
+  - apiGroups: ["batch"]
+    resources:
+      - jobs
+      - cronjobs
+    verbs: 
+      - "get"
+      - "list"
+      - "watch"
+  - apiGroups: ["extensions", "apps", "autoscaling", "networking.k8s.io"]
+    resources: ["deployments", "ingresses", "replicasets", "horizontalpodautoscalers"]
+    verbs: 
+      - "get"
+      - "list"
+      - "watch"
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: broker-pod
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: broker-pod-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: read-stuff
+subjects:
+  - kind: ServiceAccount
+    name: broker-pod
+    namespace: default
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: broker-client
+  labels:
+    app: broker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: broker
+  template:
+    metadata:
+      labels:
+        app: broker
+    spec:
+      serviceAccountName: broker-pod
+      containers:
+      - name: broker
+        image: roadiehq/broker:kubernetes
+        imagePullPolicy: Always
+        env:
+          - name: BROKER_TOKEN
+            value: kube-api
+          - name: BROKER_SERVER_URL
+            value: https://$TENANT_NAME.broker.roadie.so
+        ports:
+        - containerPort: 8000
+
+```
+</details>
 
 ## References
 * [Backstage Kubernetes plugin docs](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
