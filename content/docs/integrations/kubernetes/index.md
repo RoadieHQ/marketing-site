@@ -296,11 +296,11 @@ Navigate to the ”https://[tenant-name].roadie.so/administration/settings/secre
 
 ### Step 5: (Optional, for brokered connections) Configure your Broker client
 
-If you are contacting to your Kubernetes clusters via a brokered connection, you can run a container within your kubernetes cluster as a pod or you can run the container outside.
+If you are contacting to your Kubernetes clusters via a brokered connection, you can run a container within your Kubernetes cluster as a pod or you can run the container as a standalone service.
 
-#### Running a docker conatiner
+#### Running a docker container
 
-You can run the roadie kubernetes broker client, outside of a pod, if you provide it with a service token, ca file and endpoint. As follows, please replace the `$TENANT_NAME` with your tenant name:
+You can run the Roadie Kubernetes broker client, outside of a pod, if you provide it with a service token, ca file and endpoint. As follows, please replace the `$TENANT_NAME` with your tenant name:
 
 ```bash
 docker run \
@@ -337,29 +337,39 @@ kind: ClusterRole
 metadata:
   name: read-stuff
 rules:
-  - apiGroups: [""]
+  - apiGroups:
+      - ""
     resources:
-      - pods
-      - configmaps
-      - services
-      - deployments
-      - replicasets
-      - horizontalpodautoscalers
-      - ingresses
+      - "pods"
+      - "configmaps"
+      - "services"
+      - "deployments"
+      - "replicasets"
+      - "horizontalpodautoscalers"
+      - "ingresses"
     verbs: 
       - "get"
       - "list"
       - "watch"
-  - apiGroups: ["batch"]
+  - apiGroups: 
+      - "batch"
     resources:
-      - jobs
-      - cronjobs
+      - "jobs"
+      - "cronjobs"
     verbs: 
       - "get"
       - "list"
       - "watch"
-  - apiGroups: ["extensions", "apps", "autoscaling", "networking.k8s.io"]
-    resources: ["deployments", "ingresses", "replicasets", "horizontalpodautoscalers"]
+  - apiGroups:
+      - "extensions"
+      - "apps"
+      - "autoscaling"
+      - "networking.k8s.io"
+    resources:
+      - "deployments"
+      - "ingresses"
+      - "replicasets"
+      - "horizontalpodautoscalers"
     verbs: 
       - "get"
       - "list"
