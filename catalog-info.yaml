@@ -22,6 +22,8 @@ metadata:
     sentry.io/project-slug: marketing-site
     sonarqube.org/project-key: RoadieHQ_marketing-site
     betteruptime.com/monitor-url: https://roadie.io
+    # This service is in dev-roadie.pagerduty.com. Not our production pagerduty account.
+    pagerduty.com/service-id: P3SWGXI
 spec:
   type: website
   owner: marketing
