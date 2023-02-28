@@ -93,7 +93,7 @@ npx snyk-broker
 
 In order to do something meaningful with the snyk broker client you will need to configure and `accept.json` file documented in a section below.
 
-To provide the accept json
+To provide the accept.json
 
 ```bash
 ACCEPT=accept.json
