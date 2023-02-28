@@ -27,11 +27,11 @@ The Broker feature is available on our Growth Plan - see pricing page for more i
 
 Broker connection consists of two similar services called _broker server_ and a corresponding _broker client_ 
 
-*Client*
+### Client
 A node.js application creating a websocket connection to its counterpart, broker server hosted in Roadie infrastructure.
 
 
-*Server*
+### Server
 A tenant specific broker server accepting websocket handshakes and directing traffic through from Roadie instance via the socket to the broker client
 
 
@@ -39,92 +39,71 @@ The broker connection itself keeps an open websocket identified by a broker toke
 
 This way Roadie does not need to have knowledge or access of your infrastructure endpoints nor authorization tokens. 
 
-
-
 ## Configuration
-
 ### Enabling broker connection
-
-
 The broker server instance is not enabled by default on tenants and thus needs to be requested to be enabled.
 
-Once enabled the broker server is exposed in a URL https://<your-tenant>.broker.roadie.so.
-The broker endpoint is secured by allow listing IP addresses. To set up broker connections you need to provide IP ranges where your broker clients are hosted so those can be configured to come through.
+You can visit the settings page fro the broker at the following url in the application. `https://<your-tenant>.roadie.so/administration/settings/integrations/broker` 
 
+The broker endpoint server is secured by allow listing IP addresses. You can configure the list of IP addresses in the settings page mentioned above.
+
+You can also test the client connections mentioned below from the settings page.
 
 ### Configuring Broker client
 
-#### Broker client application
+There are three ways to run the broker client application:
 
-Broker client is a Node.js application which can be deployed as a Docker container into internal infrastructure. Roadie can provide Dockerfiles to construct broker client application by request, depending on the plugin. Alternatively Roadie can provide a base broker image Dockerfile which can be reused and enhanced with multiple different configuration files. 
+- Run one of the pre configured docker containers provided by roadie
+- Run the broker client nodejs application
+- Build a custom docker container
 
+#### Roadie Docker Containers
+Roadie provides pre configured docker containers containing pre-configured snyk-broker clients for use with backstage. At time of writing, we are providing a container image for kubernetes and sonarqube.
 
-**Running the broker client application**
+You can configure them with environment variables containing authentication credentials for the brokered service as well as the broker endpoint and token.
 
+e.g. To run the kubernetes client you can run the docker container as follows:
 
-The broker client can be installed and run as a standard node.js service. You can install the broker client when you have node.js and npm installed with a command `npm install --global snyk-broker`. After the global broker application is installed, you can run it with a command `broker --verbose` with verbose logging.
-
-Alternatively you can deploy the broker application as a container. Below you can find a base Dockerfile that can be used to construct the broker client image. 
-
-<details>
-<summary>Base Dockerfile</summary>
-
-```
-FROM snyk/ubuntu as base
-
-MAINTAINER Roadie
-
-USER root
-
-RUN apt update && apt install -y make python gcc
-
-RUN apt-get update && apt-get install -y ca-certificates
-
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-
-ENV PATH=$PATH:/home/node/.npm-global/bin
-
-RUN npm install --global snyk-broker
-
-FROM snyk/ubuntu
-
-ENV PATH=$PATH:/home/node/.npm-global/bin
-
-COPY --from=base /home/node/.npm-global /home/node/.npm-global
-
-COPY --from=base /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
-
-# Don't run as root
-WORKDIR /home/node
-USER node
-
-EXPOSE $PORT
-
-CMD ["broker", "--verbose"]
+```bash
+docker run \
+   -v "$(pwd)"/certs:/var/lib/certs:ro \
+  --env CA_CERT=/var/lib/certs/ca.cert \
+  --env K8S_SERVICE_ACCOUNT_TOKEN=service-account-token \
+  --env BROKER_TOKEN=kube-api \
+  --env BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+  roadiehq/broker:kubernetes
 ```
 
-</details>
+#### Snyk Broker CLI application
 
+The snyk-broker client is published as an npm package available to be downloaded, installed on run on a machine configured to run nodejs packages. You can install and run it directly or use the npx command:
 
-
-**Example Run command**
-
-`docker run --env-file broker-env -v ~/accept.json /home/node/accept.json my-built-broker-client-image`
-
-##### Standard broker environment variables
-
-Broker client expects a standard set of environment variables to run with good configuration. In the example above we mounted and environment file called `broker-env`. The values within that file, without additional values that might be defined in individual configuration files, can be found below:
-```
-ACCEPT=/home/node/accept.json
-BROKER_SERVER_URL=https://<my-tenant>.broker.roadie.so
-BROKER_TOKEN=my-broker-client-token
-PORT=7341
+```bash
+npm install --global snyk-broker
+BROKER_TOKEN=test \ 
+BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+broker
 ```
 
+```bash
+BROKER_TOKEN=test \ 
+BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+npx snyk-broker
+```
 
-Note the volume mount of an `accept.json` file from the home folder to the container. This `accept.json` file will be different based on the plugin (or plugins) that the broker client is built to support. Alternatively you can also build different images and that contain the required `accept.json` and use the `COPY` Dockerfile instruction to populate the image with the wanted config. See more information about configuration files below.
+In order to do something meaningful with the snyk broker client you will need to configure and `accept.json` file documented in a section below.
 
+To provide the accept json
 
+```bash
+ACCEPT=accept.json
+BROKER_TOKEN=test \ 
+BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+broker
+```
+
+#### Custom docker container
+You could also build your own container that builds the `accept.json` and snyk broker client into. This is out of the scope of this document. But you can take inspiration from the `roadiehq/broker` container images on docker hub.
  
 #### Broker client application configuration
 
