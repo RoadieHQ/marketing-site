@@ -50,8 +50,23 @@ Visit `https://<tenant-name>.roadie.so/administration/settings/sonarqube` and co
 
 
 ### Step 4: (Optional, for brokered connections) Setup Broker client configuration
-If you are contacting SonarQube via a brokered connection, you need to use the `accept.json` configuration file contents visible below:
+If you are contacting SonarQube via a brokered connection, you need to run the docker conatiner below:
 
+```bash
+docker run \
+  --env SONARQUBE_INSTANCE_URL=https://<sonarqube> \
+  --env BROKER_TOKEN=sonarqube \
+  --env BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+  roadiehq/broker:sonarqube
+```
+
+The expected environment variables with this configuration are:
+* Standard broker env vars.
+* `SONARQUBE_INSTANCE_URL`: The URL as it is visible to your deployed Broker client service
+* `SONARQUBE_TOKEN`: SonarQube token generated in Step 1 above.
+
+#### Advanced
+You can also configure the broker client manually using an `accept.json` file.
 
 <details>
 
@@ -97,11 +112,6 @@ If you are contacting SonarQube via a brokered connection, you need to use the `
 }
 ```
 </details>  
-  
-The expected environment variables with this configuration are:
-* Standard broker env vars.
-* `SONARQUBE_INSTANCE_URL`: The URL as it is visible to your deployed Broker client service
-* `SONARQUBE_TOKEN`: SonarQube token generated in Step 1 above.
 
 For more information how to set up the Broker client and how to use configuration files, take a look at [Broker documentation](/docs/integrations/broker).
 
