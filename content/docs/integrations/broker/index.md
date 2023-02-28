@@ -47,7 +47,7 @@ You can visit the settings page fro the broker at the following url in the appli
 
 The broker endpoint server is secured by allow listing IP addresses. You can configure the list of IP addresses in the settings page mentioned above.
 
-You can also test the client connections mentioned below from the settings page.
+You can also test the broker client connections mentioned below from the settings page.
 
 ### Configuring Broker client
 
@@ -58,7 +58,7 @@ There are three ways to run the broker client application:
 - Build a custom docker container
 
 #### Roadie Docker Containers
-Roadie provides pre configured docker containers containing pre-configured snyk-broker clients for use with backstage. At time of writing, we are providing a container image for kubernetes and sonarqube.
+Roadie provides pre configured docker containers containing pre-configured broker clients for use with backstage. At time of writing, we are providing a container image for kubernetes and sonarqube.
 
 You can configure them with environment variables containing authentication credentials for the brokered service as well as the broker endpoint and token.
 
@@ -76,7 +76,7 @@ docker run \
 
 #### Snyk Broker CLI application
 
-The snyk-broker client is published as an npm package available to be downloaded, installed on run on a machine configured to run nodejs packages. You can install and run it directly or use the npx command:
+The broker client is published as an npm package available to be downloaded, installed on run on a machine configured to run nodejs packages. You can install and run it directly or use the npx command:
 
 ```bash
 npm install --global snyk-broker
@@ -91,7 +91,7 @@ BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
 npx snyk-broker
 ```
 
-In order to do something meaningful with the snyk broker client you will need to configure and `accept.json` file documented in a section below.
+In order to do something meaningful with the broker client you will need to configure and `accept.json` file documented in a section below.
 
 To provide the accept.json
 
@@ -103,7 +103,7 @@ broker
 ```
 
 #### Custom docker container
-You could also build your own container that builds the `accept.json` and snyk broker client into. This is out of the scope of this document. But you can take inspiration from the `roadiehq/broker` container images on docker hub.
+You could also build your own container that builds the `accept.json` and broker client into. This is out of the scope of this document. But you can take inspiration from the `roadiehq/broker` container images on docker hub.
  
 #### Broker client application configuration
 
