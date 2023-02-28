@@ -60,7 +60,7 @@ There are three ways to run the broker client application:
 #### Roadie Docker Containers
 Roadie provides pre configured docker containers containing pre-configured broker clients for use with backstage. At time of writing, we are providing a container image for kubernetes and sonarqube.
 
-You can configure them with environment variables containing authentication credentials for the brokered service as well as the broker endpoint and token.
+You can configure them with environment variables containing authentication credentials for the brokered service as well as the broker endpoint and the broker client token.
 
 e.g. To run the kubernetes client you can run the docker container as follows:
 
