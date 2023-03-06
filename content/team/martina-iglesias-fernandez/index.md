@@ -1,6 +1,6 @@
 ---
 name: 'Martina Iglesias Fernández'
-role: 'Enginering Manager'
+role: 'CTO'
 headshot: './blue-background.jpg'
 bio: 'Martina should write about herself here.'
 twitterUrl: 'https://twitter.com/martina_if'
