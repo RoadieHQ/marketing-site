@@ -1,0 +1,44 @@
+Parameters:
+  trustedAccount:
+    Type: String
+    Description: The id of the roadie account to allow access.
+  externalId:
+    Type: String
+    Description: The external Id.
+  roadieBackendRoleName:
+    Type: String
+    Description: The role name of the roadie backend to allow access.
+Resources:
+  roadieC6C1EB6D:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                sts:ExternalId:
+                  Ref: externalId
+              StringLike:
+                aws:PrincipalArn:
+                  - Fn::Join:
+                      - ""
+                      - - "*"
+                        - Ref: roadieBackendRoleName
+            Effect: Allow
+            Principal:
+              AWS:
+                Fn::Join:
+                  - ""
+                  - - "arn:"
+                    - Ref: AWS::Partition
+                    - ":iam::"
+                    - Ref: trustedAccount
+                    - :root
+        Version: "2012-10-17"
+Outputs:
+  RoadieIamRole:
+    Value:
+      Fn::GetAtt:
+        - roadieC6C1EB6D
+        - Arn
