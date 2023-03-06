@@ -54,7 +54,11 @@ https://<tenant-name>.roadie.so/administration/settings/secrets
 
 #### 3. Add the PagerDuty annotation
 
-Backstage requires a PagerDuty annotation on every component which will display the PagerDuty plugin. The annotation key is `pagerduty.com/integration-key`.
+Backstage requires a PagerDuty annotation on every component which will display the PagerDuty plugin. The plugin supports two different annotation keys:
+1. `pagerduty.com/integration-key`
+2. `pagerduty.com/service-id`
+
+For Tech Insights usages, Roadie uses the `service-id` annotation to identify the linking between an entity and a PagerDuty service.
 
 This example shows how it might look on a Backstage component:
 
@@ -67,6 +71,7 @@ metadata:
   description: A sample service
   annotations:
     pagerduty.com/integration-key: <sample-service-integration-key>
+    pagerduty.com/service-id: <sample-service-service-id>
 spec:
   type: service
   owner: sample-team
@@ -95,7 +100,8 @@ metadata:
   title: Sample Service
   description: A sample service
   annotations:
-    pagerduty.com/integration-key: c5dd2b278fdc4d01d0a4a02b25c1ccc1
+    pagerduty.com/integration-key: <sample-service-integration-key>
+    pagerduty.com/service-id: <sample-service-service-id>
 spec:
   type: service
   owner: sample-team
