@@ -10,12 +10,6 @@ Data Sources periodically collect Facts about your services from third-party ven
 
 To manage Data Sources, go to Tech Insights → Data Sources.
 
-### Using Built-in Data Sources
-
-By default, Roadie includes several (built-in) Data Sources for common vendors such as Datadog, Snyk, and GitHub. All built-in Data Sources have pre-defined Facts you can use for defining your [Checks](../checks/).
-
-To use built-in Data Sources, you don’t need to do any set up. Jump to the [Checks](../checks/) section to learn more about Checks.
-
 ### Defining your own Data Source
 
 Roadie Tech Insights lets you define arbitrary Data Sources. Typically, custom Data Sources rely on calling an API or reading a configuration file in a repository. When adding a Data Source, you’ll also specify which Facts are extracted from said source.
@@ -72,9 +66,37 @@ After successfully adding a fact you will be able to select kind and type of ser
 
 You should be able to see the created Data Source in the overview screen. Newly created Data Sources have a refresh cycle set to 24hours, but you can modify this value in 'Edit' screen, as well as trigger an update manually from the kebab menu.
 
-![Trigger update](../data-sources//trigger-update.png)
+![Trigger update](../data-sources/trigger-update.png)
 
 Note that you can’t trigger manual data updates on built-in Data Sources.
+
+
+### Using Built-in Data Sources
+
+Additionally, Roadie includes several (built-in) Data Sources for common vendors such as Datadog, Snyk, PagerDuty, and GitHub. All built-in Data Sources have pre-defined Facts you can use for defining your [Checks](../checks/).
+
+#### Configuring Built-in Data Sources
+
+Built-in Data Sources use integration configurations from common Backstage plugins and annotations provided by them. You can see configuration instructions for integrations on their respective documentation pages in [the Plugins & Integrations page](/docs/integrations/).
+
+**Annotations used by built-in data sources**
+
+* **GitHub** and **Dependabot**
+  * `github.com/project-slug`
+
+* **PagerDuty**
+  * `pagerduty.com/service-id`
+
+* **Datadog**
+  * `datadoghq.com/slo_tag`, for retrieving SLOs 
+  * `datadoghq.com/monitor_tags`, for retrieving monitors
+
+* **Snyk**
+  * `snyk.io/project-ids` 
+
+
+To use built-in Data Sources, you don’t need to do any set up apart from integration configuration and configuring your entities with matching annotations. Jump to the [Checks](../checks/) section to learn more about Checks.
+
 
 ### Overview of the Data Source results and details
 
@@ -84,7 +106,7 @@ Once you have Data Sources set and running, click on the Data Source title in th
 
 This page provides 'Actions' button, which holds actions such as 'Edit', 'Delete' and 'Run'.
 
-In addition to this actions, you can see which facts are part of this Data Sourcee and create checks based on those facts.
+In addition to this actions, you can see which facts are part of this Data Source and create checks based on those facts.
 
 Results section holds information about each entity results for facts defined in the Data Source.
 
