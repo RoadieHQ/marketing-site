@@ -14,15 +14,9 @@ The Backstage Circle CI plugin integrates with Circle CI to show your build info
 
 ## Using the Plugin
 
-1. Add a proxy configuration in Roadie at `/administration/settings/proxy` - see guide [here](/docs/custom-plugins/proxy/#setup).
+1. Get and provide a CIRCLECI_AUTH_TOKEN as an environment variable in Roadie at `/administration/settings/secrets` - see below for instructions on how to get the token. 
 
-Path: `/circleci/api`
-Target: `https://circleci.com/api/v1.1`
-Headers: `Circle-Token`: `${CIRCLECI_AUTH_TOKEN}`
-
-2. Get and provide a CIRCLECI_AUTH_TOKEN as an environment variable in Roadie at `/administration/settings/secrets` - see below for instructions on how to get the token. 
-
-3. Add a circleci.com/project-slug annotation to your respective catalog-info.yaml files following the Component format
+2. Add a circleci.com/project-slug annotation to your respective catalog-info.yaml files following the Component format
 
 ```yaml
 # Example catalog-info.yaml entity definition file
@@ -38,7 +32,7 @@ spec:
 # ...
 ```
 
-4. Add the CircleCi plugin to one of your entities with the correct annotation in Roadie as a new tab. 
+3. Add the CircleCi plugin to one of your entities with the correct annotation in Roadie as a new tab. 
 
 
 ## Creating a token
