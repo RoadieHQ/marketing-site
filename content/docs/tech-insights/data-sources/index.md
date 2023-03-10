@@ -93,6 +93,7 @@ Built-in Data Sources use integration configurations from common Backstage plugi
 
 * **Snyk**
   * `snyk.io/project-ids` 
+  * (`snyk.io/org-name`), if omitted, globally configured Snyk org is used
 
 
 To use built-in Data Sources, you don’t need to do any set up apart from integration configuration and configuring your entities with matching annotations. Jump to the [Checks](../checks/) section to learn more about Checks.
