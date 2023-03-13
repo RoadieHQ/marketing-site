@@ -58,7 +58,7 @@ const sections = [{
     name: 'API access (beta)',
     tiers: { Growth: true },
   }, {
-    name: 'Infra access via broker (beta)',
+    name: 'Infra access via broker',
     tiers: { Growth: true },
   }],
 }, {
