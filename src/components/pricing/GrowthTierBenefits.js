@@ -22,7 +22,7 @@ const GrowthTierBenefits = () => (
         'Slack and email support',
         'Bring your own Backstage plugins',
         'API access (beta)',
-        'Infra access via broker (beta)',
+        'Infra access via broker',
       ]}
     />
   </>
