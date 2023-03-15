@@ -23,6 +23,7 @@ const TeamsTier = ({
   numberOfEngineers,
   setNumberOfEngineers,
   currentlySetCurrency,
+  showMonthlyTotal,
 }) => (
     <TierContainer>
       <div className="p-6">
@@ -34,6 +35,7 @@ const TeamsTier = ({
           numberOfEngineers={numberOfEngineers}
           setNumberOfEngineers={setNumberOfEngineers}
           currentlySetCurrency={currentlySetCurrency}
+          showMonthlyTotal={showMonthlyTotal}
         />
 
         <div>
