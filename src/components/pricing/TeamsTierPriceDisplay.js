@@ -32,7 +32,6 @@ const TeamsTierPriceDisplay = ({
     currentlySetCurrency,
     perSeatPrices,
   });
-  const centCostPerMonth = numberOfEngineers * centCostPerDevPerMonth;
 
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -48,10 +47,6 @@ const TeamsTierPriceDisplay = ({
           {formatter.format(centCostPerDevPerMonth / 100)}
         </span>
         <span className="text-base text-gray-500"> per dev/month</span>
-      </div>
-
-      <div className="mb-4">
-        <span className="text-base text-gray-900">{formatter.format(centCostPerMonth / 100)} billed monthly</span>
       </div>
 
       <div className="mb-10">
