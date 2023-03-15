@@ -16,7 +16,7 @@ This tutorial will guide you through the steps required to connect Roadie to you
 
 By adding a Bitbucket integration you will allow Roadie to access the YAML metadata files that Backstage needs to operate.
 
-Roadie supports Bitbucket configuration on both Bitbucket Cloud and self-hosted Bitbucket server. The authentication methods supported are either with Token or a Username + Application Password authentication. Username + Application Password is the preferred authentication method since it provides more granular options to control the access to give to the integration. If you are connecting to a Bitbucket server, Username + Application Password is the only supported connection method. 
+Roadie supports Bitbucket configuration on both Bitbucket Cloud and self-hosted Bitbucket server. The authentication methods supported are either with Token or a Username + Application Password authentication. Username + Application Password is the preferred authentication method since it provides more granular options to control the access to give to the integration. If you are connecting to a Bitbucket server, Username + Application Password is the only supported connection method.
 
 1. Click the Administration link in the bottom left of the application.
 
@@ -32,10 +32,51 @@ Roadie supports Bitbucket configuration on both Bitbucket Cloud and self-hosted 
 
 4. Open the Bitbucket section of the accordion
 
-![An accordion element that says "Bitbucket"](./bitbucket-section.png)
+## Bitbucket Cloud configuration
 
-5. Choose your preferred authentication method, server connection options and click save
+You will see a warning that a bit bucket configuration is not available.
 
-!["Bitbucket" integration configuration options](./bitbucket-options.png)
+Press on the save button to enable the bitbucket cloud configuration.
 
-⚠️  &nbsp;You may need to wait up to 2 minutes for the Bitbucket integration to become active.
+![initial bitbucket page](./bitbucket-config-page.png)
+
+⚠️ &nbsp;You may need to wait up to 2 minutes for the Bitbucket integration to become active.
+
+### Configure autodiscovery
+
+1. Go to the 'Configure your atuodiscovery' section.
+
+2. Click on the '+ ADD LOCATION'
+
+3. Put your target URL into the modal.
+
+4. press Save
+
+## Bitbucket Server configuration
+
+1. Untick the 'Use Bitbucket Cloud' check box
+   ![](./bitbucket-server-config.png)
+
+2. Fill in your host
+3. Add your api url
+
+⚠️ &nbsp;You may need to wait up to 2 minutes for the Bitbucket integration to become active.
+
+### Configure autodiscovery
+
+For autodiscovery we use the OSS [BitbucketServerProvider](https://github.com/backstage/backstage/tree/master/plugins/catalog-backend-module-bitbucket-server) from the backstage repository.
+
+Due to the strictrate limits on the bitbucket API it currently runs every 30 minutes.
+
+1. Go to the 'Configure your autodiscovery' section below the integration section
+2. Click the '+ ADD ITEM' button
+3. Fill in the form.
+
+- Host (readonly): It will be filled based on your configured integration's host.
+- Path: The absolute URL to your catalog info files from the root of your repositories
+- Project key (optional): A regexp to filter your projects and only ingest from projects that matches this filter
+- Repo slug (optional): A regexp to filter your repositories and only ingest from repositories that matches this filter
+
+You can read more about the configuration options in the [backstage docs](https://backstage.io/docs/integrations/bitbucketServer/discovery/#configuration)
+
+![A form](./bitbucket-server-autodiscovery.png)
