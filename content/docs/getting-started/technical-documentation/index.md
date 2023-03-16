@@ -262,6 +262,7 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
 
 ## Troubleshooting
 
+### Visual differences in rendered output
 Backstage is using [MkDocs](https://www.mkdocs.org/user-guide/) and [python-markdown](https://python-markdown.github.io/) to render the markdown files for TechDocs. Each markdown implementation renders HTML differently. e.g. markdown files as displayed in GitHub can often look different within Backstage TechDocs.
 
 ### Nest Markdown in a collapsable section
@@ -307,7 +308,8 @@ If you would like to nest an image within a list so that it appears as part of t
 ## Further reading
 
 1. Backstage TechDocs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/user-guide/) will broadly apply to your Backstage documentation setup. In particular, the ["Writing your docs"](https://www.mkdocs.org/user-guide/writing-your-docs/) page is a good place to start
-2. The [official Backstage TechDocs guide](https://backstage.io/docs/features/techdocs/techdocs-overview).
+2. You can see the rendering rules used by the plugin here - [https://python-markdown.github.io/](https://python-markdown.github.io/) NB: they are slightly different from Github Flavoured Markdown.
+3. The [official Backstage TechDocs guide](https://backstage.io/docs/features/techdocs/techdocs-overview).
 
 ## Next steps
 
