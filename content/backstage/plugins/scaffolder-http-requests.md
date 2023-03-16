@@ -58,7 +58,7 @@ gettingStarted:
             action: http:backstage:request
             input:
               method: 'GET'
-              path: '/api/proxy/snyk/org/org/project/project-id/aggregated-issues'
+              path: '/proxy/snyk/org/<some-org>/project/<some-project-id>/aggregated-issues'
               headers:
                 test: 'hello'
                 foo: 'bar'
@@ -71,7 +71,7 @@ gettingStarted:
             action: http:backstage:request
             input:
               method: 'POST'
-              path: '/api/proxy/snyk/org/org/project/project-id/aggregated-issues/get/some/job{{ steps["backstage_request"].output.body.number }}'
+              path: '/proxy/snyk/org/<some-org>/project/<some-project-id>/aggregated-issues/get/some/job{{ steps["backstage_request"].output.body.number }}'
               headers:
                   test: 'hello'
                   foo: 'bar'
@@ -87,3 +87,6 @@ gettingStarted:
 ---
 
 This scaffolder action is meant to be used in a scaffolded Backstage application created by Backstage CLI. If you are using it in a Backstage monorepo, you need to modify the build process to transpile node_modules also.
+
+NB: The path should always point to a proxy entry with the following format: `proxy/<proxy-path>/<external-api-path>`. i.e.: `/proxy/snyk/org/<some-org>/projects` or `/proxy/circleci/api/projects` (NB: the CircleCI proxy path is `circleci/api/` but Snyk is just `snyk/`)
+
