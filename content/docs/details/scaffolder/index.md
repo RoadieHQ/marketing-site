@@ -1091,14 +1091,16 @@ The `github:webhook` action does not have any outputs.
 
 This action allows the Scaffolder task to run an HTTP request against the Backstage Backend API and handle the response. It can be useful for extending the scaffolder to call out to third party APIs. You can do this by configuring a proxy and then calling the proxy with this action.
 
+The path should always point to a proxy entry with the following format: `/proxy/<proxy-path>/<external-api-path>` - i.e.: `/proxy/snyk/org/<some-org>/projects` or `/proxy/circleci/api/projects` (NB: the CircleCI proxy path is `circleci/api/` but Snyk is just `snyk/`)
+
 ```yaml
 steps:
   - action: http:backstage:request
     id: http-request
     name: Create a thing on the acme service
     input:
-      method: POST
-      path: '/api/proxy/acme/thing'
+      method: GET
+      path: '/proxy/snyk/org/<some-org>/project/<some-project-id>'
 ```
 
 You can optionally add request `params`.
@@ -1110,7 +1112,7 @@ steps:
     name: Create a thing on the acme service
     input:
       method: POST
-      path: '/api/proxy/acme/thing'
+      path: '/proxy/acme/thing'
       params:
         state: 'bar'
 ```
@@ -1123,8 +1125,8 @@ steps:
     id: http-request
     name: Create a thing on the acme service
     input:
-      method: POST
-      path: '/api/proxy/acme/thing'
+      method: GET
+      path: '/proxy/circleci/api/projects'
     headers:
       Accept: 'application/json'
 ```
