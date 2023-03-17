@@ -88,5 +88,5 @@ gettingStarted:
 
 This scaffolder action is meant to be used in a scaffolded Backstage application created by Backstage CLI. If you are using it in a Backstage monorepo, you need to modify the build process to transpile node_modules also.
 
-NB: The path should always point to a proxy entry with the following format: `proxy/<proxy-path>/<external-api-path>`. i.e.: `/proxy/snyk/org/<some-org>/projects` or `/proxy/circleci/api/projects` (NB: the CircleCI proxy path is `circleci/api/` but Snyk is just `snyk/`)
+NB: The path should always point to a proxy entry with the following format: `proxy/<proxy-path>/<external-api-path>`. i.e.: `/proxy/snyk/org/<some-org>/projects` or `/proxy/circleci/api/projects` (the CircleCI proxy path is `circleci/api/` but Snyk is just `snyk/`)
 
