@@ -15,6 +15,32 @@ The TechDocs feature of Roadie Backstage allows markdown files written alongside
 
 Under the hood, Backstage uses the popular [MkDocs library](https://www.mkdocs.org/) to render documentation.
 
+### Plugins
+
+We currently include the following MkDocs plugins in our build process:
+- [plantuml](https://plantuml.com/en/)
+- [search](https://www.mkdocs.org/user-guide/configuration/#search)
+- [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin)
+- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions)
+- [toc](https://python-markdown.github.io/extensions/toc/)
+- [pymdown](https://facelessuser.github.io/pymdown-extensions/)
+- [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/)
+- [plantuml_markdown](https://pypi.org/project/plantuml-markdown/)
+- [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/)
+
+- [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin)
+- [mkdocs-schema-reader](https://pypi.org/project/mkdocs-schema-reader/)
+- [mkdocs-minify-plugin](https://github.com/byrnereese/mkdocs-minify-plugin)
+- [mkdocs-git-revision-date-localized-plugin](https://github.com/timvink/mkdocs-git-revision-date-localized-plugin)
+- [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox)
+- [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid)
+
+### Theme
+Backstage uses an opinionated theme based on [material-mkdocs](https://github.com/backstage/mkdocs-techdocs-core#theme). 
+
+NB: Some styles will always be overridden regardless of the mkdocs-material plugin theme settings and this can cause unexpected behavior for those who override the theme setting in a mkdocs.yaml file.
+
+
 ## Prerequisites
 In order to write and view changes to docs you will need to install:
 
