@@ -18,22 +18,35 @@ Under the hood, Backstage uses the popular [MkDocs library](https://www.mkdocs.o
 ### Plugins
 
 We currently include the following MkDocs plugins in our build process:
-- [plantuml](https://plantuml.com/en/)
 - [search](https://www.mkdocs.org/user-guide/configuration/#search)
 - [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin)
-- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions)
-- [toc](https://python-markdown.github.io/extensions/toc/)
-- [pymdown](https://facelessuser.github.io/pymdown-extensions/)
-- [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/)
-- [plantuml_markdown](https://pypi.org/project/plantuml-markdown/)
-- [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/)
+- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions) - include side content without significantly interrupting the document flow
+- [toc](https://python-markdown.github.io/extensions/toc/) - generates a Table of Contents for your doc
+- [pymdown](https://facelessuser.github.io/pymdown-extensions/) - a collection of the following extensions:
+  - caret: Insert superscripts and place text in an <ins> tag.
+  - critic: [Critic Markup](https://fletcher.github.io/MultiMarkdown-6/syntax/critic.html) allows you to track changes.
+  - details: Collapsible elements with <details> and <summary> tags.
+  - emoji: Add emojis.
+  - superfences: Split up your docs with [fences](https://python-markdown.github.io/extensions/fenced_code_blocks/) to make them more readable.
+  - inlinehilite: Highlights inline code.
+  - magiclink: Linkafies URL and email links without having to wrap them in Markdown syntax. Also, shortens repository issue, pull request, and commit links automatically for popular code hosting providers.
+  - mark: Mark words easily.
+  - smartsymbols: Inserts commonly used Unicode characters via simple ASCII representations: =/= → ≠.
+  - highlight: Configure the syntax highlighting of SuperFences and InlineHilite. Also passes standard Markdown indented code blocks through the syntax highlighter.
+  - extra: Extra is just like Python Markdown's Extra package except it uses PyMdown Extensions to substitute similar extensions.
+  - tabbed: Allows for tabbed Markdown content.
+  - tasklist: Lists with check boxes.
+  - tilde: Adds support for inserting subscripts and adds an easy way to place text in a <del> tag.
+- [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/) - replaces inline Graphviz definitions with inline SVGs or PNGs
+- [plantuml_markdown](https://pypi.org/project/plantuml-markdown/) - specify a PlantUML diagram which will be converted into an image and inserted in the document
+- [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/) - custom indents for nested lists, better linebreaks and paragraphs between lists.
 
-- [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin)
-- [mkdocs-schema-reader](https://pypi.org/project/mkdocs-schema-reader/)
-- [mkdocs-minify-plugin](https://github.com/byrnereese/mkdocs-minify-plugin)
-- [mkdocs-git-revision-date-localized-plugin](https://github.com/timvink/mkdocs-git-revision-date-localized-plugin)
-- [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox)
-- [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid)
+- [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) - simplifies configuring page titles and their order
+- [mkdocs-schema-reader](https://pypi.org/project/mkdocs-schema-reader/) - converts JSON Schema files into markdown
+- [mkdocs-minify-plugin](https://github.com/byrnereese/mkdocs-minify-plugin) - minify HTML, JS or CSS files
+- [mkdocs-git-revision-date-localized-plugin](https://github.com/timvink/mkdocs-git-revision-date-localized-plugin) - enables displaying the date of the last git modification of a page
+- [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) - display images, iframes, inline content and videos
+- [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid) - generate diagrams from markdown-like text.
 
 ### Theme
 Backstage uses an opinionated theme based on [material-mkdocs](https://github.com/backstage/mkdocs-techdocs-core#theme). 
