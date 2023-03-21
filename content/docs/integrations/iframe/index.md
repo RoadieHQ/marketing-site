@@ -92,6 +92,27 @@ It works in the same way as the Homepage IFrame card except that it can take the
 
 - `src` is url location of the iframe
 - `srcFromAnnotation` is a refernce to an entity annotation containing a source url for the iframe.
+- 
+## Add IFrame Page as a link to your sidebar
+
+1.  In Roadie, click the 'Edit Sidebar' link in the sidebar
+2.  Click the plus sign to add a new Page.
+3.  Select `IFramePage` from the list.
+4.  Define your link title, URL and select the icon you want to use
+5.  Set up props like shown below 
+
+    Click add.
+
+It works in the same way as the Homepage IFrame card except the props it expects are divided into props for the page, and props for the iframe itself.
+
+![](page-props.png)
+
+Top level "title" prop defines the title of the page itself.
+Props encapsulated into an "iframe" object define properties for the iframe. Possible options are
+* `src`, required
+* `height`, optional. Either pixels or percentages (800px/100%). Defaults to 100%
+* `width`, optional. Either pixels or percentages (800px/100%). Defaults to 100%
+* `title`, optional. 
 
 ## Note
 
