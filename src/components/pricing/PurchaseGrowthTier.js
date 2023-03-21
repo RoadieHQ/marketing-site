@@ -6,7 +6,8 @@ import GrowthTier from './GrowthTier';
 
 const PurchaseGrowthTier = () => (
   <GrowthTier
-    ctaComponent={(
+    extraHeaderMargin={true}
+    ctaComponent={
       <Button
         text="Talk to sales"
         id="growth-plan-cta"
@@ -16,7 +17,7 @@ const PurchaseGrowthTier = () => (
         to="https://calendly.com/davidtuite/roadie-sales"
         fullWidth
       />
-    )}
+    }
   />
 );
 

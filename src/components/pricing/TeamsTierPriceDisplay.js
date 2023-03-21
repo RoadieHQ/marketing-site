@@ -8,9 +8,9 @@ const calculateCentCostInCurrency = ({
   perSeatPrices,
   currentlySetCurrency,
 }) => {
-  const usdCentCostPerDevPerMonth = perSeatPrices.find((opt) => (
-    opt.id === numberOfEngineers
-  )).usdCentCostPerDevPerMonth;
+  const usdCentCostPerDevPerMonth = perSeatPrices.find(
+    (opt) => opt.id === numberOfEngineers
+  ).usdCentCostPerDevPerMonth;
 
   let selectedCentCostPerDevPerMonth = usdCentCostPerDevPerMonth;
   if (currentlySetCurrency === 'EUR') {
@@ -21,11 +21,12 @@ const calculateCentCostInCurrency = ({
   return selectedCentCostPerDevPerMonth;
 };
 
-const TeamsTierPriceDisplay = ({ 
+const TeamsTierPriceDisplay = ({
   perSeatPrices,
   numberOfEngineers,
   setNumberOfEngineers,
   currentlySetCurrency,
+  showMonthlyTotal,
 }) => {
   const centCostPerDevPerMonth = calculateCentCostInCurrency({
     numberOfEngineers,
@@ -50,9 +51,13 @@ const TeamsTierPriceDisplay = ({
         <span className="text-base text-gray-500"> per dev/month</span>
       </div>
 
-      <div className="mb-4">
-        <span className="text-base text-gray-900">{formatter.format(centCostPerMonth / 100)} billed monthly</span>
-      </div>
+      {showMonthlyTotal && (
+        <div className="mb-4">
+          <span className="text-base text-gray-900">
+            {formatter.format(centCostPerMonth / 100)} billed monthly
+          </span>
+        </div>
+      )}
 
       <div className="mb-10">
         <NumberOfEngineers

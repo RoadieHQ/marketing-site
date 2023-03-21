@@ -21,6 +21,7 @@ const PurchaseTeamsTier = ({ currentlySetCurrency }) => {
       setNumberOfEngineers={setNumberOfEngineers}
       currentlySetCurrency={currentlySetCurrency}
       perSeatPrices={PER_SEAT_PRICES}
+      showMonthlyTotal={true}
       ctaHelpText="Powered by Chargebee and Stripe"
       ctaComponent={(
         <Button
