@@ -8,7 +8,6 @@ import {
   Title,
   CodeBlock,
   SEO,
-  ResponsiveSpacer,
   SitewideHeader,
   SitewideFooter,
 } from 'components';
