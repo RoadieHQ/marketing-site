@@ -169,6 +169,12 @@ Setting up a local server consist of the following steps:
    1. If you have Node.js and NPM installed locally, the easiest way to achieve this is to run a HTTP server on the folder where the files are located: `npx live-server --port=7328 --cors`
 4. Navigate to your preview Tech Radar page to see results.
 
+## Troubleshooting
+
+- Error: `Failed to load TechRadar content ... from github. Resource protected by organisation SAML enforcement. You must grant your OAuth token access to an organization within this business.`
+   - Cause (likely): Something was changed in your organization's security settings which requires a fresh token to be generated.
+   - Fix: Sign out of Github at `/Account/identity-providers`in Roadie, refresh and then sign in again. 
+
 ## More information
 
 [Backstage Tech Radar plugin documentation](https://github.com/backstage/backstage/blob/master/plugins/tech-radar/README.md)
