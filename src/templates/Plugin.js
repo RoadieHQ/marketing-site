@@ -2,20 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import {
-  Button,
-  TextLink as Link,
-  Title,
-  CodeBlock,
-  SEO,
-  SitewideHeader,
-  SitewideFooter,
-} from 'components';
+import { Button, Title, CodeBlock, SEO, SitewideHeader, SitewideFooter } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
+import { ExternalLinkIcon } from '@heroicons/react/outline';
 
 const PluginTemplate = ({ data }) => {
   const {
@@ -57,12 +50,13 @@ const PluginTemplate = ({ data }) => {
               Self-hosted Backstage
             </span>
             {plugin.frontmatter.roadieDocsPath && (
-              <Link
-                to={`/docs/integrations${plugin.frontmatter.roadieDocsPath}`}
-                className="inline-block p-4 ml-4 bg-gray-100 text-blueroadie font-bold rounded-t-lg hover:bg-gray-100 hover:text-orange-600"
+              <a
+                href={`/docs/integrations${plugin.frontmatter.roadieDocsPath}`}
+                target="_blank"
+                className="inline-block p-4 ml-4 bg-gray-100 text-blueroadie font-bold rounded-t-lg hover:bg-gray-100 hover:text-orange-600 flex align-center"
               >
-                No-code via Roadie
-              </Link>
+                No-code via Roadie <ExternalLinkIcon className='inline-block w-4 ml-2' />
+              </a>
             )}
           </nav>
 
