@@ -4,7 +4,6 @@ import { Lead, Headline, Link, Chip } from 'components';
 import Logo from './Logo';
 import Attribution from './Attribution';
 
-
 const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
   if (!availableOnRoadie) return null;
 
@@ -31,29 +30,31 @@ const Header = ({
     },
   },
 }) => (
-  <header className="text-center pb-4 mb-4 md:pt-8 md:pb-24 border-b-2 border-gray-100">
-    <Logo sharpImage={logoImage.childImageSharp} alt={`${humanName} logo`} />
-    <div className="mb-4">
-      <Headline>{heading}</Headline>
+  <>
+    <div className="mx-auto max-w-7xl px-4 py-10">
+      <Link to="/backstage/plugins/" className="font-bold text-blueroadie">
+        <span className="text-orange-500">←</span> Backstage Plugins Guides
+      </Link>
     </div>
-    <div className="mb-4">
-      <Lead>{lead}</Lead>
-    </div>
-
-    <div className="mb-4">
-      <Attribution attribution={attribution} />
-    </div>
-
-    {intro &&
-      <div className="mb-4 mt-8 text-center">
-        <p className="prose prose-primary mr-auto ml-auto">
-          {intro}
-        </p>
+    <header className="bg-white mx-auto max-w-7xl mb-5 px-4 py-10 text-center lg:text-left xl:rounded-lg lg:flex lg:px-0 lg:mb-10 items-center">
+      <div className="lg:w-1/4 mt-5 lg:mt-0">
+        <Logo sharpImage={logoImage.childImageSharp} alt={`${humanName} logo`} />
       </div>
-    }
+      <div>
+        <Headline className="mb-4">{heading}</Headline>
+        <Lead className="mb-4 text-blueroadie">{lead}</Lead>
+        <Attribution attribution={attribution} className="mb-4" />
 
-    <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
-  </header>
+        {intro && (
+          <div className="mb-4 mt-8">
+            {intro}
+          </div>
+        )}
+
+        <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
+      </div>
+    </header>
+  </>
 );
 
 export default Header;

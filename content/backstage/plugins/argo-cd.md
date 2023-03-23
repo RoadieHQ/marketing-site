@@ -73,7 +73,7 @@ gettingStarted:
       ARGOCD_AUTH_TOKEN='argocd.token=<token>'
 ---
 
-## Support for multiple ArgoCD instances - Option 1
+### Support for multiple ArgoCD instances - Option 1
 
 If you want to create multiple components that fetch data from different argoCD instances, you have to add a proxy config for each instance:
 
@@ -108,7 +108,7 @@ argocd/proxy-url: '/argocd/api2'
 
 `argocd/proxy-url` annotation defaults to '/argocd/api' so it's not needed if there is only one proxy config.
 
-## Support for multiple Argo CD instances - Option 2 - Argo CD backend plugin
+### Support for multiple Argo CD instances - Option 2 - Argo CD backend plugin
 
 
 To enable ArgoCD backend plugin you need to import it to your backend application. 

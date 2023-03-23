@@ -2,23 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import {
-  TextLink as Link,
-  Title,
-  CodeBlock,
-  SEO,
-  ResponsiveSpacer,
-  SitewideHeader,
-  SitewideFooter,
-} from 'components';
+import { Button, Title, CodeBlock, SEO, SitewideHeader, SitewideFooter } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
+import { ExternalLinkIcon } from '@heroicons/react/outline';
 
 const PluginTemplate = ({ data }) => {
-  const { plugin, site: { siteMetadata } } = data;
+  const {
+    plugin,
+    site: { siteMetadata },
+  } = data;
 
   const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
@@ -45,30 +41,28 @@ const PluginTemplate = ({ data }) => {
 
       <SitewideHeader />
 
-      <main className="pt-4 pb-8 px-4 lg:pt-8 lg:pb-28">
-        <div className="relative max-w-lg mx-auto lg:max-w-3xl">
-
-          <Header plugin={plugin} />
-
-          <ResponsiveSpacer>
-            <div className="text-center pb-3">
-              <Title text="Get SaaS Backstage" />
-            </div>
-
-            <div className="prose prose-primary max-w-none">
-              <p>
-                Don&apos;t want to spend your time installing and upgrading Backstage plugins?{' '}
-                <Link to="/free-trial/" color="primary">Get managed Backstage</Link> from Roadie.
-              </p>
-            </div>
-          </ResponsiveSpacer>
+      <Header plugin={plugin} />
+      <main className="pt-4 pb-8 px-4 lg:pb-28">
+        <div className="relative max-w-lg mx-auto lg:max-w-4xl">
+          <nav className="invisible lg:visible pb-4 mb-8 flex flex-wrap text-center border-b-2 border-blueroadie">
+            <span className="inline-block py-4 text-blueroadie font-bold">Installation steps:</span>
+            <span className="inline-block p-4 ml-8 text-white font-bold bg-blueroadie rounded-lg active">
+              Self-hosted Backstage
+            </span>
+            {plugin.frontmatter.roadieDocsPath && (
+              <a
+                href={`/docs/integrations${plugin.frontmatter.roadieDocsPath}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block p-4 ml-4 bg-gray-100 text-blueroadie font-bold rounded-lg hover:bg-gray-100 hover:text-orange-600 flex align-center"
+              >
+                No-code via Roadie <ExternalLinkIcon className='inline-block w-4 ml-2' />
+              </a>
+            )}
+          </nav>
 
           {plugin.frontmatter.gettingStarted && (
-            <ResponsiveSpacer>
-              <div className="text-center pb-3" >
-                <Title text="Self-hosted Backstage installation steps" />
-              </div>
-
+            <>
               {plugin.frontmatter.gettingStarted.map((section) => {
                 const key = CodeBlock.generateKey(section);
 
@@ -78,7 +72,7 @@ const PluginTemplate = ({ data }) => {
                       <Title text={section.title} />
                     </div>
                   );
-                } 
+                }
 
                 return (
                   <CodeBlock
@@ -89,22 +83,29 @@ const PluginTemplate = ({ data }) => {
                   />
                 );
               })}
-            </ResponsiveSpacer>
+            </>
           )}
 
-          <ResponsiveSpacer>
-            <div className="prose prose-primary">
-              <p>
-                Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
-              </p>
-            </div>
-          </ResponsiveSpacer>
+          <p className="prose prose-primary my-10">
+            Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
+          </p>
+
+          <div className="border-4 border-orange-500 font-bold p-8 text-xl rounded-lg mb-10">
+            <p className="mb-4">
+              Don&apos;t want to spend your time installing and manually upgrading each Backstage
+              plugin?
+            </p>
+            <Button
+              link={true}
+              color="primary"
+              to={'/free-trial/'}
+              text={'Get managed Backstage'}
+            />
+          </div>
 
           {plugin.frontmatter.coverImage && (
-            <ResponsiveSpacer>
-              <div className="text-center pb-3">
-                <Title text="How it looks" />
-              </div>
+            <>
+              <Title text="How it looks" className="mb-10 border-b-2" />
 
               <div>
                 <GatsbyImage
@@ -113,31 +114,23 @@ const PluginTemplate = ({ data }) => {
                   className="max-w-full max-h-full shadow-small"
                 />
               </div>
-            </ResponsiveSpacer>
+            </>
           )}
 
           {plugin.notes && plugin.notes !== '' && (
-            <ResponsiveSpacer>
-              <div>
-                <div className="text-center pb-3">
-                  <Title text="Things to know" />
-                </div>
+            <>
+              <Title text="Things to know" className="mb-10 mt-20 border-b-2" />
 
-                <div
-                  className="prose prose-primary max-w-none"
-                  dangerouslySetInnerHTML={{ __html: plugin.notes }}
-                />
-              </div>
-            </ResponsiveSpacer>
+              <div
+                className="prose-xl prose-primary max-w-none"
+                dangerouslySetInnerHTML={{ __html: plugin.notes }}
+              />
+            </>
           )}
         </div>
 
         <div className="relative max-w-lg mx-auto lg:max-w-xl mt-24">
-          <SubscribeToNewsletterCTA
-            setModalOpen={setModalOpen}
-            email={email}
-            setEmail={setEmail}
-          />
+          <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
         </div>
       </main>
 
