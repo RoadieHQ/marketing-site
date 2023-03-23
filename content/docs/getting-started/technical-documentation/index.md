@@ -36,7 +36,7 @@ We currently include the following MkDocs plugins in our build process:
   - extra: Extra is just like Python Markdown's Extra package except it uses PyMdown Extensions to substitute similar extensions.
   - tabbed: Allows for tabbed Markdown content.
   - tasklist: Lists with check boxes.
-  - tilde: Adds support for inserting subscripts and adds an easy way to place text in a <del> tag.
+  - tilde: Adds support for inserting subscripts and adds an easy way to place text in a tag.
 - [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/) - replaces inline Graphviz definitions with inline SVGs or PNGs
 - [plantuml_markdown](https://pypi.org/project/plantuml-markdown/) - specify a PlantUML diagram which will be converted into an image and inserted in the document
 - [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/) - custom indents for nested lists, better linebreaks and paragraphs between lists.
