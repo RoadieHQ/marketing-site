@@ -44,16 +44,17 @@ const PluginTemplate = ({ data }) => {
       <Header plugin={plugin} />
       <main className="pt-4 pb-8 px-4 lg:pb-28">
         <div className="relative max-w-lg mx-auto lg:max-w-4xl">
-          <nav className="invisible lg:visible mb-8 flex flex-wrap text-center border-b-2 border-blueroadie">
+          <nav className="invisible lg:visible pb-4 mb-8 flex flex-wrap text-center border-b-2 border-blueroadie">
             <span className="inline-block py-4 text-blueroadie font-bold">Installation steps:</span>
-            <span className="inline-block p-4 ml-8 text-white font-bold bg-blueroadie rounded-t-lg active">
+            <span className="inline-block p-4 ml-8 text-white font-bold bg-blueroadie rounded-lg active">
               Self-hosted Backstage
             </span>
             {plugin.frontmatter.roadieDocsPath && (
               <a
                 href={`/docs/integrations${plugin.frontmatter.roadieDocsPath}`}
                 target="_blank"
-                className="inline-block p-4 ml-4 bg-gray-100 text-blueroadie font-bold rounded-t-lg hover:bg-gray-100 hover:text-orange-600 flex align-center"
+                rel="noreferrer"
+                className="inline-block p-4 ml-4 bg-gray-100 text-blueroadie font-bold rounded-lg hover:bg-gray-100 hover:text-orange-600 flex align-center"
               >
                 No-code via Roadie <ExternalLinkIcon className='inline-block w-4 ml-2' />
               </a>
