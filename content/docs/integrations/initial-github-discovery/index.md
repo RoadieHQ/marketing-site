@@ -30,15 +30,15 @@ Roadie can perform on demand syncs with your organisation. This is useful in a c
 
    Use this if you have multiple repos with existing catalog-info.yaml files.
 
-   `https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml` :white_check_mark:
+   `https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml`
 
    Use this if you use monorepo. You'll need to import for all of your monorepos one time.
 
-   `https://github.com/RoadieHQ/my-mono-repo/blob/-/**/catalog-info.yaml` :white_check_mark:
+   `https://github.com/RoadieHQ/my-mono-repo/blob/-/**/catalog-info.yaml`
 
    You can not use wildcards in both places
 
-   `https://github.com/RoadieHQ/*/blob/-/**/catalog-info.yaml` :x:
+   `https://github.com/RoadieHQ/*/blob/-/**/catalog-info.yaml`
 
 6. Press the `IMPORT` button in the bottom right corner
 7. You can see a table with all of the discovered repos that got added to the roadie catalog.
