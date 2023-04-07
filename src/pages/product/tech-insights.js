@@ -10,7 +10,6 @@ import CreateCheckImg from '../../../content/assets/product-pages/techinsights-c
 import IntegrationsImg from '../../../content/assets/product-pages/techinsights-integrations.png';
 import GitHubBotImg from '../../../content/assets/product-pages/techinsights-github-bot.svg';
 import Logi4jImg from '../../../content/assets/product-pages/techinsights-logi4j.svg';
-import SnykImg from '../../../content/assets/product-pages/docs-snyk-logo.png';
 
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
