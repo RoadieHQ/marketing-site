@@ -13,6 +13,7 @@ const FeatureBlock = ({
   paragraphs,
   illustration,
   ctaPrompt,
+  comingSoon,
   illustrationSide = 'right',
 }) => (
   <div
@@ -27,6 +28,15 @@ const FeatureBlock = ({
       })}
     >
       <Title el="h3" className="xl:text-2xl xl:tracking-tight text-primary-600">
+        {comingSoon && (
+          <>
+            <span className="inline-block border border-blueroadie text-blueroadie mb-2 text-sm p-2 rounded-lg">
+              Coming soon
+            </span>
+            <br />
+          </>
+        )}
+
         {title}
       </Title>
       <p className="mt-1 mb-10 text-xl xl:text-2xl">{description}</p>

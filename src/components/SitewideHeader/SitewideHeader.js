@@ -10,6 +10,7 @@ import {
   PlayIcon,
   NewspaperIcon,
   PlusCircleIcon,
+  CheckCircleIcon,
 } from '@heroicons/react/outline';
 import { Button } from 'components';
 
@@ -39,6 +40,12 @@ const features = [
     description: 'Find everyone’s docs in the same place.',
     to: '/product/documentation/',
     icon: BookOpenIcon,
+  },
+  {
+    name: 'Tech Insights: Scorecards for Backstage',
+    description: 'Measure and improve software quality.',
+    to: '/product/tech-insights/',
+    icon: CheckCircleIcon,
   },
 ];
 
