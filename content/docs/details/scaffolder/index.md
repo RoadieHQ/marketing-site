@@ -196,6 +196,9 @@ parameters:
       ui:field: OwnerPicker
 ```
 
+This returns a variable in the format `group:<namespace>/<group-or-user-name>`. You can extract the entity name using replace when you refer to the parameter like so: `${{ parameters.owner | replace(\"group:.*/\", \"\") }}`
+
+
 #### Picker from external API source
 
 This custom scaffolder field, makes an API call to the Backstage backend and allows the result to be rendered to a list.
