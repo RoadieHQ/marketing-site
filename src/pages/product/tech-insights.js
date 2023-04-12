@@ -60,7 +60,7 @@ const PRODUCT = {
     },
     {
       title: 'Run migrations with ease',
-      description: 'Roadie gives you insights into library or API migrations',
+      description: 'Track and understand library or API migrations',
       illustration: {
         png: Logi4jImg,
         alt: '',
