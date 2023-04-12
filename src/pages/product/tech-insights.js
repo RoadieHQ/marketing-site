@@ -21,52 +21,53 @@ const LEAD = `Roadie’s Backstage-based Tech Insights lets you measure and impr
 const PRODUCT = {
   features: [
     {
-      title: 'Identify unloved services and support teams',
-      description: 'Roadie helps you drive a culture of quality and accountability',
+      title: 'Raise the bar',
+      description: 'Create a culture of quality and accountability',
       illustration: {
         png: CreateCheckImg,
-        alt: '',
+        alt: 'A screenshot of an interface where a user is creating an automated check to determine if software is registered in PagerDuty.',
       },
       paragraphs: [
-        'Define what quality means for your organization, measure your software against it, and categorize it into tiers to determine whether the current level of quality is sufficient.',
-        'Identify software services that are not receiving adequate support and maintenance, and find out which teams need more support to produce high-quality software.',
+        'Define best practices for software quality in your organization, and quickly find software that is not meeting expectations.',
+        `Roadie's automated checks can find software that is not receiving adequate support and maintenance, and teams who need help.`,
       ],
     },
     {
-      title: 'Create custom checks to measure software quality on your own terms',
+      title: 'Completely flexible. Integrates with anything',
       description:
-        'Roadie lets you define checks against code, third-party services, and your internal APIs',
+        'Define checks against code, third-party APIs, and more...',
       illustration: {
         png: IntegrationsImg,
         alt: '',
       },
       paragraphs: [
-        'Use Tech Insights to create Checks that test your software against quality metrics and group them into Scorecards, then slice and dice reports to find areas that need more support to meet the quality bar.',
-        'Roadie gives you the flexibility of creating checks against source code—for example, to verify dependencies versions—third-party services like Snyk or PagerDuty, or you internal APIs.',
+        `Create automated checks that integrate with the tools you already use, like PagerDuty, Datadog, and GitHub. Build your own integration if we haven't supplied it.`,
+        'Create checks against source code to verify minimum library versions, ensure CI is configured, or require README files to exist.',
       ],
     },
     {
-      title: 'Measure software quality and drive improvements',
-      description: 'Roadie helps your developers see the impact of their work ',
+      title: 'Drive improvements over time',
+      description: 'Nudge teams towards building better software',
       comingSoon: true,
       illustration: {
         png: GitHubBotImg,
         alt: '',
       },
       paragraphs: [
-        'Tech Insights nudges teams towards improving their software quality by giving them visibility into organizational software quality and encouraging thoughtful and conscientious improvement over time.',
-        'Our upcoming integrations bring Tech Insights to the workflows your developers already use. For instance, a GitHub bot that lets developers know the impact a PR has on the relevant scorecards.',
+        'Set expectations around software quality through gamification. Let teams see their quality level vs. the teams around them.',
+        'Gently push teams towards imporovment with prompts in Slack channels and on pull requests.',
       ],
     },
     {
-      title: 'Overview migrations with ease',
-      description: 'Roadie gives you insights on how services are adopting new practices',
+      title: 'Run migrations with ease',
+      description: 'Roadie gives you insights into library or API migrations',
       illustration: {
         png: Logi4jImg,
         alt: '',
       },
       paragraphs: [
-        'Tech Insights can keep track of the dependencies of your software components and keep track of how new practices are being adopted across the organization.',
+        'Rolling out library upgrades and API changes is a constant battle. Tech Insights can track and report the progress of migrations company wide.',
+        'No more spreadsheets for project managing migrations. Create automatically updating reports that show the current state of the migration.',
       ],
     },
   ],
