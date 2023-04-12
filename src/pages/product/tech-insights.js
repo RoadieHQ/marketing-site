@@ -15,8 +15,8 @@ import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import classNames from 'classnames';
 
-const SEO_TITLE = 'Tech Insights: scorecards for Backstage';
-const LEAD = `Roadie’s Backstage-based Tech Insights lets you measure and improve your software quality`;
+const SEO_TITLE = 'Tech Insights: scorecards for Backstage [coming soon]';
+const LEAD = `Roadie’s Backstage-based Tech Insights lets you measure and improve software quality`;
 
 const PRODUCT = {
   features: [
@@ -209,11 +209,11 @@ const Home = ({ data }) => {
             <span className="bg-white text-tealbackstage inline-block px-1 rounded">
               Scorecards:
             </span>{' '}
-            measure and improve your software quality
+            measure and improve your software quality [coming soon]
           </Headline>
 
           <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-            Roadie lets you define quality tiers and keep them on track across your org’s services.
+            Define best practices and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.
           </h2>
 
           <Button
