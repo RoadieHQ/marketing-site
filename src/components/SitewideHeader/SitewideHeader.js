@@ -19,8 +19,6 @@ import TopNavItem from './TopNavItem';
 import OpenMenuButton from './OpenMenuButton';
 import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
-import TopBanner from 'components/TopBanner';
-import PragmaticEngineerNewsletter from 'components/TopBanner/PragmaticEngineerNewsletter';
 
 const features = [
   {
@@ -96,10 +94,6 @@ const SitewideHeader = ({
   ctaText = 'Get a Demo',
 }) => (
   <>
-    <TopBanner>
-      <PragmaticEngineerNewsletter />
-    </TopBanner>
-
     <Popover as={React.Fragment}>
       <>
         <header
