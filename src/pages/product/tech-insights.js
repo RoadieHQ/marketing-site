@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import has from 'lodash/has';
-import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
+import { SEO, SitewideFooter, SitewideHeader, Button, Headline, Chip } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import Title from '../../components/Title';
 
@@ -15,21 +15,21 @@ import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import classNames from 'classnames';
 
-const SEO_TITLE = 'Tech Insights: scorecards for Backstage [coming soon]';
-const LEAD = `Roadie’s Backstage-based Tech Insights lets you measure and improve software quality`;
+const SEO_TITLE = 'Tech Insights: scorecards for Backstage [beta]';
+const LEAD = `Establish engineering standards and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.`;
 
 const PRODUCT = {
   features: [
     {
-      title: 'Raise the bar',
-      description: 'Create a culture of quality and accountability',
+      title: 'Create a culture of quality and accountability',
+      description: 'Write checks and run them against software in Backstage',
       illustration: {
         png: CreateCheckImg,
         alt: 'A screenshot of an interface where a user is creating an automated check to determine if software is registered in PagerDuty.',
       },
       paragraphs: [
-        'Define best practices for software quality in your organization, and quickly find software that is not meeting expectations.',
-        `Roadie's automated checks can find software that is not receiving adequate support and maintenance, and teams who need help.`,
+        'Checks run against source code and the APIs your tools expose. They find software which is not meeting expectations and report this to the people who can get it fixed.',
+        `Scorecards group checks together into concepts your teams understand. Like “Security best practices - Level 1” or “Production SRE requirements - Level 3”.`,
       ],
     },
     {
@@ -41,32 +41,32 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        `Create automated checks that integrate with the tools you already use, like PagerDuty, Datadog, and GitHub. Build your own integration if we haven't supplied it.`,
-        'Create checks against source code to verify minimum library versions, ensure CI is configured, or require README files to exist.',
+        `You create your own checks that make sense for you and your company. Checks can target subsets of the software you have so that different checks apply to production software than random experiments.`,
+        `Checks integrate with the tools you already use, like PagerDuty, Datadog, and GitHub. You can easily build your own integration if we haven't supplied it.`,
       ],
     },
     {
-      title: 'Drive improvements over time',
-      description: 'Nudge teams towards building better software',
+      title: 'Improve software quality over time',
+      description: 'Nudge teams towards better standards with notifications',
       comingSoon: true,
       illustration: {
         png: GitHubBotImg,
         alt: '',
       },
       paragraphs: [
-        'Set expectations around software quality through gamification. Let teams see their quality level vs. the teams around them.',
-        'Gently push teams towards imporovment with prompts in Slack channels and on pull requests.',
+        'Teams can see how they compare to the rest of the company so behavior changes are gamified.',
+        'Prompts and notifications in Slack channels and on pull requests can warn engineers when they’re about to make a chance that will violate an engineering standard. [coming soon]',
       ],
     },
     {
       title: 'Run migrations with ease',
-      description: 'Track and understand library or API migrations',
+      description: 'Gain insight into the progress of migrations',
       illustration: {
         png: Logi4jImg,
         alt: '',
       },
       paragraphs: [
-        'Rolling out library upgrades and API changes is a constant battle. Tech Insights can track and report the progress of migrations company wide.',
+        'Rolling out library upgrades and API changes is a constant battle. With Tech Insights you can track and report the progress of migrations company wide.',
         'No more spreadsheets for project managing migrations. Create automatically updating reports that show the current state of the migration.',
       ],
     },
@@ -202,18 +202,23 @@ const Home = ({ data }) => {
 
       <section className="bg-tealbackstage mx-auto max-w-7xl xl:rounded-lg lg:flex items-center">
         <div className="lg:w-1/2 p-4 lg:px-10 lg:py-16">
-          <strong className="block text-white uppercase mb-8 text-xl font-highlight">
-            Roadie’s Tech Insights
-          </strong>
+          <div className="mb-8">
+            <strong className="text-white uppercase text-xl font-highlight mr-2">
+              <span>Roadie’s Tech Insights</span>
+            </strong>
+
+            <span className="align-top"><Chip label="beta" color="orange" /></span>
+          </div>
+
           <Headline size="medium" className="text-white">
             <span className="bg-white text-tealbackstage inline-block px-1 rounded">
               Scorecards:
             </span>{' '}
-            measure and improve your software quality [coming soon]
+            measure and improve your software quality
           </Headline>
 
           <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-            Define best practices and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.
+            Establish engineering standards and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.
           </h2>
 
           <Button
