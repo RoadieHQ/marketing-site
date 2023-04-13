@@ -24,6 +24,7 @@ module.exports = {
         white: '#fff',
         blueroadie: '#111827',
         elusivegray: '#FDFDFD',
+        tealbackstage: '#00a58c',
       },
     },
   },

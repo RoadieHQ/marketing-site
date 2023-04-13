@@ -10,6 +10,7 @@ import {
   PlayIcon,
   NewspaperIcon,
   PlusCircleIcon,
+  CheckCircleIcon,
 } from '@heroicons/react/outline';
 import { Button } from 'components';
 
@@ -18,8 +19,6 @@ import TopNavItem from './TopNavItem';
 import OpenMenuButton from './OpenMenuButton';
 import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
-import TopBanner from 'components/TopBanner';
-import PragmaticEngineerNewsletter from 'components/TopBanner/PragmaticEngineerNewsletter';
 
 const features = [
   {
@@ -39,6 +38,12 @@ const features = [
     description: 'Find everyone’s docs in the same place.',
     to: '/product/documentation/',
     icon: BookOpenIcon,
+  },
+  {
+    name: 'Tech Insights: Scorecards for Backstage',
+    description: 'Measure and improve software quality.',
+    to: '/product/tech-insights/',
+    icon: CheckCircleIcon,
   },
 ];
 
@@ -89,10 +94,6 @@ const SitewideHeader = ({
   ctaText = 'Get a Demo',
 }) => (
   <>
-    <TopBanner>
-      <PragmaticEngineerNewsletter />
-    </TopBanner>
-
     <Popover as={React.Fragment}>
       <>
         <header
