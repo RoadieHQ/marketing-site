@@ -29,7 +29,7 @@ In order to use the Kubernetes plugin for AWS, Roadie needs:
 These are set within Roadie at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/kubernetes
+https://<tenant-name>.roadie.so/administration/settings/plugins/kubernetes
 ```
 
 This page describes how to create and set up the API token.
@@ -82,7 +82,7 @@ It should look like this
 
 ### Step 2: Modifying trust relationships to only include the new role
 
-1. Get the role of the Roadie backend. This is displayed on the Kubernetes config page `/administration/settings/kubernetes`.
+1. Get the role of the Roadie backend. This is displayed on the Kubernetes config page `/administration/settings/plugins/kubernetes`.
 
 ![AWS roadie role](./role-roadie.png)
 
@@ -201,7 +201,7 @@ subjects:
 1. Navigate to your Kubernetes settings in Roadie and click on add item.
 
    ```
-   https://[tenant-name].roadie.so/administration/settings/kubernetes" 
+   https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes" 
    ```
 
 2. Select the AWS provider
@@ -222,7 +222,7 @@ In order to use the Kubernetes plugin for GKE, Roadie needs:
 These are set within Roadie at the following url:
 
 ```
-https://[tenant-name].roadie.so/administration/settings/kubernetes
+https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes
 ```
 
 This page describes how to create and set up the API token.
@@ -246,7 +246,7 @@ Follow step 2 from [here](/docs/integrations/google-oauth-client/).
 
 ### Step 3: Adding a cluster to roadie
 
-1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/kubernetes” and click on add item.
+1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes” and click on add item.
 2. Select the Google provider
 3. Add the load balancer url and name of cluster.
 4. Click save and exit!
@@ -288,7 +288,7 @@ subjects:
 Navigate to the ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token you created in step 1. Alternatively, if you are congfiguring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`. If you are using a brokered connection to access your clusters, these secrets can be placeholders since they are overridden by the Broker client.
 
 ### Step 4: 
-1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/kubernetes” and click on add item.
+1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes” and click on add item.
 2. Select the Service Account provider
 3. Add the url and name of cluster.
 4. If you have used a custom secret, you will need to set it in the secret name field
