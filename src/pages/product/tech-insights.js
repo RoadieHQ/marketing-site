@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import has from 'lodash/has';
-import { SEO, SitewideFooter, SitewideHeader, Button, Headline, Chip } from 'components';
+import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import Title from '../../components/Title';
 
@@ -34,8 +34,7 @@ const PRODUCT = {
     },
     {
       title: 'Completely flexible. Integrates with anything',
-      description:
-        'Define checks against code, third-party APIs, and more...',
+      description: 'Define checks against code, third-party APIs, and more...',
       illustration: {
         png: IntegrationsImg,
         alt: '',
@@ -202,12 +201,14 @@ const Home = ({ data }) => {
 
       <section className="bg-tealbackstage mx-auto max-w-7xl xl:rounded-lg lg:flex items-center">
         <div className="lg:w-1/2 p-4 lg:px-10 lg:py-16">
-          <div className="mb-8">
+          <div className="mb-8 flex items-center">
             <strong className="text-white uppercase text-xl font-highlight mr-2">
               <span>Roadie’s Tech Insights</span>
             </strong>
 
-            <span className="align-top"><Chip label="beta" color="orange" /></span>
+            <span className="inline-block border border-white text-white text-sm px-2 py-1 rounded-xl">
+              beta
+            </span>
           </div>
 
           <Headline size="medium" className="text-white">
@@ -218,7 +219,8 @@ const Home = ({ data }) => {
           </Headline>
 
           <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-            Establish engineering standards and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.
+            Establish engineering standards and automatically ensure software is meeting
+            expectations around security, operations, compliance, deployment and more.
           </h2>
 
           <Button

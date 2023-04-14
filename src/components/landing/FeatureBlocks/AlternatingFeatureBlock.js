@@ -30,7 +30,7 @@ const FeatureBlock = ({
       <Title el="h3" className="xl:text-2xl xl:tracking-tight text-primary-600">
         {comingSoon && (
           <>
-            <span className="inline-block border border-blueroadie text-blueroadie mb-2 text-sm p-2 rounded-lg">
+            <span className="inline-block border border-blueroadie text-blueroadie mb-2 text-sm px-2 py-1 rounded-xl">
               Coming soon
             </span>
             <br />
