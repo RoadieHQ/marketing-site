@@ -13,9 +13,10 @@ integrationType: OSS plugin
 The Kubernetes plugin in Backstage allows you to add details about your services, pods, deployments etc to the component dashboard pages within Backstage. The plugin supports multiple different mechanisms to connect Backstage to kubernetes. 
 
 Roadie supports 
-- AWS EKS
-- GCloud GKE 
-- Self deployed kubernetes cluster
+- [AWS EKS](/docs/integrations/kubernetes/#aws-eks)
+- [GCloud GKE](/docs/integrations/kubernetes/#gcloud-gke)
+- [Self deployed kubernetes cluster - via Service Account](/docs/integrations/kubernetes/#self-deployed-cluster---via-service-account)
+- [Self deployed kubernetes cluster - via Broker](/docs/integrations/kubernetes/#self-deployed-cluster---via-broker)
 
 All three of these can use a Broker service that runs in your infrastructure and means that you do not have to expose your cluster via an AWS cross account Role, Google OAUTH App token or Service Account Token. 
 
@@ -124,54 +125,28 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
   --set broker.tenantName=<your-roadie-tenant-name>
 ```
 
-# Self deployed Kubernetes Cluster
+# Self Deployed Cluster - via Service Account
 
-You can also integrate with Kubernetes using a standard Kubernetes Service Account. You can also use the [Broker connection](/docs/integration/broker) to avoid having to expose a Service Account token.
+You can integrate with Kubernetes using a standard Kubernetes Service Account.
 
 In order to use the Kubernetes plugin using a service account, Roadie needs:
- * A service account token (if not using the Broker)
+ * A service account token 
  * The name of your cluster
- * URL of your Kubernetes API Server endpoint. If you are using brokered connection you can use protocol `broker://`, e.g. `broker://my-broker-token`.
+ * URL of your Kubernetes API Server endpoint. 
 
-#### Step 1: Add a Service Account token (Skip if using the Broker)
-You will need to create a service account token for your cluster in the Kubernetes cluster for use by Roadie. Then navigate to ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token fro your cluster. Alternatively, if you are configuring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`. 
+#### Step 1: Add a Service Account token
+Get a token from a Service Account in your cluster for use by Roadie. Then navigate to ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token fro your cluster. Alternatively, if you are configuring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`. 
 
 #### Step 2: Create the Cluster Role and Binding 
 1. Connect to your EKS cluster [in your terminal](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
-2. Create a `values.yaml` override file with the following:
-
-*Without broker:*
-```yaml
-serviceAccount:
-  enabled: true
-  name: <name-of-service-account-you-have-a-token-for>
-  namespace: <namespace-of-service-account>
-```
-
-*With Broker:*
-```yaml
-broker:
-   enabled: true
-   token: <some-random-key>
-   tenantName: <your-roadie-tenant-name>
-```
-
-*NB: <your-roadie-tenant-name> can be found in the url to your Roadie tenant i.e. https://<tenant-name>.roadie.so*
-
-3. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
+2. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
 ```shell
 helm repo add roadie https://charts.roadie.io
 helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access \
-  -n <namespace-of-service-account>
-# Set the following if NOT using the Broker:
-#   --set serviceAccount.enabled=true \
-#   --set serviceAccount.name=<name-of-service-account-you-have-a-token-for> \
-#   --set serviceAccount.namespace=<namespace-of-service-account>
-
-# Set the following if using the Broker:
-#   --set broker.enabled=true \
-#   --set broker.token=<some-random-key> \
-#   --set broker.tenantName=<your-roadie-tenant-name>
+  -n <namespace-of-service-account> \
+   --set serviceAccount.enabled=true \
+   --set serviceAccount.name=<name-of-service-account-you-have-a-token-for> \
+   --set serviceAccount.namespace=<namespace-of-service-account>
 ```
 
 #### Step 3: 
@@ -180,6 +155,29 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
 3. Select the secret key for the correct token if not using the broker. 
 4. Click `Save` and then `Apply and Restart`. Wait up to 10 minutes for the restart.
 5. You can then test against entities with kubernetes annotations unique to the cluster you want to test to see if the connection is working.
+
+
+# Self Deployed Cluster - via Broker
+
+You can also use the [Broker connection](/docs/integration/broker) to avoid having to expose a Service Account token.
+
+#### Step 1: Create the Cluster Role and deploy the Broker container
+1. Connect to your cluster in your terminal.
+2. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
+```shell
+helm repo add roadie https://charts.roadie.io
+helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access
+   --set broker.enabled=true \
+   --set broker.token=<some-random-key> \
+   --set broker.tenantName=<your-roadie-tenant-name>
+```
+*NB: <your-roadie-tenant-name> can be found in the url to your Roadie tenant i.e. https://<tenant-name>.roadie.so*
+
+#### Step 3:
+1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes” and click on add item.
+2. Select the Service Account provider, add the Api Endpoint with the format `broker://<broker-token-from-step-1>` and give the cluster a name.
+3. Click `Save` and then `Apply and Restart`. Wait up to 10 minutes for the restart.
+4. You can then test against entities with kubernetes annotations unique to the cluster you want to test to see if the connection is working.
 
 ### References
 * [Backstage Kubernetes plugin docs](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
