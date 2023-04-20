@@ -46,18 +46,14 @@ You can use a combination of a Cloudformation Template, a Helm Chart and the `ek
 
 ### Step 2. Create the Cluster Role and binding.
 1. Connect to your EKS cluster [in your terminal](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html). 
-2. Only if you want to use the Broker, create a `values.yaml` override file with the following:
-```yaml
-broker:
-   enabled: true
-   token: <some-random-key>
-   tenantName: <your-roadie-tenant-name>
-```
-
-3. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
+2. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
 ```shell
 helm repo add roadie https://charts.roadie.io
-helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access [-f <path-to-your-custom-values-file>.yaml]
+helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access \
+# Only set the following if using the Broker:
+#   --set broker.enabled=true \
+#   --set broker.token=<some-random-key> \
+#   --set broker.tenantName=<your-roadie-tenant-name>
 ```
 
 ### Step 3. Add the Role Mapping in aws-auth
@@ -119,17 +115,13 @@ Follow step 2 from [here](/docs/integrations/google-oauth-client/).
 
 #### Deploy the Broker via Helm to your Cluster
 1. Connect to your GKE cluster in your terminal.
-2. Create a `values.yaml` override file with the following:
-```yaml
-broker:
-   enabled: true
-   token: <some-random-key>
-   tenantName: <your-roadie-tenant-name>
-```
-3. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
+2. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
 ```shell
 helm repo add roadie https://charts.roadie.io
-helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access -f <path-to-your-custom-values-file>.yaml
+helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access \
+  --set broker.enabled=true \
+  --set broker.token=<some-random-key> \
+  --set broker.tenantName=<your-roadie-tenant-name>
 ```
 
 # Service Account
@@ -169,7 +161,17 @@ broker:
 3. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
 ```shell
 helm repo add roadie https://charts.roadie.io
-helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access -f <path-to-your-custom-values-file>.yaml -n <namespace-of-service-account>
+helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access \
+  -n <namespace-of-service-account>
+# Set the following if NOT using the Broker:
+#   --set serviceAccount.enabled=true \
+#   --set serviceAccount.name=<name-of-service-account-you-have-a-token-for> \
+#   --set serviceAccount.namespace=<namespace-of-service-account>
+
+# Set the following if using the Broker:
+#   --set broker.enabled=true \
+#   --set broker.token=<some-random-key> \
+#   --set broker.tenantName=<your-roadie-tenant-name>
 ```
 
 #### Step 3: 
