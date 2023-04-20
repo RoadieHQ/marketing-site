@@ -13,11 +13,11 @@ integrationType: OSS plugin
 The Kubernetes plugin in Backstage allows you to add details about your services, pods, deployments etc to the component dashboard pages within Backstage. The plugin supports multiple different mechanisms to connect Backstage to kubernetes. 
 
 Roadie supports 
-- AWS EKS, 
+- AWS EKS
 - GCloud GKE 
-- Self deployed kubernetes cluster using a service account
+- Self deployed kubernetes cluster
 
-All three of these can be used via a Broker service that runs in your infrastructure and means that you do not have to expose your cluster via an AWS cross account Role, Google OAUTH App token or Service Account Token. 
+All three of these can use a Broker service that runs in your infrastructure and means that you do not have to expose your cluster via an AWS cross account Role, Google OAUTH App token or Service Account Token. 
 
 ℹ️ NOTE: **The API url of the cluster must be available to the Roadie infrastructure services if you are not using the Broker.** You can choose to limit the availablity to our [IP networks](/docs/details/allowlisting-roadie-traffic/). See instructions on setup of the broker in the instructions for your deployment type.
 
@@ -123,33 +123,41 @@ In order to use the Kubernetes plugin using a service account, Roadie needs:
  * The name of your cluster
  * URL of your Kubernetes API Server endpoint. If you are using brokered connection you can use protocol `broker://`, e.g. `broker://my-broker-token`.
 
-### Step 1: Create a Service Account token
-You will need to create a service account token for your cluster in the Kubernetes cluster for use by Roadie. 
+### Step 1: Add a Service Account token (Skip if using the Broker)
+You will need to create a service account token for your cluster in the Kubernetes cluster for use by Roadie. Then navigate to ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token fro your cluster. Alternatively, if you are configuring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`. 
 
-### Step 2: Create the Cluster Role and Binding
- `ServiceAccount` you retrieved a token for in the step above to the created `ClusterRole`
-
+### Step 2: Create the Cluster Role and Binding 
 1. Connect to your EKS cluster [in your terminal](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
-2. Create a values.yaml override file with the following:
+2. Create a `values.yaml` override file with the following:
+
+*Without broker:*
 ```yaml
 serviceAccount:
   enabled: true
   name: <name-of-service-account-you-have-a-token-for>
   namespace: <namespace-of-service-account>
 ```
+
+*With Broker:*
+```yaml
+broker:
+   enabled: true
+   token: <some-random-key>
+   tenantName: <your-roadie-tenant-name>
+```
+
+*NB: <your-roadie-tenant-name> can be found in the url to your Roadie tenant i.e. https://<tenant-name>.roadie.so*
+
 3. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
 ```shell
 helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access -f <path-to-your-custom-values-file>.yaml -n <namespace-of-service-account>
 ```
 
-### Step 3: Set the Token in a Roadie Backstage Secret
-Navigate to the ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token you created in step 1. Alternatively, if you are congfiguring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`. If you are using a brokered connection to access your clusters, these secrets can be placeholders since they are overridden by the Broker client.
-
 ### Step 4: 
 1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes” and click on add item.
 2. Select the Service Account provider
 3. Add the url and name of cluster.
-4. If you have used a custom secret, you will need to set it in the secret name field
+4. Add the secret key for the correct token if not using the broker. 
 
 ## References
 * [Backstage Kubernetes plugin docs](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
