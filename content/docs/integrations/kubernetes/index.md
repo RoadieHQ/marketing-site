@@ -124,12 +124,12 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
   --set broker.tenantName=<your-roadie-tenant-name>
 ```
 
-# Service Account
+# Self deployed Kubernetes Cluster
 
-You can also integrate with Kubernetes using a standard Kubernetes Service Account. With Service Account you can also use the [Broker connection](/docs/integration/broker) to make secure connections to your clusters.
+You can also integrate with Kubernetes using a standard Kubernetes Service Account. You can also use the [Broker connection](/docs/integration/broker) to avoid having to expose a Service Account token.
 
 In order to use the Kubernetes plugin using a service account, Roadie needs:
- * A service account token
+ * A service account token (if not using the Broker)
  * The name of your cluster
  * URL of your Kubernetes API Server endpoint. If you are using brokered connection you can use protocol `broker://`, e.g. `broker://my-broker-token`.
 
