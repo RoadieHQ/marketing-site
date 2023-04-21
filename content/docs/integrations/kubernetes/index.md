@@ -10,19 +10,19 @@ integrationType: OSS plugin
 
 ![Full active cluster on roadie](./active.png)
 
-The Kubernetes plugin in Backstage allows you to add details about your services, pods, deployments etc to the component dashboard pages within Backstage. The plugin supports multiple different mechanisms to connect Backstage to kubernetes. 
+The Kubernetes plugin in Backstage allows you to add details about your services, pods, deployments etc to the component dashboard pages within Backstage. The plugin supports multiple different mechanisms to connect Backstage to your Kubernetes clusters. 
 
-Roadie supports 
-- [AWS EKS](/docs/integrations/kubernetes/#aws-eks)
-- [GCloud GKE](/docs/integrations/kubernetes/#gcloud-gke)
-- [Self deployed kubernetes cluster - via Service Account](/docs/integrations/kubernetes/#self-deployed-cluster---via-service-account)
-- [Self deployed kubernetes cluster - via Broker](/docs/integrations/kubernetes/#self-deployed-cluster---via-broker)
+Roadie supports the following connection setups:
+- [Via Broker](#via-broker)
+- [AWS EKS](#aws-eks)
+- [GCloud GKE](#gcloud-gke)
+- [Via Service Account](#via-service-account)
 
 ℹ️ NOTE: **The API url of the cluster must be available to the Roadie infrastructure services if you are not using the Broker.** You can choose to limit the availablity to our [IP networks](/docs/details/allowlisting-roadie-traffic/). See instructions on setup of the broker in the instructions for your deployment type.
 
 All three of these can use a Broker service that runs in your infrastructure and means that you do not have to expose your cluster via an AWS cross account Role, Google OAUTH App token or Service Account Token.
 
-# Broker
+# Via Broker
 
 The [Broker](/docs/integration/broker) can be used to securely access your Kubernetes clusters regardless of where they are deployed without needing any authentication credentials to be stored or negotiated on Roadie's side. You can learn more about the Broker and its security features here [https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker](https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker).
 
@@ -34,7 +34,7 @@ The Broker endpoint server is secured by allow listing IP addresses. You need to
 
 ℹ️ NB: The IP addresses used by Roadie for requests to your Broker client are [listed here](/docs/details/allowlisting-roadie-traffic/).  
 
-#### Step 2: Create a Cluster Role and deploy the Kubernetes Broker Client
+#### Step 2: Create a Cluster Role, deploy the Broker Client
 1. Connect to your cluster in your terminal.
 2. [Apply](https://helm.sh/docs/intro/install/) the following Helm Chart to your cluster:
 ```shell
@@ -66,7 +66,7 @@ You can also view the connection logs on the broker pod deployed by the above He
 
 # AWS EKS
 
-In order to use the Kubernetes plugin for AWS, Roadie requires read-only access via a cross account AWS role in your account, or [a Broker connection](#broker).
+In order to use the Kubernetes plugin for AWS, Roadie requires read-only access via a cross account AWS role in your account, or [a Broker connection](#via-broker).
 
 ℹ️ Note: The cross account AWS role is the approach recommended by AWS for this type of access. See the following docs for more context:
  * Assuming Role [learn more](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
@@ -120,10 +120,9 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
 
 # GCloud GKE
 
-GKE access can be set up [via the Roadie Broker](#broker) or using an OAuth App. 
+GKE access can be set up [via the Roadie Broker](#via-broker) or using an OAuth App. 
 
-### Using an OAuth App:
->  ℹ️  NB: you will need read access (`Kubernetes engine viewer`) at a minimum to a cluster. Without read access, you will be unable to see your Kubernetes resources, with this configuration. ℹ️
+ℹ️  NB: you will need read access `Kubernetes engine viewer` at a minimum to a cluster. Without read access, you will be unable to see your Kubernetes resources, with this configuration.
 
 #### Step 1: Create an OAuth app
 
