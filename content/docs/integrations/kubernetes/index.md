@@ -18,23 +18,21 @@ Roadie supports
 - [Self deployed kubernetes cluster - via Service Account](/docs/integrations/kubernetes/#self-deployed-cluster---via-service-account)
 - [Self deployed kubernetes cluster - via Broker](/docs/integrations/kubernetes/#self-deployed-cluster---via-broker)
 
-All three of these can use a Broker service that runs in your infrastructure and means that you do not have to expose your cluster via an AWS cross account Role, Google OAUTH App token or Service Account Token. 
-
 ℹ️ NOTE: **The API url of the cluster must be available to the Roadie infrastructure services if you are not using the Broker.** You can choose to limit the availablity to our [IP networks](/docs/details/allowlisting-roadie-traffic/). See instructions on setup of the broker in the instructions for your deployment type.
+
+All three of these can use a Broker service that runs in your infrastructure and means that you do not have to expose your cluster via an AWS cross account Role, Google OAUTH App token or Service Account Token.
 
 # Broker
 
-The broker server instance is not enabled by default on tenants and thus needs to be requested to be enabled.
+The [Broker](/docs/integration/broker) can be used to securely access your Kubernetes clusters regardless of where they are deployed without needing any authentication credentials to be stored or negotiated on Roadie's side. You can learn more about the Broker and its security features here [https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker](https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker).
 
-The broker can be used to access your Kubernetes clusters regardless of where they are deployed.
+The [Broker](/docs/integration/broker) is not enabled by default on tenants and thus needs to be requested to be enabled.
 
 #### Step 1: Configure the Broker in Roadie
 
-The broker endpoint server is secured by allow listing IP addresses. 
+The Broker endpoint server is secured by allow listing IP addresses. You need to add your external IP addresses to the allow list in the settings page at `https://<your-tenant>.roadie.so/administration/settings/integrations/broker` so that Roadie can connect to a Broker client running in your infrastructure.
 
-You need to add your external IP addresses to the allowlist in the settings page at `https://<your-tenant>.roadie.so/administration/settings/integrations/broker` so that Roadie can connect to a Broker client running in your infrastructure.
-
-The IP addresses used by Roadie for requests to your Broker client are [listed here](/docs/details/allowlisting-roadie-traffic/)
+ℹ️ NB: The IP addresses used by Roadie for requests to your Broker client are [listed here](/docs/details/allowlisting-roadie-traffic/).  
 
 #### Step 2: Create a Cluster Role and deploy the Kubernetes Broker Client
 1. Connect to your cluster in your terminal.
@@ -47,12 +45,14 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
    --set broker.tenantName=<your-roadie-tenant-name>
 ```
 
-*NB: <your-roadie-tenant-name> can be found in the url to your Roadie tenant i.e. https://<tenant-name>.roadie.so*
+ℹ️ *NB: <your-roadie-tenant-name> can be found in the url to your Roadie tenant i.e. https://<tenant-name>.roadie.so*
 
 You can test that Roadie is able to connect to the Broker you have just deployed by entering the broker token and testing here:
 https://<tenant-name>.roadie.so/administration/settings/integrations/broker
 
-#### Step 3: Add your Broker config to Roadie
+You can also view the connection logs on the broker pod deployed by the above Helm chart using kubectl to check whether requests are coming through and view any errors. 
+
+#### Step 3: Add your Kubernetes Broker config to Roadie
 
 1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes” and click on add item.
 2. Select the Service Account provider
@@ -66,28 +66,25 @@ https://<tenant-name>.roadie.so/administration/settings/integrations/broker
 
 # AWS EKS
 
-### Prerequisites
-
-In order to use the Kubernetes plugin for AWS, Roadie requires read-only access via a cross account AWS role in your account, or a Broker connection.
+In order to use the Kubernetes plugin for AWS, Roadie requires read-only access via a cross account AWS role in your account, or [a Broker connection](#broker).
 
 ℹ️ Note: The cross account AWS role is the approach recommended by AWS for this type of access. See the following docs for more context:
  * Assuming Role [learn more](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
  * Cross Account Federation [learn more](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
  * Kubernetes RBAC [learn more](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
  * Trust relationship [learn more](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
-
-
+ 
 ### Setup Guide:
 
 You can use a combination of a Cloudformation Template, a Helm Chart and the `eksctl` cli to set this up:
 
 ℹ️ NB: Step 1 is only needed per AWS account you add. Steps 2 and 3 will need to be applied to each new cluster you add.
 
-### Step 1. Create a Cross Account Role (Skip if using the Broker)
+#### Step 1. Create a Cross Account Role
 1. Create a new Role in your AWS account's IAM service using this [Cloudformation template](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?templateURL=https://roadiehq-public-cloudformation-templates.s3.eu-west-1.amazonaws.com/create-role.template&stackName=roadie-role&param_roadieBackendRoleArn=arn:aws:iam::131774410247:role/roadie-backstage-backend-role-rV3ynEHv) NB: You can see the contents of the template by [downloading it here](https://roadiehq-public-cloudformation-templates.s3.eu-west-1.amazonaws.com/create-role.template).
 2. Navigate to `Outputs` after the Stack has finished, and copy the `RoadieIamRoleArn` and `ExternalID` into the role section of the EKS Kubernetes Settings page in Roadie.
 
-### Step 2. Add the Role Mapping in aws-auth (Skip if using the Broker)
+#### Step 2. Add the Role Mapping in aws-auth
 1. Log into your cluster
 2. Edit your Kubernetes `aws-auth` pod's Configmap as per [the EKS docs](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html).
    i.e. using eksctl `eksctl create iamidentitymapping --cluster <my-cluster> --region=<region-code> \
@@ -104,32 +101,26 @@ Running `kubectl describe -n kube-system configmap/aws-auth` the new entry shoul
       "username": "roadie"
 ```
 
-### Step 3. Create the Cluster Role and binding.
+#### Step 3. Create the Cluster Role and binding.
 1. Connect to your EKS cluster [in your terminal](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html). 
 2. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
 ```shell
 helm repo add roadie https://charts.roadie.io
 helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access \
-# Only set the following if using the Broker:
-#   --set broker.enabled=true \
-#   --set broker.token=<some-random-key> \
-#   --set broker.tenantName=<your-roadie-tenant-name>
 ```
 
-### Step 4: Add the cluster settings in Roadie
-
+##¢# Step 4: Add the cluster settings in Roadie
 1. Navigate to your Kubernetes settings in Roadie and click on add item `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
-2. If using the Broker, select Service Account type, add a name of your choice and an API endpoint of `broker://<the-token-from-step-2>`
-3. If not using the Broker, select EKS, add the Cluster's API Server Endpoint, the Cross Account Role ARN and External ID from Step 1.
-4. Click `Save` and then `Apply and Restart`. Wait up to 10 minutes for the restart.
-5. You can then test against entities with kubernetes annotations unique to the cluster you want to test to see if the connection is working. 
+2. If not using the Broker, select EKS, add the Cluster's API Server Endpoint, the Cross Account Role ARN and External ID from Step 1.
+3. Click `Save` and then `Apply and Restart`. Wait up to 10 minutes for the restart.
+4. You can then test against entities with kubernetes annotations unique to the cluster you want to test to see if the connection is working. 
 
 > You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: ”backstage.io/kubernetes-label-selector: 'app=my-app,component=frontend'”
 > For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
 
 # GCloud GKE
 
-GKE access can be set up via the Roadie Broker or using an OAuth App. 
+GKE access can be set up [via the Roadie Broker](#broker) or using an OAuth App. 
 
 ### Using an OAuth App:
 >  ℹ️  NB: you will need read access (`Kubernetes engine viewer`) at a minimum to a cluster. Without read access, you will be unable to see your Kubernetes resources, with this configuration. ℹ️
@@ -154,20 +145,7 @@ Follow step 2 from [here](/docs/integrations/google-oauth-client/).
 > For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
 
 
-### Using the Broker:
-
-#### Deploy the Broker via Helm to your Cluster
-1. Connect to your GKE cluster in your terminal.
-2. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
-```shell
-helm repo add roadie https://charts.roadie.io
-helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access \
-  --set broker.enabled=true \
-  --set broker.token=<some-random-key> \
-  --set broker.tenantName=<your-roadie-tenant-name>
-```
-
-# Self Deployed Cluster - via Service Account
+# Via Service Account Token
 
 You can integrate with Kubernetes using a standard Kubernetes Service Account.
 
@@ -198,28 +176,6 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
 4. Click `Save` and then `Apply and Restart`. Wait up to 10 minutes for the restart.
 5. You can then test against entities with kubernetes annotations unique to the cluster you want to test to see if the connection is working.
 
-
-# Self Deployed Cluster - via Broker
-
-You can also use the [Broker connection](/docs/integration/broker) to avoid having to expose a Service Account token.
-
-#### Step 1: Create the Cluster Role and deploy the Broker container
-1. Connect to your cluster in your terminal.
-2. [Apply](https://helm.sh/docs/intro/install/) the Helm Chart to your cluster:
-```shell
-helm repo add roadie https://charts.roadie.io
-helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access
-   --set broker.enabled=true \
-   --set broker.token=<some-random-key> \
-   --set broker.tenantName=<your-roadie-tenant-name>
-```
-*NB: <your-roadie-tenant-name> can be found in the url to your Roadie tenant i.e. https://<tenant-name>.roadie.so*
-
-#### Step 3:
-1. Navigate to ”https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes” and click on add item.
-2. Select the Service Account provider, add the Api Endpoint with the format `broker://<broker-token-from-step-1>` and give the cluster a name.
-3. Click `Save` and then `Apply and Restart`. Wait up to 10 minutes for the restart.
-4. You can then test against entities with kubernetes annotations unique to the cluster you want to test to see if the connection is working.
 
 ### References
 * [Backstage Kubernetes plugin docs](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
