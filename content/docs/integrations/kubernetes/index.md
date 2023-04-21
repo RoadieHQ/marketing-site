@@ -81,8 +81,9 @@ You can use a combination of a Cloudformation Template, a Helm Chart and the `ek
 ℹ️ NB: Step 1 is only needed per AWS account you add. Steps 2 and 3 will need to be applied to each new cluster you add.
 
 #### Step 1. Create a Cross Account Role
-1. Create a new Role in your AWS account's IAM service using this [Cloudformation template](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?templateURL=https://roadiehq-public-cloudformation-templates.s3.eu-west-1.amazonaws.com/create-role.template&stackName=roadie-role&param_roadieBackendRoleArn=arn:aws:iam::131774410247:role/roadie-backstage-backend-role-rV3ynEHv) NB: You can see the contents of the template by [downloading it here](https://roadiehq-public-cloudformation-templates.s3.eu-west-1.amazonaws.com/create-role.template).
-2. Navigate to `Outputs` after the Stack has finished, and copy the `RoadieIamRoleArn` and `ExternalID` into the role section of the EKS Kubernetes Settings page in Roadie.
+1. Create a new Role in your AWS account's IAM service using this [Cloudformation template](https://roadiehq-public-cloudformation-templates.s3.eu-west-1.amazonaws.com/create-role.template). NB: You can generate a pre-filled template by clkicking the "Create Role" link in the Roadie Settings page inside a new EKS cluster config section `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
+2. Navigate to `Outputs` after the Stack has finished, and copy the `RoadieIamRoleArn` and `ExternalID` into the role section of the EKS Kubernetes Settings page in Roadie - `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`.
+3. Click "Test Role" in the EKS Kubernetes Settings page in Roadie to check it is working - `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
 
 #### Step 2. Add the Role Mapping in aws-auth
 1. Log into your cluster
