@@ -18,7 +18,7 @@ Roadie supports the following connection setups:
 - [GCloud GKE](#gcloud-gke)
 - [Via Service Account](#via-service-account)
 
-ℹ️ NOTE: **The API url of the cluster must be available to the Roadie infrastructure services if you are not using the Broker.** You can choose to limit the availablity to our [IP networks](/docs/details/allowlisting-roadie-traffic/). See instructions on setup of the broker in the instructions for your deployment type.
+ℹ️ NB: **The API url of the cluster must be available to the Roadie infrastructure services if you are not using the Broker.** You can choose to limit the availablity to our [IP networks](/docs/details/allowlisting-roadie-traffic/). See instructions on setup of the broker in the instructions for your deployment type.
 
 All three of these can use a Broker service that runs in your infrastructure and means that you do not have to expose your cluster via an AWS cross account Role, Google OAUTH App token or Service Account Token.
 
@@ -45,10 +45,10 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
    --set broker.tenantName=<your-roadie-tenant-name>
 ```
 
-ℹ️ *NB: <your-roadie-tenant-name> can be found in the url to your Roadie tenant i.e. https://<tenant-name>.roadie.so*
+ℹ️ *NB: <your-roadie-tenant-name> can be found in the url to your Roadie tenant i.e. https://[tenant-name].roadie.so*
 
 You can test that Roadie is able to connect to the Broker you have just deployed by entering the broker token and testing here:
-https://<tenant-name>.roadie.so/administration/settings/integrations/broker
+https://[tenant-name].roadie.so/administration/settings/integrations/broker
 
 You can also view the connection logs on the broker pod deployed by the above Helm chart using kubectl to check whether requests are coming through and view any errors. 
 
@@ -68,7 +68,7 @@ You can also view the connection logs on the broker pod deployed by the above He
 
 In order to use the Kubernetes plugin for AWS, Roadie requires read-only access via a cross account AWS role in your account, or [a Broker connection](#via-broker).
 
-ℹ️ Note: The cross account AWS role is the approach recommended by AWS for this type of access. See the following docs for more context:
+ℹ️ NB: The cross account AWS role is the approach recommended by AWS for this type of access. See the following docs for more context:
  * Assuming Role [learn more](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
  * Cross Account Federation [learn more](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
  * Kubernetes RBAC [learn more](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
@@ -110,7 +110,7 @@ helm repo add roadie https://charts.roadie.io
 helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-access \
 ```
 
-##¢# Step 4: Add the cluster settings in Roadie
+#### Step 4: Add the cluster settings in Roadie
 1. Navigate to your Kubernetes settings in Roadie and click on add item `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
 2. If not using the Broker, select EKS, add the Cluster's API Server Endpoint, the Cross Account Role ARN and External ID from Step 1.
 3. Click `Save` and then `Apply and Restart`. Wait up to 10 minutes for the restart.
