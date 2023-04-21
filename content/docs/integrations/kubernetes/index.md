@@ -24,9 +24,9 @@ All three of these can use a Broker service that runs in your infrastructure and
 
 # Via Broker
 
-The [Broker](/docs/integration/broker) can be used to securely access your Kubernetes clusters regardless of where they are deployed without needing any authentication credentials to be stored or negotiated on Roadie's side. You can learn more about the Broker and its security features here [https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker](https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker).
+The [Broker](/docs/integrations/broker) can be used to securely access your Kubernetes clusters regardless of where they are deployed without needing any authentication credentials to be stored or negotiated on Roadie's side. You can learn more about the Broker and its security features here [https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker](https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker).
 
-The [Broker](/docs/integration/broker) is not enabled by default on tenants and thus needs to be requested to be enabled.
+The [Broker](/docs/integrations/broker) is not enabled by default on tenants and thus needs to be requested to be enabled.
 
 #### Step 1: Configure the Broker in Roadie
 
@@ -178,4 +178,4 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
 
 ### References
 * [Backstage Kubernetes plugin docs](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
-* [Broker Configuration documentation](/docs/integration/broker)
+* [Broker Configuration documentation](/docs/integrations/broker)
