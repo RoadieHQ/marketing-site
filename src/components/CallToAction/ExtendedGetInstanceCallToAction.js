@@ -3,6 +3,7 @@ import {
   Link,
   Switch,
   Button,
+  TextField,
   EmailField,
   SubscribeToNewsletterSwitch,
   Form,
@@ -16,6 +17,7 @@ import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment
 const submitToNetlifyForms = async ({
   email,
   scmTool,
+  attribution,
   subToNewsletter,
   netlifyFormName,
   agreeToPolicies,
@@ -28,6 +30,7 @@ const submitToNetlifyForms = async ({
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
   formData.append('email', email);
+  formData.append('reported-attribution', attribution);
   formData.append('scm', scmTool.value);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
@@ -59,6 +62,7 @@ const ExtendedGetInstanceCallToAction = ({
   scmTool,
   setScmTool,
 }) => {
+  const [attribution, setAttribution] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [agreed, setAgreed] = useState(false);
   const [honeypotText, setHoneypotText] = useState('');
@@ -70,6 +74,7 @@ const ExtendedGetInstanceCallToAction = ({
 
   const clearForm = () => {
     setEmailValues({ email: '' });
+    setAttribution('');
     setAgreed(false);
   };
 
@@ -86,6 +91,7 @@ const ExtendedGetInstanceCallToAction = ({
     const resp = await submitToNetlifyForms({
       email: emailValues.email,
       scmTool,
+      attribution,
       subToNewsletter,
       agreeToPolicies: agreed,
       netlifyFormName,
@@ -134,6 +140,16 @@ const ExtendedGetInstanceCallToAction = ({
           color="primary"
         />
       </div>
+
+      <TextField
+        label="How did you hear about Roadie?"
+        type="text"
+        name="reported-attribution"
+        id="reported-attribution"
+        onChange={setAttribution}
+        value={attribution}
+        fullWidth
+      />
 
       <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} />
 

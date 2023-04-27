@@ -11,6 +11,7 @@ describe('The free trial page', () => {
 
     cy.get('#get-instance-email-input').type('test@example.com');
     cy.get('#scm').select('GitHub On-prem');
+    cy.get('#reported-attribution').type('Newsletter');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
     cy.contains('Thank you for requesting a free trial of Roadie Backstage');
