@@ -12,6 +12,7 @@ describe('The landing page', () => {
 
     cy.get('#request-demo-name-input').type('Mary Mac');
     cy.get('#request-demo-email-input').type('test@example.com');
+    cy.get('#reported-attribution').type('Newsletter');
     cy.get('button[data-testid="sub-to-newsletter"]').click();
     cy.get('button').contains('Request a demo').click();
     cy.contains("We'll be in touch");
