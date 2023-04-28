@@ -82,13 +82,13 @@ The broker client is published as an npm package available to be downloaded, ins
 npm install --global snyk-broker
 BROKER_TOKEN=test \ 
 BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
-broker
+broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 ```
 
 ```bash
 BROKER_TOKEN=test \ 
 BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
-npx snyk-broker
+npx snyk-broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 ```
 
 In order to do something meaningful with the broker client you will need to configure and `accept.json` file documented in a section below.
@@ -99,7 +99,7 @@ To provide the accept.json
 ACCEPT=accept.json
 BROKER_TOKEN=test \ 
 BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
-broker
+broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 ```
 
 #### Custom docker container
