@@ -17,6 +17,7 @@ const submitToNetlifyForms = async ({
   name,
   email,
   scmTool,
+  attribution,
   subToNewsletter,
   honeypotText,
   netlifyFormName,
@@ -29,6 +30,7 @@ const submitToNetlifyForms = async ({
   formData.append('form-name', netlifyFormName);
   formData.append('name', name);
   formData.append('email', email);
+  formData.append('reported-attribution', attribution);
   formData.append('scm', scmTool.value);
   formData.append('sub-to-newsletter', subToNewsletter);
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
@@ -60,6 +62,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
     email: emailFromUrl,
   });
   const [name, setName] = useState('');
+  const [attribution, setAttribution] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
   const [honeypotText, setHoneypotText] = useState('');
   const [recaptchaResponse, setRecaptchaResponse] = useState('');
@@ -70,6 +73,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
 
   const clearForm = () => {
     setName('');
+    setAttribution('');
     setEmailValues({ email: '' });
   };
 
@@ -81,6 +85,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
       name,
       email: emailValues.email,
       scmTool,
+      attribution,
       subToNewsletter,
       honeypotText,
       netlifyFormName,
@@ -114,7 +119,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
     >
       <div className="mb-10">
         <TextField
-          label="Full name"
+          label="Full name*"
           type="text"
           name="name"
           id="request-demo-name-input"
@@ -124,29 +129,47 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
         />
       </div>
 
+      <div className="lg:flex mb-10">
+        <div className="lg:w-1/2 mr-4">
+          <EmailField
+            label="Work email address*"
+            type="email"
+            name="email"
+            id="request-demo-email-input"
+            setValue={setEmailValues}
+            value={emailValues}
+            fullWidth
+          />
+        </div>
+
+        <div className="lg:w-1/2 mt-4 ml-4">
+          <ScmToolSelect
+            label="Primary source code host*"
+            onChange={setScmTool}
+            currentValue={scmTool}
+            idPrefix="request-demo-"
+            color="primary"
+          />
+        </div>
+      </div>
+
       <div className="mb-10">
-        <EmailField
-          label="Work email address"
-          type="email"
-          name="email"
-          id="request-demo-email-input"
-          setValue={setEmailValues}
-          value={emailValues}
+        <TextField
+          label="How did you hear about Roadie?"
+          type="text"
+          name="reported-attribution"
+          id="reported-attribution"
+          onChange={setAttribution}
+          value={attribution}
           fullWidth
         />
       </div>
 
-      <div className="mb-10">
-        <ScmToolSelect
-          label="Primary source code host"
-          onChange={setScmTool}
-          currentValue={scmTool}
-          idPrefix="request-demo-"
-          color="primary"
-        />
-      </div>
-
-      <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} className="mb-10" />
+      <SubscribeToNewsletterSwitch
+        checked={subToNewsletter}
+        onChange={setSubToNewsletter}
+        className="mb-10"
+      />
 
       <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
 
