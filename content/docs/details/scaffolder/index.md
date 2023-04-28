@@ -477,6 +477,14 @@ steps:
 
 The templated files themselves can contain references to the values in the following way `${{ values.name }}`. It uses the nunjucks templating language. More details can be found [here](https://mozilla.github.io/nunjucks/).
 
+i.e.
+`./template/README.md`
+``` 
+# ${{ values.name }} service 
+
+This is a service Readme example. Please update me. 
+```
+
 Optionally, if you would prefer the data to be downloaded to a subdirectory in the workspace you may specify the 'targetPath' input option.
 
 ```yaml
