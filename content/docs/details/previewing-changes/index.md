@@ -38,7 +38,7 @@ An alternative way to test and preview entity definitions is to use the Roadie e
 ![Image of entity preview page](./entity_preview_page.png)
 
 
-> Note that the entity preview page does not go through _all_ the processing steps as actual registration of an entity. To test API docs and other preprcessed data, it might still be necessary to test via registering the actual entity.
+> Note that the entity preview page does not go through _all_ the processing steps as actual registration of an entity. To test API docs and other preprocessed data, it might still be necessary to test via registering the actual entity.
 
 Within the entity preview page you can write you catalog manifest files directly on the UI to test and preview how they would behave when imported from a more permanent location. 
 
