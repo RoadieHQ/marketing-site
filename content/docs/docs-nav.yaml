@@ -72,6 +72,7 @@ nav:
       - API docs custom renderers: '/docs/details/custom-api-docs-renderers/'
       - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
       - GitHub app permissions: '/docs/details/github-app-permissions/'
+      - How Roadie connects: '/docs/details/how-roadie-connects/'
       - Managing locations: '/docs/details/location-management/'
       - Modelling dependencies: '/docs/details/showing-dependencies/'
       - Previewing component changes: '/docs/details/previewing-changes/'

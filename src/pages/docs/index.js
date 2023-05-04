@@ -102,9 +102,9 @@ const Doc = ({
             <ul className="list-disc pl-4">
               <li>
                 <p className="text-base text-gray-500">
-                  Read about the effort we put into{' '}
-                  <TextLink to="/blog/avoid-leaking-github-org-data/" color="primary">
-                    GitHub App isolation
+                  Learn how Roadie{' '}
+                  <TextLink to="/docs/details/how-roadie-connects/" color="primary">
+                    connects to your tools
                   </TextLink>
                   .
                 </p>
@@ -112,7 +112,7 @@ const Doc = ({
 
               <li>
                 <p className="text-base text-gray-500">
-                  Learn about our{' '}
+                  Review our required{' '}
                   <TextLink to="/docs/details/github-app-permissions/" color="primary">
                     GitHub App permissions
                   </TextLink>
