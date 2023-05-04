@@ -66,7 +66,7 @@ If it is not possible to expose the bespoke API to the entire public internet, i
 
 For APIs which are only available on the customer’s internal network, we use a broker service to connect securely.
 
-The broker is a Node.js service that you run inside your infrastructure to provide a secure tunnel for Roadie traffic. It was originally created by def-first security company, **[Snyk](https://docs.snyk.io/features/snyk-broker/broker-introduction)**. The code is open-source. We are actively using it with existing customers for Kubernetes API access and other Backstage and Roadie plugins. You don’t need to be a Snyk user to use the broker.
+The broker is a Node.js service that you run inside your infrastructure to provide a secure tunnel for Roadie traffic. It was originally created by dev-first security company, **[Snyk](https://docs.snyk.io/features/snyk-broker/broker-introduction)**. The code is open-source. We are actively using it with existing customers for Kubernetes API access and other Backstage and Roadie plugins. You don’t need to be a Snyk user to use the broker.
 
 ![An architecture diagram from the Snyk docs. It shows how the broker is used to securely connect to an on-prem GitHub or Jira instance.](./broker-arch.webp)
 *Image credit: snyk.com*
