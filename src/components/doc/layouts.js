@@ -21,7 +21,7 @@ export const DOCS_LAYOUTS = [
   },
   {
     tabLabel: 'In-depth',
-    startPath: '/docs/details/github-app-permissions/',
+    startPath: '/docs/details/accessing-aws-resources/',
     isActiveMatch: '/docs/details',
     sidebarNavItemGroups: [sidebar.nav[4]],
   },
