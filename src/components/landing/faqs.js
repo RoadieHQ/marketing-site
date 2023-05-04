@@ -28,7 +28,7 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Our status page can be found at{' '}
-        <Link to="https://status.roadie.io">https://status.roadie.io/</Link>.
+        <Link to="https://status.roadie.io" color="primary">https://status.roadie.io/</Link>.
       </p>
     ),
   },
@@ -42,12 +42,12 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Roadie Backstage plugins can securely connect back to your infrastructure APIs via a variety
-        of mechanisms like OAuth2, token authentication and by assuming AWS roles. We also support
-        the use of an{' '}
-        <Link to="https://docs.snyk.io/features/snyk-broker/broker-introduction">
-          open-source broker service
+        of mechanisms like OAuth2, token authentication by using a broker service. Learn more about
+        {' '}
+        <Link to="/docs/details/how-roadie-connects/" color="primary">
+          how Roadie connects to your tools
         </Link>{' '}
-        on our Growth plan.
+        .
       </p>
     ),
   },
@@ -60,7 +60,7 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Yes. Roadie has achieved SOC2 Type 2 compliance. You can read more about this{' '}
-        <Link to="/blog/soc2-compliance/">on our blog</Link>.
+        <Link to="/blog/soc2-compliance/" color="primary">on our blog</Link>.
       </p>
     ),
   },
