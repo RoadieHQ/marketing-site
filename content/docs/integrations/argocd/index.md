@@ -68,6 +68,15 @@ The `EntityArgoCDContent` displays similar information to the history card and c
 
 ![Argo CD Tab](./argo-tab.png)
 
+## Step 5: Add annotations
+Add annotation to the yaml config file of a component
+
+```
+metadata:
+  annotations:
+    argocd/app-name: <your-app-name>
+```
+
 ## Multiple Argo CD Instances
 
 If you require integrating with multiple Argo CD servers contact Roadie via the in-app chat widget and we will enable it for you.
