@@ -38,7 +38,7 @@ The proxy code lives in the [proxy-backend plugin](https://github.com/backstage/
 
 The [Backstage PagerDuty plugin](/docs/integrations/pagerduty/) is an example of a plugin which relies on the proxy to connect to the PagerDuty APIs.
 
-Roadie users must obtain an API token for the PagerDuty APIs. They then store this token in Roadie’s secrets page. These tokens are stored in AWS’s Parameter Store product, using the `SecureString` type. SecureString objects are encrypted with a per-tenant KMS key.
+Roadie users must obtain an API token for the PagerDuty APIs. They then store this token in Roadie’s secrets page. These tokens are stored in AWS’s Parameter Store product, encrypted with a per-tenant KMS key.
 
 ![A table row where the user can enter a PagerDuty auth token and save it](./pagerduty-secret-token.png)
 
@@ -52,7 +52,7 @@ By using proxies, Roadie can securely connect to any token authenticated API whi
 
 ## Connecting to internal software
 
-Of course, not all tools are SaaS. Some run on-prem within the customer’s network. This is a common setup for security tools like SonarQube, and for infrastructure for Kubernetes. Other infrastructure might be hosted by AWS or Google Cloud, within the customers AWS or Google account.
+Of course, not all tools are SaaS. Some run on-prem within the customer’s network. This is a common setup for security tools like SonarQube, and for infrastructure solutions like Kubernetes. Other infrastructure might be hosted by AWS or Google Cloud, within the customers AWS or Google account.
 
 Regardless of the setup, Roadie can also securely connect to software that runs inside the customer’s network or their cloud account.
 
@@ -86,7 +86,7 @@ The [Backstage Kubernetes plugin](/docs/integrations/kubernetes/) can help teams
 
 ![A widget showing a kubernetes cluster called dev0. It has one pod of the sample-service running. The pod has no errors.](./backstage-k8s-plugin.png)
 
-It can use a cross-account AWS role to securely connect to Elastic Kubernetes (EKS) clusters. The cross-account AWS role is the approach recommended by AWS for this type of access
+It can use a cross-account AWS role to securely connect to Elastic Kubernetes Service (EKS) clusters. The cross-account AWS role is the approach recommended by AWS for this type of access
 
 To learn how to set up a cross-account role, [see our documentation](/docs/integrations/kubernetes/#aws-eks).
 
