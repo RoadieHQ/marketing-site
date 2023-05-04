@@ -94,6 +94,7 @@ nav:
       - Edit Files: '/docs/scaffolder-cookbook/edit-file/'
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
-      - Data Sources: '/docs/tech-insights/data-sources/'
-      - Checks: '/docs/tech-insights/checks/'
-      - Scorecards: '/docs/tech-insights/scorecards/'
+      - Concepts:
+        - Data Sources: '/docs/tech-insights/data-sources/'
+        - Checks: '/docs/tech-insights/checks/'
+        - Scorecards: '/docs/tech-insights/scorecards/'
