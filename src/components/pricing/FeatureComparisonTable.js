@@ -60,6 +60,9 @@ const sections = [{
   }, {
     name: 'Infra access via broker',
     tiers: { Growth: true },
+  }, {
+    name: 'Usage analytics dashboard',
+    tiers: { Growth: true },
   }],
 }, {
   name: 'Support',

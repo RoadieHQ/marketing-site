@@ -23,6 +23,7 @@ const GrowthTierBenefits = () => (
         'Bring your own Backstage plugins',
         'API access (beta)',
         'Infra access via broker',
+        'Usage analytics dashboard',
       ]}
     />
   </>
