@@ -81,17 +81,14 @@ You can use a combination of a Cloudformation Template, a Helm Chart and the `ek
 ℹ️ NB: Step 1 is only needed per AWS account you add. Steps 2 and 3 will need to be applied to each new cluster you add.
 
 #### Step 1. Create a Cross Account Role
-1. Create a new Role in your AWS account's IAM service using this [Cloudformation template](https://roadiehq-public-cloudformation-templates.s3.eu-west-1.amazonaws.com/create-role.template). NB: You can generate a pre-filled template by clkicking the "Create Role" link in the Roadie Settings page inside a new EKS cluster config section `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
+1. Create a new Role in your AWS account's IAM service using the pre-filled Cloudformation template by clicking the "Create Role" link in the Roadie Settings page inside a new EKS cluster config section `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
 2. Navigate to `Outputs` after the Stack has finished, and copy the `RoadieIamRoleArn` and `ExternalID` into the role section of the EKS Kubernetes Settings page in Roadie - `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`.
-3. Click "Test Role" in the EKS Kubernetes Settings page in Roadie to check it is working - `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
 
 #### Step 2. Add the Role Mapping in aws-auth
 1. Log into your cluster
 2. Edit your Kubernetes `aws-auth` pod's Configmap as per [the EKS docs](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html).
-   i.e. using eksctl `eksctl create iamidentitymapping --cluster <my-cluster> --region=<region-code> \
-   --arn <RoadieIamRoleArn from step 1> --username roadie --group system:authenticated`
-
-ℹ️ NB: The role arn is the same as the arn you copied from the Output `RoadieIamRoleArn` after running the Cloudformation template in step 1.
+   i.e. using eksctl `eksctl create iamidentitymapping --cluster <my-cluster> --region <region-code> --arn <RoadieIamRoleArn from step 1> --username roadie --group system:authenticated`
+3. Click "Test Role" in the EKS Kubernetes Settings page in Roadie to check it is working - `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
 
 Running `kubectl describe -n kube-system configmap/aws-auth` the new entry should look something like this:
 ``` yaml
