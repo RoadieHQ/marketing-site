@@ -12,6 +12,7 @@ integrationType: Integration
 ## Introduction
 
 Roadie loads your `catalog-info.yaml` files automatically from GitHub. This document explains how to specify where those files are loaded from, how to decorate entities automatically with additional metadata, and how to support multiple organizations.
+Roadie will ingest every file called `catalog-info.yaml` by default without any configuration. If you would like to use different name or you have a different convention in mind we will explain how to do it in this docs.
 
 ## Prerequisites
 
@@ -82,11 +83,10 @@ In this example, Roadie will load any `.yaml` file inside a root level `.roadie`
 
 Add a Backstage component file to a repository which matches the configured discovery url. After committing it to the correct branch, you should see it almost immediately in your catalog.
 
-
 ## Decorating Catalog Entities
 
 You can add the primary language used by a repository as a tag or label to the Roadie Backstage entity without updating your yaml files by turning on the decoration feature in `/administration/settings/catalog`.
 
-There will be a lag of a round 10 minutes for all entities to be tagged, and when turning it off, there will be a similar lag for the tags to be removed. 
+There will be a lag of a round 10 minutes for all entities to be tagged, and when turning it off, there will be a similar lag for the tags to be removed.
 
-NB: This feature only adds the tag/label in Roadie's representation of your catalog files, and does not modify the base yaml files in your repos. 
+NB: This feature only adds the tag/label in Roadie's representation of your catalog files, and does not modify the base yaml files in your repos.
