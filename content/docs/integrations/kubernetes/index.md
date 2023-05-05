@@ -83,12 +83,12 @@ You can use a combination of a Cloudformation Template, a Helm Chart and the `ek
 #### Step 1. Create a Cross Account Role
 1. Create a new Role in your AWS account's IAM service using the pre-filled Cloudformation template by clicking the "Create Role" link in the Roadie Settings page inside a new EKS cluster config section `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
 2. Navigate to `Outputs` after the Stack has finished, and copy the `RoadieIamRoleArn` and `ExternalID` into the role section of the EKS Kubernetes Settings page in Roadie - `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`.
+3. Click "Test Role" in the EKS Kubernetes Settings page in Roadie to check it is working - `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
 
 #### Step 2. Add the Role Mapping in aws-auth
 1. Log into your cluster
 2. Edit your Kubernetes `aws-auth` pod's Configmap as per [the EKS docs](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html).
    i.e. using eksctl `eksctl create iamidentitymapping --cluster <my-cluster> --region <region-code> --arn <RoadieIamRoleArn from step 1> --username roadie --group system:authenticated`
-3. Click "Test Role" in the EKS Kubernetes Settings page in Roadie to check it is working - `https://[tenant-name].roadie.so/administration/settings/plugins/kubernetes`
 
 Running `kubectl describe -n kube-system configmap/aws-auth` the new entry should look something like this:
 ``` yaml
