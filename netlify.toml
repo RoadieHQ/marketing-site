@@ -117,3 +117,10 @@
   from = "/docs/scaffolder-cookbook/*"
   to = "/docs/scaffolder/:splat"
   force = true
+
+[[redirects]]
+  from = "/docs/details/scaffolder/"
+  to = "/docs/scaffolder/writing-templates/"
+  force = true
+
+

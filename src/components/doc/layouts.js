@@ -27,13 +27,13 @@ export const DOCS_LAYOUTS = [
   },
   {
     tabLabel: 'Scaffolder',
-    startPath: '/docs/scaffolder/create-rfc',
+    startPath: '/docs/scaffolder/writing-templates/',
     isActiveMatch: /\/docs\/scaffolder/,
     sidebarNavItemGroups: [sidebar.nav[5]],
   },
   {
     tabLabel: 'Tech Insights',
-    startPath: '/docs/tech-insights/introduction',
+    startPath: '/docs/tech-insights/introduction/',
     isActiveMatch: /\/docs\/tech-insights/,
     sidebarNavItemGroups: [sidebar.nav[6]],
   },
