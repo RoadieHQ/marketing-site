@@ -86,12 +86,13 @@ nav:
       - Updating the UI: '/docs/details/updating-the-ui/'
       - Validating catalog files: '/docs/details/validator/'
       - Writing scaffolder templates: '/docs/details/scaffolder/'
-  - Scaffolder-Cookbook:
-      - Create RFC: '/docs/scaffolder-cookbook/create-rfc/'
-      - Debug template: '/docs/scaffolder-cookbook/debug-template/'
-      - Append file: '/docs/scaffolder-cookbook/append/'
-      - Re-use Parameters: '/docs/scaffolder-cookbook/global-constants/'
-      - Edit Files: '/docs/scaffolder-cookbook/edit-file/'
+  - Scaffolder:
+      - Recipies:
+        - Create RFC: '/docs/scaffolder/create-rfc/'
+        - Debug template: '/docs/scaffolder/debug-template/'
+        - Append file: '/docs/scaffolder/append/'
+        - Re-use Parameters: '/docs/scaffolder/global-constants/'
+        - Edit Files: '/docs/scaffolder/edit-file/'
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
       - Concepts:

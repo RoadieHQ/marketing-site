@@ -26,9 +26,9 @@ export const DOCS_LAYOUTS = [
     sidebarNavItemGroups: [sidebar.nav[4]],
   },
   {
-    tabLabel: 'Scaffolder Cookbook',
-    startPath: '/docs/scaffolder-cookbook/create-rfc',
-    isActiveMatch: /\/docs\/scaffolder-cookbook/,
+    tabLabel: 'Scaffolder',
+    startPath: '/docs/scaffolder/create-rfc',
+    isActiveMatch: /\/docs\/scaffolder/,
     sidebarNavItemGroups: [sidebar.nav[5]],
   },
   {
