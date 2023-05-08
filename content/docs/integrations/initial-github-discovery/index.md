@@ -11,7 +11,7 @@ integrationType: Integration
 
 ## Introduction
 
-Roadie can perform on demand syncs with your organisation. This is useful in a case where you already have `catalog-info.yaml` files distributed in your organization before you installed the roadie github app.
+Roadie can perform on demand syncs with your organisation. This is useful in a case where you already have `catalog-info.yaml` files distributed in your organization before you installed the Roadie GitHub app.
 
 ## Prerequisites
 
