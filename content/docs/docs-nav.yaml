@@ -91,7 +91,7 @@ nav:
       - Updating the UI: '/docs/details/updating-the-ui/'
   - Scaffolder:
       - Writing scaffolder templates: '/docs/scaffolder/writing-templates/'
-      - Recipies:
+      - Recipes:
         - Create RFC: '/docs/scaffolder/create-rfc/'
         - Debug template: '/docs/scaffolder/debug-template/'
         - Append file: '/docs/scaffolder/append/'
