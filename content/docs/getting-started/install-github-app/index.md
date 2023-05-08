@@ -36,7 +36,7 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 ℹ️ &nbsp;If you are not an owner of your GitHub organization, you will need to ask an owner to approve the App installation and then contact us to enable the App.
 
-Roadie will ingest files called: `catalog-info.yaml` by default without any configuration. If they are added to your repositories after you finished the installation of the github app.To have more granular control (e.g. you don't want to call them catalog-info.yaml) over what files Roadie should ingest, go to the [GitHub discovery docs](/docs/integrations/github-discovery/).
+Roadie will automatically ingest files called: `catalog-info.yaml` that have been added to your repositories after the Roadie GitHub app is installed. To have more granular control (e.g. you don't want to call them catalog-info.yaml) over what files Roadie should ingest, go to the [GitHub discovery docs](/docs/integrations/github-discovery/).
 
 If you used Backstage before and you already have `catalog-info.yaml` files in your repos please go to the [initial discovery](/docs/integrations/initial-github-discovery) docs.
 
