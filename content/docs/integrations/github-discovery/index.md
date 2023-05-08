@@ -11,8 +11,10 @@ integrationType: Integration
 
 ## Introduction
 
-Roadie loads your `catalog-info.yaml` files automatically from GitHub. This document explains how to specify where those files are loaded from, how to decorate entities automatically with additional metadata, and how to support multiple organizations.
-Roadie will ingest every file called `catalog-info.yaml` by default without any configuration. If you would like to use different name or you have a different convention in mind we will explain how to do it in this docs.
+Roadie will ingest every file called `catalog-info.yaml` by default without any configuration.
+
+If you would like to use different name or you have a different convention in mind we will explain how to do it in this docs.
+This document explains how to specify the paths where your custom backstage entities are loaded from, how to decorate entities automatically with additional metadata, and how to support multiple organizations.
 
 ## Prerequisites
 
