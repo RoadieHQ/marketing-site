@@ -110,5 +110,17 @@
 # There's no generic product page so we redirect to the first one
 [[redirects]]
   from = "/product/"
-  to = "/product/catalog"
+  to = "/product/catalog/"
   force = true
+
+[[redirects]]
+  from = "/docs/scaffolder-cookbook/*"
+  to = "/docs/scaffolder/:splat"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/scaffolder/"
+  to = "/docs/scaffolder/writing-templates/"
+  force = true
+
+
