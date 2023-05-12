@@ -10,7 +10,6 @@ import { DOCS_LAYOUTS } from 'components/doc';
 
 const DocSidebar = ({ location }) => {
   const isWide = useMedia(`(min-width: ${theme.BREAKPOINTS_MD})`);
-  // const isWide = useMedia(`(min-width: ${fullTailwindConfig.theme.screens.md})`);
   const [isOpen, setOpen] = useState(true);
 
   useEffect(() => {
@@ -37,7 +36,7 @@ const DocSidebar = ({ location }) => {
 
   return (
     <Sidebar side="left">
-      <div className="px-2 my-3">
+      <div className="px-2 my-3 md:w-72">
         <div className="mb-1 flex justify-between items-center">
           <span className="inline md:hidden">
             <Button
@@ -61,6 +60,7 @@ const DocSidebar = ({ location }) => {
                 key={sectionHeader}
                 title={sidebarNavItemGroups.length > 1 && sectionHeader}
                 items={sectionItems}
+                location={location}
               />
             );
           })

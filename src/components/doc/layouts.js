@@ -26,14 +26,14 @@ export const DOCS_LAYOUTS = [
     sidebarNavItemGroups: [sidebar.nav[4]],
   },
   {
-    tabLabel: 'Scaffolder Cookbook',
-    startPath: '/docs/scaffolder-cookbook/create-rfc',
-    isActiveMatch: /\/docs\/scaffolder-cookbook/,
+    tabLabel: 'Scaffolder',
+    startPath: '/docs/scaffolder/writing-templates/',
+    isActiveMatch: /\/docs\/scaffolder/,
     sidebarNavItemGroups: [sidebar.nav[5]],
   },
   {
     tabLabel: 'Tech Insights',
-    startPath: '/docs/tech-insights/introduction',
+    startPath: '/docs/tech-insights/introduction/',
     isActiveMatch: /\/docs\/tech-insights/,
     sidebarNavItemGroups: [sidebar.nav[6]],
   },

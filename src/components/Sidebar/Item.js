@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'components/TextLink';
+import classnames from 'classnames';
 
-const SidebarItem = ({ to, text, partiallyActive }) => (
+const SidebarItem = ({ text, className, ...rest }) => (
   <li>
     <Link
-      to={to}
-      className="pl-3 py-1 block pr-8"
+      className={classnames('pl-5 py-1 block pr-8', className)}
       activeClassName="bg-gray-200 text-primary-700"
-      partiallyActive={partiallyActive}
+      {...rest}
     >
       {text}
     </Link>
