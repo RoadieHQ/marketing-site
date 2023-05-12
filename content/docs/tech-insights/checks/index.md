@@ -8,13 +8,13 @@ description: Managing Checks.
 
 A Check is a rule which a service either does or does not satisfy. Checks are defined by evaluating a Fact from a Data Source against a logical operation, such as checking if services have less than 4 Low Severity Issues from Snyk.
 
-To manage Checks, go to Tech Insights → Checks page. In this page you can view and edit existing Checks, as well as adding new Checks.
+To manage Checks, go to Tech Insights → Checks page. In this page you can view and edit or duplicate existing Checks, as well as adding a new one.
 
 ![Overview of all checks](./checks-overview-page.png)
 
-Clicking a specific Check title will show you the results of that Check for all components.
+Clicking a specific Check title will show you details and results of the Check for all components. Please not that if you select a wider scope of components in entity filter when creating a check, than the scope for Data Source which Check is based on, you will be seeing components without any result as well. In these cases default value will be taken into consideration and result of the check will be calculated based on those.
 
-![Check overview](./overview-check.png)
+![Check result](./check-result.png)
 
 ### Adding a new check
 
@@ -33,6 +33,12 @@ Checks are constructed using[json-rules-engine](https://github.com/CacheControl/
 4 - You can try out your Check with the Dry Run button.
 
 ![Check dry run](./dry-run-check.png)
+
+If you are still uncertain if you want to publish the check, you can save it as a draft an publish it later.
+
+![Check draft](./create-check-draft.png)
+
+Publishing a check based on [Draft Data Source](../data-sources/) will publish that Data Source as well and vice versa.
 
 After you have added the check, make sure to refresh check results so it is taken into calculation from that moment on.
 
