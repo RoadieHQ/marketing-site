@@ -1,10 +1,8 @@
 ---
-title: Checks
+title: Introduction
 publishedDate: '2022-11-15'
 description: Managing Checks.
 ---
-
-## Introduction
 
 A Check is a rule which a service either does or does not satisfy. Checks are defined by evaluating a Fact from a Data Source against a logical operation, such as checking if services have less than 4 Low Severity Issues from Snyk.
 

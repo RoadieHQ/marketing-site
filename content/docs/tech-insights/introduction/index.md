@@ -4,8 +4,6 @@ publishedDate: '2022-11-15'
 description: An introduction about Tech Insights plugin.
 ---
 
-## Introduction
-
 Roadie Tech Insights helps you keep track of all of your software assets and make sure they meet your quality and compliance targets.
 
 Roadie Tech Insights lets you create Scorecards to track what matters to you about your assets in the Backstage catalog. It does this by ingesting data via Data Sources, and then aggregating Checks on that data.

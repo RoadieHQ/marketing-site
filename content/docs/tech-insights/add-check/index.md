@@ -1,10 +1,8 @@
 ---
-title: Add new Check
+title: Adding a new check
 publishedDate: '2023-05-12T21:00:00.0Z'
 description: Add new check.
 ---
-
-## Adding a new check
 
 After navigating to Tech Insights→ Checks page and clicking ‘Add check’ button, you’ll be asked to describe your Check as below:
 

@@ -1,9 +1,8 @@
 ---
-title: Add scorecard to catalog
+title: Add a scorecard to catalog
 publishedDate: '2023-05-12T21:00:00.0Z'
 description: Adding a scorecard to catalog page.
 ---
-## Adding a Scorecard to the Catalog
 
 In order to show a Scorecard in the Catalog Entity page, as shown below, you’ll have to define it from the Tech Insights → Scorecards page.
 

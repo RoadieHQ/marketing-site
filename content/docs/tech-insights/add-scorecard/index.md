@@ -1,10 +1,8 @@
 ---
-title: Add a scorecard
+title: Adding a Scorecard
 publishedDate: '2023-05-12T21:00:00.0Z'
 description: Adding a scorecard.
 ---
-
-## Adding a Scorecard
 
 Once you click the “Add Scorecard” button, you’ll be prompted to fill in the details about the Scorecard, including the Checks you want to include and to which entities to apply it to, as shown below:
 

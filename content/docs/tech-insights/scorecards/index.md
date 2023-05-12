@@ -1,9 +1,8 @@
 ---
-title: Scorecards
+title: Introduction
 publishedDate: '2022-11-15'
 description: Managing Scorecards.
 ---
-## Introduction
 
 Scorecards are collections of multiple Checks, which may come from different Data Sources.
 

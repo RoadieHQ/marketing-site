@@ -1,11 +1,10 @@
 ---
-title: Built-in Data Sources
+title: Using Built-in Data Sources
 publishedDate: '2023-05-12T21:00:00.0Z'
 description: Built-in Data Sources.
 ---
-## Using Built-in Data Sources
 
-Additionally, Roadie includes several (built-in) Data Sources for common vendors such as Datadog, Snyk, PagerDuty, and GitHub. All built-in Data Sources have pre-defined Facts you can use for defining your [Checks](../checks/).
+ Roadie includes several (built-in) Data Sources for common vendors such as Datadog, Snyk, PagerDuty, and GitHub. All built-in Data Sources have pre-defined Facts you can use for defining your [Checks](../checks/).
 
 ### Configuring Built-in Data Sources
 

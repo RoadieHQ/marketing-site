@@ -1,10 +1,8 @@
 ---
-title: Data Source results and details
+title: Overview of the Data Source results and details
 publishedDate: '2023-05-12T21:00:00.0Z'
 description: Overview of data source details and results.
 ---
-
-## Overview of the Data Source results and details
 
 Once you have Data Sources set and running, click on the Data Source title in the Data Sources overview page, in order to access details page.
 
