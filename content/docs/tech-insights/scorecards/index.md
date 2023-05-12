@@ -42,6 +42,10 @@ Within the dialog you select all the checks you want to include. In case you wan
 
 Once you are happy with the created scorecard, save it and you should be able to see it in overview screen.
 
+Same as for the [Data Source](../data-sources/) [Checks](../checks/), you can save a scorecard as a draft until you are completely happy with it and certaing you want to publish it. 
+
+** Note that publishing a draft scorecard will publish all draft Checks and Data Source it is based on.**
+
 ### Adding a Scorecard to the Catalog
 
 In order to show a Scorecard in the Catalog Entity page, as shown below, you’ll have to define it from the Tech Insights → Scorecards page.
