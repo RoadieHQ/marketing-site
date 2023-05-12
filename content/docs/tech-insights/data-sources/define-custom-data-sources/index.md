@@ -34,13 +34,13 @@ Now that you have data, let’s define what Facts interest you. You’ll do this
 
 ![Fields extraction](./field-extraction.png)
 
-4 - Data retention refers to maximum number of items or duration on how long to keep the them for data retention.
+4 - Data retention refers to maximum number of items or duration on how long to keep the them before they are automatically removed from the database.
 
 5 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported. Retrieved YAML files are handled as JSON. Repository directory configuration returns a single value of type Set and the only configurable options are the name and description of the field.  
 
-JSON type of parser uses [JSONPath Plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/) syntax to extract data from JSON, or [JSONata query syntax](https://jsonata.org/) while Regex type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
+JSON type of parser uses  [JSONata query syntax](https://jsonata.org/) syntax to extract data from JSON, alternatively you can also use [JSONPath Plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/) for the same purpose. Regex type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
 
-6 - If you’re using the JSON parser, specify a path from the root of the object. For example _“version”,_ or “_scripts.test”_. If you’re using the Regex parser, specify a valid expression with a capture group if extracting values. Please note the Regex does not need slashes at the start or end.
+6 - If you’re using the JSON parser, specify a path from the root of the object. For example _“version”,_ or “_scripts.test”_. If you’re using the Regex parser, specify a valid expression with a capture group if extracting values. Please note the Regex does not need slashes at the start or the end.
 
 Let's look how we would do it with an example. 
 

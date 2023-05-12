@@ -100,12 +100,15 @@ nav:
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
       - Concepts:
-        - Data Sources: '/docs/tech-insights/data-sources/'
+        - Data Sources:
+          - Introduction: '/docs/tech-insights/data-sources/'
           - Definining custom Data Sources: '/docs/tech-insights/data-sources/define-custom-data-sources/'
-          - Using built-in Data Source: '/docs/tech-insights//data-sources/builtin-data-sources/'
-          - Data Source results and details: '/docs/tech-insights//data-sources/data-source-details/'
-        - Checks: '/docs/tech-insights/checks/'
+          - Using built-in Data Source: '/docs/tech-insights/data-sources/builtin-data-sources/'
+          - Data Source results and details: '/docs/tech-insights/data-sources/data-source-details/'
+        - Checks: 
+          - Introduction: '/docs/tech-insights/checks/'
           - Add check: '/docs/tech-insights/checks/add-check'
-        - Scorecards: '/docs/tech-insights/scorecards/'
+        - Scorecards: 
+          - Introduction: '/docs/tech-insights/scorecards/'
           - Add scorecard: '/docs/tech-insights/scorecards/add-scorecard'
           - Adding scorecard to the catalog: '/docs/tech-insights/scorecards/add-scorecard-to-catalog/'
