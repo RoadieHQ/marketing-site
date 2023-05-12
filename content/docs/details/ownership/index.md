@@ -22,7 +22,7 @@ spec:
     name: finance:international/legal
 ```
 
-### Code Owners
+### Using a Code Owners file
 
 Code Owners is an approach to defining ownership of a repository or section of code by using a file that lives alongside that code. 
 
