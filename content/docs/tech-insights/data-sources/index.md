@@ -40,36 +40,51 @@ Now that you have data, let’s define what Facts interest you. You’ll do this
 
 ![Fields extraction](./field-extraction.png)
 
-4 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported. Retrieved YAML files are handled as JSON. Repository directory configuration returns a single value of type Set and the only configurable options are the name and description of the field.  
+4 - Data retention refers to maximum number of items or duration on how long to keep the them for data retention.
 
-JSON type of parser uses [JSONPath Plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/) syntax to extract data from JSON, while Regex type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
+5 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported. Retrieved YAML files are handled as JSON. Repository directory configuration returns a single value of type Set and the only configurable options are the name and description of the field.  
 
-5 - If you’re using the JSON parser, specify a path from the root of the object. For example _“version”,_ or “_scripts.test”_. If you’re using the Regex parser, specify a valid expression with a capture group if extracting values. Please note the Regex does not need slashes at the start or end.
+JSON type of parser uses [JSONPath Plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/) syntax to extract data from JSON, or [JSONata query syntax](https://jsonata.org/) while Regex type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
 
-Let's look how we would do it with an example. If we want to retrieve specific line from the following result:
+6 - If you’re using the JSON parser, specify a path from the root of the object. For example _“version”,_ or “_scripts.test”_. If you’re using the Regex parser, specify a valid expression with a capture group if extracting values. Please note the Regex does not need slashes at the start or end.
+
+Let's look how we would do it with an example. 
+
+Using **Regex parser type** from the following result:
 
 ![Regex result](./dry-run-yaml-result.png)
 
-If we wanted to retrieve Node version we could write the following Regex:
+Retrieving Node version we could write the following Regex:
 
 ![Field extraction Regex](./field-extraction-regex.png)
 
-6 - Select the type of the parsed value.
+On the other hand, if you were to have following result:
+ ![JSON result](./json-result-type.png)
+ 
+ and wanted to obtain total pages number, we could use the following syntax
+ ![JSONata parser](./fact-parser-jsonata.png)
 
-7 - 'Check facts' button will run dry run upon data source and newly created check and let you know what would be the result if check was being run against entity you have provided as a test entity.
+
+7 - Select the type of the parsed value.
+Here you can select among integer, string, boolean, set and datetime types.
+
+'Check facts' button will run dry run upon data source and newly created data source and let you know what would be the result if data source was being run against entity you have provided as a test entity.
 
 If you wish to add more facts you can do so by clicking ‘Add fact’.
 
-After successfully adding a fact you will be able to select kind and type of services to which data source should apply and save newly created Data source by clicking ‘Save’ button.
+After successfully adding a fact you will be able to select kind and type of services to which data source should apply and publish newly created Data source by clicking ‘Save’ button or save a draft, if you are not ready to publish it yet, using 'Save as draft' button.
 
 ![Data Source Entity Filter](../data-sources/data-source-entity-filter.png)
 
-You should be able to see the created Data Source in the overview screen. Newly created Data Sources have a refresh cycle set to 24hours, but you can modify this value in 'Edit' screen, as well as trigger an update manually from the kebab menu.
+You should be able to see the created Data Source in the overview screen. If you decide to create a draft Data Source, you will need to publish it in order for others to see it. This can be achieved using actions menu. 
+
+![Data Source Publish](../data-sources/publish-data-source.png)
+
+ Newly created Data Sources have a refresh cycle set to 24hours, but you can modify this value in 'Edit' screen, as well as trigger an update manually from the kebab menu.
 
 ![Trigger update](../data-sources/trigger-update.png)
 
 Note that you can’t trigger manual data updates on built-in Data Sources.
-
 
 ### Using Built-in Data Sources
 
