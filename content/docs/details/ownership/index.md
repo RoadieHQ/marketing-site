@@ -28,6 +28,6 @@ Code owners is an approach to defining ownership of an scm repository or section
 
 The CODEOWNERS file can be used to decorate ownership automatically on entities rather than manually defining ownership in the entity spec definition. This is achieved through the CodeOwnersProcessor.
 
-Most major SCMs providers will look for a file at `./CODEOWNERS`, `./docs/CODEOWNERS`, or `./.<scm-name>/CODEOWNERS`. See [Github](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) and [Gitlab](https://docs.gitlab.com/ee/user/project/codeowners/) docs here.
+Most major SCMs will look for a file at `./CODEOWNERS`, `./docs/CODEOWNERS`, or `./.<scm-name>/CODEOWNERS`. See [Github](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) and [Gitlab](https://docs.gitlab.com/ee/user/project/codeowners/) docs here.
 
 This approach is preferable only if your CODEOWNERS file is kept up to date and is accurate. Otherwise it may be better to define ownership in the entity definition so users can know where to go to update it. Codeowners decoration is opaque in Backstage currently so it may be difficult to know where the source of an Entity's ownership is coming from unless you are aware of the CODEOWNERS file.
