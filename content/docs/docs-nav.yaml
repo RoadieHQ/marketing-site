@@ -103,3 +103,5 @@ nav:
         - Data Sources: '/docs/tech-insights/data-sources/'
         - Checks: '/docs/tech-insights/checks/'
         - Scorecards: '/docs/tech-insights/scorecards/'
+      - Tutorials:
+        - Entity best practices: '/docs/tech-insights/entity-best-practices/'
