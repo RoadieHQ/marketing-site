@@ -25,6 +25,7 @@ const NestedTableOfContentsSidebar = ({ tableOfContents, className }) => {
       </SidebarSection>
 
       <SidebarSection>
+        {/* There is a CSS stylesheet that targets this class name */}
         <div
           className="table-of-contents-sidebar"
           dangerouslySetInnerHTML={{ __html: tableOfContents }}
