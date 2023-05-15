@@ -110,4 +110,4 @@ nav:
       - Scorecards: 
         - Introduction: '/docs/tech-insights/scorecards/'
         - Add scorecard: '/docs/tech-insights/add-scorecard'
-        - Adding scorecard to the catalog: '/docs/add-scorecard-to-catalog/'
+        - Adding scorecard to the catalog: '/docs/tech-insights/add-scorecard-to-catalog/'
