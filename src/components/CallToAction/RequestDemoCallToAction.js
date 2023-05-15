@@ -53,7 +53,14 @@ const submitToNetlifyForms = async ({
   return resp;
 };
 
-const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) => {
+const RequestDemoCallToAction = ({
+  onSuccess,
+  location,
+  scmTool,
+  setScmTool,
+  buttonText = 'Request a demo',
+  showProductPrompts = true,
+}) => {
   // Provides a way to automatically populate the email input via the URL.
   const params = new URLSearchParams(location.search);
   const emailFromUrl = decodeURIComponent(params.get('email') || '');
@@ -69,7 +76,6 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
   const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestDemo;
-  const buttonText = 'Request a demo';
 
   const clearForm = () => {
     setName('');
@@ -149,6 +155,7 @@ const RequestDemoCallToAction = ({ onSuccess, location, scmTool, setScmTool }) =
             currentValue={scmTool}
             idPrefix="request-demo-"
             color="primary"
+            showProductPrompts={showProductPrompts}
           />
         </div>
       </div>
