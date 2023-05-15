@@ -66,14 +66,14 @@ If you wish to add more facts you can do so by clicking ‘Add fact’.
 
 After successfully adding a fact you will be able to select kind and type of services to which data source should apply and publish newly created Data source by clicking ‘Save’ button or save a draft, if you are not ready to publish it yet, using 'Save as draft' button.
 
-![Data Source Entity Filter](../data-source-entity-filter.png)
+![Data Source Entity Filter](./data-source-entity-filter.png)
 
 You should be able to see the created Data Source in the overview screen. If you decide to create a draft Data Source, you will need to publish it in order for others to see it. This can be achieved using actions menu. 
 
-![Data Source Publish](../publish-data-source.png)
+![Data Source Publish](./publish-data-source.png)
 
  Newly created Data Sources have a refresh cycle set to 24hours, but you can modify this value in 'Edit' screen, as well as trigger an update manually from the kebab menu.
 
-![Trigger update](../trigger-update.png)
+![Trigger update](./trigger-update.png)
 
 Note that you can’t trigger manual data updates on built-in Data Sources.
