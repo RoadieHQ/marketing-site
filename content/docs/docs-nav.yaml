@@ -83,6 +83,7 @@ nav:
         - Previewing component changes: '/docs/details/previewing-changes/'
         - Troubleshooting the catalog: '/docs/details/troubleshooting-the-catalog/'
         - Validating catalog files: '/docs/details/validator/'
+        - Ownership in Backstage Entities: '/docs/details/ownership/'
       - Testing page configurations: '/docs/details/sandbox-mode/'
       - Working with plugins:
         - Required annotations: '/docs/details/required-annotations/'
