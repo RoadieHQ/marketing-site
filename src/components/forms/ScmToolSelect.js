@@ -12,6 +12,7 @@ export const ScmToolSelect = ({
   idPrefix = '',
   color = 'primary',
   helpText = SCM_SUPPORT_HELP_TEXT,
+  showProductPrompts = true,
 }) => {
   const { accent, border, placeholder, background, text, label: labelStyle } = INPUT_COLORS[color];
 
@@ -44,7 +45,7 @@ export const ScmToolSelect = ({
           </option>
         ))}
       </select>
-      {!isEmpty(helpText) && !isEmpty(currentValue.value) && (
+      {!isEmpty(helpText) && !isEmpty(currentValue.value) && showProductPrompts && (
         <>
           {!currentValue.value.includes('github') && (
             <div className="mt-3">
