@@ -6,7 +6,7 @@ import {
   SitewideHeader,
   SitewideFooter,
 } from 'components';
-import { TableOfContentsSidebar } from 'components/Sidebar';
+import { NestedTableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/legal-notice';
 
 const LegalNotice = ({ data: { notice, site } }) => (
@@ -32,7 +32,7 @@ const LegalNotice = ({ data: { notice, site } }) => (
         />
       </article>
 
-      <TableOfContentsSidebar headings={notice.headings} />
+      <NestedTableOfContentsSidebar tableOfContents={notice.tableOfContents} />
     </main>
 
     <SitewideFooter maxWidth="full" />
@@ -55,10 +55,13 @@ export const pageQuery = graphql`
     notice: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
-      headings(depth: h3) {
-        id
-        value
-      }
+
+      tableOfContents(
+        absolute: false
+        pathToSlugField: "frontmatter.title"
+        maxDepth: 3
+      )
+
       frontmatter {
         description
         title
