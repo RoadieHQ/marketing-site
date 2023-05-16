@@ -9,6 +9,8 @@ const SEO_TITLE = '[Whitepaper] Self-hosted Backstage vs Managed Backstage';
 
 const RequestTrial = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
+  const whitePaper = data.contentfulAsset;
+  const whitePaperUrl = `https://${whitePaper.file.url}`;
 
   const [formSent, setFormSent] = useState(false);
   const [scmTool, setScmTool] = useState(SCM_TOOLS[0]);
@@ -67,9 +69,7 @@ const RequestTrial = ({ data, location }) => {
             <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">
               {!formSent ? (
                 <>
-                  <h3
-                    className="leading-snug text-orange-600 relative z-10 text-center font-bold uppercase text-xl"
-                  >
+                  <h3 className="leading-snug text-orange-600 relative z-10 text-center font-bold uppercase text-xl">
                     Access the whitepaper
                   </h3>
                   <RequestDemoCallToAction
@@ -85,17 +85,19 @@ const RequestTrial = ({ data, location }) => {
                 </>
               ) : (
                 <div className="flex text-center flex-col justify-center align-center h-full">
-                  <Headline
-                    el="h3"
-                    size="small"
-                    className="leading-snug text-orange-600 relative z-10"
-                  >
-                    Download the whitepaper <br />
-                    <ArrowCircleDownIcon className="mx-auto mt-6 mb-12 h-16 w-16 text-primary-600" />
-                  </Headline>
-                  <p className="text-lg">
-                    We've also emailed you the PDF <br /> so you can read it at a later time.
-                  </p>
+                  <a href={whitePaperUrl} target="_blank" rel="noopener noreferrer">
+                    <Headline
+                      el="h3"
+                      size="small"
+                      className="leading-snug text-orange-600 relative z-10"
+                    >
+                      Download the whitepaper <br />
+                      <ArrowCircleDownIcon className="mx-auto mt-6 mb-12 h-16 w-16 text-primary-600" />
+                    </Headline>
+                    <p className="text-lg">
+                      We've also emailed you the PDF <br /> so you can read it at a later time.
+                    </p>
+                  </a>
                 </div>
               )}
             </div>
@@ -124,6 +126,12 @@ export const pageQuery = graphql`
         social {
           twitter
         }
+      }
+    }
+    contentfulAsset(contentful_id: { eq: "1WibvJZWjUCdLznrxt6jSH" }) {
+      title
+      file {
+        url
       }
     }
   }
