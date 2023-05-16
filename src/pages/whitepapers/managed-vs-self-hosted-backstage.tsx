@@ -128,7 +128,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulAsset(contentful_id: { eq: "1WibvJZWjUCdLznrxt6jSH" }) {
+    contentfulAsset(contentful_id: { eq: "w15agbTcw3VAAuatR2WaS" }) {
       title
       file {
         url
