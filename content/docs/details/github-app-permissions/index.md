@@ -19,7 +19,7 @@ These are the repository permissions required:
 | Name              | Access level | Reason required |
 | ----------------- | ------------ | ------- |
 | Contents          | Read         | Used by Backstage to read the `catalog-info.yaml` files it requires to function. |
-| commit statuses.  | Read         | Allows Backstage to read GitHub urls pointing to reasources referenced by commit sha |
+| Commit statuses   | Read         | Allows Backstage to read GitHub urls pointing to reasources referenced by commit sha |
 | Pull requests     | Read         | Required for the GitHub Pull Requests plugin |
 | Actions           | Read         | Enables the Backstage plugin that renders Github workflow actions on the component page. |
 | Metadata          | Read         | This gives Roadie read only access to various pieces of metadata about the GitHub organisation used only in order to enable functionality. This permission is mandatory for all GitHub apps. |
@@ -46,7 +46,7 @@ These are the repository permissions required:
 | ----------------- | ------------ | ------- |
 | Administrator     | Read & Write | Allows the scaffolder feature to create new projects in GitHub |
 | Contents          | Read & Write | Used by Backstage to read the `catalog-info.yaml` files it requires to function, and to open pull requests to create `catalog-info.yaml` files. |
-| commit statuses.  | Read         | Allows Backstage to read GitHub urls pointing to reasources referenced by commit sha |
+| Commit statuses   | Read         | Allows Backstage to read GitHub urls pointing to reasources referenced by commit sha |
 | Pull requests     | Read & Write | Required for the GitHub Pull Requests plugin and to open pull requests to create `catalog-info.yaml` files. |
 | Actions           | Read         | Enables the Backstage plugin that renders Github workflow actions on the component page. |
 | Metadata          | Read         | This gives Roadie read only access to various pieces of metadata about the  GitHub organisation used only in order to enable functionality. This permission is mandatory for all GitHub apps. |
