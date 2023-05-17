@@ -30,7 +30,7 @@ The [Broker](/docs/integrations/broker) is not enabled by default on tenants and
 
 #### Step 1: Configure the Broker in Roadie
 
-The Broker endpoint server is secured by allow listing IP addresses. You need to add your external IP addresses to the allow list in the settings page at `https://<your-tenant>.roadie.so/administration/settings/integrations/broker` so that Roadie can connect to a Broker client running in your infrastructure.
+The Broker server runs on Roadie’s infrastructure and is secured by allow listing the customer’s IP addresses. You need to add your outbound IP addresses to the allow list in the settings page at `https://<your-tenant>.roadie.so/administration/settings/integrations/broker`. That will allow the Broker client (running on your VPC) to establish the connection to the server running on our side. After that connection is established, Roadie can use it to send requests back to Kubernetes.
 
 ℹ️ NB: The IP addresses used by Roadie for requests to your Broker client are [listed here](/docs/details/allowlisting-roadie-traffic/).  
 
