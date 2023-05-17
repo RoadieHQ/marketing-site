@@ -103,7 +103,7 @@ nav:
       - Data Sources:
         - Introduction: '/docs/tech-insights/data-sources/'
         - Definining custom Data Sources: '/docs/tech-insights/define-custom-data-sources/'
-        - Using built-in Data Source: '/docs/tech-insights/builtin-data-sources/'
+        - Using built-in Data Sources: '/docs/tech-insights/builtin-data-sources/'
         - Data Source results and details: '/docs/tech-insights/data-source-details/'
       - Checks: 
         - Introduction: '/docs/tech-insights/checks/'

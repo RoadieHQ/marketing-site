@@ -10,6 +10,39 @@ description: Built-in Data Sources.
 
 Built-in Data Sources use integration configurations from common Backstage plugins and annotations provided by them. You can see configuration instructions for integrations on their respective documentation pages in [the Plugins & Integrations page](/docs/integrations/).
 
+You will find a list of built-in Data Sources, below, with annotations used by them and facts they currently include.
+
+## Datadog Data Source
+ 
+<details>
+<summary> ## Facts
+</summary>
+| Name  | Description  |
+|Slo Count|---|
+|Monitor Count|---|
+
+</details>
+
+Datadog Data Source, slo count, monitor count
+
+
+Dependabot Alerts Data Source, 
+entity metadata,Has Title,Has Description,
+
+
+entity ownership, Has Owner, Has Group Owner, Has Relationships,Owner, System, Depends On,Dependency Of,Consumes Apis, Provides Apis, Subcomponent Of
+
+
+github data source
+
+PagerDuty Analytics Data Source, Mean Assignment Count,Mean Engaged Seconds,Mean Engaged User Count,Mean Seconds To Engage,Mean Seconds To First Ack,Mean Seconds To Mobilize,Mean Seconds To Resolve,Total Business Hour Interruptions,Total Engaged Seconds,Total Escalation Count, Total Incident Count,Total Off Hour Interruptions,Total Sleep Hour Interruptions,Total Snoozed Seconds,Up Time Pct
+
+PagerDuty Service Info Data Source
+
+Snyk Data Source
+
+Techdocs  Has Annotation Backstage Io Techdocs Ref
+
 **Annotations used by built-in data sources**
 
 * **GitHub** and **Dependabot**
