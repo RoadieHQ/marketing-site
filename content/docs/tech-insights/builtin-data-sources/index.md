@@ -67,7 +67,7 @@ Generates fact data from GitHub Dependabot Alerts for the entity.
 
 Generates facts for entities you have loaded into Backstage based on the data defined in their entity YAML.
 
-**Annotations used:** 
+**Annotations used:** None, applicable to entities which are component, domain, system, api, resource our template kind.
  
 <details>
 <summary> <b>Facts</b> </summary>
@@ -96,7 +96,7 @@ Generates facts for entities you have loaded into Backstage based on the data de
 
 Generates facts which indicate the quality of data in the spec.owner field.
 
-**Annotations used:** 
+**Annotations used:** None, applicable to entities which are component, domain, system, api, resource our template kind
  
 <details>
 <summary> <b>Facts</b> </summary>
@@ -212,7 +212,7 @@ Generates fact data about Snyk projects configured for the entity
 
 ### TechDocs Data Source
 
-**Annotations used:** 
+**Annotations used:** None, applicable to entities which are component, domain, system, api, resource our template kind
 
 Generates facts related to the completeness of techdocs configuration for entities
 
