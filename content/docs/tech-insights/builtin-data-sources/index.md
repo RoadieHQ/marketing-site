@@ -14,6 +14,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 
 ### Datadog Data Source
 
+Imports data from Datadog which can be used to create Tech Insights checks.
+
 **Annotations used:** 
  * `datadoghq.com/slo_tag`, for retrieving SLOs 
  * `datadoghq.com/monitor_tags`, for retrieving monitors
@@ -29,6 +31,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 </details>
 
 ### Dependabot Alerts Data Source
+
+Generates fact data from GitHub Dependabot Alerts for the entity.
 
 **Annotations used:** `github.com/project-slug`
  
@@ -61,6 +65,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 
 ### Entity Metadata Data Source
 
+Generates facts for entities you have loaded into Backstage based on the data defined in their entity YAML.
+
 **Annotations used:** 
  
 <details>
@@ -88,6 +94,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 
 ### Entity Ownership Data Source
 
+Generates facts which indicate the quality of data in the spec.owner field.
+
 **Annotations used:** 
  
 <details>
@@ -110,6 +118,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 
 ### GitHub Alerts Data Source
 
+Generates fact data about GitHub for the entity
+
 **Annotations used:** `github.com/project-slug`
  
 <details>
@@ -121,6 +131,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 </details>
 
 ### Pagerduty Analytics Data Source
+
+Retrieves a rolling week-long window of aggregate analytics from PagerDuty. Uses annotation "pagerduty.com/service-id" to identify applicable entities.
 
 **Annotations used:** `pagerduty.com/service-id`
  
@@ -149,6 +161,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 
 ### PagerDuty Service Info Data Source
 
+Retrieves service information from PagerDuty. Uses annotation "pagerduty.com/service-id".
+
 **Annotations used:** `pagerduty.com/service-id`
 
 <details>
@@ -168,6 +182,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 </details>
 
 ### Snyk Data Source
+
+Generates fact data about Snyk projects configured for the entity
 
 **Annotations used:** 
   * `snyk.io/project-ids` 
@@ -197,6 +213,8 @@ You will find a list of built-in Data Sources, below, with annotations used by t
 ### TechDocs Data Source
 
 **Annotations used:** 
+
+Generates facts related to the completeness of techdocs configuration for entities
 
 <details>
 <summary> <b>Facts</b> </summary>
