@@ -128,6 +128,7 @@ Generates fact data about GitHub for the entity
 | Name | Description          |
 | ------- | ------------------ |
 | Amount Of Open Pull Requests | Number of GitHub pull requests configured for this entity.|
+
 </details>
 
 ### Pagerduty Analytics Data Source
