@@ -10,7 +10,7 @@ description: Built-in Data Sources.
 
 Built-in Data Sources use integration configurations from common Backstage plugins and annotations provided by them. You can see configuration instructions for integrations on their respective documentation pages in [the Plugins & Integrations page](/docs/integrations/).
 
-We have built several Data Sources, which you can find explained below, together with annotations used by them and facts they currently include. You can get a list of the facts available on each data source within the app as well. This information can be found on [Data Source results and details page](../data-source-details/).
+We have built several Data Sources, which you can find explained below, together with annotations used by them and facts they currently include. You can get a list of the facts available on each data source within the app as well. You can learn how to access this information within the app on the [Data Source results and details page](../data-source-details/).
 
 This list will probably have better accuracy, since we update facts frequently. 
 
@@ -46,8 +46,10 @@ Generates fact data from GitHub Dependabot Alerts for the entity.
 **Annotations used:** `github.com/project-slug`
  
 #### Authentication
-Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
-`GITHUB TOKEN` [Read more](../../integrations/github-token/)
+Authentication is done via [GitHub App](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/). 
+
+If you have GitHub App installed, access will be granted based on permissions granted for it. In case you haven't installed the GitHub app, we will check for `GITHUB TOKEN` which is  used to authenticate with the GitHub APIs.
 
 <details>
 <summary><b> Facts </b></summary>
@@ -83,8 +85,10 @@ Generates facts for entities you have loaded into Backstage based on the data de
 **Annotations used:** None, applicable to entities which are component, domain, system, api, resource or template kind.
 
 #### Authentication
-Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
-`GITHUB TOKEN` [Read more](../../integrations/github-token/)
+Authentication is done via [GitHub App](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/). 
+
+If you have GitHub App installed, access will be granted based on permissions granted for it. In case you haven't installed the GitHub app, we will check for `GITHUB TOKEN` which is  used to authenticate with the GitHub APIs.
 
 <details>
 <summary> <b>Facts</b> </summary>
@@ -108,6 +112,7 @@ Authentication is done via [GitHub Apps](../../details/github-app-permissions/) 
 | Annotation Keys | The entity annotation keys.|
 | Label Keys | The entity label keys.|
 | Link Urls | Links urls associated with the entity.|
+
 </details>
 
 ### Entity Ownership Data Source
@@ -117,8 +122,10 @@ Generates facts which indicate the quality of data in the spec.owner field.
 **Annotations used:** None, applicable to entities which are component, domain, system, api, resource or template kind
  
 #### Authentication
-Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
-`GITHUB TOKEN` [Read more](../../integrations/github-token/)
+Authentication is done via [GitHub App](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/). 
+
+If you have GitHub App installed, access will be granted based on permissions granted for it. In case you haven't installed the GitHub app, we will check for `GITHUB TOKEN` which is  used to authenticate with the GitHub APIs. 
 
 <details>
 <summary> <b>Facts</b> </summary>
@@ -144,9 +151,11 @@ Generates fact data about GitHub for the entity
 
 **Annotations used:** `github.com/project-slug`
 #### Authentication
-Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
-`GITHUB TOKEN` [Read more](../../integrations/github-token/)
- 
+Authentication is done via [GitHub App](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/). 
+
+If you have GitHub App installed, access will be granted based on permissions granted for it. In case you haven't installed the GitHub app, we will check for `GITHUB TOKEN` which is  used to authenticate with the GitHub APIs.
+
 <details>
 <summary><b> Facts </b> </summary>
 
@@ -254,8 +263,10 @@ Generates facts related to the completeness of techdocs configuration for entiti
 **Annotations used:** None, applicable to entities which are component, domain, system, api, resource or template kind
 
 #### Authentication
-Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
-`GITHUB TOKEN` [Read more](../../integrations/github-token/)
+Authentication is done via [GitHub App](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/). 
+
+If you have GitHub App installed, access will be granted based on permissions granted for it. In case you haven't installed the GitHub app, we will check for `GITHUB TOKEN` which is  used to authenticate with the GitHub APIs
 
 <details>
 <summary> <b>Facts</b> </summary>
@@ -263,6 +274,7 @@ Authentication is done via [GitHub Apps](../../details/github-app-permissions/) 
 | Name | Description          |
 | ------- | ------------------ |
 |  Has Annotation Backstage Io Techdocs Ref | The entity has a TechDocs reference annotation.|
+
 </details>
 
 To use built-in Data Sources, you don’t need to do any set up apart from integration configuration and configuring your entities with matching annotations. Jump to the [Checks](../checks/) section to learn more about Checks.
