@@ -10,16 +10,25 @@ description: Built-in Data Sources.
 
 Built-in Data Sources use integration configurations from common Backstage plugins and annotations provided by them. You can see configuration instructions for integrations on their respective documentation pages in [the Plugins & Integrations page](/docs/integrations/).
 
-You will find a list of built-in Data Sources, below, with annotations used by them and facts they currently include.
+We have built several Data Sources, which you can find explained below, together with annotations used by them and facts they currently include. You can get a list of the facts available on each data source within the app as well. This information can be found on [Data Source results and details page](../data-source-details/).
+
+This list will probably have better accuracy, since we update facts frequently. 
+
+Please note, if you don't find what you are looking for and/or want to create something we haven't provided out of the box, Roadie Tech Insights lets you define custom Data Sources. More information around that can be found [here](../define-custom-data-sources/).
 
 ### Datadog Data Source
 
 Imports data from Datadog which can be used to create Tech Insights checks.
 
 **Annotations used:** 
- * `datadoghq.com/slo_tag`, for retrieving SLOs 
- * `datadoghq.com/monitor_tags`, for retrieving monitors
+ * `datadoghq.com/slo_tag` for retrieving SLOs 
+ * `datadoghq.com/monitor_tags` for retrieving monitors
  
+#### Authentication
+Authentication is done via 
+* `DD_API_TOKEN` [Read more](https://docs.datadoghq.com/api/latest/)
+* `DD_APP_TOKEN` [Read more](https://docs.datadoghq.com/api/latest/)
+
 <details>
 <summary><b> Facts </b></summary>
 
@@ -36,6 +45,10 @@ Generates fact data from GitHub Dependabot Alerts for the entity.
 
 **Annotations used:** `github.com/project-slug`
  
+#### Authentication
+Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/)
+
 <details>
 <summary><b> Facts </b></summary>
  
@@ -68,9 +81,14 @@ Generates fact data from GitHub Dependabot Alerts for the entity.
 Generates facts for entities you have loaded into Backstage based on the data defined in their entity YAML.
 
 **Annotations used:** None, applicable to entities which are component, domain, system, api, resource or template kind.
- 
+
+#### Authentication
+Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/)
+
 <details>
 <summary> <b>Facts</b> </summary>
+
 | Name | Description          |
 | ------- | ------------------ |
 | Has Title  | The entity has a title in metadata.|
@@ -98,6 +116,10 @@ Generates facts which indicate the quality of data in the spec.owner field.
 
 **Annotations used:** None, applicable to entities which are component, domain, system, api, resource or template kind
  
+#### Authentication
+Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/)
+
 <details>
 <summary> <b>Facts</b> </summary>
 
@@ -121,6 +143,9 @@ Generates facts which indicate the quality of data in the spec.owner field.
 Generates fact data about GitHub for the entity
 
 **Annotations used:** `github.com/project-slug`
+#### Authentication
+Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/)
  
 <details>
 <summary><b> Facts </b> </summary>
@@ -136,7 +161,11 @@ Generates fact data about GitHub for the entity
 Retrieves a rolling week-long window of aggregate analytics from PagerDuty. Uses annotation "pagerduty.com/service-id" to identify applicable entities.
 
 **Annotations used:** `pagerduty.com/service-id`
- 
+
+#### Authentication
+Authentication is done via 
+* `PAGERDUTY_TOKEN` [Read more](../../integrations/pagerduty/)
+
 <details>
 <summary> <b>Facts</b> </summary>
 
@@ -165,6 +194,9 @@ Retrieves a rolling week-long window of aggregate analytics from PagerDuty. Uses
 Retrieves service information from PagerDuty. Uses annotation "pagerduty.com/service-id".
 
 **Annotations used:** `pagerduty.com/service-id`
+#### Authentication
+Authentication is done via 
+* `PAGERDUTY_TOKEN` [Read more](../../integrations/pagerduty/)
 
 <details>
 <summary> <b>Facts</b> </summary>
@@ -189,6 +221,10 @@ Generates fact data about Snyk projects configured for the entity
 **Annotations used:** 
   * `snyk.io/project-ids` 
   * `snyk.io/org-name`, if omitted, globally configured Snyk org is used
+
+#### Authentication
+Authentication is done via 
+* `SNYK_TOKEN` [Read more](../../integrations/snyk/)
   
 <details>
 <summary> <b>Facts</b> </summary>
@@ -213,9 +249,13 @@ Generates fact data about Snyk projects configured for the entity
 
 ### TechDocs Data Source
 
+Generates facts related to the completeness of techdocs configuration for entities
+
 **Annotations used:** None, applicable to entities which are component, domain, system, api, resource or template kind
 
-Generates facts related to the completeness of techdocs configuration for entities
+#### Authentication
+Authentication is done via [GitHub Apps](../../details/github-app-permissions/) or
+`GITHUB TOKEN` [Read more](../../integrations/github-token/)
 
 <details>
 <summary> <b>Facts</b> </summary>
