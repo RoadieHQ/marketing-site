@@ -31,6 +31,7 @@
     "gatsby-plugin-feed": "^4.4.0",
     "gatsby-plugin-google-analytics": "^4.4.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-google-gtag": "^5.10.0",
     "gatsby-plugin-google-tagmanager": "^4.4.0",
     "gatsby-plugin-image": "^2.4.0",
     "gatsby-plugin-manifest": "^4.4.0",

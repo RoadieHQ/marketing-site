@@ -221,6 +221,13 @@ module.exports = {
     },
 
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['G-FJ7VX25TGT'],
+      },
+    },
+
+    {
       resolve: '@sentry/gatsby',
       options: {
         // DSNs are safe to keep public.

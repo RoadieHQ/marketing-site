@@ -11,6 +11,12 @@ const trackGoogleAnalyticsEvent = (eventParams) => {
   }
 
   trackCustomEvent(eventParams);
+
+  if (!isUndefined(window.gtag)) {
+    window.gtag('event', 'pageview', {
+      'dimension1': `'${currentlyExecutingGitBranch()}'`,
+    });
+  }
 };
 
 export default trackGoogleAnalyticsEvent;

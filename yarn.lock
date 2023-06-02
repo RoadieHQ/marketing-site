@@ -1288,6 +1288,13 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@babel/runtime@^7.20.13":
+  version "7.22.3"
+  resolved "https://roadiehq.jfrog.io/artifactory/api/npm/roadiehq/@babel/runtime/-/runtime-7.22.3.tgz#0a7fce51d43adbf0f7b517a71f4c3aaca92ebcbb"
+  integrity sha512-XsDuspWKLUsxwCp6r7EhsExHtYfbe5oAGQ19kqngTdCPUoPQzOPdUbD/pB9PJiwb2ptYKQDjSJT3R6dC+EPqfQ==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/template@^7.16.7", "@babel/template@^7.18.10", "@babel/template@^7.20.7":
   version "7.20.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.20.7.tgz#a15090c2839a83b02aa996c0b4994005841fd5a8"
@@ -6761,6 +6768,14 @@ gatsby-plugin-google-fonts@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
   integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
+
+gatsby-plugin-google-gtag@^5.10.0:
+  version "5.10.0"
+  resolved "https://roadiehq.jfrog.io/artifactory/api/npm/roadiehq/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-5.10.0.tgz#94117a6b4e92ece63a25f513f8569f47a9c3d597"
+  integrity sha512-GZRLaDhEV7QtGsyMkO7sdp7grcLiTQm9LNFjPLvGTRfm+H3tM782yVt3BUIBLqpex/ST+Sr0Om//6FJ98Ji3BA==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+    minimatch "^3.1.2"
 
 gatsby-plugin-google-tagmanager@^4.4.0:
   version "4.25.0"
