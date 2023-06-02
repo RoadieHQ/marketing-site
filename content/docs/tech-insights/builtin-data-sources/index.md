@@ -145,7 +145,7 @@ If you have GitHub App installed, access will be granted based on permissions gr
 
 </details>
 
-### GitHub Alerts Data Source
+### GitHub Data Source
 
 Generates fact data about GitHub for the entity
 
