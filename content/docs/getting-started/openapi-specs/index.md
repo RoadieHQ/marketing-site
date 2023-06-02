@@ -76,6 +76,16 @@ The `spec.definition.$openapi` property can point to a remote URL or it can be a
 
 _Note that if you are hosting your OpenAPI specs in GitHub and referencing them with the $openapi property, the link must point to the URL starting with `https://github.com` and not `https://raw.githubusercontent.com`._
 
+
+If you want to connect towards internal specs via [the broker connection](../../integrations/broker/index.md), you can use the protocol `broker://` to do that. For example:
+```
+spec:
+  definition:
+    $text: broker://<my-broker-token>/my-open-api-spec.json
+```
+    
+
+
 ### Step 2: Add the API to Backstage
 
 Once this YAML file is committed and available on GitHub, you can make Roadie Backstage aware of it using the catalog importer.

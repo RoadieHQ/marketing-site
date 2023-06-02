@@ -82,12 +82,14 @@ The broker client is published as an npm package available to be downloaded, ins
 npm install --global snyk-broker
 BROKER_TOKEN=test \ 
 BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+PREFLIGHT_CHECKS_ENABLED=false \
 broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 ```
 
 ```bash
 BROKER_TOKEN=test \ 
 BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+PREFLIGHT_CHECKS_ENABLED=false \
 npx snyk-broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 ```
 
@@ -99,6 +101,7 @@ To provide the accept.json
 ACCEPT=accept.json
 BROKER_TOKEN=test \ 
 BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+PREFLIGHT_CHECKS_ENABLED=false \
 broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 ```
 
