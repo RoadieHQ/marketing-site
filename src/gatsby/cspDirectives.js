@@ -49,7 +49,8 @@ const CSP_IMG_SRC_DIRECTIVES = [
   "'self'",
   'data:',
 
-  'https://www.google-analytics.com',
+  'https://*.google-analytics.com',
+  'https://*.analytics.google.com',
   'https://www.google.com',
   'https://www.google.ie',
 
@@ -143,7 +144,8 @@ const CSP_STYLE_SRC_DIRECTIVES = [
 const CSP_CONNECT_SRC_DIRECTIVES = [
   "'self'",
   'https://*.ingest.sentry.io',
-  'https://www.google-analytics.com',
+  'https://*.google-analytics.com',
+  'https://*.analytics.google.com',
   'https://stats.g.doubleclick.net',
   'ws://*.intercom.io',
   'https://career.recruitee.com',
