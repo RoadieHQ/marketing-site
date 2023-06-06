@@ -21,8 +21,8 @@ Roadie can perform on demand syncs with your organisation. This is useful in a c
 ## Steps
 
 1. Visit the Administration > Settings page and click on GitHub under Integrations
-2. Scroll down to the `Import Existing Components` section.
-   ![Image with the import existing components section](./import-existing-components.webp)
+2. Scroll down to the `Backfill your catalog` section.
+   ![Image with the backfill your catalog section](./import-existing-components.webp)
 3. Press the `IMPORT` button in the bottom left corner.
 4. A modal will open up.
    ![Opened modal](./modal.webp)
