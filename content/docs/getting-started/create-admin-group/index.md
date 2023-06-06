@@ -43,7 +43,7 @@ To automatically designate admins you can use a GitHub Team in your Github Org.
 
 ## Using Azure AD
 
-Follow the [steps laid out here](https://roadie.io/docs/integrations/ms-graph-org-provider/) to configure the AzureAD integration for Roadie. 
+Follow the [steps laid out here](/docs/integrations/ms-graph-org-provider/) to configure the AzureAD integration for Roadie. 
 
 Then create a team called `roadie-backstage-admin` in AzureAD. This is a special name and must be an exact match. Add any admin users you want to this group and make sure it can be discovered by your AzureAD discovery settings. 
 
@@ -52,7 +52,7 @@ Once it is imported by the integration, you should immediately see non-admins be
 
 ## Using Okta
 
-Follow the [steps laid out here](https://roadie.io/docs/integrations/okta/) to configure the Okta integration for Roadie.
+Follow the [steps laid out here](/docs/integrations/okta/) to configure the Okta integration for Roadie.
 
 Then create a team called `roadie-backstage-admin` in Okta. This is a special name and must be an exact match. Add any admin users you want to this group and make sure it is loaded into the catalog.
 
