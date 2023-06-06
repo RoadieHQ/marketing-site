@@ -8,16 +8,17 @@ description: How to designate yourself as an admin of Roadie Backstage.
 
 You often want to allow power users to edit the layouts and install plugins while preventing
 ordinary users from making unintended changes to the application setup. Roadie Backstage has a
-concept of admins to enable this. There are two ways to set this up - via Github teams, or manually.
+concept of admins to enable this. This uses a Group entity in the catalog and users associated with that group are "admins". 
 
-## Prerequisites
+## Setup
 
-For automatic Admin group management you will need to have [installed the Roadie GitHub app](/docs/getting-started/install-github-app/) before proceeding with this step.
+You can set up this group and its associated users manually by defining the group as a normal backstage entity and loading 
+it into the catalog, or automatically using a Group discovery mechanism for Github Teams, AzureAD or Okta. 
 
-For manual management you should be aware of the correct usernames of the users you are assigning to the admin group
 
+## Using GitHub teams
 
-## Automatic admin group discovery with GitHub teams
+⚠️  For automatic Admin group management using Github you will need to have [installed the Roadie GitHub app](/docs/getting-started/install-github-app/) before proceeding with this step.
 
 To automatically designate admins you can use a GitHub Team in your Github Org.
 
@@ -40,9 +41,27 @@ To automatically designate admins you can use a GitHub Team in your Github Org.
 ⚠️  &nbsp;It can take some time for Roadie to refresh the list of teams from GitHub teams once the discovery location is added. If you do not see admin functions immediately, please wait a few minutes and try again.
 
 
-## Manual admin group configuration with group entities (advanced alternative)
+## Using Azure AD
 
-In case you don't want to install the GitHub app or don't want to manage teams via you can also manually add groups into your Roadie instance.
+Follow the [steps laid out here](https://roadie.io/docs/integrations/ms-graph-org-provider/) to configure the AzureAD integration for Roadie. 
+
+Then create a team called `roadie-backstage-admin` in AzureAD. This is a special name and must be an exact match. Add any admin users you want to this group and make sure it can be discovered by your AzureAD discovery settings. 
+
+Once it is imported by the integration, you should immediately see non-admins being prevented from accessing settings pages.
+
+
+## Using Okta
+
+Follow the [steps laid out here](https://roadie.io/docs/integrations/okta/) to configure the Okta integration for Roadie.
+
+Then create a team called `roadie-backstage-admin` in Okta. This is a special name and must be an exact match. Add any admin users you want to this group and make sure it is loaded into the catalog.
+
+Once it is imported by the Okta plugin, you should immediately see non-admins being prevented from accessing settings pages. 
+
+
+## Manual group configuration
+
+In case you don't want to manage admin access via a third party service, you can also manually add groups into your Roadie instance.
 
 1. Make a note of the user entity that is assigned to you on the account page of users. You can find this information from `https://<your-tenant>.roadie.so/Account`.
    * In case you have not logged into GitHub, this is usually the first part of your email address before the `@` symbol.
@@ -84,3 +103,6 @@ Note that the name of the administration group needs to be `roadie-backstage-adm
 
 4. Import both group and user entity definitions to your Roadie instance
    1. Navigate to `https://<your-tenant>.roadie.so/catalog-import` and input the path to the entity definitions file(s).
+
+Once they are all imported, you should immediately see non-admins being prevented from accessing settings pages. 
+
