@@ -17,11 +17,22 @@ Under the hood, Backstage uses the popular [MkDocs library](https://www.mkdocs.o
 
 ### Plugins
 
-We currently include the following MkDocs plugins in our build process:
-- [search](https://www.mkdocs.org/user-guide/configuration/#search)
-- [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin)
-- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions) - include side content without significantly interrupting the document flow
+We currently include the following MkDocs plugins in our build process. Examples of how they can be added to your `mkdocs.yml` files are at the top. 
+
+#### In markdown_extensions section
+i.e. 
+```yaml
+markdown_extensions:
+  - toc
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - markdown_inline_mermaid
+  - markdown_inline_graphviz
+  - mdx_truly_sane_lists
+```
 - [toc](https://python-markdown.github.io/extensions/toc/) - generates a Table of Contents for your doc
+- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions) - include side content without significantly interrupting the document flow
 - [pymdown](https://facelessuser.github.io/pymdown-extensions/) - a collection of the following extensions:
   - caret: Insert superscripts and place text in an <ins> tag.
   - critic: [Critic Markup](https://fletcher.github.io/MultiMarkdown-6/syntax/critic.html) allows you to track changes.
@@ -37,16 +48,34 @@ We currently include the following MkDocs plugins in our build process:
   - tabbed: Allows for tabbed Markdown content.
   - tasklist: Lists with check boxes.
   - tilde: Adds support for inserting subscripts and adds an easy way to place text in a tag.
+- [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid) - generate diagrams from markdown-like text.
 - [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/) - replaces inline Graphviz definitions with inline SVGs or PNGs
-- [plantuml_markdown](https://pypi.org/project/plantuml-markdown/) - specify a PlantUML diagram which will be converted into an image and inserted in the document
 - [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/) - custom indents for nested lists, better linebreaks and paragraphs between lists.
 
+
+#### In plugins section:
+i.e.
+```yaml
+plugins:
+  - monorepo
+  - search
+  - awesome-pages
+  - schema-reader
+  - minify:
+    - minify_css: true
+  - git-revision-date-localized
+  - glightbox
+  - plantuml
+```
+- [mkdocs-monorepo-plugin](https://github.com/backstage/mkdocs-monorepo-plugin)
+- [search](https://www.mkdocs.org/user-guide/configuration/#search)
 - [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) - simplifies configuring page titles and their order
 - [mkdocs-schema-reader](https://pypi.org/project/mkdocs-schema-reader/) - converts JSON Schema files into markdown
 - [mkdocs-minify-plugin](https://github.com/byrnereese/mkdocs-minify-plugin) - minify HTML, JS or CSS files
 - [mkdocs-git-revision-date-localized-plugin](https://github.com/timvink/mkdocs-git-revision-date-localized-plugin) - enables displaying the date of the last git modification of a page
 - [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) - display images, iframes, inline content and videos
-- [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid) - generate diagrams from markdown-like text.
+- [plantuml_markdown](https://pypi.org/project/plantuml-markdown/) - specify a PlantUML diagram which will be converted into an image and inserted in the document
+
 
 ### Theme
 Backstage uses an opinionated theme based on [material-mkdocs](https://github.com/backstage/mkdocs-techdocs-core#theme). 
