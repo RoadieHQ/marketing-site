@@ -19,6 +19,8 @@ import TopNavItem from './TopNavItem';
 import OpenMenuButton from './OpenMenuButton';
 import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
+import TopBanner from 'components/TopBanner';
+import WhitepaperVs from '../TopBanner/Whitepaper';
 
 const features = [
   {
@@ -46,7 +48,6 @@ const features = [
     icon: CheckCircleIcon,
   },
 ];
-
 
 const learn = [
   {
@@ -96,6 +97,9 @@ const SitewideHeader = ({
   <>
     <Popover as={React.Fragment}>
       <>
+        <TopBanner>
+          <WhitepaperVs />
+        </TopBanner>
         <header
           className={classnames(
             ` max-w-${maxWidth} mx-auto px-2 py-6 sm:px-6 xl:py-8 flex justify-between items-center  md:justify-start md:space-x-10`,
