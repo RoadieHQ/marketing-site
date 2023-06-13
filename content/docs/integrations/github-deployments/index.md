@@ -20,7 +20,7 @@ Credit: [Andrew Johnson](https://github.com/anderoo)
 
 ## Adding the Plugin
 
-Ask an Admin to add the `EntityGithubDeploymentsCard` as a new tab in an Entity [using the Dynamic UI editor](/docs/getting-started/configuring-backstage-plugins).
+Ask a Roadie Admin to add the `EntityGithubDeploymentsCard` as a new tab in an Entity [using the Dynamic UI editor](/docs/getting-started/configuring-backstage-plugins).
 
 It should then pick up and display any deployments for the repository listed in the `github.com/project-slug` annotation.
 
