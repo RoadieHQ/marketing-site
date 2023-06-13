@@ -29,7 +29,7 @@ The k8s plugin uses two alternate ways of discovering resources in addition to a
 ## 1. backstage.io/kubernetes-id
 You can add a label with the key `backstage.io/kubernetes-id` to all of your k8s resources relating to an entity and then using the same key as an annotation on your entity.
 
-Additionally, you can use a namespace label `backstage.io/kubernetes-namespace` but this does not relate to the actual namespace the resource is deployed in. It is just another label.  
+Additionally, you can lookup resources by namespace using the `backstage.io/kubernetes-namespace` annotation. 
 
 NB: At a minimum for the frontend plugin to show useful data, a deployment and some related resources need the same matching labels.
 
@@ -50,25 +50,27 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: roadie
   ...
   labels:
     backstage.io/kubernetes-id: backstage-backend
-    backstage.io/kubernetes-namespace: roadie
 spec:
   ...
   template:
     metadata:
+      namespace: roadie
       labels:
         backstage.io/kubernetes-id: backstage-backend
-        backstage.io/kubernetes-namespace: roadie
 ...
 ```
 
 ## 2. backstage.io/kubernetes-labels 
 
-Alternatively you can refer to existing labels on resources using the `backstage.io/kubernetes-labels` annotation on your Backstage entity. 
+Alternatively you can refer to existing labels on resources using the `backstage.io/kubernetes-label-selector` annotation on your Backstage entity, i.e. `'backstage.io/kubernetes-label-selector': 'app=my-app,component=front-end'`. 
 
 The same rule applies, that these labels must be on both deployments and related resources for them to appear in the k8s plugin UI. 
+
+You can again use an additional namespace label `backstage.io/kubernetes-namespace` to narrow down the search by Kubernetes namespace.
 
 
 # Setup
