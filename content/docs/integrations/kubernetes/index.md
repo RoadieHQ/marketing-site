@@ -27,12 +27,13 @@ All three of these can use a Broker service that runs in your infrastructure and
 The k8s plugin uses two alternate ways of discovering resources in addition to a namespace annotation. You can find the Backstage docs on this [here](https://backstage.io/docs/features/kubernetes/configuration/#surfacing-your-kubernetes-components-as-part-of-an-entity).
 
 ## 1. backstage.io/kubernetes-id
-You can add a label with the key `backstage.io/kubernetes-id` to all of your k8s resources relating to an entity and then using the same key as an annotation on your entity.
+You can add a label with the key `backstage.io/kubernetes-id` to all of your k8s resources relating to an entity and then using the same key as an annotation on your entity. It is recommended to use the name of the related Backstage entity for this id but not necessary. 
 
 Additionally, you can lookup resources by namespace using the `backstage.io/kubernetes-namespace` annotation. 
 
 NB: At a minimum for the frontend plugin to show useful data, a deployment and some related resources need the same matching labels.
 
+### Backstage Entity
 ```yaml
 ---
 apiVersion: backstage.io/v1alpha1
@@ -45,6 +46,7 @@ metadata:
 ...
 ```
 
+### k8s Manifest
 ```yaml
 ---
 apiVersion: apps/v1
