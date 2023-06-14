@@ -22,7 +22,62 @@ Roadie supports the following connection setups:
 
 All three of these can use a Broker service that runs in your infrastructure and means that you do not have to expose your cluster via an AWS cross account Role, Google OAUTH App token or Service Account Token.
 
-# Via Broker
+# Kubernetes Annotations
+
+The k8s plugin uses two alternate ways of discovering resources in addition to a namespace annotation. You can find the Backstage docs on this [here](https://backstage.io/docs/features/kubernetes/configuration/#surfacing-your-kubernetes-components-as-part-of-an-entity).
+
+## 1. backstage.io/kubernetes-id
+You can add a label with the key `backstage.io/kubernetes-id` to all of your k8s resources relating to an entity and then using the same key as an annotation on your entity. It is recommended to use the name of the related Backstage entity for this id but not necessary. 
+
+Additionally, you can lookup resources by namespace using the `backstage.io/kubernetes-namespace` annotation. 
+
+NB: At a minimum for the frontend plugin to show useful data, a deployment and some related resources need the same matching labels.
+
+### Backstage Entity
+```yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  ...
+  annotations:
+    backstage.io/kubernetes-id: something
+    backstage.io/kubernetes-namespace: roadie
+...
+```
+
+### k8s Manifest
+```yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: roadie
+  ...
+  labels:
+    backstage.io/kubernetes-id: backstage-backend
+spec:
+  ...
+  template:
+    metadata:
+      namespace: roadie
+      labels:
+        backstage.io/kubernetes-id: backstage-backend
+...
+```
+
+## 2. backstage.io/kubernetes-labels 
+
+Alternatively you can refer to existing labels on resources using the `backstage.io/kubernetes-label-selector` annotation on your Backstage entity, i.e. `'backstage.io/kubernetes-label-selector': 'app=my-app,component=front-end'`. 
+
+The same rule applies, that these labels must be on both deployments and related resources for them to appear in the k8s plugin UI. 
+
+You can again use an additional namespace label `backstage.io/kubernetes-namespace` to narrow down the search by Kubernetes namespace.
+
+
+# Setup
+
+## Via Broker
 
 The [Broker](/docs/integrations/broker) can be used to securely access your Kubernetes clusters regardless of where they are deployed without needing any authentication credentials to be stored or negotiated on Roadie's side. You can learn more about the Broker and its security features here [https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker](https://docs.snyk.io/snyk-admin/snyk-broker#components-of-snyk-broker).
 
@@ -64,7 +119,7 @@ You can also view the connection logs on the broker pod deployed by the above He
 > For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
 
 
-# AWS EKS
+## AWS EKS
 
 In order to use the Kubernetes plugin for AWS, Roadie requires read-only access via a cross account AWS role in your account, or [a Broker connection](#via-broker).
 
@@ -116,7 +171,7 @@ helm install roadie-kubernetes-cluster-access roadie/roadie-kubernetes-cluster-a
 > You will need to annotate your entities (catalog-info.yaml) with the following if you want to see data: ”backstage.io/kubernetes-label-selector: 'app=my-app,component=frontend'”
 > For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
 
-# GCloud GKE
+## GCloud GKE
 
 GKE access can be set up [via the Roadie Broker](#via-broker) or using an OAuth App. 
 
@@ -142,7 +197,7 @@ Follow step 2 from [here](/docs/integrations/google-oauth-client/).
 > For more details please vist [here](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
 
 
-# Via Service Account Token
+## Via Service Account Token
 
 You can integrate with Kubernetes using a standard Kubernetes Service Account.
 
