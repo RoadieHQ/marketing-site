@@ -150,8 +150,9 @@ If you have GitHub App installed, access will be granted based on permissions gr
 Generates fact data about GitHub for the entity
 
 **Annotations used:** `github.com/project-slug`
+
 #### Authentication
-Authentication is done via `GITHUB TOKEN` [Read more](../../integrations/github-token/). 
+Authentication is done via `GITHUB TOKEN`. We use a token, rather than the Roadie GitHub App, because we don't know in advance which GitHub APIs you will need permissions to hit with the data sources you create. When you create and use your own token, you can pick and choose which permissions to give it, depending on your use cases. [Learn how to set a token](../../integrations/github-token/).
 
 If you have GitHub App installed, access will be granted based on permissions granted for it. In case you haven't installed the GitHub app, we will check for `GITHUB TOKEN` which is  used to authenticate with the GitHub APIs.
 
