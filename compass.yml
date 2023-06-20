@@ -1,0 +1,19 @@
+name: marketing-site
+id: ari:cloud:compass:f43f45fb-cba3-4a9c-9900-252ea8fbebcb:component/7453460e-3c07-4170-af5c-503f8199e6fd/dd95ae1d-6037-4d85-9a8d-499a790b862e
+description: A Gatsby app which generates all content on the Roadie marketing site.
+configVersion: 1
+typeId: WEBSITE
+fields:
+  tier: 4
+links:
+  - name: null
+    type: REPOSITORY
+    url: https://github.com/RoadieHQ/marketing-site
+relationships:
+  DEPENDS_ON: []
+labels:
+  - backstage
+  - gatsby
+  - language:javascript
+  - source:github
+customFields: null
