@@ -10,7 +10,9 @@ integrationType: OSS plugin
 
 ## Introduction
 
-The Jenkins plugin can display builds from and their statuses from your Jenkins instance.
+The Jenkins plugin can display build information from a GitHub Organization project in your Jenkins instances. 
+
+ℹ️ NB: Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
 
 ![Jenkins Overview Content](./jenkins_overview.png)
 
