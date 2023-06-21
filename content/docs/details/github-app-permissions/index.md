@@ -23,6 +23,7 @@ These are the repository permissions required:
 | Pull requests     | Read         | Required for the GitHub Pull Requests plugin |
 | Actions           | Read         | Enables the Backstage plugin that renders Github workflow actions on the component page. |
 | Metadata          | Read         | This gives Roadie read only access to various pieces of metadata about the GitHub organisation used only in order to enable functionality. This permission is mandatory for all GitHub apps. |
+| Issues            | Read         | Allow Backstage to get stats on issues
 | Security events   | Read         | This allows Backstage to render a security insights plugin on the component page. |
 | Dependabot alerts | Read         | Required by the GitHub Dependabot plugin. |
 | Workflows         | Read         | Enables the Backstage plugin that renders Github workflow actions on the component page. |
@@ -50,6 +51,7 @@ These are the repository permissions required:
 | Pull requests     | Read & Write | Required for the GitHub Pull Requests plugin and to open pull requests to create `catalog-info.yaml` files. |
 | Actions           | Read         | Enables the Backstage plugin that renders Github workflow actions on the component page. |
 | Metadata          | Read         | This gives Roadie read only access to various pieces of metadata about the  GitHub organisation used only in order to enable functionality. This permission is mandatory for all GitHub apps. |
+| Issues            | Read         | Allow Backstage to get stats on issues
 | Security events   | Read         | This allows Backstage to render a security insights plugin on the component page. |
 | Dependabot alerts | Read         | Required by the GitHub Dependabot plugin. |
 | Workflows         | Read & Write | Allows the scaffolder feature to create workflows for new projects it creates in GitHub |
