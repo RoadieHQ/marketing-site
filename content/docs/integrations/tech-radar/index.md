@@ -134,11 +134,11 @@ With CSV format you can define your tech radar as a comma separated file. The or
 
 An example CSV file would look like this:
 ```csv
-title,ring,quadrant,moved,description,url
-Managed Backstage,use,infrastructure,1,"Zero config approach to Backstage developer portal",https://roadie.io
-React,assess,frameworks,-1,"A JavaScript library for building user interfaces",https://reactjs.org/
-TypeScript,trial,languages,0,"TypeScript is JavaScript with syntax for types.",https://www.typescriptlang.org/
-Scrum,hold,processes,-1,"Framework utilizing an agile mindset for developing, delivering, and sustaining products",https://www.scrum.org/
+title,ring,quadrant,moved,description,url,date
+Managed Backstage,use,infrastructure,1,"Zero config approach to Backstage developer portal",https://roadie.io,2023-06-23
+React,assess,frameworks,-1,"A JavaScript library for building user interfaces",https://reactjs.org/,2022-06-17
+TypeScript,trial,languages,0,"TypeScript is JavaScript with syntax for types.",https://www.typescriptlang.org/,2021-06-08
+Scrum,hold,processes,-1,"Framework utilizing an agile mindset for developing, delivering, and sustaining products",https://www.scrum.org/,2023-02-13
 ```
 
 With this example file the tech radar will be constructed to have rings `use`, `assess`, `trial` and `hold`. Quadrants will be `infrastructure`, `frameworks`, `languages` and `processes`.

@@ -99,6 +99,7 @@ nav:
         - Append file: '/docs/scaffolder/append/'
         - Re-use parameters: '/docs/scaffolder/global-constants/'
         - Edit files: '/docs/scaffolder/edit-file/'
+        - Pre-filling templates via URL params: '/docs/scaffolder/predefined-values-via-url-params/'
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
       - Data Sources:
