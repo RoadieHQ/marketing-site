@@ -89,24 +89,6 @@ gettingStarted:
           ...
         </Grid>
       );
-
-  - intro: Add the EntityPagerDutyCard component to one or more entity page components depending on where you want the PagerDuty UI to appear. For example, display the PagerDuty UI on the existing Overview tab which is rendered for all types of entities.
-    language: typescript
-    code: |
-      // packages/app/src/components/catalog/EntityPage.tsx
-      const overviewContent = (
-        <Grid container spacing={3} alignItems="stretch">
-          ...
-          <EntitySwitch>
-            <EntitySwitch.Case if={isPagerDutyAvailable}>
-              <Grid item md={6}>
-                <EntityPagerDutyCard />
-              </Grid>
-            </EntitySwitch.Case>
-          </EntitySwitch>
-          ...
-        </Grid>
-      );
 ---
 
 
