@@ -63,7 +63,7 @@ In order to write and view changes to docs you will need to install:
 
 ### Step 1: Add the mkdocs configuration file
 
-Create a file called `mkdocs.yml` in the root of a component you want to document in Backstage. Inside that YAML file, add the following content, replacing `{component-name}` with the human name of your component.
+Create a file called `mkdocs.yml` in the root of a component you want to document in Backstage. Inside that YAML file, add the following content, replacing `{component-name}` with the human name of your component. 
 
 ```yaml
 site_name: '{component-name}'
@@ -75,6 +75,8 @@ plugins:
 #markdown_extensions:
 #  - markdown_inline_mermaid
 ```
+
+Note that `techdocs-core` plugin is automatically added to Roadie techdocs build and can be omitted from the plugins list if wanted.
 
 ### Step 2: Add markdown documentation
 
