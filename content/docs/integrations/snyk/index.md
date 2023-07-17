@@ -51,13 +51,15 @@ Click Save.
 
 Wait a few moments for the secret to be applied.
 
-### Step 2: Add the Snyk annotation to a component
+### Step 2: Add the relevant Snyk annotations to a component
 
-Using the Snyk UI, find a Snyk project which you would like to associate with a component in Roadie (see above for retrieving ID.
+To configure the Snyk plugin to target the correct entity, you need to configure few annotations to it.
 
-Copy the name from the Project settings
+The first one is `snyk.io/org-name` which identifies your Snyk organization. 
 
-Edit the `catalog-info.yaml` for the component you wish to associate with this Snyk project and add the `snyk.io/org-name` and `snyk.io/project-ids` annotation.
+Additionally, the Snyk plugin uses `github.com/project-slug` annotation to automatically match projects from GitHub to their corresponding Snyk targets. For cases where it is not possible to use the GitHub, you can also use `snyk.io/target-id` annotation. To find the target id value, you can identify that using dev tools on Snyk page and investigating the returned payload on their project page.
+
+Edit the `catalog-info.yaml` for the component you wish to associate with this Snyk project and add the `github.com/project-slug` and `snyk.io/target-id` annotation.
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
@@ -66,8 +68,9 @@ metadata:
   name: sample-service
   description: Sample service
   annotations:
-    snyk.io/org-name: <Your organization>
-    snyk.io/project-ids: <Your Project ID>
+    snyk.io/org-name: roadie
+    github.com/project-slug: <Your GitHub repository>
+    snyk.io/target-id: <Your Target ID>
 ```
 
 Commit and push this change and Roadie should pick it up within a few minutes.
