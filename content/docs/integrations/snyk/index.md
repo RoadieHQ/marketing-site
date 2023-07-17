@@ -55,7 +55,7 @@ Wait a few moments for the secret to be applied.
 
 To configure the Snyk plugin to target the correct entity, you need to configure few annotations to it.
 
-The first one is `snyk.io/org-name` which identifies your Snyk organization. 
+The first one is `snyk.io/org-id` which identifies your Snyk organization. 
 
 Additionally, the Snyk plugin uses `github.com/project-slug` annotation to automatically match projects from GitHub to their corresponding Snyk targets. For cases where it is not possible to use the GitHub, you can also use `snyk.io/target-id` annotation. To find the target id value, you can identify that using dev tools on Snyk page and investigating the returned payload on their project page.
 
@@ -68,7 +68,7 @@ metadata:
   name: sample-service
   description: Sample service
   annotations:
-    snyk.io/org-name: roadie
+    snyk.io/org-id: <You Snyk organization id>
     github.com/project-slug: <Your GitHub repository>
     snyk.io/target-id: <Your Target ID>
 ```
