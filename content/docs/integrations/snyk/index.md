@@ -17,8 +17,8 @@ In order to use the Backstage Snyk plugin with Roadie, you must securely provide
 To get an API token, you need to sign up for a Snyk account. Within this account, you will need to obtain three things:
 
  * API token
- * Organization Name
- * Project ID
+ * Organization Id
+ * (Optional) Target Id
 
 #### API Token
 
@@ -26,17 +26,15 @@ This can be found by clicking your name in the top right-hand corner and going t
 
 ![API token for Snyk.](./api-token.png)
 
-#### Organization Name
+#### Organization Id
 
 This can be found under the settings page that is visible when you login to Snyk.
 
 ![Organization Name Snyk.](./org.png)
 
-#### Project Id
+#### (Optional) Target Id
 
-This can be found under the Projects tab. It will be used to link snyk projects to backstage.
-
-![Project ID Name Snyk.](./project-id.png)
+Snyk doesn't provide a UI currently to identify Target Ids easily. You find the target ids by inspecting the network requests on the Snyk Projects pages. This value is optional, because Snyk also supports using the `github.com/project-slug` to identify the correct Snyk project. 
 
 
 ### Step 1: Add the token to Roadie
