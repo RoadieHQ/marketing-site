@@ -986,6 +986,40 @@ steps:
 
 The `fs:rename` action does not have any outputs.
 
+
+
+
+
+### `roadiehq:utils:fs:replace`
+
+
+This action replaces found string in files with content defined in input.
+
+
+**Required params:**
+
+- files: Collection of files and their replacing configuration. See structure of collection item below.
+- files[].file: Path to the file to be modified
+- files[].find: A text to be replaced
+- files[].replaceWith: A text to be used to replace above
+
+
+```yaml
+steps:
+  - id: Replace text in file
+    name: Replace
+    action: roadiehq:utils:fs:replace
+    input:
+      files:
+        - file: './file.1'
+          find: 'i_want_to_replace_this'
+          replaceWith: ${{ parameters.templated_text }}
+```
+
+#### Outputs
+
+The `roadiehq:utils:fs:replace` action does not have any outputs.
+
 ### `github:actions:dispatch`
 
 The `github:actions:dispatch` action allows you to trigger the execution of a GitHub action on a repository. The `repoUrl` option is a repo url for GitHub. The `RepoUrlPicker` documented above can generate this value. The `workflowId` can be the workflow id from the GitHub API or you can just use the filename for the workflow file itself. The `branchOrTagName` indicates which commit to run the workflow against.
