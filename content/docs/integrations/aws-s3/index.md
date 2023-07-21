@@ -14,7 +14,7 @@ S3 can be a useful place to store certain resources used by backstage plugins li
 
 This guide describes how to set up access for Roadie to your S3 buckets in your infrastructure and configure it.
 
-To configure autodiscovery of entities from S3 buckets, see documentation about [AWS S3 Autodiscovery.](docs/details/location-management/#aws-s3-autodiscovery)
+To configure autodiscovery of entities from S3 buckets, see documentation about [AWS S3 Autodiscovery.](/docs/details/location-management#aws-s3-autodiscovery)
 
 ##  Step 1: Get the roadie IAM details
 
