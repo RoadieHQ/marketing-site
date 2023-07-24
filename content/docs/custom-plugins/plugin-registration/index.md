@@ -26,7 +26,7 @@ The components registered on the ‘Custom Plugins’ page are immediately avail
 
 5. Update your Roadie instance with UI components available from the plugin
    * To add components you can follow the https://roadie.io/docs/details/updating-the-ui/ documentation.
-   * For development purposes it might be a good idea to use either [Sandbox mode](https://roadie.io/docs/details/sandbox-mode/) (for Page plugin components) or [Preview entities](https://roadie.io/docs/details/previewing-changes/) (for Card/Content components) while developing to have the least effect on other users of the system.
+   * For development purposes it might be a good idea to use either [Sandbox mode](/docs/details/sandbox-mode/) (for Page plugin components) or [Preview entities](/docs/details/previewing-changes/) (for Card/Content components) while developing to have the least effect on other users of the system.
 
 ## Identifying correct values
 
