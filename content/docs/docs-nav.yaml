@@ -63,9 +63,18 @@ nav:
       - Google Cloud Platform: '/docs/integrations/gcp/'
       - Google OAuth client: '/docs/integrations/google-oauth-client/'
   - Custom plugins:
-      - Configuration: '/docs/custom-plugins/configuring/'
-      - Publishing Plugins: '/docs/custom-plugins/artifactory/'
-      - Proxy: '/docs/custom-plugins/proxy/'
+      - Getting Started: '/docs/custom-plugins/'
+      - Developing: '/docs/custom-plugins/developing'
+      - Registering Plugins: '/docs/custom-plugins/plugin-registration'
+      - Deploying: '/docs/custom-plugins/deploying'
+      - Example Solutions: '/docs/custom-plugins/examples'
+      - Securing Connections:
+          - Proxy: '/docs/custom-plugins/connectivity/proxy'
+          - Broker: '/docs/custom-plugins/connectivity/broker'
+      - Legacy Method:
+        - Configuration: '/docs/custom-plugins/legacy/configuring/'
+        - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
+        - Proxy: '/docs/custom-plugins/legacy/proxy/'
   - In-depth:
       - API docs:
         - Custom renderers: '/docs/details/custom-api-docs-renderers/'

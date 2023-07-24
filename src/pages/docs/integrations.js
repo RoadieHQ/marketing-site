@@ -49,7 +49,7 @@ const Header = ({ count }) => (
       <Headline size="small">Plugins & Integrations</Headline>
     </div>
     <Lead>Roadie supports {count} plugins and integrations out of the box. If we&apos;re missing something, <TextLink to="/docs/details/requesting-plugins/" color="primary">request it</TextLink>.</Lead>
-    <Lead>Growth plan customers can <TextLink color="primary" to="/docs/custom-plugins/artifactory/">write their own plugins</TextLink>.</Lead>
+    <Lead>Growth plan customers can <TextLink color="primary" to="/docs/custom-plugins/">write their own plugins</TextLink>.</Lead>
   </header>
 );
 
@@ -113,7 +113,7 @@ const CUSTOM_PLUGIN_PLACEHOLDER = {
     },
   },
   fields: {
-    slug: '/docs/custom-plugins/artifactory/',
+    slug: '/docs/custom-plugins/',
   },
   dashed: true,
 };

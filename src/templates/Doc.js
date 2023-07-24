@@ -31,7 +31,7 @@ const Doc = ({
         </div>
 
         <section
-          className="prose prose-primary"
+          className="prose prose-primary max-w-3xl"
           dangerouslySetInnerHTML={{ __html: doc.html }}
         />
 

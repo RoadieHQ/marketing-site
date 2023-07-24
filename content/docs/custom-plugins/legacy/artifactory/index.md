@@ -4,6 +4,13 @@ publishedDate: '2021-03-17T12:11:00.0Z'
 description: How to add a custom Backstage plugin to Roadie
 ---
 
+---
+
+⚠️ We are soon deprecating legacy custom plugins pipeline. Take a look [at the documentation for current custom plugin method](/docs/custom-plugins/) instead
+
+---
+
+
 ## Introduction
 
 Custom plugins are a feature of the [Growth Plan](/pricing/).
