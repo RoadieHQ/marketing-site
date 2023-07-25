@@ -1,6 +1,6 @@
 ---
 title: Using the Broker with Custom Plugins
-publishedDate: '2022-07-24T18:27:00.0Z'
+publishedDate: '2023-07-24T18:27:00.0Z'
 description: How to use the Roadie Broker connection to connect to your internal infrastructure with Custom Plugins
 ---
 
