@@ -1,6 +1,6 @@
 ---
 title: Getting started with Custom Plugins
-publishedDate: '2021-06-17T12:11:00.0Z'
+publishedDate: '2023-07-25T17:11:00.0Z'
 description: Examples how to develop and register a custom plugin to Roadie
 ---
 
