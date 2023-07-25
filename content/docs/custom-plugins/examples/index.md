@@ -48,7 +48,7 @@ import { StructuredMetadataTable } from "@backstage/core-components";
 import { useEntity } from "@backstage/plugin-catalog-react";
 
 export const MyPluginContentComponent = () => {
-    const { entity } = useEntity()
+    const { entity } = useEntity();
     return <StructuredMetadataTable metadata={entity} />;
 }
 ```
@@ -59,7 +59,7 @@ The code above would produce a view like this:![A test entity view displaying so
 
 `useApi` is a generic hook which provides the ability to retrieve implementations of already registered APIs in the frontend application. See below for actual APIs available in Roadie application that you can use to your advantage when developing a plugin.  
 
-* **`discoveryApi`**
+#### discoveryApi
 
 `discoveryApi` provides connectivity to the Roadie backend APIs. The API can be used to identify the correct endpoints to call when, for example, integrating with third party services via the Roadie proxy.
 
@@ -71,8 +71,8 @@ import { StructuredMetadataTable } from "@backstage/core-components";
 
 export const MyComponent = () => {
    const discoveryApi = useApi(discoveryApiRef);
-   const {entity} = useEntity()
-   const [myEndPointInfo, setMyEndpointInfo] = useState<object | undefined>()
+   const { entity } = useEntity();
+   const [myEndPointInfo, setMyEndpointInfo] = useState<object | undefined>();
 
    const btnClicked = useCallback(async () => {
       const proxyUrl = await discoveryApi.getBaseUrl('proxy');
@@ -89,8 +89,7 @@ export const MyComponent = () => {
 };
 ```
 
-
-* **`identityApi`**
+#### identityApi
 
 `identifyApi` provides information about the currently logged in user. This API can be used to target individuals or decorate requests with relevant user information.
 
@@ -103,8 +102,8 @@ import { StructuredMetadataTable } from "@backstage/core-components";
 export const MyPluginContentComponent = () => {
    const identityApi = useApi(identityApiRef);
 
-   const [userInfo, setUserInfo] = useState<BackstageUserIdentity | undefined>()
-   const [profileInfo, setProfileInfo] = useState<ProfileInfo | undefined>()   
+   const [userInfo, setUserInfo] = useState<BackstageUserIdentity | undefined>();
+   const [profileInfo, setProfileInfo] = useState<ProfileInfo | undefined>();
 
    useAsync(async () => {
       const userInfo = await identityApi.getBackstageIdentity();
@@ -121,7 +120,7 @@ export const MyPluginContentComponent = () => {
 ```
 ![A dump of information showing currently logged in user](user_info_identityApi_dump.png)
 
-* **`errorApi`**
+#### errorApi
 
 `errorApi` provides the ability to inform the user about errorenous states or actions. This API is a thin wrapper around the more generic `alertApi` which can be used for other kinds of notifications.
 
@@ -141,7 +140,7 @@ export const MyComponent = () => {
 };
 ```
 
-* **`alertApi`**
+#### alertApi
 
 `alertApi` provides the possibility to display notifications to the user in a form of a UI toast message. These notifications can be of multiple different variants, like `error`, `info`, `warning`.
 
@@ -165,7 +164,7 @@ export const MyComponent = () => {
 };
 ```
 
-* **`analyticsApi`**
+#### analyticsApi
 
 `analyticsApi` can be used to trigger analytics events to the application. These events are stored by Roadie in our analytics provider. If you need access to see further visibility of your analytics triggered events, contact Roadie via usual support channels.
 
@@ -198,7 +197,7 @@ export const MyComponent = () => {
 
 ### Proxying request via the backend
 
-The simplest way to store and use credentials to third party endpoints is to use the proxy within your Roadie application. You can configure proxies to target any endpoints available on the internet and you can assign Roadie managed secrets to authenticate against these endpoints when your custom plugin contacts them. To have a closer look how proxies work and how you can use them to your advantage, take a look at the [more in-depth documentation on proxies](/docs/custom-plugins/connectivity/proxy/)
+The simplest way to store and use credentials to third party endpoints is to use the proxy within your Roadie application. You can configure proxies to target any endpoints available on the internet, and you can assign Roadie managed secrets to authenticate against these endpoints when your custom plugin contacts them. To have a closer look how proxies work and how you can use them to your advantage, take a look at the [more in-depth documentation on proxies](/docs/custom-plugins/connectivity/proxy/)
 
 ### Proxying requests via the Broker
 
