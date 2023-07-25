@@ -1,7 +1,7 @@
 ---
 title: Configuring Proxies for Custom Plugins
 publishedDate: '2022-02-03T10:27:00.0Z'
-description: How to configure a custom proxy to identify the Backstage user for your custom plugin or scaffolder action.
+description: How to configure a custom proxy to identify the Roadie user for your custom plugin or scaffolder action.
 ---
 
 ## Introduction
@@ -10,9 +10,9 @@ Roadie provides two kinds of proxy services to enable both the UI frontend plugi
 
 ## Standard Proxy
 
-Roadie installs the proxy plugin in Backstage and provides administrators the ability to configure custom proxied services from within the Backstage UI.
+Roadie installs the proxy plugin in Roadie and provides administrators the ability to configure custom proxied services from within the Roadie UI.
 
-An administrator of Backstage will configure the proxy with credentials so that when the proxy is called by a UI plugin or a Scaffolder action, the authentication header will be handled in the proxy plugin.
+An administrator of Roadie will configure the proxy with credentials so that when the proxy is called by a UI plugin or a Scaffolder action, the authentication header will be handled in the proxy plugin.
 
 ![proxy.png](proxy.png)
 ### Setup
@@ -36,7 +36,7 @@ Next visit the secrets configuration page `/administration/settings/secrets`. Cl
 
 #### Step 3 Calling the API
 
-You can call this API from the Backstage window context in a browser via a Custom Backstage plugin:
+You can call this API from the Roadie window context in a browser via a Custom Roadie plugin:
 
 ```javascript
 fetch('/api/proxy/my-api')
@@ -65,7 +65,7 @@ Click save and Apply and Restart and wait for the restart. It can take up to abo
 
 #### Step 2 Calling the API
 
-You can call this API from the Backstage window context in a browser via a Custom Backstage plugin:
+You can call this API from the Roadie window context in a browser via a Custom Roadie plugin:
 
 ```javascript
 fetch('/api/authenticated-proxy/my-api')
@@ -73,7 +73,7 @@ fetch('/api/authenticated-proxy/my-api')
 
 #### Step 3 Authenticate the Request
 
-The API configured in the Authenticated proxy target will receive a token in the authorization header containing an access token. This token can be sent to the roadie Authentication system to retrieve an id representing the logged in Backstage user.
+The API configured in the Authenticated proxy target will receive a token in the authorization header containing an access token. This token can be sent to the Roadie Authentication system to retrieve an id representing the logged in Roadie user.
 
 ```bash
 curl --request GET \
