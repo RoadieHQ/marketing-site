@@ -114,3 +114,5 @@ nav:
         - Introduction: '/docs/tech-insights/scorecards/'
         - Add scorecard: '/docs/tech-insights/add-scorecard'
         - Adding scorecard to the catalog: '/docs/tech-insights/add-scorecard-to-catalog/'
+      - Recipes:
+        - Track a Docker base image migration: '/docs/tech-insights/track-docker-base-image-migration/'
