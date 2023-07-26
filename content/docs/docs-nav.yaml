@@ -90,10 +90,11 @@ nav:
   - Custom plugins:
       - Overview: '/docs/custom-plugins/overview'
       - Getting Started: '/docs/custom-plugins/getting-started/'
-      - Developing: '/docs/custom-plugins/developing'
-      - Registering Plugins: '/docs/custom-plugins/plugin-registration'
-      - Deploying: '/docs/custom-plugins/deploying'
-      - Securing Connections:
+      - Developing: '/docs/custom-plugins/developing/'
+      - Registering Plugins: '/docs/custom-plugins/plugin-registration/'
+      - Deploying: '/docs/custom-plugins/deploying/'
+      - Available APIs: '/docs/custom-plugins/available-apis/'
+      - Connecting Back to Your Network:
           - Proxy: '/docs/custom-plugins/connectivity/proxy'
           - Broker: '/docs/custom-plugins/connectivity/broker'
       - Legacy Method:
