@@ -4,7 +4,7 @@ publishedDate: '2023-07-25T17:11:00.0Z'
 description: Examples how to develop and register a custom plugin to Roadie
 ---
 
-This document will outline step-by-step instructions on how to develop, build, deploy and register custom plugins to your Roadie instance. We will go through few different approaches targeted to teams starting from scratch or teams that have already built plugins and want to move them to use the Roadie custom plugin system
+This document will outline step-by-step instructions on how to develop, build, deploy and register custom plugins to your Roadie instance. We will go through few different approaches targeted to teams starting from scratch or teams that have already built plugins and want to move them to use the Roadie custom plugin system.
 
 ## Using the scaffolded monorepo structure
 
