@@ -127,7 +127,7 @@ Either navigate to the directory where your already existing plugins are, or cre
 
 #### 2. Initialize a new Backstage plugin using the Backstage CLI
 
-Navigate to the directory you created and run `npx @backstage/cli new plugin`. This command will install Backstage CLI and generate a new plugin. It may take some time (2-5 minutes) depending on your internet connection speed. The tool will ask you few questions, pick a 'Backstage plugin' and name your plugin how you want. 
+Navigate to the directory you created and run `npx @backstage/cli new plugin`. This command will install [Backstage CLI](https://backstage.io/docs/local-dev/cli-commands/) and generate a new plugin. It may take some time (2-5 minutes) depending on your internet connection speed. The tool will ask you few questions, pick a 'Backstage plugin' and name your plugin how you want. 
 
 ![creating_a_backstage_plugin.gif](creating_a_backstage_plugin.gif)
 

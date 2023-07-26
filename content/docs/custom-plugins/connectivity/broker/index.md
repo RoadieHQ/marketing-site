@@ -114,7 +114,14 @@ export const ExampleFetchComponent = () => {
 };
 ```
 
-We'll spin up a development server of my plugin bundle and register the plugin and it's components to our Roadie instance. If you don't know how to do this, take a look at our [examples how to get started](/docs/custom-plugins/getting-started/#4-develop-your-plugin). 
+Within this simple component we are using the built-in `useApi` hook to identify two different APIs to use within our plugin, namely `discoveryApi` and `errorApi`. DiscoveryApi gives us the ability to discover needed Roadie endpoints, the job of the errorApi is to display errors. Take a closer looks at what APIs are available and their usage examples in the [available APIs page](/docs/custom-plugins/available-apis).
+
+In this case the important bits from the above code snippet can be found from within the `useAsync` hook. We are using the `discoveryApi` to identify a Roadie endpoint called `proxy`, and we are enhancing that proxyUrl with a suffix `broker` as well as the broker token we defined as an environment variable when we started our Broker client. 
+
+Using that constructed URL, we fire off a fetch request and cross our fingers. It should hit our broker client endpoint running on our local machine once the plugin is running on our Roadie instance. 
+
+
+We'll spin up a development server of the plugin bundle and register the plugin and its components to our Roadie instance. If you don't know how to do this, take a look at our [examples how to get started](/docs/custom-plugins/getting-started/#4-develop-your-plugin). 
 
 
 Because we are still experimenting, it is better to register our `Card` component to a preview entity. This way we don't bother other users with a potentially broken plugin while we are still working on it. Navigate to `Tools` -> `Preview Entities` and construct a new entity that has the annotation that you are expecting to use with the plugin. In our case I have decided to call the annotation `roadie.io/artifactory-item`.
@@ -127,16 +134,16 @@ The plugin is already starting to make requests through the proxy, to the broker
 
 ![first_broker_response](first_broker_response.png)
 
-Unfortunately the response says some like `blocked` and look errorenous. That means that it is time to modify our Broker accept configuration to match the actual URLs we want to reach. 
+Unfortunately the response says something like `blocked` and looks errorenous. That means that it is time to modify our Broker accept configuration to match the actual URLs we want to reach. 
 
 
 ## Configuring the broker to reach our wanted endpoints
 
 Since our plugin is attempting to retrieve information from JFrog Artifactory, we need to configure our broker client to successfully be able to route traffic to the correct destination. This happens by modifying the `accept.json` file to match what we want. We are attempting to retrieve version numbers of our released package, so we have a URL in mind that we eventually want to construct. That URL is `https://<our-artifactory-url>/artifactory/api/storage/roadiehq-local/%40roadiehq/authx/-/%40roadiehq`. 
 
-We know that the pattern for all of our packages follows the same structure, and the variable within this demo is the `authx`, indicating the package name. So we can modify our broker configuration to direct traffic to the correct place with the following `accept.json` file.
+We know that the pattern for all of our packages follows the same structure, and the variable within this demo is the `authx`, indicating the package name. So we can modify our broker configuration to direct traffic to the correct place using this URL in our `accept.json` file.
 
-While doing that we will also add authentication headers reference to the Broker client configuration file, allowing us to authenticate against Artifactory. Note that these authentication credentials are stored on the client side, they are never visible to Roadie instance or its users.
+While doing that we will also add authentication headers placeholders to the Broker client configuration file, allowing us to authenticate against Artifactory. Note that these authentication credentials are stored on the client side, they are never visible to Roadie instance or its users.
 
 Our modified `accept.json` file looks like the following:
 
@@ -167,12 +174,12 @@ Our modified `accept.json` file looks like the following:
 
 We have modified the path to accept a wildcard called `:package`, modified the origin to point to our Artifactory URL, and added an authentication scheme that matches Artifactory REST API expected method.
 
-Note that URL defined as the origin doesn't quite add up to the final URL we are after. Eventually we want to construct the URL from the origin URL defined in here, and the annotation we have defined in the entity. We have now added a hardcoded ending to the `path` we are expecting, ideally an alternative approach to construct a more suitable and easily findable URL would be used. For demo purposes, we can go with this.
+Note that URL defined as the origin doesn't quite add up to the final URL we are after. Eventually we want to construct the URL using the origin from our `accept.json`, and the annotation we have defined in the entity. For now we have now added a hardcoded ending to the `path`, ideally an alternative approach to construct a more suitable and easily findable URL would be used. For demo purposes, we can go with this.
 
 With this `accept.json` ready to go, we can set up two additional environment variables `USERNAME` and `PASSWORD` and spin up our broker client again.
 
 
-## Modifying our plugin to conform new URL pattern
+## Modifying our plugin to conform the new URL pattern
 
 Now we should be having a Broker client correctly directing our traffic to our Artifactory server, so we can focus on plugin development. First thing to do is to match the URL we are using with the URL defined in the `path` property of our `accept.json` Broker client configuration file. 
 
@@ -226,7 +233,7 @@ export interface Child {
 
 We copy this type definition to our plugin component as well as modify our `fetch` response to match that type. With these modifications we can easily get help from TypeScript to extract the correct values from the response, in order to display them prettily on the screen for the user.
 
-## Making the plugin it pretty and useful
+## Making the plugin pretty and useful
 
 The next steps we want to take is to identify the values we want to display on the screen. For this demo we choose to show the name of the package (though it will be redundant), the version of the downloadable item, and a download link so our Roadie users can click a link and download the artifact. We want to display all of this information in a table. 
 
@@ -240,7 +247,7 @@ type PackageVersionEntry = {
 };
 ```
 
-After we have defined our type, we modify our `useAsync` hook to respond with a data structure that matches our wanted type:
+After we have defined our type, we modify our `useAsync` hook to respond with a data structure that matches our wanted type. We are mapping over the response and molding it to match the type we defined above. This mapped response will be the one we are going to display on the table.
 
 ```tsx
 const {
@@ -282,7 +289,11 @@ And finally we configure our Table (we will use a table component from `@backsta
     {
         title: "Download Link",
         field: "link",
-        render: (row) => <Link to={row.link}>Download</Link>,
+        render: (row) => {
+            // We modify the link to drop `/api/storage` from the path which automatically redirects us to a downloadable item
+            const downloadLink = row.link.replace("/api/storage", "");
+            return <Link to={downloadLink}>Download</Link>;
+        },
     },
 ];
 ```
@@ -430,4 +441,4 @@ We have constructed a custom plugin for Roadie which uses a secure channel to ta
 
 To deploy a custom plugin, it is recommended to take a look at the deployment documentation in here: [Deploying Custom Plugins](/docs/custom-plugins/deploying/)
 
-To deploy a broker client to be run on your internal infrastructure, likely the easiest way is to take a look at the existing Dockerfiles that Roadie provides for other plugin integration [in here](https://github.com/RoadieHQ/roadie-agent/tree/main/dockerfiles) and model your own file based on those. Alternatively, the broker client in the end is just a node.js command line application, so any VPS with node.js installed can easily run it natively.  
+To deploy a broker client to be run on your internal infrastructure, likely the easiest way is to take a look at the existing Dockerfiles that Roadie provides for other plugin integrations [in here](https://github.com/RoadieHQ/roadie-agent/tree/main/dockerfiles) and model your own file based on those. Alternatively, the broker client in the end is just a `node.js` command line application, so any VPS with node.js installed can easily run it natively.  

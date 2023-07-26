@@ -28,7 +28,7 @@ export const DOCS_LAYOUTS = [
   {
     tabLabel: 'Custom Plugins',
     startPath: '/docs/custom-plugins/getting-started/',
-    isActiveMatch: '\/docs\/custom-plugins/',
+    isActiveMatch: '/docs/custom-plugins/',
     sidebarNavItemGroups: [sidebar.nav[4]],
   },
   {
