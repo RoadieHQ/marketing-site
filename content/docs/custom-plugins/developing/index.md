@@ -10,7 +10,7 @@ Developing plugins to Roadie application can be achieved using a node.js tool ca
 
 Additionally, Roadie provides a [Scaffolder Template](https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/roadie-plugin/template.yaml) which can be used to initialize a monorepo structure Roadie has found useful when developing and building these plugins. The Scaffolder template provides an entry point to create a monorepo which can host the custom plugin code. This can be used as the first step to Roadie plugin development and can be built on by creating subsequent plugins using the same patterns within the same monorepo.
 
-This page outlines the technicalities behind Roadie CLI. If you want to see step-by-step examples how to use the tool, take a look at [the dedicated examples page.](/docs/custom-plugins/examples/)
+This page outlines the technicalities behind Roadie CLI. If you want to see step-by-step examples how to use the tool, take a look at [the getting started page.](/docs/custom-plugins/getting-started/)
 
 
 ## Development process
