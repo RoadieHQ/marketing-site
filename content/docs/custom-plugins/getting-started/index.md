@@ -8,7 +8,9 @@ This document will outline step-by-step instructions on how to develop, build, d
 
 ## Using the scaffolded monorepo structure
 
-Using the scaffolder template provided by Roadie is a good way to get started developing plugins for Roadie application. The template creates a new GitHub repository with all the needed commands and dependencies. It also includes an example plugin with few components, which are displaying possible approaches to use wider Backstage and Roadie features within your plugins. 
+Using the scaffolder template provided by Roadie is a good way to get started developing plugins for Roadie application. The template creates a new GitHub repository with all the needed commands and dependencies. It also includes an example plugin with few components, which are displaying possible approaches to use wider Backstage and Roadie features within your plugins.
+
+An instructional video of this same process can be found from the bottom of the section.
 
 #### 1. Register the Roadie Plugins monorepo scaffolder template into your application
 
@@ -83,7 +85,7 @@ After we have clicked save, the plugin is ready to be used in the application.
 
 #### 6. Configure your plugin component to be used
 
-The plugin is now registered from your `localhost` and can be added to the application UI using the instruction defined in the [Updating the UI documentation](https://roadie.io/docs/details/updating-the-ui/). While you can use the standard page, card or content components served from localhost in the main application side, that might not be the best user experience for other users of your Roadie instance. The plugin served from localhost is only visible to you!
+The plugin is now registered from your `localhost` and can be added to the application UI using the instruction defined in the [Updating the UI documentation](/docs/details/updating-the-ui/). While you can use the standard page, card or content components served from localhost in the main application side, that might not be the best user experience for other users of your Roadie instance. The plugin served from localhost is only visible to you!
 
 We will set up the `Content` component type in this case by using our [preview entities](/docs/details/previewing-changes/) functionality within the app. This way we can develop it further in peace before [deploying a production ready version of it](/docs/custom-plugins/deploying/).
 
@@ -108,6 +110,11 @@ When we click save, we should be seeing our newly developed plugin in our new ta
 
 ℹ️ &nbsp; Plugin registration can only happen one at a time from a single URL. When developing locally it is useful to use different ports of the local dev server (one dev on `localhost:7046`, another one on `localhost:7046`). When using production ready, deployed plugins, the URL should be prefixed with different paths
 
+#### Demo 
+
+You can see a demo of this approach in a quick video below.
+
+`vimeo: https://vimeo.com/848718422`
 
 ## Using the Roadie CLI directly
 
