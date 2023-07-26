@@ -84,7 +84,7 @@ When building the plugin for deployment, the most difficult step is usually iden
 * You should replace the `<my-tenant>` block with your tenant name. You can find this from your roadie URL. E.g. `https://demo.roadie.so` -> Tenant name is `demo` 
 * The ending (like `my_custom_plugin` above) defines the actual root of the plugin and is usually named after the plugin itself.
 
-Usually you can identify the value of the host by looking at the output when running Roadie CLI in development mode. The default setting for the produced output folder will be the same as the `scope` value that Roadie CLI outputs.
+Usually you can identify the value of the host by looking at the output when running Roadie CLI in development mode. The default setting for the produced plugin root location will be the same as the `scope` value that Roadie CLI outputs.
 
 If you are hosting the plugin yourself, the URL used in the location argument should match the location where the plugin is reachable from. 
 
@@ -93,7 +93,7 @@ If you are hosting the plugin yourself, the URL used in the location argument sh
 ## Hosting your plugin yourself
 
 ### Hosting Solutions
-Roadie CLI creates bundled static assets containing JavaScript (JS) and CSS files that can be deployed to various hosting solutions. Some popular options include:
+Roadie CLI creates bundled static assets containing JS and CSS files that can be deployed to various hosting solutions. Some popular options include:
 - Netlify
 - GitHub Pages
 - GitLab Pages
