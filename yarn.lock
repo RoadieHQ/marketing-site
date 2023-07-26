@@ -7417,7 +7417,7 @@ get-symbol-description@^1.0.0:
 
 get-video-id@^3.6.4:
   version "3.6.5"
-  resolved "https://registry.yarnpkg.com/roadiehq/get-video-id/-/get-video-id-3.6.5.tgz#a7bfa1e8602557f2fcbed164d7005fdaa352d572"
+  resolved "https://registry.yarnpkg.com/get-video-id/-/get-video-id-3.6.5.tgz#a7bfa1e8602557f2fcbed164d7005fdaa352d572"
   integrity sha512-9RPHSQANIeGW5rU3CjWdm1zi+wUHbBWX+m4m+dqQAavrZ9p1P1J7AbxGvVEEHRyGfGrmMf5PqiRWYMyfqM+QYA==
 
 getos@^3.2.1:
