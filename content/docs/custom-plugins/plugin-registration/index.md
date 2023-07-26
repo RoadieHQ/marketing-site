@@ -25,7 +25,7 @@ The components registered on the ‘Custom Plugins’ page are immediately avail
 ![A Form showing Roadie Custom Plugins registration](plugin_registration.png)
 
 5. Update your Roadie instance with UI components available from the plugin
-   * To add components you can follow the https://roadie.io/docs/details/updating-the-ui/ documentation.
+   * To add components you can follow the documentation [on how to update the UI](/docs/details/updating-the-ui/).
    * For development purposes it might be a good idea to use either [Sandbox mode](/docs/details/sandbox-mode/) (for Page plugin components) or [Preview entities](/docs/details/previewing-changes/) (for Card/Content components) while developing to have the least effect on other users of the system.
 
 ## Identifying correct values
@@ -34,10 +34,10 @@ Roadie CLI provides generated instructions on which values a particular build is
 Example command:
 
 ```bash
-roadie plugin:build -l $PWD/ --output $PWD/out `--host https://static-assets.roadie.so/test-tenant/my-first-plugin`
+roadie plugin:build -l $PWD/ --output $PWD/out --host https://static-assets.roadie.so/test-tenant/my_first_plugin
 ```
 
-Within this command we build a plugin from the folder we currently are (`$PWD`) and produces the output to `$PWD/out` folder. The URL of the plugin is defined as `https://static-assets.roadie.so/test-tenant/my-first-plugin`. 
+Within this command we build a plugin from the folder we currently are (`$PWD`) and produces the output to `$PWD/out` folder. The URL of the plugin is defined as `https://static-assets.roadie.so/test-tenant/my_first_plugin`. 
 The output of this build command is the following:
 ![Image of a terminal displaying Roadie CLI command output](plugin_build_output.png)
 
