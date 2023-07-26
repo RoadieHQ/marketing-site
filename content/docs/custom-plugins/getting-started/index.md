@@ -217,6 +217,12 @@ Navigate to `Administration` -> `Sandbox` and click 'New Sandbox Page'. Within t
 ℹ️ &nbsp; Plugin registration can only happen one at a time from a single URL. When developing locally it is useful to use different ports of the local dev server (one dev on `localhost:7046`, another one on `localhost:7046`). When using production ready, deployed plugins, the URL should be prefixed with different paths
 
 
+#### Demo
+
+You can see a demo of this approach in a quick video below.
+
+`vimeo: https://vimeo.com/848745735`
+
 ## Next Steps
 
 Getting started with plugin development is easy but where to go from here? 
