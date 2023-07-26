@@ -6979,7 +6979,7 @@ gatsby-remark-copy-linked-files@^5.4.0:
 
 gatsby-remark-embed-video@^3.2.1:
   version "3.2.1"
-  resolved "https://roadiehq.jfrog.io/artifactory/api/npm/roadiehq/gatsby-remark-embed-video/-/gatsby-remark-embed-video-3.2.1.tgz#167782a862f99c8d2f0ae988d5519466e75f9829"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-embed-video/-/gatsby-remark-embed-video-3.2.1.tgz#167782a862f99c8d2f0ae988d5519466e75f9829"
   integrity sha512-VVrcoNcLtWH4Ffqs2Qc2me9Ph+p8iXi9kMbX1OLFLY3JMtk5+lIOUGs0CutWsWKndj2W6PpfkwdFZyuknL5kjQ==
   dependencies:
     get-video-id "^3.6.4"
