@@ -6977,6 +6977,15 @@ gatsby-remark-copy-linked-files@^5.4.0:
     probe-image-size "^7.2.3"
     unist-util-visit "^2.0.3"
 
+gatsby-remark-embed-video@^3.2.1:
+  version "3.2.1"
+  resolved "https://roadiehq.jfrog.io/artifactory/api/npm/roadiehq/gatsby-remark-embed-video/-/gatsby-remark-embed-video-3.2.1.tgz#167782a862f99c8d2f0ae988d5519466e75f9829"
+  integrity sha512-VVrcoNcLtWH4Ffqs2Qc2me9Ph+p8iXi9kMbX1OLFLY3JMtk5+lIOUGs0CutWsWKndj2W6PpfkwdFZyuknL5kjQ==
+  dependencies:
+    get-video-id "^3.6.4"
+    remark-burger "^1.0.1"
+    unist-util-visit "^2.0.3"
+
 gatsby-remark-external-links@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-remark-external-links/-/gatsby-remark-external-links-0.0.4.tgz#85b98c1e9dacfaa58085319648c904ff3cab42f0"
@@ -7405,6 +7414,11 @@ get-symbol-description@^1.0.0:
   dependencies:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
+
+get-video-id@^3.6.4:
+  version "3.6.5"
+  resolved "https://roadiehq.jfrog.io/artifactory/api/npm/roadiehq/get-video-id/-/get-video-id-3.6.5.tgz#a7bfa1e8602557f2fcbed164d7005fdaa352d572"
+  integrity sha512-9RPHSQANIeGW5rU3CjWdm1zi+wUHbBWX+m4m+dqQAavrZ9p1P1J7AbxGvVEEHRyGfGrmMf5PqiRWYMyfqM+QYA==
 
 getos@^3.2.1:
   version "3.2.1"
@@ -11546,6 +11560,11 @@ relay-runtime@12.0.0:
     "@babel/runtime" "^7.0.0"
     fbjs "^3.0.0"
     invariant "^2.2.4"
+
+remark-burger@^1.0.1:
+  version "1.0.1"
+  resolved "https://roadiehq.jfrog.io/artifactory/api/npm/roadiehq/remark-burger/-/remark-burger-1.0.1.tgz#cda57d4bc1e952ae86b2407fbcf36492ab352106"
+  integrity sha512-F91SyEzat4hBkWsWElHIvMcCQuWoSeZXTuR4DmLvhUIjYkzzVLaX6GRxhkiDrZb/9asvTrYzwEr9HvxN1tqs9Q==
 
 remark-footnotes@^3.0.0:
   version "3.0.0"
