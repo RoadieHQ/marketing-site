@@ -114,7 +114,7 @@ When we click save, we should be seeing our newly developed plugin in our new ta
 
 You can see a demo of this approach in a quick video below.
 
-`vimeo: https://vimeo.com/848718422`
+`vimeo: https://vimeo.com/848732073`
 
 ## Using the Roadie CLI directly
 
