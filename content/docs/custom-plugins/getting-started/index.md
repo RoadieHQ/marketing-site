@@ -90,7 +90,7 @@ We will set up the `Content` component type in this case by using our [preview e
 Navigate to `Tools` -> `Entity Preview` and either create a complete new preview entity, or click into an existing one. 
 ![preview entities screen](preview_entities_screen.png)
 
-In our case we want to add the Content component to our preview-entity API kind so we will click `test-dummy-api-2` link on the right hand table. 
+In our case we want to add the Content component to our preview-entity to be an API kind, so we will click `test-dummy-api-2` link on the right hand table which we already had available. Note that this component might not exist on your Roadie instance. 
 
 Within the API catalog page, we can add our `Content` plugin in as a new tab. We'll click the `+` icon on the tab bar and input our plugin name and the wanted tab title.
 
@@ -102,11 +102,11 @@ When we click save, we should be seeing our newly developed plugin in our new ta
 
 **Since we are running our development server in `watch` mode, any changes to the codebase will be immediately available on the live instance. (After reload, so warm-loading, not hot-loading)**
 
-> Note that you may need to refresh the page to have the needed plugin code available to you after registering and adding the plugin into the application. This needs to be done only once and not needed for other users, only the user who is registering and adding the plugins
+ℹ️ &nbsp; Note that you may need to refresh the page to have the needed plugin code available to you after registering and adding the plugin into the application. This needs to be done only once and not needed for other users, only the user who is registering and adding the plugins
 
-> If you are seeing 404s and errors on the network tab indicating that the javascript files for your plugin are not found, make sure that your development server is running and the plugin registration is pointing to the correct URL.
+ℹ️ &nbsp; If you are seeing 404s and errors on the network tab indicating that the javascript files for your plugin are not found, make sure that your development server is running and the plugin registration is pointing to the correct URL.
 
-> Plugin registration can only happen one at a time from a single URL. When developing locally it is useful to use different ports of the local dev server (one dev on `localhost:7046`, another one on `localhost:7046`). When using production ready, deployed plugins, the URL should be prefixed with different paths
+ℹ️ &nbsp; Plugin registration can only happen one at a time from a single URL. When developing locally it is useful to use different ports of the local dev server (one dev on `localhost:7046`, another one on `localhost:7046`). When using production ready, deployed plugins, the URL should be prefixed with different paths
 
 
 ## Using the Roadie CLI directly
@@ -203,183 +203,18 @@ Navigate to `Administration` -> `Sandbox` and click 'New Sandbox Page'. Within t
 
 ![Roadie plugin sandbox registration](roadie_plugin_sandbox_registration.png)
 
-> Note that you may need to refresh the page to have the needed plugin code available to you after registering and adding the plugin into the application. This needs to be done only once and not needed for other users, only the user who is registering and adding the plugins
+ℹ️ &nbsp; Note that you may need to refresh the page to have the needed plugin code available to you after registering and adding the plugin into the application. This needs to be done only once and not needed for other users, only the user who is registering and adding the plugins
 
-> If you are seeing 404s and errors on the network tab indicating that the javascript files for your plugin are not found, make sure that your development server is running and the plugin registration is pointing to the correct URL.
+ℹ️ &nbsp; If you are seeing 404s and errors on the network tab indicating that the javascript files for your plugin are not found, make sure that your development server is running and the plugin registration is pointing to the correct URL.
 
-> > Plugin registration can only happen one at a time from a single URL. When developing locally it is useful to use different ports of the local dev server (one dev on `localhost:7046`, another one on `localhost:7046`). When using production ready, deployed plugins, the URL should be prefixed with different paths
+ℹ️ &nbsp; Plugin registration can only happen one at a time from a single URL. When developing locally it is useful to use different ports of the local dev server (one dev on `localhost:7046`, another one on `localhost:7046`). When using production ready, deployed plugins, the URL should be prefixed with different paths
 
 
-## Using common APIs
+## Next Steps
 
-Backstage and Roadie provide many in-built custom APIs which are useful when developing your custom plugins. Below is a list of most used ones with examples on how to get started with them and what they provide. For more information about the utility API structure and architecture, take a look at [Backstage documentation around the area](https://backstage.io/docs/api/utility-apis)
+Getting started with plugin development is easy but where to go from here? 
 
-### useEntity
-
-`useEntity` [React hook](https://react.dev/reference/react) provides the ability for plugin developers to easily get the Entity information when developing plugins to Roadie. The hook can be called within Roadie plugins that are exposed within the *Entity pages*, namely `Card` and `Content` component types.
-
-The hook returns an object with an `entity` property, which contains the whole entity definition. This is useful for cases where you would for example need to identify and locate an annotation from the entity, so you can use the annotation value in subsequent requests to third party services.
-
-An example usage to retrieve and display all entity information in a 'dump-like' fashion:
-
-```tsx
-import React, { useEffect } from "react";
-import { StructuredMetadataTable } from "@backstage/core-components";
-import { useEntity } from "@backstage/plugin-catalog-react";
-
-export const MyPluginContentComponent = () => {
-    const { entity } = useEntity();
-    return <StructuredMetadataTable metadata={entity} />;
-}
-```
-
-The code above would produce a view like this:
-![A test entity view displaying some information](test-entity-dump-useEntity-hook.png)
-
-### useApi
-
-`useApi` is a generic hook which provides the ability to retrieve implementations of already registered APIs in the frontend application. See below for actual APIs available in Roadie application that you can use to your advantage when developing a plugin.  
-
-#### discoveryApi
-
-`discoveryApi` provides connectivity to the Roadie backend APIs. The API can be used to identify the correct endpoints to call when, for example, integrating with third party services via the Roadie proxy.
-
-```tsx
-import React, { useCallback } from "react";
-import { useEntity } from "@backstage/plugin-catalog-react";
-import { discoveryApiRef, useApi } from "@backstage/core-plugin-api";
-import { StructuredMetadataTable } from "@backstage/core-components";
-
-export const MyComponent = () => {
-   const discoveryApi = useApi(discoveryApiRef);
-   const { entity } = useEntity();
-   const [myEndPointInfo, setMyEndpointInfo] = useState<object | undefined>();
-
-   const btnClicked = useCallback(async () => {
-      const proxyUrl = await discoveryApi.getBaseUrl('proxy');
-      const url = `${proxyUrl}/my-proxy`;
-      const uid = entity.metadata.uid;
-      const res = await fetch(`${url}/get-info/${uid!}`);
-      setMyEndpointInfo(await res.json())
-   }, [discoveryApi]);
-
-   return <div>
-      <Button onClick={btnClicked}>Get info from my endpoint</Button>
-      {myEndPointInfo && <StructuredMetadataTable metadata={myEndPointInfo}/>}
-   </div>
-};
-```
-
-#### identityApi
-
-`identifyApi` provides information about the currently logged in user. This API can be used to target individuals or decorate requests with relevant user information.
-
-```tsx
-import React from "react";
-import useAsync from "react-use/lib/useAsync";
-import { BackstageUserIdentity, ProfileInfo, identityApiRef, useApi } from "@backstage/core-plugin-api";
-import { StructuredMetadataTable } from "@backstage/core-components";
-
-export const MyPluginContentComponent = () => {
-   const identityApi = useApi(identityApiRef);
-
-   const [userInfo, setUserInfo] = useState<BackstageUserIdentity | undefined>();
-   const [profileInfo, setProfileInfo] = useState<ProfileInfo | undefined>();
-
-   useAsync(async () => {
-      const userInfo = await identityApi.getBackstageIdentity();
-      const profileInfo = await identityApi.getProfileInfo();
-      setUserInfo(userInfo);
-      setProfileInfo(profileInfo);
-   }, [identityApi])
-
-   return <div>
-      {userInfo && <StructuredMetadataTable metadata={userInfo} />}
-      {profileInfo && <StructuredMetadataTable metadata={profileInfo} />}
-   </div>
-}
-```
-![A dump of information showing currently logged in user](user_info_identityApi_dump.png)
-
-#### errorApi
-
-`errorApi` provides the ability to inform the user about errorenous states or actions. This API is a thin wrapper around the more generic `alertApi` which can be used for other kinds of notifications.
-
-```tsx
-import React from 'react';
-import { useApi, errorApiRef } from '@backstage/core-plugin-api';
-
-export const MyComponent = () => {
-  const errorApi = useApi(errorApiRef);
-
-  // Signal to the app that something went wrong, and display the error to the user.
-  const handleError = error => {
-    errorApi.post(error);
-  };
-
-  // the rest of the component ...
-};
-```
-
-#### alertApi
-
-`alertApi` provides the possibility to display notifications to the user in a form of a UI toast message. These notifications can be of multiple different variants, like `error`, `info`, `warning`.
-
-```tsx
-import React from 'react';
-import { alertApiRef, useApi } from '@backstage/core-plugin-api';
-
-export const MyComponent = () => {
-   const alertApi = useApi(alertApiRef);
-
-   // Display a notification to the user that something good has happened
-   const notifySuccess = () => {
-      alertApi.post({
-         message: 'New climate neutral aviation fuel has been invented!',
-         severity: 'success',
-         display: 'transient',
-      });
-   };
-
-   // the rest of the component ...
-};
-```
-
-#### analyticsApi
-
-`analyticsApi` can be used to trigger analytics events to the application. These events are stored by Roadie in our analytics provider. If you need access to see further visibility of your analytics triggered events, contact Roadie via usual support channels.
-
-```tsx
-import React, { useCallback } from 'react';
-import { analyticsApi, useApi } from '@backstage/core-plugin-api';
-import { Button } from "@material-ui/core";
-
-export const MyComponent = () => {
-   const analyticsApi = useApi(analyticsApiRef);
-
-   const btnClicked = useCallback(() => {
-      analyticsApi.captureEvent({
-         attributes: {component: "MyComponent"},
-         subject: "test-subject",
-         value: 1,
-         action: "button-click",
-         context: {
-            extension: "my-custom-plugin",
-            pluginId: "my-custom-plugin",
-            routeRef: "myPluginRouteRef",
-         },
-      });
-   }, [analyticsApi]);
-
-   return <div><Button onClick={btnClicked}>Click me!</Button></div>
-};
-
-```
-
-### Proxying request via the backend
-
-The simplest way to store and use credentials to third party endpoints is to use the proxy within your Roadie application. You can configure proxies to target any endpoints available on the internet, and you can assign Roadie managed secrets to authenticate against these endpoints when your custom plugin contacts them. To have a closer look how proxies work and how you can use them to your advantage, take a look at the [more in-depth documentation on proxies](/docs/custom-plugins/connectivity/proxy/).
-
-### Proxying requests via the Broker
-
-To gain access to resources running inside your internal infrastructure, the best approach is to use the [Broker connection](/docs/integrations/broker/). To have a more in depth view of what kind of setup would be needed for brokering via plugins, take a look at the [end to end example of setting up a plugin with broker connectivity.](/docs/custom-plugins/connectivity/broker/)
+* If you want to iterate on your plugin, learn how [to add functionality to your plugin using common APIs and patterns](/docs/custom-plugins/available-apis/).
+* If you want to publish your plugin so others can use it, you can do so [by following the deployment documentation](/docs/custom-plugins/deploying/)
+* If you want to secure connections from your plugin to third party service, [the easiest way to achieve it is with proxies](/docs/custom-plugins/connectivity/proxy/).
+* If you are wondering how to connect safely to your internal infrastructure, [it is possible with a broker integration](/docs/integrations/broker/). There is also [a step-by-step example](/docs/custom-plugins/connectivity/broker/) how one would iterate on building a broker enabled plugin.

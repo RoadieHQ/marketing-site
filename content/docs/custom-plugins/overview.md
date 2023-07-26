@@ -11,15 +11,9 @@ description: Extending Roadie with your own custom plugins and functionality
 
 ---
 
-
-Plugins are the heart and soul of the Roadie application due to their pivotal role in extending and customizing its functionality. Plugins serve as modular components that allow users to integrate various tools, services, and features seamlessly into the application. They enable teams to tailor Roadie to their specific needs, facilitating efficient collaboration and providing a unified interface for all their development processes. 
-
-With plugins, users can easily add new capabilities, such as CI/CD pipelines, documentation generators, monitoring systems, and more, making Roadie a versatile and powerful application. This extensibility empowers teams to adapt the application to their unique workflows, driving productivity and enhancing the overall development experience.
-
 Roadie provides customers with the ability to bring their own plugins, making it a highly customizable platform. With a tailored plugin interface and integration points, customers can seamlessly create custom functionalities fitting their specific requirements. Once developed, deploying plugins to Roadie is a straightforward process, facilitated by the platform's plugin management system. 
 
 Custom plugins are a feature of the [Growth Plan](/pricing/).
-
 
 
 > Roadie is iterating on the next version of custom plugins and making effort to more easily develop, build and deploy your own plugins to the Roadie application.
@@ -39,6 +33,7 @@ Other important documentation around Roadie custom plugins:
 * [Connecting to your internal infrastructure using the Broker](/docs/custom-plugins/connectivity/broker/)
 * [Connecting to third party services using the proxy](/docs/custom-plugins/connectivity/proxy/)
 * [Example workflows and approaches to plugin development](/docs/custom-plugins/getting-started/)
+* [A list of common APIs and examples of their usage](/docs/custom-plugins/available-apis/)
 
 
 ## Prerequisites
