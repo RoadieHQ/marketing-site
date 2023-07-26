@@ -9,7 +9,7 @@ Roadie provides secure connectivity from your Roadie instance bundled plugins as
 
 #### Prerequisites
 
-For this tutorial we are assuming that you have the skeleton repositories and the processes to develop your plugins already warmed up and ready to go. If that is not the case, take a look at [the various examples how to get started](/docs/custom-plugins/examples/).
+For this tutorial we are assuming that you have the skeleton repositories and the processes to develop your plugins already warmed up and ready to go. If that is not the case, take a look at [the various examples how to get started](/docs/custom-plugins/getting-started/).
 
 To connect to your internal infrastructure via the broker you also need to have a working set up of a broker connection within Roadie. The simplest way to get started and start iterating on your plugin integration is to use [the Broker CLI directly](https://deploy-preview-1069--roadie.netlify.app/docs/integrations/broker/#snyk-broker-cli-application). This gives you the ability to iterate on the needed `accept.json` configuration file and keep a closer eye on the connections flowing between Roadie and your broker client.
 
@@ -114,7 +114,7 @@ export const ExampleFetchComponent = () => {
 };
 ```
 
-We'll spin up a development server of my plugin bundle and register the plugin and it's components to our Roadie instance. If you don't know how to do this, take a look at our [examples how to get started](/docs/custom-plugins/examples/#4-develop-your-plugin). 
+We'll spin up a development server of my plugin bundle and register the plugin and it's components to our Roadie instance. If you don't know how to do this, take a look at our [examples how to get started](/docs/custom-plugins/getting-started/#4-develop-your-plugin). 
 
 
 Because we are still experimenting, it is better to register our `Card` component to a preview entity. This way we don't bother other users with a potentially broken plugin while we are still working on it. Navigate to `Tools` -> `Preview Entities` and construct a new entity that has the annotation that you are expecting to use with the plugin. In our case I have decided to call the annotation `roadie.io/artifactory-item`.
