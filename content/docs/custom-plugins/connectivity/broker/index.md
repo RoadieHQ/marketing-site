@@ -176,7 +176,7 @@ With this `accept.json` ready to go, we can set up two additional environment va
 
 Now we should be having a Broker client correctly directing our traffic to our Artifactory server, so we can focus on plugin development. First thing to do is to match the URL we are using with the URL defined in the `path` property of our `accept.json` Broker client configuration file. 
 
-We will hardcode the wanted package in there to see if we get a successful response working for us. The new modified constructed URL in the plugin now reads:
+We will _hardcode_ the wanted package in there to see if we get a successful response working for us. The new modified constructed URL in the plugin now reads:
 ```ts
 const brokerUrl = `${proxyUrl}/broker/artifactory-plugin/authx/-/%40roadiehq`;
 ```
@@ -185,10 +185,23 @@ When we reload our preview entity page on our Roadie instance, we can see that t
 
 ![artifactory_successful_response](artifactory_successful_response.png)
 
+Of course we don't want hardcoded values within our plugin code, it would defeat the purpose of a generic Roadie plugin. To get the annotation value we previously stored in our preview-entity, we can use the built-in `useEntity` hook. This hook provides us the current entity and all related metadata of it.
+Near the top of our React component we add few lines to retrieve our wanted annotation:
+```tsx
+const { entity } = useEntity();
+const artifactoryPackageName = entity?.metadata?.annotations?.["roadie.io/artifactory-item"];
+```
+
+And finally we modify our URL we want to fetch data from to use our retrieved annotation value:
+```ts
+const brokerUrl = `${proxyUrl}/broker/artifactory-plugin/${artifactoryPackageName}/-/%40roadiehq`;
+```
+
 ## Displaying versions of our package on Roadie
 
+
 The response type from Artifactory follows a pattern we can use and construct a table of items from. 
-We'll start by typing out the shape of the response, or at least relevant parts of it. These types can be generated automatically or manully. Some online sites like `https://app.quicktype.io` may be of help when constructing these types.
+We'll start by typing out the shape of the response, or at least relevant parts of it. These types can be generated automatically or manually. Some online sites like `https://app.quicktype.io` may be of help when constructing these types.
 
 Our final type definition looks like the following:
 
@@ -213,7 +226,82 @@ export interface Child {
 
 We copy this type definition to our plugin component as well as modify our `fetch` response to match that type. With these modifications we can easily get help from TypeScript to extract the correct values from the response, in order to display them prettily on the screen for the user.
 
-The final React component in all its glory we ended up with looks like the following:
+## Making the plugin it pretty and useful
+
+The next steps we want to take is to identify the values we want to display on the screen. For this demo we choose to show the name of the package (though it will be redundant), the version of the downloadable item, and a download link so our Roadie users can click a link and download the artifact. We want to display all of this information in a table. 
+
+We can construct a definition of this table row to see what information we want to see there. The type we come up looks like the following:
+
+```ts
+type PackageVersionEntry = {
+  name: string;
+  version: string;
+  link: string;
+};
+```
+
+After we have defined our type, we modify our `useAsync` hook to respond with a data structure that matches our wanted type:
+
+```tsx
+const {
+    value: packageVersions = [],
+    loading,
+    error,
+} = useAsync(async (): Promise<PackageVersionEntry[]> => {
+    if (!artifactoryPackageName) {
+        return [];
+    }
+    const proxyUrl = await discoveryApi.getBaseUrl("proxy");
+    const brokerUrl = `${proxyUrl}/broker/artifactory-plugin/${artifactoryPackageName}/-/%40roadiehq`;
+    const response = await fetch(brokerUrl);
+    try {
+        const responseData =
+            (await response.json()) as ArtifactoryStorageResponse;
+        return responseData.children.map((child) => ({
+            name: artifactoryPackageName,
+            version: child.uri.substring(1),
+            link: `${responseData.uri}${child.uri}`,
+        }));
+    } catch (e: any) {
+        errorApi.post({
+            message: "Failed to get response via broker from Artifactory",
+            name: "Data retrieval error",
+            stack: e.stack,
+        });
+    }
+    return [];
+}, [artifactoryPackageName]);
+```
+
+And finally we configure our Table (we will use a table component from `@backstage/core-components`) to display all this information in a pretty format. First we'll define the columns we need:
+
+```tsx
+  const columns: TableColumn<PackageVersionEntry>[] = [
+    { title: "Package Name", field: "name" },
+    { title: "Version", field: "version" },
+    {
+        title: "Download Link",
+        field: "link",
+        render: (row) => <Link to={row.link}>Download</Link>,
+    },
+];
+```
+And inject both the columns and our `packageVersions` data into the table component.
+
+```tsx
+<Table
+  title="Available Package Versions"
+  options={{ search: false, paging: true, pageSize: 5 }}
+  columns={columns}
+  data={packageVersions}
+/>
+```
+
+With that we have a `Card` type custom Roadie plugin, which uses a secure broker connection to retrieve data from an Artifactory instance which is hosted in our private network:
+![Final plugin card on preview entity](final_broker_plugin_card.png)
+
+
+The final code for React component in all its glory we ended up with looks like the following:
 
 <details>
 
@@ -235,7 +323,7 @@ import {
   errorApiRef,
   useApi,
 } from "@backstage/core-plugin-api";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { useEntity } from "@backstage/plugin-catalog-react";
 
 interface ArtifactoryStorageResponse {
@@ -296,13 +384,17 @@ export const ExampleFetchComponent = () => {
     return [];
   }, [artifactoryPackageName]);
 
-  const columns: TableColumn[] = [
+  const columns: TableColumn<PackageVersionEntry>[] = [
     { title: "Package Name", field: "name" },
     { title: "Version", field: "version" },
     {
       title: "Download Link",
       field: "link",
-      render: (row) => <Link to={row.link}>Download</Link>,
+      render: (row) => {
+        // We modify the link to drop `/api/storage` from the path which automatically redirects us to a downloadable item
+        const downloadLink = row.link.replace("/api/storage", "");
+        return <Link to={downloadLink}>Download</Link>;
+      },
     },
   ];
 
@@ -330,3 +422,12 @@ export const ExampleFetchComponent = () => {
 ```
 
 </details>
+
+
+## Next steps
+
+We have constructed a custom plugin for Roadie which uses a secure channel to talk with internal infrastructure. The moving pieces we have produced are a broker client configuration and a Roadie custom plugin. Both of these need to be deployed to a more permanent location, we wouldn't want to keep our personal laptop to be running all the time just to serve these items. 
+
+To deploy a custom plugin, it is recommended to take a look at the deployment documentation in here: [Deploying Custom Plugins](/docs/custom-plugins/deploying/)
+
+To deploy a broker client to be run on your internal infrastructure, likely the easiest way is to take a look at the existing Dockerfiles that Roadie provides for other plugin integration [in here](https://github.com/RoadieHQ/roadie-agent/tree/main/dockerfiles) and model your own file based on those. Alternatively, the broker client in the end is just a node.js command line application, so any VPS with node.js installed can easily run it natively.  
