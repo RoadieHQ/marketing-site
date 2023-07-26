@@ -80,7 +80,7 @@ Once your custom plugin is fully developed and tested, the steps to deploy it to
 3. **Register the Plugin**: Use the Roadie administration interface to install and register your custom plugin on your Roadie instance.
 
 
-Take a look at different deployment options and instruction from the [documentation dedicated to custom plugin deployments.](/docs/custom-plugins/deploying/)
+Take a look at different deployment options and instruction from the [documentation dedicated to custom plugin deployments.](/docs/custom-plugins/deploying/) and see how to register your plugin in [the documentation outlining the simple registration steps.](/docs/custom-plugins/plugin-registration)
 
 
 ### Plugin Testing
@@ -95,6 +95,6 @@ When using the Roadie provided template, you can also build and test the plugins
 
 ### Plugin Maintenance
 
-Backstage development moves at a fast pace and to manually keep up with all the breaking changes might be laborious. Roadie's custom plugin build tools try their best to build bridges between breaking version changes in the underlying Backstage platform and custom plugins built with Roadie tools. If there are changes that are not possible to be automatically fixed, Roadie are expert on keeping version compatibility and forward fixing version inconsistencies due to the vast portfolio of open source plugins that we have developed. 
+Backstage development moves at a fast pace and to manually keep up with all the breaking changes might be laborious. Roadie's custom plugin build tools try their best to build bridges between breaking version changes in the underlying Backstage platform and custom plugins built with Roadie tools. If there are changes that are not possible to be automatically fixed, Roadie is an expert on keeping version compatibility and forward fixing version inconsistencies due to the vast portfolio of open source plugins that we have developed. 
 
 

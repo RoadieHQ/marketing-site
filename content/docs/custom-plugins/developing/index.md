@@ -10,6 +10,8 @@ Developing plugins to Roadie application can be achieved using a node.js tool ca
 
 Additionally, Roadie provides a [Scaffolder Template](https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/roadie-plugin/template.yaml) which can be used to initialize a monorepo structure Roadie has found useful when developing and building these plugins. The Scaffolder template provides an entry point to create a monorepo which can host the custom plugin code. This can be used as the first step to Roadie plugin development and can be built on by creating subsequent plugins using the same patterns within the same monorepo.
 
+This page outlines the technicalities behind Roadie CLI. If you want to see step-by-step examples how to use the tool, take a look at [the dedicated examples page.](/docs/custom-plugins/examples/)
+
 
 ## Development process
 
@@ -61,11 +63,11 @@ roadie plugin:dev --location ~/Development/my-roadie-plugins/my-custom-plugin-fo
 
 ### Available options for `plugin:dev` command:
 
-| Option        | Name     | Description                                                                                  | Example                                                                            |
-|---------------|----------|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| --location -l | Location | (Required) The absolute path to the folder where your plugin resides                         | -l $PWD/my-plugin / -l /home/myname/Development/roadie-plugins/my-plugin           |
-| --port -p     | Port     | (Required) HTTP Port to use for the local server to serve files from                         | -p 8765                                                                            |
-| --output -o   | Output   | The absolute path to the folder where you want to generate the Roadie compatible plugin code | -o $PWD/my-plugin/dist / -o /home/myname/Development/roadie-plugins/my-plugin/dist |
+| Option        | Name     | Description                                                                                  | Example                                                                                |
+|---------------|----------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| --location -l | Location | (Required) The absolute path to the folder where your plugin resides                         | `-l $PWD/my-plugin` / `-l /home/myname/`Development/roadie-plugins/my-plugin           |
+| --port -p     | Port     | (Required) HTTP Port to use for the local server to serve files from                         | `-p 8765`                                                                              |
+| --output -o   | Output   | The absolute path to the folder where you want to generate the Roadie compatible plugin code | `-o $PWD/my-plugin/dist` / `-o /home/myname/Development/roadie-plugins/my-plugin/dist` |
 
 
 
