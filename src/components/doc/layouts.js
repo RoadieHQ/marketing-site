@@ -16,13 +16,19 @@ export const DOCS_LAYOUTS = [
   {
     tabLabel: 'Plugins & Integrations',
     startPath: '/docs/integrations/',
-    isActiveMatch: '/docs/(?:custom-plugins|integrations)',
-    sidebarNavItemGroups: [sidebar.nav[1], sidebar.nav[2], sidebar.nav[3]],
+    isActiveMatch: '/docs/integrations',
+    sidebarNavItemGroups: [sidebar.nav[1], sidebar.nav[2]],
   },
   {
     tabLabel: 'In-depth',
     startPath: '/docs/details/accessing-aws-resources/',
     isActiveMatch: '/docs/details',
+    sidebarNavItemGroups: [sidebar.nav[3]],
+  },
+  {
+    tabLabel: 'Custom Plugins',
+    startPath: '/docs/custom-plugins/getting-started/',
+    isActiveMatch: '\/docs\/custom-plugins/',
     sidebarNavItemGroups: [sidebar.nav[4]],
   },
   {

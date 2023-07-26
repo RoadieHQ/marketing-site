@@ -62,12 +62,37 @@ nav:
       - GitHub token: '/docs/integrations/github-token/'
       - Google Cloud Platform: '/docs/integrations/gcp/'
       - Google OAuth client: '/docs/integrations/google-oauth-client/'
+  - In-depth:
+      - API docs:
+          - Custom renderers: '/docs/details/custom-api-docs-renderers/'
+          - Using grpc-docs: '/docs/details/grpc-docs/'
+      - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
+      - GitHub app permissions: '/docs/details/github-app-permissions/'
+      - Networking:
+          - Accessing AWS resources: '/docs/details/accessing-aws-resources/'
+          - Accessing public resources: '/docs/details/backend-reading-allow-list/'
+          - Allowlisting Roadie traffic: '/docs/details/allowlisting-roadie-traffic/'
+          - How Roadie connects: '/docs/details/how-roadie-connects/'
+      - The catalog:
+          - Managing locations: '/docs/details/location-management/'
+          - Modelling dependencies: '/docs/details/showing-dependencies/'
+          - Removing components: '/docs/details/unregister-components/'
+          - Previewing component changes: '/docs/details/previewing-changes/'
+          - Troubleshooting the catalog: '/docs/details/troubleshooting-the-catalog/'
+          - Validating catalog files: '/docs/details/validator/'
+          - Ownership in Backstage Entities: '/docs/details/ownership/'
+      - Testing page configurations: '/docs/details/sandbox-mode/'
+      - Working with plugins:
+          - Required annotations: '/docs/details/required-annotations/'
+          - Requesting plugins: '/docs/details/requesting-plugins/'
+      - Setting secrets: '/docs/details/setting-secrets/'
+      - Updating the UI: '/docs/details/updating-the-ui/'
   - Custom plugins:
-      - Getting Started: '/docs/custom-plugins/'
+      - Overview: '/docs/custom-plugins/overview'
+      - Getting Started: '/docs/custom-plugins/getting-started/'
       - Developing: '/docs/custom-plugins/developing'
       - Registering Plugins: '/docs/custom-plugins/plugin-registration'
       - Deploying: '/docs/custom-plugins/deploying'
-      - Example Solutions: '/docs/custom-plugins/examples'
       - Securing Connections:
           - Proxy: '/docs/custom-plugins/connectivity/proxy'
           - Broker: '/docs/custom-plugins/connectivity/broker'
@@ -75,31 +100,6 @@ nav:
         - Configuration: '/docs/custom-plugins/legacy/configuring/'
         - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
         - Proxy: '/docs/custom-plugins/legacy/proxy/'
-  - In-depth:
-      - API docs:
-        - Custom renderers: '/docs/details/custom-api-docs-renderers/'
-        - Using grpc-docs: '/docs/details/grpc-docs/'
-      - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
-      - GitHub app permissions: '/docs/details/github-app-permissions/'
-      - Networking:
-        - Accessing AWS resources: '/docs/details/accessing-aws-resources/'
-        - Accessing public resources: '/docs/details/backend-reading-allow-list/'
-        - Allowlisting Roadie traffic: '/docs/details/allowlisting-roadie-traffic/'
-        - How Roadie connects: '/docs/details/how-roadie-connects/'
-      - The catalog:
-        - Managing locations: '/docs/details/location-management/'
-        - Modelling dependencies: '/docs/details/showing-dependencies/'
-        - Removing components: '/docs/details/unregister-components/'
-        - Previewing component changes: '/docs/details/previewing-changes/'
-        - Troubleshooting the catalog: '/docs/details/troubleshooting-the-catalog/'
-        - Validating catalog files: '/docs/details/validator/'
-        - Ownership in Backstage Entities: '/docs/details/ownership/'
-      - Testing page configurations: '/docs/details/sandbox-mode/'
-      - Working with plugins:
-        - Required annotations: '/docs/details/required-annotations/'
-        - Requesting plugins: '/docs/details/requesting-plugins/'
-      - Setting secrets: '/docs/details/setting-secrets/'
-      - Updating the UI: '/docs/details/updating-the-ui/'
   - Scaffolder:
       - Writing scaffolder templates: '/docs/scaffolder/writing-templates/'
       - Recipes:

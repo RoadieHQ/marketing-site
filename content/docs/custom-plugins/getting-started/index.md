@@ -10,7 +10,7 @@ This document will outline step-by-step instructions on how to develop, build, d
 
 Using the scaffolder template provided by Roadie is a good way to get started developing plugins for Roadie application. The template creates a new GitHub repository with all the needed commands and dependencies. It also includes an example plugin with few components, which are displaying possible approaches to use wider Backstage and Roadie features within your plugins. 
 
-#### 1. **Register the Roadie Plugins monorepo scaffolder template into your application**
+#### 1. Register the Roadie Plugins monorepo scaffolder template into your application
 
 Navigate to your Roadie instance scaffolder and register a new template. Go to 'Create...' and click the 'Register Existing Component' on the top right. 
 In the opening form, add the URL to the Roadie scaffolder template and click the buttons to import it into the system.
@@ -19,7 +19,7 @@ The URL is: `https://github.com/RoadieHQ/software-templates/blob/main/scaffolder
 
 ![Importing scaffolder template to create plugins monorepo](scaffolder_monorepo_import.png)
 
-#### 2. **Scaffold your Roadie plugins monorepo**
+#### 2. Scaffold your Roadie plugins monorepo
 
 Navigate again to the 'Create...' screen and identify the just added scaffolder template. It should be named something like 'Create Roadie Plugins Monorepo'. Choose this template and start filling out the templating steps.
 ![Filling out scaffolder template 1](scaffolder_template_filling1.png)
@@ -30,7 +30,7 @@ Navigate again to the 'Create...' screen and identify the just added scaffolder 
 This scaffolder template will construct a new repository you can use to develop, build and deploy your Roadie plugins from. It contains an example plugin with few different example components, as well as handy scripts to help with the plugin development process.
 
 
-#### 3. **Start working on the monorepo**
+#### 3. Start working on the monorepo
 
 When scaffolder has finished, you should have a link to the generated monorepo as well as a link to documentation pointing to the Roadie CLI.
 
@@ -52,7 +52,7 @@ Within the `src` folder of the plugin we have few different components that are 
 
 `README.md` on both the root of the monorepo and within the plugin folder itself contains instructions how to start developing the plugin.
 
-#### 4. **Develop your plugin**
+#### 4. Develop your plugin
 
 When we have navigated the available files and are happy with how they look, we can spin up a development server and start developing our plugin against a live Roadie instance. 
 
@@ -63,7 +63,7 @@ After needed dependencies are installed we can spin up a development server in w
 ![monorepo_developing.gif](monorepo_developing.gif)
 
 
-#### 5. **Register your plugin to Roadie**
+#### 5. Register your plugin to Roadie
 
 With the Roadie CLI running in dev (and watch) mode, the plugin ready to be registered to Roadie. 
 
@@ -81,7 +81,7 @@ A good rule of thumb usually is that if it is a '`RoutableExtension`' it is goin
 After we have clicked save, the plugin is ready to be used in the application.
 
 
-#### 6. **Configure your plugin component to be used**
+#### 6. Configure your plugin component to be used
 
 The plugin is now registered from your `localhost` and can be added to the application UI using the instruction defined in the [Updating the UI documentation](https://roadie.io/docs/details/updating-the-ui/). While you can use the standard page, card or content components served from localhost in the main application side, that might not be the best user experience for other users of your Roadie instance. The plugin served from localhost is only visible to you!
 
@@ -114,11 +114,11 @@ When we click save, we should be seeing our newly developed plugin in our new ta
 
 If you have an already existing plugin that you want to convert to Roadie compatible version, you can use the Roadie CLI directly. We'll start this example by creating a standard Backstage plugin using the Backstage CLI.
 
-#### 1. **Find a place for the plugins**
+#### 1. Find a place for the plugins
 
 Either navigate to the directory where your already existing plugins are, or create a new directory for your plugins 
 
-#### 2. **Initialize a new Backstage plugin using the Backstage CLI**
+#### 2. Initialize a new Backstage plugin using the Backstage CLI
 
 Navigate to the directory you created and run `npx @backstage/cli new plugin`. This command will install Backstage CLI and generate a new plugin. It may take some time (2-5 minutes) depending on your internet connection speed. The tool will ask you few questions, pick a 'Backstage plugin' and name your plugin how you want. 
 
@@ -129,7 +129,7 @@ The created directory structure would be something like the following picture:
 ![Image of a terminal displaying directory structure](plugin_dir_structure.png)
 
 
-#### 3. **Install Roadie CLI**
+#### 3. Install Roadie CLI
 
 Roadie CLI is the tool to use which builds your application into a format that is Roadie compatible. It is possible to install Roadie CLI either as a global tool or as a dependency in the project itself. 
 
@@ -163,7 +163,7 @@ You can also install Roadie CLI globally which is useful if you want to build pl
 
 Now you can run the `roadie` command to develop, build and deploy the plugins you want.
 
-#### 4. **Package and start developing your plugin**
+#### 4. Package and start developing your plugin
 
 For this and next steps we will use the Roadie CLI directly. To see how to use the NPM scripts, take a look at the steps in the example using Roadie Custom Plugin Monorepo scaffolder template. We run the command `roadie plugin:dev` with needed configuration flags to construct the plugin. In this case the input we give is:
 `roadie plugin:dev --location $PWD/backstage-plugin-my-roadie-plugin/ --output $PWD/backstage-plugin-my-roadie-plugin/out/`
@@ -175,7 +175,7 @@ The `location` indicating the folder where the plugin resides, and the `output` 
 
 This dev mode starts up a builtin webserver which will keep running until stopped (ctrl + C). You can use this webserver directly to register and configure your plugin to your Roadie instance.
 
-#### 5. **Register your plugin to Roadie**
+#### 5. Register your plugin to Roadie
 
 With the Roadie CLI running in dev mode, we are already serving our custom plugin in a compatible format to Roadie. We can move to the registration step of the plugin. 
 
@@ -193,9 +193,9 @@ A good rule of thumb usually is that if it is a '`RoutableExtension`' it is goin
 After we have clicked save, the plugin is ready to be used in the application.
 
 
-#### 6. **Configure your plugin component to be used**
+#### 6. Configure your plugin component to be used
 
-The plugin is now registered from your `localhost` and can be added to the application UI using the instruction defined in the [Updating the UI documentation](https://roadie.io/docs/details/updating-the-ui/). While you can use the standard page or content components served from localhost in the main application side, that might not be the best user experience for other users of your Roadie instance. The plugin served from localhost is only visible to you!
+The plugin is now registered from your `localhost` and can be added to the application UI using the instruction defined in the [Updating the UI documentation](/docs/details/updating-the-ui/). While you can use the standard page or content components served from localhost in the main application side, that might not be the best user experience for other users of your Roadie instance. The plugin served from localhost is only visible to you!
 
 We will set up this `Page` component using a [Sandbox mode](/docs/details/sandbox-mode/), so we can develop it further before [deploying a production ready version of it](/docs/custom-plugins/deploying/). 
 

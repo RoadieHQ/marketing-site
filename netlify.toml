@@ -124,6 +124,11 @@
   force = true
 
 [[redirects]]
+  from = "/docs/custom-plugins/"
+  to = "/docs/custom-plugins/getting-started/"
+  force = true
+
+[[redirects]]
   from = "/docs/custom-plugins/connectivity/proxy/"
   to = "/docs/custom-plugins/proxy/"
   force = true
