@@ -10,14 +10,16 @@ This document will outline step-by-step instructions on how to develop, build, d
 
 Using the scaffolder template provided by Roadie is a good way to get started developing plugins for Roadie application. The template creates a new GitHub repository with all the needed commands and dependencies. It also includes an example plugin with few components, which are displaying possible approaches to use wider Backstage and Roadie features within your plugins. 
 
-1. Register the Roadie Plugins monorepo scaffolder template into your application
+1. **Register the Roadie Plugins monorepo scaffolder template into your application**
 
 Navigate to your Roadie instance scaffolder and register a new template. Go to 'Create...' and click the 'Register Existing Component' on the top right. 
 In the opening form, add the URL to the Roadie scaffolder template and click the buttons to import it into the system.
 
+The URL is: `https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/roadie-plugin/template.yaml`
+
 ![Importing scaffolder template to create plugins monorepo](scaffolder_monorepo_import.png)
 
-2. Scaffold your Roadie plugins monorepo
+2. **Scaffold your Roadie plugins monorepo**
 
 Navigate again to the 'Create...' screen and identify the just added scaffolder template. It should be named something like 'Create Roadie Plugins Monorepo'. Choose this template and start filling out the templating steps.
 ![Filling out scaffolder template 1](scaffolder_template_filling1.png)
@@ -28,7 +30,7 @@ Navigate again to the 'Create...' screen and identify the just added scaffolder 
 This scaffolder template will construct a new repository you can use to develop, build and deploy your Roadie plugins from. It contains an example plugin with few different example components, as well as handy scripts to help with the plugin development process.
 
 
-3. Start working on the monorepo
+3. **Start working on the monorepo**
 
 When scaffolder has finished, you should have a link to the generated monorepo as well as a link to documentation pointing to the Roadie CLI.
 
@@ -50,7 +52,7 @@ Within the `src` folder of the plugin we have few different components that are 
 
 `README.md` on both the root of the monorepo and within the plugin folder itself contains instructions how to start developing the plugin.
 
-4. Developing a plugin
+4. **Develop your plugin**
 
 When we have navigated the available files and are happy with how they look, we can spin up a development server and start developing our plugin against a live Roadie instance. 
 
@@ -79,7 +81,7 @@ A good rule of thumb usually is that if it is a '`RoutableExtension`' it is goin
 After we have clicked save, the plugin is ready to be used in the application.
 
 
-6. **Configuring your plugin component to be used**
+6. **Configure your plugin component to be used**
 
 The plugin is now registered from your `localhost` and can be added to the application UI using the instruction defined in the [Updating the UI documentation](https://roadie.io/docs/details/updating-the-ui/). While you can use the standard page, card or content components served from localhost in the main application side, that might not be the best user experience for other users of your Roadie instance. The plugin served from localhost is only visible to you!
 
@@ -191,7 +193,7 @@ A good rule of thumb usually is that if it is a '`RoutableExtension`' it is goin
 After we have clicked save, the plugin is ready to be used in the application.
 
 
-6. **Configuring your plugin component to be used**
+6. **Configure your plugin component to be used**
 
 The plugin is now registered from your `localhost` and can be added to the application UI using the instruction defined in the [Updating the UI documentation](https://roadie.io/docs/details/updating-the-ui/). While you can use the standard page or content components served from localhost in the main application side, that might not be the best user experience for other users of your Roadie instance. The plugin served from localhost is only visible to you!
 
