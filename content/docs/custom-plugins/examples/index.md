@@ -133,23 +133,23 @@ The created directory structure would be something like the following picture:
 
 Roadie CLI is the tool to use which builds your application into a format that is Roadie compatible. It is possible to install Roadie CLI either as a global tool or as a dependency in the project itself. 
 
-a. Add roadie-cli as a devDependency
+_a. Add roadie-cli as a devDependency_
 
 To add Roadie CLI as a dependency to the project, modify the `package.json` file within your plugin directory. You want to add the following line as a `devDependency` in the file.
 ```json
-"@roadiehq/roadie-cli": "^1.0.1",
+"@roadiehq/roadie-cli": "^1.0.2",
 ```
 
 After that you can run install command by typing `yarn` in that same directory.
 
-To actually use the CLI through your plugin package.json files, you can add the following useful scripts into the `scripts` block in `package.json:
+To actually use the CLI through your plugin package.json files, you can add the following useful scripts into the `scripts` block in `package.json`:
 ```
 "develop": "roadie plugin:dev -l $PWD/ --output $PWD/out --port 7046",
 "build": "roadie plugin:build -l $PWD/ --output $PWD/out --host",
 "build:upload:awsS3": "roadie plugin:build --withUpload -l $PWD/ --output $PWD/out --host",
 ```
 
-Additionally if you want to add an automatic file watching which would rebuild the plugin on all changes, you can install `"@aoberoi/chokidar-cli": "^2.0.0"` dev dependency and add the following script to your package.json scripts.
+Additionally, if you want to add an automatic file watching which would rebuild the plugin on all changes, you can install `"@aoberoi/chokidar-cli": "^2.0.0"` dev dependency and add the following script to your package.json scripts.
 ```
 "develop:watch": "chokidar \"./src/**\" -c \"npm run develop\" -d 1000 --initial",
 ```
@@ -157,7 +157,7 @@ Additionally if you want to add an automatic file watching which would rebuild t
 After these modifications, you can run Roadie CLI using commands like:
 `yarn develop`, `yarn develop:watch` and `yarn build`
 
-b. Install Roadie CLI globally
+_b. Install Roadie CLI globally_
 
 You can also install Roadie CLI globally which is useful if you want to build plugins from multiple various folders. You can do this by running either  `npm install -g @roadiehq/roadie-cli` or `yarn add global @roadiehq/roadie-cli` (depending on your tool of choice). 
 
