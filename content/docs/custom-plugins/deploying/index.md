@@ -35,14 +35,14 @@ roadie plugin:build --package @roadiehq/backstage-plugin-prometheus --host https
 
 ### Available options for `plugin:build` command:
 
-| Option          | Name                      | Description                                                                                                      | Example                                                                                        |
-|-----------------|---------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| --location -l   | Location                  | (One of location or package is required) The absolute path to the folder where your plugin resides               | -l $PWD/my-plugin / -l /home/myname/Development/roadie-plugins/my-plugin                       |
-| --package -p    | Package                   | (One of location or package is required) NPM Package to use to build a Roadie Plugin                             | -p @roadiehq/backstage-plugin-prometheus                                                       |
-| --host -h       | Host                      | (Required) Fully qualified URL to the location where these files will be hosted. The Production URL              | -h https://my-plugins.domain.com/prometheusPlugin / -h https://calm-parfait-833e94.netlify.app |
-| --output -o     | Output                    | The absolute path to the folder where you want to generate the Roadie compatible plugin code                     | -o $PWD/my-plugin/dist / -o /home/myname/Development/roadie-plugins/my-plugin/dist             |
-| --workdir -w    | Working Dir               | Used for cases where package option is used. A directory to use to download, unpack and build                    | -w $PWD/my-plugin/temp / -w /home/myname/temp/downloads                                        |
-| --withUpload -u | Enable AWS S3 upload mode | A flag to upload generated files to S3. Bucket info is defined in env variable S3_BUCKET_NAME & S3_BUCKET_PREFIX | -u                                                                                             |
+| Option          | Name                      | Description                                                                                                      | Example                                                                                            |
+|-----------------|---------------------------|------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| --location -l   | Location                  | (One of location or package is required) The absolute path to the folder where your plugin resides               | `-l $PWD/my-plugin` / `-l /home/myname/Development/roadie-plugins/my-plugin`                       |
+| --package -p    | Package                   | (One of location or package is required) NPM Package to use to build a Roadie Plugin                             | `-p @roadiehq/backstage-plugin-prometheus`                                                         |
+| --host -h       | Host                      | (Required) Fully qualified URL to the location where these files will be hosted. The Production URL              | `-h https://my-plugins.domain.com/prometheusPlugin` / `-h https://calm-parfait-833e94.netlify.app` |
+| --output -o     | Output                    | The absolute path to the folder where you want to generate the Roadie compatible plugin code                     | `-o $PWD/my-plugin/dist` / `-o /home/myname/Development/roadie-plugins/my-plugin/dist`             |
+| --workdir -w    | Working Dir               | Used for cases where package option is used. A directory to use to download, unpack and build                    | `-w $PWD/my-plugin/temp` / `-w /home/myname/temp/downloads`                                        |
+| --withUpload -u | Enable AWS S3 upload mode | A flag to upload generated files to S3. Bucket info is defined in env variable S3_BUCKET_NAME & S3_BUCKET_PREFIX | `-u`                                                                                               |
 
 
 ### Deploying the plugin to Roadie
