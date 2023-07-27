@@ -67,6 +67,14 @@ const DS = () => (
         <img className='Image' src='https://roadie.io/static/team-in-road-4aa9b8d4321ef42d6f74abbe82d843f7.jpg' alt='Colm Tuite' />
       </section>
 
+      <div className='Flex column gap-6'>  
+        <div className='Separator' role='separator'></div>
+        <div className='Separator size-1' role='separator'></div>
+        <div className='Separator size-2' role='separator'></div>
+        <div className='Separator vertical size-1' role='separator'></div>
+        <div className='Separator vertical size-2' role='separator'></div>
+      </div>
+
       <section className='Section size-3'>
         <div className='Grid columns-2 gap-6 ai-start'>
           <div className='Flex column gap-1'>
