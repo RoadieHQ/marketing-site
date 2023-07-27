@@ -565,3 +565,10 @@
   background-color: var(--red-3);
   color: var(--red-11);
 }
+
+.Sup {
+  font-feature-settings: "sups";
+  font-size: 100%;
+  line-height: 1;
+  vertical-align: -webkit-baseline-middle;
+}

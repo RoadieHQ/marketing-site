@@ -117,7 +117,7 @@ const DS = () => (
             <p className='Text size-4' style={{ marginBottom: '20px'}}>I encourage my team to keep learning. Ideas in different topics or fields can often inspire new ideas and broaden the potential solution space. I encourage my team to keep learning. Ideas in different topics or fields can often inspire new ideas and broaden the potential solution.</p>
           </div>
           <div>
-            <p className='Text size-3 lowContrast' style={{ marginBottom: '20px'}}>I encourage my team to keep learning. Ideas in different topics or fields can often inspire new ideas and broaden the potential solution space. I encourage my team to keep learning. Ideas in different topics or fields can often inspire new ideas and broaden the potential solution space.</p>
+            <p className='Text size-3 lowContrast' style={{ marginBottom: '20px'}}>I encourage my team to keep learning.<sup className='Sup'>1</sup> Ideas in different topics or fields can often inspire new ideas and broaden the potential solution space. I encourage my team to keep learning. Ideas in different topics or fields can often inspire new ideas and broaden the potential solution space.</p>
           </div>
           <div className='Grid columns-2 gap-6'>
             <div>
