@@ -64,6 +64,10 @@ const DS = () => (
       </section>
 
       <section className='Section size-3'>
+        <img className='Image' src='https://roadie.io/static/team-in-road-4aa9b8d4321ef42d6f74abbe82d843f7.jpg' alt='Colm Tuite' />
+      </section>
+
+      <section className='Section size-3'>
         <div className='Grid columns-2 gap-6 ai-start'>
           <div className='Flex column gap-1'>
             <div className='Flex ai-center' style={{ backgroundColor: 'hotpink', height: 64 }}>

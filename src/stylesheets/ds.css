@@ -588,3 +588,9 @@
   background-color: var(--violet-3);
   color: var(--violet-11);
 }
+
+.Image {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
