@@ -572,3 +572,10 @@
   line-height: 1;
   vertical-align: -webkit-baseline-middle;
 }
+
+.Sub {
+  font-feature-settings: "subs";
+  font-size: 100%;
+  line-height: 1;
+  vertical-align: -webkit-baseline-middle;
+}
