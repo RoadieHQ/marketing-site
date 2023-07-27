@@ -12,6 +12,19 @@
   --indigo-11: hsl(226, 55%, 49%);
   --indigo-12: hsl(226, 62%, 17%);
 
+  --violet-1: hsl(255, 65%, 99%);
+  --violet-2: hsl(252, 100%, 99%);
+  --violet-3: hsl(252, 97%, 97%);
+  --violet-4: hsl(252, 92%, 95%);
+  --violet-5: hsl(252, 85%, 93%);
+  --violet-6: hsl(252, 78%, 89%);
+  --violet-7: hsl(252, 71%, 84%);
+  --violet-8: hsl(252, 69%, 76%);
+  --violet-9: hsl(252, 56%, 58%);
+  --violet-10: hsl(251, 48%, 54%);
+  --violet-11: hsl(250, 43%, 48%);
+  --violet-12: hsl(254, 60%, 19%);
+
   --gray-1: hsl(221, 30%, 99%);
   --gray-2: hsl(225, 17%, 98%);
   --gray-3: hsl(224, 13%, 95%);
@@ -25,6 +38,45 @@
   --gray-11: hsl(221, 6%, 44%);
   --gray-12: hsl(221, 24%, 9%);
 
+  --green-1: hsl(136, 50%, 99%);
+  --green-2: hsl(138, 63%, 97%);
+  --green-3: hsl(139, 55%, 95%);
+  --green-4: hsl(140, 49%, 91%);
+  --green-5: hsl(141, 44%, 86%);
+  --green-6: hsl(143, 40%, 79%);
+  --green-7: hsl(146, 39%, 69%);
+  --green-8: hsl(151, 40%, 54%);
+  --green-9: hsl(151, 55%, 42%);
+  --green-10: hsl(152, 58%, 38%);
+  --green-11: hsl(153, 67%, 29%);
+  --green-12: hsl(155, 40%, 14%);
+
+  --yellow-1: hsl(60, 54%, 98.5%);
+  --yellow-2: hsl(52, 100%, 96%);
+  --yellow-3: hsl(55, 100%, 91%);
+  --yellow-4: hsl(54, 100%, 87%);
+  --yellow-5: hsl(52, 98%, 82%);
+  --yellow-6: hsl(50, 89%, 76%);
+  --yellow-7: hsl(47, 80%, 68%);
+  --yellow-8: hsl(48, 100%, 46%);
+  --yellow-9: hsl(53, 92%, 50%);
+  --yellow-10: hsl(50, 100%, 49%);
+  --yellow-11: hsl(42, 100%, 29%);
+  --yellow-12: hsl(40, 55%, 14%);
+
+  --red-1: hsl(359, 100%, 99%);
+  --red-2: hsl(359, 100%, 98%);
+  --red-3: hsl(360, 100%, 96%);
+  --red-4: hsl(360, 98%, 95%);
+  --red-5: hsl(360, 90%, 92%);
+  --red-6: hsl(360, 82%, 88%);
+  --red-7: hsl(359, 74%, 82%);
+  --red-8: hsl(359, 70%, 74%);
+  --red-9: hsl(358, 75%, 59%);
+  --red-10: hsl(358, 69%, 55%);
+  --red-11: hsl(358, 65%, 49%);
+  --red-12: hsl(354, 50%, 15%);
+
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -32,8 +84,8 @@
   --space-5: 20px;
   --space-6: 24px;
   --space-7: 32px;
-  --space-8: 48px;
-  --space-9: 64px;
+  --space-8: 40px;
+  --space-9: 48px;
 
   --fs-1: 10px;
   --fs-2: 12px;
@@ -106,6 +158,9 @@
   user-select: none;
   flex-shrink: 0;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  text-decoration: none;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .Button.size-1 {
@@ -129,10 +184,10 @@
 .Button.size-3 {
   height: var(--space-8);
   font-size: var(--fs-4);
-  padding-right: var(--space-4);
-  padding-left: var(--space-4);
-  border-radius: var(--br-2);
-  gap: var(--space-3);
+  padding-right: var(--space-3);
+  padding-left: var(--space-3);
+  border-radius: var(--br-1);
+  gap: var(--space-2);
 }
 
 .Button.neutral {
@@ -149,6 +204,24 @@
 }
 .Button.accent:hover {
   background-color: var(--indigo-10);
+}
+
+.Button.green {
+  background-color: var(--green-9);
+  color: white;
+}
+
+.Button.green:hover {
+  background-color: var(--green-10);
+}
+
+.Button.red {
+  box-shadow: inset 0 0 0 1px var(--gray-7);
+  color: var(--red-11);
+}
+
+.Button.red:hover {
+  box-shadow: inset 0 0 0 1px var(--gray-8);
 }
 
 .Text {
@@ -430,4 +503,65 @@
 
 .Grid.ai-stretch {
   align-items: stretch;
+}
+
+.Badge {
+  all: unset;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  appearance: none;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: default;
+  user-select: none;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: var(--br-pill);
+}
+
+.Badge.size-1 {
+  height: var(--space-5);
+  font-size: var(--fs-2);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+  gap: var(--space-1);
+}
+
+.Badge.size-2 {
+  height: var(--space-6);
+  font-size: var(--fs-3);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+  gap: var(--space-2);
+}
+
+.Badge.gray {
+  background-color: var(--gray-3);
+  color: var(--gray-11);
+}
+
+.Badge.indigo {
+  background-color: var(--indigo-3);
+  color: var(--indigo-11);
+}
+
+.Badge.green {
+  background-color: var(--green-3);
+  color: var(--green-11);
+}
+
+.Badge.yellow {
+  background-color: var(--yellow-3);
+  color: var(--yellow-11);
+}
+
+.Badge.red {
+  background-color: var(--red-3);
+  color: var(--red-11);
 }
