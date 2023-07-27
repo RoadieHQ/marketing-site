@@ -76,6 +76,14 @@ const DS = () => (
       </div>
 
       <section className='Section size-3'>
+        <div className='Flex column gap-6'>
+          <input className='TextField size-1' type='text' placeholder='Colm Tuite' />
+          <input className='TextField size-2' type='email' placeholder='Colm Tuite' />
+          <input className='TextField size-3' type='password' placeholder='Colm Tuite' />
+        </div>
+      </section>
+
+      <section className='Section size-3'>
         <div className='Flex row gap-6'>
           <div className='Avatar size-1'>
             <img src='https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_x96.jpg' alt='Colm Tuite' />
