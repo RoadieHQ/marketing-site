@@ -8,8 +8,8 @@
   --indigo-7: hsl(225, 77%, 82%);
   --indigo-8: hsl(226, 75%, 75%);
   --indigo-9: hsl(226, 78%, 58%);
-  --indigo-10: hsl(226, 59%, 51%);
-  --indigo-11: hsl(226, 55%, 49%);
+  --indigo-10: hsl(226, 59%, 55%);
+  --indigo-11: hsl(226, 55%, 54%);
   --indigo-12: hsl(226, 62%, 17%);
 
   --violet-1: hsl(255, 65%, 99%);
@@ -713,4 +713,25 @@
 
 .TextField::placeholder {
   color: var(--gray-9);
+}
+
+.Link {
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration-line: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--indigo-4);
+  color: var(--indigo-11);
+}
+
+.Link:hover {
+  text-decoration-line: underline;
+}
+
+.Link .Text {
+  color: inherit;
 }

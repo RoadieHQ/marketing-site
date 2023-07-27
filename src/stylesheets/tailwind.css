@@ -12,10 +12,6 @@
   @apply items-center;
 }
 
-html {
-  /* scroll-behavior: smooth; */
-}
-
 @layer base {
   html {
     @apply text-blueroadie;

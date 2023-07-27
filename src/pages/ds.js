@@ -84,6 +84,12 @@ const DS = () => (
       </section>
 
       <section className='Section size-3'>
+        <div className='Flex column gap-6'>
+          <a className='Link' href='/ds'><span className='Text size-4'>This is a link</span></a>
+        </div>
+      </section>
+
+      <section className='Section size-3'>
         <div className='Flex row gap-6'>
           <div className='Avatar size-1'>
             <img src='https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_x96.jpg' alt='Colm Tuite' />
