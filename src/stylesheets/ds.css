@@ -570,7 +570,7 @@
   font-feature-settings: "sups";
   font-size: 100%;
   line-height: 1;
-  vertical-align: -webkit-baseline-middle;
+  vertical-align: text-bottom;
 }
 
 .Sub {
