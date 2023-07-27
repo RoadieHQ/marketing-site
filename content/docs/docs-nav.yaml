@@ -100,7 +100,6 @@ nav:
       - Legacy Method:
         - Configuration: '/docs/custom-plugins/legacy/configuring/'
         - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
-        - Proxy: '/docs/custom-plugins/legacy/proxy/'
   - Scaffolder:
       - Writing scaffolder templates: '/docs/scaffolder/writing-templates/'
       - Recipes:
