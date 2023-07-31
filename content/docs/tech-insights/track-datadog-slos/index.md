@@ -11,8 +11,13 @@ As a platform team, it is important to measure the reliability and performance o
 Before you begin, make sure you have the following:
 
 - A Datadog account: Sign up for a Datadog account if you don't have one already.
-- Access to your system's components: Ensure you have the necessary permissions to access the components you want to track.
-- Defined SLOs in at least one of the components.
+- Access to your system components in Datadog: Ensure you have the necessary permissions to access the components you want to track SLOs from.
+- Defined SLOs in at least one of the components in Datadog.
+- Annotations configured in your `catalog-info.yaml` file in your repository. These are the annotations used in our Datadog built-in Data Source to track SLOs and Monitors:
+  - `datadoghq.com/slo_tag`: The Datadog SLO tag to use for this component. This is the tag that will be used to filter the components that have SLOs defined.
+  - `datadoghq.com/monitor_tags`: The Datadog SLO target to use for this component. This are the monitor tags that will be used to filter the components that have Monitors defined in Datadog.
+
+### **What you'll learn**
 
 With Roadie's Tech Insights feature, there's an easier way. In this tutorial, we’re going to:
 
