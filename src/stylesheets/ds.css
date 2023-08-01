@@ -89,7 +89,7 @@
 
   --fs-1: 10px;
   --fs-2: 12px;
-  --fs-3: 14px;
+  --fs-3: 15px;
   --fs-4: 17px;
   --fs-5: 20px;
   --fs-6: 27px;
@@ -99,8 +99,8 @@
 
   --lh-1: 14px;
   --lh-2: 17px;
-  --lh-3: 19px;
-  --lh-4: 22px;
+  --lh-3: 21px;
+  --lh-4: 23px;
   --lh-5: 24px;
   --lh-6: 28px;
   --lh-7: 36px;
@@ -325,6 +325,10 @@
   line-height: 1;
 }
 
+.Text.inline {
+  display: inline;
+}
+
 .Container {
   max-width: 1064px;
   margin-left: auto;
@@ -372,6 +376,22 @@
 
 .Flex.ai-stretch {
   align-items: stretch;
+}
+
+.Flex.jc-start {
+  justify-content: start;
+}
+
+.Flex.jc-end {
+  justify-content: end;
+}
+
+.Flex.jc-between {
+  justify-content: space-between;
+}
+
+.Flex.jc-center {
+  justify-content: center;
 }
 
 .Flex.gap-1 {
@@ -723,7 +743,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-decoration-line: none;
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
   text-decoration-color: var(--indigo-4);
   color: var(--indigo-11);
 }
@@ -732,6 +752,107 @@
   text-decoration-line: underline;
 }
 
+.Link.lowContrast {
+  color: var(--gray-11);
+  text-decoration-color: var(--gray-4);
+}
+
+.Link.highContrast {
+  color: var(--gray-12);
+}
+
 .Link .Text {
   color: inherit;
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.List.gap-1 {
+  gap: var(--space-1);
+}
+
+.List.gap-2 {
+  gap: var(--space-2);
+}
+
+.List.gap-3 {
+  gap: var(--space-3);
+}
+
+.List.gap-4 {
+  gap: var(--space-4);
+}
+
+.List.gap-5 {
+  gap: var(--space-5);
+}
+
+.List.gap-6 {
+  gap: var(--space-6);
+}
+
+.List.gap-7 {
+  gap: var(--space-7);
+}
+
+.List.gap-8 {
+  gap: var(--space-8);
+}
+
+.List.gap-9 {
+  gap: var(--space-9);
+}
+
+.ListItem {
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.IconButton {
+  all: unset;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: default;
+  user-select: none;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  justify-content: center;
+  border-radius: var(--br-circle);
+  color: var(--gray-12);
+}
+
+.IconButton.size-1 {
+  height: var(--space-6);
+  width: var(--space-6);
+}
+
+.IconButton.size-2 {
+  height: var(--space-7);
+  width: var(--space-7);
+}
+
+.IconButton.size-3 {
+  height: var(--space-8);
+  width: var(--space-8);
+}
+
+.IconButton.neutral {
+  color: var(--gray-12);
+}
+
+.IconButton.neutral:hover {
+  background-color: var(--gray-4);
 }

@@ -12,6 +12,10 @@
   @apply items-center;
 }
 
+body {
+  color: var(--gray-12);
+}
+
 @layer base {
   html {
     @apply text-blueroadie;
