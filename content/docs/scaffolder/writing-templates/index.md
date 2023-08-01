@@ -1268,9 +1268,9 @@ You can find all the actions available to your Backstage instance by visiting th
 
 ### Calling an internal API
 
-If you need a scaffolder step to contact a custom authenticated service or any public API for that matter that is not currently supported by a built-in action, you can do that using a combination of the `http:backstage:request` action and a [backstage proxy configuration](/docs/custom-plugins/proxy/).
+If you need a scaffolder step to contact a custom authenticated service or any public API for that matter that is not currently supported by a built-in action, you can do that using a combination of the `http:backstage:request` action and a [backstage proxy configuration](/docs/custom-plugins/connectivity/proxy/).
 
-Start by creating a proxy configuration as described in [this page](/docs/custom-plugins/proxy/)
+Start by creating a proxy configuration as described in [this page](/docs/custom-plugins/connectivity/proxy/)
 
 Then you can add a step to call that API using the `http:backstage:request` action as follows:
 
