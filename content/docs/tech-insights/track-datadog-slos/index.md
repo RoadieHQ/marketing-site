@@ -19,30 +19,30 @@ Before you begin, make sure you have the following:
 
 ### **What you'll learn**
 
-With Roadie's Tech Insights feature, there's an easier way. In this tutorial, we’re going to:
+In this tutorial, we’re going to:
 
-1. Set up Datadog integration.
-2. Automatically scan Components in the Backstage catalog and record how many SLOs are defined for each.
-3. Visualize the distribution of SLOs defined count.
-4. Create a check to verify if at least one SLO is defined for each component.
+- Set up Datadog integration.
+- Automatically scan Components in the Backstage catalog and record how many SLOs are defined for each.
+- Visualize the distribution of SLOs defined count.
+- Create a check to verify if at least one SLO is defined for each component.
 
 As we go through this process, you’ll learn:
 
-1. How to use built-in Data Sources (Datadog) and how to create Checks with Tech Insights.
-2. How to detect which component has SLO defined with Tech Insights.
-3. How to use a comparison operator.
+- How to use built-in Data Sources (Datadog) and how to create Checks with Tech Insights.
+- How to detect which component has SLO defined with Tech Insights.
+- How to use a comparison operator.
 
 Let's get started.
 
-## Setup Datadog integration
+## 1 - Setup Datadog integration
 
 In order to collect the Datadog SLO count from each component, the Datadog integration needs to be set up on Roadie. To do that, follow these steps:
 
-### Administration → Settings → Datadog
+### 1.1 - Administration → Settings → Datadog
 
 Set the hostname of your Datadog app.
 
-### Administration → Settings → Secrets
+### 1.2 - Administration → Settings → Secrets
 
 Set the `Datadog API Token` and `Datadog APP Token` in order for your Roadie instance to contact your Datadog app.
 
@@ -51,9 +51,9 @@ Set the `Datadog API Token` and `Datadog APP Token` in order for your Roadie ins
 | DD_API_TOKEN | Datadog API Token |
 | DD_APP_TOKEN | Datadog APP Token |
 
-## Record the SLO count for each component
+## 2 - Record the SLO count for each component
 
-In order to know which software has Datadog SLOs configured, we’re going to use the built-in Datadog Data Source in Roadie Tech Insights. It will run periodically and extract the SLO count from each component.
+In order to know which software has Datadog SLOs configured, we’re going to use the built-in Datadog Data Source in Roadie Tech Insights. It will run periodically and extract the SLO count fact from each component.
 
 These are the steps to set that up.
 
@@ -61,27 +61,27 @@ These are the steps to set that up.
 
    ![Data Source Listing](./datasources_list.png)
 
-2. You may need to wait some time for the data source to collect all SLOs and Monitors from Datadog. It must contact the Datadog APIs for each component, which is captured by the already set filter.
+2. You may need to wait some time for the data source to collect all SLOs and Monitors from Datadog. It must contact the Datadog APIs for each component, which is captured by the already set filter. These counts are then stored as facts for each component.
 
    ![Data Source Results](./datasource_results.png)
 
-## Visualize the distribution of SLOs count
+## 3 - Visualize the distribution of SLOs count
 
-Our Data Source comes with a built-in visualization panel that lets us get an overview of the SLO counts present in each configured and annotated component. When viewing a Data Source, expand the “Facts visualization” section to see it.
+Our Data Source details panel comes with a built-in visualization panel that lets us get an overview of the facts (in this case SLOs count) present in each configured and annotated component. When viewing a Data Source, expand the “Facts visualization” section to see it.
 
 ![Data Source Visualization](./datasource_graph.png)
 
-This chart tells us:
+This chart tells you:
 
 1. 33% of the Components that this Data Source targets have 1 SLO defined and configured.
 2. 33% of the Components that this Data Source targets have 2 SLOs defined and configured.
 3. 33% of the Components that this Data Source targets have no SLOs configured.
 
-In the next section, we will create a Check that can show a pass or fail result to app dev teams to tell them if they are missing any component that doesn’t have an SLO defined.
+In the next section, we will create a Check that can compare and verify if each software component has at least one SLO defined in Datadog.
 
-## Create a check that shows which software doesn’t have an SLO defined and configured
+## 4 - Create a check that shows if a software has at least one SLO defined and configured
 
-Now that we can determine which components are using Dockerfiles, and we can extract the base image version from those files, let’s write a check to combine both of these properties.
+Now that we can determine how many SLOs are correctly configured in Datadog and that data was extracted using the Datadog Data Source, let’s write a check to verify if each software has at least one SLO defined.
 
 1. Visit Tech Insights and click into the Checks tab. Click the ADD CHECK button to create a new check.
 
@@ -91,7 +91,7 @@ Now that we can determine which components are using Dockerfiles, and we can ext
 
    ![Create a Check](./create_check.png)
 
-3. In the Conditions section, we’re going to create a condition that compares against the Datadog Slo facts retrieved from the data source.
+3. In the Conditions section, we’re going to create a condition that compares against the Datadog Source facts (in this case SLOs count) retrieved from the data source.
 4. In the first set of condition inputs, use the following values.
 
    | Input name    | Value               |
@@ -111,7 +111,7 @@ Now that we can determine which components are using Dockerfiles, and we can ext
 
 6. Save the check by clicking “SAVE”. If you’re not quite ready to go live yet, you can use the “SAVE AS DRAFT” button to save the check but ensure only admins can see it.
 
-### Check results
+### 5 - Check results
 
 The results of this check tell us what software still doesn't have any SLOs configured and whom to reach out to fix it.
 
