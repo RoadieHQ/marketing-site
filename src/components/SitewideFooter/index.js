@@ -3,10 +3,6 @@ import { Link } from 'components';
 import { TwitterIcon, GitHubIcon, DiscordIcon, BackstageIcon, RoadieRacksIcon } from 'components/icons';
 import camelCase from 'lodash/camelCase';
 
-import soc2Seal from '../../../content/assets/logos/soc2/aicpa.jpg';
-
-import theme from '../../theme';
-
 const navigation = {
   product: [
     { name: 'Catalog', href: '/product/catalog' },
