@@ -129,7 +129,7 @@
   force = true
 
 [[redirects]]
-  from = "/docs/custom-plugins/connectivity/proxy/"
-  to = "/docs/custom-plugins/proxy/"
+  from = "/docs/custom-plugins/proxy/"
+  to = "/docs/custom-plugins/connectivity/proxy/"
   force = true
 
