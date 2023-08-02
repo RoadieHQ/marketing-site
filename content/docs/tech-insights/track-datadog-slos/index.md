@@ -38,9 +38,7 @@ Let's get started.
 
 In order to collect the Datadog SLO count from each component, the Datadog integration needs to be set up on Roadie. To do that, follow these steps:
 
-### 1.1 - Administration → Settings → Datadog
-
-Set the hostname of your Datadog app.
+1. Go to _Administration → Settings → Datadog_ and set the hostname of your Datadog app.
 
 ### 1.2 - Administration → Settings → Secrets
 
