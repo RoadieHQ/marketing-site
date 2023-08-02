@@ -126,29 +126,35 @@ const Home = ({ data }) => {
         <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="right" />
       </AlternatingFeatureWrapper>
 
-      <section className="text-center bg-white py-20 mt-10 xl:mt-16">
-        <figure className="max-w-2xl px-4 mx-auto mb-5">
-          <img src={YotpoImg} alt="Yotpo logo" className="block mx-auto mb-10" />
-          <blockquote className="text-2xl font-bold tracking-wide">
-            “The Roadie team have been incredible to work with. Their platform provides us with a
-            ton of flexibility and integrations. We’ve been able to start using Backstage must
-            faster and we don’t have to worry about the maintenance.”
-          </blockquote>
-          <figcaption className="text-xl mt-5">Ron Barabash, Team Lead, Yotpo</figcaption>
-        </figure>
+      <section className="Section size-3">
+        <div className='Container'>
+          <div className='Flex row jc-center'>
+            <figure className="max-w-2xl px-4 mx-auto mb-5">
+              <img src={YotpoImg} alt="Yotpo logo" className="block mx-auto mb-10" />
+              <blockquote className="Text size-6 weight-1">
+                “The Roadie team have been incredible to work with. Their platform provides us with a
+                ton of flexibility and integrations. We’ve been able to start using Backstage must
+                faster and we don’t have to worry about the maintenance.”
+              </blockquote>
+              <figcaption>
+                <span className="Text size-3 weight-2">Ron Barabash</span>
+                <span className="Text size-3 lowContrast">Team Lead, Yotpo</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
 
-        <Title el="h2" className="mt-10 xl:text-2xl xl:tracking-tight text-orange-600">
-          See the Roadie Catalog in action
-        </Title>
-        <Button
-          link={true}
-          color="primary"
-          size="medium"
-          to="/request-demo/"
-          className="font-bold tracking-wide mt-6"
-          text="Request a Demo"
-        />
       </section>
+
+      <h4 className="Text size-7">
+        See the Roadie Catalog in action
+      </h4>
+      <Button
+        link={true}
+        to="/request-demo/"
+        className="Button size-3 accent"
+        text="Request a Demo"
+      />
 
       <SitewideFooter />
     </>

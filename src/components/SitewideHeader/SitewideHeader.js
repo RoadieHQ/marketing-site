@@ -89,8 +89,6 @@ const learn = [
 ];
 
 const SitewideHeader = ({
-  maxWidth = '7xl',
-  borderBottom = true,
   ctaTo = '/request-demo/',
   ctaText = 'Get a Demo',
 }) => (
@@ -102,29 +100,31 @@ const SitewideHeader = ({
         </TopBanner>
         <header
           className={classnames(
-            ` max-w-${maxWidth} mx-auto px-2 py-6 sm:px-6 xl:py-8 flex justify-between items-center  md:justify-start md:space-x-10`,
-            {
-              'border-b-2 border-gray-100': borderBottom,
-            }
+            ` fml-wtf`,
           )}
         >
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Logo />
-          </div>
+          <div className='Flex row'>
+            <div className="">
+              <Logo />
+            </div>
 
-          <div className="-mr-2 -my-2 md:hidden">
-            <OpenMenuButton />
-          </div>
+            <div className='Container'>
+              <div className="-mr-2 -my-2 md:hidden">
+                <OpenMenuButton />
+              </div>
 
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
-            <TopNavDropdownItem text="Product" subItems={features} />
-            <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
-            <TopNavItem to="/pricing/" text="Pricing" />
-            <TopNavDropdownItem text="Resources" subItems={learn} />
-          </Popover.Group>
+              <Popover.Group as="nav" className="Flex row ai-center gap-6">
+                <TopNavDropdownItem text="Product" subItems={features} />
+                <TopNavDropdownItem text="Resources" subItems={learn} />
+                <TopNavItem to="/case-studies/" text="Customers" />
+                <TopNavItem to="/pricing/" text="Pricing" />
+                <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
+              </Popover.Group>
+            </div>
 
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Button link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
+            <div className="">
+              <Button className="Button size-1 accent" link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
+            </div>
           </div>
         </header>
 

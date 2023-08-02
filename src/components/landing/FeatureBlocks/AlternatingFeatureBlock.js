@@ -1,5 +1,4 @@
 import React from 'react';
-import { DotPattern, Title } from 'components';
 import classnames from 'classnames';
 import camelCase from 'lodash/camelCase';
 
@@ -14,37 +13,39 @@ const FeatureBlock = ({
   illustration,
   ctaPrompt,
   comingSoon,
-  illustrationSide = 'right',
 }) => (
-  <div
-    className={classnames('lg:grid lg:grid-cols-8 lg:items-center lg:gap-8', {
-      'lg:grid-flow-row-dense': illustrationSide === 'left',
-    })}
-  >
-    <div
-      className={classnames('lg:col-span-5', {
-        'lg:col-start-4': illustrationSide === 'left',
-        'lg:col-start-0': illustrationSide === 'right',
-      })}
+  <div className='Grid columns-2 gap-9 ai-center'>
+    <aside
+      className=""
+      aria-hidden
     >
-      <Title el="h3" className="xl:text-2xl xl:tracking-tight text-primary-600">
+      {illustration.to ? (
+        <Link to={illustration.to} className="">
+          <img src={illustration.png} alt={illustration.alt} className="" />
+        </Link>
+      ) : (
+        <img src={illustration.png} alt={illustration.alt} className="" />
+      )}
+    </aside>
+    <div className='Flex column gap-6'>
+      <div>
         {comingSoon && (
-          <>
-            <span className="inline-block border border-blueroadie text-blueroadie mb-2 text-sm px-2 py-1 rounded-xl">
-              Coming soon
-            </span>
-            <br />
-          </>
+          <span className="Badge size-2 indigo">
+            Coming soon
+          </span>
         )}
+      </div>
 
+      <h2 className="Text size-4 weight-2 indigo">
         {title}
-      </Title>
-      <p className="mt-1 mb-10 text-xl xl:text-2xl">{description}</p>
+      </h2>
+
+      <h3 className="Text size-7">{description}</h3>
 
       {paragraphs && (
         <>
           {paragraphs.map((paragraph, i) => (
-            <p className="text-lg xl:text-xl mt-5" key={`feature-p-${camelCase(title)}-${i}`}>
+            <p className="Text size-4" key={`feature-p-${camelCase(title)}-${i}`}>
               {paragraph}
             </p>
           ))}
@@ -61,25 +62,13 @@ const FeatureBlock = ({
 
       {ctaPrompt && (
         <p>
-          <Link to={ctaPrompt.to} className="block mt-5 font-bold text-lg tracking-wider">
-            {ctaPrompt.text} <span className="text-orange-500">&rarr;</span>
+          <Link to={ctaPrompt.to} className="Link">
+            {ctaPrompt.text} <span className="Text size-4 string">&rarr;</span>
           </Link>
         </p>
       )}
     </div>
 
-    <aside
-      className="mt-10 relative lg:mt-0 lg:col-span-3 flex align-center justify-center px-2 sm:px-0"
-      aria-hidden
-    >
-      {illustration.to ? (
-        <Link to={illustration.to} className="block w-full">
-          <img src={illustration.png} alt={illustration.alt} className="w-full" />
-        </Link>
-      ) : (
-        <img src={illustration.png} alt={illustration.alt} className="w-full" />
-      )}
-    </aside>
   </div>
 );
 
@@ -88,34 +77,13 @@ export const AlternatingFeatureWrapper = ({ className, children, id }) => (
     id={id}
     className={classnames(
       className,
-      'relative overflow-hidden max-w-xl mx-auto px-4 sm:px-6 lg:px-28 lg:max-w-7xl'
+      'Section size-3'
     )}
   >
     {children}
   </section>
 );
 
-export const AlternatingFeatureBlock = ({ featureItem, illustrationSide = 'right' }) => (
-  <div className="relative">
-    {illustrationSide === 'right' ? (
-      <DotPattern
-        width={404}
-        height={450}
-        className="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/8"
-        id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
-      />
-    ) : (
-      <DotPattern
-        className="hidden lg:block absolute right-full transform translate-x-1/2 -translate-y-1/8"
-        width={404}
-        height={450}
-        aria-hidden="true"
-        id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
-      />
-    )}
-
-    <div className="relative mt-12 sm:mt-16 lg:my-24">
-      <FeatureBlock illustrationSide={illustrationSide} {...featureItem} />
-    </div>
-  </div>
+export const AlternatingFeatureBlock = ({ featureItem }) => (
+  <FeatureBlock {...featureItem} />
 );

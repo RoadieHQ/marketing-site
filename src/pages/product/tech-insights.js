@@ -3,11 +3,9 @@ import { graphql } from 'gatsby';
 import has from 'lodash/has';
 import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
-import Title from '../../components/Title';
 
 import TechInsightsScreenshotImg from '../../../content/assets/product-pages/techinsights-hero.svg';
 import CreateCheckImg from '../../../content/assets/product-pages/techinsights-create-check.svg';
-import IntegrationsImg from '../../../content/assets/product-pages/techinsights-integrations.png';
 import GitHubBotImg from '../../../content/assets/product-pages/techinsights-github-bot.svg';
 import Logi4jImg from '../../../content/assets/product-pages/techinsights-logi4j.svg';
 
@@ -21,8 +19,8 @@ const LEAD = `Establish engineering standards and automatically ensure software 
 const PRODUCT = {
   features: [
     {
-      title: 'Create a culture of quality and accountability',
-      description: 'Write checks and run them against software in Backstage',
+      title: 'Write Checks',
+      description: 'Create a culture of quality and accountability',
       illustration: {
         png: CreateCheckImg,
         alt: 'A screenshot of an interface where a user is creating an automated check to determine if software is registered in PagerDuty.',
@@ -33,40 +31,27 @@ const PRODUCT = {
       ],
     },
     {
-      title: 'Completely flexible. Integrates with anything',
-      description: 'Define checks against code, third-party APIs, and more...',
-      illustration: {
-        png: IntegrationsImg,
-        alt: '',
-      },
-      paragraphs: [
-        `You create your own checks that make sense for you and your company. Checks can target subsets of the software you have so that different checks apply to production software than random experiments.`,
-        `Checks integrate with the tools you already use, like PagerDuty, Datadog, and GitHub. You can easily build your own integration if we haven't supplied it.`,
-      ],
-    },
-    {
-      title: 'Improve software quality over time',
-      description: 'Nudge teams towards better standards with notifications',
+      title: 'Improve Software',
+      description: 'Nudge your teams towards better standards',
       comingSoon: true,
       illustration: {
         png: GitHubBotImg,
         alt: '',
       },
       paragraphs: [
-        'Teams can see how they compare to the rest of the company so behavior changes are gamified.',
-        'Prompts and notifications in Slack channels and on pull requests can warn engineers when they’re about to make a chance that will violate an engineering standard. [coming soon]',
+        'Teams can see how they compare to the rest of your company so code quality is gamified.',
+        'Notifications in Slack and PRs warn engineers when they are about to make a change that will violate an engineering standard.',
       ],
     },
     {
-      title: 'Run migrations with ease',
-      description: 'Gain insight into the progress of migrations',
+      title: 'Gain Insight',
+      description: 'Run migrations with ease',
       illustration: {
         png: Logi4jImg,
         alt: '',
       },
       paragraphs: [
-        'Rolling out library upgrades and API changes is a constant battle. With Tech Insights you can track and report the progress of migrations company wide.',
-        'No more spreadsheets for project managing migrations. Create automatically updating reports that show the current state of the migration.',
+        'Track and report the progress of migrations company-wide. No more spreadsheets; create auto-updating reports that show the current state of each migration.',
       ],
     },
   ],
@@ -261,16 +246,14 @@ const Home = ({ data }) => {
         <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="right" />
       </AlternatingFeatureWrapper>
 
-      <section className="text-center bg-white py-20 mt-5">
-        <Title el="h2" className="mt-10 xl:text-2xl xl:tracking-tight text-orange-600">
+      <section className="Section size-3">
+        <h4 className="Text size-7">
           See Roadie’s Tech Insights in action
-        </Title>
+        </h4>
         <Button
           link={true}
-          color="primary"
-          size="medium"
           to="/request-demo/"
-          className="font-bold tracking-wide mt-6"
+          className="Button size-3 accent"
           text="Request a Demo"
         />
       </section>

@@ -15,8 +15,8 @@ const TESTIMONIALS = [{
   title: 'Incredible',
   text: (
     <>
-      <p className="prose mb-2">The Roadie team have been incredible to work with. They&apos;re obviously Backstage experts, and their platform provides us with a ton of flexibility and integrations.</p>
-      <p className="prose">We&apos;ve been able to start using Backstage must faster and we don&apos;t have to worry about the maintenance.</p>
+      <p className="Text size-3">The Roadie team have been incredible to work with. They&apos;re obviously Backstage experts, and their platform provides us with a ton of flexibility and integrations.</p>
+      <p className="Text size-3">We&apos;ve been able to start using Backstage must faster and we don&apos;t have to worry about the maintenance.</p>
     </>
   ),
   author: {
@@ -33,8 +33,8 @@ const TESTIMONIALS = [{
   title: 'Tremendous',
   text: (
     <>
-      <p className="prose mb-2">Backstage has been pivotal for our growth. And Roadie has been pivotal in supporting us at the operations, feature enhancements / roadmap, and onboarding level.</p>
-      <p className="prose">The Roadie team provides frequent updates on their offering and even more frequent answers to our questions - their support is tremendous and has eased and sped up our adoption of Backstage.</p>
+      <p className="Text size-3">Backstage has been pivotal for our growth. And Roadie has been pivotal in supporting us at the operations, feature enhancements / roadmap, and onboarding level.</p>
+      <p className="Text size-3">The Roadie team provides frequent updates on their offering and even more frequent answers to our questions - their support is tremendous and has eased and sped up our adoption of Backstage.</p>
     </>
   ),
   author: {
@@ -51,8 +51,8 @@ const TESTIMONIALS = [{
   title: 'Responsive',
   text: (
     <>
-      <p className="prose mb-2">Having a place to gather documentation of our systems and APIs, while keeping those definitions close to the source, has been a real win.</p>
-      <p className="prose">The Roadie team has been incredibly proactive in communicating updates and responsive to all our questions.</p>
+      <p className="Text size-3">Having a place to gather documentation of our systems and APIs, while keeping those definitions close to the source, has been a real win.</p>
+      <p className="Text size-3">The Roadie team has been incredibly proactive in communicating updates and responsive to all our questions.</p>
     </>
   ),
   author: {
@@ -92,19 +92,19 @@ const Testimonial = ({
 );
 
 const Testimonials = ({ testimonials = TESTIMONIALS }) => (
-  <div className="bg-gray-900">
-    <div className="max-w-7xl mx-auto py-12 lg:py-32 px-4 sm:px-6 lg:px-32">
+  <section className="Section size-3">
+    <div className="Container">
       <div className="text-center mb-8 sm:mb-12 text-white">
-        <p>What our customers say</p>
+        <h3 className='Text size-7'>What our customers say</h3>
       </div>
 
-      <div className="grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+      <div className="Grid columns-3 gap-6">
         {testimonials.map((props) => (
           <Testimonial {...props} key={props.author.name} />
         ))}
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default Testimonials;

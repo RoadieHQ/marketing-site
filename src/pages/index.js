@@ -50,32 +50,30 @@ const LEAD = `Easier, scalable and zero-maintenance. With security, scorecards a
 const PRODUCT = {
   features: [
     {
-      title: 'Keep your Developer Portal safe',
-      description: 'Roadie updates your Backstage instance automatically',
+      title: 'Automatic Updates',
+      description: 'Keep your Developer Portal safe with automatic updates',
       illustration: {
         png: KeepSafeImg,
         alt: '',
       },
       paragraphs: [
-        'As highlighted by Gartner’s report on Developer Portals, standing up and maintaining Backstage takes significant effort. Roadie gives you a production-grade Backstage instance and keeps it safe through regular upgrades, SSO and dedicated infrastructure.',
-        'Roadie is SOC2 Type 2 Certified and uses ephemeral environments for your Scaffolder actions, a common source of risk for Open Source adopters.',
+        'Keep your Backstage instance safe with automatic upgrades, SSO, dedicated infrastructure, ephemeral environments for your Scaffolder actions. Roadie is SOC2 Type 2 Certified.',
       ],
     },
     {
-      title: 'Get all the OSS features, simplified',
-      description: 'Roadie brings no-code management to Backstage',
+      title: 'Easy-to-Use',
+      description: 'No-Code UI for hassle-free Backstage management',
       illustration: {
         png: NoCodeImg,
         alt: '',
       },
       paragraphs: [
-        'With a vibrant community of contributors, new Backstage plugins and features are popping up regularly. Roadie brings all these features, while smoothening out rough edges like GitHub rate limits.',
-        'Roadie enables plugins and integrations through a UI, which also lets you manage access and permissions. Roadie also provides advanced debugging capabilities to make it easy to navigate the unexpected, if it happens.',
+        'Install plugins and integrations, manage permissions, and debug issues. All via our simple UI.',
       ],
     },
     {
-      title: 'Make your Developer Portal truly yours',
-      description: 'Roadie lets you install private plugins and renderers',
+      title: 'Make it your own',
+      description: 'Install custom Backstage plugins and private renderers',
       illustration: {
         png: CustomPluginsImg,
         alt: '',
@@ -86,8 +84,8 @@ const PRODUCT = {
       ],
     },
     {
-      title: 'Integrate with your Kubernetes Clusters',
-      description: 'Roadie connects to your infrastructure using a broker ',
+      title: 'Kubernetes Integration',
+      description: 'Connect to your infrastructure using a broker',
       illustration: {
         png: KubernetesImg,
         alt: '',
@@ -250,25 +248,26 @@ const Home = ({ data }) => {
       <SitewideHeader borderBottom={false} />
 
       <SideBySideHero />
+      
+      <div className='Container'>
+        <AlternatingFeatureWrapper id="product">
+          <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
+          <AlternatingFeatureBlock featureItem={PRODUCT.features[1]} illustrationSide="left" />
+          <AlternatingFeatureBlock featureItem={PRODUCT.features[2]} illustrationSide="left" />
+          <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="left" />
+        </AlternatingFeatureWrapper>
+      </div>
 
-      <AlternatingFeatureWrapper id="product">
-        <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
-        <AlternatingFeatureBlock featureItem={PRODUCT.features[1]} illustrationSide="right" />
-        <AlternatingFeatureBlock featureItem={PRODUCT.features[2]} illustrationSide="left" />
-        <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="right" />
-      </AlternatingFeatureWrapper>
-
-      <section className="backstage-background text-white max-w-xl mx-auto p-4 mt-5 sm:px-10 md:rounded-lg lg:max-w-6xl lg:grid lg:grid-cols-8 lg:items-center lg:gap-8 lg:grid-flow-row-dense">
-        <div className="lg:col-start-4 lg:col-span-5">
-          <Title el="h3" className={classNames('xl:text-2xl xl:tracking-tight')}>
+      <section className="Section size-3">
+        <div className="Container">
+          <h3 className='Text size-7'>
             Leading architectural change through <nobr>Roadie Backstage</nobr>
-          </Title>
-          <p className="text-xl mt-5">
-            <strong>Andy Hoffman, Caribou</strong>
-            <br />
-            BackstageCon, Detroit 2022
-          </p>
-          <p className="text-lg mt-5">
+          </h3>
+          <div>
+            <span className='Text size-3 weight-2'>Andy Hoffman, Caribou</span>
+            <span className='Text size-3 lowContrast'>BackstageCon, Detroit 2022</span>
+          </div>
+          <p className="Text size-4">
             Yesterday you’re a scrappy startup; today, you’re funded and have 12 months to 10x your
             team and system capacity. In this talk, Andy shows how Backstage—via Roadie—can help
             wrangle unintuitive architectures, overwhelming options, and unfamiliar patterns for
@@ -276,7 +275,7 @@ const Home = ({ data }) => {
           </p>
           <Link
             to="https://youtu.be/6Ss1e-9X_JY?t=51"
-            className="block mt-5 font-bold uppercase text-lg tracking-wider"
+            className="Link"
           >
             Watch talk on YouTube &rarr;
           </Link>
@@ -288,43 +287,40 @@ const Home = ({ data }) => {
         </aside>
       </section>
 
-      <section className="text-center mt-10 xl:mt-16">
-        <Title el="h2" className="xl:text-3xl xl:tracking-tight text-orange-600">
-          Adopt Backstage through Roadie
-        </Title>
-        <figure className="max-w-2xl px-4 mx-auto mt-10 mb-5">
-          <blockquote
-            cite="https://youtu.be/6Ss1e-9X_JY?t=51"
-            className="text-2xl font-bold tracking-wide"
-          >
-            “Roadie has been fantastic to work with and allowed us to adopt Backstage without the
-            overhead.”
-          </blockquote>
-          <figcaption className="text-xl mt-5">
-            Andy Hoffman, DevOps Engineer Manager, Caribou
-          </figcaption>
-        </figure>
-        <Button
-          link={true}
-          color="primary"
-          size="medium"
-          to="/request-demo/"
-          className="font-bold tracking-wide mt-6"
-          text="Request a Demo"
-        />
+      <section className="Section size-3">
+        <div className='Container'>
+          <h2 className="Text size-7">
+            Adopt Backstage through Roadie
+          </h2>
+          <figure className="max-w-2xl px-4 mx-auto mt-10 mb-5">
+            <blockquote
+              cite="https://youtu.be/6Ss1e-9X_JY?t=51"
+              className="Text size-6"
+            >
+              “Roadie has been fantastic to work with and allowed us to adopt Backstage without the
+              overhead.”
+            </blockquote>
+            <figcaption className="Text size-3 lowContrast">
+              Andy Hoffman, DevOps Engineer Manager, Caribou
+            </figcaption>
+          </figure>
+          <Button
+            link={true}
+            to="/request-demo/"
+            className="Button size-3 accent"
+            text="Request a Demo"
+          />
+        </div>
       </section>
 
-      {/* <TestimonialsCloud /> */}
-
-      <div className="pt-28 bg-gray-50 pb-20 mt-24" id="solutions">
+      <section className="Section size-3" id="solutions">
         <SimpleCenteredHeading
           headline="Turn tribal knowledge into shared context"
-          headlineSize="medium"
           lead="A single pane of glass for your software development life cycle."
         />
 
         <TextBasedFeatureBlock content={SOLUTIONS} />
-      </div>
+      </section>
 
       <TestimonialsCloud />
 
