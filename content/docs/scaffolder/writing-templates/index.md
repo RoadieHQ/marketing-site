@@ -22,7 +22,7 @@ A Scaffolder template is a configurable process that will run one or more Scaffo
 
 Templates are defined by a Backstage Entity YAML file with a `Template` kind and imported into the Backstage catalog. You can create multiple templates, each of which can perform a different set of steps. For example, you can have one template that creates a React application, and another that creates a serverless app.
 
-Template YAML input forms can be tested at `/tools` using a live template preview viewer. 
+Template YAML input forms can be tested at `/tools` using a live template preview viewer.
 
 ![preview-template](./template-preview-tool.png)
 
@@ -91,7 +91,7 @@ The spec field contains `owner` and `type`. Owner refers to the Backstage group 
 
 The parameters property is a list of parameters that can be prompted from the user when they run a template. Each array element contains the configuration for a single page of items to be filled by the user running the template. The parameter pages must contain `title`, `required` and `properties`.
 
-The parameters yaml is based on [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/). You can find the available syntax options there. 
+The parameters yaml is based on [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/). You can find the available syntax options there.
 
 You can choose to break up the parameter prompting into `form steps` or collect all the parameters in one single step.
 Each parameter can be one of a few types: `string`, `number`, `array` or `object`.
@@ -198,7 +198,6 @@ parameters:
 
 This returns a variable in the format `group:<namespace>/<group-or-user-name>`. You can extract the entity name using replace when you refer to the parameter like so: `${{ parameters.owner | replace(\"group:.*/\", \"\") }}`
 
-
 #### Picker from external API source
 
 This custom scaffolder field, makes an API call to the Backstage backend and allows the result to be rendered to a list.
@@ -219,11 +218,11 @@ parameters:
         path: 'catalog/entity-facets'
         params:
           facet: 'kind'
-    
+
         # This selects the array element from the API fetch response. It finds the array with the name kind
         # under the facets object
         arraySelector: 'facets.kind'
-    
+
         # (Optional) This selects the field in the array to use for the value of each select item. If its not specified
         # it will use the value of the item directly.
         valueSelector: 'count'
@@ -479,10 +478,11 @@ The templated files themselves can contain references to the values in the follo
 
 i.e.
 `./template/README.md`
-``` 
-# ${{ values.name }} service 
 
-This is a service Readme example. Please update me. 
+```
+# ${{ values.name }} service
+
+This is a service Readme example. Please update me.
 ```
 
 Optionally, if you would prefer the data to be downloaded to a subdirectory in the workspace you may specify the 'targetPath' input option.
@@ -572,7 +572,7 @@ steps:
       access: AcmeInc/engineering
 ```
 
-You can [protect the default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) from being pushed to directly by using `protectDefaultBranch` if your repository is part of a Github Pro account. 
+You can [protect the default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) from being pushed to directly by using `protectDefaultBranch` if your repository is part of a Github Pro account.
 
 ```yaml
 steps:
@@ -646,9 +646,10 @@ steps:
       sourcePatch: './repoRoot'
 ```
 
-Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` or `team` and `access`. `username` is the GitHub username to allow collaboration. 
+Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` or `team` and `access`. `username` is the GitHub username to allow collaboration.
 
-The `access` option gives the user specific type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`. these equate to: 
+The `access` option gives the user specific type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`. these equate to:
+
 - pull (read)
 - push (write)
 - triage (triage)
@@ -690,7 +691,7 @@ steps:
 The `publish:github` action produces two step outputs.
 
 | Name            | Description                                   |
-|-----------------|-----------------------------------------------|
+| --------------- | --------------------------------------------- |
 | remoteUrl       | Url for the newly created repository          |
 | repoContentsUrl | Url that shows the contents of the repository |
 
@@ -737,49 +738,49 @@ steps:
       targetPath: ./subdirectory
 ```
 
-You can use the user that runs the scaffolder template to open the PR rather than opening it on behalf of the Roadie Github App by specifying the token field. 
+You can use the user that runs the scaffolder template to open the PR rather than opening it on behalf of the Roadie Github App by specifying the token field.
 The token can be injected by the RepoUrlPicker parameter as documented [here](https://backstage.io/docs/features/software-templates/writing-templates#using-the-users-oauth-token)
 
 ```yaml
-  parameters:
-    - title: Choose a location
-      required:
-        - repoUrl
-      properties:
-        repoUrl:
-          title: Repository Location
-          type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            # Here's the option you can pass to the RepoUrlPicker
-            requestUserCredentials:
-              secretsKey: USER_OAUTH_TOKEN
-              additionalScopes:
-                github:
-                  - workflow
-            allowedHosts:
-              - github.com
-  steps:
-    - action: publish:github:pull-request
-      id: create-pull-request
-      name: Create a pull request
-      input:
-        repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
-        branchName: ticketNumber-123
-        title: 'Make some changes to the files'
-        description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
-        # here's where the secret can be used
-        token: ${{ secrets.USER_OAUTH_TOKEN }}
+parameters:
+  - title: Choose a location
+    required:
+      - repoUrl
+    properties:
+      repoUrl:
+        title: Repository Location
+        type: string
+        ui:field: RepoUrlPicker
+        ui:options:
+          # Here's the option you can pass to the RepoUrlPicker
+          requestUserCredentials:
+            secretsKey: USER_OAUTH_TOKEN
+            additionalScopes:
+              github:
+                - workflow
+          allowedHosts:
+            - github.com
+steps:
+  - action: publish:github:pull-request
+    id: create-pull-request
+    name: Create a pull request
+    input:
+      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
+      branchName: ticketNumber-123
+      title: 'Make some changes to the files'
+      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
+      # here's where the secret can be used
+      token: ${{ secrets.USER_OAUTH_TOKEN }}
 ```
 
-NB: The branch you use for the pull request must be a new branch for the repo. 
+NB: The branch you use for the pull request must be a new branch for the repo.
 
 #### Outputs
 
 The `publish:github:pull-request` action produces two outputs.
 
 | Name              | Description                          |
-|-------------------|--------------------------------------|
+| ----------------- | ------------------------------------ |
 | remoteUrl         | Url to the new pull request          |
 | pullRequestNumber | Shows the number of the pull request |
 
@@ -862,7 +863,7 @@ steps:
 The `publish:bitbucket` action produces the following outputs.
 
 | Name            | Description                                   |
-|-----------------|-----------------------------------------------|
+| --------------- | --------------------------------------------- |
 | remoteUrl       | Url for the newly created repository          |
 | repoContentsUrl | Url that shows the contents of the repository |
 
@@ -986,15 +987,9 @@ steps:
 
 The `fs:rename` action does not have any outputs.
 
-
-
-
-
 ### `roadiehq:utils:fs:replace`
 
-
 This action replaces found string in files with content defined in input.
-
 
 **Required params:**
 
@@ -1002,7 +997,6 @@ This action replaces found string in files with content defined in input.
 - files[].file: Path to the file to be modified
 - files[].find: A text to be replaced
 - files[].replaceWith: A text to be used to replace above
-
 
 ```yaml
 steps:
@@ -1019,6 +1013,486 @@ steps:
 #### Outputs
 
 The `roadiehq:utils:fs:replace` action does not have any outputs.
+
+### `roadiehq:utils:fs:parse`
+
+Reads a file from the workspace and optionally parses it.
+
+**Params:**
+
+| Name   | Description                                                        |
+| ------ | ------------------------------------------------------------------ |
+| path\* | Path to the file to read.                                          |
+| parser | Optionally parse the content to an object. (yaml, json, multiyaml) |
+
+```yaml
+spec:
+  owner: roadie
+  type: service
+  parameters:
+    - title: Path
+      properties:
+        path:
+          title: Path to the file
+          type: string
+          description: The path you want to get on your backstage instance
+        parser:
+          type: 'string'
+          enum: ['yaml', 'json', 'multiyaml']
+
+  steps:
+    - id: roadiehq-utils-fs-parse
+      name: backstage request
+      action: roadiehq:utils:fs:parse
+      input:
+        path: ${{ parameters.path }}
+        parser: ${{ parameters.parser }}
+```
+
+#### Outputs
+
+The `roadiehq:utils:fs:parse` action produces one output.
+
+| Name    | Description         |
+| ------- | ------------------- |
+| content | Content of the file |
+
+### `roadiehq:utils:serialize:yaml`
+
+Allows performing serialization on an object
+
+**Params:**
+
+| Name     | Description                             |
+| -------- | --------------------------------------- |
+| data\*   | Input data to perform serialization on. |
+| replacer | Replacer array                          |
+| options  | YAML stringify options                  |
+
+**options:**
+
+| Name          | Description                                                                                                                                                                                                                                                                |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| indent\*      | (default: 2) - indentation width to use (in spaces)                                                                                                                                                                                                                        |
+| noArrayIndent | (default: false) - when true, will not add an indentation level to array elements                                                                                                                                                                                          |
+| skipInvalid   | (default: false) - do not throw on invalid types (like function in the safe schema) and skip pairs and single values with such types                                                                                                                                       |
+| flowLevel     | (default: -1) - specifies level of nesting, when to switch from block to flow style for collections. -1 means block style everwhere                                                                                                                                        |
+| sortKeys      | (default: false) - if true, sort keys when dumping YAML. If a function, use the function to sort the keys                                                                                                                                                                  |
+| lineWidth     | (default: 80) - set max line width. Set -1 for unlimited width                                                                                                                                                                                                             |
+| noRefs        | (default: false) - if true, don't convert duplicate objects into references                                                                                                                                                                                                |
+| noCompatMode  | (default: false) - if true don't try to be compatible with older yaml versions. Currently: don't quote "yes", "no" and so on, as required for YAML 1.1                                                                                                                     |
+| condenseFlow  | (default: false) - if true flow sequences will be condensed, omitting the space between a, b. Eg. '[a,b]', and omitting the space between key: value and quoting the key. Eg. '{"a":b}' Can be useful when using yaml for pretty URL query params as spaces are %-encoded. |
+| quotingType   | (' or ", default: ') - strings will be quoted using this quoting style. If you specify single quotes, double quotes will still be used for non-printable characters.                                                                                                       |
+| forceQuotes   | (default: false) - if true, all non-key strings will be quoted even if they normally don't need to.                                                                                                                                                                        |
+
+```yaml
+steps:
+  - id: roadiehq-utils-serialize-yaml
+    name: serialize yaml
+    action: roadiehq:utils:serialize:yaml
+    input:
+      data: { 'foo': 'bar' }
+      options:
+        noArrayIndent: true
+```
+
+#### Outputs
+
+The `roadiehq:utils:serialize:yaml` action produces one output.
+
+| Name       | Description                      |
+| ---------- | -------------------------------- |
+| serialized | Output result from serialization |
+
+### `roadiehq:utils:serialize:json`
+
+Allows performing serialization on an object
+
+**Params:**
+
+| Name     | Description                             |
+| -------- | --------------------------------------- |
+| data\*   | Input data to perform serialization on. |
+| replacer | Replacer array                          |
+| space    | Space character                         |
+
+```yaml
+steps:
+  - id: roadiehq-utils-serialize-json
+    name: serialize json
+    action: roadiehq:utils:serialize:json
+    input:
+      data: { 'foo': 'bar' }
+      replacer:
+        - foo
+        - bar
+      space: '#'
+```
+
+#### Outputs
+
+The `roadiehq:utils:serialize:json` action produces one output.
+
+| Name       | Description                      |
+| ---------- | -------------------------------- |
+| serialized | Output result from serialization |
+
+### `roadiehq:utils:jsonata`
+
+Allows performing JSONata operations and transformations on input objects and produces the output result as a step output.
+
+**Params:**
+
+| Name         | Description                                |
+| ------------ | ------------------------------------------ |
+| data\*       | Input data to be transformed               |
+| expression\* | JSONata expression to perform on the input |
+
+```yaml
+steps:
+  - id: transform
+    name: Transform with jsonata
+    action: roadiehq:utils:jsonata
+    input:
+      data: foo
+      expression: <JSONata expression to perform on the input>
+```
+
+#### Outputs
+
+The `roadiehq:utils:jsonata` action produces one output.
+
+| Name   | Description                |
+| ------ | -------------------------- |
+| result | Output result from JSONata |
+
+### `roadiehq:utils:jsonata:yaml:transform`
+
+Allows performing JSONata operations and transformations on a YAML file in the workspace. The result can be read from the result step output.
+
+**Params:**
+
+| Name         | Description                                |
+| ------------ | ------------------------------------------ |
+| path\*       | Input path to read yaml file               |
+| expression\* | JSONata expression to perform on the input |
+| options      | YAML stringify options                     |
+
+**options:**
+
+| Name          | Description                                                                                                                                                                                                                                                                |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| indent\*      | (default: 2) - indentation width to use (in spaces)                                                                                                                                                                                                                        |
+| noArrayIndent | (default: false) - when true, will not add an indentation level to array elements                                                                                                                                                                                          |
+| skipInvalid   | (default: false) - do not throw on invalid types (like function in the safe schema) and skip pairs and single values with such types                                                                                                                                       |
+| flowLevel     | (default: -1) - specifies level of nesting, when to switch from block to flow style for collections. -1 means block style everwhere                                                                                                                                        |
+| sortKeys      | (default: false) - if true, sort keys when dumping YAML. If a function, use the function to sort the keys                                                                                                                                                                  |
+| lineWidth     | (default: 80) - set max line width. Set -1 for unlimited width                                                                                                                                                                                                             |
+| noRefs        | (default: false) - if true, don't convert duplicate objects into references                                                                                                                                                                                                |
+| noCompatMode  | (default: false) - if true don't try to be compatible with older yaml versions. Currently: don't quote "yes", "no" and so on, as required for YAML 1.1                                                                                                                     |
+| condenseFlow  | (default: false) - if true flow sequences will be condensed, omitting the space between a, b. Eg. '[a,b]', and omitting the space between key: value and quoting the key. Eg. '{"a":b}' Can be useful when using yaml for pretty URL query params as spaces are %-encoded. |
+| quotingType   | (' or ", default: ') - strings will be quoted using this quoting style. If you specify single quotes, double quotes will still be used for non-printable characters.                                                                                                       |
+| forceQuotes   | (default: false) - if true, all non-key strings will be quoted even if they normally don't need to.                                                                                                                                                                        |
+
+```yaml
+steps:
+  - id: transform
+    name: Transform YAML
+    action: roadiehq:utils:jsonata:yaml:transform
+    input:
+      path: a/b/test.txt
+      expression: <JSONata expression to perform on the input>
+      options:
+        noArrayIndent: true
+```
+
+#### Outputs
+
+The `roadiehq:utils:jsonata:yaml:transform` action produces one output.
+
+| Name   | Description                               |
+| ------ | ----------------------------------------- |
+| result | Output result from JSONata yaml transform |
+
+### `roadiehq:utils:jsonata:json:transform`
+
+Allows performing JSONata operations and transformations on a JSON file in the workspace. The result can be read from the result step output.
+
+**Params:**
+
+| Name         | Description                                |
+| ------------ | ------------------------------------------ |
+| path\*       | Input path to read yaml file               |
+| expression\* | JSONata expression to perform on the input |
+| replacer     | Replacer array                             |
+| space        | Space character                            |
+
+```yaml
+steps:
+  - id: transform
+    name: Transform JSON
+    action: roadiehq:utils:jsonata:json:transform
+    input:
+      path: a/b/test.txt
+      expression: <JSONata expression to perform on the input>
+      replacer:
+        - foo
+        - bar
+      space: '#'
+```
+
+#### Outputs
+
+The `roadiehq:utils:jsonata:json:transform` action produces one output.
+
+| Name   | Description                               |
+| ------ | ----------------------------------------- |
+| result | Output result from JSONata json transform |
+
+### `json:merge`
+
+Merge new data into an existing JSON file.
+
+**Params:**
+
+| Name      | Description                                                                |
+| --------- | -------------------------------------------------------------------------- |
+| path\*    | Path to existing file to append.                                           |
+| content\* | This will be merged into to the file. Can be either an object or a string. |
+
+```yaml
+steps:
+  - id: merge
+    name: JSON merge
+    action: json:merge
+    input:
+      path: foo
+      content: bar
+```
+
+#### Outputs
+
+The `json:merge` action produces one output.
+
+| Name | Description                           |
+| ---- | ------------------------------------- |
+| path | Path to the file that got appended to |
+
+### `roadiehq:utils:json:merge`
+
+Merge new data into an existing JSON file.
+
+**Params:**
+
+| Name      | Description                                                                |
+| --------- | -------------------------------------------------------------------------- |
+| path\*    | Path to existing file to append.                                           |
+| content\* | This will be merged into to the file. Can be either an object or a string. |
+
+```yaml
+steps:
+  - id: merge
+    name: JSON merge
+    action: roadiehq:utils:json:merge
+    input:
+      path: foo
+      content: bar
+```
+
+#### Outputs
+
+The `roadiehq:utils:json:merge` action produces one output.
+
+| Name | Description                           |
+| ---- | ------------------------------------- |
+| path | Path to the file that got appended to |
+
+### `roadiehq:utils:merge`
+
+Merges data into an existing structured file.
+
+**Params:**
+
+| Name      | Description                                                                |
+| --------- | -------------------------------------------------------------------------- |
+| path\*    | Path to existing file to append.                                           |
+| content\* | This will be merged into to the file. Can be either an object or a string. |
+| options\* | YAML stringify options (for YAML output only)                              |
+
+**options:**
+
+| Name          | Description                                                                                                                                                                                                                                                                |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| indent\*      | (default: 2) - indentation width to use (in spaces)                                                                                                                                                                                                                        |
+| noArrayIndent | (default: false) - when true, will not add an indentation level to array elements                                                                                                                                                                                          |
+| skipInvalid   | (default: false) - do not throw on invalid types (like function in the safe schema) and skip pairs and single values with such types                                                                                                                                       |
+| flowLevel     | (default: -1) - specifies level of nesting, when to switch from block to flow style for collections. -1 means block style everwhere                                                                                                                                        |
+| sortKeys      | (default: false) - if true, sort keys when dumping YAML. If a function, use the function to sort the keys                                                                                                                                                                  |
+| lineWidth     | (default: 80) - set max line width. Set -1 for unlimited width                                                                                                                                                                                                             |
+| noRefs        | (default: false) - if true, don't convert duplicate objects into references                                                                                                                                                                                                |
+| noCompatMode  | (default: false) - if true don't try to be compatible with older yaml versions. Currently: don't quote "yes", "no" and so on, as required for YAML 1.1                                                                                                                     |
+| condenseFlow  | (default: false) - if true flow sequences will be condensed, omitting the space between a, b. Eg. '[a,b]', and omitting the space between key: value and quoting the key. Eg. '{"a":b}' Can be useful when using yaml for pretty URL query params as spaces are %-encoded. |
+| quotingType   | (' or ", default: ') - strings will be quoted using this quoting style. If you specify single quotes, double quotes will still be used for non-printable characters.                                                                                                       |
+| forceQuotes   | (default: false) - if true, all non-key strings will be quoted even if they normally don't need to.                                                                                                                                                                        |
+
+```yaml
+steps:
+  - id: merge
+    name: JSON merge
+    action: roadiehq:utils:merge
+    input:
+      path: foo
+      content: bar
+      options:
+        noArrayIndent: true
+```
+
+#### Outputs
+
+The `roadiehq:utils:merge` action produces one output.
+
+| Name | Description                           |
+| ---- | ------------------------------------- |
+| path | Path to the file that got appended to |
+
+### `roadiehq:utils:fs:write`
+
+Creates a file with the content on the given path
+
+**Params:**
+
+| Name      | Description               |
+| --------- | ------------------------- |
+| path\*    | Relative path to the file |
+| content\* | Content of the file       |
+
+```yaml
+steps:
+  - id: create
+    name: Create file
+    action: roadiehq:utils:fs:write
+    input:
+      path: foo
+      content: bar
+```
+
+#### Outputs
+
+The `roadiehq:utils:fs:write` action produces one output.
+
+| Name | Description                    |
+| ---- | ------------------------------ |
+| path | Path to the newly created file |
+
+### `roadiehq:utils:zip`
+
+Zips the content of the path
+
+**Params:**
+
+| Name         | Description                               |
+| ------------ | ----------------------------------------- |
+| path\*       | Relative path to the file                 |
+| outputPath\* | The name of the result of the zip command |
+
+```yaml
+steps:
+  - id: zip
+    name: Zip the workspace
+    action: roadiehq:utils:zip
+    input:
+      path: foo
+      outputPath: bar
+```
+
+#### Outputs
+
+The `roadiehq:utils:zip` action produces one output.
+
+| Name       | Description                   |
+| ---------- | ----------------------------- |
+| outputPath | Path to the newly created zip |
+
+### `roadiehq:utils:fs:append`
+
+Append content to the end of the given file, it will create the file if it does not exist.
+
+**Params:**
+
+| Name      | Description                       |
+| --------- | --------------------------------- |
+| path\*    | Path to existing file to append.  |
+| content\* | This will be appended to the file |
+
+```yaml
+steps:
+  - id: append
+    name: Append to file
+    action: roadiehq:utils:fs:append
+    input:
+      path: foo
+      content: bar
+```
+
+#### Outputs
+
+The `roadiehq:utils:fs:append` action produces one output.
+
+| Name | Description                           |
+| ---- | ------------------------------------- |
+| path | Path to the file that got appended to |
+
+### `fs:append`
+
+Appends text to a file within the workspace
+
+**Params:**
+
+| Name   | Description                                                               |
+| ------ | ------------------------------------------------------------------------- |
+| file\* | The path of the file append to. This must be a path within the workspace. |
+| text\* | The text to append to the file.                                           |
+
+```yaml
+steps:
+  - id: append
+    name: Append to file
+    action: fs:append
+    input:
+      file: ${{ parameters.file }}
+      text: ${{ parameters.text }}
+```
+
+#### Outputs
+
+The `fs:append` action does not produce outputs.
+
+### `fs:read`
+
+Reads a file from the workspace
+
+**Params:**
+
+| Name   | Description               |
+| ------ | ------------------------- |
+| path\* | Path to the file to read. |
+
+```yaml
+steps:
+  - id: read
+    name: Reads a file
+    action: fs:read
+    input:
+      path: ${{ parameters.path }}
+```
+
+#### Outputs
+
+The `fs:read` action produces one output.
+
+| Name    | Description         |
+| ------- | ------------------- |
+| content | Content of the file |
 
 ### `github:actions:dispatch`
 
@@ -1221,7 +1695,7 @@ steps:
 The `http:backstage:request` action has three outputs.
 
 | Name    | Description                                                        |
-|---------|--------------------------------------------------------------------|
+| ------- | ------------------------------------------------------------------ |
 | code    | Status code of the http response                                   |
 | headers | Dictionary containing all of the response headers and their values |
 | body    | Body of the response                                               |
@@ -1246,6 +1720,7 @@ steps:
 The `debug:log` action does not have any outputs.
 
 ### Conditional Steps
+
 You can conditionally execute a scaffolder based on an input parameter.
 
 ```yaml
@@ -1298,15 +1773,17 @@ If you need to pass variable substitution syntax through without it being interp
 You can inject in re-usable snippets of yaml into a template using the `$yaml` operator like so:
 
 `templates/debug-step.yaml`
+
 ```yaml
 - name: Debug log 2
   id: debug_log_2
-  action: "debug:log"
+  action: 'debug:log'
   input:
     message: Second log
 ```
 
 `logging-template.yaml`
+
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
@@ -1320,7 +1797,7 @@ spec:
   steps:
     - name: Debug log 1
       id: debug_log_1
-      action: "debug:log"
+      action: 'debug:log'
       input:
         message: First log
 
@@ -1329,18 +1806,16 @@ spec:
 
 NB: This can only be done for a single step as the re-usable section must be valid yaml.
 
-
 ## Testing
 
 Testing of templates is not well supported in Backstage currently, mostly due to the fact that many scaffolder actions perform side-effects.
 
 A limited set of functionality exists to preview and edit parameters in a sandbox, and dry-run templates (skipping steps that perform mutations).
 
-You can find these features at `/create/edit`. 
+You can find these features at `/create/edit`.
 
-It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/register-existing-component` using the version on a published feature branch. 
-This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test. 
-
+It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/register-existing-component` using the version on a published feature branch.
+This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test.
 
 ## Troubleshooting
 
