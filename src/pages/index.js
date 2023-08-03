@@ -5,13 +5,11 @@ import {
   AlternatingFeatureBlock,
   SideBySideHero,
   AlternatingFeatureWrapper,
-  SimpleCenteredHeading,
   TextBasedFeatureBlock,
   SplitGridLogoCloud,
   TestimonialsCloud,
 } from 'components/landing';
 import Title from '../components/Title';
-import classNames from 'classnames';
 import Button from '../components/forms/Button';
 import { PostSummary } from 'components/article';
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
@@ -31,7 +29,7 @@ import {
 } from '@heroicons/react/outline';
 
 import KeepSafeImg from '../../content/assets/home/illustrations/home-keep-backstage-safe.png';
-import NoCodeImg from '../../content/assets/home/illustrations/home-no-code-backstage.svg';
+import NoCodeImg from '../../content/assets/home/illustrations/home-nocode.png';
 import CustomPluginsImg from '../../content/assets/home/illustrations/home-custom-plugins.png';
 import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.svg';
 import AndyThumbImg from '../../content/assets/home/illustrations/home-andy-video-thumb.png';
@@ -111,12 +109,12 @@ const SOLUTIONS = {
         },
         {
           name: 'Make tools discoverable',
-          description: `Centralize around the service catalog. Make API specs, docs and tooling easy to access in one place`,
+          description: `Centralize around the service Catalog. Make API specs, docs, and tooling easy to access in one place`,
           icon: BookOpenIcon,
         },
         {
           name: 'Proven results',
-          description: `Spotify saw "time to 10ᵗʰ commit" drop by 55% in the two years after deploying Backstage internally. All while onboarding hundreds of engineers each year.`,
+          description: `Spotify saw "time to 10ᵗʰ commit" drop by 55% in the two years after deploying Backstage. All while onboarding hundreds of engineers.`,
           icon: PresentationChartLineIcon,
         },
       ],
@@ -144,7 +142,7 @@ const SOLUTIONS = {
       bullets: [
         {
           name: 'Improve maintainability',
-          description: `Unowned services are a maintenance, security and operations nightmare.`,
+          description: `Unowned services are a maintenance, security and operations nightmare. Track who owns what.`,
           icon: BadgeCheckIcon,
         },
         {
@@ -161,7 +159,7 @@ const SOLUTIONS = {
         {
           name: 'Write docs as code',
           description:
-            'Markdown docs live alongside the code where they can be peer reviewed in pull requests.',
+            'Markdown docs live alongside the code where they can be peer-reviewed in pull requests.',
           icon: PencilAltIcon,
         },
         {
@@ -185,13 +183,13 @@ const SOLUTIONS = {
       prompt: 'Coming soon',
       bullets: [
         {
-          name: 'Find out which teams are experiencing challenges',
+          name: 'Discover struggling teams',
           description:
             'Standards adherence can be grouped by teams, offering insight into who may need more support to adopt new practices.',
           icon: UserGroupIcon,
         },
         {
-          name: 'Understand your migration’s progress',
+          name: 'Understand your progress',
           description:
             'Initiatives are designed to keep track of wide-org migrations, offering insights about the change across software components. ',
           icon: ChartBarIcon,
@@ -314,12 +312,16 @@ const Home = ({ data }) => {
       </section>
 
       <section className="Section size-3" id="solutions">
-        <SimpleCenteredHeading
-          headline="Turn tribal knowledge into shared context"
-          lead="A single pane of glass for your software development life cycle."
-        />
+        <div className='Container'>
+          <div className='Flex column gap-9'>
+            <div className='Flex column gap-2'>
+              <h2 className='Text size-7'>Turn tribal knowledge into shared context</h2>
+              <p className='Text size-4 lowContrast'>A single pane of glass for your software development life cycle.</p>
+            </div>
 
-        <TextBasedFeatureBlock content={SOLUTIONS} />
+            <TextBasedFeatureBlock content={SOLUTIONS} />
+          </div>
+        </div>
       </section>
 
       <TestimonialsCloud />

@@ -25,8 +25,8 @@
   --violet-11: hsl(250, 43%, 48%);
   --violet-12: hsl(254, 60%, 19%);
 
-  --gray-1: hsl(221, 30%, 99%);
-  --gray-2: hsl(225, 17%, 98%);
+  --gray-1: hsl(214, 18%, 98%);
+  --gray-2: hsl(220, 17%, 97%);
   --gray-3: hsl(224, 13%, 95%);
   --gray-4: hsl(224, 12%, 93%);
   --gray-5: hsl(223, 12%, 91%);
@@ -881,11 +881,113 @@
   border: none;
   outline: none;
   cursor: default;
-  font-weight: var(--fw-2);
   user-select: none;
   flex-shrink: 0;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   justify-content: center;
   white-space: nowrap;
   font-size: var(--fs-3);
+}
+
+.Banner {
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+  background-color: var(--gray-1);
+}
+
+.Header {
+  height: 64px;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+  display: flex;
+  align-items: center;
+}
+
+
+.position-static {
+  position: static;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.Icon {
+  display: block;
+  vertical-align: middle;
+}
+
+.Icon.size-1 {
+  width: var(--space-4);
+  height: var(--space-4);
+}
+
+.Icon.size-2 {
+  width: var(--space-6);
+  height: var(--space-6);
+  stroke-width: 1.5;
+}
+
+.IconContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  border-radius: var(--br-circle);
+  background-color: var(--green-4);
+  color: var(--green-11);
+}
+
+
+.pl-7 {
+  padding-left: var(--space-7);
+}
+
+.Table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.Th {
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: left;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-top: 1px solid var(--gray-5);
+  line-height: 1;
+  font-weight: var(--fw-1);
+}
+
+.Td {
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-top: 1px solid var(--gray-5);
+  border-left: 1px solid var(--gray-5);
 }

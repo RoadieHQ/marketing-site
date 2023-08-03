@@ -30,32 +30,28 @@ const Pricing = ({
 
       <SitewideHeader borderBottom={false} />
 
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
-          <div className="sm:flex sm:flex-col sm:align-center">
-            <SectionHeader />
+      <div className="Container">
+        <div className="">
+          <SectionHeader />
 
-            <CurrencySwitcher
-              setCurrency={setCurrency}
-              currentlySetCurrency={currentlySetCurrency}
-            />
-          </div>
-
-          <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto">
-            <TeamsPricingTier currentlySetCurrency={currentlySetCurrency} />
-            <GrowthPricingTier />
-          </div>
+          <CurrencySwitcher
+            setCurrency={setCurrency}
+            currentlySetCurrency={currentlySetCurrency}
+          />
         </div>
 
-        <div className="max-w-4xl mx-auto py-16 sm:py-24 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <Headline el="h2" size="small">Feature comparison</Headline>
-          </div>
+        <div className="Grid columns-2 gap-4">
+          <TeamsPricingTier currentlySetCurrency={currentlySetCurrency} />
+          <GrowthPricingTier />
+        </div>
+
+        <div className="">
+          <h3 className='Text size-7'>Feature comparison</h3>
           <FeatureComparisonTable />
         </div>
-      </div>
 
-      <FAQs/>
+        <FAQs />
+      </div>
 
       <SitewideFooter />
     </>

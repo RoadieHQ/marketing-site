@@ -68,19 +68,19 @@ const FAQ_CONTENT = [
 
 const Item = ({ question, answer }) => (
   <div>
-    <dt className="font-semibold">{question}</dt>
-    <dd className="mt-3 text-md">{answer()}</dd>
+    <dt className="Text size-4 weight-2">{question}</dt>
+    <dd className="Text size-4">{answer()}</dd>
   </div>
 );
 
 const FAQs = ({ faqs = FAQ_CONTENT, heading = 'Frequently asked questions' }) => (
-  <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-    <Headline el="h2" size="xs">
+  <div className="Section size-3">
+    <h3 className='Text size-7'>
       {heading}
-    </Headline>
+    </h3>
 
-    <div className="mt-20">
-      <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-10">
+    <div className="">
+      <dl className="Grid columns-2 gap-9">
         {faqs.map((faq) => (
           <Item {...faq} key={faq.question} />
         ))}

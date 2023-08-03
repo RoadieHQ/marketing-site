@@ -83,21 +83,27 @@ const sections = [{
 
 
 const FeatureNameHeaderCell = ({ feature }) => (
-  <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
-    {feature.name}
+  <th className="Th" scope="row">
+    <span className='Text size-3'>
+      {feature.name}
+    </span>
   </th>
 );
 
 const FeatureInTierIndicatorText = ({ text }) => (
-  <span className="block text-sm text-gray-700 text-right lg:text-left">{text}</span>
+  <span className='Text size-3'>
+    {text}
+  </span>
 );
 
 const FeatureInTierIndicatorIcon = ({ featureTier, tier }) => (
   <>
     {featureTier === true ? (
-      <CheckIcon className="ml-auto lg:ml-0 h-5 w-5 text-green-500" aria-hidden="true" />
+      <div className='IconContainer'>
+        <CheckIcon className="Icon size-1" aria-hidden="true" />
+      </div>
     ) : (
-      <MinusIcon className="ml-auto lg:ml-0 h-5 w-5 text-gray-400" aria-hidden="true" />
+      <div aria-hidden="true"></div>
     )}
 
     <span className="sr-only">
@@ -107,7 +113,7 @@ const FeatureInTierIndicatorIcon = ({ featureTier, tier }) => (
 );
 
 const FeatureTierIndicatorCell = ({ tier, featureTier}) => (
-  <td className="py-5 pr-4 lg:px-6">
+  <td className="Td">
     {typeof featureTier === 'string' ? (
       <FeatureInTierIndicatorText text={featureTier} />
     ) : (
@@ -117,15 +123,15 @@ const FeatureTierIndicatorCell = ({ tier, featureTier}) => (
 );
 
 const FeatureRow = ({ feature, tier }) => (
-  <tr key={feature.name} className="border-t border-gray-200">
+  <tr key={feature.name} className="">
     <FeatureNameHeaderCell feature={feature} />
     <FeatureTierIndicatorCell featureTier={feature.tiers[tier.name]} tier={tier} />
   </tr>
 );
 
 const SectionTable = ({ section, tier, tierIndex }) => (
-  <table key={section.name} className="w-full">
-    <caption className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
+  <table key={section.name} className="Table">
+    <caption className="Caption">
       {section.name}
     </caption>
 
@@ -140,7 +146,7 @@ const SectionTable = ({ section, tier, tierIndex }) => (
       </tr>
     </thead>
 
-    <tbody className="divide-y divide-gray-200">
+    <tbody className="">
       {section.features.map((feature) => (
         <FeatureRow
           feature={feature}
@@ -171,7 +177,7 @@ const LargeFeatureRow = ({ feature }) => (
 const LargeTierHeaderCell = ({ tier }) => (
   <th
     key={tier.name}
-    className="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left"
+    className="Th"
     scope="col"
   >
     {tier.name}
@@ -179,7 +185,7 @@ const LargeTierHeaderCell = ({ tier }) => (
 );
 
 const LargeTierCta = ({ tier }) => (
-  <td className="h-full py-8 px-6 align-top">
+  <td className="Td">
     <div className="relative h-full table">
       <TextLink color="primary" to={tier.ctaLinkTo}>
         {tier.ctaLabel}
@@ -191,11 +197,11 @@ const LargeTierCta = ({ tier }) => (
 const LargeSectionHeaderRow = ({ section }) => (
   <tr>
     <th
-      className="bg-gray-50 py-3 pl-6 text-sm font-medium text-gray-900 text-left"
+      className="Th"
       colSpan={4}
       scope="colgroup"
     >
-      {section.name}
+      <span className='Text size-3 weight-2'>{section.name}</span>
     </th>
   </tr>
 );

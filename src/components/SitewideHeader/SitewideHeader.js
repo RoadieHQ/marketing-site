@@ -98,33 +98,27 @@ const SitewideHeader = ({
         <TopBanner>
           <WhitepaperVs />
         </TopBanner>
-        <header
-          className={classnames(
-            ` fml-wtf`,
-          )}
-        >
-          <div className='Flex row'>
-            <div className="">
-              <Logo />
+        <header className='Header'>
+          <div className="position-absolute">
+            <Logo />
+          </div>
+
+          <div className='Container'>
+            <div className="-mr-2 -my-2 md:hidden">
+              <OpenMenuButton />
             </div>
 
-            <div className='Container'>
-              <div className="-mr-2 -my-2 md:hidden">
-                <OpenMenuButton />
-              </div>
+            <Popover.Group as="nav" className="Flex row ai-center gap-7">
+              <TopNavDropdownItem text="Product" subItems={features} />
+              <TopNavDropdownItem text="Resources" subItems={learn} />
+              <TopNavItem to="/case-studies/" text="Customers" />
+              <TopNavItem to="/pricing/" text="Pricing" />
+              <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
+            </Popover.Group>
+          </div>
 
-              <Popover.Group as="nav" className="Flex row ai-center gap-6">
-                <TopNavDropdownItem text="Product" subItems={features} />
-                <TopNavDropdownItem text="Resources" subItems={learn} />
-                <TopNavItem to="/case-studies/" text="Customers" />
-                <TopNavItem to="/pricing/" text="Pricing" />
-                <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
-              </Popover.Group>
-            </div>
-
-            <div className="">
-              <Button className="Button size-1 accent" link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
-            </div>
+          <div className='position-absolute right-0'>
+            <Button className="Button size-1 accent" link={true} to={ctaTo} text={ctaText} />
           </div>
         </header>
 

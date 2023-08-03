@@ -12,11 +12,10 @@ import jonAvatar from '../../../../content/assets/home/testimonial/jon-ncsa/avat
 import jonAvatarJpeg from '../../../../content/assets/home/testimonial/jon-ncsa/avatar.jpeg';
 
 const TESTIMONIALS = [{
-  title: 'Incredible',
+  title: '“Incredible”',
   text: (
     <>
-      <p className="Text size-3">The Roadie team have been incredible to work with. They&apos;re obviously Backstage experts, and their platform provides us with a ton of flexibility and integrations.</p>
-      <p className="Text size-3">We&apos;ve been able to start using Backstage must faster and we don&apos;t have to worry about the maintenance.</p>
+      <p className="Text size-4">“The Roadie team have been incredible to work with. Their platform provides us with a ton of flexibility and integrations and we don&apos;t have to worry about maintenance.”</p>
     </>
   ),
   author: {
@@ -30,11 +29,11 @@ const TESTIMONIALS = [{
     },
   },
 }, {
-  title: 'Tremendous',
+  title: '“Tremendous”',
   text: (
     <>
-      <p className="Text size-3">Backstage has been pivotal for our growth. And Roadie has been pivotal in supporting us at the operations, feature enhancements / roadmap, and onboarding level.</p>
-      <p className="Text size-3">The Roadie team provides frequent updates on their offering and even more frequent answers to our questions - their support is tremendous and has eased and sped up our adoption of Backstage.</p>
+      <p className="Text size-4">“Backstage has been pivotal for our growth. And Roadie has been pivotal in supporting us at the operations, feature enhancements / roadmap, and onboarding level.</p>
+      <p className="Text size-4">The Roadie team provides frequent updates on their offering and even more frequent answers to our questions - their support is tremendous and has eased and sped up our adoption of Backstage.”</p>
     </>
   ),
   author: {
@@ -48,11 +47,11 @@ const TESTIMONIALS = [{
     },
   },
 }, {
-  title: 'Responsive',
+  title: '“Responsive”',
   text: (
     <>
-      <p className="Text size-3">Having a place to gather documentation of our systems and APIs, while keeping those definitions close to the source, has been a real win.</p>
-      <p className="Text size-3">The Roadie team has been incredibly proactive in communicating updates and responsive to all our questions.</p>
+      <p className="Text size-4">“Having a place to gather documentation of our systems and APIs, while keeping those definitions close to the source, has been a real win.</p>
+      <p className="Text size-4">The Roadie team has been incredibly proactive in communicating updates and responsive to all our questions.”</p>
     </>
   ),
   author: {
@@ -74,17 +73,17 @@ const Testimonial = ({
 }) => (
   <blockquote className="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-      <div className="flex-1 mt-4 mb-12">
-        <p className="mb-4 text-base text-gray-900 font-bold">{title}</p>
+      <div className="Flex column gap-4">
+        <span className="Text size-5">{title}</span>
         {text}
       </div>
 
       <div className="mt-6 flex items-start">
         <Avatar avatar={author.avatar} borderColor="primary-600" />
         <div className="ml-4">
-          <div className="text-base text-gray-900">{author.name}</div>
-          <div className="text-base text-gray-500">{author.role}</div>
-          <div className="text-base text-gray-500">{author.company}</div>
+          <div className="Text size-3 weight-2">{author.name}</div>
+          <div className="Text size-3 lowContrast">{author.role}</div>
+          <div className="Text size-3 lowContrast">{author.company}</div>
         </div>
       </div>
     </div>
@@ -94,7 +93,8 @@ const Testimonial = ({
 const Testimonials = ({ testimonials = TESTIMONIALS }) => (
   <section className="Section size-3">
     <div className="Container">
-      <div className="text-center mb-8 sm:mb-12 text-white">
+      <div className='Flex column gap-2'>
+        <h2 className='Text size-4 weight-2 indigo'>Testimonials</h2>
         <h3 className='Text size-7'>What our customers say</h3>
       </div>
 

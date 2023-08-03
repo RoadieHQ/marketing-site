@@ -14,15 +14,15 @@ const Button = ({
   postfixIcon,
   ...props
 }) => {
-  const baseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-900';
-  const buttonBaseClassName = 'shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2';
-  const primaryBaseClass = 'text-white font-bold tracking-wide bg-primary-700 hover:bg-primary-600';
-  const secondaryBaseClass = 'text-blueroadie bg-white hover:bg-gray-50';
-  const insetBaseClass = 'text-primary-700 bg-primary-100 hover:bg-primary-200';
+  const baseClassName = '';
+  const buttonBaseClassName = '';
+  const primaryBaseClass = '';
+  const secondaryBaseClass = '';
+  const insetBaseClass = '';
 
-  const smallBaseClass = 'px-3 py-1';
-  const mediumBaseClass = 'px-5 py-3 text-lg';
-  const largeBaseClass = 'px-8 py-3 md:py-4 md:text-lg md:px-10';
+  const smallBaseClass = '';
+  const mediumBaseClass = '';
+  const largeBaseClass = '';
 
   // Maintain backwards compatability.
   if (icon) {
@@ -34,31 +34,24 @@ const Button = ({
 
   if (link) {
     return (
-      <div
-        className={classnames({
-          'rounded-md shadow': color === 'primary' || color === 'secondary',
-          'inline-block': fullWidth === false,
-        })}
+      <Link
+        className={
+          classnames(className, baseClassName, {
+            [primaryBaseClass]: color === 'primary',
+            [secondaryBaseClass]: color === 'secondary',
+            [insetBaseClass]: color === 'inset',
+            [smallBaseClass]: size === 'small',
+            [mediumBaseClass]: size === 'medium',
+            [largeBaseClass]: size === 'large',
+            'w-full': fullWidth === true,
+          }, className.root)
+        }
+        {...props}
       >
-        <Link
-          className={
-            classnames(className, baseClassName, {
-              [primaryBaseClass]: color === 'primary',
-              [secondaryBaseClass]: color === 'secondary',
-              [insetBaseClass]: color === 'inset',
-              [smallBaseClass]: size === 'small',
-              [mediumBaseClass]: size === 'medium',
-              [largeBaseClass]: size === 'large',
-              'w-full': fullWidth === true,
-            }, className.root)
-          }
-          {...props}
-        >
-          {prefixIcon}
-          <span>{text}</span>
-          {postfixIcon}
-        </Link>
-      </div>
+        {prefixIcon}
+        <span>{text}</span>
+        {postfixIcon}
+      </Link>
     );
   }
 

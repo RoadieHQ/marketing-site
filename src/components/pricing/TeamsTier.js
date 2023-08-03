@@ -14,7 +14,7 @@ const TeamsTier = ({
     <Button
       text={TIERS.teams.ctaLabel}
       link={true}
-      color="primary"
+      className="Button size-3 neutral"
       to={TIERS.teams.ctaLinkTo}
       fullWidth
     />

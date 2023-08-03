@@ -42,6 +42,21 @@ const SideBySideHero = () => {
             </div>
           </div>
         </div>
+        <div className='Grid columns-2 gap-4'>
+          <div>
+            <div style={{ border: '1px solid var(--gray-5)', borderRadius: 'var(--br-3)', height: 400, padding: 16 }}>
+              <span className='Text size-2 weight-2 string'>Tech Insights</span>
+            </div>
+          </div>
+          <div>
+            <div style={{ border: '1px solid var(--gray-5)', borderRadius: 'var(--br-3)', height: 192, padding: 16, marginBottom: 16 }}>
+              <span className='Text size-2 weight-2 string'>Tech Insights</span>
+            </div>
+            <div style={{ border: '1px solid var(--gray-5)', borderRadius: 'var(--br-3)', height: 192, padding: 16 }}>
+              <span className='Text size-2 weight-2 string'>Tech Insights</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
