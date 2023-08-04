@@ -126,3 +126,4 @@ nav:
       - Recipes:
           - Track a Docker base image migration: '/docs/tech-insights/track-docker-base-image-migration/'
           - Track Datadog SLOs: '/docs/tech-insights/track-datadog-slos/'
+          - Track Sonarcloud Project Issues/Hotspots: '/docs/tech-insights/track-sonarcloud/'
