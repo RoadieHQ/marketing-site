@@ -1,5 +1,5 @@
 ---
-title: Extend a yaml file
+title: Manipulate a json file
 publishedDate: '2023-08-03'
 description: An introduction template utilizing the json editing actions
 ---
@@ -44,7 +44,7 @@ spec:
             "existsing": "content",
             "nested": {
               "one" :{
-                "kinda deep"
+                "kinda": "deep"
                 }
             }
           }
@@ -117,7 +117,7 @@ Uses the debug:log action to output a log message to the backstage scaffolder UI
       }
 ```
 
-We use this action to create a basic yaml file into the root of the workspace with the content:
+We use this action to create a test json file into the root of the workspace with the content:
 
 ```json
 {
@@ -142,16 +142,12 @@ We use this action to create a basic yaml file into the root of the workspace wi
       {"foo": "bar"}
 ```
 
-This action will merge the `input.content` into the file you specify in the `input.path` property. After the merge our template.yaml file will look like this:
+This action will merge the `input.content` into the file you specify in the `input.path` property. After the merge our `template.json` file will look like this:
 
 ```json
 {
   "existsing": "content",
-  "nested": {
-    "one": {
-      "kinda": "deep"
-    }
-  },
+  "nested": { "one": { "kinda": "deep" } },
   "foo": "bar"
 }
 ```
@@ -167,7 +163,7 @@ This action will merge the `input.content` into the file you specify in the `inp
     parser: json
 ```
 
-We use this action to parse the file specified at `input.path` because we know it is a yaml file we can use the `input.parser` with the value `json`. This will make the content of the file to be parsed into an object properly
+We use this action to parse the file specified at `input.path` because we know it is a json file we can use the `input.parser` with the value `json`. This will make the content of the file to be parsed into an object properly
 
 #### roadiehq:utils:serialize:json
 
