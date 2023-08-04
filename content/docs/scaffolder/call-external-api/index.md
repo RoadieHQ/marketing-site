@@ -1,6 +1,6 @@
 ---
 title: Call an external API
-publishedDate: '2023-08-02'
+publishedDate: '2023-08-03'
 description: An introduction template calling an external API
 ---
 
