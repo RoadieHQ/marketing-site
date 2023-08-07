@@ -1,5 +1,5 @@
 ---
-title: Transform json files with JSONata
+title: Transform JSON files with JSONata
 publishedDate: '2023-08-03'
 description: An introduction template utilizing the roadiehq:utils:jsonata:json:transform
 ---
@@ -20,7 +20,7 @@ kind: Template
 metadata:
   name: json-jsonata-transform
   title: JSONata transformation
-  description: An example to showcase how to use the `roadiehq:utils:jsonata:json:transform` action to transform  JSON file
+  description: An example to showcase how to use the `roadiehq:utils:jsonata:json:transform` action to transform a JSON file
 spec:
   owner: group:default/engineering
   type: service
@@ -29,7 +29,7 @@ spec:
     - title: Inputs
       properties:
         data:
-          title: Data in json format
+          title: Data in JSON format
           type: string
         expression:
           title: Expression
@@ -69,7 +69,7 @@ spec:
 
 Here we use two parameters to get user input to create a sandbox to test out the power of this action.
 
-The first parameter, `data` is used to get a json structured data to perform the jsonata transformations on.
+The first parameter, `data` is used to get a JSON structured data to perform the JSONata transformations on.
 
 The second parameter, `expression` is used to provide the JSONata expression that will be performed on the input that provided in the previous input field.
 

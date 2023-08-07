@@ -1,7 +1,7 @@
 ---
-title: Manipulate a json file
+title: Manipulate a JSON file
 publishedDate: '2023-08-03'
-description: An introduction template utilizing the json editing actions
+description: An introduction template utilizing the JSON editing actions
 ---
 
 ## Actions used
@@ -22,7 +22,7 @@ kind: Template
 metadata:
   name: json-file-mutations
   title: JSON file manipulations
-  description: Demonstrates how to merge an existing json object into a json file in the workspace
+  description: Demonstrates how to merge an existing JSON object into a JSON file in the workspace
 spec:
   owner: group:default/engineering
   type: service
@@ -88,7 +88,7 @@ We didnt use any parameters for this demonstration as we don't need any user inp
 
 #### debug:log
 
-Uses the debug:log action to output a log message to the backstage scaffolder UI. The message here is a general hard-coded message that indicates that the template execution has started
+Uses the debug:log action to output a log message to the Backstage scaffolder UI. The message here is a general hard-coded message that indicates that the template execution has started.
 
 ```yaml
 - id: log-message
@@ -117,7 +117,7 @@ Uses the debug:log action to output a log message to the backstage scaffolder UI
       }
 ```
 
-We use this action to create a test json file into the root of the workspace with the content:
+We use this action to create a test JSON file into the root of the workspace with the content:
 
 ```json
 {
@@ -163,7 +163,7 @@ This action will merge the `input.content` into the file you specify in the `inp
     parser: json
 ```
 
-We use this action to parse the file specified at `input.path` because we know it is a json file we can use the `input.parser` with the value `json`. This will make the content of the file to be parsed into an object properly
+We use this action to parse the file specified at `input.path` because we know it is a JSON file we can use the `input.parser` with the value `json`. This will make the content of the file to be parsed into an object properly.
 
 #### roadiehq:utils:serialize:json
 
@@ -175,7 +175,7 @@ We use this action to parse the file specified at `input.path` because we know i
     data: ${{ steps['parse'].output.content }}
 ```
 
-We use this action to serialize the content of the output of `roadiehq:utils:fs:parse` action so we can write it out to the console of the scaffolder
+We use this action to serialize the content of the output of `roadiehq:utils:fs:parse` action so we can write it out to the console of the scaffolder.
 
 #### debug:log
 

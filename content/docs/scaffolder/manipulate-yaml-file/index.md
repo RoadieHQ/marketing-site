@@ -1,7 +1,7 @@
 ---
-title: Manipulate yaml file
+title: Manipulate YAML file
 publishedDate: '2023-08-03'
-description: An introduction template utilizing the yaml editing actions
+description: An introduction template utilizing the YAML editing actions
 ---
 
 ## Actions used
@@ -21,8 +21,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: yaml-file-mutations
-  title: Yaml file manipulations
-  description: Demonstrates how to merge an existing yaml object into a yaml file in the workspace
+  title: YAML file manipulations
+  description: Demonstrates how to merge an existing YAML object into a YAML file in the workspace
 spec:
   owner: group:default/engineering
   type: service
@@ -83,7 +83,7 @@ We didnt use any parameters for this demonstration as we don't need any user inp
 
 #### debug:log
 
-Uses the debug:log action to output a log message to the backstage scaffolder UI. The message here is a general hard-coded message that indicates that the template execution has started
+Uses the debug:log action to output a log message to the Backstage scaffolder UI. The message here is a general hard-coded message that indicates that the template execution has started.
 
 ```yaml
 - id: log-message
@@ -107,7 +107,7 @@ Uses the debug:log action to output a log message to the backstage scaffolder UI
         this: will be extended by the scaffolder action
 ```
 
-We use this action to create a basic yaml file into the root of the workspace with the content:
+We use this action to create a YAML file into the root of the workspace with the content:
 
 ```yaml
 # template.yaml
@@ -149,7 +149,7 @@ foo: bar
     parser: yaml
 ```
 
-We use this action to parse the file specified at `input.path` because we know it is a yaml file we can use the `input.parser` with the value `yaml`. This will make the content of the file to be parsed into an object properly
+We use this action to parse the file specified at `input.path` because we know it is a YAML file we can use the `input.parser` with the value `yaml`. This will make the content of the file to be parsed into an object.
 
 #### roadiehq:utils:serialize:yaml
 
@@ -161,7 +161,7 @@ We use this action to parse the file specified at `input.path` because we know i
     data: ${{ steps['parse'].output.content }}
 ```
 
-We use this action to serialize the content of the output of `roadiehq:utils:fs:parse` action so we can write it out to the console of the scaffolder
+We use this action to serialize the content of the output of `roadiehq:utils:fs:parse` action so we can write it out to the console of the scaffolder.
 
 #### debug:log
 

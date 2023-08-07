@@ -1,5 +1,5 @@
 ---
-title: Transform yaml files with JSONata
+title: Transform YAML files with JSONata
 publishedDate: '2023-08-03'
 description: An introduction template utilizing the roadiehq:utils:jsonata:yaml:transform
 ---
@@ -29,7 +29,7 @@ spec:
     - title: Inputs
       properties:
         data:
-          title: Data in json format
+          title: Data in YAML format
           type: string
         expression:
           title: Expression
@@ -69,7 +69,7 @@ spec:
 
 Here we use two parameters to get user input to create a sandbox to test out the power of this action.
 
-The first parameter, `data` is used to get a json structured data to perform the jsonata transformations on.
+The first parameter, `data` is used to get a YAML structured data to perform the jsonata transformations on.
 
 The second parameter, `expression` is used to provide the JSONata expression that will be performed on the input that provided in the previous input field.
 
@@ -77,7 +77,7 @@ The second parameter, `expression` is used to provide the JSONata expression tha
 
 #### debug:log
 
-Uses the debug:log action to output a log message to the backstage scaffolder UI. The message here is a general hard-coded message that indicates that the template execution has started
+Uses the debug:log action to output a log message to the Backstage scaffolder UI. The message here is a general hard-coded message that indicates that the template execution has started.
 
 ```yaml
 - id: log-message
