@@ -1,5 +1,5 @@
 ---
-title: Extend a yaml file
+title: Manipulate yaml file
 publishedDate: '2023-08-03'
 description: An introduction template utilizing the yaml editing actions
 ---
