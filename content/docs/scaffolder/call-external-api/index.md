@@ -6,7 +6,7 @@ description: An introduction template calling an external API
 
 ## Prerequisets
 
-- Configure a proxy that can call the slack API with authentication. You can read more about how to configure a custom proxy [here](https://roadie.io/docs/custom-plugins/connectivity/proxy/)
+- Configure a proxy that can call the slack API with authentication. You can read more about how to configure a custom proxy [here](/docs/custom-plugins/connectivity/proxy/)
 - Have a slack app that can be called and it is added to the channels you are going to use for your notifications. You can read more about slack applications [here](https://api.slack.com/start/overview#creating)
 
 ## Actions used
