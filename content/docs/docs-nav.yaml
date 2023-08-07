@@ -102,6 +102,7 @@ nav:
         - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
   - Scaffolder:
       - Writing scaffolder templates: '/docs/scaffolder/writing-templates/'
+      - Certified templates: '/docs/scaffolder/certified-templates/'
       - Recipes:
           - Create RFC: '/docs/scaffolder/create-rfc/'
           - Debug template: '/docs/scaffolder/debug-template/'
