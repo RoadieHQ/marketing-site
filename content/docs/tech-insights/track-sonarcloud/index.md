@@ -49,7 +49,7 @@ metadata:
 Click on your profile in the top right of the application, click My Account. Then click Security. Enter a token name and click "Generate Token". Copy the token value.
 2. In Roadie click Administration -> Settings -> Secrets and save the token to the secret named SONARCLOUD_API_TOKEN.
 
-## Configure a proxy in backstage so that it can communicate with the Sonarcloud API
+## Configure a proxy in Roadie so that it can communicate with the SonarCloud API
 
 1. In Roadie visit Administration -> Settings -> Proxy and click "Add Proxy"
 2. Set the path of the new proxy to `/sonarcloud.io/api`
