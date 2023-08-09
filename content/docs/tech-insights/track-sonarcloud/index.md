@@ -71,7 +71,7 @@ Click on your profile in the top right of the application, click My Account. The
 ![Edit Data Source](edit-datasource.png)
 
 7. Next you can select the fields to extract from the API.
-In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, `$count($.issues[status != "CLOSED"])` as the JSONata query, and "Integer" type. Add a second fact by clicking "Add Fact", enter "debtTotal", `$.debtTotal` and "Integer"
+In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, `$count($.issues[status != "CLOSED"])` as the JSONata query, and select "Integer" type. Add a second fact by clicking "Add Fact", enter "debtTotal", `$.debtTotal` and select "Integer" again.
 
 8. Test the Data Source fact extraction by clicking "Check Facts". You should see something like the following.
 ![Field Extraction](field-extraction.png)
