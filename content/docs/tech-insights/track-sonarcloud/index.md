@@ -66,7 +66,7 @@ Click on your profile in the top right of the application, click My Account. The
 3. Select the HTTP Data Provider, then select the proxy we created earlier.
 4. In the Path Extension enter `issues/search?projectKeys={{ metadata.annotations["sonarqube.org/project-key"] }}`
 5. Next select an entity that you know has been configured with the Sonarcloud annotation so that we can test the data extraction in the next step.
-6. Click view. You should see the HTTP response from Sonarcloud with counts of issues like you see below:
+6. Click view. You should see the HTTP response from SonarCloud with counts of issues like you see below:
 
 ![Edit Data Source](edit-datasource.png)
 
