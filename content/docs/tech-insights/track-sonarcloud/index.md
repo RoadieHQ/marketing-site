@@ -21,7 +21,7 @@ As we go through this process, you’ll learn:
 3. How to configure a proxy in Roadie so that it can communicate with the SonarCloud API
 4. How to create an HTTP Datasource to collect data from a REST API
 5. How to create a Check with Tech Insights
-6. How to create a scorecard that brings together the checks with have created in this tutorial
+6. How to create a Scorecard that brings together the Checks with have created in this tutorial
 
 Let’s get started.
 
