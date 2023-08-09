@@ -133,7 +133,7 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 4. In the "Applies to" filter, select the items that you want to comply to this Scorecard
 5. Select an owner and optionally an Executive sponsor
 6. Click Save.
-7. In the scorecard that appears, click the three dots under "Actions" and click "Refresh Scorecard Results"
+7. In the Scorecard that appears, click the three dots under "Actions" and click "Refresh Scorecard Results"
 
 ## Add the Scorecard to the entity page
 
