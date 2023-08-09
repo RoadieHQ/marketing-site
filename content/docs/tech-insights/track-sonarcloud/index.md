@@ -92,7 +92,7 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 ![Edit Hotspots Data Source](edit-hotspots-datasource.png)
 
 7. Next you can select the fields to extract from the API.
-In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, "$.paging.total" as the JSONata query, and "Integer" type.
+In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, "$.paging.total" as the JSONata query, and select "Integer" type.
 
 8. Test the Data Source fact extraction by clicking "Check Facts". You should see something like the following.
 ![Hotspot Field Extraction](hotspot-field-extraction.png)
