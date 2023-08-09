@@ -140,6 +140,6 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 1. In Tech Insights, click Scorecards, and click the three dots below "Actions" and click "Add to catalog"
 2. Select "Type: service, Layout title: Overview" to add it to the Overview tab for every service in the catalog.
 3. Click "Add to entity page"
-4. Navigate to the entity we configured with the Sonarcloud annotation earlier.
+4. Navigate to the entity we configured with the SonarCloud annotation earlier.
 5. You should see a card like the following
 ![Entity Scorecard](entity-scorecard.png)
