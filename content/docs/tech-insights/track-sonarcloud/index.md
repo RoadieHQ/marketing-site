@@ -16,7 +16,7 @@ With Roadie’s Tech Insights feature, you can monitor issues and hotspots right
 
 As we go through this process, you’ll learn:
 
-1. How to configure a component in backstage with it's Sonarcloud project key
+1. How to configure a component in Roadie with its Sonarcloud project key
 2. How to configure the Sonarcloud API token in Roadie secrets
 3. How to configure a proxy in backstage so that it can communicate with the Sonarcloud API
 4. How to create an HTTP Datasource to collect data from a REST API
