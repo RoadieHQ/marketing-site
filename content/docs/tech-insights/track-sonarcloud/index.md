@@ -11,7 +11,7 @@ By tracking issues and hotspots reported by Sonarcloud across your organization 
 With Roadie’s Tech Insights feature, you can monitor issues and hotspots right within your software catalog:
 
 1. Automatically scan Components in the Backstage catalog and record the number of issues and hotspots reported by Sonarqube
-2. Visualise the projects which are doing and also the worst offenders.
+2. Visualise the projects which are doing well, and also the worst offenders.
 3. Create a check that can tell us which software is not adhering to standards set by the organization.
 
 As we go through this process, you’ll learn:
