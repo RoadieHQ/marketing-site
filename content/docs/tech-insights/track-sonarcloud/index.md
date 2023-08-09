@@ -85,7 +85,7 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 1. Within Roadie, click on Tech Insights -> Data Sources and click "Add Datasource"
 2. Set the name to "Sonarcloud Hotspots", and set the description if you prefer.
 3. Select the HTTP Data Provider, then select the proxy we created earlier.
-4. In the Path Extension enter `hotspots/search?projectKey={{metadata.annotations["sonarqube.org/project-key"]}}`
+4. In the Path Extension enter `hotspots/search?projectKey={{ metadata.annotations["sonarqube.org/project-key"] }}`
 5. Next select an entity that you know has been configured with the Sonarcloud annotation so that we can test the data extraction in the next step.
 6. Click view. You should see the HTTP response from Sonarcloud with counts of issues like you see below:
 
