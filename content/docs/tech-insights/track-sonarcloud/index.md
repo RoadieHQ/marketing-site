@@ -57,7 +57,6 @@ Click on your profile in the top right of the application, click My Account. The
 4. Expand the advanced section and click "Add" under the Headers section
 5. Enter "Authorization" for the header name and "Bearer ${SONARCLOUD_API_TOKEN}" as the header value
 6. In the Allow Headers section click "Add Item" and set its value to "Authorization"
-7. Lastly, click the secure checkbox to make sure that it uses the HTTPS protocol.
 
 ## Create an HTTP Data Source to collect issues from Sonarcloud
 
