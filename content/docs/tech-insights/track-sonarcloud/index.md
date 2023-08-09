@@ -45,7 +45,7 @@ metadata:
 
 ## Configure the SonarCloud API token in Roadie secrets
 
-1. First generate a new token in the Sonarcloud dashboard
+1. First generate a new token in the SonarCloud dashboard
 Click on your profile in the top right of the application, click My Account. Then click Security. Enter a token name and click "Generate Token". Copy the token value.
 2. In Roadie click Administration -> Settings -> Secrets and save the token to the secret named SONARCLOUD_API_TOKEN.
 
