@@ -25,7 +25,7 @@ As we go through this process, you’ll learn:
 
 Let’s get started.
 
-## Configure a Component with it's Sonarcloud project key
+## Configure a Component with its Sonarcloud project key
 
 1. First identify the project key for the catalog Component.
 You can find this in the SonarCloud dashboard. Find the project, click Administration -> Update key and copy the "Project Key"
