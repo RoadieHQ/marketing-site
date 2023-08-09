@@ -43,7 +43,7 @@ metadata:
     sonarqube.org/project-key: punkle_test-react-app
 ```
 
-## Configure the Sonarcloud API token in Roadie secrets
+## Configure the SonarCloud API token in Roadie secrets
 
 1. First generate a new token in the Sonarcloud dashboard
 Click on your profile in the top right of the application, click My Account. Then click Security. Enter a token name and click "Generate Token". Copy the token value.
