@@ -31,7 +31,7 @@ Let’s get started.
 You can find this in the Sonarcloud dashboard. Find the project, click Administration -> Update key and copy the "Project Kye"
 2. Next edit the catalog YAML file for the Component 
 The easiest way to do this is to find the component in the Roadie catalog and click the edit pencil in the top right hand side of the About Card.
-3. Edit and save the yaml file to include the `sonarqube.org/project-key` annotation.
+3. Edit and save the YAML file to include the `sonarqube.org/project-key` annotation.
 e.g.
 ```yaml
 ---
