@@ -80,7 +80,7 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 10. Click Save.
 11. In the Data Source page, click "Actions" and "Run" to trigger an initial run of the Data Source
 
-## Create an HTTP Data Source to collect hotspots from Sonarcloud
+## Create an HTTP Data Source to collect hotspots from SonarCloud
 
 1. Within Roadie, click on Tech Insights -> Data Sources and click "Add Datasource"
 2. Set the name to "Sonarcloud Hotspots", and set the description if you prefer.
