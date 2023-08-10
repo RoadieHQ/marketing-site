@@ -1,0 +1,10 @@
+.IconContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  border-radius: var(--br-circle);
+  background-color: var(--green-4);
+  color: var(--green-11);
+}

@@ -1,0 +1,132 @@
+.Badge {
+  all: unset;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  appearance: none;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: default;
+  user-select: none;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: var(--br-pill);
+}
+
+.Badge.size-1 {
+  height: var(--space-5);
+  font-size: var(--fs-2);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+  gap: var(--space-1);
+}
+
+.Badge.size-2 {
+  height: var(--space-6);
+  font-size: var(--fs-3);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+  gap: var(--space-2);
+}
+
+.Badge.gray {
+  background-color: var(--gray-3);
+  color: var(--gray-11);
+}
+
+.Badge.indigo {
+  background-color: var(--indigo-3);
+  color: var(--indigo-11);
+}
+
+.Badge.green {
+  background-color: var(--green-3);
+  color: var(--green-11);
+}
+
+.Badge.yellow {
+  background-color: var(--yellow-3);
+  color: var(--yellow-11);
+}
+
+.Badge.red {
+  background-color: var(--red-3);
+  color: var(--red-11);
+}
+
+@media only screen and (min-width: 520px) {
+  .Badge.bp1-size-1 {
+    height: var(--space-5);
+    font-size: var(--fs-2);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+    gap: var(--space-1);
+  }
+
+  .Badge.bp1-size-2 {
+    height: var(--space-6);
+    font-size: var(--fs-3);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+    gap: var(--space-2);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Badge.bp2-size-1 {
+    height: var(--space-5);
+    font-size: var(--fs-2);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+    gap: var(--space-1);
+  }
+
+  .Badge.bp2-size-2 {
+    height: var(--space-6);
+    font-size: var(--fs-3);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+    gap: var(--space-2);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Badge.bp3-size-1 {
+    height: var(--space-5);
+    font-size: var(--fs-2);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+    gap: var(--space-1);
+  }
+
+  .Badge.bp3-size-2 {
+    height: var(--space-6);
+    font-size: var(--fs-3);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+    gap: var(--space-2);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .Badge.bp4-size-1 {
+    height: var(--space-5);
+    font-size: var(--fs-2);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+    gap: var(--space-1);
+  }
+
+  .Badge.bp4-size-2 {
+    height: var(--space-6);
+    font-size: var(--fs-3);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+    gap: var(--space-2);
+  }
+}

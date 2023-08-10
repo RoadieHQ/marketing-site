@@ -1,6 +1,32 @@
 import './src/stylesheets/soehne.css';
 import './src/stylesheets/tailwind.css';
 import './src/stylesheets/table-of-contents-sidebar.css';
+
+import './src/stylesheets/Avatar.css';
+import './src/stylesheets/Badge.css';
+import './src/stylesheets/Banner.css';
+import './src/stylesheets/Button.css';
+import './src/stylesheets/Code.css';
+import './src/stylesheets/Container.css';
+import './src/stylesheets/Flex.css';
+import './src/stylesheets/Grid.css';
+import './src/stylesheets/Header.css';
+import './src/stylesheets/HoverMenu.css';
+import './src/stylesheets/Icon.css';
+import './src/stylesheets/IconButton.css';
+import './src/stylesheets/IconContainer.css';
+import './src/stylesheets/Image.css';
+import './src/stylesheets/Link.css';
+import './src/stylesheets/List.css';
+import './src/stylesheets/ListItem.css';
+import './src/stylesheets/Section.css';
+import './src/stylesheets/Separator.css';
+import './src/stylesheets/Sub.css';
+import './src/stylesheets/Sup.css';
+import './src/stylesheets/Table.css';
+import './src/stylesheets/Text.css';
+import './src/stylesheets/TextField.css';
+
 import './src/stylesheets/ds.css';
 
 /*

@@ -1,0 +1,472 @@
+.Flex {
+  display: flex;
+  align-items: start;
+}
+
+.Flex.row {
+  flex-direction: row;
+}
+
+.Flex.column {
+  flex-direction: column;
+}
+
+.Flex.rowReverse {
+  flex-direction: row-reverse;
+}
+
+.Flex.columnReverse {
+  flex-direction: column-reverse;
+}
+
+.Flex.ai-start {
+  align-items: start;
+}
+
+.Flex.ai-end {
+  align-items: end;
+}
+
+.Flex.ai-center {
+  align-items: center;
+}
+
+.Flex.ai-baseline {
+  align-items: baseline;
+}
+
+.Flex.ai-stretch {
+  align-items: stretch;
+}
+
+.Flex.jc-start {
+  justify-content: start;
+}
+
+.Flex.jc-end {
+  justify-content: end;
+}
+
+.Flex.jc-between {
+  justify-content: space-between;
+}
+
+.Flex.jc-center {
+  justify-content: center;
+}
+
+.Flex.gap-0 {
+  gap: 0;
+}
+
+.Flex.gap-1 {
+  gap: var(--space-1);
+}
+
+.Flex.gap-2 {
+  gap: var(--space-2);
+}
+
+.Flex.gap-3 {
+  gap: var(--space-3);
+}
+
+.Flex.gap-4 {
+  gap: var(--space-4);
+}
+
+.Flex.gap-5 {
+  gap: var(--space-5);
+}
+
+.Flex.gap-6 {
+  gap: var(--space-6);
+}
+
+.Flex.gap-7 {
+  gap: var(--space-7);
+}
+
+.Flex.gap-8 {
+  gap: var(--space-8);
+}
+
+.Flex.gap-9 {
+  gap: var(--space-9);
+}
+
+@media only screen and (min-width: 520px) {
+  .Flex.bp1-row {
+    flex-direction: row;
+  }
+
+  .Flex.bp1-column {
+    flex-direction: column;
+  }
+
+  .Flex.bp1-rowReverse {
+    flex-direction: row-reverse;
+  }
+
+  .Flex.bp1-columnReverse {
+    flex-direction: column-reverse;
+  }
+
+  .Flex.bp1-ai-start {
+    align-items: start;
+  }
+
+  .Flex.bp1-ai-end {
+    align-items: end;
+  }
+
+  .Flex.bp1-ai-center {
+    align-items: center;
+  }
+
+  .Flex.bp1-ai-baseline {
+    align-items: baseline;
+  }
+
+  .Flex.bp1-ai-stretch {
+    align-items: stretch;
+  }
+
+  .Flex.bp1-jc-start {
+    justify-content: start;
+  }
+
+  .Flex.bp1-jc-end {
+    justify-content: end;
+  }
+
+  .Flex.bp1-jc-between {
+    justify-content: space-between;
+  }
+
+  .Flex.bp1-jc-center {
+    justify-content: center;
+  }
+
+  .Flex.bp1-gap-0 {
+    gap: 0;
+  }
+
+  .Flex.bp1-gap-1 {
+    gap: var(--space-1);
+  }
+
+  .Flex.bp1-gap-2 {
+    gap: var(--space-2);
+  }
+
+  .Flex.bp1-gap-3 {
+    gap: var(--space-3);
+  }
+
+  .Flex.bp1-gap-4 {
+    gap: var(--space-4);
+  }
+
+  .Flex.bp1-gap-5 {
+    gap: var(--space-5);
+  }
+
+  .Flex.bp1-gap-6 {
+    gap: var(--space-6);
+  }
+
+  .Flex.bp1-gap-7 {
+    gap: var(--space-7);
+  }
+
+  .Flex.bp1-gap-8 {
+    gap: var(--space-8);
+  }
+
+  .Flex.bp1-gap-9 {
+    gap: var(--space-9);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Flex.bp2-row {
+    flex-direction: row;
+  }
+
+  .Flex.bp2-column {
+    flex-direction: column;
+  }
+
+  .Flex.bp2-rowReverse {
+    flex-direction: row-reverse;
+  }
+
+  .Flex.bp2-columnReverse {
+    flex-direction: column-reverse;
+  }
+
+  .Flex.bp2-ai-start {
+    align-items: start;
+  }
+
+  .Flex.bp2-ai-end {
+    align-items: end;
+  }
+
+  .Flex.bp2-ai-center {
+    align-items: center;
+  }
+
+  .Flex.bp2-ai-baseline {
+    align-items: baseline;
+  }
+
+  .Flex.bp2-ai-stretch {
+    align-items: stretch;
+  }
+
+  .Flex.bp2-jc-start {
+    justify-content: start;
+  }
+
+  .Flex.bp2-jc-end {
+    justify-content: end;
+  }
+
+  .Flex.bp2-jc-between {
+    justify-content: space-between;
+  }
+
+  .Flex.bp2-jc-center {
+    justify-content: center;
+  }
+
+  .Flex.bp2-gap-0 {
+    gap: 0;
+  }
+
+  .Flex.bp2-gap-1 {
+    gap: var(--space-1);
+  }
+
+  .Flex.bp2-gap-2 {
+    gap: var(--space-2);
+  }
+
+  .Flex.bp2-gap-3 {
+    gap: var(--space-3);
+  }
+
+  .Flex.bp2-gap-4 {
+    gap: var(--space-4);
+  }
+
+  .Flex.bp2-gap-5 {
+    gap: var(--space-5);
+  }
+
+  .Flex.bp2-gap-6 {
+    gap: var(--space-6);
+  }
+
+  .Flex.bp2-gap-7 {
+    gap: var(--space-7);
+  }
+
+  .Flex.bp2-gap-8 {
+    gap: var(--space-8);
+  }
+
+  .Flex.bp2-gap-9 {
+    gap: var(--space-9);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Flex.bp3-row {
+    flex-direction: row;
+  }
+
+  .Flex.bp3-column {
+    flex-direction: column;
+  }
+
+  .Flex.bp3-rowReverse {
+    flex-direction: row-reverse;
+  }
+
+  .Flex.bp3-columnReverse {
+    flex-direction: column-reverse;
+  }
+
+  .Flex.bp3-ai-start {
+    align-items: start;
+  }
+
+  .Flex.bp3-ai-end {
+    align-items: end;
+  }
+
+  .Flex.bp3-ai-center {
+    align-items: center;
+  }
+
+  .Flex.bp3-ai-baseline {
+    align-items: baseline;
+  }
+
+  .Flex.bp3-ai-stretch {
+    align-items: stretch;
+  }
+
+  .Flex.bp3-jc-start {
+    justify-content: start;
+  }
+
+  .Flex.bp3-jc-end {
+    justify-content: end;
+  }
+
+  .Flex.bp3-jc-between {
+    justify-content: space-between;
+  }
+
+  .Flex.bp3-jc-center {
+    justify-content: center;
+  }
+
+  .Flex.bp3-gap-0 {
+    gap: 0;
+  }
+
+  .Flex.bp3-gap-1 {
+    gap: var(--space-1);
+  }
+
+  .Flex.bp3-gap-2 {
+    gap: var(--space-2);
+  }
+
+  .Flex.bp3-gap-3 {
+    gap: var(--space-3);
+  }
+
+  .Flex.bp3-gap-4 {
+    gap: var(--space-4);
+  }
+
+  .Flex.bp3-gap-5 {
+    gap: var(--space-5);
+  }
+
+  .Flex.bp3-gap-6 {
+    gap: var(--space-6);
+  }
+
+  .Flex.bp3-gap-7 {
+    gap: var(--space-7);
+  }
+
+  .Flex.bp3-gap-8 {
+    gap: var(--space-8);
+  }
+
+  .Flex.bp3-gap-9 {
+    gap: var(--space-9);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .Flex.bp4-row {
+    flex-direction: row;
+  }
+
+  .Flex.bp4-column {
+    flex-direction: column;
+  }
+
+  .Flex.bp4-rowReverse {
+    flex-direction: row-reverse;
+  }
+
+  .Flex.bp4-columnReverse {
+    flex-direction: column-reverse;
+  }
+
+  .Flex.bp4-ai-start {
+    align-items: start;
+  }
+
+  .Flex.bp4-ai-end {
+    align-items: end;
+  }
+
+  .Flex.bp4-ai-center {
+    align-items: center;
+  }
+
+  .Flex.bp4-ai-baseline {
+    align-items: baseline;
+  }
+
+  .Flex.bp4-ai-stretch {
+    align-items: stretch;
+  }
+
+  .Flex.bp4-jc-start {
+    justify-content: start;
+  }
+
+  .Flex.bp4-jc-end {
+    justify-content: end;
+  }
+
+  .Flex.bp4-jc-between {
+    justify-content: space-between;
+  }
+
+  .Flex.bp4-jc-center {
+    justify-content: center;
+  }
+
+  .Flex.bp4-gap-0 {
+    gap: 0;
+  }
+
+  .Flex.bp4-gap-1 {
+    gap: var(--space-1);
+  }
+
+  .Flex.bp4-gap-2 {
+    gap: var(--space-2);
+  }
+
+  .Flex.bp4-gap-3 {
+    gap: var(--space-3);
+  }
+
+  .Flex.bp4-gap-4 {
+    gap: var(--space-4);
+  }
+
+  .Flex.bp4-gap-5 {
+    gap: var(--space-5);
+  }
+
+  .Flex.bp4-gap-6 {
+    gap: var(--space-6);
+  }
+
+  .Flex.bp4-gap-7 {
+    gap: var(--space-7);
+  }
+
+  .Flex.bp4-gap-8 {
+    gap: var(--space-8);
+  }
+
+  .Flex.bp4-gap-9 {
+    gap: var(--space-9);
+  }
+}

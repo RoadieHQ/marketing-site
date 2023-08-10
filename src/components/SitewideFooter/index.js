@@ -90,8 +90,8 @@ const SitewideFooter = () => {
   return (
     <footer className="Section size-3">
       <div className='Container'>
-        <div className="Grid columns-4 gap-9">
-          <div className='Flex column jc-between'>
+        <div className="Grid columns-1 bp1-columns-2 bp2-columns-4 gap-5 bp2-gap-9">
+          <div className='Flex column jc-between gap-5 bp2-gap-0'>
             <div className='Flex column gap-5'>
               <RoadieRacksIcon fill="currentColor" />
 

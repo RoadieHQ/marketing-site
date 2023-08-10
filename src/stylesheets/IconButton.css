@@ -1,0 +1,110 @@
+.IconButton {
+  all: unset;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: default;
+  user-select: none;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  justify-content: center;
+  border-radius: var(--br-circle);
+  color: var(--gray-12);
+}
+
+.IconButton.size-1 {
+  height: var(--space-6);
+  width: var(--space-6);
+}
+
+.IconButton.size-2 {
+  height: var(--space-7);
+  width: var(--space-7);
+}
+
+.IconButton.size-3 {
+  height: var(--space-8);
+  width: var(--space-8);
+}
+
+.IconButton.neutral {
+  color: var(--gray-12);
+}
+
+.IconButton.neutral:hover {
+  background-color: var(--gray-4);
+}
+
+
+@media only screen and (min-width: 520px) {
+  .IconButton.bp1-size-1 {
+    height: var(--space-6);
+    width: var(--space-6);
+  }
+
+  .IconButton.bp1-size-2 {
+    height: var(--space-7);
+    width: var(--space-7);
+  }
+
+  .IconButton.bp1-size-3 {
+    height: var(--space-8);
+    width: var(--space-8);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .IconButton.bp2-size-1 {
+    height: var(--space-6);
+    width: var(--space-6);
+  }
+
+  .IconButton.bp2-size-2 {
+    height: var(--space-7);
+    width: var(--space-7);
+  }
+
+  .IconButton.bp2-size-3 {
+    height: var(--space-8);
+    width: var(--space-8);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .IconButton.bp3-size-1 {
+    height: var(--space-6);
+    width: var(--space-6);
+  }
+
+  .IconButton.bp3-size-2 {
+    height: var(--space-7);
+    width: var(--space-7);
+  }
+
+  .IconButton.bp3-size-3 {
+    height: var(--space-8);
+    width: var(--space-8);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .IconButton.bp4-size-1 {
+    height: var(--space-6);
+    width: var(--space-6);
+  }
+
+  .IconButton.bp4-size-2 {
+    height: var(--space-7);
+    width: var(--space-7);
+  }
+
+  .IconButton.bp4-size-3 {
+    height: var(--space-8);
+    width: var(--space-8);
+  }
+}

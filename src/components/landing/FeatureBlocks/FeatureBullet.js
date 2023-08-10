@@ -9,7 +9,7 @@ const FeatureBulletPoint = ({ item, boxedIcons = true }) => (
         <item.icon
           className={classnames({
             'Icon size-1': boxedIcons === true,
-            'Icon': boxedIcons === false,
+            'Icon size-1 fml': boxedIcons === false,
           })}
           aria-hidden="true"
         />

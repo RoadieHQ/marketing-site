@@ -1,0 +1,27 @@
+.Table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.Th {
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: left;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-top: 1px solid var(--gray-5);
+  line-height: 1;
+  font-weight: var(--fw-1);
+}
+
+.Td {
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-top: 1px solid var(--gray-5);
+  border-left: 1px solid var(--gray-5);
+}

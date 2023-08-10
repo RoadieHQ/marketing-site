@@ -1,5 +1,4 @@
 import React from 'react';
-import { Lead, Headline } from 'components';
 import SocialLink from './SocialLink';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
@@ -15,12 +14,11 @@ const Person = ({ person }) => (
       )}
 
       <div className="space-y-2">
-        <div className="text-lg leading-6 font-medium space-y-1">
-          <h3>{person.name}</h3>
-          <p className="text-primary-600">{person.role}</p>
+        <div className="Flex column gap-1">
+          <span className='Text size-4 weight-2'>{person.name}</span>
+          <span className="Text size-3 lowContrast">{person.role}</span>
         </div>
-
-        <ul className="flex justify-center space-x-5">
+        <ul className="Flex row jc-center gap-5">
           <SocialLink person={person} type="github" />
           <SocialLink person={person} type="twitter" />
           <SocialLink person={person} type="linkedin" />
@@ -36,11 +34,10 @@ const CircleThreeColTeam = ({ headline, lead, people }) => (
       <div className="space-y-12">
         <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-3xl">
           <div className="mt-1">
-            <Headline>{headline}</Headline>
+            <h2 className='Text size-7'>{headline}</h2>
           </div>
-
           <div className="mt-5">
-            <Lead>{lead}</Lead>
+            <p className='Text size-5 weight-1 lowContrast'>{lead}</p>
           </div>
         </div>
 

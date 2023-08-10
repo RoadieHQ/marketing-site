@@ -1,0 +1,393 @@
+.Text {
+  font-family: var(--ff-sans);
+  color: var(--gray-12);
+  margin: 0;
+  display: block;
+  font-feature-settings: "tnum";
+  font-style: normal;
+  max-width: 60ch;
+}
+
+.Text.size-1 {
+  font-size: var(--fs-1);
+  line-height: var(--lh-1);
+  letter-spacing: 0;
+  font-weight: var(--fw-1);
+}
+
+.Text.size-2 {
+  font-size: var(--fs-2);
+  line-height: var(--lh-2);
+  letter-spacing: 0;
+  font-weight: var(--fw-1);
+}
+
+.Text.size-3 {
+  font-size: var(--fs-3);
+  line-height: var(--lh-3);
+  letter-spacing: 0;
+  font-weight: var(--fw-1);
+}
+
+.Text.size-4 {
+  font-size: var(--fs-4);
+  line-height: var(--lh-4);
+  letter-spacing: 0;
+  font-weight: var(--fw-1);
+}
+
+.Text.size-5 {
+  font-size: var(--fs-5);
+  line-height: var(--lh-5);
+  letter-spacing: var(--ls-1);
+  font-weight: var(--fw-2);
+}
+
+.Text.size-6 {
+  font-size: var(--fs-6);
+  line-height: var(--lh-6);
+  letter-spacing: var(--ls-1);
+  font-weight: var(--fw-2);
+  text-indent: -.2px;
+}
+
+.Text.size-7 {
+  font-size: var(--fs-7);
+  line-height: var(--lh-7);
+  letter-spacing: var(--ls-3);
+  font-weight: var(--fw-2);
+  text-indent: -.35px;
+}
+
+.Text.size-8 {
+  font-size: var(--fs-8);
+  line-height: var(--lh-8);
+  letter-spacing: var(--ls-4);
+  font-weight: var(--fw-2);
+  text-indent: -.6px;
+}
+
+.Text.size-9 {
+  font-size: var(--fs-9);
+  line-height: var(--lh-8);
+  letter-spacing: var(--ls-4);
+  font-weight: var(--fw-2);
+  text-indent: -.75px;
+}
+
+.Text.highContrast {
+  color: var(--gray-12);
+}
+
+.Text.lowContrast {
+  color: var(--gray-11);
+}
+
+.Text.indigo {
+  color: var(--indigo-11);
+}
+
+.Text.weight-1 {
+  font-weight: var(--fw-1);
+}
+
+.Text.weight-2 {
+  font-weight: var(--fw-2);
+}
+
+.Text.string {
+  line-height: 1;
+}
+
+.Text.inline {
+  display: inline;
+}
+
+.Text.ta-start {
+  text-align: start;
+}
+
+.Text.ta-center {
+  text-align: center;
+}
+
+.Text.ta-end {
+  text-align: end;
+}
+
+
+@media only screen and (min-width: 520px) {
+  .Text.bp1-size-1 {
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp1-size-2 {
+    font-size: var(--fs-2);
+    line-height: var(--lh-2);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp1-size-3 {
+    font-size: var(--fs-3);
+    line-height: var(--lh-3);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp1-size-4 {
+    font-size: var(--fs-4);
+    line-height: var(--lh-4);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp1-size-5 {
+    font-size: var(--fs-5);
+    line-height: var(--lh-5);
+    letter-spacing: var(--ls-1);
+    font-weight: var(--fw-2);
+  }
+
+  .Text.bp1-size-6 {
+    font-size: var(--fs-6);
+    line-height: var(--lh-6);
+    letter-spacing: var(--ls-1);
+    font-weight: var(--fw-2);
+    text-indent: -.2px;
+  }
+
+  .Text.bp1-size-7 {
+    font-size: var(--fs-7);
+    line-height: var(--lh-7);
+    letter-spacing: var(--ls-3);
+    font-weight: var(--fw-2);
+    text-indent: -.35px;
+  }
+
+  .Text.bp1-size-8 {
+    font-size: var(--fs-8);
+    line-height: var(--lh-8);
+    letter-spacing: var(--ls-4);
+    font-weight: var(--fw-2);
+    text-indent: -.6px;
+  }
+
+  .Text.bp1-size-9 {
+    font-size: var(--fs-9);
+    line-height: var(--lh-8);
+    letter-spacing: var(--ls-4);
+    font-weight: var(--fw-2);
+    text-indent: -.75px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Text.bp2-size-1 {
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp2-size-2 {
+    font-size: var(--fs-2);
+    line-height: var(--lh-2);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp2-size-3 {
+    font-size: var(--fs-3);
+    line-height: var(--lh-3);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp2-size-4 {
+    font-size: var(--fs-4);
+    line-height: var(--lh-4);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp2-size-5 {
+    font-size: var(--fs-5);
+    line-height: var(--lh-5);
+    letter-spacing: var(--ls-1);
+    font-weight: var(--fw-2);
+  }
+
+  .Text.bp2-size-6 {
+    font-size: var(--fs-6);
+    line-height: var(--lh-6);
+    letter-spacing: var(--ls-1);
+    font-weight: var(--fw-2);
+    text-indent: -.2px;
+  }
+
+  .Text.bp2-size-7 {
+    font-size: var(--fs-7);
+    line-height: var(--lh-7);
+    letter-spacing: var(--ls-3);
+    font-weight: var(--fw-2);
+    text-indent: -.35px;
+  }
+
+  .Text.bp2-size-8 {
+    font-size: var(--fs-8);
+    line-height: var(--lh-8);
+    letter-spacing: var(--ls-4);
+    font-weight: var(--fw-2);
+    text-indent: -.6px;
+  }
+
+  .Text.bp2-size-9 {
+    font-size: var(--fs-9);
+    line-height: var(--lh-8);
+    letter-spacing: var(--ls-4);
+    font-weight: var(--fw-2);
+    text-indent: -.75px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Text.bp3-size-1 {
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp3-size-2 {
+    font-size: var(--fs-2);
+    line-height: var(--lh-2);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp3-size-3 {
+    font-size: var(--fs-3);
+    line-height: var(--lh-3);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp3-size-4 {
+    font-size: var(--fs-4);
+    line-height: var(--lh-4);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp3-size-5 {
+    font-size: var(--fs-5);
+    line-height: var(--lh-5);
+    letter-spacing: var(--ls-1);
+    font-weight: var(--fw-2);
+  }
+
+  .Text.bp3-size-6 {
+    font-size: var(--fs-6);
+    line-height: var(--lh-6);
+    letter-spacing: var(--ls-1);
+    font-weight: var(--fw-2);
+    text-indent: -.2px;
+  }
+
+  .Text.bp3-size-7 {
+    font-size: var(--fs-7);
+    line-height: var(--lh-7);
+    letter-spacing: var(--ls-3);
+    font-weight: var(--fw-2);
+    text-indent: -.35px;
+  }
+
+  .Text.bp3-size-8 {
+    font-size: var(--fs-8);
+    line-height: var(--lh-8);
+    letter-spacing: var(--ls-4);
+    font-weight: var(--fw-2);
+    text-indent: -.6px;
+  }
+
+  .Text.bp3-size-9 {
+    font-size: var(--fs-9);
+    line-height: var(--lh-8);
+    letter-spacing: var(--ls-4);
+    font-weight: var(--fw-2);
+    text-indent: -.75px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .Text.bp4-size-1 {
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp4-size-2 {
+    font-size: var(--fs-2);
+    line-height: var(--lh-2);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp4-size-3 {
+    font-size: var(--fs-3);
+    line-height: var(--lh-3);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp4-size-4 {
+    font-size: var(--fs-4);
+    line-height: var(--lh-4);
+    letter-spacing: 0;
+    font-weight: var(--fw-1);
+  }
+
+  .Text.bp4-size-5 {
+    font-size: var(--fs-5);
+    line-height: var(--lh-5);
+    letter-spacing: var(--ls-1);
+    font-weight: var(--fw-2);
+  }
+
+  .Text.bp4-size-6 {
+    font-size: var(--fs-6);
+    line-height: var(--lh-6);
+    letter-spacing: var(--ls-1);
+    font-weight: var(--fw-2);
+    text-indent: -.2px;
+  }
+
+  .Text.bp4-size-7 {
+    font-size: var(--fs-7);
+    line-height: var(--lh-7);
+    letter-spacing: var(--ls-3);
+    font-weight: var(--fw-2);
+    text-indent: -.35px;
+  }
+
+  .Text.bp4-size-8 {
+    font-size: var(--fs-8);
+    line-height: var(--lh-8);
+    letter-spacing: var(--ls-4);
+    font-weight: var(--fw-2);
+    text-indent: -.6px;
+  }
+
+  .Text.bp4-size-9 {
+    font-size: var(--fs-9);
+    line-height: var(--lh-8);
+    letter-spacing: var(--ls-4);
+    font-weight: var(--fw-2);
+    text-indent: -.75px;
+  }
+}
