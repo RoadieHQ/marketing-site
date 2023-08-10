@@ -8,6 +8,7 @@ import {
   PlusCircleIcon,
   NewspaperIcon,
   BriefcaseIcon,
+  CheckCircleIcon,
 } from '@heroicons/react/outline'
 
 import MobileFreeTrialButton from './MobileFreeTrialButton';
@@ -23,11 +24,19 @@ const subItems = [{
   to: '/product/scaffolder/',
   icon: PlusCircleIcon,
 }, {
-  name: 'Backstage Plugins',
+  name: 'Tech Docs: centralized yet distributed',
+  to: '/product/documentation/',
+  icon: BookOpenIcon,
+}, {
+  name: 'Tech Insights: Scorecards for Backstage',
+  to: '/product/tech-insights/',
+  icon: CheckCircleIcon,
+}, {
+  name: 'Backstage Plugins Directory',
   to: '/backstage/plugins/',
   icon: CodeIcon,
 }, {
-  name: 'Backstage Weekly',
+  name: 'Backstage Weekly Newsletter',
   to: '/backstage-weekly/',
   icon: NewspaperIcon,
 }, {
