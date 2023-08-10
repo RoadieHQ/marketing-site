@@ -187,7 +187,7 @@ An additional filtering based on any header can be achieved by using `valid` con
 ## Troubleshooting
 
 * `Error: self-signed certificate in certificate chain`
-   * If the services you are directing traffic to are using self-signed certificates you might face an issue where the broken healthcheck does not respond correctly, varying between 403 and 404 error codes. To fix this, you can either[provide the certificate to the broker manually so it understand that](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/backend-requests-with-an-internal-certificate-for-docker) or alternatively [disable certification verification altogether](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/disable-certificate-verification-with-docker). 
+   * If the services you are directing traffic to are using self-signed certificates you might face an issue where the broken healthcheck does not respond correctly, varying between 403 and 404 error codes. To fix this, you can either [provide the certificate to the broker manually so it understand that](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/backend-requests-with-an-internal-certificate-for-docker) or alternatively [disable certification verification altogether](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/disable-certificate-verification-with-docker). 
 
 
 ## References
