@@ -15,7 +15,7 @@ import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import classNames from 'classnames';
 
-const SEO_TITLE = 'Tech Insights: scorecards for Backstage [beta]';
+const SEO_TITLE = 'Tech Insights: scorecards for Backstage';
 const LEAD = `Establish engineering standards and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.`;
 
 const PRODUCT = {
@@ -205,10 +205,6 @@ const Home = ({ data }) => {
             <strong className="text-white uppercase text-xl font-highlight mr-2">
               <span>Roadie’s Tech Insights</span>
             </strong>
-
-            <span className="inline-block border border-white text-white text-sm px-2 py-1 rounded-xl">
-              beta
-            </span>
           </div>
 
           <Headline size="medium" className="text-white">
