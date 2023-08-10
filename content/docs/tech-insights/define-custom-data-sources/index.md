@@ -24,7 +24,11 @@ To set up a Data Source, you will, firstly, need to enter general information su
   3. _Component repository directory_ type allows you to extract a list of files from the repository
 
 2 - Set additional configuration options depending on the type of the data provider
-  1. For _HTTP_ type select a proxy from the provided dropdown and append a path extension to configure the URL the HTTP call should be made. The path extension should be input without the preceding slash. 
+  1. For _HTTP_ type 
+     1. _proxy:_ Select a proxy from the provided dropdown 
+     2. _path extension:_ The path to append to the proxy URL to which the HTTP call should be made. There is basic support for templating entity values into the path. E.g. `etc/{{ metadata.name }}` would insert the name of the entity. The path extension should be input without the preceding slash.
+     3. _HTTP Method:_ The HTTP method to use for the request. Mostly this will be `GET` but `POST` is also supported for graphQL and other endpoints which take query params through the request body.
+     4. _Body:_ For POST requests you can also send a body. Templating is also supported in the request body in the same way as above.
   2. For _Component repository file_ configure the path to the file you want to extract data from in repositories, starting from the root. This can be anything from JSON files to YAML files.
   3. For _Component repository_ configure the root folder where you want to list files from. To identify the repository root, you can use `.`. 
 
@@ -40,7 +44,7 @@ Now that you have data, let’s define what Facts interest you. You’ll do this
 
 4 - Data retention refers to maximum number of items or duration on how long to keep them before they are automatically removed from the database.
 
-5 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSON or Regex parser type, while for “HTTP” data provider type, only JSON is supported. Retrieved YAML files are handled as JSON. Repository directory configuration returns a single value of type Set and the only configurable options are the name and description of the field.  
+5 - Choose a parser to extract a Fact from the data obtained before. For the type “Component repository file” this can be either JSONata or Regex parser type, retrieved YAML files are handled as JSON. while for “HTTP” data provider type, only JSONata is supported. Repository directory configuration returns a single value of type Set and the only configurable options are the name and description of the field.  
 
 JSON type of parser uses  [JSONata query syntax](https://jsonata.org/) to extract data from JSON. Regex type uses [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to extract data from text.
 
