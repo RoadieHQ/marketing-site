@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import trackGoogleAnalyticsEvent from '../../googleAnalytics';
 import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
@@ -49,12 +48,6 @@ export const submitEmailToNetlifyForms = async ({
     console.error('Submission failed', error, resp);
     return Promise.reject();
   }
-
-  trackGoogleAnalyticsEvent({
-    category: 'form',
-    action: 'submit',
-    label: netlifyFormName,
-  });
 
   trackPlausibleEvent(netlifyFormName);
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const isRelativeTo = (to) => to.startsWith('/') || to.startsWith('#');
 
