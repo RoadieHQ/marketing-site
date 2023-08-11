@@ -256,57 +256,39 @@ const Home = ({ data }) => {
       </div>
 
       <section className="Section size-3">
-        <div className="Container">
-          <h3 className='Text size-7'>
-            Leading architectural change through <nobr>Roadie Backstage</nobr>
-          </h3>
-          <div>
-            <span className='Text size-3 weight-2'>Andy Hoffman, Caribou</span>
-            <span className='Text size-3 lowContrast'>BackstageCon, Detroit 2022</span>
-          </div>
-          <p className="Text size-4">
-            Yesterday you’re a scrappy startup; today, you’re funded and have 12 months to 10x your
-            team and system capacity. In this talk, Andy shows how Backstage—via Roadie—can help
-            wrangle unintuitive architectures, overwhelming options, and unfamiliar patterns for
-            teams going through hyper-growth.
-          </p>
-          <Link
-            to="https://youtu.be/6Ss1e-9X_JY?t=51"
-            className="Link"
-          >
-            Watch talk on YouTube &rarr;
-          </Link>
-        </div>
-        <aside className="lg:col-span-3">
-          <Link to="https://youtu.be/6Ss1e-9X_JY?t=51">
-            <img src={AndyThumbImg} alt="Andy's talk thumbnail" />
-          </Link>
-        </aside>
-      </section>
-
-      <section className="Section size-3">
         <div className='Container'>
-          <h2 className="Text size-7">
-            Adopt Backstage through Roadie
-          </h2>
-          <figure className="max-w-2xl px-4 mx-auto mt-10 mb-5">
-            <blockquote
-              cite="https://youtu.be/6Ss1e-9X_JY?t=51"
-              className="Text size-6"
-            >
-              “Roadie has been fantastic to work with and allowed us to adopt Backstage without the
-              overhead.”
-            </blockquote>
-            <figcaption className="Text size-3 lowContrast">
-              Andy Hoffman, DevOps Engineer Manager, Caribou
-            </figcaption>
-          </figure>
-          <Button
-            link={true}
-            to="/request-demo/"
-            className="Button size-3 accent"
-            text="Request a Demo"
-          />
+          <blockquote
+            cite="https://youtu.be/6Ss1e-9X_JY?t=51"
+          >
+            <div className='Flex column ai-center gap-7'>
+              <p className="Text size-7 weight-1 ta-center lowContrast">
+                “Roadie has been fantastic to work with and allowed us to adopt Backstage without the
+                overhead.”
+              </p>
+              <footer>
+                <div className='Flex row ai-center gap-2'>
+                  <div className='Avatar size-3'>
+                    <img src='https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg' />
+                  </div>
+                  <div className='Flex column'>
+                    <span className='Text size-3 weight-2'>Andy Hoffman</span>
+                    <span className='Text size-3 lowContrast'>DevOps Manager at Caribou</span>
+                  </div>
+                </div>
+              </footer>
+              <aside className="" style={{ width: 108, height: 75 }}>
+                <Link to="https://youtu.be/6Ss1e-9X_JY?t=51">
+                  <img src={AndyThumbImg} alt="Andy's talk thumbnail" />
+                </Link>
+                <Link
+                  to="https://youtu.be/6Ss1e-9X_JY?t=51"
+                  className="Link"
+                >
+                  <span className='Text size-3'>Watch talk on YouTube &rarr;</span>
+                </Link>
+              </aside>
+            </div>
+          </blockquote>
         </div>
       </section>
 
