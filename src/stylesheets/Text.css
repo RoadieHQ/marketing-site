@@ -87,6 +87,14 @@
   color: var(--indigo-11);
 }
 
+.Text.white {
+  color: white;
+}
+
+.Text.whiteA {
+  color: rgba(255,255,255,.75);
+}
+
 .Text.weight-1 {
   font-weight: var(--fw-1);
 }

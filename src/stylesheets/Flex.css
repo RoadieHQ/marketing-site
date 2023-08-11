@@ -55,6 +55,18 @@
   justify-content: center;
 }
 
+.Flex.fw-wrap {
+  flex-wrap: wrap;
+}
+
+.Flex.fw-nowrap {
+  flex-wrap: nowrap;
+}
+
+.Flex.fw-wr {
+  flex-wrap: wrap-reverse;
+}
+
 .Flex.gap-0 {
   gap: 0;
 }
@@ -146,6 +158,18 @@
 
   .Flex.bp1-jc-center {
     justify-content: center;
+  }
+
+  .Flex.bp1-fw-wrap {
+    flex-wrap: wrap;
+  }
+
+  .Flex.bp1-fw-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .Flex.bp1-fw-wr {
+    flex-wrap: wrap-reverse;
   }
 
   .Flex.bp1-gap-0 {
@@ -242,6 +266,18 @@
     justify-content: center;
   }
 
+  .Flex.bp2-fw-wrap {
+    flex-wrap: wrap;
+  }
+
+  .Flex.bp2-fw-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .Flex.bp2-fw-wr {
+    flex-wrap: wrap-reverse;
+  }
+
   .Flex.bp2-gap-0 {
     gap: 0;
   }
@@ -336,6 +372,18 @@
     justify-content: center;
   }
 
+  .Flex.bp3-fw-wrap {
+    flex-wrap: wrap;
+  }
+
+  .Flex.bp3-fw-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .Flex.bp3-fw-wr {
+    flex-wrap: wrap-reverse;
+  }
+
   .Flex.bp3-gap-0 {
     gap: 0;
   }
@@ -428,6 +476,18 @@
 
   .Flex.bp4-jc-center {
     justify-content: center;
+  }
+
+  .Flex.bp4-fw-wrap {
+    flex-wrap: wrap;
+  }
+
+  .Flex.bp4-fw-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .Flex.bp4-fw-wr {
+    flex-wrap: wrap-reverse;
   }
 
   .Flex.bp4-gap-0 {

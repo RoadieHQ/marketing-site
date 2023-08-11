@@ -180,3 +180,7 @@
 .pl-7 {
   padding-left: var(--space-7);
 }
+
+.fg-1 {
+  flex-grow: 1;
+}
