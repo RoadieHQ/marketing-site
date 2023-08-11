@@ -1,9 +1,5 @@
-import isUndefined from 'lodash/isUndefined';
-
 const trackGoogleAnalyticsEvent = (eventName, eventParams) => {
-  if (!isUndefined(window)) {
-    window.gtag("event", eventName, eventParams);
-  }
+  return typeof window !== "undefined" && window.gtag("event", eventName, eventParams);
 };
 
 export const trackRequestDemo = trackGoogleAnalyticsEvent("request_demo");
