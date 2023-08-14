@@ -30,11 +30,11 @@ describe('Link', function () {
     expect(wrapper.name()).to.equal('ForwardRef');
   });
 
-  it('should return an OutboundLink for external links', function () {
+  it('should return a ForwardRef for external links', function () {
     const wrapper = shallow(
       <Link to="http://example.com">Hello</Link>
     );
-    expect(wrapper.name()).to.equal('OutboundLink');
+    expect(wrapper.name()).to.equal('ForwardRef');
   });
 
   it('should attach target=_blank to external links', function () {
