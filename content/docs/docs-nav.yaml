@@ -134,3 +134,4 @@ nav:
           - Track Datadog SLOs: '/docs/tech-insights/track-datadog-slos/'
           - Track Sonarcloud Project Issues/Hotspots: '/docs/tech-insights/track-sonarcloud/'
           - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
+          - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'

@@ -1,6 +1,6 @@
 ---
 title: Enforce branch protection
-publishedDate: '2023-08-16T15:15:00.0Z'
+publishedDate: '2023-08-16'
 description: How to enforce GitHub branch protection on production software with Tech Insights.
 ---
 
@@ -15,7 +15,9 @@ As we go through this process, you’ll learn how to create Data Sources that in
 
 ## Prerequisites
 
-1. You must have a Personal Access Token (PAT) for GitHub set in Administration → Settings → Secrets → GITHUB_TOKEN. This PAT must have the “repo” scope enabled. It must also be created on an account that has admin permissions in GitHub. Tokens associated with regular user accounts will not be able to see the branch protection settings on all repositories. [Learn more](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+1. You must have a Personal Access Token (PAT) for GitHub set in Administration → Settings → Secrets → GITHUB_TOKEN. This PAT must have the “repo” scope enabled.
+
+    We recommend creating the PAT on an account which has admin permissions in GitHub. Tokens associated with regular user accounts will not be able to see the branch protection settings on all repositories. [Learn how to create a PAT in the GitHub docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
     
     ![pat permissions](./pat-permissions.png)
 
