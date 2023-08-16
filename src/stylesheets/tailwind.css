@@ -44,14 +44,6 @@ html {
   background-position: center center;
 }
 
-.prose-primary p a {
-  border-bottom: 1px dotted #E56C1A;
-}
-
-.prose-primary p a:hover {
-  border-bottom-style: solid;
-}
-
 .prose-primary h2 em, .prose-primary h3 em {
   font-style: normal;
 }
