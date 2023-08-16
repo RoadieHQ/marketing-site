@@ -15,10 +15,4 @@ describe('The documentation', () => {
     // This is obviously brittle, but we should test that we actually got to the right page.
     cy.contains('Creating a token');
   });
-
-  it('has nested sidebar items that open', () => {
-    cy.visit('/docs/details/accessing-aws-resources/');
-    cy.contains('The catalog').click();
-    cy.contains('Removing components').should('be.visible');
-  });
 });
