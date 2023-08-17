@@ -75,55 +75,6 @@
   text-indent: -.75px;
 }
 
-.Text.highContrast {
-  color: var(--gray-12);
-}
-
-.Text.lowContrast {
-  color: var(--gray-11);
-}
-
-.Text.indigo {
-  color: var(--indigo-11);
-}
-
-.Text.white {
-  color: white;
-}
-
-.Text.whiteA {
-  color: rgba(255,255,255,.75);
-}
-
-.Text.weight-1 {
-  font-weight: var(--fw-1);
-}
-
-.Text.weight-2 {
-  font-weight: var(--fw-2);
-}
-
-.Text.string {
-  line-height: 1;
-}
-
-.Text.inline {
-  display: inline;
-}
-
-.Text.ta-start {
-  text-align: start;
-}
-
-.Text.ta-center {
-  text-align: center;
-}
-
-.Text.ta-end {
-  text-align: end;
-}
-
-
 @media only screen and (min-width: 520px) {
   .Text.bp1-size-1 {
     font-size: var(--fs-1);
@@ -398,4 +349,52 @@
     font-weight: var(--fw-2);
     text-indent: -.75px;
   }
+}
+
+.Text.highContrast {
+  color: var(--gray-12);
+}
+
+.Text.lowContrast {
+  color: var(--gray-11);
+}
+
+.Text.indigo {
+  color: var(--indigo-11);
+}
+
+.Text.white {
+  color: white;
+}
+
+.Text.whiteA {
+  color: rgba(255, 255, 255, .75);
+}
+
+.Text.weight-1 {
+  font-weight: var(--fw-1);
+}
+
+.Text.weight-2 {
+  font-weight: var(--fw-2);
+}
+
+.Text.string {
+  line-height: 1;
+}
+
+.Text.inline {
+  display: inline;
+}
+
+.Text.ta-start {
+  text-align: start;
+}
+
+.Text.ta-center {
+  text-align: center;
+}
+
+.Text.ta-end {
+  text-align: end;
 }

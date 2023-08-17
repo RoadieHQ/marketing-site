@@ -89,7 +89,7 @@
 
   --fs-1: 10px;
   --fs-2: 12px;
-  --fs-3: 14px;
+  --fs-3: 15px;
   --fs-4: 17px;
   --fs-5: 20px;
   --fs-6: 27px;
@@ -99,11 +99,11 @@
 
   --lh-1: 14px;
   --lh-2: 17px;
-  --lh-3: 19px;
+  --lh-3: 21px;
   --lh-4: 23px;
   --lh-5: 26px;
   --lh-6: 32px;
-  --lh-7: 36px;
+  --lh-7: 37px;
   --lh-8: 54px;
 
   --ls-1: -.12px;
@@ -173,14 +173,19 @@
   left: 0;
 }
 
-.pt-1 {
-  padding-top: var(--space-1);
-}
 
-.pl-7 {
-  padding-left: var(--space-7);
-}
+
+
 
 .fg-1 {
   flex-grow: 1;
+}
+
+
+.js-center {
+  justify-self: center;
+}
+
+.display-if {
+  display: inline-flex;
 }
