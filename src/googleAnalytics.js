@@ -1,22 +1,7 @@
-import isUndefined from 'lodash/isUndefined';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
-
-import { currentlyExecutingGitBranch } from './environment';
-
-const trackGoogleAnalyticsEvent = (eventParams) => {
-  if (!isUndefined(window.ga)) {
-    window.ga('send', 'pageview', {
-      'dimension1': `'${currentlyExecutingGitBranch()}'`,
-    });
-  }
-
-  trackCustomEvent(eventParams);
-
-  if (!isUndefined(window.gtag)) {
-    window.gtag('event', 'pageview', {
-      'dimension1': `'${currentlyExecutingGitBranch()}'`,
-    });
-  }
+const trackGoogleAnalyticsEvent = (eventName, eventParams) => {
+  return typeof window !== "undefined" && window.gtag("event", eventName, eventParams);
 };
 
-export default trackGoogleAnalyticsEvent;
+export const trackRequestDemo = () => trackGoogleAnalyticsEvent("request_demo");
+export const trackRequestTrial = () => trackGoogleAnalyticsEvent("request_trial");
+export const trackSubscribe = () => trackGoogleAnalyticsEvent("subscribe_newsletter");

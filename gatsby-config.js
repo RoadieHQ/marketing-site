@@ -225,21 +225,6 @@ module.exports = {
     ...rssFeedPlugin,
 
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-166771003-3',
-      },
-    },
-
-    {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'GTM-WFBJD3P',
-        includeInDevelopment: true,
-      },
-    },
-
-    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ['G-FJ7VX25TGT'],

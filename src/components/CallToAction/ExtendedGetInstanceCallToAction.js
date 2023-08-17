@@ -13,6 +13,7 @@ import { ScmToolSelect } from '../forms/ScmToolSelect';
 
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
+import { trackRequestTrial, trackSubscribe } from '../../googleAnalytics';
 
 const submitToNetlifyForms = async ({
   email,
@@ -48,6 +49,10 @@ const submitToNetlifyForms = async ({
       method: 'POST',
       body: formData,
     });
+    trackRequestTrial();
+    if (subToNewsletter) {
+      trackSubscribe();
+    }
   } catch (error) {
     console.error('Submission failed', error, resp);
   }
