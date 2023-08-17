@@ -15,16 +15,15 @@ const FeatureBlock = ({
   comingSoon,
 }) => (
   <div className='Grid columns-2 gap-9 ai-center'>
-    <aside
-      className=""
-      aria-hidden
-    >
-      {illustration.to ? (
-        <Link to={illustration.to} className="">
+    <aside aria-hidden>
+      {illustration && (
+        illustration.to ? (
+          <Link to={illustration.to} className="">
+            <img src={illustration.png} alt={illustration.alt} className="" />
+          </Link>
+        ) : (
           <img src={illustration.png} alt={illustration.alt} className="" />
-        </Link>
-      ) : (
-        <img src={illustration.png} alt={illustration.alt} className="" />
+        )
       )}
     </aside>
     <div className='Flex column gap-6'>
