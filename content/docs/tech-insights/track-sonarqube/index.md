@@ -56,8 +56,12 @@ docker run \
   roadiehq/broker:5691884253.43.1-sonarqube
 ```
 3. Determine the IP address from where the broker client is running and set this IP in the broker allow list in Roadie.
-To set the IP allow list go to Administration > Settings > Broker enter the IP address and subnet mask using CIDR notation.
-4. Confirm that the broker client by looking at the docker container logs. You should see the following text:
+You can determine the IP address locally by running the following command. This command assumes you are running the docker container locally. When you production
+```bash
+curl 'https://api.ipify.org'
+```
+4. To set the IP allow list go to Administration > Settings > Broker enter the IP address and subnet mask using CIDR notation.
+5. Confirm that the broker client by looking at the docker container logs. You should see the following text:
 ```text
 successfully established a websocket connection to the broker server
 ```
