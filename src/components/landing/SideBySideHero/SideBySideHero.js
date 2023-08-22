@@ -11,12 +11,11 @@ const SideBySideHero = () => {
     <section className="landing-hero-background mx-auto max-w-7xl xl:rounded-lg lg:flex items-center">
       <div className="lg:w-1/2 p-4 lg:px-10 lg:py-16">
         <Headline className="text-white" size="medium">
-          SaaS Backstage. Simple, safe, and more powerful.
+          Batteries included Backstage
         </Headline>
 
         <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-          Get automatic upgrades, instant Catalog updates, and <nobr>ready-to-use</nobr>{' '}
-          integrations with Roadie’s Backstage as a service.
+          Easier, scalable and zero-maintenance. With security, scorecards and customizability built-in.
         </h2>
 
         <Button
