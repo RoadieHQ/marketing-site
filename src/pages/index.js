@@ -43,8 +43,9 @@ import PagerDutyLogo from '../../content/assets/logos/pagerduty/pagerduty.inline
 import ArgoLogo from '../../content/assets/logos/argo-cd/argo.inline.svg';
 import JiraSoftwareLogo from '../../content/assets/logos/jira/jira.inline.svg';
 
-const SEO_TITLE = 'The easiest way to get Spotify Backstage';
-const LEAD = `Roadie's SaaS platform handles hosting and upgrades and ensures you always have access to the latest Backstage features.`;
+const SEO_TITLE = 'Batteries included Spotify Backstage';
+const LEAD = `Easier, scalable and zero-maintenance. With security, scorecards and customizability built-in.`;
+
 
 const PRODUCT = {
   features: [
