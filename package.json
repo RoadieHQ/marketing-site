@@ -41,7 +41,7 @@
     "gatsby-plugin-sharp": "^4.4.0",
     "gatsby-plugin-sitemap": "^5.4.0",
     "gatsby-plugin-twitter": "^4.4.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.31",
     "gatsby-remark-autolink-headers": "^5.4.0",
     "gatsby-remark-copy-linked-files": "^5.4.0",
     "gatsby-remark-embed-video": "^3.2.1",
