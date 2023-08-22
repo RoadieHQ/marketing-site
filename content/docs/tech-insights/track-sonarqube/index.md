@@ -55,7 +55,7 @@ docker run \
   --env SONARQUBE_TOKEN=<sonarqube_token> \
   roadiehq/broker:5691884253.43.1-sonarqube
 ```
-3. Determine the IP address from where the broker is running and set this IP in the broker allow list.
+3. Determine the IP address from where the broker client is running and set this IP in the broker allow list in Roadie.
 To set the IP allow list go to Administration > Settings > Broker enter the IP address and subnet mask using CIDR notation.
 4. Confirm that the broker client by looking at the docker container logs. You should see the following text:
 ```text
