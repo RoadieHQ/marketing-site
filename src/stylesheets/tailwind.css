@@ -59,3 +59,27 @@ html {
   @apply font-bold;
   @apply text-3xl;
 }
+
+.docs-cta {
+  background-color: #fff1e8;
+  @apply p-6;
+  @apply rounded-sm;
+}
+
+.docs-cta__title {
+  margin-top: 0;
+  @apply text-lg;
+  @apply mb-4;
+}
+
+.docs-cta__button {
+  display: inline-block;
+  text-decoration: none;
+  @apply bg-orange-700;
+  @apply text-white;
+  @apply font-bold;
+  @apply py-3;
+  @apply px-3;
+  @apply rounded-md;
+
+}

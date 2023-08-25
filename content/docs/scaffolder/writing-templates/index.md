@@ -14,6 +14,13 @@ A Scaffolder template is then run on demand by the users of Backstage to execute
 
 You can find a step by step guide to adding templates in Roadie [here](/docs/getting-started/scaffolding-components/)
 
+<div class="docs-cta">
+  <h4 class="docs-cta__title">See the Backstage Scaffolder in action</h4>
+  <a href="/request-demo/?utm_source=roadie-docs&utm_campaign=scaffolder-docs" target="_blank" class="docs-cta__button">
+    Request a Roadie demo
+  </a>
+</div>
+
 ## Components of a Template
 
 A Scaffolder template is a configurable process that will run one or more Scaffolder `steps`. The template will be run when a user visits the "Create Component" page in Backstage. `https://<tenant-name>.roadie.so/create`.
