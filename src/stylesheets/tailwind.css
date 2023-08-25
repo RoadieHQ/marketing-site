@@ -70,6 +70,7 @@ html {
   margin-top: 0;
   @apply text-lg;
   @apply mb-4;
+  @apply font-bold;
 }
 
 .docs-cta__button {
@@ -90,6 +91,12 @@ html {
 .plugin-intro > p > a {
   @apply border-b;
   @apply border-orange-500;
+}
+
+.plugin-intro li > a {
+  @apply border-b;
+  @apply border-dotted;
+  @apply border-blueroadie;
 }
 
 .plugin-intro > ul {
