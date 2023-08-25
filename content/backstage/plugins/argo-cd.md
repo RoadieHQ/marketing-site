@@ -5,6 +5,20 @@ heading: 'Backstage Argo CD Plugin'
 lead: 'See Argo CD status in Backstage'
 attribution:
   text: Roadie, in collaboration with American Airlines
+intro: | 
+  <p>
+    <a href="https://argoproj.github.io/cd/" target="_blank">Argo CD</a>, a CNCF project, enables declarative GitOps workflows for Kubernetes. Argo CD continuously monitors all running applications and compares their live state to the desired state specified in the Git repository. Argo CD can pull updated code from Git repositories and deploy it directly to Kubernetes resources, thus enabling developers to manage both infrastructure configuration and application updates in one system.
+  </p>
+  <p>
+    The ArgoCD Backstage plugin brings synced status, health status, and updates history of your services to your Developer Portal. This plugin can support multiple ArgoCD instances.
+    In this guide you'll find:
+  </p>
+  <ul>
+    <li><a href="#installation-steps">Installation steps</a></li>
+    <li><a href="#section-add-annotations">Required annotations</a></li>
+    <li><a href="#things-to-know">Set up for multiple ArgoCD instances</a></li>
+  </ul>
+
 
 seo:
   # Don't forget to end with "| Roadie"
@@ -20,6 +34,10 @@ coverImageAlt: 'A preview of Argo CD overview widget including kubernetes pod st
 
 availableOnRoadie: true
 roadieDocsPath: /argocd/
+
+thingsToKnowTitle: Configure multiple Argo CD instances
+thingsToKnowHostDependant: true
+thingsToKnowOnRoadie: /docs/integrations/argocd/#multiple-argo-cd-instances
 
 gettingStarted:
   - intro: Install the plugin into Backstage.
@@ -63,6 +81,7 @@ gettingStarted:
       );
   - intro: Add annotation to the yaml config file of a component
     language: yaml
+    sectionId: 'add-annotations'
     code: |
       metadata:
         annotations:
@@ -73,7 +92,9 @@ gettingStarted:
       ARGOCD_AUTH_TOKEN='argocd.token=<token>'
 ---
 
-### Support for multiple ArgoCD instances - Option 1
+There are two options for setting up multiple Argo CD instances.
+
+**Option 1: use a proxy per instance**
 
 If you want to create multiple components that fetch data from different argoCD instances, you have to add a proxy config for each instance:
 
@@ -108,7 +129,7 @@ argocd/proxy-url: '/argocd/api2'
 
 `argocd/proxy-url` annotation defaults to '/argocd/api' so it's not needed if there is only one proxy config.
 
-### Support for multiple Argo CD instances - Option 2 - Argo CD backend plugin
+**Option 2 - Argo CD backend plugin**
 
 
 To enable ArgoCD backend plugin you need to import it to your backend application. 

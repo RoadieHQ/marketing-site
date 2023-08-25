@@ -70,6 +70,7 @@ html {
   margin-top: 0;
   @apply text-lg;
   @apply mb-4;
+  @apply font-bold;
 }
 
 .docs-cta__button {
@@ -81,5 +82,24 @@ html {
   @apply py-3;
   @apply px-3;
   @apply rounded-md;
+}
 
+.plugin-intro > p {
+  @apply mb-2;
+}
+
+.plugin-intro > p > a {
+  @apply border-b;
+  @apply border-orange-500;
+}
+
+.plugin-intro li > a {
+  @apply border-b;
+  @apply border-dotted;
+  @apply border-blueroadie;
+}
+
+.plugin-intro > ul {
+  @apply list-disc;
+  @apply pl-6;
 }

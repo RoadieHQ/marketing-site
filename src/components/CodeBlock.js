@@ -2,8 +2,8 @@ import React from 'react';
 import lodashEscape from 'lodash/escape';
 import kebabCase from 'lodash/kebabCase';
 
-const CodeBlock = ({ language, code, intro }) => (
-  <div>
+const CodeBlock = ({ language, code, intro, sectionId }) => (
+  <div id={sectionId && `section-${sectionId}`}>
     {intro && intro !== '' && (
       <div className="prose-xl prose-primary" dangerouslySetInnerHTML={{ __html: intro.trim() }} />
     )}
