@@ -44,6 +44,30 @@ const PluginTemplate = ({ data }) => {
       <Header plugin={plugin} />
       <main className="pt-4 pb-8 px-4 lg:pb-28">
         <div className="relative max-w-lg mx-auto lg:max-w-4xl">
+          {plugin.frontmatter.intro && (
+            <div
+              className="mb-4 mt-0 text-lg plugin-intro"
+              dangerouslySetInnerHTML={{ __html: plugin.frontmatter.intro }}
+            />
+          )}
+          {plugin.frontmatter.coverImage && (
+            <>
+              <GatsbyImage
+                image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
+                alt={plugin.frontmatter.coverImageAlt}
+                className="max-w-full max-h-full shadow-small"
+              />
+            </>
+          )}
+          <div className="border-4 border-orange-500 font-bold p-8 text-xl rounded-lg mb-10">
+            <p className="mb-4">See a no-code {plugin.frontmatter.humanName} in action</p>
+            <Button
+              link={true}
+              color="primary"
+              to={'/free-trial/'}
+              text={'Request a Roadie demo'}
+            />
+          </div>
           <nav className="invisible lg:visible pb-4 mb-8 flex flex-wrap text-center border-b-2 border-blueroadie">
             <span className="inline-block py-4 text-blueroadie font-bold">Installation steps:</span>
             <span className="inline-block p-4 ml-8 text-white font-bold bg-blueroadie rounded-lg active">
@@ -56,7 +80,7 @@ const PluginTemplate = ({ data }) => {
                 rel="noreferrer"
                 className="inline-block p-4 ml-4 bg-gray-100 text-blueroadie font-bold rounded-lg hover:bg-gray-100 hover:text-orange-600 flex align-center"
               >
-                No-code via Roadie <ExternalLinkIcon className='inline-block w-4 ml-2' />
+                No-code via Roadie <ExternalLinkIcon className="inline-block w-4 ml-2" />
               </a>
             )}
           </nav>
@@ -102,20 +126,6 @@ const PluginTemplate = ({ data }) => {
               text={'Get managed Backstage'}
             />
           </div>
-
-          {plugin.frontmatter.coverImage && (
-            <>
-              <Title text="How it looks" className="mb-10 border-b-2" />
-
-              <div>
-                <GatsbyImage
-                  image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
-                  alt={plugin.frontmatter.coverImageAlt}
-                  className="max-w-full max-h-full shadow-small"
-                />
-              </div>
-            </>
-          )}
 
           {plugin.notes && plugin.notes !== '' && (
             <>

@@ -24,7 +24,6 @@ const Header = ({
       heading,
       lead,
       attribution,
-      intro,
       availableOnRoadie,
       roadieDocsPath,
     },
@@ -44,12 +43,6 @@ const Header = ({
         <Headline className="mb-4">{heading}</Headline>
         <Lead className="mb-4 text-blueroadie">{lead}</Lead>
         <Attribution attribution={attribution} className="mb-4" />
-
-        {intro && (
-          <div className="mb-4 mt-8">
-            {intro}
-          </div>
-        )}
 
         <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
       </div>
