@@ -15,10 +15,7 @@ A Scaffolder template is then run on demand by the users of Backstage to execute
 You can find a step by step guide to adding templates in Roadie [here](/docs/getting-started/scaffolding-components/)
 
 <div class="docs-cta">
-  <h4 class="docs-cta__title">See the Scaffolder in action</h4>
-  <p class="docs-cta__paragraph">
-    Discover more self-service possibilities by the hand of a Backstage expert. 
-  </p>
+  <h4 class="docs-cta__title">See the Backstage Scaffolder in action</h4>
   <a href="/request-demo/?utm_source=roadie-docs&utm_campaign=scaffolder-docs" target="_blank" class="docs-cta__button">
     Request a Roadie demo
   </a>

@@ -62,14 +62,14 @@ html {
 
 .docs-cta {
   background-color: #fff1e8;
-  @apply px-4;
-  @apply py-6;
+  @apply p-6;
   @apply rounded-sm;
 }
 
 .docs-cta__title {
   margin-top: 0;
   @apply text-lg;
+  @apply mb-4;
 }
 
 .docs-cta__button {
