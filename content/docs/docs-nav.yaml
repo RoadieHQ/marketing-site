@@ -133,5 +133,6 @@ nav:
           - Track a Docker base image migration: '/docs/tech-insights/track-docker-base-image-migration/'
           - Track Datadog SLOs: '/docs/tech-insights/track-datadog-slos/'
           - Track Sonarcloud Project Issues/Hotspots: '/docs/tech-insights/track-sonarcloud/'
+          - Track On-prem Sonarqube metrics: '/docs/tech-insights/track-sonarqube/'
           - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
           - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
