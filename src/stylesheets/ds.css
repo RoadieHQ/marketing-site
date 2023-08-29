@@ -189,3 +189,75 @@
 .display-if {
   display: inline-flex;
 }
+
+
+.Scorecard {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3);
+  gap: var(--space-3);
+  border: 1px solid var(--gray-7);
+  border-radius: var(--br-2);
+  border-bottom-color: var(--gray-8);
+}
+
+.ScorecardMeter {
+  height: 64px;
+  width: 64px;
+  border-radius: var(--br-circle);
+  background: conic-gradient(
+    var(--red-9) 18%,
+    white 0
+  );
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.ScorecardMeter {
+  height: 64px;
+  width: 64px;
+  border-radius: var(--br-circle);
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.ScorecardMeter.awful {
+  background: conic-gradient(var(--red-9) 14%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.bad {
+  background: conic-gradient(var(--red-9) 24%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.poor {
+  background: conic-gradient(var(--yellow-9) 32%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.decent {
+  background: conic-gradient(var(--yellow-9) 45%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.good {
+  background: conic-gradient(var(--green-9) 68%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.awesome {
+  background: conic-gradient(var(--green-9) 94%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeterMask {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--br-circle);
+  background-color: white;
+}

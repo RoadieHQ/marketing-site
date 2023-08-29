@@ -99,7 +99,7 @@ const FeatureInTierIndicatorText = ({ text }) => (
 const FeatureInTierIndicatorIcon = ({ featureTier, tier }) => (
   <>
     {featureTier === true ? (
-      <div className='IconContainer'>
+      <div className='IconContainer size-1 circle green'>
         <CheckIcon className="Icon size-1" aria-hidden="true" />
       </div>
     ) : (

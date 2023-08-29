@@ -551,7 +551,7 @@ const Home = ({ data }) => {
         <div className='Container'>
           <div className='Flex column gap-2'>
             <h2 className='Text size-4 weight-2 indigo'>Testimonials</h2>
-            <span className='Text size-7'>What our customers say</span>
+            <span className='Text size-7 mb-9'>What our customers say</span>
           </div>
           <div className='Grid columns-1 bp2-columns-2 bp3-columns-3 gap-4'>
             <div className='' style={{ borderRadius: 6, background: 'orangered', padding: 20, }}>
@@ -626,6 +626,20 @@ const Home = ({ data }) => {
           </div>
         </div>
       </section>
+
+      <div className='Flex row jc-center'>
+        <div className='SeparatorGradient size-2' role="separator"></div>
+      </div>
+
+      <section className='Section size-3'>
+        <div className='Container'>
+          <div className='Flex column bp2-row jc-between'>
+            <span className='Text size-7'>Simpler, safer, and more powerful Backstage.</span>
+            <a className='Button size-3 accent' href="#">Request a Demo</a>
+          </div>
+        </div>
+      </section>
+
 
       <div className='Flex row jc-center'>
         <div className='SeparatorGradient size-2' role="separator"></div>
