@@ -26,7 +26,7 @@
     "date-fns": "^2.22.1",
     "gatsby": "^4.4.0",
     "gatsby-plugin-advanced-sitemap": "^2.1.0",
-    "gatsby-plugin-algolia": "^0.25.0",
+    "gatsby-plugin-algolia": "^0.26.0",
     "gatsby-plugin-csp": "^1.1.3",
     "gatsby-plugin-feed": "^4.4.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
