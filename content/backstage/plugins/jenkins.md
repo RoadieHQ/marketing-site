@@ -5,6 +5,21 @@ lead: 'Build, test, and deploy on Jenkins CI/CD platform.'
 attribution:
   text: '@timja'
   href: https://github.com/timja
+intro: | 
+  <p>
+    <a href="https://www.jenkins.io/" target="_blank">Jenkins</a> is an open source automation server to build, test, and deploy software. It lets you execute a series of actions to build a continuous integration pipeline. Jenkins is well known for its extensive set of plugins.
+  </p>
+  <p>
+    The Jenkins Backstage plugin brings builds data associated with your services to your Developer Portal. The  plugin can pull build information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
+    In this guide you'll find:
+  </p>
+  <ul>
+    <li><a href="#installation-steps">Installation steps</a></li>
+    <li><a href="#section-add-annotations">Required annotations</a></li>
+    <li><a href="#things-to-know">How to get a Jenkins API token</a></li>
+    <li><a href="#setting-up-a-local-jenkins-environment">Setting up Jenkins locally</a></li>
+    <li><a href="#supported-types-of-jenkins-projects">Supported types of Jenkins projects</a></li>
+  </ul>
 
 seo:
   title: 'Backstage Jenkins Plugin | Roadie'
@@ -17,6 +32,8 @@ coverImageAlt: 'A screenshot of the Jenkins plugin.'
 
 availableOnRoadie: true
 roadieDocsPath: /jenkins/
+
+thingsToKnowTitle: How to get a Jenkins API token
 
 gettingStarted:
   - intro: Install the plugin.
@@ -55,6 +72,7 @@ gettingStarted:
       
   - intro: Add Jenkins plugin annotation to your component's config. ()
     language: YAML
+    sectionId: 'add-annotations'
     code: |
       // catalog-info.yaml
       metadata:
@@ -63,22 +81,6 @@ gettingStarted:
           jenkins.io/job-full-name: "instanceName:github-organization-project-name/job-name"
 
 ---
-
-### Jenkins plugin features
-
-The Jenkins plugin can pull build information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
-
-![Jenkins menu to create new items](../../assets/backstage/plugins/jenkins/jenkins-new-item-options.png)
-
-The plugin shows a list of the most recent builds in Backstage. This list includes builds from all projects that are available in the GitHub Organization project in Jenkins.
-
-![Jenkins and Backstage side-by-side](../../assets/backstage/plugins/jenkins/jenkins-and-backstage-side-by-side.png)
-
-View additional build information by selecting a build from the list.
-
-![Backstage Jenkins job details](../../assets/backstage/plugins/jenkins/backstage-jenkins-job-details.png)
-
-### How to get a Jenkins API token
 
 Your Backstage app's backend connects to your Jenkins server using the Jenkins API. A Jenkins API token is required. This token can be obtained from a system environment variable (ex. JENKINS_BASIC_AUTH_HEADER) containing a base64 encoded string.
 
@@ -98,3 +100,16 @@ Your Backstage app's backend connects to your Jenkins server using the Jenkins A
 If you want to try out this plugin but you don't have a Jenkins server to test it with, you can quickly setup a local Jenkins server with docker. See the instructions available in the [official Jenkins Docker GitHub repo](https://github.com/jenkinsci/docker/blob/master/README.md).
 
 
+### Supported types of Jenkins projects
+
+The  plugin can pull build information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
+
+![Jenkins menu to create new items](../../assets/backstage/plugins/jenkins/jenkins-new-item-options.png)
+
+The plugin shows a list of the most recent builds in Backstage. This list includes builds from all projects that are available in the GitHub Organization project in Jenkins.
+
+![Jenkins and Backstage side-by-side](../../assets/backstage/plugins/jenkins/jenkins-and-backstage-side-by-side.png)
+
+View additional build information by selecting a build from the list.
+
+![Backstage Jenkins job details](../../assets/backstage/plugins/jenkins/backstage-jenkins-job-details.png)
