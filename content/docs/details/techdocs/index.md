@@ -4,15 +4,12 @@ publishedDate: '2023-08-30T21:00:00.0Z'
 description: Using Techdocs in Roadie Backstage.
 ---
 
-## Introduction
-
 The TechDocs feature of Roadie Backstage allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. 
 
 ![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
 
-## Adding documentation to a component
 
-### Using Plugins
+## MkDocs Plugins
 
 Under the hood, Backstage uses the popular [MkDocs library](https://www.mkdocs.org/) to render documentation. This library is very feature rich thanks to its extensive range of available plugins.
 
@@ -47,10 +44,12 @@ We currently include the following MkDocs plugins in our build process:
 - [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) - display images, iframes, inline content and videos
 - [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid) - generate diagrams from markdown-like text.
 
-### Theme
+
+## Theme and Styling
 Backstage uses an opinionated theme based on [material-mkdocs](https://github.com/backstage/mkdocs-techdocs-core#theme).
 
 NB: Some styles will always be overridden regardless of the mkdocs-material plugin theme settings and this can cause unexpected behavior for those who override the theme setting in a mkdocs.yaml file.
+
 
 ## Testing and previewing your documentation
 
@@ -101,7 +100,7 @@ graph LR
 ```
 ````
 
-### Customize graphs in TechDocs
+### Customizing graph styling
 
 In order to customize the look of the graphs you will need to use the [Graphviz attributes](https://graphviz.org/doc/info/attrs.html). Setting different values for specific set of attributes will result in graph being rendered that way. For example, let's say we want to change background color from white to lightblue in following graph:
 
