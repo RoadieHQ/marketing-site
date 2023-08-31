@@ -101,7 +101,34 @@ graph LR
 ```
 ````
 
-### Customizing graph styling
+### Using Graphs
+
+The Graphviz plugin can render graphs inside your Tech Docs. 
+
+1. Add it to your `mkdocs.yml` file like so:
+
+```yaml
+...
+markdown_extensions:
+  - mkdocs_graphviz
+...
+```
+
+2. Add a basic graph to a docs page like so: 
+
+```dot
+digraph G {
+    rankdir=LR
+    Earth [peripheries=2]
+    Mars
+    Earth -> Mars
+}
+```
+
+See the plugin README for more info and customization options: [https://gitlab.com/rod2ik/mkdocs-graphviz](https://gitlab.com/rod2ik/mkdocs-graphviz)
+
+
+#### Customizing Graphviz Graphs
 
 In order to customize the look of the graphs you will need to use the [Graphviz attributes](https://graphviz.org/doc/info/attrs.html). Setting different values for specific set of attributes will result in graph being rendered that way. For example, let's say we want to change background color from white to lightblue in following graph:
 
