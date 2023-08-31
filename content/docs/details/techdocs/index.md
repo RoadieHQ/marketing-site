@@ -192,7 +192,7 @@ nav:
     - v2: '!include ./v2/mkdocs.yml'
 ```
 
-Standalone repos for documentation not related to a codebase or component should still be modeled in Roadie Backstage
+Standalone repos for documentation not related to a codebase or component should still be modeled in Roadie
 with a catalog-info.yaml file. The docs repo entity can be described with the following kind and spec type:
 
 ```yaml
