@@ -1,7 +1,6 @@
 ---
 title: Using OpenAPI Specs
-publishedDate: '2021-03-16T21:00:00.0Z'
-lastUpdated: '2022-11-16'
+publishedDate: '2022-11-16'
 description: How to use OpenAPI specs with Roadie Backstage.
 ---
 

@@ -1,8 +1,7 @@
 ---
 title: Designating admins
-publishedDate: '2022-03-21T21:00:00.0Z'
+publishedDate: '2023-08-31'
 description: How to designate yourself as an admin of Roadie Backstage.
-lastUpdated: '2023-08-31'
 ---
 
 ## Introduction

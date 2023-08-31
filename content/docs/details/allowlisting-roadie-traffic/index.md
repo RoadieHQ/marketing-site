@@ -1,7 +1,6 @@
 ---
 title: Allowlisting Roadie Traffic
-publishedDate: '2021-03-18T21:00:00.0Z'
-lastUpdated: '2022-03-25T08:33:00.0Z'
+publishedDate: '2022-03-25T08:33:00.0Z'
 description: In order to access Roadie, your IT department may need to allowlist certain IPs and hostnames.
 ---
 
