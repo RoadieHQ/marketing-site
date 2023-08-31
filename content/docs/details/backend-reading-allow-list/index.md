@@ -1,7 +1,6 @@
 ---
 title: Accessing Public resources from the Backend
-publishedDate: '2021-04-26T21:00:00.0Z'
-lastUpdated: '2022-04-26T08:33:00.0Z'
+publishedDate: '2022-04-26T08:33:00.0Z'
 description: The Backstage backend restricts what resources can be fetched by default. This describes how to add sources which can be accessed.
 ---
 

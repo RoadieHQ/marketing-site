@@ -1,6 +1,6 @@
 ---
 title: Designating admins
-publishedDate: '2022-03-21T21:00:00.0Z'
+publishedDate: '2023-08-31'
 description: How to designate yourself as an admin of Roadie Backstage.
 ---
 
@@ -9,6 +9,8 @@ description: How to designate yourself as an admin of Roadie Backstage.
 You often want to allow power users to edit the layouts and install plugins while preventing
 ordinary users from making unintended changes to the application setup. Roadie Backstage has a
 concept of admins to enable this. This uses a Group entity in the catalog and users associated with that group are "admins". 
+
+⚠️  Roadies admins are a conveniece feature rather than a security feature. Admins have no ability to read secrets or access other secure information inside Roadie.
 
 ## Setup
 
