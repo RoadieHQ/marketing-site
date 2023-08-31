@@ -1,10 +1,10 @@
 ---
 title: Using Tech Docs in Roadie
 publishedDate: '2023-08-30T21:00:00.0Z'
-description: Using Techdocs in Roadie Backstage.
+description: Using Tech Docs in Roadie Backstage.
 ---
 
-The TechDocs feature of Roadie Backstage allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. 
+The Tech Docs feature of Roadie Backstage allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. 
 
 ![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
 
@@ -21,7 +21,7 @@ We currently include the following MkDocs plugins in our build process:
 - [pymdown](https://facelessuser.github.io/pymdown-extensions/) - a collection of the following extensions:
     - caret: Insert superscripts and place text in an <ins> tag.
     - critic: [Critic Markup](https://fletcher.github.io/MultiMarkdown-6/syntax/critic.html) allows you to track changes.
-    - details: Collapsible elements with <details> and <summary> tags.
+    - details: Collapsible elements with `details` and `summary` tags.
     - emoji: Add emojis.
     - superfences: Split up your docs with [fences](https://python-markdown.github.io/extensions/fenced_code_blocks/) to make them more readable.
     - inlinehilite: Highlights inline code.
@@ -46,6 +46,7 @@ We currently include the following MkDocs plugins in our build process:
 
 
 ## Theme and Styling
+
 Backstage uses an opinionated theme based on [material-mkdocs](https://github.com/backstage/mkdocs-techdocs-core#theme).
 
 NB: Some styles will always be overridden regardless of the mkdocs-material plugin theme settings and this can cause unexpected behavior for those who override the theme setting in a mkdocs.yaml file.
@@ -72,9 +73,9 @@ bugs in open source dependencies. Please reach out to us anyway if you run into 
 ## Navigation and Titles
 
 By default, the structure of the docs pages will mirror that of the file system. You can also explicitly describe your
-page structure using the `nav` object in your mkdocs.yaml. Both approaches are described [here](https://www.mkdocs.org/user-guide/writing-your-docs/#file-layout).
+page structure using the `nav` object in your `mkdocs.yaml`. Both approaches are described [here](https://www.mkdocs.org/user-guide/writing-your-docs/#file-layout).
 
-Similarly, mkdocs will determine a title for your document according to [these rules](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data).
+Similarly, MkDocs will determine a title for your document according to [these rules](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data).
 
 ## Graphs and Diagrams
 
@@ -106,7 +107,7 @@ In order to customize the look of the graphs you will need to use the [Graphviz 
 
 ![white graph background](./white-graph.png)
 
-which could be defined in TechDocs with following code:
+which could be defined in Tech Docs with following code:
 
 ```
 {% dot attack_plan.svg
@@ -145,7 +146,7 @@ This way you can customize the graph adding or removing any attribute you want.
 
 If you need to have a place to store docs that are not related to a specific codebase or component, you may want to use a single repository to collect that meta documentation.
 
-Nested file structures and sub-directories can be modeled using the [Monorepo plugin for techdocs](https://github.com/backstage/mkdocs-monorepo-plugin).
+Nested file structures and sub-directories can be modeled using the [Monorepo plugin for tech docs](https://github.com/backstage/mkdocs-monorepo-plugin).
 
 1. Add to your root `mkdocs.yaml` file.
 ```yaml
@@ -179,12 +180,12 @@ spec:
 
 ## Including existing markdown files
 
-Mkdocs only processes markdown files in the mkdocs directory (defaults to `docs/`). If you've existing docs
-which live closer to the code e.g. a README.md in the root or at some other level they can't be referenced in the mkdocs.yaml.
+MkDocs only processes markdown files in the MkDocs directory (defaults to `docs/`). If you've existing docs
+which live closer to the code e.g. a README.md in the root or at some other level they can't be referenced in the `mkdocs.yaml`.
 
 It is possible to use the [PyMdown snippets extension](https://facelessuser.github.io/pymdown-extensions/extensions/snippets/#snippets) to include markdown files from outside the mkdocs docs directory in markdown files within it.
 
-To enable this extension update your mkdocs.yaml:
+To enable this extension update your `mkdocs.yaml`:
 
 ```yaml
 markdown_extensions:
@@ -196,25 +197,25 @@ markdown_extensions:
 Then you can include snippets in your markdown files. If a snippet is the only content in a file then the content is replaced
 by the referenced file. For example, to include a file TEST.md at the root of our repo we could do the following:
 - Create a file under the docs directory e.g. `docs/test.md`
-- Add a snippet to test.md (the snippet path is relative to the mkdocs.yaml file)
+- Add a snippet to `test.md` - the snippet path is relative to the `mkdocs.yaml` file.
    ```markdown
    --8<-- "TEST.md"
    ```
 
 
-## Building and Publishing Techdocs Via CI
+## Building and Publishing Tech Docs Via CI
 
-You can build and publish techdocs via your own CI pipelines so that the latest version is always ready to view in Roadie and you don't have to wait for a new build when viewing an updated version of your docs.
+You can build and publish tech docs via your own CI pipelines so that the latest version is always ready to view in Roadie and you don't have to wait for a new build when viewing an updated version of your docs.
 
-- Send us your AWS account id so we can set up the role to access your Roadie techdocs s3 bucket in our infra.
+- Send us your AWS account id so we can set up the role to access your Roadie tech docs s3 bucket in our infra.
 - Create Github action to build and publish the docs https://backstage.io/docs/features/techdocs/configuring-ci-cd/
-- Configure your action to connect securely with the Roadie AWS S3 bucket - bucketName: <your-roadie-tenant-name>-roadie-tech-docs, region: eu-west-1
+- Configure your action to connect securely with the Roadie AWS S3 bucket - bucketName: `your-roadie-tenant-name`-roadie-tech-docs, region: eu-west-1
 
 Roadie hosts tech docs in a dedicated AWS S3 bucket. To be able to generate and publish the tech docs yourself we can set up secured access to this bucket for you.
 
 ### Building all docs or only some docs via CI
 
-You can choose to switch wholesale to build all your techdocs via CI (the recommended approach as this gives the best user experience). 
+You can choose to switch wholesale to build all your tech docs via CI (the recommended approach as this gives the best user experience). 
 
 Or you can use an annotation to only build specific docs via CI and leave the others to build on viewing. 
 
@@ -242,7 +243,70 @@ Additionally, you need to defined the correct AWS region to be used when publish
 `AWS_REGION=eu-west-1`
 
 
-### Publishing with Techdocs CLI
+### Publishing with Tech Docs CLI
 The publishing procedure follows the structure of the techdocs-cli.
 `techdocs-cli publish --publisher-type awsS3 --storage-name <the-aws-bucket-name-we-have-provided-you> --entity default/Component/my-service --awsRoleArn <the-aws-role-arn-we-have-provided-you>`
 
+
+## Troubleshooting
+
+### Visual differences in rendered output
+Backstage is using [MkDocs](https://www.mkdocs.org/user-guide/) and [python-markdown](https://python-markdown.github.io/) to render the markdown files for tech docs. Each markdown implementation renders HTML differently. e.g. markdown files as displayed in GitHub can often look different within Backstage Tech Docs.
+
+### Nest Markdown in a collapsable section
+
+If you would like to nest markdown in a collapsable section, you can use the HTML `details` component and the `md_in_html` markdown plugin.
+
+First add the `md_in_html` to the `mkdocs.yaml` file.
+
+```yaml
+markdown_extensions:
+  - md_in_html
+```
+
+Then add the following `details` section to the markdown file.
+
+```markdown
+<details markdown="1">
+<summary>Collabsable Title</summary>
+
+Content of the collapsable and an image below
+
+![asdf](align.jpg)
+
+</details>
+```
+
+### Nest Image within a list
+
+If you would like to nest an image within a list so that it appears as part of the list item, you will need a line break and spacing before the image. e.g.
+
+```markdown
+- Item 1
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  ![image1](image1.jpg)
+
+- Item 2
+
+  ![image2](image2.jpg)
+```
+
+### Slow Tech Docs builds
+
+Larger tech docs repositories can take some time to build when being updated or viewed for the first time.
+
+There are two ways around this currently:
+
+1. Make sure your entity with the relevant tech docs annotation is listed in the root `catalog-info.yaml` file of your
+   repo and the docs are in a root `docs/` folder. If this is the case AND your admins have set up the [correct autodiscovery](docs/integrations/github-discovery/#steps-to-add-new-auto-discovery-paths)
+   in Roadie for Github based repositories, changes to your docs should be built when they are merged to the default repository
+   branch, so you won't have to wait for docs to build when viewing them.
+2. Your organisation can start [building and publishing tech docs via your own CI pipelines](#building-techdocs-via-ci) so that the latest version is always ready to view in Roadie.
+
+## Further reading
+
+1. Backstage Tech Docs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/user-guide/) will broadly apply to your Backstage documentation setup. In particular, the ["Writing your docs"](https://www.mkdocs.org/user-guide/writing-your-docs/) page is a good place to start
+2. You can see the rendering rules used by the plugin here - [https://python-markdown.github.io/](https://python-markdown.github.io/) NB: they are slightly different from Github Flavoured Markdown.
+3. The [official Backstage Tech Docs guide](https://backstage.io/docs/features/techdocs/techdocs-overview).
