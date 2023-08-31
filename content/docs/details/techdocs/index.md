@@ -25,7 +25,7 @@ We currently include the following MkDocs plugins in our build process:
     - emoji: Adds emojis.
     - superfences: Splits up your docs with [fences](https://python-markdown.github.io/extensions/fenced_code_blocks/) to make them more readable.
     - inlinehilite: Highlights inline code.
-    - magiclink: Linkafies URL and email links without having to wrap them in Markdown syntax. Also, shortens repository issue, pull request, and commit links automatically for popular code hosting providers.
+    - magiclink: Linkifies URL and email links without having to wrap them in Markdown syntax. Also, shortens repository issue, pull request, and commit links automatically for popular code hosting providers.
     - mark: Marks words easily.
     - smartsymbols: Inserts commonly used Unicode characters via simple ASCII representations like: =/= → ≠.
     - highlight: Configures the syntax highlighting of SuperFences and InlineHilite. Also passes standard Markdown indented code blocks through the syntax highlighter.
