@@ -27,7 +27,7 @@ We currently include the following MkDocs plugins in our build process:
     - inlinehilite: Highlights inline code.
     - magiclink: Linkafies URL and email links without having to wrap them in Markdown syntax. Also, shortens repository issue, pull request, and commit links automatically for popular code hosting providers.
     - mark: Mark words easily.
-    - smartsymbols: Inserts commonly used Unicode characters via simple ASCII representations: =/= → ≠.
+    - smartsymbols: Inserts commonly used Unicode characters via simple ASCII representations like: =/= → ≠.
     - highlight: Configure the syntax highlighting of SuperFences and InlineHilite. Also passes standard Markdown indented code blocks through the syntax highlighter.
     - extra: Extra is just like Python Markdown's Extra package except it uses PyMdown Extensions to substitute similar extensions.
     - tabbed: Allows for tabbed Markdown content.
