@@ -137,7 +137,7 @@ a short period of time.
 By default, the structure of the docs pages will mirror that of the file system. You can also explicitly describe your 
 page structure using the `nav` object in your mkdocs.yaml. Both approaches are described [here](https://www.mkdocs.org/user-guide/writing-your-docs/#file-layout).
 
-Similarly, mkdocs will determine a title for your document according to [these rules](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data).
+Similarly, MkDocs will determine a title for your document according to [these rules](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data).
 
 
 ## Troubleshooting
