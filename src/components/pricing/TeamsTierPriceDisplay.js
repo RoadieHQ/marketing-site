@@ -44,22 +44,22 @@ const TeamsTierPriceDisplay = ({
 
   return (
     <>
-      <div className="mb-2">
-        <span className="text-4xl font-extrabold text-gray-900">
+      <div className="mb-5">
+        <span className="Text size-7 inline">
           {formatter.format(centCostPerDevPerMonth / 100)}
         </span>
-        <span className="text-base text-gray-500"> per dev/month</span>
+        <span className="Text size-3 lowContrast inline"> per dev/month</span>
       </div>
 
       {showMonthlyTotal && (
         <div className="mb-4">
-          <span className="text-base text-gray-900">
+          <span className="Text size-3 lowContrast inline">
             {formatter.format(centCostPerMonth / 100)} billed monthly
           </span>
         </div>
       )}
 
-      <div className="mb-10">
+      <div className="mb-6">
         <NumberOfEngineers
           onChange={setNumberOfEngineers}
           value={numberOfEngineers}

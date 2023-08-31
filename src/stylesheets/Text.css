@@ -363,6 +363,10 @@
   color: var(--indigo-11);
 }
 
+.Text.orange {
+  color: var(--orange-11);
+}
+
 .Text.white {
   color: white;
 }

@@ -1,0 +1,40 @@
+.Switch {
+  border-radius: var(--br-pill);
+  display: inline-flex;
+  background-color: var(--gray-3);
+  height: var(--space-7);
+  box-sizing: border-box;
+  padding: 2px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15);
+}
+
+.SwitchTrigger {
+  all: unset;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  appearance: none;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: default;
+  font-weight: var(--fw-2);
+  user-select: none;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: bottom;
+  font-size: var(--fs-2);
+  text-transform: uppercase;
+  border-radius: var(--br-pill);
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.SwitchTrigger.active {
+  background-color: white;
+  box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}

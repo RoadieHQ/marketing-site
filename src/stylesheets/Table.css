@@ -24,4 +24,21 @@
   padding-bottom: var(--space-3);
   border-top: 1px solid var(--gray-5);
   border-left: 1px solid var(--gray-5);
+  width: 25%;
 }
+
+.Caption {
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: left;
+  line-height: var(--fs-3);
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-top: 1px solid var(--gray-5);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-2);
+}
+
+/* .width-25 {
+  width: 25%;
+} */

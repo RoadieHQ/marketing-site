@@ -234,9 +234,10 @@ const FeatureComparisonTable = () => {
 
       {/* lg+ */}
       <div className="hidden lg:block">
-        <table className="w-full h-px">
+        <table className="Table">
           <caption className="sr-only">Pricing plan comparison</caption>
-          <thead>
+
+          <thead className='sr-only'>
             <tr>
               <th className="pb-4 px-6 text-sm font-medium text-gray-900 text-left" scope="col">
                 <span className="sr-only">Feature by</span>
@@ -248,15 +249,6 @@ const FeatureComparisonTable = () => {
           </thead>
 
           <tbody className="border-t border-gray-200 divide-y divide-gray-200">
-            <tr>
-              <th className="py-8 px-6 text-sm font-medium text-gray-900 text-left align-top" scope="row">
-                Get started
-              </th>
-
-              <LargeTierCta tier={TIERS.teams} />
-              <LargeTierCta tier={TIERS.growth} />
-            </tr>
-
             {sections.map((section) => (
               <Fragment key={section.name}>
                 <LargeSectionHeaderRow section={section} />

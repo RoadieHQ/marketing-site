@@ -634,7 +634,7 @@ const Home = ({ data }) => {
       <section className='Section size-3'>
         <div className='Container'>
           <div className='Flex column bp2-row jc-between'>
-            <span className='Text size-7'>Simpler, safer, and more powerful Backstage.</span>
+            <span className='Text size-7 mb-7 bp2-mb-0'>Simpler, safer, and more powerful Backstage.</span>
             <a className='Button size-3 accent' href="#">Request a Demo</a>
           </div>
         </div>

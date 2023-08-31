@@ -30,27 +30,50 @@ const Pricing = ({
 
       <SitewideHeader borderBottom={false} />
 
-      <div className="Container">
-        <div className="">
+      <section className='Section size-3'>
+        <div className="Container">
           <SectionHeader />
 
-          <CurrencySwitcher
-            setCurrency={setCurrency}
-            currentlySetCurrency={currentlySetCurrency}
-          />
-        </div>
+          <div className="Grid columns-1 bp2-columns-2 bp3-columns-4 gap-5 bp2-gap-9 bp3-gap-0 mb-7">
+            <div className="bp3-gc-3">
+              <CurrencySwitcher
+                setCurrency={setCurrency}
+                currentlySetCurrency={currentlySetCurrency}
+              />
+            </div>
+          </div>
 
-        <div className="Grid columns-2 gap-4">
-          <TeamsPricingTier currentlySetCurrency={currentlySetCurrency} />
-          <GrowthPricingTier />
-        </div>
+          <div className="Grid columns-1 bp2-columns-2 bp3-columns-4 gap-5 bp2-gap-9 bp3-gap-0">
+            <TeamsPricingTier currentlySetCurrency={currentlySetCurrency} />
+            <GrowthPricingTier />
+          </div>
 
-        <div className="">
-          <h3 className='Text size-7'>Feature comparison</h3>
           <FeatureComparisonTable />
         </div>
+      </section>
 
-        <FAQs />
+      <div className='Flex row jc-center'>
+        <div className='SeparatorGradient size-2' role="separator"></div>
+      </div>
+
+      <FAQs />
+
+      <div className='Flex row jc-center'>
+        <div className='SeparatorGradient size-2' role="separator"></div>
+      </div>
+
+      <section className='Section size-3'>
+        <div className='Container'>
+          <div className='Flex column bp2-row jc-between'>
+            <span className='Text size-7 mb-7 bp2-mb-0'>Simpler, safer, and more powerful Backstage.</span>
+            <a className='Button size-3 accent' href="#">Request a Demo</a>
+          </div>
+        </div>
+      </section>
+
+
+      <div className='Flex row jc-center'>
+        <div className='SeparatorGradient size-2' role="separator"></div>
       </div>
 
       <SitewideFooter />

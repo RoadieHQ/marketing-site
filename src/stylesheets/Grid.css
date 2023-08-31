@@ -86,6 +86,14 @@
   align-items: stretch;
 }
 
+.gc-auto {
+  grid-column: auto;
+}
+
+.gc-3 {
+  grid-column: 3;
+}
+
 @media only screen and (min-width: 520px) {
   .Grid.bp1-columns-1 {
     grid-template-columns: repeat(1, 1fr);
@@ -169,6 +177,14 @@
 
   .Grid.bp1-ai-stretch {
     align-items: stretch;
+  }
+
+  .bp1-gc-auto {
+    grid-column: auto;
+  }
+
+  .bp1-gc-3 {
+    grid-column: 3;
   }
 }
 
@@ -256,6 +272,14 @@
   .Grid.bp2-ai-stretch {
     align-items: stretch;
   }
+
+  .bp2-gc-auto {
+    grid-column: auto;
+  }
+
+  .bp2-gc-3 {
+    grid-column: 3;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -342,6 +366,14 @@
   .Grid.bp3-ai-stretch {
     align-items: stretch;
   }
+
+  .bp3-gc-auto {
+    grid-column: auto;
+  }
+
+  .bp3-gc-3 {
+    grid-column: 3;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
@@ -427,5 +459,13 @@
 
   .Grid.bp4-ai-stretch {
     align-items: stretch;
+  }
+
+  .bp4-gc-auto {
+    grid-column: auto;
+  }
+
+  .bp4-gc-3 {
+    grid-column: 3;
   }
 }

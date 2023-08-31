@@ -46,8 +46,7 @@ const FAQ_CONTENT = [
         {' '}
         <Link className="Link" to="/docs/details/how-roadie-connects/">
           <span className='Text size-4 inline'>how Roadie connects to your tools</span>
-        </Link>{' '}
-        .
+        </Link>{' '}.
       </p>
     ),
   },
@@ -75,16 +74,18 @@ const Item = ({ question, answer }) => (
 
 const FAQs = ({ faqs = FAQ_CONTENT, heading = 'Frequently asked questions' }) => (
   <div className="Section size-3">
-    <h3 className='Text size-7 mb-9'>
-      {heading}
-    </h3>
+    <div className='Container'>
+      <h3 className='Text size-7 mb-9'>
+        {heading}
+      </h3>
 
-    <div className="">
-      <dl className="Grid columns-1 bp2-columns-2 gap-6 bp2-gap-9">
-        {faqs.map((faq) => (
-          <Item {...faq} key={faq.question} />
-        ))}
-      </dl>
+      <div className="">
+        <dl className="Grid columns-1 bp2-columns-2 gap-6 bp2-gap-9">
+          {faqs.map((faq) => (
+            <Item {...faq} key={faq.question} />
+          ))}
+        </dl>
+      </div>
     </div>
   </div>
 );
