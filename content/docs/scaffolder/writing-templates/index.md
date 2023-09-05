@@ -98,7 +98,7 @@ The spec field contains `owner` and `type`. Owner refers to the Backstage group 
 
 The parameters property is a list of parameters that can be prompted from the user when they run a template. Each array element contains the configuration for a single page of items to be filled by the user running the template. The parameter pages must contain `title`, `required` and `properties`.
 
-The parameters yaml is based on [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/). You can find the available syntax options there.
+The parameters yaml is based on [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/). You can find the available syntax options there and [examples here](https://backstage.io/docs/features/software-templates/input-examples/).
 
 You can choose to break up the parameter prompting into `form steps` or collect all the parameters in one single step.
 Each parameter can be one of a few types: `string`, `number`, `array` or `object`.
@@ -110,6 +110,23 @@ parameters:
   properties:
     name:
       type: string
+```
+
+### Validation
+
+You can use [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/) to perform validation on input fields using a regex or character counts. 
+
+```yaml
+parameters:
+  properties:
+    name:
+        title: Simple text input
+        type: string
+        description: Description about input
+        maxLength: 8
+        pattern: '^([a-zA-Z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$'
+        ui:autofocus: true
+        ui:help: 'Hint: additional description...'
 ```
 
 ### `string`
@@ -301,6 +318,35 @@ parameters:
     entityTags:
       type: array
       ui:field: EntityTagsPicker
+```
+
+You can use an enum also to populate array values like so:
+
+```yaml
+parameters:
+  - title: Fill in some steps
+    properties:
+      volume_type:
+        title: Volume Type
+        type: string
+        description: The volume type to be used
+        default: gp2
+        enum:
+          - gp2
+          - gp3
+          - io1
+          - io2
+          - sc1
+          - st1
+          - standard
+        enumNames:
+          - 'General Purpose SSD (gp2)'
+          - 'General Purpose SSD (gp3)'
+          - 'Provisioned IOPS (io1)'
+          - 'Provisioned IOPS (io2)'
+          - 'Cold HDD (sc1)'
+          - 'Throughput Optimized HDD (st1)'
+          - 'Magnetic (standard)'
 ```
 
 ### Outputs
