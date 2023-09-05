@@ -62,7 +62,7 @@ const SideBySideHero = () => {
           </div>
         </div>
         <div className='Grid columns-1 bp2-columns-2 gap-4'>
-            <div style={{ boxShadow: '0 3px 5px -5px rgba(0,0,0,0.45), 0 7px 20px -8px rgba(0,0,0,0.35)', borderRadius: 'var(--br-3)', height: 400, padding: 16 }}>
+            <div className='Card shadow pt-5 pr-5 pb-5 pl-5'>
               <span className='Text size-3 weight-2 string mb-4'>Severities Over Time</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="441" height="257" viewBox="0 0 441 257" fill="none">
                 <rect x="2" width="1" height="257" fill="#E8E9EA"/>
@@ -128,7 +128,7 @@ const SideBySideHero = () => {
               </svg>
             </div>
 
-            <div style={{ boxShadow: '0 3px 5px -5px rgba(0,0,0,0.45), 0 7px 20px -8px rgba(0,0,0,0.35)', borderRadius: 'var(--br-3)', padding: 16 }}>
+            <div className='Card shadow pt-5 pr-5 pb-5 pl-5'>
               <span className='Text size-3 weight-2 string mb-4'>Scorecards</span>
               
               <div className='Flex column gap-2 ai-stretch'>
@@ -258,7 +258,7 @@ const SideBySideHero = () => {
               </div>
             </div>
 
-            <div style={{ boxShadow: '0 3px 5px -5px rgba(0,0,0,0.45), 0 7px 20px -8px rgba(0,0,0,0.35)', borderRadius: 'var(--br-3)', padding: 16 }}>
+            <div className='Card shadow pt-5 pr-5 pb-5 pl-5'>
               <span className='Text size-3 weight-2 string mb-4'>Code Quality</span>
               <div className='Flex column ai-stretch gap-4'>
                 <div className='Flex row jc-between'>
@@ -292,7 +292,7 @@ const SideBySideHero = () => {
               </div>
             </div>
 
-            <div style={{ boxShadow: '0 3px 5px -5px rgba(0,0,0,0.45), 0 7px 20px -8px rgba(0,0,0,0.35)', borderRadius: 'var(--br-3)', padding: 16 }}>
+            <div className='Card shadow pt-5 pr-5 pb-5 pl-5'>
               <span className='Text size-3 weight-2 string mb-4'>Documentation</span>
               <div className='Flex column ai-stretch gap-4'>
                 <div className='Flex row'>

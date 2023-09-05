@@ -36,12 +36,25 @@
   --gray-9: hsl(221, 6%, 56%);
   --gray-10: hsl(221, 6%, 52%);
   --gray-11: hsl(221, 6%, 44%);
-  --gray-12: hsl(221, 24%, 9%);
+  --gray-12: hsl(221, 18%, 16%);
 
-  --green-1: hsl(136, 50%, 99%);
-  --green-2: hsl(138, 63%, 97%);
-  --green-3: hsl(139, 55%, 95%);
-  --green-4: hsl(140, 49%, 91%);
+  --gray-a1: hsla(240, 89.3%, 18.3%, 0.012);
+  --gray-a2: hsla(240, 89.3%, 18.3%, 0.024);
+  --gray-a3: hsla(240, 99.7%, 11.6%, 0.051);
+  --gray-a4: hsla(240, 93.2%, 10.6%, 0.079);
+  --gray-a5: hsla(240, 98.8%, 9.4%, 0.106);
+  --gray-a6: hsla(240, 94.6%, 9.3%, 0.134);
+  --gray-a7: hsla(233, 97.2%, 9.3%, 0.173);
+  --gray-a8: hsla(231, 98.1%, 9.4%, 0.275);
+  --gray-a9: hsla(231, 99.6%, 5.6%, 0.455);
+  --gray-a10: hsla(230, 99.5%, 4.7%, 0.506);
+  --gray-a11: hsla(220, 98.0%, 3.8%, 0.624);
+  --gray-a12: hsla(210, 95.1%, 1.9%, 0.891);
+
+  --green-1: hsl(136, 74%, 99%);
+  --green-2: hsl(138, 72%, 97%);
+  --green-3: hsl(139, 70%, 95%);
+  --green-4: hsl(152, 70%, 90%);
   --green-5: hsl(141, 44%, 86%);
   --green-6: hsl(143, 40%, 79%);
   --green-7: hsl(146, 39%, 69%);
@@ -74,7 +87,7 @@
   --orange-8: hsl(19, 80.1%, 64.5%);
   --orange-9: hsl(24, 94.0%, 50.0%);
   --orange-10: hsl(24, 100%, 46.5%);
-  --orange-11: hsl(20, 98%, 52%);
+  --orange-11: hsl(6, 98%, 46%);
   --orange-12: hsl(16, 50.0%, 23.0%);
 
   --red-1: hsl(359, 100%, 99%);
@@ -209,9 +222,10 @@
   align-items: center;
   padding: var(--space-3);
   gap: var(--space-3);
-  border: 1px solid var(--gray-7);
+  border: 1px solid var(--gray-a6);
   border-radius: var(--br-2);
-  border-bottom-color: var(--gray-8);
+  border-bottom-color: var(--gray-a8);
+  background-clip: padding-box;
 }
 
 .ScorecardMeter {
@@ -224,6 +238,11 @@
   );
   padding: 2px;
   box-sizing: border-box;
+}
+
+.ScorecardMeter.size-2 {
+  height: 124px;
+  width: 124px;
 }
 
 .ScorecardMeter {

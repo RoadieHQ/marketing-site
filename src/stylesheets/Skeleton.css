@@ -1,0 +1,26 @@
+.Skeleton {
+  box-sizing: border-box;
+  border-radius: var(--br-pill);
+  height: var(--space-3);
+  width: 90%;
+}
+
+.Skeleton.size-1 {
+  height: var(--space-1);
+}
+
+.Skeleton.size-2 {
+  height: var(--space-2);
+}
+
+.Skeleton.width-50 {
+  width: 50%;
+}
+
+.Skeleton.width-75 {
+  width: 75%;
+}
+
+.Skeleton.gray {
+  background-color: var(--gray-4);
+}
