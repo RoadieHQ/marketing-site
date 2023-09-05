@@ -320,35 +320,6 @@ parameters:
       ui:field: EntityTagsPicker
 ```
 
-You can use an enum also to populate array values like so:
-
-```yaml
-parameters:
-  - title: Fill in some steps
-    properties:
-      volume_type:
-        title: Volume Type
-        type: string
-        description: The volume type to be used
-        default: gp2
-        enum:
-          - gp2
-          - gp3
-          - io1
-          - io2
-          - sc1
-          - st1
-          - standard
-        enumNames:
-          - 'General Purpose SSD (gp2)'
-          - 'General Purpose SSD (gp3)'
-          - 'Provisioned IOPS (io1)'
-          - 'Provisioned IOPS (io2)'
-          - 'Cold HDD (sc1)'
-          - 'Throughput Optimized HDD (st1)'
-          - 'Magnetic (standard)'
-```
-
 ### Outputs
 
 Parameters can be retrieved later on by steps using parameter outputs. Here is an example of a parameter `name` being used by a `debug:log` step.
