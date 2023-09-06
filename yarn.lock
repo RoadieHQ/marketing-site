@@ -5020,7 +5020,7 @@ deepmerge@^4.0, deepmerge@^4.2.2:
 
 deepmerge@^4.3.1:
   version "4.3.1"
-  resolved "https://roadiehq.jfrog.io/artifactory/api/npm/roadiehq/deepmerge/-/deepmerge-4.3.1.tgz#44b5f2147cd3b00d4b56137685966f26fd25dd4a"
+  resolved "https://registry.yarnpkg.com/api/npm/roadiehq/deepmerge/-/deepmerge-4.3.1.tgz#44b5f2147cd3b00d4b56137685966f26fd25dd4a"
   integrity sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==
 
 defer-to-connect@^1.0.1:
