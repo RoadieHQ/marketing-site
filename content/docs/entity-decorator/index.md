@@ -3,6 +3,7 @@ title: Introduction
 publishedDate: '2023-09-05'
 description: An introduction about Entity Decorator.
 ---
+## Introduction
 
 Catalog is built around the concept of metadata YAML files, therefore, any change you wish to make to your entities, needs to be done via editing those files. However, as YAML files can grow in complexity, they can become challenging to read and maintain. Furthermore, editing those files, can sometimes be a long process, especially if ownership is shared accross the teams in your organization.
 
@@ -18,16 +19,16 @@ All of the changes are kept and displayed in your Backstage instance, but YAML f
 
 Using Entity Decorator has numerous advantages such as:
 
-### Simplicity: 
+<b> Simplicity: </b>
 This approach abstract the complexities of YAML syntax, allowing you to focus on the content rather than formatting.
 
-### Visual Aid:
+< Visual Aid:
 It provides a visual representation of the YAML structure, in Existing Entity section of the page,  making it easier to grasp the hierarchy and relationships between fields.
 
-### Error Prevention:
+<b> Error Prevention: </b>
 Page provides fields validation, which, reduces the risk of syntax errors.
 
-### Team Collaboration: 
+<b> Team Collaboration: </b>
 With Entity Decorator, team members, including those not familiar with YAML, can easily edit and understand configuration files.
 
 ## Entity Decorator 
