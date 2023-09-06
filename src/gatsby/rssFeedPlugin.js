@@ -88,6 +88,54 @@ const changelogFeed = {
   `,
 
   output: '/changelog/rss.xml',
+  title: 'Roadie Changelog (legacy)',
+};
+
+const blogChangelogFeed = {
+  serialize: ({ query: { site, blogs } }) => {
+    return blogs.edges.map(({ node }) => {
+      return {
+        title: node.title,
+        date: node.date,
+        description: get(node, 'description.childMarkdownRemark.rawMarkdownBody'),
+        url: site.siteMetadata.siteUrl + node.slug,
+        guid: site.siteMetadata.siteUrl + node.slug,
+        custom_elements: [{
+          'content:encoded': get(node, 'body.childMarkdownRemark.html'),
+        }],
+      };
+    });
+  },
+
+  query: `
+    query AllChangelogBlogPosts {
+      blogs: allContentfulBlogPost(
+        sort: {fields: date, order: DESC}
+        filter: {tags: {eq: "changelog"}}
+      ) {
+        edges {
+          node {
+            date
+            slug
+            title
+
+            body {
+              childMarkdownRemark {
+                html
+              }
+            }
+
+            description {
+              childMarkdownRemark {
+                rawMarkdownBody
+              }
+            }
+          }
+        }
+      }
+    }
+  `,
+  output: '/blog-changelog/rss.xml',
   title: 'Roadie Changelog',
 };
 
@@ -107,6 +155,6 @@ module.exports = [{
       }
     `,
 
-    feeds: [blogFeed, changelogFeed],
+    feeds: [blogFeed, changelogFeed, blogChangelogFeed],
   },
 }];
