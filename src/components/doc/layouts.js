@@ -43,4 +43,10 @@ export const DOCS_LAYOUTS = [
     isActiveMatch: /\/docs\/tech-insights/,
     sidebarNavItemGroups: [sidebar.nav[6]],
   },
+  {
+    tabLabel: 'Entity Decorator',
+    startPath: '/docs/entity-decorator/introduction/',
+    isActiveMatch: /\/docs\/entity-decorator/,
+    sidebarNavItemGroups: [sidebar.nav[7]],
+  },
 ];

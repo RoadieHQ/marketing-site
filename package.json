@@ -24,7 +24,6 @@
     "babel-preset-gatsby": "^2.4.0",
     "classnames": "^2.3.0",
     "date-fns": "^2.22.1",
-    "deepmerge": "^4.3.1",
     "gatsby": "^4.4.0",
     "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-algolia": "^0.25.0",
