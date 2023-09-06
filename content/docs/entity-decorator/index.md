@@ -3,7 +3,6 @@ title: Introduction
 publishedDate: '2023-09-05'
 description: An introduction about Entity Decorator.
 ---
-## Introduction
 
 Catalog is built around the concept of metadata YAML files, therefore, any change you wish to make to your entities, needs to be done via editing those files. However, as YAML files can grow in complexity, they can become challenging to read and maintain. Furthermore, editing those files, can sometimes be a long process, especially if ownership is shared accross the teams in your organization.
 
