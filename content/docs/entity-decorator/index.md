@@ -34,7 +34,7 @@ With Entity Decorator, team members, including those not familiar with YAML, can
 
 In order to decorate the entity, navigate to entity page and select 'Decorate entity' from kebab menu at top right corner:
 
-![Decorate entity](./decorate-entity.png)
+![Decorate entity](./decorate_entity.png)
 
 This will lead to Entity Decorator page in which you can easily add new properties and enrich your entities. 
 

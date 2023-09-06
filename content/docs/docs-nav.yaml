@@ -139,4 +139,4 @@ nav:
           - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
           - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
   - Entity Decorator:
-      - Introduction: '/docs/entity-decorator/introduction/'
+      - Introduction: '/docs/entity-decorator/'
