@@ -15,7 +15,7 @@ As we go through this process, you’ll learn how to create Data Sources that in
 
 ## Prerequisites
 
-1. You must have [intalled the Roadie GitHub App](https://roadie.io/docs/getting-started/install-github-app/).
+1. You must have [intalled the Roadie GitHub App](../../getting-started/install-github-app/).
 
 ## Create a branch protection Data Source
 
