@@ -19,9 +19,10 @@ To set up a Data Source, you will, firstly, need to enter general information su
 ![Add Data Provider](./data-provider-step.png)
 
 1 - You must specify a type for that new Data Source. Roadie provides few different types of data provider configurations:
-  1. The _HTTP_ type lets you connect to an external API to pull in data
-  2. _Component repository file_ type lets you extract data from a file path in the corresponding repository of a given Component in your Catalog
-  3. _Component repository directory_ type allows you to extract a list of files from the repository
+  1. The _HTTP_ type lets you connect to an external API via the Backstage proxy to pull in data
+  2. The _HTTP via Integration_ type les you connect directly to external APIs where there's an integration configured with Roadie. For example, you can use the GitHub app to authenticate requests to the GitHub API.
+  3. _Component repository file_ type lets you extract data from a file path in the corresponding repository of a given Component in your Catalog
+  4. _Component repository directory_ type allows you to extract a list of files from the repository
 
 2 - Set additional configuration options depending on the type of the data provider
   1. For _HTTP_ type 
@@ -29,8 +30,9 @@ To set up a Data Source, you will, firstly, need to enter general information su
      2. _path extension:_ The path to append to the proxy URL to which the HTTP call should be made. There is basic support for templating entity values into the path. E.g. `etc/{{ metadata.name }}` would insert the name of the entity. The path extension should be input without the preceding slash.
      3. _HTTP Method:_ The HTTP method to use for the request. Mostly this will be `GET` but `POST` is also supported for graphQL and other endpoints which take query params through the request body.
      4. _Body:_ For POST requests you can also send a body. Templating is also supported in the request body in the same way as above.
-  2. For _Component repository file_ configure the path to the file you want to extract data from in repositories, starting from the root. This can be anything from JSON files to YAML files.
-  3. For _Component repository_ configure the root folder where you want to list files from. To identify the repository root, you can use `.`. 
+  2. For _HTTP via Integration_ type you only need to set the _path extension_. The path to append to the base URL of the ingeration to which the HTTP call should be made. There is basic support for templating entity values into the path. E.g. `etc/{{ metadata.name }}` would insert the name of the entity. The path extension should be input without the preceding slash.
+  3. For _Component repository file_ configure the path to the file you want to extract data from in repositories, starting from the root. This can be anything from JSON files to YAML files.
+  4. For _Component repository_ configure the root folder where you want to list files from. To identify the repository root, you can use `.`. 
 
 3 - Try out what would be the response when testing specific entity from the location you have provided. If you were to get the `package.json` from a `sample-service` component, the Data Source would get something like this:
 
