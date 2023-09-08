@@ -15,11 +15,7 @@ As we go through this process, you’ll learn how to create Data Sources that in
 
 ## Prerequisites
 
-1. You must have a Personal Access Token (PAT) for GitHub set in Administration → Settings → Secrets → GITHUB_TOKEN. This PAT must have the “repo” scope enabled.
-
-    We recommend creating the PAT on an account which has admin permissions in GitHub. Tokens associated with regular user accounts will not be able to see the branch protection settings on all repositories. [Learn how to create a PAT in the GitHub docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
-    
-    ![pat permissions](./pat-permissions.png)
+1. You must have [intalled the Roadie GitHub App](../../getting-started/install-github-app/).
 
 ## Create a branch protection Data Source
 
@@ -31,7 +27,7 @@ As we go through this process, you’ll learn how to create Data Sources that in
     
     ![about.png](./about.png)
     
-3. In the Data Provider section, select the built-in “/github/api” proxy and enter the Path Extension
+3. In the Data Provider section, select the **"HTTP via Integration"** type and enter the Path Extension
     
     ```
     repos/{{ metadata.annotations["github.com/project-slug"] }}/branches/main/protection
