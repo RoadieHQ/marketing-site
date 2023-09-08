@@ -10,6 +10,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-sizing: border-box;
   background-color: white;
+  background-clip: padding-box;
 }
 
 .TextField.size-1 {
@@ -23,7 +24,7 @@
 .TextField.size-2 {
   height: var(--space-7);
   font-size: var(--fs-3);
-  border-radius: var(--br-1);
+  border-radius: var(--br-2);
   padding-left: var(--space-3);
   line-height: var(--space-7);
 }

@@ -31,6 +31,7 @@ import './src/stylesheets/Status.css';
 import './src/stylesheets/Sub.css';
 import './src/stylesheets/Sup.css';
 import './src/stylesheets/Switch.css';
+import './src/stylesheets/Tab.css';
 import './src/stylesheets/Table.css';
 import './src/stylesheets/Text.css';
 import './src/stylesheets/TextField.css';

@@ -48,7 +48,7 @@
   --gray-a8: hsla(231, 98.1%, 9.4%, 0.275);
   --gray-a9: hsla(231, 99.6%, 5.6%, 0.455);
   --gray-a10: hsla(230, 99.5%, 4.7%, 0.506);
-  --gray-a11: hsla(220, 98.0%, 3.8%, 0.624);
+  --gray-a11: hsla(220, 98.0%, 3.8%, 0.54);
   --gray-a12: hsla(210, 95.1%, 1.9%, 0.891);
 
   --green-1: hsl(136, 74%, 99%);
@@ -292,4 +292,98 @@
   justify-content: center;
   border-radius: var(--br-circle);
   background-color: white;
+}
+
+
+@keyframes ScorecardAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  16% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-102px);
+  }
+  41% {
+    transform: translateY(-102px);
+  }
+  50% {
+    transform: translateY(-204px);
+  }
+  66% {
+    transform: translateY(-204px);
+  }
+  75% {
+    transform: translateY(-306px);
+  }
+  91% {
+    transform: translateY(-306px);
+  }
+  100% {
+    transform: translateY(-408px);
+  }
+}
+
+.ScorecardAnimationContainer {
+  animation-name: ScorecardAnimation;
+  animation-duration: 7500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+
+.IntegrationContainer {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: var(--br-circle);
+  background-color: white;
+  border: 1px solid var(--gray-a2);
+  background-clip: padding-box;
+  box-shadow: 0 1px 3px hsl(36 69% 48% / 10%), 0 2px 4px hsl(36 84% 48% / 8%),
+    0 5px 15px hsl(36 88% 55% / 12%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.IntegrationContainer svg {
+  width: 40px;
+}
+
+.IntegrationContainerFlare {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+}
+
+.IntegrationContainerFlare.top {
+  background: linear-gradient(to bottom, var(--gray-12), transparent);
+  height: calc(100% - var(--space-3));
+  width: 2px;
+  bottom: -100%;
+}
+
+.IntegrationContainerFlare.bottom {
+  background: linear-gradient(to top, black, transparent);
+  height: calc(100% - var(--space-3));
+  width: 2px;
+  top: -100%;
+}
+
+.IntegrationContainerFlare.left {
+  background: linear-gradient(to right, var(--gray-12), transparent);
+  width: calc(100% - var(--space-3));
+  height: 2px;
+  right: -100%;
+}
+
+.IntegrationContainerFlare.right {
+  background: linear-gradient(to left, var(--gray-12), transparent);
+  width: calc(100% - var(--space-3));
+  height: 2px;
+  left: -100%;
 }

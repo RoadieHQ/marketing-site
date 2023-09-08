@@ -5,6 +5,8 @@
   border-radius: var(--br-circle);
   overflow: hidden;
   position: relative;
+  vertical-align: bottom;
+  box-sizing: border-box;
 }
 
 .Avatar::after {
