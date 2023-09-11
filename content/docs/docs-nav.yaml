@@ -78,6 +78,7 @@ nav:
       - The catalog:
           - Managing locations: '/docs/details/location-management/'
           - Modelling dependencies: '/docs/details/showing-dependencies/'
+          - Decorating components: '/docs/details/decorating-components/'
           - Removing components: '/docs/details/unregister-components/'
           - Previewing component changes: '/docs/details/previewing-changes/'
           - Troubleshooting the catalog: '/docs/details/troubleshooting-the-catalog/'
@@ -138,5 +139,3 @@ nav:
           - Track On-prem Sonarqube metrics: '/docs/tech-insights/track-sonarqube/'
           - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
           - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
-  - Entity Decorator:
-      - Introduction: '/docs/entity-decorator/'
