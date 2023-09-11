@@ -32,9 +32,13 @@ New link properties need to follow [link properties types](https://backstage.io/
 
 Adding annotations is done via 'Add annotation' button in 'Annotations' section.
 
-![Add fragment](./add_fragment.png)
+![Add annotation](./add_annotation.png)
 
 New annotation properties need to follow [annotation properties types](https://backstage.io/docs/features/software-catalog/descriptor-format#annotations-optional). 
-You will find all existing annotations used in components accross catalog in a dropdown list. 
+You will find all existing annotations used in components accross catalog in a dropdown list.
+
+When you are happy with added annotations or/and links simply click 'Save' button and you will shortly see you changes.
+
+![Save changes](./save_decorator.png)
 
 <b> Please note, all of the changes are kept and displayed in your Backstage instance, but YAML files in version control system remain intact. </b>
