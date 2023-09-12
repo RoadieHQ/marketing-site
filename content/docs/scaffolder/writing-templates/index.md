@@ -254,6 +254,39 @@ parameters:
         labelSelector: 'value'
 ```
 
+Some of the `SelectFieldFromApi` options allow using parameters from earlier parameter pages to be used to template the options. The templated options are `params`, `path`, `valueSelector` and `labelSelector`. e.g.
+
+```yaml
+parameters:
+  - title: Select an Entity kind
+    required:
+      - kind
+    properties:
+      kind:
+        title: Kind
+        type: string
+        enum:
+          - template
+          - location
+        default: template
+        ui:autofocus: true
+        ui:options:
+          rows: 5
+  - title: Select the specific entity you want
+    properties:
+      obj:
+        title: custom
+        type: string
+        description: Entity Selector
+        ui:field: SelectFieldFromApi
+        ui:options:
+          path: "catalog/entities"
+          params:
+            filter: "kind={{ parameters.kind }}"
+          valueSelector: "metadata.name"
+          labelSelector: "metadata.description"
+```
+
 ### `number`
 
 You can allow the user to enter a number using the `number` type:
