@@ -4,11 +4,11 @@ publishedDate: '2023-09-05'
 description: An introduction about decorating components.
 ---
 
-Catalog is built around the concept of [entity descriptor YAML files](https://backstage.io/docs/features/software-catalog/descriptor-format/), therefore, any change you wish to make to your components, needs to be done via editing those files. 
+Components within the software catalog are structured around [metadata YAML files](https://backstage.io/docs/features/software-catalog/descriptor-format/) alongside the code, which are then collected and presented in Backstage for visualization. The source of truth for the components are mentioned YAML files, stored in source control such as GitHub, GitHub Enterprise, GitLab, Bitbucket, and others. 
 
-However, as YAML files can grow in complexity, they can become challenging to read and maintain. Editing those files, can sometimes be a long process, especially if ownership is shared accross the teams in your organization.
+Because the process of adding components to the catalog can be achieved through manual registration, creating new components within Backstage, or integrating with an external source, the catalog may often comprise components with different sources of data. Consequently, modifying these components can be challenging, as it involves making changes in multiple locations.
 
-Idea behind component decorator is to provide an easy way to enhance readability and usability for different components used accross organization. Furthermore, this enables decorating components which are automatically ingested catalog data/components from an existing external API.
+Idea behind component decorator is to provide an easy way to modify components in one place, through Backstage, and enhance usability for components used accross organization.
 
 ## Decorating components
 
@@ -35,9 +35,10 @@ Adding annotations is done via 'Add annotation' button in 'Annotations' section.
 ![Add annotation](./add_annotation.png)
 
 New annotation properties need to follow [annotation properties types](https://backstage.io/docs/features/software-catalog/descriptor-format#annotations-optional). 
-You will find all existing annotations used in components accross catalog in a dropdown list.
 
-When you are happy with added annotations or/and links simply click 'Save' button and you will shortly see you changes.
+You will find all existing annotations used in components across the catalog in a dropdown list.
+
+When you are happy with added annotations and/or links simply click 'Save' button and you will shortly see you changes.
 
 ![Save changes](./save_decorator.png)
 
