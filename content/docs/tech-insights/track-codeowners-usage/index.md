@@ -12,7 +12,7 @@ In this tutorial, we’re going to create a Tech Insights check that tracks adop
 
 1. You must have [intalled the Roadie GitHub App](../../getting-started/install-github-app/).
 
-## Create a branch protection Data Source
+## Create a CODEOWNERS Data Source
 
 
 
