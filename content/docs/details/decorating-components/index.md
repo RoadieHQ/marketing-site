@@ -4,11 +4,9 @@ publishedDate: '2023-09-05'
 description: An introduction about decorating components.
 ---
 
-Components within the software catalog are structured around [metadata YAML files](https://backstage.io/docs/features/software-catalog/descriptor-format/) alongside the code, which are then collected and presented in Backstage for visualization. The source of truth for the components are mentioned YAML files, stored in source control such as GitHub, GitHub Enterprise, GitLab, Bitbucket, and others. 
+Decorators are an easy way to add links and annotations to Entities, without editing the YAML file that the Entity originates from.
 
-Because the process of adding components to the catalog can be achieved through manual registration, creating new components within Backstage, or integrating with an external source, the catalog may often comprise components with different sources of data. Consequently, modifying these components can be challenging, as it involves making changes in multiple locations.
-
-Idea behind component decorator is to provide an easy way to modify components in one place, through Backstage, and enhance usability for components used accross organization.
+Decorators are stored inside Roadie and available via the API.
 
 ## Decorating components
 
