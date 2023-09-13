@@ -15,7 +15,7 @@ As we go through this process, you’ll learn how to create Data Sources that in
 
 ## Prerequisites
 
-1. You must have [intalled the Roadie GitHub App](../../getting-started/install-github-app/).
+1. You must have [installed the Roadie GitHub App](../../getting-started/install-github-app/).
 
 ## Create a branch protection Data Source
 
@@ -74,7 +74,7 @@ As we go through this process, you’ll learn how to create Data Sources that in
 
 ## Visualise the percentage of Components with branch protection
 
-Roadie Data Sources comes with a built-in visualisation panel which lets us get an overview of the Dockerfile base image versions being used. When viewing a Data Source, expand the “Facts visualization” section to see it.
+Roadie Data Sources comes with a built-in visualization panel which lets us get an overview of the Dockerfile base image versions being used. When viewing a Data Source, expand the “Facts visualization” section to see it.
 
 ![viz.png](./viz.png)
 
