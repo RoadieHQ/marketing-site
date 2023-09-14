@@ -78,6 +78,7 @@ nav:
       - The catalog:
           - Managing locations: '/docs/details/location-management/'
           - Modelling dependencies: '/docs/details/showing-dependencies/'
+          - Decorating components: '/docs/details/decorating-components/'
           - Removing components: '/docs/details/unregister-components/'
           - Previewing component changes: '/docs/details/previewing-changes/'
           - Troubleshooting the catalog: '/docs/details/troubleshooting-the-catalog/'
