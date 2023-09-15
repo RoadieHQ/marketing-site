@@ -86,7 +86,7 @@ nav:
           - Ownership in Backstage Entities: '/docs/details/ownership/'
       - Testing page configurations: '/docs/details/sandbox-mode/'
       - Working with plugins:
-          - Required annotations: '/docs/details/required-annotations/'
+          - Required metadata: '/docs/details/required-metadata/'
           - Requesting plugins: '/docs/details/requesting-plugins/'
       - Setting secrets: '/docs/details/setting-secrets/'
       - Updating the UI: '/docs/details/updating-the-ui/'
