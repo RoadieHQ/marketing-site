@@ -80,8 +80,8 @@
   force = true
 
 [[redirects]]
-  from = "/docs/integrations/required-annotations/"
-  to = "/docs/details/required-annotations/"
+  from = "/docs/details/required-annotations/"
+  to = "/docs/details/required-metadata/"
   force = true
 
 [[redirects]]
