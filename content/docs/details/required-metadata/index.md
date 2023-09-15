@@ -45,5 +45,5 @@ to be set and similarly the EntityLabelsCard requires [labels](https://backstage
 
 ## Further Reading
 
-* To update entities without definitions in yaml such as users and groups imported via autodiscovery you can use [decorators](/docs/details/decorating-components/)
+* To update entities without definitions in YAML such as users and groups imported via autodiscovery you can use [decorators.](/docs/details/decorating-components/)
 * [The Backstage entity format](https://backstage.io/docs/features/software-catalog/descriptor-format/)
