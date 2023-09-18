@@ -68,6 +68,8 @@ nav:
           - Using grpc-docs: '/docs/details/grpc-docs/'
       - Tech Docs:
           - Using Tech Docs in Roadie: '/docs/details/techdocs/'
+          - Build  TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
+          - Troubleshooting TechDocs: '/docs/details/techdocs/troubleshooting/'
       - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
       - GitHub app permissions: '/docs/details/github-app-permissions/'
       - Networking:
