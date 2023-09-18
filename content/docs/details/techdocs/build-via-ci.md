@@ -8,7 +8,7 @@ You can build and publish tech docs via your own CI pipelines so that the latest
 
 ### Prerequisites
 
-- Send us your AWS account id so we can set up the role to access your Roadie tech docs s3 bucket in our infra.
+- Send us your AWS account id so we can set up the role to access your Roadie tech docs S3 bucket in our infra.
 - Create GitHub action to build and publish the docs. This [is documented on the Backstage website](https://backstage.io/docs/features/techdocs/configuring-ci-cd/).
 - Configure your action to connect securely with the Roadie AWS S3 bucket - bucketName: `your-roadie-tenant-name`-roadie-tech-docs, region: eu-west-1
 
