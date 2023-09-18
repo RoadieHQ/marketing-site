@@ -361,28 +361,28 @@
 }
 
 .IntegrationContainerFlare.top {
-  background: linear-gradient(to bottom, var(--gray-12), transparent);
+  background: linear-gradient(to bottom, transparent, var(--gray-12));
   height: calc(100% - var(--space-3));
   width: 2px;
   bottom: -100%;
 }
 
 .IntegrationContainerFlare.bottom {
-  background: linear-gradient(to top, black, transparent);
+  background: linear-gradient(to top, transparent, var(--gray-12));
   height: calc(100% - var(--space-3));
   width: 2px;
   top: -100%;
 }
 
 .IntegrationContainerFlare.left {
-  background: linear-gradient(to right, var(--gray-12), transparent);
+  background: linear-gradient(to right, transparent, var(--gray-12));
   width: calc(100% - var(--space-3));
   height: 2px;
   right: -100%;
 }
 
 .IntegrationContainerFlare.right {
-  background: linear-gradient(to left, var(--gray-12), transparent);
+  background: linear-gradient(to left, transparent, var(--gray-12));
   width: calc(100% - var(--space-3));
   height: 2px;
   left: -100%;
