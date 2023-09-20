@@ -133,3 +133,8 @@
   to = "/docs/custom-plugins/connectivity/proxy/"
   force = true
 
+[[redirects]]
+  from = "/docs/integrations/home-page-markdown/"
+  to = "/docs/integrations/markdown-card/"
+  force = true
+
