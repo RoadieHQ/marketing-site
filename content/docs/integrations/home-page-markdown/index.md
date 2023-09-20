@@ -22,7 +22,7 @@ To be able to see the rendered content make sure you are logged into GitHub.
 
 #### Roadie Markdown Card
 
-Roadie Markdown Card provides possibility to retrieve and display markdown content from sources that you have configured integrations for on your Roadie instance. To see available integrations, take a look at the integrations section on the [plugins page](/docs/integrations/). 
+The Roadie Markdown Card provides the possibility to retrieve and display markdown content from sources that you have configured integrations for on your Roadie instance. To see available integrations, take a look at the integrations section on the [plugins page](/docs/integrations/). 
 
 Roadie Markdown Card can be enabled on both the Home Page as well as individual entity pages. 
 
