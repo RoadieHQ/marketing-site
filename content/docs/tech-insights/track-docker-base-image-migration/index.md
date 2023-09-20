@@ -106,37 +106,13 @@ In the next section, we will create a Check which can show a pass or fail result
 
 ## Create a check that shows which software is not using the latest base image
 
-### Detect which Components have a Dockerfile
-
 There’s not much sense telling teams who don’t use Docker that they need to uptake the latest Docker base image that the platform team has released. To omit non-Docker from the results, we need to first determine which software has a Dockerfile in it’s repository.
-
-A “component repository directory” Data Source will record the list of files which exist in the root of the repository of each Component in the Backstage catalog. We can then use this to determine which components are using Dockerfiles.
-
-1. Create a new data source, as before.
-2. Give it a name like “List of files in each GitHub repository” and a description like “This fact retriever lists all of the files in the repository associated with each component, starting at the root of the repo.”.
-
-    ![](./file-list-ds-about.png)
-
-3. In the Data Provider section, choose the type Component repository directory, and set the location to a period, representing the root of the directory.
-4. Choose a Backstage component which you know has the `github.com/project-slug` entity set on it’s `catalog-info.yaml` file and click VIEW. The list of files in the repo associated with the Component will be fetched and displayed in JSON format.
-
-    ![](./file-list-ds-test-results.png)
-
-5. In the field extraction section, add the fact name “File list”, the description “A list of files available from the root of the repository”, and choose the type “Set”. Click CHECK FACTS to test the results. You should see a set of the file paths in the repository has been created.
-
-    ![](./ds-file-list-extraction-results.png)
-
-6. Set some filters in the Applies to section, and click “SAVE”.
-
-    ![](./ds-filters.png)
-
-7. Once it runs, you should now have a data source which records a set of all of the files in the repository associated with each component.
-
-    ![](./file-list-ds-results.png)
 
 ### Create a check
 
-Now that we can determine which components are using Dockerfiles, and we can extract the base image version from those files, let’s write a check to combine both of these properties.
+The builtin "Repository Files Data Source" gives us all the file paths of a component's repository. We can use this to determine which components are using Dockerfiles. We can also now extract the base image version from those files. 
+
+Let’s write a check to combine both of these properties.
 
 1. Visit Tech Insights and click into the Checks tab. Click the ADD CHECK button to create a new check.
 
@@ -155,7 +131,7 @@ Now that we can determine which components are using Dockerfiles, and we can ext
     
     | Input name | Value |
     | --- | --- |
-    | Data Source | List of files in each GitHub repositiory |
+    | Data Source | Repository Files Data Source |
     | Fact | List of files |
     | Fact operator | Does not contain |
     | Value | Dockerfile |
