@@ -30,7 +30,7 @@ nav:
       - Grafana: '/docs/integrations/grafana/'
       - Harness: '/docs/integrations/harness'
       - Home Page: '/docs/integrations/home-page'
-      - Home Page Markdown: '/docs/integrations/home-page-markdown'
+      - Markdown Card Plugins: '/docs/integrations/home-page-markdown'
       - IFrame: '/docs/integrations/iframe'
       - Jenkins: '/docs/integrations/jenkins/'
       - Jira: '/docs/integrations/jira/'
