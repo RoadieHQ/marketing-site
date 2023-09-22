@@ -16,12 +16,12 @@
 
 .NavigationMenuTrigger:focus,
 .NavigationMenuLink:focus {
-  box-shadow: 0 0 0 2px var(--indigo-7);
+  box-shadow: 0 0 0 2px var(--orange-7);
 }
 
 .NavigationMenuTrigger:hover,
 .NavigationMenuLink:hover {
-  background-color: var(--indigo-3);
+  background-color: var(--orange-3);
 }
 
 .NavigationMenuTrigger {
@@ -181,7 +181,7 @@
 }
 
 .NavigationMenuListItemLink:focus {
-  box-shadow: 0 0 0 2px var(--indigo-7);
+  box-shadow: 0 0 0 2px var(--gray-7);
 }
 
 .NavigationMenuListItemLink:hover {

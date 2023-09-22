@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, Headline } from 'components';
+import { SEO, SitewideHeader, SitewideFooter } from 'components';
 import {
   GrowthPricingTier,
   TeamsPricingTier,
@@ -34,7 +34,7 @@ const Pricing = ({
         <div className="Container">
           <SectionHeader />
 
-          <div className="Grid columns-1 bp2-columns-2 bp3-columns-4 gap-5 bp2-gap-9 bp3-gap-0 mb-7">
+          <div className="Grid columns-1 bp2-columns-2 bp3-columns-4 gap-5 bp2-gap-9 bp3-gap-0 mb-7 lg:-mt-32">
             <div className="bp3-gc-3">
               <CurrencySwitcher
                 setCurrency={setCurrency}

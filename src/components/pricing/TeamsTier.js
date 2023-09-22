@@ -11,7 +11,7 @@ const TeamsTier = ({
     <Button
       text={TIERS.teams.ctaLabel}
       link={true}
-      className="Button size-3 accent expand"
+      className="Button size-3 neutral expand"
       to={TIERS.teams.ctaLinkTo}
     />
   ),
@@ -23,7 +23,7 @@ const TeamsTier = ({
 }) => (
     <div className="p-5 bp3-gc-3" style={{ borderLeft: '1px solid var(--gray-5)' }}>
       <div className='mb-4'>
-        <h2 className='Text size-5 orange'>Teams</h2>
+        <h2 className='Text size-5'>Teams</h2>
       </div>
       
       <TierDescription description={TIERS.teams.description} />

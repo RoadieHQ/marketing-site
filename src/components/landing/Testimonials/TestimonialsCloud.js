@@ -94,7 +94,7 @@ const Testimonials = ({ testimonials = TESTIMONIALS }) => (
   <section className="Section size-3">
     <div className="Container">
       <div className='Flex column gap-2'>
-        <h2 className='Text size-4 weight-2 indigo'>Testimonials</h2>
+        <h2 className='Text size-4 weight-2 orange'>Testimonials</h2>
         <h3 className='Text size-7'>What our customers say</h3>
       </div>
 

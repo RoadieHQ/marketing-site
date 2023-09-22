@@ -12,7 +12,7 @@ const GrowthPricingTier = () => (
         link={true}
         color="primary"
         to={TIERS.growth.ctaLinkTo}
-        className="Button size-3 neutral expand"
+        className="Button size-3 accent expand"
       />
     )}
   />

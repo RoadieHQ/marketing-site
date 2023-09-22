@@ -24,7 +24,7 @@
 .Section.flared {
   border-bottom: 1px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(to right,var(--gray-5) 25%, var(--violet-8) 40%, var(--indigo-9) 50%, var(--violet-8) 60%,var(--gray-5) 75%);
+  border-image-source: linear-gradient(to right,var(--gray-5) 25%, var(--yellow-8) 40%, var(--orange-9) 50%, var(--yellow-8) 60%,var(--gray-5) 75%);
 }
 
 .Section.cropped {

@@ -7,8 +7,8 @@
   text-decoration-line: none;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
-  text-decoration-color: var(--indigo-4);
-  color: var(--indigo-11);
+  text-decoration-color: var(--orange-3);
+  color: var(--orange-11);
 }
 
 .Link:hover {
@@ -22,6 +22,7 @@
 
 .Link.highContrast {
   color: var(--gray-12);
+  text-decoration-color: var(--gray-4);
 }
 
 .Link .Text {

@@ -403,7 +403,7 @@ const Home = ({ data }) => {
             </div>
           </div>
 
-          <div style={{ aspectRatio: '1/1', position: 'absolute', width: '100%', left: '50%', bottom: 'calc(var(--space-9) * -1)', transform: 'translateX(-50%) translateY(50%)', zIndex: '-1', border: '1px solid rgba(0,0,0,.02)', borderRadius: '50%', background: 'radial-gradient(circle, var(--indigo-7) 0%, var(--violet-5) 25%,var(--violet-4) 30%, var(--violet-2) 40%, transparent 45%)' }}></div>
+          <div style={{ aspectRatio: '1/1', position: 'absolute', width: '100%', left: '50%', bottom: 'calc(var(--space-9) * -1)', transform: 'translateX(-50%) translateY(50%)', zIndex: '-1', border: '1px solid rgba(0,0,0,.02)', borderRadius: '50%', background: 'radial-gradient(circle, var(--orange-9) 0%, var(--yellow-5) 25%,var(--yellow-4) 30%, var(--yellow-2) 40%, transparent 45%)' }}></div>
           <div style={{ aspectRatio: '1/1', position: 'absolute', width: 'calc(100% - 112px)', left: '50%', bottom: 'calc(var(--space-9) * -1)', transform: 'translateX(-50%) translateY(50%)', zIndex: '-1', border: '1px solid rgba(0,0,0,.03)', borderRadius: '50%' }}></div>
           <div style={{ aspectRatio: '1/1', position: 'absolute', width: 'calc(100% - 224px)', left: '50%', bottom: 'calc(var(--space-9) * -1)', transform: 'translateX(-50%) translateY(50%)', zIndex: '-1', border: '1px solid rgba(0,0,0,.05)', borderRadius: '50%' }}></div>
           <div style={{ aspectRatio: '1/1', position: 'absolute', width: 'calc(100% - 336px)', left: '50%', bottom: 'calc(var(--space-9) * -1)', transform: 'translateX(-50%) translateY(50%)', zIndex: '-1', border: '1px solid rgba(0,0,0,.07)', borderRadius: '50%' }}></div>
@@ -550,7 +550,7 @@ const Home = ({ data }) => {
       <section className='Section size-3'>
         <div className='Container'>
           <div className='Flex column gap-2'>
-            <h2 className='Text size-4 weight-2 indigo'>Testimonials</h2>
+            <h2 className='Text size-4 weight-2 orange'>Testimonials</h2>
             <span className='Text size-7 mb-9'>What our customers say</span>
           </div>
           <div className='Grid columns-1 bp2-columns-2 bp3-columns-3 gap-4'>
