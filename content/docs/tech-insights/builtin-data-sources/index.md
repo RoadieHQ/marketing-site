@@ -224,11 +224,18 @@ Authentication is done via
 
 ### Snyk Data Source
 
-Generates fact data about Snyk projects configured for the entity
+Generates fact data about Snyk projects configured for the entity.
 
 **Annotations used:** 
-  * `snyk.io/project-ids` 
   * `snyk.io/org-name`, if omitted, globally configured Snyk org is used
+  * `snyk.io/target-id`, specify a single target by name or ID
+  * `snyk.io/targets`, specify one or more targets, by name or ID
+  * `snyk.io/project-ids`, are the project ID (see slug in url or ID in project settings) If multiple projects (like multiple package.json or pom files, add them with increasing number), add them comma separated
+  * `github.com/project-slug`, to identify the target based on its GitHub repository name
+  * `snyk.io/exclude-project-ids`, to exclude specific projects you might not want.
+
+The data source follows the same annotation structure as the official Snyk Backstage plugin. It is possible to use multiple different annotations. At a minimum one of `targets`, `target-id`, `project-ids` or GitHub project slug is needed.
+
 
 #### Authentication
 Authentication is done via 
