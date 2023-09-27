@@ -9,10 +9,8 @@ Branch protection can bring an extra layer of security to your organization by e
 Roadie automatically collects this information and you can view reports or create checks about that data.
 In this tutorial, we’re going to:
 
-1. Automatically scan Components in the Backstage catalog and record whether or not features like branch protection and required reviews are turned on or off for their GitHub repositories.
-2. Visualize the percentage of components with branch protection turned on or off.
+1. Learn how to visualize data within an existing Data Source.
 
-As we go through this process, you’ll learn how to create Data Sources that interact with the GitHub APIs.
 
 ## Prerequisites
 
