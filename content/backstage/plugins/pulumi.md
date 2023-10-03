@@ -28,8 +28,7 @@ logoImage: '../../assets/logos/pulumi/logo-pulumi.png'
 coverImage: '../../assets/backstage/plugins/pulumi/pulumi-activity-plugin.png'
 coverImageAlt: 'A screenshot of the Pulumi plugin.'
 
-availableOnRoadie: true
-roadieDocsPath: /pulumi/
+availableOnRoadie: false
 
 thingsToKnowTitle: How to get a Pulumi Access Token
 
