@@ -24,8 +24,8 @@ seo:
   description: |
     View stack information from your Pulumi deployments.
 
-logoImage: '../../assets/logos/pulumi/logo-jenkins.png'
-coverImage: '../../assets/backstage/plugins/pulumi/jenkins-plugin.png'
+logoImage: '../../assets/logos/pulumi/logo-pulumi.svg'
+coverImage: '../../assets/backstage/plugins/pulumi/pulumi-activity-plugin.png'
 coverImageAlt: 'A screenshot of the Pulumi plugin.'
 
 availableOnRoadie: true
