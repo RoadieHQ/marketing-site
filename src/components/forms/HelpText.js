@@ -2,9 +2,9 @@ import React from 'react';
 import classnames from 'classnames';
 
 const HelpText = ({ className, state, message }) => {
-  const rootClassName = classnames('text-sm', {
-    'text-gray-600': !state || state === '',
-    'text-primary-700': state === 'error',
+  const rootClassName = classnames('Text size-3', {
+    'lowContrast': !state || state === '',
+    'red': state === 'error',
   }, className);
 
   return (

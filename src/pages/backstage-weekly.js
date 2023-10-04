@@ -86,16 +86,11 @@ const BackstageWeekly = ({ data }) => {
 
       <Page titleDivide={false} headerBorderBottom={false}>
         <div className="m-auto lg:max-w-2xl mb-44">
-          <div className="mb-4">
-            <Headline el="h2">Backstage Weekly</Headline>
-          </div>
-          <div className="mb-4">
-            <Lead>
-              Get the latest news, deep dives into Backstage features, and a roundup of recent
-              open-source action.
-            </Lead>
-          </div>
-
+          <h1 className="Text size-8 bp2-size-9 mb-3">Backstage Weekly</h1>
+          <p className="Text size-5 weight-1 lowContrast mb-3">
+            Get the latest news, deep dives into Backstage features, and a roundup of recent
+            open-source action.
+          </p>
           <NetlifyFormCallToAction
             setModalOpen={(open) => {
               setModalOpen(open);
@@ -109,9 +104,9 @@ const BackstageWeekly = ({ data }) => {
         </div>
 
         <div>
-          <Headline el="h3" size="small">
+          <h3 className='Text size-7'>
             Previous issues
-          </Headline>
+          </h3>
         </div>
 
         <div className="pt-10 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">

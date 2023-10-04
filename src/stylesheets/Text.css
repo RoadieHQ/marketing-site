@@ -367,6 +367,10 @@
   color: var(--orange-11);
 }
 
+.Text.red {
+  color: var(--red-11);
+}
+
 .Text.white {
   color: white;
 }
