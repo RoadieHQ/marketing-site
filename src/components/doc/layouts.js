@@ -14,16 +14,16 @@ export const DOCS_LAYOUTS = [
     sidebarNavItemGroups: [sidebar.nav[0]],
   },
   {
+    tabLabel: 'Catalog',
+    startPath: '/docs/catalog/location-management/',
+    isActiveMatch: '/docs/catalog/',
+    sidebarNavItemGroups: [sidebar.nav[7]],
+  },
+  {
     tabLabel: 'Plugins & Integrations',
     startPath: '/docs/integrations/',
     isActiveMatch: '/docs/integrations',
     sidebarNavItemGroups: [sidebar.nav[1], sidebar.nav[2]],
-  },
-  {
-    tabLabel: 'In-depth',
-    startPath: '/docs/details/accessing-aws-resources/',
-    isActiveMatch: '/docs/details',
-    sidebarNavItemGroups: [sidebar.nav[3]],
   },
   {
     tabLabel: 'Custom Plugins',
@@ -42,5 +42,11 @@ export const DOCS_LAYOUTS = [
     startPath: '/docs/tech-insights/introduction/',
     isActiveMatch: /\/docs\/tech-insights/,
     sidebarNavItemGroups: [sidebar.nav[6]],
+  },
+  {
+    tabLabel: 'In-depth',
+    startPath: '/docs/details/accessing-aws-resources/',
+    isActiveMatch: '/docs/details',
+    sidebarNavItemGroups: [sidebar.nav[3]],
   },
 ];

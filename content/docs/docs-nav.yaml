@@ -77,15 +77,6 @@ nav:
           - Accessing public resources: '/docs/details/backend-reading-allow-list/'
           - Allowlisting Roadie traffic: '/docs/details/allowlisting-roadie-traffic/'
           - How Roadie connects: '/docs/details/how-roadie-connects/'
-      - The catalog:
-          - Managing locations: '/docs/details/location-management/'
-          - Modelling dependencies: '/docs/details/showing-dependencies/'
-          - Decorating components: '/docs/details/decorating-components/'
-          - Removing components: '/docs/details/unregister-components/'
-          - Previewing component changes: '/docs/details/previewing-changes/'
-          - Troubleshooting the catalog: '/docs/details/troubleshooting-the-catalog/'
-          - Validating catalog files: '/docs/details/validator/'
-          - Ownership in Backstage Entities: '/docs/details/ownership/'
       - Testing page configurations: '/docs/details/sandbox-mode/'
       - Working with plugins:
           - Required metadata: '/docs/details/required-metadata/'
@@ -141,3 +132,12 @@ nav:
           - Track On-prem Sonarqube metrics: '/docs/tech-insights/track-sonarqube/'
           - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
           - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
+  - Catalog:
+      - Managing locations: '/docs/catalog/location-management/'
+      - Modelling dependencies: '/docs/catalog/showing-dependencies/'
+      - Decorating components: '/docs/catalog/decorating-components/'
+      - Removing components: '/docs/catalog/unregister-components/'
+      - Previewing component changes: '/docs/catalog/previewing-changes/'
+      - Troubleshooting: '/docs/catalog/troubleshooting-the-catalog/'
+      - Validating catalog files: '/docs/catalog/validator/'
+      - Ownership: '/docs/catalog/ownership/'
