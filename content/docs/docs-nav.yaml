@@ -134,7 +134,7 @@ nav:
           - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
   - Catalog:
       - Managing locations: '/docs/catalog/location-management/'
-      - Modelling dependencies: '/docs/catalog/showing-dependencies/'
+      - Modeling dependencies: '/docs/catalog/showing-dependencies/'
       - Decorating components: '/docs/catalog/decorating-components/'
       - Removing components: '/docs/catalog/unregister-components/'
       - Previewing component changes: '/docs/catalog/previewing-changes/'
