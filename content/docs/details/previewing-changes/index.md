@@ -25,7 +25,7 @@ metadata:
   namespace: preview
 ...
 ```
-2. Go to `/catalog-import` in Roadie Backstage
+2. Go to `/import/entity` in Roadie Backstage
 3. Import the catalog-info file URL from a branch on your version control, i.e. `https://github.com/<your-github-org>/<your-repo>/blob/<your-branch-name>/catalog-info.yaml`
 4. View your branch based component, and make updates to the branch file to see changes pulled in automatically. 
 5. [Delete the component](/docs/details/unregister-components/) when you are finished. 

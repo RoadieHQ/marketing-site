@@ -24,4 +24,4 @@ If you imported the entity manually using the url, and the path does not match a
 
 If you see a big list of entities when you press `Unregister entity` it means that the entity is likely to be coming from a file which has multiple entities defined in it. Unfortunately you can only delete all of the entities that are coming from a file from the Roadie UI. To delete only one of the entities go to your SCM and delete the entity from the file.
 
-NB: you can always re-ingest the entity via the `/register-existing-component` page.
+NB: you can always re-ingest the entity via the `/import/entity` page.

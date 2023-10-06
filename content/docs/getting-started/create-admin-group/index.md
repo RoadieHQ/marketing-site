@@ -104,7 +104,7 @@ Note that the name of the administration group needs to be `roadie-backstage-adm
 > Users and groups don't necessarily need to reside in different files. If you want to use a single file to import multiple entities, separate multiple yaml documents within a file with three horizontal lines `---`.
 
 4. Import both group and user entity definitions to your Roadie instance
-   1. Navigate to `https://<your-tenant>.roadie.so/catalog-import` and input the path to the entity definitions file(s).
+   1. Navigate to `https://<your-tenant>.roadie.so/import/entity` and input the path to the entity definitions file(s).
 
 Once they are all imported, you should immediately see non-admins being prevented from accessing settings pages. 
 

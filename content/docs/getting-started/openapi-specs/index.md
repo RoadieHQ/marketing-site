@@ -89,13 +89,13 @@ spec:
 
 Once this YAML file is committed and available on GitHub, you can make Roadie Backstage aware of it using the catalog importer.
 
-Copy the URL of the YAML spec on GitHub, paste it into the catalog importer at `https://your-company.roadie.so/catalog-import` and click Analyze.
+Copy the URL of the YAML spec on GitHub, paste it into the catalog importer at `https://your-company.roadie.so/import/entity` and click Analyze.
 
-![an input with a GitHub URL pasted into it. There is a button labelled analyze](./catalog-import-select-url.png)
+![an input with a GitHub URL pasted into it. There is a button labelled analyze](./import/entity-select-url.png)
 
 Review the action the importer is going to take, then press Import.
 
-![a chance to review the URL which is going to be added and the name of the API which will be created](./catalog-import-review.png)
+![a chance to review the URL which is going to be added and the name of the API which will be created](./import/entity-review.png)
 
 Click the name of the API to view it in Backstage.
 
