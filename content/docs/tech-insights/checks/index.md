@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Introduction to Checks
 publishedDate: '2022-11-15'
 description: Managing Checks.
 ---

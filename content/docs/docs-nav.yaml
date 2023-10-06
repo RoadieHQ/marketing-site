@@ -94,8 +94,8 @@ nav:
           - Proxy: '/docs/custom-plugins/connectivity/proxy'
           - Broker: '/docs/custom-plugins/connectivity/broker'
       - Legacy Method:
-        - Configuration: '/docs/custom-plugins/legacy/configuring/'
-        - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
+          - Configuration: '/docs/custom-plugins/legacy/configuring/'
+          - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
   - Scaffolder:
       - Writing scaffolder templates: '/docs/scaffolder/writing-templates/'
       - Certified templates: '/docs/scaffolder/certified-templates/'
@@ -132,6 +132,12 @@ nav:
           - Track On-prem Sonarqube metrics: '/docs/tech-insights/track-sonarqube/'
           - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
           - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
+      - Check for Catalog Correctness:
+          - Mandatory Backstage metadata: '/docs/tech-insights/tracking-catalog-correctness/mandatory-metadata/'
+          - GitHub Annotation is present: '/docs/tech-insights/tracking-catalog-correctness/github-annotation/'
+          - Valid type: '/docs/tech-insights/tracking-catalog-correctness/valid-type/'
+          - Valid lifcycle: '/docs/tech-insights/tracking-catalog-correctness/valid-lifecycle/'
+          - Correct labels: '/docs/tech-insights/tracking-catalog-correctness/correct-labels/'
   - Catalog:
       - Managing locations: '/docs/catalog/location-management/'
       - Rich team pages: '/docs/catalog/rich-team-pages/'
