@@ -22,7 +22,7 @@ Either way, we have configured Backstage to populate the logged in users identit
 - We associate the logged in user with the user component for the user ID in the default namespace. e.g. if my email is `fname@example.com`, my user is associated with the following user entity in backstage `user:default/fname`
 - If the user is also logged in to GitHub via the frontend of Backstage, then the user will also be associated with the entity represented by the GitHub username. e.g. if my GitHub handle is `fnamegh` then the identity will be associated with the entity `user:default/fnamegh`
 
-You can always inspect the Backstage Identity for the logged in user by clicking the "Account" link on the bottom left of the Backstage sidebar.
+You can always inspect the Backstage Identity for the logged in user by going to the "Account" tab in the Administration section.
 
 ![account-backstage-identity.png](account-backstage-identity.png)
 
