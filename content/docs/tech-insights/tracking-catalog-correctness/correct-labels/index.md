@@ -26,7 +26,7 @@ There are typically two problems with using labels in Backstage.
 
 We suggest people using our Tech Insights functionality to create checks to help teams manage labels.
 
-## Enforcing mandatory labels
+### Enforcing mandatory labels
 
 You can use Tech Insights to find components which do not meet the minimum requirements for labels.
 
@@ -47,7 +47,7 @@ Here’s a video showing how to construct this check:
 
 https://www.loom.com/share/7c60ba8a6e924868982e9faf96f1a6a4
 
-## Enforcing allowable (but optional) labels
+### Enforcing allowable (but optional) labels
 
 In order to find duplicate labels, the best practice is to establish and maintain a list of allowed labels. For example, you may wish to allow the labels `tier` and `region`, but not the label `location`.
 
