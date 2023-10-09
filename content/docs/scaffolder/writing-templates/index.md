@@ -1871,7 +1871,7 @@ A limited set of functionality exists to preview and edit parameters in a sandbo
 
 You can find these features at `/create/edit`.
 
-It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/register-existing-component` using the version on a published feature branch.
+It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/import/entity` using the version on a published feature branch.
 This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test.
 
 ## Troubleshooting
