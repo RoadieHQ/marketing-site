@@ -11,7 +11,7 @@ description: If you want to have a centrally defined re-useable parameter value 
 - [`placeholders`](https://backstage.io/docs/features/software-catalog/descriptor-format#substitutions-in-the-descriptor-format)
 - [`debug:log`](https://github.com/backstage/backstage/blob/54b9f073d13d878fce652c9ec8b8cdfc5fd85c6a/plugins/scaffolder-backend/src/scaffolder/actions/builtin/debug/log.ts)
 
-You can check the available actions if you visit `/create/actions`.
+You can check the available actions if you visit `/templates/actions`.
 
 
 ```yaml

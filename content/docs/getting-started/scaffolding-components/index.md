@@ -109,6 +109,6 @@ After a couple of seconds you should see the "Task Activity" page with the outpu
 
 ## What Next? 
 
-You can see the full list of Scaffolder Tasks that we support at Roadie by visiting `https://<tenant-name>.roadie.so/create/actions`
+You can see the full list of Scaffolder Tasks that we support at Roadie by visiting `https://<tenant-name>.roadie.so/templates/actions`
 
 You can find detailed docs on writing scaffolder templates [here](/docs/details/scaffolder/).

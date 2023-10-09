@@ -29,7 +29,7 @@ A Scaffolder template is a configurable process that will run one or more Scaffo
 
 Templates are defined by a Backstage Entity YAML file with a `Template` kind and imported into the Backstage catalog. You can create multiple templates, each of which can perform a different set of steps. For example, you can have one template that creates a React application, and another that creates a serverless app.
 
-Template YAML input forms can be tested at `/tools` using a live template preview viewer.
+Template YAML input forms can be tested at `/templates/edit` using a live template preview viewer.
 
 ![preview-template](./template-preview-tool.png)
 
@@ -1794,7 +1794,7 @@ steps:
 
 You can find all the actions available to your Backstage instance by visiting the following page from within Backstage:
 
-`https://<tenant-name>.roadie.so/create/actions`
+`https://<tenant-name>.roadie.so/templates/actions`
 
 ## Advanced
 
@@ -1869,7 +1869,7 @@ Testing of templates is not well supported in Backstage currently, mostly due to
 
 A limited set of functionality exists to preview and edit parameters in a sandbox, and dry-run templates (skipping steps that perform mutations).
 
-You can find these features at `/create/edit`.
+You can find these features at `/import/entity-preview`.
 
 It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/import/entity` using the version on a published feature branch.
 This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test.
@@ -1878,7 +1878,7 @@ This preview template will show up in the list of templates however so it is imp
 
 Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
 
-Template YAML input forms can also be tested at `/tools` using a live template preview viewer which speeds up the testing cycle.
+Template YAML input forms can also be tested at `/templates/edit` using a live template preview viewer which speeds up the testing cycle.
 
 ![preview-template](./template-preview-tool.png)
 
