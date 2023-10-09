@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Introduction to Tech Insights
 publishedDate: '2022-11-15'
 description: An introduction about Tech Insights plugin.
 ---

@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Introduction to Scorecards
 publishedDate: '2022-11-15'
 description: Managing Scorecards.
 ---
