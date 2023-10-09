@@ -1885,3 +1885,30 @@ Template YAML input forms can also be tested at `/templates/edit` using a live t
 ### Resource not accessible by integration
 
 This error is referring to actions that interact GitHub. It means that the Roadie GitHub app is unable to read, create or update the resource/s that are being touched by the Scaffolder step.
+
+### Pull request creation failed; caused by HttpError: You have exceeded a secondary rate limit - `publish:github:pull-request`
+
+Full error message: `Pull request creation failed; caused by HttpError: You have exceeded a secondary rate limit. Please wait a few minutes before you try again. If you reach out to GitHub Support for help, please include the request ID`
+
+This happens when you try to make a PR to Github with too many files in the PR, triggering a Secondary rate limit in Github's api. 
+
+This often happens when using the action in combination with a preceding `fetch:plain` action that pulls a full existing repository down, so that some files can be changed. 
+
+The way around this is, if you know the specific files you want to be contained in the pull request, you should move those files into a subdirectory using the `fs:rename` step after the `fetch:plain` step.
+ i.e.
+
+```
+steps:
+- action: fs:rename
+  id: rename-files
+  name: Rename files
+  input:
+  files:
+  - from: file1
+  to: subdirectory/file1
+  - from: file2
+  to: subdirectory/file2
+  then in the publish step you can add the input parameter: sourcePath: ./subdirectory
+```
+
+This then creates a PR with only the changed files rather than the full duplicated repo. 
