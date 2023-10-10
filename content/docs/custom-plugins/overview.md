@@ -89,7 +89,7 @@ The plugins developed for Roadie can range from simple React components to small
 When using the Roadie provided template, you can also build and test the plugins in standalone mode using the standard test frameworks.  
 
 * To test out `Page` type plugins, use the [**Sandbox**](/docs/details/sandbox-mode/) pages, located in `https://<your-tenant>.roadie.so/administration/admin-sandbox`
-* To test out `Card` or `Content` type plugins, use [**Preview Entities**](/docs/details/previewing-changes/#using-the-entity-preview-page) that can be configured in `https://<your-tenant>.roadie.so/tools/entity-preview`
+* To test out `Card` or `Content` type plugins, use [**Preview Entities**](/docs/details/previewing-changes/#using-the-entity-preview-page) that can be configured in `https://<your-tenant>.roadie.so/import/entity-preview`
 
 
 ### Plugin Maintenance
