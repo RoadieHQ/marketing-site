@@ -234,7 +234,7 @@ Generates fact data about Snyk projects configured for the entity.
   * `github.com/project-slug`, to identify the target based on its GitHub repository name
   * `snyk.io/exclude-project-ids`, to exclude specific projects you might not want.
 
-The data source follows the same annotation structure as the official Snyk Backstage plugin. It is possible to use multiple different annotations. At a minimum one of `targets`, `target-id`, `project-ids` or GitHub project slug is needed.
+The data source follows the same annotation structure as the official [Snyk Backstage plugin](https://github.com/snyk-tech-services/backstage-plugin-snyk#getting-started). It is possible to use multiple different annotations. At a minimum one of `targets`, `target-id`, `project-ids` or GitHub project slug is needed. Read more about these concepts [here](https://docs.snyk.io/snyk-admin/introduction-to-snyk-projects).
 
 
 #### Authentication
