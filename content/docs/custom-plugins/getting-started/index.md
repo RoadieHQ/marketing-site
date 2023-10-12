@@ -14,16 +14,18 @@ An instructional video of this same process can be found from the bottom of the 
 
 #### 1. Register the Roadie Plugins monorepo scaffolder template into your application
 
-Navigate to your Roadie instance scaffolder and register a new template. Go to 'Create...' and click the 'Register Existing Component' on the top right. 
-In the opening form, add the URL to the Roadie scaffolder template and click the buttons to import it into the system.
+Navigate to your Roadie instance scaffolder and register a new template. Click on 'Import' in the Roadie sidebar.
+Paste the URL below into the URL field.
 
-The URL is: `https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/roadie-plugin/template.yaml`
+```plain
+https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/roadie-plugin/template.yaml
+```
 
 ![Importing scaffolder template to create plugins monorepo](scaffolder_monorepo_import.png)
 
 #### 2. Scaffold your Roadie plugins monorepo
 
-Navigate again to the 'Create...' screen and identify the just added scaffolder template. It should be named something like 'Create Roadie Plugins Monorepo'. Choose this template and start filling out the templating steps.
+Click on 'Templates' in the Roadie sidebar. Identify the scaffolder template you just added. It should be named something like 'Create Roadie Plugins Monorepo'. Choose this template and start filling out the templating steps.
 ![Filling out scaffolder template 1](scaffolder_template_filling1.png)
 
 ![Filling out scaffolder template 2](scaffolder_template_filling2.png)
