@@ -26,5 +26,5 @@ metadata:
     pagerduty.com/service-id: P3SWGXI
 spec:
   type: website
-  owner: marketing
+  owner: group:roadiehq/marketing
   lifecycle: production
