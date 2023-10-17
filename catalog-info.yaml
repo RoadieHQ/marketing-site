@@ -17,7 +17,7 @@ metadata:
   annotations:
     github.com/project-slug: RoadieHQ/marketing-site
     backstage.io/techdocs-ref: dir:.
-    snyk.io/org-name: roadie
+    snyk.io/org-id: a0e0775e-2b17-4e57-8d85-6c8fbe5bc9a0
     snyk.io/project-ids: 4f195df9-5ddf-4a98-8955-bd687d220d0b
     sentry.io/project-slug: marketing-site
     sonarqube.org/project-key: RoadieHQ_marketing-site
