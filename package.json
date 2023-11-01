@@ -11,7 +11,7 @@
     "defaults"
   ],
   "dependencies": {
-    "@algolia/autocomplete-js": "^1.5.1",
+    "@algolia/autocomplete-js": "^1.11.1",
     "@algolia/autocomplete-theme-classic": "^1.5.1",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
