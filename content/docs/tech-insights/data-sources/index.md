@@ -7,7 +7,7 @@ description: Managing Data Sources.
 ### What are they?
 Data Sources periodically collect Facts about your services from third-party vendors or arbitrary APIs. 
 
-The Facts collected by Data Sources are used for defining Checks. You can view the Facts collected by a Data Source by clicking on the Data Source and finding the facts on the details page.  
+The Facts collected by Data Sources can be used for defining Checks. You can view the Facts collected by a Data Source by clicking on the Data Source and finding the facts on the details page.  
 
 ### Ready made and Custom Data Sources
 [Built-in Data Sources](('../builtin-data-sources/')) with predefined Facts are available to use without any setup. 
