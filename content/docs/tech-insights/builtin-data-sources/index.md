@@ -18,7 +18,7 @@ We have built several Data Sources, which you can find explained below, together
 
 This list will probably have better accuracy, since we update facts frequently. 
 
-Please note, if you don't find what you are looking for and/or want to create something we haven't provided out of the box, Roadie Tech Insights lets you define custom Data Sources. More information around that can be found [here](../define-custom-data-sources/).
+Please note, if you don't find what you are looking for and/or want to create something we haven't provided out of the box, Roadie Tech Insights lets you [define custom Data Sources](../define-custom-data-sources/).
 
 ### Datadog Data Source
 
