@@ -13,30 +13,28 @@ Therefore, in order to create [Scorecards](../scorecards/index.md), you will nee
 ## Prerequisites
 
 - Roadie Tech Insights is a paid add-on. If you are not sure about whether or not you have it or would like to include it, please reach out to our sales team.
-- You must be an administrator for your Roadie instance to enable and manage Tech Insights.
+- You must be an administrator for your Roadie instance to manage Tech Insights.
 
-## Enable Roadie Tech Insights
+## READ Access
 
-To enable Roadie Tech Insights, go to Administration → Settings → Plugins → Tech Insights, or navigate to `https://[organisation]/administration/settings/tech-insights` and tick the enabled box as shown below:
+By default, all users will be able to see but not edit Tech Insights content.
 
-![Enable Tech Insights](./enable-tech-insights.png)
+If you want to hide Tech Insights for non-admin users such as when initially setting it up, you can check 'Admins only' checkbox under Administration → Settings → Plugins → Tech Insights page. This will remove Tech Insights from the sidebar for anyone who is not part of `roadie-backstage-admin` nor `roadie-tech-insights-admin` groups.
 
-## Users access
+![Admin Only View](./admin-only-settings.png)
 
-Anyone who is part of the `roadie-backstage-admin` GitHub team will have CRUD access to Tech Insights.
+## Modification Access
 
-However, if you want to grant CRUD access to the feature to some users, but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a `roadie-tech-insights-admin` and add them as a members there.
+Anyone who is part of the `roadie-backstage-admin` GitHub team will have CRUD access to Tech Insights by default.
+
+If you want to extend CRUD access to more users but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a `roadie-tech-insights-admin` and add them as a members there.
 
 If it exists, anyone who is part of the `roadie-tech-insights-admin` GitHub group will have CRUD access to Tech Insights.
 
-By default, no other users will have access, unless you check 'Visible to all users' checkbox under Administration → Settings → Plugins → Tech Insights page. 
+## Disabling Roadie Tech Insights
 
-This will grant Read access to all users which are not part of `roadie-backstage-admin` nor `roadie-tech-insights-admin` groups.
+To disable Roadie Tech Insights and remove it from your sidebar, please reach out to Roadie support.
 
-Once Roadie Tech Insights is enabled, you’ll find a link in the sidebar as below:
+## First steps
 
-![Sidebar Tech Insights](./sidebar-tech-insights.png)
-
-## Next steps
-
-Now that you have enabled Roadie Tech Insights and verified you have access to the Tech Insights page you’ll be able to create [Data Sources](../data-sources/), define [Check](../checks/) for your Data Sources, and compose [Scorecards](../scorecards/) with said Checks.
+You will first want to see what data is available to use already and see how to pull in custom data sets via [Data Sources](../data-sources/). Then you can define [Checks](../checks/) for your Data Sources, and compose [Scorecards](../scorecards/) with the Checks.
