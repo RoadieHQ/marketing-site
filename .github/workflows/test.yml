@@ -58,7 +58,6 @@ jobs:
       - name: static folder content
         run: ls -la static
 
-
       - name: Build static site
         run: yarn build
         env:
