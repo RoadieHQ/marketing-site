@@ -30,7 +30,7 @@ The supported response types for HTTP data sources are JSON structures.
 
 ### GitHub API
 
-_GitHub API_ data source uses the installed GitHub app credentials to fetch data from any GitHub REST API endpoint. 
+_GitHub API_ data source uses the GitHub REST API with the installed GitHub app credentials to fetch any data not already available from the built-in GitHub Data Sources in Roadie. 
 
 ### Component repository file
 
