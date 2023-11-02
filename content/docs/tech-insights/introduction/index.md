@@ -13,7 +13,7 @@ Therefore, in order to create [Scorecards](../scorecards/index.md), you will nee
 ## Prerequisites
 
 - Roadie Tech Insights is a paid add-on. If you are not sure about whether or not you have it or would like to include it, please reach out to our sales team.
-- You must be an administrator for your Roadie instance to enable and manage Tech Insights. See (access section for more details.)[#users-access]
+- You must be an administrator for your Roadie instance to enable and manage Tech Insights. See [access section](#users-access) for more details.
 
 ## Enable Roadie Tech Insights
 
