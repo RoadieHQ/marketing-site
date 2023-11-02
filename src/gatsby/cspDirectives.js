@@ -152,7 +152,6 @@ const CSP_CONNECT_SRC_DIRECTIVES = [
   'https://sentry.io',
   'https://*.algolia.net',
   'https://*.algolianet.com',
-  'https://*roadie.netlify.app',
 
   // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
   'https://api.intercom.io',

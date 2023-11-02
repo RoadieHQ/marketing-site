@@ -10,15 +10,15 @@ const ApiDocsPage = ({ location }) => {
       supportedSubmitMethods: [],
       urls: [
         {
-          url: 'https://roadie.io/tech-insights-openapi.json',
+          url: `${location.origin}/tech-insights-openapi.json`,
           name: 'Tech Insights',
         },
         {
-          url: 'https://roadie.io/catalog-openapi.json',
+          url: `${location.origin}/catalog-openapi.json`,
           name: 'Catalog',
         },
         {
-          url: 'https://roadie.io/scaffolder-openapi.json',
+          url: `${location.origin}/scaffolder-openapi.json`,
           name: 'Templates',
         },
       ],
