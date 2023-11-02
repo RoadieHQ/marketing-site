@@ -1,7 +1,7 @@
 ---
 title: Introduction to Tech Insights
 publishedDate: '2022-11-15'
-description: An introduction about Tech Insights plugin.
+description: An introduction to the Tech Insights plugin.
 ---
 
 Roadie Tech Insights helps you keep track of all of your software assets and make sure they meet your quality and compliance targets.
