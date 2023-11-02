@@ -24,6 +24,7 @@ const ApiDocsPage = ({ location }) => {
       ],
       presets: [window.SwaggerUI.presets.apis, window.SwaggerUIStandalonePreset],
       layout: 'StandaloneLayout',
+      validatorUrl: null,
     });
   }, []);
 
