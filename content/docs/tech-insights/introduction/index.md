@@ -19,17 +19,17 @@ Therefore, in order to create [Scorecards](../scorecards/index.md), you will nee
 
 By default, all users will be able to see but not edit Tech Insights content.
 
-If you want to hide Tech Insights for non-admin users such as when initially setting it up, you can check 'Admins only' checkbox under Administration → Settings → Plugins → Tech Insights page. This will remove Tech Insights from the sidebar for anyone who is not part of `roadie-backstage-admin` nor `roadie-tech-insights-admin` groups.
+If you want to hide Tech Insights for non-admin users such as when initially setting it up, you can check 'Admins only' checkbox under Administration → Settings → Plugins → Tech Insights page. This will remove Tech Insights from the sidebar for anyone who is not part of `roadie-backstage-admin`, nor `roadie-tech-insights-admin` groups.
 
 ![Admin Only View](./admin-only-settings.png)
 
 ## Modification Access
 
-Anyone who is part of the `roadie-backstage-admin` GitHub team will have CRUD access to Tech Insights by default.
+Anyone who is part of the `roadie-backstage-admin` group will have CRUD access to Tech Insights by default.
 
-If you want to extend CRUD access to more users but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a `roadie-tech-insights-admin` and add them as a members there.
+If you want to extend CRUD access to more users but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a `roadie-tech-insights-admin` and add them as members there.
 
-If it exists, anyone who is part of the `roadie-tech-insights-admin` GitHub group will have CRUD access to Tech Insights.
+If it exists, anyone who is part of the `roadie-tech-insights-admin` group will have CRUD access to Tech Insights.
 
 ## Disabling Roadie Tech Insights
 
