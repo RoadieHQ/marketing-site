@@ -43,6 +43,27 @@ jobs:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           GATSBY_RECAPTCHAS_ENABLED: false
 
+      - name: Fetch Scaffolder API Docs
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://api.roadie.so/api/scaffolder/api-docs
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.ROADIE_API_TOKEN }}"} }'
+          save-location: 'static/scaffolder-openapi.json'
+
+      - name: Fetch Catalog API Docs
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://api.roadie.so/api/catalog/api-docs
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.ROADIE_API_TOKEN }}"} }'
+          save-location: 'static/catalog-openapi.json'
+
+      - name: Fetch Tech Insights API Docs
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://api.roadie.so/api/tech-insights/v1/api-docs
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.ROADIE_API_TOKEN }}"} }'
+          save-location: 'static/tech-insights-openapi.json'
+
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
