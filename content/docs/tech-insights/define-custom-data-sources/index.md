@@ -28,9 +28,9 @@ This data provider provides connectivity via [Roadie proxies](/docs/custom-plugi
 
 The supported response types for HTTP data sources are JSON structures.
 
-### HTTP via Integration
+### GitHub API
 
-_HTTP via Integration_ data source exposes the same functionality as plain HTTP data source. The connection and authentication parameters for integration uses previously configured authentication mechanisms. For example in case of GitHub, the installed GitHub app credentials are used.
+_GitHub API_ data source uses the installed GitHub app credentials to fetch data from any GitHub REST API endpoint. 
 
 ### Component repository file
 
