@@ -34,15 +34,6 @@ jobs:
       - name: Unit test
         run: yarn test:unit
 
-      - name: Build static site
-        run: yarn build
-        env:
-          GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
-          GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
-          ALGOLIA_SKIP_INDEXING: true
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-          GATSBY_RECAPTCHAS_ENABLED: false
-
       - name: Fetch Scaffolder API Docs
         uses: JamesIves/fetch-api-data-action@v2
         with:
@@ -63,6 +54,19 @@ jobs:
           endpoint: https://api.roadie.so/api/tech-insights/v1/api-docs
           configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.ROADIE_API_TOKEN }}"} }'
           save-location: 'static/tech-insights-openapi.json'
+
+      - name: static folder content
+        run: ls -la static
+
+
+      - name: Build static site
+        run: yarn build
+        env:
+          GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
+          GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
+          ALGOLIA_SKIP_INDEXING: true
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          GATSBY_RECAPTCHAS_ENABLED: false
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
