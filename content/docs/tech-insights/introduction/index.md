@@ -1,42 +1,45 @@
 ---
 title: Introduction to Tech Insights
 publishedDate: '2022-11-15'
-description: An introduction about Tech Insights plugin.
+description: An introduction to the Tech Insights plugin.
 ---
 
 Roadie Tech Insights helps you keep track of all of your software assets and make sure they meet your quality and compliance targets.
 
-Roadie Tech Insights lets you create Scorecards to track what matters to you about your assets in the Backstage catalog. It does this by ingesting data via Data Sources, and then aggregating Checks on that data.
+You can create Scorecards to track the things that matter about your assets in the Backstage catalog. This is done by ingesting Fact data via various Data Sources, and then aggregating Checks on those Facts.
 
 Therefore, in order to create [Scorecards](../scorecards/index.md), you will need to add [Data Sources](../data-sources/index.md) and define [Checks](../checks//index.md) on such data. Roadie provides a user interface to build all three of these, this page describes how to set each one of them.
+
 
 ## Prerequisites
 
 - Roadie Tech Insights is a paid add-on. If you are not sure about whether or not you have it or would like to include it, please reach out to our sales team.
-- You must be an administrator for your Roadie instance to enable and manage Tech Insights.
+- You must be an administrator for your Roadie instance to manage Tech Insights.
 
-## Enable Roadie Tech Insights
 
-To enable Roadie Tech Insights, go to Administration → Settings → Plugins → Tech Insights, or navigate to `https://[organisation]/administration/settings/tech-insights` and tick the enabled box as shown below:
+## Read Only Access
 
-![Enable Tech Insights](./enable-tech-insights.png)
+By default, all users will be able to see but not edit Tech Insights content.
 
-## Users access
+If you want to hide Tech Insights for non-admin users such as when initially setting it up, you can check 'Admins only' checkbox under Administration → Settings → Plugins → Tech Insights page. This will remove Tech Insights from the sidebar for anyone who is not part of `roadie-backstage-admin` or `roadie-tech-insights-admin` groups.
 
-Anyone who is part of the `roadie-backstage-admin` GitHub team will have CRUD access to Tech Insights.
+![Admin Only View](./admin-only-settings.png)
 
-However, if you want to grant CRUD access to the feature to some users, but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a `roadie-tech-insights-admin` and add them as a members there.
 
-If it exists, anyone who is part of the `roadie-tech-insights-admin` GitHub group will have CRUD access to Tech Insights.
+## Write Access
 
-By default, no other users will have access, unless you check 'Visible to all users' checkbox under Administration → Settings → Plugins → Tech Insights page. 
+Anyone who is part of the `roadie-backstage-admin` group will have write access to Tech Insights by default.
 
-This will grant Read access to all users which are not part of `roadie-backstage-admin` nor `roadie-tech-insights-admin` groups.
+If you want to extend write access to more users but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a `roadie-tech-insights-admin` and add them as members there.
 
-Once Roadie Tech Insights is enabled, you’ll find a link in the sidebar as below:
+If it exists, anyone who is part of the `roadie-tech-insights-admin` group will have write access to Tech Insights.
 
-![Sidebar Tech Insights](./sidebar-tech-insights.png)
 
-## Next steps
+## Disabling Roadie Tech Insights
 
-Now that you have enabled Roadie Tech Insights and verified you have access to the Tech Insights page you’ll be able to create [Data Sources](../data-sources/), define [Check](../checks/) for your Data Sources, and compose [Scorecards](../scorecards/) with said Checks.
+To disable Roadie Tech Insights and remove it from your sidebar, please reach out to Roadie support.
+
+
+## First steps
+
+You will first want to see what data is available to use already and see how to pull in custom data sets via [Data Sources](../data-sources/). Then you can define [Checks](../checks/) for your Data Sources, and compose [Scorecards](../scorecards/) with the Checks.
