@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
 
-const ApiDocsPage = () => {
+const ApiDocsPage = ({ location }) => {
   const swaggerRef = useRef(null);
 
   useEffect(() => {
