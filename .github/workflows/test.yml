@@ -34,12 +34,12 @@ jobs:
       - name: Unit test
         run: yarn test:unit
 
-      # - name: Fetch Scaffolder API Docs
-      #   uses: JamesIves/fetch-api-data-action@v2
-      #   with:
-      #     endpoint: https://api.roadie.so/api/scaffolder/api-docs
-      #     configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.ROADIE_API_TOKEN }}"} }'
-      #     save-location: 'static/scaffolder-openapi.json'
+      - name: Fetch Scaffolder API Docs
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://api.roadie.so/api/scaffolder/api-docs
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.ROADIE_API_TOKEN }}"} }'
+          save-location: 'static/scaffolder-openapi.json'
 
       - name: Fetch Catalog API Docs
         uses: JamesIves/fetch-api-data-action@v2
