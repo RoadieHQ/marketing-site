@@ -14,7 +14,7 @@ Therefore, in order to create [Scorecards](../scorecards/index.md), you will nee
 ## Prerequisites
 
 - Roadie Tech Insights is a paid add-on. If you are not sure about whether or not you have it or would like to include it, please reach out to our sales team.
-- You must be an administrator for your Roadie instance to manage Tech Insights.
+- You must be an administrator for your Roadie instance to enable and manage Tech Insights. See [access section](#users-access) for more details.
 
 
 ## Read Only Access
@@ -28,11 +28,11 @@ If you want to hide Tech Insights for non-admin users such as when initially set
 
 ## Write Access
 
-Anyone who is part of the `roadie-backstage-admin` group will have write access to Tech Insights by default.
+Anyone who is part of the `roadie-backstage-admin` group in Roadie will have write access to Tech Insights.
 
-If you want to extend write access to more users but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a `roadie-tech-insights-admin` and add them as members there.
+However, if you want to grant write access to the feature to some users, but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a group called `roadie-tech-insights-admin` and add them as a members there.
 
-If it exists, anyone who is part of the `roadie-tech-insights-admin` group will have write access to Tech Insights.
+If it exists, anyone who is part of the `roadie-tech-insights-admin` group in Roadie will have write access to Tech Insights.
 
 
 ## Disabling Roadie Tech Insights
