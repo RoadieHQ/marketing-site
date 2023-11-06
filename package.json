@@ -98,6 +98,7 @@
     "url": "git+https://github.com/RoadieHQ/marketing-site.git"
   },
   "scripts": {
+    "prebuild": "bash bin/fetch_api_docs.sh",
     "build": "yarn run clean && gatsby build",
     "tech-docs:build": "bash bin/convert_tech_docs.sh",
     "tech-docs:clean": "rm -rf roadie-tech-docs",
