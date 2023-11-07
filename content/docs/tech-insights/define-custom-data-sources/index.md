@@ -34,7 +34,7 @@ _HTTP via Integration_ data source exposes the same functionality as plain HTTP 
 
 ### Component repository file
 
-Component repository file provider reaches out to the source location of an entity for data. This allows you to for example retrieve individual files from the GitHub repository where your entity is located. The supported data types are JSON, YAML as well as other file types. JSON and YAML types allow for well structured response extraction patterns, whereas other file types can be parsed using regex.
+Component repository file provider reaches out to the source location of an entity for data. This allows you to for example retrieve individual files from the GitHub repository where your entity is located. The supported data types are JSON, YAML as well as other file types. JSON and YAML types allow for well-structured response extraction patterns, whereas other file types can be parsed using regex.
 
 ### Entity Definition
 
@@ -83,7 +83,7 @@ To be able to expose a specific Google Sheet to your generated Service Account k
    2. _path extension:_ The path to append to the proxy URL to which the HTTP call should be made. There is basic support for templating entity values into the path. E.g. `etc/{{ metadata.name }}` would insert the name of the entity. The path extension should be input without the preceding slash.
    3. _HTTP Method:_ The HTTP method to use for the request. Mostly this will be `GET` but `POST` is also supported for graphQL and other endpoints which take query params through the request body.
    4. _Body:_ For POST requests you can also send a body. Templating is also supported in the request body in the same way as above.
-2. For _HTTP via Integration_ type you only need to set the _path extension_. The path to append to the base URL of the ingeration to which the HTTP call should be made. There is basic support for templating entity values into the path. E.g. `etc/{{ metadata.name }}` would insert the name of the entity. The path extension should be input without the preceding slash.
+2. For _HTTP via Integration_ type you only need to set the _path extension_. The path to append to the base URL of the integration to which the HTTP call should be made. There is basic support for templating entity values into the path. E.g. `etc/{{ metadata.name }}` would insert the name of the entity. The path extension should be input without the preceding slash.
 3. For _Component repository file_ configure the path to the file you want to extract data from in repositories, starting from the root. This can be anything from JSON files to YAML files.
 4. For _Component repository_ configure the root folder where you want to list files from. To identify the repository root, you can use `.`.
 5. For _Spreadsheet_, configure the provider, sheet id and a sheet range/tab name of the values you want to retrieve
@@ -155,7 +155,7 @@ Below are few useful recipes that can be helpful when creating custom data sourc
 
 ### JSONata
 
-JSONata syntax is a powerful tool that allows you to do manipulation, arithmetic as well as grouping and other transformations to the returned data. You can see all applicable functions and approaches from the [JSONata documentation site](https://docs.jsonata.org/overview). Sometimes it might be useful to iterate faster by using the [JSONata online editor](https://try.jsonata.org/) to see possible transformations to the returned data.
+JSONata is a powerful tool that allows you to do manipulation, arithmetic as well as grouping and other transformations to the returned data. You can see all applicable functions and approaches from the [JSONata documentation site](https://docs.jsonata.org/overview). Sometimes it might be useful to iterate faster by using the [JSONata online editor](https://try.jsonata.org/) to see possible transformations to the returned data.
 
 Below are few commonly used recipes that could be helpful.
 
@@ -282,3 +282,16 @@ You can set up the broker connection by using `/broker` proxy configuration and 
 With this kind of set up the Tech Insights data source engine uses a broker connection identified by `my-broker-token` and calls an endpoint `/api/get-my-metrics` via the established broker connection. This configuration matches the mock `accept.json` file seen above, meaning that the Tech Insights data source calls an internal service on internal network hosted under address `http://metrics-server.internal.our-company.com/api/get-my-metrics` and returns response from there. This response can then be mapped to more streamlined and easily usable fact data using the JSONata extractor functionality.  
 
 
+### Pushing facts to a Data Source
+
+Roadie also provides and API which can be used to push data to populate Data Source facts. To be able to use this API, you need a Roadie API token and a defined Data Source which provides the *schema* of the structure of the data to be stored. You can contact Roadie for an API token. A Data Source can be either a built-in Data Source or one of the custom-built ones, all of them have a schema defined by default.
+
+Each fact constructed by Roadie or pushed to Roadie needs to contain at least 4 properties of information. These properties are:
+* Data Source identifier - The id of the container, and the schema provided by the container that these facts belong to
+* Timestamp - The temporal value when these facts were retrieved or produced
+* Entity - A reference to an entity in Roadie system that these facts are tied to
+* Facts - A collection of the actual fact values that are stored
+
+A common example to prefer a push based model to construct and provide facts is to use the internal CI pipeline to collect, construct or provide fact values that need to be stored against Roadie entities. Some such facts could be items like "Code Coverage", "CodeQL Analysis Result" or "Build Duration". 
+
+The API endpoint and documentation on expected parameters and request body shapes can be found from the Roadie API documentation.
