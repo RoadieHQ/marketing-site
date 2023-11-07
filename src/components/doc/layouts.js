@@ -49,4 +49,10 @@ export const DOCS_LAYOUTS = [
     isActiveMatch: '/docs/details',
     sidebarNavItemGroups: [sidebar.nav[3]],
   },
+  {
+    tabLabel: 'Roadie API Docs',
+    startPath: '/docs/openapi',
+    isActiveMatch: '/docs/openapi',
+    sidebarNavItemGroups: [sidebar.nav[8]],
+  },
 ];
