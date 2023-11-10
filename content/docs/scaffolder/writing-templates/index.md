@@ -1890,7 +1890,7 @@ This error is referring to actions that interact GitHub. It means that the Roadi
 
 Full error message: `Pull request creation failed; caused by HttpError: You have exceeded a secondary rate limit. Please wait a few minutes before you try again. If you reach out to GitHub Support for help, please include the request ID`
 
-This happens when you try to make a PR to Github with too many files in the PR, triggering a Secondary rate limit in Github's api. 
+This happens when you try to make a PR to Github with too many files in the PR, triggering a Secondary rate limit in Github's api. This is currently an issue with the open source action [explained in detail here](https://github.com/backstage/backstage/issues/17188).
 
 This often happens when using the action in combination with a preceding `fetch:plain` action that pulls a full existing repository down, so that some files can be changed. 
 
@@ -1911,7 +1911,7 @@ steps:
   then in the publish step you can add the input parameter: sourcePath: ./subdirectory
 ```
 
-This then creates a PR with only the changed files rather than the full duplicated repo. 
+This then creates a PR with only the changed files rather than the full duplicated repo.
 
 ### Using a user's Github Token to execute template steps
 
