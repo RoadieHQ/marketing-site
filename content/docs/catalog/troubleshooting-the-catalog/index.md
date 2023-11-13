@@ -4,15 +4,13 @@ publishedDate: '2022-05-17T21:00:00.0Z'
 description: How to resolve issues getting data into the catalog
 ---
 
-## About Locations
+## Debug what's happened to an entity
 
-The Backstage catalog uses location entities to point to external sources which define entities. Roadie will
+The Backstage catalog maps entities you add to the place where they were added from using "Location" entities to point to the external sources. Roadie will generally 
 update your entities in Backstage whenever one of the repositories defined in a location is updated.
 
-While locations are themselves entities they are generally considered internal to the workings of Backstage and not part
-of your catalog (though you may need to create locations directly in some use cases).
-
-## Using the Locations log
+Locations entities are generally considered internal to the workings of Backstage and not part of your catalog (though you may 
+need to create locations directly in some use cases).
 
 The locations log provides information on the scheduling of the catalog refresh cycle and surfaces any errors.
 
@@ -45,7 +43,8 @@ table by this column by clicking on the column header to view rows with errors.
 Viewing a particular entry you can view the list of errors, the raw entity data and also the processed entity (if available).
 You can use this information to diagnose and fix errors with catalog info YAML files.
 
-## Common Errors
+
+## Common Issues
 
 ### Entity stopped updating after moved/renamed catalog file
 
@@ -62,6 +61,14 @@ If you end up in such a situation you have an option to remove the individual st
    ![Unregister dialog popup with advanced settings open](./unregister_dialog.png)
 
 This will unregister the individual entity without affecting other entities or locations in the same discovery tree. The moved/renamed catalog manifest file will be then picked up on the catalog refresh loop.
+
+### My entity still points to the old repository after renaming the repository
+
+If you changed the name of your repository, Backstage by default relies on GitHub's redirect approach for renamed repos.
+This means it will not update the repository url associated with your entity.
+
+You can clean this up by [deleting the entity](https://roadie.io/docs/catalog/unregister-components/#manually-ingested-entities) and re-importing it manually using the new url.
+
 
 ### Processor BuiltinKindsEntityProcessor threw an error while validating the entity
 
