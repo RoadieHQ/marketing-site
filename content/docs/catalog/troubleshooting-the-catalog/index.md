@@ -65,7 +65,7 @@ This will unregister the individual entity without affecting other entities or l
 ### My entity still points to the old repository after renaming the repository in GitHub
 
 If you changed the name of your repository, Backstage by default relies on GitHub's redirect approach for renamed repos.
-This means it will not update the repository url associated with your entity.
+This means it will not update the repository URL associated with your entity.
 
 You can clean this up by [deleting the entity](/docs/catalog/unregister-components/#manually-ingested-entities) and re-importing it manually using the new url.
 
