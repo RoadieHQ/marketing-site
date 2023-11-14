@@ -62,7 +62,7 @@ If you end up in such a situation you have an option to remove the individual st
 
 This will unregister the individual entity without affecting other entities or locations in the same discovery tree. The moved/renamed catalog manifest file will be then picked up on the catalog refresh loop.
 
-### My entity still points to the old repository after renaming the repository
+### My entity still points to the old repository after renaming the repository in GitHub
 
 If you changed the name of your repository, Backstage by default relies on GitHub's redirect approach for renamed repos.
 This means it will not update the repository url associated with your entity.
