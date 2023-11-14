@@ -34,6 +34,8 @@ However, if you want to grant write access to the feature to some users, but do 
 
 If it exists, anyone who is part of the `roadie-tech-insights-admin` group in Roadie will have write access to Tech Insights.
 
+⚠️ If you are using GitHub Teams to manage your user groups, please note that it can take some time for Roadie to refresh the list of teams from GitHub teams once the discovery location is added. If you do not see admin functions immediately, please wait a few minutes and try again.
+
 
 ## Disabling Roadie Tech Insights
 
