@@ -93,7 +93,7 @@ const BlogPostTemplate = ({ data }) => {
         </header>
 
         <section
-          className="prose-xl prose-primary px-4 max-w-none max-w-lg mx-auto lg:max-w-3xl mb-24"
+          className="prose prose-primary max-w-none max-w-lg mx-auto lg:max-w-3xl mb-24"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>

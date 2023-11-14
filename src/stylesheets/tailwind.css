@@ -103,14 +103,3 @@ html {
   @apply list-disc;
   @apply pl-6;
 }
-
-.prose-xl a {
-  @apply border-b;
-  @apply border-orange-500;
-}
-.prose-xl a.anchor {
-  @apply border-0;
-}
-.prose-xl > ol {
-  @apply list-decimal;
-}
