@@ -5,12 +5,6 @@ description: Extending Roadie with your own custom plugins and functionality
 ---
 
 
----
-
-⚠️ Note that this functionality is in early preview
-
----
-
 Roadie provides customers with the ability to bring their own plugins, making it a highly customizable platform. With a tailored plugin interface and integration points, customers can seamlessly create custom functionalities fitting their specific requirements. Once developed, deploying plugins to Roadie is a straightforward process, facilitated by the platform's plugin management system. 
 
 Custom plugins are a feature of the [Growth Plan](/pricing/).
