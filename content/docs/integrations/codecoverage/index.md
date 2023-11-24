@@ -16,7 +16,7 @@ This page explains how to use it in Roadie Backstage.
 ## Prerequisites
 
 1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/create-admin-group/).
-2. You must have a code coverage report for your components in XML format.
+2. You must have a code coverage report for your components in XML format i.e. Cobertura, LCOV or JaCoCo.  See the plugin docs for [currently supported standards](https://www.npmjs.com/package/@backstage/plugin-code-coverage-backend#api).
 3. You must have access to the Roadie API and a valid API Key.
 
 ## Step 1: Upload your code coverage reports into Roadie
