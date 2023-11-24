@@ -2,58 +2,58 @@
 title: Code Coverage Plugin
 publishedDate: '2023-11-04T14:00:00.0Z'
 description: How to use the Code Coverage plugin on Roadie.
-
-humanName: Codecoverage
-logoImage: '../../../assets/logos/allure/allure-logo.png'
+humanName: Code Coverage
+logoImage: '../../../assets/logos/code/code.png'
 integrationType: OSS plugin
 ---
 
 ## Introduction
 
-The Code Coverage plugin can display the Code Coverage reports of the component in your Roadie Backstage catalog.
-
-![Example image showing Allure test report](./allure-report-img.png)
+The Code Coverage plugin can display the Code Coverage summaries of the components in your Roadie Backstage catalog.
 
 This page explains how to use it in Roadie Backstage.
 
 ## Prerequisites
 
 1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/create-admin-group/).
-2. Your Allure reports must be accessible by Roadie backend instances. To allow list Roadie access you can check our IPs [here](/docs/details/allowlisting-roadie-traffic/).
+2. You must have a code coverage report for your components in XML format.
+3. You must have access to the Roadie API and a valid API Key.
 
+## Step 1: Upload your code coverage reports into Roadie
 
-## Step 1: Save your hosted Allure report URL into Roadie
+Send a POST request via the Roadie HTTP API with your report for an entity like so:
 
-Navigate to `Administration > Settings > Allure` and set up the URL where your Allure reports are hosted. Note that this URL needs to be accessible from Roadie backend.
+```bash
+export ENTITY=sample-service
+export ROADIE_API_TOKEN='abcd'
+curl -X POST "https://api.roadie.so/api/code-coverage/report?entity=component:default/$ENTITY&coverageType=cobertura" \
+-H "Content-Type:text/xml" \
+-H "Authorization: Bearer $ROADIE_API_TOKEN" \
+-d @cobertura.xml 
+```
 
-![An input box indicating Allure baseurl value](./config-img.png)
+Note that you can also change the entity type and namespace in the url query parameters.
 
-## Step 2: Modify your catalog-info.yaml files to contain a reference to the Allure project 
+See more examples for different code-coverage reports [here](https://www.npmjs.com/package/@backstage/plugin-code-coverage-backend#api)
+
+NB: This should probably be run as part of a CI workflow when deploying changes to a service.
+
+## Step 2: Modify your catalog-info.yaml files to tell it to try and fetch the code-coverage report from Roadie
 
 ```yaml
 # catalog-info.yaml
 ...
 metadata:
-  annotations: 
-    qameta.io/allure-project: projectname
+  annotations:
+    backstage.io/code-coverage: enabled
 ...
 ```
 
-## Step 3: Add Allure Report UI component to your Roadie instance
+## Step 3: Add the Codecoverage UI component to your Roadie instance
 
-The plugin provides an UI component with a name `EntityAllureReportContent` which can be added as a tab into your Roadie instance. Learn how to do that in [here](/docs/details/updating-the-ui/). 
-
-## Useful information
-
-The Allure plugin constructs the displayable path based on the *base URL* defined in Roadie config section and *project id* defined in the catalog manifest file. The final URL requested by the plugin looks like this: 
-```text
-<Base URL>/projects/<Project Id>/reports/latest/index.html
-```
-
+The plugin provides an UI component with a name `EntityCodeCoverageContent` which can be added as a tab to entities in your Roadie instance. Learn how to do that in [here](/docs/details/updating-the-ui/).
 
 
 ## References
 
-- [Allure reports documentation](https://docs.qameta.io/allure/)
-- [Allure plugin on NPM](https://www.npmjs.com/package/@backstage/plugin-allure)
-- [Allure Docker Service documentation](https://github.com/fescobar/allure-docker-service)
+- [Code Coverage Plugin documentation](https://www.npmjs.com/package/@backstage/plugin-code-coverage)
