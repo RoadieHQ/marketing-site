@@ -8,6 +8,8 @@ logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plu
 integrationType: OSS plugin
 ---
 
+![GitHub Pull Requests Board Plugin](./github-pr-board.png)
+*Image Credit: Talita Gregory Nunes Freire*
 ## Introduction
 
 The GitHub Pull Requests Board Plugin shows an overview of a Group's open pull requests. 
