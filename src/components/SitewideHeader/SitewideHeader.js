@@ -12,6 +12,7 @@ const SitewideHeader = () => {
       <TopBanner>
         <WhitepaperVs />
       </TopBanner>
+
       <header className='Header'>
         <div className="position-absolute">
           <Logo />
