@@ -7,6 +7,8 @@ logoImage: '../../../assets/logos/code/code.png'
 integrationType: OSS plugin
 ---
 
+![CodeCoverage Plugin Screenshot](./codecoverage.png)
+
 ## Introduction
 
 The Code Coverage plugin can display the Code Coverage summaries of the components in your Roadie Backstage catalog.
