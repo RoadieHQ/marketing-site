@@ -24,6 +24,7 @@ nav:
       - Catalog graph: '/docs/integrations/catalog-graph/'
       - CircleCI: '/docs/integrations/circleci/'
       - Confluence: '/docs/integrations/confluence/'
+      - CodeCoverage: '/docs/integrations/codecoverage/'
       - Datadog: '/docs/integrations/datadog/'
       - FireHydrant: '/docs/integrations/firehydrant/'
       - Google Calendar: '/docs/integrations/gcalendar/'
