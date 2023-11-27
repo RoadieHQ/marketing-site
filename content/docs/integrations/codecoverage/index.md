@@ -24,15 +24,14 @@ This page explains how to use it in Roadie Backstage.
 Send a POST request via the Roadie HTTP API with your report for an entity like so:
 
 ```bash
-export ENTITY=sample-service
 export ROADIE_API_TOKEN='abcd'
-curl -X POST "https://api.roadie.so/api/code-coverage/report?entity=component:default/$ENTITY&coverageType=cobertura" \
+export ENTITY_REF="component:default/sample-service"
+export COVERAGE_TYPE='cobertura'
+curl -X POST "https://api.roadie.so/api/code-coverage/report?entity=$ENTITY_REF&coverageType=$COVERAGE_TYPE" \
 -H "Content-Type:text/xml" \
 -H "Authorization: Bearer $ROADIE_API_TOKEN" \
 -d @cobertura.xml 
 ```
-
-Note that you can also change the entity type and namespace in the url query parameters.
 
 See more examples for different code-coverage reports [here](https://www.npmjs.com/package/@backstage/plugin-code-coverage-backend#api)
 
