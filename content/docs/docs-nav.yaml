@@ -29,6 +29,7 @@ nav:
       - FireHydrant: '/docs/integrations/firehydrant/'
       - Google Calendar: '/docs/integrations/gcalendar/'
       - GitHub Deployments: '/docs/integrations/github-deployments/'
+      - GitHub Pull Requests Board: '/docs/integrations/github-pull-request-board'
       - Grafana: '/docs/integrations/grafana/'
       - Harness: '/docs/integrations/harness'
       - Home Page: '/docs/integrations/home-page'
