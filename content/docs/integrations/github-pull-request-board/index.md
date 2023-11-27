@@ -1,0 +1,32 @@
+---
+title: GitHub Pull Requests Board Plugin
+publishedDate: '2023-11-27T14:00:00.0Z'
+description: How to add the GitHub Pull Requests Board plugin to Roadie.
+
+humanName: GitHub Pull Requests Board
+logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
+integrationType: OSS plugin
+---
+
+## Introduction
+
+The GitHub Pull Requests Board Plugin shows an overview of a Group's open pull requests. 
+
+It will show PRs in any repositories connected to entities in Roadie Backstage that are owned by the Group.
+
+This page explains how to configure it in Roadie Backstage.
+
+## Prerequisites
+
+1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/create-admin-group/).
+2. You must have the [Roadie GitHub app installed](/docs/getting-started/install-github-app/) in your GitHub organisation.
+3. You must have [Groups in the catalog](/docs/getting-started/teams/#creating-users-and-groups) with [owned entities](https://backstage.io/docs/features/software-catalog/descriptor-format/#specowner-required) connected to them. 
+
+## Step 1: Add the Plugin to the Group view in Roadie
+
+The plugin provides an UI component with a name `EntityTeamPullRequestsCard` which can be added as a tab into your Roadie Groups. Learn how to do that in [here](/docs/details/updating-the-ui/).
+
+
+## References
+
+- [GitHub Pull Request Plugin in GitHub](https://github.com/backstage/backstage/tree/master/plugins/github-pull-requests-board)
