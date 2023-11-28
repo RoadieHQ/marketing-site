@@ -457,10 +457,26 @@ You can read more about parameter configuration in the official backstage docs [
 
 Steps define the actions that are taken by the scaffolder template when it is run as a task. The scaffolder initially creates a temporary directory referred to as the _workspace_, in which files are downloaded, generated, updated and pushed to some external system. Each step that is defined is run in order.
 
-Parameters taken from the user earlier may be used in the action steps using the syntax `${{ parameters.name }}`.
+### Step Inputs
 
-### Step Outputs
+#### Parameter Values
 
+You can refer to the value of a parameter using the syntax `${{ parameters["name"] }}`
+
+e.g.
+
+```yaml
+steps:
+  - id: log-message
+    name: Log Message
+    action: debug:log
+    input:
+      message: 'Hello, ${{ parameters["name"] }}'
+```
+
+If the parameter id does not contain a special character you can also refer to it using the dot syntax `${{ parameters.name }}`
+
+#### Outputs from previous steps
 You can refer to the output of a previous step using the following syntax:
 
 ```yaml
@@ -473,18 +489,24 @@ If the step id does not contain a special character you can also refer to it usi
 ${{ steps.publish.output.repoContentsUrl }}
 ```
 
-### Parameter Values
+#### Accessing the logged in user
 
-You can refer to the value of a parameter using the following syntax:
+You can refer to the user entity reference for the logged in user using the following syntax:
 
 ```yaml
-${{ parameters["name"] }}
+${{ user.ref }}
 ```
 
-If the parameter id does not contain a special character you can also refer to it using the dot syntax.
+If this entity reference [exists in the backstage catalog](/docs/getting-started/teams/), you can also make use of the details contained within the users entity by using the following:
 
 ```yaml
-${{ parameters.name }}
+${{ user.entity.metadata.name }}
+```
+
+or access the details contained within the user's profile.
+
+```yaml
+${{ user.entity.spec.profile.email }}
 ```
 
 ### `fetch:plain`
