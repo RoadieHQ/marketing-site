@@ -497,7 +497,7 @@ You can refer to the user entity reference for the logged in user using the foll
 ${{ user.ref }}
 ```
 
-If this entity reference [exists in the backstage catalog](/docs/getting-started/teams/), you can also make use of the details contained within the users entity by using the following:
+If this entity reference [exists in the Backstage Catalog](/docs/getting-started/teams/), you can also make use of the details contained within the users entity by using the following:
 
 ```yaml
 ${{ user.entity.metadata.name }}
