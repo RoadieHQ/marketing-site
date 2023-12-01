@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Source\\ Sans\\ 3', ...defaultTheme.fontFamily.sans],
+        sans: ['Soehne', ...defaultTheme.fontFamily.sans],
         highlight: ['Montserrat', 'Source\\ Sans\\ 3', ...defaultTheme.fontFamily.sans],
       },
       letterSpacing: {

@@ -66,6 +66,8 @@
     "react-tabs": "^4.2.1",
     "react-use": "^17.2.4",
     "remark-html": "^13.0.2",
+    "swagger-ui": "^5.9.1",
+    "swagger-ui-dist": "^5.9.1",
     "tailwindcss": "^3.0.7"
   },
   "devDependencies": {
@@ -96,6 +98,7 @@
     "url": "git+https://github.com/RoadieHQ/marketing-site.git"
   },
   "scripts": {
+    "prebuild": "bash bin/fetch_api_docs.sh",
     "build": "yarn run clean && gatsby build",
     "tech-docs:build": "bash bin/convert_tech_docs.sh",
     "tech-docs:clean": "rm -rf roadie-tech-docs",

@@ -5,12 +5,6 @@ description: Extending Roadie with your own custom plugins and functionality
 ---
 
 
----
-
-⚠️ Note that this functionality is in early preview
-
----
-
 Roadie provides customers with the ability to bring their own plugins, making it a highly customizable platform. With a tailored plugin interface and integration points, customers can seamlessly create custom functionalities fitting their specific requirements. Once developed, deploying plugins to Roadie is a straightforward process, facilitated by the platform's plugin management system. 
 
 Custom plugins are a feature of the [Growth Plan](/pricing/).
@@ -89,7 +83,7 @@ The plugins developed for Roadie can range from simple React components to small
 When using the Roadie provided template, you can also build and test the plugins in standalone mode using the standard test frameworks.  
 
 * To test out `Page` type plugins, use the [**Sandbox**](/docs/details/sandbox-mode/) pages, located in `https://<your-tenant>.roadie.so/administration/admin-sandbox`
-* To test out `Card` or `Content` type plugins, use [**Preview Entities**](/docs/details/previewing-changes/#using-the-entity-preview-page) that can be configured in `https://<your-tenant>.roadie.so/tools/entity-preview`
+* To test out `Card` or `Content` type plugins, use [**Preview Entities**](/docs/details/previewing-changes/#using-the-entity-preview-page) that can be configured in `https://<your-tenant>.roadie.so/import/entity-preview`
 
 
 ### Plugin Maintenance

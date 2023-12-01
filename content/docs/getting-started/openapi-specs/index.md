@@ -71,7 +71,7 @@ spec:
 
 The `API` kind can take many of the normal `spec` properties such as `owner` and `lifecycle`.
 
-The `spec.definition.$openapi` property can point to a remote URL or it can be a relative path to the spec next to the API entity.
+The `spec.definition.$openapi` property can point to a remote URL or it can be a relative path to the spec next to the API entity i.e. `./avro/internal/SomeEvent.yaml`.
 
 _Note that if you are hosting your OpenAPI specs in GitHub and referencing them with the $openapi property, the link must point to the URL starting with `https://github.com` and not `https://raw.githubusercontent.com`._
 
@@ -89,7 +89,7 @@ spec:
 
 Once this YAML file is committed and available on GitHub, you can make Roadie Backstage aware of it using the catalog importer.
 
-Copy the URL of the YAML spec on GitHub, paste it into the catalog importer at `https://your-company.roadie.so/catalog-import` and click Analyze.
+Copy the URL of the YAML spec on GitHub, paste it into the catalog importer at `https://your-company.roadie.so/import/entity` and click Analyze.
 
 ![an input with a GitHub URL pasted into it. There is a button labelled analyze](./catalog-import-select-url.png)
 

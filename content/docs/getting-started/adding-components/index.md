@@ -45,7 +45,7 @@ spec:
 
 ## Step 2: Import Your Component YAML file into Backstage
 
-Components can be manually added to Backstage by using the catalog importer available at `/catalog-import`. 
+Components can be manually added to Backstage by using the catalog importer available at `/import/entity`. 
 
 To do this, simply copy/paste the URL of the YAML file into the importer (see video below).
 

@@ -5,7 +5,7 @@ import kebabCase from 'lodash/kebabCase';
 const CodeBlock = ({ language, code, intro, sectionId }) => (
   <div id={sectionId && `section-${sectionId}`}>
     {intro && intro !== '' && (
-      <div className="prose-xl prose-primary" dangerouslySetInnerHTML={{ __html: intro.trim() }} />
+      <div className="prose prose-primary" dangerouslySetInnerHTML={{ __html: intro.trim() }} />
     )}
 
     {code && code !== '' && (

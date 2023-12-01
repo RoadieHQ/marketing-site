@@ -29,7 +29,7 @@ A Scaffolder template is a configurable process that will run one or more Scaffo
 
 Templates are defined by a Backstage Entity YAML file with a `Template` kind and imported into the Backstage catalog. You can create multiple templates, each of which can perform a different set of steps. For example, you can have one template that creates a React application, and another that creates a serverless app.
 
-Template YAML input forms can be tested at `/tools` using a live template preview viewer.
+Template YAML input forms can be tested at `/templates/edit` using a live template preview viewer.
 
 ![preview-template](./template-preview-tool.png)
 
@@ -102,10 +102,26 @@ The spec field contains `owner` and `type`. Owner refers to the Backstage group 
 
 Steps define the actions that are taken by the scaffolder template when it is run as a task. The scaffolder initially creates a temporary directory referred to as the _workspace_, in which files are downloaded, generated, updated and pushed to some external system. Each step that is defined is run in order.
 
-Parameters taken from the user earlier may be used in the action steps using the syntax `${{ parameters.name }}`.
+### Step Inputs
 
-### Step Outputs
+#### Parameter Values
 
+You can refer to the value of a parameter using the syntax `${{ parameters["name"] }}`
+
+e.g.
+
+```yaml
+steps:
+  - id: log-message
+    name: Log Message
+    action: debug:log
+    input:
+      message: 'Hello, ${{ parameters["name"] }}'
+```
+
+If the parameter id does not contain a special character you can also refer to it using the dot syntax `${{ parameters.name }}`
+
+#### Outputs from previous steps
 You can refer to the output of a previous step using the following syntax:
 
 ```yaml
@@ -118,18 +134,24 @@ If the step id does not contain a special character you can also refer to it usi
 ${{ steps.publish.output.repoContentsUrl }}
 ```
 
-### Parameter Values
+#### Accessing the logged in user
 
-You can refer to the value of a parameter using the following syntax:
+You can refer to the user entity reference for the logged in user using the following syntax:
 
 ```yaml
-${{ parameters["name"] }}
+${{ user.ref }}
 ```
 
-If the parameter id does not contain a special character you can also refer to it using the dot syntax.
+If this entity reference [exists in the Backstage Catalog](/docs/getting-started/teams/), you can also make use of the details contained within the users entity by using the following:
 
 ```yaml
-${{ parameters.name }}
+${{ user.entity.metadata.name }}
+```
+
+or access the details contained within the user's profile.
+
+```yaml
+${{ user.entity.spec.profile.email }}
 ```
 
 ### `fetch:plain`
@@ -1439,7 +1461,7 @@ steps:
 
 You can find all the actions available to your Backstage instance by visiting the following page from within Backstage:
 
-`https://<tenant-name>.roadie.so/create/actions`
+`https://<tenant-name>.roadie.so/templates/actions`
 
 ## Advanced
 
@@ -1514,19 +1536,83 @@ Testing of templates is not well supported in Backstage currently, mostly due to
 
 A limited set of functionality exists to preview and edit parameters in a sandbox, and dry-run templates (skipping steps that perform mutations).
 
-You can find these features at `/create/edit`.
+You can find these features at `/import/entity-preview`.
 
-It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/register-existing-component` using the version on a published feature branch.
+It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/import/entity` using the version on a published feature branch.
 This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test.
 
 ## Troubleshooting
 
 Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
 
-Template YAML input forms can also be tested at `/tools` using a live template preview viewer which speeds up the testing cycle.
+Template YAML input forms can also be tested at `/templates/edit` using a live template preview viewer which speeds up the testing cycle.
 
 ![preview-template](./template-preview-tool.png)
 
 ### Resource not accessible by integration
 
 This error is referring to actions that interact GitHub. It means that the Roadie GitHub app is unable to read, create or update the resource/s that are being touched by the Scaffolder step.
+
+### Pull request creation failed; caused by HttpError: You have exceeded a secondary rate limit - `publish:github:pull-request`
+
+Full error message: `Pull request creation failed; caused by HttpError: You have exceeded a secondary rate limit. Please wait a few minutes before you try again. If you reach out to GitHub Support for help, please include the request ID`
+
+This happens when you try to make a PR to Github with too many files in the PR, triggering a Secondary rate limit in Github's api. This is currently an issue with the open source action [explained in detail here](https://github.com/backstage/backstage/issues/17188).
+
+This often happens when using the action in combination with a preceding `fetch:plain` action that pulls a full existing repository down, so that some files can be changed. 
+
+The way around this is, if you know the specific files you want to be contained in the pull request, you should move those files into a subdirectory using the `fs:rename` step after the `fetch:plain` step.
+ i.e.
+
+```
+steps:
+- action: fs:rename
+  id: rename-files
+  name: Rename files
+  input:
+  files:
+  - from: file1
+  to: subdirectory/file1
+  - from: file2
+  to: subdirectory/file2
+  then in the publish step you can add the input parameter: sourcePath: ./subdirectory
+```
+
+This then creates a PR with only the changed files rather than the full duplicated repo.
+
+### Using a user's Github Token to execute template steps
+
+You can use the user that runs the scaffolder template to open a PR or other Github based actions rather than opening it on behalf of the Roadie Github App by specifying the token field.
+The token must first be injected via the parameters by the RepoUrlPicker parameter as documented [here](https://backstage.io/docs/features/software-templates/writing-templates#using-the-users-oauth-token)
+
+```yaml
+parameters:
+  - title: Choose a location
+    required:
+      - repoUrl
+    properties:
+      repoUrl:
+        title: Repository Location
+        type: string
+        ui:field: RepoUrlPicker
+        ui:options:
+          # Here's the option you can pass to the RepoUrlPicker
+          requestUserCredentials:
+            secretsKey: USER_OAUTH_TOKEN
+            additionalScopes:
+              github:
+                - workflow
+          allowedHosts:
+            - github.com
+steps:
+  - action: publish:github:pull-request
+    id: create-pull-request
+    name: Create a pull request
+    input:
+      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
+      branchName: ticketNumber-123
+      title: 'Make some changes to the files'
+      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
+      # here's where the secret can be used
+      token: ${{ secrets.USER_OAUTH_TOKEN }}
+```

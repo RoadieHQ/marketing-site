@@ -10,7 +10,7 @@ This tutorial will show you how to create a basic scaffolder template in Backsta
 
 **You can find detailed docs on writing scaffolder templates [here](/docs/details/scaffolder/).**
 
-The Roadie Backstage scaffolder is a feature that allows you to define software templates to create new software projects, update existing ones or simply perform repeated tasks in a consistent manner.
+The Roadie Backstage Scaffolder is a feature that allows you to define software templates to create new software projects, update existing ones or simply perform repeated tasks in a consistent manner.
 
 Scaffolder templates are defined in YAML files and loaded into the Backstage catalog in the same way that other entities are loaded into Backstage. A template contains one or more `steps` which run sequentially during execution.
 
@@ -18,7 +18,7 @@ A Scaffolder template is then run on demand by the users of Backstage to execute
 
 ## Prerequisite 
 
-You must have installed the Github App in order to use the scaffolder. If you have not done this you can find the steps to do this [here](/docs/getting-started/install-github-app/).
+You must have installed the GitHub App in order to use the Scaffolder. If you have not done this you can find the steps to do this [here](/docs/getting-started/install-github-app/).
 
 ## Steps
 
@@ -26,13 +26,13 @@ You can either follow the text or the video, or both.
 
 <div style="position: relative; padding-bottom: 52.42718446601942%; height: 0;"><iframe src="https://www.loom.com/embed/da6159c4ca39458cb5ad03138612a5a3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-### Step One. Enable and set up the scaffolder
+### Step 1. Enable and set up the scaffolder
 
 Visit the `Administration > Settings > Scaffolder` and make sure the enabled check box is selected, press save and apply and restart. 
 
 Optionally you can also use the grouping functionality of Scaffolder templates from these settings. The scaffolder templates are grouped together if they contain tags defined in this section of settings.
 
-### Step Two. Create a template.yaml file in a repository
+### Step 2. Create a template.yaml file in a repository
 
 You can either create the following file in your own repository or [use the public example](https://github.com/RoadieHQ/sample-service/blob/main/demo_template.yaml) we prepared. 
 
@@ -75,31 +75,28 @@ spec:
 
 </details>
 
-### Step Three. Import the template.yaml file into backstage
+### Step 3. Import the template.yaml file into backstage
 
-Click the "Create..." button in the Backstage menu.
+Click the "Import" button in the Backstage menu.
 
-![scaffolder-link.png](./scaffolder-link.png)
-
-In the "Create a New Component" page, click the "Register Existing Component" button
-![register-new-component.png](./register-new-component.png)
+![import-side-menu.png](./import-side-menu.png)
 
 Enter the URL of the template that you created in Step Two.
 ![create-existing-component.png](./create-existing-component.png)
 
 Click Analyze, and Import.
 
-### Step Four. Run the template
+### Step 4. Run the template
 
-Visit the "Create a New Component" page again by clicking the "Create..." menu item.
+Visit the Scaffolder templates page by clicking the "Templates" menu item.
 
-![scaffolder-link.png](./scaffolder-link.png)
+![templates-side-menu.png](./templates-side-menu.png)
 
 You should see the template that you have just imported. Click the choose button.
 
 ![choose-template.png](./choose-template.png)
 
-Enter a the required parameters and click "Next Step" and then "Create"
+Enter the required parameters and click "Next Step" and then "Create"
 
 ![enter-paramaters.png](./enter-paramaters.png)
 
@@ -109,6 +106,6 @@ After a couple of seconds you should see the "Task Activity" page with the outpu
 
 ## What Next? 
 
-You can see the full list of Scaffolder Tasks that we support at Roadie by visiting `https://<tenant-name>.roadie.so/create/actions`
+You can see the full list of Scaffolder Tasks that we support at Roadie by visiting `https://<tenant-name>.roadie.so/templates/actions`
 
 You can find detailed docs on writing scaffolder templates [here](/docs/details/scaffolder/).

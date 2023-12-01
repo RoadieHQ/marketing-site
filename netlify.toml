@@ -81,7 +81,7 @@
 
 [[redirects]]
   from = "/docs/integrations/required-annotations/"
-  to = "/docs/details/required-annotations/"
+  to = "/docs/details/required-metadata/"
   force = true
 
 [[redirects]]
@@ -131,5 +131,50 @@
 [[redirects]]
   from = "/docs/custom-plugins/proxy/"
   to = "/docs/custom-plugins/connectivity/proxy/"
+  force = true
+
+[[redirects]]
+  from = "/docs/integrations/home-page-markdown/"
+  to = "/docs/integrations/markdown-card/"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/location-management/"
+  to = "/docs/catalog/location-management/"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/showing-dependencies/"
+  to = "/docs/catalog/showing-dependencies/"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/decorating-components/"
+  to = "/docs/catalog/decorating-components/"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/unregister-components/"
+  to = "/docs/catalog/unregister-components/"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/previewing-changes/"
+  to = "/docs/catalog/previewing-changes/"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/troubleshooting-the-catalog/"
+  to = "/docs/catalog/troubleshooting-the-catalog/"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/validator/"
+  to = "/docs/catalog/validator/"
+  force = true
+
+[[redirects]]
+  from = "/docs/details/ownership/"
+  to = "/docs/catalog/ownership/"
   force = true
 

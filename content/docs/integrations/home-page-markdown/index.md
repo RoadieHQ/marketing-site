@@ -1,25 +1,36 @@
 ---
-title: Home Page Markdown Plugin
+title: Markdown Card Plugin
 publishedDate: '2022-03-01T10:00:00.0Z'
-description: How to enable the home page markdown plugin
+description: How to enable the markdown card plugin
 
-humanName: Home Page Markdown
+humanName: Markdown Card Plugin
 logoImage: '../../../assets/logos/home-page/home.png'
 integrationType: OSS plugin
 ---
 
 ## Introduction
 
-This is a plugin that renders a markdown file from github as a homepage componenet.
+Roadie provides two different versions of Markdown Card plugins that can be used to display content on either the [Home page](/docs/integrations/home-age) or [Catalog dashboard pages](/docs/details/updating-the-ui/#updating-dashboards). 
 
-It fetches the .md file from github on every load and caches it's content.
-To be able to see the rendered content make sure you are logged into github.
 
-## Setup
+#### OAuth Home Page Markdown Card
 
-To use this plugin make sure you already have the [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) enabled.
+This is a plugin that renders a markdown file from GitHub as a homepage component.
 
-### Add Markdown card to your homepage
+It fetches the .md file from GitHub on every load and caches it's content.
+To be able to see the rendered content make sure you are logged into GitHub.
+
+#### Roadie Markdown Card
+
+The Roadie Markdown Card provides the possibility to retrieve and display markdown content from sources that you have configured integrations for on your Roadie instance. To see available integrations, take a look at the integrations section on the [plugins page](/docs/integrations/). 
+
+Roadie Markdown Card can be enabled on both the Home Page as well as individual entity pages. 
+
+### Setup
+
+To use this plugin on the home page, make sure you already have the [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) enabled.
+
+#### Add Markdown Card to your homepage
 
 1.  To enable this plugin go to your `Home` page via the sidebar.
 
@@ -30,7 +41,7 @@ To use this plugin make sure you already have the [Backstage Home plugin](https:
 2.  Click the plus sign to add a new Card
     ![](add-card.png)
 
-3.  Select `HomePageMarkdown` from the list.
+3.  Select `HomePageMarkdown` or `HomePageMarkdownCard` from the list.
     ![](select-homepagemarkdown.png)
 
     Click add
@@ -39,9 +50,29 @@ To use this plugin make sure you already have the [Backstage Home plugin](https:
     You will see a similar error message for the added component, but do now worry, we need to configure the plugin to point to your markdown file. You'll see instructions in the next section
     ![](error.png)
 
-## Configure plugin via props
+#### Roadie Home Page Markdown Card - Configure plugin via props
 
-Now configure the props of the plugin to point to your desired location, where you'll host your makrdown file that will be rendered by this plugin.
+To configure the Roadie Home Page Markdown Card to point to your desired location, you need to add props to the Card configuration to point to a wanted Markdown file.
+
+1.  Click on the `wrench` icon to edit the props of the component.
+    ![](props.png)
+    Add the following JSON as props. The `path` prop supports URLs from integrations that you have configured on your Roadie instance. 
+
+    ```json
+    {
+      "path": "https://github.com/my-org/my-repo/my-markdown-file.md",
+      "title": "My Markdown Card"
+    }
+    ```
+
+2.  Click Save
+
+    Now it should load and render the markdown file you provided the path for.
+ 
+
+#### OAuth Markdown Card - Configure plugin via props
+
+To configure the OAuth Markdown card to point to your desired location, you need to add props to the Card configuration to point to a wanted Markdown file.
 
 1.  Click on the `wrench` icon to edit the props of the component.
     ![](props.png)
@@ -66,19 +97,11 @@ Now configure the props of the plugin to point to your desired location, where y
 
     Now it should load and render the markdown file you provided the path for.
 
-3.  Move and/or resize the card the way you see it fit
+#### Adding Markdown Card to Entity pages
 
-4.  Click Save
+To add Roadie Markdown Card to entity pages, you can follow similar steps as outlined above for the Homepage version. The Entity Markdown Card expects a single optional prop called `title` to display a title for the card.
 
-    Now the HomepageMarkdown component should be added to your home page.
 
-## Writing the markdown file for the homepage.
+The path of the Markdown file itself is configured in the entity as an annotation. To do this, add an annotation called `roadie.io/markdown-content` to the entity manifest. This annotation should point to a full, non-relative, path of a Markdown file.
 
-There is one important thing in the current version (1.1.1) of the plugin. You'll need to refer to resources (links & images) with absolute urls.
 
-```diff
-- ![](./docs/home-page-markdown.png)
-+ ![](https://github.com/RoadieHQ/roadie-backstage-plugins/raw/SC-7064-add-markdown-home-plugin/plugins/home/backstage-plugin-home-markdown/docs/home-page-markdown.png)
-```
-
-Make sure you replace `/blob/` with `/raw/` if you copy the file url from github

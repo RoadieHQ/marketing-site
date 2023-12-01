@@ -158,7 +158,7 @@ const PluginTemplate = ({ data }) => {
               )}
 
               <div
-                className="prose-xl prose-primary max-w-none"
+                className="prose prose-primary max-w-none"
                 dangerouslySetInnerHTML={{ __html: plugin.notes }}
               />
             </>
