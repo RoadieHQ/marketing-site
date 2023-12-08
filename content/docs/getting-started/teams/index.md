@@ -106,22 +106,12 @@ Click on the "Add" button beside "Configure Autodiscovery of teams and users". N
 
 In a few minutes you should start to see Groups and Users loaded into the catalog. When your users login to GitHub in Backstage, they will be associated with the teams that they are a member of in Backstage.
 
-#### Deprecation Notice:
+#### Using code owners
 
-To fully support using multiple Github orgs in Roadie Backstage we are switching to a different mechanism for ingesting groups from you Github orgs' team hierachy. 
+Roadie provides the ability to set the owner of entities from GitHub based on the configuration of code owners in GitHub. In order to enable this feature you can configure your entities with the following annotation.
 
-New discovery locations for Github teams will be added under the `github-multi-org` type. These will ingest teams using a namespace of your Github org rather than the default namespace. i.e. `group:roadiehq/engineering` rather than previously `group:default/engineering` 
-
-If you manually refer to teams in your Backstage `.yaml` files using the default namespace, you can leave the existing `github-org` locations as they are and nothing will change. 
-
-However, we recommend migrating to the new org namespaced groups as this fixes some bugs in admin management on Roadie Backstage as well as providing more clarity of the sourcing of your groups and teams.
-
-##### Migration guide:
-
-1. Search for all `group:default` code references across your Github orgs' Backstage yaml files that refer to teams sourced from your Github orgs. 
-2. Prepare PRs to modify these to reference the correct namespace for the Github org that these teams should be associated with or are sourced from. (In the case of manually defined Groups you can leave the default namespace.)
-3. Notify your users that you are migrating Groups to a new namespace system and ask them to merge the PRs by a specific day.
-4. Once the PRs changing group namespaces are merged, delete all the discovery locations in the GitHub integration settings page at `Administration > Settings > GitHub > Teams and Users` and wait up to 10 minutes for the cleanup to happen and for no groups to appear on the `/explore/groups` page.
-5. Add back the urls referencing the same Github orgs in the GitHub integration settings page. These will appear under the new `github-multi-org` type which will use your org name as a namespace. (NB: The first org you add will be the canonical source of any users that are in several orgs. You should not delete this org after adding it if possible.) 
-
-NB: When changing Team discovery urls, it will take a few minutes each time for the changes to propagate through Roadie Backstage so that you can see the new teams on the `/explore/groups` page.
+```yaml
+metadata:
+  annotations:
+    roadie.io/use-codeowners: "true"
+```
