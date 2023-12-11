@@ -113,6 +113,7 @@ nav:
           - Call external API: '/docs/scaffolder/call-external-api'
           - Transform JSON files with JSONata: '/docs/scaffolder/json-jsonata-transform'
           - Transform YAML files with JSONata: '/docs/scaffolder/yaml-jsonata-transform'
+          - Using for loops in templates: '/docs/scaffolder/loops-in-templates'
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
       - Data Sources:
