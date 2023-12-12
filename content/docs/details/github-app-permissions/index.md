@@ -58,7 +58,7 @@ These are the repository permissions required:
 | Checks            | Read & Write | Allows the Github app to run checks on your backstage repositories                                                                                                                            |
 | Projects          | Read         | Allows the Github app to run checks on your backstage repositories                                                                                                                            |
 | Secrets           | Read & Write | Allows the Github app to create Secrets into GitHub Actions Workflows. This functionality can be used by the Scaffolder.                                                                      |
-| Variables         | Read & Write | Allows the Github app to create Variables into GitHub Actions Workflows. This functionality can be used by the Scaffolder.                                                                    | |
+| Variables         | Read & Write | Allows the Github app to create Variables into GitHub Actions Workflows. This functionality can be used by the Scaffolder.                                                                    |
 
 These are the organization permissions required:
 
