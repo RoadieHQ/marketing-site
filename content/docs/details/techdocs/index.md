@@ -43,6 +43,7 @@ We currently include the following MkDocs plugins in our build process:
 - [mkdocs-git-revision-date-localized-plugin](https://github.com/timvink/mkdocs-git-revision-date-localized-plugin) - enables displaying the date of the last git modification of a page
 - [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) - displays images, iframes, inline content and videos
 - [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid) - generates diagrams from markdown-like text.
+- [mkdocs-kroki-plugin](https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin) - A diagram library supporting multiple different diagram formats. See https://kroki.io/ for more information.
 
 
 ## Theme and Styling
