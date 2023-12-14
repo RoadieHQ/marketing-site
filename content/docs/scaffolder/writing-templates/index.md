@@ -1885,55 +1885,6 @@ spec:
 
 NB: This can only be done for a single step as the re-usable section must be valid yaml.
 
-## Testing
-
-Testing of templates is not well supported in Backstage currently, mostly due to the fact that many scaffolder actions perform side-effects.
-
-A limited set of functionality exists to preview and edit parameters in a sandbox, and dry-run templates (skipping steps that perform mutations).
-
-You can find these features at `/import/entity-preview`.
-
-It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/import/entity` using the version on a published feature branch.
-This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test.
-
-## Troubleshooting
-
-Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
-
-Template YAML input forms can also be tested at `/templates/edit` using a live template preview viewer which speeds up the testing cycle.
-
-![preview-template](./template-preview-tool.png)
-
-### Resource not accessible by integration
-
-This error is referring to actions that interact GitHub. It means that the Roadie GitHub app is unable to read, create or update the resource/s that are being touched by the Scaffolder step.
-
-### Pull request creation failed; caused by HttpError: You have exceeded a secondary rate limit - `publish:github:pull-request`
-
-Full error message: `Pull request creation failed; caused by HttpError: You have exceeded a secondary rate limit. Please wait a few minutes before you try again. If you reach out to GitHub Support for help, please include the request ID`
-
-This happens when you try to make a PR to Github with too many files in the PR, triggering a Secondary rate limit in Github's api. This is currently an issue with the open source action [explained in detail here](https://github.com/backstage/backstage/issues/17188).
-
-This often happens when using the action in combination with a preceding `fetch:plain` action that pulls a full existing repository down, so that some files can be changed. 
-
-The way around this is, if you know the specific files you want to be contained in the pull request, you should move those files into a subdirectory using the `fs:rename` step after the `fetch:plain` step.
- i.e.
-
-```
-steps:
-- action: fs:rename
-  id: rename-files
-  name: Rename files
-  input:
-  files:
-  - from: file1
-  to: subdirectory/file1
-  - from: file2
-  to: subdirectory/file2
-  then in the publish step you can add the input parameter: sourcePath: ./subdirectory
-```
-
-This then creates a PR with only the changed files rather than the full duplicated repo.
 
 ### Using a user's Github Token to execute template steps
 
