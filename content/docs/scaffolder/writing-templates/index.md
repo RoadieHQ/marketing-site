@@ -1884,3 +1884,41 @@ spec:
 ```
 
 NB: This can only be done for a single step as the re-usable section must be valid yaml.
+
+
+### Using a user's Github Token to execute template steps
+
+You can use the user that runs the scaffolder template to open a PR or other Github based actions rather than opening it on behalf of the Roadie Github App by specifying the token field.
+The token must first be injected via the parameters by the RepoUrlPicker parameter as documented [here](https://backstage.io/docs/features/software-templates/writing-templates#using-the-users-oauth-token)
+
+```yaml
+parameters:
+  - title: Choose a location
+    required:
+      - repoUrl
+    properties:
+      repoUrl:
+        title: Repository Location
+        type: string
+        ui:field: RepoUrlPicker
+        ui:options:
+          # Here's the option you can pass to the RepoUrlPicker
+          requestUserCredentials:
+            secretsKey: USER_OAUTH_TOKEN
+            additionalScopes:
+              github:
+                - workflow
+          allowedHosts:
+            - github.com
+steps:
+  - action: publish:github:pull-request
+    id: create-pull-request
+    name: Create a pull request
+    input:
+      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
+      branchName: ticketNumber-123
+      title: 'Make some changes to the files'
+      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
+      # here's where the secret can be used
+      token: ${{ secrets.USER_OAUTH_TOKEN }}
+```

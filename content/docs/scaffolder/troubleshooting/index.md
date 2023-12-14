@@ -4,8 +4,6 @@ publishedDate: '2022-05-16T10:53:00.0Z'
 description: A collection of troubleshooting tips when working with Scaffolder templates
 ---
 
-# Testing and Troubleshooting Scaffolder Templates
-
 Scaffolder templates are a powerful tool to create software, configurations and modify existing services. Below we have listed common error scenarios that we have encountered when building complex Scaffolder templates using the available actions.
 
 
@@ -39,23 +37,23 @@ There can be multiple different reasons for this generic error message that GitH
 GitHub expects a specific format for the teams/users that are added to be owners or collaborators on a repository. This format is in conflict with the result value of the OwnerPicker Scaffolder UI component that Backstage provides. There may be some string manipulation needed if that value is wanted to be passed directly as an input to GitHub actions like `publish:github`. The following code snippet will give an example how to modify the OwnerPicker result to match what GitHub is expecting:
 
 ```yaml
-    - id: publish
-      name: Publish
-      action: publish:github
-      input:
-        allowedHosts: [ 'github.com' ]
-        description: ${{parameters.description}}
-        repoUrl: ${{parameters.repoUrl}}
-        defaultBranch: main
-        access: roadiehq/${{ parameters.owner | parseEntityRef | pick('name') }}
-        deleteBranchOnMerge: true
-        collaborators:
-          - user: "Xantier"
-            access: admin
-          - team: "marketing"
-            access: pull
-          - team: roadiehq/${{ parameters.owner | parseEntityRef | pick('name') }}
-            access: admin
+- id: publish
+  name: Publish
+  action: publish:github
+  input:
+    allowedHosts: [ 'github.com' ]
+    description: ${{parameters.description}}
+    repoUrl: ${{parameters.repoUrl}}
+    defaultBranch: main
+    access: roadiehq/${{ parameters.owner | parseEntityRef | pick('name') }}
+    deleteBranchOnMerge: true
+    collaborators:
+      - user: "Xantier"
+        access: admin
+      - team: "marketing"
+        access: pull
+      - team: roadiehq/${{ parameters.owner | parseEntityRef | pick('name') }}
+        access: admin
 ```
 
 Within this scaffolder template snippet we see 3 different approaches on adding users and teams into a repository. The GitHub API expects a user to be a plain string, identifying the username in GitHub. The team can be either a plain string to a GitHub team, that is in the same organization as the GitHub App is installed in, or a `prefix/team-name` format where the prefix is the name of the organization. Note that the GitHub app _needs_ to have access to these users/teams, so it is not possible to assign teams from arbitrary organizations to be collaborators to your repositories.
@@ -92,40 +90,3 @@ steps:
 ```
 
 This then creates a PR with only the changed files rather than the full duplicated repo.
-
-### Using a user's Github Token to execute template steps
-
-You can use the user that runs the scaffolder template to open a PR or other Github based actions rather than opening it on behalf of the Roadie Github App by specifying the token field.
-The token must first be injected via the parameters by the RepoUrlPicker parameter as documented [here](https://backstage.io/docs/features/software-templates/writing-templates#using-the-users-oauth-token)
-
-```yaml
-parameters:
-  - title: Choose a location
-    required:
-      - repoUrl
-    properties:
-      repoUrl:
-        title: Repository Location
-        type: string
-        ui:field: RepoUrlPicker
-        ui:options:
-          # Here's the option you can pass to the RepoUrlPicker
-          requestUserCredentials:
-            secretsKey: USER_OAUTH_TOKEN
-            additionalScopes:
-              github:
-                - workflow
-          allowedHosts:
-            - github.com
-steps:
-  - action: publish:github:pull-request
-    id: create-pull-request
-    name: Create a pull request
-    input:
-      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
-      branchName: ticketNumber-123
-      title: 'Make some changes to the files'
-      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
-      # here's where the secret can be used
-      token: ${{ secrets.USER_OAUTH_TOKEN }}
-```
