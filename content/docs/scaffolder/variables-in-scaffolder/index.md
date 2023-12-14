@@ -1,7 +1,7 @@
 ---
-title: Using for Loops in Templates
-publishedDate: '2023-12-11'
-description: An example template that uses Nunjucks builtin looping functionality
+title: Assigning Scaffolder Variables
+publishedDate: '2023-12-14'
+description: An example template displaying how to use JSONata to assign variables into Scaffolder context  
 ---
 
 ## Template
