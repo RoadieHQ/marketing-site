@@ -49,6 +49,16 @@ Click Save.
 
 Wait a few moments for the secret to be applied.
 
+### Optional: 
+
+Snyk needs organisation id set in `snyk.io/org-id` annotation to work properly. If you are not certain about your organization id, but you know organization name, you can set this up in Settings page:
+
+Visit `https://your-company.roadie.so/administration/settings/snyk`.
+
+![A text field with snyk org name.](./snyk-organisation-name-settings.png)
+
+We will use this to retrieve organization id value and add `snyk.io/org-id` annotation to your entities.
+
 ### Step 2: Add the relevant Snyk annotations to a component
 
 To configure the Snyk plugin to target the correct entity, you need to configure few annotations to it.
