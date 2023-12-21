@@ -31,7 +31,6 @@ nav:
       - GitHub Deployments: '/docs/integrations/github-deployments/'
       - GitHub Pull Requests Board: '/docs/integrations/github-pull-request-board'
       - Grafana: '/docs/integrations/grafana/'
-      - GraphiQL: '/docs/integrations/graphiql/'
       - Harness: '/docs/integrations/harness'
       - Home Page: '/docs/integrations/home-page'
       - Markdown Card Plugins: '/docs/integrations/markdown-card'
