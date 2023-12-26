@@ -10,25 +10,25 @@ integrationType: Integration
 
 ## Introduction
 
-The [Backstage GraphiQL plugin](/backstage/plugins/graphiQL) integrates with GraphiQL to provide an UI playground to query GraphQL endpoints directly from roadie.
+The [Backstage GraphiQL plugin](/backstage/plugins/graphiQL) integrates with GraphiQL to provide a UI playground for querying GraphQL endpoints directly from Roadie.
 
 ![GraphiQL UI](./graphiql-ui.png)
 
 ## Prerequisites
 
-You'll need the your GraphQL endpoints URLs.
+You'll need your GraphQL endpoint URLs.
 
 ## Configuration
 
 ### Configure the GraphiQL endpoints
 
-Configure the Graphql endpoints to use in your GraphiQL plugin via `Administration -> Settings -> GraphiQL`. Each endpoint needs a title and a URL. The title will be used to identify the endpoint in the GraphiQL UI. While the URL is the GraphQL endpoint URL you want to query.
+Configure the GraphQL endpoints to use in your GraphiQL plugin via `Administration -> Settings -> GraphiQL`. Each endpoint needs a title and a URL. The title will be used to identify the endpoint in the GraphiQL UI, while the URL is the GraphQL endpoint URL you want to query.
 
 ![graphiql-config.png](./graphiql-config.png)
 
 ### Authentication
 
-Currently the GraphiQL plugin only supports authentication via the UI. Which means that you'll need to configure the authentication using the `Headers` tab in the GraphiQL UI in JSON format.
+Currently, the GraphiQL plugin only supports authentication via the UI, which means that you'll need to configure the authentication using the `Headers` tab in the GraphiQL UI in JSON format.
 
 ## References
 
