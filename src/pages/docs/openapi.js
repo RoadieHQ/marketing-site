@@ -21,6 +21,10 @@ const ApiDocsPage = ({ location }) => {
           url: `${location.origin}/scaffolder-openapi.json`,
           name: 'Templates',
         },
+        {
+          url: `${location.origin}/plugins-openapi.json`,
+          name: 'Plugins',
+        },
       ],
       presets: [window.SwaggerUI.presets.apis, window.SwaggerUIStandalonePreset],
       layout: 'StandaloneLayout',
