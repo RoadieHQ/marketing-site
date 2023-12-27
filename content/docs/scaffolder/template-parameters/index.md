@@ -14,7 +14,31 @@ The parameters yaml is based on [react-jsonschema-form](https://rjsf-team.github
 
 You can choose to break up the parameter prompting into `form steps` or collect all the parameters in one single step.
 
-Each parameter can be one of a few types: `string`, `number`, `array` or `object`.
+There are also prebuilt widgets to use for common parameters like selecting an owner.
+
+### Field descriptions
+
+You can display a more human description to a field value by using `title` and `description`
+
+```yaml
+parameters:
+  properties:
+    name:
+      type: string
+      title: 'Name'
+      description: 'Name to say hello to'
+```
+
+### Previewing your form parameters
+
+Template Preview, which is accessible via `Tools > Template Preview` provides a preview page for templates, where you can see a live preview of the template form. This is done in order to provide an easy way to preview scaffolder template form UIs without running your own local instance of the plugin or committing changes to the template.
+
+![parameters-preview](./parameters-preview.png)
+
+
+### Types
+
+Each parameter can be one of a few types: `string`, `number`, `array` or `object`. 
 
 Here is the most basic example:
 
@@ -25,7 +49,7 @@ parameters:
       type: string
 ```
 
-### `string`
+#### `string`
 
 You may collect text data from the user by using the string type. Here is the most basic example. It will prompt the user for a name.
 
@@ -35,6 +59,97 @@ parameters:
     name:
       type: string
 ```
+
+#### `number`
+
+You can allow the user to enter a number using the `number` type:
+
+```yaml
+parameters:
+  properties:
+    size:
+      type: number
+```
+
+#### `object`
+
+The `object` allows the collection of more complex types of data from the user. It contains the `properties` option to add variables to the object as follows:
+
+```yaml
+parameters:
+  properties:
+    person:
+      type: object
+      properties:
+        name:
+          type: string
+        age:
+          type: number
+```
+
+You may choose to make an object property to be mandatory using the `required` property.
+
+```yaml
+parameters:
+  properties:
+    person:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        age:
+          type: number
+```
+
+#### `array`
+
+You can prompt for an array of properties using the array option. The `items` option can be any type: `array`, `object`, `string` or `number` as you like.
+
+```yaml
+parameters:
+  properties:
+    languages:
+      type: array
+      items:
+        type: string
+```
+
+If you would like to prompt the user to add entity tags, you can use the `ui:field: EntityTagPicker` as shown below.
+
+```yaml
+parameters:
+  properties:
+    entityTags:
+      type: array
+      ui:field: EntityTagsPicker
+```
+
+
+### Options and Defaults
+
+If you would like to default the value of a field you can use the `default` option:
+
+```yaml
+parameters:
+  properties:
+    name:
+      type: string
+      default: 'world!'
+```
+
+If you would like to prompt the users for a fixed list of options, you may use the `enum` option.
+
+```yaml
+parameters:
+  properties:
+    size:
+      type: number
+      enum: [50, 100, 200]
+```
+
+### Prebuild Widgets
 
 #### Entity picker
 
@@ -150,70 +265,39 @@ parameters:
         labelSelector: 'value'
 ```
 
-### `number`
+### Form Steps
 
-You can allow the user to enter a number using the `number` type:
+It might be jarring for your user to enter a lot of parameters one after another on the same page, especially if some properties require validation. As such Backstage have provided form steps.
 
-```yaml
-parameters:
-  properties:
-    size:
-      type: number
-```
-
-### `object`
-
-The `object` allows the collection of more complex types of data from the user. It contains the `properties` option to add variables to the object as follows:
+You can make use of form steps using the following example.
 
 ```yaml
 parameters:
-  properties:
-    person:
-      type: object
-      properties:
-        name:
-          type: string
-        age:
-          type: number
-```
-
-You may choose to make an object property to be mandatory using the `required` property.
-
-```yaml
-parameters:
-  properties:
-    person:
-      type: object
-      required:
-        - name
-      properties:
-        name:
-          type: string
-        age:
-          type: number
-```
-
-### `array`
-
-You can prompt for an array of properties using the array option. The `items` option can be any type: `array`, `object`, `string` or `number` as you like.
-
-```yaml
-parameters:
-  properties:
-    languages:
-      type: array
-      items:
+  - title: 'Fill in the Name'
+    properties:
+      name:
         type: string
+  - title: 'Fill in the Age'
+    properties:
+      age:
+        type: number
 ```
 
-If you would like to prompt the user to add entity tags, you can use the `ui:field: EntityTagPicker` as shown below.
+### Input Validation
+
+You can use [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/) to perform validation on input fields using a regex or character counts.
 
 ```yaml
 parameters:
   properties:
-    entityTags:
-      type: array
-      ui:field: EntityTagsPicker
+    name:
+        title: Simple text input
+        type: string
+        description: Description about input
+        maxLength: 8
+        pattern: '^([a-zA-Z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$'
+        ui:autofocus: true
+        ui:help: 'Hint: additional description...'
 ```
 
 ### Outputs
@@ -254,63 +338,6 @@ steps:
     input:
       message: 'Hello, ${{ parameters.person.name }}!'
 ```
-
-### Common Options
-
-If you would like to default the value of a field you can use the `default` option:
-
-```yaml
-parameters:
-  properties:
-    name:
-      type: string
-      default: 'world!'
-```
-
-If you would like to prompt the users for a fixed list of options, you may use the `enum` option.
-
-```yaml
-parameters:
-  properties:
-    size:
-      type: number
-      enum: [50, 100, 200]
-```
-
-You can display a more human description to a field value by using `title` and `description`
-
-```yaml
-parameters:
-  properties:
-    name:
-      type: string
-      title: 'Name'
-      description: 'Name to say hello to'
-```
-
-### Form Steps
-
-It might be jarring for your user to enter a lot of parameters one after another on the same page, especially if some properties require validation. As such Backstage have provided form steps.
-
-You can make use of form steps using the following example.
-
-```yaml
-parameters:
-  - title: 'Fill in the Name'
-    properties:
-      name:
-        type: string
-  - title: 'Fill in the Age'
-    properties:
-      age:
-        type: number
-```
-
-### Previewing parameters
-
-Template Preview, which is accessible via `Tools > Template Preview` provides a preview page for templates, where you can see a live preview of the template form. This is done in order to provide an easy way to preview scaffolder template form UIs without running your own local instance of the plugin or committing changes to the template.
-
-![parameters-preview](./parameters-preview.png)
 
 ### More Reading
 
