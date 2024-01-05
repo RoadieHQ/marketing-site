@@ -51,4 +51,4 @@ Sandbox pages are visible to all users by default, if they are able to navigate 
 
 The Sandbox area is purely for testing purposes, meaning that the actual final sidebar pages will need to be created manually after the correct configuration patterns have been found in the sandbox.
 
-Similar functionality for entity pages within catalog exist in the form of [Entity Preview page](/docs/details/previewing-pages/), which you can use to test out entity plugin configurations, cards, annotations and tabs
+Similar functionality for entity pages within catalog exist in the form of [Entity Preview page](/docs/catalog/previewing-changes/), which you can use to test out entity plugin configurations, cards, annotations and tabs
