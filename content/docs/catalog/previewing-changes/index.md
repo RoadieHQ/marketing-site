@@ -8,7 +8,7 @@ description: How to preview config changes in Backstage
 
 Currently, previewing changes to a `catalog-info.yaml` files is not well-supported in Backstage. Modifications to entities always override the full state of an existing entity within the catalog.
 
-However, you can still do testing and previews if needed by essentially creating a new component manually. Roadie provides two diffrent ways of doing this. 
+However, you can still do testing and previews if needed by essentially creating a new component manually. Roadie provides two different ways of doing this. 
 
 ### Using your version control system or other supported catalog-info.yaml file location
 
@@ -28,7 +28,7 @@ metadata:
 2. Go to `/import/entity` in Roadie Backstage
 3. Import the catalog-info file URL from a branch on your version control, i.e. `https://github.com/<your-github-org>/<your-repo>/blob/<your-branch-name>/catalog-info.yaml`
 4. View your branch based component, and make updates to the branch file to see changes pulled in automatically. 
-5. [Delete the component](/docs/details/unregister-components/) when you are finished. 
+5. [Delete the component](/docs/catalog/unregister-components/) when you are finished. 
 
 
 ### Using the entity preview page
