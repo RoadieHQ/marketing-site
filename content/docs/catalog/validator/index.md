@@ -6,8 +6,7 @@ description: Using the Roadie Backstage Validator
 
 ## Introduction
 
-Roadie provides many additional utilities to make your experience with Backstage smoother. One of these is the [Backstage Entity Validator](https://github.com/RoadieHQ/backstage-entity-validator). With this validator you can confirm that the entity descriptor files you are creating for Backstage conform to the needed format and prerequisites so that they work properly with Backstage and Roadie.
-
+Roadie provides many additional utilities to make your experience with Backstage smoother. One of these is the [Backstage Entity Validator](https://github.com/RoadieHQ/backstage-entity-validator). With this validator you can confirm that the entity descriptor files you are creating for Backstage conform to the schema and can be ingested by Backstage. The validator does not check the validity of entity references such as the "owner" field.
 
 The Entity Validator is enabled automatically when you install the Roadie GitHub app to your GitHub organization. The validator automatically checks your pull requests and validates Backstage files included in them. The GitHub app check files with `.yml` or `.yaml` type and that have an `apiVersion` containing a string `backstage.io`, thus indicating that it is a Backstage descriptor file.
 
@@ -22,7 +21,6 @@ validator:
   exclude:
     - 'catalog-*.yaml'
 ```
-
 
 ## Further reading
 
