@@ -53,7 +53,7 @@ You can set this up in Settings page:
 
 Visit `https://your-company.roadie.so/administration/settings/snyk`.
 
-![A text field with snyk org name.](.snyk-organisation-name-settings.png)
+![A text field with snyk org name.](./snyk-organisation-name-settings.png)
 
 ### Step 3: Add the relevant Snyk annotations to a component
 
