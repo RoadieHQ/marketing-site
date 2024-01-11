@@ -14,7 +14,7 @@ In order to use the Backstage Snyk plugin with Roadie, you must securely provide
 
 ## Connect Roadie to Snyk
 
-To get an API token, you need to sign up for a Snyk account. Within this account, you will need to obtain following:
+To get an API token, you need to sign up for a Snyk account. Within this account, you will need to obtain the following:
 
  * API token
  * Organization Name
@@ -46,8 +46,8 @@ Wait a few moments for the secret to be applied.
 
 ### Step 2: Add the Organization name to Roadie
 
-Components need `snyk.io/org-id` annotation set in order to work properly. Setting correct organisation name will automatically retrieve organization id and use it as a value for this annotation. 
-This means you will not have to add `snyk.io/org-id` annotation manually for each component but it will be internally retrieved by Roadie using your organisation name.
+Components need `snyk.io/org-id` annotation set in order to work properly. Setting the correct organisation name will automatically retrieve organization id and use it as a value for this annotation. 
+This means you will not have to add a `snyk.io/org-id` annotation manually for each component but it will be internally retrieved by Roadie using your organisation name.
 
 You can set this up in Settings page:
 
