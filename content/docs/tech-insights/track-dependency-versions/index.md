@@ -86,7 +86,7 @@ In the next section, we will create a Check which can show a pass or fail result
 
 ## Create a check that shows which software is not using a supported React version
 
-We have a data source telling us what React version is present in our repositories, but is also including non-React components. Let's omit the non-React components from the results by creating a check.
+We have a data source telling us what React versions are present in our components, but it also includes non-React components in the results. Let's omit the non-React components from the results by creating a check.
 
 ### Create a check
 
