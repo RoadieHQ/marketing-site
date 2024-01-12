@@ -23,7 +23,7 @@ Let’s get started.
 
 ## Record the React version automatically
 
-In order to track the React versions used in the catalog, we are going to create a Data Source In Roadie Tech Insights. It will be setup to run on a scheduled basis and extract the React version specified in the Package.json file.
+In order to track the React versions used in the catalog, we are going to create a Data Source In Roadie Tech Insights. It will be setup to run on a scheduled basis and extract the React version specified in the package.json file.
 
 ### Package.json Data Source
 
