@@ -15,7 +15,7 @@ With Roadie’s Tech Insights feature, there’s an easier way. In this tutorial
 As we go through this process, you’ll learn:
 
 1. How to create Data Sources, Checks and Scorecards with Tech Insights.
-2. How to parse files with Regex in Roadie and extract facts from those files.
+2. How to parse files with JSONata in Roadie and extract facts from those files.
 3. How to detect which repositories contain certain files like the package.json with Tech Insights.
 4. How to use the “Satisfies semantic version” operator to do comparisons.
 
