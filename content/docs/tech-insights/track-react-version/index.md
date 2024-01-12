@@ -4,7 +4,7 @@ publishedDate: '2024-01-08T15:15:00.0Z'
 description: How to track and visualize the dependency versions of your software with Roadie Tech Insights
 ---
 
-Tracking the dependency version is critical for ensuring your software is secure and compliant. It can be difficult to track if your software is using a supported version, and which are using an End of Life version.
+Tracking the dependency version is critical for ensuring your software is secure and compliant. It can be difficult to track which of your software is using a supported version, and which are using an End of Life version.
 
 With Roadie’s Tech Insights feature, there’s an easier way. In this tutorial, we’re going to:
 
