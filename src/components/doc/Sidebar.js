@@ -30,9 +30,11 @@ const DocSidebar = ({ location }) => {
   const docToggleButtonIcon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
   const docNavClassNames = classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen });
 
-  const sidebarNavItemGroups = DOCS_LAYOUTS.find(({ isActiveMatch }) => (
+  const docsLayouts = DOCS_LAYOUTS;
+  const found = docsLayouts.find(({ isActiveMatch }) => (
     location.pathname.match(isActiveMatch)
-  )).sidebarNavItemGroups;
+  ));
+  const sidebarNavItemGroups = found.sidebarNavItemGroups;
 
   return (
     <Sidebar side="left">
