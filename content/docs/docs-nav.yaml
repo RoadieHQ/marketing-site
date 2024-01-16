@@ -154,3 +154,9 @@ nav:
       - Troubleshooting: '/docs/catalog/troubleshooting-the-catalog/'
       - Validating catalog files: '/docs/catalog/validator/'
       - Ownership: '/docs/catalog/ownership/'
+  - API:
+      - Authorization: '/docs/api/authorization'
+      - Catalog: '/docs/api/catalog'
+      - Tech Insights: '/docs/api/techinsights'
+      - Templates: '/docs/api/templates'
+      - Plugins: '/docs/api/plugins'
