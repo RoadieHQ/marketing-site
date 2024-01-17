@@ -15,9 +15,9 @@ Once you click the “Add Scorecard” button, you’ll be prompted to fill in t
 
 ### Checks
 
-![Checks](./create-scorecard-add-check.png)
+![Checks](./create-scorecard-add-checks.png)
 
-Click the `Add` button to add checks to your scorecard
+Click the `Add` button to open the add checks modal
 
 ![Add checks modal](./create-scorecard-add-checks-modal.png)
 
