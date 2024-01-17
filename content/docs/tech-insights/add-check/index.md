@@ -6,19 +6,53 @@ description: Add new check.
 
 After navigating to Tech Insights→ Checks page and clicking ‘Add check’ button, you’ll be asked to describe your Check as below:
 
-![Add check steps](./create-check-steps.png)
+### About
 
-1 - After filling in Name and Description, select the Data Source that you want to use for this Check.
+![About section](./create-check-about.png)
 
-2 - Select the Fact that you want to use. Note that the list of Facts come from the selected Data Source.
+- Give a unique name to your check
+- Give a proper description about this check. This input accepts markdown
 
-3 - Select a Fact operator and specify a target value. The underlying implementation (`json-rules-engine`, see below) supports a limited [number of built-in operators](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md#operators) that can be used in conditions.
+### Conditions
 
-Checks are constructed using[json-rules-engine](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md#conditions) so you will make sure facts, operators and value align to those rules .
+![Conditions section](./create-check-conditions.png)
 
-4 - You can try out your Check with the Dry Run button.
+- Select your data source from the `Data Source` select field.
+- Select your `Fact` from the `Fact` select field.
+- Choose an operator
+- Fill in the value for the selected operator
 
-![Check dry run](./dry-run-check.png)
+You can add multiple conditions to your check by clicking the `+ ADD CONDITION` button.
+
+![Multiple Conditions](./create-check-multiple-conditions.png)
+
+- Select the logic between your conditions from the radio buttons
+- Fill in your check the same way as in the previous step
+
+You can test out your check by clicking the `Dry Run` button
+
+![Dry Run](./create-check-dry-run.png)
+
+Select an entity that you want to test your check against.
+
+![Try Check Result](./create-check-try-check.png)
+
+### Fix Link
+
+You can provide an optional link to some documentation that explains to your users how to make this check pass
+
+![Fix Link section](./create-check-fix-link.png)
+
+### Applies to
+
+You can define filters to target which entities should this check run against
+In the Applies to section you can select which entites will be included in this check and which entities will be excluded.
+
+![Applies To section](./create-check-entity-filter.png)
+
+The above configuration means the Check will run against components with type library that does not have the tag infrastructure
+
+### Save
 
 If you are still uncertain if you want to publish the check, you can save it as a draft an publish it later.
 
