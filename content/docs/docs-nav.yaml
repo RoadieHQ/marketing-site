@@ -133,6 +133,7 @@ nav:
           - Adding scorecard to the catalog: '/docs/tech-insights/add-scorecard-to-catalog/'
       - Recipes:
           - Track a Docker base image migration: '/docs/tech-insights/track-docker-base-image-migration/'
+          - Track dependency versions: '/docs/tech-insights/track-dependency-versions/'
           - Track Datadog SLOs: '/docs/tech-insights/track-datadog-slos/'
           - Track Sonarcloud Project Issues/Hotspots: '/docs/tech-insights/track-sonarcloud/'
           - Track On-prem Sonarqube metrics: '/docs/tech-insights/track-sonarqube/'
