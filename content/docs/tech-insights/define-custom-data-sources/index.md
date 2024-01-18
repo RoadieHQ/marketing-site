@@ -139,6 +139,12 @@ In the Applies to section you can select which entites will be included in this 
 
 The above configuration means the data source will collect data for all components with type library and service which don't have the infrastructure tag
 
+Providing multiple selection in a single input results in an `OR` relation between the selections.
+Selecting from multiple input fields end up with a relation `AND` between the fields.
+
+For example:
+Selecting `type: service, tags: infrastructure` will exclude every enetity Which has type service `AND` contains an infrastructure tag. However it won't exclude services which does not contain the tag, or components that contain only the tag but they are not services.
+
 You should be able to see the created Data Source in the overview screen. If you decide to create a draft Data Source, you will need to publish it in order for others to see it. This can be achieved using actions menu.
 
 ## Running the data source

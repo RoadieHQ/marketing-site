@@ -52,6 +52,12 @@ In the Applies to section you can select which entites will be included in this 
 
 The above configuration means the Check will run against components with type library that does not have the tag infrastructure
 
+Providing multiple selection in a single input results in an `OR` relation between the selections.
+Selecting from multiple input fields end up with a relation `AND` between the fields.
+
+For example:
+Selecting `type: service, tags: infrastructure` will exclude every enetity Which has type service `AND` contains an infrastructure tag. However it won't exclude services which does not contain the tag, or components that contain only the tag but they are not services.
+
 ### Save
 
 If you are still uncertain if you want to publish the check, you can save it as a draft an publish it later.
