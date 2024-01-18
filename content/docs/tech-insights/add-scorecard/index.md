@@ -10,8 +10,8 @@ Once you click the “Add Scorecard” button, you’ll be prompted to fill in t
 
 ![About section](./create-scorecard-about.png)
 
-- Give a unique name to your scorecard
-- Give a proper description about this scorecard. This input accepts markdown
+- Give a unique name to your Scorecard
+- Give a proper description about this Scorecard. This input accepts markdown
 
 ### Checks
 

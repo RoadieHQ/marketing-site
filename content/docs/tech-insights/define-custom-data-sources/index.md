@@ -137,7 +137,7 @@ In the Applies to section you can select which entites will be included in this 
 
 ![Data Source Entity Filter](./data-source-entity-filter.png)
 
-The above configuration means the data source will collect data for all components with type library and service but does not have the infrastruce tag
+The above configuration means the data source will collect data for all components with type library and service which don't have the infrastructure tag
 
 You should be able to see the created Data Source in the overview screen. If you decide to create a draft Data Source, you will need to publish it in order for others to see it. This can be achieved using actions menu.
 
