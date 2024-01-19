@@ -16,9 +16,6 @@ const ApiDocsPage = ({ location, url }) => {
         }
         try {
           const doc = JSON.parse(response.text);
-          // we don't want to show the server select list.
-          delete doc.servers;
-          delete doc.components.securitySchemes;
           delete doc.info.version;
           return { ...response, data: JSON.stringify(doc), text: JSON.stringify(doc)}
         } catch(e) {
