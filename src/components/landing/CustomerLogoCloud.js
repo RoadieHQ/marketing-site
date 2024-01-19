@@ -18,6 +18,8 @@ import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochr
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
 import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-monochrome.webp';
 import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
+import CaribouLogo from '../../../content/assets/home/customer-logos/caribou-monochrome.png';
+import CaribouLogoPng from '../../../content/assets/home/customer-logos/caribou-monochrome.png';
 
 import HopperWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/hopper.png';
 import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/contentful.png';
@@ -35,6 +37,8 @@ import YotpoDarkLogo from '../../../content/assets/home/customer-logos-monochrom
 export const LOGOS = [
   {
     src: {
+      webp: CaribouLogo,
+      png: CaribouLogoPng,
       white: CaribouWhiteLogo,
       dark: CaribouDarkLogo,
     },
@@ -43,6 +47,8 @@ export const LOGOS = [
   },
   {
     src: {
+      webp: YotpoLogo,
+      png: YotpoLogoPng,
       white: YotpoWhiteLogo,
       dark: YotpoDarkLogo,
     },
