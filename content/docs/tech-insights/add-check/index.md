@@ -4,7 +4,7 @@ publishedDate: '2023-05-12T21:00:00.0Z'
 description: Add new check.
 ---
 
-After navigating to Tech Insights→ Checks page and clicking ‘Add check’ button, you’ll be asked to describe your Check as below:
+After navigating to Tech Insights → Checks page and clicking ‘Add check’ button, you’ll be asked to describe your Check as below:
 
 ### About
 
@@ -53,10 +53,10 @@ In the Applies to section you can select which entites will be included in this 
 The above configuration means the Check will run against components with type library that does not have the tag infrastructure
 
 Providing multiple selection in a single input results in an `OR` relation between the selections.
-Selecting from multiple input fields end up with a relation `AND` between the fields.
+Selecting from multiple input fields(Type, Tags, Kind) end up with a relation `AND` between the fields.
 
 For example:
-Selecting `type: service, tags: infrastructure` will exclude every enetity Which has type service `AND` contains an infrastructure tag. However it won't exclude services which does not contain the tag, or components that contain only the tag but they are not services.
+Selecting `type: service, tags: infrastructure` will exclude every entity Which has type service `AND` contains an infrastructure tag. However it won't exclude services which does not contain the tag, or components that contain only the tag but they are not services.
 
 ### Save
 

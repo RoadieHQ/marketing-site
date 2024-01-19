@@ -143,9 +143,9 @@ Providing multiple selection in a single input results in an `OR` relation betwe
 Selecting from multiple input fields end up with a relation `AND` between the fields.
 
 For example:
-Selecting `type: service, tags: infrastructure` will exclude every enetity Which has type service `AND` contains an infrastructure tag. However it won't exclude services which does not contain the tag, or components that contain only the tag but they are not services.
+Selecting `type: service, tags: infrastructure` will exclude every entity Which has type service `AND` contains an infrastructure tag. However it won't exclude services which does not contain the tag, or components that contain only the tag but they are not services.
 
-You should be able to see the created Data Source in the overview screen. If you decide to create a draft Data Source, you will need to publish it in order for others to see it. This can be achieved using actions menu.
+You should be able to see the created Data Source in the overview screen. If you decide to create a draft Data Source, you will need to publish it in order for others to see it. This can be achieved using the actions menu.
 
 ## Running the data source
 

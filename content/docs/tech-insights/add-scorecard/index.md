@@ -39,7 +39,7 @@ Providing multiple selection in a single input results in an `OR` relation betwe
 Selecting from multiple input fields end up with a relation `AND` between the fields.
 
 For example:
-Selecting `type: service, tags: infrastructure` will exclude every enetity Which has type service `AND` contains an infrastructure tag. However it won't exclude services which does not contain the tag, or components that contain only the tag but they are not services.
+Selecting `type: service, tags: infrastructure` will exclude every entity Which has type service `AND` contains an infrastructure tag. However it won't exclude services which do not contain the tag, or components that contain only the tag but they are not services.
 
 ### Ownership
 
