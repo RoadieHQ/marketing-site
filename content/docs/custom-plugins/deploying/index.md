@@ -95,7 +95,7 @@ Usually you can identify the value of the host by looking at the output when run
 
 With Roadie CLI and the custom plugins automated deploy solution to Roadie hosted secure solution, we are generating the path that **needs** to be derived from the plugin name. The plugin name is constructed from the name it is given in the `package.json` file, with few web-safe sanitization steps added in (dashes replaced with underscores etc.). Unfortunately due to the way the bundling of these assets works, the name needs to be known beforehand and could be tricky to identify correctly.
 
-To double check what the name could be, you can take a look at the command output where the upload location is defined (Syncing files ... to `s3://roadie-static-assets/<tenant>/plugin_name`). The **plugin_name** is the correct value that you would need to input as the path during the command running time also if hosting plugins on Roadie. The command run with the following arguments, and corresponding plugin configuration in Roadie, should be able to get the plugin correctly configured:
+To double check what the name could be, you can take a look at the command output where the upload location is defined (Syncing files ... to `s3://roadie-static-assets/<tenant>/plugin_name`). The **plugin_name** is the correct value that you would need to input as the path during the command run if hosting plugins on Roadie. The command can be run with the following arguments, and corresponding plugin configuration in Roadie, and that should get the plugin correctly configured:
 * `roadie plugin:build --location $PWD/my-plugin-folder --host https://static-assets.roadie.so/<tenant>/plugin_name --withUpload`
 
 Note that the plugin scope in most use cases when hosting in Roadie will be the same.
