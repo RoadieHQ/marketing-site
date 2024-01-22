@@ -9,7 +9,8 @@ Branch protection can bring an extra layer of security to your organization by e
 Roadie automatically collects this information and you can view reports or create checks about that data.
 In this tutorial, we’re going to:
 
-1. Learn how to visualize data within an existing Data Source.
+1. Learn how to create a check which requires GitHub repositories associated with component entities to have branch protection  
+2. visualize data within an existing Data Source.
 
 
 ## Prerequisites
@@ -22,7 +23,7 @@ In this tutorial, we’re going to:
 
    ![](../track-docker-base-image-migration/add-check-button.png)
 
-2. In the About section, name the Check “Require branch protection”. Give it the description such as “Require branch protection to be set on GitHub Repos.”
+2. In the About section, name the Check “Require branch protection”. Give it the description such as “Require branch protection to be set on GitHub Repos associated with components.”
 
 3. In the Conditions section, set the check condition to the following values:
 
