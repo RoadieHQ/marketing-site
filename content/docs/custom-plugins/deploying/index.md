@@ -84,17 +84,24 @@ After the plugin has been uploaded to static hosting, you can follow the documen
 
 ### How do I know which URL to use for the location argument?
 
-When building the plugin for deployment, the most difficult step is usually identifying the correct value for the `--host` argument. If you are building the plugin to be hosted on Roadie, your URL takes the following format:
+When building the plugin for deployment, the most difficult step is usually identifying the correct value for the `--host` argument, or the correct name for the plugin path. If you are building the plugin to be hosted on Roadie, your URL takes the following format:
 `https://static-assets.roadie.so/<my-tenant>/my_custom_plugin`
 
 * Roadie's hosting solution uses a URL `static-assets.roadie.so` to expose these plugins from various origins.
 * You should replace the `<my-tenant>` block with your tenant name. You can find this from your roadie URL. E.g. `https://demo.roadie.so` -> Tenant name is `demo` 
-* The ending (like `my_custom_plugin` above) defines the actual root of the plugin and is usually named after the plugin itself.
+* The ending (like `my_custom_plugin` above) defines the actual root of the plugin and is named after the plugin itself.
 
 Usually you can identify the value of the host by looking at the output when running Roadie CLI in development mode. The default setting for the produced plugin root location will be the same as the `scope` value that Roadie CLI outputs.
 
-If you are hosting the plugin yourself, the URL used in the location argument should match the location where the plugin is reachable from. 
+With Roadie CLI and the custom plugins automated deploy solution to Roadie hosted secure solution, we are generating the path that **needs** to be derived from the plugin name. The plugin name is constructed from the name it is given in the `package.json` file, with few web-safe sanitization steps added in (dashes replaced with underscores etc.). Unfortunately due to the way the bundling of these assets works, the name needs to be known beforehand and could be tricky to identify correctly.
 
+To double check what the name could be, you can take a look at the command output where the upload location is defined (Syncing files ... to `s3://roadie-static-assets/<tenant>/plugin_name`). The **plugin_name** is the correct value that you would need to input as the path during the command run if hosting plugins on Roadie. The command can be run with the following arguments, and corresponding plugin configuration in Roadie, and that should get the plugin correctly configured:
+* `roadie plugin:build --location $PWD/my-plugin-folder --host https://static-assets.roadie.so/<tenant>/plugin_name --withUpload`
+
+Note that the plugin scope in most use cases when hosting in Roadie will be the same as the path ending needed for the run command.
+
+
+If you are hosting the plugin yourself, the URL used in the location argument should match the location where the plugin is reachable from. 
 
 
 ## Hosting your plugin yourself

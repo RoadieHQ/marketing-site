@@ -61,7 +61,7 @@ In this example, Roadie will only load a `catalog-info.yaml` file from the `defa
 
 ### Using wildcards
 
-If you would like to catalog a file from all of your repos you can use the \* as a wildcard in any of the segmenets.
+If you would like to catalog a file from all of your repos you can use the \* as a wildcard in any of the segments.
 
 ```yaml
 https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml
