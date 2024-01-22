@@ -84,7 +84,7 @@ After the plugin has been uploaded to static hosting, you can follow the documen
 
 ### How do I know which URL to use for the location argument?
 
-When building the plugin for deployment, the most difficult step is usually identifying the correct value for the `--host` argument, or the correct name for the plugin itself. If you are building the plugin to be hosted on Roadie, your URL takes the following format:
+When building the plugin for deployment, the most difficult step is usually identifying the correct value for the `--host` argument, or the correct name for the plugin path. If you are building the plugin to be hosted on Roadie, your URL takes the following format:
 `https://static-assets.roadie.so/<my-tenant>/my_custom_plugin`
 
 * Roadie's hosting solution uses a URL `static-assets.roadie.so` to expose these plugins from various origins.
