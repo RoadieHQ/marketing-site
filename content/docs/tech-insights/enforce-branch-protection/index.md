@@ -35,7 +35,7 @@ In this tutorial, we’re going to:
 
   We now have a condition which passes when a Component has branch protection enabled on the default branch.
     
-  You can use the “DRY RUN” button to test these conditions against some Components in your catalog, ensure they operate the way you would expect, and return the correct pass or fail result.
+  You can use the “DRY RUN” button to test these conditions against some Components in your catalog to ensure that they operate in the way you would expect and return the correct pass or fail result.
     
   ![compound-conditions.png](branch-protection-condition.png)
 
