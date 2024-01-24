@@ -66,3 +66,9 @@ And your system entity with the following:
 annotations:
   pulumi.com/orga-slug: [Pulumi Cloud: org]
 ```
+
+## References
+
+- [Backstage Pulumi Plugin](https://roadie.io/backstage/plugins/pulumi/)
+- [Backstage Pulumi Plugin Github](https://github.com/pulumi/pulumi-backstage-plugin)
+- [Pulumi](https://www.pulumi.com/)
