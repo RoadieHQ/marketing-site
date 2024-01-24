@@ -36,7 +36,7 @@ need to wait for the secret to be marked as "Available" before you can use the P
 
 ### Add the plugin to the UI
 
-The Pulumi plugin provides two components which can be added to the Backstage UI. You must be a Backstage admin to
+The Pulumi plugin provides two components which can be added to the Roadie UI. You must be a Roadie admin to
 add components to the UI.
 
 The `EntityPulumiCard` and `EntityPulumiMetdataCard` components can be [added to catalog dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards). These
