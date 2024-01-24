@@ -1,6 +1,6 @@
 ---
 title: Pulumi Plugin
-publishedDate: '2022-03-07T10:00:00.0Z'
+publishedDate: '2024-01-24T10:00:00.0Z'
 description: How to add Pulumi to Backstage
 
 humanName: Pulumi
