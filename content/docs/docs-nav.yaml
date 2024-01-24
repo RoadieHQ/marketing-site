@@ -45,6 +45,7 @@ nav:
       - Opsgenie: '/docs/integrations/opsgenie/'
       - PagerDuty: '/docs/integrations/pagerduty/'
       - Prometheus: '/docs/integrations/prometheus/'
+      - Pulumi: '/docs/integrations/pulumi/'
       - Sentry: '/docs/integrations/sentry/'
       - Shortcut: '/docs/integrations/shortcut-plugin/'
       - Snyk: '/docs/integrations/snyk/'
