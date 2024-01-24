@@ -49,7 +49,7 @@ You can also add the 'Pulumi Activity View' tab to the entity page by adding the
 
 ### Set the Pulumi annotation on entities
 
-The Pulumi plugin uses annotations to link each component/resource/system with it's Pulumi project/organization in order to get each entity information.
+The Pulumi plugin uses annotations to link each component/resource/system with it's Pulumi project/organization in order to get information for each entity.
 
 Make a PR to the following to your catalog-info.yaml file, or add this annotation to your entity by decorating it in Roadie:
 
