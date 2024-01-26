@@ -118,6 +118,7 @@ nav:
           - Transform JSON files with JSONata: '/docs/scaffolder/json-jsonata-transform'
           - Transform YAML files with JSONata: '/docs/scaffolder/yaml-jsonata-transform'
           - Using for loops in templates: '/docs/scaffolder/loops-in-templates'
+          - Using for loops to repeat scaffolder steps: '/docs/scaffolder/loops-in-steps'
           - Assigning variables to the scaffolder context: '/docs/scaffolder/variables-in-scaffolder'
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
