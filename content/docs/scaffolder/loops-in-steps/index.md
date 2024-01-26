@@ -75,3 +75,7 @@ Logs the contents of the file which was parsed in the previous steps. Uses the f
   input:
     message: "contents: ${{ each.value }}!"
 ```
+
+## Further reading
+
+- You can also [make use of looping in template files](/docs/scaffolder/loops-in-templates/).
