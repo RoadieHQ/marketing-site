@@ -490,6 +490,7 @@ ${{ steps.publish.output.repoContentsUrl }}
 ```
 
 #### Looping
+
 You can use array type form inputs or step outputs to repeat action steps multiple times. e.g.
 
 ```yaml
