@@ -6,6 +6,8 @@ import {
   SideBySideHero,
   AlternatingFeatureWrapper,
   PluginsList,
+  YouTubeTestimonial,
+  SideBySideBulletParagraphs,
 } from 'components/landing';
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
 
@@ -27,8 +29,6 @@ import KeepSafeImg from '../../content/assets/home/illustrations/home-keep-backs
 import NoCodeImg from '../../content/assets/home/illustrations/home-nocode.png';
 import CustomPluginsImg from '../../content/assets/home/illustrations/home-custom-plugins.png';
 import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.svg';
-import AndyThumbImg from '../../content/assets/home/illustrations/home-andy-video-thumb.png';
-import AndyAvatarImg from '../../content/assets/home/illustrations/home-andy-avatar.png';
 
 import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
 import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
@@ -140,153 +140,13 @@ const Home = ({ data }) => {
       </div>
 
       <SideBySideHero />
-
-      <section className="Section size-3">
-        <div className='Container'>
-          <blockquote
-            cite="https://youtu.be/6Ss1e-9X_JY?t=51"
-          >
-            <div className='Flex column ai-center gap-7'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="52" viewBox="0 0 64 52" fill="none">
-                <path d="M24.0923 27.696V51.592H0.608274V26.254C0.608274 10.598 10.9083 0.503996 27.3883 0.0919888V10.804C18.3243 11.628 13.3803 16.366 13.3803 25.43V27.696H24.0923ZM59.9363 27.696V51.592H36.4523V26.254C36.4523 10.598 46.7523 0.503996 63.2323 0.0919888V10.804C54.1683 11.628 49.2243 16.366 49.2243 25.43V27.696H59.9363Z" fill="var(--gray-4)"/>
-              </svg>
-              <p className="Text size-6 bp2-size-7 weight-1 ta-center" style={{ maxWidth: 600 }}>
-                “Roadie has been fantastic to work with and allowed us to adopt Backstage without the
-                overhead.”
-              </p>
-              <footer>
-                <div className='Flex row ai-center gap-3'>
-                  <div className='Avatar size-3'>
-                    <img src={AndyAvatarImg} alt="Andy Hoffman Headshot" />
-                  </div>
-                  <div className='Flex column'>
-                    <span className='Text size-3 weight-2'>Andy Hoffman</span>
-                    <span className='Text size-3 lowContrast'>DevOps Manager at Caribou</span>
-                  </div>
-                </div>
-              </footer>
-              <div className='SeparatorGradient size-1' role="separator"></div>
-              <aside className="">
-                <Link className="LinkCard" to="https://youtu.be/6Ss1e-9X_JY?t=51">
-                  <div className='Flex row ai-center gap-3'>
-                    <div className='VideoThumb'>
-                      <img src={AndyThumbImg} alt="Andy's talk thumbnail" width="71" />
-                    </div>
-                    <span className='Text size-3 indigo'>Watch talk on YouTube &rarr;</span>
-                  </div>
-                </Link>
-              </aside>
-            </div>
-          </blockquote>
-        </div>
-      </section>
+      <YouTubeTestimonial />
 
       <div className='Flex row jc-center'>
         <div className='SeparatorGradient size-2' role="separator"></div>
       </div>
 
-      <section className='Section size-3'>
-        <div className='Container'>
-          <div className='Grid columns-1 bp2-columns-2 gap-9'>
-            <div>
-              <div className='Flex column gap-3'>
-                <h3 className="Text size-7">A single pane of glass</h3>
-                <p className='Text size-4 lowContrast mb-2'>Automate discoverability with a centralised location for services, docs, tools, and more.</p>
-                <a href="#" className='Link mb-4'><span className='Text size-4'>Learn about Catalog</span></a>
-                <div className='Flex column gap-4'>
-                  <div>
-                    <div className='Flex row ai-center gap-3'>
-                      <div className='IconContainer size-2 rounded solid'>
-                        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8 1L2.74967 0.99997C2.52122 0.999752 2.32429 0.999564 2.14983 1.04145C1.60136 1.17312 1.17312 1.60136 1.04145 2.14983C0.999564 2.32429 0.999752 2.52122 0.99997 2.74967L1 2.8V5.2L0.99997 5.25033C0.999752 5.47878 0.999564 5.67572 1.04145 5.85017C1.17312 6.39864 1.60136 6.82688 2.14983 6.95856C2.32429 7.00044 2.52122 7.00025 2.74967 7.00003L2.8 7H5.2L5.25033 7.00003C5.47878 7.00025 5.67572 7.00044 5.85017 6.95856C6.39864 6.82688 6.82688 6.39864 6.95856 5.85017C7.00044 5.67572 7.00025 5.47878 7.00003 5.25033L7 5.2V2.8L7.00003 2.74967C7.00025 2.52122 7.00044 2.32429 6.95856 2.14983C6.82688 1.60136 6.39864 1.17312 5.85017 1.04145C5.67572 0.999564 5.47878 0.999752 5.25033 0.99997L5.2 1H2.8ZM2.38328 2.01382C2.42632 2.00348 2.49222 2 2.8 2H5.2C5.50779 2 5.57369 2.00348 5.61672 2.01382C5.79955 2.05771 5.94229 2.20045 5.98619 2.38328C5.99652 2.42632 6 2.49222 6 2.8V5.2C6 5.50779 5.99652 5.57369 5.98619 5.61672C5.94229 5.79955 5.79955 5.94229 5.61672 5.98619C5.57369 5.99652 5.50779 6 5.2 6H2.8C2.49222 6 2.42632 5.99652 2.38328 5.98619C2.20045 5.94229 2.05771 5.79955 2.01382 5.61672C2.00348 5.57369 2 5.50779 2 5.2V2.8C2 2.49222 2.00348 2.42632 2.01382 2.38328C2.05771 2.20045 2.20045 2.05771 2.38328 2.01382ZM9.8 1L9.74967 0.99997C9.52122 0.999752 9.32429 0.999564 9.14983 1.04145C8.60136 1.17312 8.17312 1.60136 8.04145 2.14983C7.99956 2.32429 7.99975 2.52122 7.99997 2.74967L8 2.8V5.2L7.99997 5.25033C7.99975 5.47878 7.99956 5.67572 8.04145 5.85017C8.17312 6.39864 8.60136 6.82688 9.14983 6.95856C9.32429 7.00044 9.52122 7.00025 9.74967 7.00003L9.8 7H12.2L12.2503 7.00003C12.4788 7.00025 12.6757 7.00044 12.8502 6.95856C13.3986 6.82688 13.8269 6.39864 13.9586 5.85017C14.0004 5.67572 14.0003 5.47878 14 5.25033L14 5.2V2.8L14 2.74967C14.0003 2.52122 14.0004 2.32429 13.9586 2.14983C13.8269 1.60136 13.3986 1.17312 12.8502 1.04145C12.6757 0.999564 12.4788 0.999752 12.2503 0.99997L12.2 1H9.8ZM9.38328 2.01382C9.42632 2.00348 9.49222 2 9.8 2H12.2C12.5078 2 12.5737 2.00348 12.6167 2.01382C12.7995 2.05771 12.9423 2.20045 12.9862 2.38328C12.9965 2.42632 13 2.49222 13 2.8V5.2C13 5.50779 12.9965 5.57369 12.9862 5.61672C12.9423 5.79955 12.7995 5.94229 12.6167 5.98619C12.5737 5.99652 12.5078 6 12.2 6H9.8C9.49222 6 9.42632 5.99652 9.38328 5.98619C9.20045 5.94229 9.05771 5.79955 9.01382 5.61672C9.00348 5.57369 9 5.50779 9 5.2V2.8C9 2.49222 9.00348 2.42632 9.01382 2.38328C9.05771 2.20045 9.20045 2.05771 9.38328 2.01382ZM2.74967 7.99997L2.8 8H5.2L5.25033 7.99997C5.47878 7.99975 5.67572 7.99956 5.85017 8.04145C6.39864 8.17312 6.82688 8.60136 6.95856 9.14983C7.00044 9.32429 7.00025 9.52122 7.00003 9.74967L7 9.8V12.2L7.00003 12.2503C7.00025 12.4788 7.00044 12.6757 6.95856 12.8502C6.82688 13.3986 6.39864 13.8269 5.85017 13.9586C5.67572 14.0004 5.47878 14.0003 5.25033 14L5.2 14H2.8L2.74967 14C2.52122 14.0003 2.32429 14.0004 2.14983 13.9586C1.60136 13.8269 1.17312 13.3986 1.04145 12.8502C0.999564 12.6757 0.999752 12.4788 0.99997 12.2503L1 12.2V9.8L0.99997 9.74967C0.999752 9.52122 0.999564 9.32429 1.04145 9.14983C1.17312 8.60136 1.60136 8.17312 2.14983 8.04145C2.32429 7.99956 2.52122 7.99975 2.74967 7.99997ZM2.8 9C2.49222 9 2.42632 9.00348 2.38328 9.01382C2.20045 9.05771 2.05771 9.20045 2.01382 9.38328C2.00348 9.42632 2 9.49222 2 9.8V12.2C2 12.5078 2.00348 12.5737 2.01382 12.6167C2.05771 12.7995 2.20045 12.9423 2.38328 12.9862C2.42632 12.9965 2.49222 13 2.8 13H5.2C5.50779 13 5.57369 12.9965 5.61672 12.9862C5.79955 12.9423 5.94229 12.7995 5.98619 12.6167C5.99652 12.5737 6 12.5078 6 12.2V9.8C6 9.49222 5.99652 9.42632 5.98619 9.38328C5.94229 9.20045 5.79955 9.05771 5.61672 9.01382C5.57369 9.00348 5.50779 9 5.2 9H2.8ZM9.8 8L9.74967 7.99997C9.52122 7.99975 9.32429 7.99956 9.14983 8.04145C8.60136 8.17312 8.17312 8.60136 8.04145 9.14983C7.99956 9.32429 7.99975 9.52122 7.99997 9.74967L8 9.8V12.2L7.99997 12.2503C7.99975 12.4788 7.99956 12.6757 8.04145 12.8502C8.17312 13.3986 8.60136 13.8269 9.14983 13.9586C9.32429 14.0004 9.52122 14.0003 9.74967 14L9.8 14H12.2L12.2503 14C12.4788 14.0003 12.6757 14.0004 12.8502 13.9586C13.3986 13.8269 13.8269 13.3986 13.9586 12.8502C14.0004 12.6757 14.0003 12.4788 14 12.2503L14 12.2V9.8L14 9.74967C14.0003 9.52122 14.0004 9.32429 13.9586 9.14983C13.8269 8.60136 13.3986 8.17312 12.8502 8.04145C12.6757 7.99956 12.4788 7.99975 12.2503 7.99997L12.2 8H9.8ZM9.38328 9.01382C9.42632 9.00348 9.49222 9 9.8 9H12.2C12.5078 9 12.5737 9.00348 12.6167 9.01382C12.7995 9.05771 12.9423 9.20045 12.9862 9.38328C12.9965 9.42632 13 9.49222 13 9.8V12.2C13 12.5078 12.9965 12.5737 12.9862 12.6167C12.9423 12.7995 12.7995 12.9423 12.6167 12.9862C12.5737 12.9965 12.5078 13 12.2 13H9.8C9.49222 13 9.42632 12.9965 9.38328 12.9862C9.20045 12.9423 9.05771 12.7995 9.01382 12.6167C9.00348 12.5737 9 12.5078 9 12.2V9.8C9 9.49222 9.00348 9.42632 9.01382 9.38328C9.05771 9.20045 9.20045 9.05771 9.38328 9.01382Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
-                      </div>
-                      <div>
-                        <h4 className='Text size-4 weight-2'>Make tools discoverable</h4>
-                      </div>
-                    </div>
-                    <div className='pl-8 ml-1'>
-                      <p className='Text size-3 lowContrast'>Catalog your API specs, services, docs, tooling, and teams, so everything is easy to access in one place.</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='Flex row ai-center gap-3'>
-                      <div className='IconContainer size-2 rounded solid'>
-                        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.50003C5 8.32845 4.32843 9.00003 3.5 9.00003C2.67157 9.00003 2 8.32845 2 7.50003C2 6.6716 2.67157 6.00003 3.5 6.00003C4.32843 6.00003 5 6.6716 5 7.50003ZM5.71313 8.66388C5.29445 9.45838 4.46048 10 3.5 10C2.11929 10 1 8.88074 1 7.50003C1 6.11931 2.11929 5.00003 3.5 5.00003C4.46048 5.00003 5.29445 5.54167 5.71313 6.33616L9.10424 4.21671C9.03643 3.98968 9 3.74911 9 3.50003C9 2.11932 10.1193 1.00003 11.5 1.00003C12.8807 1.00003 14 2.11932 14 3.50003C14 4.88074 12.8807 6.00003 11.5 6.00003C10.6915 6.00003 9.97264 5.61624 9.51566 5.0209L5.9853 7.22738C5.99502 7.31692 6 7.40789 6 7.50003C6 7.59216 5.99502 7.68312 5.9853 7.77267L9.51567 9.97915C9.97265 9.38382 10.6915 9.00003 11.5 9.00003C12.8807 9.00003 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5C9 11.2509 9.03643 11.0104 9.10425 10.7833L5.71313 8.66388ZM11.5 5.00003C12.3284 5.00003 13 4.32846 13 3.50003C13 2.6716 12.3284 2.00003 11.5 2.00003C10.6716 2.00003 10 2.6716 10 3.50003C10 4.32846 10.6716 5.00003 11.5 5.00003ZM13 11.5C13 12.3285 12.3284 13 11.5 13C10.6716 13 10 12.3285 10 11.5C10 10.6716 10.6716 10 11.5 10C12.3284 10 13 10.6716 13 11.5Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
-                      </div>
-                      <div>
-                        <h4 className='Text size-4 weight-2'>Integrations</h4>
-                      </div>
-                    </div>
-                    <div className='pl-8 ml-1'>
-                      <p className='Text size-3 lowContrast'>Context-switching wastes time. Roadie integrates with popular vendors so devs can find info on services or create new services from a single place.</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='Flex row ai-center gap-3'>
-                      <div className='IconContainer size-2 rounded solid'>
-                        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5ZM9.30884 10.0159C8.53901 10.6318 7.56251 11 6.5 11C4.01472 11 2 8.98528 2 6.5C2 4.01472 4.01472 2 6.5 2C8.98528 2 11 4.01472 11 6.5C11 7.56251 10.6318 8.53901 10.0159 9.30884L12.8536 12.1464C13.0488 12.3417 13.0488 12.6583 12.8536 12.8536C12.6583 13.0488 12.3417 13.0488 12.1464 12.8536L9.30884 10.0159Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
-                      </div>
-                      <div>
-                        <h4 className='Text size-4 weight-2'>Search across systems</h4>
-                      </div>
-                    </div>
-                    <div className='pl-8 ml-1'>
-                      <p className='Text size-3 lowContrast'>Make it easier for devs to navigate your org via centralized search for finding references in your software assets, docs, Confluence, and Stackoverflow.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className='Flex column gap-3'>
-                <h3 className="Text size-7">Track software quality</h3>
-                <p className='Text size-4 lowContrast mb-2'>Define engineering standards and initiatives that get checked automatically across your ecosystem.</p>
-                <a href="#" className='Link mb-4'><span className='Text size-4'>Learn about Tech Insights</span></a>
-                <div className='Flex column gap-4'>
-                  <div>
-                    <div className='Flex row ai-center gap-3'>
-                      <div className='IconContainer size-2 rounded solid'>
-                        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 0.875C5.49797 0.875 3.875 2.49797 3.875 4.5C3.875 6.15288 4.98124 7.54738 6.49373 7.98351C5.2997 8.12901 4.27557 8.55134 3.50407 9.31167C2.52216 10.2794 2.02502 11.72 2.02502 13.5999C2.02502 13.8623 2.23769 14.0749 2.50002 14.0749C2.76236 14.0749 2.97502 13.8623 2.97502 13.5999C2.97502 11.8799 3.42786 10.7206 4.17091 9.9883C4.91536 9.25463 6.02674 8.87499 7.49995 8.87499C8.97317 8.87499 10.0846 9.25463 10.8291 9.98831C11.5721 10.7206 12.025 11.8799 12.025 13.5999C12.025 13.8623 12.2376 14.0749 12.5 14.0749C12.7623 14.075 12.975 13.8623 12.975 13.6C12.975 11.72 12.4778 10.2794 11.4959 9.31166C10.7244 8.55135 9.70025 8.12903 8.50625 7.98352C10.0187 7.5474 11.125 6.15289 11.125 4.5C11.125 2.49797 9.50203 0.875 7.5 0.875ZM4.825 4.5C4.825 3.02264 6.02264 1.825 7.5 1.825C8.97736 1.825 10.175 3.02264 10.175 4.5C10.175 5.97736 8.97736 7.175 7.5 7.175C6.02264 7.175 4.825 5.97736 4.825 4.5Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
-                      </div>
-                      <div>
-                        <h4 className='Text size-4 weight-2'>Discover struggling teams</h4>
-                      </div>
-                    </div>
-                    <div className='pl-8 ml-1'>
-                      <p className='Text size-3 lowContrast'>Standards adherence can be grouped by teams, offering insight into who may need more support to adopt new practices.</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='Flex row ai-center gap-3'>
-                      <div className='IconContainer size-2 rounded solid'>
-                        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.49998 0.5C5.49998 0.223858 5.72383 0 5.99998 0H7.49998H8.99998C9.27612 0 9.49998 0.223858 9.49998 0.5C9.49998 0.776142 9.27612 1 8.99998 1H7.99998V2.11922C9.09832 2.20409 10.119 2.56622 10.992 3.13572C11.0116 3.10851 11.0336 3.08252 11.058 3.05806L12.058 2.05806C12.3021 1.81398 12.6978 1.81398 12.9419 2.05806C13.186 2.30214 13.186 2.69786 12.9419 2.94194L11.967 3.91682C13.1595 5.07925 13.9 6.70314 13.9 8.49998C13.9 12.0346 11.0346 14.9 7.49998 14.9C3.96535 14.9 1.09998 12.0346 1.09998 8.49998C1.09998 5.13361 3.69904 2.3743 6.99998 2.11922V1H5.99998C5.72383 1 5.49998 0.776142 5.49998 0.5ZM2.09998 8.49998C2.09998 5.51764 4.51764 3.09998 7.49998 3.09998C10.4823 3.09998 12.9 5.51764 12.9 8.49998C12.9 11.4823 10.4823 13.9 7.49998 13.9C4.51764 13.9 2.09998 11.4823 2.09998 8.49998ZM7.49998 8.49998V4.09998C5.06992 4.09998 3.09998 6.06992 3.09998 8.49998C3.09998 10.93 5.06992 12.9 7.49998 12.9C8.715 12.9 9.815 12.4075 10.6112 11.6112L7.49998 8.49998Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
-                      </div>
-                      <div>
-                        <h4 className='Text size-4 weight-2'>Understand migration progress</h4>
-                      </div>
-                    </div>
-                    <div className='pl-8 ml-1'>
-                      <p className='Text size-3 lowContrast'>Initiatives keep track of org-wide migrations, offering insights about the change across software components.</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='Flex row ai-center gap-3'>
-                      <div className='IconContainer size-2 rounded solid'>
-                        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.49991 0.877045C3.84222 0.877045 0.877075 3.84219 0.877075 7.49988C0.877075 11.1575 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1575 14.1227 7.49988C14.1227 3.84219 11.1576 0.877045 7.49991 0.877045ZM1.82708 7.49988C1.82708 4.36686 4.36689 1.82704 7.49991 1.82704C10.6329 1.82704 13.1727 4.36686 13.1727 7.49988C13.1727 10.6329 10.6329 13.1727 7.49991 13.1727C4.36689 13.1727 1.82708 10.6329 1.82708 7.49988ZM10.1589 5.53774C10.3178 5.31191 10.2636 5.00001 10.0378 4.84109C9.81194 4.68217 9.50004 4.73642 9.34112 4.96225L6.51977 8.97154L5.35681 7.78706C5.16334 7.59002 4.84677 7.58711 4.64973 7.78058C4.45268 7.97404 4.44978 8.29061 4.64325 8.48765L6.22658 10.1003C6.33054 10.2062 6.47617 10.2604 6.62407 10.2483C6.77197 10.2363 6.90686 10.1591 6.99226 10.0377L10.1589 5.53774Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
-                      </div>
-                      <div>
-                        <h4 className='Text size-4 weight-2'>Software Checks</h4>
-                      </div>
-                    </div>
-                    <div className='pl-8 ml-1'>
-                      <p className='Text size-3 lowContrast'>Write checks that find software which is not meeting expectations and then notify owners.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SideBySideBulletParagraphs />
 
       <div className='Flex row jc-center'>
         <div className='SeparatorGradient size-2' role="separator"></div>
