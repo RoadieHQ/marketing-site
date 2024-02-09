@@ -2,10 +2,8 @@ import React from 'react';
 
 import SnykLogo from '../../../content/assets/home/customer-logos/snyk-monochrome.webp';
 import SnykLogoPng from '../../../content/assets/home/customer-logos/snyk-monochrome.png';
-import StreamElementsLogo from '../../../content/assets/home/customer-logos/streamelements-monochrome.webp';
-import StreamElementsLogoPng from '../../../content/assets/home/customer-logos/streamelements-monochrome.png';
-import TrackunitLogo from '../../../content/assets/home/customer-logos/trackunit-monochrome.webp';
-import TrackunitLogoPng from '../../../content/assets/home/customer-logos/trackunit-monochrome.png';
+import SumUpLogo from '../../../content/assets/home/customer-logos/sumup-monochrome-standardized.webp';
+import SumUpLogoPng from '../../../content/assets/home/customer-logos/sumup-monochrome-standardized.png';
 import ContentfulLogo from '../../../content/assets/home/customer-logos/contentful-monochrome.webp';
 import ContentfulLogoPng from '../../../content/assets/home/customer-logos/contentful-monochrome.png';
 import NcsaLogo from '../../../content/assets/home/customer-logos/ncsa-monochrome.webp';
@@ -18,98 +16,85 @@ import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochr
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
 import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-monochrome.webp';
 import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
-import CaribouLogo from '../../../content/assets/home/customer-logos/caribou-monochrome.png';
-import CaribouLogoPng from '../../../content/assets/home/customer-logos/caribou-monochrome.png';
-
-import HopperWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/hopper.png';
-import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/contentful.png';
-import SnykWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/snyk.png';
-import NetlifyWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/netlify.png';
-import CaribouWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/caribou.png';
-import YotpoWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/yotpo.png';
-
-import ContentfulDarkLogo from '../../../content/assets/home/customer-logos-monochrome/contentful-dark.png';
-import SnykDarkLogo from '../../../content/assets/home/customer-logos-monochrome/snyk-dark.png';
-import NetlifyDarkLogo from '../../../content/assets/home/customer-logos-monochrome/netlify-dark.png';
-import CaribouDarkLogo from '../../../content/assets/home/customer-logos-monochrome/caribou-dark.png';
-import YotpoDarkLogo from '../../../content/assets/home/customer-logos-monochrome/yotpo-dark.png';
+import AstrazenecaLogo from '../../../content/assets/home/customer-logos/astrazenca-monochrome-standardized.webp';
+import AstrazenecaLogoPng from '../../../content/assets/home/customer-logos/astrazenca-monochrome-standardized.png';
+import BaillieGiffordLogo from '../../../content/assets/home/customer-logos/baillie-gifford-monochrome-standardized.webp';
+import BaillieGiffordLogoPng from '../../../content/assets/home/customer-logos/baillie-gifford-monochrome-standardized.png';
+import DexcomLogo from '../../../content/assets/home/customer-logos/dexcom-monochrome-standardized.webp';
+import DexcomLogoPng from '../../../content/assets/home/customer-logos/dexcom-monochrome-standardized.png';
+import DutchieLogo from '../../../content/assets/home/customer-logos/dutchie-monochrome-standardized.webp';
+import DutchieLogoPng from '../../../content/assets/home/customer-logos/dutchie-monochrome-standardized.png';
+import EinrideLogo from '../../../content/assets/home/customer-logos/einride-monochrome-standardized.webp';
+import EinrideLogoPng from '../../../content/assets/home/customer-logos/einride-monochrome-standardized.png';
+import SubmittableLogo from '../../../content/assets/home/customer-logos/submittable-monochrome-standardized.webp';
+import SubmittableLogoPng from '../../../content/assets/home/customer-logos/submittable-monochrome-standardized.png';
+import RelativityLogo from '../../../content/assets/home/customer-logos/relativity-monochrome-standardized.webp';
+import RelativityLogoPng from '../../../content/assets/home/customer-logos/relativity-monochrome-standardized.png';
+import UplightLogo from '../../../content/assets/home/customer-logos/uplight-monochrome-standardized.webp';
+import UplightLogoPng from '../../../content/assets/home/customer-logos/uplight-monochrome-standardized.png';
+import GpLogo from '../../../content/assets/home/customer-logos/gp-monochrome-standardized.webp';
+import GpLogoPng from '../../../content/assets/home/customer-logos/gp-monochrome-standardized.png';
+import MatillionLogo from '../../../content/assets/home/customer-logos/matillion-monochrome-standardized.webp';
+import MatillionLogoPng from '../../../content/assets/home/customer-logos/matillion-monochrome-standardized.png';
 
 export const LOGOS = [
   {
     src: {
-      webp: CaribouLogo,
-      png: CaribouLogoPng,
-      white: CaribouWhiteLogo,
-      dark: CaribouDarkLogo,
+      webp: BaillieGiffordLogo,
+      png: BaillieGiffordLogoPng,
     },
-    alt: 'Caribou logo',
-    title: '~100 engineers',
+    alt: 'Baillie Gifford logo',
   },
   {
     src: {
       webp: YotpoLogo,
       png: YotpoLogoPng,
-      white: YotpoWhiteLogo,
-      dark: YotpoDarkLogo,
     },
     alt: 'Yotpo logo',
-    title: '~100 engineers',
   },
   {
     src: {
       webp: SnykLogo,
       png: SnykLogoPng,
-      white: SnykWhiteLogo,
-      dark: SnykDarkLogo,
     },
     alt: 'Snyk logo',
-    title: '~150 engineers',
   },
 
   {
     src: {
       webp: ContentfulLogo,
       png: ContentfulLogoPng,
-      white: ContentfulWhiteLogo,
-      dark: ContentfulDarkLogo,
     },
     alt: 'Contentful logo',
-    title: '~150 engineers',
   },
   {
     src: {
       webp: NetlifyLogo,
       png: NetlifyLogoPng,
-      white: NetlifyWhiteLogo,
-      dark: NetlifyDarkLogo,
     },
     alt: 'Netlify logo',
-    title: '~100 engineers',
   },
   {
     src: {
       webp: HopperLogo,
       png: HopperLogoPng,
-      white: HopperWhiteLogo,
     },
     alt: 'Hopper logo',
-    title: '~200 engineers',
   },
+
   {
     src: {
       webp: MyFitnessPalLogo,
       png: MyFitnessPalLogoPng,
     },
     alt: 'MyFitnessPal logo',
-    title: '~100 engineers',
   },
   {
     src: {
-      webp: TrackunitLogo,
-      png: TrackunitLogoPng,
+      webp: SumUpLogo,
+      png: SumUpLogoPng,
     },
-    alt: 'Trackunit logo',
-    title: '~70 engineers',
+    alt: 'SumUp logo',
   },
   {
     src: {
@@ -117,23 +102,72 @@ export const LOGOS = [
       png: NcsaLogoPng,
     },
     alt: 'NCSA logo',
-    title: '~50 engineers',
+  },
+
+  {
+    src: {
+      webp: DexcomLogo,
+      png: DexcomLogoPng,
+    },
+    alt: 'Dexcom logo',
   },
   {
     src: {
-      webp: StreamElementsLogo,
-      png: StreamElementsLogoPng,
+      webp: DutchieLogo,
+      png: DutchieLogoPng,
     },
-    alt: 'StreamElements logo',
-    title: '~50 engineers',
+    alt: 'Dutchie logo',
   },
   {
     src: {
-      webp: YotpoLogo,
-      png: YotpoLogoPng,
+      webp: EinrideLogo,
+      png: EinrideLogoPng,
     },
-    alt: 'Yotpo logo',
-    title: '~250 engineers',
+    alt: 'Einride logo',
+  },
+
+  {
+    src: {
+      webp: AstrazenecaLogo,
+      png: AstrazenecaLogoPng,
+    },
+    alt: 'Astrazeneca logo',
+  },
+  {
+    src: {
+      webp: SubmittableLogo,
+      png: SubmittableLogoPng,
+    },
+    alt: 'Submittable logo',
+  },
+  {
+    src: {
+      webp: RelativityLogo,
+      png: RelativityLogoPng,
+    },
+    alt: 'Relativity logo',
+  },
+
+  {
+    src: {
+      webp: UplightLogo,
+      png: UplightLogoPng,
+    },
+    alt: 'Uplight logo',
+  },
+  {
+    src: {
+      webp: GpLogo,
+      png: GpLogoPng,
+    },
+    alt: 'GP logo',
+  },
+  {
+    src: {
+      webp: MatillionLogo,
+      png: MatillionLogoPng,
+    },
+    alt: 'Matillion logo',
   },
 ];
 
@@ -149,18 +183,14 @@ export const LogoItem = ({ src, ...rest }) => (
 
 const CustomerLogoCloud = ({ logos = LOGOS }) => (
   <div className="bg-white">
-    <div className="max-w-7xl mx-auto py-12 lg:py-32 px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-8 sm:mb-12 text-gray-600">
-        <p>Providing Backstage to</p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-        {logos.slice(0, 8).map((logo) => (
-          <div className="col-span-1 flex justify-center" key={logo.src.png}>
+    <div className="grid gap-8 grid-cols-3 grid-rows-6 md:grid-cols-6 md:grid-rows-3">
+      {logos.map((logo) => {
+        return (
+          <div key={logo.src.png}>
             <LogoItem {...logo} className="h-10" />
           </div>
-        ))}
-      </div>
+        );
+      })}
     </div>
   </div>
 );

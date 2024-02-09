@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button } from 'components';
 
-import HeroLogos from './HeroLogos';
 import CVEsOverTimeCard from './CVEsOverTimeCard';
 import ScorecardsCard from './ScorecardsCard';
 import CodeQualityCard from './CodeQualityCard';
 import DocumentationCard from './DocumentationCard';
+import CustomerLogoCloud from '../CustomerLogoCloud';
 
 const SideBySideHero = () => {
   return (
@@ -28,8 +28,8 @@ const SideBySideHero = () => {
           />
         </div>
 
-        <div className="flex justify-between px-12 mb-20">
-          <HeroLogos />
+        <div className="mb-20">
+          <CustomerLogoCloud />
         </div>
 
         <div className='Grid columns-1 bp2-columns-2 gap-4'>
