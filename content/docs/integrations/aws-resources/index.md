@@ -46,7 +46,7 @@ After the role configuration is done, you can click the 'Test Role' button to ch
 
 ## Resources and needed permissions
 
-In the below table you can see the available resources to be ingested and the AWS permissions that are needed to be granted for the assumable role for them to appear to the Catalog.
+The table below lists the permissions required of the assumable role in order for the Catalog to ingest those resource types.
 
 | Resource        | Description                               | AWS Policy Action(s)                            |
 |-----------------|-------------------------------------------|-------------------------------------------------|
