@@ -37,7 +37,7 @@ For quick experimentation, you can use `AWS<ResourceType>ReadOnlyAccess` policie
 ![AWS Resources config](aws-resources-config.png)
 
 On the AWS Resources settings page `Administration > Settings > AWS Resources` in Roadie click `Add Item`. 
-Here you can select the type of resource you want to be automatically ingested. The possible options are listed in the table at the bottom of the page.
+Here you can select the type of resource you want to be ingested. The possible options are listed in the table at the bottom of the page.
 
 After choosing a resource, you need to define the role (created in step 2 above) to be used to ingest these resources, as well as the AWS region to use and the optional External ID configured for the role 
 
