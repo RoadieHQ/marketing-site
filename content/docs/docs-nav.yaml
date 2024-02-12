@@ -57,6 +57,7 @@ nav:
       - Apache Airflow: '/docs/integrations/apache-airflow/'
   - Integrations:
       - AWS S3: '/docs/integrations/aws-s3/'
+      - AWS Resources: '/docs/integrations/aws-resources/'
       - Azure DevOps: '/docs/integrations/azure-devops-provider/'
       - Broker: '/docs/integrations/broker/'
       - Microsoft Graph: '/docs/integrations/ms-graph-org-provider/'
