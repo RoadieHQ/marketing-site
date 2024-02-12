@@ -29,7 +29,7 @@ You'll need to attach policies to the role to be able to retrieve information ab
 
 For quick experimentation, you can use `AWS<ResourceType>ReadOnlyAccess` policies provided by AWS, but the best practice is to allow only specific needed operations.
 
-
+If you are using AWS CloudFormation, there is a linked CloudFormation template on the AWS Resources Configuration page which can be used to generate the needed assumable role.
 
 
 ##  Step 3: Configure your Roadie instance to use the new role
