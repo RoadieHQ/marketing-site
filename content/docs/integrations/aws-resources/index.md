@@ -58,7 +58,7 @@ The table below lists the permissions required of the assumable role in order fo
 | rds-db-instance | AWS Relational Database Service instances | `rds:DescribeDBInstances`                       |
 
 
-You can see an example JSON needed to construct the policy by expanding the code snippet below. For cases where multiple role policy actions are defined, you can add needed additional statement blocks into the policy.  
+You can expand the code snippet below to show an example policy document for the AWS role. You can add additional statement blocks into the policy document where multiple role policy actions are required.
 
 <details>
 
