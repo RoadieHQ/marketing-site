@@ -34,9 +34,9 @@ signed-by: t.roadie.io
 Our support team may also communicate with Roadie users via the Intercom application. These emails have the following headers:
 
 ```
-from:       <roadie employee name>@roadie.intercom-mail.eu
-mailed-by:	rp.roadie.intercom-mail.eu
-signed-by:	roadie.intercom-mail.eu
+from:      <roadie employee name>@roadie.intercom-mail.eu
+mailed-by: rp.roadie.intercom-mail.eu
+signed-by: roadie.intercom-mail.eu
 ```
 
 ## Hostnames
