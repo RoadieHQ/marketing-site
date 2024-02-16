@@ -84,7 +84,7 @@ This will result in a response like
 }
 ```
 
-Now you can use either this list directly and send the data into the Roadie catalog via your preferred way, using plain curl or any programming language you prefer. In the next section I'll show you a full example with nodejs
+Now you can use either this list directly and send the data into the Roadie Catalog via your preferred way, using plain curl command or any programming language you prefer. In the next section I'll show you a full example with node.js.
 
 ### Listing the accounts and sending the entities to Roadie
 
