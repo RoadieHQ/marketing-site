@@ -167,7 +167,7 @@ response.then((r) => {
 });
 ```
 
-You will see the following response body on a successfull request:
+You will see the following response body on a successful request:
 
 ```json
 {
