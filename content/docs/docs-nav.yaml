@@ -89,6 +89,7 @@ nav:
           - Requesting plugins: '/docs/details/requesting-plugins/'
       - Setting secrets: '/docs/details/setting-secrets/'
       - Updating the UI: '/docs/details/updating-the-ui/'
+      - Entity Push API: '/docs/details/entity-push-api/'
   - Custom plugins:
       - Overview: '/docs/custom-plugins/overview'
       - Getting Started: '/docs/custom-plugins/getting-started/'
