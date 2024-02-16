@@ -171,27 +171,49 @@ You will see the following response body on a successful request:
 
 ```json
 {
-  "id": "a438bfd2-ff4c-4c82-bcec-c18115e6779b",
-  "entity": {
-    "kind": "Resource",
-    "spec": { "type": "aws-account", "owner": "dx-team" },
-    "metadata": {
-      "name": "Development Account",
-      "annotations": {
-        "aws-account/arn": "arn:aws:organizations::111111111111:account/o-exampleorgid/333333333333",
-        "backstage.io/managed-by-location": "roadie-api:/api/catalog/roadie-entities/entities/by-ref/resource%3Adefault%2Fdevelopment%20account",
-        "backstage.io/managed-by-origin-location": "roadie-api:/api/catalog/roadie-entities/entities"
+  "set": "aws-accounts",
+  "items": [
+    {
+      "id": "cf71aba4-c2c5-4ba8-b274-c94c097d74be",
+      "entity": {
+        "kind": "Resource",
+        "spec": { "type": "aws-account", "owner": "dx-team" },
+        "metadata": {
+          "name": "development",
+          "annotations": {
+            "update-me": "me",
+            "aws-account/arn": "arn",
+            "roadie.io/entity-set": "aws-accounts",
+            "backstage.io/managed-by-location": "roadie-api:/api/catalog/roadie-entities/entities/by-ref/resource%3Adefault%2Fdevelopment",
+            "backstage.io/managed-by-origin-location": "roadie-api:/api/catalog/roadie-entities/entities"
+          },
+          "description": "AWS accounts"
+        },
+        "apiVersion": "backstage.io/v1alpha1"
       },
-      "description": "AWS accounts"
-    },
-    "apiVersion": "backstage.io/v1alpha1"
-  },
-  "entityRef": "resource:default/development account",
-  "rawData": "resource:default/development account",
-  "set": null,
-  "updatedBy": "user:default/bob",
-  "source": "api-entity",
-  "updatedAt": "2024-02-15T13:31:20.718+00:00"
+      "entityRef": "resource:default/development",
+      "rawData": {
+        "kind": "Resource",
+        "spec": { "type": "aws-account", "owner": "dx-team" },
+        "metadata": {
+          "name": "development",
+          "annotations": {
+            "update-me": "me",
+            "aws-account/arn": "arn",
+            "roadie.io/entity-set": "aws-accounts",
+            "backstage.io/managed-by-location": "roadie-api:/api/catalog/roadie-entities/entities/by-ref/resource%3Adefault%2Fdevelopment",
+            "backstage.io/managed-by-origin-location": "roadie-api:/api/catalog/roadie-entities/entities"
+          },
+          "description": "AWS accounts"
+        },
+        "apiVersion": "backstage.io/v1alpha1"
+      },
+      "set": "aws-accounts",
+      "updatedBy": "user:default/guest",
+      "source": "api-entity",
+      "updatedAt": "2024-02-16T11:26:16.685+00:00"
+    }
+  ]
 }
 ```
 
