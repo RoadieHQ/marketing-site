@@ -10,7 +10,7 @@ In this tutorial we are going to show you how to ingest your organization's AWS 
 
 ## Authentication
 
-First to be able to use the roadie entity push api we will need to get an authentication token. You can generate your own token by going to the `Administration` -> `Account` (`/administration/account`) page. Here go to the `Roadie API Access` section. Give a name to your token and press the `GENERATE TOKEN` button.
+First to be able to use the Roadie entity push API we will need to get an authentication token. You can generate your own token by going to the `Administration` -> `Account` (`/administration/account`) page. Here go to the `Roadie API Access` section. Give a name to your token and press the `GENERATE TOKEN` button.
 Make sure you copy your token and put it in a secure place.
 You can test out your token by hitting the api. For example:
 
