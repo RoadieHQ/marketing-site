@@ -7,6 +7,7 @@ description: How to use the Entity Push API
 # Catalog your AWS accounts
 
 In this tutorial we are going to show you how to ingest your organization's AWS accounts into your Roadie catalog as Resource entities. For this we will use Roadie's Entity Push API. You can check out the API docs [here](/docs/api/catalog/) in the Roadie Provider section.
+This tutorial will hopefully serve as an example around how you might apply this same pattern to other cloud providers or other resources that you cannot currently manage with the providers available with Roadie out of the box.
 
 ## Authentication
 
