@@ -88,7 +88,7 @@ Now you can use either this list directly and send the data into the Roadie Cata
 
 ### Listing the accounts and sending the entities to Roadie
 
-- We will use the official AWS javascript SDK. Make sure you have it available in your system
+- We will use the official AWS JavaScript SDK. Make sure you have it available in your system
 - Make sure you have your `ROADIE_API_TOKEN` available in your shell
 - Make sure you are authenticated towards your AWS.
 - Make sure you are using your correct `AWS_PROFILE`
