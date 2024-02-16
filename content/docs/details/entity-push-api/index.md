@@ -202,4 +202,4 @@ Go to your catalog page (`Catalog` -> `Resource`) and you will immedietly see th
 
 To continuously update your catalog with the changes in your AWS accounts you will need to run this script on a schedule. I advise you to use your organization's best practice to run these scheduled jobs. Alternatively you can use the pull based `roadie-agent` library if you want Roadie to automatically schedule pulling these entities from your developed Roadie Agent service.
 
-Regardless how it will run you will need to be sure that environment has the correct tokens to be able to fetch from your organization's AWS and to be able to push to your Roadie api. Do not forget to configure your `ROADIE_API_TOKEN` and your `AWS_PROFILE`
+Regardless how it will run you will need to be sure that environment has the correct tokens to be able to fetch from your organization's AWS and to be able to push to your Roadie API. Do not forget to configure your `ROADIE_API_TOKEN` and your `AWS_PROFILE`.
