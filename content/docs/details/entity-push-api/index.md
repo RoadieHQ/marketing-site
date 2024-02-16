@@ -93,7 +93,7 @@ Now you can use either this list directly and send the data into the Roadie Cata
 - Make sure you are authenticated towards your AWS.
 - Make sure you are using your correct `AWS_PROFILE`
 
-We are going to fetch the available AWS accounts then pick the data we want to put on the Resource entities and finally send these into Roadie. We are going to use the `PUT /api/catalog/roadie-entities/sets/${setId}` endpoint. Provide a set id something descriptive. This provides the ability to issue subsequent requests towards the same set id and it will update all of the entities provided in the request body. This performs a full mutation, every entity in the set will be replaced by the new incoming entities in the new requests.
+We are going to fetch the available AWS accounts and then pick the data we want to put in the Resource entities and finally send these into Roadie. We are going to use the `PUT /api/catalog/roadie-entities/sets/${setId}` endpoint. To use this we have to provide a set id, which should be something descriptive. This provides the ability to issue subsequent requests towards the same set id and it will update all of the entities provided in the request body. This performs a full mutation, every entity in the set will be replaced by the new incoming entities in the new requests.
 
 If you would like to remove some of the entities provided in these set you will need to issue a new request without the entity you want to delete, so the whole set will be replaced by the new array of entities you send to Roadie.
 
