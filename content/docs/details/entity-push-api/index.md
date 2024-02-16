@@ -24,7 +24,7 @@ curl \
 
 ## Fetch your AWS accounts
 
-Using the aws cli make sure you have it setup and configured. You can read more [here](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-welcome.html)
+Using the AWS CLI make sure you have it setup and configured. You can read more [here](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-welcome.html)
 
 ```bash
 aws organizations list-accounts
