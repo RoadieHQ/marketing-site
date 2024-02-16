@@ -101,7 +101,7 @@ If you would like to remove some of the entities provided in this set you will n
 npm i @aws-sdk/client-organizations
 ```
 
-In this example I'll use the native node:https package, this can be substituted by your preferred way of making an http request. (axios, node-fetch, etc..)
+In this example I'll use the native `node:https` package, this can be substituted by your preferred way of making an http request. (axios, node-fetch, etc..)
 
 ```js
 const https = require('node:https');
