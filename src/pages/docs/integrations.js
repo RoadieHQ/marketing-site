@@ -140,14 +140,14 @@ const DocsIntegrations = ({
     if (integrationTypeFilter === INTEGRATION_TYPE_FILTERS.ALL) {
       filteredIntegrations = [...allIntegrations];
     } else {
-      filteredIntegrations = allIntegrations.filter(({ frontmatter }) => (
-        frontmatter.integrationType.toLowerCase() === integrationTypeFilter
-      ));
+      filteredIntegrations = allIntegrations.filter(
+        ({ frontmatter }) => frontmatter?.integrationType?.toLowerCase() === integrationTypeFilter
+      );
     }
   } else {
-    filteredIntegrations = allIntegrations.filter(({ frontmatter }) => {
-      return frontmatter.humanName.toLowerCase().includes(query.toLowerCase());
-    });
+    filteredIntegrations = allIntegrations.filter(({ frontmatter }) =>
+      frontmatter?.humanName?.toLowerCase().includes(query.toLowerCase())
+    );
   }
 
   const handleQueryInput = (queryValue) => {
