@@ -140,9 +140,10 @@ const DocsIntegrations = ({
     if (integrationTypeFilter === INTEGRATION_TYPE_FILTERS.ALL) {
       filteredIntegrations = [...allIntegrations];
     } else {
-      filteredIntegrations = allIntegrations.filter(({ frontmatter }) => (
-        frontmatter.integrationType.toLowerCase() === integrationTypeFilter
-      ));
+      filteredIntegrations = allIntegrations.filter(({ frontmatter }) => {
+        if (!frontmatter.integrationType) return false;
+        return frontmatter.integrationType.toLowerCase() === integrationTypeFilter;
+      });
     }
   } else {
     filteredIntegrations = allIntegrations.filter(({ frontmatter }) => {
