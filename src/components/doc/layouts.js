@@ -15,7 +15,7 @@ export const DOCS_LAYOUTS = [
   },
   {
     tabLabel: 'Catalog',
-    startPath: '/docs/catalog/location-management/',
+    startPath: '/docs/catalog/introduction/',
     isActiveMatch: '/docs/catalog/',
     sidebarNavItemGroups: [sidebar.nav[7]],
   },

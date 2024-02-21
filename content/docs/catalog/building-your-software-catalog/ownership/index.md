@@ -4,7 +4,7 @@ publishedDate: '2023-05-11T14:49:47.0Z'
 description: How ownership works in Backstage
 ---
 
-Ownership of an entity should be a single reference to a person or team primarily responsible for that entity. 
+Ownership of an entity should be a single reference to a person or team primarily responsible for that entity.
 
 It is represented in Backstage by the [`spec.owner` field](https://backstage.io/docs/features/software-catalog/descriptor-format/#specowner-required) using a user or team [entity reference](https://backstage.io/docs/features/software-catalog/references/#string-references) in the following pattern `[<kind>:][<namespace>/]<name>` like so:
 - `group:roadiehq/engineering-team`
@@ -24,7 +24,7 @@ spec:
 
 ### Using a Code Owners file
 
-Code Owners is an approach to defining ownership of a repository or section of code by using a file that lives alongside that code. 
+Code Owners is an approach to defining ownership of a repository or section of code by using a file that lives alongside that code.
 
 This `CODEOWNERS` file can be used by Roadie Backstage to decorate ownership automatically on entities rather than manually defining ownership in the entity spec definition. This is achieved through the CodeOwnersProcessor in Backstage.
 

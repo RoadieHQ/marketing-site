@@ -151,15 +151,22 @@ nav:
           - Valid lifcycle: '/docs/tech-insights/tracking-catalog-correctness/valid-lifecycle/'
           - Correct labels: '/docs/tech-insights/tracking-catalog-correctness/correct-labels/'
   - Catalog:
-      - Managing locations: '/docs/catalog/location-management/'
-      - Rich team pages: '/docs/catalog/rich-team-pages/'
-      - Modeling dependencies: '/docs/catalog/showing-dependencies/'
-      - Decorating components: '/docs/catalog/decorating-components/'
-      - Removing components: '/docs/catalog/unregister-components/'
-      - Previewing component changes: '/docs/catalog/previewing-changes/'
-      - Troubleshooting: '/docs/catalog/troubleshooting-the-catalog/'
-      - Validating catalog files: '/docs/catalog/validator/'
-      - Ownership: '/docs/catalog/ownership/'
+      - Introduction: '/docs/catalog/introduction/'
+      - Building your software catalog:
+        - Data Model: '/docs/catalog/building-your-software-catalog/catalog-system-model/'
+        - Ownership: '/docs/catalog/building-your-software-catalog/ownership/'
+        - Modeling dependencies: '/docs/catalog/building-your-software-catalog/showing-dependencies/'
+      - Ingesting data into your catalog: '/docs/catalog/ingesting-data-into-your-catalog'
+      - Tools:
+        - Previewing component changes: '/docs/catalog/tools/previewing-changes/'
+        - Validating catalog files: '/docs/catalog/tools/validator/'
+        - Decorating components: '/docs/catalog/tools/decorating-components/'
+        - Location Management: '/docs/catalog/tools/location-management/'
+      - Troubleshooting:
+        - Removing components: '/docs/catalog/troubleshooting/unregister-components/'
+        - Catalog: '/docs/catalog/troubleshooting/troubleshooting-the-catalog/'
+      - Recipes:
+        - Rich team pages: '/docs/catalog/recipes/rich-team-pages/'
   - API:
       - Authorization: '/docs/api/authorization'
       - Catalog: '/docs/api/catalog'

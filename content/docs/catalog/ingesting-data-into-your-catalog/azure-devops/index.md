@@ -1,16 +1,16 @@
 ---
-title: Integrating with Azure DevOps
-publishedDate: '2022-11-09T16:20:00.0Z'
-description: How to configure Roadie to read entities from Azure DevOps
+title: Azure DevOps
+publishedDate: '2024-02-20T21:00:00.0Z'
+description: How to manage entities source from Azure DevOps
 
-humanName: Azure DevOps Provider
-logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.png'
-integrationType: Integration
+humanName: Azure DevOps
+logoImage: '../../../../assets/logos/azure-devops/Azure-DevOps-logo.png'
+entityKinds: [resource, component, domain, system, template, api, user, group]
 ---
 
 ## Introduction
 
-Azure DevOps is a popular alternative to GitHub as an SCM provider. 
+Azure DevOps is a popular alternative to GitHub as an SCM provider.
 
 This guide describes how to set up access for Roadie to your Azure DevOps repositories and retrieve relevant entities from that source.
 
@@ -39,7 +39,7 @@ The updating of secrets within the Roadie application takes a few minutes. You w
 ##  Step 3: Configure your Roadie instance to use Azure DevOps as a source to retrieve entities
 
 Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/azure`.
-   ![Azure Autodiscovery options](./azure-autodiscovery.png)
+![Azure Autodiscovery options](./azure-autodiscovery.png)
 
 Add a provider configuration pointing to your entities within your Azure DevOps organization and project. The updating of provider configurations within the Roadie application takes a few minutes. When the update cycle is complete, you should be able to find your discovered entities in the catalog and the [locations log](/docs/details/location-management/#managing-locations).
 

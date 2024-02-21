@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Introduction to Decoration
 publishedDate: '2023-09-05'
 description: An introduction about decorating components.
 ---

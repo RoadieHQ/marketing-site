@@ -1,23 +1,24 @@
 ---
-title: Integrating with Azure AD
-publishedDate: '2022-12-09T16:20:00.0Z'
-description: How to configure Roadie to ingest users and groups from Azure AD using Microsoft Graph
+title: Azure Active Directory
+publishedDate: '2024-02-20T21:00:00.0Z'
+description: How to manage entities source from Azure Active Directory
 
-humanName: Microsoft Graph Org Provider for Azure AD
-logoImage: '../../../assets/logos/azure-ad/azure-active-directory.svg'
-integrationType: Integration
+humanName: Azure Active Directory
+logoImage: '../../../../assets/logos/azure-ad/azure-active-directory.png'
+entityKinds: [user, group]
+discovery: true
 ---
 
 ## Introduction
 
-Roadie supports retrieving user and group information from Microsoft Azure Active Directory. 
+Roadie supports retrieving user and group information from Microsoft Azure Active Directory.
 
-This guide describes how to set up access for Roadie to your Azure AD and automatically ingest entities from that source.  
+This guide describes how to set up access for Roadie to your Azure AD and automatically ingest entities from that source.
 
-##  Step 1: Create Azure App Registration relevant to your Azure AD 
+##  Step 1: Create Azure App Registration relevant to your Azure AD
 
 Azure AD discovery use Client ID and secret from App registration to authenticate to retrieve relevant data. Create a new App Registration in MS Azure with the following permissions:
-* `GroupMember.Read.All`  
+* `GroupMember.Read.All`
 * `User.Read.All`
 
 
@@ -27,7 +28,7 @@ Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` an
 
 ##  Step 3: Configure your Microsoft Graph Org ingestion Provider
 
-Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/azure` and find the section 'Configure Microsoft Graph Discovery'. In the list you can see already inserted provider configurations.  
+Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/azure` and find the section 'Configure Microsoft Graph Discovery'. In the list you can see already inserted provider configurations.
 
 ![Microsoft Graph Org Discovery Section](./ms-graph-discovery-section.png)
 
@@ -50,7 +51,7 @@ You can create a new configuration by clicking 'Add MS Graph configuration'. Thi
 | UserGroupMember | Filter               | No       | Optional filter for users, use group membership to get users. (Filtered groups and fetch their members.) This and userFilter are mutually exclusive, only one can be specified. See https://docs.microsoft.com/en-us/graph/search-query-parameter                                                                                                      |
 | UserGroupMember | Search               | No       | Optional search for groups, see Microsoft Graph API for the syntax. See https://docs.microsoft.com/en-us/graph/search-query-parameter                                                                                                                                                                                                                  |
 
-Target and Authority configurations are defaulting to use `https://graph.microsoft.com/v1.0` and `https://login.microsoftonline.com` respectively. If you have a need to modify these or alternatively use multiple Client IDs and Secrets, Please contact support. 
+Target and Authority configurations are defaulting to use `https://graph.microsoft.com/v1.0` and `https://login.microsoftonline.com` respectively. If you have a need to modify these or alternatively use multiple Client IDs and Secrets, Please contact support.
 
 For more information about query patterns see the linked provider plugin in the references section below.
 

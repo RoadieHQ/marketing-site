@@ -1,11 +1,12 @@
 ---
-title: Configuring auto discovery for your organization
-publishedDate: '2022-08-31T14:20:39.0Z'
-description: How to configure backstage to read catalog files on github
+title: GitHub
+publishedDate: '2024-02-20T21:00:00.0Z'
+description: How to manage entities sourced from GitHub
 
-humanName: GitHub Discovery
-logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: Integration
+humanName: GitHub
+logoImage: '../../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
+entityKinds: [resource, component, domain, system, template, api, user, group]
+discovery: true
 ---
 
 ## Introduction

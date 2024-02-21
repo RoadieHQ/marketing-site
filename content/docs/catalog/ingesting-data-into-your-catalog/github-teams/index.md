@@ -1,11 +1,12 @@
 ---
-title: Loading GitHub Organization Teams
-publishedDate: '2021-03-19T12:14:39.0Z'
-description: How to configure backstage to read teams from github
+title: GitHub Teams
+publishedDate: '2024-02-20T21:00:00.0Z'
+description: How to manage entities via a HTTP URL
 
 humanName: GitHub Teams
-logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: Integration
+logoImage: '../../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
+entityKinds: [user, group]
+discovery: true
 ---
 
 ## Introduction
