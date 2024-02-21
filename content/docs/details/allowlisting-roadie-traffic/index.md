@@ -44,7 +44,7 @@ signed-by: roadie.intercom-mail.eu
 If your IT department requires an allow list of domains, please use the following:
 
 ```
-auth.roadie.so
+auth.roadie.io
 <yourtenant>.roadie.so
 <yourtenant>.vouch.roadie.so
 *.roadie.systems
