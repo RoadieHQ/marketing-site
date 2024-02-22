@@ -42,11 +42,13 @@ Visit the Roadie Secrets page ([show me how](/docs/details/setting-secrets/)) an
 
 ## Step 3: Configure Roadie with your Argo CD endpoint
 
-Enter your Argo CD server API endpoint into Roadie.
+Enter your Argo CD server API endpoint (or [broker endpoint](/docs/integrations/broker/)) into Roadie.
 
 1. Click "Administration" in the sidebar, then "Settings" in the tabs.
 2. Find "Argo CD" in the Configuration sidebar.
 3. Enter your Argo CD server API endpoint click "Save" then "Apply & Restart".
+
+NB: You can use the [Roadie Broker](/docs/integrations/broker/) if your ArgoCD API is not publicly accessible. 
 
 ![Set Argo CD Config](./config.png)
 
