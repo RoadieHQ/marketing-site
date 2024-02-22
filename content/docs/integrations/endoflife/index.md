@@ -3,8 +3,8 @@ title: EndOfLife Plugin
 publishedDate: '2024-02-21T18:00:00.0Z'
 description: How to configure the EndOfLife plugin on Roadie.
 
-humanName: EndOfLife
-logoImage: '../../../assets/logos/endoflife/logo.svg'
+humanName: End Of Life
+logoImage: '../../../assets/logos/endoflife/logo.png'
 integrationType: OSS plugin
 ---
 
