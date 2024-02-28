@@ -243,7 +243,7 @@ Let’s write a check to combine both of these properties.
         | Data Source | CSProject File Information |
         | Fact | DotNet Framework Version |
         | Fact operator | Greater than semantic version |
-        | Value | 6.0 |
+        | Value | ^6.0 |
 
     ![Check Condition section fields](./dot-net/DotNet_Check_Condition_Section.png)
 
