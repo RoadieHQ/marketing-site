@@ -108,6 +108,7 @@ nav:
       - Certified templates: '/docs/scaffolder/certified-templates/'
       - Troubleshooting: '/docs/scaffolder/troubleshooting/'
       - Recipes:
+          - Extending the Scaffolder with Field Extensions: '/docs/scaffolder/custom-fields/'
           - Create RFC: '/docs/scaffolder/create-rfc/'
           - Debug template: '/docs/scaffolder/debug-template/'
           - Append file: '/docs/scaffolder/append/'
