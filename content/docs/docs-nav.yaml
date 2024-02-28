@@ -107,6 +107,7 @@ nav:
       - Writing scaffolder templates: '/docs/scaffolder/writing-templates/'
       - Certified templates: '/docs/scaffolder/certified-templates/'
       - Troubleshooting: '/docs/scaffolder/troubleshooting/'
+      - Extending the Scaffolder with Field Extensions: '/docs/scaffolder/custom-fields/'
       - Recipes:
           - Create RFC: '/docs/scaffolder/create-rfc/'
           - Debug template: '/docs/scaffolder/debug-template/'
