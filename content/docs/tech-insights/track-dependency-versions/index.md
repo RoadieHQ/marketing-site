@@ -56,7 +56,7 @@ In order to track the React versions used in the catalog, we are going to create
         | JSONata query | $exists(resolutions."@types/react") ? resolutions."@types/react" : $exists(dependencies.react) ? dependencies.react : "" |
         | Type | String |
 
-    3. Press **ADD FACT** and set the first Fact to:
+    3. Press **ADD FACT** and set the second Fact to:
         | Field Name | Value |
         | --- | --- |
         | Fact Name | Has React dependency |
@@ -134,7 +134,7 @@ Let’s write a check to combine both of these properties.
 
 4. Press **DRY RUN**
 
-5. (Optional) Add a URL to documentation outlining the steps to update the React version in the component.
+5. (Optional) Add a URL to documentation outlining the steps to update the React version in the component. You can also add a link to a scaffolder template that automatically achieves this fix.
 
     ![Check Fix section displayed](./Check_Fix_Section.png)
 
@@ -152,7 +152,7 @@ The results of this check tell us who we need to reach out to to ask for a React
 
 - The backstage-demo component passes the check with the version `17.0.59`.
 - The react-native-sample-app component fails the check with the version `15.4.0`
-- The other components passes the check due to not having a React dependency.
+- The other components pass the check due to not having a React dependency.
 
 Since we already know the owners of these components, it’s easy to reach out and ask them to upgrade their React version.
 
