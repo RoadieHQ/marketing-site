@@ -5,7 +5,7 @@ description: How to perform a sync between roadie's catalog and your GitHub orga
 
 humanName: Github Discovery Sync
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: Integration
+integrationType: Catalog Source
 ---
 
 ## Introduction
