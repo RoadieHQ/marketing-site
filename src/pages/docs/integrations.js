@@ -110,7 +110,7 @@ const SearchAndFilterBar = ({
 const CUSTOM_PLUGIN_PLACEHOLDER = {
   frontmatter: {
     humanName: 'Write your own',
-    integrationType: 'OSS plugin',
+    integrationType: 'Frontend',
     logoImage: {
       childImageSharp: {
         gatsbyImageData: {
