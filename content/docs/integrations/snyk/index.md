@@ -5,7 +5,7 @@ description: How to create a Snyk Token with permissions for use in Backstage an
 
 humanName: Snyk
 logoImage: '../../../assets/logos/snyk/snyk-avatar.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction

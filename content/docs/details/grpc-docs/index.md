@@ -4,7 +4,7 @@ publishedDate: '2022-07-28T13:00:00.0Z'
 description: How to use type:grpc-docs on your api entities
 
 humanName: grpc-docs
-integrationType: OSS plugin
+integrationType: Other
 ---
 
 # Introduction

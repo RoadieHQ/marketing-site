@@ -5,7 +5,7 @@ description: How to use the CodeScene plugin
 
 humanName: CodeScene
 logoImage: '../../../assets/logos/codescene/codescene.png'
-integrationType: OSS Plugin
+integrationType: Frontend
 ---
 
 ## Introduction

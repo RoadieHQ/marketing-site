@@ -4,7 +4,7 @@ publishedDate: '2024-02-08T11:11:11.0Z'
 description: Roadie Cost Insights plugin and configuration
 
 humanName: Cost Insights
-integrationType: Plugin
+integrationType: Frontend
 ---
 
 Roadie provides an easy way to track your cloud costs directly within your Roadie instance. The cost insights plugin is based on the open source [Cost Insights plugin](https://github.com/backstage/backstage/tree/master/plugins/cost-insights) and provides the same functionality in an easily customizable way.

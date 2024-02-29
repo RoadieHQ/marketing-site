@@ -5,7 +5,7 @@ description: How to add the GitHub Pull Requests Board plugin to Roadie.
 
 humanName: GitHub Pull Requests Board
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ![GitHub Pull Requests Board Plugin](./github-pr-board.png)

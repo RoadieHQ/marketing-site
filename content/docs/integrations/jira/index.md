@@ -5,7 +5,7 @@ description: How to create Personal Access Token for Jira plugin.
 
 humanName: Jira
 logoImage: '../../../assets/logos/jira/jira_logo.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction
