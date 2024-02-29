@@ -8,8 +8,10 @@ import ListItemHeader from 'components/backstage/plugins/ListItemHeader';
 import customPluginsLogoImagePath from '../../../content/assets/logos/code/code.png';
 
 const INTEGRATION_TYPE_FILTERS = Object.freeze({
-  OSS_PLUGIN: 'oss plugin',
-  INTEGRATION: 'integration',
+  FRONTEND: 'frontend',
+  SEARCH: 'search',
+  CATALOG_DATA_SOURCE: 'catalog data source',
+  OTHER: 'other',
   ALL: 'all',
 });
 
@@ -68,15 +70,27 @@ const SearchAndFilterBar = ({
       />
 
       <Tab
-        isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.OSS_PLUGIN}
-        label="Plugins"
-        onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.OSS_PLUGIN)}
+        isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.FRONTEND}
+        label="Frontend"
+        onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.FRONTEND)}
       />
 
       <Tab
-        isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.INTEGRATION}
-        label="Integrations"
-        onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.INTEGRATION)}
+        isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.CATALOG_DATA_SOURCE}
+        label="Catalog data source"
+        onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.CATALOG_DATA_SOURCE)}
+      />
+
+      <Tab
+        isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.SEARCH}
+        label="Search"
+        onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.SEARCH)}
+      />
+
+      <Tab
+        isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.OTHER}
+        label="Other"
+        onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.OTHER)}
       />
     </div>
 
@@ -96,7 +110,7 @@ const SearchAndFilterBar = ({
 const CUSTOM_PLUGIN_PLACEHOLDER = {
   frontmatter: {
     humanName: 'Write your own',
-    integrationType: 'OSS plugin',
+    integrationType: 'Frontend',
     logoImage: {
       childImageSharp: {
         gatsbyImageData: {
@@ -140,14 +154,14 @@ const DocsIntegrations = ({
     if (integrationTypeFilter === INTEGRATION_TYPE_FILTERS.ALL) {
       filteredIntegrations = [...allIntegrations];
     } else {
-      filteredIntegrations = allIntegrations.filter(({ frontmatter }) => (
-        frontmatter.integrationType.toLowerCase() === integrationTypeFilter
-      ));
+      filteredIntegrations = allIntegrations.filter(
+        ({ frontmatter }) => frontmatter?.integrationType?.toLowerCase() === integrationTypeFilter
+      );
     }
   } else {
-    filteredIntegrations = allIntegrations.filter(({ frontmatter }) => {
-      return frontmatter.humanName.toLowerCase().includes(query.toLowerCase());
-    });
+    filteredIntegrations = allIntegrations.filter(({ frontmatter }) =>
+      frontmatter?.humanName?.toLowerCase().includes(query.toLowerCase())
+    );
   }
 
   const handleQueryInput = (queryValue) => {

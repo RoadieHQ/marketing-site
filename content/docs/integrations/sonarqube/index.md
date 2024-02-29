@@ -4,13 +4,15 @@ publishedDate: '2021-07-28T21:00:00.0Z'
 description: How to configure the SonarQube plugin on roadie.
 humanName: SonarQube
 logoImage: '../../../assets/logos/sonarqube/logo-sonar.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction
 
 Roadie supports both SonarCloud hosted and self-hosted SonarQube instances. To access SonarQube secured in private networks you are able to use the [Broker connection](/docs/integrations/broker) for secure communication between Roadie and SonarQube instance.
 In order to use the SonarQube plugin, Roadie needs an API token to communicate with SonarQube's APIs. 
+
+*NB: This token must be a User token [as detailed in their docs](https://docs.sonarsource.com/sonarqube/latest/extension-guide/web-api/#authentication).*
 
 If you are using hosted SonarCloud as your SonarQube provider you only need set a secret token value into `SONARCLOUD_API_TOKEN` secret. These are set within backstage at the following url: `https://<tenant-name>.roadie.so/administration/settings/secrets`. You can generate the token from URL https://sonarcloud.io/account/security. 
 

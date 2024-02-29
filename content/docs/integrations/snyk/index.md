@@ -5,7 +5,7 @@ description: How to create a Snyk Token with permissions for use in Backstage an
 
 humanName: Snyk
 logoImage: '../../../assets/logos/snyk/snyk-avatar.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction
@@ -14,11 +14,10 @@ In order to use the Backstage Snyk plugin with Roadie, you must securely provide
 
 ## Connect Roadie to Snyk
 
-To get an API token, you need to sign up for a Snyk account. Within this account, you will need to obtain three things:
+To get an API token, you need to sign up for a Snyk account. Within this account, you will need to obtain the following:
 
  * API token
- * Organization Id
- * (Optional) Target Id
+ * Organization Name
 
 #### API Token
 
@@ -26,15 +25,11 @@ This can be found by clicking your name in the top right-hand corner and going t
 
 ![API token for Snyk.](./api-token.png)
 
-#### Organization Id
+#### Organization Name
 
 This can be found under the settings page that is visible when you login to Snyk.
 
 ![Organization Name Snyk.](./org.png)
-
-#### (Optional) Target Id
-
-Snyk doesn't provide a UI currently to identify Target Ids easily. You find the target ids by inspecting the network requests on the Snyk Projects pages. This value is optional, because Snyk also supports using the `github.com/project-slug` to identify the correct Snyk project. 
 
 
 ### Step 1: Add the token to Roadie
@@ -49,13 +44,30 @@ Click Save.
 
 Wait a few moments for the secret to be applied.
 
-### Step 2: Add the relevant Snyk annotations to a component
+### Step 2a: Add the Organization name to Roadie
+
+Components need `snyk.io/org-id` annotation set in order to work properly. Setting the correct organisation name will automatically retrieve organization id and use it as a value for this annotation. 
+This means you will not have to add a `snyk.io/org-id` annotation manually for each component, but it will be internally retrieved by Roadie using your organisation name.
+
+Note that filling in the annotation is automated but may take a little bit of time before the values are propagated to all entities in the system. 
+
+You can set this up in Settings page:
+
+Visit `https://your-company.roadie.so/administration/settings/snyk`.
+
+![A text field with snyk org name.](./snyk-organisation-name-settings.png)
+
+### Step 2b: (Optional) Add the relevant Snyk annotations to a component manually
 
 To configure the Snyk plugin to target the correct entity, you need to configure few annotations to it.
 
-The first one is `snyk.io/org-id` which identifies your Snyk organization. 
+The first one is `snyk.io/org-id` which identifies your Snyk organization. As described in the Step 2, if you add organisation name, you will not need to add this annotation manually to the files. However, you can also find this value under the settings page that is visible when you login to Snyk.
 
-Additionally, the Snyk plugin uses `github.com/project-slug` annotation to automatically match projects from GitHub to their corresponding Snyk targets. For cases where it is not possible to use the GitHub, you can also use `snyk.io/target-id` annotation. To find the target id value, you can identify that using dev tools on Snyk page and investigating the returned payload on their project page.
+![Organization Name Snyk.](./org.png)
+
+Additionally, the Snyk plugin uses `github.com/project-slug` annotation to automatically match projects from GitHub to their corresponding Snyk targets. 
+
+For cases where it is not possible to use the GitHub, you can also use `snyk.io/target-id` annotation. Unfortunately, Snyk doesn't provide a UI currently to identify Target Ids but you can find them by inspecting the network requests on the Snyk Projects pages. 
 
 Edit the `catalog-info.yaml` for the component you wish to associate with this Snyk project and add the `github.com/project-slug` and `snyk.io/target-id` annotation.
 

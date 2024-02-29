@@ -4,7 +4,8 @@ publishedDate: '2022-12-14T10:00:00.0Z'
 description: How to use the CodeScene plugin
 
 humanName: CodeScene
-integrationType: OSS Plugin
+logoImage: '../../../assets/logos/codescene/codescene.png'
+integrationType: Frontend
 ---
 
 ## Introduction

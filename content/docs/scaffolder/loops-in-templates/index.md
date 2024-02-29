@@ -131,4 +131,8 @@ A List of items
 
 ```
 
-The file is a Nunjucks template file which expects a collection of `things` to be passed into it. If the passed in value exists and has a length (larger than 0), it will loop over the passed in values and list them out in a markdown list format. 
+The file is a Nunjucks template file which expects a collection of `things` to be passed into it. If the passed in value exists and has a length (larger than 0), it will loop over the passed in values and list them out in a markdown list format.
+
+## Further reading
+
+- You can also [repeat a step for each entry in an array](/docs/scaffolder/loops-in-steps/).

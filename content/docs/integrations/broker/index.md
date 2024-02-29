@@ -5,7 +5,7 @@ description: How to configure secure broker connection to work wth Roadie.
 
 humanName: Broker Integration
 logoImage: '../../../assets/logos/roadie/roadie-racks-og-image.png'
-integrationType: Integration
+integrationType: Other
 ---
 
 ## Introduction
@@ -41,7 +41,6 @@ This way Roadie does not need to have knowledge or access of your infrastructure
 
 ## Configuration
 ### Enabling broker connection
-The broker server instance is not enabled by default on tenants and thus needs to be requested to be enabled.
 
 You can visit the settings page fro the broker at the following url in the application. `https://<your-tenant>.roadie.so/administration/settings/integrations/broker` 
 

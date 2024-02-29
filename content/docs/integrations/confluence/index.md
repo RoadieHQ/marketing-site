@@ -5,7 +5,7 @@ description: How to enable Confluence indexing for Roadie Search
 
 humanName: Confluence
 logoImage: '../../../assets/logos/confluence/confluence.png'
-integrationType: Integration
+integrationType: Search
 ---
 
 ## Introduction

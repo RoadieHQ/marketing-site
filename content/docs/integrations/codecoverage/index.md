@@ -4,7 +4,7 @@ publishedDate: '2023-11-04T14:00:00.0Z'
 description: How to use the Code Coverage plugin on Roadie.
 humanName: Code Coverage
 logoImage: '../../../assets/logos/code/code.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ![CodeCoverage Plugin Screenshot](./codecoverage.png)

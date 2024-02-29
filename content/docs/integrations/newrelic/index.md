@@ -5,7 +5,7 @@ description: How to create a New Relic token for use with Backstage.
 
 humanName: New Relic
 logoImage: '../../../assets/logos/new-relic/logo-relic.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction
