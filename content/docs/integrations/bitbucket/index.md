@@ -6,7 +6,7 @@ description: How to give Roadie the access it needs to your Bitbucket repositori
 humanName: Bitbucket
 logoImage: '../../../assets/logos/bitbucket/bitbucket.png'
 integrationType: Catalog Source
-`---`
+---
 
 ## Introduction
 
