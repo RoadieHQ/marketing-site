@@ -152,7 +152,7 @@ The results of this check tell us who we need to reach out to to ask for a React
 
 - The backstage-demo component passes the check with the version `17.0.59`.
 - The react-native-sample-app component fails the check with the version `15.4.0`
-- The other components passes the check due to not having a React dependency.
+- The other components pass the check due to not having a React dependency.
 
 Since we already know the owners of these components, it’s easy to reach out and ask them to upgrade their React version.
 
