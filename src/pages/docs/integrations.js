@@ -10,6 +10,7 @@ import customPluginsLogoImagePath from '../../../content/assets/logos/code/code.
 const INTEGRATION_TYPE_FILTERS = Object.freeze({
   OSS_PLUGIN: 'oss plugin',
   INTEGRATION: 'integration',
+  CATALOG_SOURCE: 'catalog source',
   ALL: 'all',
 });
 
@@ -77,6 +78,12 @@ const SearchAndFilterBar = ({
         isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.INTEGRATION}
         label="Integrations"
         onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.INTEGRATION)}
+      />
+
+      <Tab
+        isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.CATALOG_SOURCE}
+        label="Catalog Source"
+        onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.CATALOG_SOURCE)}
       />
     </div>
 

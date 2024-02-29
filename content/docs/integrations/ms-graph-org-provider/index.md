@@ -3,9 +3,9 @@ title: Integrating with Azure AD
 publishedDate: '2022-12-09T16:20:00.0Z'
 description: How to configure Roadie to ingest users and groups from Azure AD using Microsoft Graph
 
-humanName: Microsoft Graph Org Provider for Azure AD
-logoImage: '../../../assets/logos/azure-ad/azure-active-directory.svg'
-integrationType: Integration
+humanName: Microsoft Graph Org for Azure AD
+logoImage: '../../../assets/logos/azure-ad/azure-ad.png'
+integrationType: Catalog Source
 ---
 
 ## Introduction

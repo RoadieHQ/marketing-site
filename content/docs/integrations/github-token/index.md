@@ -5,7 +5,7 @@ description: How to create a GitHub Personal Access Token with permissions for u
 
 humanName: GitHub Token
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: Integration
+integrationType: Catalog Source
 ---
 
 
