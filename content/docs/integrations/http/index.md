@@ -8,7 +8,7 @@ logoImage: '../../../assets/logos/http/http-logo.png'
 integrationType: Catalog Source
 ---
 
-You may choose to load entities from a http server hosted on the public internet. In order to enable this, you will need to tell Roadie in advance the allowed URLs.
+You may choose to load entities from an HTTP server hosted on the public Internet. In order to enable this, you will need to tell Roadie in advance the allowed URLs.
 
 ## Steps
 ### Host an entity yaml file
