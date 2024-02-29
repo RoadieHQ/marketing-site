@@ -5,7 +5,7 @@ description: How to configure secure broker connection to work wth Roadie.
 
 humanName: Broker Integration
 logoImage: '../../../assets/logos/roadie/roadie-racks-og-image.png'
-integrationType: Integration
+integrationType: Other
 ---
 
 ## Introduction

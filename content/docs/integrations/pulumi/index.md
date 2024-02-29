@@ -5,7 +5,7 @@ description: How to add Pulumi to Backstage
 
 humanName: Pulumi
 logoImage: '../../../assets/logos/pulumi/logo-pulumi.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction

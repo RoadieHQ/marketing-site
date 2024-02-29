@@ -5,7 +5,7 @@ description: How to add GraphiQL to Backstage
 
 humanName: GraphiQL
 logoImage: '../../../assets/logos/graphiql/logo-ql.png'
-integrationType: Integration
+integrationType: Frontend
 ---
 
 ## Introduction

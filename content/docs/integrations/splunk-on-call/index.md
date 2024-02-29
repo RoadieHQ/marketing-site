@@ -5,7 +5,7 @@ description: How to configure Splunk On-Call plugin on Roadie
 
 humanName: Splunk On-Call
 logoImage: '../../../assets/logos/splunk/splunk-dark.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction

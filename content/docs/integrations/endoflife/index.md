@@ -5,7 +5,7 @@ description: How to configure the End Of Life plugin on Roadie.
 
 humanName: End Of Life
 logoImage: '../../../assets/logos/endoflife/logo.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction

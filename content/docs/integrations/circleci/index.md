@@ -5,7 +5,7 @@ description: How to set up the CircleCI Backstage plugin in Roadie.
 
 humanName: CircleCI
 logoImage: '../../../assets/logos/circle-ci/circle-ci-logo-only-black.png'
-integrationType: OSS plugin
+integrationType: Frontend
 ---
 
 ## Introduction
