@@ -5,7 +5,7 @@ description: How to configure Roadie to read entities from Azure DevOps
 
 humanName: Azure DevOps
 logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.png'
-integrationType: Catalog Source
+integrationType: Catalog data source
 ---
 
 ## Introduction
