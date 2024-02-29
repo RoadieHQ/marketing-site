@@ -12,7 +12,7 @@ You may choose to load entities from an HTTP server hosted on the public Interne
 
 ## Steps
 ### Host an entity yaml file
-You will need to host a yaml file with the correct Backstage entity schema on a http server that is available to Roadie.
+You will need to host a YAML file with the correct Backstage entity schema on a HTTP server that is available to Roadie.
 
 ### Configure your Roadie instance to trust this server
 
