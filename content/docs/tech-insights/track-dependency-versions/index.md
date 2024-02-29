@@ -134,7 +134,7 @@ Let’s write a check to combine both of these properties.
 
 4. Press **DRY RUN**
 
-5. (Optional) Add a URL to documentation outlining the steps to update the React version in the component.
+5. (Optional) Add a URL to documentation outlining the steps to update the React version in the component. You can also add a link to a scaffolder template that automatically achieves this fix.
 
     ![Check Fix section displayed](./Check_Fix_Section.png)
 
