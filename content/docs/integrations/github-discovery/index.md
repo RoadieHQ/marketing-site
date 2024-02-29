@@ -5,7 +5,7 @@ description: How to configure backstage to read catalog files on github
 
 humanName: GitHub Discovery
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: Catalog Source
+integrationType: Catalog data source
 ---
 
 ## Introduction

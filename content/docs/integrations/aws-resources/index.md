@@ -5,7 +5,7 @@ description: How to configure Roadie to read AWS resources
 
 humanName: AWS Resources
 logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.png'
-integrationType: Catalog Source
+integrationType: Catalog data source
 ---
 
 ## Introduction

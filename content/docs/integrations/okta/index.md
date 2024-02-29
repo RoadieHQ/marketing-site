@@ -5,7 +5,7 @@ description: How to configure Roadie to collect users from Okta.
 
 humanName: Okta
 logoImage: '../../../assets/logos/okta/okta_logo.png'
-integrationType: Catalog Source
+integrationType: Catalog data source
 ---
 
 ## Introduction

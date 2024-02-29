@@ -5,7 +5,7 @@ description: How to manage entities via a HTTP URL
 
 humanName: HTTP
 logoImage: '../../../assets/logos/http/http-logo.png'
-integrationType: Catalog Source
+integrationType: Catalog data source
 ---
 
 You may choose to load entities from an HTTP server hosted on the public Internet. In order to enable this, you will need to tell Roadie in advance the allowed URLs.

@@ -5,7 +5,7 @@ description: How to configure Roadie to ingest users and groups from Azure AD us
 
 humanName: Microsoft Graph Org for Azure AD
 logoImage: '../../../assets/logos/azure-ad/azure-ad.png'
-integrationType: Catalog Source
+integrationType: Catalog data source
 ---
 
 ## Introduction

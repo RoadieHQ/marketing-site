@@ -5,7 +5,7 @@ description: How to manage entities via the Roadie API
 
 humanName: Roadie API
 logoImage: '../../../assets/logos/roadie/roadie-racks.png'
-integrationType: Catalog Source
+integrationType: Catalog data source
 ---
 
 The Roadie Entity API allows you to create, update and delete entities in the Roadie catalog via the public API. This option allows you to manage entities from sources where Roadie does not have an existing Entity provider.
