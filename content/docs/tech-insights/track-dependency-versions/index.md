@@ -56,7 +56,7 @@ In order to track the React versions used in the catalog, we are going to create
         | JSONata query | $exists(resolutions."@types/react") ? resolutions."@types/react" : $exists(dependencies.react) ? dependencies.react : "" |
         | Type | String |
 
-    3. Press **ADD FACT** and set the first Fact to:
+    3. Press **ADD FACT** and set the second Fact to:
         | Field Name | Value |
         | --- | --- |
         | Fact Name | Has React dependency |
