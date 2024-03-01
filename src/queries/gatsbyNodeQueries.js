@@ -40,7 +40,6 @@ module.exports.CASE_STUDIES_QUERY = `
 }
 `;
 
-
 module.exports.PLUGINS_QUERY = `
 {
   plugins: allMarkdownRemark(
@@ -94,7 +93,25 @@ module.exports.DOCS_QUERY = `
   docs: allMarkdownRemark(
     limit: 1000,
     filter: {
-      fileAbsolutePath: {regex: "/.+/content/docs/.+/"}
+      fileAbsolutePath: {regex: "/^(?!.*\\/docs\\/getting-started\\/).+\\/content\\/docs\\/.+$/"}    }
+  ) {
+    edges {
+      node {
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+`;
+
+module.exports.GETTING_STARTED_QUERY = `
+{
+  docs: allMarkdownRemark(
+    limit: 1000,
+    filter: {
+      fileAbsolutePath: {regex: "/.+/content/docs/getting-started/.+/"}
     }
   ) {
     edges {
