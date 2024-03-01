@@ -5,7 +5,7 @@ description: How to use the Google calendar plugin
 
 humanName: Google Calendar
 logoImage: '../../../assets/logos/google-calendar/Google-Calendar-Logo-700x394.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

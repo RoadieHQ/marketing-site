@@ -5,7 +5,7 @@ description: How to set up the Lighthouse plugin in Roadie.
 
 humanName: Lighthouse
 logoImage: '../../../assets/logos/lighthouse/logo-lh.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

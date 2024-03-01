@@ -5,7 +5,7 @@ description: How to enable the markdown card plugin
 
 humanName: Markdown Card Plugin
 logoImage: '../../../assets/logos/home-page/home.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

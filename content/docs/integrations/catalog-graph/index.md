@@ -5,7 +5,7 @@ description: How to setup Backstage to display catalog entity relationship graph
 
 humanName: Catalog Graph
 logoImage: '../../../assets/logos/catalog-graph/catalog-graph-logo.jpeg'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

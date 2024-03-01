@@ -5,7 +5,7 @@ description: How to enable the Shortcut plugin
 
 humanName: Shortcut Plugin
 logoImage: 'shortcut-logo.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

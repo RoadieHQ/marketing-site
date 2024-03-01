@@ -5,7 +5,7 @@ description: How to add a Kubernetes cluster for the Kubernetes plugin.
 
 humanName: Kubernetes
 logoImage: '../../../assets/logos/kubernetes/logo-kubernetes.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ![Full active cluster on roadie](./active.png)

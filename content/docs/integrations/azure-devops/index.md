@@ -5,7 +5,7 @@ description: Set up the Azure Devops plugin.
 
 humanName: Azure Devops
 logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction
