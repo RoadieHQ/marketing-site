@@ -5,7 +5,7 @@ description: How to configure the Opsgenie plugin on roadie.
 
 humanName: Opsgenie
 logoImage: '../../../assets/logos/opsgenie/logo-opsgenie.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

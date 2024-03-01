@@ -5,7 +5,7 @@ description: How to create Bugsnag API Token for Bugsnag plugin.
 
 humanName: Bugsnag
 logoImage: '../../../assets/logos/bugsnag/bugsnag-logo.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

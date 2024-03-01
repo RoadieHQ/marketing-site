@@ -5,7 +5,7 @@ description: How to set up FireHydrant plugin for Roadie.
 
 humanName: FireHydrant
 logoImage: '../../../assets/logos/firehydrant/firehydrant.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

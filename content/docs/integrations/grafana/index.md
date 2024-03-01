@@ -5,7 +5,7 @@ description: How to add Grafana to Backstage
 
 humanName: Grafana
 logoImage: '../../../assets/logos/grafana/grafana.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

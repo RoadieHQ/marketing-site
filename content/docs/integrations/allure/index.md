@@ -5,7 +5,7 @@ description: How to configure the Allure plugin on Roadie.
 
 humanName: Allure
 logoImage: '../../../assets/logos/allure/allure-logo.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

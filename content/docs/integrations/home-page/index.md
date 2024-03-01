@@ -5,7 +5,7 @@ description: How to enable the home page plugin
 
 humanName: Home Page
 logoImage: '../../../assets/logos/home-page/home.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

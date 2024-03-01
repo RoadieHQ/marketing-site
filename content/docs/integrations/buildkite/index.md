@@ -5,7 +5,7 @@ description: How to add Buildkite pipelines to your components
 
 humanName: Buildkite
 logoImage: '../../../assets/logos/buildkite/buildkite-logo.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

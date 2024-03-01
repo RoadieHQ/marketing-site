@@ -5,7 +5,7 @@ description: How to enable the Stackoverflow plugin
 
 humanName: Stackoverflow Plugin
 logoImage: '../../../assets/logos/stackoverflow/so-logo.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

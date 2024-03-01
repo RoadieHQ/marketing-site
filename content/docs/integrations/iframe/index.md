@@ -5,7 +5,7 @@ description: How to enable the IFrame plugin
 
 humanName: IFrame Plugin
 logoImage: 'iframe.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

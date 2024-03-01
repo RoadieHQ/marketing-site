@@ -5,7 +5,7 @@ description: How to configure Jenkins plugin on Roadie.
 
 humanName: Jenkins
 logoImage: '../../../assets/logos/jenkins/logo-jenkins.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

@@ -5,7 +5,7 @@ description: How to add Harness.io plugin to Roadie
 
 humanName: Harness.io
 logoImage: '../../../assets/logos/harness/harness.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 ## Introduction

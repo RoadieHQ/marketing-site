@@ -5,7 +5,7 @@ description: How to use the Github Deployments plugin
 
 humanName: Github Deployments
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: Frontend
+integrationType: OSS plugin
 ---
 
 The Github Deployments plugin will display a table of deployments for this repo made through Github Actions. 
