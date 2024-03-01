@@ -3,7 +3,7 @@ title: GitHub
 publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure the GitHub to create a catalog item.
 
-humanName: Roadie CLI
+humanName: GitHub
 examples:
   component:
     language: yaml
