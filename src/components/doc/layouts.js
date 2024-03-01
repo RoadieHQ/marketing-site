@@ -9,7 +9,7 @@ export const DOCS_LAYOUTS = [
   },
   {
     tabLabel: 'Getting started',
-    startPath: '/docs/getting-started/adding-a-catalog-item/',
+    startPath: '/docs/getting-started/',
     isActiveMatch: /\/docs\/getting-started/,
     sidebarNavItemGroups: [sidebar.nav[0]],
   },
