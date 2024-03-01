@@ -10,7 +10,6 @@ const {
   CASE_STUDIES_QUERY,
   CHANGELOG_QUERY,
   BACKSTAGE_BITES_QUERY,
-  GETTING_STARTED_QUERY,
 } = require('./src/queries/gatsbyNodeQueries');
 const createLatestLegalNotices = require('./src/pageCreation/createLatestLegalNotices');
 const createPagesFromQuery = require('./src/pageCreation/createPagesFromQuery');
@@ -83,21 +82,6 @@ exports.createPages = async ({ graphql, actions }) => {
   await createPagesFromQuery({
     templatePath: './src/templates/Doc.js',
     query: DOCS_QUERY,
-    resultName: 'docs.edges',
-    actions,
-    graphql,
-    processor: ({ node }, component) => ({
-      path: node.fields.slug,
-      component,
-      context: {
-        slug: node.fields.slug,
-      },
-    }),
-  });
-
-  await createPagesFromQuery({
-    templatePath: './src/templates/GettingStartedDoc.js',
-    query: GETTING_STARTED_QUERY,
     resultName: 'docs.edges',
     actions,
     graphql,

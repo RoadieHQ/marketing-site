@@ -106,25 +106,6 @@ module.exports.DOCS_QUERY = `
 }
 `;
 
-module.exports.GETTING_STARTED_QUERY = `
-{
-  docs: allMarkdownRemark(
-    limit: 1000,
-    filter: {
-      fileAbsolutePath: {regex: "/.+/content/docs/getting-started/.+/"}
-    }
-  ) {
-    edges {
-      node {
-        fields {
-          slug
-        }
-      }
-    }
-  }
-}
-`;
-
 module.exports.CHANGELOG_QUERY = `
 {
   result: allContentfulChangeSet(
