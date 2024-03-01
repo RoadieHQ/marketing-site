@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/outline'
+import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/outline';
 import classnames from 'classnames';
 
 import SidebarItem from './Item';
@@ -7,9 +7,11 @@ import SidebarItem from './Item';
 const ExpandableSidebarItem = ({ text, subItems, location }) => {
   const isOpenOnPageLoad = subItems.map(Object.values).flat().includes(location.pathname);
   const [isOpen, setIsOpen] = useState(isOpenOnPageLoad);
-  const subMenuButtonIcon = isOpen ?
-    <ChevronDownIcon className="h-4" /> :
-    <ChevronRightIcon className="h-4" />;
+  const subMenuButtonIcon = isOpen ? (
+    <ChevronDownIcon className="h-4" />
+  ) : (
+    <ChevronRightIcon className="h-4" />
+  );
 
   const toggleSubMenuOpen = () => {
     if (isOpen) {
@@ -30,16 +32,14 @@ const ExpandableSidebarItem = ({ text, subItems, location }) => {
       <div>
         <button
           onClick={toggleSubMenuOpen}
-          className="flex items-center text-gray-700 hover:text-primary-600"
+          className="flex items-center text-gray-700 hover:text-primary-600 py-4"
         >
           <span className="mr-1">{subMenuButtonIcon}</span>
           <span>{text}</span>
         </button>
       </div>
       <div className={classnames({ 'h-0 hidden': !isOpen, 'h-full': isOpen })}>
-        <ul className="p-0 list-none">
-          {itemComponents}
-        </ul>
+        <ul className="p-0 list-none">{itemComponents}</ul>
       </div>
     </li>
   );

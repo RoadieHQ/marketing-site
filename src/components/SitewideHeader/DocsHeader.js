@@ -10,7 +10,7 @@ import DocsDrawerMenu from './DocsDrawerMenu';
 import Logo from '../Logo';
 
 const Tab = ({ startPath, tabLabel: label, isActive }) => (
-  <div className="flex">
+  <div className="flex flex-1">
     <Link to={startPath}>
       <TabInner label={label} isActive={isActive} />
     </Link>
@@ -21,7 +21,6 @@ const DocsHeader = ({ location }) => (
   <Popover className="relative bg-white z-20">
     <div className="max-w-full mx-auto px-2 sm:px-6">
       <div className="flex justify-between items-center border-b-2 border-gray-100 md:border-b-0 py-4 md:justify-start md:space-x-10">
-
         <div className="flex items-center">
           <span className="mr-1">
             <Logo />
@@ -32,10 +31,7 @@ const DocsHeader = ({ location }) => (
           </span>
 
           <span className="ml-8">
-            <AlgoliaAutocomplete
-              placeholder="Search docs with /"
-              className="w-48 md:w-96"
-            />
+            <AlgoliaAutocomplete placeholder="Search docs with /" className="w-48 md:w-96" />
           </span>
         </div>
 
@@ -48,7 +44,7 @@ const DocsHeader = ({ location }) => (
         </div>
       </div>
 
-      <nav className="hidden border-b-2 border-gray-100 md:flex">
+      <nav className="hidden border-b-2 border-gray-100 md:flex items-baseline">
         {DOCS_LAYOUTS.map((props) => (
           <Tab
             location={location}
