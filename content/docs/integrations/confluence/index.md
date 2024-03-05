@@ -30,11 +30,11 @@ On the page navigated into you are able to generate API tokens which can be used
 
 ### Store Token as a Secret to Roadie
 
-When you have successfully generated your token, you can navigate to `https://<your-roadie-instance>.roadie.so/administration/settings/confluence` and add the token to Roadie as `CONFLUENCE_TOKEN`.
+When you have successfully generated your token, you can navigate to `https://<your-roadie-instance>.roadie.so/administration/confluence` and add the token to Roadie as `CONFLUENCE_TOKEN`.
 
 ### Configure Confluence Search Indexing
 
-To enable your Confluence wiki for search indexing,  navigate to `https://<your-roadie-instance>.roadie.so/administration/settings/confluence` and input your organization name, username, the Confluence Spaces keys you want to index, Confluence API token, and indexing interval. The fastest interval rate we support is scheduling indexes every 15 minutes to prevent excessive use of Confluence's API token.
+To enable your Confluence wiki for search indexing,  navigate to `https://<your-roadie-instance>.roadie.so/administration/confluence` and input your organization name, username, the Confluence Spaces keys you want to index, Confluence API token, and indexing interval. The fastest interval rate we support is scheduling indexes every 15 minutes to prevent excessive use of Confluence's API token.
 ![Confluence Search Indexing Configuration](./confluence_settings.png)
 
 After clicking "Apply & Restart", the search engine on Roadie will start populating the search index with Confluence documents. Note that the first time we retrieve your Wiki may take some time to populate, depending on the number of documents in Confluence.

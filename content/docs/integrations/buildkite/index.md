@@ -27,7 +27,7 @@ metadata:
 ### Add your API Key
 You will need to create an API key for your Org in Buildkite with read permissions.
 
-Then add it to Roadie via Administration -> Settings -> Plugins -> Buildkite
+Then add it to Roadie at `/administration/buildkite`.
 
 ![Add BUILDKITE_TOKEN in Settings Page](./add-secret.png)
 

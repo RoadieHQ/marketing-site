@@ -16,7 +16,7 @@ The Backstage Circle CI plugin integrates with Circle CI to show your build info
 
 1. Get an API token from CircleCI - see below for instructions on how to get the token.
 
-2. Add the API token in Roadie at `/administration/settings/circle-ci`.
+2. Add the API token in Roadie at `/administration/circle-ci`.
 
 3. Add a circleci.com/project-slug annotation to your respective catalog-info.yaml files following the Component format
 

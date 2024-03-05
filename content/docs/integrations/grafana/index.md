@@ -29,12 +29,11 @@ endpoint which the plugin uses to query alerts and dashboards.
 
 ![grafana-config.png](./grafana-config.png)
 
-### Add the Grafana secrets
+### Add the Grafana API Key
 
-First, add the `GRAFANA_API_KEY` secret via `Administration -> Settings -> Secrets`. Note you'll
-need to wait for the secret to be marked as "Available" before you can use the Grafana plugin.
+Add the `GRAFANA_API_KEY` in the same page at `/administration/grafana`. 
 
-![grafana-secrets.png](./grafana-secrets.png)
+NB: You'll need to wait for the secret to be marked as "Available" before you can use the Grafana plugin.
 
 ### Add the plugin to the UI
 
