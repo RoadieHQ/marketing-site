@@ -34,25 +34,21 @@ argocd account generate-token --account <your-account> --id <optional-id>
 
 Alternatively, visit the Argo CD UI at `/settings/accounts/<your-account>` click "Generate New" in the "Tokens" section.
 
-## Step 2: Store the API token in Roadie
-
-Visit the Roadie Secrets page ([show me how](/docs/details/setting-secrets/)) and enter the token into the `argo-cd-token` secret.
-
-![Set argo-cd-token via UI](./argo-cd-token-dialog.png)
-
-## Step 3: Configure Roadie with your Argo CD endpoint
+## Step 2: Configure Roadie with your Argo CD endpoint
 
 Enter your Argo CD server API endpoint (or [broker endpoint](/docs/integrations/broker/)) into Roadie.
 
 1. Click "Administration" in the sidebar, then "Settings" in the tabs.
 2. Find "Argo CD" in the Configuration sidebar.
-3. Enter your Argo CD server API endpoint click "Save" then "Apply & Restart".
+3. Enter your Argo CD server API endpoint.
+4. Add the Argo CD API token in the Secrets section.
+5. Click "Save" then "Apply & Restart". 
 
 NB: You can use the [Roadie Broker](/docs/integrations/broker/) if your ArgoCD API is not publicly accessible. 
 
 ![Set Argo CD Config](./config.png)
 
-## Step 4: Add the UI elements
+## Step 3: Add the UI elements
 
 The Argo CD plugin provides two type of UI elements. 
 
@@ -70,7 +66,7 @@ The `EntityArgoCDContent` displays similar information to the history card and c
 
 ![Argo CD Tab](./argo-tab.png)
 
-## Step 5: Add annotations
+## Step 4: Add annotations
 Add one of the following annotations to the yaml config file of a component
 
 ```
