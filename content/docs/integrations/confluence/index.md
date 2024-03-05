@@ -30,9 +30,7 @@ On the page navigated into you are able to generate API tokens which can be used
 
 ### Store Token as a Secret to Roadie
 
-When you have successfully generated your token, you can navigate to `https://<your-roadie-instance>.roadie.so/administration/settings/secrets` and populate the secret value `CONFLUENCE_TOKEN`.
-
-![Confluence Secret Token Screen](./confluence_secret.png)
+When you have successfully generated your token, you can navigate to `https://<your-roadie-instance>.roadie.so/administration/settings/confluence` and add the token to Roadie as `CONFLUENCE_TOKEN`.
 
 ### Configure Confluence Search Indexing
 

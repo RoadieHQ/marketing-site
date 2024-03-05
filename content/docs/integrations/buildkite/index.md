@@ -24,12 +24,12 @@ metadata:
     buildkite.com/project-slug: <buildkiteorganization/buildkitepipeline>
 ```
 
-### Add you API Key
+### Add your API Key
 You will need to create an API key for your Org in Buildkite with read permissions.
 
-Then add it to Roadie via Administration -> Settings -> Secrets -> BUILDKITE_TOKEN
+Then add it to Roadie via Administration -> Settings -> Plugins -> Buildkite
 
-![Add BUILDKITE_TOKEN to Secrets in Settings Page](./add-secrets.png)
+![Add BUILDKITE_TOKEN in Settings Page](./add-secret.png)
 
 ### Add the plugin
 In Roadie, find and select the service via the Component Catalog or Search.
