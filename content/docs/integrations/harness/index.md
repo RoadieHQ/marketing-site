@@ -35,19 +35,15 @@ metadata:
 To find the correct values to use for annotations, refer to the [official plugin documentation in their GitHub repository](https://github.com/harness/backstage-plugins/blob/main/plugins/harness-ci-cd/PluginConfiguation.md).
 
 
-### Add you API Key
+### Create and add an API Key
 
-Navigate to your Roadie instance secrets page and add the relevant secret referring to your Harness API key.
-You can find the secrets page via navigation path `Administration` -> `Settings` -> `Secrets`
-The secret name to use is `HARNESS_API_KEY`.
+Generate an API key on your Harness account using [the official API key generation instruction on Harness website.](https://developer.harness.io/docs/platform/role-based-access-control/add-and-manage-api-keys/)
 
-![secret-box.png](secret-box.png)
-
-You can generate the API key on your Harness account using [the official API key generation instruction on Harness website.](https://developer.harness.io/docs/platform/role-based-access-control/add-and-manage-api-keys/)
+Then add it to Roadie at `https://<tenant-name>.roadie.so/administration/harness` by entering the token value from above into `HARNESS_API_KEY`.
 
 ### Enable and configure the plugin
 
-Navigate to your Roadie instance and Harness configuration section. Enable the relevant Harness proxy to be able retrieve information from Harness.io. Additionally, you can disable the possibility to run pipelines via Roadie UI if needed.
+In the same Harness configuration section, enable the relevant Harness proxy to be able retrieve information from Harness.io. Additionally, you can disable the possibility to run pipelines via Roadie UI if needed.
 
 ![harness-settings](harness-settings.png)
 

@@ -37,7 +37,7 @@ Enter your Jenkins instance API endpoint and username into Roadie at `/administr
 1. Click "Administration" in the sidebar, then "Settings" in the tabs.
 2. Find "Jenkins" in the Configuration sidebar.
 3. Enter your Jenkins instance URL and the username your Jenkins API token is owned by.
-4. Add the Jenkins API token in the Secrets section. 
+4. Add the Jenkins API token in the Secrets section.
 5. Click "Save" then "Apply & Restart".
 
 ![Set Jenkins Config](./jenkins_settings.png)
