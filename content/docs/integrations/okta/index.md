@@ -22,18 +22,16 @@ Obtain an [Okta API token](https://developer.okta.com/docs/guides/create-an-api-
 
 ### Step 2: Set the Okta API token
 
-Set the `OKTA_TOKEN` secret in the secrete manager of your Roadie Backstage Admin panel, located in the following path:
+In Roadie, add the `OKTA_TOKEN` secret at the Okta settings page:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/okta
 ```
 
 ### Step 3: Set the Okta Organization URL
 
-Set the Okta Organization URL in the Okta configuration page of your Roadie Backstage Admin panel, located in the following path:
-```text
-https://<tenant-name>.roadie.so/administration/settings/okta
-```
+Set the Okta Organization URL in the Okta configuration page in Roadie.
+
 
 ## Data
 
