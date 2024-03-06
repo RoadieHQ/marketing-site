@@ -16,7 +16,7 @@ In order to use the FireHydrant plugin, Roadie needs an API token to communicate
 This is set within backstage at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/firehydrant
 ```
 
 This page describes how to create and set up the FireHydrant Bot token.

@@ -14,7 +14,7 @@ In order to use the SonarQube plugin, Roadie needs an API token to communicate w
 
 *NB: This token must be a User token [as detailed in their docs](https://docs.sonarsource.com/sonarqube/latest/extension-guide/web-api/#authentication).*
 
-If you are using hosted SonarCloud as your SonarQube provider you only need set a secret token value into `SONARCLOUD_API_TOKEN` secret. These are set within backstage at the following url: `https://<tenant-name>.roadie.so/administration/settings/secrets`. You can generate the token from URL https://sonarcloud.io/account/security. 
+If you are using hosted SonarCloud as your SonarQube provider you only need set a secret token value into `SONARCLOUD_API_TOKEN` secret. These are set within backstage at the following url: `https://<tenant-name>.roadie.so/administration/sonarqube`. You can generate the token from URL https://sonarcloud.io/account/security. 
 
 
 If you are using self-hosted SonarQube plugin or want more control over the SonarQube plugin you can use the SonarQube settings page to set up needed configurations.

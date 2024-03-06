@@ -85,7 +85,7 @@ Add a Backstage component file to a repository which matches the configured disc
 
 ## Decorating Catalog Entities
 
-You can add the primary language used by a repository as a tag or label to the Roadie Backstage entity without updating your yaml files by turning on the decoration feature in `/administration/settings/catalog`.
+You can add the primary language used by a repository as a tag or label to the Roadie Backstage entity without updating your yaml files by turning on the decoration feature in `/administration/catalog`.
 
 It will take approximately 10 minutes for all entities to be tagged. Similarly, when disabling this feature, it will take approximately 10 minutes for the tags to be removed.
 
