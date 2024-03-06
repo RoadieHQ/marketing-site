@@ -45,13 +45,7 @@ Copy the token that Sentry displays.
 
 ### Step 3: Add the token to Roadie
 
-Visit `https://your-company.roadie.so/administration/settings/secrets`.
-
-Click the pencil icon beside `SENTRY_TOKEN`. Enter the token you copied from the Sentry UI into the input in the dialog that pops up.
-
-![a dialog box with an input called Secret Value. The Sentry token is pasted inside.](./dialog-on-roadie-secrets.png)
-
-Click Save.
+Visit `https://your-company.roadie.so/administration/sentry` and add the token to the `SENTRY_TOKEN` secret. 
 
 Wait a few moments for the secret to be applied.
 

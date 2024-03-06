@@ -29,7 +29,7 @@ In order for the Backstage integration to work we must first generate our api ke
 
 ### Step 2: Store the credentials in Roadie
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the token value from above into `ROOTLY_API_KEY`.
+Visit `https://<tenant-name>.roadie.so/administration/rootly` and enter the token value from above into `ROOTLY_API_KEY`.
 
 ## References
 

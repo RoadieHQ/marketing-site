@@ -47,7 +47,7 @@ Copy the key that is created to your clipboard.
 Visit the following URL and enter the API Key value from above into `PAGERDUTY_TOKEN`.
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/pagerduty
 ```
 
 ℹ️  Roadie accepts the token from PagerDuty unmodified. The configuration steps for the PagerDuty plugin in self-hosted Backstage are more complex, and will not work in Roadie.

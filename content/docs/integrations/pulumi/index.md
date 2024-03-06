@@ -29,7 +29,7 @@ Pulumi Cloud yourself you'll need to specify a API URL to that instance.
 
 ### Add the Pulumi secret
 
-First, add the `PULUMI_ACCESS_TOKEN` secret via `Administration -> Settings -> Secrets`. Note you'll
+First, add the `PULUMI_ACCESS_TOKEN` secret via `Administration -> Settings -> Plugins -> Pulumi`. Note you'll
 need to wait for the secret to be marked as "Available" before you can use the Pulumi plugin.
 
 ![pulumi-secrets.png](./pulumi-secrets.png)
