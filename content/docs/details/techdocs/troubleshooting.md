@@ -1,12 +1,43 @@
 ---
 title: Troubleshooting TechDocs
-publishedDate: '2023-09-18'
+publishedDate: '2024-03-07'
 description: Troubleshooting TechDocs
 ---
 
 
 ## Visual differences in rendered output
-Backstage is using [MkDocs](https://www.mkdocs.org/user-guide/) and [python-markdown](https://python-markdown.github.io/) to render the markdown files for tech docs. Each markdown implementation renders HTML differently. e.g. markdown files as displayed in GitHub can often look different within Backstage Tech Docs.
+Backstage is using [MkDocs](https://www.mkdocs.org/user-guide/) and [python-markdown](https://python-markdown.github.io/) to render the markdown files for tech docs. 
+
+Each markdown implementation renders HTML differently. e.g. markdown files as displayed in GitHub can often look different within Backstage Tech Docs.
+
+Backstage uses an opinionated theme based on [material-mkdocs](https://github.com/backstage/mkdocs-techdocs-core#theme).
+
+NB: Some styles will always be overridden regardless of the `mkdocs-material` plugin theme settings and this can cause unexpected behavior for those who override the theme setting in a `mkdocs.yaml` file.
+
+
+## Mermaid diagrams not rendering
+ Make sure you have added the extension to the root `mkdocs.yml` file in your repo like so:
+
+```yaml
+markdown_extensions:
+  - markdown_inline_mermaid
+```
+
+
+## Plugin not working as expected
+Make sure you have added the extension to the root `mkdocs.yml` file in your repo. Some are added under the `plugins` key and some under `markdown_extensions`. 
+
+Read the docs for the plugin you are working with to find out which it is.
+
+```yaml
+...
+plugins:
+  - monorepo
+markdown_extensions:
+  - pymdownx.snippets:
+      check_paths: true
+... 
+```
 
 ## Nest Markdown in a collapsable section
 
