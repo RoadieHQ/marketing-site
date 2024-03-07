@@ -176,7 +176,7 @@ In order to track the .NET Framework versions used in the catalog, we are going 
 
    ![About section input fields](./dot-net/DotNet_Data_About_Section.png)
 
-3. Set the Data Provider **Type** to `Component Repository File`, **Location** to `{{metadata.name}}.csproj`. Select a value for **Select Entity to test data source against** and press **TEST**.
+3. Set the Data Provider **Type** to `Component Repository File`, and **Location** to `{{metadata.name}}.csproj`. Select a value for **Select Entity to test data source against** and press **TEST**.
 
     ![Data Provider section input fields](./dot-net/DotNet_Data_Provider_Section.png)
 
@@ -261,7 +261,7 @@ Let’s write a check to combine both of these properties.
 
 ### Check Results
 
-The results of this check tell us who we need to reach out to to ask for a .NET Framework version upgrade.
+The results of this check tell us who we need to reach out to ask for a .NET Framework version upgrade.
 
 ![Check Results displayed](./dot-net/DotNet_Check_Results_Section.png)
 
