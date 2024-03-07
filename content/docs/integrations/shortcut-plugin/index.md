@@ -24,7 +24,7 @@ Click on the "Generate token" button.
 
 ### Step 2: Store the token in Roadie
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the token value from above into `SHORTCUT_ACCESS_TOKEN`.
+Visit `https://<tenant-name>.roadie.so/administration/shortcut` and enter the token value from above into `SHORTCUT_ACCESS_TOKEN`.
 
 ## Add Shortcut stories card to your HomePage
 

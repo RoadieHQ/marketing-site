@@ -30,25 +30,19 @@ Roadie requires an API token to be able to connect to Jenkins.
 
 You can generate an API token for your user by visiting Jenkins UI at `<your-Jenkins-instance>/user/<your-account>/configure/` and by clicking "Generate" in the "API Token" section.
 
-## Step 2: Store the API token in Roadie
+## Step 2: Configure Roadie with your Jenkins instance URL
 
-Visit the Roadie Secrets page ([show me how](/docs/details/setting-secrets/)) and enter the token into the `JENKINS_API_KEY` secret.
-
-![Set jenkins-api-key via UI](./jenkins_secret.png)
-
-
-## Step 3: Configure Roadie with your Jenkins instance URL
-
-Enter your Jenkins instance API endpoint and username into Roadie.
+Enter your Jenkins instance API endpoint and username into Roadie at `/administration/jenkins`.
 
 1. Click "Administration" in the sidebar, then "Settings" in the tabs.
 2. Find "Jenkins" in the Configuration sidebar.
-3. Enter your Jenkins instance URL and the username your Jenkins API token is owned by and click "Save" then "Apply & Restart".
+3. Enter your Jenkins instance URL and the username your Jenkins API token is owned by.
+4. Add the Jenkins API token in the Secrets section.
+5. Click "Save" then "Apply & Restart".
 
 ![Set Jenkins Config](./jenkins_settings.png)
 
-
-## Step 4: Add the UI elements
+## Step 3: Add the UI elements
 
 The Jenkins plugin provides two type of UI elements.
 
@@ -61,7 +55,7 @@ The `EntityJenkinsContent` presents a job folder in Jenkins and jobs it contains
 This component can be [added as a tab](/docs/getting-started/updating-the-ui#updating-tabs) to component layouts.
 
 
-## Step 5: Modify your catalog files to contain references to Jenkins jobs
+## Step 4: Modify your catalog files to contain references to Jenkins jobs
 
 The Jenkins plugin uses `jenkins.io/job-full-name` annotation to determine the correct GitHub organization folder and job name within your Jenkins instance.
 You can configure it as follows:

@@ -34,13 +34,9 @@ This can be found under the settings page that is visible when you login to Snyk
 
 ### Step 1: Add the token to Roadie
 
-Visit `https://your-company.roadie.so/administration/settings/secrets`.
+Visit `https://your-company.roadie.so/administration/snyk`.
 
 Click the pencil icon beside `SNYK_TOKEN`. Enter it into the input in the dialog that pops up (See above for retrieving token).
-
-![a dialog box with an input called Secret Value. The Snyk token is pasted inside.](./secret.png)
-
-Click Save.
 
 Wait a few moments for the secret to be applied.
 

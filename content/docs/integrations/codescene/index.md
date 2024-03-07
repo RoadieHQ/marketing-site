@@ -18,7 +18,7 @@ You'll need a CodeScene account and a basic Auth token.
 
 ## Step 1: Configure the CodeScene API token
 
-Navigate to `/administration/settings/secrets` and click the edit icon beside the `CODESCENE_AUTH_CREDENTIALS` secret then
+Navigate to `/administration/codescene` and click the edit icon beside the `CODESCENE_AUTH_CREDENTIALS` secret then
 enter your basic auth token.
 
 ![Set Auth](./credentials.png)
@@ -26,7 +26,7 @@ enter your basic auth token.
 
 ## Step 2: Configure the CodeScene API token
 
-Navigate to `/administration/settings/codescene` and enter your CodeScene instance url then click "save" and then "Apply & restart". 
+Navigate to `/administration/codescene` and enter your CodeScene instance url then click "save" and then "Apply & restart". 
 
 ![Set Config](./config.png)
 

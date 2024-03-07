@@ -22,7 +22,7 @@ In order to create a key, create an integration in your Splunk On-Call account b
 
 ### Step 2: Store the credentials in Roadie
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the copied values into  `SPLUNK_ON_CALL_API_ID` & `SPLUNK_ON_CALL_API_KEY` secrets.
+Visit `https://<tenant-name>.roadie.so/administration/splunk` and enter the copied values into  `SPLUNK_ON_CALL_API_ID` & `SPLUNK_ON_CALL_API_KEY` secrets.
 
 ![Set Splunk On-Call secrets via UI](./secret.png)
 

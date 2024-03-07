@@ -16,7 +16,7 @@ In order to use the FireHydrant plugin, Roadie needs an API token to communicate
 This is set within backstage at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/firehydrant
 ```
 
 This page describes how to create and set up the FireHydrant Bot token.
@@ -34,7 +34,8 @@ Click on the "Create bot user" button and you should see the following screen.
 After you have added your preferred name and description to the bot, you should be presented with a bot token. Copy this token to clipboard and continue to step 2
 
 ### Step 2: Store the token in Roadie
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the token value from above into `FIREHYDRANT_BOT_TOKEN`.
+
+Visit `https://<tenant-name>.roadie.so/administration/firehydrant` and enter the token value from above into `FIREHYDRANT_BOT_TOKEN`.
 
 ### Step 3: Configure FireHydrant services to match Roadie service names
 

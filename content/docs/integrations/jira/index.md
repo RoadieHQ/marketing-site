@@ -16,7 +16,7 @@ In order to use the Jira plugin, Roadie needs an API token to communicate with J
 These are set within backstage at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/jira
 ```
 
 This page describes how to create and set up the API token.
@@ -55,7 +55,7 @@ read -s tmp; echo -n "jira-mail@example.com:$tmp" | base64 ; unset tmp
 NOTE: the `-n` flag removes new line characters from the echo output.
 
 ### Step 3: Store the credentials and Jira URL in Roadie
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the base64 encoded and prefixed token value from above into `JIRA_API_TOKEN`.
+Visit `https://<tenant-name>.roadie.so/administration/jira` and enter the base64 encoded and prefixed token value from above into `JIRA_API_TOKEN`.
 
 Additionally add the URL to your Jira instance into `JIRA_API_URL`. The URL should not contain a trailing slash, e.g. `https://roadie.atlassian.net`.
 

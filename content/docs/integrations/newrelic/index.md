@@ -22,11 +22,11 @@ In order to make requests to the NewRelic API, you must provide Roadie with an A
 
 3. Click the icon alongside the key you have created and click "Copy key"
 
-4. Login to Roadie and visit the administration -> settings -> secrets (https://\<tenant name\>.roadie.so/administration/settings/secrets) page.
+4. Login to Roadie and Navigate to Administration -> New Relic Dashboard (https://\<tenant name\>.roadie.so/administration/newRelic-dashboard) page.
 
 5. Click the pencil icon alongside the `NEW_RELIC_REST_API_KEY` and paste the API key you copied earlier.
 
-6. Navigate to administration -> New Relic Dashboard and select the data region of your New Relic account. Click 'Save' and 'Apply'
+6. Select the data region of your New Relic account. Click 'Save' and 'Apply'
 
 7. It can take up to 2 minutes for the API key and configuration to be applied.
 
