@@ -1,7 +1,7 @@
 ---
-title: Tracking Node.js Deprecated Actions and Commands
+title: Tracking GitHub Actions Annotations
 publishedDate: '2024-03-08T15:15:00.0Z'
-description: How to track and visualize the deprecation notices from GitHub related to your node.js software with Roadie Tech Insights
+description: How to track and visualize the deprecation notices from GitHub Actions Annotations with Roadie Tech Insights
 ---
 
 Tracking deprecated actions and commands is critical for ensuring your software is secure and compliant. It can be difficult to track which of your software is using a supported action, and which are using an deprecated.
@@ -38,7 +38,7 @@ In order to track the deprecation notices from GitHub, we are going to create a 
 3. Set the Data Provider **Type** to `HTTP`, **Proxy** to `/github/api`, **Path Extension** to `graphql`, **HTTP Method** to POST, and **Body** to the below. 
 
     ```
-    {"query": "query ChecksQuery ($owner: String!, $repo: String!) { repository(owner: $owner, name: $repo) { pullRequests(orderBy: {field: UPDATED_AT, direction: DESC}, first: 3) { nodes { number mergeCommit { message checkSuites(first: 10, filterBy: {appId: 15368}) { nodes { id checkRuns(first: 15, filterBy: {checkType: LATEST}) { nodes { id name annotations(first: 15) { nodes { message } } } } } } } } } } }",
+    {"query": "query ChecksQuery ($owner: String!, $repo: String!) { repository(owner: $owner, name: $repo) { pullRequests(orderBy: {field: UPDATED_AT, direction: DESC}, first: 3) { nodes { number mergeCommit { message checkSuites(first: 10) { nodes { id checkRuns(first: 15, filterBy: {checkType: LATEST}) { nodes { id name annotations(first: 15) { nodes { message } } } } } } } } } } }",
     "operationName": "ChecksQuery",
     "variables": {"owner": "{{ metadata.annotations['github.com/owner'] }}", "repo": "{{ metadata.annotations['github.com/repo'] }}"}
     }
