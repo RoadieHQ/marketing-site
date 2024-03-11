@@ -28,13 +28,42 @@ This data provider provides connectivity via [Roadie proxies](/docs/custom-plugi
 
 The supported response types for HTTP data sources are JSON structures.
 
+**Available Metadata** 
+
+HTTP via Proxy Data Provider exposes the following metadata:
+
+| Metadata name | description                             | Example value                            |
+|---------------|-----------------------------------------|------------------------------------------|
+| status        | HTTP Status code for the API call       | 200                                      |
+| headers       | A dictionary of header and their values | `{ "content-type": "application/json" }` |
+
+Example usage: 
+* Get response status: `$metadata('status')`
+* Get header value for content-type: `$metadata('headers.content-type')`
+
 ### GitHub API
 
 _GitHub API_ data source uses the GitHub REST API with the installed GitHub app credentials to fetch any data not already available from the built-in GitHub Data Sources in Roadie.
 
+**Available Metadata**
+
+GitHub API Data Provider exposes the same metadata as HTTP via Proxy Data Provider.
+
 ### Component repository file
 
 Component repository file provider reaches out to the source location of an entity for data. This allows you to for example retrieve individual files from the GitHub repository where your entity is located. The supported data types are JSON, YAML as well as other file types. JSON and YAML types allow for well-structured response extraction patterns, whereas other file types can be parsed using regex.
+
+**Available Metadata**
+
+HTTP via Proxy Data Provider exposes the following metadata:
+
+| Metadata name | description                                            | Example values                                                                               | Note                                                                                        |
+|---------------|--------------------------------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| error         | Error structure containing information about the error | `{ "name": "NotFoundError", "message": "Attempted to retrieve a file which was not found" }` | The error shape is returned only if the Data Provider is unable to retrieve the wanted file |
+
+
+Example usage:
+* Assert that file was not found: `$metadata('error.name') = 'NotFoundError`
 
 ### Entity Definition
 
@@ -71,6 +100,116 @@ To use the Google Sheets API, you need a Google Cloud Platform Project with the 
 To be able to expose a specific Google Sheet to your generated Service Account keys, you can click the Share button on a specific Sheet and paste in the email address from step 3 above.
 
 </details>
+
+## Data Extraction
+
+Roadie supports two main types of data extraction methods. These can be categorized into plain text via Regex parsing, and structured data parsing via JSONata. JSONata is supports parsing of JSON, YAML and XML structures.
+
+### JSONata
+
+JSONata is a powerful tool that allows you to do manipulation, arithmetic as well as grouping and other transformations to the returned data. You can see all applicable functions and approaches from the [JSONata documentation site](https://docs.jsonata.org/overview). Sometimes it might be useful to iterate faster by using the [JSONata online editor](https://try.jsonata.org/) to see possible transformations to the returned data.
+
+#### JSONata extensions
+
+Roadie provides few extension functions to standard JSONata functionality that can be used to manipulate the responses.
+
+**$parseYaml**
+
+
+If you want to parse YAML content from plain strings, for example from an API Entity's `spec.definition` field, you can use the `$parseYaml` function for that purpose. An example query could be like the following (identifying OpenAPI version):
+* Data Provider Type: Entity Definition
+* Fact Name: OpenAPI Spec Version
+* JSONata query: `$parseYaml(spec.definition).openapi`
+* Type: String
+
+**$metadata**
+
+In case you want to capture status codes or headers from the received response, Roadie Tech Insights includes an extension function for JSONata parser that allows you to read _metadata_ from these responses. Metadata function is supported for a subset of Data Provider types. The supported types and their respective available metadata can be found from the individual [Data Provider](#setting-up-data-provider) section above.
+
+The `$metadata` function takes in a **string** which points to the available metadata key. For example if you want to get metadata information about an error name which happened in a file data source, you would use the following function call `$metadata('error.name')`. Please note that the `'` (quotation) characters are necessary to be included when using this functionality. 
+
+
+Below are few commonly used recipes that could be helpful.
+
+<details>
+<summary><b> Simple HTTP status response example </b></summary>
+
+API response:
+
+```JSON
+[
+  {
+    "id": 1483,
+    "user_id": 2977,
+    "title": "Stabilis minima turpe conqueror et.",
+    "due_on": "2023-01-08T00:00:00.000+05:30",
+    "status": "pending"
+  },
+  {
+    "id": 1480,
+    "user_id": 2973,
+    "title": "Totam bonus quos avarus corrigo annus pecto unde.",
+    "due_on": "2023-01-10T00:00:00.000+05:30",
+    "status": "completed"
+  },
+  {
+    "id": 1476,
+    "user_id": 2968,
+    "title": "Torqueo amoveo molestiae depromo adversus texo.",
+    "due_on": "2022-12-26T00:00:00.000+05:30",
+    "status": "pending"
+  }
+]
+```
+
+Specify a path from the root of the object. For example `[0].user_id`, or `[2].status`.
+For complex queries you have the default JSONata functions available. For example for the above data set the following queries would be possible:
+
+- Amount of items with status 'pending': `$count($[status = 'pending'])`
+- Amount of items with status not 'pending': `$count($[state != 'pending'])`
+- Title of an item that has a user with id 2973: `$[user_id = 2973].title`
+- Title of an item that has an id from the entity annotation `tech-insights/random-id-annotation`: `$[id = '{{ metadata.annotations["tech-insights/random-id-annotation"] }}'].title`
+
+</details>
+
+<details>
+<summary><b> Mapping entities and using functions</b></summary>
+
+This one is using Tech Insights scorecard as a data source. It is calling the Roadie API using the `/roadie` proxy with an endpoint path `tech-insights/scorecards/entity-results/:scorecardId`.
+
+API response:
+
+```JSON
+{
+  "results": [
+    {
+      "entity": "component:default/my-nice-entity",
+      "success": 5,
+      "failing": 0
+    },
+    {
+      "entity": "component:default/my-bad-entity",
+      "success": 1,
+      "failing": 4
+    },
+    {
+      "entity": "component:default/my-failure",
+      "success": 0,
+      "failing": 5
+    }
+  ]
+}
+```
+
+- The number of successful checks for entity: `results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].success`
+- The number of failing checks for entity: `results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].failing`
+- The percentage of successful checks: `results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].success / (results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].success + results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].failing) * 100`
+
+</details>
+
+
+
+
 
 ### Example configuration steps
 
@@ -160,88 +299,6 @@ Note that you can’t trigger manual data updates on built-in Data Sources.
 ## Recipes
 
 Below are few useful recipes that can be helpful when creating custom data sources.
-
-### JSONata
-
-JSONata is a powerful tool that allows you to do manipulation, arithmetic as well as grouping and other transformations to the returned data. You can see all applicable functions and approaches from the [JSONata documentation site](https://docs.jsonata.org/overview). Sometimes it might be useful to iterate faster by using the [JSONata online editor](https://try.jsonata.org/) to see possible transformations to the returned data.
-
-Below are few commonly used recipes that could be helpful.
-
-<details>
-<summary><b> Simple HTTP status response example </b></summary>
-
-API response:
-
-```JSON
-[
-  {
-    "id": 1483,
-    "user_id": 2977,
-    "title": "Stabilis minima turpe conqueror et.",
-    "due_on": "2023-01-08T00:00:00.000+05:30",
-    "status": "pending"
-  },
-  {
-    "id": 1480,
-    "user_id": 2973,
-    "title": "Totam bonus quos avarus corrigo annus pecto unde.",
-    "due_on": "2023-01-10T00:00:00.000+05:30",
-    "status": "completed"
-  },
-  {
-    "id": 1476,
-    "user_id": 2968,
-    "title": "Torqueo amoveo molestiae depromo adversus texo.",
-    "due_on": "2022-12-26T00:00:00.000+05:30",
-    "status": "pending"
-  }
-]
-```
-
-Specify a path from the root of the object. For example `[0].user_id`, or `[2].status`.
-For complex queries you have the default JSONata functions available. For example for the above data set the following queries would be possible:
-
-- Amount of items with status 'pending': `$count($[status = 'pending'])`
-- Amount of items with status not 'pending': `$count($[state != 'pending'])`
-- Title of an item that has a user with id 2973: `$[user_id = 2973].title`
-- Title of an item that has an id from the entity annotation `tech-insights/random-id-annotation`: `$[id = '{{ metadata.annotations["tech-insights/random-id-annotation"] }}'].title`
-
-</details>
-
-<details>
-<summary><b> Mapping entities and using functions</b></summary>
-
-This one is using Tech Insights scorecard as a data source. It is calling the Roadie API using the `/roadie` proxy with an endpoint path `tech-insights/scorecards/entity-results/:scorecardId`.
-
-API response:
-
-```JSON
-{
-  "results": [
-    {
-      "entity": "component:default/my-nice-entity",
-      "success": 5,
-      "failing": 0
-    },
-    {
-      "entity": "component:default/my-bad-entity",
-      "success": 1,
-      "failing": 4
-    },
-    {
-      "entity": "component:default/my-failure",
-      "success": 0,
-      "failing": 5
-    }
-  ]
-}
-```
-
-- The number of successful checks for entity: `results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].success`
-- The number of failing checks for entity: `results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].failing`
-- The percentage of successful checks: `results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].success / (results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].success + results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].failing) * 100`
-
-</details>
 
 ### Proxy usage and the Broker
 
