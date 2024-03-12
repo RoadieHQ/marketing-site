@@ -125,10 +125,11 @@ gettingStarted:
 
 The plugin provides a vector storage option to use the Backstage PostgreSQL database with a support of `pgVector` database extension. This extension should be installable by default on most Postgres instance installation methods, including AWS RDS installations. 
 
-## Other information
+## More information
 
 The AI Assistant plugin can be used with or without embeddings information that are stored and retrieved from a PostgreSQL database. To extend the plugin to support other LLMs, it is recommended to use the provided base class `DefaultVectorAugmentationIndexer.ts` from `@roadiehq/rag-ai-backend-retrieval-augmenter` package. Note that in most cases the embeddings that are created need to be using the same models as the actual queries that are run. 
 
+See more information about configuration and extension options from the plugin [FE GitHub repository](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/rag-ai) and the plugin [BE GitHub repository](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/backend/rag-ai-backend).
 
 ## Configuration options 
 
@@ -207,7 +208,7 @@ ai:
 
 The plugin exposes two main paths to enable retrieval-augmented generation assisted LLM questioning. 
 
-![data-flow-diagram.png](..%2F..%2F..%2F..%2Froadie-backstage-plugins%2Fplugins%2Fbackend%2Frag-ai-backend%2Fdocs%2Fdata-flow-diagram.png)
+![data-flow-diagram.png](../../assets/data-flow-diagram.png)
 
 ### Indexing
 
@@ -221,4 +222,4 @@ The ideal option to manage embeddings creation is to make them event based. They
 
 The querying path provides a sane set of defaults to enable initial RAG querying with a backing vector database and a similarity search based on the vector embeddings. The functionality can be extended to provide other data sources like knowledge graphs or plain text search functionality. The processing of the retrieved augmentation data can be enhanced, reranked, filtered and modified using post processor that can provide more accurate information related to the queries users are asking.
 
-![question-flow.png](..%2F..%2F..%2F..%2Froadie-backstage-plugins%2Fplugins%2Fbackend%2Frag-ai-backend%2Fdocs%2Fquestion-flow.png)
+![question-flow.png](../../assets/question-flow.png)
