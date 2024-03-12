@@ -123,7 +123,7 @@ gettingStarted:
 
 ## Data storage
 
-The plugin provides vector storage option to use the Backstage PostgreSQL database with a support of `pgVector` database extension. This extension should be installable by default on most Postgres instance installation methods, including AWS RDS installations. 
+The plugin provides a vector storage option to use the Backstage PostgreSQL database with a support of `pgVector` database extension. This extension should be installable by default on most Postgres instance installation methods, including AWS RDS installations. 
 
 ## Other information
 
