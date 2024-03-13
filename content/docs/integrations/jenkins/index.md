@@ -32,7 +32,9 @@ You can generate an API token for your user by visiting Jenkins UI at `<your-Jen
 
 ## Step 2: Configure Roadie with your Jenkins instance URL
 
-Enter your Jenkins instance API endpoint and username into Roadie at `/administration/jenkins`.
+Enter your Jenkins instance API endpoint and username into Roadie at `/administration/jenkins`. This information will be
+used as the default Jenkins instance which will be used unless you specify otherwise in your component annotations. If 
+you've got multiple Jenkins instances you can [read more below](#multiple-jenkins-instances). 
 
 1. Click "Administration" in the sidebar, then "Settings" in the tabs.
 2. Find "Jenkins" in the Configuration sidebar.
@@ -73,7 +75,20 @@ More information how to configure the plugin for your component can be found fro
 
 ## Multiple Jenkins Instances
 
-If you require integrating with multiple Jenkins instances contact Roadie via the in-app chat widget and we will enable it for you.
+You must first create a default instance as in the docs above. This instance will be named "default" and use 
+`JENKINS_API_KEY` as the API key. 
+
+You can then define connection details for the rest of the Jenkins instances in the 
+"Other Instances" section. For each instance you must provide:
+- An instance URL accessible to Roadie and a username
+- A name for the instance. This name may not be "default". 
+- The name of a Roadie Secret which holds an API key for the instance. This could be something like `CUSTOMER_TOKEN_1`.
+Then click "Save" then "Apply & Restart".
+
+To configure a component to fetch from a specific instance you must include the instance name in the jenkins annotation. e.g.
+`jenkins.io/job-full-name: "instance-name:github-organization-cluster1-project/job-name". You can read more [here](https://github.com/backstage/backstage/tree/master/plugins/jenkins-backend#example---multiple-global-instances). 
+
+![other instances](./jenkins_other_instances.png)
 
 ## References
 
