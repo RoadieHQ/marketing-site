@@ -33,7 +33,7 @@ You can generate an API token for your user by visiting Jenkins UI at `<your-Jen
 ## Step 2: Configure Roadie with your Jenkins instance URL
 
 Enter your Jenkins instance API endpoint and username into Roadie at `/administration/jenkins`. This information will be
-used as the default Jenkins instance which will used unless you specify otherwise in your component annotations. If 
+used as the default Jenkins instance which will be used unless you specify otherwise in your component annotations. If 
 you've got multiple Jenkins instances you can [read more below](#multiple-jenkins-instances). 
 
 1. Click "Administration" in the sidebar, then "Settings" in the tabs.
