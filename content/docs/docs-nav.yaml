@@ -162,6 +162,7 @@ nav:
       - Troubleshooting: '/docs/catalog/troubleshooting-the-catalog/'
       - Validating catalog files: '/docs/catalog/validator/'
       - Ownership: '/docs/catalog/ownership/'
+      - Repositories: '/docs/catalog/repositories/'
   - API:
       - Authorization: '/docs/api/authorization'
       - Catalog: '/docs/api/catalog'
