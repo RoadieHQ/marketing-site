@@ -13,7 +13,7 @@ Repositories allow us to effectively measure the completeness of your catalog - 
 
 Once your Repositories are added, Admins will be able to see a graph of catalog completeness in the Administration section of Roadie. 
 
-You will also find built-in completeness Scorecards and checks in Tech Insights and a Data Source to use to build your own Checks and Scorecards from the same data.
+If you are a Tech Insights user, you will also find built-in completeness Scorecards, Checks and a Data Source to use to build your own Checks and Scorecards from the same data.
 
 ![Catalog Completeness Page](./catalog-completeness-graph.png)
 
