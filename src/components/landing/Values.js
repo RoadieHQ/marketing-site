@@ -1,8 +1,4 @@
 import React from 'react';
-import { Headline, Lead } from 'components';
-
-const TITLE = 'Our values';
-const LEAD = 'The Roadie values were created by the entire team at the first Roadie off-site. They come from everyone.';
 
 const VALUES = [{
   title: 'Focused on collaboration',
@@ -26,31 +22,25 @@ const VALUES = [{
     'Each person in Roadie is given a wide remit. We trust each other to deliver results without much hand holding. Decisions are made by those closest to the issue rather than those with the most seniority. We operate as though most decisions are reversible.',
 }];
 
-const Values = ({ title = TITLE, lead = LEAD, values = VALUES }) => (
-  <div className="bg-white">
-    <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-24">
-      <div className="max-w-2xl lg:mx-auto lg:text-center">
-        <div className="mt-1">
-          <Headline>{title}</Headline>
+const Values = ({ values = VALUES }) => (
+  <section className="Section size-3">
+    <div className="Container">
+      <div className='Flex column gap-5 bp2-gap-9'>
+        <div className='Flex column gap-2'>
+          <h2 className='Text size-7'>Our values</h2>
+          <p className='Text size-5 weight-1 lowContrast'>The Roadie values were created by the entire team at the first Roadie off-site. They come from everyone.</p>
         </div>
-
-        <div className="mt-5">
-          <Lead>{lead}</Lead>
-        </div>
-      </div>
-
-      <div className="mt-20">
-        <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-10">
+        <dl className="Grid columns-1 bp2-columns-2 gap-5 bp2-gap-9">
           {values.map((value) => (
-            <div key={value.title}>
-              <dt className="font-semibold text-gray-900">{value.title}</dt>
-              <dd className="mt-3 text-gray-500">{value.detail}</dd>
+            <div className='Flex column gap-1' key={value.title}>
+              <dt className="Text size-5">{value.title}</dt>
+              <dd className="Text size-4">{value.detail}</dd>
             </div>
           ))}
         </dl>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default Values;

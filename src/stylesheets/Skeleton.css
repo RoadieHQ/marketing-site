@@ -1,0 +1,56 @@
+@keyframes SkeletonAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.Skeleton {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: var(--br-pill);
+  height: var(--space-3);
+  width: 90%;
+}
+
+.Skeleton::after {
+  box-sizing: border-box;
+  border-radius: var(--br-pill);
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  animation-name: SkeletonAnimation;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.Skeleton.size-1 {
+  height: var(--space-1);
+}
+
+.Skeleton.size-2 {
+  height: var(--space-2);
+}
+
+.Skeleton.width-50 {
+  width: 50%;
+}
+
+.Skeleton.width-75 {
+  width: 75%;
+}
+
+.Skeleton.gray {
+  background-color: var(--gray-4);
+}
+
+.Skeleton.gray::after {
+  background-color: var(--gray-6);
+}

@@ -1,0 +1,33 @@
+.Select {
+  all: unset;
+  width: 100%;
+  height: var(--space-8);
+  display: inline-flex;
+  align-items: center;
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+  box-shadow: inset 0 0 0 1px var(--gray-7);
+  border-radius: var(--br-1);
+  font-size: var(--fs-3);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.Select:hover {
+  box-shadow: inset 0 0 0 1px var(--gray-8);
+}
+
+.Select:focus {
+  box-shadow: inset 0 0 0 1px var(--indigo-8), 0 0 0 1px var(--indigo-8);
+}
+
+.SelectChevron {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--space-8);
+  display: inline-flex;
+  align-items: center;
+  padding-right: var(--space-1);
+}

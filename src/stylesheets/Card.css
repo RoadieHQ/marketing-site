@@ -1,0 +1,12 @@
+.Card {
+  background-color: white;
+  border: 1px solid var(--gray-a4);
+  background-clip: padding-box;
+  border-radius: var(--br-3);
+  overflow: hidden;
+}
+
+.Card.shadow {
+  box-shadow: 0 13px 24px -10px hsl(222.14deg 43.3% 52% / 20%),
+    0 8px 16px -10px hsl(222deg 71.43% 15% / 20%);
+}

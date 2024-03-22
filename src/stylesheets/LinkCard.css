@@ -1,0 +1,18 @@
+.LinkCard {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  transition: all 150ms ease;
+  border-radius: 12px;
+  padding: var(--space-3);
+}
+
+.LinkCard:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px -3px,
+    hsla(226, 80%, 20%, .25) 0px 5px 15px -5px;
+}

@@ -40,8 +40,9 @@ const EmailCaptureForm = ({
       onHoneypotChange={setHoneypotText}
     >
       <div className={classnames('flex flex-col', className)}>
-        <div className="mb-12">
+        <div className="mb-6">
           <TextField
+            className="TextField size-3"
             type="email"
             name="email"
             id={emailInputId}
@@ -63,8 +64,9 @@ const EmailCaptureForm = ({
           setRecaptchaExpired={setRecaptchaExpired}
         />
 
-        <div className="md:ml-1 mt-4">
+        <div className="">
           <Button
+            className="Button size-3 accent"
             text={buttonText}
             disabled={disabled}
             prefixIcon={<PaperAirplaneIcon />}

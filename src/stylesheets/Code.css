@@ -1,0 +1,8 @@
+.Code {
+  font-family: var(--ff-mono);
+  font-size: max(12px, 87%);
+  white-space: nowrap;
+  padding: 0 3px 2px 3px;
+  background-color: var(--violet-3);
+  color: var(--violet-11);
+}

@@ -10,7 +10,6 @@ import {
 
 import {
   CircleThreeColTeam as Team,
-  SimpleCenteredHeading,
   ExplainingTheVision,
   CustomerLogoCloud,
   Values,
@@ -29,12 +28,12 @@ const About = ({
 
     <SitewideHeader />
 
-    <div className="bg-white">
-      <SimpleCenteredHeading
-        headline="Our mission is to increase the effectiveness of software development"
-        lead="Software is positively impacting many facets of human life. We are still early in the journey towards building software effectively. By increasing the effectiveness of software development, we can have a huge impact on humanity."
-      />
-    </div>
+    <section className="Section size-3">
+      <div className='Container'>
+        <h1 className='Text size-8 bp3-size-9 mb-5'>Our mission is to increase the effectiveness of software development</h1>
+        <p className='Text size-5 weight-1 lowContrast'>Software is positively impacting many facets of human life. We are still early in the journey towards building software effectively. By increasing the effectiveness of software development, we can have a huge impact on humanity.</p>
+      </div>
+    </section>
 
     <ExplainingTheVision />
 

@@ -5,10 +5,9 @@ const MobileFreeTrialButton = () => (
   <Button
     link={true}
     to="/free-trial/"
-    color="primary"
     text="Try it free"
-    size="large"
     fullWidth={true}
+    className="Button size-3 accent"
   />
 );
 

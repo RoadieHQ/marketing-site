@@ -1,0 +1,24 @@
+.Status {
+  width: var(--space-2);
+  height: var(--space-2);
+  box-sizing: border-box;
+  display: inline-flex;
+  border-radius: var(--br-circle);
+  flex-shrink: 0;
+}
+
+.Status.gray {
+  background-color: var(--gray-3);
+}
+
+.Status.yellow {
+  background-color: var(--yellow-9);
+}
+
+.Status.red {
+  background-color: var(--red-9);
+}
+
+.Status.blue {
+  background-color: var(--blue-9);
+}
