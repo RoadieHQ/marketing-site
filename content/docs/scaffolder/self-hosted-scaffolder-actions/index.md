@@ -15,15 +15,15 @@ Roadie provides the possibility to run self-hosted, custom scaffolder actions as
 
 #### Option 1 - Using a scaffolder template
 
-Roadie has developed a scaffolder template that allows you to bootstrap a node.js monorepository, which in turn allows you to start developing, building and deploying custom scaffolder actions. You can find the Scaffolder template to get started from here: https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/roadie-agent-scaffolder-action/template.yaml. 
+Roadie has developed a scaffolder template that allows you to bootstrap a node.js monorepo, which allows you to start developing, building and deploying custom scaffolder actions. You can find the Scaffolder template to get started from here: https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/roadie-agent-scaffolder-action/template.yaml. 
 
 #### Option 2 - Installing the library manually
 
-You can also install the library manually to your project. The Roadie Agent library can be included in any node.js application and incorporated to existing projects if wanted. The library allows you to run multiple scaffolder action and custom entity providers from within your own infrastructure. To get started, you need to add the node.js library `@roadiehq/roadie-agent` as a dependency into your project and implement your wanted actions or provider using the instructions in the repository. 
+The Roadie Agent package can be included in any Node.js application and incorporated to existing projects if preferred. The library allows you to run multiple scaffolder actions and custom entity providers from within your own infrastructure. To get started, you need to add the Node.js library `@roadiehq/roadie-agent` as a dependency into your project and implement your wanted actions or entity providers using the instructions in the repository. 
 
 ### Writing your first action
 
-The agent library is written in Typescript and thus custom actions can be written in either Javascript or using Javascript as a bridge to trigger other commands on the host system. 
+The agent library is written in Typescript and thus custom actions can be written in either Javascript or Typescript, it can also act as a bridge to trigger other commands on the host system. 
 
 To get started, you need to define your configurations on your Roadie instance. This enables the communication between your self-hosted action and the Roadie backend. The underlying communication pattern used for this secure connection is using the [Broker Library](https://github.com/snyk/broker) developed by security company Snyk. You can read more about the broker [in the dedicated documentation section](/docs/integrations/broker/). 
 
@@ -34,6 +34,7 @@ First an index file configuring the agent and some actions for it:
 ```javascript
 // src/index.js
 import { RoadieAgent, createRoadieAgentScaffolderAction } from '@roadiehq/roadie-agent';
+import { helloWorldActionHandler } from './helloWorldActionHandler.js';
 import { addAddtionalFuncToProjectActionHandler } from './addAddtionalFuncToProjectActionHandler.js';
 import { configureMonitoringActionHandler } from './configureMonitoringActionHandler.js';
 
@@ -42,6 +43,10 @@ RoadieAgent.fromConfig({
   accept: `${process.cwd()}/config/accept.json`,
   identifier: process.env.BROKER_TOKEN // given that you have exported and env variable called BROKER_TOKEN
 })
+  .addScaffolderAction(createRoadieAgentScaffolderAction({
+    name: 'hello-world',
+    handler: helloWorldActionHandler
+  }))    
   .addScaffolderAction(createRoadieAgentScaffolderAction({
     name: 'add-additional-functionality-to-project-action',
     handler: addAddtionalFuncToProjectActionHandler
@@ -56,12 +61,12 @@ RoadieAgent.fromConfig({
 An example of an individual action:
 
 ```javascript
-// src/addAddtionalFuncToProjectActionHandler.js
+// src/helloWorldActionHandler.js
 import { writeFileSync } from "fs";
 
-export const addAddtionalFuncToProjectActionHandler = async (context) => {
+export const helloWorldActionHandler = async (context) => {
   try {
-    const greeting = `Hello, ${JSON.parse(context.payload.body)['name'] || 'world!'}`
+    const greeting = `Hello, ${context.payload.body.name || 'world!'}`
     await context.log(greeting);
     writeFileSync(`${context.workspacePath}/greeting.txt`, greeting);
   } catch (e) {
@@ -114,11 +119,10 @@ spec:
       name: invoke-custom-action
       action: roadie:agent
       input:
-        action: add-additional-functionality-to-project-action
+        action: hello-world
         shareWorkspace: true
         payload:
-          first: value1
-          second: value2
+          name: Roadie
 
     - id: log-message
       name: Log Message
@@ -127,14 +131,14 @@ spec:
         listWorkspace: true       
 ```
 
-The scaffolder template defined above would invoke the `add-additional-functionality-to-project-creation` action that is configured to run as a custom scaffolder action in your Roadie instance.
+The scaffolder template defined above would invoke the `hello-world` action that is configured to run as a custom scaffolder action in your Roadie instance.
 
 
 ## FAQ / Troubleshooting
 
 ### My custom action is not connecting to the Roadie instance
 
-The Roadie Agent library uses a Broker connection to communicate with Roadie. This means that to be able establish connection, you need to allow list the IP addresses where this connection would be initiated from. You can achieve this by navigating to the settings page in `Administration` -> `Settings` -> `Broker` and adding the CIDR ranges for the host where your custom actions are running.
+The Roadie Agent library uses a Broker connection to communicate with Roadie. This means that to be able to establish connection, you need to allow list the IP addresses where this connection would be initiated from. You can achieve this by navigating to the settings page in `Administration` -> `Settings` -> `Broker` and adding the CIDR ranges for the host where your custom actions are running.
 
 
 ### My custom action is not found/not triggering
