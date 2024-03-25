@@ -1,7 +1,6 @@
-
 ---
 title: Guide to Create Your Own Custom Actions - Roadie Agent Library
-publishedDate: '2024-03-25'
+publishedDate: '2024-03-25T12:00:00.0Z'
 description: A step-by-step tutorial on developing and utilizing custom Scaffolder Actions
 ---
 
