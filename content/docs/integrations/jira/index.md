@@ -82,6 +82,12 @@ There are two components which you can add to the catalog layout to display Jira
 
 You can read more about how to update the UI [here](/docs/details/updating-the-ui/).
 
+## Caveats
+
+The Jira Dashboard plugin doesn't fully support version 3 of the Jira API. Some information will be missing if you're using
+version 3 with the EntityJiraDashboardContent tab such as the value in `Assignee` column. We hope to have this issue fixed
+in due course.
+
 ## References
 
 - [Atlassian docs for creating API tokens](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/)
