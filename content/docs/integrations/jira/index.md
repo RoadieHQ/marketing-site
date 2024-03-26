@@ -84,9 +84,12 @@ You can read more about how to update the UI [here](/docs/details/updating-the-u
 
 ## Caveats
 
-The Jira Dashboard plugin doesn't fully support version 3 of the Jira API. Some information will be missing if you're using
+* The Jira Dashboard plugin doesn't fully support version 3 of the Jira API. Some information will be missing if you're using
 version 3 with the EntityJiraDashboardContent tab such as the value in `Assignee` column. We hope to have this issue fixed
 in due course.
+* The "Assigned to me" table is based on a JQL query where the username is taken from your login user profile (see `/administration/account` > Profile).
+  This means your username in Roadie must match your username in Atlassian. Often your company email will be used in both cases
+  but if you're using GitHub as the source of your users & groups this will likely not match.
 
 ## References
 
