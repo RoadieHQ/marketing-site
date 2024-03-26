@@ -55,9 +55,12 @@ read -s tmp; echo -n "jira-mail@example.com:$tmp" | base64 ; unset tmp
 NOTE: the `-n` flag removes new line characters from the echo output.
 
 ### Step 3: Store the credentials and Jira URL in Roadie
-Visit `https://<tenant-name>.roadie.so/administration/jira` and enter the base64 encoded and prefixed token value from above into `JIRA_API_TOKEN`.
-
-Additionally add the URL to your Jira instance into `JIRA_API_URL`. The URL should not contain a trailing slash, e.g. `https://roadie.atlassian.net`.
+Visit `https://<tenant-name>.roadie.so/administration/jira` and: 
+* Enter the base64 encoded and prefixed token value from above into `JIRA_API_TOKEN`.
+* Add the URL to your Jira instance into `JIRA_API_URL`. The URL should not contain a trailing slash, e.g. `https://roadie.atlassian.net`.
+* Optionally, provide a value for `User Email Suffix` this should be the email suffix of your Jira users, for example, @your-company.com.
+  This setting is used by the Jira dashboard in conjunction with your Backstage username to construct a filter to display only your issues. 
+  This may not be necessary if you're using version 3 of the Jira API. 
 
 ### Step 4: Add the required annotations to some components
 
@@ -70,6 +73,23 @@ metadata:
     jira/component: <example-component> # optional, you might skip this value to fetch data for all components
     jira/token-type: Bearer # optional, used for Activity stream feed.
 ```
+
+### Step 5: Add Jira components to the UI
+
+There are two components which you can add to the catalog layout to display Jira information. 
+* EntityJiraOverviewCard - can be added to the overview or other grid layouts. 
+* EntityJiraDashboardContent - a tab component provided by the [Jira Dashboard](https://www.npmjs.com/package/@axis-backstage/plugin-jira-dashboard) plugin.
+
+You can read more about how to update the UI [here](/docs/details/updating-the-ui/).
+
+## Caveats
+
+* The Jira Dashboard plugin doesn't fully support version 3 of the Jira API. Some information will be missing if you're using
+version 3 with the EntityJiraDashboardContent tab such as the value in `Assignee` column. We hope to have this issue fixed
+in due course.
+* The "Assigned to me" table is based on a JQL query where the username is taken from your login user profile (see `/administration/account` > Profile).
+  This means your username in Roadie must match your username in Atlassian. Often your company email will be used in both cases
+  but if you're using GitHub as the source of your users & groups this will likely not match.
 
 ## References
 
