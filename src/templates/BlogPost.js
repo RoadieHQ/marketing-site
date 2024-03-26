@@ -93,12 +93,12 @@ const BlogPostTemplate = ({ data }) => {
         </header>
 
         <section
-          className="prose prose-primary max-w-none max-w-lg mx-auto lg:max-w-3xl mb-24"
+          className="prose prose-primary max-w-none max-w-lg mx-auto lg:max-w-3xl mb-24 p-2"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>
 
-      <div className="relative max-w-lg mx-auto lg:max-w-xl mb-10">
+      <div className="relative max-w-lg mx-auto lg:max-w-xl mb-10 p-2">
         <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
       </div>
 
