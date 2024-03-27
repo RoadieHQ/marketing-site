@@ -12,37 +12,29 @@ integrationType: OSS plugin
 
 The PagerDuty Backstage plugin allows Roadie Backstage users to:
 
- 1. See who is on call for a particular catalog Component.
- 2. See if there are active incidents for a given catalog Component.
- 3. Create new incidents from Backstage.
+1.  See who is on call for a particular catalog Component.
+2.  See if there are active incidents for a given catalog Component.
+3.  Create new incidents from Backstage.
 
 ![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.png)
 
 ## Prerequisites
 
-In order to use the PagerDuty plugin, Roadie needs an API token to communicate with it's APIs. 
+In order to use the PagerDuty plugin, Roadie needs an API token or an OAuth application's credentials to be able to use the plugin inside Roadie.
 
 ### Setting up the plugin:
 
-#### 1. Create an API token
+#### 1. Create an API token or an OAuth application.
 
-Inside PagerDuty, access "API Access Keys" inside the "Integrations" menu.
+Please follow the offical [PagerDuty documentation](https://pagerduty.github.io/backstage-plugin-docs/getting-started/pagerduty/#:~:text=Events%20API.-,Setup%20API%20Authorization,-To%20use%20PagerDuty) to acquire the credentials that you would like to use:
 
-![API Access menu Item on PagerDuty integrations menu](./create-api-token.png)
-
-On the API Access Keys page, click the "Create New API Key" button.
-
-![Create new api key button](./create-new-api-key.png)
-
-Set a sensible description and click "Create Key".
-
-![Create key modal](./create-key.png)
-
-ℹ️  The PagerDuty Backstage plugin allows users to create PagerDuty incidents from within Backstage. For this reason, the API key needs both read and write permissions to function correctly.
+ℹ️ The PagerDuty Backstage plugin allows users to create PagerDuty incidents from within Backstage. For this reason, the API key needs both read and write permissions to function correctly.
 
 Copy the key that is created to your clipboard.
 
 #### 2. Store the credentials in Roadie
+
+##### API Token
 
 Visit the following URL and enter the API Key value from above into `PAGERDUTY_TOKEN`.
 
@@ -50,11 +42,23 @@ Visit the following URL and enter the API Key value from above into `PAGERDUTY_T
 https://<tenant-name>.roadie.so/administration/pagerduty
 ```
 
-ℹ️  Roadie accepts the token from PagerDuty unmodified. The configuration steps for the PagerDuty plugin in self-hosted Backstage are more complex, and will not work in Roadie.
+ℹ️ Roadie accepts the token from PagerDuty unmodified.
+
+##### OAuth application
+
+- Go to your tenant's `administration/pagerduty` page.
+- Select `oauth` as your Auth type.
+- Fill in your application's subdomain.
+- Fill in your application's region
+- Save
+- Apply & Restart
+
+After the restart provide the `PD_CLIENT_ID` and `PD_CLIENT_SECRET` secrets just under the save buttons. Once these are set you can go to the next step.
 
 #### 3. Add the PagerDuty annotation
 
 Backstage requires a PagerDuty annotation on every component which will display the PagerDuty plugin. The plugin supports two different annotation keys:
+
 1. `pagerduty.com/integration-key`
 2. `pagerduty.com/service-id`
 
@@ -112,8 +116,7 @@ Commit and merge this change and the Roadie Backstage PagerDuty plugin should be
 
 #### 4. Add the PagerDuty card
 
-Navigate to the component you have added the annotation for and [add the PagerDuty card to the overview page](/docs/getting-started/configuring-backstage-plugins/#step-1-add-the-ui-component). 
-
+Navigate to the component you have added the annotation for and [add the PagerDuty card to the overview page](/docs/getting-started/configuring-backstage-plugins/#step-1-add-the-ui-component).
 
 ## References
 
