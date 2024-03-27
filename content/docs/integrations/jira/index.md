@@ -40,7 +40,7 @@ On the modal window you can give the token a label, so you can recognize it late
 This step is optional for Jira Server/DC which can use Bearer tokens. You'll need to configure an environment variable to
 use Bearer tokens (see step 3).
 
-The Jira Cloud uses Basic auth so the token needs to be converted into a compatible format. 
+Jira Cloud uses Basic auth so the token needs to be converted into a compatible format. 
 First we need to prefix the token with the Jira user email and base64 encode it. 
 
 For example
