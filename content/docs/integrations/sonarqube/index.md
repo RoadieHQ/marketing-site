@@ -41,7 +41,7 @@ Alternatively, if you have multiple named SonarQube instances configured, you ca
 ```yaml
 metadata:
   annotations:
-    sonarqube.org/project-key: [YOUR_INSTANCE_NAME][YOUR_PROJECT_KEY]
+    sonarqube.org/project-key: [YOUR_INSTANCE_NAME]/[YOUR_PROJECT_KEY]
 ```
 
 
