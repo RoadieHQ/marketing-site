@@ -36,24 +36,35 @@ Copy the key that is created to your clipboard.
 
 ##### API Token
 
-Visit the following URL and enter the API Key value from above into `PAGERDUTY_TOKEN`.
+- Go to your tenant's `administration/pagerduty` page
+- Select `API Token` as your Auth type
+- Save
+- Apply & Restart
 
-```text
-https://<tenant-name>.roadie.so/administration/pagerduty
-```
+![API Token form](./api-token-auth-form.png)
+
+After the restart provide the `PAGERDUTY_TOKEN` secret just under the save buttons. Once these are set you can go to the next step.
+
+![API Token secrets](./api-token-secrets.png)
 
 ℹ️ Roadie accepts the token from PagerDuty unmodified.
 
 ##### OAuth application
 
+Your subdomain and region can be found in your pagerduty url. e.g: `foo.eu.pagerduty.com`
+
 - Go to your tenant's `administration/pagerduty` page.
-- Select `oauth` as your Auth type.
-- Fill in your application's subdomain.
+- Select `OAuth` as your Auth type
+- Fill in your application's subdomain
 - Fill in your application's region
 - Save
 - Apply & Restart
 
+![OAuth form](./oauth-auth-form.png)
+
 After the restart provide the `PD_CLIENT_ID` and `PD_CLIENT_SECRET` secrets just under the save buttons. Once these are set you can go to the next step.
+
+![OAuth secrets](./oauth-secrets.png)
 
 #### 3. Add the PagerDuty annotation
 
