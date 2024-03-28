@@ -28,7 +28,7 @@ In order to use the PagerDuty plugin, Roadie needs an API token or an OAuth appl
 
 Please follow the offical [PagerDuty documentation](https://pagerduty.github.io/backstage-plugin-docs/getting-started/pagerduty/#:~:text=Events%20API.-,Setup%20API%20Authorization,-To%20use%20PagerDuty) to acquire the credentials that you would like to use:
 
-ℹ️ The PagerDuty Backstage plugin allows users to create PagerDuty incidents from within Backstage. For this reason, the API key needs both read and write permissions to function correctly.
+ℹ️ The PagerDuty Backstage plugin allows users to create PagerDuty incidents from within Roadie. For this reason, the API key needs both read and write permissions to function correctly.
 
 Copy the key that is created to your clipboard.
 
