@@ -36,6 +36,8 @@ Below, in the table, you will find a list of the plugins and required annotation
 | @backstage/plugin-sonarqube                     | Sonarqube            | sonarqube.org/project-key                                  |
 | @backstage/plugin-splunk-on-call                | Splunk On-Call       | splunk.com/on-call-team or splunk.com/on-call-routing-key  |
 | @roadiehq/backstage-plugin-travis-ci            | Travis CI            | travis-ci.com/repo-slug                                    |
+| @backstage/plugin-dynatrace                     | Dynatrace            | dynatrace.com/dynatrace-entity-id                          |
+| @backstage/plugin-dynatrace                     | Dynatrace            | dynatrace.com/synthetics-ids                               |
 
 ## Links & Labels
 
