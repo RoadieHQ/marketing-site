@@ -14,7 +14,7 @@ With this plugin, you can embed information about Dynatrace problems into your e
 
 ## Step 1 - Obtain Dynatrace API key
 
-You need a Dynatrace API access token to be able to use the Dynatrace plugin. You can follow the instructions on how to retrieve the token on Dynatrace documentation: https://docs.dynatrace.com/docs/dynatrace-api/basics/dynatrace-api-authentication. 
+You need a Dynatrace API access token to be able to use the Dynatrace plugin. You can follow the instructions on how to retrieve the token in the Dynatrace documentation: https://docs.dynatrace.com/docs/dynatrace-api/basics/dynatrace-api-authentication. 
 
 The plugin requires an access token with the following permissions to be able to retrieve relevant information from the Dynatrace REST API:
 * `entities.read`
