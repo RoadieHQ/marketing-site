@@ -1,7 +1,7 @@
 ---
 title: Datadog
 publishedDate: '2021-10-18T21:00:00.0Z'
-description: How setup Backstage to display graphs and dashboards from Datadog
+description: How setup Roadie to display graphs and dashboards from Datadog
 
 humanName: Datadog
 logoImage: '../../../assets/logos/datadog/datadog-logo-no-text.png'
@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 With this plugin, you can embed Datadog graphs and dashboards into Roadie Backstage. Datadog is a monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services through a SaaS-based data analytics platform.
 
-## How to embed a datadog dashboard in Backstage
+## How to embed a datadog dashboard in Roadie
 
 ### Obtain the dashboard URL from Datadog that you will need for your metadata.
 
@@ -48,7 +48,7 @@ metadata:
     datadoghq.com/dashboard-url: <<DATADOGURL>>
 ```
 
-## How to embed a datadog graph in Backstage
+## How to embed a datadog graph in Roadie
 
 * Login to your Datadog account.
 
