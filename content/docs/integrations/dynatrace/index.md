@@ -39,7 +39,7 @@ The configuration expects 2 different URLs:
 Add your generated access token created in step 1 as a secret to the application. The secret to use for Dynatrace is called `DYNATRACE_ACCESS_TOKEN`. 
 
 
-## Step 3 - Add needed annotations to your Entities
+## Step 3 - Add Dynatrace annotations to your Entities
 
 The Dynatrace plugin uses the following annotation to link Dynatrace entities to entities within Roadie: 
 * `dynatrace.com/dynatrace-entity-id`
