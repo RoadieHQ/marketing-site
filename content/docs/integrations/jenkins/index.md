@@ -14,7 +14,7 @@ integrationType: OSS plugin
 |---: | --- |
 | **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
 | **Considerations** | Multi-Instance is supported through multiple broker configuration blocks. |
-| **Environments** | ☒ Private Network via Broker<br /> ☒ Internet Accessible via IP Whitelist<br />☐ Cloud Hosted |
+| **Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☐ Cloud Hosted |
 
 ## Introduction
 

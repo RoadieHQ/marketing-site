@@ -14,7 +14,7 @@ integrationType: OSS plugin
 |---: | --- |
 | Prerequisites | **Configuration Data:** <ul><li>API Token or OAuth Client Id and Secret</li><li>PagerDuty subdomain and region</li></ul> **Component Annotations:** <ul><li>Integration Key</li><li>Service Id</li></ul> |
 | Considerations |  |
-| Environments | <ul><li>Private Network via Broker</li><li>Internet Accessible via IP Whitelist</li><li>Cloud Hosted</li></ul> |
+| Environments | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Introduction
 

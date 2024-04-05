@@ -8,6 +8,12 @@ logoImage: '../../../assets/logos/snyk/snyk-avatar.png'
 integrationType: OSS plugin
 ---
 
+| | |
+|---: | --- |
+| Prerequisites | **Configuration Data:** <ul><li>API Token</li><li>Organization Name</li></ul> **Component Annotations:** <ul><li>Organization Id</li><li>GitHub Project Slug or Snyk Target Id</li></ul> |
+| Considerations | Multi-Instance is supported through catalog entry annotations. |
+| Environments | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 In order to use the Backstage Snyk plugin with Roadie, you must securely provide Roadie with an API token which it can use to access the Snyk API.

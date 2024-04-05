@@ -14,18 +14,7 @@ integrationType: OSS plugin
 |---: | --- |
 | **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
 | **Considerations** |  |
-| **Environments** | ☒ Private Network via Broker<br /> ☒ Internet Accessible via IP Whitelist<br />☒ Cloud Hosted  |
-
-
-+---+---+
-|   |   |
-+=======+
-| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
-+---+---+
-| **Considerations** |   |
-+---+---+
-| **Environments**  | ☒ ☐ |
-+---+---+
+| **Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted  |
 
 ## Introduction
 
