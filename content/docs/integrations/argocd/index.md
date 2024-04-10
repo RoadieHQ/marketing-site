@@ -8,14 +8,6 @@ logoImage: '../../../assets/logos/argo-cd/argo-cd-logo.png'
 integrationType: OSS plugin
 ---
 
-## Expectations
-
-| | |
-|---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
-| **Considerations** |  |
-| **Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted  |
-
 ## Introduction
 
 The Argo CD plugin can present the current status of an application in your Roadie Backstage catalog. You also have the possibility to see your Argo CD deployments history and their corresponding revisions, as well as more detailed information about currently deployed applications.
@@ -24,6 +16,13 @@ The Argo CD plugin can present the current status of an application in your Road
 
 This page explains how to configure it in Roadie Backstage.
 
+## At a Glance
+
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
+| **Considerations** |  |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted  |
 
 ## Step 1: Create an API token
 

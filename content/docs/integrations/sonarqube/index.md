@@ -7,14 +7,6 @@ logoImage: '../../../assets/logos/sonarqube/logo-sonar.png'
 integrationType: OSS plugin
 ---
 
-## Expectations
-
-| | |
-|---: | --- |
-| Prerequisites | **Configuration Data:** <ul><li>API Token</li></ul> **Component Annotations:** <ul><li>Instance Name (If multi-instance present)</li><li>Project Key</li></ul> |
-| Considerations | Multi-Instance is supported through multiple broker configuration blocks. |
-| Environments | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 Roadie supports both SonarCloud hosted and self-hosted SonarQube instances. To access SonarQube secured in private networks you are able to use the [Broker connection](/docs/integrations/broker) for secure communication between Roadie and SonarQube instance.
@@ -27,6 +19,14 @@ If you are using hosted SonarCloud as your SonarQube provider you only need set 
 
 If you are using self-hosted SonarQube plugin or want more control over the SonarQube plugin you can use the SonarQube settings page to set up needed configurations.
 ![SonarQube Config page.](./config_options.png)
+
+## At a Glance
+
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> **Component Annotations:** <ul><li>Instance Name (If multi-instance present)</li><li>Project Key</li></ul> |
+| **Considerations** | Multi-Instance is supported through multiple broker configuration blocks. |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## SonarQube entity configuration
 

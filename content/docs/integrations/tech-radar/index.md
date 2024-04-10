@@ -11,6 +11,14 @@ integrationType: OSS plugin
 
 If you want to use Tech Radar on your Roadie instance you can add it as a page using the steps defined in [this guide](/docs/details/updating-the-ui/#updating-the-sidebar).
 
+## At a Glance
+
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>GitHub - OAuth Token</li><li>Bitbucket - OAuth Token, Client Id, and Secret</li></ul> |
+| **Considerations** | GitHub and Bitbucket only. |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 
 ## Step 1: Configuration
 

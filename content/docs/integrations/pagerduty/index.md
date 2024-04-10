@@ -8,14 +8,6 @@ logoImage: '../../../assets/logos/pagerduty/pagerduty-logo-light-200x200.png'
 integrationType: OSS plugin
 ---
 
-## Expectations
-
-| | |
-|---: | --- |
-| Prerequisites | **Configuration Data:** <ul><li>API Token or OAuth Client Id and Secret</li><li>PagerDuty subdomain and region</li></ul> **Component Annotations:** <ul><li>Integration Key</li><li>Service Id</li></ul> |
-| Considerations |  |
-| Environments | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 The PagerDuty Backstage plugin allows Roadie Backstage users to:
@@ -25,6 +17,14 @@ The PagerDuty Backstage plugin allows Roadie Backstage users to:
 3.  Create new incidents from Backstage.
 
 ![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.png)
+
+## At a Glance
+
+| | |
+|---: | --- |
+| Prerequisites | **Configuration Data:** <ul><li>API Token or OAuth Client Id and Secret</li><li>PagerDuty subdomain and region</li></ul> **Component Annotations:** <ul><li>Integration Key</li><li>Service Id</li></ul> |
+| Considerations |  |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Prerequisites
 

@@ -8,17 +8,18 @@ logoImage: '../../../assets/logos/grafana/grafana.png'
 integrationType: OSS plugin
 ---
 
-| | |
-|---: | --- |
-| Prerequisites | **Configuration Data:** <ul><li>API Key</li><li>Grafana Frontend URL</li><li>Grafana Backend URL</li></ul> **Component Annotations:** <ul><li>Tag Selector / Dashboard Selector</li></ul> |
-| Considerations |  |
-| Environments | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 The [Backstage Grafana plugin](https://www.npmjs.com/package/@k-phoen/backstage-plugin-grafana) integrates with Grafana to list alerts and dashboards for your entities.
 
 ![grafana-overview.png](./grafana-overview.png)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>API Key</li><li>Grafana Frontend URL</li><li>Grafana Backend URL</li></ul> **Component Annotations:** <ul><li>Tag Selector / Dashboard Selector</li></ul> |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Prerequisites
 

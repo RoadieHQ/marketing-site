@@ -8,14 +8,6 @@ logoImage: '../../../assets/logos/jenkins/logo-jenkins.png'
 integrationType: OSS plugin
 ---
 
-## Expectations
-
-| | |
-|---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
-| **Considerations** | Multi-Instance is supported through multiple broker configuration blocks. |
-| **Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☐ Cloud Hosted |
-
 ## Introduction
 
 The Jenkins plugin can display build information from a GitHub Organization project in your Jenkins instances. 
@@ -25,6 +17,14 @@ The Jenkins plugin can display build information from a GitHub Organization proj
 ![Jenkins Overview Content](./jenkins_overview.png)
 
 This page explains how to configure it in Roadie Backstage.
+
+## At a Glance
+
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
+| **Considerations** | Multi-Instance is supported through multiple broker configuration blocks. |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☐ Cloud Hosted |
 
 ## Prerequisites
 
