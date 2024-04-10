@@ -14,6 +14,13 @@ The [Backstage Grafana plugin](https://www.npmjs.com/package/@k-phoen/backstage-
 
 ![grafana-overview.png](./grafana-overview.png)
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>API Key</li><li>Grafana Frontend URL</li><li>Grafana Backend URL</li></ul> **Component Annotations:** <ul><li>Tag Selector / Dashboard Selector</li></ul> |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Prerequisites
 
 You'll need a Grafana account with an API key and the url of your Grafana UI and API (if different).

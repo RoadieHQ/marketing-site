@@ -18,6 +18,14 @@ The Jenkins plugin can display build information from a GitHub Organization proj
 
 This page explains how to configure it in Roadie Backstage.
 
+## At a Glance
+
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
+| **Considerations** | Multi-Instance is supported through multiple broker configuration blocks. |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☐ Cloud Hosted |
+
 ## Prerequisites
 
 1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/create-admin-group/).

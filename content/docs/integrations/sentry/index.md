@@ -11,6 +11,13 @@ integrationType: OSS plugin
 
 In order to use the Backstage Sentry plugin with Roadie, you must securely provide Roadie with an API key which it can use to access the Sentry API.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li><li>Organization Slug</li></ul> **Component Annotations:** <ul><li>Project Slug</li></ul> |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Connect Roadie to Sentry
 
 ### Step 1: Set your Sentry organization

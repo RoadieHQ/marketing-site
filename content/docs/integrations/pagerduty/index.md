@@ -18,6 +18,14 @@ The PagerDuty Backstage plugin allows Roadie Backstage users to:
 
 ![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.png)
 
+## At a Glance
+
+| | |
+|---: | --- |
+| Prerequisites | **Configuration Data:** <ul><li>API Token or OAuth Client Id and Secret</li><li>PagerDuty subdomain and region</li></ul> **Component Annotations:** <ul><li>Integration Key</li><li>Service Id</li></ul> |
+| Considerations |  |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Prerequisites
 
 In order to use the PagerDuty plugin, Roadie needs an API token or an OAuth application's credentials to be able to use the plugin inside Roadie.
