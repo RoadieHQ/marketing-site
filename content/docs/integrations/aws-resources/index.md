@@ -48,14 +48,15 @@ After the role configuration is done, you can click the 'Test Role' button to ch
 
 The table below lists the permissions required of the assumable role in order for the Catalog to ingest those resource types.
 
-| Resource        | Description                               | AWS Policy Action(s)                            |
-|-----------------|-------------------------------------------|-------------------------------------------------|
-| lambda-function | AWS Lambda Functions                      | `lambda:ListFunctions`                          |
-| eks-cluster     | AWS Elastic Kubernetes Service Clusters   | `eks:ListClusters`, `eks:DescribeCluster`       |
-| s3-bucket       | AWS Simple Storage Service Buckets        | `s3:ListBucket`, `s3:ListAllMyBuckets`          |
-| dynamodb-table  | AWS DynamoDB tables                       | `dynamodb:ListTables`, `dynamodb:DescribeTable` |
-| ec2-instance    | AWS Elastic Compute Cloud instances       | `ec2:DescribeInstances`                         |
-| rds-db-instance | AWS Relational Database Service instances | `rds:DescribeDBInstances`                       |
+| Resource             | Description                               | AWS Policy Action(s)                            |
+|----------------------|-------------------------------------------|-------------------------------------------------|
+| lambda-function      | AWS Lambda Functions                      | `lambda:ListFunctions`                          |
+| eks-cluster          | AWS Elastic Kubernetes Service Clusters   | `eks:ListClusters`, `eks:DescribeCluster`       |
+| s3-bucket            | AWS Simple Storage Service Buckets        | `s3:ListBucket`, `s3:ListAllMyBuckets`          |
+| dynamodb-table       | AWS DynamoDB tables                       | `dynamodb:ListTables`, `dynamodb:DescribeTable` |
+| ec2-instance         | AWS Elastic Compute Cloud instances       | `ec2:DescribeInstances`                         |
+| rds-db-instance      | AWS Relational Database Service instances | `rds:DescribeDBInstances`                       |
+| organization-account | AWS Organization Accounts                 | `organizations:ListAccounts`                    |
 
 
 You can expand the code snippet below to show an example policy document for the AWS role. You can add additional statement blocks into the policy document where multiple role policy actions are required.

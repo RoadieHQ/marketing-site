@@ -26,6 +26,7 @@ nav:
       - Confluence: '/docs/integrations/confluence/'
       - CodeCoverage: '/docs/integrations/codecoverage/'
       - Datadog: '/docs/integrations/datadog/'
+      - Dynatrace: '/docs/integrations/dynatrace/'
       - FireHydrant: '/docs/integrations/firehydrant/'
       - Google Calendar: '/docs/integrations/gcalendar/'
       - GitHub Deployments: '/docs/integrations/github-deployments/'

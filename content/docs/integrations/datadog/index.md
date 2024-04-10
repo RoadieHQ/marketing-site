@@ -1,7 +1,7 @@
 ---
 title: Datadog
 publishedDate: '2021-10-18T21:00:00.0Z'
-description: How setup Backstage to display graphs and dashboards from Datadog
+description: How setup Roadie to display graphs and dashboards from Datadog
 
 humanName: Datadog
 logoImage: '../../../assets/logos/datadog/datadog-logo-no-text.png'
@@ -55,7 +55,7 @@ metadata:
     datadoghq.com/dashboard-url: <<DATADOGURL>>
 ```
 
-## How to embed a datadog graph in Backstage
+## How to embed a datadog graph in Roadie
 
 * Login to your Datadog account.
 
