@@ -19,7 +19,7 @@ With this plugin, you can embed Datadog graphs and dashboards into Roadie Backst
 | **Considerations** | Due to the limitation of Datadog sharing, the dashboard or graph must be publicly accessible in order for the plug-in to display the data. |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
-## How to embed a datadog dashboard in Backstage
+## How to embed a datadog dashboard in Roadie
 
 ### Obtain the dashboard URL from Datadog that you will need for your metadata.
 
