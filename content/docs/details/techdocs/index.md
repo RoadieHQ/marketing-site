@@ -92,6 +92,15 @@ page structure using the `nav` object in your `mkdocs.yaml`. Both approaches are
 
 Similarly, MkDocs will determine a title for your document according to [these rules](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data).
 
+By default MkDocs will create a navigation menu where a menu item that has child pages will not link to the index page for that parent item. To fix this we have added a MkDocs plugin called `section-index`. To enable this plugin you can add it to the plugins list in the `mkdocs.yaml` file.
+
+
+```yaml
+plugins:
+  - section-index
+  - ...
+```
+
 ## Graphs and Diagrams
 
 ### Using Mermaid Diagrams
