@@ -34,7 +34,7 @@ const Sources = ({ sources }) => {
     <section className="sm:grid sm:grid-cols-3 sm:gap-6">
       <div>
         <div className="mb-6 mt-6">
-          <span className="mr-4">Source</span>
+          <span className="mr-4">Source: </span>
           {sources.map((it) => {
             return (
               <button key={it.id} onClick={() => handleChange(it)}>
@@ -51,7 +51,7 @@ const Sources = ({ sources }) => {
       </div>
       <div>
         <div className="mb-6 mt-6">
-          <span className="mr-4">Kind</span>
+          <span className="mr-4">Kind: </span>
           {!isEmpty(allKinds) &&
             allKinds.map((k) => {
               return (
