@@ -5,7 +5,7 @@ description: How to configure backstage to read teams from github
 
 humanName: GitHub Teams
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: Integration
+integrationType: Catalog data source
 ---
 
 ## Introduction

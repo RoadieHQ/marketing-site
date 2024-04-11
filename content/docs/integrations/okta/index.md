@@ -5,7 +5,7 @@ description: How to configure Roadie to collect users from Okta.
 
 humanName: Okta
 logoImage: '../../../assets/logos/okta/okta_logo.png'
-integrationType: OSS plugin
+integrationType: Catalog data source
 ---
 
 ## Introduction
@@ -22,18 +22,16 @@ Obtain an [Okta API token](https://developer.okta.com/docs/guides/create-an-api-
 
 ### Step 2: Set the Okta API token
 
-Set the `OKTA_TOKEN` secret in the secrete manager of your Roadie Backstage Admin panel, located in the following path:
+In Roadie, add the `OKTA_TOKEN` secret at the Okta settings page:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/okta
 ```
 
 ### Step 3: Set the Okta Organization URL
 
-Set the Okta Organization URL in the Okta configuration page of your Roadie Backstage Admin panel, located in the following path:
-```text
-https://<tenant-name>.roadie.so/administration/settings/okta
-```
+Set the Okta Organization URL in the Okta configuration page in Roadie.
+
 
 ## Data
 
@@ -41,7 +39,7 @@ It will ingest a subset of data for all groups and all users in your Okta organi
 
 ## Filter Users and Groups
 
-From the `Okta` settings page, linked above, you can configure a filter for users and groups. This filter query is passed to the `Okta` API and therefore supports the [https://developer.okta.com/docs/reference/api/users/#list-users-with-a-filter](Okta filter language). 
+From the `Okta` settings page, linked above, you can configure a filter for users and groups. This filter query is passed to the `Okta` API and therefore supports the [Okta filter language](https://developer.okta.com/docs/reference/api/users/#list-users-with-a-filter). 
 
 ## References
 

@@ -10,6 +10,7 @@ import customPluginsLogoImagePath from '../../../content/assets/logos/code/code.
 const INTEGRATION_TYPE_FILTERS = Object.freeze({
   OSS_PLUGIN: 'oss plugin',
   INTEGRATION: 'integration',
+  CATALOG_DATA_SOURCE: 'catalog data source',
   ALL: 'all',
 });
 
@@ -78,6 +79,12 @@ const SearchAndFilterBar = ({
         label="Integrations"
         onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.INTEGRATION)}
       />
+
+      <Tab
+        isActive={integrationTypeFilter === INTEGRATION_TYPE_FILTERS.CATALOG_DATA_SOURCE}
+        label="Catalog data source"
+        onClick={() => setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.CATALOG_DATA_SOURCE)}
+      />
     </div>
 
     <form className="md:w-96">
@@ -140,14 +147,14 @@ const DocsIntegrations = ({
     if (integrationTypeFilter === INTEGRATION_TYPE_FILTERS.ALL) {
       filteredIntegrations = [...allIntegrations];
     } else {
-      filteredIntegrations = allIntegrations.filter(({ frontmatter }) => (
-        frontmatter.integrationType.toLowerCase() === integrationTypeFilter
-      ));
+      filteredIntegrations = allIntegrations.filter(
+        ({ frontmatter }) => frontmatter?.integrationType?.toLowerCase() === integrationTypeFilter
+      );
     }
   } else {
-    filteredIntegrations = allIntegrations.filter(({ frontmatter }) => {
-      return frontmatter.humanName.toLowerCase().includes(query.toLowerCase());
-    });
+    filteredIntegrations = allIntegrations.filter(({ frontmatter }) =>
+      frontmatter?.humanName?.toLowerCase().includes(query.toLowerCase())
+    );
   }
 
   const handleQueryInput = (queryValue) => {

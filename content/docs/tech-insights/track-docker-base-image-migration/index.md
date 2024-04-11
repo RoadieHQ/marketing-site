@@ -130,7 +130,7 @@ Let’s write a check to combine both of these properties.
 4. In the first set of condition inputs, use the following values.
 
    | Input name | Value |
-       | --- | --- |
+   | --- | --- |
    | Data Source | Repository Files Data Source |
    | Fact | List of files |
    | Fact operator | Does not contain |

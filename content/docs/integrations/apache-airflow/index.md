@@ -20,9 +20,9 @@ Path: `/airflow`
 Target: `https://your.airflow.instance.com/api/v1`
 Headers: `Authorization`: `Basic ${APACHE_AIRFLOW_BASIC_AUTH_TOKEN}`
 
-2. Get and provide a APACHE_AIRFLOW_BASIC_AUTH_TOKEN as an environment variable in Roadie at `/administration/settings/secrets` - see below for instructions on how to get the token.
+2. Get and provide a APACHE_AIRFLOW_BASIC_AUTH_TOKEN as an environment variable in Roadie at `/administration/apache-airflow` - see below for instructions on how to get the token.
 
-3. Set the `baseUrl` for your Apache Airflow webserver in the Apache Airflow plugin options at `/administration/settings`
+3. Set the `baseUrl` for your Apache Airflow webserver in the Apache Airflow plugin options at `/administration/apache-airflow`
 
 ## Basic Authentication token
 

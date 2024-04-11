@@ -5,7 +5,7 @@ description: How to configure backstage to read catalog files on github
 
 humanName: GitHub Discovery
 logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
-integrationType: Integration
+integrationType: Catalog data source
 ---
 
 ## Introduction
@@ -61,7 +61,7 @@ In this example, Roadie will only load a `catalog-info.yaml` file from the `defa
 
 ### Using wildcards
 
-If you would like to catalog a file from all of your repos you can use the \* as a wildcard in any of the segmenets.
+If you would like to catalog a file from all of your repos you can use the \* as a wildcard in any of the segments.
 
 ```yaml
 https://github.com/RoadieHQ/*/blob/-/catalog-info.yaml
@@ -85,7 +85,7 @@ Add a Backstage component file to a repository which matches the configured disc
 
 ## Decorating Catalog Entities
 
-You can add the primary language used by a repository as a tag or label to the Roadie Backstage entity without updating your yaml files by turning on the decoration feature in `/administration/settings/catalog`.
+You can add the primary language used by a repository as a tag or label to the Roadie Backstage entity without updating your yaml files by turning on the decoration feature in `/administration/catalog`.
 
 It will take approximately 10 minutes for all entities to be tagged. Similarly, when disabling this feature, it will take approximately 10 minutes for the tags to be removed.
 

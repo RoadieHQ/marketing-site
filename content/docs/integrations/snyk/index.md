@@ -12,6 +12,13 @@ integrationType: OSS plugin
 
 In order to use the Backstage Snyk plugin with Roadie, you must securely provide Roadie with an API token which it can use to access the Snyk API.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li><li>Organization Name</li></ul> **Component Annotations:** <ul><li>Organization Id</li><li>GitHub Project Slug or Snyk Target Id</li></ul> |
+| **Considerations** | Multi-Instance is supported through catalog entry annotations. |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Connect Roadie to Snyk
 
 To get an API token, you need to sign up for a Snyk account. Within this account, you will need to obtain the following:
@@ -34,20 +41,18 @@ This can be found under the settings page that is visible when you login to Snyk
 
 ### Step 1: Add the token to Roadie
 
-Visit `https://your-company.roadie.so/administration/settings/secrets`.
+Visit `https://your-company.roadie.so/administration/snyk`.
 
 Click the pencil icon beside `SNYK_TOKEN`. Enter it into the input in the dialog that pops up (See above for retrieving token).
 
-![a dialog box with an input called Secret Value. The Snyk token is pasted inside.](./secret.png)
-
-Click Save.
-
 Wait a few moments for the secret to be applied.
 
-### Step 2: Add the Organization name to Roadie
+### Step 2a: Add the Organization name to Roadie
 
 Components need `snyk.io/org-id` annotation set in order to work properly. Setting the correct organisation name will automatically retrieve organization id and use it as a value for this annotation. 
-This means you will not have to add a `snyk.io/org-id` annotation manually for each component but it will be internally retrieved by Roadie using your organisation name.
+This means you will not have to add a `snyk.io/org-id` annotation manually for each component, but it will be internally retrieved by Roadie using your organisation name.
+
+Note that filling in the annotation is automated but may take a little bit of time before the values are propagated to all entities in the system. 
 
 You can set this up in Settings page:
 
@@ -55,7 +60,7 @@ Visit `https://your-company.roadie.so/administration/settings/snyk`.
 
 ![A text field with snyk org name.](./snyk-organisation-name-settings.png)
 
-### Step 3: Add the relevant Snyk annotations to a component
+### Step 2b: (Optional) Add the relevant Snyk annotations to a component manually
 
 To configure the Snyk plugin to target the correct entity, you need to configure few annotations to it.
 

@@ -24,11 +24,11 @@ Click on the "Generate token" button.
 
 ### Step 2: Store the token in Roadie
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the API key value from above into `STACKOVERFLOW_API_KEY`.
+Visit `https://<tenant-name>.roadie.so/administration/stackoverflow` and enter the API key value from above into `STACKOVERFLOW_API_KEY`.
 
 ### Step 3: Enable private or public Stackoverflow configuration
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/stackoverflow` and select the private checkbox for private Stackoverflow Teams, leave it unselected for public Stackoverflow instance. You also need to set up the base API URL for Stackoverflow. The URL in most cases, including private Teams integration, will be `https://api.stackexchange.com/2.3`
+Visit `https://<tenant-name>.roadie.so/administration/stackoverflow` and select the private checkbox for private Stackoverflow Teams, leave it unselected for public Stackoverflow instance. You also need to set up the base API URL for Stackoverflow. The URL in most cases, including private Teams integration, will be `https://api.stackexchange.com/2.3`
 
 ## Add Stackoverflow card to your HomePage
 

@@ -14,7 +14,7 @@ In order to use the Travis CI plugin, Roadie needs an API token to communicate w
 This is set within backstage at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/travis-ci
 ```
 
 This page describes how to create and set up the Travis CI API.
@@ -34,7 +34,7 @@ Click on the "Copy token" button under the API settings section.
 Visit:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/travis-ci
 ```
 
 Enter the token value from above into `TRAVISCI_AUTH_TOKEN`.

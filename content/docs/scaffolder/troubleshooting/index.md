@@ -77,16 +77,35 @@ i.e.
 
 ```
 steps:
-- action: fs:rename
-  id: rename-files
-  name: Rename files
-  input:
-  files:
-  - from: file1
-  to: subdirectory/file1
-  - from: file2
-  to: subdirectory/file2
-  then in the publish step you can add the input parameter: sourcePath: ./subdirectory
+  - id: fetch-catalog-manifest
+    name: Fetch Catalog manifest file
+    action: fetch:plain
+    input:
+      url: "${{ steps['backstage_request'].output.body.metadata.annotations['backstage.io/managed-by-origin-location'] | replace('url:', '') | replace('catalog-info.yaml', '') }}"
+      targetPath: 'fetch-folder'
+      
+  - id: move-manifest-to-workbench
+    name: Move files to a workbench location
+    action: fs:rename
+    input:
+      files:
+        - from: 'fetch-folder/file1'
+          to: './workbench-folder/file1'
+        - from: 'fetch-folder/folder1'
+          to: './manifest-folder/folder1'
+
+  ... snip ... do manipulations ...
+
+  - id: create-pr
+    name: Create a pull request
+    action: publish:github:pull-request
+    input:
+      sourcePath: ./workbench-folder/
+      targetPath: ./
+      repoUrl: github.com?repo=my-repo&owner=my-owner
+      branchName: my-brach-${{ '' | now }}
+      title: Updating some files
+      description: This is a PR created by Roadie Scaffolder.
 ```
 
 This then creates a PR with only the changed files rather than the full duplicated repo.

@@ -21,11 +21,30 @@ All Roadie traffic comes from the following IPs:
 34.248.243.70
 ```
 
+## Email Servers
+
+From time to time the Roadie application may email individual users or administrators. Each email will have the following headers.
+
+```
+from:      info@t.roadie.io
+mailed-by: eu-west-1.amazonses.com
+signed-by: t.roadie.io
+```
+
+Our support team may also communicate with Roadie users via the Intercom application. These emails have the following headers:
+
+```
+from:      <roadie employee name>@roadie.intercom-mail.eu
+mailed-by: rp.roadie.intercom-mail.eu
+signed-by: roadie.intercom-mail.eu
+```
+
 ## Hostnames
 
 If your IT department requires an allow list of domains, please use the following:
 
 ```
+auth.roadie.io
 <yourtenant>.roadie.so
 <yourtenant>.vouch.roadie.so
 *.roadie.systems

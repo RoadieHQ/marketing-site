@@ -40,15 +40,13 @@ Let's add the PagerDuty Card to the Component Overview page.
 
 6. Click the floppy disk icon in the top right to save your changes.
 
-## Step 2: Set an API token
+## Step 2: Set up the Config
 
 As you can see, the PagerDuty card is complaining about a missing or invalid token. It cannot access the PagerDuty API without authentication. Let's set a token now.
 
-1. Visit the secrets page in Roadie. [Here's how](/docs/details/setting-secrets/).
+1. Visit the Administration Settings page in Roadie.
 
-2. Scroll down to find PAGERDUTY_TOKEN in the UI. 
-
-![A table row with the name PAGERDUTY_TOKEN, an edit icon as a button and a short description of what the token does](./pagerduty-secret.png)
+2. Scroll down to find the Pagerduty plugin where you can add an API token.
 
 3. Click the pencil icon to open a dialog where you can set a token. Click SAVE. Please visit the [dedicated PagerDuty plugin docs](/docs/integrations/pagerduty/) to learn where to get this token from.
 

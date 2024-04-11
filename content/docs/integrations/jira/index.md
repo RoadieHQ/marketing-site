@@ -1,7 +1,7 @@
 ---
-title: Generating Jira Token
+title: Configuring the Jira plugins
 publishedDate: '2021-03-16T21:00:00.0Z'
-description: How to create Personal Access Token for Jira plugin.
+description: How to configure the Jira and Jira dashboard plugins.
 
 humanName: Jira
 logoImage: '../../../assets/logos/jira/jira_logo.png'
@@ -16,7 +16,7 @@ In order to use the Jira plugin, Roadie needs an API token to communicate with J
 These are set within backstage at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/jira
 ```
 
 This page describes how to create and set up the API token.
@@ -37,7 +37,10 @@ On the modal window you can give the token a label, so you can recognize it late
 
 ### Step 2: Base64 encode the credentials 
 
-The Jira plugin handles authentication using Basic auth so the token needs to be converted into a compatible format. 
+This step is optional for Jira Server/DC which can use Bearer tokens. You'll need to configure an environment variable to
+use Bearer tokens (see step 3).
+
+Jira Cloud uses Basic auth so the token needs to be converted into a compatible format. 
 First we need to prefix the token with the Jira user email and base64 encode it. 
 
 For example
@@ -55,9 +58,13 @@ read -s tmp; echo -n "jira-mail@example.com:$tmp" | base64 ; unset tmp
 NOTE: the `-n` flag removes new line characters from the echo output.
 
 ### Step 3: Store the credentials and Jira URL in Roadie
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the base64 encoded and prefixed token value from above into `JIRA_API_TOKEN`.
-
-Additionally add the URL to your Jira instance into `JIRA_API_URL`. The URL should not contain a trailing slash, e.g. `https://roadie.atlassian.net`.
+Visit `https://<tenant-name>.roadie.so/administration/jira` and: 
+* Enter the base64 encoded and prefixed token value from above into `JIRA_API_TOKEN`.
+* Add the URL to your Jira instance into `JIRA_API_URL`. The URL should not contain a trailing slash, e.g. `https://roadie.atlassian.net`.
+* If you're using a Bearer token enter `Bearer` into `JIRA_API_TOKEN_REALM`
+* Optionally, provide a value for `User Email Suffix` this should be the email suffix of your Jira users, for example, @your-company.com.
+  This setting is used by the Jira dashboard in conjunction with your Backstage username to construct a filter to display only your issues. 
+  This may not be necessary if you're using version 3 of the Jira API. 
 
 ### Step 4: Add the required annotations to some components
 
@@ -70,6 +77,23 @@ metadata:
     jira/component: <example-component> # optional, you might skip this value to fetch data for all components
     jira/token-type: Bearer # optional, used for Activity stream feed.
 ```
+
+### Step 5: Add Jira components to the UI
+
+There are two components which you can add to the catalog layout to display Jira information. 
+* EntityJiraOverviewCard - can be added to the overview or other grid layouts. 
+* EntityJiraDashboardContent - a tab component provided by the [Jira Dashboard](https://www.npmjs.com/package/@axis-backstage/plugin-jira-dashboard) plugin.
+
+You can read more about how to update the UI [here](/docs/details/updating-the-ui/).
+
+## Caveats
+
+* The Jira Dashboard plugin doesn't fully support version 3 of the Jira API. Some information will be missing if you're using
+  version 3 with the EntityJiraDashboardContent tab such as the value in `Assignee` column. We hope to have this issue fixed
+  in due course.
+* The "Assigned to me" table is based on a JQL query where the username is taken from your login user profile (see `/administration/account` > Profile).
+  This means your username in Roadie must match your username in Atlassian. Often your company email will be used in both cases
+  but if you're using GitHub as the source of your users & groups this will likely not match.
 
 ## References
 

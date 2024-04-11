@@ -5,7 +5,7 @@ description: How to configure a Google Cloud service account to connect Backstag
 
 humanName: Google Cloud Platform
 logoImage: '../../../assets/logos/google-cloud/google-cloud.png'
-integrationType: Integration
+integrationType: Catalog data source
 ---
 
 ## Introduction

@@ -489,6 +489,19 @@ If the step id does not contain a special character you can also refer to it usi
 ${{ steps.publish.output.repoContentsUrl }}
 ```
 
+#### Looping
+
+You can use array type form inputs or step outputs to repeat action steps multiple times. e.g.
+
+```yaml
+    - id: log-description
+      name: Log Message
+      each: ['Brian', 'Ian']
+      action: debug:log
+      input:
+        message: 'Hello, ${{ each.value }}!'
+```
+
 #### Accessing the logged in user
 
 You can refer to the user entity reference for the logged in user using the following syntax:

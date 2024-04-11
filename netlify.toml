@@ -15,6 +15,18 @@
 
 # Supporting a legacy URL scheme which existed when the site was first published.
 [[redirects]]
+  from = "/docs/openapi"
+  to = "/docs/api/authorization"
+  force = true
+
+# Supporting top level link to the api documentation.
+[[redirects]]
+  from = "/docs/api"
+  to = "/docs/api/authorization"
+  force = true
+
+# Supporting a legacy URL scheme which existed when the site was first published.
+[[redirects]]
   from = "/privacy/"
   to = "/legal-notices/privacy-notice/"
   force = true

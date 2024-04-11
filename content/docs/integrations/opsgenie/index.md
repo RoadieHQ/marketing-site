@@ -22,13 +22,11 @@ In order to create a key [create an Integration](https://support.atlassian.com/o
 
 ### Step 2: Store the credentials in Roadie
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the key into the `OPSGENIE_API_KEY` secret.
-
-![Set OPSGENIE_API_KEY via UI](./secret.png)
+Visit `https://<tenant-name>.roadie.so/administration/opsgenie` and enter the key into the `OPSGENIE_API_KEY` secret.
 
 ### Step 3: Configure Roadie with your Opsgenie account details
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/opsgenie` and enter the following:
+In the Opsgenie settings page enter the following:
 * The domain of your Opsgenie app (e.g. `https://my-app.app.eu.opsgenie.com/`)
 * The API endpoint you use (e.g. US / EU )
 
