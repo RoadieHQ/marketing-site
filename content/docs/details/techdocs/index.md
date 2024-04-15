@@ -229,6 +229,11 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
    --8<-- "TEST.md"
    ```
 
+## Using iframes
+
+TechDocs uses DOMPurify to strip away extraneous or potentially harmful HTML tags from the produced content. This includes iframes to URLs that are not on the list of sanctioned targets. You can add domain names to be allowed in iframes within the Roadie settings section. Navigate to `Administration` -> `Settings` -> `Tech Docs` and add domains which you are comfortable to be included as iframes into your generated tech docs.
+
+
 
 ## Further reading
 
