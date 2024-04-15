@@ -45,6 +45,21 @@ We currently include the following MkDocs plugins in our build process:
 - [mkdocs-kroki-plugin](https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin) - A diagram library supporting multiple different diagram formats. See https://kroki.io/ for more information.
 
 
+**NB: To use these plugins you must include them in your `mkdocs.yml` file like so:**
+
+Generic Markdown plugins are listed under `markdown_extensions:` while MkDocs plugins are under `plugins:`
+
+```yaml
+...
+plugins:
+  - techdocs-core
+  - glightbox 
+markdown_extensions:
+  - markdown_inline_mermaid
+```
+
+Note that the [`techdocs-core`](https://github.com/backstage/mkdocs-techdocs-core?tab=readme-ov-file#mkdocs-plugins-and-extensions) plugin packages many of the above plugins already.
+
 ## Theme and Styling
 
 Backstage uses an opinionated theme based on [material-mkdocs](https://github.com/backstage/mkdocs-techdocs-core#theme).
@@ -229,10 +244,15 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
    --8<-- "TEST.md"
    ```
 
-## Using iframes
+## Embedding content using iframes
 
-TechDocs uses DOMPurify to strip away extraneous or potentially harmful HTML tags from the produced content. This includes iframes to URLs that are not on the list of sanctioned targets. You can add domain names to be allowed in iframes within the Roadie settings section. Navigate to `Administration` -> `Settings` -> `Tech Docs` and add domains which you are comfortable to be included as iframes into your generated tech docs.
+You can embed most content inside Tech Docs using iframes which allows integration with most popular documentation, video and diagramming tools such as Microsoft Onedrive documents, Excel sheets and Powerpoint presentations. 
 
+*NB: The default embed code for Microsoft Docx and PPT iframes includes a link inside the iframe which must be removed for the iframe to render correctly.*
+
+TechDocs uses DOMPurify to strip away extraneous or potentially harmful HTML tags from the produced content. This includes iframes to URLs that are not on the list of sanctioned targets. 
+
+You can add domain names to be allowed in iframes within the Roadie settings section. Navigate to `Administration` -> `Settings` -> `Tech Docs` and add domains which you are comfortable to be included as iframes into your generated tech docs.
 
 
 ## Further reading
