@@ -47,9 +47,9 @@ export const ScmToolSelect = ({
       </select>
       {!isEmpty(helpText) && !isEmpty(currentValue.value) && showProductPrompts && (
         <>
-          {!currentValue.value.includes('github') && (
+          {currentValue.value.includes('gitlab') && (
             <div className="mt-3">
-              <HelpText message={currentValue.value.includes('gitlab') ? SCM_NO_GITLAB_TEXT : helpText} />
+              <HelpText message={SCM_NO_GITLAB_TEXT} />
             </div>
           )}
         </>
