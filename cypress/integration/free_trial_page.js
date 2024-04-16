@@ -14,7 +14,7 @@ describe('The free trial page', () => {
     cy.get('#reported-attribution').type('Newsletter');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
-    cy.contains('Thank you for requesting a free trial of Roadie Backstage');
+    cy.contains('Thank you for requesting a free trial of Roadie');
   });
 
   it('has a flow for users who use GitLab', () => {
