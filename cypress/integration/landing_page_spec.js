@@ -26,6 +26,6 @@ describe('The landing page', () => {
     cy.get('#request-demo-email-input').type('test@example.com');
     cy.get('#scm').select('GitLab Cloud');
     cy.contains('Request a demo').click();
-    cy.contains('Roadie only offers experimental support GitLab');
+    cy.contains('Roadie does not support GitLab');
   });
 });

@@ -24,7 +24,7 @@ describe('The free trial page', () => {
     cy.get('#scm').select('GitLab Cloud');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
-    cy.contains('Roadie only offers experimental support GitLab');
+    cy.contains('Roadie does not support GitLab');
   });
 
   it('warns gmail users', () => {
