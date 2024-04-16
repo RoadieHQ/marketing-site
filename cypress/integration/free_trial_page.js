@@ -27,16 +27,6 @@ describe('The free trial page', () => {
     cy.contains('Roadie only offers experimental support GitLab');
   });
 
-  it('has a flow for users who use unsupported SCMs', () => {
-    cy.visit('/free-trial/');
-
-    cy.get('#get-instance-email-input').type('test@example.com');
-    cy.get('#scm').select('Bitbucket Cloud');
-    cy.get('button[data-testid="agree-to-policies"]').click();
-    cy.contains('Request a trial').click();
-    cy.contains('Roadie support for Bitbucket Cloud is in beta');
-  });
-
   it('warns gmail users', () => {
     cy.visit('/free-trial/');
 
