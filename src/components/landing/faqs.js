@@ -6,12 +6,16 @@ const FAQ_CONTENT = [
   {
     question: `Is Roadie SaaS or on-prem?`,
     answer: () =>
-      `Roadie is SaaS only for the moment. Some Backstage plugins will need a connection back to your infrastructure. We offer a number of secure methods for enabling this.`,
+      `Roadie is SaaS and is every bit as customizable and secure as self-hosting Backstage.`,
   },
   {
     question: `Does Roadie support custom plugins?`,
-    answer: () =>
-      `Yes. Growth customers get a private plugin repository where Backstage plugins can be published. They can be manipulated and used just like ordinary open-source Backstage plugins.`,
+    answer: () => (
+      <p>
+        Yes. Write a native Backstage plugin as normal and use our CLI to publish it to Roadie. It stays private to your company.{' '}
+        <Link to="/docs/custom-plugins/getting-started/" color="primary">Read more in our docs.</Link>
+      </p>
+    ),
   },
   {
     question: `Where is Roadie data stored?`,
@@ -21,7 +25,7 @@ const FAQ_CONTENT = [
   {
     question: `What level of support does Roadie provide?`,
     answer: () =>
-      `Each Growth customer gets a shared Slack or Discord channel. We pride ourselves on our responsiveness. We also deeply value customer feedback and prioritize your requests in our roadmap.`,
+      `Each Growth customer gets a shared Slack or MS Teams channel. We pride ourselves on our responsiveness. We also deeply value customer feedback and prioritize your requests in our roadmap.`,
   },
   {
     question: `Do you have a status page?`,
@@ -35,7 +39,7 @@ const FAQ_CONTENT = [
   {
     question: `How does Roadie count developers?`,
     answer: () =>
-      `Any user who can access Roadie is a developer. We don't mind if random read-only users access the system from time to time and won't attempt to charge for these.`,
+      `We count "contributing users". These are developers who write the code which is tracked in the software catalog. People who don't write code can log in for free.`,
   },
   {
     question: `How can Roadie connect back to our infrastructure?`,
@@ -63,6 +67,11 @@ const FAQ_CONTENT = [
         <Link to="/blog/soc2-compliance/" color="primary">on our blog</Link>.
       </p>
     ),
+  },
+  {
+    question: `Is Roadie customizable`,
+    answer: () => 
+      `Roadie is extremely customizable. You can edit layouts, add and remove plugins, change the theme, run arbitrary code with the scaffolder, write your own plugins and more.`,
   },
 ];
 
