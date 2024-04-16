@@ -25,7 +25,7 @@ const FAQ_CONTENT = [
   {
     question: `What level of support does Roadie provide?`,
     answer: () =>
-      `Each Growth customer gets a shared Slack or MS Teams channel. We pride ourselves on our responsiveness. We also deeply value customer feedback and prioritize your requests in our roadmap.`,
+      `Growth plan customers gets a shared Slack or MS Teams channel. We pride ourselves on our responsiveness. We also deeply value customer feedback and prioritize your requests in our roadmap.`,
   },
   {
     question: `Do you have a status page?`,
@@ -69,7 +69,7 @@ const FAQ_CONTENT = [
     ),
   },
   {
-    question: `Is Roadie customizable`,
+    question: `Is Roadie customizable?`,
     answer: () => 
       `Roadie is extremely customizable. You can edit layouts, add and remove plugins, change the theme, run arbitrary code with the scaffolder, write your own plugins and more.`,
   },
