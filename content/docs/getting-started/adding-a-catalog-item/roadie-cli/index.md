@@ -1,31 +1,52 @@
 ---
-title: Roadie CLIc
+title: Roadie CLI
 publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure the Roadie CLI to create a catalog item.
 
-humanName: Roadie CLI5
+humanName: Roadie CLI
 examples:
-  - name: component
+  - name: Component
     language: bash
     content: |
       roadie-cli roadie-entity:create \
         --kind component \
         --name first-component \
         --apiToken $ROADIE_API_TOKEN
-  - name: resource
+  - name: Resource
     language: bash
     content: |
       roadie-cli roadie-entity:create \
-      --kind resource \
-      --name first-resource \
-      --apiToken $ROADIE_API_TOKEN
-  - name: api
+        --kind resource \
+        --name first-resource \
+        --apiToken $ROADIE_API_TOKEN
+  - name: System
     language: bash
     content: |
       roadie-cli roadie-entity:create \
-      --kind api \
-      --name first-api \
-      --apiToken $ROADIE_API_TOKEN
+        --kind system \
+        --name first-api \
+        --apiToken $ROADIE_API_TOKEN
+  - name: API
+    language: bash
+    content: |
+      roadie-cli roadie-entity:create \
+        --kind api \
+        --name first-api \
+        --apiToken $ROADIE_API_TOKEN
+  - name: Domain
+    language: bash
+    content: |
+      roadie-cli roadie-entity:create \
+        --kind domain \
+        --name first-api \
+        --apiToken $ROADIE_API_TOKEN
+  - name: System
+    language: bash
+    content: |
+      roadie-cli roadie-entity:create \
+        --kind system \
+        --name first-api \
+        --apiToken $ROADIE_API_TOKEN
 ---
 
 The Roadie Entity CLI allows you to create, update and delete entities in the Roadie catalog via the public API. This option allows you to manage entities from sources where Roadie does not have an existing Entity provider.

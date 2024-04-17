@@ -5,7 +5,7 @@ description: How to configure the GitHub to create a catalog item.
 
 humanName: GitHub
 examples:
-  - name: component
+  - name: Component
     language: yaml
     content: |
       apiVersion: backstage.io/v1alpha1
@@ -22,7 +22,7 @@ examples:
           - resource:default/artists-db
         providesApis:
           - artist-api
-  - name: resource
+  - name: Resource
     language: yaml
     content: |
       apiVersion: backstage.io/v1alpha1
@@ -34,7 +34,7 @@ examples:
         type: database
         owner: artist-relations-team
         system: artist-engagement-portal
-  - name: api
+  - name: API
     language: yaml
     content: |
       apiVersion: backstage.io/v1alpha1
