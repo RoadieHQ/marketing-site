@@ -17,7 +17,7 @@ const Chip = ({ label, isActive }) => {
   if (isActive) colorClasses = 'bg-primary-100 text-primary-800';
   if (!isActive) colorClasses = 'text-gray-800 border-2';
 
-  return <span className={classnames('capitalize', defaultClasses, colorClasses)}>{label}</span>;
+  return <span className={classnames(defaultClasses, colorClasses)}>{label}</span>;
 };
 
 const ShowMore = ({ item, itemName, onClick, sources }) => {

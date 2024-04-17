@@ -1,11 +1,11 @@
 ---
-title: GitHub1111
+title: HTTP
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: How to configure the GitHub to create a catalog item.
+description: How to retrieve a catalog item from a HTTP source.
 
-humanName: GitHub10
+humanName: HTTP
 examples:
-  - name: componento
+  - name: Component
     language: yaml
     content: |
       apiVersion: backstage.io/v1alpha1
@@ -22,7 +22,7 @@ examples:
           - resource:default/artists-db
         providesApis:
           - artist-api
-  - name: resource
+  - name: Resource
     language: yaml
     content: |
       apiVersion: backstage.io/v1alpha1
@@ -34,7 +34,7 @@ examples:
         type: database
         owner: artist-relations-team
         system: artist-engagement-portal
-  - name: api
+  - name: API
     language: yaml
     content: |
       apiVersion: backstage.io/v1alpha1
@@ -62,22 +62,10 @@ examples:
                 summary: List all artists
 ---
 
-### Install the GitHub App
+### Lorem ipsum dolor sit amet
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-### Use a personal access token
+### consectetur adipiscing elit
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-### Upload a catalog item to a repository
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-# Import the catalog item into Roadie
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-# Enable auto discovery
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu
