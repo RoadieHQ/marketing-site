@@ -4,13 +4,108 @@ publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure Azure DevOps to create a catalog item.
 
 humanName: Azure DevOps
-examples: []
+examples:
+  - name: Component
+    language: yaml
+    content: |
+      apiVersion: backstage.io/v1alpha1
+      kind: Component
+      metadata:
+        name: artist-web
+        description: The place to be, for great artists
+      spec:
+        type: website
+        lifecycle: production
+        owner: artist-relations-team
+        system: artist-engagement-portal
+        dependsOn:
+          - resource:default/artists-db
+        providesApis:
+          - artist-api
+  - name: Resource
+    language: yaml
+    content: |
+      apiVersion: backstage.io/v1alpha1
+      kind: Resource
+      metadata:
+        name: artists-db
+        description: Stores artist details
+      spec:
+        type: database
+        owner: artist-relations-team
+        system: artist-engagement-portal
+  - name: API
+    language: yaml
+    content: |
+      apiVersion: backstage.io/v1alpha1
+      kind: API
+      metadata:
+        name: artist-api
+        description: Retrieve artist details
+      spec:
+        type: openapi
+        lifecycle: production
+        owner: artist-relations-team
+        system: artist-engagement-portal
+        definition: |
+          openapi: "3.0.0"
+          info:
+            version: 1.0.0
+            title: Artist API
+            license:
+              name: MIT
+          servers:
+            - url: http://artist.spotify.net/v1
+          paths:
+            /artists:
+              get:
+                summary: List all artists
+  - name: System
+    language: yaml
+    content: |
+      apiVersion: backstage.io/v1alpha1
+      kind: System
+      metadata:
+        name: artist-engagement-portal
+        description: Handy tools to keep artists in the loop
+      spec:
+        owner: artist-relations-team
+        domain: artists
+  - name: Domain
+    language: yaml
+    content: |
+      apiVersion: backstage.io/v1alpha1
+      kind: Domain
+      metadata:
+        name: artists
+        description: Everything about artists
+      spec:
+        owner: artist-relations-team
 ---
 
-### Lorem ipsum dolor sit amet
+##  Generate Azure DevOps personal access token (PAT)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In your Azure DevOps navigate to the User Settings > Tokens page in `https://dev.azure.com/<your-organization>/_usersSettings/tokens`. Within this page you can generate a token to grant Roadie access to read your entity manifest files.
 
-### consectetur adipiscing elit
+1. Click 'New Token'
+2. Create an access token with _at least_ repository Read permissions.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+![Azure DevOps Token Options](./azure-devops-opts.png)
+
+### Create a catalog file in code repository
+
+In one of the Azure DevOps repos in your project create a `catalog-info.yaml` with the contents shown in the panel on the right.
+
+### Import the catalog file
+
+Copy the URL of the catalog file you created by visiting the file in your browser and copying the url from the location bar. The URL may look like this: `https://dev.azure.com/<organization-name>/<project-name>/_git/<repo-name>?path=/catalog-info.yaml`.
+
+Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
+
+![import.png](import.png)
+
+Now you can click on the component link to visit the component that you have just created.
+
+### Learn More
+At this point you may want to enable [auto discovery](/docs/integrations/azure-devops-provider/) using Azure DevOps, this allows Roadie to discover new catalog files as they are created.

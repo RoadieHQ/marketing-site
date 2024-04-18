@@ -60,6 +60,27 @@ examples:
             /artists:
               get:
                 summary: List all artists
+  - name: System
+    language: yaml
+    content: |
+      apiVersion: backstage.io/v1alpha1
+      kind: System
+      metadata:
+        name: artist-engagement-portal
+        description: Handy tools to keep artists in the loop
+      spec:
+        owner: artist-relations-team
+        domain: artists
+  - name: Domain
+    language: yaml
+    content: |
+      apiVersion: backstage.io/v1alpha1
+      kind: Domain
+      metadata:
+        name: artists
+        description: Everything about artists
+      spec:
+        owner: artist-relations-team
 ---
 
 ### Lorem ipsum dolor sit amet
