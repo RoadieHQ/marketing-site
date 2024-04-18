@@ -40,13 +40,6 @@ examples:
         --kind domain \
         --name first-api \
         --apiToken $ROADIE_API_TOKEN
-  - name: System
-    language: bash
-    content: |
-      roadie-cli roadie-entity:create \
-        --kind system \
-        --name first-api \
-        --apiToken $ROADIE_API_TOKEN
 ---
 
 The Roadie Entity CLI allows you to create, update and delete entities in the Roadie catalog via the public API. This option allows you to manage entities from sources where Roadie does not have an existing Entity provider.
