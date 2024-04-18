@@ -255,7 +255,7 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
   
 ## Emoji support
 
-Emojis can be used across techdocs using various different approaches. The most basic is adding them via emoji code inline to your title or body. 
+Emojis can be used across Tech Docs using various different approaches. The most basic is adding them via emoji code inline to your title or body. 
 
 If you don't override the generated nav in your `mkdocs.yml` file you can add them to titles and they will appear in your nav. 
 
@@ -273,7 +273,7 @@ title: 🤫 Nav title
 # Something else
 ```
 
-If you need an overriden nav, you can add them in the nav titles in your `mkdocs.yml` file like so:
+If you need an overridden nav, you can add them in the nav titles in your `mkdocs.yml` file like so:
 
 ```yaml
 nav:
@@ -284,6 +284,13 @@ nav:
 ## Embedding content using iframes
 
 You can embed most content inside Tech Docs using iframes which allows integration with most popular documentation, video and diagramming tools such as Microsoft Onedrive documents, Excel sheets and Powerpoint presentations. 
+
+You can use the `glightbox` plugin for this by adding it to your `mkdocs.yml` file like so:
+
+```yaml
+plugins:
+  - glightbox
+```
 
 *NB: The default embed code for Microsoft Docx and PPT iframes includes a link inside the iframe which must be removed for the iframe to render correctly.*
 
