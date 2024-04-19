@@ -6,3 +6,5 @@ export { default as QuoteIcon } from './QuoteIcon';
 export { default as LinkedinIcon } from './LinkedinIcon';
 export { default as RoadieRacksAndWordIcon } from './RoadieRacksAndWordIcon';
 export { default as RoadieRacksIcon } from './RoadieRacksIcon';
+export { default as DiscordIcon } from './DiscordIcon';
+export { default as CaretDownIcon } from './CaretDownIcon';

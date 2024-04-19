@@ -1,17 +1,15 @@
 import React from 'react';
 
-import theme from '../../theme';
-
-const RoadieRacksIcon = ({ fill = theme.COLORS_PRIMARY_600, ...rest }) => (
-  <svg
-    width="27"
-    height="31"
-    viewBox="0 0 27 31"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...rest}
-  >
-    <path d="M13.2866 26.835V25.6408L26.5937 17.9772L23.1749 16.0061L13.2866 21.6986V20.5086L26.516 12.8858L23.1013 10.9147L13.2866 16.5664V15.3722L26.6346 7.68407L13.2866 0L0 7.68407V23.0604L13.2866 30.7445L26.6346 23.0604L23.2403 21.1016L13.2866 26.835Z" fill={fill} />
+const RoadieRacksIcon = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
+    <g clipPath="url(#clip0_61_2)">
+      <path d="M12.5 21V20L23 14L20.226 12.5L12.5 17V16L23 10L20.226 8.5L12.5 13V12L23 6L12.5 0L2 5.9984V18.0016L12.5 24L23 18L20.226 16.5L12.5 21Z" fill="currentColor"/>
+    </g>
+    <defs>
+      <clipPath id="clip0_61_2">
+        <rect width="21" height="24" fill="white" transform="translate(2)"/>
+      </clipPath>
+    </defs>
   </svg>
 );
 

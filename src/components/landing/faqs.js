@@ -32,7 +32,7 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Our status page can be found at{' '}
-        <Link to="https://status.roadie.io" color="primary">https://status.roadie.io/</Link>.
+        <Link className="Link" to="https://status.roadie.io"><span className='Text size-4 inline'>https://status.roadie.io</span></Link>.
       </p>
     ),
   },
@@ -48,10 +48,9 @@ const FAQ_CONTENT = [
         Roadie Backstage plugins can securely connect back to your infrastructure APIs via a variety
         of mechanisms like OAuth2, token authentication by using a broker service. Learn more about
         {' '}
-        <Link to="/docs/details/how-roadie-connects/" color="primary">
-          how Roadie connects to your tools
-        </Link>{' '}
-        .
+        <Link className="Link" to="/docs/details/how-roadie-connects/">
+          <span className='Text size-4 inline'>how Roadie connects to your tools</span>
+        </Link>{' '}.
       </p>
     ),
   },
@@ -64,7 +63,7 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Yes. Roadie has achieved SOC2 Type 2 compliance. You can read more about this{' '}
-        <Link to="/blog/soc2-compliance/" color="primary">on our blog</Link>.
+        <Link className="Link" to="/blog/soc2-compliance/"><span className='Text size-4 inline'>on our blog</span></Link>.
       </p>
     ),
   },
@@ -77,23 +76,25 @@ const FAQ_CONTENT = [
 
 const Item = ({ question, answer }) => (
   <div>
-    <dt className="font-semibold">{question}</dt>
-    <dd className="mt-3 text-md">{answer()}</dd>
+    <dt className="Text size-4 weight-2 mb-2">{question}</dt>
+    <dd className="Text size-4">{answer()}</dd>
   </div>
 );
 
 const FAQs = ({ faqs = FAQ_CONTENT, heading = 'Frequently asked questions' }) => (
-  <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-    <Headline el="h2" size="xs">
-      {heading}
-    </Headline>
+  <div className="Section size-3">
+    <div className='Container'>
+      <h3 className='Text size-7 mb-9'>
+        {heading}
+      </h3>
 
-    <div className="mt-20">
-      <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-10">
-        {faqs.map((faq) => (
-          <Item {...faq} key={faq.question} />
-        ))}
-      </dl>
+      <div className="">
+        <dl className="Grid columns-1 bp2-columns-2 gap-6 bp2-gap-9">
+          {faqs.map((faq) => (
+            <Item {...faq} key={faq.question} />
+          ))}
+        </dl>
+      </div>
     </div>
   </div>
 );

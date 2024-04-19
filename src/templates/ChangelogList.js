@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { SEO, TextLink as Link, SitewideHeader, SitewideFooter } from 'components';
-import { SimpleCenteredHeading } from 'components/landing';
 import { ChangeSet, Pagination } from 'components/changelog';
 
 // In the code below, this is used to prevent the changelog from being collapsed on the preview
@@ -40,15 +39,10 @@ const Changelog = ({
 
     <SitewideHeader />
 
-    <main className="max-w-5xl sm:max-w-4xl mx-auto px-8 pb-20 lg:pt-8 lg:pb-28">
-      <div className="bg-white">
-        <SimpleCenteredHeading
-          headline="What's new in Roadie"
-          lead={
-            <span>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. Subscribe via <Link color="primary" to="rss.xml">RSS</Link> or follow us on <Link color="primary" to="https://twitter.com/roadiehq">Twitter</Link> for more updates.</span>
-          }
-          headlineSize="small"
-        />
+    <main className="Container">
+      <div className="Flex column gap-5">
+        <h1 className='Text size-9'>What's new in Roadie</h1>
+        <p className='Text size-5 weight-1 lowContrast'>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. Subscribe via <Link color="primary" to="rss.xml">RSS</Link> or follow us on <Link color="primary" to="https://twitter.com/roadiehq">Twitter</Link> for more updates.</p>
       </div>
 
       <ul className="container mt-12 mb-8">

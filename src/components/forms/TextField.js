@@ -22,7 +22,7 @@ const TextField = ({
       </label>
       <div className="mt-1.5 relative">
         <Input id={htmlId} color={color} {...rest} />
-        <div className="mt-3">
+        <div className="mt-2">
           <HelpText message={helpText} state={helpTextState} />
         </div>
       </div>

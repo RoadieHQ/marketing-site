@@ -1,0 +1,389 @@
+:root {
+  --indigo-1: hsl(225, 60%, 99%);
+  --indigo-2: hsl(223, 100%, 98%);
+  --indigo-3: hsl(223, 98%, 97%);
+  --indigo-4: hsl(223, 93%, 95%);
+  --indigo-5: hsl(224, 87%, 92%);
+  --indigo-6: hsl(224, 82%, 88%);
+  --indigo-7: hsl(225, 77%, 82%);
+  --indigo-8: hsl(226, 75%, 75%);
+  --indigo-9: hsl(226, 78%, 58%);
+  --indigo-10: hsl(226, 59%, 55%);
+  --indigo-11: hsl(226, 55%, 54%);
+  --indigo-12: hsl(226, 62%, 17%);
+
+  --violet-1: hsl(255, 65%, 99%);
+  --violet-2: hsl(252, 100%, 99%);
+  --violet-3: hsl(252, 97%, 97%);
+  --violet-4: hsl(252, 92%, 95%);
+  --violet-5: hsl(252, 85%, 93%);
+  --violet-6: hsl(252, 78%, 89%);
+  --violet-7: hsl(252, 71%, 84%);
+  --violet-8: hsl(252, 69%, 76%);
+  --violet-9: hsl(252, 56%, 58%);
+  --violet-10: hsl(251, 48%, 54%);
+  --violet-11: hsl(250, 43%, 48%);
+  --violet-12: hsl(254, 60%, 19%);
+
+  --gray-1: hsl(214, 18%, 98%);
+  --gray-2: hsl(220, 17%, 97%);
+  --gray-3: hsl(224, 13%, 95%);
+  --gray-4: hsl(224, 12%, 93%);
+  --gray-5: hsl(223, 12%, 91%);
+  --gray-6: hsl(223, 11%, 89%);
+  --gray-7: hsl(222, 11%, 86%);
+  --gray-8: hsl(220, 11%, 78%);
+  --gray-9: hsl(221, 6%, 56%);
+  --gray-10: hsl(221, 6%, 52%);
+  --gray-11: hsl(221, 6%, 44%);
+  --gray-12: hsl(221, 18%, 16%);
+
+  --gray-a1: hsla(240, 89.3%, 18.3%, 0.012);
+  --gray-a2: hsla(240, 89.3%, 18.3%, 0.024);
+  --gray-a3: hsla(240, 99.7%, 11.6%, 0.051);
+  --gray-a4: hsla(240, 93.2%, 10.6%, 0.079);
+  --gray-a5: hsla(240, 98.8%, 9.4%, 0.106);
+  --gray-a6: hsla(240, 94.6%, 9.3%, 0.134);
+  --gray-a7: hsla(233, 97.2%, 9.3%, 0.173);
+  --gray-a8: hsla(231, 98.1%, 9.4%, 0.275);
+  --gray-a9: hsla(231, 99.6%, 5.6%, 0.455);
+  --gray-a10: hsla(230, 99.5%, 4.7%, 0.506);
+  --gray-a11: hsla(220, 98.0%, 3.8%, 0.54);
+  --gray-a12: hsla(210, 95.1%, 1.9%, 0.891);
+
+  --green-1: hsl(136, 74%, 99%);
+  --green-2: hsl(138, 72%, 97%);
+  --green-3: hsl(139, 70%, 95%);
+  --green-4: hsl(152, 70%, 90%);
+  --green-5: hsl(141, 44%, 86%);
+  --green-6: hsl(143, 40%, 79%);
+  --green-7: hsl(146, 39%, 69%);
+  --green-8: hsl(151, 40%, 54%);
+  --green-9: hsl(151, 55%, 42%);
+  --green-10: hsl(152, 58%, 38%);
+  --green-11: hsl(153, 67%, 29%);
+  --green-12: hsl(155, 40%, 14%);
+
+  --yellow-1: hsl(60, 54%, 98.5%);
+  --yellow-2: hsl(52, 100%, 96%);
+  --yellow-3: hsl(55, 100%, 91%);
+  --yellow-4: hsl(54, 100%, 87%);
+  --yellow-5: hsl(52, 98%, 82%);
+  --yellow-6: hsl(50, 89%, 76%);
+  --yellow-7: hsl(47, 80%, 68%);
+  --yellow-8: hsl(48, 100%, 46%);
+  --yellow-9: hsl(53, 92%, 50%);
+  --yellow-10: hsl(50, 100%, 49%);
+  --yellow-11: hsl(42, 100%, 29%);
+  --yellow-12: hsl(40, 55%, 14%);
+
+  --orange-1: hsl(24, 70.0%, 99.0%);
+  --orange-2: hsl(22, 100%, 97.8%);
+  --orange-3: hsl(34, 100%, 91.7%);
+  --orange-4: hsl(33, 100%, 86.6%);
+  --orange-5: hsl(31, 100%, 82.2%);
+  --orange-6: hsl(27, 100%, 78.4%);
+  --orange-7: hsl(21, 100%, 74.5%);
+  --orange-8: hsl(19, 80.1%, 64.5%);
+  --orange-9: hsl(24, 94.0%, 50.0%);
+  --orange-10: hsl(24, 100%, 46.5%);
+  --orange-11: hsl(6, 98%, 46%);
+  --orange-12: hsl(16, 50.0%, 23.0%);
+
+  --red-1: hsl(359, 100%, 99%);
+  --red-2: hsl(359, 100%, 98%);
+  --red-3: hsl(360, 100%, 96%);
+  --red-4: hsl(360, 98%, 95%);
+  --red-5: hsl(360, 90%, 92%);
+  --red-6: hsl(360, 82%, 88%);
+  --red-7: hsl(359, 74%, 82%);
+  --red-8: hsl(359, 70%, 74%);
+  --red-9: hsl(358, 75%, 59%);
+  --red-10: hsl(358, 69%, 55%);
+  --red-11: hsl(358, 65%, 49%);
+  --red-12: hsl(354, 50%, 15%);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+
+  --fs-1: 10px;
+  --fs-2: 12px;
+  --fs-3: 15px;
+  --fs-4: 17px;
+  --fs-5: 20px;
+  --fs-6: 27px;
+  --fs-7: 34px;
+  --fs-8: 53px;
+  --fs-9: 57px;
+
+  --lh-1: 14px;
+  --lh-2: 17px;
+  --lh-3: 21px;
+  --lh-4: 24px;
+  --lh-5: 26px;
+  --lh-6: 32px;
+  --lh-7: 37px;
+  --lh-8: 54px;
+
+  --ls-1: -.12px;
+  --ls-2: -.68px;
+  --ls-3: -1.15px;
+  --ls-4: -1.92px;
+
+  --ff-sans: 'Soehne', -apple-system,
+    BlinkMacSystemFont,
+    "helvetica neue",
+    helvetica,
+    arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+  --ff-mono: 'Soehne-Mono',
+    ui-monospace,
+    SFMono-Regular,
+    "SF Mono",
+    Menlo,
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  --fw-1: 400;
+  --fw-2: 600;
+
+  --br-1: 4px;
+  --br-2: 8px;
+  --br-3: 12px;
+  --br-4: 16px;
+  --br-pill: 9999px;
+  --br-circle: 50%;
+
+  --td-1: 25ms;
+  --td-2: 75ms;
+  --td-3: 125ms;
+}
+
+
+
+.position-static {
+  position: static;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+
+
+
+
+.fg-1 {
+  flex-grow: 1;
+}
+
+
+.js-center {
+  justify-self: center;
+}
+
+.display-if {
+  display: inline-flex;
+}
+
+
+.Scorecard {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3);
+  gap: var(--space-3);
+  border: 1px solid var(--gray-a6);
+  border-radius: var(--br-2);
+  border-bottom-color: var(--gray-a8);
+  background-clip: padding-box;
+}
+
+.ScorecardMeter {
+  height: 64px;
+  width: 64px;
+  border-radius: var(--br-circle);
+  background: conic-gradient(
+    var(--red-9) 18%,
+    white 0
+  );
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.ScorecardMeter.size-2 {
+  height: 124px;
+  width: 124px;
+}
+
+.ScorecardMeter {
+  height: 64px;
+  width: 64px;
+  border-radius: var(--br-circle);
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.ScorecardMeter.awful {
+  background: conic-gradient(var(--red-9) 14%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.bad {
+  background: conic-gradient(var(--red-9) 24%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.poor {
+  background: conic-gradient(var(--yellow-9) 32%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.decent {
+  background: conic-gradient(var(--yellow-9) 45%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.good {
+  background: conic-gradient(var(--green-9) 68%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeter.awesome {
+  background: conic-gradient(var(--green-9) 94%,
+      var(--gray-4) 0);
+}
+
+.ScorecardMeterMask {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--br-circle);
+  background-color: white;
+}
+
+
+@keyframes ScorecardAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  16% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-102px);
+  }
+  41% {
+    transform: translateY(-102px);
+  }
+  50% {
+    transform: translateY(-204px);
+  }
+  66% {
+    transform: translateY(-204px);
+  }
+  75% {
+    transform: translateY(-306px);
+  }
+  91% {
+    transform: translateY(-306px);
+  }
+  100% {
+    transform: translateY(-408px);
+  }
+}
+
+.ScorecardAnimationContainer {
+  animation-name: ScorecardAnimation;
+  animation-duration: 7500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+
+.IntegrationContainer {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: var(--br-circle);
+  background-color: white;
+  border: 1px solid var(--gray-a2);
+  background-clip: padding-box;
+  box-shadow: 0 1px 3px hsl(36 69% 48% / 10%), 0 2px 4px hsl(36 84% 48% / 8%),
+    0 5px 15px hsl(36 88% 55% / 12%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.IntegrationContainer svg {
+  width: 40px;
+}
+
+.IntegrationContainerFlare {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+}
+
+.IntegrationContainerFlare.top {
+  background: linear-gradient(to bottom, transparent, var(--gray-12));
+  height: calc(100% - var(--space-3));
+  width: 2px;
+  bottom: -100%;
+}
+
+.IntegrationContainerFlare.bottom {
+  background: linear-gradient(to top, transparent, var(--gray-12));
+  height: calc(100% - var(--space-3));
+  width: 2px;
+  top: -100%;
+}
+
+.IntegrationContainerFlare.left {
+  background: linear-gradient(to right, transparent, var(--gray-12));
+  width: calc(100% - var(--space-3));
+  height: 2px;
+  right: -100%;
+}
+
+.IntegrationContainerFlare.right {
+  background: linear-gradient(to left, transparent, var(--gray-12));
+  width: calc(100% - var(--space-3));
+  height: 2px;
+  left: -100%;
+}

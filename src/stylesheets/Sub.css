@@ -1,0 +1,6 @@
+.Sub {
+  font-feature-settings: "subs";
+  font-size: 100%;
+  line-height: 1;
+  vertical-align: text-bottom;
+}

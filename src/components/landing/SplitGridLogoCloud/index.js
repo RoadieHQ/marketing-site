@@ -14,27 +14,25 @@ const LogoItem = ({ src }) => (
 );
 
 const SplitGridOnRight = ({ content }) => (
-  <div className="bg-white">
-    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-32 lg:px-8">
-      <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-        <div>
-          <Headline el="h2" size="medium">{content.title}</Headline>
-          <SubTitle text={content.subTitle} />
+  <section className="Section size-3">
+    <div className="Container">
+      <div className="Grid columns-2 gap-9 ai-center">
+        <div className='Flex column gap-6'>
+          <h3 className='Text size-7'>{content.title}</h3>
+          <p className='Text size-4 lowContrast'>{content.subTitle}</p>
           {content.link && (
-            <div className="mt-4">
-              <Link to={content.link.to} color="primary" className="font-bold text-xl">{content.link.text}  &rarr;</Link>
-            </div>
+            <Link to={content.link.to} className="Link">{content.link.text}  &rarr;</Link>
           )}
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+        <div className="">
           {content.logos.map((logo) => (
             <LogoItem {...logo} key={logo.key} />
           ))}
         </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default SplitGridOnRight;

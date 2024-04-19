@@ -14,3 +14,6 @@ export { default as SidebarTestimonial } from './Testimonials/SidebarTestimonial
 export { default as CenteredHero } from './CenteredHero/CenteredHero';
 export { default as HeroForm } from './CenteredHero/HeroForm'; 
 export { default as SideBySideHero } from './SideBySideHero/SideBySideHero'; 
+export { default as PluginsList } from './PluginsList'; 
+export { default as YouTubeTestimonial } from './Testimonials/YouTubeTestimonial'; 
+export { default as SideBySideBulletParagraphs } from './SideBySideBulletParagraphs'; 

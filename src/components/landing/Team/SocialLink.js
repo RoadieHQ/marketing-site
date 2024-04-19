@@ -4,12 +4,12 @@ import { TwitterIcon, LinkedinIcon, GitHubIcon } from 'components/icons';
 
 const SocialLinkIcon = ({ type }) => {
   if (type === 'twitter') {
-    return <TwitterIcon className="w-5 h-5" aria-hidden="true" />;
+    return <TwitterIcon className="w-4 h-4" aria-hidden="true" />;
   } else if (type === 'github') {
-    return <GitHubIcon className="w-5 h-5" aria-hidden="true" />;
+    return <GitHubIcon className="w-4 h-4" aria-hidden="true" />;
   }
 
-  return <LinkedinIcon className="w-5 h-5" aria-hidden="true" />;
+  return <LinkedinIcon className="w-4 h-4" aria-hidden="true" />;
 };
 
 const SocialLink = ({ person, type }) => {
@@ -18,7 +18,7 @@ const SocialLink = ({ person, type }) => {
 
   return (
     <li>
-      <Link to={url} className="text-gray-400 hover:text-gray-500">
+      <Link to={url} className="IconButton size-2 neutral">
         <span className="sr-only">{type}</span>
         <SocialLinkIcon type={type} />
       </Link>

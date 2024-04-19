@@ -3,28 +3,23 @@ import React from 'react';
 import classnames from 'classnames';
 
 const FeatureBulletPoint = ({ item, boxedIcons = true }) => (
-  <div className="relative">
-    <dt>
-      <div
-        className={
-          classnames('absolute flex items-center justify-center', {
-            'h-12 w-12 rounded-md bg-primary-600 text-white': boxedIcons === true,
-            'text-primary-600': boxedIcons === false,
-          })
-        }
-      >
+  <div className='Flex column gap-1'>
+    <dt className='Flex row ai-center gap-2'>
+      <div>
         <item.icon
           className={classnames({
-            'h-6 w-6': boxedIcons === true,
-            'h-10 w-10': boxedIcons === false,
+            'Icon size-1': boxedIcons === true,
+            'Icon size-1 fml': boxedIcons === false,
           })}
           aria-hidden="true"
         />
       </div>
 
-      <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{item.name}</p>
+      <h5 className="Text size-4 weight-2">{item.name}</h5>
     </dt>
-    <dd className="mt-2 ml-16 text-base text-gray-500">{item.description}</dd>
+    <dd className="pl-7">
+      <p className="Text size-3 lowContrast">{item.description}</p>
+    </dd>
   </div>
 );
 

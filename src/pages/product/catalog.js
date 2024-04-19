@@ -1,79 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import has from 'lodash/has';
-import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
-import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
-import Title from '../../components/Title';
+import { SEO, SitewideFooter, SitewideHeader, Button } from 'components';
 
-import SearchImg from '../../../content/assets/product-pages/catalog-search.svg';
-import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
-import IntegrationsImg from '../../../content/assets/product-pages/catalog-integrations.png';
-import ContentfulCaseImg from '../../../content/assets/product-pages/catalog-structure.svg';
 import YotpoImg from '../../../content/assets/product-pages/catalog-yotpo-logo.svg';
-
-import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
 const SEO_TITLE = 'Catalog: discoverability for your services, resources, and teams';
 const LEAD = `Roadie’s Catalog lets you organize all your software assets, track ownership, and foster an Inner Source culture.`;
 
-const PRODUCT = {
-  features: [
-    {
-      title: 'Find everything under the same roof',
-      description: 'Roadie helps you foster Inner Sourcing and collective ownership',
-      illustration: {
-        png: ContentfulCaseImg,
-        alt: 'Read how Contentful is using Roadie to make Inner Source easy',
-        to: '/case-studies/maintaining-velocity-through-hypergrowth-contentful/',
-      },
-      paragraphs: [
-        'Cloud native teams struggle with disparate stacks and workflows. With Roadie, you can map your organization’s software assets in a structured Catalog that keeps track of ownership in the ecosystem. New and veteran contributors can discover the affordances at their disposal and who to contact if they want to collaborate.',
-      ],
-    },
-    {
-      title: 'Dozens of integrations, one click away',
-      description: 'Roadie gives you a single pane of glass',
-      illustration: {
-        png: IntegrationsImg,
-        alt: 'Check out the 46 integrations and plugins available',
-        to: '/docs/integrations/',
-      },
-      paragraphs: [
-        'Context switching takes a toll on Developers. Roadie integrates with popular vendors so your developers can find everything related to their service in a single place. Now developers can find everything related to their services under the same context, vendors included.',
-      ],
-      ctaPrompt: {
-        to: '/docs/integrations/',
-        text: 'Check out the Integrations available out-of-the-box',
-      },
-    },
-    {
-      title: 'Search across systems',
-      description: 'Roadie improves your org’s discoverability',
-      illustration: {
-        png: SearchImg,
-        alt: '',
-      },
-      paragraphs: [
-        'With so many systems available, engineers struggle to find what they need. Make it easier them to navigate your organization through a centralized search for finding references in your software assets, documentation, Confluence, and Stackoverflow.',
-      ],
-    },
-    {
-      title: 'Avoid proprietary lock-ins',
-      description: 'Roadie gives you the freedom of Open Source',
-      illustration: {
-        png: NoLockInImg,
-        alt: '',
-      },
-      paragraphs: [
-        'Spotify open sourced Backstage because they didn’t want to re-do their Internal Developer Portal if a popular vendor came around. Nowadays, Backstage is the market leader for Internal Developer Portals used by 600+ companies and endorsed by industry leaders. By using Roadie, you’re adopting Open Source Backstage, which means you can switch to a self-hosted Backstage instance if you outgrow our solution.',
-      ],
-    },
-  ],
-};
-
 const Home = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const darkLogos = [...LOGOS].filter(({ src }) => has(src, 'dark')).slice(0, 5);
 
   return (
     <>
@@ -81,74 +16,405 @@ const Home = ({ data }) => {
 
       <SitewideHeader borderBottom={false} />
 
-      <div className="catalog-hero-background">
-        <section className="bg-white rounded-md text-center mx-auto max-w-4xl mt-5 xl:rounded-lg lg:flex items-center justify-center catalog-pattern">
-          <div className="p-4 lg:px-10 lg:py-16">
-            <strong className="block uppercase mb-8 text-xl font-highlight">
-              Roadie’s Catalog
-            </strong>
-            <Headline size="medium" className="leading-loose">
-              <span className="text-orange-500">Automated discoverability:</span> cut the{' '}
-              <nobr>wild-goose</nobr> chase for your engineers
-            </Headline>
-
-            <h2 className="mt-5 text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-              Put all services, APIs, resources, teams, and documentation under Roadie’s Catalog to
-              eliminate the guessing game when gathering requirements for a new app or feature.
-            </h2>
-
-            <Button
-              link={true}
-              color="primary"
-              size="medium"
-              to="/free-trial/"
-              className="font-bold tracking-wide mt-10"
-              text="Try Roadie’s Catalog"
-            />
+      <section className="Section size-2">
+        <div className="Container">
+          <div className='Grid columns-1 bp3-columns-2 gap-9 mb-9 bp2-mb-0'>
+            <div className='Flex column gap-5'>
+              <h1 className="Text size-8 bp2-size-9">
+                Cut the wild-goose chase for your engineers
+              </h1>
+              <p className="Text size-5 weight-1 lowContrast mb-3">
+                Put all services, APIs, resources, teams, and documentation under Roadie’s Catalog to eliminate the guessing game when gathering requirements for a new app or feature.
+              </p>
+              <Button
+                className="Button size-3 accent bp2-mb-8"
+                link={true}
+                to="/free-trial/"
+                text="Request a Demo"
+              />
+            </div>
+            <div>
+              <div
+                  style={{
+                    position: 'relative',
+                    flexGrow: 1,
+                    backgroundColor: 'white',
+                    aspectRatio: '16 / 9',
+                    borderRadius: 'var(--br-3)',
+                    overflow: 'hidden',
+                    border: '1px solid var(--gray-a3)',
+                    backgroundClip: 'padding-box',
+                    boxShadow: '0 1px 3px hsl(36 69% 48% / 10%), 0 2px 4px hsl(36 84% 48% / 8%), 0 5px 15px hsl(36 88% 55% / 12%)'
+                  }}>
+                    <div style={{ width: 1, height: '100%', backgroundColor: 'var(--gray-4)', left: 'var(--space-4)', top: 0, position: 'absolute' }}></div>
+                    <div style={{ width: '100%', height: 1, backgroundColor: 'var(--gray-4)', left: 0, top: 'var(--space-4)', position: 'absolute' }}></div>
+                    <div className='Grid columns-2 gap-2 pt-7 pr-3 pb-4 pl-7'>
+                      <div style={{ borderRadius: 'var(--br-2)', aspectRatio: '16 / 9', backgroundColor: 'var(--yellow-2)', border: '1px solid var(--yellow-5)'  }}></div>
+                      <div style={{ borderRadius: 'var(--br-2)', aspectRatio: '16 / 9', backgroundColor: 'var(--yellow-2)', border: '1px solid var(--yellow-5)'  }}></div>
+                      <div style={{ borderRadius: 'var(--br-2)', aspectRatio: '16 / 9', backgroundColor: 'var(--yellow-2)', border: '1px solid var(--yellow-5)'  }}></div>
+                      <div style={{ borderRadius: 'var(--br-2)', aspectRatio: '16 / 9', backgroundColor: 'var(--yellow-2)', border: '1px solid var(--yellow-5)'  }}></div>
+                    </div>
+                </div>
+            </div>
           </div>
-        </section>
-        <div className="mx-auto max-w-4xl mt-5 flex flex-wrap justify-center mb-5">
-          {darkLogos.map((logo) => (
-            <img
-              className="h-8 my-3 mx-3 lg:h-10 lg:ml-0 lg:mr-11 xl:h-11 xl:mr-13"
-              key={`hero-logo-${logo.alt}`}
-              src={logo.src.dark}
-              alt={logo.alt}
-            />
-          ))}
         </div>
+      </section>
+
+      <div className='Flex row jc-center'>
+        <div className='SeparatorGradient size-2' role="separator"></div>
       </div>
 
-      <AlternatingFeatureWrapper id="product">
-        <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
-        <AlternatingFeatureBlock featureItem={PRODUCT.features[1]} illustrationSide="right" />
-        <AlternatingFeatureBlock featureItem={PRODUCT.features[2]} illustrationSide="left" />
-        <AlternatingFeatureBlock featureItem={PRODUCT.features[3]} illustrationSide="right" />
-      </AlternatingFeatureWrapper>
-
-      <section className="text-center bg-white py-20 mt-10 xl:mt-16">
-        <figure className="max-w-2xl px-4 mx-auto mb-5">
-          <img src={YotpoImg} alt="Yotpo logo" className="block mx-auto mb-10" />
-          <blockquote className="text-2xl font-bold tracking-wide">
-            “The Roadie team have been incredible to work with. Their platform provides us with a
-            ton of flexibility and integrations. We’ve been able to start using Backstage must
-            faster and we don’t have to worry about the maintenance.”
-          </blockquote>
-          <figcaption className="text-xl mt-5">Ron Barabash, Team Lead, Yotpo</figcaption>
-        </figure>
-
-        <Title el="h2" className="mt-10 xl:text-2xl xl:tracking-tight text-orange-600">
-          See the Roadie Catalog in action
-        </Title>
-        <Button
-          link={true}
-          color="primary"
-          size="medium"
-          to="/request-demo/"
-          className="font-bold tracking-wide mt-6"
-          text="Request a Demo"
-        />
+      <section className="Section size-3">
+        <div className="Container">
+          <div className="Grid columns-1 bp3-columns-2 gap-9 ai-center">
+            <div>
+              <div className='Grid columns-4 gap-2 mb-9'>
+                <div className='Card shadow pt-2 pr-2 pb-2 pl-2'>
+                  <div className='Flex row gap-1'>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                  </div>
+                </div>
+                <div className='Card shadow pt-2 pr-2 pb-2 pl-2'>
+                  <div className='Flex row gap-1'>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                  </div>
+                </div>
+                <div className='Card shadow pt-2 pr-2 pb-2 pl-2'>
+                  <div className='Flex row gap-1'>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                  </div>
+                </div>
+                <div className='Card shadow pt-2 pr-2 pb-2 pl-2'>
+                  <div className='Flex row gap-1'>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='Grid columns-4 gap-2 mb-9' style={{ transform: 'translateX(12.5%)' }}>
+                <div className='Card shadow pt-2 pr-2 pb-2 pl-2'>
+                  <div className='Flex row gap-1'>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                  </div>
+                </div>
+                <div className='Card shadow pt-2 pr-2 pb-2 pl-2' style={{ gridColumn: '3' }}>
+                  <div className='Flex row gap-1'>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='Grid columns-4 gap-2' style={{ transform: 'translateX(12.5%)' }}>
+                <div className='Card shadow pt-2 pr-2 pb-2 pl-2' style={{ gridColumn: '2' }}>
+                  <div className='Flex row gap-1'>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                    <div className='Avatar size-1'>
+                      <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className='Flex column gap-5'>
+                <h3 className='Text size-4 weight-2 orange'>Everything under one roof</h3>
+                <h3 className='Text size-7'>Foster Inner Sourcing and collective ownership</h3>
+                <p className='Text size-4 lowContrast'>Cloud native teams struggle with disparate stacks and workflows. With Roadie, you can map your organization’s software assets in a structured Catalog that keeps track of ownership in the ecosystem. New and veteran contributors can discover the affordances at their disposal and who to contact if they want to collaborate.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <section
+        className="Section size-3"
+        style={{
+          background: 'linear-gradient(0deg, var(--yellow-3), transparent)',
+          borderBottom: '1px solid',
+          borderImageSlice: 1,
+          borderImageSource: 'linear-gradient(to right,var(--gray-a5) 25%, var(--yellow-8) 40%, var(--orange-6) 50%, var(--yellow-8) 60%,var(--gray-a5) 75%)',
+        }}>
+        <div className="Container">
+          <div className="Grid columns-1 bp3-columns-2 gap-9 ai-center">
+            <div>
+              <div className='Flex row gap-2 jc-between mb-8'>
+                <div className='IntegrationContainer' style={{ top: 25, left: 50 }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <g clipPath="url(#clip0_348_152)">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M23.928 0C17.5821 0.000795469 11.4964 2.52203 7.00923 7.00923C2.52203 11.4964 0.000795469 17.5821 0 23.928C0 34.494 6.9 43.449 16.293 46.68C17.469 46.827 17.907 46.092 17.907 45.504V41.394C11.304 42.864 9.837 38.166 9.837 38.166C8.808 35.376 7.194 34.641 7.194 34.641C4.992 33.174 7.338 33.174 7.338 33.174C9.687 33.321 11.01 35.67 11.01 35.67C13.212 39.339 16.587 38.31 17.91 37.725C18.054 36.111 18.789 35.085 19.377 34.497C14.091 33.909 8.514 31.854 8.514 22.605C8.514 19.965 9.393 17.907 11.01 16.146C10.86 15.705 9.981 13.212 11.304 9.981C11.304 9.981 13.359 9.393 17.907 12.477C19.815 11.889 21.873 11.742 23.928 11.742C25.983 11.742 28.038 12.036 29.946 12.477C34.497 9.396 36.552 9.981 36.552 9.981C37.872 13.212 36.99 15.705 36.843 16.293C38.4597 18.0543 39.3512 20.3613 39.339 22.752C39.339 32.001 33.759 33.909 28.479 34.497C29.358 35.229 30.093 36.696 30.093 38.898V45.504C30.093 46.092 30.531 46.824 31.707 46.68C36.465 45.0743 40.598 42.0137 43.5218 37.9309C46.4455 33.8481 48.0121 28.9497 48 23.928C47.853 10.716 37.14 0 23.928 0Z" fill="#303240"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_348_152">
+                        <rect width="48" height="48" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div className='IntegrationContainerFlare top' style={{ transform: 'rotate(-45deg) translate(62px, 24px)' }}></div>
+                </div>
+                <div className='IntegrationContainer'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="29" viewBox="0 0 48 29" fill="none">
+                    <g clipPath="url(#clip0_348_165)">
+                    <path d="M13.6419 10.4841C13.6419 11.0683 13.705 11.542 13.8155 11.8894C13.9419 12.2367 14.0998 12.6157 14.3208 13.0262C14.3998 13.1525 14.4313 13.2788 14.4313 13.3894C14.4313 13.5473 14.3366 13.7052 14.1313 13.8631L13.1366 14.5262C12.9945 14.621 12.8524 14.6683 12.7261 14.6683C12.5682 14.6683 12.4103 14.5894 12.2524 14.4473C12.0313 14.2104 11.8419 13.9578 11.684 13.7052C11.5261 13.4367 11.3682 13.1367 11.1945 12.7736C9.96292 14.2262 8.41555 14.9525 6.55239 14.9525C5.22607 14.9525 4.16818 14.5736 3.3945 13.8157C2.62081 13.0578 2.22607 12.0473 2.22607 10.7841C2.22607 9.44201 2.69976 8.35253 3.66292 7.53148C4.62607 6.71043 5.90502 6.2999 7.53134 6.2999C8.06818 6.2999 8.62081 6.34727 9.20502 6.42622C9.78923 6.50516 10.3892 6.63148 11.0208 6.77358V5.62095C11.0208 4.42095 10.7682 3.58411 10.2787 3.09464C9.77344 2.60516 8.92081 2.36832 7.70502 2.36832C7.15239 2.36832 6.58397 2.43148 5.99976 2.57358C5.41555 2.71569 4.84713 2.88937 4.2945 3.11043C4.04186 3.22095 3.85239 3.28411 3.74186 3.31569C3.63134 3.34727 3.55239 3.36306 3.48923 3.36306C3.26818 3.36306 3.15765 3.20516 3.15765 2.87358V2.0999C3.15765 1.84727 3.18923 1.65779 3.26818 1.54727C3.34713 1.43674 3.48923 1.32622 3.71028 1.21569C4.26292 0.931479 4.92607 0.694637 5.69976 0.505163C6.47344 0.2999 7.2945 0.205163 8.16292 0.205163C10.0419 0.205163 11.4155 0.631479 12.2998 1.48411C13.1682 2.33674 13.6103 3.63148 13.6103 5.36832V10.4841H13.6419ZM7.23134 12.8841C7.75239 12.8841 8.28923 12.7894 8.85765 12.5999C9.42607 12.4104 9.93134 12.0631 10.3577 11.5894C10.6103 11.2894 10.7998 10.9578 10.8945 10.5788C10.9892 10.1999 11.0524 9.742 11.0524 9.20516V8.542C10.5945 8.43148 10.105 8.33674 9.59976 8.27358C9.0945 8.21043 8.60502 8.17885 8.11555 8.17885C7.05765 8.17885 6.28397 8.38411 5.76292 8.81043C5.24186 9.23674 4.98923 9.83674 4.98923 10.6262C4.98923 11.3683 5.17871 11.921 5.57344 12.2999C5.95239 12.6946 6.50502 12.8841 7.23134 12.8841ZM19.9103 14.5894C19.6261 14.5894 19.4366 14.542 19.3103 14.4315C19.184 14.3367 19.0734 14.1157 18.9787 13.8157L15.2682 1.61043C15.1734 1.29464 15.1261 1.08937 15.1261 0.978847C15.1261 0.726216 15.2524 0.58411 15.505 0.58411H17.0524C17.3524 0.58411 17.5577 0.631479 17.6682 0.742005C17.7945 0.836742 17.8892 1.05779 17.984 1.35779L20.6366 11.8104L23.0998 1.35779C23.1787 1.04201 23.2734 0.836742 23.3998 0.742005C23.5261 0.647268 23.7471 0.58411 24.0313 0.58411H25.2945C25.5945 0.58411 25.7998 0.631479 25.9261 0.742005C26.0524 0.836742 26.1629 1.05779 26.2261 1.35779L28.7208 11.9367L31.4524 1.35779C31.5471 1.04201 31.6577 0.836742 31.7682 0.742005C31.8945 0.647268 32.0998 0.58411 32.384 0.58411H33.8524C34.105 0.58411 34.2471 0.710426 34.2471 0.978847C34.2471 1.05779 34.2313 1.13674 34.2155 1.23148C34.1998 1.32622 34.1682 1.45253 34.105 1.62622L30.2998 13.8315C30.205 14.1473 30.0945 14.3525 29.9682 14.4473C29.8419 14.542 29.6366 14.6052 29.3682 14.6052H28.0103C27.7103 14.6052 27.505 14.5578 27.3787 14.4473C27.2524 14.3367 27.1419 14.1315 27.0787 13.8157L24.6313 3.63148L22.1998 13.7999C22.1208 14.1157 22.0261 14.321 21.8998 14.4315C21.7734 14.542 21.5524 14.5894 21.2682 14.5894H19.9103ZM40.1998 15.0157C39.3787 15.0157 38.5577 14.921 37.7682 14.7315C36.9787 14.542 36.3629 14.3367 35.9524 14.0999C35.6998 13.9578 35.5261 13.7999 35.4629 13.6578C35.3998 13.5157 35.3682 13.3578 35.3682 13.2157V12.4104C35.3682 12.0788 35.4945 11.921 35.7313 11.921C35.8261 11.921 35.9208 11.9367 36.0155 11.9683C36.1103 11.9999 36.2524 12.0631 36.4103 12.1262C36.9471 12.3631 37.5313 12.5525 38.1471 12.6788C38.7787 12.8052 39.3945 12.8683 40.0261 12.8683C41.0208 12.8683 41.7945 12.6946 42.3313 12.3473C42.8682 11.9999 43.1524 11.4946 43.1524 10.8473C43.1524 10.4052 43.0103 10.042 42.7261 9.74201C42.4419 9.44201 41.905 9.17358 41.1313 8.92095L38.8419 8.21043C37.6892 7.84727 36.8366 7.31043 36.3155 6.5999C35.7945 5.90516 35.5261 5.13148 35.5261 4.31043C35.5261 3.64727 35.6682 3.06306 35.9524 2.55779C36.2366 2.05253 36.6155 1.61043 37.0892 1.26306C37.5629 0.8999 38.0998 0.631479 38.7313 0.442005C39.3629 0.252531 40.0261 0.173584 40.7208 0.173584C41.0682 0.173584 41.4313 0.189373 41.7787 0.236742C42.1419 0.28411 42.4734 0.347268 42.805 0.410426C43.1208 0.489373 43.4208 0.568321 43.705 0.663058C43.9892 0.757794 44.2103 0.852531 44.3682 0.947268C44.5892 1.07358 44.7471 1.1999 44.8419 1.34201C44.9366 1.46832 44.984 1.642 44.984 1.86306V2.60516C44.984 2.93674 44.8577 3.11043 44.6208 3.11043C44.4945 3.11043 44.2892 3.04727 44.0208 2.92095C43.1208 2.51043 42.1103 2.30516 40.9892 2.30516C40.0892 2.30516 39.3787 2.44727 38.8892 2.74727C38.3998 3.04727 38.1471 3.50516 38.1471 4.15253C38.1471 4.59464 38.305 4.97358 38.6208 5.27358C38.9366 5.57358 39.5208 5.87358 40.3577 6.14201L42.5998 6.85253C43.7366 7.21569 44.5577 7.72095 45.0471 8.36832C45.5366 9.01569 45.7734 9.75779 45.7734 10.5788C45.7734 11.2578 45.6313 11.8736 45.3629 12.4104C45.0787 12.9473 44.6998 13.421 44.2103 13.7999C43.7208 14.1946 43.1366 14.4788 42.4577 14.6841C41.7471 14.9052 41.005 15.0157 40.1998 15.0157Z" fill="#303240"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M43.184 22.6894C37.9893 26.5263 30.4419 28.5631 23.9525 28.5631C14.8577 28.5631 6.66298 25.2 0.473502 19.6105C-0.0159716 19.1684 0.426134 18.5684 1.01034 18.9158C7.70508 22.8 15.963 25.1526 24.5051 25.1526C30.2682 25.1526 36.5998 23.9526 42.4261 21.4894C43.2946 21.0947 44.0367 22.0579 43.184 22.6894Z" fill="#303240"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M45.3472 20.2262C44.6841 19.3735 40.9577 19.8156 39.2683 20.0209C38.763 20.0841 38.6841 19.642 39.142 19.3104C42.1104 17.2262 46.9893 17.8262 47.5577 18.5209C48.1262 19.2314 47.3999 24.1104 44.6209 26.4472C44.1946 26.8104 43.7841 26.6209 43.9735 26.1472C44.6051 24.5841 46.0104 21.063 45.3472 20.2262Z" fill="#303240"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_348_165">
+                    <rect width="48" height="28.7368" fill="white"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+                  <div className='IntegrationContainerFlare top'></div>
+                </div>
+                <div className='IntegrationContainer' style={{ top: 25, right: 50 }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="55" height="48" viewBox="0 0 55 48" fill="none">
+                    <path d="M31.5509 2.46304C31.0981 1.71156 30.4587 1.08989 29.6949 0.658334C28.931 0.22678 28.0685 0 27.1912 0C26.3139 0 25.4514 0.22678 24.6875 0.658334C23.9237 1.08989 23.2843 1.71156 22.8315 2.46304L15.6598 14.7464C21.1387 17.4818 25.8068 21.6027 29.2005 26.7C32.5943 31.7973 34.5956 37.6937 35.0059 43.8037H29.9705C29.561 38.5663 27.7909 33.5266 24.8355 29.1834C21.8802 24.8402 17.8419 21.344 13.1203 19.0407L6.48272 30.5176C9.13703 31.708 11.4495 33.5467 13.2073 35.8645C14.9652 38.1823 16.1122 40.9049 16.5427 43.7819H4.97863C4.84148 43.7722 4.70891 43.7285 4.59286 43.6548C4.47682 43.5811 4.38095 43.4796 4.3139 43.3596C4.24685 43.2395 4.21074 43.1047 4.20882 42.9672C4.20689 42.8297 4.23922 42.694 4.30288 42.5721L7.50724 37.1225C6.42161 36.2167 5.18087 35.5151 3.84511 35.0516L0.673444 40.5012C0.343258 41.0676 0.128903 41.6939 0.0428325 42.3438C-0.0432382 42.9937 0.000691041 43.6542 0.172068 44.287C0.343446 44.9198 0.638854 45.5122 1.04113 46.0298C1.44341 46.5475 1.94454 46.98 2.51541 47.3023C3.26756 47.7261 4.11532 47.9512 4.97863 47.9563H20.8152C21.1093 44.3269 20.4612 40.6831 18.9336 37.3778C17.406 34.0724 15.0507 31.2176 12.0958 29.0898L14.6135 24.7301C18.3426 27.2913 21.3394 30.7807 23.3081 34.8538C25.2768 38.9269 26.1494 43.443 25.8397 47.9563H39.2566C39.5691 41.1192 38.0817 34.3199 34.943 28.2377C31.8044 22.1556 27.1245 17.0037 21.371 13.2968L26.461 4.57748C26.5744 4.38745 26.7583 4.24991 26.9726 4.1948C27.1869 4.13968 27.4143 4.17146 27.6054 4.2832C28.183 4.59928 49.7198 42.1797 50.1231 42.6157C50.1942 42.7431 50.2303 42.887 50.2279 43.0328C50.2255 43.1786 50.1846 43.3213 50.1094 43.4462C50.0342 43.5712 49.9273 43.6741 49.7996 43.7445C49.6719 43.815 49.5278 43.8504 49.382 43.8473H44.194C44.2593 45.2351 44.2593 46.6193 44.194 47.9999H49.4038C50.0653 48.0042 50.7212 47.8773 51.3333 47.6265C51.9455 47.3756 52.5018 47.0059 52.9701 46.5386C53.4385 46.0713 53.8094 45.5157 54.0616 44.9041C54.3137 44.2925 54.4421 43.6369 54.4392 42.9754C54.4399 42.1015 54.2065 41.2435 53.7635 40.4903L31.5509 2.46304Z" fill="#303240"/>
+                  </svg>
+                  <div className='IntegrationContainerFlare top' style={{ transform: 'rotate(45deg) translate(-62px, 24px)' }}></div>
+                </div>
+              </div>
+              <div className='Flex row gap-6 ai-center'>
+                <div className='IntegrationContainer'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M26.3904 0.333333L25.4037 12.4933C24.937 12.44 24.4704 12.4133 23.9904 12.4133C23.3904 12.4133 22.8037 12.4533 22.2304 12.5467L21.6704 6.65333C21.657 6.46667 21.8037 6.30667 21.9904 6.30667H22.9904L22.5104 0.346667C22.497 0.16 22.6437 0 22.817 0H26.0837C26.2704 0 26.417 0.16 26.3904 0.346667V0.333333ZM18.1504 0.933333C18.097 0.76 17.9104 0.653333 17.737 0.72L14.6704 1.84C14.497 1.90667 14.417 2.10667 14.497 2.26667L16.9904 7.70667L16.0437 8.05333C15.8704 8.12 15.7904 8.32 15.8704 8.48L18.417 13.8267C19.337 13.32 20.337 12.9333 21.3904 12.6933L18.1637 0.933333H18.1504ZM10.6304 4.32L17.6837 14.2667C16.7904 14.8533 15.977 15.5467 15.2837 16.3467L11.057 12.1867C10.9237 12.0533 10.937 11.84 11.0704 11.72L11.8437 11.08L7.6437 6.82667C7.51036 6.69333 7.5237 6.48 7.67037 6.36L10.1637 4.26667C10.3104 4.14667 10.5104 4.17333 10.617 4.32H10.6304ZM4.71037 10.08C4.5637 9.97333 4.35037 10.0267 4.25703 10.1867L2.63037 13.0133C2.53703 13.1733 2.6037 13.3733 2.7637 13.4533L8.17703 16.0133L7.67037 16.88C7.57703 17.04 7.6437 17.2533 7.81703 17.32L13.2037 19.7867C13.5904 18.7867 14.1104 17.8533 14.7504 17.0133L4.71037 10.08ZM0.723699 17.76C0.750365 17.5733 0.937032 17.4667 1.11037 17.5067L12.9104 20.5867C12.6037 21.5867 12.4304 22.64 12.4037 23.7333L6.49703 23.2533C6.31037 23.24 6.17703 23.0667 6.21703 22.88L6.39037 21.8933L0.430365 21.3333C0.243699 21.32 0.123699 21.1467 0.150365 20.96L0.710365 17.7467L0.723699 17.76ZM0.283699 25.7333C0.0970321 25.7467 -0.0229678 25.92 0.00369882 26.1067L0.577032 29.32C0.603699 29.5067 0.790365 29.6133 0.963699 29.5733L6.75037 28.0667L6.9237 29.0533C6.95036 29.24 7.13703 29.3467 7.31036 29.3067L13.017 27.7333C12.6837 26.7467 12.4704 25.6933 12.417 24.6133L0.270365 25.7333H0.283699ZM2.17703 34.1867C2.0837 34.0267 2.15037 33.8267 2.31037 33.7467L13.3237 28.52C13.737 29.5067 14.297 30.4267 14.9637 31.2533L10.137 34.6933C9.99036 34.8 9.77703 34.76 9.6837 34.6L9.17703 33.72L4.25703 37.12C4.11037 37.2267 3.89703 37.1733 3.8037 37.0133L2.1637 34.1867H2.17703ZM15.5237 31.8933L6.95036 40.5733C6.81703 40.7067 6.83036 40.92 6.97703 41.04L9.4837 43.1333C9.63036 43.2533 9.83036 43.2267 9.93703 43.08L13.4037 38.2L14.177 38.8533C14.3237 38.9733 14.537 38.9467 14.6437 38.7867L18.0037 33.9067C17.097 33.3467 16.257 32.6667 15.537 31.8933H15.5237ZM13.8304 45.8267C13.657 45.76 13.577 45.56 13.657 45.4L18.737 34.3067C19.6704 34.7867 20.6837 35.1467 21.737 35.3467L20.2437 41.08C20.2037 41.2533 20.0037 41.36 19.8304 41.2933L18.8837 40.9467L17.297 46.72C17.2437 46.8933 17.057 47 16.8837 46.9333L13.817 45.8133L13.8304 45.8267ZM22.577 35.4933L21.5904 47.6533C21.577 47.84 21.7237 48 21.897 48H25.1637C25.3504 48 25.497 47.84 25.4704 47.6533L24.9904 41.6933H25.9904C26.177 41.6933 26.3237 41.5333 26.3104 41.3467L25.7504 35.4533C25.177 35.5467 24.5904 35.5867 23.9904 35.5867C23.5104 35.5867 23.0437 35.56 22.577 35.4933ZM34.337 2.57333C34.417 2.4 34.337 2.21333 34.1637 2.14667L31.097 1.02667C30.9237 0.96 30.737 1.06667 30.6837 1.24L29.097 7.01333L28.1504 6.66667C27.977 6.6 27.7904 6.70667 27.737 6.88L26.2437 12.6133C27.3104 12.8267 28.3104 13.1867 29.2437 13.6533L34.337 2.57333ZM41.0304 7.41333L32.457 16.0933C31.737 15.32 30.9104 14.64 29.9904 14.08L33.3504 9.2C33.457 9.05333 33.6704 9.01333 33.817 9.13333L34.5904 9.78667L38.057 4.90667C38.1637 4.76 38.377 4.73333 38.5104 4.85333L41.017 6.94667C41.1637 7.06667 41.1637 7.28 41.0437 7.41333H41.0304ZM45.6704 14.24C45.8437 14.16 45.897 13.96 45.8037 13.8L44.1637 10.9733C44.0704 10.8133 43.857 10.7733 43.7104 10.8667L38.7904 14.2667L38.2837 13.4C38.1904 13.24 37.977 13.1867 37.8304 13.3067L33.0037 16.7467C33.6704 17.5733 34.217 18.4933 34.6437 19.48L45.657 14.2533L45.6704 14.24ZM47.4037 18.6667L47.9637 21.88C47.9904 22.0667 47.8704 22.2267 47.6837 22.2533L35.537 23.3867C35.4837 22.2933 35.2704 21.2533 34.937 20.2667L40.6437 18.6933C40.817 18.64 41.0037 18.76 41.0304 18.9467L41.2037 19.9333L46.9904 18.4267C47.1637 18.3867 47.3504 18.4933 47.377 18.68L47.4037 18.6667ZM46.857 30.4667C47.0304 30.5067 47.217 30.4 47.2437 30.2133L47.8037 27C47.8304 26.8133 47.7104 26.6533 47.5237 26.6267L41.5637 26.0667L41.737 25.08C41.7637 24.8933 41.6437 24.7333 41.457 24.7067L35.5504 24.2267C35.5237 25.32 35.3504 26.3733 35.0437 27.3733L46.8437 30.4533L46.857 30.4667ZM43.7104 37.8C43.617 37.96 43.4037 38 43.257 37.9067L33.217 30.9733C33.857 30.1333 34.377 29.2 34.7637 28.2L40.1504 30.6667C40.3237 30.7467 40.3904 30.9467 40.297 31.1067L39.7904 31.9733L45.2037 34.5333C45.3637 34.6133 45.4304 34.8133 45.337 34.9733L43.7104 37.8ZM30.2837 33.7067L37.337 43.6533C37.4437 43.8 37.657 43.8267 37.7904 43.7067L40.2837 41.6133C40.4304 41.4933 40.4304 41.28 40.3104 41.1467L36.1104 36.8933L36.8837 36.2533C37.0304 36.1333 37.0304 35.92 36.897 35.7867L32.6704 31.6267C31.9637 32.4267 31.1637 33.1333 30.2704 33.7067H30.2837ZM30.217 47.2533C30.0437 47.32 29.857 47.2133 29.8037 47.04L26.577 35.28C27.6304 35.04 28.6304 34.6533 29.5504 34.1467L32.097 39.4933C32.177 39.6667 32.097 39.8667 31.9237 39.92L30.977 40.2667L33.4704 45.7067C33.5504 45.88 33.4704 46.0667 33.297 46.1333L30.2304 47.2533H30.217Z" fill="#303240"/>
+                  </svg>
+                  <div className='IntegrationContainerFlare left'></div>
+                </div>
+                <div
+                  style={{
+                    position: 'relative',
+                    flexGrow: 1,
+                    backgroundColor: 'white',
+                    aspectRatio: '16 / 9',
+                    borderRadius: 'var(--br-3)',
+                    overflow: 'hidden',
+                    border: '1px solid var(--gray-a3)',
+                    backgroundClip: 'padding-box',
+                    boxShadow: '0 1px 3px hsl(36 69% 48% / 10%), 0 2px 4px hsl(36 84% 48% / 8%), 0 5px 15px hsl(36 88% 55% / 12%)'
+                  }}>
+                    <div style={{ width: 1, height: '100%', backgroundColor: 'var(--gray-4)', left: 'var(--space-4)', top: 0, position: 'absolute' }}></div>
+                    <div style={{ width: '100%', height: 1, backgroundColor: 'var(--gray-4)', left: 0, top: 'var(--space-4)', position: 'absolute' }}></div>
+                    <div className='Grid columns-2 gap-2 pt-7 pr-3 pb-4 pl-7'>
+                      <div style={{ borderRadius: 'var(--br-2)', aspectRatio: '16 / 9', backgroundColor: 'var(--yellow-2)', border: '1px solid var(--yellow-5)'  }}></div>
+                      <div style={{ borderRadius: 'var(--br-2)', aspectRatio: '16 / 9', backgroundColor: 'var(--yellow-2)', border: '1px solid var(--yellow-5)'  }}></div>
+                      <div style={{ borderRadius: 'var(--br-2)', aspectRatio: '16 / 9', backgroundColor: 'var(--yellow-2)', border: '1px solid var(--yellow-5)'  }}></div>
+                      <div style={{ borderRadius: 'var(--br-2)', aspectRatio: '16 / 9', backgroundColor: 'var(--yellow-2)', border: '1px solid var(--yellow-5)'  }}></div>
+                    </div>
+                </div>
+                <div className='IntegrationContainer'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="25" viewBox="0 0 48 25" fill="none">
+                    <path d="M40.1812 13.7811H39.8769V19.0545H36.0865V5.9208L39.8769 0V12.2538C40.6294 11.3298 43.1693 7.82708 43.1693 7.82708H47.8478L43.4211 12.5305L48 19.0766H43.2163L40.1812 13.7811ZM29.6234 12.9179L31.1783 7.85752H34.93L30.5309 19.0185C29.2222 22.3746 27.3436 24.646 24.5437 24.646C23.6914 24.6607 22.848 24.4709 22.084 24.0927L23.5919 21.7603C23.8216 21.7849 24.0525 21.797 24.2836 21.7963C25.5757 21.7963 26.5468 20.5402 27.1748 19.0489L22.5599 7.85752H26.8068L28.4669 12.857C28.7198 13.7642 28.9048 14.689 29.0202 15.6237C29.1733 14.7117 29.3746 13.8085 29.6234 12.9179ZM18.1802 12.6578C18.1802 11.197 17.5328 10.5053 16.3043 10.5053C15.7231 10.5043 15.1514 10.6529 14.6443 10.9369V19.0545H10.8539V7.96542L14.5613 7.66108L14.4728 9.47329H14.5973C15.0351 8.88598 15.604 8.40904 16.2587 8.08049C16.9134 7.75193 17.6358 7.58084 18.3683 7.58084C20.305 7.58084 21.9844 8.7816 21.9844 11.6258V19.0545H18.1802V12.6578ZM0 18.4818L0.340309 15.8976C1.47622 16.4507 2.72077 16.7446 3.98409 16.7581C4.81411 16.7581 5.33979 16.4814 5.33979 15.9862C5.33979 14.5696 0.232404 14.9099 0.232404 11.2053C0.232404 8.83694 2.40429 7.58914 5.12675 7.58914C6.3803 7.62073 7.62034 7.85621 8.7982 8.28636L8.43023 10.8234C7.37184 10.4004 6.24906 10.1608 5.11015 10.1152C4.44614 10.1152 3.90662 10.3503 3.90662 10.7792C3.90662 12.1791 9.12191 11.9025 9.12191 15.5158C9.12191 17.9201 6.98599 19.3035 4.05879 19.3035C2.66094 19.3422 1.27272 19.0611 0 18.4818Z" fill="#303240"/>
+                  </svg>
+                  <div className='IntegrationContainerFlare right'></div>
+                </div>
+              </div>
+              <div className='Flex row gap-2 jc-between mt-8'>
+                <div className='IntegrationContainer' style={{ bottom: 25, left: 50 }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="47" viewBox="0 0 48 47" fill="none">
+                    <path d="M43.8009 10.3193C43.5264 9.44109 42.8677 8.72753 42.0445 8.28841L25.303 0.274452C24.8637 0.0548903 24.3697 0 23.9306 0C23.4916 0 22.9975 6.51923e-08 22.5585 0.109781L5.81695 8.17863C4.99359 8.56286 4.38979 9.27644 4.17024 10.2096L0.0534822 28.2683C-0.111189 29.2016 0.10838 30.1347 0.657265 30.9031L12.2391 45.2294C12.8978 45.8881 13.8309 46.3272 14.764 46.3822H33.2072C34.1951 46.4919 35.1283 46.0528 35.7321 45.2294L47.3139 30.9031C47.8627 30.1347 48.0823 29.2016 47.9726 28.2683L43.8009 10.3193Z" fill="#303240"/>
+                    <path d="M41.2219 27.5547C41.167 27.5547 41.112 27.5547 41.112 27.4997C41.112 27.4448 41.0023 27.4448 40.8926 27.4448C40.6729 27.39 40.4533 27.39 40.2339 27.39C40.124 27.39 40.0142 27.39 39.9045 27.3351H39.8496C39.2458 27.2803 38.5871 27.1704 37.9834 27.0057C37.8187 26.9509 37.654 26.7863 37.5991 26.6216L37.16 26.5117C37.3794 24.9199 37.2697 23.2732 36.9404 21.6814C36.5562 20.0896 35.8975 18.5527 35.0192 17.1804L35.3486 16.851V16.7962C35.3486 16.6316 35.4035 16.412 35.5132 16.3022C36.0073 15.8631 36.5013 15.5337 37.0503 15.2044C37.16 15.1495 37.2697 15.0946 37.3794 15.0397C37.5991 14.9299 37.7637 14.8201 37.9834 14.7104C38.0381 14.6555 38.0931 14.6555 38.148 14.6006C38.2028 14.5457 38.148 14.5457 38.148 14.4908C38.6421 14.1066 38.7518 13.4479 38.3675 12.9539C38.2028 12.7343 37.8735 12.5696 37.5991 12.5696C37.3247 12.5696 37.0503 12.6794 36.8306 12.8441L36.7757 12.899C36.7209 12.9539 36.666 13.0088 36.611 13.0088C36.4463 13.1734 36.2817 13.3381 36.1719 13.5028C36.117 13.6126 36.0073 13.6675 35.9523 13.7223C35.5682 14.1615 35.0742 14.6006 34.5802 14.9299C34.4704 14.9848 34.3605 15.0397 34.2508 15.0397C34.1959 15.0397 34.0861 15.0397 34.0312 14.9848H33.9764L33.5372 15.2593C33.0981 14.8201 32.6041 14.381 32.165 13.9419C30.1341 12.3501 27.6091 11.3621 25.0292 11.0876L24.9744 10.6485V10.7034C24.8098 10.5936 24.7548 10.4289 24.6999 10.2643C24.6999 9.66047 24.6999 9.05669 24.8098 8.39801V8.34311C24.8098 8.23334 24.8645 8.12356 24.8645 8.01378C24.9195 7.79421 24.9195 7.57466 24.9744 7.35509V7.02575C25.0292 6.47685 24.5901 5.92795 24.0412 5.87307C23.7118 5.81817 23.3825 5.98285 23.1081 6.2573C22.8886 6.47685 22.7787 6.7513 22.7787 7.02575V7.30021C22.7787 7.51976 22.8337 7.73933 22.8886 7.95889C22.9434 8.06866 22.9434 8.17844 22.9434 8.28822V8.34311C23.0533 8.94692 23.0533 9.5507 23.0533 10.2094C22.9983 10.3741 22.9434 10.5387 22.7787 10.6485V10.7583L22.7239 11.1974C22.12 11.2523 21.5163 11.3621 20.8576 11.4719C18.2777 12.0207 15.9175 13.393 14.1061 15.3142L13.7768 15.0946H13.7219C13.667 15.0946 13.6121 15.1495 13.5023 15.1495C13.3926 15.1495 13.2828 15.0946 13.173 15.0397C12.679 14.6555 12.185 14.2164 11.8007 13.7772C11.7458 13.6675 11.6361 13.6126 11.5812 13.5577C11.4165 13.393 11.3067 13.2283 11.1421 13.0637C11.0872 13.0088 11.0323 13.0088 10.9774 12.9539C10.9225 12.899 10.9225 12.899 10.9225 12.899C10.7029 12.7343 10.4285 12.6245 10.154 12.6245C9.82471 12.6245 9.55025 12.7343 9.38558 13.0088C9.05623 13.5028 9.16603 14.1615 9.60514 14.5457C9.66003 14.5457 9.66003 14.6006 9.66003 14.6006C9.66003 14.6006 9.76981 14.7104 9.82471 14.7104C9.98936 14.8201 10.2089 14.9299 10.4285 15.0397C10.5383 15.0946 10.648 15.1495 10.7578 15.2044C11.3067 15.5337 11.8556 15.8631 12.2948 16.3022C12.4045 16.412 12.5143 16.6316 12.4594 16.7962V16.7413L12.7888 17.0706C12.7339 17.1804 12.679 17.2353 12.6241 17.345C10.9225 20.0348 10.2089 23.2184 10.7029 26.347L10.2638 26.4569C10.2638 26.5117 10.2089 26.5117 10.2089 26.5117C10.154 26.6764 9.98936 26.7863 9.82471 26.896C9.22091 27.0607 8.61712 27.1704 7.95844 27.2253C7.84865 27.2253 7.73887 27.2253 7.62909 27.2803C7.40954 27.2803 7.18997 27.3351 6.97041 27.3351C6.91552 27.3351 6.86064 27.39 6.75086 27.39C6.69596 27.39 6.69596 27.39 6.64108 27.4448C6.03728 27.5547 5.65305 28.1035 5.76283 28.7074C5.87261 29.2014 6.36663 29.5308 6.86064 29.4758C6.97041 29.4758 7.02531 29.4758 7.13509 29.4209C7.18997 29.4209 7.18997 29.4209 7.18997 29.3661C7.18997 29.3112 7.35464 29.3661 7.40954 29.3661C7.62909 29.3112 7.84865 29.2014 8.01332 29.1465C8.1231 29.0915 8.23289 29.0368 8.34267 29.0368H8.39755C9.00135 28.8171 9.55025 28.6525 10.2089 28.5427H10.2638C10.4285 28.5427 10.5932 28.5975 10.7029 28.7074C10.7578 28.7074 10.7578 28.7622 10.7578 28.7622L11.2518 28.7074C12.0752 31.2323 13.6121 33.4828 15.7528 35.1295C16.2469 35.5137 16.6859 35.843 17.2349 36.1176L16.9603 36.5017C16.9603 36.5567 17.0153 36.5567 17.0153 36.5567C17.125 36.7213 17.125 36.9408 17.0702 37.1055C16.8506 37.6544 16.5213 38.2034 16.1919 38.6974V38.7522C16.1371 38.8621 16.0822 38.9169 15.9725 39.0266C15.8626 39.1365 15.7528 39.3559 15.5882 39.5756C15.5333 39.6305 15.5333 39.6853 15.4784 39.7402C15.4784 39.7402 15.4784 39.7952 15.4235 39.7952C15.149 40.344 15.3686 41.0027 15.8626 41.2771C15.9725 41.332 16.1371 41.387 16.2469 41.387C16.6859 41.387 17.0702 41.1126 17.2897 40.7283C17.2897 40.7283 17.2897 40.6733 17.3446 40.6733C17.3446 40.6186 17.3996 40.5636 17.4544 40.5087C17.5093 40.2892 17.619 40.1245 17.674 39.9049L17.7837 39.5756C17.9484 38.9718 18.223 38.4228 18.4974 37.8741C18.6071 37.7094 18.7718 37.5995 18.9364 37.5447C18.9914 37.5447 18.9914 37.5447 18.9914 37.4898L19.2108 37.0507C20.7479 37.6544 22.3396 37.9288 23.9864 37.9288C24.9744 37.9288 25.9623 37.8191 26.9504 37.5447C27.5543 37.4348 28.158 37.2154 28.7068 37.0507L28.9264 37.4348C28.9814 37.4348 28.9814 37.4348 28.9814 37.4898C29.1461 37.5447 29.3107 37.6544 29.4205 37.8191C29.6949 38.3681 29.9694 38.9169 30.1339 39.5206V39.5756L30.2438 39.9049C30.2986 40.1245 30.3536 40.344 30.4633 40.5087C30.5182 40.5636 30.5182 40.6186 30.5732 40.6733C30.5732 40.6733 30.5732 40.7283 30.628 40.7283C30.8476 41.1126 31.2319 41.387 31.671 41.387C31.8356 41.387 31.9454 41.332 32.11 41.2771C32.3297 41.1674 32.5491 40.9479 32.6041 40.6733C32.659 40.3989 32.659 40.1245 32.5491 39.85C32.5491 39.7952 32.4943 39.7952 32.4943 39.7952C32.4943 39.7402 32.4394 39.6853 32.3846 39.6305C32.2747 39.4109 32.165 39.2462 32.0003 39.0815C31.9454 38.9718 31.8906 38.9169 31.7807 38.8071V38.6974C31.3966 38.2034 31.122 37.6544 30.9025 37.1055C30.8476 36.9408 30.8476 36.7213 30.9573 36.5567C30.9573 36.5017 31.0123 36.5017 31.0123 36.5017L30.8476 36.0626C33.6471 34.3609 35.7876 31.7263 36.7757 28.5975L37.2148 28.6525C37.2697 28.6525 37.2697 28.5975 37.2697 28.5975C37.3794 28.4878 37.5441 28.4328 37.7088 28.4328H37.7637C38.3675 28.5427 38.9714 28.7074 39.5202 28.9269H39.5752C39.6849 28.9818 39.7946 29.0368 39.9045 29.0368C40.124 29.1465 40.2886 29.2562 40.5083 29.3112C40.5632 29.3112 40.618 29.3661 40.7279 29.3661C40.7827 29.3661 40.7827 29.3661 40.8376 29.4209C40.9473 29.4758 41.0023 29.4758 41.112 29.4758C41.606 29.4758 42.0451 29.1465 42.2098 28.7074C42.155 28.1035 41.7159 27.6644 41.2219 27.5547ZM25.3586 25.853L23.8765 26.5666L22.3946 25.853L22.0103 24.2612L23.0533 22.9438H24.6999L25.7429 24.2612L25.3586 25.853ZM34.3058 22.2853C34.5802 23.4378 34.6351 24.5905 34.5252 25.7433L29.3107 24.2612C28.8167 24.1515 28.5421 23.6574 28.652 23.1634C28.7068 22.9988 28.7618 22.889 28.8715 22.7791L32.9884 19.0467C33.5921 20.0348 34.0312 21.1326 34.3058 22.2853ZM31.3416 17.0157L26.8406 20.1995C26.4563 20.4189 25.9075 20.364 25.633 19.9798C25.5232 19.8701 25.4685 19.7602 25.4685 19.5955L25.1391 14.0517C27.5543 14.3261 29.6949 15.369 31.3416 17.0157ZM21.4065 14.2164L22.5043 13.9968L22.2299 19.4858C22.2299 19.9798 21.7907 20.364 21.2967 20.364C21.132 20.364 21.0223 20.3092 20.8576 20.2542L16.3016 17.0157C17.7289 15.6435 19.4854 14.6555 21.4065 14.2164ZM14.7099 19.0467L18.7718 22.6694C19.1561 22.9988 19.2108 23.5477 18.8815 23.9318C18.7718 24.0965 18.662 24.1515 18.4424 24.2064L13.1181 25.7433C12.9534 23.4378 13.5023 21.0776 14.7099 19.0467ZM13.7768 28.3231L19.2108 27.39C19.6501 27.39 20.0892 27.6644 20.1441 28.1035C20.1989 28.2682 20.1989 28.4878 20.0892 28.6525L18.0033 33.7024C16.0822 32.4398 14.5452 30.5186 13.7768 28.3231ZM26.2369 35.1295C25.4685 35.2942 24.6999 35.4039 23.8765 35.4039C22.7239 35.4039 21.5163 35.1843 20.4185 34.855L23.1081 29.9699C23.3825 29.6405 23.8217 29.5308 24.2058 29.7502C24.3705 29.86 24.4804 29.9699 24.6451 30.1345L27.2797 34.9099C26.9504 34.9649 26.621 35.0196 26.2369 35.1295ZM32.9334 30.354C32.11 31.6714 30.9573 32.8241 29.6401 33.6475L27.4993 28.4878C27.3896 28.0487 27.6091 27.6095 27.9934 27.4448C28.158 27.39 28.3227 27.3351 28.4874 27.3351L33.9764 28.2682C33.7018 29.0368 33.3725 29.7502 32.9334 30.354Z" fill="white"/>
+                  </svg>
+                  <div className='IntegrationContainerFlare bottom' style={{ transform: 'rotate(45deg) translate(62px, -24px)' }}></div>
+                </div>
+                <div className='IntegrationContainer'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="41" height="48" viewBox="0 0 41 48" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M34.1173 30.9414H38.382V48.0001H0V30.9414H4.26466V43.7354H34.1173V30.9414Z" fill="#303240"/>
+                    <path d="M8.9123 29.6735L29.8576 34.0758L30.7381 29.8887L9.79276 25.4845L8.9123 29.6735ZM11.6839 19.6442L31.0866 28.6806L32.8941 24.8002L13.491 15.7637L11.6839 19.6442ZM17.0528 10.1251L33.502 23.8228L36.2414 20.5332L19.7922 6.83587L17.0528 10.1251ZM27.6706 0L24.2356 2.55492L37.0095 19.7299L40.4445 17.1754L27.6706 0ZM8.5293 39.4706H29.8526V35.206H8.5293V39.4706Z" fill="#303240"/>
+                  </svg>
+                  <div className='IntegrationContainerFlare bottom'></div>
+                </div>
+                <div className='IntegrationContainer' style={{ bottom: 25, right: 50 }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path d="M34.6991 16.6573L34.6817 16.6498C34.6716 16.6459 34.6617 16.6424 34.6529 16.6335C34.6238 16.6023 34.6109 16.5592 34.6179 16.5171L35.5842 10.6008L40.1157 15.14L35.4029 17.148C35.3901 17.1533 35.3758 17.156 35.3617 17.1554H35.3429C35.3368 17.1515 35.3305 17.1466 35.318 17.1342C35.1426 16.9386 34.9327 16.777 34.6991 16.6573ZM41.2719 16.2967L46.1171 21.1489C47.1234 22.1579 47.6272 22.6611 47.8109 23.2445C47.8385 23.3309 47.8609 23.4173 47.8784 23.5061L36.2992 18.5951C36.293 18.5925 36.2867 18.5899 36.2804 18.5877C36.2342 18.5689 36.1804 18.5477 36.1804 18.5001C36.1804 18.4525 36.2354 18.43 36.2816 18.4112L36.2967 18.4051L41.2719 16.2967ZM47.6809 25.0635C47.4309 25.5342 46.9434 26.0224 46.1184 26.8498L40.6556 32.3192L33.5903 30.8458L33.5528 30.8384C33.4903 30.8283 33.424 30.8171 33.424 30.7607C33.3698 30.1707 33.0732 29.6298 32.6053 29.2673C32.5765 29.2385 32.584 29.1934 32.5928 29.1521C32.5928 29.146 32.5928 29.1397 32.5953 29.1345L33.9241 20.9649L33.929 20.9374C33.9364 20.8748 33.9478 20.8022 34.004 20.8022C34.5793 20.7305 35.1017 20.4306 35.4541 19.9697C35.4653 19.9572 35.4729 19.9434 35.4879 19.9359C35.5279 19.9171 35.5754 19.9359 35.6166 19.9535L47.6809 25.0635ZM39.3993 33.5773L30.4164 42.5731L31.954 33.1091L31.9565 33.0967C31.9577 33.0842 31.9604 33.0716 31.9639 33.0604C31.9763 33.0303 32.0089 33.0178 32.0401 33.0053L32.0552 32.9991C32.3918 32.8553 32.6896 32.6335 32.924 32.3519C32.954 32.3169 32.9902 32.2831 33.0365 32.2768C33.0485 32.2748 33.0607 32.2748 33.0727 32.2768L39.398 33.5787L39.3993 33.5773ZM28.5151 44.4772L27.5025 45.4912L16.3082 29.2897C16.3042 29.2838 16.3 29.278 16.2958 29.2721C16.2784 29.2483 16.2595 29.2245 16.2633 29.197C16.2633 29.177 16.2771 29.1594 16.2908 29.1444L16.3032 29.1281C16.337 29.078 16.3658 29.028 16.397 28.9741L16.422 28.9303L16.4259 28.9264C16.4435 28.8963 16.4597 28.8675 16.4896 28.8513C16.5159 28.8388 16.5522 28.8439 16.5809 28.85L28.9827 31.4113C29.0174 31.4166 29.0501 31.431 29.0777 31.4526C29.094 31.469 29.0977 31.4865 29.1015 31.5065C29.2768 32.1709 29.7522 32.7151 30.3865 32.9774C30.4215 32.995 30.4066 33.0337 30.3905 33.0751C30.3823 33.0932 30.376 33.112 30.3717 33.1314C30.2155 34.0828 28.8751 42.2677 28.5151 44.4772ZM26.4 46.5941C25.6537 47.3339 25.2137 47.7258 24.7161 47.8835C24.2256 48.0388 23.6991 48.0388 23.2086 47.8835C22.626 47.6982 22.1223 47.195 21.116 46.186L9.8742 34.9281L12.8106 30.3676C12.8244 30.345 12.8381 30.325 12.8606 30.3087C12.8918 30.2862 12.9368 30.2963 12.9743 30.3087C13.6483 30.5123 14.372 30.4756 15.0219 30.2048C15.0557 30.1924 15.0894 30.1835 15.1157 30.2073C15.129 30.2192 15.1406 30.2328 15.1507 30.2474L26.4 46.5941ZM8.7904 33.8427L6.21153 31.2601L11.3043 29.0844C11.3173 29.0787 11.3313 29.0757 11.3455 29.0756C11.388 29.0756 11.413 29.1182 11.4355 29.157C11.4867 29.2358 11.5409 29.3126 11.598 29.3873L11.6143 29.4073C11.6294 29.4286 11.6192 29.4499 11.6043 29.4699L8.7904 33.8427ZM5.07023 30.1172L1.80758 26.8498C1.25256 26.294 0.850038 25.8909 0.570025 25.5442L10.4905 27.6047C10.5029 27.6071 10.5154 27.6092 10.528 27.6109C10.5892 27.6209 10.6567 27.6322 10.6567 27.6897C10.6567 27.7523 10.583 27.7811 10.5205 27.8049L10.4917 27.8174L5.07023 30.1172ZM0 23.8642C0.0113589 23.6537 0.0491106 23.4455 0.112497 23.2445C0.297505 22.6611 0.800029 22.1579 1.80757 21.1489L5.98276 16.9677C7.90514 19.7617 9.83274 22.5521 11.7655 25.3389C11.7993 25.3839 11.8368 25.434 11.798 25.4716C11.6155 25.6731 11.433 25.8934 11.3043 26.1325C11.2903 26.1633 11.2688 26.19 11.2417 26.2102C11.2255 26.2202 11.208 26.2163 11.1892 26.2127H11.1867L0 23.8642ZM7.10032 15.8486L12.7118 10.2265C13.2406 10.4581 15.1619 11.2705 16.8783 11.9966C18.1783 12.5474 19.3634 13.0482 19.7359 13.2109C19.7734 13.2259 19.8071 13.2409 19.8234 13.2785C19.8335 13.301 19.8283 13.3298 19.8234 13.3536C19.6429 14.178 19.8886 15.038 20.4772 15.642C20.5147 15.6796 20.4772 15.7334 20.4447 15.7797L20.4273 15.806L14.727 24.6479C14.712 24.6729 14.6982 24.6942 14.6732 24.7105C14.6432 24.7293 14.6007 24.7205 14.5657 24.7117C14.344 24.6535 14.1161 24.6224 13.8869 24.6191C13.6819 24.6191 13.4594 24.6566 13.2344 24.6979C13.2094 24.7019 13.1857 24.7068 13.1657 24.6918C13.1436 24.6736 13.1246 24.6522 13.1094 24.6279L7.10032 15.8486ZM13.8481 9.09105L21.116 1.81277C22.1223 0.805026 22.626 0.300529 23.2086 0.116505C23.6991 -0.038835 24.2256 -0.038835 24.7161 0.116505C25.2987 0.300529 25.8024 0.805026 26.8087 1.81277L28.3838 3.3901L23.2148 11.407C23.2021 11.4303 23.1846 11.4508 23.1636 11.4671C23.1323 11.4883 23.0885 11.4795 23.051 11.4671C22.2237 11.2156 21.3257 11.3889 20.6509 11.9302C20.6172 11.9653 20.5672 11.9453 20.5247 11.9263C19.8497 11.6321 14.5994 9.41027 13.8481 9.09105ZM29.4813 4.48923L34.2541 9.26881L33.104 16.4019V16.4207C33.103 16.437 33.0995 16.4529 33.0939 16.4682C33.0815 16.4933 33.0564 16.4983 33.0314 16.5058C32.7855 16.5804 32.554 16.6959 32.3464 16.8476C32.3374 16.854 32.3292 16.8611 32.3214 16.8688C32.3075 16.8839 32.2939 16.8976 32.2714 16.9001C32.2531 16.9007 32.2348 16.8977 32.2176 16.8913L24.9448 13.7967L24.931 13.7906C24.8847 13.7718 24.8297 13.7492 24.8297 13.7017C24.7869 13.2958 24.6546 12.9046 24.4422 12.5563C24.4072 12.4987 24.3684 12.4386 24.3984 12.3797L29.4813 4.48923ZM24.5661 15.2627L31.3839 18.1545C31.4214 18.1721 31.4627 18.1883 31.4789 18.2271C31.4855 18.2504 31.4855 18.2751 31.4789 18.2984C31.4589 18.3986 31.4414 18.5125 31.4414 18.6277V18.8192C31.4414 18.8668 31.3927 18.8868 31.3477 18.9056L31.3338 18.9105C30.2538 19.3724 16.1706 25.3863 16.1494 25.3863C16.1281 25.3863 16.1056 25.3863 16.0844 25.3651C16.0469 25.3275 16.0844 25.2749 16.1182 25.2273C16.1242 25.2191 16.1299 25.2107 16.1356 25.2023L21.7383 16.5144L21.7484 16.4994C21.7809 16.4468 21.8184 16.388 21.8784 16.388L21.9347 16.3968C22.0622 16.4144 22.1747 16.4306 22.2884 16.4306C23.1385 16.4306 23.926 16.0162 24.401 15.3077C24.4124 15.2887 24.4267 15.2718 24.4435 15.2576C24.4773 15.2326 24.5274 15.2453 24.5661 15.2627ZM16.7583 26.761L32.109 20.205C32.109 20.205 32.1315 20.205 32.1527 20.2263C32.2365 20.3102 32.3077 20.3665 32.3765 20.4191L32.4102 20.4403C32.4415 20.4579 32.4728 20.4779 32.4752 20.5105C32.4752 20.5229 32.4752 20.5305 32.4726 20.5418L31.1575 28.6312L31.1526 28.6638C31.1438 28.7264 31.1352 28.7977 31.0764 28.7977C30.3646 28.8459 29.7223 29.2426 29.36 29.8581L29.3539 29.8681C29.3365 29.8969 29.3201 29.9245 29.2914 29.9395C29.2651 29.9519 29.2314 29.9469 29.2039 29.9407L16.9621 27.412C16.9496 27.4095 16.772 26.7622 16.7583 26.761Z" fill="#303240"/>
+                  </svg>
+                  <div className='IntegrationContainerFlare bottom' style={{ transform: 'rotate(-45deg) translate(-62px, -24px)' }}></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className='Flex column gap-5'>
+                <h3 className='Text size-4 weight-2 orange'>One-click Integrations</h3>
+                <h3 className='Text size-7'>A single pane of glass</h3>
+                <p className='Text size-4 lowContrast'>Context-switching takes a toll on developers. Roadie integrates with popular vendors so your developers can find everything related to their service in a single place.</p>
+              </div>
+            </div>
+          </div>    
+        </div>
+      </section>
+
+      <section className="Section size-3">
+        <div className="Container">
+          <div className="Grid columns-1 bp3-columns-2 gap-9 ai-center">
+            <div>
+              <div
+                style={{
+                  border: '1px solid hsl(19 80% 65% / 10%)',
+                  backgroundClip: 'padding-box',
+                  backgroundColor: 'white',
+                  boxShadow: '0 1px 3px hsl(36 69% 48% / 10%), 0 2px 4px hsl(36 84% 48% / 8%), 0 5px 15px hsl(36 88% 55% / 12%)',
+                  borderRadius: 'var(--br-pill)',
+                  height: 'var(--space-9)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  width: '100%',
+                  paddingLeft: 'var(--space-4)',
+                  lineHeight: 1,
+                }}>
+                  <svg width="32" height="32" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5ZM9.30884 10.0159C8.53901 10.6318 7.56251 11 6.5 11C4.01472 11 2 8.98528 2 6.5C2 4.01472 4.01472 2 6.5 2C8.98528 2 11 4.01472 11 6.5C11 7.56251 10.6318 8.53901 10.0159 9.30884L12.8536 12.1464C13.0488 12.3417 13.0488 12.6583 12.8536 12.8536C12.6583 13.0488 12.3417 13.0488 12.1464 12.8536L9.30884 10.0159Z" fill="var(--gray-8)" fillRule="evenodd" clipRule="evenodd"></path></svg>
+                  <span className='Text size-5 weight-1 ml-2'>Auth Proxy</span>
+                  <div style={{ width: 2, height: 'var(--space-7)', backgroundColor: 'black' }}></div>
+              </div>
+              <div
+                className='mt-7 mb-7 mr-8 ml-8'
+                style={{
+                  position: 'relative',
+                  flexGrow: 1,
+                  backgroundColor: 'white',
+                  aspectRatio: '16 / 9',
+                  borderRadius: 'var(--br-3)',
+                  overflow: 'hidden',
+                  border: '1px solid var(--gray-a3)',
+                  backgroundClip: 'padding-box',
+                  boxShadow: '0 1px 3px hsl(36 69% 48% / 10%), 0 2px 4px hsl(36 84% 48% / 8%), 0 5px 15px hsl(36 88% 55% / 12%)',
+                }}>
+                  <div style={{ width: 1, height: '100%', backgroundColor: 'var(--gray-4)', left: 'var(--space-4)', top: 0, position: 'absolute' }}></div>
+                  <div style={{ width: '100%', height: 1, backgroundColor: 'var(--gray-4)', left: 0, top: 'var(--space-4)', position: 'absolute' }}></div>
+                  <div className='Grid columns-2 gap-2 pt-7 pr-3 pb-4 pl-7'>
+                    <div>
+                      <div className='Flex column gap-2'>
+                        <div className='Flex row gap-2'>
+                          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 'var(--space-4)', height: 'var(--space-4)', border: '1px solid var(--gray-5)', borderRadius: 'var(--br-1)' }}></div>
+                          <span className='Text size-2'>Catalog</span>
+                        </div>
+                        <div className='Flex row gap-2'>
+                          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 'var(--space-4)', height: 'var(--space-4)', border: '1px solid var(--gray-5)', borderRadius: 'var(--br-1)' }}><svg width="16" height="16" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg></div>
+                          <span className='Text size-2'>Documentation</span>
+                        </div>
+                        <div className='Flex row gap-2'>
+                          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 'var(--space-4)', height: 'var(--space-4)', border: '1px solid var(--gray-5)', borderRadius: 'var(--br-1)' }}></div>
+                          <span className='Text size-2'>Confluence</span>
+                        </div>
+                        <div className='Flex row gap-2'>
+                          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 'var(--space-4)', height: 'var(--space-4)', border: '1px solid var(--gray-5)', borderRadius: 'var(--br-1)' }}></div>
+                          <span className='Text size-2'>StackOverflow</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='Flex column gap-3'>
+                      <div className='Skeleton size-2 gray'></div>
+                      <div className='Skeleton size-2 width-50 gray'></div>
+                      <div className='Skeleton size-2 width-75 gray'></div>
+                      <div className='Skeleton size-2 gray'></div>
+                      <div className='Skeleton size-2 width-50 gray'></div>
+                      <div className='Skeleton size-2 width-75 gray'></div>
+                      <div className='Skeleton size-2 gray'></div>
+                      <div className='Skeleton size-2 width-50 gray'></div>
+                      <div className='Skeleton size-2 width-75 gray'></div>
+                      <div className='Skeleton size-2 gray'></div>
+                      <div className='Skeleton size-2 width-50 gray'></div>
+                      <div className='Skeleton size-2 width-75 gray'></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div>
+              <div className='Flex column gap-5'>
+                <h3 className='Text size-4 weight-2 orange'>System-wide Search</h3>
+                <h3 className='Text size-7'>Improve your org's discoverability</h3>
+                <p className='Text size-4 lowContrast'>With so many systems available, engineers struggle to find what they need. Make it easier them to navigate your organization through a centralized search for finding references in your software assets, documentation, Confluence, and Stackoverflow.</p>
+              </div>
+            </div>
+          </div>    
+        </div>
+      </section>
+
+      <div className='Flex row jc-center'>
+        <div className='SeparatorGradient size-2' role="separator"></div>
+      </div>
+
+      <section className="Section size-3">
+        <div className='Container'>
+          <div className='Flex row jc-center'>
+            <figure className="max-w-2xl px-4 mx-auto mb-5">
+              <div className='Flex row jc-center mb-7'>
+                <img src={YotpoImg} alt="Yotpo logo" />
+              </div>
+              <blockquote className="Text size-6 weight-1 ta-center mb-7">
+                “The Roadie team have been incredible to work with. Their platform provides us with a
+                ton of flexibility and integrations. We’ve been able to start using Backstage must
+                faster and we don’t have to worry about the maintenance.”
+              </blockquote>
+              <footer>
+                <div className='Flex row ai-center gap-3 jc-center'>
+                  <div className='Avatar size-3'>
+                    <img src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg" alt="Andy Hoffman Headshot" />
+                  </div>
+                  <div className='Flex column'>
+                    <span className='Text size-3 weight-2'>Andy Hoffman</span>
+                    <span className='Text size-3 lowContrast'>DevOps Manager at Caribou</span>
+                  </div>
+                </div>
+              </footer>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <div className='Flex row jc-center'>
+        <div className='SeparatorGradient size-2' role="separator"></div>
+      </div>
+
+      <section className='Section size-3'>
+        <div className='Container'>
+          <div className='Flex column bp2-row jc-between'>
+            <span className='Text size-7 mb-7 bp2-mb-0'>Simpler, safer, and more powerful Backstage.</span>
+            <a className='Button size-3 accent' href="#">Request a Demo</a>
+          </div>
+        </div>
+      </section>
+
+      <div className='Flex row jc-center'>
+        <div className='SeparatorGradient size-2' role="separator"></div>
+      </div>
 
       <SitewideFooter />
     </>

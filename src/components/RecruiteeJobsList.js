@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Headline, Lead } from 'components';
 
 const RecruiteeJobsList = () => {
   useEffect(() => {
@@ -38,23 +37,14 @@ const RecruiteeJobsList = () => {
   }, []);
 
   return (
-    <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
-        <div className="space-y-12">
-          <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-3xl">
-            <div className="mt-1">
-              <Headline id="open-roles">Our open roles</Headline>
-            </div>
+    <section className="Section size-3">
+      <div className="Container">
+        <h1 className='Text size-7 mb-4' id="open-roles">Our open roles</h1>
+        <span className='Text size-5 lowContrast weight-1 mb-8'>Join us!</span>
 
-            <div className="mt-5">
-              <Lead>Join us!</Lead>
-            </div>
-
-            <div id="recruitee-careers"></div>
-          </div>
-        </div>
+        <div id="recruitee-careers"></div>
       </div>
-    </div>
+    </section>
   );
 };
 
