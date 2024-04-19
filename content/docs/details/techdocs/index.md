@@ -255,7 +255,7 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
   
 ## Emoji support
 
-Emojis can be used across techdocs using various different approaches. The most basic is adding them via emoji code inline to your title or body. 
+Emojis can be used across Tech Docs using various different approaches. The most basic is adding them via emoji code inline to your title or body. 
 
 If you don't override the generated nav in your `mkdocs.yml` file you can add them to titles and they will appear in your nav. 
 
@@ -273,7 +273,7 @@ title: 🤫 Nav title
 # Something else
 ```
 
-If you need an overriden nav, you can add them in the nav titles in your `mkdocs.yml` file like so:
+If you need an overridden nav, you can add them in the nav titles in your `mkdocs.yml` file like so:
 
 ```yaml
 nav:
