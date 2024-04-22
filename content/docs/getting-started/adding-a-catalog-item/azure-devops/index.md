@@ -83,15 +83,18 @@ examples:
         owner: artist-relations-team
 ---
 
-##  Generate Azure DevOps personal access token (PAT)
+###  Generate Azure DevOps personal access token (PAT)
 
 In your Azure DevOps navigate to the User Settings > Tokens page in `https://dev.azure.com/<your-organization>/_usersSettings/tokens`. Within this page you can generate a token to grant Roadie access to read your entity manifest files.
 
 1. Click 'New Token'
 2. Create an access token with _at least_ repository Read permissions.
 
-
 ![Azure DevOps Token Options](./azure-devops-opts.png)
+
+### Store Azure access token as a secret in Roadie
+
+Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` and locate a secret with a name `AZURE_TOKEN`. Update the value of this secret with the token created in the step above.
 
 ### Create a catalog file in code repository
 
