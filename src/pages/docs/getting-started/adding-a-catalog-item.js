@@ -91,7 +91,7 @@ const AddCatalogItemPage = ({ data, location }) => {
             <Headline size='small' className="mb-1 mt-0">
               Adding a catalog item
             </Headline>
-            <p className='mb-6 mt-6 text-gray-800'>Roadie allows various ways to import items into its catalog. Generally you will store entity files in a code repository and then provide Roadie with the URL of that file for it to be imported as a catalog entry. This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog.</p>
+            <p className='mb-6 mt-6 text-gray-600'>Roadie allows various ways to import items into its catalog. Generally you will store entity files in a code repository and then provide Roadie with the URL of that file for it to be imported as a catalog entry. This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog.</p>
             <Sources sources={sources} />
           </article>
         )}
