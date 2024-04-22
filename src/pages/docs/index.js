@@ -40,7 +40,7 @@ const Doc = ({
 
             <Button
               link={true}
-              to="/docs/getting-started/install-github-app/"
+              to="/docs/getting-started/adding-a-catalog-item/"
               size="small"
               color="primary"
               postfixIcon={<ChevronRightIcon />}
