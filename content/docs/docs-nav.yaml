@@ -6,8 +6,7 @@ plugins:
 
 nav:
   - Getting started:
-      - Installing the GitHub app: '/docs/getting-started/install-github-app/'
-      - Adding components: '/docs/getting-started/adding-components/'
+      - Adding a catalog item: '/docs/getting-started/adding-a-catalog-item/'
       - Using TechDocs: '/docs/getting-started/technical-documentation/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
       - Inviting users: '/docs/getting-started/user-management/'
