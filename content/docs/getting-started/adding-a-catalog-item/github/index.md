@@ -110,8 +110,6 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 In one of the GitHub repos in your project create a `catalog-info.yaml` with the contents shown in the panel on the right.
 
-# Import the catalog item into Roadie
-
 ### Import the catalog file
 
 Copy the URL of the catalog file you created by visiting the file in your browser and copying the url from the location bar. The URL may look like this: `https://github.com/<org-name>/<repo-name>/blob/<branch-name>/catalog-info.yaml`.
