@@ -83,9 +83,15 @@ examples:
         owner: artist-relations-team
 ---
 
-### Lorem ipsum dolor sit amet
+### Configure AWS to allow Roadie to access S3 Bucket
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+1. Visit `https://<your-tenant>.roadie.so/administration/settings/` on your tenant and click "AWS S3"
+2. Click "Add Item"
+3. Enter S3 Host, if necessary, otherwise leave it as it is.
+4. Under the `role` section click the link to "create a role". It will open a cloudformation template to create a new role in your AWS account for Roadie to use to access your bucket.
+5. In the AWS CloudFormation "Quick create stack" page, click "Create Stack"
+6. Wait for the stack to complete.
+7. 
 
 ### consectetur adipiscing elit
 
