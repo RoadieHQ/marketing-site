@@ -80,7 +80,7 @@ const Sources = ({ sources }) => {
 };
 
 const AddCatalogItemPage = ({ data, location }) => {
-  const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).sort((item1, item2) => item1.order - item2.order);
+  const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
   return (
     <>
       <DocsHeader location={location} />
