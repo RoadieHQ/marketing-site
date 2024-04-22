@@ -3,6 +3,7 @@ title: Roadie API
 publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure the Roadie API to create a catalog item.
 
+order: 5
 humanName: Roadie API
 examples:
   - name: Component

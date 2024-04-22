@@ -20,7 +20,7 @@ it into the catalog, or automatically using a Group discovery mechanism for Gith
 
 ## Using GitHub teams
 
-⚠️  For automatic Admin group management using Github you will need to have [installed the Roadie GitHub app](/docs/getting-started/install-github-app/) before proceeding with this step.
+⚠️  For automatic Admin group management using Github you will need to have [installed the Roadie GitHub app](/docs/getting-started/adding-a-catalog-item/) before proceeding with this step.
 
 To automatically designate admins you can use a GitHub Team in your Github Org.
 

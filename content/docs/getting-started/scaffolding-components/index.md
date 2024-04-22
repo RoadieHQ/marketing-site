@@ -18,7 +18,7 @@ A Scaffolder template is then run on demand by the users of Backstage to execute
 
 ## Prerequisite 
 
-You must have installed the GitHub App in order to use the Scaffolder. If you have not done this you can find the steps to do this [here](/docs/getting-started/install-github-app/).
+You must have installed the GitHub App in order to use the Scaffolder. If you have not done this you can find the steps to do this [here](/docs/getting-started/adding-a-catalog-item/).
 
 ## Steps
 

@@ -80,7 +80,7 @@ const Sources = ({ sources }) => {
 };
 
 const AddCatalogItemPage = ({ data, location }) => {
-  const sources = data.allMarkdownRemark.edges.map((edge) => edge.node);
+  const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).sort((item1, item2) => item1.order - item2.order);
   return (
     <>
       <DocsHeader location={location} />
@@ -116,6 +116,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             humanName
+            order
             examples {
               name
               language
