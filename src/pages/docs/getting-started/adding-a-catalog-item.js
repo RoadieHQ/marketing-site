@@ -10,10 +10,10 @@ import DocsHeader from 'components/SitewideHeader/DocsHeader';
 
 const Chip = ({ label, isActive }) => {
   const defaultClasses =
-    'inline-flex items-center px-3 border-2 py-0.5 rounded-lg mr-1 mt-1 text-sm font-medium mr-2';
+    'inline-flex items-center px-3 py-0.5 border rounded-lg mr-1 mt-1 text-sm font-medium mr-2';
 
   let colorClasses;
-  if (isActive) colorClasses = 'bg-primary-100 text-primary-800';
+  if (isActive) colorClasses = 'border-primary-800 bg-primary-100 text-primary-800';
   if (!isActive) colorClasses = 'text-gray-800';
 
   return <span className={classnames(defaultClasses, colorClasses)}>{label}</span>;
@@ -54,8 +54,9 @@ const Sources = ({ sources }) => {
         </div>
         <CodeBlock language="html" intro={sources.find((it) => it.id === typeFilter).html} />
       </div>
+      <div className='grid'>
       {allExamples && !isEmpty(allExamples) && (
-        <div>
+        <div className='self-start sticky top-0'>
           <span className="mr-4">Kind: </span>
           <div className="mb-6">
             {!isEmpty(allExamples) &&
@@ -75,6 +76,7 @@ const Sources = ({ sources }) => {
           </div>
         </div>
       )}
+      </div>
     </section>
   );
 };
