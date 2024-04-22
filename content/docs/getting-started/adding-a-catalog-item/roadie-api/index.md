@@ -125,4 +125,8 @@ Before you start you will first need to [get an API key](/docs/api/authorization
 
 ### Load a catalog item
 
-Run the command you see on the right hand side to import the catalog item.
+Run the command you see on the right hand side to create the catalog item.
+
+### Visit the created catalog item in Roadie
+
+After sending the 

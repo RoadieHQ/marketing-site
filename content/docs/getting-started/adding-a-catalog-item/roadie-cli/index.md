@@ -51,6 +51,11 @@ Before you start you will first need to [get an API key](/docs/api/authorization
 ### Install the CLI
 
 You can install the cli with the following command
+
 ```bash
 npm install -g @roadiehq/roadie-cli
 ```
+
+### Load a catalog item
+
+Run the command you see on the right hand side to create the catalog item.

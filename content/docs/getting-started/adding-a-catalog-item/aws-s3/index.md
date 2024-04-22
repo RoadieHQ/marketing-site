@@ -148,4 +148,4 @@ Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`
 
 ![Import](./import.png)
 
-Now you can click on the component link to visit the component that you have just created.
+Now you can click on the entity link to visit the entity that you have just created.
