@@ -85,20 +85,38 @@ examples:
 
 ### Install the GitHub App
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Installing the GitHub App will allow Roadie to access the YAML metadata files that Backstage needs to operate. Learn more about the [permissions required](/docs/integrations/github-app-permissions/).
 
-### Use a personal access token
+1. Click the Administration link in the bottom left of the application.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+![A link that says "Administration"](./administration-link.png)
+
+2. Click the Settings tab along the top of the Administration page.
+
+![A link that says "Settings"](./settings-link.png)
+
+3. Click on GitHub under Integrations in the left sidebar.
+
+![A link that says "Integrations"](./integrations-link.png)
+
+4. Open the GitHub accordion and click "Add GitHub App"
+
+![A button that says "Add GitHub App"](./add-github-app.png)
+
+5. Choose your GitHub organization and follow the steps to install the app.
 
 ### Upload a catalog item to a repository
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In one of the GitHub repos in your project create a `catalog-info.yaml` with the contents shown in the panel on the right.
 
 # Import the catalog item into Roadie
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Import the catalog file
 
-# Enable auto discovery
+Copy the URL of the catalog file you created by visiting the file in your browser and copying the url from the location bar. The URL may look like this: `https://github.com/<org-name>/<repo-name>/blob/<branch-name>/catalog-info.yaml`.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu
+Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
+
+![Import](import.png)
+
+Now you can click on the entity link to visit the entity that you have just created.

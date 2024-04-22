@@ -108,7 +108,7 @@ Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`
 
 ![import.png](import.png)
 
-Now you can click on the component link to visit the component that you have just created.
+Now you can click on the entity link to visit the entity that you have just created.
 
 ### Learn More
 At this point you may want to enable [auto discovery](/docs/integrations/azure-devops-provider/) using Azure DevOps, this allows Roadie to discover new catalog files as they are created.

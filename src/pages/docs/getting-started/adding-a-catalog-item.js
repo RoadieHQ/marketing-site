@@ -40,44 +40,42 @@ const Sources = ({ sources }) => {
   };
 
   return (
-    <section className="sm:grid sm:grid-cols-2 sm:gap-6">
-      <div>
-        <span className="mr-4">Source: </span>
-        <div className="mb-6">
-          {sources.map((it) => {
-            return (
-              <button key={it.id} onClick={() => handleChange(it)}>
-                <Chip label={it.frontmatter.humanName} isActive={typeFilter === it.id} />
-              </button>
-            );
-          })}
-        </div>
-        <CodeBlock language="html" intro={sources.find((it) => it.id === typeFilter).html} />
-      </div>
-      <div className='grid'>
-      {allExamples && !isEmpty(allExamples) && (
-        <div className='self-start sticky top-0'>
-          <span className="mr-4">Kind: </span>
-          <div className="mb-6">
-            {!isEmpty(allExamples) &&
-              displayedKindChips.map((k) => {
-                return (
-                  <button key={k.name} onClick={() => setKind(k.name)}>
-                    <Chip label={k.name} isActive={kindFilter === k.name} />
-                  </button>
-                );
-              })}
+      <section className='sm:grid sm:grid-cols-2 sm:gap-6'>
+        <div>
+          <div className='mb-6'>
+            {sources.map((it) => {
+              return (
+                <button key={it.id} onClick={() => handleChange(it)}>
+                  <Chip label={it.frontmatter.humanName} isActive={typeFilter === it.id} />
+                </button>
+              );
+            })}
           </div>
-          <div className="mb-6">
-            <CodeBlock
-              language={allExamples.find((kind) => kind.name === kindFilter).language}
-              code={allExamples.find((kind) => kind.name === kindFilter).content}
-            />
-          </div>
+          <CodeBlock language='html' intro={sources.find((it) => it.id === typeFilter).html} />
         </div>
-      )}
-      </div>
-    </section>
+        <div className='grid'>
+          {allExamples && !isEmpty(allExamples) && (
+            <div className='self-start sticky top-0'>
+              <div className='mb-6'>
+                {!isEmpty(allExamples) &&
+                  displayedKindChips.map((k) => {
+                    return (
+                      <button key={k.name} onClick={() => setKind(k.name)}>
+                        <Chip label={k.name} isActive={kindFilter === k.name} />
+                      </button>
+                    );
+                  })}
+              </div>
+              <div className='mb-6'>
+                <CodeBlock
+                  language={allExamples.find((kind) => kind.name === kindFilter).language}
+                  code={allExamples.find((kind) => kind.name === kindFilter).content}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
   );
 };
 
@@ -86,13 +84,14 @@ const AddCatalogItemPage = ({ data, location }) => {
   return (
     <>
       <DocsHeader location={location} />
-      <main className="md:flex pt-4 md:pt-0">
+      <main className='md:flex pt-4 md:pt-0'>
         <Sidebar location={location} />
         {!isEmpty(sources) && (
-          <article className="px-2 md:px-6 md:pt-7 md:flex-1">
-            <Headline size="small" className="mb-1 mt-0">
+          <article className='px-2 md:px-6 md:pt-7 md:flex-1'>
+            <Headline size='small' className="mb-1 mt-0">
               Adding a catalog item
             </Headline>
+            <p className='mb-6 mt-6'>Roadie allows various ways to import items into its catalog. Generally you will store entity files in a code repository and then provide Roadie with the URL of that file for it to be imported as a catalog entry. This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog.</p>
             <Sources sources={sources} />
           </article>
         )}
