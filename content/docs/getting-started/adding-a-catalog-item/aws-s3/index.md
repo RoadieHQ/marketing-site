@@ -83,16 +83,69 @@ examples:
         owner: artist-relations-team
 ---
 
-### Configure AWS to allow Roadie to access S3 Bucket
+##  Get the roadie IAM details
 
-1. Visit `https://<your-tenant>.roadie.so/administration/settings/` on your tenant and click "AWS S3"
-2. Click "Add Item"
-3. Enter S3 Host, if necessary, otherwise leave it as it is.
-4. Under the `role` section click the link to "create a role". It will open a cloudformation template to create a new role in your AWS account for Roadie to use to access your bucket.
-5. In the AWS CloudFormation "Quick create stack" page, click "Create Stack"
-6. Wait for the stack to complete.
-7. 
+Navigate to `Administration > Settings > AWS S3` and make a note of the Roadie backend role ARN and account ID. This is mentioned on the title text of the AWS S3 integration settings page.
 
-### consectetur adipiscing elit
+##  Create a federated role in your account for Roadie
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Follow the steps [here](/docs/details/accessing-aws-resources) to create the role.
+
+The role needs to follow this naming convention `arn:aws:iam::*:role/<your-tenant-name>-roadie-read-only-role` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
+
+You'll need to attach a policy which allows access to the required S3 buckets such as `AmazonS3ReadOnlyAccess`. This policy grants roadie read access to all buckets.
+If you do not want to grant this access you can [create your own policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html)
+which restricts access to only certain buckets. An example minimal policy needed to retrieve files from S3 buckets is below
+
+
+<details>
+
+<summary>An example minimal S3 Read policy</summary>
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::my-bucket/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::my-bucket"
+    }
+  ]
+}
+```
+</details>
+
+
+##  Configure your Roadie instance to use the new role
+
+On the AWS S3 settings page `Administration > Settings > Aws S3` in Roadie click `Add Item` and enter the newly created
+role ARN and external ID. The S3 host is only required if you're using different roles for different buckets.
+
+After the role configuration is done, you can click the 'Test Role' button to check if integration configuration has succeeded.
+
+![Role Details](./role-details.png)
+
+
+### Create a catalog file in code repository
+
+In the S3 bucket create a `catalog-info.yaml` file with the contents shown in the panel on the right.
+
+### Import the catalog file
+
+Copy the Object URL of the catalog file you created by visiting the file in S3 in the properties tab. The URL looks like: `https://<bucket name>.s3.<region>.amazonaws.com/<object file path>`
+
+Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
+
+![Import](./import.png)
+
+Now you can click on the component link to visit the component that you have just created.
