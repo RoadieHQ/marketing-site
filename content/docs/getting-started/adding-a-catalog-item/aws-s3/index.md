@@ -3,6 +3,7 @@ title: AWS S3
 publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure Roadie to collect catalog items from AWS S3
 
+order: 3
 humanName: AWS S3
 examples:
   - name: Component

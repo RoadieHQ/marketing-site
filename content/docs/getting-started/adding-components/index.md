@@ -8,13 +8,13 @@ description: How to add components such as services or websites to the Backstage
 
 This tutorial will show you how to add components such as services or websites to the Backstage catalog.
 
-To represent something in Roadie Backstage you will generally need to write some YAML to describe it and upload the file to the SCM you have [linked to Roadie](/docs/getting-started/install-github-app) such as a Github repository.
+To represent something in Roadie Backstage you will generally need to write some YAML to describe it and upload the file to the SCM you have [linked to Roadie](/docs/getting-started/adding-a-catalog-item) such as a Github repository.
 
 The base file to describe entities is by default named `catalog-info.yaml` but you can name it anything you like.
 
 ## Prerequisite 
 
-You must install the GitHub App in order to import components in private repositories. The steps to do this are [here](/docs/getting-started/install-github-app/).
+You must install the GitHub App in order to import components in private repositories. The steps to do this are [here](/docs/getting-started/adding-a-catalog-item/).
 
 ## Step 1: Create your 'catalog-info.yaml' file
 
