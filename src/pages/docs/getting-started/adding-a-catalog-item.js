@@ -40,7 +40,7 @@ const Sources = ({ sources }) => {
   };
 
   return (
-      <section className='sm:grid sm:grid-cols-2 sm:gap-6'>
+      <section className='sm:grid md:grid-cols-1 sm:gap-6 lg:grid-cols-2 mt-4'>
         <div>
           <div className='mb-6'>
             {sources.map((it) => {
@@ -53,7 +53,7 @@ const Sources = ({ sources }) => {
           </div>
           <CodeBlock language='html' intro={sources.find((it) => it.id === typeFilter).html} />
         </div>
-        <div className='grid'>
+        <div className='grid lg:visible md:invisible'>
           {allExamples && !isEmpty(allExamples) && (
             <div className='self-start sticky top-0'>
               <div className='mb-6'>
@@ -80,7 +80,8 @@ const Sources = ({ sources }) => {
 };
 
 const AddCatalogItemPage = ({ data, location }) => {
-  const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
+  const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).filter((item => item.frontmatter.category === 'catalog-source')).sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
+  const header = data.allMarkdownRemark.edges.map((edge) => edge.node).find((item => item.frontmatter.category === 'header'));
   return (
     <>
       <DocsHeader location={location} />
@@ -95,9 +96,10 @@ const AddCatalogItemPage = ({ data, location }) => {
         {!isEmpty(sources) && (
           <article className='px-2 md:px-6 md:pt-7 md:flex-1'>
             <Headline size='small' className="mb-1 mt-0">
-              Adding a catalog item
+              {header.frontmatter.title}
             </Headline>
-            <p className='mb-6 mt-6 text-gray-600'>Roadie allows various ways to import items into its catalog. Generally you will store entity files in a code repository and then provide Roadie with the URL of that file for it to be imported as a catalog entry. This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog.</p>
+
+            <CodeBlock introClassNames="prose-summary" language='html' intro={header.html} />
             <Sources sources={sources} />
           </article>
         )}
@@ -123,6 +125,7 @@ export const pageQuery = graphql`
             title
             humanName
             order
+            category
             examples {
               name
               language

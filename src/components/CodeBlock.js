@@ -2,10 +2,10 @@ import React from 'react';
 import lodashEscape from 'lodash/escape';
 import kebabCase from 'lodash/kebabCase';
 
-const CodeBlock = ({ language, code, intro, sectionId }) => (
+const CodeBlock = ({ language, code, intro, sectionId, introClassNames = 'prose prose-primary' }) => (
   <div id={sectionId && `section-${sectionId}`}>
     {intro && intro !== '' && (
-      <div className="prose prose-primary" dangerouslySetInnerHTML={{ __html: intro.trim() }} />
+      <div className={introClassNames} dangerouslySetInnerHTML={{ __html: intro.trim() }} />
     )}
 
     {code && code !== '' && (

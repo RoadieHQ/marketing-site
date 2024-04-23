@@ -3,6 +3,7 @@ title: Azure DevOps
 publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure Azure DevOps to create a catalog item.
 
+category: catalog-source
 order: 2
 humanName: Azure DevOps
 examples:
