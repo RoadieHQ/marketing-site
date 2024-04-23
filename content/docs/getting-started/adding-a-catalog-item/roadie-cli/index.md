@@ -3,6 +3,7 @@ title: Roadie CLI
 publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure the Roadie CLI to create a catalog item.
 
+category: catalog-source
 order: 4
 humanName: Roadie CLI
 examples:

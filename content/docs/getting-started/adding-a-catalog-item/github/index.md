@@ -3,6 +3,7 @@ title: GitHub
 publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure the GitHub to create a catalog item.
 
+category: catalog-source
 order: 1
 humanName: GitHub
 examples:
@@ -92,19 +93,15 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 ![A link that says "Administration"](./administration-link.png)
 
-2. Click the Settings tab along the top of the Administration page.
+2. Click the Settings tab along the top of the Administration page and then GitHub under Integrations in the left sidebar
 
 ![A link that says "Settings"](./settings-link.png)
 
-3. Click on GitHub under Integrations in the left sidebar.
-
-![A link that says "Integrations"](./integrations-link.png)
-
-4. Open the GitHub accordion and click "Add GitHub App"
+3. Open the GitHub accordion and click "Add GitHub App"
 
 ![A button that says "Add GitHub App"](./add-github-app.png)
 
-5. Choose your GitHub organization and follow the steps to install the app.
+4. Choose your GitHub organization and follow the steps to install the app.
 
 ### Upload a catalog item to a repository
 
