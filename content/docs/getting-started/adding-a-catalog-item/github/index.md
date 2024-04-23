@@ -1,7 +1,7 @@
 ---
 title: GitHub
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: How to configure the GitHub to create a catalog item.
+description: You can store a catalog item as yaml in a code repository on GitHub and import it into the Roadie catalog.
 
 category: catalog-source
 order: 1
@@ -116,3 +116,9 @@ Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`
 ![Import](import.png)
 
 Now you can click on the entity link to visit the entity that you have just created.
+
+### Next Steps
+
+* [Configure auto-discovery](/docs/integrations/github-discovery/) so that Roadie can automatically discover and import catalog-info.yaml files.
+* [Use a scaffolder template](https://github.com/roadie-demo/getting-started/tree/main/scaffolder/register-new-component) to give users a streamlined interface that they can use to generate the YAML file you used earlier in this tutorial.
+* [Add a Tech Docs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.

@@ -1,7 +1,7 @@
 ---
 title: Azure DevOps
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: How to configure Azure DevOps to create a catalog item.
+description: You can store a catalog item as yaml in a code repository in Azure DevOps and import it into the Roadie catalog.
 
 category: catalog-source
 order: 2
@@ -112,5 +112,6 @@ Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`
 
 Now you can click on the entity link to visit the entity that you have just created.
 
-### Learn More
-At this point you may want to enable [auto discovery](/docs/integrations/azure-devops-provider/) using Azure DevOps, this allows Roadie to discover new catalog files as they are created.
+### Next Steps
+* At this point you may want to enable [auto discovery](/docs/integrations/azure-devops-provider/) using Azure DevOps, this allows Roadie to discover new catalog files as they are created.
+* [Add a Tech Docs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.

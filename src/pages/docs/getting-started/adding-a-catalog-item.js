@@ -99,7 +99,7 @@ const AddCatalogItemPage = ({ data, location }) => {
               {header.frontmatter.title}
             </Headline>
 
-            <CodeBlock introClassNames="prose-summary" language='html' intro={header.html} />
+            <CodeBlock language='html' intro={header.html} />
             <Sources sources={sources} />
           </article>
         )}
