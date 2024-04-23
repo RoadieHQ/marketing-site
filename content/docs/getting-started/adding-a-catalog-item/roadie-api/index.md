@@ -1,7 +1,7 @@
 ---
 title: Roadie API
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: How to configure the Roadie API to create a catalog item.
+description: You can import a catalog item into Roadie by calling it's API.
 
 category: catalog-source
 order: 5
@@ -131,4 +131,8 @@ Run the command you see on the right hand side to create the catalog item.
 
 ### Visit the created catalog item in Roadie
 
-After sending the 
+After sending the API call, you can find the Catalog item in the Roadie UI by visiting: `https://<tenant name>.roadie.so/catalog`, selecting the tab that represents the entity you created and then clicking the item name in the list.
+
+### Next Steps
+
+* [Write a scaffolder template](/docs/scaffolder/writing-templates/) to create or update software projects.

@@ -1,7 +1,7 @@
 ---
 title: AWS S3
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: How to configure Roadie to collect catalog items from AWS S3
+description: You can store a catalog item as yaml in an S3 bucket in AWS and import it into the Roadie catalog.
 
 category: catalog-source
 order: 3
@@ -151,3 +151,8 @@ Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`
 ![Import](./import.png)
 
 Now you can click on the entity link to visit the entity that you have just created.
+
+### Next Steps
+
+* [Add a Tech Docs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
+* [Write a scaffolder template](/docs/scaffolder/writing-templates/) to create or update software projects.

@@ -13,3 +13,9 @@ Roadie allows various ways to import items into its catalog. Each catalog item i
 We provide various ways to populate the catalog. Generally you will store entity files in a code repository and then provide Roadie with the URL of that file for it to be imported as a catalog entry. However you may also import a catalog item via the Roadie CLI or API.
 
 This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog.
+
+- **GitHub** - You can store a catalog item as yaml in a code repository on GitHub and import it into the Roadie catalog.
+- **Azure DevOps** - You can store a catalog item as yaml in a code repository in Azure DevOps and import it into the Roadie catalog.
+- **AWS S3** - You can store a catalog item as yaml in an S3 bucket in AWS and import it into the Roadie catalog.
+- **Roadie CLI** - You can import a catalog item into Roadie by calling it's API via the Roadie CLI.
+- **Roadie API** - You can import a catalog item into Roadie by calling it's API.
