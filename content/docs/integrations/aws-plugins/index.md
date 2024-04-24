@@ -14,6 +14,8 @@ Amazon Web Services have produced and open sourced their own plugins for the Bac
 
 This guide describes how to set up Roadie to use AWS account configurations and to enable AWS plugins.
 
+![running-cluster.png](running-cluster.png)
+
 
 ##  Step 1: Get the roadie IAM details
 
@@ -74,7 +76,7 @@ The permissions needed for ECS plugin to work and be able to list your ECS resou
 }
 ```
 
-The plugin exposes 2 annotations that can be used to identify the correct ECS Cluster information to display:
+The plugin exposes an annotation that can be used to point to the correct ECS Cluster information to display:
 
 ```yaml
 # Example
@@ -83,8 +85,7 @@ kind: Component
 metadata:
   # ...
   annotations:
-    aws.amazon.com/amazon-ecs-service-tags: component=myapp,environment=prod # services with the matching tags
-    aws.amazon.com/amazon-ecs-service-arn: arn:aws:ecs:us-west-2:1234567890:service/cluster1/myapp-service # specific ECS service by ARN
+    aws.amazon.com/amazon-ecs-service-arn: arn:aws:ecs:us-west-2:123456789012:service/cluster1/myapp-service # specific ECS service by ARN
   # ...
 ```
 
