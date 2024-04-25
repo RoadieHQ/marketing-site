@@ -15,6 +15,8 @@ For more information on these actions and others visit `/templates/actions` in y
 
 ## Template
 
+You can create a template with this content or import [from here](https://github.com/RoadieHQ/software-templates/blob/main/examples/azure-actions/template.yaml). 
+
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
