@@ -6,10 +6,10 @@ description: Clone a repo in Azure DevOps make changes, push and create a PR.
 
 ## Actions used
 
-- [`azure:repo:clone`](https://github.com/backstage/backstage/blob/54b9f073d13d878fce652c9ec8b8cdfc5fd85c6a/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/template.ts)
-- [`fetch:template`](https://github.com/backstage/backstage/blob/54b9f073d13d878fce652c9ec8b8cdfc5fd85c6a/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/rename.ts)
-- [`azure:repo:push`](https://github.com/backstage/backstage/blob/54b9f073d13d878fce652c9ec8b8cdfc5fd85c6a/plugins/scaffolder-backend/src/scaffolder/actions/builtin/publish/githubPullRequest.ts)
-- [`azure:repo:pr`](https://github.com/backstage/backstage/blob/54b9f073d13d878fce652c9ec8b8cdfc5fd85c6a/plugins/scaffolder-backend/src/scaffolder/actions/builtin/debug/log.ts)
+- [`azure:repo:clone`](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories)
+- `fetch:template`
+- [`azure:repo:push`](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories)
+- [`azure:repo:pr`](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories)
 
 For more information on these actions and others visit `/templates/actions` in your Roadie application.
 
