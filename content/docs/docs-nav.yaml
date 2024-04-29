@@ -6,14 +6,18 @@ plugins:
 
 nav:
   - Getting started:
-      - Adding a catalog item: '/docs/getting-started/adding-a-catalog-item/'
-      - Using TechDocs: '/docs/getting-started/technical-documentation/'
+      - Overview: '/docs/getting-started/overview/'
+      - Adding users:
+        - Inviting users: '/docs/getting-started/user-management/'
+        - Designating admins: '/docs/getting-started/create-admin-group/'
+        - Modelling Users and Groups: '/docs/getting-started/teams/'
+      - Setting up your catalog: '/docs/getting-started/adding-a-catalog-item/'
+      - Modelling your software: '/docs/getting-started/model-software/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
-      - Inviting users: '/docs/getting-started/user-management/'
-      - Designating admins: '/docs/getting-started/create-admin-group/'
-      - Modelling Users and Groups: '/docs/getting-started/teams/'
-      - Adding API specs: '/docs/getting-started/openapi-specs/'
-      - Scaffolding components: '/docs/getting-started/scaffolding-components/'
+      - Customising the Roadie UI: '/docs/getting-started/configure-ui/'
+      - Creating a scorecard: '/docs/getting-started/creating-a-scorecard/'
+      - Creating a template: '/docs/getting-started/scaffolding-components/'
+      - Adding documentation: '/docs/getting-started/technical-documentation/'
   - Backstage plugins:
       - Allure: '/docs/integrations/allure/'
       - Argo CD: '/docs/integrations/argocd/'
@@ -74,7 +78,7 @@ nav:
           - Using grpc-docs: '/docs/details/grpc-docs/'
       - Tech Docs:
           - Using Tech Docs in Roadie: '/docs/details/techdocs/'
-          - Build  TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
+          - Build TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
           - Troubleshooting TechDocs: '/docs/details/techdocs/troubleshooting/'
       - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
       - GitHub app permissions: '/docs/details/github-app-permissions/'
