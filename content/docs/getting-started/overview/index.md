@@ -21,7 +21,7 @@ We provide various ways to populate and model your software catalog.
 Generally you will store entity files in a code repository and then provide Roadie with the URL of that file for it to be imported as a catalog entry. However you may also import a catalog item via the Roadie CLI or API.
 
 - **GitHub** - You can store a catalog item as yaml in a code repository on GitHub and import it into the Roadie catalog.
-- **Azure** - You can store a catalog item as yaml in a code repository in Azure and import it into the Roadie catalog.
+- **Azure DevOps** - You can store a catalog item as yaml in a code repository in Azure DevOps and import it into the Roadie catalog.
 - **Bitbucket** - You can store a catalog item as yaml in a code repository in Bitbucket and import it into the Roadie catalog.
 - **AWS S3** - You can store a catalog item as yaml in an S3 bucket in AWS and import it into the Roadie catalog.
 - **Roadie CLI** - You can import a catalog item into Roadie by calling it's API via the Roadie CLI.
@@ -35,7 +35,7 @@ Generally you will store entity files in a code repository and then provide Road
 
 ## 3. [Installing plugins](/docs/getting-started/configuring-backstage-plugins/)
 
-Roadie supports many open-source Backstage plugins out of the box. See the[Plugins & Integrations](/docs/integrations/) page for a full list of supported plugins, and dedicated instructions for each one. The list of available plugins is also visible to admins in the Administration area.
+Roadie supports many open-source Backstage plugins out of the box. See the [Plugins & Integrations](/docs/integrations/) page for a full list of supported plugins, and dedicated instructions for each one. The list of available plugins is also visible to admins in the Administration area.
 
 ## 4. [Configuring the Roadie UI](/docs/getting-started/configure-ui/)
 
@@ -47,8 +47,8 @@ Roadie Tech Insights helps you keep track of all of your software assets and mak
 
 ## 6. [Creating a template](/docs/getting-started/scaffolding-components/)
 
-The Roadie Backstage Scaffolder is a feature that allows you to define software templates to create new software projects, update existing ones or simply perform repeated tasks in a consistent manner.
+Roadie Backstage Scaffolder allows you to define software templates to create new software projects, update existing ones or simply perform repeated tasks in a consistent manner. You can create your own templates, actions and field extensions to help automate common tasks.
 
 ## 7. [Adding your docs](/docs/getting-started/technical-documentation/)
 
-The Tech Docs feature of Roadie Backstage allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. Because this documentation is centralized in Backstage, it is more likely to be found and used by other people in your organization.
+Roadie Backstage TechDocs feature allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. Because this documentation is centralized in Backstage, it is more likely to be found and used by other people in your organization.

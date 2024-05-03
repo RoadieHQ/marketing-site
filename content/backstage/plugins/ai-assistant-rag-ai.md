@@ -1,7 +1,7 @@
 ---
 humanName: AI Assistant
 heading: 'Backstage AI Assistant - RAG AI Plugin'
-lead: 'A RAG AI plugin to contextualize your entities, tech docs, openAPI specs and tech insights data for LLM consumption.'
+lead: 'A RAG AI plugin to contextualize your entities, TechDocs, openAPI specs and tech insights data for LLM consumption.'
 attribution:
   text: RoadieHQ
   href: https://roadie.io/
@@ -10,7 +10,7 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Backstage AI Assistant - RAG AI | Roadie'
   description: |
-    A RAG AI plugin to contextualize your entities, tech docs, openAPI specs and tech insights data for LLM consumption.
+    A RAG AI plugin to contextualize your entities, TechDocs, openAPI specs and tech insights data for LLM consumption.
 
 logoImage: '../../assets/logos/rag/roadie-racks-ai.png'
 
@@ -212,7 +212,7 @@ The plugin exposes two main paths to enable retrieval-augmented generation assis
 
 ### Indexing
 
-The `@roadiehq/rag-ai-backend` plugin does not automatically generate Embeddings or index contexts of catalog items, instead it exposes an endpoint that allows you to configure either a periodical or event based embedding generation. This approach is taken to minimize the financial impact when calling potentially expensive third party LLM endpoints. Creating embeddings from large catalog items or tech docs maybe produce large amounts of data and make multiple calls to generate embeddings.
+The `@roadiehq/rag-ai-backend` plugin does not automatically generate Embeddings or index contexts of catalog items, instead it exposes an endpoint that allows you to configure either a periodical or event based embedding generation. This approach is taken to minimize the financial impact when calling potentially expensive third party LLM endpoints. Creating embeddings from large catalog items or TechDocs maybe produce large amounts of data and make multiple calls to generate embeddings.
 
 The ideal option to manage embeddings creation is to make them event based. They should be triggered when new information has been added into the system.
 

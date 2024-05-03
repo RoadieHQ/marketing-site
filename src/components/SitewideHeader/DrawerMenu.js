@@ -24,7 +24,7 @@ const subItems = [{
   to: '/product/scaffolder/',
   icon: PlusCircleIcon,
 }, {
-  name: 'Tech Docs: centralized yet distributed',
+  name: 'TechDocs: centralized yet distributed',
   to: '/product/documentation/',
   icon: BookOpenIcon,
 }, {

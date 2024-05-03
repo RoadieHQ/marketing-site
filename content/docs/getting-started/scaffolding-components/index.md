@@ -1,5 +1,5 @@
 ---
-title: Creating a template
+title: Creating a Scaffolder template
 publishedDate: '2021-11-24T14:00:00.0Z'
 description: How to create components such as services or websites using the Backstage scaffolder.
 ---
