@@ -6,11 +6,7 @@ description: Model your software
 
 ## Introduction
 
-Each 
-
-Backstage, the open source project upon which Roadie is built, has a strongly opinionated stance on the structure of a software catalog.
-
-We've built some flexibility into that model, but at it's core we still maintain concepts of: `entities`, `kinds`, `relations` and `types`, all stored in metadata about a given entity.
+Backstage, the open source project upon which Roadie is built, has an opinionated stance on the structure of a software catalog. We've built some flexibility into that model, but at it's core we still maintain concepts of: `entities`, `kinds`, `relations` and `types`, all stored in metadata about a given entity.
 
 ## Catalog Entities
 

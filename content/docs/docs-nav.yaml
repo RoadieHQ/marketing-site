@@ -7,17 +7,19 @@ plugins:
 nav:
   - Getting started:
       - Overview: '/docs/getting-started/overview/'
+      - Setting up your catalog:
+        - Adding to your catalog: '/docs/getting-started/adding-a-catalog-item/'
+        - Enable autodiscovery: '/docs/getting-started/autodiscovery/'
+        - Modelling your software: '/docs/getting-started/model-software/'
       - Adding users:
         - Inviting users: '/docs/getting-started/user-management/'
         - Designating admins: '/docs/getting-started/create-admin-group/'
         - Modelling Users and Groups: '/docs/getting-started/teams/'
-      - Setting up your catalog: '/docs/getting-started/adding-a-catalog-item/'
-      - Modelling your software: '/docs/getting-started/model-software/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
       - Customising the Roadie UI: '/docs/getting-started/configure-ui/'
       - Creating a scorecard: '/docs/getting-started/creating-a-scorecard/'
       - Creating a template: '/docs/getting-started/scaffolding-components/'
-      - Adding documentation: '/docs/getting-started/technical-documentation/'
+      - Adding your docs: '/docs/getting-started/technical-documentation/'
   - Backstage plugins:
       - Allure: '/docs/integrations/allure/'
       - Argo CD: '/docs/integrations/argocd/'
