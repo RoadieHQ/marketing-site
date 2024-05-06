@@ -65,6 +65,6 @@ annotations:
 
 ## References
 
-- [Splunk On-Call Backstage plugin](https://github.com/backstage/backstage/tree/master/plugins/splunk-on-call)
+- [Splunk On-Call Backstage plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/splunk/plugins/splunk-on-call)
 - [Splunk On-Call portal](https://portal.victorops.com)
 

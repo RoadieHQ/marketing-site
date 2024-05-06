@@ -185,4 +185,4 @@ Setting up a local server consist of the following steps:
 
 ## More information
 
-[Backstage Tech Radar plugin documentation](https://github.com/backstage/backstage/blob/master/plugins/tech-radar/README.md)
+[Backstage Tech Radar plugin documentation](https://github.com/backstage/community-plugins/tree/main/workspaces/tech-radar/plugins/tech-radar/README.md)

@@ -68,7 +68,7 @@ After you have set up props for your homepage card you should see card like this
 
 ## References
 
-- [Backstage Stackoverflow Plugin](https://github.com/backstage/backstage/tree/master/plugins/stack-overflow)
+- [Backstage Stackoverflow Plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/stack-overflow/plugins/stack-overflow)
 - [Official API token generation instructions](https://stackoverflow.help/en/articles/4385859-stack-overflow-for-teams-api)
 - [Stackoverflow API explorer docs](https://api.stackexchange.com/docs/)
 

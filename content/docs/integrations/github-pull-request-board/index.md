@@ -31,4 +31,4 @@ The plugin provides an UI component with a name `EntityTeamPullRequestsCard` whi
 
 ## References
 
-- [GitHub Pull Request Plugin in GitHub](https://github.com/backstage/backstage/tree/master/plugins/github-pull-requests-board)
+- [GitHub Pull Request Plugin in GitHub](https://github.com/backstage/community-plugins/tree/main/workspaces/github-pull-requests-board/plugins/github-pull-requests-board)
