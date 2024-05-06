@@ -45,6 +45,21 @@ We currently include the following MkDocs plugins in our build process:
 - [mkdocs-kroki-plugin](https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin) - A diagram library supporting multiple different diagram formats. See https://kroki.io/ for more information.
 
 
+**NB: To use these plugins you must include them in your `mkdocs.yml` file like so:**
+
+Generic Markdown plugins are listed under `markdown_extensions:` while MkDocs plugins are under `plugins:`
+
+```yaml
+...
+plugins:
+  - techdocs-core
+  - glightbox 
+markdown_extensions:
+  - markdown_inline_mermaid
+```
+
+Note that the [`techdocs-core`](https://github.com/backstage/mkdocs-techdocs-core?tab=readme-ov-file#mkdocs-plugins-and-extensions) plugin packages many of the above plugins already.
+
 ## Theme and Styling
 
 Backstage uses an opinionated theme based on [material-mkdocs](https://github.com/backstage/mkdocs-techdocs-core#theme).
@@ -76,6 +91,15 @@ By default, the structure of the docs pages will mirror that of the file system.
 page structure using the `nav` object in your `mkdocs.yaml`. Both approaches are described [here](https://www.mkdocs.org/user-guide/writing-your-docs/#file-layout).
 
 Similarly, MkDocs will determine a title for your document according to [these rules](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data).
+
+By default MkDocs will create a navigation menu where a menu item that has child pages will not link to the index page for that parent item. To fix this we have added a MkDocs plugin called `section-index`. To enable this plugin you can add it to the plugins list in the `mkdocs.yaml` file.
+
+
+```yaml
+plugins:
+  - section-index
+  - ...
+```
 
 ## Graphs and Diagrams
 
@@ -228,6 +252,44 @@ by the referenced file. For example, to include a file TEST.md at the root of ou
    ```markdown
    --8<-- "TEST.md"
    ```
+  
+## Emoji support
+
+Emojis can be used across Tech Docs using various different approaches. The most basic is adding them via emoji code inline to your title or body. 
+
+If you don't override the generated nav in your `mkdocs.yml` file you can add them to titles and they will appear in your nav. 
+
+```markdown
+# 😇 Emoji test
+```
+
+or 
+
+```markdown
+---
+title: 🤫 Nav title
+---
+
+# Something else
+```
+
+If you need an overridden nav, you can add them in the nav titles in your `mkdocs.yml` file like so:
+
+```yaml
+nav:
+  - First page: index.md
+  - 😇 Emoji test: test.md
+```
+
+## Embedding content using iframes
+
+You can embed most content inside Tech Docs using iframes which allows integration with most popular documentation, video and diagramming tools such as Microsoft Onedrive documents, Excel sheets and Powerpoint presentations. 
+
+*NB: The default embed code for Microsoft Docx and PPT iframes includes a link inside the iframe which must be removed for the iframe to render correctly.*
+
+TechDocs uses DOMPurify to strip away extraneous or potentially harmful HTML tags from the produced content. This includes iframes to URLs that are not on the list of sanctioned targets. 
+
+You can add domain names to be allowed in iframes within the Roadie settings section. Navigate to `Administration` -> `Settings` -> `Tech Docs` and add domains which you are comfortable to be included as iframes into your generated tech docs.
 
 
 ## Further reading

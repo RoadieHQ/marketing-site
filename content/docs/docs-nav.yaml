@@ -126,6 +126,7 @@ nav:
           - Using for loops in templates: '/docs/scaffolder/loops-in-templates'
           - Using for loops to repeat scaffolder steps: '/docs/scaffolder/loops-in-steps'
           - Assigning variables to the scaffolder context: '/docs/scaffolder/variables-in-scaffolder'
+          - Creating a PR to an Azure DevOps repository: '/docs/scaffolder/azure-actions'
   - Tech-Insights:
       - Introduction: '/docs/tech-insights/introduction/'
       - Data Sources:

@@ -17,35 +17,19 @@ const SEO_TITLE = 'Request a demo of Roadie Backstage';
 const SubmissionSuccessPositiveBody = () => (
   <>
     <p>
-      Thank you for requesting a demo of Roadie Backstage. We&apos;ll be in touch via the email
-      provided.
-    </p>
-
-    <p>
-      We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes
-      struggle to keep up with demand.
+      Thank you for requesting a demo of Roadie. We&apos;ll be in touch via the email provided.
     </p>
   </>
 );
 
 const SubmissionSuccessNegativeBody = ({ scmTool }) => (
   <>
-    {!scmTool.value.includes('gitlab') ? (
-      <>
-        <p>
-          Roadie support for {scmTool.label} is in beta. We&apos;ll email you to learn more about
-          your use case.
-        </p>
-        <p>
-          We&apos;ll try to be quick, but it may take us a few days to get back to you. We sometimes
-          struggle to keep up with demand.
-        </p>
-      </>
-    ) : (
+    {scmTool.value.includes('gitlab') && (
       <p>Roadie does not support GitLab at the moment. We&apos;ll email you as soon as we do.</p>
     )}
+
     <p>
-      Thank you for requesting a demo of Roadie Backstage, and hopefully you will hear from us soon.
+      Thank you for requesting a demo of Roadie. You will hear from us soon.
     </p>
   </>
 );
@@ -73,7 +57,7 @@ const RequestDemo = ({ data, location }) => {
         siteMetadata={data.site.siteMetadata}
         positiveTitle="We'll be in touch!"
         positiveBody={<SubmissionSuccessPositiveBody />}
-        negativeTitle="We're going to need a little more info"
+        negativeTitle="We'll be in touch!"
         negativeBody={<SubmissionSuccessNegativeBody scmTool={scmTool} />}
       />
 
@@ -82,10 +66,10 @@ const RequestDemo = ({ data, location }) => {
 
         <section className="relative max-w-xl mx-auto p-4 mt-5 pt-10 sm:px-10 lg:max-w-7xl">
           <Headline size="medium" className="leading-snug text-orange-600 relative z-10">
-            Discover Roadie Backstage
+            Discover Roadie
           </Headline>
           <h2 className="text-lg mt-3 lg:text-xl xl:text-xl font-bold relative z-10">
-            Get a fully featured Roadie demo from a Backstage expert.
+            Get a private Roadie demo from a Backstage expert.
           </h2>
           <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">
             <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">

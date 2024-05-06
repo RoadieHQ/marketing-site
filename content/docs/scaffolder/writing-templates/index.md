@@ -1811,9 +1811,60 @@ steps:
 
 The `debug:log` action does not have any outputs.
 
+## `azure:repo:clone`
+
+Clone a repo from Azure DevOps into the workspace. See input options [in the application](#other-actions)
+
+```yaml
+    - id: cloneAzureRepo
+      name: Clone Azure Repo
+      action: azure:repo:clone
+      input:
+        remoteUrl: "https://<MY_AZURE_ORGANIZATION>@dev.azure.com/<MY_AZURE_ORGANIZATION>/<MY_AZURE_PROJECT>/_git/<MY_AZURE_REPOSITORY>"
+        branch: "main"
+        targetPath: ./sub-directory
+```
+
+## `azure:repo:push`
+
+Push changes to an Azure repository. See input options [in the application](#other-actions)
+
+```yaml    
+    - id: pushAzureRepo
+      name: Push to Remote Azure Repo
+      action: azure:repo:push
+      input:
+        branch: <MY_AZURE_REPOSITORY_BRANCH>
+        sourcePath: ./sub-directory
+        gitCommitMessage: Add ${{ parameters.name }} project files
+```
+
+## `azure:repo:pr`
+
+Create a PR in Azure. See input options [in the application](#other-actions)
+
+```yaml
+    - id: pullRequestAzureRepo
+      name: Create a Pull Request to Azure Repo
+      action: azure:repo:pr
+      input:
+        sourceBranch: <MY_AZURE_REPOSITORY_BRANCH>
+        targetBranch: "main"
+        repoId: <MY_AZURE_REPOSITORY>
+        title: ${{ parameters.name }}
+        project: <MY_AZURE_PROJECT>
+        supportsIterations: false
+```
+
+### Other Actions
+
+You can find all the actions available to your Backstage instance by visiting the following page from within Backstage:
+
+`https://<tenant-name>.roadie.so/templates/actions`
+
 ### Conditional Steps
 
-You can conditionally execute a scaffolder based on an input parameter.
+You can conditionally execute a scaffolder action based on an input parameter.
 
 ```yaml
 steps:
@@ -1824,12 +1875,6 @@ steps:
     input:
       message: 'Hello, ${{ parameters.name }}!'
 ```
-
-### Other Actions
-
-You can find all the actions available to your Backstage instance by visiting the following page from within Backstage:
-
-`https://<tenant-name>.roadie.so/templates/actions`
 
 ## Advanced
 
