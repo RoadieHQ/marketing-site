@@ -25,6 +25,7 @@ nav:
       - CircleCI: '/docs/integrations/circleci/'
       - Confluence: '/docs/integrations/confluence/'
       - CodeCoverage: '/docs/integrations/codecoverage/'
+      - CodeScene: '/docs/integrations/codescene/'
       - Datadog: '/docs/integrations/datadog/'
       - Dynatrace: '/docs/integrations/dynatrace/'
       - FireHydrant: '/docs/integrations/firehydrant/'
