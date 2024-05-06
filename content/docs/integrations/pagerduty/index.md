@@ -10,13 +10,7 @@ integrationType: OSS plugin
 
 ## Introduction
 
-The PagerDuty Backstage plugin allows Roadie Backstage users to:
 
-1.  See who is on call for a particular catalog Component.
-2.  See if there are active incidents for a given catalog Component.
-3.  Create new incidents from Backstage.
-
-![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.png)
 
 ## At a Glance
 
@@ -25,10 +19,6 @@ The PagerDuty Backstage plugin allows Roadie Backstage users to:
 | Prerequisites | **Configuration Data:** <ul><li>API Token or OAuth Client Id and Secret</li><li>PagerDuty subdomain and region</li></ul> **Component Annotations:** <ul><li>Integration Key</li><li>Service Id</li></ul> |
 | Considerations |  |
 | **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Prerequisites
-
-In order to use the PagerDuty plugin, Roadie needs an API token or an OAuth application's credentials to be able to use the plugin inside Roadie.
 
 ### Setting up the plugin:
 
@@ -136,6 +126,16 @@ Commit and merge this change and the Roadie Backstage PagerDuty plugin should be
 #### 4. Add the PagerDuty card
 
 Navigate to the component you have added the annotation for and [add the PagerDuty card to the overview page](/docs/getting-started/configuring-backstage-plugins/#step-1-add-the-ui-component).
+
+#### 5. Card information
+
+The PagerDuty Backstage plugin allows Roadie Backstage users to:
+
+1. See who is on call for a particular catalog Component.
+2. See if there are active incidents for a given catalog Component.
+3. Create new incidents from Backstage.
+
+![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.png)
 
 ## References
 

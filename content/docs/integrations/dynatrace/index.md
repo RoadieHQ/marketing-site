@@ -66,4 +66,4 @@ Navigate to a Catalog Entity page as an administrator and add a new tab. The nam
 
 ## Resources:
 * [Dynatrace API Documentation](https://docs.dynatrace.com/docs/dynatrace-api/basics)
-* [Dynatrace open source plugin](https://github.com/backstage/backstage/tree/master/plugins/dynatrace)
+* [Dynatrace open source plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/dynatrace/plugins/dynatrace)

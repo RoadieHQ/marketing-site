@@ -37,4 +37,4 @@ In order to make requests to your Apache Airflow API, you must provide Roadie wi
 
 ## References
 
-- [Configuration docs for Backstage Apache Airflow plugin](https://github.com/backstage/backstage/tree/master/plugins/apache-airflow#configuration)
+- [Configuration docs for Backstage Apache Airflow plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/apache-airflow/plugins/apache-airflow#configuration)
