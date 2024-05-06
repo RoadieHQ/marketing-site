@@ -1,7 +1,10 @@
 const trackGoogleAnalyticsEvent = (eventName, eventParams) => {
-  return typeof window !== "undefined" && window.gtag("event", eventName, eventParams);
+  if (typeof window === 'undefined' || typeof window.gtag === 'undefined') {
+    return false;
+  }
+  return window.gtag('event', eventName, eventParams);
 };
 
-export const trackRequestDemo = () => trackGoogleAnalyticsEvent("request_demo");
-export const trackRequestTrial = () => trackGoogleAnalyticsEvent("request_trial");
-export const trackSubscribe = () => trackGoogleAnalyticsEvent("subscribe_newsletter");
+export const trackRequestDemo = (opts = {}) => trackGoogleAnalyticsEvent("request_demo", opts);
+export const trackRequestTrial = (opts = {}) => trackGoogleAnalyticsEvent("request_trial", opts);
+export const trackSubscribe = (opts = {}) => trackGoogleAnalyticsEvent("subscribe_newsletter", opts);
