@@ -4,7 +4,6 @@ import { FormSubmissionModal } from 'components/FormSubmissionModal';
 
 import CallToAction from './NetlifyFormCallToAction';
 import { FORM_NAMES } from '../../contactFormConstants';
-import { trackSubscribe } from '../../googleAnalytics';
 
 export const SubscribeToNewsletterSuccessModal = (props) => {
   return (
@@ -41,7 +40,6 @@ export const SubscribeToNewsletterCTA = ({ setModalOpen, ...props }) => (
       netlifyFormName={FORM_NAMES.subscribeToNewsletter}
       setModalOpen={(open) => {
         setModalOpen(open);
-        trackSubscribe();
       }}
       {...props}
     />

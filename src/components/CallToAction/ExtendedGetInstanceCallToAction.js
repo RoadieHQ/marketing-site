@@ -11,6 +11,7 @@ import {
 } from 'components';
 import { ScmToolSelect } from '../forms/ScmToolSelect';
 
+import trackPlausibleEvent from '../../plausible';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
 import { trackRequestTrial, trackSubscribe } from '../../googleAnalytics';
@@ -49,9 +50,21 @@ const submitToNetlifyForms = async ({
       method: 'POST',
       body: formData,
     });
-    trackRequestTrial();
+
+    trackRequestTrial({
+      name,
+      email,
+    });
+    trackPlausibleEvent(netlifyFormName, {
+      name,
+      email,
+    });
+
     if (subToNewsletter) {
-      trackSubscribe();
+      trackSubscribe({
+        name,
+        email,
+      });
     }
   } catch (error) {
     console.error('Submission failed', error, resp);

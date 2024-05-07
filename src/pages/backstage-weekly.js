@@ -11,7 +11,6 @@ import {
 import { FORM_NAMES } from '../contactFormConstants';
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
 import CoverImage from '../../content/assets/blog/list-cover-image-1.png';
-import { trackSubscribe } from '../googleAnalytics';
 
 const ImageIssue = ({ post }) => (
   <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
@@ -99,7 +98,6 @@ const BackstageWeekly = ({ data }) => {
           <NetlifyFormCallToAction
             setModalOpen={(open) => {
               setModalOpen(open);
-              trackSubscribe();
             }}
             buttonText="Join 1,500+ Backstage enthusiasts"
             netlifyFormName={FORM_NAMES.subscribeToNewsletter}

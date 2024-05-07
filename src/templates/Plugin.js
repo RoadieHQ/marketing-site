@@ -167,7 +167,11 @@ const PluginTemplate = ({ data }) => {
         </div>
 
         <div className="relative max-w-lg mx-auto lg:max-w-xl mt-24">
-          <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
+          <SubscribeToNewsletterCTA
+            setModalOpen={setModalOpen}
+            email={email}
+            setEmail={setEmail}
+          />
         </div>
       </main>
 
