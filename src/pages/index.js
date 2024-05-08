@@ -184,7 +184,6 @@ const SOLUTIONS = {
       title: 'Track engineering maturity and migrations',
       description:
         'Define engineering standards and initiatives that get checked automatically across your ecosystem.',
-      prompt: 'Coming soon',
       bullets: [
         {
           name: 'Find out which teams are experiencing challenges',
