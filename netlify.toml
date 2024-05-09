@@ -78,7 +78,7 @@
 
 [[redirects]]
   from = "/docs/getting-started/getting-started-for-admins/"
-  to = "/docs/getting-started/install-github-app/"
+  to = "/docs/getting-started/adding-a-catalog-item/"
   force = true
 
 [[redirects]]

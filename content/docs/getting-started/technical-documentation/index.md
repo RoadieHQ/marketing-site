@@ -1,5 +1,5 @@
 ---
-title: Using Tech Docs
+title: Adding your docs
 publishedDate: '2022-01-30T21:00:00.0Z'
 updatedAt: '2022-02-21T13:00:00.0Z'
 description: How to add technical documentation to components tracked in Backstage.

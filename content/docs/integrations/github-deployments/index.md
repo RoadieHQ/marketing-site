@@ -15,7 +15,7 @@ Credit: [Andrew Johnson](https://github.com/anderoo)
 
 
 ## Prerequisites
-- The [Roadie Github App installed](/docs/getting-started/install-github-app)
+- The [Roadie Github App installed](/docs/getting-started/adding-a-catalog-item)
 - A `github.com/project-slug` annotation present in your `catalog-info.yaml` file
 
 ## Adding the Plugin

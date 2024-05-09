@@ -16,7 +16,7 @@ This document explains how to use a different file name, customize the files tha
 
 ## Prerequisites
 
-- You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/install-github-app/)
+- You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/adding-a-catalog-item/)
 - You must be an Admin of Backstage
 
 ## Steps to add new auto discovery paths
