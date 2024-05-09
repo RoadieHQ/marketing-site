@@ -9,7 +9,7 @@ export const DOCS_LAYOUTS = [
   },
   {
     tabLabel: 'Getting started',
-    startPath: '/docs/getting-started/adding-a-catalog-item/',
+    startPath: '/docs/getting-started/overview/',
     isActiveMatch: /\/docs\/getting-started/,
     sidebarNavItemGroups: [sidebar.nav[0]],
   },
@@ -27,7 +27,7 @@ export const DOCS_LAYOUTS = [
   },
   {
     tabLabel: 'Custom Plugins',
-    startPath: '/docs/custom-plugins/getting-started/',
+    startPath: '/docs/custom-plugins/overview/',
     isActiveMatch: '/docs/custom-plugins/',
     sidebarNavItemGroups: [sidebar.nav[4]],
   },

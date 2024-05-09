@@ -1,5 +1,5 @@
 ---
-title: Modelling Users & Groups
+title: Modelling users & groups
 publishedDate: '2022-06-16T16:00:00.0Z'
 description: How to represent users and groups in Backstage and make ownership work.
 ---

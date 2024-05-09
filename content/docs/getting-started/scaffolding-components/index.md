@@ -1,14 +1,10 @@
 ---
-title: Scaffolding Components in Backstage
+title: Creating a Scaffolder template
 publishedDate: '2021-11-24T14:00:00.0Z'
 description: How to create components such as services or websites using the Backstage scaffolder.
 ---
 
 ## Introduction
-
-This tutorial will show you how to create a basic scaffolder template in Backstage.
-
-**You can find detailed docs on writing scaffolder templates [here](/docs/details/scaffolder/).**
 
 The Roadie Backstage Scaffolder is a feature that allows you to define software templates to create new software projects, update existing ones or simply perform repeated tasks in a consistent manner.
 
@@ -16,9 +12,13 @@ Scaffolder templates are defined in YAML files and loaded into the Backstage cat
 
 A Scaffolder template is then run on demand by the users of Backstage to execute the software template.
 
-## Prerequisite 
+**You can find detailed docs on writing all kinds of Scaffolder templates [here](/docs/details/scaffolder/).**
 
-You must have installed the GitHub App in order to use the Scaffolder. If you have not done this you can find the steps to do this [here](/docs/getting-started/adding-a-catalog-item/).
+## Example: Adding a component to the Catalog using the Scaffolder 
+
+As an example of what the Scaffodler can do, let's to create a basic scaffolder template in Backstage.
+
+In order to use the full range of tools and actions provided by the Scaffolder, Roadie must have access to your source code management tool. If you have not done this you can find the steps to do it [here](/docs/getting-started/adding-a-catalog-item/).
 
 ## Steps
 
@@ -26,11 +26,11 @@ You can either follow the text or the video, or both.
 
 <div style="position: relative; padding-bottom: 52.42718446601942%; height: 0;"><iframe src="https://www.loom.com/embed/da6159c4ca39458cb5ad03138612a5a3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-### Step 1. Enable and set up the scaffolder
+### Step 1. Enable and set up the Scaffolder
 
 Visit the `Administration > Settings > Scaffolder` and make sure the enabled check box is selected, press save and apply and restart. 
 
-Optionally you can also use the grouping functionality of Scaffolder templates from these settings. The scaffolder templates are grouped together if they contain tags defined in this section of settings.
+Optionally you can also use the grouping functionality of Scaffolder templates from these settings. The Scaffolder templates are grouped together if they contain tags defined in this section of settings.
 
 ### Step 2. Create a template.yaml file in a repository
 
@@ -104,8 +104,8 @@ After a couple of seconds you should see the "Task Activity" page with the outpu
 
 ![task-activity.png](./task-activity.png)
 
-## What Next? 
+## Next steps 
 
 You can see the full list of Scaffolder Tasks that we support at Roadie by visiting `https://<tenant-name>.roadie.so/templates/actions`
 
-You can find detailed docs on writing scaffolder templates [here](/docs/details/scaffolder/).
+You can find detailed docs on writing Scaffolder templates [here](/docs/details/scaffolder/).

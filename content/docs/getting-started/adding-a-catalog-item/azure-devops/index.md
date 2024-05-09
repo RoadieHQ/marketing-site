@@ -114,4 +114,4 @@ Now you can click on the entity link to visit the entity that you have just crea
 
 ### Next Steps
 * At this point you may want to enable [auto discovery](/docs/integrations/azure-devops-provider/) using Azure DevOps, this allows Roadie to discover new catalog files as they are created.
-* [Add a Tech Docs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
+* [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.

@@ -154,5 +154,5 @@ Now you can click on the entity link to visit the entity that you have just crea
 
 ### Next Steps
 
-* [Add a Tech Docs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
+* [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
 * [Write a scaffolder template](/docs/scaffolder/writing-templates/) to create or update software projects.

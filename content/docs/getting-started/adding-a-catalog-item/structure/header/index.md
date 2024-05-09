@@ -1,21 +1,7 @@
 ---
-title: Adding a catalog item
+title: Setting up your catalog
 publishedDate: '2022-04-23T14:00:00.0Z'
-description: Adding a catalog item
+description: Setting up your catalog
 
 category: header
 ---
-
-Roadie allows various ways to import items into its catalog. Each catalog item in Roadie is referred to as an "entity". Roadie supports 5 main kinds of entity: components; systems; domains; apis; and resources. Entity kinds are associated with one another using entity relations.
-
-![System Model](./system-model.png)
-
-We provide various ways to populate the catalog. Generally you will store entity files in a code repository and then provide Roadie with the URL of that file for it to be imported as a catalog entry. However you may also import a catalog item via the Roadie CLI or API.
-
-This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog.
-
-- **GitHub** - You can store a catalog item as yaml in a code repository on GitHub and import it into the Roadie catalog.
-- **Azure DevOps** - You can store a catalog item as yaml in a code repository in Azure DevOps and import it into the Roadie catalog.
-- **AWS S3** - You can store a catalog item as yaml in an S3 bucket in AWS and import it into the Roadie catalog.
-- **Roadie CLI** - You can import a catalog item into Roadie by calling it's API via the Roadie CLI.
-- **Roadie API** - You can import a catalog item into Roadie by calling it's API.

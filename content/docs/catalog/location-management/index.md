@@ -52,8 +52,8 @@ Azure DevOps autodiscovery can be configured to download catalog files from Azur
 
 Bitbucket autodiscovery works similarly to GitHub discovery. It can be configured to use glob patterns to find individual files with a specific file name pattern. To get a working autodiscovery with Bitbucket, a configuration of Bitbucket Integration must be defined. Documentation on how to set up the integration can be found from [here](https://backstage.io/docs/integrations/bitbucket/discovery).
 
-Roadie currently uses BitbucketDiscoveryProcessor for BitBucket discovery. This expects the autodiscovery information encoded in a url. The following
-describes the url format for BitBucket Cloud (reproduced from Backstage.io):
+Roadie currently uses BitbucketDiscoveryProcessor for Bitbucket discovery. This expects the autodiscovery information encoded in a url. The following
+describes the url format for Bitbucket Cloud (reproduced from Backstage.io):
 
 - The base URL for Bitbucket, `https://bitbucket.org`
 - The workspace name to scan (following the `workspaces/` path part), which must
@@ -119,7 +119,7 @@ Examples:
   will find all `catalog.yaml` files located anywhere within repositories starting with `service-`
   in projects starting with `api-` in the workspace `my-workspace`.
 
-The format is slightly different for BitBucket server. The url is composed of four parts (From Backstage.io):
+The format is slightly different for Bitbucket server. The url is composed of four parts (From Backstage.io):
 
 - The base instance URL, `https://bitbucket.mycompany.com` in this case
 - The project key to scan, which accepts \* wildcard tokens. This can simply be

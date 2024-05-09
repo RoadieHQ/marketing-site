@@ -39,7 +39,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Outdated documentation is often counterproductive. Roadie’s Tech Docs are markdown files that to live next to the code they document, so developers have it easier to update it. Roadie will go through your repos looking for documentation entries and bring them all into your Internal Developer Portal.',
+        'Outdated documentation is often counterproductive. Roadie’s TechDocs are markdown files that to live next to the code they document, so developers have it easier to update it. Roadie will go through your repos looking for documentation entries and bring them all into your Internal Developer Portal.',
       ],
     },
     {
@@ -88,7 +88,7 @@ const Home = ({ data }) => {
           </Headline>
 
           <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-            Roadie’s Tech Docs lets developers write docs alongside code, but read them in their Internal Developer Portal
+            Roadie’s TechDocs lets developers write docs alongside code, but read them in their Internal Developer Portal
           </h2>
 
           <Button
