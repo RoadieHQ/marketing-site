@@ -29,8 +29,6 @@ You'll need to attach policies to the role to be able to retrieve information ab
 
 For quick experimentation, you can use `AWS<ResourceType>ReadOnlyAccess` policies provided by AWS, but the best practice is to allow only specific needed operations.
 
-If you are using AWS CloudFormation, there is a linked CloudFormation template on the AWS Resources Configuration page which can be used to generate the needed assumable role.
-
 
 ##  Step 3: Configure your Roadie instance to use the new role
 
@@ -48,16 +46,18 @@ After the role configuration is done, you can click the 'Test Role' button to ch
 
 The table below lists the permissions required of the assumable role in order for the Catalog to ingest those resource types.
 
-| Resource             | Description                               | AWS Policy Action(s)                            |
-|----------------------|-------------------------------------------|-------------------------------------------------|
-| lambda-function      | AWS Lambda Functions                      | `lambda:ListFunctions`                          |
-| eks-cluster          | AWS Elastic Kubernetes Service Clusters   | `eks:ListClusters`, `eks:DescribeCluster`       |
-| s3-bucket            | AWS Simple Storage Service Buckets        | `s3:ListBucket`, `s3:ListAllMyBuckets`          |
-| dynamodb-table       | AWS DynamoDB tables                       | `dynamodb:ListTables`, `dynamodb:DescribeTable` |
-| ec2-instance         | AWS Elastic Compute Cloud instances       | `ec2:DescribeInstances`                         |
-| rds-db-instance      | AWS Relational Database Service instances | `rds:DescribeDBInstances`                       |
-| organization-account | AWS Organization Accounts                 | `organizations:ListAccounts`                    |
+| Resource             | Description                               | AWS Policy Action(s)                                                           |
+|----------------------|-------------------------------------------|--------------------------------------------------------------------------------|
+| lambda-function      | AWS Lambda Functions                      | `lambda:ListFunctions`, `lambda:ListTags`                                      |
+| eks-cluster          | AWS Elastic Kubernetes Service Clusters   | `eks:ListClusters`, `eks:DescribeCluster`                                      |
+| s3-bucket            | AWS Simple Storage Service Buckets        | `s3:ListBucket`, `s3:ListAllMyBuckets`, `s3:GetBucketTagging`                  |
+| dynamodb-table       | AWS DynamoDB tables                       | `dynamodb:ListTables`, `dynamodb:DescribeTable`, `dynamodb:ListTagsOfResource` |
+| ec2-instance         | AWS Elastic Compute Cloud instances       | `ec2:DescribeInstances`                                                        |
+| rds-db-instance      | AWS Relational Database Service instances | `rds:DescribeDBInstances`                                                      |
+| organization-account | AWS Organization Accounts                 | `organizations:ListAccounts`, `organizations:ListTagsForResource`              |
 
+
+The tagging functionality of AWS is used to determine the owner of each resource. By default, Roadie uses tag with a key `owner` to determine what value to use for the owner field of the generated entity. 
 
 You can expand the code snippet below to show an example policy document for the AWS role. You can add additional statement blocks into the policy document where multiple role policy actions are required.
 
