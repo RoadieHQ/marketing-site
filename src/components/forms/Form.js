@@ -10,13 +10,15 @@ const HoneypotField = ({ onChange, value }) => {
 
   return (
     <div className="hidden">
-      <label htmlFor={HONEYPOT_FIELD_NAME}></label>
-      <Input
-          name={HONEYPOT_FIELD_NAME}
-          id={HONEYPOT_FIELD_NAME}
-          value={value}
-          onChange={onChange}
-        />
+      <label htmlFor={HONEYPOT_FIELD_NAME}>
+        <Input
+            name={HONEYPOT_FIELD_NAME}
+            id={HONEYPOT_FIELD_NAME}
+            value={value}
+            onChange={onChange}
+          />
+      </label>
+      
     </div>
   );
 };
