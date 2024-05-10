@@ -6,7 +6,7 @@ description: Enable autodiscovery to populate your catalog
 
 ## Introduction
 
-Roadie can autodiscovery and ingest entities from a variety of sources:.
+Roadie can autodiscover and ingest entities from a variety of sources.
 
 ### Setting up autodiscovery
 
@@ -22,6 +22,7 @@ Select a source of truth for your entities to learn more. You can (and likely wi
   - [Backfill](/docs/integrations/initial-github-discovery/)
   - [Teams](/docs/integrations/github-teams/)
   - [Token](/docs/integrations/github-token/)
+- [GitLab](/docs/integrations/gitlab/)
 - [Google Cloud Platform](/docs/integrations/gcp/)
 - [Google OAuth](/docs/integrations/google-oauth-client/)
 - [Okta](/docs/integrations/aws-resources/)

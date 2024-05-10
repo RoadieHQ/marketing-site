@@ -1,11 +1,11 @@
 ---
-title: GitHub
+title: GitLab
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: You can store a catalog item as YAML in a code repository on GitHub and import it into the Roadie catalog.
+description: You can store a catalog item as YAML in a code repository in GitLab and import it into the Roadie catalog.
 
 category: catalog-source
-order: 1
-humanName: GitHub
+order: 4
+humanName: GitLab
 examples:
   - name: Component
     language: yaml
@@ -85,40 +85,33 @@ examples:
         owner: artist-relations-team
 ---
 
-### Install the GitHub App
+###  Generate GitLab personal access token (PAT)
 
-Installing the GitHub App will allow Roadie to access the YAML metadata files that Backstage needs to operate. Learn more about the [permissions required](/docs/integrations/github-app-permissions/).
+In your GitLab instance navigate to your User Settings > Access Tokens page. In GitLab cloud the URL is `https://gitlab.com/-/profile/preferences`. Within this page you can generate a token to grant Roadie access to read your entity manifest files.
 
-1. Click the Administration link in the bottom left of the application.
+1. Click 'Add new token'
+2. Create an access token with _at least_ permissions `api`, `read_repository`, `write_repository`.
 
-![A link that says "Administration"](./administration-link.png)
+![GitLab](./gitlab-token-opts.png)
 
-2. Click the Settings tab along the top of the Administration page and then GitHub under Integrations in the left sidebar
+### Store Azure access token as a secret in Roadie
 
-![A link that says "Settings"](./settings-link.png)
+Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` and locate a secret with a name `GITLAB_TOKEN`. Update the value of this secret with the token created in the step above.
 
-3. Open the GitHub accordion and click "Add GitHub App"
+### Create a catalog file in code repository
 
-![A button that says "Add GitHub App"](./add-github-app.png)
-
-4. Choose your GitHub organization and follow the steps to install the app.
-
-### Upload a catalog item to a repository
-
-In one of the GitHub repos in your project create a `catalog-info.yaml` with the contents shown in the panel on the right.
+In one of the GitLab repos in your project create a `catalog-info.yaml` with the contents shown in the panel on the right.
 
 ### Import the catalog file
 
-Copy the URL of the catalog file you created by visiting the file in your browser and copying the url from the location bar. The URL may look like this: `https://github.com/<org-name>/<repo-name>/blob/<branch-name>/catalog-info.yaml`.
+Copy the URL of the catalog file you created by visiting the file in your browser and copying the url from the location bar. The URL may look like this: `https://gitlab.com/<group-name>/<project-name>/-/blob/main/catalog-info.yaml?ref_type=heads`.
 
 Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
 
-![Import](import.png)
+![import.png](import.png)
 
 Now you can click on the entity link to visit the entity that you have just created.
 
 ### Next Steps
-
-* [Configure auto-discovery](/docs/integrations/github-discovery/) so that Roadie can automatically discover and import catalog-info.yaml files.
-* [Use a scaffolder template](https://github.com/roadie-demo/getting-started/tree/main/scaffolder/register-new-component) to give users a streamlined interface that they can use to generate the YAML file you used earlier in this tutorial.
+* At this point you may want to enable [auto discovery](/docs/integrations/gitlab-provider/) using GitLab, this allows Roadie to discover new catalog files as they are created.
 * [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.

@@ -1,7 +1,7 @@
 ---
 title: Roadie CLI
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: You can import a catalog item into Roadie by calling it's API via the Roadie CLI.
+description: You can import a catalog item into Roadie by calling its API via the Roadie CLI.
 
 category: catalog-source
 order: 4

@@ -36,7 +36,7 @@ Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` an
 
 The updating of secrets within the Roadie application takes a few minutes. You will see the status of the secret change when it becomes available.
 
-##  Step 3: Configure your Roadie instance to use Azure DevOps as a source to retrieve entities
+##  Step 4: Configure your Roadie instance to use Azure DevOps as a source to retrieve entities
 
 Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/azure`.
    ![Azure Autodiscovery options](./azure-autodiscovery.png)

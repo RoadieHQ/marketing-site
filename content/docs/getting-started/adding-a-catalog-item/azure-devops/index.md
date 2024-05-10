@@ -1,7 +1,7 @@
 ---
 title: Azure DevOps
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: You can store a catalog item as yaml in a code repository in Azure DevOps and import it into the Roadie catalog.
+description: You can store a catalog item as YAML in a code repository in Azure DevOps and import it into the Roadie catalog.
 
 category: catalog-source
 order: 2

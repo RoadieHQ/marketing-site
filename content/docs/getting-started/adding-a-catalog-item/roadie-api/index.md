@@ -1,7 +1,7 @@
 ---
 title: Roadie API
 publishedDate: '2022-04-04T14:00:00.0Z'
-description: You can import a catalog item into Roadie by calling it's API.
+description: You can import a catalog item into Roadie by calling its API.
 
 category: catalog-source
 order: 5
