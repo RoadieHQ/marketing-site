@@ -103,6 +103,7 @@ nav:
       - Developing: '/docs/custom-plugins/developing/'
       - Registering Plugins: '/docs/custom-plugins/plugin-registration/'
       - Deploying: '/docs/custom-plugins/deploying/'
+      - Testing: '/docs/custom-plugins/testing/'
       - Available APIs: '/docs/custom-plugins/available-apis/'
       - Connecting Back to Your Network:
           - Proxy: '/docs/custom-plugins/connectivity/proxy'
