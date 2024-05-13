@@ -22,7 +22,11 @@ validator:
     - 'catalog-*.yaml'
 ```
 
+## Schemas
+The validator is based on the published [Backstage schemas](https://backstage.io/docs/features/software-catalog/descriptor-format) which can be referred to in the Backstage docs.
+
 ## Further reading
 
 1. The [Backstage Entity Validator repository](https://github.com/RoadieHQ/backstage-entity-validator).
+2. [Backstage Entity Schemas](https://backstage.io/docs/features/software-catalog/descriptor-format)
 
