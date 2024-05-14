@@ -173,6 +173,7 @@ nav:
       - Validating catalog files: '/docs/catalog/validator/'
       - Ownership: '/docs/catalog/ownership/'
       - Repositories: '/docs/catalog/repositories/'
+      - Custom tabs: '/docs/catalog/custom-views'
   - API:
       - Authorization: '/docs/api/authorization'
       - Catalog: '/docs/api/catalog'
