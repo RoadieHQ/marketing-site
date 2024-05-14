@@ -4,7 +4,7 @@ publishedDate: '2022-04-04T14:00:00.0Z'
 description: You can store a catalog item as yaml in an S3 bucket in AWS and import it into the Roadie catalog.
 
 category: catalog-source
-order: 3
+order: 4
 humanName: AWS S3
 examples:
   - name: Component

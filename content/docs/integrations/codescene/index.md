@@ -42,4 +42,4 @@ on the secrets page.
 
 ## More information:
 
-* [CodeScene plugin](https://github.com/backstage/backstage/tree/master/plugins/codescene)
+* [CodeScene plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/codescene/plugins/codescene)
