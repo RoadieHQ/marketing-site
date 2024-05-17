@@ -15,7 +15,7 @@ useful where the entity spec contains custom fields.
 
 * Firstly, determine which entity fields you wish to display.
 * Add the `EntityMetadataCard` to a dashboard in the catalog UI. See [Instructions](../../getting-started/configure-ui#updating-dashboards)
-* Click the [add props](https://roadie.io/docs/details/updating-the-ui/#adding-props) icon and then click "New Row" under
+* Click the [add props](../../details/updating-the-ui#adding-props) icon and then click "New Row" under
   metadata. Select the field you wish to display and give it a display name.
   ![select-field](./select-field.png)
 * Repeat for any other fields you wish to display
