@@ -34,8 +34,8 @@ Then scroll down and add the client secret in the secrets section:
 ### Step 2 - Add a DQL query (optional)
 
 If you'd like to display a DQL query in the catalog you'll need to add the query here in settings. Click 'Add Item' under
-queries and enter a ID and a query e.g. "fetch events" then click "Save" below. Record the ID as you'll need this later for this reason it's a good
-idea to use a meaningful string as an ID e.g. "fetch-events":
+queries and enter an ID and a query e.g. "fetch events" then click "Save" below. Record the ID as you'll need this later. 
+For this reason it's a good idea to use a meaningful string as an ID e.g. "fetch-events":
 
 ![add-query](./add-query.png)
 
@@ -49,13 +49,12 @@ annotations to your entities. See [this guide](https://github.com/Dynatrace/back
 
 ### Step 4 - Add the cards to the catalog
 
-If you completed step 2 then add `EntityDqlQueryCard` to the catalog. Remember to add the query ID prop by clicking the
+* If you completed step 2 then add `EntityDqlQueryCard` to the catalog. Remember to add the query ID prop by clicking the
 wrench icon and enter a value with the format `custom.<query-id>` e.g. `custom.fetch-events`. The query ID is the value
 recorded in step 2.
+  ![edit-props](./edit-props.png)
 
-![edit-props](./edit-props.png)
-
-If you completed step 3 then add `EntityKubernetesDeploymentsCard`.
+* If you completed step 3 then add `EntityKubernetesDeploymentsCard`.
 
 See [updating the UI](/docs/details/updating-the-ui/) for instructions on how to add cards.
 
