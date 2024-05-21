@@ -151,7 +151,7 @@ const CustomerLogoCloud = ({ logos = LOGOS }) => (
   <div className="bg-white">
     <div className="max-w-7xl mx-auto py-12 lg:py-32 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-8 sm:mb-12 text-gray-600">
-        <p>Providing Backstage to</p>
+        <p>Trusted by companies like</p>
       </div>
 
       <div className="grid grid-cols-2 gap-8 md:grid-cols-4">

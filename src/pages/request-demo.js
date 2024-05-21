@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
-import { FAQs } from 'components/landing';
+import { FAQs, CustomerLogoCloud } from 'components/landing';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { SCM_TOOLS } from '../contactFormConstants';
@@ -116,6 +116,8 @@ const RequestDemo = ({ data, location }) => {
             id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
           />
         </section>
+
+        <CustomerLogoCloud />
 
         <FAQs />
         <SitewideFooter />
