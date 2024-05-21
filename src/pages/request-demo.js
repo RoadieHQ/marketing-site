@@ -68,9 +68,15 @@ const RequestDemo = ({ data, location }) => {
           <Headline size="medium" className="leading-snug text-orange-600 relative z-10">
             Discover Roadie
           </Headline>
+
           <h2 className="text-lg mt-3 lg:text-xl xl:text-xl font-bold relative z-10">
             Get a private Roadie demo from a Backstage expert.
           </h2>
+
+          <p>
+            Ask us about security, costs, how you can customize Roadie and how integrations work.
+          </p>
+
           <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">
             <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">
               <RequestDemoCallToAction
