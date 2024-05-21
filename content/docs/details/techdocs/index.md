@@ -43,7 +43,7 @@ We currently include the following MkDocs plugins in our build process:
 - [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) - displays images, iframes, inline content and videos
 - [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid) - generates diagrams from markdown-like text.
 - [mkdocs-kroki-plugin](https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin) - A diagram library supporting multiple different diagram formats. See https://kroki.io/ for more information.
-
+- [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) - Allows you to render a whole doc with all pages so that you can export it to PDF or HTML via the browser.
 
 **NB: To use these plugins you must include them in your `mkdocs.yml` file like so:**
 
@@ -100,6 +100,11 @@ plugins:
   - section-index
   - ...
 ```
+
+## Exporting and printing
+You can use the [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) to build a single page view of your doc with all pages, that you can then use to export to PDF or HTML via your browser. 
+
+This can be useful for auditing purposes or to share docs with someone that does not have access to Roadie.
 
 ## Graphs and Diagrams
 
