@@ -92,7 +92,7 @@ To learn how to set up a cross-account role, [see our documentation](/docs/integ
 
 ## What about custom plugins?
 
-Roadie allows Growth Plan customers to [write their own native Backstage frontend plugins](/docs/custom-plugins/configuring/) and use them on our platform. These plugins frequently need to connect back to the customer network in order to load data from internal systems.
+Roadie allows Growth Plan customers to [write their own native Backstage frontend plugins](/docs/custom-plugins/overview/) and use them on our platform. These plugins frequently need to connect back to the customer network in order to load data from internal systems.
 
 If the customer’s systems are exposed on the public internet and protected by either Oauth2 or token authentication, then the Oauth2 and proxy methodologies discussed above will work for securely loading data.
 
