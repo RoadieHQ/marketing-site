@@ -10,22 +10,25 @@ import {
 } from 'components/CallToAction/SubscribeToNewsletter';
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 
-const PluginCTA = ({ plugin, overrideTitle }) => (
-  <div className="docs-cta my-6">
-    <h3 className="docs-cta__title">
-      {overrideTitle
-        ? overrideTitle
-        : plugin.frontmatter.availableOnRoadie
-        ? `See the ${plugin.frontmatter.humanName} Backstage plugin in action`
-        : `Skip the manual plugin installation with no-code Backstage`}
-    </h3>
-    <Button
-      link={true}
-      color="primary"
-      size="small"
-      to={`/request-demo/?utm_source=roadie-marketplace&utm_campaign=${plugin.frontmatter.humanName}`}
-      text={'Request a Roadie demo'}
-    />
+const PluginCTA = ({ plugin }) => (
+  <div className="docs-cta my-6 lg:flex justify-between">
+    <div>
+      <h3 className="docs-cta__title text-center lg:text-left">
+        Set up Backstage in minutes instead of weeks <span className="hidden lg:inline">with Roadie</span>
+      </h3>
+      <p className="hidden lg:block">
+        Focus on using Backstage, rather than building and maintaining it.
+      </p>
+    </div>
+    <div className="text-center">
+      <Button
+        link={true}
+        color="primary"
+        size="large"
+        to={`/request-demo/?utm_source=roadie-marketplace&utm_campaign=${plugin.frontmatter.humanName}`}
+        text="I want to go faster"
+      />
+    </div>
   </div>
 );
 
@@ -163,7 +166,8 @@ const PluginTemplate = ({ data }) => {
               />
             </>
           )}
-          <PluginCTA plugin={plugin} overrideTitle="Prefer a no-code Backstage setup?" />
+
+          <PluginCTA plugin={plugin} />
         </div>
 
         <div className="relative max-w-lg mx-auto lg:max-w-xl mt-24">
