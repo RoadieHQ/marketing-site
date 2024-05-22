@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
-import { FAQs } from 'components/landing';
+import { FAQs, CustomerLogoCloud } from 'components/landing';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
 import { SCM_TOOLS } from '../contactFormConstants';
@@ -68,9 +68,15 @@ const RequestDemo = ({ data, location }) => {
           <Headline size="medium" className="leading-snug text-orange-600 relative z-10">
             Discover Roadie
           </Headline>
+
           <h2 className="text-lg mt-3 lg:text-xl xl:text-xl font-bold relative z-10">
             Get a private Roadie demo from a Backstage expert.
           </h2>
+
+          <p>
+            Ask us about security, costs, customization, integrations, or anything else you want to know.
+          </p>
+
           <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">
             <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">
               <RequestDemoCallToAction
@@ -116,6 +122,8 @@ const RequestDemo = ({ data, location }) => {
             id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
           />
         </section>
+
+        <CustomerLogoCloud />
 
         <FAQs />
         <SitewideFooter />

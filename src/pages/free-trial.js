@@ -4,7 +4,7 @@ import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'compo
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from '../contactFormConstants';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
-import { FAQs } from 'components/landing';
+import { FAQs, CustomerLogoCloud } from 'components/landing';
 import Avatar from '../components/landing/Testimonials/Avatar';
 
 import enriqueAvatar from '../../content/assets/home/testimonial/enrique-contentful/enrique-avatar.webp';
@@ -72,9 +72,15 @@ const RequestTrial = ({ data, location }) => {
           <Headline size="medium" className="leading-snug text-orange-600 relative z-10">
             Try out Roadie Backstage
           </Headline>
+
           <h2 className="text-lg mt-3 lg:text-xl xl:text-xl font-bold relative z-10">
             Get a first-hand experience of Roadie Backstage.
           </h2>
+
+          <p>
+            See how Roadie can improve engineering discoverability and standardization.
+          </p>
+
           <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">
             <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">
               <ExtendedGetInstanceCallToAction
@@ -123,6 +129,7 @@ const RequestTrial = ({ data, location }) => {
           />
         </section>
 
+        <CustomerLogoCloud />
         <FAQs />
         <SitewideFooter />
       </div>
