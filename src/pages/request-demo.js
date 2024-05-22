@@ -74,7 +74,7 @@ const RequestDemo = ({ data, location }) => {
           </h2>
 
           <p>
-            Ask us about security, costs, how you can customize Roadie and how integrations work.
+            Ask us about security, costs, customization, integrations, or anything else you want to know.
           </p>
 
           <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">
