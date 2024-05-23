@@ -2,13 +2,13 @@ import React from 'react';
 import TextLink from 'components/TextLink';
 import editOnGitHubUrl from '../../../editOnGitHubUrl';
 
-const EditOnGitHubLink = ({ siteMetadata, plugin: node }) => {
+const EditOnGitHubLink = ({ siteMetadata, plugin: node, text = 'Update these instructions' }) => {
   return (
     <TextLink
       to={editOnGitHubUrl({ siteMetadata, node, nodeSourcePath: '/content/backstage/plugins' })}
       color="primary"
     >
-      Update these instructions
+      {text}
     </TextLink>
   );
 };

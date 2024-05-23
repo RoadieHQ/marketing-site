@@ -10,7 +10,7 @@ attribution:
 seo:
   title: 'Backstage Bitrise Plugin | Roadie'
   description: |
-    View a summary of your component's Bitrise builds right in Backstage.
+    Bitrise Backstage Plugin to see your components builds inside Backstage. Also displays Biterise workflows.
 
 logoImage: '../../assets/logos/bitrise/bitrise-logo.png'
 coverImage: '../../assets/backstage/plugins/bitrise/bitrise-in-backstage.png'

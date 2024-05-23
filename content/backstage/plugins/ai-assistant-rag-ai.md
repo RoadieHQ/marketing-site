@@ -10,7 +10,7 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Backstage AI Assistant - RAG AI | Roadie'
   description: |
-    A RAG AI plugin to contextualize your entities, TechDocs, openAPI specs and tech insights data for LLM consumption.
+    A RAG AI Backstage plugin to contextualize entities, TechDocs, openAPI specs and Tech Insights data for LLM consumption.
 
 logoImage: '../../assets/logos/rag/roadie-racks-ai.png'
 
