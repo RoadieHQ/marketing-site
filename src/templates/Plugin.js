@@ -51,6 +51,14 @@ const HostTabs = ({ docsLink }) => (
   </nav>
 );
 
+const hasExitIntentModalBeenShownBefore = () => {
+  return localStorage.getItem('exitIntentModalHasBeenShown') || false;
+};
+
+const recordExitIntentModalHasBeenShown = () => {
+  return localStorage.setItem('exitIntentModalHasBeenShown', true);
+};
+
 const PluginTemplate = ({ data }) => {
   const {
     plugin,
@@ -66,6 +74,13 @@ const PluginTemplate = ({ data }) => {
     setEmail('');
   };
 
+  const handleOpenExitIntentModal = () => {
+    if (!hasExitIntentModalBeenShownBefore()) {
+      setExitIntentModalOpen(true);
+      recordExitIntentModalHasBeenShown();
+    }
+  };
+
   const handleCloseExitIntentModal = () => {
     setExitIntentModalOpen(false);
   };
@@ -75,7 +90,7 @@ const PluginTemplate = ({ data }) => {
   });
 
   usePageLeave(() => {
-    setExitIntentModalOpen(true);
+    handleOpenExitIntentModal();
   });
 
   return (
