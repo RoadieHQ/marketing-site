@@ -9,7 +9,7 @@ attribution:
 seo:
   title: 'Backstage Apache Airflow Plugin | Roadie'
   description: |
-    The Backstage Apache Airflow plugin serves as frontend to the REST API exposed by Apache Airflow to show
+    The Apache Airflow Backstage plugin is as frontend to the REST API exposed by Apache Airflow. It show
     Apache Airflow's information inside Backstage.
 
 logoImage: '../../assets/logos/apache-airflow/apache-airflow-logo.png'

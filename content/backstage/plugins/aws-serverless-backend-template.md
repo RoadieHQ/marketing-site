@@ -11,7 +11,7 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Scaffolder Tasks - AWS API using Lambda | Roadie'
   description: |
-    This plugin adds a template to Backstage that creates a AWS Serverless backend. It creates the stack definition using Serverless stack and creates the GitHub actions to deploy the application in an AWS account.
+    Backstage scaffolder template to create an AWS Serverless Backend.
 
 logoImage: '../../assets/logos/scaffolder-templates/sst.png'
 

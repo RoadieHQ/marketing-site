@@ -10,7 +10,7 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Backstage API Docs Plugin | Roadie'
   description: |
-    Components to discover and display API entities as an extension to the catalog plugin.
+    Backstage Plugin to discover and display API specs and entities as an extension to the catalog plugin.
 
 logoImage: '../../assets/logos/api-docs/logo-docs.png'
 

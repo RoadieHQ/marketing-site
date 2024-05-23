@@ -10,7 +10,7 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Backstage AWS Lambda Plugin | Roadie'
   description: |
-    See AWS Lambda functions for your components in Backstage.
+    AWS Lambda Backstage plugin to see AWS Lambda functions for your components in Backstage.
 
 logoImage: '../../assets/logos/aws-lambda/logo-lambda.png'
 

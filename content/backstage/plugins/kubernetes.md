@@ -10,7 +10,7 @@ attribution:
 seo:
   title: 'Backstage Kubernetes Plugin | Roadie'
   description: |
-    Visualize your services no matter how or where those services are deployed.
+    The Kubernetes plugin for Backstage lets you visualize your serices in Kubernetes. Learn how to integrate and use it.
 
 logoImage: '../../assets/logos/kubernetes/logo-kubernetes.png'
 
