@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import usePageLeave from 'react-use/lib/usePageLeave';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { Button, Title, CodeBlock, SEO, SitewideHeader, SitewideFooter } from 'components';
+import { Button, Title, CodeBlock, SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import {
   SubscribeToNewsletterSuccessModal,
@@ -50,6 +51,14 @@ const HostTabs = ({ docsLink }) => (
   </nav>
 );
 
+const hasExitIntentModalBeenShownBefore = () => {
+  return localStorage.getItem('exitIntentModalHasBeenShown') || false;
+};
+
+const recordExitIntentModalHasBeenShown = () => {
+  return localStorage.setItem('exitIntentModalHasBeenShown', true);
+};
+
 const PluginTemplate = ({ data }) => {
   const {
     plugin,
@@ -58,14 +67,30 @@ const PluginTemplate = ({ data }) => {
 
   const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
   const handleCloseModal = () => {
     setModalOpen(false);
     setEmail('');
   };
 
+  const handleOpenExitIntentModal = () => {
+    if (!hasExitIntentModalBeenShownBefore()) {
+      setExitIntentModalOpen(true);
+      recordExitIntentModalHasBeenShown();
+    }
+  };
+
+  const handleCloseExitIntentModal = () => {
+    setExitIntentModalOpen(false);
+  };
+
   useEffect(() => {
     Prism.highlightAll();
+  });
+
+  usePageLeave(() => {
+    handleOpenExitIntentModal();
   });
 
   return (
@@ -77,6 +102,11 @@ const PluginTemplate = ({ data }) => {
         handleCloseModal={handleCloseModal}
         siteMetadata={data.site.siteMetadata}
         email={email}
+      />
+
+      <ExitIntentModal
+        modalOpen={exitIntentModalOpen}
+        handleCloseModal={handleCloseExitIntentModal}
       />
 
       <SitewideHeader />
