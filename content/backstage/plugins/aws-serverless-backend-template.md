@@ -1,5 +1,5 @@
 ---
-humanName: 'Scaffolder Templates: AWS Serverless Backend'
+humanName: 'Serverless Backend Scaffolder Template'
 heading: 'Backstage Scaffolder Task to create an AWS Serverless Backend'
 # Keep it short
 lead: 'Create AWS Serverless Backend'
