@@ -102,9 +102,13 @@ plugins:
 ```
 
 ## Exporting and printing
-You can use the [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) to build a single page view of your doc with all pages, that you can then use to export to PDF or HTML via your browser. 
+You can use the [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) to build a single page view of your doc with all pages, that you can then use to export to PDF or HTML via your browser.
 
 This can be useful for auditing purposes or to share docs with someone that does not have access to Roadie.
+
+You can remove the Table of Contents from the export using the cog icon on the top right of the docs page to hide it. 
+
+NB: This plugin requires each page to have an H1 header - [see currently open issue](https://github.com/timvink/mkdocs-print-site-plugin/issues/94)
 
 ## Graphs and Diagrams
 
