@@ -1,12 +1,8 @@
 import Modal from 'react-modal';
 
-export const modalStyles = ({
-  maxWidth = 860,
-  marginTop = '80px',
-  overlayOpacity = 0.58,
-} = {}) => ({
+export const modalStyles = ({ maxWidth = 860 } = {}) => ({
   overlay: {
-    backgroundColor: `rgba(0, 0, 0, ${overlayOpacity})`,
+    backgroundColor: 'rgba(0, 0, 0, 0.58)',
     // Otherwise the <SitewideHeader /> is on top of the overlay.
     zIndex: 20,
   },
@@ -18,7 +14,7 @@ export const modalStyles = ({
     right: 'auto',
     bottom: 'auto',
     maxWidth,
-    margin: `${marginTop} auto`,
+    margin: '80px auto',
     padding: 0,
     border: 0,
   },

@@ -15,5 +15,4 @@ module.exports = {
   COLORS_PRIMARY_600: '#ea580c',
   COLORS_GRAY_500: '#737373',
   BREAKPOINTS_MD: '768px',
-  BREAKPOINTS_LG: '1024px',
 };
