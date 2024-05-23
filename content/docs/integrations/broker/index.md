@@ -40,6 +40,7 @@ The broker connection itself keeps an open websocket identified by a broker toke
 This way Roadie does not need to have knowledge or access of your infrastructure endpoints nor authorization tokens. 
 
 ## Configuration
+
 ### Enabling broker connection
 
 You can visit the settings page fro the broker at the following url in the application. `https://<your-tenant>.roadie.so/administration/settings/integrations/broker` 
@@ -50,18 +51,19 @@ You can also test the broker client connections mentioned below from the setting
 
 ### Configuring Broker client
 
-There are three ways to run the broker client application:
+There are several ways to run the broker client application in your infrastructure:
 
-- Run one of the pre configured docker containers provided by roadie
-- Run the broker client nodejs application
-- Build a custom docker container
+- Deploy a pre-configured Docker container into a Kubernetes cluster using a Helm chart
+- Deploy one of the pre-configured Docker containers provided by Roadie 
+- Run the broker client NodeJS application
+- Build a custom Docker container
 
 #### Roadie Docker Containers
-Roadie provides pre configured docker containers containing pre-configured broker clients for use with backstage. At time of writing, we are providing a container image for kubernetes and sonarqube.
+Roadie provides pre-configured Docker containers containing pre-configured broker clients for use with backstage. At time of writing, we are providing container images for Kubernetes, Sonarqube, Jenkins, Cost Insights and ArgoCD. These can be found on [GitHub here](https://github.com/RoadieHQ/roadie-agent/tree/main/dockerfiles)
 
 You can configure them with environment variables containing authentication credentials for the brokered service as well as the broker endpoint and the broker client token.
 
-e.g. To run the kubernetes client you can run the docker container as follows:
+e.g. To run the kubernetes client you can run the Docker container as follows:
 
 ```bash
 docker run \
@@ -73,9 +75,17 @@ docker run \
   roadiehq/broker:kubernetes
 ```
 
+#### Helm Charts
+
+If you are running Kubernetes you can simplify things further by deploying via one of our Helm charts.
+
+We have a [generic Broker chart](https://github.com/RoadieHQ/helm-charts/tree/main/roadie-broker) that allows the use of any of the Docker images listed above, and a [Kubernetes specific chart](https://github.com/RoadieHQ/helm-charts/tree/main/roadie-kubernetes-cluster-access).
+
+Usage instructions can be found in the respective `README.md` files. 
+
 #### Snyk Broker CLI application
 
-The broker client is published as an npm package available to be downloaded, installed on run on a machine configured to run nodejs packages. You can install and run it directly or use the npx command:
+The broker client is published as an npm package available to be downloaded, installed on run on a machine configured to run NodeJS packages. You can install and run it directly or use the npx command:
 
 ```bash
 npm install --global snyk-broker
@@ -104,7 +114,7 @@ PREFLIGHT_CHECKS_ENABLED=false \
 broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 ```
 
-#### Custom docker container
+#### Custom Docker container
 You could also build your own container that builds the `accept.json` and broker client into. This is out of the scope of this document. But you can take inspiration from the `roadiehq/broker` container images on docker hub.
  
 #### Broker client application configuration
@@ -187,7 +197,22 @@ An additional filtering based on any header can be achieved by using `valid` con
 
 * `Error: self-signed certificate in certificate chain`
    * If the services you are directing traffic to are using self-signed certificates you might face an issue where the broken healthcheck does not respond correctly, varying between 403 and 404 error codes. To fix this, you can either [provide the certificate to the broker manually so it understand that](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/backend-requests-with-an-internal-certificate-for-docker) or alternatively [disable certification verification altogether](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/disable-certificate-verification-with-docker). 
+   
+### Debugging
 
+Here are the main debugging questions you need to ask when investigating issues with the Broker connection for a plugin. 
+
+1. Is your Broker client connecting to the Roadie Broker Server? 
+   - Navigate to the Broker settings, and at the bottom, add your broker token and click track. You should then see if your Broker client is connected to Roadie or not. 
+2. Is the traffic coming to your Broker client from Roadie showing in your client logs and are there any errors you can see?
+   - Deploy your Broker client with a `LOG_LEVEL` environment variable set to `debug`
+   - Try using the plugin that should be connecting to your Broker client and see if any requests are coming through in the logs. i.e. `kubectl logs <broker-pod-id> -n <broker-pod-namespace> -f` 
+3. Is there an issue with the requests being proxied on by your Broker client - i.e. do the routes being requested match the `accept.json` routes you have defined. 
+4. Are you able to curl the API you are trying to reach from your Broker client i.e.
+```bash
+kubectl exec -it <broker-pod-id> -n <broker-pod-namespace> bash
+> curl -v "${CLUSTER_ENDPOINT}/api/v1/pods?labelSelector=app=customers-api" -H "Authorization: bearer ${K8S_SERVICE_ACCOUNT_TOKEN}"
+```
 
 ## References
 
