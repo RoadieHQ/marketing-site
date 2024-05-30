@@ -15,8 +15,8 @@ const onRenderBody = ({ setPostBodyComponents }) => {
   `;
 
   return setPostBodyComponents([
-    <script key="intercom-messenger" dangerouslySetInnerHTML={{ __html: intercomMessengerHTML }} />
+    <script key="intercom-messenger" dangerouslySetInnerHTML={{ __html: intercomMessengerHTML }} />,
   ]);
-}
+};
 
 export { onRenderBody };
