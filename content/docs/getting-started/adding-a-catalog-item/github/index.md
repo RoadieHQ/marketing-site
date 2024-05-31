@@ -15,9 +15,9 @@ examples:
       metadata:
         name: artist-web
         description: The place to be, for great artists
-      annotations:
-        github.com/project-slug: roadie-demo/artist-web
-        backstage.io/techdocs-ref: dir:. 
+        annotations:
+          github.com/project-slug: roadie-demo/artist-web
+          backstage.io/techdocs-ref: dir:. 
       spec:
         type: website
         lifecycle: production
@@ -47,9 +47,9 @@ examples:
       metadata:
         name: artist-api
         description: Retrieve artist details
-      annotations:
-        github.com/project-slug: roadie-demo/artist-api
-        backstage.io/techdocs-ref: dir:. 
+        annotations:
+          github.com/project-slug: roadie-demo/artist-api
+          backstage.io/techdocs-ref: dir:. 
       spec:
         type: openapi
         lifecycle: production
