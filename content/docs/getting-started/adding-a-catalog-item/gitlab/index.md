@@ -100,7 +100,7 @@ In your GitLab instance navigate to your User Settings > Access Tokens page. In 
 
 ![GitLab](./gitlab-token-opts.png)
 
-### Store Azure access token as a secret in Roadie
+### Store GitLab token as a secret in Roadie
 
 Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` and locate a secret with a name `GITLAB_TOKEN`. Update the value of this secret with the token created in the step above.
 
