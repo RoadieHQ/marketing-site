@@ -13489,10 +13489,10 @@ swagger-client@^3.23.1:
     traverse "~0.6.6"
     undici "^5.24.0"
 
-swagger-ui-dist@^5.9.1:
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.9.1.tgz#d0bcd614e3752da02df141846348f84468ae815e"
-  integrity sha512-5zAx+hUwJb9T3EAntc7TqYkV716CMqG6sZpNlAAMOMWkNXRYxGkN8ADIvD55dQZ10LxN90ZM/TQmN7y1gpICnw==
+swagger-ui-dist@^5.17.2:
+  version "5.17.12"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.17.12.tgz#7d7f15c08f1c0d48639f2649b7982a51a848cf3a"
+  integrity sha512-gHzs6CYQjgm0rpnFJGsjvWLua6znq+nipi89RDcu0a8R8JPXuVQrybVRBoOFmZ8mVTo9uPJDWgEYqnJRl4dHCQ==
 
 swagger-ui@^5.9.1:
   version "5.9.1"
