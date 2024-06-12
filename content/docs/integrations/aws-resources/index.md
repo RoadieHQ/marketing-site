@@ -88,7 +88,7 @@ The tagging functionality of AWS is used to determine the owner of each resource
 
 You can additionally use the following tags to indicate relationships within the catalog:
 `system` -> To indicate that this AWS resources is part of a system (expected value: fully qualified name)
-`domain` -> To indicate that this AWS resources is part of a system (expected value: fully qualified name)
+`domain` -> To indicate that this AWS resources is part of a domain (expected value: fully qualified name)
 `dependsOn`  -> To indicate that the resource depends on something (expected value: comma separated list of fully qualified names)
 `dependencyOf` -> To indicate that the resource is a dependency of something  (expected value: comma separated list of fully qualified names)
 
