@@ -55,7 +55,7 @@
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "husky": "^7.0.4",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.38",
     "prismjs": "^1.24.0",
     "react": "^17.0.2",
     "react-burger-menu": "^3.0.6",
