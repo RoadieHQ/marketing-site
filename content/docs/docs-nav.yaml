@@ -41,6 +41,7 @@ nav:
       - GraphiQL: '/docs/integrations/graphiql/'
       - Harness: '/docs/integrations/harness'
       - Home Page: '/docs/integrations/home-page'
+      - Humanitec: '/docs/integrations/humanitec'
       - IFrame: '/docs/integrations/iframe'
       - Jenkins: '/docs/integrations/jenkins/'
       - Jira: '/docs/integrations/jira/'
