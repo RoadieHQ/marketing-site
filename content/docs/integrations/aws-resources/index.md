@@ -35,12 +35,11 @@ For quick experimentation, you can use `AWS<ResourceType>ReadOnlyAccess` policie
 ![AWS Resources config](aws-resources-config.png)
 
 On the AWS Resources settings page `Administration > Settings > AWS Resources` in Roadie click `Add Item`. 
-Here you can select the type of resource you want to be ingested. The possible options are listed in the table at the bottom of the page.
+Here you can define the role (created in step 2 above) to be used to ingest these resources, as well as the AWS region to use and the optional External ID configured for the role.
 
-After choosing a resource, you need to define the role (created in step 2 above) to be used to ingest these resources, as well as the AWS region to use and the optional External ID configured for the role 
+After the role configuration is done, you can click the 'Test Role' button to check if the role is assumable by Roadie. Finally,  you can select the types of resources you want to be ingested. The possible options are listed in the table at the bottom of the page.
 
-After the role configuration is done, you can click the 'Test Role' button to check if the role is assumable by Roadie.
-
+You can add multiple integrations towards multiple AWS accounts or regions.
 
 ## Resources and needed permissions
 
@@ -57,7 +56,6 @@ The table below lists the permissions required of the assumable role in order fo
 | organization-account | AWS Organization Accounts                 | `organizations:ListAccounts`, `organizations:ListTagsForResource`              |
 
 
-The tagging functionality of AWS is used to determine the owner of each resource. By default, Roadie uses tag with a key `owner` to determine what value to use for the owner field of the generated entity. 
 
 You can expand the code snippet below to show an example policy document for the AWS role. You can add additional statement blocks into the policy document where multiple role policy actions are required.
 
@@ -81,3 +79,17 @@ You can expand the code snippet below to show an example policy document for the
 }
 ```
 </details>
+
+
+## Additional information
+
+The resource providers enhance their functionality to allow additional metadata inclusion to the provided entities. This is done by using tags within the AWS resource. 
+The tagging functionality of AWS is used to determine the owner of each resource. By default, Roadie uses tag with a key `owner` to determine what value to use for the owner field of the generated entity.
+
+You can additionally use the following tags to indicate relationships within the catalog:
+`system` -> To indicate that this AWS resources is part of a system (expected value: fully qualified name)
+`domain` -> To indicate that this AWS resources is part of a system (expected value: fully qualified name)
+`dependsOn`  -> To indicate that the resource depends on something (expected value: comma separated list of fully qualified names)
+`dependencyOf` -> To indicate that the resource is a dependency of something  (expected value: comma separated list of fully qualified names)
+
+See more information about relationships in [Backstage docs](https://backstage.io/docs/features/software-catalog/well-known-relations).
