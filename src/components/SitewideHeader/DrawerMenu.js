@@ -9,6 +9,7 @@ import {
   NewspaperIcon,
   BriefcaseIcon,
   CheckCircleIcon,
+  LockClosedIcon,
 } from '@heroicons/react/outline';
 
 import MobileFreeTrialButton from './MobileFreeTrialButton';
@@ -39,7 +40,7 @@ const subItems = [
   {
     name: 'Access Control: fine-grain control of your catalog',
     to: '/product/access-control/',
-    icon: CheckCircleIcon,
+    icon: LockClosedIcon,
   },
   {
     name: 'Backstage Plugins Directory',
