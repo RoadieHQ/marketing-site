@@ -25,7 +25,7 @@ There are two ways to assign a role to a user in Roadie:
 
 ### User Management
 
-- Visit the user management page in https://<tenant name>.roadie.so/administration/manage-users.
+- Visit the user management page in `https://<tenant name>.roadie.so/administration/manage-users`.
 - Find the name of the user you would like to assign a role to.
 - Click the edit pencil and then add the roles you would like to assign the user.
 
@@ -46,7 +46,7 @@ If a user has no role associated yet, e.g. if it is the first time they have log
 
 To edit the default roles:
 
-- Visit http://<tenant name>.roadie.so/administration/roles
+- Visit `http://<tenant name>.roadie.so/administration/roles`
 - Click the edit pencil beside the roles you would like to be the default roles
 - The click "Set as default role" and save.
 - You can perform similar steps to make a role no longer a default role.
