@@ -43,9 +43,9 @@ const features = [
     icon: BookOpenIcon,
   },
   {
-    name: 'RBAC: Access control for Backstage',
-    description: 'Restrict access and reduce cognitive load.',
-    to: '/product/rbac/',
+    name: 'Access Control: Secure and transparent',
+    description: 'Role-based access control based on fine-grain permissions.',
+    to: '/product/access-control/',
     icon: LockClosedIcon,
   },
   {

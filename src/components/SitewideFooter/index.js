@@ -13,7 +13,7 @@ const navigation = {
     { name: 'Scaffolder', href: '/product/scaffolder' },
     { name: 'TechDocs', href: '/product/documentation' },
     { name: 'Tech Insights', href: '/product/tech-insights' },
-    { name: 'RBAC', href: '/product/rbac' },
+    { name: 'Access Control', href: '/product/access-control' },
   ],
 
   support: [

@@ -37,8 +37,8 @@ const subItems = [
     icon: CheckCircleIcon,
   },
   {
-    name: 'RBAC: Access Control for Backstage',
-    to: '/product/rbac/',
+    name: 'Access Control: fine-grain control of your catalog',
+    to: '/product/access-control/',
     icon: CheckCircleIcon,
   },
   {
