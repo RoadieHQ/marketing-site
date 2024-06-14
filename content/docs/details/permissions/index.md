@@ -1,7 +1,7 @@
 ---
-title: Role based access control
+title: Permissions
 publishedDate: '2024-06-14T21:00:00.0Z'
-description: How to configure access control in Roadie.
+description: How to configure access control permissions in Roadie.
 ---
 
 ## Introduction
