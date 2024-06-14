@@ -42,7 +42,7 @@ If your Roadie tenant is using a custom identity provider, you can choose to inc
 ```
 
 ## Setting the default roles
-If a user has no role associated yet, e.g. if it is the first time they have logged in and there are no roles assoicated with the user, then the user is allowed the policies associated with the default roles. There can be many default roles.
+If a user has no role associated yet, e.g. if it is the first time they have logged in and there are no roles associated with the user, then the user is allowed the policies associated with the default roles. There can be many default roles.
 
 To edit the default roles:
 
