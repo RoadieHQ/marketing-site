@@ -96,7 +96,7 @@ nav:
           - Required metadata: '/docs/details/required-metadata/'
           - Requesting plugins: '/docs/details/requesting-plugins/'
       - Setting secrets: '/docs/details/setting-secrets/'
-      - Role based access control: '/docs/details/rbac/'
+      - Permissions: '/docs/details/permissions/'
       - Updating the UI: '/docs/details/updating-the-ui/'
       - Entity Push API: '/docs/details/entity-push-api/'
   - Custom plugins:
