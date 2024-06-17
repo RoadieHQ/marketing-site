@@ -34,7 +34,6 @@ describe('The free trial page', () => {
     cy.visit('/free-trial/');
 
     cy.get('#get-instance-email-input').type('test@gmail.com');
-    cy.get('#scm').select('GitLab Cloud');
     cy.contains('Please use your work email');
   });
 });
