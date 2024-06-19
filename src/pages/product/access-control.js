@@ -13,13 +13,13 @@ import SnykImg from '../../../content/assets/product-pages/docs-snyk-logo.png';
 
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
-const SEO_TITLE = 'Centralized RBAC: fine-grain control of your Backstage software catalog';
+const SEO_TITLE = 'Centralized RBAC: fine-grained control of your Backstage software catalog';
 const LEAD = `Roadie’s Backstage-based RBAC lets you secure your software catalog and reduce cognitive load for your team.`;
 
 const PRODUCT = {
   features: [
     {
-      title: 'Gain fine-grain control of your catalog',
+      title: 'Gain fine-grained control of your catalog',
       description: 'Roadie makes it easier to slice and dice your software catalog',
       illustration: {
         png: RbacDenied,
@@ -37,7 +37,7 @@ const PRODUCT = {
           alt: '',
         },
         paragraphs: [
-          'Roadie’s fine-grain management features allow customisable permissions policies and roles to help you model your own rules around information sharing to the configuration of your catalog. Only show the each type of user information that is pertinent and relevant.',
+          'Roadie’s fine-grained management features allow customisable permissions policies and roles to help you model your own rules around information sharing to the configuration of your catalog. Only show the each type of user information that is pertinent and relevant.',
         ],
       },
     {
@@ -81,7 +81,7 @@ const Home = ({ data }) => {
             Roadie’s role-based Access Control
           </strong>
           <Headline size="medium" className="text-white">
-            <span className="text-orange-600">Access Control:</span> fine-grain control to reduce cognitive load for teams
+            <span className="text-orange-600">Access Control:</span> fine-grained control to reduce cognitive load for teams
           </Headline>
 
           <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">

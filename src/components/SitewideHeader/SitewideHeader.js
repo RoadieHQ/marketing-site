@@ -44,7 +44,7 @@ const features = [
   },
   {
     name: 'Access Control: Secure and transparent',
-    description: 'Role-based access control based on fine-grain permissions.',
+    description: 'Role-based access control based on fine-grained permissions.',
     to: '/product/access-control/',
     icon: LockClosedIcon,
   },

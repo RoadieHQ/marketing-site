@@ -38,7 +38,7 @@ const subItems = [
     icon: CheckCircleIcon,
   },
   {
-    name: 'Access Control: fine-grain control of your catalog',
+    name: 'Access Control: fine-grained control of your catalog',
     to: '/product/access-control/',
     icon: LockClosedIcon,
   },
