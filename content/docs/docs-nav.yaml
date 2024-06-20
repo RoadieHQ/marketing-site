@@ -6,15 +6,20 @@ plugins:
 
 nav:
   - Getting started:
-      - Installing the GitHub app: '/docs/getting-started/install-github-app/'
-      - Adding components: '/docs/getting-started/adding-components/'
-      - Using TechDocs: '/docs/getting-started/technical-documentation/'
+      - Overview: '/docs/getting-started/overview/'
+      - Setting up your catalog:
+        - Adding to your catalog: '/docs/getting-started/adding-a-catalog-item/'
+        - Enable autodiscovery: '/docs/getting-started/autodiscovery/'
+        - Modelling your software: '/docs/getting-started/model-software/'
+      - Adding users:
+        - Inviting users: '/docs/getting-started/user-management/'
+        - Designating admins: '/docs/getting-started/create-admin-group/'
+        - Modelling Users and Groups: '/docs/getting-started/teams/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
-      - Inviting users: '/docs/getting-started/user-management/'
-      - Designating admins: '/docs/getting-started/create-admin-group/'
-      - Modelling Users and Groups: '/docs/getting-started/teams/'
-      - Adding API specs: '/docs/getting-started/openapi-specs/'
-      - Scaffolding components: '/docs/getting-started/scaffolding-components/'
+      - Customising the Roadie UI: '/docs/getting-started/configure-ui/'
+      - Creating a scorecard: '/docs/getting-started/creating-a-scorecard/'
+      - Creating a Scaffolder template: '/docs/getting-started/scaffolding-components/'
+      - Adding your docs: '/docs/getting-started/technical-documentation/'
   - Backstage plugins:
       - Allure: '/docs/integrations/allure/'
       - Argo CD: '/docs/integrations/argocd/'
@@ -25,6 +30,7 @@ nav:
       - CircleCI: '/docs/integrations/circleci/'
       - Confluence: '/docs/integrations/confluence/'
       - CodeCoverage: '/docs/integrations/codecoverage/'
+      - CodeScene: '/docs/integrations/codescene/'
       - Datadog: '/docs/integrations/datadog/'
       - Dynatrace: '/docs/integrations/dynatrace/'
       - FireHydrant: '/docs/integrations/firehydrant/'
@@ -35,6 +41,7 @@ nav:
       - GraphiQL: '/docs/integrations/graphiql/'
       - Harness: '/docs/integrations/harness'
       - Home Page: '/docs/integrations/home-page'
+      - Humanitec: '/docs/integrations/humanitec'
       - IFrame: '/docs/integrations/iframe'
       - Jenkins: '/docs/integrations/jenkins/'
       - Jira: '/docs/integrations/jira/'
@@ -73,9 +80,9 @@ nav:
       - API docs:
           - Custom renderers: '/docs/details/custom-api-docs-renderers/'
           - Using grpc-docs: '/docs/details/grpc-docs/'
-      - Tech Docs:
-          - Using Tech Docs in Roadie: '/docs/details/techdocs/'
-          - Build  TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
+      - TechDocs:
+          - Using TechDocs in Roadie: '/docs/details/techdocs/'
+          - Build TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
           - Troubleshooting TechDocs: '/docs/details/techdocs/troubleshooting/'
       - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
       - GitHub app permissions: '/docs/details/github-app-permissions/'
@@ -89,6 +96,7 @@ nav:
           - Required metadata: '/docs/details/required-metadata/'
           - Requesting plugins: '/docs/details/requesting-plugins/'
       - Setting secrets: '/docs/details/setting-secrets/'
+      - Permissions: '/docs/details/permissions/'
       - Updating the UI: '/docs/details/updating-the-ui/'
       - Entity Push API: '/docs/details/entity-push-api/'
   - Custom plugins:
@@ -97,6 +105,7 @@ nav:
       - Developing: '/docs/custom-plugins/developing/'
       - Registering Plugins: '/docs/custom-plugins/plugin-registration/'
       - Deploying: '/docs/custom-plugins/deploying/'
+      - Testing: '/docs/custom-plugins/testing/'
       - Available APIs: '/docs/custom-plugins/available-apis/'
       - Connecting Back to Your Network:
           - Proxy: '/docs/custom-plugins/connectivity/proxy'
@@ -166,6 +175,8 @@ nav:
       - Validating catalog files: '/docs/catalog/validator/'
       - Ownership: '/docs/catalog/ownership/'
       - Repositories: '/docs/catalog/repositories/'
+      - Custom tabs: '/docs/catalog/custom-views'
+      - Displaying custom entity metadata: '/docs/catalog/entity-metadata-card'
   - API:
       - Authorization: '/docs/api/authorization'
       - Catalog: '/docs/api/catalog'

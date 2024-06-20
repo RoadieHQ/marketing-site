@@ -6,15 +6,15 @@ description: How to add and configre Backstage plugins in Roadie
 
 ## Introduction
 
-Roadie supports many open-source Backstage plugins out of the box. This tutorial will show you how to add a plugin to Roadie.
+Roadie supports many open-source Backstage plugins out of the box. 
 
-We will use PagerDuty in this example, but the process is broadly similar for most plugins.
+See the [Plugins & Integrations](/docs/integrations/) page for a full list of supported plugins, and dedicated instructions for each one. The list of available plugins is also visible to admins in the Administration area.
 
-See the sidebar for a full list of supported plugins, and dedicated instructions for each one.
+## Example: Adding the PagerDuty plugin
 
-## Prerequisites
+As an example, we will use PagerDuty in this example, but the process is broadly similar for most plugins.
 
-You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/create-admin-group/).
+To add a plugin you must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/create-admin-group/).
 
 ## Step 1: Add the UI component
 

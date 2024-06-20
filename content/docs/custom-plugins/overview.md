@@ -24,6 +24,7 @@ Other important documentation around Roadie custom plugins:
 * [Developing Roadie compatible custom plugins](/docs/custom-plugins/developing/)
 * [Registering your plugins to your Roadie instance](/docs/custom-plugins/plugin-registration/)
 * [Deploying your custom plugins](/docs/custom-plugins/deploying/)
+* [Testing new versions of your custom plugins](/docs/custom-plugins/testing/)
 * [Connecting to your internal infrastructure using the Broker](/docs/custom-plugins/connectivity/broker/)
 * [Connecting to third party services using the proxy](/docs/custom-plugins/connectivity/proxy/)
 * [Example workflows and approaches to plugin development](/docs/custom-plugins/getting-started/)

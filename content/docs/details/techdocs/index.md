@@ -1,10 +1,10 @@
 ---
-title: Using Tech Docs in Roadie
+title: Using TechDocs in Roadie
 publishedDate: '2023-08-30T21:00:00.0Z'
-description: Using Tech Docs in Roadie Backstage.
+description: Using TechDocs in Roadie Backstage.
 ---
 
-The Tech Docs feature of Roadie Backstage allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. 
+The TechDocs feature of Roadie Backstage allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. 
 
 ![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
 
@@ -43,7 +43,7 @@ We currently include the following MkDocs plugins in our build process:
 - [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) - displays images, iframes, inline content and videos
 - [markdown-inline-mermaid](https://github.com/mermaid-js/mermaid) - generates diagrams from markdown-like text.
 - [mkdocs-kroki-plugin](https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin) - A diagram library supporting multiple different diagram formats. See https://kroki.io/ for more information.
-
+- [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) - Allows you to render a whole doc with all pages so that you can export it to PDF or HTML via the browser.
 
 **NB: To use these plugins you must include them in your `mkdocs.yml` file like so:**
 
@@ -101,6 +101,15 @@ plugins:
   - ...
 ```
 
+## Exporting and printing
+You can use the [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) to build a single page view of your doc with all pages, that you can then use to export to PDF or HTML via your browser.
+
+This can be useful for auditing purposes or to share docs with someone that does not have access to Roadie.
+
+You can remove the Table of Contents from the export using the cog icon on the top right of the docs page to hide it. 
+
+NB: This plugin requires each page to have an H1 header - [see currently open issue](https://github.com/timvink/mkdocs-print-site-plugin/issues/94)
+
 ## Graphs and Diagrams
 
 ### Using Mermaid Diagrams
@@ -127,7 +136,7 @@ graph LR
 
 ### Using Graphs
 
-The Graphviz plugin can render graphs inside your Tech Docs. 
+The Graphviz plugin can render graphs inside your TechDocs. 
 
 1. Add it to your `mkdocs.yml` file like so:
 
@@ -158,7 +167,7 @@ In order to customize the look of the graphs you will need to use the [Graphviz 
 
 ![white graph background](./white-graph.png)
 
-which could be defined in Tech Docs with following code:
+which could be defined in TechDocs with following code:
 
 ```
 {% dot attack_plan.svg
@@ -197,7 +206,7 @@ This way you can customize the graph adding or removing any attribute you want.
 
 If you need to have a place to store docs that are not related to a specific codebase or component, you may want to use a single repository to collect that meta documentation.
 
-Nested file structures and sub-directories can be modeled using the [Monorepo plugin for tech docs](https://github.com/backstage/mkdocs-monorepo-plugin).
+Nested file structures and sub-directories can be modeled using the [Monorepo plugin for TechDocs](https://github.com/backstage/mkdocs-monorepo-plugin).
 
 1. Add to your root `mkdocs.yaml` file.
 ```yaml
@@ -294,6 +303,6 @@ You can add domain names to be allowed in iframes within the Roadie settings sec
 
 ## Further reading
 
-1. Backstage Tech Docs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/user-guide/) will broadly apply to your Backstage documentation setup. In particular, the ["Writing your docs"](https://www.mkdocs.org/user-guide/writing-your-docs/) page is a good place to start
+1. Backstage TechDocs uses MkDocs under the hood and the [MkDocs configuration and user guide](https://www.mkdocs.org/user-guide/) will broadly apply to your Backstage documentation setup. In particular, the ["Writing your docs"](https://www.mkdocs.org/user-guide/writing-your-docs/) page is a good place to start
 2. You can see the rendering rules used by the plugin here - [https://python-markdown.github.io/](https://python-markdown.github.io/) NB: they are slightly different from Github Flavoured Markdown.
-3. The [official Backstage Tech Docs guide](https://backstage.io/docs/features/techdocs/techdocs-overview).
+3. The [official Backstage TechDocs guide](https://backstage.io/docs/features/techdocs/techdocs-overview).

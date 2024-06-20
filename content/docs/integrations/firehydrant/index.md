@@ -52,5 +52,5 @@ You can create services in FireHydrant on the [New Service page](https://app.fir
 
 ## References
 
-- [FireHydrant plugin documentation](https://github.com/backstage/backstage/blob/master/plugins/firehydrant/README.md)
+- [FireHydrant plugin documentation](https://github.com/backstage/community-plugins/tree/main/workspaces/firehydrant/plugins/firehydrant/README.md)
 - [FireHydrant plugin page on roadie.io](https://roadie.io/backstage/plugins/firehydrant/)

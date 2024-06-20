@@ -137,6 +137,16 @@ Commit and merge this change and the Roadie Backstage PagerDuty plugin should be
 
 Navigate to the component you have added the annotation for and [add the PagerDuty card to the overview page](/docs/getting-started/configuring-backstage-plugins/#step-1-add-the-ui-component).
 
+#### 5. Card information
+
+The PagerDuty Backstage plugin allows Roadie Backstage users to:
+
+1. See who is on call for a particular catalog Component.
+2. See if there are active incidents for a given catalog Component.
+3. Create new incidents from Backstage.
+
+![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.png)
+
 ## References
 
 - [PagerDuty docs for creating API tokens](https://support.pagerduty.com/docs/generating-api-keys)

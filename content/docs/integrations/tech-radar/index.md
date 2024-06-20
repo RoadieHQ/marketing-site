@@ -13,11 +13,11 @@ If you want to use Tech Radar on your Roadie instance you can add it as a page u
 
 ## At a Glance
 
-| | |
-|---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>GitHub - OAuth Token</li><li>Bitbucket - OAuth Token, Client Id, and Secret</li></ul> |
-| **Considerations** | GitHub and Bitbucket only. |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+|                            |                                                                                                                                                           |
+|---------------------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+|          **Prerequisites** | **Configuration Data:** <ul><li>GitHub - OAuth Token</li><li>Bitbucket - OAuth Token, Client Id, and Secret</li><li>Azure DevOps - Access Token</li></ul> |
+|         **Considerations** | GitHub and Bitbucket, Azure DevOps only.                                                                                                                  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                          |
 
 
 ## Step 1: Configuration
@@ -37,7 +37,7 @@ configured and can have any value though it may help for it to be meaningful.
 
 The Tech Radar uses OAuth to retrieve data files from sources. For GitHub OAuth token can be generated from the installed GitHub app but for Bitbucket configuration you need to additionally define secrets for OAuth client id and secret.
 
-### Step 1.b Bitbucket OAuth credentials
+### (Optional) Step 1.b Bitbucket OAuth credentials
 
 To add Bitbucket Cloud authentication, you must create an OAuth Consumer in Bitbucket.
 
@@ -51,6 +51,15 @@ Needed settings:
 * (IMPORTANT) Permissions: Account - Read, Workspace membership - Read, Repository - Read
 
 The credentials from the created Bitbucket OAuth consumer can be stored in the secrets section of the settings page, inputting values to `AUTH_BITBUCKET_CLIENT_ID` and `AUTH_BITBUCKET_CLIENT_SECRET`.
+
+
+### (Optional) Step 1.c Azure DevOps credentials
+
+To add Azure DevOps  authentication, you must create a token in Azure DevOps.
+
+In your Azure DevOps navigate to the User Settings > Tokens page in `https://dev.azure.com/<your-organization>/_usersSettings/tokens`. Within this page you can generate a token to grant Roadie access to read your Tech Radar file contents.
+
+The value from the created Azure DevOps token can be stored in the secrets section of the settings page, inputting value to `AZURE_TOKEN`.
 
 ## Step 2: Adding the tech radar page
 
@@ -185,4 +194,4 @@ Setting up a local server consist of the following steps:
 
 ## More information
 
-[Backstage Tech Radar plugin documentation](https://github.com/backstage/backstage/blob/master/plugins/tech-radar/README.md)
+[Backstage Tech Radar plugin documentation](https://github.com/backstage/community-plugins/tree/main/workspaces/tech-radar/plugins/tech-radar/README.md)

@@ -15,7 +15,7 @@ In this tutorial, we’re going to:
 
 ## Prerequisites
 
-1. You must have [installed the Roadie GitHub App](../../getting-started/install-github-app/).
+1. You must have [installed the Roadie GitHub App](../../getting-started/adding-a-catalog-item/).
 
 ## Create a branch protection check
 

@@ -1,5 +1,5 @@
 ---
-humanName: 'Scaffolder Templates: AWS Serverless Frontend'
+humanName: 'Serverless Frontend Scaffolder Template'
 heading: 'Backstage Scaffolder Task to create an AWS Serverless Frontend'
 # Keep it short
 lead: 'Create AWS Serverless Frontend'
@@ -11,7 +11,7 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Scaffolder Templates - AWS Serverless Frontend | Roadie'
   description: |
-    This plugin adds a template to Backstage that creates a AWS Serverless frontend. It creates the stack definition using Serverless stack and creates the GitHub actions to deploy the application in an AWS account.
+    Backstage scaffolder template to create an AWS Serverless frontend.
 
 logoImage: '../../assets/logos/scaffolder-templates/sst.png'
 

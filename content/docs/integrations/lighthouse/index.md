@@ -47,4 +47,4 @@ Or a widget on the Overview page for a website in your Catalog.
 
 ## References
 
-- [Lighthouse plugin documentation](https://github.com/backstage/backstage/blob/master/plugins/lighthouse/README.md)
+- [Lighthouse plugin documentation](https://github.com/backstage/community-plugins/tree/main/workspaces/lighthouse/plugins/lighthouse/README.md)

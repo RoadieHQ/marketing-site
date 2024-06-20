@@ -94,12 +94,12 @@ You can then define connection details for the rest of the Jenkins instances in 
 Then click "Save" then "Apply & Restart".
 
 To configure a component to fetch from a specific instance you must include the instance name in the jenkins annotation. e.g.
-`jenkins.io/job-full-name: "instance-name:github-organization-cluster1-project/job-name". You can read more [here](https://github.com/backstage/backstage/tree/master/plugins/jenkins-backend#example---multiple-global-instances). 
+`jenkins.io/job-full-name: "instance-name:github-organization-cluster1-project/job-name". You can read more [here](https://github.com/backstage/community-plugins/tree/main/workspaces/jenkins/plugins/jenkins-backend#example---multiple-global-instances). 
 
 ![other instances](./jenkins_other_instances.png)
 
 ## References
 
 - [Jenkins blog post for creating new format API tokens](https://www.jenkins.io/blog/2018/07/02/new-api-token-system/#new-approach)
-- [Jenkins plugin documentation in Backstage](https://github.com/backstage/backstage/tree/master/plugins/jenkins-backend#defaultjenkinsinfoprovider)
-- [More information about the components available with Jenkins plugin](https://github.com/backstage/backstage/tree/master/plugins/jenkins)
+- [Jenkins plugin documentation in Backstage](https://github.com/backstage/community-plugins/tree/main/workspaces/jenkins/plugins/jenkins-backend#defaultjenkinsinfoprovider)
+- [More information about the components available with Jenkins plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/jenkins/plugins/jenkins)

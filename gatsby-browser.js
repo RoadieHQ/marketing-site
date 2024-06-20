@@ -24,3 +24,27 @@ import './src/stylesheets/swagger-ui.css';
 
 window.SwaggerUI = SwaggerUI;
 window.SwaggerUIStandalonePreset = SwaggerUIStandalonePreset;
+const INTERCOM_APP_ID = 'qegbmsy6';
+
+const isHidden = () => process.env.NODE_ENV === `production` && typeof Intercom === `function`;
+
+const onInitialClientRender = () => {
+  if (!isHidden()) {
+    return;
+  }
+
+  window.Intercom('boot', {
+    app_id: INTERCOM_APP_ID,
+    hide_default_launcher: isHidden,
+  });
+};
+
+const onRouteUpdate = function () {
+  if (!isHidden()) {
+    return;
+  }
+
+  window.Intercom('update');
+};
+
+export { onInitialClientRender, onRouteUpdate };

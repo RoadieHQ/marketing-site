@@ -139,5 +139,5 @@ For more information how to set up the Broker client and how to use configuratio
 
 ## References
 
-- [SonarQube backstage plugin](https://www.npmjs.com/package/@backstage/plugin-sonarqube/)
+- [SonarQube backstage plugin](https://www.npmjs.com/package/@backstage-community/plugin-sonarqube/)
 - [Broker documentation](/docs/integrations/broker)

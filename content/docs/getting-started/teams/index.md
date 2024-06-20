@@ -1,12 +1,12 @@
 ---
-title: Modelling Users & Groups
+title: Modelling users & groups
 publishedDate: '2022-06-16T16:00:00.0Z'
 description: How to represent users and groups in Backstage and make ownership work.
 ---
 
 ## Prerequisites
 
-You should already have a knowledge of how to add entities to the Backstage catalog as described [here](/docs/getting-started/adding-components/).
+You should already have a knowledge of how to add entities to the Backstage catalog as described [here](/docs/getting-started/adding-a-catalog-item/).
 ## Introduction
 
 Users logged in to Backstage have an identity that can be used to determine if a user has ownership over any entity. This is done using User and Group entities in Backstage. This page describes how to configure Backstage to work with ownership.
@@ -32,7 +32,7 @@ Now that you know how Roadie is associating the logged in user with Backstage en
 
 
 ### Manually creating users and groups
-If you need to learn about how to add components to Backstage, you can see that [here](/docs/getting-started/adding-components/).
+If you need to learn about how to add components to Backstage, you can see that [here](/docs/getting-started/adding-a-catalog-item/).
 
 You will start by creating a user. This user must be in the `default` namespace and be named based on the userId described in the Backstage Identity mentioned above.
 

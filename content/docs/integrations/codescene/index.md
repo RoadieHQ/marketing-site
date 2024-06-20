@@ -24,7 +24,7 @@ enter your basic auth token.
 ![Set Auth](./credentials.png)
 
 
-## Step 2: Configure the CodeScene API token
+## Step 2: Configure the CodeScene Instance URL
 
 Navigate to `/administration/codescene` and enter your CodeScene instance url then click "save" and then "Apply & restart". 
 
@@ -42,4 +42,4 @@ on the secrets page.
 
 ## More information:
 
-* [CodeScene plugin](https://github.com/backstage/backstage/tree/master/plugins/codescene)
+* [CodeScene plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/codescene/plugins/codescene)

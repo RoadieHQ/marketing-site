@@ -4,6 +4,7 @@ import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
+import { trackSubscribe } from '../../googleAnalytics';
 
 export const encode = (data) => {
   const formData = new FormData();
@@ -44,12 +45,14 @@ export const submitEmailToNetlifyForms = async ({
       method: 'POST',
       body: encode(bodyParams),
     });
+
+    trackPlausibleEvent(netlifyFormName, { email });
+    trackSubscribe({ email });
+
   } catch (error) {
     console.error('Submission failed', error, resp);
     return Promise.reject();
   }
-
-  trackPlausibleEvent(netlifyFormName);
 
   return resp;
 };
@@ -87,6 +90,7 @@ const NetlifyFormCallToAction = ({
 
     if (resp.ok) {
       setModalOpen(true);
+
       // DO NOT reset the email input here. It is already happening higher in the state chain.
     } else {
       setSubForm({

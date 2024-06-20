@@ -10,7 +10,7 @@ attribution:
 seo:
   title: 'Backstage Cost Insights Plugin | Roadie'
   description: |
-    Visualize, understand and optimize your team's cloud costs.
+    Visualize, understand and optimize your team's cloud costs inside Backstage with the Cost Insights Plugin.
 
 logoImage: '../../assets/logos/cost-insights/money-bag.png'
 

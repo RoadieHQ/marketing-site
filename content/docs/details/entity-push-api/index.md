@@ -138,33 +138,31 @@ response.then((r) => {
 
   const entities = accounts.map((a) => templateResourceEntity({ name: a.Name, arn: a.Arn }));
 
-  for (entity of entities) {
-    const body = JSON.stringify(entity);
-    const req = https.request(
-      {
-        hostname: 'api.roadie.so',
-        port: 443,
-        path: '/api/catalog/roadie-entities/sets/aws-accounts',
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Content-Length': Buffer.byteLength(body),
-          Authorization: `bearer ${process.env.ROADIE_API_TOKEN}`,
-        },
+  const body = JSON.stringify({ items: entities });
+  const req = https.request(
+    {
+      hostname: 'api.roadie.so',
+      port: 443,
+      path: '/api/catalog/roadie-entities/sets/aws-accounts',
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(body),
+        Authorization: `bearer ${process.env.ROADIE_API_TOKEN}`,
       },
-      (res) => {
-        res.on('data', (chunk) => {
-          console.log(chunk);
-        });
-      }
-    );
-    req.on('error', (e) => {
-      console.log(e);
-    });
-    req.write(body);
+    },
+    (res) => {
+      res.on('data', (chunk) => {
+        console.log(chunk);
+      });
+    }
+  );
+  req.on('error', (e) => {
+    console.log(e);
+  });
+  req.write(body);
 
-    req.end();
-  }
+  req.end();
 });
 ```
 

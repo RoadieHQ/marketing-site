@@ -10,7 +10,7 @@ In this tutorial, we’re going to create a Tech Insights check that tracks adop
 
 ## Prerequisites
 
-1. You must have [intalled the Roadie GitHub App](../../getting-started/install-github-app/).
+1. You must have [intalled the Roadie GitHub App](../../getting-started/adding-a-catalog-item/).
 
 ## Create a CODEOWNERS check
 

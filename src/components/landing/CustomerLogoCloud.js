@@ -18,7 +18,7 @@ import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochr
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
 import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-monochrome.webp';
 import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
-import CaribouLogo from '../../../content/assets/home/customer-logos/caribou-monochrome.png';
+import CaribouLogo from '../../../content/assets/home/customer-logos/caribou-monochrome.webp';
 import CaribouLogoPng from '../../../content/assets/home/customer-logos/caribou-monochrome.png';
 
 import HopperWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/hopper.png';
@@ -151,7 +151,7 @@ const CustomerLogoCloud = ({ logos = LOGOS }) => (
   <div className="bg-white">
     <div className="max-w-7xl mx-auto py-12 lg:py-32 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-8 sm:mb-12 text-gray-600">
-        <p>Providing Backstage to</p>
+        <p>Trusted by companies like</p>
       </div>
 
       <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
