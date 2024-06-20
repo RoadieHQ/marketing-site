@@ -9,7 +9,6 @@ import RbacIdpLogos from '../../../content/assets/product-pages/rbac-idp-logos.s
 import RbacScaffolder from '../../../content/assets/product-pages/rbac-scaffolder.svg';
 import RbacDenied from '../../../content/assets/product-pages/rbac-denied.svg';
 import RbacRoleManagement from '../../../content/assets/product-pages/rbac-role-management.svg';
-import SnykImg from '../../../content/assets/product-pages/docs-snyk-logo.png';
 
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
