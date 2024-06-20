@@ -11,6 +11,7 @@ import {
   NewspaperIcon,
   PlusCircleIcon,
   CheckCircleIcon,
+  LockClosedIcon,
 } from '@heroicons/react/outline';
 import { Button } from 'components';
 
@@ -24,22 +25,28 @@ import WhitepaperVs from '../TopBanner/Whitepaper';
 
 const features = [
   {
-    name: 'Catalog: software, teams & resources',
+    name: 'Catalog: Software, teams & resources',
     description: 'All your tech assets on a single glass pane.',
     to: '/product/catalog/',
     icon: NewspaperIcon,
   },
   {
-    name: 'Scaffolder: create and expand',
+    name: 'Scaffolder: Create and expand',
     description: 'Accelerate your development initatives.',
     to: '/product/scaffolder/',
     icon: PlusCircleIcon,
   },
   {
-    name: 'Docs: centralized yet distributed',
+    name: 'Docs: Centralized yet distributed',
     description: 'Find everyone’s docs in the same place.',
     to: '/product/documentation/',
     icon: BookOpenIcon,
+  },
+  {
+    name: 'Access Control: Secure and transparent',
+    description: 'Role-based access control based on fine-grained permissions.',
+    to: '/product/access-control/',
+    icon: LockClosedIcon,
   },
   {
     name: 'Tech Insights: Scorecards for Backstage',

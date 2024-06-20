@@ -11,6 +11,9 @@ const navigation = {
   product: [
     { name: 'Catalog', href: '/product/catalog' },
     { name: 'Scaffolder', href: '/product/scaffolder' },
+    { name: 'TechDocs', href: '/product/documentation' },
+    { name: 'Tech Insights', href: '/product/tech-insights' },
+    { name: 'Access Control', href: '/product/access-control' },
   ],
 
   support: [
