@@ -15,9 +15,9 @@ examples:
       metadata:
         name: artist-web
         description: The place to be, for great artists
-      annotations:
-        github.com/project-slug: roadie-demo/artist-web
-        backstage.io/techdocs-ref: dir:. 
+        annotations:
+          github.com/project-slug: roadie-demo/artist-web
+          backstage.io/techdocs-ref: dir:. 
       spec:
         type: website
         lifecycle: production
@@ -47,9 +47,9 @@ examples:
       metadata:
         name: artist-api
         description: Retrieve artist details
-      annotations:
-        github.com/project-slug: roadie-demo/artist-api
-        backstage.io/techdocs-ref: dir:. 
+        annotations:
+          github.com/project-slug: roadie-demo/artist-api
+          backstage.io/techdocs-ref: dir:. 
       spec:
         type: openapi
         lifecycle: production
@@ -99,11 +99,7 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 ![A link that says "Administration"](./administration-link.png)
 
-2. Click the Settings tab along the top of the Administration page and then GitHub under Integrations in the left sidebar
-
-![A link that says "Settings"](./settings-link.png)
-
-3. Open the GitHub accordion and click "Add GitHub App"
+2. From **Settings** > **Integrations** > **GitHub**, press `INSTALL THE APP`.
 
 ![A button that says "Add GitHub App"](./add-github-app.png)
 
@@ -126,5 +122,7 @@ Now you can click on the entity link to visit the entity that you have just crea
 ### Next Steps
 
 * [Configure auto-discovery](/docs/integrations/github-discovery/) so that Roadie can automatically discover and import catalog-info.yaml files.
+
+* [Explore the Getting Started Repo](https://github.com/roadie-demo/getting-started/tree/main) for examples of scaffolder templates.
 * [Use a scaffolder template](https://github.com/roadie-demo/getting-started/tree/main/scaffolder/register-new-component) to give users a streamlined interface that they can use to generate the YAML file you used earlier in this tutorial.
 * [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
