@@ -12,7 +12,7 @@ With Roadie’s Tech Insights feature, there’s an easier way. In this tutorial
 
 1. Automatically scan Components in the Backstage catalog and record which components have Codecov activated, active, and their % of coverage.
 1. Create a check that can tell us which software is active and activated.
-1. Create a check that can tell us which software is meeting minimum code coverage threshold of 30%.
+1. Create a check that can tell us which software is meeting minimum code coverage threshold of 80%.
 
 As we go through this process, you’ll learn:
 
