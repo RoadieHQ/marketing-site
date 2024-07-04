@@ -168,7 +168,7 @@ We have a data source telling us what the coverage is, let's create a check to e
         | Data Source | Codecov Repository Coverage |
         | Fact | Coverage |
         | Fact operator | Greater than inclusive |
-        | Value | 30 |
+        | Value | 80 |
 
     ![Check Condition section fields](./Coverage_Check_Conditions_Section.png)
 
