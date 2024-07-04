@@ -152,7 +152,7 @@ nav:
       - Recipes:
           - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
           - Track a Docker base image migration: '/docs/tech-insights/track-docker-base-image-migration/'
-          - Track Codecov coverage results: '/docs/tech-insights/test-coverage/'
+          - Track Codecov coverage results: '/docs/tech-insights/track-codecov-coverage-results/'
           - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
           - Track dependency versions: '/docs/tech-insights/track-dependency-versions/'
           - Track Datadog SLOs: '/docs/tech-insights/track-datadog-slos/'

@@ -1,7 +1,7 @@
 ---
-title: Creating a Scorecard for Test Coverage Reporting
-publishedDate: '2024-07-01T15:15:00.0Z'
-description: How to create a scorecard to report on test coverage
+title: Track Codecov coverage results
+publishedDate: '2024-07-04T15:15:00.0Z'
+description: How to track Codecov coverage with Roadie Tech Insights
 ---
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/0cdc0a9fbd3d4ae6b22fb324ca801fe5?sid=aedeab6b-25b4-4d06-bd93-ecd00ba38784" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
