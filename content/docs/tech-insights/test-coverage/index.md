@@ -4,7 +4,9 @@ publishedDate: '2024-07-01T15:15:00.0Z'
 description: How to create a scorecard to report on test coverage
 ---
 
-TODO: Add intro.
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/0cdc0a9fbd3d4ae6b22fb324ca801fe5?sid=aedeab6b-25b4-4d06-bd93-ecd00ba38784" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+Tracking the code coverage information for catalog entities is crucial in ensuring the software is secure and compliant. It can be difficult to know which components have coverage activated and are meeting minimum standards.
 
 With Roadie’s Tech Insights feature, there’s an easier way. In this tutorial, we’re going to:
 
@@ -20,9 +22,18 @@ As we go through this process, you’ll learn:
 
 Let’s get started.
 
+## Prerequisite
+
+### Code Coverage Tool Proxy Configuration
+
+1. A Proxy connection to your code coverage tool of choice must be configured prior to creating the data source to obtain results.
+
+   ![proxy configuration for code coverage results](./Prereq_Code_Coverage_Proxy.png)
+
+
 ## Record the Codecov Reposotory Coverage
 
-TODO: Add sentence explaining what is happening.
+So that we can track our catalog entity code coverage, we must obtain information related to the status (active and activated) and coverage %. We will do this by creating a Data Source to pull the information from Codecov for each entity.
 
 ### Data Source
 
