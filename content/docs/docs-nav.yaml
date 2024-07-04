@@ -150,14 +150,15 @@ nav:
           - Add scorecard: '/docs/tech-insights/add-scorecard'
           - Adding scorecard to the catalog: '/docs/tech-insights/add-scorecard-to-catalog/'
       - Recipes:
+          - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
           - Track a Docker base image migration: '/docs/tech-insights/track-docker-base-image-migration/'
+          - Track Codecov coverage results: '/docs/tech-insights/test-coverage/'
+          - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
           - Track dependency versions: '/docs/tech-insights/track-dependency-versions/'
           - Track Datadog SLOs: '/docs/tech-insights/track-datadog-slos/'
           - Track deprecated GitHub actions Steps: '/docs/tech-insights/track-deprecated-actions/'
           - Track Sonarcloud Project Issues/Hotspots: '/docs/tech-insights/track-sonarcloud/'
           - Track On-prem Sonarqube metrics: '/docs/tech-insights/track-sonarqube/'
-          - Enforce branch protection: '/docs/tech-insights/enforce-branch-protection/'
-          - Track CODEOWNERS adoption: '/docs/tech-insights/track-codeowners-usage/'
       - Check for Catalog Correctness:
           - Mandatory Backstage metadata: '/docs/tech-insights/tracking-catalog-correctness/mandatory-metadata/'
           - GitHub Annotation is present: '/docs/tech-insights/tracking-catalog-correctness/github-annotation/'

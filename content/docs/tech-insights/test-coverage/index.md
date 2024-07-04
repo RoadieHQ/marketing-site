@@ -26,7 +26,7 @@ Let’s get started.
 
 ### Code Coverage Tool Proxy Configuration
 
-1. A Proxy connection to your code coverage tool of choice must be configured prior to creating the data source to obtain results.
+1. A Proxy connection to your code coverage tool of choice must be configured prior to creating the data source to obtain results. In this tutorial, we will be using Codecov.
 
    ![proxy configuration for code coverage results](./Prereq_Code_Coverage_Proxy.png)
 
@@ -45,7 +45,13 @@ So that we can track our catalog entity code coverage, we must obtain informatio
 
    ![About section input fields](./Data_About_Section.png)
 
-3. Set the Data Provider **Type** to `HTTP`, **Proxy** to `/codecov`, **Path Extension** to `github/{{ metadata.annotations['github.com/owner'] }}/repos/{{ metadata.annotations['github.com/repo'] }}`, and **HTTP Method** to `GET`.
+3. Set the Data Provider to:
+    | Field Name | Value |
+    | --- | --- |
+    | Type | HTTP |
+    | Proxy | /codecov |
+    | Path Extension | `github/{{ metadata.annotations['github.com/owner'] }}/repos/{{ metadata.annotations['github.com/repo'] }}` |
+    | HTTP Method | GET |
 
     Select a value for **Select Entity to test data source against** and press **TEST**.
 
