@@ -14,7 +14,7 @@ The Broker connection is designed to connect Roadie and its plugins to integrati
 
 ## Overview
 
-The broker is a Node.js service that you run inside your infrastructure to provide a secure tunnel for Roadie traffic. It was originally created by security company, [Snyk](https://docs.snyk.io/features/snyk-broker/broker-introduction), and is open-source. We are actively using it with existing customers for Kubernetes API access and other Backstage and Roadie plugins. You don't need to be a Snyk user to use the broker.
+The broker is a Node.js service that you run inside your infrastructure to provide a secure tunnel for Roadie traffic. It was originally created by security company, [Snyk](https://docs.snyk.io/enterprise-configuration/snyk-broker), and is open-source. We are actively using it with existing customers for Kubernetes API access and other Backstage and Roadie plugins. You don't need to be a Snyk user to use the broker.
 
 *The benefits of the broker include:*
 
