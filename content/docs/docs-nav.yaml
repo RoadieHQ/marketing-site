@@ -53,6 +53,7 @@ nav:
       - Opsgenie: '/docs/integrations/opsgenie/'
       - PagerDuty: '/docs/integrations/pagerduty/'
       - Prometheus: '/docs/integrations/prometheus/'
+      - Proxy Sigv4: '/docs/integrations/proxy-sigv4/'
       - Pulumi: '/docs/integrations/pulumi/'
       - Sentry: '/docs/integrations/sentry/'
       - Shortcut: '/docs/integrations/shortcut-plugin/'
