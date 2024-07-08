@@ -20,7 +20,7 @@ You can check the available actions if you visit `/templates/actions`.
 
 ## Walkthrough
 
-You can use this template by registering it from [RoadieHQ/software-templates](https://github.com/RoadieHQ/software-templates/tree/main/scaffolder-templates/debug-template/template.yaml) repo
+You can use this template by registering it from [roadie-demo/scaffolder-examples](https://github.com/roadie-demo/scaffolder-examples/tree/main/scaffolder-templates/debug-template/template.yaml) repo
 
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
@@ -50,7 +50,7 @@ metadata:
     - id: fetch-template
       action: fetch:template
       input:
-        url: https://github.com/RoadieHQ/software-templates/tree/main/scaffolder-templates/debug-template/skeleton
+        url: https://github.com/roadie-demo/scaffolder-examples/tree/main/scaffolder-templates/debug-template/skeleton
         templateFileExtension: true
         values:
           rfcNumber: ${{ parameters.rfcNumber }}
@@ -106,7 +106,7 @@ The provided values object will be used to replace the values inside the skeleto
 - id: fetch-template
   action: fetch:template
   input:
-    url: https://github.com/RoadieHQ/software-templates/tree/main/scaffolder-templates/debug-template/skeleton
+    url: https://github.com/roadie-demo/scaffolder-examples/tree/main/scaffolder-templates/debug-template/skeleton
     templateFileExtension: true
     targetPath: docs/rfcs/${{ parameters.rfcNumber }}
     values:

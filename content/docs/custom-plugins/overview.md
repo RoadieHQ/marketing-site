@@ -53,7 +53,7 @@ Roadie plugins can be standard Backstage plugins and all open source plugins are
 There are two tools Roadie provides that can be used to get started developing a custom plugin.
 
 - Roadie CLI: https://www.npmjs.com/package/@roadiehq/roadie-cli
-- Template: https://github.com/RoadieHQ/software-templates/blob/main/scaffolder-templates/roadie-plugin/template.yaml
+- Template: https://github.com/roadie-demo/scaffolder-examples/blob/main/scaffolder-templates/roadie-plugin/template.yaml
 
 The Scaffolder template provides an entry point to create a monorepo which can host the custom plugin code. This can be used as the first step to Roadie plugin development and can be built on by creating subsequent plugins using the same patterns within the same monorepo.
 
