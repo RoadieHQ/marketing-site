@@ -19,7 +19,7 @@ logoImage: '../../assets/logos/scaffolder-templates/sst.png'
 
 ### Getting Started
 
-The template can be found here https://github.com/roadie-demo/scaffolder-examples/blob/main/scaffolder-templates/create-aws-serverless-frontend-and-backend/template.yaml
+The template can be found here https://github.com/roadie-demo/scaffolder-examples/blob/main/create-aws-serverless-frontend-and-backend/template.yaml
 
 To Use the template
   1. Create the following secrets in your GitHub Organizations secrets AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY ![AWS Credentials](aws-credentials.png)

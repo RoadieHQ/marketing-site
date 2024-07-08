@@ -15,7 +15,7 @@ Roadie provides the possibility to run self-hosted, custom scaffolder actions as
 
 #### Option 1 - Using a scaffolder template
 
-Roadie has developed a scaffolder template that allows you to bootstrap a node.js monorepo, which allows you to start developing, building and deploying custom scaffolder actions. You can find the Scaffolder template to get started with from here: https://github.com/roadie-demo/scaffolder-examples/blob/main/scaffolder-templates/roadie-agent-scaffolder-action/template.yaml. 
+Roadie has developed a scaffolder template that allows you to bootstrap a node.js monorepo, which allows you to start developing, building and deploying custom scaffolder actions. You can find the Scaffolder template to get started with from here: https://github.com/roadie-demo/scaffolder-examples/blob/main/roadie-agent-scaffolder-action/template.yaml. 
 
 #### Option 2 - Installing the library manually
 
@@ -152,5 +152,5 @@ Make sure that the configuration for the custom action matches in all three conf
 ## References
 
 - [Roadie Agent Library](https://www.npmjs.com/package/@roadiehq/roadie-agent)
-- [Custom Action monorepo template](https://github.com/roadie-demo/scaffolder-examples/blob/main/scaffolder-templates/roadie-agent-scaffolder-action/template.yaml)
+- [Custom Action monorepo template](https://github.com/roadie-demo/scaffolder-examples/blob/main/roadie-agent-scaffolder-action/template.yaml)
 - [Broker Documentation](/docs/integrations/broker/)

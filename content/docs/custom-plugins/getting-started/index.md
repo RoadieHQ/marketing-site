@@ -18,7 +18,7 @@ Navigate to your Roadie instance scaffolder and register a new template. Click o
 Paste the URL below into the URL field.
 
 ```plain
-https://github.com/roadie-demo/scaffolder-examples/blob/main/scaffolder-templates/roadie-plugin/template.yaml
+https://github.com/roadie-demo/scaffolder-examples/blob/main/roadie-plugin/template.yaml
 ```
 
 ![Importing scaffolder template to create plugins monorepo](scaffolder_monorepo_import.png)
