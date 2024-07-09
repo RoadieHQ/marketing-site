@@ -101,6 +101,7 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
     'https://player.vimeo.com',
     'https://www.loom.com',
     'https://www.youtube.com',
+    'https://scribehow.com/',
     //
     // Recaptchas https://developers.google.com/recaptcha/docs/faq
     'https://www.google.com',
