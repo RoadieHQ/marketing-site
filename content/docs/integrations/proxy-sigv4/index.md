@@ -59,4 +59,4 @@ will be available on `https://<your-roadie-url>/api/proxy-sigv4/s3`
 After the role configuration is done, you can click the 'Test Role' button to check if integration configuration has succeeded.
 
 Please ensure there is a trusted relationship with allows the created role to be assumed.
-For more information please visit: [Accessing AWS Resources](https://roadie.io/docs/details/accessing-aws-resources/)
+For more information please visit: [Accessing AWS Resources](/docs/details/accessing-aws-resources)
