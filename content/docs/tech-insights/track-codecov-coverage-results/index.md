@@ -90,7 +90,7 @@ So that we can track our catalog entity code coverage, we must obtain informatio
 
 7. Use the **Applies to** filter to target this data source at some components which you expect to have Node.js. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.  
 
-    ![About Data Source section displayed](./Applies_To_Section.png)
+    ![About Data Source section displayed](./Refined_Applies_To_Section.png)
 
 8. Press **SAVE**.
 
@@ -132,7 +132,7 @@ We have a data source providing Active and Activated, let's create a check to re
 
 6. Use the **Applies to** filter to target this data source at some components which you expect to have Code Coverage configured. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
 
-    ![About Data Source section displayed](./Applies_To_Section.png)
+    ![About Data Source section displayed](./Refined_Applies_To_Section.png)
 
 7. Press **SAVE**.
 
@@ -180,7 +180,7 @@ We have a data source telling us what the coverage is, let's create a check to e
 
 6. Use the **Applies to** filter to target this data source at some components which you expect to have Code Coverage configured. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
 
-    ![About Data Source section displayed](./Applies_To_Section.png)
+    ![About Data Source section displayed](./Refined_Applies_To_Section.png)
 
 7. Press **SAVE**.
 
