@@ -3,7 +3,7 @@ title: Proxy Sigv4 Plugin
 publishedDate: '2024-06-08T12:00:00.0Z'
 description: How to configure Roadie to use AWS Signature Version 4 for proxying requests to and from AWS services
 
-humanName: Proxy Sigv4
+humanName: Proxy AWS Sigv4
 logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.png'
 integrationType: OSS plugin
 ---
@@ -57,3 +57,6 @@ example: `/s3`
 will be available on `https://<your-roadie-url>/api/proxy-sigv4/s3`
 
 After the role configuration is done, you can click the 'Test Role' button to check if integration configuration has succeeded.
+
+Please ensure there is a trusted relationship with allows the created role to be assumed.
+For more information please visit: [Accessing AWS Resources](https://roadie.io/docs/details/accessing-aws-resources/)
