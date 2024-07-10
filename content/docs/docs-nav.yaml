@@ -8,13 +8,13 @@ nav:
   - Getting started:
       - Overview: '/docs/getting-started/overview/'
       - Setting up your catalog:
-        - Adding to your catalog: '/docs/getting-started/adding-a-catalog-item/'
-        - Enable autodiscovery: '/docs/getting-started/autodiscovery/'
-        - Modelling your software: '/docs/getting-started/model-software/'
+          - Adding to your catalog: '/docs/getting-started/adding-a-catalog-item/'
+          - Enable autodiscovery: '/docs/getting-started/autodiscovery/'
+          - Modelling your software: '/docs/getting-started/model-software/'
       - Adding users:
-        - Inviting users: '/docs/getting-started/user-management/'
-        - Designating admins: '/docs/getting-started/create-admin-group/'
-        - Modelling Users and Groups: '/docs/getting-started/teams/'
+          - Inviting users: '/docs/getting-started/user-management/'
+          - Designating admins: '/docs/getting-started/create-admin-group/'
+          - Modelling Users and Groups: '/docs/getting-started/teams/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
       - Customising the Roadie UI: '/docs/getting-started/configure-ui/'
       - Creating a scorecard: '/docs/getting-started/creating-a-scorecard/'
@@ -53,6 +53,7 @@ nav:
       - Opsgenie: '/docs/integrations/opsgenie/'
       - PagerDuty: '/docs/integrations/pagerduty/'
       - Prometheus: '/docs/integrations/prometheus/'
+      - Proxy AWS Sigv4: '/docs/integrations/proxy-sigv4/'
       - Pulumi: '/docs/integrations/pulumi/'
       - Sentry: '/docs/integrations/sentry/'
       - Shortcut: '/docs/integrations/shortcut-plugin/'
