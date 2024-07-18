@@ -139,13 +139,11 @@ Click "Boolean"
 ![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2024-07-16/eb90ad5a-e2f7-44e5-af52-4794da27273e/user_cropped_screenshot.jpeg?tl_px=74,75&br_px=1450,845&force_format=png&width=1120.0)
 
 
-<div class="bg-teal-100 border-t border-b border-teal-500 text-teal-900 px-4 py-3" role="alert">
-  <p class="font-bold">Filtering</p>
-  <p class="text-sm">Use the "Applies to" filter to target the data source at components which have fragments or decorators. A catalog entity will have an additional annotation called "roadie.io/applied-fragments" when a fragment or decorator has been applied.</p>
+<div className="bg-teal-100 border-t border-b border-teal-500 text-teal-900 px-4 py-3" role="alert">
+  <p className="font-bold">Filtering</p>
+  <p className="text-sm">Use the "Applies to" filter to target the data source at components which have fragments or decorators. A catalog entity will have an additional annotation called "roadie.io/applied-fragments" when a fragment or decorator has been applied.</p>
+  <p className="text-sm">We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.</p>
 </div>
-
-
-We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
 
 19\. Click the "Has Annotation" field
