@@ -16,6 +16,7 @@ nav:
         - Designating admins: '/docs/getting-started/create-admin-group/'
         - Modelling Users and Groups: '/docs/getting-started/teams/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
+      - Create a Proxy: '/docs/getting-started/create-proxy/'
       - Customising the Roadie UI: '/docs/getting-started/configure-ui/'
       - Creating a scorecard: '/docs/getting-started/creating-a-scorecard/'
       - Creating a Scaffolder template: '/docs/getting-started/scaffolding-components/'
