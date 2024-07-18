@@ -84,6 +84,24 @@ html {
   @apply rounded-md;
 }
 
+.docs-cta__tip_title {
+  @apply bg-teal-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply px-4;
+  @apply py-2;
+}
+
+.docs-cta__tip_message {
+  @apply bg-teal-100;
+  @apply border;
+  @apply border-t-0;
+  @apply border-teal-400;
+  @apply text-teal-700;
+  @apply px-4;
+  @apply py-3;
+}
+
 .plugin-intro > p {
   @apply mb-2;
 }

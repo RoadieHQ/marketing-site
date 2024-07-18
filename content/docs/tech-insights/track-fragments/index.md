@@ -139,10 +139,12 @@ Click "Boolean"
 ![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2024-07-16/eb90ad5a-e2f7-44e5-af52-4794da27273e/user_cropped_screenshot.jpeg?tl_px=74,75&br_px=1450,845&force_format=png&width=1120.0)
 
 
-<div className="bg-teal-100 border-t border-b border-teal-500 text-teal-900 px-4 py-3" role="alert">
-  <p className="font-bold">Filtering</p>
-  <p className="text-sm">Use the "Applies to" filter to target the data source at components which have fragments or decorators. A catalog entity will have an additional annotation called "roadie.io/applied-fragments" when a fragment or decorator has been applied.</p>
-  <p className="text-sm">We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.</p>
+<div role="alert">
+  <div class="docs-cta__tip_title">Filtering Catalog Entities in the Data Source</div>
+  <div  class="docs-cta__tip_message">
+    <p>Use the "Applies to" filter to target the data source at components which have fragments or decorators. A catalog entity will have an additional annotation called "roadie.io/applied-fragments" when a fragment or decorator has been applied.</p>
+    <p>We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.</p>
+  </div>
 </div>
 
 
@@ -255,7 +257,15 @@ Type "owner"
 
 ![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2024-07-17/ea138fbe-5e09-499a-9a06-1236e06c8d06/ascreenshot.jpeg?tl_px=592,408&br_px=1452,889&force_format=png&width=860&wat_scale=76&wat=1&wat_opacity=0.7&wat_gravity=northwest&wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&wat_pad=402,398)
 
-Tip: Use the "Applies to" filter to target the data source at components which have fragments or decorators. A catalog entity will have an additional annotation called "roadie.io/applied-fragments" when a fragment or decorator has been applied.
+
+<div role="alert">
+  <div class="docs-cta__tip_title">Filtering the Catalog Entities in the Check</div>
+  <div  class="docs-cta__tip_message">
+    <p>Use the "Applies to" filter to target the check at components which have fragments or decorators. A catalog entity will have an additional annotation called "roadie.io/applied-fragments" when a fragment or decorator has been applied.</p>
+    <p>We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.</p>
+  </div>
+</div> 
+
 
 15\. Click the "Has Annotation" field
 Check the "roadie.io/applied-fragments" field

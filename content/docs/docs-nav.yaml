@@ -157,6 +157,7 @@ nav:
           - Track dependency versions: '/docs/tech-insights/track-dependency-versions/'
           - Track Datadog SLOs: '/docs/tech-insights/track-datadog-slos/'
           - Track deprecated GitHub actions Steps: '/docs/tech-insights/track-deprecated-actions/'
+          - Track fragments: '/docs/tech-insights/track-fragments/'
           - Track Sonarcloud Project Issues/Hotspots: '/docs/tech-insights/track-sonarcloud/'
           - Track On-prem Sonarqube metrics: '/docs/tech-insights/track-sonarqube/'
       - Check for Catalog Correctness:
