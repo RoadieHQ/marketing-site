@@ -84,6 +84,7 @@ html {
   @apply rounded-md;
 }
 
+/* https://v1.tailwindcss.com/components/alerts */
 .docs-cta__alert_title {
   @apply bg-red-500;
   @apply text-white;
