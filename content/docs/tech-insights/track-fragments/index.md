@@ -29,8 +29,6 @@ Please see our guide on [How to create a Proxy](https://www.notion.so/cee75472c8
 
 <iframe src="https://scribehow.com/embed/Create_Data_Source_for_Entity_Fragments__tnYE56uNTtqKA3_GQAWIWQ?skipIntro=true&removeLogo=true" width="100%" height="640" allowfullscreen frameborder="0"></iframe>
 
-# Create Data Source for Entity Fragments
-
 1\. Navigate to your Roadie tenant
 
 
@@ -172,7 +170,7 @@ Click "Boolean"
 
 ![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2024-07-16/41862037-2b89-4551-9bb3-2fc15c01b94b/user_cropped_screenshot.jpeg?tl_px=272,60&br_px=1648,829&force_format=png&width=1120.0)
 
-### Create a Check that Shows if Owner is Defined as a Decoration
+# Create a Check that Shows if Owner is Defined as a Decoration
 
 <iframe src="https://scribehow.com/embed/Create_Check_for_Entity_Fragments__Y_IIUx9pR0Kgf0Uchx56Xw?removeLogo=true" width="100%" height="640" allowfullscreen frameborder="0"></iframe>
 

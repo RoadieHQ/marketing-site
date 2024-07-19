@@ -68,6 +68,7 @@ const CSP_IMG_SRC_DIRECTIVES = [
 
   // Scribe
   'https://*.amazonaws.com',
+  'https://*.cloudimg.io',
 
   // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
   'blob:',
