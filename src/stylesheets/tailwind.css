@@ -84,6 +84,42 @@ html {
   @apply rounded-md;
 }
 
+.docs-cta__alert_title {
+  @apply bg-red-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply px-4;
+  @apply py-2;
+}
+
+.docs-cta__alert_message {
+  @apply bg-red-100;
+  @apply border;
+  @apply border-t-0;
+  @apply border-red-400;
+  @apply text-red-700;
+  @apply px-4;
+  @apply py-3;
+}
+
+.docs-cta__info_title {
+  @apply bg-blue-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply px-4;
+  @apply py-2;
+}
+
+.docs-cta__info_message {
+  @apply bg-blue-100;
+  @apply border;
+  @apply border-t-0;
+  @apply border-blue-400;
+  @apply text-blue-700;
+  @apply px-4;
+  @apply py-3;
+}
+
 .docs-cta__tip_title {
   @apply bg-teal-500;
   @apply text-white;

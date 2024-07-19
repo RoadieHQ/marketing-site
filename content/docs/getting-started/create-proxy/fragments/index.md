@@ -42,7 +42,12 @@ Click the "Target" field and type "https://api.roadie.so/api/catalog/fragments"
 ![](https://colony-recorder.s3.amazonaws.com/files/2024-07-11/388d1e0d-6ea5-4409-8fec-a8bef36ac6a5/stack_animation.webp)
 
 
-Tip: You can set your API token as the value for any Customer Token you are not using.
+<div role="alert">
+  <div class="docs-cta__tip_title">Did you know?</div>
+  <div  class="docs-cta__tip_message">
+    <p>You can set your API token as the value for any `CUSTOMER_TOKEN` you are not using.</p>
+  </div>
+</div> 
 
 
 7\. Click "Advanced Settings"
@@ -78,7 +83,12 @@ Click the "Authorization" field and type "Bearer ${CUSTOMER_TOKEN_3}"
 ![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2024-07-10/79242928-84eb-4d28-b100-e3053fd39c3c/ascreenshot.jpeg?tl_px=0,0&br_px=1525,889&force_format=png&width=1120.0&wat=1&wat_opacity=0.7&wat_gravity=northwest&wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&wat_pad=213,320)
 
 
-Alert: Make sure you set the value of the same Customer Token you specified in your Proxy header.
+<div role="alert">
+  <div class="docs-cta__alert_title">Wait!</div>
+  <div  class="docs-cta__alert_message">
+    <p>Make sure you set the value of the same Customer Token you specified in your Proxy header.</p>
+  </div>
+</div> 
 
 
 13\. Click the pencil icon next to the "CUSTOMER_TOKEN_3" secret
@@ -97,8 +107,8 @@ Alert: Make sure you set the value of the same Customer Token you specified in y
 
 
 <div role="alert">
-  <div class="docs-cta__tip_title">What Next?</div>
-  <div  class="docs-cta__tip_message">
-    <p>Check out [Create Data Source for Entity Fragments](https://scribehow.com/shared/Create_Data_Source_for_Entity_Fragments__tnYE56uNTtqKA3_GQAWIWQ) for the what to do next</p>
+  <div class="docs-cta__info_title">What's Next?</div>
+  <div  class="docs-cta__info_message">
+    <p>Check out <a href="/docs/tech-insights/track-fragments/">Create Data Source for Entity Fragments</a> to start using your newly created proxy.</p>
   </div>
 </div> 
