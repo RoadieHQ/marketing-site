@@ -44,7 +44,7 @@ const Doc = ({
         </footer>
       </article>
 
-      <NestedTableOfContentsSidebar tableOfContents={doc.tableOfContents} />
+      <NestedTableOfContentsSidebar tableOfContents={doc.tableOfContents} className='self-start sticky top-0' />
     </main>
 
     <SitewideFooter maxWidth="full" />

@@ -1,12 +1,14 @@
 import React, { useState, Fragment, useEffect } from 'react';
-import { CodeBlock, Headline, SitewideFooter, SEO } from 'components';
-import classnames from 'classnames';
-import Sidebar from 'components/doc/Sidebar';
-import isEmpty from 'lodash/isEmpty';
 import { graphql } from 'gatsby';
-import Prism from 'prismjs';
+import { SEO, SitewideFooter, CodeBlock, Headline } from 'components';
 
+import { NestedTableOfContentsSidebar } from 'components/Sidebar/index';
+import Sidebar from 'components/doc/Sidebar';
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
+
+import classnames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
+import Prism from 'prismjs';
 
 const Chip = ({ label, isActive }) => {
   const defaultClasses =
@@ -32,20 +34,29 @@ const Sources = ({ sources }) => {
   };
 
   return (
-      <section className='sm:grid md:grid-cols-1 sm:gap-6 lg:grid-cols-2 mt-4'>
-        <div>
-          <div className='mb-6'>
-            {sources.map((it) => {
-              return (
-                <button key={it.id} onClick={() => handleChange(it)}>
-                  <Chip label={it.frontmatter.humanName} isActive={typeFilter === it.id} />
-                </button>
-              );
-            })}
-          </div>
-          <CodeBlock language='html' intro={sources.find((it) => it.id === typeFilter).html} />
+    <section className='sm:grid md:grid-cols-1 sm:gap-6 lg:grid-cols-3 mt-4'>
+      <div className='col-span-3'>
+        {sources.map((it) => {
+          return (
+            <button key={it.id} onClick={() => handleChange(it)}>
+              <Chip label={it.frontmatter.humanName} isActive={typeFilter === it.id} />
+            </button>
+          );
+        })}
+      </div>
+      <div className='col-span-2'>
+        <div className='mb-6'>
+        <CodeBlock language='html' intro={sources.find((it) => it.id === typeFilter).html} />
         </div>
-      </section>
+      </div>
+      <div>
+        <div className='self-start sticky top-0'>
+          <div className='mb-6'>
+            future toc
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -96,6 +107,7 @@ export const pageQuery = graphql`
             humanName
             order
             category
+            scribe
           }
           fields {
             slug

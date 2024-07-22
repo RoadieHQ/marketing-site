@@ -19,11 +19,11 @@ As we go through this process, you’ll learn:
 
 Let’s get started. 
 
-(Read our blog post “[Decorators for rich Team pages](https://roadie.io/blog/decorators-product-announcement/)” for more information on Decorators.)
+(Read our blog post “[Decorators for rich Team pages](/blog/decorators-product-announcement/)” for more information on Decorators.)
 
 # Prerequisite: Fragments API Proxy
 
-Please see our guide on [How to create a Proxy](https://www.notion.so/cee75472c88040618a3d4299d85c35ae?pvs=21) to create the proxy referenced in the steps below.
+Please see our guide on [How to create a Proxy](/docs/getting-started/create-proxy/) to create the proxy referenced in the steps below.
 
 # Create Data Source for Entity Fragments
 

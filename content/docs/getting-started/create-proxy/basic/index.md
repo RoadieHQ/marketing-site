@@ -6,11 +6,10 @@ description: How to create a basic proxy in Roadie.
 category: proxy-type
 order: 1
 humanName: basic
+scribe: https://scribehow.com/embed/Create_a_new_Basic_Proxy__mkhvMjmAS1uz2u9gGstsQw?skipIntro=true&removeLogo=true
 ---
 
 # Create a new Basic Proxy
-
-<iframe src="https://scribehow.com/embed/Create_a_new_Basic_Proxy__mkhvMjmAS1uz2u9gGstsQw?skipIntro=true&removeLogo=true" width="100%" height="640" allowfullscreen frameborder="0"></iframe>
 
 1\. Navigate to Roadie Tenant
 
@@ -20,7 +19,7 @@ humanName: basic
 ![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2024-07-15/4b7d6910-d3d5-4cf9-817d-8dc7f49f70f7/ascreenshot.jpeg?tl_px=0,408&br_px=859,889&force_format=png&width=860&wat_scale=76&wat=1&wat_opacity=0.7&wat_gravity=northwest&wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&wat_pad=80,366)
 
 
-3\. Click "Plugins"
+3\. Click "Plugins"5413608
 
 ![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2024-07-15/b4b7d5d6-6d11-478f-82da-a67246d04f9a/ascreenshot.jpeg?tl_px=0,362&br_px=859,843&force_format=png&width=860&wat_scale=76&wat=1&wat_opacity=0.7&wat_gravity=northwest&wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&wat_pad=308,212)
 
