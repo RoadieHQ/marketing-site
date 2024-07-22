@@ -5,7 +5,7 @@ description: How to create a basic proxy in Roadie.
 
 category: proxy-type
 order: 1
-humanName: basic
+humanName: Basic
 scribe: https://scribehow.com/embed/Create_a_new_Basic_Proxy__mkhvMjmAS1uz2u9gGstsQw?skipIntro=true&removeLogo=true
 ---
 
