@@ -198,8 +198,44 @@ An additional filtering based on any header can be achieved by using `valid` con
 
 ## Troubleshooting
 
-- `Error: self-signed certificate in certificate chain`
-    - If the services you are directing traffic to are using self-signed certificates you might face an issue where the broken healthcheck does not respond correctly, varying between 403 and 404 error codes. To fix this, you can either [provide the certificate to the broker manually so it understand that](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/backend-requests-with-an-internal-certificate-for-docker) or alternatively [disable certification verification altogether](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/disable-certificate-verification-with-docker).
+### `Error: self-signed certificate in certificate chain`
+
+If the services you are directing traffic to are using self-signed certificates you might face an issue where the broken healthcheck does not respond correctly, varying between 403 and 404 error codes. To fix this, you can either [provide the certificate to the broker manually so it understand that](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/backend-requests-with-an-internal-certificate-for-docker) or alternatively [disable certification verification altogether](https://docs.snyk.io/enterprise-setup/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/disable-certificate-verification-with-docker).
+
+**Using a self-signed certificate within broker running in K8s**
+
+If you want to continue using self-signed certificates and are not comfortable disabling the certificate validation completely, you can attach the self-signed certificate as a file to the running instance and reference it with an environment variables. This way the `node.js` process is able to accept self-signed certificates also. The steps to set this up are as follows:  
+
+1. Either generate (or re-purpose) a ConfigMap with the private Root & Intermediate CA
+   * ```yaml
+     ...
+        volumes:
+        - name: trusted-ca-bundle
+        configMap:
+        name: ca-bundle
+     ```
+ 
+2. Add the volume to the Deployment Configuration and mount the volume in a specific path
+    * ```yaml
+       ...
+         volumeMounts:
+         - name: trusted-ca-bundle
+         mountPath: /private
+      ```
+   
+   * This will be mount the `trusted-ca-bundle` volumen into `/private/` folder of the pod, and the name of the file will be the name of the key in the ConfigMap
+   
+3. Configure the environment variable for Node.JS - see below.
+   * ```yaml
+     ...
+     - env:
+     ...
+       - name: NODE_EXTRA_CA_CERTS
+         value: '/private/ca-bundle.pem'
+     ```
+   * The key in the ConfigMap is named ca-bundle.pem and the ConfigMap itself is named ca-bundle
+    
+
 
 ### Debugging
 
