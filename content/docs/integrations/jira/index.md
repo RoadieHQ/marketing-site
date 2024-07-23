@@ -35,10 +35,9 @@ On the modal window you can give the token a label, so you can recognize it late
 
    ![New created token modal window with a possibility to copy the token](./new-token.png)
 
-### Step 2: Base64 encode the credentials 
+### Step 2: Add the Token in Roadie
 
-This step is optional for Jira Server/DC which can use Bearer tokens. You'll need to configure an environment variable to
-use Bearer tokens (see step 3).
+(If using Jira Server/DC you can skip the encoding here and add the Bearer token directly. You'll need to configure an environment variable `JIRA_API_TOKEN_REALM` with the value `Bearer` in addition.)
 
 Jira Cloud uses Basic auth so the token needs to be converted into a compatible format. 
 First we need to prefix the token with the Jira user email and base64 encode it. 
@@ -57,11 +56,12 @@ read -s tmp; echo -n "jira-mail@example.com:$tmp" | base64 ; unset tmp
 ```
 NOTE: the `-n` flag removes new line characters from the echo output.
 
-### Step 3: Store the credentials and Jira URL in Roadie
-Visit `https://<tenant-name>.roadie.so/administration/jira` and: 
-* Enter the base64 encoded and prefixed token value from above into `JIRA_API_TOKEN`.
+Enter the token value from above into the `JIRA_API_TOKEN` secret in the Jira Administration page at `https://<tenant-name>.roadie.so/administration/jira`.
+
+### Step 3: Add the Jira URL in Roadie
+Visit `https://<tenant-name>.roadie.so/administration/jira` and:
 * Add the URL to your Jira instance into `JIRA_API_URL`. The URL should not contain a trailing slash, e.g. `https://roadie.atlassian.net`.
-* If you're using a Bearer token enter `Bearer` into `JIRA_API_TOKEN_REALM`
+* If you're using a Bearer token for Jira Server enter `Bearer` into `JIRA_API_TOKEN_REALM`.
 * Optionally, provide a value for `User Email Suffix` this should be the email suffix of your Jira users, for example, @your-company.com.
   This setting is used by the Jira dashboard in conjunction with your Backstage username to construct a filter to display only your issues. 
   This may not be necessary if you're using version 3 of the Jira API. 
