@@ -63,7 +63,7 @@ This is a role that will be assumed by Roadie to access AWS resources in this ac
 
 ## Step 2: Restrict the new role trust relationships to Roadie only
 
-1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
+1. Search for IAM in the services box and then click on ”Roles” on the left hand side tab.
 
 2. Search for your newly created role (e.g. ”roadie-read-only-role”) and click on it.
 
