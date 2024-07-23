@@ -4,15 +4,16 @@ publishedDate: '2024-07-18T15:15:00.0Z'
 description: How to create a basic proxy in Roadie.
 
 category: proxy-type
-order: 2
-humanName: fragments
+type: example
+order: 3
+humanName: "Example: Fragments"
 scribe: "https://scribehow.com/embed/Create_Proxy_for_Entity_Fragments__21PeDaxMQoKveREokiknvw?skipIntro=true&removeLogo=true"
 ---
 
 # Create Proxy for Entity Fragments
 How to create a proxy for use with a Tech Insights Data Source Data Provider.
 
-<iframe src="https://scribehow.com/embed/Create_Proxy_for_Entity_Fragments__21PeDaxMQoKveREokiknvw?skipIntro=true&removeLogo=true" width="100%" height="640" allowfullscreen frameborder="0"></iframe>
+<iframe src="https://scribehow.com/embed/Create_Proxy_for_Entity_Fragments__21PeDaxMQoKveREokiknvw?removeLogo=true" width="100%" height="640" allowfullscreen frameborder="0"></iframe>
 
 1\. Navigate to your Roadie tenant
 

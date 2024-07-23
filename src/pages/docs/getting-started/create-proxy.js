@@ -2,7 +2,6 @@ import React, { useState, Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideFooter, CodeBlock, Headline } from 'components';
 
-import { NestedTableOfContentsSidebar } from 'components/Sidebar/index';
 import Sidebar from 'components/doc/Sidebar';
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
 
@@ -34,8 +33,8 @@ const Sources = ({ sources }) => {
   };
 
   return (
-    <section className='sm:grid md:grid-cols-1 sm:gap-6 lg:grid-cols-3 mt-4'>
-      <div className='col-span-3'>
+    <section className='mt-4'>
+      <div className='mb-4'>
         {sources.map((it) => {
           return (
             <button key={it.id} onClick={() => handleChange(it)}>
@@ -44,23 +43,16 @@ const Sources = ({ sources }) => {
           );
         })}
       </div>
-      <div className='col-span-2'>
+      <div className=''>
         <div className='mb-6'>
-        <CodeBlock language='html' intro={sources.find((it) => it.id === typeFilter).html} />
-        </div>
-      </div>
-      <div>
-        <div className='self-start sticky top-0'>
-          <div className='mb-6'>
-            future toc
-          </div>
+        <CodeBlock language='html' intro={sources.find((it) => it.id === typeFilter).html} introClassNames='max-w-3xl' />
         </div>
       </div>
     </section>
   );
 };
 
-const ProxyPage = ({ data, location }) => {
+const ProxyPage = ({ data, location}) => {
   const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).filter((item => item.frontmatter.category === 'proxy-type')).sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
   const header = data.allMarkdownRemark.edges.map((edge) => edge.node).find((item => item.frontmatter.category === 'header'));
   return (
@@ -74,18 +66,19 @@ const ProxyPage = ({ data, location }) => {
 
       <main className='md:flex pt-4 md:pt-0'>
         <Sidebar location={location} />
+
         {!isEmpty(sources) && (
           <article className='px-2 md:px-6 md:pt-7 md:flex-1'>
             <Headline size='small' className="mb-1 mt-0">
               {header.frontmatter.title}
             </Headline>
 
-            <CodeBlock language='html' intro={header.html} />
+            <CodeBlock language='html' intro={header.html} introClassNames='max-w-3xl' />
             <Sources sources={sources} />
           </article>
         )}
       </main>
-      <SitewideFooter />
+      <SitewideFooter maxWidth="full" />
     </>
   );
 };
@@ -108,6 +101,7 @@ export const pageQuery = graphql`
             order
             category
             scribe
+            type
           }
           fields {
             slug

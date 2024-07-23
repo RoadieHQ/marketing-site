@@ -4,7 +4,7 @@ publishedDate: '2024-07-18T15:15:00.0Z'
 description: How to create an authenticated proxy in Roadie.
 
 category: proxy-type
-order: 1
+order: 2
 humanName: Authenticated
 scribe: ''
 ---

@@ -11,6 +11,8 @@ scribe: https://scribehow.com/embed/Create_a_new_Basic_Proxy__mkhvMjmAS1uz2u9gGs
 
 # Create a new Basic Proxy
 
+<iframe src="https://scribehow.com/embed/Create_a_new_Basic_Proxy__mkhvMjmAS1uz2u9gGstsQw?removeLogo=true" width="100%" height="640" allowfullscreen frameborder="0"></iframe>
+
 1\. Navigate to Roadie Tenant
 
 
