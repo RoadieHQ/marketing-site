@@ -44,9 +44,10 @@ To learn more about the AWS concepts used below, you can read the following AWS 
 
 7. Click ”Next”
 
-8. For the ”Role Name” enter: ”<mycompany>-roadie-read-only-role”
+8. For the ”Role Name” enter: `<tenant-name>-roadie-read-only-role`
 
-⚠️ ”<mycompany>” should be replaced by the lower cased value of your company (e.g. "mycompany-roadie-read-only-role") and should follow the convention highlighted above. If it does not follow the convention, the role cannot be assumed. This is for security reasons.
+`<tenant-name>` should be replaced by the lower cased value of your company (e.g. "mycompany-roadie-read-only-role") .
+> ⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text `<tenant-name>-roadie-`. If other naming conventions are used, the role assumption is blocked by security measures. 
 
 9. For the ”Role description” enter a description such as:
 
@@ -62,7 +63,7 @@ This is a role that will be assumed by Roadie to access AWS resources in this ac
 
 ## Step 2: Restrict the new role trust relationships to Roadie only
 
-1. Search for IAM in the services box and then click on ”Roles” on the left handside tab.
+1. Search for IAM in the services box and then click on ”Roles” on the left hand side tab.
 
 2. Search for your newly created role (e.g. ”roadie-read-only-role”) and click on it.
 
