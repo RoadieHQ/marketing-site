@@ -3,11 +3,10 @@ title: How to Create a Proxy for Entity Fragments
 publishedDate: '2024-07-18T15:15:00.0Z'
 description: How to create a basic proxy in Roadie.
 
-category: proxy-type
-type: example
-order: 3
-humanName: "Example: Fragments"
-scribe: "https://scribehow.com/embed/Create_Proxy_for_Entity_Fragments__21PeDaxMQoKveREokiknvw?skipIntro=true&removeLogo=true"
+type: basic
+order: 1
+humanName: Fragments
+scribe: https://scribehow.com/embed/Create_a_new_Basic_Proxy__mkhvMjmAS1uz2u9gGstsQw?skipIntro=true&removeLogo=true
 ---
 
 # Create Proxy for Entity Fragments

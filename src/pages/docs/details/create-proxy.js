@@ -2,6 +2,7 @@ import React, { useState, Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideFooter, CodeBlock, Headline } from 'components';
 
+import { ExamplesSidebar } from 'components/Sidebar/index';
 import Sidebar from 'components/doc/Sidebar';
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
 
@@ -54,7 +55,11 @@ const Sources = ({ sources }) => {
 
 const ProxyPage = ({ data, location}) => {
   const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).filter((item => item.frontmatter.category === 'proxy-type')).sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
+  const examples = data.examplesList.edges.map((edge) => edge.node);
   const header = data.allMarkdownRemark.edges.map((edge) => edge.node).find((item => item.frontmatter.category === 'header'));
+
+  console.log("examples: " + JSON.stringify(examples))
+
   return (
     <>
       <DocsHeader location={location} />
@@ -74,9 +79,12 @@ const ProxyPage = ({ data, location}) => {
             </Headline>
 
             <CodeBlock language='html' intro={header.html} introClassNames='max-w-3xl' />
+
             <Sources sources={sources} />
           </article>
         )}
+
+        <ExamplesSidebar examples={examples} />
       </main>
       <SitewideFooter maxWidth="full" />
     </>
@@ -89,7 +97,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/.+/content/docs/getting-started/create-proxy/.+/" }
+        fileAbsolutePath: { regex: "/.+/content/docs/details/create-proxy/.+/" }
       }
     ) {
       edges {
@@ -100,8 +108,29 @@ export const pageQuery = graphql`
             humanName
             order
             category
-            scribe
-            type
+          }
+          fields {
+            slug
+          }
+          html
+          excerpt
+        }
+      }
+    }
+
+    examplesList: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/.+/content/docs/details/create-proxy/examples/.+/" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            humanName
+            order
+            category
           }
           fields {
             slug

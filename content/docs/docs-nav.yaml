@@ -16,7 +16,6 @@ nav:
         - Designating admins: '/docs/getting-started/create-admin-group/'
         - Modelling Users and Groups: '/docs/getting-started/teams/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
-      - Create a Proxy: '/docs/getting-started/create-proxy/'
       - Customising the Roadie UI: '/docs/getting-started/configure-ui/'
       - Creating a scorecard: '/docs/getting-started/creating-a-scorecard/'
       - Creating a Scaffolder template: '/docs/getting-started/scaffolding-components/'
@@ -81,25 +80,26 @@ nav:
       - API docs:
           - Custom renderers: '/docs/details/custom-api-docs-renderers/'
           - Using grpc-docs: '/docs/details/grpc-docs/'
-      - TechDocs:
-          - Using TechDocs in Roadie: '/docs/details/techdocs/'
-          - Build TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
-          - Troubleshooting TechDocs: '/docs/details/techdocs/troubleshooting/'
       - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
       - GitHub app permissions: '/docs/details/github-app-permissions/'
+      - Entity Push API: '/docs/details/entity-push-api/'
       - Networking:
           - Accessing AWS resources: '/docs/details/accessing-aws-resources/'
           - Accessing public resources: '/docs/details/backend-reading-allow-list/'
           - Allowlisting Roadie traffic: '/docs/details/allowlisting-roadie-traffic/'
           - How Roadie connects: '/docs/details/how-roadie-connects/'
+      - Permissions: '/docs/details/permissions/'
+      - Proxy Creation: '/docs/details/create-proxy/'
+      - Setting secrets: '/docs/details/setting-secrets/'
+      - TechDocs:
+          - Using TechDocs in Roadie: '/docs/details/techdocs/'
+          - Build TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
+          - Troubleshooting TechDocs: '/docs/details/techdocs/troubleshooting/'
       - Testing page configurations: '/docs/details/sandbox-mode/'
       - Working with plugins:
           - Required metadata: '/docs/details/required-metadata/'
           - Requesting plugins: '/docs/details/requesting-plugins/'
-      - Setting secrets: '/docs/details/setting-secrets/'
-      - Permissions: '/docs/details/permissions/'
       - Updating the UI: '/docs/details/updating-the-ui/'
-      - Entity Push API: '/docs/details/entity-push-api/'
   - Custom plugins:
       - Overview: '/docs/custom-plugins/overview'
       - Getting Started: '/docs/custom-plugins/getting-started/'
