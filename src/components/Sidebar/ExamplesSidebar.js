@@ -30,10 +30,10 @@ const ExamplesSidebar = ({ examples, className }) => {
       <SidebarSection>
         {/* There is a CSS stylesheet that targets this class name */}
         <div>
-          {examples.map(example => {
+          {examples.map((k) => {
             return (
-              <a className="examples-sidebar" href={example.fields.slug} >
-                {example.frontmatter.title}
+              <a className="examples-sidebar" href={k.fields.slug} >
+                {k.frontmatter.title}
               </a>
             );
           })}
