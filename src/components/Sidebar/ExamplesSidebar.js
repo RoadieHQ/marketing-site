@@ -32,7 +32,7 @@ const ExamplesSidebar = ({ examples, className }) => {
         <div>
           {examples.map((k) => {
             return (
-              <a className="examples-sidebar" href={k.fields.slug} >
+              <a key={k.frontmatter.humanName} className="examples-sidebar" href={k.fields.slug} >
                 {k.frontmatter.title}
               </a>
             );
