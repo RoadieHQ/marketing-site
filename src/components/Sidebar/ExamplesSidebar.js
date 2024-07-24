@@ -29,13 +29,15 @@ const ExamplesSidebar = ({ examples, className }) => {
 
       <SidebarSection>
         {/* There is a CSS stylesheet that targets this class name */}
-        {examples.map((eg) => {
-          return (
-            <a className="examples-sidebar" href={eg.fields.slug} >
-              {eg.frontmatter.title}
-            </a>
-          );
-        })}
+        <div>
+          {examples.map(example => {
+            return (
+              <a className="examples-sidebar" href={example.fields.slug} >
+                {example.frontmatter.title}
+              </a>
+            );
+          })}
+        </div>
       </SidebarSection>
     </Sidebar>
   );
