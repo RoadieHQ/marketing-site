@@ -139,6 +139,24 @@ html {
   @apply py-3;
 }
 
+.docs-cta__warning_title {
+  @apply bg-orange-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply px-4;
+  @apply py-2;
+}
+
+.docs-cta__warning_message {
+  @apply bg-orange-100;
+  @apply border;
+  @apply border-t-0;
+  @apply border-orange-400;
+  @apply text-orange-700;
+  @apply px-4;
+  @apply py-3;
+}
+
 .plugin-intro > p {
   @apply mb-2;
 }
