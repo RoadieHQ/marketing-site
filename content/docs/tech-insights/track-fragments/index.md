@@ -23,7 +23,7 @@ Let’s get started.
 
 # Prerequisite: Fragments API Proxy
 
-Please see our guide on [How to create a Proxy](/docs/getting-started/create-proxy/) to create the proxy referenced in the steps below.
+Please see our guide on [How to create a Proxy](/docs/details/create-proxy/examples/fragments/) to create the proxy referenced in the steps below.
 
 # Create Data Source for Entity Fragments
 
