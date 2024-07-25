@@ -10,7 +10,7 @@ scribe: ''
 ---
 
 # Create a new Authenticated Proxy
-Roadie provides a custom proxy service that can be configured to proxy through an access token minted by our own authentication system that can be validated by your third party service.
+Roadie provides a custom proxy service that can be configured to pass an access token for authentication by the service it is configured to send to.
 
 This gives a custom plugin a way to interact with your own service. That service can authenticate the incoming requests from Roadie.
 

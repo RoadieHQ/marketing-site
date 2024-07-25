@@ -81,8 +81,8 @@ nav:
           - Custom renderers: '/docs/details/custom-api-docs-renderers/'
           - Using grpc-docs: '/docs/details/grpc-docs/'
       - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
-      - GitHub app permissions: '/docs/details/github-app-permissions/'
       - Entity Push API: '/docs/details/entity-push-api/'
+      - GitHub app permissions: '/docs/details/github-app-permissions/'
       - Networking:
           - Accessing AWS resources: '/docs/details/accessing-aws-resources/'
           - Accessing public resources: '/docs/details/backend-reading-allow-list/'
