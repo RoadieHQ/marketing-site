@@ -37,13 +37,22 @@ For quick experimentation, you can use `AWS<ResourceType>ReadOnlyAccess` policie
 
 It is best practice (and mandatory for `autodiscovery` configuration) to configure an external id for your assumable role. 
 
-**(A)** For Autodiscovery configuration, you are able to define **an external id prefix within the Roadie application**. The final external id will be constructed based on this prefix, a delimiter character of `-` and the AWS account number in question, encoded into a base64 string. For example if you have defined external id prefix `roadie` and the account id is `123456789012` the final external id will be `cm9hZGllLTEyMzQ1Njc4OTAxMg==`. The preferred way for these is naturally creating the roles and their configurations using infrastructure as code tools. The following approaches can be used for specific tools:
+**(A)**
+
+For Autodiscovery configuration, you are able to define **an external id prefix within the Roadie application**. The final external id will be constructed based on this prefix, a delimiter character of `-` and the AWS account number in question, encoded into a **base64** string. 
+
+
+For example if you have defined external id prefix `roadie` and the account id is `123456789012` the final external id will be `cm9hZGllLTEyMzQ1Njc4OTAxMg==`. The preferred way for these is naturally creating the roles and their configurations using infrastructure as code tools. The following approaches can be used for specific tools:
 * Terraform: `base64encode("roadie-123456789012")`
 * Pulumi (JS/TS): `Buffer.from('roadie-123456789012').toString('base64')`
 * Bash: `echo -n 'roadie-123456789012' | base64`
 
 
-**(B)** For standalone configurations this can be any string conforming to regular expression pattern `[\w+=,.@:\/-]*`.  
+
+
+**(B)** 
+
+For standalone configurations this can be any string conforming to regular expression pattern `[\w+=,.@:\/-]*`.  
 
 ### Example trust policy
 ```json
