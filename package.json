@@ -113,5 +113,6 @@
     "preview": "yarn run build && netlify deploy --dir public",
     "test:unit": "mocha --require @babel/register src/**/*.test.js",
     "prepare": "node_modules/.bin/husky install"
-  }
+  },
+  "packageManager": "yarn@1.22.22"
 }
