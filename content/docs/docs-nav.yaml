@@ -81,25 +81,26 @@ nav:
       - API docs:
           - Custom renderers: '/docs/details/custom-api-docs-renderers/'
           - Using grpc-docs: '/docs/details/grpc-docs/'
-      - TechDocs:
-          - Using TechDocs in Roadie: '/docs/details/techdocs/'
-          - Build TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
-          - Troubleshooting TechDocs: '/docs/details/techdocs/troubleshooting/'
       - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
+      - Entity Push API: '/docs/details/entity-push-api/'
       - GitHub app permissions: '/docs/details/github-app-permissions/'
       - Networking:
           - Accessing AWS resources: '/docs/details/accessing-aws-resources/'
           - Accessing public resources: '/docs/details/backend-reading-allow-list/'
           - Allowlisting Roadie traffic: '/docs/details/allowlisting-roadie-traffic/'
           - How Roadie connects: '/docs/details/how-roadie-connects/'
+      - Permissions: '/docs/details/permissions/'
+      - Proxy Creation: '/docs/details/create-proxy/'
+      - Setting secrets: '/docs/details/setting-secrets/'
+      - TechDocs:
+          - Using TechDocs in Roadie: '/docs/details/techdocs/'
+          - Build TechDocs Via CI: '/docs/details/techdocs/build-via-ci/'
+          - Troubleshooting TechDocs: '/docs/details/techdocs/troubleshooting/'
       - Testing page configurations: '/docs/details/sandbox-mode/'
       - Working with plugins:
           - Required metadata: '/docs/details/required-metadata/'
           - Requesting plugins: '/docs/details/requesting-plugins/'
-      - Setting secrets: '/docs/details/setting-secrets/'
-      - Permissions: '/docs/details/permissions/'
       - Updating the UI: '/docs/details/updating-the-ui/'
-      - Entity Push API: '/docs/details/entity-push-api/'
   - Custom plugins:
       - Overview: '/docs/custom-plugins/overview'
       - Getting Started: '/docs/custom-plugins/getting-started/'
@@ -158,6 +159,7 @@ nav:
           - Track dependency versions: '/docs/tech-insights/track-dependency-versions/'
           - Track Datadog SLOs: '/docs/tech-insights/track-datadog-slos/'
           - Track deprecated GitHub actions Steps: '/docs/tech-insights/track-deprecated-actions/'
+          - Track fragments: '/docs/tech-insights/track-fragments/'
           - Track Sonarcloud Project Issues/Hotspots: '/docs/tech-insights/track-sonarcloud/'
           - Track On-prem Sonarqube metrics: '/docs/tech-insights/track-sonarqube/'
       - Check for Catalog Correctness:

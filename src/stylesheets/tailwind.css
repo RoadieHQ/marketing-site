@@ -84,6 +84,79 @@ html {
   @apply rounded-md;
 }
 
+/* https://v1.tailwindcss.com/components/alerts */
+.docs-cta__alert_title {
+  @apply bg-red-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply px-4;
+  @apply py-2;
+}
+
+.docs-cta__alert_message {
+  @apply bg-red-100;
+  @apply border;
+  @apply border-t-0;
+  @apply border-red-400;
+  @apply text-red-700;
+  @apply px-4;
+  @apply py-3;
+}
+
+.docs-cta__info_title {
+  @apply bg-blue-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply px-4;
+  @apply py-2;
+}
+
+.docs-cta__info_message {
+  @apply bg-blue-100;
+  @apply border;
+  @apply border-t-0;
+  @apply border-blue-400;
+  @apply text-blue-700;
+  @apply px-4;
+  @apply py-3;
+}
+
+.docs-cta__tip_title {
+  @apply bg-teal-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply px-4;
+  @apply py-2;
+}
+
+.docs-cta__tip_message {
+  @apply bg-teal-100;
+  @apply border;
+  @apply border-t-0;
+  @apply border-teal-400;
+  @apply text-teal-700;
+  @apply px-4;
+  @apply py-3;
+}
+
+.docs-cta__warning_title {
+  @apply bg-orange-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply px-4;
+  @apply py-2;
+}
+
+.docs-cta__warning_message {
+  @apply bg-orange-100;
+  @apply border;
+  @apply border-t-0;
+  @apply border-orange-400;
+  @apply text-orange-700;
+  @apply px-4;
+  @apply py-3;
+}
+
 .plugin-intro > p {
   @apply mb-2;
 }

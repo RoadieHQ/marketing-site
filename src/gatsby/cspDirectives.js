@@ -66,6 +66,10 @@ const CSP_IMG_SRC_DIRECTIVES = [
   'https://images.contentful.com',
   'https://images.ctfassets.net',
 
+  // Scribe
+  'https://*.amazonaws.com',
+  'https://*.cloudimg.io',
+
   // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
   'blob:',
   'https://js.intercomcdn.com',
@@ -101,7 +105,10 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
     'https://player.vimeo.com',
     'https://www.loom.com',
     'https://www.youtube.com',
-    //
+
+    // Scribe
+    'https://scribehow.com/',
+
     // Recaptchas https://developers.google.com/recaptcha/docs/faq
     'https://www.google.com',
     'https://recaptcha.google.com',
