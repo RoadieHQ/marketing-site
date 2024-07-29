@@ -83,11 +83,70 @@ Produces the following table.
 
 ### Step 3: Configure UI components for your Roadie instance
 
-You must be an admin to edit the UI layout. You can follow [this guide](/docs/getting-started/updating-the-ui/) to add new Cards and Tabs into your Roadie instance. There are 3 different components available for you to configure.
-1. EntityPrometheusContent (Tab)
-2. EntityPrometheusAlertCard (Card)
-3. EntityPrometheusGraphCard (Card)
+You must be an admin to edit the UI layout. You can follow [this guide](/docs/getting-started/updating-the-ui/) to add new Cards and Tabs into your Roadie instance. There are 3 different components available for you to configure. 
 
+#### EntityPrometheusContent (Tab)
+
+The `EntityPrometheusContent` is a tab that can be placed on the entity pages. It requires the `prometheus.io/rule` annotation to be set on the entity.
+
+The tab has three optional parameters: `range`, `step` and `graphType`. e.g.
+
+The follow options will give a line graph showing the last hour of data.
+
+```json
+{
+   "step": 28,
+   "range": {
+      "hours": 1
+   },
+   "graphType": "line"
+}
+```
+
+| Option               | Description            | Schema                                     | Default           | Example           |
+|----------------------|------------------------|--------------------------------------------|-------------------|-------------------|
+| step (optional)      | The graph step         | `number`                                   | `14`              | `28`              |
+| range (optional)     | The range of the graph | ```{ hours?: number, minutes?: number }``` | `{ "hours": 1 }`  | `{ "hours": 2 }`  |
+| graphType (optional) | Type of graph to use   | `'line' \| 'area'`                         | `line`            | `line`            |
+
+#### EntityPrometheusAlertCard (Card)
+
+The `EntityPrometheusAlertCard` is a card that can be placed on the entity pages and shows a list of alerts from prometheus. This card requires that the `prometheus.io/alert` annotation is set on the entity.
+
+#### EntityPrometheusGraphCard (Card)
+
+The `EntityPrometheusGraphCard` is a card that can be placed on the entity pages. The card can be configured to use an annotation on the entity `prometheus.io/rule` or a query configured on the card properties to show a graph from prometheus.
+
+The tab has five optional parameters: `range`, `step`, `graphType`, `query`, and `enableQueryTemplating`. e.g.
+
+The follow options will give a line graph showing the last hour of data.
+
+```json
+{
+   "step": 28,
+   "range": {
+      "hours": 1
+   },
+   "graphType": "line"
+}
+```
+
+| Option                           | Description                                 | Schema                                     | Default          | Example                           |
+|----------------------------------|---------------------------------------------|--------------------------------------------|------------------|-----------------------------------|
+| step (optional)                  | The graph step                              | `number`                                   | `14`             | `28`                              |
+| range (optional)                 | The range of the graph                      | ```{ hours?: number, minutes?: number }``` | `{ "hours": 1 }` | `{ "hours": 2 }`                  |
+| graphType (optional)             | Type of graph to use                        | `'line' \| 'area'`                         | `line`           | `line`                            |
+| query (optional)                 | The query to use                            | `string`                                   | `undefined`      | `max by (host) (my_metric_name)`  |
+| enableQueryTemplating (optional) | To enable query templating from entity data | `boolean`                                  | `false`          | `true`                            |
+
+Query templating allows a query to be written that includes data from an entity. e.g. you can use the following options:
+
+```json
+{
+   "enableQueryTemplating": true,
+   "query": "max by (host) (my_metric{kuberenetes_namespace=\"{{ metadata.name }}\"})"
+}
+```
 
 
 ## References
