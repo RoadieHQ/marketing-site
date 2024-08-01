@@ -30,7 +30,7 @@ The role needs to follow this naming convention `arn:aws:iam::*:role/[your-tenan
 <div role="alert">
   <div class="docs-cta__tip_title">Defining the correct AWS role</div>
   <div  class="docs-cta__tip_message">
-    <p>⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text <code>`[tenant-name]-roadie-`</code>. If other naming conventions are used, the role assumption is blocked by security measures.
+    <p>⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text <code>[tenant-name]-roadie-</code>. If other naming conventions are used, the role assumption is blocked by security measures.
     </p>
   </div>
 </div>
