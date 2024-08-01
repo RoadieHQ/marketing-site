@@ -25,9 +25,15 @@ Navigate to `Administration > Settings > AWS Resources` and make a note of the R
 
 Follow the steps [here](/docs/details/accessing-aws-resources) to create the role. 
 
-The role needs to follow this naming convention `arn:aws:iam::*:role/<your-tenant-name>-roadie-read-only-role` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
+The role needs to follow this naming convention `arn:aws:iam::*:role/[your-tenant-name]-roadie-read-only-role` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
 
-> ⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text `<tenant-name>-roadie-`. If other naming conventions are used, the role assumption is blocked by security measures.
+<div role="alert">
+  <div class="docs-cta__tip_title">Filtering Catalog Entities in the Data Source</div>
+  <div  class="docs-cta__tip_message">
+    <p>⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text <pre>`[tenant-name]-roadie-`</pre>. If other naming conventions are used, the role assumption is blocked by security measures.</p>
+  </div>
+</div>
+
 
 You'll need to attach policies to the role to be able to retrieve information about the resources you want ingested. The supported resources and their needed policies are listed in a table at the end of this page. You can use the same role for multiple resource types as long as the needed permissions are granted to it.
 
@@ -48,11 +54,10 @@ For example if you have defined external id prefix `roadie` and the account id i
 * Bash: `echo -n 'roadie-123456789012' | base64`
 
 
-
-
 **(B)** 
 
 For standalone configurations this can be any string conforming to regular expression pattern `[\w+=,.@:\/-]*`.  
+
 
 ### Example trust policy
 ```json
@@ -108,6 +113,7 @@ The AWS Organizations Management role is used to retrieve a list of AWS accounts
 * `organizations:ListAccounts`
 * `organizations:ListTagsForResource`
 
+
 #### 2. Default settings to be used for each AWS account
 
 The default settings for role assumption are the configurations that are used to assume a role on each of the AWS accounts that are discovered with the AWS Organizations Management Role. Within this settings section you can configure the regions to retrieve resources from, as well as all the resource types that should be ingested. The role name set in here must be present in each of the AWS accounts and it should have access to read the relevant chosen resources in the configured regions. You can see the needed permissions at the table in the end of this page.
@@ -115,6 +121,17 @@ The default settings for role assumption are the configurations that are used to
 The external id prefix is the same, but the external id will be different for each AWS account. Note the process on how to determine the external id from the above documentation. 
 
 For the moment all discovered AWS accounts are using the same role name and regions. if there is a need to divert from this pattern, you can add additional standalone AWS account configurations. 
+
+
+#### 3. Configure individual accounts with different regions and resources
+
+The autodiscovery option of AWS resources ingestion uses AWS organization account tags to override global configurations set up on the roadie system. With these tags you can configure more fine-grained approaches on which resources, from which regions, to ingest from specific accounts. The supported tags are as follows: 
+
+| Tag Key           | Example values            | Description                                                                                                   |
+|-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
+| `resources`       | `eks-cluster s3-bucket`   | **Space separated** list of resources to ingest from this account. See available resources in the table below |
+| `regions`         | `eu-west-1 eu-central-1`  | **Space separated** AWS region codes to ingest resources from                                                 |
+| `roadie-excluded` | (Empty value) / any value | The presence of this tag indicates to skip this specific AWS account from being ingested                      |
 
 
 ## Resources and needed permissions
