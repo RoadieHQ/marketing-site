@@ -24,7 +24,17 @@ Navigate to `Administration > Settings > AWS S3` and make a note of the Roadie b
 
 Follow the steps [here](/docs/details/accessing-aws-resources) to create the role. 
 
-The role needs to follow this naming convention `arn:aws:iam::*:role/<your-tenant-name>-roadie-read-only-role` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
+The role needs to follow this naming convention `arn:aws:iam::*:role/[your-tenant-name]-roadie-read-only-role` where `[your-tenant-name]` matches your organisation's name used in the url of your Roadie instance.
+
+
+<div role="alert">
+  <div class="docs-cta__tip_title">Defining the correct AWS role</div>
+  <div  class="docs-cta__tip_message">
+    <p>⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text <code>[tenant-name]-roadie-</code>. If other naming conventions are used, the role assumption is blocked by security measures.
+    </p>
+  </div>
+</div>
+
 
 You'll need to attach a policy which allows access to the required S3 buckets such as `AmazonS3ReadOnlyAccess`. This policy grants roadie read access to all buckets. 
 If you do not want to grant this access you can [create your own policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html) 
@@ -64,9 +74,21 @@ which restricts access to only certain buckets. An example minimal policy needed
 On the AWS S3 settings page `Administration > Settings > Aws S3` in Roadie click `Add Item` and enter the newly created 
 role ARN and external ID. The S3 host is only required if you're using different roles for different buckets. 
 
-After the role configuration is done, you can click the 'Test Role' button to check if integration configuration has succeeded.
+After the role configuration is done, you can click the 'Test Role' button to check if integration configuration has succeeded. You can add multiple roles and AWS accounts within this configuration.
 
 ![Role Details](./role-details.png)
 
 
+## Step 4: Configure your S3 buckets to retrieve data from
 
+After you have set up your AWS accounts and assumable role configurations so Roadie is able to reach your S3 buckets, you can configure the bucket and their paths. Within the list of AWS S3 Discovery configuration you can add the details where to retrieve catalog manifest files. 
+
+Within the configuration modal, add values to indicate the AWS account, the S3 bucket, possible path within the bucket and the AWS region to use when retrieving the information. Note that the AWS account id must match one of the roles that have been configured in the above section.  
+
+![aws-bucket-config.png](aws-bucket-config.png)
+
+
+
+## References
+
+- [Open Source documentation for AWS S3 Provider](https://backstage.io/docs/integrations/aws-s3/discovery/)
