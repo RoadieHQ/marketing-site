@@ -27,9 +27,10 @@ You only need to define one side of a relationship for it to appear on both side
 | -------- | ------- | ------- | ------- | ------- |
 | spec.owner | - | string | Any | Component,API,Resource,System,Domain |
 | spec.system | - | string | Any | Component,API,Resource |
-| spec.dependsOn | - | string array | Any | Component,Resource,System,Domain |
-| spec.dependencyOf | - | string array | Any | Component,Resource,System,Domain |
+| spec.dependsOn | - | string array | Any | Component,Resource,API,System,Domain |
+| spec.dependencyOf | - | string array | Any | Component,Resource,API,System,Domain |
 | spec.providesApis | - | string array | Any | Component |
+| spec.apiProvidedBy | - | string array | Any | API |
 | spec.consumesApis | - | string array | Any | Component |
 | spec.subcomponentOf | - | string array | Any | Component |
 | spec.memberOf | - | string array | Any | User |
@@ -40,8 +41,8 @@ You only need to define one side of a relationship for it to appear on both side
 | spec.members | - | string array | Any | Group |
 | spec.subdomainOf | - | string array | Any | Domain |
 | spec.domain | - | string array | Any | System |
-| spec.hasPart | - | string array | Any | System,Domain |
-| spec.partOf | - | string array | Any | System,Domain |
+| spec.hasPart | - | string array | Any | Component,Resource,System,Domain, |
+| spec.partOf | - | string array | Any | Component,Resource,API,System,Domain |
 
 These relationship names can be used as you see fit to describe your organisation. Backstage provides some [suggestions on usage](https://backstage.io/docs/features/software-catalog/well-known-relations/) but this is in fact arbitrary and only limited by the Applicable Kinds in the above table.
 
