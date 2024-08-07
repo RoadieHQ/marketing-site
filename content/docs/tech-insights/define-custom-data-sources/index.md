@@ -125,7 +125,7 @@ If you want to parse YAML content from plain strings, for example from an API En
 **$getEntityData**
 
 If you want to parse request entity information in the JSONata context you can use the `$getEntityData` function. An example query could be like the following:
-* Data Provider Type: Entity Definition
+* Data Provider Type: Entity Definition, HTTP Data Source
 * Fact Name: OpenAPI Spec Version
 * JSONata query: `$getEntityData('relations')[0].targetRef`
 * Type: JSON Object
