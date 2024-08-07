@@ -122,6 +122,14 @@ If you want to parse YAML content from plain strings, for example from an API En
 * JSONata query: `$parseYaml(spec.definition).openapi`
 * Type: String
 
+**$getEntityData**
+
+If you want to parse request entity information in the JSONata context you can use the `$getEntityData` function. An example query could be like the following:
+* Data Provider Type: Entity Definition
+* Fact Name: OpenAPI Spec Version
+* JSONata query: `$getEntityData('relations')[0].targetRef`
+* Type: JSON Object
+
 **$metadata**
 
 In case you want to capture status codes or headers from the received response, Roadie Tech Insights includes an extension function for JSONata parser that allows you to read _metadata_ from these responses. Metadata function is supported for a subset of Data Provider types. The supported types and their respective available metadata can be found from the individual [Data Provider](#setting-up-data-provider) section above.
