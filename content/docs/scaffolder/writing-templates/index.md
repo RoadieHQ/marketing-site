@@ -524,7 +524,7 @@ ${{ user.entity.spec.profile.email }}
 
 ### Actions
 
-You can find all the actions available to your Roadie instance by visiting the following page from within Backstage:
+You can find all the actions available to your Roadie instance by visiting the following page from within your Roadie instance:
 
 `https://<tenant-name>.roadie.so/templates/actions`
 
