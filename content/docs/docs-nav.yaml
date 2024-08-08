@@ -121,6 +121,7 @@ nav:
       - Troubleshooting: '/docs/scaffolder/troubleshooting/'
       - Extending the Scaffolder with Field Extensions: '/docs/scaffolder/custom-fields/'
       - Custom Scaffolder Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
+      - Scaffolder Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
       - Recipes:
           - Create RFC: '/docs/scaffolder/create-rfc/'
           - Debug template: '/docs/scaffolder/debug-template/'
