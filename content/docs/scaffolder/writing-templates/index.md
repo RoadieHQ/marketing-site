@@ -489,7 +489,7 @@ If the step id does not contain a special character you can also refer to it usi
 ${{ steps.publish.output.repoContentsUrl }}
 ```
 
-#### Looping
+#### Looping
 
 You can use array type form inputs or step outputs to repeat action steps multiple times. e.g.
 
