@@ -10,8 +10,7 @@ Tech Insights in Roadie provides the capabilities to automatically retrieve and 
 
 ## Components
 
-Roadie provides various different components to display fact data. These range from overall fact gathering table views to more fine-grained fact info displaying widgets. The use cases for the former larger components are to provide and overview of retrieved fact data within the system, allowing users to keep themselves up to date with the latest information at a glance. The more fine-grained, entity level, fact displaying widgets can be used to display relevant current and historical information about collected facts. 
-
+Roadie provides the ability to display various views of fact data from tech insights. These range from table views to more fine-grained widgets. 
 
 
 ### Tech Insights Fact Page
