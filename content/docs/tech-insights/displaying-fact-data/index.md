@@ -6,7 +6,7 @@ description: Roadie Plugins to display fact data directly
 
 ## Introduction
 
-Tech Insights in Roadie provides the capabilities to automatically retrieve and store relevant data for your entities. With this data you can enhance the Tech Insights visibility within your Roadie instance and easily keep track, visualize and display important information for your entities. 
+Tech Insights in Roadie provides the capabilities to automatically retrieve and store relevant data about your entity catalog. You can display this data in various ways within your Roadie instance to easily keep track, visualize and display important information for your entities.
 
 ## Components
 
