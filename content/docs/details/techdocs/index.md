@@ -102,13 +102,27 @@ plugins:
 ```
 
 ## Exporting and printing
-You can use the [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) to build a single page view of your doc with all pages, that you can then use to export to PDF or HTML via your browser.
 
-This can be useful for auditing purposes or to share docs with someone that does not have access to Roadie.
+You can print docs from Roadie using the inbuilt browser print options, such as printing to PDF (`File -> Print` for most browsers).
 
-You can remove the Table of Contents from the export using the cog icon on the top right of the docs page to hide it. 
+### Requirements
 
-NB: This plugin requires each page to have an H1 header - [see currently open issue](https://github.com/timvink/mkdocs-print-site-plugin/issues/94)
+You must have Light Theme enabled when doing the export (`/administration/account` -> Appearance) and the Table of Contents turned off. 
+
+You can remove the Table of Contents from the export using the cog icon on the top right of the docs page to hide it. This is a user setting so it will not affect other viewers of the docs, and you can re-enable both dark theme and Table of Contents after exporting the doc. 
+
+### Exporting/Printing all pages
+You can use the [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) to build a single page view of your docs with all pages, that you can then use to export to PDF via your browser. This can be useful for auditing purposes or to share docs with someone that does not have access to Roadie. 
+
+You will need to add the plugin to your `mkdocs.yml` file first like so:
+
+```yaml
+plugins:
+  - print-site
+```
+
+NB: This plugin currently requires each page to have an H1 header - [see currently open issue](https://github.com/timvink/mkdocs-print-site-plugin/issues/94)
+
 
 ## Graphs and Diagrams
 
