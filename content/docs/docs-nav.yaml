@@ -144,6 +144,7 @@ nav:
           - Introduction: '/docs/tech-insights/data-sources/'
           - Definining custom Data Sources: '/docs/tech-insights/define-custom-data-sources/'
           - Using built-in Data Sources: '/docs/tech-insights/builtin-data-sources/'
+          - Displaying Fact Data: '/docs/tech-insights/displaying-fact-data/'
           - Data Source results and details: '/docs/tech-insights/data-source-details/'
       - Checks:
           - Introduction: '/docs/tech-insights/checks/'
