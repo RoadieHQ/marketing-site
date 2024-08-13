@@ -18,7 +18,7 @@ Roadie provides the ability to display various views of fact data from tech insi
 The *Tech Insights Fact Page* allows you to create a tabular view of facts collected to the system. These facts can range across different data sources. You can also define your own entity filtering to select only the relevant entities for this specific view.
  
 
-![tech_insights_fact_table.png](tech_insights_fact_table.png)
+![tech_insights_fact_page.png](tech_insights_fact_page.png)
 
 You can add the table view as a `Page` component (`TechInsightsFactPage`) into the sidebar of your application. The configuration of the component can be done on either via the JSON options provided on the page add/edit screen, or more easily from within the page itself. 
 
