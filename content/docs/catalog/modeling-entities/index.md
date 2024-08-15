@@ -7,7 +7,7 @@ description: How to model your organisation in the Catalog
 ### Kinds
 Your organisation can be modeled in Roadie's Catalog using a variety of different top level `Kinds` which are intended to be broad buckets
 
-Backstage docs explaining the schema approach can be found [here](https://backstage.io/docs/features/software-catalog/system-model/#core-entities).
+Roadie is fully compatible with all `Kinds` found on Backstage, the docs explaining the underlying schema approach can be found [here](https://backstage.io/docs/features/software-catalog/system-model/#core-entities).
 
 ### Types
 Kinds are combined with a `spec.type` field that can be used to more precisely describe the category. For instance the `Component` Kind could have a type of `website` or `internal-tooling` or `external-library` to describe a wide variety of software types and contexts. 
