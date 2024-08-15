@@ -173,7 +173,7 @@ nav:
   - Catalog:
       - Managing locations: '/docs/catalog/location-management/'
       - Rich team pages: '/docs/catalog/rich-team-pages/'
-      - Modeling entities: '/docs/catalog/modelling-entities/'
+      - Modeling entities: '/docs/catalog/modeling-entities/'
       - Modeling dependencies: '/docs/catalog/showing-dependencies/'
       - Decorating components: '/docs/catalog/decorating-components/'
       - Removing components: '/docs/catalog/unregister-components/'
