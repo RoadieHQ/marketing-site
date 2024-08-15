@@ -4,9 +4,13 @@ publishedDate: '2024-08-14T14:49:47.0Z'
 description: How to model your organisation in the Catalog
 ---
 
-Your organisation can be modeled in Roadie's Catalog using a variety of different top level `Kinds` which are intended to be broad buckets, combined with a `spec.type` field that can be used to more precisely describe the category. 
+### Kinds
+Your organisation can be modeled in Roadie's Catalog using a variety of different top level `Kinds` which are intended to be broad buckets
 
-For instance the `Component` Kind could have a type of `website` or `internal-tooling` or `external-library` to describe a wide variety of software types and contexts. 
+Backstage docs explaining the schema approach can be found [here](https://backstage.io/docs/features/software-catalog/system-model/#core-entities).
+
+### Types
+Kinds are combined with a `spec.type` field that can be used to more precisely describe the category. For instance the `Component` Kind could have a type of `website` or `internal-tooling` or `external-library` to describe a wide variety of software types and contexts. 
 
 Similarly, it is common for organisations to have multiple logical groupings at higher levels like `System` and `Domain` such as "Bounded Context" or "Value Stream". These can also be modeled using `spec.type` and then displayed in their own tab on the Catalog page using our custom Catalog Tab editor. 
 
@@ -16,20 +20,19 @@ The `spec.type` field is not constrained - you can add anything you like, but it
 - Agree a limited set of types for each Kind and encourage care/consensus in adding new ones (having too many, overly specific types can make them less useful sometimes as it can become harder to find things)
 - Clean up duplicates with different formating regularly by checking available select options for the type filter on Catalog pages
 
-
 ### Available Kinds
 
-| Kind      | Spec Fields (* required)     | Available `spec` Relationships                                                               |
-|-----------|------------------------------|----------------------------------------------------------------------------------------------|
-| Component | type*,lifecycle*             | owner*,system,dependsOn,dependencyOf,providesApis,consumesApis,subcomponentOf,hasPart,partOf |
-| Resource  | type*                        | owner*,system,dependsOn,dependencyOf,hasPart,partOf                                          |
-| API       | type*,lifecycle*,definition* | owner*,system,dependsOn,dependencyOf,partOf                                                  |
-| Template  | type*,parameters,steps       | owner                                                                                        |
-| System    | type                         | owner,domain,dependsOn,dependencyOf,parentOf,childOf,hasPart,partOf                          |
-| Domain    | type                         | owner,subdomainOf,dependsOn,dependencyOf,parentOf,childOf,hasPart,partOf                     |
-| Product   | type                         | owner,system,dependsOn,dependencyOf,parentOf,childOf,hasPart,partOf                          |
-| User      | profile                      | memberOf*,managedBy,manages                                                                  |
-| Group     | type*,profile                | members,managedBy,children*,parent                                                           |
+| Kind      | [Metadata Fields](https://backstage.io/docs/features/software-catalog/descriptor-format/#common-to-all-kinds-the-metadata) (* required) | [Spec Fields](https://backstage.io/docs/features/software-catalog/descriptor-format/#contents) (* required) | Available `spec` Relationships                                                               |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| Component | name*,namespace,title,description,annotations,labels,tags,links                                                                         | type*,lifecycle*                                                                                            | owner*,system,dependsOn,dependencyOf,providesApis,consumesApis,subcomponentOf,hasPart,partOf |
+| Resource  | ""                                                                                                                                      | type*                                                                                                       | owner*,system,dependsOn,dependencyOf,hasPart,partOf                                          |
+| API       | ""                                                                                                                                      | type*,lifecycle*,definition*                                                                                | owner*,system,dependsOn,dependencyOf,partOf                                                  |
+| Template  | ""                                                                                                                                      | type*,parameters,steps                                                                                      | owner                                                                                        |
+| System    | ""                                                                                                                                      | type                                                                                                        | owner,domain,dependsOn,dependencyOf,parentOf,childOf,hasPart,partOf                          |
+| Domain    | ""                                                                                                                                      | type                                                                                                        | owner,subdomainOf,dependsOn,dependencyOf,parentOf,childOf,hasPart,partOf                     |
+| Product   | ""                                                                                                                                      | type                                                                                                        | owner,system,dependsOn,dependencyOf,parentOf,childOf,hasPart,partOf                          |
+| User      | ""                                                                                                                                      | profile                                                                                                     | memberOf*,managedBy,manages                                                                  |
+| Group     | ""                                                                                                                                      | type*,profile                                                                                               | members,managedBy,children*,parent                                                           |
 
 More information on relationships can be found [here](../showing-dependencies)
 
