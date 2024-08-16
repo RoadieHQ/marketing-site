@@ -23,7 +23,7 @@ validator:
 ```
 
 ## Schemas
-The validator is based on the published [Backstage schemas](https://backstage.io/docs/features/software-catalog/descriptor-format) which can be referred to in the Backstage docs.
+The validator is based on the published [Backstage schemas](https://backstage.io/docs/features/software-catalog/descriptor-format) which can be referred to in the Backstage docs along with two additional Kinds - [Repository](../repositories) and Product. A list of Kinds available in Roadie can be [found here](../modeling-entities). 
 
 ## Further reading
 
