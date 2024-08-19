@@ -14,7 +14,7 @@ The [Incident.io plugin](https://www.npmjs.com/package/@incident-io/backstage) i
 
 ### Create and add an API Key
 
-Generate an API key on your Incident.io app, then add it to Roadie at `https://<tenant-name>.roadie.so/administration/incident` by entering the token value from above into `INCIDENT_API_KEY`.
+Generate an API key on your incident.io app, then add it to Roadie at `https://<tenant-name>.roadie.so/administration/incident` by entering the token value from above into `INCIDENT_API_KEY`.
 ![incident.io configuration page](incident-config-page.png)
 
 ### Configure the plugin
