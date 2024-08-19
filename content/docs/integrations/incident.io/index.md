@@ -19,7 +19,7 @@ Generate an API key on your Incident.io app, then add it to Roadie at `https://<
 
 ### Configure the plugin
 
-In the same Incident.io configuration section, you can set your custom Api ID, Component ID, System ID and Domain ID. These only needed if you created these custom fields in your incident.io application.
+In the same incident.io configuration section, you can set your custom API ID, Component ID, System ID and Domain ID. These only needed if you created these custom fields in your incident.io application.
 
 ### Configure Roadie UI to display Incident.io information
 
