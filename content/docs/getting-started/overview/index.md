@@ -30,7 +30,7 @@ Generally you will store entity files in a code repository and then provide Road
 ## 2. [Adding users](/docs/getting-started/user-management/)
 
 - [Invite](/docs/getting-started/user-management/) members of your team who will be responsible for Roadie. 
-- Designate [admins](/docs/getting-started/create-admin-group/) who will be responsible for configuring the Roadie system.
+- Designate [admins](/docs/getting-started/assigning-admins/) who will be responsible for configuring the Roadie system.
 - [Model users, groups and teams](/docs/getting-started/teams/) to build concepts of ownership into the catalog from the start.
 
 ## 3. [Installing plugins](/docs/getting-started/configuring-backstage-plugins/)

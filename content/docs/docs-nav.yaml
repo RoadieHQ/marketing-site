@@ -13,7 +13,7 @@ nav:
           - Modelling your software: '/docs/getting-started/model-software/'
       - Adding users:
           - Inviting users: '/docs/getting-started/user-management/'
-          - Designating admins: '/docs/getting-started/create-admin-group/'
+          - Designating admins: '/docs/getting-started/assigning-admins/'
           - Modelling Users and Groups: '/docs/getting-started/teams/'
       - Adding plugins: '/docs/getting-started/configuring-backstage-plugins/'
       - Customising the Roadie UI: '/docs/getting-started/configure-ui/'

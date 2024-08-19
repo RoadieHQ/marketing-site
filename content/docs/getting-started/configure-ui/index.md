@@ -10,7 +10,7 @@ Roadie allows you to configure which plugins you want to use via our UI. This gu
 
 ## Prerequisites
 
-You must be an admin to edit the UI layout. Please complete [this guide](/docs/getting-started/create-admin-group/) before moving on to this one.
+You must be an admin to edit the UI layout. Please complete [this guide](/docs/getting-started/assigning-admins/) before moving on to this one.
 
 ## About Plugins
 

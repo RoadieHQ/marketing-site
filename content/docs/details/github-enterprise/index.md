@@ -31,7 +31,7 @@ And add the secrets for `GHE_TOKEN`, `GHE_CLIENT_ID` and `GHE_CLIENT_SECRET`.
 
 ## Next steps
 
-Now that a connection to GitHub is established, you can [make yourself an admin on Roadie](/docs/getting-started/create-admin-group/).
+Now that a connection to GitHub is established, you can [make yourself an admin on Roadie](/docs/getting-started/assigning-admins/).
 
 To automatically load catalog files from repositories please see [how to set up GitHub Discovery](/docs/integrations/github-discovery/)
 
