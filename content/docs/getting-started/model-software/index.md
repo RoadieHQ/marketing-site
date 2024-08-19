@@ -10,7 +10,7 @@ Backstage, the open source project upon which Roadie is built, has an opinionate
 
 ## Catalog Entities
 
-Each catalog item in Roadie is referred to as an "entity". 
+Each catalog item in Roadie is referred to as an "entity". You can find all the kinds and their available fields supported in Roadie [here](../../catalog/modeling-entities).
 
 ### Kinds
 
@@ -18,8 +18,9 @@ Roadie supports a few main `kinds` of entity:
 
 **Business** or 'ecosystem' kinds, which model the organisational context in which software is created:
 
-- Domains -  a collection of entities and Systems that form some distinct part of your organisation; 
-- Systems - a collection of different entities that have a set function.
+- Domain -  a collection of entities and Systems that form some distinct part of your organisation; 
+- System - a collection of different entities that have a set function.
+- Product - a collection of different entities that constitute a product.
 
 **Software** kinds, which model the individual elements of your software:
 
@@ -41,9 +42,9 @@ Entity kinds are associated with one another using entity relations.
 
 ![System Model](./system-model.png)
 
-Relations are relatively flexible and Kinds can relat to other kinds if you so wish. For example, if you have want to represent Domains that are children of other Domains that is possible.
+Relations in Roadie are [more flexible](../../catalog/showing-dependencies) than standard Backstage relationships. You can find all the [supported relationships here](../../catalog/showing-dependencies)
 
-Relations are represented in the catalog-info.yaml files for a given entity 
+Relations are represented in the `catalog-info.yaml` files for a given entity. Often they can be added automatically such as when you import users and teams from an external IDP [like Okta](../../integrations/okta).
 
 ```
 {
@@ -57,6 +58,8 @@ Relations are represented in the catalog-info.yaml files for a given entity
 }
 ```
 
+More information on relations can be found [here](../../catalog/showing-dependencies).
+
 ## Types
 
 You can also assign types to each entity as you see fit. Types are user-defined and can be used as you see fit.
@@ -67,6 +70,7 @@ Types may include:
 - Database;
 - or Library.
 
+More information can be found [here](../../catalog/modeling-entities).
 
 ## Other metadata
 
