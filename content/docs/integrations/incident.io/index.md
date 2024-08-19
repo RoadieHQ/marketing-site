@@ -10,7 +10,7 @@ integrationType: OSS plugin
 
 ## Introduction
 
-The [Incident.io plugin](https://www.npmjs.com/package/@incident-io/backstage) integrates with Incident.io to show your configured components and your curent on-going incidents inside Backstage.
+The [incident.io plugin](https://www.npmjs.com/package/@incident-io/backstage) integrates with Incident.io to show your configured components and your current on-going incidents inside Backstage.
 
 ### Create and add an API Key
 
