@@ -31,4 +31,4 @@ The `HomePageIncidentCard` card can be added to the home page by clicking the se
 
 ## References
 
-- [Incident.io Plugin Documentation](https://www.npmjs.com/package/@incident-io/backstage)
+- [incident.io Plugin Documentation](https://www.npmjs.com/package/@incident-io/backstage)
