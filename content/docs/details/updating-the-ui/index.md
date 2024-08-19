@@ -29,7 +29,7 @@ Backstage plugins can provide [three different types](https://backstage.io/docs/
 ## Updating the Catalog Layout
 
 Admin users can add components to catalog pages to configure what is displayed to users when they view an entity. Layouts are configured
-per entity **kind** except for Component entities which have layouts per **type**. For example, "User" and "Group" are each kinds
+per entity **kind** and **type**. For example, "User" and "Group" are each kinds
 of entity and so User entities have a different layout to Group entities. Similarly, Component entities have types such
 as "Service", "Library", "Website", etc and different types can have different layouts. However, a particular entity can't
 have its own layout; A particular Group or service can't have a unique layout. This is to encourage a consistent UX.
