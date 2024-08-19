@@ -28,7 +28,7 @@ This page explains how to configure it in Roadie Backstage.
 
 ## Prerequisites
 
-1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
+1. You must be an admin in Roadie. By default, the first Roadie user is an admin. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
 2. Your Jenkins instance must be accessible by Roadie backend instances. To allow list Roadie access you can check our IPs [here](/docs/details/allowlisting-roadie-traffic/).  
 
 
