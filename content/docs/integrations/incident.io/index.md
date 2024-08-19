@@ -3,7 +3,7 @@ title: Incident.io Plugin
 publishedDate: '2024-08-20'
 description: How to enable the incident.io plugin
 
-humanName: Incident.io Plugin
+humanName: incident.io Plugin
 logoImage: '../../../assets/logos/incident/incident-logo.png'
 integrationType: OSS plugin
 ---
