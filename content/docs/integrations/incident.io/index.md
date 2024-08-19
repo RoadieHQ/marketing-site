@@ -21,7 +21,7 @@ Generate an API key on your incident.io app, then add it to Roadie at `https://<
 
 In the same incident.io configuration section, you can set your custom API ID, Component ID, System ID and Domain ID. These only needed if you created these custom fields in your incident.io application.
 
-### Configure Roadie UI to display Incident.io information
+### Configure Roadie UI to display incident.io information
 
 In Roadie, find and select a relevant entity via the Catalog.
 
