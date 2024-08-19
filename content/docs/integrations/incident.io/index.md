@@ -1,7 +1,7 @@
 ---
 title: Incident.io Plugin
 publishedDate: '2024-08-20'
-description: How to enable the Incident.io plugin
+description: How to enable the incident.io plugin
 
 humanName: Incident.io Plugin
 logoImage: '../../../assets/logos/incident/incident-logo.png'
