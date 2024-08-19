@@ -27,7 +27,7 @@ In Roadie, find and select a relevant entity via the Catalog.
 
 The `EntityIncidentCard` card can be added to the overview page of an entity by clicking the settings cog, and adding a new card.
 The `HomePageIncidentCard` card can be added to the home page by clicking the settings cog and selecting the card from the dropdown.
-![Incident.io homepage card](homepage-incident-card.png)
+![incident.io homepage card](homepage-incident-card.png)
 
 ## References
 
