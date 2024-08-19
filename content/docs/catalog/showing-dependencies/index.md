@@ -44,7 +44,7 @@ You only need to define one side of a relationship for it to appear on both side
 | spec.domain         | -           | string array | Any         | System                                                |
 | spec.hasPart        | -           | string array | Any         | Component,Resource,System,Domain,Product              |
 | spec.partOf         | -           | string array | Any         | Component,Resource,API,System,Domain,Product          |
-| spec.managedBy      | -           | string array | Any         | User,Group                                            |
+| spec.managedBy      | -           | string array | Any         | User,Group,Product                                    |
 | spec.manages        | -           | string array | Any         | User                                                  |
 
 
