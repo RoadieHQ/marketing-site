@@ -1,5 +1,5 @@
 ---
-title: Incident.io Plugin
+title: incident.io Plugin
 publishedDate: '2024-08-20'
 description: How to enable the incident.io plugin
 
