@@ -190,3 +190,8 @@
   to = "/docs/catalog/ownership/"
   force = true
 
+[[redirects]]
+  from = "/docs/getting-started/create-admin-group/"
+  to = "/docs/getting-started/assigning-admins/"
+  force = true
+

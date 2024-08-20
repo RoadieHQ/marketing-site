@@ -38,4 +38,4 @@ Roadie supports Single Sign On via Okta or other providers. Please reach out to 
 
 ## Next steps
 
-By default, every user of Roadie Backstage is an admin, with full powers to edit layouts and change configuration. To control which users get to be admins, you can [set up an admin group](/docs/getting-started/create-admin-group/).
+By default, every user of Roadie Backstage is an admin, with full powers to edit layouts and change configuration. To control which users get to be admins, you can [set up an admin group](/docs/getting-started/assigning-admins/).

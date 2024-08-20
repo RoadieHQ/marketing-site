@@ -14,7 +14,7 @@ See the [Plugins & Integrations](/docs/integrations/) page for a full list of su
 
 As an example, we will use PagerDuty in this example, but the process is broadly similar for most plugins.
 
-To add a plugin you must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/create-admin-group/).
+To add a plugin you must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
 
 ## Step 1: Add the UI component
 

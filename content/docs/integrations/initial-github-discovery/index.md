@@ -15,7 +15,7 @@ Roadie can perform on demand syncs with your organisation. This is useful in a c
 ## Prerequisites
 
 - You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/adding-a-catalog-item/)
-- You must be an Admin of Roadie Backstage, as [described here](/docs/getting-started/create-admin-group/).
+- You must be an Admin of Roadie Backstage, as [described here](/docs/getting-started/assigning-admins/).
 
 ## Steps
 
