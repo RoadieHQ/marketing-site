@@ -80,7 +80,7 @@ nav:
   - In-depth:
       - API docs:
           - Custom renderers: '/docs/details/custom-api-docs-renderers/'
-          - Using API specs: '/docs/details/details/openapi-specs'
+          - Using API specs: '/docs/details/openapi-specs'
           - Using grpc-docs: '/docs/details/grpc-docs/'
       - Configure GitHub Enterprise: '/docs/details/github-enterprise/'
       - Entity Push API: '/docs/details/entity-push-api/'
