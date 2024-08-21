@@ -20,17 +20,32 @@ The [Backstage Harness plugin](https://github.com/harness/backstage-plugins/tree
 
 The Harness plugin enables 3 usable annotations that are available to correctly identify the Harness pipelines. 
 
-The available annotation can be seen below on the example catalog-info.yaml file: 
-```yaml
-metadata:
-  annotations:
-    # mandatory annotation
-    harness.io/project-url: <harness_project_url>
+The main annotations can be seen below on the example catalog-info.yaml file: 
 
-    # optional annotations
-    # harness.io/ci-pipelineIds: <pipelineId1,pipelineId2,pipelineId3 etc>
-    # harness.io/cd-serviceId: <serviceId>
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  # ...
+  annotations:
+    
+    # optional annotation
+    harness.io/pipelines: |
+      labelA: <harness_pipeline_url>
+      labelB: <harness_pipeline_url>
+    # here labelA / labelB denotes the value you will see in dropdown in execution list. 
+    harness.io/services: |
+      labelA: <harness_service_url>
+      labelB: <harness_service_url>
+spec:
+  type: service
+  # ...
 ```
+Note that the annotations needs to be formatted as displayed above. A `pipe` character indicating a multiline string and then key-value pairs of pipeline/service configurations. 
+
+
+The plugin also allows users to use an older legacy annotation called `harness.io/project-url: <harness_project_url>` 
+
 
 To find the correct values to use for annotations, refer to the [official plugin documentation in their GitHub repository](https://github.com/harness/backstage-plugins/blob/main/plugins/harness-ci-cd/PluginConfiguation.md).
 
@@ -43,7 +58,7 @@ Then add it to Roadie at `https://<tenant-name>.roadie.so/administration/harness
 
 ### Enable and configure the plugin
 
-In the same Harness configuration section, enable the relevant Harness proxy to be able retrieve information from Harness.io. Additionally, you can disable the possibility to run pipelines via Roadie UI if needed.
+In the same Harness configuration section, enable the relevant Harness proxy to be able to retrieve information from Harness.io. Additionally, you can disable the possibility to run pipelines via Roadie UI if needed.
 
 ![harness-settings](harness-settings.png)
 
