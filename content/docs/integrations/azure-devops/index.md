@@ -4,7 +4,7 @@ publishedDate: '2022-04-06T11:00:00.0Z'
 description: Set up the Azure Devops plugin.
 
 humanName: Azure Devops
-logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.png'
+logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -19,7 +19,7 @@ Azure Pipelines is a CI/CD, testing, and deployment system that can connect to a
 
 The plugin lists the latest builds for a given Azure Repo.
 
-![Azure Piplines Builds screenshot](../../../assets/backstage/plugins/azure-devops/azure-devops-builds.png)
+![Azure Piplines Builds screenshot](../../../assets/backstage/plugins/azure-devops/azure-devops-builds.webp)
 Credit: [Andrew Wanlin](https://github.com/awanlin) from Keyloop
 
 ### Azure Repos
@@ -27,7 +27,7 @@ Azure Repos is a Git repository service.
 
 The plugin lists the latest Active, Completed, or Abandoned Pull Requests for a given repository.
 
-![Azure Repos PR screenshot](../../../assets/backstage/plugins/azure-devops/azure-devops-pull-requests.png)
+![Azure Repos PR screenshot](../../../assets/backstage/plugins/azure-devops/azure-devops-pull-requests.webp)
 Credit: [Andrew Wanlin](https://github.com/awanlin) from Keyloop
 
 ## Setup
@@ -76,7 +76,7 @@ In this case `<project-name>` will be the name of your Team Project and `<build-
 
 The `EntityAzurePipelinesContent` and `EntityAzurePullRequestsContent` components can be added as new tabs to your Components that have an annotation in their `catalog-info.yaml` files. 
 
-![Add new tab](./add-new-tab.png)
+![Add new tab](./add-new-tab.webp)
 
 
 ## Limitations

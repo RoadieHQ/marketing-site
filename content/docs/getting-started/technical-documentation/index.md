@@ -9,7 +9,7 @@ description: How to add technical documentation to components tracked in Backsta
 
 The Tech Docs feature of Roadie Backstage allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. Because this documentation is centralized in Backstage, it is more likely to be found and used by other people in your organization.
 
-![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
+![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.webp)
 
 ## Adding documentation to a component
 
@@ -116,7 +116,7 @@ To view your documentation in Backstage, first find the service in your service 
 
 On the Overview page, click Docs in the tab bar. You should now see your documentation.
 
-![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
+![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.webp)
 
 ## Adding more docs
 
@@ -129,7 +129,7 @@ Add some content to it.
 Commit and merge these changes to the default branch of your repo on GitHub and Backstage will pick up the changes after
 a short period of time.
 
-![a new page called local development with a code block and some navigation](./local-development-docs-backstage.png)
+![a new page called local development with a code block and some navigation](./local-development-docs-backstage.webp)
 
 By default, the structure of the docs pages will mirror that of the file system. You can also explicitly describe your 
 page structure using the `nav` object in your `mkdocs.yaml`. Both approaches are described [here](https://www.mkdocs.org/user-guide/writing-your-docs/#file-layout).

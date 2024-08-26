@@ -103,7 +103,7 @@ To connect SonarQube with Roadie we will use a broker connection. The broker is 
 
 
 8. Test the Data Source fact extraction by clicking "Check Facts". You should see something like the following.
-    ![field-extraction.png](field-extraction.png)
+    ![field-extraction.webp](field-extraction.webp)
 
 9. In the Applies to selection, set the "Has Annotation" field to "sonarqube.org/project-key"
 

@@ -49,7 +49,7 @@ details.
 Then click "Add Component" and set the type to ApiDocsWidget and the name to the name of the exported custom renderer
 (e.g. CustomApiDefinition) and click "Save".
 
-![custom plugin config](./custom-plugin-config.png)
+![custom plugin config](./custom-plugin-config.webp)
 
 ## Step 3: Publish your custom plugin
 
@@ -70,5 +70,5 @@ First click "add item" then enter the custom renderer information.
 - The component is then specified and this should match the custom component registered in step #2 
 (Caveat: it can take some time for a custom component to become available for use) 
 
-![settings page](./settings.png)
+![settings page](./settings.webp)
 

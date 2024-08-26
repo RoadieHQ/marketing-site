@@ -12,9 +12,9 @@ seo:
     The Backstage GitHub Actions plugin integrates with GitHub Actions to show your build
     information inside Backstage where it can be associated with your services.
 
-logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
+logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 
-coverImage: '../../assets/backstage/plugins/github-actions/cover.png'
+coverImage: '../../assets/backstage/plugins/github-actions/cover.webp'
 coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
 
 availableOnRoadie: true
@@ -85,7 +85,7 @@ The GitHub actions plugin makes requests to the GitHub API directly from your br
 will authenticate as your GitHub user via OAuth. You may see this pop-up periodically
 as you browse around Backstage. You must log in via OAuth before GitHub actions can work.
 
-![pop-up asking the user to log in with GitHub](../../assets/backstage/plugins/github-actions/oauth-login.png)
+![pop-up asking the user to log in with GitHub](../../assets/backstage/plugins/github-actions/oauth-login.webp)
 
 ### Multiple CI systems setup
 

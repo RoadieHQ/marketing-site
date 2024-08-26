@@ -41,21 +41,21 @@ These are the steps to set that up.
 
 1. Visit Tech Insights and click into the Data Sources tab. Click the ADD DATA SOURCE button to create a new data source.
 
-   ![a button on a web interface](./add-ds-button.png)
+   ![a button on a web interface](./add-ds-button.webp)
 
 2. Give the data source a sensible name, like “Dockerfile facts”, and a description like “Captures various facts about Dockerfiles at the root of each repo”.
 
-   ![two filled inputs](./ds-name.png)
+   ![two filled inputs](./ds-name.webp)
 
 3. In the Data Provider section, choose the type Component repository file, and set the location to “Dockerfile”.
 4. In the field labelled “Select entity to test data source against”, choose a Backstage component which you know has the `github.com/project-slug` entity set on it’s `catalog-info.yaml` file, and which you know has a `Dockerfile` at it’s root.
 5. Click VIEW. The Dockerfile will be fetched from the repository and displayed. We can use the contents of this Dockerfile to write & test queries which will extract facts from the Dockerfile.
 
-   ![](./ds-test-results.png)
+   ![](./ds-test-results.webp)
 
 6. We’re going to use the REGEX parser to extract the base image version from the Dockerfile.
 
-   ![](./ds-field-extraction.png)
+   ![](./ds-field-extraction.webp)
 
    To do that, add a fact with the name “Base image version”, and a regular expression which captures the image version with a capture group. Save this fact as a string type.
 
@@ -76,16 +76,16 @@ These are the steps to set that up.
 7. Once you feel like you have the right regular expression, you can test it against the Dockerfile you fetched earlier. Click the CHECK FACTS button.
 
 
-    ![](./ds-field-extraction-results.png)
+    ![](./ds-field-extraction-results.webp)
 
 8. Use the “Applies to” filter to target this data source at some components which you expect to have Dockerfiles. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. We’re using a “demo” tag to accomplish this.
 
-   ![](./ds-filters.png)
+   ![](./ds-filters.webp)
 
 9. Save the data source by clicking SAVE.
 10. You should now have a Data Source called Dockerfile facts. You may need to wait some time for the data source to collect all of the Dockerfile base image versions. It must contact the GitHub APIs for each component which is captured by the filter.
 
-    ![](./ds-results.png)
+    ![](./ds-results.webp)
 
     You may see some errors in the results. For example, in the case above, our Applies to settings filtered in a Component which does not have a Dockerfile. This results in a 404 from the GitHub APIs when Tech Insights attempts to fetch the file contents. We will deal with this a little later in the tutorial.
 
@@ -93,7 +93,7 @@ These are the steps to set that up.
 
 Our Data Source comes with a built-in visualisation panel which lets us get an overview of the Dockerfile base image versions being used. When viewing a Data Source, expand the “Facts visualization” section to see it.
 
-![](./ds-viz.png)
+![](./ds-viz.webp)
 
 This chart tells us:
 
@@ -116,15 +116,15 @@ Let’s write a check to combine both of these properties.
 
 1. Visit Tech Insights and click into the Checks tab. Click the ADD CHECK button to create a new check.
 
-   ![](./add-check-button.png)
+   ![](./add-check-button.webp)
 
 2. Give the check a sensible name, like “Apps must use latest Docker base image version”, and a description like “Using the latest Docker base image version ensures you have the best performance and security fixes from the platform team.”
 
-   ![](./check-about.png)
+   ![](./check-about.webp)
 
 3. In the Conditions section, we’re going to create a compound check which combines both the List of files in each GitHub repository Data Source and the Dockerfile facts repository. Click the “ADD CONDITION” button to add a second set of fields in this section. Set the boolean logic selector to “OR”.
 
-   ![](./check-conditions-empty.png)
+   ![](./check-conditions-empty.webp)
 
 
 4. In the first set of condition inputs, use the following values.
@@ -148,13 +148,13 @@ Let’s write a check to combine both of these properties.
     
     We now have a set of conditions which pass when a component is using the latest base image (`1.0.0`), and fail when they are not.
     
-    ![](./check-conditions-filled.png)
+    ![](./check-conditions-filled.webp)
     
     You can use the “DRY RUN” button to test these conditions against some Components in your catalog, ensure they operate the way you would expect, and return the correct pass or fail result.
 
 6. Use the filters to target this check at the same set of components as the Data Sources target.
 
-   ![](./ds-filters.png)
+   ![](./ds-filters.webp)
 
 7. Save the check by clicking “SAVE”. If you’re not quite ready to go live yet, you can use the “SAVE AS DRAFT” button to save the check but ensure only admins can see it.
 
@@ -162,7 +162,7 @@ Let’s write a check to combine both of these properties.
 
 The results of this check tell us who we need to reach out to to ask for a base image upgrade.
 
-![](./check-results.png)
+![](./check-results.webp)
 
 - The marketing-site website passes the check because it doesn’t have a Dockerfile.
 - The sample-service passes because it has a Dockerfile, but it doesn’t match the REGEX we created.

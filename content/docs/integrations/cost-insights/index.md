@@ -18,21 +18,21 @@ Cost Insights plugin provides the possibility to view and track cost fluctuation
 
 The overall cost overview view displays costs overview based on different teams within the organization.
 
-![cost-overview-graph.png](cost-overview-graph.png)
+![cost-overview-graph.webp](cost-overview-graph.webp)
 
 The breakdown tab of cost overview allows you to dig in deeper to identify the cost trends for each individual subcategory within the provided cost data. The breakdown dimension is fully configurable. Within the image below we are displaying breakdown of costs based on "ServiceCategory", which is a dimension of the provided data set. 
 
-![cost-overview-breakdown.png](cost-overview-breakdown.png)
+![cost-overview-breakdown.webp](cost-overview-breakdown.webp)
 
 
 ### Product costs
 
 Within the plugin you also have configuration options to track cost for individual product dimensions. Within the image below we are tracking costs for category value "Compute" within the ServiceCategory dimension. With this we are able to drill in deeper to see more granular cost information about items. 
 
-![compute-costs.png](compute-costs.png)
+![compute-costs.webp](compute-costs.webp)
 
 There is also possibility to investigate individual product category values. You can see the breakdown of a single category value and costs of items related to that. Within the image below we are looking at costs of the individual resources within the category values selected on the items displayed above.
-![compute-costs-breakdown.png](compute-costs-breakdown.png)
+![compute-costs-breakdown.webp](compute-costs-breakdown.webp)
 
 Both of these dimensions, on the higher level, and drilling in deeper, are fully configurable and can be set up to show various important cost dimensions based on needs. 
 
@@ -69,7 +69,7 @@ In the first section we have general configuration to point to the correct Cost 
 The Engineering Cost value is something that is mandatory within the open source Cost Insights plugin and is used to compare costs to used engineering hours. 
 
 On "Overview Breakdown Category" you can choose the most relevant breakdown column name from the FOCUS schema which will be used to generate the breakdown information on the overall level.
-![cost-insights-cost-overview.png](cost-insights-cost-overview.png)
+![cost-insights-cost-overview.webp](cost-insights-cost-overview.webp)
 
 
 The second section of the configuration is to add configure "Products" into the Cost Insights UI. There can be multiple of these and in most cases it is recommended to create multiple of these to look at the related cost data from different view points. 
@@ -82,4 +82,4 @@ The first two configuration values are related to each other and must be chosen 
 There is also a possibility to configure further Breakdowns within these groupings which can be used to identify more granular information about the provided cost data.
 
 
-![cost-insights-product-overview.png](cost-insights-product-overview.png)
+![cost-insights-product-overview.webp](cost-insights-product-overview.webp)

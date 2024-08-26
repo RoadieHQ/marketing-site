@@ -17,7 +17,7 @@ This should then remove the entity from your catalog within a minute or so.
 If you imported the entity manually using the url, and the path does not match a Github Autodiscovery pattern set for your organisation:
 
 1. Go to the component in question i.e. `/catalog/default/component/sample-service` and click the kebab menu on the top right.
-2. Select `Unregister entity` ![Remove item menu](./unregister-menu.png)
+2. Select `Unregister entity` ![Remove item menu](./unregister-menu.webp)
 3. Review the content's that will be removed. It is ok to have a `location:generated-...` and the actual entity listed here.
 4. Confirm
 5. Your entities should be almost immediately removed from the catalog

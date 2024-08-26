@@ -12,9 +12,9 @@ seo:
   description: |
     See your servers, your clouds, your metrics all in one place
 
-logoImage: '../../assets/logos/datadog/datadog-logo-no-text.png'
+logoImage: '../../assets/logos/datadog/datadog-logo-no-text.webp'
 
-coverImage: '../../assets/datadog-plugin.png'
+coverImage: '../../assets/datadog-plugin.webp'
 coverImageAlt: 'A screenshot of the Datadog plugin.'
 
 availableOnRoadie: true
@@ -100,13 +100,13 @@ metadata:
 
 * Within the dashboard you have chosen, click the settings cog on the screen's right-hand side, circled in red.
 
-![dashboard](../../assets/dd-dashboard.png)
+![dashboard](../../assets/dd-dashboard.webp)
 
 * Copy the URL from the Sharing textbox.
 
 * This URL is the value you need for the `datadoghq.com/dashboard-url` annotation.
 
-![dashboard share](../../assets/dd-dashboard-share.png)
+![dashboard share](../../assets/dd-dashboard-share.webp)
 
 
 ### Adding the annotations and the values from Datadog to your component's metadata file.
@@ -130,7 +130,7 @@ metadata:
 
 * Click on the graph pencil, circled in red, from your dashboard.
 
-![dashboard](../../assets/dd-dashboard-2.png)
+![dashboard](../../assets/dd-dashboard-2.webp)
 
 * Click on the Share tab, choose a timeframe, graph size and legend. Click generate the embedded code. 
 
@@ -138,7 +138,7 @@ metadata:
 
 * this token is the value you need for the `datadoghq.com/graph-token` annotation
 
-![dashboard](../../assets/dd-graph-share.png)
+![dashboard](../../assets/dd-graph-share.webp)
 
 ### Customize graph size.
 

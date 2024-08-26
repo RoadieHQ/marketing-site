@@ -4,7 +4,7 @@ publishedDate: '2021-07-21T21:00:00.0Z'
 description: How to create a Snyk Token with permissions for use in Backstage and apply it to Roadie.
 
 humanName: Snyk
-logoImage: '../../../assets/logos/snyk/snyk-avatar.png'
+logoImage: '../../../assets/logos/snyk/snyk-avatar.webp'
 integrationType: OSS plugin
 ---
 
@@ -23,13 +23,13 @@ To get an API token, you need to sign up for a Snyk account. Within this account
 
 This can be found by clicking your name in the top right-hand corner and going to General Settings.
 
-![API token for Snyk.](./api-token.png)
+![API token for Snyk.](./api-token.webp)
 
 #### Organization Name
 
 This can be found under the settings page that is visible when you login to Snyk.
 
-![Organization Name Snyk.](./org.png)
+![Organization Name Snyk.](./org.webp)
 
 
 ### Step 1: Add the token to Roadie
@@ -38,7 +38,7 @@ Visit `https://your-company.roadie.so/administration/settings/secrets`.
 
 Click the pencil icon beside `SNYK_TOKEN`. Enter it into the input in the dialog that pops up (See above for retrieving token).
 
-![a dialog box with an input called Secret Value. The Snyk token is pasted inside.](./secret.png)
+![a dialog box with an input called Secret Value. The Snyk token is pasted inside.](./secret.webp)
 
 Click Save.
 
@@ -53,7 +53,7 @@ You can set this up in Settings page:
 
 Visit `https://your-company.roadie.so/administration/settings/snyk`.
 
-![A text field with snyk org name.](./snyk-organisation-name-settings.png)
+![A text field with snyk org name.](./snyk-organisation-name-settings.webp)
 
 ### Step 3: Add the relevant Snyk annotations to a component
 
@@ -61,7 +61,7 @@ To configure the Snyk plugin to target the correct entity, you need to configure
 
 The first one is `snyk.io/org-id` which identifies your Snyk organization. As described in the Step 2, if you add organisation name, you will not need to add this annotation manually to the files. However, you can also find this value under the settings page that is visible when you login to Snyk.
 
-![Organization Name Snyk.](./org.png)
+![Organization Name Snyk.](./org.webp)
 
 Additionally, the Snyk plugin uses `github.com/project-slug` annotation to automatically match projects from GitHub to their corresponding Snyk targets. 
 

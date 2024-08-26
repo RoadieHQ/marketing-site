@@ -18,7 +18,7 @@ that we use to communicate with our customers and free trials.
 
 These automatic updates look like this:
 
-![a Slack message saying that Roadie has released a feature to do with missing annotations](./assets/changelog-update-in-slack.png)
+![a Slack message saying that Roadie has released a feature to do with missing annotations](./assets/changelog-update-in-slack.webp)
 
 These Slack messages are posted by Zapier tasks which watch the RSS feed and send Slack messages
 when a change is found.
@@ -38,7 +38,7 @@ The Zapier tasks can be found in [the Changelog Updates folder](https://zapier.c
 To create a new changelog item (called a ChangeSet), fill out the form on Contentful with the
 required attributes.
 
-![a form on Contentful](./assets/contentful-changeset-form.png)
+![a form on Contentful](./assets/contentful-changeset-form.webp)
 
 Once published, the RSS feed will update and the notifications will send into Customer channels,
 so make sure you have reviewed your text carefully before hitting the Publish button.

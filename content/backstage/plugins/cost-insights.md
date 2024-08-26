@@ -12,7 +12,7 @@ seo:
   description: |
     Visualize, understand and optimize your team's cloud costs inside Backstage with the Cost Insights Plugin.
 
-logoImage: '../../assets/logos/cost-insights/money-bag.png'
+logoImage: '../../assets/logos/cost-insights/money-bag.webp'
 
 coverImage: '../../assets/backstage/plugins/cost-insights.jpg'
 coverImageAlt: 'Charts showing cloud costs over time and compared to other services.'

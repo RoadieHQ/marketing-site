@@ -26,8 +26,8 @@ seo:
   description: |
     Build, test, and deploy on Jenkins CI/CD platform.
 
-logoImage: '../../assets/logos/jenkins/logo-jenkins.png'
-coverImage: '../../assets/backstage/plugins/jenkins/jenkins-plugin.png'
+logoImage: '../../assets/logos/jenkins/logo-jenkins.webp'
+coverImage: '../../assets/backstage/plugins/jenkins/jenkins-plugin.webp'
 coverImageAlt: 'A screenshot of the Jenkins plugin.'
 
 availableOnRoadie: true
@@ -104,12 +104,12 @@ If you want to try out this plugin but you don't have a Jenkins server to test i
 
 The  plugin can pull build information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
 
-![Jenkins menu to create new items](../../assets/backstage/plugins/jenkins/jenkins-new-item-options.png)
+![Jenkins menu to create new items](../../assets/backstage/plugins/jenkins/jenkins-new-item-options.webp)
 
 The plugin shows a list of the most recent builds in Backstage. This list includes builds from all projects that are available in the GitHub Organization project in Jenkins.
 
-![Jenkins and Backstage side-by-side](../../assets/backstage/plugins/jenkins/jenkins-and-backstage-side-by-side.png)
+![Jenkins and Backstage side-by-side](../../assets/backstage/plugins/jenkins/jenkins-and-backstage-side-by-side.webp)
 
 View additional build information by selecting a build from the list.
 
-![Backstage Jenkins job details](../../assets/backstage/plugins/jenkins/backstage-jenkins-job-details.png)
+![Backstage Jenkins job details](../../assets/backstage/plugins/jenkins/backstage-jenkins-job-details.webp)

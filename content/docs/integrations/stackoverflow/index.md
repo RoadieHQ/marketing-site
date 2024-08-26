@@ -4,7 +4,7 @@ publishedDate: '2022-08-10T10:00:00.0Z'
 description: How to enable the Stackoverflow plugin
 
 humanName: Stackoverflow Plugin
-logoImage: '../../../assets/logos/stackoverflow/so-logo.png'
+logoImage: '../../../assets/logos/stackoverflow/so-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -44,13 +44,13 @@ To use this plugin make sure you already have the [Backstage Home plugin](https:
 
 Once you are on the home page click on the cogwheel icon.
 
-![cog icon leading to adding cards in home page](cog.png)
+![cog icon leading to adding cards in home page](cog.webp)
 
 #### 2.  Click the plus sign to add a new Card.
-![add new card plus sign](plus-homepage.png)
+![add new card plus sign](plus-homepage.webp)
 
 #### 3.  Select `HomePageStackOverflowQuestions` from the list.
-![add stackoverflow card](homepage-add-card.png)
+![add stackoverflow card](homepage-add-card.webp)
 
 #### 4. Set up correct props for your Stackoverflow card.
     
@@ -63,7 +63,7 @@ For a private Stackoverflow instance you need to add the name of your Stackoverf
 You can also optionally append filters to the query like `"tagged": "backstage"` to display only questions that have a tag `backstage`. For public Stackoverflow instances the team name can be omitted.
 
 After you have set up props for your homepage card you should see card like this:
-![Stackoverflow card](card.png)
+![Stackoverflow card](card.webp)
 
 
 ## References

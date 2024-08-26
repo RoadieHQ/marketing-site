@@ -11,8 +11,8 @@ seo:
   description: |
     Integrates GraphiQL as a tool to browse GraphQL API endpoints inside Backstage.
 
-logoImage: '../../assets/logos/graphiql/logo-ql.png'
-coverImage: '../../assets/backstage/plugins/graphiql/graphiql-gitlab.png'
+logoImage: '../../assets/logos/graphiql/logo-ql.webp'
+coverImage: '../../assets/backstage/plugins/graphiql/graphiql-gitlab.webp'
 coverImageAlt: 'A screenshot of the GraphiQL plugin.'
 
 gettingStarted:
@@ -112,7 +112,7 @@ Rather than using the `GraphQLEndpoints.create` function to create the `GraphQLE
 
 The end result is the same though, a new tab for the 'SpaceX' API:
 
-![Multiple GraphQL APIs in GraphiQL](../../assets/backstage/plugins/graphiql/graphiql-spacex.png)
+![Multiple GraphQL APIs in GraphiQL](../../assets/backstage/plugins/graphiql/graphiql-spacex.webp)
 
 ### Connecting to an authenticated API with GitHub authentication
 
@@ -151,7 +151,7 @@ export const apis: AnyApiFactory[] = [
 
 The current user logged into Backstage can now access information that is only available to authenticated GitHub users. For example, the user could query for their private repositories:
 
-![GitHub authenticated GraphQL API](../../assets/backstage/plugins/graphiql/graphiql-github.png)
+![GitHub authenticated GraphQL API](../../assets/backstage/plugins/graphiql/graphiql-github.webp)
 
 The `github` function even attempts to request additional API scopes if the current user's authentication token doesn't have the scopes required to execute the GraphQL query or mutation.
 

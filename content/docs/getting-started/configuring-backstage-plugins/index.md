@@ -24,19 +24,19 @@ Let's add the PagerDuty Card to the Component Overview page.
 
 1. Visit the Overview page of a Component in your catalog and click the gear icon in the top right corner.
 
-![Backstage page showing a service with various cards which pull in information from third-party systems](./component-overview-page.png)
+![Backstage page showing a service with various cards which pull in information from third-party systems](./component-overview-page.webp)
 
 3. Click the plus icon to add a component.
 
-![The same view with a red arrow pointing to a plus icon which has appeared in place of the gear icon](./plus-icon.png)
+![The same view with a red arrow pointing to a plus icon which has appeared in place of the gear icon](./plus-icon.webp)
 
 4. Search for "EntityPagerDutyCard" in the dialog which appears and click "ADD".
 
-![a modal dialog with a search box. Searching selects an option from the list. There is an add button at the bottom of the dialog.](./add-pagerduty-card.png)
+![a modal dialog with a search box. Searching selects an option from the list. There is an add button at the bottom of the dialog.](./add-pagerduty-card.webp)
 
 5. The PagerDuty card should appear in the interface. Drag it to wherever you would like it to appear.
 
-![A new card has appeared on the page. It has the text "Missing or Invalid PagerDuty token"](./missing-invalid-token.png)
+![A new card has appeared on the page. It has the text "Missing or Invalid PagerDuty token"](./missing-invalid-token.webp)
 
 6. Click the floppy disk icon in the top right to save your changes.
 
@@ -50,11 +50,11 @@ As you can see, the PagerDuty card is complaining about a missing or invalid tok
 
 3. Click the pencil icon to open a dialog where you can set a token. Click SAVE. Please visit the [dedicated PagerDuty plugin docs](/docs/integrations/pagerduty/) to learn where to get this token from.
 
-![A modal dialog with an input where we can input a secret and a save button](./set-token-dialog.png)
+![A modal dialog with an input where we can input a secret and a save button](./set-token-dialog.webp)
 
 Once the token is set, we should see something different when we return to the component page. We're not there yet but we're closer!
 
-![The PagerDuty plugin card now shows an error](./pagerduty-plugin-with-error.png)
+![The PagerDuty plugin card now shows an error](./pagerduty-plugin-with-error.webp)
 
 ## Step 3: Set an annotation
 
@@ -82,7 +82,7 @@ spec:
 
 It can take a few minutes for Backstage to find and ingest this new value. Once it does, you should see the PagerDuty card render correctly in Roadie Backstage.
 
-![PagerDuty card showing who is on call and any active incidents](./pagerduty-plugin-works.png)
+![PagerDuty card showing who is on call and any active incidents](./pagerduty-plugin-works.webp)
 
 That's it! Now any service can correctly display information from PagerDuty simply by adding the annotation.
 

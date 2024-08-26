@@ -4,7 +4,7 @@ publishedDate: '2021-10-18T21:00:00.0Z'
 description: How setup Roadie to display graphs and dashboards from Datadog
 
 humanName: Datadog
-logoImage: '../../../assets/logos/datadog/datadog-logo-no-text.png'
+logoImage: '../../../assets/logos/datadog/datadog-logo-no-text.webp'
 integrationType: OSS plugin
 ---
 
@@ -33,13 +33,13 @@ With this plugin, you can embed Datadog graphs and dashboards into Roadie Backst
 
 * Within the dashboard you have chosen, click the settings cog on the screen's right-hand side, circled in red.
 
-![dashboard](./dd-dashboard.png)
+![dashboard](./dd-dashboard.webp)
 
 * Copy the URL from the Sharing textbox.
 
 * This URL is the value you need for the `datadoghq.com/dashboard-url` annotation.
 
-![dashboard share](./dd-dashboard-share.png)
+![dashboard share](./dd-dashboard-share.webp)
 
 
 ### Adding the annotations and the values from Datadog to your component's metadata file.
@@ -63,7 +63,7 @@ metadata:
 
 * Click on the graph pencil, circled in red, from your dashboard.
 
-![dashboard](./dd-dashboard-2.png)
+![dashboard](./dd-dashboard-2.webp)
 
 * Click on the Share tab, choose a timeframe, graph size and legend. Click generate the embedded code.
 
@@ -71,7 +71,7 @@ metadata:
 
 * this token is the value you need for the `datadoghq.com/graph-token` annotation
 
-![dashboard](./dd-graph-share.png)
+![dashboard](./dd-graph-share.webp)
 
 ### Customize graph size.
 
@@ -121,12 +121,12 @@ This component can be [added as a tab](/docs/getting-started/updating-the-ui#upd
 
 Click the cog icon on the top right of a component page. Then click add card.
 
-![edit_layout.png](./edit_layout.png)
-![add_card.png](./add_card.png)
+![edit_layout.webp](./edit_layout.webp)
+![add_card.webp](./add_card.webp)
 
 Select the datadog graph card from the drop down and Click add. Press save to submit.
 
-![select_datadog.png](./select_datadog.png)
+![select_datadog.webp](./select_datadog.webp)
 
 
 ## Specify datadog domain

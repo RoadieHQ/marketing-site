@@ -22,7 +22,7 @@ The components registered on the ‘Custom Plugins’ page are immediately avail
 4. Register the plugin on Custom Plugins page
    * Fill out the needed fields with the information gathered above
 
-![A Form showing Roadie Custom Plugins registration](plugin_registration.png)
+![A Form showing Roadie Custom Plugins registration](plugin_registration.webp)
 
 5. Update your Roadie instance with UI components available from the plugin
    * To add components you can follow the documentation [on how to update the UI](/docs/details/updating-the-ui/).
@@ -39,7 +39,7 @@ roadie plugin:build -l $PWD/ --output $PWD/out --host https://static-assets.road
 
 Within this command we build a plugin from the folder we currently are (`$PWD`) and produces the output to `$PWD/out` folder. The URL of the plugin is defined as `https://static-assets.roadie.so/test-tenant/my_first_plugin`. 
 The output of this build command is the following:
-![Image of a terminal displaying Roadie CLI command output](plugin_build_output.png)
+![Image of a terminal displaying Roadie CLI command output](plugin_build_output.webp)
 
 This output can be in most cases directly copied to your Roadie instance and used to register your plugin. 
 

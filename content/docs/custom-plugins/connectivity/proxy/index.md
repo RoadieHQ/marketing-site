@@ -14,7 +14,7 @@ Roadie installs the proxy plugin in Roadie and provides administrators the abili
 
 An administrator of Roadie will configure the proxy with credentials so that when the proxy is called by a UI plugin or a Scaffolder action, the authentication header will be handled in the proxy plugin.
 
-![proxy.png](proxy.png)
+![proxy.webp](proxy.webp)
 ### Setup
 
 #### Step 1. Configure the Proxy
@@ -25,14 +25,14 @@ Enter a Path (e.g. `/my-api`) and a target API (e.g. `https://my-api.com/api`)
 
 Expand the "Advanced Settings" and click "Add Item" next to the "Headers" section. Add a header with the name "Authorization" and the value "bearer ${CUSTOMER_TOKEN_1}"
 
-![customProxy.png](customProxy.png)
+![customProxy.webp](customProxy.webp)
 
 Click save and Apply and Restart.
 
 #### Step 2 Configure the API secret
 Next visit the secrets configuration page `/administration/settings/secrets`. Click the edit icon beside `CUSTOMER_TOKEN_1` and set a value for the token and press "Save".
 
-![customer-token-1-save.png](customer-token-1-save.png)
+![customer-token-1-save.webp](customer-token-1-save.webp)
 
 #### Step 3 Calling the API
 
@@ -48,18 +48,18 @@ Roadie provides a custom proxy service that can be configured to proxy through a
 
 This gives a custom plugin a way to interact with your own service. That service can authenticate the incoming requests from Roadie.
 
-![authenticatedProxyDiagram.png](authenticatedProxyDiagram.png)
+![authenticatedProxyDiagram.webp](authenticatedProxyDiagram.webp)
 
 ### Setup
 #### Step 1. Configure the Proxy
 
 You can navigate to /administration/settings/authenticatedProxy. Click add item to add a new proxy.
 
-![authenticatedProxyConfig.png](authenticatedProxyConfig.png)
+![authenticatedProxyConfig.webp](authenticatedProxyConfig.webp)
 
 Enter a Path (e.g. `/my-api`) and a target API (e.g. `https://my-api.com/api`) as follows:
 
-![myTest.png](myTest.png)
+![myTest.webp](myTest.webp)
 
 Click save and Apply and Restart and wait for the restart. It can take up to about two minutes for the change to be applied.
 

@@ -17,7 +17,7 @@ By default only *.example.com and *.mozilla.org are allowed.
 Navigate to `administration/backend` in Roadie you should be able to click "add item" then enter the hostname of
 the resource you want to access in the host field and click "Save" then "Apply & restart".
 
-![allow reading](./allow-reading.png)
+![allow reading](./allow-reading.webp)
 
 If you want to restrict access further you can add a list of paths and only resources under those paths will be allowed.
 

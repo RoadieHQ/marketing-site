@@ -91,19 +91,19 @@ Once this YAML file is committed and available on GitHub, you can make Roadie Ba
 
 Copy the URL of the YAML spec on GitHub, paste it into the catalog importer at `https://your-company.roadie.so/import/entity` and click Analyze.
 
-![an input with a GitHub URL pasted into it. There is a button labelled analyze](./catalog-import-select-url.png)
+![an input with a GitHub URL pasted into it. There is a button labelled analyze](./catalog-import-select-url.webp)
 
 Review the action the importer is going to take, then press Import.
 
-![a chance to review the URL which is going to be added and the name of the API which will be created](./catalog-import-review.png)
+![a chance to review the URL which is going to be added and the name of the API which will be created](./catalog-import-review.webp)
 
 Click the name of the API to view it in Backstage.
 
-![list of the entities which have been added to the catalog with the option to click and view one](./catalog-import-finish.png)
+![list of the entities which have been added to the catalog with the option to click and view one](./catalog-import-finish.webp)
 
 You should also be able to view your API in the list of APIs Backstage tracks by clicking the "APIs" item in the sidebar or visiting `/api-docs`.
 
-![list of APIs in a table showing name, description and some other properties](./api-docs-page-with-spotify.png)
+![list of APIs in a table showing name, description and some other properties](./api-docs-page-with-spotify.webp)
 
 ### Step 3: Link the API to a component
 
@@ -132,11 +132,11 @@ A single component can provide multiple APIs.
 
 Once this step is done correctly, we can visit the API tab of our component in Backstage to see that it provides the Spotify API.
 
-![API tab with a list of APIs the component provides. The only API in the list is the Spotify API object.](./provided-spotify-api.png)
+![API tab with a list of APIs the component provides. The only API in the list is the Spotify API object.](./provided-spotify-api.webp)
 
 And we can click through to the definition of that API to see the specification.
 
-![a list of endpoints that Spotify exposes such as slash albums](./spotify-api-spec.png)
+![a list of endpoints that Spotify exposes such as slash albums](./spotify-api-spec.webp)
 
 ## Further reading
 

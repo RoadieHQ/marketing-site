@@ -12,8 +12,8 @@ seo:
   description: |
     View information about your component's Docker images stored in a Harbor registry.
 
-logoImage: '../../assets/logos/harbor/harbor-logo.png'
-coverImage: '../../assets/backstage/plugins/harbor/harbor-dashboard.png'
+logoImage: '../../assets/logos/harbor/harbor-logo.webp'
+coverImage: '../../assets/backstage/plugins/harbor/harbor-dashboard.webp'
 coverImageAlt: 'Harbor in Backstage'
 
 gettingStarted:
@@ -115,15 +115,15 @@ Harbor is an open source registry for Docker images that can be installed on you
 
 The Harbor plugin displays information about Docker images stored in your Harbor registry. Backstage catalog components can be associated to a Harbor repository. The Harbor Dashboard appears as a new tab on the catalog entity page:
 
-![Harbor dashboard close-up](../../assets/backstage/plugins/harbor/harbor-dashboard-closeup.png)
+![Harbor dashboard close-up](../../assets/backstage/plugins/harbor/harbor-dashboard-closeup.webp)
 
 A Harbor widget is also available to display a summary of vulnerabilities in your component's Docker image. This widget can be added to any tab on the entity page:
 
-![Harbor vulnerability widget card](../../assets/backstage/plugins/harbor/harbor-widget-card.png)
+![Harbor vulnerability widget card](../../assets/backstage/plugins/harbor/harbor-widget-card.webp)
 
 The plugin will only display information about images in Harbor if a vulnerability scan has been run on the image. You can enable automatic scanning on image push in Harbor project settings:
 
-![Harbor automate image scan setting](../../assets/backstage/plugins/harbor/harbor-automate-scan-setting.png)
+![Harbor automate image scan setting](../../assets/backstage/plugins/harbor/harbor-automate-scan-setting.webp)
 
 ## Authentication
 

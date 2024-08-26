@@ -98,7 +98,7 @@ In your Azure DevOps navigate to the User Settings > Tokens page in `https://dev
 1. Click 'New Token'
 2. Create an access token with _at least_ repository Read permissions.
 
-![Azure DevOps Token Options](./azure-devops-opts.png)
+![Azure DevOps Token Options](./azure-devops-opts.webp)
 
 ### Store Azure access token as a secret in Roadie
 
@@ -114,7 +114,7 @@ Copy the URL of the catalog file you created by visiting the file in your browse
 
 Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
 
-![import.png](import.png)
+![import.webp](import.webp)
 
 Now you can click on the entity link to visit the entity that you have just created.
 

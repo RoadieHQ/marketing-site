@@ -4,7 +4,7 @@ publishedDate: '2021-09-02T21:00:00.0Z'
 description: How to configure the Opsgenie plugin on roadie.
 
 humanName: Opsgenie
-logoImage: '../../../assets/logos/opsgenie/logo-opsgenie.png'
+logoImage: '../../../assets/logos/opsgenie/logo-opsgenie.webp'
 integrationType: OSS plugin
 ---
 
@@ -30,7 +30,7 @@ In the Opsgenie settings page enter the following:
 * The domain of your Opsgenie app (e.g. `https://my-app.app.eu.opsgenie.com/`)
 * The API endpoint you use (e.g. US / EU )
 
-![Set Opsgenie Config](./config.png)
+![Set Opsgenie Config](./config.webp)
 
 ### Step 4: Add the Opsgenie UI elements
 

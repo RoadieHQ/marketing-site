@@ -4,7 +4,7 @@ publishedDate: '2024-04-04T21:00:00.0Z'
 description: How setup Roadie to display data from Dynatrace
 
 humanName: Dynatrace
-logoImage: '../../../assets/logos/dynatrace/Dynatrace_Logo_color_positive_vertical.png'
+logoImage: '../../../assets/logos/dynatrace/Dynatrace_Logo_color_positive_vertical.webp'
 integrationType: OSS plugin
 ---
 
@@ -25,11 +25,11 @@ Firstly, follow the instructions on ["How to create an OAuth 2.0 client"](https:
 Then to configure an environment go to Administration > Plugins > Dynatrace and click "Add Item" under "Environments". Enter
 the client and environment information and click "Save" below:
 
-![add-environment](./add-environment.png)
+![add-environment](./add-environment.webp)
 
 Then scroll down and add the client secret in the secrets section:
 
-![add-secret](./add-secret.png)
+![add-secret](./add-secret.webp)
 
 ### Step 2 - Add a DQL query (optional)
 
@@ -37,7 +37,7 @@ If you'd like to display a DQL query in the catalog you'll need to add the query
 queries and enter an ID and a query e.g. "fetch events" then click "Save" below. Record the ID as you'll need this later. 
 For this reason it's a good idea to use a meaningful string as an ID e.g. "fetch-events":
 
-![add-query](./add-query.png)
+![add-query](./add-query.webp)
 
 Dynatrace provide some variables you can use in these queries such as  `${{componentName}}` so you can make them relevant
 to individual entities. See [here](https://github.com/Dynatrace/backstage-plugin/tree/main#custom-queries) for more information.
@@ -52,7 +52,7 @@ annotations to your entities. See [this guide](https://github.com/Dynatrace/back
 * If you completed step 2 then add `EntityDqlQueryCard` to the catalog. Remember to add the query ID prop by clicking the
 wrench icon and enter a value with the format `custom.<query-id>` e.g. `custom.fetch-events`. The query ID is the value
 recorded in step 2.
-  ![edit-props](./edit-props.png)
+  ![edit-props](./edit-props.webp)
 
 * If you completed step 3 then add `EntityKubernetesDeploymentsCard`.
 
@@ -77,7 +77,7 @@ The plugin requires an access token with the following permissions to be able to
 Navigate to `Administration` -> `Settings` -> `Dynatrace` and configure your instance URLs and the access token.
 
 
-![dynatrace-config](./dynatrace-config.png)
+![dynatrace-config](./dynatrace-config.webp)
 
 The configuration expects 2 different URLs:
 1. An API endpoint URL
@@ -110,7 +110,7 @@ The SYNTHETIC_ID can be found in Dynatrace by browsing to the Synthetic monitor.
 
 Navigate to a Catalog Entity page as an administrator and add a new tab. The name of the component you want to add in is  `DynatraceTab` from package `@backstage/plugin-dynatrace`. Once you have configured the plugin URLs and authentication token, you should be able to see your Dynatrace problems for the entity.
 
-![dynatrace-tab](./dynatrace-tab.png)
+![dynatrace-tab](./dynatrace-tab.webp)
 
 
 

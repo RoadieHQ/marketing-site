@@ -3,7 +3,7 @@ title: Configuring Tech Radar
 publishedDate: '2021-08-25T15:00:00.0Z'
 description: Configuring Tech Radar to use your data source
 humanName: Tech Radar
-logoImage: '../../../assets/logos/tech-radar/radar.png'
+logoImage: '../../../assets/logos/tech-radar/radar.webp'
 integrationType: OSS plugin
 ---
 
@@ -27,7 +27,7 @@ The configuration for Tech Radar data can be defined at the following url:
 https://<tenant-name>.roadie.so/administration/settings/tech-radar
 ```
 
-![Tech Radar Settings](./radar-settings.png)
+![Tech Radar Settings](./radar-settings.webp)
 
 Roadie currently supports fetching tech radar data directly from GitHub and Bitbucket. Both CSV and JSON data files are supported, as long as they conform to the specified format which are explained below.
 
@@ -69,7 +69,7 @@ UI read [this guide](/docs/details/updating-the-ui/#updating-the-sidebar).
 If you're adding a second tech radar you'll need to pass the `id` of the tech radar source in step one as a prop. To edit props
 click the edit pencil icon and pass your props as JSON and click the save icon. Then click the "Add" button to save the page.   
 
-![Tech Radar Page](./edit-props.png)
+![Tech Radar Page](./edit-props.webp)
 
 ## Data formats
 
@@ -168,7 +168,7 @@ The Roadie Tech Radar implementation contains a locally hostable testing and pre
 ### Marking Tech Radar page as preview radar
 
 To enable preview mode for your Tech Radar you need to identify the radar as `test-radar` in your Tech Radar page props. You can do this either by adding a new radar or editing an existing one to contain the needed props.
-![Preview Radar Props configuration](./preview-radar-props.png)
+![Preview Radar Props configuration](./preview-radar-props.webp)
 
 This will indicate Roadie to use a local source for the content of the tech radar. 
 

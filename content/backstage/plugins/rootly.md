@@ -11,7 +11,7 @@ seo:
   title: 'Rootly Backstage Plugin | Roadie'
   description: 'See Rootly data and incidents directly inside Backstage.'
 
-logoImage: '../../assets/logos/rootly/logo.png'
+logoImage: '../../assets/logos/rootly/logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /rootly/
@@ -151,21 +151,21 @@ Because of the features provided by the plugin, an API key with full access to y
 
 2. Click on `Generate New API Key` button.
 
-3. Copy the key. ![Creating Api Key](./rootly-creating-api-key.png)
+3. Copy the key. ![Creating Api Key](./rootly-creating-api-key.webp)
 
 
 ## Screenshots
 
 ### `RootlyPage` component
 
-![Rootly entities page](./rootly-entities-page.png)
-![Rootly services page](./rootly-services-page.png)
-![Rootly incidents page](./rootly-incidents-page.png)
+![Rootly entities page](./rootly-entities-page.webp)
+![Rootly services page](./rootly-services-page.webp)
+![Rootly incidents page](./rootly-incidents-page.webp)
 
 ### `RootlyOverviewCard` component
 
-![Rootly overview page](./rootly-entity-overview.png)
+![Rootly overview page](./rootly-entity-overview.webp)
 
 ### `RootlyIncidentsPage` component
 
-![Rootly incidents page](./rootly-entity-incidents.png)
+![Rootly incidents page](./rootly-entity-incidents.webp)

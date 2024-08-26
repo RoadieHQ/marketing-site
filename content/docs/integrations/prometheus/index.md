@@ -3,7 +3,7 @@ title: Configuring Prometheus integration
 publishedDate: '2021-03-16T21:00:00.0Z'
 description: How to set up Roadie instance to work with Prometheus.
 humanName: Prometheus
-logoImage: '../../../assets/prometheus/prom_logo.png'
+logoImage: '../../../assets/prometheus/prom_logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -27,7 +27,7 @@ https://<tenant-name>.roadie.so/administration/settings/proxy
 Prometheus plugin is using the URL `/prometheus/api` so you need to put that as the path for the proxy. The target will be the URL of your Prometheus instance and the path to the API of it. Additionally, you can add headers to the request, depending how the authentication is implemented for your Prometheus instance.
 
 
-![Prometheus proxy configuration](./prom_proxy_config.png)
+![Prometheus proxy configuration](./prom_proxy_config.webp)
 
 
 Alternatively if you want to forward the headers used to authenticate with Roadie automatically to the Prometheus instance, you can do the same configuration as above in the _Authenticated Proxy_ configuration tab. This tab can be found from this URL:
@@ -56,15 +56,15 @@ Example annotation:
 Produces the following graphs:
 1. `memUsage|component`
    (grouping by component, otherwise `__name__` would be the first item on this saved rule. Showed here as an area graph)
-   ![Area Graph widget](./prom_areagraph_widget.png)
+   ![Area Graph widget](./prom_areagraph_widget.webp)
 
 2. `node_memory_active_bytes|instance`
    (grouping by `instance`, image shows extra data on hover over a line.)
-   ![Line graph with hover](./prom_graph_hover.png)
+   ![Line graph with hover](./prom_graph_hover.webp)
 
 3. `sum by (instance) (node_cpu_seconds_total)`
    (`instance` is the grouper label defined in the query --> it is returned on the result set as the first label name, and is therefore used to group data with.)
-   ![Line Graph constructed by query](./prom_graph_query.png)
+   ![Line Graph constructed by query](./prom_graph_query.webp)
 
 #### Alerts
 
@@ -76,7 +76,7 @@ Example annotation:
 ```prometheus.io/alert: 'Excessive Memory Usage'```
 
 Produces the following table.
-![Alert table](./prom_alert.png)
+![Alert table](./prom_alert.webp)
 
 
 

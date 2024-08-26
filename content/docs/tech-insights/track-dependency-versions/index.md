@@ -33,19 +33,19 @@ In order to track the React versions used in the catalog, we are going to create
 
 1. Visit Tech Insights, select the **Data Sources** tab, and press **ADD DATA SOURCE**.
 
-   ![a button on a web interface](./Add_Data_Source.png)
+   ![a button on a web interface](./Add_Data_Source.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
-   ![About section input fields](./react/React_Data_About_Section.png)
+   ![About section input fields](./react/React_Data_About_Section.webp)
 
 3. Set the Data Provider **Type** to `Component Repository File`, **Location** to `package.json`. Select a value for **Select Entity to test data source against** and press **TEST**.
 
-    ![Data Provider section input fields](./react/React_Data_Provider_Section.png)
+    ![Data Provider section input fields](./react/React_Data_Provider_Section.webp)
 
 4. Test results are displayed.
 
-    ![Data Provider test results displayed](./react/React_Data_Test_Results_Section.png)
+    ![Data Provider test results displayed](./react/React_Data_Test_Results_Section.webp)
 
 5. Create multiple Facts:
     1. Set **Parser** to `JSON with JSONata syntax`.
@@ -63,22 +63,22 @@ In order to track the React versions used in the catalog, we are going to create
         | JSONata query | $exists(resolutions."@types/react") ? $boolean(resolutions."@types/react") : $exists(dependencies.react) ? $boolean(dependencies.react) : false |
         | Type | Boolean | 
 
-    ![Data Facts section input fields](./react/React_Data_Facts_Section.png)
+    ![Data Facts section input fields](./react/React_Data_Facts_Section.webp)
 
 6. Press **CHECK FACTS**.
 
-    ![Data Facts results displayed](./react/React_Data_Facts_Results_Section.png)
+    ![Data Facts results displayed](./react/React_Data_Facts_Results_Section.webp)
 
 7. Use the **Applies to** filter to target this data source at some components which you expect to have React versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
 
-    ![About Data Source section displayed](./react/React_Applies_To_Section.png)
+    ![About Data Source section displayed](./react/React_Applies_To_Section.webp)
 
 8. Press **SAVE**.
 
 ## Visualise the distribution of React versions being used
 Data Source comes with a built-in visualisation panel which lets us get an overview of the React versions being used. When viewing a Data Source, expand the “Facts visualization” section to see it.
 
-![Data Visualisation results displayed](./react/React_Data_Visualization_Section.png)
+![Data Visualisation results displayed](./react/React_Data_Visualization_Section.webp)
 
 This chart tells us:
 
@@ -100,11 +100,11 @@ Let’s write a check to combine both of these properties.
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.png)
+    ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
-   ![About section input fields](./react/React_Check_About_Section.png)
+   ![About section input fields](./react/React_Check_About_Section.webp)
 
 3. Create a compound check:
     1. Set **Type** to `Or`.
@@ -130,17 +130,17 @@ Let’s write a check to combine both of these properties.
         | Fact | Has React dependency |
         | Fact operator | Is False |
 
-    ![Check Condition section fields](./react/React_Check_Condition_Section.png)
+    ![Check Condition section fields](./react/React_Check_Condition_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to update the React version in the component. You can also add a link to a scaffolder template that automatically achieves this fix.
 
-    ![Check Fix section displayed](./Check_Fix_Section.png)
+    ![Check Fix section displayed](./Check_Fix_Section.webp)
 
 6. Use the **Applies to** filter to target this data source at some components which you expect to have React versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
 
-    ![About Data Source section displayed](./react/React_Applies_To_Section.png)
+    ![About Data Source section displayed](./react/React_Applies_To_Section.webp)
 
 7. Press **SAVE**.
 
@@ -148,7 +148,7 @@ Let’s write a check to combine both of these properties.
 
 The results of this check tell us who we need to reach out to to ask for a React version upgrade.
 
-![Check Results displayed](./react/React_Check_Results_Section.png)
+![Check Results displayed](./react/React_Check_Results_Section.webp)
 
 - The backstage-demo component passes the check with the version `17.0.59`.
 - The react-native-sample-app component fails the check with the version `15.4.0`
@@ -170,19 +170,19 @@ In order to track the .NET Framework versions used in the catalog, we are going 
 
 1. Visit Tech Insights, select the **Data Sources** tab, and press **ADD DATA SOURCE**.
 
-   ![a button on a web interface](./Add_Data_Source.png)
+   ![a button on a web interface](./Add_Data_Source.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
-   ![About section input fields](./dot-net/DotNet_Data_About_Section.png)
+   ![About section input fields](./dot-net/DotNet_Data_About_Section.webp)
 
 3. Set the Data Provider **Type** to `Component Repository File`, and **Location** to `{{metadata.name}}.csproj`. Select a value for **Select Entity to test data source against** and press **TEST**.
 
-    ![Data Provider section input fields](./dot-net/DotNet_Data_Provider_Section.png)
+    ![Data Provider section input fields](./dot-net/DotNet_Data_Provider_Section.webp)
 
 4. Test results are displayed.
 
-    ![Data Provider test results displayed](./dot-net/DotNet_Data_Test_Results_Section.png)
+    ![Data Provider test results displayed](./dot-net/DotNet_Data_Test_Results_Section.webp)
 
 5. Create multiple Facts:
     1. Set **Parser** to `REGEX`.
@@ -193,22 +193,22 @@ In order to track the .NET Framework versions used in the catalog, we are going 
         | DotNet Framework Version | TargetFramework>net(...+?) |
         | Type | String |
 
-    ![Data Facts section input fields](./dot-net/DotNet_Data_Facts_Section.png)
+    ![Data Facts section input fields](./dot-net/DotNet_Data_Facts_Section.webp)
 
 6. Press **CHECK FACTS**.
 
-    ![Data Facts results displayed](./dot-net/DotNet_Data_Facts_Results_Section.png)
+    ![Data Facts results displayed](./dot-net/DotNet_Data_Facts_Results_Section.webp)
 
 7. Use the **Applies to** filter to target this data source at some components which you expect to have .NET Framework versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
 
-    ![About Data Source section displayed](./dot-net/DotNet_Applies_To_Section.png)
+    ![About Data Source section displayed](./dot-net/DotNet_Applies_To_Section.webp)
 
 8. Press **SAVE**.
 
 ## Visualise the distribution of .NET Framework versions being used
 Data Source comes with a built-in visualisation panel which lets us get an overview of the .NET Framework versions being used. When viewing a Data Source, expand the "Facts visualization" section to see it.
 
-![Data Visualisation results displayed](./dot-net/DotNet_Data_Visualization_Section.png)
+![Data Visualisation results displayed](./dot-net/DotNet_Data_Visualization_Section.webp)
 
 This chart tells us:
 
@@ -230,11 +230,11 @@ Let’s write a check to combine both of these properties.
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.png)
+    ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
-   ![About section input fields](./dot-net/DotNet_Check_About_Section.png)
+   ![About section input fields](./dot-net/DotNet_Check_About_Section.webp)
 
 3. Create a check:
     1. Set the first condition to:
@@ -245,17 +245,17 @@ Let’s write a check to combine both of these properties.
         | Fact operator | Greater than semantic version |
         | Value | ^6.0 |
 
-    ![Check Condition section fields](./dot-net/DotNet_Check_Condition_Section.png)
+    ![Check Condition section fields](./dot-net/DotNet_Check_Condition_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to update the .NET Framework version in the component.
 
-    ![Check Fix section displayed](./Check_Fix_Section.png)
+    ![Check Fix section displayed](./Check_Fix_Section.webp)
 
 6. Use the **Applies to** filter to target this data source at some components which you expect to have .NET Framework versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
 
-    ![About Data Source section displayed](./dot-net/DotNet_Applies_To_Section.png)
+    ![About Data Source section displayed](./dot-net/DotNet_Applies_To_Section.webp)
 
 7. Press **SAVE**.
 
@@ -263,7 +263,7 @@ Let’s write a check to combine both of these properties.
 
 The results of this check tell us who we need to reach out to ask for a .NET Framework version upgrade.
 
-![Check Results displayed](./dot-net/DotNet_Check_Results_Section.png)
+![Check Results displayed](./dot-net/DotNet_Check_Results_Section.webp)
 
 - The csharp-console-teleprompter component passes the check with the version `6.0`.
 - The csharp-console-webapiclient component fails the check with the version `5.0`

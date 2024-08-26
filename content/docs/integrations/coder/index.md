@@ -4,7 +4,7 @@ publishedDate: '2024-05-14T01:12:29.0Z'
 description: How to use the Coder plugin
 
 humanName: Coder
-logoImage: '../../../assets/logos/coder/coder_logo_transparent_text_black.png'
+logoImage: '../../../assets/logos/coder/coder_logo_transparent_text_black.webp'
 integrationType: OSS Plugin
 ---
 
@@ -22,7 +22,7 @@ Navigate to `/administration/coder` and add needed values to the configuration f
 
 To see more information about the available config options, take a look at the "Code plugin configuration options" link in the "More information" section.
 
-![Coder Config options](./config.png)
+![Coder Config options](./config.webp)
 
 
 ## Step 2: Add the Coder plugin to the application
@@ -31,9 +31,9 @@ The Coder plugin exposes a Card component that can be added to entity pages. The
 
 After you have added the plugin component to your entity pages, you can authenticate with Coder directly via the Card component and start seeing the configured workspaces and templates. 
 
-![Coder plugin card with authentication request](./auth-coder.png)
+![Coder plugin card with authentication request](./auth-coder.webp)
 
-![Coder plugin allowing to create a workspace](./coder-create-workspace.png)
+![Coder plugin allowing to create a workspace](./coder-create-workspace.webp)
 
 
 

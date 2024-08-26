@@ -40,7 +40,7 @@ There is also a special kind called **Locations** which provides a reference by 
 
 Entity kinds are associated with one another using entity relations.
 
-![System Model](./system-model.png)
+![System Model](./system-model.webp)
 
 Relations in Roadie are [more flexible](../../catalog/showing-dependencies) than standard Backstage relationships. You can find all the [supported relationships here](../../catalog/showing-dependencies)
 

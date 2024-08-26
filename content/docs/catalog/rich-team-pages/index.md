@@ -16,18 +16,18 @@ This is useful for quickly adding links, annotations, and text content to your t
 
 With decorators, you can easily display links to Slack, Confluence, or any other URL on your team page.
 
-![pupulated links card](./links-card.png)
+![pupulated links card](./links-card.webp)
 
 ### Steps
 
 1. Click the three dots in the top right corner of your team page. Choose Decorate Entity.
 2. Click the ADD LINK button.
     
-    ![link-decorate.png](./link-decorate.png)
+    ![link-decorate.webp](./link-decorate.webp)
     
 3. Fill out the 4 fields with sensible values.
     
-    ![sensible-values.png](./sensible-values.png)
+    ![sensible-values.webp](./sensible-values.webp)
     
 4. Click SAVE
 5. After a second or two, you should see your link show up on your team page.
@@ -36,7 +36,7 @@ With decorators, you can easily display links to Slack, Confluence, or any other
 
 Decorators can help you add a Team Charter, or any other markdown content to your team page.
 
-![team-charter.png](./team-charter.png)
+![team-charter.webp](./team-charter.webp)
 
 ### Steps
 

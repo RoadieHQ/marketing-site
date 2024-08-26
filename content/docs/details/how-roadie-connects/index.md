@@ -24,7 +24,7 @@ With Oauth2, the user makes a direct connection from the plugin running in their
 
 For example, the [Google Calendar plugin](/docs/integrations/gcalendar/) uses an Oauth2 connection to communicate with the Google APIs. A user who has not authenticated will see a prompt asking them to sign in.
 
-![Google Calendar Backstage plugin asking the user to sign in to Google](./google-calendar-oauth2-prompt.png)
+![Google Calendar Backstage plugin asking the user to sign in to Google](./google-calendar-oauth2-prompt.webp)
 
 Clicking “SIGN IN” will open a dialog box which asks the user which Google account they want to sign in with. Once the user accepts the prompts, the authentication handshake is completed, and their calendar appears inside Roadie.
 
@@ -40,13 +40,13 @@ The [Backstage PagerDuty plugin](/docs/integrations/pagerduty/) is an example of
 
 Roadie users must obtain an API token for the PagerDuty APIs. They then store this token in Roadie’s secrets page. These tokens are stored in AWS’s Parameter Store product, encrypted with a per-tenant KMS key.
 
-![A table row where the user can enter a PagerDuty auth token and save it](./pagerduty-secret-token.png)
+![A table row where the user can enter a PagerDuty auth token and save it](./pagerduty-secret-token.webp)
 
 Once the API token secret is set, the proxy will automatically add it to API requests that the PagerDuty plugin sends.
 
 Roadie comes with more than 15 pre-configured proxies, including ones for PagerDuty, CircleCI and Jira. Additionally, Roadie customers can create their own proxies for other third-party products or even for their own bespoke APIs. Here’s an example of a proxy I created for the monitoring tool BetterUptime.
 
-![A widget which shows that there is a proxty configured to redirect traffic from /betteruptime to the Better Uptime API](./better-uptime-proxy.png)
+![A widget which shows that there is a proxty configured to redirect traffic from /betteruptime to the Better Uptime API](./better-uptime-proxy.webp)
 
 By using proxies, Roadie can securely connect to any token authenticated API which is publicly accessible on the internet.
 
@@ -84,7 +84,7 @@ You can read more about the [broker in the Snyk docs](https://docs.snyk.io/snyk-
 
 The [Backstage Kubernetes plugin](/docs/integrations/kubernetes/) can help teams answer questions like “how many pods of my service are running in each cluster and are they healthy?”.
 
-![A widget showing a kubernetes cluster called dev0. It has one pod of the sample-service running. The pod has no errors.](./backstage-k8s-plugin.png)
+![A widget showing a kubernetes cluster called dev0. It has one pod of the sample-service running. The pod has no errors.](./backstage-k8s-plugin.webp)
 
 It can use a cross-account AWS role to securely connect to Elastic Kubernetes Service (EKS) clusters. The cross-account AWS role is the approach recommended by AWS for this type of access
 
@@ -102,7 +102,7 @@ If the customer’s systems are not exposed on the public internet, then the bro
 
 [Tech Insights](/docs/tech-insights/introduction/) is Roadie’s scorecarding product. It allows customers to create maturity scorecards and apply them to software which is cataloged in Backstage.
 
-![Two scorecards. One tracks PagerDuty usage across 3 components. Another tracks Dependabot configuration.](./custom-scorecards-example.png)
+![Two scorecards. One tracks PagerDuty usage across 3 components. Another tracks Dependabot configuration.](./custom-scorecards-example.webp)
 
 In order to be most valuable, Tech Insights must connect to the APIs of both third-party SaaS software, source code management tools like GitHub, and internal customer APIs.
 
@@ -112,7 +112,7 @@ The primary methods it uses to do this are the proxy, and the broker. In future,
 
 Tech Insights works in conjunction with the proxy to upgrade requests with authentication tokens and other settings. For example, this Tech Insights data source uses the BetterUptime proxy mentioned above to send token-authenticated requests to the BetterUptime API.
 
-![A widget which shows a connection to the better uptime APIs via the proxy](./betteruptime-ti-ds-proxy.png)
+![A widget which shows a connection to the better uptime APIs via the proxy](./betteruptime-ti-ds-proxy.webp)
 
 All of the preconfigured Roadie proxies can be used with Tech Insights, as well as any customer-created proxies.
 

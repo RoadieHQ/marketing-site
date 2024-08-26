@@ -24,7 +24,7 @@ Either way, we have configured Backstage to populate the logged in users identit
 
 You can always inspect the Backstage Identity for the logged in user by going to the "Account" tab in the Administration section.
 
-![account-backstage-identity.png](account-backstage-identity.png)
+![account-backstage-identity.webp](account-backstage-identity.webp)
 
 ## Creating Users and Groups
 
@@ -100,7 +100,7 @@ spec:
 
 You might also choose to load your users and groups from GitHub teams. This can be done by visiting the GitHub integration settings page Administration > Settings > GitHub
 
-![github-integrations.png](github-integrations.png)
+![github-integrations.webp](github-integrations.webp)
 
 Click on the "Add" button beside "Configure Autodiscovery of teams and users". Now enter the name of your GitHub organization and click Save.
 

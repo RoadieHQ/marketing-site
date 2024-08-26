@@ -35,7 +35,7 @@ metadata:
 
 An alternative way to test and preview entity definitions is to use the Roadie entity preview page. You can navigate to this page by going to `Import > Entity Preview`.
 
-![Image of entity preview page](./entity_preview_page.png)
+![Image of entity preview page](./entity_preview_page.webp)
 
 
 > Note that the entity preview page does not go through _all_ the processing steps as actual registration of an entity. To test API docs and other preprocessed data, it might still be necessary to test via registering the actual entity.

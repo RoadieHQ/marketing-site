@@ -21,14 +21,14 @@ Paste the URL below into the URL field.
 https://github.com/roadie-demo/scaffolder-examples/blob/main/roadie-plugin/template.yaml
 ```
 
-![Importing scaffolder template to create plugins monorepo](scaffolder_monorepo_import.png)
+![Importing scaffolder template to create plugins monorepo](scaffolder_monorepo_import.webp)
 
 #### 2. Scaffold your Roadie plugins monorepo
 
 Click on 'Templates' in the Roadie sidebar. Identify the scaffolder template you just added. It should be named something like 'Create Roadie Plugins Monorepo'. Choose this template and start filling out the templating steps.
-![Filling out scaffolder template 1](scaffolder_template_filling1.png)
+![Filling out scaffolder template 1](scaffolder_template_filling1.webp)
 
-![Filling out scaffolder template 2](scaffolder_template_filling2.png)
+![Filling out scaffolder template 2](scaffolder_template_filling2.webp)
 
 
 This scaffolder template will construct a new repository you can use to develop, build and deploy your Roadie plugins from. It contains an example plugin with few different example components, as well as handy scripts to help with the plugin development process.
@@ -38,14 +38,14 @@ This scaffolder template will construct a new repository you can use to develop,
 
 When scaffolder has finished, you should have a link to the generated monorepo as well as a link to documentation pointing to the Roadie CLI.
 
-![Scaffolder finished, showing links](finished_scaffolder_run.png)
+![Scaffolder finished, showing links](finished_scaffolder_run.webp)
 
 We can now navigate to the monorepo and clone that repository to our local machine 
 * `git clone <the-url-from-the-repository>`.
 
 The folder structure of the monorepo looks like the following:
 
-![Monorepo folder structure](monorepo_folder_struct.png)
+![Monorepo folder structure](monorepo_folder_struct.webp)
 
 
 On the top level of the repository we have a npm workspace enabling `package.json` file. The purpose of this configuration file is mostly just identify which plugin folder should be considered to be part of the monorepo. 
@@ -74,9 +74,9 @@ With the Roadie CLI running in dev (and watch) mode, the plugin ready to be regi
 Navigate to `Administration` -> `Custom Plugins` and click `Add new plugin` on the bottom.
 
 The output of our script told us some good information about which values we should input to the form in the plugin registration page. Let's do just that:
-![dev script output](dev_script_output.png)
+![dev script output](dev_script_output.webp)
 
-![plugin registration form](plugin_registration_form.png)
+![plugin registration form](plugin_registration_form.webp)
 
 So we can go ahead and add the needed values directly into the form. The type of the component depends on how we have registered it into the plugin itself within the codebase.
 
@@ -92,13 +92,13 @@ The plugin is now registered from your `localhost` and can be added to the appli
 We will set up the `Content` component type in this case by using our [preview entities](/docs/details/previewing-changes/) functionality within the app. This way we can develop it further in peace before [deploying a production ready version of it](/docs/custom-plugins/deploying/).
 
 Navigate to `Tools` -> `Entity Preview` and either create a complete new preview entity, or click into an existing one. 
-![preview entities screen](preview_entities_screen.png)
+![preview entities screen](preview_entities_screen.webp)
 
 In our case we want to add the Content component to our preview-entity to be an API kind, so we will click `test-dummy-api-2` link on the right hand table which we already had available. Note that this component might not exist on your Roadie instance. 
 
 Within the API catalog page, we can add our `Content` plugin in as a new tab. We'll click the `+` icon on the tab bar and input our plugin name and the wanted tab title.
 
-![new_tab_addition page](new_tab_addition_page.png)
+![new_tab_addition page](new_tab_addition_page.webp)
 
 
 When we click save, we should be seeing our newly developed plugin in our new tab.
@@ -135,7 +135,7 @@ Navigate to the directory you created and run `npx @backstage/cli new plugin`. T
 
 The created directory structure would be something like the following picture:
 
-![Image of a terminal displaying directory structure](plugin_dir_structure.png)
+![Image of a terminal displaying directory structure](plugin_dir_structure.webp)
 
 
 #### 3. Install Roadie CLI
@@ -191,13 +191,13 @@ With the Roadie CLI running in dev mode, we are already serving our custom plugi
 Navigate to `Administration` -> `Custom Plugins` and click `Add new plugin` on the bottom.
 
 The CLI produces a helpful output which will give you few indications which values to add to the form. In our case the CLI produced the following output:
-![Roadie CLI dev mode output](roadie_cli_devmode_output.png)
+![Roadie CLI dev mode output](roadie_cli_devmode_output.webp)
 
 So we can go ahead and add the needed values directly into the form. The type of the component depends on how we have registered it into the plugin itself within the codebase. 
 
 A good rule of thumb usually is that if it is a '`RoutableExtension`' it is going to be either Content or Page, if it is a '`ComponentExtension`' it is going to be a Card.   
 
-![Roadie plugin configuration screen](roadie_plugin_registration.png)
+![Roadie plugin configuration screen](roadie_plugin_registration.webp)
 
 After we have clicked save, the plugin is ready to be used in the application.
 
@@ -210,7 +210,7 @@ We will set up this `Page` component using a [Sandbox mode](/docs/details/sandbo
 
 Navigate to `Administration` -> `Sandbox` and click 'New Sandbox Page'. Within the form we will try to find the _plugin component_ we have just registered into the application. We give it a name and save it. When we click on the new sandbox page we have just added, we should see the default Backstage plugin welcome screen.
 
-![Roadie plugin sandbox registration](roadie_plugin_sandbox_registration.png)
+![Roadie plugin sandbox registration](roadie_plugin_sandbox_registration.webp)
 
 ℹ️ &nbsp; Note that you may need to refresh the page to have the needed plugin code available to you after registering and adding the plugin into the application. This needs to be done only once and not needed for other users, only the user who is registering and adding the plugins
 

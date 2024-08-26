@@ -4,7 +4,7 @@ publishedDate: '2022-11-23T15:00:00.0Z'
 description: How to set up the Apache Airflow Backstage plugin in Roadie.
 
 humanName: Apache Airflow
-logoImage: '../../../assets/logos/apache-airflow/apache-airflow-logo.png'
+logoImage: '../../../assets/logos/apache-airflow/apache-airflow-logo.webp'
 integrationType: OSS plugin
 ---
 

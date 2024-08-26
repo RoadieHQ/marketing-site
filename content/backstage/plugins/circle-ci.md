@@ -12,7 +12,7 @@ seo:
     The Backstage Circle CI plugin integrates with Circle CI to show your build
     information inside Backstage where it can be associated with your services.
 
-logoImage: '../../assets/logos/circle-ci/circle-ci-logo-only-black.png'
+logoImage: '../../assets/logos/circle-ci/circle-ci-logo-only-black.webp'
 
 coverImage: '../../assets/circle-ci-plugin.jpg'
 coverImageAlt: 'A list of builds in a table along with a status and retry button for each build.'

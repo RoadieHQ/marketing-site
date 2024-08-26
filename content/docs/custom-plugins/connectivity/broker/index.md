@@ -74,13 +74,13 @@ We'll spin up a development server of the plugin bundle and register the plugin 
 
 Because we are still experimenting, it is better to register our `Card` component to a preview entity. This way we don't bother other users with a potentially broken plugin while we are still working on it. Navigate to `Tools` -> `Preview Entities` and construct a new entity that has the annotation that you are expecting to use with the plugin. In our case I have decided to call the annotation `roadie.io/artifactory-item`.
 
-![Preview entity creation](previer_entity_creation.png)
+![Preview entity creation](previer_entity_creation.webp)
 
 
 After we have created the preview entity, we can add our `Card` component to its dashboard. 
 The plugin is already starting to make requests through the proxy, to the broker, using our hardcoded `artifactory-plugin` broker token. We are seeing traffic flowing through on our Broker Client side in our terminal, and we get a response that we are displaying to the screen. We have confirmed that the broker connection is working.
 
-![first_broker_response](first_broker_response.png)
+![first_broker_response](first_broker_response.webp)
 
 Unfortunately the response says something like `blocked` and looks errorenous. That means that it is time to modify our Broker accept configuration to match the actual URLs we want to reach. 
 
@@ -138,7 +138,7 @@ const brokerUrl = `${proxyUrl}/broker/artifactory-plugin/authx/-/%40roadiehq`;
 
 When we reload our preview entity page on our Roadie instance, we can see that the connection is now able to flow all the way through to our Artifactory instance and it responds with a data structure we can work with. 
 
-![artifactory_successful_response](artifactory_successful_response.png)
+![artifactory_successful_response](artifactory_successful_response.webp)
 
 Of course we don't want hardcoded values within our plugin code, it would defeat the purpose of a generic Roadie plugin. To get the annotation value we previously stored in our preview-entity, we can use the built-in `useEntity` hook. This hook provides us the current entity and all related metadata of it.
 Near the top of our React component we add few lines to retrieve our wanted annotation:
@@ -257,7 +257,7 @@ And inject both the columns and our `packageVersions` data into the table compon
 ```
 
 With that we have a `Card` type custom Roadie plugin, which uses a secure broker connection to retrieve data from an Artifactory instance which is hosted in our private network:
-![Final plugin card on preview entity](final_broker_plugin_card.png)
+![Final plugin card on preview entity](final_broker_plugin_card.webp)
 
 
 The final code for React component in all its glory we ended up with looks like the following:

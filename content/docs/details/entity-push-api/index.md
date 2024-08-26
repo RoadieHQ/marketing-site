@@ -217,7 +217,7 @@ You will see the following response body on a successful request:
 ```
 
 Go to your catalog page (`Catalog` -> `Resource`) and you will immedietly see these `Resource` entities in your catalog.
-![aws-account Resource entities](aws-accounts-in-catalog.png)
+![aws-account Resource entities](aws-accounts-in-catalog.webp)
 
 ## Keep it syncing
 

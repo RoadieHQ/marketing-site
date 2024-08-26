@@ -12,9 +12,9 @@ seo:
   description: |
     Backstage Plugin to discover and display API specs and entities as an extension to the catalog plugin.
 
-logoImage: '../../assets/logos/api-docs/logo-docs.png'
+logoImage: '../../assets/logos/api-docs/logo-docs.webp'
 
-coverImage: '../../assets/api-docs-plugin.png'
+coverImage: '../../assets/api-docs-plugin.webp'
 coverImageAlt: 'A screenshot of the API Docs. It is showing a available endpoints for a sample component.'
 
 availableOnRoadie: true

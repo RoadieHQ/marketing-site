@@ -4,7 +4,7 @@ publishedDate: '2021-02-23T21:00:00.0Z'
 description: How to set up the CircleCI Backstage plugin in Roadie.
 
 humanName: CircleCI
-logoImage: '../../../assets/logos/circle-ci/circle-ci-logo-only-black.png'
+logoImage: '../../../assets/logos/circle-ci/circle-ci-logo-only-black.webp'
 integrationType: OSS plugin
 ---
 
@@ -45,11 +45,11 @@ In order to make requests to the CircleCI API, you must provide Roadie with an A
 
 2. Go to https://app.circleci.com/settings/user/tokens and select Create New Token.
 
-   ![Personal API Tokens screen in CircleCI with no tokens selected](./personal-api-tokens.png)
+   ![Personal API Tokens screen in CircleCI with no tokens selected](./personal-api-tokens.webp)
 
 3. Give the token a name and click Add API Token.
 
-   ![The Create API Token modal in CircleCI with an input with the name Backstage inside it](./create-api-token.png)
+   ![The Create API Token modal in CircleCI with an input with the name Backstage inside it](./create-api-token.webp)
 
 4. Circleci will print the token that Backstage needs.
 

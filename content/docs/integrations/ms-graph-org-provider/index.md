@@ -4,7 +4,7 @@ publishedDate: '2022-12-09T16:20:00.0Z'
 description: How to configure Roadie to ingest users and groups from Azure AD using Microsoft Graph
 
 humanName: Microsoft Graph Org for Azure AD
-logoImage: '../../../assets/logos/azure-ad/azure-ad.png'
+logoImage: '../../../assets/logos/azure-ad/azure-ad.webp'
 integrationType: Catalog data source
 ---
 
@@ -29,11 +29,11 @@ Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` an
 
 Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/azure` and find the section 'Configure Microsoft Graph Discovery'. In the list you can see already inserted provider configurations.  
 
-![Microsoft Graph Org Discovery Section](./ms-graph-discovery-section.png)
+![Microsoft Graph Org Discovery Section](./ms-graph-discovery-section.webp)
 
 You can create a new configuration by clicking 'Add MS Graph configuration'. This will open a dialog window where you can input your wanted configuration values.
 
-![Microsoft Graph Configuration Dialog](./ms-graph-config-dialog.png)
+![Microsoft Graph Configuration Dialog](./ms-graph-config-dialog.webp)
 
 ## Configuration Options
 

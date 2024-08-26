@@ -14,7 +14,7 @@ need to create locations directly in some use cases).
 
 The locations log provides information on the scheduling of the catalog refresh cycle and surfaces any errors.
 
-![locations log home](./locations-log.png)
+![locations log home](./locations-log.webp)
 
 ### Searching for an entity
 
@@ -23,7 +23,7 @@ column and you can search for the `spec.target` field of Location entities. The 
 In practice you'll want to search on either your entity name or perhaps
 the URL of a catalog info YAML file. To quickly check the full value of the truncated columns just click the arrow on the left. To view details for a particular entity click the entity link.
 
-![locations log search](./locations-log-search.png)
+![locations log search](./locations-log-search.webp)
 
 ### Checking the refresh schedule
 
@@ -38,7 +38,7 @@ GitHub.
 The errors column of the locations log gives you the number of errors with that entity or location. You can sort the
 table by this column by clicking on the column header to view rows with errors.
 
-![locations log errors](./locations-log-errors.png)
+![locations log errors](./locations-log-errors.webp)
 
 Viewing a particular entry you can view the list of errors, the raw entity data and also the processed entity (if available).
 You can use this information to diagnose and fix errors with catalog info YAML files.
@@ -54,11 +54,11 @@ If you end up in such a situation you have an option to remove the individual st
 
 1. Navigate to the offending, stale entity that has stopped from being automatically updated
 2. Click the kebab menu item in the top right corner of the entity
-   ![Entity Page kebab menu opened](./kebab_menu_entity_page.png)
+   ![Entity Page kebab menu opened](./kebab_menu_entity_page.webp)
 3. Select Unregister Entity
 4. Click Advanced Options
 5. Click Delete Entity button at the bottom of the dialog
-   ![Unregister dialog popup with advanced settings open](./unregister_dialog.png)
+   ![Unregister dialog popup with advanced settings open](./unregister_dialog.webp)
 
 This will unregister the individual entity without affecting other entities or locations in the same discovery tree. The moved/renamed catalog manifest file will be then picked up on the catalog refresh loop.
 
@@ -77,7 +77,7 @@ This means that the entity definition in your catalog YAML file is not valid. Yo
 in the location definition card and making a PR to fix the YAML file. In this case below `spec.type` has been set to `null`
 but this is not valid.
 
-![locations log BuiltinKindsEntityProcessor](./locations-log-BuiltinKindsEntityProcessor.png)
+![locations log BuiltinKindsEntityProcessor](./locations-log-BuiltinKindsEntityProcessor.webp)
 
 ### Unable to read URL, NotFoundError
 
@@ -86,4 +86,4 @@ repo in the organisation even if the catalog file doesn't exist. You can check i
 the URL in the title to see if the catalog file location really exists. If it does exist and you're getting this error
 contact support.
 
-![locations log notfound](./locations-log-NotFoundError.png)
+![locations log notfound](./locations-log-NotFoundError.webp)

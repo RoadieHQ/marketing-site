@@ -4,7 +4,7 @@ publishedDate: '2021-03-18T21:00:00.0Z'
 description: How to configure Jenkins plugin on Roadie.
 
 humanName: Jenkins
-logoImage: '../../../assets/logos/jenkins/logo-jenkins.png'
+logoImage: '../../../assets/logos/jenkins/logo-jenkins.webp'
 integrationType: OSS plugin
 ---
 
@@ -14,7 +14,7 @@ The Jenkins plugin can display build information from a GitHub Organization proj
 
 ℹ️ NB: Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
 
-![Jenkins Overview Content](./jenkins_overview.png)
+![Jenkins Overview Content](./jenkins_overview.webp)
 
 This page explains how to configure it in Roadie Backstage.
 
@@ -50,7 +50,7 @@ you've got multiple Jenkins instances you can [read more below](#multiple-jenkin
 4. Add the Jenkins API token in the Secrets section.
 5. Click "Save" then "Apply & Restart".
 
-![Set Jenkins Config](./jenkins_settings.png)
+![Set Jenkins Config](./jenkins_settings.webp)
 
 ## Step 3: Add the UI elements
 
@@ -96,7 +96,7 @@ Then click "Save" then "Apply & Restart".
 To configure a component to fetch from a specific instance you must include the instance name in the jenkins annotation. e.g.
 `jenkins.io/job-full-name: "instance-name:github-organization-cluster1-project/job-name". You can read more [here](https://github.com/backstage/community-plugins/tree/main/workspaces/jenkins/plugins/jenkins-backend#example---multiple-global-instances). 
 
-![other instances](./jenkins_other_instances.png)
+![other instances](./jenkins_other_instances.webp)
 
 ## References
 

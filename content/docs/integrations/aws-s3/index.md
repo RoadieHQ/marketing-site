@@ -4,7 +4,7 @@ publishedDate: '2022-03-29T21:00:00.0Z'
 description: How to configure Roadie to read from S3
 
 humanName: AWS S3
-logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.png'
+logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: Catalog data source
 ---
 
@@ -76,7 +76,7 @@ role ARN and external ID. The S3 host is only required if you're using different
 
 After the role configuration is done, you can click the 'Test Role' button to check if integration configuration has succeeded. You can add multiple roles and AWS accounts within this configuration.
 
-![Role Details](./role-details.png)
+![Role Details](./role-details.webp)
 
 
 ## Step 4: Configure your S3 buckets to retrieve data from
@@ -85,7 +85,7 @@ After you have set up your AWS accounts and assumable role configurations so Roa
 
 Within the configuration modal, add values to indicate the AWS account, the S3 bucket, possible path within the bucket and the AWS region to use when retrieving the information. Note that the AWS account id must match one of the roles that have been configured in the above section.  
 
-![aws-bucket-config.png](aws-bucket-config.png)
+![aws-bucket-config.webp](aws-bucket-config.webp)
 
 
 

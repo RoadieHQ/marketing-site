@@ -4,7 +4,7 @@ publishedDate: '2021-03-16T21:00:00.0Z'
 description: How to configure the Jira and Jira dashboard plugins.
 
 humanName: Jira
-logoImage: '../../../assets/logos/jira/jira_logo.png'
+logoImage: '../../../assets/logos/jira/jira_logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -29,11 +29,11 @@ Start by visiting the user profile settings page for your Jira user: https://id.
 
 Click on the "Create API token" button.
 
-   ![Personal API Tokens screen in Atlassian with no tokens defined](./create-api-token.png)
+   ![Personal API Tokens screen in Atlassian with no tokens defined](./create-api-token.webp)
 
 On the modal window you can give the token a label, so you can recognize it later, e.g. "Roadie Backstage" and finally Atlassian will show you the API token once. Make note of this token, you will only be able to see it once.
 
-   ![New created token modal window with a possibility to copy the token](./new-token.png)
+   ![New created token modal window with a possibility to copy the token](./new-token.webp)
 
 ### Step 2: Add the Token in Roadie
 

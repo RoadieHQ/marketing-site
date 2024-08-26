@@ -21,7 +21,7 @@ In this tutorial, we’re going to:
 
 1. Visit Tech Insights and click into the Checks tab. Click the ADD CHECK button to create a new check.
 
-   ![](../track-docker-base-image-migration/add-check-button.png)
+   ![](../track-docker-base-image-migration/add-check-button.webp)
 
 2. In the About section, name the Check “Require branch protection”. Give it the description such as “Require branch protection to be set on GitHub Repos associated with components.”
 
@@ -37,7 +37,7 @@ In this tutorial, we’re going to:
     
   You can use the “DRY RUN” button to test these conditions against some Components in your catalog to ensure that they operate in the way you would expect and return the correct pass or fail result.
     
-  ![compound-conditions.png](branch-protection-condition.png)
+  ![compound-conditions.webp](branch-protection-condition.webp)
 
 7. Use the filters to target this check at appropriate Components. For example, you might only want to target components with lifecycle "production". 
 8. Save the check by clicking “SAVE”. If you’re not quite ready to go live yet, you can use the “SAVE AS DRAFT” button to save the check but ensure only admins can see it.
@@ -48,6 +48,6 @@ In this tutorial, we’re going to:
 In order to view the data, you can click Tech Insights > Data Sources > GitHub Settings Data Source
 
 You can then expand the "Fact Visualization" section and select the item that you want to view across your GitHub repositories.
-![viz.png](./viz.png)
+![viz.webp](./viz.webp)
 
 This chart tells us that 81% of Components have branch protection turned on in their repositories.

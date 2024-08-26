@@ -13,7 +13,7 @@ seo:
   description: |
     The Backstage Dynatrace plugin provides customizable context-rich observability and security insights for services in your software catalog.
 
-logoImage: '../../assets/logos/dynatrace/Dynatrace_Logo_color_positive_vertical.png'
+logoImage: '../../assets/logos/dynatrace/Dynatrace_Logo_color_positive_vertical.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /dynatrace/

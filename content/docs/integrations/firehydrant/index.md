@@ -4,7 +4,7 @@ publishedDate: '2021-11-18T11:00:00.0Z'
 description: How to set up FireHydrant plugin for Roadie.
 
 humanName: FireHydrant
-logoImage: '../../../assets/logos/firehydrant/firehydrant.png'
+logoImage: '../../../assets/logos/firehydrant/firehydrant.webp'
 integrationType: OSS plugin
 ---
 
@@ -29,7 +29,7 @@ Start by visiting the [account settings page in FireHydrant]( https://app.firehy
 
 Click on the "Create bot user" button and you should see the following screen.
 
-   ![Bot Tokens screen in FireHydrant with no information added](./firehydrant_token.png)
+   ![Bot Tokens screen in FireHydrant with no information added](./firehydrant_token.webp)
 
 After you have added your preferred name and description to the bot, you should be presented with a bot token. Copy this token to clipboard and continue to step 2
 

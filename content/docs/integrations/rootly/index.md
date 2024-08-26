@@ -3,7 +3,7 @@ title: Configuring Rootly
 publishedDate: '2021-07-28T21:00:00.0Z'
 description: How to configure the Rootly plugin on roadie.
 humanName: Rootly
-logoImage: '../../../assets/logos/rootly/logo.png'
+logoImage: '../../../assets/logos/rootly/logo.webp'
 integrationType: OSS plugin
 ---
 

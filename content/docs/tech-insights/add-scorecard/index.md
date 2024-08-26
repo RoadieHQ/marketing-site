@@ -8,30 +8,30 @@ Once you click the “Add Scorecard” button, you’ll be prompted to fill in t
 
 ### About section
 
-![About section](./create-scorecard-about.png)
+![About section](./create-scorecard-about.webp)
 
 - Give a unique name to your Scorecard
 - Give a proper description about this Scorecard. This input accepts markdown
 
 ### Checks
 
-![Checks](./create-scorecard-add-checks.png)
+![Checks](./create-scorecard-add-checks.webp)
 
 Click the `Add` button to open the add checks modal
 
-![Add checks modal](./create-scorecard-add-checks-modal.png)
+![Add checks modal](./create-scorecard-add-checks-modal.webp)
 
 - Select the checks you would like to add to your scorecard
 - Close the modal once you added all of the checks you would want in your scorecard
 
-![Added checks](create-scorecard-added-checks.png)
+![Added checks](create-scorecard-added-checks.webp)
 
 ### Applies to
 
 You can define filters to target which entities should this scorecard run against
 In the `Applies to` section you can select which entites will be included in this scorecard and which entities will be excluded.
 
-![Applies to section](create-scorecard-applies-to.png)
+![Applies to section](create-scorecard-applies-to.webp)
 
 The above configuration means the scorecard will run against components with type library that does not have the tag infrastructure
 
@@ -43,14 +43,14 @@ Selecting `type: service, tags: infrastructure` will exclude every entity Which 
 
 ### Ownership
 
-![Ownership section](create-scorecard-ownership.png)
+![Ownership section](create-scorecard-ownership.webp)
 
 - Select the owner of the scorecard
 - (optional) Give an executive sponsor to your scorecard
 
 ## Edit
 
-![Edit Scorecard](./edit-scorecard.png)
+![Edit Scorecard](./edit-scorecard.webp)
 
 3 - Select which kind and type of components this scorecard applies to.
 

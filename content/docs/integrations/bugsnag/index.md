@@ -4,7 +4,7 @@ publishedDate: '2021-09-30T11:00:00.0Z'
 description: How to create Bugsnag API Token for Bugsnag plugin.
 
 humanName: Bugsnag
-logoImage: '../../../assets/logos/bugsnag/bugsnag-logo.png'
+logoImage: '../../../assets/logos/bugsnag/bugsnag-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -29,7 +29,7 @@ Start by visiting the account settings page in Bugsnag : https://app.bugsnag.com
 
 Click on the "Generate new token" button.
 
-   ![Personal Tokens screen in Bugsnag with no tokens defined](./generate-api-token.png)
+   ![Personal Tokens screen in Bugsnag with no tokens defined](./generate-api-token.webp)
 
 On the modal window you can give the token a description so you can recognize it later, e.g. "Roadie Backstage" and finally Bugsnag will show you the API token once. Make note of this token, you will only be able to see it once.
 

@@ -3,11 +3,11 @@ title: code-coverage Plugin
 publishedDate: '2023-11-04T14:00:00.0Z'
 description: How to use the Code Coverage plugin on Roadie.
 humanName: Code Coverage
-logoImage: '../../../assets/logos/code/code.png'
+logoImage: '../../../assets/logos/code/code.webp'
 integrationType: OSS plugin
 ---
 
-![code-coverage Plugin Screenshot](./codecoverage.png)
+![code-coverage Plugin Screenshot](./codecoverage.webp)
 
 ## Introduction
 
