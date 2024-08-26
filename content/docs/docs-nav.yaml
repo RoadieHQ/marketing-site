@@ -143,7 +143,7 @@ nav:
       - Introduction: '/docs/tech-insights/introduction/'
       - Data Sources:
           - Introduction: '/docs/tech-insights/data-sources/'
-          - Definining custom Data Sources: '/docs/tech-insights/define-custom-data-sources/'
+          - Defining custom Data Sources: '/docs/tech-insights/define-custom-data-sources/'
           - Using built-in Data Sources: '/docs/tech-insights/builtin-data-sources/'
           - Displaying Fact Data: '/docs/tech-insights/displaying-fact-data/'
           - Data Source results and details: '/docs/tech-insights/data-source-details/'
@@ -169,7 +169,7 @@ nav:
           - Mandatory Backstage metadata: '/docs/tech-insights/tracking-catalog-correctness/mandatory-metadata/'
           - GitHub Annotation is present: '/docs/tech-insights/tracking-catalog-correctness/github-annotation/'
           - Valid type: '/docs/tech-insights/tracking-catalog-correctness/valid-type/'
-          - Valid lifcycle: '/docs/tech-insights/tracking-catalog-correctness/valid-lifecycle/'
+          - Valid lifecycle: '/docs/tech-insights/tracking-catalog-correctness/valid-lifecycle/'
           - Correct labels: '/docs/tech-insights/tracking-catalog-correctness/correct-labels/'
   - Catalog:
       - Managing locations: '/docs/catalog/location-management/'
