@@ -10,10 +10,10 @@ In order to manage Scorecards, go to Tech Insights → Scorecards page.
 
 In this page you will get an overview of all existing Scorecards, but also have an ability of creating new Scorecards as well as adding them to the Catalog page, so they’re visible to your team.
 
-![Scorecard overview](./scorecard-overview.png)
+![Scorecard overview](./scorecard-overview.webp)
 
 Clicking the title of the scorecard will lead to scorecard details and results for catalog components.
 
-![Scorecard details](./scorecard-details.png)
+![Scorecard details](./scorecard-details.webp)
 
-![Scorecard results](./scorecard-result.png)
+![Scorecard results](./scorecard-result.webp)

@@ -3,7 +3,7 @@ title: Configuring SonarQube
 publishedDate: '2021-07-28T21:00:00.0Z'
 description: How to configure the SonarQube plugin on roadie.
 humanName: SonarQube
-logoImage: '../../../assets/logos/sonarqube/logo-sonar.png'
+logoImage: '../../../assets/logos/sonarqube/logo-sonar.webp'
 integrationType: OSS plugin
 ---
 
@@ -18,7 +18,7 @@ If you are using hosted SonarCloud as your SonarQube provider you only need set 
 
 
 If you are using self-hosted SonarQube plugin or want more control over the SonarQube plugin you can use the SonarQube settings page to set up needed configurations.
-![SonarQube Config page.](./config_options.png)
+![SonarQube Config page.](./config_options.webp)
 
 ## At a Glance
 

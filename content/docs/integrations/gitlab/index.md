@@ -4,7 +4,7 @@ publishedDate: '2024-06-12T15:00:00.0Z'
 description: How to enable the GitLab plugin
 
 humanName: GitLab Plugin
-logoImage: '../../../assets/logos/gitlab/gitlab-logo.png'
+logoImage: '../../../assets/logos/gitlab/gitlab-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 The [Backstage GitLab plugin](https://github.com/immobiliare/backstage-plugin-gitlab) integrates with GitLab and provides various useful information such as top builds, merge requests, and issues for a project, last releases, code owners, languages, contributors etc. 
 
-![gitlab-overview.png](./gitlab-overview.png)
+![gitlab-overview.webp](./gitlab-overview.webp)
 Credit: [Immobiliare Labs](https://github.com/immobiliare)
 
 ## Add GitLab plugin to your components
@@ -21,7 +21,7 @@ Credit: [Immobiliare Labs](https://github.com/immobiliare)
 
 Generate an access token in your GitLab environment by navigating to https://gitlab.com/-/user_settings/personal_access_tokens, and then add it to Roadie at `https://<tenant-name>.roadie.so/administration/settings/secret` by entering the token value from above into `GITLAB_TOKEN` as shown below.
 
-![gitlab-secret.png](./gitlab-secret.png)
+![gitlab-secret.webp](./gitlab-secret.webp)
 
 
 ### Add the necessary annotation(s)
@@ -51,11 +51,11 @@ Please note only admins can add or remove cards and tabs from entity layouts.
 
 Click the cog icon on the top right of a component page. 
 
-![add-gitlab-card-cog.png](./add-gitlab-card-cog.png)
+![add-gitlab-card-cog.webp](./add-gitlab-card-cog.webp)
 
 Then click the plus icon and select the card you wish to add from the list card, e.g Language card.
 
-![add-gitlab-card-list.png](./add-gitlab-card-list.png)
+![add-gitlab-card-list.webp](./add-gitlab-card-list.webp)
 
 Press save to submit.
 
@@ -63,10 +63,10 @@ Press save to submit.
 
 Click the plus icon and select EntityGitlabCntent.
 
-![add-gitlab-content.png](./add-gitlab-content.png)
+![add-gitlab-content.webp](./add-gitlab-content.webp)
 
 This will create a new tab containing all GitLab cards currently available at one page. 
-![gitlab-overview.png](./gitlab-overview.png)
+![gitlab-overview.webp](./gitlab-overview.webp)
 
 ## References
 

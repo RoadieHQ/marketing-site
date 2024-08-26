@@ -12,8 +12,8 @@ seo:
   description: |
     Visualize, understand and optimize your team's tech health.
 
-logoImage: '../../assets/tech-insights/tech_insights.png'
-coverImage: '../../assets/tech-insights/tech_insights_scorecard.png'
+logoImage: '../../assets/tech-insights/tech_insights.webp'
+coverImage: '../../assets/tech-insights/tech_insights_scorecard.webp'
 coverImageAlt: "Visualize, understand and optimize your team's tech health."
 
 availableOnRoadie: true

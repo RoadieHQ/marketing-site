@@ -10,7 +10,7 @@ Roadie Tech Insights lets you define arbitrary Data Sources. Typically, custom D
 
 To add a Data Source, click on the “Add Data Source” button in the Data Sources page.
 
-![Add Data Source](./data-sources-overview.png)
+![Add Data Source](./data-sources-overview.webp)
 
 To set up a Data Source, you will, firstly, need to enter general information such as name and a description. After that you will be need to define a Data Provider and which fields will be extracted as Facts from the data. Let’s start overviewing the options available for setting up a Data Provider:
 
@@ -18,7 +18,7 @@ To set up a Data Source, you will, firstly, need to enter general information su
 
 Tech Insights supports multiple different data provider types to retrieve fact data from. You need to select an applicable source depending on what kind of data you want to create checks against. Below are descriptions of different provider types and their configuration options.
 
-![Add Data Provider](./data-provider-step.png)
+![Add Data Provider](./data-provider-step.webp)
 
 ### HTTP via Proxy
 
@@ -236,13 +236,13 @@ API response:
 
 3 - Try out what would be the response when testing specific entity from the location you have provided. If you were to get the `package.json` from a `sample-service` component, the Data Source would get something like this:
 
-![Dry run](./dry-run-result.png)
+![Dry run](./dry-run-result.webp)
 
 Now that you have data, let’s define what Facts interest you. You’ll do this through the Fields Extraction section.
 
 ## Fields extraction
 
-![Fields extraction](./field-extraction.png)
+![Fields extraction](./field-extraction.webp)
 
 4 - Data retention refers to maximum number of items or duration on how long to keep them before they are automatically removed from the database.
 
@@ -256,17 +256,17 @@ Let's look how we would do it with an example.
 
 Using **Regex parser type** from the following result:
 
-![Regex result](./dry-run-yaml-result.png)
+![Regex result](./dry-run-yaml-result.webp)
 
 Retrieving Node version we could write the following Regex:
 
-![Field extraction Regex](./field-extraction-regex.png)
+![Field extraction Regex](./field-extraction-regex.webp)
 
 On the other hand, if you were to have the following result:
-![JSON result](./json-result-type.png)
+![JSON result](./json-result-type.webp)
 
 and wanted to obtain total pages number, we could use the following syntax
-![JSONata parser](./fact-parser-jsonata.png)
+![JSONata parser](./fact-parser-jsonata.webp)
 
 7 - Select the type of the parsed value.
 Here you can select among integer, string, boolean, set and datetime types.
@@ -282,7 +282,7 @@ After successfully adding a fact you will be able to select kind and type of ser
 You can define filters to target which entities should this data source consider to collect data from.
 In the Applies to section you can select which entites will be included in this data source and which entities will be excluded.
 
-![Data Source Entity Filter](./data-source-entity-filter.png)
+![Data Source Entity Filter](./data-source-entity-filter.webp)
 
 The above configuration means the data source will collect data for all components with type library and service which don't have the infrastructure tag
 
@@ -296,11 +296,11 @@ You should be able to see the created Data Source in the overview screen. If you
 
 ## Running the data source
 
-![Data Source Publish](./publish-data-source.png)
+![Data Source Publish](./publish-data-source.webp)
 
 Newly created Data Sources have a refresh cycle set to 24hours, but you can modify this value in 'Edit' screen, as well as trigger an update manually from the kebab menu.
 
-![Trigger update](./trigger-update.png)
+![Trigger update](./trigger-update.webp)
 
 Note that you can’t trigger manual data updates on built-in Data Sources.
 

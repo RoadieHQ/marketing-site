@@ -4,7 +4,7 @@ publishedDate: '2022-06-09T10:00:00.0Z'
 description: How to enable the Shortcut plugin
 
 humanName: Shortcut Plugin
-logoImage: 'shortcut-logo.png'
+logoImage: 'shortcut-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -40,15 +40,15 @@ To use this plugin make sure you already have the [Backstage Home plugin](https:
 
     Once you are on the home page click on the cogwheel icon.
 
-    ![cog icon leading to adding cards in home page](cog.png)
+    ![cog icon leading to adding cards in home page](cog.webp)
 
 2.  Click the plus sign to add a new Card.
-    ![add new card plus sign](plus-homepage.png)
+    ![add new card plus sign](plus-homepage.webp)
 
 3.  Select `HomepageStoriesCard` from the list.
-    ![add shortcut card](homepage-add-card.png)
+    ![add shortcut card](homepage-add-card.webp)
 
     Click add
 
     You should see card like this:
-    ![Shortcut card](card.png)
+    ![Shortcut card](card.webp)

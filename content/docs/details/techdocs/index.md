@@ -6,7 +6,7 @@ description: Using TechDocs in Roadie Backstage.
 
 The TechDocs feature of Roadie Backstage allows markdown files written alongside the code of your components to appear in Backstage as styled HTML documentation. 
 
-![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.png)
+![a page of basic documentation for a service in the Backstage service catalog](./sample-service-docs-backstage.webp)
 
 
 ## MkDocs Plugins
@@ -182,7 +182,7 @@ See the plugin README for more info and customization options: [https://gitlab.c
 
 In order to customize the look of the graphs you will need to use the [Graphviz attributes](https://graphviz.org/doc/info/attrs.html). Setting different values for specific set of attributes will result in graph being rendered that way. For example, let's say we want to change background color from white to lightblue in following graph:
 
-![white graph background](./white-graph.png)
+![white graph background](./white-graph.webp)
 
 which could be defined in TechDocs with following code:
 
@@ -214,7 +214,7 @@ Adding 'bgcolor' attribute in the Graphviz code above (so its final form is):
 will result in graph being rendered in lightblue color.
 
 
-![lightblue graph in techdocs](./lightblue-graph.png)
+![lightblue graph in techdocs](./lightblue-graph.webp)
 
 This way you can customize the graph adding or removing any attribute you want.
 

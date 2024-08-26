@@ -12,8 +12,8 @@ seo:
   description: |
     Manage the release process for your Git repositories directly in Backstage, including integration with GitHub Releases.
 
-logoImage: '../../assets/logos/git-release-manager/git-release-manager-logo.png'
-coverImage: '../../assets/backstage/plugins/git-release-manager/grm-cover-image.png'
+logoImage: '../../assets/logos/git-release-manager/git-release-manager-logo.webp'
+coverImage: '../../assets/backstage/plugins/git-release-manager/grm-cover-image.webp'
 coverImageAlt: 'Git Release Manager in Backstage'
 
 gettingStarted:
@@ -46,47 +46,47 @@ The Git Release Manager plugin is a full page component that can be used to auto
 
 On initial page load, you are prompted to select a versioning strategy, personal or organization account and repository to manage. You can manage releases for your personal Git repositories as well as any repositories owned by organizations for which you are a member and have access.
 
-![Select repository to manage](../../assets/backstage/plugins/git-release-manager/grm-select-repo.png)
+![Select repository to manage](../../assets/backstage/plugins/git-release-manager/grm-select-repo.webp)
 
 Once a repository is selected, it is scanned for tags that meet the selected versioning strategy's [naming conventions](#git-tag-naming-convention-requirements). There are 3 features available to help manage the release process:
 
 1. Create a release candidate from an existing Git tag. A new Git branch and tag is created for the release candidate:
 
-    ![create a release candidate](../../assets/backstage/plugins/git-release-manager/grm-create-rc.png)
+    ![create a release candidate](../../assets/backstage/plugins/git-release-manager/grm-create-rc.webp)
 
-    ![create a release candidate](../../assets/backstage/plugins/git-release-manager/grm-create-rc.png)
+    ![create a release candidate](../../assets/backstage/plugins/git-release-manager/grm-create-rc.webp)
 
-    ![release candidate created](../../assets/backstage/plugins/git-release-manager/grm-create-rc-result.png)
+    ![release candidate created](../../assets/backstage/plugins/git-release-manager/grm-create-rc-result.webp)
 
     A GitHub release is also created with the pre-release flag enabled:
 
-    ![GitHub pre-release created](../../assets/backstage/plugins/git-release-manager/grm-github-pre-release.png)
+    ![GitHub pre-release created](../../assets/backstage/plugins/git-release-manager/grm-github-pre-release.webp)
 
 2. Promote a release candidate to a release. A new Git tag is created for the release:
 
-    ![promote a release candidate](../../assets/backstage/plugins/git-release-manager/grm-create-rc.png)
+    ![promote a release candidate](../../assets/backstage/plugins/git-release-manager/grm-create-rc.webp)
 
-    ![release candidate promoted ](../../assets/backstage/plugins/git-release-manager/grm-create-rc-result.png)
+    ![release candidate promoted ](../../assets/backstage/plugins/git-release-manager/grm-create-rc-result.webp)
 
     The pre-release flag on the GitHub release is also removed:
 
-    ![GitHub pre-release flag removed](../../assets/backstage/plugins/git-release-manager/grm-github-release.png)
+    ![GitHub pre-release flag removed](../../assets/backstage/plugins/git-release-manager/grm-github-release.webp)
 
 3. Patch a release or release candidate. This feature allows you to create a new patch release by selecting one or more commits that are not present on the latest release version. Selected commits are cherry-picked onto the release branch and then a new Git tag is created for the patch release:
 
-    ![patch a release](../../assets/backstage/plugins/git-release-manager/grm-patch-release.png)
+    ![patch a release](../../assets/backstage/plugins/git-release-manager/grm-patch-release.webp)
 
-    ![release patched](../../assets/backstage/plugins/git-release-manager/grm-patch-release-result.png)
+    ![release patched](../../assets/backstage/plugins/git-release-manager/grm-patch-release-result.webp)
 
     The GitHub release is updated as well:
 
-    ![GitHub patched release](../../assets/backstage/plugins/git-release-manager/grm-github-patched-release.png)
+    ![GitHub patched release](../../assets/backstage/plugins/git-release-manager/grm-github-patched-release.webp)
 
 <br/>
 
 There is also a helpful **Stats** view that displays a summary of your releases:
 
-![Release statistics view](../../assets/backstage/plugins/git-release-manager/grm-stats.png)
+![Release statistics view](../../assets/backstage/plugins/git-release-manager/grm-stats.webp)
 
 ## Git Tag Naming Convention Requirements
 
@@ -112,7 +112,7 @@ You can pre-select the versioning strategy, owner and repository. This will pref
 ```
 <br/>
 
-![Pre-selected repository](../../assets/backstage/plugins/git-release-manager/grm-customized-preset.png)
+![Pre-selected repository](../../assets/backstage/plugins/git-release-manager/grm-customized-preset.webp)
 
 <br/>
 
@@ -175,4 +175,4 @@ You can add your own custom content to the Git Release Manager page too. Use the
 
 <br/>
 
-![Add custom content](../../assets/backstage/plugins/git-release-manager/grm-customized-new-feature.png)
+![Add custom content](../../assets/backstage/plugins/git-release-manager/grm-customized-new-feature.webp)

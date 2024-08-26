@@ -4,7 +4,7 @@ publishedDate: '2022-04-25T10:00:00.0Z'
 description: How to enable the IFrame plugin
 
 humanName: IFrame Plugin
-logoImage: 'iframe.png'
+logoImage: 'iframe.webp'
 integrationType: OSS plugin
 ---
 
@@ -24,18 +24,18 @@ To use this plugin make sure you already have the [Backstage Home plugin](https:
 
     Once you are on the home page click on the cogwheel icon.
 
-    ![cogwheel](homepage.png)
+    ![cogwheel](homepage.webp)
 
 2.  Click the plus sign to add a new Card.
-    ![plus](plus-homepage.png)
+    ![plus](plus-homepage.webp)
 
 3.  Select `HomePageIFrameCard` from the list.
-    ![add card](homepage-add-card.png)
+    ![add card](homepage-add-card.webp)
 
     Click add
 
 You should now see a card like this:
-![iframe homepage](no-props.png)
+![iframe homepage](no-props.webp)
 
 This can be configured with [this](./#configure-iframe-props) section.
 
@@ -45,11 +45,11 @@ Now configure the props of the plugin to display the correct url for your Iframe
 
 1.  Click on the `wrench` icon to edit the props of the component (see image below).
 
-![wrench](wrench.png)
+![wrench](wrench.webp)
 
 Then enter the following props.
 
-![](props.png)
+![](props.webp)
 
 ``` json
 {
@@ -68,25 +68,25 @@ Then enter the following props.
 Now it should load and render the iframe card as per your specifications.
 
 Based on what you enter, the card should now look similar to this.
-![card](card.png)
+![card](card.webp)
 
 ## Add IFrame card to your Component
 
 1.  In Roadie, find and select the service via the Component Catalog or Search.
     Once you are there, please click the cog item.
 
-    ![cogwheel](cog.png)
+    ![cogwheel](cog.webp)
 
 2.  Click the plus sign to add a new Card.
-    ![plus](plus.png)
+    ![plus](plus.webp)
 
 3.  Select `EntityIFrameCard` from the list.
-    ![card](entity-card.png)
+    ![card](entity-card.webp)
 
     Click add.
 
 You should now see a card like this:
-![](no-props.png)
+![](no-props.webp)
 
 It works in the same way as the Homepage IFrame card except that it can take the option `src` or `srcFromAnnotation`.
 
@@ -105,7 +105,7 @@ It works in the same way as the Homepage IFrame card except that it can take the
 
 It works in the same way as the Homepage IFrame card except the props it expects are divided into props for the page, and props for the iframe itself.
 
-![](page-props.png)
+![](page-props.webp)
 
 Top level "title" prop defines the title of the page itself.
 Props encapsulated into an "iframe" object define properties for the iframe. Possible options are

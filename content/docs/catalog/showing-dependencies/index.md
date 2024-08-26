@@ -12,7 +12,7 @@ Backstage provides a [limited set of possible relationships](https://backstage.i
 
 ### Viewing Relationships
 
-![view_full_graph.png](../../integrations/catalog-graph/view_full_graph.png)
+![view_full_graph.webp](../../integrations/catalog-graph/view_full_graph.webp)
 
 Relationships can be visualised through plugins like the [Catalog Graph plugin](/docs/integrations/catalog-graph) or through cards on an entity Overview page like `EntityRelationsCard` which can be easily added by a Roadie admin [using our UI editor](/docs/details/updating-the-ui).
 

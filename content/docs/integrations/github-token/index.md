@@ -4,7 +4,7 @@ publishedDate: '2021-06-06T21:00:00.0Z'
 description: How to create a GitHub Personal Access Token with permissions for use in Roadie.
 
 humanName: GitHub Token
-logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
+logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 integrationType: Catalog data source
 ---
 
@@ -39,11 +39,11 @@ Add the user to your GitHub organization, in a way which ensures that it has rea
 
 For example, here's a `roadiebot` user, which does not have write access to the private RoadieHQ/stargazers-notifications repository.
 
-![GitHub screen showing that the roadiebot user has read access to only one repository](./roadiebot-no-write-access.png)
+![GitHub screen showing that the roadiebot user has read access to only one repository](./roadiebot-no-write-access.webp)
 
 Create a personal access token for this user and give it the `public_repo`, `read:org`, `read:user` and `user:email` scopes.
 
-![GitHub screen with the public_repo scope checkbox checked and all other checkboxes unchecked](./public-repos-only.png)
+![GitHub screen with the public_repo scope checkbox checked and all other checkboxes unchecked](./public-repos-only.webp)
 
 Use this personal access token in Roadie. Roadie now has read only access to organizational data and public repositories.
 
@@ -55,11 +55,11 @@ Add the user to your GitHub organization, in a way which ensures that they have 
 
 For example, here's a `roadiebot` user, which does not have write or admin access to the private RoadieHQ/stargazers-notifications repository.
 
-![GitHub screen showing that the roadiebot user has read access to only one repository](./roadiebot-no-write-access.png)
+![GitHub screen showing that the roadiebot user has read access to only one repository](./roadiebot-no-write-access.webp)
 
 Create a personal access token for this user, give it the `repo`, `read:org`, `read:user` and `user:email` scopes.
 
-![GitHub screen with the repo scope checkbox checked and all other checkboxes unchecked](./repo-scope.png)
+![GitHub screen with the repo scope checkbox checked and all other checkboxes unchecked](./repo-scope.webp)
 
 The `repo` scope provides both read and write abilities to both public and private repositories. In this case however, because the user associated with the token only has read access, no writes can occur.
 

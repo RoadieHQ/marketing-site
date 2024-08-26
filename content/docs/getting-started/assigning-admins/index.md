@@ -15,15 +15,15 @@ ordinary users from making unintended changes to the application setup. Roadie B
 
 Initially the first user will be assigned the Admin role and will be able to add other users as well as assign granular Roles to them in the User Management page in Administration.
 
-![User management screen](./user-management.png)
+![User management screen](./user-management.webp)
 
 You can add Roles to users in this page using the edit pencil icon next to each user.
 
-![Editing roles for a user](./edit-user-roles.png)
+![Editing roles for a user](./edit-user-roles.webp)
 
 Roadie comes with a predefined set of Roles to use for access control to core app functionality. Custom roles can be configured via the Role Management tab using our predefined set of permissions. 
 
-![Adding roles to a user](./add-roles.png)
+![Adding roles to a user](./add-roles.webp)
 
 Find out more about [RBAC in Roadie here](/docs/details/permissions/).
 

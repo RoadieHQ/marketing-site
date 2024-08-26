@@ -17,7 +17,7 @@ To construct the correct type of React components that are compatible to be regi
 
 Scaffolder Field Extensions are automatically registered to be usable within Scaffolder Templates, once they have been registered as a Custom Plugin component to the Roadie application. You can do this by navigating to the `Administration` -> `Custom Plugins` page and registering your Custom Plugin bundle, including a component of type `ScaffolderFieldExtension`.
 
-![Custom plugin registration form](custom_plugin_registration_form.png)
+![Custom plugin registration form](custom_plugin_registration_form.webp)
 
 
 

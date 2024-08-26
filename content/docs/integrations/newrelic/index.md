@@ -4,7 +4,7 @@ publishedDate: '2021-09-09T21:00:00.0Z'
 description: How to create a New Relic token for use with Backstage.
 
 humanName: New Relic
-logoImage: '../../../assets/logos/new-relic/logo-relic.png'
+logoImage: '../../../assets/logos/new-relic/logo-relic.webp'
 integrationType: OSS plugin
 ---
 
@@ -37,19 +37,19 @@ In order to make requests to the NewRelic API, you must provide Roadie with an A
 1. Sidebar component
   *  Hover over the sidebar on the left and click the "Edit Sidebar" icon
 
-  ![edit-sidebar.png](./edit-sidebar.png)
+  ![edit-sidebar.webp](./edit-sidebar.webp)
    
   * Click "Add Card"
 
-  ![add-card.png](./add-card.png)
+  ![add-card.webp](./add-card.webp)
 
   * Select the option "@backstage/plugin-newrelic: NewRelicPage", pick a name for the menu item the path, and an Icon. Click Add.
 
-  ![select-component.png](./select-component.png)
+  ![select-component.webp](./select-component.webp)
 
   * You should see a new item in the sidebar for NewRelic, click the sidebar save button.
 
-  ![save-sidebar.png](./save-sidebar.png)
+  ![save-sidebar.webp](./save-sidebar.webp)
 
 
 2. Card and Content Components

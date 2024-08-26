@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 The [Backstage Humanitec plugin](https://github.com/humanitec/humanitec-backstage-plugins/tree/main/plugins/humanitec) integrates with Humanitec to show your deployment information inside Backstage where it can be associated with your services.
 
-![humanitec.png](humanitec.png)
+![humanitec.webp](humanitec.webp)
 
 ## Add Humanitec to one of your components
 

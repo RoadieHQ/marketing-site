@@ -4,7 +4,7 @@ publishedDate: '2024-02-20T21:00:00.0Z'
 description: How to manage entities via the Roadie API
 
 humanName: Roadie API
-logoImage: '../../../assets/logos/roadie/roadie-racks.png'
+logoImage: '../../../assets/logos/roadie/roadie-racks.webp'
 integrationType: Catalog data source
 ---
 

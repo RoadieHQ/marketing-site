@@ -4,11 +4,11 @@ publishedDate: '2021-07-15T21:00:00.0Z'
 description: How to add a Kubernetes cluster for the Kubernetes plugin.
 
 humanName: Kubernetes
-logoImage: '../../../assets/logos/kubernetes/logo-kubernetes.png'
+logoImage: '../../../assets/logos/kubernetes/logo-kubernetes.webp'
 integrationType: OSS plugin
 ---
 
-![Full active cluster on roadie](./active.png)
+![Full active cluster on roadie](./active.webp)
 
 The Kubernetes plugin in Backstage allows you to add details about your services, pods, deployments etc to the component dashboard pages within Backstage. The plugin supports multiple different mechanisms to connect Backstage to your Kubernetes clusters. 
 

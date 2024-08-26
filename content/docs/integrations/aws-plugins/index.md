@@ -4,7 +4,7 @@ publishedDate: '2022-03-29T21:00:00.0Z'
 description: How to configure Roadie to use AWS plugins
 
 humanName: AWS Plugins
-logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.png'
+logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -14,7 +14,7 @@ Amazon Web Services have produced and open sourced their own plugins for the Bac
 
 This guide describes how to set up Roadie to use AWS account configurations and to enable AWS plugins.
 
-![running-cluster.png](running-cluster.png)
+![running-cluster.webp](running-cluster.webp)
 
 
 ##  Step 1: Get the roadie IAM details
@@ -42,7 +42,7 @@ After choosing a resource, you need to define the role (created in step 2 above)
 
 After the role configuration is done, you can click the 'Test Role' button to check if the role is assumable by Roadie.
 
-![AWS Plugins config](aws-plugins-config.png)
+![AWS Plugins config](aws-plugins-config.webp)
 
 
 ## Step 4: Add the AWS UI component into your system

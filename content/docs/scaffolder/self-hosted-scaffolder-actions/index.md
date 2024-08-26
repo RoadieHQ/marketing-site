@@ -80,7 +80,7 @@ export const helloWorldActionHandler = async (context) => {
 
 To configure your action in Roadie, you need to add new configuration within `Administration` -> `Settings` -> `Roadie Agent`. 
 
-![roadie-config.png](roadie-config.png)
+![roadie-config.webp](roadie-config.webp)
 
 The identifiers used for these configurations need to match the identifiers used within the implemented custom Scaffolder action code. Note that you can configure multiple actions or providers per Roadie Agent connection.
 
@@ -145,7 +145,7 @@ The Roadie Agent library uses a Broker connection to communicate with Roadie. Th
 
 Make sure that the configuration for the custom action matches in all three configuration places. You need to use the same name in your _template_, your _Roadie configuration_ and as a _name of your action registered to the library_.
 
-![triple-config.png](triple-config.png)
+![triple-config.webp](triple-config.webp)
 
 
 

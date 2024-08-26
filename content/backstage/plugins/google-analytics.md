@@ -13,6 +13,6 @@ seo:
   description: |
     The Backstage Google Analytics plugin helps you to track usage of your Backstage instance using Google Analytics.
 
-logoImage: '../../assets/logos/google-analytics/ga-icon.png'
+logoImage: '../../assets/logos/google-analytics/ga-icon.webp'
 
 availableOnRoadie: false

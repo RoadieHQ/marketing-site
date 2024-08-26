@@ -12,9 +12,9 @@ seo:
   description: |
     A RAG AI Backstage plugin to contextualize entities, TechDocs, openAPI specs and Tech Insights data for LLM consumption.
 
-logoImage: '../../assets/logos/rag/roadie-racks-ai.png'
+logoImage: '../../assets/logos/rag/roadie-racks-ai.webp'
 
-coverImage: '../../assets/rag-ai-api-spec-query.png'
+coverImage: '../../assets/rag-ai-api-spec-query.webp'
 coverImageAlt: 'A screenshot of the AI Assistant query window. It is showing a response from an LLM using the contextual data provided by the plugin.'
 
 availableOnRoadie: false
@@ -208,7 +208,7 @@ ai:
 
 The plugin exposes two main paths to enable retrieval-augmented generation assisted LLM questioning. 
 
-![data-flow-diagram.png](../../assets/data-flow-diagram.png)
+![data-flow-diagram.webp](../../assets/data-flow-diagram.webp)
 
 ### Indexing
 
@@ -222,4 +222,4 @@ The ideal option to manage embeddings creation is to make them event based. They
 
 The querying path provides a sane set of defaults to enable initial RAG querying with a backing vector database and a similarity search based on the vector embeddings. The functionality can be extended to provide other data sources like knowledge graphs or plain text search functionality. The processing of the retrieved augmentation data can be enhanced, reranked, filtered and modified using post processor that can provide more accurate information related to the queries users are asking.
 
-![question-flow.png](../../assets/question-flow.png)
+![question-flow.webp](../../assets/question-flow.webp)

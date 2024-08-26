@@ -27,9 +27,9 @@ seo:
     The Backstage Argo CD plugin integrates with your Argo CD instance api to show kubernetes status
     information inside Backstage where it can be associated with your project.
 
-logoImage: '../../assets/logos/argo-cd/argo-cd-logo.png'
+logoImage: '../../assets/logos/argo-cd/argo-cd-logo.webp'
 
-coverImage: '../../assets/argo-cd-plugin.png'
+coverImage: '../../assets/argo-cd-plugin.webp'
 coverImageAlt: 'A preview of Argo CD overview widget including kubernetes pod status.'
 
 availableOnRoadie: true

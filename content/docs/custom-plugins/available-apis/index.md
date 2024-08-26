@@ -26,7 +26,7 @@ export const MyPluginContentComponent = () => {
 ```
 
 The code above would produce a view like this:
-![A test entity view displaying information](entity-dump-useEntity-hook.png)
+![A test entity view displaying information](entity-dump-useEntity-hook.webp)
 
 ### useApi
 
@@ -91,7 +91,7 @@ export const MyPluginContentComponent = () => {
    </div>
 }
 ```
-![A dump of information displaying currently logged in user](userinfo_identityApi_dump.png)
+![A dump of information displaying currently logged in user](userinfo_identityApi_dump.webp)
 
 #### errorApi
 

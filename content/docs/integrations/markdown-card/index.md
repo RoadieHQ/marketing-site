@@ -4,7 +4,7 @@ publishedDate: '2022-03-01T10:00:00.0Z'
 description: How to enable the markdown card plugin
 
 humanName: Markdown Card Plugin
-logoImage: '../../../assets/logos/home-page/home.png'
+logoImage: '../../../assets/logos/home-page/home.webp'
 integrationType: OSS plugin
 ---
 
@@ -36,26 +36,26 @@ To use this plugin on the home page, make sure you already have the [Backstage H
 
     Once you are on the home page click on the cogwheel icon.
 
-    ![cogwheel](home-page-cogwheel.png)
+    ![cogwheel](home-page-cogwheel.webp)
 
 2.  Click the plus sign to add a new Card
-    ![](add-card.png)
+    ![](add-card.webp)
 
 3.  Select `HomePageMarkdown` or `HomePageMarkdownCard` from the list.
-    ![](select-homepagemarkdown.png)
+    ![](select-homepagemarkdown.webp)
 
     Click add
-    ![](click-add.png)
+    ![](click-add.webp)
 
     You will see a similar error message for the added component, but do now worry, we need to configure the plugin to point to your markdown file. You'll see instructions in the next section
-    ![](error.png)
+    ![](error.webp)
 
 #### Roadie Home Page Markdown Card - Configure plugin via props
 
 To configure the Roadie Home Page Markdown Card to point to your desired location, you need to add props to the Card configuration to point to a wanted Markdown file.
 
 1.  Click on the `wrench` icon to edit the props of the component.
-    ![](props.png)
+    ![](props.webp)
     Add the following JSON as props. The `path` prop supports URLs from integrations that you have configured on your Roadie instance. 
 
     ```json
@@ -75,7 +75,7 @@ To configure the Roadie Home Page Markdown Card to point to your desired locatio
 To configure the OAuth Markdown card to point to your desired location, you need to add props to the Card configuration to point to a wanted Markdown file.
 
 1.  Click on the `wrench` icon to edit the props of the component.
-    ![](props.png)
+    ![](props.webp)
     Add the following json as props, where the keys are the valid properties for the `HomePageMarkdown` [component](https://www.npmjs.com/package/@roadiehq/backstage-plugin-home-markdown) Make sure you change the values to the appropriate for your own markdown file.
 
     ```json

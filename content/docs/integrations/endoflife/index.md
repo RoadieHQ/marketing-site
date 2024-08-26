@@ -4,7 +4,7 @@ publishedDate: '2024-02-21T18:00:00.0Z'
 description: How to configure the End Of Life plugin on Roadie.
 
 humanName: End Of Life
-logoImage: '../../../assets/logos/endoflife/logo.png'
+logoImage: '../../../assets/logos/endoflife/logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 The End Of Life plugin can display end of life data relevant to your entities from endoflife.date or your own sources. 
 
-![Example image showing end of life test report](./endoflife.png)
+![Example image showing end of life test report](./endoflife.webp)
 
 This page explains how to configure it in Roadie Backstage.
 

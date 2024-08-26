@@ -4,7 +4,7 @@ publishedDate: '2022-08-26T21:00:00.0Z'
 description: How to set up the Backstage PagerDuty plugin in Roadie Backstage.
 
 humanName: PagerDuty
-logoImage: '../../../assets/logos/pagerduty/pagerduty-logo-light-200x200.png'
+logoImage: '../../../assets/logos/pagerduty/pagerduty-logo-light-200x200.webp'
 integrationType: OSS plugin
 ---
 
@@ -16,7 +16,7 @@ The PagerDuty Backstage plugin allows Roadie Backstage users to:
 2.  See if there are active incidents for a given catalog Component.
 3.  Create new incidents from Backstage.
 
-![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.png)
+![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.webp)
 
 ## At a Glance
 
@@ -49,11 +49,11 @@ Copy the key that is created to your clipboard.
 - Save
 - Apply & Restart
 
-![API Token form](./api-token-auth-form.png)
+![API Token form](./api-token-auth-form.webp)
 
 After the restart provide the `PAGERDUTY_TOKEN` secret just under the save buttons. Once these are set you can go to the next step.
 
-![API Token secrets](./api-token-secrets.png)
+![API Token secrets](./api-token-secrets.webp)
 
 ℹ️ Roadie accepts the token from PagerDuty unmodified.
 
@@ -68,11 +68,11 @@ Your subdomain and region can be found in your pagerduty url. e.g: `foo.eu.pager
 - Save
 - Apply & Restart
 
-![OAuth form](./oauth-auth-form.png)
+![OAuth form](./oauth-auth-form.webp)
 
 After the restart provide the `PD_CLIENT_ID` and `PD_CLIENT_SECRET` secrets just under the save buttons. Once these are set you can go to the next step.
 
-![OAuth secrets](./oauth-secrets.png)
+![OAuth secrets](./oauth-secrets.webp)
 
 #### 3. Add the PagerDuty annotation
 
@@ -103,15 +103,15 @@ spec:
 
 To generate the PagerDuty integration key, find a "Service" in the PagerDuty Service Directory and view the Integrations tab.
 
-![integrations tab](./integrations-tab.png)
+![integrations tab](./integrations-tab.webp)
 
 Click the Add an integration link. Choose Events API V2, and click the Add button.
 
-![Integrations list](./integrations-list.png)
+![Integrations list](./integrations-list.webp)
 
 You should now be redirected back to the Integrations tab, and a new integration should have been created. You can edit the integration name to indicate that this is a Roadie Backstage integration.
 
-![Created integration](./created-integration.png)
+![Created integration](./created-integration.webp)
 
 Copy the Integration Key and add it to the Component YAML.
 
@@ -145,7 +145,7 @@ The PagerDuty Backstage plugin allows Roadie Backstage users to:
 2. See if there are active incidents for a given catalog Component.
 3. Create new incidents from Backstage.
 
-![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.png)
+![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.webp)
 
 ## References
 

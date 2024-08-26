@@ -4,7 +4,7 @@ publishedDate: '2022-03-18T11:00:00.0Z'
 description: How to set up the Lighthouse plugin in Roadie.
 
 humanName: Lighthouse
-logoImage: '../../../assets/logos/lighthouse/logo-lh.png'
+logoImage: '../../../assets/logos/lighthouse/logo-lh.webp'
 integrationType: OSS plugin
 ---
 
@@ -15,13 +15,13 @@ Google's Lighthouse auditing tool for websites is a great open-source resource f
 This plugin allows you to trigger Lighthouse audits on websites and track them.
 
 - Track multiple websites' audit performance over time using the main metrics that Lighthouse outputs:
-![audits-overview-page.png](./audits-overview-page.png)
+![audits-overview-page.webp](./audits-overview-page.webp)
 
 - Travel back and forth through your audit history
-![audit-view.png](./audit-view.png)
+![audit-view.webp](./audit-view.webp)
 
 - Trigger a fresh audit directly from Backstage
-![create-audit.png](./create-audit.png)
+![create-audit.webp](./create-audit.webp)
 
 ## Prerequisites
 
@@ -37,13 +37,13 @@ https://<tenant-name>.roadie.so/administration/settings/lighthouse
 ```
 
 After you have added your url, you can add a full page Lighthouse tab to your sidebar by clicking Edit Sidebar and then the plus icon:
-![add-sidebar-page.png](./add-sidebar-page.png)
+![add-sidebar-page.webp](./add-sidebar-page.webp)
 
 You can also add an annotation to your components and add the page as a tab for individual websites:
-![add-lighthouse-tab.png](./add-lighthouse-tab.png)
+![add-lighthouse-tab.webp](./add-lighthouse-tab.webp)
 
 Or a widget on the Overview page for a website in your Catalog.
-![add-widget.png](./add-widget.png)
+![add-widget.webp](./add-widget.webp)
 
 ## References
 

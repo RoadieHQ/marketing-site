@@ -11,8 +11,8 @@ seo:
   description: |
     Monitor errors in Bugsnag for your service in Backstage. 
 
-logoImage: '../../assets/logos/bugsnag/bugsnag-logo.png'
-coverImage: '../../assets/backstage/plugins/bugsnag/backstage-bugsnag-plugin.png'
+logoImage: '../../assets/logos/bugsnag/bugsnag-logo.webp'
+coverImage: '../../assets/backstage/plugins/bugsnag/backstage-bugsnag-plugin.webp'
 coverImageAlt: |
   Service errors overview inside a Bugsnag plugin.
 

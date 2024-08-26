@@ -135,7 +135,7 @@ role ARN and external ID. The S3 host is only required if you're using different
 
 After the role configuration is done, you can click the 'Test Role' button to check if integration configuration has succeeded.
 
-![Role Details](./role-details.png)
+![Role Details](./role-details.webp)
 
 
 ### Create a catalog file in code repository
@@ -148,7 +148,7 @@ Copy the Object URL of the catalog file you created by visiting the file in S3 i
 
 Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
 
-![Import](./import.png)
+![Import](./import.webp)
 
 Now you can click on the entity link to visit the entity that you have just created.
 

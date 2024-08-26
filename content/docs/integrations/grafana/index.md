@@ -4,7 +4,7 @@ publishedDate: '2022-03-07T10:00:00.0Z'
 description: How to add Grafana to Backstage
 
 humanName: Grafana
-logoImage: '../../../assets/logos/grafana/grafana.png'
+logoImage: '../../../assets/logos/grafana/grafana.webp'
 integrationType: OSS plugin
 ---
 
@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 The [Backstage Grafana plugin](https://www.npmjs.com/package/@k-phoen/backstage-plugin-grafana) integrates with Grafana to list alerts and dashboards for your entities.
 
-![grafana-overview.png](./grafana-overview.png)
+![grafana-overview.webp](./grafana-overview.webp)
 
 ## At a Glance
 | | |
@@ -34,7 +34,7 @@ frontend and backend endpoints should be the same e.g. `https://<your-company>.g
 Grafana yourself you'll need to specify a url to the frontend which is used by backstage to generate links and an API
 endpoint which the plugin uses to query alerts and dashboards. 
 
-![grafana-config.png](./grafana-config.png)
+![grafana-config.webp](./grafana-config.webp)
 
 ### Add the Grafana API Key
 

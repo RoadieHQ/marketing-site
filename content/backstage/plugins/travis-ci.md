@@ -12,9 +12,9 @@ seo:
     The Backstage Travis CI plugin integrates with Travis CI to show your build
     information inside Backstage and associate it with your services.
 
-logoImage: '../../assets/logos/travis-ci/travis-ci-mascot-200x200.png'
+logoImage: '../../assets/logos/travis-ci/travis-ci-mascot-200x200.webp'
 
-coverImage: '../../assets/travis-ci-plugin-1642x1027.png'
+coverImage: '../../assets/travis-ci-plugin-1642x1027.webp'
 coverImageAlt: 'A screenshot of the Travis CI plugin. It is showing a list of builds for a sample service.'
 
 availableOnRoadie: true
@@ -102,7 +102,7 @@ To use the Travis CI Backstage plugin, first visit Travis CI to get an API token
 
 There are two versions of Travis CI: https://travis-ci.com and https://travis-ci.org. travis-ci.org is deprecated and not supported in this plugin.
 
-![travis-ci-copy-auth-token-1036x603](./travis-ci-copy-auth-token-1036x603.png)
+![travis-ci-copy-auth-token-1036x603](./travis-ci-copy-auth-token-1036x603.webp)
 
 Copy the token to your clipboard.
 

@@ -25,13 +25,13 @@ You can find a step by step guide to adding templates in Roadie [here](/docs/get
 
 A Scaffolder template is a configurable process that will run one or more Scaffolder `steps`. The template will be run when a user visits the "Create Component" page in Backstage. `https://<tenant-name>.roadie.so/create`.
 
-![create-a-new-component](./create-a-new-component.png)
+![create-a-new-component](./create-a-new-component.webp)
 
 Templates are defined by a Backstage Entity YAML file with a `Template` kind and imported into the Backstage catalog. You can create multiple templates, each of which can perform a different set of steps. For example, you can have one template that creates a React application, and another that creates a serverless app.
 
 Template YAML input forms can be tested at `/templates/edit` using a live template preview viewer.
 
-![preview-template](./template-preview-tool.png)
+![preview-template](./template-preview-tool.webp)
 
 Here is an example of a very basic Scaffolder template that prompts the user for a name, and then prints back the text "Hello, name!"
 
@@ -447,7 +447,7 @@ parameters:
 
 Template Preview, which is accessible via `Tools > Template Preview` provides a preview page for templates, where you can see a live preview of the template form. This is done in order to provide an easy way to preview scaffolder template form UIs without running your own local instance of the plugin or committing changes to the template.
 
-![parameters-preview](./parameters-preview.png)
+![parameters-preview](./parameters-preview.webp)
 
 ### More Reading
 

@@ -14,17 +14,17 @@ When the tenant is created the user requesting the tenant is added as the first 
 
 The user management page is contained under the Administration side bar menu item.
 
-![user-management-page.png](./user-management-page.png)
+![user-management-page.webp](./user-management-page.webp)
 
 ## Step 2: Invite a user
 
 To add a new user click the invite a new user button and enter the users email address.
 
-![invite-user-button.png](./invite-user-button.png)
+![invite-user-button.webp](./invite-user-button.webp)
 
 Enter the users email and click send.
 
-![add-user-dialog.png](./add-user-dialog.png)
+![add-user-dialog.webp](./add-user-dialog.webp)
 
 We will send an email to the users email address. The user will be asked to set a password and will them be redirected to login to backstage.
 

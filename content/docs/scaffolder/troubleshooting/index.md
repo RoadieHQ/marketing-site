@@ -25,7 +25,7 @@ Writing templates can be a little cumbersome at times. We have compiled a list o
 
 Template YAML input forms can also be tested at `/templates/edit` using a live template preview viewer which speeds up the testing cycle.
 
-![preview-template](./template-preview-tool.png)
+![preview-template](./template-preview-tool.webp)
 
 ### Resource not accessible by integration
 

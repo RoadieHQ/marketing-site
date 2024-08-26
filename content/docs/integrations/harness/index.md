@@ -4,7 +4,7 @@ publishedDate: '2023-01-30T15:00:00.0Z'
 description: How to add Harness.io plugin to Roadie
 
 humanName: Harness.io
-logoImage: '../../../assets/logos/harness/harness.png'
+logoImage: '../../../assets/logos/harness/harness.webp'
 integrationType: OSS plugin
 ---
 
@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 The [Backstage Harness plugin](https://github.com/harness/backstage-plugins/tree/main/plugins/harness-ci-cd) integrates with Harness to show your build information inside Backstage where it can be associated with your services.
 
-![harness-exec-history.png](harness-exec-history.png)
+![harness-exec-history.webp](harness-exec-history.webp)
 
 ## Add Harness to one of your components
 
@@ -60,7 +60,7 @@ Then add it to Roadie at `https://<tenant-name>.roadie.so/administration/harness
 
 In the same Harness configuration section, enable the relevant Harness proxy to be able to retrieve information from Harness.io. Additionally, you can disable the possibility to run pipelines via Roadie UI if needed.
 
-![harness-settings](harness-settings.png)
+![harness-settings](harness-settings.webp)
 
 ### Configure Roadie UI to display Harness information
 

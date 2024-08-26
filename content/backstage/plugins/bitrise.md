@@ -12,8 +12,8 @@ seo:
   description: |
     Bitrise Backstage Plugin to see your components builds inside Backstage. Also displays Biterise workflows.
 
-logoImage: '../../assets/logos/bitrise/bitrise-logo.png'
-coverImage: '../../assets/backstage/plugins/bitrise/bitrise-in-backstage.png'
+logoImage: '../../assets/logos/bitrise/bitrise-logo.webp'
+coverImage: '../../assets/backstage/plugins/bitrise/bitrise-in-backstage.webp'
 coverImageAlt: 'Bitrise in Backstage'
 
 gettingStarted:
@@ -58,7 +58,7 @@ gettingStarted:
 
 Bitrise is a CI/CD tool that focuses primarily on building and deploying mobile apps. Once a Backstage component is linked to a Bitrise app via the component's catalog-info.yaml, a summary of Bitrise builds are visible on the component's page in Backstage.
 
-![Bitrise tab in Backstage](../../assets/backstage/plugins/bitrise/bitrise-entity-page-tab.png)
+![Bitrise tab in Backstage](../../assets/backstage/plugins/bitrise/bitrise-entity-page-tab.webp)
 
 Not only can you see a summary of your builds, but you can also:
 
@@ -73,7 +73,7 @@ Similar to other Backstage plugins, the Bitrise tab can be added to multiple ent
 
 The plugin connects to the Bitrise API using a personal token. The token can be generated from your Bitrise profile:
 
-![Create Bitrise personal token](../../assets/backstage/plugins/bitrise/create-bitrise-personal-token.png)
+![Create Bitrise personal token](../../assets/backstage/plugins/bitrise/create-bitrise-personal-token.webp)
 
 See [Authenticating with the Bitrise API](https://devcenter.bitrise.io/en/api/authenticating-with-the-bitrise-api.html) for more information.
 

@@ -4,7 +4,7 @@ publishedDate: '2022-12-14T10:00:00.0Z'
 description: How to use the CodeScene plugin
 
 humanName: CodeScene
-logoImage: '../../../assets/logos/codescene/codescene.png'
+logoImage: '../../../assets/logos/codescene/codescene.webp'
 integrationType: OSS Plugin
 ---
 
@@ -21,14 +21,14 @@ You'll need a CodeScene account and a basic Auth token.
 Navigate to `/administration/codescene` and click the edit icon beside the `CODESCENE_AUTH_CREDENTIALS` secret then
 enter your basic auth token.
 
-![Set Auth](./credentials.png)
+![Set Auth](./credentials.webp)
 
 
 ## Step 2: Configure the CodeScene Instance URL
 
 Navigate to `/administration/codescene` and enter your CodeScene instance url then click "save" and then "Apply & restart". 
 
-![Set Config](./config.png)
+![Set Config](./config.webp)
 
 ## Step 3: Create a Link to the CodeScene plugin
 
@@ -38,7 +38,7 @@ enter `Link` as the component, enter a title and set the path to `/code-scene` (
 Note: It might take some moments for the secret you configured to be available to the backend. You can check its status
 on the secrets page.
 
-![Create Link](./link.png)
+![Create Link](./link.webp)
 
 ## More information:
 

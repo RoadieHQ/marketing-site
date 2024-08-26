@@ -11,8 +11,8 @@ seo:
   description: |
     View FOSSA license findings for all of your components right from Backstage.
 
-logoImage: '../../assets/logos/fossa/fossa-logo.png'
-coverImage: '../../assets/backstage/plugins/fossa/fossa-plugin.png'
+logoImage: '../../assets/logos/fossa/fossa-logo.webp'
+coverImage: '../../assets/backstage/plugins/fossa/fossa-plugin.webp'
 coverImageAlt: 'A screenshot of the FOSSA plugin.'
 
 gettingStarted:
@@ -83,11 +83,11 @@ gettingStarted:
 
 The FOSSA plugin is a frontend plugin that summarizes license findings for components in Backstage. The plugin includes a card component that displays a summary of findings for individual components:
 
-![FOSSA Card Component](../../assets/backstage/plugins/fossa/fossa-plugin-card.png)
+![FOSSA Card Component](../../assets/backstage/plugins/fossa/fossa-plugin-card.webp)
 
 It also includes a page component that displays a summary of findings for all components in Backstage that are annotated with the FOSSA plugin annotation:
 
-![FOSSA Page Component](../../assets/backstage/plugins/fossa/fossa-plugin-page.png)
+![FOSSA Page Component](../../assets/backstage/plugins/fossa/fossa-plugin-page.webp)
 
 Both components allow users to link directly to findings on the FOSSA website.
 
@@ -101,11 +101,11 @@ To create a FOSSA API key:
 1. Navigate to the API section on the Integrations tab.
 1. Add a new token. Do not select the "Push Only" option.
 
-    ![Create FOSSA API key](../../assets/backstage/plugins/fossa/create-fossa-api-token.png)
+    ![Create FOSSA API key](../../assets/backstage/plugins/fossa/create-fossa-api-token.webp)
 
 1. Copy the token and save it to `FOSSA_API_TOKEN` environment variable.
 
-    ![View FOSSA API key](../../assets/backstage/plugins/fossa/create-fossa-api-token2.png)
+    ![View FOSSA API key](../../assets/backstage/plugins/fossa/create-fossa-api-token2.webp)
 
 ### Specifying a FOSSA organization ID
 

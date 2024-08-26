@@ -4,7 +4,7 @@ publishedDate: '2022-01-31T21:00:00.0Z'
 description: How to configure the Argo CD plugin on Roadie.
 
 humanName: Argo CD
-logoImage: '../../../assets/logos/argo-cd/argo-cd-logo.png'
+logoImage: '../../../assets/logos/argo-cd/argo-cd-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 The Argo CD plugin can present the current status of an application in your Roadie Backstage catalog. You also have the possibility to see your Argo CD deployments history and their corresponding revisions, as well as more detailed information about currently deployed applications.
 
-![Argo CD Overview Card](./argo-overview.png)
+![Argo CD Overview Card](./argo-overview.webp)
 
 This page explains how to configure it in Roadie Backstage.
 
@@ -47,7 +47,7 @@ The app locator method configuration allows you to dynamically search and identi
 
 ### Basic Configuration
 
-![argo-config-1.png](argo-config-1.png)
+![argo-config-1.webp](argo-config-1.webp)
 
 Enter your Argo CD server frontend URL into Roadie. This is used to construct links to individual Argo CD applications.
 
@@ -64,7 +64,7 @@ Note that the API endpoint within this configuration method should be pointing t
 ### Additional Options
 
 The App Locator method provides additional configuration options to allow more fine-grained control. 
-![argo-config-2.png](argo-config-2.png)
+![argo-config-2.webp](argo-config-2.webp)
 
 The configuration options are as follows:
 * **Wait Cycles**: Between the Argo CD project delete and application delete there is a loop created to check for the deletion of the application before the deletion of a project can occur. Between each check there is a 3 second timer. The number of cycles to wait is an optional configuration value as shown above as Wait Cycles. If Wait Cycles is set to 25, the total time the loop can last before erroring out is 75 seconds.
@@ -82,7 +82,7 @@ Select **Proxy** as the configuration method in Argo CD settings page in Roadie.
 Enter your Argo CD server frontend URL into Roadie. This is used to construct links to individual Argo CD applications.
 Enter your Argo CD server API endpoint or [broker endpoint](/docs/integrations/broker/) (in the format `broker://my-token`) into Roadie.
 
-![proxy-config.png](proxy-config.png)
+![proxy-config.webp](proxy-config.webp)
 
 
 #### Step by step
@@ -105,17 +105,17 @@ The Argo CD plugin provides two type of UI elements.
 
 The `EntityArgoCDOverviewCard` presents the current status of an application: 
 
-![Argo CD Overview Card](./argo-overview.png)
+![Argo CD Overview Card](./argo-overview.webp)
 
 The `EntityArgoCDHistoryCard` displays the deployment history of an appliction:
 
-![Argo CD History Card](./argo-history.png)
+![Argo CD History Card](./argo-history.webp)
 
 Both can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards).
 
 The `EntityArgoCDContent` displays similar information to the history card and can be [added as a tab](/docs/getting-started/updating-the-ui#updating-tabs) to component layouts.
 
-![Argo CD Tab](./argo-tab.png)
+![Argo CD Tab](./argo-tab.webp)
 
 ## Step 4: Add annotations
 Add one of the following annotations to the yaml config file of a component

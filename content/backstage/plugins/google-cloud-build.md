@@ -11,9 +11,9 @@ seo:
   description: |
     Build, test, and deploy on Google serverless CI/CD platform.
 
-logoImage: '../../assets/logos/google-cloud-build/logo-cloud.png'
+logoImage: '../../assets/logos/google-cloud-build/logo-cloud.webp'
 
-coverImage: '../../assets/google-cloud-build-plugin.png'
+coverImage: '../../assets/google-cloud-build-plugin.webp'
 coverImageAlt: 'A screenshot of the Google Cloud Build plugin.'
 
 gettingStarted:

@@ -23,7 +23,7 @@ By default, all users will be able to see but not edit Tech Insights content.
 
 If you want to hide Tech Insights for non-admin users such as when initially setting it up, you can check 'Admins only' checkbox under Administration → Settings → Plugins → Tech Insights page. This will remove Tech Insights from the sidebar for anyone who is not part of `roadie-backstage-admin` or `roadie-tech-insights-admin` groups.
 
-![Admin Only View](./admin-only-settings.png)
+![Admin Only View](./admin-only-settings.webp)
 
 
 ## Write Access

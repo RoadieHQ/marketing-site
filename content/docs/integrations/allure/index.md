@@ -4,7 +4,7 @@ publishedDate: '2022-04-04T14:00:00.0Z'
 description: How to configure the Allure plugin on Roadie.
 
 humanName: Allure
-logoImage: '../../../assets/logos/allure/allure-logo.png'
+logoImage: '../../../assets/logos/allure/allure-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 The Allure plugin can display the Allure reports of the component in your Roadie Backstage catalog.
 
-![Example image showing Allure test report](./allure-report-img.png)
+![Example image showing Allure test report](./allure-report-img.webp)
 
 This page explains how to configure it in Roadie Backstage.
 
@@ -26,7 +26,7 @@ This page explains how to configure it in Roadie Backstage.
 
 Navigate to `Administration > Settings > Allure` and set up the URL where your Allure reports are hosted. Note that this URL needs to be accessible from Roadie backend.
 
-![An input box indicating Allure baseurl value](./config-img.png)
+![An input box indicating Allure baseurl value](./config-img.webp)
 
 ## Step 2: Modify your catalog-info.yaml files to contain a reference to the Allure project 
 

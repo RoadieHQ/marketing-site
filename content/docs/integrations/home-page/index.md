@@ -4,7 +4,7 @@ publishedDate: '2022-03-01T10:00:00.0Z'
 description: How to enable the home page plugin
 
 humanName: Home Page
-logoImage: '../../../assets/logos/home-page/home.png'
+logoImage: '../../../assets/logos/home-page/home.webp'
 integrationType: OSS plugin
 ---
 
@@ -20,7 +20,7 @@ Backstage UI.
 
 This page will describe how to configure the home page plugin and customize the dashboard.
 
-![home-page.png](home-page.png)
+![home-page.webp](home-page.webp)
 
 ## Usage
 
@@ -30,7 +30,7 @@ To enable the home page go to `Administration -> Settings -> Home Page`.
 
 Ensure `enable` is checked then click `Save` and `Save and Restart`
 
-![home-page-settings.png](home-page-settings.png)
+![home-page-settings.webp](home-page-settings.webp)
 
 ### Customize the UI
 
@@ -40,5 +40,5 @@ Editing the home page is very similar to editing component dashboards. Click the
 components click the "plus" icon or drag cards to reposition them. Read [this guide](/docs/getting-started/updating-the-ui#updating-the-home-page) 
 for more details.
 
-![Edit Home Page Button](./edit-home-page-button.png)
+![Edit Home Page Button](./edit-home-page-button.webp)
 

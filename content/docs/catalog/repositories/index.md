@@ -4,7 +4,7 @@ publishedDate: '2024-03-19T14:49:47.0Z'
 description: How repositories are modelled and ingested into the catalog
 ---
 
-![Repositories Catalog Table](./repositories-catalog.png)
+![Repositories Catalog Table](./repositories-catalog.webp)
 
 Repositories are modelled in the Roadie Backstage catalog using the Repository Kind.
 
@@ -15,7 +15,7 @@ Once your Repositories are added, Admins will be able to see a graph of catalog 
 
 If you are a Tech Insights user, you will also find built-in completeness Scorecards, Checks and a Data Source to use to build your own Checks and Scorecards from the same data.
 
-![Catalog Completeness Page](./catalog-completeness-graph.png)
+![Catalog Completeness Page](./catalog-completeness-graph.webp)
 
 ### Autodiscovery
 They will be automatically ingested for you from any GitHub integrations you have set up in Roadie.

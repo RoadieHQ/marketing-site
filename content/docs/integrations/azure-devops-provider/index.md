@@ -4,7 +4,7 @@ publishedDate: '2022-11-09T16:20:00.0Z'
 description: How to configure Roadie to read entities from Azure DevOps
 
 humanName: Azure DevOps
-logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.png'
+logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
 integrationType: Catalog data source
 ---
 
@@ -28,7 +28,7 @@ In your Azure DevOps navigate to the User Settings > Tokens page in `https://dev
 2. Create an access token with _at least_ repository Read permissions.
 
 
-![Azure DevOps Token Options](./azure-devops-opts.png)
+![Azure DevOps Token Options](./azure-devops-opts.webp)
 
 ##  Step 3: Store Azure access token as a secret in Roadie
 
@@ -39,7 +39,7 @@ The updating of secrets within the Roadie application takes a few minutes. You w
 ##  Step 4: Configure your Roadie instance to use Azure DevOps as a source to retrieve entities
 
 Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/azure`.
-   ![Azure Autodiscovery options](./azure-autodiscovery.png)
+   ![Azure Autodiscovery options](./azure-autodiscovery.webp)
 
 Add a provider configuration pointing to your entities within your Azure DevOps organization and project. The updating of provider configurations within the Roadie application takes a few minutes. When the update cycle is complete, you should be able to find your discovered entities in the catalog and the [locations log](/docs/details/location-management/#managing-locations).
 

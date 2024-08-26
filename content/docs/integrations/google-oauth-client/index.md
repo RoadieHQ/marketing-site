@@ -4,7 +4,7 @@ publishedDate: '2021-10-11T15:15:00.0Z'
 description: How to configure a Google OAuth client for Roadie
 
 humanName: Google OAuth
-logoImage: '../../../assets/logos/google-cloud-build/logo-cloud.png'
+logoImage: '../../../assets/logos/google-cloud-build/logo-cloud.webp'
 integrationType: Integration
 ---
 
@@ -24,7 +24,7 @@ This page describes how to set up the client, along with setting the required va
 
 2. Select the `APIs & Services` -> `Credentials`. Now click on the `Create Credentials` button, followed by `OAuth client ID`
 
-![OAuth client ID](./client-id.png)
+![OAuth client ID](./client-id.webp)
 
 3. From the dropdown menu select `Web application`, then name it something like 'Roadie OAuth client'.
 
@@ -32,11 +32,11 @@ This page describes how to set up the client, along with setting the required va
 
 5. Click on the `Add URI` button under the `Authorized redirect URIs` and enter the name of your roadie backstage instance followed by the following path: `/api/auth/google/handler/frame` (eg. https://<yourcompany>.roadie.so/api/auth/google/handler/frame)
 
-![urls](./urls.png)
+![urls](./urls.webp)
 
 6. Save + store client secret and ID for later
 
-![Secrets](./secrets.png)
+![Secrets](./secrets.webp)
 
 ### Step 2: Adding secrets to backstage
 

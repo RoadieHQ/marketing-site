@@ -97,11 +97,11 @@ Installing the GitHub App will allow Roadie to access the YAML metadata files th
 
 1. Click the Administration link in the bottom left of the application.
 
-![A link that says "Administration"](./administration-link.png)
+![A link that says "Administration"](./administration-link.webp)
 
 2. From **Settings** > **Integrations** > **GitHub**, press `INSTALL THE APP`.
 
-![A button that says "Add GitHub App"](./add-github-app.png)
+![A button that says "Add GitHub App"](./add-github-app.webp)
 
 4. Choose your GitHub organization and follow the steps to install the app.
 
@@ -115,7 +115,7 @@ Copy the URL of the catalog file you created by visiting the file in your browse
 
 Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
 
-![Import](import.png)
+![Import](import.webp)
 
 Now you can click on the entity link to visit the entity that you have just created.
 

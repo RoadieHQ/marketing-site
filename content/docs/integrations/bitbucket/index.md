@@ -4,7 +4,7 @@ publishedDate: '2022-03-28T14:00:00.0Z'
 description: How to give Roadie the access it needs to your Bitbucket repositories.
 
 humanName: Bitbucket
-logoImage: '../../../assets/logos/bitbucket/bitbucket.png'
+logoImage: '../../../assets/logos/bitbucket/bitbucket.webp'
 integrationType: Catalog data source
 ---
 
@@ -20,15 +20,15 @@ Roadie supports Bitbucket configuration on both Bitbucket Cloud and self-hosted 
 
 1. Click the Administration link in the bottom left of the application.
 
-![A link that says "Administration"](./administration-link.png)
+![A link that says "Administration"](./administration-link.webp)
 
 2. Click the Settings tab along the top of the Administration page.
 
-![A link that says "Settings"](./settings-link.png)
+![A link that says "Settings"](./settings-link.webp)
 
 3. Click on Integrations in the left sidebar.
 
-![A link that says "Integrations"](./integrations-link.png)
+![A link that says "Integrations"](./integrations-link.webp)
 
 4. Open the Bitbucket section of the accordion
 
@@ -38,7 +38,7 @@ You will see a warning that a bit bucket configuration is not available.
 
 Press on the save button to enable the bitbucket cloud configuration.
 
-![initial bitbucket page](./bitbucket-config-page.png)
+![initial bitbucket page](./bitbucket-config-page.webp)
 
 ⚠️ &nbsp;You may need to wait up to 2 minutes for the Bitbucket integration to become active.
 
@@ -55,7 +55,7 @@ Press on the save button to enable the bitbucket cloud configuration.
 ## Bitbucket Server configuration
 
 1. Untick the 'Use Bitbucket Cloud' check box
-   ![](./bitbucket-server-config.png)
+   ![](./bitbucket-server-config.webp)
 
 2. Fill in your host
 3. Add your api url
@@ -79,4 +79,4 @@ Due to the strictrate limits on the bitbucket API it currently runs every 30 min
 
 You can read more about the configuration options in the [backstage docs](https://backstage.io/docs/integrations/bitbucketServer/discovery/#configuration)
 
-![A form](./bitbucket-server-autodiscovery.png)
+![A form](./bitbucket-server-autodiscovery.webp)

@@ -13,8 +13,8 @@ seo:
   description: |
     View Hashicorp Vault secrets directly in Backstage.
 
-logoImage: '../../assets/logos/hashicorp-vault/vault.png'
-coverImage: '../../assets/backstage/plugins/hashicorp-vault/hashicorp-vault-secrets.png'
+logoImage: '../../assets/logos/hashicorp-vault/vault.webp'
+coverImage: '../../assets/backstage/plugins/hashicorp-vault/hashicorp-vault-secrets.webp'
 coverImageAlt: 'Hashicorp Vault in Backstage'
 
 gettingStarted:

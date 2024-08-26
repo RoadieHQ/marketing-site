@@ -28,7 +28,7 @@ Let’s get started.
 
 1. A Proxy connection to your code coverage tool of choice must be configured prior to creating the data source to obtain results. In this tutorial, we will be using Codecov.
 
-   ![proxy configuration for code coverage results](./Prereq_Code_Coverage_Proxy.png)
+   ![proxy configuration for code coverage results](./Prereq_Code_Coverage_Proxy.webp)
 
 
 ## Record the Codecov Reposotory Coverage
@@ -39,11 +39,11 @@ So that we can track our catalog entity code coverage, we must obtain informatio
 
 1. Visit Tech Insights, select the **Data Sources** tab, and press **ADD DATA SOURCE**.
 
-   ![a button on a web interface](./Add_Data_Source.png)
+   ![a button on a web interface](./Add_Data_Source.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
-   ![About section input fields](./Data_About_Section.png)
+   ![About section input fields](./Data_About_Section.webp)
 
 3. Set the Data Provider to:
     | Field Name | Value |
@@ -55,11 +55,11 @@ So that we can track our catalog entity code coverage, we must obtain informatio
 
     Select a value for **Select Entity to test data source against** and press **TEST**.
 
-    ![Data Provider section input fields](./Data_Provider_Section.png)
+    ![Data Provider section input fields](./Data_Provider_Section.webp)
 
 4. Test results are displayed.
 
-    ![Data Provider test results displayed](./Data_Test_Results_Section.png)
+    ![Data Provider test results displayed](./Data_Test_Results_Section.webp)
 
 5. Create multiple Facts:
     1. Set **Extractor** to `JSON with JSONata syntax`.
@@ -82,15 +82,15 @@ So that we can track our catalog entity code coverage, we must obtain informatio
         | JSONata query | `$.activated` |
         | Type | Boolean |
 
-    ![Data Facts section input fields](./Data_Facts_Section.png)
+    ![Data Facts section input fields](./Data_Facts_Section.webp)
 
 6. Press **CHECK FACTS**.
 
-    ![Data Facts results displayed](./Data_Facts_Results_Section.png)
+    ![Data Facts results displayed](./Data_Facts_Results_Section.webp)
 
 7. Use the **Applies to** filter to target this data source at some components which you expect to have Node.js. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.  
 
-    ![About Data Source section displayed](./Refined_Applies_To_Section.png)
+    ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
 
 8. Press **SAVE**.
 
@@ -102,11 +102,11 @@ We have a data source providing Active and Activated, let's create a check to re
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.png)
+    ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
-   ![About section input fields](./Defined_Check_About_Section.png)
+   ![About section input fields](./Defined_Check_About_Section.webp)
 
 3. Create a check:
     1. Set the first condition to:
@@ -122,17 +122,17 @@ We have a data source providing Active and Activated, let's create a check to re
         | Fact | Activated |
         | Fact operator | Is True |
 
-    ![Check Condition section fields](./Defined_Check_Conditions_Section.png)
+    ![Check Condition section fields](./Defined_Check_Conditions_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to resolve the Codecov configuration.
 
-    ![Check Fix section displayed](./Check_Fix_Section.png)
+    ![Check Fix section displayed](./Check_Fix_Section.webp)
 
 6. Use the **Applies to** filter to target this data source at some components which you expect to have Code Coverage configured. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
 
-    ![About Data Source section displayed](./Refined_Applies_To_Section.png)
+    ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
 
 7. Press **SAVE**.
 
@@ -140,7 +140,7 @@ We have a data source providing Active and Activated, let's create a check to re
 
 The results of this check tell us who we need to reach out to ensure Codecov is configured.
 
-![Check Results displayed](./Defined_Check_Results_Section.png)
+![Check Results displayed](./Defined_Check_Results_Section.webp)
 
 - The `csharp-console-teleprompter` service fails the checks.
 
@@ -155,11 +155,11 @@ We have a data source telling us what the coverage is, let's create a check to e
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.png)
+    ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
-   ![About section input fields](./Coverage_Check_About_Section.png)
+   ![About section input fields](./Coverage_Check_About_Section.webp)
 
 3. Create a check:
     1. Set the first condition to:
@@ -170,17 +170,17 @@ We have a data source telling us what the coverage is, let's create a check to e
         | Fact operator | Greater than inclusive |
         | Value | 80 |
 
-    ![Check Condition section fields](./Coverage_Check_Conditions_Section.png)
+    ![Check Condition section fields](./Coverage_Check_Conditions_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to resolve the Codecov configuration.
 
-    ![Check Fix section displayed](./Check_Fix_Section.png)
+    ![Check Fix section displayed](./Check_Fix_Section.webp)
 
 6. Use the **Applies to** filter to target this data source at some components which you expect to have Code Coverage configured. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
 
-    ![About Data Source section displayed](./Refined_Applies_To_Section.png)
+    ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
 
 7. Press **SAVE**.
 
@@ -188,7 +188,7 @@ We have a data source telling us what the coverage is, let's create a check to e
 
 The results of this check tell us who we need to reach out to ensure Codecov is configured.
 
-![Check Results displayed](./Coverage_Check_Results_Section.png)
+![Check Results displayed](./Coverage_Check_Results_Section.webp)
 
 - The `csharp-console-teleprompter` service fails the checks.
 

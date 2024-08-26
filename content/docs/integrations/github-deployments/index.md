@@ -4,13 +4,13 @@ publishedDate: '2022-03-29T14:00:00.0Z'
 description: How to use the Github Deployments plugin
 
 humanName: Github Deployments
-logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.png'
+logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 integrationType: OSS plugin
 ---
 
 The Github Deployments plugin will display a table of deployments for this repo made through Github Actions. 
 
-![github-deployments-screenshot](./screenshot.png)
+![github-deployments-screenshot](./screenshot.webp)
 Credit: [Andrew Johnson](https://github.com/anderoo)
 
 

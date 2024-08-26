@@ -67,13 +67,13 @@ Click on your profile in the top right of the application, click My Account. The
 5. Next select an entity that you know has been configured with the Sonarcloud annotation so that we can test the data extraction in the next step.
 6. Click view. You should see the HTTP response from SonarCloud with counts of issues like you see below:
 
-![Edit Data Source](edit-datasource.png)
+![Edit Data Source](edit-datasource.webp)
 
 7. Next you can select the fields to extract from the API.
 In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, `$count($.issues[status != "CLOSED"])` as the JSONata query, and select "Integer" type. Add a second fact by clicking "Add Fact", enter "debtTotal", `$.debtTotal` and select "Integer" again.
 
 8. Test the Data Source fact extraction by clicking "Check Facts". You should see something like the following.
-![Field Extraction](field-extraction.png)
+![Field Extraction](field-extraction.webp)
 
 9. In the Applies to selection, set the "Has Annotation" field to "sonarqube.org/project-key"
 10. Click Save.
@@ -88,13 +88,13 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 5. Next select an entity that you know has been configured with the SonarCloud annotation so that we can test the data extraction in the next step.
 6. Click view. You should see the HTTP response from SonarCloud with counts of issues like you see below:
 
-![Edit Hotspots Data Source](edit-hotspots-datasource.png)
+![Edit Hotspots Data Source](edit-hotspots-datasource.webp)
 
 7. Next you can select the fields to extract from the API.
 In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, "$.paging.total" as the JSONata query, and select "Integer" type.
 
 8. Test the Data Source fact extraction by clicking "Check Facts". You should see something like the following.
-![Hotspot Field Extraction](hotspot-field-extraction.png)
+![Hotspot Field Extraction](hotspot-field-extraction.webp)
 
 9. In the Applies to selection, set the "Has Annotation" field to "sonarqube.org/project-key"
 10. Click Save.
@@ -119,7 +119,7 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 2. Enter the name "Has Sonarcloud Annotation"
 3. Select the "Entity Metadata" Data Source and the "Annotation Keys" fact
 4. Use the contains operator and "sonarqube.org/project-key" as the value.
-![Annotation Check](annotation-check.png)
+![Annotation Check](annotation-check.webp)
 5. Select the list of "Applies to" filter to match the list of entities you want to comply with your Sonarcloud checks.
 6. Click Save and then "Reload Check Data"
 
@@ -128,7 +128,7 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 1. In Tech Insights click Scorecards and "Add Scorecard"
 2. Name the scorecard "Sonarcloud Compliance"
 3. Add all of the checks we created earlier
-![Add checks to scorecard](add-checks-to-scorecard.png)
+![Add checks to scorecard](add-checks-to-scorecard.webp)
 4. In the "Applies to" filter, select the items that you want to comply to this Scorecard
 5. Select an owner and optionally an Executive sponsor
 6. Click Save.
@@ -141,4 +141,4 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 3. Click "Add to entity page"
 4. Navigate to the entity we configured with the SonarCloud annotation earlier.
 5. You should see a card like the following
-![Entity Scorecard](entity-scorecard.png)
+![Entity Scorecard](entity-scorecard.webp)

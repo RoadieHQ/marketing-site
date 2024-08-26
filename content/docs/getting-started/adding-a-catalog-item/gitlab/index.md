@@ -98,7 +98,7 @@ In your GitLab instance navigate to your User Settings > Access Tokens page. In 
 1. Click 'Add new token'
 2. Create an access token with _at least_ permissions `api`, `read_repository`, `write_repository`.
 
-![GitLab](./gitlab-token-opts.png)
+![GitLab](./gitlab-token-opts.webp)
 
 ### Store GitLab token as a secret in Roadie
 
@@ -114,7 +114,7 @@ Copy the URL of the catalog file you created by visiting the file in your browse
 
 Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
 
-![import.png](import.png)
+![import.webp](import.webp)
 
 Now you can click on the entity link to visit the entity that you have just created.
 

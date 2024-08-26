@@ -4,7 +4,7 @@ publishedDate: '2022-03-29T21:00:00.0Z'
 description: How to configure Roadie to read AWS resources
 
 humanName: AWS Resources
-logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.png'
+logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: Catalog data source
 ---
 
@@ -91,7 +91,7 @@ The values `123456789012` and `demo-role-abcdABCD` can be replaced with the valu
 
 ### Option 1 - Standalone AWS account configuration
 
-![AWS Resources config](aws-resources-config.png)
+![AWS Resources config](aws-resources-config.webp)
 
 On the AWS Resources settings page `Administration > Settings > AWS Resources` in Roadie click `Add Item`. 
 Here you can define the role (created in step 2 above) to be used to ingest these resources, as well as the AWS region to use and the optional External ID configured for the role.
@@ -102,7 +102,7 @@ You can add multiple integrations towards multiple AWS accounts or regions.
 
 ### Option 2 - AWS Organizations based autodiscovery
 
-![aws-autodiscovery-config.png](aws-autodiscovery-config.png)
+![aws-autodiscovery-config.webp](aws-autodiscovery-config.webp)
 
 On the AWS Resources settings page `Administration > Settings > AWS Resources` fill out the AWS Resource Autodiscovery Settings.
 

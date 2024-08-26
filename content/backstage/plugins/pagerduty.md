@@ -12,8 +12,8 @@ seo:
   description: |
     See who is on call, view active incidents and create incidents all from within Backstage.
 
-logoImage: '../../assets/logos/pagerduty/pagerduty-logo-light-200x200.png'
-coverImage: '../../assets/pagerduty-plugin-2077x955.png'
+logoImage: '../../assets/logos/pagerduty/pagerduty-logo-light-200x200.webp'
+coverImage: '../../assets/pagerduty-plugin-2077x955.webp'
 coverImageAlt: 'PagerDuty incidents for sample-service-1 rendered in Backstage.'
 
 availableOnRoadie: true
@@ -87,7 +87,7 @@ annotations:
 
 The integration key can be retrieved from the Integrations tab of the service in the PagerDuty service directory.
 
-![PagerDuty service integrations tab](./pagerduty-service-integration-key.png)
+![PagerDuty service integrations tab](./pagerduty-service-integration-key.webp)
 
 ## PagerDuty UI placement and rendering
 

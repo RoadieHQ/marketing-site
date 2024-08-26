@@ -34,7 +34,7 @@ To learn more about the AWS concepts used below, you can read the following AWS 
 
 4. Click on ”Another AWS Account” and add the Roadie account ID and then click on ”Next: permissions”.
 
-![Another AWS Account](./role-creation.png)
+![Another AWS Account](./role-creation.webp)
 
 5. Click the checkbox beside "Require External ID" and enter some unique value (e.g. a uuid). Make a note of this value as you'll need it later.
 
@@ -57,7 +57,7 @@ This is a role that will be assumed by Roadie to access AWS resources in this ac
 
 10. It should look like this
 
-![role-confirmation](./role-confirmation.png)
+![role-confirmation](./role-confirmation.webp)
 
 11. Click ”Create role”. Your cross federation role is now created.
 
@@ -69,7 +69,7 @@ This is a role that will be assumed by Roadie to access AWS resources in this ac
 
 You should see a page like this
 
-![role-page](./role-page.png)
+![role-page](./role-page.webp)
 
 3. Click on ”Trust Relationships”, then ”Edit relationship” and add the text below filling in the values:
 

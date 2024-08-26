@@ -4,7 +4,7 @@ publishedDate: '2023-01-20T11:00:00.0Z'
 description: How to configure Splunk On-Call plugin on Roadie
 
 humanName: Splunk On-Call
-logoImage: '../../../assets/logos/splunk/splunk-dark.png'
+logoImage: '../../../assets/logos/splunk/splunk-dark.webp'
 integrationType: OSS plugin
 ---
 
@@ -24,7 +24,7 @@ In order to create a key, create an integration in your Splunk On-Call account b
 
 Visit `https://<tenant-name>.roadie.so/administration/splunk` and enter the copied values into  `SPLUNK_ON_CALL_API_ID` & `SPLUNK_ON_CALL_API_KEY` secrets.
 
-![Set Splunk On-Call secrets via UI](./secret.png)
+![Set Splunk On-Call secrets via UI](./secret.webp)
 
 ### Step 3: Configure Roadie with your Splunk On-Call account details
 
@@ -36,7 +36,7 @@ To enable the REST Endpoint integration you can go on https://portal.victorops.c
 Visit `https://<tenant-name>.roadie.so/administration/settings/splunk-on-cal` and enter the REST endpoint for the configuration.
 In case you don't want to enable incident management via the Roadie application, you can check the "Read Only" checkbox to configure the plugin to only show incidents. 
 
-![Set Splunk On-Call Config](./config.png)
+![Set Splunk On-Call Config](./config.webp)
 
 ### Step 4: Add the Splunk On-Call UI elements
 

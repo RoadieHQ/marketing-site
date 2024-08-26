@@ -11,7 +11,7 @@ seo:
   description: |
     Google's Lighthouse tool is a great resource for benchmarking and improving the accessibility, performance, SEO, and best practices of your website.
 
-logoImage: '../../assets/logos/lighthouse/logo-lh.png'
+logoImage: '../../assets/logos/lighthouse/logo-lh.webp'
 coverImage: '../../assets/lighthouse-plugin.jpg'
 coverImageAlt: 'A screenshot of the Lighthouse plugin.'
 

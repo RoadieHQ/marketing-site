@@ -3,7 +3,7 @@ title: Travis CI
 publishedDate: '2021-11-01T11:00:00.0Z'
 description: How to create Travis CI API Token for Travis CI plugin.
 humanName: Travis CI
-logoImage: '../../../assets/logos/travis-ci/travis-ci-mascot-200x200.png'
+logoImage: '../../../assets/logos/travis-ci/travis-ci-mascot-200x200.webp'
 integrationType: OSS plugin
 ---
 
@@ -27,7 +27,7 @@ Start by visiting the account settings page in [Travis](https://www.travis-ci.co
 
 Click on the "Copy token" button under the API settings section.
 
-   ![Travis CI TOKEN](./copy-token.png)
+   ![Travis CI TOKEN](./copy-token.webp)
 
 
 ### Step 2: Store the token in Roadie
@@ -54,11 +54,11 @@ Navigate to the catalog entity you want to add the travis card to.
 
 Click on the edit gear on the top right of the page
 
-![Travis add card](./travis-adding-card.png)
+![Travis add card](./travis-adding-card.webp)
 
 You should now see something like this:
 
-![Travis card](./travis-card.png)
+![Travis card](./travis-card.webp)
 
 
 ### Step 4: Adding travis tab
@@ -67,11 +67,11 @@ Navigate to the catalog entity you want to add the travis tab to.
 
 Click on the `+` icon on the tabs bar (top right of the page)
 
-![Travis add tab](./travis-adding-tab.png)
+![Travis add tab](./travis-adding-tab.webp)
 
 You should now see something like this:
 
-![Travis tab](./travis-tab.png)
+![Travis tab](./travis-tab.webp)
 
 
 

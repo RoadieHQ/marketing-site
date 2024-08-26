@@ -22,33 +22,33 @@ Roadie supports autodiscovery for integrations configured in the application. Th
 
 GitHub integration for Roadie provides two autodiscovery targets, entities and teams/groups. 
 
-![GitHub Autodiscovery of Catalog Files](./gh_autodiscovery.png)
+![GitHub Autodiscovery of Catalog Files](./gh_autodiscovery.webp)
 
 The GitHub *autodiscovery* integration can be configured to automatically discover catalog entities from a provided configured path pointing to GitHub. 
 
 More information about possible patterns and examples of URLs can be found from the [Backstage GitHub Discovery documentation.](https://backstage.io/docs/integrations/github/discovery#configuration)
 
-![GitHub organization autodiscovery](gh_org_ingestion.png)
+![GitHub organization autodiscovery](gh_org_ingestion.webp)
 
 The GitHub *organization* integration provides the possibility to automatically import GitHub users and teams/groups from an organization. You can configure this discovery type by providing the name of the GitHub organization. Note that the GitHub app needs to be installed for that organization and needs to have permissions to access user info.
 
 ### AWS S3 Autodiscovery
 
 
-![AWS S3 autodiscovery target](./s3_entry.png)
+![AWS S3 autodiscovery target](./s3_entry.webp)
 
 AWS S3 autodiscovery can be configured to download catalog files from an S3 bucket. For this to be functionality the [integration configuration for AWS S3](/docs/integrations/aws-s3) must be done. S3 autodiscovery does not support wildcard path, it must point to a specific prefix of an S3 bucket.
 
 ### Azure DevOps
 
 
-![Azure DevOps autodiscovery target](./azure-autodiscovery.png)
+![Azure DevOps autodiscovery target](./azure-autodiscovery.webp)
 
 Azure DevOps autodiscovery can be configured to download catalog files from Azure DevOps SCM. For this to be functionality the [integration configuration for Azure Devops](/docs/integrations/azure-devops-provider) must be done. 
 
 ### Bitbucket Autodiscovery
 
-![Bitbucket autodiscovery configuration](bitbucket_entry.png)
+![Bitbucket autodiscovery configuration](bitbucket_entry.webp)
 
 Bitbucket autodiscovery works similarly to GitHub discovery. It can be configured to use glob patterns to find individual files with a specific file name pattern. To get a working autodiscovery with Bitbucket, a configuration of Bitbucket Integration must be defined. Documentation on how to set up the integration can be found from [here](https://backstage.io/docs/integrations/bitbucket/discovery).
 
@@ -140,7 +140,7 @@ The format is slightly different for Bitbucket server. The url is composed of fo
 
 A list of all configured locations is located in URL `https://<your-tenant>.roadie.so/administration/locations/management`. 
 
-![Location management table](./location_mgmt.png)
+![Location management table](./location_mgmt.webp)
 
 The list contains an entry for all locations added as an autodiscovery configuration within each integration, as well as locations imported using the Catalog Import functionality within  `https://<your-tenant>.roadie.so/import/entity`. 
 

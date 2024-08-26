@@ -20,25 +20,25 @@ To navigate to this page, follow these steps:
 
 1. Click the Administration link in the bottom left of the application.
 
-![A link that says "Administration"](./administration-link.png)
+![A link that says "Administration"](./administration-link.webp)
 
 2. Click the Settings tab along the top of the Administration page.
 
-![A link that says "Settings"](./settings-link.png)
+![A link that says "Settings"](./settings-link.webp)
 
 3. Click on Secrets in the left sidebar.
 
-![A link that says "Secrets"](./secrets-link.png)
+![A link that says "Secrets"](./secrets-link.webp)
 
 
 ## Step 2: Edit the secret you need
 
 1. Find the secret name in the table. For example: `PAGERDUTY_TOKEN`.
 
-![A table row with the name PAGERDUTY_TOKEN, an edit icon as a button and a short description of what the token does](./pagerduty-secret.png)
+![A table row with the name PAGERDUTY_TOKEN, an edit icon as a button and a short description of what the token does](./pagerduty-secret.webp)
 
 2.. Click the pencil icon to open a dialog where you can set a token.
 
-![A modal dialog with an input where we can input a secret and a save button](./set-token-dialog.png)
+![A modal dialog with an input where we can input a secret and a save button](./set-token-dialog.webp)
 
 3. Paste your token into the input and click SAVE. The specific details of where to get the token will depend on the plugin you are configuring.

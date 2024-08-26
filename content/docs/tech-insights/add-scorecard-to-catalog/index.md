@@ -6,15 +6,15 @@ description: Adding a scorecard to catalog page.
 
 In order to show a Scorecard in the Catalog Entity page, as shown below, you’ll have to define it from the Tech Insights → Scorecards page.
 
-![Scorecard Catalog](./scorecard-catalog.png)
+![Scorecard Catalog](./scorecard-catalog.webp)
 
 Once you’re in Tech Insights → Scorecards, find a Scorecard you wish to add. From kebab menu select ‘Add to Catalog’
 
-![Add Scorecard to catalog](./add-to-catalog-scorecard.png)
+![Add Scorecard to catalog](./add-to-catalog-scorecard.webp)
 
 Then select option which best applies to your use case.
 
-![Add Scorecard](./add-scorecard-to-catalog.png)
+![Add Scorecard](./add-scorecard-to-catalog.webp)
 
 Scorecard should now be visible under the layout page you have selected.
 

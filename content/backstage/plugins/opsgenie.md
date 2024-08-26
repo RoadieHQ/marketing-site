@@ -11,8 +11,8 @@ seo:
   description: |
     Keep track of all your OpsGenie alerts and incidents right from Backstage.
 
-logoImage: '../../assets/logos/opsgenie/logo-opsgenie.png'
-coverImage: '../../assets/backstage/plugins/opsgenie/opsgenie-plugin.png'
+logoImage: '../../assets/logos/opsgenie/logo-opsgenie.webp'
+coverImage: '../../assets/backstage/plugins/opsgenie/opsgenie-plugin.webp'
 coverImageAlt: 'A screenshot of the OpsGenie plugin.'
 
 availableOnRoadie: true
@@ -79,7 +79,7 @@ An OpsGenie API key with full access rights is required for the plugin to connec
 
 An API key can be created within the Settings area of your OpsGenie account:
 
-![Create an OpsGenie API key](../../assets/backstage/plugins/opsgenie/opsgenie-create-api-key.png)
+![Create an OpsGenie API key](../../assets/backstage/plugins/opsgenie/opsgenie-create-api-key.webp)
 
 Save your API key to the `OPSGENIE_API_KEY` environment available to make it available to the plugin.
 
@@ -133,10 +133,10 @@ The `EntityOpsgenieAlertsCard` component can be added to `EntityPage.tsx` to dis
 
 3. Log into [app.opsgenie.com](https://app.opsgenie.com) and create an alert on the Alerts tab.
 
-    ![Create an OpsGenie alert](../../assets/backstage/plugins/opsgenie/opsgenie-create-alert.png)
+    ![Create an OpsGenie alert](../../assets/backstage/plugins/opsgenie/opsgenie-create-alert.webp)
 
     Make sure the alert's tag matches the tag in the annotation added in step 2.
 
 4. View the component in Backstage to see the list of alerts:
 
-    ![View component alerts on the overview page](../../assets/backstage/plugins/opsgenie/opsgenie-plugin-alerts-on-entity-page.png)
+    ![View component alerts on the overview page](../../assets/backstage/plugins/opsgenie/opsgenie-plugin-alerts-on-entity-page.webp)

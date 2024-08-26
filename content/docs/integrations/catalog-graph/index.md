@@ -12,19 +12,19 @@ integrationType: OSS plugin
 
 With this plugin, you can visualize the [relations between entities](https://roadie.io/blog/modeling-software-backstage/), like ownership, grouping or API relationships.
 
-![catalog_graph_card.png](./catalog_graph_card.png)
+![catalog_graph_card.webp](./catalog_graph_card.webp)
 
 ## Add a Catalog Graph card to a dashboard
 
 Click the cog icon on the top right of a component Dashboard (or the default Overview) page. Then click the plus icon to add a new card.
 
-![edit_layout.png](./edit_layout.png)
+![edit_layout.webp](./edit_layout.webp)
 
-![add_card.png](./add_card.png)
+![add_card.webp](./add_card.webp)
 
 Select the EntityCatalogGraph card from the drop down and click Add. Press save to submit.
 
-![select_catalog_graph.png](./select_catalog_graph.png)
+![select_catalog_graph.webp](./select_catalog_graph.webp)
 
 ## Add an Overview page
 
@@ -87,7 +87,7 @@ You can click on any of the entities in the graph to go to the page for that ent
 You can also click the View graph link at the bottom of the card to view a full page graph and see the component in the
 context of the whole system.
 
-![view_full_graph.png](./view_full_graph.png)
+![view_full_graph.webp](./view_full_graph.webp)
 
 
 ## Adding relationships between components
@@ -102,9 +102,9 @@ In order to customize the breadth and depth of the graph on your dashboards you 
 of the page and then the spanner icon in the top right of the card.
 
 
-![edit_layout.png](./edit_layout.png)
+![edit_layout.webp](./edit_layout.webp)
 
-![edit_card_props.png](./edit_card_props.png)
+![edit_card_props.webp](./edit_card_props.webp)
 
 
 

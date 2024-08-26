@@ -21,7 +21,7 @@ spec:
 ...
 ```
 
-![certified-template](./certified.png)
+![certified-template](./certified.webp)
 
 ## Usage
 

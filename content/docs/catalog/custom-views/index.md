@@ -8,11 +8,11 @@ Admins can easily customise the tabs in the Catalog page to better fit your orga
 
 In Roadie, navigate to the Administration Settings page and in the Roadie Settings section select `Catalog`. 
 
-![Catalog settings section](./settings-section.png)
+![Catalog settings section](./settings-section.webp)
 
 Here you can add new custom tabs that use filters to make a specific collection of catalog entities easy to access.
 
-![Editor layout](./editor.png)
+![Editor layout](./editor.webp)
 
 An example might be surfacing databases as a new tab, so you could create a new tab with the following filter assuming you have already added a database type to the correct entities:
 e.g.

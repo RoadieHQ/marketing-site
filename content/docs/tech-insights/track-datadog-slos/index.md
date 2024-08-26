@@ -54,17 +54,17 @@ These are the steps to set that up.
 
 1. Visit Tech Insights and click into the Data Sources tab. Search for the Datadog Data Source from the Data Sources list and select it.
 
-   ![Data Source Listing](./datasources_list.png)
+   ![Data Source Listing](./datasources_list.webp)
 
 2. You may need to wait some time for the data source to collect all SLOs and Monitors from Datadog. It must contact the Datadog APIs for each component, which is captured by the already set filter. These counts are then stored as facts for each component.
 
-   ![Data Source Results](./datasource_results.png)
+   ![Data Source Results](./datasource_results.webp)
 
 ## 3 - Visualize the distribution of SLOs count
 
 Our Data Source details panel comes with a built-in visualization panel that lets us get an overview of the facts (in this case SLOs count) present in each configured and annotated component. When viewing a Data Source, expand the “Facts visualization” section to see it.
 
-![Data Source Visualization](./datasource_graph.png)
+![Data Source Visualization](./datasource_graph.webp)
 
 This chart tells you:
 
@@ -80,11 +80,11 @@ Now that we can determine how many SLOs are correctly configured in Datadog and 
 
 1. Visit Tech Insights and click into the Checks tab. Click the ADD CHECK button to create a new check.
 
-   ![Checks Listing](./checks_overview.png)
+   ![Checks Listing](./checks_overview.webp)
 
 2. Give the check a sensible name, like “Apps must have at least one Datadog SLO”, and a description like “Having Datadog SLOs configured for each component is important to measure the reliability and performance of services on a global scale.”
 
-   ![Create a Check](./create_check.png)
+   ![Create a Check](./create_check.webp)
 
 3. In the Conditions section, we’re going to create a condition that compares against the Datadog Source facts (in this case SLOs count) retrieved from the data source.
 4. In the first set of condition inputs, use the following values.
@@ -100,7 +100,7 @@ Now that we can determine how many SLOs are correctly configured in Datadog and 
 
 5. Use the filters to target this check at the same set of components as the Data Sources target.
 
-   ![Check Filter](./check_filter.png)
+   ![Check Filter](./check_filter.webp)
 
    To filter every software that has Datadog SLO tags configured, you can use the filter "Has annotations: `datadoghq.com/slo_tag`".
 
@@ -110,7 +110,7 @@ Now that we can determine how many SLOs are correctly configured in Datadog and 
 
 The results of this check tell us what software still doesn't have any SLOs configured and whom to reach out to fix it.
 
-![Check Results](./check-results.png)
+![Check Results](./check-results.webp)
 
 - The sample-api and sample-service pass the check; they have at least one SLO configured.
 - The sample-backend fails the check as it has no SLO configured.

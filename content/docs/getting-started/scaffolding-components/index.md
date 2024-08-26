@@ -79,10 +79,10 @@ spec:
 
 Click the "Import" button in the Backstage menu.
 
-![import-side-menu.png](./import-side-menu.png)
+![import-side-menu.webp](./import-side-menu.webp)
 
 Enter the URL of the template that you created in Step Two.
-![create-existing-component.png](./create-existing-component.png)
+![create-existing-component.webp](./create-existing-component.webp)
 
 Click Analyze, and Import.
 
@@ -90,19 +90,19 @@ Click Analyze, and Import.
 
 Visit the Scaffolder templates page by clicking the "Templates" menu item.
 
-![templates-side-menu.png](./templates-side-menu.png)
+![templates-side-menu.webp](./templates-side-menu.webp)
 
 You should see the template that you have just imported. Click the choose button.
 
-![choose-template.png](./choose-template.png)
+![choose-template.webp](./choose-template.webp)
 
 Enter the required parameters and click "Next Step" and then "Create"
 
-![enter-paramaters.png](./enter-paramaters.png)
+![enter-paramaters.webp](./enter-paramaters.webp)
 
 After a couple of seconds you should see the "Task Activity" page with the output of the task.
 
-![task-activity.png](./task-activity.png)
+![task-activity.webp](./task-activity.webp)
 
 ## Next steps 
 

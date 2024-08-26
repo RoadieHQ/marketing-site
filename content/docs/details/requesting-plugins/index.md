@@ -20,7 +20,7 @@ If you're using a tool which doesn't seem to have a community created plugin ava
 
 To add your support to the request, or to request a new plugin from the community, visit the GitHub issues on the Backstage repo and [filter by the Plugins label][filtered-issues].
 
-![a list of GitHub issues where users are requesting plugins for tools they use](./github-issues-list.png)
+![a list of GitHub issues where users are requesting plugins for tools they use](./github-issues-list.webp)
 
 Remember, Growth Plan customers can [write their own plugins][custom-plugins] and publish them to Roadie.
 

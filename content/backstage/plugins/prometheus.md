@@ -12,8 +12,8 @@ seo:
   description: |
     Visualize key metrics and alerts of your infrastructure.
 
-logoImage: '../../assets/prometheus/prom_logo.png'
-coverImage: '../../assets/prometheus/prom_entity_content.png'
+logoImage: '../../assets/prometheus/prom_logo.webp'
+coverImage: '../../assets/prometheus/prom_entity_content.webp'
 coverImageAlt: 'Prometheus alerts and graphs rendered in Backstage.'
 
 availableOnRoadie: true
@@ -123,15 +123,15 @@ Example annotation:
 Produces the following graphs:
 1. `memUsage|component`
    (grouping by component, otherwise `__name__` would be the first item on this saved rule. Showed here as an area graph)
-   ![Area Graph widget](../../assets/prometheus/prom_areagraph_widget.png)
+   ![Area Graph widget](../../assets/prometheus/prom_areagraph_widget.webp)
 
 2. `node_memory_active_bytes|instance`
    (grouping by `instance`, image shows extra data on hover over a line.)
-   ![Line graph with hover](../../assets/prometheus/prom_graph_hover.png)
+   ![Line graph with hover](../../assets/prometheus/prom_graph_hover.webp)
 
 3. `sum by (instance) (node_cpu_seconds_total)`
    (`instance` is the grouper label defined in the query --> it is returned on the result set as the first label name, and is therefore used to group data with.)
-   ![Line Graph constructed by query](../../assets/prometheus/prom_graph_query.png)
+   ![Line Graph constructed by query](../../assets/prometheus/prom_graph_query.webp)
 
 ### Alerts
 
@@ -143,7 +143,7 @@ Example annotation:
 ```prometheus.io/alert: 'Excessive Memory Usage'```
 
 Produces the following table.
-![Alert table](../../assets/prometheus/prom_alert.png)
+![Alert table](../../assets/prometheus/prom_alert.webp)
 
 
 ## Custom Graphs and Tables
