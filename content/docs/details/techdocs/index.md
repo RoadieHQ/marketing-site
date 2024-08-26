@@ -128,12 +128,15 @@ NB: This plugin currently requires each page to have an H1 header - [see current
 
 ### Using Mermaid Diagrams
 
-Roadie supports using Mermaid JS to render diagrams. It must first be enabled in your `mkdocs.yaml`:
+Roadie supports two ways of displaying Mermaid diagrams via tech docs. The first way is to use Mermaid JS on build time via an extension which must first be enabled in your `mkdocs.yaml`:
 
 ```yaml
 markdown_extensions:
   - markdown_inline_mermaid
 ```
+
+The second way is to render mermaid diagrams on runtime by using a TechDocs addon. This does not need modifications to the `mkdocs.yaml` by default, but the build time extension _should not_ be present for the runtime rendering to take place.
+
 
 Then you can add mermaid diagrams as follows:
 ````
