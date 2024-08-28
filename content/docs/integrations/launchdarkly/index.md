@@ -4,7 +4,7 @@ publishedDate: '2024-08-28T21:00:00.0Z'
 description: How to configure LaunchDarkly plugin on Roadie.
 
 humanName: LaunchDarkly
-logoImage: '../../../assets/logos/jenkins/logo-lauchdarky.webp'
+logoImage: '../../../assets/logos/lauchdarky/logo-lauchdarky.webp'
 integrationType: OSS plugin
 ---
 
