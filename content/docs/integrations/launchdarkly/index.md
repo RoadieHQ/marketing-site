@@ -23,7 +23,7 @@ This page explains how to configure it in Roadie Backstage.
 
 ## Prerequisites
 
-1. You must be an admin in Roadie. By default, the first Roadie user is an admin. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
+1. You must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
 2. You must have the correct permissions assigned in LaunchDarkly to be able to create a read only API token
 
 ## Step 1: Create a LaunchDarkly API token
