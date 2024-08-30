@@ -1,3 +1,5 @@
+import { PAGE_PATHS } from '../../src/contactFormConstants';
+
 describe('The free trial page', () => {
   beforeEach(() => {
     // We have to stub beause netlify forms don't work in this environment.
@@ -7,7 +9,7 @@ describe('The free trial page', () => {
   });
 
   it('has a flow for getting a free trial', () => {
-    cy.visit('/free-trial/');
+    cy.visit(PAGE_PATHS.freeTrial);
 
     cy.get('#get-instance-email-input').type('test@example.com');
     cy.get('#scm').select('GitHub On-prem');
@@ -21,7 +23,7 @@ describe('The free trial page', () => {
   // time to figure out why. This code path will be removed soon anyway because
   // we do support GitLab now.
   it.skip('has a flow for users who use GitLab', () => {
-    cy.visit('/free-trial/');
+    cy.visit(PAGE_PATHS.freeTrial);
 
     cy.get('#get-instance-email-input').type('test@example.com');
     cy.get('#scm').select('GitLab Cloud');
@@ -31,7 +33,7 @@ describe('The free trial page', () => {
   });
 
   it('warns gmail users', () => {
-    cy.visit('/free-trial/');
+    cy.visit(PAGE_PATHS.freeTrial);
 
     cy.get('#get-instance-email-input').type('test@gmail.com', { delay: 200 })
     cy.contains('Please use your work email');

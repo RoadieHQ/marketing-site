@@ -1,3 +1,5 @@
+import { PAGE_PATHS } from '../../src/contactFormConstants';
+
 // These tests do not need to be run frequently. When run on localhost, all they really
 // do is check the existance of the 'honeybot-field'. That doesn't add much value.
 //
@@ -31,7 +33,7 @@ describe.skip('The honeypot field', () => {
 
     cy.visit('');
     cy.contains('Try it free').click();
-    cy.url().should('contain', '/free-trial/');
+    cy.url().should('contain', PAGE_PATHS.freeTrial);
 
     cy.get('#get-instance-email-input').type('test@example.com');
     cy.get('#honeybot-field').type('Something here', { force: true });
