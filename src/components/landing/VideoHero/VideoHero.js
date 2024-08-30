@@ -64,7 +64,7 @@ const VideoHero = () => {
                   <div className="mt-3 sm:mt-0 sm:ml-3">
                     <Button
                       link={true}
-                      to="/request-demo/"
+                      to={PAGE_PATHS.requestDemo}
                       color="secondary"
                       text="Request a demo"
                       size="large"

@@ -4,7 +4,7 @@ import { Link } from 'components';
 
 const PragmaticEngineerNewsletter = () => (
   <Link
-    to="/request-demo/"
+    to={PAGE_PATHS.requestDemo}
     className="text-white underline-none hover:underline"
   >
     <img

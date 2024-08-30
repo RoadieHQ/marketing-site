@@ -153,7 +153,7 @@ const Home = ({ data }) => {
           link={true}
           color="primary"
           size="medium"
-          to="/request-demo/"
+          to={PAGE_PATHS.requestDemo}
           className="font-bold tracking-wide mt-6"
           text="Request a Demo"
         />

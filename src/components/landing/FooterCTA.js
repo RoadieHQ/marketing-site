@@ -23,7 +23,7 @@ const FooterCTA = () => (
         <div className="ml-3 inline-flex">
           <Button
             link={true}
-            to="/request-demo/"
+            to={PAGE_PATHS.requestDemo}
             color="inset"
             text="Request a demo"
           />
