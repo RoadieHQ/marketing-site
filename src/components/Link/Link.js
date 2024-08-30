@@ -2,6 +2,7 @@ import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { OutboundLink } from "gatsby-plugin-google-gtag";
+import kebabCase from 'lodash/kebabCase';
 
 import { PAGE_PATHS } from '../../contactFormConstants';
 
@@ -77,7 +78,9 @@ const Link = ({
     // We want to track which pages people are coming from when they submit the form to
     // request a demo or a free trial.
     if (internalTo.includes(PAGE_PATHS.freeTrial) || internalTo.includes(PAGE_PATHS.requestDemo)) {
-      internalTo = appendSearchParam(internalTo, { referringPathname: location.pathname });
+      internalTo = appendSearchParam(internalTo, {
+        referringPathname: kebabCase(location.pathname),
+      });
     }
 
     return (
