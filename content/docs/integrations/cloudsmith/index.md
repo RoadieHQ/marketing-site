@@ -32,7 +32,7 @@ Roadie requires an API key to be able to connect to Cloudsmith.
 
 You can learn how to generate an API key for your user by visiting https://help.cloudsmith.io/docs/api-key
 
-## Step 2: Configure Roadie with your LaunchDarkly API token
+## Step 2: Configure Roadie with your Cloudsmith API key
 
 Visit the secrets page in Roadie at `/administration/secrets` and enter the API key you generated for Cloudsmith in the secret called `CLOUDSMITH_API_KEY` 
 
