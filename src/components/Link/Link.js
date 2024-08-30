@@ -29,6 +29,11 @@ const appendSearchParam = (ctaTo, searchParams) => {
   return `${ctaTo}?${stringSearchParams}`;
 };
 
+const kebabCasePathname = (pathname) => {
+  // if we don't do this then we end up with an empty string being set as the referring pathname
+  const modifiedPathname = pathname === '/' ? 'homepage' : pathname;
+  return kebabCase(modifiedPathname);
+};
 
 /*
  * Most of the logic in this file has one aim: ensure that internal links always end with a
@@ -79,7 +84,7 @@ const Link = ({
     // request a demo or a free trial.
     if (internalTo.includes(PAGE_PATHS.freeTrial) || internalTo.includes(PAGE_PATHS.requestDemo)) {
       internalTo = appendSearchParam(internalTo, {
-        referringPathname: kebabCase(location.pathname),
+        referringPathname: kebabCasePathname(location.pathname),
       });
     }
 

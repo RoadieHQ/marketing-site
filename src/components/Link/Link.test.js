@@ -1,79 +1,100 @@
-import { expect } from 'chai';
+/**
+ * @jest-environment jsdom
+ */
+
+import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { createMemorySource, createHistory, LocationProvider } from '@reach/router';
 
 import Link from './Link';
 
-Enzyme.configure({ adapter: new Adapter() });
+describe('Link', () => {
+  const route = '/';
+  const source = createMemorySource(route);
+  const history = createHistory(source);
 
-describe('Link', function () {
-  beforeEach(function () {
-    global.window = {
-      location: {
-        origin: 'http://example.com',
-      },
-    };
-  });
-
-  it('should return a ForwardRef for links starting with a slash', function () {
-    const wrapper = shallow(
-      <Link to="/">Hello</Link>
+  test('Link should return a link for links starting with a slash', async () => {
+    render(
+      <LocationProvider history={history}>
+        <Link to="/">Hello</Link>
+      </LocationProvider>
     );
-    expect(wrapper.name()).to.equal('ForwardRef');
+    await screen.findByRole('link');
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('href', '/');
   });
 
-  it('should return a ForwardRef for links starting with a hash', function () {
-    const wrapper = shallow(
-      <Link to="#other-element">Hello</Link>
-    );
-    expect(wrapper.name()).to.equal('ForwardRef');
-  });
-
-  it('should return a ForwardRef for external links', function () {
-    const wrapper = shallow(
-      <Link to="http://example.com">Hello</Link>
-    );
-    expect(wrapper.name()).to.equal('ForwardRef');
-  });
-
-  it('should attach target=_blank to external links', function () {
-    const wrapper = shallow(
-      <Link to="http://example.com">Hello</Link>
+  test('Link should return a link for links starting with a hash', async () => {
+    render(
+      <LocationProvider history={history}>
+        <Link to="#other-element">Hello</Link>
+      </LocationProvider>
     );
 
-    expect(wrapper.props().target).to.equal('_blank');
+    await screen.findByRole('link');
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('href', '/#other-element');
   });
 
-  it('should attach privacy rel to external links', function () {
-    const wrapper = shallow(
-      <Link to="http://example.com">Hello</Link>
+  test('Link should return a link for external links', async () => {
+    render(
+      <LocationProvider history={history}>
+        <Link to="https://example.com">Hello</Link>
+      </LocationProvider>
     );
 
-    expect(wrapper.props().rel).to.equal('noopener noreferrer');
+    await screen.findByRole('link');
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('href', 'https://example.com');
   });
 
-  it('should force internal links to end with a slash', function () {
-    const wrapper = shallow(
-      <Link to="/blog/post">Hello</Link>
+  test('Link should add target=_blank to external links', async () => {
+    render(
+      <LocationProvider history={history}>
+        <Link to="https://example.com">Hello</Link>
+      </LocationProvider>
     );
 
-    expect(wrapper.props().to).to.equal('/blog/post/');
+    await screen.findByRole('link');
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('target', '_blank');
   });
 
-  it('should force internal links with a hash to end with a slash', function () {
-    const wrapper = shallow(
-      <Link to="/blog/post#content-id">Hello</Link>
+  test('Link should add privacy rel to external links', async () => {
+    render(
+      <LocationProvider history={history}>
+        <Link to="https://example.com">Hello</Link>
+      </LocationProvider>
     );
 
-    expect(wrapper.props().to).to.equal('/blog/post/#content-id');
+    await screen.findByRole('link');
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
-  it('should leave internal links with hash only alone', function () {
-    const wrapper = shallow(
-      <Link to="#content-id">Hello</Link>
+  test('Link should force internal links to end with a slash', async () => {
+    render(
+      <LocationProvider history={history}>
+        <Link to="/blog/post">Hello</Link>
+      </LocationProvider>
     );
 
-    expect(wrapper.props().to).to.equal('#content-id');
+    await screen.findByRole('link');
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('href', '/blog/post/');
   });
+
+  test('Link should force internal links with a hash to end with a slash', async () => {
+    render(
+      <LocationProvider history={history}>
+        <Link to="/blog/post#content-id">Hello</Link>
+      </LocationProvider>
+    );
+
+    await screen.findByRole('link');
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('href', '/blog/post/#content-id');
+  });
+
 });
