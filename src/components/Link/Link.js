@@ -3,6 +3,8 @@ import { Link as GatsbyLink } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 
+import { PAGE_PATHS } from '../../contactFormConstants';
+
 const isRelativeTo = (to) => to.startsWith('/') || to.startsWith('#');
 
 const forceTrailingSlashOntoTo = (to) => {
@@ -72,9 +74,9 @@ const Link = ({
       internalTo = forceTrailingSlashOntoTo(internalTo);
     }
 
-    // We want to track which pages people are coming from when they submit the demo to
-    // request a demo. 
-    if (internalTo === '/request-demo/') {
+    // We want to track which pages people are coming from when they submit the form to
+    // request a demo or a free trial.
+    if (internalTo.includes(PAGE_PATHS.freeTrial) || internalTo.includes(PAGE_PATHS.requestDemo)) {
       internalTo = appendSearchParam(internalTo, { referringPathname: location.pathname });
     }
 

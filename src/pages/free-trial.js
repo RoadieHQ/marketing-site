@@ -91,6 +91,7 @@ const RequestTrial = ({ data, location }) => {
                 setEmailValues={setEmailValues}
                 scmTool={scmTool}
                 setScmTool={setScmTool}
+                location={location}
               />
             </div>
             <div className="mt-5 p-5 lg:pl-10 lg:mt-16">

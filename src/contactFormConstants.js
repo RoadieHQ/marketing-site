@@ -11,6 +11,11 @@ export const FORM_NAMES = {
   tryRoadieHomepage: 'submit-try-roadie-homepage'
 };
 
+export const PAGE_PATHS = {
+  freeTrial: '/free-trial/',
+  requestDemo: '/request-demo/',
+};
+
 export const HONEYPOT_FIELD_NAME = 'honeybot-field';
 
 export const SCM_TOOLS = [{

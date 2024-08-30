@@ -10,6 +10,7 @@ import FormImg from '../../../content/assets/product-pages/scaffolder-form.svg';
 import TogetherImg from '../../../content/assets/product-pages/scaffolder-together.png';
 import ContentfulLogoImg from '../../../content/assets/product-pages/scaffolder-contentful-logo.png';
 import TemplateCodeImg from '../../../content/assets/product-pages/scaffolder-template-code.svg';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 
@@ -95,7 +96,7 @@ const Home = ({ data }) => {
             link={true}
             color="primary"
             size="medium"
-            to="/free-trial/"
+            to={PAGE_PATHS.freeTrial}
             className="font-bold tracking-wide mt-6"
             text="Try Roadie's Scaffolder"
           />

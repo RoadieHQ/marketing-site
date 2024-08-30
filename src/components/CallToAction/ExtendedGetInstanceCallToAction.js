@@ -26,6 +26,7 @@ const submitToNetlifyForms = async ({
   honeypotText,
   recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
+  location,
 }) => {
   const branch = currentlyExecutingGitBranch();
 
@@ -120,6 +121,7 @@ const ExtendedGetInstanceCallToAction = ({
       honeypotText,
       submitButtonLabel: buttonText,
       recaptchaResponse,
+      location,
     });
 
     if (resp.ok) {
