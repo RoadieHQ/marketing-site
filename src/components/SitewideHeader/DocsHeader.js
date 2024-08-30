@@ -5,6 +5,7 @@ import { AlgoliaAutocomplete } from 'components/AlgoliaAutocomplete';
 import { Button, Link, TabInner } from 'components';
 import { DOCS_LAYOUTS } from 'components/doc';
 
+import { PAGE_PATHS } from '../../contactFormConstants';
 import OpenMenuButton from './OpenMenuButton';
 import DocsDrawerMenu from './DocsDrawerMenu';
 import Logo from '../Logo';

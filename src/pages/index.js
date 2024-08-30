@@ -15,6 +15,7 @@ import classNames from 'classnames';
 import Button from '../components/forms/Button';
 import { PostSummary } from 'components/article';
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
+import { PAGE_PATHS } from '../contactFormConstants';
 
 import {
   FingerPrintIcon,

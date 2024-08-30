@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'components';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 const MobileFreeTrialButton = () => (
   <Button

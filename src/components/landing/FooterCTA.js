@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Headline } from 'components';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 const FooterCTA = () => (
   <div className="bg-white">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, GrayBackgroundDotsPattern, Headline } from 'components';
 import { PlayIcon } from 'components/icons';
+import { PAGE_PATHS } from '../../../contactFormConstants';
 
 import IntroToRoadieModal from './IntroToRoadieModal';
 import backstageScreenshot from '../../../../content/assets/backstage-screenshot-512x438.webp';
