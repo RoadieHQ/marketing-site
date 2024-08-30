@@ -2,6 +2,7 @@ import React from 'react';
 import Modal, { modalStyles } from 'components/Modal';
 import { Button, Link, Title } from 'components';
 import useMedia from 'react-use/lib/useMedia';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 import CatalogScreenshot from '../../../content/assets/home/illustrations/home-product-screenshot.svg';
 import theme from '../../theme';
@@ -53,7 +54,7 @@ const ExitIntentModal = ({
                 color="primary"
                 size="large"
                 fullWidth={true}
-                to={`/request-demo/?utm_source=roadie-marketplace&utm_campaign=exit-intent-modal`}
+                to={`${PAGE_PATHS.requestDemo}?utm_source=roadie-marketplace&utm_campaign=exit-intent-modal`}
                 text={'Learn how we can help'}
               />
             </div>

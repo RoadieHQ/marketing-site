@@ -66,7 +66,7 @@ const RequestTrial = ({ data, location }) => {
       />
 
       <div className="min-h-screen bg-white">
-        <SitewideHeader ctaText="Request a Demo" ctaTo="/request-demo/" />
+        <SitewideHeader ctaText="Request a Demo" />
 
         <section className="relative max-w-xl mx-auto p-4 mt-5 pt-10 sm:px-10 lg:max-w-7xl">
           <Headline size="medium" className="leading-snug text-orange-600 relative z-10">

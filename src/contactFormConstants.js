@@ -11,6 +11,9 @@ export const FORM_NAMES = {
   tryRoadieHomepage: 'submit-try-roadie-homepage'
 };
 
+// One place this constant cannot be used is in the /content directory. If changing something
+// here, make sure to grep the content directory for hardcoded paths.
+// Another place to check is the netlify.toml
 export const PAGE_PATHS = {
   freeTrial: '/free-trial/',
   requestDemo: '/request-demo/',
