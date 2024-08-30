@@ -14,7 +14,7 @@ const FooterCTA = () => (
         <div className="inline-flex">
           <Button
             link={true}
-            to="/free-trial/"
+            to={PAGE_PATHS.freeTrial}
             color="primary"
             text="Try it free"
           />

@@ -22,7 +22,7 @@ const SideBySideHero = () => {
           link={true}
           color="secondary"
           size="medium"
-          to="/free-trial/"
+          to={PAGE_PATHS.freeTrial}
           className="font-bold tracking-wide mt-6"
           text="Try Roadie Backstage"
         />

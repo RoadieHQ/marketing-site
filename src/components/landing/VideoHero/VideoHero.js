@@ -53,7 +53,7 @@ const VideoHero = () => {
                   <div>
                     <Button
                       link={true}
-                      to="/free-trial/"
+                      to={PAGE_PATHS.freeTrial}
                       color="primary"
                       text="Try it free"
                       size="large"

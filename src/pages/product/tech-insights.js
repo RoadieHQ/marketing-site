@@ -223,7 +223,7 @@ const Home = ({ data }) => {
             link={true}
             color="primary"
             size="medium"
-            to="/free-trial/"
+            to={PAGE_PATHS.freeTrial}
             className="font-bold bg-orange-600 tracking-wide mt-6"
             text="Try Roadie's Scorecards"
           />
