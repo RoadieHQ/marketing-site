@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
+import { useLocation } from '@reach/router';
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 const isRelativeTo = (to) => to.startsWith('/') || to.startsWith('#');
@@ -14,6 +15,17 @@ const forceTrailingSlashOntoTo = (to) => {
   }
   return internalUrl.toString().replace(window.location.origin, '');
 };
+
+const appendSearchParam = (ctaTo, searchParams) => {
+  const stringSearchParams = new URLSearchParams(searchParams).toString();
+
+  if (ctaTo.includes('?')) {
+    return `${ctaTo}&${stringSearchParams}`;
+  }
+
+  return `${ctaTo}?${stringSearchParams}`;
+};
+
 
 /*
  * Most of the logic in this file has one aim: ensure that internal links always end with a
@@ -48,6 +60,8 @@ const Link = ({
   forceOpenInSameTab = false,
   ...rest
 }) => {
+  const location = useLocation();
+
   if (isRelativeTo(to)) {
     let internalTo = to;
 
@@ -56,6 +70,12 @@ const Link = ({
     // to the homepage.
     if (internalTo.startsWith('/')) {
       internalTo = forceTrailingSlashOntoTo(internalTo);
+    }
+
+    // We want to track which pages people are coming from when they submit the demo to
+    // request a demo. 
+    if (internalTo === '/request-demo/') {
+      internalTo = appendSearchParam(internalTo, { referringPathname: location.pathname });
     }
 
     return (

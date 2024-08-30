@@ -100,45 +100,55 @@ const SitewideHeader = ({
   borderBottom = true,
   ctaTo = '/request-demo/',
   ctaText = 'Get a Demo',
-}) => (
-  <>
-    <Popover as={React.Fragment}>
-      <>
-        <TopBanner>
-          <WhitepaperVs />
-        </TopBanner>
-        <header
-          className={classnames(
-            ` max-w-${maxWidth} mx-auto px-2 py-6 sm:px-6 xl:py-8 flex justify-between items-center  md:justify-start md:space-x-10`,
-            {
-              'border-b-2 border-gray-100': borderBottom,
-            }
-          )}
-        >
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Logo />
-          </div>
+}) => {
+  const trackedCtaTo = ctaTo;
 
-          <div className="-mr-2 -my-2 md:hidden">
-            <OpenMenuButton />
-          </div>
+  return (
+    <>
+      <Popover as={React.Fragment}>
+        <>
+          <TopBanner>
+            <WhitepaperVs />
+          </TopBanner>
+          <header
+            className={classnames(
+              ` max-w-${maxWidth} mx-auto px-2 py-6 sm:px-6 xl:py-8 flex justify-between items-center  md:justify-start md:space-x-10`,
+              {
+                'border-b-2 border-gray-100': borderBottom,
+              }
+            )}
+          >
+            <div className="flex justify-start lg:w-0 lg:flex-1">
+              <Logo />
+            </div>
 
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
-            <TopNavDropdownItem text="Product" subItems={features} />
-            <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
-            <TopNavItem to="/pricing/" text="Pricing" />
-            <TopNavDropdownItem text="Resources" subItems={learn} />
-          </Popover.Group>
+            <div className="-mr-2 -my-2 md:hidden">
+              <OpenMenuButton />
+            </div>
 
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Button link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
-          </div>
-        </header>
+            <Popover.Group as="nav" className="hidden md:flex space-x-10">
+              <TopNavDropdownItem text="Product" subItems={features} />
+              <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
+              <TopNavItem to="/pricing/" text="Pricing" />
+              <TopNavDropdownItem text="Resources" subItems={learn} />
+            </Popover.Group>
 
-        <DrawerMenu />
-      </>
-    </Popover>
-  </>
-);
+            <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+              <Button
+                link={true}
+                color="primary"
+                size="small"
+                to={trackedCtaTo.toString()}
+                text={ctaText}
+              />
+            </div>
+          </header>
+
+          <DrawerMenu />
+        </>
+      </Popover>
+    </>
+  );
+};
 
 export default SitewideHeader;
