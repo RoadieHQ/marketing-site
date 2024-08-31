@@ -454,7 +454,7 @@ The `publish:bitbucket` action produces the following outputs.
 
 This action manually registers a component with the catalog.
 
-You may want to do this if you haven't [configured autodiscovery](../location-management) of components or if you're using a filename which doesn't match your autodiscovery pattern.
+You may want to do this if you haven't [enabled autodiscovery](/docs/getting-started/autodiscovery/) of components or if you're using a filename which doesn't match your autodiscovery pattern.
 
 It has two sets of options. The first allows you to configure the location as a complete url through `catalogInfoUrl`.
 

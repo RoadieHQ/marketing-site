@@ -27,4 +27,4 @@ Remember, Growth Plan customers can [write their own plugins][custom-plugins] an
 [roadie-integrations]: /docs/integrations/
 [official-list]: https://backstage.io/plugins
 [filtered-issues]: https://github.com/backstage/backstage/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin
-[custom-plugins]: /docs/custom-plugins/
+[custom-plugins]: /docs/custom-plugins/overview/

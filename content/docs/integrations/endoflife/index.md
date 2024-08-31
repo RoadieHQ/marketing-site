@@ -37,5 +37,5 @@ metadata:
 For more information on the options available such as custom sources please read the [plugin documentation](https://github.com/dweber019/backstage-plugins/tree/main/plugins/endoflife#annotations)
 
 ## References
-* [endoflife.date](endoflife.date)
+* [endoflife.date](https://endoflife.date/)
 * [Plugin documentation](https://github.com/dweber019/backstage-plugins/tree/main/plugins/endoflife)

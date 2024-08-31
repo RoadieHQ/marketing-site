@@ -6,10 +6,10 @@ description: Built-in Data Sources.
 
 Roadie includes several (built-in) Data Sources for common vendors such as Datadog, Snyk, PagerDuty, and GitHub.
 
-All built-in Data Sources have pre-defined Facts you can use for defining your [Checks](../checks/). You can view the
+All built-in Data Sources have pre-defined Facts you can use for defining your [Checks](/docs/tech-insights/checks/). You can view the
 Facts on the detail page for the individual Data Source or when adding a Check.
 
-You can also [create your own custom Data Sources]('../define-custom-data-sources/') if the built-in ones do not provide
+You can also [create your own custom Data Sources](/docs/tech-insights/define-custom-data-sources/) if the built-in ones do not provide
 the Facts you need.
 
 ### Configuring Built-in Data Sources
@@ -21,12 +21,12 @@ in [the Plugins & Integrations page](/docs/integrations/).
 We have built several Data Sources, which you can find explained below, together with annotations used by them and facts
 they currently include. You can get a list of the facts available on each data source within the app as well. You can
 learn how to access this information within the app on
-the [Data Source results and details page](../data-source-details/).
+the [Data Source results and details page](/docs/tech-insights/data-source-details/).
 
 This list will probably have better accuracy, since we update facts frequently.
 
 As mentioned above, if you don't find what you are looking for and/or want to create something we haven't provided out of the
-box, Roadie Tech Insights lets you [define custom Data Sources](../define-custom-data-sources/).
+box, Roadie Tech Insights lets you [define custom Data Sources](/docs/tech-insights/define-custom-data-sources/).
 
 ### Datadog Data Source
 
@@ -62,8 +62,8 @@ Generates fact data from GitHub Dependabot Alerts for the entity.
 
 #### Authentication
 
-Authentication is done via [GitHub App](../../details/github-app-permissions/) or
-`GITHUB TOKEN` [Read more](../../integrations/github-token/).
+Authentication is done via [GitHub App](/docs/getting-started/adding-a-catalog-item/) or
+`GITHUB TOKEN` [Read more](/docs/integrations/github-token/).
 
 If you have GitHub App installed, access will be granted based on permissions granted for it. In case you haven't
 installed the GitHub app, we will check for `GITHUB TOKEN` which is used to authenticate with the GitHub APIs.
@@ -158,10 +158,10 @@ Generates fact data about GitHub for the entity
 
 #### Authentication
 
-If you have GitHub App installed, access will be granted based
-on [permissions granted for it](../../details/github-app-permissions/). In case you haven't installed the GitHub app, we
-will check for `GITHUB TOKEN` which is used to authenticate with the GitHub
-APIs [read more](../../integrations/github-token/).
+if you have github app installed, access will be granted based
+on [permissions granted for it](/docs/details/github-app-permissions/). in case you haven't installed the github app, we
+will check for `github token` which is used to authenticate with the github
+apis [read more](/docs/integrations/github-token/).
 
 <details>
 <summary><b> Facts </b> </summary>
@@ -195,10 +195,10 @@ Generates fact data about GitHub for the entity
 
 #### Authentication
 
-If you have GitHub App installed, access will be granted based
-on [permissions granted for it](../../details/github-app-permissions/). In case you haven't installed the GitHub app, we
-will check for `GITHUB TOKEN` which is used to authenticate with the GitHub
-APIs [read more](../../integrations/github-token/).
+if you have github app installed, access will be granted based
+on [permissions granted for it](/docs/details/github-app-permissions/). in case you haven't installed the github app, we
+will check for `github token` which is used to authenticate with the github
+apis [read more](/docs/integrations/github-token/).
 
 <details>
 <summary><b> Facts </b> </summary>
@@ -234,7 +234,7 @@ to identify applicable entities.
 
 Authentication is done via
 
-* `PAGERDUTY_TOKEN` [Read more](../../integrations/pagerduty/)
+* `PAGERDUTY_TOKEN` [Read more](/docs/integrations/pagerduty/)
 
 <details>
 <summary> <b>Facts</b> </summary>
@@ -269,7 +269,7 @@ Retrieves service information from PagerDuty. Uses annotation "pagerduty.com/ser
 
 Authentication is done via
 
-* `PAGERDUTY_TOKEN` [Read more](../../integrations/pagerduty/)
+* `PAGERDUTY_TOKEN` [Read more](/docs/integrations/pagerduty/)
 
 <details>
 <summary> <b>Facts</b> </summary>
@@ -311,7 +311,7 @@ concepts [here](https://docs.snyk.io/snyk-admin/introduction-to-snyk-projects).
 
 Authentication is done via
 
-* `SNYK_TOKEN` [Read more](../../integrations/snyk/)
+* `SNYK_TOKEN` [Read more](/docs/integrations/snyk/)
 
 <details>
 <summary> <b>Facts</b> </summary>

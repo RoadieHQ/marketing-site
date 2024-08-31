@@ -4,7 +4,7 @@ publishedDate: '2024-02-28'
 description: How to develop and register custom Scaffolder Field Extensions 
 ---
 
-You can extend and customize the available Scaffolder functionality by using [Roadie Custom Plugins](/docs/custom-plugins/overview). You can use the same workflow and development experience to build your own Custom Scaffolder Field Extensions as any other plugin, using the Roadie CLI. To see more information on how to develop custom plugins navigate to the Custom Plugins Documentation.
+You can extend and customize the available Scaffolder functionality by using [Roadie Custom Plugins](/docs/custom-plugins/overview/). You can use the same workflow and development experience to build your own Custom Scaffolder Field Extensions as any other plugin, using the Roadie CLI. To see more information on how to develop custom plugins navigate to the Custom Plugins Documentation.
 
 To see more information on how to develop custom plugins. It is recommended to navigate to the [Custom Plugins Documentation](/docs/custom-plugins/getting-started/). 
 

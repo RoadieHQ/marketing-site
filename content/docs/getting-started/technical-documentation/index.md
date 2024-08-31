@@ -140,4 +140,4 @@ Similarly, MkDocs will determine a title for your document according to [these r
 
 To learn more about TechDocs on Roadie, please visit our [in-depth TechDocs documentation](/docs/details/techdocs/).
 
-If you use OpenAPI specs in your organization you can [learn how to associate them with your components](/docs/getting-started/openapi-specs).
+If you use OpenAPI specs in your organization you can [learn how to associate them with your components](/docs/details/openapi-specs/).

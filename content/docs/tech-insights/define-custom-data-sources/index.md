@@ -310,7 +310,7 @@ Below are few useful recipes that can be helpful when creating custom data sourc
 
 ### Proxy usage and the Broker
 
-All Roadie HTTP Tech Insights data source are using Roadie Proxy to connect to third party services. You can configure different proxies [using these instructions](/docs/custom-plugins/connectivity/proxy/). Additionally, if you want to connect to services or endpoints within your own infrastructure, you can also use the Broker connectivity to reach your secure services. To do this, you need to first [set up the broker connection](docs/integrations/broker/).
+All Roadie HTTP Tech Insights data source are using Roadie Proxy to connect to third party services. You can configure different proxies [using these instructions](/docs/custom-plugins/connectivity/proxy/). Additionally, if you want to connect to services or endpoints within your own infrastructure, you can also use the Broker connectivity to reach your secure services. To do this, you need to first [set up the broker connection](/docs/integrations/broker/).
 
 Since the endpoints tech insights potentially connects to via the broker are unknown to Roadie beforehand, the user needs to construct their own `accept.json` Broker configuration file to connect to internal endpoints. An example configuration file connecting to a self-hosted metrics server mocked out below.
 

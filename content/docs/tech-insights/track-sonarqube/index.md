@@ -6,7 +6,7 @@ description: How to track and visualize a SonarQube metrics with Roadie
 
 One of the most advantageous steps a platform team can take to support application developers (app devs) is to offer them a reliable and secure platform for enhancing code quality. This is often achieved by incorporating SonarCloud into the development process, enabling teams to identify and rectify code-related issues effectively.
 
-The [Sonarcloud tutorial](/docs/tech-insights/track-sonarcloud) explains how to configure Roadie to use the publicly accessible API of Sonarcloud. This tutorial instead assumes that you are self-hosting SonarQube and the API is within a private network. In this tutorial we will be using the Roadie broker service to make the connection between SonarQube and Roadie.
+The [Sonarcloud tutorial](/docs/tech-insights/track-sonarcloud/) explains how to configure Roadie to use the publicly accessible API of Sonarcloud. This tutorial instead assumes that you are self-hosting SonarQube and the API is within a private network. In this tutorial we will be using the Roadie broker service to make the connection between SonarQube and Roadie.
 
 By tracking issues and hotspots reported by SonarQube across your organization allows you to highlight and to proactively address potential pitfalls, enhance code integrity, and bolster application security. This practice not only fosters a culture of continuous improvement but also ensures that software projects evolve with a heightened focus on robustness and reliability.
 
