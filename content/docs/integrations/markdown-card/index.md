@@ -10,7 +10,7 @@ integrationType: OSS plugin
 
 ## Introduction
 
-Roadie provides two different versions of Markdown Card plugins that can be used to display content on either the [Home page](/docs/integrations/home-age) or [Catalog dashboard pages](/docs/details/updating-the-ui/#updating-dashboards). 
+Roadie provides two different versions of Markdown Card plugins that can be used to display content on either the [Home page](/docs/integrations/home-page/) or [Catalog dashboard pages](/docs/details/updating-the-ui/#updating-dashboards). 
 
 
 #### OAuth Home Page Markdown Card

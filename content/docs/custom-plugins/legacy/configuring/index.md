@@ -6,7 +6,7 @@ description: How to configure a custom Backstage plugin to Roadie
 
 ---
 
-⚠️ We are soon deprecating legacy custom plugins pipeline. Take a look [at the documentation for current custom plugin method](/docs/custom-plugins/) instead
+⚠️ We are soon deprecating legacy custom plugins pipeline. Take a look [at the documentation for current custom plugin method](/docs/custom-plugins/overview/) instead
 
 ---
 

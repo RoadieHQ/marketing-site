@@ -39,7 +39,7 @@ const navigation = {
 
   social: [{
     name: 'Twitter',
-    href: 'https://twitter.com/roadiehq',
+    href: 'https://x.com/roadiehq',
     icon: TwitterIcon,
   }, {
     name: 'GitHub',

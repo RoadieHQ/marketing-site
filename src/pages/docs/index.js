@@ -79,7 +79,7 @@ const Doc = ({
             </div>
 
             <div>
-              <TextLink to="/docs/custom-plugins/" color="primary">
+              <TextLink to="/docs/custom-plugins/overview/" color="primary">
                 Learn more...
               </TextLink>
             </div>

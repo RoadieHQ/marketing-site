@@ -62,7 +62,7 @@ export const ExampleFetchComponent = () => {
 };
 ```
 
-Within this simple component we are using the built-in `useApi` hook to identify two different APIs to use within our plugin, namely `discoveryApi` and `errorApi`. DiscoveryApi gives us the ability to discover needed Roadie endpoints, the job of the errorApi is to display errors. Take a closer looks at what APIs are available and their usage examples in the [available APIs page](/docs/custom-plugins/available-apis).
+Within this simple component we are using the built-in `useApi` hook to identify two different APIs to use within our plugin, namely `discoveryApi` and `errorApi`. DiscoveryApi gives us the ability to discover needed Roadie endpoints, the job of the errorApi is to display errors. Take a closer looks at what APIs are available and their usage examples in the [available APIs page](/docs/custom-plugins/available-apis/).
 
 In this case the important bits from the above code snippet can be found from within the `useAsync` hook. We are using the `discoveryApi` to identify a Roadie endpoint called `proxy`, and we are enhancing that proxyUrl with a suffix `broker` as well as the broker token we defined as an environment variable when we started our Broker client. 
 
