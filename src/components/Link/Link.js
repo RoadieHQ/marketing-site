@@ -22,15 +22,20 @@ const forceTrailingSlashOntoTo = (to) => {
 const appendSearchParam = (ctaTo, searchParams) => {
   const stringSearchParams = new URLSearchParams(searchParams).toString();
 
+  const [preHash, postHash] = ctaTo.split('#');
+  const postHashWithHash = postHash ? `#${postHash}` : '';
+
   if (ctaTo.includes('?')) {
-    return `${ctaTo}&${stringSearchParams}`;
+    return `${preHash}&${stringSearchParams}${postHashWithHash}`;
   }
 
-  return `${ctaTo}?${stringSearchParams}`;
+  return `${preHash}?${stringSearchParams}${postHashWithHash}`;
 };
 
 const kebabCasePathname = (pathname) => {
   // if we don't do this then we end up with an empty string being set as the referring pathname
+  // when the user navigates from the homepage to the demo page. This will be confusing for
+  // anyone who is later looking at the analytics.
   const modifiedPathname = pathname === '/' ? 'homepage' : pathname;
   return kebabCase(modifiedPathname);
 };
