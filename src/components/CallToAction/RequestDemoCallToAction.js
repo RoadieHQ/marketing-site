@@ -39,6 +39,7 @@ const submitToNetlifyForms = async ({
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  console.log('location.search', location.search);
   formData.append('location-search', location.search);
   if (recaptchaEnabled()) {
     formData.append('g-recaptcha-response', recaptchaResponse);
@@ -48,7 +49,10 @@ const submitToNetlifyForms = async ({
   try {
     resp = await fetch('/', {
       method: 'POST',
-      body: formData,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(formData).toString(),
     });
 
     trackRequestDemo({
@@ -70,7 +74,7 @@ const submitToNetlifyForms = async ({
       });
     }
   } catch (error) {
-    console.error('Submission failed', error, resp);
+    console.error('Submission failed', error, resp, formData);
   }
 
   return resp;
