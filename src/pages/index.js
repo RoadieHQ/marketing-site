@@ -3,12 +3,13 @@ import { graphql } from 'gatsby';
 import { SEO, SitewideFooter, SitewideHeader, Link } from 'components';
 import {
   AlternatingFeatureBlock,
-  SideBySideHero,
   AlternatingFeatureWrapper,
   SimpleCenteredHeading,
   TextBasedFeatureBlock,
   SplitGridLogoCloud,
   TestimonialsCloud,
+  VideoHero,
+  CustomerLogoCloud,
 } from 'components/landing';
 import Title from '../components/Title';
 import classNames from 'classnames';
@@ -249,7 +250,8 @@ const Home = ({ data }) => {
 
       <SitewideHeader borderBottom={false} />
 
-      <SideBySideHero />
+      <VideoHero />
+      <CustomerLogoCloud />
 
       <AlternatingFeatureWrapper id="product">
         <AlternatingFeatureBlock featureItem={PRODUCT.features[0]} illustrationSide="left" />
