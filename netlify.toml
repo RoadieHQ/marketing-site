@@ -195,3 +195,8 @@
   to = "/docs/getting-started/assigning-admins/"
   force = true
 
+# At some point we decided to switch to the US spelling of modeling.
+[[redirects]]
+  from = "/docs/catalog/modelling-entities/ "
+  to = "/docs/catalog/modeling-entities/"
+  force = true
