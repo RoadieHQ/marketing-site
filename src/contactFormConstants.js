@@ -32,11 +32,11 @@ export const SCM_TOOLS = [{
 }, {
   value: 'gitlab-cloud',
   label: 'GitLab Cloud',
-  supported: false,
+  supported: true,
 }, {
   value: 'gitlab-on-prem',
   label: 'GitLab On-prem',
-  supported: false,
+  supported: true,
 }, {
   value: 'bitbucket-cloud',
   label: 'Bitbucket Cloud',

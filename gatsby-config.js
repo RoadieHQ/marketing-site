@@ -73,6 +73,7 @@ module.exports = {
     social: {
       twitter: 'RoadieHQ',
       github: 'RoadieHQ',
+      linkedin: 'https://www.linkedin.com/company/43197350',
     },
   },
 

@@ -243,6 +243,7 @@ export const pageQuery = graphql`
         sourceCodeUrl
         social {
           twitter
+          linkedin
         }
       }
     }

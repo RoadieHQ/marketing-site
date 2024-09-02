@@ -45,6 +45,7 @@ export const ScmToolSelect = ({
           </option>
         ))}
       </select>
+
       {!isEmpty(helpText) && !isEmpty(currentValue.value) && showProductPrompts && (
         <>
           {currentValue.value.includes('gitlab') && (

@@ -18,14 +18,14 @@ describe('The landing page', () => {
     cy.contains("We'll be in touch");
   });
 
-  it('has a flow for users who use GitLab', () => {
+  it('has a flow for users who use choose other', () => {
     cy.visit('');
     cy.contains('Get a Demo').click();
 
     cy.get('#request-demo-name-input').type('Mary Mac');
     cy.get('#request-demo-email-input').type('test@example.com');
-    cy.get('#scm').select('GitLab Cloud');
+    cy.get('#scm').select('Other');
     cy.contains('Request a demo').click();
-    cy.contains('Roadie does not support GitLab');
+    cy.contains(`be in touch to learn more`);
   });
 });
