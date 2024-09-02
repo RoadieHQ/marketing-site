@@ -26,7 +26,7 @@ const submitToNetlifyForms = async ({
   honeypotText,
   recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
-  location,
+  locationSearch,
 }) => {
   const branch = currentlyExecutingGitBranch();
 
@@ -40,7 +40,7 @@ const submitToNetlifyForms = async ({
   formData.append('agree-to-policies', agreeToPolicies);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
-  formData.append('location-search', location.search);
+  formData.append('location-search', locationSearch);
   if (recaptchaEnabled()) {
     formData.append('g-recaptcha-response', recaptchaResponse);
   }
@@ -56,19 +56,19 @@ const submitToNetlifyForms = async ({
     trackRequestTrial({
       name,
       email,
-      locationSearch: location.search,
+      locationSearch,
     });
     trackPlausibleEvent(netlifyFormName, {
       name,
       email,
-      locationSearch: location.search,
+      locationSearch,
     });
 
     if (subToNewsletter) {
       trackSubscribe({
         name,
         email,
-        locationSearch: location.search,
+        locationSearch,
       });
     }
   } catch (error) {
@@ -84,6 +84,7 @@ const ExtendedGetInstanceCallToAction = ({
   setEmailValues,
   scmTool,
   setScmTool,
+  location,
 }) => {
   const [attribution, setAttribution] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
@@ -94,6 +95,7 @@ const ExtendedGetInstanceCallToAction = ({
   const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const netlifyFormName = FORM_NAMES.getInstanceExtended;
   const buttonText = 'Request a trial';
+  const locationSearch = location.search;
 
   const clearForm = () => {
     setEmailValues({ email: '' });
@@ -121,7 +123,7 @@ const ExtendedGetInstanceCallToAction = ({
       honeypotText,
       submitButtonLabel: buttonText,
       recaptchaResponse,
-      location,
+      locationSearch,
     });
 
     if (resp.ok) {
@@ -144,6 +146,8 @@ const ExtendedGetInstanceCallToAction = ({
       buttonText={buttonText}
       className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
     >
+      <input type="hidden" name="location-search" value={locationSearch} />
+
       <EmailField
         id="get-instance-email-input"
         label="Work email address *"
