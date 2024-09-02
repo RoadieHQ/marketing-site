@@ -25,7 +25,7 @@ const submitToNetlifyForms = async ({
   netlifyFormName,
   recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
-  location,
+  locationSearch,
 }) => {
   const branch = currentlyExecutingGitBranch();
 
@@ -40,7 +40,7 @@ const submitToNetlifyForms = async ({
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
   console.log('location.search', location.search);
-  formData.append('location-search', location.search);
+  formData.append('location-search', locationSearch);
   if (recaptchaEnabled()) {
     formData.append('g-recaptcha-response', recaptchaResponse);
   }
@@ -58,19 +58,19 @@ const submitToNetlifyForms = async ({
     trackRequestDemo({
       name,
       email,
-      locationSearch: location.search,
+      locationSearch: locationSearch,
     });
     trackPlausibleEvent(netlifyFormName, {
       name,
       email,
-      locationSearch: location.search,
+      locationSearch: locationSearch,
     });
 
     if (subToNewsletter) {
       trackSubscribe({
         name,
         email,
-        locationSearch: location.search,
+        locationSearch: locationSearch,
       });
     }
   } catch (error) {
@@ -103,6 +103,7 @@ const RequestDemoCallToAction = ({
   const [recaptchaExpired, setRecaptchaExpired] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const netlifyFormName = FORM_NAMES.requestDemo;
+  const locationSearch = location.search;
 
   const clearForm = () => {
     setName('');
@@ -124,7 +125,7 @@ const RequestDemoCallToAction = ({
       netlifyFormName,
       recaptchaResponse,
       submitButtonLabel: buttonText,
-      location,
+      locationSearch,
     });
 
     if (resp.ok) {
@@ -151,6 +152,8 @@ const RequestDemoCallToAction = ({
       honeypotValue={honeypotText}
       buttonText={buttonText}
     >
+      <input type="hidden" name="location-search" value={locationSearch} />
+
       <div className="mb-10">
         <TextField
           label="Full name*"
