@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
@@ -30,7 +29,7 @@ describe('Byline', function () {
           <Byline frontmatter={{ date: publishDateString }} />
         );
 
-        expect(wrapper.text()).to.equal('Published on May 10th, 2021');
+        expect(wrapper.text()).toEqual('Published on May 10th, 2021');
       });
 
       it('should say the date and author when available', function () {
@@ -38,7 +37,7 @@ describe('Byline', function () {
           <Byline frontmatter={{ date: publishDateString, author }} />
         );
 
-        expect(wrapper.text()).to.equal('Published on May 10th, 2021 by Jimmy Joe');
+        expect(wrapper.text()).toEqual('Published on May 10th, 2021 by Jimmy Joe');
       });
     });
 
@@ -48,7 +47,7 @@ describe('Byline', function () {
           <Byline frontmatter={{ date: publishDateString }} relative={true} />
         );
 
-        expect(wrapper.text()).to.equal('Published 27 days ago');
+        expect(wrapper.text()).toEqual('Published 27 days ago');
       });
 
       it('should say the date and author when available', function () {
@@ -56,7 +55,7 @@ describe('Byline', function () {
           <Byline frontmatter={{ date: publishDateString, author }} relative={true} />
         );
 
-        expect(wrapper.text()).to.equal('Published 27 days ago by Jimmy Joe');
+        expect(wrapper.text()).toEqual('Published 27 days ago by Jimmy Joe');
       });
     });
   });
@@ -74,7 +73,7 @@ describe('Byline', function () {
           />
         );
 
-        expect(wrapper.text()).to.equal(
+        expect(wrapper.text()).toEqual(
           'Last validated on May 22nd, 2021 • Originally published on May 10th, 2021');
       });
 
@@ -90,7 +89,7 @@ describe('Byline', function () {
           />
         );
 
-        expect(wrapper.text()).to.equal(
+        expect(wrapper.text()).toEqual(
           'Last validated on May 22nd, 2021 • Originally published on May 10th, 2021 by Jimmy Joe');
       });
     });
@@ -108,7 +107,7 @@ describe('Byline', function () {
           />
         );
 
-        expect(wrapper.text()).to.equal(
+        expect(wrapper.text()).toEqual(
           'Last validated 15 days ago • Originally published 27 days ago');
       });
     });

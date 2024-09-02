@@ -2,6 +2,7 @@ import React from 'react';
 import { TextLink as Link, Button, Title } from 'components';
 import { ExternalLinkIcon, XIcon } from '@heroicons/react/outline'
 import Modal, { modalStyles } from 'components/Modal';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 const twitterUrl = ({ social }) => `https://twitter.com/${social.twitter}`;
 
@@ -35,7 +36,7 @@ const GetDemoSurveyInner = ({ referredEmail }) => {
   return (
     <Button
       link={true}
-      to={`/request-demo/?email=${codedEmail}`}
+      to={`${PAGE_PATHS.requestDemo}?email=${codedEmail}`}
       icon={<ExternalLinkIcon />}
       text="Request a demo"
       color="primary"
@@ -49,7 +50,7 @@ const GetTrialInner = ({ referredEmail }) => {
   return (
     <Button
       link={true}
-      to={`/free-trial/?email=${codedEmail}`}
+      to={`${PAGE_PATHS.freeTrial}?email=${codedEmail}`}
       prefixIcon={<ExternalLinkIcon />}
       text="Request a free trial"
       color="primary"

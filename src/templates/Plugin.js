@@ -6,6 +6,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { Button, Title, CodeBlock, SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
 import { EditOnGitHubLink, Header } from 'components/backstage/plugins';
 import { ExternalLinkIcon } from '@heroicons/react/outline';
+import { PAGE_PATHS } from '../contactFormConstants';
 
 const PluginCTA = ({ plugin }) => (
   <div className="docs-cta my-6 lg:flex justify-between">
@@ -22,7 +23,7 @@ const PluginCTA = ({ plugin }) => (
         link={true}
         color="primary"
         size="large"
-        to={`/request-demo/?utm_source=roadie-marketplace&utm_campaign=${plugin.frontmatter.humanName}`}
+        to={`${PAGE_PATHS.requestDemo}?utm_source=roadie-marketplace&utm_campaign=${plugin.frontmatter.humanName}`}
         text="I want to go faster"
       />
     </div>

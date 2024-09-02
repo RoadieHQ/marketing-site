@@ -15,6 +15,7 @@ import classNames from 'classnames';
 import Button from '../components/forms/Button';
 import { PostSummary } from 'components/article';
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
+import { PAGE_PATHS } from '../contactFormConstants';
 
 import {
   FingerPrintIcon,
@@ -307,7 +308,7 @@ const Home = ({ data }) => {
           link={true}
           color="primary"
           size="medium"
-          to="/request-demo/"
+          to={PAGE_PATHS.requestDemo}
           className="font-bold tracking-wide mt-6"
           text="Request a Demo"
         />

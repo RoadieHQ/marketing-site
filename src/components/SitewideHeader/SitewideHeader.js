@@ -14,6 +14,7 @@ import {
   LockClosedIcon,
 } from '@heroicons/react/outline';
 import { Button } from 'components';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 import Logo from '../Logo';
 import TopNavItem from './TopNavItem';
@@ -98,7 +99,7 @@ const learn = [
 const SitewideHeader = ({
   maxWidth = '7xl',
   borderBottom = true,
-  ctaTo = '/request-demo/',
+  ctaTo = PAGE_PATHS.requestDemo,
   ctaText = 'Get a Demo',
 }) => (
   <>
@@ -131,7 +132,13 @@ const SitewideHeader = ({
           </Popover.Group>
 
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Button link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
+            <Button
+              link={true}
+              color="primary"
+              size="small"
+              to={ctaTo}
+              text={ctaText}
+            />
           </div>
         </header>
 

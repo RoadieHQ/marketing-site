@@ -23,7 +23,7 @@ const RequestTrial = ({ data, location }) => {
       />
 
       <div className="min-h-screen bg-white">
-        <SitewideHeader ctaText="Request a Demo" ctaTo="/request-demo/" />
+        <SitewideHeader ctaText="Request a Demo" />
 
         <section className="relative max-w-xl mx-auto p-4 mt-5 pt-10 sm:px-10 lg:max-w-7xl">
           <span className="border-2 px-4 py-2 uppercase mb-8 inline-block border-blueroadie font-bold tracking-wider">
@@ -63,7 +63,7 @@ const RequestTrial = ({ data, location }) => {
               <p className="text-lg mb-4">
                 We’ve put together these insights based on our extensive experience with
                 Backstage—Roadie is the second largest contributor to the project—and the dozens of
-                conversations we've had with Backstage adopters.
+                conversations we&apos;ve had with Backstage adopters.
               </p>
             </div>
             <div className="bg-white lg:col-span-2 rounded-lg border-2 p-10 border-orange-500">
@@ -95,7 +95,7 @@ const RequestTrial = ({ data, location }) => {
                       <ArrowCircleDownIcon className="mx-auto mt-6 mb-12 h-16 w-16 text-primary-600" />
                     </Headline>
                     <p className="text-lg">
-                      We've also emailed you the PDF <br /> so you can read it at a later time.
+                      We&apos;ve also emailed you the PDF <br /> so you can read it at a later time.
                     </p>
                   </a>
                 </div>

@@ -11,6 +11,7 @@ import IntegrationsImg from '../../../content/assets/product-pages/catalog-integ
 import ContentfulCaseImg from '../../../content/assets/product-pages/catalog-structure.svg';
 import YotpoImg from '../../../content/assets/product-pages/catalog-yotpo-logo.svg';
 
+import { PAGE_PATHS } from '../../contactFormConstants';
 import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
 const SEO_TITLE = 'Catalog: discoverability for your services, resources, and teams';
@@ -101,7 +102,7 @@ const Home = ({ data }) => {
               link={true}
               color="primary"
               size="medium"
-              to="/free-trial/"
+              to={PAGE_PATHS.freeTrial}
               className="font-bold tracking-wide mt-10"
               text="Try Roadie’s Catalog"
             />
@@ -144,7 +145,7 @@ const Home = ({ data }) => {
           link={true}
           color="primary"
           size="medium"
-          to="/request-demo/"
+          to={PAGE_PATHS.requestDemo}
           className="font-bold tracking-wide mt-6"
           text="Request a Demo"
         />

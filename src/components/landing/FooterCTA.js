@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Headline } from 'components';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 const FooterCTA = () => (
   <div className="bg-white">
@@ -14,7 +15,7 @@ const FooterCTA = () => (
         <div className="inline-flex">
           <Button
             link={true}
-            to="/free-trial/"
+            to={PAGE_PATHS.freeTrial}
             color="primary"
             text="Try it free"
           />
@@ -23,7 +24,7 @@ const FooterCTA = () => (
         <div className="ml-3 inline-flex">
           <Button
             link={true}
-            to="/request-demo/"
+            to={PAGE_PATHS.requestDemo}
             color="inset"
             text="Request a demo"
           />

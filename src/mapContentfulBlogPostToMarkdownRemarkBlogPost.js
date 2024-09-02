@@ -9,7 +9,7 @@ const mapContentfulBlogPostToMarkdownRemarkBlogPost = ({ node }) => ({
       description: get(node, 'description.childMarkdownRemark.rawMarkdownBody', ''),
 
       author: {
-        name: node.author.name,
+        name: get(node, 'author.name', 'Unspecified Author'),
         avatar: {
           childImageSharp: {
             gatsbyImageData: get(node, 'author.avatar.gatsbyImageData'),

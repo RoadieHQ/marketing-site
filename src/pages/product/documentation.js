@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import has from 'lodash/has';
-import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
+import { SEO, SitewideFooter, SitewideHeader, Button, Headline, Title } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
-import Title from '../../components/Title';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 import DocsScreenshotImg from '../../../content/assets/product-pages/docs-hero.svg';
 import OrganizedImg from '../../../content/assets/product-pages/docs-organized.svg';
@@ -95,7 +95,7 @@ const Home = ({ data }) => {
             link={true}
             color="primary"
             size="medium"
-            to="/free-trial/"
+            to={PAGE_PATHS.freeTrial}
             className="font-bold bg-orange-600 tracking-wide mt-6"
             text="Try Roadie's Docs"
           />
@@ -153,7 +153,7 @@ const Home = ({ data }) => {
           link={true}
           color="primary"
           size="medium"
-          to="/request-demo/"
+          to={PAGE_PATHS.requestDemo}
           className="font-bold tracking-wide mt-6"
           text="Request a Demo"
         />

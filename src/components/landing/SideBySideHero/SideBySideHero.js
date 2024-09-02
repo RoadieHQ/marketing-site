@@ -3,6 +3,7 @@ import { Button, Headline } from 'components';
 import CatalogScreenshot from '../../../../content/assets/home/illustrations/home-product-screenshot.svg';
 import { LOGOS } from '../CustomerLogoCloud';
 import has from 'lodash/has';
+import { PAGE_PATHS } from '../../../contactFormConstants';
 
 const SideBySideHero = () => {
   const whiteLogos = [...LOGOS].filter(({ src }) => has(src, 'white')).slice(0, 5);
@@ -22,7 +23,7 @@ const SideBySideHero = () => {
           link={true}
           color="secondary"
           size="medium"
-          to="/free-trial/"
+          to={PAGE_PATHS.freeTrial}
           className="font-bold tracking-wide mt-6"
           text="Try Roadie Backstage"
         />

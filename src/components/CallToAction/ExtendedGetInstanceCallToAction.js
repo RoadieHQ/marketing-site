@@ -26,6 +26,7 @@ const submitToNetlifyForms = async ({
   honeypotText,
   recaptchaResponse,
   submitButtonLabel = 'NOT_SUPPLIED',
+  location,
 }) => {
   const branch = currentlyExecutingGitBranch();
 
@@ -39,6 +40,7 @@ const submitToNetlifyForms = async ({
   formData.append('agree-to-policies', agreeToPolicies);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
+  formData.append('location-search', location.search);
   if (recaptchaEnabled()) {
     formData.append('g-recaptcha-response', recaptchaResponse);
   }
@@ -54,16 +56,19 @@ const submitToNetlifyForms = async ({
     trackRequestTrial({
       name,
       email,
+      locationSearch: location.search,
     });
     trackPlausibleEvent(netlifyFormName, {
       name,
       email,
+      locationSearch: location.search,
     });
 
     if (subToNewsletter) {
       trackSubscribe({
         name,
         email,
+        locationSearch: location.search,
       });
     }
   } catch (error) {
@@ -116,6 +121,7 @@ const ExtendedGetInstanceCallToAction = ({
       honeypotText,
       submitButtonLabel: buttonText,
       recaptchaResponse,
+      location,
     });
 
     if (resp.ok) {

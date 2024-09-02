@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
+import { useLocation } from '@reach/router';
 import { OutboundLink } from "gatsby-plugin-google-gtag";
+import kebabCase from 'lodash/kebabCase';
+
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 const isRelativeTo = (to) => to.startsWith('/') || to.startsWith('#');
 
@@ -13,6 +17,27 @@ const forceTrailingSlashOntoTo = (to) => {
     internalUrl.pathname = `${internalUrl.pathname}/`;
   }
   return internalUrl.toString().replace(window.location.origin, '');
+};
+
+const appendSearchParam = (ctaTo, searchParams) => {
+  const stringSearchParams = new URLSearchParams(searchParams).toString();
+
+  const [preHash, postHash] = ctaTo.split('#');
+  const postHashWithHash = postHash ? `#${postHash}` : '';
+
+  if (ctaTo.includes('?')) {
+    return `${preHash}&${stringSearchParams}${postHashWithHash}`;
+  }
+
+  return `${preHash}?${stringSearchParams}${postHashWithHash}`;
+};
+
+const kebabCasePathname = (pathname) => {
+  // if we don't do this then we end up with an empty string being set as the referring pathname
+  // when the user navigates from the homepage to the demo page. This will be confusing for
+  // anyone who is later looking at the analytics.
+  const modifiedPathname = pathname === '/' ? 'homepage' : pathname;
+  return kebabCase(modifiedPathname);
 };
 
 /*
@@ -48,6 +73,8 @@ const Link = ({
   forceOpenInSameTab = false,
   ...rest
 }) => {
+  const location = useLocation();
+
   if (isRelativeTo(to)) {
     let internalTo = to;
 
@@ -56,6 +83,14 @@ const Link = ({
     // to the homepage.
     if (internalTo.startsWith('/')) {
       internalTo = forceTrailingSlashOntoTo(internalTo);
+    }
+
+    // We want to track which pages people are coming from when they submit the form to
+    // request a demo or a free trial.
+    if (internalTo.includes(PAGE_PATHS.freeTrial) || internalTo.includes(PAGE_PATHS.requestDemo)) {
+      internalTo = appendSearchParam(internalTo, {
+        referringPathname: kebabCasePathname(location.pathname),
+      });
     }
 
     return (

@@ -10,6 +10,7 @@ import FormImg from '../../../content/assets/product-pages/scaffolder-form.svg';
 import TogetherImg from '../../../content/assets/product-pages/scaffolder-together.png';
 import ContentfulLogoImg from '../../../content/assets/product-pages/scaffolder-contentful-logo.png';
 import TemplateCodeImg from '../../../content/assets/product-pages/scaffolder-template-code.svg';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 
@@ -95,7 +96,7 @@ const Home = ({ data }) => {
             link={true}
             color="primary"
             size="medium"
-            to="/free-trial/"
+            to={PAGE_PATHS.freeTrial}
             className="font-bold tracking-wide mt-6"
             text="Try Roadie's Scaffolder"
           />
@@ -143,11 +144,12 @@ const Home = ({ data }) => {
         <Title el="h2" className="mt-10 xl:text-2xl xl:tracking-tight text-orange-600">
           See Roadie’s Scaffolder in action
         </Title>
+
         <Button
           link={true}
           color="primary"
           size="medium"
-          to="/request-demo/"
+          to={PAGE_PATHS.requestDemo}
           className="font-bold tracking-wide mt-6"
           text="Request a Demo"
         />

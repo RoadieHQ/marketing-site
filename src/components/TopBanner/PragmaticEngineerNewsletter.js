@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from '../../../content/assets/pragmatic-engineer-logo.png';
 import { Link } from 'components';
+import { PAGE_PATHS } from '../../contactFormConstants';
 
 const PragmaticEngineerNewsletter = () => (
   <Link
-    to="/request-demo/"
+    to={PAGE_PATHS.requestDemo}
     className="text-white underline-none hover:underline"
   >
     <img

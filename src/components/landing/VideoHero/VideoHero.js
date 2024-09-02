@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, GrayBackgroundDotsPattern, Headline } from 'components';
 import { PlayIcon } from 'components/icons';
+import { PAGE_PATHS } from '../../../contactFormConstants';
 
 import IntroToRoadieModal from './IntroToRoadieModal';
 import backstageScreenshot from '../../../../content/assets/backstage-screenshot-512x438.webp';
@@ -53,7 +54,7 @@ const VideoHero = () => {
                   <div>
                     <Button
                       link={true}
-                      to="/free-trial/"
+                      to={PAGE_PATHS.freeTrial}
                       color="primary"
                       text="Try it free"
                       size="large"
@@ -64,7 +65,7 @@ const VideoHero = () => {
                   <div className="mt-3 sm:mt-0 sm:ml-3">
                     <Button
                       link={true}
-                      to="/request-demo/"
+                      to={PAGE_PATHS.requestDemo}
                       color="secondary"
                       text="Request a demo"
                       size="large"
