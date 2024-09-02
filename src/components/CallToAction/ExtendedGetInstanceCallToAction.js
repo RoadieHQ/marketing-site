@@ -56,19 +56,19 @@ const submitToNetlifyForms = async ({
     trackRequestTrial({
       name,
       email,
-      locationSearch: locationSearch,
+      locationSearch,
     });
     trackPlausibleEvent(netlifyFormName, {
       name,
       email,
-      locationSearch: locationSearch,
+      locationSearch,
     });
 
     if (subToNewsletter) {
       trackSubscribe({
         name,
         email,
-        locationSearch: locationSearch,
+        locationSearch,
       });
     }
   } catch (error) {
@@ -84,6 +84,7 @@ const ExtendedGetInstanceCallToAction = ({
   setEmailValues,
   scmTool,
   setScmTool,
+  location,
 }) => {
   const [attribution, setAttribution] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
