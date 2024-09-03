@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'components';
-import { TwitterIcon, GitHubIcon, BackstageIcon, RoadieRacksIcon } from 'components/icons';
+import { GitHubIcon, BackstageIcon, RoadieRacksIcon, LinkedinIcon } from 'components/icons';
 import camelCase from 'lodash/camelCase';
 
 import soc2Seal from '../../../content/assets/logos/soc2/aicpa.jpg';
@@ -38,9 +38,9 @@ const navigation = {
   ],
 
   social: [{
-    name: 'Twitter',
-    href: 'https://x.com/roadiehq',
-    icon: TwitterIcon,
+    name: 'Linkedin',
+    href: 'https://www.linkedin.com/company/43197350',
+    icon: LinkedinIcon,
   }, {
     name: 'GitHub',
     href: 'https://github.com/RoadieHQ',

@@ -16,6 +16,7 @@ const SEO = ({ title, description = '', lang = 'en', headerImage = '', meta = []
             description
             social {
               twitter
+              linkedin
             }
           }
         }

@@ -12,7 +12,7 @@ import snykLogo from '../../content/assets/home/testimonial/crystal-snyk/snyk-mo
 import snykLogoPng from '../../content/assets/home/testimonial/crystal-snyk/snyk-monochrome.png';
 import Avatar from '../components/landing/Testimonials/Avatar';
 
-const SEO_TITLE = 'Request a demo of Roadie Backstage';
+const SEO_TITLE = 'Request a demo of Roadie';
 
 const SubmissionSuccessPositiveBody = () => (
   <>
@@ -22,16 +22,11 @@ const SubmissionSuccessPositiveBody = () => (
   </>
 );
 
-const SubmissionSuccessNegativeBody = ({ scmTool }) => (
-  <>
-    {scmTool.value.includes('gitlab') && (
-      <p>Roadie does not support GitLab at the moment. We&apos;ll email you as soon as we do.</p>
-    )}
-
-    <p>
-      Thank you for requesting a demo of Roadie. You will hear from us soon.
-    </p>
-  </>
+const SubmissionSuccessNegativeBody = () => (
+  <p>
+    Thank you for requesting a demo of Roadie. We&apos;ll be in touch to learn more about your
+    setup.
+  </p>
 );
 
 const RequestDemo = ({ data, location }) => {
@@ -83,6 +78,7 @@ const RequestDemo = ({ data, location }) => {
                 location={location}
                 scmTool={scmTool}
                 setScmTool={setScmTool}
+                showProductPrompts={false}
                 onSuccess={() => {
                   setModalOpen(true);
                 }}
@@ -141,6 +137,7 @@ export const pageQuery = graphql`
         title
         social {
           twitter
+          linkedin
         }
       }
     }

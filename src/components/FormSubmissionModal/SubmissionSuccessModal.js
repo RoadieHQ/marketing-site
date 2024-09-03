@@ -20,7 +20,7 @@ const SubmissionSuccessModal = ({
       <FormSubmissionModal
         titleText={positiveTitle}
         bodyText={positiveBody}
-        followOn="NEWSLETTER_AND_TWITTER"
+        followOn="LINKEDIN"
         {...rest}
       />
     );
@@ -31,7 +31,7 @@ const SubmissionSuccessModal = ({
       titleText={negativeTitle}
       titleEmoji={null}
       bodyText={negativeBody}
-      followOn="NEWSLETTER_AND_TWITTER"
+      followOn="LINKEDIN"
       {...rest}
     />
   );

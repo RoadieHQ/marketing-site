@@ -12,7 +12,7 @@ import enriqueAvatarPng from '../../content/assets/home/testimonial/enrique-cont
 import contentfulLogo from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome.webp';
 import contentfulLogoPng from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome.png';
 
-const SEO_TITLE = 'Try hosted Spotify Backstage for free';
+const SEO_TITLE = 'Try Roadie for free';
 
 const SubmissionSuccessPositiveBody = () => (
   <p>
@@ -20,16 +20,11 @@ const SubmissionSuccessPositiveBody = () => (
   </p>
 );
 
-const SubmissionSuccessNegativeBody = ({ scmTool }) => (
-  <>
-    {scmTool.value.includes('gitlab') && (
-      <p>Roadie does not support GitLab at the moment. We&apos;ll email you as soon as we do.</p>
-    )}
-
-    <p>
-      Thank you for requesting a free trial of Roadie. You will hear from us soon.
-    </p>
-  </>
+const SubmissionSuccessNegativeBody = () => (
+  <p>
+    Thank you for requesting a demo of Roadie. We&apos;ll be in touch to learn more about your
+    setup.
+  </p>
 );
 
 const RequestTrial = ({ data, location }) => {
@@ -92,6 +87,7 @@ const RequestTrial = ({ data, location }) => {
                 scmTool={scmTool}
                 setScmTool={setScmTool}
                 location={location}
+                showProductPrompts={false}
               />
             </div>
             <div className="mt-5 p-5 lg:pl-10 lg:mt-16">
@@ -147,6 +143,7 @@ export const pageQuery = graphql`
         title
         social {
           twitter
+          linkedin
         }
       }
     }

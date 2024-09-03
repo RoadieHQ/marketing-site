@@ -30,6 +30,15 @@ const TwitterInner = ({ siteMetadata }) => (
   </p>
 );
 
+const LinkedinInner = ({ siteMetadata }) => (
+  <p>
+    <Link to={siteMetadata.social.linkedin} color="primary">
+      Follow Roadie on Linkedin
+    </Link>
+    .
+  </p>
+);
+
 const GetDemoSurveyInner = ({ referredEmail }) => {
   const codedEmail = encodeURIComponent(referredEmail);
 
@@ -92,6 +101,8 @@ const FormSubmissionModal = ({
     followOnContent = <GetDemoSurveyInner referredEmail={email} />;
   } else if (followOn === 'GET_TRIAL') {
     followOnContent = <GetTrialInner referredEmail={email} />;
+  } else if (followOn === 'LINKEDIN') {
+    followOnContent = <LinkedinInner siteMetadata={siteMetadata} />;
   }
 
   return (
