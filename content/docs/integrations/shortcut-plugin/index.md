@@ -4,7 +4,7 @@ publishedDate: '2022-06-09T10:00:00.0Z'
 description: How to enable the Shortcut plugin
 
 humanName: Shortcut Plugin
-logoImage: 'shortcut-logo.webp'
+logoImage: 'shortcut-logo.svg'
 integrationType: OSS plugin
 ---
 
