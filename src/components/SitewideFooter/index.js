@@ -101,7 +101,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
             <RoadieRacksIcon fill={theme.COLORS_GRAY_500} />
 
             <p className="text-gray-500 text-base">
-              SaaS Backstage for scale-ups.
+              SaaS Backstage
             </p>
 
             <div className="flex space-x-6">
