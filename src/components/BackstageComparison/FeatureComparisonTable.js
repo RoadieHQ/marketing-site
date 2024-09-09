@@ -13,7 +13,7 @@ const sections = [
         competitor: { Roadie: 'Yes', Backstage: 'Yes, with some effort' },
       },
       {
-        name: 'Adding and updating Catalog items via yaml',
+        name: 'Adding and updating Catalog items via YAML',
         competitor: { Roadie: true, Backstage: true },
       },
       {
