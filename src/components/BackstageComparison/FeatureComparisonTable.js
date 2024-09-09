@@ -13,15 +13,15 @@ const sections = [
         competitor: { Roadie: 'Yes', Backstage: 'Yes, with some effort' },
       },
       {
-        name: 'Entity definition',
-        competitor: { Roadie: 'Markdown, UI, or via API', Backstage: 'Markdown' },
+        name: 'How you add items to the Catalog',
+        competitor: { Roadie: 'Markdown, UI, or via the Roadie API', Backstage: 'Markdown' },
       },
       {
         name: 'API-based ingestion and update',
         competitor: { Roadie: true, Backstage: false },
       },
       {
-        name: 'Out of the box data ingestion (k8s, github, CI/CD, etc)',
+        name: 'Out of the box data ingestion (k8s, GitHub, CI/CD, etc)',
         competitor: { Roadie: true, Backstage: true },
       },
       {
@@ -32,10 +32,6 @@ const sections = [
           Backstage:
             'GitHub Cloud, GitHub Enterprise Server, Azure DevOps, GCP, GitLab Cloud, GitLab On-Prem, BitBucket Cloud, BitBucket Server, Gerrit',
         },
-      },
-      {
-        name: 'Catalog UI customisation',
-        competitor: { Roadie: 'Yes', Backstage: 'Yes, with some effort' },
       },
     ],
   },
@@ -117,6 +113,10 @@ const sections = [
         name: 'Layout customisation',
         competitor: { Roadie: true, Backstage: 'Requires build' },
       },
+      {
+        name: 'Catalog UI customisation',
+        competitor: { Roadie: 'Yes', Backstage: 'Requires build' },
+      },
     ],
   },
   {
@@ -171,6 +171,23 @@ const sections = [
     ],
   },
   {
+    name: 'Cost Insights (in beta)',
+    features: [
+      {
+        name: 'Visualisation of cost data',
+        competitor: { Roadie: true, Backstage: true },
+      },
+      {
+        name: 'Out of the box data ingestion',
+        competitor: { Roadie: 'AWS, GCP', Backstage: false },
+      },
+      {
+        name: 'Attribution back to catalog components (inc. users and groups)',
+        competitor: { Roadie: true, Backstage: true },
+      },
+    ],
+  },
+  {
     name: 'Non-feature extras',
     features: [
       {
@@ -188,13 +205,9 @@ const sections = [
       {
         name: 'Support',
         competitor: {
-          Roadie: 'Email, Slack/Teams, Discord, and 24/7 On-call',
+          Roadie: 'Email, Slack/Teams, and 24/7 On-call',
           Backstage: 'via the OSS community',
         },
-      },
-      {
-        name: 'Cost',
-        competitor: { Backstage: true },
       },
       {
         name: 'Uptime guarantee',

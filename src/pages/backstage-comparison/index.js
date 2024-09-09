@@ -5,7 +5,7 @@ import { SectionHeader, FeatureComparisonTable } from 'components/BackstageCompa
 import { FAQs } from 'components/landing';
 import RoadieBackstageLogos from '../../../content/assets/roadie-backstage-logos.svg';
 
-const Pricing = ({
+const Comparison = ({
   data: {
     site: {
       siteMetadata: { title: siteTitle },
@@ -16,7 +16,7 @@ const Pricing = ({
     <>
       <SEO
         title={`Roadie vs Backstage | ${siteTitle}`}
-        description="Hosted Backstage from Roadie. Simple, flexible options to fit your IDP needs. Free Trial."
+        description="Hosted Backstage from Roadie vs self-hosting open source Backstage. Which IDP fits your needs?"
       />
 
       <SitewideHeader borderBottom={false} />
@@ -36,10 +36,12 @@ const Pricing = ({
               Overview
             </Headline>
             <h2 className="text-lg sm:mt-8 lg:text-xl xl:text-xl">
-              <Link to="https://backstage.io/" color="primary">Backstage</Link> is the best tool on the market
-              for building Internal Developer Portals (IDPs). However, it requires significant investment to take
-              the raw building blocks that Backstage offers and turn them into a true Internal
-              Developer Portal.
+              <Link to="https://backstage.io/" color="primary">
+                Backstage
+              </Link>{' '}
+              is the best tool on the market for building Internal Developer Portals (IDPs).
+              However, it requires significant investment to take the raw building blocks that
+              Backstage offers and turn them into a true Internal Developer Portal.
             </h2>
             <h2 className="text-lg sm:mt-8 lg:text-xl xl:text-xl">
               With Roadie, we've taken the open-source version of Backstage and used it to build a
@@ -64,7 +66,7 @@ const Pricing = ({
   );
 };
 
-export default Pricing;
+export default Comparison;
 
 export const pageQuery = graphql`
   query {
