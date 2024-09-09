@@ -13,11 +13,15 @@ const sections = [
         competitor: { Roadie: 'Yes', Backstage: 'Yes, with some effort' },
       },
       {
-        name: 'How you add items to the Catalog',
-        competitor: { Roadie: 'Markdown, UI, or via the Roadie API', Backstage: 'Markdown' },
+        name: 'Adding and updating Catalog items via yaml',
+        competitor: { Roadie: true, Backstage: true },
       },
       {
-        name: 'API-based ingestion and update',
+        name: 'Updating Catalog items in the UI',
+        competitor: { Roadie: true, Backstage: false },
+      },
+      {
+        name: 'Adding and updating Catalog items via API',
         competitor: { Roadie: true, Backstage: false },
       },
       {
@@ -32,6 +36,10 @@ const sections = [
           Backstage:
             'GitHub Cloud, GitHub Enterprise Server, Azure DevOps, GCP, GitLab Cloud, GitLab On-Prem, BitBucket Cloud, BitBucket Server, Gerrit',
         },
+      },
+      {
+        name: 'Syncing repositories as items in the Catalog',
+        competitor: { Roadie: true, Backstage: false },
       },
     ],
   },
