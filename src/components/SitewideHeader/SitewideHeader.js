@@ -126,19 +126,14 @@ const SitewideHeader = ({
 
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
             <TopNavDropdownItem text="Product" subItems={features} />
+            <TopNavItem to="/backstage-comparison/" text="Roadie vs Backstage" />
             <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
             <TopNavItem to="/pricing/" text="Pricing" />
             <TopNavDropdownItem text="Resources" subItems={learn} />
           </Popover.Group>
 
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Button
-              link={true}
-              color="primary"
-              size="small"
-              to={ctaTo}
-              text={ctaText}
-            />
+            <Button link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
           </div>
         </header>
 
