@@ -37,7 +37,7 @@ const Pricing = ({
             </Headline>
             <h2 className="text-lg sm:mt-8 lg:text-xl xl:text-xl">
               <Link to="https://backstage.io/">Backstage.io</Link> is the best tool on the market
-              for building Internal Developer Portals (IDP) but requires significant investment to take
+              for building Internal Developer Portals (IDPs). However, it requires significant investment to take
               the raw building blocks that Backstage offers and turn them into a true Internal
               Developer Portal.
             </h2>
