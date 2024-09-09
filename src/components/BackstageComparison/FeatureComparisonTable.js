@@ -106,7 +106,7 @@ const sections = [
         competitor: { Roadie: '70+', Backstage: 'Requires build' },
       },
       {
-        name: 'Access to on-prem infrastructure and resources',
+        name: 'Secure access to on-prem infrastructure and resources',
         competitor: { Roadie: true, Backstage: true },
       },
       {
