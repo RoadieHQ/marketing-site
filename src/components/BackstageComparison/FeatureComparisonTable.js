@@ -48,11 +48,11 @@ const sections = [
       },
       {
         name: 'Levels',
-        competitor: { Roadie: true, Backstage: false },
+        competitor: { Roadie: 'Coming soon', Backstage: false },
       },
       {
         name: 'Campaigns',
-        competitor: { Roadie: true, Backstage: false },
+        competitor: { Roadie: 'Coming soon', Backstage: false },
       },
       {
         name: 'Team-based rollups',
