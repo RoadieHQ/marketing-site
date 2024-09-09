@@ -43,7 +43,7 @@ const Pricing = ({
             </h2>
             <h2 className="text-lg sm:mt-8 lg:text-xl xl:text-xl">
               With Roadie, we've taken the open-source version of Backstage and used it to build a
-              comprehensive hosted IDP for everyone to use.
+              comprehensive and maintenance-free IDP.
             </h2>
           </div>
         </div>
