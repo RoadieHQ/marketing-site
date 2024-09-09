@@ -3,17 +3,17 @@ import { PAGE_PATHS } from '../../contactFormConstants';
 const COMPETITORS = {
   roadie: {
     name: 'Roadie',
-    description: 'For excellent engineering orgs who want a home for their services, docs, runbooks, API specs and CI.',
+    description:
+      'For excellent engineering orgs who want a home for their services, docs, runbooks, API specs and CI.',
     ctaLabel: 'Start a free trial',
     ctaLinkTo: PAGE_PATHS.freeTrial,
   },
 
   backstage: {
     name: 'Backstage',
-    description:
-      'For big engineering orgs who want to maintain effectiveness through hypergrowth',
+    description: 'For big engineering orgs who want to maintain effectiveness through hypergrowth',
     ctaLabel: 'See a demo',
-    ctaLinkTo: 'http://backstage.io',
+    ctaLinkTo: 'https://backstage.io',
   },
 };
 
