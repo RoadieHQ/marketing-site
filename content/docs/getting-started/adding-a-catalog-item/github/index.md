@@ -122,7 +122,6 @@ Now you can click on the entity link to visit the entity that you have just crea
 ### Next Steps
 
 * [Configure auto-discovery](/docs/integrations/github-discovery/) so that Roadie can automatically discover and import catalog-info.yaml files.
-
 * [Explore the Getting Started Repo](https://github.com/roadie-demo/getting-started/tree/main) for examples of scaffolder templates.
 * [Use a scaffolder template](https://github.com/roadie-demo/getting-started/tree/main/scaffolder/register-new-component) to give users a streamlined interface that they can use to generate the YAML file you used earlier in this tutorial.
 * [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.

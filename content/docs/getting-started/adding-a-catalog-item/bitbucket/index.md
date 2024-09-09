@@ -164,3 +164,9 @@ Due to the strictrate limits on the bitbucket API it currently runs every 30 min
 You can read more about the configuration options in the [backstage docs](https://backstage.io/docs/integrations/bitbucketServer/discovery/#configuration)
 
 ![A form](./bitbucket-server-autodiscovery.webp)
+
+### Next Steps
+
+* [Explore the Getting Started Repo](https://bitbucket.org/roadie-demo/getting-started/src/main/) for examples of scaffolder templates.
+* [Use a scaffolder template](https://bitbucket.org/roadie-demo/getting-started/src/main/scaffolder/register-new-component/) to give users a streamlined interface that they can use to generate the YAML file you used earlier in this tutorial.
+* [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
