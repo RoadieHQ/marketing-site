@@ -21,21 +21,14 @@ Therefore, in order to create [Scorecards](../scorecards/index.md), you will nee
 
 By default, all users will be able to see but not edit Tech Insights content.
 
-If you want to hide Tech Insights for non-admin users such as when initially setting it up, you can check 'Admins only' checkbox under Administration → Settings → Plugins → Tech Insights page. This will remove Tech Insights from the sidebar for anyone who is not part of `roadie-backstage-admin` or `roadie-tech-insights-admin` groups.
+If you want to hide Tech Insights for non-admin users such as when initially setting it up, you can check 'Admins only' checkbox under Administration → Settings → Plugins → Tech Insights page. This will remove Tech Insights from the sidebar for anyone does not have the permission to administrate tech insights.
 
 ![Admin Only View](./admin-only-settings.webp)
 
 
 ## Write Access
 
-Anyone who is part of the `roadie-backstage-admin` group in Roadie will have write access to Tech Insights.
-
-However, if you want to grant write access to the feature to some users, but do not wish to make them parts of main admin group (`roadie-backstage-admin`), you can create a group called `roadie-tech-insights-admin` and add them as a members there.
-
-If it exists, anyone who is part of the `roadie-tech-insights-admin` group in Roadie will have write access to Tech Insights.
-
-⚠️ If you are using GitHub Teams to manage your user groups, please note that it can take some time for Roadie to refresh the list of teams from GitHub teams once the discovery location is added. If you do not see admin functions immediately, please wait a few minutes and try again.
-
+Anyone who is assigned the `tech-insights-admin` role in Roadie will have write access to Tech Insights.
 
 ## Disabling Roadie Tech Insights
 
