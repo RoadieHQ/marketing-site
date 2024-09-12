@@ -1,4 +1,5 @@
 import React from 'react';
+import has from 'lodash/has';
 
 import SnykLogo from '../../../content/assets/home/customer-logos/snyk-monochrome.webp';
 import SnykLogoPng from '../../../content/assets/home/customer-logos/snyk-monochrome.png';
@@ -14,15 +15,46 @@ import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochr
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
 import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-monochrome.webp';
 import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
+import BaillieGiffordLogoPng from '../../../content/assets/home/customer-logos/baillie-gifford-monochrome-standardized.png';
+import AstraZenecaLogoPng from '../../../content/assets/home/customer-logos/astrazenca-monochrome-standardized.png';
+import SumUpLogoPng from '../../../content/assets/home/customer-logos/sumup-monochrome-standardized.png';
+import RelativityLogoPng from '../../../content/assets/home/customer-logos/relativity-monochrome-standardized.png';
 
 export const LOGOS = [
+  {
+    src: {
+      png: RelativityLogoPng,
+    },
+    alt: 'Relativity logo',
+  },
+
+  {
+    src: {
+      png: SumUpLogoPng,
+    },
+    alt: 'SumUp logo',
+  },
+
+  {
+    src: {
+      png: AstraZenecaLogoPng,
+    },
+    alt: 'AstraZeneca logo',
+  },
+
+  {
+    src: {
+      png: BaillieGiffordLogoPng,
+    },
+    alt: 'Baillie Gifford logo',
+  },
+
   {
     src: {
       webp: SnykLogo,
       png: SnykLogoPng,
     },
     alt: 'Snyk logo',
-    title: '~150 engineers',
   },
 
   {
@@ -31,7 +63,6 @@ export const LOGOS = [
       png: ContentfulLogoPng,
     },
     alt: 'Contentful logo',
-    title: '~150 engineers',
   },
   {
     src: {
@@ -39,7 +70,6 @@ export const LOGOS = [
       png: NetlifyLogoPng,
     },
     alt: 'Netlify logo',
-    title: '~100 engineers',
   },
   {
     src: {
@@ -47,7 +77,6 @@ export const LOGOS = [
       png: HopperLogoPng,
     },
     alt: 'Hopper logo',
-    title: '~200 engineers',
   },
   {
     src: {
@@ -55,7 +84,6 @@ export const LOGOS = [
       png: MyFitnessPalLogoPng,
     },
     alt: 'MyFitnessPal logo',
-    title: '~100 engineers',
   },
   {
     src: {
@@ -63,7 +91,6 @@ export const LOGOS = [
       png: NcsaLogoPng,
     },
     alt: 'NCSA logo',
-    title: '~50 engineers',
   },
   {
     src: {
@@ -71,14 +98,13 @@ export const LOGOS = [
       png: YotpoLogoPng,
     },
     alt: 'Yotpo logo',
-    title: '~250 engineers',
   },
 ];
 
 /* eslint-disable jsx-a11y/alt-text */
 export const LogoItem = ({ src, ...rest }) => (
   <picture>
-    <source srcSet={src.webp} type="image/webp" />
+    {has(src, 'webp') && <source srcSet={src.webp} type="image/webp" />}
     <source srcSet={src.png} type="image/png" />
     <img src={src.png} {...rest} />
   </picture>
