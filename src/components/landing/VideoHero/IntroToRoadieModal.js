@@ -15,11 +15,11 @@ const IntroToRoadieModal = ({ setModalOpen, modalOpen }) => {
     >
       <div className="relative" style={{ paddingTop: '56.25%' }}>
         <iframe
-          title="Introduction to Backstage on Roadie"
-          src="https://player.vimeo.com/video/568429209?autoplay=1&color=F5501E"
+          title="Introduction to Roadie"
+          src="https://player.vimeo.com/video/1008895023?autoplay=1&color=F5501E"
           className="absolute top-0 left-0 w-full h-full"
           frameBorder={0}
-          allow="autoplay; fullscreen; picture-in-picture"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
           allowFullScreen={true}
         />
       </div>
