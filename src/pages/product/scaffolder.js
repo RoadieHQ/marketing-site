@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import has from 'lodash/has';
 import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import Title from '../../components/Title';

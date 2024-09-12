@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import has from 'lodash/has';
 import { SEO, SitewideFooter, SitewideHeader, Button, Headline, Title } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import { PAGE_PATHS } from '../../contactFormConstants';
