@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import has from 'lodash/has';
 import { SEO, SitewideFooter, SitewideHeader, Button, Headline, Title } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import { PAGE_PATHS } from '../../contactFormConstants';
@@ -11,7 +10,6 @@ import IntegrationsImg from '../../../content/assets/product-pages/techinsights-
 import GitHubBotImg from '../../../content/assets/product-pages/techinsights-github-bot.svg';
 import Logi4jImg from '../../../content/assets/product-pages/techinsights-logi4j.svg';
 
-import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import classNames from 'classnames';
 
@@ -191,7 +189,6 @@ const UsecaseTabs = () => {
 
 const Home = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const darkLogos = [...LOGOS].filter(({ src }) => has(src, 'dark')).slice(0, 5);
 
   return (
     <>
@@ -227,22 +224,6 @@ const Home = ({ data }) => {
             className="font-bold bg-orange-600 tracking-wide mt-6"
             text="Try Roadie's Scorecards"
           />
-
-          <div className="mt-5 md:mt-8 xl:mt-16">
-            <span className="text-sm uppercase font-bold tracking-wider text-white">
-              Trusted by dozens of scale-ups
-            </span>
-            <div className="flex flex-wrap">
-              {darkLogos.map((logo) => (
-                <img
-                  className="h-8 my-3 mx-3 lg:h-10 lg:ml-0 lg:mr-11 xl:h-11 xl:mr-13"
-                  key={`hero-logo-${logo.alt}`}
-                  src={logo.src.white}
-                  alt={logo.alt}
-                />
-              ))}
-            </div>
-          </div>
         </div>
         <div className="lg:w-1/2 py-4 pb-[1px] lg:py-16 lg:px-[2px]">
           <img

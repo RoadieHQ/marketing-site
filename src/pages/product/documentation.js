@@ -13,8 +13,6 @@ import SnykImg from '../../../content/assets/product-pages/docs-snyk-logo.png';
 
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 
-import { LOGOS } from '../../components/landing/CustomerLogoCloud';
-
 const SEO_TITLE = 'Centralized Documentation: everyone’s docs in a single place';
 const LEAD = `Roadie’s Backstage-based Documenation lets you put docs where your developers are.`;
 
@@ -69,7 +67,6 @@ const PRODUCT = {
 
 const Home = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const darkLogos = [...LOGOS].filter(({ src }) => has(src, 'dark')).slice(0, 5);
 
   return (
     <>
@@ -100,21 +97,6 @@ const Home = ({ data }) => {
             text="Try Roadie's Docs"
           />
 
-          <div className="mt-5 md:mt-8 xl:mt-16">
-            <span className="text-sm uppercase font-bold tracking-wider text-white">
-              Trusted by dozens of scale-ups
-            </span>
-            <div className="flex flex-wrap">
-              {darkLogos.map((logo) => (
-                <img
-                  className="h-8 my-3 mx-3 lg:h-10 lg:ml-0 lg:mr-11 xl:h-11 xl:mr-13"
-                  key={`hero-logo-${logo.alt}`}
-                  src={logo.src.white}
-                  alt={logo.alt}
-                />
-              ))}
-            </div>
-          </div>
         </div>
         <div className="lg:w-1/2 py-4 pb-[1px] lg:py-16 lg:px-[2px]">
           <img

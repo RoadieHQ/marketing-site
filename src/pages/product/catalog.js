@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import has from 'lodash/has';
 import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import Title from '../../components/Title';
@@ -12,7 +11,6 @@ import ContentfulCaseImg from '../../../content/assets/product-pages/catalog-str
 import YotpoImg from '../../../content/assets/product-pages/catalog-yotpo-logo.svg';
 
 import { PAGE_PATHS } from '../../contactFormConstants';
-import { LOGOS } from '../../components/landing/CustomerLogoCloud';
 
 const SEO_TITLE = 'Catalog: discoverability for your services, resources, and teams';
 const LEAD = `Roadie’s Catalog lets you organize all your software assets, track ownership, and foster an Inner Source culture.`;
@@ -74,7 +72,6 @@ const PRODUCT = {
 
 const Home = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const darkLogos = [...LOGOS].filter(({ src }) => has(src, 'dark')).slice(0, 5);
 
   return (
     <>
@@ -108,16 +105,6 @@ const Home = ({ data }) => {
             />
           </div>
         </section>
-        <div className="mx-auto max-w-4xl mt-5 flex flex-wrap justify-center mb-5">
-          {darkLogos.map((logo) => (
-            <img
-              className="h-8 my-3 mx-3 lg:h-10 lg:ml-0 lg:mr-11 xl:h-11 xl:mr-13"
-              key={`hero-logo-${logo.alt}`}
-              src={logo.src.dark}
-              alt={logo.alt}
-            />
-          ))}
-        </div>
       </div>
 
       <AlternatingFeatureWrapper id="product">
