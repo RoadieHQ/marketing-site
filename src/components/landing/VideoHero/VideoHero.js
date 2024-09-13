@@ -94,7 +94,7 @@ const VideoHero = () => {
                     <img
                       className="w-full"
                       src={catalogScreenshot}
-                      alt="Screenshot of a component in Backstage showing Synk, Tech Insights, CI, Argo CD, Kubernetes and PagerDuty plugins."
+                      alt="Screenshot of a component in Backstage showing Snyk, Tech Insights, CI, Argo CD, Kubernetes and PagerDuty plugins."
                     />
 
                     <div className="absolute inset-0 w-full h-full flex items-center justify-center" aria-hidden="true">
