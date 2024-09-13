@@ -1,11 +1,8 @@
 import React from 'react';
+import has from 'lodash/has';
 
 import SnykLogo from '../../../content/assets/home/customer-logos/snyk-monochrome.webp';
 import SnykLogoPng from '../../../content/assets/home/customer-logos/snyk-monochrome.png';
-import StreamElementsLogo from '../../../content/assets/home/customer-logos/streamelements-monochrome.webp';
-import StreamElementsLogoPng from '../../../content/assets/home/customer-logos/streamelements-monochrome.png';
-import TrackunitLogo from '../../../content/assets/home/customer-logos/trackunit-monochrome.webp';
-import TrackunitLogoPng from '../../../content/assets/home/customer-logos/trackunit-monochrome.png';
 import ContentfulLogo from '../../../content/assets/home/customer-logos/contentful-monochrome.webp';
 import ContentfulLogoPng from '../../../content/assets/home/customer-logos/contentful-monochrome.png';
 import NcsaLogo from '../../../content/assets/home/customer-logos/ncsa-monochrome.webp';
@@ -18,82 +15,76 @@ import YotpoLogo from '../../../content/assets/home/customer-logos/yotpo-monochr
 import YotpoLogoPng from '../../../content/assets/home/customer-logos/yotpo-monochrome.png';
 import NetlifyLogo from '../../../content/assets/home/customer-logos/netlify-monochrome.webp';
 import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-monochrome.png';
-import CaribouLogo from '../../../content/assets/home/customer-logos/caribou-monochrome.webp';
-import CaribouLogoPng from '../../../content/assets/home/customer-logos/caribou-monochrome.png';
-
-import HopperWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/hopper.png';
-import ContentfulWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/contentful.png';
-import SnykWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/snyk.png';
-import NetlifyWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/netlify.png';
-import CaribouWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/caribou.png';
-import YotpoWhiteLogo from '../../../content/assets/home/customer-logos-monochrome/yotpo.png';
-
-import ContentfulDarkLogo from '../../../content/assets/home/customer-logos-monochrome/contentful-dark.png';
-import SnykDarkLogo from '../../../content/assets/home/customer-logos-monochrome/snyk-dark.png';
-import NetlifyDarkLogo from '../../../content/assets/home/customer-logos-monochrome/netlify-dark.png';
-import CaribouDarkLogo from '../../../content/assets/home/customer-logos-monochrome/caribou-dark.png';
-import YotpoDarkLogo from '../../../content/assets/home/customer-logos-monochrome/yotpo-dark.png';
+import BaillieGiffordLogoPng from '../../../content/assets/home/customer-logos/baillie-gifford-monochrome-standardized.png';
+import AstraZenecaLogoPng from '../../../content/assets/home/customer-logos/astrazenca-monochrome-standardized.png';
+import SumUpLogoPng from '../../../content/assets/home/customer-logos/sumup-monochrome-standardized.png';
+import RelativityLogoPng from '../../../content/assets/home/customer-logos/relativity-monochrome-standardized.png';
+import BaillieGiffordLogo from '../../../content/assets/home/customer-logos/baillie-gifford-monochrome-standardized.webp';
+import AstraZenecaLogo from '../../../content/assets/home/customer-logos/astrazenca-monochrome-standardized.webp';
+import SumUpLogo from '../../../content/assets/home/customer-logos/sumup-monochrome-standardized.webp';
+import RelativityLogo from '../../../content/assets/home/customer-logos/relativity-monochrome-standardized.webp';
 
 export const LOGOS = [
   {
     src: {
-      webp: CaribouLogo,
-      png: CaribouLogoPng,
-      white: CaribouWhiteLogo,
-      dark: CaribouDarkLogo,
+      png: RelativityLogoPng,
+      webp: RelativityLogo,
     },
-    alt: 'Caribou logo',
-    title: '~100 engineers',
+    alt: 'Relativity logo',
   },
+
   {
     src: {
-      webp: YotpoLogo,
-      png: YotpoLogoPng,
-      white: YotpoWhiteLogo,
-      dark: YotpoDarkLogo,
+      png: SumUpLogoPng,
+      webp: SumUpLogo,
     },
-    alt: 'Yotpo logo',
-    title: '~100 engineers',
+    alt: 'SumUp logo',
   },
+
+  {
+    src: {
+      png: AstraZenecaLogoPng,
+      webp: AstraZenecaLogo,
+    },
+    alt: 'AstraZeneca logo',
+  },
+
+  {
+    src: {
+      png: BaillieGiffordLogoPng,
+      webp: BaillieGiffordLogo,
+    },
+    alt: 'Baillie Gifford logo',
+  },
+
   {
     src: {
       webp: SnykLogo,
       png: SnykLogoPng,
-      white: SnykWhiteLogo,
-      dark: SnykDarkLogo,
     },
     alt: 'Snyk logo',
-    title: '~150 engineers',
   },
 
   {
     src: {
       webp: ContentfulLogo,
       png: ContentfulLogoPng,
-      white: ContentfulWhiteLogo,
-      dark: ContentfulDarkLogo,
     },
     alt: 'Contentful logo',
-    title: '~150 engineers',
   },
   {
     src: {
       webp: NetlifyLogo,
       png: NetlifyLogoPng,
-      white: NetlifyWhiteLogo,
-      dark: NetlifyDarkLogo,
     },
     alt: 'Netlify logo',
-    title: '~100 engineers',
   },
   {
     src: {
       webp: HopperLogo,
       png: HopperLogoPng,
-      white: HopperWhiteLogo,
     },
     alt: 'Hopper logo',
-    title: '~200 engineers',
   },
   {
     src: {
@@ -101,15 +92,6 @@ export const LOGOS = [
       png: MyFitnessPalLogoPng,
     },
     alt: 'MyFitnessPal logo',
-    title: '~100 engineers',
-  },
-  {
-    src: {
-      webp: TrackunitLogo,
-      png: TrackunitLogoPng,
-    },
-    alt: 'Trackunit logo',
-    title: '~70 engineers',
   },
   {
     src: {
@@ -117,15 +99,6 @@ export const LOGOS = [
       png: NcsaLogoPng,
     },
     alt: 'NCSA logo',
-    title: '~50 engineers',
-  },
-  {
-    src: {
-      webp: StreamElementsLogo,
-      png: StreamElementsLogoPng,
-    },
-    alt: 'StreamElements logo',
-    title: '~50 engineers',
   },
   {
     src: {
@@ -133,14 +106,13 @@ export const LOGOS = [
       png: YotpoLogoPng,
     },
     alt: 'Yotpo logo',
-    title: '~250 engineers',
   },
 ];
 
 /* eslint-disable jsx-a11y/alt-text */
 export const LogoItem = ({ src, ...rest }) => (
   <picture>
-    <source srcSet={src.webp} type="image/webp" />
+    {has(src, 'webp') && <source srcSet={src.webp} type="image/webp" />}
     <source srcSet={src.png} type="image/png" />
     <img src={src.png} {...rest} />
   </picture>
