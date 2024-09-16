@@ -85,7 +85,7 @@ Larger TechDocs repositories can take some time to build when being updated or v
 
 There are two ways around this currently:
 
-1. Make sure your entity with the relevant TechDocs annotation is listed in the root `catalog-info.yaml` file of your repo and the docs are in a root `docs/` folder. If this is the case AND your admins have set up the [correct autodiscovery](docs/integrations/github-discovery/#steps-to-add-new-auto-discovery-paths) in Roadie for Github based repositories, changes to your docs should be built when they are merged to the default repository branch, so you won't have to wait for docs to build when viewing them.
+1. Make sure your entity with the relevant TechDocs annotation is listed in the root `catalog-info.yaml` file of your repo and the docs are in a root `docs/` folder. If this is the case AND your admins have set up the [correct autodiscovery](/docs/integrations/github-discovery/#steps-to-add-new-auto-discovery-paths) in Roadie for Github based repositories, changes to your docs should be built when they are merged to the default repository branch, so you won't have to wait for docs to build when viewing them.
 
 2. Your organisation can start [building and publishing TechDocs via your own CI pipelines](/docs/details/techdocs/build-via-ci) so that the latest version is always ready to view in Roadie. 
 
