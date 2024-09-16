@@ -184,7 +184,12 @@ module.exports = {
       },
     },
 
-    'gatsby-plugin-advanced-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: ['/purchase/', '/purchase/success/', '/tailwind/404/'],
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-react-svg',
