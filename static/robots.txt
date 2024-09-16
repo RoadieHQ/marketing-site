@@ -3,4 +3,4 @@
 
 User-agent: *
 
-Sitemap: https://roadie.io/sitemap.xml
+Sitemap: https://roadie.io/sitemap-index.xml
