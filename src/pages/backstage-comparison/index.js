@@ -44,7 +44,7 @@ const Comparison = ({
               Backstage offers and turn them into a true Internal Developer Portal.
             </h2>
             <h2 className="text-lg sm:mt-8 lg:text-xl xl:text-xl">
-              With Roadie, we habe taken the open-source version of Backstage and used it to build a
+              With Roadie, we have taken the open-source version of Backstage and used it to build a
               comprehensive and maintenance-free IDP.
             </h2>
           </div>
