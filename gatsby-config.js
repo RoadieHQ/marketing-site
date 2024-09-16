@@ -57,6 +57,9 @@ const getContentfulOptions = () => {
   };
 };
 
+// These paths are blocked from search engine indexing and search engine access.
+const DISLALLOW_LIST = ['/purchase/', '/purchase/success/', '/tailwind/404/', '/installation-pending/'];
+
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
 // a server side variable into a runtime one. This variable is later used to determine which
 // branch of a split testing experiment we are on.
@@ -187,8 +190,20 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        excludes: ['/purchase/', '/purchase/success/', '/tailwind/404/'],
+        excludes: DISLALLOW_LIST,
       },
+    },
+
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: getSiteUrl(),
+        sitemap: `${getSiteUrl()}/sitemap-index.xml`,
+        policy: [{
+          userAgent: '*',
+          disallow: DISLALLOW_LIST,
+        }]
+      }
     },
 
     {
