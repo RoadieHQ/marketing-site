@@ -63,6 +63,20 @@ const DISLALLOW_LIST = [
   '/purchase/success/',
   '/tailwind/404/',
   '/installation-pending/',
+
+  // These are partials which eventually get embedded into other pages.
+  '/docs/details/create-proxy/structure/header/',
+  '/docs/getting-started/adding-a-catalog-item/structure/header/',
+  '/docs/details/create-proxy/basic/',
+
+  // These are partials which eventually get embedded into other pages.
+  '/docs/getting-started/adding-a-catalog-item/bitbucket/',
+  '/docs/getting-started/adding-a-catalog-item/github/',
+  '/docs/getting-started/adding-a-catalog-item/gitlab/',
+  '/docs/getting-started/adding-a-catalog-item/roadie-api/',
+  '/docs/getting-started/adding-a-catalog-item/aws-s3/',
+  '/docs/getting-started/adding-a-catalog-item/azure-devops/',
+  '/docs/getting-started/adding-a-catalog-item/roadie-cli/',
 ];
 
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
