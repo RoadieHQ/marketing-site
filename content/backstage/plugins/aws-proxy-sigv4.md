@@ -35,7 +35,7 @@ gettingStarted:
       + backend.add(import('@segment/backstage-plugin-proxy-sigv4-backend'));
 
       backend.start();
-  - intro: Or if you're using the Legacy Backend System, you'll need to add the plugin to the router in the backend. To do this, create a new backend plugin wrapper module.
+  - intro: Or if you're using the Legacy Backend System, you'll need to add the plugin to the router in the backend. To do this, create a new backend plugin wrapper module and then add that to your backend index.ts file.
     language: typescript
     code: |
       // packages/backend/src/plugins/proxy-sigv4.ts
@@ -51,8 +51,6 @@ gettingStarted:
         return await createRouter({ logger, config });
       }
 
-    language: typescript
-    code: |
       // packages/backend/src/index.ts
 
       +import proxySigV4 from './plugins/proxy-sigv4';
