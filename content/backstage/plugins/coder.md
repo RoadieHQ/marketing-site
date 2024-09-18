@@ -44,49 +44,49 @@ gettingStarted:
             X-Custom-Source: backstage
 
   - intro: Add the Coder `CodeProvider` to your app
-      language: typescript
-      code: |
-        // packages/app/src/App.tsx
+    language: typescript
+    code: |
+      // packages/app/src/App.tsx
 
-        import {
-          type CoderAppConfig,
-          CoderProvider,
-        } from '@coder/backstage-plugin-coder';
+      import {
+        type CoderAppConfig,
+        CoderProvider,
+      } from '@coder/backstage-plugin-coder';
 
-        const appConfig: CoderAppConfig = {
-          deployment: {
-            accessUrl: 'https://coder.example.com',
+      const appConfig: CoderAppConfig = {
+        deployment: {
+          accessUrl: 'https://coder.example.com',
+        },
+
+        // Set the default template (and parameters) for
+        // catalog items. Individual properties can be overridden
+        // by a repo's catalog-info.yaml file
+        workspaces: {
+          defaultTemplateName: 'devcontainers',
+          defaultMode: 'manual',
+
+          // This property defines which parameters in your Coder
+          // workspace templates are used to store repository links
+          repoUrlParamKeys: ['custom_repo', 'repo_url'],
+
+          params: {
+            repo: 'custom',
+            region: 'eu-helsinki',
           },
+        },
+      };
 
-          // Set the default template (and parameters) for
-          // catalog items. Individual properties can be overridden
-          // by a repo's catalog-info.yaml file
-          workspaces: {
-            defaultTemplateName: 'devcontainers',
-            defaultMode: 'manual',
+      // ...
 
-            // This property defines which parameters in your Coder
-            // workspace templates are used to store repository links
-            repoUrlParamKeys: ['custom_repo', 'repo_url'],
-
-            params: {
-              repo: 'custom',
-              region: 'eu-helsinki',
-            },
-          },
-        };
-
-        // ...
-
-        export default app.createRoot(
-          <CoderProvider appConfig={appConfig}>
-            <AlertDisplay />
-            <OAuthRequestDialog />
-            <AppRouter>
-              <Root>{routes}</Root>
-            </AppRouter>
-          </CoderProvider>,
-        );
+      export default app.createRoot(
+        <CoderProvider appConfig={appConfig}>
+          <AlertDisplay />
+          <OAuthRequestDialog />
+          <AppRouter>
+            <Root>{routes}</Root>
+          </AppRouter>
+        </CoderProvider>,
+      );
 
   - intro: 'Add the `CoderWorkspacesCard` card to the entity page.'
     language: typescript
