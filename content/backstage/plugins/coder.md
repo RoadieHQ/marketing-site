@@ -111,7 +111,7 @@ gettingStarted:
           {/* Other elements for overviewContent go here */}
         </Grid>
       );
-    - intro: In addition to the above you can also add additional properties to each `catalog-info.yaml` file for a given repo
+  - intro: In addition to the above you can also add additional properties to each `catalog-info.yaml` file for a given repo
     language: yaml
     code: |
       apiVersion: backstage.io/v1alpha1
