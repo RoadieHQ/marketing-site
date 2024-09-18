@@ -17,7 +17,7 @@ logoImage: '../../assets/logos/flux/flux_color_logo.webp'
 availableOnRoadie: true
 roadieDocsPath: /flux/
 
-  - title: Prerequisites
+gettingStarted:
   - intro: The base configuration for the Flux plugin is handled by the Kubernetes plugins, namely @backstage/plugin-kubernetes and @backstage/plugin-kubernetes-backend. Both need to be installed and configured by following the installation and configuration guides for those plugins. After installation make sure to import the frontend for the Kubernetes plugin. Further details on configuration options can be found on the Flux plugin github page.
     language: typescript
     code: |
@@ -38,8 +38,6 @@ roadieDocsPath: /flux/
     language: bash
     code: |
       yarn add --cwd packages/app @weaveworksoss/backstage-plugin-flux
-
-  - title: Plugin installation
 
   - intro: Install the Flux plugin into Backstage.
     language: bash
@@ -65,9 +63,6 @@ roadieDocsPath: /flux/
           - list
           - watch
     
-
-  - title: Add cards to your entity pages
-
   - intro: Add the EntityFluxHelmReleasesCard to the EntityPage.
     language: typescript
     code: |
@@ -127,7 +122,7 @@ roadieDocsPath: /flux/
       );
 
   - title: Align your catalog-info.yaml and Helm charts with the values the Flux plugin expects
-  - intro: Include kubernetes-id values
+  - intro: Include kubernetes-id values.
     language: yaml
     code: |
       apiVersion: backstage.io/v1alpha1
@@ -145,7 +140,7 @@ roadieDocsPath: /flux/
         owner: sockshop-team
         system: carts
 
-  - intro: Label your Flux HelmRelease
+  - intro: Then label your Flux HelmRelease.
     language: yaml
     code: |
       apiVersion: helm.toolkit.fluxcd.io/v2beta1
