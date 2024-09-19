@@ -34,14 +34,14 @@ gettingStarted:
       proxy:
         endpoints:
           '/coder':
-          # Replace with your Coder deployment access URL (add a trailing slash)
-          target: 'https://coder.example.com/'
+            # Replace with your Coder deployment access URL (add a trailing slash)
+            target: 'https://coder.example.com/'
 
-          changeOrigin: true
-          allowedMethods: ['GET'] # Additional methods will be supported soon!
-          allowedHeaders: ['Authorization', 'Coder-Session-Token']
-          headers:
-            X-Custom-Source: backstage
+            changeOrigin: true
+            allowedMethods: ['GET'] # Additional methods will be supported soon!
+            allowedHeaders: ['Authorization', 'Coder-Session-Token']
+            headers:
+              X-Custom-Source: backstage
 
   - intro: Add the Coder `CodeProvider` to your app
     language: typescript

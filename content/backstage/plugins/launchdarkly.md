@@ -30,9 +30,9 @@ gettingStarted:
       proxy:
         # ...
         '/launchdarkly/api':
-        target: https://app.launchdarkly.com/api
-        headers:
-          Authorization: ${LAUNCHDARKLY_API_KEY}
+          target: https://app.launchdarkly.com/api
+          headers:
+            Authorization: ${LAUNCHDARKLY_API_KEY}
 
   - title: Add LaunchDarkly cards.
   - intro: Add the EntityLaunchdarklyContextOverviewCard
