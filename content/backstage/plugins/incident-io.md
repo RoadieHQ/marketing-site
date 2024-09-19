@@ -1,14 +1,14 @@
 ---
 humanName: Incident.io
 heading: 'Backstage Incident.io Plugin'
-lead: 'Display incidents associated to Backstage components'
+lead: 'Display incidents from Incident.io associated to Backstage components'
 attribution:
   text: Incident.io
   href: https://incident.io/
 
 intro: |
   <p>
-    As a prerequisite, you need to have configured the Incident.io catalog-importer to sync with your Backstage catalog. You can visit your incident.io dashboard to create a custom field that is powered by the Backstage Component catalog type.
+    As a prerequisite, you need to have configured the Incident.io <a href="https://github.com/incident-io/catalog-importer">catalog-importer</a> to sync with your Backstage catalog. You can visit your incident.io dashboard to create a custom field that is powered by the Backstage Component catalog type.
   </p>
   <p>
     We recommend creating a multi-select field called something like "Affected services" or "Impacted components".
