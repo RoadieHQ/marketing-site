@@ -209,34 +209,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: `/sitemap`,
         excludes: DISLALLOW_LIST,
-        query: `
-          {
-            allSitePage {
-              nodes {
-                path
-              }
-            }
-            allFile(filter: { extension: { regex: "/(jpg|jpeg|png|webp)/" } }) {
-              nodes {
-                publicURL
-              }
-            }
-          }
-        `,
-        serialize: ({ path, allFile }) => {
-          const images = allFile.nodes.map((node) => ({
-            url: `https://roadie.io${node.publicURL}`,
-          }));
-
-          return {
-            url: path,
-            changefreq: `daily`,
-            priority: 0.7,
-            images,
-          };
-        },
       },
     },
 
