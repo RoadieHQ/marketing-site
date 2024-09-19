@@ -209,7 +209,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: `/sitemap-index`,
+        output: `/sitemap`,
         excludes: DISLALLOW_LIST,
         query: `
           {
