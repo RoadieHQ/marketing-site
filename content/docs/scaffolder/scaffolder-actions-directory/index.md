@@ -11,11 +11,32 @@ In this page you can find a directory of some available Scaffolder actions and t
 
 `https://<tenant-name>.roadie.so/templates/actions`
 
+| Category            | Name                                            | Description                                                                                                                                                                                                | Source                                                                                                                                                                               | Inputs                                                                                             |
+|---------------------|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Downloading Content | [fetch:plain](#fetchplain)                      | Downloads content and places it in the workspace.                                                                                                                                                          | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/plain.ts)                  | url,targetPath,token                                                                               |
+| Downloading Content | [fetch:template](#fetchtemplate)                | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/). It then renders all the template variables into the files, and places the result in the workspace. | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/template.ts                | url,targetPath,token,values,copyWithoutTemplating,cookiecutterCompat,templateFileExtension,replace |
+| Downloading Content | [fetch:plain:file](#fetchplainfile)             | Downloads single file and places it in the workspace, or optionally in a subdirectory specified by the 'targetPath' input option.                                                                          | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/plainFile.ts)              | url,targetPath,token                                                                               |
+| HTTP Requests       | [http:backstage:request](#httpbackstagerequest) | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                                                           | [@roadiehq/scaffolder-backend-module-http-request](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-http-request) | method*,path*,headers,params,body,logRequestPath,continueOnBadResponse                             |
+| Debugging           | [debug:log](#debuglog)                          | Log a message to the UI output.                                                                                                                                                                            | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/debug/log.ts)                    | message*,listWorkspace                                                                             |
+| Debugging           | [debug:wait](#debugwait)                        | Waits for a certain period of time.                                                                                                                                                                        | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/debug/wait.ts)                   | minutes,seconds,miliseconds                                                                        |
+| Catalog             | [catalog:register](#catalogregister)            | Registers an entity in the catalog.                                                                                                                                                                        | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/register.ts)             | (catalogInfoUrl*,optional) (repoContentsUrl*,catalogInfoPath,optional)                             |
+| Catalog             | [catalog:write](#catalogwrite)                  | Writes the catalog-info.yaml for your template                                                                                                                                                             | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/write.ts)                | filePath,entity*                                                                                   |
+| Catalog             | [catalog:fetch](#catalogfetch)                  | Fetches an entity or entities from the catalog by entity reference(s).                                                                                                                                     | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/fetch.ts)                | entityRef,entityRefs,optional,defaultKind,defaultNamespace                                         |
+| File Operations     | [fs:delete](#fsdelete)                          | Deletes files and directories in the workspace                                                                                                                                                             | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/delete.ts)            | files*                                                                                             |
+| File Operations     | [fs:rename](#fsrename)                          | Renames files and directories in the workspace, essentially moving them.                                                                                                                                   | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/rename.ts)            | files*                                                                                             |
+| File Operations     | [fs:append](#fsappend)                          | Adds text to the end of an existing file in the workspace.                                                                                                                                                 | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/append.ts)            | file*,text*                                                                                        |
+| File Operations     | [fs:read](#fsread)                              | Reads a file from the workspace and outputs its content to be used in a subsequent step.                                                                                                                   | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/read.ts)              | path*                                                                                              |
+|                     |                                                 |                                                                                                                                                                                                            |                                                                                                                                                                                      |                                                                                                    |
+|                     |                                                 |                                                                                                                                                                                                            |                                                                                                                                                                                      |                                                                                                    |
+|                     |                                                 |                                                                                                                                                                                                            |                                                                                                                                                                                      |                                                                                                    |
+|                     |                                                 |                                                                                                                                                                                                            |                                                                                                                                                                                      |                                                                                                    |
+|                     |                                                 |                                                                                                                                                                                                            |                                                                                                                                                                                      |                                                                                                    |
 
+## Download content
 
 ### `fetch:plain`
 
-Downloads content and places it in the workspace.
+Downloads directory content and places it in the workspace.
 
 ```yaml
 steps:
@@ -39,8 +60,25 @@ steps:
 ```
 
 #### Outputs
+None
 
-The `fetch:plain` action does not output any data.
+
+### `fetch:plain:file`
+
+Downloads single file and places it in the workspace, or optionally in a subdirectory specified by the 'targetPath' input option.
+
+```yaml
+steps:
+  - action: fetch:plain:file
+    id: fetch-plain-file
+    name: Fetch plain file
+    input:
+      url: ./plain.json
+```
+
+#### Outputs
+None
+
 
 ### `fetch:template`
 
@@ -116,343 +154,153 @@ steps:
 
 The `fetch:template` action does not output any data.
 
-### `publish:github`
+---
 
-This action creates a new GitHub repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
+## HTTP Requests
 
-The `repoUrl` must be in the format `github.com?repo=<reponame>&owner=<owner org>`
+### `http:backstage:request`
 
-```yaml
-steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
-    input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-```
+This action allows the Scaffolder task to run an HTTP request against the Backstage Backend API and handle the response. It can be useful for extending the scaffolder to call out to third party APIs. You can do this by configuring a proxy and then calling the proxy with this action.
 
-By default it will create a repository with a `master` branch. If you prefer to use `main` you can do the following:
+The path should always point to a proxy entry with the following format: `/proxy/<proxy-path>/<external-api-path>` - i.e.: `/proxy/snyk/org/<some-org>/projects` or `/proxy/circleci/api/projects` (NB: the CircleCI proxy path is `circleci/api/` but Snyk is just `snyk/`)
 
 ```yaml
 steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
     input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      defaultBranch: main
+      method: GET
+      path: '/proxy/snyk/org/<some-org>/project/<some-project-id>'
 ```
 
-The `access` input parameter adds an admin collaborator to the repository. It can be a reference to a GitHub user or a team in GitHub.
+You can optionally add request `params`.
 
 ```yaml
 steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
     input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      access: AcmeInc/engineering
+      method: POST
+      path: '/proxy/acme/thing'
+      params:
+        state: 'bar'
 ```
 
-You can [protect the default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) from being pushed to directly by using `protectDefaultBranch` if your repository is part of a Github Pro account.
+The `headers` parameter allows setting headers on the request:
 
 ```yaml
 steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
     input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      protectDefaultBranch: true
+      method: GET
+      path: '/proxy/circleci/api/projects'
+    headers:
+      Accept: 'application/json'
 ```
 
-You can enable code owner reviews using the `requireCodeOwnerReviews` option:
+The `body` param allows you to set a request body. This is most likely going to be useful for `POST` requests.
 
 ```yaml
 steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
     input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      requireCodeOwnerReviews: true
+      method: POST
+      path: '/api/proxy/acme/thing'
+      body: 'thingname=abc1'
 ```
 
-The `repoVisibility` option allows the repository to be made public. By default it will be a private repository.
+You can also have the action generate a `json` formatted body by setting a custom "Content-Type" header to "application/json" and then providing an object to the `body` param.
 
 ```yaml
 steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
+  - action: http:backstage:request
+    id: http-request
+    name: Create a thing on the acme service
     input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      repoVisibility: 'public'
+      method: POST
+      path: '/api/proxy/acme/thing'
+      headers:
+        'Content-Type': 'application/json'
+      body:
+        thingname: 'foo'
 ```
 
-To cause merges to delete the source branch, you can enable the `deleteBranchOnMerge` setting.
+#### Inputs:
 
-```yaml
-steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
-    input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      deleteBranchOnMerge: true
-```
+| key                     | description                                                                                                                  | value                                                         | example                                                                          |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|----------------------------------------------------------------------------------|
+| `method`                | The method type of the request                                                                                               | 'GET','HEAD','OPTIONS','POST','UPDATE','DELETE','PUT','PATCH' | GET                                                                              |
+| `path`                  | The url path you want to query                                                                                               | `string`                                                      | '/proxy/snyk/org/${{ parameters.orgName }}/projects/${{ parameters.projectId }}' |
+| `headers`               | The headers you would like to pass to your request                                                                           | `object`                                                      | Accept: application/json                                                         |
+| `params`                | The query parameters you would like to pass to your request                                                                  | `object`                                                      | kind: Component                                                                  |
+| `body`                  | The body you would like to pass to your request                                                                              | 'object','string','array'                                     | type: TEST                                                                       |
+| `logRequestPath`        | Option to turn request path logging off. Defaults to `true`                                                                  | `boolean`                                                     | false                                                                            |
+| `continueOnBadResponse` | Return response code and body and continue to next scaffolder step if the response status is 4xx or 5xx. Defaults to `false` | `boolean`                                                     | true                                                                             |
 
-If you want to disable merge commits, squash merge and rebase merge you can do that with the settings `allowMergeCommit`, `allowSquashMerge` and `allowRebaseMerge`. By default, these are enabled.
-
-```yaml
-steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
-    input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      allowMergeCommit: false
-      allowSquashMerge: false
-      allowRebaseMerge: false
-```
-
-By default the repository will be populated with the files contained in the workspace directory. If you need to use a subdirectory, you can use the `sourcePath` option.
-
-```yaml
-steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
-    input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      sourcePatch: './repoRoot'
-```
-
-Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` or `team` and `access`. `username` is the GitHub username to allow collaboration.
-
-The `access` option gives the user specific type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`. these equate to:
-
-- pull (read)
-- push (write)
-- triage (triage)
-- admin (admin)
-- maintain (maintain - only for public repos)
-
-The `team` value should be the Github team slug and should not include the org-name as a prefix.
-
-```yaml
-steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
-    input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      collaborators:
-        - user: user1
-          access: admin
-        - team: github-team-name
-          access: pull
-```
-
-The `topics` allows adding topics to the created repository when its created.
-
-```yaml
-steps:
-  - action: publish:github
-    id: publish-repository
-    name: Publish Repository to Github
-    input:
-      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
-      topics:
-        - java
-        - ruby
-```
 
 #### Outputs
 
-The `publish:github` action produces two step outputs.
+| Name    | Description                                                    | Type     |
+| ------- |----------------------------------------------------------------|:---------|
+| code    | Status code of the http response                               | `string` |
+| headers | Object containing all of the response headers and their values | `object` |
+| body    | Body of the response. If content-type header is `application/json` this will be a parsed object. Otherwise, it will contain an object with a single param `message` containing a string representing the body of the response.| `object`  |
 
-| Name            | Description                                   |
-| --------------- | --------------------------------------------- |
-| remoteUrl       | Url for the newly created repository          |
-| repoContentsUrl | Url that shows the contents of the repository |
+---
 
-These outputs can be retrieved by a subsequent step using:
+### Debugging
 
-```yaml
-steps:
-  - id: log-message
-    name: Log Message
-    action: debug:log
-    input:
-      message: 'RemoteURL: ${{ steps["publish-repository"].output.remoteUrl }}, ${{ steps["publish-repository"].output.repoContentsUrl }}!'
-```
+### `debug:log`
 
-### `publish:github:pull-request`
-
-This action creates a pull request against a pre-existing repository using the files contained in the workspace directory. The most basic example is:
+Use the `debug:log` action to print some information to the task console.
 
 ```yaml
 steps:
-  - action: publish:github:pull-request
-    id: create-pull-request
-    name: Create a pull request
+  - action: debug:log
+    id: debug-log
+    name: Log Hello World
     input:
-      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
-      branchName: ticketNumber-123
-      title: 'Make some changes to the files'
-      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
+      message: 'Hello, World!'
 ```
 
-If the updated code is contained in a subdirectory to the workspace directory, you can use the `sourcePath` to select it. If the files you want to target to update are in a subdirectory of the repository you can use the `targetPath` option.
-
-```yaml
-steps:
-  - action: publish:github:pull-request
-    id: create-pull-request
-    name: Create a pull request
-    input:
-      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
-      branchName: ticketNumber-123
-      title: 'Make some changes to the files'
-      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
-      sourcePath: ./subdirectory
-      targetPath: ./subdirectory
-```
-
-You can use the user that runs the scaffolder template to open the PR rather than opening it on behalf of the Roadie Github App by specifying the token field.
-The token can be injected by the RepoUrlPicker parameter as documented [here](https://backstage.io/docs/features/software-templates/writing-templates#using-the-users-oauth-token)
-
-```yaml
-parameters:
-  - title: Choose a location
-    required:
-      - repoUrl
-    properties:
-      repoUrl:
-        title: Repository Location
-        type: string
-        ui:field: RepoUrlPicker
-        ui:options:
-          # Here's the option you can pass to the RepoUrlPicker
-          requestUserCredentials:
-            secretsKey: USER_OAUTH_TOKEN
-            additionalScopes:
-              github:
-                - workflow
-          allowedHosts:
-            - github.com
-steps:
-  - action: publish:github:pull-request
-    id: create-pull-request
-    name: Create a pull request
-    input:
-      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
-      branchName: ticketNumber-123
-      title: 'Make some changes to the files'
-      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
-      # here's where the secret can be used
-      token: ${{ secrets.USER_OAUTH_TOKEN }}
-```
-
-NB: The branch you use for the pull request must be a new branch for the repo.
+#### Inputs:
+- `message`: Text to log in the Backstage UI. You can log variables like so: 'Hello, ${{ parameters.name }}'
+- `listWorkspace`: List all files in the workspace. If used with "with-contents", also the file contents are listed.
+  - values: `with-filenames`,`with-contents`
 
 #### Outputs
 
-The `publish:github:pull-request` action produces two outputs.
+The `debug:log` action does not have any outputs.
 
-| Name              | Description                          |
-| ----------------- | ------------------------------------ |
-| remoteUrl         | Url to the new pull request          |
-| pullRequestNumber | Shows the number of the pull request |
+### `debug:wait`
 
-They can be accessed in subsequent steps as follows:
+Waits for a certain period of time.
 
-```yaml
-steps:
-  - id: log-message
-    name: Log Message
-    action: debug:log
-    input:
-      message: 'RemoteURL: ${{ steps["create-pull-request.output.remoteUrl }}, ${{ steps["create-pull-request"].output.pullRequestNumber }}!'
-```
+#### Inputs
 
-### `publish:bitbucket`
-
-This action creates a new Bitbucket repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
-
-The `repoUrl` must be in the format `bitbucket.org?repo=<project name>&workspace=<workspace name>&project=<project name>`
-
-```yaml
-steps:
-  - action: publish:bitbucket
-    id: publish-repository
-    name: Publish Repository to Bitbucket
-    input:
-      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
-```
-
-You can optionally add a `description` to the new repository.
-
-```yaml
-steps:
-  - action: publish:bitbucket
-    id: publish-repository
-    name: Publish Repository to Bitbucket
-    input:
-      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
-      description: 'My new project'
-```
-
-By default the project will be created as a private repository. It can be made public using the `repoVisibility` option.
-
-```yaml
-steps:
-  - action: publish:bitbucket
-    id: publish-repository
-    name: Publish Repository to Bitbucket
-    input:
-      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
-      repoVisibility: 'public'
-```
-
-By default the repository is created with a "master" branch. If you would like to use "main" instead you can us the `defaultBranch` option.
-
-```yaml
-steps:
-  - action: publish:bitbucket
-    id: publish-repository
-    name: Publish Repository to Bitbucket
-    input:
-      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
-      defaultBranch: 'main'
-```
-
-By default the repository will be populated with the files contained in the workspace directory. If you need to use a subdirectory, you can use the `sourcePath` option.
-
-```yaml
-steps:
-  - action: publish:bitbucket
-    id: publish-repository
-    name: Publish Repository to Bitbucket
-    input:
-      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
-      sourcePatch: './repoRoot'
-```
+| key           | description         | value    | example |
+|---------------|---------------------|----------|---------|
+| `minutes`     | Minutes to wait     | `number` | 2       |
+| `seconds`     | Seconds to wait     | `number` | 30      |
+| `miliseconds` | Miliseconds to wait | `number` | 3000    |
 
 #### Outputs
 
-The `publish:bitbucket` action produces the following outputs.
+None
 
-| Name            | Description                                   |
-| --------------- | --------------------------------------------- |
-| remoteUrl       | Url for the newly created repository          |
-| repoContentsUrl | Url that shows the contents of the repository |
+--- 
+
+## Catalog
 
 ### `catalog:register`
 
-This action manually registers a component with the catalog.
+This action manually registers a entity with the catalog.
 
 You may want to do this if you haven't [enabled autodiscovery](/docs/getting-started/autodiscovery/) of components or if you're using a filename which doesn't match your autodiscovery pattern.
 
@@ -482,6 +330,17 @@ steps:
 ```
 
 In both cases you can pass an `optional` flag which determines if the location can be created before the catalog files exists.
+
+#### Inputs
+
+Either `catalogInfoUrl` must be specified or `repoContentsUrl` must be specified. 
+
+| key               | description                                                                                           | value     | example                                                                          |
+|-------------------|-------------------------------------------------------------------------------------------------------|-----------|----------------------------------------------------------------------------------|
+| `catalogInfoUrl`  | An absolute URL pointing to the catalog info file location                                            | `string`  | GET                                                                              |
+| `optional`        | Permit the registered location to optionally exist. Default: false                                    | `boolean` | '/proxy/snyk/org/${{ parameters.orgName }}/projects/${{ parameters.projectId }}' |
+| `repoContentsUrl` | An absolute URL pointing to the root of a repository directory tree                                   | `string`  | Accept: application/json                                                         |
+| `catalogInfoPath` | A relative path from the repo root pointing to the catalog info file, defaults to /catalog-info.yaml' | `string`  | kind: Component                                                                  |
 
 ### `catalog:write`
 
@@ -526,13 +385,76 @@ steps:
           owner: default/owner
 ```
 
+#### Inputs
+
+| key        | description                                                                                           | value    | example                     |
+|------------|-------------------------------------------------------------------------------------------------------|----------|-----------------------------|
+| `filePath` | Defaults to catalog-info.yaml                                            | `string` | backstage/catalog-info.yaml |
+| `entity`*  | A full entiy definition matching the entity schema                                                    | `object` |                             |
+
+
+#### Outputs
+None
+
+### `catalog:fetch`
+
+This action fetches an entity or entities from the catalog by entity reference(s).
+
+```yaml
+steps:
+  - action: catalog:fetch
+    id: catalog-entity-fetch
+    name: Fetch Catalog Entity
+    input:
+      entityRef: component:default/customer-service
+```
+
+You can also use default input parameters for kind and namespace `defaultKind`, `defaultNamespace` and specify `optional: true` if you want the step to continue if the entity or entities do not exist.
+
+```yaml
+steps:
+  - action: catalog:fetch
+    id: catalog-entity-fetch
+    name: Fetch Catalog Entity
+    input:
+      entityRef: component:default/customer-service
+```
+
+This action can be combined with parameter values from `EntityPicker` like so:
+
+```yaml
+...
+parameters:
+  properties:
+    entity:
+      type: string
+      ui:field: EntityPicker
+steps:
+  - action: catalog:fetch
+    id: catalog-entity-fetch
+    name: Fetch Catalog Entity
+    input:
+      entityRef: ${{ parameters.entity }}
+```
+
+#### Inputs
+
+| key         | description                                           | value    | example                        |
+|-------------|-------------------------------------------------------|----------|--------------------------------|
+| `entityRef` | An entity reference for the entity you want to fetch. | `string` | component:default/test-service |
+
 #### Outputs
 
-The `catalog:write` action does not have any outputs.
+An `entity` object following the [schema of Backstage entities](https://backstage.io/docs/features/software-catalog/descriptor-format/) or `entities` which is an array of entity objects. 
+
+
+## File Operations
 
 ### `fs:delete`
 
-This action deletes items in the workspace. It has one input parameter `files` that can be provided an array of items to delete.
+This action deletes the given files or directories in the workspace. It has one input parameter `files` that can be provided an array of file paths or directory paths to delete.
+
+If a directory is used, all the files inside a directory are deleted. If the given file or directory does not exist the function does nothing.
 
 ```yaml
 steps:
@@ -544,6 +466,12 @@ steps:
         - files/deleteme
         - otherfiletodelete
 ```
+
+#### Inputs
+
+| key        | description                                           | value    | example       |
+|------------|-------------------------------------------------------|----------|---------------|
+| `files` | A list of files and directories that will be deleted. | `string` | - somefile.js |
 
 #### Outputs
 
@@ -566,9 +494,69 @@ steps:
           to: copyto1
 ```
 
+#### Inputs
+
+| key     | description                                                             | value    | example                                       |
+|---------|-------------------------------------------------------------------------|----------|-----------------------------------------------|
+| `files` | A list of objects with a `from` and `to` field representing file paths. | `object` | {'from': 'a/file.yaml', 'to': 'b/file.yaml' } |
+
+
+#### Outputs
+None
+
+### `fs:append`
+
+Appends text to a file within the workspace
+
+```yaml
+steps:
+  - id: append
+    name: Append to file
+    action: fs:append
+    input:
+      file: ${{ parameters.file }}
+      text: ${{ parameters.text }}
+```
+
+#### Inputs
+
+| key     | description                                          | value    | example                     |
+|---------|------------------------------------------------------|----------|-----------------------------|
+| `file`* | A path to the file.                                  | `string` | backstage/catalog-info.yaml |
+| `text`* | The text to be added to the end of the file content. | `string` | Lorem ipsum                 |
+
+
 #### Outputs
 
-The `fs:rename` action does not have any outputs.
+The `fs:append` action does not produce outputs.
+
+### `fs:read`
+
+Reads a file from the workspace and outputs its content to be used in a subsequent step.
+
+```yaml
+steps:
+  - id: read
+    name: Reads a file
+    action: fs:read
+    input:
+      path: ${{ parameters.path }}
+```
+
+#### Inputs
+
+| key     | description                                          | value    | example                     |
+|---------|------------------------------------------------------|----------|-----------------------------|
+| `path`* | A path to the file.                                  | `string` | backstage/catalog-info.yaml |
+
+
+#### Outputs
+
+The `fs:read` action produces one output.
+
+| Name    | Description         |
+| ------- | ------------------- |
+| content | Content of the file |
 
 ### `roadiehq:utils:fs:replace`
 
@@ -1025,57 +1013,269 @@ The `roadiehq:utils:fs:append` action produces one output.
 | ---- | ------------------------------------- |
 | path | Path to the file that got appended to |
 
-### `fs:append`
+## GitHub
 
-Appends text to a file within the workspace
+### `publish:github`
 
-**Params:**
+This action creates a new GitHub repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
 
-| Name   | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| file\* | The path of the file append to. This must be a path within the workspace. |
-| text\* | The text to append to the file.                                           |
+The `repoUrl` must be in the format `github.com?repo=<reponame>&owner=<owner org>`
 
 ```yaml
 steps:
-  - id: append
-    name: Append to file
-    action: fs:append
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
     input:
-      file: ${{ parameters.file }}
-      text: ${{ parameters.text }}
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+```
+
+By default it will create a repository with a `master` branch. If you prefer to use `main` you can do the following:
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      defaultBranch: main
+```
+
+The `access` input parameter adds an admin collaborator to the repository. It can be a reference to a GitHub user or a team in GitHub.
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      access: AcmeInc/engineering
+```
+
+You can [protect the default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) from being pushed to directly by using `protectDefaultBranch` if your repository is part of a Github Pro account.
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      protectDefaultBranch: true
+```
+
+You can enable code owner reviews using the `requireCodeOwnerReviews` option:
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      requireCodeOwnerReviews: true
+```
+
+The `repoVisibility` option allows the repository to be made public. By default it will be a private repository.
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      repoVisibility: 'public'
+```
+
+To cause merges to delete the source branch, you can enable the `deleteBranchOnMerge` setting.
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      deleteBranchOnMerge: true
+```
+
+If you want to disable merge commits, squash merge and rebase merge you can do that with the settings `allowMergeCommit`, `allowSquashMerge` and `allowRebaseMerge`. By default, these are enabled.
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      allowMergeCommit: false
+      allowSquashMerge: false
+      allowRebaseMerge: false
+```
+
+By default the repository will be populated with the files contained in the workspace directory. If you need to use a subdirectory, you can use the `sourcePath` option.
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      sourcePatch: './repoRoot'
+```
+
+Collaborators can be added to the repository using the `collaborators` option. It takes an array of `username` or `team` and `access`. `username` is the GitHub username to allow collaboration.
+
+The `access` option gives the user specific type of permissions. The options are `pull`, `push`, `admin`, `maintain` or `triage`. these equate to:
+
+- pull (read)
+- push (write)
+- triage (triage)
+- admin (admin)
+- maintain (maintain - only for public repos)
+
+The `team` value should be the Github team slug and should not include the org-name as a prefix.
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      collaborators:
+        - user: user1
+          access: admin
+        - team: github-team-name
+          access: pull
+```
+
+The `topics` allows adding topics to the created repository when its created.
+
+```yaml
+steps:
+  - action: publish:github
+    id: publish-repository
+    name: Publish Repository to Github
+    input:
+      repoUrl: 'github.com?repo=newreponame&owner=AcmeInc'
+      topics:
+        - java
+        - ruby
 ```
 
 #### Outputs
 
-The `fs:append` action does not produce outputs.
+The `publish:github` action produces two step outputs.
 
-### `fs:read`
+| Name            | Description                                   |
+| --------------- | --------------------------------------------- |
+| remoteUrl       | Url for the newly created repository          |
+| repoContentsUrl | Url that shows the contents of the repository |
 
-Reads a file from the workspace
-
-**Params:**
-
-| Name   | Description               |
-| ------ | ------------------------- |
-| path\* | Path to the file to read. |
+These outputs can be retrieved by a subsequent step using:
 
 ```yaml
 steps:
-  - id: read
-    name: Reads a file
-    action: fs:read
+  - id: log-message
+    name: Log Message
+    action: debug:log
     input:
-      path: ${{ parameters.path }}
+      message: 'RemoteURL: ${{ steps["publish-repository"].output.remoteUrl }}, ${{ steps["publish-repository"].output.repoContentsUrl }}!'
 ```
+
+### `publish:github:pull-request`
+
+This action creates a pull request against a pre-existing repository using the files contained in the workspace directory. The most basic example is:
+
+```yaml
+steps:
+  - action: publish:github:pull-request
+    id: create-pull-request
+    name: Create a pull request
+    input:
+      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
+      branchName: ticketNumber-123
+      title: 'Make some changes to the files'
+      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
+```
+
+If the updated code is contained in a subdirectory to the workspace directory, you can use the `sourcePath` to select it. If the files you want to target to update are in a subdirectory of the repository you can use the `targetPath` option.
+
+```yaml
+steps:
+  - action: publish:github:pull-request
+    id: create-pull-request
+    name: Create a pull request
+    input:
+      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
+      branchName: ticketNumber-123
+      title: 'Make some changes to the files'
+      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
+      sourcePath: ./subdirectory
+      targetPath: ./subdirectory
+```
+
+You can use the user that runs the scaffolder template to open the PR rather than opening it on behalf of the Roadie Github App by specifying the token field.
+The token can be injected by the RepoUrlPicker parameter as documented [here](https://backstage.io/docs/features/software-templates/writing-templates#using-the-users-oauth-token)
+
+```yaml
+parameters:
+  - title: Choose a location
+    required:
+      - repoUrl
+    properties:
+      repoUrl:
+        title: Repository Location
+        type: string
+        ui:field: RepoUrlPicker
+        ui:options:
+          # Here's the option you can pass to the RepoUrlPicker
+          requestUserCredentials:
+            secretsKey: USER_OAUTH_TOKEN
+            additionalScopes:
+              github:
+                - workflow
+          allowedHosts:
+            - github.com
+steps:
+  - action: publish:github:pull-request
+    id: create-pull-request
+    name: Create a pull request
+    input:
+      repoUrl: 'github.com?repo=reponame&owner=AcmeInc'
+      branchName: ticketNumber-123
+      title: 'Make some changes to the files'
+      description: 'This pull request makes changes to the files in the reponame repository in the AcmeInc organization'
+      # here's where the secret can be used
+      token: ${{ secrets.USER_OAUTH_TOKEN }}
+```
+
+NB: The branch you use for the pull request must be a new branch for the repo.
 
 #### Outputs
 
-The `fs:read` action produces one output.
+The `publish:github:pull-request` action produces two outputs.
 
-| Name    | Description         |
-| ------- | ------------------- |
-| content | Content of the file |
+| Name              | Description                          |
+| ----------------- | ------------------------------------ |
+| remoteUrl         | Url to the new pull request          |
+| pullRequestNumber | Shows the number of the pull request |
+
+They can be accessed in subsequent steps as follows:
+
+```yaml
+steps:
+  - id: log-message
+    name: Log Message
+    action: debug:log
+    input:
+      message: 'RemoteURL: ${{ steps["create-pull-request.output.remoteUrl }}, ${{ steps["create-pull-request"].output.pullRequestNumber }}!'
+```
 
 ### `github:actions:dispatch`
 
@@ -1200,107 +1400,7 @@ steps:
 
 The `github:webhook` action does not have any outputs.
 
-### `http:backstage:request`
-
-This action allows the Scaffolder task to run an HTTP request against the Backstage Backend API and handle the response. It can be useful for extending the scaffolder to call out to third party APIs. You can do this by configuring a proxy and then calling the proxy with this action.
-
-The path should always point to a proxy entry with the following format: `/proxy/<proxy-path>/<external-api-path>` - i.e.: `/proxy/snyk/org/<some-org>/projects` or `/proxy/circleci/api/projects` (NB: the CircleCI proxy path is `circleci/api/` but Snyk is just `snyk/`)
-
-```yaml
-steps:
-  - action: http:backstage:request
-    id: http-request
-    name: Create a thing on the acme service
-    input:
-      method: GET
-      path: '/proxy/snyk/org/<some-org>/project/<some-project-id>'
-```
-
-You can optionally add request `params`.
-
-```yaml
-steps:
-  - action: http:backstage:request
-    id: http-request
-    name: Create a thing on the acme service
-    input:
-      method: POST
-      path: '/proxy/acme/thing'
-      params:
-        state: 'bar'
-```
-
-The `headers` parameter allows setting headers on the request:
-
-```yaml
-steps:
-  - action: http:backstage:request
-    id: http-request
-    name: Create a thing on the acme service
-    input:
-      method: GET
-      path: '/proxy/circleci/api/projects'
-    headers:
-      Accept: 'application/json'
-```
-
-The `body` param allows you to set a request body. This is most likely going to be useful for `POST` requests.
-
-```yaml
-steps:
-  - action: http:backstage:request
-    id: http-request
-    name: Create a thing on the acme service
-    input:
-      method: POST
-      path: '/api/proxy/acme/thing'
-      body: 'thingname=abc1'
-```
-
-You can also have the action generate a `json` formatted body by setting a custom "Content-Type" header to "application/json" and then providing an object to the `body` param.
-
-```yaml
-steps:
-  - action: http:backstage:request
-    id: http-request
-    name: Create a thing on the acme service
-    input:
-      method: POST
-      path: '/api/proxy/acme/thing'
-      headers:
-        'Content-Type': 'application/json'
-      body:
-        thingname: 'foo'
-```
-
-#### Outputs
-
-The `http:backstage:request` action has three outputs.
-
-| Name    | Description                                                        |
-| ------- | ------------------------------------------------------------------ |
-| code    | Status code of the http response                                   |
-| headers | Dictionary containing all of the response headers and their values |
-| body    | Body of the response                                               |
-
-If there is a content-type header containing `application/json` the `body` param will contain the parsed object. Otherwise, it will contain an object with a single param `message` containing a string representing the body of the response.
-
-### `debug:log`
-
-Use the `debug:log` action to print some information to the task console.
-
-```yaml
-steps:
-  - action: debug:log
-    id: debug-log
-    name: Log Hello World
-    input:
-      message: 'Hello, World!'
-```
-
-#### Outputs
-
-The `debug:log` action does not have any outputs.
+## Azure
 
 ## `azure:repo:clone`
 
@@ -1347,6 +1447,7 @@ Create a PR in Azure. See input options [in the application](/docs/scaffolder/wr
         supportsIterations: false
 ```
 
+## Gitlab
 
 ## `publish:gitlab`
 
@@ -1360,7 +1461,6 @@ steps:
     input:
       repoUrl: gitlab.com?repo=project_name&owner=group_name
 ```
-
 
 ## `publish:gitlab:merge-request`
 
@@ -1380,3 +1480,76 @@ steps:
       assignee: my-assignee
 ```
 
+## Bitbucket
+
+### `publish:bitbucket`
+
+This action creates a new Bitbucket repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
+
+The `repoUrl` must be in the format `bitbucket.org?repo=<project name>&workspace=<workspace name>&project=<project name>`
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
+```
+
+You can optionally add a `description` to the new repository.
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
+      description: 'My new project'
+```
+
+By default the project will be created as a private repository. It can be made public using the `repoVisibility` option.
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
+      repoVisibility: 'public'
+```
+
+By default the repository is created with a "master" branch. If you would like to use "main" instead you can us the `defaultBranch` option.
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
+      defaultBranch: 'main'
+```
+
+By default the repository will be populated with the files contained in the workspace directory. If you need to use a subdirectory, you can use the `sourcePath` option.
+
+```yaml
+steps:
+  - action: publish:bitbucket
+    id: publish-repository
+    name: Publish Repository to Bitbucket
+    input:
+      repoUrl: 'bitbucket.org?repo=newprojectname&workspace=workspacename&project=projectname'
+      sourcePatch: './repoRoot'
+```
+
+#### Outputs
+
+The `publish:bitbucket` action produces the following outputs.
+
+| Name            | Description                                   |
+| --------------- | --------------------------------------------- |
+| remoteUrl       | Url for the newly created repository          |
+| repoContentsUrl | Url that shows the contents of the repository |
