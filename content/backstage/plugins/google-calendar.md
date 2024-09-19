@@ -13,7 +13,7 @@ seo:
 
 logoImage: '../../assets/logos/google-calendar/Google-Calendar-Logo-700x394.webpp'
 
-coverImage: '../../assets/gcalendar-card.webpp'
+coverImage: '../../assets/gcalendar-card.webp'
 coverImageAlt: 'A screenshot of the Google Calendar plugin.'
 
 availableOnRoadie: true
