@@ -212,6 +212,7 @@ module.exports = {
       options: {
         output: '/sitemap.xml',
         excludes: DISLALLOW_LIST,
+        resolveSiteUrl: () => getSiteUrl(),
         query: `
           {
             allSitePage {
