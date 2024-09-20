@@ -59,7 +59,7 @@ const getContentfulOptions = () => {
 };
 
 // These paths are blocked from search engine indexing and search engine access.
-const DISLALLOW_LIST = [
+const DISALLOW_LIST = [
   '/purchase/',
   '/purchase/success/',
   '/tailwind/404/',
@@ -211,7 +211,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         output: '/sitemap.xml',
-        excludes: DISLALLOW_LIST,
+        excludes: DISALLOW_LIST,
         resolveSiteUrl: () => getSiteUrl(),
         query: `
           {
@@ -269,7 +269,7 @@ module.exports = {
         policy: [
           {
             userAgent: '*',
-            disallow: DISLALLOW_LIST,
+            disallow: DISALLOW_LIST,
           },
         ],
       },
