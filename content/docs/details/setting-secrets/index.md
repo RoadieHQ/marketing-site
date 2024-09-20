@@ -1,6 +1,6 @@
 ---
 title: Setting secrets
-publishedDate: '2022-01-31T21:00:00.0Z'
+publishedDate: '2024-09-20T21:00:00.0Z'
 description: Many Backstage plugins require authentication to work. This tutorial shows you how to set authentication tokens securely in Roadie.
 ---
 
@@ -42,3 +42,17 @@ To navigate to this page, follow these steps:
 ![A modal dialog with an input where we can input a secret and a save button](./set-token-dialog.webp)
 
 3. Paste your token into the input and click SAVE. The specific details of where to get the token will depend on the plugin you are configuring.
+
+## Step 3: Unsetting or deleting a secret
+
+If you need to delete a saved secret, you can easily do so by editing the secret and entering the value `unset`.
+
+1. Find the secret you want to delete in the table.
+
+2. Click the pencil icon to edit the secret.
+
+3. In the input field, type `unset` and click SAVE. This will remove the secret from the system.
+
+![The table row will reflect that a secret has been unset](./unset-secret-confirmation.webp)
+
+Once the secret is removed, it will no longer be available for use by any plugins or integrations.
