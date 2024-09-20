@@ -2,14 +2,18 @@ import React from 'react';
 import { Tags } from 'components';
 import get from 'lodash/get';
 import classnames from 'classnames';
+import has from 'lodash/has';
 
 import Attribution from './Attribution';
 import TitleAndDescription from './TitleAndDescription';
 
+const EmptyCoverImage = (props) => <div {...props} />;
+
 const CoverImage = ({ post }) => {
   const images = get(post, 'coverImage.gatsbyImageData.images');
   const className = 'h-48 w-full object-cover bg-gray-200';
-  if (!images) return <div className={className} />
+  if (!images) return <EmptyCoverImage className={className} />;
+  if (!has(images, 'fallback.src')) return <EmptyCoverImage className={className} />;
 
   return (
     <img
