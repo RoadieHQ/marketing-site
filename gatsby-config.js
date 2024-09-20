@@ -4,6 +4,7 @@ const agoliaQueries = require('./src/queries/agolia');
 const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
 const theme = require('./src/theme');
 const GATSBY_PLUGIN_CSP_DIRECTIVES = require('./src/gatsby/cspDirectives');
+const { getSrc } = require('gatsby-plugin-image');
 
 const SITE_TITLE = 'Roadie';
 
@@ -209,7 +210,49 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
+        output: '/sitemap.xml',
         excludes: DISLALLOW_LIST,
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allFile(filter: { extension: { regex: "/(jpg|jpeg|png|gif)/" } }) {
+              nodes {
+                publicURL
+                name
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+        `,
+        resolvePages: ({ allSitePage: { nodes: allPages }, allFile: { nodes: allImages } }) => {
+          return allPages.map((page) => {
+            const images = allImages
+              .filter((image) => page.path.includes(image.name))
+              .map((image) => ({
+                url: getSrc(image.childImageSharp.gatsbyImageData),
+                title: image.name,
+              }));
+
+            return { ...page, images };
+          });
+        },
+        serialize: ({ path, images }) => {
+          return {
+            url: path,
+            changefreq: 'daily',
+            priority: 0.7,
+            images: images.map((image) => ({
+              url: image.url,
+              title: image.title,
+            })),
+          };
+        },
       },
     },
 
