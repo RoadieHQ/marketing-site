@@ -1,14 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
+import has from 'lodash/has';
 
 import { SEO, Page, TextLink as Link } from 'components';
 import { Attribution, TitleAndDescription, ListHeader } from 'components/article';
 
+const EmptyLogoImage = (props) => <div {...props} />;
+
 const LogoImage = ({ caseStudy, backgroundColor }) => {
   const images = get(caseStudy, 'logo.gatsbyImageData.images');
   const className = 'h-48 w-full object-contain p-8';
-  if (!images) return <div className={className} />
+  if (!images) return <EmptyLogoImage className={className} />;
+  if (!has(images, 'fallback.src')) return <EmptyLogoImage className={className} />;
 
   return (
     <img
