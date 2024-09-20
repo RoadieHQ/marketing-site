@@ -236,9 +236,13 @@ module.exports = {
             const images = allImages
               .filter((image) => page.path.includes(image.name))
               .map((image) => ({
-                url: getSrc(image.childImageSharp.gatsbyImageData),
+                url: image.publicURL, // Use publicURL as a fallback
                 title: image.name,
-              }));
+                gatsbyImageData: image.childImageSharp
+                  ? getSrc(image.childImageSharp.gatsbyImageData)
+                  : null, // Check for gatsbyImageData
+              }))
+              .filter((image) => image.gatsbyImageData); // Filter out images without gatsbyImageData
 
             return { ...page, images };
           });
