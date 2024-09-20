@@ -87,7 +87,7 @@ const DISLALLOW_LIST = [
   '/*?*utm_content=',
   '/*?*utm_source=',
 
-  // refs shouldn't be indexed
+  // refs shouldn't be indexed.
   '/*?*ref=',
 ];
 
