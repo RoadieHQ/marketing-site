@@ -83,9 +83,12 @@ const DISLALLOW_LIST = [
 
   // UTM tags shouldn't be indexed
   '/*?*utm_campaign=',
-  '/*?*utm_source=',
+  '/*?*utm_medium=',
   '/*?*utm_content=',
   '/*?*utm_source=',
+
+  // refs shouldn't be indexed
+  '/*?*ref=',
 ];
 
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
