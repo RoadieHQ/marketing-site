@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import classnames from 'classnames';
 import get from 'lodash/get';
+import has from 'lodash/has';
 
 import { SEO, Page, Link } from 'components';
 import { ListHeader } from 'components/article';
@@ -16,11 +17,13 @@ const TitleAndDescription = ({ video }) => (
   </Link>
 );
 
+const EmptyThumbnail = (props) => <div {...props} />;
 
 const Thumbnail = ({ video }) => {
   const images = get(video, 'thumbnail.gatsbyImageData.images');
   const className = 'h-64 w-full object-cover bg-gray-200';
-  if (!images) return <div className={className} />
+  if (!images) return <EmptyThumbnail className={className} />;
+  if (!has(images, 'fallback.src')) return <EmptyThumbnail className={className} />;
 
   return (
     <img

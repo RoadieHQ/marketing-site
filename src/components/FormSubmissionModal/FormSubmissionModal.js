@@ -33,9 +33,9 @@ const TwitterInner = ({ siteMetadata }) => (
 const LinkedinInner = ({ siteMetadata }) => (
   <p>
     <Link to={siteMetadata.social.linkedin} color="primary">
-      Follow Roadie on Linkedin
+      Follow Roadie on Linkedin{' '}
     </Link>
-    .
+     to stay up to date with our latest features.
   </p>
 );
 

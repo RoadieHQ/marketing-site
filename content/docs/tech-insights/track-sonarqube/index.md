@@ -113,4 +113,4 @@ To connect SonarQube with Roadie we will use a broker connection. The broker is 
 
 ## Create checks with the data from the Sonarcloud Data Sources
 
-The process for creating checks and scorecards is very similar to the process for doing the same with SonarCloud. You can find details about how to do that [here](/tech-insights/track-sonarcloud/#create-checks-with-the-data-from-the-sonarcloud-data-sources). 
+The process for creating checks and scorecards is very similar to the process for doing the same with SonarCloud. You can find details about how to do that [here](/docs/tech-insights/track-sonarcloud/#create-checks-with-the-data-from-the-sonarcloud-data-sources). 

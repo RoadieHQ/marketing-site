@@ -4,7 +4,7 @@ import { PlayIcon } from 'components/icons';
 import { PAGE_PATHS } from '../../../contactFormConstants';
 
 import IntroToRoadieModal from './IntroToRoadieModal';
-import backstageScreenshot from '../../../../content/assets/backstage-screenshot-512x438.webp';
+import catalogScreenshot from '../../../../content/assets/home/illustrations/home-product-screenshot.svg';
 
 const SubTitle = ({ text }) => (
   <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
@@ -39,15 +39,14 @@ const VideoHero = () => {
         <div className="relative pt-6 pb-16 sm:pb-24 lg:pb-32">
           <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-32">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-              <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
-                <Headline className="tracking-right mt-1">
-                  <span className="text-gray-900">Discoverability for</span>
-                  <span className="block text-gray-900">high performance</span>
-                  <span className="block text-gray-900">dev teams</span>
+              <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-7 lg:text-left">
+                <Headline className="tracking-right mt-12">
+                  <span className="text-gray-900">Batteries included</span>
+                  <span className="block text-gray-900">Backstage</span>
                 </Headline>
 
                 <SubTitle
-                  text="The easiest and fastest way to set up Spotify's Backstage developer portal and service catalog in your org."
+                  text="Fully customizable with on-prem access. Scorecards and RBAC included."
                 />
 
                 <div className="mt-5 sm:flex sm:justify-center lg:justify-start md:mt-8">
@@ -75,7 +74,7 @@ const VideoHero = () => {
                 </div>
               </div>
 
-              <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+              <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-5 lg:flex lg:items-center">
                 <GrayBackgroundDotsPattern
                   className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 scale-75 origin-top sm:scale-100 lg:hidden"
                   width={640}
@@ -89,12 +88,13 @@ const VideoHero = () => {
                     type="button"
                     className="relative block w-full bg-white rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                     onClick={openModal}
+                    title="Play video"
                   >
                     <span className="sr-only">Watch our video to learn more</span>
                     <img
                       className="w-full"
-                      src={backstageScreenshot}
-                      alt="Screenshot of a component in Backstage showing the PagerDuty, GitHub Actions, Links and Compliance plugins"
+                      src={catalogScreenshot}
+                      alt="Screenshot of a component in Backstage showing Snyk, Tech Insights, CI, Argo CD, Kubernetes and PagerDuty plugins."
                     />
 
                     <div className="absolute inset-0 w-full h-full flex items-center justify-center" aria-hidden="true">

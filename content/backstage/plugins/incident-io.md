@@ -2,6 +2,7 @@
 humanName: Incident.io
 heading: 'Backstage Incident.io Plugin'
 lead: 'Display incidents from Incident.io associated to Backstage components'
+
 attribution:
   text: Incident.io
   href: https://incident.io/

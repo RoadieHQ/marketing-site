@@ -120,4 +120,6 @@ Now you can click on the entity link to visit the entity that you have just crea
 
 ### Next Steps
 * At this point you may want to enable [auto discovery](/docs/integrations/gitlab-provider/) using GitLab, this allows Roadie to discover new catalog files as they are created.
+* [Explore the Getting Started Repo](https://gitlab.com/roadie-demo/getting-started) for examples of scaffolder templates.
+* [Use a scaffolder template](https://gitlab.com/roadie-demo/getting-started/-/tree/main/scaffolder/register-new-component?ref_type=heads) to give users a streamlined interface that they can use to generate the YAML file you used earlier in this tutorial.
 * [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.

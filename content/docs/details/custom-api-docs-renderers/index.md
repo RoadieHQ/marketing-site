@@ -53,7 +53,7 @@ Then click "Add Component" and set the type to ApiDocsWidget and the name to the
 
 ## Step 3: Publish your custom plugin
 
-Read [the docs on custom plugins](/docs/custom-plugins/configuring) then build your package and publish to artifactory.
+Read [the docs on custom plugins](/docs/custom-plugins/overview/) then build your package and publish to artifactory.
 
 In a nutshell:
 ```
