@@ -2,15 +2,14 @@
 humanName: Azure DevOps
 heading: 'Backstage Azure DevOps Plugin'
 # Keep it short
-lead: 'See Azure DevOps information in Backstage'
+lead: 'See Azure DevOps information from Azure Pipelines and Azure Repos in Backstage'
 attribution:
-  text: Roadie
+  text: Spotify
+   href: https://spotify.com
+
 intro: |
   <p>
-    As a prerequisite, you need to have installed and configured the Azure DevOps Backend plugin before you move forward with any of these steps.
-  </p>
-  <p>
-    We recommend creating a multi-select field called something like "Affected services" or "Impacted components".
+    As a prerequisite, you need to have installed and configured the <a href='https://github.com/backstage/community-plugins/tree/main/workspaces/azure-devops/plugins/azure-devops-backend'>Azure DevOps Backend</a> plugin before you move forward with any of these steps.
   </p>
 
 seo:
@@ -21,61 +20,141 @@ seo:
 
 logoImage: '../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
 
-coverImage: '../../assets/azure-devops-builds.png'
-coverImageAlt: 'A preview of Argo CD overview widget including kubernetes pod status.'
-
 availableOnRoadie: true
 roadieDocsPath: /azure-devops/
 
 gettingStarted:
-  - intro: Install the plugin into Backstage.
+
+  - intro: Install the frotnend plugin for Azure DevOps.
     language: bash
     code: |
-      cd packages/app
-      yarn add @roadiehq/backstage-plugin-argo-cd
-  - intro: Add proxy config to the app-config.yaml file
-    language: yaml
-    code: |
-      proxy:
-        '/argocd/api':
-          target: https://<your-argocd-instance>/api/v1/
-          changeOrigin: true
-          # only if your argocd api has self-signed cert
-          secure: false
-          headers:
-            Cookie:
-              $env: ARGOCD_AUTH_TOKEN
-  - intro: 'Add argoCD widget to your overview page'
+      yarn --cwd packages/app add @backstage-community/plugin-azure-devops
+
+  - intro: To use , add the `EntityAzurePipelinesContent` card.
     language: typescript
     code: |
-      // packages/app/src/components/catalog/EntityPage.tsx
+      // In packages/app/src/components/catalog/EntityPage.tsx
+
+      // If you're using `dev.azure.com/project-repo annotation` use this:
+
       import {
-        EntityArgoCDOverviewCard,
-        isArgocdAvailable
-      } from '@roadiehq/backstage-plugin-argo-cd';
+        EntityAzurePipelinesContent,
+        isAzureDevOpsAvailable,
+      } from '@backstage-community/plugin-azure-devops';
+
+      // For example in the CI/CD section
+      const cicdContent = (
+        <EntitySwitch>
+          // ...
+          <EntitySwitch.Case if={isAzureDevOpsAvailable}>
+              <EntityAzurePipelinesContent defaultLimit={25} />
+          </EntitySwitch.Case>
+          // ...
+        </EntitySwitch>
+
+      // If you're using `dev.azure.com/project annotation` use this:
+
+      import {
+        EntityAzurePipelinesContent,
+        isAzurePipelinesAvailable,
+      } from '@backstage-community/plugin-azure-devops';
+
+      // For example in the CI/CD section
+      const cicdContent = (
+        <EntitySwitch>
+          // ...
+          <EntitySwitch.Case if={isAzurePipelinesAvailable}>
+            <EntityAzurePipelinesContent defaultLimit={25} />
+          </EntitySwitch.Case>
+          // ...
+        </EntitySwitch>
+  - intro: To use the `EntityAzurePullRequestsContent` add the extension to your Entity page.
+    language: typescript
+    code: |
+      // In packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        EntityAzurePullRequestsContent,
+        isAzureDevOpsAvailable,
+      } from '@backstage-community/plugin-azure-devops';
+
+      // For example in the Service section
+      const serviceEntityPage = (
+        <EntityLayout>
+          // ...
+          <EntityLayout.Route if={isAzureDevOpsAvailable} path="/pull-requests" title="Pull Requests">
+            <EntityAzurePullRequestsContent defaultLimit={25} />
+          </EntityLayout.Route>
+          // ...
+        </EntityLayout>
+  - intro: To use the `EntityAzureGitTagsContent` component, add the extension to your Entity page.
+    language: typescript
+    code: |
+      // In packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        EntityAzureGitTagsContent,
+        isAzureDevOpsAvailable,
+      } from '@backstage-community/plugin-azure-devops';
+
+      // For example in the Service section
+      const serviceEntityPage = (
+        <EntityLayout>
+          // ...
+          <EntityLayout.Route if={isAzureDevOpsAvailable} path="/git-tags" title="Git Tags">
+            <EntityAzureGitTagsContent />
+          </EntityLayout.Route>
+          // ...
+        </EntityLayout>
+  - intro: To use the Git Readme feature, add the `EntityAzureReadmeCard` component to your Entity page.
+    language: typescript
+    code: |
+      // In packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        EntityAzureReadmeCard,
+        isAzureDevOpsAvailable,
+      } from '@backstage-community/plugin-azure-devops';
+
+      // As it is a card, you can customize it the way you prefer
+      // For example in the Service section
 
       const overviewContent = (
         <Grid container spacing={3} alignItems="stretch">
-        ...
           <EntitySwitch>
-            <EntitySwitch.Case if={e => Boolean(isArgocdAvailable(e))}>
-              <Grid item sm={4}>
-                <EntityArgoCDOverviewCard />
+            <EntitySwitch.Case if={isAzureDevOpsAvailable}>
+              <Grid item md={6}>
+                ...
+              </Grid>
+              <Grid item md={6}>
+                <EntityAzureReadmeCard maxHeight={350} />
               </Grid>
             </EntitySwitch.Case>
           </EntitySwitch>
-        ...
         </Grid>
       );
-  - intro: Add annotation to the yaml config file of a component
+  - intro: For relevant entities, add annotations to their respective catalog-info.yaml files
     language: yaml
-    sectionId: 'add-annotations'
     code: |
+      # Example catalog-info.yaml entity definition file
+      apiVersion: backstage.io/v1alpha1
+      kind: Component
       metadata:
+        # ...
         annotations:
-          argocd/app-name: <your-app-name>
-  - intro: Get and provide `ARGOCD_AUTH_TOKEN` as env variable in following format
-    language: bash
-    code: |
-      ARGOCD_AUTH_TOKEN='argocd.token=<token>'
+          dev.azure.com/project-repo: my-project/my-repo
+          dev.azure.com/build-definition: <build-definition-name> // if you have multiple entities in a single monorepo you'll need to specify the builds
+          dev.azure.com/readme-path: /<path-to>/<my-readme-file>.md
+          dev.azure.com/project: <project-with-build-code> // if your code is in a diferent repo
+          dev.azure.com/host-org: <host>/<organization> // if you have multiple organisations
+      spec:
+        type: service
+        # ...
 ---
+
+### Useful Info
+
+- The Azure DevOps plugin supports the permission framework for PRs, GitTags, Pipelines and Readme features.
+
+### Useful Links
+
+- [npm](https://www.npmjs.com/package/@backstage-community/plugin-azure-devops)
+- [GitHub](https://github.com/backstage/community-plugins/tree/main/workspaces/azure-devops/plugins/azure-devops)
+- [Roadie Docs]()

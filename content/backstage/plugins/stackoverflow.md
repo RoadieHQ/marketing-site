@@ -1,78 +1,74 @@
 ---
-humanName: Sentry
-heading: 'Backstage Sentry Plugin'
-lead: 'Correlate services with problems in production'
+humanName: Stack Overflow
+heading: 'Backstage Stack Overflow Plugin'
+lead: 'Display public and private Stackoverflow questions and answers in Backstage'
 attribution:
   text: Spotify
   href: https://spotify.com
 
 seo:
-  title: 'Backstage Sentry Plugin | Roadie'
+  title: 'Backstage Stack Overflow Plugin | Roadie'
   description: |
-    The Backstage Sentry plugin alerts you to errors which are affecting
-    your production services, directly inside Backstage.
+    The Backstage Stack Overflow plugin displays public and private Stackoverflow questions and answers in Backstage and adds Stack Overflow to search results.
 
-logoImage: '../../assets/logos/sentry/sentry-glyph-dark.webp'
-
-coverImage: '../../assets/sentry-plugin-1604x716.webp'
-coverImageAlt: 'A screenshot of the Sentry plugin. It is showing a list of errors.'
+logoImage: '../../assets/logos/stackoverflow/so-logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /sentry/
+roadieDocsPath: /stackoverflow/
 
 gettingStarted:
-  - intro: 'Install the plugin package in your Backstage app'
+
+  - intro: As a prerequisite, you should have installed the <a href="https://github.com/backstage/community-plugins/tree/main/workspaces/stack-overflow/plugins/stack-overflow-backend'>Stack Overflow Backend plugin</a>.
+  - intro: 'Install the Stack Overflow backend plugin package in your Backstage app'
     language: 'bash'
-    code: 'yarn add @backstage/plugin-sentry'
-  - intro: 'Configure your proxy to add credentials to requests to sentry.'
-    language: 'bash'
+    code: 'yarn add @backstage/plugin-search-backend-module-stack-overflow-collator'
+  - intro: 'Add Stack Overflow to your app config.'
+    language: 'yaml'
     code: |
       // app-config.yaml
-      proxy:
-        '/sentry/api':
-        target: https://sentry.io/api/
-        allowedMethods: [ 'GET' ]
-        headers:
-          Authorization: Bearer ${SENTRY_TOKEN}
-      sentry:
-        organization: 'your org'
-  - intro: 'Add the plugin components to your entity page'
-    language: 'bash'
+      stackoverflow:
+        baseUrl: https://api.stackexchange.com/2.2
+  - intro: 'If you have a private Stack Overflow instance and/or a private Stack Overflow Team you will need to supply an API key or Personal Access Token. You can read more about how to set this up by going to Stack Overflow's Help Page.'
+    language: 'yaml'
     code: |
-      import { EntitySentryContent, EntitySentryCard } from '@backstage/plugin-sentry';
-      // Add to the overview grid
-      const overviewContent = (
-        <Grid container spacing={3} alignItems="stretch">
-           {/* ...other routes */}
-           <Grid item md={6}>
-             <EntitySentryCard />
-           </Grid>
-        </Grid>
-      );
-      // Add a Sentry Tab
-      const serviceEntityPage = (
-        <EntityLayout>
-          <EntityLayout.Route path="/sentry" title="Sentry">
-            <EntitySentryContent />
-          </EntityLayout.Route>
-        </EntityLayout>
-      );
+      // app-config.yaml
+      stackoverflow:
+        baseUrl: https://api.stackexchange.com/2.2 # alternative: your internal stack overflow instance
+        apiKey: $STACK_OVERFLOW_API_KEY
+        apiAccessToken: $STACK_OVERFLOW_API_ACCESS_TOKEN
+
+  - intro: To use Stack Overflow on your home page, add to you `packages/app/src/components/home/HomePage.tsx`
+    language: typescript
+    code: |
+      // packages/app/src/components/home/HomePage.tsx
+      <Grid item xs={12} md={6}>
+        <HomePageStackOverflowQuestions
+          requestParams={{
+            tagged: 'backstage',
+            site: 'stackoverflow',
+            pagesize: 5,
+          }}
+        />
+      </Grid>
+
+  - intro: To return Stack Overflow results as part of the search results in Backstage, add `StackOverflowSearchResultListItem` to `packages/app/src/components/search/SearchPage.tsx`.
+    language: typescript
+    code: |
+      // packages/app/src/components/home/HomePage.tsx
+      <Grid item xs={12} md={6}>
+        <HomePageStackOverflowQuestions
+          requestParams={{
+            tagged: 'backstage',
+            site: 'stackoverflow',
+            pagesize: 5,
+          }}
+        />
+      </Grid>
 ---
 
-The Backstage backend must have access to a `SENTRY_TOKEN` API key environment variable.
+### Useful Links
 
-To get an API key, first create an internal application in the Sentry UI. Do this at the
-organization level, rather than the personal level.
-
-Give your application a name and a Webhook URL, then be sure to give the ability to read
-issues and projects. These will be displayed in Backstage so it's important that the plugin
-can access them.
-
-![Creating an internal application in the Sentry UI](./sentry-create-internal-application-1590x1621.jpg)
-
-Once you have an internal application, you can create a token. Run the Backstage backend with
-this token.
-
-```bash
-env SENTRY_TOKEN=123abc yarn start
-```
+- [npm](https://www.npmjs.com/package/@backstage-community/plugin-stack-overflow)
+- [GitHub (Frontend)](https://github.com/backstage/community-plugins/blob/main/workspaces/stack-overflow/plugins/stack-overflow/README.md)
+- [GitHub Backend](https://github.com/backstage/community-plugins/tree/main/workspaces/stack-overflow/plugins/stack-overflow-backend)
+- [Roadie Docs](https://roadie.io/docs/integrations/stackoverflow/)

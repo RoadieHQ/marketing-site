@@ -1,9 +1,9 @@
 ---
-humanName: GitHub Actions
-heading: 'Backstage GitHub Actions Plugin'
-lead: 'See GitHub Actions builds in Backstage'
+humanName: Harness
+heading: 'Backstage Harness Plugin'
+lead: 'The Harness NextGen CI/CD plugin allows you to see build information inside Backstage'
 attribution:
-  text: Spotify
+  text: Harness
   href: https://spotify.com
 
 seo:
@@ -30,19 +30,18 @@ gettingStarted: # What will this step accomplish?
 
   - intro: Install the plugin into your Backstage instance.
     language: bash
-    code: yarn add @backstage/plugin-github-actions
+    code: yarn --cwd packages/app add @harnessio/backstage-plugin-ci-cd
 
-  - intro: 'Add the tab to your entity pages.'
-    language: typescript
+  - intro: 'Add the plugin to the proxy in your app config.'
+    language: yaml
     code: |
-      // packages/app/src/components/catalog/EntityPage.tsx
-      import { EntityGithubActionsContent } from '@backstage/plugin-github-actions';
-
-      const serviceEntityPage = (
-        <EntityLayout.Route path="/ci-cd" title="CI/CD">
-          <EntityGithubActionsContent />
-        </EntityLayout.Route>
-      );
+      // app-config.yaml
+      proxy:
+        # ... existing proxy settings
+        '/harness/prod':
+          target: 'https://app.harness.io/'
+          headers:
+            'x-api-key': '<YOUR PAT/SAT>'
 
   - intro: 'Optionally add the recent runs card to the overview page'
     language: typescript
@@ -76,44 +75,4 @@ gettingStarted: # What will this step accomplish?
         type: service
         lifecycle: production
         owner: engineering-team
-
 ---
-
-### Authentication
-
-The GitHub actions plugin makes requests to the GitHub API directly from your browser. It
-will authenticate as your GitHub user via OAuth. You may see this pop-up periodically
-as you browse around Backstage. You must log in via OAuth before GitHub actions can work.
-
-![pop-up asking the user to log in with GitHub](../../assets/backstage/plugins/github-actions/oauth-login.webp)
-
-### Multiple CI systems setup
-
-Use the switch pattern to work with multiple CI systems simultaneously in Backstage.
-
-```typescript
-// packages/app/src/components/catalog/EntityPage.tsx
-import {
-  EntityRecentGithubActionsRunsCard,
-  isGithubActionsAvailable,
-} from '@backstage/plugin-github-actions';
-
-const cicdCard = (
-  <EntitySwitch>
-    <EntitySwitch.Case if={isGithubActionsAvailable}>
-      <Grid item sm={6}>
-        <EntityRecentGithubActionsRunsCard limit={4} variant="gridItem" />
-      </Grid>
-    </EntitySwitch.Case>
-  </EntitySwitch>
-);
-
-const overviewContent = (
-  <Grid container spacing={3} alignItems="stretch">
-    ...
-
-    {cicdCard}
-  </Grid>
-);
-
-```

@@ -18,9 +18,9 @@ availableOnRoadie: true
 roadieDocsPath: /snyk/
 
 gettingStarted:
-  - intro: 'Install the plugin package in your Backstage app'
+  - intro: 'Install the Snyk plugin package in your Backstage app'
     language: 'bash'
-    code: 'yyarn add --cwd packages/app backstage-plugin-snyk'
+    code: 'yarn add --cwd packages/app backstage-plugin-snyk'
 
   - intro: Obtain a Snyk token ((a service account with Viewer permission at your group level is preferred) and save it as an env variable.
     language: bash
@@ -41,7 +41,7 @@ gettingStarted:
               Authorization: token ${SNYK_TOKEN}
           ...
 
-  - intro: You can also optionally add the following config to the app.config
+  - intro: You can also optionally add the following config to your `app.config`.
     language: yaml
     code: |
       snyk:
@@ -60,7 +60,7 @@ gettingStarted:
         #
         # Shows resolved issues in all graphs. Defaults to "false" to show only non-resolved issues.
         showResolvedInGraphs: false
-  - intro: 'Add the plugin components to your Entity page'
+  - intro: 'Add the Snyk plugin components to your Entity page'
     language: 'typescript'
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx

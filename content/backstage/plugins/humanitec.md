@@ -1,6 +1,6 @@
 ---
-humanName: GitHub Actions
-heading: 'Backstage GitHub Actions Plugin'
+humanName: Humanitec
+heading: 'Backstage Humanitec Plugin'
 lead: 'See GitHub Actions builds in Backstage'
 attribution:
   text: Spotify
@@ -18,6 +18,7 @@ coverImage: '../../assets/backstage/plugins/github-actions/cover.webp'
 coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
 
 availableOnRoadie: true
+roadieDocsPath: /humanitec/
 
 gettingStarted: # What will this step accomplish?
   - intro: |
