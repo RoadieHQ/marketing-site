@@ -1,120 +1,72 @@
 ---
 humanName: Humanitec
 heading: 'Backstage Humanitec Plugin'
-lead: 'See GitHub Actions builds in Backstage'
+lead: 'See Humanitec environments, workloads an resources in Backstage'
 attribution:
-  text: Spotify
-  href: https://spotify.com
+  text: Humanitec
+  href: https://humanitec.com
 
 seo:
-  title: 'Backstage GitHub Actions Plugin | Roadie'
+  title: 'Backstage Humanitec Plugin | Roadie'
   description: |
-    The Backstage GitHub Actions plugin integrates with GitHub Actions to show your build
-    information inside Backstage where it can be associated with your services.
+    The Backstage Humanitec Plugin shows information about environments, workloads and resources on an entity page.
 
-logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
-
-coverImage: '../../assets/backstage/plugins/github-actions/cover.webp'
-coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
+logoImage: '../../assets/logos/humanitec/humanitec-logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /humanitec/
 
 gettingStarted: # What will this step accomplish?
   - intro: |
-      If you are **using Roadie**, or you are using a GitHub app with self-hosted Backstage, OAuth
-      is already configured for use with the GitHub APIs. You can simply install the plugin and it
-      should work automatically. Your GitHub App requires `action:read` permission.
-
-      If your Backstage instance is using a Personal Access Token to authenticate against GitHub,
-      you will need to follow our [instructions to create a GitHub OAuth app for Backstage](/blog/github-auth-backstage/).
+      This plugin requires <a href='https://github.com/humanitec/humanitec-backstage-plugins/tree/main/plugins/humanitec-backend'>@humanitec/backstage-plugin-backend</a> because it connects to the backend to make requests to the Humanitec API. Install that first.
 
   - intro: Install the plugin into your Backstage instance.
     language: bash
-    code: yarn add @backstage/plugin-github-actions
+    code: yarn --cwd packages/app add @humanitec/backstage-plugin
 
-  - intro: 'Add the tab to your entity pages.'
-    language: typescript
-    code: |
-      // packages/app/src/components/catalog/EntityPage.tsx
-      import { EntityGithubActionsContent } from '@backstage/plugin-github-actions';
-
-      const serviceEntityPage = (
-        <EntityLayout.Route path="/ci-cd" title="CI/CD">
-          <EntityGithubActionsContent />
-        </EntityLayout.Route>
-      );
-
-  - intro: 'Optionally add the recent runs card to the overview page'
-    language: typescript
-    code: |
-      // packages/app/src/components/catalog/EntityPage.tsx
-      import { EntityRecentGithubActionsRunsCard } from '@backstage/plugin-github-actions';
-
-      const overviewContent = (
-        <Grid container spacing={3} alignItems="stretch">
-          ...
-
-          <Grid item sm={6}>
-            <EntityRecentGithubActionsRunsCard limit={4} variant="gridItem" />
-          </Grid>
-        </Grid>
-      );
-
-  - intro: |
-      Annotate a component with the `github.com/project-slug` key and value so that Backstage
-      knows which builds correspond to your component.
+  - intro: 'Add Humanitec to your app-config.'
     language: yaml
     code: |
-      apiVersion: backstage.io/v1alpha1
-      kind: Component
-      metadata:
-        name: sample-service
-        description: Component with GitHub actions enabled.
-        annotations:
-          github.com/project-slug: 'RoadieHQ/sample-service'
-      spec:
-        type: service
-        lifecycle: production
-        owner: engineering-team
+      // app-config.yaml
+      humanitec:
+        orgId: my-humanitec-organization
+        token: ${HUMANITEC_TOKEN} # without Bearer
 
+  - intro: Add the Humanitec `HumanitecCardComponent` to your Entity page.
+    language: yaml
+    code: |
+      // packages/app/src/components/catalog/EntityPage.tsx
+      import { HumanitecCardComponent, hasHumanitecAnnotations } from '@humanitec/backstage-plugin';
+      ...
+      const overviewContent = (
+        <Grid container>
+          ...
+         <EntitySwitch>
+           <EntitySwitch.Case if={hasHumanitecAnnotations}>
+             <Grid item md={6}>
+               <HumanitecCardComponent />
+             </Grid>
+           </EntitySwitch.Case>
+         </EntitySwitch>
+        </Grid>
+      )
+  - intro: Add annotations to relevant catalog-info.yaml files for Entities with associated Humanitec resources.
+    language: yaml
+    code: |
+      // some-example-catalog-info.yaml
+      ...
+      metadata:
+        annotations:
+          # mandatory annotation
+          humanitec.com/orgId: <ord-id>
+          humanitec.com/appId: <application-id>
+      ...
 ---
 
-### Authentication
+### Useful Links
 
-The GitHub actions plugin makes requests to the GitHub API directly from your browser. It
-will authenticate as your GitHub user via OAuth. You may see this pop-up periodically
-as you browse around Backstage. You must log in via OAuth before GitHub actions can work.
-
-![pop-up asking the user to log in with GitHub](../../assets/backstage/plugins/github-actions/oauth-login.webp)
-
-### Multiple CI systems setup
-
-Use the switch pattern to work with multiple CI systems simultaneously in Backstage.
-
-```typescript
-// packages/app/src/components/catalog/EntityPage.tsx
-import {
-  EntityRecentGithubActionsRunsCard,
-  isGithubActionsAvailable,
-} from '@backstage/plugin-github-actions';
-
-const cicdCard = (
-  <EntitySwitch>
-    <EntitySwitch.Case if={isGithubActionsAvailable}>
-      <Grid item sm={6}>
-        <EntityRecentGithubActionsRunsCard limit={4} variant="gridItem" />
-      </Grid>
-    </EntitySwitch.Case>
-  </EntitySwitch>
-);
-
-const overviewContent = (
-  <Grid container spacing={3} alignItems="stretch">
-    ...
-
-    {cicdCard}
-  </Grid>
-);
-
-```
+- [npm](https://www.npmjs.com/package/@humanitec/backstage-plugin)
+- [GitHub (frontend)](https://github.com/humanitec/humanitec-backstage-plugins/tree/main/plugins/humanitec)
+- [GitHub (backend)](https://github.com/humanitec/humanitec-backstage-plugins/tree/main/plugins/humanitec-backend)
+- [Roadie Docs](https://roadie.io/docs/integrations/humanitec/)
+- [Humanitec Blog on Backstage](https://humanitec.com/blog/humanitec-vs-backstage-friends-or-foes)
