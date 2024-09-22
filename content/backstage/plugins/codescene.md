@@ -1,29 +1,26 @@
 ---
-humanName: Cloudsmith
-heading: 'Backstage Cloudsmith Plugin'
-lead: 'See your Cloudsmith usage, repository stats, audit logs and security scanning'
+humanName: Codescene
+heading: 'Backstage Codescene Plugin'
+lead: 'See your Codescene projects and analysis in Backstage.'
 attribution:
-  text: Roadie
-  href: https://roadie.io
+  text: Codescene
+  href: https://codescene.com/
 
 seo:
-  title: 'Backstage Cloudsmith Plugin | Roadie'
+  title: 'Backstage Codescene Plugin | Roadie'
   description: |
-    See your Cloudsmith usage, repository stats, audit logs and security scanning.
+    See existing Codescene projects and associated analysis data from your CodeScene instance inside Backstage.
 
-logoImage: '../../assets/logos/cloudsmith/cloudsmith-logo.png'
+logoImage: '../../assets/logos/codescene/codescene.webp'
 
-coverImage: '../../assets/cloudsmith-plugin.png'
-coverImageAlt: 'A screenshot of Cloudsmith plugin showing 4 components in more detail.'
-
-# Instructions for someone who wants to use this plugin.
-# languages used here must be listed in the .babelrc
+availableOnRoadie: true
+roadieDocsPath: /codescene/
 
 gettingStarted:
   # What will this step accomplish?
   - intro: Install the plugin into Backstage
     language: bash
-    code: yarn add @roadiehq/backstage-plugin-github-pull-requests
+    code: yarn --cwd packages/app add @backstage-community/plugin-codescene
 
   - intro: Import it into your Backstage application
     language: typescript
@@ -37,27 +34,84 @@ gettingStarted:
         CloudsmithRepositorySecurityCard,
         } from '@roadiehq/backstage-plugin-cloudsmith';
 
-  - intro: 'Add the card to your Backstage catalog.'
+  - intro: Add the proxy to your app-config.
     language: typescript
     code: |
-      // packages/app/src/components/home/Homepage.tsx
-      <Grid item xs={12} md={6}>
-        <CloudsmithStatsCard repo="repo-name" owner="org-name"/>
-      </Grid>
+      proxy:
+        '/codescene-api':
+          target: '<INSTANCE_HOSTNAME>/api/v1'
+          allowedMethods: ['GET']
+          allowedHeaders: ['Authorization']
+          headers:
+            Authorization: Basic ${CODESCENE_AUTH_CREDENTIALS}
+      codescene:
+        baseUrl: https://codescene.my-company.net # replace with your own URL
 
-      <Grid item xs={12} md={6}>
-        <CloudsmithQuotaCard  owner='org-name'/>
-      </Grid>
+  - intro: 'Add codescene routes and pages to your App.tsx.'
+    language: typescript
+    code: |
+      import {
+        CodeScenePage,
+        CodeSceneProjectDetailsPage,
+      } from '@backstage-community/plugin-codescene';
 
-      <Grid item xs={12} md={6}>
-        <CloudsmithRepositoryAuditLogCard owner='org-name' repo='repo-name'/>
-      </Grid>
+      ...
 
-      <Grid item xs={12} md={6}>
-        <CloudsmithRepositorySecurityCard owner='org-name' repo='repo-name'/>
-      </Grid>
+      <Route path="/codescene" element={<CodeScenePage />} />
+      <Route
+          path="/codescene/:projectId"
+          element={<CodeSceneProjectDetailsPage />}
+      />
+
+  - intro: Add a codescene sidebar item (optional).
+    language: typescript
+    code: |
+      // In packages/app/src/components/Root/Root.tsx
+      import { CodeSceneIcon } from '@backstage-community/plugin-codescene';
+
+      {
+        /* other sidebar items... */
+      }
+      <SidebarItem icon={CodeSceneIcon} to="codescene" text="CodeScene" />;
+
+  - intro: Add codescene `CodeSceneEntityKPICard` and `CodeSceneEntityFileSummary` to your entity page.
+    language: typescript
+    code: |
+      // In packages/app/src/components/catalog/EntityPage.tsx
+      import {
+        CodeSceneEntityPage,
+        CodeSceneEntityFileSummary,
+        isCodeSceneAvailable,
+      } from '@backstage-community/plugin-codescene';
+
+      /* other EntityLayout.Route items... */
+
+      <EntityLayout.Route
+        path="/codescene"
+        title="codescene"
+        if={isCodeSceneAvailable}
+      >
+        <Grid container spacing={3} alignItems="stretch">
+          <Grid item md={6}>
+            <CodeSceneEntityKPICard />
+          </Grid>
+          <Grid item md={6}>
+            <CodeSceneEntityFileSummary />
+          </Grid>
+        </Grid>
+      </EntityLayout.Route>;
+
+  - intro: Annotate relevant catalog-info.yaml files with codescene annotations.
+    language: yaml
+    code: |
+      apiVersion: backstage.io/v1alpha1
+      kind: Component
+      metadata:
+        name: backstage
+        annotations:
+          codescene.io/project-id: <codescene-project-id>
 ---
 
-## Authentication
+### Useful Links
 
-In order to authenticate with Cloudsmith, make sure that you have a environmnet variable setup `$CLOUDSMITH_API_KEY` in order to authenticate with your repo.
+- [GitHub](https://github.com/backstage/community-plugins/tree/main/workspaces/codescene/plugins/codescene)
