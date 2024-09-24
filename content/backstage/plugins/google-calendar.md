@@ -18,7 +18,6 @@ coverImageAlt: 'A screenshot of the Google Calendar plugin.'
 
 availableOnRoadie: true
 roadieDocsPath: /gcalendar/
-
 ---
 
 ### Useful link

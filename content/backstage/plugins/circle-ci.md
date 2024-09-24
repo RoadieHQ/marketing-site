@@ -3,8 +3,8 @@ humanName: Circle CI
 heading: 'Backstage Circle CI Plugin'
 lead: 'See Circle CI Builds in Backstage'
 attribution:
-  text: Spotify
-  href: https://spotify.com
+  text: CircleCI
+  href: https://circleci.com/
 
 seo:
   title: 'Backstage Circle CI Plugin | Roadie'
@@ -24,7 +24,20 @@ gettingStarted:
   # What will this step accomplish?
   - intro: Install the plugin
     language: bash
-    code: yarn add @backstage/plugin-circleci
+    code: yarn add --cwd packages/app @circleci/backstage-plugin
+
+  - intro: |
+      'Get and provide a CIRCLECI_AUTH_TOKEN as an environment variable (see the [CircleCI docs](https://circleci.com/docs/api/#add-an-api-token))'
+
+  - intro: 'Add proxy configuration'
+    language: yaml
+    code: |
+      # app-config.yaml
+      proxy:
+        '/circleci/api':
+          target: https://circleci.com/api/v1.1
+          headers:
+            Circle-Token: ${CIRCLECI_AUTH_TOKEN}
 
   - intro: Import it into your Backstage application
     language: typescript
@@ -46,18 +59,6 @@ gettingStarted:
           </EntitySwitch.Case>
           ...
         </EntitySwitch>
-
-  - intro: 'Add proxy configuration'
-    language: yaml
-    code: |
-      # app-config.yaml
-      proxy:
-        '/circleci/api':
-          target: https://circleci.com/api/v1.1
-          headers:
-            Circle-Token: ${CIRCLECI_AUTH_TOKEN}
-
-  - intro: 'Get and provide a CIRCLECI_AUTH_TOKEN as an environment variable (see the [CircleCI docs](https://circleci.com/docs/api/#add-an-api-token))'
   
   - intro: 'Add a circleci.com/project-slug annotation to your respective catalog-info.yaml files following [the Component format](https://backstage.io/docs/architecture-decisions/adrs-adr002#format)'
     language: yaml
@@ -75,3 +76,23 @@ gettingStarted:
         # ...
 
 ---
+
+### Features
+
+- List top 50 builds for a project
+- Dive into one build to see logs
+- Polling (logs only)
+- Retry builds
+- Works for both project and personal tokens
+- Pagination for builds
+
+### Limitations
+
+- CircleCI has pretty strict rate limits per token, be careful with opened tabs
+- CircleCI doesn't provide a way to auth by 3rd party (e.g. GitHub) token, nor by calling their OAuth endpoints, which currently stands in the way of better auth integration with Backstage (reference feature request and discussion topic)
+
+### Useful links
+
+- [npm](https://www.npmjs.com/package/@circleci/backstage-plugin)
+- [GitHub](https://github.com/CircleCI-Public/backstage-plugin)
+- [Roadie Docs](https://roadie.io/docs/integrations/circleci/)
