@@ -5,7 +5,7 @@ heading: 'Backstage Azure DevOps Plugin'
 lead: 'See Azure DevOps information from Azure Pipelines and Azure Repos in Backstage'
 attribution:
   text: Spotify
-   href: https://spotify.com
+  href: https://spotify.com
 
 intro: |
   <p>
@@ -24,7 +24,6 @@ availableOnRoadie: true
 roadieDocsPath: /azure-devops/
 
 gettingStarted:
-
   - intro: Install the frotnend plugin for Azure DevOps.
     language: bash
     code: |
