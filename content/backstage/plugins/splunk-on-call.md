@@ -10,7 +10,6 @@ seo:
   title: 'Backstage Splunk On-Call Plugin | Roadie'
   description: |
     The Backstage Splunk On-Call plugin provides a list of incidents, a way to trigger a new incident to specific users and/or teams, a way to acknowledge/resolve an incident and information details about the relevant people on-call.
-.
 
 logoImage: '../../assets/logos/splunk/splunk-dark.webp'
 
