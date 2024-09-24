@@ -26,7 +26,8 @@ gettingStarted:
     language: bash
     code: yarn add --cwd packages/app @circleci/backstage-plugin
 
-- intro: 'Get and provide a CIRCLECI_AUTH_TOKEN as an environment variable (see the [CircleCI docs](https://circleci.com/docs/api/#add-an-api-token))'
+- intro: |
+    'Get and provide a CIRCLECI_AUTH_TOKEN as an environment variable (see the [CircleCI docs](https://circleci.com/docs/api/#add-an-api-token))'
 
 - intro: 'Add proxy configuration'
     language: yaml
@@ -77,6 +78,7 @@ gettingStarted:
 ---
 
 ### Features
+
 - List top 50 builds for a project
 - Dive into one build to see logs
 - Polling (logs only)
@@ -85,6 +87,7 @@ gettingStarted:
 - Pagination for builds
 
 ### Limitations
+
 - CircleCI has pretty strict rate limits per token, be careful with opened tabs
 - CircleCI doesn't provide a way to auth by 3rd party (e.g. GitHub) token, nor by calling their OAuth endpoints, which currently stands in the way of better auth integration with Backstage (reference feature request and discussion topic)
 
