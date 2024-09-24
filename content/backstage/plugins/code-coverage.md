@@ -3,8 +3,8 @@ humanName: Code Coverage
 heading: 'Backstage Code Coverage Plugin'
 lead: 'See code coverage summaries for your software in Backstage'
 attribution:
-  text: Spotify
-  href: https://spotify.com
+  text: alde & nissayeva
+  href: https://github.com/alde & https://github.com/nasquasha 
 
 seo:
   title: 'Backstage Code Coverage Plugin | Roadie'
