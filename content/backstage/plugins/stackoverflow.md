@@ -28,7 +28,7 @@ gettingStarted:
       // app-config.yaml
       stackoverflow:
         baseUrl: https://api.stackexchange.com/2.2
-  - intro: 'If you have a private Stack Overflow instance and/or a private Stack Overflow Team you will need to supply an API key or Personal Access Token. You can read more about how to set this up by going to Stack Overflow's Help Page.'
+  - intro: 'If you have a private Stack Overflow instance and/or a private Stack Overflow Team you will need to supply an API key or Personal Access Token. You can read more about how to set this up by going to the Stack Overflow Help Page.'
     language: 'yaml'
     code: |
       // app-config.yaml
