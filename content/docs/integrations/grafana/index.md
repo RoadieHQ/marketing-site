@@ -19,7 +19,7 @@ The [Backstage Grafana plugin](https://www.npmjs.com/package/@k-phoen/backstage-
 |---: | --- |
 | **Prerequisites** | **Configuration Data:** <ul><li>API Key</li><li>Grafana Frontend URL</li><li>Grafana Backend URL</li></ul> **Component Annotations:** <ul><li>Tag Selector / Dashboard Selector</li></ul> |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Prerequisites
 
@@ -29,12 +29,23 @@ You'll need a Grafana account with an API key and the url of your Grafana UI and
 
 ### Configure the Grafana endpoints
 
-Configure the Grafana endpoints to use via `Administration -> Settings -> Grafana`. If you're using grafana.net your
-frontend and backend endpoints should be the same e.g. `https://<your-company>.grafana.net/`. If you're using hosting
-Grafana yourself you'll need to specify a url to the frontend which is used by backstage to generate links and an API
-endpoint which the plugin uses to query alerts and dashboards. 
+Configure the Grafana endpoints to use via `Administration -> Settings -> Grafana`. 
 
-![grafana-config.webp](./grafana-config.webp)
+#### Cloud Hosted & IP Whitelist Restricted
+
+If you're using grafana.net, your frontend and backend endpoints should be the same e.g. `https://<your-company>.grafana.net/`. If you're using hosting Grafana yourself you'll need to specify a url to the frontend which is used by backstage to generate links and an API endpoint which the plugin uses to query alerts and dashboards. 
+
+![grafana-config-cloud](grafana-config-cloud.png)
+
+#### Private Network via Broker
+
+When connecting Grafana from your private network via Broker, you will set the following values for the frontend and backend endpoints.
+
+**Frontend**: URL of your internal frondend (e.g. http://localhost:8888)
+
+**Backend**: `${BROKER_URL}/[BROKER_TOKEN]` (e.g. `${BROKER_URL}/myGrafana`)
+
+![grafana-config-broker](grafana-config-broker.png)
 
 ### Add the Grafana API Key
 
