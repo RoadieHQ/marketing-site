@@ -30,14 +30,14 @@ gettingStarted:
       'Get and provide a CIRCLECI_AUTH_TOKEN as an environment variable (see the [CircleCI docs](https://circleci.com/docs/api/#add-an-api-token))'
 
   - intro: 'Add proxy configuration'
-      language: yaml
-      code: |
-        # app-config.yaml
-        proxy:
-          '/circleci/api':
-            target: https://circleci.com/api/v1.1
-            headers:
-              Circle-Token: ${CIRCLECI_AUTH_TOKEN}
+    language: yaml
+    code: |
+      # app-config.yaml
+      proxy:
+        '/circleci/api':
+          target: https://circleci.com/api/v1.1
+          headers:
+            Circle-Token: ${CIRCLECI_AUTH_TOKEN}
 
   - intro: Import it into your Backstage application
     language: typescript
