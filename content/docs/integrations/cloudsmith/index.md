@@ -40,7 +40,7 @@ Visit the secrets page in Roadie at `/administration/secrets` and enter the API 
 
 The Cloudsmith plugin provides a four cards that can be displayed on the homepage.
 
-These cards can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards).
+These cards can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
 
 ### CloudsmithStatsCard
 

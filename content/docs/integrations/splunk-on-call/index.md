@@ -42,7 +42,7 @@ In case you don't want to enable incident management via the Roadie application,
 
 The Splunk On-Call plugin provides two type of UI elements. 
 
-The card `EntitySplunkOnCallCard` is a card component and can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards).
+The card `EntitySplunkOnCallCard` is a card component and can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
 The tab `SplunkOnCallPage` is a content component which can be added as a separate tab to entity pages.
 
 ### Step 5: Add needed annotations to your entities

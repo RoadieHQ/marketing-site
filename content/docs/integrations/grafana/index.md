@@ -47,7 +47,7 @@ NB: You'll need to wait for the secret to be marked as "Available" before you ca
 The Grafana plugin provides two components which can be added to the Backstage UI. You must be a Backstage admin to
 add components to the UI.
 
-The `EntityGrafanaDashboardsCard` and `EntityGrafanaAlertsCard` components can be [added to catalog dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards). These
+The `EntityGrafanaDashboardsCard` and `EntityGrafanaAlertsCard` components can be [added to catalog dashboards](/docs/details/updating-the-ui/#updating-dashboards). These
 list dashboards and alerts respectively.
 
 ### Set the Grafana annotation on entities

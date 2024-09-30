@@ -110,7 +110,7 @@ The Datadog plugin exposes two different component that can be used in your Road
 
 
 The `EntityDatadogGraphCard` uses `datadoghq.com/graph-token` annotation and displays individual graphs on your dashboard.
-For more information how to add card components to Roadie take a look at [the documentation on how to update dashboards.](/docs/getting-started/updating-the-ui/#updating-dashboards).
+For more information how to add card components to Roadie take a look at [the documentation on how to update dashboards.](/docs/details/updating-the-ui/#updating-dashboards).
 
 
 The `EntityDatadogContent` uses `datadoghq.com/dashboard-url` annotation as displays Datadog dashboards.

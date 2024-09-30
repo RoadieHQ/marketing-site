@@ -39,7 +39,7 @@ need to wait for the secret to be marked as "Available" before you can use the P
 The Pulumi plugin provides two components which can be added to the Roadie UI. You must be a Roadie admin to
 add components to the UI.
 
-The `EntityPulumiCard` and `EntityPulumiMetdataCard` components can be [added to catalog dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards). These
+The `EntityPulumiCard` and `EntityPulumiMetdataCard` components can be [added to catalog dashboards](/docs/details/updating-the-ui/#updating-dashboards). These
 list Pulumi entity information and metadata.
 
 ![pulumi-card.webp](./pulumi-card.webp)
