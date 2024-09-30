@@ -42,11 +42,11 @@ const VideoHero = () => {
               <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-7 lg:text-left">
                 <Headline className="tracking-right mt-12">
                   <span className="text-gray-900">Batteries included</span>
-                  <span className="block text-gray-900">Backstage</span>
+                  <span className="block text-gray-900">Internal Developer Portal</span>
                 </Headline>
 
                 <SubTitle
-                  text="Fully customizable with on-prem access. Scorecards and RBAC included."
+                  text="Fully customizable with on-prem access IDP built on Backstage. Scorecards and RBAC included."
                 />
 
                 <div className="mt-5 sm:flex sm:justify-center lg:justify-start md:mt-8">
