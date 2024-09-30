@@ -58,7 +58,7 @@ The Jenkins plugin provides two type of UI elements.
 
 
 The `EntityLatestJenkinsRunCard` displays the latest runs for an entity.
-This card can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards).
+This card can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
 
 
 The `EntityJenkinsContent` presents a job folder in Jenkins and jobs it contains. It also display details of each job within the folder.

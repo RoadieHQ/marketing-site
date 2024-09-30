@@ -41,7 +41,7 @@ Visit the secrets page in Roadie at `/administration/secrets` and enter the API 
 The LaunchDarkly plugin provides a card that can be displayed on an entity page.
 
 The `EntityLaunchdarklyOverviewCard` displays the feature flags for the entities LaunchDarkly context.
-This card can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards).
+This card can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
 
 ## Step 4: Modify your catalog files to contain references to the LaunchDarkly context
 
