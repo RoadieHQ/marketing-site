@@ -23,7 +23,7 @@ This page explains how to configure it in Roadie.
 
 ## Prerequisites
 
-1. You must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
+1. You must be an admin in Roadie. Learn how to [designate certain users as admins here](/docs/getting-started/assigning-admins/).
 2. You must have the correct permissions assigned in Cloudsmith to be able to create a read only API key
 
 ## Step 1: Create a Cloudsmith API key
