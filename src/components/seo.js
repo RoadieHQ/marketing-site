@@ -27,45 +27,65 @@ const SEO = ({ title, description = '', lang = 'en', headerImage = '', meta = []
   const metaDescription = description || site.siteMetadata.description;
   const twitterHandle = get(site, 'siteMetadata.social.twitter', 'roadiehq');
   const ogImageUrl = headerImage || `${site.siteMetadata.siteUrl}${roadieLogo}`;
-  const ogImageAlt = 'The Roadie logo. A cube in isometric projection with 3 fins cut into the right face. The word Roadie is below.';
+  const ogImageAlt =
+    'The Roadie logo. A cube in isometric projection with 3 fins cut into the right face. The word Roadie is below.';
 
-  const defaultMeta = [{
-    name: `description`,
-    content: metaDescription,
-  }, {
-    property: `og:title`,
-    content: title,
-  }, {
-    property: `og:description`,
-    content: metaDescription,
-  }, {
-    property: `og:type`,
-    content: `website`,
-  }, {
-    property: `og:image`,
-    content: ogImageUrl,
-  }, {
-    name: `twitter:card`,
-    content: `summary`,
-  }, {
-    name: `twitter:site`,
-    content: twitterHandle,
-  }, {
-    name: `twitter:image`,
-    content: ogImageUrl,
-  }, {
-    name: `twitter:image:alt`,
-    content: ogImageAlt,
-  }, {
-    name: `twitter:creator`,
-    content: twitterHandle,
-  }, {
-    name: `twitter:title`,
-    content: title,
-  }, {
-    name: `twitter:description`,
-    content: metaDescription,
-  }];
+  // Construct the canonical URL dynamically based on the siteUrl and current page's path
+  const canonicalUrl =
+    typeof window !== 'undefined'
+      ? `${site.siteMetadata.siteUrl}${window.location.pathname}`
+      : site.siteMetadata.siteUrl; // Fallback to siteUrl during server-side rendering
+
+  const defaultMeta = [
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      property: `og:image`,
+      content: ogImageUrl,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:site`,
+      content: twitterHandle,
+    },
+    {
+      name: `twitter:image`,
+      content: ogImageUrl,
+    },
+    {
+      name: `twitter:image:alt`,
+      content: ogImageAlt,
+    },
+    {
+      name: `twitter:creator`,
+      content: twitterHandle,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+  ];
 
   return (
     <Helmet
@@ -74,7 +94,9 @@ const SEO = ({ title, description = '', lang = 'en', headerImage = '', meta = []
       }}
       title={title}
       meta={defaultMeta.concat(meta)}
-    />
+    >
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
   );
 };
 
