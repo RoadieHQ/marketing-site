@@ -48,7 +48,7 @@ const VideoHero = () => {
                 </div>
                 <SubTitle
                   className="text is-16 text-center"
-                  text="Fully customizable IDP with on-prem access, built on Backstage. Scorecards and RBAC included."
+                  text="Fully customizable Internal Developer Portal with on-prem access, built on Backstage. Scorecards and RBAC included."
                 />
                 <div className="w-embed">
                   <div style={ {"height": "1.6rem"} }></div>
