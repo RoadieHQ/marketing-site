@@ -210,7 +210,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: '/sitemap.xml',
+        output: '/sitemap',
         excludes: DISALLOW_LIST,
         resolveSiteUrl: () => getSiteUrl(),
         query: `
@@ -220,7 +220,7 @@ module.exports = {
                 path
               }
             }
-            allFile(filter: { extension: { regex: "/(jpg|jpeg|png|gif)/" } }) {
+            allFile(filter: { extension: { regex: "/(jpg|jpeg|png|gif|webp)/" } }) {
               nodes {
                 publicURL
                 name
@@ -235,16 +235,25 @@ module.exports = {
           return allPages.map((page) => {
             const images = allImages
               .filter((image) => page.path.includes(image.name))
-              .map((image) => ({
-                url: image.publicURL, // Use publicURL as a fallback
-                title: image.name,
-                gatsbyImageData: image.childImageSharp
-                  ? getSrc(image.childImageSharp.gatsbyImageData)
-                  : null, // Check for gatsbyImageData
-              }))
-              .filter((image) => image.gatsbyImageData); // Filter out images without gatsbyImageData
+              .map((image) => {
+                // Use publicURL for unsupported formats like GIFs
+                if (image.extension === 'gif') {
+                  return {
+                    url: image.publicURL || '', // Ensure publicURL fallback
+                    title: image.name,
+                  };
+                }
+                // Use gatsbyImageData for supported formats
+                return {
+                  url: image.childImageSharp
+                    ? getSrc(image.childImageSharp.gatsbyImageData)
+                    : image.publicURL || '', // Ensure publicURL fallback
+                  title: image.name,
+                };
+              })
+              .filter((image) => image.url); // Filter out images without valid URLs
 
-            return { ...page, images };
+            return { ...page, images: images.length ? images : [] };
           });
         },
         serialize: ({ path, images }) => {
