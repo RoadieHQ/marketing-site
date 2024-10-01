@@ -36,45 +36,75 @@ const VideoHero = () => {
           />
         </div>
 
-        <div className="relative pt-6 pb-16 sm:pb-24 lg:pb-32">
-          <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-32">
-            <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-              <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-7 lg:text-left">
-                <Headline className="tracking-right mt-12">
-                  <span className="text-gray-900">Batteries included</span>
-                  <span className="block text-gray-900">Internal Developer Portal</span>
+        <div className="relative pt-0 pb-16 sm:pb-24 lg:pb-32">
+          <main className="mt-4 mx-auto max-w-7xl px-4 sm:mt-20 sm:px-6 lg:mt-20 text-center">
+            <div className="p-container is-hero">
+              <div>
+                <Headline className="title is-48 tracking-right mt-6" size="medium">
+                  <span className="text-gray-900">Achieve developer effectiveness</span>
                 </Headline>
-
+                <div className="w-embed">
+                  <div style={ {"height": "2rem"} } ></div>
+                </div>
                 <SubTitle
-                  text="Fully customizable with on-prem access IDP built on Backstage. Scorecards and RBAC included."
+                  className="text is-16 text-center"
+                  text="Fully customizable IDP with on-prem access, built on Backstage. Scorecards and RBAC included."
                 />
-
-                <div className="mt-5 sm:flex sm:justify-center lg:justify-start md:mt-8">
-                  <div>
-                    <Button
-                      link={true}
-                      to={PAGE_PATHS.freeTrial}
-                      color="primary"
-                      text="Try it free"
-                      size="large"
-                      fullWidth={true}
-                    />
-                  </div>
-
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <Button
-                      link={true}
-                      to={PAGE_PATHS.requestDemo}
-                      color="secondary"
-                      text="Request a demo"
-                      size="large"
-                      fullWidth={true}
-                    />
+                <div className="w-embed">
+                  <div style={ {"height": "1.6rem"} }></div>
+                </div>
+                <div
+                  className="flex flex-col is-center sm:text-center md:max-w-2xl md:mx-auto lg:col-span-7 lg:text-left">
+                  <div className="mt-5 sm:flex sm:justify-center lg:justify-center md:mt-8">
+                    <div>
+                      <Button
+                        link={true}
+                        to={PAGE_PATHS.freeTrial}
+                        color="primary"
+                        text="Try it free"
+                        size="large"
+                        fullWidth={true}
+                      />
+                    </div>
+                    <div className="mt-3 sm:mt-0 sm:ml-3">
+                      <Button
+                        link={true}
+                        to={PAGE_PATHS.requestDemo}
+                        color="secondary"
+                        text="Request a demo"
+                        size="large"
+                        fullWidth={true}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-5 lg:flex lg:items-center">
+              <div className="bg-hero-wrap">
+                <div className="bg-line corner">
+                  <div className="bg-dot-line"></div>
+                  <div className="bg-line-cover"></div>
+                </div>
+                <div className="bg-line">
+                  <div className="bg-dot-line"></div>
+                  <div className="bg-line-cover"></div>
+                </div>
+                <div className="bg-line">
+                  <div className="bg-dot-line"></div>
+                  <div className="bg-line-cover"></div>
+                </div>
+                <div className="bg-line">
+                  <div className="bg-dot-line"></div>
+                  <div className="bg-line-cover"></div>
+                </div>
+                <div className="bg-line corner">
+                  <div className="bg-dot-line"></div>
+                  <div className="bg-line-cover"></div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:grid lg:grid-cols-1 lg:gap-8  mt-10">
+              <div
+                className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-5 lg:flex lg:items-center">
                 <GrayBackgroundDotsPattern
                   className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 scale-75 origin-top sm:scale-100 lg:hidden"
                   width={640}
