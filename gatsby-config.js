@@ -77,18 +77,6 @@ const DISLALLOW_LIST = [
   '/docs/getting-started/adding-a-catalog-item/aws-s3/',
   '/docs/getting-started/adding-a-catalog-item/azure-devops/',
   '/docs/getting-started/adding-a-catalog-item/roadie-cli/',
-
-  // Referrals shouldn't be indexed
-  '/*?referringPathname=',
-
-  // UTM tags shouldn't be indexed
-  '/*?*utm_campaign=',
-  '/*?*utm_medium=',
-  '/*?*utm_content=',
-  '/*?*utm_source=',
-
-  // refs shouldn't be indexed.
-  '/*?*ref=',
 ];
 
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
