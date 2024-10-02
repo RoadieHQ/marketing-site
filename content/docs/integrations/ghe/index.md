@@ -1,6 +1,6 @@
 ---
 title: Configuring GitHub Enterprise Server in Roadie
-publishedDate: '2024-19-01T16:03:23.0Z'
+publishedDate: '2024-10-01T16:03:23.0Z'
 description: How to configure a GitHub Enterprise Server on your Roadie instance
 
 humanName: GitHub Enterprise Service
