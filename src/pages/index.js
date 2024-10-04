@@ -240,8 +240,6 @@ const PLUGINS_SUPPORTED = {
 };
 
 const Home = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title;
-
   const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
   return (
     <>
