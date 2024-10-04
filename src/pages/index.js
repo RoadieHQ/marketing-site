@@ -45,7 +45,7 @@ import PagerDutyLogo from '../../content/assets/logos/pagerduty/pagerduty.inline
 import ArgoLogo from '../../content/assets/logos/argo-cd/argo.inline.svg';
 import JiraSoftwareLogo from '../../content/assets/logos/jira/jira.inline.svg';
 
-const SEO_TITLE = 'Internal Developer Portal built on Backstage';
+const SEO_TITLE = 'Roadie - Internal Developer Portal built on Backstage';
 const LEAD = `Easier, scalable and zero-maintenance. With security, scorecards and customizability built-in.`;
 
 const PRODUCT = {
@@ -245,7 +245,7 @@ const Home = ({ data }) => {
   const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
   return (
     <>
-      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
+      <SEO title={SEO_TITLE} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 
