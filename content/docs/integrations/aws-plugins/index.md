@@ -1,6 +1,7 @@
 ---
 title: Configuring AWS Plugins
 publishedDate: '2022-03-29T21:00:00.0Z'
+lastValidated: '2024-10-08T10:51:37.0Z'
 description: How to configure Roadie to use AWS plugins
 
 humanName: AWS Plugins
@@ -76,7 +77,9 @@ The permissions needed for ECS plugin to work and be able to list your ECS resou
 }
 ```
 
-The plugin exposes an annotation that can be used to point to the correct ECS Cluster information to display:
+The plugin exposes two annotations that can be used to point to the correct ECS Cluster information to display:
+
+The first one is using the specific ARN value of the ECS service.
 
 ```yaml
 # Example
@@ -86,6 +89,20 @@ metadata:
   # ...
   annotations:
     aws.amazon.com/amazon-ecs-service-arn: arn:aws:ecs:us-west-2:123456789012:service/cluster1/myapp-service # specific ECS service by ARN
+  # ...
+```
+
+
+The second option is to tag ECS resources and identify them based on the tags.
+
+```yaml
+# Example
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  # ...
+  annotations:
+    aws.amazon.com/amazon-ecs-service-tags: hello=world # Comma separated list of tags
   # ...
 ```
 
