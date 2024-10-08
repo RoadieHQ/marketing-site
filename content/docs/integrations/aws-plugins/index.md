@@ -1,6 +1,7 @@
 ---
 title: Configuring AWS Plugins
-publishedDate: '2024-10-08T10:51:37.0Z'
+publishedDate: '2022-03-29T21:00:00.0Z'
+lastValidated: '2024-10-08T10:51:37.0Z'
 description: How to configure Roadie to use AWS plugins
 
 humanName: AWS Plugins
