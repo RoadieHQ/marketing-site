@@ -76,13 +76,30 @@ metadata:
     jira/project-key: <example-jira-project-key>
     jira/component: <example-component> # optional, you might skip this value to fetch data for all components
     jira/token-type: Bearer # optional, used for Activity stream feed.
+    jira/label: label1, label2 # optional, can use multiple labels comma separated or a single value
 ```
+
+Alternatively, you can add JQL expressions as annotations for the EntityJiraQueryCard component:
+
+```yaml
+metadata:
+  annotations:
+    jira/all-issues-jql: '<example-jql-expression>' # Used by default by EntityJiraQueryCard
+    # To display several queries you can add custom annotations and associate those using the jqlQueryFromAnnotation prop
+    # e.g. <EntityJiraQueryCard jqlQueryFromAnnotation="jira/custom-jql" />
+    jira/custom-jql: <another-jql-expression>  
+```
+
+ℹ️ These JQL expressions have limited templating support e.g. `assignee = '{{ userEmail }}'` the available values are 
+userEmail, userDisplayName and if any annotations are set those values also projectKey, component, label and team.
 
 ### Step 5: Add Jira components to the UI
 
 There are two components which you can add to the catalog layout to display Jira information. 
 * EntityJiraOverviewCard - can be added to the overview or other grid layouts. 
 * EntityJiraDashboardContent - a tab component provided by the [Jira Dashboard](https://www.npmjs.com/package/@axis-backstage/plugin-jira-dashboard) plugin.
+* EntityJiraQueryCard - A card which makes a JQL search query and displays the results. This can be provided by annotation
+  as described above or directly as a prop `jqlQuery`.
 
 You can read more about how to update the UI [here](/docs/details/updating-the-ui/).
 
