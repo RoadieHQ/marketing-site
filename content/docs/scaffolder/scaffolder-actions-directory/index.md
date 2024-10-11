@@ -16,39 +16,139 @@ NB:
 - A subset of available actions in Roadie can be found at the following page inside the Roadie app: `https://<tenant-name>.roadie.so/templates/actions`
 
 
-| Category             | Name                                                                        | Description                                                                                                                                                               | Source                                                                                                                                                                               | Inputs                                                                                             |
-|----------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| Downloading Content  | [fetch:plain](#fetchplain)                                                  | Downloads directory content and places it in the workspace.                                                                                                               | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/plain.ts)                  | url,targetPath,token                                                                               |
-| Downloading Content  | [fetch:plain:plus](#fetchplainplus)                                         | Downloads directory content and places it in the workspace for multiple urls.                                                                                             | [@k3tech/backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/tree/main)                                | commonParams,sources                                                                               |
-| Downloading Content  | [fetch:template](#fetchtemplate)                                            | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes result to the workspace.           | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/template.ts)               | url,targetPath,token,values,copyWithoutTemplating,cookiecutterCompat,templateFileExtension,replace |
-| Downloading Content  | [fetch:template:plus](#fetchtemplateplus)                            | Downloads multiple directories containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes results to the workspace. | [@k3tech/backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/tree/main)                                | commonParams,templates                                                                              |
-| Downloading Content  | [fetch:plain:file](#fetchplainfile)                                         | Downloads single file and places it in the workspace, or optionally in a subdirectory specified by the 'targetPath' input option.                                         | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/plainFile.ts)              | url,targetPath,token                                                                               |
-| Downloading Content  | [fetch:plain:file:plus](#fetchplainfileplus)                                | Downloads files and places them in the workspace for multiple urls.                                                                                                       | [@k3tech/backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/tree/main)                                | commonParams,files                                                                                 |
-| HTTP Requests        | [http:backstage:request](#httpbackstagerequest)                             | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          | [@roadiehq/scaffolder-backend-module-http-request](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-http-request) | method*,path*,headers,params,body,logRequestPath,continueOnBadResponse                             |
-| Debugging            | [debug:log](#debuglog)                                                      | Log a message to the UI output.                                                                                                                                           | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/debug/log.ts)                    | message*,listWorkspace                                                                             |
-| Debugging            | [debug:wait](#debugwait)                                                    | Waits for a certain period of time.                                                                                                                                       | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/debug/wait.ts)                   | minutes,seconds,miliseconds                                                                        |
-| Catalog              | [catalog:register](#catalogregister)                                        | Registers an entity in the catalog.                                                                                                                                       | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/register.ts)             | (catalogInfoUrl*,optional) (repoContentsUrl*,catalogInfoPath,optional)                             |
-| Catalog              | [catalog:write](#catalogwrite)                                              | Writes the catalog-info.yaml for your template                                                                                                                            | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/write.ts)                | filePath,entity*                                                                                   |
-| Catalog              | [catalog:fetch](#catalogfetch)                                              | Fetches an entity or entities from the catalog by entity reference(s).                                                                                                    | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/fetch.ts)                | entityRef,entityRefs,optional,defaultKind,defaultNamespace                                         |
-| File Operations      | [fs:delete](#fsdelete)                                                      | Deletes files and directories in the workspace                                                                                                                            | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/delete.ts)            | files*                                                                                             |
-| File Operations      | [fs:rename](#fsrename)                                                      | Renames files and directories in the workspace, essentially moving them.                                                                                                  | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/rename.ts)            | files*                                                                                             |
-| File Operations      | [fs:append](#fsappend)                                                      | Adds text to the end of an existing file in the workspace.                                                                                                                | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/append.ts)            | file*,text*                                                                                        |
-| File Operations      | [fs:read](#fsread)                                                          | Reads a file from the workspace and outputs its content to be used in a subsequent step.                                                                                  | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/read.ts)              | path*                                                                                              |
-| File Operations      | [roadiehq:utils:fs:replace](#roadiehqutilsfsreplace)                        | Replaces found string in files with content defined in input.                                                                                                             | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | files*                                                                                             |
-| File Operations      | [roadiehq:utils:fs:parse](#roadiehqutilsfsparse)                            | Reads a file from the workspace and outputs content to be used in next steps.                                                                                             | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | path*,parser                                                                                       |
-| File Operations      | [roadiehq:utils:fs:write](#roadiehqutilsfswrite)                            | Creates a file with the content on the given path.                                                                                                                        | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | path*,content*,preserveFormatting                                                                  |
-| File Operations      | [roadiehq:utils:fs:append](#roadiehqutilsfsappend)                          | Creates a file with the content on the given path.                                                                                                                        | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | path*,content*,preserveFormatting                                                                  |
-| File Operations      | [roadiehq:utils:merge](#roadiehqutilsmerge)                                 | Merge data into an existing JSON or YAML file.                                                                                                                            | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | path*,content*,mergeArrays,preserveYamlComments,options                                            |
-| File Operations      | [roadiehq:utils:zip](#roadiehqutilszip)                                     | Compresses content to a zip file in the workspace.                                                                                                                        | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | path*,content*,preserveFormatting                                                                  |
-| Serialization        | [roadiehq:utils:serialize:yaml](#roadiehqutilsserializeyaml)                | Converts YAML to a string.                                                                                                                                                | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | data*,options                                                                                      |
-| Serialization        | [roadiehq:utils:serialize:json](#roadiehqutilsserializejson)                | Converts JSON to a formated string.                                                                                                                                       | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | data*,space,replacer                                                                               |
-| Content Manipulation | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                             | Performs JSONata operations and transformations on input objects.                                                                                                         | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | data*,expression*                                                                                  |
-| Content Manipulation | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform) | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | path*,expression*,options                                                                          |
-| Content Manipulation | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform) | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | path*,expression*,as,replacer,space                                                                |
-| Content Manipulation | [json:merge-files](#jsonmergefiles)                                         | Merges multiple JSON files into a single JSON object stored in a new file in the workspace.                                                                               | [@mdude2314/backstage-plugin-scaffolder-json-merge-actions](https://github.com/arhill05/backstage-plugin-scaffolder-json-merge-actions)                                              | inputFile*,outputFileName*,outputFilePath,jsonMergeOptions                                         |
-| Content Manipulation | [json:merge-file](#jsonmergefile)                                           | Uses [JSON-merger syntax](https://www.npmjs.com/package/json-merger#operations) to manipulate a single JSON file and store the result in a new file in the workspace.     | [@mdude2314/backstage-plugin-scaffolder-json-merge-actions](https://github.com/arhill05/backstage-plugin-scaffolder-json-merge-actions)                                              | inputFiles*,outputFileName*,outputFilePath,jsonMergeOptions                                        |
-| Content Manipulation | [roadiehq:utils:json:merge](#roadiehqutilsjsonmerge)                        | Merge new data into an existing JSON file.                                                                                                                                | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)               | path*,content*,matchFileIndent,mergeArrays                                                         |
-|                      |                                                                             |                                                                                                                                                                           |                                                                                                                                                                                      |                                                                                                    |
+| Category             | Name                                                                      | Description                                                                                                                                                               | Source                                                                                                                                                                                                                                                                                | Inputs                                                                                             |
+|----------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Downloading Content  | [fetch:plain](#fetchplain)                                                | Downloads directory content and places it in the workspace.                                                                                                               | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/plain.ts)                                                                                                                   | url,targetPath,token                                                                               |
+| Downloading Content  | [fetch:plain:plus](#fetchplainplus)                                       | Downloads directory content and places it in the workspace for multiple urls.                                                                                             | [@k3tech/backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/tree/main)                                                                                                                                 | commonParams,sources                                                                               |
+| Downloading Content  | [fetch:template](#fetchtemplate)                                          | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes result to the workspace.           | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/template.ts)                                                                                                                | url,targetPath,token,values,copyWithoutTemplating,cookiecutterCompat,templateFileExtension,replace |
+| Downloading Content  | [fetch:template:plus](#fetchtemplateplus)                          | Downloads multiple directories containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes results to the workspace. | [@k3tech/backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/tree/main)                                                                                                                                 | commonParams,templates                                                                              |
+| Downloading Content  | [fetch:plain:file](#fetchplainfile)                                       | Downloads single file and places it in the workspace, or optionally in a subdirectory specified by the 'targetPath' input option.                                         | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/plainFile.ts)                                                                                                               | url,targetPath,token                                                                               |
+| Downloading Content  | [fetch:plain:file:plus](#fetchplainfileplus)                              | Downloads files and places them in the workspace for multiple urls.                                                                                                       | [@k3tech/backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/tree/main)                                                                                                                                 | commonParams,files                                                                                 |
+| HTTP Requests        | [http:backstage:request](#httpbackstagerequest)                           | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          | [@roadiehq/scaffolder-backend-module-http-request](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-http-request)                                                                                                  | method*,path*,headers,params,body,logRequestPath,continueOnBadResponse                             |
+| Debugging            | [debug:log](#debuglog)                                                    | Log a message to the UI output.                                                                                                                                           | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/debug/log.ts)                                                                                                                     | message*,listWorkspace                                                                             |
+| Debugging            | [debug:wait](#debugwait)                                                  | Waits for a certain period of time.                                                                                                                                       | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/debug/wait.ts)                                                                                                                    | minutes,seconds,miliseconds                                                                        |
+| Catalog              | [catalog:register](#catalogregister)                                      | Registers an entity in the catalog.                                                                                                                                       | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/register.ts)                                                                                                              | (catalogInfoUrl*,optional) (repoContentsUrl*,catalogInfoPath,optional)                             |
+| Catalog              | [catalog:write](#catalogwrite)                                            | Writes the catalog-info.yaml for your template                                                                                                                            | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/write.ts)                                                                                                                 | filePath,entity*                                                                                   |
+| Catalog              | [catalog:fetch](#catalogfetch)                                            | Fetches an entity or entities from the catalog by entity reference(s).                                                                                                    | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/fetch.ts)                                                                                                                 | entityRef,entityRefs,optional,defaultKind,defaultNamespace                                         |
+| File Operations      | [fs:delete](#fsdelete)                                                    | Deletes files and directories in the workspace                                                                                                                            | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/delete.ts)                                                                                                             | files*                                                                                             |
+| File Operations      | [fs:rename](#fsrename)                                                    | Renames files and directories in the workspace, essentially moving them.                                                                                                  | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/rename.ts)                                                                                                             | files*                                                                                             |
+| File Operations      | [fs:append](#fsappend)                                                    | Adds text to the end of an existing file in the workspace.                                                                                                                | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/append.ts)                                                                                                             | file*,text*                                                                                        |
+| File Operations      | [fs:read](#fsread)                                                        | Reads a file from the workspace and outputs its content to be used in a subsequent step.                                                                                  | [@backstage/plugin-scaffolder-backend](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/read.ts)                                                                                                               | path*                                                                                              |
+| File Operations      | [roadiehq:utils:fs:replace](#roadiehqutilsfsreplace)                      | Replaces found string in files with content defined in input.                                                                                                             | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | files*                                                                                             |
+| File Operations      | [roadiehq:utils:fs:parse](#roadiehqutilsfsparse)                          | Reads a file from the workspace and outputs content to be used in next steps.                                                                                             | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | path*,parser                                                                                       |
+| File Operations      | [roadiehq:utils:fs:write](#roadiehqutilsfswrite)                          | Creates a file with the content on the given path.                                                                                                                        | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | path*,content*,preserveFormatting                                                                  |
+| File Operations      | [roadiehq:utils:fs:append](#roadiehqutilsfsappend)                        | Creates a file with the content on the given path.                                                                                                                        | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | path*,content*,preserveFormatting                                                                  |
+| File Operations      | [roadiehq:utils:merge](#roadiehqutilsmerge)                               | Merge data into an existing JSON or YAML file.                                                                                                                            | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | path*,content*,mergeArrays,preserveYamlComments,options                                            |
+| File Operations      | [roadiehq:utils:zip](#roadiehqutilszip)                                   | Compresses content to a zip file in the workspace.                                                                                                                        | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | path*,content*,preserveFormatting                                                                  |
+| Serialization        | [roadiehq:utils:serialize:yaml](#roadiehqutilsserializeyaml)              | Converts YAML to a string.                                                                                                                                                | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | data*,options                                                                                      |
+| Serialization        | [roadiehq:utils:serialize:json](#roadiehqutilsserializejson)              | Converts JSON to a formated string.                                                                                                                                       | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | data*,space,replacer                                                                               |
+| Content Manipulation | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                           | Performs JSONata operations and transformations on input objects.                                                                                                         | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | data*,expression*                                                                                  |
+| Content Manipulation | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform) | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | path*,expression*,options                                                                          |
+| Content Manipulation | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform) | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | path*,expression*,as,replacer,space                                                                |
+| Content Manipulation | [json:merge-files](#jsonmergefiles)                                       | Merges multiple JSON files into a single JSON object stored in a new file in the workspace.                                                                               | [@mdude2314/backstage-plugin-scaffolder-json-merge-actions](https://github.com/arhill05/backstage-plugin-scaffolder-json-merge-actions)                                                                                                                                               | inputFile*,outputFileName*,outputFilePath,jsonMergeOptions                                         |
+| Content Manipulation | [json:merge-file](#jsonmergefile)                                         | Uses [JSON-merger syntax](https://www.npmjs.com/package/json-merger#operations) to manipulate a single JSON file and store the result in a new file in the workspace.     | [@mdude2314/backstage-plugin-scaffolder-json-merge-actions](https://github.com/arhill05/backstage-plugin-scaffolder-json-merge-actions)                                                                                                                                               | inputFiles*,outputFileName*,outputFilePath,jsonMergeOptions                                        |
+| Content Manipulation | [roadiehq:utils:json:merge](#roadiehqutilsjsonmerge)                      | Merge new data into an existing JSON file.                                                                                                                                | [@roadiehq/scaffolder-backend-module-utils](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-utils)                                                                                                                | path*,content*,matchFileIndent,mergeArrays                                                         |
+| Content Manipulation | [regex:replace](#regexreplace)                | Validate an input structure using the `zod` library to perform regex replacements on input values.                                                                        | [@janus-idp/backstage-scaffolder-backend-module-regex](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-regex)                                                                                                                                            | regExps, pattern, flags, replacement, values, key, value                                                                                 |
+| Content Manipulation | [regex:fs:replace:plus](#regexfsreplaceplus)       | Enable regex-based search and replacement across files using glob patterns.                                                                                               | [@kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/src/actions/builtin/extras/regex-fs-replace.ts)                                                                           | pattern, glob, replacement, flags                                                                                                      | 
+| Other Utils          | [uuid:v4:gen:plus](#uuidv4genplus)     | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             | [@kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/src/actions/builtin/extras/uuid.ts)                                                                                       | amount                                                                  |
+| Other Utils          | [vars:plus](#varsplus)           | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        | [@kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/src/actions/builtin/extras/vars.ts)                                                                                       | input  |
+| Git                  | [git](#git)      | Allows execution of Git commands within a specified working directory.                                                                                                    | [Code](https://github.com/arhill05/backstage-plugin-scaffolder-git-actions/blob/master/src/actions/git.ts) [Package](https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-git-actions)                                                                                | command, workingDirectory, args                                         |
+| HCL                  | [hcl:merge](#hclmerge)                    | Create an action for merging two HCL contents.                                                                                                                            | [@seatgeek/backstage-plugins](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)                                                                                                                                   | aSourceContent, bSourceContent                                                                                |
+| HCL                  | [hcl:merge:write](#hclmergewrite)              | Merge two HCL content strings and write the merged result to a specified output path.                                                                                     | [@seatgeek/backstage-plugins](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)                                                                                                                                   | aSourceContent, bSourceContent, outputPath                                                                    |
+| HCL                  | [hcl:merge:files](#hclmergefiles)              | Merge two HCL files specified by their paths.                                                                                                                             | [@seatgeek/backstage-plugins](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)                                                                                                                                   | aSourcePath, bSourcePath                                                                                     |
+| HCL                  | [hcl:merge:files:write](#hclmergefileswrite)       | Merge two HCL files and write the merged content to a specified output path, with input validation.                                                                       | [@seatgeek/backstage-plugins](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)                                                                                                                                   | aSourcePath, bSourcePath, outputPath                                                                         |
+| Pulumi               | [pulumi:new](#puluminew) | Action for creating a new Pulumi project, including input validation and execution of necessary commands to set up the project.                                           | [pulumi-backstage-plugin](https://github.com/pulumi/pulumi-backstage-plugin/tree/main/plugins/backstage-scaffolder-backend-pulumi#pulumi-new-action)                                                                                                                                  | `template*`, `stack*`, `organization*`, `name*`, `description`, `config`, `secretConfig`, `args`, `folder*`                                                      |
+| Pulumi               | [pulumi:up](#pulumiup)  | Runs Pulumi to manage cloud resources, either in a local or remote workspace based on the provided configuration.                                                         | [pulumi-backstage-plugin](https://github.com/pulumi/pulumi-backstage-plugin/tree/main/plugins/backstage-scaffolder-backend-pulumi#pulumi-up-action)                                                                                                                                   | `stack*`, `organization*`, `name*`, `deployment*`, `repoUrl`, `repoBranch`, `repoProjectPath`, `config`, `providerCredentialsFromEnv`, `secretConfig`, `outputs`, `preRunCommands`, `suppressProgress` |
+| Kubernetes           | [kubernetes:create-namespace](#kubernetescreatenamespace) | Creates a Kubernetes namespace, leveraging the Kubernetes API and Backstage's catalog client to fetch cluster information.                                                | [@janus-idp/backstage-scaffolder-backend-module-kubernetes-dynamic](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-kubernetes-dynamic)                                                                                                                  | namespace*, clusterRef, url, token*, skipTLSVerify, caData, labels                                                                        |
+| Kubernetes           | [deploy:kubernetes](#deploykubernetes)          | Action for deploying Kubernetes manifests within a Backstage application, using the Kubernetes API to apply the provided YAML or JSON resources.                          | [backstage-plugin-scaffolder-kubernetes-deploy](https://github.com/pfeifferj/backstage-plugin-scaffolder-kubernetes-deploy/blob/main/src/actions/k8s-apply.ts)                                                                                                                        | manifest*, clusterUrl*, authToken*                                                                                                        |
+| Kubernetes           | [kube:apply](#kubeapply)                 | Action for applying Kubernetes manifests in a Backstage application.                                                                                                      | [backstage-k8s-scaffolder-actions](https://github.com/kirederik/backstage-k8s-scaffolder-actions/blob/main/src/actions/apply.ts)                                                                                                                                                      | manifest*, namespaced*                                                                                                                   |
+| Kubernetes           | [kube:delete](#kubedelete)               | Action for deleting Kubernetes resources.                                                                                                                                 | [backstage-k8s-scaffolder-actions](https://github.com/kirederik/backstage-k8s-scaffolder-actions/blob/main/src/actions/delete.ts)                                                                                                                                                     | apiVersion*, kind*, name*, namespace                                                                                                      |
+| Kubernetes           | [kube:job:wait](#kubejobwait)              | Action that waits for a Kubernetes job to complete based on specified labels and a namespace.                                                                             | [backstage-k8s-scaffolder-actions](https://github.com/kirederik/backstage-k8s-scaffolder-actions/blob/main/src/actions/wait.ts)                                                                                                                                                       | labels*, namespace                                                                                                                         | 
+| Maven                | [maven](#maven) | Runs Maven commands in a specified working directory with optional arguments.                                                                                             | [@gcornacchia/backstage-plugin-scaffolder-maven-actions](https://www.npmjs.com/package/@gcornacchia/backstage-plugin-scaffolder-maven-actions)                                                                                                                                        | command*, workingDirectory*, args                 |
+| Ansible              | [ansible:jobTemplate:launch](#ansiblejobtemplatelaunch)        | Action for launching an Ansible job template and waiting for it to complete.                                                                                              | [KiwiGDC/backstage-kawx](https://github.com/KiwiGDC/backstage-kawx/blob/main/plugins/scaffolder-backend-module-kawx/src/actions/run/run.ts)                                                                                                                                           | jobTemplateId*, ansibleConfig                     |
+| Ansible              | [ansible-controller:jobTemplate:launch](#ansiblecontrollerjobtemplatelaunch) | Triggers the launch of an Ansible job template via the Ansible controller API.                                                                                            | [mycloudlab/scaffolder-backend-module-ansible-controller](https://www.npmjs.com/package/@mycloudlab/scaffolder-backend-module-ansible-controller)                                                                                                                                     | controller*, job_template*, extra_vars            |
+| Ansible              | [argocd:create-resources](#argocdcreateresources) | Action for creating Argo CD resources using Backstage's scaffolding plugin.                                                                                               | [@RoadieHQ/roadie-backstage-plugins](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-argocd)                                                                                                                             | appName*, argoInstance*, namespace*, repoUrl*, path*, projectName, labelValue                                 | 
+| AWS                  | [roadiehq:aws:s3:cp](#roadiehqawss3cp)                | Action that uploads files from a local directory to an AWS S3 bucket using specified parameters.                                                                          | [RoadieHQ AWS S3](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-aws)                                                                                                                                            | bucket*, region*, path, prefix, endpoint, s3ForcePathStyle                                                                         |
+| AWS                  | [roadiehq:aws:ecr:create](#roadiehqawsecrcreate)            | Creates an AWS Elastic Container Registry (ECR) repository.                                                                                                               | [RoadieHQ AWS ECR](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-aws)                                                                                                                                           | repoName*, tags, imageMutability, scanOnPush, region*                                                                             |
+| AWS                  | [roadiehq:aws:secrets-manager:create](#roadiehqawssecretsmanagercreate) | Creates a new secret in AWS Secrets Manager using the Backstage scaffolder plugin.                                                                                        | [RoadieHQ Secrets Manager](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-aws/src/actions/secrets-manager/create.ts)                                                                                             | name*, description, value, tags, profile, region*                                                                                 |
+| AWS                  | [opa:get-env-providers](#opagetenvproviders)               | Retrieves AWS environment provider data based on a reference to an AWS environment entity.                                                                                | [OPA Get Env Providers](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-env-providers/get-env-providers.ts)                                                                                                | environmentRef*                                                                                                                 |
+| AWS                  | [opa:create-secret](#opacreatesecret)                   | Creates secrets in AWS Secrets Manager.                                                                                                                                   | [OPA Create Secret](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage)                                                                                                                                                                              | secretName*, description, region, tags                                                                                          |
+| AWS                  | [opa:createRepoAccessToken:gitlab](#opacreaterepoaccesstokengitlab)   | Creates a GitLab repository access token and stores it in AWS Secrets Manager.                                                                                            | [OPA Create Repo Access Token](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage)                                                                                                                                                                   | repoUrl*, projectId*, secretArn*, region                                                                                         |
+| AWS                  | [opa:get-platform-metadata](#opagetplatformmetadata)          | Retrieves metadata about the OPA (Open Policy Agent) on AWS platform.                                                                                                     | [OPA Get Platform Metadata](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage)                                                                                                                                                                      | envConfig*                                                                                                                       |
+| AWS                  | [opa:get-ssm-parameters](#opagetssmparameters)              | Retrieves AWS SSM parameter values for specified environment providers.                                                                                                   | [OPA Get SSM Parameters](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage)                                                                                                                                                                         | paramKeys*, envProviders*                                                                                                        |
+| AWS                  | `aws:cloudcontrol:create`               | Action for creating resources using AWS Cloud Control API.                                                                                                                | [AWS Cloud Control](https://www.npmjs.com/package/@alithya-oss/plugin-scaffolder-backend-module-aws-core)                                                                                                                                                                             | typeName*, desiredState*, wait, maxWaitTime                                                                                     |
+| Azure                | [publish:azure](#publishazure)              | Action to initialize a Git repository and publish it to Azure DevOps.                                                                                                     | [GitHub - publish:azure](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-azure/src/actions/azure.ts)                                                                                                                                             | `repoUrl`* (string), `description` (string), `defaultBranch` (string), `gitCommitMessage` (string), `gitAuthorName` (string), `gitAuthorEmail` (string), `sourcePath` (string), `token` (string)                                                       |
+| Azure                | [azure:repo:clone](#azurerepoclone)           | Action for cloning an Azure DevOps repository into a specified workspace directory, handling authentication via personal access tokens or bearer tokens.                  | [GitHub - azure:repo:clone](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/cloneAzureRepo.ts)                                                                                                                          | `remoteUrl`* (string), `branch` (string), `targetPath` (string), `server` (string), `token` (string)                                                                                                                                                    |
+| Azure                | [git:clone:azure](#gitcloneazure)           | Clones repositories from Azure DevOps Git, allowing for multiple repositories to be cloned with the same Git reference.                                                   | [GitHub - git:clone:azure](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/repos/git-clone-azure.ts)                                                                                                                   | `repoUrl`* (string), `fromRef` (string), `targetPath` (string)                                                                                                                                                                                         |
+| Azure                | [azure:repo:push](#azurerepopush)            | Pushes content from a local workspace to a remote Azure repository.                                                                                                       | [GitHub - azure:repo:push](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pushAzureRepo.ts)                                                                                                                            | `branch`* (string), `sourcePath`* (string), `gitCommitMessage`* (string), `gitAuthorName` (string), `gitAuthorEmail` (string)                                                                                                                         |
+| Azure                | [azure:repo:pr](#azurerepopr)              | Creates a pull request in an Azure DevOps repository using customizable inputs.                                                                                           | [GitHub - azure:repo:pr](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pullRequestAzureRepo.ts)                                                                                                                       | `organization` (string), `sourceBranch` (string), `targetBranch` (string), `title`* (string), `description` (string), `repoId`* (string), `project` (string), `supportsIterations` (boolean), `server` (string), `token` (string), `autoComplete` (boolean) |
+| Azure                | [git:commit:azure](#gitcommitazure)           | Commits and pushes changes to an Azure DevOps Git repository, processing parameters and handling Git operations.                                                          | [GitHub - git:commit:azure](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/repos/git-commit-azure.ts)                                                                                                                 | `toBranch`* (string), `commitMessage`* (string), `targetPath` (string)                                                                                                                                                                              |
+| Azure                | [azure:pipeline:create](#azurepipelinecreate)      | Creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.                                                                         | [GitHub - azure:pipeline:create](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/createAzurePipeline.ts)                                                                                                                   | `createApiVersion` (string), `server` (string), `organization`* (string), `project`* (string), `folder`* (string), `name` (string), `repositoryId` (string), `repositoryName` (string), `yamlPath` (string), `token` (string)                           |
+| Azure                | [pipeline:create:azure](#pipelinecreateazure)      | Automates the creation of Azure DevOps pipelines from Git repositories.                                                                                                   | [GitHub - pipeline:create:azure](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/piepline/pipeline-create-azure.ts)                                                                                                    | `pipelinePath` (string), `yamlFilename` (string), `pipelineName` (string), `defaultBranch` (string), `repoUrl`* (string)                                                                                                                                                                     |
+| Azure                | [azure:pipeline:run](azurepipelinerun)        | Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.                                                                                       | [GitHub - azure:pipeline:run](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/runAzurePipeline.ts)                                                                                                                         | `runApiVersion` (string), `buildApiVersion` (string), `server` (string), `organization` (string), `pipelineId`* (string), `project`* (string), `branch` (string), `pipelineParameters` (object)                                                  |
+| Azure                | [azure:pipeline:permit](#azurepipelinepermit)  | Defines an Azure DevOps pipeline permission management action for Backstage scaffolding.                                                                                  | [@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines)                                                                                                                        | `organization`, `project`, `resourceId`, `resourceType`, `authorized`, `pipelineId`                                                              |
+| Azure                | [azure:repo:clone](#azurerepoclone)       | Action for cloning an Azure repository into a specified workspace directory using Backstage's scaffolding plugin.                                                         | [@parfuemerie-douglas/scaffolder-backend-module-azure-repositories](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories)                                                                                                                  | `remoteUrl`, `targetPath`, `branch`                                                                                                            |
+| Azure                | [azure:repo:push](#azurerepopush)        | Action that pushes content from a local workspace to a remote Azure repository.                                                                                           | [@parfuemerie-douglas/scaffolder-backend-module-azure-repositories](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories)                                                                                                                  | `branch`, `sourcePath`, `gitCommitMessage`, `gitAuthorName`, `gitAuthorEmail`                                                                    |
+| Azure                | [azure:repo:pr](#azurerepopr)          | Action for creating a pull request in Azure DevOps.                                                                                                                       | [@parfuemerie-douglas/scaffolder-backend-module-azure-repositories](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories)                                                                                                                  | `organization`, `sourceBranch`, `targetBranch`, `title`, `repoId`, `project`                                                                   |
+| Bitbucket            | [publish:bitbucket](#publishbitbucket)       | Creates a new Bitbucket repository and publishes the files in the workspace directory to the repository.                                                                  | [Bitbucket Plugin](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket/src/actions/bitbucket.ts)                                                                                                                                           | `repoUrl*`, description, repoVisibility, defaultBranch, sourcePath, enableLFS, token, gitCommitMessage, gitAuthorName, gitAuthorEmail             |
+| Bitbucket            | [publish:bitbucketCloud](#publishbitbucketCloud)  | Creates and initializes a Bitbucket Cloud repository and publishes content to it from a workspace.                                                                        | [Bitbucket Cloud Plugin](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloud.ts)                                                                                                                          | `repoUrl*`, description, repoVisibility, defaultBranch, gitCommitMessage, sourcePath, token                                                           |
+| Bitbucket            | [bitbucket:pipelines:run](#bitbucketpipelinesrun) | Triggers a run of a Bitbucket Cloud pipeline using the Backstage framework.                                                                                               | [Bitbucket Pipelines Run Plugin](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloudPipelinesRun.ts)                                                                                                      | `workspace*`, `repo_slug*`, body, token                                                                                                            |
+| Bitbucket            | [publish:bitbucketCloud:pull-request](#publishbitbucketcloudpullrequest)   | Action for publishing a pull request to a Bitbucket Cloud repository using Backstage's scaffolding system.                                                                | [Bitbucket Cloud Pull Request](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloudPullRequest.ts)                                                                                                         | `repoUrl*`, `title*`, `description`, `targetBranch`, `sourceBranch*`, `token`, `gitAuthorName`, `gitAuthorEmail`           |
+| Bitbucket            | [publish:bitbucketServer](#publishbitbucketserver)               | Creates a new repository in Bitbucket Server.                                                                                                                             | [Bitbucket Server](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-server/src/actions/bitbucketServer.ts)                                                                                                                              | `repoUrl*`, `description`, `repoVisibility`, `defaultBranch`, `sourcePath`, `enableLFS`, `token`, `gitCommitMessage`, `gitAuthorName`, `gitAuthorEmail` |
+| Bitbucket            | [publish:bitbucketServer:pull-request](#publishbitbucketserverpullrequest)  | Opens a pull request on a Bitbucket Server repository to merge two existing branches.                                                                                     | [Bitbucket Server Pull Request](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-server/src/actions/bitbucketServerPullRequest.ts)                                                                                                      | `repoUrl*`, `title*`, `description`, `targetBranch`, `sourceBranch*`, `token`, `gitAuthorName`, `gitAuthorEmail`           | 
+| CNEO                 | [cnoe:kubernetes:apply](#cnoekubernetesapply)     | Action for applying Kubernetes manifests using `kubectl`, either from a string, an object, or a file path, with support for namespaced configurations.                    | [cnoe-io/plugin-scaffolder-actions](https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/k8s-apply.ts)                                                                                                                                                          | manifestString, manifestObject, manifestPath, namespaced*, clusterName                                         |
+| CNEO                 | [cnoe:verify:dependency](#cnoeverifydependency)    | Verify resource dependencies for CNOE.                                                                                                                                    | [cnoe-io/plugin-scaffolder-actions](https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/verify.ts)                                                                                                                                                             | verifiers*                                                                                                     |
+| CNEO                 | [cnoe:utils:sanitize](#cnoeutilssanitize)       | Action for sanitizing resources defined in a YAML document by removing empty fields, before further processing.                                                           | [cnoe-io/plugin-scaffolder-actions](https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/sanitize.ts)                                                                                                                                                           | document*                                                                                                      |
+| Cadacy               | [codacy:add-repo](codacyadd-repo)    | Action for adding a repository to Codacy using its API.                                                                                                                   | [codacy/backstage-plugin](https://github.com/codacy/backstage-plugin/blob/main/src/actions/codacy.ts)                                                                                                                                                                                 | `provider` (required), `owner` (required), `repository` (required) |
+| Confluence           | [confluence:transform:markdown](#confluencetransformmarkdown)  | Action that transforms Confluence content into Markdown format and updates a GitHub repository with the new Markdown files and modified `mkdocs.yml` configuration.       | [GitHub Repository](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-confluence-to-markdown)                                                                                                                                                      | confluenceUrls*, repoUrl*                                                                       |
+| Cue                  | [cue:cueflow](cuecueflow) | This action fetches some template content, runs a Cue command on it, and copies output files to a specified directory.                                                    |                                                                                                                                                                                                                                                                                       | url*, cuePkg, cueCmd, cueOutDir, values, targetPath                                                          |
+| Gerrit               | [publish:gerrit:review](#publishgerritreview)   | Action for creating a new Gerrit review by committing and pushing changes to a Git repository.                                                                            | [gerritReview.ts](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gerrit/src/actions/gerritReview.ts)                                                                                                                                            | `repoUrl`, `gitCommitMessage`, `branch`                                                                                            |
+| Gerrit               | [publish:gerrit](#publishgerrit)          | Action that initializes a Git repository with content from the workspace and publishes it to a Gerrit repository.                                                         | [gerrit.ts](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gerrit/src/actions/gerrit.ts)                                                                                                                                                        | `repoUrl`, `description`, `gitCommitMessage`, `defaultBranch`, `gitAuthorName`, `gitAuthorEmail`, `sourcePath`                   |
+| Gerrit               | [publish:gitea](#publishgitea)  | This action initializes a git repository from workspace content and publishes it to a Gitea repository.                                                                   | [@backstage/plugin-scaffolder-backend-module-gitea](https://www.npmjs.com/package/@backstage/plugin-scaffolder-backend-module-gitea)                                                                                                                                                  | repoUrl*, description, defaultBranch, repoVisibility, gitCommitMessage, gitAuthorName, gitAuthorEmail, sourcePath                                                                                                                      |
+| GitHub               | [publish:github](#publishgithub)            | Creates a new GitHub repository and publishes files from the workspace to the repository.                                                                                 | [GitHub Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/github.ts)                                                                                                                                                    | `repoUrl`*, `description`, `homepage`, `access`, `defaultBranch`, `protectDefaultBranch`, `protectEnforceAdmins`, `deleteBranchOnMerge`, `gitCommitMessage`, `gitAuthorName`, `gitAuthorEmail`, `allowRebaseMerge`, `allowSquashMerge`, `squashMergeCommitTitle`, `squashMergeCommitMessage`, `allowMergeCommit`, `allowAutoMerge`, `sourcePath`, `bypassPullRequestAllowances`, `requiredApprovingReviewCount`, `restrictions`, `requireCodeOwnerReviews`, `dismissStaleReviews`, `requiredStatusCheckContexts`, `requireBranchesToBeUpToDate`, `requiredConversationResolution`, `requireLastPushApproval`, `repoVisibility`, `collaborators`, `hasProjects`, `hasWiki`, `hasIssues`, `token`, `topics`, `repoVariables`, `secrets`, `oidcCustomization`, `requiredCommitSigning`, `customProperties`|
+| GitHub               | [publish:github:pull-request](#publishgithubpull-request) | Creates a pull request in a pre-existing repository using files from the workspace.                                                                                       | [GitHub Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubPullRequest.ts)                                                                                                                                         | `repoUrl`*, `branchName`*, `targetBranchName`, `title`*, `description`*, `draft`, `sourcePath`, `targetPath`, `token`, `reviewers`, `teamReviewers`, `commitMessage`, `update`, `forceFork`, `gitAuthorName`, `gitAuthorEmail`, `forceEmptyGitAuthor`|
+| GitHub               | [github:webhook](#githubwebhook)            | Configures a webhook on an existing GitHub repository, requiring `repoUrl` and `webhookUrl`.                                                                              | [GitHub Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/github.ts)                                                                                                                                                    | `repoUrl`*, `webhookUrl`*                                                                                                                            |
+| GitHub               | [github:autolinks:create](#githubautolinkscreate)  | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                               | [Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubAutolinks.ts)                                                                                                                                                  | `repoUrl`*, `keyPrefix`*, `urlTemplate`*, `isAlphanumeric`, `token`                                                |
+| GitHub               | [github:deployKey:create](#githubdeploykeycreate)  | Creates and stores GitHub Deploy Keys, with the option to encrypt and store the private key as a GitHub secret.                                                           | [Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubDeployKey.ts)                                                                                                                                                  | `repoUrl`*, `publicKey`*, `privateKey`*, `deployKeyName`*, `privateKeySecretName`, `token`                          |
+| GitHub               | [github:environment:create](#githubenvironmentcreate) | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                          | [Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubEnvironment.ts)                                                                                                                                                | `repoUrl`*, `name`*, `deploymentBranchPolicy`, `customBranchPolicyNames`, `customTagPolicyNames`, `environmentVariables`, `secrets`, `token`, `waitTimer`, `preventSelfReview`, `reviewers` |
+| GitHub               | [github:issues:label](#githubissueslabel)        | Adds labels to pull requests or issues on GitHub.                                                                                                                         | [Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubIssuesLabel.ts)                                                                                                                                                | `repoUrl`*, `number`*, `labels`*, `token`                                                                          |
+| GitHub               | [github:pages:enable](#githubpagesenable)        | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                                        | [Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubPagesEnable.ts)                                                                                                                                                | `repoUrl`*, `buildType`, `sourceBranch`, `sourcePath`, `token`                                                     |
+| GitHub               | [github:repo:create](#githubrepocreate)         | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                     | [Source](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubRepoCreate.ts)                                                                                                                                                 | `repoUrl`*, `description`, `homepage`, `access`, `deleteBranchOnMerge`, `gitAuthorName`, `gitAuthorEmail`, `allowRebaseMerge`, `allowSquashMerge`, `squashMergeCommitTitle`, `squashMergeCommitMessage`, `allowMergeCommit`, `allowAutoMerge`, `requireCodeOwnerReviews`, `bypassPullRequestAllowances`, `requiredApprovingReviewCount`, `restrictions`, `requiredStatusCheckContexts`, `requireBranchesToBeUpToDate`, `requiredConversationResolution`, `repoVisibility`, `collaborators`, `hasProjects`, `hasWiki`, `hasIssues`, `token`, `topics`, `repoVariables`, `secrets`, `oidcCustomization`, `requireCommitSigning`, `customProperties` |
+| GitHub               | [github:repo:push](#githubrepopush)       | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                  | [GitHub repo push action](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubRepoPush.ts)                                                                                                                                  | `repoUrl`*, `requireCodeOwnerReviews`, `dismissStaleReviews`, `requiredStatusCheckContexts`, `bypassPullRequestAllowances`, `requiredApprovingReviewCount`, `restrictions`, `requireBranchesToBeUpToDate`, `requiredConversationResolution`, `requireLastPushApproval`, `defaultBranch`, `protectDefaultBranch`, `protectEnforceAdmins`, `gitCommitMessage`, `gitAuthorName`, `gitAuthorEmail`, `sourcePath`, `token`, `requiredCommitSigning` |
+| GitHub               | [parse:repo-url:plus](#parserepourlplus)    | Parses repository URLs and extracts relevant metadata based on a specified schema.                                                                                        | [Parse repo URL](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/src/actions/builtin/extras/parse-repo-url.ts)                                                                                                                             | `reposUrls`*                                                                                                                                                      |
+| GitLab               | [publish:gitlab](#publishgitlab)               | Initializes a Git repository of the content in the workspace and publishes it to GitLab.                                                                                  | [GitLab Publish Action](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlab.ts)                                                                                                                                            | `repoUrl`*, `repoVisibility`, `defaultBranch`, `gitCommitMessage`, `gitAuthorName`, `token`, etc.     |
+| GitLab               | `publish:gitlab:merge-request` | Creates a merge request in a GitLab repository.                                                                                                                           | [GitLab Merge Request Action](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabMergeRequest.ts)                                                                                                                          | `repoUrl`*, `branchName`*, `title`, `description`, `targetBranchName`, `token`, etc.                  |
+| GitLab               | [gitlab:repo:push](#gitlabrepopush)             | Automates the process of pushing commits to a GitLab repository.                                                                                                          | [GitLab Repo Push Action](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabRepoPush.ts)                                                                                                                                  | `repoUrl`*, `branchName`*, `commitMessage`*, `sourcePath`, `token`, `commitAction`, etc.             |
+| GitLab               | `gitlab:group:ensureExists`    | Ensures that a GitLab group or sub-groups exist, creating them if they do not.                                                                                            | [GitLab Group Ensure Action](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabGroupEnsureExists.ts)                                                                                                                      | `host`, `repoUrl`, `token`, `path[]`*                                                                 |
+| GitLab               | [gitlab:issues:create](#gitlabissuescreate)         | Action to create GitLab issues, including input validation using Zod, GitLab API calls, and error handling.                                                               | [gitlabIssueCreate](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabIssueCreate.ts)                                                                                                                                     | projectId, title, assignees, confidential, description, createdAt, dueDate, epicId, labels, issueType, token                                                                                                                                |
+| GitLab               | [gitlab:issue:edit](#gitlabissueedit)              | Validates input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels and assignees.                                        | [gitlabIssueEdit](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabIssueEdit.ts)                                                                                                                                         | projectId, issueIid, title, assignees, description, updatedAt, dueDate                                                                                                                                           |
+| GitLab               | [gitlab:pipeline:trigger](#gitlabpipelinetrigger)      | Automates the creation and triggering of a GitLab pipeline using specific input parameters.                                                                               | [gitlabPipelineTrigger](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabPipelineTrigger.ts)                                                                                                                             | projectId, branch, token                                                                                                                                                             |
+| GitLab               | [gitlab:projectAccessToken:create](#gitlabprojectAccessTokencreate) | Action that creates a project access token in GitLab.                                                                                                                     | [gitlabProjectAccessTokenCreate](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectAccessTokenCreate.ts)                                                                                                           | projectId, name, token, accessLevel                                                                                                                                                    |
+| GitLab               | `gitlab:projectVariable:create`   | Action for creating project variables in GitLab.                                                                                                                          | [gitlabProjectVariableCreate](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectVariableCreate.ts)                                                                                                                 | projectId, key, value, variableType, token                                                                                                                                                 |
+| GitLab               | `gitlab:projectDeployToken:create` | Action that creates a GitLab project deploy token.                                                                                                                        | [gitlabProjectDeployTokenCreate](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectDeployTokenCreate.ts)                                                                                                           | projectId, name, scopes                                                                                                                                                              |
+| Humanitec            | [humanitec:create-app](#humaniteccreateapp)   | Action for creating applications in Humanitec, using a YAML setup file to define application properties.                                                                  | [npm package](https://www.npmjs.com/package/@humanitec/backstage-plugin-scaffolder-backend-module) <br> [code](https://github.com/humanitec/humanitec-backstage-plugins/blob/main/plugins/humanitec-backend-scaffolder-module/src/actions/create-app.ts)                              | appId*, setupFile                                                          |
+| Microsoft Teams      | [ms-teams:sendMessage](ms-teamssendMessage)   | Action that sends messages to a Microsoft Teams channel using a specified webhook URL.                                                                                    | [npm package](https://www.npmjs.com/package/@grvpandey11/backstage-plugin-scaffolder-backend-module-ms-teams)                                                                                                                                                                         | message, webhookUrl*                                                                                          |
+| NPM                  | [npm:init](#npminit)               | Action that automates running the `npm init -y` command in a specified workspace directory.                                                                               | [code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/init/init.ts)                                                                                                                                                                      | ctx.workspacePath*, ctx.logStream, ctx.logger.info, ctx.logger.error     |
+| NPM                  | [npm:install](#npminstall)            | Action that installs an npm package quietly based on the provided package name.                                                                                           | [code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/install/install.ts)                                                                                                                                                                | packageToInstall*                                                            |
+| NPM                  | [npm:exec](#npmexec)              | Action for executing `npm exec` commands in a task workspace directory, using specific arguments provided in the input.                                                   | [code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/exec/exec.ts)                                                                                                                                                                      | arguments*                                                                   |
+| NPM                  | [npm:config](#npmconfig)            | Action that runs an `npm config` command with specified arguments in a task's workspace directory.                                                                        | [code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/config/config.ts)                                                                                                                                                                  | arguments*                                                                    |
+| Odo                  | [devfile:odo:command](#devfileodocommand)        | Action for executing OpenShift Do (odo) commands in a workspace.                                                                                                          | [@backstage-community/plugin-scaffolder-backend-module-odo](https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo)                                                                                                                                  | command*, args                                                                                                     |
+| Odo                  | [devfile:odo:component:init](#devfileodocomponentinit) | Action to initialize an ODO (OpenShift Do) component using a Devfile within Backstage.                                                                                    | [@backstage-community/plugin-scaffolder-backend-module-odo](https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo)                                                                                                                                  | devfile*, version*, starter_project, name*                                                                        |
+| PagerDuty            | [pagerduty:service:create](#pagerdutyservicecreate) | Action for the Backstage scaffolder plugin that allows users to create a PagerDuty service.                                                                               | [@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions) [GitHub](https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/blob/main/src/actions/custom.ts)                                             | name*, description*, escalationPolicyId*, alertGrouping                                               |
+| Quay                 | [quay:create-repository](#quaycreate-repository)   | Action for creating a repository in Quay.io.                                                                                                                              | [@janus-idp/backstage-scaffolder-backend-module-quay](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-quay) [GitHub](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/quay-actions)                                                      | name*, visibility*, description*, token*, baseUrl, namespace, repoKind                                                                                                                                        |
+| Sonarqube            | [sonarqube:create-project](#sonarqubecreate-project)  | Action for creating a project in SonarQube via the Backstage Scaffolder plugin.                                                                                           | [@janus-idp/backstage-scaffolder-backend-module-sonarqube](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-sonarqube) [GitHub](https://github.com/janus-idp/backstage-plugins/blob/main/plugins/sonarqube-actions/src/actions/createSonarQubeProject.ts) | baseUrl*, name*, key*, branch, visibility, token, username, password                                                                                                                            |
+| ServiceNow           | [servicenow:now:table:createRecord](#servicenownowtablecreaterecord) | Action for Backstage's Scaffolder, allowing users to insert a record into a specified ServiceNow.                                                                         | [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)                                                                                                                                  | tableName*, requestBody, sysparmDisplayValue, sysparmExcludeReferenceLink, sysparmFields, sysparmInputDisplayValue, sysparmSuppressAutoSysField, sysparmView |
+| ServiceNow           | [servicenow:now:table:deleteRecord](#servicenownowtabledeleteRecord) | Action for deleting a record from a ServiceNow table.                                                                                                                     | [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)                                                                                                                                  | tableName*, sysId*, sysparmQueryNoDomain                   |
+| ServiceNow           | `servicenow:now:table:modifyRecord`   | Action handler that modifies a record in a ServiceNow table.                                                                                                              | [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)                                                                                                                                  | tableName*, sysId*, requestBody, sysparmDisplayValue, sysparmExcludeReferenceLink, sysparmFields, sysparmInputDisplayValue, sysparmSuppressAutoSysField, sysparmView, sysparmQueryNoDomain |
+| ServiceNow           | `servicenow:now:table:retrieveRecord` | Action handler that retrieves a record in a ServiceNow table.                                                                                                             | [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)                                                                                                                                  | tableName*, sysId*, sysparmDisplayValue, sysparmExcludeReferenceLink, sysparmFields, sysparmView, sysparmQueryNoDomain |
+| ServiceNow           | [servicenow:now:table:retrieveRecords](#servicenownowtableretrieverecords)| Action handler that retrieves records in a ServiceNow table.                                                                                                              | [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)                                                                                                                                  | tableName*, sysparmQuery, sysparmDisplayValue, sysparmExcludeReferenceLink, sysparmSuppressPaginationHeader, sysparmFields, sysparmLimit, sysparmView, sysparmQueryCategory, sysparmQueryNoDomain, sysparmNoCount |
+| ServiceNow           | [servicenow:now:table:updateRecord](#servicenownowtableupdaterecord) | Action handler that updates a record in a ServiceNow table.                                                                                                               | [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)                                                                                                                                  | tableName*, sysId*, requestBody, sysparmDisplayValue, sysparmExcludeReferenceLink, sysparmFields, sysparmInputDisplayValue, sysparmSuppressAutoSysField, sysparmView, sysparmQueryNoDomain |
+| Slack                | [slack:sendMessage:conversation](#slacksendmessageconversation) | Sends a Slack message to a specific conversation using the Slack API.                                                                                                     | [@mdude2314/backstage-plugin-scaffolder-backend-module-slack](https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-backend-module-slack)                                                                                                                              | message*, conversationId, conversationName, token    |
+| Slack                | [slack:sendMessage:webhook](#slacksendmessagewebhook)    | Sends a message to Slack via a webhook URL.                                                                                                                               | [@mdude2314/backstage-plugin-scaffolder-backend-module-slack](https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-backend-module-slack)                                                                                                                              | message*, webhookUrl                                 |
+| Sentry               | [sentry:create-project](#sentrycreateproject)      | Action to create a new project in Sentry.                                                                                                                                 | [Sentry Project Create](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-sentry/src/actions/createProject.ts)                                                                                                                                     | organizationSlug*, teamSlug*, name*, slug, authToken                                                    |
+| Torque               | [torque:create-app](torquecreateapp)            | Action for managing applications in Torque.                                                                                                                               | [Torque App Create](https://github.com/QualiTorque/torque-backstage-plugin/blob/main/packages/torque-backend/src/actions/create-app.ts)                                                                                                                                               | serviceName*, assetRepo*, blueprintRepo*, namespace*, blueprintName*, serviceAccount, repoType           |
+| Webex                | [webex:webhooks:sendMessage](#webexwebhookssendmessage) | Action that sends messages to Webex Incoming Webhooks.                                                                                                                    | [Webex SendMessage](https://github.com/Coderrob/backstage-plugin-scaffolder-backend-module-webex/blob/main/src/actions/sendWebhooksMessageAction.ts)                                                                                                                                  | format, message*, webhooks*                                                                             |
+| Yeoman               | [run:yeoman](#runyeoman)                  | Action for running a Yeoman generator in Backstage scaffolder.                                                                                                            | [Yeoman Run](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-yeoman)                                                                                                                                                                             | namespace*, args, options                                                                               |
 
 ## Download content
 
@@ -344,11 +444,11 @@ steps:
     input:
       commonParams:
         cookiecutterCompat: true
-      templates:
+      templates: 
         - url: ./template
           values:
             name: ${{ parameters.name }}
-
+      
 ```
 
 #### Outputs
@@ -569,7 +669,7 @@ Use the `debug:log` action to print some information to the task console.
 #### Inputs:
 - `message`: Text to log in the Backstage UI. You can log variables like so: 'Hello, ${{ parameters.name }}'
 - `listWorkspace`: List all files in the workspace. If used with "with-contents", also the file contents are listed.
-  - values: `with-filenames`,`with-contents`
+    - values: `with-filenames`,`with-contents`
 
 #### Examples
 ```yaml
@@ -1307,7 +1407,7 @@ The `roadiehq:utils:fs:append` action produces one output.
 
 | Name | Description                           |
 | ---- | ------------------------------------- |
-| path | Path to the file that got appended to |
+| path* | Path to the file that got appended to |
 
 #### Links
 [//]: # (TODO: links)
@@ -1449,7 +1549,7 @@ Allows users to match files using glob patterns and various options for customiz
 
 | **Key**                        | **Description**                                                                                              | **Type**         | **Example** |
 |---------------------------------|--------------------------------------------------------------------------------------------------------------|------------------|-------------|
-| `patterns`                      | List of glob patterns to match files.                                                                         | `array[string]`  |             |
+| `patterns`*                      | List of glob patterns to match files.                                                                         | `array[string]`  |             |
 | `options.absolute`              | Return the absolute path for entries.                                                                         | `boolean`        |             |
 | `options.baseNameMatch`         | If set to `true`, patterns without slashes will be matched against the basename of the path if it contains slashes. | `boolean`        |             |
 | `options.braceExpansion`        | Enables Bash-like brace expansion.                                                                            | `boolean`        |             |
@@ -1594,8 +1694,8 @@ Parse XML into JSON using various options and processing pipes, utilizing the `x
 
 | Key                    | Description                                                                                                       | Type           | Example |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------|----------------|---------|
-| content               | XML source content                                                                                               | `string`       |         |
-| encoding              | Indicate if input "content" field has encoded in "base64", "file", "raw" or "url".                            | `string`       |         |
+| content*               | XML source content                                                                                               | `string`       |         |
+| encoding*              | Indicate if input "content" field has encoded in "base64", "file", "raw" or "url".                            | `string`       |         |
 | options.pipes         | Ordered pipes to transform nodes values by type.                                                                | `object`       |         |
 | options.compact       | Whether to produce detailed object or compact object.                                                           | `boolean`      |         |
 | options.trim          | Whether to trim whitespace characters that may exist before and after the text.                                 | `boolean`      |         |
@@ -1642,8 +1742,8 @@ Parse YAML content from various sources using the Backstage scaffolder framework
 #### Inputs
 | **Key**               | **Description**                                                           | **Type**               | **Example** |
 |-----------------------|---------------------------------------------------------------------------|------------------------|-------------|
-| `content`             | YAML source content                                                       | `string`               |             |
-| `encoding`            | Indicates if input "content" is encoded in "base64", "file", "raw", or "url" | `string`               |             |
+| `content`*             | YAML source content                                                       | `string`               |             |
+| `encoding`*            | Indicates if input "content" is encoded in "base64", "file", "raw", or "url" | `string`               |             |
 
 #### Examples
 ```yaml
@@ -1680,8 +1780,8 @@ Process JSON data from various encoded content sources such as Base64, files, ra
 
 | **Key**         | **Description**                                                                          | **Type**            | **Example** |
 |-----------------|------------------------------------------------------------------------------------------|---------------------|-------------|
-| `content`       | JSON source content                                                                      | `string`            |             |
-| `encoding`      | Indicates if input `content` field is encoded in `base64`, `file`, `raw`, or `url`.       | `string`            |             |
+| `content`*       | JSON source content                                                                      | `string`            |             |
+| `encoding`*      | Indicates if input `content` field is encoded in `base64`, `file`, `raw`, or `url`.       | `string`            |             |
 | `sources`       | An array of fields containing the source JSON data and encoding information.              | `array` of `object` |             |
 | `commonParams`  | (Optional) Common parameters shared by multiple sources for content and encoding          | `Partial<FieldsType>`|             |
 
@@ -1949,13 +2049,13 @@ Validate an input structure using the `zod` library.
 #### Inputs
 | Key           | Description                                                                 | Type                            | Example |
 |---------------|-----------------------------------------------------------------------------|---------------------------------|---------|
-| `regExps`     | Array of regex objects with patterns, flags, replacements, and values       | `array`                         |         |
-| `pattern`     | The regex pattern to match the value, like in `String.prototype.replace()`   | `string`                        |         |
+| `regExps`*     | Array of regex objects with patterns, flags, replacements, and values       | `array`                         |         |
+| `pattern`*     | The regex pattern to match the value, like in `String.prototype.replace()`   | `string`                        |         |
 | `flags`       | Optional array of regex flags (`g`, `m`, `i`, `y`, `u`, `s`, `d`)           | `array`                         |         |
-| `replacement` | The replacement value for the regex, like in `String.prototype.replace()`    | `string`                        |         |
-| `values`      | Array of objects containing key-value pairs for regex input values           | `array`                         |         |
-| `key`         | Key to access the regex value                                               | `string`                        |         |
-| `value`       | Input value of the regex                                                    | `string`                        |         |
+| `replacement`* | The replacement value for the regex, like in `String.prototype.replace()`    | `string`                        |         |
+| `values`*      | Array of objects containing key-value pairs for regex input values           | `array`                         |         |
+| `key`*         | Key to access the regex value                                               | `string`                        |         |
+| `value`*       | Input value of the regex                                                    | `string`                        |         |
 #### Examples
 ```yaml
 steps:
@@ -1989,9 +2089,9 @@ Enable regex-based search and replacement across files using glob patterns.
 #### Inputs
 | **Key**         | **Description**                                                             | **Type**    | **Example** |
 |-----------------|-----------------------------------------------------------------------------|-------------|-------------|
-| `pattern`       | Regex expression to evaluate in file contents from `file`.                  | `string`    |             |
-| `glob`          | Expression glob to find files to evaluate                                   | `string`    |             |
-| `replacement`   | Replacement expression based on the `pattern` field                         | `string`    |             |
+| `pattern`*       | Regex expression to evaluate in file contents from `file`.                  | `string`    |             |
+| `glob` *         | Expression glob to find files to evaluate                                   | `string`    |             |
+| `replacement`*   | Replacement expression based on the `pattern` field                         | `string`    |             |
 | `flags`         | Regex flags like d, g, i, m, s, u, v or y (optional)                        | `string`    |             |
 
 #### Examples
@@ -2048,7 +2148,7 @@ Generates a list of UUIDv4 values, with inputs for specifying the number of UUID
 
 | **Key**          | **Description**             | **Type**      | **Example** |
 |------------------|-----------------------------|---------------|-------------|
-| `amount`         | Amount of UUIDs to generate  | `number`      |             |
+| `amount`*         | Amount of UUIDs to generate  | `number`      |             |
 
 #### Examples
 Generate 3 UUID's
@@ -2078,7 +2178,7 @@ Handle and log input variables, and return the same input as the output in a for
 #### Inputs
 | **Key**    | **Description**         | **Type**      | **Example** |
 |------------|-------------------------|---------------|-------------|
-| `input`    | The input object passed to the action | `object` |             |
+| `input`*    | The input object passed to the action | `object` |             |
 
 #### Examples
 Proxy vars to reuse on next actions
@@ -2113,10 +2213,10 @@ Allows execution of Git commands within a specified working directory.
 
 | **Key**                | **Description**                                                                 | **Type**       | **Example** |
 |------------------------|---------------------------------------------------------------------------------|----------------|-------------|
-| `command`              | The Git command to run                                                           | `string`       |             |
-| `workingDirectory`      | Working directory within the scaffolder workspace to execute the command in      | `string`       |             |
+| `command`*              | The Git command to run                                                           | `string`       |             |
+| `workingDirectory`*      | Working directory within the scaffolder workspace to execute the command in      | `string`       |             |
 | `args`                 | Arguments to pass to the Git command                                             | `string[]`     |             |
-
+command*, workingDirectory*, args
 #### Examples
 ```yaml
  steps:
@@ -2145,9 +2245,9 @@ Create an action for merging two HCL contents.
 
 | Key               | Description                       | Type                | Example |
 |-------------------|-----------------------------------|---------------------|---------|
-| `aSourceContent`  | The HCL content to be merged      | `string`            |         |
-| `bSourceContent`  | The HCL content to be merged      | `string`            |         |
-
+| `aSourceContent`*  | The HCL content to be merged      | `string`            |         |
+| `bSourceContent`*  | The HCL content to be merged      | `string`            |         |
+aSourceContent*, bSourceContent*
 #### Examples
 
 #### Outputs
@@ -2165,10 +2265,10 @@ Merge two HCL content strings and write the merged result to a specified output 
 
 | Key               | Description                                        | Type         | Example |
 |-------------------|----------------------------------------------------|--------------|---------|
-| `aSourceContent`  | The HCL content to be merged                       | `string`     |         |
-| `bSourceContent`  | The HCL content to be merged                       | `string`     |         |
+| `aSourceContent`*  | The HCL content to be merged                       | `string`     |         |
+| `source content`*  | The HCL content to be merged                       | `string`     |         |
 | `outputPath`      | The path to write the merged HCL content to       | `string`     |         |
-
+aSourceContent*, bSourceContent*, outputPath
 #### Examples
 
 #### Outputs
@@ -2184,8 +2284,8 @@ Merge two HCL files specified by their paths.
 #### Inputs
 | Key          | Description                                        | Type              | Example |
 |--------------|----------------------------------------------------|-------------------|---------|
-| `aSourcePath` | The path to the HCL file to be merged             | `string`          |         |
-| `bSourcePath` | The path to the HCL file to be merged             | `string`          |         |
+| `aSourcePath`* | The path to the HCL file to be merged             | `string`          |         |
+| `bSourcePath`* | The path to the HCL file to be merged             | `string`          |         |
 
 #### Examples
 
@@ -2203,8 +2303,8 @@ Merge two HCL files and writing the merged content to a specified output path, w
 #### Inputs
 | Key          | Description                                        | Type             | Example |
 |--------------|----------------------------------------------------|------------------|---------|
-| `aSourcePath` | The path to the HCL file to be merged              | `string`         |         |
-| `bSourcePath` | The path to the HCL file to be merged              | `string`         |         |
+| `aSourcePath`* | The path to the HCL file to be merged              | `string`         |         |
+| `bSourcePath`* | The path to the HCL file to be merged              | `string`         |         |
 | `outputPath`  | The path to write the merged HCL content to        | `string`         |         |
 
 #### Examples
@@ -2223,16 +2323,17 @@ Action for creating a new Pulumi project, including input validation and executi
 
 | Key            | Description                                                                            | Type                                     | Example |
 |----------------|----------------------------------------------------------------------------------------|------------------------------------------|---------|
-| `template`     | The Pulumi template to use, this can be a built-in template or a URL to a template   | `string`                                 |         |
-| `stack`        | The name of the Pulumi stack                                                           | `string`                                 |         |
-| `organization` | The organization to which the Pulumi stack belongs                                     | `string`                                 |         |
-| `name`         | The name of the Pulumi project                                                          | `string`                                 |         |
+| `template`*     | The Pulumi template to use, this can be a built-in template or a URL to a template   | `string`                                 |         |
+| `stack`*        | The name of the Pulumi stack                                                           | `string`                                 |         |
+| `organization`* | The organization to which the Pulumi stack belongs                                     | `string`                                 |         |
+| `name`*         | The name of the Pulumi project                                                          | `string`                                 |         |
 | `description`  | The Pulumi project description to use                                                  | `string`                                 |         |
 | `config`       | The Pulumi project config to use                                                       | `object`                                 |         |
 | `secretConfig` | The Pulumi project secret config to use                                                | `object`                                 |         |
 | `args`         | The Pulumi command arguments to run                                                    | `string[]`                               |         |
-| `folder`       | The folder to run Pulumi in                                                            | `string`                                 |         |
+| `folder`*       | The folder to run Pulumi in                                                            | `string`                                 |         |
 
+template*, stack*, organization*, name*, description, config, secretConfig, args, folder*
 #### Examples
 ```yaml
 steps:
@@ -2261,10 +2362,10 @@ Runs Pulumi to manage cloud resources, either in a local or remote workspace bas
 
 | Key                          | Description                                                                    | Type                                                                                     | Example |
 |------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|--------|
-| `stack`                       | The name of the Pulumi stack.                                                 | `string`                                                                                 |        |
-| `organization`               | The organization name for the Pulumi stack.                                  | `string`                                                                                 |        |
-| `name`                       | The name of the Pulumi project.                                               | `string`                                                                                 |        |
-| `deployment`                 | This flag indicates that Pulumi Deployment will be used.                     | `boolean`                                                                                |        |
+| `stack`*                       | The name of the Pulumi stack.                                                 | `string`                                                                                 |        |
+| `organization`*               | The organization name for the Pulumi stack.                                  | `string`                                                                                 |        |
+| `name`*                       | The name of the Pulumi project.                                               | `string`                                                                                 |        |
+| `deployment`*                 | This flag indicates that Pulumi Deployment will be used.                     | `boolean`                                                                                |        |
 | `repoUrl`                    | The Pulumi project repo URL to use, when using Pulumi Deployment.            | `string`                                                                                 |        |
 | `repoBranch`                 | The Pulumi project repo branch to use, when using Pulumi Deployment.         | `string`                                                                                 |        |
 | `repoProjectPath`            | The Pulumi project repo path to use, when using Pulumi Deployment.           | `string`                                                                                 |        |
@@ -2275,6 +2376,7 @@ Runs Pulumi to manage cloud resources, either in a local or remote workspace bas
 | `preRunCommands`             | The Pulumi project pre-run commands to execute.                              | `array of string`                                                                        |        |
 | `suppressProgress`           | Suppress progress output.                                                    | `boolean`                                                                                |        |
 
+stack*, organization*, name*, deployment*, repoUrl, repoBranch, repoProjectPath, config, providerCredentialsFromEnv, secretConfig, outputs, preRunCommands, suppressProgress
 
 #### Examples
 ```yaml
@@ -2310,13 +2412,14 @@ Creates a Kubernetes namespace, leveraging Kubernetes API and Backstage's catalo
 #### Inputs
 | Key          | Description                                                                 | Type         | Example |
 |--------------|-----------------------------------------------------------------------------|--------------|---------|
-| `namespace`  | Name of the namespace to be created                                         | `string`     |         |
+| `namespace`*  | Name of the namespace to be created                                         | `string`     |         |
 | `clusterRef` | Cluster resource entity reference from the catalog                          | `string`     |         |
 | `url`       | URL of the Kubernetes API, used if `clusterRef` is not provided            | `string`     |         |
-| `token`      | Bearer token to authenticate with                                           | `string`     |         |
+| `token`*      | Bearer token to authenticate with                                           | `string`     |         |
 | `skipTLSVerify` | Skip TLS certificate verification, not recommended for production use, defaults to false | `boolean`    |         |
 | `caData`     | Certificate Authority base64 encoded certificate                            | `string`     |         |
 | `labels`     | Labels that will be applied to the namespace.                              | `string`     |         |
+namespace*, clusterRef, url, token*, skipTLSVerify, caData, labels
 
 #### Examples
 ```yaml
@@ -2351,10 +2454,11 @@ In this format, the **Inputs** table summarizes the parameters required for the 
 #### Inputs
 | Key          | Description                                                 | Type         | Example |
 |--------------|-------------------------------------------------------------|--------------|---------|
-| `manifest`   | YAML or JSON manifest for the Kubernetes resource to be applied | `any`        |         |
-| `clusterUrl` | URL of the Kubernetes API                                  | `string`     |         |
-| `authToken`  | Bearer token to authenticate with the Kubernetes API       | `string`     |         |
+| `manifest`*   | YAML or JSON manifest for the Kubernetes resource to be applied | `any`        |         |
+| `clusterUrl`* | URL of the Kubernetes API                                  | `string`     |         |
+| `authToken`*  | Bearer token to authenticate with the Kubernetes API       | `string`     |         |
 
+manifest*, clusterUrl*, authToken*
 #### Examples
 
 #### Outputs
@@ -2372,8 +2476,8 @@ Action for applying Kubernetes manifests in a Backstage application.
 
 | Key        | Description                                                   | Type            | Example |
 |------------|---------------------------------------------------------------|------------------|---------|
-| `manifest` | The resource manifest to apply in the Platform cluster        | `string`         |         |
-| `namespaced` | Whether the API is namespaced or not                        | `boolean`        |         |
+| `manifest`* | The resource manifest to apply in the Platform cluster        | `string`         |         |
+| `namespaced`* | Whether the API is namespaced or not                        | `boolean`        |         |
 #### Examples
 ```yaml
 steps:
@@ -2408,11 +2512,12 @@ Action for deleting Kubernetes resources.
 #### Inputs
 | Key          | Description                                 | Type           | Example |
 |--------------|---------------------------------------------|----------------|---------|
-| `apiVersion` | The apiVersion of the resource              | `string`       |         |
-| `kind`      | The kind of the resource                    | `string`       |         |
-| `name`      | The name of the resource                    | `string`       |         |
+| `apiVersion`* | The apiVersion of the resource              | `string`       |         |
+| `kind`*      | The kind of the resource                    | `string`       |         |
+| `name`*      | The name of the resource                    | `string`       |         |
 | `namespace`  | The namespace of the resource               | `string`       |         |
 
+apiVersion*, kind*, name*, namespace
 #### Examples
 ```yaml
 steps:
@@ -2440,8 +2545,9 @@ Note: The output properties for `conditions` have been generalized; you may want
 
 | Key       | Description                                                   | Type                                 | Example |
 |-----------|---------------------------------------------------------------|--------------------------------------|---------|
-| labels    | The labels of the job resource to wait on                    | `Record<string, string>`            |         |
+| labels*    | The labels of the job resource to wait on                    | `Record<string, string>`            |         |
 | namespace | The namespace of the resource to wait on, e.g. default       | `string`                             |         |
+labels*, namespace
 
 #### Examples
 ```yaml
@@ -2471,10 +2577,10 @@ Runs Maven commands in a specified working directory with optional arguments.
 #### Inputs
 | **Key**                | **Description**                                            | **Type**        | **Example** |
 |------------------------|------------------------------------------------------------|-----------------|-------------|
-| `command`              | The Maven command to execute                                | `string`        |             |
+| `command`*              | The Maven command to execute                                | `string`        |             |
 | `workingDirectory`      | Directory within the scaffolder workspace to run the command | `string`        |             |
 | `args`                 | Arguments to pass to the command                           | `string[]`      |             |
-
+command*, workingDirectory*, args
 #### Examples
 ```yaml
 steps:
@@ -2506,8 +2612,8 @@ Action for launching an Ansible job template and waiting for it to complete.
 | **Key**            | **Description**                          | **Type**            | **Example** |
 |--------------------|------------------------------------------|---------------------|-------------|
 | `ansibleConfig`     | Configuration for Ansible, including URL and token. | `object`            |             |
-| `jobTemplateId`     | The ID of the Ansible job template to be launched. | `number`            |             |
-
+| `jobTemplateId`*     | The ID of the Ansible job template to be launched. | `number`            |             |
+jobTemplateId*, ansibleConfig
 #### Examples
 
 #### Outputs
@@ -2524,9 +2630,11 @@ Triggers the launch of an Ansible job template via the Ansible controller API.
 #### Inputs
 | **Key**        | **Description**                              | **Type**      | **Example** |
 |----------------|----------------------------------------------|---------------|-------------|
-| `controller`   | Specifies the controller to be used          | `string`      |             |
-| `job_template` | Name of the job template to be executed      | `string`      |             |
+| `controller`*   | Specifies the controller to be used          | `string`      |             |
+| `job_template`* | Name of the job template to be executed      | `string`      |             |
 | `extra_vars`   | Additional variables passed to the job       | `object`      |             |
+controller*, job_template*, extra_vars
+
 #### Examples
 ```yaml
 steps:
@@ -2560,12 +2668,13 @@ Action for creating Argo CD resources using Backstage's scaffolding plugin.
 | Key              | Description                                                                                          | Type               | Example |
 |------------------|------------------------------------------------------------------------------------------------------|--------------------|---------|
 | `projectName`    | The name of the project as it will show up in Argo CD. By default, it uses the application name.    | `string`           |         |
-| `appName`        | The name of the app as it will show up in Argo CD.                                                  | `string`           |         |
-| `argoInstance`   | The name of the Argo CD Instance to deploy to.                                                     | `string`           |         |
-| `namespace`      | The namespace Argo CD will target for resource deployment.                                          | `string`           |         |
-| `repoUrl`        | The Repo URL that will be programmed into the Argo CD project and application.                     | `string`           |         |
-| `path`           | The path of the resources Argo CD will watch in the mentioned repository.                           | `string`           |         |
+| `appName`*        | The name of the app as it will show up in Argo CD.                                                  | `string`           |         |
+| `argoInstance`*   | The name of the Argo CD Instance to deploy to.                                                     | `string`           |         |
+| `namespace`*      | The namespace Argo CD will target for resource deployment.                                          | `string`           |         |
+| `repoUrl`*        | The Repo URL that will be programmed into the Argo CD project and application.                     | `string`           |         |
+| `path`*           | The path of the resources Argo CD will watch in the mentioned repository.                           | `string`           |         |
 | `labelValue`     | The label Backstage will use to find applications in Argo CD.                                       | `string`           |         |
+appName*, argoInstance*, namespace*, repoUrl*, path*, projectName, labelValue
 
 #### Examples
 ```yaml
@@ -2606,13 +2715,13 @@ Action that uploads files from a local directory to an AWS S3 bucket using speci
 #### Inputs
 | Key                              | Description                                                              | Type           | Example |
 |----------------------------------|--------------------------------------------------------------------------|----------------|---------|
-| `bucket`                         | The bucket to copy the given path                                        | `string`       |         |
-| `region`                         | AWS region                                                              | `string`       |         |
+| `bucket`*                         | The bucket to copy the given path                                        | `string`       |         |
+| `region`*                         | AWS region                                                              | `string`       |         |
 | `path`                           | A Glob pattern that lists the files to upload. Defaults to everything in the workspace | `string`       |         |
 | `prefix`                         | Prefix to use in the s3 key.                                           | `string`       |         |
 | `endpoint`                       | The fully qualified endpoint of the web service.                        | `string`       |         |
 | `s3ForcePathStyle`              | Whether to force path style URLs for S3 objects                          | `boolean`      |         |
-
+bucket*, region*, path, prefix, endpoint, s3ForcePathStyle
 #### Examples
 ```yaml
 steps:
@@ -2640,12 +2749,12 @@ This TypeScript code defines a Backstage template action for creating an AWS Ela
 
 | Key                | Description                                                                                       | Type   | Example |
 |--------------------|---------------------------------------------------------------------------------------------------|--------|---------|
-| `repoName`         | The name of the ECR repository.                                                                   | string |         |
+| `repoName`*         | The name of the ECR repository.                                                                   | string |         |
 | `tags`             | List of tags.                                                                                     | array  |         |
 | `imageMutability`  | Set image mutability to true or false.                                                            | boolean|         |
 | `scanOnPush`       | The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository. | boolean|         |
-| `region`           | AWS region to create ECR on.                                                                      | string |         |
-
+| `region`*           | AWS region to create ECR on.                                                                      | string |         |
+repoName*, tags, imageMutability, scanOnPush, region*
 
 #### Examples
 ```yaml
@@ -2676,12 +2785,13 @@ Action for creating a new secret in AWS Secrets Manager using the Backstage scaf
 #### Inputs
 | Key                | Description                                          | Type      | Example |
 |--------------------|------------------------------------------------------|-----------|---------|
-| `name`             | The name of the secret to be created                | `string`  |         |
+| `name`*             | The name of the secret to be created                | `string`  |         |
 | `description`      | The description of the secret to be created         | `string`  |         |
 | `value`            | The string value to be encrypted in the new secret   | `string`  |         |
 | `tags`             | AWS tags to be added to the secret                  | `array`   |         |
 | `profile`          | AWS profile to use                                   | `string`  |         |
-| `region`           | AWS region to create the secret on                  | `string`  |         |
+| `region`*           | AWS region to create the secret on                  | `string`  |         |
+name*, description, value, tags, profile, region*
 
 #### Examples
 ```yaml
@@ -2707,56 +2817,120 @@ steps:
 | `tags`             | The tags associated with the created secret          | `array`   | 
 
 #### Links
-https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-aws
+https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-aws/src/actions/secrets-manager/create.ts
 
 ### `opa:get-env-providers`
-#### Inputs
+Action that retrieves AWS environment provider data based on a reference to an AWS environment entity from the Backstage catalog.
 
-#### Examples
+#### Inputs
+| **Key**               | **Description**                                                | **Type**          | **Example** |
+|-----------------------|----------------------------------------------------------------|-------------------|-------------|
+| `environmentRef`*    | The entity reference identifier for an AWS Environment         | `string`          |             |
 
 #### Outputs
+| **Key**                    | **Description**                                                                                       | **Type**      |
+|----------------------------|-------------------------------------------------------------------------------------------------------|---------------|
+| `envName`*                | The AWS environment name                                                                               | `string`      |
+| `envShortName`*           | The short AWS environment name (e.g., dev, qa, prod)                                                   | `string`      |
+| `envRef`*                 | The entity reference ID of the environment                                                            | `string`      |
+| `envDeployManualApproval`*| Whether manual approval is required for deploying to the environment                                   | `boolean`     |
+| `envProviders`*           | The AWS environment providers, including details such as name, type, account, region, VPC, and subnets | `array`       |
 
 #### Links
+https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-env-providers/get-env-providers.ts
+https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/create-secret/create-secret.ts
 
 ### `opa:create-secret`
+Action that creates secrets in AWS Secrets Manager.
+
 #### Inputs
 
-#### Examples
+| **Key**           | **Description**                                                        | **Type**           | **Example** |
+|-------------------|------------------------------------------------------------------------|--------------------|-------------|
+| `secretName`*    | The name of the secret to create in Secrets Manager                    | `string`           |             |
+| `description`     | An optional description of the secret                                  | `string`           |             |
+| `region`          | The AWS region where the new secret should be created                  | `string`           |             |
+| `tags`            | Key/value pairs to apply as tags to any created AWS resources          | `array` of `object`|             |
+| `tags.Key`        | The tag key to apply to the resource                                   | `string`           |             |
+| `tags.Value`      | The tag value to apply to the resource                                 | `string`, `number`, `boolean` |     |
+secretName*, description, region, tags
+
 
 #### Outputs
 
+| **Key**          | **Description**                  | **Type**  |
+|------------------|----------------------------------|-----------|
+| `secretARN`      | The ARN of the created secret    | `string`  |
+
 #### Links
 https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
+https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/create-secret/create-secret.ts
 
 ### `opa:createRepoAccessToken:gitlab`
+Action for creating a GitLab repository access token and storing it in AWS Secrets Manager.
+
 #### Inputs
+| Key                  | Description                                                                                   | Type   | Example |
+|----------------------|-----------------------------------------------------------------------------------------------|--------|---------|
+| `repoUrl`*             | Repository Location                                                                          | string |         |
+| `projectId`*           | Project Id                                                                                   | number |         |
+| `secretArn`*           | Arn of the SecretsManager secret where the access token will be stored                      | string |         |
+| `region`               | AWS Region (defaults to `backend.platformRegion` if not provided)                           | string |         |
 
 #### Examples
 
 #### Outputs
 
+| Key           | Description                                 | Type   |
+|---------------|---------------------------------------------|--------|
+| `token`         | The generated repository access token      | string |
+| `expirationDate`| The expiration date of the access token    | string | 
+
 #### Links
 https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
+https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/create-repo-access-token/create-repoAccesstoken.ts
 
 ### `opa:get-platform-metadata`
+Action that retrieves metadata about the OPA (Open Policy Agent) on AWS platform, specifically fetching the AWS region where the solution is deployed.
+
 #### Inputs
+
+| Key                  | Description                                                 | Type      | Example |
+|----------------------|-------------------------------------------------------------|-----------|---------|
+| `envConfig`*         | Configuration options for the action                        | `Config`  |         |
 
 #### Examples
 
-#### Outputs
+### Outputs
+
+| Key                  | Description                                                                      | Type      |
+|----------------------|----------------------------------------------------------------------------------|-----------|
+| `platformRegion`*   | *The AWS region where the OPA on AWS solution is deployed*                      | `string`  |
 
 #### Links
 https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
+https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-platform-metadata/get-platform-metadata.ts
 
 ### `opa:get-ssm-parameters`
+Action that retrieves AWS SSM parameter values for specified environment providers.
+
 #### Inputs
+
+| Key                  | Description                                                                       | Type         | Example |
+|----------------------|-----------------------------------------------------------------------------------|--------------|---------|
+| paramKeys*           | The SSM parameter keys to look up                                                | `string[]`   |         |
+| envProviders*        | The AWS environment providers containing account and region info                 | `EnvironmentProvider[]` |         |
 
 #### Examples
 
 #### Outputs
+| Key      | Description                                                                     | Type                    |
+|----------|---------------------------------------------------------------------------------|-------------------------|
+| params  | Map of SSM parameters, keyed off of the environment provider name              | `object`                |
 
 #### Links
 https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
+https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-ssm-parameters/get-ssm-parameters.ts
 
 ### `aws:cloudcontrol:create`
 #### Inputs
@@ -2789,7 +2963,7 @@ Action to initialize a Git repository and publish it to Azure DevOps, along with
 
 | Key                  | Description                                                                                                                    | Type                | Example |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------|---------------------|---------|
-| `repoUrl`            | Repository Location                                                                                                          | `string`            |         |
+| `repoUrl`*            | Repository Location                                                                                                          | `string`            |         |
 | `description`        | Repository Description                                                                                                       | `string`            |         |
 | `defaultBranch`      | Sets the default branch on the repository. The default value is 'master'.                                                  | `string`            |         |
 | `gitCommitMessage`   | Sets the commit message on the repository. The default value is 'initial commit'.                                           | `string`            |         |
@@ -2797,7 +2971,7 @@ Action to initialize a Git repository and publish it to Azure DevOps, along with
 | `gitAuthorEmail`     | Sets the default author email for the commit.                                                                                | `string`            |         |
 | `sourcePath`         | Path within the workspace that will be used as the repository root. If omitted, the entire workspace will be published.     | `string`            |         |
 | `token`              | The token to use for authorization to Azure.                                                                                 | `string`            |         |
-
+repoUrl*, description, defaultBranch, gitCommitMessage, gitAuthorName, gitAuthorEmail, sourcePath, token
 #### Examples
 ```yaml
 steps:
@@ -2828,12 +3002,12 @@ Action for cloning an Azure DevOps repository into a specified workspace directo
 
 | **Key**            | **Description**                                      | **Type**     | **Example** |
 |--------------------|------------------------------------------------------|--------------|-------------|
-| `remoteUrl`        | The Git URL to the repository.                       | `string`     |             |
+| `remoteUrl`*        | The Git URL to the repository.                       | `string`     |             |
 | `branch`           | The branch to checkout to.                           | `string`     |             |
 | `targetPath`       | The subdirectory of the working directory to clone the repository into. | `string` |             |
 | `server`           | The hostname of the Azure DevOps service. Defaults to `dev.azure.com`. | `string` |             |
 | `token`            | The token to use for authorization.                  | `string`     |             |
-
+remoteUrl*, branch, targetPath, server, token
 
 #### Examples
 ```yaml
@@ -2861,10 +3035,10 @@ This code defines a Backstage Scaffolder action for cloning repositories from Az
 #### Inputs
 | **Key**        | **Description**                                                | **Type**        | **Example** |
 |----------------|----------------------------------------------------------------|-----------------|-------------|
-| `repoUrl`      | Repo URL to be parsed with `parseRepoUrl`                      | `string`        |             |
+| `repoUrl`*      | Repo URL to be parsed with `parseRepoUrl`                      | `string`        |             |
 | `fromRef`      | Git references (branch, tag, or commit ID) to checkout; default is `'master'` | `string`        |             |
 | `targetPath`   | Relative path on the workspace to store repository contents; default is `'./'` | `string`        |             |
-
+repoUrl*, fromRef, targetPath
 #### Examples
 
 ```yaml
@@ -2899,12 +3073,12 @@ The provided TypeScript code defines a function `pushAzureRepoAction` that creat
 #### Inputs
 | **Key**             | **Description**                                                          | **Type**     | **Example** |
 |---------------------|--------------------------------------------------------------------------|--------------|-------------|
-| `branch`            | The branch to checkout to.                                                | `string`     |             |
-| `sourcePath`        | The subdirectory of the working directory containing the repository.       | `string`     |             |
-| `gitCommitMessage`   | The commit message for the repository. Default is "Initial commit".       | `string`     |             |
+| `branch`*            | The branch to checkout to.                                                | `string`     |             |
+| `sourcePath`*        | The subdirectory of the working directory containing the repository.       | `string`     |             |
+| `gitCommitMessage`*   | The commit message for the repository. Default is "Initial commit".       | `string`     |             |
 | `gitAuthorName`      | The default author name for the commit. Default is "Scaffolder".          | `string`     |             |
 | `gitAuthorEmail`     | The default author email for the commit.                                 | `string`     |             |
-
+branch*, sourcePath*, gitCommitMessage*, gitAuthorName, gitAuthorEmail
 #### Examples
 ```yaml    
     - id: pushAzureRepo
@@ -2937,24 +3111,29 @@ Action that creates a pull request (PR) in an Azure DevOps repository using cust
 | `organization`          | The name of the organization in Azure DevOps.                                 | `string`    |             |
 | `sourceBranch`          | The branch to merge into the source.                                          | `string`    |             |
 | `targetBranch`          | The branch to merge into (default: main).                                     | `string`    |             |
-| `title`                 | The title of the pull request.                                                | `string`    |             |
+| `title`*                 | The title of the pull request.                                                | `string`    |             |
 | `description`           | The description of the pull request.                                          | `string`    |             |
-| `repoId`                | Repo ID of the pull request.                                                  | `string`    |             |
+| `repoId`*                | Repo ID of the pull request.                                                  | `string`    |             |
 | `project`               | The Project in Azure DevOps.                                                  | `string`    |             |
 | `supportsIterations`     | Whether or not the PR supports iterations.                                    | `boolean`   |             |
 | `server`                | The hostname of the Azure DevOps service (defaults to `dev.azure.com`).       | `string`    |             |
 | `token`                 | The token to use for authorization.                                           | `string`    |             |
 | `autoComplete`          | Enable auto-completion of the pull request once policies are met.             | `boolean`   |             |
 
+repoId*, title*, organization, sourceBranch, targetBranch, description, project, supportsIterations, server, token, autoComplete
 #### Examples
 ```yaml
-    - id: pushAzureRepo
-      name: Push to Remote Azure Repo
-      action: azure:repo:push
+    - id: pullRequestAzureRepo
+      name: Create a Pull Request to Azure Repo
+      action: azure:repo:pr
       input:
-        branch: <MY_AZURE_REPOSITORY_BRANCH>
-        sourcePath: ./sub-directory
-        gitCommitMessage: Add ${{ parameters.name }} project files
+        sourceBranch: <MY_AZURE_REPOSITORY_BRANCH>
+        targetBranch: "main"
+        repoId: <MY_AZURE_REPOSITORY>
+        title: ${{ parameters.name }}
+        project: <MY_AZURE_PROJECT>
+        organization: <MY_AZURE_ORGANIZATION>
+        supportsIterations: false
 ```
 
 #### Outputs
@@ -2973,10 +3152,10 @@ Action for committing and pushing changes to an Azure DevOps Git repository. It 
 
 | **Key**            | **Description**                                                                                          | **Type**      | **Example** |
 |--------------------|----------------------------------------------------------------------------------------------------------|---------------|-------------|
-| `toBranch`         | New branch to commit and push.                                                                            | `string`      |             |
-| `commitMessage`    | Commit message string.                                                                                    | `string`      |             |
+| `toBranch`*         | New branch to commit and push.                                                                            | `string`      |             |
+| `commitMessage`*    | Commit message string.                                                                                    | `string`      |             |
 | `targetPath`       | Relative path on workspace where repository contents are stored, default is `'./'`.                       | `string`      |             |
-
+toBranch*, commitMessage*, targetPath
 #### Examples
 
 ```yaml
@@ -3010,15 +3189,15 @@ This creates an Azure Pipeline through the Azure DevOps REST API using Backstage
 |----------------------|-------------------------------------------------------------------------------------|--------------|-------------|
 | `createApiVersion`    | The Azure Create Pipeline API version to use. Defaults to 6.1-preview.1.            | `string`     |             |
 | `server`             | The host of Azure DevOps. Defaults to dev.azure.com.                                 | `string`     |             |
-| `organization`        | The name of the Azure DevOps organization.                                          | `string`     |             |
-| `project`            | The name of the Azure project.                                                      | `string`     |             |
-| `folder`             | The name of the folder of the pipeline.                                              | `string`     |             |
+| `organization`*        | The name of the Azure DevOps organization.                                          | `string`     |             |
+| `project`*            | The name of the Azure project.                                                      | `string`     |             |
+| `folder`*             | The name of the folder of the pipeline.                                              | `string`     |             |
 | `name`               | The name of the pipeline.                                                           | `string`     |             |
 | `repositoryId`       | The ID of the repository.                                                           | `string`     |             |
 | `repositoryName`     | The name of the repository.                                                         | `string`     |             |
 | `yamlPath`           | The location of the Azure DevOps Pipeline definition file. Defaults to /azure-pipelines.yaml. | `string`     |             |
 | `token`              | Optional. Token for Azure API authentication. If not provided, uses credentials from integration. | `string`     |             |
-
+organization*, project*, folder*, name*, repositoryId*, repositoryName*, createApiVersion, server, yamlPath, token
 
 #### Examples
 ```yaml
@@ -3055,7 +3234,9 @@ Automates the creation of Azure DevOps pipelines from Git repositories.
 | `yamlFilename`    | Path to pipeline YAML file (default: `.azuredevops/azure-pipelines.yaml`) | `string`     |             |
 | `pipelineName`    | Name of the pipeline                                                   | `string`     |             |
 | `defaultBranch`   | Default branch reference (default: `refs/heads/main`)                  | `string`     |             |
-| `repoUrl`         | Repository URL to be parsed with `parseRepoUrl`                        | `string`     |             |
+| `repoUrl`*         | Repository URL to be parsed with `parseRepoUrl`                        | `string`     |             |
+
+pipelinePath, yamlFilename, pipelineName, defaultBranch, repoUrl*
 
 #### Examples
 
@@ -3098,10 +3279,12 @@ Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plug
 | `buildApiVersion`      | The Builds API version to use. Defaults to 6.1-preview.6       | `string`   |             |
 | `server`               | The host of Azure DevOps. Defaults to dev.azure.com            | `string`   |             |
 | `organization`         | The name of the Azure DevOps organization                      | `string`   |             |
-| `pipelineId`           | The pipeline ID                                                | `string`   |             |
-| `project`              | The name of the Azure project                                  | `string`   |             |
+| `pipelineId`*           | The pipeline ID                                                | `string`   |             |
+| `project`*              | The name of the Azure project                                  | `string`   |             |
 | `branch`               | The branch of the pipeline's repository                        | `string`   |             |
 | `pipelineParameters`   | The values needed as parameters to start a build               | `object`   |             |
+runApiVersion, buildApiVersion, server, organization*, pipelineId*, project*, branch, pipelineParameters
+
 #### Examples
 ```yaml
     - id: runAzurePipeline
@@ -3132,13 +3315,15 @@ Defines an Azure DevOps pipeline permission management action for Backstage scaf
 |----------------------|-----------------------------------------------------------|-------------|-------------|
 | `permitsApiVersion`   | The Azure Permits Pipeline API version to use. Defaults to `7.1-preview.1`. | `string`    |             |
 | `server`             | The host of Azure DevOps. Defaults to `dev.azure.com`.     | `string`    |             |
-| `organization`       | The name of the Azure DevOps organization.                | `string`    |             |
-| `project`            | The name of the Azure DevOps project.                     | `string`    |             |
-| `resourceId`         | The resource ID for which permissions are being changed.  | `string`    |             |
-| `resourceType`       | The type of the resource (e.g., `endpoint`).              | `string`    |             |
-| `authorized`         | A boolean indicating whether to authorize (`true`) or unauthorize (`false`) the pipeline. | `boolean`   |             |
-| `pipelineId`         | The ID of the Azure pipeline to be authorized/unauthorized. | `string`    |             |
+| `organization`*       | The name of the Azure DevOps organization.                | `string`    |             |
+| `project`*            | The name of the Azure DevOps project.                     | `string`    |             |
+| `resourceId`*         | The resource ID for which permissions are being changed.  | `string`    |             |
+| `resourceType`*       | The type of the resource (e.g., `endpoint`).              | `string`    |             |
+| `authorized`*         | A boolean indicating whether to authorize (`true`) or unauthorize (`false`) the pipeline. | `boolean`   |             |
+| `pipelineId`*         | The ID of the Azure pipeline to be authorized/unauthorized. | `string`    |             |
 | `token`              | An optional token for Azure DevOps API authentication. If not provided, it uses the credentials from the integration. | `string`    |             |
+organization*, project*, resourceId*, resourceType*, authorized*, pipelineId*, permitsApiVersion, server
+
 #### Examples
 ```yaml
     - id: permitAzurePipeline
@@ -3169,11 +3354,12 @@ Action for cloning an Azure repository into a specified workspace directory usin
 #### Inputs
 | Key         | Description                                                      | Type    | Example |
 |-------------|------------------------------------------------------------------|---------|---------|
-| `remoteUrl` | The Git URL to the repository.                                   | `string`|         |
+| `remoteUrl`* | The Git URL to the repository.                                   | `string`|         |
 | `branch`    | The branch to checkout to.                                       | `string`|         |
 | `targetPath`| The subdirectory of the working directory to clone the repository into. | `string`|         |
 | `server`    | The hostname of the Azure DevOps service. Defaults to `dev.azure.com`. | `string`|         |
 | `token`     | The token to use for authorization.                              | `string`|         |
+remoteUrl*, branch, targetPath, server, token
 
 #### Examples
 ```yaml
@@ -3200,12 +3386,12 @@ Action that pushes content from a local workspace to a remote Azure repository.
 #### Inputs
 | Key                 | Description                                                                                   | Type     | Example |
 |---------------------|-----------------------------------------------------------------------------------------------|----------|---------|
-| `branch`            | The branch to checkout to.                                                                    | `string` |         |
+| `branch`*            | The branch to checkout to.                                                                    | `string` |         |
 | `sourcePath`        | The subdirectory of the working directory containing the repository.                         | `string` |         |
 | `gitCommitMessage`  | Sets the commit message on the repository. The default value is 'Initial commit'.            | `string` |         |
 | `gitAuthorName`     | Sets the default author name for the commit. The default value is 'Scaffolder'.             | `string` |         |
 | `gitAuthorEmail`    | Sets the default author email for the commit.                                               | `string` |         |
-
+branch*, sourcePath, gitCommitMessage, gitAuthorName, gitAuthorEmail
 #### Examples
 ```yaml
     - id: pushAzureRepo
@@ -3226,16 +3412,25 @@ https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azu
 https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pushAzureRepo.ts
 
 ### `azure:repo:pr`
-Action that pushes content from a local workspace to a remote Azure repository.
+Action for creating a pull request in Azure DevOps.
 
 #### Inputs
-| Key                 | Description                                                                                   | Type     | Example |
-|---------------------|-----------------------------------------------------------------------------------------------|----------|---------|
-| `branch`            | The branch to checkout to.                                                                    | `string` |         |
-| `sourcePath`        | The subdirectory of the working directory containing the repository.                         | `string` |         |
-| `gitCommitMessage`  | Sets the commit message on the repository. The default value is 'Initial commit'.            | `string` |         |
-| `gitAuthorName`     | Sets the default author name for the commit. The default value is 'Scaffolder'.             | `string` |         |
-| `gitAuthorEmail`    | Sets the default author email for the commit.                                               | `string` |         |
+
+| Key                    | Description                                                   | Type     | Example |
+|-----------------------|---------------------------------------------------------------|----------|---------|
+| organization         | The name of the organization in Azure DevOps.                 | string   |         |
+| sourceBranch          | The branch to merge into the source.                          | string   |         |
+| targetBranch          | The branch to merge into (default: main).                    | string   |         |
+| title*                | The title of the pull request.                                | string   |         |
+| description           | The description of the pull request.                          | string   |         |
+| repoId*               | Repo ID of the pull request.                                  | string   |         |
+| project               | The Project in Azure DevOps.                                  | string   |         |
+| supportsIterations     | Whether or not the PR supports iterations.                    | boolean  |         |
+| server                | The hostname of the Azure DevOps service. Defaults to dev.azure.com | string   |         |
+| token                 | The token to use for authorization.                           | string   |         |
+| autoComplete          | Enable auto-completion of the pull request once policies are met | boolean  |         |
+
+organization, sourceBranch, targetBranch, title*, description, repoId*, project, supportsIterations, server, token, autoComplete
 
 #### Examples
 ```yaml
@@ -3253,7 +3448,9 @@ Action that pushes content from a local workspace to a remote Azure repository.
 ```
 
 #### Outputs
-None
+| Key                   | Description                                               | Type     |
+|----------------------|-----------------------------------------------------------|----------|
+| pullRequestId        | The ID of the created pull request                        | number   |
 
 #### Links
 https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories
@@ -3264,7 +3461,20 @@ https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositor
 ### `publish:bitbucket`
 This action creates a new Bitbucket repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
 
-[//]: # (TODO: imputs)
+#### Input
+
+| **Key**               | **Description**                                                                                                        | **Type**       | **Example** |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------|----------------|-------------|
+| `repoUrl`*             | Repository Location                                                                                                    | `string`       |             |
+| `description`         | Repository Description                                                                                                 | `string`       |             |
+| `repoVisibility`      | Repository Visibility (private or public)                                                                              | `string`       |             |
+| `defaultBranch`       | Sets the default branch on the repository. The default value is 'master'                                                | `string`       |             |
+| `sourcePath`          | Path within the workspace that will be used as the repository root. If omitted, the entire workspace is used.           | `string`       |             |
+| `enableLFS`           | Enable LFS for the repository (only available for hosted Bitbucket).                                                    | `boolean`      |             |
+| `token`               | The token to use for authorization to BitBucket                                                                         | `string`       |             |
+| `gitCommitMessage`    | Sets the commit message on the repository. The default value is 'initial commit'                                        | `string`       |             |
+| `gitAuthorName`       | Sets the default author name for the commit. The default value is 'Scaffolder'                                          | `string`       |             |
+| `gitAuthorEmail`      | Sets the default author email for the commit.                                                                           | `string`       |             |
 
 #### Examples
 The `repoUrl` must be in the format `bitbucket.org?repo=<project name>&workspace=<workspace name>&project=<project name>`
@@ -3336,54 +3546,218 @@ The `publish:bitbucket` action produces the following outputs.
 | repoContentsUrl | Url that shows the contents of the repository |
 
 #### Links
-[//]: # (TODO: links)
+[code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket/src/actions/bitbucket.ts)
 
 ### `publish:bitbucketCloud`
+Action that creates and initializes a Bitbucket Cloud repository and publishes content to it from a workspace.
+
 #### Inputs
+| **Key**              | **Description**                                                                 | **Type**         | **Example** |
+|----------------------|---------------------------------------------------------------------------------|------------------|-------------|
+| `repoUrl`*            | Repository location                                                             | `string`         |             |
+| `description`        | Repository description                                                          | `string`         |             |
+| `repoVisibility`     | Repository visibility (private or public)                                        | `string`         |             |
+| `defaultBranch`      | Sets the default branch on the repository (default is 'master')                  | `string`         |             |
+| `gitCommitMessage`   | Sets the commit message on the repository (default is 'initial commit')          | `string`         |             |
+| `sourcePath`         | Path within the workspace to use as the repository root                          | `string`         |             |
+| `token`              | Authentication token for Bitbucket Cloud                                         | `string`         |             |
 
 #### Examples
+```yaml
+steps:
+  - id: publish
+    action: publish:bitbucketCloud
+    name: Publish to Bitbucket Cloud
+    input:
+      repoUrl: bitbucket.org?repo=repo&workspace=workspace&project=project
+      description: Initialize a git repository
+```
+This publishes content to Bitbucket Cloud by initializing a repository, providing the repository URL, workspace, project, and a description for the repository.
 
 #### Outputs
+| **Key**           | **Description**                                 | **Type**   |
+|-------------------|-------------------------------------------------|------------|
+| `remoteUrl`       | URL to the repository with the provider          | `string`   |
+| `repoContentsUrl` | URL to the root of the repository                | `string`   |
+| `commitHash`      | Git commit hash of the initial commit            | `string`   |
 
 #### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloud.ts
 
 ### `bitbucket:pipelines:run`
+Triggers a run of a Bitbucket Cloud pipeline using the Backstage framework.
+
 #### Inputs
 
+| **Key**            | **Description**                    | **Type**      | **Example** |
+|--------------------|------------------------------------|---------------|-------------|
+| `workspace`*        | The Bitbucket workspace to run the pipeline in | `string`      |             |
+| `repo_slug`*        | The repository identifier where the pipeline is triggered | `string`      |             |
+| `body`             | Optional body to pass to the pipeline trigger request | `object`      |             |
+| `token`            | Optional authorization token for Bitbucket API requests | `string`      |             |
+
+
 #### Examples
+```yaml
+steps:
+  - action: bitbucket:pipelines:run
+    id: run-bitbucket-pipeline
+    name: Run an example bitbucket pipeline
+    input:
+      workspace: test-workspace
+      repo_slug: test-repo-slug
+      body:
+        target:
+          commit:
+            type: commit
+            hash: a3c4e02c9a3755eccdc3764e6ea13facdf30f923
+          selector:
+            type: custom
+            pattern: Deploy to production
+          type: pipeline_ref_target
+          ref_name: master
+          ref_type: branch
+```
 
 #### Outputs
+| **Key**           | **Description**                     | **Type**      |
+|-------------------|-------------------------------------|---------------|
+| `buildNumber`     | The build number of the triggered pipeline | `number`      |
+| `repoUrl`         | A URL to the repository where the pipeline was triggered | `string`      |
+| `repoContentsUrl` | A URL to view the pipeline in Bitbucket Cloud | `string`      |
 
 #### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloudPipelinesRun.ts
 
 ### `publish:bitbucketCloud:pull-request`
+Action for publishing a pull request to a Bitbucket Cloud repository using Backstage's scaffolding system.
+
 #### Inputs
+
+| **Key**            | **Description**                                      | **Type**    | **Example** |
+|--------------------|------------------------------------------------------|-------------|-------------|
+| `repoUrl`*          | Repository Location                                   | `string`    |             |
+| `title`*            | Pull Request title                                    | `string`    |             |
+| `description`      | The description of the pull request                   | `string`    |             |
+| `targetBranch`     | Branch to apply changes to. Default is 'master'.      | `string`    |             |
+| `sourceBranch`*     | Branch to copy changes from                           | `string`    |             |
+| `token`            | Token for authorization to Bitbucket Cloud            | `string`    |             |
+| `gitAuthorName`    | Author name for the commit. Default is 'Scaffolder'.  | `string`    |             |
+| `gitAuthorEmail`   | Author email for the commit                           | `string`    |             |
+
 
 #### Examples
 
+```yaml
+steps:
+  - action: 'publish:bitbucketCloud:pull-request'
+    id: 'publish-bitbucket-cloud-pull-request-target-branch'
+    name: 'Creating pull request on bitbucket cloud'
+    input:
+      repoUrl: 'bitbucket.org?workspace=workspace&project=project&repo=repo'
+      title: 'My pull request'
+      sourceBranch: 'my-feature-branch'
+      targetBranch: 'development'
+```
+
 #### Outputs
+| **Key**            | **Description**                          | **Type**    |
+|--------------------|------------------------------------------|-------------|
+| `pullRequestUrl`    | A URL to the pull request with the provider | `string`    |
 
 #### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloudPullRequest.ts
 
 ### `publish:bitbucketServer`
+Creates a new repository in Bitbucket Server.
+
+
 #### Inputs
+
+| **Key**              | **Description**                                                                                              | **Type**           | **Example** |
+|----------------------|--------------------------------------------------------------------------------------------------------------|--------------------|-------------|
+| `repoUrl`*            | Repository Location                                                                                          | `string`           |             |
+| `description`        | Repository Description                                                                                        | `string`           |             |
+| `repoVisibility`     | Repository Visibility                                                                                         | `string (enum: ['private', 'public'])` |             |
+| `defaultBranch`      | Default branch on the repository (default value is 'master')                                                  | `string`           |             |
+| `sourcePath`         | Path within the workspace used as the repository root                                                         | `string`           |             |
+| `enableLFS`          | Enable Git Large File Storage (LFS) for the repository                                                        | `boolean`          |             |
+| `token`              | Authentication token for Bitbucket Server                                                                    | `string`           |             |
+| `gitCommitMessage`   | Git commit message (default value is 'initial commit')                                                        | `string`           |             |
+| `gitAuthorName`      | Author name for the commit (default value is 'Scaffolder')                                                    | `string`           |             |
+| `gitAuthorEmail`     | Author email for the commit                                                                                   | `string`           |             |
+
 
 #### Examples
 
+```yaml
+steps:
+  - action: publish:bitbucketServer
+    id: publish-bitbucket-server-minimal
+    name: Publish To Bitbucket Server
+    input:
+      repoUrl: 'hosted.bitbucket.com?project=project&repo=repo'
+      description: 'This is a test repository'
+      repoVisibility: 'private'
+      defaultBranch: 'main'
+      sourcePath: 'packages/backend'
+      enableLFS: false
+      token: 'test-token'
+      gitCommitMessage: 'Init check commit'
+      gitAuthorName: 'Test User'
+      gitAuthorEmail: 'test.user@example.com'
+```
+
+This publishes a repository to Bitbucket Server, specifying repository details, visibility, commit information, and optional configuration like enabling LFS.
+
 #### Outputs
+
+| **Key**            | **Description**                                      | **Type**   |
+|--------------------|------------------------------------------------------|------------|
+| `remoteUrl`        | A URL to the repository with the provider             | `string`   |
+| `repoContentsUrl`  | A URL to the root of the repository                   | `string`   |
+| `commitHash`       | The git commit hash of the initial commit             | `string`   |
 
 #### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-server/src/actions/bitbucketServer.ts
 
 ### `publish:bitbucketServer:pull-request`
+Opens a pull request on a Bitbucket Server repository to merge two existing branches.
+
 #### Inputs
+
+| **Key**            | **Description**                                             | **Type**    | **Example** |
+|--------------------|-------------------------------------------------------------|-------------|-------------|
+| `repoUrl`*          | Repository Location (URL)                                    | `string`    |             |
+| `title`*            | The title for the pull request                               | `string`    |             |
+| `description`      | The description of the pull request                          | `string`    |             |
+| `targetBranch`     | Branch of repository to apply changes to. Defaults to 'master'| `string`    |             |
+| `sourceBranch`*     | Branch of repository to copy changes from                    | `string`    |             |
+| `token`            | Authorization token for Bitbucket Server                     | `string`    |             |
+| `gitAuthorName`    | Author name for the commit. Defaults to 'Scaffolder'          | `string`    |             |
+| `gitAuthorEmail`   | Author email for the commit                                  | `string`    |             |
+
 
 #### Examples
 
+```yaml
+steps:
+  - action: publish:bitbucketServer:pull-request
+    id: publish-bitbucket-server-pull-request-minimal
+    name: Creating pull request on bitbucket server
+    input:
+      repoUrl: hosted.bitbucket.com?project=project&repo=repo
+      title: My pull request
+      sourceBranch: my-feature-branch
+      description: This is a detailed description of my pull request
+```
+
+This example creates a pull request on a Bitbucket Server, including action type, identification, name, and input parameters like repository URL, title, source branch, and description.
+
 #### Outputs
+| **Key**            | **Description**                                         | **Type**    |
+|--------------------|---------------------------------------------------------|-------------|
+| `pullRequestUrl`    | A URL to the pull request created in the Bitbucket Server | `string`    |
 
 #### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-server/src/actions/bitbucketServerPullRequest.ts
@@ -3391,31 +3765,62 @@ https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-mo
 ## CNEO
 
 ### `cnoe:kubernetes:apply`
+Action for applying Kubernetes manifests using `kubectl`, either from a string, an object, or a file path, with support for namespaced configurations and cluster authentication.
+
+
 #### Inputs
+| Key                 | Description                                                  | Type    | Example |
+|---------------------|--------------------------------------------------------------|---------|---------|
+| `manifestString`    | The manifest to apply in the cluster. Must be a string.     | `string`|         |
+| `manifestObject`    | The manifest to apply in the cluster. Must be an object.    | `object`|         |
+| `manifestPath`      | The path to the manifest file.                               | `string`|         |
+| `namespaced`*        | Whether the API is namespaced or not.                        | `boolean`|         |
+| `clusterName`       | The name of the cluster to apply this.                       | `string`|         |
 
 #### Examples
 
 #### Outputs
+
+| Key   | Description                                                | Type    |
+|-------|------------------------------------------------------------|---------|
+|       | The object returned by Kubernetes by performing this operation | `object`|
 
 #### Links
 https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/k8s-apply.ts
 
 ### `cnoe:verify:dependency`
+Verify resource dependencies for CNOE.
+
 #### Inputs
+| Key         | Description                       | Type                  | Example |
+|-------------|-----------------------------------|-----------------------|---------|
+| verifiers*   | The list of verifiers            | `array` of `string`   |         |
 
 #### Examples
 
 #### Outputs
+
+None
 
 #### Links
 https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/verify.ts
 
 ### `cnoe:utils:sanitize`
+Action for sanitizing resources defined in a YAML document by removing empty fields, before further processing.
+
 #### Inputs
+
+| Key       | Description                         | Type   | Example |
+|-----------|-------------------------------------|--------|---------|
+| `document`* | The document to be sanitized        | string |         |
 
 #### Examples
 
 #### Outputs
+
+| Key        | Description             | Type   |
+|------------|-------------------------|--------|
+| `sanitized`| The sanitized document   | string |         |
 
 #### Links
 https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/sanitize.ts
@@ -3423,35 +3828,80 @@ https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/sanit
 ## Codacy
 
 ### `codacy:add-repo`
+Action for adding a repository to Codacy using its API.
+
 #### Inputs
+| Key        | Description                        | Type   | Example |
+|------------|------------------------------------|--------|---------|
+| `provider` | The name of the code hosting provider. | `string` |         |
+| `owner`    | The username or organization name that owns the repository. | `string` |         |
+| `repository` | The name of the repository to add. | `string` |         |
 
 #### Examples
+```yaml
+steps:
+  - id: add-repo
+    name: Add Repository to Codacy
+    action: codacy:add-repo
+    input:
+      provider: gh|gl|bb
+      owner: your-organization-or-username
+      repository: ${{ parameters.repoName }}
+```
+
+This example adds a specified repository from a given code hosting provider (GitHub, GitLab, or Bitbucket) to Codacy, using the organization or username as the owner and a parameter for the repository name.
 
 #### Outputs
 
+| Key     | Description                              | Type   |
+|---------|------------------------------------------|--------|
+| `data`  | Response data from Codacy upon successful addition of the repository. | `object` |
+
 #### Links
-https://github.com/codacy/backstage-plugin
+[code](https://github.com/codacy/backstage-plugin/blob/main/src/actions/codacy.ts)
 
 ## Confluence
 
 ### `confluence:transform:markdown`
+Action that transforms Confluence content into Markdown format and updates a GitHub repository with the new Markdown files and modified `mkdocs.yml` configuration.
+
 #### Inputs
+| Key               | Description                                                                                                                           | Type         | Example |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------|--------------|--------|
+| `confluenceUrls`  | Paste your Confluence URL. Ensure it follows this format: `https://{confluence+base+url}/display/{spacekey}/{page+title}` or `https://{confluence+base+url}/spaces/{spacekey}/pages/1234567/{page+title}` for Confluence Cloud. | array        |        |
+| `repoUrl`         | GitHub Repo URL, specifying the location of the `mkdocs.yml` file inside the GitHub repository where you want to store the document. | string       |        |
 
 #### Examples
 
 #### Outputs
+| Key      | Description                                     | Type   |
+|----------|-------------------------------------------------|--------|
+| `repo`   | The name of the repository.                     | string |
+| `owner`  | The owner of the repository.                    | string |
 
 #### Links
 https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-confluence-to-markdown
 
 ## Cue
+This action fetches some template content, runs a Cue command on it, and copies output files to a specified directory.
 
 ### `cue:cueflow`
 #### Inputs
+| Key           | Description                                                                             | Type    | Example |
+|---------------|-----------------------------------------------------------------------------------------|---------|---------|
+| `url`*         | Relative path or absolute URL pointing to the directory tree to fetch                   | `string`|         |
+| `cuePkg`      | Cue package name, default is "config"                                                  | `string`|         |
+| `cueCmd`      | Cue command name, default is "run"                                                     | `string`|         |
+| `cueOutDir`   | Cue output dir, default is "out"                                                       | `string`|         |
+| `values`      | Values to pass on to the templating engine                                              | `object`|         |
+| `targetPath`  | Target path within the working directory to generate contents to. Defaults to the working directory root. | `string`|         |
 
 #### Examples
 
 #### Outputs
+| Key          | Description                                   | Type   |
+|--------------|-----------------------------------------------|--------|
+| `out`        | Output directory containing generated files   | `string`|
 
 #### Links
 https://github.com/shoukoo/backstage-plugin-scaffolder-cuelang/blob/main/src/actions/cueflow.ts
@@ -3459,51 +3909,169 @@ https://github.com/shoukoo/backstage-plugin-scaffolder-cuelang/blob/main/src/act
 ## Gerrit
 
 ### `publish:gerrit:review`
+
+Action for creating a new Gerrit review by committing and pushing changes to a Git repository.
 #### Inputs
 
+| Key                   | Description                                                             | Type                  | Example |
+|-----------------------|-------------------------------------------------------------------------|-----------------------|---------|
+| `repoUrl`*             | Repository Location                                                     | `string`              |         |
+| `branch`              | Branch of the repository the review will be created on                 | `string`              |         |
+| `sourcePath`          | Subdirectory of working directory containing the repository              | `string`              |         |
+| `gitCommitMessage`*    | Sets the commit message on the repository.                              | `string`              |         |
+| `gitAuthorName`       | Sets the default author name for the commit. The default value is 'Scaffolder' | `string`              |         |
+| `gitAuthorEmail`      | Sets the default author email for the commit.                           | `string`              |         |
+
 #### Examples
+```yaml
+steps:
+  - id: publish
+    action: publish:gerrit:review
+    name: Publish new gerrit review
+    input:
+      repoUrl: gerrithost.org?repo=repo&owner=owner
+      gitCommitMessage: Initial Commit Message
+      branch: develop
+```
+
+This publishes a new Gerrit review, specifying the repository URL, commit message, and branch to use.
 
 #### Outputs
+
+| Key                    | Description                                     | Type     |
+|------------------------|-------------------------------------------------|----------|
+| `reviewUrl`            | A URL to the review                            | `string` |
+| `repoContentsUrl`      | A URL to the root of the repository           | `string` |
 
 #### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gerrit/src/actions/gerritReview.ts
 
 ### `publish:gerrit`
+Action that initializes a Git repository with content from the workspace and publishes it to a Gerrit repository.
+
 #### Inputs
+| Key                 | Description                                                                      | Type        | Example |
+|---------------------|----------------------------------------------------------------------------------|-------------|---------|
+| `repoUrl`           | Repository Location                                                              | `string`    |         |
+| `description`       | Repository Description                                                            | `string`    |         |
+| `defaultBranch`     | Sets the default branch on the repository. The default value is 'master'        | `string`    |         |
+| `gitCommitMessage`  | Sets the commit message on the repository. The default value is 'initial commit'| `string`    |         |
+| `gitAuthorName`     | Sets the default author name for the commit. The default value is 'Scaffolder'  | `string`    |         |
+| `gitAuthorEmail`    | Sets the default author email for the commit.                                   | `string`    |         |
+| `sourcePath`        | Path within the workspace that will be used as the repository root.            | `string`    |         |
 
 #### Examples
 
+```yaml
+steps:
+  - id: publish
+    action: publish:gerrit
+    name: Publish to Gerrit
+    input:
+      repoUrl: 'gerrit.com?repo=repo&owner=owner'
+      description: 'Initialize a gerrit repository'
+```
+This publishes content to a Gerrit repository.
+
 #### Outputs
+| Key                 | Description                                                             | Type        |
+|---------------------|-------------------------------------------------------------------------|-------------|
+| `remoteUrl`*         | A URL to the repository with the provider                               | `string`    |
+| `repoContentsUrl`   | A URL to the root of the repository                                      | `string`    |
+| `commitHash`        | The git commit hash of the initial commit                                | `string`    |
 
 #### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gerrit/src/actions/gerrit.ts
 
 ## Gitea
+This action initializes a git repository from workspace content and publishes it to a Gitea repository.
 
 ### `publish:gitea`
 #### Inputs
+| Key                     | Description                                                                                               | Type     | Example |
+|------------------------|-----------------------------------------------------------------------------------------------------------|----------|---------|
+| `repoUrl`*              | Repository Location                                                                                       | `string` |         |
+| `description`          | Repository Description                                                                                     | `string` |         |
+| `defaultBranch`        | Sets the default branch on the repository. The default value is 'main'                                   | `string` |         |
+| `repoVisibility`       | Sets the visibility of the repository. The default value is 'public'.                                    | `string` |         |
+| `gitCommitMessage`     | Sets the commit message on the repository. The default value is 'initial commit'                         | `string` |         |
+| `gitAuthorName`        | Sets the default author name for the commit. The default value is 'Scaffolder'                          | `string` |         |
+| `gitAuthorEmail`       | Sets the default author email for the commit.                                                            | `string` |         |
+| `sourcePath`           | Path within the workspace that will be used as the repository root. If omitted, the entire workspace will be published as the repository. | `string` |         |
 
 #### Examples
 
+```yaml
+steps:
+  - id: publish
+    action: publish:gitea
+    name: Publish to Gitea
+    input:
+      repoUrl: 'gitea.com?repo=repo&owner=owner'
+      defaultBranch: 'main'
+      repoVisibility: 'private'
+```
+This publishes a repository to Gitea.
+
 #### Outputs
+| Key                     | Description                                                                                               | Type     |
+|------------------------|-----------------------------------------------------------------------------------------------------------|----------|
+| `remoteUrl`            | A URL to the repository with the provider                                                                 | `string` |
+| `repoContentsUrl`      | A URL to the root of the repository                                                                       | `string` |
+| `commitHash`           | The git commit hash of the initial commit                                                                 | `string` |
 
 #### Links
 https://www.npmjs.com/package/@backstage/plugin-scaffolder-backend-module-gitea
+https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitea/src/actions/gitea.ts
 
 ## GitHub
 
 ### `publish:github`
+This action creates a new GitHub repository and publishes the files in the workspace directory to the repository.
+
 #### Inputs
 
-#### Examples
-
-#### Outputs
-
-#### Links
-
-This action creates a new GitHub repository and publishes the files in the workspace directory to the repository. There is one mandatory parameter `repoUrl`. The repo url picker described in the `string` parameter description above.
-
-The `repoUrl` must be in the format `github.com?repo=<reponame>&owner=<owner org>`
+| **Key**                           | **Description**                                                                                         | **Type**                                 | **Example** |
+|------------------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------|-------------|
+| `repoUrl`*                          | The URL of the repository where the content will be published.                                           | `string`                                 |             |
+| `description`                      | Optional description of the repository.                                                                 | `string`                                 |             |
+| `homepage`                         | Optional homepage URL for the repository.                                                               | `string`                                 |             |
+| `access`                           | The access level for the repository (private/public/internal).                                           | `string`                                 |             |
+| `defaultBranch`                    | The default branch for the repository (e.g., master or main).                                            | `string`                                 |             |
+| `protectDefaultBranch`             | Whether to protect the default branch.                                                                  | `boolean`                                |             |
+| `protectEnforceAdmins`             | Whether to enforce branch protection for admins.                                                        | `boolean`                                |             |
+| `deleteBranchOnMerge`              | Whether to delete the branch after merging pull requests.                                                | `boolean`                                |             |
+| `gitCommitMessage`                 | Custom commit message for the initial commit.                                                            | `string`                                 |             |
+| `gitAuthorName`                    | Author name for the initial commit.                                                                     | `string`                                 |             |
+| `gitAuthorEmail`                   | Author email for the initial commit.                                                                    | `string`                                 |             |
+| `allowRebaseMerge`                 | Whether to allow rebase merging.                                                                        | `boolean`                                |             |
+| `allowSquashMerge`                 | Whether to allow squash merging.                                                                        | `boolean`                                |             |
+| `squashMergeCommitTitle`           | Title for squash merge commits, can be either 'PR_TITLE' or 'COMMIT_OR_PR_TITLE'.                        | `'PR_TITLE' | 'COMMIT_OR_PR_TITLE'`        |             |
+| `squashMergeCommitMessage`         | Message for squash merge commits, can be 'PR_BODY', 'COMMIT_MESSAGES', or 'BLANK'.                       | `'PR_BODY' | 'COMMIT_MESSAGES' | 'BLANK'`|             |
+| `allowMergeCommit`                 | Whether to allow regular merge commits.                                                                 | `boolean`                                |             |
+| `allowAutoMerge`                   | Whether to allow auto-merging pull requests.                                                            | `boolean`                                |             |
+| `sourcePath`                       | Path to the source code to be pushed to the repository.                                                  | `string`                                 |             |
+| `bypassPullRequestAllowances`      | Users, teams, or apps that can bypass pull request requirements.                                         | `object`                                 |             |
+| `requiredApprovingReviewCount`     | Number of required approving reviews for pull requests.                                                  | `number`                                 |             |
+| `restrictions`                     | Restrictions on which users, teams, or apps can push to the branch.                                      | `object`                                 |             |
+| `requireCodeOwnerReviews`          | Whether to require code owner reviews for pull requests.                                                 | `boolean`                                |             |
+| `dismissStaleReviews`              | Whether to dismiss stale reviews when new commits are pushed.                                            | `boolean`                                |             |
+| `requiredStatusCheckContexts`      | Status checks required to pass before merging.                                                           | `string[]`                               |             |
+| `requireBranchesToBeUpToDate`      | Whether branches must be up to date with the base branch before merging.                                 | `boolean`                                |             |
+| `requiredConversationResolution`   | Whether to require conversation resolution before merging.                                               | `boolean`                                |             |
+| `requireLastPushApproval`          | Whether to require approval of the last push in a pull request.                                          | `boolean`                                |             |
+| `repoVisibility`                   | The visibility of the repository (private, internal, or public).                                         | `'private' | 'internal' | 'public'`     |             |
+| `collaborators`                    | List of users or teams with specific access to the repository.                                           | `Array<object>`                          |             |
+| `hasProjects`                      | Whether to enable GitHub Projects for the repository.                                                    | `boolean`                                |             |
+| `hasWiki`                          | Whether to enable GitHub Wiki for the repository.                                                        | `boolean`                                |             |
+| `hasIssues`                        | Whether to enable GitHub Issues for the repository.                                                      | `boolean`                                |             |
+| `token`                            | GitHub access token for authentication.                                                                 | `string`                                 |             |
+| `topics`                           | List of topics to apply to the repository.                                                               | `string[]`                               |             |
+| `repoVariables`                    | Custom variables to set for the repository.                                                              | `object`                                 |             |
+| `secrets`                          | Secret values to store in the repository.                                                                | `object`                                 |             |
+| `oidcCustomization`                | Customization for OIDC tokens used in the repository.                                                    | `object`                                 |             |
+| `requiredCommitSigning`            | Whether to require commit signing.                                                                       | `boolean`                                |             |
+| `customProperties`                 | Additional custom properties for repository creation.                                                    | `object`                                 |             |
 
 #### Examples
 ```yaml
@@ -3653,37 +4221,43 @@ steps:
         - ruby
 ```
 
-#### Outputs
-
-The `publish:github` action produces two step outputs.
-
-| Name            | Description                                   |
-| --------------- | --------------------------------------------- |
-| remoteUrl       | Url for the newly created repository          |
-| repoContentsUrl | Url that shows the contents of the repository |
-
-These outputs can be retrieved by a subsequent step using:
-
-```yaml
-steps:
-  - id: log-message
-    name: Log Message
-    action: debug:log
-    input:
-      message: 'RemoteURL: ${{ steps["publish-repository"].output.remoteUrl }}, ${{ steps["publish-repository"].output.repoContentsUrl }}!'
-```
-
-### `publish:github:pull-request`
-#### Inputs
-
-#### Examples
 
 #### Outputs
+| **Key**           | **Description**                                           | **Type**     |
+|-------------------|-----------------------------------------------------------|--------------|
+| `remoteUrl`       | The remote URL of the repository where the content is published. | `string`     |
+| `repoContentsUrl` | The URL to view the contents of the repository.            | `string`     |
+| `commitHash`      | The hash of the initial commit pushed to the repository.   | `string`     |
+
 
 #### Links
-https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubPullRequest.ts
+https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/github.ts
 
+
+
+### `publish:github:pull-request`
 This action creates a pull request against a pre-existing repository using the files contained in the workspace directory.
+#### Inputs
+
+| Key                   | Description                                                                                                   | Type    | Example |
+|-----------------------|---------------------------------------------------------------------------------------------------------------|---------|---------|
+| `repoUrl`*             | Accepts the format 'github.com?repo=reponame&owner=owner' where 'reponame' is the repository name and 'owner' is an organization or username. | `string`|         |
+| `branchName`*          | The name for the branch.                                                                                     | `string`|         |
+| `targetBranchName`    | The target branch name of the merge request.                                                                 | `string`|         |
+| `title`*               | The name for the pull request.                                                                                | `string`|         |
+| `description`*         | The description of the pull request.                                                                         | `string`|         |
+| `draft`               | Create a draft pull request.                                                                                 | `boolean`|        |
+| `sourcePath`          | Subdirectory of the working directory to copy changes from.                                                  | `string`|         |
+| `targetPath`          | Subdirectory of the repository to apply changes to.                                                          | `string`|         |
+| `token`               | The token to use for authorization to GitHub.                                                                | `string`|         |
+| `reviewers`           | The users that will be added as reviewers to the pull request.                                               | `array` |         |
+| `teamReviewers`       | The teams that will be added as reviewers to the pull request.                                               | `array` |         |
+| `commitMessage`       | The commit message for the pull request commit.                                                              | `string`|         |
+| `update`              | Update pull request if it already exists.                                                                    | `boolean`|        |
+| `forceFork`           | Create pull request from a fork.                                                                              | `boolean`|        |
+| `gitAuthorName`       | Sets the default author name for the commit. The default value is the authenticated user or 'Scaffolder'.    | `string`|         |
+| `gitAuthorEmail`      | Sets the default author email for the commit. The default value is the authenticated user or 'scaffolder@backstage.io'. | `string`|         |
+| `forceEmptyGitAuthor` | Forces the author to be empty. This is useful when using a Github App, allowing the commit to be verified on Github. | `boolean`|        |
 
 #### Examples
 The most basic example is:
@@ -3772,8 +4346,11 @@ steps:
     input:
       message: 'RemoteURL: ${{ steps["create-pull-request.output.remoteUrl }}, ${{ steps["create-pull-request"].output.pullRequestNumber }}!'
 ```
+
+#### Links
+https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubPullRequest.ts
+
 ### `github:actions:dispatch`
-[//]: # (TODO:)
 
 The `github:actions:dispatch` action allows you to trigger the execution of a GitHub action on a repository. The `repoUrl` option is a repo url for GitHub. The `RepoUrlPicker` documented above can generate this value. The `workflowId` can be the workflow id from the GitHub API or you can just use the filename for the workflow file itself. The `branchOrTagName` indicates which commit to run the workflow against.
 
@@ -3811,8 +4388,10 @@ steps:
 
 The `github:actions:dispatch` action does not have any outputs.
 
+#### Link
+
+
 ### `github:webhook`
-[//]: # (TODO:)
 
 You can configure a webhook on an existing repository in GitHub using this action. It takes `repoUrl` and `webhookUrl`. The `repoUrl` option needs to be in a GitHub repo format. The `RepoUrlPicker` documented above will generate a URL in the correct format.
 
@@ -3900,36 +4479,310 @@ steps:
 The `github:webhook` action does not have any outputs.
 
 ### `github:autolinks:create`
-[//]: # (TODO:)
+Action to create autolink references for GitHub repositories, which automatically link certain keywords to specific URLs in issues, pull requests, or commits.
+#### Inputs
+| Key          | Description                                                                                                                                                                       | Type              | Example |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|--------|
+| `repoUrl`    | Accepts the format 'github.com?repo=reponame&owner=owner' where 'reponame' is the new repository name and 'owner' is an organization or username.                             | `string`          |        |
+| `keyPrefix`  | This prefix appended by certain characters will generate a link any time it is found in an issue, pull request, or commit.                                                      | `string`          |        |
+| `urlTemplate`| The URL must contain `<num>` for the reference number. `<num>` matches different characters depending on the value of `isAlphanumeric`.                                         | `string`          |        |
+| `isAlphanumeric` | Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `urlTemplate` matches alphanumeric characters A-Z (case insensitive), 0-9, and -. If false, this autolink reference only matches numeric characters. Default: true | `boolean`         |        |
+| `token`      | The token to use for authorization to GitHub.                                                                                                                                   | `string`          |        |
+
+#### Examples
+
+```yaml
+steps:
+  - action: 'github:autolinks:create'
+    name: 'Create an autolink reference'
+    input:
+      repoUrl: 'github.com?repo=repo&owner=owner'
+      keyPrefix: 'TICKET-'
+      urlTemplate: 'https://example.com/TICKET?query=<num>'
+      isAlphanumeric: false
+```
+
+This performs the autolink creation action in a GitHub repository.
+#### Outputs
+None
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubAutolinks.ts
 
 ### `github:deployKey:create`
-[//]: # (TODO:)
+Action for Backstage that creates and stores GitHub Deploy Keys, including the ability to encrypt and store the associated private key as a GitHub secret.
+
+#### Inputs
+| Key                  | Description                                                                                                                                    | Type                      | Example |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|---------|
+| `repoUrl`*            | Accepts the format 'github.com?repo=reponame&owner=owner' where 'reponame' is the new repository name and 'owner' is an organization or username | `string`                  |         |
+| `publicKey`*          | Generated from ssh-keygen. Begins with 'ssh-rsa', 'ecdsa-sha2-nistp256', 'ecdsa-sha2-nistp384', 'ecdsa-sha2-nistp521', 'ssh-ed25519', 'sk-ecdsa-sha2-nistp256@openssh.com', or 'sk-ssh-ed25519@openssh.com'. | `string`                  |         |
+| `privateKey`*         | SSH Private Key generated from ssh-keygen                                                                                                   | `string`                  |         |
+| `deployKeyName`*      | Name of the Deploy Key                                                                                                                        | `string`                  |         |
+| `privateKeySecretName` | Name of the GitHub Secret to store the private key related to the Deploy Key. Defaults to: 'KEY_NAME_PRIVATE_KEY' where 'KEY_NAME' is the name of the Deploy Key | `string`                  |         |
+| `token`              | The token to use for authorization to GitHub                                                                                                  | `string`                  |         |
+
+
+#### Examples
+The YAML representation of the provided steps describes a process for creating and storing a GitHub Deploy Key, specifying the necessary inputs such as repository URL, public key, private key, and the deploy key name.
+
+
+```yaml
+steps:
+  - action: github:deployKey:create
+    name: Create and store a Deploy Key
+    input:
+      repoUrl: github.com?repo=repository&owner=owner
+      publicKey: pubkey
+      privateKey: privkey
+      deployKeyName: Push Tags
+```
+This is for creating and storing a GitHub Deploy Key, specifying the necessary inputs such as repository URL, public key, private key, and the deploy key name.
+
+#### Outputs
+
+| Key                      | Description                                                                      | Type                      |
+|--------------------------|----------------------------------------------------------------------------------|---------------------------|
+| `privateKeySecretName`   | The GitHub Action Repo Secret Name for the Private Key                          | `string`                  |
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubDeployKey.ts
 
 ### `github:environment:create`
-[//]: # (TODO:)
+Action for creating deployment environments on GitHub.
+
+#### Inputs
+| Key                             | Description                                                                                                         | Type                                | Example |
+|---------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------------------------------|---------|
+| `repoUrl`*                       | Accepts the format 'github.com?repo=reponame&owner=owner' where 'reponame' is the new repository name and 'owner' is an organization or username | `string`                            |         |
+| `name`*                          | Name of the deployment environment to create                                                                        | `string`                            |         |
+| `deploymentBranchPolicy`        | The type of deployment branch policy for this environment. To allow all branches to deploy, set to null.          | `object`                            |         |
+| `customBranchPolicyNames`       | The name pattern that branches must match in order to deploy to the environment.                                   | `array`                             |         |
+| `customTagPolicyNames`         | The name pattern that tags must match in order to deploy to the environment.                                      | `array`                             |         |
+| `environmentVariables`          | Environment variables attached to the deployment environment                                                       | `object`                            |         |
+| `secrets`                      | Secrets attached to the deployment environment                                                                     | `object`                            |         |
+| `token`                         | The token to use for authorization to GitHub                                                                        | `string`                            |         |
+| `waitTimer`                    | The time to wait before creating or updating the environment (in milliseconds)                                     | `integer`                           |         |
+| `preventSelfReview`            | Whether to prevent self-review for this environment                                                                  | `boolean`                           |         |
+| `reviewers`                    | Reviewers for this environment                                                                                      | `array`                             |         |
+
+
+#### Examples
+
+#### Outputs
+None
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubEnvironment.ts
 
 ### `github:issues:label`
-[//]: # (TODO:)
+Action to add labels to pull requests or issues on GitHub.
+
+#### Inputs
+| **Key**      | **Description**                                                                                      | **Type**       | **Example** |
+|--------------|------------------------------------------------------------------------------------------------------|----------------|-------------|
+| `repoUrl`*    | Accepts the format `'github.com?repo=reponame&owner=owner'` where 'reponame' is the repository name and 'owner' is an organization or username | `string`       |             |
+| `number`*     | The pull request or issue number to add labels to                                                     | `number`       |             |
+| `labels`*     | The labels to add to the pull request or issue                                                        | `string[]`     |             |
+| `token`      | The GitHub token to use for authorization                                                             | `string`       |             |
+
+#### Examples
+```yaml
+steps:
+  - action: 'github:issues:label'
+    name: 'Add labels to pull request or issue with token'
+    input:
+      repoUrl: 'github.com?repo=repo&owner=owner'
+      number: '1'
+      labels: 
+        - 'bug'
+        - 'documentation'
+      token: 'gph_YourGitHubToken'
+```
+
+### YAML Description
+This action adds the labels "bug" and "documentation" to issue or pull request #1 in a GitHub repository, using a provided GitHub token for authentication.
+#### Outputs
+None
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubIssuesLabel.ts
 
 ### `github:pages:enable`
-[//]: # (TODO:)
+Action for enabling GitHub Pages for a specified repository, with various customization options such as the build type, source branch, and source path.
+
+#### Inputs
+
+| **Key**          | **Description**                                                                                      | **Type**     | **Example** |
+|------------------|------------------------------------------------------------------------------------------------------|--------------|-------------|
+| `repoUrl`*        | Accepts the format 'github.com?repo=reponame&owner=owner' where 'reponame' is the repository name and 'owner' is an organization or username | `string`     |             |
+| `buildType`      | The GitHub Pages build type - "legacy" or "workflow". Default is "workflow"                           | `string`     |             |
+| `sourceBranch`   | The GitHub Pages source branch. Default is "main"                                                     | `string`     |             |
+| `sourcePath`     | The GitHub Pages source path - "/" or "/docs". Default is "/"                                         | `string`     |             |
+| `token`          | The token to use for authorization to GitHub                                                          | `string`     |             |
+
+#### Examples
+```yaml
+steps:
+  - action: 'github:pages:enable'
+    id: 'github-pages-custom-path'
+    name: 'Enable GitHub Pages with Custom Source Path'
+    input:
+      repoUrl: 'github.com?repo=customPathRepo&owner=customOwner'
+      sourcePath: '/docs'
+      token: 'gph_YourGitHubToken'
+```
+
+This YAML specifies a step that enables GitHub Pages for the repository `customPathRepo` owned by `customOwner`, using the source path `/docs` and an authorization token.
+#### Outputs
+None
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubPagesEnable.ts
 
 ### `github:repo:create`
-[//]: # (TODO:)
+The code defines a Backstage action for creating GitHub repositories programmatically, allowing customization of repository settings, collaborators, and configurations.
+
+#### Inputs
+
+| **Key** | **Description** | **Type** | **Example** |
+| --- | --- | --- | --- |
+| `repoUrl`* | The URL of the repository | `string` | |
+| `description` | Description of the repository | `string` | |
+| `homepage` | The homepage URL for the repository | `string` | |
+| `access` | Access level for the repository | `string` | |
+| `deleteBranchOnMerge` | Whether to delete branch after merging | `boolean` | |
+| `gitAuthorName` | Name of the git author | `string` | |
+| `gitAuthorEmail` | Email of the git author | `string` | |
+| `allowRebaseMerge` | Allow rebase merging | `boolean` | |
+| `allowSquashMerge` | Allow squash merging | `boolean` | |
+| `squashMergeCommitTitle` | Title for squash merge commits | `'PR_TITLE' \| 'COMMIT_OR_PR_TITLE'` | |
+| `squashMergeCommitMessage` | Message for squash merge commits | `'PR_BODY' \| 'COMMIT_MESSAGES' \| 'BLANK'` | |
+| `allowMergeCommit` | Allow merge commits | `boolean` | |
+| `allowAutoMerge` | Enable automatic merging | `boolean` | |
+| `requireCodeOwnerReviews` | Require code owner reviews | `boolean` | |
+| `bypassPullRequestAllowances` | Bypass pull request restrictions | `object` | |
+| `requiredApprovingReviewCount` | Number of required reviews for approval | `number` | |
+| `restrictions` | Restrictions on who can push to branches | `object` | |
+| `requiredStatusCheckContexts` | Required status checks before merging | `string[]` | |
+| `requireBranchesToBeUpToDate` | Require branches to be up to date | `boolean` | |
+| `requiredConversationResolution` | Require conversations to be resolved before merging | `boolean` | |
+| `repoVisibility` | Visibility of the repository | `'private' \| 'internal' \| 'public'` | |
+| `collaborators` | List of collaborators for the repository | `Array<object>` | |
+| `hasProjects` | Whether the repository has GitHub Projects enabled | `boolean` | |
+| `hasWiki` | Whether the repository has a Wiki | `boolean` | |
+| `hasIssues` | Whether the repository has Issues enabled | `boolean` | |
+| `token` | Access token for GitHub authentication | `string` | |
+| `topics` | List of topics for the repository | `string[]` | |
+| `repoVariables` | Repository-level environment variables | `object` | |
+| `secrets` | Secrets to store in the repository | `object` | |
+| `oidcCustomization` | OIDC customization settings | `object` | |
+| `requireCommitSigning` | Require commit signing | `boolean` | |
+| `customProperties` | Custom properties for the repository | `object` | |
+
+#### Examples
+```yaml
+steps:
+  - action: 'github:repo:create'
+    name: 'Create a new GitHub repository with a description'
+    input:
+      repoUrl: 'github.com?repo=repo&owner=owner'
+      description: 'My new repository'
+```
+Creates a new GitHub repository with a specified URL and description.
+
+
+#### Outputs
+
+| **Key** | **Description** | **Type** |
+| --- | --- | --- |
+| `remoteUrl` | The remote URL of the newly created GitHub repository | `string` |
+| `repoContentsUrl` | URL to the repository contents | `string` |
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubRepoCreate.ts
 
 ### `github:repo:push`
-[//]: # (TODO:)
-https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubRepoPush.ts
+Action that initializes a git repository in a workspace and pushes it to GitHub, with options to configure branch protection, commit rules, and other repository settings.
+
+#### Inputs
+
+| **Key**                        | **Description**                                                                                | **Type**                    | **Example** |
+|---------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------|-------------|
+| `repoUrl`8                       | Repository URL (GitHub repository in the format: `owner/repo`)                                | `string`                    |             |
+| `requireCodeOwnerReviews`       | Whether to require code owner reviews for pull requests                                       | `boolean`                   |             |
+| `dismissStaleReviews`           | Whether to dismiss stale reviews when new commits are pushed                                  | `boolean`                   |             |
+| `requiredStatusCheckContexts`   | The list of status checks that must pass before a merge                                       | `string[]`                  |             |
+| `bypassPullRequestAllowances`   | Allows bypassing pull request requirements for specified users, teams, or apps                | `object`                    |             |
+| `requiredApprovingReviewCount`  | The number of approving reviews required for pull requests                                    | `number`                    |             |
+| `restrictions`                  | Restricts who can push to the protected branch (users, teams, and apps)                       | `object`                    |             |
+| `requireBranchesToBeUpToDate`   | Whether branches need to be up to date before merging                                         | `boolean`                   |             |
+| `requiredConversationResolution`| Whether to require conversation resolution before merging                                    | `boolean`                   |             |
+| `requireLastPushApproval`       | Whether the last push must be approved before merging                                         | `boolean`                   |             |
+| `defaultBranch`                 | The default branch name for the repository                                                    | `string`                    |             |
+| `protectDefaultBranch`          | Whether to protect the default branch from being force-pushed                                 | `boolean`                   |             |
+| `protectEnforceAdmins`          | Whether to enforce protections for admin users                                                | `boolean`                   |             |
+| `gitCommitMessage`              | The commit message for the initial commit                                                     | `string`                    |             |
+| `gitAuthorName`                 | The name of the author for the git commit                                                     | `string`                    |             |
+| `gitAuthorEmail`                | The email of the author for the git commit                                                    | `string`                    |             |
+| `sourcePath`                    | The path to the content to push to the repository                                             | `string`                    |             |
+| `token`                         | The token for GitHub authentication (if not provided via integration)                        | `string`                    |             |
+| `requiredCommitSigning`         | Whether commit signing is required                                                           | `boolean`                   |             |
+
+
+#### Examples
+
+```yaml
+steps:
+  - action: github:repo:push
+    name: Create test repo with testuser as owner.
+    input:
+      repoUrl: github.com?repo=test&owner=testuser
+```
+This create a test repository with a specified owner.
+#### Outputs
+
+| **Key**              | **Description**                                      | **Type**   |
+|----------------------|------------------------------------------------------|------------|
+| `remoteUrl`          | The clone URL of the repository                      | `string`   |
+| `repoContentsUrl`    | URL to the repository contents (e.g., on the default branch) | `string`   |
+| `commitHash`         | The hash of the commit made                          | `string`   |
+
+#### Links
+[Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubRepoPush.ts)
 
 ### `parse:repo-url:plus`
-[//]: # (TODO:)
-https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/HEAD/exemples.md#parserepo-urlplus
+Action that parses repository URLs and extracts relevant metadata based on a specified schema.
+#### Inputs
+
+| Key        | Description                            | Type    | Example |
+|------------|----------------------------------------|---------|---------|
+| reposUrls  | An array of repository URLs to parse   | `array` |         |
+
+#### Examples
+Parse Repo Url like "host?owner=any&organization=any&workspace=any&project=any"
+```yaml
+steps:
+  - action: parse:repo-url:plus
+    id: parse-repos-url
+    name: Parse Repos URLs
+    input:
+      reposUrls:
+        - host?owner=any&organization=any&workspace=any&project=any
+```
+#### Outputs
+
+| Key          | Description                                  | Type     |
+|--------------|----------------------------------------------|----------|
+| results      | An array of objects containing parsed repo specifications | `array`  |
+| results.repo | The name of the repository                   | `string` |
+| results.host | The host of the repository                   | `string` |
+| results.owner | The owner of the repository                 | `string` |
+| results.organization | The organization associated with the repository | `string` |
+| results.workspace | The workspace associated with the repository | `string` |
+| results.project | The project associated with the repository | `string` |
+
+#### Links
+[code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/parse-repo-url.ts)
 
 ## Gitlab
 
@@ -3937,21 +4790,85 @@ https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus
 
 Initializes a git repository of the content in the workspace, and publishes it to GitLab. See input options [in the application](/docs/scaffolder/writing-templates/#actions)
 
-[//]: # (TODO:)
+#### Inputs
+
+| **Key**                | **Description**                                                                                                                | **Type**        | **Example** |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------|
+| `repoUrl`*              | Accepts the format `'gitlab.com?repo=project_name&owner=group_name'` where 'project_name' is the repository name and 'group_name' is a group or username | `string`        |             |
+| `repoVisibility`        | Sets the visibility of the repository. The default value is `'private'`. (deprecated, use settings.visibility instead)          | `string`        |             |
+| `defaultBranch`         | Sets the default branch on the repository. The default value is `'master'`.                                                    | `string`        |             |
+| `gitCommitMessage`      | Sets the commit message on the repository. The default value is `'initial commit'`.                                             | `string`        |             |
+| `gitAuthorName`         | Sets the default author name for the commit. The default value is `'Scaffolder'`.                                               | `string`        |             |
+| `gitAuthorEmail`        | Sets the default author email for the commit.                                                                                   | `string`        |             |
+| `sourcePath`            | Path within the workspace that will be used as the repository root. If omitted, the entire workspace will be published.         | `string`        |             |
+| `token`                 | The token to use for authorization to GitLab.                                                                                   | `string`        |             |
+| `setUserAsOwner`        | Set the token user as owner of the newly created repository.                                                                    | `boolean`       |             |
+| `topics`                | Topic labels to apply on the repository. (deprecated, use settings.topics instead)                                              | `array<string>` |             |
+| `settings.path`         | Repository name for new project. Generated based on name if not provided (generated as lowercase with dashes).                  | `string`        |             |
+| `settings.auto_devops_enabled` | Enable Auto DevOps for this project.                                                                                    | `boolean`       |             |
+| `settings.ci_config_path`      | Custom CI config path for this project.                                                                                 | `string`        |             |
+| `settings.description`        | Short project description.                                                                                               | `string`        |             |
+| `settings.merge_method`       | Merge Methods (merge, rebase_merge, ff).                                                                                 | `string`        |             |
+| `settings.squash_option`      | Set squash option for the project (never, always, default_on, default_off).                                               | `string`        |             |
+| `settings.topics`             | Topic labels to apply on the repository.                                                                                  | `array<string>` |             |
+| `settings.visibility`         | The visibility of the project. Can be private, internal, or public. The default value is private.                         | `string`        |             |
+| `branches.name`         | Branch name.                                                                                                                   | `string`        |             |
+| `branches.protect`      | Will mark branch as protected. The default value is `'false'`.                                                                 | `boolean`       |             |
+| `branches.create`       | If branch does not exist, it will be created from the provided ref. The default value is `'false'`.                             | `boolean`       |             |
+| `branches.ref`          | Branch reference to create branch from. The default value is `'master'`.                                                        | `string`        |             |
+| `projectVariables.key`  | The key of a variable; must have no more than 255 characters; only A-Z, a-z, 0-9, and _ are allowed.                            | `string`        |             |
+| `projectVariables.value` | The value of a variable.                                                                                                       | `string`        |             |
+| `projectVariables.description` | The description of the variable. The default value is `null`.                                                            | `string`        |             |
+| `projectVariables.variable_type` | The type of a variable. The default value is `'env_var'`.                                                              | `string`        |             |
+| `projectVariables.protected` | Whether the variable is protected. The default value is `'false'`.                                                         | `boolean`       |             |
+| `projectVariables.raw`   | Whether the variable is in raw format. The default value is `'false'`.                                                         | `boolean`       |             |
+| `projectVariables.environment_scope` | The environment scope of the variable. The default value is `' * '`.                                               | `string`        |             |
 
 #### Examples
 ```yaml
-steps:
-  - id: publish
-    action: publish:gitlab
-    name: Publish to GitLab
-    input:
-      repoUrl: gitlab.com?repo=project_name&owner=group_name
+ - id: publish
+      name: Publish
+      action: publish:gitlab
+      input:
+        description: This is ${{ parameters.name }}
+        repoUrl: ${{ parameters.repoUrl }}?owner=${{ steps.createGitlabGroup.output.groupId }}
+        sourcePath: pimcore
+        defaultBranch: main
 ```
 
+#### Outputs
+
+| **Key**          | **Description**                                     | **Type**  |
+|------------------|-----------------------------------------------------|-----------|
+| `remoteUrl`      | A URL to the repository with the provider.           | `string`  |
+| `repoContentsUrl`| A URL to the root of the repository.                 | `string`  |
+| `projectId`      | The ID of the project.                               | `string`  |
+| `commitHash`     | The git commit hash of the initial commit.           | `string`  |
+
+
+#### Links
+https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlab.ts
+
 ### `publish:gitlab:merge-request`
-[//]: # (TODO:)
-Create a merge request in GitLab. See input options [in the application](/docs/scaffolder/writing-templates/#actions)
+Action for creating a GitLab merge request.
+
+
+| **Key**              | **Description**                                                                                                        | **Type**      | **Example** |
+|----------------------|------------------------------------------------------------------------------------------------------------------------|---------------|-------------|
+| `repoUrl`*            | Repository Location in the format `'gitlab.com?repo=project_name&owner=group_name'`                                     | `string`      |             |
+| `projectid`          | Project ID/Name(slug) of the GitLab project (deprecated)                                                               | `string`      |             |
+| `title`              | The name for the merge request                                                                                         | `string`      |             |
+| `description`        | The description of the merge request                                                                                   | `string`      |             |
+| `branchName`*         | Source branch name of the merge request                                                                                 | `string`      |             |
+| `targetBranchName`   | Target branch name of the merge request                                                                                 | `string`      |             |
+| `sourcePath`         | Subdirectory of the working directory to copy changes from                                                              | `string`      |             |
+| `targetPath`         | Subdirectory of the repository to apply changes to                                                                      | `string`      |             |
+| `token`              | Authentication token for authorization to GitLab                                                                        | `string`      |             |
+| `commitAction`       | Action for the git commit: `create`, `update`, `delete`, or `auto` (automatic commit action based on file existence)     | `string`      |             |
+| `removeSourceBranch` | Option to delete the source branch after the merge request is merged (default: `false`)                                  | `boolean`     |             |
+| `assignee`           | User to whom the merge request will be assigned                                                                         | `string`      |             |
+
+#### Inputs
 
 #### Examples
 ```yaml
@@ -3968,149 +4885,1069 @@ steps:
       assignee: my-assignee
 ```
 
+#### Outputs
+| **Key**            | **Description**                                  | **Type**      |
+|--------------------|--------------------------------------------------|---------------|
+| `targetBranchName` | Target branch name of the merge request           | `string`      |
+| `projectid`        | GitLab Project ID/Name(slug)                      | `string`      |
+| `projectPath`      | GitLab Project path                               | `string`      |
+| `mergeRequestUrl`  | URL link to the merge request in GitLab           | `string`      |
+
+#### Links
+https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabMergeRequest.ts
+
 ### `gitlab:repo:push`
-[//]: # (TODO:)
+Action that automates the process of pushing commits to a GitLab repository.
+
+#### Inputs
+| **Key**           | **Description**                                                                                         | **Type**        | **Example** |
+|-------------------|---------------------------------------------------------------------------------------------------------|-----------------|-------------|
+| `repoUrl`*         | The GitLab repository location in the format `'gitlab.com?repo=project_name&owner=group_name'`.          | `string`        |             |
+| `branchName`*      | The name of the branch where the commit will be applied.                                                 | `string`        |             |
+| `commitMessage`*   | The message to use for the commit.                                                                       | `string`        |             |
+| `sourcePath`      | Subdirectory of the working directory to copy changes from.                                              | `string`        |             |
+| `targetPath`      | Subdirectory of the repository to apply changes to.                                                      | `string`        |             |
+| `token`           | The authentication token used for GitLab authorization.                                                  | `string`        |             |
+| `commitAction`    | The action to use for the commit (`create`, `update`, or `delete`). Defaults to `create`.                | `string` (enum) |             |
+
+#### Examples
+```yaml
+steps:
+  - id: pushChanges
+    action: gitlab:repo:push
+    name: Push changes to gitlab repository
+    input:
+      repoUrl: gitlab.com?repo=repo&owner=owner
+      commitMessage: Initial Commit
+      branchName: feature-branch
+      commitAction: update
+```
+
+This YAML defines a step that updates a specific branch in a GitLab repository with an initial commit using the `gitlab:repo:push` action.
+
+#### Outputs
+
+| **Key**         | **Description**                            | **Type**   |
+|-----------------|--------------------------------------------|------------|
+| `projectid`     | The GitLab project ID or name (slug).       | `string`   |
+| `projectPath`   | The GitLab project path.                    | `string`   |
+| `commitHash`    | The commit hash of the latest commit.       | `string`   |
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabRepoPush.ts
 
 ### `gitlab:group:ensureExists`
-[//]: # (TODO:)
+For ensuring that a GitLab group or sub-groups exist, creating them if they do not.
+
+#### Inputs
+| **Key**         | **Description**                                      | **Type**                          | **Example** |
+|-----------------|------------------------------------------------------|-----------------------------------|-------------|
+| `host`          | The GitLab host URL                                  | `string`                          |             |
+| `repoUrl`       | The repository URL to use                            | `string`                          |             |
+| `token`         | The token to authenticate with GitLab                | `string`                          |             |
+| `path`          | A path of group names that are ensured to exist       | `string[]` (array of strings)     |             |
+
+#### Examples
+```yaml
+    - id: createGitlabGroup
+      name: Ensure Gitlab group exists
+      action: gitlab:group:ensureExists
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        path:
+          - path
+          - to
+          - group
+```
+
+#### Outputs
+
+| **Key**   | **Description**                      | **Type**    |
+|-----------|--------------------------------------|-------------|
+| `groupId` | The id of the innermost sub-group    | `number?`   |
+
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabGroupEnsureExists.ts
 
 ### `gitlab:issues:create`
-[//]: # (TODO:)
+Action to create GitLab issues, including the input validation using Zod, GitLab API calls, and error handling.
+
+
+#### Inputs
+| **Key**                                  | **Description**                                           | **Type**                 | **Example** |
+|------------------------------------------|-----------------------------------------------------------|--------------------------|-------------|
+| `projectId`                              | Project ID                                                | `number`                 |             |
+| `title`                                  | Title of the issue                                         | `string`                 |             |
+| `assignees`                              | IDs of the users to assign the issue to                    | `array<number>`           |             |
+| `confidential`                           | Issue confidentiality                                      | `boolean`                |             |
+| `description`                            | Issue description (max 1,048,576 characters)               | `string`                 |             |
+| `createdAt`                              | Creation date/time in format `YYYY-MM-DDTHH:mm:ssZ`        | `string`                 |             |
+| `dueDate`                                | Due date/time in format `YYYY-MM-DDTHH:mm:ssZ`             | `string`                 |             |
+| `discussionToResolve`                    | ID of a discussion to resolve (with merge request option)  | `string`                 |             |
+| `epicId`                                 | ID of the linked Epic                                      | `number`                 |             |
+| `labels`                                 | Labels to apply                                            | `string`                 |             |
+| `issueType`                              | Type of the issue (based on `IssueType` enum)              | `nativeEnum<IssueType>`  |             |
+| `mergeRequestToResolveDiscussionsOf`     | IID of a merge request to resolve all issues               | `number`                 |             |
+| `milestoneId`                            | Global ID of a milestone to assign the issue               | `number`                 |             |
+| `weight`                                 | The issue weight                                           | `number`                 |             |
+
+#### Examples
+```yaml
+- id: gitlabIssue
+      name: Issues
+      action: gitlab:issues:create
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        token: ${{ secrets.USER_OAUTH_TOKEN }}
+        projectId: 1111111
+        title: Test Issue
+        assignees:
+          - 2222222
+        description: This is the description of the issue
+        confidential: true
+        createdAt: 2022-09-27 18:00:00.000
+        dueDate: 2024-09-28 12:00:00.000
+        epicId: 3333333
+        labels: phase1:label1,phase2:label2
+```
+
+#### Outputs
+| **Key**    | **Description**    | **Type**   |
+|------------|--------------------|------------|
+| `issueUrl` | URL of the created issue  | `string`   |
+| `issueId`  | ID of the created issue   | `number`   |
+| `issueIid` | IID of the created issue  | `number`   |
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabIssueCreate.ts
 
 ### `gitlab:issue:edit`
-[//]: # (TODO:)
+This uses schemas to validate the input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels, assignees, and other metadata.
+
+#### Inputs
+
+| **Key**              | **Description**                                                                                                                                   | **Type**                               | **Example** |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|-------------|
+| `repoUrl`            | The URL of the GitLab repository.                                                                                                                 | `string`                               |             |
+| `projectId`          | The global ID or URL-encoded path of the project owned by the authenticated user.                                                                  | `number`                               |             |
+| `issueIid`           | The internal ID of a project's issue.                                                                                                             | `number`                               |             |
+| `addLabels`          | Comma-separated label names to add to an issue. If a label does not already exist, this creates a new project label and assigns it to the issue.    | `string (optional)`                    |             |
+| `assignees`          | IDs of the users to assign the issue to.                                                                                                           | `array<number> (optional)`             |             |
+| `confidential`       | Updates an issue to be confidential.                                                                                                              | `boolean (optional)`                   |             |
+| `description`        | The description of an issue. Limited to 1,048,576 characters.                                                                                      | `string (optional)`                    |             |
+| `discussionLocked`   | Flag indicating if the issue’s discussion is locked. Only project members can add or edit comments when locked.                                    | `boolean (optional)`                   |             |
+| `dueDate`            | The due date in the format YYYY-MM-DD.                                                                                                             | `string (optional)`                    |             |
+| `epicId`             | ID of the epic to add the issue to. Valid values are greater than or equal to 0.                                                                   | `number (optional)`                    |             |
+| `issueType`          | Updates the type of issue (e.g., issue, incident, test_case, or task).                                                                             | `enum (optional)`                      |             |
+| `labels`             | Comma-separated label names for an issue. Set to an empty string to unassign all labels.                                                           | `string (optional)`                    |             |
+| `milestoneId`        | The global ID of a milestone to assign the issue to. Set to 0 or provide an empty value to unassign a milestone.                                   | `number (optional)`                    |             |
+| `removeLabels`       | Comma-separated label names to remove from an issue.                                                                                               | `string (optional)`                    |             |
+| `stateEvent`         | The state event of an issue (e.g., close, reopen).                                                                                                 | `enum (optional)`                      |             |
+| `title`              | The title of an issue.                                                                                                                             | `string (optional)`                    |             |
+| `updatedAt`          | When the issue was updated. Date-time string, ISO 8601 formatted (e.g., YYYY-MM-DDTHH:mm:ssZ or YYYY-MM-DDTHH:mm:ss.SSSZ).                         | `string (optional)`                    |             |
+| `weight`             | The issue weight. Valid values are from 0 to 10.                                                                                                   | `number (optional)`                    |             |
+| `token`              | The token used for GitLab API authentication.                                                                                                      | `string`                               |             |
+
+
+#### Examples
+```yaml
+steps:
+  - id: gitlabIssue
+    name: EditIssues
+    action: gitlab:issue:edit
+    input:
+      # commonGitlabConfigExample
+      projectId: 12
+      title: Test Issue
+      assignees:
+        - 18
+      description: This is the edited description of the issue
+      updatedAt: '2024-05-10T18:00:00.000Z'
+      dueDate: '2024-09-28'
+```
+
+
+#### Outputs
+| **Key**         | **Description**                                        | **Type**    |
+|-----------------|--------------------------------------------------------|-------------|
+| `issueUrl`      | The web URL of the issue.                              | `string`    |
+| `projectId`     | The project ID the issue belongs to.                   | `number`    |
+| `issueId`       | The unique ID of the issue.                            | `number`    |
+| `issueIid`      | The internal ID of a project's issue.                  | `number`    |
+| `state`         | The state event of the issue (e.g., open, closed).     | `string`    |
+| `title`         | The title of the issue.                                | `string`    |
+| `updatedAt`     | The last updated time of the issue (ISO 8601 format).  | `string`    |
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabIssueEdit.ts
 
 ### `gitlab:pipeline:trigger`
-[//]: # (TODO:)
+This automates the creation and triggering of a GitLab pipeline using specific input parameters and outputs the result.
+
+
+#### Inputs
+
+| **Key**               | **Description**                                                                            | **Type**                    | **Example** |
+|-----------------------|--------------------------------------------------------------------------------------------|-----------------------------|-------------|
+| `repoUrl`             | Repository URL containing the project                                                      | `string`                    |             |
+| `projectId`           | Project Id                                                                                 | `number`                    |             |
+| `tokenDescription`    | Pipeline token description                                                                 | `string`                    |             |
+| `token`               | Token used for authenticating with GitLab API                                               | `string`                    |             |
+| `branch`              | Project branch on which the pipeline is triggered                                           | `string`                    |             |
+| `variables`           | A record of key-value pairs containing the pipeline variables (optional)                    | `record<string, string>`    |             |
+
+#### Examples
+```yaml
+steps:
+  - id: 'triggerPipeline'
+    name: 'Trigger Project Pipeline'
+    action: 'gitlab:pipeline:trigger'
+    input:
+      projectId: 12
+      tokenDescription: 'This is the text that will appear in the pipeline token'
+      token: 'glpt-xxxxxxxxxxxx'
+      branch: 'main'
+      variables:
+        var_one: 'one'
+        var_two: 'two'
+      # Include commonGitlabConfigExample if needed
+      # Add any other common properties here
+```
+
+#### Outputs
+| **Key**        | **Description**      | **Type**        |
+|----------------|----------------------|-----------------|
+| `pipelineUrl`  | Pipeline URL         | `string`        |
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabPipelineTrigger.ts
 
 ### `gitlab:projectAccessToken:create`
-[//]: # (TODO:)
+Action that creates a project access token in GitLab.
+
+#### Inputs
+| Key          | Description                                            | Type                       | Example |
+|--------------|--------------------------------------------------------|----------------------------|---------|
+| `projectId`  | Project ID/Name(slug) of the GitLab Project           | `number` or `string`      |         |
+| `token`      | The token to use for authorization to GitLab          | `string`                   |         |
+| `name`       | Name of Access Key                                     | `string`                   |         |
+| `repoUrl`    | URL to GitLab instance                                 | `string`                   |         |
+| `accessLevel`| Access Level of the Token, 10 (Guest), 20 (Reporter), 30 (Developer), 40 (Maintainer), and 50 (Owner) | `number` |         |
+| `scopes`     | Scopes for a project access token                      | `string[]`                |         |
+| `expiresAt`  | Expiration date of the access token in ISO format (YYYY-MM-DD). If Empty, it will set to the maximum of 365 days. | `string` |         |
+
+#### Examples
+```yaml
+ - id: gitlab-access-token
+      name: Gitlab Project Access Token
+      action: gitlab:projectAccessToken:create
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        projectId: "${{ steps['publish-manifest'].output.projectId }}"
+        name: ${{ parameters.name }}-access-token
+        accessLevel: 40
+        scopes: ['read_repository', 'write_repository']
+```
+
+#### Outputs
+
+| Key          | Description               | Type   |
+|--------------|---------------------------|--------|
+| `access_token` | Access Token              | `string` |
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectAccessTokenCreate.ts
 
 ### `gitlab:projectVariable:create`
-[//]: # (TODO:)
+Action for creating project variables in GitLab.
+
+#### Inputs
+
+| Key                        | Description                                                                                        | Type                       | Example |
+|---------------------------|----------------------------------------------------------------------------------------------------|----------------------------|---------|
+| `repoUrl`                 | The URL of the GitLab repository                                                                    | `string`                   |         |
+| `projectId`               | Project ID                                                                                         | `number | string`         |         |
+| `key`                     | The key of a variable; must have no more than 255 characters; only A-Z, a-z, 0-9, and _ are allowed | `string`                   |         |
+| `value`                   | The value of a variable                                                                             | `string`                   |         |
+| `variableType`            | Variable Type (env_var or file)                                                                    | `string`                   |         |
+| `variableProtected`       | Whether the variable is protected                                                                    | `boolean`                  |         |
+| `masked`                  | Whether the variable is masked                                                                       | `boolean`                  |         |
+| `raw`                     | Whether the variable is expandable                                                                   | `boolean`                  |         |
+| `environmentScope`        | The environment_scope of the variable                                                                | `string`                   |         |
+| `token`                   | The token for authentication                                                                        | `string`                   |         |
+
+#### Examples
+```yaml
+- id: gitlab-project-variable
+      name: Gitlab Project Variable
+      action: gitlab:projectVariable:create
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        projectId: "${{ steps['publish'].output.projectId }}"
+        key: 'VARIABLE_NAME'
+        value: "${{ steps['gitlab-access-token'].output.access_token }}"
+        variableType: 'env_var'
+        masked: true
+        variableProtected: false
+        raw: false
+        environmentScope: '*'
+```
+
+#### Outputs
+None
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectVariableCreate.ts
 
 ### `gitlab:projectDeployToken:create`
-[//]: # (TODO:)
+Action that creates a GitLab project deploy token.
+
+#### Inputs
+
+| Key         | Description                   | Type                       | Example |
+|-------------|-------------------------------|----------------------------|---------|
+| projectId  | Project ID                    | `number` or `string`      |         |
+| name       | Deploy Token Name             | `string`                   |         |
+| username   | Deploy Token Username          | `string` (optional)        |         |
+| scopes     | Scopes                        | `array of string` (optional)|         |
+
+#### Examples
+```yaml
+   - id: gitlab-deploy-token
+      name: Create Deploy Token
+      action: gitlab:projectDeployToken:create
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        projectId: "${{ steps['publish'].output.projectId }}"
+        name: ${{ parameters.name }}-secret
+        username: ${{ parameters.name }}-secret
+        scopes: ['read_registry']
+```
+
+#### Outputs
+
+| Key          | Description                     | Type                      |
+|--------------|---------------------------------|---------------------------|
+| deploy_token | Deploy Token                    | `string`                  |
+| user         | User                            | `string`                  |
+
+
+
+#### Links
 https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectDeployTokenCreate.ts
 
 ## Humanitec
 
 ### `humanitec:create-app`
-[//]: # (TODO:)
+Action for creating applications in Humanitec, using a YAML setup file to define application properties.
+
+#### Inputs
+
+| Key        | Description                     | Type                           | Example |
+|------------|---------------------------------|--------------------------------|--------|
+| appId*      | The unique identifier for the application | `string`                       |        |
+| setupFile  | The path to the YAML file containing app setup information | `string`                       |        |
+
+#### Examples
+
+
+#### Outputs
+None
+
+#### Links
 https://www.npmjs.com/package/@humanitec/backstage-plugin-scaffolder-backend-module
+https://github.com/humanitec/humanitec-backstage-plugins/blob/main/plugins/humanitec-backend-scaffolder-module/src/actions/create-app.ts
 
 ## Microsoft Teams
 
 ### `ms-teams:sendMessage`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@grvpandey11/backstage-plugin-scaffolder-backend-module-ms-teams
+Action that sends messages to a Microsoft Teams channel using a specified webhook URL.
+
+#### Inputs
+
+| Key           | Description                                                                                  | Type   | Example |
+|---------------|----------------------------------------------------------------------------------------------|--------|---------|
+| `message`     | The message to send via webhook                                                              | string |         |
+| `webhookUrl`  | The Microsoft Teams webhook URL to send the request to. The URL must either be specified here or in the Backstage config | string |         |
+
+#### Examples
+```yaml
+ steps:
+    - id: send-ms-teams-message
+      name: Send message
+      action: ms-teams:sendMessage
+      input:
+        message: "Hello, world!"
+        webhookUrl: "https://your-url.com" # optional if the URL is supplied in the app-config.yaml
+```
+
+#### Outputs
+None
+
+#### Links
+[@grvpandey11/backstage-plugin-scaffolder-backend-module-ms-teams](https://www.npmjs.com/package/@grvpandey11/backstage-plugin-scaffolder-backend-module-ms-teams)
 
 ## NPM
 
 ### `npm:init`
-[//]: # (TODO:)
-https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions
+Action that automates running the `npm init -y` command in a specified workspace directory.
+
+#### Inputs
+
+| **Key**               | **Description**                                                | **Type**         | **Example** |
+|-----------------------|----------------------------------------------------------------|------------------|-------------|
+| `ctx.workspacePath`    | The path of the workspace directory where `npm init` will be run | `string`         |             |
+| `ctx.logStream`        | The stream used to log the execution of the shell command       | `Stream`         |             |
+| `ctx.logger.info`      | Method for logging informational messages                      | `function`       |             |
+| `ctx.logger.error`     | Method for logging error messages                              | `function`       |             |
+
+#### Examples
+```yaml
+steps:
+    - id: npm-init
+      name: init
+      action: npm:init
+```
+
+#### Outputs
+
+| **Key**          | **Description**                        | **Type**   |
+|------------------|----------------------------------------|------------|
+| `npm:init`       | Action ID for identifying this template action | `string`   |
+| `npm`            | Command for running `npm init` retrieved via `getNpmCommand` | `string`   |
+| `executeShellCommand` | Function executing the npm command in the shell | `function` |
+
+
+#### Links
+[code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/init/init.ts)
 
 ### `npm:install`
-[//]: # (TODO:)
-https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions
+Action for a Backstage Scaffolder plugin that installs an npm package quietly based on the provided package name.
+
+#### Inputs
+
+| **Key**               | **Description**               | **Type**     | **Example** |
+|-----------------------|-------------------------------|--------------|-------------|
+| `packageToInstall`*     | Name of the package to install | `string`     |             |
+
+#### Examples
+```yaml
+   - id: npm-install
+      name: install
+      action: npm:install
+      input:
+        packageToInstall: ${{ parameters.packageToInstall }}
+```
+
+#### Outputs
+None
+
+#### Links
+[Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/install/install.ts)
 
 ### `npm:exec`
-[//]: # (TODO:)
-https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions
+Action for executing `npm exec` commands in a task workspace directory, using specific arguments provided in the input.
+
+### Inputs Table:
+
+| Key         | Description                                      | Type        | Example |
+|-------------|--------------------------------------------------|-------------|---------|
+| `arguments` | The arguments to pass to the npm exec command     | `array`     |         |
+| `arguments.items` | The individual string arguments in the array | `string`    |         |
+
+
+#### Examples
+```yaml
+ - id: npm-exec
+      name: exec
+      action: npm:exec
+      input:
+        args: ${{ parameters.execArgs }}
+```
+
+#### Outputs
+None
+
+#### Links
+[Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/exec/exec.ts)
 
 ### `npm:config`
-[//]: # (TODO:)
-https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions
+For the Backstage scaffolder plugin that runs an `npm config` command with specified arguments in a task's workspace directory.
+
+#### Inputs
+
+| **Key**       | **Description**                                      | **Type**           | **Example** |
+|---------------|------------------------------------------------------|--------------------|-------------|
+| `arguments`*   | The arguments to pass to the npm config command       | `array of strings` |             |
+
+#### Examples
+```yaml
+ - id: npm-config
+      name: config
+      action: npm:config
+      input:
+        args: ${{ parameters.execArgs }}
+```
+
+#### Outputs
+None
+
+#### Links
+[code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/config/config.ts)
 
 ## Odo
 
 ### `devfile:odo:command`
-[//]: # (TODO:)
+Action for executing OpenShift Do (odo) commands in a workspace.
+
+#### Inputs
+
+| **Key**            | **Description**                                             | **Type**    | **Example** |
+|--------------------|-------------------------------------------------------------|-------------|-------------|
+| `command`*          | The odo command to run from the scaffolder workspace         | `string`    |             |
+| `args`             | Arguments to pass to the command                            | `array`     |             |
+
+
+#### Examples
+```yaml
+  steps:
+    - id: generic-odo-command
+      name: Execute odo command
+      action: devfile:odo:command
+      input:
+        command: ${{ parameters.command }} # e.g.: 'analyze'
+        args: ${{ parameters.args }} # e.g.: ['-o', 'json']
+```
+
+#### Outputs
+| **Key**              | **Description**                                   | **Type**    |
+|----------------------|---------------------------------------------------|-------------|
+| `GLOBALODOCONFIG`     | Path to the temporary odo config file             | `string`    |
+| `ODO_TRACKING_CONSENT`| Telemetry tracking consent setting for odo        | `string`    |
+| `TELEMETRY_CALLER`    | Caller context for telemetry (set to `backstage`) | `string`    |
+
+#### Links
 https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo
+https://github.com/backstage/community-plugins/blob/main/workspaces/odo/plugins/scaffolder-backend-module-odo/src/actions/odo.ts
 
 ### `devfile:odo:component:init`
-[//]: # (TODO:)
+Action to initialize an ODO (OpenShift Do) component using a Devfile within a Backstage scaffolder template.
+
+### Inputs
+
+#### Inputs
+| **Key**            | **Description**                     | **Type**      | **Example** |
+|--------------------|-------------------------------------|---------------|-------------|
+| `devfile`*          | The Devfile to use                  | `string`      |             |
+| `version`*          | The Devfile Stack version           | `string`      |             |
+| `starter_project`  | The starter project                 | `string`      |             |
+| `name`*             | The new component name              | `string`      |             |
+
+
+#### Examples
+```yaml
+steps:
+    - id: odo-init
+      name: Generate
+      action: devfile:odo:component:init
+      input:
+        name: ${{ parameters.name }}
+        devfile: ${{ parameters.devfile_data.devfile }}
+        version: ${{ parameters.devfile_data.version }}
+        starter_project: ${{ parameters.devfile_data.starter_project }}
+```
+
+#### Outputs
+None
+
+#### Links
 https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo
+https://github.com/backstage/community-plugins/blob/main/workspaces/odo/plugins/scaffolder-backend-module-odo/src/actions/odo-init.ts
 
 ## Pagerduty
 
 ### `pagerduty:service:create`
-[//]: # (TODO:)
+Action for the Backstage scaffolder plugin that allows users to create a PagerDuty service.
+
+#### Inputs
+
+| **Key**               | **Description**                                | **Type**      | **Example** |
+|-----------------------|------------------------------------------------|---------------|-------------|
+| `name`*                | Name of the service                            | `string`      |             |
+| `description`*         | Description of the service                     | `string`      |             |
+| `escalationPolicyId`*   | Escalation policy ID for the service           | `string`      |             |
+| `alertGrouping`        | Alert grouping parameters (optional)           | `string`      |             |
+
+#### Examples
+
+#### Outputs
+| **Key**               | **Description**                                | **Type**     |
+|-----------------------|------------------------------------------------|--------------|
+| `serviceUrl`          | PagerDuty Service URL                          | `string`     |
+| `serviceId`           | PagerDuty Service ID                           | `string`     |
+| `integrationKey`      | Backstage Integration Key                      | `string`     |
+
+#### Links
 https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/blob/main/src/actions/custom.ts
-https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions
+[@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)
 
 ## Quay
 
 ### quay:create-repository
-[//]: # (TODO:)
-https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-quay
+Action for creating a repository in Quay.io.
+#### Input
+
+| Parameter Name |  Type  | Required | Description                                                                       | Example                                  |
+| -------------- | :----: | :------: | --------------------------------------------------------------------------------- | ---------------------------------------- |
+| name           | string |   Yes    | Quay repository name                                                              | foo                                      |
+| visibility     | string |   Yes    | Visibility setting for the created repository, either public or private           | public                                   |
+| description    | string |   Yes    | Description for the created repository                                            | This if foo repository                   |
+| token          | string |   Yes    | Authentication token, see [docs](https://docs.quay.io/api/)                       | UW1dLVdCTj8uZWNuIW97K1k0XiBkSmppVU9MYzFT |
+| baseUrl        | string |    No    | Base url of a quay instance, defaults to <https://quay.io>                        | <https://foo.quay.io>                    |
+| namespace      | string |    No    | Namespace to create repository in, defaults to the namespace the token belongs to | bar                                      |
+| repoKind       | string |    No    | Created repository kind, either image or application, if empty defaults to image  | image                                    |
+
+
+#### Examples
+```yaml
+action: quay:create-repository
+id: create-quay-repo
+name: Create quay repo
+input:
+  baseUrl: https://quay.io
+  token: UW1dLVdCTj8uZWNuIW97K1k0XiBkSmppVU9MYzFT
+  name: foo
+  visibility: public
+  description: This is a foo repository
+  namespace: bar
+  repoKind: image
+```
+
+#### Output
+
+| Name          |  Type  | Description                                |
+| ------------- | :----: | ------------------------------------------ |
+| repositoryUrl | string | Quay repository URL created by this action |
+
+#### Links
+[@janus-idp/backstage-scaffolder-backend-module-quay](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-quay)
+https://github.com/janus-idp/backstage-plugins/tree/main/plugins/quay-actions
 
 ## Sonarqube
 
 ### `sonarqube:create-project`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-sonarqube
+Action for creating a project in SonarQube via the Backstage Scaffolder plugin.
+#### Inputs
+
+| **Key**      | **Description**                                                                                   | **Type**     | **Example**                  |
+|--------------|---------------------------------------------------------------------------------------------------|--------------|------------------------------|
+| `baseUrl`*    | SonarQube server base URL. Example: `"https://sonar-server.com"`                                    | `string`     |                              |
+| `name`*       | Name of the project to be created in SonarQube. Example: `"My Project"`                            | `string`     |                              |
+| `key`*        | Key of the project to identify the project in SonarQube. Example: `"my-project"`                   | `string`     |                              |
+| `branch`     | Name of the main branch of the project. If not provided, the default main branch will be used      | `string`     |                              |
+| `visibility` | Whether the project should be visible to everyone or specific groups. Values: `"public"`, `"private"` | `string`     |                              |
+| `token`      | SonarQube authentication token. Use instead of username and password                               | `string`     |                              |
+| `username`   | SonarQube username. Required if no token is provided                                                | `string`     |                              |
+| `password`   | SonarQube password. Required if no token is provided                                                | `string`     |                              |
+
+#### Examples
+```yaml
+  steps:
+    - id: create-sonar-project
+      name: Create SonarQube project
+      action: sonarqube:create-project
+      input:
+        baseUrl: ${{ parameters.baseUrl }}
+        token: ${{ parameters.authParams.token }}
+        username: ${{ parameters.authParams.username }}
+        password: ${{ parameters.authParams.password }}
+        name: ${{ parameters.name }}
+        key: ${{ parameters.key }}
+        branch: ${{ parameters.branch }}
+        visibility: ${{ parameters.visibility }}
+```
+
+#### Outputs
+| **Key**        | **Description**                     | **Type**     |
+|----------------|-------------------------------------|--------------|
+| `projectUrl`   | SonarQube project URL created by this action | `string`     |
+
+#### Links
+[@janus-idp/backstage-scaffolder-backend-module-sonarqube](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-sonarqube)
+https://github.com/janus-idp/backstage-plugins/blob/main/plugins/sonarqube-actions/src/actions/createSonarQubeProject.ts
 
 ## ServiceNow
 
 ### `servicenow:now:table:createRecord`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow
+Action for Backstage's Scaffolder, allowing users to insert a record into a specified ServiceNow.
+#### Input
+
+| Parameter Name                |              Type              | Required | Description                                                                                |
+| ----------------------------- | :----------------------------: | :------: | ------------------------------------------------------------------------------------------ |
+| `tableName`                   |            `string`            |   Yes    | Name of the table in which to save the record                                              |
+| `requestBody`                 | `Record<PropertyKey, unknown>` |    No    | Field name and the associated value for each parameter to define in the specified record   |
+| `sysparmDisplayValue`         | `enum("true", "false", "all")` |    No    | Return field display values (true), actual values (false), or both (all) (default: false)  |
+| `sysparmExcludeReferenceLink` |           `boolean`            |    No    | True to exclude Table API links for reference fields (default: false)                      |
+| `sysparmFields`               |           `string[]`           |    No    | An array of fields to return in the response                                               |
+| `sysparmInputDisplayValue`    |           `boolean`            |    No    | Set field values using their display value (true) or actual value (false) (default: false) |
+| `sysparmSuppressAutoSysField` |           `boolean`            |    No    | True to suppress auto generation of system fields (default: false)                         |
+| `sysparmView`                 |            `string`            |    No    | Render the response according to the specified UI view (overridden by sysparm_fields)      |
+
+#### Output
+
+| Name     |              Type              | Description                      |
+| -------- | :----------------------------: | -------------------------------- |
+| `result` | `Record<PropertyKey, unknown>` | The response body of the request |
+#### Links
+[@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
+https://github.com/janus-idp/backstage-plugins/blob/main/plugins/servicenow-actions/src/actions/servicenow/now/table/create-record.ts
+
 ### `servicenow:now:table:deleteRecord`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow
+Action for deleting a record from a ServiceNow table.
+#### Inputs
+| Parameter Name         |   Type    | Required | Description                                                       |
+| ---------------------- | :-------: | :------: | ----------------------------------------------------------------- |
+| `tableName`            | `string`  |   Yes    | Name of the table in which to delete the record                   |
+| `sysId`                | `string`  |   Yes    | Unique identifier of the record to delete                         |
+| `sysparmQueryNoDomain` | `boolean` |    No    | True to access data across domains if authorized (default: false) |
+
+#### Examples
+
+#### Outputs
+None
+
+#### Links
+[@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
+https://github.com/janus-idp/backstage-plugins/blob/main/plugins/servicenow-actions/src/actions/servicenow/now/table/delete-record.ts
+
+
 ### `servicenow:now:table:modifyRecord`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow
+Action handler that modifies a record in a ServiceNow table.
+#### Input
+
+| Parameter Name                |              Type              | Required | Description                                                                                |
+| ----------------------------- | :----------------------------: | :------: | ------------------------------------------------------------------------------------------ |
+| `tableName`                   |            `string`            |   Yes    | Name of the table in which to modify the record                                            |
+| `sysId`                       |            `string`            |   Yes    | Unique identifier of the record to modify                                                  |
+| `requestBody`                 | `Record<PropertyKey, unknown>` |    No    | Field name and the associated value for each parameter to define in the specified record   |
+| `sysparmDisplayValue`         | `enum("true", "false", "all")` |    No    | Return field display values (true), actual values (false), or both (all) (default: false)  |
+| `sysparmExcludeReferenceLink` |           `boolean`            |    No    | True to exclude Table API links for reference fields (default: false)                      |
+| `sysparmFields`               |           `string[]`           |    No    | An array of fields to return in the response                                               |
+| `sysparmInputDisplayValue`    |           `boolean`            |    No    | Set field values using their display value (true) or actual value (false) (default: false) |
+| `sysparmSuppressAutoSysField` |           `boolean`            |    No    | True to suppress auto generation of system fields (default: false)                         |
+| `sysparmView`                 |            `string`            |    No    | Render the response according to the specified UI view (overridden by sysparm_fields)      |
+| `sysparmQueryNoDomain`        |           `boolean`            |    No    | True to access data across domains if authorized (default: false)                          |
+
+#### Output
+
+| Name     |              Type              | Description                      |
+| -------- | :----------------------------: | -------------------------------- |
+| `result` | `Record<PropertyKey, unknown>` | The response body of the request |
+
+#### Links
+[@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
+https://github.com/janus-idp/backstage-plugins/blob/main/plugins/servicenow-actions/src/actions/servicenow/now/table/modify-record.ts
+
 ### `servicenow:now:table:retrieveRecord`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow
+Action handler that retrieves a record in a ServiceNow table.
+#### Input
+
+| Parameter Name                |              Type              | Required | Description                                                                               |
+| ----------------------------- | :----------------------------: | :------: | ----------------------------------------------------------------------------------------- |
+| `tableName`                   |            `string`            |   Yes    | Name of the table from which to retrieve the record                                       |
+| `sysId`                       |            `string`            |   Yes    | Unique identifier of the record to retrieve                                               |
+| `sysparmDisplayValue`         | `enum("true", "false", "all")` |    No    | Return field display values (true), actual values (false), or both (all) (default: false) |
+| `sysparmExcludeReferenceLink` |           `boolean`            |    No    | True to exclude Table API links for reference fields (default: false)                     |
+| `sysparmFields`               |           `string[]`           |    No    | An array of fields to return in the response                                              |
+| `sysparmView`                 |            `string`            |    No    | Render the response according to the specified UI view (overridden by sysparm_fields)     |
+| `sysparmQueryNoDomain`        |           `boolean`            |    No    | True to access data across domains if authorized (default: false)                         |
+
+#### Output
+
+| Name     |              Type              | Description                      |
+| -------- | :----------------------------: | -------------------------------- |
+| `result` | `Record<PropertyKey, unknown>` | The response body of the request |
+
+
+#### Links
+[@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
+
 ### `servicenow:now:table:retrieveRecords`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow
+Action handler that retrieves records in a ServiceNow table.
+
+#### Inputs
+
+| Parameter Name                    |              Type              | Required | Description                                                                               |
+| --------------------------------- | :----------------------------: | :------: | ----------------------------------------------------------------------------------------- |
+| `tableName`                       |            `string`            |   Yes    | Name of the table from which to retrieve the records                                      |
+| `sysparmQuery`                    |            `string`            |    No    | An encoded query string used to filter the results                                        |
+| `sysparmDisplayValue`             | `enum("true", "false", "all")` |    No    | Return field display values (true), actual values (false), or both (all) (default: false) |
+| `sysparmExcludeReferenceLink`     |           `boolean`            |    No    | True to exclude Table API links for reference fields (default: false)                     |
+| `sysparmSuppressPaginationHeader` |           `boolean`            |    No    | True to suppress pagination header (default: false)                                       |
+| `sysparmFields`                   |           `string[]`           |    No    | An array of fields to return in the response                                              |
+| `sysparmLimit`                    |             `int`              |    No    | The maximum number of results returned per page (default: 10,000)                         |
+| `sysparmView`                     |            `string`            |    No    | Render the response according to the specified UI view (overridden by sysparm_fields)     |
+| `sysparmQueryCategory`            |            `string`            |    No    | Name of the query category (read replica category) to use for queries                     |
+| `sysparmQueryNoDomain`            |           `boolean`            |    No    | True to access data across domains if authorized (default: false)                         |
+| `sysparmNoCount`                  |           `boolean`            |    No    | Do not execute a select count(\*) on table (default: false)                               |
+
+#### Examples
+
+#### Outputs
+| Name     |              Type              | Description                      |
+| -------- | :----------------------------: | -------------------------------- |
+| `result` | `Record<PropertyKey, unknown>` | The response body of the request |
+
+#### Links
+[@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
+
 ### `servicenow:now:table:updateRecord`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow
+Action handler that updates a record in a ServiceNow table.
+
+#### Inputs
+| Parameter Name                |              Type              | Required | Description                                                                                |
+| ----------------------------- | :----------------------------: | :------: | ------------------------------------------------------------------------------------------ |
+| `tableName`                   |            `string`            |   Yes    | Name of the table in which to update the record                                            |
+| `sysId`                       |            `string`            |   Yes    | Unique identifier of the record to update                                                  |
+| `requestBody`                 | `Record<PropertyKey, unknown>` |    No    | Field name and the associated value for each parameter to define in the specified record   |
+| `sysparmDisplayValue`         | `enum("true", "false", "all")` |    No    | Return field display values (true), actual values (false), or both (all) (default: false)  |
+| `sysparmExcludeReferenceLink` |           `boolean`            |    No    | True to exclude Table API links for reference fields (default: false)                      |
+| `sysparmFields`               |           `string[]`           |    No    | An array of fields to return in the response                                               |
+| `sysparmInputDisplayValue`    |           `boolean`            |    No    | Set field values using their display value (true) or actual value (false) (default: false) |
+| `sysparmSuppressAutoSysField` |           `boolean`            |    No    | True to suppress auto generation of system fields (default: false)                         |
+| `sysparmView`                 |            `string`            |    No    | Render the response according to the specified UI view (overridden by sysparm_fields)      |
+| `sysparmQueryNoDomain`        |           `boolean`            |    No    | True to access data across domains if authorized (default: false)                          |
+
+#### Examples
+
+#### Outputs
+| Name     |              Type              | Description                      |
+| -------- | :----------------------------: | -------------------------------- |
+| `result` | `Record<PropertyKey, unknown>` | The response body of the request |
+
+#### Links
+[@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
 
 ## Slack
 
 ### `slack:sendMessage:conversation`
-[//]: # (TODO:)
-https://github.com/arhill05/backstage-plugin-scaffolder-backend-module-slack/blob/main/src/actions/slack/send-slack-message-via-slack-api.ts
+Action for sending Slack messages to a specific conversation using the Slack API.
+
+#### Inputs
+| **Key**               | **Description**                                                                                   | **Type**    | **Example** |
+|-----------------------|---------------------------------------------------------------------------------------------------|-------------|-------------|
+| `message`*             | The message to send via webhook.                                                                  | `string`    |             |
+| `conversationId`       | The ID of the conversation to send the message to. If both conversation ID and name are specified, the ID will be used. | `string`    |             |
+| `conversationName`     | The name of the conversation to send the message to. Used only if the conversation ID is not specified. | `string`    |             |
+| `token`               | The token to authenticate with the Slack API. This can be specified in the app config or the input. | `string`    |             |
+
+#### Examples
+```yaml
+- id: send-slack-message
+      name: Send slack message via Slack API
+      action: slack:sendMessage:conversation
+      input:
+        message: "Hello, world!"
+        conversationId: "abc123" # optional if the conversationId is supplied in the app-config.yaml, or the conversationName is supplied at all
+        conversationName: "general" # optional if the conversationName is supplied in the app-config.yaml, or the conversationId is supplied at all
+```
+
+#### Outputs
+
+| **Key**       | **Description**                                                                     | **Type**       |
+|---------------|-------------------------------------------------------------------------------------|----------------|
+| `conversationIdToUse` | The ID of the conversation that the message is being sent to.                  | `string`       |
+| `result`      | The result object containing the response from Slack's `postMessage` API.             | `ChatPostMessageResponse` |
+
+#### Links
+[Code](https://github.com/arhill05/backstage-plugin-scaffolder-backend-module-slack/blob/main/src/actions/slack/send-slack-message-via-slack-api.ts)
+[@mdude2314/backstage-plugin-scaffolder-backend-module-slack](https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-backend-module-slack)
 
 ### `slack:sendMessage:webhook`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-backend-module-slack
+Action that sends a message to Slack via a webhook URL.
+
+#### Inputs
+| **Key**        | **Description**                                                                    | **Type**   | **Example** |
+|----------------|------------------------------------------------------------------------------------|------------|-------------|
+| `message`*      | The message to send via the webhook                                                | `string`   |             |
+| `webhookUrl`   | The webhook URL to send the request to. Can be passed as input or from the config.  | `string`   |             |
+
+#### Examples
+```yaml
+ steps:
+    # this step is an example of using the webhook action
+    - id: send-slack-message
+      name: Send slack message via Slack webhook
+      action: slack:sendMessage:webhook
+      input:
+        message: "Hello, world!"
+        webhookUrl: "https://example.com" # optional if the URL is supplied in the app-config.yaml
+```
+
+#### Outputs
+None
+
+#### Links
+[@mdude2314/backstage-plugin-scaffolder-backend-module-slack](https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-backend-module-slack)
 
 ## Sentry
 
 ### `sentry:create-project`
-[//]: # (TODO:)
+Action to create a new project in Sentry.
+
+#### Inputs
+
+| Key                  | Description                                                                           | Type   | Example |
+|----------------------|---------------------------------------------------------------------------------------|--------|---------|
+| `organizationSlug`*   | The slug of the organization the team belongs to                                      | string |         |
+| `teamSlug`*           | The slug of the team to create a new project for                                     | string |         |
+| `name`*               | The name for the new project                                                          | string |         |
+| `slug`               | Optional slug for the new project. If not provided, a slug is generated from the name | string |         |
+| `authToken`          | Authenticate via bearer auth token. Requires scope: project:write                    | string |         |
+
+
+#### Examples
+
+```yaml
+steps:
+  - id: create-sentry-project
+    action: sentry:project:create
+    name: Create a Sentry project with provided project slug.
+    input:
+      organizationSlug: my-org
+      teamSlug: team-a
+      name: Scaffolded project A
+      slug: scaff-proj-a
+      authToken: a14711beb516e1e910d2ede554dc1bf725654ef3c75e5a9106de9aec13d5df96
+```
+
+This YAML configuration outlines a step for creating a Sentry project.
+#### Outputs
+
+| Key  | Description                               | Type   |
+|------|-------------------------------------------|--------|
+| `id` | The ID of the created project in Sentry  | string |
+| `result` | The result object returned from Sentry  | object |
+
+#### Links
 https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-sentry
-https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-sentry/src/actions/createProject.ts
+[Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-sentry/src/actions/createProject.ts)
 
 ## Torque
-
 ### `torque:create-app`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@qtorque/backstage-plugin-torque-backend
+Action for managing applications in Torque.
+
+#### Inputs
+| Key                | Description                                                 | Type               | Example |
+|--------------------|-------------------------------------------------------------|--------------------|---------|
+| `serviceName`*      | The name of the service that will be created in Torque      | `string`           |         |
+| `assetRepo`*        | The asset repo that will be connected to Torque             | `string`           |         |
+| `blueprintRepo`*    | The blueprints repo that will be connected to Torque        | `string`           |         |
+| `namespace`*        | The namespace of the environment runner                     | `string`           |         |
+| `blueprintName`*    | The name of a blueprint that will be a source for sandbox environment | `string`           |         |
+| `serviceAccount`    | A service account to be used for connecting to the execution host | `string`           |         |
+| `repoType`         | The type of repository (e.g., GitHub or Bitbucket)         | `string`           |         |
+
+#### Examples
+```yaml
+  - name: Deploy with Torque
+      id: torque-app-id
+      action: torque:create-app
+      input:
+        serviceName: ${{ parameters.componentName }} # The name of service that will be created in Torque. 
+        # Will be used as space, assets repo, blueprint repo and grain names
+        assetRepo: ${{ steps.publish.output.remoteUrl }} # The asset repo that will be connected to Torque
+        blueprintRepo: ${{ steps.publish.output.remoteUrl }} # The blueprints repo that will be connected to Torque
+        serviceAccount: 'default' # A k8s service account to assign to agent
+        namespace: default # A k8s namespace to assign to agent
+        blueprintName: ${{ parameters.componentName }} # The name of a blueprint you that will be a source for sandbox environment
+```
+
+#### Outputs
+
+| Key               | Description                                                  | Type               |
+|-------------------|--------------------------------------------------------------|--------------------|
+| `success`         | Indicates whether the operation was successful               | `boolean`          |
+| `error`           | Contains error details if the operation failed               | `string | null`    |
+| `environmentId`   | The ID of the created sandbox environment                    | `string`           |
+| `spaceName`       | The name of the created space                                 | `string`           | 
+
+#### Links
+[@qtorque/backstage-plugin-torque-backend](https://www.npmjs.com/package/@qtorque/backstage-plugin-torque-backend)
+https://github.com/QualiTorque/torque-backstage-plugin/blob/main/packages/torque-backend/src/actions/create-app.ts
 
 ## Webex
 
 ### `webex:webhooks:sendMessage`
-[//]: # (TODO:)
-https://www.npmjs.com/package/@coderrob/backstage-plugin-scaffolder-backend-module-webex
+Action that sends messages to Webex Incoming Webhooks.
+
+#### Inputs
+| Key       | Description                                     | Type                               | Example |
+|-----------|-------------------------------------------------|------------------------------------|---------|
+| format    | The message content format                       | `enum` ('text', 'markdown')       |         |
+| message*   | The message to send via webhook(s)              | `string`                           |         |
+| webhooks*  | The Webex Incoming Webhooks to send a message to| `string[]` (non-empty array)      |         |
+
+#### Examples
+Once the action is registered, you can use it in your scaffolder templates to send messages via Webex Incoming Webhooks.
+
+Here's an example template:
+```yaml
+spec:
+  . . .
+  steps:
+    - id: send-webex-message
+      name: Send Webex Message
+      action: webex:webhooks:sendMessage
+      input:
+        format: "markdown"
+        message: "# This Could Be Us"
+        webhooks:
+          - "https://webexapis.com/v1/webhooks/incoming/<SPACE_ID>"
+          - "https://webexapis.com/v1/webhooks/incoming/<SPACE_ID>" # optional ability to message multiple spaces
+```
+#### Outputs
+| Key            | Description                             | Type              |
+|----------------|-----------------------------------------|-------------------|
+| failedMessages  | List of messages that failed to send   | `string[]`        |
+
+#### Links
+[@coderrob/backstage-plugin-scaffolder-backend-module-webex](https://www.npmjs.com/package/@coderrob/backstage-plugin-scaffolder-backend-module-webex)
+https://github.com/Coderrob/backstage-plugin-scaffolder-backend-module-webex/blob/main/src/actions/sendWebhooksMessageAction.ts
 
 ## Yeoman
 
 ### `run:yeoman`
-[//]: # (TODO:)
+Action that runs a Yeoman generator.
+
+#### Inputs
+| Key       | Description                                            | Type        | Example |
+|-----------|--------------------------------------------------------|-------------|--------|
+| `namespace`* | Yeoman generator namespace, e.g: node:app           | `string`    |        |
+| `args`    | Arguments to pass on to Yeoman for templating         | `array`     |        |
+| `options` | Options to pass on to Yeoman for templating           | `object`    |        |
+
+#### Examples
+
+```yaml
+steps:
+  - id: 'run:yeoman'
+    action: 'run:yeoman'
+    name: 'Running a yeoman generator'
+    input:
+      namespace: 'node:app'
+      options:
+        option1: 'value1'
+        option2: 'value2'
+```
+
+This example defines a step in a process that involves running a Yeoman generator.
+The input to this action includes the `namespace` set to `'node:app'`, indicating which Yeoman generator to use.
+
+#### Outputs
+None
+
+#### Links
 https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-yeoman
+
