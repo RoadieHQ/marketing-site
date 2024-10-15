@@ -16,58 +16,58 @@ NB:
 - A subset of available actions in Roadie can be found at the following page inside the Roadie app: `https://<tenant-name>.roadie.so/templates/actions`
 
 ## Generic Tools
-| Category             | Name                                                                         | Description                                                                                                                                                               |
-|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Downloading Content  | [fetch:plain](#fetchplain)                                                   | Downloads directory content and places it in the workspace.                                                                                                               |
-| Downloading Content  | [fetch:plain:plus](#fetchplainplus)                                          | Downloads directory content and places it in the workspace for multiple urls.                                                                                             |
-| Downloading Content  | [fetch:template](#fetchtemplate)                                             | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes result to the workspace.           |
-| Downloading Content  | [fetch:template:plus](#fetchtemplateplus)                                    | Downloads multiple directories containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes results to the workspace. |
-| Downloading Content  | [fetch:plain:file](#fetchplainfile)                                          | Downloads single file and places it in the workspace.                                                                                                                     |
-| Downloading Content  | [fetch:plain:file:plus](#fetchplainfileplus)                                 | Downloads files and places them in the workspace for multiple urls.                                                                                                       |
+| Category             | Name                                                                         | Description                                                                                                                                                               | Ready to use in Roadie |
+|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
+| Downloading Content  | [fetch:plain](#fetchplain)                                                   | Downloads directory content and places it in the workspace.                                                                                                               |  ✅️                     |
+| Downloading Content  | [fetch:plain:plus](#fetchplainplus)                                          | Downloads directory content and places it in the workspace for multiple urls.                                                                                             |                        |
+| Downloading Content  | [fetch:template](#fetchtemplate)                                             | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes result to the workspace.           |   ✅️                       |
+| Downloading Content  | [fetch:template:plus](#fetchtemplateplus)                                    | Downloads multiple directories containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes results to the workspace. |                        |
+| Downloading Content  | [fetch:plain:file](#fetchplainfile)                                          | Downloads single file and places it in the workspace.                                                                                                                     |   ✅️                       |
+| Downloading Content  | [fetch:plain:file:plus](#fetchplainfileplus)                                 | Downloads files and places them in the workspace for multiple urls.                                                                                                       |                        |
 |                      |
-| HTTP Requests        | [http:backstage:request](#httpbackstagerequest)                              | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          |
+| HTTP Requests        | [http:backstage:request](#httpbackstagerequest)                              | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          |    ✅️                      |
 |                      |
-| Debugging            | [debug:log](#debuglog)                                                       | Log a message to the UI output.                                                                                                                                           |
-| Debugging            | [debug:wait](#debugwait)                                                     | Waits for a certain period of time.                                                                                                                                       |
+| Debugging            | [debug:log](#debuglog)                                                       | Log a message to the UI output.                                                                                                                                           |   ✅️                      |
+| Debugging            | [debug:wait](#debugwait)                                                     | Waits for a certain period of time.                                                                                                                                       |    ✅️                      |
 |                      |
-| File Operations      | [fs:delete](#fsdelete)                                                       | Deletes files and directories in the workspace                                                                                                                            |
-| File Operations      | [fs:rename](#fsrename)                                                       | Renames files and directories in the workspace, essentially moving them.                                                                                                  |
-| File Operations      | [roadiehq:utils:fs:replace](#roadiehqutilsfsreplace)                         | Replaces found string in files with content defined in input.                                                                                                             |
-| File Operations      | [roadiehq:utils:fs:parse](#roadiehqutilsfsparse)                             | Reads a file from the workspace and outputs content to be used in next steps.                                                                                             |
-| File Operations      | [roadiehq:utils:fs:write](#roadiehqutilsfswrite)                             | Creates a file with the content on the given path.                                                                                                                        |
-| File Operations      | [roadiehq:utils:fs:append](#roadiehqutilsfsappend)                           | Creates a file with the content on the given path.                                                                                                                        |
-| File Operations      | [roadiehq:utils:merge](#roadiehqutilsmerge)                                  | Merge data into an existing JSON or YAML file.                                                                                                                            |
-| File Operations      | [roadiehq:utils:zip](#roadiehqutilszip)                                      | Compresses content to a zip file in the workspace.                                                                                                                        |
+| File Operations      | [fs:delete](#fsdelete)                                                       | Deletes files and directories in the workspace                                                                                                                            |   ✅️                       |
+| File Operations      | [fs:rename](#fsrename)                                                       | Renames files and directories in the workspace, essentially moving them.                                                                                                  |   ✅️                       |
+| File Operations      | [roadiehq:utils:fs:replace](#roadiehqutilsfsreplace)                         | Replaces found string in files with content defined in input.                                                                                                             |   ✅️                       |
+| File Operations      | [roadiehq:utils:fs:parse](#roadiehqutilsfsparse)                             | Reads a file from the workspace and outputs content to be used in next steps.                                                                                             |   ✅️                       |
+| File Operations      | [roadiehq:utils:fs:write](#roadiehqutilsfswrite)                             | Creates a file with the content on the given path.                                                                                                                        |   ✅️                       |
+| File Operations      | [roadiehq:utils:fs:append](#roadiehqutilsfsappend)                           | Creates a file with the content on the given path.                                                                                                                        |   ✅️                       |
+| File Operations      | [roadiehq:utils:merge](#roadiehqutilsmerge)                                  | Merge data into an existing JSON or YAML file.                                                                                                                            |   ✅️                       |
+| File Operations      | [roadiehq:utils:zip](#roadiehqutilszip)                                      | Compresses content to a zip file in the workspace.                                                                                                                        |   ✅️                       |
 |                      |
-| Serialization        | [roadiehq:utils:serialize:yaml](#roadiehqutilsserializeyaml)                 | Converts YAML to a string.                                                                                                                                                |
-| Serialization        | [roadiehq:utils:serialize:json](#roadiehqutilsserializejson)                 | Converts JSON to a formated string.                                                                                                                                       |
+| Serialization        | [roadiehq:utils:serialize:yaml](#roadiehqutilsserializeyaml)                 | Converts YAML to a string.                                                                                                                                                |   ✅️                       |
+| Serialization        | [roadiehq:utils:serialize:json](#roadiehqutilsserializejson)                 | Converts JSON to a formated string.                                                                                                                                       |   ✅️                       |
 |                      |
-| Content Manipulation | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                              | Performs JSONata operations and transformations on input objects.                                                                                                         |
-| Content Manipulation | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform)  | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          |
-| Content Manipulation | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform)  | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          |
-| Content Manipulation | [json:merge-files](#jsonmerge-files)                                         | Merges multiple JSON files into a single JSON object stored in a new file in the workspace.                                                                               |
-| Content Manipulation | [json:merge-file](#jsonmerge-file)                                           | Uses [JSON-merger syntax](https://www.npmjs.com/package/json-merger#operations) to manipulate a single JSON file and store the result in a new file in the workspace.     |
-| Content Manipulation | [roadiehq:utils:json:merge](#roadiehqutilsjsonmerge)                         | Merge new data into an existing JSON file.                                                                                                                                |
-| Content Manipulation | [regex:replace](#regexreplace)                                               | Validate an input structure using the `zod` library to perform regex replacements on input values.                                                                        |
-| Content Manipulation | [regex:fs:replace:plus](#regexfsreplaceplus)                                 | Enable regex-based search and replacement across files using glob patterns.                                                                                               | 
+| Content Manipulation | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                              | Performs JSONata operations and transformations on input objects.                                                                                                         |   ✅️                       |
+| Content Manipulation | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform)  | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          |   ✅️                       |
+| Content Manipulation | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform)  | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          |    ✅️                      |
+| Content Manipulation | [json:merge-files](#jsonmerge-files)                                         | Merges multiple JSON files into a single JSON object stored in a new file in the workspace.                                                                               |                        |
+| Content Manipulation | [json:merge-file](#jsonmerge-file)                                           | Uses [JSON-merger syntax](https://www.npmjs.com/package/json-merger#operations) to manipulate a single JSON file and store the result in a new file in the workspace.     |                        |
+| Content Manipulation | [roadiehq:utils:json:merge](#roadiehqutilsjsonmerge)                         | Merge new data into an existing JSON file.                                                                                                                                |    ✅️                      |
+| Content Manipulation | [regex:replace](#regexreplace)                                               | Validate an input structure using the `zod` library to perform regex replacements on input values.                                                                        |                        |
+| Content Manipulation | [regex:fs:replace:plus](#regexfsreplaceplus)                                 | Enable regex-based search and replacement across files using glob patterns.                                                                                               |                        | 
 |                      |
-| Other Utils          | [uuid:v4:gen:plus](#uuidv4genplus)                                           | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |
-| Other Utils          | [vars:plus](#varsplus)                                                       | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        |
+| Other Utils          | [uuid:v4:gen:plus](#uuidv4genplus)                                           | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |                        |
+| Other Utils          | [vars:plus](#varsplus)                                                       | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        |                        |
 
 ## Backstage Specific
-| Category             | Name                                                                         | Description                                                                                                                                                               |
-|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Catalog              | [catalog:register](#catalogregister)                                          | Registers an entity in the catalog.                                                                                                                                       |
-| Catalog              | [catalog:register:plus](#catalogregisterplus)                                 | Registers multiple entities in the catalog.                                                                                                                               |
-| Catalog              | [catalog:write](#catalogwrite)                                                | Writes the catalog-info.yaml for your template                                                                                                                            |
-| Catalog              | [catalog:fetch](#catalogfetch)                                                | Fetches an entity or entities from the catalog by entity reference(s).                                                                                                    |
-| Catalog              | [catalog:query:plus](#catalogqueryplus)                                       | Queries the catalog using provided filters, fields, and ordering parameters.                                                                                              |
-| Catalog              | [catalog:relation:plus](#catalogrelationplus)                                 | Query entities based on relations.                                                                                                                                        |
-| Catalog              | [catalog:timestamping](#catalogtimestamping)                                  | Adds the `backstage.io/createdAt` annotation containing the current timestamp to your entity object.                                                                      |
-| Catalog              | [catalog:scaffolded-from](#catalogscaffolded-from)                            | Adds `scaffoldedFrom` spec containing the template entityRef to your entity object.                                                                                       |
-| Catalog              | [catalog:annotate](#catalogannotate)                                          | Allows you to annotate your entity object with specified label(s), annotation(s) and spec property(ies).                                                                  |
+| Category             | Name                                                                         | Description                                                                                                                                                               | Ready to use in Roadie |
+|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| Catalog              | [catalog:register](#catalogregister)                                          | Registers an entity in the catalog.                                                                                                                                       | ✅️                |
+| Catalog              | [catalog:register:plus](#catalogregisterplus)                                 | Registers multiple entities in the catalog.                                                                                                                               |                    |
+| Catalog              | [catalog:write](#catalogwrite)                                                | Writes the catalog-info.yaml for your template                                                                                                                            | ✅️                |
+| Catalog              | [catalog:fetch](#catalogfetch)                                                | Fetches an entity or entities from the catalog by entity reference(s).                                                                                                    |                    |
+| Catalog              | [catalog:query:plus](#catalogqueryplus)                                       | Queries the catalog using provided filters, fields, and ordering parameters.                                                                                              |                    |
+| Catalog              | [catalog:relation:plus](#catalogrelationplus)                                 | Query entities based on relations.                                                                                                                                        |                    |
+| Catalog              | [catalog:timestamping](#catalogtimestamping)                                  | Adds the `backstage.io/createdAt` annotation containing the current timestamp to your entity object.                                                                      |                    |
+| Catalog              | [catalog:scaffolded-from](#catalogscaffolded-from)                            | Adds `scaffoldedFrom` spec containing the template entityRef to your entity object.                                                                                       |                    |
+| Catalog              | [catalog:annotate](#catalogannotate)                                          | Allows you to annotate your entity object with specified label(s), annotation(s) and spec property(ies).                                                                  |                    |
 |          
-| Notifications        | [notification:send](#varsplus)                                               | Sends notifications via the Backstage Notification Service.                                                                       |
+| Notifications        | [notification:send](#varsplus)                                               | Sends notifications via the Backstage Notification Service.                                                                       |                    |
 
 ## Language / protocol / infrastructure
 | Category             | Name                                                                         | Description                                                                                                                                                               |
@@ -99,107 +99,105 @@ NB:
 | Pulumi               | [pulumi:up](#pulumiup)                                                       | Runs Pulumi to manage cloud resources, either in a local or remote workspace based on the provided configuration.                                                         |
 
 ## 3rd Party Tools
-| Category             | Name                                                                         | Description                                                                                                                                                               |
-|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ansible              | [ansible:jobTemplate:launch](#ansiblejobtemplatelaunch)                      | Action for launching an Ansible job template and waiting for it to complete.                                                                                              |
-| Ansible              | [ansible-controller:jobTemplate:launch](#ansible-controllerjobtemplatelaunch) | Triggers the launch of an Ansible job template via the Ansible controller API.                                                                                            |
-| Ansible              | [argocd:create-resources](#argocdcreate-resources)                           | Action for creating Argo CD resources using Backstage's scaffolding plugin.                                                                                               | 
+| Category             | Name                                                                         | Description                                                                                                                                                                 |     |
+|----------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
+| Ansible              | [ansible:jobTemplate:launch](#ansiblejobtemplatelaunch)                      | Action for launching an Ansible job template and waiting for it to complete.                                                                                                |     |
+| Ansible              | [ansible-controller:jobTemplate:launch](#ansible-controllerjobtemplatelaunch) | Triggers the launch of an Ansible job template via the Ansible controller API.                                                                                              |     |
+| Ansible              | [argocd:create-resources](#argocdcreate-resources)                           | Action for creating Argo CD resources using Backstage's scaffolding plugin.                                                                                                 |     | 
 |                      |
-| AWS                  | [roadiehq:aws:s3:cp](#roadiehqawss3cp)                                       | Action that uploads files from a local directory to an AWS S3 bucket using specified parameters.                                                                          |
-| AWS                  | [roadiehq:aws:ecr:create](#roadiehqawsecrcreate)                             | Creates an AWS Elastic Container Registry (ECR) repository.                                                                                                               |
-| AWS                  | [roadiehq:aws:secrets-manager:create](#roadiehqawssecrets-managercreate)     | Creates a new secret in AWS Secrets Manager using the Backstage scaffolder plugin.                                                                                        |
-| AWS                  | [opa:get-env-providers](#opaget-env-providers)                               | Retrieves AWS environment provider data based on a reference to an AWS environment entity.                                                                                |
-| AWS                  | [opa:create-secret](#opacreate-secret)                                       | Creates secrets in AWS Secrets Manager.                                                                                                                                   |
-| AWS                  | [opa:createRepoAccessToken:gitlab](#opacreaterepoaccesstokengitlab)          | Creates a GitLab repository access token and stores it in AWS Secrets Manager.                                                                                            |
-| AWS                  | [opa:get-platform-metadata](#opaget-platform-metadata)                       | Retrieves metadata about the OPA (Open Policy Agent) on AWS platform.                                                                                                     |
-| AWS                  | [opa:get-ssm-parameters](#opaget-ssm-parameters)                             | Retrieves AWS SSM parameter values for specified environment providers.                                                                                                   |
-| AWS                  | [aws:cloudcontrol:create](#awscloudcontrolcreate)                            | Action for creating resources using AWS Cloud Control API.                                                                                                                |
+| AWS                  | [roadiehq:aws:s3:cp](#roadiehqawss3cp)                                       | Action that uploads files from a local directory to an AWS S3 bucket using specified parameters.                                                                            |     |
+| AWS                  | [roadiehq:aws:ecr:create](#roadiehqawsecrcreate)                             | Creates an AWS Elastic Container Registry (ECR) repository.                                                                                                                 |     |
+| AWS                  | [roadiehq:aws:secrets-manager:create](#roadiehqawssecrets-managercreate)     | Creates a new secret in AWS Secrets Manager using the Backstage scaffolder plugin.                                                                                          |     |
+| AWS                  | [opa:get-env-providers](#opaget-env-providers)                               | Retrieves AWS environment provider data based on a reference to an AWS environment entity.                                                                                  |     |
+| AWS                  | [opa:create-secret](#opacreate-secret)                                       | Creates secrets in AWS Secrets Manager.                                                                                                                                     |     |
+| AWS                  | [opa:createRepoAccessToken:gitlab](#opacreaterepoaccesstokengitlab)          | Creates a GitLab repository access token and stores it in AWS Secrets Manager.                                                                                              |     |
+| AWS                  | [opa:get-platform-metadata](#opaget-platform-metadata)                       | Retrieves metadata about the OPA (Open Policy Agent) on AWS platform.                                                                                                       |     |
+| AWS                  | [opa:get-ssm-parameters](#opaget-ssm-parameters)                             | Retrieves AWS SSM parameter values for specified environment providers.                                                                                                     |     |
+| AWS                  | [aws:cloudcontrol:create](#awscloudcontrolcreate)                            | Action for creating resources using AWS Cloud Control API.                                                                                                                  |     |
 |                      |
-| Azure                | [publish:azure](#publishazure)                                               | Action to initialize a Git repository and publish it to Azure DevOps.                                                                                                     |
-| Azure                | [azure:repo:clone](#azurerepoclone)                                          | Action for cloning an Azure DevOps repository into a specified workspace directory, handling authentication via personal access tokens or bearer tokens.                  |
-| Azure                | [git:clone:azure](#gitcloneazure)                                            | Clones repositories from Azure DevOps Git, allowing for multiple repositories to be cloned with the same Git reference.                                                   |
-| Azure                | [azure:repo:push](#azurerepopush)                                            | Pushes content from a local workspace to a remote Azure repository.                                                                                                       |
-| Azure                | [azure:repo:pr](#azurerepopr)                                                | Creates a pull request in an Azure DevOps repository using customizable inputs.                                                                                           |
-| Azure                | [git:commit:azure](#gitcommitazure)                                          | Commits and pushes changes to an Azure DevOps Git repository, processing parameters and handling Git operations.                                                          |
-| Azure                | [azure:pipeline:create](#azurepipelinecreate)                                | Creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.                                                                         |
-| Azure                | [pipeline:create:azure](#pipelinecreateazure)                                | Automates the creation of Azure DevOps pipelines from Git repositories.                                                                                                   |
-| Azure                | [azure:pipeline:run](azurepipelinerun)                                       | Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.                                                                                       |
-| Azure                | [azure:pipeline:permit](#azurepipelinepermit)                                | Defines an Azure DevOps pipeline permission management action for Backstage scaffolding.                                                                                  |
-| Azure                | [azure:repo:clone](#azurerepoclone)                                          | Action for cloning an Azure repository into a specified workspace directory using Backstage's scaffolding plugin.                                                         |
-| Azure                | [azure:repo:push](#azurerepopush)                                            | Action that pushes content from a local workspace to a remote Azure repository.                                                                                           |
-| Azure                | [azure:repo:pr](#azurerepopr)                                                | Action for creating a pull request in Azure DevOps.                                                                                                                       |
+| Azure                | [publish:azure](#publishazure)                                               | Action to initialize a Git repository and publish it to Azure DevOps.                                                                                                       |     |
+| Azure                | [git:clone:azure](#gitcloneazure)                                            | Clones repositories from Azure DevOps Git, allowing for multiple repositories to be cloned with the same Git reference.                                                     |     |
+| Azure                | [git:commit:azure](#gitcommitazure)                                          | Commits and pushes changes to an Azure DevOps Git repository, processing parameters and handling Git operations.                                                            |     |
+| Azure                | [pipeline:create:azure](#pipelinecreateazure)                                | Automates the creation of Azure DevOps pipelines from Git repositories.                                                                                                     |     |
+| Azure                | [azure:pipeline:create](#azurepipelinecreate)                                | Creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.                                                                           |     |
+| Azure                | [azure:pipeline:run](azurepipelinerun)                                       | Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.                                                                                         |     |
+| Azure                | [azure:pipeline:permit](#azurepipelinepermit)                                | Defines an Azure DevOps pipeline permission management action for Backstage scaffolding.                                                                                    |     |
+| Azure                | [azure:repo:clone](#azurerepoclone)                                          | Action for cloning an Azure repository into a specified workspace directory using Backstage's scaffolding plugin.                                                           | ✅️ |
+| Azure                | [azure:repo:push](#azurerepopush)                                            | Action that pushes content from a local workspace to a remote Azure repository.                                                                                             | ✅️ |
+| Azure                | [azure:repo:pr](#azurerepopr)                                                | Action for creating a pull request in Azure DevOps.                                                                                                                         | ✅️ |
 |                      |
-| Bitbucket            | [publish:bitbucket](#publishbitbucket)                                       | Creates a new Bitbucket repository and publishes the files in the workspace directory to the repository.                                                                  |
-| Bitbucket            | [publish:bitbucketCloud](#publishbitbucketCloud)                             | Creates and initializes a Bitbucket Cloud repository and publishes content to it from a workspace.                                                                        |
-| Bitbucket            | [bitbucket:pipelines:run](#bitbucketpipelinesrun)                            | Triggers a run of a Bitbucket Cloud pipeline using the Backstage framework.                                                                                               |
-| Bitbucket            | [publish:bitbucketCloud:pull-request](#publishbitbucketcloudpull-request)    | Action for publishing a pull request to a Bitbucket Cloud repository using Backstage's scaffolding system.                                                                |
-| Bitbucket            | [publish:bitbucketServer](#publishbitbucketserver)                           | Creates a new repository in Bitbucket Server.                                                                                                                             |
-| Bitbucket            | [publish:bitbucketServer:pull-request](#publishbitbucketserverpull-request)  | Opens a pull request on a Bitbucket Server repository to merge two existing branches.                                                                                     | 
+| Bitbucket            | [publish:bitbucket](#publishbitbucket)                                       | (Deprected for publish:bitbucketCloud and publish:bitbucketServer) Creates a new Bitbucket repository and publishes the files in the workspace directory to the repository. | ✅️ |
+| Bitbucket            | [publish:bitbucketCloud](#publishbitbucketCloud)                             | Creates and initializes a Bitbucket Cloud repository and publishes content to it from a workspace.                                                                          | ✅️ |
+| Bitbucket            | [bitbucket:pipelines:run](#bitbucketpipelinesrun)                            | Triggers a run of a Bitbucket Cloud pipeline using the Backstage framework.                                                                                                 |     |
+| Bitbucket            | [publish:bitbucketCloud:pull-request](#publishbitbucketcloudpull-request)    | Action for publishing a pull request to a Bitbucket Cloud repository using Backstage's scaffolding system.                                                                  |     |
+| Bitbucket            | [publish:bitbucketServer](#publishbitbucketserver)                           | Creates a new repository in Bitbucket Server.                                                                                                                               | ✅️ |
+| Bitbucket            | [publish:bitbucketServer:pull-request](#publishbitbucketserverpull-request)  | Opens a pull request on a Bitbucket Server repository to merge two existing branches.                                                                                       |     | 
 |                      |
-| CNEO                 | [cnoe:kubernetes:apply](#cnoekubernetesapply)                                | Action for applying Kubernetes manifests using `kubectl`, either from a string, an object, or a file path, with support for namespaced configurations.                    |
-| CNEO                 | [cnoe:verify:dependency](#cnoeverifydependency)                              | Verify resource dependencies for CNOE.                                                                                                                                    |
-| CNEO                 | [cnoe:utils:sanitize](#cnoeutilssanitize)                                    | Action for sanitizing resources defined in a YAML document by removing empty fields, before further processing.                                                           |
+| CNEO                 | [cnoe:kubernetes:apply](#cnoekubernetesapply)                                | Action for applying Kubernetes manifests using `kubectl`, either from a string, an object, or a file path, with support for namespaced configurations.                      |     |
+| CNEO                 | [cnoe:verify:dependency](#cnoeverifydependency)                              | Verify resource dependencies for CNOE.                                                                                                                                      |     |
+| CNEO                 | [cnoe:utils:sanitize](#cnoeutilssanitize)                                    | Action for sanitizing resources defined in a YAML document by removing empty fields, before further processing.                                                             |     |
 |                      |
-| Codacy               | [codacy:add-repo](codacyadd-repo)                                            | Action for adding a repository to Codacy using its API.                                                                                                                   |
+| Codacy               | [codacy:add-repo](codacyadd-repo)                                            | Action for adding a repository to Codacy using its API.                                                                                                                     |     |
 |                      |
-| Confluence           | [confluence:transform:markdown](#confluencetransformmarkdown)                | Action that transforms Confluence content into Markdown format and updates a GitHub repository with the new Markdown files and modified `mkdocs.yml` configuration.       |
+| Confluence           | [confluence:transform:markdown](#confluencetransformmarkdown)                | Action that transforms Confluence content into Markdown format and updates a GitHub repository with the new Markdown files and modified `mkdocs.yml` configuration.         |     |
 |                      |
-| Cue                  | [cue:cueflow](cuecueflow)                                                    | This action fetches some template content, runs a Cue command on it, and copies output files to a specified directory.                                                    |
+| Cue                  | [cue:cueflow](cuecueflow)                                                    | This action fetches some template content, runs a Cue command on it, and copies output files to a specified directory.                                                      |     |
 |                      |
-| Gerrit               | [publish:gerrit:review](#publishgerritreview)                                | Action for creating a new Gerrit review by committing and pushing changes to a Git repository.                                                                            |
-| Gerrit               | [publish:gerrit](#publishgerrit)                                             | Action that initializes a Git repository with content from the workspace and publishes it to a Gerrit repository.                                                         |
-| Gerrit               | [publish:gitea](#publishgitea)                                               | This action initializes a git repository from workspace content and publishes it to a Gitea repository.                                                                   |
+| Gerrit               | [publish:gerrit:review](#publishgerritreview)                                | Action for creating a new Gerrit review by committing and pushing changes to a Git repository.                                                                              |     |
+| Gerrit               | [publish:gerrit](#publishgerrit)                                             | Action that initializes a Git repository with content from the workspace and publishes it to a Gerrit repository.                                                           |     |
+| Gerrit               | [publish:gitea](#publishgitea)                                               | This action initializes a git repository from workspace content and publishes it to a Gitea repository.                                                                     |     |
 |                      |
-| GitHub               | [publish:github](#publishgithub)                                             | Creates a new GitHub repository and publishes files from the workspace to the repository.                                                                                 |
-| GitHub               | [publish:github:pull-request](#publishgithubpull-request)                    | Creates a pull request in a pre-existing repository using files from the workspace.                                                                                       |
-| GitHub               | [github:webhook](#githubwebhook)                                             | Configures a webhook on an existing GitHub repository, requiring `repoUrl` and `webhookUrl`.                                                                              |
-| GitHub               | [github:autolinks:create](#githubautolinkscreate)                            | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                               |
-| GitHub               | [github:deployKey:create](#githubdeploykeycreate)                            | Creates and stores GitHub Deploy Keys, with the option to encrypt and store the private key as a GitHub secret.                                                           |
-| GitHub               | [github:environment:create](#githubenvironmentcreate)                        | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                          |
-| GitHub               | [github:issues:label](#githubissueslabel)                                    | Adds labels to pull requests or issues on GitHub.                                                                                                                         |
-| GitHub               | [github:pages:enable](#githubpagesenable)                                    | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                                        |
-| GitHub               | [github:repo:create](#githubrepocreate)                                      | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                     |
-| GitHub               | [github:repo:push](#githubrepopush)                                          | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                  |
-| GitHub               | [parse:repo-url:plus](#parserepo-urlplus)                                    | Parses repository URLs and extracts relevant metadata based on a specified schema.                                                                                        |
+| GitHub               | [publish:github](#publishgithub)                                             | Creates a new GitHub repository and publishes files from the workspace to the repository.                                                                                   | ✅️ |
+| GitHub               | [publish:github:pull-request](#publishgithubpull-request)                    | Creates a pull request in a pre-existing repository using files from the workspace.                                                                                         | ✅️ |
+| GitHub               | [github:actions:dispatch](#githubactionsdispatch)                                             | Allows you to trigger the execution of a GitHub action on a repository.                                                                                                     | ✅️ |
+| GitHub               | [github:webhook](#githubwebhook)                                             | Configures a webhook on an existing GitHub repository, requiring `repoUrl` and `webhookUrl`.                                                                                | ✅️ |
+| GitHub               | [github:autolinks:create](#githubautolinkscreate)                            | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                                 |     |
+| GitHub               | [github:deployKey:create](#githubdeploykeycreate)                            | Creates and stores GitHub Deploy Keys, with the option to encrypt and store the private key as a GitHub secret.                                                             |     |
+| GitHub               | [github:environment:create](#githubenvironmentcreate)                        | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                            |     |
+| GitHub               | [github:issues:label](#githubissueslabel)                                    | Adds labels to pull requests or issues on GitHub.                                                                                                                           | ✅️ |
+| GitHub               | [github:pages:enable](#githubpagesenable)                                    | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                                          |     |
+| GitHub               | [github:repo:create](#githubrepocreate)                                      | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                       |     |
+| GitHub               | [github:repo:push](#githubrepopush)                                          | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                    |     |
+| GitHub               | [parse:repo-url:plus](#parserepo-urlplus)                                    | Parses repository URLs and extracts relevant metadata based on a specified schema.                                                                                          |     |
 |                      |
-| GitLab               | [publish:gitlab](#publishgitlab)                                             | Initializes a Git repository of the content in the workspace and publishes it to GitLab.                                                                                  |
-| GitLab               | [publish:gitlab:merge-request](#publishgitlabmerge-request)                  | Creates a merge request in a GitLab repository.                                                                                                                           |
-| GitLab               | [gitlab:repo:push](#gitlabrepopush)                                          | Automates the process of pushing commits to a GitLab repository.                                                                                                          |
-| GitLab               | [gitlab:group:ensureExists](#gitlabgroupensureExists)                        | Ensures that a GitLab group or sub-groups exist, creating them if they do not.                                                                                            |
-| GitLab               | [gitlab:issues:create](#gitlabissuescreate)                                  | Action to create GitLab issues, including input validation using Zod, GitLab API calls, and error handling.                                                               |
-| GitLab               | [gitlab:issue:edit](#gitlabissueedit)                                        | Validates input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels and assignees.                                        |
-| GitLab               | [gitlab:pipeline:trigger](#gitlabpipelinetrigger)                            | Automates the creation and triggering of a GitLab pipeline using specific input parameters.                                                                               |
-| GitLab               | [gitlab:projectAccessToken:create](#gitlabprojectAccessTokencreate)          | Action that creates a project access token in GitLab.                                                                                                                     |
-| GitLab               | [gitlab:projectVariable:create](#gitlabprojectVariablecreate)                | Action for creating project variables in GitLab.                                                                                                                          |
-| GitLab               | [gitlab:projectDeployToken:create](#gitlabprojectDeployTokencreate)          | Action that creates a GitLab project deploy token.                                                                                                                        |
+| GitLab               | [publish:gitlab](#publishgitlab)                                             | Initializes a Git repository of the content in the workspace and publishes it to GitLab.                                                                                    | ✅️ |
+| GitLab               | [publish:gitlab:merge-request](#publishgitlabmerge-request)                  | Creates a merge request in a GitLab repository.                                                                                                                             | ✅️ |
+| GitLab               | [gitlab:repo:push](#gitlabrepopush)                                          | Automates the process of pushing commits to a GitLab repository.                                                                                                            |     |
+| GitLab               | [gitlab:group:ensureExists](#gitlabgroupensureExists)                        | Ensures that a GitLab group or sub-groups exist, creating them if they do not.                                                                                              |     |
+| GitLab               | [gitlab:issues:create](#gitlabissuescreate)                                  | Action to create GitLab issues, including input validation using Zod, GitLab API calls, and error handling.                                                                 |     |
+| GitLab               | [gitlab:issue:edit](#gitlabissueedit)                                        | Validates input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels and assignees.                                          |     |
+| GitLab               | [gitlab:pipeline:trigger](#gitlabpipelinetrigger)                            | Automates the creation and triggering of a GitLab pipeline using specific input parameters.                                                                                 |     |
+| GitLab               | [gitlab:projectAccessToken:create](#gitlabprojectAccessTokencreate)          | Action that creates a project access token in GitLab.                                                                                                                       |     |
+| GitLab               | [gitlab:projectVariable:create](#gitlabprojectVariablecreate)                | Action for creating project variables in GitLab.                                                                                                                            |     |
+| GitLab               | [gitlab:projectDeployToken:create](#gitlabprojectDeployTokencreate)          | Action that creates a GitLab project deploy token.                                                                                                                          |     |
 |                      |
-| Humanitec            | [humanitec:create-app](#humaniteccreate-app)                                 | Action for creating applications in Humanitec, using a YAML setup file to define application properties.                                                                  |
+| Humanitec            | [humanitec:create-app](#humaniteccreate-app)                                 | Action for creating applications in Humanitec, using a YAML setup file to define application properties.                                                                    |     |
 |                      |
-| Microsoft Teams      | [ms-teams:sendMessage](ms-teamssendmessage)                                  | Action that sends messages to a Microsoft Teams channel using a specified webhook URL.                                                                                    |
+| Microsoft Teams      | [ms-teams:sendMessage](ms-teamssendmessage)                                  | Action that sends messages to a Microsoft Teams channel using a specified webhook URL.                                                                                      |     |
 |                      |
-| PagerDuty            | [pagerduty:service:create](#pagerdutyservicecreate)                          | Action for the Backstage scaffolder plugin that allows users to create a PagerDuty service.                                                                               |
+| PagerDuty            | [pagerduty:service:create](#pagerdutyservicecreate)                          | Action for the Backstage scaffolder plugin that allows users to create a PagerDuty service.                                                                                 |     |
 |                      |
-| Quay                 | [quay:create-repository](#quaycreate-repository)                             | Action for creating a repository in Quay.io.                                                                                                                              |
+| Quay                 | [quay:create-repository](#quaycreate-repository)                             | Action for creating a repository in Quay.io.                                                                                                                                |     |
 |                      |
-| Sonarqube            | [sonarqube:create-project](#sonarqubecreate-project)                         | Action for creating a project in SonarQube via the Backstage Scaffolder plugin.                                                                                           |
+| Sonarqube            | [sonarqube:create-project](#sonarqubecreate-project)                         | Action for creating a project in SonarQube via the Backstage Scaffolder plugin.                                                                                             |     |
 |                      |
-| ServiceNow           | [servicenow:now:table:createRecord](#servicenownowtablecreaterecord)         | Action for Backstage's Scaffolder, allowing users to insert a record into a specified ServiceNow.                                                                         |
-| ServiceNow           | [servicenow:now:table:deleteRecord](#servicenownowtabledeleteRecord)         | Action for deleting a record from a ServiceNow table.                                                                                                                     |
-| ServiceNow           | [servicenow:now:table:modifyRecord](#servicenownowtablemodifyRecord)         | Action handler that modifies a record in a ServiceNow table.                                                                                                              |
-| ServiceNow           | [servicenow:now:table:retrieveRecord](#servicenownowtableretrieveRecord)     | Action handler that retrieves a record in a ServiceNow table.                                                                                                             |
-| ServiceNow           | [servicenow:now:table:retrieveRecords](#servicenownowtableretrieverecords)   | Action handler that retrieves records in a ServiceNow table.                                                                                                              |
-| ServiceNow           | [servicenow:now:table:updateRecord](#servicenownowtableupdaterecord)         | Action handler that updates a record in a ServiceNow table.                                                                                                               |
+| ServiceNow           | [servicenow:now:table:createRecord](#servicenownowtablecreaterecord)         | Action for Backstage's Scaffolder, allowing users to insert a record into a specified ServiceNow.                                                                           |     |
+| ServiceNow           | [servicenow:now:table:deleteRecord](#servicenownowtabledeleteRecord)         | Action for deleting a record from a ServiceNow table.                                                                                                                       |     |
+| ServiceNow           | [servicenow:now:table:modifyRecord](#servicenownowtablemodifyRecord)         | Action handler that modifies a record in a ServiceNow table.                                                                                                                |     |
+| ServiceNow           | [servicenow:now:table:retrieveRecord](#servicenownowtableretrieveRecord)     | Action handler that retrieves a record in a ServiceNow table.                                                                                                               |     |
+| ServiceNow           | [servicenow:now:table:retrieveRecords](#servicenownowtableretrieverecords)   | Action handler that retrieves records in a ServiceNow table.                                                                                                                |     |
+| ServiceNow           | [servicenow:now:table:updateRecord](#servicenownowtableupdaterecord)         | Action handler that updates a record in a ServiceNow table.                                                                                                                 |     |
 |                      |
-| Slack                | [slack:sendMessage:conversation](#slacksendmessageconversation)              | Sends a Slack message to a specific conversation using the Slack API.                                                                                                     |
-| Slack                | [slack:sendMessage:webhook](#slacksendmessagewebhook)                        | Sends a message to Slack via a webhook URL.                                                                                                                               |
+| Slack                | [slack:sendMessage:conversation](#slacksendmessageconversation)              | Sends a Slack message to a specific conversation using the Slack API.                                                                                                       |     |
+| Slack                | [slack:sendMessage:webhook](#slacksendmessagewebhook)                        | Sends a message to Slack via a webhook URL.                                                                                                                                 |     |
 |                      |
-| Sentry               | [sentry:create-project](#sentrycreate-project)                               | Action to create a new project in Sentry.                                                                                                                                 |
+| Sentry               | [sentry:create-project](#sentrycreate-project)                               | Action to create a new project in Sentry.                                                                                                                                   |     |
 |                      |
-| Torque               | [torque:create-app](torquecreate-app)                                        | Action for managing applications in Torque.                                                                                                                               |
+| Torque               | [torque:create-app](torquecreate-app)                                        | Action for managing applications in Torque.                                                                                                                                 |     |
 |                      |
-| Webex                | [webex:webhooks:sendMessage](#webexwebhookssendmessage)                      | Action that sends messages to Webex Incoming Webhooks.                                                                                                                    |
+| Webex                | [webex:webhooks:sendMessage](#webexwebhookssendmessage)                      | Action that sends messages to Webex Incoming Webhooks.                                                                                                                      |     |
 |                      |
-| Yeoman               | [run:yeoman](#runyeoman)                                                     | Action for running a Yeoman generator in Backstage scaffolder.                                                                                                            |
+| Yeoman               | [run:yeoman](#runyeoman)                                                     | Action for running a Yeoman generator in Backstage scaffolder.                                                                                                              |     |
 
 
 ## Generic Tools
@@ -207,6 +205,8 @@ NB:
 ### Download content
 
 #### `fetch:plain`
+
+✅️ Ready to use in Roadie
 
 Downloads directory content and places it in the workspace.
 
@@ -1263,8 +1263,6 @@ Converts JSON to a string format.
 | data*    | Input data to perform serialization on.                                                                                                | `object` / `array`  | { a: "a", b: { c: "c" } } |
 | replacer | Array of keys that should be included in output. If specified, keys not in this array will be excluded.                                | `array`             | ['a', 'b', 'c']           |
 | space    | The number of spaces to add after each property. If >=1 it adds newlines after each property. If a string it adds that string instead. | `number` / `string` | 1                         |
-
-
 
 ##### Examples
 ```yaml
@@ -3157,39 +3155,6 @@ This performs an action to publish content to Azure DevOps by initializing a Git
 ##### Links
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-azure/src/actions/azure.ts
 
-#### `azure:repo:clone`
-Action for cloning an Azure DevOps repository into a specified workspace directory, handling authentication via personal access tokens or bearer tokens.
-
-##### Inputs
-
-| **Key**            | **Description**                                      | **Type**     | **Example** |
-|--------------------|------------------------------------------------------|--------------|-------------|
-| `remoteUrl`*        | The Git URL to the repository.                       | `string`     |             |
-| `branch`           | The branch to checkout to.                           | `string`     |             |
-| `targetPath`       | The subdirectory of the working directory to clone the repository into. | `string` |             |
-| `server`           | The hostname of the Azure DevOps service. Defaults to `dev.azure.com`. | `string` |             |
-| `token`            | The token to use for authorization.                  | `string`     |             |
-remoteUrl*, branch, targetPath, server, token
-
-##### Examples
-```yaml
-    - id: cloneAzureRepo
-      name: Clone Azure Repo
-      action: azure:repo:clone
-      input:
-        remoteUrl: "https://<MY_AZURE_ORGANIZATION>@dev.azure.com/<MY_AZURE_ORGANIZATION>/<MY_AZURE_PROJECT>/_git/<MY_AZURE_REPOSITORY>"
-        branch: "main"
-        targetPath: ./sub-directory
-```
-
-##### Outputs
-| **Key**          | **Description**                    | **Type**    |
-|------------------|------------------------------------|-------------|
-| `repositoryId`   | The ID of the cloned repository.    | `string`    |
-
-##### Links
-- [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/cloneAzureRepo.ts
-
 #### `git:clone:azure`
 This code defines a Backstage Scaffolder action for cloning repositories from Azure DevOps Git and another for launching job templates in an Ansible controller.
 
@@ -3228,82 +3193,6 @@ This clones two Azure DevOps repositories using the same Git reference (`main`).
 ##### Links
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/repos/git-clone-azure.ts
 
-#### `azure:repo:push`
-The provided TypeScript code defines a function `pushAzureRepoAction` that creates a template action for pushing content from a local workspace to a remote Azure repository using Backstage's scaffolding plugin.
-
-##### Inputs
-| **Key**             | **Description**                                                          | **Type**     | **Example** |
-|---------------------|--------------------------------------------------------------------------|--------------|-------------|
-| `branch`*            | The branch to checkout to.                                                | `string`     |             |
-| `sourcePath`*        | The subdirectory of the working directory containing the repository.       | `string`     |             |
-| `gitCommitMessage`*   | The commit message for the repository. Default is "Initial commit".       | `string`     |             |
-| `gitAuthorName`      | The default author name for the commit. Default is "Scaffolder".          | `string`     |             |
-| `gitAuthorEmail`     | The default author email for the commit.                                 | `string`     |             |
-branch*, sourcePath*, gitCommitMessage*, gitAuthorName, gitAuthorEmail
-##### Examples
-```yaml    
-    - id: pushAzureRepo
-      name: Push to Remote Azure Repo
-      action: azure:repo:push
-      input:
-        branch: <MY_AZURE_REPOSITORY_BRANCH>
-        sourcePath: ./sub-directory
-        gitCommitMessage: Add ${{ parameters.name }} project files
-```
-
-##### Outputs
-
-| **Key**        | **Description**                                       | **Type**     |
-|----------------|-------------------------------------------------------|--------------|
-| `commitMessage`| The commit message used for the commit.                | `string`     |
-| `gitAuthorInfo`| Information about the Git author (name and email).     | `object`     |
-| `branch`       | The branch where changes were pushed.                  | `string`     |
-
-##### Links
-- [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pushAzureRepo.ts
-
-#### `azure:repo:pr`
-Action that creates a pull request (PR) in an Azure DevOps repository using customizable inputs.
-
-##### Inputs
-| **Key**                | **Description**                                                               | **Type**    | **Example** |
-|------------------------|-------------------------------------------------------------------------------|-------------|-------------|
-| `organization`          | The name of the organization in Azure DevOps.                                 | `string`    |             |
-| `sourceBranch`          | The branch to merge into the source.                                          | `string`    |             |
-| `targetBranch`          | The branch to merge into (default: main).                                     | `string`    |             |
-| `title`*                 | The title of the pull request.                                                | `string`    |             |
-| `description`           | The description of the pull request.                                          | `string`    |             |
-| `repoId`*                | Repo ID of the pull request.                                                  | `string`    |             |
-| `project`               | The Project in Azure DevOps.                                                  | `string`    |             |
-| `supportsIterations`     | Whether or not the PR supports iterations.                                    | `boolean`   |             |
-| `server`                | The hostname of the Azure DevOps service (defaults to `dev.azure.com`).       | `string`    |             |
-| `token`                 | The token to use for authorization.                                           | `string`    |             |
-| `autoComplete`          | Enable auto-completion of the pull request once policies are met.             | `boolean`   |             |
-
-repoId*, title*, organization, sourceBranch, targetBranch, description, project, supportsIterations, server, token, autoComplete
-##### Examples
-```yaml
-    - id: pullRequestAzureRepo
-      name: Create a Pull Request to Azure Repo
-      action: azure:repo:pr
-      input:
-        sourceBranch: <MY_AZURE_REPOSITORY_BRANCH>
-        targetBranch: "main"
-        repoId: <MY_AZURE_REPOSITORY>
-        title: ${{ parameters.name }}
-        project: <MY_AZURE_PROJECT>
-        organization: <MY_AZURE_ORGANIZATION>
-        supportsIterations: false
-```
-
-##### Outputs
-| **Key**           | **Description**                            | **Type**   |
-|-------------------|--------------------------------------------|------------|
-| `pullRequestId`    | The ID of the created pull request.        | `number`   |
-
-##### Links
-Create a PR in Azure. See input options [in the application](/docs/scaffolder/writing-templates/#actions)- [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pullRequestAzureRepo.ts
-
 #### `git:commit:azure`
 Action for committing and pushing changes to an Azure DevOps Git repository. It sets up the input schema, processes parameters, handles Git operations, and pushes changes to the repository.
 
@@ -3339,49 +3228,6 @@ Step to commit and push changes to an Azure DevOps Git repository on the `main` 
 | `results`   | Array of objects containing the results of the commit operation. | `array`     |
 ##### Links
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/repos/git-commit-azure.ts
-
-#### `azure:pipeline:create`
-This creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.
-
-##### Inputs
-| **Key**              | **Description**                                                                     | **Type**     | **Example** |
-|----------------------|-------------------------------------------------------------------------------------|--------------|-------------|
-| `createApiVersion`    | The Azure Create Pipeline API version to use. Defaults to 6.1-preview.1.            | `string`     |             |
-| `server`             | The host of Azure DevOps. Defaults to dev.azure.com.                                 | `string`     |             |
-| `organization`*        | The name of the Azure DevOps organization.                                          | `string`     |             |
-| `project`*            | The name of the Azure project.                                                      | `string`     |             |
-| `folder`*             | The name of the folder of the pipeline.                                              | `string`     |             |
-| `name`               | The name of the pipeline.                                                           | `string`     |             |
-| `repositoryId`       | The ID of the repository.                                                           | `string`     |             |
-| `repositoryName`     | The name of the repository.                                                         | `string`     |             |
-| `yamlPath`           | The location of the Azure DevOps Pipeline definition file. Defaults to /azure-pipelines.yaml. | `string`     |             |
-| `token`              | Optional. Token for Azure API authentication. If not provided, uses credentials from integration. | `string`     |             |
-organization*, project*, folder*, name*, repositoryId*, repositoryName*, createApiVersion, server, yamlPath, token
-
-##### Examples
-```yaml
-    - id: createAzurePipeline
-      name: Create Azure Pipeline
-      action: azure:pipeline:create
-      input:
-        organization: ${{ (parameters.repoUrl | parseRepoUrl)['organization'] }}
-        project: ${{ (parameters.repoUrl | parseRepoUrl)['owner'] }}
-        folder: "my-azure-pipelines-folder"
-        name: ${{ parameters.name }}
-        repositoryId: ${{ steps.publish.output.repositoryId }}
-        repositoryName: ${{ (parameters.repoUrl | parseRepoUrl)['repo'] }}
-        yamlPath: <optional value to your azure pipelines yaml file, defaults to ./azure-pipelines.yaml>
-```
-
-##### Outputs
-| **Key**       | **Description**                                      | **Type**  |
-|---------------|------------------------------------------------------|-----------|
-| `pipelineId`  | The ID of the created Azure pipeline.                | `string`  |
-| `pipelineUrl` | The URL to the created Azure pipeline in Azure DevOps. | `string`  |
-
-##### Links
-- [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/tree/main
-- [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/createAzurePipeline.ts
 
 #### `pipeline:create:azure`
 Automates the creation of Azure DevOps pipelines from Git repositories.
@@ -3426,9 +3272,51 @@ This creates Azure pipelines for two repositories (`repo-1` and `repo-2`), using
 
 ##### Links
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/piepline/pipeline-create-azure.ts
+- 
+#### `azure:pipeline:create`
+This creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.
+
+##### Inputs
+| **Key**              | **Description**                                                                     | **Type**     | **Example** |
+|----------------------|-------------------------------------------------------------------------------------|--------------|-------------|
+| `createApiVersion`    | The Azure Create Pipeline API version to use. Defaults to 6.1-preview.1.            | `string`     |             |
+| `server`             | The host of Azure DevOps. Defaults to dev.azure.com.                                 | `string`     |             |
+| `organization`*        | The name of the Azure DevOps organization.                                          | `string`     |             |
+| `project`*            | The name of the Azure project.                                                      | `string`     |             |
+| `folder`*             | The name of the folder of the pipeline.                                              | `string`     |             |
+| `name`               | The name of the pipeline.                                                           | `string`     |             |
+| `repositoryId`       | The ID of the repository.                                                           | `string`     |             |
+| `repositoryName`     | The name of the repository.                                                         | `string`     |             |
+| `yamlPath`           | The location of the Azure DevOps Pipeline definition file. Defaults to /azure-pipelines.yaml. | `string`     |             |
+| `token`              | Optional. Token for Azure API authentication. If not provided, uses credentials from integration. | `string`     |             |
+organization*, project*, folder*, name*, repositoryId*, repositoryName*, createApiVersion, server, yamlPath, token
+
+##### Examples
+```yaml
+    - id: createAzurePipeline
+      name: Create Azure Pipeline
+      action: azure:pipeline:create
+      input:
+        organization: ${{ (parameters.repoUrl | parseRepoUrl)['organization'] }}
+        project: ${{ (parameters.repoUrl | parseRepoUrl)['owner'] }}
+        folder: "my-azure-pipelines-folder"
+        name: ${{ parameters.name }}
+        repositoryId: ${{ steps.publish.output.repositoryId }}
+        repositoryName: ${{ (parameters.repoUrl | parseRepoUrl)['repo'] }}
+        yamlPath: <optional value to your azure pipelines yaml file, defaults to ./azure-pipelines.yaml>
+```
+
+##### Outputs
+| **Key**       | **Description**                                      | **Type**  |
+|---------------|------------------------------------------------------|-----------|
+| `pipelineId`  | The ID of the created Azure pipeline.                | `string`  |
+| `pipelineUrl` | The URL to the created Azure pipeline in Azure DevOps. | `string`  |
+
+##### Links
+- [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/tree/main
+- [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/createAzurePipeline.ts
 
 #### `azure:pipeline:run`
-#### Code Description:
 Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.
 
 ##### Inputs
@@ -3508,35 +3396,36 @@ organization*, project*, resourceId*, resourceType*, authorized*, pipelineId*, p
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/permitAzurePipeline.ts
 
 #### `azure:repo:clone`
-Action for cloning an Azure repository into a specified workspace directory using Backstage's scaffolding plugin.
+Action for cloning an Azure DevOps repository into a specified workspace directory, handling authentication via personal access tokens or bearer tokens.
 
 ##### Inputs
-| Key         | Description                                                      | Type    | Example |
-|-------------|------------------------------------------------------------------|---------|---------|
-| `remoteUrl`* | The Git URL to the repository.                                   | `string`|         |
-| `branch`    | The branch to checkout to.                                       | `string`|         |
-| `targetPath`| The subdirectory of the working directory to clone the repository into. | `string`|         |
-| `server`    | The hostname of the Azure DevOps service. Defaults to `dev.azure.com`. | `string`|         |
-| `token`     | The token to use for authorization.                              | `string`|         |
+
+| **Key**            | **Description**                                      | **Type**     | **Example** |
+|--------------------|------------------------------------------------------|--------------|-------------|
+| `remoteUrl`*        | The Git URL to the repository.                       | `string`     |             |
+| `branch`           | The branch to checkout to.                           | `string`     |             |
+| `targetPath`       | The subdirectory of the working directory to clone the repository into. | `string` |             |
+| `server`           | The hostname of the Azure DevOps service. Defaults to `dev.azure.com`. | `string` |             |
+| `token`            | The token to use for authorization.                  | `string`     |             |
 remoteUrl*, branch, targetPath, server, token
 
 ##### Examples
 ```yaml
-steps:
-  - id: cloneAzureRepo
-    name: Clone Azure Repo
-    action: azure:repo:clone
-    input:
-      remoteUrl: "https://<MY_AZURE_ORGANIZATION>@dev.azure.com/<MY_AZURE_ORGANIZATION>/<MY_AZURE_PROJECT>/_git/<MY_AZURE_REPOSITORY>"
-      branch: "main"
-      targetPath: ./sub-directory
+    - id: cloneAzureRepo
+      name: Clone Azure Repo
+      action: azure:repo:clone
+      input:
+        remoteUrl: "https://<MY_AZURE_ORGANIZATION>@dev.azure.com/<MY_AZURE_ORGANIZATION>/<MY_AZURE_PROJECT>/_git/<MY_AZURE_REPOSITORY>"
+        branch: "main"
+        targetPath: ./sub-directory
 ```
 
 ##### Outputs
-None
+| **Key**          | **Description**                    | **Type**    |
+|------------------|------------------------------------|-------------|
+| `repositoryId`   | The ID of the cloned repository.    | `string`    |
 
 ##### Links
-- [NPM](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/cloneAzureRepo.ts
 
 #### `azure:repo:push`
@@ -3550,7 +3439,7 @@ Action that pushes content from a local workspace to a remote Azure repository.
 | `gitCommitMessage`  | Sets the commit message on the repository. The default value is 'Initial commit'.            | `string` |         |
 | `gitAuthorName`     | Sets the default author name for the commit. The default value is 'Scaffolder'.             | `string` |         |
 | `gitAuthorEmail`    | Sets the default author email for the commit.                                               | `string` |         |
-branch*, sourcePath, gitCommitMessage, gitAuthorName, gitAuthorEmail
+
 ##### Examples
 ```yaml
     - id: pushAzureRepo
@@ -3563,7 +3452,6 @@ branch*, sourcePath, gitCommitMessage, gitAuthorName, gitAuthorEmail
 ```
 
 ##### Outputs
-
 None
 
 ##### Links
@@ -3588,8 +3476,6 @@ Action for creating a pull request in Azure DevOps.
 | server                | The hostname of the Azure DevOps service. Defaults to dev.azure.com | string   |         |
 | token                 | The token to use for authorization.                           | string   |         |
 | autoComplete          | Enable auto-completion of the pull request once policies are met | boolean  |         |
-
-organization, sourceBranch, targetBranch, title*, description, repoId*, project, supportsIterations, server, token, autoComplete
 
 ##### Examples
 ```yaml
