@@ -18,44 +18,47 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 
 **Generic Tools:**
 
-| Category             | Name                                                                        | Description                                                                                                                                                               | Ready to use in Roadie |
-|----------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-| Downloading Content  | [fetch:plain](#fetchplain)                                                  | Downloads directory content and places it in the workspace.                                                                                                               | ✅️                     |
-| Downloading Content  | [fetch:plain:plus](#fetchplainplus)                                         | Downloads directory content and places it in the workspace for multiple urls.                                                                                             |                        |
-| Downloading Content  | [fetch:template](#fetchtemplate)                                            | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes result to the workspace.           | ✅️                     |
-| Downloading Content  | [fetch:template:plus](#fetchtemplateplus)                                   | Downloads multiple directories containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes results to the workspace. |                        |
-| Downloading Content  | [fetch:plain:file](#fetchplainfile)                                         | Downloads single file and places it in the workspace.                                                                                                                     | ✅️                     |
-| Downloading Content  | [fetch:plain:file:plus](#fetchplainfileplus)                                | Downloads files and places them in the workspace for multiple urls.                                                                                                       |                        |
-|                      |
-| HTTP Requests        | [http:backstage:request](#httpbackstagerequest)                             | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          | ✅️                     |
-|                      |
-| Debugging            | [debug:log](#debuglog)                                                      | Log a message to the UI output.                                                                                                                                           | ✅️                     |
-| Debugging            | [debug:wait](#debugwait)                                                    | Waits for a certain period of time.                                                                                                                                       |                        |
-|                      |
-| File Operations      | [fs:delete](#fsdelete)                                                      | Deletes files and directories in the workspace                                                                                                                            | ✅️                     |
-| File Operations      | [fs:rename](#fsrename)                                                      | Renames files and directories in the workspace, essentially moving them.                                                                                                  | ✅️                     |
-| File Operations      | [roadiehq:utils:fs:replace](#roadiehqutilsfsreplace)                        | Replaces found string in files with content defined in input.                                                                                                             | ✅️                     |
-| File Operations      | [roadiehq:utils:fs:parse](#roadiehqutilsfsparse)                            | Reads a file from the workspace and outputs content to be used in next steps.                                                                                             | ✅️                     |
-| File Operations      | [roadiehq:utils:fs:write](#roadiehqutilsfswrite)                            | Creates a file with the content on the given path.                                                                                                                        | ✅️                     |
-| File Operations      | [roadiehq:utils:fs:append](#roadiehqutilsfsappend)                          | Creates a file with the content on the given path.                                                                                                                        | ✅️                     |
-| File Operations      | [roadiehq:utils:merge](#roadiehqutilsmerge)                                 | Merge data into an existing JSON or YAML file.                                                                                                                            | ✅️                     |
-| File Operations      | [roadiehq:utils:zip](#roadiehqutilszip)                                     | Compresses content to a zip file in the workspace.                                                                                                                        | ✅️                     |
-|                      |
-| Serialization        | [roadiehq:utils:serialize:yaml](#roadiehqutilsserializeyaml)                | Converts YAML to a string.                                                                                                                                                | ✅️                     |
-| Serialization        | [roadiehq:utils:serialize:json](#roadiehqutilsserializejson)                | Converts JSON to a formated string.                                                                                                                                       | ✅️                     |
-|                      |
-| Content Manipulation | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                             | Performs JSONata operations and transformations on input objects.                                                                                                         | ✅️                     |
-| Content Manipulation | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform) | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          | ✅️                     |
-| Content Manipulation | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform) | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          | ✅️                     |
-| Content Manipulation | [json:merge-files](#jsonmerge-files)                                        | Merges multiple JSON files into a single JSON object stored in a new file in the workspace.                                                                               |                        |
-| Content Manipulation | [json:merge-file](#jsonmerge-file)                                          | Uses [JSON-merger syntax](https://www.npmjs.com/package/json-merger#operations) to manipulate a single JSON file and store the result in a new file in the workspace.     |                        |
-| Content Manipulation | [roadiehq:utils:json:merge](#roadiehqutilsjsonmerge)                        | Merge new data into an existing JSON file.                                                                                                                                | ✅️                     |
-| Content Manipulation | [regex:replace](#regexreplace)                                              | Validate an input structure using the `zod` library to perform regex replacements on input values.                                                                        |                        |
-| Content Manipulation | [regex:fs:replace:plus](#regexfsreplaceplus)                                | Enable regex-based search and replacement across files using glob patterns.                                                                                               |                        | 
-|                      |
-| Other Utils          | [uuid:v4:gen:plus](#uuidv4genplus)                                          | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |                        |
-| Other Utils          | [roadiehq:utils:sleep](#roadiehqutilssleep)                                 | Halts the scaffolding process for the given amount of seconds.                                                                                                            | ✅️                     |
-| Other Utils          | [vars:plus](#varsplus)                                                      | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        |                        |
+| Category                  | Name                                                                        | Description                                                                                                                                                               | Ready to use in Roadie |
+|---------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
+| Downloading Content       | [fetch:plain](#fetchplain)                                                  | Downloads directory content and places it in the workspace.                                                                                                               | ✅️                     |
+| Downloading Content       | [fetch:plain:plus](#fetchplainplus)                                         | Downloads directory content and places it in the workspace for multiple urls.                                                                                             |                        |
+| Downloading Content       | [fetch:template](#fetchtemplate)                                            | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes result to the workspace.           | ✅️                     |
+| Downloading Content       | [fetch:template:plus](#fetchtemplateplus)                                   | Downloads multiple directories containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes results to the workspace. |                        |
+| Downloading Content       | [fetch:plain:file](#fetchplainfile)                                         | Downloads single file and places it in the workspace.                                                                                                                     | ✅️                     |
+| Downloading Content       | [fetch:plain:file:plus](#fetchplainfileplus)                                | Downloads files and places them in the workspace for multiple urls.                                                                                                       |                        |
+|                           |
+| HTTP Requests             | [http:backstage:request](#httpbackstagerequest)                             | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          | ✅️                     |
+|                           |
+| Debugging                 | [debug:log](#debuglog)                                                      | Log a message to the UI output.                                                                                                                                           | ✅️                     |
+| Debugging                 | [debug:wait](#debugwait)                                                    | Waits for a certain period of time.                                                                                                                                       |                        |
+|                           |
+| File Operations           | [fs:delete](#fsdelete)                                                      | Deletes files and directories in the workspace                                                                                                                            | ✅️                     |
+| File Operations           | [fs:rename](#fsrename)                                                      | Renames files and directories in the workspace, essentially moving them.                                                                                                  | ✅️                     |
+| File Operations           | [roadiehq:utils:fs:replace](#roadiehqutilsfsreplace)                        | Replaces found string in files with content defined in input.                                                                                                             | ✅️                     |
+| File Operations           | [roadiehq:utils:fs:parse](#roadiehqutilsfsparse)                            | Reads a file from the workspace and outputs content to be used in next steps.                                                                                             | ✅️                     |
+| File Operations           | [roadiehq:utils:fs:write](#roadiehqutilsfswrite)                            | Creates a file with the content on the given path.                                                                                                                        | ✅️                     |
+| File Operations           | [roadiehq:utils:fs:append](#roadiehqutilsfsappend)                          | Creates a file with the content on the given path.                                                                                                                        | ✅️                     |
+| File Operations           | [roadiehq:utils:merge](#roadiehqutilsmerge)                                 | Merge data into an existing JSON or YAML file.                                                                                                                            | ✅️                     |
+| File Operations           | [roadiehq:utils:zip](#roadiehqutilszip)                                     | Compresses content to a zip file in the workspace.                                                                                                                        | ✅️                     |
+|                           |
+| Parsing and Serialization | [roadiehq:utils:serialize:yaml](#roadiehqutilsserializeyaml)                | Converts YAML to a string.                                                                                                                                                | ✅️                     |
+| Parsing and Serialization | [roadiehq:utils:serialize:json](#roadiehqutilsserializejson)                | Converts JSON to a formated string.                                                                                                                                       | ✅️                     |
+| Parsing and Serialization | [json](#json)                                                               | Parse JSON data from various encoded content sources such as Base64, files, raw data, or URLs.                                                                            |                        |
+| Parsing and Serialization | [yaml](#yaml)                                                               | Parse YAML data from various encoded content sources such as Base64, files, raw data, or URLs.                                                                            |                        |
+| Parsing and Serialization | [xml](#xml)                                                                 | Parse XML into JSON using various options and processing pipes, utilizing the `xml-js` library for conversion.                                                            |                        |
+|                           |
+| Content Manipulation      | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                             | Performs JSONata operations and transformations on input objects.                                                                                                         | ✅️                     |
+| Content Manipulation      | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform) | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          | ✅️                     |
+| Content Manipulation      | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform) | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          | ✅️                     |
+| Content Manipulation      | [json:merge-files](#jsonmerge-files)                                        | Merges multiple JSON files into a single JSON object stored in a new file in the workspace.                                                                               |                        |
+| Content Manipulation      | [json:merge-file](#jsonmerge-file)                                          | Uses [JSON-merger syntax](https://www.npmjs.com/package/json-merger#operations) to manipulate a single JSON file and store the result in a new file in the workspace.     |                        |
+| Content Manipulation      | [roadiehq:utils:json:merge](#roadiehqutilsjsonmerge)                        | Merge new data into an existing JSON file.                                                                                                                                | ✅️                     |
+| Content Manipulation      | [regex:replace](#regexreplace)                                              | Validate an input structure using the `zod` library to perform regex replacements on input values.                                                                        |                        |
+| Content Manipulation      | [regex:fs:replace:plus](#regexfsreplaceplus)                                | Enable regex-based search and replacement across files using glob patterns.                                                                                               |                        | 
+|                           |
+| Other Utils               | [uuid:v4:gen:plus](#uuidv4genplus)                                          | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |                        |
+| Other Utils               | [roadiehq:utils:sleep](#roadiehqutilssleep)                                 | Halts the scaffolding process for the given amount of seconds.                                                                                                            | ✅️                     |
+| Other Utils               | [vars:plus](#varsplus)                                                      | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        |                        |
 
 
 **Backstage Specific:**
@@ -1227,58 +1230,44 @@ This step uses the `glob:plus` action to list all files matching the pattern `"*
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/glob.ts)
 
-### Serialization Scaffolder Actions
+### Parsing and Serialization Actions
 
-#### `roadiehq:utils:serialize:yaml`
-✅️ Ready to use in Roadie
+#### `json`
 
-Converts valid YAML to a string format.
+Process JSON data from various encoded content sources such as Base64, files, raw data, or URLs.
 
 ##### **Inputs**
-| Name    | Description                                    | Type     | Example                 |
-| ------- |------------------------------------------------|----------|-------------------------|
-| data*   | Input YAML object to perform serialization on. | `object` | { 'a': 'b' }            |
-| options | YAML stringify options                         | `object`  | { 'skipInvalid': 'true' |
 
-**options:**
-
-| Name          | Description                                                                                                                                                                                                                                                                |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| indent\*      | (default: 2) - indentation width to use (in spaces)                                                                                                                                                                                                                        |
-| noArrayIndent | (default: false) - when true, will not add an indentation level to array elements                                                                                                                                                                                          |
-| skipInvalid   | (default: false) - do not throw on invalid types (like function in the safe schema) and skip pairs and single values with such types                                                                                                                                       |
-| flowLevel     | (default: -1) - specifies level of nesting, when to switch from block to flow style for collections. -1 means block style everwhere                                                                                                                                        |
-| sortKeys      | (default: false) - if true, sort keys when dumping YAML. If a function, use the function to sort the keys                                                                                                                                                                  |
-| lineWidth     | (default: 80) - set max line width. Set -1 for unlimited width                                                                                                                                                                                                             |
-| noRefs        | (default: false) - if true, don't convert duplicate objects into references                                                                                                                                                                                                |
-| noCompatMode  | (default: false) - if true don't try to be compatible with older yaml versions. Currently: don't quote "yes", "no" and so on, as required for YAML 1.1                                                                                                                     |
-| condenseFlow  | (default: false) - if true flow sequences will be condensed, omitting the space between a, b. Eg. '[a,b]', and omitting the space between key: value and quoting the key. Eg. '{"a":b}' Can be useful when using yaml for pretty URL query params as spaces are %-encoded. |
-| quotingType   | (' or ", default: ') - strings will be quoted using this quoting style. If you specify single quotes, double quotes will still be used for non-printable characters.                                                                                                       |
-| forceQuotes   | (default: false) - if true, all non-key strings will be quoted even if they normally don't need to.                                                                                                                                                                        |
+| **Key**         | **Description**                                                                          | **Type**            | **Example** |
+|-----------------|------------------------------------------------------------------------------------------|---------------------|-------------|
+| `content`*       | JSON source content                                                                      | `string`            |             |
+| `encoding`*      | Indicates if input `content` field is encoded in `base64`, `file`, `raw`, or `url`.       | `string`            |             |
+| `sources`       | An array of fields containing the source JSON data and encoding information.              | `array` of `object` |             |
+| `commonParams`  | (Optional) Common parameters shared by multiple sources for content and encoding          | `Partial<FieldsType>`|             |
 
 ##### **Examples**
-
 ```yaml
 steps:
-  - id: roadiehq-utils-serialize-yaml
-    name: serialize yaml
-    action: roadiehq:utils:serialize:yaml
+  - action: json
+    id: json-parse
+    name: Parse Json files
     input:
-      data: { 'foo': 'bar' }
-      options:
-        noArrayIndent: true
+      commonParams:
+        encoding: raw
+      sources:
+        - content: '{"key": "value"}'
 ```
+
+This uses the `json` action to parse a raw JSON object from a content source with a common parameter of encoding set to "raw".
 
 ##### **Outputs**
 
-The `roadiehq:utils:serialize:yaml` action produces one output.
-
-| Name       | Description                      | Type    |
-| ---------- | -------------------------------- |---------|
-| serialized | Output result from serialization | `string` |
+| **Key**  | **Description**                    | **Type**      |
+|----------|------------------------------------|---------------|
+| `results`| Array of parsed JSON objects       | `array` of `object`|
 
 ##### **Links**
-- [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/serialize/yaml.ts)
+- [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-parsings/blob/main/src/actions/json/json.ts)
 
 #### `roadiehq:utils:serialize:json`
 ✅️ Ready to use in Roadie
@@ -1318,8 +1307,6 @@ The `roadiehq:utils:serialize:json` action produces one output.
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/serialize/json.ts)
-
-### Parsing Scaffolder Actions
 
 #### `xml`
 Parse XML into JSON using various options and processing pipes, utilizing the `xml-js` library for conversion.
@@ -1406,42 +1393,56 @@ This YAML defines a pipeline step that parses two YAML files using the action id
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-parsings/blob/main/src/actions/yaml/yaml.ts)
 
-#### `json`
+#### `roadiehq:utils:serialize:yaml`
+✅️ Ready to use in Roadie
 
-Process JSON data from various encoded content sources such as Base64, files, raw data, or URLs.
+Converts valid YAML to a string format.
 
 ##### **Inputs**
+| Name    | Description                                    | Type     | Example                 |
+| ------- |------------------------------------------------|----------|-------------------------|
+| data*   | Input YAML object to perform serialization on. | `object` | { 'a': 'b' }            |
+| options | YAML stringify options                         | `object`  | { 'skipInvalid': 'true' |
 
-| **Key**         | **Description**                                                                          | **Type**            | **Example** |
-|-----------------|------------------------------------------------------------------------------------------|---------------------|-------------|
-| `content`*       | JSON source content                                                                      | `string`            |             |
-| `encoding`*      | Indicates if input `content` field is encoded in `base64`, `file`, `raw`, or `url`.       | `string`            |             |
-| `sources`       | An array of fields containing the source JSON data and encoding information.              | `array` of `object` |             |
-| `commonParams`  | (Optional) Common parameters shared by multiple sources for content and encoding          | `Partial<FieldsType>`|             |
+**options:**
+
+| Name          | Description                                                                                                                                                                                                                                                                |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| indent\*      | (default: 2) - indentation width to use (in spaces)                                                                                                                                                                                                                        |
+| noArrayIndent | (default: false) - when true, will not add an indentation level to array elements                                                                                                                                                                                          |
+| skipInvalid   | (default: false) - do not throw on invalid types (like function in the safe schema) and skip pairs and single values with such types                                                                                                                                       |
+| flowLevel     | (default: -1) - specifies level of nesting, when to switch from block to flow style for collections. -1 means block style everwhere                                                                                                                                        |
+| sortKeys      | (default: false) - if true, sort keys when dumping YAML. If a function, use the function to sort the keys                                                                                                                                                                  |
+| lineWidth     | (default: 80) - set max line width. Set -1 for unlimited width                                                                                                                                                                                                             |
+| noRefs        | (default: false) - if true, don't convert duplicate objects into references                                                                                                                                                                                                |
+| noCompatMode  | (default: false) - if true don't try to be compatible with older yaml versions. Currently: don't quote "yes", "no" and so on, as required for YAML 1.1                                                                                                                     |
+| condenseFlow  | (default: false) - if true flow sequences will be condensed, omitting the space between a, b. Eg. '[a,b]', and omitting the space between key: value and quoting the key. Eg. '{"a":b}' Can be useful when using yaml for pretty URL query params as spaces are %-encoded. |
+| quotingType   | (' or ", default: ') - strings will be quoted using this quoting style. If you specify single quotes, double quotes will still be used for non-printable characters.                                                                                                       |
+| forceQuotes   | (default: false) - if true, all non-key strings will be quoted even if they normally don't need to.                                                                                                                                                                        |
 
 ##### **Examples**
+
 ```yaml
 steps:
-  - action: json
-    id: json-parse
-    name: Parse Json files
+  - id: roadiehq-utils-serialize-yaml
+    name: serialize yaml
+    action: roadiehq:utils:serialize:yaml
     input:
-      commonParams:
-        encoding: raw
-      sources:
-        - content: '{"key": "value"}'
+      data: { 'foo': 'bar' }
+      options:
+        noArrayIndent: true
 ```
-
-This uses the `json` action to parse a raw JSON object from a content source with a common parameter of encoding set to "raw".
 
 ##### **Outputs**
 
-| **Key**  | **Description**                    | **Type**      |
-|----------|------------------------------------|---------------|
-| `results`| Array of parsed JSON objects       | `array` of `object`|
+The `roadiehq:utils:serialize:yaml` action produces one output.
+
+| Name       | Description                      | Type    |
+| ---------- | -------------------------------- |---------|
+| serialized | Output result from serialization | `string` |
 
 ##### **Links**
-- [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-parsings/blob/main/src/actions/json/json.ts)
+- [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/serialize/yaml.ts)
 
 ### Content Manipulation Scaffolder Actions
 
