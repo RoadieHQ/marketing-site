@@ -259,7 +259,6 @@ None
 
 
 #### `fetch:plain:plus`
-
 Downloads directory content and places it in the workspace for multiple urls.
 
 ##### **Inputs**
@@ -323,7 +322,6 @@ Downloads single file and places it in the workspace, or optionally in a subdire
 | url        | Relative path or absolute URL pointing to the file to fetch            | string | '../assets/test.json' |
 | targetPath | Target directory within the working directory to download the file to  | string | 'assets-copy'         |
 | token      | An optional token to use for authentication when reading the resources | string | 'sku1263kjh280'       |
-
 
 ##### **Examples**
 ```yaml
@@ -391,7 +389,7 @@ steps:
 
 ##### **Links:**
 - [How to add it to Backstage](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/README.md#get-started)
-- [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/HEAD/exemples.md#fetchplainfileplus
+- [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/HEAD/exemples.md#fetchplainfileplus)
 -----
 
 
@@ -540,7 +538,7 @@ steps:
 *[Deprecated for `fetch:template` used with `cookiecutterCompat: true` input parameter.](https://backstage.io/docs/features/software-templates/builtin-actions#migrating-from-fetchcookiecutter-to-fetchtemplate)*
 
 ##### **Links:**
-- [Code](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-cookiecutter
+- [Code](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-cookiecutter)
 -----
 
 
@@ -771,6 +769,8 @@ steps:
 
 ##### **Outputs**
 The `debug:log` action does not have any outputs.
+-----
+
 
 #### `debug:wait`
 Waits for a certain period of time.
@@ -785,6 +785,8 @@ Waits for a certain period of time.
 
 ##### **Outputs**
 None
+-----
+
 
 #### `debug:fs:read:plus`
 Logs file content.
@@ -793,7 +795,6 @@ Logs file content.
 | key        | description                                           | type    | example       |
 |------------|-------------------------------------------------------|---------|---------------|
 | `files` | A list of files and directories that will be deleted. | `array` | - somefile.js |
-
 
 ##### **Examples**
 ```yaml
@@ -814,6 +815,7 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/HEAD/exemples.md#debugfsreadplus)
+-----
 -----
 
 
@@ -848,6 +850,8 @@ The `fs:delete` action does not have any outputs.
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/delete.ts)
+-----
+
 
 #### `fs:rename`
 ✅️ Ready to use in Roadie
@@ -878,6 +882,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/rename.ts)
+-----
+
 
 #### `fs:rename:plus
 
@@ -919,6 +925,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/filesystem/rename.ts)
+-----
+
 
 #### `roadiehq:utils:fs:replace`
 ✅️ Ready to use in Roadie
@@ -953,6 +961,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/fs/replaceInFile.ts)
+-----
+
 
 #### `roadiehq:utils:fs:parse`
 ✅️ Ready to use in Roadie
@@ -1002,6 +1012,8 @@ The `roadiehq:utils:fs:parse` action produces one output.
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/fs/parseFile.ts)
+-----
+
 
 #### `roadiehq:utils:fs:write`
 ✅️ Ready to use in Roadie
@@ -1037,6 +1049,8 @@ The `roadiehq:utils:fs:write` action produces one output.
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/fs/writeFile.ts)
+-----
+
 
 #### `roadiehq:utils:fs:append`
 ✅️ Ready to use in Roadie
@@ -1070,6 +1084,8 @@ The `roadiehq:utils:fs:append` action produces one output.
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/fs/appendFile.ts)
+-----
+
 
 #### `roadiehq:utils:merge`
 
@@ -1124,6 +1140,8 @@ The `roadiehq:utils:merge` action produces one output.
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/merge/merge.ts)
+-----
+
 
 #### `roadiehq:utils:zip`
 ✅️ Ready to use in Roadie
@@ -1158,6 +1176,8 @@ The `roadiehq:utils:zip` action produces one output.
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/zip.ts)
+-----
+
 
 #### `zip:decompress:plus`
 Decompress ZIP files from various sources, such as base64, files, or URLs, and saves them to specified destinations while handling errors.
@@ -1202,6 +1222,8 @@ Defines a workflow step that decompresses multiple ZIP files (from local file pa
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/zip/zip-decompress.ts)
+-----
+
 
 #### `glob:plus`
 Allows users to match files using glob patterns and various options for customizing the file search.
@@ -1292,6 +1314,8 @@ This uses the `json` action to parse a raw JSON object from a content source wit
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-parsings/blob/main/src/actions/json/json.ts)
+-----
+
 
 #### `roadiehq:utils:serialize:json`
 ✅️ Ready to use in Roadie
@@ -1331,6 +1355,8 @@ The `roadiehq:utils:serialize:json` action produces one output.
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/serialize/json.ts)
+-----
+
 
 #### `xml`
 Parse XML into JSON using various options and processing pipes, utilizing the `xml-js` library for conversion.
@@ -1380,6 +1406,8 @@ Parse multiple Xmls contents from various sources types.
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-parsings/blob/main/src/actions/xml/xml.ts)
 - [NPM](https://www.npmjs.com/package/@k3tech/backstage-plugin-scaffolder-backend-module-parsings)
+-----
+
 
 #### `yaml`
 Parse YAML content from various sources using the Backstage scaffolder framework.
@@ -1416,6 +1444,8 @@ This YAML defines a pipeline step that parses two YAML files using the action id
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-parsings/blob/main/src/actions/yaml/yaml.ts)
+-----
+
 
 #### `roadiehq:utils:serialize:yaml`
 ✅️ Ready to use in Roadie
@@ -1500,6 +1530,8 @@ The `roadiehq:utils:jsonata` action produces one output.
 | Name   | Description                | Type                                     |
 | ------ | -------------------------- |------------------------------------------|
 | result | Output result from JSONata | `object` / `array` / `string` / `number` |
+-----
+
 
 #### `roadiehq:utils:jsonata:yaml:transform`
 ✅️ Ready to use in Roadie
@@ -1548,6 +1580,8 @@ The `roadiehq:utils:jsonata:yaml:transform` action produces one output.
 | Name   | Description                               |
 | ------ | ----------------------------------------- |
 | result | Output result from JSONata yaml transform |
+-----
+
 
 #### `roadiehq:utils:jsonata:json:transform`
 ✅️ Ready to use in Roadie
@@ -1599,6 +1633,8 @@ The `roadiehq:utils:jsonata:json:transform` action produces one output.
 | Name   | Description                               | Type               |
 | ------ | ----------------------------------------- |--------------------|
 | result | Output result from JSONata json transform | `string` / `object` |
+-----
+
 
 #### `json:merge-file`
 
@@ -1628,6 +1664,8 @@ Merges JSON files into a single JSON object stored in a new file in the workspac
 
 ##### **Outputs**
 None
+-----
+
 
 #### `json:merge-files`
 
@@ -1657,6 +1695,8 @@ Merges JSON files into a single JSON object stored in a new file in the workspac
 
 ##### **Outputs**
 None
+-----
+
 
 #### `roadiehq:utils:json:merge`
 ✅️ Ready to use in Roadie
@@ -1708,6 +1748,8 @@ The `roadiehq:utils:json:merge` action produces one output.
 | Name | Description                           | Type     |
 |------|---------------------------------------|----------|
 | path | Path to the file that got appended to | `string` |
+-----
+
 
 #### `regex:replace`
 Validate an input structure using the `zod` library.
@@ -1747,6 +1789,8 @@ Defines a workflow step that processes regex values by replacing instances of "d
 ##### **Links**
 - [Code](https://github.com/janus-idp/backstage-plugins/blob/main/plugins/regex-actions/src/actions/regex/replace.ts)
 - [npm package](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-regex)
+-----
+
 
 #### `regex:fs:replace:plus`
 Enable regex-based search and replacement across files using glob patterns.
@@ -1838,6 +1882,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/uuid.ts)
+-----
+
 
 #### `roadiehq:utils:sleep`
 ✅️ Ready to use in Roadie
@@ -1855,6 +1901,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/sleep.ts)
+-----
+
 
 #### `vars:plus`
 Handle and log input variables, and return the same input as the output in a formatted structure.
