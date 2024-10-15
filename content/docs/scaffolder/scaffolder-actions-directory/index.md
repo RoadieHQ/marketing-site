@@ -1,13 +1,10 @@
 ---
-title: Scaffolder Actions Directory
+title: Backstage Scaffolder Actions Directory
 publishedDate: '2024-08-08'
-description: Directory of available scaffolder actions
+description: Directory of all open source Backstage scaffolder actions
 ---
 
-
-# Directory of Open Source Backstage Scaffolder Actions
-
-This page attempts to provide a comprehensive directory of all open source Scaffolder actions available for Backstage with instructions and examples for each action.
+This page is a comprehensive directory of all open source Scaffolder actions available for Backstage with instructions and examples for each action.
 
 Roadie comes bundled with a select set of actions to use out of the box. If you would like to use one that is not included, please contact Roadie support. 
 
@@ -17,6 +14,7 @@ NB:
 - We do not list actions created for hackathons and talks that are not maintained or intended for widespread use.
 - A subset of available actions in Roadie can also be found at the following page inside your Roadie app: `https://<tenant-name>.roadie.so/templates/actions`
 
+## Actions Summary Table
 
 **Generic Tools:**
 
@@ -32,7 +30,7 @@ NB:
 | HTTP Requests        | [http:backstage:request](#httpbackstagerequest)                             | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          | ✅️                     |
 |                      |
 | Debugging            | [debug:log](#debuglog)                                                      | Log a message to the UI output.                                                                                                                                           | ✅️                     |
-| Debugging            | [debug:wait](#debugwait)                                                    | Waits for a certain period of time.                                                                                                                                       | ✅️                     |
+| Debugging            | [debug:wait](#debugwait)                                                    | Waits for a certain period of time.                                                                                                                                       |                        |
 |                      |
 | File Operations      | [fs:delete](#fsdelete)                                                      | Deletes files and directories in the workspace                                                                                                                            | ✅️                     |
 | File Operations      | [fs:rename](#fsrename)                                                      | Renames files and directories in the workspace, essentially moving them.                                                                                                  | ✅️                     |
