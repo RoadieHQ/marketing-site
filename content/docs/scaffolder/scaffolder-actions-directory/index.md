@@ -15,20 +15,48 @@ NB:
 - We do not list actions created for hackathons and talks that are not maintained or intended for widespread use.
 - A subset of available actions in Roadie can be found at the following page inside the Roadie app: `https://<tenant-name>.roadie.so/templates/actions`
 
-| Category             | Name                                                                          | Description                                                                                                                                                               |
-|----------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Downloading Content  | [fetch:plain](#fetchplain)                                                    | Downloads directory content and places it in the workspace.                                                                                                               |
-| Downloading Content  | [fetch:plain:plus](#fetchplainplus)                                           | Downloads directory content and places it in the workspace for multiple urls.                                                                                             |
-| Downloading Content  | [fetch:template](#fetchtemplate)                                              | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes result to the workspace.           |
-| Downloading Content  | [fetch:template:plus](#fetchtemplateplus)                                     | Downloads multiple directories containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes results to the workspace. |
-| Downloading Content  | [fetch:plain:file](#fetchplainfile)                                           | Downloads single file and places it in the workspace.                                                                                                                     |
-| Downloading Content  | [fetch:plain:file:plus](#fetchplainfileplus)                                  | Downloads files and places them in the workspace for multiple urls.                                                                                                       |
+## Generic Tools
+| Category             | Name                                                                         | Description                                                                                                                                                               |
+|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Downloading Content  | [fetch:plain](#fetchplain)                                                   | Downloads directory content and places it in the workspace.                                                                                                               |
+| Downloading Content  | [fetch:plain:plus](#fetchplainplus)                                          | Downloads directory content and places it in the workspace for multiple urls.                                                                                             |
+| Downloading Content  | [fetch:template](#fetchtemplate)                                             | Downloads a directory containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes result to the workspace.           |
+| Downloading Content  | [fetch:template:plus](#fetchtemplateplus)                                    | Downloads multiple directories containing templated files using [nunjucks](https://mozilla.github.io/nunjucks/),merges variables in, and writes results to the workspace. |
+| Downloading Content  | [fetch:plain:file](#fetchplainfile)                                          | Downloads single file and places it in the workspace.                                                                                                                     |
+| Downloading Content  | [fetch:plain:file:plus](#fetchplainfileplus)                                 | Downloads files and places them in the workspace for multiple urls.                                                                                                       |
 |                      |
-| HTTP Requests        | [http:backstage:request](#httpbackstagerequest)                               | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          |
+| HTTP Requests        | [http:backstage:request](#httpbackstagerequest)                              | Runs an HTTP request against the Backstage Backend API and handles the response.                                                                                          |
 |                      |
-| Debugging            | [debug:log](#debuglog)                                                        | Log a message to the UI output.                                                                                                                                           |
-| Debugging            | [debug:wait](#debugwait)                                                      | Waits for a certain period of time.                                                                                                                                       |
+| Debugging            | [debug:log](#debuglog)                                                       | Log a message to the UI output.                                                                                                                                           |
+| Debugging            | [debug:wait](#debugwait)                                                     | Waits for a certain period of time.                                                                                                                                       |
 |                      |
+| File Operations      | [fs:delete](#fsdelete)                                                       | Deletes files and directories in the workspace                                                                                                                            |
+| File Operations      | [fs:rename](#fsrename)                                                       | Renames files and directories in the workspace, essentially moving them.                                                                                                  |
+| File Operations      | [roadiehq:utils:fs:replace](#roadiehqutilsfsreplace)                         | Replaces found string in files with content defined in input.                                                                                                             |
+| File Operations      | [roadiehq:utils:fs:parse](#roadiehqutilsfsparse)                             | Reads a file from the workspace and outputs content to be used in next steps.                                                                                             |
+| File Operations      | [roadiehq:utils:fs:write](#roadiehqutilsfswrite)                             | Creates a file with the content on the given path.                                                                                                                        |
+| File Operations      | [roadiehq:utils:fs:append](#roadiehqutilsfsappend)                           | Creates a file with the content on the given path.                                                                                                                        |
+| File Operations      | [roadiehq:utils:merge](#roadiehqutilsmerge)                                  | Merge data into an existing JSON or YAML file.                                                                                                                            |
+| File Operations      | [roadiehq:utils:zip](#roadiehqutilszip)                                      | Compresses content to a zip file in the workspace.                                                                                                                        |
+|                      |
+| Serialization        | [roadiehq:utils:serialize:yaml](#roadiehqutilsserializeyaml)                 | Converts YAML to a string.                                                                                                                                                |
+| Serialization        | [roadiehq:utils:serialize:json](#roadiehqutilsserializejson)                 | Converts JSON to a formated string.                                                                                                                                       |
+|                      |
+| Content Manipulation | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                              | Performs JSONata operations and transformations on input objects.                                                                                                         |
+| Content Manipulation | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform)  | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          |
+| Content Manipulation | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform)  | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          |
+| Content Manipulation | [json:merge-files](#jsonmerge-files)                                         | Merges multiple JSON files into a single JSON object stored in a new file in the workspace.                                                                               |
+| Content Manipulation | [json:merge-file](#jsonmerge-file)                                           | Uses [JSON-merger syntax](https://www.npmjs.com/package/json-merger#operations) to manipulate a single JSON file and store the result in a new file in the workspace.     |
+| Content Manipulation | [roadiehq:utils:json:merge](#roadiehqutilsjsonmerge)                         | Merge new data into an existing JSON file.                                                                                                                                |
+| Content Manipulation | [regex:replace](#regexreplace)                                               | Validate an input structure using the `zod` library to perform regex replacements on input values.                                                                        |
+| Content Manipulation | [regex:fs:replace:plus](#regexfsreplaceplus)                                 | Enable regex-based search and replacement across files using glob patterns.                                                                                               | 
+|                      |
+| Other Utils          | [uuid:v4:gen:plus](#uuidv4genplus)                                           | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |
+| Other Utils          | [vars:plus](#varsplus)                                                       | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        |
+
+## Backstage Specific
+| Category             | Name                                                                         | Description                                                                                                                                                               |
+|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Catalog              | [catalog:register](#catalogregister)                                          | Registers an entity in the catalog.                                                                                                                                       |
 | Catalog              | [catalog:register:plus](#catalogregisterplus)                                 | Registers multiple entities in the catalog.                                                                                                                               |
 | Catalog              | [catalog:write](#catalogwrite)                                                | Writes the catalog-info.yaml for your template                                                                                                                            |
@@ -38,158 +66,140 @@ NB:
 | Catalog              | [catalog:timestamping](#catalogtimestamping)                                  | Adds the `backstage.io/createdAt` annotation containing the current timestamp to your entity object.                                                                      |
 | Catalog              | [catalog:scaffolded-from](#catalogscaffolded-from)                            | Adds `scaffoldedFrom` spec containing the template entityRef to your entity object.                                                                                       |
 | Catalog              | [catalog:annotate](#catalogannotate)                                          | Allows you to annotate your entity object with specified label(s), annotation(s) and spec property(ies).                                                                  |
+|          
+| Notifications        | [notification:send](#varsplus)                                               | Sends notifications via the Backstage Notification Service.                                                                       |
+
+## Language / protocol / infrastructure
+| Category             | Name                                                                         | Description                                                                                                                                                               |
+|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Git                  | [git](#git)                                                                  | Allows execution of Git commands within a specified working directory.                                                                                                    |
 |                      |
-| File Operations      | [fs:delete](#fsdelete)                                                        | Deletes files and directories in the workspace                                                                                                                            |
-| File Operations      | [fs:rename](#fsrename)                                                        | Renames files and directories in the workspace, essentially moving them.                                                                                                  |
-| File Operations      | [roadiehq:utils:fs:replace](#roadiehqutilsfsreplace)                          | Replaces found string in files with content defined in input.                                                                                                             |
-| File Operations      | [roadiehq:utils:fs:parse](#roadiehqutilsfsparse)                              | Reads a file from the workspace and outputs content to be used in next steps.                                                                                             |
-| File Operations      | [roadiehq:utils:fs:write](#roadiehqutilsfswrite)                              | Creates a file with the content on the given path.                                                                                                                        |
-| File Operations      | [roadiehq:utils:fs:append](#roadiehqutilsfsappend)                            | Creates a file with the content on the given path.                                                                                                                        |
-| File Operations      | [roadiehq:utils:merge](#roadiehqutilsmerge)                                   | Merge data into an existing JSON or YAML file.                                                                                                                            |
-| File Operations      | [roadiehq:utils:zip](#roadiehqutilszip)                                       | Compresses content to a zip file in the workspace.                                                                                                                        |
+| HCL                  | [hcl:merge](#hclmerge)                                                       | Create an action for merging two HCL contents.                                                                                                                            |
+| HCL                  | [hcl:merge:write](#hclmergewrite)                                            | Merge two HCL content strings and write the merged result to a specified output path.                                                                                     |
+| HCL                  | [hcl:merge:files](#hclmergefiles)                                            | Merge two HCL files specified by their paths.                                                                                                                             |
+| HCL                  | [hcl:merge:files:write](#hclmergefileswrite)                                 | Merge two HCL files and write the merged content to a specified output path, with input validation.                                                                       |
 |                      |
-| Serialization        | [roadiehq:utils:serialize:yaml](#roadiehqutilsserializeyaml)                  | Converts YAML to a string.                                                                                                                                                |
-| Serialization        | [roadiehq:utils:serialize:json](#roadiehqutilsserializejson)                  | Converts JSON to a formated string.                                                                                                                                       |
+| Kubernetes           | [kubernetes:create-namespace](#kubernetescreate-namespace)                   | Creates a Kubernetes namespace, leveraging the Kubernetes API and Backstage's catalog client to fetch cluster information.                                                |
+| Kubernetes           | [deploy:kubernetes](#deploykubernetes)                                       | Action for deploying Kubernetes manifests within a Backstage application, using the Kubernetes API to apply the provided YAML or JSON resources.                          |
+| Kubernetes           | [kube:apply](#kubeapply)                                                     | Action for applying Kubernetes manifests in a Backstage application.                                                                                                      |
+| Kubernetes           | [kube:delete](#kubedelete)                                                   | Action for deleting Kubernetes resources.                                                                                                                                 |
+| Kubernetes           | [kube:job:wait](#kubejobwait)                                                | Action that waits for a Kubernetes job to complete based on specified labels and a namespace.                                                                             | 
 |                      |
-| Content Manipulation | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                               | Performs JSONata operations and transformations on input objects.                                                                                                         |
-| Content Manipulation | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform)   | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          |
-| Content Manipulation | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform)   | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          |
-| Content Manipulation | [json:merge-files](#jsonmerge-files)                                          | Merges multiple JSON files into a single JSON object stored in a new file in the workspace.                                                                               |
-| Content Manipulation | [json:merge-file](#jsonmerge-file)                                            | Uses [JSON-merger syntax](https://www.npmjs.com/package/json-merger#operations) to manipulate a single JSON file and store the result in a new file in the workspace.     |
-| Content Manipulation | [roadiehq:utils:json:merge](#roadiehqutilsjsonmerge)                          | Merge new data into an existing JSON file.                                                                                                                                |
-| Content Manipulation | [regex:replace](#regexreplace)                                                | Validate an input structure using the `zod` library to perform regex replacements on input values.                                                                        |
-| Content Manipulation | [regex:fs:replace:plus](#regexfsreplaceplus)                                  | Enable regex-based search and replacement across files using glob patterns.                                                                                               | 
+| Maven                | [maven](#maven)                                                              | Runs Maven commands in a specified working directory with optional arguments.                                                                                             |
 |                      |
-| Other Utils          | [uuid:v4:gen:plus](#uuidv4genplus)                                            | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |
-| Other Utils          | [vars:plus](#varsplus)                                                        | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        |
+| NPM                  | [npm:init](#npminit)                                                         | Action that automates running the `npm init -y` command in a specified workspace directory.                                                                               |
+| NPM                  | [npm:install](#npminstall)                                                   | Action that installs an npm package quietly based on the provided package name.                                                                                           |
+| NPM                  | [npm:exec](#npmexec)                                                         | Action for executing `npm exec` commands in a task workspace directory, using specific arguments provided in the input.                                                   |
+| NPM                  | [npm:config](#npmconfig)                                                     | Action that runs an `npm config` command with specified arguments in a task's workspace directory.                                                                        |
 |                      |
-| Notifications        | [notification:send](#varsplus)                                                | Sends notifications via the Backstage Notification Service.                                                                       |
+| Odo                  | [devfile:odo:command](#devfileodocommand)                                    | Action for executing OpenShift Do (odo) commands in a workspace.                                                                                                          |
+| Odo                  | [devfile:odo:component:init](#devfileodocomponentinit)                       | Action to initialize an ODO (OpenShift Do) component using a Devfile within Backstage.                                                                                    |
 |                      |
-| Git                  | [git](#git)                                                                   | Allows execution of Git commands within a specified working directory.                                                                                                    |
-|                      |
-| HCL                  | [hcl:merge](#hclmerge)                                                        | Create an action for merging two HCL contents.                                                                                                                            |
-| HCL                  | [hcl:merge:write](#hclmergewrite)                                             | Merge two HCL content strings and write the merged result to a specified output path.                                                                                     |
-| HCL                  | [hcl:merge:files](#hclmergefiles)                                             | Merge two HCL files specified by their paths.                                                                                                                             |
-| HCL                  | [hcl:merge:files:write](#hclmergefileswrite)                                  | Merge two HCL files and write the merged content to a specified output path, with input validation.                                                                       |
-|                      |
-| Pulumi               | [pulumi:new](#puluminew)                                                      | Action for creating a new Pulumi project, including input validation and execution of necessary commands to set up the project.                                           |
-| Pulumi               | [pulumi:up](#pulumiup)                                                        | Runs Pulumi to manage cloud resources, either in a local or remote workspace based on the provided configuration.                                                         |
-|                      |
-| Kubernetes           | [kubernetes:create-namespace](#kubernetescreate-namespace)                    | Creates a Kubernetes namespace, leveraging the Kubernetes API and Backstage's catalog client to fetch cluster information.                                                |
-| Kubernetes           | [deploy:kubernetes](#deploykubernetes)                                        | Action for deploying Kubernetes manifests within a Backstage application, using the Kubernetes API to apply the provided YAML or JSON resources.                          |
-| Kubernetes           | [kube:apply](#kubeapply)                                                      | Action for applying Kubernetes manifests in a Backstage application.                                                                                                      |
-| Kubernetes           | [kube:delete](#kubedelete)                                                    | Action for deleting Kubernetes resources.                                                                                                                                 |
-| Kubernetes           | [kube:job:wait](#kubejobwait)                                                 | Action that waits for a Kubernetes job to complete based on specified labels and a namespace.                                                                             | 
-|                      |
-| Maven                | [maven](#maven)                                                               | Runs Maven commands in a specified working directory with optional arguments.                                                                                             |
-|                      |
-| Ansible              | [ansible:jobTemplate:launch](#ansiblejobtemplatelaunch)                       | Action for launching an Ansible job template and waiting for it to complete.                                                                                              |
+| Pulumi               | [pulumi:new](#puluminew)                                                     | Action for creating a new Pulumi project, including input validation and execution of necessary commands to set up the project.                                           |
+| Pulumi               | [pulumi:up](#pulumiup)                                                       | Runs Pulumi to manage cloud resources, either in a local or remote workspace based on the provided configuration.                                                         |
+
+## 3rd Party Tools
+| Category             | Name                                                                         | Description                                                                                                                                                               |
+|----------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ansible              | [ansible:jobTemplate:launch](#ansiblejobtemplatelaunch)                      | Action for launching an Ansible job template and waiting for it to complete.                                                                                              |
 | Ansible              | [ansible-controller:jobTemplate:launch](#ansible-controllerjobtemplatelaunch) | Triggers the launch of an Ansible job template via the Ansible controller API.                                                                                            |
-| Ansible              | [argocd:create-resources](#argocdcreate-resources)                            | Action for creating Argo CD resources using Backstage's scaffolding plugin.                                                                                               | 
+| Ansible              | [argocd:create-resources](#argocdcreate-resources)                           | Action for creating Argo CD resources using Backstage's scaffolding plugin.                                                                                               | 
 |                      |
-| AWS                  | [roadiehq:aws:s3:cp](#roadiehqawss3cp)                                        | Action that uploads files from a local directory to an AWS S3 bucket using specified parameters.                                                                          |
-| AWS                  | [roadiehq:aws:ecr:create](#roadiehqawsecrcreate)                              | Creates an AWS Elastic Container Registry (ECR) repository.                                                                                                               |
-| AWS                  | [roadiehq:aws:secrets-manager:create](#roadiehqawssecrets-managercreate)      | Creates a new secret in AWS Secrets Manager using the Backstage scaffolder plugin.                                                                                        |
-| AWS                  | [opa:get-env-providers](#opaget-env-providers)                                | Retrieves AWS environment provider data based on a reference to an AWS environment entity.                                                                                |
-| AWS                  | [opa:create-secret](#opacreate-secret)                                        | Creates secrets in AWS Secrets Manager.                                                                                                                                   |
-| AWS                  | [opa:createRepoAccessToken:gitlab](#opacreaterepoaccesstokengitlab)           | Creates a GitLab repository access token and stores it in AWS Secrets Manager.                                                                                            |
-| AWS                  | [opa:get-platform-metadata](#opaget-platform-metadata)                        | Retrieves metadata about the OPA (Open Policy Agent) on AWS platform.                                                                                                     |
-| AWS                  | [opa:get-ssm-parameters](#opaget-ssm-parameters)                              | Retrieves AWS SSM parameter values for specified environment providers.                                                                                                   |
-| AWS                  | [aws:cloudcontrol:create](#awscloudcontrolcreate)                             | Action for creating resources using AWS Cloud Control API.                                                                                                                |
+| AWS                  | [roadiehq:aws:s3:cp](#roadiehqawss3cp)                                       | Action that uploads files from a local directory to an AWS S3 bucket using specified parameters.                                                                          |
+| AWS                  | [roadiehq:aws:ecr:create](#roadiehqawsecrcreate)                             | Creates an AWS Elastic Container Registry (ECR) repository.                                                                                                               |
+| AWS                  | [roadiehq:aws:secrets-manager:create](#roadiehqawssecrets-managercreate)     | Creates a new secret in AWS Secrets Manager using the Backstage scaffolder plugin.                                                                                        |
+| AWS                  | [opa:get-env-providers](#opaget-env-providers)                               | Retrieves AWS environment provider data based on a reference to an AWS environment entity.                                                                                |
+| AWS                  | [opa:create-secret](#opacreate-secret)                                       | Creates secrets in AWS Secrets Manager.                                                                                                                                   |
+| AWS                  | [opa:createRepoAccessToken:gitlab](#opacreaterepoaccesstokengitlab)          | Creates a GitLab repository access token and stores it in AWS Secrets Manager.                                                                                            |
+| AWS                  | [opa:get-platform-metadata](#opaget-platform-metadata)                       | Retrieves metadata about the OPA (Open Policy Agent) on AWS platform.                                                                                                     |
+| AWS                  | [opa:get-ssm-parameters](#opaget-ssm-parameters)                             | Retrieves AWS SSM parameter values for specified environment providers.                                                                                                   |
+| AWS                  | [aws:cloudcontrol:create](#awscloudcontrolcreate)                            | Action for creating resources using AWS Cloud Control API.                                                                                                                |
 |                      |
-| Azure                | [publish:azure](#publishazure)                                                | Action to initialize a Git repository and publish it to Azure DevOps.                                                                                                     |
-| Azure                | [azure:repo:clone](#azurerepoclone)                                           | Action for cloning an Azure DevOps repository into a specified workspace directory, handling authentication via personal access tokens or bearer tokens.                  |
-| Azure                | [git:clone:azure](#gitcloneazure)                                             | Clones repositories from Azure DevOps Git, allowing for multiple repositories to be cloned with the same Git reference.                                                   |
-| Azure                | [azure:repo:push](#azurerepopush)                                             | Pushes content from a local workspace to a remote Azure repository.                                                                                                       |
-| Azure                | [azure:repo:pr](#azurerepopr)                                                 | Creates a pull request in an Azure DevOps repository using customizable inputs.                                                                                           |
-| Azure                | [git:commit:azure](#gitcommitazure)                                           | Commits and pushes changes to an Azure DevOps Git repository, processing parameters and handling Git operations.                                                          |
-| Azure                | [azure:pipeline:create](#azurepipelinecreate)                                 | Creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.                                                                         |
-| Azure                | [pipeline:create:azure](#pipelinecreateazure)                                 | Automates the creation of Azure DevOps pipelines from Git repositories.                                                                                                   |
-| Azure                | [azure:pipeline:run](azurepipelinerun)                                        | Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.                                                                                       |
-| Azure                | [azure:pipeline:permit](#azurepipelinepermit)                                 | Defines an Azure DevOps pipeline permission management action for Backstage scaffolding.                                                                                  |
-| Azure                | [azure:repo:clone](#azurerepoclone)                                           | Action for cloning an Azure repository into a specified workspace directory using Backstage's scaffolding plugin.                                                         |
-| Azure                | [azure:repo:push](#azurerepopush)                                             | Action that pushes content from a local workspace to a remote Azure repository.                                                                                           |
-| Azure                | [azure:repo:pr](#azurerepopr)                                                 | Action for creating a pull request in Azure DevOps.                                                                                                                       |
+| Azure                | [publish:azure](#publishazure)                                               | Action to initialize a Git repository and publish it to Azure DevOps.                                                                                                     |
+| Azure                | [azure:repo:clone](#azurerepoclone)                                          | Action for cloning an Azure DevOps repository into a specified workspace directory, handling authentication via personal access tokens or bearer tokens.                  |
+| Azure                | [git:clone:azure](#gitcloneazure)                                            | Clones repositories from Azure DevOps Git, allowing for multiple repositories to be cloned with the same Git reference.                                                   |
+| Azure                | [azure:repo:push](#azurerepopush)                                            | Pushes content from a local workspace to a remote Azure repository.                                                                                                       |
+| Azure                | [azure:repo:pr](#azurerepopr)                                                | Creates a pull request in an Azure DevOps repository using customizable inputs.                                                                                           |
+| Azure                | [git:commit:azure](#gitcommitazure)                                          | Commits and pushes changes to an Azure DevOps Git repository, processing parameters and handling Git operations.                                                          |
+| Azure                | [azure:pipeline:create](#azurepipelinecreate)                                | Creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.                                                                         |
+| Azure                | [pipeline:create:azure](#pipelinecreateazure)                                | Automates the creation of Azure DevOps pipelines from Git repositories.                                                                                                   |
+| Azure                | [azure:pipeline:run](azurepipelinerun)                                       | Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.                                                                                       |
+| Azure                | [azure:pipeline:permit](#azurepipelinepermit)                                | Defines an Azure DevOps pipeline permission management action for Backstage scaffolding.                                                                                  |
+| Azure                | [azure:repo:clone](#azurerepoclone)                                          | Action for cloning an Azure repository into a specified workspace directory using Backstage's scaffolding plugin.                                                         |
+| Azure                | [azure:repo:push](#azurerepopush)                                            | Action that pushes content from a local workspace to a remote Azure repository.                                                                                           |
+| Azure                | [azure:repo:pr](#azurerepopr)                                                | Action for creating a pull request in Azure DevOps.                                                                                                                       |
 |                      |
-| Bitbucket            | [publish:bitbucket](#publishbitbucket)                                        | Creates a new Bitbucket repository and publishes the files in the workspace directory to the repository.                                                                  |
-| Bitbucket            | [publish:bitbucketCloud](#publishbitbucketCloud)                              | Creates and initializes a Bitbucket Cloud repository and publishes content to it from a workspace.                                                                        |
-| Bitbucket            | [bitbucket:pipelines:run](#bitbucketpipelinesrun)                             | Triggers a run of a Bitbucket Cloud pipeline using the Backstage framework.                                                                                               |
-| Bitbucket            | [publish:bitbucketCloud:pull-request](#publishbitbucketcloudpull-request)     | Action for publishing a pull request to a Bitbucket Cloud repository using Backstage's scaffolding system.                                                                |
-| Bitbucket            | [publish:bitbucketServer](#publishbitbucketserver)                            | Creates a new repository in Bitbucket Server.                                                                                                                             |
-| Bitbucket            | [publish:bitbucketServer:pull-request](#publishbitbucketserverpull-request)   | Opens a pull request on a Bitbucket Server repository to merge two existing branches.                                                                                     | 
+| Bitbucket            | [publish:bitbucket](#publishbitbucket)                                       | Creates a new Bitbucket repository and publishes the files in the workspace directory to the repository.                                                                  |
+| Bitbucket            | [publish:bitbucketCloud](#publishbitbucketCloud)                             | Creates and initializes a Bitbucket Cloud repository and publishes content to it from a workspace.                                                                        |
+| Bitbucket            | [bitbucket:pipelines:run](#bitbucketpipelinesrun)                            | Triggers a run of a Bitbucket Cloud pipeline using the Backstage framework.                                                                                               |
+| Bitbucket            | [publish:bitbucketCloud:pull-request](#publishbitbucketcloudpull-request)    | Action for publishing a pull request to a Bitbucket Cloud repository using Backstage's scaffolding system.                                                                |
+| Bitbucket            | [publish:bitbucketServer](#publishbitbucketserver)                           | Creates a new repository in Bitbucket Server.                                                                                                                             |
+| Bitbucket            | [publish:bitbucketServer:pull-request](#publishbitbucketserverpull-request)  | Opens a pull request on a Bitbucket Server repository to merge two existing branches.                                                                                     | 
 |                      |
-| CNEO                 | [cnoe:kubernetes:apply](#cnoekubernetesapply)                                 | Action for applying Kubernetes manifests using `kubectl`, either from a string, an object, or a file path, with support for namespaced configurations.                    |
-| CNEO                 | [cnoe:verify:dependency](#cnoeverifydependency)                               | Verify resource dependencies for CNOE.                                                                                                                                    |
-| CNEO                 | [cnoe:utils:sanitize](#cnoeutilssanitize)                                     | Action for sanitizing resources defined in a YAML document by removing empty fields, before further processing.                                                           |
+| CNEO                 | [cnoe:kubernetes:apply](#cnoekubernetesapply)                                | Action for applying Kubernetes manifests using `kubectl`, either from a string, an object, or a file path, with support for namespaced configurations.                    |
+| CNEO                 | [cnoe:verify:dependency](#cnoeverifydependency)                              | Verify resource dependencies for CNOE.                                                                                                                                    |
+| CNEO                 | [cnoe:utils:sanitize](#cnoeutilssanitize)                                    | Action for sanitizing resources defined in a YAML document by removing empty fields, before further processing.                                                           |
 |                      |
-| Codacy               | [codacy:add-repo](codacyadd-repo)                                             | Action for adding a repository to Codacy using its API.                                                                                                                   |
+| Codacy               | [codacy:add-repo](codacyadd-repo)                                            | Action for adding a repository to Codacy using its API.                                                                                                                   |
 |                      |
-| Confluence           | [confluence:transform:markdown](#confluencetransformmarkdown)                 | Action that transforms Confluence content into Markdown format and updates a GitHub repository with the new Markdown files and modified `mkdocs.yml` configuration.       |
+| Confluence           | [confluence:transform:markdown](#confluencetransformmarkdown)                | Action that transforms Confluence content into Markdown format and updates a GitHub repository with the new Markdown files and modified `mkdocs.yml` configuration.       |
 |                      |
-| Cue                  | [cue:cueflow](cuecueflow)                                                     | This action fetches some template content, runs a Cue command on it, and copies output files to a specified directory.                                                    |
+| Cue                  | [cue:cueflow](cuecueflow)                                                    | This action fetches some template content, runs a Cue command on it, and copies output files to a specified directory.                                                    |
 |                      |
-| Gerrit               | [publish:gerrit:review](#publishgerritreview)                                 | Action for creating a new Gerrit review by committing and pushing changes to a Git repository.                                                                            |
-| Gerrit               | [publish:gerrit](#publishgerrit)                                              | Action that initializes a Git repository with content from the workspace and publishes it to a Gerrit repository.                                                         |
-| Gerrit               | [publish:gitea](#publishgitea)                                                | This action initializes a git repository from workspace content and publishes it to a Gitea repository.                                                                   |
+| Gerrit               | [publish:gerrit:review](#publishgerritreview)                                | Action for creating a new Gerrit review by committing and pushing changes to a Git repository.                                                                            |
+| Gerrit               | [publish:gerrit](#publishgerrit)                                             | Action that initializes a Git repository with content from the workspace and publishes it to a Gerrit repository.                                                         |
+| Gerrit               | [publish:gitea](#publishgitea)                                               | This action initializes a git repository from workspace content and publishes it to a Gitea repository.                                                                   |
 |                      |
-| GitHub               | [publish:github](#publishgithub)                                              | Creates a new GitHub repository and publishes files from the workspace to the repository.                                                                                 |
-| GitHub               | [publish:github:pull-request](#publishgithubpull-request)                     | Creates a pull request in a pre-existing repository using files from the workspace.                                                                                       |
-| GitHub               | [github:webhook](#githubwebhook)                                              | Configures a webhook on an existing GitHub repository, requiring `repoUrl` and `webhookUrl`.                                                                              |
-| GitHub               | [github:autolinks:create](#githubautolinkscreate)                             | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                               |
-| GitHub               | [github:deployKey:create](#githubdeploykeycreate)                             | Creates and stores GitHub Deploy Keys, with the option to encrypt and store the private key as a GitHub secret.                                                           |
-| GitHub               | [github:environment:create](#githubenvironmentcreate)                         | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                          |
-| GitHub               | [github:issues:label](#githubissueslabel)                                     | Adds labels to pull requests or issues on GitHub.                                                                                                                         |
-| GitHub               | [github:pages:enable](#githubpagesenable)                                     | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                                        |
-| GitHub               | [github:repo:create](#githubrepocreate)                                       | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                     |
-| GitHub               | [github:repo:push](#githubrepopush)                                           | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                  |
-| GitHub               | [parse:repo-url:plus](#parserepo-urlplus)                                     | Parses repository URLs and extracts relevant metadata based on a specified schema.                                                                                        |
+| GitHub               | [publish:github](#publishgithub)                                             | Creates a new GitHub repository and publishes files from the workspace to the repository.                                                                                 |
+| GitHub               | [publish:github:pull-request](#publishgithubpull-request)                    | Creates a pull request in a pre-existing repository using files from the workspace.                                                                                       |
+| GitHub               | [github:webhook](#githubwebhook)                                             | Configures a webhook on an existing GitHub repository, requiring `repoUrl` and `webhookUrl`.                                                                              |
+| GitHub               | [github:autolinks:create](#githubautolinkscreate)                            | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                               |
+| GitHub               | [github:deployKey:create](#githubdeploykeycreate)                            | Creates and stores GitHub Deploy Keys, with the option to encrypt and store the private key as a GitHub secret.                                                           |
+| GitHub               | [github:environment:create](#githubenvironmentcreate)                        | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                          |
+| GitHub               | [github:issues:label](#githubissueslabel)                                    | Adds labels to pull requests or issues on GitHub.                                                                                                                         |
+| GitHub               | [github:pages:enable](#githubpagesenable)                                    | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                                        |
+| GitHub               | [github:repo:create](#githubrepocreate)                                      | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                     |
+| GitHub               | [github:repo:push](#githubrepopush)                                          | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                  |
+| GitHub               | [parse:repo-url:plus](#parserepo-urlplus)                                    | Parses repository URLs and extracts relevant metadata based on a specified schema.                                                                                        |
 |                      |
-| GitLab               | [publish:gitlab](#publishgitlab)                                              | Initializes a Git repository of the content in the workspace and publishes it to GitLab.                                                                                  |
-| GitLab               | [publish:gitlab:merge-request](#publishgitlabmerge-request)                   | Creates a merge request in a GitLab repository.                                                                                                                           |
-| GitLab               | [gitlab:repo:push](#gitlabrepopush)                                           | Automates the process of pushing commits to a GitLab repository.                                                                                                          |
-| GitLab               | [gitlab:group:ensureExists](#gitlabgroupensureExists)                         | Ensures that a GitLab group or sub-groups exist, creating them if they do not.                                                                                            |
-| GitLab               | [gitlab:issues:create](#gitlabissuescreate)                                   | Action to create GitLab issues, including input validation using Zod, GitLab API calls, and error handling.                                                               |
-| GitLab               | [gitlab:issue:edit](#gitlabissueedit)                                         | Validates input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels and assignees.                                        |
-| GitLab               | [gitlab:pipeline:trigger](#gitlabpipelinetrigger)                             | Automates the creation and triggering of a GitLab pipeline using specific input parameters.                                                                               |
-| GitLab               | [gitlab:projectAccessToken:create](#gitlabprojectAccessTokencreate)           | Action that creates a project access token in GitLab.                                                                                                                     |
-| GitLab               | [gitlab:projectVariable:create](#gitlabprojectVariablecreate)                 | Action for creating project variables in GitLab.                                                                                                                          |
-| GitLab               | [gitlab:projectDeployToken:create](#gitlabprojectDeployTokencreate)           | Action that creates a GitLab project deploy token.                                                                                                                        |
+| GitLab               | [publish:gitlab](#publishgitlab)                                             | Initializes a Git repository of the content in the workspace and publishes it to GitLab.                                                                                  |
+| GitLab               | [publish:gitlab:merge-request](#publishgitlabmerge-request)                  | Creates a merge request in a GitLab repository.                                                                                                                           |
+| GitLab               | [gitlab:repo:push](#gitlabrepopush)                                          | Automates the process of pushing commits to a GitLab repository.                                                                                                          |
+| GitLab               | [gitlab:group:ensureExists](#gitlabgroupensureExists)                        | Ensures that a GitLab group or sub-groups exist, creating them if they do not.                                                                                            |
+| GitLab               | [gitlab:issues:create](#gitlabissuescreate)                                  | Action to create GitLab issues, including input validation using Zod, GitLab API calls, and error handling.                                                               |
+| GitLab               | [gitlab:issue:edit](#gitlabissueedit)                                        | Validates input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels and assignees.                                        |
+| GitLab               | [gitlab:pipeline:trigger](#gitlabpipelinetrigger)                            | Automates the creation and triggering of a GitLab pipeline using specific input parameters.                                                                               |
+| GitLab               | [gitlab:projectAccessToken:create](#gitlabprojectAccessTokencreate)          | Action that creates a project access token in GitLab.                                                                                                                     |
+| GitLab               | [gitlab:projectVariable:create](#gitlabprojectVariablecreate)                | Action for creating project variables in GitLab.                                                                                                                          |
+| GitLab               | [gitlab:projectDeployToken:create](#gitlabprojectDeployTokencreate)          | Action that creates a GitLab project deploy token.                                                                                                                        |
 |                      |
-| Humanitec            | [humanitec:create-app](#humaniteccreate-app)                                  | Action for creating applications in Humanitec, using a YAML setup file to define application properties.                                                                  |
+| Humanitec            | [humanitec:create-app](#humaniteccreate-app)                                 | Action for creating applications in Humanitec, using a YAML setup file to define application properties.                                                                  |
 |                      |
-| Microsoft Teams      | [ms-teams:sendMessage](ms-teamssendmessage)                                   | Action that sends messages to a Microsoft Teams channel using a specified webhook URL.                                                                                    |
+| Microsoft Teams      | [ms-teams:sendMessage](ms-teamssendmessage)                                  | Action that sends messages to a Microsoft Teams channel using a specified webhook URL.                                                                                    |
 |                      |
-| NPM                  | [npm:init](#npminit)                                                          | Action that automates running the `npm init -y` command in a specified workspace directory.                                                                               |
-| NPM                  | [npm:install](#npminstall)                                                    | Action that installs an npm package quietly based on the provided package name.                                                                                           |
-| NPM                  | [npm:exec](#npmexec)                                                          | Action for executing `npm exec` commands in a task workspace directory, using specific arguments provided in the input.                                                   |
-| NPM                  | [npm:config](#npmconfig)                                                      | Action that runs an `npm config` command with specified arguments in a task's workspace directory.                                                                        |
+| PagerDuty            | [pagerduty:service:create](#pagerdutyservicecreate)                          | Action for the Backstage scaffolder plugin that allows users to create a PagerDuty service.                                                                               |
 |                      |
-| Odo                  | [devfile:odo:command](#devfileodocommand)                                     | Action for executing OpenShift Do (odo) commands in a workspace.                                                                                                          |
-| Odo                  | [devfile:odo:component:init](#devfileodocomponentinit)                        | Action to initialize an ODO (OpenShift Do) component using a Devfile within Backstage.                                                                                    |
+| Quay                 | [quay:create-repository](#quaycreate-repository)                             | Action for creating a repository in Quay.io.                                                                                                                              |
 |                      |
-| PagerDuty            | [pagerduty:service:create](#pagerdutyservicecreate)                           | Action for the Backstage scaffolder plugin that allows users to create a PagerDuty service.                                                                               |
+| Sonarqube            | [sonarqube:create-project](#sonarqubecreate-project)                         | Action for creating a project in SonarQube via the Backstage Scaffolder plugin.                                                                                           |
 |                      |
-| Quay                 | [quay:create-repository](#quaycreate-repository)                              | Action for creating a repository in Quay.io.                                                                                                                              |
+| ServiceNow           | [servicenow:now:table:createRecord](#servicenownowtablecreaterecord)         | Action for Backstage's Scaffolder, allowing users to insert a record into a specified ServiceNow.                                                                         |
+| ServiceNow           | [servicenow:now:table:deleteRecord](#servicenownowtabledeleteRecord)         | Action for deleting a record from a ServiceNow table.                                                                                                                     |
+| ServiceNow           | [servicenow:now:table:modifyRecord](#servicenownowtablemodifyRecord)         | Action handler that modifies a record in a ServiceNow table.                                                                                                              |
+| ServiceNow           | [servicenow:now:table:retrieveRecord](#servicenownowtableretrieveRecord)     | Action handler that retrieves a record in a ServiceNow table.                                                                                                             |
+| ServiceNow           | [servicenow:now:table:retrieveRecords](#servicenownowtableretrieverecords)   | Action handler that retrieves records in a ServiceNow table.                                                                                                              |
+| ServiceNow           | [servicenow:now:table:updateRecord](#servicenownowtableupdaterecord)         | Action handler that updates a record in a ServiceNow table.                                                                                                               |
 |                      |
-| Sonarqube            | [sonarqube:create-project](#sonarqubecreate-project)                          | Action for creating a project in SonarQube via the Backstage Scaffolder plugin.                                                                                           |
+| Slack                | [slack:sendMessage:conversation](#slacksendmessageconversation)              | Sends a Slack message to a specific conversation using the Slack API.                                                                                                     |
+| Slack                | [slack:sendMessage:webhook](#slacksendmessagewebhook)                        | Sends a message to Slack via a webhook URL.                                                                                                                               |
 |                      |
-| ServiceNow           | [servicenow:now:table:createRecord](#servicenownowtablecreaterecord)          | Action for Backstage's Scaffolder, allowing users to insert a record into a specified ServiceNow.                                                                         |
-| ServiceNow           | [servicenow:now:table:deleteRecord](#servicenownowtabledeleteRecord)          | Action for deleting a record from a ServiceNow table.                                                                                                                     |
-| ServiceNow           | [servicenow:now:table:modifyRecord](#servicenownowtablemodifyRecord)          | Action handler that modifies a record in a ServiceNow table.                                                                                                              |
-| ServiceNow           | [servicenow:now:table:retrieveRecord](#servicenownowtableretrieveRecord)      | Action handler that retrieves a record in a ServiceNow table.                                                                                                             |
-| ServiceNow           | [servicenow:now:table:retrieveRecords](#servicenownowtableretrieverecords)    | Action handler that retrieves records in a ServiceNow table.                                                                                                              |
-| ServiceNow           | [servicenow:now:table:updateRecord](#servicenownowtableupdaterecord)          | Action handler that updates a record in a ServiceNow table.                                                                                                               |
+| Sentry               | [sentry:create-project](#sentrycreate-project)                               | Action to create a new project in Sentry.                                                                                                                                 |
 |                      |
-| Slack                | [slack:sendMessage:conversation](#slacksendmessageconversation)               | Sends a Slack message to a specific conversation using the Slack API.                                                                                                     |
-| Slack                | [slack:sendMessage:webhook](#slacksendmessagewebhook)                         | Sends a message to Slack via a webhook URL.                                                                                                                               |
+| Torque               | [torque:create-app](torquecreate-app)                                        | Action for managing applications in Torque.                                                                                                                               |
 |                      |
-| Sentry               | [sentry:create-project](#sentrycreate-project)                                | Action to create a new project in Sentry.                                                                                                                                 |
+| Webex                | [webex:webhooks:sendMessage](#webexwebhookssendmessage)                      | Action that sends messages to Webex Incoming Webhooks.                                                                                                                    |
 |                      |
-| Torque               | [torque:create-app](torquecreate-app)                                         | Action for managing applications in Torque.                                                                                                                               |
-|                      |
-| Webex                | [webex:webhooks:sendMessage](#webexwebhookssendmessage)                       | Action that sends messages to Webex Incoming Webhooks.                                                                                                                    |
-|                      |
-| Yeoman               | [run:yeoman](#runyeoman)                                                      | Action for running a Yeoman generator in Backstage scaffolder.                                                                                                            |
+| Yeoman               | [run:yeoman](#runyeoman)                                                     | Action for running a Yeoman generator in Backstage scaffolder.                                                                                                            |
 
 
 ## Generic Tools
@@ -1330,7 +1340,7 @@ Parse multiple Xmls contents from various sources types.
 
 ##### Links
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-parsings/blob/main/src/actions/xml/xml.ts
-- [Code](https://www.npmjs.com/package/@k3tech/backstage-plugin-scaffolder-backend-module-parsings
+- [NPM](https://www.npmjs.com/package/@k3tech/backstage-plugin-scaffolder-backend-module-parsings
 
 #### `yaml`
 Parse YAML content from various sources using the Backstage scaffolder framework.
@@ -2291,95 +2301,6 @@ None
 ##### Links
 - [Code](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts
 
-### Pulumi Scaffolder Actions
-
-#### `pulumi:new`
-Action for creating a new Pulumi project, including input validation and execution of necessary commands to set up the project.
-##### Inputs
-
-| Key            | Description                                                                            | Type                                     | Example |
-|----------------|----------------------------------------------------------------------------------------|------------------------------------------|---------|
-| `template`*     | The Pulumi template to use, this can be a built-in template or a URL to a template   | `string`                                 |         |
-| `stack`*        | The name of the Pulumi stack                                                           | `string`                                 |         |
-| `organization`* | The organization to which the Pulumi stack belongs                                     | `string`                                 |         |
-| `name`*         | The name of the Pulumi project                                                          | `string`                                 |         |
-| `description`  | The Pulumi project description to use                                                  | `string`                                 |         |
-| `config`       | The Pulumi project config to use                                                       | `object`                                 |         |
-| `secretConfig` | The Pulumi project secret config to use                                                | `object`                                 |         |
-| `args`         | The Pulumi command arguments to run                                                    | `string[]`                               |         |
-| `folder`*       | The folder to run Pulumi in                                                            | `string`                                 |         |
-
-template*, stack*, organization*, name*, description, config, secretConfig, args, folder*
-##### Examples
-```yaml
-steps:
-  - id: pulumi-new-component
-    name: Cookie cut the component Pulumi project
-    action: pulumi:new
-    input:
-      name: "${{ parameters.component_id }}-infrastructure"
-      description: ${{ parameters.description | dump }}
-      organization: ediri
-      stack: ${{ parameters.stack }}
-      template: "https://github.com/my-silly-organisation/microservice-civo/tree/main/infrastructure-${{ parameters.cloud }}-${{ parameters.language }}"
-      config:
-        "node:node_count": "${{ parameters.nodeCount }}"
-      folder: .
-```
-This example creates a new Pulumi project for a component, using specified parameters such as name, description, organization, stack, template URL, configuration settings, and folder.
-##### Outputs
-None
-##### Links
-- [Code](https://github.com/pulumi/pulumi-backstage-plugin/tree/main/plugins/backstage-scaffolder-backend-pulumi#pulumi-new-action
-
-#### `pulumi:up`
-Runs Pulumi to manage cloud resources, either in a local or remote workspace based on the provided configuration.
-##### Inputs
-
-| Key                          | Description                                                                    | Type                                                                                     | Example |
-|------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|--------|
-| `stack`*                       | The name of the Pulumi stack.                                                 | `string`                                                                                 |        |
-| `organization`*               | The organization name for the Pulumi stack.                                  | `string`                                                                                 |        |
-| `name`*                       | The name of the Pulumi project.                                               | `string`                                                                                 |        |
-| `deployment`*                 | This flag indicates that Pulumi Deployment will be used.                     | `boolean`                                                                                |        |
-| `repoUrl`                    | The Pulumi project repo URL to use, when using Pulumi Deployment.            | `string`                                                                                 |        |
-| `repoBranch`                 | The Pulumi project repo branch to use, when using Pulumi Deployment.         | `string`                                                                                 |        |
-| `repoProjectPath`            | The Pulumi project repo path to use, when using Pulumi Deployment.           | `string`                                                                                 |        |
-| `config`                     | The Pulumi project config to use.                                            | `object`                                                                                 |        |
-| `providerCredentialsFromEnv` | The Pulumi project provider credentials to use.                              | `array of string`                                                                        |        |
-| `secretConfig`               | The Pulumi project secret config to use.                                     | `object`                                                                                 |        |
-| `outputs`                    | The Pulumi project outputs to return.                                        | `array of string`                                                                        |        |
-| `preRunCommands`             | The Pulumi project pre-run commands to execute.                              | `array of string`                                                                        |        |
-| `suppressProgress`           | Suppress progress output.                                                    | `boolean`                                                                                |        |
-
-stack*, organization*, name*, deployment*, repoUrl, repoBranch, repoProjectPath, config, providerCredentialsFromEnv, secretConfig, outputs, preRunCommands, suppressProgress
-
-##### Examples
-```yaml
-steps:
-    - id: pulumi-deploy-infrastructure
-      name: Deploy the infrastructure using Pulumi CLI
-      action: pulumi:up
-      input:
-        deployment: false
-        name: "${{ parameters.component_id }}-infrastructure"
-        repoUrl: "https://github.com/${{ (parameters.repoUrl | parseRepoUrl)['owner'] }}/${{ (parameters.repoUrl | parseRepoUrl)['repo'] }}"
-        repoProjectPath: .
-        organization: ediri
-        outputs:
-          - kubeconfig
-          - ClusterId
-        stack: ${{ parameters.stack }}
-```
-This example uses the Pulumi CLI to deploy infrastructure, specifying parameters such as the deployment type, project details, organization name, stack, and the expected outputs.
-##### Outputs
-| Key        | Description                           | Type                                                           |
-|------------|---------------------------------------|----------------------------------------------------------------|
-| (dynamic)  | The Pulumi project outputs to return. | `record of { [key: string]: { value: any; } }`                |
-
-##### Links
-- [Code](https://github.com/pulumi/pulumi-backstage-plugin/tree/main/plugins/backstage-scaffolder-backend-pulumi#pulumi-up-action
-
 ### Kubernetes Scaffolder Actions
 
 #### `kubernetes:create-namespace`
@@ -2420,7 +2341,7 @@ None
 
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-kubernetes-dynamic
+- [NPM](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-kubernetes-dynamic
 - [Code](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/kubernetes-actions
 
 #### `deploy:kubernetes`
@@ -2573,8 +2494,273 @@ steps:
 None
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@gcornacchia/backstage-plugin-scaffolder-maven-actions
+- [NPM](https://www.npmjs.com/package/@gcornacchia/backstage-plugin-scaffolder-maven-actions
 - [Code](https://github.com/gcornacchia/backstage-plugin-scaffolder-maven-actions/blob/develop/src/actions/maven.ts
+
+### NPM Scaffolder Actions
+
+#### `npm:init`
+Action that automates running the `npm init -y` command in a specified workspace directory.
+
+##### Inputs
+
+| **Key**               | **Description**                                                | **Type**         | **Example** |
+|-----------------------|----------------------------------------------------------------|------------------|-------------|
+| `ctx.workspacePath`    | The path of the workspace directory where `npm init` will be run | `string`         |             |
+| `ctx.logStream`        | The stream used to log the execution of the shell command       | `Stream`         |             |
+| `ctx.logger.info`      | Method for logging informational messages                      | `function`       |             |
+| `ctx.logger.error`     | Method for logging error messages                              | `function`       |             |
+
+##### Examples
+```yaml
+steps:
+    - id: npm-init
+      name: init
+      action: npm:init
+```
+
+##### Outputs
+
+| **Key**          | **Description**                        | **Type**   |
+|------------------|----------------------------------------|------------|
+| `npm:init`       | Action ID for identifying this template action | `string`   |
+| `npm`            | Command for running `npm init` retrieved via `getNpmCommand` | `string`   |
+| `executeShellCommand` | Function executing the npm command in the shell | `function` |
+
+
+##### Links
+- [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/init/init.ts))
+
+#### `npm:install`
+Action for a Backstage Scaffolder plugin that installs an npm package quietly based on the provided package name.
+
+##### Inputs
+
+| **Key**               | **Description**               | **Type**     | **Example** |
+|-----------------------|-------------------------------|--------------|-------------|
+| `packageToInstall`*     | Name of the package to install | `string`     |             |
+
+##### Examples
+```yaml
+  - id: npm-install
+    name: install
+    action: npm:install
+    input:
+      packageToInstall: ${{ parameters.packageToInstall }}
+```
+
+##### Outputs
+None
+
+##### Links
+- [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/install/install.ts))
+
+#### `npm:exec`
+Action for executing `npm exec` commands in a task workspace directory, using specific arguments provided in the input.
+
+##### Inputs:
+
+| Key         | Description                                      | Type        | Example |
+|-------------|--------------------------------------------------|-------------|---------|
+| `arguments` | The arguments to pass to the npm exec command     | `array`     |         |
+| `arguments.items` | The individual string arguments in the array | `string`    |         |
+
+
+##### Examples
+```yaml
+  - id: npm-exec
+    name: exec
+    action: npm:exec
+    input:
+      args: ${{ parameters.execArgs }}
+```
+
+##### Outputs
+None
+
+##### Links
+- [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/exec/exec.ts))
+
+#### `npm:config`
+For the Backstage scaffolder plugin that runs an `npm config` command with specified arguments in a task's workspace directory.
+
+##### Inputs
+
+| **Key**       | **Description**                                      | **Type**           | **Example** |
+|---------------|------------------------------------------------------|--------------------|-------------|
+| `arguments`*   | The arguments to pass to the npm config command       | `array of strings` |             |
+
+##### Examples
+```yaml
+  - id: npm-config
+    name: config
+    action: npm:config
+    input:
+      args: ${{ parameters.execArgs }}
+```
+
+##### Outputs
+None
+
+##### Links
+- [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/config/config.ts))
+
+### Odo Scaffolder Actions
+[OpenShift Do](https://developers.redhat.com/products/odo/overview).
+
+#### `devfile:odo:command`
+Action for executing OpenShift Do (odo) commands in a workspace.
+
+##### Inputs
+
+| **Key**            | **Description**                                             | **Type**    | **Example** |
+|--------------------|-------------------------------------------------------------|-------------|-------------|
+| `command`*          | The odo command to run from the scaffolder workspace         | `string`    |             |
+| `args`             | Arguments to pass to the command                            | `array`     |             |
+
+
+##### Examples
+```yaml
+  steps:
+    - id: generic-odo-command
+      name: Execute odo command
+      action: devfile:odo:command
+      input:
+        command: ${{ parameters.command }} # e.g.: 'analyze'
+        args: ${{ parameters.args }} # e.g.: ['-o', 'json']
+```
+
+##### Outputs
+| **Key**              | **Description**                                   | **Type**    |
+|----------------------|---------------------------------------------------|-------------|
+| `GLOBALODOCONFIG`     | Path to the temporary odo config file             | `string`    |
+| `ODO_TRACKING_CONSENT`| Telemetry tracking consent setting for odo        | `string`    |
+| `TELEMETRY_CALLER`    | Caller context for telemetry (set to `backstage`) | `string`    |
+
+##### Links
+- [NPM](https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo
+- [Code](https://github.com/backstage/community-plugins/blob/main/workspaces/odo/plugins/scaffolder-backend-module-odo/src/actions/odo.ts)
+
+#### `devfile:odo:component:init`
+Action to initialize an ODO (OpenShift Do) component using a Devfile within a Backstage scaffolder template.
+
+##### Inputs
+| **Key**            | **Description**                     | **Type**      | **Example** |
+|--------------------|-------------------------------------|---------------|-------------|
+| `devfile`*          | The Devfile to use                  | `string`      |             |
+| `version`*          | The Devfile Stack version           | `string`      |             |
+| `starter_project`  | The starter project                 | `string`      |             |
+| `name`*             | The new component name              | `string`      |             |
+
+##### Examples
+```yaml
+steps:
+    - id: odo-init
+      name: Generate
+      action: devfile:odo:component:init
+      input:
+        name: ${{ parameters.name }}
+        devfile: ${{ parameters.devfile_data.devfile }}
+        version: ${{ parameters.devfile_data.version }}
+        starter_project: ${{ parameters.devfile_data.starter_project }}
+```
+
+##### Outputs
+None
+
+##### Links
+- [NPM](https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo
+- [Code](https://github.com/backstage/community-plugins/blob/main/workspaces/odo/plugins/scaffolder-backend-module-odo/src/actions/odo-init.ts)
+
+### Pulumi Scaffolder Actions
+
+#### `pulumi:new`
+Action for creating a new Pulumi project, including input validation and execution of necessary commands to set up the project.
+##### Inputs
+
+| Key            | Description                                                                            | Type                                     | Example |
+|----------------|----------------------------------------------------------------------------------------|------------------------------------------|---------|
+| `template`*     | The Pulumi template to use, this can be a built-in template or a URL to a template   | `string`                                 |         |
+| `stack`*        | The name of the Pulumi stack                                                           | `string`                                 |         |
+| `organization`* | The organization to which the Pulumi stack belongs                                     | `string`                                 |         |
+| `name`*         | The name of the Pulumi project                                                          | `string`                                 |         |
+| `description`  | The Pulumi project description to use                                                  | `string`                                 |         |
+| `config`       | The Pulumi project config to use                                                       | `object`                                 |         |
+| `secretConfig` | The Pulumi project secret config to use                                                | `object`                                 |         |
+| `args`         | The Pulumi command arguments to run                                                    | `string[]`                               |         |
+| `folder`*       | The folder to run Pulumi in                                                            | `string`                                 |         |
+
+template*, stack*, organization*, name*, description, config, secretConfig, args, folder*
+##### Examples
+```yaml
+steps:
+  - id: pulumi-new-component
+    name: Cookie cut the component Pulumi project
+    action: pulumi:new
+    input:
+      name: "${{ parameters.component_id }}-infrastructure"
+      description: ${{ parameters.description | dump }}
+      organization: ediri
+      stack: ${{ parameters.stack }}
+      template: "https://github.com/my-silly-organisation/microservice-civo/tree/main/infrastructure-${{ parameters.cloud }}-${{ parameters.language }}"
+      config:
+        "node:node_count": "${{ parameters.nodeCount }}"
+      folder: .
+```
+This example creates a new Pulumi project for a component, using specified parameters such as name, description, organization, stack, template URL, configuration settings, and folder.
+##### Outputs
+None
+##### Links
+- [Code](https://github.com/pulumi/pulumi-backstage-plugin/tree/main/plugins/backstage-scaffolder-backend-pulumi#pulumi-new-action
+
+#### `pulumi:up`
+Runs Pulumi to manage cloud resources, either in a local or remote workspace based on the provided configuration.
+##### Inputs
+
+| Key                          | Description                                                                    | Type                                                                                     | Example |
+|------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|--------|
+| `stack`*                       | The name of the Pulumi stack.                                                 | `string`                                                                                 |        |
+| `organization`*               | The organization name for the Pulumi stack.                                  | `string`                                                                                 |        |
+| `name`*                       | The name of the Pulumi project.                                               | `string`                                                                                 |        |
+| `deployment`*                 | This flag indicates that Pulumi Deployment will be used.                     | `boolean`                                                                                |        |
+| `repoUrl`                    | The Pulumi project repo URL to use, when using Pulumi Deployment.            | `string`                                                                                 |        |
+| `repoBranch`                 | The Pulumi project repo branch to use, when using Pulumi Deployment.         | `string`                                                                                 |        |
+| `repoProjectPath`            | The Pulumi project repo path to use, when using Pulumi Deployment.           | `string`                                                                                 |        |
+| `config`                     | The Pulumi project config to use.                                            | `object`                                                                                 |        |
+| `providerCredentialsFromEnv` | The Pulumi project provider credentials to use.                              | `array of string`                                                                        |        |
+| `secretConfig`               | The Pulumi project secret config to use.                                     | `object`                                                                                 |        |
+| `outputs`                    | The Pulumi project outputs to return.                                        | `array of string`                                                                        |        |
+| `preRunCommands`             | The Pulumi project pre-run commands to execute.                              | `array of string`                                                                        |        |
+| `suppressProgress`           | Suppress progress output.                                                    | `boolean`                                                                                |        |
+
+stack*, organization*, name*, deployment*, repoUrl, repoBranch, repoProjectPath, config, providerCredentialsFromEnv, secretConfig, outputs, preRunCommands, suppressProgress
+
+##### Examples
+```yaml
+steps:
+    - id: pulumi-deploy-infrastructure
+      name: Deploy the infrastructure using Pulumi CLI
+      action: pulumi:up
+      input:
+        deployment: false
+        name: "${{ parameters.component_id }}-infrastructure"
+        repoUrl: "https://github.com/${{ (parameters.repoUrl | parseRepoUrl)['owner'] }}/${{ (parameters.repoUrl | parseRepoUrl)['repo'] }}"
+        repoProjectPath: .
+        organization: ediri
+        outputs:
+          - kubeconfig
+          - ClusterId
+        stack: ${{ parameters.stack }}
+```
+This example uses the Pulumi CLI to deploy infrastructure, specifying parameters such as the deployment type, project details, organization name, stack, and the expected outputs.
+##### Outputs
+| Key        | Description                           | Type                                                           |
+|------------|---------------------------------------|----------------------------------------------------------------|
+| (dynamic)  | The Pulumi project outputs to return. | `record of { [key: string]: { value: any; } }`                |
+
+##### Links
+- [Code](https://github.com/pulumi/pulumi-backstage-plugin/tree/main/plugins/backstage-scaffolder-backend-pulumi#pulumi-up-action
+
 
 ## 3rd Party Tools
 
@@ -2632,7 +2818,7 @@ Configure your template call to ansible.
 | `job`    | Status and details of the job  | `object`     |
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@mycloudlab/scaffolder-backend-module-ansible-controller
+- [NPM](https://www.npmjs.com/package/@mycloudlab/scaffolder-backend-module-ansible-controller
 - [Code](https://github.com/mycloudlab/scaffolder-backend-module-ansible-controller/blob/main/src/actions/ansible-controller/launch.ts
 
 ### ArgoCD Scaffolder Actions
@@ -2839,7 +3025,7 @@ secretName*, description, region, tags
 | `secretARN`      | The ARN of the created secret    | `string`  |
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
+- [NPM](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/create-secret/create-secret.ts
 
 #### `opa:createRepoAccessToken:gitlab`
@@ -2863,7 +3049,7 @@ Action for creating a GitLab repository access token and storing it in AWS Secre
 | `expirationDate`| The expiration date of the access token    | string | 
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
+- [NPM](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/create-repo-access-token/create-repoAccesstoken.ts
 
 #### `opa:get-platform-metadata`
@@ -2884,7 +3070,7 @@ Action that retrieves metadata about the OPA (Open Policy Agent) on AWS platform
 | `platformRegion`*   | *The AWS region where the OPA on AWS solution is deployed*                      | `string`  |
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
+- [NPM](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-platform-metadata/get-platform-metadata.ts
 
 #### `opa:get-ssm-parameters`
@@ -2905,7 +3091,7 @@ Action that retrieves AWS SSM parameter values for specified environment provide
 | params  | Map of SSM parameters, keyed off of the environment provider name              | `object`                |
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
+- [NPM](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-ssm-parameters/get-ssm-parameters.ts
 
 #### `aws:cloudcontrol:create`
@@ -2927,7 +3113,7 @@ steps:
 ##### Outputs
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@alithya-oss/plugin-scaffolder-backend-module-aws-core
+- [NPM](https://www.npmjs.com/package/@alithya-oss/plugin-scaffolder-backend-module-aws-core
 
 ### Azure Scaffolder Actions
 
@@ -3317,7 +3503,7 @@ organization*, project*, resourceId*, resourceType*, authorized*, pipelineId*, p
 | `response.status`    | The HTTP status code of the pipeline permissions change request. | `number`    |
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines
+- [NPM](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/tree/main
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/permitAzurePipeline.ts
 
@@ -3350,7 +3536,7 @@ steps:
 None
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories
+- [NPM](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/cloneAzureRepo.ts
 
 #### `azure:repo:push`
@@ -3381,7 +3567,7 @@ branch*, sourcePath, gitCommitMessage, gitAuthorName, gitAuthorEmail
 None
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories
+- [NPM](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pushAzureRepo.ts
 
 #### `azure:repo:pr`
@@ -3426,7 +3612,7 @@ organization, sourceBranch, targetBranch, title*, description, repoId*, project,
 | pullRequestId        | The ID of the created pull request                        | number   |
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories
+- [NPM](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pullRequestAzureRepo.ts
 
 ### Bitbucket Scaffolder Actions
@@ -3996,7 +4182,7 @@ This publishes a repository to Gitea.
 | `commitHash`           | The git commit hash of the initial commit                                                                 | `string` |
 
 ##### Links
-- [Code](https://www.npmjs.com/package/@backstage/plugin-scaffolder-backend-module-gitea
+- [NPM](https://www.npmjs.com/package/@backstage/plugin-scaffolder-backend-module-gitea
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitea/src/actions/gitea.ts
 
 ### GitHub Scaffolder Actions
@@ -5253,181 +5439,6 @@ None
 
 ##### Links
 - [NPM](https://www.npmjs.com/package/@grvpandey11/backstage-plugin-scaffolder-backend-module-ms-teams)
-
-### NPM Scaffolder Actions
-
-#### `npm:init`
-Action that automates running the `npm init -y` command in a specified workspace directory.
-
-##### Inputs
-
-| **Key**               | **Description**                                                | **Type**         | **Example** |
-|-----------------------|----------------------------------------------------------------|------------------|-------------|
-| `ctx.workspacePath`    | The path of the workspace directory where `npm init` will be run | `string`         |             |
-| `ctx.logStream`        | The stream used to log the execution of the shell command       | `Stream`         |             |
-| `ctx.logger.info`      | Method for logging informational messages                      | `function`       |             |
-| `ctx.logger.error`     | Method for logging error messages                              | `function`       |             |
-
-##### Examples
-```yaml
-steps:
-    - id: npm-init
-      name: init
-      action: npm:init
-```
-
-##### Outputs
-
-| **Key**          | **Description**                        | **Type**   |
-|------------------|----------------------------------------|------------|
-| `npm:init`       | Action ID for identifying this template action | `string`   |
-| `npm`            | Command for running `npm init` retrieved via `getNpmCommand` | `string`   |
-| `executeShellCommand` | Function executing the npm command in the shell | `function` |
-
-
-##### Links
-- [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/init/init.ts))
-
-#### `npm:install`
-Action for a Backstage Scaffolder plugin that installs an npm package quietly based on the provided package name.
-
-##### Inputs
-
-| **Key**               | **Description**               | **Type**     | **Example** |
-|-----------------------|-------------------------------|--------------|-------------|
-| `packageToInstall`*     | Name of the package to install | `string`     |             |
-
-##### Examples
-```yaml
-  - id: npm-install
-    name: install
-    action: npm:install
-    input:
-      packageToInstall: ${{ parameters.packageToInstall }}
-```
-
-##### Outputs
-None
-
-##### Links
-- [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/install/install.ts))
-
-#### `npm:exec`
-Action for executing `npm exec` commands in a task workspace directory, using specific arguments provided in the input.
-
-##### Inputs:
-
-| Key         | Description                                      | Type        | Example |
-|-------------|--------------------------------------------------|-------------|---------|
-| `arguments` | The arguments to pass to the npm exec command     | `array`     |         |
-| `arguments.items` | The individual string arguments in the array | `string`    |         |
-
-
-##### Examples
-```yaml
-  - id: npm-exec
-    name: exec
-    action: npm:exec
-    input:
-      args: ${{ parameters.execArgs }}
-```
-
-##### Outputs
-None
-
-##### Links
-- [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/exec/exec.ts))
-
-#### `npm:config`
-For the Backstage scaffolder plugin that runs an `npm config` command with specified arguments in a task's workspace directory.
-
-##### Inputs
-
-| **Key**       | **Description**                                      | **Type**           | **Example** |
-|---------------|------------------------------------------------------|--------------------|-------------|
-| `arguments`*   | The arguments to pass to the npm config command       | `array of strings` |             |
-
-##### Examples
-```yaml
-  - id: npm-config
-    name: config
-    action: npm:config
-    input:
-      args: ${{ parameters.execArgs }}
-```
-
-##### Outputs
-None
-
-##### Links
-- [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/config/config.ts))
-
-### Odo Scaffolder Actions
-[OpenShift Do](https://developers.redhat.com/products/odo/overview).
-
-#### `devfile:odo:command`
-Action for executing OpenShift Do (odo) commands in a workspace.
-
-##### Inputs
-
-| **Key**            | **Description**                                             | **Type**    | **Example** |
-|--------------------|-------------------------------------------------------------|-------------|-------------|
-| `command`*          | The odo command to run from the scaffolder workspace         | `string`    |             |
-| `args`             | Arguments to pass to the command                            | `array`     |             |
-
-
-##### Examples
-```yaml
-  steps:
-    - id: generic-odo-command
-      name: Execute odo command
-      action: devfile:odo:command
-      input:
-        command: ${{ parameters.command }} # e.g.: 'analyze'
-        args: ${{ parameters.args }} # e.g.: ['-o', 'json']
-```
-
-##### Outputs
-| **Key**              | **Description**                                   | **Type**    |
-|----------------------|---------------------------------------------------|-------------|
-| `GLOBALODOCONFIG`     | Path to the temporary odo config file             | `string`    |
-| `ODO_TRACKING_CONSENT`| Telemetry tracking consent setting for odo        | `string`    |
-| `TELEMETRY_CALLER`    | Caller context for telemetry (set to `backstage`) | `string`    |
-
-##### Links
-- [Code](https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo
-- [Code](https://github.com/backstage/community-plugins/blob/main/workspaces/odo/plugins/scaffolder-backend-module-odo/src/actions/odo.ts)
-
-#### `devfile:odo:component:init`
-Action to initialize an ODO (OpenShift Do) component using a Devfile within a Backstage scaffolder template.
-
-##### Inputs
-| **Key**            | **Description**                     | **Type**      | **Example** |
-|--------------------|-------------------------------------|---------------|-------------|
-| `devfile`*          | The Devfile to use                  | `string`      |             |
-| `version`*          | The Devfile Stack version           | `string`      |             |
-| `starter_project`  | The starter project                 | `string`      |             |
-| `name`*             | The new component name              | `string`      |             |
-
-##### Examples
-```yaml
-steps:
-    - id: odo-init
-      name: Generate
-      action: devfile:odo:component:init
-      input:
-        name: ${{ parameters.name }}
-        devfile: ${{ parameters.devfile_data.devfile }}
-        version: ${{ parameters.devfile_data.version }}
-        starter_project: ${{ parameters.devfile_data.starter_project }}
-```
-
-##### Outputs
-None
-
-##### Links
-- [Code](https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo
-- [Code](https://github.com/backstage/community-plugins/blob/main/workspaces/odo/plugins/scaffolder-backend-module-odo/src/actions/odo-init.ts)
 
 ### Pagerduty Scaffolder Actions
 
