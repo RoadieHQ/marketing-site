@@ -170,7 +170,7 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 | GitHub          | [github:pages:enable](#githubpagesenable)                                     | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                                          |                        |
 | GitHub          | [github:repo:create](#githubrepocreate)                                       | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                       |                        |
 | GitHub          | [github:repo:push](#githubrepopush)                                           | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                    |                        |
-| GitHub          | [parse:repo-url:plus](#parserepo-urlplus)                                     | Parses repository URLs and extracts relevant metadata based on a specified schema.                                                                                          |                        |
+| GitHub          | [parse:repo-url:plus](#parserepo-urlplus)                                     | Parses GitHub repository URLs and extracts relevant metadata based on a specified schema.                                                                                   |                        |
 |                 |
 | GitLab          | [publish:gitlab](#publishgitlab)                                              | Initializes a Git repository of the content in the workspace and publishes it to GitLab.                                                                                    | ✅️                     |
 | GitLab          | [publish:gitlab:merge-request](#publishgitlabmerge-request)                   | Creates a merge request in a GitLab repository.                                                                                                                             | ✅️                     |
@@ -255,6 +255,8 @@ None
 
 ##### **Links:**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/plain.ts)
+-----
+
 
 #### `fetch:plain:plus`
 
@@ -307,6 +309,8 @@ steps:
 ##### **Links:**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/exemples.md#fetchplainplus)
 - [How to add it to Backstage](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/README.md#get-started)
+-----
+
 
 #### `fetch:plain:file`
 ✅️ Ready to use in Roadie
@@ -336,6 +340,8 @@ None
 
 ##### **Links:**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/plainFile.ts)
+-----
+
 
 #### `fetch:plain:file:plus`
 
@@ -386,6 +392,8 @@ steps:
 ##### **Links:**
 - [How to add it to Backstage](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/README.md#get-started)
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/HEAD/exemples.md#fetchplainfileplus
+-----
+
 
 #### `fetch:template`
 ✅️ Ready to use in Roadie
@@ -480,6 +488,8 @@ The `fetch:template` action does not output any data.
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/template.ts)
+-----
+
 
 #### `fetch:template:plus`
 Downloads multiple directories containing templated files, then renders all the template variables into the files, directory names and content using [Nunjucks](https://mozilla.github.io/nunjucks/), and places the results in the workspace.
@@ -523,12 +533,16 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/main/src/actions/builtin/fetch/template.ts)
+-----
+
 
 #### `fetch:cookiecutter`
 *[Deprecated for `fetch:template` used with `cookiecutterCompat: true` input parameter.](https://backstage.io/docs/features/software-templates/builtin-actions#migrating-from-fetchcookiecutter-to-fetchtemplate)*
 
 ##### **Links:**
 - [Code](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-cookiecutter
+-----
+
 
 #### `fetch:template:file`
 
@@ -568,6 +582,8 @@ This example fetches a single template from a relative path and substitutes the 
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/templateFile.ts)
+-----
+
 
 #### `fetch:rails`
 Downloads a Rails template from a given URL, applies templating using Rails, and optionally runs it inside a Docker container.
@@ -623,6 +639,8 @@ This step fetches the specified Rails template and configures it with the provid
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-rails)
+-----
+
 
 ### HTTP Request Scaffolder Actions
 
@@ -726,6 +744,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-http-request)
+-----
+
 
 ### Debugging Scaffolder Actions
 
@@ -794,6 +814,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/HEAD/exemples.md#debugfsreadplus)
+-----
+
 
 ### File Operation Scaffolder Actions
 
@@ -1229,6 +1251,8 @@ This step uses the `glob:plus` action to list all files matching the pattern `"*
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/glob.ts)
+-----
+
 
 ### Parsing and Serialization Actions
 
@@ -1443,6 +1467,8 @@ The `roadiehq:utils:serialize:yaml` action produces one output.
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/serialize/yaml.ts)
+-----
+
 
 ### Content Manipulation Scaffolder Actions
 
@@ -1777,6 +1803,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/regex-fs-replace.ts)
+-----
+
 
 ### Other utils
 
@@ -1857,6 +1885,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/vars.ts)
+-----
+
 
 ## Backstage Specific
 
@@ -1912,6 +1942,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/register.ts)
+-----
+
 
 #### `catalog:register:plus`
 Registers entities from a catalog descriptor file in the software catalog.
@@ -1943,6 +1975,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/catalog/register.ts)
+-----
+
 
 #### `catalog:write`
 ✅️ Ready to use in Roadie
@@ -2001,6 +2035,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/write.ts)
+-----
+
 
 #### `catalog:fetch`
 
@@ -2056,6 +2092,8 @@ An `entity` object following the [schema of Backstage entities](https://backstag
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/src/scaffolder/actions/builtin/catalog/fetch.ts)
+-----
+
 
 #### `catalog:query:plus`
 Queries the catalog using provided filters, fields, and ordering parameters. It utilizes Backstage's `CatalogApi` for fetching catalog entities and allows customization through a schema for input and output data.
@@ -2096,6 +2134,8 @@ This step queries the catalog for up to 2 entities, retrieving only the `metadat
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/catalog/query.ts)
+-----
+
 
 #### `catalog:relation:plus`
 Query entities based on relations. It uses a schema-based validation approach for input and output.
@@ -2138,6 +2178,8 @@ This step defines an action `catalog:relation:plus` to query entity relations, f
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/catalog/relations.ts)
+-----
+
 
 #### `catalog:timestamping`
 Adds the `backstage.io/createdAt` annotation containing the current timestamp to your entity object
@@ -2158,6 +2200,8 @@ None
 
 ##### **Links**
 - [npm package](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-annotator)
+-----
+
 
 #### `catalog:scaffolded-from`
 Adds `scaffoldedFrom` spec containing the template entityRef to your entity object
@@ -2178,6 +2222,8 @@ None
 
 ##### **Links**
 - [npm package](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-annotator)
+-----
+
 
 #### `catalog:annotate`
 Allows you to annotate your entity object with specified label(s), annotation(s) and spec property(ies).
@@ -2203,6 +2249,8 @@ steps:
 
 ##### **Links**
 - [npm package](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-annotator)
+-----
+
 
 ### Notifications Scaffolder Actions
 
@@ -2238,6 +2286,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-notifications/src/actions/sendNotification.ts)
+-----
+
 
 ## Language / protocol / infrastructure
 
@@ -2273,6 +2323,8 @@ None
 ##### **Links**
 - [Code](https://github.com/arhill05/backstage-plugin-scaffolder-git-actions/blob/master/src/actions/git.ts)
 [Package](https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-git-actions)
+-----
+
 
 ### HCL/Terraform Scaffolder Actions
 
@@ -2295,6 +2347,8 @@ Create an action for merging two HCL contents.
 
 ##### **Links**
 - [Code](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)
+-----
+
 
 #### `hcl:merge:write`
 Merge two HCL content strings and write the merged result to a specified output path.
@@ -2315,6 +2369,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)
+-----
+
 
 #### `hcl:merge:files`
 Merge two HCL files specified by their paths.
@@ -2334,6 +2390,8 @@ Merge two HCL files specified by their paths.
 
 ##### **Links**
 - [Code](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)
+-----
+
 
 #### `hcl:merge:files:write`
 Merge two HCL files and writing the merged content to a specified output path, with input validation using Zod.
@@ -2350,6 +2408,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)
+-----
+
 
 ### Kubernetes Scaffolder Actions
 
@@ -2390,6 +2450,8 @@ None
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-kubernetes-dynamic)
 - [Code](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/kubernetes-actions)
+-----
+
 
 #### `deploy:kubernetes`
 Action for deploying Kubernetes manifests within a Backstage application, using the Kubernetes API to apply the provided YAML or JSON resources.
@@ -2411,6 +2473,8 @@ In this format, the **Inputs** table summarizes the parameters required for the 
 
 ##### **Links**
 - [Code](https://github.com/pfeifferj/backstage-plugin-scaffolder-kubernetes-deploy/blob/main/src/actions/k8s-apply.ts)
+-----
+
 
 #### `kube:apply`
 
@@ -2449,6 +2513,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kirederik/backstage-k8s-scaffolder-actions/blob/main/src/actions/apply.ts)
+-----
+
 
 #### `kube:delete`
 Action for deleting Kubernetes resources.
@@ -2479,6 +2545,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/kirederik/backstage-k8s-scaffolder-actions/blob/main/src/actions/delete.ts)
+-----
+
 
 #### `kube:job:wait`
 Action that waits for a Kubernetes job to complete based on specified labels and a namespace.
@@ -2511,6 +2579,8 @@ This is a step example that waits for a Kubernetes job with the label `job-name:
 
 ##### **Links**
 - [Code](https://github.com/kirederik/backstage-k8s-scaffolder-actions/blob/main/src/actions/wait.ts)
+-----
+
 
 ### Maven Scaffolder Actions
 
@@ -2542,6 +2612,8 @@ None
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@gcornacchia/backstage-plugin-scaffolder-maven-actions)
 - [Code](https://github.com/gcornacchia/backstage-plugin-scaffolder-maven-actions/blob/develop/src/actions/maven.ts)
+-----
+
 
 ### NPM Scaffolder Actions
 
@@ -2576,6 +2648,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/init/init.ts))
+-----
+
 
 #### `npm:install`
 Action for a Backstage Scaffolder plugin that installs an npm package quietly based on the provided package name.
@@ -2600,6 +2674,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/install/install.ts))
+-----
+
 
 #### `npm:exec`
 Action for executing `npm exec` commands in a task workspace directory, using specific arguments provided in the input.
@@ -2625,6 +2701,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/exec/exec.ts))
+-----
+
 
 #### `npm:config`
 For the Backstage scaffolder plugin that runs an `npm config` command with specified arguments in a task's workspace directory.
@@ -2649,6 +2727,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/arhill05/backstage-plugin-scaffolder-npm-actions/blob/master/src/actions/config/config.ts))
+-----
+
 
 ### Odo Scaffolder Actions
 [OpenShift Do](https://developers.redhat.com/products/odo/overview).
@@ -2684,6 +2764,8 @@ Action for executing OpenShift Do (odo) commands in a workspace.
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo)
 - [Code](https://github.com/backstage/community-plugins/blob/main/workspaces/odo/plugins/scaffolder-backend-module-odo/src/actions/odo.ts)
+-----
+
 
 #### `devfile:odo:component:init`
 Action to initialize an ODO (OpenShift Do) component using a Devfile within a Backstage scaffolder template.
@@ -2715,6 +2797,8 @@ None
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-odo)
 - [Code](https://github.com/backstage/community-plugins/blob/main/workspaces/odo/plugins/scaffolder-backend-module-odo/src/actions/odo-init.ts)
+-----
+
 
 ### Pulumi Scaffolder Actions
 
@@ -2758,6 +2842,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/pulumi/pulumi-backstage-plugin/tree/main/plugins/backstage-scaffolder-backend-pulumi#pulumi-new-action
+-----
+
 
 #### `pulumi:up`
 Runs Pulumi to manage cloud resources, either in a local or remote workspace based on the provided configuration.
@@ -2806,6 +2892,9 @@ This example uses the Pulumi CLI to deploy infrastructure, specifying parameters
 
 ##### **Links**
 - [Code](https://github.com/pulumi/pulumi-backstage-plugin/tree/main/plugins/backstage-scaffolder-backend-pulumi#pulumi-up-action
+-----
+-----
+
 
 ## 3rd Party Tools
 
@@ -2828,6 +2917,8 @@ Action for launching an Ansible job template and waiting for it to complete.
 
 ##### **Links**
 - [Code](https://github.com/KiwiGDC/backstage-kawx/blob/main/plugins/scaffolder-backend-module-kawx/src/actions/run/run.ts)
+-----
+
 
 #### `ansible-controller:job_template:launch`
 Triggers the launch of an Ansible job template via the Ansible controller API.
@@ -2862,6 +2953,8 @@ Configure your template call to ansible.
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@mycloudlab/scaffolder-backend-module-ansible-controller)
 - [Code](https://github.com/mycloudlab/scaffolder-backend-module-ansible-controller/blob/main/src/actions/ansible-controller/launch.ts)
+-----
+
 
 ### ArgoCD Scaffolder Actions
 
@@ -2909,6 +3002,8 @@ This creates Argo CD resources by invoking the `argocd:create-resources` action,
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-argocd
+-----
+
 
 ### AWS Scaffolder Actions
 
@@ -2944,6 +3039,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-aws
+-----
+
 
 #### `roadiehq:aws:ecr:create`
 This TypeScript code defines a Backstage template action for creating an AWS Elastic Container Registry (ECR) repository.
@@ -2981,6 +3078,8 @@ This creates an AWS Elastic Container Registry (ECR) repository by utilizing the
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-aws
+-----
+
 
 #### `roadiehq:aws:secrets-manager:create`
 Action for creating a new secret in AWS Secrets Manager using the Backstage scaffolder plugin.
@@ -3021,6 +3120,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-aws/src/actions/secrets-manager/create.ts)
+-----
+
 
 #### `opa:get-env-providers`
 Action that retrieves AWS environment provider data based on a reference to an AWS environment entity from the Backstage catalog.
@@ -3041,6 +3142,8 @@ Action that retrieves AWS environment provider data based on a reference to an A
 
 ##### **Links**
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-env-providers/get-env-providers.ts)
+-----
+
 
 #### `opa:create-secret`
 Action that creates secrets in AWS Secrets Manager.
@@ -3067,6 +3170,8 @@ secretName*, description, region, tags
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage)
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/create-secret/create-secret.ts)
+-----
+
 
 #### `opa:createRepoAccessToken:gitlab`
 Action for creating a GitLab repository access token and storing it in AWS Secrets Manager.
@@ -3089,6 +3194,8 @@ Action for creating a GitLab repository access token and storing it in AWS Secre
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage)
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/create-repo-access-token/create-repoAccesstoken.ts)
+-----
+
 
 #### `opa:get-platform-metadata`
 Action that retrieves metadata about the OPA (Open Policy Agent) on AWS platform, specifically fetching the AWS region where the solution is deployed.
@@ -3108,6 +3215,8 @@ Action that retrieves metadata about the OPA (Open Policy Agent) on AWS platform
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage)
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-platform-metadata/get-platform-metadata.ts)
+-----
+
 
 #### `opa:get-ssm-parameters`
 Action that retrieves AWS SSM parameter values for specified environment providers.
@@ -3127,6 +3236,8 @@ Action that retrieves AWS SSM parameter values for specified environment provide
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@aws/plugin-scaffolder-backend-aws-apps-for-backstage)
 - [Code](https://github.com/awslabs/harmonix/blob/main/backstage-plugins/plugins/scaffolder-backend-module-aws-apps/src/actions/get-ssm-parameters/get-ssm-parameters.ts)
+-----
+
 
 #### `aws:cloudcontrol:create`
 This action creates AWS resources using the AWS Cloud Control API.
@@ -3158,13 +3269,15 @@ Unknown
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@alithya-oss/plugin-scaffolder-backend-module-aws-core)
 - [Installation](https://www.npmjs.com/package/@alithya-oss/plugin-scaffolder-backend-module-aws-core?activeTab=readme)
+-----
+
 
 ### Azure Scaffolder Actions
 
 #### `publish:azure`
 ✅️ Ready to use in Roadie
 
-Action to initialize a Git repository and publish it to Azure DevOps, along with its input and output schemas.
+Action to initialize a Git repository and publish it to Azure DevOps.
 
 ##### **Inputs**
 | Key                  | Description                                                                                                                    | Type                | Example |
@@ -3201,9 +3314,11 @@ This performs an action to publish content to Azure DevOps by initializing a Git
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-azure/src/actions/azure.ts)
+-----
+
 
 #### `git:clone:azure`
-This code defines a Backstage Scaffolder action for cloning repositories from Azure DevOps Git and another for launching job templates in an Ansible controller.
+This action clones repositories from Azure DevOps.
 
 ##### **Inputs**
 | **Key**        | **Description**                                                | **Type**        | **Example** |
@@ -3238,9 +3353,11 @@ This clones two Azure DevOps repositories using the same Git reference (`main`).
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/repos/git-clone-azure.ts)
+-----
+
 
 #### `git:commit:azure`
-Action for committing and pushing changes to an Azure DevOps Git repository. It sets up the input schema, processes parameters, handles Git operations, and pushes changes to the repository.
+Action for committing and pushing changes to an Azure DevOps Git repository.
 
 ##### **Inputs**
 | **Key**            | **Description**                                                                                          | **Type**      | **Example** |
@@ -3274,6 +3391,8 @@ Step to commit and push changes to an Azure DevOps Git repository on the `main` 
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/repos/git-commit-azure.ts)
+-----
+
 
 #### `pipeline:create:azure`
 Automates the creation of Azure DevOps pipelines from Git repositories.
@@ -3317,6 +3436,8 @@ This creates Azure pipelines for two repositories (`repo-1` and `repo-2`), using
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-azure-devops/blob/main/src/actions/piepline/pipeline-create-azure.ts)
+-----
+
 
 #### `azure:pipeline:create`
 This creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.
@@ -3358,6 +3479,8 @@ This creates an Azure Pipeline through the Azure DevOps REST API using Backstage
 
 ##### **Links**
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/createAzurePipeline.ts)
+-----
+
 
 #### `azure:pipeline:run`
 Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.
@@ -3394,6 +3517,8 @@ Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plug
 
 ##### **Links**
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/runAzurePipeline.ts)
+-----
+
 
 #### `azure:pipeline:permit`
 Defines an Azure DevOps pipeline permission management action for Backstage scaffolding.
@@ -3434,6 +3559,8 @@ Defines an Azure DevOps pipeline permission management action for Backstage scaf
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines)
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-pipelines/blob/main/src/actions/run/permitAzurePipeline.ts)
+-----
+
 
 #### `azure:repo:clone`
 ✅️ Ready to use in Roadie
@@ -3468,6 +3595,8 @@ Action for cloning an Azure DevOps repository into a specified workspace directo
 
 ##### **Links**
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/cloneAzureRepo.ts)
+-----
+
 
 #### `azure:repo:push`
 ✅️ Ready to use in Roadie
@@ -3500,6 +3629,8 @@ None
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories)
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pushAzureRepo.ts)
+-----
+
 
 #### `azure:repo:pr`
 ✅️ Ready to use in Roadie
@@ -3545,6 +3676,8 @@ Action for creating a pull request in Azure DevOps.
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@parfuemerie-douglas/scaffolder-backend-module-azure-repositories)
 - [Code](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories/blob/main/src/actions/run/pullRequestAzureRepo.ts)
+-----
+
 
 ### Bitbucket Scaffolder Actions
 
@@ -3637,6 +3770,8 @@ The `publish:bitbucket` action produces the following outputs.
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket/src/actions/bitbucket.ts)
+-----
+
 
 #### `publish:bitbucketCloud`
 Action that creates and initializes a Bitbucket Cloud repository and publishes content to it from a workspace.
@@ -3673,6 +3808,8 @@ This publishes content to Bitbucket Cloud by initializing a repository, providin
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloud.ts)
+-----
+
 
 #### `bitbucket:pipelines:run`
 Triggers a run of a Bitbucket Cloud pipeline using the Backstage framework.
@@ -3717,6 +3854,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloudPipelinesRun.ts)
+-----
+
 
 #### `publish:bitbucketCloud:pull-request`
 Action for publishing a pull request to a Bitbucket Cloud repository using Backstage's scaffolding system.
@@ -3755,10 +3894,11 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-cloud/src/actions/bitbucketCloudPullRequest.ts)
+-----
+
 
 #### `publish:bitbucketServer`
 Creates a new repository in Bitbucket Server.
-
 
 ##### **Inputs**
 
@@ -3774,7 +3914,6 @@ Creates a new repository in Bitbucket Server.
 | `gitCommitMessage`   | Git commit message (default value is 'initial commit')                                                        | `string`           |             |
 | `gitAuthorName`      | Author name for the commit (default value is 'Scaffolder')                                                    | `string`           |             |
 | `gitAuthorEmail`     | Author email for the commit                                                                                   | `string`           |             |
-
 
 ##### **Examples**
 
@@ -3808,6 +3947,8 @@ This publishes a repository to Bitbucket Server, specifying repository details, 
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-server/src/actions/bitbucketServer.ts)
+-----
+
 
 #### `publish:bitbucketServer:pull-request`
 Opens a pull request on a Bitbucket Server repository to merge two existing branches.
@@ -3824,7 +3965,6 @@ Opens a pull request on a Bitbucket Server repository to merge two existing bran
 | `token`            | Authorization token for Bitbucket Server                     | `string`    |             |
 | `gitAuthorName`    | Author name for the commit. Defaults to 'Scaffolder'          | `string`    |             |
 | `gitAuthorEmail`   | Author email for the commit                                  | `string`    |             |
-
 
 ##### **Examples**
 
@@ -3849,12 +3989,13 @@ This example creates a pull request on a Bitbucket Server, including action type
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-bitbucket-server/src/actions/bitbucketServerPullRequest.ts)
+-----
+
 
 ### CNEO Scaffolder Actions
 
 #### `cnoe:kubernetes:apply`
 Action for applying Kubernetes manifests using `kubectl`, either from a string, an object, or a file path, with support for namespaced configurations and cluster authentication.
-
 
 ##### **Inputs**
 | Key                 | Description                                                  | Type    | Example |
@@ -3865,8 +4006,6 @@ Action for applying Kubernetes manifests using `kubectl`, either from a string, 
 | `namespaced`*        | Whether the API is namespaced or not.                        | `boolean`|         |
 | `clusterName`       | The name of the cluster to apply this.                       | `string`|         |
 
-##### **Examples**
-
 ##### **Outputs**
 
 | Key   | Description                                                | Type    |
@@ -3875,6 +4014,8 @@ Action for applying Kubernetes manifests using `kubectl`, either from a string, 
 
 ##### **Links**
 - [Code](https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/k8s-apply.ts)
+-----
+
 
 #### `cnoe:verify:dependency`
 Verify resource dependencies for CNOE.
@@ -3884,14 +4025,14 @@ Verify resource dependencies for CNOE.
 |-------------|-----------------------------------|-----------------------|---------|
 | verifiers*   | The list of verifiers            | `array` of `string`   |         |
 
-##### **Examples**
-
 ##### **Outputs**
 
 None
 
 ##### **Links**
 - [Code](https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/verify.ts)
+-----
+
 
 #### `cnoe:utils:sanitize`
 Action for sanitizing resources defined in a YAML document by removing empty fields, before further processing.
@@ -3902,8 +4043,6 @@ Action for sanitizing resources defined in a YAML document by removing empty fie
 |-----------|-------------------------------------|--------|---------|
 | `document`* | The document to be sanitized        | string |         |
 
-##### **Examples**
-
 ##### **Outputs**
 
 | Key        | Description             | Type   |
@@ -3912,6 +4051,8 @@ Action for sanitizing resources defined in a YAML document by removing empty fie
 
 ##### **Links**
 - [Code](https://github.com/cnoe-io/plugin-scaffolder-actions/blob/HEAD/src/actions/sanitize.ts)
+-----
+
 
 ### Codacy Scaffolder Actions
 
@@ -3947,6 +4088,8 @@ This example adds a specified repository from a given code hosting provider (Git
 
 ##### **Links**
 - [Code](https://github.com/codacy/backstage-plugin/blob/main/src/actions/codacy.ts)
+-----
+
 
 ### Confluence Scaffolder Actions
 
@@ -3959,8 +4102,6 @@ Action that transforms Confluence content into Markdown format and updates a Git
 | `confluenceUrls`  | Paste your Confluence URL. Ensure it follows this format: `https://{confluence+base+url}/display/{spacekey}/{page+title}` or `https://{confluence+base+url}/spaces/{spacekey}/pages/1234567/{page+title}` for Confluence Cloud. | array        |        |
 | `repoUrl`         | GitHub Repo URL, specifying the location of the `mkdocs.yml` file inside the GitHub repository where you want to store the document. | string       |        |
 
-##### **Examples**
-
 ##### **Outputs**
 | Key      | Description                                     | Type   |
 |----------|-------------------------------------------------|--------|
@@ -3969,6 +4110,8 @@ Action that transforms Confluence content into Markdown format and updates a Git
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-confluence-to-markdown
+-----
+
 
 ### Cue Scaffolder Actions
 
@@ -3985,8 +4128,6 @@ This action fetches some template content, runs a Cue command on it, and copies 
 | `values`      | Values to pass on to the templating engine                                              | `object`|         |
 | `targetPath`  | Target path within the working directory to generate contents to. Defaults to the working directory root. | `string`|         |
 
-##### **Examples**
-
 ##### **Outputs**
 | Key          | Description                                   | Type   |
 |--------------|-----------------------------------------------|--------|
@@ -3994,6 +4135,8 @@ This action fetches some template content, runs a Cue command on it, and copies 
 
 ##### **Links**
 - [Code](https://github.com/shoukoo/backstage-plugin-scaffolder-cuelang/blob/main/src/actions/cueflow.ts)
+-----
+
 
 ### Gerrit Scaffolder Actions
 
@@ -4034,6 +4177,8 @@ This publishes a new Gerrit review, specifying the repository URL, commit messag
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gerrit/src/actions/gerritReview.ts)
+-----
+
 
 #### `publish:gerrit`
 Action that initializes a Git repository with content from the workspace and publishes it to a Gerrit repository.
@@ -4071,6 +4216,8 @@ This publishes content to a Gerrit repository.
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gerrit/src/actions/gerrit.ts)
+-----
+
 
 ### Gitea Scaffolder Actions
 
@@ -4113,10 +4260,14 @@ This publishes a repository to Gitea.
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@backstage/plugin-scaffolder-backend-module-gitea)
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitea/src/actions/gitea.ts)
+-----
+
 
 ### GitHub Scaffolder Actions
 
 #### `publish:github`
+✅️ Ready to use in Roadie
+
 This action creates a new GitHub repository and publishes the files in the workspace directory to the repository.
 
 ##### **Inputs**
@@ -4311,7 +4462,6 @@ steps:
         - ruby
 ```
 
-
 ##### **Outputs**
 | **Key**           | **Description**                                           | **Type**     |
 |-------------------|-----------------------------------------------------------|--------------|
@@ -4319,12 +4469,16 @@ steps:
 | `repoContentsUrl` | The URL to view the contents of the repository.            | `string`     |
 | `commitHash`      | The hash of the initial commit pushed to the repository.   | `string`     |
 
-
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/github.ts)
+-----
+
 
 #### `publish:github:pull-request`
+✅️ Ready to use in Roadie
+
 This action creates a pull request against a pre-existing repository using the files contained in the workspace directory.
+
 ##### **Inputs**
 
 | Key                   | Description                                                                                                   | Type    | Example |
@@ -4436,11 +4590,14 @@ steps:
 ```
 
 ##### **Links**
-- [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubPullRequest.ts)
+- [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubPullRequest.ts)-----
+-----
+
 
 #### `github:actions:dispatch`
+✅️ Ready to use in Roadie
 
-The `github:actions:dispatch` action allows you to trigger the execution of a GitHub action on a repository. The `repoUrl` option is a repo url for GitHub. The `RepoUrlPicker` documented above can generate this value. The `workflowId` can be the workflow id from the GitHub API or you can just use the filename for the workflow file itself. The `branchOrTagName` indicates which commit to run the workflow against.
+This action allows you to trigger the execution of a GitHub action on a repository. The `repoUrl` option is a repo url for GitHub. The `RepoUrlPicker` documented above can generate this value. The `workflowId` can be the workflow id from the GitHub API or you can just use the filename for the workflow file itself. The `branchOrTagName` indicates which commit to run the workflow against.
 
 ##### **Examples**
 This example will run the workflow defined in the "my-workflow-file.yaml" file on the "newreponame" repository on the "main" branch.
@@ -4476,9 +4633,13 @@ steps:
 
 The `github:actions:dispatch` action does not have any outputs.
 
-##### **Link**
+##### **Links**
+- [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubActionsDispatch.ts)
+-----
+
 
 #### `github:webhook`
+✅️ Ready to use in Roadie
 
 You can configure a webhook on an existing repository in GitHub using this action. It takes `repoUrl` and `webhookUrl`. The `repoUrl` option needs to be in a GitHub repo format. The `RepoUrlPicker` documented above will generate a URL in the correct format.
 
@@ -4565,8 +4726,14 @@ steps:
 
 The `github:webhook` action does not have any outputs.
 
+##### **Links**
+- [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubWebhook.ts)
+-----
+
+
 #### `github:autolinks:create`
 Action to create autolink references for GitHub repositories, which automatically link certain keywords to specific URLs in issues, pull requests, or commits.
+
 ##### **Inputs**
 | Key          | Description                                                                                                                                                                       | Type              | Example |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|--------|
@@ -4590,11 +4757,14 @@ steps:
 ```
 
 This performs the autolink creation action in a GitHub repository.
+
 ##### **Outputs**
 None
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubAutolinks.ts)
+-----
+
 
 #### `github:deployKey:create`
 Action for Backstage that creates and stores GitHub Deploy Keys, including the ability to encrypt and store the associated private key as a GitHub secret.
@@ -4608,7 +4778,6 @@ Action for Backstage that creates and stores GitHub Deploy Keys, including the a
 | `deployKeyName`*      | Name of the Deploy Key                                                                                                                        | `string`                  |         |
 | `privateKeySecretName` | Name of the GitHub Secret to store the private key related to the Deploy Key. Defaults to: 'KEY_NAME_PRIVATE_KEY' where 'KEY_NAME' is the name of the Deploy Key | `string`                  |         |
 | `token`              | The token to use for authorization to GitHub                                                                                                  | `string`                  |         |
-
 
 ##### **Examples**
 The YAML representation of the provided steps describes a process for creating and storing a GitHub Deploy Key, specifying the necessary inputs such as repository URL, public key, private key, and the deploy key name.
@@ -4634,6 +4803,8 @@ This is for creating and storing a GitHub Deploy Key, specifying the necessary i
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubDeployKey.ts)
+-----
+
 
 #### `github:environment:create`
 Action for creating deployment environments on GitHub.
@@ -4653,15 +4824,17 @@ Action for creating deployment environments on GitHub.
 | `preventSelfReview`            | Whether to prevent self-review for this environment                                                                  | `boolean`                           |         |
 | `reviewers`                    | Reviewers for this environment                                                                                      | `array`                             |         |
 
-
-##### **Examples**
-
 ##### **Outputs**
 None
+
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubEnvironment.ts)
+-----
+
 
 #### `github:issues:label`
+✅️ Ready to use in Roadie
+
 Action to add labels to pull requests or issues on GitHub.
 
 ##### **Inputs**
@@ -4685,14 +4858,15 @@ steps:
         - 'documentation'
       token: 'gph_YourGitHubToken'
 ```
-
-#### YAML Description
 This action adds the labels "bug" and "documentation" to issue or pull request #1 in a GitHub repository, using a provided GitHub token for authentication.
+
 ##### **Outputs**
 None
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubIssuesLabel.ts)
+-----
+
 
 #### `github:pages:enable`
 Action for enabling GitHub Pages for a specified repository, with various customization options such as the build type, source branch, and source path.
@@ -4720,11 +4894,14 @@ steps:
 ```
 
 This YAML specifies a step that enables GitHub Pages for the repository `customPathRepo` owned by `customOwner`, using the source path `/docs` and an authorization token.
+
 ##### **Outputs**
 None
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubPagesEnable.ts)
+-----
+
 
 #### `github:repo:create`
 The code defines a Backstage action for creating GitHub repositories programmatically, allowing customization of repository settings, collaborators, and configurations.
@@ -4777,7 +4954,6 @@ steps:
 ```
 Creates a new GitHub repository with a specified URL and description.
 
-
 ##### **Outputs**
 
 | **Key** | **Description** | **Type** |
@@ -4787,6 +4963,8 @@ Creates a new GitHub repository with a specified URL and description.
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubRepoCreate.ts)
+-----
+
 
 #### `github:repo:push`
 Action that initializes a git repository in a workspace and pushes it to GitHub, with options to configure branch protection, commit rules, and other repository settings.
@@ -4815,7 +4993,6 @@ Action that initializes a git repository in a workspace and pushes it to GitHub,
 | `token`                         | The token for GitHub authentication (if not provided via integration)                        | `string`                    |             |
 | `requiredCommitSigning`         | Whether commit signing is required                                                           | `boolean`                   |             |
 
-
 ##### **Examples**
 
 ```yaml
@@ -4826,6 +5003,7 @@ steps:
       repoUrl: github.com?repo=test&owner=testuser
 ```
 This create a test repository with a specified owner.
+
 ##### **Outputs**
 
 | **Key**              | **Description**                                      | **Type**   |
@@ -4836,9 +5014,12 @@ This create a test repository with a specified owner.
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-github/src/actions/githubRepoPush.ts)
+-----
+
 
 #### `parse:repo-url:plus`
 Action that parses repository URLs and extracts relevant metadata based on a specified schema.
+
 ##### **Inputs**
 
 | Key        | Description                            | Type    | Example |
@@ -4856,6 +5037,7 @@ steps:
       reposUrls:
         - host?owner=any&organization=any&workspace=any&project=any
 ```
+
 ##### **Outputs**
 
 | Key          | Description                                  | Type     |
@@ -4870,11 +5052,12 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/parse-repo-url.ts)
+-----
+
 
 ### Gitlab Scaffolder Actions
 
 #### `publish:gitlab`
-
 Initializes a git repository of the content in the workspace, and publishes it to GitLab. See input options [in the application](/docs/scaffolder/writing-templates/#actions)
 
 ##### **Inputs**
@@ -4934,11 +5117,13 @@ Initializes a git repository of the content in the workspace, and publishes it t
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlab.ts)
+-----
+
 
 #### `publish:gitlab:merge-request`
 Action for creating a GitLab merge request.
 
-
+##### **Inputs**
 | **Key**              | **Description**                                                                                                        | **Type**      | **Example** |
 |----------------------|------------------------------------------------------------------------------------------------------------------------|---------------|-------------|
 | `repoUrl`*            | Repository Location in the format `'gitlab.com?repo=project_name&owner=group_name'`                                     | `string`      |             |
@@ -4953,8 +5138,6 @@ Action for creating a GitLab merge request.
 | `commitAction`       | Action for the git commit: `create`, `update`, `delete`, or `auto` (automatic commit action based on file existence)     | `string`      |             |
 | `removeSourceBranch` | Option to delete the source branch after the merge request is merged (default: `false`)                                  | `boolean`     |             |
 | `assignee`           | User to whom the merge request will be assigned                                                                         | `string`      |             |
-
-##### **Inputs**
 
 ##### **Examples**
 ```yaml
@@ -4981,6 +5164,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabMergeRequest.ts)
+-----
+
 
 #### `gitlab:repo:push`
 Action that automates the process of pushing commits to a GitLab repository.
@@ -5021,6 +5206,8 @@ This YAML defines a step that updates a specific branch in a GitLab repository w
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabRepoPush.ts)
+-----
+
 
 #### `gitlab:group:ensureExists`
 For ensuring that a GitLab group or sub-groups exist, creating them if they do not.
@@ -5052,13 +5239,13 @@ For ensuring that a GitLab group or sub-groups exist, creating them if they do n
 |-----------|--------------------------------------|-------------|
 | `groupId` | The id of the innermost sub-group    | `number?`   |
 
-
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabGroupEnsureExists.ts)
+-----
+
 
 #### `gitlab:issues:create`
 Action to create GitLab issues, including the input validation using Zod, GitLab API calls, and error handling.
-
 
 ##### **Inputs**
 | **Key**                                  | **Description**                                           | **Type**                 | **Example** |
@@ -5107,6 +5294,8 @@ Action to create GitLab issues, including the input validation using Zod, GitLab
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabIssueCreate.ts)
+-----
+
 
 #### `gitlab:issue:edit`
 This uses schemas to validate the input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels, assignees, and other metadata.
@@ -5135,7 +5324,6 @@ This uses schemas to validate the input and output data using `zod` and interact
 | `weight`             | The issue weight. Valid values are from 0 to 10.                                                                                                   | `number (optional)`                    |             |
 | `token`              | The token used for GitLab API authentication.                                                                                                      | `string`                               |             |
 
-
 ##### **Examples**
 ```yaml
 steps:
@@ -5153,7 +5341,6 @@ steps:
       dueDate: '2024-09-28'
 ```
 
-
 ##### **Outputs**
 | **Key**         | **Description**                                        | **Type**    |
 |-----------------|--------------------------------------------------------|-------------|
@@ -5167,10 +5354,11 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabIssueEdit.ts)
+-----
+
 
 #### `gitlab:pipeline:trigger`
 This automates the creation and triggering of a GitLab pipeline using specific input parameters and outputs the result.
-
 
 ##### **Inputs**
 
@@ -5208,6 +5396,8 @@ steps:
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabPipelineTrigger.ts)
+-----
+
 
 #### `gitlab:projectAccessToken:create`
 Action that creates a project access token in GitLab.
@@ -5244,6 +5434,8 @@ Action that creates a project access token in GitLab.
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectAccessTokenCreate.ts)
+-----
+
 
 #### `gitlab:projectVariable:create`
 Action for creating project variables in GitLab.
@@ -5285,6 +5477,8 @@ None
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectVariableCreate.ts)
+-----
+
 
 #### `gitlab:projectDeployToken:create`
 Action that creates a GitLab project deploy token.
@@ -5320,6 +5514,8 @@ Action that creates a GitLab project deploy token.
 
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-gitlab/src/actions/gitlabProjectDeployTokenCreate.ts)
+-----
+
 
 ### Humanitec Scaffolder Actions
 
@@ -5339,6 +5535,8 @@ None
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@humanitec/backstage-plugin-scaffolder-backend-module)
 - [Code](https://github.com/humanitec/humanitec-backstage-plugins/blob/main/plugins/humanitec-backend-scaffolder-module/src/actions/create-app.ts)
+-----
+
 
 ### Microsoft Teams Scaffolder Actions
 
@@ -5368,6 +5566,8 @@ None
 
 ##### **Links**
 - [NPM](https://www.npmjs.com/package/@grvpandey11/backstage-plugin-scaffolder-backend-module-ms-teams)
+-----
+
 
 ### Pagerduty Scaffolder Actions
 
@@ -5393,6 +5593,8 @@ Action that allows users to create a PagerDuty service.
 ##### **Links**
 - [Code](https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/blob/main/src/actions/custom.ts)
 - [@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)
+-----
+
 
 ### Quay Scaffolder Actions
 
@@ -5435,6 +5637,8 @@ input:
 ##### **Links**
 - [@janus-idp/backstage-scaffolder-backend-module-quay](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-quay)
 - [Code](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/quay-actions
+-----
+
 
 ### Sonarqube Scaffolder Actions
 
@@ -5479,6 +5683,8 @@ Action for creating a project in SonarQube via the Backstage Scaffolder plugin.
 ##### **Links**
 - [@janus-idp/backstage-scaffolder-backend-module-sonarqube](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-sonarqube)
 - [Code](https://github.com/janus-idp/backstage-plugins/blob/main/plugins/sonarqube-actions/src/actions/createSonarQubeProject.ts)
+-----
+
 
 ### ServiceNow Scaffolder Actions
 
@@ -5507,9 +5713,12 @@ Action for Backstage's Scaffolder, allowing users to insert a record into a spec
 ##### **Links**
 - [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
 - [Code](https://github.com/janus-idp/backstage-plugins/blob/main/plugins/servicenow-actions/src/actions/servicenow/now/table/create-record.ts)
+-----
+
 
 #### `servicenow:now:table:deleteRecord`
 Action for deleting a record from a ServiceNow table.
+
 ##### **Inputs**
 | Parameter Name         |   Type    | Required | Description                                                       |
 | ---------------------- | :-------: | :------: | ----------------------------------------------------------------- |
@@ -5517,17 +5726,18 @@ Action for deleting a record from a ServiceNow table.
 | `sysId`                | `string`  |   Yes    | Unique identifier of the record to delete                         |
 | `sysparmQueryNoDomain` | `boolean` |    No    | True to access data across domains if authorized (default: false) |
 
-##### **Examples**
-
 ##### **Outputs**
 None
 
 ##### **Links**
 - [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
 - [Code](https://github.com/janus-idp/backstage-plugins/blob/main/plugins/servicenow-actions/src/actions/servicenow/now/table/delete-record.ts)
+-----
+
 
 #### `servicenow:now:table:modifyRecord`
 Action handler that modifies a record in a ServiceNow table.
+
 ##### **Input**
 
 | Parameter Name                |              Type              | Required | Description                                                                                |
@@ -5552,10 +5762,12 @@ Action handler that modifies a record in a ServiceNow table.
 ##### **Links**
 - [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
 - [Source Code](https://github.com/janus-idp/backstage-plugins/blob/main/plugins/servicenow-actions/src/actions/servicenow/now/table/modify-record.ts))
+-----
 
 
 #### `servicenow:now:table:retrieveRecord`
 Action handler that retrieves a record in a ServiceNow table.
+
 ##### **Input**
 
 | Parameter Name                |              Type              | Required | Description                                                                               |
@@ -5576,6 +5788,8 @@ Action handler that retrieves a record in a ServiceNow table.
 
 - [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
 - [Source Code](https://github.com/janus-idp/backstage-plugins/blob/main/plugins/servicenow-actions/src/actions/servicenow/now/table/retrieve-record.ts))
+-----
+
 
 #### `servicenow:now:table:retrieveRecords`
 Action handler that retrieves records in a ServiceNow table.
@@ -5596,8 +5810,6 @@ Action handler that retrieves records in a ServiceNow table.
 | `sysparmQueryNoDomain`            |           `boolean`            |    No    | True to access data across domains if authorized (default: false)                         |
 | `sysparmNoCount`                  |           `boolean`            |    No    | Do not execute a select count(\*) on table (default: false)                               |
 
-##### **Examples**
-
 ##### **Outputs**
 | Name     |              Type              | Description                      |
 | -------- | :----------------------------: | -------------------------------- |
@@ -5605,6 +5817,8 @@ Action handler that retrieves records in a ServiceNow table.
 
 ##### **Links**
 - [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
+-----
+
 
 #### `servicenow:now:table:updateRecord`
 Action handler that updates a record in a ServiceNow table.
@@ -5623,8 +5837,6 @@ Action handler that updates a record in a ServiceNow table.
 | `sysparmView`                 |            `string`            |    No    | Render the response according to the specified UI view (overridden by sysparm_fields)      |
 | `sysparmQueryNoDomain`        |           `boolean`            |    No    | True to access data across domains if authorized (default: false)                          |
 
-##### **Examples**
-
 ##### **Outputs**
 | Name     |              Type              | Description                      |
 | -------- | :----------------------------: | -------------------------------- |
@@ -5632,6 +5844,8 @@ Action handler that updates a record in a ServiceNow table.
 
 ##### **Links**
 - [@janus-idp/backstage-scaffolder-backend-module-servicenow](https://www.npmjs.com/package/@janus-idp/backstage-scaffolder-backend-module-servicenow)
+-----
+
 
 ### Slack Scaffolder Actions
 
@@ -5667,6 +5881,8 @@ Action for sending Slack messages to a specific conversation using the Slack API
 ##### **Links**
 - [Code](https://github.com/arhill05/backstage-plugin-scaffolder-backend-module-slack/blob/main/src/actions/slack/send-slack-message-via-slack-api.ts))
 - [@mdude2314/backstage-plugin-scaffolder-backend-module-slack](https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-backend-module-slack)
+-----
+
 
 #### `slack:sendMessage:webhook`
 Action that sends a message to Slack via a webhook URL.
@@ -5694,6 +5910,8 @@ None
 
 ##### **Links**
 - [@mdude2314/backstage-plugin-scaffolder-backend-module-slack](https://www.npmjs.com/package/@mdude2314/backstage-plugin-scaffolder-backend-module-slack)
+-----
+
 
 ### Sentry Scaffolder Actions
 
@@ -5709,7 +5927,6 @@ Action to create a new project in Sentry.
 | `name`*               | The name for the new project                                                          | string |         |
 | `slug`               | Optional slug for the new project. If not provided, a slug is generated from the name | string |         |
 | `authToken`          | Authenticate via bearer auth token. Requires scope: project:write                    | string |         |
-
 
 ##### **Examples**
 
@@ -5727,6 +5944,7 @@ steps:
 ```
 
 This YAML configuration outlines a step for creating a Sentry project.
+
 ##### **Outputs**
 
 | Key  | Description                               | Type   |
@@ -5737,6 +5955,8 @@ This YAML configuration outlines a step for creating a Sentry project.
 ##### **Links**
 - [Code](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-sentry
 - [Code](https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend-module-sentry/src/actions/createProject.ts))
+-----
+
 
 ### Torque Scaffolder Actions
 
@@ -5781,6 +6001,8 @@ Action for managing applications in Torque.
 ##### **Links**
 - [@qtorque/backstage-plugin-torque-backend](https://www.npmjs.com/package/@qtorque/backstage-plugin-torque-backend)
 - [Code](https://github.com/QualiTorque/torque-backstage-plugin/blob/main/packages/torque-backend/src/actions/create-app.ts)
+-----
+
 
 ### Webex Scaffolder Actions
 
@@ -5820,6 +6042,8 @@ spec:
 ##### **Links**
 - [@coderrob/backstage-plugin-scaffolder-backend-module-webex](https://www.npmjs.com/package/@coderrob/backstage-plugin-scaffolder-backend-module-webex)
 - [Source Code](https://github.com/Coderrob/backstage-plugin-scaffolder-backend-module-webex/blob/main/src/actions/sendWebhooksMessageAction.ts)
+-----
+
 
 ### Yeoman Scaffolder Actions
 
@@ -5855,3 +6079,6 @@ None
 
 ##### **Links**
 - [Backstage Plugin](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-yeoman)
+
+-----
+
