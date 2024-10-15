@@ -10,9 +10,9 @@ Roadie comes bundled with a select set of actions to use out of the box. If you 
 
 If you want to add an action to this list, please [raise an issue on our repo](https://github.com/RoadieHQ/marketing-site/issues) or contribute a PR with the addition.
 
-NB:
+**NB:**
+- A subset of available actions in Roadie can also be **found at the following page inside your Roadie app**: `https://<tenant-name>.roadie.so/templates/actions`
 - We do not list actions created for hackathons and talks that are not maintained or intended for widespread use.
-- A subset of available actions in Roadie can also be found at the following page inside your Roadie app: `https://<tenant-name>.roadie.so/templates/actions`
 
 ## Actions Summary Table
 
