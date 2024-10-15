@@ -52,6 +52,7 @@ NB:
 | Content Manipulation | [regex:fs:replace:plus](#regexfsreplaceplus)                                 | Enable regex-based search and replacement across files using glob patterns.                                                                                               |                        | 
 |                      |
 | Other Utils          | [uuid:v4:gen:plus](#uuidv4genplus)                                           | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |                        |
+| Other Utils          | [roadiehq:utils:sleep](#roadiehqutilssleep)                                           | Halts the scaffolding process for the given amount of seconds.                                                                                                            |   ✅️                     |
 | Other Utils          | [vars:plus](#varsplus)                                                       | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        |                        |
 
 ## Backstage Specific
@@ -1775,6 +1776,21 @@ steps:
 
 ##### Links
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/uuid.ts)
+
+#### `roadiehq:utils:sleep`
+Halts the scaffolding for the given amount of seconds
+
+##### Inputs
+
+| **Key**          | **Description**            | **Type**      | **Example** |
+|------------------|----------------------------|---------------|-------------|
+| `amount`*         | Number of seconds to sleep | `number`      | 3           |
+
+##### Outputs
+None
+
+##### Links
+- [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/sleep.ts)
 
 #### `vars:plus`
 Handle and log input variables, and return the same input as the output in a formatted structure.
