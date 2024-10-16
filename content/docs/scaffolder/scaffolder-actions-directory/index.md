@@ -132,7 +132,7 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 | Azure           | [git:commit:azure](#gitcommitazure)                                           | Commits and pushes changes to an Azure DevOps Git repository, processing parameters and handling Git operations.                                                            |                        |
 | Azure           | [pipeline:create:azure](#pipelinecreateazure)                                 | Automates the creation of Azure DevOps pipelines from Git repositories.                                                                                                     |                        |
 | Azure           | [azure:pipeline:create](#azurepipelinecreate)                                 | Creates an Azure Pipeline through the Azure DevOps REST API using Backstage's scaffolding plugin.                                                                           |                        |
-| Azure           | [azure:pipeline:run](azurepipelinerun)                                        | Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.                                                                                         |                        |
+| Azure           | [azure:pipeline:run](#azurepipelinerun)                                       | Defines an Azure DevOps pipeline runner action using Backstage's scaffolder plugin.                                                                                         |                        |
 | Azure           | [azure:pipeline:permit](#azurepipelinepermit)                                 | Defines an Azure DevOps pipeline permission management action for Backstage scaffolding.                                                                                    |                        |
 | Azure           | [azure:repo:clone](#azurerepoclone)                                           | Action for cloning an Azure repository into a specified workspace directory using Backstage's scaffolding plugin.                                                           | ✅️                     |
 | Azure           | [azure:repo:push](#azurerepopush)                                             | Action that pushes content from a local workspace to a remote Azure repository.                                                                                             | ✅️                     |
@@ -149,11 +149,11 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 | CNEO            | [cnoe:verify:dependency](#cnoeverifydependency)                               | Verify resource dependencies for CNOE.                                                                                                                                      |                        |
 | CNEO            | [cnoe:utils:sanitize](#cnoeutilssanitize)                                     | Action for sanitizing resources defined in a YAML document by removing empty fields, before further processing.                                                             |                        |
 |                 |
-| Codacy          | [codacy:add-repo](codacyadd-repo)                                             | Action for adding a repository to Codacy using its API.                                                                                                                     |                        |
+| Codacy          | [codacy:add-repo](#codacyadd-repo)                                            | Action for adding a repository to Codacy using its API.                                                                                                                     |                        |
 |                 |
 | Confluence      | [confluence:transform:markdown](#confluencetransformmarkdown)                 | Action that transforms Confluence content into Markdown format and updates a GitHub repository with the new Markdown files and modified `mkdocs.yml` configuration.         |                        |
 |                 |
-| Cue             | [cue:cueflow](cuecueflow)                                                     | This action fetches some template content, runs a Cue command on it, and copies output files to a specified directory.                                                      |                        |
+| Cue             | [cue:cueflow](#cuecueflow)                                                    | This action fetches some template content, runs a Cue command on it, and copies output files to a specified directory.                                                      |                        |
 |                 |
 | Gerrit          | [publish:gerrit:review](#publishgerritreview)                                 | Action for creating a new Gerrit review by committing and pushing changes to a Git repository.                                                                              |                        |
 | Gerrit          | [publish:gerrit](#publishgerrit)                                              | Action that initializes a Git repository with content from the workspace and publishes it to a Gerrit repository.                                                           |                        |
@@ -185,7 +185,7 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 |                 |
 | Humanitec       | [humanitec:create-app](#humaniteccreate-app)                                  | Action for creating applications in Humanitec, using a YAML setup file to define application properties.                                                                    |                        |
 |                 |
-| Microsoft Teams | [ms-teams:sendMessage](ms-teamssendmessage)                                   | Action that sends messages to a Microsoft Teams channel using a specified webhook URL.                                                                                      |                        |
+| Microsoft Teams | [ms-teams:sendMessage](#ms-teamssendmessage)                                  | Action that sends messages to a Microsoft Teams channel using a specified webhook URL.                                                                                      |                        |
 |                 |
 | PagerDuty       | [pagerduty:service:create](#pagerdutyservicecreate)                           | Action for the Backstage scaffolder plugin that allows users to create a PagerDuty service.                                                                                 |                        |
 |                 |
@@ -205,7 +205,7 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 |                 |
 | Sentry          | [sentry:create-project](#sentrycreate-project)                                | Action to create a new project in Sentry.                                                                                                                                   |                        |
 |                 |
-| Torque          | [torque:create-app](torquecreate-app)                                         | Action for managing applications in Torque.                                                                                                                                 |                        |
+| Torque          | [torque:create-app](#torquecreate-app)                                        | Action for managing applications in Torque.                                                                                                                                 |                        |
 |                 |
 | Webex           | [webex:webhooks:sendMessage](#webexwebhookssendmessage)                       | Action that sends messages to Webex Incoming Webhooks.                                                                                                                      |                        |
 |                 |
