@@ -104,7 +104,7 @@ gettingStarted:
           jira/component: <example-component> # optional, you might skip this value to fetch data for all components
           jira/token-type: Bearer # optional, used for Activity stream feed. If you are using Basic auth you can skip this.
           jira/label: <example-label> # optional, refine filter based on a label or labels (CSV)
-          jira/all-issues-jql: Bearer # optional, used by EntityJiraQueryCard, this query supports basic templating with the above annotations if present, and information from the user profile. e.g. "assignee = {{ userEmail }} AND label = ({{ label }})"
+          jira/all-issues-jql: # optional, used by EntityJiraQueryCard, this query supports basic templating with the above annotations if present, and information from the user profile. e.g. "assignee = {{ userEmail }} AND label = ({{ label }})"
 
   - intro: Even though you can use Bearer token please keep in mind that Activity stream feed will only contain entries that are visible to anonymous users. In order to view restricted content you will need to authenticate via Basic authentication, as described in official documentation (https://developer.atlassian.com/server/framework/atlassian-sdk/consuming-an-activity-streams-feed/#authentication).
 
