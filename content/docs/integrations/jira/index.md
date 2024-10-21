@@ -52,7 +52,7 @@ amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==
 ```
 Via the following command:
 ```bash
-read -s tmp; echo -n "jira-mail@example.com:$tmp" | base64 ; unset tmp 
+echo -n "<email>:<password>" | base64 
 ```
 NOTE: the `-n` flag removes new line characters from the echo output.
 
