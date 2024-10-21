@@ -88,7 +88,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Set engineering standards and create a culture of accountability with software checks that automatically ensure software meets expectations for security, compliance, and deployment. Roadie checks catch quality issues before they become problems.',
+        'Set engineering standards and create a culture of accountability with software checks that automatically ensure software meets expectations for security, compliance, and deployment. _Roadie Checks_ catch quality issues before they become problems.',
         'With Tech Insights, track quantitative metrics and gain visibility into the overall health of your systems. Identify bottlenecks, improve efficiency, and ensure your entire organization is consistently delivering high-quality software at speed.'
       ],
     },
