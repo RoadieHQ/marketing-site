@@ -58,7 +58,7 @@ const PRODUCT = {
   features: [
     {
       title: 'Eliminate the Guesswork',
-      description: 'One catalog for your services. Instant visibility, zero confusion',
+      description: 'One catalog for services. Instant visibility, zero confusion',
       illustration: {
         png: CatalogImg,
         alt: '',
@@ -82,7 +82,7 @@ const PRODUCT = {
     },
     {
       title: 'Spot Code That Doesn’t Meet Standards',
-      description: 'Identify where your code falls short of standards. Fix it fast',
+      description: 'Identify where code falls short of standards. Fix it fast',
       illustration: {
         png: TechInsightsImg,
         alt: '',
