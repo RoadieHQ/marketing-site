@@ -38,6 +38,11 @@ import CustomPluginsImg from '../../content/assets/home/illustrations/home-custo
 import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.svg';
 import AndyThumbImg from '../../content/assets/home/illustrations/home-andy-video-thumb.png';
 
+import CatalogImg from '../../content/assets/home/illustrations/home-service-catalog.png';
+import TemplatesImg from '../../content/assets/home/illustrations/home-templates.png';
+import TechInsightsImg from '../../content/assets/home/illustrations/home-tech-insights.png';
+import ExtensibleImg from '../../content/assets/home/illustrations/home-extensible.png';
+
 import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
 import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
 import CircleCiLogo from '../../content/assets/logos/circle-ci/circleci.inline.svg';
@@ -51,51 +56,51 @@ const LEAD = `Roadie is the most customizable Internal Developer Portal with bui
 const PRODUCT = {
   features: [
     {
-      title: 'Keep your Developer Portal safe',
-      description: 'Roadie updates your Backstage instance automatically',
+      title: 'Eliminate the Guesswork',
+      description: 'One catalog for your services. Instant visibility, zero confusion',
       illustration: {
-        png: KeepSafeImg,
+        png: CatalogImg,
         alt: '',
       },
       paragraphs: [
-        'As highlighted by Gartner’s report on Developer Portals, standing up and maintaining Backstage takes significant effort. Roadie gives you a production-grade Backstage instance and keeps it safe through regular upgrades, SSO and dedicated infrastructure.',
-        'Roadie is SOC2 Type 2 Certified and uses ephemeral environments for your Scaffolder actions, a common source of risk for Open Source adopters.',
+        'Say goodbye to endless searching with Roadie’s software catalog. Discover and ingest all your organization’s microservices, APIs, resources, and teams into one centralized place. You’ll never have to wonder what exists or who owns it again.',
+        'Integrate documentation with code to create a single source of truth for every entity in your ecosystem - forget tribal knowledge. Easily keep everything up-to-date, discoverable, and accessible, reducing errors and ensuring everyone is on the same page.'
       ],
     },
     {
-      title: 'Get all the OSS features, simplified',
-      description: 'Roadie brings no-code management to Backstage',
+      title: 'Move Fast and (Don’t) Break Things',
+      description: 'Deploy fast, securely and consistently with Templates',
       illustration: {
-        png: NoCodeImg,
+        png: TemplatesImg,
         alt: '',
       },
       paragraphs: [
-        'With a vibrant community of contributors, new Backstage plugins and features are popping up regularly. Roadie brings all these features, while smoothening out rough edges like GitHub rate limits.',
-        'Roadie enables plugins and integrations through a UI, which also lets you manage access and permissions. Roadie also provides advanced debugging capabilities to make it easy to navigate the unexpected, if it happens.',
+        'Service templates are blueprints for golden paths to production - they enforce security and compliance with baked-in best practices, so developers can launch services consistently and confidently.',
+        'With service templates your team can deploy faster and autonomously without bottlenecks, so developers can get code and infrastructure live faster with no need to wait for manual approvals or ops intervention.'
       ],
     },
     {
-      title: 'Make your Developer Portal truly yours',
-      description: 'Roadie lets you install private plugins and renderers',
+      title: 'Spot Code That Doesn’t Meet Standards',
+      description: 'Identify where your code falls short of standards. Fix it fast',
       illustration: {
-        png: CustomPluginsImg,
+        png: TechInsightsImg,
         alt: '',
       },
       paragraphs: [
-        'Your Developer Portal will only be successful if it’s tailored to the way your developers work. Roadie lets you bring your own Backstage plugins so you can integrate internal systems into your Developer Portal.',
-        'Roadie also lets you bring your own API documentation renderer so your docs are presented exactly as you want them inside Backstage.',
+        'Set engineering standards and create a culture of accountability with software checks that automatically ensure software meets expectations for security, compliance, and deployment. Roadie checks catch quality issues before they become problems.',
+        'With Tech Insights, track quantitative metrics and gain visibility into the overall health of your systems. Identify bottlenecks, improve efficiency, and ensure your entire organization is consistently delivering high-quality software at speed.'
       ],
     },
     {
-      title: 'Integrate with your Kubernetes Clusters',
-      description: 'Roadie connects to your infrastructure using a broker ',
+      title: 'Out-Of-The-Box Ready and Endlessly Extensible',
+      description: 'Start quickly. Go further with the the Backstage community',
       illustration: {
-        png: KubernetesImg,
+        png: ExtensibleImg,
         alt: '',
       },
       paragraphs: [
-        'Roadie uses a Broker to integrate with your internal APIs, including Kubernetes clusters and on-prem services. This allows secure access your endpoints without exposing them to the public internet.',
-        'The broker is open-source code with an audit log and outboound egress, meaning you can be confident that access is limited in the way that you want.',
+        'Get a SaaS internal developer portal, built on Backstage, that’s ready-to-go from day one. Fast deployment and seamless integrations mean lower operational overhead and faster time to value, so your teams can focus on building, not managing infrastructure.',
+        'Ready to expand? Tap into the power of the Backstage ecosystem. With 100+ plugins and thousands of contributors, scale and customize your platform to meet your needs, while keeping total cost of ownership low.'
       ],
     },
   ],
