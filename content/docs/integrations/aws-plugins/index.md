@@ -1,10 +1,10 @@
 ---
-title: Configuring AWS Plugins
+title: Configuring AWS Accounts for Plugins
 publishedDate: '2022-03-29T21:00:00.0Z'
 lastValidated: '2024-10-08T10:51:37.0Z'
 description: How to configure Roadie to use AWS plugins
 
-humanName: AWS Plugins
+humanName: AWS Accounts for Plugins
 logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: OSS plugin
 ---
