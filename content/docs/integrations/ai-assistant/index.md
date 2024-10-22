@@ -1,11 +1,11 @@
 ---
-title: Configuring AI Assistant
+title: AI Assistant
 publishedDate: '2024-10-21T10:00:00.0Z'
 lastValidated: '2024-10-21T10:00:00.0Z'
 description: This guide explains how to configure the AI Assistant with model settings, embedding configurations, and entity inclusion for indexing.
 
 humanName: AI Assistant Configuration
-logoImage: '../../../assets/logos/ai-assistant/roadie-racks-ai.svg'
+logoImage: '../../../assets/logos/ai-assistant/roadie-racks-ai.webp'
 integrationType: OSS plugin
 ---
 
