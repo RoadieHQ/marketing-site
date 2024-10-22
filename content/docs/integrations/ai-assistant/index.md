@@ -11,6 +11,11 @@ integrationType: OSS plugin
 
 ## Introduction
 
+
+Roadie AI Assistant allows you to intelligently query your catalog and technical documentation for relevant information. The plugin uses RAG (retrieval augmented generation) techniques to produce relevant context for external large language models. It provides context-driven responses to queries by integrating seamlessly with your existing catalog information and tech-docs.
+
+You can customize your model configurations and embedding-based document indexing, as well as define the correct information to index for better accuracy for the responses. 
+
 This guide describes the necessary steps to configure the AI Assistant with appropriate model settings, embeddings, and document indexing. By following these steps, you will be able to optimize how the assistant processes and retrieves information from your organization's catalog and technical documents.
 
 ## Step 1: Configure the Supported Sources
