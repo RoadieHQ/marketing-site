@@ -36,6 +36,11 @@
   to = "https://careers.roadie.io"
   force = true
 
+[[redirects]]
+  from = "/careers/*"
+  to = "https://careers.roadie.io"
+  force = true
+
 # Proxy for the plausible.io tracker. https://plausible.io/docs/proxy/guides/netlify
 [[redirects]]
   from = "/plaus/js/script.js"
