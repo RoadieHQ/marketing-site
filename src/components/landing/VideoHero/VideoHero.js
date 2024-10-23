@@ -23,7 +23,7 @@ const SubTitle = () => (
 
 const CallToAction = () => (
   <div className="mt-5 sm:flex sm:justify-center md:mt-8">
-    <div className="mt-3 sm:mt-0 sm:ml-3">
+    <div>
       <Button
         link={true}
         to={PAGE_PATHS.requestDemo}
@@ -34,7 +34,7 @@ const CallToAction = () => (
       />
     </div>
 
-    <div>
+    <div className="mt-3 sm:mt-0 sm:ml-3">
       <Button
         link={true}
         to={PAGE_PATHS.freeTrial}
