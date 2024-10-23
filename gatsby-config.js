@@ -4,6 +4,7 @@ const agoliaQueries = require('./src/queries/agolia');
 const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
 const theme = require('./src/theme');
 const GATSBY_PLUGIN_CSP_DIRECTIVES = require('./src/gatsby/cspDirectives');
+const { getSrc } = require('gatsby-plugin-image');
 
 const SITE_TITLE = 'Roadie';
 
@@ -58,7 +59,7 @@ const getContentfulOptions = () => {
 };
 
 // These paths are blocked from search engine indexing and search engine access.
-const DISLALLOW_LIST = [
+const DISALLOW_LIST = [
   '/purchase/',
   '/purchase/success/',
   '/tailwind/404/',
@@ -209,7 +210,63 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        excludes: DISLALLOW_LIST,
+        output: '/sitemap',
+        excludes: DISALLOW_LIST,
+        resolveSiteUrl: () => getSiteUrl(),
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allFile(filter: { extension: { regex: "/(jpg|jpeg|png|gif|webp)/" } }) {
+              nodes {
+                publicURL
+                name
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+        `,
+        resolvePages: ({ allSitePage: { nodes: allPages }, allFile: { nodes: allImages } }) => {
+          return allPages.map((page) => {
+            const images = allImages
+              .filter((image) => page.path.includes(image.name))
+              .map((image) => {
+                // Use publicURL for unsupported formats like GIFs
+                if (image.extension === 'gif') {
+                  return {
+                    url: image.publicURL || '', // Ensure publicURL fallback
+                    title: image.name,
+                  };
+                }
+                // Use gatsbyImageData for supported formats
+                return {
+                  url: image.childImageSharp
+                    ? getSrc(image.childImageSharp.gatsbyImageData)
+                    : image.publicURL || '', // Ensure publicURL fallback
+                  title: image.name,
+                };
+              })
+              .filter((image) => image.url); // Filter out images without valid URLs
+
+            return { ...page, images: images.length ? images : [] };
+          });
+        },
+        serialize: ({ path, images }) => {
+          return {
+            url: path,
+            changefreq: 'daily',
+            priority: 0.7,
+            images: images.map((image) => ({
+              url: image.url,
+              title: image.title,
+            })),
+          };
+        },
       },
     },
 
@@ -221,7 +278,7 @@ module.exports = {
         policy: [
           {
             userAgent: '*',
-            disallow: DISLALLOW_LIST,
+            disallow: DISALLOW_LIST,
           },
         ],
       },
