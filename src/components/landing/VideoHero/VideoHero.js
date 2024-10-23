@@ -23,22 +23,23 @@ const SubTitle = () => (
 
 const CallToAction = () => (
   <div className="mt-5 sm:flex sm:justify-center md:mt-8">
-    <div>
-      <Button
-        link={true}
-        to={PAGE_PATHS.freeTrial}
-        color="primary"
-        text="Try it free"
-        size="large"
-        fullWidth={true}
-      />
-    </div>
     <div className="mt-3 sm:mt-0 sm:ml-3">
       <Button
         link={true}
         to={PAGE_PATHS.requestDemo}
-        color="secondary"
+        color="primary"
         text="Request a demo"
+        size="large"
+        fullWidth={true}
+      />
+    </div>
+
+    <div>
+      <Button
+        link={true}
+        to={PAGE_PATHS.freeTrial}
+        text="Try it free"
+        color="secondary"
         size="large"
         fullWidth={true}
       />
