@@ -48,8 +48,9 @@ const getSiteUrl = () => {
 };
 
 const shouldCrawl = () => {
+  const ctx = get(process.env, 'CONTEXT');
   const netlifySiteName = get(process.env, 'SITE_NAME');
-  return (netlifySiteName === 'roadie');
+  return (netlifySiteName === 'roadie') && (ctx !== 'deploy-preview');
 };
 
 const getContentfulOptions = () => {
