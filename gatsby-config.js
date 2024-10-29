@@ -47,6 +47,11 @@ const getSiteUrl = () => {
   return 'https://roadie.io';
 };
 
+const shouldCrawl = () => {
+  const netlifySiteName = get(process.env, 'SITE_NAME');
+  return (netlifySiteName === 'roadie');
+};
+
 const getContentfulOptions = () => {
   return {
     spaceId: `hcqpbvoqhwhm`,
@@ -221,7 +226,7 @@ module.exports = {
         policy: [
           {
             userAgent: '*',
-            disallow: DISLALLOW_LIST,
+            disallow: shouldCrawl() ? DISLALLOW_LIST : '/',
           },
         ],
       },
