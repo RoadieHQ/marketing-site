@@ -57,14 +57,13 @@ const PRODUCT = {
   features: [
     {
       title: 'Eliminate the Guesswork',
-      description: 'One catalog for services. Instant visibility, zero confusion',
+      description: 'One service catalog. Instant visibility, zero confusion',
       illustration: {
         png: CatalogImg,
         alt: '',
       },
       paragraphs: [
-        'Say goodbye to endless searching with Roadie’s software catalog. Discover and ingest all your organization’s microservices, APIs, resources, and teams into one centralized place. You’ll never have to wonder what exists or who owns it again.',
-        'Integrate documentation with code to create a single source of truth for every entity in your ecosystem - forget tribal knowledge. Easily keep everything up-to-date, discoverable, and accessible, reducing errors and ensuring everyone is on the same page.'
+        'Centralize software, APIs, resources, and teams in one place. End the guesswork around what exists and who owns it. Keep documentation up-to-date with a centralized docs-like-code approach.',
       ],
     },
     {
@@ -75,8 +74,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Service templates are blueprints for golden paths to production - they enforce security and compliance with baked-in best practices, so developers can launch services consistently and confidently.',
-        'With service templates your team can deploy faster and autonomously without bottlenecks, so developers can get code and infrastructure live faster with no need to wait for manual approvals or ops intervention.'
+        'Service templates enforce security and compliance with best practices, allowing developers to deploy autonomously and consistently. Launch faster without bottlenecks — no need for manual approvals.',
       ],
     },
     {
@@ -87,20 +85,18 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Set engineering standards and create a culture of accountability with software checks that automatically ensure software meets expectations for security, compliance, and deployment. _Roadie Checks_ catch quality issues before they become problems.',
-        'With Tech Insights, track quantitative metrics and gain visibility into the overall health of your systems. Identify bottlenecks, improve efficiency, and ensure your entire organization is consistently delivering high-quality software at speed.'
+        'Set engineering standards and automate checks for security, compliance, and deployment quality. Track key metrics, identify bottlenecks, and maintain high-quality software delivery.',
       ],
     },
     {
       title: 'Out-Of-The-Box Ready and Endlessly Extensible',
-      description: 'Start quickly. Go further with the the Backstage community',
+      description: 'Start quickly. Go further. With the Backstage community',
       illustration: {
         png: ExtensibleImg,
         alt: '',
       },
       paragraphs: [
-        'Get a SaaS internal developer portal, built on Backstage, that’s ready-to-go from day one. Fast deployment and seamless integrations mean lower operational overhead and faster time to value, so your teams can focus on building, not managing infrastructure.',
-        'Ready to expand? Tap into the power of the Backstage ecosystem. With 100+ plugins and thousands of contributors, scale and customize your platform to meet your needs, while keeping total cost of ownership low.'
+        'Roadie’s portal is ready on day one. Fast setup, seamless integrations, and access to 100+ Backstage plugins to help you grow quickly without the overhead.',
       ],
     },
   ],
