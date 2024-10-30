@@ -83,7 +83,7 @@
 
 [[redirects]]
   from = "/docs/getting-started/openapi-specs"
-  to = "/docs/api/authorization/"
+  to = "/docs/details/openapi-specs/"
   force = true
 
 [[redirects]]
