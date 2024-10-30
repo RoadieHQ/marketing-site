@@ -64,7 +64,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Centralize your microservices, APIs, resources, and teams into one place, ending the guesswork around what exists and who owns it. Forget tribal knowledge - keep documentation and code up-to-date with TechDocs.',
+        'Centralize software, APIs, resources, and teams in one place. End the guesswork around what exists and who owns it. Keep documentation up-to-date with a centralized docs-like-code approach.',
       ],
     },
     {
