@@ -91,7 +91,7 @@ const PRODUCT = {
     },
     {
       title: 'Out-Of-The-Box Ready and Endlessly Extensible',
-      description: 'Start quickly. Go further with the Backstage community',
+      description: 'Start quickly. Go further. With the Backstage community',
       illustration: {
         png: ExtensibleImg,
         alt: '',
