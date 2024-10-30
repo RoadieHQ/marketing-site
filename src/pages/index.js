@@ -75,7 +75,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Service templates enforce security and compliance with best practices, allowing developers to deploy autonomously and consistent. Launch faster without bottlenecks — no need for manual approvals.',
+        'Service templates enforce security and compliance with best practices, allowing developers to deploy autonomously and consistently. Launch faster without bottlenecks — no need for manual approvals.',
       ],
     },
     {
