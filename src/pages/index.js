@@ -97,7 +97,7 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Roadie’s portal is ready on day one. Fast setup, seamless integrations, and access to 100+ Backstage Community plugins help you grow quickly without the overhead.',
+        'Roadie’s portal is ready on day one. Fast setup, seamless integrations, and access to 100+ Backstage plugins to help you grow quickly without the overhead.',
       ],
     },
   ],
