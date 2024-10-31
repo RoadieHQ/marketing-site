@@ -117,12 +117,13 @@ nav:
           - Configuration: '/docs/custom-plugins/legacy/configuring/'
           - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
   - Scaffolder:
-      - Writing scaffolder templates: '/docs/scaffolder/writing-templates/'
-      - Certified templates: '/docs/scaffolder/certified-templates/'
-      - Troubleshooting: '/docs/scaffolder/troubleshooting/'
-      - Extending the Scaffolder with Field Extensions: '/docs/scaffolder/custom-fields/'
-      - Custom Scaffolder Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
-      - Scaffolder Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
+      - Overview: '/docs/scaffolder/writing-templates/'
+      - Scaffolder Actions:
+        - Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
+        - Custom Scaffolder Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
+      - Scaffolder Parameters:
+        - Paremeters Guide: '/docs/scaffolder/scaffolder-parameters'
+        - Custom Scaffolder Parameters: '/docs/scaffolder/custom-fields/'
       - Recipes:
           - Create RFC: '/docs/scaffolder/create-rfc/'
           - Debug template: '/docs/scaffolder/debug-template/'
