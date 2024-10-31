@@ -6,16 +6,29 @@ description: Parameter form available for use in Backstage scaffolder templates
 
 Parameters are how you get input data from users of Backstage Scaffolder templates. Parameters are defined in YAML alongside your template definition and rendered in a form when you run a template.
 
-They are defined in the template YAML file and each array element contains the configuration for a single page of items to be filled by the user running the template. 
-
-Here is the most basic example:
+Here is the most basic example of a single parameter form field in a template:
 
 ```yaml
-parameters:
-  properties:
-    name:
-      type: string
+---
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: parameters-example
+spec:
+  owner: roadiehq
+  type: example
+  parameters:
+    properties:
+      name:
+        type: string
+  steps:
+    - id: log-message
+      action: debug:log
+      input:
+        message: 'Hello ${{ parameters.name }}'
 ```
+
+![Screenshot of rendered template](./rendering.jpg)
 
 The parameters YAML is based on [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/). You can find the available base syntax options [there](https://rjsf-team.github.io/react-jsonschema-form/) and [YAML examples here](https://backstage.io/docs/features/software-templates/input-examples/).
 
@@ -563,6 +576,7 @@ parameters:
 ```
 
 ## Links
+- [React Json Schema Form](https://rjsf-team.github.io/react-jsonschema-form/
 - [Official Backstage docs](https://backstage.io/docs/features/software-templates/writing-templates).
 - [Nunjucks templating docs](https://mozilla.github.io/nunjucks/templating.html)
 
