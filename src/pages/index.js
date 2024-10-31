@@ -32,10 +32,6 @@ import {
   CubeTransparentIcon,
 } from '@heroicons/react/outline';
 
-import KeepSafeImg from '../../content/assets/home/illustrations/home-keep-backstage-safe.png';
-import NoCodeImg from '../../content/assets/home/illustrations/home-no-code-backstage.svg';
-import CustomPluginsImg from '../../content/assets/home/illustrations/home-custom-plugins.png';
-import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.svg';
 import AndyThumbImg from '../../content/assets/home/illustrations/home-andy-video-thumb.png';
 
 import CatalogImg from '../../content/assets/home/illustrations/home-service-catalog.png';
