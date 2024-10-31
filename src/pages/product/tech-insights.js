@@ -52,7 +52,7 @@ const PRODUCT = {
       },
       paragraphs: [
         'Teams can see how they compare to the rest of the company so behavior changes are gamified.',
-        'Prompts and notifications in Slack channels and on pull requests can warn engineers when they’re about to make a chance that will violate an engineering standard. [coming soon]',
+        'Prompts and notifications in Slack channels and on pull requests can warn engineers when they’re about to make a change that will violate an engineering standard. [coming soon]',
       ],
     },
     {
