@@ -1,6 +1,6 @@
 ---
 title: Backstage Scaffolder Parameters
-publishedDate: '2024-08-08'
+publishedDate: '2024-10-31'
 description: Parameter form available for use in Backstage scaffolder templates
 ---
 
@@ -276,6 +276,10 @@ In a multipage form, each parameter page must contain `title` and `properties`
 
 ### Complex Form Fields
 
+The following items are enhanced form fields that can be used out of the box to build richer forms for your templates. 
+
+Roadie allows you to [create your own custom React form components](#adding-custom-parameters) and use them in the same way if you have special use cases. 
+
 #### Entity picker
 
 You can prompt the user with a list of catalog entities using the `ui:field: EntityPicker` option as follows:
@@ -423,6 +427,21 @@ parameters:
           labelSelector: "metadata.description"
 ```
 
+## Adding custom parameters
+
+You can extend and customize the available Scaffolder functionality by using [Roadie Custom Plugins](/docs/custom-plugins/overview/) and creating a `Field extension`.
+
+You can find more information on how this is done [in the tutorial on the Open Source Backstage documentation page.](https://backstage.io/docs/features/software-templates/writing-custom-field-extensions/)
+
+Field extensions are react form components that can be imported dynamically into the Roadie Scaffolder. You can use the same workflow and development experience to build your own custom Scaffolder Field Extensions as any other plugin, using the Roadie CLI.
+
+### Registering your Field Extension
+
+Scaffolder Field Extensions are automatically registered to be usable within Scaffolder Templates, once they have been registered as a [Custom Plugin component](/docs/custom-plugins/overview/) in the Roadie application. You can do this by navigating to the `Administration` -> `Custom Plugins` page and registering your Custom Plugin bundle, including a component of type `ScaffolderFieldExtension`.
+
+![Custom plugin registration form](custom_plugin_registration_form.webp)
+
+
 ## Re-using Parameter Pages
 
 You can create re-usable form pages using the `placeholders` feature like so:
@@ -542,20 +561,6 @@ parameters:
       title: 'Name'
       description: 'Name to say hello to'
 ```
-
-## Adding custom parameters
-
-You can extend and customize the available Scaffolder functionality by using [Roadie Custom Plugins](/docs/custom-plugins/overview/) and creating a `Field extension`. 
-
-You can find more information on how this is done [in the tutorial on the Open Source Backstage documentation page.](https://backstage.io/docs/features/software-templates/writing-custom-field-extensions/)
-
-Field extensions are react form components that can be imported dynamically into the Roadie Scaffolder. You can use the same workflow and development experience to build your own custom Scaffolder Field Extensions as any other plugin, using the Roadie CLI.
-
-### Registering your Field Extension
-
-Scaffolder Field Extensions are automatically registered to be usable within Scaffolder Templates, once they have been registered as a [Custom Plugin component](/docs/custom-plugins/overview/) in the Roadie application. You can do this by navigating to the `Administration` -> `Custom Plugins` page and registering your Custom Plugin bundle, including a component of type `ScaffolderFieldExtension`.
-
-![Custom plugin registration form](custom_plugin_registration_form.webp)
 
 ## Links
 - [Official Backstage docs](https://backstage.io/docs/features/software-templates/writing-templates).
