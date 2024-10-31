@@ -26,19 +26,20 @@ const CallToAction = () => (
     <div>
       <Button
         link={true}
-        to={PAGE_PATHS.freeTrial}
+        to={PAGE_PATHS.requestDemo}
         color="primary"
-        text="Try it free"
+        text="Request a demo"
         size="large"
         fullWidth={true}
       />
     </div>
+
     <div className="mt-3 sm:mt-0 sm:ml-3">
       <Button
         link={true}
-        to={PAGE_PATHS.requestDemo}
+        to={PAGE_PATHS.freeTrial}
+        text="Try it free"
         color="secondary"
-        text="Request a demo"
         size="large"
         fullWidth={true}
       />
