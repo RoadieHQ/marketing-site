@@ -6,8 +6,6 @@ description: How to configure access control permissions in Roadie.
 
 ## Introduction
 
-**This feature is currently in the process of being rolled out. If you want access, please contact our support or sales teams.**
-
 Roadie comes with RBAC out of the box. We provide 4 default roles: `admin`, `viewer`, `maintainer` and `tech-insights-admin`. It is possible to also define custom roles - please contact our sales team if this is something you are interested in.
 
 | Name                | Description                                                                                                                    |
