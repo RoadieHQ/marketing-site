@@ -6,7 +6,7 @@ description: How to configure and manage policies in Roadie for access control.
 
 ## Introduction
 
-In Backstage, **policies** are integral components of the permissions framework, governing access control within the platform. They define the rules and conditions under which users can perform specific actions on various resources, such as services, components, or documentation.
+In Roadie, **policies** are integral components of the permissions framework, governing access control within the platform. They define the rules and conditions under which users can perform specific actions on various resources, such as services, components, or documentation.
 
 **Key aspects of policies:**
 
