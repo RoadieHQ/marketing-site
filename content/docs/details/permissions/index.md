@@ -35,8 +35,7 @@ If your Roadie tenant is using a custom identity provider, you can choose to inc
 ```json
 {
   "sub": "77d0c4cb-706c-4aa4-b18e-bed538a33aa7",
-  "roles": ["viewer", "tech-insights-admin"],
-  ...
+  "roles": ["viewer", "tech-insights-admin"]
 }
 ```
 
