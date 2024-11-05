@@ -14,7 +14,7 @@ In Backstage, **policies** are integral components of the permissions framework,
 - **Conditional Logic:** Policies can incorporate complex conditions, such as verifying if a user belongs to a specific group or possesses certain attributes, to make nuanced authorization decisions. [Backstage](https://backstage.io/docs/permissions/custom-rules/)
 - **Customization:** Administrators have the flexibility to craft custom policies tailored to their organization's unique requirements, ensuring that access controls align with internal processes and security standards. [Backstage](https://backstage.io/docs/permissions/custom-rules/)
 
-By implementing policies, Backstage ensures that access to resources is managed effectively, enhancing security and maintaining the integrity of the development environment.
+By implementing policies, Roadie ensures that access to resources is managed effectively, enhancing security and maintaining the integrity of the development environment.
 
 To configure this in Roadie we provide a UI for **Policies Management** and you can access it at: `https://<tenant name>.roadie.so/administration/settings/policies`.
 
