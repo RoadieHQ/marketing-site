@@ -101,6 +101,9 @@ nav:
       - Working with plugins:
           - Required metadata: '/docs/details/required-metadata/'
           - Requesting plugins: '/docs/details/requesting-plugins/'
+      - Setting secrets: '/docs/details/setting-secrets/'
+      - Permissions:
+          - Managing Policies: '/docs/details/managing-policies/'
       - Updating the UI: '/docs/details/updating-the-ui/'
   - Custom plugins:
       - Overview: '/docs/custom-plugins/overview'
@@ -119,11 +122,11 @@ nav:
   - Scaffolder:
       - Overview: '/docs/scaffolder/writing-templates/'
       - Scaffolder Actions:
-        - Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
-        - Custom Scaffolder Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
+          - Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
+          - Custom Scaffolder Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
       - Scaffolder Parameters:
-        - Paremeters Guide: '/docs/scaffolder/scaffolder-parameters'
-        - Custom Scaffolder Parameters: '/docs/scaffolder/custom-fields/'
+          - Paremeters Guide: '/docs/scaffolder/scaffolder-parameters'
+          - Custom Scaffolder Parameters: '/docs/scaffolder/custom-fields/'
       - Recipes:
           - Create RFC: '/docs/scaffolder/create-rfc/'
           - Debug template: '/docs/scaffolder/debug-template/'
