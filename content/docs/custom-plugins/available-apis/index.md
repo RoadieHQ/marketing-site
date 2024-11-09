@@ -37,7 +37,7 @@ The code above would produce a view like this:
 `discoveryApi` provides connectivity to the Roadie backend APIs. The API can be used to identify the correct endpoints to call when, for example, integrating with third party services via the Roadie proxy.
 
 ```tsx
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useEntity } from "@backstage/plugin-catalog-react";
 import { discoveryApiRef, useApi } from "@backstage/core-plugin-api";
 import { StructuredMetadataTable } from "@backstage/core-components";
@@ -67,7 +67,7 @@ export const MyComponent = () => {
 `identifyApi` provides information about the currently logged in user. This API can be used to target individuals or decorate requests with relevant user information.
 
 ```tsx
-import React from "react";
+import React, {useState} from "react";
 import useAsync from "react-use/lib/useAsync";
 import { BackstageUserIdentity, ProfileInfo, identityApiRef, useApi } from "@backstage/core-plugin-api";
 import { StructuredMetadataTable } from "@backstage/core-components";
