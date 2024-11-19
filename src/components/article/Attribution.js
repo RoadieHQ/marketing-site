@@ -34,6 +34,7 @@ const AuthorName = ({ author }) => {
 };
 
 const ReadInfo = ({ post }) => {
+  if (!post.timeToRead || post.timeToRead === '') return null;
   return (
     <div className="flex space-x-1 text-sm text-gray-500">
       <PubDate post={post} />
