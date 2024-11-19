@@ -18,7 +18,7 @@ const mapContentfulBlogPostToMarkdownRemarkBlogPost = ({ node }) => ({
       },
     },
 
-    timeToRead: node.body.childMarkdownRemark.timeToRead,
+    timeToRead: get(node, 'body.childMarkdownRemark.timeToRead'),
     html: get(node, 'body.childMarkdownRemark.html'),
 
     fields: {

@@ -5,6 +5,24 @@ const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
 const theme = require('./src/theme');
 const GATSBY_PLUGIN_CSP_DIRECTIVES = require('./src/gatsby/cspDirectives');
 
+// EXAMPLE NETLIFY ENV VARS:
+//
+// Main deploys from GitHub:
+//   - CONTEXT: production
+//   - SITE_NAME: roadie
+//   - PULL_REQUEST: false
+//   - DEPLOY_PRIME_URL: https://main--roadie.netlify.app
+// Branch deploys from GitHub:
+//   - CONTEXT: deploy-preview
+//   - SITE_NAME: roadie
+//   - PULL_REQUEST: true
+//   - DEPLOY_PRIME_URL: https://deploy-preview-[NNNN]--roadie.netlify.app
+// Preview builds from Contentful:
+//   - CONTEXT: production
+//   - SITE_NAME: roadie-preview
+//   - PULL_REQUEST: false
+//   - DEPLOY_PRIME_URL: https://main--roadie-preview.netlify.app
+
 const SITE_TITLE = 'Roadie';
 
 const skipAlgoliaIndexing =
@@ -43,16 +61,7 @@ const getContentfulHost = () => {
 
 const getSiteUrl = () => {
   const netlifySiteName = get(process.env, 'SITE_NAME');
-  // There's a good chance that this CONTEXT variable is the only thing we should be switching
-  // on in this function as it's a more specific variable than the SITE_NAME.
-  // Docs: https://docs.netlify.com/configure-builds/environment-variables/
   const context = get(process.env, 'CONTEXT');
-  const pullRequest = get(process.env, 'PULL_REQUEST');
-  console.log('BUILD_ENV_VARS');
-  console.log('CONTEXT', context);
-  console.log('SITE_NAME', netlifySiteName);
-  console.log('DEPLOY_PRIME_URL', get(process.env, 'DEPLOY_PRIME_URL'));
-  console.log('PULL_REQUEST', pullRequest, typeof pullRequest);
   if (netlifySiteName === 'roadie-preview') return 'https://preview.roadie.io';
   if (context === 'deploy-preview') return get(process.env, 'DEPLOY_PRIME_URL');
   return 'https://roadie.io';
