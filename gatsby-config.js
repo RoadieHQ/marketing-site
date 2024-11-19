@@ -43,7 +43,12 @@ const getContentfulHost = () => {
 
 const getSiteUrl = () => {
   const netlifySiteName = get(process.env, 'SITE_NAME');
+  // There's a good chance that this CONTEXT variable is the only thing we should be switching
+  // on in this function as it's a more specific variable than the SITE_NAME.
+  // Docs: https://docs.netlify.com/configure-builds/environment-variables/
+  const context = get(process.env, 'CONTEXT');
   if (netlifySiteName === 'roadie-preview') return 'https://preview.roadie.io';
+  if (context === 'branch-deploy') return get(process.env, 'DEPLOY_PRIME_URL');
   return 'https://roadie.io';
 };
 
