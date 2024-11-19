@@ -43,14 +43,25 @@ const getContentfulHost = () => {
 
 const getSiteUrl = () => {
   const netlifySiteName = get(process.env, 'SITE_NAME');
+  // There's a good chance that this CONTEXT variable is the only thing we should be switching
+  // on in this function as it's a more specific variable than the SITE_NAME.
+  // Docs: https://docs.netlify.com/configure-builds/environment-variables/
+  const context = get(process.env, 'CONTEXT');
+  const pullRequest = get(process.env, 'PULL_REQUEST');
+  console.log('BUILD_ENV_VARS');
+  console.log('CONTEXT', context);
+  console.log('SITE_NAME', netlifySiteName);
+  console.log('DEPLOY_PRIME_URL', get(process.env, 'DEPLOY_PRIME_URL'));
+  console.log('PULL_REQUEST', pullRequest, typeof pullRequest);
   if (netlifySiteName === 'roadie-preview') return 'https://preview.roadie.io';
+  if (context === 'deploy-preview') return get(process.env, 'DEPLOY_PRIME_URL');
   return 'https://roadie.io';
 };
 
 const shouldCrawl = () => {
   const ctx = get(process.env, 'CONTEXT');
   const netlifySiteName = get(process.env, 'SITE_NAME');
-  return (netlifySiteName === 'roadie') && (ctx !== 'deploy-preview');
+  return netlifySiteName === 'roadie' && ctx !== 'deploy-preview';
 };
 
 const getContentfulOptions = () => {
