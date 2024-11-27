@@ -187,7 +187,7 @@ ${{ user.entity.spec.profile.email }}
 
 You can find all the available actions to your Roadie instance by visiting the following page from within Roadie:
 
-`https://<tenant-name>.roadie.so/templates/actions`
+`https://<tenant-name>.roadie.so/create/actions`
 
 
 ### Conditional Steps
