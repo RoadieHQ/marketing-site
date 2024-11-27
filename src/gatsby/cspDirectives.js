@@ -36,6 +36,10 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     'https://app.intercom.io',
     'https://widget.intercom.io',
     'https://js.intercomcdn.com',
+
+    // https://help.dealfront.com/en/articles/3715216-why-is-the-leadfeeder-tracker-blocked-on-my-site
+    '*.lfeeder.com',
+    '*.leadfeeder.com',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
@@ -96,6 +100,10 @@ const CSP_IMG_SRC_DIRECTIVES = [
   'https://*.intercom-attachments-9.com',
   'https://static.intercomassets.eu',
   'https://static.au.intercomassets.com',
+
+  // https://help.dealfront.com/en/articles/3715216-why-is-the-leadfeeder-tracker-blocked-on-my-site
+  '*.lfeeder.com',
+  '*.leadfeeder.com',
 ].join(' ');
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
