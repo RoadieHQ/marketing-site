@@ -6,13 +6,12 @@ description: How to configure locations autodiscovery
 
 ## Introduction
 
-The Backstage catalog uses location entities to point to external sources which define entities. Roadie will update your 
-entities in Backstage whenever one of the repositories defined in a location is updated. 
+The Backstage catalog uses location entities to point to external sources which define entities. Roadie will update your
+entities in Backstage whenever one of the repositories defined in a location is updated.
 
 Autodiscovery is the mechanism to define patterns pointing to filenames in URLs that should be queried for entity files.
 
 For more information about locations and troubleshooting Catalog ingestion issues you can take a look at the [catalog troubleshooting documentation](/docs/details/troubleshooting-the-catalog)
-
 
 ## Setting up autodiscovery
 
@@ -20,20 +19,19 @@ Roadie supports autodiscovery for integrations configured in the application. Th
 
 ### GitHub Autodiscovery and Organization Autodiscovery
 
-GitHub integration for Roadie provides two autodiscovery targets, entities and teams/groups. 
+GitHub integration for Roadie provides two autodiscovery targets, entities and teams/groups.
 
 ![GitHub Autodiscovery of Catalog Files](./gh_autodiscovery.webp)
 
-The GitHub *autodiscovery* integration can be configured to automatically discover catalog entities from a provided configured path pointing to GitHub. 
+The GitHub _autodiscovery_ integration can be configured to automatically discover catalog entities from a provided configured path pointing to GitHub.
 
 More information about possible patterns and examples of URLs can be found from the [Backstage GitHub Discovery documentation.](https://backstage.io/docs/integrations/github/discovery#configuration)
 
 ![GitHub organization autodiscovery](gh_org_ingestion.webp)
 
-The GitHub *organization* integration provides the possibility to automatically import GitHub users and teams/groups from an organization. You can configure this discovery type by providing the name of the GitHub organization. Note that the GitHub app needs to be installed for that organization and needs to have permissions to access user info.
+The GitHub _organization_ integration provides the possibility to automatically import GitHub users and teams/groups from an organization. You can configure this discovery type by providing the name of the GitHub organization. Note that the GitHub app needs to be installed for that organization and needs to have permissions to access user info.
 
 ### AWS S3 Autodiscovery
-
 
 ![AWS S3 autodiscovery target](./s3_entry.webp)
 
@@ -41,10 +39,9 @@ AWS S3 autodiscovery can be configured to download catalog files from an S3 buck
 
 ### Azure DevOps
 
-
 ![Azure DevOps autodiscovery target](./azure-autodiscovery.webp)
 
-Azure DevOps autodiscovery can be configured to download catalog files from Azure DevOps SCM. For this to be functionality the [integration configuration for Azure Devops](/docs/integrations/azure-devops-provider) must be done. 
+Azure DevOps autodiscovery can be configured to download catalog files from Azure DevOps SCM. For this to be functionality the [integration configuration for Azure Devops](/docs/integrations/azure-devops-provider) must be done.
 
 ### Bitbucket Autodiscovery
 
@@ -75,17 +72,17 @@ describes the url format for Bitbucket Cloud (reproduced from Backstage.io):
   [See here for the specification](https://developer.atlassian.com/bitbucket/api/2/reference/meta/filtering)
   for the query argument (will be passed as the `q` query parameter).
 - (Optional) The `search=true` query argument to activate the mode utilizing code search.
-    - Is mutually exclusive to the `q` query argument.
-    - Allows providing values at `catalogPath` for finding catalog files as allowed by the `path` filter/modifier
-      [at Bitbucket Cloud's code search](https://confluence.atlassian.com/bitbucket/code-search-in-bitbucket-873876782.html#Search-Pathmodifier).
-        - `catalogPath=/catalog-info.yaml`
-        - `catalogPath=catalog-info.yaml` (anywhere in the repository)
-        - `catalogPath=/path/catalog-info.yaml`
-        - `catalogPath=path/catalog-info.yaml`
-        - `catalogPath=/path/*/catalog-info.yaml`
-        - `catalogPath=path/*/catalog-info.yaml`
-    - Supports multiple catalog files per repository depending on the `catalogPath` value.
-    - Registers `Location` entities for existing files only vs all matching repositories.
+  - Is mutually exclusive to the `q` query argument.
+  - Allows providing values at `catalogPath` for finding catalog files as allowed by the `path` filter/modifier
+    [at Bitbucket Cloud's code search](https://confluence.atlassian.com/bitbucket/code-search-in-bitbucket-873876782.html#Search-Pathmodifier).
+    - `catalogPath=/catalog-info.yaml`
+    - `catalogPath=catalog-info.yaml` (anywhere in the repository)
+    - `catalogPath=/path/catalog-info.yaml`
+    - `catalogPath=path/catalog-info.yaml`
+    - `catalogPath=/path/*/catalog-info.yaml`
+    - `catalogPath=path/*/catalog-info.yaml`
+  - Supports multiple catalog files per repository depending on the `catalogPath` value.
+  - Registers `Location` entities for existing files only vs all matching repositories.
 
 Examples:
 
@@ -136,13 +133,30 @@ The format is slightly different for Bitbucket server. The url is composed of fo
   will result in:
   `https://bitbucket.mycompany.com/projects/my-project/repos/service-a/catalog-info.yaml`.
 
+### GitHub Enterprise Server Autodiscovery
+
+The GitHub autodiscovery integration can be configured to automatically discover catalog entities from a provided configured path pointing to GitHub.
+
+#### GHES Broker Autodiscovery
+
+GitHub autodiscovery settings using the Broker connection.
+
+Click the + sign next to the `Configure GHES via the Broker` to open the input dialog to configure the GHES target URL via the broker.
+![GHES broker autodiscovery](./ghes-autodiscovery-page.webp)
+Add your token and rest of the path that points to your github repository or catalog file.
+You don't need to specify the broker string here. This configuration only affects the GHES when it is configured via a broker. Click save.
+![GHES broker autodiscovery dialog](./ghes-autodiscovery-dialog.webp)
+
+You can see your existing configured target URLs in the list below
+![GHES broker autodiscovery lit](./ghes-autodiscovery-list.webp)
+
 ## Managing Locations
 
-A list of all configured locations is located in URL `https://<your-tenant>.roadie.so/administration/locations/management`. 
+A list of all configured locations is located in URL `https://<your-tenant>.roadie.so/administration/locations/management`.
 
 ![Location management table](./location_mgmt.webp)
 
-The list contains an entry for all locations added as an autodiscovery configuration within each integration, as well as locations imported using the Catalog Import functionality within  `https://<your-tenant>.roadie.so/import/entity`. 
+The list contains an entry for all locations added as an autodiscovery configuration within each integration, as well as locations imported using the Catalog Import functionality within `https://<your-tenant>.roadie.so/import/entity`.
 
 Note that deleting a location via the administration UI (either at the location management page or at the individual integration page) does not automatically remove individual entities that have been found from that location. If the desired effect is to remove all items from a particular location, it is better to find that location via the catalog and[ unregister it from there.](/docs/details/unregister-components)
 
