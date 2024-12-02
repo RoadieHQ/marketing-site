@@ -139,16 +139,17 @@ The GitHub autodiscovery integration can be configured to automatically discover
 
 #### GHES Broker Autodiscovery
 
-GitHub autodiscovery settings using the Broker connection.
+You can also connect to your GitHub Enterprise server via the broker connection. 
+![GHES broker configuration](./broker-ghes-configuration.webp)
 
+To enable autodiscovery of entities via the broker, you can add entries to the autodiscovery section of the settings page.
 Click the + sign next to the `Configure GHES via the Broker` to open the input dialog to configure the GHES target URL via the broker.
-![GHES broker autodiscovery](./ghes-autodiscovery-page.webp)
-Add your token and rest of the path that points to your github repository or catalog file.
-You don't need to specify the broker string here. This configuration only affects the GHES when it is configured via a broker. Click save.
-![GHES broker autodiscovery dialog](./ghes-autodiscovery-dialog.webp)
+Within the opened dialog you can add the URL of your GitHub organization or repository directly, as it is referenced in the main configuration section. If the broker connection is configured, these URLs will be automatically translated to use the broker protocol. Note that this configuration only affects the GHES when it is configured via a broker and won't affect discovery if broker configuration is not present.
 
-You can see your existing configured target URLs in the list below
-![GHES broker autodiscovery lit](./ghes-autodiscovery-list.webp)
+Once you have added the information about your GHES instance and organization, you can see your existing configured target URLs in the list below
+![GHES broker autodiscovery](./broker-ghes-discovery.webp). 
+
+The autodiscovery kicks in shortly after the save action and automatically refreshes discovered entities periodically
 
 ## Managing Locations
 
