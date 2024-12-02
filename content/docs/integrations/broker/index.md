@@ -70,7 +70,7 @@ Usage instructions can be found in the respective `README.md` files.
 
 ### Roadie Docker Containers
 
-Roadie provides pre-configured Docker containers containing pre-configured broker clients for use with backstage. At time of writing, we are providing container images for Kubernetes, Sonarqube, Jenkins, Cost Insights and ArgoCD. These can be found on [GitHub here](https://github.com/RoadieHQ/roadie-agent/tree/main/dockerfiles).
+Roadie provides pre-configured Docker containers containing pre-configured broker clients for use with backstage. At time of writing, we are providing container images for Kubernetes, Sonarqube, Jenkins, Cost Insights, GitHub Enterprise Server and ArgoCD. These can be found on [GitHub here](https://github.com/RoadieHQ/roadie-agent/tree/main/dockerfiles).
 
 You can configure them with environment variables containing authentication credentials for the brokered service as well as the broker endpoint and the broker client token.
 
