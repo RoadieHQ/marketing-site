@@ -6,46 +6,31 @@ description: How to configure access control permissions in Roadie.
 
 ## Introduction
 
-Roadie comes with RBAC out of the box. We provide 4 default roles: `admin`, `viewer`, `maintainer` and `tech-insights-admin`. It is possible to also define custom roles - please contact our sales team if this is something you are interested in.
+Roadie permissions allow rules to be set about which users have acces to which features and information.
 
-| Name                | Description                                                                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| admin               | Can perform any action in Roadie                                                                                               |
-| viewer              | Can only view data within Roadie                                                                                               |
-| maintainer          | Can read and write data, but cannot access administration settings or tech insights editing                                    |
-| tech-insights-admin | Can edit scorecards, checks and data sources in tech insights. This role requires one of viewer / maintainer to work correctly |
+This can be set at a coarse level (i.e. whole features of the application) or at a fine-grain level (i.e. the ability to view specific entities within the catalog).
 
-## Assigning Roles
+A good example of a permission is the ability to allow users to see a Scaffolder Template. Let's say this Template has the ability to change a cloud budget for a given service. Not everyone within an organisation may have that ability. A permissions attached to that Template would allow the team governing Roadie to limit access to that Template. 
 
-There are two ways to assign a role to a user in Roadie:
+## Features
 
-- Assign roles in the user management screen
-- Provide a `roles` field in your id token provided to Roadie during login.
+- **User Management** user roles can be managed via the no-code Roadie Admin UI or ingested from an Identity Provider via the identity token.
+- **Custom Roles** can be created to manage subsets of users
+- **Custom Policies** can be created to cater for specific permissions
+- **Custom Permissions** can be created and consumed in Custom Policies (from a custom plugin for example)
 
-### User Management
+## Structure
 
-- Visit the user management section in `https://<tenant name>.roadie.so/administration/settings/manage-users`.
-- Find the name of the user you would like to assign a role to.
-- Click the edit pencil and then add the roles you would like to assign the user.
+Roadie permissions are made up:
 
-### Roles from Identity providers id token
+- **Users**: users have Roles which grant them permissions to execute certain tasks within Roadie or view certain information
+- **Roles**: which are attached to users. They are groups of policies. 
+- **Policies**: which are groups of permissions, rolled up into Roles. 
+- **Permissions**: granular code-level gates that evaluate whether an individual users has access to a given piece of functionality.
 
-If your Roadie tenant is using a custom identity provider, you can choose to include the roles field in your id token as follows:
+## Backstage Permissions Framework
 
-```json
-{
-  "sub": "77d0c4cb-706c-4aa4-b18e-bed538a33aa7",
-  "roles": ["viewer", "tech-insights-admin"]
-}
-```
+Roadies Permissions system is based on the Bacsktage Permissions framework. More information on the framework in general can be found in Backstage docs:
 
-## Setting the default roles
-
-If a user has no role associated yet, e.g. if it is the first time they have logged in and there are no roles associated with the user, then the user is allowed the policies associated with the default roles. There can be many default roles.
-
-To edit the default roles:
-
-- Visit `http://<tenant name>.roadie.so/administration/settings/roles`
-- Click the edit pencil beside the roles you would like to be the default roles
-- The click "Set as default role" and save.
-- You can perform similar steps to make a role no longer a default role.
+- Backstage docs on [policy definitions](https://backstage.io/docs/permissions/writing-a-policy/).
+- Backstage docs on [custom rules](https://backstage.io/docs/permissions/custom-rules/).
