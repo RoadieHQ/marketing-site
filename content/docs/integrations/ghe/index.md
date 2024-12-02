@@ -65,6 +65,10 @@ Roadie supports GitHub Enterprise Servers via both public access via the Interne
 
 ![ghes-settings.webp](ghes-settings.webp)
 
+### Step 6. (GHES behind broker only) Configure broker client
+1. Configure your broker client connection as defined in [the Roadie broker documentation](/docs/integrations/broker/#setup-broker-client).
+   * You can find the recommended initial configurations and/or dockerfiles from the repository linked in broker documentation above.
+
 ## Next Steps
 
 
