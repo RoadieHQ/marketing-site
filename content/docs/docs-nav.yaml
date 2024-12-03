@@ -125,7 +125,7 @@ nav:
           - Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
           - Custom Scaffolder Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
       - Scaffolder Parameters:
-          - Paremeters Guide: '/docs/scaffolder/scaffolder-parameters/'
+          - Parameters Guide: '/docs/scaffolder/scaffolder-parameters/'
           - Custom Scaffolder Parameters: '/docs/scaffolder/custom-fields/'
       - Organising Templates: '/docs/scaffolder/certified-templates/'
       - Recipes:
