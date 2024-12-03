@@ -148,6 +148,7 @@ The table below lists the permissions required of the assumable role in order fo
 | dynamodb-table       | AWS DynamoDB tables                       | `dynamodb:ListTables`, `dynamodb:DescribeTable`, `dynamodb:ListTagsOfResource` |
 | ec2-instance         | AWS Elastic Compute Cloud instances       | `ec2:DescribeInstances`                                                        |
 | rds-db-instance      | AWS Relational Database Service instances | `rds:DescribeDBInstances`                                                      |
+| sns-topic            | AWS SNS Topics                            | `sns:ListTopics`                                                      |
 | organization-account | AWS Organization Accounts                 | `organizations:ListAccounts`, `organizations:ListTagsForResource`              |
 
 
