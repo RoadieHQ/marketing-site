@@ -6,11 +6,11 @@ description: How to configure access control permissions in Roadie.
 
 ## Introduction
 
-Roadie permissions allow rules to be set about which users have acces to which features and information.
+Role-based access control in Roadie allows rules to be set about which users have access to which features and information.
 
 This can be set at a coarse level (i.e. whole features of the application) or at a fine-grain level (i.e. the ability to view specific entities within the catalog).
 
-A good example of a permission is the ability to allow users to see a Scaffolder Template. Let's say this Template has the ability to change a cloud budget for a given service. Not everyone within an organisation may have that ability. A permissions attached to that Template would allow the team governing Roadie to limit access to that Template. 
+A good example of a permission is the ability to allow users to see a Scaffolder template. Let's say this template has the ability to change a cloud budget for a given service. Not everyone within an organisation may have that ability. A permissions attached to that Template would allow the team governing Roadie to limit access to that template. 
 
 ## Features
 
@@ -21,7 +21,7 @@ A good example of a permission is the ability to allow users to see a Scaffolder
 
 ## Structure
 
-Roadie permissions are made up:
+Role-based access control in Roadie is made up:
 
 - **Users**: users have Roles which grant them permissions to execute certain tasks within Roadie or view certain information
 - **Roles**: which are attached to users. They are groups of policies. 
@@ -30,7 +30,7 @@ Roadie permissions are made up:
 
 ## Backstage Permissions Framework
 
-Roadies Permissions system is based on the Bacsktage Permissions framework. More information on the framework in general can be found in Backstage docs:
+Roadies role-based access control system is inspired by the Bacsktage Permissions framework. More information on that framework in general can be found in Backstage docs but is not necessary to understand when interacting with Roadie:
 
 - Backstage docs on [policy definitions](https://backstage.io/docs/permissions/writing-a-policy/).
 - Backstage docs on [custom rules](https://backstage.io/docs/permissions/custom-rules/).
