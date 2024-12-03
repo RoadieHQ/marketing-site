@@ -1,12 +1,25 @@
 ---
-title: Certified Templates
+title: Organising Templates
 publishedDate: '2023-08-07'
-description: Tutorial to render the certified chip on your scaffolder templates
+description: How to organise and categorize Templates
 ---
 
 ## Overview
 
-Certified templates are templates that got an approval from the owner of the template. They get a certification chip rendered on their template card when you visit the `/create` page.
+When you start getting lots of templates and they start getting used a lot and relied on, organising and categorising them becomes a priority.
+
+### Grouping templates
+
+Roadie Admin users can create groups or categories of templates that will show in the list page. This can be done via  
+
+
+### Certified Templates
+
+![certified-template](./certified.webp)
+
+Certified templates are templates that have an approval from the owner of the template. They get a certification chip rendered on their template card when you visit the `/create` page.
+
+You should only certify templates that are in a mature and stable state. This allows users to safely run a certified template without worrying that it is not working or is incomplete.
 
 The certification chip can be shown on your templates by adding the `roadie.io/certified: "true"` annotation to the template.
 
@@ -21,8 +34,3 @@ spec:
 ...
 ```
 
-![certified-template](./certified.webp)
-
-## Usage
-
-The best practice is to certify your templates that are in a mature state and you are not working on them actively. This way your engineers can safely run all of the certified templates without worrying which template is the one that they should run.

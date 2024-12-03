@@ -9,11 +9,11 @@ Scaffolder templates are a powerful tool to create software, configurations and 
 
 ## Testing
 
-Testing of templates is not well supported in Backstage currently, mostly due to the fact that many scaffolder actions perform side-effects.
+Testing of templates is not well supported in Backstage currently, mostly due to the fact that many Scaffolder actions perform side-effects.
 
 A limited set of functionality exists to preview and edit parameters in a sandbox, and dry-run templates (skipping steps that perform mutations).
 
-You can find these features at `/import/entity-preview`.
+You can find these features at `/create/tools`.
 
 It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/import/entity` using the version on a published feature branch.
 This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test.
@@ -23,13 +23,13 @@ This preview template will show up in the list of templates however so it is imp
 
 Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
 
-Template YAML input forms can also be tested at `/templates/edit` using a live template preview viewer which speeds up the testing cycle.
+Template YAML input forms can also be tested at `/create/tools` using a live template preview viewer which speeds up the testing cycle.
 
 ![preview-template](./template-preview-tool.webp)
 
 ### Resource not accessible by integration
 
-This error is referring to actions that interact GitHub. It means that the Roadie GitHub app is unable to read, create or update the resource/s that are being touched by the Scaffolder step. 
+This error is referring to actions that interact with GitHub. It means that the Roadie GitHub app is unable to read, create or update the resource/s that are being touched by the Scaffolder step. 
 There can be multiple different reasons for this generic error message that GitHub responds with. Unfortunately the errors returned from GitHub don't provide a lot more information about the specific resources that are being access but below are some cases where it is common to encounter this message.
 
 #### Attempting to create/amend a repository and add collaborators/owners

@@ -47,6 +47,7 @@ You only need to define one side of a relationship for it to appear on both side
 | spec.managedBy      | -           | string array | Any         | User,Group,Product                                    |
 | spec.manages        | -           | string array | Any         | User                                                  |
 
+'dependsOn', 'dependencyOf', 'providesApis', 'apiProvidedBy', 'consumesApis'
 
 These relationship names can be used as you see fit to describe your organisation. Backstage provides some [suggestions on usage](https://backstage.io/docs/features/software-catalog/well-known-relations/) but this is in fact arbitrary and only limited by the Applicable Kinds in the above table.
 
