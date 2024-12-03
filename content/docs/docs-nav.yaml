@@ -90,7 +90,10 @@ nav:
           - Accessing public resources: '/docs/details/backend-reading-allow-list/'
           - Allowlisting Roadie traffic: '/docs/details/allowlisting-roadie-traffic/'
           - How Roadie connects: '/docs/details/how-roadie-connects/'
-      - Permissions: '/docs/details/permissions/'
+      - Permissions: 
+        - Introduction: '/docs/details/permissions/'
+        - Roles: '/docs/details/managing-roles/'
+        - Policies: '/docs/details/managing-policies/'
       - Proxy Creation: '/docs/details/create-proxy/'
       - Setting secrets: '/docs/details/setting-secrets/'
       - TechDocs:
@@ -102,8 +105,6 @@ nav:
           - Required metadata: '/docs/details/required-metadata/'
           - Requesting plugins: '/docs/details/requesting-plugins/'
       - Setting secrets: '/docs/details/setting-secrets/'
-      - Permissions:
-          - Managing Policies: '/docs/details/managing-policies/'
       - Updating the UI: '/docs/details/updating-the-ui/'
   - Custom plugins:
       - Overview: '/docs/custom-plugins/overview'
