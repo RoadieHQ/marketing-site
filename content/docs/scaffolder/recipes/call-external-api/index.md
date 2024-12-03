@@ -14,7 +14,7 @@ description: An introduction template calling an external API
 - `debug:log`
 - `https:backstage:request`
 
-You can check the available actions if you visit `/templates/actions`.
+You can check the available actions if you visit `/create/actions`.
 
 ## Walkthrough
 

@@ -121,18 +121,17 @@ nav:
           - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
   - Scaffolder:
       - Overview: '/docs/scaffolder/writing-templates/'
-      - Scaffolder Actions:
-          - Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
-          - Custom Scaffolder Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
-      - Scaffolder Parameters:
-          - Parameters Guide: '/docs/scaffolder/scaffolder-parameters/'
-          - Custom Scaffolder Parameters: '/docs/scaffolder/custom-fields/'
+      - Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
+      - Custom Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
+      - Parameters: '/docs/scaffolder/scaffolder-parameters/'
+      - Custom Parameters: '/docs/scaffolder/custom-fields/'
       - Organising Templates: '/docs/scaffolder/certified-templates/'
       - Recipes:
           - Create RFC: '/docs/scaffolder/recipes/create-rfc/'
           - Debug template: '/docs/scaffolder/recipes/debug-template/'
           - Append file: '/docs/scaffolder/recipes/append/'
           - Re-use parameters: '/docs/scaffolder/recipes/global-constants/'
+          - Re-use steps: '/docs/scaffolder/recipes/placeholders/'
           - Edit files: '/docs/scaffolder/recipes/edit-file/'
           - Pre-filling templates via URL params: '/docs/scaffolder/recipes/predefined-values-via-url-params/'
           - Manipulate JSON files: '/docs/scaffolder/recipes/manipulate-json-files'

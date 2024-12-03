@@ -10,7 +10,7 @@ description: An introduction template utilizing the roadiehq:utils:jsonata:json:
 - `roadiehq:utils:fs:write`
 - `roadiehq:utils:jsonata:json:transform`
 
-You can check the available actions if you visit `/templates/actions`.
+You can check the available actions if you visit `/create/actions`.
 
 ## Walkthrough
 

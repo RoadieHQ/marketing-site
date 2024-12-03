@@ -13,7 +13,7 @@ description: An introduction template to creating an RFC
 - [`fs:rename`](https://github.com/backstage/backstage/blob/54b9f073d13d878fce652c9ec8b8cdfc5fd85c6a/plugins/scaffolder-backend/src/scaffolder/actions/builtin/filesystem/rename.ts)
 - [`publish:github:pull-request`](https://github.com/backstage/backstage/blob/54b9f073d13d878fce652c9ec8b8cdfc5fd85c6a/plugins/scaffolder-backend/src/scaffolder/actions/builtin/publish/githubPullRequest.ts)
 
-You can check the available actions if you visit `/templates/actions`.
+You can check the available actions if you visit `/create/actions`.
 
 ## Walkthrough
 

@@ -12,7 +12,7 @@ description: An introduction template utilizing the YAML editing actions
 - `roadiehq:utils:fs:parse`
 - `roadiehq:utils:serialize:yaml`
 
-You can check the available actions if you visit `/templates/actions`.
+You can check the available actions if you visit `/create/actions`.
 
 ## Walkthrough
 

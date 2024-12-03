@@ -11,7 +11,7 @@ description: Clone a repo in Azure DevOps make changes, push and create a PR.
 - [`azure:repo:push`](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories)
 - [`azure:repo:pr`](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories)
 
-For more information on these actions and others visit `/templates/actions` in your Roadie application.
+For more information on these actions and others visit `/create/actions` in your Roadie application.
 
 ## Template
 
