@@ -12,7 +12,7 @@ description: An example template that uses Nunjucks builtin looping functionalit
 - [`fetch:template`](https://github.com/backstage/backstage/blob/54b9f073d13d878fce652c9ec8b8cdfc5fd85c6a/plugins/scaffolder-backend/src/scaffolder/actions/builtin/fetch/template.ts)
 - [`roadiehq:utils:fs:parse`](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/scaffolder-actions/scaffolder-backend-module-utils/src/actions/fs/parseFile.ts)
 
-You can check the available actions if you visit `/templates/actions`.
+You can check the available actions if you visit `/create/actions`.
 
 ## Walkthrough
 
