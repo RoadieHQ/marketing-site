@@ -104,6 +104,32 @@ Your new page will appear as part of the visible items, both in the Sidebar Sett
 
 ![Edit Sidebar Page - after](./edit-sidebar-page-after.jpeg)
 
+### Sidebar Links
+
+You can create links to other pages in Roadie for quick access or to external websites using the iFrame plugin. 
+
+**Links to external sites** can be added using `@roadiehq/backstage-plugin-iframe: IFramePage`. 
+
+![Configuring an iFrame for Google search](iframe-link.jpg)
+
+Custom props are required specifying the iFrame compatible site like so:
+
+```json
+{
+  "title": "Google",
+  "iframe": {
+    "src": "https://www.google.com/webhp?igu=1"
+  }
+}
+```
+
+**Links to internal pages** such as a specific domain entity page can be added using the path like so:
+
+You can copy the path from the page you want to route to. 
+
+![Link to internal page](link-internal.jpg)
+
+
 ## Updating the home page
 
 To edit the home page click the cog icon on the top right of the dashboard below the header.
