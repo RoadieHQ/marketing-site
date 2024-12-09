@@ -106,7 +106,7 @@ Your new page will appear as part of the visible items, both in the Sidebar Sett
 
 ### Sidebar Links
 
-You can create links to other pages in Roadie for quick access or to external websites using the iFrame plugin. 
+You can create links to other pages in Roadie for quick access or to embedded external websites using the iFrame plugin. 
 
 **Links to external sites** can be added using `@roadiehq/backstage-plugin-iframe: IFramePage`. 
 
