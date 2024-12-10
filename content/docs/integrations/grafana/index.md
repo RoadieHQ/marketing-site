@@ -19,7 +19,7 @@ The [Backstage Grafana plugin](https://www.npmjs.com/package/@k-phoen/backstage-
 |---: | --- |
 | **Prerequisites** | **Configuration Data:** <ul><li>API Key</li><li>Grafana Frontend URL</li><li>Grafana Backend URL</li></ul> **Component Annotations:** <ul><li>Tag Selector / Dashboard Selector</li></ul> |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Prerequisites
 
@@ -27,7 +27,14 @@ You'll need a Grafana account with an API key and the url of your Grafana UI and
 
 ## Adding the plugin
 
-### Configure the Grafana endpoints
+### Configuring Grafana Credentials
+
+You can choose to configure Grafana in one of two ways:
+
+- Assuming that there is network connectivity between Roadie and Grafana you can configure this
+- or you can choose to run the Roadie Grafana broker internally to open a connection between Roadie and Grafana.
+
+#### Configure the Grafana endpoints for direct access
 
 Configure the Grafana endpoints to use via `Administration -> Settings -> Grafana`. If you're using grafana.net your
 frontend and backend endpoints should be the same e.g. `https://<your-company>.grafana.net/`. If you're using hosting
@@ -36,11 +43,25 @@ endpoint which the plugin uses to query alerts and dashboards.
 
 ![grafana-config.webp](./grafana-config.webp)
 
-### Add the Grafana API Key
+##### Add the Grafana API Key
 
-Add the `GRAFANA_API_KEY` in the same page at `/administration/grafana`. 
+Set the Grafana Frontend URL, Backend URL and the `GRAFANA_API_KEY` in same page at `/administration/grafana`. 
 
 NB: You'll need to wait for the secret to be marked as "Available" before you can use the Grafana plugin.
+
+#### Configure Grafana via the Roadie Broker
+
+You will need to run the broker container in an environment that has connectivity to the Grafana API as follows:
+
+```bash
+docker run \
+  -e GRAFANA_TOKEN=<your grafana token> \
+  -e GRAFANA_URL=http://<your grafana backend api> \
+  -e "BROKER_TOKEN=grafana" \
+  -e "BROKER_SERVER_URL=https://<your tenant name>.broker.roadie.so" roadiehq/broker:grafana
+```
+
+In `Administration -> Settings -> Grafana`, set the Frontend url to the URL at which the Grafana UI is available your users. Set the Backend URL to broker://grafana. You should leave the `GRAFANA_API_KEY` blank.
 
 ### Add the plugin to the UI
 
