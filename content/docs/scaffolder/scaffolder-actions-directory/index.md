@@ -2467,8 +2467,6 @@ Create an action for merging two HCL contents.
 | `aSourceContent`*  | The HCL content to be merged      | `string`            |         |
 | `bSourceContent`*  | The HCL content to be merged      | `string`            |         |
 
-##### **Examples**
-
 ##### **Outputs**
 | Key   | Description                     | Type       |
 |-------|---------------------------------|------------|
@@ -2487,15 +2485,12 @@ Merge two HCL content strings and write the merged result to a specified output 
 
 | Key               | Description                                        | Type         | Example |
 |-------------------|----------------------------------------------------|--------------|---------|
-| `aSourceContent`*  | The HCL content to be merged                       | `string`     |         |
-| `source content`*  | The HCL content to be merged                       | `string`     |         |
+| `aSourceContent`* | The HCL content to be merged                       | `string`     |         |
+| `bSourceContent`* | The HCL content to be merged                       | `string`     |         |
 | `outputPath`      | The path to write the merged HCL content to       | `string`     |         |
-
-##### **Examples**
 
 ##### **Outputs**
 None
-
 
 ##### **Links**
 - [Code](https://github.com/seatgeek/backstage-plugins/blob/main/plugins/scaffolder-backend-module-hcl/src/actions/hcl/hcl.ts)
@@ -3229,7 +3224,7 @@ This creates an AWS Elastic Container Registry (ECR) repository by utilizing the
 | `repository.repositoryUri` | URI of the created ECR repository.                                                              | string |
 
 ##### **Links**
-- [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-aws
+- [Code](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-aws)
 
 -----
 
