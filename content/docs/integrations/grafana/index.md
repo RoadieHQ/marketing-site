@@ -31,7 +31,7 @@ You'll need a Grafana account with an API key and the url of your Grafana UI and
 
 You can choose to configure Grafana in one of two ways:
 
-- Assuming that there is network connectivity between Roadie and Grafana you can configure this
+- Assuming that there is network connectivity between Roadie and Grafana you can configure this using direct access.
 - or you can choose to run the Roadie Grafana broker internally to open a connection between Roadie and Grafana.
 
 #### Configure the Grafana endpoints for direct access
