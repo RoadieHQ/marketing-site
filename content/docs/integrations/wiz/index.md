@@ -34,9 +34,9 @@ These will be used to make API call for generating API Token needed for other AP
 
 #### 2: Configure the plugin.
 
-Visit `https://<tenant-name>.roadie.so/administration/wiz` and enable Wiz by clicking on 'enabled' checkbox.
+Visit `https://<tenant-name>.roadie.so/administration/wiz` and add required parameters.
 
-At this point you will be required to enter Wiz API URL and Wiz Token URL.
+You will be required to enter Wiz API URL and Wiz Token URL.
 
 Wiz link is optional and will be used in to navigate to your Wiz instance in EntityIssuesWidget card, which will be described below.
 
