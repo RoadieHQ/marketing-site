@@ -24,7 +24,7 @@ const PluginCTA = ({ plugin }) => (
         color="primary"
         size="large"
         to={`${PAGE_PATHS.requestDemo}?utm_source=roadie-marketplace&utm_campaign=${plugin.frontmatter.humanName}`}
-        text="I want to go faster"
+        text="Get a demo"
       />
     </div>
   </div>

@@ -110,6 +110,6 @@ Click the "Authorization" field and type "Bearer ${CUSTOMER_TOKEN_3}"
 <div role="alert">
   <div class="docs-cta__info_title">What's Next?</div>
   <div  class="docs-cta__info_message">
-    <p>Check out <a href="/docs/tech-insights/track-fragments/">Create Data Source for Entity Fragments</a> to start using your newly created proxy.</p>
+    <p>Check out <a href="/docs/tech-insights/track-fragments/">Track Fragments</a> to start using your newly created proxy.</p>
   </div>
 </div> 

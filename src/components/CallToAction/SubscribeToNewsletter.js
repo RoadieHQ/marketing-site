@@ -36,7 +36,7 @@ export const SubscribeToNewsletterCTA = ({ setModalOpen, ...props }) => (
     </p>
 
     <CallToAction
-      buttonText="Join 1,500+ Backstage enthusiasts"
+      buttonText="Join 4,000+ Backstage enthusiasts"
       netlifyFormName={FORM_NAMES.subscribeToNewsletter}
       setModalOpen={(open) => {
         setModalOpen(open);

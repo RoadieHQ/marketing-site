@@ -104,4 +104,11 @@ To add Roadie Markdown Card to entity pages, you can follow similar steps as out
 
 The path of the Markdown file itself is configured in the entity as an annotation. To do this, add an annotation called `roadie.io/markdown-content` to the entity manifest. This annotation should point to a full, non-relative, path of a Markdown file.
 
+<div role="alert">
+  <div class="docs-cta__tip_title">Be aware</div>
+  <div  class="docs-cta__tip_message">
+    <p>If you are attempting to import markdown files from branches containing `/` (forward slashes), that is unfortunately not possible.</p>
+  </div>
+</div> 
+
 

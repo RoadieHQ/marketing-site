@@ -50,8 +50,7 @@ gettingStarted:
         '/jira/api':
           target: '<JIRA_URL>'
           headers:
-            Authorization:
-              $env: JIRA_TOKEN
+            Authorization: ${JIRA_TOKEN}
             Accept: 'application/json'
             Content-Type: 'application/json'
             X-Atlassian-Token: 'nocheck'
@@ -75,7 +74,7 @@ gettingStarted:
     language: typescript
     code: |
       // packages/app/src/components/catalog/EntityPage.tsx
-      import { EntityJiraOverviewCard, isJiraAvailable } from '@roadiehq/backstage-plugin-jira';
+      import { EntityJiraOverviewCard, isJiraAvailable, hasJiraQuery } from '@roadiehq/backstage-plugin-jira';
 
       const overviewContent = (
         <Grid container spacing={3} alignItems="stretch">
@@ -85,6 +84,12 @@ gettingStarted:
                 <EntityJiraOverviewCard />
               </Grid>
             </EntitySwitch.Case>
+            <EntitySwitch.Case if={hasJiraQuery}>
+               <Grid item md={6}>
+                 {/* This card can be used as an alternative or in addition to the overview card */}
+                 <EntityJiraQueryCard title="Our Custom Query" />
+               </Grid>
+             </EntitySwitch.Case>
           </EntitySwitch>
         </Grid>
       );
@@ -98,6 +103,8 @@ gettingStarted:
           jira/project-key: <example-jira-project-key>
           jira/component: <example-component> # optional, you might skip this value to fetch data for all components
           jira/token-type: Bearer # optional, used for Activity stream feed. If you are using Basic auth you can skip this.
+          jira/label: <example-label> # optional, refine filter based on a label or labels (CSV)
+          jira/all-issues-jql: # optional, used by EntityJiraQueryCard, this query supports basic templating with the above annotations if present, and information from the user profile. e.g. "assignee = {{ userEmail }} AND label = ({{ label }})"
 
   - intro: Even though you can use Bearer token please keep in mind that Activity stream feed will only contain entries that are visible to anonymous users. In order to view restricted content you will need to authenticate via Basic authentication, as described in official documentation (https://developer.atlassian.com/server/framework/atlassian-sdk/consuming-an-activity-streams-feed/#authentication).
 

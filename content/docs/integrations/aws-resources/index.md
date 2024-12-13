@@ -53,6 +53,7 @@ For example if you have defined external id prefix `roadie` and the account id i
 * Terraform: `base64encode("roadie-123456789012")`
 * Pulumi (JS/TS): `Buffer.from('roadie-123456789012').toString('base64')`
 * Bash: `echo -n 'roadie-123456789012' | base64`
+* Browser Devtools: `btoa("roadie-123456789012")`
 
 
 **(B)** 
@@ -147,6 +148,7 @@ The table below lists the permissions required of the assumable role in order fo
 | dynamodb-table       | AWS DynamoDB tables                       | `dynamodb:ListTables`, `dynamodb:DescribeTable`, `dynamodb:ListTagsOfResource` |
 | ec2-instance         | AWS Elastic Compute Cloud instances       | `ec2:DescribeInstances`                                                        |
 | rds-db-instance      | AWS Relational Database Service instances | `rds:DescribeDBInstances`                                                      |
+| sns-topic            | AWS SNS Topics                            | `sns:ListTopics`                                                      |
 | organization-account | AWS Organization Accounts                 | `organizations:ListAccounts`, `organizations:ListTagsForResource`              |
 
 
@@ -185,5 +187,9 @@ You can additionally use the following tags to indicate relationships within the
 `domain` -> To indicate that this AWS resources is part of a domain (expected value: fully qualified name)
 `dependsOn`  -> To indicate that the resource depends on something (expected value: comma separated list of fully qualified names)
 `dependencyOf` -> To indicate that the resource is a dependency of something  (expected value: comma separated list of fully qualified names)
+
+
+For EKS Cluster ingestion you are also able to specify the `spec.type` value to use when these resource entities are ingested. The default value is `eks-cluster`, other popular value that could be more descriptive is `kubernetes-cluster`.
+
 
 See more information about relationships in [Backstage docs](https://backstage.io/docs/features/software-catalog/well-known-relations).

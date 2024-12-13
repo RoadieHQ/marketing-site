@@ -147,6 +147,10 @@ The PagerDuty Backstage plugin allows Roadie Backstage users to:
 
 ![PagerDuty plugin in Roadie Backstage](./pagerduty-plugin.webp)
 
+#### 6. (Optional) Use the PagerDuty home page card
+
+The PagerDuty plugin also exposes a card that can be configured to be used on you Roadie home page. This plugin card can be configured either with an integration key or a service id and it will display data for the chosen target. You can add the card in through the `cog` button on the home page and configure either the service id or integration key using the `wrench` button on the card itself.
+
 ## References
 
 - [PagerDuty docs for creating API tokens](https://support.pagerduty.com/docs/generating-api-keys)

@@ -24,7 +24,7 @@ gettingStarted:
 
   - intro: Create a CostInsights client which implements the CostInsightsApi interface.
   - intro:
-      Cost Insights currently does not provide a CostInsightsApi client out of the box, but there are templates and examples in the Backstage repo. Here's an exploration into [Cost Insights for AWS](https://github.com/backstage/backstage/blob/master/plugins/cost-insights/contrib/aws-cost-explorer-api.md).
+      Cost Insights currently does not provide a CostInsightsApi client out of the box, but there are templates and examples in the Backstage repo. Here's an exploration into [Cost Insights for AWS](https://github.com/backstage/community-plugins/blob/main/workspaces/cost-insights/plugins/cost-insights/contrib/aws-cost-explorer-api.md).
     language: typescript
     code: |
       // path/to/CostInsightsClient.ts

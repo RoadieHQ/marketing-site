@@ -11,28 +11,11 @@ integrationType: OSS plugin
 ## Introduction
 
 
-The [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) provides a framework
-for building a dashboard style home page for backstage. 
+The [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) provides a framework for building a dashboard style home page for Roadie. 
 
-A home page can be composed of many cards from various plugins
-much like the overview tab for entities. Roadie provides an interface to build such a home page interactively in the 
-Backstage UI. 
+A home page can be composed of many cards from various plugins much like the overview tab for entities. Roadie provides an interface to build such a home page interactively in the UI. 
 
-This page will describe how to configure the home page plugin and customize the dashboard.
-
-![home-page.webp](home-page.webp)
-
-## Usage
-
-### Enable the plugin
-
-To enable the home page go to `Administration -> Settings -> Home Page`. 
-
-Ensure `enable` is checked then click `Save` and `Save and Restart`
-
-![home-page-settings.webp](home-page-settings.webp)
-
-### Customize the UI
+## Customize the UI
 
 To view the home page navigate to `Home` via the sidebar.
 
@@ -42,3 +25,4 @@ for more details.
 
 ![Edit Home Page Button](./edit-home-page-button.webp)
 
+If you navigate to Home Page settings section within Administration -> Settings, you can see the available and in-use home page components that can be added to enhance the home page experience.

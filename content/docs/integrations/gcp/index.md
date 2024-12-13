@@ -10,7 +10,7 @@ integrationType: Catalog data source
 
 ## Introduction
 
-This Google Cloud Platform (GCP) client in Roadie may be used to periodically to collect Backstage catalog information from Google Cloud
+This Google Cloud Platform (GCP) client in Roadie may be used to periodically to collect Roadie catalog information from Google Cloud
 Storage. These settings are configured in `https://<tenant-name>.roadie.so/administration/settings/secrets`.
 
 This page describes how to get the client id and private key for GCP.
@@ -24,7 +24,7 @@ This page describes how to get the client id and private key for GCP.
 2. Click “Create Service Account”
 3. If your tenant name was acme, you would enter the following information
    ![creating service account](./gcp_create_sa.webp)
-4. Click create and then give the service account appropriate permissions to read the google cloud storage bucket.
+4. Click create and then give the service account appropriate permissions to read the Google Cloud storage bucket.
 5. The following optional settings are not required, you may complete creating the service account.
 6. Click on the service account you have created to view the service account details page and then click on the “add key” drop down and then the “create new key” button.
    ![create new key](./gcp_create_key.webp)
@@ -32,7 +32,7 @@ This page describes how to get the client id and private key for GCP.
 
 This will download a JSON file containing the credentials needed for next step.
 
-### Step 2. Enter the credentials in Backstage
+### Step 2. Enter the credentials into Roadie
 
 1. Copy the client email and the private key from the downloaded JSON file.
 2. Visit the page `https://<tenant-name>.roadie.so/administration/settings/secrets`
@@ -40,5 +40,5 @@ This will download a JSON file containing the credentials needed for next step.
 
 ## Conclusion
 
-After adding the credentials for GCP your Backstage instace will be able to authenticate against Google and fetch data
-for components registered in GCS locations.
+After adding the credentials for GCP your Roadie instance will be able to authenticate against Google and fetch data
+for components registered in GCS locations.  

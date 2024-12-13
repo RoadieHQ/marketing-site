@@ -36,6 +36,11 @@
   to = "https://careers.roadie.io"
   force = true
 
+[[redirects]]
+  from = "/careers/*"
+  to = "https://careers.roadie.io"
+  force = true
+
 # Proxy for the plausible.io tracker. https://plausible.io/docs/proxy/guides/netlify
 [[redirects]]
   from = "/plaus/js/script.js"
@@ -77,6 +82,11 @@
   force = true
 
 [[redirects]]
+  from = "/docs/getting-started/openapi-specs"
+  to = "/docs/details/openapi-specs/"
+  force = true
+
+[[redirects]]
   from = "/docs/getting-started/getting-started-for-admins/"
   to = "/docs/getting-started/adding-a-catalog-item/"
   force = true
@@ -107,13 +117,13 @@
   to = "/"
   force = true
 
-# We'll create a dedicated landing page for people coming from KubeCon 
+# We'll create a dedicated landing page for people coming from KubeCon
 [[redirects]]
   from = "/kubernetes/"
   to = "/backstage/plugins/kubernetes/"
   force = true
 
-# To be later filled in with a typeform URL 
+# To be later filled in with a typeform URL
 [[redirects]]
   from = "/techinsights-demo-backstagecon/"
   to = "/request-demo/"

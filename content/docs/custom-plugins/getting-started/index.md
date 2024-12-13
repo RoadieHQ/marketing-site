@@ -62,7 +62,7 @@ When we have navigated the available files and are happy with how they look, we 
 
 First we need to install needed dependencies. We will run `npm i` from the root of the monorepo. This may take some time depending on your internet connection.
 
-After needed dependencies are installed we can spin up a development server in watch mode `npm run develop:watch --workspace=docs-plugin`
+After needed dependencies are installed we can spin up a development server in watch mode `npm run develop:watch --workspace=<your-plugin-name>`
 
 ![monorepo_developing.gif](monorepo_developing.gif)
 

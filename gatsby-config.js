@@ -5,6 +5,24 @@ const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
 const theme = require('./src/theme');
 const GATSBY_PLUGIN_CSP_DIRECTIVES = require('./src/gatsby/cspDirectives');
 
+// EXAMPLE NETLIFY ENV VARS:
+//
+// Main deploys from GitHub:
+//   - CONTEXT: production
+//   - SITE_NAME: roadie
+//   - PULL_REQUEST: false
+//   - DEPLOY_PRIME_URL: https://main--roadie.netlify.app
+// Branch deploys from GitHub:
+//   - CONTEXT: deploy-preview
+//   - SITE_NAME: roadie
+//   - PULL_REQUEST: true
+//   - DEPLOY_PRIME_URL: https://deploy-preview-[NNNN]--roadie.netlify.app
+// Preview builds from Contentful:
+//   - CONTEXT: production
+//   - SITE_NAME: roadie-preview
+//   - PULL_REQUEST: false
+//   - DEPLOY_PRIME_URL: https://main--roadie-preview.netlify.app
+
 const SITE_TITLE = 'Roadie';
 
 const skipAlgoliaIndexing =
@@ -43,8 +61,16 @@ const getContentfulHost = () => {
 
 const getSiteUrl = () => {
   const netlifySiteName = get(process.env, 'SITE_NAME');
+  const context = get(process.env, 'CONTEXT');
   if (netlifySiteName === 'roadie-preview') return 'https://preview.roadie.io';
+  if (context === 'deploy-preview') return get(process.env, 'DEPLOY_PRIME_URL');
   return 'https://roadie.io';
+};
+
+const shouldCrawl = () => {
+  const ctx = get(process.env, 'CONTEXT');
+  const netlifySiteName = get(process.env, 'SITE_NAME');
+  return netlifySiteName === 'roadie' && ctx !== 'deploy-preview';
 };
 
 const getContentfulOptions = () => {
@@ -77,18 +103,6 @@ const DISLALLOW_LIST = [
   '/docs/getting-started/adding-a-catalog-item/aws-s3/',
   '/docs/getting-started/adding-a-catalog-item/azure-devops/',
   '/docs/getting-started/adding-a-catalog-item/roadie-cli/',
-
-  // Referrals shouldn't be indexed
-  '/*?referringPathname=',
-
-  // UTM tags shouldn't be indexed
-  '/*?*utm_campaign=',
-  '/*?*utm_medium=',
-  '/*?*utm_content=',
-  '/*?*utm_source=',
-
-  // refs shouldn't be indexed.
-  '/*?*ref=',
 ];
 
 // Only environment variables prefixed with GATSBY_ are available in the runtime. Here we turn
@@ -233,7 +247,7 @@ module.exports = {
         policy: [
           {
             userAgent: '*',
-            disallow: DISLALLOW_LIST,
+            disallow: shouldCrawl() ? DISLALLOW_LIST : '/',
           },
         ],
       },

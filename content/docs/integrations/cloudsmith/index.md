@@ -23,7 +23,7 @@ This page explains how to configure it in Roadie.
 
 ## Prerequisites
 
-1. You must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
+1. You must be an admin in Roadie. Learn how to [designate certain users as admins here](/docs/getting-started/assigning-admins/).
 2. You must have the correct permissions assigned in Cloudsmith to be able to create a read only API key
 
 ## Step 1: Create a Cloudsmith API key
@@ -40,7 +40,7 @@ Visit the secrets page in Roadie at `/administration/secrets` and enter the API 
 
 The Cloudsmith plugin provides a four cards that can be displayed on the homepage.
 
-These cards can be [added to component dashboards](/docs/getting-started/updating-the-ui/#updating-dashboards).
+These cards can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
 
 ### CloudsmithStatsCard
 

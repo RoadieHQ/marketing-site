@@ -124,19 +124,21 @@ For this, we use the broker to securely send Tech Insights requests into custome
 
 This way, customers get all of the reporting and automation power of Tech Insights, without exposing APIs externally.
 
-### Option 3 (coming soon): Push to the API
+### Option 3: Push to the API
 
 Of course, sometimes you want to collect or compute data internally, before sending it to Roadie’s scorecarding product for display.
 
 For example, you may wish to compute whether or not SLOs are being met by each service. That would require calculating based your own definition of what it means to meet an SLO. This type of computation is better done under the full control of the customer.
 
-To support this, we will soon add an API endpoint which customers can use to push data into Tech Insights.
+To support this, the "Push based data source" provides you with an API endpoint you can use to push data into Tech Insights.
+
+![configuration for the push based data source](./push-based-ds.webp)
 
 # Bonus: How your tools connect to Roadie
 
 Of course, getting data into Roadie is only half the battle. Once Roadie has a catalog of your software, it can be useful to send this data into other tools, like deployment or reporting tools.
 
-To support this, we provide all Growth Plan customers with API access.
+To support this, we provide all Growth Plan customers with [API access](/docs/api/authorization/).
 
 # The bottom line
 

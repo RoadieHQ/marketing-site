@@ -38,8 +38,8 @@ const ImageIssue = ({ post }) => (
 );
 
 const extractNewsletterDetailsFromPost = ({ node: { frontmatter, ...rest } }) => {
-  const mainTitle = frontmatter.title.replace(/Backstage Weekly \d\d? - /, '');
-  const matchedIssueNumber = frontmatter.title.match(/Backstage Weekly (\d\d?)/);
+  const mainTitle = frontmatter.title.replace(/Backstage Weekly \d\d\d? - /, '');
+  const matchedIssueNumber = frontmatter.title.match(/Backstage Weekly (\d\d\d?)/);
   const issueNumber = matchedIssueNumber && matchedIssueNumber[1];
 
   return {

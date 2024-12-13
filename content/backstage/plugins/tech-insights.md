@@ -211,6 +211,6 @@ const ttlWithAHumanReadableValue = { timeToLive: { weeks: 2 } }; // Deletes item
 
 ## More information
 
-* [Tech Insights backend README file](https://github.com/backstage/backstage/tree/master/plugins/tech-insights-backend)
-* [Tech Insights frontend README file](https://github.com/backstage/backstage/tree/master/plugins/tech-insights)
-* [Tech Insights JSON rules engine implementation README file](https://github.com/backstage/backstage/tree/master/plugins/tech-insights-backend-module-jsonfc)
+* [Tech Insights backend README file](https://github.com/backstage/community-plugins/blob/main/workspaces/tech-insights/plugins/tech-insights-backend/README.md)
+* [Tech Insights frontend README file](https://github.com/backstage/community-plugins/blob/main/workspaces/tech-insights/plugins/tech-insights/README.md)
+* [Tech Insights JSON rules engine implementation README file](https://github.com/backstage/community-plugins/blob/main/workspaces/tech-insights/plugins/tech-insights-backend-module-jsonfc/README.md)

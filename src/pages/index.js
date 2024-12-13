@@ -32,11 +32,12 @@ import {
   CubeTransparentIcon,
 } from '@heroicons/react/outline';
 
-import KeepSafeImg from '../../content/assets/home/illustrations/home-keep-backstage-safe.png';
-import NoCodeImg from '../../content/assets/home/illustrations/home-no-code-backstage.svg';
-import CustomPluginsImg from '../../content/assets/home/illustrations/home-custom-plugins.png';
-import KubernetesImg from '../../content/assets/home/illustrations/home-kubernetes.svg';
 import AndyThumbImg from '../../content/assets/home/illustrations/home-andy-video-thumb.png';
+
+import CatalogImg from '../../content/assets/home/illustrations/home-service-catalog.png';
+import TemplatesImg from '../../content/assets/home/illustrations/home-templates.png';
+import TechInsightsImg from '../../content/assets/home/illustrations/home-tech-insights.png';
+import ExtensibleImg from '../../content/assets/home/illustrations/home-extensible.png';
 
 import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
 import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
@@ -45,58 +46,53 @@ import PagerDutyLogo from '../../content/assets/logos/pagerduty/pagerduty.inline
 import ArgoLogo from '../../content/assets/logos/argo-cd/argo.inline.svg';
 import JiraSoftwareLogo from '../../content/assets/logos/jira/jira.inline.svg';
 
-const SEO_TITLE = 'Batteries included Spotify Backstage';
-const LEAD = `Easier, scalable and zero-maintenance. With security, scorecards and customizability built-in.`;
-
+const SEO_TITLE = 'Roadie - Internal Developer Portal built on Backstage';
+const LEAD = `Roadie is the most customizable Internal Developer Portal with built-in best practices, automated workflows, actionable insights built on Backstage`;
 
 const PRODUCT = {
   features: [
     {
-      title: 'Keep your Developer Portal safe',
-      description: 'Roadie updates your Backstage instance automatically',
+      title: 'Eliminate the Guesswork',
+      description: 'One service catalog. Instant visibility, zero confusion',
       illustration: {
-        png: KeepSafeImg,
+        png: CatalogImg,
         alt: '',
       },
       paragraphs: [
-        'As highlighted by Gartner’s report on Developer Portals, standing up and maintaining Backstage takes significant effort. Roadie gives you a production-grade Backstage instance and keeps it safe through regular upgrades, SSO and dedicated infrastructure.',
-        'Roadie is SOC2 Type 2 Certified and uses ephemeral environments for your Scaffolder actions, a common source of risk for Open Source adopters.',
+        'Centralize software, APIs, resources, and teams in one place. End the guesswork around what exists and who owns it. Keep documentation up-to-date with a centralized docs-like-code approach.',
       ],
     },
     {
-      title: 'Get all the OSS features, simplified',
-      description: 'Roadie brings no-code management to Backstage',
+      title: 'Move Fast and (Don’t) Break Things',
+      description: 'Deploy fast, securely and consistently with Templates',
       illustration: {
-        png: NoCodeImg,
+        png: TemplatesImg,
         alt: '',
       },
       paragraphs: [
-        'With a vibrant community of contributors, new Backstage plugins and features are popping up regularly. Roadie brings all these features, while smoothening out rough edges like GitHub rate limits.',
-        'Roadie enables plugins and integrations through a UI, which also lets you manage access and permissions. Roadie also provides advanced debugging capabilities to make it easy to navigate the unexpected, if it happens.',
+        'Service templates enforce security and compliance with best practices, allowing developers to deploy autonomously and consistently. Launch faster without bottlenecks — no need for manual approvals.',
       ],
     },
     {
-      title: 'Make your Developer Portal truly yours',
-      description: 'Roadie lets you install private plugins and renderers',
+      title: 'Spot Code That Doesn’t Meet Standards',
+      description: 'Identify where code falls short of standards. Fix it fast',
       illustration: {
-        png: CustomPluginsImg,
+        png: TechInsightsImg,
         alt: '',
       },
       paragraphs: [
-        'Your Developer Portal will only be successful if it’s tailored to the way your developers work. Roadie lets you bring your own Backstage plugins so you can integrate internal systems into your Developer Portal.',
-        'Roadie also lets you bring your own API documentation renderer so your docs are presented exactly as you want them inside Backstage.',
+        'Set engineering standards and automate checks for security, compliance, and deployment quality. Track key metrics, identify bottlenecks, and maintain high-quality software delivery.',
       ],
     },
     {
-      title: 'Integrate with your Kubernetes Clusters',
-      description: 'Roadie connects to your infrastructure using a broker ',
+      title: 'Out-Of-The-Box Ready and Endlessly Extensible',
+      description: 'Start quickly. Go further. With the Backstage community',
       illustration: {
-        png: KubernetesImg,
+        png: ExtensibleImg,
         alt: '',
       },
       paragraphs: [
-        'Roadie uses a Broker to integrate with your internal APIs, including Kubernetes clusters and on-prem services. This allows secure access your endpoints without exposing them to the public internet.',
-        'The broker is open-source code with an audit log and outboound egress, meaning you can be confident that access is limited in the way that you want.',
+        'Roadie’s portal is ready on day one. Fast setup, seamless integrations, and access to 100+ Backstage plugins to help you grow quickly without the overhead.',
       ],
     },
   ],
@@ -241,12 +237,10 @@ const PLUGINS_SUPPORTED = {
 };
 
 const Home = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title;
-
   const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
   return (
     <>
-      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
+      <SEO title={SEO_TITLE} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 
