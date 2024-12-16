@@ -146,6 +146,11 @@
   force = true
 
 [[redirects]]
+  from = "/scaffolder/debug-template"
+  to = "/docs/scaffolder/recipes/debug-template"
+  force = true
+
+[[redirects]]
   from = "/docs/details/scaffolder/"
   to = "/docs/scaffolder/writing-templates/"
   force = true
