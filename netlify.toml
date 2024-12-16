@@ -141,7 +141,7 @@
   force = true
 
 [[redirects]]
-  from = "/scaffolder/call-external-api"
+  from = "/docs/scaffolder/call-external-api"
   to = "/docs/scaffolder/recipes/call-external-api"
   force = true
 
