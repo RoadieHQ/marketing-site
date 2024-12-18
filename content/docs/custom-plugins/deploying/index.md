@@ -53,7 +53,7 @@ To get relevant credentials, contact Roadie via Slack or other support channels.
 
 ### Configurating your client
 
-If you're using cross account authentication, you'll provide the ID of your AWS account and Roadie will supply you with a role which you can assume to push your plugin to S3. You can do this via an aws profile like this (see ~/.aws/config):
+If you're using cross account authentication, you'll provide the ID of your AWS account and Roadie will supply you with a role which you can assume to push your plugin to S3. You can do this via an AWS profile like this (see ~/.aws/config):
 ```
 [profile uploader]
 role_arn = <role arn>
@@ -67,7 +67,7 @@ Then
 export AWS_PROFILE=uploader
 ```
 
-If you are using a User based Authentication mechanism you will need to set the environment variables to access our S3 bucket. 
+If you are using a user-based authentication mechanism you will need to set the environment variables to access our S3 bucket. 
 ```
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
