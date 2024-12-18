@@ -1,6 +1,6 @@
 ---
 title: Using Permissions in Custom Plugins
-publishedDate: '2024-11-05T21:00:00.0Z'
+publishedDate: '2024-12-18T21:00:00.0Z'
 description: How to configure and manage permissions and policies for use in Custom Plugins in Roadie.
 ---
 
