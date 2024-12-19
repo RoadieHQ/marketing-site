@@ -140,16 +140,19 @@ The autodiscovery option of AWS resources ingestion uses AWS organization accoun
 
 The table below lists the permissions required of the assumable role in order for the Catalog to ingest those resource types.
 
-| Resource             | Description                               | AWS Policy Action(s)                                                           |
-|----------------------|-------------------------------------------|--------------------------------------------------------------------------------|
-| lambda-function      | AWS Lambda Functions                      | `lambda:ListFunctions`, `lambda:ListTags`                                      |
-| eks-cluster          | AWS Elastic Kubernetes Service Clusters   | `eks:ListClusters`, `eks:DescribeCluster`                                      |
-| s3-bucket            | AWS Simple Storage Service Buckets        | `s3:ListBucket`, `s3:ListAllMyBuckets`, `s3:GetBucketTagging`                  |
-| dynamodb-table       | AWS DynamoDB tables                       | `dynamodb:ListTables`, `dynamodb:DescribeTable`, `dynamodb:ListTagsOfResource` |
-| ec2-instance         | AWS Elastic Compute Cloud instances       | `ec2:DescribeInstances`                                                        |
-| rds-db-instance      | AWS Relational Database Service instances | `rds:DescribeDBInstances`                                                      |
-| sns-topic            | AWS SNS Topics                            | `sns:ListTopics`                                                      |
-| organization-account | AWS Organization Accounts                 | `organizations:ListAccounts`, `organizations:ListTagsForResource`              |
+| Resource             | Description                                  | AWS Policy Action(s)                                                           |
+|----------------------|----------------------------------------------|--------------------------------------------------------------------------------|
+| lambda-function      | AWS Lambda Functions                         | `lambda:ListFunctions`, `lambda:ListTags`                                      |
+| eks-cluster          | AWS Elastic Kubernetes Service Clusters      | `eks:ListClusters`, `eks:DescribeCluster`                                      |
+| s3-bucket            | AWS Simple Storage Service Buckets           | `s3:ListBucket`, `s3:ListAllMyBuckets`, `s3:GetBucketTagging`                  |
+| dynamodb-table       | AWS DynamoDB tables                          | `dynamodb:ListTables`, `dynamodb:DescribeTable`, `dynamodb:ListTagsOfResource` |
+| ec2-instance         | AWS Elastic Compute Cloud instances          | `ec2:DescribeInstances`                                                        |
+| rds-db-instance      | AWS Relational Database Service instances    | `rds:DescribeDBInstances`                                                      |
+| sns-topic            | AWS SNS Topics                               | `sns:ListTopics`                                                               |
+| organization-account | AWS Organization Accounts                    | `organizations:ListAccounts`, `organizations:ListTagsForResource`              |
+| opensearch-domain    | AWS OpenSearch Domains                       | `es:ListDomainNames`, `es:DescribeDomain`,`es:ListTags`                        |
+| elasticache-cluster  | AWS ElastiCache (Redis or Memcached) Cluster | `elasticache:DescribeCacheClusters`, `elasticache:ListTagsForResource`         |
+| sqs-queue            | AWS SQS Queues                               | `sqs:ListQueues`, `sqs:GetQueueAttributes`, `sqs:ListQueueTags`                |
 
 
 
