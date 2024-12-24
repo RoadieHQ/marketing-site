@@ -33,15 +33,15 @@ You only need to define one side of a relationship for it to appear on both side
 | spec.providesApis   | -           | string array | Any         | Component                                             |
 | spec.apiProvidedBy  | -           | string array | Any         | API                                                   |
 | spec.consumesApis   | -           | string array | Any         | Component,Product                                     |
-| spec.subcomponentOf | -           | string array | Any         | Component                                             |
+| spec.subcomponentOf | -           | string       | Any         | Component                                             |
 | spec.memberOf       | -           | string array | Any         | User                                                  |
 | spec.parent         | -           | string       | Any         | Group                                                 |
 | spec.parentOf       | -           | string array | Any         | System,Domain,Product                                 |
 | spec.children       | -           | string array | Any         | Group                                                 |
 | spec.childOf        | -           | string array | Any         | System,Domain,Product                                 |
 | spec.members        | -           | string array | Any         | Group                                                 |
-| spec.subdomainOf    | -           | string array | Any         | Domain                                                |
-| spec.domain         | -           | string array | Any         | System                                                |
+| spec.subdomainOf    | -           | string       | Any         | Domain                                                |
+| spec.domain         | -           | string       | Any         | System                                                |
 | spec.hasPart        | -           | string array | Any         | Component,Resource,System,Domain,Product              |
 | spec.partOf         | -           | string array | Any         | Component,Resource,API,System,Domain,Product          |
 | spec.managedBy      | -           | string array | Any         | User,Group,Product                                    |
