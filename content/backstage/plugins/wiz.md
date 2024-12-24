@@ -28,7 +28,12 @@ gettingStarted:
   - intro: The plugin requires Wiz backend plugin to be installed first. The backend plugin handles authentication and retrieving data. You can read more about it in Prerequisites and Getting Started section below.
     language: bash
     code: |
-      yarn --cwd packages/app add @roadiehq/plugin-wiz-backend
+      yarn --cwd packages/backend add @roadiehq/plugin-wiz-backend
+
+  - intro: After installing backend plugin you can proceed with installing frontend part.
+    language: bash
+    code: |
+      yarn --cwd packages/app add @roadiehq/backstage-plugin-wiz
 
   - intro: 'Add plugin components to your Entity Page'
     language: javascript
