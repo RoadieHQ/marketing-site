@@ -4,11 +4,11 @@ import { Popover } from '@headlessui/react';
 import { AlgoliaAutocomplete } from 'components/AlgoliaAutocomplete';
 import { Button, Link, TabInner } from 'components';
 import { DOCS_LAYOUTS } from 'components/doc';
+import { RoadieDocsIcon, RoadieRacksIcon } from 'components/icons';
 
 import { PAGE_PATHS } from '../../contactFormConstants';
 import OpenMenuButton from './OpenMenuButton';
 import DocsDrawerMenu from './DocsDrawerMenu';
-import Logo from '../Logo';
 
 const Tab = ({ startPath, tabLabel: label, isActive }) => (
   <div className="flex">
@@ -18,6 +18,18 @@ const Tab = ({ startPath, tabLabel: label, isActive }) => (
   </div>
 );
 
+const DocsLogo = () => (
+  <Link to="/">
+    <span className="sr-only">Roadie</span>
+    <span className="md:block hidden">
+      <RoadieDocsIcon />
+    </span>
+    <span className="md:hidden">
+      <RoadieRacksIcon />
+    </span>
+  </Link>
+);
+
 const DocsHeader = ({ location }) => (
   <Popover className="relative bg-white z-20">
     <div className="max-w-full mx-auto px-2 sm:px-6">
@@ -25,11 +37,7 @@ const DocsHeader = ({ location }) => (
 
         <div className="flex items-center">
           <span className="mr-1">
-            <Logo />
-          </span>
-
-          <span className="text-2xl text-bold" style={{ marginTop: 6, marginBottom: 0 }}>
-            Docs
+            <DocsLogo />
           </span>
 
           <span className="ml-8">
