@@ -23,6 +23,7 @@ const navigation = {
     { name: 'FAQs', href: '/faqs/' },
     { name: 'Changelog', href: '/changelog/' },
     { name: 'Backstage Bites', href: '/backstage-bites/' },
+    { name: 'Backstage Weekly', href: '/backstage-weekly/' },
   ],
 
   company: [
