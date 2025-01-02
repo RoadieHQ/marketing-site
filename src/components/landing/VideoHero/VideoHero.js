@@ -52,7 +52,7 @@ const PlayButton = ({ openModal, children }) => (
     type="button"
     className="relative block w-full bg-white rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
     onClick={openModal}
-    title="Play video"
+    title="See Roadie in action"
   >
     {children}
   </button>
@@ -72,8 +72,13 @@ const ScreenshotVideoPlayer = ({ openModal }) => (
       <span className="sr-only">Watch our video to learn more</span>
       <ProductImage />
 
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center" aria-hidden="true">
-        <PlayIcon className="h-20 w-20 text-primary-500" />
+      <div
+        className="absolute inset-0 w-full h-full flex items-center justify-center"
+        aria-hidden="true"
+      >
+        <span className="h-40 w-40">
+          <PlayIcon />
+        </span>
       </div>
     </PlayButton>
   </div>
