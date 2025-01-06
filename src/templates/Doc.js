@@ -8,6 +8,8 @@ import DocsHeader from 'components/SitewideHeader/DocsHeader';
 
 import editOnGitHubUrl from '../editOnGitHubUrl';
 
+import isEmpty from 'lodash/isEmpty';
+
 const Doc = ({
   data: {
     doc,
@@ -28,6 +30,12 @@ const Doc = ({
       <article className="px-2 md:px-6 md:pt-7 md:flex-1">
         <div className="mb-8">
           <ContentHeader frontmatter={doc.frontmatter} dateKey="publishedDate" />
+          
+          {!isEmpty(doc.frontmatter.integrationType) && (
+            <span class="rounded-md bg-orange-600 py-1 px-2 border border-transparent text-sm text-white transition-all shadow-sm">
+              {doc.frontmatter.integrationType}
+            </span>
+          )}
         </div>
 
         <section
@@ -84,6 +92,7 @@ export const pageQuery = graphql`
         description
         title
         publishedDate
+        integrationType
       }
     }
   }
