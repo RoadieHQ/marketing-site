@@ -203,7 +203,7 @@ nav:
       - Displaying custom entity metadata: '/docs/catalog/entity-metadata-card/'
   - API:
       - Authorization: '/docs/api/authorization/'
-      - Catalog: '/docs/api/catalog/'
-      - Tech Insights: '/docs/api/techinsights/'
-      - Templates: '/docs/api/templates/'
-      - Plugins: '/docs/api/plugins/'
+      - Catalog: '/docs/api/catalog'
+      - Tech Insights: '/docs/api/techinsights'
+      - Templates: '/docs/api/templates'
+      - Plugins: '/docs/api/plugins'

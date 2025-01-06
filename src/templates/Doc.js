@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, TextLink, ContentHeader, SitewideFooter } from 'components';
+import { SEO, TextLink, ContentHeader, Chip, SitewideFooter } from 'components';
 
 import { NestedTableOfContentsSidebar } from 'components/Sidebar/index';
 import { Sidebar } from 'components/doc';
@@ -32,9 +32,7 @@ const Doc = ({
           <ContentHeader frontmatter={doc.frontmatter} dateKey="publishedDate" />
           
           {!isEmpty(doc.frontmatter.integrationType) && (
-            <span class="rounded-md bg-orange-600 py-1 px-2 border border-transparent text-sm text-white transition-all shadow-sm">
-              {doc.frontmatter.integrationType}
-            </span>
+            <Chip label={doc.frontmatter.integrationType} color="orange" />
           )}
         </div>
 
