@@ -1,12 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, TextLink, ContentHeader, SitewideFooter } from 'components';
+import { SEO, TextLink, ContentHeader, Chip, SitewideFooter } from 'components';
 
 import { NestedTableOfContentsSidebar } from 'components/Sidebar/index';
 import { Sidebar } from 'components/doc';
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
 
 import editOnGitHubUrl from '../editOnGitHubUrl';
+
+import isEmpty from 'lodash/isEmpty';
 
 const Doc = ({
   data: {
@@ -28,6 +30,10 @@ const Doc = ({
       <article className="px-2 md:px-6 md:pt-7 md:flex-1">
         <div className="mb-8">
           <ContentHeader frontmatter={doc.frontmatter} dateKey="publishedDate" />
+          
+          {!isEmpty(doc.frontmatter.integrationType) && (
+            <Chip label={doc.frontmatter.integrationType} color="orange" />
+          )}
         </div>
 
         <section
@@ -84,6 +90,7 @@ export const pageQuery = graphql`
         description
         title
         publishedDate
+        integrationType
       }
     }
   }
