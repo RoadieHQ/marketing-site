@@ -74,7 +74,7 @@ AWS_SECRET_ACCESS_KEY=
 AWS_REGION=eu-west-1
 ```
 
-### Deployment via the Raodie CLI
+### Deployment via the Roadie CLI
 
 Roadie CLI has a built-in command to automatically upload the files to the correct location. This can be configured to be done for example within your CI/CD pipeline. Once the assets are uploaded, they are immediately available to be used on your Roadie instance. 
 
