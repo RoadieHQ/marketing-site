@@ -293,6 +293,7 @@ parameters:
             secretsKey: USER_OAUTH_TOKEN
             additionalScopes:
               github:
+              # - admin:org # Needed if you want to create a repo
                 - workflow
           allowedHosts:
             - github.com
