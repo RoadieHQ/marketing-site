@@ -40,7 +40,7 @@ Configure the Grafana endpoints to use via `Administration -> Settings -> Grafan
 
 #### Cloud Hosted & IP Whitelist Restricted
 
-If you're using grafana.net, your frontend and backend endpoints should be the same e.g. `https://<your-company>.grafana.net/`. If you're using hosting Grafana yourself you'll need to specify a url to the frontend which is used by backstage to generate links and an API endpoint which the plugin uses to query alerts and dashboards. 
+If you're using grafana.net, your frontend and backend endpoints should be the same e.g. `https://<your-company>.grafana.net/`. If you're using hosting Grafana yourself you'll need to specify a URL to the frontend which is used by backstage to generate links and an API endpoint which the plugin uses to query alerts and dashboards. 
 
 ![grafana-config-cloud](grafana-config-cloud.png)
 
