@@ -4,7 +4,7 @@ publishedDate: '2025-01-31T11:11:11.0Z'
 description: Creating and displaying announcements on your Roadie instance
 
 humanName: Announcements
-logoImage: '../../../assets/logos/buildkite/buildkite-logo.webp'
+logoImage: '../../../assets/logos/announcements/announcement-icon.png'
 integrationType: OSS plugin
 ---
 
@@ -23,7 +23,7 @@ The plugin is managed from within the `AnnouncementsPage` component that contain
 ![announcements-admin-portal.png](announcements-admin-portal.png)
 
 ![new-announcement-form.png](new-announcement-form.png)
-
+\
 
 `AnnouncementsCard` is a component that can be added to both home and entity pages to display information. The card can be configured to show announcements from only specific categories or for example only active announcements. Within Roadie you can easily configure these properties using the builtin props form functionality.
 
