@@ -21,8 +21,9 @@ nav:
       - Creating a Scaffolder template: '/docs/getting-started/scaffolding-components/'
       - Adding your docs: '/docs/getting-started/technical-documentation/'
   - Backstage plugins:
+      - Announcements: '/docs/integrations/announcements/'
       - AI Assistant: '/docs/integrations/ai-assistant/'
-      - AWS Accounts fo  Plugins: '/docs/integrations/aws-plugins/'
+      - AWS Accounts for Plugins: '/docs/integrations/aws-plugins/'
       - Allure: '/docs/integrations/allure/'
       - Apache Airflow: '/docs/integrations/apache-airflow/'
       - Argo CD: '/docs/integrations/argocd/'
