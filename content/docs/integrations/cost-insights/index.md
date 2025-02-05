@@ -7,7 +7,7 @@ humanName: Cost Insights
 integrationType: Plugin
 ---
 
-Roadie provides an easy way to track your cloud costs directly within your Roadie instance. The cost insights plugin is based on the open source [Cost Insights plugin](https://github.com/backstage/backstage/tree/master/plugins/cost-insights) and provides the same functionality in an easily customizable way.
+Roadie provides two easy ways to track your cloud costs directly within your Roadie instance. The cost insights plugin is based on the open source [Cost Insights plugin](https://github.com/backstage/backstage/tree/master/plugins/cost-insights) and provides the same functionality in an easily customizable way. The available implementations include an implementation provided by AWS, which allows you to display AWS Cost Explorer data in your Roadie and Roadie provided implementation which support FOCUS standard date set to allow displaying more fine-grained cost information.
 
 ## Overview
 
@@ -36,7 +36,7 @@ There is also possibility to investigate individual product category values. You
 
 Both of these dimensions, on the higher level, and drilling in deeper, are fully configurable and can be set up to show various important cost dimensions based on needs. 
 
-## Configuration
+## Configuration (Roadie API)
 
 The plugin needs to be configured on 2 different levels. 
 1. To be able to use the Cost Insights functionality, you need to configure a data source which provides relevant cost data using the open source [FOCUS](https://focus.finops.org/) format defined by the FinOps foundation, as well as all the biggest cloud providers. 
@@ -82,4 +82,92 @@ The first two configuration values are related to each other and must be chosen 
 There is also a possibility to configure further Breakdowns within these groupings which can be used to identify more granular information about the provided cost data.
 
 
-![cost-insights-product-overview.webp](cost-insights-product-overview.webp)
+## Configuration (AWS API)
+
+AWS implementation of the Cost Insights plugin allows you to display cost data from AWS Cost Explorer based on cost allocation tags and groupings.
+
+### AWS Cost Insights API connection configuration
+
+The AWS Cost Insights implementation uses the same AWS credential chain as other AWS plugins. Roadie allows you to expose an assumable role from your AWS account which can be used to gather information from AWS Cost Explorer. You can set up this role and needed configurations for it within the `Plugins` -> `AWS Accounts` configurations section in the Administration screen.  
+
+![aws-accounts-config.png](aws-accounts-config.png)
+
+Note that Roadie dictates that the assumable role must have a name starting with `roadie-<your-tenant-name>` for security reasons. 
+
+
+The needed policy for the role should contain at least the following permissions:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["ce:GetCostAndUsage"],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+### AWS Cost Insights configuration
+
+The configuration for AWS Cost Insights implementation can be set up in the `Administration` -> `Cost Insights` settings section. Within there you have the option to select eiter `roadie` or `aws` implementation of the API. 
+
+![cost-insights-config.png](cost-insights-config.png)
+
+Within the configuration you can set a reference to the AWS account id configured in the AWS Accounts settings section. Additionally, you have to set an engineering cost and potentially select if you want to enable caching of the API calls. Making API calls towards AWS Cost Explorer incur costs when data is retrieved.
+
+### Cost Insights Content Tab setup
+
+AWS Cost Insights exposes a content tab which can be added to your entity pages. This tab uses entity annotations to display cost information for the entity.  
+
+You can configure the entity pointing to relevant AWS tags by using either `aws.amazon.com/cost-insights-tags` or `aws.amazon.com/cost-insights-cost-categories` annotations. 
+
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  # ...
+  annotations:
+    aws.amazon.com/cost-insights-tags: component=myapp,environment=prod
+spec:
+  type: service
+  # ...
+```
+
+This allows flexibility regarding how costs are retrieved for different entities. For example a Group entity might look like this:
+
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: guests
+  annotations:
+    aws.amazon.com/cost-insights-tags: owner=guests
+spec:
+  type: team
+```
+
+Categories annotation allows to configure the entity to display cost information based on the AWS Cost Explorer category.
+
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  # ...
+  annotations:
+    aws.amazon.com/cost-insights-cost-categories: myapp-category
+spec:
+  type: service
+  # ...
+```
+
+
+
+
+
+## More information:
+
+* [AWS Cost Insights plugin implementation](https://github.com/awslabs/backstage-plugins-for-aws/blob/main/plugins/cost-insights/README.md)
+
