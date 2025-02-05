@@ -84,25 +84,15 @@ Entities will have one "Overview" dashboard by default but you can add others. S
 
 ## Updating the Sidebar
 
-Page components are displayed in the sidebar. To edit the sidebar click the "Edit Sidebar" icon.
+Sidebar section of Roadie allows you to add `Page` components as entries to it. To edit the sidebar navigate to the Administration -> Settings -> Roadie Settings -> Sidebar.
 
-![Edit sidebar button](./edit-pages-button.jpg)
+![sidebar-settings-page.png](sidebar-settings-page.png)
 
-You can then drag and drop to rearrange or click the "x" icon to delete.
+You can then rearrange your sidebar entries to be visible or hidden by moving them between the left and right side of the list..
 
-![Edit Sidebar](./move-page.jpg)
+You can add new items by clicking the `New Custom Page` button where you can select the page component you want to add in, an icon for it as well as the wanted path and potential props to be added to the underlying component
 
-To add a page click the "Add Page" icon.
-
-![Add page button](./add-page-button.jpg)
-
-Then select the component in the autocomplete and adjust the title and path as necessary and click "Add".
-
-![Add page screen](./add-page.jpg)
-
-Finally, don't forget to save your changes.
-
-![Save sidebar](./save-sidebar.jpg)
+![sidebar-form.png](sidebar-form.png)
 
 ## Updating the home page
 
