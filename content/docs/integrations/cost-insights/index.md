@@ -163,10 +163,6 @@ spec:
   # ...
 ```
 
-
-
-
-
 ## More information:
 
 * [AWS Cost Insights plugin implementation](https://github.com/awslabs/backstage-plugins-for-aws/blob/main/plugins/cost-insights/README.md)
