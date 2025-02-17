@@ -4462,7 +4462,7 @@ This action creates a new GitHub repository and publishes the files in the works
 | `repoUrl`*                          | The URL of the repository where the content will be published.                                           | `string`                                 |             |
 | `description`                      | Optional description of the repository.                                                                 | `string`                                 |             |
 | `homepage`                         | Optional homepage URL for the repository.                                                               | `string`                                 |             |
-| `access`                           | The access level for the repository (private/public/internal).                                           | `string`                                 |             |
+| `access`                           | The user who should have access to the newly created repository. Uses the personal account user by default                                           | `string`                                 |             |
 | `defaultBranch`                    | The default branch for the repository (e.g., master or main).                                            | `string`                                 |             |
 | `protectDefaultBranch`             | Whether to protect the default branch.                                                                  | `boolean`                                |             |
 | `protectEnforceAdmins`             | Whether to enforce branch protection for admins.                                                        | `boolean`                                |             |
