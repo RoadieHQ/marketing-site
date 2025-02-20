@@ -1,5 +1,5 @@
 ---
-title: Integrating to internal infrastructure with Broker 
+title: Integrating to internal infrastructure with Broker
 publishedDate: '2022-12-20T14:00:00.0Z'
 description: How to configure secure broker connection to work wth Roadie.
 
@@ -16,14 +16,12 @@ The Broker connection is designed to connect Roadie and its plugins to integrati
 
 The broker is a Node.js service that you run inside your infrastructure to provide a secure tunnel for Roadie traffic. It was originally created by security company, [Snyk](https://docs.snyk.io/enterprise-configuration/snyk-broker), and is open-source. We are actively using it with existing customers for Kubernetes API access and other Backstage and Roadie plugins. You don't need to be a Snyk user to use the broker.
 
-*The benefits of the broker include:*
+_The benefits of the broker include:_
 
 - You can allow list what Roadie can access using a config file.
 - Any tokens for the internal endpoints stay in your infra. They are not shared with Roadie.
 - The broker maintains an audit log of what we access.
 - The connection is established outbound from your side. We cannot re-establish the connection on our own if you kill it.
-
-The Broker feature is available on our Growth Plan - see pricing page for more information.
 
 ### Tested Versions
 
@@ -31,7 +29,7 @@ We regularly test the latest version of the broker client as they are released t
 
 ## Broker Architecture
 
-Broker connection consists of two similar services called *broker server* and a corresponding *broker client.*
+Broker connection consists of two similar services called _broker server_ and a corresponding _broker client._
 
 ### Client
 
@@ -90,7 +88,7 @@ docker run \\
 
 ### Snyk Broker CLI application
 
-The broker client is published as an npm package available to be downloaded, installed on run on a machine configured to run NodeJS packages. 
+The broker client is published as an npm package available to be downloaded, installed on run on a machine configured to run NodeJS packages.
 
 **Install**
 
@@ -162,31 +160,31 @@ An example `accept.json` looks like the following:
 
 The file is divided into 2 parts, public and private.
 
-The `public` configuration block defines what endpoints can be called when *calling the broker client endpoint* directly. This would be for cases where an internal infrastructure would need to send data via the broker client toward Roadie instances. This is rarely used since most Backstage and Roadie plugins make requests and expect a response.
+The `public` configuration block defines what endpoints can be called when _calling the broker client endpoint_ directly. This would be for cases where an internal infrastructure would need to send data via the broker client toward Roadie instances. This is rarely used since most Backstage and Roadie plugins make requests and expect a response.
 
 The `private` configuration block defines what requests are allowed to come through via the connected broker websocket connection and where they are forwarded to. In the example above we are allowing traffic to flow to a single endpoint matching an imaginary service we have developed. We are hosting this custom imaginary service in our own infrastructure behind a corporate firewall in a private network and it's APIs are accessible when using bearer token authentication. The service exposes a single GET endpoint with a path /api/show. With this configuration the broker client would allow Roadie plugins to contact the imaginary service, via the broker connection, in cases where the request is going to the defined endpoint using a GET request and nothing else.
 
-The best way to configure endpoints and tokens via environment variables. In the above example the `accept.json` file is expecting two variables,  `MY_PLUGIN_REST_ENDPOINT` and `MY_PLUGIN_AUTH_TOKEN`.
+The best way to configure endpoints and tokens via environment variables. In the above example the `accept.json` file is expecting two variables, `MY_PLUGIN_REST_ENDPOINT` and `MY_PLUGIN_AUTH_TOKEN`.
 
 ### **Configuration options**
 
 Below you can find a table of configuration options available in the `accept.json` file.
 
-| Key | Example values | Description |
-| --- | --- | --- |
-| // | Any string | Denotes a comment on the configuration file |
-| method | HTTP Methods (GET, POST, PUT, DELETE, etc.) or any | HTTP Method to be used as a filter on the request |
-| path | /my-plugin/endpoint | Endpoint path to accept requests to. Only request going to these endpoints are forwarded. You can use * as a wildcard, e.g. /my-service/components* |
-| origin | https://my-service.myinternaldomain.com/ | The origin host to forward the request to. This is only available on the private configuration block. |
-| auth | {"scheme": "bearer", "token": "my-secret-token" } | Auth scheme and value to use to overwrite any auth header coming from the original request. See auth scheme options from the table below. This is only available on the private configuration block. |
+| Key    | Example values                                     | Description                                                                                                                                                                                          |
+| ------ | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| //     | Any string                                         | Denotes a comment on the configuration file                                                                                                                                                          |
+| method | HTTP Methods (GET, POST, PUT, DELETE, etc.) or any | HTTP Method to be used as a filter on the request                                                                                                                                                    |
+| path   | /my-plugin/endpoint                                | Endpoint path to accept requests to. Only request going to these endpoints are forwarded. You can use _ as a wildcard, e.g. /my-service/components_                                                  |
+| origin | https://my-service.myinternaldomain.com/           | The origin host to forward the request to. This is only available on the private configuration block.                                                                                                |
+| auth   | {"scheme": "bearer", "token": "my-secret-token" }  | Auth scheme and value to use to overwrite any auth header coming from the original request. See auth scheme options from the table below. This is only available on the private configuration block. |
 
-Authorization Scheme configuration: 
+Authorization Scheme configuration:
 
-| Scheme value | Value input key | Example | End result |
-| --- | --- | --- | --- |
-| token | token | { "scheme": "token", "token": "my-secret-token" } | Authorization: Token my-secret-token |
-| bearer | token | { "scheme": "bearer", "token": "my-secret-token" } | Authorization: Bearer my-secret-token |
-| basic | token or username and password | { "scheme": "basic", "token": "my-secret-token" } or { "scheme": "basic", "username": "user", "password": "pass" } | Authorization: Basic bXktc2VjcmV0LXRva2Vu (base64 encoded token) or Authorization: Basic dXNlcjpwYXNz (base64 encoded user:pass) |
+| Scheme value | Value input key                | Example                                                                                                            | End result                                                                                                                       |
+| ------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| token        | token                          | { "scheme": "token", "token": "my-secret-token" }                                                                  | Authorization: Token my-secret-token                                                                                             |
+| bearer       | token                          | { "scheme": "bearer", "token": "my-secret-token" }                                                                 | Authorization: Bearer my-secret-token                                                                                            |
+| basic        | token or username and password | { "scheme": "basic", "token": "my-secret-token" } or { "scheme": "basic", "username": "user", "password": "pass" } | Authorization: Basic bXktc2VjcmV0LXRva2Vu (base64 encoded token) or Authorization: Basic dXNlcjpwYXNz (base64 encoded user:pass) |
 
 An additional filtering based on any header can be achieved by using `valid` configuration block in the configuration file.
 
@@ -206,48 +204,50 @@ If the services you are directing traffic to are using self-signed certificates 
 
 **Using a self-signed certificate within broker running in K8s**
 
-If you want to continue using self-signed certificates and are not comfortable disabling the certificate validation completely, you can attach the self-signed certificate as a file to the running instance and reference it with an environment variables. This way the `node.js` process is able to accept self-signed certificates also. The steps to set this up are as follows:  
+If you want to continue using self-signed certificates and are not comfortable disabling the certificate validation completely, you can attach the self-signed certificate as a file to the running instance and reference it with an environment variables. This way the `node.js` process is able to accept self-signed certificates also. The steps to set this up are as follows:
 
 1. Either generate (or re-purpose) a ConfigMap with the private Root & Intermediate CA
-   * ```yaml
-     ...
-        volumes:
-        - name: trusted-ca-bundle
-        configMap:
-        name: ca-bundle
-     ```
- 
-2. Add the volume to the Deployment Configuration and mount the volume in a specific path
-    * ```yaml
-       ...
-         volumeMounts:
-         - name: trusted-ca-bundle
-         mountPath: /private
-      ```
-   
-   * This will be mount the `trusted-ca-bundle` volumen into `/private/` folder of the pod, and the name of the file will be the name of the key in the ConfigMap
-   
-3. Configure the environment variable for Node.JS - see below.
-   * ```yaml
-     ...
-     - env:
-     ...
-       - name: NODE_EXTRA_CA_CERTS
-         value: '/private/ca-bundle.pem'
-     ```
-   * The key in the ConfigMap is named ca-bundle.pem and the ConfigMap itself is named ca-bundle
-    
 
+   - ```yaml
+
+     ---
+     volumes:
+       - name: trusted-ca-bundle
+     configMap:
+     name: ca-bundle
+     ```
+
+2. Add the volume to the Deployment Configuration and mount the volume in a specific path
+
+   - ```yaml
+      ...
+        volumeMounts:
+        - name: trusted-ca-bundle
+        mountPath: /private
+     ```
+
+   - This will be mount the `trusted-ca-bundle` volumen into `/private/` folder of the pod, and the name of the file will be the name of the key in the ConfigMap
+
+3. Configure the environment variable for Node.JS - see below.
+   - ```yaml
+
+     ---
+     - env:
+     ---
+     - name: NODE_EXTRA_CA_CERTS
+       value: '/private/ca-bundle.pem'
+     ```
+   - The key in the ConfigMap is named ca-bundle.pem and the ConfigMap itself is named ca-bundle
 
 ### Debugging
 
 Here are the main debugging questions you need to ask when investigating issues with the Broker connection for a plugin.
 
 1. Is your Broker client connecting to the Roadie Broker Server?
-    - Navigate to the Broker settings, and at the bottom, add your broker token and click track. You should then see if your Broker client is connected to Roadie or not.
+   - Navigate to the Broker settings, and at the bottom, add your broker token and click track. You should then see if your Broker client is connected to Roadie or not.
 2. Is the traffic coming to your Broker client from Roadie showing in your client logs and are there any errors you can see?
-    - Deploy your Broker client with a `LOG_LEVEL` environment variable set to `debug`
-    - Try using the plugin that should be connecting to your Broker client and see if any requests are coming through in the logs. i.e. `kubectl logs <broker-pod-id> -n <broker-pod-namespace> -f`
+   - Deploy your Broker client with a `LOG_LEVEL` environment variable set to `debug`
+   - Try using the plugin that should be connecting to your Broker client and see if any requests are coming through in the logs. i.e. `kubectl logs <broker-pod-id> -n <broker-pod-namespace> -f`
 3. Is there an issue with the requests being proxied on by your Broker client - i.e. do the routes being requested match the `accept.json` routes you have defined.
 4. Are you able to curl the API you are trying to reach from your Broker client i.e.
 
