@@ -8,9 +8,9 @@ logoImage: '../../../assets/logos/wiz/wiz-logo.png'
 integrationType: OSS plugin
 ---
 
-## In Development
+## Certified Plugin
 
-This plugin is currently in development and awaiting certification from Wiz.
+This plugin is [certified by Wiz](https://www.wiz.io/integrations?q=roadie).
 
 ## Prerequisites
 
