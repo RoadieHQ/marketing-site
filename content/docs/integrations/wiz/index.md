@@ -12,6 +12,8 @@ integrationType: OSS plugin
 
 This plugin is [certified by Wiz](https://www.wiz.io/integrations?q=roadie).
 
+![wiz-certified.png](./wiz-certified.png)
+
 ## Prerequisites
 
 To begin using Wiz plugin, you will need the following parameters:
