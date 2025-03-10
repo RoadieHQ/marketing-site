@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 The [Backstage DX plugin](https://github.com/get-dx/backstage-plugin) displays DX data in your Backstage app.
 
-## Add DX to one of your components
+## Add DX to your components
 
 ### Add the needed DX annotation(s)
 
@@ -35,6 +35,8 @@ Retrieve an API token of your DX account which can be found within [your DX inst
 Then add it to Roadie at `https://<tenant-name>.roadie.so/administration/settings/dx` by entering the token value from above into `DX_API_TOKEN`.
 
 ![dx-secret](./dx-secret.png)
+
+or by entering token value under `DX_API_TOKEN` on `https://<tenant-name>.roadie.so/administration/settings/secrets`
 
 ### Enable and configure the plugin
 
