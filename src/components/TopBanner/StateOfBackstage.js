@@ -3,7 +3,7 @@ import { Link } from 'components';
 
 const StateOfBackstage = () => (
   <Link
-    to="http://stateofbackstage.io"
+    to="https://stateofbackstage.io"
     className="text-white font-bold underline-none hover:underline"
   >
     Fill out the <span className="underline">State of Backstage survey</span> for a chance to win tickets to{' '}
