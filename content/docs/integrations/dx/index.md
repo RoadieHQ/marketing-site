@@ -10,7 +10,7 @@ integrationType: OSS plugin
 
 ## Introduction
 
-The [Backstage DX plugin](https://github.com/get-dx/backstage-plugin) is a Backstage plugin designed to improve the overall developer experience within a Backstage platform. It aims to simplify and streamline the development process by offering insights, tools, and integrations tailored to enhance the workflow of developers.
+The [Backstage DX plugin](https://github.com/get-dx/backstage-plugin) is a Backstage plugin designed to improve the overall developer experience within a Backstage platform. It aims to simplify and streamline the development process by offering insights, tools, and integrations tailored to enhance development workflow.
 
 ## Add DX to your components
 
