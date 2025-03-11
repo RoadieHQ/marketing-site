@@ -24,7 +24,7 @@ kind: Component
 metadata:
   # ...
   annotations:
-    gitlab.com/project-slug: 'project-slug' # group_name/project_name
+    gitlab.com/project-slug: 'project-slug'
   # ...
 ```
 
