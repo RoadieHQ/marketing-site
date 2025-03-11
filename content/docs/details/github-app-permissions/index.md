@@ -28,6 +28,7 @@ These are the repository permissions required:
 | Dependabot alerts | Read         | Required by the GitHub Dependabot plugin.                                                                                                                                                    |
 | Workflows         | Read         | Enables the Backstage plugin that renders Github workflow actions on the component page.                                                                                                     |
 | Checks            | Read & Write | Allows the Github app to run checks on your backstage repositories                                                                                                                           |
+| Webhooks          | Read & Write | Allows the [`github:webhook` action](https://roadie.io/docs/scaffolder/scaffolder-actions-directory/#githubwebhook) to create webhooks in your repositories via the Scaffolder               |
 
 These are the organization permissions required:
 
