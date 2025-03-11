@@ -40,7 +40,7 @@ or by entering token value under `DX_API_TOKEN` on `https://<tenant-name>.roadie
 
 ### Enable and configure the plugin
 
-In the same DX configuration section, provide the relevant DX proxy to be able to retrieve information. Proxy can also be found in [your DX instance](https://app.getdx.com/datacloud/api_keys)
+In the same DX configuration section, provide the relevant DX proxy to be able to retrieve information. Proxy can also be found in [your DX instance](https://app.getdx.com/datacloud/api_keys) (e.g 'https://dx.com').
 
 ### Additional configuration options
 
