@@ -30,7 +30,7 @@ These are the repository permissions required:
 | Checks            | Read & Write | Allows the Github app to run checks on your backstage repositories                                                                                                                           |
 | Webhooks          | Read & Write | Allows the [`github:webhook` action](/docs/scaffolder/scaffolder-actions-directory/#githubwebhook) to create webhooks in your repositories via the Scaffolder                                |
 | Secrets           | Read & Write | Allows the [`publish:github` action](/docs/scaffolder/scaffolder-actions-directory/#publishgithub) to add secrets when creating a new repository via the Scaffolder                          |
-| Variables         | Read & Write | Allows the [`publish:github` action](/docs/scaffolder/scaffolder-actions-directory/#publishgithub) to add secrets when creating a new repository via the Scaffolder                                |
+| Variables         | Read & Write | Allows the [`publish:github` action](/docs/scaffolder/scaffolder-actions-directory/#publishgithub) to add variables when creating a new repository via the Scaffolder                        |
 
 These are the organization permissions required:
 
