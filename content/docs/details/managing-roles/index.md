@@ -20,7 +20,7 @@ Roadie comes with RBAC out of the box. We provide 4 default roles: `admin`, `vie
 There are two ways to assign a role to a user in Roadie:
 
 - Assign roles in the user management screen
-- Provide a `roles` field in your id token provided to Roadie during login.
+- We can enable a feature that allows you to add a `roles` field in your id token provided to Roadie during login.
 
 ### User Management
 
