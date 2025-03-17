@@ -6,7 +6,7 @@ description: How to configure and manage policies in Roadie for access control.
 
 ## Introduction
 
-**This feature is currently in the process of being rolled out. If you want access, please contact our support or sales teams.**
+**This feature is part of a paid add-on. If you want access, please contact our support or sales teams.**
 
 In Roadie, **policies** are integral components of the permissions framework, governing access control within the platform. They define the rules and conditions under which users can perform specific actions on various resources, such as services, components, or documentation.
 
