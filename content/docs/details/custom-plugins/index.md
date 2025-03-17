@@ -6,7 +6,7 @@ description: How to configure and manage permissions and policies for use in Cus
 
 ## Introduction
 
-**This feature is currently in the process of being rolled out. If you want access, please contact our support or sales teams.**
+**This feature is part of a paid add-on. If you want access, please contact our support or sales teams.**
 
 You can choose to make use of custom permissions in Roadie as part of a custom plugin. This tutorial assumes you have already created and published a [custom plugin](/docs/custom-plugins/overview/).
 
