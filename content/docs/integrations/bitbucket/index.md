@@ -66,7 +66,7 @@ Press on the save button to enable the bitbucket cloud configuration.
 
 For autodiscovery we use the OSS [BitbucketServerProvider](https://github.com/backstage/backstage/tree/master/plugins/catalog-backend-module-bitbucket-server) from the backstage repository.
 
-Due to the strictrate limits on the bitbucket API it currently runs every 30 minutes.
+Due to the strict rate limits on the bitbucket API it currently runs every 30 minutes.
 
 1. Go to the 'Configure your autodiscovery' section below the integration section
 2. Click the '+ ADD ITEM' button
