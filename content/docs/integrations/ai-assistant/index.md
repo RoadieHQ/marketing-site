@@ -22,7 +22,7 @@ This guide describes the necessary steps to configure the AI Assistant with appr
 
 The AI Assistant by default does not index any content from your Roadie instance. You can enable the plugin to handle catalog entities and Technical Documentation. 
 
-1. **Navigate to** `Administration > AI Assistant > Settings`.
+1. **Navigate to** `Administration > Settings > AI Assistant`.
 2. Under **Supported Sources**, ensure that all the necessary sources (catalogs, tech-docs) are listed and checked for indexing.
 3. Click **Apply & Restart** for changes to take effect.
 
