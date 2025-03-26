@@ -17,7 +17,7 @@ This guide describes how to set up access for Roadie to your GitLab repositories
 ##  Step 1: Generate GitLab access token (PAT)
 
 
-In your GitLab instance navigate to your User Settings > Access Tokens page. In GitLab cloud the URL is `https://gitlab.com/-/profile/preferences`. Within this page you can generate a token to grant Roadie access to read your entity manifest files.
+In your GitLab instance navigate to your User Settings > Access Tokens page. In GitLab cloud the URL is `https://gitlab.com/-/user_settings/personal_access_tokens`. Within this page you can generate a token to grant Roadie access to read your entity manifest files.
 
 1. Click 'Add new token'
 2. Create an access token with _at least_ permissions `api`, `read_repository`, `write_repository`.
