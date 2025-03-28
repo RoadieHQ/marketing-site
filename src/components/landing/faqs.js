@@ -5,15 +5,29 @@ import { SCM_SUPPORT_FAQ_TEXT } from '../../contactFormConstants';
 const FAQ_CONTENT = [
   {
     question: `Is Roadie SaaS or on-prem?`,
-    answer: () =>
-      `Roadie is SaaS and is every bit as customizable and secure as self-hosting Backstage.`,
+    answer: () => (
+      <p>
+        Both.
+        <br/><br/>
+        Most Roadie customers accessing our product via our SaaS portal. We have been running a SaaS
+        version of Backstage since 2020 and it is every bit as customizable and secure as
+        self-hosting Backstage.
+        <br/><br/>
+        We are also working on a self-hosted version of Roadie called Roadie Local. This is a locally
+        runnable version of Roadie that can run on a single machine or be deployed on-prem in a
+        private cloud.
+      </p>
+    ),
   },
   {
     question: `Does Roadie support custom plugins?`,
     answer: () => (
       <p>
-        Yes. Write a native Backstage plugin as normal and use our CLI to publish it to Roadie. It stays private to your company.{' '}
-        <Link to="/docs/custom-plugins/getting-started/" color="primary">Read more in our docs.</Link>
+        Yes. Write a native Backstage plugin as normal and use our CLI to publish it to Roadie. It
+        stays private to your company.{' '}
+        <Link to="/docs/custom-plugins/getting-started/" color="primary">
+          Read more in our docs.
+        </Link>
       </p>
     ),
   },
@@ -32,7 +46,10 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Our status page can be found at{' '}
-        <Link to="https://status.roadie.io" color="primary">https://status.roadie.io/</Link>.
+        <Link to="https://status.roadie.io" color="primary">
+          https://status.roadie.io/
+        </Link>
+        .
       </p>
     ),
   },
@@ -46,8 +63,7 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Roadie Backstage plugins can securely connect back to your infrastructure APIs via a variety
-        of mechanisms like OAuth2, token authentication by using a broker service. Learn more about
-        {' '}
+        of mechanisms like OAuth2, token authentication by using a broker service. Learn more about{' '}
         <Link to="/docs/details/how-roadie-connects/" color="primary">
           how Roadie connects to your tools
         </Link>{' '}
@@ -64,13 +80,16 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Yes. Roadie has achieved SOC2 Type 2 compliance. You can read more about this{' '}
-        <Link to="/blog/soc2-compliance/" color="primary">on our blog</Link>.
+        <Link to="/blog/soc2-compliance/" color="primary">
+          on our blog
+        </Link>
+        .
       </p>
     ),
   },
   {
     question: `Is Roadie customizable?`,
-    answer: () => 
+    answer: () =>
       `Roadie is extremely customizable. You can edit layouts, add and remove plugins, change the theme, run arbitrary code with the scaffolder, write your own plugins and more.`,
   },
 ];
