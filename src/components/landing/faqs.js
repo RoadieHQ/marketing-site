@@ -8,14 +8,12 @@ const FAQ_CONTENT = [
     answer: () => (
       <p>
         Both.
-        <br></br>
-        <br></br>
-        Most Roadie customers accessing our product via our SaaS portal. We've been running a SaaS
+        <br/><br/>
+        Most Roadie customers accessing our product via our SaaS portal. We have been running a SaaS
         version of Backstage since 2020 and it is every bit as customizable and secure as
         self-hosting Backstage.
-        <br></br>
-        <br></br>
-        We're also working on a self-hosted version of Roadie called Roadie Local. This is a locally
+        <br/><br/>
+        We are also working on a self-hosted version of Roadie called Roadie Local. This is a locally
         runnable version of Roadie that can run on a single machine or be deployed on-prem in a
         private cloud.
       </p>
