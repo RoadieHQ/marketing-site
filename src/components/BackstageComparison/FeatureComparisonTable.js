@@ -10,28 +10,28 @@ const sections = [
     features: [
       {
         name: 'Bring your own data model',
-        competitor: { RoadieSaaS: 'Yes', RoadieLocal: 'Yes', Backstage: 'Yes, with some effort' },
+        competitor: { Roadie: 'Yes', RoadieLocal: 'Yes', Backstage: 'Yes, with some effort' },
       },
       {
         name: 'Adding and updating Catalog items via YAML',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
       {
         name: 'Updating Catalog items in the UI',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
       {
         name: 'Adding and updating Catalog items via API',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
       {
         name: 'Out of the box data ingestion (k8s, GitHub, CI/CD, etc)',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
       {
         name: 'SCM Support',
         competitor: {
-          RoadieSaaS:
+          Roadie:
             'GitHub Cloud, GitHub Enterprise Server, Azure DevOps, GCP, GitLab Cloud, GitLab On-Prem, BitBucket Cloud, BitBucket Server',
           RoadieLocal:
             'GitHub Cloud, GitHub Enterprise Server, Azure DevOps, GCP, GitLab Cloud, GitLab On-Prem, BitBucket Cloud, BitBucket Server',
@@ -41,7 +41,7 @@ const sections = [
       },
       {
         name: 'Syncing repositories as items in the Catalog',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
     ],
   },
@@ -50,23 +50,23 @@ const sections = [
     features: [
       {
         name: 'Extensible through the creation of custom data sources in the UI',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
       {
         name: 'Operational reviews',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
       {
         name: 'Levels',
-        competitor: { RoadieSaaS: 'Coming soon', RoadieLocal: 'Coming soon', Backstage: false },
+        competitor: { Roadie: 'Coming soon', RoadieLocal: 'Coming soon', Backstage: false },
       },
       {
         name: 'Campaigns',
-        competitor: { RoadieSaaS: 'Coming soon', RoadieLocal: 'Coming soon', Backstage: false },
+        competitor: { Roadie: 'Coming soon', RoadieLocal: 'Coming soon', Backstage: false },
       },
       {
         name: 'Team-based rollups',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
     ],
   },
@@ -75,19 +75,19 @@ const sections = [
     features: [
       {
         name: 'Self-serve actions',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
       {
         name: 'Custom self-serve actions',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
       {
         name: 'Custom field extensions',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
       {
         name: 'Fallback and retry',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
     ],
   },
@@ -96,11 +96,11 @@ const sections = [
     features: [
       {
         name: 'Docs creation engine',
-        competitor: { RoadieSaaS: 'TechDocs', RoadieLocal: 'TechDocs', Backstage: 'TechDocs' },
+        competitor: { Roadie: 'TechDocs', RoadieLocal: 'TechDocs', Backstage: 'TechDocs' },
       },
       {
         name: 'Extensibility via plugins',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
     ],
   },
@@ -109,23 +109,23 @@ const sections = [
     features: [
       {
         name: 'Available Plugins',
-        competitor: { RoadieSaaS: '70+', RoadieLocal: '70+', Backstage: 'Requires build' },
+        competitor: { Roadie: '70+', RoadieLocal: '70+', Backstage: 'Requires build' },
       },
       {
         name: 'Secure access to on-prem infrastructure and resources',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
       {
         name: 'Theme customisation',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: 'Requires build' },
       },
       {
         name: 'Layout customisation',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: 'Requires build' },
       },
       {
         name: 'Catalog UI customisation',
-        competitor: { RoadieSaaS: 'Yes', RoadieLocal: true, Backstage: 'Requires build' },
+        competitor: { Roadie: 'Yes', RoadieLocal: true, Backstage: 'Requires build' },
       },
     ],
   },
@@ -135,7 +135,7 @@ const sections = [
       {
         name: 'Engine',
         competitor: {
-          RoadieSaaS: 'Backstage search',
+          Roadie: 'Backstage search',
           RoadieLocal: 'Backstage search',
           Backstage: 'Backstage search',
         },
@@ -143,7 +143,7 @@ const sections = [
       {
         name: 'Additional search collators',
         competitor: {
-          RoadieSaaS: 'Atlassian Confluence',
+          Roadie: 'Atlassian Confluence',
           RoadieLocal: 'Atlassian Confluence',
           Backstage: 'Atlassian Confluence',
         },
@@ -155,11 +155,11 @@ const sections = [
     features: [
       {
         name: 'SSO',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: 'Via OSS providers' },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: 'Via OSS providers' },
       },
       {
         name: 'Entities created in the Catalog for each user and group',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: 'Via OSS providers' },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: 'Via OSS providers' },
       },
     ],
   },
@@ -168,23 +168,23 @@ const sections = [
     features: [
       {
         name: 'Admin and non-Admin roles',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
       {
         name: 'Role assignment in the UI',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
       {
         name: 'Role assignment by identity provider token',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
       {
         name: 'Custom roles',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
       {
         name: 'Custom permissions policies',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: false },
       },
     ],
   },
@@ -193,15 +193,15 @@ const sections = [
     features: [
       {
         name: 'Visualisation of cost data',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
       {
         name: 'Out of the box data ingestion',
-        competitor: { RoadieSaaS: 'AWS, GCP', RoadieLocal: 'AWS, GCP', Backstage: false },
+        competitor: { Roadie: 'AWS, GCP', RoadieLocal: 'AWS, GCP', Backstage: false },
       },
       {
         name: 'Attribution back to catalog components (inc. users and groups)',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: true },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: true },
       },
     ],
   },
@@ -210,27 +210,27 @@ const sections = [
     features: [
       {
         name: 'Hosting',
-        competitor: { RoadieSaaS: true, RoadieLocal: false, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: false, Backstage: false },
       },
       {
         name: 'Upgrades to the latest version of Backstage',
-        competitor: { RoadieSaaS: true, RoadieLocal: true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, RoadieLocal: true, Backstage: 'Requires build' },
       },
       {
         name: 'Analytics',
-        competitor: { RoadieSaaS: true, RoadieLocal: false, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: false, Backstage: false },
       },
       {
         name: 'Support',
         competitor: {
-          RoadieSaaS: 'Email, Slack/Teams, and 24/7 On-call',
+          Roadie: 'Email, Slack/Teams, and 24/7 On-call',
           RoadieLocal: 'Email, Slack/Teams, and 24/7 On-call (optional)',
           Backstage: 'via the OSS community',
         },
       },
       {
         name: 'Uptime guarantee',
-        competitor: { RoadieSaaS: true, RoadieLocal: false, Backstage: false },
+        competitor: { Roadie: true, RoadieLocal: false, Backstage: false },
       },
     ],
   },
