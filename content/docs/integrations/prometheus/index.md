@@ -19,24 +19,31 @@ This page describes how to set up a proxy for your Roadie instance to contact Pr
 
 You must be an admin to be able to set up proxies.
 
-To configure the URL of your Prometheus instance you need to create a proxy or authenticated proxy entry in your Roadie instance settings. You can find the configuration for proxies in this URL:
+To configure the URL of your Prometheus instance, you need to create a proxy entry in your Roadie instance settings. You can find the proxy configuration at:
+
 ```text
 https://<tenant-name>.roadie.so/administration/settings/proxy
 ```
 
-Prometheus plugin is using the URL `/prometheus/api` so you need to put that as the path for the proxy. The target will be the URL of your Prometheus instance and the path to the API of it. Additionally, you can add headers to the request, depending how the authentication is implemented for your Prometheus instance.
-
+The Prometheus plugin uses the URL path `/prometheus/api`, so you need to set this as the path for your proxy. The target should be the URL of your Prometheus instance including the path to its API. You can also add custom headers to the request if your Prometheus instance requires specific authentication.
 
 ![Prometheus proxy configuration](./prom_proxy_config.webp)
 
+#### Authenticated Proxy Option
 
-Alternatively if you want to forward the headers used to authenticate with Roadie automatically to the Prometheus instance, you can do the same configuration as above in the _Authenticated Proxy_ configuration tab. This tab can be found from this URL:
-```text
-https://<tenant-name>.roadie.so/administration/settings/authenticatedProxy
-```
+If you want to automatically forward the authentication headers used with Roadie to your Prometheus instance, you can enable the "Forward Authentication" option when creating your proxy. This will include the user's authentication token in requests to your Prometheus instance.
+
+To set up an authenticated proxy:
+
+1. Navigate to the proxy configuration page
+2. Click "Add Proxy"
+3. Enter the path (`/prometheus/api`) and target URL
+4. Check the "Forward Authentication" checkbox
+5. Add any additional headers if needed
+6. Click "Add Proxy"
+7. Click "Apply & Restart" to apply the changes
 
 ### Step 2: Configure your entities with Prometheus annotations
-
 
 The Prometheus plugin uses entity annotations to determine what data to display. There are two different annotations that can be used:
 1. Rule annotation to visualize [Prometheus recording rules](https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/) and queries
