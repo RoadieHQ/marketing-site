@@ -18,6 +18,7 @@ export const FORM_NAMES = {
 export const PAGE_PATHS = {
   freeTrial: '/free-trial/',
   requestDemo: '/request-demo/',
+  getRoadieLocal: '/request-roadie-local/'
 };
 
 export const HONEYPOT_FIELD_NAME = 'honeybot-field';
