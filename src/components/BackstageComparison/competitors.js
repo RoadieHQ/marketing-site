@@ -1,8 +1,16 @@
 import { PAGE_PATHS } from '../../contactFormConstants';
 
 const COMPETITORS = {
-  roadie: {
+  roadie_saas: {
     name: 'Roadie',
+    description:
+      'For excellent engineering orgs who want a home for their services, docs, runbooks, API specs and CI.',
+    ctaLabel: 'Start a free trial',
+    ctaLinkTo: PAGE_PATHS.freeTrial,
+  },
+
+  roadie_local: {
+    name: 'Roadie Local',
     description:
       'For excellent engineering orgs who want a home for their services, docs, runbooks, API specs and CI.',
     ctaLabel: 'Start a free trial',
