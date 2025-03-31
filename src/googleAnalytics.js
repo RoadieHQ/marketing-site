@@ -8,3 +8,4 @@ const trackGoogleAnalyticsEvent = (eventName, eventParams) => {
 export const trackRequestDemo = (opts = {}) => trackGoogleAnalyticsEvent("request_demo", opts);
 export const trackRequestTrial = (opts = {}) => trackGoogleAnalyticsEvent("request_trial", opts);
 export const trackSubscribe = (opts = {}) => trackGoogleAnalyticsEvent("subscribe_newsletter", opts);
+export const trackRequestRoadieLocal = (opts = {}) => trackGoogleAnalyticsEvent("request_roadie_local", opts);
