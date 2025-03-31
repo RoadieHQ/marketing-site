@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern, Button } from 'components';
+import { Headline, SEO, SitewideHeader, SitewideFooter } from 'components';
 import {
   CustomerLogoCloud,
   AlternatingFeatureBlock,
