@@ -17,8 +17,6 @@ import Avatar from '../components/landing/Testimonials/Avatar';
 import CatalogImg from '../../content/assets/home/illustrations/home-service-catalog.png';
 import TemplatesImg from '../../content/assets/home/illustrations/home-templates.png';
 import ExtensibleImg from '../../content/assets/home/illustrations/home-extensible.png';
-import YotpoImg from '../../content/assets/product-pages/catalog-yotpo-logo.webp';
-import YotpoImgPng from '../../content/assets/product-pages/catalog-yotpo-logo.png';
 
 const SEO_TITLE = 'Request access to Roadie Local: on-prem Roadie';
 
@@ -133,10 +131,6 @@ const RequestRoadieLocal = ({ data, location }) => {
               />
             </div>
             <div className="mt-5 p-5 lg:pl-10 lg:mt-10">
-              <picture>
-                <source srcSet={YotpoImg} type="image/webp" />
-                <source srcSet={YotpoImgPng} type="image/png" />
-              </picture>
               <figure className="max-w-2xl mx-auto mt-10 mb-5">
                 <blockquote className="text-2xl font-bold tracking-wide">
                   “The Roadie team have been incredible to work with. Their platform provides us
