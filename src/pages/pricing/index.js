@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, Headline } from 'components';
 import {
-  GrowthPricingTier,
-  TeamsPricingTier,
   SectionHeader,
   FeatureComparisonTable,
   CurrencySwitcher,
@@ -44,11 +42,11 @@ const Pricing = ({
               <HostingSwitcher setHosting={setHosting} currentlySetHosting={currentlySetHosting} />
             </div>
           </div>
-      
-            <HostingWrapper
-              currentlySetHosting={currentlySetHosting}
-              currentlySetCurrency={currentlySetCurrency}
-            />
+
+          <HostingWrapper
+            currentlySetHosting={currentlySetHosting}
+            currentlySetCurrency={currentlySetCurrency}
+          />
         </div>
 
         <div className="max-w-4xl mx-auto py-16 sm:py-24 sm:px-6 lg:px-8">
