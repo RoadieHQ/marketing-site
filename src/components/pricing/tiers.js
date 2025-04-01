@@ -12,8 +12,18 @@ const TIERS = {
   growth: {
     name: 'Growth',
     minSeats: 100,
-    description: 'For excellent engineering orgs who want to maintain effectiveness through hypergrowth',
+    description:
+      'For excellent engineering orgs who want to maintain effectiveness through hypergrowth',
     ctaLabel: 'Request a demo',
+    ctaLinkTo: PAGE_PATHS.freeTrial,
+  },
+
+  local: {
+    name: 'Local',
+    minSeats: 'N/A',
+    description:
+      'For security-conscious orgs who want to self-host Roadie, Roadie Local is a dockerised version of Roadie SaaS that can be run on your network.',
+    ctaLabel: 'Request Access',
     ctaLinkTo: PAGE_PATHS.freeTrial,
   },
 };

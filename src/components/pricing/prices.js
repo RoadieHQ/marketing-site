@@ -87,3 +87,28 @@ export const PER_SEAT_PRICES_MARKETING = [
     usdCentCostPerDevPerMonth: 1800,
   }),
 ];
+
+export const PER_SEAT_PRICES_ROADIE_LOCAL = [
+  Object.freeze({
+    id: 0,
+    name: '0-15 developers',
+    usdCentCostPerDevPerMonth: 0,
+  }),
+  Object.freeze({
+    id: 50,
+    name: '50-100 developers',
+    usdCentCostPerDevPerMonth: 3200,
+  }),
+
+  Object.freeze({
+    id: 100,
+    name: '100–150 developers',
+    usdCentCostPerDevPerMonth: 3000,
+  }),
+
+  Object.freeze({
+    id: 150,
+    name: '150+ developers',
+    usdCentCostPerDevPerMonth: 2800,
+  }),
+];

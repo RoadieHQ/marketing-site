@@ -7,3 +7,6 @@ export { default as SidebarLogoContent } from './SidebarLogoContent';
 export { default as SectionHeader } from './SectionHeader';
 export { default as FeatureComparisonTable } from './FeatureComparisonTable';
 export { default as CurrencySwitcher } from './CurrencySwitcher';
+export { default as LocalPricingTier } from './LocalPricingTier';
+export { default as HostingSwitcher } from './HostingSwitcher';
+export { default as HostingWrapper } from './HostingWrapper';
