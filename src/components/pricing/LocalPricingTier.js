@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Button } from 'components';
 
 import LocalTier from './LocalTier';
-import TIERS from './tiers';
 
 import { PER_SEAT_PRICES_ROADIE_LOCAL } from 'components/pricing/prices';
 
