@@ -220,3 +220,13 @@
   from = "/docs/catalog/modelling-entities/ "
   to = "/docs/catalog/modeling-entities/"
   force = true
+
+[[redirects]]
+  from = "/local"
+  to = "/request-demo"
+  force = true
+
+[[redirects]]
+  from = "/local/"
+  to = "/request-demo"
+  force = true
