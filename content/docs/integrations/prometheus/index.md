@@ -22,7 +22,7 @@ You must be an admin to be able to set up proxies.
 To configure the URL of your Prometheus instance, you need to create a proxy entry in your Roadie instance settings. You can find the proxy configuration at:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/proxy
+https://<tenant-name>.roadie.so/administration/settings/plugins/proxy
 ```
 
 The Prometheus plugin uses the URL path `/prometheus/api`, so you need to set this as the path for your proxy. The target should be the URL of your Prometheus instance including the path to its API. You can also add custom headers to the request if your Prometheus instance requires specific authentication.
@@ -46,6 +46,7 @@ To set up an authenticated proxy:
 ### Step 2: Configure your entities with Prometheus annotations
 
 The Prometheus plugin uses entity annotations to determine what data to display. There are two different annotations that can be used:
+
 1. Rule annotation to visualize [Prometheus recording rules](https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/) and queries
 2. Alert annotation to display [Prometheus alerting rules](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/) in a table format.
 
@@ -61,6 +62,7 @@ Example annotation:
 ```prometheus.io/rule: memUsage|component,node_memory_active_bytes|instance,sum by (instance) (node_cpu_seconds_total)```
 
 Produces the following graphs:
+
 1. `memUsage|component`
    (grouping by component, otherwise `__name__` would be the first item on this saved rule. Showed here as an area graph)
    ![Area Graph widget](./prom_areagraph_widget.webp)
@@ -84,9 +86,6 @@ Example annotation:
 
 Produces the following table.
 ![Alert table](./prom_alert.webp)
-
-
-
 
 ### Step 3: Configure UI components for your Roadie instance
 
@@ -155,10 +154,8 @@ Query templating allows a query to be written that includes data from an entity.
 }
 ```
 
-
 ## References
 
 - [Backstage Prometheus Plugin](https://roadie.io/backstage/plugins/prometheus/)
 - [Prometheus](https://prometheus.io/docs/introduction/overview/)
 - [Prometheus Recording Rules](https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/)
-

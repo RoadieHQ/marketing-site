@@ -14,7 +14,7 @@ The Backstage Apache Airflow plugin serves as frontend to the REST API exposed b
 
 ## Using the Plugin
 
-1. Add a proxy configuration in Roadie at `/administration/settings/proxy` - see guide [here](/docs/custom-plugins/connectivity/proxy/#setup).
+1. Add a proxy configuration in Roadie at `/administration/settings/plugins/proxy` - see guide [here](/docs/custom-plugins/connectivity/proxy/#setup).
 
 Path: `/airflow`
 Target: `https://your.airflow.instance.com/api/v1`

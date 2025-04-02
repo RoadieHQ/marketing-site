@@ -15,11 +15,12 @@ Roadie installs the proxy plugin in Roadie and provides administrators the abili
 An administrator of Roadie will configure the proxy with credentials so that when the proxy is called by a UI plugin or a Scaffolder action, the authentication header will be handled in the proxy plugin.
 
 ![proxy.webp](proxy.webp)
+
 ### Setup
 
 #### Step 1. Configure the Proxy
 
-You can navigate to `/administration/settings/proxy`. Click "Add Proxy" to add a new proxy.
+You can navigate to `/administration/settings/plugins/proxy`. Click "Add Proxy" to add a new proxy.
 
 Enter a Path (e.g. `/my-api`) and a target API (e.g. `https://my-api.com/api`)
 
@@ -30,6 +31,7 @@ Expand the "Advanced Settings" and click "Add Item" next to the "Headers" sectio
 Click save and Apply and Restart.
 
 #### Step 2 Configure the API secret
+
 Next visit the secrets configuration page `/administration/settings/secrets`. Click the edit icon beside `CUSTOMER_TOKEN_1` and set a value for the token and press "Save".
 
 ![customer-token-1-save.webp](customer-token-1-save.webp)
@@ -39,7 +41,7 @@ Next visit the secrets configuration page `/administration/settings/secrets`. Cl
 You can call this API from the Roadie window context in a browser via a Custom Roadie plugin:
 
 ```javascript
-fetch('/api/proxy/my-api')
+fetch('/api/proxy/my-api');
 ```
 
 ## Authenticated Proxy
@@ -51,9 +53,10 @@ This gives a custom plugin a way to interact with your own service. That service
 ![authenticatedProxyDiagram.webp](authenticatedProxyDiagram.webp)
 
 ### Setup
+
 #### Step 1. Configure the Proxy
 
-You can navigate to /administration/settings/authenticatedProxy. Click add item to add a new proxy.
+You can navigate to `/administration/settings/plugins/proxy`. Click add item to add a new proxy.
 
 ![authenticatedProxyConfig.webp](authenticatedProxyConfig.webp)
 
@@ -68,7 +71,7 @@ Click save and Apply and Restart and wait for the restart. It can take up to abo
 You can call this API from the Roadie window context in a browser via a Custom Roadie plugin:
 
 ```javascript
-fetch('/api/authenticated-proxy/my-api')
+fetch('/api/authenticated-proxy/my-api');
 ```
 
 #### Step 3 Authenticate the Request
