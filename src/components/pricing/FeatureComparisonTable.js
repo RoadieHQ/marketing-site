@@ -4,83 +4,115 @@ import { TextLink } from 'components';
 
 import TIERS from './tiers';
 
-const sections = [{
-  name: 'Scale',
-  features: [{
-    name: 'Software components tracked',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
-    name: 'API Specs',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
-    name: 'TechDocs',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
-    name: 'Scaffolder templates',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
-    name: 'Minimum seats',
-    tiers: { Teams: TIERS.teams.minSeats.toString(), Growth: TIERS.growth.minSeats.toString() },
-  }],
-}, {
-  name: 'Features',
-  features: [{
-    name: 'Software & teams catalog',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Monthly Backstage upgrades',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'TechDocs technical documentation',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Scaffolder service creator',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'API specs',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Open-source Backstage plugins',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Locations log',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Tech radar plugin',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Kubernetes plugin',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Custom, private Backstage plugins',
-    tiers: { Growth: true },
-  }, {
-    name: 'API access (beta)',
-    tiers: { Growth: true },
-  }, {
-    name: 'Infra access via broker',
-    tiers: { Growth: true },
-  }, {
-    name: 'Usage analytics dashboard',
-    tiers: { Growth: true },
-  }],
-}, {
-  name: 'Support',
-  features: [{
-    name: 'In-app chat',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Slack and email support',
-    tiers: { Growth: true },
-  }, {
-    name: 'SLA',
-    tiers: { Growth: true },
-  }, {
-    name: '24/7 On-call',
-    tiers: { Growth: true },
-  }],
-}];
-
+const sections = [
+  {
+    name: 'Scale',
+    features: [
+      {
+        name: 'Software components tracked',
+        tiers: { Teams: 'Unlimited', Growth: 'Unlimited', Local: 'Unlimited' },
+      },
+      {
+        name: 'API Specs',
+        tiers: { Teams: 'Unlimited', Growth: 'Unlimited', Local: 'Unlimited' },
+      },
+      {
+        name: 'TechDocs',
+        tiers: { Teams: 'Unlimited', Growth: 'Unlimited', Local: 'Unlimited' },
+      },
+      {
+        name: 'Scaffolder templates',
+        tiers: { Teams: 'Unlimited', Growth: 'Unlimited', Local: 'Unlimited' },
+      },
+      {
+        name: 'Minimum seats',
+        tiers: {
+          Teams: TIERS.teams.minSeats.toString(),
+          Growth: TIERS.growth.minSeats.toString(),
+          Local: TIERS.local.minSeats.toString(),
+        },
+      },
+    ],
+  },
+  {
+    name: 'Features',
+    features: [
+      {
+        name: 'Software & teams catalog',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'Monthly Backstage upgrades',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'TechDocs technical documentation',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'Scaffolder service creator',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'API specs',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'Open-source Backstage plugins',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'Locations log',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'Tech radar plugin',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'Kubernetes plugin',
+        tiers: { Teams: true, Growth: true, Local: true },
+      },
+      {
+        name: 'Custom, private Backstage plugins',
+        tiers: { Growth: true, Local: true },
+      },
+      {
+        name: 'API access (beta)',
+        tiers: { Growth: true, Local: true },
+      },
+      {
+        name: 'Infrastructure access',
+        tiers: { Growth: 'via a broker', Local: true },
+      },
+      {
+        name: 'Usage analytics dashboard',
+        tiers: { Growth: true, Local: true },
+      },
+    ],
+  },
+  {
+    name: 'Support',
+    features: [
+      {
+        name: 'In-app chat',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Slack and email support',
+        tiers: { Growth: true, Local: true },
+      },
+      {
+        name: 'SLA',
+        tiers: { Growth: true, Local: true },
+      },
+      {
+        name: '24/7 On-call',
+        tiers: { Growth: true },
+      },
+    ],
+  },
+];
 
 const FeatureNameHeaderCell = ({ feature }) => (
   <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
@@ -106,7 +138,7 @@ const FeatureInTierIndicatorIcon = ({ featureTier, tier }) => (
   </>
 );
 
-const FeatureTierIndicatorCell = ({ tier, featureTier}) => (
+const FeatureTierIndicatorCell = ({ tier, featureTier }) => (
   <td className="py-5 pr-4 lg:px-6">
     {typeof featureTier === 'string' ? (
       <FeatureInTierIndicatorText text={featureTier} />
@@ -142,11 +174,7 @@ const SectionTable = ({ section, tier, tierIndex }) => (
 
     <tbody className="divide-y divide-gray-200">
       {section.features.map((feature) => (
-        <FeatureRow
-          feature={feature}
-          key={`${tierIndex}-${feature.name}`}
-          tier={tier}
-        />
+        <FeatureRow feature={feature} key={`${tierIndex}-${feature.name}`} tier={tier} />
       ))}
     </tbody>
   </table>
@@ -156,15 +184,12 @@ const LargeFeatureRow = ({ feature }) => (
   <tr>
     <FeatureNameHeaderCell feature={feature} />
 
-    <FeatureTierIndicatorCell
-      featureTier={feature.tiers[TIERS.teams.name]}
-      tier={TIERS.teams}
-    />
+    <FeatureTierIndicatorCell featureTier={feature.tiers[TIERS.teams.name]} tier={TIERS.teams} />
 
-    <FeatureTierIndicatorCell
-      featureTier={feature.tiers[TIERS.growth.name]}
-      tier={TIERS.growth}
-    />
+    <FeatureTierIndicatorCell featureTier={feature.tiers[TIERS.growth.name]} tier={TIERS.growth} />
+
+    <FeatureTierIndicatorCell featureTier={feature.tiers[TIERS.local.name]} tier={TIERS.local} />
+
   </tr>
 );
 
@@ -224,6 +249,16 @@ const FeatureComparisonTable = () => {
             <SectionTable section={section} key={section.name} tier={TIERS.growth} tierIndex={1} />
           ))}
         </section>
+
+        <section>
+          <div className="px-4 mb-8">
+            <h2 className="text-lg leading-6 font-medium text-gray-900">{TIERS.local.name}</h2>
+          </div>
+
+          {sections.map((section) => (
+            <SectionTable section={section} key={section.name} tier={TIERS.local} tierIndex={2} />
+          ))}
+        </section>
       </div>
 
       {/* lg+ */}
@@ -237,18 +272,23 @@ const FeatureComparisonTable = () => {
                 <span>Plans</span>
               </th>
               <LargeTierHeaderCell tier={TIERS.teams} />
-              <LargeTierHeaderCell tier={TIERS.growth}  />
+              <LargeTierHeaderCell tier={TIERS.growth} />
+              <LargeTierHeaderCell tier={TIERS.local} />
             </tr>
           </thead>
 
           <tbody className="border-t border-gray-200 divide-y divide-gray-200">
             <tr>
-              <th className="py-8 px-6 text-sm font-medium text-gray-900 text-left align-top" scope="row">
+              <th
+                className="py-8 px-6 text-sm font-medium text-gray-900 text-left align-top"
+                scope="row"
+              >
                 Get started
               </th>
 
               <LargeTierCta tier={TIERS.teams} />
               <LargeTierCta tier={TIERS.growth} />
+              <LargeTierCta tier={TIERS.local} />
             </tr>
 
             {sections.map((section) => (
@@ -263,7 +303,7 @@ const FeatureComparisonTable = () => {
         </table>
       </div>
     </>
-  )
+  );
 };
 
 export default FeatureComparisonTable;
