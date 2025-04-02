@@ -8,7 +8,8 @@ export const FORM_NAMES = {
   getInstance: 'submit-get-instance-form',
   getInstanceExtended: 'submit-extended-get-instance-form',
   requestDemo: 'submit-extended-get-demo-form',
-  tryRoadieHomepage: 'submit-try-roadie-homepage'
+  tryRoadieHomepage: 'submit-try-roadie-homepage',
+  getRoadieLocal: 'submit-get-roadie-local'
 };
 
 // One place this constant cannot be used is in the /content directory. If changing something
@@ -17,6 +18,7 @@ export const FORM_NAMES = {
 export const PAGE_PATHS = {
   freeTrial: '/free-trial/',
   requestDemo: '/request-demo/',
+  getRoadieLocal: '/request-roadie-local/'
 };
 
 export const HONEYPOT_FIELD_NAME = 'honeybot-field';

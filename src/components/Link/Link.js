@@ -87,7 +87,7 @@ const Link = ({
 
     // We want to track which pages people are coming from when they submit the form to
     // request a demo or a free trial.
-    if (internalTo.includes(PAGE_PATHS.freeTrial) || internalTo.includes(PAGE_PATHS.requestDemo)) {
+    if (internalTo.includes(PAGE_PATHS.freeTrial) || internalTo.includes(PAGE_PATHS.requestDemo) || internalTo.includes(PAGE_PATHS.requestRoadieLocal)) {
       internalTo = appendSearchParam(internalTo, {
         referringPathname: kebabCasePathname(location.pathname),
       });

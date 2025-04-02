@@ -71,6 +71,12 @@ const learn = [
     icon: CodeIcon,
   },
   {
+    name: 'Backstage Weekly',
+    description: 'Read our weekly Backstage newsletter.',
+    to: '/backstage-weekly/',
+    icon: NewspaperIcon,
+  },
+  {
     name: 'Blog',
     description: 'Read our posts on Backstage and Roadie.',
     to: '/blog/',
@@ -83,16 +89,16 @@ const learn = [
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Documentation',
-    description: 'Set up your Roadie Backstage experience.',
-    to: '/docs/',
-    icon: AcademicCapIcon,
-  },
-  {
     name: 'Chat with us on Discord',
     description: 'Get support or provide feedback.',
     to: 'https://discord.gg/W3qEMhmx4f',
     icon: ChatIcon,
+  },
+  {
+    name: 'Documentation',
+    description: 'Set up your Roadie Backstage experience.',
+    to: '/docs/',
+    icon: AcademicCapIcon,
   },
 ];
 
@@ -127,7 +133,7 @@ const SitewideHeader = ({
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
             <TopNavDropdownItem text="Product" subItems={features} />
             <TopNavItem to="/backstage-comparison/" text="Roadie vs Backstage" />
-            <TopNavItem to="/backstage-weekly/" text="Backstage Weekly" />
+            <TopNavItem to="/request-roadie-local/" text="Roadie Local" />
             <TopNavItem to="/pricing/" text="Pricing" />
             <TopNavDropdownItem text="Resources" subItems={learn} />
           </Popover.Group>
