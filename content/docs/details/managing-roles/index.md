@@ -30,7 +30,9 @@ There are two ways to assign a role to a user in Roadie:
 
 ### Roles from Identity providers id token
 
-If your Roadie tenant is using a custom identity provider, you can choose to include the roles field in your id token as follows:
+If your Roadie tenant uses a custom identity provider and you’d like to manage user roles through it, we can enable this feature upon request—just reach out to our support team.
+
+To include roles in the ID token, structure the token like this:
 
 ```json
 {
