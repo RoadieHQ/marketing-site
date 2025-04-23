@@ -47,6 +47,7 @@ If your IT department requires an allow list of domains, please use the followin
 auth.roadie.io
 <yourtenant>.roadie.so
 <yourtenant>.vouch.roadie.so
+<yourtenant>.broker.roadie.so
 *.roadie.systems
 ```
 
