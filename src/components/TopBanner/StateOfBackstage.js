@@ -6,8 +6,7 @@ const StateOfBackstage = () => (
     to="https://stateofbackstage.io"
     className="text-white font-bold underline-none hover:underline"
   >
-    Fill out the <span className="underline">State of Backstage survey</span> for a chance to win tickets to{' '}
-    <span className="uppercase bg-white text-blueroadie px-2 rounded-full mr-2">KUBECON EU 2025</span>
+    Last chance to fill out the 2025 <span className="underline">State of Backstage survey</span>
   </Link>
 );
 
