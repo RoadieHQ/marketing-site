@@ -54,7 +54,7 @@ Kinds of catalog entities synced to DX - An optional entity kind filter for sync
 
 Application identifier - Optional attribute used by DX to differentiate Backstage applications. Can be any string as long as it's unique within your DX account.
 
-Disable sync of catalog to DX - Optionally disable the catalog sync to DX.data collection.
+Disable sync of catalog to DX - In order to start using the plugin make sure this field is **unchecked**. It is automatically checked per default in order to avoid unnecessary catalog sync so once you start using the plugin you will need to uncheck this field.
 
 ### Adding DX card components to overview tab of the Entity Page
 
