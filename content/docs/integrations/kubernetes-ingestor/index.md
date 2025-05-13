@@ -73,8 +73,8 @@ To configure the plugin, you'll need to:
 2. Select the items you'd like to ingest. You can also choose to only include annotated resources, set the import frequency and exclude certain namespaces.
    ![Basic config](./config.webp)
 3. Click "save" then "apply and restart". It will take a few minutes for the entity provider to run and start importing entities.
-4. If you're importing claims you can add UI components from the crossplane plugin. In the catalog select "components" and filter by type "crossplane-claim". You can then add the following components, the CrossplaneResourcesGraph tab, the CrossplaneResourcesTable tab and the CrossplaneOverviewCard. (See docs on [how to add components](https://roadie.io/docs/details/updating-the-ui/))
-5. If you want to update claim manifests created through the templates you'll need to [create a template](https://roadie.io/docs/getting-started/scaffolding-components/) with the following content ([source](https://github.com/TeraSky-OSS/backstage-plugins/blob/main/plugins/gitops-manifest-updater/templates/sample.yaml)):
+4. If you're importing claims you can add UI components from the crossplane plugin. In the catalog select "components" and filter by type "crossplane-claim". You can then add the following components, the CrossplaneResourcesGraph tab, the CrossplaneResourcesTable tab and the CrossplaneOverviewCard. (See docs on [how to add components](../../details/updating-the-ui/))
+5. If you want to update claim manifests created through the templates you'll need to [create a template](../../docs/getting-started/scaffolding-components/) with the following content ([source](https://github.com/TeraSky-OSS/backstage-plugins/blob/main/plugins/gitops-manifest-updater/templates/sample.yaml)):
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
