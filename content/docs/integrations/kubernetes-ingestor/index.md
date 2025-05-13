@@ -10,6 +10,8 @@ integrationType: OSS plugin
 
 # Prerequisites
 
+Access to this plugin is enabled by a feature flag. Ask Roadie to enable this for you if you want to use it.
+
 Before configuring the kubernetes ingestor, you must first set up Kubernetes access in Backstage. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access.
 
 ## Required RBAC Permissions
