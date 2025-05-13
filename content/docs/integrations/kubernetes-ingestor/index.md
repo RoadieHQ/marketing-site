@@ -1,20 +1,20 @@
 ---
-title: TeraSky Crossplane Plugin
+title: Kubernetes Ingestor and Crossplane plugin
 publishedDate: '2024-03-20T21:00:00.0Z'
-description: How to configure and use the TeraSky Crossplane plugin for Backstage.
+description: How to configure and use the TeraSky kubernetes ingestor & Crossplane plugin for Backstage.
 
 humanName: Crossplane
 logoImage: '../../../assets/logos/crossplane/logo-crossplane.webp'
 integrationType: OSS plugin
----
+--- 
 
 # Prerequisites
 
-Before configuring the TeraSky Crossplane plugin, you must first set up Kubernetes access in Backstage. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access.
+Before configuring the kubernetes ingestor, you must first set up Kubernetes access in Backstage. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access.
 
-# Required RBAC Permissions
+## Required RBAC Permissions
 
-The plugin requires specific RBAC permissions to function properly. You'll need two ClusterRoles:
+The plugin requires specific RBAC permissions to function properly. You'll need cluster role bindings for two ClusterRoles:
 
 1. The `crossplane-view` ClusterRole (which should be created when you install crossplane)
 2. A custom ClusterRole to read CustomResourceDefinitions:
@@ -49,8 +49,30 @@ The plugin ingests Crossplane Composite Resource Definitions (XRDs) and converts
 
 ## Template Updates
 
-The plugin supports updating existing manifests after creation. Here's an example template for updating manifests ([source](https://github.com/TeraSky-OSS/backstage-plugins/blob/main/plugins/gitops-manifest-updater/templates/sample.yaml)):
+The plugin supports updating existing manifests after creation. 
 
+## Crossplane Claims Visualization
+
+The plugin ingests Crossplane Claims from your Kubernetes cluster and provides visualization capabilities:
+
+- View all Crossplane Claims in your cluster
+- See the status of each Claim
+- Visualize associated Kubernetes resources
+
+## Kubernetes Resource Import
+
+The plugin can also import Kubernetes resources like deployments into Backstage. This feature is provided as-is with somewhat limited flexibility, but can be useful for basic resource visualization and management.
+
+# Configuration
+
+To configure the plugin, you'll need to:
+
+1. Go to /administration/settings/crossplane-kubernetes-ingestor
+2. Select the items you'd like to ingest. You can also choose to only include annotated resources, set the import frequency and exclude certain namespaces.
+   ![Basic config](./config.webp)
+3. Click "save" then "apply and restart". It will take a few minutes for the entity provider to run and start importing entities.
+4. If you're importing claims you can add UI components from the crossplane plugin. In the catalog select "components" and filter by type "crossplane-claim". You can then add the following components, the CrossplaneResourcesGraph tab, the CrossplaneResourcesTable tab and the CrossplaneOverviewCard. (See docs on [how to add components](https://roadie.io/docs/details/updating-the-ui/))
+5. If you want to update claim manifests created through the templates you'll need to [create a template](https://roadie.io/docs/getting-started/scaffolding-components/) with the following content ([source](https://github.com/TeraSky-OSS/backstage-plugins/blob/main/plugins/gitops-manifest-updater/templates/sample.yaml)):
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
@@ -194,26 +216,6 @@ spec:
       - title: Download YAML Manifest
         url: data:application/yaml;charset=utf-8,${{ steps['read-file'].output.content }}
 ```
-
-## Crossplane Claims Visualization
-
-The plugin ingests Crossplane Claims from your Kubernetes cluster and provides visualization capabilities:
-
-- View all Crossplane Claims in your cluster
-- See the status of each Claim
-- Visualize associated Kubernetes resources
-
-## Kubernetes Resource Import
-
-The plugin can also import Kubernetes resources like deployments into Backstage. This feature is provided as-is with limited flexibility, but can be useful for basic resource visualization and management.
-
-# Configuration
-
-To configure the plugin, you'll need to:
-
-1. Ensure you have the required RBAC permissions set up
-2. Configure the plugin in your Backstage instance
-3. Set up the GitOps repository for template-based Claim creation
 
 # See Also
 
