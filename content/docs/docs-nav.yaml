@@ -54,6 +54,7 @@ nav:
       - Jenkins: '/docs/integrations/jenkins/'
       - Jira: '/docs/integrations/jira/'
       - Kubernetes: '/docs/integrations/kubernetes/'
+      - Kubernetes Ingestor: '/docs/integrations/kubernetes-ingestor/'
       - LaunchDarkly: '/docs/integrations/launchdarkly/'
       - Lighthouse: '/docs/integrations/lighthouse/'
       - Markdown Card Plugins: '/docs/integrations/markdown-card/'
