@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Ingestor and Crossplane plugin
-publishedDate: '2024-03-20T21:00:00.0Z'
-description: How to configure and use the TeraSky kubernetes ingestor & Crossplane plugin for Backstage.
+publishedDate: '2025-05-14T14:00:00.0Z'
+description: How to configure and use the TeraSky kubernetes ingestor & Crossplane plugin in Roadie.
 
 humanName: Crossplane
 logoImage: '../../../assets/logos/crossplane/logo-crossplane.webp'
@@ -12,7 +12,7 @@ integrationType: OSS plugin
 
 Access to this plugin is enabled by a feature flag. Ask Roadie to enable this for you if you want to use it.
 
-Before configuring the kubernetes ingestor, you must first set up Kubernetes access in Backstage. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access.
+Before configuring the kubernetes ingestor, you must first set up Kubernetes access in Roadie. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access.
 
 ## Required RBAC Permissions
 
@@ -39,11 +39,11 @@ rules:
 
 # Plugin Features
 
-The TeraSky Crossplane plugin provides several key features for managing Crossplane resources in Backstage:
+The TeraSky Crossplane plugin provides several key features for managing Crossplane resources in Roadie:
 
 ## Crossplane XRDs as Templates
 
-The plugin ingests Crossplane Composite Resource Definitions (XRDs) and converts them into Backstage templates. These templates can be used to create new Crossplane Claims through a GitOps workflow. When a template is used, the plugin will:
+The plugin ingests Crossplane Composite Resource Definitions (XRDs) and converts them into templates. These templates can be used to create new Crossplane Claims through a GitOps workflow. When a template is used, the plugin will:
 
 1. Create a Pull Request to your specified repository
 2. Include the generated Claim manifest in the PR
@@ -63,7 +63,7 @@ The plugin ingests Crossplane Claims from your Kubernetes cluster and provides v
 
 ## Kubernetes Resource Import
 
-The plugin can also import Kubernetes resources like deployments into Backstage. This feature is provided as-is with somewhat limited flexibility, but can be useful for basic resource visualization and management.
+The plugin can also import Kubernetes resources like deployments into Roadie. This feature is provided as-is with somewhat limited flexibility, but can be useful for basic resource visualization and management.
 
 # Configuration
 
