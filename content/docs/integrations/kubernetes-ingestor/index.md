@@ -3,8 +3,8 @@ title: Kubernetes Ingestor and Crossplane plugin
 publishedDate: '2025-05-14T14:00:00.0Z'
 description: How to configure and use the TeraSky kubernetes ingestor & Crossplane plugin in Roadie.
 
-humanName: Crossplane
-logoImage: '../../../assets/logos/crossplane/logo-crossplane.webp'
+humanName: Crossplane kubernetes Ingestor
+logoImage: '../../../assets/logos/crossplane/crossplane.webp'
 integrationType: OSS plugin
 --- 
 
