@@ -440,6 +440,21 @@ parameters:
           labelSelector: "metadata.description"
 ```
 
+### Integration and Plugin specific parameters
+
+The following parameters are dependent on their respective integration or plugin to be configured and avaialable prior to their implemention in a scaffolder template.
+
+#### Kubernetes Ingestor and Crossplane plugin
+This parameter field takes no input and only supports Crossplan manifest files at this time. A full example may be found on [Kubernetes Ingestor and Crossplane plugin > Configuration](/docs/integrations/kubernetes-ingestor/#configuration).
+
+```yaml
+properties:
+  gitOpsManifestUpdater:
+    title: GitOps Manifest Updater
+    type: object
+    ui:field: GitOpsManifestUpdater
+```
+
 ## Adding custom parameters
 
 You can extend and customize the available Scaffolder functionality by using [Roadie Custom Plugins](/docs/custom-plugins/overview/) and creating a `Field extension`.
