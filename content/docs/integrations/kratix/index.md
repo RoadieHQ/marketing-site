@@ -31,7 +31,9 @@ Before using the Kratix plugin in Roadie, you need to have:
 
 ### Plugin Configuration
 
-The Kratix plugin can be configured through the Roadie UI. Kratix configuration needs to be on two places within the Roadie application. First you need to setup a Kubernetes configuration to be able to connect to your cluster where your Kratix installation is running. Navigate to `https://<your-tenant>.roadie.so/administration/settings/plugins/kubernetes` and set up a Service Account type Kubernetes connection to your cluster  
+The Kratix plugin can be configured through the Roadie UI. Kratix configuration needs to be on two places within the Roadie application. First you need to setup a Kubernetes configuration to be able to connect to your cluster where your Kratix installation is running. Navigate to `https://<your-tenant>.roadie.so/administration/settings/plugins/kubernetes` and set up a Service Account type Kubernetes connection to your cluster. 
+
+Note that only Service Account type configuration is supported with the Syntasso Kratix plugin.
 
 ![Kubernetes Configuration in Roadie](./kubernetes-config-service-account.webp).
 After configuring your Kubernetes connection, you can set up the Kratix plugin to use that connection. This will allow you to access your Kratix resources, promises, and tasks within the application.
