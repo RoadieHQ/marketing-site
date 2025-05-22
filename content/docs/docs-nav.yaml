@@ -72,6 +72,7 @@ nav:
       - SonarQube: '/docs/integrations/sonarqube/'
       - Splunk On-call: '/docs/integrations/splunk-on-call/'
       - Stackoverflow: '/docs/integrations/stackoverflow/'
+      - Syntasso Kratix: '/docs/integrations/kratix/'
       - Tech radar: '/docs/integrations/tech-radar/'
       - Travis CI: '/docs/integrations/travis-ci/'
       - Wiz: '/docs/integrations/wiz/'

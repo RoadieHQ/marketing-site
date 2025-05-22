@@ -47,6 +47,7 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 | Parsing and Serialization | [yaml](#yaml)                                                               | Parse YAML data from various encoded content sources such as Base64, files, raw data, or URLs.                                                                            |                        |
 | Parsing and Serialization | [xml](#xml)                                                                 | Parse XML into JSON using various options and processing pipes, utilizing the `xml-js` library for conversion.                                                            |                        |
 |                           |
+| Infrastructure management | [ske:configure-resource](#skeconfigure-resource)                            | Creates and configures Kratix resources from Backstage                                                                                                                    | ✅️                     |
 | Content Manipulation      | [roadiehq:utils:jsonata](#roadiehqutilsjsonata)                             | Performs JSONata operations and transformations on input objects.                                                                                                         | ✅️                     |
 | Content Manipulation      | [roadiehq:utils:jsonata:yaml:transform](#roadiehqutilsjsonatayamltransform) | Performs JSONata operations and transformations on a YAML file in the workspace.                                                                                          | ✅️                     |
 | Content Manipulation      | [roadiehq:utils:jsonata:json:transform](#roadiehqutilsjsonatajsontransform) | Performs JSONata operations and transformations on a JSON file in the workspace.                                                                                          | ✅️                     |
@@ -58,6 +59,7 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 |                           |
 | Other Utils               | [uuid:v4:gen:plus](#uuidv4genplus)                                          | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |                        |
 | Other Utils               | [roadiehq:utils:sleep](#roadiehqutilssleep)                                 | Halts the scaffolding process for the given amount of seconds.                                                                                                            | ✅️                     |
+
 | Other Utils               | [vars:plus](#varsplus)                                                      | Handles and logs input variables, returning the same input as the output in a formatted structure.                                                                        |                        |
 
 
@@ -2004,6 +2006,32 @@ steps:
 - [Code](https://github.com/kode3tech/k3t-backstage-plugin-scaffolder-backend-module-plus/blob/29e02a71d9488efa726d805a86d25c15dd5b6a37/src/actions/builtin/extras/vars.ts)
 
 -----
+
+## ske:configure-resource
+
+This action creates and configures resources in Syntasso Kratix Enterprise (SKE) from Roadie.
+
+### Parameters
+
+| Parameter   | Description                               | Default | Required |
+|-------------|-------------------------------------------|---------|----------|
+| manifest    | Kubernetes manifest in YAML format        | -       | Yes      |
+
+##### **Examples**
+
+```yaml
+- action: ske:configure-resource
+  id: ske-configure-resource
+  input:
+    manifest: |
+      apiVersion: marketplace.kratix.io/v1alpha1
+      kind: jenkins
+      metadata:
+        name: ${{ parameters.objname }}
+        namespace: ${{ parameters.objnamespace}}
+      spec: ${{ parameters.spec | dump }}
+  name: Create a Jenkins
+```
 
 
 ## Backstage Specific
