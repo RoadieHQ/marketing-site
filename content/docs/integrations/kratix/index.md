@@ -90,4 +90,4 @@ For more detailed information about Kratix and its capabilities, refer to the [o
 
 For specific information about the Backstage integration, see:
 - [YAML file format](https://docs.kratix.io/ske/integrations/backstage/yaml-file-format)
-- [Plugin configuration](https://docs.kratix.io/ske/integrations/backstage/plugins)
+- [SKE Backtage Generator](https://docs.kratix.io/ske/integrations/backstage/generator)
