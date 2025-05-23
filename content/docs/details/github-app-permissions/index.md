@@ -12,7 +12,7 @@ Roadie provides two GitHub apps. If you do not wish to use the scaffolder, you c
 
 GitHub Apps are the recommended way for connecting to GitHub and accessing private repositories and other data. Roadie allows the use of a GitHub Personal Access Token also for initial testing purposes but there are various limitations with this approach such as low rate limit quotas for GitHub's APIs.
 
-Some plugins also make use of a temporary personal Oauth2 token via prompting users to sign in to GitHub to make API requests on behalf of the user, such as the [Pull Requests plugin](https://roadie.io/backstage/plugins/github-pull-requests/).
+Some plugins also make use of a temporary personal OAuth2 token via prompting users to sign in to GitHub to make API requests on behalf of the user, such as the [Pull Requests plugin](https://roadie.io/backstage/plugins/github-pull-requests/).
 
 
 ## Roadie Backstage Lite
