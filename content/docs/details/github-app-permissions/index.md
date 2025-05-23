@@ -10,6 +10,11 @@ This page explains the permissions required by the various GitHub Apps we use at
 
 Roadie provides two GitHub apps. If you do not wish to use the scaffolder, you can choose the Lite GitHub app in order to reduce the permissions granted.
 
+GitHub Apps are the recommended way for connecting to GitHub and accessing private repositories and other data. Roadie allows the use of a GitHub Personal Access Token also for initial testing purposes but there are various limitations with this approach such as low rate limit quotas for GitHub's APIs.
+
+Some plugins also make use of a temporary personal OAuth2 token via prompting users to sign in to GitHub to make API requests on behalf of the user, such as the [Pull Requests plugin](https://roadie.io/backstage/plugins/github-pull-requests/).
+
+
 ## Roadie Backstage Lite
 
 This app enables the core Backstage functionality of the service catalog and TechDocs.
