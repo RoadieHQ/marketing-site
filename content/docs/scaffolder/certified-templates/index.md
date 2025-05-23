@@ -10,7 +10,7 @@ When you start getting lots of templates and they start getting used a lot and r
 
 ### Grouping templates
 
-Roadie Admin users can create groups or categories of templates that will show in the list page. This can be done via the Settings page in the Scaffolder plugin config at `/administration/scaffolder`.
+Roadie Admin users can create groups or categories of templates that will show in the list page. This can be done via the Settings page in the Scaffolder plugin config at `/administration/setting/scaffolder`.
 
 ### Certified Templates
 
