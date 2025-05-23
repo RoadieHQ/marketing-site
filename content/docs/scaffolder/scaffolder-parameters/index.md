@@ -287,7 +287,7 @@ parameters:
 In a multipage form, each parameter page must contain `title` and `properties`
 
 
-### Complex Form Fields
+### Complex Form Fields (Builtin Custom Fields)
 
 The following items are enhanced form fields that can be used out of the box to build richer forms for your templates. 
 
@@ -439,6 +439,41 @@ parameters:
           valueSelector: "metadata.name"
           labelSelector: "metadata.description"
 ```
+
+#### GitOps Manifest Updater
+
+The GitOps Manifest Updater field extension allows you to update Kubernetes manifests stored in Git repositories directly from your Backstage templates. It automatically generates forms based on the OpenAPI schema of Kubernetes CRDs, letting you update GitOps-managed resources with a user-friendly interface.
+
+```yaml
+parameters:
+  properties:
+    manifest:
+      title: Update GitOps Manifest
+      type: string
+      description: Update Kubernetes manifest in Git repository
+      ui:field: GitOpsManifestUpdater
+      ui:options:
+        # You can either use an entity annotation to provide the manifest URL
+        # or allow the user to input it directly in the form
+        manifestSourceType: "entityAnnotation" # or "manualInput"
+        
+        # If using entityAnnotation, specify which annotation contains the URL
+        sourceAnnotation: "terasky.backstage.io/source-manifest-url"
+        
+        # Alternatively, provide a default URL when using manualInput
+        defaultManifestUrl: "https://github.com/example/repo/path/to/manifest.yaml"
+```
+
+You can find a [full example here](https://github.com/TeraSky-OSS/backstage-plugins/blob/main/plugins/gitops-manifest-updater/templates/sample.yaml)
+
+This field extension is particularly useful for:
+
+- Updating Crossplane claims and other Kubernetes CRDs stored in Git repositories
+- Implementing day-2 operations for GitOps-managed resources
+- Creating pull requests to modify existing Kubernetes manifests with schema validation
+
+The plugin generates a dynamic form based on the OpenAPI schema of the resource, populates it with current values from the Git repository, and creates a PR with the changes when submitted.
+
 
 ## Adding custom parameters
 
