@@ -1,5 +1,5 @@
 ---
-title: AI Assistant
+title: AI Assistant (Alpha)
 publishedDate: '2024-10-21T10:00:00.0Z'
 lastValidated: '2024-10-21T10:00:00.0Z'
 description: This guide explains how to configure the AI Assistant with model settings, embedding configurations, and entity inclusion for indexing.
@@ -17,6 +17,9 @@ Roadie AI Assistant allows you to intelligently query your catalog and technical
 You can customize your model configurations and embedding-based document indexing, as well as define the correct information to index for better accuracy for the responses. 
 
 This guide describes the necessary steps to configure the AI Assistant with appropriate model settings, embeddings, and document indexing. By following these steps, you will be able to optimize how the assistant processes and retrieves information from your organization's catalog and technical documents.
+
+NB: The AI assistant is in Alpha still and is not ready to be used for mainstream workloads due to the currently limited scope of its abilities and inconsistent results for more complex queries.
+
 
 ## Step 1: Configure the Supported Sources
 
