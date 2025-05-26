@@ -440,7 +440,11 @@ parameters:
           labelSelector: "metadata.description"
 ```
 
-#### GitOps Manifest Updater
+### Integration and Plugin specific parameters
+
+#### GitOps Manifest Updater (Crossplane)
+
+This parameter field takes no input and only supports Crossplane manifest files at this time.
 
 The GitOps Manifest Updater field extension allows you to update Kubernetes manifests stored in Git repositories directly from your Backstage templates. It automatically generates forms based on the OpenAPI schema of Kubernetes CRDs, letting you update GitOps-managed resources with a user-friendly interface.
 
