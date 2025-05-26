@@ -445,7 +445,7 @@ parameters:
 The following parameters are dependent on their respective integration or plugin to be configured and avaialable prior to their implemention in a scaffolder template.
 
 #### Kubernetes Ingestor and Crossplane plugin
-This parameter field takes no input and only supports Crossplan manifest files at this time. A full example may be found on [Kubernetes Ingestor and Crossplane plugin > Configuration](/docs/integrations/kubernetes-ingestor/#configuration).
+This parameter field takes no input and only supports Crossplane manifest files at this time. A full example may be found on [Kubernetes Ingestor and Crossplane plugin > Configuration](/docs/integrations/kubernetes-ingestor/#configuration).
 
 ```yaml
 properties:
