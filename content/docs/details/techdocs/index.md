@@ -35,7 +35,7 @@ We currently include the following MkDocs plugins in our build process:
     - tilde: Adds support for inserting subscripts and adds an easy way to place text in a tag.
 - [markdown_inline_graphviz](https://pypi.org/project/markdown-inline-graphviz/) - replaces inline Graphviz definitions with inline SVGs or PNGs
 - [plantuml_markdown](https://pypi.org/project/plantuml-markdown/) - inserts a PlantUML diagram as an image in your document
-- [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly-sane-lists/) - adds custom indents for nested lists, better linebreaks and paragraphs between lists.
+- [mdx_truly_sane_lists](https://pypi.org/project/mdx-truly_sane_lists/) - adds custom indents for nested lists, better linebreaks and paragraphs between lists.
 
 - [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) - simplifies configuring page titles and their order
 - [mkdocs-schema-reader](https://pypi.org/project/mkdocs-schema-reader/) - converts JSON Schema files into markdown
@@ -43,6 +43,10 @@ We currently include the following MkDocs plugins in our build process:
 - [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) - displays images, iframes, inline content and videos
 - [mkdocs-kroki-plugin](https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin) - A diagram library supporting multiple different diagram formats. See https://kroki.io/ for more information.
 - [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) - Allows you to render a whole doc with all pages so that you can export it to PDF or HTML via the browser.
+- [mkdocs-git-revision-date-localized-plugin](https://pypi.org/project/mkdocs-git-revision-date-localized-plugin/) - Displays the localized date of the last git revision for each page.
+- [mkdocs-literate-nav](https://pypi.org/project/mkdocs-literate-nav/) - Define the navigation structure in a Markdown file (e.g., `SUMMARY.md`).
+- [mkdocs-section-index](https://pypi.org/project/mkdocs-section-index/) - Treats `index.md` files as the index page for their section, making the section itself clickable in the navigation.
+- [mkdocs-same-dir](https://pypi.org/project/mkdocs-same-dir/) - Allows organizing source files in subdirectories without reflecting that structure in the navigation URLs or layout.
 
 **NB: To use these plugins you must include them in your `mkdocs.yml` file like so:**
 
