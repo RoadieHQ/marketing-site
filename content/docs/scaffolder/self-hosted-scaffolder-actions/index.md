@@ -9,6 +9,16 @@ description: A step-by-step tutorial on developing and utilizing custom Scaffold
 
 Roadie provides the possibility to run self-hosted, custom scaffolder actions as part of your scaffolder template. These actions can be written using the Roadie Agent Javascript/Typescript library. You can find the library and it's configuration options from its [NPM repository](https://www.npmjs.com/package/@roadiehq/roadie-agent). This documentation shows you how to configure your self-hosted actions to Roadie and write templates that use those actions.
 
+## Prerequisites
+
+The scaffolder actions will need connectivity back to the Roadie infrastructure in order to share files, output etc. As such you will need to ensure that the following hosts are accessible:
+
+
+```
+<yourtenant>.broker.roadie.so
+roadie-scaffolder-shared-workspace.s3.eu-west-1.amazonaws.com
+```
+
 ## Getting started
 
 ### Installing the agent library
