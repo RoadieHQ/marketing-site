@@ -47,12 +47,13 @@ If a user has no role associated yet, e.g. if it is the first time they have log
 
 To edit the default roles:
 
-- Visit `http://<tenant name>.roadie.so/administration/settings/roles`
+- Visit `http://<tenant name>.roadie.so/administration/manage-users/roles`
 - Click the edit pencil beside the roles you would like to be the default roles
 - The click "Set as default role" and save.
 - You can perform similar steps to make a role no longer a default role.
 
 ## Creating custom roles
+
 **This feature is a paid add-on of the Role-Based Access Control feature. If you want access, please contact our support or sales teams.**
 
 Users with the permissions required to set new or custom roles can do so using the User Management area in the Adminstration section. New roles are composed of policies. To understand how to set custom policies, please review the [Managing Policies](/docs/details/managing-policies/) section.

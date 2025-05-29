@@ -12,13 +12,13 @@ In Roadie, **policies** are integral components of the permissions framework, go
 
 **Key aspects of policies:**
 
-- **Authorization Decisions:** Policies determine whether a user is permitted to execute a particular action. For instance, a policy might allow only the owner of a service to delete it from the catalog. 
-- **Conditional Logic:** Policies can incorporate complex conditions, such as verifying if a user belongs to a specific group or possesses certain attributes, to make nuanced authorization decisions. 
-- **Customization:** Administrators have the flexibility to craft custom policies tailored to their organization's unique requirements, ensuring that access controls align with internal processes and security standards. 
+- **Authorization Decisions:** Policies determine whether a user is permitted to execute a particular action. For instance, a policy might allow only the owner of a service to delete it from the catalog.
+- **Conditional Logic:** Policies can incorporate complex conditions, such as verifying if a user belongs to a specific group or possesses certain attributes, to make nuanced authorization decisions.
+- **Customization:** Administrators have the flexibility to craft custom policies tailored to their organization's unique requirements, ensuring that access controls align with internal processes and security standards.
 
 By implementing policies, Roadie ensures that access to resources is managed effectively, enhancing security and maintaining the integrity of the development environment.
 
-To configure this in Roadie we provide a UI for **Policies Management** and you can access it at: `https://<tenant name>.roadie.so/administration/settings/policies`.
+To configure this in Roadie we provide a UI for **Policies Management** and you can access it at: `https://<tenant name>.roadie.so/administration/manage-users/policies`.
 
 Currently, a set of permissions is available from the upstream Backstage project, with the option to create and validate new permissions.
 
