@@ -119,6 +119,11 @@ nav:
       - Working with plugins:
           - Required metadata: '/docs/details/required-metadata/'
           - Requesting plugins: '/docs/details/requesting-plugins/'
+      - Roadie Local:
+          - Getting Started: '/docs/details/roadie-local/'
+          - Custom Docker Images: '/docs/details/roadie-local/custom-docker-images/'
+          - Custom Domain: '/docs/details/roadie-local/custom-domain/'
+          - Custom  Authentication: '/docs/details/roadie-local/custom-authentication/'
       - Updating the UI: '/docs/details/updating-the-ui/'
   - Custom plugins:
       - Overview: '/docs/custom-plugins/overview/'
