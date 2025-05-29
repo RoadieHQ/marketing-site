@@ -59,3 +59,11 @@ us for support:
 *.intercom.io
 *.intercom.com
 ```
+
+# Custom Scaffolder Actions
+
+If you are running custom scaffolder actions within your infrastructure action will need to have access to the following URL:
+
+```
+roadie-scaffolder-shared-workspace.s3.eu-west-1.amazonaws.com
+```
