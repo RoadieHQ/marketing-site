@@ -5,12 +5,12 @@ description: Roadie Local with custom auth
 ---
 
 Roadie Local can work with a custom identity provider. The supported identity providers are
-determined by [those supported by vouch-proxy](https://github.com/vouch/vouch-proxy/tree/v0.27.1/config), which is what Roadie Local uses for authentication
-under the hood.
+determined by [those supported by vouch-proxy](https://github.com/vouch/vouch-proxy/tree/v0.27.1/config),
+which is what Roadie Local uses for authentication under the hood.
 
 ## Configuring custom authentication
 
-Create a file (e.g. `./test-vouch-config.yaml`) with the following contents filled out from the OAuth provider of choice:
+Create a file (e.g. `./vouch-config.yaml`) with the following contents filled out from the OAuth provider of choice:
 
 ```yaml
 oauth:
@@ -31,22 +31,11 @@ If not using the builtin Keycloak service, change `auth_url` and `end_session_en
 Then set the `VOUCH_CONFIG_PATH` environment variable to point to your config file:
 
 ```bash
-# In .env file
-VOUCH_CONFIG_PATH=/path/to/your/config.yaml
+VOUCH_CONFIG_PATH=/path/to/your/vouch-config.yaml
 ```
 
-You can now either:
-
-1. Use the Docker Compose script directly:
+Or, pass this config file to the CLI with the `-c` option:
 
 ```bash
-export $(cat .env | xargs) 
-docker compose up --no-attach frontend --no-attach backend --no-attach database
-```
-
-2. Or use the CLI with the new options:
-
-```bash
-# The -c flag now sets VOUCH_CONFIG_PATH directly
-./roadie-local start  -c /path/to/your/config.yaml -d your-domain.example.com -p https 
+./roadie-local start  -c /path/to/your/vouch-config.yaml
 ```

@@ -39,10 +39,10 @@ docker push your-registry.example.com/backstage-frontend-local:20250430083237
 When running Roadie Local, set environment variables to use your images:
 
 ```bash
-export FRONTEND_IMAGE=your-registry.example.com/backstage-frontend-local:20250430083237
-export BACKEND_IMAGE=your-registry.example.com/backstage-backend-local:20250430083239
-export AUTH_IMAGE=your-registry.example.com/roadie-keycloak-local:20250501094112
-export VOUCH_IMAGE=your-registry.example.com/roadie-vouch-local:20250501094112
+export FRONTEND_IMAGE=your-registry.example.com/backstage-frontend-local
+export BACKEND_IMAGE=your-registry.example.com/backstage-backend-local
+export AUTH_IMAGE=your-registry.example.com/roadie-keycloak-local
+export VOUCH_IMAGE=your-registry.example.com/roadie-vouch-local
 export POSTGRES_IMAGE=postgres:14-alpine
 
 # Start Roadie using your images (license check is bypassed when FRONTEND_IMAGE and BACKEND_IMAGE are set)
