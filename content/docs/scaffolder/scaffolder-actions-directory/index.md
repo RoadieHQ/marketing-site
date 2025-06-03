@@ -165,13 +165,13 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 | GitHub          | [publish:github:pull-request](#publishgithubpull-request)                     | Creates a pull request in a pre-existing repository using files from the workspace.                                                                                         | ✅️                     |
 | GitHub          | [github:actions:dispatch](#githubactionsdispatch)                             | Allows you to trigger the execution of a GitHub action on a repository.                                                                                                     | ✅️                     |
 | GitHub          | [github:webhook](#githubwebhook)                                              | Configures a webhook on an existing GitHub repository, requiring `repoUrl` and `webhookUrl`.                                                                                | ✅️                     |
-| GitHub          | [github:autolinks:create](#githubautolinkscreate)                             | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                                 |                        |
+| GitHub          | [github:autolinks:create](#githubautolinkscreate)                             | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                                 |  ✅️                       |
 | GitHub          | [github:deployKey:create](#githubdeploykeycreate)                             | Creates and stores GitHub Deploy Keys, with the option to encrypt and store the private key as a GitHub secret.                                                             |                        |
-| GitHub          | [github:environment:create](#githubenvironmentcreate)                         | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                            |                        |
+| GitHub          | [github:environment:create](#githubenvironmentcreate)                         | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                            |  ✅️                       |
 | GitHub          | [github:issues:label](#githubissueslabel)                                     | Adds labels to pull requests or issues on GitHub.                                                                                                                           | ✅️                     |
-| GitHub          | [github:pages:enable](#githubpagesenable)                                     | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                                          |                        |
-| GitHub          | [github:repo:create](#githubrepocreate)                                       | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                       |                        |
-| GitHub          | [github:repo:push](#githubrepopush)                                           | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                    |                        |
+| GitHub          | [github:pages:enable](#githubpagesenable)                                     | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                      | ✅️                       |   
+| GitHub          | [github:repo:create](#githubrepocreate)                                       | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                       | ✅️                        |
+| GitHub          | [github:repo:push](#githubrepopush)                                           | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                    |  ✅️                       |
 | GitHub          | [parse:repo-url:plus](#parserepo-urlplus)                                     | Parses GitHub repository URLs and extracts relevant metadata based on a specified schema.                                                                                   |                        |
 |                 |
 | GitLab          | [publish:gitlab](#publishgitlab)                                              | Initializes a Git repository of the content in the workspace and publishes it to GitLab.                                                                                    | ✅️                     |
@@ -4950,6 +4950,8 @@ The `github:webhook` action does not have any outputs.
 
 
 #### `github:autolinks:create`
+✅️ Ready to use in Roadie
+
 Action to create autolink references for GitHub repositories, which automatically link certain keywords to specific URLs in issues, pull requests, or commits.
 
 ##### **Inputs**
@@ -5027,6 +5029,8 @@ This is for creating and storing a GitHub Deploy Key, specifying the necessary i
 
 
 #### `github:environment:create`
+✅️ Ready to use in Roadie
+
 Action for creating deployment environments on GitHub.
 
 ##### **Inputs**
@@ -5091,6 +5095,8 @@ None
 
 
 #### `github:pages:enable`
+✅️ Ready to use in Roadie
+
 Action for enabling GitHub Pages for a specified repository, with various customization options such as the build type, source branch, and source path.
 
 ##### **Inputs**
@@ -5127,6 +5133,8 @@ None
 
 
 #### `github:repo:create`
+✅️ Ready to use in Roadie
+
 The code defines a Backstage action for creating GitHub repositories programmatically, allowing customization of repository settings, collaborators, and configurations.
 
 ##### **Inputs**
@@ -5191,6 +5199,8 @@ Creates a new GitHub repository with a specified URL and description.
 
 
 #### `github:repo:push`
+✅️ Ready to use in Roadie
+
 Action that initializes a git repository in a workspace and pushes it to GitHub, with options to configure branch protection, commit rules, and other repository settings.
 
 ##### **Inputs**
