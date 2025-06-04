@@ -4988,6 +4988,8 @@ None
 
 
 #### `github:deployKey:create`
+✅️ Ready to use in Roadie
+
 Action for Backstage that creates and stores GitHub Deploy Keys, including the ability to encrypt and store the associated private key as a GitHub secret.
 
 ##### **Inputs**
