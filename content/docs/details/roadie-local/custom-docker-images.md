@@ -24,9 +24,6 @@ export ROADIE_LICENSE=<license_key>
 Re-tag the pulled images and push them to your registry:
 
 ```bash
-# List images to see what needs to be pushed
-docker images | grep roadie
-
 # Example for retagging and pushing (replace with your registry URL)
 docker tag 131774410247.dkr.ecr.eu-west-1.amazonaws.com/backstage-frontend-local:20250430083237 your-registry.example.com/backstage-frontend-local:20250430083237
 docker push your-registry.example.com/backstage-frontend-local:20250430083237
