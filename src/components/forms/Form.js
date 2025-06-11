@@ -29,11 +29,10 @@ const Form = ({
   children,
   onHoneypotChange,
   honeypotValue,
-  disableRecaptcha = false,
   ...rest
 }) => (
   <>
-    {!disableRecaptcha && recaptchaEnabled() && (
+    {recaptchaEnabled() && (
       <Helmet>
         <script src="https://www.google.com/recaptcha/api.js" async defer />
       </Helmet>
@@ -43,7 +42,7 @@ const Form = ({
       method="post"
       data-netlify="true"
       data-netlify-honeypot={HONEYPOT_FIELD_NAME}
-      data-netlify-recaptcha={!disableRecaptcha && recaptchaEnabled() ? 'true' : undefined}
+      data-netlify-recaptcha={recaptchaEnabled() ? 'true' : undefined}
       name={name}
       {...rest}
     >
