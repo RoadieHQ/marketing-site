@@ -382,7 +382,7 @@ This custom scaffolder field, makes an API call to the Backstage backend and all
 <div role="alert">
   <div class="docs-cta__info_title">Field Conflicts</div>
   <div  class="docs-cta__info_message">
-    <p>`labelSelector` and `labelTemplate` are mutually exclusive and cannot both be used in a single property field.</p>
+    <p><code>labelSelector</code> and <code>labelTemplate</code> are mutually exclusive and cannot both be used in a single property field.</p>
   </div>
 </div> 
 
