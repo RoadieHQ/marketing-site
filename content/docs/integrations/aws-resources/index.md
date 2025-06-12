@@ -28,8 +28,8 @@ Follow the steps [here](/docs/details/accessing-aws-resources) to create the rol
 The role needs to follow this naming convention `arn:aws:iam::*:role/[your-tenant-name]-roadie-read-only-role` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
 
 <div role="alert">
-  <div class="docs-cta__warning_title">Defining the correct AWS role</div>
-  <div  class="docs-cta__warning_message">
+  <div class="docs-cta__tip_title">Defining the correct AWS role</div>
+  <div  class="docs-cta__tip_message">
     <p>⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text <code>[tenant-name]-roadie-</code>. If other naming conventions are used, the role assumption is blocked by security measures.
     </p>
   </div>
@@ -104,8 +104,8 @@ You can add multiple integrations towards multiple AWS accounts or regions.
 ### Option 2 - AWS Organizations based autodiscovery
 
 <div role="alert">
-  <div class="docs-cta__info_title">Beta Feature</div>
-  <div  class="docs-cta__info_message">
+  <div class="docs-cta__warning_title">Beta Feature</div>
+  <div  class="docs-cta__warning_message">
     <p>The Autodiscovery of AWS Accounts feature is currently in beta. Please reach out to Roadie Support to request this is enabled.
     </p>
   </div>
