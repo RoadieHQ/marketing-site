@@ -103,6 +103,14 @@ You can add multiple integrations towards multiple AWS accounts or regions.
 
 ### Option 2 - AWS Organizations based autodiscovery
 
+<div role="alert">
+  <div class="docs-cta__warning_title">Beta Feature</div>
+  <div  class="docs-cta__warning_message">
+    <p>The Autodiscovery of AWS Accounts feature is currently in beta. Please reach out to Roadie Support to request this is enabled.
+    </p>
+  </div>
+</div>
+
 ![aws-autodiscovery-config.webp](aws-autodiscovery-config.webp)
 
 On the AWS Resources settings page `Administration > Settings > AWS Resources` fill out the AWS Resource Autodiscovery Settings.
