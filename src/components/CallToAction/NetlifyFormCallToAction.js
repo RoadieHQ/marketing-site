@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
+import { currentlyExecutingGitBranch, newsletterRecaptchaEnabled } from '../../environment';
 import { trackSubscribe } from '../../googleAnalytics';
 
 export const encode = (data) => {
@@ -37,7 +37,7 @@ export const submitEmailToNetlifyForms = async ({
       [HONEYPOT_FIELD_NAME]: honeypotText,
     };
 
-    if (recaptchaEnabled()) {
+    if (newsletterRecaptchaEnabled()) {
       bodyParams['g-recaptcha-response'] = recaptchaResponse;
     }
 
@@ -75,6 +75,8 @@ const NetlifyFormCallToAction = ({
   const [subForm, setSubForm] = useState({
     message: subFormMessage,
   });
+
+  console.log('NetlifyFormCallToAction buttonText', buttonText);
 
   const onSubmit = async (e) => {
     e.preventDefault();

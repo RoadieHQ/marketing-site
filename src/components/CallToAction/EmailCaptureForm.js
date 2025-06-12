@@ -1,9 +1,10 @@
 import React from 'react';
 import { PaperAirplaneIcon } from '@heroicons/react/outline';
 import classnames from 'classnames';
+import { Helmet } from 'react-helmet';
 
 import { TextField, Button, Form, Recaptcha } from 'components';
-import { recaptchaEnabled } from '../../environment';
+import { newsletterRecaptchaEnabled } from '../../environment';
 
 const EmailCaptureForm = ({
   onSubmit,
@@ -26,57 +27,71 @@ const EmailCaptureForm = ({
   setHoneypotText,
 }) => {
   let disabled = submitting || !email || email === '';
-  if (recaptchaEnabled()) {
+  if (newsletterRecaptchaEnabled()) {
     disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
+  console.log('EmailCaptureForm buttonText', buttonText);
+  console.log('newsletterRecaptchaEnabled', newsletterRecaptchaEnabled());
+
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
-    <Form
-      onSubmit={onSubmit}
-      name={netlifyFormName}
-      buttonText={buttonText}
-      honeypotValue={honeypotValue}
-      onHoneypotChange={setHoneypotText}
-    >
-      <div className={classnames('flex flex-col', className)}>
-        <div className="mb-12">
-          <TextField
-            type="email"
-            name="email"
-            id={emailInputId}
-            aria-label="Work email address"
-            placeholder={placeholderText}
-            onChange={setEmail}
-            value={email}
-            autoFocus={autoFocus}
-            color="primary"
-            helpText={subForm.message}
-            helpTextState={subForm.state}
-            fullWidth
-          />
-        </div>
+    <>
+      {newsletterRecaptchaEnabled() && (
+        <Helmet>
+          <script src="https://www.google.com/recaptcha/api.js" async defer />
+        </Helmet>
+      )}
 
-        <Recaptcha
-          onChange={setRecaptchaResponse}
-          wrapperClassName="mb-4 flex justify-center"
-          setRecaptchaExpired={setRecaptchaExpired}
-        />
+      <Form
+        onSubmit={onSubmit}
+        name={netlifyFormName}
+        buttonText={buttonText}
+        honeypotValue={honeypotValue}
+        onHoneypotChange={setHoneypotText}
+        data-netlify-recaptcha={newsletterRecaptchaEnabled() ? 'true' : undefined}
+      >
+        <div className={classnames('flex flex-col', className)}>
+          <div className="mb-12">
+            <TextField
+              type="email"
+              name="email"
+              id={emailInputId}
+              aria-label="Work email address"
+              placeholder={placeholderText}
+              onChange={setEmail}
+              value={email}
+              autoFocus={autoFocus}
+              color="primary"
+              helpText={subForm.message}
+              helpTextState={subForm.state}
+              fullWidth
+            />
+          </div>
 
-        <div className="md:ml-1 mt-4">
-          <Button
-            text={buttonText}
-            disabled={disabled}
-            prefixIcon={<PaperAirplaneIcon />}
-            id={buttonId}
-            fullWidth
-            color="primary"
-          />
+          {newsletterRecaptchaEnabled() && (
+            <Recaptcha
+              onChange={setRecaptchaResponse}
+              wrapperClassName="mb-4 flex justify-center"
+              setRecaptchaExpired={setRecaptchaExpired}
+            />
+          )}
+
+          <div className="md:ml-1 mt-4">
+            <Button
+              text={buttonText}
+              disabled={disabled}
+              prefixIcon={<PaperAirplaneIcon />}
+              id={buttonId}
+              fullWidth
+              color="primary"
+            />
+          </div>
         </div>
-      </div>
-    </Form>
-  );
-  /* eslint-enable jsx-a11y/no-autofocus */
-};
+      </Form>
+    </>
+    );
+    /* eslint-enable jsx-a11y/no-autofocus */
+  };
 
 export default EmailCaptureForm;
