@@ -377,7 +377,14 @@ This returns a variable in the format `group:<namespace>/<group-or-user-name>`. 
 
 #### Picker from external API source
 
-This custom scaffolder field, makes an API call to the Backstage backend and allows the result to be rendered to a list.
+This custom scaffolder field, makes an API call to the Backstage backend and allows the result to be rendered to a list. 
+
+<div role="alert">
+  <div class="docs-cta__info_title">Field Conflicts</div>
+  <div  class="docs-cta__info_message">
+    <p><code>labelSelector</code> and <code>labelTemplate</code> are mutually exclusive and cannot both be used in a single property field.</p>
+  </div>
+</div> 
 
 ```yaml
 parameters:
@@ -403,8 +410,12 @@ parameters:
         # (Optional) This selects the field in the array to use for the value of each select item. If its not specified
         # it will use the value of the item directly.
         valueSelector: 'count'
+
         # (Optional) This selects the field in the array to use for the label of each select item.
         labelSelector: 'value'
+
+        # (Optional) This selects the fields in the array to use for the label of each select item with Nunjucks templating format.
+        labelTemplate: '{{ item.value1 }}:{{ item.value2 }}'
 ```
 
 Some of the `SelectFieldFromApi` options allow using parameters from earlier parameter pages to be used to template the options. The templated options are `params`, `path`, `valueSelector` and `labelSelector`. e.g.
