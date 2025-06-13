@@ -76,8 +76,6 @@ const NetlifyFormCallToAction = ({
     message: subFormMessage,
   });
 
-  console.log('NetlifyFormCallToAction buttonText', buttonText);
-
   const onSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
