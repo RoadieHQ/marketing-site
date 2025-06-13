@@ -31,8 +31,7 @@ const EmailCaptureForm = ({
     disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
-  console.log('EmailCaptureForm buttonText', buttonText);
-  console.log('newsletterRecaptchaEnabled', newsletterRecaptchaEnabled());
+// Removed unnecessary debug logging statements.
 
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
