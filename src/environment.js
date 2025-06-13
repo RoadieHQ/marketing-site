@@ -8,10 +8,17 @@ export const isPreviewSite = () => {
   return false;
 };
 
-export const recaptchaEnabled = () => {
-  if (process.env.GATSBY_RECAPTCHAS_ENABLED === 'false') return false;
+export const newsletterRecaptchaEnabled = () => {
+  if (process.env.GATSBY_NEWSLETTER_RECAPTCHA_ENABLED === 'false') return false;
   return true;
 };
+
+
+export const funnelRecaptchaEnabled = () => {
+  if (process.env.GATSBY_FUNNEL_RECAPTCHA_ENABLED === 'false') return false;
+  return true;
+};
+
 
 export const chargebeeSubdomain = () => {
   return process.env.GATSBY_CHARGEBEE_SUBDOMAIN || 'roadie-test';

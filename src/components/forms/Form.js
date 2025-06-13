@@ -1,7 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
-import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
+import { currentlyExecutingGitBranch } from '../../environment';
 import Input from './Input';
 import { HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 
@@ -29,21 +28,13 @@ const Form = ({
   children,
   onHoneypotChange,
   honeypotValue,
-  disableRecaptcha = false,
   ...rest
 }) => (
   <>
-    {!disableRecaptcha && recaptchaEnabled() && (
-      <Helmet>
-        <script src="https://www.google.com/recaptcha/api.js" async defer />
-      </Helmet>
-    )}
-
     <form
       method="post"
       data-netlify="true"
       data-netlify-honeypot={HONEYPOT_FIELD_NAME}
-      data-netlify-recaptcha={!disableRecaptcha && recaptchaEnabled() ? 'true' : undefined}
       name={name}
       {...rest}
     >

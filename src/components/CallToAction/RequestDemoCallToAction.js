@@ -7,12 +7,13 @@ import {
   Form,
   Recaptcha,
 } from 'components';
+import { Helmet } from 'react-helmet';
 
 import { ScmToolSelect } from '../forms/ScmToolSelect';
 
 import trackPlausibleEvent from '../../plausible';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
+import { currentlyExecutingGitBranch, funnelRecaptchaEnabled } from '../../environment';
 import { trackRequestDemo, trackSubscribe } from '../../googleAnalytics';
 
 const submitToNetlifyForms = async ({
@@ -39,9 +40,8 @@ const submitToNetlifyForms = async ({
   formData.append(HONEYPOT_FIELD_NAME, honeypotText);
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
-  console.log('location.search', location.search);
   formData.append('location-search', locationSearch);
-  if (recaptchaEnabled()) {
+  if (funnelRecaptchaEnabled()) {
     formData.append('g-recaptcha-response', recaptchaResponse);
   }
 
@@ -140,89 +140,100 @@ const RequestDemoCallToAction = ({
   };
 
   let disabled = submitting || !emailValues.email || emailValues.email === '';
-  if (recaptchaEnabled()) {
+  if (funnelRecaptchaEnabled()) {
     disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
   return (
-    <Form
-      onSubmit={onSubmit}
-      name={netlifyFormName}
-      onHoneypotChange={setHoneypotText}
-      honeypotValue={honeypotText}
-      buttonText={buttonText}
-    >
-      <input type="hidden" name="location-search" value={locationSearch} />
+    <>
+      {funnelRecaptchaEnabled() && (
+        <Helmet>
+          <script src="https://www.google.com/recaptcha/api.js" async defer />
+        </Helmet>
+      )}
 
-      <div className="mb-10">
-        <TextField
-          label="Full name*"
-          type="text"
-          name="name"
-          id="request-demo-name-input"
-          onChange={setName}
-          value={name}
-          fullWidth
-        />
-      </div>
+      <Form
+        onSubmit={onSubmit}
+        name={netlifyFormName}
+        onHoneypotChange={setHoneypotText}
+        honeypotValue={honeypotText}
+        buttonText={buttonText}
+        data-netlify-recaptcha={funnelRecaptchaEnabled() ? 'true' : undefined}
+      >
+        <input type="hidden" name="location-search" value={locationSearch} />
 
-      <div className="lg:flex mb-10">
-        <div className="lg:w-1/2 mr-4">
-          <EmailField
-            label="Work email address*"
-            type="email"
-            name="email"
-            id="request-demo-email-input"
-            setValue={setEmailValues}
-            value={emailValues}
+        <div className="mb-10">
+          <TextField
+            label="Full name*"
+            type="text"
+            name="name"
+            id="request-demo-name-input"
+            onChange={setName}
+            value={name}
             fullWidth
           />
         </div>
 
-        <div className="lg:w-1/2 mt-4 ml-4">
-          <ScmToolSelect
-            label="Primary source code host*"
-            onChange={setScmTool}
-            currentValue={scmTool}
-            idPrefix="request-demo-"
-            color="primary"
-            showProductPrompts={showProductPrompts}
+        <div className="lg:flex mb-10">
+          <div className="lg:w-1/2 mr-4">
+            <EmailField
+              label="Work email address*"
+              type="email"
+              name="email"
+              id="request-demo-email-input"
+              setValue={setEmailValues}
+              value={emailValues}
+              fullWidth
+            />
+          </div>
+
+          <div className="lg:w-1/2 mt-4 ml-4">
+            <ScmToolSelect
+              label="Primary source code host*"
+              onChange={setScmTool}
+              currentValue={scmTool}
+              idPrefix="request-demo-"
+              color="primary"
+              showProductPrompts={showProductPrompts}
+            />
+          </div>
+        </div>
+
+        <div className="mb-10">
+          <TextField
+            label="How did you hear about Roadie?"
+            type="text"
+            name="reported-attribution"
+            id="reported-attribution"
+            onChange={setAttribution}
+            value={attribution}
+            fullWidth
           />
         </div>
-      </div>
 
-      <div className="mb-10">
-        <TextField
-          label="How did you hear about Roadie?"
-          type="text"
-          name="reported-attribution"
-          id="reported-attribution"
-          onChange={setAttribution}
-          value={attribution}
-          fullWidth
+        <SubscribeToNewsletterSwitch
+          checked={subToNewsletter}
+          onChange={setSubToNewsletter}
+          className="mb-10"
         />
-      </div>
 
-      <SubscribeToNewsletterSwitch
-        checked={subToNewsletter}
-        onChange={setSubToNewsletter}
-        className="mb-10"
-      />
+        {funnelRecaptchaEnabled() && (
+          <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
+        )}
 
-      <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
-
-      <div className="sm:col-span-2 mt-10">
-        <Button
-          type="submit"
-          color="primary"
-          size="large"
-          fullWidth={true}
-          text={buttonText}
-          disabled={disabled}
-        />
-      </div>
-    </Form>
+        <div className="sm:col-span-2 mt-10">
+          <Button
+            type="submit"
+            color="primary"
+            size="large"
+            fullWidth={true}
+            text={buttonText}
+            disabled={disabled}
+          />
+        </div>
+      </Form>
+    </>
   );
 };
 
-export default RequestDemoCallToAction;
+  export default RequestDemoCallToAction;

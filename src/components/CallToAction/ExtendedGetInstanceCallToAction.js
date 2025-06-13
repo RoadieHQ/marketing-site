@@ -9,11 +9,12 @@ import {
   Form,
   Recaptcha,
 } from 'components';
+import { Helmet } from 'react-helmet';
 import { ScmToolSelect } from '../forms/ScmToolSelect';
 
 import trackPlausibleEvent from '../../plausible';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
-import { currentlyExecutingGitBranch, recaptchaEnabled } from '../../environment';
+import { currentlyExecutingGitBranch, funnelRecaptchaEnabled } from '../../environment';
 import { trackRequestTrial, trackSubscribe } from '../../googleAnalytics';
 
 const submitToNetlifyForms = async ({
@@ -41,7 +42,7 @@ const submitToNetlifyForms = async ({
   formData.append('deployed-branch', branch);
   formData.append('submit-button-label', submitButtonLabel);
   formData.append('location-search', locationSearch);
-  if (recaptchaEnabled()) {
+  if (funnelRecaptchaEnabled()) {
     formData.append('g-recaptcha-response', recaptchaResponse);
   }
 
@@ -105,7 +106,7 @@ const ExtendedGetInstanceCallToAction = ({
   };
 
   let disabled = submitting || !emailValues.email || emailValues.email === '' || !agreed;
-  if (recaptchaEnabled()) {
+  if (funnelRecaptchaEnabled()) {
     disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
@@ -139,96 +140,107 @@ const ExtendedGetInstanceCallToAction = ({
   };
 
   return (
-    <Form
-      onSubmit={onSubmit}
-      name={netlifyFormName}
-      honeypotValue={honeypotText}
-      onHoneypotChange={setHoneypotText}
-      buttonText={buttonText}
-      className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
-    >
-      <input type="hidden" name="location-search" value={locationSearch} />
+    <>
+      {funnelRecaptchaEnabled() && (
+        <Helmet>
+          <script src="https://www.google.com/recaptcha/api.js" async defer />
+        </Helmet>
+      )}
 
-      <EmailField
-        id="get-instance-email-input"
-        label="Work email address *"
-        name="email"
-        type="email"
-        autoComplete="email"
-        fullWidth={true}
-        value={emailValues}
-        setValue={setEmailValues}
-      />
+      <Form
+        onSubmit={onSubmit}
+        name={netlifyFormName}
+        honeypotValue={honeypotText}
+        onHoneypotChange={setHoneypotText}
+        buttonText={buttonText}
+        className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+        data-netlify-recaptcha={funnelRecaptchaEnabled() ? 'true' : undefined}
+      >
+        <input type="hidden" name="location-search" value={locationSearch} />
 
-      <div className="sm:col-span-2">
-        <ScmToolSelect
-          label="Primary source code host"
-          onChange={setScmTool}
-          currentValue={scmTool}
-          idPrefix="get-instance-"
-          color="primary"
-          showProductPrompts={showProductPrompts}
+        <EmailField
+          id="get-instance-email-input"
+          label="Work email address *"
+          name="email"
+          type="email"
+          autoComplete="email"
+          fullWidth={true}
+          value={emailValues}
+          setValue={setEmailValues}
         />
-      </div>
 
-      <TextField
-        label="How did you hear about Roadie?"
-        type="text"
-        name="reported-attribution"
-        id="reported-attribution"
-        onChange={setAttribution}
-        value={attribution}
-        fullWidth
-      />
+        <div className="sm:col-span-2">
+          <ScmToolSelect
+            label="Primary source code host"
+            onChange={setScmTool}
+            currentValue={scmTool}
+            idPrefix="get-instance-"
+            color="primary"
+            showProductPrompts={showProductPrompts}
+          />
+        </div>
 
-      <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} />
+        <TextField
+          label="How did you hear about Roadie?"
+          type="text"
+          name="reported-attribution"
+          id="reported-attribution"
+          onChange={setAttribution}
+          value={attribution}
+          fullWidth
+        />
 
-      <div className="sm:col-span-2 mt-4">
-        <div className="flex items-start">
-          <div className="flex-shrink-0">
-            <Switch
-              checked={agreed}
-              onChange={setAgreed}
-              name="agree-to-policies"
-              srTitle="Agree to policies"
-            />
-          </div>
+        <SubscribeToNewsletterSwitch checked={subToNewsletter} onChange={setSubToNewsletter} />
 
-          <div className="ml-3">
-            <p className="text-base text-gray-500">
-              By selecting this, you agree to our{' '}
-              <Link
-                to="/legal-notices/evaluation-license/"
-                className="font-medium text-gray-700 underline"
-              >
-                Evaluation License
-              </Link>{' '}
-              and acknowledge you have read our{' '}
-              <Link
-                to="/legal-notices/privacy-notice/"
-                className="font-medium text-gray-700 underline"
-              >
-                Privacy Notice
-              </Link>
-              .
-            </p>
+        <div className="sm:col-span-2 mt-4">
+          <div className="flex items-start">
+            <div className="flex-shrink-0">
+              <Switch
+                checked={agreed}
+                onChange={setAgreed}
+                name="agree-to-policies"
+                srTitle="Agree to policies"
+              />
+            </div>
+
+            <div className="ml-3">
+              <p className="text-base text-gray-500">
+                By selecting this, you agree to our{' '}
+                <Link
+                  to="/legal-notices/evaluation-license/"
+                  className="font-medium text-gray-700 underline"
+                >
+                  Evaluation License
+                </Link>{' '}
+                and acknowledge you have read our{' '}
+                <Link
+                  to="/legal-notices/privacy-notice/"
+                  className="font-medium text-gray-700 underline"
+                >
+                  Privacy Notice
+                </Link>
+                .
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
+        {funnelRecaptchaEnabled() && (
+          <Recaptcha onChange={setRecaptchaResponse} setRecaptchaExpired={setRecaptchaExpired} />
+        )}
 
-      <div className="sm:col-span-2 mt-4">
-        <Button
-          type="submit"
-          color="primary"
-          size="large"
-          fullWidth={true}
-          text={buttonText}
-          disabled={disabled}
-        />
-      </div>
-    </Form>
+        <div className="sm:col-span-2 mt-4">
+          <Button
+            type="submit"
+            color="primary"
+            size="large"
+            fullWidth={true}
+            text={buttonText}
+            disabled={disabled}
+          />
+        </div>
+      </Form>
+    </>
   );
 };
 
