@@ -39,7 +39,7 @@ Roadie supports GitHub Enterprise Servers via both public access via the Interne
 1. Create a new OAuth app within GitHub Enterprise Server developer settings
    * You can find the possibility to do that the URL `https://<your-server-instance>/settings/applications/new`.
 2. For `Homepage URL` set a value like `https://<your-roadie-tenant>.roadie.so`
-3. For `Authorization callback URL` set a value like `https://<your-roadie-tenant>.roadie.so/api/auth/github/handler/frame`
+3. For `Authorization callback URL` set a value like `https://<your-roadie-tenant>.roadie.so/api/auth/ghes/handler/frame`
 4. When the app has been created, generate a new secret for it by clicking `Generate a new client secret` button
 
 ![ghes-oauth-app.png](ghes-oauth-app.png)
