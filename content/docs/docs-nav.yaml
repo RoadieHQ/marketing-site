@@ -87,6 +87,8 @@ nav:
       - GitHub Discovery Backfill: '/docs/integrations/initial-github-discovery/'
       - GitHub Org: '/docs/integrations/github-teams/'
       - GitHub token: '/docs/integrations/github-token/'
+      - GitLab: '/docs/integrations/gitlab-provider/'
+      - GitLab OAuth: '/docs/integrations/gitlab-oauth/'
       - Google Cloud Platform: '/docs/integrations/gcp/'
       - Google OAuth client: '/docs/integrations/google-oauth-client/'
       - GraphiQL: '/docs/integrations/graphiql/'
