@@ -10,14 +10,14 @@ integrationType: Authentication Provider
 
 ## Introduction
 
-GitLab OAuth authentication allows users to sign in to your Roadie Backstage instance using their GitLab credentials. This provides a seamless authentication experience for teams already using GitLab.
+GitLab OAuth authentication allows users to sign in to your Roadie instance using their GitLab credentials. This provides a seamless authentication experience for teams already using GitLab.
 
 This guide covers setting up GitLab OAuth authentication, including creating the OAuth application in GitLab, configuring secrets in Roadie, and setting up custom audience URLs for self-hosted GitLab instances.
 
 ## Prerequisites
 
 - Access to your GitLab instance (GitLab.com or self-hosted)
-- Admin access to your Roadie Backstage instance
+- Admin access to your Roadie instance
 - Your Roadie tenant URL (e.g., `https://yourcompany.roadie.so`)
 
 ## Step 1: Create a GitLab OAuth Application
@@ -25,7 +25,7 @@ This guide covers setting up GitLab OAuth authentication, including creating the
 1. Navigate to your GitLab user settings at `https://gitlab.com/-/user_settings/applications`. For self-hosted gitlab, use your internal instance rather than gitlab.com.
 2. Click **Add new application**
 3. Fill in the application details:
-   - **Name**: Enter a descriptive name like "Roadie Backstage OAuth"
+   - **Name**: Enter a descriptive name like "Roadie OAuth"
    - **Redirect URI**: Enter your Roadie callback URL: `https://<your-tenant>.roadie.so/api/auth/gitlab/handler/frame`
    - **Scopes**: Select the following scopes:
      - `api` - Full read/write access to the API
