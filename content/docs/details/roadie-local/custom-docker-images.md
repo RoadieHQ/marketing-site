@@ -15,8 +15,7 @@ service before they can be run in production.
 First, pull the required images using the CLI:
 
 ```bash
-export ROADIE_LICENSE=<license_key>
-./roadie-local images pull
+./roadie-local images pull --license <license_key>
 ```
 
 ### Step 2: Retag and push to your registry
