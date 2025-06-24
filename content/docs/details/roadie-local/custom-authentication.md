@@ -10,32 +10,29 @@ which is what Roadie Local uses for authentication under the hood.
 
 ## Configuring custom authentication
 
-Create a file (e.g. `./vouch-config.yaml`) with the following contents filled out from the OAuth provider of choice:
+Edit the file (e.g. `~/.roadie/environments/default/config/vouch-config.yaml.tpl`) with the following contents filled out from the OAuth provider of choice:
 
 ```yaml
 oauth:
-  scopes: [openid, email, profile]
+  scopes:
+    - openid
+    - email
+    - profile
   provider: oidc
-  client_id: roadie
-  client_secret: roadie
-  auth_url: http://keycloak.<your-domain-name>/realms/roadie/protocol/openid-connect/auth
-  end_session_endpoint: http://keycloak.<your-domain-name>/realms/roadie/protocol/openid-connect/logout
-  preferredDomain: roadie.io
-  callback_url: http://vouch.<your-domain-name>/auth
-  token_url: http://auth:7080/realms/roadie/protocol/openid-connect/token
-  user_info_url: http://auth:7080/realms/roadie/protocol/openid-connect/userinfo
+  client_id: <client id>
+  client_secret: <client secret>
+  auth_url: <oidc auth url>
+  token_url: <oidc token url>
+  user_info_url: <oidc user info url>
+  end_session_endpoint: <oidc end session url>
+  preferredDomain: <login email domain>
+  
+  # The following settings should be left in place for roadie-local to work
+  callback_url: '{{ .Protocol }}://{{ if .Hostname }}vouch.{{ .Hostname }}{{ else }}localhost:9090{{ end }}/auth'
 ```
 
-If not using the builtin Keycloak service, change `auth_url` and `end_session_endpoint` to point to your auth provider. 
-
-Then set the `VOUCH_CONFIG_PATH` environment variable to point to your config file:
+Then restart
 
 ```bash
-VOUCH_CONFIG_PATH=/path/to/your/vouch-config.yaml
-```
-
-Or, pass this config file to the CLI with the `-c` option:
-
-```bash
-./roadie-local start  -c /path/to/your/vouch-config.yaml
+./roadie-local restart
 ```
