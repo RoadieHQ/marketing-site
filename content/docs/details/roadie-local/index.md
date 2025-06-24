@@ -6,17 +6,19 @@ description: How to run Roadie locally
 
 ## Prerequisites
 
-1. You must have the `roadie-local` CLI installed.
+1. You must have the `roadie-local` miniumum 0.2.0 CLI installed.
 2. Ensure your docker compose version is at least `2.23.1`. If not, please update to the latest version [using the official docs](https://docs.docker.com/compose/).
 
 
 ## Getting Started
 
 
-1. Set license environment variable
+1. Initialize the environment and enter your licence key
 
 ```bash
-export ROADIE_LICENSE=<license_key>
+./roadie-local start
+Enter your license key: <redacted>
+✔ Validating license
 ```
 
 2. Run Roadie Local
@@ -24,21 +26,30 @@ export ROADIE_LICENSE=<license_key>
 The following command will start Roadie on a URL. Open the URL in your browser.
 
 ```bash
-./roadie-local start
+roadie-local start
+✔ Validating license
+✔ Starting up Roadie from ~/.roadie/versions/docker-compose-v0.4.0.yaml
+
+Roadie is available to access at http://localhost:8080
 ```
 
 3. Log in
 
 The following users are hard-coded to get you started.
 
-| Username | Password |
-|-----------|------------|
-| admin | roadie |
-| maintainer | roadie |
-| reader | roadie |
+| Username   | Password |
+|------------|----------|
+| admin      | roadie   |
+| maintainer | roadie   |
+| reader     | roadie   |
 
+4. To restart Roadie Local
 
-4. To stop Roadie Local
+```bash
+./roadie-local restart
+```
+
+5. To stop Roadie Local
 
 ```bash
 ./roadie-local stop
@@ -46,36 +57,18 @@ The following users are hard-coded to get you started.
 
 ## More command line options
 
-### Command Line Options
-
-The CLI supports additional command line arguments to configure your environment:
-
-The `-c` flag allows passing a custom config file, for example, when [configuring a custom
-authentication provider](/custom-authentication/).
-
-```bash
-./roadie-local start -c /path/to/your/config.yaml
-```
-
-The `-d` flag allows passing a [custom domain](/custom-domain/).
-
-```bash
-./roadie-local start -d your-domain.example.com
-```
-
-The `-f` flag allows passing a custom docker compose file.
-
-```bash
-./roadie-local start -f /path/to/docker-compose.yaml
-```
-
-The same options apply to the `restart` command.
-
-```bash
-./roadie-local restart -c path/to/oauth/config.yaml
-```
-
 ### Global Command Line Options
+
+```
+Flags:
+      --debug                          Enable debug output. (default: false)
+  -f, --dockerComposeFilePath string   Specify a custom docker-compose file path
+  -h, --help                           help for roadie-local
+  -k, --license string                 Roadie license key
+  -s, --skipLicenseCheck               Skip the license check.
+```
+
+#### Debugging
 
 In addition to command-specific options, the CLI supports a global `--debug` flag, which will
 print full command execution logs.
@@ -84,7 +77,7 @@ print full command execution logs.
 ./roadie-local --debug start
 ```
 
-The debug flag is especially helpful when troubleshooting deployment issues on different 
+The debug flag is especially helpful when troubleshooting deployment issues on different
 environments like EC2 instances, as it shows the complete Docker Compose command execution output.
 
 ### Update the version of Roadie Local

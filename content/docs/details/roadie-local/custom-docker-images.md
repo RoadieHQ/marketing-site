@@ -43,7 +43,5 @@ export VOUCH_IMAGE=your-registry.example.com/roadie-vouch-local
 export POSTGRES_IMAGE=postgres:14-alpine
 
 # Start Roadie using your images (license check is bypassed when FRONTEND_IMAGE and BACKEND_IMAGE are set)
-./roadie-local start
+./roadie-local start --skipLicenseCheck
 ```
-
-ℹ️   When both `FRONTEND_IMAGE` and `BACKEND_IMAGE` environment variables are set, the license check and ECR authentication steps are automatically skipped, making this approach suitable for environments without AWS access.
