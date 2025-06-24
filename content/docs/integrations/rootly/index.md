@@ -35,7 +35,7 @@ Visit `https://<tenant-name>.roadie.so/administration/rootly` and enter the toke
 
 If you want to link entities in Roadie with data in Rootly you'll need to [add an annotation](https://github.com/rootlyhq/backstage-plugin/tree/master?tab=readme-ov-file#annotations). For example, for a Service component entity you would annotate with either `rootly.com/service-slug` or `rootly.com/service-id`. 
 
-### Step 3: (Optional) Configure Additional Organizations
+### Step 4: (Optional) Configure Additional Organizations
 
 1. Visit the **Administration > Settings** page in Roadie
 2. Click on **Rootly** under the **Collaboration & Incident Management** section or search for it.
