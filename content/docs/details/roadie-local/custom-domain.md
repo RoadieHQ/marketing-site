@@ -23,7 +23,7 @@ roadie-local restart
 ```
 
 With the configuration above Roadie will bind to port 80 with answering to the following domain names:
-s
+
 ```
 vouch.your.roadie.domain
 keycloak.your.roadie.domain
