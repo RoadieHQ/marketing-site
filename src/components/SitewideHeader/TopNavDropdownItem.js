@@ -18,14 +18,15 @@ const DropdownNavItem = ({ item }) => (
   </Link>
 );
 
+const BASE_BUTTON_CLASSES = 'group bg-white rounded-md inline-flex items-center font-bold tracking-wide hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500';
+
 const TopNavDropdownItem = ({ text, subItems }) => (
   <Popover className="relative">
     {({ open }) => (
       <>
         <Popover.Button
-          className={classnames(
-            'group bg-white rounded-md inline-flex items-center font-bold text-blueroadie tracking-wide hover:text-blueroadie focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500',
-            { 'text-gray-900': open, 'text-gray-500': !open }
+          className={classnames(BASE_BUTTON_CLASSES,
+            { 'text-gray-500': open, 'text-blueroadie': !open }
           )}
         >
           <span>{text}</span>
