@@ -1,0 +1,104 @@
+const fs = require('fs');
+const path = require('path');
+const { pipeline } = require('stream');
+const { promisify } = require('util');
+const streamPipeline = promisify(pipeline);
+
+const ROADIE_API_TOKEN = process.env.ROADIE_API_TOKEN;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+
+if (!ROADIE_API_TOKEN || !GITHUB_TOKEN) {
+  console.error('Missing ROADIE_API_TOKEN or GITHUB_TOKEN');
+  process.exit(1);
+}
+
+// Download OpenAPI docs
+async function downloadOpenApiDocs() {
+  const endpoints = [
+    { url: 'https://api.roadie.so/api/scaffolder/api-docs', file: 'static/scaffolder-openapi.json' },
+    { url: 'https://api.roadie.so/api/catalog/api-docs', file: 'static/catalog-openapi.json' },
+    { url: 'https://api.roadie.so/api/tech-insights/v1/api-docs', file: 'static/tech-insights-openapi.json' }
+  ];
+
+  for (const { url, file } of endpoints) {
+    try {
+      console.log(`Downloading ${url}...`);
+      const res = await fetch(url, {
+        headers: { Authorization: `Bearer ${ROADIE_API_TOKEN}` }
+      });
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status} ${res.statusText}`);
+      }
+
+      const data = await res.json();
+      fs.writeFileSync(file, JSON.stringify(data, null, 2));
+      console.log(`Saved to ${file}`);
+    } catch (err) {
+      console.error(`Error downloading ${url}: ${err.message}`);
+      process.exit(1);
+    }
+  }
+}
+
+// Download Roadie local tarballs
+async function downloadRoadieLocalTarballs() {
+  const destDir = path.join('static', 'downloads', 'roadie-local');
+  fs.mkdirSync(destDir, { recursive: true });
+
+  console.log('Fetching release tarball URLs...');
+  try {
+    const res = await fetch('https://api.github.com/repos/RoadieHQ/roadie-local/releases', {
+      headers: { Authorization: `Bearer ${GITHUB_TOKEN}` }
+    });
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} ${res.statusText}`);
+    }
+
+    const releases = await res.json();
+
+    const assets = releases
+      .filter(release => release.name.startsWith('cli-v'))
+      .map(release => release.assets).flat()
+
+    for (const { name: fileName, url } of assets) {
+      if (fileName.endsWith('.gz')) {
+        continue;
+      }
+
+      const filePath = path.join(destDir, fileName);
+
+      console.log(`Downloading ${fileName} from ${url}...`);
+      const fileRes = await fetch(url, {
+        headers: { Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/octet-stream' },
+        redirect: "follow",
+      });
+
+      if (!fileRes.ok) {
+        console.error(`Error: Unexpected status code ${fileRes.status} for ${url}`);
+        process.exit(1);
+      }
+
+      const writeStream = fs.createWriteStream(filePath);
+      await streamPipeline(fileRes.body, writeStream);
+
+      if (fs.statSync(filePath).size === 0) {
+        console.error(`Error: Downloaded file ${fileName} is empty or missing.`);
+        process.exit(1);
+      }
+
+      console.log(`Saved ${fileName}`);
+    }
+
+  } catch (err) {
+    console.error(`Error: ${err.message}`);
+    process.exit(1);
+  }
+}
+
+// Run the tasks
+(async () => {
+  await downloadOpenApiDocs();
+  await downloadRoadieLocalTarballs();
+})();

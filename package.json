@@ -103,7 +103,7 @@
     "url": "git+https://github.com/RoadieHQ/marketing-site.git"
   },
   "scripts": {
-    "prebuild": "bash bin/fetch_api_docs_and_roadie_local.sh",
+    "prebuild": "node bin/fetch_api_docs_and_roadie_local.js",
     "build": "yarn run clean && gatsby build",
     "tech-docs:build": "bash bin/convert_tech_docs.sh",
     "tech-docs:clean": "rm -rf roadie-tech-docs",
