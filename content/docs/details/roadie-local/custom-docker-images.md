@@ -40,6 +40,6 @@ export BACKEND_IMAGE=your-registry.example.com/backstage-backend-local
 export AUTH_IMAGE=your-registry.example.com/roadie-keycloak-local
 export VOUCH_IMAGE=your-registry.example.com/roadie-vouch-local
 
-# Start Roadie bypassing the licencse check. It is not needed when using your own images
+# Start Roadie bypassing the license check. It is not needed when using your own images
 ./roadie-local start --skipLicenseCheck
 ```
