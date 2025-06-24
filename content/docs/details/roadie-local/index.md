@@ -6,14 +6,14 @@ description: How to run Roadie locally
 
 ## Prerequisites
 
-1. You must have the `roadie-local` miniumum 0.2.0 CLI installed.
+1. You must have the `roadie-local` minimum 0.2.0 CLI installed.
 2. Ensure your docker compose version is at least `2.23.1`. If not, please update to the latest version [using the official docs](https://docs.docker.com/compose/).
 
 
 ## Getting Started
 
 
-1. Initialize the environment and enter your licence key
+1. Initialize the environment and enter your license key
 
 ```bash
 ./roadie-local start
