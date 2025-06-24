@@ -45,6 +45,7 @@ jobs:
           GATSBY_FUNNEL_RECAPTCHA_ENABLED: false
           GATSBY_NEWSLETTER_RECAPTCHA_ENABLED: true
           ROADIE_API_TOKEN: ${{ secrets.ROADIE_API_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
