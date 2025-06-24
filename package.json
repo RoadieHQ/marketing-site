@@ -103,7 +103,7 @@
     "url": "git+https://github.com/RoadieHQ/marketing-site.git"
   },
   "scripts": {
-    "prebuild": "bash bin/fetch_api_docs.sh",
+    "prebuild": "bash bin/fetch_api_docs_and_roadie_local.sh",
     "build": "yarn run clean && gatsby build",
     "tech-docs:build": "bash bin/convert_tech_docs.sh",
     "tech-docs:clean": "rm -rf roadie-tech-docs",
@@ -118,5 +118,6 @@
     "preview": "yarn run build && netlify deploy --dir public",
     "test:unit": "jest",
     "prepare": "node_modules/.bin/husky install"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
