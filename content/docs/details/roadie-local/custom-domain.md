@@ -22,7 +22,7 @@ environments:
 roadie-local restart
 ```
 
-With the configuration above Roadie will bind to port 80 with answering to the following domain names:
+With the configuration above Roadie will bind to port 80 and answer to the following domain names:
 
 ```
 vouch.your.roadie.domain
