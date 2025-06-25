@@ -309,3 +309,19 @@ steps:
       # here's where the secret can be used
       token: ${{ secrets.USER_OAUTH_TOKEN }}
 ```
+
+Alternatively, if you don't need to build a repo URL you can use the `OauthSecret` field to intiate login only. The token is stored in a secret value in the same way as above.
+```
+  parameters:
+    - title: User Login
+      required:
+        - isLoggedIn
+      properties:
+        isLoggedIn:
+          title: Is logged in
+          type: boolean
+          ui:field: OauthSecret
+          ui:options:
+            secretsKey: USER_OAUTH_TOKEN
+            host: gitlab.com
+```
