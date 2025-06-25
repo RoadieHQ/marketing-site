@@ -12,7 +12,6 @@ if (!ROADIE_API_TOKEN || !GITHUB_TOKEN) {
   process.exit(1);
 }
 
-// Download OpenAPI docs
 async function downloadOpenApiDocs() {
   const endpoints = [
     { url: 'https://api.roadie.so/api/scaffolder/api-docs', file: 'static/scaffolder-openapi.json' },
@@ -41,12 +40,11 @@ async function downloadOpenApiDocs() {
   }
 }
 
-// Download Roadie local tarballs
-async function downloadRoadieLocalTarballs() {
+async function downloadRoadieLocalBuilds() {
   const destDir = path.join('static', 'downloads', 'roadie-local');
   fs.mkdirSync(destDir, { recursive: true });
 
-  console.log('Fetching release tarball URLs...');
+  console.log('Fetching release build URLs...');
   try {
     const res = await fetch('https://api.github.com/repos/RoadieHQ/roadie-local/releases', {
       headers: { Authorization: `Bearer ${GITHUB_TOKEN}` }
@@ -57,12 +55,17 @@ async function downloadRoadieLocalTarballs() {
     }
 
     const releases = await res.json();
+    const buildIndex = {};
 
     const assets = releases
       .filter(release => release.name.startsWith('cli-v'))
-      .map(release => release.assets).flat()
+      .map(release => {
+        buildIndex[release.name] = [];
+        return release.assets.map(asset => ({ ...asset, releaseName: release.name }));
+      })
+      .flat();
 
-    for (const { name: fileName, url } of assets) {
+    for (const { name: fileName, url, releaseName } of assets) {
       if (fileName.endsWith('.gz')) {
         continue;
       }
@@ -71,8 +74,11 @@ async function downloadRoadieLocalTarballs() {
 
       console.log(`Downloading ${fileName} from ${url}...`);
       const fileRes = await fetch(url, {
-        headers: { Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/octet-stream' },
-        redirect: "follow",
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          Accept: 'application/octet-stream'
+        },
+        redirect: 'follow',
       });
 
       if (!fileRes.ok) {
@@ -88,9 +94,13 @@ async function downloadRoadieLocalTarballs() {
         process.exit(1);
       }
 
+      buildIndex[releaseName].push(fileName);
       console.log(`Saved ${fileName}`);
     }
 
+    const indexPath = path.join(destDir, 'index.json');
+    fs.writeFileSync(indexPath, JSON.stringify(buildIndex, null, 2));
+    console.log(`Index file written to ${indexPath}`);
   } catch (err) {
     console.error(`Error: ${err.message}`);
     process.exit(1);
@@ -100,5 +110,5 @@ async function downloadRoadieLocalTarballs() {
 // Run the tasks
 (async () => {
   await downloadOpenApiDocs();
-  await downloadRoadieLocalTarballs();
+  await downloadRoadieLocalBuilds();
 })();
