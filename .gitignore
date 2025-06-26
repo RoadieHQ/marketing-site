@@ -78,6 +78,9 @@ cypress/videos
 cypress/screenshots
 
 static/downloads/roadie-local/*
+static/catalog-openapi.json
+static/scaffolder-openapi.json
+static/tech-insights-openapi.json
 
 # VSCode workspace metadata
 .vscode
