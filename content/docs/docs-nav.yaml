@@ -74,6 +74,7 @@ nav:
       - Stackoverflow: '/docs/integrations/stackoverflow/'
       - Syntasso Kratix: '/docs/integrations/kratix/'
       - Tech radar: '/docs/integrations/tech-radar/'
+      - Terraform: '/docs/integrations/terraform/'
       - Travis CI: '/docs/integrations/travis-ci/'
       - Wiz: '/docs/integrations/wiz/'
   - Integrations:
