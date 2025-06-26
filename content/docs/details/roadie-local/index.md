@@ -9,6 +9,36 @@ description: How to run Roadie locally
 1. You must have the `roadie-local` minimum 0.2.0 CLI installed.
 2. Ensure your docker compose version is at least `2.23.1`. If not, please update to the latest version [using the official docs](https://docs.docker.com/compose/).
 
+## Installing
+
+We provide 4 builds of the Roadie Local CLI. Please choose the build that best suits your system.
+
+
+Mac Apple Silicon (ARM)
+
+```bash
+wget https://roadie.io/downloads/roadie-local/roadie-local-cli-v0.1.1-darwin-arm64
+```
+
+Mac Intel Chip
+
+```bash
+wget https://roadie.io/downloads/roadie-local/roadie-local-cli-v0.1.1-darwin-amd64
+```
+
+Linux (ARM)
+
+```bash
+wget https://roadie.io/downloads/roadie-local/roadie-local-cli-v0.1.1-linux-arm64
+```
+
+Linux (AMD)
+
+```bash
+wget https://roadie.io/downloads/roadie-local/roadie-local-cli-v0.1.1-linux-amd64
+```
+
+
 
 ## Getting Started
 
