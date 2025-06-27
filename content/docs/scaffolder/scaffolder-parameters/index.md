@@ -388,34 +388,35 @@ This custom scaffolder field, makes an API call to the Backstage backend and all
 
 ```yaml
 parameters:
-  properties:
-    custom:
-      title: custom
-      type: string
-      description: Custom field from external API
+  - title: Fill in some steps
+    properties:
+      custom:
+        title: Custom
+        type: string
+        description: Custom field from external API
+        # Use `SelectFieldFromApi` to configure the select field for the entry.
+        ui:field: SelectFieldFromApi
 
-      # Use `SelectFieldFromApi` to configure the select field for the entry.
-      ui:field: SelectFieldFromApi
+        ui:options:
+          # The Path on the Backstage API and the parameters to fetch the data for the dropdown
+          path: catalog/entity-facets
+          params:
+            facet: kind
 
-      ui:options:
-        # The Path on the Backstage API and the parameters to fetch the data for the dropdown
-        path: 'catalog/entity-facets'
-        params:
-          facet: 'kind'
+          # This selects the array element from the API fetch response. It finds the array with the name kind
+          # under the facets object
+          arraySelector: facets.kind
 
-        # This selects the array element from the API fetch response. It finds the array with the name kind
-        # under the facets object
-        arraySelector: 'facets.kind'
+          # (Optional) This selects the field in the array to use for the value of each select item. If its not specified
+          # it will use the value of the item directly.
+          valueSelector: count
 
-        # (Optional) This selects the field in the array to use for the value of each select item. If its not specified
-        # it will use the value of the item directly.
-        valueSelector: 'count'
+          # (Optional) This selects the field in the array to use for the label of each select item.
+          labelSelector: 'value'
 
-        # (Optional) This selects the field in the array to use for the label of each select item.
-        labelSelector: 'value'
+          # (Optional) This selects the fields in the array to use for the label of each select item with Nunjucks templating format.
+          labelTemplate: '{{ item.value }}:{{ item.count }}'
 
-        # (Optional) This selects the fields in the array to use for the label of each select item with Nunjucks templating format.
-        labelTemplate: '{{ item.value1 }}:{{ item.value2 }}'
 ```
 
 Some of the `SelectFieldFromApi` options allow using parameters from earlier parameter pages to be used to template the options. The templated options are `params`, `path`, `valueSelector` and `labelSelector`. e.g.
