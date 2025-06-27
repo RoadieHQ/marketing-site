@@ -13,6 +13,18 @@ description: How to run Roadie locally
 
 We provide 4 builds of the Roadie Local CLI. Please choose the build that best suits your system.
 
+Linux (ARM)
+
+```bash
+curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-linux-arm64" && chmod +x ./roadie-local
+```
+
+Linux (AMD)
+
+```bash
+curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-linux-amd64" && chmod +x ./roadie-local
+```
+
 Mac Apple Silicon (ARM)
 
 ```bash
@@ -25,17 +37,7 @@ Mac Intel Chip
 curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-darwin-amd64" && chmod +x ./roadie-local
 ```
 
-Linux (ARM)
-
-```bash
-curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-linux-arm64" && chmod +x ./roadie-local
-```
-
-Linux (AMD)
-
-```bash
-curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-linux-amd64" && chmod +x ./roadie-local
-```
+NB: For Mac users, a warning may trigger to indicate Apple cannot validate the installation for malicious software. We're working with Apple to resolve this. In the meantime, you can find a way to resolve the error here: https://support.apple.com/en-ie/guide/mac-help/mchleab3a043/mac or by using the command `xattr -d com.apple.quarantine /usr/local/bin/roadie-local `.
 
 To test the installation, ensure this command displays help text.
 
