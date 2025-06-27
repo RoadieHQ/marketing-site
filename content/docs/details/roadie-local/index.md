@@ -16,25 +16,25 @@ We provide 4 builds of the Roadie Local CLI. Please choose the build that best s
 Mac Apple Silicon (ARM)
 
 ```bash
-curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-v0.1.1-darwin-arm64" && chmod +x ./roadie-local
+curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-darwin-arm64" && chmod +x ./roadie-local
 ```
 
 Mac Intel Chip
 
 ```bash
-curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-v0.1.1-darwin-amd64" && chmod +x ./roadie-local
+curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-darwin-amd64" && chmod +x ./roadie-local
 ```
 
 Linux (ARM)
 
 ```bash
-curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-v0.1.1-linux-arm64" && chmod +x ./roadie-local
+curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-linux-arm64" && chmod +x ./roadie-local
 ```
 
 Linux (AMD)
 
 ```bash
-curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-v0.1.1-linux-amd64" && chmod +x ./roadie-local
+curl -o roadie-local "https://roadie.io/downloads/roadie-local/roadie-local-cli-latest-linux-amd64" && chmod +x ./roadie-local
 ```
 
 To test the installation, ensure this command displays help text.
