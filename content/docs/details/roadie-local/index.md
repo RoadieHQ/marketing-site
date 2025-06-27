@@ -7,7 +7,8 @@ description: How to run Roadie locally
 ## Prerequisites
 
 1. Ensure your docker compose version is at least `2.23.1`. If not, please update to the latest version [using the official docs](https://docs.docker.com/compose/).
-2. Ensure docker is running.
+2. You'll also need to make sure your Docker client version is higher than the required minimum version 28.0.4. If not, please update to the latest version [using the official docs](https://docs.docker.com/engine/install/).
+3. Ensure docker is running.
 
 ## Installing
 
