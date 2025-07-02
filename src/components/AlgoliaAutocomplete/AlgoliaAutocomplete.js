@@ -44,6 +44,7 @@ const getSources = ({ query }) => {
 const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
   const searchBoxRef = useRef();
   const rootRef = useRef();
+  const panelRootRef = useRef();
   let search = null;
 
   const openSearchOnHotkeyPress = useCallback((event) => {
@@ -56,17 +57,18 @@ const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
   useEffect(() => {
     if (!searchBoxRef.current) return undefined;
 
-    // Create root once
-    rootRef.current = createRoot(searchBoxRef.current);
-
     search = autocomplete({
       container: searchBoxRef.current,
-      renderer: { 
-        createElement, 
-        Fragment, 
-        render: ({ children }) => {
-          rootRef.current.render(children);
+      renderer: { createElement, Fragment, render: () => {}, },
+      render({ children, }, root) {
+        if (!panelRootRef.current || rootRef.current !== root) {
+          rootRef.current = root;
+
+          panelRootRef.current?.unmount();
+          panelRootRef.current = createRoot(root);
         }
+
+        panelRootRef.current.render(children);
       },
       detachedMediaQuery: '',
       // openOnFocus is required to circumvent a bug: https://github.com/algolia/autocomplete/issues/843
@@ -85,9 +87,6 @@ const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
 
     return () => {
       search.destroy();
-      if (rootRef.current) {
-        rootRef.current.unmount();
-      }
       document.removeEventListener('keydown', openSearchOnHotkeyPress, false);
     };
   }, [rest]);
