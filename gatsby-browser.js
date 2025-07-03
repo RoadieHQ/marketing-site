@@ -20,7 +20,7 @@ import './src/stylesheets/prismjs-theme-overrides.css';
 import SwaggerUI from 'swagger-ui';
 // eslint-disable-next-line
 import SwaggerUIStandalonePreset from 'swagger-ui-dist/swagger-ui-standalone-preset';
-import './src/stylesheets/swagger-ui.css';
+import 'swagger-ui-dist/swagger-ui.css';
 
 window.SwaggerUI = SwaggerUI;
 window.SwaggerUIStandalonePreset = SwaggerUIStandalonePreset;
