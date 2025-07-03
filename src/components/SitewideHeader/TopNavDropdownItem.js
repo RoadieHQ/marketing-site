@@ -24,8 +24,8 @@ const TopNavDropdownItem = ({ text, subItems }) => (
       <>
         <Popover.Button
           className={classnames(
-            'group bg-white rounded-md inline-flex items-center font-bold text-blueroadie tracking-wide hover:text-blueroadie focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500',
-            { 'text-gray-900': open, 'text-gray-500': !open }
+            'group bg-white rounded-md inline-flex items-center font-bold tracking-wide hover:text-blueroadie focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500',
+            { 'text-gray-900': !open, 'text-gray-500': open }
           )}
         >
           <span>{text}</span>
