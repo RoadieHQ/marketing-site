@@ -15,12 +15,14 @@ jobs:
       NODE_ENV: test
 
     steps:
+      - uses: actions/setup-node@v4
+        with:
+            node-version: 22.x
+
       - name: Log node version
         run: node --version
 
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: '0'
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile

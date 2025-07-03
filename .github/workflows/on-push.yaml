@@ -12,7 +12,7 @@ jobs:
     name: Update TechDocs
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Checkout Tech Docs dir
       uses: actions/checkout@master
