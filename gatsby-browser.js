@@ -17,7 +17,8 @@ import './src/stylesheets/algolia-autocomplete-theme-overrides.css';
 import 'prismjs/themes/prism.css';
 import './src/stylesheets/prismjs-theme-overrides.css';
 // eslint-disable-next-line
-import SwaggerUI from 'swagger-ui';
+
+import { SwaggerUIBundle as SwaggerUI } from 'swagger-ui-dist';
 // eslint-disable-next-line
 import SwaggerUIStandalonePreset from 'swagger-ui-dist/swagger-ui-standalone-preset';
 import 'swagger-ui-dist/swagger-ui.css';
