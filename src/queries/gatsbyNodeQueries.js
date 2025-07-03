@@ -1,6 +1,6 @@
 module.exports.BLOGS_QUERY = `
 {
-  blogs: allContentfulBlogPost(sort: {fields: date, order: DESC}) {
+  blogs: allContentfulBlogPost(sort: {date: DESC}) {
     edges {
       node {
         slug
@@ -26,8 +26,7 @@ module.exports.CASE_STUDIES_QUERY = `
 {
   caseStudies: allContentfulCaseStudy(
     sort: {
-      fields: [date],
-      order: DESC
+      date: DESC,
     },
     limit: 1000,
   ) {
@@ -63,7 +62,7 @@ module.exports.PLUGINS_QUERY = `
 module.exports.TAGS_QUERY = `
 {
   tagsGroup: allContentfulBlogPost {
-    group(field: tags) {
+    group(field: {tags: SELECT}) {
       fieldValue
     }
   }
@@ -111,7 +110,7 @@ module.exports.DOCS_QUERY = `
 module.exports.CHANGELOG_QUERY = `
 {
   result: allContentfulChangeSet(
-    sort: {fields: releasedAt, order: DESC}
+    sort: {releasedAt: DESC}
     limit: 1000
   ) {
     edges {

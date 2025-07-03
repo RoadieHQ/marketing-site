@@ -215,7 +215,7 @@ export const pageQuery = graphql`
     }
 
     integrations: allMarkdownRemark(
-      sort: { fields: frontmatter___humanName, order: ASC }
+      sort: { frontmatter: { humanName: ASC } },
       filter: { fileAbsolutePath: { regex: "/.+/content/docs/integrations/.+/" } }
     ) {
       nodes {

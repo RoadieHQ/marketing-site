@@ -350,7 +350,7 @@ export default Home;
 export const pageQuery = graphql`
   query IndexQuery {
     allContentfulBlogPost(
-      sort: { fields: date, order: DESC }
+      sort: { date: DESC }
       filter: { tags: { ne: "newsletter" } }
       limit: 3
     ) {

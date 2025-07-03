@@ -59,7 +59,7 @@ export default About;
 export const pageQuery = graphql`
   query {
     team: allMarkdownRemark(
-      sort: { fields: frontmatter___name, order: ASC }
+      sort: { frontmatter: { name: ASC } }
       filter: { fileAbsolutePath: { regex: "/.+/content/team/.+/" } }
     ) {
       edges {

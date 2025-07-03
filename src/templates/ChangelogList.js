@@ -79,7 +79,7 @@ export const pageQuery = graphql`
     $skip: Int!
   ) {
     changeSets: allContentfulChangeSet(
-      sort: {fields: releasedAt, order: DESC}
+      sort: {releasedAt: DESC}
       limit: $limit
       skip: $skip
     ) {
