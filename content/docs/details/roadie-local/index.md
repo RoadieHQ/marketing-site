@@ -52,7 +52,7 @@ To test the installation, ensure this command displays help text.
 1. Initialize the environment and enter your license key
 
 ```bash
-./roadie-local start
+./roadie-local init
 Enter your license key: <redacted>
 ✔ Validating license
 ```
