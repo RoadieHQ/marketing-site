@@ -36,7 +36,6 @@ const skipAlgoliaIndexing =
 
 const skipWebpackAnalyzer = has(process.env, 'GITHUB_ACTIONS') || has(process.env, 'NETLIFY');
 
-
 const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
 

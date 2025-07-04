@@ -1,4 +1,4 @@
-import * as Sentry from "@sentry/gatsby";
+import * as Sentry from '@sentry/gatsby';
 import get from 'lodash/get';
 
 const getSentryEnvironment = () => {
@@ -13,10 +13,9 @@ const getSentryEnvironment = () => {
 };
 
 Sentry.init({
-
   // DSNs are safe to keep public.
   // https://docs.sentry.io/product/sentry-basics/dsn-explainer/#dsn-utilization
-  dsn: "https://1798396e863a4fc0b412438bac2c8528@o416326.ingest.sentry.io/5823815",
+  dsn: 'https://1798396e863a4fc0b412438bac2c8528@o416326.ingest.sentry.io/5823815',
 
   // Adds request headers and IP for users, for more info visit:
   // https://docs.sentry.io/platforms/javascript/guides/gatsby/configuration/options/#sendDefaultPii
@@ -24,7 +23,5 @@ Sentry.init({
 
   environment: getSentryEnvironment(),
 
-  integrations: [
-  ],
-
+  integrations: [],
 });
