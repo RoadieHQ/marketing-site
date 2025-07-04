@@ -52,17 +52,17 @@ To test the installation, ensure this command displays help text.
 1. Initialize the environment and enter your license key
 
 ```bash
-./roadie-local start
+./roadie-local init
 Enter your license key: <redacted>
 ✔ Validating license
 ```
 
 2. Run Roadie Local
 
-The following command will start Roadie on a URL. Open the URL in your browser.
+The following command will start Roadie on localhost. Open the URL in your browser.
 
 ```bash
-roadie-local start
+./roadie-local start
 ✔ Validating license
 ✔ Starting up Roadie from ~/.roadie/versions/docker-compose-v0.4.0.yaml
 
