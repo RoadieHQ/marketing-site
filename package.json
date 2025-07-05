@@ -97,11 +97,6 @@
     "infrastructure"
   ],
   "license": "MIT",
-  "resolve": {
-    "fallback": {
-      "stream": false
-    }
-  },
   "main": "n/a",
   "repository": {
     "type": "git",
