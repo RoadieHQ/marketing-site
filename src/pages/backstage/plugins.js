@@ -68,6 +68,7 @@ const BackstagePlugins = ({ data }) => {
 
 export default BackstagePlugins;
 
+
 export const pageQuery = graphql`
   query {
     site {
@@ -77,7 +78,7 @@ export const pageQuery = graphql`
     }
 
     plugins: allMarkdownRemark(
-      sort: { fields: frontmatter___humanName, order: ASC }
+      sort: { frontmatter: { humanName: ASC } }
       filter: { fileAbsolutePath: { regex: "/.+/content/backstage/plugins/.+/" } }
     ) {
       edges {

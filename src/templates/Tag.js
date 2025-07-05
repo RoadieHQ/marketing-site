@@ -53,7 +53,7 @@ export default BlogTag;
 export const pageQuery = graphql`
   query Tag($tag: String!) {
     allContentfulBlogPost(
-      sort: {fields: date, order: DESC}
+      sort: {date: DESC}
       filter: {tags: {eq: $tag}}
     ) {
       edges {

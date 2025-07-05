@@ -100,7 +100,7 @@ export default CaseStudiesIndex;
 export const pageQuery = graphql`
   query CaseStudyIndex {
     caseStudies: allContentfulCaseStudy(
-      sort: {fields: date, order: DESC}
+      sort: {date: DESC}
     ) {
       edges {
         node {

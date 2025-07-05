@@ -16,14 +16,7 @@ import './src/stylesheets/algolia-autocomplete-theme-overrides.css';
 
 import 'prismjs/themes/prism.css';
 import './src/stylesheets/prismjs-theme-overrides.css';
-// eslint-disable-next-line
-import SwaggerUI from 'swagger-ui';
-// eslint-disable-next-line
-import SwaggerUIStandalonePreset from 'swagger-ui-dist/swagger-ui-standalone-preset';
-import './src/stylesheets/swagger-ui.css';
 
-window.SwaggerUI = SwaggerUI;
-window.SwaggerUIStandalonePreset = SwaggerUIStandalonePreset;
 const INTERCOM_APP_ID = 'qegbmsy6';
 
 const isHidden = () => process.env.NODE_ENV === `production` && typeof Intercom === `function`;

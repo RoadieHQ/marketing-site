@@ -19,7 +19,7 @@ const blogFeed = {
   query: `
     query AllBlogPostsForRss {
       blogs: allContentfulBlogPost(
-        sort: {fields: date, order: DESC}
+        sort: {date: DESC}
         filter: {tags: {ne: "newsletter"}}
       ) {
         edges {
@@ -68,7 +68,7 @@ const changelogFeed = {
   query: `
     query ChangelogForRss {
       changeSets: allContentfulChangeSet(
-        sort: {fields: releasedAt, order: DESC}
+        sort: {releasedAt: DESC}
       ) {
         edges {
           node {
@@ -110,7 +110,7 @@ const blogChangelogFeed = {
   query: `
     query AllChangelogBlogPosts {
       blogs: allContentfulBlogPost(
-        sort: {fields: date, order: DESC}
+        sort: {date: DESC}
         filter: {tags: {eq: "changelog"}}
       ) {
         edges {
