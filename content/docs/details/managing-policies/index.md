@@ -26,10 +26,10 @@ Currently, a set of permissions is available from the upstream Backstage project
 - Each policy can be configured with an effect to either **ALLOW** or **DENY** the specified permissions and the conditions set for the policy.
 
 <div role="alert">
-  <div class="docs-cta__info_title">Competing Policy Effect</div>
+  <div class="docs-cta__info_title">Contradicting Policy Effects</div>
   <div  class="docs-cta__info_message">
     <p>
-      When a Role is assigned a 2 Polies with competing effects, **DENY** will take precedence.
+      When a Role is assigned 2 Policies with contradicting effects, **DENY** will take precedence.
     </p>
   </div>
 </div>

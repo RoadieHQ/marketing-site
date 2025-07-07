@@ -17,6 +17,15 @@ Roadie comes with RBAC out of the box. We provide 4 default roles: `admin`, `vie
 
 ## Assigning Roles
 
+<div role="alert">
+  <div class="docs-cta__info_title">Multiple Assigned Roles</div>
+  <div  class="docs-cta__info_message">
+    <p>
+      The Permissions from all Roles assigned will be merged and applied to the user.
+    </p>
+  </div>
+</div>
+
 There are two ways to assign a role to a user in Roadie:
 
 - Assign roles in the user management screen
@@ -40,15 +49,6 @@ To include roles in the ID token, structure the token like this:
   "roles": ["viewer", "tech-insights-admin"]
 }
 ```
-
-<div role="alert">
-  <div class="docs-cta__info_title">Multiple Assigned Roles</div>
-  <div  class="docs-cta__info_message">
-    <p>
-      The user will inherit the Permissions from all Roles assigned to it. 
-    </p>
-  </div>
-</div>
 
 ## Setting the default roles
 

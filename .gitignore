@@ -86,3 +86,6 @@ static/tech-insights-openapi.json
 .vscode
 
 tmp-roadie-tech-docs
+
+# asdf .tool-versions
+.tool-versions
