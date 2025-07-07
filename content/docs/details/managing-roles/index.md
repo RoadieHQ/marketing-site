@@ -41,6 +41,15 @@ To include roles in the ID token, structure the token like this:
 }
 ```
 
+<div role="alert">
+  <div class="docs-cta__info_title">Multiple Assigned Roles</div>
+  <div  class="docs-cta__info_message">
+    <p>
+      The user will inherit the Permissions from all Roles assigned to it. 
+    </p>
+  </div>
+</div>
+
 ## Setting the default roles
 
 If a user has no role associated yet, e.g. if it is the first time they have logged in and there are no roles associated with the user, then the user is allowed the policies associated with the default roles. There can be many default roles.
