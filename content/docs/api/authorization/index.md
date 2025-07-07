@@ -30,7 +30,7 @@ For write operations using PUT, POST, or PATCH requests with a request body, we 
 curl \
   -X POST \
   -H 'Accept: application/json' \
-  -H 'content-type: application/json' \
+  -H 'Content-Type: application/json' \
   -H "Authorization: bearer ${ROADIE_API_TOKEN}" \
   -d '{ "key": "value" }'
   https://api.roadie.so/api/catalog/entities
