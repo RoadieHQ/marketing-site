@@ -29,7 +29,7 @@ Currently, a set of permissions is available from the upstream Backstage project
   <div class="docs-cta__info_title">Contradicting Policy Effects</div>
   <div  class="docs-cta__info_message">
     <p>
-      When a Role is assigned 2 Policies with contradicting effects, **DENY** will take precedence.
+      When a Role is assigned more than one policy with contradicting effects, **DENY** will take precedence.
     </p>
   </div>
 </div>
