@@ -21,7 +21,7 @@ Roadie comes with RBAC out of the box. We provide 4 default roles: `admin`, `vie
   <div class="docs-cta__info_title">Multiple Assigned Roles</div>
   <div  class="docs-cta__info_message">
     <p>
-      The Permissions from all Roles assigned will be merged and applied to the user.
+      The Policies from all Roles assigned will be merged and applied to the user.
     </p>
   </div>
 </div>
