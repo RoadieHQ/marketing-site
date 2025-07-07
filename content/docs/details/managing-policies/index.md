@@ -25,6 +25,15 @@ Currently, a set of permissions is available from the upstream Backstage project
 - Built-in policies cannot be modified or removed, but they can be added to or removed from roles.
 - Each policy can be configured with an effect to either **ALLOW** or **DENY** the specified permissions and the conditions set for the policy.
 
+<div role="alert">
+  <div class="docs-cta__info_title">Contradicting Policy Effects</div>
+  <div  class="docs-cta__info_message">
+    <p>
+      When a Role is assigned more than one policy with contradicting effects, **DENY** will take precedence.
+    </p>
+  </div>
+</div>
+
 ### Conditions for Configurable Permissions
 
 Some permissions allow configuration with a set of conditions, particularly those starting with `catalog.entity.`. These conditions enable access customization based on defined rules. Currently, these are the available rules:
