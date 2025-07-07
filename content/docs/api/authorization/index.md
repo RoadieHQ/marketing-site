@@ -33,5 +33,5 @@ curl \
   -H 'Content-Type: application/json' \
   -H "Authorization: bearer ${ROADIE_API_TOKEN}" \
   -d '{ "key": "value" }'
-  https://api.roadie.so/api/catalog/entities
+  https://api.roadie.so/api/catalog/fragments
 ```
