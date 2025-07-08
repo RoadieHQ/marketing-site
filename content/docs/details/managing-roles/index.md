@@ -17,6 +17,15 @@ Roadie comes with RBAC out of the box. We provide 4 default roles: `admin`, `vie
 
 ## Assigning Roles
 
+<div role="alert">
+  <div class="docs-cta__info_title">Multiple Assigned Roles</div>
+  <div  class="docs-cta__info_message">
+    <p>
+      The Policies from all Roles assigned will be merged and applied to the user.
+    </p>
+  </div>
+</div>
+
 There are two ways to assign a role to a user in Roadie:
 
 - Assign roles in the user management screen
