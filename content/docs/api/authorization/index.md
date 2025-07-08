@@ -23,3 +23,15 @@ curl \
   -H "Authorization: bearer ${ROADIE_API_TOKEN}" \
   https://api.roadie.so/api/catalog/entities
 ```
+
+For write operations using PUT, POST, or PATCH requests with a request body, we expect JSON structures. You should modify your calls to include the `Content-Type` header.
+
+```shell
+curl \
+  -X POST \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: bearer ${ROADIE_API_TOKEN}" \
+  -d '{ "key": "value" }'
+  https://api.roadie.so/api/catalog/fragments
+```
