@@ -24,7 +24,7 @@ curl \
   https://api.roadie.so/api/catalog/entities
 ```
 
-For write operations using PUT, POST, or PATCH requests with a request body, we expect JSON structures. You should modify your calls to include the `Content-Type` header.
+For write operations using PUT, POST, or PATCH requests with a request body, we expect a JSON structure. You should modify your calls to include the `Content-Type` header.
 
 ```shell
 curl \
