@@ -1,28 +1,60 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import DocsHeader from '../SitewideHeader/DocsHeader';
 import { SEO, SitewideFooter } from '../';
 import { Sidebar } from '../doc';
 
-import SwaggerUI from 'swagger-ui-react';
-import 'swagger-ui-react/swagger-ui.css';
+const ApiDocsPage = ({ location, url }) => {
+  const swaggerRef = useRef(null);
 
-const ApiDocsPage = ({ location, url }) => (
-  <>
-    <SEO title={`API`} description="Documentation of the Roadie APIs" />
-    <DocsHeader location={location} />
+  useEffect(() => {
+    window.SwaggerUI({
+      domNode: swaggerRef.current,
+      supportedSubmitMethods: [],
+      responseInterceptor: (response) => {
+        if (!response.ok) {
+          return response;
+        }
+        try {
+          const doc = JSON.parse(response.text);
+          delete doc.info.version;
+          return { ...response, data: JSON.stringify(doc), text: JSON.stringify(doc) };
+        } catch (e) {
+          return response;
+        }
+      },
 
-    <main className="md:flex pt-4 md:pt-0">
-      <Sidebar location={location} />
+      plugins: [
+        {
+          wrapComponents: {
+            InfoUrl: () => () => null,
+            OpenAPIVersion: () => () => null,
+          },
+        },
+      ],
+      url: url,
+      presets: [window.SwaggerUI.presets.apis],
+      validatorUrl: null,
+    });
+  }, []);
 
-      <article className="px-2 md:px-6 md:pt-7 md:flex-1">
-        <section className="prose prose-primary max-w-full">
-          <SwaggerUI url={url} />
-        </section>
-      </article>
-    </main>
+  return (
+    <>
+      <SEO title={`API`} description="Documentation of the Roadie API" />
+      <DocsHeader location={location} />
 
-    <SitewideFooter maxWidth="full" />
-  </>
-);
+      <main className="md:flex pt-4 md:pt-0">
+        <Sidebar location={location} />
+
+        <article className="px-2 md:px-6 md:pt-7 md:flex-1">
+          <section className="prose prose-primary max-w-full">
+            <div ref={swaggerRef} id="swaggerWrapper" />
+          </section>
+        </article>
+      </main>
+
+      <SitewideFooter maxWidth="full" />
+    </>
+  );
+};
 
 export default ApiDocsPage;
