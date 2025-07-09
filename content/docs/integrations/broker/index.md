@@ -25,7 +25,7 @@ _The benefits of the broker include:_
 
 ### Tested Versions
 
-We regularly test the latest version of the broker client as they are released to ensure there are no issues. The latest tested version with no issues is `4.191.1`.
+We regularly test the latest version of the broker client as they are released to ensure there are no issues. The latest tested version with no issues is `4.207.0`.
 
 ## Broker Architecture
 
