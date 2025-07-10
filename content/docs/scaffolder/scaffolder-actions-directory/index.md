@@ -165,25 +165,25 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 | GitHub          | [publish:github:pull-request](#publishgithubpull-request)                     | Creates a pull request in a pre-existing repository using files from the workspace.                                                                                         | ✅️                     |
 | GitHub          | [github:actions:dispatch](#githubactionsdispatch)                             | Allows you to trigger the execution of a GitHub action on a repository.                                                                                                     | ✅️                     |
 | GitHub          | [github:webhook](#githubwebhook)                                              | Configures a webhook on an existing GitHub repository, requiring `repoUrl` and `webhookUrl`.                                                                                | ✅️                     |
-| GitHub          | [github:autolinks:create](#githubautolinkscreate)                             | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                                 |  ✅️                       |
-| GitHub          | [github:deployKey:create](#githubdeploykeycreate)                             | Creates and stores GitHub Deploy Keys, with the option to encrypt and store the private key as a GitHub secret.                                                             |   ✅️                        |
-| GitHub          | [github:environment:create](#githubenvironmentcreate)                         | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                            |  ✅️                       |
+| GitHub          | [github:autolinks:create](#githubautolinkscreate)                             | Create autolink references for GitHub repositories, linking keywords to specific URLs in issues, pull requests, or commits.                                                 |  ✅️                     |
+| GitHub          | [github:deployKey:create](#githubdeploykeycreate)                             | Creates and stores GitHub Deploy Keys, with the option to encrypt and store the private key as a GitHub secret.                                                             |   ✅️                      |
+| GitHub          | [github:environment:create](#githubenvironmentcreate)                         | Creates deployment environments on GitHub with branch or tag policies and environment variables.                                                                            |  ✅️                     |
 | GitHub          | [github:issues:label](#githubissueslabel)                                     | Adds labels to pull requests or issues on GitHub.                                                                                                                           | ✅️                     |
-| GitHub          | [github:pages:enable](#githubpagesenable)                                     | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                      | ✅️                       |   
-| GitHub          | [github:repo:create](#githubrepocreate)                                       | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                       | ✅️                        |
-| GitHub          | [github:repo:push](#githubrepopush)                                           | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                    |  ✅️                       |
+| GitHub          | [github:pages:enable](#githubpagesenable)                                     | Enables GitHub Pages for a repository with options for build type, source branch, and source path.                                                      | ✅️                     |   
+| GitHub          | [github:repo:create](#githubrepocreate)                                       | Creates GitHub repositories programmatically with various settings and collaborators.                                                                                       | ✅️                      |
+| GitHub          | [github:repo:push](#githubrepopush)                                           | Initializes a git repository in a workspace and pushes it to GitHub with options to configure branch protection and repository settings.                                    |  ✅️                     |
 | GitHub          | [parse:repo-url:plus](#parserepo-urlplus)                                     | Parses GitHub repository URLs and extracts relevant metadata based on a specified schema.                                                                                   |                        |
 |                 |
 | GitLab          | [publish:gitlab](#publishgitlab)                                              | Initializes a Git repository of the content in the workspace and publishes it to GitLab.                                                                                    | ✅️                     |
 | GitLab          | [publish:gitlab:merge-request](#publishgitlabmerge-request)                   | Creates a merge request in a GitLab repository.                                                                                                                             | ✅️                     |
-| GitLab          | [gitlab:repo:push](#gitlabrepopush)                                           | Automates the process of pushing commits to a GitLab repository.                                                                                                            |                        |
-| GitLab          | [gitlab:group:ensureExists](#gitlabgroupensureExists)                         | Ensures that a GitLab group or sub-groups exist, creating them if they do not.                                                                                              |                        |
-| GitLab          | [gitlab:issues:create](#gitlabissuescreate)                                   | Action to create GitLab issues, including input validation using Zod, GitLab API calls, and error handling.                                                                 |                        |
-| GitLab          | [gitlab:issue:edit](#gitlabissueedit)                                         | Validates input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels and assignees.                                          |                        |
-| GitLab          | [gitlab:pipeline:trigger](#gitlabpipelinetrigger)                             | Automates the creation and triggering of a GitLab pipeline using specific input parameters.                                                                                 |                        |
-| GitLab          | [gitlab:projectAccessToken:create](#gitlabprojectAccessTokencreate)           | Action that creates a project access token in GitLab.                                                                                                                       |                        |
-| GitLab          | [gitlab:projectVariable:create](#gitlabprojectVariablecreate)                 | Action for creating project variables in GitLab.                                                                                                                            |                        |
-| GitLab          | [gitlab:projectDeployToken:create](#gitlabprojectDeployTokencreate)           | Action that creates a GitLab project deploy token.                                                                                                                          |                        |
+| GitLab          | [gitlab:repo:push](#gitlabrepopush)                                           | Automates the process of pushing commits to a GitLab repository.                                                                                                            | ✅️                     |
+| GitLab          | [gitlab:group:ensureExists](#gitlabgroupensureExists)                         | Ensures that a GitLab group or sub-groups exist, creating them if they do not.                                                                                              | ✅️                     |
+| GitLab          | [gitlab:issues:create](#gitlabissuescreate)                                   | Action to create GitLab issues, including input validation using Zod, GitLab API calls, and error handling.                                                                 | ✅️                     |
+| GitLab          | [gitlab:issue:edit](#gitlabissueedit)                                         | Validates input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels and assignees.                                          | ✅  ️                   |
+| GitLab          | [gitlab:pipeline:trigger](#gitlabpipelinetrigger)                             | Automates the creation and triggering of a GitLab pipeline using specific input parameters.                                                                                 | ✅️                     |
+| GitLab          | [gitlab:projectAccessToken:create](#gitlabprojectAccessTokencreate)           | Action that creates a project access token in GitLab.                                                                                                                       | ✅    ️                 |
+| GitLab          | [gitlab:projectVariable:create](#gitlabprojectVariablecreate)                 | Action for creating project variables in GitLab.                                                                                                                            | ✅ ️                    |
+| GitLab          | [gitlab:projectDeployToken:create](#gitlabprojectDeployTokencreate)           | Action that creates a GitLab project deploy token.                                                                                                                          | ✅ ️                    |
 |                 |
 | Humanitec       | [humanitec:create-app](#humaniteccreate-app)                                  | Action for creating applications in Humanitec, using a YAML setup file to define application properties.                                                                    |                        |
 |                 |
@@ -5296,6 +5296,8 @@ steps:
 ### Gitlab Scaffolder Actions
 
 #### `publish:gitlab`
+✅️ Ready to use in Roadie
+
 Initializes a git repository of the content in the workspace, and publishes it to GitLab. See input options [in the application](/docs/scaffolder/writing-templates/#actions)
 
 ##### **Inputs**
@@ -5360,6 +5362,8 @@ Initializes a git repository of the content in the workspace, and publishes it t
 
 
 #### `publish:gitlab:merge-request`
+✅️ Ready to use in Roadie
+
 Action for creating a GitLab merge request.
 
 ##### **Inputs**
@@ -5408,6 +5412,8 @@ steps:
 
 
 #### `gitlab:repo:push`
+✅️ Ready to use in Roadie
+
 Action that automates the process of pushing commits to a GitLab repository.
 
 ##### **Inputs**
@@ -5451,6 +5457,8 @@ This YAML defines a step that updates a specific branch in a GitLab repository w
 
 
 #### `gitlab:group:ensureExists`
+✅️ Ready to use in Roadie
+
 For ensuring that a GitLab group or sub-groups exist, creating them if they do not.
 
 ##### **Inputs**
@@ -5487,6 +5495,8 @@ For ensuring that a GitLab group or sub-groups exist, creating them if they do n
 
 
 #### `gitlab:issues:create`
+✅️ Ready to use in Roadie
+
 Action to create GitLab issues, including the input validation using Zod, GitLab API calls, and error handling.
 
 ##### **Inputs**
@@ -5541,6 +5551,8 @@ Action to create GitLab issues, including the input validation using Zod, GitLab
 
 
 #### `gitlab:issue:edit`
+✅️ Ready to use in Roadie
+
 This uses schemas to validate the input and output data using `zod` and interacts with GitLab's API to edit issue properties such as labels, assignees, and other metadata.
 
 ##### **Inputs**
@@ -5602,6 +5614,8 @@ steps:
 
 
 #### `gitlab:pipeline:trigger`
+✅️ Ready to use in Roadie
+
 This automates the creation and triggering of a GitLab pipeline using specific input parameters and outputs the result.
 
 ##### **Inputs**
@@ -5645,6 +5659,8 @@ steps:
 
 
 #### `gitlab:projectAccessToken:create`
+✅️ Ready to use in Roadie
+
 Action that creates a project access token in GitLab.
 
 ##### **Inputs**
@@ -5684,6 +5700,8 @@ Action that creates a project access token in GitLab.
 
 
 #### `gitlab:projectVariable:create`
+✅️ Ready to use in Roadie
+
 Action for creating project variables in GitLab.
 
 ##### **Inputs**
@@ -5728,6 +5746,8 @@ None
 
 
 #### `gitlab:projectDeployToken:create`
+✅️ Ready to use in Roadie
+
 Action that creates a GitLab project deploy token.
 
 ##### **Inputs**
