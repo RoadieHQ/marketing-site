@@ -1,10 +1,10 @@
 ---
-title: Model Context Protocol Servers (Beta)
+title: Model Context Protocol AI Servers (Beta)
 publishedDate: '2024-06-12T15:00:00.0Z'
 description: How to use Roadie AI features exposed via MCP servers
 
-humanName: Model Context Protocol Servers
-logoImage: '../../../assets/logos/gitlab/gitlab-logo.webp'
+humanName: Model Context Protocol (MPC) AI Servers
+logoImage: '../../../assets/logos/ai-assistant/roadie-racks-ai.webp'
 integrationType: Roadie API
 ---
 
