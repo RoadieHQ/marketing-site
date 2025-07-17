@@ -25,6 +25,7 @@ Roadie provides four MCP servers that enable AI assistants to interact with your
 - **Specification Retrieval**: Get complete OpenAPI, GraphQL, or AsyncAPI specifications
 - **Intelligent Search**: Find APIs by domain, technology, or business context
 - **Metadata Access**: Retrieve API descriptions, ownership, and categorization
+- **Scaffolder Functionality**: Find, validate and run scaffolder templates
 
 ### Available Tools
 
