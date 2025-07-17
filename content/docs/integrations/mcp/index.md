@@ -10,11 +10,11 @@ integrationType: Roadie API
 
 ## Introduction
 
-Roadie exposes a number of Model Context Protocol Servers (MCP) servers via our authenticated API that can provide AI tools like agents with structured data to answer complex questions about your catalog and powerful workflow capabilities using the scaffolder.
+Roadie exposes a number of Model Context Protocol Servers (MCP) via our authenticated API that can provide AI tools like agents with structured data to answer complex questions about your catalog and powerful workflow capabilities using the scaffolder.
 
 ## Available MCP Servers
 
-Roadie provides four powerful MCP servers that enable AI assistants to interact with your Backstage catalog:
+Roadie provides four MCP servers that enable AI assistants to interact with your Backstage catalog:
 
 <details>
 <summary><strong>API Docs Query Server</strong> - Discover and retrieve API documentation</summary>
@@ -84,7 +84,6 @@ Get the complete specification for a specific API, including full OpenAPI/Swagge
 
 ### Capabilities
 
-- **Template Discovery**: Find available scaffolder templates using intelligent search
 - **Template Inspection**: Get detailed template specifications and requirements
 - **Input Validation**: Verify parameter values before template execution
 - **Template Execution**: Run templates with proper error handling and monitoring
