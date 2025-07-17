@@ -758,24 +758,6 @@ With all four servers configured, AI assistants can:
 - **Enable intelligent discovery** by searching for entities across the entire catalog
 - **Provide contextual suggestions** when exact entity matches aren't found
 
-## Smart Entity Resolution
-
-Both the Rich Catalog Entity Server and Tech Insights Facts Server include intelligent entity resolution that makes them more user-friendly:
-
-### How It Works
-
-1. **Exact Match First**: Attempts to find the entity using the exact reference provided
-2. **Fallback Search**: If exact match fails, searches for entities with matching names
-3. **Type Prioritization**: Prefers Component entities, then falls back to other types (API, Resource, System)
-4. **Namespace Awareness**: When a namespace is specified, prioritizes entities in that namespace
-
-### Benefits
-
-- **Flexible Queries**: Users don't need to know exact entity references
-- **Natural Language**: Works with common entity names used in conversation
-- **Context Awareness**: Understands common naming patterns and conventions
-- **Enhanced Discovery**: When entities aren't found, provides intelligent search suggestions
-- **Error Recovery**: Automatically suggests similar entities when exact matches fail
 
 ## Authentication and Setup
 
