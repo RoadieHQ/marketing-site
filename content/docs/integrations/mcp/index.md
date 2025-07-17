@@ -496,7 +496,6 @@ Both the Rich Catalog Entity Server and Tech Insights Facts Server include intel
 
 - **Flexible Queries**: Users don't need to know exact entity references
 - **Natural Language**: Works with common entity names used in conversation
-- **Error Tolerance**: Handles typos and missing namespace information
 - **Context Awareness**: Understands common naming patterns and conventions
 
 ## Authentication and Setup
