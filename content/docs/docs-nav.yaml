@@ -94,7 +94,7 @@ nav:
       - Google OAuth client: '/docs/integrations/google-oauth-client/'
       - GraphiQL: '/docs/integrations/graphiql/'
       - Microsoft Graph: '/docs/integrations/ms-graph-org-provider/'
-      - MCP Servers: '/docs/integrations/mcp/'
+      - Roadie MCP Servers: '/docs/integrations/mcp/'
   - In-depth:
       - API docs:
           - Custom renderers: '/docs/details/custom-api-docs-renderers/'

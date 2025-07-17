@@ -1,16 +1,16 @@
 ---
-title: Model Context Protocol AI Servers (Beta)
+title: Roadie MCP AI Servers (Beta)
 publishedDate: '2024-06-12T15:00:00.0Z'
 description: How to use Roadie AI features exposed via MCP servers
 
-humanName: Model Context Protocol (MPC) AI Servers
+humanName: Model Context Protocol(MPC) Servers
 logoImage: '../../../assets/logos/ai-assistant/roadie-racks-ai.webp'
 integrationType: Roadie API
 ---
 
 ## Introduction
 
-Roadie exposes a number of Model Context Protocol Servers (MCP) via our authenticated API that can provide AI tools like agents with structured data to answer complex questions about your catalog and powerful workflow capabilities using the scaffolder.
+Roadie exposes a number of Model Context Protocol Servers (MCP) via our authenticated API that can provide AI tools like agents and LLMsg with structured data to answer complex questions about your catalog and powerful workflow capabilities using the scaffolder.
 
 ## Available MCP Servers
 
