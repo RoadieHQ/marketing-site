@@ -798,35 +798,35 @@ Add the following configuration to your Continue settings (`~/.continue/config.j
 {
   "mcpServers": {
     "roadie-api-docs": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-api-docs-query-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-scaffolder": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-scaffolder-use-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-catalog": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-rich-catalog-entity-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-insights": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-tech-insights-facts-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     }
   }
@@ -860,37 +860,37 @@ Create or edit your Cursor MCP configuration file (`.cursor/mcp.json` in your pr
 
 ```json
 {
-  "servers": {
+  "mcpServers": {
     "roadie-api-docs": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-api-docs-query-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-scaffolder": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-scaffolder-use-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-catalog": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-rich-catalog-entity-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-insights": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-tech-insights-facts-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     }
   }
@@ -928,12 +928,36 @@ Add the following configuration to your MCP settings:
 ```json
 {
   "mcpServers": {
-    "roadie": {
-      "command": "node",
-      "args": ["/path/to/roadie-mcp-server.js"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+    "roadie-api-docs": {
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+      }
+    },
+    "roadie-scaffolder": {
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+      }
+    },
+    "roadie-catalog": {
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+      }
+    },
+    "roadie-insights": {
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     }
   }
@@ -953,7 +977,6 @@ If direct MCP configuration isn't available, you can use ChatGPT's API integrati
 Try asking ChatGPT:
 - "What's the compliance score for our payment services?"
 - "Show me the dependency graph for user-service"
-- "Generate a new microservice using our templates"
 
 </details>
 
@@ -970,35 +993,35 @@ Edit your Claude Desktop configuration file (`~/.config/claude-desktop/claude_de
 {
   "mcpServers": {
     "roadie-api-docs": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-api-docs-query-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-scaffolder": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-scaffolder-use-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-catalog": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-rich-catalog-entity-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-insights": {
-      "command": "npx",
-      "args": ["@roadiehq/mcp-tech-insights-facts-module"],
-      "env": {
-        "ROADIE_API_TOKEN": "your-roadie-api-token",
-        "ROADIE_BASE_URL": "https://your-instance.roadie.so"
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     }
   }
@@ -1014,93 +1037,26 @@ Restart the application to load the new MCP server configuration.
 Test with queries like:
 - "What documentation exists for auth-service?"
 - "Show me GitHub metrics for all payment services"
-- "Create a new React component using scaffolder"
 
 </details>
 
-<details>
-<summary><strong>Custom MCP Client</strong></summary>
-
-For custom integrations or other tools that support MCP:
-
-#### 1. Install Node.js Dependencies
-
-```bash
-npm install @roadiehq/mcp-api-docs-query-module
-npm install @roadiehq/mcp-scaffolder-use-module
-npm install @roadiehq/mcp-rich-catalog-entity-module
-npm install @roadiehq/mcp-tech-insights-facts-module
-```
-
-#### 2. Environment Configuration
-
-Set up environment variables:
-
-```bash
-export ROADIE_API_TOKEN="your-roadie-api-token"
-export ROADIE_BASE_URL="https://your-instance.roadie.so"
-```
-
-#### 3. Basic MCP Client Example
-
-```javascript
-import { Client } from '@modelcontextprotocol/sdk/client/index.js';
-import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
-
-async function connectToRoadieMCP() {
-  const transport = new StdioClientTransport({
-    command: 'npx',
-    args: ['@roadiehq/mcp-api-docs-query-module'],
-    env: {
-      ROADIE_API_TOKEN: process.env.ROADIE_API_TOKEN,
-      ROADIE_BASE_URL: process.env.ROADIE_BASE_URL
-    }
-  });
-
-  const client = new Client({
-    name: "roadie-client",
-    version: "1.0.0",
-  }, {
-    capabilities: {}
-  });
-
-  await client.connect(transport);
-  return client;
-}
-```
-
-</details>
 
 ### Common Configuration Tips
 
 #### API Token Setup
 
-1. **Generate API Token**:
-   - Navigate to your Roadie instance
-   - Go to Settings → API Keys  
-   - Create a new key with permissions for:
-     - Catalog read access
-     - Scaffolder execution (if using templates)
-     - Tech Insights access (if using metrics)
-
-2. **Secure Token Storage**:
-   - Store tokens in environment variables
-   - Use your tool's secure credential storage
-   - Never commit tokens to version control
+See [API Token docs here](/docs/api/authorization/). You may need an admin user to provide you with a Roadie API Token. 
 
 #### Environment Variables
 
 Set these environment variables for all MCP server configurations:
 
 ```bash
-# Required for all servers
+# Required for authentication
 ROADIE_API_TOKEN=your-api-token-here
-ROADIE_BASE_URL=https://your-instance.roadie.so
-
-# Optional: Customize behavior
-ROADIE_NAMESPACE=default
-ROADIE_TIMEOUT=30000
 ```
+
+**Note:** Replace `<tenant-name>` in the URLs with your actual Roadie tenant name (e.g., `https://mycompany.roadie.so/api/mcp/v1/...`)
 
 #### Troubleshooting Setup
 
@@ -1111,26 +1067,32 @@ ROADIE_TIMEOUT=30000
    - Check that the token has appropriate permissions
 
 2. **Connection Failures**:
-   - Ensure your Roadie instance URL is correct
+   - Ensure your Roadie tenant URL is correct (https://<tenant-name>.roadie.so)
    - Verify network connectivity to your Roadie instance
+   - Check that the MCP API endpoints are accessible
 
 3. **Permission Denied**:
    - Review your API token permissions
    - Contact your Roadie administrator for access
 
-4. **MCP Server Not Found**:
-   - Ensure Node.js packages are installed correctly
-   - Check that npx can access the MCP modules
+4. **MCP Server Configuration Issues**:
+   - Verify the URL format is correct: `https://<tenant-name>.roadie.so/api/mcp/v1/<server-name>`
+   - Check that all required headers are included in the configuration
+   - Ensure environment variables are properly set
 
 **Testing Connection:**
 
 ```bash
-# Test API connectivity
-curl -H "Authorization: Bearer your-api-token" \
-     https://your-instance.roadie.so/api/catalog/entities
+# Test API connectivity and MCP endpoint
+curl -H "Authorization: Bearer $ROADIE_API_TOKEN" \
+     -H "Accept: application/json, text/event-stream" \
+     -H "Content-Type: application/json" \
+     https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity
 
-# Test MCP server directly
-npx @roadiehq/mcp-api-docs-query-module --version
+# Test catalog API access
+curl -H "Authorization: Bearer $ROADIE_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     https://<tenant-name>.roadie.so/api/catalog/entities
 ```
 
 ## AI Assistant Integration Examples
@@ -1204,8 +1166,8 @@ For additional support, please refer to the Roadie documentation or contact our 
 To start using Roadie's MCP servers with your AI assistant:
 
 1. Configure your MCP client with Roadie's server endpoints
-2. Set up authentication using your Roadie API credentials - see [auth docs](/docs/api/authorization/)
+2. Set up authentication using your Roadie API Token - see [auth docs](/docs/api/authorization/)
 3. Begin with explicit queries to explore available tools
 
-The MCP servers provide a powerful way to integrate AI assistants with your Backstage catalog, enabling intelligent discovery, exploration, and automation of your development workflows. 
+The MCP servers provide a powerful way to integrate AI assistants with your Roadie Backstage catalog, enabling intelligent discovery, exploration, and automation of your development workflows. 
 
