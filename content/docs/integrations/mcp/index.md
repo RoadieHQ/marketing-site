@@ -42,6 +42,27 @@ Search for available API specifications using a query string that supports parti
 }
 ```
 
+**Return Schema:**
+```typescript
+{
+  results: {
+    type: string,
+    document: {
+      kind: string,
+      text: string,
+      type: string,
+      owner: string,
+      title: string,
+      keywords: string,
+      location: string,
+      lifecycle: string,
+      namespace: string,
+      componentType: string
+    }
+  }[]
+}
+```
+
 This will return all APIs related to payments, including services like "payment-gateway", "payment-processor", or "billing-api".
 
 #### Retrieve API Spec
@@ -57,6 +78,14 @@ Get the complete specification for a specific API, including full OpenAPI/Swagge
 {
   "name": "user-service-api",
   "namespace": "backend"
+}
+```
+
+**Return Schema:**
+```typescript
+{
+  entityRef: string,
+  spec: string
 }
 ```
 
@@ -121,6 +150,14 @@ Get detailed information about a specific template, including parameters, steps,
 }
 ```
 
+**Return Schema:**
+```typescript
+{
+  entityRef: string,
+  spec: string
+}
+```
+
 #### Validate Template Values
 
 Check if your input values meet the template's parameter requirements before execution, preventing common errors.
@@ -138,6 +175,15 @@ Check if your input values meet the template's parameter requirements before exe
     "description": "A React application",
     "owner": "team-frontend"
   }
+}
+```
+
+**Return Schema:**
+```typescript
+{
+  valid: boolean, // Whether the values are valid
+  errors: string[], // List of validation errors
+  schema: Record<string, any> // The template parameter schema
 }
 ```
 
@@ -164,6 +210,14 @@ Execute a scaffolder template with the provided values and optional secrets.
   "secrets": {
     "github_token": "ghp_xxx"
   }
+}
+```
+
+**Return Schema:**
+```typescript
+{
+  id: string, // The created task ID
+  taskUrl: string // URL to monitor the task
 }
 ```
 
@@ -208,7 +262,9 @@ Monitor the status and progress of template execution.
 - **Entity Information**: Get detailed metadata, ownership, lifecycle, and specifications
 - **Relationship Mapping**: Discover dependencies, provides relationships, and entity connections
 - **Documentation Access**: Search and retrieve TechDocs content associated with entities
+- **Entity Discovery**: Search and find entities when exact names are unknown
 - **Smart Resolution**: Intelligent entity lookup that can find entities by name across namespaces
+- **Enhanced Error Handling**: Provides search suggestions when entities aren't found
 
 ### Available Tools
 
@@ -232,6 +288,24 @@ Retrieve basic entity information including name, description, owner, lifecycle 
 - Lifecycle stage and system classification
 - Labels, annotations, and custom metadata
 
+**Return Schema:**
+```typescript
+{
+  name: string,
+  title?: string,
+  description?: string,
+  owner?: string,
+  lifecycle?: string,
+  type?: string,
+  tags?: string[],
+  annotations?: Record<string, string>,
+  labels?: Record<string, string>,
+  links?: Record<string, any>[],
+  namespace?: string,
+  kind?: string
+}
+```
+
 #### Get Entity Relationships
 
 Discover entity relationships including dependencies, what the entity provides, and connected services.
@@ -251,6 +325,44 @@ Discover entity relationships including dependencies, what the entity provides, 
 - **Dependents**: Other entities that depend on this entity
 - **Provides**: APIs and resources this entity provides
 - **Consumes**: APIs and resources this entity consumes
+
+**Return Schema:**
+```typescript
+{
+  // Core relationships
+  ownedBy?: string,
+  owner?: string,
+  system?: string,
+  domain?: string,
+
+  // Dependencies
+  dependsOn: string[],
+  dependencyOf: string[],
+
+  // API relationships
+  providesApis: string[],
+  apiProvidedBy: string[],
+  consumesApis: string[],
+
+  // Hierarchical relationships
+  partOf: string[],
+  hasPart: string[],
+  subcomponentOf?: string,
+  subdomainOf?: string,
+
+  // Group/User relationships
+  memberOf: string[],
+  members: string[],
+  parent?: string,
+  parentOf: string[],
+  children: string[],
+  childOf: string[],
+
+  // Management relationships
+  managedBy: string[],
+  manages: string[]
+}
+```
 
 #### Get TechDocs
 
@@ -273,6 +385,63 @@ Search and retrieve TechDocs documentation content for specific entities.
 - Relevant content snippets
 - Documentation metadata and structure
 
+**Return Schema:**
+```typescript
+{
+  totalPages: number,
+  pages: {
+    title: string,
+    content: string,
+    path: string,
+    htmlViewPath: string
+  }[]
+}
+```
+
+#### Search Entities
+
+Discover and find entities when you don't know the exact entity name or want to explore available entities.
+
+**Parameters:**
+- `searchTerm` (string): Search term to find entities by name, title, or other attributes
+- `kind` (string, optional): Filter by entity kind (e.g., "component", "api", "system")
+- `namespace` (string, optional): Filter by specific namespace
+- `limit` (number, optional): Maximum number of results to return (default: 10)
+
+**Example Usage:**
+```json
+{
+  "searchTerm": "payment",
+  "kind": "component",
+  "limit": 5
+}
+```
+
+**Returns:** List of matching entities including:
+- Entity references and basic metadata
+- Entity names, descriptions, and owners
+- Entity kinds and namespaces
+- Relevance-ranked search results
+
+**Return Schema:**
+```typescript
+{
+  totalFound: number,
+  entities: {
+    name: string,
+    kind: string,
+    namespace: string,
+    title?: string,
+    description?: string,
+    owner?: string,
+    lifecycle?: string,
+    type?: string,
+    tags?: string[],
+    entityRef: string
+  }[]
+}
+```
+
 ### Common Use Cases
 
 **Entity Exploration**
@@ -289,6 +458,13 @@ Search and retrieve TechDocs documentation content for specific entities.
 - "What documentation exists for the payment-service?"
 - "Search for authentication information in user-service docs"
 - "Show me the getting started guide for inventory-api"
+
+**Entity Discovery**
+- "Find entities related to payment processing"
+- "Search for all user management services"
+- "What APIs are available for authentication?"
+- "Show me all components owned by the backend team"
+- "Find systems in the platform namespace"
 
 </details>
 
@@ -325,6 +501,18 @@ Retrieve GitHub-related metrics including pull request performance, repository a
 - Commit activity and frequency
 - Repository collaboration metrics
 
+**Return Schema:**
+```typescript
+{
+  avgMergeTimeHours?: number,
+  latestMergedPR?: string,
+  latestMergedPRAuthor?: string,
+  totalPRs?: number,
+  mergedPRs?: number,
+  openPRs?: number
+}
+```
+
 #### Get Security Metrics
 
 Access security-related metrics from Snyk vulnerability scans and Dependabot alerts.
@@ -344,6 +532,25 @@ Access security-related metrics from Snyk vulnerability scans and Dependabot ale
 - Dependabot alert statistics
 - Branch protection status
 - Security compliance metrics
+
+**Return Schema:**
+```typescript
+{
+  snykIssues?: {
+    total: number,
+    critical: number,
+    high: number,
+    medium: number,
+    low: number
+  },
+  dependabotAlerts?: {
+    open: number,
+    dismissed: number,
+    fixed: number
+  },
+  branchProtection?: boolean
+}
+```
 
 #### Get PagerDuty Metrics
 
@@ -365,6 +572,26 @@ Retrieve incident metrics and service configuration from PagerDuty integration.
 - Service escalation policies
 - On-call rotation information
 
+**Return Schema:**
+```typescript
+{
+  incidentMetrics?: {
+    totalIncidents: number,
+    monthlyIncidents: number,
+    quarterlyIncidents: number,
+    meanTimeToResolve?: number,
+    meanTimeToFirstAck?: number,
+    upTimePercentage?: number
+  },
+  serviceInfo?: {
+    hasEscalationPolicy: boolean,
+    hasTeamsAssigned: boolean,
+    hasDescription: boolean,
+    alertCreationType?: string
+  }
+}
+```
+
 #### Get Datadog Metrics
 
 Access Service Level Objective (SLO) data and monitoring information from Datadog.
@@ -384,6 +611,14 @@ Access Service Level Objective (SLO) data and monitoring information from Datado
 - Monitor counts and alert frequency
 - Performance metrics and trends
 - Service health indicators
+
+**Return Schema:**
+```typescript
+{
+  sloCount: number,
+  monitorCount: number
+}
+```
 
 #### Get Entity Compliance
 
@@ -405,6 +640,28 @@ Evaluate entity metadata completeness and compliance with organizational standar
 - Documentation coverage
 - Standards adherence metrics
 
+**Return Schema:**
+```typescript
+{
+  metadata: {
+    hasTitle: boolean | 'unknown',
+    hasDescription: boolean | 'unknown',
+    hasTags: boolean | 'unknown',
+    hasOwner: boolean | 'unknown'
+  },
+  techdocs: {
+    hasTechdocsRef: boolean | 'unknown'
+  },
+  ownership: {
+    hasOwner: boolean | 'unknown',
+    hasGroupOwner: boolean | 'unknown',
+    hasRelationships: boolean | 'unknown'
+  },
+  complianceScore: number,
+  summary: string
+}
+```
+
 #### Get Repository Info
 
 Analyze repository structure and catalog configuration status.
@@ -424,6 +681,23 @@ Analyze repository structure and catalog configuration status.
 - Catalog-info.yaml status and validation
 - Code organization metrics
 - Repository configuration compliance
+
+**Return Schema:**
+```typescript
+{
+  filePaths: string[],
+  totalFiles: number,
+  inCatalog?: boolean,
+  fileTypes: {
+    docker: number,
+    yaml: number,
+    javascript: number,
+    python: number,
+    docs: number,
+    config: number
+  }
+}
+```
 
 ### Common Use Cases
 
@@ -463,13 +737,14 @@ The four MCP servers work together to provide comprehensive Backstage integratio
 
 #### Operational Review
 1. **Tech Insights Facts Server**: "Show me security metrics for all payment services"
-2. **Rich Catalog Entity Server**: "What are the dependencies of payment-gateway?"
+2. **Rich Catalog Entity Server**: "What are the coding standards of the payment-gateway service?"
 3. **API Docs Query Server**: "Get the API specs for payment-processor"
 
 #### Service Discovery
 1. **Rich Catalog Entity Server**: "Find all services owned by the platform team"
-2. **API Docs Query Server**: "What authentication APIs are available?"
-3. **Tech Insights Facts Server**: "Which services have the best compliance scores?"
+2. **Rich Catalog Entity Server**: "Search for entities related to user management"
+3. **API Docs Query Server**: "What authentication APIs are available?"
+4. **Tech Insights Facts Server**: "Which services have the best compliance scores?"
 
 ### AI Assistant Capabilities
 
@@ -480,6 +755,8 @@ With all four servers configured, AI assistants can:
 - **Assist with service creation** by analyzing existing patterns and generating new services
 - **Perform impact analysis** by understanding dependencies and relationships
 - **Monitor service health** through integrated metrics and incident data
+- **Enable intelligent discovery** by searching for entities across the entire catalog
+- **Provide contextual suggestions** when exact entity matches aren't found
 
 ## Smart Entity Resolution
 
@@ -497,12 +774,14 @@ Both the Rich Catalog Entity Server and Tech Insights Facts Server include intel
 - **Flexible Queries**: Users don't need to know exact entity references
 - **Natural Language**: Works with common entity names used in conversation
 - **Context Awareness**: Understands common naming patterns and conventions
+- **Enhanced Discovery**: When entities aren't found, provides intelligent search suggestions
+- **Error Recovery**: Automatically suggests similar entities when exact matches fail
 
 ## Authentication and Setup
 
 ### Prerequisites
 
-- Active Roadie account with API access
+- Roadie tenant with populated catalog
 - Proper permissions to access catalog entities and execute scaffolder templates
 - AI assistant or MCP client configured to use Roadie's MCP servers
 
@@ -512,9 +791,9 @@ The MCP servers are available through Roadie's authenticated API. Your MCP clien
 
 ### Permissions
 
-- **Catalog Read**: Required for API discovery and template search
+- **Catalog Read**: Required for API discovery, template search and entity related queries
+- **Tech Insights Data Source Read**: Required for Tech Insights data
 - **Scaffolder Execute**: Required for running templates
-- **Entity Access**: Respects your existing Backstage permission model
 
 ## Tool Integration Setup
 
@@ -891,6 +1170,15 @@ npx @roadiehq/mcp-api-docs-query-module --version
 5. **AI**: Validates inputs using `validate-template-values`
 6. **AI**: Executes template using `run-scaffolder-template`
 7. **AI**: Monitors progress and reports results
+
+### Entity Discovery Workflow
+
+1. **User**: "I need to understand our payment infrastructure"
+2. **AI**: Uses `search-entities` to find all payment-related entities
+3. **AI**: Retrieves entity information for each discovered service
+4. **AI**: Maps relationships between payment components
+5. **AI**: Provides comprehensive overview of the payment ecosystem
+6. **AI**: Suggests related APIs and documentation for deeper exploration
 
 ## Best Practices
 
