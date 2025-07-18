@@ -10,7 +10,7 @@ integrationType: Roadie API
 
 ## Introduction
 
-Roadie exposes a number of Model Context Protocol Servers (MCP) via our authenticated API that can provide AI tools like agents and LLMsg with structured data to answer complex questions about your catalog and powerful workflow capabilities using the scaffolder.
+Roadie exposes a number of Model Context Protocol Servers (MCP) via our authenticated API that can provide AI tools like agents and LLMs with structured data to answer complex questions about your catalog and powerful workflow capabilities using the scaffolder.
 
 ## Available MCP Servers
 
@@ -110,7 +110,7 @@ Get the complete specification for a specific API, including full OpenAPI/Swagge
 </details>
 
 <details>
-<summary><strong>Scaffolder Use Server</strong> - Execute Backstage scaffolder templates</summary>
+<summary><strong>Scaffolder Server</strong> - Work with Scaffolder templates</summary>
 
 ### Capabilities
 
@@ -781,74 +781,6 @@ The MCP servers are available through Roadie's authenticated API. Your MCP clien
 ## Tool Integration Setup
 
 ### Setting up MCP Servers in Popular AI Tools
-
-<details>
-<summary><strong>VS Code with Continue Extension</strong></summary>
-
-The Continue extension for VS Code supports MCP servers. Here's how to configure it:
-
-#### 1. Install Continue Extension
-
-Install the Continue extension from the VS Code marketplace.
-
-#### 2. Configure MCP Servers
-
-Add the following configuration to your Continue settings (`~/.continue/config.json`):
-
-```json
-{
-  "mcpServers": {
-    "roadie-api-docs": {
-      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
-      "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
-      }
-    },
-    "roadie-scaffolder": {
-      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
-      "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
-      }
-    },
-    "roadie-catalog": {
-      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
-      "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
-      }
-    },
-    "roadie-insights": {
-      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
-      "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
-      }
-    }
-  }
-}
-```
-
-#### 3. Get Your API Token
-
-1. Log into your Roadie instance
-2. Go to Settings → API Keys
-3. Create a new API key with appropriate permissions
-4. Replace `your-roadie-api-token` with your actual token
-
-#### 4. Test the Integration
-
-Open VS Code and try asking Continue questions like:
-- "What APIs are available for user management?"
-- "Who owns the payment-service component?"
-- "Create a new React application template"
-
-</details>
 
 <details>
 <summary><strong>Cursor IDE</strong></summary>
