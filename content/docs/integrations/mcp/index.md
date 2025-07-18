@@ -813,16 +813,12 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
     "roadie-catalog": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-insights": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     }
@@ -860,32 +856,24 @@ Create or edit your Cursor MCP configuration file (`.cursor/mcp.json` in your pr
     "roadie-api-docs": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-scaffolder": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-catalog": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-insights": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     }
@@ -927,32 +915,24 @@ Add the following configuration to your MCP settings:
     "roadie-api-docs": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-scaffolder": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-catalog": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-insights": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     }
@@ -991,32 +971,24 @@ Edit your Claude Desktop configuration file (`~/.config/claude-desktop/claude_de
     "roadie-api-docs": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-scaffolder": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-catalog": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     },
     "roadie-insights": {
       "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer ${ROADIE_API_TOKEN}"
       }
     }
