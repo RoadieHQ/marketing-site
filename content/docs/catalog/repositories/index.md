@@ -9,6 +9,13 @@ description: How repositories are modelled and ingested into the catalog
 Repositories are modelled in the Roadie Backstage catalog using the Repository Kind.
 
 ### Catalog Completeness
+<div role="alert">
+  <div class="docs-cta__warning_title">Beta Feature</div>
+  <div  class="docs-cta__warning_message">
+    <p>The Catalog Completeness feature is currently in beta. Please reach out to Roadie Support to request this is enabled.
+    </p>
+  </div>
+</div>
 Repositories allow us to effectively measure the completeness of your catalog - that is, whether all the software in your organisation is represented by entities in the catalog.
 
 Once your Repositories are added, Admins will be able to see a graph of catalog completeness in the Administration section of Roadie. 
