@@ -14,7 +14,14 @@ Roadie exposes a number of [Model Context Protocol Servers (MCP)](https://modelc
 
 ## Available MCP Servers
 
-Roadie provides four MCP servers that enable AI assistants to interact with your Backstage catalog:
+Roadie currently provides four MCP servers that enable AI assistants to interact with your Backstage catalog:
+
+- Catalog - https://api.roadie.so/api/mcp/v1/rich-catalog-entity
+- API Docs - https://api.roadie.so/api/mcp/v1/api-docs-query
+- Scaffolder -https://api.roadie.so/api/mcp/v1/scaffolder-use
+- Tech Insights Facts - https://api.roadie.so/api/mcp/v1/tech-insights-facts
+
+You can set them up by [following instructions here](#tool-integration-setup).
 
 <details>
 <summary><strong>API Docs Query Server</strong> - Discover and retrieve API documentation</summary>
@@ -797,16 +804,12 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
     "roadie-api-docs": {
       "url": "https://api.roadie.so/api/mcp/v1/api-docs-query",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-scaffolder": {
       "url": "https://api.roadie.so/api/mcp/v1/scaffolder-use",
       "headers": {
-        "Accept": "application/json, text/event-stream",
-        "Content-Type": "application/json",
         "Authorization": "Bearer <roadie_api_token>"
       }
     },
