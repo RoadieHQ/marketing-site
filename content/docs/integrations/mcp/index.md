@@ -1,16 +1,16 @@
 ---
 title: Roadie MCP AI Servers (Beta)
-publishedDate: '2024-06-12T15:00:00.0Z'
+publishedDate: '2025-07-18T15:00:00.0Z'
 description: How to use Roadie AI features exposed via MCP servers
 
 humanName: Model Context Protocol(MPC) Servers
 logoImage: '../../../assets/logos/ai-assistant/roadie-racks-ai.webp'
-integrationType: Roadie API
+integrationType: Integration
 ---
 
 ## Introduction
 
-Roadie exposes a number of Model Context Protocol Servers (MCP) via our authenticated API that can provide AI tools like agents and LLMs with structured data to answer complex questions about your catalog and powerful workflow capabilities using the scaffolder.
+Roadie exposes a number of [Model Context Protocol Servers (MCP)](https://modelcontextprotocol.io/introduction) via our authenticated API that can provide AI tools like agents and LLMs with structured data to answer complex questions about your catalog and powerful workflow capabilities using the scaffolder.
 
 ## Available MCP Servers
 
@@ -407,7 +407,7 @@ Discover and find entities when you don't know the exact entity name or want to 
 - `searchTerm` (string): Search term to find entities by name, title, or other attributes
 - `kind` (string, optional): Filter by entity kind (e.g., "component", "api", "system")
 - `namespace` (string, optional): Filter by specific namespace
-- `limit` (number, optional): Maximum number of results to return (default: 10)
+- `limit` (number, optional): Maximum number of results to return (default: 100)
 
 **Example Usage:**
 ```json
