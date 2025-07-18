@@ -783,6 +783,69 @@ The MCP servers are available through Roadie's authenticated API. Your MCP clien
 ### Setting up MCP Servers in Popular AI Tools
 
 <details>
+<summary><strong>VS Code with Copilot</strong></summary>
+
+VS Code supports [MCP servers](https://code.visualstudio.com/docs/copilot/chat/mcp-servers). Here's how to configure Roadie's for use with Copilot:
+
+#### 1. Configure MCP Servers
+
+Add the following configuration to your settings (`~/.vscode/mcp.json`):
+
+```json
+{
+  "servers": {
+    "roadie-api-docs": {
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/api-docs-query",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+      }
+    },
+    "roadie-scaffolder": {
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/scaffolder-use",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+      }
+    },
+    "roadie-catalog": {
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/rich-catalog-entity",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+      }
+    },
+    "roadie-insights": {
+      "url": "https://<tenant-name>.roadie.so/api/mcp/v1/tech-insights-facts",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+#### 2. Get Your API Token
+
+1. Log into your Roadie instance
+2. Go to Settings → API Keys
+3. Create a new API key with appropriate permissions
+4. Replace `your-roadie-api-token` with your actual token
+s
+#### 3. Test the Integration
+
+Open VS Code and try asking Copilot questions like:
+- "What APIs are available for user management?"
+- "Who owns the payment-service component?"
+
+</details>
+
+<details>
 <summary><strong>Cursor IDE</strong></summary>
 
 Cursor supports MCP servers through its AI integration. Here's the setup:
