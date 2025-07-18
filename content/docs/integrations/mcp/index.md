@@ -902,6 +902,8 @@ Use Cursor's AI chat to test the integration:
 
 The ChatGPT desktop app supports MCP servers for enhanced functionality:
 
+You can read about how to configure MCP servers for ChatGPT [in their docs](https://platform.openai.com/docs/mcp#test-and-connect-your-mcp-server) or [use Custom Connectors](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt) if you have the correct plan level. 
+
 #### 1. Enable MCP in ChatGPT Desktop
 
 1. Open ChatGPT Desktop App
