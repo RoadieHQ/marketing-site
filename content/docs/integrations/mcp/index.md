@@ -799,7 +799,7 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
       "headers": {
         "Accept": "application/json, text/event-stream",
         "Content-Type": "application/json",
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-scaffolder": {
@@ -807,19 +807,19 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
       "headers": {
         "Accept": "application/json, text/event-stream",
         "Content-Type": "application/json",
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-catalog": {
       "url": "https://api.roadie.so/api/mcp/v1/rich-catalog-entity",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-insights": {
       "url": "https://api.roadie.so/api/mcp/v1/tech-insights-facts",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     }
   }
@@ -856,25 +856,25 @@ Create or edit your Cursor MCP configuration file (`.cursor/mcp.json` in your pr
     "roadie-api-docs": {
       "url": "https://api.roadie.so/api/mcp/v1/api-docs-query",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-scaffolder": {
       "url": "https://api.roadie.so/api/mcp/v1/scaffolder-use",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-catalog": {
       "url": "https://api.roadie.so/api/mcp/v1/rich-catalog-entity",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-insights": {
       "url": "https://api.roadie.so/api/mcp/v1/tech-insights-facts",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     }
   }
@@ -915,25 +915,25 @@ Add the following configuration to your MCP settings:
     "roadie-api-docs": {
       "url": "https://api.roadie.so/api/mcp/v1/api-docs-query",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-scaffolder": {
       "url": "https://api.roadie.so/api/mcp/v1/scaffolder-use",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-catalog": {
       "url": "https://api.roadie.so/api/mcp/v1/rich-catalog-entity",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-insights": {
       "url": "https://api.roadie.so/api/mcp/v1/tech-insights-facts",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     }
   }
@@ -971,25 +971,25 @@ Edit your Claude Desktop configuration file (`~/.config/claude-desktop/claude_de
     "roadie-api-docs": {
       "url": "https://api.roadie.so/api/mcp/v1/api-docs-query",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-scaffolder": {
       "url": "https://api.roadie.so/api/mcp/v1/scaffolder-use",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-catalog": {
       "url": "https://api.roadie.so/api/mcp/v1/rich-catalog-entity",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     },
     "roadie-insights": {
       "url": "https://api.roadie.so/api/mcp/v1/tech-insights-facts",
       "headers": {
-        "Authorization": "Bearer ${ROADIE_API_TOKEN}"
+        "Authorization": "Bearer <roadie_api_token>"
       }
     }
   }
@@ -1013,16 +1013,7 @@ Test with queries like:
 
 #### API Token Setup
 
-See [API Token docs here](/docs/api/authorization/). You may need an admin user to provide you with a Roadie API Token. 
-
-#### Environment Variables
-
-Set these environment variables for all MCP server configurations:
-
-```bash
-# Required for authentication
-ROADIE_API_TOKEN=your-api-token-here
-```
+See [API Token docs here](/docs/api/authorization/). You may need an admin user to provide you with a Roadie API Token.
 
 #### Troubleshooting Setup
 
