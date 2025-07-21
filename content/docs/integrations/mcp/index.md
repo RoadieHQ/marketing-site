@@ -904,61 +904,6 @@ The ChatGPT desktop app supports MCP servers for enhanced functionality:
 
 You can read about how to configure MCP servers for ChatGPT [in their docs](https://platform.openai.com/docs/mcp#test-and-connect-your-mcp-server) or [use Custom Connectors](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt) if you have the correct plan level. 
 
-#### 1. Enable MCP in ChatGPT Desktop
-
-1. Open ChatGPT Desktop App
-2. Go to Settings → Features
-3. Enable "Model Context Protocol"
-
-#### 2. Configure Roadie MCP Servers
-
-Add the following configuration to your MCP settings:
-
-```json
-{
-  "mcpServers": {
-    "roadie-api-docs": {
-      "url": "https://api.roadie.so/api/mcp/v1/api-docs-query",
-      "headers": {
-        "Authorization": "Bearer <roadie_api_token>"
-      }
-    },
-    "roadie-scaffolder": {
-      "url": "https://api.roadie.so/api/mcp/v1/scaffolder-use",
-      "headers": {
-        "Authorization": "Bearer <roadie_api_token>"
-      }
-    },
-    "roadie-catalog": {
-      "url": "https://api.roadie.so/api/mcp/v1/rich-catalog-entity",
-      "headers": {
-        "Authorization": "Bearer <roadie_api_token>"
-      }
-    },
-    "roadie-insights": {
-      "url": "https://api.roadie.so/api/mcp/v1/tech-insights-facts",
-      "headers": {
-        "Authorization": "Bearer <roadie_api_token>"
-      }
-    }
-  }
-}
-```
-
-#### 3. Alternative: Use via API
-
-If direct MCP configuration isn't available, you can use ChatGPT's API integration:
-
-1. Set up a webhook endpoint that forwards requests to Roadie MCP servers
-2. Configure custom actions in ChatGPT to call your webhook
-3. Map the webhook responses to natural language outputs
-
-#### 4. Test the Integration
-
-Try asking ChatGPT:
-- "What's the compliance score for our payment services?"
-- "Show me the dependency graph for user-service"
-
 </details>
 
 <details>
