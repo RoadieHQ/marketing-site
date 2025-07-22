@@ -46,7 +46,7 @@ Retrieve GitHub-related metrics including pull request performance, repository a
 }
 ```
 
-**Required Permissions:**
+#### Required Permissions:
 - **Catalog entity read (*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
@@ -83,7 +83,7 @@ Access security-related metrics from Snyk vulnerability scans and Dependabot ale
 }
 ```
 
-**Required Permissions:**
+#### Required Permissions:
 - **Catalog entity read (*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
@@ -121,7 +121,7 @@ Retrieve incident metrics and service configuration from PagerDuty integration.
 }
 ```
 
-**Required Permissions:**
+#### Required Permissions:
 - **Catalog entity read (*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
@@ -147,7 +147,7 @@ Access Service Level Objective (SLO) data and monitoring information from Datado
 }
 ```
 
-**Required Permissions:**
+#### Required Permissions:
 - **Catalog entity read (*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
@@ -181,13 +181,11 @@ Evaluate entity metadata completeness and compliance with organizational standar
     hasOwner: boolean | 'unknown',
     hasGroupOwner: boolean | 'unknown',
     hasRelationships: boolean | 'unknown'
-  },
-  complianceScore: number,
-  summary: string
+  }
 }
 ```
 
-**Required Permissions:**
+#### Required Permissions:
 - **Catalog entity read (*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
@@ -222,7 +220,7 @@ Analyze repository structure and catalog configuration status.
 }
 ```
 
-**Required Permissions:**
+#### Required Permissions:
 - **Catalog entity read (*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
