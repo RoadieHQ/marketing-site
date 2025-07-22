@@ -44,6 +44,14 @@ metadata:
     sonarqube.org/project-key: [YOUR_PROJECT_KEY]
 ```
 
+<div role="alert">
+  <div class="docs-cta__info_title">Naming matters</div>
+  <div  class="docs-cta__info_message">
+    <p>If you are using an annotation with a single project key, you need to have a SonarQube URL configured with a name `default` within Roadie settings.</p>
+  </div>
+</div> 
+
+
 Alternatively, if you have multiple named SonarQube instances configured, you can add the name of the connection as follows. Please read below for an explanation of named SonarQube instance configurations.
 
 ```yaml
