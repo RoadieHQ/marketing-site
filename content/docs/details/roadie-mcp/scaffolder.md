@@ -1,6 +1,6 @@
 ---
 title: Scaffolder Server
-publishedDate: '2025-01-18T15:00:00.0Z'
+publishedDate: '2025-07-22T15:00:00.0Z'
 description: Find, validate, and execute Backstage scaffolder templates
 ---
 

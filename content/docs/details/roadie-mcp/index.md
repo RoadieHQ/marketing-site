@@ -1,6 +1,6 @@
 ---
 title: Roadie MCP AI Servers (Beta)
-publishedDate: '2025-01-18T15:00:00.0Z'
+publishedDate: '2025-07-22T15:00:00.0Z'
 description: How to use Roadie AI features exposed via MCP servers
 
 humanName: Model Context Protocol (MCP) Servers
@@ -17,16 +17,13 @@ Roadie exposes a number of [Model Context Protocol Servers (MCP)](https://modelc
 Roadie currently provides four MCP servers that enable AI assistants to interact with your Backstage catalog:
 
 - **[API Docs Query Server](api-docs-query)** - Discover and retrieve API documentation and specifications
+  - https://api.roadie.so/api/mcp/v1/api-docs-query
 - **[Scaffolder Server](scaffolder)** - Find, validate, and execute Backstage scaffolder templates  
+  - https://api.roadie.so/api/mcp/v1/scaffolder-use
 - **[Rich Catalog Entity Server](rich-catalog-entity)** - Access catalog entity data, relationships, and documentation
+  - https://api.roadie.so/api/mcp/v1/rich-catalog-entity
 - **[Tech Insights Facts Server](tech-insights-facts)** - Access operational metrics, security data, and compliance information
-
-### Server Endpoints
-
-- Catalog - https://api.roadie.so/api/mcp/v1/rich-catalog-entity
-- API Docs - https://api.roadie.so/api/mcp/v1/api-docs-query
-- Scaffolder - https://api.roadie.so/api/mcp/v1/scaffolder-use
-- Tech Insights Facts - https://api.roadie.so/api/mcp/v1/tech-insights-facts
+  - https://api.roadie.so/api/mcp/v1/tech-insights-facts
 
 ## Prerequisites
 
