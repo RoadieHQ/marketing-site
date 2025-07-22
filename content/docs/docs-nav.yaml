@@ -94,7 +94,6 @@ nav:
       - Google OAuth client: '/docs/integrations/google-oauth-client/'
       - GraphiQL: '/docs/integrations/graphiql/'
       - Microsoft Graph: '/docs/integrations/ms-graph-org-provider/'
-      - Roadie MCP Servers: '/docs/integrations/mcp/'
   - In-depth:
       - API docs:
           - Custom renderers: '/docs/details/custom-api-docs-renderers/'
@@ -128,6 +127,12 @@ nav:
           - Custom Docker Images: '/docs/details/roadie-local/custom-docker-images/'
           - Custom Domain: '/docs/details/roadie-local/custom-domain/'
           - Custom  Authentication: '/docs/details/roadie-local/custom-authentication/'
+      - Roadie MCP:
+          - Getting Started: '/docs/details/roadie-mcp/'
+          - API Docs Query Server: '/docs/details/roadie-mcp/api-docs-query/'
+          - Scaffolder Server: '/docs/details/roadie-mcp/scaffolder/'
+          - Rich Catalog Entity Server: '/docs/details/roadie-mcp/rich-catalog-entity/'
+          - Tech Insights Facts Server: '/docs/details/roadie-mcp/tech-insights-facts/'
       - Updating the UI: '/docs/details/updating-the-ui/'
   - Custom plugins:
       - Overview: '/docs/custom-plugins/overview/'
