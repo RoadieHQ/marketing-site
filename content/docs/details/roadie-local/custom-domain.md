@@ -32,7 +32,7 @@ your.roadie.domain
 
 ### DNS Configuration
 
-You will need to add DNS routing in your in frastructure to make sure requests to all these 3 endpoints are routed to your roadie-local service on port 80. 
+You will need to add DNS routing in your infrastructure to make sure requests to all these 3 endpoints are routed to your roadie-local service on port 80. 
 
 This means you will likely need DNS entries for:
 - A <your.domain> -> <your-roadie-local-ip>:80
