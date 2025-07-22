@@ -47,6 +47,8 @@ This way Roadie does not need to have knowledge or access of your infrastructure
 
 1. Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/broker` and enter the CIDR range of the system you wish to connect your Roadie Tenant’s Broker Server to. Next enter the Broker Token you wish to use to authenticate the connection. This token will be used in your `accept.json` file at Client configuration.
 
+> Note: configuration is case insensitive and will automatically be normalised, so avoid uppercase characters. For example, if 'testRoadie' is used that token name will be constructed in the broker server as test-roadie, without clear error reporting. Full documentation can be found here: https://github.com/snyk/broker/blob/master/README.npm.md#configuration
+
 ![Broker configuration page in Roadie Admin](Broker_Config_Page.webp)
 
 ## Setup Broker Client
