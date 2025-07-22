@@ -80,6 +80,10 @@ Get the complete specification for a specific API, including full OpenAPI/Swagge
 }
 ```
 
+#### Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog entities and API specifications
+
 ## Common Use Cases
 
 ### API Integration Planning
@@ -96,10 +100,6 @@ Get the complete specification for a specific API, including full OpenAPI/Swagge
 - Generate client code from API specifications
 - Create automated tests based on API schemas
 - Validate API requests and responses
-
-## Required Permissions
-
-- **Catalog entity read (*)** - Access to catalog entities and API specifications
 
 ## Examples
 
