@@ -16,7 +16,6 @@ The Rich Catalog Entity Server provides AI assistants with comprehensive access 
 - **Relationship Mapping**: Discover dependencies, provides relationships, and entity connections
 - **Documentation Access**: Search and retrieve TechDocs content associated with entities
 - **Entity Discovery**: Search and find entities when exact names are unknown
-- **Smart Resolution**: Intelligent entity lookup that can find entities by name across namespaces
 - **Enhanced Error Handling**: Provides search suggestions when entities aren't found
 
 ## Available Tools
@@ -52,6 +51,10 @@ Retrieve basic entity information including name, description, owner, lifecycle 
   kind?: string
 }
 ```
+
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog entities
 
 ### Get Entity Relationships
 
@@ -105,6 +108,10 @@ Discover entity relationships including dependencies, what the entity provides, 
 }
 ```
 
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog entities
+
 ### Get TechDocs
 
 Search and retrieve TechDocs documentation content for specific entities.
@@ -133,6 +140,10 @@ Search and retrieve TechDocs documentation content for specific entities.
   }[]
 }
 ```
+
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog entities and their docs
 
 ### Search Entities
 
@@ -171,6 +182,10 @@ Discover and find entities when you don't know the exact entity name or want to 
   }[]
 }
 ```
+
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog entities
 
 ## Common Use Cases
 

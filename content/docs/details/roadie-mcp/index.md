@@ -209,7 +209,7 @@ Test with queries like:
 
 ### Authentication Setup
 
-See [API Token docs here](/docs/api/authorization/). You may need an admin user to provide you with a Roadie API Token.
+You will need an API token for your user to connect with these MCP servers. See [API Token docs here](/docs/api/authorization/). You may need an admin user to provide you with a Roadie API Token.
 
 ### Troubleshooting Setup
 
@@ -283,13 +283,3 @@ curl -H "Authorization: Bearer $ROADIE_API_TOKEN" \
 - Check `get-scaffolder-task` for detailed error information
 
 For additional support, please refer to the Roadie documentation or contact our support team.
-
-## Getting Started
-
-To start using Roadie's MCP servers with your AI assistant:
-
-1. Configure your MCP client with Roadie's server endpoints
-2. Set up authentication using your Roadie API Token - see [auth docs](/docs/api/authorization/)
-3. Begin with explicit queries to explore available tools
-
-The MCP servers provide a powerful way to integrate AI assistants with your Roadie Backstage catalog, enabling intelligent discovery, exploration, and automation of your development workflows. 

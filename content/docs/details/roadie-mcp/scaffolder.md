@@ -55,6 +55,10 @@ Search for available scaffolder templates using queries that match template name
 }
 ```
 
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog template entities
+
 ### Retrieve Scaffolder Template
 
 Get detailed information about a specific template, including parameters, steps, and requirements.
@@ -78,6 +82,10 @@ Get detailed information about a specific template, including parameters, steps,
   spec: string
 }
 ```
+
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog template entities
 
 ### Validate Template Values
 
@@ -107,6 +115,10 @@ Check if your input values meet the template's parameter requirements before exe
   schema: Record<string, any> // The template parameter schema
 }
 ```
+
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog entities
 
 ### Run Scaffolder Template
 
@@ -142,6 +154,10 @@ Execute a scaffolder template with the provided values and optional secrets.
 }
 ```
 
+## Required Permissions
+
+- **Scaffolder task create** - Allows the user to run scaffolder templates
+
 ### Get Scaffolder Task
 
 Monitor the status and progress of template execution.
@@ -155,6 +171,11 @@ Monitor the status and progress of template execution.
   "id": "abc123def456"
 }
 ```
+
+## Required Permissions
+
+- **Scaffolder task read** - Allows a user to view scaffolder runs
+
 
 ## Common Use Cases
 
@@ -211,6 +232,5 @@ Monitor the status and progress of template execution.
 ## Security Considerations
 
 - All operations require proper authentication tokens
-- Secrets can be passed securely through the `secrets` parameter
 - Template execution respects Roadie's permission model
 - Task monitoring is limited to tasks you have access to 
