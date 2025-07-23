@@ -231,5 +231,5 @@ async function downloadRoadieLocalDockerFiles() {
 (async () => {
   await downloadOpenApiDocs();
   await downloadRoadieLocalDockerFiles();
-  // await downloadRoadieLocalBuilds();
+  await downloadRoadieLocalBuilds();
 })();
