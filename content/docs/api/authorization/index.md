@@ -6,7 +6,7 @@ description: How to get a Roadie API token and use it
 
 ## Prerequisites
 
-You will need to be an administrator in Roadie to create an API token.
+You will need to have the "Roadie API Key Access" policy assigned to your user in Roadie to create an API token.
 
 ## Get an API token
 
