@@ -144,15 +144,6 @@ Use Cursor's AI chat to test the integration:
 </details>
 
 <details>
-<summary><strong>ChatGPT Desktop App</strong></summary>
-
-The ChatGPT desktop app supports MCP servers for enhanced functionality.
-
-You can read about how to configure MCP servers for ChatGPT [in their docs](https://platform.openai.com/docs/mcp#test-and-connect-your-mcp-server) or [use Custom Connectors](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt) if you have the correct plan level.
-
-</details>
-
-<details>
 <summary><strong>Claude Desktop (Anthropic)</strong></summary>
 
 Claude Desktop supports MCP servers natively:
@@ -228,21 +219,6 @@ You will need an API token for your user to connect with these MCP servers. See 
    - Verify the URL format is correct: `https://api.roadie.so/api/mcp/v1/<server-name>`
    - Check that all required headers are included in the configuration
    - Ensure environment variables are properly set
-
-**Testing Connection:**
-
-```bash
-# Test API connectivity and MCP endpoint
-curl -H "Authorization: Bearer $ROADIE_API_TOKEN" \
-     -H "Accept: application/json, text/event-stream" \
-     -H "Content-Type: application/json" \
-     https://api.roadie.so/api/mcp/v1/rich-catalog-entity
-
-# Test catalog API access
-curl -H "Authorization: Bearer $ROADIE_API_TOKEN" \
-     -H "Content-Type: application/json" \
-     https://api.roadie.so/api/catalog/entities
-```
 
 ## Best Practices
 
