@@ -11,7 +11,7 @@ integrationType: OSS plugin
 
 The Architecture Decision Records (ADR) plugin allows you to explore ADRs associated with your entities, as well as discover ADRs across other entities using the Search. Use this to inform your own architectural decisions based on the experiences of previous projects.
 
-This plugin helps teams document and share architectural decisions, making it easier to understand the reasoning behind technical choices and learn from past decisions across different projects.
+This plugin helps teams share architectural decisions that have been documented using [MADR templates](https://adr.github.io/madr/). Using MADR with Roadie makes it easier to understand the reasoning behind technical choices and learn from past decisions across different projects.
 
 ## ADR Entity Configuration
 
