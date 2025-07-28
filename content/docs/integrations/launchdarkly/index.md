@@ -70,9 +70,6 @@ metadata:
     launchdarkly.com/filter-query: 'dark-mode'
 ```
 
-For the `EntityLaunchdarklyContextOverviewCard` component `project-key`, `environment-key` and `context` are needed.
-`EntityLaunchdarklyCard` component supports `project-key` and `filter-query`.
-
 
 ### Step 4: Add UI Components
 
@@ -82,11 +79,17 @@ The LaunchDarkly plugin provides multiple UI components that can be added to ent
 
 Displays feature flags for a specific LaunchDarkly context. This card shows flags relevant to the entity's configured context and is ideal for service-specific flag monitoring.
 
+For the `EntityLaunchdarklyContextOverviewCard` component `launchdarkly.com/project-key`, `launchdarkly.com/environment-key` and `launchdarkly.com/context` are needed.
+
 This card can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
 
 #### EntityLaunchdarklyCard
 
 Displays LaunchDarkly flags across multiple environments with column toggling capabilities. This component provides a comprehensive view of how flags are configured across different environments (e.g., development, staging, production).
+
+`EntityLaunchdarklyCard` component supports `launchdarkly.com/project-key` and `launchdarkly.com/filter` annotations.
+
+This card can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
 
 
 ## Annotation Reference
@@ -98,6 +101,7 @@ Displays LaunchDarkly flags across multiple environments with column toggling ca
 | `launchdarkly.com/context`         | JSON context for flag evaluation | No       | `'{"kind":"tenant","key":"roadie","name":"roadie"}'` |
 | `launchdarkly.com/filter-tags`     | Array of tags to filter flags    | No       | `'["frontend", "api"]'`                              |
 | `launchdarkly.com/filter-query`    | Query string to filter flags     | No       | `'dark-mode'`                                        |
+| `launchdarkly.com/filter`          | Query string to filter flags     | No       | `'query:dark-mode'`                                  |
 
 ## Troubleshooting
 
