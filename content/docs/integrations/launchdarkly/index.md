@@ -44,26 +44,9 @@ You can learn more about generating API tokens by visiting the [LaunchDarkly API
 2. Enter the API token you generated in the secret called `LAUNCHDARKLY_API_KEY`
 3. Save the configuration
 
-### Step 3: Add UI Components
-
-The LaunchDarkly plugin provides multiple UI components that can be added to entity pages:
-
-#### EntityLaunchdarklyContextOverviewCard
-
-Displays feature flags for a specific LaunchDarkly context. This card shows flags relevant to the entity's configured context and is ideal for service-specific flag monitoring.
-
-This card can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
-
-#### EntityLaunchdarklyCard
-
-Displays LaunchDarkly flags across multiple environments with column toggling capabilities. This component provides a comprehensive view of how flags are configured across different environments (e.g., development, staging, production).
-
-
-### Step 4: Annotate Your Entities
+### Step 3: Annotate Your Entities
 
 Add the following annotations to your `catalog-info.yaml` files to connect entities with LaunchDarkly feature flags:
-
-
 
 #### Basic Configuration
 
@@ -89,6 +72,21 @@ metadata:
 
 For the `EntityLaunchdarklyContextOverviewCard` component `project-key`, `environment-key` and `context` are needed.
 `EntityLaunchdarklyCard` component supports `project-key` and `filter-query`.
+
+
+### Step 4: Add UI Components
+
+The LaunchDarkly plugin provides multiple UI components that can be added to entity pages:
+
+#### EntityLaunchdarklyContextOverviewCard
+
+Displays feature flags for a specific LaunchDarkly context. This card shows flags relevant to the entity's configured context and is ideal for service-specific flag monitoring.
+
+This card can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
+
+#### EntityLaunchdarklyCard
+
+Displays LaunchDarkly flags across multiple environments with column toggling capabilities. This component provides a comprehensive view of how flags are configured across different environments (e.g., development, staging, production).
 
 
 ## Annotation Reference
@@ -129,7 +127,6 @@ For the `EntityLaunchdarklyContextOverviewCard` component `project-key`, `enviro
 
 2. **Validate entity conditions**
    - Confirm entities have the required LaunchDarkly annotations
-   - Check that the entity type supports the configured UI components
 
 ### Filtering not working
 

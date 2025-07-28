@@ -48,12 +48,6 @@ To get your Spacelift API credentials:
 
 **Important**: The API key should have appropriate permissions to read stack information and run details that you want to display in Backstage.
 
-## Permissions and Security
-
-**Important Security Considerations:**
-
-- The plugin operates using the permissions granted to the configured Spacelift API Key
-- Ensure the API key has only the minimum necessary permissions for the intended use case
 
 ## References
 

@@ -9,9 +9,9 @@ integrationType: OSS plugin
 
 ## Introduction
 
-The Harbor plugin allows you to view information about your Docker images stored in Harbor directly within Backstage. This plugin provides both a dedicated Harbor tab and a widget that can be displayed on entity overview pages, giving you quick access to container image details, vulnerabilities, and other Harbor-specific information.
-
 Harbor is an open-source container image registry that secures images with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted.
+
+The Harbor plugin allows you to view information about your Docker images stored in Harbor directly within Backstage. This plugin provides both a dedicated Harbor tab and a widget that can be displayed on entity overview pages, giving you quick access to container image details, vulnerabilities, and other Harbor-specific information.
 
 
 ![harbor-tab.webp](harbor-tab.webp)
@@ -57,9 +57,7 @@ metadata:
 
 Visit `https://<tenant-name>.roadie.so/administration/harbor` to configure your Harbor connection.
 
-#### Single Instance Configuration
-
-For a single Harbor instance, configure the following:
+You need to configure the following:
 
 - **Base URL**: The URL of your Harbor instance (e.g., `https://harbor.yourdomain.com`)
 
@@ -67,10 +65,6 @@ For secrets you need to set
 - **HARBOR_USERNAME**: Harbor username with appropriate permissions
 - **HARBOR_PASSWORD**: Harbor password or access token
 
-
-### Step 2: (Optional, for brokered connections) Setup Broker client configuration
-
-If you are accessing Harbor via a brokered connection for private networks, you need to configure the broker client.
 
 ## Troubleshooting
 
@@ -83,10 +77,9 @@ If you are accessing Harbor via a brokered connection for private networks, you 
 
 ### Authentication issues
 
-1. Confirm that the Harbor username and password are correct
+1. Visit `https://<tenant-name>.roadie.so/administration/harbor` and confirm that the Harbor username and password are correct
 2. Ensure the Harbor user has the necessary permissions (at minimum, read access to the project)
 3. Check if the Harbor instance requires specific authentication methods
-4. Verify that the Harbor API is accessible from Roadie
 
 ## References
 
