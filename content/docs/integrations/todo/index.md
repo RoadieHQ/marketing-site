@@ -22,7 +22,7 @@ The TODO plugin helps you track and manage TODO comments in your source code dir
 
 ### Step 1: Add the TODO Tab
 
-The TODO plugin is available as a tab on entity pages in Roadie.
+The TODO plugin is available as a tab on entity pages in Roadie. Take a look [Customising the Roadie UI page](/docs/details/updating-the-ui/) for more information.
 
 ## Supported Comment Formats
 
