@@ -3,7 +3,7 @@ title: Configuring Harbor
 publishedDate: '2025-07-25T11:06:00.0Z'
 description: How to configure the Harbor plugin to display Docker image information from Harbor in Roadie.
 humanName: Harbor
-logoImage: '../../../assets/logos/backstage/mark-negative.svg'
+logoImage: '../../../assets/logos/harbor/harbor-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -13,19 +13,22 @@ The Harbor plugin allows you to view information about your Docker images stored
 
 Harbor is an open-source container image registry that secures images with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted.
 
+
+![harbor-tab.webp](harbor-tab.webp)
+![harbor-card.webp](harbor-card.webp)
+
 ## At a Glance
 
-| | |
-|---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>Harbor Base URL</li><li>Harbor Username</li><li>Harbor Password</li></ul> **Component Annotations:** <ul><li>Repository Slug</li></ul> |
-| **Considerations** | Supports multiple Harbor instances. Both single instance and multi-instance configurations are supported. |
-| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+|                            |                                                                                                                                                                        |
+|---------------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|          **Prerequisites** | **Configuration Data:** <ul><li>Harbor Base URL</li><li>Harbor Username</li><li>Harbor Password</li></ul> **Component Annotations:** <ul><li>Repository Slug</li></ul> |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                       |
 
 ## Harbor Entity Configuration
 
 ### Step 1: Add the Harbor Tab and Widget
 
-The Harbor plugin is available as both a tab and widget on entity pages in Roadie. Contact your Roadie administrator to enable this plugin if it's not already available.
+The Harbor plugin is available as both a tab and widget on entity pages in Roadie. 
 
 ### Step 2: Annotate your entities
 
@@ -48,26 +51,6 @@ metadata:
     goharbor.io/repository-slug: my-project/my-app
 ```
 
-### Multi-instance Configuration
-
-If you have multiple Harbor instances configured, you can specify which instance to use by including the hostname:
-
-```yaml
-metadata:
-  annotations:
-    # Use a specific Harbor instance
-    goharbor.io/repository-slug: harbor.yourdomain.com/project/repository
-```
-
-You can also specify multiple repositories from different instances:
-
-```yaml
-metadata:
-  annotations:
-    # Multiple repositories from different instances
-    goharbor.io/repository-slug: project/repository, harbor.yourdomain.com/project/repository
-```
-
 ## Connection Configuration Steps
 
 ### Step 1: Configure Harbor Connection
@@ -79,51 +62,15 @@ Visit `https://<tenant-name>.roadie.so/administration/harbor` to configure your 
 For a single Harbor instance, configure the following:
 
 - **Base URL**: The URL of your Harbor instance (e.g., `https://harbor.yourdomain.com`)
-- **Username**: Harbor username with appropriate permissions
-- **Password**: Harbor password or access token
 
-#### Multi-Instance Configuration
+For secrets you need to set 
+- **HARBOR_USERNAME**: Harbor username with appropriate permissions
+- **HARBOR_PASSWORD**: Harbor password or access token
 
-For multiple Harbor instances, you can configure additional instances with unique names. Each additional instance requires:
 
-- **Instance Name**: A unique identifier for the Harbor instance
-- **Host**: The hostname of the Harbor instance
-- **Base URL**: The full URL of the Harbor instance
-- **Username**: Harbor username for this instance
-- **Password**: Harbor password or access token for this instance
+### Step 2: (Optional, for brokered connections) Setup Broker client configuration
 
-### Step 2: Set Environment Variables (Alternative)
-
-Alternatively, you can configure Harbor using environment variables in your app-config.yaml:
-
-```yaml
-harbor:
-  # Single instance configuration
-  baseUrl: https://harbor.yourdomain.com
-  username: ${HARBOR_USERNAME}
-  password: ${HARBOR_PASSWORD}
-  
-  # Multi-instance configuration
-  instances:
-    - host: harbor2.yourdomain.com
-      baseUrl: https://harbor2.yourdomain.com
-      username: ${HARBOR_USERNAME_2}
-      password: ${HARBOR_PASSWORD_2}
-```
-
-### Step 3: (Optional, for brokered connections) Setup Broker client configuration
-
-If you are accessing Harbor via a brokered connection for private networks, you need to configure the broker client. Contact your Roadie administrator for specific broker configuration requirements for Harbor.
-
-## Features
-
-The Harbor plugin provides the following features:
-
-- **Image Information**: View detailed information about your container images
-- **Vulnerability Scanning**: Display security scan results and vulnerabilities
-- **Image Tags**: List all available tags for your repositories
-- **Artifact Details**: Show artifact metadata and properties
-- **Multi-Repository Support**: Display information from multiple Harbor repositories
+If you are accessing Harbor via a brokered connection for private networks, you need to configure the broker client.
 
 ## Troubleshooting
 
@@ -140,12 +87,6 @@ The Harbor plugin provides the following features:
 2. Ensure the Harbor user has the necessary permissions (at minimum, read access to the project)
 3. Check if the Harbor instance requires specific authentication methods
 4. Verify that the Harbor API is accessible from Roadie
-
-### Multi-instance configuration issues
-
-1. Ensure each Harbor instance has a unique name in the configuration
-2. Verify that the hostname in the annotation matches the configured instance host
-3. Check that each instance has its own valid credentials
 
 ## References
 
