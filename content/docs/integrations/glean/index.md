@@ -9,7 +9,7 @@ integrationType: OSS plugin
 
 ## Introduction
 
-The Glean plugin allows you to pull your Roadie data into Glean to enable unified search capabilities across your organization. This integration helps centralize your organization's knowledge and makes it searchable from Glean.
+The Glean plugin allows you to pull your Roadie data into Glean to enable unified search capabilities across your organization. This integration makes your Roadie catalog and tech docs searchable from Glean.
 
 
 ## Basic Configuration
