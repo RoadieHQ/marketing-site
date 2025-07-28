@@ -9,17 +9,17 @@ integrationType: OSS plugin
 
 ## Introduction
 
-The LaunchDarkly plugin allows you to view feature flags on entity pages in Backstage. It provides multiple UI components to display feature flags for specific contexts, projects, and environments, helping teams manage and monitor their feature flag deployments directly within their service catalog.
+The LaunchDarkly plugin allows you to view feature flags on entity pages in Roadie. It provides multiple UI components to display feature flags for specific contexts, projects, and environments, helping teams manage and monitor their feature flag deployments directly within their service catalog.
 
 This plugin supports viewing flags for individual contexts, comparing flags across multiple environments, and filtering flags by tags or queries to focus on relevant feature flags for each service.
 
 ## At a Glance
 
-| | |
-|---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>LaunchDarkly API Token</li></ul> **Component Annotations:** <ul><li>Project Key</li><li>Environment Key</li><li>Context (optional)</li><li>Filter Tags (optional)</li><li>Filter Query (optional)</li></ul> |
-| **Considerations** | Requires read-only API token with appropriate permissions in LaunchDarkly. Multiple UI components available for different use cases. |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+|                            |                                                                                                                                      |
+|---------------------------:|--------------------------------------------------------------------------------------------------------------------------------------|
+|          **Prerequisites** | **Configuration Data:** <ul><li>LaunchDarkly API Token</li></ul>                                                                     |
+|         **Considerations** | Requires read-only API token with appropriate permissions in LaunchDarkly. Multiple UI components available for different use cases. |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                     |
 
 ## LaunchDarkly Entity Configuration
 
@@ -54,13 +54,12 @@ This card can be [added to component dashboards](/docs/details/updating-the-ui/#
 
 Displays LaunchDarkly flags across multiple environments with column toggling capabilities. This component provides a comprehensive view of how flags are configured across different environments (e.g., development, staging, production).
 
-#### EntityLaunchdarklyProjectOverviewContent
-
-Provides a full-page view of LaunchDarkly project information. This component is typically added as a separate tab on entity pages for detailed flag management.
 
 ### Step 4: Annotate Your Entities
 
 Add the following annotations to your `catalog-info.yaml` files to connect entities with LaunchDarkly feature flags:
+
+
 
 #### Basic Configuration
 
@@ -84,33 +83,19 @@ metadata:
     launchdarkly.com/filter-query: 'dark-mode'
 ```
 
-## Connection Configuration Steps
+For the `EntityLaunchdarklyContextOverviewCard` component `project-key`, `environment-key` and `context` are needed.
+`EntityLaunchdarklyCard` component supports `project-key` and `filter-query`.
 
-### Step 1: Verify API Token Permissions
-
-Ensure your LaunchDarkly API token has the following permissions:
-- Read access to projects
-- Read access to environments
-- Read access to feature flags
-- Read access to contexts (if using context-specific flags)
-
-### Step 2: Test the Connection
-
-After configuring the API token and adding annotations to an entity:
-
-1. Navigate to an entity page with LaunchDarkly annotations
-2. Verify that the LaunchDarkly components display feature flag information
-3. Check that flags are filtered correctly if using filter annotations
 
 ## Annotation Reference
 
-| Annotation | Description | Required | Example |
-|------------|-------------|----------|---------|
-| `launchdarkly.com/project-key` | LaunchDarkly project identifier | Yes | `default` |
-| `launchdarkly.com/environment-key` | Environment within the project | Yes | `production` |
-| `launchdarkly.com/context` | JSON context for flag evaluation | No | `'{"kind":"tenant","key":"roadie","name":"roadie"}'` |
-| `launchdarkly.com/filter-tags` | Array of tags to filter flags | No | `'["frontend", "api"]'` |
-| `launchdarkly.com/filter-query` | Query string to filter flags | No | `'dark-mode'` |
+| Annotation                         | Description                      | Required | Example                                              |
+|------------------------------------|----------------------------------|----------|------------------------------------------------------|
+| `launchdarkly.com/project-key`     | LaunchDarkly project identifier  | Yes      | `default`                                            |
+| `launchdarkly.com/environment-key` | Environment within the project   | Yes      | `production`                                         |
+| `launchdarkly.com/context`         | JSON context for flag evaluation | No       | `'{"kind":"tenant","key":"roadie","name":"roadie"}'` |
+| `launchdarkly.com/filter-tags`     | Array of tags to filter flags    | No       | `'["frontend", "api"]'`                              |
+| `launchdarkly.com/filter-query`    | Query string to filter flags     | No       | `'dark-mode'`                                        |
 
 ## Troubleshooting
 
@@ -127,7 +112,7 @@ After configuring the API token and adding annotations to an entity:
    - Ensure JSON context format is valid if using context annotation
 
 3. **Validate LaunchDarkly configuration**
-   - Confirm the project and environment exist in LaunchDarkly
+   - Confirm the project and environment exist in LaunchDarkly. Note that launchdarkly environment name and the environment key may not be the same.
    - Check that feature flags exist in the specified environment
    - Verify network connectivity to LaunchDarkly API
 
@@ -147,7 +132,7 @@ After configuring the API token and adding annotations to an entity:
 1. **Verify filter syntax**
    - Ensure `filter-tags` is a valid JSON array
    - Check that tag names match exactly with LaunchDarkly flag tags
-   - Verify `filter-query` syntax matches LaunchDarkly search capabilities
+   - Verify `filter-query` syntax matches [LaunchDarkly search capabilities](https://launchdarkly.com/docs/api/feature-flags/get-feature-flags#filtering-flags).
 
 2. **Check flag configuration**
    - Confirm flags have the expected tags in LaunchDarkly
