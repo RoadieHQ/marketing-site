@@ -13,6 +13,10 @@ The LaunchDarkly plugin allows you to view feature flags on entity pages in Road
 
 This plugin supports viewing flags for individual contexts, comparing flags across multiple environments, and filtering flags by tags or queries to focus on relevant feature flags for each service.
 
+
+![launchdarkly-plugin-card.webp](launchdarkly-plugin-card.webp)
+
+
 ## At a Glance
 
 |                            |                                                                                                                                      |
