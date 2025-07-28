@@ -38,7 +38,9 @@ Roadie currently provides four MCP servers that enable AI assistants to interact
 <details>
 <summary><strong>VS Code with Copilot</strong></summary>
 
-VS Code supports [MCP servers](https://code.visualstudio.com/docs/copilot/chat/mcp-servers). Here's how to configure Roadie's for use with Copilot:
+VS Code supports [MCP servers](https://code.visualstudio.com/docs/copilot/chat/mcp-servers). 
+
+Here's how to configure Roadie's for use with Copilot:
 
 #### Configure MCP Servers
 
@@ -81,6 +83,11 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
 2. Go to Settings → API Keys
 3. Create a new API key with appropriate permissions
 4. Replace `<roadie_api_token>` with your actual token
+
+#### Check your Settings
+
+- In settings, ensure `chat.mcp.enabled` is set to `enabled`. 
+- Occassionally your organisation will manage these settings (you will see something like "managed by organization" next to a given setting). If this is the case and `chat.mcp.enabled` is not set to enabled you will need to talk to whomever manages those settings.
 
 #### Test the Integration
 
@@ -229,7 +236,13 @@ You will need an API token for your user to connect with these MCP servers. See 
    - Check that all required headers are included in the configuration
    - Ensure environment variables are properly set
 
+5. **Global IDE Settings can Block MCP Server Access**:
+   - Verify that access to remote authenticated MCP servers is enabled. For example, in VSCode the setting `chat.mcp.enabled` should be set to `enabled`.
+   - Occassionally your organisation will manage these settings and if they are not enabled you will need to talk to your support team or whomever manages those settings. For example, in VSCode you will see something like "managed by organization".
+
 **Testing Connection:**
+
+An MCP server cannot be accessed as you would a traditional API, but as we utilise a lot of our API access infrastructure (i.e. the tokens) as part of our MCP servers it is still useful to understand where an error occurs and what error codes are returned. The output helps Roadie Support debug your issue.
 
 ```bash
 # Test API connectivity and MCP endpoint
