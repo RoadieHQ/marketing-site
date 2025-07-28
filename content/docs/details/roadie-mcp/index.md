@@ -242,7 +242,9 @@ You will need an API token for your user to connect with these MCP servers. See 
 
 **Testing Connection:**
 
-An MCP server cannot be accessed as you would a traditional API, but as we utilise a lot of our API access infrastructure (i.e. the tokens) as part of our MCP servers it is still useful to understand where an error occurs and what error codes are returned. The output helps Roadie Support debug your issue.
+The best way to test an MCP server is by using tools like the open-source [MCP Inspector](https://github.com/modelcontextprotocol/inspector). This can be run locally to connect to a remote MCP server and be used to isolate token and connectivity issues from other tool configuration etc.
+
+An alternative is to hit the API directly. While an MCP server cannot be accessed as you would a traditional API, we utilise a lot of our API access infrastructure (i.e. the tokens) as part of our MCP servers it is still useful to understand where an error occurs and what error codes are returned. The output helps Roadie Support debug your issue.
 
 ```bash
 # Test API connectivity and MCP endpoint
