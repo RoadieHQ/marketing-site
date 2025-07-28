@@ -3,7 +3,7 @@ title: Configuring Architecture Decision Records (ADR)
 publishedDate: '2025-01-25T10:39:00.0Z'
 description: How to configure the ADR plugin to explore Architecture Decision Records in Roadie.
 humanName: ADR
-logoImage: '../../../assets/logos/backstage/mark-negative.svg'
+logoImage: '../../../assets/logos/adr/adr-logo.webp'
 integrationType: OSS plugin
 ---
 
@@ -13,19 +13,14 @@ The Architecture Decision Records (ADR) plugin allows you to explore ADRs associ
 
 This plugin helps teams document and share architectural decisions, making it easier to understand the reasoning behind technical choices and learn from past decisions across different projects.
 
-## At a Glance
-
-| | |
-|---: | --- |
-| **Prerequisites** | **Component Annotations:** <ul><li>ADR Location Path</li></ul> **Configuration:** <ul><li>Integration setup for ADR repositories</li></ul> |
-| **Considerations** | Supports MADR v2.x and v3.x formats by default. Custom formats can be configured. |
-| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## ADR Entity Configuration
 
 ### Step 1: Add the ADR Tab
 
 The ADR plugin is available as a tab on entity pages in Roadie. 
+
+![adr-tab.png](adr-tab.png)
+
 
 ### Step 2: Annotate your entities
 
