@@ -48,7 +48,7 @@ For example:
 ```yaml
 metadata:
   annotations:
-    goharbor.io/repository-slug: my-project/my-app
+    goharbor.io/repository-slug: my-project/my-repository
 ```
 
 ## Connection Configuration Steps
