@@ -34,7 +34,7 @@ metadata:
 
 The value for `backstage.io/adr-location` should be a path relative to your `catalog-info.yaml` file or an absolute URL to the directory which contains your ADR markdown files.
 
-For example, if you have the following directory structure, you would set `backstage.io/adr-location: docs/adrs`:
+For example, if you have the following MADR directory structure, you would set `backstage.io/adr-location: docs/adrs`:
 
 ```
 repo-root/
