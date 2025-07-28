@@ -29,7 +29,7 @@ Add the following annotation to entities to link ADR files to the entity:
 ```yaml
 metadata:
   annotations:
-    backstage.io/adr-location: [RELATIVE_PATH_TO_ADR_FILES_DIR]
+    backstage.io/adr-location: [RELATIVE_PATH_TO_ADR_CATALOG_INFO_FILES_DIR]
 ```
 
 The value for `backstage.io/adr-location` should be a path relative to your `catalog-info.yaml` file or an absolute URL to the directory which contains your ADR markdown files.
@@ -52,8 +52,7 @@ repo-root/
 ### ADRs not appearing
 
 1. Verify that the `backstage.io/adr-location` annotation is correctly set on your entity
-2. Ensure the ADR directory path is correct relative to your `catalog-info.yaml` file
-3. Check that your repository integration is properly configured
+2. Ensure the `backstage.io/adr-location` annotation refers to an ADR directory path that is correct relative to your `catalog-info.yaml` file
 
 
 ## References
