@@ -45,19 +45,6 @@ The plugin uses the [Leasot](https://github.com/pgilad/leasot) parser, which sup
 - `FIXME` - Issues that need to be fixed
 - `@todo` - Alternative TODO format with @ prefix
 
-### Language Support
-
-The plugin supports TODO comments in most programming languages including:
-- JavaScript/TypeScript
-- Python
-- Java
-- C/C++
-- Go
-- Rust
-- PHP
-- Ruby
-- And many more
-
 ## Plugin Behavior
 
 ### What Gets Scanned
