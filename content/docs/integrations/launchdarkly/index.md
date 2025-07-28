@@ -1,6 +1,6 @@
 ---
 title: Configuring LaunchDarkly Plugin
-publishedDate: '2025-01-25T10:49:00.0Z'
+publishedDate: '2025-07-28T10:49:00.0Z'
 description: How to configure the LaunchDarkly plugin to view feature flags in Roadie.
 humanName: LaunchDarkly
 logoImage: '../../../assets/logos/launchdarkly/logo-launchdarkly.webp'

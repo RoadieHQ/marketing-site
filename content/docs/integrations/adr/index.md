@@ -1,6 +1,6 @@
 ---
 title: Configuring Architecture Decision Records (ADR)
-publishedDate: '2025-01-25T10:39:00.0Z'
+publishedDate: '2025-07-25T10:39:00.0Z'
 description: How to configure the ADR plugin to explore Architecture Decision Records in Roadie.
 humanName: ADR
 logoImage: '../../../assets/logos/adr/adr-logo.webp'
