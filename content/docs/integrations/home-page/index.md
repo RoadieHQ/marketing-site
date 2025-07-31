@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/home-page/home.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 

@@ -9,6 +9,13 @@ integrationType: Catalog data source
 ---
 
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 > **This Page Deprecated**
 >
 > We now recommend installing the Roadie GitHub App instead.

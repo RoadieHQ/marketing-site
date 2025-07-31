@@ -18,6 +18,12 @@ It will show PRs in any repositories connected to entities in Roadie Backstage t
 
 This page explains how to configure it in Roadie Backstage.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 ## Prerequisites
 
 1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).

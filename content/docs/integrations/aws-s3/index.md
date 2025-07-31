@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: Catalog data source
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 S3 can be a useful place to store certain resources used by backstage plugins like OpenApi spec files.  

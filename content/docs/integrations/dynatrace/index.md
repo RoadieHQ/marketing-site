@@ -14,6 +14,13 @@ There are two Dynatrace plugins available for Backstage, the [official Dynatrace
 community developed plugin called ["Dynatrace for Managed"](https://github.com/Dynatrace/backstage-plugin). This guide
 describes how to configure both plugins.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Dynatrace
 
 The official Dynatrace plugin provides a card to display the results of DQL queries and has a card to display information

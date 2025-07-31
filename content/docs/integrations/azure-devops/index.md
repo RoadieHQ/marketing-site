@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 [Microsoft’s Azure DevOps](https://dev.azure.com/) is a hosted service providing development and collaboration tools.

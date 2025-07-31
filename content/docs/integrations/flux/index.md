@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/flux/flux_color_logo.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 The Flux plugin allows you to view and manage your Flux controlled workloads directly via the Roadie UI. The plugin exposes multiple _Card_ components which can be combined into a rich dashboard of information. 
 
 ![Two cards from Flux plugin displaying information](./two-flux-cards.webp)

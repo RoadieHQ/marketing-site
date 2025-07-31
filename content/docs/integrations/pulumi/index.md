@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/pulumi/logo-pulumi.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 The [Backstage Pulumi plugin](https://github.com/pulumi/pulumi-backstage-plugin) integrates with Pulumi to display relevant entity information within Backstage.

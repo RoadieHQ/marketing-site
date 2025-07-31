@@ -7,6 +7,13 @@ humanName: Cost Insights
 integrationType: Plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 Roadie provides two easy ways to track your cloud costs directly within your Roadie instance. The cost insights plugin is based on the open source [Cost Insights plugin](https://github.com/backstage/backstage/tree/master/plugins/cost-insights) and provides the same functionality in an easily customizable way. The available implementations include an implementation provided by AWS, which allows you to display AWS Cost Explorer data in your Roadie and Roadie provided implementation which support FOCUS standard date set to allow displaying more fine-grained cost information.
 
 ## Overview

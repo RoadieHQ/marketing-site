@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 The Proxy Sigv4 plugin is essential for securely signing requests to AWS services using the Sigv4 signing process.

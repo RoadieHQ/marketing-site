@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/azure-ad/azure-ad.webp'
 integrationType: Catalog data source
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 Roadie supports retrieving user and group information from Microsoft Azure Active Directory. 

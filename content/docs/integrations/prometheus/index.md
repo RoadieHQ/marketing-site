@@ -7,6 +7,13 @@ logoImage: '../../../assets/prometheus/prom_logo.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 In order to use the Prometheus plugin, Roadie needs access to the Prometheus HTTP API. At the moment your Prometheus instance needs to be accessible from the internet so Roadie is able to make requests towards it.

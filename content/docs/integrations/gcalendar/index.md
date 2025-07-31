@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/google-calendar/Google-Calendar-Logo-700x394.w
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 The Google Calendar plugin provides a home page card you can use to display your agenda in Backstage.

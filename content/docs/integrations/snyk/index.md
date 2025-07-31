@@ -12,6 +12,13 @@ integrationType: OSS plugin
 
 In order to use the Backstage Snyk plugin with Roadie, you must securely provide Roadie with an API token which it can use to access the Snyk API.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Connect Roadie to Snyk
 
 To get an API token, you need to sign up for a Snyk account. Within this account, you will need to obtain the following:

@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/wiz/wiz-logo.png'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Certified Plugin
 
 This plugin is [certified by Wiz](https://www.wiz.io/integrations?q=roadie).

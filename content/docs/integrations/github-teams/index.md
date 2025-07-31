@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plu
 integrationType: Catalog data source
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 Roadie can load your organization team structure and employees from GitHub teams.

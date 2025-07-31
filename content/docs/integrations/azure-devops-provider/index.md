@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
 integrationType: Catalog data source
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 Azure DevOps is a popular alternative to GitHub as an SCM provider. 

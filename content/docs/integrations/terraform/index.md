@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/terraform/terraform-logo.webp'
 integrationType: Plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 The Terraform plugin integrates [Terraform](https://www.terraform.io/) with Roadie, allowing you to visualize, track, and manage your infrastructure as code directly from your Backstage instance. This plugin helps platform teams and developers to gain visibility into their infrastructure resources, track changes, and understand dependencies between different components.

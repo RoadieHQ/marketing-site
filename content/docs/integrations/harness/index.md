@@ -14,6 +14,13 @@ The [Backstage Harness plugin](https://github.com/harness/backstage-plugins/tree
 
 ![harness-exec-history.webp](harness-exec-history.webp)
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Add Harness to one of your components
 
 ### Add the needed Harness annotation(s)

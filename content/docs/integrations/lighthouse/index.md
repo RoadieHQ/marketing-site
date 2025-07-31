@@ -23,6 +23,13 @@ This plugin allows you to trigger Lighthouse audits on websites and track them.
 - Trigger a fresh audit directly from Backstage
 ![create-audit.webp](./create-audit.webp)
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Prerequisites
 
 In order to use the Lighthouse plugin, you need to have a running version of Spotify's Lighthouse Audit Service and a 

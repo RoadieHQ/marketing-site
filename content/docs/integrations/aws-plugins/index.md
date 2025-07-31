@@ -9,6 +9,13 @@ logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 Amazon Web Services have produced and open sourced their own plugins for the Backstage ecosystem, which are also compatible to be configured on Roadie instances. These plugins introduce functionality to visualize running AWS resources like ECS Tasks and Services. 

@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: Catalog data source
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 Roadie has the capability to automatically ingest resources from AWS. This is done by automatic discovery and currently ingests all configured resource types per AWS region. You can configure AWS resource ingestion either by manually adding standalone account/region configurations or by using AWS organization structure to autodiscover accounts and their resources. The discovered AWS resources will be registered as `Resource` kind entities within Roadie. The type of the `Resource` entity indicates the AWS resource type.

@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/allure/allure-logo.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 The Allure plugin can display the Allure reports of the component in your Roadie Backstage catalog.

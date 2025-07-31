@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/crossplane/crossplane.webp'
 integrationType: OSS plugin
 --- 
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 # Prerequisites
 
 Access to this plugin is enabled by a feature flag. Ask Roadie to enable this for you if you want to use it.

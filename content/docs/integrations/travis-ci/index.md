@@ -7,6 +7,13 @@ logoImage: '../../../assets/logos/travis-ci/travis-ci-mascot-200x200.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 In order to use the Travis CI plugin, Roadie needs an API token to communicate with Travis CI APIs.

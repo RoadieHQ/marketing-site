@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/new-relic/logo-relic.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 In order to make requests to the NewRelic API, you must provide Roadie with an API key. Roadie provides two different New Relic plugins within the installation, providing both page and individual entity page functionality. 

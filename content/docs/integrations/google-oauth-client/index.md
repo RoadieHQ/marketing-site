@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/google-cloud-build/logo-cloud.webp'
 integrationType: Integration
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 This Google OAuth client, will allow Backstage to authenticate your user, using your own controlled Google client

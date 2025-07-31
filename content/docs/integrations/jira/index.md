@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/jira/jira_logo.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 In order to use the Jira plugin, Roadie needs an API token to communicate with Jira APIs.

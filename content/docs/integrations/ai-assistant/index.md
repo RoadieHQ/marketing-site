@@ -9,6 +9,13 @@ logoImage: '../../../assets/logos/ai-assistant/roadie-racks-ai.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 
@@ -113,3 +120,5 @@ Additionally, you may want to limit the available models by modifying the `Resou
 OpenAI integration works with an OpenAI API token. You can set the token in the secrets section of the configuration page.
 
 To ensure the AI Assistant can access and index the correct resources, ensure that appropriate permissions are in place:
+
+```

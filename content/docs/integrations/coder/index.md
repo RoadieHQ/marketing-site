@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/coder/coder_logo_transparent_text_black.webp'
 integrationType: OSS Plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 This page describes how to set up the Coder plugin on Roadie.

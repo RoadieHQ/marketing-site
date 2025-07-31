@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/kratix/kratix-logo.webp'
 integrationType: Plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 The Syntasso Kratix plugin integrates [Kratix](https://kratix.io/) with Roadie, allowing you to create and manage Kratix Promises and Resources directly from your Backstage instance. Kratix is a framework that enables platform teams to build a Kubernetes-based platform with a self-service API for application teams.

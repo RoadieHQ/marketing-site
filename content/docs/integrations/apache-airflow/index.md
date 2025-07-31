@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/apache-airflow/apache-airflow-logo.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 The Backstage Apache Airflow plugin serves as frontend to the REST API exposed by Apache Airflow to show Apache Airflow's information inside Backstage.

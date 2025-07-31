@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/gitlab/gitlab-logo-100.webp'
 integrationType: Catalog data source
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 GitLab is a popular alternative to GitHub as an SCM provider. 

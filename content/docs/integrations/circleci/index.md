@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/circle-ci/circle-ci-logo-only-black.webp'
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 The Backstage Circle CI plugin integrates with Circle CI to show your build information inside Backstage where it can be associated with your services.

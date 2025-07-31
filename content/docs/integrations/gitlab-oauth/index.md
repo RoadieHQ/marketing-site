@@ -8,6 +8,13 @@ logoImage: '../../../assets/logos/gitlab/gitlab-logo-100.webp'
 integrationType: Authentication Provider
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
 GitLab OAuth authentication allows users to sign in to your Roadie instance using their GitLab credentials. This provides a seamless authentication experience for teams already using GitLab.
