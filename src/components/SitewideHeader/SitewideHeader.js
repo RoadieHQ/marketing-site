@@ -22,7 +22,7 @@ import OpenMenuButton from './OpenMenuButton';
 import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
 import TopBanner from 'components/TopBanner';
-import StateOfBackstage from '../TopBanner/StateOfBackstage';
+import McpServers from '../TopBanner/McpServers';
 
 const features = [
   {
@@ -112,7 +112,7 @@ const SitewideHeader = ({
     <Popover as={React.Fragment}>
       <>
         <TopBanner>
-          <StateOfBackstage />
+          <McpServers />
         </TopBanner>
         <header
           className={classnames(
