@@ -133,7 +133,6 @@ const SitewideHeader = ({
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
             <TopNavDropdownItem text="Product" subItems={features} />
             <TopNavItem to="/backstage-comparison/" text="Roadie vs Backstage" />
-            <TopNavItem to="/request-roadie-local/" text="Roadie Local" />
             <TopNavItem to="/pricing/" text="Pricing" />
             <TopNavDropdownItem text="Resources" subItems={learn} />
           </Popover.Group>
