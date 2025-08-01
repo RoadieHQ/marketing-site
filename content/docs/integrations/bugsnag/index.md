@@ -8,19 +8,19 @@ logoImage: '../../../assets/logos/bugsnag/bugsnag-logo.webp'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 In order to use the Bugsnag plugin, Roadie needs an API token to communicate with Bugsnag APIs.
 
 
 This is set within backstage at the following url:
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ```text
 https://<tenant-name>.roadie.so/administration/settings/secrets

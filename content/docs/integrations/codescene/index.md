@@ -8,20 +8,20 @@ logoImage: '../../../assets/logos/codescene/codescene.webp'
 integrationType: OSS Plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 This page describes how to set up the CodeScene plugin on Roadie.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | You'll need a CodeScene account and a basic Auth token. |
+| **Considerations** | <ul><li>Basic API Token</li></ul> |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Prerequisites
 
-You'll need a CodeScene account and a basic Auth token.
+
 
 ## Step 1: Configure the CodeScene API token
 

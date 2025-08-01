@@ -8,18 +8,18 @@ logoImage: '../../../assets/logos/catalog-graph/catalog-graph-logo.jpeg'
 integrationType: OSS plugin
 ---
 
+## Introduction
+
+With this plugin, you can visualize the [relations between entities](https://roadie.io/blog/modeling-software-backstage/), like ownership, grouping or API relationships.
+
+![catalog_graph_card.webp](./catalog_graph_card.webp)
+
 ## At a Glance
 | | |
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Introduction
-
-With this plugin, you can visualize the [relations between entities](https://roadie.io/blog/modeling-software-backstage/), like ownership, grouping or API relationships.
-
-![catalog_graph_card.webp](./catalog_graph_card.webp)
 
 ## Add a Catalog Graph card to a dashboard
 

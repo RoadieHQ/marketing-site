@@ -8,19 +8,19 @@ logoImage: '../../../assets/logos/google-cloud/google-cloud.webp'
 integrationType: Catalog data source
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 This Google Cloud Platform (GCP) client in Roadie may be used to periodically to collect Roadie catalog information from Google Cloud
 Storage. These settings are configured in `https://<tenant-name>.roadie.so/administration/settings/secrets`.
 
 This page describes how to get the client id and private key for GCP.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
 

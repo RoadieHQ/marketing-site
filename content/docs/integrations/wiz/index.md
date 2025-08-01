@@ -8,28 +8,28 @@ logoImage: '../../../assets/logos/wiz/wiz-logo.png'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+## Introduction
 
-## Certified Plugin
-
-This plugin is [certified by Wiz](https://www.wiz.io/integrations?q=roadie).
-
-![wiz-certified.png](./wiz-certified.png)
-
-## Prerequisites
-
-To begin using Wiz plugin, you will need the following parameters:
+If you want to use Wiz plugin, you will need the following parameters:
 
 - Wiz API URL (API Endpoint URL)
 - Wiz Token URL
 - Client ID and Client Secret
 
 In order to retrieve those, you can read official documentation (https://win.wiz.io/reference/prerequisites) where it is described how to obtain the values.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | **Configuration Data:** <ul><li>Wiz API URL (API Endpoint URL)</li><li>Wiz Token URL</li><li>Client ID and Client Secret</li></ul><br />In order to retrieve those, you can read official documentation (https://win.wiz.io/reference/prerequisites) where it is described how to obtain the values. |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
+
+## Certified Plugin
+
+This plugin is [certified by Wiz](https://www.wiz.io/integrations?q=roadie).
+
+![wiz-certified.png](./wiz-certified.png)
 
 ### Setting up the plugin:
 

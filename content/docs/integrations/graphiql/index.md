@@ -11,7 +11,7 @@ integrationType: Integration
 ## At a Glance
 | | |
 |---: | --- |
-| **Prerequisites** |  |
+| **Prerequisites** | You'll need your GraphQL endpoint URLs. |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
@@ -20,10 +20,6 @@ integrationType: Integration
 The [Backstage GraphiQL plugin](/backstage/plugins/graphiQL) integrates with GraphiQL to provide a UI playground for querying GraphQL endpoints directly from Roadie.
 
 ![GraphiQL UI](./graphiql-ui.webp)
-
-## Prerequisites
-
-You'll need your GraphQL endpoint URLs.
 
 ## Configuration
 

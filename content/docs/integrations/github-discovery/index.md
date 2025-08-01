@@ -11,7 +11,7 @@ integrationType: Catalog data source
 ## At a Glance
 | | |
 |---: | --- |
-| **Prerequisites** |  |
+| **Prerequisites** | <ul><li>You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/adding-a-catalog-item/)</li><li>You must be an Admin of Backstage, as [described here](/docs/getting-started/assigning-admins/).</li></ul> |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
@@ -20,11 +20,6 @@ integrationType: Catalog data source
 Roadie will ingest every file called `catalog-info.yaml` by default without any configuration.
 
 This document explains how to use a different file name, customize the files that Roadie automatically ingests, how to decorate entities automatically with additional metadata, and how to support multiple organizations.
-
-## Prerequisites
-
-- You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/adding-a-catalog-item/)
-- You must be an Admin of Backstage
 
 ## Steps to add new auto discovery paths
 

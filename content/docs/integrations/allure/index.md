@@ -8,13 +8,6 @@ logoImage: '../../../assets/logos/allure/allure-logo.webp'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 The Allure plugin can display the Allure reports of the component in your Roadie Backstage catalog.
@@ -23,11 +16,12 @@ The Allure plugin can display the Allure reports of the component in your Roadie
 
 This page explains how to configure it in Roadie Backstage.
 
-## Prerequisites
-
-1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
-2. Your Allure reports must be accessible by Roadie backend instances. To allow list Roadie access you can check our IPs [here](/docs/details/allowlisting-roadie-traffic/).
-
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | 1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/). <br /> 2. Your Allure reports must be accessible by Roadie backend instances. To allow list Roadie access you can check our IPs [here](/docs/details/allowlisting-roadie-traffic/). |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Step 1: Save your hosted Allure report URL into Roadie
 

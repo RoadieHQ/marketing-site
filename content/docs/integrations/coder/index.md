@@ -8,20 +8,16 @@ logoImage: '../../../assets/logos/coder/coder_logo_transparent_text_black.webp'
 integrationType: OSS Plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 This page describes how to set up the Coder plugin on Roadie.
 
-## Prerequisites
-
-You'll need a Coder account and templates/workspaces available on that account.
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | You'll need a Coder account and templates/workspaces available on that account. |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Step 1: Configure the Coder plugin
 

@@ -11,7 +11,7 @@ integrationType: Catalog data source
 ## At a Glance
 | | |
 |---: | --- |
-| **Prerequisites** |  |
+| **Prerequisites** | <ul><li>You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/adding-a-catalog-item/)</li><li>You must be an Admin of Backstage, as [described here](/docs/getting-started/assigning-admins/).</li></ul> |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
@@ -20,11 +20,6 @@ integrationType: Catalog data source
 Roadie can load your organization team structure and employees from GitHub teams.
 
 This page describes how to do that.
-
-## Prerequisites
-
-- You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/adding-a-catalog-item/)
-- You must be an Admin of Backstage
 
 ## Steps
 

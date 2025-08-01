@@ -22,7 +22,7 @@ This page explains how to configure it in Roadie Backstage.
 
 | | |
 |---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
+| **Prerequisites** | <ol><li>You must be an admin in Roadie. By default, the first Roadie user is an admin. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).</li><li>Your Jenkins instance must be accessible by Roadie backend instances. To allow list Roadie access you can check our IPs [here](/docs/details/allowlisting-roadie-traffic/). </li></ol><br />**Configuration Data:** <ul><li>API Token</li></ul> |
 | **Considerations** | Multi-Instance is supported through multiple broker configuration blocks. |
 | **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☐ Cloud Hosted |
 

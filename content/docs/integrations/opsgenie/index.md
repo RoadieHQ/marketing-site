@@ -8,16 +8,16 @@ logoImage: '../../../assets/logos/opsgenie/logo-opsgenie.webp'
 integrationType: OSS plugin
 ---
 
+## Introduction
+
+This page describes how to set up the Opsgenie plugin.
+
 ## At a Glance
 | | |
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Introduction
-
-This page describes how to set up the Opsgenie plugin.
 
 ## Steps
 

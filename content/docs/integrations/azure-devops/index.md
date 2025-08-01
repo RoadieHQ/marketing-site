@@ -8,13 +8,6 @@ logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 [Microsoft’s Azure DevOps](https://dev.azure.com/) is a hosted service providing development and collaboration tools.
@@ -36,6 +29,13 @@ The plugin lists the latest Active, Completed, or Abandoned Pull Requests for a 
 
 ![Azure Repos PR screenshot](../../../assets/backstage/plugins/azure-devops/azure-devops-pull-requests.webp)
 Credit: [Andrew Wanlin](https://github.com/awanlin) from Keyloop
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
 
 ## Setup
 (NB: You must be a Backstage admin to add this plugin.)

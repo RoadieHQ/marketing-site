@@ -8,16 +8,16 @@ logoImage: '../../../assets/logos/incident/incident-logo.webp'
 integrationType: OSS plugin
 ---
 
+## Introduction
+
+The [incident.io plugin](https://www.npmjs.com/package/@incident-io/backstage) integrates with Incident.io to show your configured components and your current on-going incidents inside Backstage.
+
 ## At a Glance
 | | |
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Introduction
-
-The [incident.io plugin](https://www.npmjs.com/package/@incident-io/backstage) integrates with Incident.io to show your configured components and your current on-going incidents inside Backstage.
 
 ### Create and add an API Key
 

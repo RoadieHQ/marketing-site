@@ -8,13 +8,6 @@ logoImage: '../../../assets/logos/endoflife/logo.webp'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 The End Of Life plugin can display end of life data relevant to your entities from endoflife.date or your own sources. 
@@ -22,6 +15,13 @@ The End Of Life plugin can display end of life data relevant to your entities fr
 ![Example image showing end of life test report](./endoflife.webp)
 
 This page explains how to configure it in Roadie Backstage.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
 
 ## Step 1: Add the Card to the Roadie UI
 

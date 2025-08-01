@@ -8,18 +8,18 @@ logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: OSS plugin
 ---
 
+## Introduction
+
+The Proxy Sigv4 plugin is essential for securely signing requests to AWS services using the Sigv4 signing process.
+
+This guide explains how to set up and configure the Proxy Sigv4 plugin in your Backstage environment to ensure your requests to AWS services are properly authenticated.
+
 ## At a Glance
 | | |
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Introduction
-
-The Proxy Sigv4 plugin is essential for securely signing requests to AWS services using the Sigv4 signing process.
-
-This guide explains how to set up and configure the Proxy Sigv4 plugin in your Backstage environment to ensure your requests to AWS services are properly authenticated.
 
 ## Step 1: Get the roadie IAM details
 

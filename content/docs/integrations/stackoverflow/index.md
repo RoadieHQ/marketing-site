@@ -8,16 +8,16 @@ logoImage: '../../../assets/logos/stackoverflow/so-logo.webp'
 integrationType: OSS plugin
 ---
 
+## Introduction
+
+Roadie provides integration to display public and private Stackoverflow questions and answers on the homepage. To configure this plugin for a private Stackoverflow Teams subscription, you need to be able to generate an API key for Stackoverflow. To have the possibility to generate an API key, you will need to have at least 'Basic' level subscription to Stackoverflow Teams.
+
 ## At a Glance
 | | |
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Introduction
-
-Roadie provides integration to display public and private Stackoverflow questions and answers on the homepage. To configure this plugin for a private Stackoverflow Teams subscription, you need to be able to generate an API key for Stackoverflow. To have the possibility to generate an API key, you will need to have at least 'Basic' level subscription to Stackoverflow Teams.
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
 
 ## Authentication
 

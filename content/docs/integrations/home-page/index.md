@@ -8,19 +8,19 @@ logoImage: '../../../assets/logos/home-page/home.webp'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 
 The [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) provides a framework for building a dashboard style home page for Roadie. 
 
-A home page can be composed of many cards from various plugins much like the overview tab for entities. Roadie provides an interface to build such a home page interactively in the UI. 
+A home page can be composed of many cards from various plugins much like the overview tab for entities. Roadie provides an interface to build such a home page interactively in the UI.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted | 
 
 ## Customize the UI
 

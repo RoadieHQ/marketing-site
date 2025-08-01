@@ -8,18 +8,18 @@ logoImage: '../../../assets/logos/azure-ad/azure-ad.webp'
 integrationType: Catalog data source
 ---
 
+## Introduction
+
+Roadie supports retrieving user and group information from Microsoft Azure Active Directory. 
+
+This guide describes how to set up access for Roadie to your Azure AD and automatically ingest entities from that source.
+
 ## At a Glance
 | | |
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Introduction
-
-Roadie supports retrieving user and group information from Microsoft Azure Active Directory. 
-
-This guide describes how to set up access for Roadie to your Azure AD and automatically ingest entities from that source.  
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |  
 
 ##  Step 1: Create Azure App Registration relevant to your Azure AD 
 

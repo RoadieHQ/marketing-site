@@ -26,10 +26,6 @@ The PagerDuty Backstage plugin allows Roadie Backstage users to:
 | Considerations |  |
 | **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
-## Prerequisites
-
-In order to use the PagerDuty plugin, Roadie needs an API token or an OAuth application's credentials to be able to use the plugin inside Roadie.
-
 ### Setting up the plugin:
 
 #### 1. Create an API token or an OAuth application.

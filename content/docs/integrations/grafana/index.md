@@ -21,10 +21,6 @@ The [Backstage Grafana plugin](https://www.npmjs.com/package/@k-phoen/backstage-
 | **Considerations** |  |
 | **Supported Environments** | ☒ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
-## Prerequisites
-
-You'll need a Grafana account with an API key and the url of your Grafana UI and API (if different).
-
 ## Adding the plugin
 
 ### Configuring Grafana Credentials

@@ -8,19 +8,19 @@ logoImage: '../../../assets/logos/firehydrant/firehydrant.webp'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 In order to use the FireHydrant plugin, Roadie needs an API token to communicate with FireHydrant APIs.
 
 
 This is set within backstage at the following url:
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ```text
 https://<tenant-name>.roadie.so/administration/firehydrant

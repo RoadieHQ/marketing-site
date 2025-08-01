@@ -8,19 +8,19 @@ logoImage: '../../../assets/logos/gitlab/gitlab-logo.webp'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 The [Backstage GitLab plugin](https://github.com/immobiliare/backstage-plugin-gitlab) integrates with GitLab and provides various useful information such as top builds, merge requests, and issues for a project, last releases, code owners, languages, contributors etc. 
 
 ![gitlab-overview.webp](./gitlab-overview.webp)
 Credit: [Immobiliare Labs](https://github.com/immobiliare)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add GitLab plugin to your components
 

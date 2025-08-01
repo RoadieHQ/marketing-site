@@ -18,13 +18,9 @@ This page explains how to configure it in Roadie Backstage.
 
 | | |
 |---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
+| **Prerequisites** | <ol><li>You must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).</li><li>You must have the correct permissions assigned in LaunchDarkly to be able to create a read only API token</li></ol><br />**Configuration Data:** <ul><li>API Token</li></ul> |
+| **Considerations** | |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Prerequisites
-
-1. You must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
-2. You must have the correct permissions assigned in LaunchDarkly to be able to create a read only API token
 
 ## Step 1: Create a LaunchDarkly API token
 

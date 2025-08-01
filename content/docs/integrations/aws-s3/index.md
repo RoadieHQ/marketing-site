@@ -8,13 +8,6 @@ logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: Catalog data source
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 S3 can be a useful place to store certain resources used by backstage plugins like OpenApi spec files.  
@@ -22,6 +15,13 @@ S3 can be a useful place to store certain resources used by backstage plugins li
 This guide describes how to set up access for Roadie to your S3 buckets in your infrastructure and configure it.
 
 To configure autodiscovery of entities from S3 buckets, see documentation about [AWS S3 Autodiscovery.](/docs/details/location-management#aws-s3-autodiscovery)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ##  Step 1: Get the roadie IAM details
 

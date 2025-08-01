@@ -8,18 +8,18 @@ logoImage: '../../../assets/logos/humanitec/humanitec-logo.webp'
 integrationType: OSS plugin
 ---
 
+## Introduction
+
+The [Backstage Humanitec plugin](https://github.com/humanitec/humanitec-backstage-plugins/tree/main/plugins/humanitec) integrates with Humanitec to show your deployment information inside Backstage where it can be associated with your services.
+
+![humanitec.webp](humanitec.webp)
+
 ## At a Glance
 | | |
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Introduction
-
-The [Backstage Humanitec plugin](https://github.com/humanitec/humanitec-backstage-plugins/tree/main/plugins/humanitec) integrates with Humanitec to show your deployment information inside Backstage where it can be associated with your services.
-
-![humanitec.webp](humanitec.webp)
 
 ## Add Humanitec to one of your components
 

@@ -8,18 +8,18 @@ logoImage: '../../../assets/logos/dx/dx.png'
 integrationType: OSS plugin
 ---
 
-## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
 ## Introduction
 
 The [Backstage DX plugin](https://github.com/get-dx/backstage-plugin) is a Backstage plugin designed to improve the overall developer experience within a Backstage platform. It aims to simplify and streamline the development process by offering insights, tools, and integrations tailored to enhance development workflow.
 
 It includes the [Backstage DX Frontend Plugin](https://github.com/get-dx/backstage-plugin), which displays DX data and [Backstage DX Backend Plugin](https://github.com/get-dx/backstage-backend-plugin/) which enables automatic synchronization of Backstage data with the DX Data Cloud.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
 
 ## Add DX to your components
 

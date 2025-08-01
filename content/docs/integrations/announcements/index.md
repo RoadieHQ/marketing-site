@@ -8,18 +8,18 @@ logoImage: '../../../assets/logos/announcements/announcement-icon.png'
 integrationType: OSS plugin
 ---
 
+## Introduction
+
+The [Announcements](https://github.com/backstage/community-plugins/tree/main/workspaces/announcements) plugin manages and displays announcements within your Roadie instance.
+
+![announcements-plugin-overview.png](announcements-plugin-overview.png)
+
 ## At a Glance
 | | |
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Introduction
-
-The [Announcements](https://github.com/backstage/community-plugins/tree/main/workspaces/announcements) plugin manages and displays announcements within your Roadie instance.
-
-![announcements-plugin-overview.png](announcements-plugin-overview.png)
 
 ## Functionality and Components
 
