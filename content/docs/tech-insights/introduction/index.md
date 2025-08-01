@@ -8,7 +8,7 @@ Roadie Tech Insights helps you keep track of all of your software assets and mak
 
 You can create Scorecards to track the things that matter about your assets in the Backstage catalog. This is done by ingesting Fact data via various Data Sources, and then aggregating Checks on those Facts.
 
-Therefore, in order to create [Scorecards](/docs/tech-insights/scorecards/index.md), you will need to add [Data Sources](/docs/tech-insights/data-sources/index.md) and define [Checks](/docs/tech-insights/checks//index.md) on such data. Roadie provides a user interface to build all three of these, this page describes how to set each one of them.
+Therefore, in order to create [Scorecards](/docs/tech-insights/scorecards), you will need to add [Data Sources](/docs/tech-insights/data-sources) and define [Checks](/docs/tech-insights/checks) on such data. Roadie provides a user interface to build all three of these, this page describes how to set each one of them.
 
 
 ## Prerequisites
