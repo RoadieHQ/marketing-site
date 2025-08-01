@@ -97,7 +97,7 @@ Open VS Code and try asking Copilot questions like:
 
 #### Skipping steps
 
-- VSCode omits some information-only steps and/or auto-completes various actions our MCP tools request. That is due to a permissive interpretation of the protocols `readOnlyHint: true` flag that it is best practice to use on MCP servers [based on the protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations). The flag represents non-destructive tools which only return information and do not alter the MCP clients environment. VSCode interprets `readOnlyHints` as default permissable to execute, whereas most other MCP clients require user consent or a flag to be set in config before they autocomplete. 
+- VSCode omits some information-only steps and/or auto-completes various actions our MCP tools request. That is due to a permissive interpretation of the protocols `readOnlyHint: true` flag, which is best practice to use on MCP servers [based on the protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations). The flag represents non-destructive tools which only return information and do not alter the MCP clients environment. VSCode interprets `readOnlyHints` as default permissable to execute, whereas most other MCP clients require user consent or a flag to be set in config before they autocomplete. 
 - More information can be found here [https://code.visualstudio.com/updates/v1_100#_mcp-tool-annotations](https://code.visualstudio.com/updates/v1_100#_mcp-tool-annotations)
 
 </details>
