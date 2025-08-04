@@ -38,7 +38,9 @@ Roadie currently provides four MCP servers that enable AI assistants to interact
 <details>
 <summary><strong>VS Code with Copilot</strong></summary>
 
-VS Code supports [MCP servers](https://code.visualstudio.com/docs/copilot/chat/mcp-servers). Here's how to configure Roadie's for use with Copilot:
+VS Code supports [MCP servers](https://code.visualstudio.com/docs/copilot/chat/mcp-servers). 
+
+Here's how to configure Roadie's for use with Copilot:
 
 #### Configure MCP Servers
 
@@ -82,11 +84,21 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
 3. Create a new API key with appropriate permissions
 4. Replace `<roadie_api_token>` with your actual token
 
+#### Check your Settings
+
+- In settings, ensure `chat.mcp.enabled` is set to `enabled`. 
+- Occassionally your organisation will manage these settings (you will see something like "managed by organization" next to a given setting). If this is the case and `chat.mcp.enabled` is not set to enabled you will need to talk to whomever manages those settings.
+
 #### Test the Integration
 
 Open VS Code and try asking Copilot questions like:
 - "What APIs are available for user management?"
 - "Who owns the payment-service component?"
+
+#### Skipping steps
+
+- VSCode omits some information-only steps and/or auto-completes various actions our MCP tools request. That is due to a permissive interpretation of the protocols `readOnlyHint: true` flag, which is best practice to use on MCP servers [based on the protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations). The flag represents non-destructive tools which only return information and do not alter the MCP clients environment. VSCode interprets `readOnlyHints` as default permissable to execute, whereas most other MCP clients require user consent or a flag to be set in config before they autocomplete. 
+- More information can be found here [https://code.visualstudio.com/updates/v1_100#_mcp-tool-annotations](https://code.visualstudio.com/updates/v1_100#_mcp-tool-annotations)
 
 </details>
 
@@ -219,6 +231,11 @@ You will need an API token for your user to connect with these MCP servers. See 
    - Verify the URL format is correct: `https://api.roadie.so/api/mcp/v1/<server-name>`
    - Check that all required headers are included in the configuration
    - Ensure environment variables are properly set
+
+5. **Global IDE Settings can Block MCP Server Access**:
+   - Verify that access to remote authenticated MCP servers is enabled. For example, in VSCode the setting `chat.mcp.enabled` should be set to `enabled`.
+   - Occassionally your organisation will manage these settings and if they are not enabled you will need to talk to your support team or whomever manages those settings. For example, in VSCode you will see something like "managed by organization".
+
 
 ## Best Practices
 
