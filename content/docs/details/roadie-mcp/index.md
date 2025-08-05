@@ -156,15 +156,6 @@ Use Cursor's AI chat to test the integration:
 </details>
 
 <details>
-<summary><strong>ChatGPT Desktop App</strong></summary>
-
-The ChatGPT desktop app supports MCP servers for enhanced functionality.
-
-You can read about how to configure MCP servers for ChatGPT [in their docs](https://platform.openai.com/docs/mcp#test-and-connect-your-mcp-server) or [use Custom Connectors](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt) if you have the correct plan level.
-
-</details>
-
-<details>
 <summary><strong>Claude Desktop (Anthropic)</strong></summary>
 
 Claude Desktop supports MCP servers natively:
@@ -245,24 +236,6 @@ You will need an API token for your user to connect with these MCP servers. See 
    - Verify that access to remote authenticated MCP servers is enabled. For example, in VSCode the setting `chat.mcp.enabled` should be set to `enabled`.
    - Occassionally your organisation will manage these settings and if they are not enabled you will need to talk to your support team or whomever manages those settings. For example, in VSCode you will see something like "managed by organization".
 
-**Testing Connection:**
-
-The best way to test an MCP server is by using tools like the open-source [MCP Inspector](https://github.com/modelcontextprotocol/inspector). This can be run locally to connect to a remote MCP server and be used to isolate token and connectivity issues from other tool configuration etc.
-
-An alternative is to hit the API directly. While an MCP server cannot be accessed as you would a traditional API, we utilise a lot of our API access infrastructure (i.e. the tokens) as part of our MCP servers so it is still useful to understand where an error occurs and what error codes are returned. The output helps Roadie Support debug your issue.
-
-```bash
-# Test API connectivity and MCP endpoint
-curl -H "Authorization: Bearer $ROADIE_API_TOKEN" \
-     -H "Accept: application/json, text/event-stream" \
-     -H "Content-Type: application/json" \
-     https://api.roadie.so/api/mcp/v1/rich-catalog-entity
-
-# Test catalog API access
-curl -H "Authorization: Bearer $ROADIE_API_TOKEN" \
-     -H "Content-Type: application/json" \
-     https://api.roadie.so/api/catalog/entities
-```
 
 ## Best Practices
 
