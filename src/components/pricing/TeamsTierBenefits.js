@@ -11,6 +11,7 @@ const TeamsTierBenefits = () => (
         'Unlimited API specs.',
         'Unlimited TechDocs',
         'Unlimited scaffolder templates.',
+        'Unlimited scorecards',
       ]}
     />
 
@@ -18,14 +19,12 @@ const TeamsTierBenefits = () => (
       heading="Key features"
       bullets={[
         'Backstage software catalog',
-        'Monthly Backstage upgrades',
-        'TechDocs technical documentation',
-        'Scaffolder service creator',
-        'API specs',
-        'Vast array of open-source Backstage plugins',
-        'Locations log',
-        'Tech radar',
-        'Kubernetes plugin',
+        'Monthly, automatic upgrades',
+        'TechDocs & API specs',
+        'Scaffolder templates',
+        'Open-source Backstage plugins',
+        'Scorecards (optional extra)',
+        'RAG AI & MCP (beta)',
         'Single sign on',
       ]}
     />
