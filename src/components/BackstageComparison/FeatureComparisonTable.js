@@ -10,7 +10,7 @@ const sections = [
     features: [
       {
         name: 'Bring your own data model',
-        competitor: { Roadie: 'Yes', Backstage: 'Yes, with some effort' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Adding and updating Catalog items via YAML',
@@ -110,14 +110,18 @@ const sections = [
     name: 'TechDocs',
     features: [
       {
-        name: 'Docs creation engine',
-        competitor: { Roadie: 'TechDocs', Backstage: 'TechDocs' },
-      },
-      {
+        name: 'Docs from Markdown',
+        competitor: { Roadie: true, Backstage: true },
+      }, {
         name: 'Extensibility via plugins',
         competitor: { Roadie: true, Backstage: true },
-      },
-      {
+      }, {
+        name: 'Mermaid support',
+        competitor: { Roadie: true, Backstage: true },
+      }, {
+        name: 'PlantUML support',
+        competitor: { Roadie: true, Backstage: true },
+      }, {
         name: 'Auto rebuild docs in background',
         competitor: { Roadie: true, Backstage: false },
       },
@@ -130,7 +134,7 @@ const sections = [
     features: [
       {
         name: 'Available Plugins',
-        competitor: { Roadie: '75+', Backstage: 'Requires build' },
+        competitor: { Roadie: '75+', Backstage: 'DIY' },
       },
       {
         name: 'Secure access to on-prem infrastructure and resources',
@@ -138,15 +142,15 @@ const sections = [
       },
       {
         name: 'Theme customisation',
-        competitor: { Roadie: true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Layout customisation',
-        competitor: { Roadie: true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Catalog UI customisation',
-        competitor: { Roadie: 'Yes', Backstage: 'Requires build' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
     ],
   },
@@ -164,7 +168,7 @@ const sections = [
         name: 'Additional search collators',
         competitor: {
           Roadie: 'Atlassian Confluence',
-          Backstage: 'Atlassian Confluence',
+          Backstage: 'DIY',
         },
       },
     ],
@@ -174,11 +178,11 @@ const sections = [
     features: [
       {
         name: 'SSO',
-        competitor: { Roadie: true, Backstage: 'Via OSS providers' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Entities created in the Catalog for each user and group',
-        competitor: { Roadie: true, Backstage: 'Via OSS providers' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
     ],
   },
@@ -218,7 +222,7 @@ const sections = [
       },
       {
         name: 'Automatic monthly upgrades',
-        competitor: { Roadie: true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, Backstage: 'DIY'},
       },
       {
         name: 'Usage analytics',
@@ -228,7 +232,7 @@ const sections = [
         name: 'Support',
         competitor: {
           Roadie: 'Email, Slack/Teams, and 24/7 On-call',
-          Backstage: 'via the OSS community',
+          Backstage: 'via OSS community',
         },
       },
       {
@@ -240,7 +244,7 @@ const sections = [
 ];
 
 const FeatureNameHeaderCell = ({ feature }) => (
-  <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
+  <th className="py-5 px-4 lg:px-6 text-sm font-medium text-gray-500 text-left" scope="row">
     {feature.name}
   </th>
 );
@@ -353,7 +357,7 @@ const LargeCompetitorCta = ({ competitor }) => (
 const LargeSectionHeaderRow = ({ section }) => (
   <tr>
     <th
-      className="bg-gray-50 py-3 pl-6 text-sm font-medium text-gray-900 text-left"
+      className="bg-gray-50 py-3 pl-6 text-sm font-bold text-gray-900 text-left"
       colSpan={4}
       scope="colgroup"
     >
