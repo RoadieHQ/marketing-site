@@ -9,14 +9,6 @@ const COMPETITORS = {
     ctaLinkTo: PAGE_PATHS.freeTrial,
   },
 
-  roadie_local: {
-    name: 'Roadie Local',
-    description:
-      'For excellent engineering orgs who want a home for their services, docs, runbooks, API specs and CI.',
-    ctaLabel: 'Start a free trial',
-    ctaLinkTo: PAGE_PATHS.freeTrial,
-  },
-
   backstage: {
     name: 'Backstage',
     description: 'For big engineering orgs who want to maintain effectiveness through hypergrowth',
