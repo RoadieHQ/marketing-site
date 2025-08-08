@@ -1,4 +1,5 @@
 export const USD_TO_EUR_EXCHANGE_RATE = 0.83;
+export const SCORECARDS_USD_CENTS_PRICE = 1200;
 
 export const PER_SEAT_PRICES_MARKETING = [
   Object.freeze({
