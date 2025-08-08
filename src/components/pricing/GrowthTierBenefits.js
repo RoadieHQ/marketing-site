@@ -22,7 +22,7 @@ const GrowthTierBenefits = () => (
         'Slack support & adoption planning',
         'Bring your own custom Backstage plugins',
         'API access',
-        'Secure on-prem access via broker',
+        'Secure on-prem connection',
         'Usage analytics dashboard',
       ]}
     />

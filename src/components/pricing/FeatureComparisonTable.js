@@ -19,6 +19,9 @@ const sections = [{
     name: 'Scaffolder templates',
     tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
   }, {
+    name: 'Scorecards (optional paid extra)',
+    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
+  }, {
     name: 'Minimum seats',
     tiers: { Teams: TIERS.teams.minSeats.toString(), Growth: TIERS.growth.minSeats.toString() },
   }],
@@ -28,13 +31,13 @@ const sections = [{
     name: 'Software & teams catalog',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'Monthly Backstage upgrades',
+    name: 'Monthly, automatic upgrades',
     tiers: { Teams: true, Growth: true },
   }, {
     name: 'TechDocs technical documentation',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'Scaffolder service creator',
+    name: 'Scaffolder golden paths',
     tiers: { Teams: true, Growth: true },
   }, {
     name: 'API specs',
@@ -43,25 +46,13 @@ const sections = [{
     name: 'Open-source Backstage plugins',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'Locations log',
+    name: 'RAG AI & MCP',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'Tech radar plugin',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Kubernetes plugin',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Custom, private Backstage plugins',
+    name: 'API access',
     tiers: { Growth: true },
   }, {
-    name: 'API access (beta)',
-    tiers: { Growth: true },
-  }, {
-    name: 'Infra access via broker',
-    tiers: { Growth: true },
-  }, {
-    name: 'Usage analytics dashboard',
+    name: 'Custom RBAC',
     tiers: { Growth: true },
   }],
 }, {
@@ -70,13 +61,40 @@ const sections = [{
     name: 'In-app chat',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'Slack and email support',
+    name: 'Slack & MS Teams support',
     tiers: { Growth: true },
   }, {
     name: 'SLA',
     tiers: { Growth: true },
   }, {
     name: '24/7 On-call',
+    tiers: { Growth: true },
+  }, {
+    name: 'Usage analytics dashboard',
+    tiers: { Growth: true },
+  }],
+}, {
+  name: 'Customization',
+  features: [{
+    name: 'Customizable theme',
+    tiers: { Teams: true, Growth: true },
+  }, {
+    name: 'Customizable catalog',
+    tiers: { Teams: true, Growth: true },
+  }, {
+    name: 'Customizable navigation',
+    tiers: { Teams: true, Growth: true },
+  }, {
+    name: 'Multiple tenants available',
+    tiers: { Growth: true },
+  }, {
+    name: 'Custom, private Backstage plugins',
+    tiers: { Growth: true },
+  }],
+}, {
+  name: 'Infrastucture',
+  features: [{
+    name: 'Secure on-prem connection',
     tiers: { Growth: true },
   }],
 }];
