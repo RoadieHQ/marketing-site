@@ -9,7 +9,7 @@ const GrowthTierPriceDisplay = ({ extraHeaderMargin }) => {
     <>
       <p className={classNames("text-4xl font-extrabold text-gray-900", marginBottom)}>Custom</p>
   
-      <div className="mb-10">
+      <div style={{ marginBottom: 95 }}>
         <p className="pt-2 pb-4">{TIERS.growth.minSeats} developers or more</p>
       </div>
     </>
