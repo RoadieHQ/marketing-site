@@ -1,6 +1,6 @@
 ---
 title: Roadie MCP AI Servers (Beta)
-publishedDate: '2025-07-22T15:00:00.0Z'
+publishedDate: '2025-08-08T15:00:00.0Z'
 description: How to use Roadie AI features exposed via MCP servers
 
 humanName: Model Context Protocol (MCP) Servers
@@ -18,7 +18,7 @@ Roadie currently provides five MCP servers that enable AI assistants to interact
 
 - **[API Docs Query Server](api-docs-query)** - Discover and retrieve API documentation and specifications
   - https://api.roadie.so/api/mcp/v1/api-docs-query
-- **[Backend Config Server](backend-config)** - Manage and query backend configuration including proxy settings
+- **[Backend Config Server](backend-config)** - Manage and query backend configuration including proxy settings and secrets
   - https://api.roadie.so/api/mcp/v1/backend-config
 - **[Rich Catalog Entity Server](rich-catalog-entity)** - Access catalog entity data, relationships, and documentation
   - https://api.roadie.so/api/mcp/v1/rich-catalog-entity
