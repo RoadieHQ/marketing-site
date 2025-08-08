@@ -7,18 +7,12 @@ const FAQ_CONTENT = [
     question: `Is Roadie SaaS or on-prem?`,
     answer: () => (
       <p>
-        Both.
-        <br/><br/>
-        Most Roadie customers accessing our product via our SaaS portal. We have been running a SaaS
-        version of Backstage since 2020 and it is every bit as customizable and secure as
-        self-hosting Backstage.
-        <br/><br/>
-        We are also working on a self-hosted version of Roadie called Roadie Local. This is a locally
-        runnable version of Roadie that can run on a single machine or be deployed on-prem in a
-        private cloud.
+        Roadie has been running a SaaS version of Backstage since 2020 and it is every bit as
+        customizable and secure as self-hosting Backstage.
       </p>
     ),
   },
+
   {
     question: `Does Roadie support custom plugins?`,
     answer: () => (
@@ -31,16 +25,19 @@ const FAQ_CONTENT = [
       </p>
     ),
   },
+
   {
     question: `Where is Roadie data stored?`,
     answer: () =>
       `All data is stored within the EU and is encrypted at rest using AES-256 encryption algorithm. AWS KMS is used to manage and protect the encryption keys. Data is backed up to AWS S3 at least once per day.`,
   },
+
   {
     question: `What level of support does Roadie provide?`,
     answer: () =>
       `Growth plan customers gets a shared Slack or MS Teams channel. We pride ourselves on our responsiveness. We also deeply value customer feedback and prioritize your requests in our roadmap.`,
   },
+
   {
     question: `Do you have a status page?`,
     answer: () => (
@@ -53,11 +50,13 @@ const FAQ_CONTENT = [
       </p>
     ),
   },
+
   {
     question: `How does Roadie count developers?`,
     answer: () =>
       `We count "contributing users". These are developers who write the code which is tracked in the software catalog. People who don't write code can log in for free.`,
   },
+
   {
     question: `How can Roadie connect back to our infrastructure?`,
     answer: () => (
@@ -71,10 +70,12 @@ const FAQ_CONTENT = [
       </p>
     ),
   },
+
   {
     question: `What source control tools does Roadie support?`,
     answer: () => SCM_SUPPORT_FAQ_TEXT,
   },
+
   {
     question: `Has Roadie gained a SOC2 compliance?`,
     answer: () => (

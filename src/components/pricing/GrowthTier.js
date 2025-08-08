@@ -7,12 +7,12 @@ import TierDescription from './TierDescription';
 import GrowthTierPriceDisplay from './GrowthTierPriceDisplay';
 import TIERS from './tiers';
 
-const GrowthTier = ({ ctaComponent, extraHeaderMargin }) => (
+const GrowthTier = ({ ctaComponent }) => (
   <TierContainer>
     <div className="p-6">
       <TierName name={TIERS.growth.name} />
       <TierDescription description={TIERS.growth.description} />
-      <GrowthTierPriceDisplay extraHeaderMargin={extraHeaderMargin} />
+      <GrowthTierPriceDisplay />
 
       <div className="mb-5">
         {ctaComponent}
