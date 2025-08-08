@@ -30,7 +30,6 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
 
     // Embedded tweets in blog posts etc.
     'https://platform.twitter.com',
-    'https://js.chargebee.com/v2/chargebee.js',
 
     // https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
     'https://app.intercom.io',
@@ -121,10 +120,6 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
     'https://www.google.com',
     'https://recaptcha.google.com',
 
-    // Chargebee
-    'https://roadie.chargebee.com/',
-    'https://roadie-test.chargebee.com/',
-
     // Embedded tweets
     'https://platform.twitter.com',
   ];
@@ -147,9 +142,6 @@ const CSP_STYLE_SRC_DIRECTIVES = [
   "'unsafe-inline'",
   // The cookie consent we use seems to load from jsdelivr.net.
   'https://cdn.jsdelivr.net',
-  'https://roadie.chargebee.com/assets/hp_v3/iframe_views/',
-  'https://roadie-test.chargebee.com/assets/hp_v3/iframe_views/',
-  'https://js.chargebee.com/v2/animation.css',
 
   // Required for tag manager preview mode.
   'https://tagmanager.google.com',
