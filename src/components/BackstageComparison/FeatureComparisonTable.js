@@ -45,7 +45,7 @@ const sections = [
   },
 
   {
-    name: 'AI',
+    name: 'AI (beta)',
     features: [
       {
         name: 'RAG AI',

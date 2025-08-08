@@ -46,7 +46,7 @@ const sections = [{
     name: 'Open-source Backstage plugins',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'RAG AI & MCP',
+    name: 'RAG AI & MCP (beta)',
     tiers: { Teams: true, Growth: true },
   }, {
     name: 'API access',
