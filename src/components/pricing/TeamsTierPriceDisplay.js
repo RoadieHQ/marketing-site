@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { USD_TO_EUR_EXCHANGE_RATE } from 'components/pricing/prices';
-import { NumberOfEngineers } from 'components';
+import { USD_TO_EUR_EXCHANGE_RATE, SCORECARDS_USD_CENTS_PRICE } from 'components/pricing/prices';
+import { NumberOfEngineers, Switch } from 'components';
 
 const calculateCentCostInCurrency = ({
   numberOfEngineers,
   perSeatPrices,
   currentlySetCurrency,
+  scorecards = false,
 }) => {
   const usdCentCostPerDevPerMonth = perSeatPrices.find(
     (opt) => opt.id === numberOfEngineers
@@ -18,8 +19,38 @@ const calculateCentCostInCurrency = ({
     selectedCentCostPerDevPerMonth = Math.round(eurCentCostPerDevPerMonth / 50) * 50;
   }
 
+  if (scorecards) {
+    let scorecardsCostInCents = SCORECARDS_USD_CENTS_PRICE;
+    if (currentlySetCurrency === 'EUR') {
+      const scorecardsEurCentsCostPerDevPerMonth = scorecardsCostInCents * USD_TO_EUR_EXCHANGE_RATE;
+      scorecardsCostInCents = Math.round(scorecardsEurCentsCostPerDevPerMonth / 100) * 100;
+    }
+    selectedCentCostPerDevPerMonth += scorecardsCostInCents;
+  }
+
   return selectedCentCostPerDevPerMonth;
 };
+
+const ScorecardsSwitch = ({ checked, onChange }) => (
+  <div className="sm:col-span-2 mt-4">
+    <div className="flex items-start">
+      <div className="flex-shrink-0">
+        <Switch
+          checked={checked}
+          onChange={onChange}
+          name="scorecards"
+          srTitle="scorecards-included"
+        />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-base text-gray-500">
+          Scorecards
+        </p>
+      </div>
+    </div>
+  </div>
+);
 
 const TeamsTierPriceDisplay = ({
   perSeatPrices,
@@ -27,11 +58,14 @@ const TeamsTierPriceDisplay = ({
   setNumberOfEngineers,
   currentlySetCurrency,
   showMonthlyTotal,
+  scorecards,
+  setScorecards,
 }) => {
   const centCostPerDevPerMonth = calculateCentCostInCurrency({
     numberOfEngineers,
     currentlySetCurrency,
     perSeatPrices,
+    scorecards,
   });
   const centCostPerMonth = numberOfEngineers * centCostPerDevPerMonth;
 
@@ -59,13 +93,17 @@ const TeamsTierPriceDisplay = ({
         </div>
       )}
 
-      <div className="mb-10">
+      <div className="mb-6">
         <NumberOfEngineers
           onChange={setNumberOfEngineers}
           value={numberOfEngineers}
           options={perSeatPrices}
           idPrefix="teams-plan-"
         />
+      </div>
+
+      <div className="mb-10">
+        <ScorecardsSwitch checked={scorecards} onChange={setScorecards} />
       </div>
     </>
   );

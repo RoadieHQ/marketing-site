@@ -6,6 +6,7 @@ import TeamsTier from './TeamsTier';
 
 const TeamsPricingTier = ({ currentlySetCurrency }) => {
   const [numberOfEngineers, setNumberOfEngineers] = useState(PER_SEAT_PRICES_MARKETING[0].id);
+  const [scorecards, setScorecards] = useState(false);
 
   return (
     <TeamsTier
@@ -13,6 +14,8 @@ const TeamsPricingTier = ({ currentlySetCurrency }) => {
       setNumberOfEngineers={setNumberOfEngineers}
       perSeatPrices={PER_SEAT_PRICES_MARKETING}
       currentlySetCurrency={currentlySetCurrency}
+      scorecards={scorecards}
+      setScorecards={setScorecards}
     />
   );
 };
