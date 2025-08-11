@@ -19,9 +19,10 @@ const GrowthTierBenefits = () => (
       heading="Everything in Teams, plus..."
       bullets={[
         'SLA',
-        'Slack support & adoption planning',
-        'Bring your own custom Backstage plugins',
-        'API access',
+        'Slack & MS Teams support',
+        'Custom, private Backstage plugins',
+        'REST API access',
+        'Custom RBAC (optional paid extra)',
         'Secure on-prem connection',
         'Usage analytics dashboard',
       ]}

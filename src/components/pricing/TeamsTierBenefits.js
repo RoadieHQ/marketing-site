@@ -22,7 +22,7 @@ const TeamsTierBenefits = () => (
         'Monthly, automatic upgrades',
         'TechDocs & API specs',
         'Scaffolder golden paths',
-        'Open-source Backstage plugins',
+        '75+ Open-source Backstage plugins',
         'Scorecards (optional paid extra)',
         'RAG AI & MCP Server Access (beta)',
         'Single sign on',
