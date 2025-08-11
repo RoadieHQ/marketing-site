@@ -8,9 +8,9 @@ const GrowthTierBenefits = () => (
       bullets={[
         'Unlimited software components tracked.',
         'Unlimited API specs.',
-        'Unlimited TechDocs',
+        'Unlimited TechDocs.',
         'Unlimited scaffolder templates.',
-        'Unlimited scorecards',
+        'Unlimited scorecards.',
       ]}
       hasIcon={false}
     />

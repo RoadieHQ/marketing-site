@@ -41,19 +41,19 @@ const sections = [{
     name: 'Scaffolder golden paths',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'API specs',
+    name: 'API specs in catalog',
     tiers: { Teams: true, Growth: true },
   }, {
     name: 'Open-source Backstage plugins',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'RAG AI & MCP (beta)',
+    name: 'RAG AI & MCP Server Access (beta)',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'API access',
+    name: 'REST API access',
     tiers: { Growth: true },
   }, {
-    name: 'Custom RBAC',
+    name: 'Custom RBAC (optional paid extra)',
     tiers: { Growth: true },
   }],
 
@@ -95,7 +95,7 @@ const sections = [{
     tiers: { Growth: true },
   }],
 }, {
-  name: 'Infrastucture',
+  name: 'Connect to on-prem infra',
   features: [{
     name: 'Secure on-prem connection',
     tiers: { Growth: true },

@@ -9,9 +9,9 @@ const TeamsTierBenefits = () => (
       bullets={[
         'Unlimited software components tracked.',
         'Unlimited API specs.',
-        'Unlimited TechDocs',
+        'Unlimited TechDocs.',
         'Unlimited scaffolder templates.',
-        'Unlimited scorecards',
+        'Unlimited scorecards.',
       ]}
     />
 
@@ -24,7 +24,7 @@ const TeamsTierBenefits = () => (
         'Scaffolder golden paths',
         'Open-source Backstage plugins',
         'Scorecards (optional paid extra)',
-        'RAG AI & MCP (beta)',
+        'RAG AI & MCP Server Access (beta)',
         'Single sign on',
       ]}
     />
