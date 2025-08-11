@@ -30,7 +30,7 @@ const TeamsTierPriceDisplay = ({
       </div>
   
       <div className="mb-10">
-        <p className="pt-2 pb-4">{TIERS.teams.minSeats} to {TIERS.teams.maxSeats} developers</p>
+        <p>{TIERS.teams.minSeats} to {TIERS.teams.maxSeats} developers. Unlimited entities.</p>
       </div>
     </>
   );
