@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TIERS from './tiers';
+import { TIERS } from './prices';
 
 const GrowthTierPriceDisplay = () => {
   return (

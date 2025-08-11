@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
 import { TextLink } from 'components';
 
-import TIERS from './tiers';
+import { TIERS } from './prices';
 
 const sections = [{
   name: 'Scale',

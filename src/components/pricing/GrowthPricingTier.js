@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'components';
 
 import GrowthTier from './GrowthTier';
-import TIERS from './tiers';
+import { TIERS } from './prices';
 
 const GrowthPricingTier = () => (
   <GrowthTier
