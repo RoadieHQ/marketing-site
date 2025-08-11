@@ -25,6 +25,7 @@ const sections = [{
     name: 'Minimum seats',
     tiers: { Teams: TIERS.teams.minSeats.toString(), Growth: TIERS.growth.minSeats.toString() },
   }],
+
 }, {
   name: 'Features',
   features: [{
@@ -55,6 +56,7 @@ const sections = [{
     name: 'Custom RBAC',
     tiers: { Growth: true },
   }],
+
 }, {
   name: 'Support',
   features: [{
@@ -73,6 +75,7 @@ const sections = [{
     name: 'Usage analytics dashboard',
     tiers: { Growth: true },
   }],
+
 }, {
   name: 'Customization',
   features: [{
