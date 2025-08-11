@@ -8,8 +8,9 @@ const GrowthTierBenefits = () => (
       bullets={[
         'Unlimited software components tracked.',
         'Unlimited API specs.',
-        'Unlimited TechDocs',
+        'Unlimited TechDocs.',
         'Unlimited scaffolder templates.',
+        'Unlimited scorecards.',
       ]}
       hasIcon={false}
     />
@@ -18,11 +19,11 @@ const GrowthTierBenefits = () => (
       heading="Everything in Teams, plus..."
       bullets={[
         'SLA',
-        '24/7 On-call',
-        'Slack and email support',
-        'Bring your own Backstage plugins',
-        'API access (beta)',
-        'Infra access via broker',
+        'Slack & MS Teams support',
+        'Custom, private Backstage plugins',
+        'REST API access',
+        'Custom RBAC (optional paid extra)',
+        'Secure on-prem connection',
         'Usage analytics dashboard',
       ]}
     />
