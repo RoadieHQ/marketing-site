@@ -1,9 +1,9 @@
 import React from 'react';
 import { CheckIcon, PlusIcon } from '@heroicons/react/solid';
 
-const renderIcon = ({ iconName }) => {
+const Icon = ({ name }) => {
   const classes = 'flex-shrink-0 h-5 w-5 text-primary-600';
-  if (iconName === 'plus') {
+  if (name === 'plus') {
     return <PlusIcon className={classes} aria-hidden="true" />
   }
   return <CheckIcon className={classes} aria-hidden="true" />;
@@ -13,7 +13,7 @@ const TierBullet = ({ feature: { iconName, description }, hasIcon = true }) => (
   <li className="flex space-x-3">
     {hasIcon && (
       <span className="pt-1">
-        {renderIcon({ iconName })}
+        <Icon name={iconName} />
       </span>
     )}
     <span className="prose prose-primary max-w-none">{description}</span>
