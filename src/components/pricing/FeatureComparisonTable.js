@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
 import { TextLink } from 'components';
 
-import TIERS from './tiers';
+import { TIERS } from './prices';
 
 const sections = [{
   name: 'Scale',
@@ -50,10 +50,13 @@ const sections = [{
     name: 'RAG AI & MCP Server Access (beta)',
     tiers: { Teams: true, Growth: true },
   }, {
-    name: 'REST API access',
-    tiers: { Growth: true },
-  }, {
     name: 'Custom RBAC (optional paid extra)',
+    tiers: { Teams: true, Growth: true },
+  }, {
+    name: 'Scorecards (optional paid extra)',
+    tiers: { Teams: true, Growth: true },
+  }, {
+    name: 'REST API access',
     tiers: { Growth: true },
   }],
 

@@ -5,7 +5,7 @@ import TierContainer from './TierContainer';
 import TierName from './TierName';
 import TierDescription from './TierDescription';
 import GrowthTierPriceDisplay from './GrowthTierPriceDisplay';
-import TIERS from './tiers';
+import { TIERS } from './prices';
 
 const GrowthTier = ({ ctaComponent }) => (
   <TierContainer>

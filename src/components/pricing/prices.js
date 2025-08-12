@@ -1,21 +1,23 @@
+import { PAGE_PATHS } from '../../contactFormConstants';
+
 export const USD_TO_EUR_EXCHANGE_RATE = 0.83;
 
-export const PER_SEAT_PRICES_MARKETING = [
-  Object.freeze({
-    id: 50,
-    name: '50-100 developers',
+export const TIERS = {
+  teams: {
+    name: 'Teams',
+    minSeats: 50,
+    maxSeats: 150,
+    description: 'For teams who want a home for their services, docs, runbooks, API specs and CI.',
+    ctaLabel: 'Start a free trial',
+    ctaLinkTo: PAGE_PATHS.freeTrial,
     usdCentCostPerDevPerMonth: 2400,
-  }),
+  },
 
-  Object.freeze({
-    id: 100,
-    name: '100–150 developers',
-    usdCentCostPerDevPerMonth: 2200,
-  }),
-
-  Object.freeze({
-    id: 150,
-    name: '150+ developers',
-    usdCentCostPerDevPerMonth: 2000,
-  }),
-];
+  growth: {
+    name: 'Growth',
+    minSeats: 100,
+    description: 'For excellent engineering orgs who want to maintain effectiveness through hypergrowth',
+    ctaLabel: 'Request a demo',
+    ctaLinkTo: PAGE_PATHS.freeTrial,
+  },
+};

@@ -6,7 +6,7 @@ import TeamsTierBenefits from './TeamsTierBenefits';
 import TierContainer from './TierContainer';
 import TierName from './TierName';
 import TierDescription from './TierDescription';
-import TIERS from './tiers';
+import { TIERS } from './prices';
 
 const TeamsTier = ({
   ctaHelpText = 'No credit card required',
@@ -19,11 +19,7 @@ const TeamsTier = ({
       fullWidth
     />
   ),
-  perSeatPrices,
-  numberOfEngineers,
-  setNumberOfEngineers,
   currentlySetCurrency,
-  showMonthlyTotal,
 }) => (
     <TierContainer>
       <div className="p-6">
@@ -31,11 +27,7 @@ const TeamsTier = ({
         <TierDescription description={TIERS.teams.description} />
 
         <TeamsTierPriceDisplay
-          perSeatPrices={perSeatPrices}
-          numberOfEngineers={numberOfEngineers}
-          setNumberOfEngineers={setNumberOfEngineers}
           currentlySetCurrency={currentlySetCurrency}
-          showMonthlyTotal={showMonthlyTotal}
         />
 
         <div>
