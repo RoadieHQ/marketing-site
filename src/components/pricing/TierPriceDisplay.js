@@ -1,4 +1,5 @@
 import React from 'react';
+import kebabCase from 'lodash/kebabCase';
 
 const TierPriceDisplay = ({
   currentlySetCurrency,
@@ -21,7 +22,10 @@ const TierPriceDisplay = ({
   return (
     <>
       <div className="mb-4">
-        <span className="text-4xl font-extrabold text-gray-900" id="cost-display">
+        <span
+          className="text-4xl font-extrabold text-gray-900"
+          id={`${kebabCase(tier.name)}-cost-display`}
+        >
           {cost}
         </span>
         {tier.costQualifier && (
