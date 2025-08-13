@@ -1,4 +1,4 @@
-import { TIERS } from '../../src/components/pricing/prices';
+import { TIERS } from '../../src/components/pricing/tiers';
 
 describe('The pricing page', () => {
   it('should change currency', () => {
