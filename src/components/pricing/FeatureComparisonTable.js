@@ -23,7 +23,10 @@ const sections = [{
     tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
   }, {
     name: 'Minimum seats',
-    tiers: { Teams: TIERS.teams.minSeats.toString(), Growth: TIERS.growth.minSeats.toString() },
+    tiers: TIERS.reduce((collection, tier) => ({
+      [tier.name]: tier.minSeats.toString(),
+      ...collection,
+    }), {}),
   }],
 
 }, {
@@ -105,6 +108,7 @@ const sections = [{
   }],
 }];
 
+console.log(sections);
 
 const FeatureNameHeaderCell = ({ feature }) => (
   <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
@@ -180,15 +184,13 @@ const LargeFeatureRow = ({ feature }) => (
   <tr>
     <FeatureNameHeaderCell feature={feature} />
 
-    <FeatureTierIndicatorCell
-      featureTier={feature.tiers[TIERS.teams.name]}
-      tier={TIERS.teams}
-    />
-
-    <FeatureTierIndicatorCell
-      featureTier={feature.tiers[TIERS.growth.name]}
-      tier={TIERS.growth}
-    />
+    {TIERS.map((tier) => (
+      <FeatureTierIndicatorCell
+        key={tier.name}
+        featureTier={feature.tiers[tier.name]}
+        tier={tier}
+      />
+    ))}
   </tr>
 );
 
@@ -229,25 +231,17 @@ const FeatureComparisonTable = () => {
     <>
       {/* xs to lg */}
       <div className="max-w-2xl mx-auto space-y-16 lg:hidden">
-        <section>
-          <div className="px-4 mb-8">
-            <h2 className="text-lg leading-6 font-medium text-gray-900">{TIERS.teams.name}</h2>
-          </div>
+        {TIERS.map((tier) => (
+          <section key={tier.name}>
+            <div className="px-4 mb-8">
+              <h2 className="text-lg leading-6 font-medium text-gray-900">{tier.name}</h2>
+            </div>
 
-          {sections.map((section) => (
-            <SectionTable section={section} key={section.name} tier={TIERS.teams} tierIndex={0} />
-          ))}
-        </section>
-
-        <section>
-          <div className="px-4 mb-8">
-            <h2 className="text-lg leading-6 font-medium text-gray-900">{TIERS.growth.name}</h2>
-          </div>
-
-          {sections.map((section) => (
-            <SectionTable section={section} key={section.name} tier={TIERS.growth} tierIndex={1} />
-          ))}
-        </section>
+            {sections.map((section) => (
+              <SectionTable section={section} key={section.name} tier={tier} tierIndex={0} />
+            ))}
+          </section>
+        ))}
       </div>
 
       {/* lg+ */}
@@ -260,8 +254,9 @@ const FeatureComparisonTable = () => {
                 <span className="sr-only">Feature by</span>
                 <span>Plans</span>
               </th>
-              <LargeTierHeaderCell tier={TIERS.teams} />
-              <LargeTierHeaderCell tier={TIERS.growth}  />
+              {TIERS.map((tier) => (
+                <LargeTierHeaderCell tier={tier} key={tier.name} />
+              ))}
             </tr>
           </thead>
 
@@ -271,8 +266,9 @@ const FeatureComparisonTable = () => {
                 Get started
               </th>
 
-              <LargeTierCta tier={TIERS.teams} />
-              <LargeTierCta tier={TIERS.growth} />
+              {TIERS.map((tier) => (
+                <LargeTierCta tier={tier} key={tier.name} />
+              ))}
             </tr>
 
             {sections.map((section) => (
