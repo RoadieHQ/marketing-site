@@ -21,7 +21,7 @@ const TierPriceDisplay = ({
   return (
     <>
       <div className="mb-4">
-        <span className="text-4xl font-extrabold text-gray-900">
+        <span className="text-4xl font-extrabold text-gray-900" id="cost-display">
           {cost}
         </span>
         {tier.costQualifier && (
