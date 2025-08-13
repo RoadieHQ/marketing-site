@@ -1,7 +1,5 @@
 import { PAGE_PATHS } from '../../contactFormConstants';
 
-export const USD_TO_EUR_EXCHANGE_RATE = 0.83;
-
 export const TIERS = {
   teams: {
     name: 'Teams',
