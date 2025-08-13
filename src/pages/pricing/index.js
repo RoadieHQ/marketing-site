@@ -41,10 +41,10 @@ const Pricing = ({
             />
           </div>
 
-          <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto">
-
-            <Tier tier={TIERS.teams} currentlySetCurrency={currentlySetCurrency} />
-            <Tier tier={TIERS.growth} currentlySetCurrency={currentlySetCurrency} />
+          <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6">
+            {TIERS.map((tier) => (
+              <Tier tier={tier} currentlySetCurrency={currentlySetCurrency} key={tier.name} />
+            ))}
           </div>
         </div>
 
