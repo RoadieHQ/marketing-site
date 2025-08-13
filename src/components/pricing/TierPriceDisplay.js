@@ -13,7 +13,7 @@ const TierPriceDisplay = ({
   let cost = 'Custom';
   if (!tier.customPricing) {
     const costPerDevPerMonth = tier[`${currentlySetCurrency.toLowerCase()}CentCostPerDevPerMonth`];
-    cost = CURRENCY_SYMBOL[currentlySetCurrency] + costPerDevPerMonth.toString();
+    cost = CURRENCY_SYMBOL[currentlySetCurrency] + (costPerDevPerMonth / 100).toString();
   }
 
   return (
