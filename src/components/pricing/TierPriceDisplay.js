@@ -1,6 +1,11 @@
 import React from 'react';
 import kebabCase from 'lodash/kebabCase';
 
+const CURRENCY_SYMBOL = {
+  EUR: '€',
+  USD: '$',
+};
+
 const TierPriceDisplay = ({
   currentlySetCurrency,
   tier,
@@ -8,15 +13,7 @@ const TierPriceDisplay = ({
   let cost = 'Custom';
   if (!tier.customPricing) {
     const costPerDevPerMonth = tier[`${currentlySetCurrency.toLowerCase()}CentCostPerDevPerMonth`];
-
-    const formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currentlySetCurrency,
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 2,
-    });
-
-    cost = formatter.format(costPerDevPerMonth / 100);
+    cost = CURRENCY_SYMBOL[currentlySetCurrency] + costPerDevPerMonth.toString();
   }
 
   return (
