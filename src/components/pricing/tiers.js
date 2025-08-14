@@ -69,7 +69,7 @@ export const TIERS = [{
     }, {
       description: 'Usage analytics dashboard',
     }, {
-      iconName: 'plus', description: 'Custom RBAC',
+      description: 'Custom RBAC',
     }],
   },
 }, {
@@ -82,9 +82,6 @@ export const TIERS = [{
   ctaLinkTo: PAGE_PATHS.freeTrial,
 
   customPricing: true,
-  get pricingCondition() {
-    return `${this.minSeats} developers or more. Unlimited entities.`;
-  },
 
   benefits: {
     heading: "Everything in Growth included, plus...",
