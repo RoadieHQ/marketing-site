@@ -44,10 +44,7 @@ export const TIERS = [{
   ctaLabel: 'Request a demo',
   ctaLinkTo: PAGE_PATHS.freeTrial,
 
-  usdCentCostPerDevPerMonth: 3700,
-  eurCentCostPerDevPerMonth: 3200,
-  costQualifier: ' per dev/month',
-  customPricing: false,
+  customPricing: true,
   get pricingCondition() {
     return `${this.minSeats} developers or more. Unlimited entities.`;
   },
@@ -65,30 +62,13 @@ export const TIERS = [{
     }, {
       description: 'REST API access',
     }, {
+      description: 'Advanced search',
+    }, {
       description: 'Secure on-prem connection',
     }, {
       description: 'Usage analytics dashboard',
     }, {
       description: 'Custom RBAC',
-    }],
-  },
-}, {
-
-  name: 'Enterprise',
-  description: 'For large companies with special requirements and custom setups.',
-  minSeats: 150,
-
-  ctaLabel: 'Request a demo',
-  ctaLinkTo: PAGE_PATHS.freeTrial,
-
-  customPricing: true,
-
-  benefits: {
-    heading: "Everything in Growth included, plus...",
-    bullets: [{
-      description: 'Advanced SLA',
-    }, {
-      description: 'Multiple single-tenant deployments',
     }],
   },
 }];
