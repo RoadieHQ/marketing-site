@@ -21,96 +21,96 @@ const sections = [{
   name: 'Catalog',
   features: [{
     name: 'Software components',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'API Specs',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'TechDocs technical documentation',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Self-service automation templates',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Infrastructure',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Teams & Users',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }],
 
 }, {
   name: 'Features',
   features: [{
     name: 'Automatic Backstage upgrades',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Open-source Backstage plugins',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Scorecards',
-    tiers: { Teams: 'plus', Growth: true, Enterprise: true },
+    tiers: { Teams: 'plus', Growth: 'plus', },
   }, {
     name: 'RAG AI & MCP Server Access (beta)',
-    tiers: { Growth: true, Enterprise: true },
+    tiers: { Growth: true, },
   }, {
     name: 'REST API access',
-    tiers: { Growth: true, Enterprise: true },
+    tiers: { Growth: true, },
   }, {
     name: 'Search Engine',
-    tiers: { Teams: 'PostgreSQL', Growth: 'OpenSearch', Enterprise: 'OpenSearch' }
+    tiers: { Teams: 'PostgreSQL', Growth: 'OpenSearch', }
   }],
 
 }, {
   name: 'Support',
   features: [{
     name: 'In-app chat',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Slack & MS Teams support',
-    tiers: { Growth: true, Enterprise: true },
+    tiers: { Growth: true, },
   }, {
     name: 'SLA',
-    tiers: { Growth: true, Enterprise: true },
+    tiers: { Growth: true, },
   }, {
     name: 'Usage analytics dashboard',
-    tiers: { Growth: true, Enterprise: true },
+    tiers: { Growth: true, },
   }],
 
 }, {
   name: 'Security & Authorization',
   features: [{
     name: 'Single Sign-On',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Custom RBAC',
-    tiers: { Teams: false, Growth: true, Enterprise: true },
+    tiers: { Teams: false, Growth: true, },
   }],
 
 }, {
   name: 'Customization',
   features: [{
     name: 'Customizable theme',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Customizable catalog',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Customizable navigation',
-    tiers: { Teams: true, Growth: true, Enterprise: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
-    name: 'Multiple tenants available',
-    tiers: { Teams: 'plus', Growth: 'plus', Enterprise: true  },
+    name: 'Multiple tenants',
+    tiers: { Teams: 'plus', Growth: 'plus', },
   }, {
     name: 'Custom, private Backstage plugins',
-    tiers: { Growth: true, Enterprise: true },
+    tiers: { Growth: true, },
   }],
 
 }, {
   name: 'Connect to on-prem infra',
   features: [{
     name: 'Secure on-prem connection',
-    tiers: { Growth: true, Enterprise: true },
+    tiers: { Growth: true, },
   }],
 }];
 
