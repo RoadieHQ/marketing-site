@@ -1,27 +1,15 @@
 import React, { Fragment } from 'react';
-import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
+import CheckIcon from '@heroicons/react/solid/CheckIcon';
+import MinusIcon from '@heroicons/react/solid/MinusIcon';
+import PlusIcon from '@heroicons/react/solid/PlusIcon';
 import { TextLink } from 'components';
+import isString from 'lodash/isString';
 
 import { TIERS } from './tiers';
 
 const sections = [{
   name: 'Scale',
   features: [{
-    name: 'Software components tracked',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
-    name: 'API Specs',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
-    name: 'TechDocs',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
-    name: 'Scaffolder templates',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
-    name: 'Scorecards (optional paid extra)',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
-  }, {
     name: 'Minimum seats',
     tiers: TIERS.reduce((collection, tier) => ({
       [tier.name]: tier.minSeats.toString(),
@@ -30,81 +18,99 @@ const sections = [{
   }],
 
 }, {
-  name: 'Features',
+  name: 'Catalog',
   features: [{
-    name: 'Software & teams catalog',
-    tiers: { Teams: true, Growth: true },
+    name: 'Software components',
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
-    name: 'Monthly, automatic upgrades',
-    tiers: { Teams: true, Growth: true },
+    name: 'API Specs',
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
     name: 'TechDocs technical documentation',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
-    name: 'Scaffolder golden paths',
-    tiers: { Teams: true, Growth: true },
+    name: 'Self-service automation templates',
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
-    name: 'API specs in catalog',
-    tiers: { Teams: true, Growth: true },
+    name: 'Infrastructure',
+    tiers: { Teams: true, Growth: true, Enterprise: true },
+  }, {
+    name: 'Teams & Users',
+    tiers: { Teams: true, Growth: true, Enterprise: true },
+  }],
+
+}, {
+  name: 'Features',
+  features: [{
+    name: 'Automatic Backstage upgrades',
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
     name: 'Open-source Backstage plugins',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Teams: true, Growth: true, Enterprise: true },
+  }, {
+    name: 'Scorecards',
+    tiers: { Teams: 'plus', Growth: true, Enterprise: true },
   }, {
     name: 'RAG AI & MCP Server Access (beta)',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Custom RBAC (optional paid extra)',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Scorecards (optional paid extra)',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Growth: true, Enterprise: true },
   }, {
     name: 'REST API access',
-    tiers: { Growth: true },
+    tiers: { Growth: true, Enterprise: true },
+  }, {
+    name: 'Search Engine',
+    tiers: { Teams: 'PostgreSQL', Growth: 'OpenSearch', Enterprise: 'OpenSearch' }
   }],
 
 }, {
   name: 'Support',
   features: [{
     name: 'In-app chat',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
     name: 'Slack & MS Teams support',
-    tiers: { Growth: true },
+    tiers: { Growth: true, Enterprise: true },
   }, {
     name: 'SLA',
-    tiers: { Growth: true },
-  }, {
-    name: '24/7 On-call',
-    tiers: { Growth: true },
+    tiers: { Growth: true, Enterprise: true },
   }, {
     name: 'Usage analytics dashboard',
-    tiers: { Growth: true },
+    tiers: { Growth: true, Enterprise: true },
+  }],
+
+}, {
+  name: 'Security & Authorization',
+  features: [{
+    name: 'Single Sign-On',
+    tiers: { Teams: true, Growth: true, Enterprise: true },
+  }, {
+    name: 'Custom RBAC',
+    tiers: { Teams: false, Growth: 'plus', Enterprise: true },
   }],
 
 }, {
   name: 'Customization',
   features: [{
     name: 'Customizable theme',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
     name: 'Customizable catalog',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
     name: 'Customizable navigation',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
     name: 'Multiple tenants available',
-    tiers: { Growth: true },
+    tiers: { Teams: 'plus', Growth: 'plus', Enterprise: true  },
   }, {
     name: 'Custom, private Backstage plugins',
-    tiers: { Growth: true },
+    tiers: { Growth: true, Enterprise: true },
   }],
+
 }, {
   name: 'Connect to on-prem infra',
   features: [{
     name: 'Secure on-prem connection',
-    tiers: { Growth: true },
+    tiers: { Growth: true, Enterprise: true },
   }],
 }];
 
@@ -116,33 +122,46 @@ const FeatureNameHeaderCell = ({ feature }) => (
   </th>
 );
 
-const FeatureInTierIndicatorText = ({ text }) => (
-  <span className="block text-sm text-gray-700 text-right lg:text-left">{text}</span>
-);
+const FeatureTierIndicatorCell = ({ tier, featureTier}) => {
+  let inner;
 
-const FeatureInTierIndicatorIcon = ({ featureTier, tier }) => (
-  <>
-    {featureTier === true ? (
-      <CheckIcon className="ml-auto lg:ml-0 h-5 w-5 text-green-500" aria-hidden="true" />
-    ) : (
-      <MinusIcon className="ml-auto lg:ml-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-    )}
+  if (featureTier === true) {
+    inner = (
+      <>
+        <span title={`Included in ${tier.name}`}>
+          <CheckIcon className="ml-auto lg:ml-0 h-5 w-5 text-green-500" aria-hidden="true" />
+        </span>
+        <span className="sr-only">Included in {tier.name}</span>
+      </>
+    );
+  } else if (isString(featureTier) && featureTier.toLowerCase() === 'plus') {
+    inner = (
+      <>
+        <span title={`Available as optional paid extra in ${tier.name}`}>
+          <PlusIcon className="ml-auto lg:ml-0 h-5 w-5 text-green-500" aria-hidden="true" />
+        </span>
+        <span className="sr-only">Avalable as optional paid extra in {tier.name}</span>
+      </>
+    );
+  } else if (isString(featureTier)) {
+    inner = <span className="block text-sm text-gray-700 text-right lg:text-left">{featureTier}</span>;
+  } else {
+    inner = (
+      <>
+        <span title={`Not available in ${tier.name}`}>
+          <MinusIcon className="ml-auto lg:ml-0 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </span>
+        <span className="sr-only">Not available in {tier.name}</span>
+      </>
+    );
+  }
 
-    <span className="sr-only">
-      {featureTier === true ? 'Included' : 'Not included'} in {tier.name}
-    </span>
-  </>
-);
-
-const FeatureTierIndicatorCell = ({ tier, featureTier}) => (
-  <td className="py-5 pr-4 lg:px-6">
-    {typeof featureTier === 'string' ? (
-      <FeatureInTierIndicatorText text={featureTier} />
-    ) : (
-      <FeatureInTierIndicatorIcon featureTier={featureTier} tier={tier} />
-    )}
-  </td>
-);
+  return (
+    <td className="py-5 pr-4 lg:px-6">
+      {inner}
+    </td>
+  );
+};
 
 const FeatureRow = ({ feature, tier }) => (
   <tr key={feature.name} className="border-t border-gray-200">

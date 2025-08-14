@@ -4,9 +4,17 @@ import { CheckIcon, PlusIcon } from '@heroicons/react/solid';
 const Icon = ({ name }) => {
   const classes = 'flex-shrink-0 h-5 w-5 text-primary-600';
   if (name === 'plus') {
-    return <PlusIcon className={classes} aria-hidden="true" />
+    return (
+      <span title="Optional paid extra">
+        <PlusIcon className={classes} aria-hidden="true" />
+      </span>
+    );
   }
-  return <CheckIcon className={classes} aria-hidden="true" />;
+  return (
+    <span title="Included">
+      <CheckIcon className={classes} aria-hidden="true" />
+    </span>
+  );
 };
 
 const TierBullet = ({ iconName, description, hasIcon = true }) => (
