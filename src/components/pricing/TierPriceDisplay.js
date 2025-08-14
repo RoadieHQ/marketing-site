@@ -30,7 +30,7 @@ const TierPriceDisplay = ({
         )}
       </div>
   
-      <div className="mb-10">
+      <div className="mb-10 min-h-6">
         <p>{tier.pricingCondition}</p>
       </div>
     </>

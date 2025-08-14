@@ -84,7 +84,7 @@ const sections = [{
     tiers: { Teams: true, Growth: true, Enterprise: true },
   }, {
     name: 'Custom RBAC',
-    tiers: { Teams: false, Growth: 'plus', Enterprise: true },
+    tiers: { Teams: false, Growth: true, Enterprise: true },
   }],
 
 }, {
