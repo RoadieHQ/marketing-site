@@ -14,12 +14,14 @@ Roadie exposes a number of [Model Context Protocol Servers (MCP)](https://modelc
 
 ## Available MCP Servers
 
-Roadie currently provides five MCP servers that enable AI assistants to interact with your Backstage catalog:
+Roadie currently provides six MCP servers that enable AI assistants to interact with your Backstage catalog:
 
 - **[API Docs Query Server](api-docs-query)** - Discover and retrieve API documentation and specifications
   - https://api.roadie.so/api/mcp/v1/api-docs-query
 - **[Backend Config Server](backend-config)** - Manage and query backend configuration including proxy settings and secrets
   - https://api.roadie.so/api/mcp/v1/backend-config
+- **[Catalog Decorators Server](catalog-decorators)** - Manage catalog entity decorators and fragments
+  - https://api.roadie.so/api/mcp/v1/catalog-decorators
 - **[Rich Catalog Entity Server](rich-catalog-entity)** - Access catalog entity data, relationships, and documentation
   - https://api.roadie.so/api/mcp/v1/rich-catalog-entity
 - **[Scaffolder Server](scaffolder)** - Find, validate, and execute Backstage scaffolder templates  
@@ -63,6 +65,12 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
         "Authorization": "Bearer <roadie_api_token>"
       }
     },
+    "roadie-catalog-decorators": {
+      "url": "https://api.roadie.so/api/mcp/v1/catalog-decorators",
+      "headers": {
+        "Authorization": "Bearer <roadie_api_token>"
+      }
+    },
     "roadie-scaffolder": {
       "url": "https://api.roadie.so/api/mcp/v1/scaffolder-use",
       "headers": {
@@ -102,6 +110,7 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
 Open VS Code and try asking Copilot questions like:
 - "What APIs are available for user management?"
 - "Who owns the payment-service component?"
+- "Create a fragment to add team ownership to the auth-service"
 
 #### Skipping steps
 
@@ -130,6 +139,12 @@ Create or edit your Cursor MCP configuration file (`.cursor/mcp.json` in your pr
     },
     "roadie-backend-config": {
       "url": "https://api.roadie.so/api/mcp/v1/backend-config",
+      "headers": {
+        "Authorization": "Bearer <roadie_api_token>"
+      }
+    },
+    "roadie-catalog-decorators": {
+      "url": "https://api.roadie.so/api/mcp/v1/catalog-decorators",
       "headers": {
         "Authorization": "Bearer <roadie_api_token>"
       }
@@ -166,6 +181,7 @@ Use Cursor's AI chat to test the integration:
 - "Show me security metrics for user-service"
 - "What scaffolder templates are available?"
 - "Find APIs related to payment processing"
+- "List all fragments for the payment-service component"
 
 </details>
 
@@ -189,6 +205,12 @@ Edit your Claude Desktop configuration file (`~/.config/claude-desktop/claude_de
     },
     "roadie-backend-config": {
       "url": "https://api.roadie.so/api/mcp/v1/backend-config",
+      "headers": {
+        "Authorization": "Bearer <roadie_api_token>"
+      }
+    },
+    "roadie-catalog-decorators": {
+      "url": "https://api.roadie.so/api/mcp/v1/catalog-decorators",
       "headers": {
         "Authorization": "Bearer <roadie_api_token>"
       }
@@ -224,6 +246,7 @@ Restart the application to load the new MCP server configuration.
 Test with queries like:
 - "What documentation exists for auth-service?"
 - "Show me GitHub metrics for all payment services"
+- "Add monitoring annotations to the user-service component"
 
 </details>
 
