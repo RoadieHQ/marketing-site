@@ -9,7 +9,7 @@ const Icon = ({ name }) => {
   return <CheckIcon className={classes} aria-hidden="true" />;
 };
 
-const TierBullet = ({ feature: { iconName, description }, hasIcon = true }) => (
+const TierBullet = ({ iconName, description, hasIcon = true }) => (
   <li className="flex space-x-3">
     {hasIcon && (
       <span className="pt-1">
@@ -26,8 +26,13 @@ const TierBulletsSection = ({ heading, bullets, hasIcon = true }) => (
       <h3 className="text-xs font-medium text-gray-900 tracking-wide uppercase">{heading}</h3>
     )}
     <ul className="mt-6 space-y-3">
-      {bullets.map((feature) => (
-        <TierBullet feature={feature} key={`${heading}-${feature}`} hasIcon={hasIcon} />
+      {bullets.map(({ iconName, description }) => (
+        <TierBullet
+          iconName={iconName}
+          key={`${heading}-${description}`}
+          hasIcon={hasIcon}
+          description={description}
+        />
       ))}
     </ul>
   </div>
