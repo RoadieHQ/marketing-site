@@ -15,15 +15,6 @@ Backstage uses an opinionated theme based on [material-mkdocs](https://github.co
 NB: Some styles will always be overridden regardless of the `mkdocs-material` plugin theme settings and this can cause unexpected behavior for those who override the theme setting in a `mkdocs.yaml` file.
 
 
-## Mermaid diagrams not rendering
- Make sure you have added the extension to the root `mkdocs.yml` file in your repo like so:
-
-```yaml
-markdown_extensions:
-  - markdown_inline_mermaid
-```
-
-
 ## Plugin not working as expected
 Make sure you have added the extension to the root `mkdocs.yml` file in your repo. Some are added under the `plugins` key and some under `markdown_extensions`. 
 
