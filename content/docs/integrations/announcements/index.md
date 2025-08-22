@@ -19,7 +19,13 @@ The [Announcements](https://github.com/backstage/community-plugins/tree/main/wor
 The announcements plugin exposes multiple components and extensive functionality to inform your Roadie users with messages and important information. All of these components can be configured using the [Roadie UI customization](/docs/getting-started/configure-ui/) functionality.
 
 ### Management
-The plugin is managed from within the `AnnouncementsPage` component that contains a collection of past announcements, an admin section to configure multiple categories of announcements as well as needed form functionality to create and edit announcements. You will need to [add this page to your Sidebar](/docs/pdating-the-ui/#updating-the-sidebar) in Roadie to be able to create and manage announcements.
+To configure the plugin you must first add the `AnnouncementPage` component [to the sidebar](/docs/pdating-the-ui/#updating-the-sidebar). 
+
+The `AnnouncementsPage` provides some information to configure the Announcements plugin, specifically:
+
+- a collection of past announcements
+- an admin section to configure multiple categories of announcements; and
+- functionality to create and edit announcements
 
 ![announcements-admin-portal.png](announcements-admin-portal.png)
 
