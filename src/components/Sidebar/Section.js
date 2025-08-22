@@ -25,7 +25,7 @@ export const SidebarSectionList = ({ title, location, items = [] }) => {
       );
     }
 
-    return <SidebarItem key={path} text={text} to={path} />;
+    return <SidebarItem key={path} text={text} to={path} className="pl-5" />;
   });
 
   return (
