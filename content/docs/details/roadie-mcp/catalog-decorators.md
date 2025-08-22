@@ -72,7 +72,7 @@ Retrieve a list of all entity fragments with optional filtering capabilities.
 ```
 
 #### Required Permissions:
-- **Catalog entity read (*)** - Access to catalog entities and their fragments
+- **Fragment entity read** - `roadie.entity-fragment.read` - Permission to view entity fragments
 
 ### Create Fragment
 
@@ -130,7 +130,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 - Any validation warnings or notes
 
 #### Required Permissions:
-- **Catalog entity write** - Permission to create and modify entity decorations
+- **Fragment entity create** - `roadie.entity-fragment.create` - Permission to create and modify entity fragments
 
 
 ## Common Use Cases
@@ -257,7 +257,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ## Security Considerations
 
 ### Fragment Permissions
-- Fragment creation requires appropriate write permissions
+- Fragment mutations requires appropriate write permissions of `roadie.entity-fragment.create`
 
 ### Data Validation
 - Fragment content is validated against entity schemas
@@ -268,7 +268,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ### Common Issues
 
 1. **Permission Errors**:
-   - Verify you have catalog entity write permissions
+   - Verify you have the relevant `roadie.entity-fragment.<action>` permission
    - Ensure access to target entities before creating fragments
    - Check namespace access permissions
 
