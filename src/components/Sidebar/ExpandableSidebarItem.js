@@ -30,7 +30,7 @@ const ExpandableSidebarItem = ({ text, subItems, location }) => {
       <div>
         <button
           onClick={toggleSubMenuOpen}
-          className="flex items-center text-gray-700 hover:text-primary-600 py-1"
+          className="flex items-center text-gray-700 hover:text-primary-600 py-1 outline-none"
         >
           <span className="mr-1">{subMenuButtonIcon}</span>
           <span>{text}</span>
