@@ -136,6 +136,7 @@ nav:
           - Getting Started: '/docs/details/roadie-mcp/'
           - API Docs Query Server: '/docs/details/roadie-mcp/api-docs-query/'
           - Backend Config Server: '/docs/details/roadie-mcp/backend-config/'
+          - Catalog Decorators Server: '/docs/details/roadie-mcp/catalog-decorators/'
           - Rich Catalog Entity Server: '/docs/details/roadie-mcp/rich-catalog-entity/'
           - Scaffolder Server: '/docs/details/roadie-mcp/scaffolder/'
           - Tech Insights Facts Server: '/docs/details/roadie-mcp/tech-insights-facts/'
