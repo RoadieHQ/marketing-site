@@ -17,7 +17,7 @@ Fragments are partial entity data that are "decorated" onto an existing entity i
 - **Fragment Discovery**: List all entity fragments or fragments for a specific entity
 - **Fragment Creation**: Create new fragments to decorate entities with additional metadata
 - **Fragment Updates**: Add and change data in existing fragments for an entity
-- **Entity Enhancement**: Add specifications, metadata, and other decorative information to catalog entities
+- **Entity Enhancement**: Add specifications, metadata, and other information to catalog entities
 
 ## Available Tools
 
