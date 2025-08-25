@@ -253,6 +253,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ### Entity Reference Management
 - **Precise References**: Use exact entity references (kind:namespace/name format)
 - **Validation**: Verify target entities exist before creating fragments
+- **Confirmation** Creating a fragment successfully does not mean it necasarily has been applied if there was an error. You can check if a Fragment was actually applied to an entity using the Get Entity MCP tool. 
 
 ## Security Considerations
 
@@ -270,7 +271,6 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 1. **Permission Errors**:
    - Verify you have the relevant `roadie.entity-fragment.<action>` permission
    - Ensure access to target entities before creating fragments
-   - Check namespace access permissions
 
 2. **Entity Reference Issues**:
    - Use exact entity reference format: `kind:namespace/name`
