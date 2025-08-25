@@ -93,18 +93,26 @@ spec:
 ⚠️  The GitHub URL **must** be prefixed with `url:` or the documentation will not render in Backstage.
 
 ### Step 4: Test your documentation
-You can generate / serve your docs locally to view what they would look like when they are deployed to Roadie.
+To test documentation changes we suggest you register an org or team scoped entity in the catalog like so: 
 
-To generate the docs to the site directory of the project you can run the following command:
-
-```bash
-npx @techdocs/cli generate --docker-image roadiehq/techdocs
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: test-techdocs
+  namespace: test
+  title: Test Entity For Techdocs
+  description: |
+    This entity can be used to test techdocs versions on branches by updating backstage.io/techdocs-ref url to point to your branch and docs directory
+  annotations:
+    github.com/project-slug: RoadieHQ/roadie
+    backstage.io/techdocs-ref: url:https://github.com/<org>/<repo>/tree/<test-branch>
+spec:
+  type: techdocs
+  owner: group:default/engineering
 ```
 
-To start a local server at port 3000 containing the generated docs, you can run the following command:
-```bash
-npx @techdocs/cli serve --docker-image roadiehq/techdocs
-```
+The `backstage.io/techdocs-ref` can be easily and quickly changed in the UI [via the Decorators form](/docs/catalog/decorating-components/) on the entity.
 
 ### Step 5: Publish your documentation
 
