@@ -43,7 +43,7 @@ We currently include the following MkDocs plugins in our build process:
 - [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) - displays images, iframes, inline content and videos
 - [mkdocs-kroki-plugin](https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin) - A diagram library supporting multiple different diagram formats. See https://kroki.io/ for more information.
 - [mkdocs-print-site-plugin](https://timvink.github.io/mkdocs-print-site-plugin/index.html) - Allows you to render a whole doc with all pages so that you can export it to PDF or HTML via the browser.
-- [mkdocs-git-revision-date-localized-plugin](https://pypi.org/project/mkdocs-git-revision-date-localized-plugin/) - Displays the localized date of the last git revision for each page.
+- [mkdocs-git-revision-date-localized-plugin](https://pypi.org/project/mkdocs-git-revision-date-localized-plugin/) - Displays the localized date of the last git revision for each page. **Note that this plugin requires the `git` command and thus is only applicable if you are using the CI build pipeline of tech docs**
 - [mkdocs-literate-nav](https://pypi.org/project/mkdocs-literate-nav/) - Define the navigation structure in a Markdown file (e.g., `SUMMARY.md`).
 - [mkdocs-section-index](https://pypi.org/project/mkdocs-section-index/) - Treats `index.md` files as the index page for their section, making the section itself clickable in the navigation.
 - [mkdocs-same-dir](https://pypi.org/project/mkdocs-same-dir/) - Allows organizing source files in subdirectories without reflecting that structure in the navigation URLs or layout.
