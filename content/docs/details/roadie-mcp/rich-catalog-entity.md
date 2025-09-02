@@ -187,6 +187,108 @@ Discover and find entities when you don't know the exact entity name or want to 
 
 - **Catalog entity read (*)** - Access to catalog entities
 
+### Search TechDocs
+
+Search TechDocs documentation content across all entities in the catalog to find relevant information without knowing which specific entity contains it.
+
+**Parameters:**
+- `searchQuery` (string): Search query to find documentation content across all entities
+- `pageLimit` (number, optional): Maximum number of results to return (default: 100)
+
+**Example Usage:**
+```json
+{
+  "searchQuery": "API design patterns",
+  "pageLimit": 50
+}
+```
+
+**Return Schema:**
+```typescript
+{
+  totalResults: number,
+  results: {
+    pageTitle: string,
+    content: string,
+    path: string,
+    htmlViewPath: string,
+    entityRef: string,
+    entityKind: string,
+    entityNamespace: string,
+    entityName: string
+  }[]
+}
+```
+
+**Usage Examples:**
+- "Find documentation about API design patterns for my organisation"
+- "What deployment patterns are used in my organisation"
+- "How is Kubernetes used in my organisation? Are there any best practices?"
+- "Search for security best practices in my organisation"
+- "How are database migrations done in my organisation?"
+
+**Key Benefits:**
+- Discovers relevant documentation across entities you might not know about
+- Useful when you don't know which specific entity contains the information
+- Helps find patterns and best practices documented across multiple services
+- Good for discovering related documentation in different teams/entities
+
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog entities and their documentation
+- **TechDocs read** - Access to technical documentation
+
+### User Group Listing
+
+List users or groups and their relationships to understand organizational structure and team relationships.
+
+**Parameters:**
+- `entityType` (enum): Type of entities to list - "user" for User entities or "group" for Group entities
+- `namespace` (string, optional): Optional filter by namespace. This is typically the SCM organisation, especially in the case of users and groups
+- `limit` (number, optional): Maximum number of results to return (if not specified, returns all entities)
+
+**Example Usage:**
+```json
+{
+  "entityType": "user",
+  "namespace": "platform",
+  "limit": 50
+}
+```
+
+**Return Schema:**
+```typescript
+{
+  totalFound: number,
+  entityType: string,
+  entities: {
+    entityRef: string,
+    memberOf?: string[],
+    type?: string,
+    parent?: string,
+    children?: string[],
+    members?: string[]
+  }[]
+}
+```
+
+**Usage Examples:**
+- "Which users are part of more than one group"
+- "Are there any users not assigned to a group"
+- "List all engineering team members"
+- "Show me team hierarchies"
+- "List users in the platform namespace"
+
+**Key Benefits:**
+- Shows team membership relationships (users in groups, group hierarchies)
+- Provides organizational structure overview for answering team-related questions
+- Returns minimal fields to reduce payload size and improve performance
+- Helps understand team structure and user assignments
+
+## Required Permissions
+
+- **Catalog entity read (*)** - Access to catalog entities
+
 ## Common Use Cases
 
 ### Entity Exploration
