@@ -1,6 +1,7 @@
 ---
 title: Confluence Search
 publishedDate: '2022-06-30T10:00:00.0Z'
+lastValidated: '2022-06-30T10:00:00.0Z'
 description: How to enable Confluence indexing for Roadie Search
 
 humanName: Confluence
@@ -12,10 +13,12 @@ integrationType: Integration
 
 Roadie supports integration with Atlassian Confluence wiki platform to enable cross application search functionality. Roadie indexes documents from Confluence so they are available for you to search within the Roadie search bar. 
 
-
-## Prerequisites
-
-You'll need an Atlassian account with an ability to create an API token and the name of your Confluence organization.
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | You'll need an Atlassian account with an ability to create an API token and the name of your Confluence organization. |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Configuring Confluence Integration
 

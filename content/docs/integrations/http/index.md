@@ -1,6 +1,7 @@
 ---
 title: HTTP
 publishedDate: '2024-02-20T21:00:00.0Z'
+lastValidated: '2024-02-20T21:00:00.0Z'
 description: How to manage entities via a HTTP URL
 
 humanName: HTTP
@@ -8,7 +9,16 @@ logoImage: '../../../assets/logos/http/http-logo.webp'
 integrationType: Catalog data source
 ---
 
+## Introduction
+
 You may choose to load entities from an HTTP server hosted on the public Internet. In order to enable this, you will need to tell Roadie in advance the allowed URLs.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
 ### Host an entity yaml file

@@ -1,6 +1,7 @@
 ---
 title: incident.io Plugin
 publishedDate: '2024-08-20'
+lastValidated: '2024-08-20'
 description: How to enable the incident.io plugin
 
 humanName: incident.io Plugin
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 The [incident.io plugin](https://www.npmjs.com/package/@incident-io/backstage) integrates with Incident.io to show your configured components and your current on-going incidents inside Backstage.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ### Create and add an API Key
 

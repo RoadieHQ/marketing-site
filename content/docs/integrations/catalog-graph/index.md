@@ -1,6 +1,7 @@
 ---
 title: Catalog Graph
 publishedDate: '2021-10-18T21:00:00.0Z'
+lastValidated: '2021-10-18T21:00:00.0Z'
 description: How to setup Backstage to display catalog entity relationship graphs
 
 humanName: Catalog Graph
@@ -13,6 +14,13 @@ integrationType: OSS plugin
 With this plugin, you can visualize the [relations between entities](https://roadie.io/blog/modeling-software-backstage/), like ownership, grouping or API relationships.
 
 ![catalog_graph_card.webp](./catalog_graph_card.webp)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add a Catalog Graph card to a dashboard
 

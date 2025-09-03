@@ -1,6 +1,7 @@
 ---
 title: Configuring GitLab OAuth in Roadie
 publishedDate: '2024-12-19T10:00:00.0Z'
+lastValidated: '2024-12-19T10:00:00.0Z'
 description: How to configure GitLab OAuth authentication provider for Roadie
 
 humanName: GitLab OAuth
@@ -14,11 +15,12 @@ GitLab OAuth authentication allows users to sign in to your Roadie instance usin
 
 This guide covers setting up GitLab OAuth authentication, including creating the OAuth application in GitLab, configuring secrets in Roadie, and setting up custom audience URLs for self-hosted GitLab instances.
 
-## Prerequisites
-
-- Access to your GitLab instance (GitLab.com or self-hosted)
-- Admin access to your Roadie instance
-- Your Roadie tenant URL (e.g., `https://yourcompany.roadie.so`)
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | <ul><li>Access to your GitLab instance (GitLab.com or self-hosted)</li><li>Admin access to your Roadie instance</li><li>Your Roadie tenant URL (e.g., `https://yourcompany.roadie.so`)</li></ul> |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Step 1: Create a GitLab OAuth Application
 

@@ -1,6 +1,7 @@
 ---
 title: Configuring the Jira plugins
 publishedDate: '2021-03-16T21:00:00.0Z'
+lastValidated: '2021-03-16T21:00:00.0Z'
 description: How to configure the Jira and Jira dashboard plugins.
 
 humanName: Jira
@@ -14,6 +15,13 @@ In order to use the Jira plugin, Roadie needs an API token to communicate with J
 
 
 These are set within backstage at the following url:
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ```text
 https://<tenant-name>.roadie.so/administration/jira

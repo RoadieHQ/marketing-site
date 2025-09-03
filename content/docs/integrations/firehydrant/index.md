@@ -1,6 +1,7 @@
 ---
 title: FireHydrant
 publishedDate: '2021-11-18T11:00:00.0Z'
+lastValidated: '2021-11-18T11:00:00.0Z'
 description: How to set up FireHydrant plugin for Roadie.
 
 humanName: FireHydrant
@@ -14,6 +15,13 @@ In order to use the FireHydrant plugin, Roadie needs an API token to communicate
 
 
 This is set within backstage at the following url:
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ```text
 https://<tenant-name>.roadie.so/administration/firehydrant

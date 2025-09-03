@@ -1,6 +1,7 @@
 ---
 title: Stackoverflow Plugin
 publishedDate: '2022-08-10T10:00:00.0Z'
+lastValidated: '2022-08-10T10:00:00.0Z'
 description: How to enable the Stackoverflow plugin
 
 humanName: Stackoverflow Plugin
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 Roadie provides integration to display public and private Stackoverflow questions and answers on the homepage. To configure this plugin for a private Stackoverflow Teams subscription, you need to be able to generate an API key for Stackoverflow. To have the possibility to generate an API key, you will need to have at least 'Basic' level subscription to Stackoverflow Teams.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Authentication
 

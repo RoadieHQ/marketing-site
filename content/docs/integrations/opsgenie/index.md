@@ -1,6 +1,7 @@
 ---
 title: Configuring Opsgenie
 publishedDate: '2021-09-02T21:00:00.0Z'
+lastValidated: '2021-09-02T21:00:00.0Z'
 description: How to configure the Opsgenie plugin on roadie.
 
 humanName: Opsgenie
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 This page describes how to set up the Opsgenie plugin.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
 

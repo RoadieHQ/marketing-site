@@ -1,6 +1,7 @@
 ---
 title: Humanitec Plugin
 publishedDate: '2024-06-12T10:00:00.0Z'
+lastValidated: '2024-06-12T10:00:00.0Z'
 description: How to enable the Humanitec plugin
 
 humanName: Humanitec Plugin
@@ -13,6 +14,13 @@ integrationType: OSS plugin
 The [Backstage Humanitec plugin](https://github.com/humanitec/humanitec-backstage-plugins/tree/main/plugins/humanitec) integrates with Humanitec to show your deployment information inside Backstage where it can be associated with your services.
 
 ![humanitec.webp](humanitec.webp)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add Humanitec to one of your components
 

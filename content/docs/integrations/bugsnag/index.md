@@ -1,6 +1,7 @@
 ---
 title: Bugsnag
 publishedDate: '2021-09-30T11:00:00.0Z'
+lastValidated: '2021-09-30T11:00:00.0Z'
 description: How to create Bugsnag API Token for Bugsnag plugin.
 
 humanName: Bugsnag
@@ -14,6 +15,13 @@ In order to use the Bugsnag plugin, Roadie needs an API token to communicate wit
 
 
 This is set within backstage at the following url:
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ```text
 https://<tenant-name>.roadie.so/administration/settings/secrets

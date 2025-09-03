@@ -1,6 +1,7 @@
 ---
 title: GitHub Token Permissions
 publishedDate: '2021-06-06T21:00:00.0Z'
+lastValidated: '2021-06-06T21:00:00.0Z'
 description: How to create a GitHub Personal Access Token with permissions for use in Roadie.
 
 humanName: GitHub Token
@@ -8,6 +9,13 @@ logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plu
 integrationType: Catalog data source
 ---
 
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 > **This Page Deprecated**
 >

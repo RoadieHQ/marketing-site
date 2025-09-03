@@ -1,12 +1,20 @@
 ---
 title: Creating a New Relic token for Roadie
 publishedDate: '2021-09-09T21:00:00.0Z'
+lastValidated: '2021-09-09T21:00:00.0Z'
 description: How to create a New Relic token for use with Backstage.
 
 humanName: New Relic
 logoImage: '../../../assets/logos/new-relic/logo-relic.webp'
 integrationType: OSS plugin
 ---
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Introduction
 

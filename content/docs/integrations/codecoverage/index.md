@@ -1,6 +1,7 @@
 ---
 title: code-coverage Plugin
 publishedDate: '2023-11-04T14:00:00.0Z'
+lastValidated: '2023-11-04T14:00:00.0Z'
 description: How to use the Code Coverage plugin on Roadie.
 humanName: Code Coverage
 logoImage: '../../../assets/logos/code/code.webp'
@@ -15,11 +16,16 @@ The code-coverage plugin can display the Code Coverage summaries of the componen
 
 This page explains how to use it in Roadie Backstage.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | 1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/). <br /> 2. You must have a code-coverage report for your components i.e. Cobertura, LCOV or JaCoCo. See the plugin docs for [currently supported standards](https://www.npmjs.com/package/@backstage-community/plugin-code-coverage-backend#api). <br /> 3. You must have access to the Roadie API and a valid API Key. |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Prerequisites
 
-1. You must be an admin in Roadie. By default, all users are admins. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).
-2. You must have a code-coverage report for your components i.e. Cobertura, LCOV or JaCoCo. See the plugin docs for [currently supported standards](https://www.npmjs.com/package/@backstage-community/plugin-code-coverage-backend#api).
-3. You must have access to the Roadie API and a valid API Key.
+
 
 ## Step 1: Upload your code-coverage reports into Roadie
 

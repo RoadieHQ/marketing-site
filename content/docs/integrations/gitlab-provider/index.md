@@ -1,12 +1,20 @@
 ---
 title: Integrating with GitLab
 publishedDate: '2024-05-10T17:20:00.0Z'
+lastValidated: '2024-05-10T17:20:00.0Z'
 description: How to configure Roadie to read entities from GitLab
 
 humanName: GitLab
 logoImage: '../../../assets/logos/gitlab/gitlab-logo-100.webp'
 integrationType: Catalog data source
 ---
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Introduction
 

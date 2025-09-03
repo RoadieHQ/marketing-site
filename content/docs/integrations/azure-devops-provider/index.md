@@ -1,12 +1,20 @@
 ---
 title: Integrating with Azure DevOps
 publishedDate: '2022-11-09T16:20:00.0Z'
+lastValidated: '2022-11-09T16:20:00.0Z'
 description: How to configure Roadie to read entities from Azure DevOps
 
 humanName: Azure DevOps
 logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
 integrationType: Catalog data source
 ---
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Introduction
 

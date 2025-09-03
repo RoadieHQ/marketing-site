@@ -1,6 +1,7 @@
 ---
 title: Configuring Okta Team / User Provider
 publishedDate: '2022-08-02T17:00:00.0Z'
+lastValidated: '2022-08-02T17:00:00.0Z'
 description: How to configure Roadie to collect users from Okta.
 
 humanName: Okta
@@ -12,7 +13,14 @@ integrationType: Catalog data source
 
 Roadie Backstage can automatically ingest users and groups for your organisation from a few sources. One of these is [Okta](https://www.okta.com/) where you may already have all your users and groups/teams defined.
 
-In order to use the Okta organization plugin, Roadie needs an Okta API token, and the organization URL to communicate with Okta's APIs. On this page, you'll learn how to set up these two fields in your Roadie Admin panel. 
+In order to use the Okta organization plugin, Roadie needs an Okta API token, and the organization URL to communicate with Okta's APIs. On this page, you'll learn how to set up these two fields in your Roadie Admin panel.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted | 
 
 
 ## Steps

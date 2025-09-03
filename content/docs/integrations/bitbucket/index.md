@@ -1,6 +1,7 @@
 ---
 title: Integrating with Bitbucket
 publishedDate: '2022-03-28T14:00:00.0Z'
+lastValidated: '2022-03-28T14:00:00.0Z'
 description: How to give Roadie the access it needs to your Bitbucket repositories.
 
 humanName: Bitbucket
@@ -11,6 +12,13 @@ integrationType: Catalog data source
 ## Introduction
 
 This tutorial will guide you through the steps required to connect Roadie to your Bitbucket repositories.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Step 1: Save Bitbucket integration config in Roadie
 

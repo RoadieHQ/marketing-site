@@ -1,6 +1,7 @@
 ---
 title: Configuring Google OAuth for Backstage in Roadie
 publishedDate: '2021-10-11T15:15:00.0Z'
+lastValidated: '2021-10-11T15:15:00.0Z'
 description: How to configure a Google OAuth client for Roadie
 
 humanName: Google OAuth
@@ -8,13 +9,16 @@ logoImage: '../../../assets/logos/google-cloud-build/logo-cloud.webp'
 integrationType: Integration
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** | This assumes you have access to your google cloud console  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Introduction
 
-This Google OAuth client, will allow Backstage to authenticate your user, using your own controlled Google client
-
-This page describes how to set up the client, along with setting the required values in Backstage.
-
-> Note: This assumes you have access to your google cloud console 
+This Google OAuth client will allow Backstage to authenticate your user using your own controlled Google client.
 
 ## Steps
 

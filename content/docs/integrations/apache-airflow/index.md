@@ -1,6 +1,7 @@
 ---
 title: Viewing Apache Airflow DAGs in Roadie
 publishedDate: '2022-11-23T15:00:00.0Z'
+lastValidated: '2022-11-23T15:00:00.0Z'
 description: How to set up the Apache Airflow Backstage plugin in Roadie.
 
 humanName: Apache Airflow
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 The Backstage Apache Airflow plugin serves as frontend to the REST API exposed by Apache Airflow to show Apache Airflow's information inside Backstage.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Using the Plugin
 

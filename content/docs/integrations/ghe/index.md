@@ -1,6 +1,7 @@
 ---
 title: Configuring GitHub Enterprise Server in Roadie
 publishedDate: '2024-10-01T16:03:23.0Z'
+lastValidated: '2024-10-01T16:03:23.0Z'
 description: How to configure a GitHub Enterprise Server on your Roadie instance
 
 humanName: GitHub Enterprise Server
@@ -13,6 +14,13 @@ integrationType: Catalog data source
 Roadie integrates with both cloud and self-hosted GitHub installations. This guide instructs how to set up self-hosted GitHub Enterprise Server to work with your Roadie instance. With this integration, it is possible to ingest entities and connect and use GitHub plugins.
 
 Roadie supports GitHub Enterprise Servers via both public access via the Internet and a via the [secured broker access](/docs/integrations/broker/).
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 
 ## Steps

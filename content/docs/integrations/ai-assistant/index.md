@@ -20,6 +20,12 @@ This guide describes the necessary steps to configure the AI Assistant with appr
 
 NB: The AI assistant is in Alpha still and is not ready to be used for mainstream workloads due to the currently limited scope of its abilities and inconsistent results for more complex queries.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Step 1: Configure the Supported Sources
 
@@ -113,3 +119,7 @@ Additionally, you may want to limit the available models by modifying the `Resou
 OpenAI integration works with an OpenAI API token. You can set the token in the secrets section of the configuration page.
 
 To ensure the AI Assistant can access and index the correct resources, ensure that appropriate permissions are in place:
+
+```
+
+```

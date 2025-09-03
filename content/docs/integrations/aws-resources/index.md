@@ -1,6 +1,7 @@
 ---
 title: Configuring AWS Resources Autodiscovery
 publishedDate: '2022-03-29T21:00:00.0Z'
+lastValidated: '2022-03-29T21:00:00.0Z'
 description: How to configure Roadie to read AWS resources
 
 humanName: AWS Resources
@@ -14,6 +15,12 @@ Roadie has the capability to automatically ingest resources from AWS. This is do
 
 This guide describes how to set up Roadie to access your specific AWS resources and automatically ingest them.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Configuring connectivity to AWS
 

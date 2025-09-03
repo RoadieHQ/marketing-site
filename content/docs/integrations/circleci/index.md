@@ -1,6 +1,7 @@
 ---
 title: Viewing CircleCI Builds in Roadie
 publishedDate: '2021-02-23T21:00:00.0Z'
+lastValidated: '2021-02-23T21:00:00.0Z'
 description: How to set up the CircleCI Backstage plugin in Roadie.
 
 humanName: CircleCI
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 The Backstage Circle CI plugin integrates with Circle CI to show your build information inside Backstage where it can be associated with your services.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Using the Plugin
 

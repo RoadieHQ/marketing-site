@@ -1,6 +1,7 @@
 ---
 title: Shortcut Plugin
 publishedDate: '2022-06-09T10:00:00.0Z'
+lastValidated: '2022-06-09T10:00:00.0Z'
 description: How to enable the Shortcut plugin
 
 humanName: Shortcut Plugin
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 This plugin provides an overview of Shortcut user stories which are currently in progress. It can be added as a card for your Home page so you easily preview your ongoing stories.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Authentication
 

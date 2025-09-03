@@ -1,12 +1,20 @@
 ---
 title: Adding a Kubernetes cluster
 publishedDate: '2021-07-15T21:00:00.0Z'
+lastValidated: '2021-07-15T21:00:00.0Z'
 description: How to add a Kubernetes cluster for the Kubernetes plugin.
 
 humanName: Kubernetes
 logoImage: '../../../assets/logos/kubernetes/logo-kubernetes.webp'
 integrationType: OSS plugin
 ---
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ![Full active cluster on roadie](./active.webp)
 

@@ -1,6 +1,7 @@
 ---
 title: Lighthouse
 publishedDate: '2022-03-18T11:00:00.0Z'
+lastValidated: '2022-03-18T11:00:00.0Z'
 description: How to set up the Lighthouse plugin in Roadie.
 
 humanName: Lighthouse
@@ -22,6 +23,13 @@ This plugin allows you to trigger Lighthouse audits on websites and track them.
 
 - Trigger a fresh audit directly from Backstage
 ![create-audit.webp](./create-audit.webp)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Prerequisites
 

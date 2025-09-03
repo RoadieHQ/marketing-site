@@ -1,6 +1,7 @@
 ---
 title: Travis CI
 publishedDate: '2021-11-01T11:00:00.0Z'
+lastValidated: '2021-11-01T11:00:00.0Z'
 description: How to create Travis CI API Token for Travis CI plugin.
 humanName: Travis CI
 logoImage: '../../../assets/logos/travis-ci/travis-ci-mascot-200x200.webp'
@@ -18,6 +19,13 @@ https://<tenant-name>.roadie.so/administration/travis-ci
 ```
 
 This page describes how to create and set up the Travis CI API.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
 

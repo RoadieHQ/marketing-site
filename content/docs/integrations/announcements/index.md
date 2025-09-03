@@ -1,6 +1,7 @@
 ---
 title: Announcements Plugin
 publishedDate: '2025-01-31T11:11:11.0Z'
+lastValidated: '2025-01-31T11:11:11.0Z'
 description: Creating and displaying announcements on your Roadie instance
 
 humanName: Announcements
@@ -13,6 +14,13 @@ integrationType: OSS plugin
 The [Announcements](https://github.com/backstage/community-plugins/tree/main/workspaces/announcements) plugin manages and displays announcements within your Roadie instance.
 
 ![announcements-plugin-overview.png](announcements-plugin-overview.png)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Functionality and Components
 

@@ -17,6 +17,12 @@ This guide describes how to set up Roadie to use AWS account configurations and 
 
 ![running-cluster.webp](running-cluster.webp)
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ##  Step 1: Get the roadie IAM details
 

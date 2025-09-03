@@ -1,6 +1,7 @@
 ---
 title: Configuring Tech Radar
 publishedDate: '2021-08-25T15:00:00.0Z'
+lastValidated: '2021-08-25T15:00:00.0Z'
 description: Configuring Tech Radar to use your data source
 humanName: Tech Radar
 logoImage: '../../../assets/logos/tech-radar/radar.webp'
@@ -13,11 +14,11 @@ If you want to use Tech Radar on your Roadie instance you can add it as a page u
 
 ## At a Glance
 
-|                            |                                                                                                                                                           |
-|---------------------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-|          **Prerequisites** | **Configuration Data:** <ul><li>GitHub - OAuth Token</li><li>Bitbucket - OAuth Token, Client Id, and Secret</li><li>Azure DevOps - Access Token</li></ul> |
-|         **Considerations** | GitHub and Bitbucket, Azure DevOps only.                                                                                                                  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                          |
+|   |   |
+|----:|---|
+| **Prerequisites** | **Configuration Data:** <ul><li>GitHub - OAuth Token</li><li>Bitbucket - OAuth Token, Client Id, and Secret</li><li>Azure DevOps - Access Token</li></ul> |
+| **Considerations** | GitHub and Bitbucket, Azure DevOps only.  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 
 ## Step 1: Configuration

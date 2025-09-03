@@ -1,6 +1,7 @@
 ---
 title: Markdown Card Plugin
 publishedDate: '2022-03-01T10:00:00.0Z'
+lastValidated: '2022-03-01T10:00:00.0Z'
 description: How to enable the markdown card plugin
 
 humanName: Markdown Card Plugin
@@ -10,7 +11,14 @@ integrationType: OSS plugin
 
 ## Introduction
 
-Roadie provides two different versions of Markdown Card plugins that can be used to display content on either the [Home page](/docs/integrations/home-page/) or [Catalog dashboard pages](/docs/details/updating-the-ui/#updating-dashboards). 
+Roadie provides two different versions of Markdown Card plugins that can be used to display content on either the [Home page](/docs/integrations/home-page/) or [Catalog dashboard pages](/docs/details/updating-the-ui/#updating-dashboards).
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted | 
 
 
 #### OAuth Home Page Markdown Card

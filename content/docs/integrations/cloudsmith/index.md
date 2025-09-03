@@ -1,6 +1,7 @@
 ---
 title: Configuring Cloudsmith plugin
 publishedDate: '2024-08-30T08:00:00.0Z'
+lastValidated: '2024-08-30T08:00:00.0Z'
 description: How to configure Cloudsmith plugin on Roadie.
 
 humanName: Cloudsmith
@@ -18,13 +19,9 @@ This page explains how to configure it in Roadie.
 
 | | |
 |---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>API Token</li></ul> |
+| **Prerequisites** |1. You must be an admin in Roadie. Learn how to [designate certain users as admins here](/docs/getting-started/assigning-admins/). <br /> 2. You must have the correct permissions assigned in Cloudsmith to be able to create a read only API key |
+| **Configuration Data:** | <ul><li>API Token</li></ul> |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
-
-## Prerequisites
-
-1. You must be an admin in Roadie. Learn how to [designate certain users as admins here](/docs/getting-started/assigning-admins/).
-2. You must have the correct permissions assigned in Cloudsmith to be able to create a read only API key
 
 ## Step 1: Create a Cloudsmith API key
 

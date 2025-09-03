@@ -1,6 +1,7 @@
 ---
 title: Integrating with AWS S3
 publishedDate: '2022-03-29T21:00:00.0Z'
+lastValidated: '2022-03-29T21:00:00.0Z'
 description: How to configure Roadie to read from S3
 
 humanName: AWS S3
@@ -15,6 +16,13 @@ S3 can be a useful place to store certain resources used by backstage plugins li
 This guide describes how to set up access for Roadie to your S3 buckets in your infrastructure and configure it.
 
 To configure autodiscovery of entities from S3 buckets, see documentation about [AWS S3 Autodiscovery.](/docs/details/location-management#aws-s3-autodiscovery)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ##  Step 1: Get the roadie IAM details
 

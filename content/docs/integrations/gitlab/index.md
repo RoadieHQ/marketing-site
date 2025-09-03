@@ -1,6 +1,7 @@
 ---
 title: GitLab Plugin
 publishedDate: '2024-06-12T15:00:00.0Z'
+lastValidated: '2024-06-12T15:00:00.0Z'
 description: How to enable the GitLab plugin
 
 humanName: GitLab Plugin
@@ -14,6 +15,13 @@ The [Backstage GitLab plugin](https://github.com/immobiliare/backstage-plugin-gi
 
 ![gitlab-overview.webp](./gitlab-overview.webp)
 Credit: [Immobiliare Labs](https://github.com/immobiliare)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add GitLab plugin to your components
 

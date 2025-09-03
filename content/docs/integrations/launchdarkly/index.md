@@ -1,7 +1,9 @@
 ---
-title: Configuring LaunchDarkly Plugin
-publishedDate: '2025-07-28T10:49:00.0Z'
+title: Configuring LaunchDarkly plugin
+publishedDate: '2024-08-28T21:00:00.0Z'
+lastValidated: '2025-07-28T10:49:00.0Z'
 description: How to configure the LaunchDarkly plugin to view feature flags in Roadie.
+
 humanName: LaunchDarkly
 logoImage: '../../../assets/logos/launchdarkly/logo-launchdarkly.webp'
 integrationType: OSS plugin
@@ -13,17 +15,13 @@ The LaunchDarkly plugin allows you to view feature flags on entity pages in Road
 
 This plugin supports viewing flags for individual contexts, comparing flags across multiple environments, and filtering flags by tags or queries to focus on relevant feature flags for each service.
 
-
 ![launchdarkly-plugin-card.webp](launchdarkly-plugin-card.webp)
 
-
-## At a Glance
-
-|                            |                                                                                                                                      |
-|---------------------------:|--------------------------------------------------------------------------------------------------------------------------------------|
-|          **Prerequisites** | **Configuration Data:** <ul><li>LaunchDarkly API Token</li></ul>                                                                     |
-|         **Considerations** | Requires read-only API token with appropriate permissions in LaunchDarkly. Multiple UI components available for different use cases. |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                     |
+| | |
+|---: | --- |
+| **Prerequisites** | <ol><li>You must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).</li><li>You must have the correct permissions assigned in LaunchDarkly to be able to create a read only API token</li></ol><br />**Configuration Data:** <ul><li>API Token</li></ul> |
+| **Considerations** | Requires read-only API token with appropriate permissions in LaunchDarkly. Multiple UI components available for different use cases. |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## LaunchDarkly Entity Configuration
 

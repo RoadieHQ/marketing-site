@@ -1,6 +1,7 @@
 ---
 title: Integrating with Azure AD
 publishedDate: '2022-12-09T16:20:00.0Z'
+lastValidated: '2022-12-09T16:20:00.0Z'
 description: How to configure Roadie to ingest users and groups from Azure AD using Microsoft Graph
 
 humanName: Microsoft Graph Org for Azure AD
@@ -12,7 +13,14 @@ integrationType: Catalog data source
 
 Roadie supports retrieving user and group information from Microsoft Azure Active Directory. 
 
-This guide describes how to set up access for Roadie to your Azure AD and automatically ingest entities from that source.  
+This guide describes how to set up access for Roadie to your Azure AD and automatically ingest entities from that source.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |  
 
 ##  Step 1: Create Azure App Registration relevant to your Azure AD 
 

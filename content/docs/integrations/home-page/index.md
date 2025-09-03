@@ -1,6 +1,7 @@
 ---
 title: Home Page Plugin
 publishedDate: '2022-03-01T10:00:00.0Z'
+lastValidated: '2022-03-01T10:00:00.0Z'
 description: How to enable the home page plugin
 
 humanName: Home Page
@@ -13,7 +14,14 @@ integrationType: OSS plugin
 
 The [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) provides a framework for building a dashboard style home page for Roadie. 
 
-A home page can be composed of many cards from various plugins much like the overview tab for entities. Roadie provides an interface to build such a home page interactively in the UI. 
+A home page can be composed of many cards from various plugins much like the overview tab for entities. Roadie provides an interface to build such a home page interactively in the UI.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted | 
 
 ## Customize the UI
 

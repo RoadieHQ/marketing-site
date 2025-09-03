@@ -1,6 +1,7 @@
 ---
 title: Flux Plugin
 publishedDate: '2021-07-15T21:00:00.0Z'
+lastValidated: '2021-07-15T21:00:00.0Z'
 description: How to configure Weaveworks Flux plugin on Roadie
 
 humanName: Flux
@@ -8,9 +9,18 @@ logoImage: '../../../assets/logos/flux/flux_color_logo.webp'
 integrationType: OSS plugin
 ---
 
+## Introduction
+
 The Flux plugin allows you to view and manage your Flux controlled workloads directly via the Roadie UI. The plugin exposes multiple _Card_ components which can be combined into a rich dashboard of information. 
 
 ![Two cards from Flux plugin displaying information](./two-flux-cards.webp)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Configuration
 

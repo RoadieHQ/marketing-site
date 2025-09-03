@@ -1,6 +1,7 @@
 ---
 title: Proxy Sigv4 Plugin
 publishedDate: '2024-06-08T12:00:00.0Z'
+lastValidated: '2024-06-08T12:00:00.0Z'
 description: How to configure Roadie to use AWS Signature Version 4 for proxying requests to and from AWS services
 
 humanName: Proxy AWS Sigv4
@@ -13,6 +14,13 @@ integrationType: OSS plugin
 The Proxy Sigv4 plugin is essential for securely signing requests to AWS services using the Sigv4 signing process.
 
 This guide explains how to set up and configure the Proxy Sigv4 plugin in your Backstage environment to ensure your requests to AWS services are properly authenticated.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Step 1: Get the roadie IAM details
 

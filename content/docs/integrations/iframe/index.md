@@ -1,6 +1,7 @@
 ---
 title: IFrame Plugin
 publishedDate: '2022-04-25T10:00:00.0Z'
+lastValidated: '2022-04-25T10:00:00.0Z'
 description: How to enable the IFrame plugin
 
 humanName: IFrame Plugin
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 This is a plugin that renders an Iframe card that can be added to your component/homepage.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add IFrame card to your HomePage
 

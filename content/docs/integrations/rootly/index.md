@@ -1,6 +1,7 @@
 ---
 title: Configuring Rootly
 publishedDate: '2021-07-28T21:00:00.0Z'
+lastValidated: '2021-07-28T21:00:00.0Z'
 description: How to configure the Rootly plugin on roadie.
 humanName: Rootly
 logoImage: '../../../assets/logos/rootly/logo.webp'
@@ -18,6 +19,13 @@ https://<tenant-name>.roadie.so/administration/settings/secrets
 ```
 
 This page describes how to create and set up the API token.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
 

@@ -1,6 +1,7 @@
 ---
 title: Harness Plugin
 publishedDate: '2023-01-30T15:00:00.0Z'
+lastValidated: '2023-01-30T15:00:00.0Z'
 description: How to add Harness.io plugin to Roadie
 
 humanName: Harness.io
@@ -13,6 +14,13 @@ integrationType: OSS plugin
 The [Backstage Harness plugin](https://github.com/harness/backstage-plugins/tree/main/plugins/harness-ci-cd) integrates with Harness to show your build information inside Backstage where it can be associated with your services.
 
 ![harness-exec-history.webp](harness-exec-history.webp)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add Harness to one of your components
 

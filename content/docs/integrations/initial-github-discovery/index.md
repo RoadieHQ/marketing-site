@@ -1,6 +1,7 @@
 ---
 title: Performing a sync with your GitHub for your catalog files
 publishedDate: '2022-08-23'
+lastValidated: '2022-08-23'
 description: How to perform a sync between roadie's catalog and your GitHub organisation
 
 humanName: Github Discovery Sync
@@ -11,6 +12,13 @@ integrationType: Catalog data source
 ## Introduction
 
 Roadie can perform on demand syncs with your organisation. This is useful in a case where you already have `catalog-info.yaml` files distributed in your organization before you installed the Roadie GitHub app.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | <ul><li>You must have installed the Roadie GitHub app in your organisation as described [here](/docs/getting-started/adding-a-catalog-item/)</li><li>You must be an Admin of Backstage, as [described here](/docs/getting-started/assigning-admins/).</li></ul> |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Prerequisites
 

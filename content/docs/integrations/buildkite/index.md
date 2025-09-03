@@ -1,6 +1,7 @@
 ---
 title: Buildkite Plugin
 publishedDate: '2022-01-12T21:00:00.0Z'
+lastValidated: '2022-01-12T21:00:00.0Z'
 description: How to add Buildkite pipelines to your components
 
 humanName: Buildkite
@@ -13,6 +14,13 @@ integrationType: OSS plugin
 The [Backstage Buildkite plugin](https://roadie.io/backstage/plugins/buildkite/) integrates with Buildkite to show your build information inside Backstage where it can be associated with your services.
 
 ![buildkite-plugin-overview.webp](buildkite-plugin-overview.webp)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add Buildkite to one of your components
 

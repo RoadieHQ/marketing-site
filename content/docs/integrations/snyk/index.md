@@ -1,6 +1,7 @@
 ---
 title: Snyk
 publishedDate: '2021-07-21T21:00:00.0Z'
+lastValidated: '2021-07-21T21:00:00.0Z'
 description: How to create a Snyk Token with permissions for use in Backstage and apply it to Roadie.
 
 humanName: Snyk
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 In order to use the Backstage Snyk plugin with Roadie, you must securely provide Roadie with an API token which it can use to access the Snyk API.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Connect Roadie to Snyk
 

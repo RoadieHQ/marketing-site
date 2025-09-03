@@ -1,6 +1,7 @@
 ---
 title: Google Calendar Plugin 
 publishedDate: '2022-03-29T14:00:00.0Z'
+lastValidated: '2022-03-29T14:00:00.0Z'
 description: How to use the Google calendar plugin
 
 humanName: Google Calendar
@@ -13,6 +14,13 @@ integrationType: OSS plugin
 The Google Calendar plugin provides a home page card you can use to display your agenda in Backstage.
 
 ![gcp-api-search](./gcalendar-card.webp)
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Installation
 

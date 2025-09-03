@@ -1,6 +1,7 @@
 ---
 title: Kubernetes Ingestor and Crossplane plugin
 publishedDate: '2025-05-14T14:00:00.0Z'
+lastValidated: '2025-05-14T14:00:00.0Z'
 description: How to configure and use the TeraSky kubernetes ingestor & Crossplane plugin in Roadie.
 
 humanName: Crossplane kubernetes Ingestor
@@ -8,11 +9,18 @@ logoImage: '../../../assets/logos/crossplane/crossplane.webp'
 integrationType: OSS plugin
 --- 
 
+## Introduction
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | Access to this plugin is enabled by a feature flag. Ask Roadie to enable this for you if you want to use it.<br />Before configuring the kubernetes ingestor, you must first set up Kubernetes access in Roadie. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access. |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 # Prerequisites
 
-Access to this plugin is enabled by a feature flag. Ask Roadie to enable this for you if you want to use it.
 
-Before configuring the kubernetes ingestor, you must first set up Kubernetes access in Roadie. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access.
 
 ## Required RBAC Permissions
 

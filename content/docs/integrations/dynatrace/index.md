@@ -1,6 +1,7 @@
 ---
 title: Dynatrace
 publishedDate: '2024-04-04T21:00:00.0Z'
+lastValidated: '2024-04-04T21:00:00.0Z'
 description: How setup Roadie to display data from Dynatrace
 
 humanName: Dynatrace
@@ -13,6 +14,13 @@ integrationType: OSS plugin
 There are two Dynatrace plugins available for Backstage, the [official Dynatrace plugin](https://github.com/Dynatrace/backstage-plugin) provided by Dynatrace and a 
 community developed plugin called ["Dynatrace for Managed"](https://github.com/Dynatrace/backstage-plugin). This guide
 describes how to configure both plugins.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Dynatrace
 

@@ -1,6 +1,7 @@
 ---
 title: Configuring Splunk On-Call
 publishedDate: '2023-01-20T11:00:00.0Z'
+lastValidated: '2023-01-20T11:00:00.0Z'
 description: How to configure Splunk On-Call plugin on Roadie
 
 humanName: Splunk On-Call
@@ -11,6 +12,13 @@ integrationType: OSS plugin
 ## Introduction
 
 This page describes how to set up Splunk On-Call plugin.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
 

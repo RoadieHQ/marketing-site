@@ -1,6 +1,7 @@
 ---
 title: Kratix Plugin
 publishedDate: '2025-05-22T12:00:00.0Z'
+lastValidated: '2025-05-22T12:00:00.0Z'
 description: How to use Kratix with Roadie
 
 humanName: Kratix
@@ -12,6 +13,13 @@ integrationType: Plugin
 
 The Syntasso Kratix plugin integrates [Kratix](https://kratix.io/) with Roadie, allowing you to create and manage Kratix Promises and Resources directly from your Backstage instance. Kratix is a framework that enables platform teams to build a Kubernetes-based platform with a self-service API for application teams.
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** | Before using the Kratix plugin in Roadie, you need to have:<br /> <ol><li>A running Kratix installation in your Kubernetes cluster</li><li>Appropriate access permissions configured</li></ol> |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 ## Overview
 
 Kratix allows platform teams to define "Promises" which are custom resources that application teams can request. These Promises can represent infrastructure, services, or any other resources that application teams need. The Kratix plugin enables:
@@ -21,13 +29,6 @@ Kratix allows platform teams to define "Promises" which are custom resources tha
 3. Managing and monitoring the status of your Kratix resources
 
 ## Configuration
-
-### Prerequisites
-
-Before using the Kratix plugin in Roadie, you need to have:
-
-1. A running Kratix installation in your Kubernetes cluster
-2. Appropriate access permissions configured
 
 ### Plugin Configuration
 

@@ -1,6 +1,7 @@
 ---
 title: Terraform Plugin
 publishedDate: '2023-06-15T12:00:00.0Z'
+lastValidated: '2023-06-15T12:00:00.0Z'
 description: How to use Terraform with Roadie
 
 humanName: Terraform
@@ -11,6 +12,13 @@ integrationType: Plugin
 ## Introduction
 
 The Terraform plugin integrates [Terraform](https://www.terraform.io/) with Roadie, allowing you to visualize, track, and manage your infrastructure as code directly from your Backstage instance. This plugin helps platform teams and developers to gain visibility into their infrastructure resources, track changes, and understand dependencies between different components.
+
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |  |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Overview
 

@@ -1,6 +1,7 @@
 ---
 title: Github Deployments Plugin
 publishedDate: '2022-03-29T14:00:00.0Z'
+lastValidated: '2022-03-29T14:00:00.0Z'
 description: How to use the Github Deployments plugin
 
 humanName: Github Deployments
@@ -8,15 +9,18 @@ logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plu
 integrationType: OSS plugin
 ---
 
+## At a Glance
+| | |
+|---: | --- |
+| **Prerequisites** |<ul><li>The [Roadie Github App installed](/docs/getting-started/adding-a-catalog-item)</li><li>A `github.com/project-slug` annotation present in your `catalog-info.yaml` file</li></ul> |
+| **Considerations** |  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
 The Github Deployments plugin will display a table of deployments for this repo made through Github Actions. 
 
 ![github-deployments-screenshot](./screenshot.webp)
 Credit: [Andrew Johnson](https://github.com/anderoo)
 
-
-## Prerequisites
-- The [Roadie Github App installed](/docs/getting-started/adding-a-catalog-item)
-- A `github.com/project-slug` annotation present in your `catalog-info.yaml` file
 
 ## Adding the Plugin
 
