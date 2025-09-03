@@ -1,6 +1,7 @@
 ---
 title: End Of Life Plugin
 publishedDate: '2024-02-21T18:00:00.0Z'
+lastValidated: '2024-02-21T18:00:00.0Z'
 description: How to configure the End Of Life plugin on Roadie.
 
 humanName: End Of Life

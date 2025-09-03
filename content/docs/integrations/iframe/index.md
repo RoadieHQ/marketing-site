@@ -1,6 +1,7 @@
 ---
 title: IFrame Plugin
 publishedDate: '2022-04-25T10:00:00.0Z'
+lastValidated: '2022-04-25T10:00:00.0Z'
 description: How to enable the IFrame plugin
 
 humanName: IFrame Plugin

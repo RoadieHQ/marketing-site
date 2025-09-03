@@ -1,6 +1,7 @@
 ---
 title: Terraform Plugin
 publishedDate: '2023-06-15T12:00:00.0Z'
+lastValidated: '2023-06-15T12:00:00.0Z'
 description: How to use Terraform with Roadie
 
 humanName: Terraform

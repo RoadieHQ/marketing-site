@@ -1,6 +1,7 @@
 ---
 title: Google Calendar Plugin 
 publishedDate: '2022-03-29T14:00:00.0Z'
+lastValidated: '2022-03-29T14:00:00.0Z'
 description: How to use the Google calendar plugin
 
 humanName: Google Calendar

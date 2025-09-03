@@ -1,6 +1,7 @@
 ---
 title: Coder
 publishedDate: '2024-05-14T01:12:29.0Z'
+lastValidated: '2024-05-14T01:12:29.0Z'
 description: How to use the Coder plugin
 
 humanName: Coder

@@ -1,6 +1,7 @@
 ---
 title: Kratix Plugin
 publishedDate: '2025-05-22T12:00:00.0Z'
+lastValidated: '2025-05-22T12:00:00.0Z'
 description: How to use Kratix with Roadie
 
 humanName: Kratix

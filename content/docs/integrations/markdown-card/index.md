@@ -1,6 +1,7 @@
 ---
 title: Markdown Card Plugin
 publishedDate: '2022-03-01T10:00:00.0Z'
+lastValidated: '2022-03-01T10:00:00.0Z'
 description: How to enable the markdown card plugin
 
 humanName: Markdown Card Plugin

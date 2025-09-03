@@ -1,6 +1,7 @@
 ---
 title: Lighthouse
 publishedDate: '2022-03-18T11:00:00.0Z'
+lastValidated: '2022-03-18T11:00:00.0Z'
 description: How to set up the Lighthouse plugin in Roadie.
 
 humanName: Lighthouse

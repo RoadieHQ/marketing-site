@@ -1,6 +1,7 @@
 ---
 title: Integrating to internal infrastructure with Broker
 publishedDate: '2022-12-20T14:00:00.0Z'
+lastValidated: '2022-12-20T14:00:00.0Z'
 description: How to configure secure broker connection to work wth Roadie.
 
 humanName: Broker Integration

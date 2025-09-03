@@ -1,6 +1,7 @@
 ---
 title: Flux Plugin
 publishedDate: '2021-07-15T21:00:00.0Z'
+lastValidated: '2021-07-15T21:00:00.0Z'
 description: How to configure Weaveworks Flux plugin on Roadie
 
 humanName: Flux

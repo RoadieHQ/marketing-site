@@ -1,6 +1,7 @@
 ---
 title: Creating a New Relic token for Roadie
 publishedDate: '2021-09-09T21:00:00.0Z'
+lastValidated: '2021-09-09T21:00:00.0Z'
 description: How to create a New Relic token for use with Backstage.
 
 humanName: New Relic

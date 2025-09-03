@@ -1,6 +1,7 @@
 ---
 title: Wiz
 publishedDate: '2024-11-01T11:00:00.0Z'
+lastValidated: '2024-11-01T11:00:00.0Z'
 description: How to set up the Backstage Wiz plugin in Roadie.
 
 humanName: Wiz

@@ -1,6 +1,7 @@
 ---
 title: Set up the PagerDuty plugin
 publishedDate: '2022-08-26T21:00:00.0Z'
+lastValidated: '2022-08-26T21:00:00.0Z'
 description: How to set up the Backstage PagerDuty plugin in Roadie Backstage.
 
 humanName: PagerDuty

@@ -1,6 +1,7 @@
 ---
 title: Humanitec Plugin
 publishedDate: '2024-06-12T10:00:00.0Z'
+lastValidated: '2024-06-12T10:00:00.0Z'
 description: How to enable the Humanitec plugin
 
 humanName: Humanitec Plugin

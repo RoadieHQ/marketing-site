@@ -1,6 +1,7 @@
 ---
 title: Configuring GitLab OAuth in Roadie
 publishedDate: '2024-12-19T10:00:00.0Z'
+lastValidated: '2024-12-19T10:00:00.0Z'
 description: How to configure GitLab OAuth authentication provider for Roadie
 
 humanName: GitLab OAuth

@@ -1,6 +1,7 @@
 ---
 title: Announcements Plugin
 publishedDate: '2025-01-31T11:11:11.0Z'
+lastValidated: '2025-01-31T11:11:11.0Z'
 description: Creating and displaying announcements on your Roadie instance
 
 humanName: Announcements

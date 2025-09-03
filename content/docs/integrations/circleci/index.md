@@ -1,6 +1,7 @@
 ---
 title: Viewing CircleCI Builds in Roadie
 publishedDate: '2021-02-23T21:00:00.0Z'
+lastValidated: '2021-02-23T21:00:00.0Z'
 description: How to set up the CircleCI Backstage plugin in Roadie.
 
 humanName: CircleCI

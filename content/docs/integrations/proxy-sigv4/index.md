@@ -1,6 +1,7 @@
 ---
 title: Proxy Sigv4 Plugin
 publishedDate: '2024-06-08T12:00:00.0Z'
+lastValidated: '2024-06-08T12:00:00.0Z'
 description: How to configure Roadie to use AWS Signature Version 4 for proxying requests to and from AWS services
 
 humanName: Proxy AWS Sigv4

@@ -1,6 +1,7 @@
 ---
 title: Integrating with AWS S3
 publishedDate: '2022-03-29T21:00:00.0Z'
+lastValidated: '2022-03-29T21:00:00.0Z'
 description: How to configure Roadie to read from S3
 
 humanName: AWS S3

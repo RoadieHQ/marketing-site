@@ -1,6 +1,7 @@
 ---
 title: Grafana Plugin
 publishedDate: '2022-03-07T10:00:00.0Z'
+lastValidated: '2022-03-07T10:00:00.0Z'
 description: How to add Grafana to Backstage
 
 humanName: Grafana

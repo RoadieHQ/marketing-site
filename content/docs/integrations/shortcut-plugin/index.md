@@ -1,6 +1,7 @@
 ---
 title: Shortcut Plugin
 publishedDate: '2022-06-09T10:00:00.0Z'
+lastValidated: '2022-06-09T10:00:00.0Z'
 description: How to enable the Shortcut plugin
 
 humanName: Shortcut Plugin

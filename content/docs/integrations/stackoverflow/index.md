@@ -1,6 +1,7 @@
 ---
 title: Stackoverflow Plugin
 publishedDate: '2022-08-10T10:00:00.0Z'
+lastValidated: '2022-08-10T10:00:00.0Z'
 description: How to enable the Stackoverflow plugin
 
 humanName: Stackoverflow Plugin

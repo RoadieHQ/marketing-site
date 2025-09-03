@@ -1,6 +1,7 @@
 ---
 title: Configuring LaunchDarkly plugin
 publishedDate: '2024-08-28T21:00:00.0Z'
+lastValidated: '2024-08-28T21:00:00.0Z'
 description: How to configure LaunchDarkly plugin on Roadie.
 
 humanName: LaunchDarkly

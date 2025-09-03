@@ -1,6 +1,7 @@
 ---
 title: Buildkite Plugin
 publishedDate: '2022-01-12T21:00:00.0Z'
+lastValidated: '2022-01-12T21:00:00.0Z'
 description: How to add Buildkite pipelines to your components
 
 humanName: Buildkite

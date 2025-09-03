@@ -1,6 +1,7 @@
 ---
 title: Configuring AWS Resources Autodiscovery
 publishedDate: '2022-03-29T21:00:00.0Z'
+lastValidated: '2022-03-29T21:00:00.0Z'
 description: How to configure Roadie to read AWS resources
 
 humanName: AWS Resources

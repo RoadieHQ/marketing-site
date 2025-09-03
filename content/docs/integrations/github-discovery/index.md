@@ -1,6 +1,7 @@
 ---
 title: Configuring auto discovery for your organization
 publishedDate: '2022-08-31T14:20:39.0Z'
+lastValidated: '2022-08-31T14:20:39.0Z'
 description: How to configure backstage to read catalog files on github
 
 humanName: GitHub Discovery

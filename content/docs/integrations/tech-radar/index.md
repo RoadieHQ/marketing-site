@@ -1,6 +1,7 @@
 ---
 title: Configuring Tech Radar
 publishedDate: '2021-08-25T15:00:00.0Z'
+lastValidated: '2021-08-25T15:00:00.0Z'
 description: Configuring Tech Radar to use your data source
 humanName: Tech Radar
 logoImage: '../../../assets/logos/tech-radar/radar.webp'

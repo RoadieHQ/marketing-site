@@ -1,6 +1,7 @@
 ---
 title: Configuring Prometheus integration
 publishedDate: '2021-03-16T21:00:00.0Z'
+lastValidated: '2021-03-16T21:00:00.0Z'
 description: How to set up Roadie instance to work with Prometheus.
 humanName: Prometheus
 logoImage: '../../../assets/prometheus/prom_logo.webp'

@@ -1,6 +1,7 @@
 ---
 title: Integrating with GitLab
 publishedDate: '2024-05-10T17:20:00.0Z'
+lastValidated: '2024-05-10T17:20:00.0Z'
 description: How to configure Roadie to read entities from GitLab
 
 humanName: GitLab

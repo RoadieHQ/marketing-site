@@ -1,6 +1,7 @@
 ---
 title: Datadog
 publishedDate: '2021-10-18T21:00:00.0Z'
+lastValidated: '2021-10-18T21:00:00.0Z'
 description: How setup Roadie to display graphs and dashboards from Datadog
 
 humanName: Datadog

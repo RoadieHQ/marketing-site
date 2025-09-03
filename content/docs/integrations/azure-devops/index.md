@@ -1,6 +1,7 @@
 ---
 title: Azure Devops
 publishedDate: '2022-04-06T11:00:00.0Z'
+lastValidated: '2022-04-06T11:00:00.0Z'
 description: Set up the Azure Devops plugin.
 
 humanName: Azure Devops

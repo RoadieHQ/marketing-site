@@ -1,6 +1,7 @@
 ---
 title: HTTP
 publishedDate: '2024-02-20T21:00:00.0Z'
+lastValidated: '2024-02-20T21:00:00.0Z'
 description: How to manage entities via a HTTP URL
 
 humanName: HTTP

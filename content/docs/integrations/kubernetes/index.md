@@ -1,6 +1,7 @@
 ---
 title: Adding a Kubernetes cluster
 publishedDate: '2021-07-15T21:00:00.0Z'
+lastValidated: '2021-07-15T21:00:00.0Z'
 description: How to add a Kubernetes cluster for the Kubernetes plugin.
 
 humanName: Kubernetes

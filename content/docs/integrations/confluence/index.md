@@ -1,6 +1,7 @@
 ---
 title: Confluence Search
 publishedDate: '2022-06-30T10:00:00.0Z'
+lastValidated: '2022-06-30T10:00:00.0Z'
 description: How to enable Confluence indexing for Roadie Search
 
 humanName: Confluence

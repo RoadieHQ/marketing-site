@@ -1,6 +1,7 @@
 ---
 title: Bugsnag
 publishedDate: '2021-09-30T11:00:00.0Z'
+lastValidated: '2021-09-30T11:00:00.0Z'
 description: How to create Bugsnag API Token for Bugsnag plugin.
 
 humanName: Bugsnag

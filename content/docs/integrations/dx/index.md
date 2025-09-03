@@ -1,6 +1,7 @@
 ---
 title: DX
 publishedDate: '2025-03-10T13:00:00.0Z'
+lastValidated: '2025-03-10T13:00:00.0Z'
 description: How to set up DX plugin in Roadie.
 
 humanName: DX

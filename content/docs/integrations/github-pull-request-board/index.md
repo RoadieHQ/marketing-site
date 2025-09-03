@@ -1,6 +1,7 @@
 ---
 title: GitHub Pull Requests Board Plugin
 publishedDate: '2023-11-27T14:00:00.0Z'
+lastValidated: '2023-11-27T14:00:00.0Z'
 description: How to add the GitHub Pull Requests Board plugin to Roadie.
 
 humanName: GitHub Pull Requests Board
