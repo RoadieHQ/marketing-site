@@ -1,86 +1,120 @@
 import React, { Fragment } from 'react';
-import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
+import CheckIcon from '@heroicons/react/solid/CheckIcon';
+import MinusIcon from '@heroicons/react/solid/MinusIcon';
+import PlusIcon from '@heroicons/react/solid/PlusIcon';
 import { TextLink } from 'components';
+import isString from 'lodash/isString';
 
-import TIERS from './tiers';
+import { TIERS } from './tiers';
 
 const sections = [{
   name: 'Scale',
   features: [{
-    name: 'Software components tracked',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
+    name: 'Minimum seats',
+    tiers: TIERS.reduce((collection, tier) => ({
+      [tier.name]: tier.minSeats.toString(),
+      ...collection,
+    }), {}),
+  }],
+
+}, {
+  name: 'Catalog',
+  features: [{
+    name: 'Software components',
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'API Specs',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
+    tiers: { Teams: true, Growth: true, },
   }, {
-    name: 'TechDocs',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
+    name: 'TechDocs technical documentation',
+    tiers: { Teams: true, Growth: true, },
   }, {
-    name: 'Scaffolder templates',
-    tiers: { Teams: 'Unlimited', Growth: 'Unlimited' },
+    name: 'Self-service automation templates',
+    tiers: { Teams: true, Growth: true, },
   }, {
-    name: 'Minimum seats',
-    tiers: { Teams: TIERS.teams.minSeats.toString(), Growth: TIERS.growth.minSeats.toString() },
+    name: 'Infrastructure',
+    tiers: { Teams: true, Growth: true, },
+  }, {
+    name: 'Teams & Users',
+    tiers: { Teams: true, Growth: true, },
   }],
+
 }, {
   name: 'Features',
   features: [{
-    name: 'Software & teams catalog',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Monthly Backstage upgrades',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'TechDocs technical documentation',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'Scaffolder service creator',
-    tiers: { Teams: true, Growth: true },
-  }, {
-    name: 'API specs',
-    tiers: { Teams: true, Growth: true },
+    name: 'Automatic Backstage upgrades',
+    tiers: { Teams: true, Growth: true, },
   }, {
     name: 'Open-source Backstage plugins',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
-    name: 'Locations log',
-    tiers: { Teams: true, Growth: true },
+    name: 'Scorecards',
+    tiers: { Teams: 'plus', Growth: 'plus', },
   }, {
-    name: 'Tech radar plugin',
-    tiers: { Teams: true, Growth: true },
+    name: 'RAG AI & MCP Server Access (beta)',
+    tiers: { Growth: true, },
   }, {
-    name: 'Kubernetes plugin',
-    tiers: { Teams: true, Growth: true },
+    name: 'REST API access',
+    tiers: { Growth: true, },
   }, {
-    name: 'Custom, private Backstage plugins',
-    tiers: { Growth: true },
-  }, {
-    name: 'API access (beta)',
-    tiers: { Growth: true },
-  }, {
-    name: 'Infra access via broker',
-    tiers: { Growth: true },
-  }, {
-    name: 'Usage analytics dashboard',
-    tiers: { Growth: true },
+    name: 'Search Engine',
+    tiers: { Teams: 'PostgreSQL', Growth: 'OpenSearch', }
   }],
+
 }, {
   name: 'Support',
   features: [{
     name: 'In-app chat',
-    tiers: { Teams: true, Growth: true },
+    tiers: { Teams: true, Growth: true, },
   }, {
-    name: 'Slack and email support',
-    tiers: { Growth: true },
+    name: 'Slack & MS Teams support',
+    tiers: { Growth: true, },
   }, {
     name: 'SLA',
-    tiers: { Growth: true },
+    tiers: { Growth: true, },
   }, {
-    name: '24/7 On-call',
-    tiers: { Growth: true },
+    name: 'Usage analytics dashboard',
+    tiers: { Growth: true, },
+  }],
+
+}, {
+  name: 'Security & Authorization',
+  features: [{
+    name: 'Single Sign-On',
+    tiers: { Teams: true, Growth: true, },
+  }, {
+    name: 'Custom RBAC',
+    tiers: { Teams: false, Growth: true, },
+  }],
+
+}, {
+  name: 'Customization',
+  features: [{
+    name: 'Customizable theme',
+    tiers: { Teams: true, Growth: true, },
+  }, {
+    name: 'Customizable catalog',
+    tiers: { Teams: true, Growth: true, },
+  }, {
+    name: 'Customizable navigation',
+    tiers: { Teams: true, Growth: true, },
+  }, {
+    name: 'Multiple tenants',
+    tiers: { Teams: 'plus', Growth: 'plus', },
+  }, {
+    name: 'Custom, private Backstage plugins',
+    tiers: { Growth: true, },
+  }],
+
+}, {
+  name: 'Connect to on-prem infra',
+  features: [{
+    name: 'Secure on-prem connection',
+    tiers: { Growth: true, },
   }],
 }];
 
+console.log(sections);
 
 const FeatureNameHeaderCell = ({ feature }) => (
   <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
@@ -88,33 +122,46 @@ const FeatureNameHeaderCell = ({ feature }) => (
   </th>
 );
 
-const FeatureInTierIndicatorText = ({ text }) => (
-  <span className="block text-sm text-gray-700 text-right lg:text-left">{text}</span>
-);
+const FeatureTierIndicatorCell = ({ tier, featureTier}) => {
+  let inner;
 
-const FeatureInTierIndicatorIcon = ({ featureTier, tier }) => (
-  <>
-    {featureTier === true ? (
-      <CheckIcon className="ml-auto lg:ml-0 h-5 w-5 text-green-500" aria-hidden="true" />
-    ) : (
-      <MinusIcon className="ml-auto lg:ml-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-    )}
+  if (featureTier === true) {
+    inner = (
+      <>
+        <span title={`Included in ${tier.name}`}>
+          <CheckIcon className="ml-auto lg:ml-0 h-5 w-5 text-green-500" aria-hidden="true" />
+        </span>
+        <span className="sr-only">Included in {tier.name}</span>
+      </>
+    );
+  } else if (isString(featureTier) && featureTier.toLowerCase() === 'plus') {
+    inner = (
+      <>
+        <span title={`Available as optional paid extra in ${tier.name}`}>
+          <PlusIcon className="ml-auto lg:ml-0 h-5 w-5 text-green-500" aria-hidden="true" />
+        </span>
+        <span className="sr-only">Avalable as optional paid extra in {tier.name}</span>
+      </>
+    );
+  } else if (isString(featureTier)) {
+    inner = <span className="block text-sm text-gray-700 text-right lg:text-left">{featureTier}</span>;
+  } else {
+    inner = (
+      <>
+        <span title={`Not available in ${tier.name}`}>
+          <MinusIcon className="ml-auto lg:ml-0 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </span>
+        <span className="sr-only">Not available in {tier.name}</span>
+      </>
+    );
+  }
 
-    <span className="sr-only">
-      {featureTier === true ? 'Included' : 'Not included'} in {tier.name}
-    </span>
-  </>
-);
-
-const FeatureTierIndicatorCell = ({ tier, featureTier}) => (
-  <td className="py-5 pr-4 lg:px-6">
-    {typeof featureTier === 'string' ? (
-      <FeatureInTierIndicatorText text={featureTier} />
-    ) : (
-      <FeatureInTierIndicatorIcon featureTier={featureTier} tier={tier} />
-    )}
-  </td>
-);
+  return (
+    <td className="py-5 pr-4 lg:px-6">
+      {inner}
+    </td>
+  );
+};
 
 const FeatureRow = ({ feature, tier }) => (
   <tr key={feature.name} className="border-t border-gray-200">
@@ -156,15 +203,13 @@ const LargeFeatureRow = ({ feature }) => (
   <tr>
     <FeatureNameHeaderCell feature={feature} />
 
-    <FeatureTierIndicatorCell
-      featureTier={feature.tiers[TIERS.teams.name]}
-      tier={TIERS.teams}
-    />
-
-    <FeatureTierIndicatorCell
-      featureTier={feature.tiers[TIERS.growth.name]}
-      tier={TIERS.growth}
-    />
+    {TIERS.map((tier) => (
+      <FeatureTierIndicatorCell
+        key={tier.name}
+        featureTier={feature.tiers[tier.name]}
+        tier={tier}
+      />
+    ))}
   </tr>
 );
 
@@ -205,25 +250,17 @@ const FeatureComparisonTable = () => {
     <>
       {/* xs to lg */}
       <div className="max-w-2xl mx-auto space-y-16 lg:hidden">
-        <section>
-          <div className="px-4 mb-8">
-            <h2 className="text-lg leading-6 font-medium text-gray-900">{TIERS.teams.name}</h2>
-          </div>
+        {TIERS.map((tier) => (
+          <section key={tier.name}>
+            <div className="px-4 mb-8">
+              <h2 className="text-lg leading-6 font-medium text-gray-900">{tier.name}</h2>
+            </div>
 
-          {sections.map((section) => (
-            <SectionTable section={section} key={section.name} tier={TIERS.teams} tierIndex={0} />
-          ))}
-        </section>
-
-        <section>
-          <div className="px-4 mb-8">
-            <h2 className="text-lg leading-6 font-medium text-gray-900">{TIERS.growth.name}</h2>
-          </div>
-
-          {sections.map((section) => (
-            <SectionTable section={section} key={section.name} tier={TIERS.growth} tierIndex={1} />
-          ))}
-        </section>
+            {sections.map((section) => (
+              <SectionTable section={section} key={section.name} tier={tier} tierIndex={0} />
+            ))}
+          </section>
+        ))}
       </div>
 
       {/* lg+ */}
@@ -236,8 +273,9 @@ const FeatureComparisonTable = () => {
                 <span className="sr-only">Feature by</span>
                 <span>Plans</span>
               </th>
-              <LargeTierHeaderCell tier={TIERS.teams} />
-              <LargeTierHeaderCell tier={TIERS.growth}  />
+              {TIERS.map((tier) => (
+                <LargeTierHeaderCell tier={tier} key={tier.name} />
+              ))}
             </tr>
           </thead>
 
@@ -247,8 +285,9 @@ const FeatureComparisonTable = () => {
                 Get started
               </th>
 
-              <LargeTierCta tier={TIERS.teams} />
-              <LargeTierCta tier={TIERS.growth} />
+              {TIERS.map((tier) => (
+                <LargeTierCta tier={tier} key={tier.name} />
+              ))}
             </tr>
 
             {sections.map((section) => (

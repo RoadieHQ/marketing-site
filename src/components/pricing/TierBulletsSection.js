@@ -1,14 +1,30 @@
 import React from 'react';
-import { CheckIcon } from '@heroicons/react/solid'
+import { CheckIcon, PlusIcon } from '@heroicons/react/solid';
 
-const TierBullet = ({ feature, hasIcon = true }) => (
+const Icon = ({ name }) => {
+  const classes = 'flex-shrink-0 h-5 w-5 text-primary-600';
+  if (name === 'plus') {
+    return (
+      <span title="Optional paid extra">
+        <PlusIcon className={classes} aria-hidden="true" />
+      </span>
+    );
+  }
+  return (
+    <span title="Included">
+      <CheckIcon className={classes} aria-hidden="true" />
+    </span>
+  );
+};
+
+const TierBullet = ({ iconName, description, hasIcon = true }) => (
   <li className="flex space-x-3">
     {hasIcon && (
       <span className="pt-1">
-        <CheckIcon className="flex-shrink-0 h-5 w-5 text-primary-600" aria-hidden="true" />
+        <Icon name={iconName} />
       </span>
     )}
-    <span className="prose prose-primary max-w-none">{feature}</span>
+    <span className="prose prose-primary max-w-none">{description}</span>
   </li>
 );
 
@@ -18,8 +34,13 @@ const TierBulletsSection = ({ heading, bullets, hasIcon = true }) => (
       <h3 className="text-xs font-medium text-gray-900 tracking-wide uppercase">{heading}</h3>
     )}
     <ul className="mt-6 space-y-3">
-      {bullets.map((feature) => (
-        <TierBullet feature={feature} key={`${heading}-${feature}`} hasIcon={hasIcon} />
+      {bullets.map(({ iconName, description }) => (
+        <TierBullet
+          iconName={iconName}
+          key={`${heading}-${description}`}
+          hasIcon={hasIcon}
+          description={description}
+        />
       ))}
     </ul>
   </div>

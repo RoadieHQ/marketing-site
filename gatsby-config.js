@@ -74,8 +74,6 @@ const getContentfulOptions = () => {
 
 // These paths are blocked from search engine indexing and search engine access.
 const DISLALLOW_LIST = [
-  '/purchase/',
-  '/purchase/success/',
   '/tailwind/404/',
   '/installation-pending/',
 

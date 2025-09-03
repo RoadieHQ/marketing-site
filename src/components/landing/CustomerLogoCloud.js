@@ -18,21 +18,11 @@ import NetlifyLogoPng from '../../../content/assets/home/customer-logos/netlify-
 import BaillieGiffordLogoPng from '../../../content/assets/home/customer-logos/baillie-gifford-monochrome-standardized.png';
 import AstraZenecaLogoPng from '../../../content/assets/home/customer-logos/astrazenca-monochrome-standardized.png';
 import SumUpLogoPng from '../../../content/assets/home/customer-logos/sumup-monochrome-standardized.png';
-import RelativityLogoPng from '../../../content/assets/home/customer-logos/relativity-monochrome-standardized.png';
 import BaillieGiffordLogo from '../../../content/assets/home/customer-logos/baillie-gifford-monochrome-standardized.webp';
 import AstraZenecaLogo from '../../../content/assets/home/customer-logos/astrazenca-monochrome-standardized.webp';
 import SumUpLogo from '../../../content/assets/home/customer-logos/sumup-monochrome-standardized.webp';
-import RelativityLogo from '../../../content/assets/home/customer-logos/relativity-monochrome-standardized.webp';
 
 export const LOGOS = [
-  {
-    src: {
-      png: RelativityLogoPng,
-      webp: RelativityLogo,
-    },
-    alt: 'Relativity logo',
-  },
-
   {
     src: {
       png: SumUpLogoPng,

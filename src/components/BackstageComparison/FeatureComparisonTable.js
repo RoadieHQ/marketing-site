@@ -10,30 +10,28 @@ const sections = [
     features: [
       {
         name: 'Bring your own data model',
-        competitor: { Roadie: 'Yes', 'Roadie Local': 'Yes', Backstage: 'Yes, with some effort' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Adding and updating Catalog items via YAML',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
       },
       {
         name: 'Updating Catalog items in the UI',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
       },
       {
         name: 'Adding and updating Catalog items via API',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
       },
       {
         name: 'Out of the box data ingestion (k8s, GitHub, CI/CD, etc)',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
       },
       {
         name: 'SCM Support',
         competitor: {
           Roadie:
-            'GitHub Cloud, GitHub Enterprise Server, Azure DevOps, GCP, GitLab Cloud, GitLab On-Prem, BitBucket Cloud, BitBucket Server',
-          'Roadie Local':
             'GitHub Cloud, GitHub Enterprise Server, Azure DevOps, GCP, GitLab Cloud, GitLab On-Prem, BitBucket Cloud, BitBucket Server',
           Backstage:
             'GitHub Cloud, GitHub Enterprise Server, Azure DevOps, GCP, GitLab Cloud, GitLab On-Prem, BitBucket Cloud, BitBucket Server, Gerrit',
@@ -41,91 +39,118 @@ const sections = [
       },
       {
         name: 'Syncing repositories as items in the Catalog',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
       },
     ],
   },
+
+  {
+    name: 'AI (beta)',
+    features: [
+      {
+        name: 'RAG AI',
+        competitor: { Roadie: true, Backstage: false },
+      },
+      {
+        name: 'MCP Servers',
+        competitor: { Roadie: true, Backstage: false },
+      },
+    ],
+  },
+
   {
     name: 'Scorecards',
     features: [
       {
-        name: 'Extensible through the creation of custom data sources in the UI',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        name: 'Scorecards',
+        competitor: { Roadie: true, Backstage: false },
       },
       {
-        name: 'Operational reviews',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
-      },
-      {
-        name: 'Levels',
-        competitor: { Roadie: 'Coming soon', 'Roadie Local': 'Coming soon', Backstage: false },
-      },
-      {
-        name: 'Campaigns',
-        competitor: { Roadie: 'Coming soon', 'Roadie Local': 'Coming soon', Backstage: false },
+        name: 'Checks',
+        competitor: { Roadie: true, Backstage: false },
       },
       {
         name: 'Team-based rollups',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
+      },
+      {
+        name: 'Historical data',
+        competitor: { Roadie: true, Backstage: false },
+      },
+      {
+        name: 'Operational reviews',
+        competitor: { Roadie: true, Backstage: false },
       },
     ],
   },
+
   {
     name: 'Scaffolder',
     features: [
       {
         name: 'Self-serve actions',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
       },
       {
         name: 'Custom self-serve actions',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
       },
       {
         name: 'Custom field extensions',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
       },
       {
         name: 'Fallback and retry',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
       },
     ],
   },
+
   {
     name: 'TechDocs',
     features: [
       {
-        name: 'Docs creation engine',
-        competitor: { Roadie: 'TechDocs', 'Roadie Local': 'TechDocs', Backstage: 'TechDocs' },
-      },
-      {
+        name: 'Docs from Markdown',
+        competitor: { Roadie: true, Backstage: true },
+      }, {
         name: 'Extensibility via plugins',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
+      }, {
+        name: 'Mermaid support',
+        competitor: { Roadie: true, Backstage: true },
+      }, {
+        name: 'PlantUML support',
+        competitor: { Roadie: true, Backstage: true },
+      }, {
+        name: 'Auto rebuild docs in background',
+        competitor: { Roadie: true, Backstage: false },
       },
     ],
   },
+
+
   {
     name: 'Other plugins and extensions',
     features: [
       {
         name: 'Available Plugins',
-        competitor: { Roadie: '70+', 'Roadie Local': '70+', Backstage: 'Requires build' },
+        competitor: { Roadie: '75+', Backstage: 'DIY' },
       },
       {
         name: 'Secure access to on-prem infrastructure and resources',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
       },
       {
         name: 'Theme customisation',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Layout customisation',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Catalog UI customisation',
-        competitor: { Roadie: 'Yes', 'Roadie Local': true, Backstage: 'Requires build' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
     ],
   },
@@ -135,17 +160,15 @@ const sections = [
       {
         name: 'Engine',
         competitor: {
-          Roadie: 'OpenSearch, pg_search',
-          'Roadie Local': 'OpenSearch, pg_search',
-          Backstage: 'Backstage search',
+          Roadie: 'OpenSearch (Elasticsearch)',
+          Backstage: 'PostgreSQL',
         },
       },
       {
         name: 'Additional search collators',
         competitor: {
           Roadie: 'Atlassian Confluence',
-          'Roadie Local': 'Atlassian Confluence',
-          Backstage: 'Atlassian Confluence',
+          Backstage: 'DIY',
         },
       },
     ],
@@ -155,89 +178,73 @@ const sections = [
     features: [
       {
         name: 'SSO',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: 'Via OSS providers' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Entities created in the Catalog for each user and group',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: 'Via OSS providers' },
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
     ],
   },
+
   {
     name: 'Role-based Access Control',
     features: [
       {
         name: 'Admin and non-Admin roles',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
+        competitor: { Roadie: true, Backstage: true },
       },
       {
         name: 'Role assignment in the UI',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
       },
       {
         name: 'Role assignment by identity provider token',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
       },
       {
         name: 'Custom roles',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
       },
       {
         name: 'Custom permissions policies',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
       },
     ],
   },
-  {
-    name: 'Cost Insights (in beta)',
-    features: [
-      {
-        name: 'Visualisation of cost data',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
-      },
-      {
-        name: 'Out of the box data ingestion',
-        competitor: { Roadie: 'AWS, GCP', 'Roadie Local': 'AWS, GCP', Backstage: false },
-      },
-      {
-        name: 'Attribution back to catalog components (inc. users and groups)',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: true },
-      },
-    ],
-  },
+
   {
     name: 'Non-feature extras',
     features: [
       {
         name: 'Hosting',
-        competitor: { Roadie: true, 'Roadie Local': false, Backstage: false },
+        competitor: { Roadie: true, Backstage: false },
       },
       {
-        name: 'Upgrades to the latest version of Backstage',
-        competitor: { Roadie: true, 'Roadie Local': true, Backstage: 'Requires build' },
+        name: 'Automatic monthly upgrades',
+        competitor: { Roadie: true, Backstage: 'DIY'},
       },
       {
-        name: 'Analytics',
-        competitor: { Roadie: true, 'Roadie Local': false, Backstage: false },
+        name: 'Usage analytics',
+        competitor: { Roadie: true, Backstage: false },
       },
       {
         name: 'Support',
         competitor: {
           Roadie: 'Email, Slack/Teams, and 24/7 On-call',
-          'Roadie Local': 'Email, Slack/Teams, and 24/7 On-call (optional)',
-          Backstage: 'via the OSS community',
+          Backstage: 'via OSS community',
         },
       },
       {
-        name: 'Uptime guarantee',
-        competitor: { Roadie: true, 'Roadie Local': false, Backstage: false },
+        name: 'Uptime SLA',
+        competitor: { Roadie: true, Backstage: false },
       },
     ],
   },
 ];
 
 const FeatureNameHeaderCell = ({ feature }) => (
-  <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
+  <th className="py-5 px-4 lg:px-6 text-sm font-medium text-gray-500 text-left" scope="row">
     {feature.name}
   </th>
 );
@@ -321,10 +328,6 @@ const LargeFeatureRow = ({ feature }) => (
       competitor={COMPETITORS.roadie_saas}
     />
     <FeatureCompetitorIndicatorCell
-      featureCompetitor={feature.competitor[COMPETITORS.roadie_local.name]}
-      competitor={COMPETITORS.roadie_local}
-    />
-    <FeatureCompetitorIndicatorCell
       featureCompetitor={feature.competitor[COMPETITORS.backstage.name]}
       competitor={COMPETITORS.backstage}
     />
@@ -354,7 +357,7 @@ const LargeCompetitorCta = ({ competitor }) => (
 const LargeSectionHeaderRow = ({ section }) => (
   <tr>
     <th
-      className="bg-gray-50 py-3 pl-6 text-sm font-medium text-gray-900 text-left"
+      className="bg-gray-50 py-3 pl-6 text-sm font-bold text-gray-900 text-left"
       colSpan={4}
       scope="colgroup"
     >
@@ -388,23 +391,6 @@ const FeatureComparisonTable = () => {
         <section>
           <div className="px-4 mb-8">
             <h2 className="text-lg leading-6 font-medium text-gray-900">
-              {COMPETITORS.roadie_local.name}
-            </h2>
-          </div>
-
-          {sections.map((section) => (
-            <SectionTable
-              section={section}
-              key={section.name}
-              competitor={COMPETITORS.roadie_local}
-              competitorIndex={1}
-            />
-          ))}
-        </section>
-
-        <section>
-          <div className="px-4 mb-8">
-            <h2 className="text-lg leading-6 font-medium text-gray-900">
               {COMPETITORS.backstage.name}
             </h2>
           </div>
@@ -430,7 +416,6 @@ const FeatureComparisonTable = () => {
                 <span className="sr-only">Feature by</span>
               </th>
               <LargeCompetitorHeaderCell competitor={COMPETITORS.roadie_saas} />
-              <LargeCompetitorHeaderCell competitor={COMPETITORS.roadie_local} />
               <LargeCompetitorHeaderCell competitor={COMPETITORS.backstage} />
             </tr>
           </thead>
@@ -445,7 +430,6 @@ const FeatureComparisonTable = () => {
               </th>
 
               <LargeCompetitorCta competitor={COMPETITORS.roadie_saas} />
-              <LargeCompetitorCta competitor={COMPETITORS.roadie_local} />
               <LargeCompetitorCta competitor={COMPETITORS.backstage} />
             </tr>
 

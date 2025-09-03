@@ -150,6 +150,185 @@ The autodiscovery option of AWS resources ingestion uses AWS organization accoun
 | `regions`         | `eu-west-1 eu-central-1`  | **Space separated** AWS region codes to ingest resources from                                                 |
 | `roadie-excluded` | (Empty value) / any value | The presence of this tag indicates to skip this specific AWS account from being ingested                      |
 
+## Custom Entity Mapping with Nunjucks Templates
+
+Roadie provides powerful customization capabilities for mapping AWS resources to Backstage entities using [Nunjucks](https://mozilla.github.io/nunjucks/) templating. This allows you to customize how AWS resources are transformed into Backstage catalog entities, including custom annotations, labels, metadata, and relationships.
+
+### Overview
+
+By default, Roadie uses predefined templates for each AWS resource type to generate Backstage entities. However, you can create custom templates to:
+
+- Add custom annotations specific to your organization
+- Modify entity metadata and labels
+- Establish custom relationships between entities
+- Include additional AWS resource properties
+- Customize entity naming and titling conventions
+
+### Enabling Custom Templates
+
+To use custom templates for AWS resource mapping:
+
+1. Navigate to `Administration > Settings > AWS Resources`
+2. When configuring a resource type, toggle the **"Use Custom Template"** switch
+3. The template editor will appear with the default template pre-loaded
+4. Modify the template using Nunjucks syntax
+5. View the live preview of the rendered entity in the "Rendered Entity" panel
+6. The system validates your template and shows any schema errors
+
+### Template Variables
+
+Each resource type provides three main variables for use in your templates:
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `accountId` | The AWS account ID | `"123456789012"` |
+| `region` | The AWS region | `"eu-west-1"` |
+| `data` | Resource-specific properties from AWS APIs | `{{ data.name }}`, `{{ data.arn }}` |
+
+### Template Structure
+
+Templates generate Backstage entities in YAML format with the following structure:
+
+```yaml
+apiVersion: backstage.io/v1beta1
+kind: Resource
+metadata:
+  namespace: default
+  annotations:
+    # Custom annotations using template variables
+    amazon.com/account-id: "{{ accountId }}"
+    amazon.com/region: "{{ region }}"
+    # Resource-specific annotations
+    amazon.com/eks-cluster-arn: "{{ data.arn }}"
+  name: "{{ data.name }}"
+  title: "{{ accountId }}:{{ region }}:{{ data.name }}"
+  labels:
+    # Custom labels
+    environment: "{{ data.tags.Environment or 'unknown' }}"
+spec:
+  owner: "{{ data.tags.owner or 'unknown' }}"
+  type: eks-cluster
+  # Custom relationships
+  dependsOn:
+    - "resource:default/{{ data.vpc }}"
+```
+
+### Resource-Specific Data Properties
+
+Each AWS resource type provides different properties in the `data` variable. Here are some examples:
+
+#### EKS Cluster
+```yaml
+# Available data properties include:
+# data.name, data.version, data.arn, data.endpoint, data.status, 
+# data.roleArn, data.securityGroupId, etc.
+annotations:
+  kubernetes.io/api-server: "{{ data.endpoint }}"
+  amazon.com/eks-cluster-version: "{{ data.version }}"
+```
+
+#### Lambda Function
+```yaml
+# Available data properties include:
+# data.FunctionName, data.FunctionArn, data.Runtime, data.Handler,
+# data.Role, data.Environment.Variables, etc.
+annotations:
+  amazon.com/lambda-runtime: "{{ data.Runtime }}"
+  amazon.com/lambda-handler: "{{ data.Handler }}"
+labels:
+  runtime: "{{ data.Runtime }}"
+```
+
+#### S3 Bucket
+```yaml
+# Available data properties include:
+# data.Name, data.CreationDate, data.LocationConstraint,
+# data.VersioningStatus, data.Tags, etc.
+annotations:
+  amazon.com/s3-bucket-versioning: "{{ data.VersioningStatus }}"
+labels:
+  environment: "{{ data.Tags[0].Value }}"
+```
+
+*For complete data property references, see the AWS API documentation links provided for each resource type in the permissions table above.*
+
+### Advanced Templating Examples
+
+#### Conditional Logic
+```yaml
+# Use conditional statements for optional properties
+annotations:
+  amazon.com/kms-key: "{% if data.KmsKeyId %}{{ data.KmsKeyId }}{% endif %}"
+  
+labels:
+  # Set default values for missing tags
+  environment: "{{ data.Tags | selectattr('Key', 'equalto', 'Environment') | first | attr('Value') or 'development' }}"
+```
+
+#### Custom Relationships
+```yaml
+spec:
+  # Establish relationships based on AWS resource properties
+  dependsOn:
+    {% if data.SubnetId -%}
+    - "resource:default/{{ data.SubnetId }}"
+    {% endif -%}
+    {% if data.SecurityGroups -%}
+    {% for sg in data.SecurityGroups -%}
+    - "resource:default/{{ sg.GroupId }}"
+    {% endfor -%}
+    {% endif %}
+```
+
+#### Dynamic Naming
+```yaml
+metadata:
+  # Custom naming conventions
+  name: "{{ region }}-{{ data.name | lower | replace('_', '-') }}"
+  title: "{{ data.name }} ({{ accountId }}/{{ region }})"
+  
+  # Generate labels from AWS tags
+  labels:
+    {% for tag in data.Tags -%}
+    {{ tag.Key | lower | replace(' ', '_') }}: "{{ tag.Value }}"
+    {% endfor %}
+```
+
+#### Multi-Environment Support
+```yaml
+metadata:
+  # Different namespace based on environment tag
+  namespace: "{{ data.Tags | selectattr('Key', 'equalto', 'Environment') | first | attr('Value') | lower or 'default' }}"
+  
+  annotations:
+    # Add cost center information
+    amazon.com/cost-center: "{{ data.Tags | selectattr('Key', 'equalto', 'CostCenter') | first | attr('Value') or 'unknown' }}"
+```
+
+### Best Practices
+
+1. **Validation**: Always check the "Rendered Entity" preview to ensure your template generates valid YAML
+2. **Error Handling**: Use conditional statements and default values to handle missing properties
+3. **Consistent Naming**: Maintain consistent entity naming conventions across your organization
+4. **Documentation**: Document your custom templates for team members
+5. **Testing**: Test templates with different AWS resources to ensure they work across your infrastructure
+
+### Common Use Cases
+
+- **Multi-tenancy**: Organize entities by environment, team, or business unit using namespace and labels
+- **Cost tracking**: Include cost center and billing information from AWS tags
+- **Security compliance**: Add security-related annotations and labels for governance
+- **Operational metadata**: Include monitoring, alerting, and operational contact information
+
+### Troubleshooting
+
+If you encounter template errors:
+
+1. Check the error message in the red border area below the rendered entity
+2. Verify Nunjucks syntax using the [official documentation](https://mozilla.github.io/nunjucks/templating.html)
+3. Ensure all referenced data properties exist for your AWS resource type
+4. Validate that the rendered YAML follows [Backstage entity schema requirements ](https://backstage.io/docs/features/software-catalog/descriptor-format/#contents)
+5. Test with simpler templates first, then gradually add complexity
 
 ## Resources and needed permissions
 
