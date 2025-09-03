@@ -18,6 +18,7 @@ metadata:
     github.com/project-slug: RoadieHQ/marketing-site
     backstage.io/techdocs-ref: dir:.
     sentry.io/project-slug: marketing-site
+    sentry.io/project-id: "5823815"
     sonarqube.org/project-key: RoadieHQ_marketing-site
     betteruptime.com/monitor-url: https://roadie.io
     # This service is in dev-roadie.pagerduty.com. Not our production pagerduty account.
