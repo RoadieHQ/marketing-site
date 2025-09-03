@@ -18,7 +18,7 @@ The Terraform plugin integrates [Terraform](https://www.terraform.io/) with Road
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Overview
 

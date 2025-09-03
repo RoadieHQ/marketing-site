@@ -18,7 +18,7 @@ Roadie provides integration to display public and private Stackoverflow question
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Authentication
 

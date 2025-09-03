@@ -20,7 +20,7 @@ This guide covers setting up GitLab OAuth authentication, including creating the
 |---: | --- |
 | **Prerequisites** | <ul><li>Access to your GitLab instance (GitLab.com or self-hosted)</li><li>Admin access to your Roadie instance</li><li>Your Roadie tenant URL (e.g., `https://yourcompany.roadie.so`)</li></ul> |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Step 1: Create a GitLab OAuth Application
 

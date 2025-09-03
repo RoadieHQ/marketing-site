@@ -36,7 +36,7 @@ Credit: [Andrew Wanlin](https://github.com/awanlin) from Keyloop
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Setup
 (NB: You must be a Backstage admin to add this plugin.)

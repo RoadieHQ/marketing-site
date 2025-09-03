@@ -18,7 +18,7 @@ The Broker connection is designed to connect Roadie and its plugins to integrati
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Overview
 

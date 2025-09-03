@@ -22,7 +22,7 @@ This page explains how to configure it in Roadie Backstage.
 |---: | --- |
 | **Prerequisites** |  |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Step 1: Add the Card to the Roadie UI
 

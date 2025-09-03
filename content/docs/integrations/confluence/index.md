@@ -18,7 +18,7 @@ Roadie supports integration with Atlassian Confluence wiki platform to enable cr
 |---: | --- |
 | **Prerequisites** | You'll need an Atlassian account with an ability to create an API token and the name of your Confluence organization. |
 | **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☑ Cloud Hosted |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Configuring Confluence Integration
 
