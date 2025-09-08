@@ -6,7 +6,7 @@ description: How to configure roles using permissions.
 
 ## Introduction
 
-Roadie comes with RBAC out of the box. We provide 5 default roles: `admin`, `viewer`, `maintainer`, 'api-token-creator', and `tech-insights-admin`. It is possible to also define custom roles - please contact our sales team if this is something you are interested in.
+Roadie comes with RBAC out of the box. We provide 5 default roles: `admin`, `viewer`, `maintainer`, `api-token-creator`, and `tech-insights-admin`. It is possible to also define custom roles - please contact our sales team if this is something you are interested in.
 
 | Name                | Description                                                                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
