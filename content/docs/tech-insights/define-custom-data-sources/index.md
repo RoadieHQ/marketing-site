@@ -351,7 +351,7 @@ With this kind of set up the Tech Insights data source engine uses a broker conn
 
 ### Pushing facts to a Data Source
 
-Roadie also provides and API which can be used to push data to populate Data Source facts. To be able to use this API, you need a Roadie API token and a defined Data Source which provides the _schema_ of the structure of the data to be stored. You can contact Roadie for an API token. A Data Source can be either a built-in Data Source or one of the custom-built ones, all of them have a schema defined by default.
+Roadie also provides and API which can be used to push data to populate Data Source facts. To be able to use this API, you need a Roadie API token and a defined Data Source which provides the _schema_ of the structure of the data to be stored. You can generate an API token from the Administration -> Account page. A Data Source can be either a built-in Data Source or one of the custom-built ones, all of them have a schema defined by default.
 
 Each fact constructed by Roadie or pushed to Roadie needs to contain at least 4 properties of information. These properties are:
 
@@ -362,4 +362,4 @@ Each fact constructed by Roadie or pushed to Roadie needs to contain at least 4 
 
 A common example to prefer a push based model to construct and provide facts is to use the internal CI pipeline to collect, construct or provide fact values that need to be stored against Roadie entities. Some such facts could be items like "Code Coverage", "CodeQL Analysis Result" or "Build Duration".
 
-The API endpoint and documentation on expected parameters and request body shapes can be found from the Roadie API documentation.
+The API endpoint and documentation on expected parameters and request body shapes can be found from the [Roadie API documentation](/docs/api/techinsights/).
