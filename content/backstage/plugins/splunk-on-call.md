@@ -2,6 +2,7 @@
 humanName: Splunk On-call
 heading: 'Backstage Splunk On-Call Plugin'
 lead: 'Displays Splunk On-Call information about associated services in Backstage.'
+npmjsPackage: "@backstage-community/plugin-splunk-on-call"
 attribution:
   text: Rémi Doreau
   href: https://github.com/ayshiff

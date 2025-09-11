@@ -2,6 +2,7 @@
 humanName: Jira
 heading: 'Backstage Jira Plugin'
 lead: 'See Jira summary in Backstage'
+npmjsPackage: "@roadiehq/backstage-plugin-jira"
 attribution:
   text: Roadie
   href: https://roadie.io

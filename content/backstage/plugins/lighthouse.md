@@ -2,6 +2,7 @@
 humanName: Lighthouse
 heading: 'Backstage Lighthouse Plugin'
 lead: 'Integrates Lighthouse inside Backstage.'
+npmjsPackage: "@backstage-community/plugin-lighthouse"
 attribution:
   text: Spotify
   href: https://spotify.com
