@@ -28,7 +28,7 @@ coverImage: '../../assets/jira-plugin.webp'
 coverImageAlt: 'A preview of Jira plugin including tasks summary, project information and Activity Stream.'
 
 availableOnRoadie: true
-roadieDocsPath: /jira/
+roadieDocsPath: /integrations/jira/
 
 thingsToKnowTitle: Using a Jira token
 thingsToKnowHostDependant: true

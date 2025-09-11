@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/grafana/grafana.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /grafana/
+roadieDocsPath: /integrations/grafana/
 
 gettingStarted:
   - intro: Install the plugin into your Backstage instance.

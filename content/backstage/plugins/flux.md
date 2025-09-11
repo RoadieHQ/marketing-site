@@ -15,7 +15,7 @@ seo:
 logoImage: '../../assets/logos/flux/flux_color_logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /flux/
+roadieDocsPath: /integrations/flux/
 
 gettingStarted:
   - intro: The base configuration for the Flux plugin is handled by the Kubernetes plugins, namely @backstage/plugin-kubernetes and @backstage/plugin-kubernetes-backend. Both need to be installed and configured by following the installation and configuration guides for those plugins. After installation make sure to import the frontend for the Kubernetes plugin. Further details on configuration options can be found on the Flux plugin github page.

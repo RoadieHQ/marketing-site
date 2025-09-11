@@ -18,7 +18,7 @@ coverImage: '../../assets/apache-airflow-plugin.pmg'
 coverImageAlt: 'A list of DAGs in a table along with instance versioning and status.'
 
 availableOnRoadie: true
-roadieDocsPath: /apache-airflow/
+roadieDocsPath: /integrations/apache-airflow/
 
 gettingStarted:
   # What will this step accomplish?

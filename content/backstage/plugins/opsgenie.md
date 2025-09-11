@@ -16,7 +16,7 @@ coverImage: '../../assets/backstage/plugins/opsgenie/opsgenie-plugin.webp'
 coverImageAlt: 'A screenshot of the OpsGenie plugin.'
 
 availableOnRoadie: true
-roadieDocsPath: /opsgenie/
+roadieDocsPath: /integrations/opsgenie/
 
 gettingStarted:
   - intro: Install the plugin.

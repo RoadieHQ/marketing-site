@@ -17,7 +17,7 @@ coverImage: '../../assets/new-relic-plugin.webp'
 coverImageAlt: 'A screenshot of the GCP Projects plugin.'
 
 availableOnRoadie: true
-roadieDocsPath: /newrelic/
+roadieDocsPath: /integrations/newrelic/
 
 gettingStarted:
   - intro: Install the plugin into Backstage.

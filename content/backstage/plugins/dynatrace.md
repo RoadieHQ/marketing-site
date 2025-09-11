@@ -16,4 +16,4 @@ seo:
 logoImage: '../../assets/logos/dynatrace/Dynatrace_Logo_color_positive_vertical.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /dynatrace/
+roadieDocsPath: /integrations/dynatrace/

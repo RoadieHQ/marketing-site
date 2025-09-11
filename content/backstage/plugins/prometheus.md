@@ -17,7 +17,7 @@ coverImage: '../../assets/prometheus/prom_entity_content.webp'
 coverImageAlt: 'Prometheus alerts and graphs rendered in Backstage.'
 
 availableOnRoadie: true
-roadieDocsPath: /prometheus/
+roadieDocsPath: /integrations/prometheus/
 
 gettingStarted:
   - intro: The Prometheus plugin is a frontend plugin. You will need to install it, configure it and add it to an appropriate location on the entity page.

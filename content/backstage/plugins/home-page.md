@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/home-page/home.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /home-page/
+roadieDocsPath: /integrations/home-page/
 
 gettingStarted: # What will this step accomplish?
   - intro: Install the plugin into your Backstage instance.

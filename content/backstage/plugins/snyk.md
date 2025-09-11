@@ -15,7 +15,7 @@ seo:
 logoImage: '../../assets/logos/snyk/snyk-avatar.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /snyk/
+roadieDocsPath: /integrations/snyk/
 
 gettingStarted:
   - intro: 'Install the Snyk plugin package in your Backstage app'

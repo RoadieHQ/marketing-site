@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/rootly/logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /rootly/
+roadieDocsPath: /integrations/rootly/
 
 gettingStarted:
   - intro: Create a Rootly API Key. Use the steps further down in the document to do this.

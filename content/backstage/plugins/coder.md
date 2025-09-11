@@ -17,7 +17,7 @@ coverImage: '../../assets/coder.png'
 coverImageAlt: 'A screenshot of the Coder plugin showing a Coder workspace with clickable links.'
 
 availableOnRoadie: true
-roadieDocsPath: /coder/
+roadieDocsPath: /integrations/coder/
 
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc

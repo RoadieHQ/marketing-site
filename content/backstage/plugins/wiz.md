@@ -20,7 +20,7 @@ coverImage: '../../assets/wiz-plugin.png'
 coverImageAlt: 'A preview of Wiz issues.'
 
 availableOnRoadie: true
-roadieDocsPath: /wiz/
+roadieDocsPath: /integrations/wiz/
 
 gettingStarted:
   - intro: The plugin requires Wiz backend plugin to be installed first. The backend plugin handles authentication and retrieving data. You can read more about it in Prerequisites and Getting Started section below.

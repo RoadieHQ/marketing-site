@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/launchdarkly/logo-launchdarkly.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /launchdarkly/
+roadieDocsPath: /integrations/launchdarkly/
 
 gettingStarted:
   - intro: Install the plugin into Backstage.

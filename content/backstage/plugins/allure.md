@@ -20,7 +20,7 @@ coverImage: '../../assets/allure-report-img.webp'
 coverImageAlt: 'A preview of the Allure overview widget including suites and environments.'
 
 availableOnRoadie: true
-roadieDocsPath: /allure/
+roadieDocsPath: /integrations/allure/
 
 gettingStarted:
   - intro: Install the plugin into Backstage.

@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/code-insights/code-icon.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /codecoverage/
+roadieDocsPath: /integrations/codecoverage/
 
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc

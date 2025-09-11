@@ -15,7 +15,7 @@ seo:
 logoImage: '../../assets/logos/harness/harness.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /harness/
+roadieDocsPath: /integrations/harness/
 
 gettingStarted: # What will this step accomplish?
   - intro: Install the plugin into your Backstage instance.

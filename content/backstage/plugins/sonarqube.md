@@ -17,7 +17,7 @@ coverImage: '../../assets/sonar-plugin.webp'
 coverImageAlt: 'A screenshot of the SonarQube and SonarCloud plugin.'
 
 availableOnRoadie: true
-roadieDocsPath: /sonarqube/
+roadieDocsPath: /integrations/sonarqube/
 
 gettingStarted:
   - intro: Install the plugin into Backstage.

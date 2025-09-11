@@ -15,7 +15,7 @@ seo:
 logoImage: '../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /proxy-sigv4/
+roadieDocsPath: /integrations/proxy-sigv4/
 
 gettingStarted:
   # What will this step accomplish?

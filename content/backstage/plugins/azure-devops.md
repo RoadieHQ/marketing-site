@@ -19,7 +19,7 @@ seo:
 logoImage: '../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /azure-devops/
+roadieDocsPath: /integrations/azure-devops/
 
 gettingStarted:
   - intro: Install the frotnend plugin for Azure DevOps.

@@ -16,7 +16,7 @@ coverImage: '../../assets/lighthouse-plugin.jpg'
 coverImageAlt: 'A screenshot of the Lighthouse plugin.'
 
 availableOnRoadie: true
-roadieDocsPath: /lighthouse/
+roadieDocsPath: /integrations/lighthouse/
 
 gettingStarted:
   - intro: Before you start please make sure that you setup lighthouse-audit-service first.

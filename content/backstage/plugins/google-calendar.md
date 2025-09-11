@@ -17,7 +17,7 @@ coverImage: '../../assets/gcalendar-card.webp'
 coverImageAlt: 'A screenshot of the Google Calendar plugin.'
 
 availableOnRoadie: true
-roadieDocsPath: /gcalendar/
+roadieDocsPath: /integrations/gcalendar/
 ---
 
 ### Useful link

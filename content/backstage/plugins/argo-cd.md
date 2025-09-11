@@ -29,7 +29,7 @@ coverImage: '../../assets/argo-cd-plugin.webp'
 coverImageAlt: 'A preview of Argo CD overview widget including kubernetes pod status.'
 
 availableOnRoadie: true
-roadieDocsPath: /argocd/
+roadieDocsPath: /integrations/argocd/
 
 thingsToKnowTitle: Configure multiple Argo CD instances
 thingsToKnowHostDependant: true

@@ -18,7 +18,7 @@ coverImage: '../../assets/circle-ci-plugin.jpg'
 coverImageAlt: 'A list of builds in a table along with a status and retry button for each build.'
 
 availableOnRoadie: true
-roadieDocsPath: /circleci/
+roadieDocsPath: /integrations/circleci/
 
 gettingStarted:
   # What will this step accomplish?

@@ -18,7 +18,7 @@ coverImage: '../../assets/sentry-plugin-1604x716.webp'
 coverImageAlt: 'A screenshot of the Sentry plugin. It is showing a list of errors.'
 
 availableOnRoadie: true
-roadieDocsPath: /sentry/
+roadieDocsPath: /integrations/sentry/
 
 gettingStarted:
   - intro: 'Install the plugin package in your Backstage app'
