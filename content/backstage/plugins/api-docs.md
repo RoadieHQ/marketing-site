@@ -18,6 +18,7 @@ coverImage: '../../assets/api-docs-plugin.webp'
 coverImageAlt: 'A screenshot of the API Docs. It is showing a available endpoints for a sample component.'
 
 availableOnRoadie: true
+roadieDocsPath: /details/openapi-specs/
 
 # Instructions for someone who wants to use this plugin.
 # languages used here must be listed in the .babelrc
