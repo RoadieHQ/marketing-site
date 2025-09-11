@@ -5,6 +5,24 @@ lead: 'A RAG AI plugin to contextualize your entities, TechDocs, openAPI specs a
 attribution:
   text: RoadieHQ
   href: https://roadie.io/
+intro: |
+  This plugin and its modules are a reference implementation provided for demonstration and educational purposes.
+  It was orignally created to understand how retrieval-augmented generation (RAG) could be combined with Backstage
+  to improve discoverability. It's not officially supported by Roadie (Roadie has much more powerful AI-powered
+  discoverability tools built-in 😉).
+
+  This plugin enables you to surface richer answers from your entities, TechDocs, OpenAPI specs, and tech insights
+  data by using retrieval-augmented generation (RAG). With this plugin, your Backstage users can ask questions
+  in natural language and get responses grounded in your own documentation and metadata.
+  
+  This plugin comprises both frontend and backend components. It can be configured
+  to store and retrieve embeddings, index internal content, and connect to the large language model (LLM) 
+  of your choice. Whether you use AWS Bedrock, OpenAI, or another embedding and model provider, the plugin 
+  offers flexible configuration and storage backends (including PostgreSQL with the pgvector extension) so you 
+  can tailor it to your environment.
+  
+  Below you’ll find key setup steps, configuration options, and architectural considerations to help you get 
+  up and running—so you can focus on building great features rather than wrestling with infrastructure.
 
 seo:
   # Don't forget to end with "| Roadie"

@@ -6,19 +6,15 @@ lead: 'See Argo CD status in Backstage'
 attribution:
   text: Roadie, in collaboration with American Airlines
 intro: | 
-  <p>
-    <a href="https://argoproj.github.io/cd/" target="_blank">Argo CD</a>, a CNCF project, enables declarative GitOps workflows for Kubernetes. Argo CD continuously monitors all running applications and compares their live state to the desired state specified in the Git repository. Argo CD can pull updated code from Git repositories and deploy it directly to Kubernetes resources, thus enabling developers to manage both infrastructure configuration and application updates in one system.
-  </p>
-  <p>
-    The ArgoCD Backstage plugin brings synced status, health status, and updates history of your services to your Developer Portal. This plugin can support multiple ArgoCD instances.
-    In this guide you'll find:
-  </p>
-  <ul>
-    <li><a href="#installation-steps">Installation steps</a></li>
-    <li><a href="#section-add-annotations">Required annotations</a></li>
-    <li><a href="#things-to-know">Set up for multiple ArgoCD instances</a></li>
-  </ul>
+    [Argo CD](https://argoproj.github.io/cd/), a CNCF project, enables declarative GitOps workflows for Kubernetes. Argo CD continuously monitors all running applications and compares their live state to the desired state specified in the Git repository. Argo CD can pull updated code from Git repositories and deploy it directly to Kubernetes resources, thus enabling developers to manage both infrastructure configuration and application updates in one system.
 
+    The ArgoCD Backstage plugin brings synced status, health status, and updates history of your services to your Developer Portal. This plugin can support multiple ArgoCD instances.
+
+    In this guide you'll find:
+
+      - [Installation steps](#installation-steps)
+      - [Required annotations](#section-add-annotations)
+      - [Set up for multiple ArgoCD instances](#things-to-know)
 
 seo:
   # Don't forget to end with "| Roadie"

@@ -12,6 +12,13 @@ const transformPageFrontmatter = ({ node }) => {
     }
   }
 
+  if (node.frontmatter.intro) {
+    node.frontmatter.intro = remark()
+      .use(remarkHTML)
+      .processSync(node.frontmatter.intro)
+      .toString();
+  }
+
   return node;
 };
 

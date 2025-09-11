@@ -6,18 +6,14 @@ attribution:
   text: '@pulumicorp'
   href: https://github.com/pulumi
 intro: | 
-  <p>
-    <a href="https://www.pulumi.com/" target="_blank">Pulumi</a> is an open source infrastructure as code tool. It lets you implement your desired state infrastructure with regular programming languages.
-  </p>
-  <p>
+    Pulumi is an open source infrastructure as code tool. It lets you implement your desired state infrastructure with regular programming languages.
+
     The Backstage Pulumi plugin brings infrastructure data associated with your Pulumi stacks to your Developer Portal. The plugin can pull deployment information from a Pulumi Cloud.
+
     In this guide you'll find:
-  </p>
-  <ul>
-    <li><a href="#installation-steps">Installation steps</a></li>
-    <li><a href="#section-add-annotations">Required annotations</a></li>
-    <li><a href="#things-to-know">How to get a Pulumi Access Token</a></li>
-  </ul>
+      - [Installation steps](#installation-stesp)
+      - [Required annotations](#section-add-annotations)
+      - [How to get a Pulumi Access Token](#things-to-know)
 
 seo:
   title: 'Backstage Pulumi Plugin | Roadie'

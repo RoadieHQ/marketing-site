@@ -4,6 +4,10 @@ humanName: Template
 heading: 'Backstage Template Plugin'
 # Keep it short
 lead: 'Describe the problem that the plugin will solve for users'
+# Markdown can be used in the intro
+intro: |
+  Introduce the plugin
+
 attribution:
   text: Spotify
   href: https://spotify.com
@@ -28,7 +32,7 @@ coverImageAlt: 'Explain what is in the image'
 # languages used here must be listed in the .babelrc
 
 gettingStarted:
-  # What will this step accomplish?
+  # What will this step accomplish? Markdown can be used in the intro.
   - intro: Install the plugin
     language: bash
     code: yarn add @roadiehq/backstage-plugin-github-pull-requests

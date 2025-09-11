@@ -5,12 +5,10 @@ lead: 'See Wiz issues status in Backstage'
 attribution:
   text: Roadie
 intro: |
-  <p>
-    <a href="https://www.wiz.io/" target="_blank">Wiz</a> is the unified cloud security platform with prevention and response capabilities, enabling security and development teams to build faster and more securely.
-  </p>
-  <p>
-    The Backstage Wiz Plugin integrates Wiz, a cloud security platform, into your Backstage instance, providing information about recently created issues, their status and severity.
-  </p>
+  Wiz is the unified cloud security platform with prevention and response capabilities, enabling security and development teams to build faster and more securely.
+
+  The Backstage Wiz Plugin integrates Wiz, a cloud security platform, into your Backstage instance, providing information about recently created issues, their status and severity.
+
 seo:
   title: 'Backstage Wiz Plugin | Roadie'
   description: |
