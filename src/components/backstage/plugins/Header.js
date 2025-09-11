@@ -3,11 +3,19 @@ import { Lead, Headline, Link, Chip } from 'components';
 
 import Logo from './Logo';
 import Attribution from './Attribution';
+import { NpmIcon, RoadieRacksIcon } from 'components/icons';
 
 const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
   if (!availableOnRoadie) return null;
 
-  const chip = <Chip label="Available on Roadie" color="green" />;
+  const chip = (
+    <Chip
+      label="Available on Roadie"
+      color="orange"
+      icon={<RoadieRacksIcon className="h-[1rem] w-[1rem] inline mr-1" />}
+    />
+  );
+
   if (!roadieDocsPath) return chip;
   return (
     <Link to={`/docs${roadieDocsPath}`} className="inline-block">
@@ -21,7 +29,11 @@ const NpmChip = ({ npmjsPackage }) => {
 
   return (
     <Link to={`https://npmjs.com/package/${npmjsPackage}`} className="inline-block">
-      <Chip label={npmjsPackage} color="red" />
+      <Chip
+        label={npmjsPackage}
+        color="npm-red"
+        icon={<NpmIcon className="h-[1.5rem] w-[1.5rem] inline mr-1" />}
+      />
     </Link>
   );
 };
