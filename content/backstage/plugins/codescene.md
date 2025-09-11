@@ -2,7 +2,7 @@
 humanName: Codescene
 heading: 'Backstage Codescene Plugin'
 lead: 'See your Codescene projects and analysis in Backstage.'
-npmjsUrl: https://www.npmjs.com/package/@backstage-community/plugin-codescene
+npmjsPackage: @backstage-community/plugin-codescene
 attribution:
   text: Codescene
   href: https://codescene.com/

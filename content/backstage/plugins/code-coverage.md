@@ -2,7 +2,7 @@
 humanName: Code Coverage
 heading: 'Backstage Code Coverage Plugin'
 lead: 'See code coverage summaries for your software in Backstage'
-npmjsUrl: https://www.npmjs.com/package/@backstage-community/plugin-code-coverage
+npmjsPackage: @backstage-community/plugin-code-coverage
 attribution:
   text: alde & nissayeva
   href: https://github.com/alde & https://github.com/nasquasha 

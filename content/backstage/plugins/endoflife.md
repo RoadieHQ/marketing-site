@@ -7,7 +7,7 @@ attribution:
   text: dweber019
   href: https://github.com/dweber019
 
-npmjsUrl: https://www.npmjs.com/package/@dweber019/backstage-plugin-endoflife
+npmjsPackage: @dweber019/backstage-plugin-endoflife
 
 seo:
   # Don't forget to end with "| Roadie"

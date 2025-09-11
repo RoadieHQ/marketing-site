@@ -2,7 +2,7 @@
 humanName: Cloudsmith
 heading: 'Backstage Cloudsmith Plugin'
 lead: 'See your Cloudsmith usage, repository stats, audit logs and security scanning'
-npmjsUrl: https://www.npmjs.com/package/@roadiehq/backstage-plugin-cloudsmith
+npmjsPackage: @roadiehq/backstage-plugin-cloudsmith
 attribution:
   text: Roadie
   href: https://roadie.io

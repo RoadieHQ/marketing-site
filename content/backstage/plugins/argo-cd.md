@@ -3,7 +3,7 @@ humanName: Argo CD
 heading: 'Backstage Argo CD Plugin'
 # Keep it short
 lead: 'See Argo CD status in Backstage'
-npmjsUrl: https://www.npmjs.com/package/@roadiehq/backstage-plugin-argo-cd
+npmjsPackage: @roadiehq/backstage-plugin-argo-cd
 attribution:
   text: Roadie, in collaboration with American Airlines
 intro: | 

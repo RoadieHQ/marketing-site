@@ -6,7 +6,7 @@ lead: 'Views of Flux resources available in Kubernetes clusters'
 attribution:
   text: Weaveworks
 
-npmjsUrl: https://www.npmjs.com/package/@weaveworksoss/backstage-plugin-flux
+npmjsPackage: @weaveworksoss/backstage-plugin-flux
 
 seo:
   # Don't forget to end with "| Roadie"

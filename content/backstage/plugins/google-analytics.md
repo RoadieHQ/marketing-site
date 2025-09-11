@@ -7,7 +7,7 @@ attribution:
   text: Spotify
   href: https://github.com/spotify
 
-npmjsUrl: https://www.npmjs.com/package/@backstage-community/plugin-analytics-module-ga4
+npmjsPackage: @backstage-community/plugin-analytics-module-ga4
 
 seo:
   # Don't forget to end with "| Roadie"

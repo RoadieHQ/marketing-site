@@ -7,7 +7,7 @@ attribution:
   text: '@BESTSELLER'
   href: https://github.com/BESTSELLER
 
-npmjsUrl: https://www.npmjs.com/package/@bestsellerit/backstage-plugin-harbor
+npmjsPackage: @bestsellerit/backstage-plugin-harbor
 
 seo:
   title: 'Backstage Harbor Plugin | Roadie'

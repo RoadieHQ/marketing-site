@@ -2,7 +2,7 @@
 humanName: Buildkite
 heading: 'Backstage Buildkite Plugin'
 lead: 'See Buildkite Builds in Backstage'
-npmjsUrl: https://www.npmjs.com/package/@roadiehq/backstage-plugin-buildkite
+npmjsPackage: @roadiehq/backstage-plugin-buildkite
 attribution:
   text: Roadie, officially approved by Buildkite.
 

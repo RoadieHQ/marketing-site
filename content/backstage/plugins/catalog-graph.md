@@ -2,7 +2,7 @@
 humanName: Catalog Graph Plugin
 heading: 'Backstage Catalog Graph Plugin'
 lead: 'Visualize relationships between the entities in your Software Catalog.'
-npmjsUrl: https://www.npmjs.com/package/@backstage/plugin-catalog-graph
+npmjsPackage: @backstage/plugin-catalog-graph
 attribution:
   text: SDA SE
   href: https://sda.se/

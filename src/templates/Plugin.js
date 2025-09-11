@@ -120,6 +120,7 @@ export const pageQuery = graphql`
         lead
         heading
         intro
+        npmjsPackage
         availableOnRoadie
         roadieDocsPath
         thingsToKnowTitle
