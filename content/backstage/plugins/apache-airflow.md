@@ -2,6 +2,7 @@
 humanName: Apache Airflow
 heading: 'Backstage Apache Airflow Plugin'
 lead: 'See Apache Airflow DAGs in Backstage'
+npmjsUrl: https://www.npmjs.com/package/@backstage-community/plugin-apache-airflow
 attribution:
   text: Spotify
   href: https://spotify.com

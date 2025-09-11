@@ -6,6 +6,8 @@ attribution:
   text: K-Phoen
   href: https://github.com/K-Phoen
 
+npmjsUrl: https://www.npmjs.com/package/@k-phoen/backstage-plugin-grafana
+
 seo:
   title: 'Backstage Grafana Plugin | Roadie'
   description: |

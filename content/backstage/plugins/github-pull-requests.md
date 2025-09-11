@@ -6,6 +6,8 @@ attribution:
   text: Roadie
   href: https://roadie.io
 
+npmjsUrl: https://www.npmjs.com/package/@roadiehq/backstage-plugin-github-pull-requests
+
 seo:
   title: 'Backstage GitHub Pull Requests Plugin | Roadie'
   description: |

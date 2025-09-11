@@ -2,6 +2,7 @@
 humanName: Bugsnag
 heading: 'Backstage Bugsnag Plugin'
 lead: 'Monitor errors in Bugsnag for your service in Backstage'
+npmjsUrl: https://www.npmjs.com/package/@roadiehq/backstage-plugin-bugsnag
 attribution:
   text: Roadie
   href: https://roadie.io

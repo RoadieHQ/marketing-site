@@ -3,6 +3,7 @@ humanName: 'Serverless Frontend Scaffolder Template'
 heading: 'Backstage Scaffolder Task to create an AWS Serverless Frontend'
 # Keep it short
 lead: 'Create AWS Serverless Frontend'
+npmjsUrl: https://www.npmjs.com/package/@roadiehq/scaffolder-backend-module-aws
 attribution:
   text: Roadie
   href: https://github.com/roadie-demo/scaffolder-examples

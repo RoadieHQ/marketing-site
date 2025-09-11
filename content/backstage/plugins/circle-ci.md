@@ -2,6 +2,7 @@
 humanName: Circle CI
 heading: 'Backstage Circle CI Plugin'
 lead: 'See Circle CI Builds in Backstage'
+npmjsUrl: https://www.npmjs.com/package/@circleci/backstage-plugin
 attribution:
   text: CircleCI
   href: https://circleci.com/

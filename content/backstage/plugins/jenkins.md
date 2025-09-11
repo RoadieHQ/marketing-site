@@ -5,6 +5,8 @@ lead: 'Build, test, and deploy on Jenkins CI/CD platform.'
 attribution:
   text: '@timja'
   href: https://github.com/timja
+
+npmjsUrl: https://www.npmjs.com/package/@backstage-community/plugin-jenkins
 intro: | 
   Jenkins is an open source automation server to build, test, and deploy software. It lets you execute a series of actions to build a continuous integration pipeline. Jenkins is well known for its extensive set of plugins.
 
