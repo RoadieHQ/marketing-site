@@ -2,7 +2,7 @@
 humanName: Bitrise
 heading: 'Bitrise Plugin'
 lead: "View a summary of your component's Bitrise builds right in Backstage."
-npmjsPackage: @backstage-community/plugin-bitrise
+npmjsPackage: "@backstage-community/plugin-bitrise"
 attribution:
   text: 'SDA SE'
   href: https://sda.se

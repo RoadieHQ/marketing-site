@@ -6,7 +6,7 @@ attribution:
   text: Roadie
   href: https://roadie.io
 
-npmjsPackage: @roadiehq/backstage-plugin-iframe
+npmjsPackage: "@roadiehq/backstage-plugin-iframe"
 
 seo:
   title: 'Backstage GitHub Actions Plugin | Roadie'

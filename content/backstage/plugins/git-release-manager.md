@@ -7,7 +7,7 @@ attribution:
   text: '@Spotify'
   href: https://github.com/spotify
 
-npmjsPackage: @backstage-community/plugin-git-release-manager
+npmjsPackage: "@backstage-community/plugin-git-release-manager"
 
 seo:
   title: 'Backstage Git Release Manager Plugin | Roadie'

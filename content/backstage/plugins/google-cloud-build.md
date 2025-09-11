@@ -6,7 +6,7 @@ attribution:
   text: Trivago
   href: https://www.trivago.com
 
-npmjsPackage: @backstage-community/plugin-cloudbuild
+npmjsPackage: "@backstage-community/plugin-cloudbuild"
 
 seo:
   title: 'Backstage Google Cloud Build Plugin | Roadie'

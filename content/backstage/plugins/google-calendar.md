@@ -6,7 +6,7 @@ attribution:
   text: Spotify
   href: https://spotify.com
 
-npmjsPackage: @backstage/plugin-gcalendar
+npmjsPackage: "@backstage/plugin-gcalendar"
 
 seo:
   title: 'Backstage Google Calendar Plugin | Roadie'
