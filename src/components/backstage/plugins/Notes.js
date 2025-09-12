@@ -7,7 +7,7 @@ const Notes = ({ plugin }) => {
   if (!plugin.notes || plugin.notes === '') return null;
   return (
     <>
-      <Title el="h2" className="xl:text-2xl xl:tracking-tight mb-6" id="things-to-know">
+      <Title el="h2" className="xl:tracking-tight mb-6" id="things-to-know">
         {plugin.frontmatter.thingsToKnowTitle
           ? `${plugin.frontmatter.thingsToKnowTitle}`
           : 'Things to know'}
