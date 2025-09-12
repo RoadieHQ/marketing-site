@@ -6,6 +6,8 @@ attribution:
   text: Roadie
   href: https://roadie.io
 
+npmjsPackage: "@roadiehq/backstage-plugin-firebase-functions"
+
 seo:
   title: 'Backstage Firebase Functions Plugin | Roadie'
   description: |

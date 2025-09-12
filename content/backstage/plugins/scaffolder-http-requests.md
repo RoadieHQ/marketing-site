@@ -3,6 +3,7 @@ humanName: 'Scaffolder: HTTP Requests'
 heading: 'Backstage HTTP request scaffolder actions'
 # Keep it short
 lead: 'Create HTTP requests with the scaffolder'
+npmjsPackage: "@roadiehq/scaffolder-backend-module-http-request"
 attribution:
   text: Roadie
   href: https://github.com/RoadieHQ/roadie-backstage-plugins

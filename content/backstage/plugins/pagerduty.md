@@ -3,6 +3,7 @@ humanName: PagerDuty
 heading: 'Backstage PagerDuty Plugin'
 lead: |
   Don't waste any time getting up to speed on that late night incident.
+npmjsPackage: "@pagerduty/backstage-plugin"
 attribution:
   text: '@samiramkr'
   href: https://github.com/samiramkr

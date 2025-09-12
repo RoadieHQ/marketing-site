@@ -7,6 +7,8 @@ attribution:
   text: 'FireHydrant'
   href: https://firehydrant.io
 
+npmjsPackage: "@backstage-community/plugin-firehydrant"
+
 seo:
   title: 'Backstage FireHydrant Plugin | Roadie'
   description: |

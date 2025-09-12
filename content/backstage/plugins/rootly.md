@@ -7,6 +7,8 @@ attribution:
   text: Rootly
   href: https://rootly.com
 
+npmjsPackage: "@rootly/backstage-plugin"
+
 seo:
   title: 'Rootly Backstage Plugin | Roadie'
   description: 'See Rootly data and incidents directly inside Backstage.'

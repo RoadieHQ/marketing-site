@@ -7,6 +7,8 @@ attribution:
   text: Dynatrace
   href: https://github.com/dynatrace
 
+npmjsPackage: "@dynatrace/backstage-plugin-dql"
+
 seo:
   # Don't forget to end with "| Roadie"
   title: 'Backstage Dynatrace Plugin | Roadie'

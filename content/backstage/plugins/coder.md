@@ -1,7 +1,8 @@
 ---
 humanName: Coder
 heading: 'Backstage Coder Plugin'
-lead: 'See your Cloudsmith usage, repository stats, audit logs and security scanning'
+lead: 'Create and manage Coder workspaces from Backstage'
+npmjsPackage: "@coder/backstage-plugin-coder"
 attribution:
   text: Coder
   href: https://coder.com/ 

@@ -2,6 +2,7 @@
 humanName: Pulumi
 heading: 'Backstage Pulumi Plugin'
 lead: 'View Pulumi stack information in Backstage.'
+npmjsPackage: "@pulumi/backstage-plugin-pulumi"
 attribution:
   text: '@pulumicorp'
   href: https://github.com/pulumi

@@ -3,6 +3,7 @@ humanName: 'Serverless Backend Scaffolder Template'
 heading: 'Backstage Scaffolder Task to create an AWS Serverless Backend'
 # Keep it short
 lead: 'Create AWS Serverless Backend'
+npmjsPackage: "@roadiehq/scaffolder-backend-module-aws"
 attribution:
   text: Roadie
   href: https://github.com/roadie-demo/scaffolder-examples

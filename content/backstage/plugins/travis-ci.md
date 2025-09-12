@@ -2,6 +2,7 @@
 humanName: Travis CI
 heading: 'Backstage Travis CI Plugin'
 lead: 'See builds in Backstage'
+npmjsPackage: "@roadiehq/backstage-plugin-travis-ci"
 attribution:
   text: Roadie
   href: https://roadie.io

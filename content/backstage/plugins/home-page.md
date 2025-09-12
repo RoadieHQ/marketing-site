@@ -6,6 +6,8 @@ attribution:
   text: Spotify, with extensions by Roadie
   href: https://spotify.com and https://roadie.io
 
+npmjsPackage: "@backstage/plugin-home"
+
 seo:
   title: 'Backstage GitHub Actions Plugin | Roadie'
   description: |

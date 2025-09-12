@@ -3,6 +3,7 @@ humanName: Tech Radar
 heading: 'Backstage Tech Radar Plugin'
 lead: |
   Visualize the your company's official guidelines of different areas of software development.
+npmjsPackage: "@backstage-community/plugin-tech-radar"
 attribution:
   text: Spotify
   href: https://spotify.com

@@ -2,6 +2,7 @@
 humanName: AI Assistant
 heading: 'Backstage AI Assistant - RAG AI Plugin'
 lead: 'A RAG AI plugin to contextualize your entities, TechDocs, openAPI specs and tech insights data for LLM consumption.'
+npmjsPackage: "@roadiehq/rag-ai"
 attribution:
   text: RoadieHQ
   href: https://roadie.io/

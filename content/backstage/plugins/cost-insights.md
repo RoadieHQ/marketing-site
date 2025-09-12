@@ -3,6 +3,7 @@ name: cost-insights
 humanName: Cost Insights
 heading: 'Backstage Cost Insights Plugin'
 lead: 'Visualize, understand and optimize your cloud costs.'
+npmjsPackage: "@backstage-community/plugin-cost-insights"
 attribution:
   text: Spotify
   href: https://spotify.com

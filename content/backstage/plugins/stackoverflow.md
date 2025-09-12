@@ -2,6 +2,7 @@
 humanName: Stack Overflow
 heading: 'Backstage Stack Overflow Plugin'
 lead: 'Display public and private Stackoverflow questions and answers in Backstage'
+npmjsPackage: "@backstage-community/plugin-stack-overflow"
 attribution:
   text: Spotify
   href: https://spotify.com

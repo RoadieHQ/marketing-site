@@ -6,6 +6,8 @@ attribution:
   text: Humanitec
   href: https://humanitec.com
 
+npmjsPackage: "@humanitec/backstage-plugin"
+
 seo:
   title: 'Backstage Humanitec Plugin | Roadie'
   description: |

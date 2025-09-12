@@ -2,6 +2,7 @@
 humanName: Rollbar
 heading: 'Backstage Rollbar Plugin'
 lead: 'Correlate services with problems in production'
+npmjsPackage: "@backstage-community/plugin-rollbar"
 attribution:
   text: '@andrewthauer'
   href: https://github.com/andrewthauer

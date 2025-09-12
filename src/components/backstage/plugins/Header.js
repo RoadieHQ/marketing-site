@@ -3,15 +3,37 @@ import { Lead, Headline, Link, Chip } from 'components';
 
 import Logo from './Logo';
 import Attribution from './Attribution';
+import { NpmIcon, RoadieRacksIcon } from 'components/icons';
 
 const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
   if (!availableOnRoadie) return null;
 
-  const chip = <Chip label="Available on Roadie" color="green" />;
+  const chip = (
+    <Chip
+      label="Available on Roadie"
+      color="orange"
+      icon={<RoadieRacksIcon className="h-[1rem] w-[1rem] inline mr-1" />}
+    />
+  );
+
   if (!roadieDocsPath) return chip;
   return (
     <Link to={`/docs${roadieDocsPath}`} className="inline-block">
       {chip}
+    </Link>
+  );
+};
+
+const NpmChip = ({ npmjsPackage }) => {
+  if (!npmjsPackage) return null;
+
+  return (
+    <Link to={`https://npmjs.com/package/${npmjsPackage}`} className="inline-block">
+      <Chip
+        label={npmjsPackage}
+        color="npm-red"
+        icon={<NpmIcon className="h-[1.5rem] w-[1.5rem] inline mr-1" />}
+      />
     </Link>
   );
 };
@@ -26,6 +48,7 @@ const Header = ({
       attribution,
       availableOnRoadie,
       roadieDocsPath,
+      npmjsPackage,
     },
   },
 }) => (
@@ -35,16 +58,19 @@ const Header = ({
         <span className="text-orange-500">←</span> Backstage Plugins Guides
       </Link>
     </div>
+
     <header className="bg-white mx-auto max-w-7xl px-4 py-5 text-center lg:text-left xl:rounded-lg lg:flex lg:px-0 lg:mb-10 items-center">
       <div className="lg:w-1/4 mt-5 lg:mt-0">
         <Logo sharpImage={logoImage.childImageSharp} alt={`${humanName} logo`} />
       </div>
+
       <div>
         <Headline className="mb-4">{heading}</Headline>
         <Lead className="mb-4 text-blueroadie">{lead}</Lead>
         <Attribution attribution={attribution} className="mb-4" />
 
         <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
+        <NpmChip npmjsPackage={npmjsPackage} />
       </div>
     </header>
   </>

@@ -2,6 +2,7 @@
 humanName: Sentry
 heading: 'Backstage Sentry Plugin'
 lead: 'Correlate services with problems in production'
+npmjsPackage: "@backstage-community/plugin-sentry"
 attribution:
   text: Spotify
   href: https://spotify.com

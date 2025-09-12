@@ -6,6 +6,8 @@ attribution:
   text: 'SDA SE'
   href: https://sda.se/
 
+npmjsPackage: "@backstage/plugin-fossa"
+
 seo:
   title: 'Backstage FOSSA Plugin | Roadie'
   description: |

@@ -3,6 +3,7 @@ humanName: Kubernetes
 heading: 'Backstage Kubernetes Plugin'
 lead: |
   Visualize your services no matter how or where those services are deployed.
+npmjsPackage: "@backstage/plugin-kubernetes"
 attribution:
   text: Spotify
   href: https://spotify.com

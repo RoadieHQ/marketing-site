@@ -156,23 +156,3 @@ html {
   @apply px-4;
   @apply py-3;
 }
-
-.plugin-intro > p {
-  @apply mb-2;
-}
-
-.plugin-intro > p > a {
-  @apply border-b;
-  @apply border-orange-500;
-}
-
-.plugin-intro li > a {
-  @apply border-b;
-  @apply border-dotted;
-  @apply border-blueroadie;
-}
-
-.plugin-intro > ul {
-  @apply list-disc;
-  @apply pl-6;
-}

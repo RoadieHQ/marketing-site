@@ -8,6 +8,8 @@ attribution:
   text: 'Spread Group'
   href: https://www.spreadgroup.com
 
+npmjsPackage: "@backstage-community/plugin-vault"
+
 seo:
   title: 'Backstage Hashicorp Vault Plugin | Roadie'
   description: |

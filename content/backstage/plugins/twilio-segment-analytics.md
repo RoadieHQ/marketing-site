@@ -6,6 +6,8 @@ attribution:
   text: Twilio Segment
   href: https://segment.com
 
+npmjsPackage: "@segment/backstage-plugin-analytics-module-segment"
+
 seo:
   title: 'Backstage Twilio Segment Analytics Plugin | Roadie'
   description: |
@@ -75,14 +77,6 @@ gettingStarted:
             writeKey: abcABCfooBARtestKEY
 ---
 
-### Things to know
-
 - This plugin requires an active workspace with [Segment](https://segment.com/).
 - This plugin uses [Analytics.js Source](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/).
 - You'll need a [Segment Write Key](https://segment.com/docs/connections/find-writekey/) to use this plugin.
--
-
-### Useful links
-
-- [npm]()
-- [GitHub](https://github.com/segmentio/segment-backstage-plugins/tree/main/plugins/analytics-module-segment)

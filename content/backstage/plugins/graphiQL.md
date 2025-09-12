@@ -6,6 +6,8 @@ attribution:
   text: Spotify
   href: https://spotify.com
 
+npmjsPackage: "@backstage-community/plugin-graphiql"
+
 seo:
   title: 'Backstage GraphiQL Plugin | Roadie'
   description: |

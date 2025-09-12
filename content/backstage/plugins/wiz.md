@@ -2,6 +2,7 @@
 humanName: Wiz
 heading: 'Backstage Wiz Plugin'
 lead: 'See Wiz issues status in Backstage'
+npmjsPackage: "@roadiehq/backstage-plugin-wiz"
 attribution:
   text: Roadie
 intro: |

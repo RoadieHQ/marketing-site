@@ -3,6 +3,7 @@ humanName: Allure
 heading: 'Backstage Allure Plugin'
 # Keep it short
 lead: 'Display Allure test reports in Backstage'
+npmjsPackage: "@backstage-community/plugin-allure"
 attribution:
   text: Deepak Bhardwaj
   href: https://github.com/deepak-bhardwaj-ps
