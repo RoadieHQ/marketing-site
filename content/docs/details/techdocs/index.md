@@ -77,12 +77,12 @@ You can generate / serve your docs locally to view what they would look like whe
 To generate the docs to the site directory of the project you can run the following command:
 
 ```bash
-npx @techdocs/cli generate --docker-image roadiehq/techdocs
+npx @roadiehq/techdocs-cli generate
 ```
 
 To start a local server at port 3000 containing the generated docs, you can run the following command:
 ```bash
-npx @techdocs/cli serve --docker-image roadiehq/techdocs
+npx @roadiehq/techdocs-cli serve
 ```
 
 NB: We have seen some issues generating and serving plantuml and mermaid diagrams sometimes on M1 Macbooks due to unresolved
