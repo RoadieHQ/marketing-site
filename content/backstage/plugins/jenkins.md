@@ -6,20 +6,17 @@ attribution:
   text: '@timja'
   href: https://github.com/timja
 intro: | 
-  <p>
-    <a href="https://www.jenkins.io/" target="_blank">Jenkins</a> is an open source automation server to build, test, and deploy software. It lets you execute a series of actions to build a continuous integration pipeline. Jenkins is well known for its extensive set of plugins.
-  </p>
-  <p>
-    The Jenkins Backstage plugin brings builds data associated with your services to your Developer Portal. The  plugin can pull build information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
-    In this guide you'll find:
-  </p>
-  <ul>
-    <li><a href="#installation-steps">Installation steps</a></li>
-    <li><a href="#section-add-annotations">Required annotations</a></li>
-    <li><a href="#things-to-know">How to get a Jenkins API token</a></li>
-    <li><a href="#setting-up-a-local-jenkins-environment">Setting up Jenkins locally</a></li>
-    <li><a href="#supported-types-of-jenkins-projects">Supported types of Jenkins projects</a></li>
-  </ul>
+  Jenkins is an open source automation server to build, test, and deploy software. It lets you execute a series of actions to build a continuous integration pipeline. Jenkins is well known for its extensive set of plugins.
+
+  The Jenkins Backstage plugin brings builds data associated with your services to your Developer Portal. The  plugin can pull build information from a GitHub Organization project in Jenkins. Other Jenkins project types like Freestyle project and Pipeline are not supported yet.
+
+  In this guide you'll find:
+
+    - [Installation steps](#installation-steps)
+    - [Required annotations](#section-add-annotations)
+    - [How to get a Jenkins API token](#things-to-know)
+    - [Setting up Jenkins locally](#setting-up-a-local-jenkins-environment)
+    - [Supported types of Jenkins projects](#supported-types-of-jenkins-projects)
 
 seo:
   title: 'Backstage Jenkins Plugin | Roadie'

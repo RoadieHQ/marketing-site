@@ -8,9 +8,7 @@ attribution:
   href: https://spotify.com
 
 intro: |
-  <p>
-    As a prerequisite, you need to have installed and configured the <a href='https://github.com/backstage/community-plugins/tree/main/workspaces/azure-devops/plugins/azure-devops-backend'>Azure DevOps Backend</a> plugin before you move forward with any of these steps.
-  </p>
+    As a prerequisite, you need to have installed and configured the [Azure DevOps Backend](https://github.com/backstage/community-plugins/tree/main/workspaces/azure-devops/plugins/azure-devops-backend) plugin before you move forward with any of these steps.
 
 seo:
   # Don't forget to end with "| Roadie"

@@ -6,18 +6,15 @@ attribution:
   text: Roadie
   href: https://roadie.io
 intro: |
-  <p>
-      <a href="https://www.atlassian.com/software/jira" arget="_blank">Jira</a> is an issue tracking product developed by Atlassian that allows bug tracking and agile project management. Jira offers numerous features like sprints for Scrum management and other agile boards like Kanban. This allows teams to organize projects, define, assign and prioritize tasks. Furthermore, Jira is ideal for progress tracking, bug tracking and complete transparency throughout the entire project lifecycle.
-  </p>
-  <p>
-    The Jira Backstage plugin lets you bring the Jira project related to your service into the Catalog. You can keep track of tasks, stories, bugs, and epics from the service page in Backstage. 
-    In this guide you'll find:
-  </p>
-  <ul>
-    <li><a href="#installation-steps">Installation steps</a></li>
-    <li><a href="#section-add-annotations">Required annotations</a></li>
-    <li><a href="#things-to-know">Obtaining a Jira token</a></li>
-  </ul>
+  Jira is an issue tracking product developed by Atlassian that allows bug tracking and agile project management. Jira offers numerous features like sprints for Scrum management and other agile boards like Kanban. This allows teams to organize projects, define, assign and prioritize tasks. Furthermore, Jira is ideal for progress tracking, bug tracking and complete transparency throughout the entire project lifecycle.
+
+  The Jira Backstage plugin lets you bring the Jira project related to your service into the Catalog. You can keep track of tasks, stories, bugs, and epics from the service page in Backstage.
+
+  In this guide you'll find:
+
+    - [Installation steps](#installation-steps)
+    - [Required annotations](#section-add-annotations)
+    - [Obtaining a Jira token](#things-to-know)
 
 seo:
   title: 'Backstage Jira Plugin | Roadie'
