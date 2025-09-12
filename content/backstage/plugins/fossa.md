@@ -7,6 +7,7 @@ attribution:
   href: https://sda.se/
 
 npmjsPackage: "@backstage/plugin-fossa"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/fossa/plugins/fossa"
 
 seo:
   title: 'Backstage FOSSA Plugin | Roadie'

@@ -4,6 +4,7 @@ heading: 'Backstage Tech Insights Plugin'
 lead: |
   Visualize, understand and optimize your team's tech health.
 npmjsPackage: "@backstage-community/plugin-tech-insights"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/tech-insights"
 attribution:
   text: Roadie
   href: https://github.com/backstage/backstage

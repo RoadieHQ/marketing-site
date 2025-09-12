@@ -3,7 +3,7 @@ import { Lead, Headline, Link, Chip } from 'components';
 
 import Logo from './Logo';
 import Attribution from './Attribution';
-import { NpmIcon, RoadieRacksIcon } from 'components/icons';
+import { NpmIcon, RoadieRacksIcon, GitHubIcon } from 'components/icons';
 
 const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
   if (!availableOnRoadie) return null;
@@ -11,7 +11,6 @@ const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
   const chip = (
     <Chip
       label="Available on Roadie"
-      color="orange"
       icon={<RoadieRacksIcon className="h-[1rem] w-[1rem] inline mr-1" />}
     />
   );
@@ -38,6 +37,22 @@ const NpmChip = ({ npmjsPackage }) => {
   );
 };
 
+const GitHubChip = ({ codeLocation }) => {
+  if (!codeLocation) return null;
+
+  const label = URL.parse(codeLocation).pathname.split('/')[2];
+
+  return (
+    <Link to={codeLocation} className="inline-block">
+      <Chip
+        label={label}
+        color="black"
+        icon={<GitHubIcon className="h-[1.2rem] w-[1.2rem] inline mr-1" />}
+      />
+    </Link>
+  );
+};
+
 const Header = ({
   plugin: {
     frontmatter: {
@@ -49,6 +64,7 @@ const Header = ({
       availableOnRoadie,
       roadieDocsPath,
       npmjsPackage,
+      codeLocation,
     },
   },
 }) => (
@@ -71,6 +87,7 @@ const Header = ({
 
         <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
         <NpmChip npmjsPackage={npmjsPackage} />
+        <GitHubChip codeLocation={codeLocation} />
       </div>
     </header>
   </>

@@ -7,6 +7,7 @@ attribution:
   href: https://humanitec.com
 
 npmjsPackage: "@humanitec/backstage-plugin"
+codeLocation: "https://github.com/humanitec/humanitec-backstage-plugins"
 
 seo:
   title: 'Backstage Humanitec Plugin | Roadie'

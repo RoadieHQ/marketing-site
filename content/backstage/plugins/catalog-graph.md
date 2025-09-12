@@ -3,6 +3,7 @@ humanName: Catalog Graph Plugin
 heading: 'Backstage Catalog Graph Plugin'
 lead: 'Visualize relationships between the entities in your Software Catalog.'
 npmjsPackage: "@backstage/plugin-catalog-graph"
+codeLocation: "https://github.com/backstage/backstage/tree/master/plugins/catalog-graph"
 attribution:
   text: SDA SE
   href: https://sda.se/

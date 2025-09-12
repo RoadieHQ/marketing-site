@@ -3,6 +3,7 @@ humanName: AWS Proxy SigV4
 heading: 'Backstage AWS Proxy SigV4 Plugin'
 lead: 'An AWS Proxy for Backstage that uses SigV4 signing'
 npmjsPackage: "@segment/backstage-plugin-proxy-sigv4-backend"
+codeLocation: "https://github.com/segmentio/segment-backstage-plugins/tree/main/plugins/proxy-sigv4-backend"
 attribution:
   text: Twilio Segment
   href: https://segment.com/opensource/

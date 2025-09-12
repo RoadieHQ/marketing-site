@@ -7,6 +7,7 @@ attribution:
   href: https://segment.com
 
 npmjsPackage: "@segment/backstage-plugin-analytics-module-segment"
+codeLocation: "https://github.com/segmentio/segment-backstage-plugins/tree/main/plugins/analytics-module-segment"
 
 seo:
   title: 'Backstage Twilio Segment Analytics Plugin | Roadie'

@@ -4,6 +4,7 @@ heading: 'Backstage Azure DevOps Plugin'
 # Keep it short
 lead: 'See Azure DevOps information from Azure Pipelines and Azure Repos in Backstage'
 npmjsPackage: "@backstage-community/plugin-azure-devops"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/azure-devops"
 attribution:
   text: Spotify
   href: https://spotify.com
