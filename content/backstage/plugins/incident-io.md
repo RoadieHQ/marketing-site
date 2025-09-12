@@ -20,7 +20,7 @@ seo:
 logoImage: '../../assets/logos/incident/incident-logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /incident.io/
+roadieDocsPath: /integrations/incident.io/
 
 gettingStarted:
   - intro: Install the plugin package in your Backstage app

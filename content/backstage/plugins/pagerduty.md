@@ -17,7 +17,7 @@ coverImage: '../../assets/pagerduty-plugin-2077x955.webp'
 coverImageAlt: 'PagerDuty incidents for sample-service-1 rendered in Backstage.'
 
 availableOnRoadie: true
-roadieDocsPath: /pagerduty/
+roadieDocsPath: /integrations/pagerduty/
 
 gettingStarted:
   - intro: The PagerDuty plugin is a frontend plugin. You will need to install it, configure it and add it to an appropriate location on the entity page.

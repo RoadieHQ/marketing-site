@@ -17,7 +17,7 @@ coverImage: '../../assets/backstage/plugins/firehydrant/firehydrant-service-card
 coverImageAlt: 'FireHydrant in Backstage'
 
 availableOnRoadie: true
-roadieDocsPath: /firehydrant/
+roadieDocsPath: /integrations/firehydrant/
 
 gettingStarted:
   - intro: Install the front-end plugin.

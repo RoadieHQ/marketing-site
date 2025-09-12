@@ -16,7 +16,7 @@ seo:
 logoImage: '../../assets/logos/endoflife/logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /endoflife/
+roadieDocsPath: /integrations/endoflife/
 
 gettingStarted:
   - title: Plugin installation

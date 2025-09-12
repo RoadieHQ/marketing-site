@@ -18,7 +18,7 @@ coverImage: '../../assets/buildkite-plugin-overview.webp'
 coverImageAlt: 'A list of builds in a table along with a status and retry button for each build.'
 
 availableOnRoadie: true
-roadieDocsPath: /buildkite/
+roadieDocsPath: /integrations/buildkite/
 
 gettingStarted:
   - intro: Install the plugin

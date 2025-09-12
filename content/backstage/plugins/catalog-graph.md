@@ -16,7 +16,7 @@ coverImage: '../../assets/catalog-graph-plugin.webp'
 coverImageAlt: 'Backstage Catalog Graph Plugin showing relationships between entities'
 
 availableOnRoadie: true
-roadieDocsPath: /catalog-graph/
+roadieDocsPath: /integrations/catalog-graph/
 
 gettingStarted:
   - intro: Install the [plugin](https://github.com/backstage/backstage/blob/master/plugins/catalog-graph/README.md) into Backstage.

@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/stackoverflow/so-logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /stackoverflow/
+roadieDocsPath: /integrations/stackoverflow/
 
 gettingStarted:
 

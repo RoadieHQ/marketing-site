@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /iframe/
+roadieDocsPath: /integrations/iframe/
 
 gettingStarted: # What will this step accomplish?
   - intro: Install the plugin into your Backstage instance.

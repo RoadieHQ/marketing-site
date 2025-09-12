@@ -17,7 +17,7 @@ coverImageAlt: |
   Service errors overview inside a Bugsnag plugin.
 
 availableOnRoadie: true
-roadieDocsPath: /bugsnag/
+roadieDocsPath: /integrations/bugsnag/
 
 gettingStarted:
   - intro: Install the plugin into Backstage.

@@ -18,7 +18,7 @@ coverImage: '../../assets/kubernetes-plugin.webp'
 coverImageAlt: 'A screenshot of the Kubernetes plugin.'
 
 availableOnRoadie: true
-roadieDocsPath: /kubernetes/
+roadieDocsPath: /integrations/kubernetes/
 
 gettingStarted:
   - intro: The Kubernetes plugin is made up of @backstage/plugin-kubernetes and @backstage/plugin-kubernetes-backend. To make it work, you will need to install and configure them.

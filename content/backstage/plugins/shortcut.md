@@ -17,7 +17,7 @@ coverImageAlt: |
   Stories overview in Shortcut plugin.
 
 availableOnRoadie: true
-roadieDocsPath: /shortcut-plugin/
+roadieDocsPath: /integrations/shortcut-plugin/
 
 gettingStarted:
   - intro: Install the plugin into Backstage.

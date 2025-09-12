@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/splunk/splunk-dark.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /splunk-on-call/
+roadieDocsPath: /integrations/splunk-on-call/
 
 gettingStarted:
   - intro: 'Install the plugin package in your Backstage app'

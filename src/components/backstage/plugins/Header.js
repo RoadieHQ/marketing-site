@@ -10,7 +10,7 @@ const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
   const chip = <Chip label="Available on Roadie" color="green" />;
   if (!roadieDocsPath) return chip;
   return (
-    <Link to={`/docs/integrations${roadieDocsPath}`} className="inline-block">
+    <Link to={`/docs${roadieDocsPath}`} className="inline-block">
       {chip}
     </Link>
   );

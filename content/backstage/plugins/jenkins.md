@@ -28,7 +28,7 @@ coverImage: '../../assets/backstage/plugins/jenkins/jenkins-plugin.webp'
 coverImageAlt: 'A screenshot of the Jenkins plugin.'
 
 availableOnRoadie: true
-roadieDocsPath: /jenkins/
+roadieDocsPath: /integrations/jenkins/
 
 thingsToKnowTitle: How to get a Jenkins API token
 

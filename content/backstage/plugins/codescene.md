@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/codescene/codescene.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /codescene/
+roadieDocsPath: /integrations/codescene/
 
 gettingStarted:
   # What will this step accomplish?

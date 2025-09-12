@@ -14,7 +14,7 @@ seo:
 logoImage: '../../assets/logos/humanitec/humanitec-logo.webp'
 
 availableOnRoadie: true
-roadieDocsPath: /humanitec/
+roadieDocsPath: /integrations/humanitec/
 
 gettingStarted: # What will this step accomplish?
   - intro: |
