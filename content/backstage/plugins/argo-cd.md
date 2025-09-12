@@ -48,19 +48,15 @@ coverImageAlt: 'A preview of Argo CD overview widget including kubernetes pod st
 availableOnRoadie: true
 roadieDocsPath: /integrations/argocd/
 
-thingsToKnowTitle: Configure multiple Argo CD instances
-thingsToKnowHostDependant: true
-thingsToKnowOnRoadie: /docs/integrations/argocd/#multiple-argo-cd-instances
-
 gettingStarted:
   - intro: Install the frontend plugin package.
     language: bash
     code: |
-      yarn add @roadiehq/backstage-plugin-argo-cd
+      yarn --cwd packages/app  add @roadiehq/backstage-plugin-argo-cd
   - intro: Install the backend plugin package.
     language: bash
     code: |
-      yarn add @roadiehq/backstage-plugin-argo-cd-backend
+      yarn --cwd packages/backend add @roadiehq/backstage-plugin-argo-cd-backend
   - intro: Add the backend plugin to your backend using the new backend system.
     language: typescript
     code: |
@@ -70,7 +66,7 @@ gettingStarted:
       const backend = createBackend();
       
       // Add the Argo CD backend plugin
-      backend.add(import('@roadiehq/backstage-plugin-argo-cd-backend/alpha'));
+      backend.add(import('@roadiehq/backstage-plugin-argo-cd-backend'));
       
       backend.start();
   - intro: Configure your Argo CD instances in app-config.yaml
@@ -133,11 +129,11 @@ The Argo CD plugin seamlessly integrates with your entity pages to provide clear
 
 The plugin displays your Argo CD application status directly in the entity overview, showing sync status, health status, and deployment timing at a glance.
 
-## Plugin Components
+### Plugin Components
 
 The Argo CD plugin provides two main UI components that you can add to your entity pages:
 
-### Overview Card
+#### Overview Card
 
 The `EntityArgoCDOverviewCard` displays essential information about your Argo CD applications:
 - Application name and Argo CD instance
@@ -146,7 +142,7 @@ The `EntityArgoCDOverviewCard` displays essential information about your Argo CD
 - Last sync timestamp
 - Direct link to the Argo CD dashboard
 
-### History Card
+#### History Card
 
 The `EntityArgoCDHistoryCard` shows deployment history:
 - Recent application revisions
@@ -164,11 +160,11 @@ import { EntityArgoCDHistoryCard } from '@roadiehq/backstage-plugin-argo-cd';
 </Grid>
 ```
 
-## Required Annotations
+### Required Annotations
 
 To connect your Backstage entities to Argo CD applications, you need to add specific annotations to your entity metadata:
 
-### Basic Application Mapping
+#### Basic Application Mapping
 
 For a single Argo CD application:
 
@@ -178,7 +174,7 @@ metadata:
     argocd/app-name: my-service
 ```
 
-### Multiple Applications
+#### Multiple Applications
 
 To display multiple applications for one entity:
 
@@ -188,7 +184,7 @@ metadata:
     argocd/app-selector: app1,app2,app3
 ```
 
-### Custom Namespace
+#### Custom Namespace
 
 If using the "Applications in any namespace" feature:
 
@@ -199,7 +195,7 @@ metadata:
     argocd/app-namespace: custom-namespace
 ```
 
-### Instance Selection
+#### Instance Selection
 
 For multiple Argo CD instances:
 
@@ -210,9 +206,9 @@ metadata:
     argocd/instance-name: production-cluster
 ```
 
-## Configuration Options
+### Configuration Options
 
-### Single Argo CD Instance
+#### Single Argo CD Instance
 
 For a single Argo CD instance, your `app-config.yaml` should include:
 
@@ -227,7 +223,7 @@ argocd:
           url: https://your-argocd-instance.com
 ```
 
-### Multiple Argo CD Instances
+#### Multiple Argo CD Instances
 
 For multiple instances across different environments:
 
@@ -249,7 +245,7 @@ argocd:
           token: ${ARGOCD_PROD_TOKEN}
 ```
 
-### Authentication Methods
+#### Authentication Methods
 
 The plugin supports several authentication methods:
 
@@ -287,9 +283,9 @@ argocd:
           # Will use global username/password
 ```
 
-## Advanced Features
+### Advanced Features
 
-### Application Namespace Support
+#### Application Namespace Support
 
 Enable the "Applications in any namespace" beta feature:
 
@@ -307,7 +303,7 @@ metadata:
     argocd/app-namespace: my-namespace
 ```
 
-### Performance Optimization
+#### Performance Optimization
 
 For applications with many revisions, limit the number of loaded revisions:
 
@@ -317,7 +313,7 @@ argocd:
   revisionsLimit: 10
 ```
 
-### Self-Signed Certificates
+#### Self-Signed Certificates
 
 For Argo CD instances with self-signed certificates (not recommended for production):
 
@@ -333,9 +329,9 @@ argocd:
           skipTLSVerify: true
 ```
 
-## Troubleshooting
+### Troubleshooting
 
-### Common Issues
+#### Common Issues
 
 **Plugin not showing:** Verify that your entity has the correct annotations and that the `isArgocdAvailable` function returns true.
 
@@ -345,7 +341,7 @@ argocd:
 
 **Multiple instances not working:** Ensure each instance has a unique name and that instance-specific annotations match the configured instance names.
 
-### Required Permissions
+#### Required Permissions
 
 Your Argo CD user needs the following permissions:
 - Read access to applications
@@ -361,3 +357,8 @@ policy.csv: |
   p, role:backstage, logs, get, */*, allow
   g, backstage-user, role:backstage
 ```
+
+### References
+
+ - [Argo CD Backstage Plugin frontend](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-argo-cd)
+ - [Argo CD Backstage Plugin backend](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/backend/backstage-plugin-argo-cd-backend)
