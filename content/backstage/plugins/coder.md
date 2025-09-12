@@ -3,6 +3,7 @@ humanName: Coder
 heading: 'Backstage Coder Plugin'
 lead: 'Create and manage Coder workspaces from Backstage'
 npmjsPackage: "@coder/backstage-plugin-coder"
+codeLocation: "https://github.com/coder/backstage-plugins/tree/main/plugins/backstage-plugin-coder"
 attribution:
   text: Coder
   href: https://coder.com/ 

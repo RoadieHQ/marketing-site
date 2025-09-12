@@ -8,6 +8,7 @@ attribution:
   href: https://github.com/dweber019
 
 npmjsPackage: "@dweber019/backstage-plugin-endoflife"
+codeLocation: "https://github.com/dweber019/backstage-plugins/tree/main/plugins/endoflife"
 
 seo:
   # Don't forget to end with "| Roadie"

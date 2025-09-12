@@ -3,6 +3,7 @@ humanName: API Docs
 heading: 'Backstage API Docs Plugin'
 lead: 'Discover and display API entities for your components in Backstage'
 npmjsPackage: "@backstage/plugin-api-docs"
+codeLocation: "https://github.com/backstage/backstage/tree/master/plugins/api-docs"
 attribution:
   text: SDA-SE
   href: https://sda.se/

@@ -4,6 +4,7 @@ heading: 'Backstage Tech Radar Plugin'
 lead: |
   Visualize the your company's official guidelines of different areas of software development.
 npmjsPackage: "@backstage-community/plugin-tech-radar"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/tech-radar/plugins/tech-radar"
 attribution:
   text: Spotify
   href: https://spotify.com

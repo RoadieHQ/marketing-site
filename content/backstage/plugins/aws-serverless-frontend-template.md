@@ -4,6 +4,7 @@ heading: 'Backstage Scaffolder Task to create an AWS Serverless Frontend'
 # Keep it short
 lead: 'Create AWS Serverless Frontend'
 npmjsPackage: "@roadiehq/scaffolder-backend-module-aws"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-aws"
 attribution:
   text: Roadie
   href: https://github.com/roadie-demo/scaffolder-examples

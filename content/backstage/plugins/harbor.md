@@ -8,6 +8,7 @@ attribution:
   href: https://github.com/BESTSELLER
 
 npmjsPackage: "@bestsellerit/backstage-plugin-harbor"
+codeLocation: "https://github.com/container-registry/backstage-plugin-harbor"
 
 seo:
   title: 'Backstage Harbor Plugin | Roadie'

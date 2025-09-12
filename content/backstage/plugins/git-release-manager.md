@@ -8,6 +8,7 @@ attribution:
   href: https://github.com/spotify
 
 npmjsPackage: "@backstage-community/plugin-git-release-manager"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/git-release-manager/plugins/git-release-manager"
 
 seo:
   title: 'Backstage Git Release Manager Plugin | Roadie'

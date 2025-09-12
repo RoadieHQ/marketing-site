@@ -3,6 +3,7 @@ humanName: LaunchDarkly
 heading: 'Backstage LaunchDarkly Plugin'
 lead: 'LaunchDarkly feature flags associated to software in the catalog'
 npmjsPackage: "@roadiehq/backstage-plugin-launchdarkly"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-launchdarkly"
 attribution:
   text: Roadie
   href: https://roadie.io

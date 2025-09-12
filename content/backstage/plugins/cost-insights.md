@@ -4,6 +4,7 @@ humanName: Cost Insights
 heading: 'Backstage Cost Insights Plugin'
 lead: 'Visualize, understand and optimize your cloud costs.'
 npmjsPackage: "@backstage-community/plugin-cost-insights"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/cost-insights/plugins/cost-insights"
 attribution:
   text: Spotify
   href: https://spotify.com

@@ -16,6 +16,9 @@ logoImage: '../../assets/logos/sonarqube/logo-sonar.webp'
 coverImage: '../../assets/sonar-plugin.webp'
 coverImageAlt: 'A screenshot of the SonarQube and SonarCloud plugin.'
 
+npmjsPackage: "@backstage/plugin-sonarqube"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/sonarqube/plugins/sonarqube"
+
 availableOnRoadie: true
 roadieDocsPath: /integrations/sonarqube/
 

@@ -7,6 +7,7 @@ attribution:
   href: https://github.com/timja
 
 npmjsPackage: "@backstage-community/plugin-jenkins"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/jenkins/plugins/jenkins"
 intro: | 
   Jenkins is an open source automation server to build, test, and deploy software. It lets you execute a series of actions to build a continuous integration pipeline. Jenkins is well known for its extensive set of plugins.
 

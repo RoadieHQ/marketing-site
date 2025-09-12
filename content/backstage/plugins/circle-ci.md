@@ -3,6 +3,7 @@ humanName: Circle CI
 heading: 'Backstage Circle CI Plugin'
 lead: 'See Circle CI Builds in Backstage'
 npmjsPackage: "@circleci/backstage-plugin"
+codeLocation: "https://github.com/CircleCI-Public/backstage-plugin/tree/main/plugins/circleci"
 attribution:
   text: CircleCI
   href: https://circleci.com/

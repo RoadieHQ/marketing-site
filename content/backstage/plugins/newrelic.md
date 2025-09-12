@@ -3,6 +3,7 @@ humanName: New Relic
 heading: 'Backstage New Relic Plugin'
 lead: 'Observability platform built to help engineers create and monitor their software.'
 npmjsPackage: "@backstage-community/plugin-newrelic"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/newrelic/plugins/newrelic"
 attribution:
   text: '@timwheelercorn'
   href: https://github.com/timwheelercom

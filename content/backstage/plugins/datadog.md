@@ -8,6 +8,7 @@ attribution:
   href: https://Roadie.io
 
 npmjsPackage: "@roadiehq/backstage-plugin-datadog"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-datadog"
 
 seo:
   title: 'Backstage Datadog Plugin | Roadie'

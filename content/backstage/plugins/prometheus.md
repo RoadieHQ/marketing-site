@@ -4,6 +4,7 @@ heading: 'Backstage Prometheus Plugin'
 lead: |
   Visualize key metrics and alerts of your infrastructure.
 npmjsPackage: "@roadiehq/backstage-plugin-prometheus"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-prometheus"
 attribution:
   text: Roadie
   href: https://github.com/RoadieHQ/roadie-backstage-plugins

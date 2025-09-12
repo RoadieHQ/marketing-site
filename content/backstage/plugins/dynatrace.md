@@ -8,6 +8,7 @@ attribution:
   href: https://github.com/dynatrace
 
 npmjsPackage: "@dynatrace/backstage-plugin-dql"
+codeLocation: "https://github.com/Dynatrace/backstage-plugin"
 
 seo:
   # Don't forget to end with "| Roadie"

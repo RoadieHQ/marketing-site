@@ -4,6 +4,7 @@ heading: 'Backstage Kubernetes Plugin'
 lead: |
   Visualize your services no matter how or where those services are deployed.
 npmjsPackage: "@backstage/plugin-kubernetes"
+codeLocation: "https://github.com/backstage/backstage/tree/master/plugins/kubernetes"
 attribution:
   text: Spotify
   href: https://spotify.com

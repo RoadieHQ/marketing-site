@@ -7,6 +7,7 @@ attribution:
   href: https://www.trivago.com
 
 npmjsPackage: "@backstage-community/plugin-gcp-projects"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/gcp-projects/plugins/gcp-projects"
 
 seo:
   title: 'Backstage Google Cloud Platform Projects Plugin | Roadie'

@@ -9,6 +9,7 @@ attribution:
   href: https://www.spreadgroup.com
 
 npmjsPackage: "@backstage-community/plugin-vault"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/vault"
 
 seo:
   title: 'Backstage Hashicorp Vault Plugin | Roadie'

@@ -7,6 +7,7 @@ attribution:
   href: https://spotify.com
 
 npmjsPackage: "@backstage/plugin-gcalendar"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/gcalendar/plugins/gcalendar"
 
 seo:
   title: 'Backstage Google Calendar Plugin | Roadie'

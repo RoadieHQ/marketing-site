@@ -7,6 +7,7 @@ attribution:
   text: Weaveworks
 
 npmjsPackage: "@weaveworksoss/backstage-plugin-flux"
+codeLocation: "https://github.com/weaveworks/weaveworks-backstage/tree/main/plugins/backstage-plugin-flux"
 
 seo:
   # Don't forget to end with "| Roadie"

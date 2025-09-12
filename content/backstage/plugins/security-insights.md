@@ -3,6 +3,7 @@ humanName: Security Insights
 heading: 'Backstage Security Insights Plugin'
 lead: 'See Security Insights for your components in Backstage'
 npmjsPackage: "@roadiehq/backstage-plugin-security-insights"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-security-insights"
 attribution:
   text: Roadie
   href: https://roadie.io

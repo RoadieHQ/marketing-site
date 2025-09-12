@@ -7,6 +7,7 @@ attribution:
   href: https://spotify.com and https://roadie.io
 
 npmjsPackage: "@backstage/plugin-home"
+codeLocation: "https://github.com/backstage/backstage/tree/master/plugins/home"
 
 seo:
   title: 'Backstage GitHub Actions Plugin | Roadie'

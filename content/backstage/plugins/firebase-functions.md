@@ -7,6 +7,7 @@ attribution:
   href: https://roadie.io
 
 npmjsPackage: "@roadiehq/backstage-plugin-firebase-functions"
+codeLocation: "https://github.com/RoadieHQ/backstage-plugin-firebase-functions"
 
 seo:
   title: 'Backstage Firebase Functions Plugin | Roadie'

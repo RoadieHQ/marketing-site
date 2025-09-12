@@ -32,7 +32,7 @@ const Doc = ({
           <ContentHeader frontmatter={doc.frontmatter} dateKey="publishedDate" />
           
           {!isEmpty(doc.frontmatter.integrationType) && (
-            <Chip label={doc.frontmatter.integrationType} color="orange" />
+            <Chip label={doc.frontmatter.integrationType} />
           )}
         </div>
 

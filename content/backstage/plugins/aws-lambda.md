@@ -3,6 +3,7 @@ humanName: AWS Lambda
 heading: 'Backstage AWS Lambda Plugin'
 lead: 'See AWS Lambda functions for your components in Backstage'
 npmjsPackage: "@roadiehq/backstage-plugin-aws-lambda"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-aws-lambda"
 attribution:
   text: Roadie
   href: https://roadie.io

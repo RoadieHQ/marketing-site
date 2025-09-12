@@ -8,6 +8,7 @@ attribution:
   href: https://incident.io/
 
 npmjsPackage: "@incident-io/backstage"
+codeLocation: "https://github.com/incident-io/backstage-plugins"
 
 intro: |
   As a prerequisite, you need to have configured the Incident.io [catalog-importer](https://github.com/incident-io/catalog-importer) to sync with your Backstage catalog. You can visit your incident.io dashboard to create a custom field that is powered by the Backstage Component catalog type.

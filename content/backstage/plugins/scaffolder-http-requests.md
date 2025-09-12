@@ -4,6 +4,7 @@ heading: 'Backstage HTTP request scaffolder actions'
 # Keep it short
 lead: 'Create HTTP requests with the scaffolder'
 npmjsPackage: "@roadiehq/scaffolder-backend-module-http-request"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/scaffolder-actions/scaffolder-backend-module-http-request"
 attribution:
   text: Roadie
   href: https://github.com/RoadieHQ/roadie-backstage-plugins

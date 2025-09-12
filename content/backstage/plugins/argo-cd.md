@@ -4,6 +4,7 @@ heading: 'Backstage Argo CD Plugin'
 # Keep it short
 lead: 'See Argo CD status in Backstage'
 npmjsPackage: "@roadiehq/backstage-plugin-argo-cd"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-argo-cd"
 attribution:
   text: Roadie, in collaboration with American Airlines
 intro: | 

@@ -8,6 +8,7 @@ attribution:
   href: https://firehydrant.io
 
 npmjsPackage: "@backstage-community/plugin-firehydrant"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/firehydrant/plugins/firehydrant"
 
 seo:
   title: 'Backstage FireHydrant Plugin | Roadie'

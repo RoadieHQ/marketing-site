@@ -3,6 +3,7 @@ humanName: Codescene
 heading: 'Backstage Codescene Plugin'
 lead: 'See your Codescene projects and analysis in Backstage.'
 npmjsPackage: "@backstage-community/plugin-codescene"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/codescene/plugins/codescene"
 attribution:
   text: Codescene
   href: https://codescene.com/
