@@ -121,8 +121,6 @@ gettingStarted:
       export ARGOCD_AUTH_TOKEN='argocd.token=<your-session-token>'
 ---
 
-## What it looks like
-
 The Argo CD plugin seamlessly integrates with your entity pages to provide clear visibility into your deployment status. Here's how it appears in your Backstage instance:
 
 ![Argo CD Plugin Overview](../../assets/argo-cd-plugin.webp)
