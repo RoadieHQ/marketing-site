@@ -30,7 +30,7 @@ Roadie has developed a scaffolder template that allows you to bootstrap a node.j
 
 #### Option 2 - Installing the library manually
 
-The Roadie Agent package can be included in any Node.js application and incorporated to existing projects if preferred. The library allows you to run multiple scaffolder actions and custom entity providers from within your own infrastructure. To get started, you need to add the Node.js library `@roadiehq/roadie-agent` as a dependency into your project and implement your wanted actions or entity providers using the instructions in the repository. 
+The Roadie Agent package can be included in any Node.js application and incorporated to existing projects if preferred. The library allows you to run multiple scaffolder actions and custom entity providers from within your own infrastructure. To get started, you need to add the Node.js library `@roadiehq/roadie-agent` as a dependency into your project and implement your wanted actions or entity providers using the instructions in the repository. To use the manual installation path, please follow the configuration instructions defined in the package documentation: https://www.npmjs.com/package/@roadiehq/roadie-agent.  
 
 ### Writing your first action
 
