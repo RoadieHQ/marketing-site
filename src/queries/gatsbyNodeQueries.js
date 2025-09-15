@@ -39,7 +39,8 @@ module.exports.CASE_STUDIES_QUERY = `
 }
 `;
 
-
+// frontmatter is required in this query because they are server side rendered so
+// that we can pull data from the npmjs API before the page is rendered.
 module.exports.PLUGINS_QUERY = `
 {
   plugins: allMarkdownRemark(
@@ -52,6 +53,10 @@ module.exports.PLUGINS_QUERY = `
       node {
         fields {
           slug
+        }
+
+        frontmatter {
+          npmjsPackage
         }
       }
     }

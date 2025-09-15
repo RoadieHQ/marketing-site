@@ -12,6 +12,7 @@ import {
   InstallationSteps,
   PlaceholderBody,
   Notes,
+  Sidebar,
 } from 'components/backstage/plugins';
 
 const Body = ({ plugin, siteMetadata }) => {
@@ -20,7 +21,6 @@ const Body = ({ plugin, siteMetadata }) => {
       <>
         <Intro plugin={plugin} />
 
-        <PluginCTA plugin={plugin} />
         <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
 
         <InstallationSteps plugin={plugin} />
@@ -44,7 +44,7 @@ const recordExitIntentModalHasBeenShown = () => {
 };
 
 
-const PluginTemplate = ({ data }) => {
+const PluginTemplate = ({ data, serverData }) => {
   const {
     plugin,
     site: { siteMetadata },
@@ -84,11 +84,19 @@ const PluginTemplate = ({ data }) => {
 
       <Header plugin={plugin} />
 
-      <main className="pt-4 pb-8 px-4 lg:pb-28">
-        <div className="relative max-w-lg mx-auto lg:max-w-4xl">
-          <Body plugin={plugin} siteMetadata={siteMetadata} />
-          <Notes plugin={plugin} />
-          <PluginCTA plugin={plugin} />
+      <main className="pb-8 px-4 lg:pb-28">
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 gap-3">
+            <article>
+              <Body plugin={plugin} siteMetadata={siteMetadata} />
+              <Notes plugin={plugin} />
+              <PluginCTA plugin={plugin} />
+            </article>
+
+            <aside className="col-span-1">
+              <Sidebar npmData={serverData} />
+            </aside>
+          </div>
         </div>
       </main>
 
@@ -161,3 +169,23 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export async function getServerData({ pageContext }) {
+  try {
+    const res = await fetch(`https://registry.npmjs.org/${pageContext.npmjsPackage}`)
+
+    if (!res.ok) {
+      throw new Error(`Response failed`)
+    }
+
+    return {
+      props: await res.json(),
+    }
+  } catch (error) {
+    return {
+      status: 500,
+      headers: {},
+      props: {}
+    }
+  }
+}

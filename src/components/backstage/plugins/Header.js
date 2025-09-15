@@ -53,6 +53,10 @@ const GitHubChip = ({ codeLocation }) => {
   );
 };
 
+//         <Lead className="mb-4 text-blueroadie">{lead}</Lead>
+// <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
+//      <NpmChip npmjsPackage={npmjsPackage} />
+
 const Header = ({
   plugin: {
     frontmatter: {
@@ -69,25 +73,27 @@ const Header = ({
   },
 }) => (
   <>
-    <div className="mx-auto max-w-7xl px-4 py-10">
+    <div className="mx-auto max-w-7xl">
       <Link to="/backstage/plugins/" className="font-bold text-blueroadie">
         <span className="text-orange-500">←</span> Backstage Plugins Guides
       </Link>
     </div>
 
-    <header className="bg-white mx-auto max-w-7xl px-4 py-5 text-center lg:text-left xl:rounded-lg lg:flex lg:px-0 lg:mb-10 items-center">
-      <div className="lg:w-1/4 mt-5 lg:mt-0">
-        <Logo sharpImage={logoImage.childImageSharp} alt={`${humanName} logo`} />
+    <header className="bg-white mx-auto max-w-7xl px-4 xl:rounded-lg lg:flex lg:px-0 items-center">
+      <div>
+        <Logo minHeight={140} sharpImage={logoImage.childImageSharp} alt={`${humanName} logo`} />
       </div>
 
       <div>
-        <Headline className="mb-4">{heading}</Headline>
-        <Lead className="mb-4 text-blueroadie">{lead}</Lead>
+        <Headline size="small">{heading}</Headline>
         <Attribution attribution={attribution} className="mb-4" />
+<<<<<<< HEAD
 
         <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
         <NpmChip npmjsPackage={npmjsPackage} />
         <GitHubChip codeLocation={codeLocation} />
+=======
+>>>>>>> bc572925 (Sidebar)
       </div>
     </header>
   </>

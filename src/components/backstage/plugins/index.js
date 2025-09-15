@@ -9,3 +9,4 @@ export { default as CoverImage } from './CoverImage';
 export { default as InstallationSteps } from './InstallationSteps';
 export { default as Notes } from './Notes';
 export { default as PlaceholderBody } from './PlaceholderBody';
+export { default as Sidebar } from './Sidebar';
