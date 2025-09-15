@@ -4,6 +4,7 @@ heading: 'Backstage PagerDuty Plugin'
 lead: |
   Don't waste any time getting up to speed on that late night incident.
 npmjsPackage: "@pagerduty/backstage-plugin"
+codeLocation: "https://github.com/PagerDuty/backstage-plugins"
 attribution:
   text: '@samiramkr'
   href: https://github.com/samiramkr

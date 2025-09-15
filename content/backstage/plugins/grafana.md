@@ -7,6 +7,7 @@ attribution:
   href: https://github.com/K-Phoen
 
 npmjsPackage: "@k-phoen/backstage-plugin-grafana"
+codeLocation: "https://github.com/K-Phoen/backstage-plugin-grafana"
 
 seo:
   title: 'Backstage Grafana Plugin | Roadie'

@@ -4,6 +4,7 @@ heading: 'Backstage Allure Plugin'
 # Keep it short
 lead: 'Display Allure test reports in Backstage'
 npmjsPackage: "@backstage-community/plugin-allure"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/allure/plugins/allure"
 attribution:
   text: Deepak Bhardwaj
   href: https://github.com/deepak-bhardwaj-ps

@@ -7,6 +7,7 @@ attribution:
   href: https://harness.io/
 
 npmjsPackage: "@harnessio/backstage-plugin-ci-cd"
+codeLocation: "https://github.com/harness/backstage-plugins/tree/main/plugins/harness-ci-cd"
 
 seo:
   title: 'Backstage Harness Next CI/CD Plugin | Roadie'

@@ -14,6 +14,9 @@ seo:
 
 logoImage: '../../assets/logos/snyk/snyk-avatar.webp'
 
+npmjsPackage: "backstage-plugin-snyk"
+codeLocation: "https://github.com/snyk-tech-services/backstage-plugin-snyk"
+
 availableOnRoadie: true
 roadieDocsPath: /integrations/snyk/
 

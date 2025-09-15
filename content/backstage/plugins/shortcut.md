@@ -16,6 +16,9 @@ coverImage: '../../assets/backstage/plugins/shortcut/shortcut.webp'
 coverImageAlt: |
   Stories overview in Shortcut plugin.
 
+npmjsPackage: "@roadiehq/backstage-plugin-shortcut"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-shortcut"
+
 availableOnRoadie: true
 roadieDocsPath: /integrations/shortcut-plugin/
 

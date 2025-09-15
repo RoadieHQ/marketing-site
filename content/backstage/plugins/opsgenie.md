@@ -3,6 +3,7 @@ humanName: OpsGenie
 heading: 'Backstage OpsGenie Plugin'
 lead: 'View OpsGenie alerts and incidents inside Backstage.'
 npmjsPackage: "@k-phoen/backstage-plugin-opsgenie"
+codeLocation: "https://github.com/K-Phoen/backstage-plugin-opsgenie"
 attribution:
   text: K-Phoen
   href: https://github.com/K-Phoen

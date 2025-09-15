@@ -7,6 +7,7 @@ attribution:
   href: https://spotify.com
 
 npmjsPackage: "@backstage-community/plugin-graphiql"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/graphiql/plugins/graphiql"
 
 seo:
   title: 'Backstage GraphiQL Plugin | Roadie'

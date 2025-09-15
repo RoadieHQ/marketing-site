@@ -7,6 +7,7 @@ attribution:
   href: https://roadie.io
 
 npmjsPackage: "@roadiehq/backstage-plugin-github-pull-requests"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-github-pull-requests"
 
 seo:
   title: 'Backstage GitHub Pull Requests Plugin | Roadie'

@@ -8,6 +8,7 @@ attribution:
   href: https://rootly.com
 
 npmjsPackage: "@rootly/backstage-plugin"
+codeLocation: "https://github.com/rootlyhq/backstage-plugin"
 
 seo:
   title: 'Rootly Backstage Plugin | Roadie'

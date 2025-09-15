@@ -7,6 +7,7 @@ attribution:
   href: https://roadie.io
 
 npmjsPackage: "@roadiehq/backstage-plugin-github-insights"
+codeLocation: "https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/frontend/backstage-plugin-github-insights"
 
 seo:
   title: 'Backstage GitHub Insights Plugin | Roadie'

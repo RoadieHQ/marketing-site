@@ -8,6 +8,7 @@ attribution:
   href: https://github.com/spotify
 
 npmjsPackage: "@backstage-community/plugin-analytics-module-ga4"
+codeLocation: "https://github.com/backstage/community-plugins/tree/main/workspaces/analytics/plugins/analytics-module-ga4"
 
 seo:
   # Don't forget to end with "| Roadie"
