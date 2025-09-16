@@ -10,6 +10,9 @@ attribution:
 npmjsPackage: "@bestsellerit/backstage-plugin-harbor"
 codeLocation: "https://github.com/container-registry/backstage-plugin-harbor"
 
+availableOnRoadie: true
+roadieDocsPath: /integrations/harbor/
+
 seo:
   title: 'Backstage Harbor Plugin | Roadie'
   description: |
