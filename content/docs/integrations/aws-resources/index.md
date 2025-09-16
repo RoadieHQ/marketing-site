@@ -352,6 +352,7 @@ The table below lists the permissions required of the assumable role in order fo
 | security-group       | AWS VPC Security Groups                      | `ec2:DescribeSecurityGroups`                                                      |
 | ebs-volume           | AWS EBS Volumes                              | `ec2:DescribeVolumes`                                                             |
 | vpc                  | AWS VPC                                      | `ec2:DescribeVpcs`, `ec2:DescribeDhcpOptions`                                     |
+| ecr-repository       | AWS Elastic Container Registry               | `ecr:DescribeRepositories`, `ecr:ListTagsForResource`                             |
 
 
 
