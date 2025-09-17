@@ -1,6 +1,8 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { getStore } = require('@netlify/blobs');
 const kebabCase = require('lodash/kebabCase');
 const has = require('lodash/has');
+const reduce = require('lodash/reduce');
 const {
   BLOGS_QUERY,
   PLUGINS_QUERY,
@@ -16,7 +18,40 @@ const createPagesFromQuery = require('./src/pageCreation/createPagesFromQuery');
 const createListPagesFromQuery = require('./src/pageCreation/createListPagesFromQuery');
 const transformPageFrontmatter = require('./src/pageCreation/transformPageFrontmatter');
 
+const storeBackstagePluginNpmPackageNames = async (graphql) => {
+  const { data, errors } = await graphql(PLUGINS_QUERY);
+
+  if (errors) {
+    throw errors;
+  }
+
+  const listOfNpmPackages = reduce(
+    data.plugins.edges,
+    (list, { node }) => {
+      if (node.frontmatter.npmjsPackage) {
+        list.push(node.frontmatter.npmjsPackage);
+      }
+      return list;
+    },
+    []
+  );
+
+  const store = getStore({
+    name: 'npmPackages',
+    siteID: process.env.GATSBY_NETLIFY_SITE_ID,
+    token: process.env.GATSBY_NETLIFY_API_TOKEN,
+  });
+
+  const { modified, etag } = await store.setJSON(
+    'backstage-plugin-npm-package-names',
+    listOfNpmPackages
+  );
+  console.log('Stored backstage plugin npm packages', modified, etag);
+};
+
 exports.createPages = async ({ graphql, actions }) => {
+  await storeBackstagePluginNpmPackageNames(graphql);
+
   await createPagesFromQuery({
     templatePath: './src/templates/BlogPost.js',
     query: BLOGS_QUERY,
@@ -176,3 +211,5 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+exports.onPostBuild = () => {};
