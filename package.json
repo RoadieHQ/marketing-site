@@ -22,7 +22,6 @@
     "@tailwindcss/typography": "^0.5.0",
     "algoliasearch": "^4.9.2",
     "autoprefixer": "^10.3.5",
-    "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^3.14.0",
     "classnames": "^2.3.0",
     "date-fns": "^2.22.1",

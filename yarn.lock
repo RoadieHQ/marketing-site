@@ -9144,15 +9144,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-prismjs@npm:^2.0.1":
-  version: 2.1.0
-  resolution: "babel-plugin-prismjs@npm:2.1.0"
-  peerDependencies:
-    prismjs: ^1.18.0
-  checksum: 10c0/826c89fad2f372da668712cbffef762e4bc4427e41789fa18d579d43e1eb5767af7efbe3e71bb99f07c612140f4425426d4bb63b0a0a731f9c909317896355cc
-  languageName: node
-  linkType: hard
-
 "babel-plugin-remove-graphql-queries@npm:^5.14.0":
   version: 5.14.0
   resolution: "babel-plugin-remove-graphql-queries@npm:5.14.0"
@@ -25005,7 +24996,6 @@ __metadata:
     "@wojtekmaj/enzyme-adapter-react-17": "npm:^0.8.0"
     algoliasearch: "npm:^4.9.2"
     autoprefixer: "npm:^10.3.5"
-    babel-plugin-prismjs: "npm:^2.0.1"
     babel-preset-gatsby: "npm:^3.14.0"
     classnames: "npm:^2.3.0"
     cypress: "npm:^13.11.0"
