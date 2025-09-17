@@ -87,13 +87,6 @@ const Header = ({
       <div>
         <Headline size="small">{heading}</Headline>
         <Attribution attribution={attribution} className="mb-4" />
-<<<<<<< HEAD
-
-        <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
-        <NpmChip npmjsPackage={npmjsPackage} />
-        <GitHubChip codeLocation={codeLocation} />
-=======
->>>>>>> bc572925 (Sidebar)
       </div>
     </header>
   </>

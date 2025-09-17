@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { getStore } from '@netlify/blobs';
 import usePageLeave from 'react-use/lib/usePageLeave';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
@@ -49,6 +50,8 @@ const PluginTemplate = ({ data, serverData }) => {
     plugin,
     site: { siteMetadata },
   } = data;
+
+  console.log('serverData', serverData);
 
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
@@ -173,6 +176,8 @@ export const pageQuery = graphql`
 export async function getServerData({ pageContext }) {
   try {
     const res = await fetch(`https://registry.npmjs.org/${pageContext.npmjsPackage}`)
+    const store = getStore('npmPackages', { siteID: 'roadie' });
+    const data = await store.get('hello');
 
     if (!res.ok) {
       throw new Error(`Response failed`)
@@ -180,6 +185,7 @@ export async function getServerData({ pageContext }) {
 
     return {
       props: await res.json(),
+      data,
     }
   } catch (error) {
     return {
