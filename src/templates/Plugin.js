@@ -174,10 +174,18 @@ export const pageQuery = graphql`
 `;
 
 export async function getServerData({ pageContext }) {
+  const store = getStore({
+    name: 'npmPackages',
+    siteID: process.env.GATSBY_NETLIFY_SITE_ID,
+    token: process.env.GATSBY_NETLIFY_API_TOKEN,
+  });
+  const data = await store.list();
+  console.log('data', data);
+
   try {
     const res = await fetch(`https://registry.npmjs.org/${pageContext.npmjsPackage}`)
-    const store = getStore('npmPackages', { siteID: 'roadie' });
-    const data = await store.get('hello');
+
+    // console.log('data', data);
 
     if (!res.ok) {
       throw new Error(`Response failed`)
@@ -185,9 +193,10 @@ export async function getServerData({ pageContext }) {
 
     return {
       props: await res.json(),
-      data,
+      // data,
     }
   } catch (error) {
+    console.error(error);
     return {
       status: 500,
       headers: {},
