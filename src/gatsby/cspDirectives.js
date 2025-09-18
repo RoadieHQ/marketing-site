@@ -103,6 +103,9 @@ const CSP_IMG_SRC_DIRECTIVES = [
   // https://help.dealfront.com/en/articles/3715216-why-is-the-leadfeeder-tracker-blocked-on-my-site
   '*.lfeeder.com',
   '*.leadfeeder.com',
+
+  // Used for photos of plugin maintainers
+  'https://gravatar.com',
 ].join(' ');
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {

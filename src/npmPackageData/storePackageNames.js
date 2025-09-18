@@ -19,6 +19,7 @@ const listOfNpmPackagesFromFiles = async ({ graphql }) => {
   }, []);
 };
 
+// This expects to run at gatsby build time.
 const storePackageNames = async (graphql, { authStrategy }) => {
   const listOfNpmPackages = await listOfNpmPackagesFromFiles({ graphql });
   const store = getRoadieStore({ authStrategy });
