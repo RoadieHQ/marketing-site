@@ -15,7 +15,5 @@ module.exports = {
   transform: {
     '^.+\\.[jt]sx?$': 'babel-jest',
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!(?:@netlify/runtime-utils|@netlify/blobs)/)',
-  ],
+  transformIgnorePatterns: ['node_modules/(?!(?:@netlify/runtime-utils|@netlify/blobs)/)'],
 };
