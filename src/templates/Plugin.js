@@ -169,10 +169,20 @@ export const pageQuery = graphql`
 `;
 
 export async function getServerData({ pageContext }) {
-  const data = await retrievePackageDataByName({
-    packageName: pageContext.npmjsPackage,
-    authStrategy: 'token',
-  });
+  let data = {};
+
+  try {
+    data = await retrievePackageDataByName({
+      packageName: pageContext.npmjsPackage,
+      authStrategy: 'token',
+    });
+
+  } catch (e) {
+    // The page is still useful without the NPM data so just log the error
+    // and return a 200 code and the UI can handle the fact that the NPM
+    // data is missing.
+    console.error(e);
+  }
 
   return {
     props: data,
