@@ -1,19 +1,9 @@
-import { getStore } from '@netlify/blobs';
+import { storeBackstagePluginNpmData } from '../../src/pageCreation/storeBackstagePluginNpmPackageNames';
 
-const npmRegistry = getStore('npmRegistry', { siteID: 'roadie-preview' });
-
-export default async (req, context) => {
-
-  console.log('congext', context);
-  // eslint-disable-next-line
-  const apiKey = Netlify.env.get("SENTRY_PROJECT");
-  console.log('apikey', apiKey);
-
-  const setValue = await npmRegistry.set('test', 'key');
-  console.log('setValue', setValue);
+export default async () => {
+  const resp = await storeBackstagePluginNpmData({ authStrategy: 'automatic' });
 
   return new Response({
-    context,
-    setValue,
+    resp,
   });
 };
