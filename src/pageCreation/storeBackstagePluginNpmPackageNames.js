@@ -106,6 +106,15 @@ const storeBackstagePluginNpmData = async ({ authStrategy = DEFAULT_AUTH_STRATEG
   return { modified, etag };
 };
 
+const retrieveBackstagePluginNpmPackage = async ({
+  packageName,
+  authStrategy = DEFAULT_AUTH_STRATEGY
+}) => {
+  console.log('retrieveBackstagePluginNpmPackage', packageName);
+  const store = getRoadieStore({ authStrategy });
+  return store.get(packageName, { type: 'json' });
+};
+
 const deleteBackstagePluginData = ({ key, authStrategy = DEFAULT_AUTH_STRATEGY }) => {
   const store = getRoadieStore({ authStrategy });
   store.delete(key);
@@ -116,4 +125,5 @@ module.exports = {
   storeBackstagePluginNpmData,
   stripNpmPackage,
   deleteBackstagePluginData,
+  retrieveBackstagePluginNpmPackage,
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getStore } from '@netlify/blobs';
+import { retrieveBackstagePluginNpmPackage } from '../pageCreation/storeBackstagePluginNpmPackageNames';
 import usePageLeave from 'react-use/lib/usePageLeave';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
@@ -174,31 +174,26 @@ export const pageQuery = graphql`
 `;
 
 export async function getServerData({ pageContext }) {
-  const store = getStore({
-    name: 'npmPackages',
-    siteID: process.env.GATSBY_NETLIFY_SITE_ID,
-    token: process.env.GATSBY_NETLIFY_API_TOKEN,
+  console.log('getServerData', pageContext);
+  const data = await retrieveBackstagePluginNpmPackage({
+    packageName: pageContext.npmjsPackage,
+    authStrategy: 'token',
   });
-  const data = await store.list();
+
   console.log('data', data);
 
-  try {
-    const res = await fetch(`https://registry.npmjs.org/${pageContext.npmjsPackage}`)
+  return {
+    props: data,
+  };
 
-    if (!res.ok) {
-      throw new Error(`Response failed`)
-    }
+  // try {
 
-    return {
-      props: await res.json(),
-      data,
-    }
-  } catch (error) {
-    console.error(error);
-    return {
-      status: 500,
-      headers: {},
-      props: {}
-    }
-  }
+  // } catch (error) {
+  //   console.error(error);
+  //   return {
+  //     status: 500,
+  //     headers: {},
+  //     props: {}
+  //   }
+  // }
 }
