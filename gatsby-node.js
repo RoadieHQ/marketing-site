@@ -20,7 +20,7 @@ const {
 } = require('./src/pageCreation');
 
 exports.createPages = async ({ graphql, actions }) => {
-  await storeBackstagePluginNpmPackageNames(graphql);
+  await storeBackstagePluginNpmPackageNames(graphql, { authStrategy: 'token' });
 
   await createPagesFromQuery({
     templatePath: './src/templates/BlogPost.js',

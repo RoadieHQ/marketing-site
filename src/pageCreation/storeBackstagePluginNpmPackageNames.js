@@ -1,16 +1,18 @@
 const { getStore } = require('@netlify/blobs');
 const reduce = require('lodash/reduce');
+const pick = require('lodash/pick');
 
-const { PLUGINS_QUERY, } = require('../queries/gatsbyNodeQueries');
+const { PLUGINS_QUERY } = require('../queries/gatsbyNodeQueries');
 
-const NPM_PACKAGE_NAMES_STORE_KEY = 'backstage-plugin-npm-package-names';
-const NPM_PACKAGE_DATA_STORE_KEY = 'backstage-plugin-npm-package-data';
+const STORE_NAME = 'npm-package-data';
+const ALL_PACKAGE_NAMES_STORE_KEY = `all-backstage-plugin-package-names`;
+const ALL_PACKAGE_DATA_STORE_KEY = `all-backstage-plugin-package-data`;
 const VALID_AUTH_STRATEGIES = ['automatic', 'token'];
 const DEFAULT_AUTH_STRATEGY = 'automatic';
 const NPM_REGISTRY_HOSTNAME = 'https://registry.npmjs.org/';
 
 const getRoadieStore = ({
-  storeName = 'npmPackages',
+  storeName = STORE_NAME,
   authStrategy = DEFAULT_AUTH_STRATEGY,
   siteID = process.env.GATSBY_NETLIFY_SITE_ID,
 } = {}) => {
@@ -45,27 +47,44 @@ const listOfNpmPackagesFromFiles = async ({ graphql }) => {
   }, []);
 };
 
-const storeBackstagePluginNpmPackageNames = async (graphql, authStrategy = DEFAULT_AUTH_STRATEGY) => {
+const stripNpmPackage = (data) => ({
+  ...pick(data, [
+    '_id',
+    '_rev',
+    'name',
+    'license',
+    'repository',
+    'maintainers',
+    'time',
+    'homepage',
+  ]),
+  ...pick(data.versions[data['dist-tags'].latest], ['backstage']),
+  numberOfVersions: Object.keys(data.versions).length,
+  latestVersion: data['dist-tags'].latest,
+});
+
+const storeBackstagePluginNpmPackageNames = async (graphql, { authStrategy = DEFAULT_AUTH_STRATEGY } = {}) => {
   const listOfNpmPackages = await listOfNpmPackagesFromFiles({ graphql });
   const store = getRoadieStore({ authStrategy });
-  const { modified, etag } = await store.setJSON(NPM_PACKAGE_NAMES_STORE_KEY, listOfNpmPackages);
+  const { modified, etag } = await store.setJSON(ALL_PACKAGE_NAMES_STORE_KEY, listOfNpmPackages);
   console.log('Stored backstage plugin npm package names', modified, etag);
   return { modified, etag };
 };
 
 const retrieveBackstagePluginNpmPackageNames = async ({ authStrategy = DEFAULT_AUTH_STRATEGY } = {}) => {
   const store = getRoadieStore({ authStrategy });
-  return store.get(NPM_PACKAGE_NAMES_STORE_KEY, { type: 'json' });
+  return store.get(ALL_PACKAGE_NAMES_STORE_KEY, { type: 'json' });
 };
 
 const storeBackstagePluginNpmData = async ({ authStrategy = DEFAULT_AUTH_STRATEGY } = {}) => {
   const listOfNpmPackages = await retrieveBackstagePluginNpmPackageNames({ authStrategy });
 
-  const npmResponses = await Promise.all(listOfNpmPackages.slice(0, 5).map((packageName) => {
-    return fetch(`${NPM_REGISTRY_HOSTNAME}${packageName}`);
-  }));
+  const npmResponses = await Promise.all(listOfNpmPackages.slice(0, 5).map((packageName) => (
+    fetch(`${NPM_REGISTRY_HOSTNAME}${packageName}`)
+  )));
 
-  const npmData = await Promise.all(npmResponses.map((resp) => resp.json()));
+  const npmData = (await Promise.all(npmResponses.map((resp) => resp.json())))
+    .map((data) => stripNpmPackage(data));
 
   const dataAsObject = reduce(npmData, (obj, packageData) => {
     obj[packageData.name] = packageData;
@@ -73,13 +92,24 @@ const storeBackstagePluginNpmData = async ({ authStrategy = DEFAULT_AUTH_STRATEG
   }, {});
 
   const store = getRoadieStore({ authStrategy });
-  const { modified, etag } = await store.setJSON(NPM_PACKAGE_DATA_STORE_KEY, dataAsObject);
+  const { modified, etag } = await store.setJSON(ALL_PACKAGE_DATA_STORE_KEY, dataAsObject);
+
+  Promise.all(npmData.map((packageData) => {
+    return store.setJSON(packageData.name, packageData);
+  }));
+
   console.log('Stored backstage plugin npm package data', modified, etag);
   return { modified, etag };
 };
 
+const deleteBackstagePluginData = ({ key, authStrategy = DEFAULT_AUTH_STRATEGY }) => {
+  const store = getRoadieStore({ authStrategy });
+  store.delete(key);
+};
+
 module.exports = {
   storeBackstagePluginNpmPackageNames,
-  retrieveBackstagePluginNpmPackageNames,
   storeBackstagePluginNpmData,
+  stripNpmPackage,
+  deleteBackstagePluginData,
 };
