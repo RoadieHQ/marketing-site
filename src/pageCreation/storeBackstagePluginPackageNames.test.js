@@ -27,8 +27,8 @@ describe('#stripNpmPackage', () => {
     expect(stripNpmPackage(testPackage).repository).toEqual(testPackage.repository);
   });
 
-  it('should include the time info', () => {
-    expect(stripNpmPackage(testPackage).time).toEqual(testPackage.time);
+  it('should remove most of the time info', () => {
+    expect(Object.keys(stripNpmPackage(testPackage).time).length).toEqual(3);
   });
 
   it('should include the backstage role info', () => {

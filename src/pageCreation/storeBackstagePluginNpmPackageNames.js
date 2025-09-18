@@ -47,21 +47,25 @@ const listOfNpmPackagesFromFiles = async ({ graphql }) => {
   }, []);
 };
 
-const stripNpmPackage = (data) => ({
-  ...pick(data, [
-    '_id',
-    '_rev',
-    'name',
-    'license',
-    'repository',
-    'maintainers',
-    'time',
-    'homepage',
-  ]),
-  ...pick(data.versions[data['dist-tags'].latest], ['backstage']),
-  numberOfVersions: Object.keys(data.versions).length,
-  latestVersion: data['dist-tags'].latest,
-});
+const stripNpmPackage = (data) => {
+  const latestVersionNumber = data['dist-tags'].latest;
+  return {
+    ...pick(data, [
+      '_id',
+      '_rev',
+      'name',
+      'license',
+      'repository',
+      'maintainers',
+      'time',
+      'homepage',
+    ]),
+    ...pick(data.versions[latestVersionNumber], ['backstage']),
+    time: pick(data.time, ['created', 'modified', latestVersionNumber]),
+    numberOfVersions: Object.keys(data.versions).length,
+    latestVersion: data['dist-tags'].latest,
+  };
+};
 
 const storeBackstagePluginNpmPackageNames = async (graphql, { authStrategy = DEFAULT_AUTH_STRATEGY } = {}) => {
   const listOfNpmPackages = await listOfNpmPackagesFromFiles({ graphql });
