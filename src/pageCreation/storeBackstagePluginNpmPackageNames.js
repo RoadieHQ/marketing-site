@@ -56,12 +56,19 @@ const stripNpmPackage = (data) => {
       'name',
       'license',
       'repository',
-      'maintainers',
       'time',
       'homepage',
+      'description',
+      'bugs',
     ]),
     ...pick(data.versions[latestVersionNumber], ['backstage']),
     time: pick(data.time, ['created', 'modified', latestVersionNumber]),
+    // There can be many many maintainers. I've seen 200+ in many examples.
+    // One suggested enhancement here would be to filter the list to maintainers who have
+    // a profile photo on Gravatar. That way we would see nice people's faces when we render
+    // the list of maintainers in the website.
+    maintainers: data.maintainers.slice(0, 15),
+    numberOfMaintainers: data.maintainers.length,
     numberOfVersions: Object.keys(data.versions).length,
     latestVersion: data['dist-tags'].latest,
   };
@@ -83,7 +90,7 @@ const retrieveBackstagePluginNpmPackageNames = async ({ authStrategy = DEFAULT_A
 const storeBackstagePluginNpmData = async ({ authStrategy = DEFAULT_AUTH_STRATEGY } = {}) => {
   const listOfNpmPackages = await retrieveBackstagePluginNpmPackageNames({ authStrategy });
 
-  const npmResponses = await Promise.all(listOfNpmPackages.slice(0, 5).map((packageName) => (
+  const npmResponses = await Promise.all(listOfNpmPackages.map((packageName) => (
     fetch(`${NPM_REGISTRY_HOSTNAME}${packageName}`)
   )));
 

@@ -5,7 +5,6 @@ import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
 import {
-  EditOnGitHubLink,
   Header,
   Intro,
   PluginCTA,
@@ -25,10 +24,6 @@ const Body = ({ plugin, siteMetadata }) => {
         <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
 
         <InstallationSteps plugin={plugin} />
-
-        <p className="prose prose-primary my-10">
-          Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
-        </p>
       </>
     );
   }
@@ -50,8 +45,6 @@ const PluginTemplate = ({ data, serverData }) => {
     plugin,
     site: { siteMetadata },
   } = data;
-
-  console.log('serverData', serverData);
 
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
@@ -85,19 +78,21 @@ const PluginTemplate = ({ data, serverData }) => {
 
       <SitewideHeader />
 
-      <Header plugin={plugin} />
+      <div className="mt-4">
+        <Header plugin={plugin} />
+      </div>
 
       <main className="pb-8 px-4 lg:pb-28">
         <div className="relative max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 gap-3">
-            <article>
+          <div className="grid grid-cols-3 gap-20">
+            <article className="col-span-2">
               <Body plugin={plugin} siteMetadata={siteMetadata} />
               <Notes plugin={plugin} />
               <PluginCTA plugin={plugin} />
             </article>
 
             <aside className="col-span-1">
-              <Sidebar npmData={serverData} />
+              <Sidebar npmData={serverData} plugin={plugin} siteMetadata={siteMetadata} />
             </aside>
           </div>
         </div>
@@ -174,26 +169,12 @@ export const pageQuery = graphql`
 `;
 
 export async function getServerData({ pageContext }) {
-  console.log('getServerData', pageContext);
   const data = await retrieveBackstagePluginNpmPackage({
     packageName: pageContext.npmjsPackage,
     authStrategy: 'token',
   });
 
-  console.log('data', data);
-
   return {
     props: data,
   };
-
-  // try {
-
-  // } catch (error) {
-  //   console.error(error);
-  //   return {
-  //     status: 500,
-  //     headers: {},
-  //     props: {}
-  //   }
-  // }
 }
