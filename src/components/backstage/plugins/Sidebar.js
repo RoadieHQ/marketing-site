@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Title } from 'components';
 import map from 'lodash/map';
 import get from 'lodash/get';
@@ -13,7 +13,10 @@ import {
 
 const DetailsListItem = ({ label, value, title }) => {
   return (
-    <li className="border-b border-gray-200 py-2 flex place-content-between" title={title}>
+    <li
+      className="border-b border-gray-200 py-2 flex place-content-between"
+      title={title}
+    >
       <span>{label}</span> <strong>{value}</strong>
     </li>
   );
@@ -33,8 +36,28 @@ const Mainatainer = ({ name, email }) => {
 };
 
 const Sidebar = ({ plugin, npmData, siteMetadata }) => {
-  const latestVersionPublished = get(npmData.time, npmData.latestVersion);
-  console.log('npmData', npmData);
+  // The component needs to be resilient to npmData = {}. This is the state
+  // we will find ourselves in if the Netlify Blob storage returns an error.
+  const latestVersionPublishedTime = get(npmData, `time['${npmData.latestVersion}']`);
+  const firstPublishedTime = get(npmData, 'time.created');
+  const lastSyncedTime = npmData.roadieLastUpdated;
+
+  let latestVersionPublishedAgo, firstPublishedAgo, lastSyncedAgo;
+  if (latestVersionPublishedTime) {
+    latestVersionPublishedAgo = `${formatDistanceToNow(Date.parse(latestVersionPublishedTime))} ago`;
+  }
+  if (firstPublishedTime) {
+    firstPublishedAgo = `${formatDistanceToNow(Date.parse(npmData.time.created))} ago`;
+  }
+  if (lastSyncedTime) {
+    lastSyncedAgo = `${formatDistanceToNow(Date.parse(lastSyncedTime))} ago`;
+  }
+
+  let maintainersHelpText = `Maintainer images come from Gravatar.`;
+  if (npmData.maintainers && npmData.numberOfMaintainers > npmData.maintainers.length) {
+    const extraMaintainers = npmData.numberOfMaintainers - npmData.maintainers.length;
+    maintainersHelpText += `...along with ${extraMaintainers} others. `
+  }
 
   return (
     <div>
@@ -49,7 +72,7 @@ const Sidebar = ({ plugin, npmData, siteMetadata }) => {
         <div className="mb-3">
           <GitHubChip codeLocation={plugin.frontmatter.codeLocation} />
         </div>
-        <NpmChip npmjsPackage={npmData.name} />
+        <NpmChip npmjsPackage={plugin.frontmatter.npmjsPackage} />
       </div>
 
       <div className="mb-10">
@@ -62,13 +85,13 @@ const Sidebar = ({ plugin, npmData, siteMetadata }) => {
             <DetailsListItem label="Version" value={npmData.latestVersion} />
             <DetailsListItem
               label="Last published"
-              value={`${formatDistanceToNow(Date.parse(latestVersionPublished))} ago`}
-              title={latestVersionPublished}
+              value={latestVersionPublishedAgo}
+              title={latestVersionPublishedTime}
             />
             <DetailsListItem
               label="First published"
-              value={`${formatDistanceToNow(Date.parse(npmData.time.created))} ago`}
-              title={npmData.time.created}
+              value={firstPublishedAgo}
+              title={firstPublishedTime}
             />
             <DetailsListItem label="Number of versions" value={npmData.numberOfVersions} />
             <DetailsListItem label="License" value={npmData.license} />
@@ -76,7 +99,7 @@ const Sidebar = ({ plugin, npmData, siteMetadata }) => {
 
           <span className="flex place-content-between text-gray-400" title={npmData.roadieLastUpdated}>
             <span className="italic">Last synced with NPM:</span>
-            <span>{`${formatDistanceToNow(Date.parse(npmData.roadieLastUpdated))} ago`}</span>
+            <span>{lastSyncedAgo}</span>
           </span>
         </div>
       </div>
@@ -93,10 +116,7 @@ const Sidebar = ({ plugin, npmData, siteMetadata }) => {
             ))}
           </ul>
             <p className="italic text-gray-400">
-              {(npmData.numberOfMaintainers > npmData.maintainers.length) && (
-                `...along with ${npmData.numberOfMaintainers - npmData.maintainers.length} others. `
-              )}
-              Maintainer images come from Gravatar.
+              {maintainersHelpText}
             </p>
         </div>
       </div>
