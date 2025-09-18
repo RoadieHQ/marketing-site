@@ -104,7 +104,7 @@
   },
   "scripts": {
     "prebuild": "node bin/fetch_api_docs_and_roadie_local.js",
-    "build": "yarn clean && yarn prebuild && gatsby build",
+    "build": "yarn clean && gatsby build",
     "tech-docs:build": "bash bin/convert_tech_docs.sh",
     "tech-docs:clean": "rm -rf roadie-tech-docs",
     "develop": "gatsby develop",
