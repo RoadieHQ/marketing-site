@@ -188,5 +188,3 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
-
-exports.onPostBuild = () => {};

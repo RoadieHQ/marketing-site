@@ -19,6 +19,7 @@ const storePackageData = async ({ authStrategy }) => {
 
   const dataAsObject = reduce(npmData, (obj, packageData) => {
     obj[packageData.name] = packageData;
+    obj.roadieLastUpdated = new Date().toISOString();
     return obj;
   }, {});
 
@@ -35,7 +36,10 @@ const storePackageData = async ({ authStrategy }) => {
   //    particular plugin. This will be faster.
   const { modified, etag } = await store.setJSON(ALL_PACKAGE_DATA_STORE_KEY, dataAsObject);
   Promise.all(npmData.map((packageData) => {
-    return store.setJSON(packageData.name, packageData);
+    return store.setJSON(packageData.name, {
+      ...packageData,
+      roadieLastUpdated: new Date().toISOString(),
+    });
   }));
 
   console.log('Stored backstage plugin npm package data', modified, etag);
