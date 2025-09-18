@@ -160,11 +160,12 @@ const Sidebar = ({ plugin, npmData, siteMetadata }) => {
               <Mainatainer name={name} email={email} key={email} />
             ))}
           </ul>
-          {(npmData.numberOfMaintainers > npmData.maintainers.length) && (
             <p className="italic text-gray-400">
-              ...along with {npmData.numberOfMaintainers - npmData.maintainers.length} others. Images come from Gravatar.
+              {(npmData.numberOfMaintainers > npmData.maintainers.length) && (
+                `...along with ${npmData.numberOfMaintainers - npmData.maintainers.length} others. `
+              )}
+              Maintainer images come from Gravatar.
             </p>
-          )}
         </div>
       </div>
 

@@ -22,7 +22,7 @@ const Header = ({
     </div>
 
     <header className="px-4 xl:rounded-lg lg:flex lg:px-0 items-center mb-10">
-      <div>
+      <div className="bg-gray-100 mr-8">
         <Logo
           minHeight={80}
           sharpImage={logoImage.childImageSharp}
@@ -31,8 +31,10 @@ const Header = ({
       </div>
 
       <div>
-        <Headline size="small">{heading}</Headline>
-        <Attribution attribution={attribution} className="mb-4" />
+        <div className="mb-1">
+          <Headline size="small">{heading}</Headline>
+        </div>
+        <Attribution attribution={attribution} />
       </div>
     </header>
   </div>

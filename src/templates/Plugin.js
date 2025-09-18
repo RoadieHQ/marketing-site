@@ -141,7 +141,7 @@ export const pageQuery = graphql`
 
         logoImage {
           childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 140)
+            gatsbyImageData(layout: FIXED, width: 80)
           }
         }
 
