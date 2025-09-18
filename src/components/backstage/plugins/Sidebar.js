@@ -107,12 +107,6 @@ const Sidebar = ({ plugin, npmData, siteMetadata }) => {
     <div>
       <div className="mb-10">
         <div className="mb-3">
-          <Link to={`https://registry.npmjs.com/${npmData.name}`}>
-            <span>Registry</span>
-          </Link>
-        </div>
-
-        <div className="mb-3">
           <RoadieDocsChip
             availableOnRoadie={plugin.frontmatter.availableOnRoadie} 
             roadieDocsPath={plugin.frontmatter.roadieDocsPath}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { retrieveBackstagePluginNpmPackage } from '../pageCreation/storeBackstagePluginNpmPackageNames';
+import { retrievePackageDataByName } from '../npmPackageData';
 import usePageLeave from 'react-use/lib/usePageLeave';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
@@ -169,7 +169,7 @@ export const pageQuery = graphql`
 `;
 
 export async function getServerData({ pageContext }) {
-  const data = await retrieveBackstagePluginNpmPackage({
+  const data = await retrievePackageDataByName({
     packageName: pageContext.npmjsPackage,
     authStrategy: 'token',
   });

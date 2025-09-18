@@ -16,11 +16,18 @@ const {
   createPagesFromQuery,
   createListPagesFromQuery,
   transformPageFrontmatter,
-  storeBackstagePluginNpmPackageNames,
 } = require('./src/pageCreation');
+const { storePackageNames } = require('./src/npmPackageData');
 
 exports.createPages = async ({ graphql, actions }) => {
-  await storeBackstagePluginNpmPackageNames(graphql, { authStrategy: 'token' });
+  // This function iterates over the backstage plugins in the plugins directory, gets the name
+  // of the NPM package associated with each one, and uploads all the names in a big array
+  // to Netlify Blob storage.
+  //
+  // We don't necessarily need this to happen every time we start the local dev server, so
+  // a Netlify plugin that runs on deploy time might be a better place to do that. I've
+  // never created a Netlify plugin before though so I'm leaving it here for the moment [DT].
+  await storePackageNames(graphql, { authStrategy: 'token' });
 
   await createPagesFromQuery({
     templatePath: './src/templates/BlogPost.js',

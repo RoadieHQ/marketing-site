@@ -1,7 +1,7 @@
-import { storeBackstagePluginNpmData } from '../../src/pageCreation/storeBackstagePluginNpmPackageNames';
+import { storePackageData } from '../../src/npmPackageData';
 
 export default async () => {
-  const resp = await storeBackstagePluginNpmData({ authStrategy: 'automatic' });
+  const resp = await storePackageData({ authStrategy: 'automatic' });
 
   return new Response({
     resp,
