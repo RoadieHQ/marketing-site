@@ -4,7 +4,6 @@ import usePageLeave from 'react-use/lib/usePageLeave';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
-import { getStore } from '@netlify/blobs';
 import {
   EditOnGitHubLink,
   Header,
@@ -55,8 +54,6 @@ const PluginTemplate = ({ data, serverData }) => {
   console.log('serverData', serverData);
 
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
-
-  console.log('serverData', serverData);
 
   const handleOpenExitIntentModal = () => {
     if (!hasExitIntentModalBeenShownBefore()) {
@@ -188,24 +185,13 @@ export async function getServerData({ pageContext }) {
   try {
     const res = await fetch(`https://registry.npmjs.org/${pageContext.npmjsPackage}`)
 
-<<<<<<< HEAD
-    // console.log('data', data);
-=======
-    const npmRegistry = getStore('npmRegistry', { siteID: 'roadie-preview' });
-    const value = await npmRegistry.get('setValue');
->>>>>>> b5722c92 (Store and retrieve in blobs)
-
     if (!res.ok) {
       throw new Error(`Response failed`)
     }
 
     return {
       props: await res.json(),
-<<<<<<< HEAD
-      // data,
-=======
-      value,
->>>>>>> b5722c92 (Store and retrieve in blobs)
+      data,
     }
   } catch (error) {
     console.error(error);
