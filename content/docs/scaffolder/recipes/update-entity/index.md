@@ -1,6 +1,6 @@
 ---
 title: Add Pagerduty annotation to an entity
-publishedDate: '2025-08-28'
+publishedDate: '2025-09-19'
 description: An example template for immediately adding an annotation to an existing entity using Roadie fragments rather than a PR
 ---
 
