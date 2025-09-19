@@ -1784,7 +1784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.9, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.17.9, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.9.2":
   version: 7.28.4
   resolution: "@babel/runtime@npm:7.28.4"
   checksum: 10c0/792ce7af9750fb9b93879cc9d1db175701c4689da890e6ced242ea0207c9da411ccf16dc04e689cc01158b28d7898c40d75598f4559109f761c12ce01e959bf7
@@ -13692,7 +13692,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^11.0.0, fs-extra@npm:^11.2.0":
+"fs-extra@npm:^11.2.0":
   version: 11.3.2
   resolution: "fs-extra@npm:11.3.2"
   dependencies:
@@ -13849,7 +13849,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-core-utils@npm:^4.0.0, gatsby-core-utils@npm:^4.15.0":
+"gatsby-core-utils@npm:^4.15.0":
   version: 4.15.0
   resolution: "gatsby-core-utils@npm:4.15.0"
   dependencies:
@@ -14060,22 +14060,6 @@ __metadata:
   peerDependencies:
     gatsby: ">=1"
   checksum: 10c0/f692c820eb5236a13ef42935a0509fa163e4711340c906fdbafe8fb24fe2a64e480d56fb109d368c535c8df709b9224ab9f82793f40256105b556506c77a84db
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-netlify@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "gatsby-plugin-netlify@npm:5.1.1"
-  dependencies:
-    "@babel/runtime": "npm:^7.16.7"
-    fs-extra: "npm:^11.0.0"
-    gatsby-core-utils: "npm:^4.0.0"
-    kebab-hash: "npm:^0.1.2"
-    lodash.mergewith: "npm:^4.6.2"
-    webpack-assets-manifest: "npm:^5.0.6"
-  peerDependencies:
-    gatsby: ^4.0.0 || ^5.0.0
-  checksum: 10c0/399fe08087589c64b36abc9321dda4b3f10ac05118eab1e1910983adda908e42ea3372ad4b3418a5d9a892b2a00fb9e401757555e6c01d14c99f035873fe79ca
   languageName: node
   linkType: hard
 
@@ -17819,15 +17803,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kebab-hash@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "kebab-hash@npm:0.1.2"
-  dependencies:
-    lodash.kebabcase: "npm:^4.1.1"
-  checksum: 10c0/98159c8bcbd9f63f1eafb671ad831af8548970447dfcaa37e0c51896886b72da9a1f409b15f99362797e7ca07bb22f0e57168c2e29da99c7f51969883c1cb025
-  languageName: node
-  linkType: hard
-
 "keep-func-props@npm:^6.0.0":
   version: 6.0.0
   resolution: "keep-func-props@npm:6.0.0"
@@ -18196,15 +18171,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lockfile@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "lockfile@npm:1.0.4"
-  dependencies:
-    signal-exit: "npm:^3.0.2"
-  checksum: 10c0/80b7777ceb43105d9e588733c3efc2514653a5e3a0dae3e61347a1f5381da34dcaa2caaa60c39ed5d4ad31c1735a4831e5639a0ba1c508bfea8dbc9c89777b37
-  languageName: node
-  linkType: hard
-
 "lodash.castarray@npm:^4.4.0":
   version: 4.4.0
   resolution: "lodash.castarray@npm:4.4.0"
@@ -18268,20 +18234,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.get@npm:^4.4.2":
-  version: 4.4.2
-  resolution: "lodash.get@npm:4.4.2"
-  checksum: 10c0/48f40d471a1654397ed41685495acb31498d5ed696185ac8973daef424a749ca0c7871bf7b665d5c14f5cc479394479e0307e781f61d5573831769593411be6e
-  languageName: node
-  linkType: hard
-
-"lodash.has@npm:^4.5.2":
-  version: 4.5.2
-  resolution: "lodash.has@npm:4.5.2"
-  checksum: 10c0/3ffa9e549f321996a5fdf6204494c035ff550b2df703f936a448c553131bbb55492b4e7995bb13500648b50b268ed8afc974a7a0c0a43744d28d61cc95cb1ffe
-  languageName: node
-  linkType: hard
-
 "lodash.includes@npm:^4.3.0":
   version: 4.3.0
   resolution: "lodash.includes@npm:4.3.0"
@@ -18338,13 +18290,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.kebabcase@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "lodash.kebabcase@npm:4.1.1"
-  checksum: 10c0/da5d8f41dbb5bc723d4bf9203d5096ca8da804d6aec3d2b56457156ba6c8d999ff448d347ebd97490da853cb36696ea4da09a431499f1ee8deb17b094ecf4e33
-  languageName: node
-  linkType: hard
-
 "lodash.map@npm:^4.6.0":
   version: 4.6.0
   resolution: "lodash.map@npm:4.6.0"
@@ -18370,13 +18315,6 @@ __metadata:
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: 10c0/402fa16a1edd7538de5b5903a90228aa48eb5533986ba7fa26606a49db2572bf414ff73a2c9f5d5fd36b31c46a5d5c7e1527749c07cbcf965ccff5fbdf32c506
-  languageName: node
-  linkType: hard
-
-"lodash.mergewith@npm:^4.6.2":
-  version: 4.6.2
-  resolution: "lodash.mergewith@npm:4.6.2"
-  checksum: 10c0/4adbed65ff96fd65b0b3861f6899f98304f90fd71e7f1eb36c1270e05d500ee7f5ec44c02ef979b5ddbf75c0a0b9b99c35f0ad58f4011934c4d4e99e5200b3b5
   languageName: node
   linkType: hard
 
@@ -23512,7 +23450,6 @@ __metadata:
     gatsby-plugin-image: "npm:^3.14.0"
     gatsby-plugin-manifest: "npm:^5.14.0"
     gatsby-plugin-module-resolver: "npm:^1.0.3"
-    gatsby-plugin-netlify: "npm:^5.1.1"
     gatsby-plugin-postcss: "npm:^6.14.0"
     gatsby-plugin-react-helmet: "npm:^6.14.0"
     gatsby-plugin-react-svg: "npm:^3.0.1"
@@ -23770,7 +23707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:^3.0.0, schema-utils@npm:^3.1.1, schema-utils@npm:^3.3.0":
+"schema-utils@npm:^3.0.0, schema-utils@npm:^3.1.1":
   version: 3.3.0
   resolution: "schema-utils@npm:3.3.0"
   dependencies:
@@ -25524,7 +25461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tapable@npm:^2.1.1, tapable@npm:^2.2.0, tapable@npm:^2.2.1":
+"tapable@npm:^2.1.1, tapable@npm:^2.2.0":
   version: 2.2.3
   resolution: "tapable@npm:2.2.3"
   checksum: 10c0/e57fd8e2d756c317f8726a1bec8f2c904bc42e37fcbd4a78211daeab89f42c734b6a20e61774321f47be9a421da628a0c78b62d36c5ed186f4d5232d09ae15f2
@@ -27275,23 +27212,6 @@ __metadata:
   version: 7.0.0
   resolution: "webidl-conversions@npm:7.0.0"
   checksum: 10c0/228d8cb6d270c23b0720cb2d95c579202db3aaf8f633b4e9dd94ec2000a04e7e6e43b76a94509cdb30479bd00ae253ab2371a2da9f81446cc313f89a4213a2c4
-  languageName: node
-  linkType: hard
-
-"webpack-assets-manifest@npm:^5.0.6":
-  version: 5.2.1
-  resolution: "webpack-assets-manifest@npm:5.2.1"
-  dependencies:
-    chalk: "npm:^4.1.2"
-    deepmerge: "npm:^4.3.1"
-    lockfile: "npm:^1.0.4"
-    lodash.get: "npm:^4.4.2"
-    lodash.has: "npm:^4.5.2"
-    schema-utils: "npm:^3.3.0"
-    tapable: "npm:^2.2.1"
-  peerDependencies:
-    webpack: ^5.2.0
-  checksum: 10c0/3ee9380d5d5efca3c3a3dd8c98dc06eeddddfb797d3e6714e1cef1bbdf4db10191ec9c6c6cca96ff698851336d5f64aa83a4fd64bc6530afc38fc27cf166cbdc
   languageName: node
   linkType: hard
 
