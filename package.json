@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "author": "David Tuite <david@roadie.io>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/RoadieHQ/marketing-site/issues",
+    "email": "support@roadie.io"
   },
   "browserslist": [
     "defaults"

@@ -4,9 +4,9 @@ const STORE_NAME = 'npm-package-data';
 const VALID_AUTH_STRATEGIES = ['automatic', 'token'];
 
 const getRoadieStore = ({
-  storeName = STORE_NAME,
+  name = STORE_NAME,
   authStrategy,
-  siteID = process.env.GATSBY_NETLIFY_SITE_ID,
+  siteID = process.env.NETLIFY_SITE_ID,
 } = {}) => {
   if (!VALID_AUTH_STRATEGIES.includes(authStrategy)) {
     throw new Error(`
@@ -15,10 +15,12 @@ const getRoadieStore = ({
     `);
   }
 
-  const opts = { name: storeName, siteID };
+  console.log('log keys', typeof process.env.NETLIFY_API_TOKEN, process.env.NETLIFY_API_TOKEN.length, process.env.NETLIFY_API_TOKEN.slice(-4));
+
+  const opts = { name, siteID };
 
   if (authStrategy === 'token') {
-    opts.token = process.env.GATSBY_NETLIFY_API_TOKEN;
+    opts.token = process.env.NETLIFY_API_TOKEN;
   }
 
   return getStore(opts);

@@ -47,8 +47,8 @@ jobs:
           GATSBY_NEWSLETTER_RECAPTCHA_ENABLED: true
           ROADIE_API_TOKEN: ${{ secrets.ROADIE_API_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.RELEASES_GITHUB_TOKEN }}
-          GATSBY_NETLIFY_API_TOKEN: ${{ secrets.GATSBY_NETLIFY_API_TOKEN }}
-          GATSBY_NETLIFY_SITE_ID: ${{ secrets.GATSBY_NETLIFY_SITE_ID }}
+          NETLIFY_API_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
