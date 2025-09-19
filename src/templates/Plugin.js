@@ -46,6 +46,12 @@ const PluginTemplate = ({ data, serverData }) => {
     site: { siteMetadata },
   } = data;
 
+  const { ssrError, npmData, } = serverData;
+
+  if (ssrError) {
+    console.error(JSON.parse(ssrError));
+  }
+
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
   const handleOpenExitIntentModal = () => {
@@ -92,7 +98,7 @@ const PluginTemplate = ({ data, serverData }) => {
             </article>
 
             <aside className="col-span-1">
-              <Sidebar npmData={serverData} plugin={plugin} siteMetadata={siteMetadata} />
+              <Sidebar npmData={npmData} plugin={plugin} siteMetadata={siteMetadata} />
             </aside>
           </div>
         </div>
@@ -169,22 +175,31 @@ export const pageQuery = graphql`
 `;
 
 export async function getServerData({ pageContext }) {
-  let data = {};
-
   try {
-    data = await retrievePackageDataByName({
+    const npmData = await retrievePackageDataByName({
       packageName: pageContext.npmjsPackage,
-      authStrategy: 'token',
+      // authStrategy: 'token',
     });
+
+    return {
+      props: {
+        npmData,
+      },
+    };
 
   } catch (e) {
     // The page is still useful without the NPM data so just log the error
     // and return a 200 code and the UI can handle the fact that the NPM
     // data is missing.
     console.error(e);
-  }
 
-  return {
-    props: data,
-  };
+    return {
+      status: 200,
+      headers: {},
+      props: {
+        ssrError: JSON.stringify(e, Object.getOwnPropertyNames(e)),
+        npmData: {},
+      },
+    };
+  }
 }
