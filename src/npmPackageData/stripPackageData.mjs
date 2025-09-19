@@ -1,4 +1,4 @@
-const pick = require('lodash/pick');
+import pick from 'lodash/pick.js';
 
 // NPM package data can be quite large, with thousands of versions and maintainers listed,
 // README files repeated over and over for each version etc. We don't want to store this
@@ -32,4 +32,4 @@ const stripPackageData = (data) => {
   };
 };
 
-module.exports = stripPackageData;
+export default stripPackageData;

@@ -1,3 +1,3 @@
-module.exports = {
-  presets: ['babel-preset-gatsby', ['@babel/preset-env', { targets: { node: 'current' } }]],
+export default {
+  presets: ['babel-preset-gatsby'],
 };

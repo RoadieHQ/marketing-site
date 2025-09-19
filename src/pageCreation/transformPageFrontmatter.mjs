@@ -1,5 +1,5 @@
-const remark = require('remark');
-const remarkHTML = require('remark-html');
+import remark from 'remark';
+import remarkHTML from 'remark-html';
 
 const transformPageFrontmatter = ({ node }) => {
   if (node.frontmatter.gettingStarted) {
@@ -22,4 +22,4 @@ const transformPageFrontmatter = ({ node }) => {
   return node;
 };
 
-module.exports = transformPageFrontmatter;
+export default transformPageFrontmatter;

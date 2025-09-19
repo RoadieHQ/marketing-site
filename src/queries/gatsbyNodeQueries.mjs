@@ -1,4 +1,4 @@
-module.exports.BLOGS_QUERY = `
+export const BLOGS_QUERY = `
 {
   blogs: allContentfulBlogPost(sort: {date: DESC}) {
     edges {
@@ -10,7 +10,7 @@ module.exports.BLOGS_QUERY = `
 }
 `;
 
-module.exports.BACKSTAGE_BITES_QUERY = `
+export const BACKSTAGE_BITES_QUERY = `
 {
   videos: allContentfulVideo {
     edges {
@@ -22,7 +22,7 @@ module.exports.BACKSTAGE_BITES_QUERY = `
 }
 `;
 
-module.exports.CASE_STUDIES_QUERY = `
+export const CASE_STUDIES_QUERY = `
 {
   caseStudies: allContentfulCaseStudy(
     sort: {
@@ -41,7 +41,7 @@ module.exports.CASE_STUDIES_QUERY = `
 
 // frontmatter is required in this query because they are server side rendered so
 // that we can pull data from the npmjs API before the page is rendered.
-module.exports.PLUGINS_QUERY = `
+export const PLUGINS_QUERY = `
 {
   plugins: allMarkdownRemark(
     limit: 1000,
@@ -64,7 +64,7 @@ module.exports.PLUGINS_QUERY = `
 }
 `;
 
-module.exports.TAGS_QUERY = `
+export const TAGS_QUERY = `
 {
   tagsGroup: allContentfulBlogPost {
     group(field: {tags: SELECT}) {
@@ -74,7 +74,7 @@ module.exports.TAGS_QUERY = `
 }
 `;
 
-module.exports.LEGAL_NOTICES_QUERY = `
+export const LEGAL_NOTICES_QUERY = `
 {
   notices: allMarkdownRemark(
     limit: 1000,
@@ -93,7 +93,7 @@ module.exports.LEGAL_NOTICES_QUERY = `
 }
 `;
 
-module.exports.DOCS_QUERY = `
+export const DOCS_QUERY = `
 {
   docs: allMarkdownRemark(
     limit: 1000,
@@ -112,7 +112,7 @@ module.exports.DOCS_QUERY = `
 }
 `;
 
-module.exports.CHANGELOG_QUERY = `
+export const CHANGELOG_QUERY = `
 {
   result: allContentfulChangeSet(
     sort: {releasedAt: DESC}

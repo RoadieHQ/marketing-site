@@ -1,9 +1,11 @@
-const has = require('lodash/has');
-const get = require('lodash/get');
-const agoliaQueries = require('./src/queries/agolia');
-const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
-const theme = require('./src/theme');
-const GATSBY_PLUGIN_CSP_DIRECTIVES = require('./src/gatsby/cspDirectives');
+import has from 'lodash/has.js';
+import get from 'lodash/get.js';
+import agoliaQueries from './src/queries/agolia.mjs';
+import rssFeedPlugin from './src/gatsby/rssFeedPlugin.mjs';
+import theme from './src/theme.mjs';
+import GATSBY_PLUGIN_CSP_DIRECTIVES from './src/gatsby/cspDirectives.mjs';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 // EXAMPLE NETLIFY ENV VARS:
 //
@@ -99,7 +101,9 @@ process.env.GATSBY_GIT_BRANCH_NAME = process.env.BRANCH;
 process.env.GATSBY_NETLIFY_SITE_NAME = process.env.SITE_NAME;
 process.env.GATSBY_SITE_RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 
-module.exports = {
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+const config = {
   siteMetadata: {
     title: SITE_TITLE,
     description: 'Hosted, managed, enterprise Backstage',
@@ -302,3 +306,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;

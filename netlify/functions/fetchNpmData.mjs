@@ -1,4 +1,4 @@
-const { storePackageData } = require('../../src/npmPackageData');
+import storePackageData from '../../src/npmPackageData/storePackageData.mjs';
 
 const fetchNpmData = async () => {
   const resp = await storePackageData({ authStrategy: 'automatic' });
@@ -10,4 +10,4 @@ const fetchNpmData = async () => {
   });
 };
 
-module.exports = fetchNpmData;
+export default fetchNpmData;

@@ -1,4 +1,4 @@
-const getRoadieStore = require('./getRoadieStore');
+import getRoadieStore from './getRoadieStore';
 
 const retrievePackageDataByName = async ({
   packageName,
@@ -8,4 +8,4 @@ const retrievePackageDataByName = async ({
   return store.get(packageName, { type: 'json' });
 };
 
-module.exports = retrievePackageDataByName;
+export default retrievePackageDataByName;

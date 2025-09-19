@@ -1,4 +1,4 @@
-const get = require('lodash/get');
+import get from 'lodash/get.js';
 
 const blogFeed = {
   serialize: ({ query: { site, blogs } }) => {
@@ -139,7 +139,7 @@ const blogChangelogFeed = {
   title: 'Roadie Changelog',
 };
 
-module.exports = [{
+export default [{
   resolve: 'gatsby-plugin-feed',
   options: {
     query: `

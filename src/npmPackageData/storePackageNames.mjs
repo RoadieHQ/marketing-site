@@ -1,8 +1,8 @@
-const reduce = require('lodash/reduce');
+import reduce from 'lodash/reduce.js';
 
-const { PLUGINS_QUERY } = require('../queries/gatsbyNodeQueries');
-const { ALL_PACKAGE_NAMES_STORE_KEY } = require('./constants');
-const getRoadieStore = require('./getRoadieStore');
+import { PLUGINS_QUERY } from '../queries/gatsbyNodeQueries.mjs';
+import { ALL_PACKAGE_NAMES_STORE_KEY } from './constants.mjs';
+import getRoadieStore from './getRoadieStore.mjs';
 
 const listOfNpmPackagesFromFiles = async ({ graphql }) => {
   const { data, errors } = await graphql(PLUGINS_QUERY);
@@ -28,4 +28,4 @@ const storePackageNames = async (graphql, { authStrategy }) => {
   return { modified, etag };
 };
 
-module.exports = storePackageNames;
+export default storePackageNames;
