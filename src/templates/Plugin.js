@@ -46,10 +46,8 @@ const PluginTemplate = ({ data, serverData }) => {
     site: { siteMetadata },
   } = data;
 
-  const { ssrError, npmData, } = serverData;
-
-  if (ssrError) {
-    console.error(JSON.parse(ssrError));
+  if (serverData.ssrError) {
+    console.error(serverData.ssrError);
   }
 
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
@@ -98,7 +96,7 @@ const PluginTemplate = ({ data, serverData }) => {
             </article>
 
             <aside className="col-span-1">
-              <Sidebar npmData={npmData} plugin={plugin} siteMetadata={siteMetadata} />
+              <Sidebar npmData={serverData.npmData} plugin={plugin} siteMetadata={siteMetadata} />
             </aside>
           </div>
         </div>
