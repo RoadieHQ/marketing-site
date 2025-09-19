@@ -34,7 +34,7 @@ const Mainatainer = ({ name, email }) => {
   );
 };
 
-const Sidebar = ({ plugin, npmData, siteMetadata }) => {
+const Sidebar = ({ plugin, npmData = {}, siteMetadata }) => {
   // The component needs to be resilient to npmData = {}. This is the state
   // we will find ourselves in if the Netlify Blob storage returns an error.
   const latestVersionPublishedTime = get(npmData, `time['${npmData.latestVersion}']`);
