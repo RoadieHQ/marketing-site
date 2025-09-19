@@ -1,7 +1,8 @@
-const { createFilePath } = require(`gatsby-source-filesystem`);
-const kebabCase = require('lodash/kebabCase');
-const has = require('lodash/has');
-const {
+import { createFilePath } from 'gatsby-source-filesystem';
+import kebabCase from 'lodash/kebabCase.js';
+import has from 'lodash/has.js';
+
+import {
   BLOGS_QUERY,
   PLUGINS_QUERY,
   TAGS_QUERY,
@@ -10,16 +11,16 @@ const {
   CASE_STUDIES_QUERY,
   CHANGELOG_QUERY,
   BACKSTAGE_BITES_QUERY,
-} = require('./src/queries/gatsbyNodeQueries');
-const {
+} from './src/queries/gatsbyNodeQueries.mjs';
+import {
   createLatestLegalNotices,
   createPagesFromQuery,
   createListPagesFromQuery,
   transformPageFrontmatter,
-} = require('./src/pageCreation');
-const { storePackageNames } = require('./src/npmPackageData');
+} from './src/pageCreation/index.mjs';
+import storePackageNames from './src/npmPackageData/storePackageNames.mjs';
 
-exports.createPages = async ({ graphql, actions }) => {
+export const createPages = async ({ graphql, actions }) => {
   // This function iterates over the backstage plugins in the plugins directory, gets the name
   // of the NPM package associated with each one, and uploads all the names in a big array
   // to Netlify Blob storage.
@@ -172,7 +173,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+export const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   // has(node, 'fileAbsolutePath') prevents this code from running on nodes which come

@@ -1,9 +1,9 @@
-const { ALL_PACKAGE_NAMES_STORE_KEY } = require('./constants');
-const getRoadieStore = require('./getRoadieStore');
+import { ALL_PACKAGE_NAMES_STORE_KEY } from './constants.mjs';
+import getRoadieStore from './getRoadieStore.mjs';
 
 const retrievePackageNames = async ({ authStrategy }) => {
   const store = getRoadieStore({ authStrategy });
   return store.get(ALL_PACKAGE_NAMES_STORE_KEY, { type: 'json' });
 };
 
-module.exports = retrievePackageNames;
+export default retrievePackageNames;

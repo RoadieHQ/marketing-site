@@ -1,8 +1,8 @@
-const reduce = require('lodash/reduce');
+import reduce from 'lodash/reduce.js';
 
-const getRoadieStore = require('./getRoadieStore');
-const retrievePackageNames = require('./retrievePackageNames');
-const stripPackageData = require('./stripPackageData');
+import getRoadieStore from './getRoadieStore.mjs';
+import retrievePackageNames from './retrievePackageNames.mjs';
+import stripPackageData from './stripPackageData.mjs';
 
 const NPM_REGISTRY_HOSTNAME = 'https://registry.npmjs.org/';
 const ALL_PACKAGE_DATA_STORE_KEY = `all-backstage-plugin-package-data`;
@@ -46,4 +46,4 @@ const storePackageData = async ({ authStrategy }) => {
   return { modified, etag };
 };
 
-module.exports = storePackageData;
+export default storePackageData;

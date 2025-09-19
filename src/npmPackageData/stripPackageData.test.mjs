@@ -1,6 +1,6 @@
-const testPackage = require('./npmPackage.stub.json');
+import testPackage from './npmPackage.stub.json';
 
-const stripPackageData = require('./stripPackageData');
+import stripPackageData from './stripPackageData';
 
 describe('#stripPackageData', () => {
   it('should have a name', () => {

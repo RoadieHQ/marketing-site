@@ -1,4 +1,4 @@
-const { getStore } = require('@netlify/blobs');
+import { getStore } from '@netlify/blobs';
 
 const STORE_NAME = 'npm-package-data';
 const VALID_AUTH_STRATEGIES = ['automatic', 'token'];
@@ -24,4 +24,4 @@ const getRoadieStore = ({
   return getStore(opts);
 };
 
-module.exports = getRoadieStore;
+export default getRoadieStore;
