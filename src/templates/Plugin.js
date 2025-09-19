@@ -40,7 +40,7 @@ const recordExitIntentModalHasBeenShown = () => {
 };
 
 
-const PluginTemplate = ({ data, serverData }) => {
+const PluginTemplate = ({ data, serverData = {} }) => {
   const {
     plugin,
     site: { siteMetadata },
