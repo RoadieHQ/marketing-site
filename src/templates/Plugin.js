@@ -178,7 +178,7 @@ export async function getServerData({ pageContext }) {
   try {
     const npmData = await retrievePackageDataByName({
       packageName: pageContext.npmjsPackage,
-      // authStrategy: 'token',
+      authStrategy: 'token',
     });
 
     return {
