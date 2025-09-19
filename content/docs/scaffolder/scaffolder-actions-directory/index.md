@@ -70,7 +70,7 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 | Catalog       | [catalog:register](#catalogregister)               | Registers an entity in the catalog.                                                                      | ✅️                     |
 | Catalog       | [catalog:register:plus](#catalogregisterplus)      | Registers multiple entities in the catalog.                                                              |                        |
 | Catalog       | [catalog:write](#catalogwrite)                     | Writes the catalog-info.yaml for your template                                                           | ✅️                     |
-| Catalog       | [catalog:fetch](#catalogfetch)                     | Fetches an entity or entities from the catalog by entity reference(s).                                   |                        |
+| Catalog       | [catalog:fetch](#catalogfetch)                     | Fetches an entity or entities from the catalog by entity reference(s).                                   | ✅️                          |
 | Catalog       | [catalog:query:plus](#catalogqueryplus)            | Queries the catalog using provided filters, fields, and ordering parameters.                             |                        |
 | Catalog       | [catalog:relation:plus](#catalogrelationplus)      | Query entities based on relations.                                                                       |                        |
 | Catalog       | [catalog:timestamping](#catalogtimestamping)       | Adds the `backstage.io/createdAt` annotation containing the current timestamp to your entity object.     |                        |
@@ -2188,6 +2188,7 @@ None
 
 
 #### `catalog:fetch`
+✅️ Ready to use in Roadie
 
 This action fetches an entity or entities from the catalog by entity reference(s).
 
