@@ -1,8 +1,8 @@
-const has = require('lodash/has');
-const map = require('lodash/map');
-const get = require('lodash/get');
+import has from 'lodash/has.js';
+import map from 'lodash/map.js';
+import get from 'lodash/get.js';
 
-const { LEGAL_NOTICES_QUERY } = require('../queries/gatsbyNodeQueries');
+import { LEGAL_NOTICES_QUERY } from '../queries/gatsbyNodeQueries.mjs';
 
 /*
  * Legal notices are immutable and versioned so they show up under different routes such as
@@ -44,4 +44,4 @@ const createLatestLegalNotices = async ({ graphql, actions: { createRedirect } }
   });
 };
 
-module.exports = createLatestLegalNotices;
+export default createLatestLegalNotices;

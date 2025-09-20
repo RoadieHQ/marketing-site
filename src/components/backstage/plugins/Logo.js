@@ -11,7 +11,9 @@ const Logo = ({ sharpImage, alt, minHeight = 200 }) => {
   }
 
   return (
-    <div className="flex justify-center items-center" style={{ height, visibility: sharpImage ? 'visible' : 'hidden' }} >
+    <div
+      className="flex justify-center items-center"
+      style={{ height, visibility: sharpImage ? 'visible' : 'hidden' }} >
       {image}
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { retrievePackageDataByName } from '../npmPackageData';
 import usePageLeave from 'react-use/lib/usePageLeave';
 import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
 import {
-  EditOnGitHubLink,
   Header,
   Intro,
   PluginCTA,
@@ -12,6 +12,7 @@ import {
   InstallationSteps,
   PlaceholderBody,
   Notes,
+  Sidebar,
 } from 'components/backstage/plugins';
 
 const Body = ({ plugin, siteMetadata }) => {
@@ -20,14 +21,9 @@ const Body = ({ plugin, siteMetadata }) => {
       <>
         <Intro plugin={plugin} />
 
-        <PluginCTA plugin={plugin} />
         <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
 
         <InstallationSteps plugin={plugin} />
-
-        <p className="prose prose-primary my-10">
-          Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
-        </p>
       </>
     );
   }
@@ -44,11 +40,15 @@ const recordExitIntentModalHasBeenShown = () => {
 };
 
 
-const PluginTemplate = ({ data }) => {
+const PluginTemplate = ({ data, serverData = {} }) => {
   const {
     plugin,
     site: { siteMetadata },
   } = data;
+
+  if (serverData.ssrError) {
+    console.error(serverData.ssrError);
+  }
 
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
@@ -82,13 +82,23 @@ const PluginTemplate = ({ data }) => {
 
       <SitewideHeader />
 
-      <Header plugin={plugin} />
+      <div className="mt-4">
+        <Header plugin={plugin} />
+      </div>
 
-      <main className="pt-4 pb-8 px-4 lg:pb-28">
-        <div className="relative max-w-lg mx-auto lg:max-w-4xl">
-          <Body plugin={plugin} siteMetadata={siteMetadata} />
-          <Notes plugin={plugin} />
-          <PluginCTA plugin={plugin} />
+      <main className="pb-8 px-4 lg:pb-28">
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 gap-20">
+            <article className="col-span-2">
+              <Body plugin={plugin} siteMetadata={siteMetadata} />
+              <Notes plugin={plugin} />
+              <PluginCTA plugin={plugin} />
+            </article>
+
+            <aside className="col-span-1">
+              <Sidebar npmData={serverData.npmData} plugin={plugin} siteMetadata={siteMetadata} />
+            </aside>
+          </div>
         </div>
       </main>
 
@@ -135,7 +145,7 @@ export const pageQuery = graphql`
 
         logoImage {
           childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 140)
+            gatsbyImageData(layout: FIXED, width: 80)
           }
         }
 
@@ -161,3 +171,33 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export async function getServerData({ pageContext }) {
+  try {
+    const npmData = await retrievePackageDataByName({
+      packageName: pageContext.npmjsPackage,
+      authStrategy: 'token',
+    });
+
+    return {
+      props: {
+        npmData,
+      },
+    };
+
+  } catch (e) {
+    // The page is still useful without the NPM data so just log the error
+    // and return a 200 code and the UI can handle the fact that the NPM
+    // data is missing.
+    console.error(e);
+
+    return {
+      status: 200,
+      headers: {},
+      props: {
+        ssrError: JSON.stringify(e, Object.getOwnPropertyNames(e)),
+        npmData: {},
+      },
+    };
+  }
+}

@@ -1,5 +1,5 @@
-const path = require(`path`);
-const get = require('lodash/get');
+import path from 'path';
+import get from 'lodash/get.js';
 
 const createListPagesFromQuery = async ({
   graphql,
@@ -36,4 +36,4 @@ const createListPagesFromQuery = async ({
   });
 };
 
-module.exports = createListPagesFromQuery;
+export default createListPagesFromQuery;

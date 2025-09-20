@@ -1,4 +1,4 @@
-const get = require('lodash/get');
+import get from 'lodash/get.js';
 
 const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
   const directives = [
@@ -216,7 +216,7 @@ const CSP_MEDIA_SRC_DIRECTIVES = [
   'https://js.intercomcdn.com',
 ].join(' ');
 
-module.exports = {
+export default {
   'img-src': CSP_IMG_SRC_DIRECTIVES,
   'connect-src': CSP_CONNECT_SRC_DIRECTIVES,
   'script-src': CSP_SCRIPT_SRC_DIRECTIVES,

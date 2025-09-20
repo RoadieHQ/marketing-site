@@ -1,4 +1,4 @@
-const escapeStringRegexp = require('escape-string-regexp');
+import escapeStringRegexp from 'escape-string-regexp';
 
 const pagePath = 'content/docs';
 const indexName = 'docs';
@@ -42,4 +42,4 @@ const queries = [
   },
 ];
 
-module.exports = queries;
+export default queries;
