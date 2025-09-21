@@ -9763,6 +9763,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cloudinary-core@npm:^2.13.0":
+  version: 2.14.0
+  resolution: "cloudinary-core@npm:2.14.0"
+  peerDependencies:
+    lodash: ">=4.0"
+  checksum: 10c0/65f4c7af952a4b1a2282c560182173ff84065787a1b44b226949a53abf6b258777fd24a4caa00ce4839a3ebd22790d2d861d02ffd258df7d04803f36ca5155b7
+  languageName: node
+  linkType: hard
+
+"cloudinary@npm:^1.35.0":
+  version: 1.41.3
+  resolution: "cloudinary@npm:1.41.3"
+  dependencies:
+    cloudinary-core: "npm:^2.13.0"
+    core-js: "npm:^3.30.1"
+    lodash: "npm:^4.17.21"
+    q: "npm:^1.5.1"
+  checksum: 10c0/1f49107e091b6a1c45a1f1ba424437fb1f90c50903f1e04a37b94e0cde46fb074179d8a647cb18ccacb33d155ab63a011ccaa4ba47665ba43b94f6ccd585a058
+  languageName: node
+  linkType: hard
+
 "clsx@npm:^1.1.0":
   version: 1.2.1
   resolution: "clsx@npm:1.2.1"
@@ -10271,7 +10292,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.31.0":
+"core-js@npm:^3.30.1, core-js@npm:^3.31.0":
   version: 3.45.1
   resolution: "core-js@npm:3.45.1"
   checksum: 10c0/c38e5fae5a05ee3a129c45e10056aafe61dbb15fd35d27e0c289f5490387541c89741185e0aeb61acb558559c6697e016c245cca738fa169a73f2b06cd30e6b6
@@ -14383,6 +14404,18 @@ __metadata:
   dependencies:
     sharp: "npm:^0.32.6"
   checksum: 10c0/2ee9ec02e5981407b5fc992c9d150e4109b29523091fce539868bc782d7d076beaa9f3ff25dcb06082ca68e96ef4560a4e6e6ead42a4209ef6005c77c196716c
+  languageName: node
+  linkType: hard
+
+"gatsby-source-cloudinary@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "gatsby-source-cloudinary@npm:0.6.1"
+  dependencies:
+    cloudinary: "npm:^1.35.0"
+    lodash: "npm:^4.17.21"
+  peerDependencies:
+    gatsby: ^3.0.0 || ^4.0.0 || ^5.0.0
+  checksum: 10c0/17946be839a7cf1fd7fb6f82708f18ccc42c9c227bd28676cb61f022acb8325c2fb0e71d6cc6856d10c19d2042b04159d24735f743225c2970047786168fa9c7
   languageName: node
   linkType: hard
 
@@ -22140,6 +22173,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"q@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "q@npm:1.5.1"
+  checksum: 10c0/7855fbdba126cb7e92ef3a16b47ba998c0786ec7fface236e3eb0135b65df36429d91a86b1fff3ab0927b4ac4ee88a2c44527c7c3b8e2a37efbec9fe34803df4
+  languageName: node
+  linkType: hard
+
 "qs@npm:6.13.0":
   version: 6.13.0
   resolution: "qs@npm:6.13.0"
@@ -23464,6 +23504,7 @@ __metadata:
     gatsby-remark-prismjs: "npm:^7.14.0"
     gatsby-remark-responsive-iframe: "npm:^6.14.0"
     gatsby-remark-smartypants: "npm:^6.14.0"
+    gatsby-source-cloudinary: "npm:^0.6.1"
     gatsby-source-contentful: "npm:^8.15.0"
     gatsby-source-filesystem: "npm:^5.14.0"
     gatsby-transformer-remark: "npm:^6.14.0"
