@@ -1,8 +1,9 @@
 import retrievePackageDataByName from '../../src/npmPackageData/retrievePackageDataByName.mjs';
 
-const fetchNpmDataByName = async (req, context) => {
-  const { packageName } = context.params;
-  console.log('context.packageName', packageName);
+const fetchNpmDataByName = async (req) => {
+  const packageName = new URL(req.url).searchParams.get('packageName')
+
+  console.log('packageName', packageName);
   const resp = await retrievePackageDataByName({
     packageName,
     authStrategy: 'automatic',

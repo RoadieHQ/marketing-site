@@ -4,6 +4,7 @@ import retrievePackageDataByName from '../src/npmPackageData/retrievePackageData
 // import storePackageData from '../src/npmPackageData/storePackageData.mjs';
 
 // storePackageData({ authStrategy: 'token' });
+
 const res = await retrievePackageDataByName({
   authStrategy: 'token',
   packageName: '',
