@@ -313,7 +313,21 @@ const config = {
         apiSecret: process.env.CLOUDINARY_API_SECRET,
         resourceType: `image`,
       }
-    }
+    },
+
+    {
+      resolve: `gatsby-transformer-cloudinary`,
+      options: {
+        transformTypes: [
+          // Assumes a GraphQL Type named `BlogPostHeroImage`
+          // Could be a `BlogPost` node with a `heroImage` field
+          // with the required data shape
+          `MarkdownRemarkFrontmatter`,
+        ],
+        // Optional transformation option
+        defaultTransformations: ['c_fill', 'g_auto', 'q_auto'],
+      },
+    },
   ],
 };
 
