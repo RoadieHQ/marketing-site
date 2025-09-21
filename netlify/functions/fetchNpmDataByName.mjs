@@ -8,9 +8,11 @@ const fetchNpmDataByName = async (req, context) => {
 
   console.log('resp', resp);
 
-  return new Response({
-    data: JSON.stringify(resp),
-  });
+  return new Response(JSON.stringify({
+    data: {
+      ...resp,
+    },
+  }));
 };
 
 export default fetchNpmDataByName;

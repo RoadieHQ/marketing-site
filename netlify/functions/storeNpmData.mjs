@@ -5,12 +5,12 @@ const storeNpmData = async () => {
 
   console.log('resp', modified, etag);
 
-  return new Response({
-    data: JSON.stringify({
+  return new Response(JSON.stringify({
+    data: {
       modified,
       etag,
-    }),
-  });
+    },
+  }));
 };
 
 export default storeNpmData;

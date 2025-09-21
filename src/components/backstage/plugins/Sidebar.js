@@ -36,12 +36,12 @@ const Mainatainer = ({ name, email }) => {
 };
 
 async function fetchNpmDataByName ({ packageName }) {
-  const funcUrl = '.netlify/functions/fetchNpmDataByName';
+  const funcUrl = '/.netlify/functions/fetchNpmDataByName';
   try {
     const results = await fetch(`${funcUrl}?packageName=${packageName}`);
-    const json = await results.json();
-    console.log('json', json);
-    return json;
+    const { data } = await results.json();
+    console.log('json', data);
+    return data;
   } catch (err) {
     console.error(err);
     return {};
