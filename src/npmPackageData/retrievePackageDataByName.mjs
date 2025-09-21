@@ -1,4 +1,4 @@
-import getRoadieStore from './getRoadieStore';
+import getRoadieStore from './getRoadieStore.mjs';
 
 const retrievePackageDataByName = async ({
   packageName,

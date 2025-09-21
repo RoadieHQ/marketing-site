@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Title } from 'components';
 import map from 'lodash/map';
 import get from 'lodash/get';
@@ -35,7 +35,29 @@ const Mainatainer = ({ name, email }) => {
   );
 };
 
-const Sidebar = ({ plugin, npmData = {}, siteMetadata }) => {
+async function fetchNpmDataByName ({ packageName }) {
+  const funcUrl = '.netlify/functions/fetchNpmDataByName';
+  try {
+    const results = await fetch(`${funcUrl}?packageName=${packageName}`);
+    const json = await results.json();
+    console.log('json', json);
+    return json;
+  } catch (err) {
+    console.error(err);
+    return {};
+  }
+}
+const Sidebar = ({ plugin, siteMetadata }) => {
+  const [npmData, setNpmData] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      setNpmData(fetchNpmDataByName({
+        packageName: plugin.frontmatter.npmjsPackage,
+      }));
+    })();
+  }, [plugin.frontmatter.npmjsPackage]);
+
   // The component needs to be resilient to npmData = {}. This is the state
   // we will find ourselves in if the Netlify Blob storage returns an error.
   const latestVersionPublishedTime = get(npmData, `time['${npmData.latestVersion}']`);

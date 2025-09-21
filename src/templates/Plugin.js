@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { retrievePackageDataByName } from '../npmPackageData';
 import usePageLeave from 'react-use/lib/usePageLeave';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
@@ -7,7 +6,7 @@ import {
   Header,
   Intro,
   PluginCTA,
-  // CoverImage,
+  CoverImage,
   InstallationSteps,
   PlaceholderBody,
   Notes,
@@ -20,7 +19,7 @@ const Body = ({ plugin, siteMetadata }) => {
       <>
         <Intro plugin={plugin} />
 
-        {/*<CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />*/}
+        <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
 
         <InstallationSteps plugin={plugin} />
       </>
@@ -39,15 +38,11 @@ const recordExitIntentModalHasBeenShown = () => {
 };
 
 
-const PluginTemplate = ({ data, serverData = {} }) => {
+const PluginTemplate = ({ data }) => {
   const {
     plugin,
     site: { siteMetadata },
   } = data;
-
-  if (serverData.ssrError) {
-    console.error(serverData.ssrError);
-  }
 
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
@@ -91,7 +86,7 @@ const PluginTemplate = ({ data, serverData = {} }) => {
             </article>
 
             <aside className="col-span-1">
-              <Sidebar npmData={serverData.npmData} plugin={plugin} siteMetadata={siteMetadata} />
+              <Sidebar plugin={plugin} siteMetadata={siteMetadata} />
             </aside>
           </div>
         </div>
@@ -103,17 +98,6 @@ const PluginTemplate = ({ data, serverData = {} }) => {
 };
 
 export default PluginTemplate;
-        // logoImage {
-        //   childImageSharp {
-        //     gatsbyImageData(layout: FIXED, width: 80)
-        //   }
-        // }
-
-        // coverImage {
-        //   childImageSharp {
-        //     gatsbyImageData(layout: FULL_WIDTH)
-        //   }
-        // }
 
 export const pageQuery = graphql`
   query PluginBySlug($slug: String!) {
@@ -149,6 +133,17 @@ export const pageQuery = graphql`
           text
         }
 
+        logoImage {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 80)
+          }
+        }
+
+        coverImage {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
         coverImageAlt
 
         seo {
@@ -166,33 +161,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export async function getServerData({ pageContext }) {
-  try {
-    const npmData = await retrievePackageDataByName({
-      packageName: pageContext.npmjsPackage,
-      authStrategy: 'token',
-    });
-
-    return {
-      props: {
-        npmData,
-      },
-    };
-
-  } catch (e) {
-    // The page is still useful without the NPM data so just log the error
-    // and return a 200 code and the UI can handle the fact that the NPM
-    // data is missing.
-    console.error(e);
-
-    return {
-      status: 200,
-      headers: {},
-      props: {
-        ssrError: JSON.stringify(e, Object.getOwnPropertyNames(e)),
-        npmData: {},
-      },
-    };
-  }
-}
