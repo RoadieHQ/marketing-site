@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'components';
-// import { GitHubIcon, BackstageIcon, RoadieRacksIcon, LinkedinIcon } from 'components/icons';
+import { GitHubIcon, BackstageIcon, LinkedinIcon } from 'components/icons';
 import camelCase from 'lodash/camelCase';
 
 // import soc2Seal from '../../../content/assets/logos/soc2/aicpa.jpg';
@@ -41,15 +41,15 @@ const navigation = {
   social: [{
     name: 'Linkedin',
     href: 'https://www.linkedin.com/company/43197350',
-    // icon: LinkedinIcon,
+    icon: LinkedinIcon,
   }, {
     name: 'GitHub',
     href: 'https://github.com/RoadieHQ',
-    // icon: GitHubIcon,
+    icon: GitHubIcon,
   }, {
     name: 'Backstage',
     href: 'https://backstage.io',
-    // icon: BackstageIcon,
+    icon: BackstageIcon,
   }],
 };
 
@@ -65,12 +65,12 @@ const NavItem = ({ name, href }) => (
   </li>
 );
 
-// const SocialItem = ({ item }) => (
-//   <Link key={item.name} to={item.href} className="text-gray-400 hover:text-gray-500">
-//     <span className="sr-only">{item.name}</span>
-//     <item.icon className="h-6 w-6" aria-hidden="true" />
-//   </Link>
-// );
+const SocialItem = ({ item }) => (
+  <Link key={item.name} to={item.href} className="text-gray-400 hover:text-gray-500">
+    <span className="sr-only">{item.name}</span>
+    <item.icon className="h-6 w-6" aria-hidden="true" />
+  </Link>
+);
 
 const TitledLinkList = ({ title, linkListKey = camelCase(title) }) => (
   <>
@@ -108,11 +108,9 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
             </p>
 
             <div className="flex space-x-6">
-              {/*
               {navigation.social.map((item) => (
                 <SocialItem item={item} key={item.name} />
               ))}
-              */}
             </div>
 
             <div className="flex items-center">
