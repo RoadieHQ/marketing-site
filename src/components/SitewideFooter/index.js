@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'components';
-import { GitHubIcon, BackstageIcon, RoadieRacksIcon, LinkedinIcon } from 'components/icons';
+// import { GitHubIcon, BackstageIcon, RoadieRacksIcon, LinkedinIcon } from 'components/icons';
 import camelCase from 'lodash/camelCase';
 
-import soc2Seal from '../../../content/assets/logos/soc2/aicpa.jpg';
+// import soc2Seal from '../../../content/assets/logos/soc2/aicpa.jpg';
 
-import theme from '../../theme';
+// import theme from '../../theme';
 
 const navigation = {
   product: [
@@ -41,15 +41,15 @@ const navigation = {
   social: [{
     name: 'Linkedin',
     href: 'https://www.linkedin.com/company/43197350',
-    icon: LinkedinIcon,
+    // icon: LinkedinIcon,
   }, {
     name: 'GitHub',
     href: 'https://github.com/RoadieHQ',
-    icon: GitHubIcon,
+    // icon: GitHubIcon,
   }, {
     name: 'Backstage',
     href: 'https://backstage.io',
-    icon: BackstageIcon,
+    // icon: BackstageIcon,
   }],
 };
 
@@ -65,12 +65,12 @@ const NavItem = ({ name, href }) => (
   </li>
 );
 
-const SocialItem = ({ item }) => (
-  <Link key={item.name} to={item.href} className="text-gray-400 hover:text-gray-500">
-    <span className="sr-only">{item.name}</span>
-    <item.icon className="h-6 w-6" aria-hidden="true" />
-  </Link>
-);
+// const SocialItem = ({ item }) => (
+//   <Link key={item.name} to={item.href} className="text-gray-400 hover:text-gray-500">
+//     <span className="sr-only">{item.name}</span>
+//     <item.icon className="h-6 w-6" aria-hidden="true" />
+//   </Link>
+// );
 
 const TitledLinkList = ({ title, linkListKey = camelCase(title) }) => (
   <>
@@ -99,24 +99,30 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
       <div className={`max-w-${maxWidth} mx-auto py-12 px-2 sm:px-6 lg:py-16 lg:px-8`}>
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-4 xl:col-span-1">
+            {/*
             <RoadieRacksIcon fill={theme.COLORS_GRAY_500} />
+            */}
 
             <p className="text-gray-500 text-base">
               SaaS Backstage
             </p>
 
             <div className="flex space-x-6">
+              {/*
               {navigation.social.map((item) => (
                 <SocialItem item={item} key={item.name} />
               ))}
+              */}
             </div>
 
             <div className="flex items-center">
+              {/*
               <img
                 src={soc2Seal}
                 className="mr-2 h-8 w-8"
                 alt="AICPA seal. Blue circle with the name AICPA inside."
               />
+              */}
               <p className="text-base text-gray-500">Roadie has gained SOC2 Type 2 compliance</p>
             </div>
           </div>

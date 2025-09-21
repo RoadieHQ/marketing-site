@@ -16,7 +16,7 @@ import {
 import { Button } from 'components';
 import { PAGE_PATHS } from '../../contactFormConstants';
 
-import Logo from '../Logo';
+// import Logo from '../Logo';
 import TopNavItem from './TopNavItem';
 import OpenMenuButton from './OpenMenuButton';
 import TopNavDropdownItem from './TopNavDropdownItem';
@@ -123,7 +123,7 @@ const SitewideHeader = ({
           )}
         >
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Logo />
+            {/*<Logo />*/}
           </div>
 
           <div className="-mr-2 -my-2 md:hidden">

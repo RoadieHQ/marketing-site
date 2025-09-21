@@ -5,9 +5,9 @@ import get from 'lodash/get';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import {
   EditOnGitHubLink,
-  NpmChip,
-  GitHubChip,
-  RoadieDocsChip,
+  // NpmChip,
+  // GitHubChip,
+  // RoadieDocsChip,
   GravatarImage,
 } from 'components/backstage/plugins';
 
@@ -62,6 +62,7 @@ const Sidebar = ({ plugin, npmData = {}, siteMetadata }) => {
   return (
     <div>
       <div className="mb-10">
+        {/*
         <div className="mb-3">
           <RoadieDocsChip
             availableOnRoadie={plugin.frontmatter.availableOnRoadie} 
@@ -73,6 +74,7 @@ const Sidebar = ({ plugin, npmData = {}, siteMetadata }) => {
           <GitHubChip codeLocation={plugin.frontmatter.codeLocation} />
         </div>
         <NpmChip npmjsPackage={plugin.frontmatter.npmjsPackage} />
+        */}
       </div>
 
       <div className="mb-10">

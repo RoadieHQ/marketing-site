@@ -8,7 +8,7 @@ import {
   Header,
   Intro,
   PluginCTA,
-  CoverImage,
+  // CoverImage,
   InstallationSteps,
   PlaceholderBody,
   Notes,
@@ -21,7 +21,7 @@ const Body = ({ plugin, siteMetadata }) => {
       <>
         <Intro plugin={plugin} />
 
-        <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
+        {/*<CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />*/}
 
         <InstallationSteps plugin={plugin} />
       </>
@@ -108,6 +108,17 @@ const PluginTemplate = ({ data, serverData = {} }) => {
 };
 
 export default PluginTemplate;
+        // logoImage {
+        //   childImageSharp {
+        //     gatsbyImageData(layout: FIXED, width: 80)
+        //   }
+        // }
+
+        // coverImage {
+        //   childImageSharp {
+        //     gatsbyImageData(layout: FULL_WIDTH)
+        //   }
+        // }
 
 export const pageQuery = graphql`
   query PluginBySlug($slug: String!) {
@@ -143,17 +154,6 @@ export const pageQuery = graphql`
           text
         }
 
-        logoImage {
-          childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 80)
-          }
-        }
-
-        coverImage {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-        }
         coverImageAlt
 
         seo {
