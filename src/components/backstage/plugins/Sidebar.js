@@ -37,6 +37,7 @@ const Mainatainer = ({ name, email }) => {
 
 async function fetchNpmDataByName ({ packageName }) {
   const funcUrl = '/.netlify/functions/fetchNpmDataByName';
+
   try {
     const results = await fetch(`${funcUrl}?packageName=${packageName}`);
     const { data } = await results.json();
@@ -52,9 +53,10 @@ const Sidebar = ({ plugin, siteMetadata }) => {
 
   useEffect(() => {
     (async () => {
-      setNpmData(fetchNpmDataByName({
+      const fetchedNpmData = await fetchNpmDataByName({
         packageName: plugin.frontmatter.npmjsPackage,
-      }));
+      });
+      setNpmData(fetchedNpmData);
     })();
   }, [plugin.frontmatter.npmjsPackage]);
 
