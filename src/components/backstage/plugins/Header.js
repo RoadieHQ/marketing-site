@@ -1,14 +1,14 @@
 import React from 'react';
 import { Headline, Link } from 'components';
 
-// import Logo from './Logo';
+import Logo from './Logo';
 import Attribution from './Attribution';
 
 const Header = ({
   plugin: {
     frontmatter: {
-//       humanName,
-//       logoImage,
+      humanName,
+      logoImage,
       heading,
       attribution,
     },
@@ -23,13 +23,11 @@ const Header = ({
 
     <header className="px-4 xl:rounded-lg lg:flex lg:px-0 items-center mb-10">
       <div className="bg-gray-100 mr-8">
-        {/*
         <Logo
           minHeight={80}
           sharpImage={logoImage.childImageSharp}
           alt={`${humanName} logo`}
         />
-        */}
       </div>
 
       <div>
