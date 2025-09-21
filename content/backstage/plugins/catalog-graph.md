@@ -64,6 +64,7 @@ The plugin comes with these features:
 - EntityCatalogGraphCard: A card that displays the directly related entities to the current entity. This card is for use on the entity page. The card can be customized, for example filtering for specific relations.
 
 - CatalogGraphPage: A standalone page that can be added to your application providing a viewer for your entities and their relations. The viewer can be used to navigate through the entities and filter for specific relations. You can access it from the EntityCatalogGraphCard. NB: you will need to supply props to this component to tell it what root Entity to display when it renders like so:
+
 ```yaml
 {
   "initialState": {
@@ -87,7 +88,8 @@ The plugin will only display relationship that have already been set up between 
 yourself for services, api's etc... in the `catalog.yaml` files.
 
 i.e. 
-```
+
+```yaml
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:

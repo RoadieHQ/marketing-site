@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { retrievePackageDataByName } from '../npmPackageData';
 import usePageLeave from 'react-use/lib/usePageLeave';
-import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
 import {
@@ -62,10 +61,6 @@ const PluginTemplate = ({ data, serverData = {} }) => {
   const handleCloseExitIntentModal = () => {
     setExitIntentModalOpen(false);
   };
-
-  useEffect(() => {
-    Prism.highlightAll();
-  });
 
   usePageLeave(() => {
     handleOpenExitIntentModal();
