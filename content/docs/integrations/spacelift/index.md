@@ -3,7 +3,7 @@ title: Configuring Spacelift
 publishedDate: '2025-07-25T11:10:00.0Z'
 description: How to configure the Spacelift plugin to display Infrastructure-as-Code stacks and runs from Spacelift in Roadie.
 humanName: Spacelift
-logoImage: '../../../assets/logos/spacelift/spacelift.webp'
+logoImage: 'assets/logos/spacelift/spacelift.webp'
 integrationType: OSS plugin
 ---
 

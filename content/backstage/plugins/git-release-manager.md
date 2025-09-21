@@ -15,8 +15,8 @@ seo:
   description: |
     Manage the release process for your Git repositories directly in Backstage, including integration with GitHub Releases.
 
-logoImage: '../../assets/logos/git-release-manager/git-release-manager-logo.webp'
-coverImage: '../../assets/backstage/plugins/git-release-manager/grm-cover-image.webp'
+logoImage: 'assets/logos/git-release-manager/git-release-manager-logo.webp'
+coverImage: 'assets/backstage/plugins/git-release-manager/grm-cover-image.webp'
 coverImageAlt: 'Git Release Manager in Backstage'
 
 gettingStarted:

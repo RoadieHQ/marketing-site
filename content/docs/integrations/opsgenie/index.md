@@ -5,7 +5,7 @@ lastValidated: '2021-09-02T21:00:00.0Z'
 description: How to configure the Opsgenie plugin on roadie.
 
 humanName: Opsgenie
-logoImage: '../../../assets/logos/opsgenie/logo-opsgenie.webp'
+logoImage: 'assets/logos/opsgenie/logo-opsgenie.webp'
 integrationType: OSS plugin
 ---
 

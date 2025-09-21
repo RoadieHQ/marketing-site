@@ -16,8 +16,8 @@ seo:
   description: |
     View Hashicorp Vault secrets directly in Backstage.
 
-logoImage: '../../assets/logos/hashicorp-vault/vault.webp'
-coverImage: '../../assets/backstage/plugins/hashicorp-vault/hashicorp-vault-secrets.webp'
+logoImage: 'assets/logos/hashicorp-vault/vault.webp'
+coverImage: 'assets/backstage/plugins/hashicorp-vault/hashicorp-vault-secrets.webp'
 coverImageAlt: 'Hashicorp Vault in Backstage'
 
 gettingStarted:

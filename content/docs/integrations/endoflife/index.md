@@ -5,7 +5,7 @@ lastValidated: '2024-02-21T18:00:00.0Z'
 description: How to configure the End Of Life plugin on Roadie.
 
 humanName: End Of Life
-logoImage: '../../../assets/logos/endoflife/logo.webp'
+logoImage: 'assets/logos/endoflife/logo.webp'
 integrationType: OSS plugin
 ---
 

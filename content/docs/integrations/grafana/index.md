@@ -5,7 +5,7 @@ lastValidated: '2022-03-07T10:00:00.0Z'
 description: How to add Grafana to Backstage
 
 humanName: Grafana
-logoImage: '../../../assets/logos/grafana/grafana.webp'
+logoImage: 'assets/logos/grafana/grafana.webp'
 integrationType: OSS plugin
 ---
 

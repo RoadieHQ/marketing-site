@@ -5,7 +5,7 @@ lastValidated: '2021-03-18T21:00:00.0Z'
 description: How to configure Jenkins plugin on Roadie.
 
 humanName: Jenkins
-logoImage: '../../../assets/logos/jenkins/logo-jenkins.webp'
+logoImage: 'assets/logos/jenkins/logo-jenkins.webp'
 integrationType: OSS plugin
 ---
 

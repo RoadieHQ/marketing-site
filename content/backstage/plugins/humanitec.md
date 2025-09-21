@@ -14,7 +14,7 @@ seo:
   description: |
     The Backstage Humanitec Plugin shows information about environments, workloads and resources on an entity page.
 
-logoImage: '../../assets/logos/humanitec/humanitec-logo.webp'
+logoImage: 'assets/logos/humanitec/humanitec-logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/humanitec/

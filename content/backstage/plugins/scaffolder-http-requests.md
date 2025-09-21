@@ -17,7 +17,7 @@ seo:
 
     The http:backstage:request action allows the task to call any of the backstage APIs available to the user that triggers it. The action takes care of passing the authentication token of the user to the task execution so that the action can perform actions on behalf of the user that triggers it.
 
-logoImage: '../../assets/logos/scaffolder-http/http.webp'
+logoImage: 'assets/logos/scaffolder-http/http.webp'
 
 gettingStarted:
   - intro: Install the plugin into your scaffolded Backstage application.

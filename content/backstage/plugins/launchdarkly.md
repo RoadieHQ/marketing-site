@@ -13,7 +13,7 @@ seo:
   description: |
     LaunchDarkly feature flags associated to software in the catalog.
 
-logoImage: '../../assets/logos/launchdarkly/logo-launchdarkly.webp'
+logoImage: 'assets/logos/launchdarkly/logo-launchdarkly.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/launchdarkly/

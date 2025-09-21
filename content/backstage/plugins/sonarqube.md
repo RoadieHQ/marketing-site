@@ -11,9 +11,9 @@ seo:
   description: |
     Components to display code quality metrics from SonarCloud and SonarQube.
 
-logoImage: '../../assets/logos/sonarqube/logo-sonar.webp'
+logoImage: 'assets/logos/sonarqube/logo-sonar.webp'
 
-coverImage: '../../assets/sonar-plugin.webp'
+coverImage: 'assets/sonar-plugin.webp'
 coverImageAlt: 'A screenshot of the SonarQube and SonarCloud plugin.'
 
 npmjsPackage: "@backstage/plugin-sonarqube"

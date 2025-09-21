@@ -5,7 +5,7 @@ lastValidated: '2024-06-12T10:00:00.0Z'
 description: How to enable the Humanitec plugin
 
 humanName: Humanitec Plugin
-logoImage: '../../../assets/logos/humanitec/humanitec-logo.webp'
+logoImage: 'assets/logos/humanitec/humanitec-logo.webp'
 integrationType: OSS plugin
 ---
 

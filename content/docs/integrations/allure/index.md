@@ -5,7 +5,7 @@ lastValidated: '2022-04-04T14:00:00.0Z'
 description: How to configure the Allure plugin on Roadie.
 
 humanName: Allure
-logoImage: '../../../assets/logos/allure/allure-logo.webp'
+logoImage: 'assets/logos/allure/allure-logo.webp'
 integrationType: OSS plugin
 ---
 

@@ -32,9 +32,9 @@ seo:
   description: |
     A RAG AI Backstage plugin to contextualize entities, TechDocs, openAPI specs and Tech Insights data for LLM consumption.
 
-logoImage: '../../assets/logos/rag/roadie-racks-ai.webp'
+logoImage: 'assets/logos/rag/roadie-racks-ai.webp'
 
-coverImage: '../../assets/rag-ai-api-spec-query.webp'
+coverImage: 'assets/rag-ai-api-spec-query.webp'
 coverImageAlt: 'A screenshot of the AI Assistant query window. It is showing a response from an LLM using the contextual data provided by the plugin.'
 
 availableOnRoadie: false

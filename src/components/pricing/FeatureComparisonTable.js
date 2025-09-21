@@ -114,8 +114,6 @@ const sections = [{
   }],
 }];
 
-console.log(sections);
-
 const FeatureNameHeaderCell = ({ feature }) => (
   <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
     {feature.name}

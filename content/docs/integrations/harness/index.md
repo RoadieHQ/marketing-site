@@ -5,7 +5,7 @@ lastValidated: '2023-01-30T15:00:00.0Z'
 description: How to add Harness.io plugin to Roadie
 
 humanName: Harness.io
-logoImage: '../../../assets/logos/harness/harness.webp'
+logoImage: 'assets/logos/harness/harness.webp'
 integrationType: OSS plugin
 ---
 

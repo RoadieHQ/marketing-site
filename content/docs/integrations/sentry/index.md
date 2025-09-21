@@ -4,7 +4,7 @@ publishedDate: '2021-02-23T21:00:00.0Z'
 lastValidated: '2021-02-23T21:00:00.0Z'
 description: How to create a Sentry Token with permissions for use in Backstage and apply it to Roadie.
 humanName: Sentry
-logoImage: '../../../assets/logos/sentry/sentry-glyph-dark.webp'
+logoImage: 'assets/logos/sentry/sentry-glyph-dark.webp'
 integrationType: OSS plugin
 ---
 

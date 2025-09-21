@@ -5,7 +5,7 @@ lastValidated: '2022-06-09T10:00:00.0Z'
 description: How to enable the Shortcut plugin
 
 humanName: Shortcut Plugin
-logoImage: 'shortcut-logo.png'
+logoImage: 'assets/logos/shortcut/shortcut-logo.png'
 integrationType: OSS plugin
 ---
 

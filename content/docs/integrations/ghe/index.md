@@ -5,7 +5,7 @@ lastValidated: '2024-10-01T16:03:23.0Z'
 description: How to configure a GitHub Enterprise Server on your Roadie instance
 
 humanName: GitHub Enterprise Server
-logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
+logoImage: 'assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 integrationType: Catalog data source
 ---
 

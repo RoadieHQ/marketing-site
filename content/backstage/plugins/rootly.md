@@ -14,7 +14,7 @@ seo:
   title: 'Rootly Backstage Plugin | Roadie'
   description: 'See Rootly data and incidents directly inside Backstage.'
 
-logoImage: '../../assets/logos/rootly/logo.webp'
+logoImage: 'assets/logos/rootly/logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/rootly/

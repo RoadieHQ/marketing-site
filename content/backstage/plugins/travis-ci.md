@@ -14,9 +14,9 @@ seo:
     The Backstage Travis CI plugin integrates with Travis CI to show your build
     information inside Backstage and associate it with your services.
 
-logoImage: '../../assets/logos/travis-ci/travis-ci-mascot-200x200.webp'
+logoImage: 'assets/logos/travis-ci/travis-ci-mascot-200x200.webp'
 
-coverImage: '../../assets/travis-ci-plugin-1642x1027.webp'
+coverImage: 'assets/travis-ci-plugin-1642x1027.webp'
 coverImageAlt: 'A screenshot of the Travis CI plugin. It is showing a list of builds for a sample service.'
 
 availableOnRoadie: true

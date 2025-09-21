@@ -14,9 +14,9 @@ seo:
     The Backstage Buildkite plugin integrates with Buildkite to show your build
     information inside Backstage where it can be associated with your services.
 
-logoImage: '../../assets/logos/buildkite/buildkite-logo.webp'
+logoImage: 'assets/logos/buildkite/buildkite-logo.webp'
 
-coverImage: '../../assets/buildkite-plugin-overview.webp'
+coverImage: 'assets/buildkite-plugin-overview.webp'
 coverImageAlt: 'A list of builds in a table along with a status and retry button for each build.'
 
 availableOnRoadie: true

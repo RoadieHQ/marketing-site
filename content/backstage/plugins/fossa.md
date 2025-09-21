@@ -14,8 +14,8 @@ seo:
   description: |
     View FOSSA license findings for all of your components right from Backstage.
 
-logoImage: '../../assets/logos/fossa/fossa-logo.webp'
-coverImage: '../../assets/backstage/plugins/fossa/fossa-plugin.webp'
+logoImage: 'assets/logos/fossa/fossa-logo.webp'
+coverImage: 'assets/backstage/plugins/fossa/fossa-plugin.webp'
 coverImageAlt: 'A screenshot of the FOSSA plugin.'
 
 gettingStarted:

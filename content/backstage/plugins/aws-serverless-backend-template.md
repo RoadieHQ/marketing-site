@@ -15,7 +15,7 @@ seo:
   description: |
     Backstage scaffolder template to create an AWS Serverless Backend.
 
-logoImage: '../../assets/logos/scaffolder-templates/sst.webp'
+logoImage: 'assets/logos/scaffolder-templates/sst.webp'
 
 ---
 

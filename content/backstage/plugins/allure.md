@@ -16,9 +16,9 @@ seo:
     The Backstage Allure plugin integrates with the Allure API to show report
     information inside Backstage.
 
-logoImage: '../../assets/logos/allure/allure-logo.webp'
+logoImage: 'assets/logos/allure/allure-logo.webp'
 
-coverImage: '../../assets/allure-report-img.webp'
+coverImage: 'assets/allure-report-img.webp'
 coverImageAlt: 'A preview of the Allure overview widget including suites and environments.'
 
 availableOnRoadie: true

@@ -14,7 +14,7 @@ seo:
   description: |
     The Backstage Grafana plugin is a frontend plugin that lists Grafana alerts and dashboards. It includes cards and dashboard components.
 
-logoImage: '../../assets/logos/grafana/grafana.webp'
+logoImage: 'assets/logos/grafana/grafana.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/grafana/

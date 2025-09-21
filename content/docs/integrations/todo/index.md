@@ -3,7 +3,7 @@ title: Configuring TODO Comments
 publishedDate: '2025-07-28T10:45:00.0Z'
 description: How to configure the TODO plugin to track and manage TODO comments in your source code in Roadie.
 humanName: TODO
-logoImage: '../../../assets/logos/todo/todo-logo.webp'
+logoImage: 'assets/logos/todo/todo-logo.webp'
 integrationType: OSS plugin
 ---
 

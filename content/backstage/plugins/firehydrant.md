@@ -15,8 +15,8 @@ seo:
   description: |
     View FireHydrant service incidents for your components directly in Backstage.
 
-logoImage: '../../assets/logos/firehydrant/firehydrant.webp'
-coverImage: '../../assets/backstage/plugins/firehydrant/firehydrant-service-card.webp'
+logoImage: 'assets/logos/firehydrant/firehydrant.webp'
+coverImage: 'assets/backstage/plugins/firehydrant/firehydrant-service-card.webp'
 coverImageAlt: 'FireHydrant in Backstage'
 
 availableOnRoadie: true

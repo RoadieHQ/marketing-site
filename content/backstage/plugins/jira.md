@@ -24,9 +24,9 @@ seo:
     The Backstage Jira plugin integrates with Jira to show Jira
     information inside Backstage where it can be associated with your project.
 
-logoImage: '../../assets/logos/jira/jira_logo.webp'
+logoImage: 'assets/logos/jira/jira_logo.webp'
 
-coverImage: '../../assets/jira-plugin.webp'
+coverImage: 'assets/jira-plugin.webp'
 coverImageAlt: 'A preview of Jira plugin including tasks summary, project information and Activity Stream.'
 
 availableOnRoadie: true

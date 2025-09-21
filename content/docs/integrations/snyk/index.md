@@ -5,7 +5,7 @@ lastValidated: '2021-07-21T21:00:00.0Z'
 description: How to create a Snyk Token with permissions for use in Backstage and apply it to Roadie.
 
 humanName: Snyk
-logoImage: '../../../assets/logos/snyk/snyk-avatar.webp'
+logoImage: 'assets/logos/snyk/snyk-avatar.webp'
 integrationType: OSS plugin
 ---
 

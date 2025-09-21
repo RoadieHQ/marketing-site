@@ -5,7 +5,7 @@ lastValidated: '2024-01-24T10:00:00.0Z'
 description: How to add Pulumi to Backstage
 
 humanName: Pulumi
-logoImage: '../../../assets/logos/pulumi/logo-pulumi.webp'
+logoImage: 'assets/logos/pulumi/logo-pulumi.webp'
 integrationType: OSS plugin
 ---
 

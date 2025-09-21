@@ -11,8 +11,8 @@ seo:
   description: |
     Provides an overview of user stories which are currently in progress.
 
-logoImage: '../../assets/logos/shortcut/shortcut-logo.png'
-coverImage: '../../assets/backstage/plugins/shortcut/shortcut.webp'
+logoImage: 'assets/logos/shortcut/shortcut-logo.png'
+coverImage: 'assets/backstage/plugins/shortcut/shortcut.webp'
 coverImageAlt: |
   Stories overview in Shortcut plugin.
 

@@ -14,9 +14,9 @@ seo:
   description: |
     AWS Lambda Backstage plugin to see AWS Lambda functions for your components in Backstage.
 
-logoImage: '../../assets/logos/aws-lambda/logo-lambda.webp'
+logoImage: 'assets/logos/aws-lambda/logo-lambda.webp'
 
-coverImage: '../../assets/lambda-widget.webp'
+coverImage: 'assets/lambda-widget.webp'
 coverImageAlt: 'A screenshot of the AWS Lambda. It is showing a AWS Lambda function details for a sample component.'
 
 gettingStarted:

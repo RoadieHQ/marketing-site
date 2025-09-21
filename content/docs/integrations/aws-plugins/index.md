@@ -5,7 +5,7 @@ lastValidated: '2024-10-08T10:51:37.0Z'
 description: How to configure Roadie to use AWS plugins
 
 humanName: AWS Accounts for Plugins
-logoImage: '../../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
+logoImage: 'assets/logos/aws/Amazon_Web_Services_Logo.webp'
 integrationType: OSS plugin
 ---
 

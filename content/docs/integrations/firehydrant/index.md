@@ -5,7 +5,7 @@ lastValidated: '2021-11-18T11:00:00.0Z'
 description: How to set up FireHydrant plugin for Roadie.
 
 humanName: FireHydrant
-logoImage: '../../../assets/logos/firehydrant/firehydrant.webp'
+logoImage: 'assets/logos/firehydrant/firehydrant.webp'
 integrationType: OSS plugin
 ---
 

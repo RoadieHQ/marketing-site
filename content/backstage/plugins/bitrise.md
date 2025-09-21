@@ -13,8 +13,8 @@ seo:
   description: |
     Bitrise Backstage Plugin to see your components builds inside Backstage. Also displays Biterise workflows.
 
-logoImage: '../../assets/logos/bitrise/bitrise-logo.webp'
-coverImage: '../../assets/backstage/plugins/bitrise/bitrise-in-backstage.webp'
+logoImage: 'assets/logos/bitrise/bitrise-logo.webp'
+coverImage: 'assets/backstage/plugins/bitrise/bitrise-in-backstage.webp'
 coverImageAlt: 'Bitrise in Backstage'
 
 gettingStarted:

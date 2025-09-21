@@ -5,7 +5,7 @@ lastValidated: '2024-05-10T17:20:00.0Z'
 description: How to configure Roadie to read entities from GitLab
 
 humanName: GitLab
-logoImage: '../../../assets/logos/gitlab/gitlab-logo-100.webp'
+logoImage: 'assets/logos/gitlab/gitlab-logo-100.webp'
 integrationType: Catalog data source
 ---
 

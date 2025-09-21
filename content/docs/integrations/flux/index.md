@@ -5,7 +5,7 @@ lastValidated: '2021-07-15T21:00:00.0Z'
 description: How to configure Weaveworks Flux plugin on Roadie
 
 humanName: Flux
-logoImage: '../../../assets/logos/flux/flux_color_logo.webp'
+logoImage: 'assets/logos/flux/flux_color_logo.webp'
 integrationType: OSS plugin
 ---
 

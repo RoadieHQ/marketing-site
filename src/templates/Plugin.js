@@ -20,9 +20,7 @@ const Body = ({ plugin, siteMetadata }) => {
     return (
       <>
         <Intro plugin={plugin} />
-
         <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
-
         <InstallationSteps plugin={plugin} />
       </>
     );
@@ -143,17 +141,14 @@ export const pageQuery = graphql`
           text
         }
 
-        logoImage {
-          childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 80)
-          }
+        logoImage: imgixLogoImage {
+          gatsbyImageData(width: 80)
         }
 
-        coverImage {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
+        coverImage: imgixCoverImage {
+          gatsbyImageData(layout: FULL_WIDTH)
         }
+
         coverImageAlt
 
         seo {

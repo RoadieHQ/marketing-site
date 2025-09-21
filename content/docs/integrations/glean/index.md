@@ -3,7 +3,7 @@ title: Configuring Glean
 publishedDate: '2025-07-25T11:39:00.0Z'
 description: How to configure the Glean plugin to pull your Roadie data into Glean for unified search capabilities.
 humanName: Glean
-logoImage: '../../../assets/logos/glean/glean.webp'
+logoImage: 'assets/logos/glean/glean.webp'
 integrationType: OSS plugin
 ---
 

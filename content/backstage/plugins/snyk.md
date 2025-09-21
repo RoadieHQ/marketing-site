@@ -12,7 +12,7 @@ seo:
     The Backstage Sentry plugin alerts you to errors which are affecting
     your production services, directly inside Backstage.
 
-logoImage: '../../assets/logos/snyk/snyk-avatar.webp'
+logoImage: 'assets/logos/snyk/snyk-avatar.webp'
 
 npmjsPackage: "backstage-plugin-snyk"
 codeLocation: "https://github.com/snyk-tech-services/backstage-plugin-snyk"

@@ -5,7 +5,7 @@ lastValidated: '2025-03-10T13:00:00.0Z'
 description: How to set up DX plugin in Roadie.
 
 humanName: DX
-logoImage: '../../../assets/logos/dx/dx.png'
+logoImage: 'assets/logos/dx/dx.png'
 integrationType: OSS plugin
 ---
 

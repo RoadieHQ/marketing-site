@@ -14,9 +14,9 @@ seo:
   description: |
     See GitHub Insights in Backstage. Supports contributors, languages, readme and releases.
 
-logoImage: '../../assets/logos/code-insights/code-icon.webp'
+logoImage: 'assets/logos/code-insights/code-icon.webp'
 
-coverImage: '../../assets/code-insights-plugin.webp'
+coverImage: 'assets/code-insights-plugin.webp'
 coverImageAlt: 'A screenshot of the GitHub Insights plugin. It is showing a code details for a sample component.'
 
 availableOnRoadie: true

@@ -14,7 +14,7 @@ seo:
   description: |
     The Backstage iFrame plugin renders an Iframe card that can be added to a component/homepage.
 
-logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
+logoImage: 'assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/iframe/

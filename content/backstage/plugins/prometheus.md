@@ -14,8 +14,8 @@ seo:
   description: |
     Visualize key metrics and alerts of your infrastructure.
 
-logoImage: '../../assets/prometheus/prom_logo.webp'
-coverImage: '../../assets/prometheus/prom_entity_content.webp'
+logoImage: 'assets/prometheus/prom_logo.webp'
+coverImage: 'assets/prometheus/prom_entity_content.webp'
 coverImageAlt: 'Prometheus alerts and graphs rendered in Backstage.'
 
 availableOnRoadie: true

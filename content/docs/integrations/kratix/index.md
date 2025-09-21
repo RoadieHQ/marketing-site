@@ -5,7 +5,7 @@ lastValidated: '2025-05-22T12:00:00.0Z'
 description: How to use Kratix with Roadie
 
 humanName: Kratix
-logoImage: '../../../assets/logos/kratix/kratix-logo.webp'
+logoImage: 'assets/logos/kratix/kratix-logo.webp'
 integrationType: Plugin
 ---
 

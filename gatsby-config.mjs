@@ -304,6 +304,36 @@ const config = {
         display: 'swap',
       },
     },
+
+    {
+      resolve: `@imgix/gatsby`,
+      options: {
+        // This is the domain of your imgix source, which can be created at
+        // https://dashboard.imgix.com/.
+        // Required for "Web Proxy" imgix sources.
+        domain: 'roadie.imgix.net',
+
+        // This is the source's secure token. Can be found under the "Security"
+        // heading in your source's configuration page, and revealed by tapping
+        // "Show Token". Required for web-proxy sources.
+        // secureURLToken: 'abcABC123',
+
+        // These are some default imgix parameters to set for each image. It is
+        // recommended to have at least this minimal configuration.
+        defaultImgixParams: { auto: 'format,compress' },
+
+        // This configures which nodes to modify.
+        fields: [{
+          nodeType: 'MarkdownRemarkFrontmatter',
+          rawURLKey: 'logoImage',
+          fieldName: 'imgixLogoImage',
+        }, {
+          nodeType: 'MarkdownRemarkFrontmatter',
+          rawURLKey: 'coverImage',
+          fieldName: 'imgixCoverImage',
+        }],
+      },
+    },
   ],
 };
 

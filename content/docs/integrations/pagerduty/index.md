@@ -5,7 +5,7 @@ lastValidated: '2022-08-26T21:00:00.0Z'
 description: How to set up the Backstage PagerDuty plugin in Roadie Backstage.
 
 humanName: PagerDuty
-logoImage: '../../../assets/logos/pagerduty/pagerduty-logo-light-200x200.webp'
+logoImage: 'assets/logos/pagerduty/pagerduty-logo-light-200x200.webp'
 integrationType: OSS plugin
 ---
 

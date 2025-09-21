@@ -16,9 +16,9 @@ seo:
   description: |
     The Backstage Wiz Plugin integrates Wiz, a cloud security platform, into your Backstage instance, providing information about recently created issues, their status and severity.
 
-logoImage: '../../assets/logos/wiz/wiz-logo.png'
+logoImage: 'assets/logos/wiz/wiz-logo.png'
 
-coverImage: '../../assets/wiz-plugin.png'
+coverImage: 'assets/wiz-plugin.png'
 coverImageAlt: 'A preview of Wiz issues.'
 
 availableOnRoadie: true

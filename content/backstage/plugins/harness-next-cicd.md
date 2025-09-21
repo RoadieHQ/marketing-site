@@ -15,7 +15,7 @@ seo:
     The Backstage Harness Next CI/CD plugin integrates with GitHub Actions to show your build
     information inside Backstage where it can be associated with your services.
 
-logoImage: '../../assets/logos/harness/harness.webp'
+logoImage: 'assets/logos/harness/harness.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/harness/

@@ -15,9 +15,9 @@ seo:
   description: |
     See your servers, your clouds, your metrics all in one place
 
-logoImage: '../../assets/logos/datadog/datadog-logo-no-text.webp'
+logoImage: 'assets/logos/datadog/datadog-logo-no-text.webp'
 
-coverImage: '../../assets/datadog-plugin.webp'
+coverImage: 'assets/datadog-plugin.webp'
 coverImageAlt: 'A screenshot of the Datadog plugin.'
 
 availableOnRoadie: true

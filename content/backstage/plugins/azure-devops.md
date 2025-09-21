@@ -18,7 +18,7 @@ seo:
   description: |
     The Backstage Azure DevOps plugin provides visualisations for components sourced from Azure DevOps, from services like Azure Pipelines and Azure Repos.
 
-logoImage: '../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
+logoImage: 'assets/logos/azure-devops/Azure-DevOps-logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/azure-devops/

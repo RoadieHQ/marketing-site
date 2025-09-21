@@ -71,7 +71,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
         
     doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id

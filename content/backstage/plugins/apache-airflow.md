@@ -14,9 +14,9 @@ seo:
     The Apache Airflow Backstage plugin is as frontend to the REST API exposed by Apache Airflow. It show
     Apache Airflow's information inside Backstage.
 
-logoImage: '../../assets/logos/apache-airflow/apache-airflow-logo.webp'
+logoImage: 'assets/logos/apache-airflow/apache-airflow-logo.webp'
 
-coverImage: '../../assets/apache-airflow-plugin.pmg'
+coverImage: 'assets/apache-airflow-plugin.pmg'
 coverImageAlt: 'A list of DAGs in a table along with instance versioning and status.'
 
 availableOnRoadie: true

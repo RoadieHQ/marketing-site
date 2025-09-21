@@ -4,7 +4,7 @@ publishedDate: '2021-11-01T11:00:00.0Z'
 lastValidated: '2021-11-01T11:00:00.0Z'
 description: How to create Travis CI API Token for Travis CI plugin.
 humanName: Travis CI
-logoImage: '../../../assets/logos/travis-ci/travis-ci-mascot-200x200.webp'
+logoImage: 'assets/logos/travis-ci/travis-ci-mascot-200x200.webp'
 integrationType: OSS plugin
 ---
 

@@ -103,6 +103,13 @@ const CSP_IMG_SRC_DIRECTIVES = [
   // https://help.dealfront.com/en/articles/3715216-why-is-the-leadfeeder-tracker-blocked-on-my-site
   '*.lfeeder.com',
   '*.leadfeeder.com',
+
+  // Imgix is used for lots of logo images. Serving images from there helps us to cut
+  // down on build time by keeping images out of the codebase.
+  'https://roadie.imgix.net',
+
+  // This is used in src/components/backstage/plugins/Logo.js to render a placeholder image.
+  'https://placehold.jp',
 ].join(' ');
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {

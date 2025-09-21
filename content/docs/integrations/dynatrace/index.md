@@ -5,7 +5,7 @@ lastValidated: '2024-04-04T21:00:00.0Z'
 description: How setup Roadie to display data from Dynatrace
 
 humanName: Dynatrace
-logoImage: '../../../assets/logos/dynatrace/Dynatrace_Logo_color_positive_vertical.webp'
+logoImage: 'assets/logos/dynatrace/Dynatrace_Logo_color_positive_vertical.webp'
 integrationType: OSS plugin
 ---
 

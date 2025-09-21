@@ -26,8 +26,8 @@ seo:
   description: |
     Build, test, and deploy on Jenkins CI/CD platform.
 
-logoImage: '../../assets/logos/jenkins/logo-jenkins.webp'
-coverImage: '../../assets/backstage/plugins/jenkins/jenkins-plugin.webp'
+logoImage: 'assets/logos/jenkins/logo-jenkins.webp'
+coverImage: 'assets/backstage/plugins/jenkins/jenkins-plugin.webp'
 coverImageAlt: 'A screenshot of the Jenkins plugin.'
 
 availableOnRoadie: true

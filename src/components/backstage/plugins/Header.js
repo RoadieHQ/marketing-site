@@ -8,9 +8,9 @@ const Header = ({
   plugin: {
     frontmatter: {
       humanName,
-      logoImage,
       heading,
       attribution,
+      logoImage,
     },
   },
 }) => (
@@ -25,7 +25,7 @@ const Header = ({
       <div className="bg-gray-100 mr-8">
         <Logo
           minHeight={80}
-          sharpImage={logoImage.childImageSharp}
+          gatsbyImageData={logoImage.gatsbyImageData}
           alt={`${humanName} logo`}
         />
       </div>

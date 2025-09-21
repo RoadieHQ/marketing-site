@@ -5,7 +5,7 @@ lastValidated: '2023-06-15T12:00:00.0Z'
 description: How to use Terraform with Roadie
 
 humanName: Terraform
-logoImage: '../../../assets/logos/terraform/terraform-logo.webp'
+logoImage: 'assets/logos/terraform/terraform-logo.webp'
 integrationType: Plugin
 ---
 

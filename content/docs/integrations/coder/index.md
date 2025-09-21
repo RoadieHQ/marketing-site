@@ -5,7 +5,7 @@ lastValidated: '2024-05-14T01:12:29.0Z'
 description: How to use the Coder plugin
 
 humanName: Coder
-logoImage: '../../../assets/logos/coder/coder_logo_transparent_text_black.webp'
+logoImage: 'assets/logos/coder/coder_logo_transparent_text_black.webp'
 integrationType: OSS Plugin
 ---
 

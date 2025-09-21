@@ -105,17 +105,15 @@ const CUSTOM_PLUGIN_PLACEHOLDER = {
     humanName: 'Write your own',
     integrationType: 'OSS plugin',
     logoImage: {
-      childImageSharp: {
-        gatsbyImageData: {
-          height: 100,
-          images: {
-            fallback: {
-              src: customPluginsLogoImagePath,
-            },
+      gatsbyImageData: {
+        height: 100,
+        images: {
+          fallback: {
+            src: customPluginsLogoImagePath,
           },
-          layout: 'fixed',
-          width: 100,
         },
+        layout: 'fixed',
+        width: 100,
       },
     },
   },
@@ -227,10 +225,8 @@ export const pageQuery = graphql`
           humanName
           integrationType
 
-          logoImage {
-            childImageSharp {
-              gatsbyImageData(layout: FIXED, width: 140)
-            }
+          logoImage: imgixLogoImage {
+            gatsbyImageData(layout: FIXED, width: 140)
           }
         }
       }

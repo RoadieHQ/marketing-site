@@ -15,9 +15,9 @@ seo:
     The Backstage GitHub Actions plugin integrates with GitHub Actions to show your build
     information inside Backstage where it can be associated with your services.
 
-logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
+logoImage: 'assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 
-coverImage: '../../assets/backstage/plugins/github-actions/cover.webp'
+coverImage: 'assets/backstage/plugins/github-actions/cover.webp'
 coverImageAlt: 'A list of builds for the Spotify Backstage repo with status and retry buttons.'
 
 availableOnRoadie: true

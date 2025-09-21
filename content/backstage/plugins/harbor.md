@@ -18,8 +18,8 @@ seo:
   description: |
     View information about your component's Docker images stored in a Harbor registry.
 
-logoImage: '../../assets/logos/harbor/harbor-logo.webp'
-coverImage: '../../assets/backstage/plugins/harbor/harbor-dashboard.webp'
+logoImage: 'assets/logos/harbor/harbor-logo.webp'
+coverImage: 'assets/backstage/plugins/harbor/harbor-dashboard.webp'
 coverImageAlt: 'Harbor in Backstage'
 
 gettingStarted:

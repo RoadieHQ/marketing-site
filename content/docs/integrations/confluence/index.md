@@ -5,7 +5,7 @@ lastValidated: '2022-06-30T10:00:00.0Z'
 description: How to enable Confluence indexing for Roadie Search
 
 humanName: Confluence
-logoImage: '../../../assets/logos/confluence/confluence.webp'
+logoImage: 'assets/logos/confluence/confluence.webp'
 integrationType: Integration
 ---
 

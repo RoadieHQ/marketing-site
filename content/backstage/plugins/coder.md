@@ -13,9 +13,9 @@ seo:
   description: |
     See Coder information and access workspaces directly from Backstage.
 
-logoImage: '../../assets/logos/coder/coder_logo_transparent_text_black.webp'
+logoImage: 'assets/logos/coder/coder_logo_transparent_text_black.webp'
 
-coverImage: '../../assets/coder.png'
+coverImage: 'assets/coder.png'
 coverImageAlt: 'A screenshot of the Coder plugin showing a Coder workspace with clickable links.'
 
 availableOnRoadie: true

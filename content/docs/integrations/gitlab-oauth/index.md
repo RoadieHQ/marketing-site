@@ -5,7 +5,7 @@ lastValidated: '2024-12-19T10:00:00.0Z'
 description: How to configure GitLab OAuth authentication provider for Roadie
 
 humanName: GitLab OAuth
-logoImage: '../../../assets/logos/gitlab/gitlab-logo-100.webp'
+logoImage: 'assets/logos/gitlab/gitlab-logo-100.webp'
 integrationType: Authentication Provider
 ---
 

@@ -15,7 +15,7 @@ seo:
   description: |
     The Backstage Flux plugin provides context-rich views of Flux resources.
 
-logoImage: '../../assets/logos/flux/flux_color_logo.webp'
+logoImage: 'assets/logos/flux/flux_color_logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/flux/

@@ -5,7 +5,7 @@ lastValidated: '2021-10-11T15:15:00.0Z'
 description: How to configure a Google OAuth client for Roadie
 
 humanName: Google OAuth
-logoImage: '../../../assets/logos/google-cloud-build/logo-cloud.webp'
+logoImage: 'assets/logos/google-cloud-build/logo-cloud.webp'
 integrationType: Integration
 ---
 

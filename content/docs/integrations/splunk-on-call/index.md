@@ -5,7 +5,7 @@ lastValidated: '2023-01-20T11:00:00.0Z'
 description: How to configure Splunk On-Call plugin on Roadie
 
 humanName: Splunk On-Call
-logoImage: '../../../assets/logos/splunk/splunk-dark.webp'
+logoImage: 'assets/logos/splunk/splunk-dark.webp'
 integrationType: OSS plugin
 ---
 

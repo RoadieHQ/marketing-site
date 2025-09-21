@@ -5,7 +5,7 @@ lastValidated: '2022-03-01T10:00:00.0Z'
 description: How to enable the markdown card plugin
 
 humanName: Markdown Card Plugin
-logoImage: '../../../assets/logos/home-page/home.webp'
+logoImage: 'assets/logos/home-page/home.webp'
 integrationType: OSS plugin
 ---
 

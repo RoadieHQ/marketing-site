@@ -13,7 +13,7 @@ seo:
   description: |
     The Backstage Stack Overflow plugin displays public and private Stackoverflow questions and answers in Backstage and adds Stack Overflow to search results.
 
-logoImage: '../../assets/logos/stackoverflow/so-logo.webp'
+logoImage: 'assets/logos/stackoverflow/so-logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/stackoverflow/

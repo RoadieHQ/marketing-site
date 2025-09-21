@@ -14,9 +14,9 @@ seo:
     The Backstage Sentry plugin alerts you to errors which are affecting
     your production services, directly inside Backstage.
 
-logoImage: '../../assets/logos/sentry/sentry-glyph-dark.webp'
+logoImage: 'assets/logos/sentry/sentry-glyph-dark.webp'
 
-coverImage: '../../assets/sentry-plugin-1604x716.webp'
+coverImage: 'assets/sentry-plugin-1604x716.webp'
 coverImageAlt: 'A screenshot of the Sentry plugin. It is showing a list of errors.'
 
 availableOnRoadie: true

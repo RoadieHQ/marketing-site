@@ -14,9 +14,9 @@ seo:
     The Backstage Rollbar plugin shows you errors which are affecting
     your production services, directly inside Backstage.
 
-logoImage: '../../assets/logos/rollbar/rollbar-logo-color.webp'
+logoImage: 'assets/logos/rollbar/rollbar-logo-color.webp'
 
-coverImage: '../../assets/rollbar-plugin-1550x715.webp'
+coverImage: 'assets/rollbar-plugin-1550x715.webp'
 coverImageAlt: 'A screenshot of the Rollbar plugin. It is showing a list of errors.'
 
 gettingStarted:

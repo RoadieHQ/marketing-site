@@ -5,7 +5,7 @@ lastValidated: '2024-08-20'
 description: How to enable the incident.io plugin
 
 humanName: incident.io Plugin
-logoImage: '../../../assets/logos/incident/incident-logo.webp'
+logoImage: 'assets/logos/incident/incident-logo.webp'
 integrationType: OSS plugin
 ---
 

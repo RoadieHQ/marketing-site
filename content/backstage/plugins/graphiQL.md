@@ -14,8 +14,8 @@ seo:
   description: |
     Integrates GraphiQL as a tool to browse GraphQL API endpoints inside Backstage.
 
-logoImage: '../../assets/logos/graphiql/logo-ql.webp'
-coverImage: '../../assets/backstage/plugins/graphiql/graphiql-gitlab.webp'
+logoImage: 'assets/logos/graphiql/logo-ql.webp'
+coverImage: 'assets/backstage/plugins/graphiql/graphiql-gitlab.webp'
 coverImageAlt: 'A screenshot of the GraphiQL plugin.'
 
 gettingStarted:

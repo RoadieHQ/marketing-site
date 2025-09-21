@@ -5,7 +5,7 @@ lastValidated: '2024-08-30T08:00:00.0Z'
 description: How to configure Cloudsmith plugin on Roadie.
 
 humanName: Cloudsmith
-logoImage: '../../../assets/logos/cloudsmith/cloudsmith-logo.png'
+logoImage: 'assets/logos/cloudsmith/cloudsmith-logo.png'
 integrationType: OSS plugin
 ---
 

@@ -16,7 +16,7 @@ seo:
   description: |
     The Backstage End of Life plugin shows end of life data for entities from endoflife.date or your own data provided by a URL or integrations.
 
-logoImage: '../../assets/logos/endoflife/logo.webp'
+logoImage: 'assets/logos/endoflife/logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/endoflife/

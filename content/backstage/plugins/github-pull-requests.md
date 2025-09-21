@@ -16,8 +16,8 @@ seo:
     on your pull requests.
 
 
-logoImage: '../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus2.webp'
-coverImage: '../../assets/pull-requests-cover.webp'
+logoImage: 'assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus2.webp'
+coverImage: 'assets/pull-requests-cover.webp'
 coverImageAlt: |
   Pull requests for Backstage rendered inside a Backstage plugin.
   The statistics widget is alongside, showing the average time to merge a PR.

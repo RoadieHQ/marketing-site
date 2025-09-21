@@ -5,7 +5,7 @@ lastValidated: '2022-04-06T11:00:00.0Z'
 description: Set up the Azure Devops plugin.
 
 humanName: Azure Devops
-logoImage: '../../../assets/logos/azure-devops/Azure-DevOps-logo.webp'
+logoImage: 'assets/logos/azure-devops/Azure-DevOps-logo.webp'
 integrationType: OSS plugin
 ---
 

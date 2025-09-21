@@ -15,9 +15,9 @@ seo:
     The Backstage Firebase Functions plugin integrates with Google cloud platform to show your functions status
     inside Backstage and associate it with your services.
 
-logoImage: '../../assets/logos/firebase-functions/logo-vertical.webp'
+logoImage: 'assets/logos/firebase-functions/logo-vertical.webp'
 
-coverImage: '../../assets/firebase-plugin.webp'
+coverImage: 'assets/firebase-plugin.webp'
 coverImageAlt: 'A screenshot of the Firebase Functions plugin. It is showing a functions details for a sample service.'
 
 gettingStarted:

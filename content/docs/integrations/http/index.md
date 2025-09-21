@@ -5,7 +5,7 @@ lastValidated: '2024-02-20T21:00:00.0Z'
 description: How to manage entities via a HTTP URL
 
 humanName: HTTP
-logoImage: '../../../assets/logos/http/http-logo.webp'
+logoImage: 'assets/logos/http/http-logo.webp'
 integrationType: Catalog data source
 ---
 

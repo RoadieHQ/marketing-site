@@ -5,7 +5,7 @@ lastValidated: '2022-08-23'
 description: How to perform a sync between roadie's catalog and your GitHub organisation
 
 humanName: Github Discovery Sync
-logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
+logoImage: 'assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 integrationType: Catalog data source
 ---
 

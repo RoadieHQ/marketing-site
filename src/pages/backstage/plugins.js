@@ -90,10 +90,8 @@ export const pageQuery = graphql`
           frontmatter {
             humanName
 
-            logoImage {
-              childImageSharp {
-                gatsbyImageData(layout: FIXED, width: 140)
-              }
+            logoImage: imgixLogoImage {
+              gatsbyImageData(layout: FIXED, width: 140)
             }
 
             attribution {

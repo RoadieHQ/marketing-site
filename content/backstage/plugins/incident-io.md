@@ -20,7 +20,7 @@ seo:
   description: |
     The Backstage Incident.io plugin alerts you to incidents which are affecting your production services, directly from within Backstage.
 
-logoImage: '../../assets/logos/incident/incident-logo.webp'
+logoImage: 'assets/logos/incident/incident-logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/incident.io/

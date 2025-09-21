@@ -3,7 +3,7 @@ title: Configuring Harbor
 publishedDate: '2025-07-25T11:06:00.0Z'
 description: How to configure the Harbor plugin to display Docker image information from Harbor in Roadie.
 humanName: Harbor
-logoImage: '../../../assets/logos/harbor/harbor-logo.webp'
+logoImage: 'assets/logos/harbor/harbor-logo.webp'
 integrationType: OSS plugin
 ---
 

@@ -5,7 +5,7 @@ lastValidated: '2022-03-29T14:00:00.0Z'
 description: How to use the Github Deployments plugin
 
 humanName: Github Deployments
-logoImage: '../../../assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
+logoImage: 'assets/logos/github/mark/official/PNG/GitHub-Mark-120px-plus.webp'
 integrationType: OSS plugin
 ---
 

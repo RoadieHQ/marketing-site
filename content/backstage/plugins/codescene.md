@@ -13,7 +13,7 @@ seo:
   description: |
     See existing Codescene projects and associated analysis data from your CodeScene instance inside Backstage.
 
-logoImage: '../../assets/logos/codescene/codescene.webp'
+logoImage: 'assets/logos/codescene/codescene.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/codescene/

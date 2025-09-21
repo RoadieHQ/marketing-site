@@ -5,7 +5,7 @@ lastValidated: '2022-01-12T21:00:00.0Z'
 description: How to add Buildkite pipelines to your components
 
 humanName: Buildkite
-logoImage: '../../../assets/logos/buildkite/buildkite-logo.webp'
+logoImage: 'assets/logos/buildkite/buildkite-logo.webp'
 integrationType: OSS plugin
 ---
 

@@ -14,7 +14,7 @@ seo:
   description: |
     An opinionated implementation of the Backstage Analytics API for Segment, from the folks at Segment.
 
-logoImage: '../../assets/logos/twilio-segment/twilio-segment.png'
+logoImage: 'assets/logos/twilio-segment/twilio-segment.png'
 
 gettingStarted:
   - intro: Install the plugin

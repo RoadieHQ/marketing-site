@@ -13,8 +13,8 @@ seo:
   description: |
     Keep track of all your OpsGenie alerts and incidents right from Backstage.
 
-logoImage: '../../assets/logos/opsgenie/logo-opsgenie.webp'
-coverImage: '../../assets/backstage/plugins/opsgenie/opsgenie-plugin.webp'
+logoImage: 'assets/logos/opsgenie/logo-opsgenie.webp'
+coverImage: 'assets/backstage/plugins/opsgenie/opsgenie-plugin.webp'
 coverImageAlt: 'A screenshot of the OpsGenie plugin.'
 
 availableOnRoadie: true

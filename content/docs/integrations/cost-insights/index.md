@@ -5,6 +5,7 @@ lastValidated: '2024-02-08T11:11:11.0Z'
 description: Roadie Cost Insights plugin and configuration
 
 humanName: Cost Insights
+logoImage: 'assets/logos/cost-insights/money-bag.webp'
 integrationType: Plugin
 ---
 

@@ -14,9 +14,9 @@ seo:
   description: |
     The Backstage Google Calendar plugin integrates with home page to serve a HomePageCalendar card.
 
-logoImage: '../../assets/logos/google-calendar/Google-Calendar-Logo-700x394.webp'
+logoImage: 'assets/logos/google-calendar/Google-Calendar-Logo-700x394.webp'
 
-coverImage: '../../assets/gcalendar-card.webp'
+coverImage: 'assets/gcalendar-card.webp'
 coverImageAlt: 'A screenshot of the Google Calendar plugin.'
 
 availableOnRoadie: true

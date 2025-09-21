@@ -14,9 +14,9 @@ seo:
   description: |
     The Kubernetes plugin for Backstage lets you visualize your serices in Kubernetes. Learn how to integrate and use it.
 
-logoImage: '../../assets/logos/kubernetes/logo-kubernetes.webp'
+logoImage: 'assets/logos/kubernetes/logo-kubernetes.webp'
 
-coverImage: '../../assets/kubernetes-plugin.webp'
+coverImage: 'assets/kubernetes-plugin.webp'
 coverImageAlt: 'A screenshot of the Kubernetes plugin.'
 
 availableOnRoadie: true

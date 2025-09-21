@@ -5,7 +5,7 @@ lastValidated: '2024-06-12T15:00:00.0Z'
 description: How to enable the GitLab plugin
 
 humanName: GitLab Plugin
-logoImage: '../../../assets/logos/gitlab/gitlab-logo.webp'
+logoImage: 'assets/logos/gitlab/gitlab-logo.webp'
 integrationType: OSS plugin
 ---
 

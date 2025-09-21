@@ -14,7 +14,7 @@ seo:
   description: |
     The Backstage  Home Page plugin allows the creation of a custom landing page for your Backstage instance.
 
-logoImage: '../../assets/logos/home-page/home.webp'
+logoImage: 'assets/logos/home-page/home.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/home-page/

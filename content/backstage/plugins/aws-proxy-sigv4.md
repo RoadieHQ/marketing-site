@@ -14,7 +14,7 @@ seo:
   description: |
     A plugin that enables proxy definitions to be declared in, and read from, app-config.yaml (just like the built-in proxy-backend plugin) that will be signed using the AWS Signature Version 4 (SigV4) request-signing algorithm.
 
-logoImage: '../../assets/logos/aws/Amazon_Web_Services_Logo.webp'
+logoImage: 'assets/logos/aws/Amazon_Web_Services_Logo.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/proxy-sigv4/

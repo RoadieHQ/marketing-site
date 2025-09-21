@@ -5,7 +5,7 @@ lastValidated: '2022-04-25T10:00:00.0Z'
 description: How to enable the IFrame plugin
 
 humanName: IFrame Plugin
-logoImage: 'iframe.webp'
+logoImage: 'assets/logos/iframe/iframe.webp'
 integrationType: OSS plugin
 ---
 

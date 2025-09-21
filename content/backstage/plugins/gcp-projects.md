@@ -14,9 +14,9 @@ seo:
   description: |
     Create, list and manage your Google Cloud Projects.
 
-logoImage: '../../assets/logos/gcp-projects/logo-gcp.webp'
+logoImage: 'assets/logos/gcp-projects/logo-gcp.webp'
 
-coverImage: '../../assets/gcp-projects-plugin.jpg'
+coverImage: 'assets/gcp-projects-plugin.jpg'
 coverImageAlt: 'A screenshot of the GCP Projects plugin.'
 
 gettingStarted:

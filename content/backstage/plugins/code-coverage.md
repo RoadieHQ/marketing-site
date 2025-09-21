@@ -13,7 +13,7 @@ seo:
   description: |
     This is the frontend part of the code-coverage plugin. It displays code coverage summaries for your entities.
 
-logoImage: '../../assets/logos/code-insights/code-icon.webp'
+logoImage: 'assets/logos/code-insights/code-icon.webp'
 
 availableOnRoadie: true
 roadieDocsPath: /integrations/codecoverage/

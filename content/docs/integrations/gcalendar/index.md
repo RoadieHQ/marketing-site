@@ -5,7 +5,7 @@ lastValidated: '2022-03-29T14:00:00.0Z'
 description: How to use the Google calendar plugin
 
 humanName: Google Calendar
-logoImage: '../../../assets/logos/google-calendar/Google-Calendar-Logo-700x394.webp'
+logoImage: 'assets/logos/google-calendar/Google-Calendar-Logo-700x394.webp'
 integrationType: OSS plugin
 ---
 

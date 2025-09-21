@@ -5,7 +5,7 @@ lastValidated: '2021-10-18T21:00:00.0Z'
 description: How setup Roadie to display graphs and dashboards from Datadog
 
 humanName: Datadog
-logoImage: '../../../assets/logos/datadog/datadog-logo-no-text.webp'
+logoImage: 'assets/logos/datadog/datadog-logo-no-text.webp'
 integrationType: OSS plugin
 ---
 

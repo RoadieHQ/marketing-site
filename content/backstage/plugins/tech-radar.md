@@ -14,9 +14,9 @@ seo:
   description: |
     Visualize the your company's official guidelines of different areas of software development.
 
-logoImage: '../../assets/logos/tech-radar/radar.webp'
+logoImage: 'assets/logos/tech-radar/radar.webp'
 
-coverImage: '../../assets/tech-radar-plugin.jpg'
+coverImage: 'assets/tech-radar-plugin.jpg'
 coverImageAlt: 'A screenshot of the Tech Radar plugin.'
 
 availableOnRoadie: true

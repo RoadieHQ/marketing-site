@@ -22,10 +22,10 @@ seo:
 # This must be a relative path. It should start with ../
 # The overall size of the file should be approximately 200 by 200.
 # The image in the file should be approximately 100 by 100 pixels. It needs space around it.
-logoImage: '../../assets/logos/sentry/sentry-glyph-light-200x184.webp'
+logoImage: 'assets/logos/sentry/sentry-glyph-light-200x184.webp'
 
 # This must be a relative path. It should start with ../
-coverImage: '../../assets/backstage/plugins/sentry-plugin-1604x716.webp'
+coverImage: 'assets/backstage/plugins/sentry-plugin-1604x716.webp'
 coverImageAlt: 'Explain what is in the image'
 
 # Instructions for someone who wants to use this plugin.
