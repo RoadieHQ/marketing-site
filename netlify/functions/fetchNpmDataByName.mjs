@@ -3,13 +3,10 @@ import retrievePackageDataByName from '../../src/npmPackageData/retrievePackageD
 const fetchNpmDataByName = async (req) => {
   const packageName = new URL(req.url).searchParams.get('packageName')
 
-  console.log('packageName', packageName);
   const resp = await retrievePackageDataByName({
     packageName,
     authStrategy: 'automatic',
   });
-
-  console.log('resp', resp);
 
   return new Response(JSON.stringify({
     data: {
