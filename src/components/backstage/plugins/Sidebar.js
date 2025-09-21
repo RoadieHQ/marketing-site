@@ -37,15 +37,24 @@ const Mainatainer = ({ name, email }) => {
 
 async function fetchNpmDataByName ({ packageName }) {
   const funcUrl = '/.netlify/functions/fetchNpmDataByName';
+  let response;
+  let data = {};
 
   try {
-    const results = await fetch(`${funcUrl}?packageName=${packageName}`);
-    const { data } = await results.json();
-    console.log('json', data);
-    return data;
+    response = await fetch(`${funcUrl}?packageName=${packageName}`);
   } catch (err) {
     console.error(err);
-    return {};
+    return data;
+  }
+
+  try {
+    const json = await response.json();
+    console.log('json', json);
+    data = json.data;
+    return data;
+  } catch (err) {
+    console.warn(`Unparsable JSON returned from Netlify function. It's likely not available in this environment.`);
+    return data;
   }
 }
 const Sidebar = ({ plugin, siteMetadata }) => {
