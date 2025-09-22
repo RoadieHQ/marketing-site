@@ -42,17 +42,18 @@ describe('Plugins directory', () => {
     latestVersion: "2.11.0",
     roadieLastUpdated: "2025-09-22T12:45:23.839Z"
   };
+  const netlifyFnPath = '/.netlify/functions/fetchNpmDataByName';
 
   beforeEach(() => {
     cy.clock(Date.parse('2025-09-22T12:45:23.839Z'), ['Date']);
 
     const BASE_URL = Cypress.config('baseUrl');
-    cy.intercept('GET', `${BASE_URL}/.netlify/functions/fetchNpmDataByName*`, {
+    cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
       statusCode: 200,
       body: {
         data: npmData,
       },
-    });
+    }).as('fetchNpmData');
   });
 
   afterEach(() => {
@@ -61,7 +62,9 @@ describe('Plugins directory', () => {
 
   it('renders NPM info', () => {
     cy.visit('/backstage/plugins/argo-cd/');
-    cy.get('#npm-detail-version').contains(npmData.latestVersion);
-    cy.get('#npm-detail-last-published').contains('25 days ago');
+    cy.wait('@fetchNpmData').then(() => {
+      cy.get('#npm-detail-version').contains(npmData.latestVersion);
+      cy.get('#npm-detail-last-published').contains('25 days ago');
+    });
   });
 });
