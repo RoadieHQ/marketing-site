@@ -78,7 +78,6 @@ export const createPages = async ({ graphql, actions }) => {
       component,
       context: {
         slug: node.fields.slug,
-        npmjsPackage: node.frontmatter.npmjsPackage,
       },
     }),
   });

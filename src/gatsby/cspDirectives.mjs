@@ -106,6 +106,9 @@ const CSP_IMG_SRC_DIRECTIVES = [
 
   // Used for photos of plugin maintainers
   'https://gravatar.com',
+
+  // Used in some logo components to generate a placeholder
+  'https://placehold.jp',
 ].join(' ');
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {

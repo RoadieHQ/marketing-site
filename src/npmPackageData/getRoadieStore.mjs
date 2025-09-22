@@ -3,6 +3,8 @@ import get from 'lodash/get.js';
 
 const STORE_NAME = 'npm-package-data';
 
+// It's worth reading about Netligy blobs authentication here: 
+// https://docs.netlify.com/build/data-and-storage/netlify-blobs/#getstore
 const getRoadieStore = ({
   name = STORE_NAME,
   siteID = process.env.NETLIFY_SITE_ID,
