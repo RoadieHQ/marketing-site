@@ -3,7 +3,9 @@ import { Title } from 'components';
 import map from 'lodash/map';
 import kebabCase from 'lodash/kebabCase';
 import get from 'lodash/get';
+import pick from 'lodash/pick';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import ContentLoader from 'react-content-loader';
 import {
   EditOnGitHubLink,
   NpmChip,
@@ -37,43 +39,167 @@ const Mainatainer = ({ name, email }) => {
   );
 };
 
+const MaintainersList = ({ npmData, npmDataLoadingState }) => {
+  let inner;
+
+  if (npmDataLoadingState === 'loaded') {
+    inner = (
+      <>
+        <ul className="grid grid-cols-4 gap-3 pb-1">
+          {map(npmData.maintainers, ({ name, email }) => (
+            <Mainatainer name={name} email={email} key={email} />
+          ))}
+        </ul>
+        <p className="italic text-gray-400">
+          {npmData.maintainersHelpText}
+        </p>
+      </>
+    );
+  } else {
+    inner = (
+      <ContentLoader 
+        speed={2}
+        width={400}
+        height={240}
+        viewBox="0 0 400 240"
+        backgroundColor="#f3f3f3"
+        foregroundColor="#ecebeb"
+      >
+        <circle cx="35" cy="35" r="35" />
+        <circle cx="130" cy="35" r="35" />
+        <circle cx="230" cy="35" r="35" />
+        <circle cx="330" cy="35" r="35" />
+        <circle cx="30" cy="130" r="35" />
+      </ContentLoader>
+    );
+  }
+
+  return (
+    <>
+      <div className="mb-4">
+        <Title>Maintainers</Title>
+      </div>
+
+      <div>
+        {inner}
+      </div>
+    </>
+  );
+};
+
 async function fetchNpmDataByName ({ packageName }) {
   const funcUrl = '/.netlify/functions/fetchNpmDataByName';
   let response;
-  let data = {};
 
   try {
     response = await fetch(`${funcUrl}?packageName=${packageName}`);
 
-    if (!response.ok) return data;
+    if (!response.ok) {
+      return {
+        status: 'error',
+        data: {},
+      };
+    }
   } catch (err) {
     console.error(err);
-    return data;
+    return {
+      status: 'error',
+      data: {},
+    };
   }
 
   try {
     const json = await response.json();
-    data = json.data;
-    return data;
+    return {
+      status: 'loaded',
+      data: json.data,
+    };
   } catch (err) {
     console.warn(`Unparsable JSON returned from Netlify function. It's likely not available in this environment.`);
-    return data;
+    return {
+      status: 'error',
+      data: {},
+    };
   }
 }
-const Sidebar = ({ plugin, siteMetadata }) => {
-  const [npmData, setNpmData] = useState({});
 
-  useEffect(() => {
-    (async () => {
-      const fetchedNpmData = await fetchNpmDataByName({
-        packageName: plugin.frontmatter.npmjsPackage,
-      });
-      setNpmData(fetchedNpmData);
-    })();
-  }, [plugin.frontmatter.npmjsPackage]);
+const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
+  let inner = null;
+  if (npmDataLoadingState === 'loaded') {
+    inner = (
+      <div>
+        <ul className="mb-3">
+          <DetailsListItem
+            label="Version"
+            value={npmData.latestVersion}
+          />
+          <DetailsListItem
+            label="Last published"
+            value={npmData.latestVersionPublishedAgo}
+            title={npmData.latestVersionPublishedTime}
+          />
+          <DetailsListItem
+            label="First published"
+            value={npmData.firstPublishedAgo}
+            title={npmData.firstPublishedTime}
+          />
+          <DetailsListItem
+            label="Number of versions"
+            value={npmData.numberOfVersions}
+          />
+          <DetailsListItem
+            label="License"
+            value={npmData.license}
+          />
+        </ul>
 
-  // The component needs to be resilient to npmData = {}. This is the state
-  // we will find ourselves in if the Netlify Blob storage returns an error.
+        <span
+          className="flex place-content-between text-gray-400"
+          title={npmData.roadieLastUpdated}
+        >
+          <span className="italic">Last synced with NPM:</span>
+          <span>{npmData.lastSyncedAgo}</span>
+        </span>
+      </div>
+    );
+  } else {
+    inner = (
+      <ContentLoader 
+        speed={2}
+        width={400}
+        height={240}
+        viewBox="0 0 400 240"
+        backgroundColor="#f3f3f3"
+        foregroundColor="#ecebeb"
+      >
+        <rect x="0" y="0" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="0" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="40" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="40" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="80" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="80" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="120" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="120" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="160" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="160" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="200" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="200" rx="3" ry="3" width="150" height="24" /> 
+      </ContentLoader>
+    );
+  }
+
+  return (
+    <>
+      <div className="mb-4">
+        <Title>Plugin details</Title>
+      </div>
+
+      {inner}
+    </>
+  );
+};
+
+const parseNpmData = (npmData) => {
   const latestVersionPublishedTime = get(npmData, `time['${npmData.latestVersion}']`);
   const firstPublishedTime = get(npmData, 'time.created');
   const lastSyncedTime = npmData.roadieLastUpdated;
@@ -95,6 +221,40 @@ const Sidebar = ({ plugin, siteMetadata }) => {
     maintainersHelpText += `...along with ${extraMaintainers} others. `
   }
 
+  return {
+    ...pick(npmData, [
+        'latestVersion',
+        'numberOfVersions',
+        'license',
+        'maintainers',
+        'roadieLastUpdated',
+      ]),
+    latestVersionPublishedTime,
+    lastSyncedTime,
+    latestVersionPublishedAgo,
+    firstPublishedAgo,
+    lastSyncedAgo,
+    maintainersHelpText,
+  };
+};
+
+const Sidebar = ({ plugin, siteMetadata }) => {
+  const [npmData, setNpmData] = useState({});
+  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+
+  useEffect(() => {
+    (async () => {
+      setNpmDataLoadingState('loading');
+      const { status, data } = await fetchNpmDataByName({
+        packageName: plugin.frontmatter.npmjsPackage,
+      });
+      setNpmDataLoadingState(status);
+      setNpmData(data);
+    })();
+  }, [plugin.frontmatter.npmjsPackage]);
+
+  const parsedNpmData = parseNpmData(npmData);
+
   return (
     <div>
       <div className="mb-10">
@@ -112,49 +272,11 @@ const Sidebar = ({ plugin, siteMetadata }) => {
       </div>
 
       <div className="mb-10">
-        <div className="mb-4">
-          <Title>Plugin details</Title>
-        </div>
-
-        <div>
-          <ul className="mb-3">
-            <DetailsListItem label="Version" value={npmData.latestVersion} />
-            <DetailsListItem
-              label="Last published"
-              value={latestVersionPublishedAgo}
-              title={latestVersionPublishedTime}
-            />
-            <DetailsListItem
-              label="First published"
-              value={firstPublishedAgo}
-              title={firstPublishedTime}
-            />
-            <DetailsListItem label="Number of versions" value={npmData.numberOfVersions} />
-            <DetailsListItem label="License" value={npmData.license} />
-          </ul>
-
-          <span className="flex place-content-between text-gray-400" title={npmData.roadieLastUpdated}>
-            <span className="italic">Last synced with NPM:</span>
-            <span>{lastSyncedAgo}</span>
-          </span>
-        </div>
+        <NpmDetailsList npmData={parsedNpmData} npmDataLoadingState={npmDataLoadingState} />
       </div>
 
       <div className="mb-10">
-        <div className="mb-4">
-          <Title>Maintainers</Title>
-        </div>
-
-        <div>
-          <ul className="grid grid-cols-4 gap-3 pb-1">
-            {map(npmData.maintainers, ({ name, email }) => (
-              <Mainatainer name={name} email={email} key={email} />
-            ))}
-          </ul>
-            <p className="italic text-gray-400">
-              {maintainersHelpText}
-            </p>
-        </div>
+        <MaintainersList npmData={parsedNpmData} npmDataLoadingState={npmDataLoadingState} />
       </div>
 
       <div>
