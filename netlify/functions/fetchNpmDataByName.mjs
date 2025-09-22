@@ -2,6 +2,7 @@ import retrievePackageDataByName from '../../src/npmPackageData/retrievePackageD
 
 const fetchNpmDataByName = async (req) => {
   const packageName = new URL(req.url).searchParams.get('packageName')
+  console.log('Fetching Npm package data with name:', packageName);
 
   const resp = await retrievePackageDataByName({
     packageName,
