@@ -5,8 +5,11 @@ import { GitHubIcon } from 'components/icons';
 
 const GitHubChip = ({ codeLocation }) => {
   if (!codeLocation) return null;
+  return null;
 
-  const label = URL.parse(codeLocation).pathname.split('/')[2];
+  const { pathname } = new URL(codeLocation, window.location.origin);
+  const segments = pathname.split('/').filter(Boolean);
+  const label = segments[1] || '';
 
   return (
     <Link to={codeLocation} className="inline-block">

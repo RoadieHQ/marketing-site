@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Title } from 'components';
 import map from 'lodash/map';
+import kebabCase from 'lodash/kebabCase';
 import get from 'lodash/get';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import {
@@ -16,6 +17,7 @@ const DetailsListItem = ({ label, value, title }) => {
     <li
       className="border-b border-gray-200 py-2 flex place-content-between"
       title={title}
+      id={`npm-detail-${kebabCase(label)}`}
     >
       <span>{label}</span> <strong>{value}</strong>
     </li>

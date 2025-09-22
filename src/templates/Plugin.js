@@ -38,7 +38,6 @@ const recordExitIntentModalHasBeenShown = () => {
   return localStorage.setItem('exitIntentModalHasBeenShown', true);
 };
 
-
 const PluginTemplate = ({ data }) => {
   const {
     plugin,
