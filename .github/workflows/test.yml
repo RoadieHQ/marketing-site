@@ -53,7 +53,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          start: yarn serve --port 8001
+          start: yarn serve --port 8888
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4

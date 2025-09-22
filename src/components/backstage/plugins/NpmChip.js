@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import truncate from 'lodash/truncate';
 import useMedia from 'react-use/lib/useMedia';
 
@@ -7,15 +7,18 @@ import { NpmIcon } from 'components/icons';
 import theme from '../../../theme';
 
 const NpmChip = ({ npmjsPackage }) => {
+  const [length, setLength] = useState(20);
   const isLG = useMedia(`(min-width: ${theme.BREAKPOINTS_LG})`);
   const isXL = useMedia(`(min-width: ${theme.BREAKPOINTS_XL})`);
   const is2XL = useMedia(`(min-width: ${theme.BREAKPOINTS_2XL})`);
+
   if (!npmjsPackage) return null;
 
-  let length = 20;
-  if (isLG) length = 30;
-  if (isXL) length = 40;
-  if (is2XL) length = 50;
+  useEffect(() => {
+    if (isLG) setLength(30);
+    if (isXL) setLength(40);
+    if (is2XL) setLength(50);
+  }, [isLG, isXL, is2XL]);
 
   return (
     <Link to={`https://npmjs.com/package/${npmjsPackage}`} className="inline-block">

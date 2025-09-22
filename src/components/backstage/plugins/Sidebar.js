@@ -14,12 +14,12 @@ import {
   GravatarImage,
 } from 'components/backstage/plugins';
 
-const DetailsListItem = ({ label, value, title }) => {
+const DetailsListItem = ({ label, value, ...props }) => {
   return (
     <li
       className="border-b border-gray-200 py-2 flex place-content-between"
-      title={title}
       id={`npm-detail-${kebabCase(label)}`}
+      {...props}
     >
       <span>{label}</span> <strong>{value}</strong>
     </li>
@@ -42,24 +42,24 @@ const Mainatainer = ({ name, email }) => {
 const MaintainersList = ({ npmData, npmDataLoadingState }) => {
   let inner;
 
-  // if (npmDataLoadingState === 'loading') {
-  //   inner = (
-  //     <ContentLoader 
-  //       speed={2}
-  //       width={400}
-  //       height={200}
-  //       viewBox="0 0 400 200"
-  //       backgroundColor="#f3f3f3"
-  //       foregroundColor="#ecebeb"
-  //     >
-  //       <circle cx="35" cy="35" r="35" />
-  //       <circle cx="130" cy="35" r="35" />
-  //       <circle cx="230" cy="35" r="35" />
-  //       <circle cx="330" cy="35" r="35" />
-  //       <circle cx="35" cy="125" r="35" />
-  //     </ContentLoader>
-  //   );
-  // } else {
+  if (npmDataLoadingState === 'loading') {
+    inner = (
+      <ContentLoader 
+        speed={2}
+        width={400}
+        height={200}
+        viewBox="0 0 400 200"
+        backgroundColor="#f3f3f3"
+        foregroundColor="#ecebeb"
+      >
+        <circle cx="35" cy="35" r="35" />
+        <circle cx="130" cy="35" r="35" />
+        <circle cx="230" cy="35" r="35" />
+        <circle cx="330" cy="35" r="35" />
+        <circle cx="35" cy="125" r="35" />
+      </ContentLoader>
+    );
+  } else {
     inner = (
       <>
         <ul className="grid grid-cols-4 gap-3 pb-1">
@@ -72,7 +72,7 @@ const MaintainersList = ({ npmData, npmDataLoadingState }) => {
         </p>
       </>
     );
-  // }
+  }
 
   return (
     <>
@@ -125,31 +125,33 @@ async function fetchNpmDataByName ({ packageName }) {
 
 const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
   let inner = null;
-  // if (npmDataLoadingState === 'loading') {
-  //   inner = (
-  //     <ContentLoader 
-  //       speed={2}
-  //       width={400}
-  //       height={240}
-  //       viewBox="0 0 400 240"
-  //       backgroundColor="#f3f3f3"
-  //       foregroundColor="#ecebeb"
-  //     >
-  //       <rect x="0" y="0" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="220" y="0" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="0" y="40" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="220" y="40" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="0" y="80" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="220" y="80" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="0" y="120" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="220" y="120" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="0" y="160" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="220" y="160" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="0" y="200" rx="3" ry="3" width="150" height="24" /> 
-  //       <rect x="220" y="200" rx="3" ry="3" width="150" height="24" /> 
-  //     </ContentLoader>
-  //   );
-  // } else {
+
+  if (npmDataLoadingState === 'loading') {
+    inner = (
+      <ContentLoader 
+        speed={2}
+        width={400}
+        height={240}
+        viewBox="0 0 400 240"
+        backgroundColor="#f3f3f3"
+        foregroundColor="#ecebeb"
+      >
+        <rect x="0" y="0" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="0" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="40" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="40" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="80" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="80" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="120" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="120" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="160" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="160" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="200" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="200" rx="3" ry="3" width="150" height="24" /> 
+      </ContentLoader>
+    );
+  } else {
+
     inner = (
       <div>
         <ul className="mb-3">
@@ -186,7 +188,7 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
         </span>
       </div>
     );
-  // }
+  }
 
   return (
     <>
@@ -199,67 +201,61 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
   );
 };
 
-// const parseNpmData = (npmData) => {
-//   const latestVersionPublishedTime = get(npmData, `time['${npmData.latestVersion}']`);
-//   const firstPublishedTime = get(npmData, 'time.created');
-//   const lastSyncedTime = npmData.roadieLastUpdated;
-// 
-//   let latestVersionPublishedAgo, firstPublishedAgo, lastSyncedAgo;
-//   if (latestVersionPublishedTime) {
-//     latestVersionPublishedAgo = `${formatDistanceToNow(Date.parse(latestVersionPublishedTime))} ago`;
-//   }
-//   if (firstPublishedTime) {
-//     firstPublishedAgo = `${formatDistanceToNow(Date.parse(npmData.time.created))} ago`;
-//   }
-//   if (lastSyncedTime) {
-//     lastSyncedAgo = `${formatDistanceToNow(Date.parse(lastSyncedTime))} ago`;
-//   }
-// 
-//   let maintainersHelpText = `Maintainer images come from Gravatar.`;
-//   if (npmData.maintainers && npmData.numberOfMaintainers > npmData.maintainers.length) {
-//     const extraMaintainers = npmData.numberOfMaintainers - npmData.maintainers.length;
-//     maintainersHelpText += `...along with ${extraMaintainers} others. `
-//   }
-// 
-//   return {
-//     ...pick(npmData, [
-//         'latestVersion',
-//         'numberOfVersions',
-//         'license',
-//         'maintainers',
-//         'roadieLastUpdated',
-//       ]),
-//     latestVersionPublishedTime,
-//     lastSyncedTime,
-//     latestVersionPublishedAgo,
-//     firstPublishedAgo,
-//     lastSyncedAgo,
-//     maintainersHelpText,
-//   };
-// };
+const parseNpmData = (npmData) => {
+  const latestVersionPublishedTime = get(npmData, `time['${npmData.latestVersion}']`);
+  const firstPublishedTime = get(npmData, 'time.created');
+  const lastSyncedTime = npmData.roadieLastUpdated;
 
-const Sidebar = ({ plugin }) => {
+  let latestVersionPublishedAgo, firstPublishedAgo, lastSyncedAgo;
+  if (latestVersionPublishedTime) {
+    latestVersionPublishedAgo = `${formatDistanceToNow(Date.parse(latestVersionPublishedTime))} ago`;
+  }
+  if (firstPublishedTime) {
+    firstPublishedAgo = `${formatDistanceToNow(Date.parse(npmData.time.created))} ago`;
+  }
+  if (lastSyncedTime) {
+    lastSyncedAgo = `${formatDistanceToNow(Date.parse(lastSyncedTime))} ago`;
+  }
+
+  let maintainersHelpText = `Maintainer images come from Gravatar.`;
+  if (npmData.maintainers && npmData.numberOfMaintainers > npmData.maintainers.length) {
+    const extraMaintainers = npmData.numberOfMaintainers - npmData.maintainers.length;
+    maintainersHelpText += `...along with ${extraMaintainers} others. `
+  }
+
+  return {
+    ...pick(npmData, [
+        'latestVersion',
+        'numberOfVersions',
+        'license',
+        'maintainers',
+      ]),
+    latestVersionPublishedTime,
+    lastSyncedTime,
+    latestVersionPublishedAgo,
+    firstPublishedAgo,
+    lastSyncedAgo,
+    maintainersHelpText,
+  };
+};
+
+const Sidebar = ({ plugin, siteMetadata }) => {
   const [npmData, setNpmData] = useState({});
-  // const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
 
   useEffect(() => {
     (async () => {
-      // setNpmDataLoadingState('loading');
-      const { data } = await fetchNpmDataByName({
+      setNpmDataLoadingState('loading');
+      const { status, data } = await fetchNpmDataByName({
         packageName: plugin.frontmatter.npmjsPackage,
       });
-      console.log('data', data);
-      // setNpmDataLoadingState(status);
-      setNpmData(data);
+      setNpmDataLoadingState(status);
+      setNpmData(parseNpmData(data));
     })();
   }, [plugin.frontmatter.npmjsPackage]);
 
-  // const parsedNpmData = parseNpmData(npmData);
-
   return (
     <div>
-      <p>{npmData.latestVersion}</p>
-      {/*
       <div className="mb-10">
         <div className="mb-3">
           <RoadieDocsChip
@@ -273,14 +269,13 @@ const Sidebar = ({ plugin }) => {
         </div>
         <NpmChip npmjsPackage={plugin.frontmatter.npmjsPackage} />
       </div>
-      
 
       <div className="mb-10">
-        <NpmDetailsList npmData={parsedNpmData} npmDataLoadingState={npmDataLoadingState} />
+        <NpmDetailsList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
       </div>
 
       <div className="mb-10">
-        <MaintainersList npmData={parsedNpmData} npmDataLoadingState={npmDataLoadingState} />
+        <MaintainersList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
       </div>
 
       <div>
@@ -293,7 +288,6 @@ const Sidebar = ({ plugin }) => {
           />.
         </p>
       </div>
-      */}
     </div>
   );
 };

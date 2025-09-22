@@ -6,7 +6,7 @@ import {
   AlternatingFeatureWrapper,
   SimpleCenteredHeading,
   TextBasedFeatureBlock,
-  // SplitGridLogoCloud,
+  SplitGridLogoCloud,
   TestimonialsCloud,
   VideoHero,
   CustomerLogoCloud,
@@ -39,12 +39,12 @@ import TemplatesImg from '../../content/assets/home/illustrations/home-templates
 import TechInsightsImg from '../../content/assets/home/illustrations/home-tech-insights.png';
 import ExtensibleImg from '../../content/assets/home/illustrations/home-extensible.png';
 
-// import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
-// import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
-// import CircleCiLogo from '../../content/assets/logos/circle-ci/circleci.inline.svg';
-// import PagerDutyLogo from '../../content/assets/logos/pagerduty/pagerduty.inline.svg';
-// import ArgoLogo from '../../content/assets/logos/argo-cd/argo.inline.svg';
-// import JiraSoftwareLogo from '../../content/assets/logos/jira/jira.inline.svg';
+import GitHubLogo from '../../content/assets/logos/github/logos/modified/github.inline.svg';
+import KubernetesLogo from '../../content/assets/logos/kubernetes/kubernetes.inline.svg';
+import CircleCiLogo from '../../content/assets/logos/circle-ci/circleci.inline.svg';
+import PagerDutyLogo from '../../content/assets/logos/pagerduty/pagerduty.inline.svg';
+import ArgoLogo from '../../content/assets/logos/argo-cd/argo.inline.svg';
+import JiraSoftwareLogo from '../../content/assets/logos/jira/jira.inline.svg';
 
 const SEO_TITLE = 'Roadie - Internal Developer Portal built on Backstage';
 const LEAD = `Roadie is the most customizable Internal Developer Portal with built-in best practices, automated workflows, actionable insights built on Backstage`;
@@ -200,41 +200,41 @@ const SOLUTIONS = {
   ],
 };
 
-// const PLUGINS_SUPPORTED = {
-//   title: 'Powerful plugins',
-//   subTitle: `Open-source Backstage plugins are supported by default. Push your own if you need something bespoke.`,
-//   link: {
-//     text: 'Browse our plugins and integrations catalog',
-//     to: '/docs/integrations/',
-//   },
-// 
-//   logos: [
-//     {
-//       src: <GitHubLogo />,
-//       key: 'github',
-//     },
-//     {
-//       src: <KubernetesLogo />,
-//       key: 'k8s',
-//     },
-//     {
-//       src: <PagerDutyLogo />,
-//       key: 'pagerduty',
-//     },
-//     {
-//       src: <CircleCiLogo />,
-//       key: 'circleci',
-//     },
-//     {
-//       src: <ArgoLogo />,
-//       key: 'argocd',
-//     },
-//     {
-//       src: <JiraSoftwareLogo />,
-//       key: 'jira',
-//     },
-//   ],
-// };
+const PLUGINS_SUPPORTED = {
+  title: 'Powerful plugins',
+  subTitle: `Open-source Backstage plugins are supported by default. Push your own if you need something bespoke.`,
+  link: {
+    text: 'Browse our plugins and integrations catalog',
+    to: '/docs/integrations/',
+  },
+
+  logos: [
+    {
+      src: <GitHubLogo />,
+      key: 'github',
+    },
+    {
+      src: <KubernetesLogo />,
+      key: 'k8s',
+    },
+    {
+      src: <PagerDutyLogo />,
+      key: 'pagerduty',
+    },
+    {
+      src: <CircleCiLogo />,
+      key: 'circleci',
+    },
+    {
+      src: <ArgoLogo />,
+      key: 'argocd',
+    },
+    {
+      src: <JiraSoftwareLogo />,
+      key: 'jira',
+    },
+  ],
+};
 
 const Home = ({ data }) => {
   const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
@@ -324,7 +324,7 @@ const Home = ({ data }) => {
 
       <TestimonialsCloud />
 
-      {/*<SplitGridLogoCloud content={PLUGINS_SUPPORTED} />*/}
+      <SplitGridLogoCloud content={PLUGINS_SUPPORTED} />
 
       {/* <FooterCTA /> */}
 
