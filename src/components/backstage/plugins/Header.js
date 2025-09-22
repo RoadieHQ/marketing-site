@@ -15,13 +15,13 @@ const Header = ({
   },
 }) => (
   <div className="mx-auto max-w-7xl">
-    <div className="mb-10">
+    <div className="px-4 lg:px-0 mb-10">
       <Link to="/backstage/plugins/" className="font-bold text-blueroadie">
         <span className="text-orange-500">←</span> Backstage Plugins Guides
       </Link>
     </div>
 
-    <header className="px-4 xl:rounded-lg lg:flex lg:px-0 items-center mb-10">
+    <header className="px-4 lg:px-0 flex items-center mb-10">
       <div className="bg-gray-100 mr-8">
         <Logo
           minHeight={80}

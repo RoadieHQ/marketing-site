@@ -44,6 +44,8 @@ async function fetchNpmDataByName ({ packageName }) {
 
   try {
     response = await fetch(`${funcUrl}?packageName=${packageName}`);
+
+    if (!response.ok) return data;
   } catch (err) {
     console.error(err);
     return data;
@@ -51,7 +53,6 @@ async function fetchNpmDataByName ({ packageName }) {
 
   try {
     const json = await response.json();
-    console.log('json', json);
     data = json.data;
     return data;
   } catch (err) {

@@ -83,13 +83,13 @@ const PluginTemplate = ({ data }) => {
       <main className="pb-8 px-4 lg:pb-28">
         <div className="relative max-w-7xl mx-auto">
           <div className="grid grid-cols-3 gap-20">
-            <article className="col-span-2">
+            <article className="col-span-3 lg:col-span-2">
               <Body plugin={plugin} siteMetadata={siteMetadata} />
               <Notes plugin={plugin} />
               <PluginCTA plugin={plugin} />
             </article>
 
-            <aside className="col-span-1">
+            <aside className="hidden lg:block lg:col-span-1">
               <Sidebar plugin={plugin} siteMetadata={siteMetadata} />
             </aside>
           </div>
