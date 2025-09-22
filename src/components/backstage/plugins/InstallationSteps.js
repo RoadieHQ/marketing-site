@@ -11,7 +11,7 @@ const InstallationSteps = ({ plugin }) => {
         Installation steps
       </Title>
 
-      <HostTabs docsLink={`/docs/integrations${plugin.frontmatter.roadieDocsPath}`} />
+      <HostTabs docsLink={`/docs${plugin.frontmatter.roadieDocsPath}`} />
 
       {plugin.frontmatter.gettingStarted && (
         <>
