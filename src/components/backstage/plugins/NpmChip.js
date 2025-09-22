@@ -12,13 +12,13 @@ const NpmChip = ({ npmjsPackage }) => {
   const isXL = useMedia(`(min-width: ${theme.BREAKPOINTS_XL})`);
   const is2XL = useMedia(`(min-width: ${theme.BREAKPOINTS_2XL})`);
 
-  if (!npmjsPackage) return null;
-
   useEffect(() => {
     if (isLG) setLength(30);
     if (isXL) setLength(40);
     if (is2XL) setLength(50);
   }, [isLG, isXL, is2XL]);
+
+  if (!npmjsPackage) return null;
 
   return (
     <Link to={`https://npmjs.com/package/${npmjsPackage}`} className="inline-block">
