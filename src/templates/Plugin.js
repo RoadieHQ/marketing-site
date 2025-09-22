@@ -14,6 +14,11 @@ import {
   Sidebar,
 } from 'components/backstage/plugins';
 
+// All the languages used in the plugin installation instructions need to be listed here.
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-yaml';
+
 const Body = ({ plugin, siteMetadata }) => {
   if (plugin.frontmatter.gettingStarted) {
     return (
