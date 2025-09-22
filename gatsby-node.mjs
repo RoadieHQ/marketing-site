@@ -32,8 +32,8 @@ export const createPages = async ({ graphql, actions }) => {
   // a Netlify plugin that runs on deploy time might be a better place to do that. I've
   // never created a Netlify plugin before though so I'm leaving it here for the moment [DT].
   const listOfNpmPackages = await listOfNpmPackagesFromFiles({ graphql });
-  await storePackageNames(listOfNpmPackages, { authStrategy: 'automatic' });
-  await storePackageData({ authStrategy: 'automatic' });
+  await storePackageNames(listOfNpmPackages);
+  await storePackageData();
 
   await createPagesFromQuery({
     templatePath: './src/templates/BlogPost.js',

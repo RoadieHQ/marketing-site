@@ -1,27 +1,36 @@
 import { getStore } from '@netlify/blobs';
+import get from 'lodash/get.js';
 
 const STORE_NAME = 'npm-package-data';
-const VALID_AUTH_STRATEGIES = ['automatic', 'token'];
 
 const getRoadieStore = ({
   name = STORE_NAME,
-  authStrategy,
   siteID = process.env.NETLIFY_SITE_ID,
-}) => {
-  if (!VALID_AUTH_STRATEGIES.includes(authStrategy)) {
-    throw new Error(`
-      Invalid authStrategy found in #getRoadieStore. Expected one of ${VALID_AUTH_STRATEGIES}.
-      Found ${authStrategy}.
-    `);
+} = {}) => {
+  const opts = { name, siteID }
+  let store;
+  try {
+    store = getStore(opts);
+    if (get(process.env, 'NODE_ENV') === 'development') {
+      console.log(`Successfully connected (via automatic authentication) to the Netlify Blobs
+      sandbox.`.replace(/\s+/g, " "));
+    }
+  } catch(err) {
+    if (err.name === 'MissingBlobsEnvironmentError') {
+      console.warn(`
+        You are connected to the production Netlify blob store. Automatic authentication failed
+        for Netlify Blobs store. Using the token found in process.env.NETLIFY_API_TOKEN instead.
+        NOTE: Token authentication will NOT connect to the Netlify blobs local development
+        sandbox, even when running in a development environment.`.replace(/\s+/g, " "));
+
+      opts.token = process.env.NETLIFY_API_TOKEN;
+      store = getStore(opts);
+    } else {
+      throw err;
+    }
   }
 
-  const opts = { name, siteID };
-
-  if (authStrategy === 'token') {
-    opts.token = process.env.NETLIFY_API_TOKEN;
-  }
-
-  return getStore(opts);
+  return store;
 };
 
 export default getRoadieStore;

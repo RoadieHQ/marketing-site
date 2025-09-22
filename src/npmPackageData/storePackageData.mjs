@@ -8,8 +8,8 @@ import stripPackageData from './stripPackageData.mjs';
 const NPM_REGISTRY_HOSTNAME = 'https://registry.npmjs.org/';
 const ALL_PACKAGE_DATA_STORE_KEY = `all-backstage-plugin-package-data`;
 
-const storePackageData = async ({ authStrategy }) => {
-  let listOfNpmPackages = await retrievePackageNames({ authStrategy });
+const storePackageData = async () => {
+  let listOfNpmPackages = await retrievePackageNames();
 
   if (!isArray(listOfNpmPackages)) {
     console.log(`No package names found in store. Receive:`, listOfNpmPackages);
@@ -31,7 +31,7 @@ const storePackageData = async ({ authStrategy }) => {
     return obj;
   }, {});
 
-  const store = getRoadieStore({ authStrategy });
+  const store = getRoadieStore();
 
   // We store the data in two ways:
   // 1. A big object with keys which refer to the names of the npm packages.

@@ -2,7 +2,6 @@ import getRoadieStore from './getRoadieStore.mjs';
 
 const retrievePackageDataByName = async ({
   packageName,
-  authStrategy,
 }) => {
   if (typeof packageName === 'undefined' || packageName === '') {
     throw new Error(`
@@ -10,7 +9,7 @@ const retrievePackageDataByName = async ({
     `);
   }
 
-  const store = getRoadieStore({ authStrategy });
+  const store = getRoadieStore();
   return store.get(packageName, { type: 'json' });
 };
 

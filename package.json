@@ -106,7 +106,7 @@
     "build": "yarn prebuild && gatsby build",
     "tech-docs:build": "bash bin/convert_tech_docs.sh",
     "tech-docs:clean": "rm -rf roadie-tech-docs",
-    "develop": "netlify dev",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "netlify dev",
     "serve": "gatsby serve",
