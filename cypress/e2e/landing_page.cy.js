@@ -1,7 +1,7 @@
 describe('The landing page', () => {
   beforeEach(() => {
     // We have to stub beause netlify forms don't work in this environment.
-    cy.intercept('POST', 'http://localhost:8001', {
+    cy.intercept('POST', Cypress.config('baseUrl'), {
       statusCode: 200,
     });
   });
