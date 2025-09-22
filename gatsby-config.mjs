@@ -41,10 +41,14 @@ const skipWebpackAnalyzer = has(process.env, 'GITHUB_ACTIONS') || has(process.en
 const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
 
-  // This is an environment variable set by the Netlify build process.
-  const netlifySiteName = get(process.env, 'SITE_NAME');
-  if (netlifySiteName === 'roadie-preview') return 'preview.contentful.com';
-  if (netlifySiteName === 'roadie') return 'cdn.contentful.com';
+  // This environment variable is always set when building in the netlify environment. It is
+  // not set by the netlify dev server.
+  if (get(process.env, 'NETLIFY')) {
+    // This is an environment variable set by the Netlify build process.
+    const netlifySiteName = get(process.env, 'SITE_NAME');
+    if (netlifySiteName === 'roadie-preview') return 'preview.contentful.com';
+    if (netlifySiteName === 'roadie') return 'cdn.contentful.com';
+  }
 
   // Good for local development
   return 'preview.contentful.com';
