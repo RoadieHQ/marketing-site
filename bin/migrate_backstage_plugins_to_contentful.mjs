@@ -2,7 +2,7 @@
 
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { dirname, join, extname } from 'path';
 import { load } from 'js-yaml';
 import { parseArgs } from 'util';
 
@@ -54,12 +54,12 @@ function convertGettingStartedToMarkdown(gettingStarted) {
   }).join('').trim();
 }
 
-function mapToContentfulFields(frontmatter, body) {
+function mapToContentfulFields(frontmatter, body, logoAssetId = null) {
   const installationInstructions = frontmatter.gettingStarted 
     ? convertGettingStartedToMarkdown(frontmatter.gettingStarted)
     : '';
     
-  return {
+  const fields = {
     humanName: frontmatter.humanName,
     heading: frontmatter.heading,
     lead: frontmatter.lead,
@@ -74,6 +74,141 @@ function mapToContentfulFields(frontmatter, body) {
     installationInstructions: installationInstructions,
     notes: body.trim()
   };
+
+  // Add logo asset reference if provided
+  if (logoAssetId) {
+    fields.logoImage = logoAssetId;
+  }
+
+  return fields;
+}
+
+// Get MIME type from file extension
+function getMimeType(filePath) {
+  const ext = extname(filePath).toLowerCase();
+  const mimeTypes = {
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.png': 'image/png',
+    '.gif': 'image/gif',
+    '.webp': 'image/webp',
+    '.svg': 'image/svg+xml'
+  };
+  return mimeTypes[ext] || 'application/octet-stream';
+}
+
+// Upload file to Contentful and create asset
+async function uploadLogoAsset(logoImagePath, humanName) {
+  const spaceId = process.env.CONTENTFUL_SPACE_ID;
+  const accessToken = process.env.CONTENTFUL_CONTENT_MANAGEMENT_API_TOKEN;
+  const environmentId = process.env.CONTENTFUL_ENVIRONMENT_ID || 'master';
+
+  if (!accessToken || !spaceId) {
+    throw new Error('Missing required environment variables for Contentful');
+  }
+
+  // Resolve the full path to the logo image
+  const logoImagePathFromRoot = logoImagePath.split('/').slice(2);
+  const fullLogoPath = join(__dirname, '..', 'content', ...logoImagePathFromRoot);
+  
+  try {
+    // Read the file
+    const fileBuffer = readFileSync(fullLogoPath);
+    const fileName = logoImagePath.split('/').pop();
+    const mimeType = getMimeType(fullLogoPath);
+
+    // Step 1: Upload file to Contentful
+    console.log(`  Uploading logo file: ${fileName}`);
+    const uploadResponse = await fetch(`https://upload.contentful.com/spaces/${spaceId}/uploads`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/octet-stream',
+      },
+      body: fileBuffer
+    });
+
+    if (!uploadResponse.ok) {
+      const errorText = await uploadResponse.text();
+      throw new Error(`Failed to upload file: ${uploadResponse.status} ${uploadResponse.statusText}\n${errorText}`);
+    }
+
+    const upload = await uploadResponse.json();
+    console.log(`  ✓ File uploaded with ID: ${upload.sys.id}`);
+
+    // Step 2: Create asset
+    console.log(`  Creating asset for ${humanName}...`);
+    const assetData = {
+      fields: {
+        title: {
+          'en-US': `${humanName} Plugin Logo`
+        },
+        file: {
+          'en-US': {
+            fileName: fileName,
+            contentType: mimeType,
+            uploadFrom: {
+              sys: {
+                type: 'Link',
+                linkType: 'Upload',
+                id: upload.sys.id
+              }
+            }
+          }
+        }
+      }
+    };
+
+    const assetResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/vnd.contentful.management.v1+json'
+      },
+      body: JSON.stringify(assetData)
+    });
+
+    if (!assetResponse.ok) {
+      const errorText = await assetResponse.text();
+      throw new Error(`Failed to create asset: ${assetResponse.status} ${assetResponse.statusText}\n${errorText}`);
+    }
+
+    const asset = await assetResponse.json();
+    console.log(`  ✓ Asset created with ID: ${asset.sys.id}`);
+
+    // Step 3: Process the asset (required to make it available)
+    console.log(`  Processing asset...`);
+    const processResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets/${asset.sys.id}/files/en-US/process`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'X-Contentful-Version': asset.sys.version
+      }
+    });
+
+    if (!processResponse.ok) {
+      const errorText = await processResponse.text();
+      throw new Error(`Failed to process asset: ${processResponse.status} ${processResponse.statusText}\n${errorText}`);
+    }
+
+    console.log(`  ✓ Asset processed successfully`);
+
+    // Return asset reference for linking
+    return {
+      sys: {
+        type: 'Link',
+        linkType: 'Asset',
+        id: asset.sys.id
+      }
+    };
+
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      console.log(`  ⚠ Logo file not found: ${fullLogoPath}`);
+      return null;
+    }
+    throw error;
+  }
 }
 
 async function createContentfulEntry(fields) {
@@ -133,7 +268,17 @@ async function processPlugin(pluginName) {
     const { frontmatter, body } = parseFrontmatter(markdownContent);
     console.log(`✓ Parsed frontmatter for ${pluginName}`);
 
-    const contentfulFields = mapToContentfulFields(frontmatter, body);
+    // Handle logo image upload if present
+    let logoAssetId = null;
+    if (frontmatter.logoImage) {
+      console.log(`Processing logo image: ${frontmatter.logoImage}`);
+      logoAssetId = await uploadLogoAsset(frontmatter.logoImage, frontmatter.humanName);
+      if (logoAssetId) {
+        console.log(`✓ Logo uploaded and linked`);
+      }
+    }
+
+    const contentfulFields = mapToContentfulFields(frontmatter, body, logoAssetId);
 
     console.log(`Creating Contentful entry for ${pluginName}...`);
     const entry = await createContentfulEntry(contentfulFields);
