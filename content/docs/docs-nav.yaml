@@ -149,6 +149,7 @@ nav:
       - Deploying: '/docs/custom-plugins/deploying/'
       - Testing: '/docs/custom-plugins/testing/'
       - Available APIs: '/docs/custom-plugins/available-apis/'
+      - MDX Plugin Card: '/docs/custom-plugins/mdx-plugin-card/'
       - Connecting Back to Your Network:
           - Proxy: '/docs/custom-plugins/connectivity/proxy/'
           - Broker: '/docs/custom-plugins/connectivity/broker/'
