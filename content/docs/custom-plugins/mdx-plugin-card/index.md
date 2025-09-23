@@ -51,8 +51,8 @@ e.g.
 This will display the annotations for the entity.
 
 ```txt
-Namespace	Name
-default	example 1
-roadie-hq	example 2
-roadie-hq	example 3
+backstage.io/managed-by-location    url:https://github.com/roadiehq/example
+backstage.io/techdocs-ref          dir:.
+example.com/owner                  team-a
+example.com/priority               high
 ```
