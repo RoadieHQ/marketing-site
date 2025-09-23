@@ -51,7 +51,7 @@ export default async function processPlugin(pluginName) {
       }
     }
 
-    const contentfulFields = mapToContentfulFields(frontmatter, body, logoAssetId, coverImageAssetId);
+    const contentfulFields = await mapToContentfulFields(frontmatter, body, logoAssetId, coverImageAssetId);
 
     console.log(`Creating Contentful entry for ${pluginName}...`);
     const entry = await createContentfulEntry(contentfulFields);
