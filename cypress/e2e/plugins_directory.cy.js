@@ -43,17 +43,10 @@ describe('Plugins directory', () => {
     roadieLastUpdated: "2025-09-22T12:45:23.839Z"
   };
   const netlifyFnPath = '/.netlify/functions/fetchNpmDataByName';
+  const BASE_URL = Cypress.config('baseUrl');
 
   beforeEach(() => {
     cy.clock(Date.parse('2025-09-22T12:45:23.839Z'), ['Date']);
-
-    const BASE_URL = Cypress.config('baseUrl');
-    cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
-      statusCode: 200,
-      body: {
-        data: npmData,
-      },
-    }).as('fetchNpmData');
   });
 
   afterEach(() => {
@@ -61,10 +54,31 @@ describe('Plugins directory', () => {
   });
 
   it('renders NPM info', () => {
+    cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
+      statusCode: 200,
+      body: {
+        data: npmData,
+      },
+    }).as('fetchNpmData');
+
     cy.visit('/backstage/plugins/argo-cd/');
+
     cy.wait('@fetchNpmData').then(() => {
       cy.get('#npm-detail-version').contains(npmData.latestVersion);
       cy.get('#npm-detail-last-published').contains('25 days ago');
+    });
+  });
+
+  it('should not show the NPM panels but should show the rest of the content', () => {
+    cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
+      statusCode: 500,
+    }).as('fetchNpmData');
+
+    cy.visit('/backstage/plugins/argo-cd/');
+
+    cy.wait('@fetchNpmData').then(() => {
+      cy.contains('Created by Roadie, in collaboration with American Airlines');
+      cy.get('#npm-detail-last-published').should('not.exist');
     });
   });
 });

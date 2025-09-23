@@ -40,6 +40,7 @@ const Mainatainer = ({ name, email }) => {
 };
 
 const MaintainersList = ({ npmData, npmDataLoadingState }) => {
+  if (npmDataLoadingState === 'error') return null;
   let inner;
 
   if (npmDataLoadingState === 'loading') {
@@ -124,7 +125,8 @@ async function fetchNpmDataByName ({ packageName }) {
 }
 
 const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
-  let inner = null;
+  if (npmDataLoadingState === 'error') return null;
+  let inner;
 
   if (npmDataLoadingState === 'loading') {
     inner = (
