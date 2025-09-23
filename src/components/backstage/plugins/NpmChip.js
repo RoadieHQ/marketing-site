@@ -10,13 +10,11 @@ const NpmChip = ({ npmjsPackage }) => {
   const [length, setLength] = useState(20);
   const isLG = useMedia(`(min-width: ${theme.BREAKPOINTS_LG})`);
   const isXL = useMedia(`(min-width: ${theme.BREAKPOINTS_XL})`);
-  const is2XL = useMedia(`(min-width: ${theme.BREAKPOINTS_2XL})`);
 
   useEffect(() => {
     if (isLG) setLength(30);
     if (isXL) setLength(40);
-    if (is2XL) setLength(50);
-  }, [isLG, isXL, is2XL]);
+  }, [isLG, isXL]);
 
   if (!npmjsPackage) return null;
 
