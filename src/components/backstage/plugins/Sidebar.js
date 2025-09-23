@@ -26,7 +26,7 @@ const DetailsListItem = ({ label, value, ...props }) => {
   );
 };
 
-const Mainatainer = ({ name, email }) => {
+const Maintainer = ({ name, email }) => {
   return (
     <li title={`Name: ${name}. Email: ${email}`}>
       <GravatarImage email={email} name={name} />
@@ -60,7 +60,7 @@ const MaintainersList = ({ npmData, npmDataLoadingState }) => {
       <>
         <ul className="grid grid-cols-4 gap-3 pb-1">
           {map(npmData.maintainers, ({ name, email }) => (
-            <Mainatainer name={name} email={email} key={email} />
+            <Maintainer name={name} email={email} key={email} />
           ))}
         </ul>
         <p className="italic text-gray-400">

@@ -37,6 +37,6 @@ describe('#stripPackageData', () => {
   });
 
   it('should not include the versions object', () => {
-    expect(stripPackageData(testPackage).versions).toBeUndefined;
+    expect(stripPackageData(testPackage).versions).toBeUndefined();
   });
 });
