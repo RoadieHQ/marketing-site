@@ -31,8 +31,36 @@ function parseFrontmatter(content) {
   }
 }
 
+// Convert gettingStarted array to markdown
+function convertGettingStartedToMarkdown(gettingStarted) {
+  if (!Array.isArray(gettingStarted)) {
+    return '';
+  }
+  
+  return gettingStarted.map((step) => {
+    let markdown = '';
+    
+    // Add the intro text as a paragraph
+    if (step.intro) {
+      markdown += `${step.intro}\n\n`;
+    }
+    
+    // Add the code block if present
+    if (step.code) {
+      const language = step.language || '';
+      markdown += `\`\`\`${language}\n${step.code.trim()}\n\`\`\`\n\n`;
+    }
+    
+    return markdown;
+  }).join('').trim();
+}
+
 // Map frontmatter fields to Contentful fields
 function mapToContentfulFields(frontmatter) {
+  const installationInstructions = frontmatter.gettingStarted 
+    ? convertGettingStartedToMarkdown(frontmatter.gettingStarted)
+    : '';
+    
   return {
     humanName: frontmatter.humanName,
     heading: frontmatter.heading,
@@ -44,7 +72,8 @@ function mapToContentfulFields(frontmatter) {
     seoTitle: frontmatter.seo?.title,
     seoDescription: frontmatter.seo?.description,
     availableOnRoadie: frontmatter.availableOnRoadie,
-    roadieDocsPath: frontmatter.roadieDocsPath
+    roadieDocsPath: frontmatter.roadieDocsPath,
+    installationInstructions: installationInstructions
   };
 }
 
