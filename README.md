@@ -29,7 +29,7 @@ cd marketing-site
 cp .env.sample .env
 # Edit the environment variables in the .env file. You will need to lookup the Contentful API key in 1password.
 yarn install
-env $(cat .env | xargs) yarn start
+yarn start
 ```
 
 Open http://localhost:8000 in your browser.

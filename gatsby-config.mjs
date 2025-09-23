@@ -1,9 +1,11 @@
-const has = require('lodash/has');
-const get = require('lodash/get');
-const agoliaQueries = require('./src/queries/agolia');
-const rssFeedPlugin = require('./src/gatsby/rssFeedPlugin');
-const theme = require('./src/theme');
-const GATSBY_PLUGIN_CSP_DIRECTIVES = require('./src/gatsby/cspDirectives');
+import has from 'lodash/has.js';
+import get from 'lodash/get.js';
+import agoliaQueries from './src/queries/agolia.mjs';
+import rssFeedPlugin from './src/gatsby/rssFeedPlugin.mjs';
+import theme from './src/theme.mjs';
+import GATSBY_PLUGIN_CSP_DIRECTIVES from './src/gatsby/cspDirectives.mjs';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 // EXAMPLE NETLIFY ENV VARS:
 //
@@ -39,10 +41,14 @@ const skipWebpackAnalyzer = has(process.env, 'GITHUB_ACTIONS') || has(process.en
 const getContentfulHost = () => {
   if (has(process.env, 'GITHUB_ACTIONS')) return 'cdn.contentful.com';
 
-  // This is an environment variable set by the Netlify build process.
-  const netlifySiteName = get(process.env, 'SITE_NAME');
-  if (netlifySiteName === 'roadie-preview') return 'preview.contentful.com';
-  if (netlifySiteName === 'roadie') return 'cdn.contentful.com';
+  // This environment variable is always set when building in the netlify environment. It is
+  // not set by the netlify dev server.
+  if (get(process.env, 'NETLIFY')) {
+    // This is an environment variable set by the Netlify build process.
+    const netlifySiteName = get(process.env, 'SITE_NAME');
+    if (netlifySiteName === 'roadie-preview') return 'preview.contentful.com';
+    if (netlifySiteName === 'roadie') return 'cdn.contentful.com';
+  }
 
   // Good for local development
   return 'preview.contentful.com';
@@ -99,7 +105,9 @@ process.env.GATSBY_GIT_BRANCH_NAME = process.env.BRANCH;
 process.env.GATSBY_NETLIFY_SITE_NAME = process.env.SITE_NAME;
 process.env.GATSBY_SITE_RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 
-module.exports = {
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+const config = {
   siteMetadata: {
     title: SITE_TITLE,
     description: 'Hosted, managed, enterprise Backstage',
@@ -250,7 +258,6 @@ module.exports = {
     },
 
     'gatsby-plugin-twitter',
-    'gatsby-plugin-netlify',
     'gatsby-plugin-image',
     'gatsby-plugin-postcss',
 
@@ -303,3 +310,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;

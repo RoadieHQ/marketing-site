@@ -10,10 +10,12 @@
  * weight down, but it's not clear how to use that package in Gatsby and it doesn't seem too
  * bad to just copy/paste 3 non critical values instead.
  */
-module.exports = {
+export default {
   COLORS_PRIMARY_500: '#f97316',
   COLORS_PRIMARY_600: '#ea580c',
   COLORS_GRAY_500: '#737373',
-  BREAKPOINTS_MD: '768px',
-  BREAKPOINTS_LG: '1024px',
+  BREAKPOINTS_MD: '48rem',
+  BREAKPOINTS_LG: '64rem',
+  BREAKPOINTS_XL: '80rem',
+  BREAKPOINTS_2XL: '96rem',
 };

@@ -11,7 +11,7 @@ import { PAGE_PATHS } from '../../src/contactFormConstants';
 // tests.
 describe.skip('The honeypot field', () => {
   it('should protect us from request demo spam', () => {
-    cy.intercept('POST', 'http://localhost:8001', {
+    cy.intercept('POST', Cypress.config('baseUrl'), {
       statusCode: 200,
     });
 
@@ -27,7 +27,7 @@ describe.skip('The honeypot field', () => {
   });
 
   it('should protext us from free trial spam', () => {
-    cy.intercept('POST', 'http://localhost:8001', {
+    cy.intercept('POST', Cypress.config('baseUrl'), {
       statusCode: 200,
     });
 
@@ -44,7 +44,7 @@ describe.skip('The honeypot field', () => {
   });
 
   it('should protect us from enterprise pricing spam', () => {
-    cy.intercept('POST', 'http://localhost:8001', {
+    cy.intercept('POST', Cypress.config('baseUrl'), {
       statusCode: 200,
     });
 
@@ -62,7 +62,7 @@ describe.skip('The honeypot field', () => {
   });
 
   it('should protext us from teams early access spam', () => {
-    cy.intercept('POST', 'http://localhost:8001', {
+    cy.intercept('POST', Cypress.config('baseUrl'), {
       statusCode: 200,
     });
 

@@ -1,7 +1,8 @@
-const { createFilePath } = require(`gatsby-source-filesystem`);
-const kebabCase = require('lodash/kebabCase');
-const has = require('lodash/has');
-const {
+import { createFilePath } from 'gatsby-source-filesystem';
+import kebabCase from 'lodash/kebabCase.js';
+import has from 'lodash/has.js';
+
+import {
   BLOGS_QUERY,
   PLUGINS_QUERY,
   TAGS_QUERY,
@@ -10,13 +11,30 @@ const {
   CASE_STUDIES_QUERY,
   CHANGELOG_QUERY,
   BACKSTAGE_BITES_QUERY,
-} = require('./src/queries/gatsbyNodeQueries');
-const createLatestLegalNotices = require('./src/pageCreation/createLatestLegalNotices');
-const createPagesFromQuery = require('./src/pageCreation/createPagesFromQuery');
-const createListPagesFromQuery = require('./src/pageCreation/createListPagesFromQuery');
-const transformPageFrontmatter = require('./src/pageCreation/transformPageFrontmatter');
+} from './src/queries/gatsbyNodeQueries.mjs';
+import {
+  createLatestLegalNotices,
+  createPagesFromQuery,
+  createListPagesFromQuery,
+  transformPageFrontmatter,
+} from './src/pageCreation/index.mjs';
+import storePackageNames from './src/npmPackageData/storePackageNames.mjs';
+import storePackageData from './src/npmPackageData/storePackageData.mjs';
+import listOfNpmPackagesFromFiles from './src/npmPackageData/listOfNpmPackagesFromFiles.mjs';
 
-exports.createPages = async ({ graphql, actions }) => {
+export const createPages = async ({ graphql, actions }) => {
+  // This function iterates over the backstage plugins in the plugins directory, gets the name
+  // of the NPM package associated with each one, and uploads all the names in a big array
+  // to Netlify Blob storage. Then it goes out to NPM and fetches the API data for each package
+  // and stores that in the blob store.
+  //
+  // We don't necessarily need this to happen every time we start the local dev server, so
+  // a Netlify plugin that runs on deploy time might be a better place to do that. I've
+  // never created a Netlify plugin before though so I'm leaving it here for the moment [DT].
+  const listOfNpmPackages = await listOfNpmPackagesFromFiles({ graphql });
+  await storePackageNames(listOfNpmPackages);
+  await storePackageData();
+
   await createPagesFromQuery({
     templatePath: './src/templates/BlogPost.js',
     query: BLOGS_QUERY,
@@ -159,7 +177,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+export const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   // has(node, 'fileAbsolutePath') prevents this code from running on nodes which come

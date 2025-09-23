@@ -4,7 +4,6 @@ import Prism from 'prismjs';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
 import {
-  EditOnGitHubLink,
   Header,
   Intro,
   PluginCTA,
@@ -12,7 +11,13 @@ import {
   InstallationSteps,
   PlaceholderBody,
   Notes,
+  Sidebar,
 } from 'components/backstage/plugins';
+
+// All the languages used in the plugin installation instructions need to be listed here.
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-yaml';
 
 const Body = ({ plugin, siteMetadata }) => {
   if (plugin.frontmatter.gettingStarted) {
@@ -20,14 +25,9 @@ const Body = ({ plugin, siteMetadata }) => {
       <>
         <Intro plugin={plugin} />
 
-        <PluginCTA plugin={plugin} />
         <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
 
         <InstallationSteps plugin={plugin} />
-
-        <p className="prose prose-primary my-10">
-          Found a mistake? <EditOnGitHubLink siteMetadata={siteMetadata} plugin={plugin} />.
-        </p>
       </>
     );
   }
@@ -42,7 +42,6 @@ const hasExitIntentModalBeenShownBefore = () => {
 const recordExitIntentModalHasBeenShown = () => {
   return localStorage.setItem('exitIntentModalHasBeenShown', true);
 };
-
 
 const PluginTemplate = ({ data }) => {
   const {
@@ -82,13 +81,23 @@ const PluginTemplate = ({ data }) => {
 
       <SitewideHeader />
 
-      <Header plugin={plugin} />
+      <div className="mt-4">
+        <Header plugin={plugin} />
+      </div>
 
-      <main className="pt-4 pb-8 px-4 lg:pb-28">
-        <div className="relative max-w-lg mx-auto lg:max-w-4xl">
-          <Body plugin={plugin} siteMetadata={siteMetadata} />
-          <Notes plugin={plugin} />
-          <PluginCTA plugin={plugin} />
+      <main className="pb-8 px-4 lg:pb-28">
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 gap-20">
+            <article className="col-span-3 lg:col-span-2">
+              <Body plugin={plugin} siteMetadata={siteMetadata} />
+              <Notes plugin={plugin} />
+              <PluginCTA plugin={plugin} />
+            </article>
+
+            <aside className="hidden lg:block lg:col-span-1">
+              <Sidebar plugin={plugin} siteMetadata={siteMetadata} />
+            </aside>
+          </div>
         </div>
       </main>
 
@@ -135,7 +144,7 @@ export const pageQuery = graphql`
 
         logoImage {
           childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 140)
+            gatsbyImageData(layout: FIXED, width: 80)
           }
         }
 

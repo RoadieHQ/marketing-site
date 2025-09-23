@@ -2,7 +2,7 @@ import React from 'react';
 import ExternalLinkIcon from '@heroicons/react/outline/ExternalLinkIcon';
 
 const HostTabs = ({ docsLink }) => (
-  <nav className="invisible lg:visible mb-8 mx-[-1rem] px-[1rem] flex flex-wrap items-center text-center border-b-2 border-gray-200">
+  <nav className="mb-8 mx-[-1rem] px-[1rem] flex flex-wrap items-center text-center border-b-2 border-gray-200">
     <span className="inline-block p-4 text-blueroadie font-bold bg-gray-elusivegray border-2 border-gray-200 border-b-elusivegray rounded-t-lg mb-[-2px]">
       Self-hosted Backstage
     </span>

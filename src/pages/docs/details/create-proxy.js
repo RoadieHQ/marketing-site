@@ -58,8 +58,6 @@ const ProxyPage = ({ data, location}) => {
   const examples = data.examplesList.edges.map((edge) => edge.node);
   const header = data.allMarkdownRemark.edges.map((edge) => edge.node).find((item => item.frontmatter.category === 'header'));
 
-  console.log("examples: " + JSON.stringify(examples))
-
   return (
     <>
       <DocsHeader location={location} />
