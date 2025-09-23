@@ -4,11 +4,11 @@ import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { load } from 'js-yaml';
+import { parseArgs } from 'util';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Parse YAML frontmatter
 function parseFrontmatter(content) {
   const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
   const match = content.match(frontmatterRegex);
@@ -31,7 +31,6 @@ function parseFrontmatter(content) {
   }
 }
 
-// Convert gettingStarted array to markdown
 function convertGettingStartedToMarkdown(gettingStarted) {
   if (!Array.isArray(gettingStarted)) {
     return '';
@@ -55,7 +54,6 @@ function convertGettingStartedToMarkdown(gettingStarted) {
   }).join('').trim();
 }
 
-// Map frontmatter fields to Contentful fields
 function mapToContentfulFields(frontmatter, body) {
   const installationInstructions = frontmatter.gettingStarted 
     ? convertGettingStartedToMarkdown(frontmatter.gettingStarted)
@@ -78,7 +76,6 @@ function mapToContentfulFields(frontmatter, body) {
   };
 }
 
-// Create Contentful entry
 async function createContentfulEntry(fields) {
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const accessToken = process.env.CONTENTFUL_CONTENT_MANAGEMENT_API_TOKEN;
@@ -125,25 +122,106 @@ async function createContentfulEntry(fields) {
   return await response.json();
 }
 
-async function main() {
+async function processPlugin(pluginName) {
+  console.log(`\nProcessing plugin: ${pluginName}`);
+  
+  const markdownPath = join(__dirname, '..', 'content', 'backstage', 'plugins', `${pluginName}.md`);
+  
   try {
-    const markdownPath = join(__dirname, '..', 'content', 'backstage', 'plugins', 'argo-cd.md');
     const markdownContent = readFileSync(markdownPath, 'utf-8');
     
     const { frontmatter, body } = parseFrontmatter(markdownContent);
-    console.log('Parsed frontmatter');
+    console.log(`✓ Parsed frontmatter for ${pluginName}`);
 
     const contentfulFields = mapToContentfulFields(frontmatter, body);
 
-    console.log('Parsed frontmatter fields:');
-    console.log(JSON.stringify(contentfulFields, null, 2));
-
-    console.log('\nCreating Contentful entry...');
+    console.log(`Creating Contentful entry for ${pluginName}...`);
     const entry = await createContentfulEntry(contentfulFields);
 
-    console.log('Successfully created Contentful entry:');
-    console.log(`Entry ID: ${entry.sys.id}`);
-    console.log(`Entry URL: https://app.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT_ID || 'master'}/entries/${entry.sys.id}`);
+    console.log(`✓ Successfully created Contentful entry for ${pluginName}`);
+    console.log(`  Entry ID: ${entry.sys.id}`);
+    console.log(`  Entry URL: https://app.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT_ID || 'master'}/entries/${entry.sys.id}`);
+    
+    return { success: true, pluginName, entryId: entry.sys.id };
+  } catch (error) {
+    console.error(`✗ Failed to process ${pluginName}: ${error.message}`);
+    return { success: false, pluginName, error: error.message };
+  }
+}
+
+async function main() {
+  try {
+    // Parse command line arguments
+    const { values } = parseArgs({
+      args: process.argv.slice(2),
+      options: {
+        plugins: {
+          type: 'string',
+          short: 'p'
+        },
+        help: {
+          type: 'boolean',
+          short: 'h'
+        }
+      }
+    });
+
+    if (values.help) {
+      console.log(`
+Usage: node migrate_backstage_plugins_to_contentful.mjs --plugins <plugin1,plugin2,...>
+
+Options:
+  --plugins, -p   Comma-separated list of plugin names (without .md extension)
+  --help, -h      Show this help message
+
+Examples:
+  node migrate_backstage_plugins_to_contentful.mjs --plugins argo-cd
+  node migrate_backstage_plugins_to_contentful.mjs --plugins argo-cd,kubernetes,prometheus
+      `);
+      process.exit(0);
+    }
+
+    if (!values.plugins) {
+      console.error('Error: --plugins flag is required');
+      console.log('Use --help for usage information');
+      process.exit(1);
+    }
+
+    const pluginNames = values.plugins.split(',').map(name => name.trim()).filter(name => name);
+    
+    if (pluginNames.length === 0) {
+      console.error('Error: No valid plugin names provided');
+      process.exit(1);
+    }
+
+    console.log(`Starting migration for ${pluginNames.length} plugin(s): ${pluginNames.join(', ')}`);
+
+    const results = [];
+    for (const pluginName of pluginNames) {
+      const result = await processPlugin(pluginName);
+      results.push(result);
+    }
+
+    const successful = results.filter(r => r.success);
+    const failed = results.filter(r => !r.success);
+
+    console.log('\n=== Migration Summary ===');
+    console.log(`Total plugins: ${results.length}`);
+    console.log(`Successful: ${successful.length}`);
+    console.log(`Failed: ${failed.length}`);
+
+    if (successful.length > 0) {
+      console.log('\nSuccessful migrations:');
+      successful.forEach(r => console.log(`  ✓ ${r.pluginName} (${r.entryId})`));
+    }
+
+    if (failed.length > 0) {
+      console.log('\nFailed migrations:');
+      failed.forEach(r => console.log(`  ✗ ${r.pluginName}: ${r.error}`));
+      process.exit(1);
+    }
+
+    console.log('\n✓ All plugins migrated successfully!');
     
   } catch (error) {
     console.error('Error:', error.message);
