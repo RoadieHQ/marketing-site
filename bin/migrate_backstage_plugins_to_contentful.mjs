@@ -56,7 +56,7 @@ function convertGettingStartedToMarkdown(gettingStarted) {
 }
 
 // Map frontmatter fields to Contentful fields
-function mapToContentfulFields(frontmatter) {
+function mapToContentfulFields(frontmatter, body) {
   const installationInstructions = frontmatter.gettingStarted 
     ? convertGettingStartedToMarkdown(frontmatter.gettingStarted)
     : '';
@@ -73,7 +73,8 @@ function mapToContentfulFields(frontmatter) {
     seoDescription: frontmatter.seo?.description,
     availableOnRoadie: frontmatter.availableOnRoadie,
     roadieDocsPath: frontmatter.roadieDocsPath,
-    installationInstructions: installationInstructions
+    installationInstructions: installationInstructions,
+    notes: body.trim()
   };
 }
 
@@ -129,10 +130,10 @@ async function main() {
     const markdownPath = join(__dirname, '..', 'content', 'backstage', 'plugins', 'argo-cd.md');
     const markdownContent = readFileSync(markdownPath, 'utf-8');
     
-    const { frontmatter } = parseFrontmatter(markdownContent);
+    const { frontmatter, body } = parseFrontmatter(markdownContent);
     console.log('Parsed frontmatter');
 
-    const contentfulFields = mapToContentfulFields(frontmatter);
+    const contentfulFields = mapToContentfulFields(frontmatter, body);
 
     console.log('Parsed frontmatter fields:');
     console.log(JSON.stringify(contentfulFields, null, 2));
