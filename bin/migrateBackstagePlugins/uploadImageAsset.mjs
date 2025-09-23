@@ -61,10 +61,17 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
 
     // Step 2: Create asset
     console.log(`  Creating ${assetType.toLowerCase()} asset for ${humanName}...`);
+    
+    // For content images, use assetType as the title directly (it's the alt text)
+    // For logo/cover images, use the traditional format
+    const assetTitle = (assetType === 'Logo' || assetType === 'Cover Image') 
+      ? `${humanName} Plugin ${assetType}`
+      : assetType; // For content images, assetType is the alt text
+    
     const assetData = {
       fields: {
         title: {
-          'en-US': `${humanName} Plugin ${assetType}`
+          'en-US': assetTitle
         },
         file: {
           'en-US': {

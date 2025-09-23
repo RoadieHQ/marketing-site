@@ -1,4 +1,5 @@
 import normalizeHeadingLevels from './normalizeHeadingLevels.mjs';
+import processMarkdownImages from './processMarkdownImages.mjs';
 
 function convertGettingStartedToMarkdown(gettingStarted) {
   if (!Array.isArray(gettingStarted)) {
@@ -24,7 +25,7 @@ function convertGettingStartedToMarkdown(gettingStarted) {
 }
 
 
-export default function mapToContentfulFields(
+export default async function mapToContentfulFields(
   frontmatter,
   body,
   logoAssetId = null,
@@ -37,6 +38,13 @@ export default function mapToContentfulFields(
   // Normalize heading levels in intro and notes content
   const normalizedIntroduction = normalizeHeadingLevels(frontmatter.intro);
   const normalizedNotes = normalizeHeadingLevels(body.trim());
+  
+  // Process images in introduction and notes content
+  console.log('Processing images in introduction...');
+  const processedIntroduction = await processMarkdownImages(normalizedIntroduction, frontmatter.humanName);
+  
+  console.log('Processing images in notes...');  
+  const processedNotes = await processMarkdownImages(normalizedNotes, frontmatter.humanName);
     
   const fields = {
     humanName: frontmatter.humanName,
@@ -45,13 +53,13 @@ export default function mapToContentfulFields(
     npmPackageName: frontmatter.npmjsPackage,
     codeLocation: frontmatter.codeLocation,
     attributionText: frontmatter.attribution?.text,
-    introduction: normalizedIntroduction,
+    introduction: processedIntroduction,
     seoTitle: frontmatter.seo?.title,
     seoDescription: frontmatter.seo?.description,
     availableOnRoadie: frontmatter.availableOnRoadie,
     roadieDocsPath: frontmatter.roadieDocsPath,
     installationInstructions: installationInstructions,
-    notes: normalizedNotes
+    notes: processedNotes
   };
 
   // Add logo asset reference if provided
