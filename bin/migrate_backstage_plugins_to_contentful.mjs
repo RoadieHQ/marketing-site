@@ -54,7 +54,7 @@ function convertGettingStartedToMarkdown(gettingStarted) {
   }).join('').trim();
 }
 
-function mapToContentfulFields(frontmatter, body, logoAssetId = null) {
+function mapToContentfulFields(frontmatter, body, logoAssetId = null, coverImageAssetId = null) {
   const installationInstructions = frontmatter.gettingStarted 
     ? convertGettingStartedToMarkdown(frontmatter.gettingStarted)
     : '';
@@ -80,6 +80,11 @@ function mapToContentfulFields(frontmatter, body, logoAssetId = null) {
     fields.logoImage = logoAssetId;
   }
 
+  // Add cover image asset reference if provided
+  if (coverImageAssetId) {
+    fields.coverImage = coverImageAssetId;
+  }
+
   return fields;
 }
 
@@ -97,8 +102,8 @@ function getMimeType(filePath) {
   return mimeTypes[ext] || 'application/octet-stream';
 }
 
-// Upload file to Contentful and create asset
-async function uploadLogoAsset(logoImagePath, humanName) {
+// Upload file to Contentful and create asset (generic function)
+async function uploadImageAsset(imagePath, humanName, assetType = 'Logo') {
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const accessToken = process.env.CONTENTFUL_CONTENT_MANAGEMENT_API_TOKEN;
   const environmentId = process.env.CONTENTFUL_ENVIRONMENT_ID || 'master';
@@ -107,18 +112,18 @@ async function uploadLogoAsset(logoImagePath, humanName) {
     throw new Error('Missing required environment variables for Contentful');
   }
 
-  // Resolve the full path to the logo image
-  const logoImagePathFromRoot = logoImagePath.split('/').slice(2);
-  const fullLogoPath = join(__dirname, '..', 'content', ...logoImagePathFromRoot);
+  // Resolve the full path to the image
+  const imagePathFromRoot = imagePath.split('/').slice(2);
+  const fullImagePath = join(__dirname, '..', 'content', ...imagePathFromRoot);
   
   try {
     // Read the file
-    const fileBuffer = readFileSync(fullLogoPath);
-    const fileName = logoImagePath.split('/').pop();
-    const mimeType = getMimeType(fullLogoPath);
+    const fileBuffer = readFileSync(fullImagePath);
+    const fileName = imagePath.split('/').pop();
+    const mimeType = getMimeType(fullImagePath);
 
     // Step 1: Upload file to Contentful
-    console.log(`  Uploading logo file: ${fileName}`);
+    console.log(`  Uploading ${assetType.toLowerCase()} file: ${fileName}`);
     const uploadResponse = await fetch(`https://upload.contentful.com/spaces/${spaceId}/uploads`, {
       method: 'POST',
       headers: {
@@ -137,11 +142,11 @@ async function uploadLogoAsset(logoImagePath, humanName) {
     console.log(`  ✓ File uploaded with ID: ${upload.sys.id}`);
 
     // Step 2: Create asset
-    console.log(`  Creating asset for ${humanName}...`);
+    console.log(`  Creating ${assetType.toLowerCase()} asset for ${humanName}...`);
     const assetData = {
       fields: {
         title: {
-          'en-US': `${humanName} Plugin Logo`
+          'en-US': `${humanName} Plugin ${assetType}`
         },
         file: {
           'en-US': {
@@ -177,7 +182,7 @@ async function uploadLogoAsset(logoImagePath, humanName) {
     console.log(`  ✓ Asset created with ID: ${asset.sys.id}`);
 
     // Step 3: Process the asset (required to make it available)
-    console.log(`  Processing asset...`);
+    console.log(`  Processing ${assetType.toLowerCase()} asset...`);
     const processResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets/${asset.sys.id}/files/en-US/process`, {
       method: 'PUT',
       headers: {
@@ -191,7 +196,7 @@ async function uploadLogoAsset(logoImagePath, humanName) {
       throw new Error(`Failed to process asset: ${processResponse.status} ${processResponse.statusText}\n${errorText}`);
     }
 
-    console.log(`  ✓ Asset processed successfully`);
+    console.log(`  ✓ ${assetType} asset processed successfully`);
 
     // Return asset reference for linking
     return {
@@ -204,11 +209,21 @@ async function uploadLogoAsset(logoImagePath, humanName) {
 
   } catch (error) {
     if (error.code === 'ENOENT') {
-      console.log(`  ⚠ Logo file not found: ${fullLogoPath}`);
+      console.log(`  ⚠ ${assetType} file not found: ${fullImagePath}`);
       return null;
     }
     throw error;
   }
+}
+
+// Upload logo image asset
+async function uploadLogoAsset(logoImagePath, humanName) {
+  return uploadImageAsset(logoImagePath, humanName, 'Logo');
+}
+
+// Upload cover image asset  
+async function uploadCoverImageAsset(coverImagePath, humanName) {
+  return uploadImageAsset(coverImagePath, humanName, 'Cover Image');
 }
 
 async function createContentfulEntry(fields) {
@@ -278,7 +293,17 @@ async function processPlugin(pluginName) {
       }
     }
 
-    const contentfulFields = mapToContentfulFields(frontmatter, body, logoAssetId);
+    // Handle cover image upload if present
+    let coverImageAssetId = null;
+    if (frontmatter.coverImage) {
+      console.log(`Processing cover image: ${frontmatter.coverImage}`);
+      coverImageAssetId = await uploadCoverImageAsset(frontmatter.coverImage, frontmatter.humanName);
+      if (coverImageAssetId) {
+        console.log(`✓ Cover image uploaded and linked`);
+      }
+    }
+
+    const contentfulFields = mapToContentfulFields(frontmatter, body, logoAssetId, coverImageAssetId);
 
     console.log(`Creating Contentful entry for ${pluginName}...`);
     const entry = await createContentfulEntry(contentfulFields);
