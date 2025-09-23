@@ -43,7 +43,7 @@ const storePackageData = async () => {
   // 2. On the page that represents a single plugin, we only want to download the data for that
   //    particular plugin. This will be faster.
   const { modified, etag } = await store.setJSON(ALL_PACKAGE_DATA_STORE_KEY, dataAsObject);
-  Promise.all(strippedNpmData.map((packageData) => {
+  await Promise.all(strippedNpmData.map((packageData) => {
     return store.setJSON(packageData.name, {
       ...packageData,
       roadieLastUpdated: new Date().toISOString(),
