@@ -10,8 +10,8 @@ const listOfNpmPackagesFromFiles = async ({ graphql }) => {
   }
 
   return reduce(data.plugins.edges, (list, { node }) => {
-    if (node.frontmatter.npmjsPackage) {
-      list.push(node.frontmatter.npmjsPackage);
+    if (node.npmPackageName) {
+      list.push(node.npmPackageName);
     }
     return list;
   }, []);

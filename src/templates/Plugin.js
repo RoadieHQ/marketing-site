@@ -49,6 +49,8 @@ const PluginTemplate = ({ data }) => {
     site: { siteMetadata },
   } = data;
 
+  console.log(data);
+
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
   const handleOpenExitIntentModal = () => {
@@ -62,9 +64,9 @@ const PluginTemplate = ({ data }) => {
     setExitIntentModalOpen(false);
   };
 
-  useEffect(() => {
-    Prism.highlightAll();
-  });
+  // useEffect(() => {
+  //   Prism.highlightAll();
+  // });
 
   usePageLeave(() => {
     handleOpenExitIntentModal();
@@ -72,7 +74,7 @@ const PluginTemplate = ({ data }) => {
 
   return (
     <>
-      <SEO title={plugin.frontmatter.seo.title} description={plugin.frontmatter.seo.description} />
+      <SEO title={plugin.seoTitle} description={plugin.seoDescription} />
 
       <ExitIntentModal
         modalOpen={exitIntentModalOpen}
@@ -88,6 +90,7 @@ const PluginTemplate = ({ data }) => {
       <main className="pb-8 px-4 lg:pb-28">
         <div className="relative max-w-7xl mx-auto">
           <div className="grid grid-cols-3 gap-20">
+            {/*
             <article className="col-span-3 lg:col-span-2">
               <Body plugin={plugin} siteMetadata={siteMetadata} />
               <Notes plugin={plugin} />
@@ -97,6 +100,7 @@ const PluginTemplate = ({ data }) => {
             <aside className="hidden lg:block lg:col-span-1">
               <Sidebar plugin={plugin} siteMetadata={siteMetadata} />
             </aside>
+            */}
           </div>
         </div>
       </main>
@@ -120,50 +124,43 @@ export const pageQuery = graphql`
       }
     }
 
-    plugin: markdownRemark(fields: { slug: { eq: $slug } }) {
-      notes: html
-      fileAbsolutePath
+    plugin: contentfulBackstagePlugin(slug: { eq: $slug }) {
+      humanName
+      slug
+      npmPackageName
+      roadieDocsPath
+      seoDescription
+      seoTitle
+      heading
+      codeLocation
+      attributionText
+      availableOnRoadie
+      lead
 
-      frontmatter {
-        humanName
-        lead
-        heading
-        intro
-        codeLocation
-        npmjsPackage
-        availableOnRoadie
-        roadieDocsPath
-        thingsToKnowTitle
-
-        attribution {
-          href
-          text
+      notes {
+        childMarkdownRemark {
+          html
         }
+      }
 
-        logoImage {
-          childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 80)
-          }
+      introduction {
+        childMarkdownRemark {
+          html
         }
+      }
 
-        coverImage {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
+      installationInstructions {
+        childMarkdownRemark {
+          html
         }
-        coverImageAlt
+      }
 
-        seo {
-          title
-          description
-        }
+      coverImage {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
 
-        gettingStarted {
-          intro
-          code
-          language
-          sectionId
-        }
+      logoImage {
+        gatsbyImageData(layout: FIXED, width: 80)
       }
     }
   }

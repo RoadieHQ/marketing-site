@@ -43,21 +43,13 @@ export const CASE_STUDIES_QUERY = `
 // that we can pull data from the npmjs API before the page is rendered.
 export const PLUGINS_QUERY = `
 {
-  plugins: allMarkdownRemark(
+  plugins: allContentfulBackstagePlugin(
     limit: 1000,
-    filter: {
-      fileAbsolutePath: {regex: "/.+/content/backstage/plugins/.+/"}
-    }
   ) {
     edges {
       node {
-        fields {
-          slug
-        }
-
-        frontmatter {
-          npmjsPackage
-        }
+        slug
+        npmPackageName
       }
     }
   }
