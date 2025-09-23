@@ -28,13 +28,8 @@ const DetailsListItem = ({ label, value, ...props }) => {
 
 const Mainatainer = ({ name, email }) => {
   return (
-    <li>
-      <GravatarImage
-        email={email}
-        name={name}
-        alt={`The Gravatar avatar of ${name}`}
-        title={`Name: ${name}. Email: ${email}`}
-      />
+    <li title={`Name: ${name}. Email: ${email}`}>
+      <GravatarImage email={email} name={name} />
     </li>
   );
 };

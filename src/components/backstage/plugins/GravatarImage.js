@@ -26,13 +26,11 @@ const GravatarImage = ({
 
   const src = `https://gravatar.com/avatar/${hashedEmail}?d=initials&r=g&name=${name}`;
 
-  /* eslint-disable jsx-a11y/alt-text */
   return (
     <picture>
-      <img src={src} className={className} {...props} />
+      <img src={src} className={className} alt={`The Gravatar of ${name}`} {...props} />
     </picture>
   );
-  /* eslint-enable jsx-a11y/alt-text */
 };
 
 export default GravatarImage;
