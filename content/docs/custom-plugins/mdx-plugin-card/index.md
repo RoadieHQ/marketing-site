@@ -8,7 +8,9 @@ The MdxPluginCard and MdxPluginHomepageCard retrieves data from a set of target 
 
 To add the cards you can add either the MdxPluginHomepageCard to the homepage or the MdxPluginCard to the entity pages.
 
-You are given options to enter a list of named data fetchers, then you can refer to the responses from them using the specified names.
+You are given option to enter a list of named data fetchers, then you can refer to the responses from them using the specified names.
+
+The MdxPluginCard that appears on the entity page allows using data from the entity to confiure the API url. e.g. the following API url will be filled out with the entity name, namespace and kind: `/entities/by-name/{{ entity.kind }}/{{ entity.metadata.namespace }}/{{ entity.metadata.name }}`
 
 In the template you can access variables from the response using props, e.g. if you have a data fetcher called entities, you can access the response using props.entities.
 
@@ -25,34 +27,68 @@ Displaying 5 of 493 entities.
 ```
 
 
-You can iterate over the response
+### Available Components
 
-e.g.
+#### Table
+
+You can display tabular data from response
+
+e.g. This will display the annotations for the entity.
 
 ```tsx
-<table>
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    {Object.entries(props.entity.metadata.annotations).map(([key, value]) => (
-      <tr key={key}>
-        <td>{key}</td>
-        <td>{String(value)}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+  <Table
+  options={{
+    search: false,
+    showTitle: true,
+    toolbar: false,
+    loadingType: "linear",
+    header: true,
+    padding: "dense",
+    pageSize: 4,
+    paging: Object.entries(props.entity.metadata.annotations).length > 4,
+    actionsColumnIndex: -1,
+  }}
+  columns={[
+    { title: "Key", field: "key" },
+    { title: "Value", field: "value" },
+  ]}
+  data={Object.entries(props.entity.metadata.annotations).map(([key, value]) => ({
+    key,
+    value,
+  }))}
+  subtitle={`${Object.entries(props.entity.metadata.annotations).length} item${
+    Object.entries(props.entity.metadata.annotations).length === 1 ? "" : "s"
+  }`}
+  emptyContent={<span>No annotations found.</span>}
+  onStateChange={() => {}}
+/>
 ```
 
-This will display the annotations for the entity.
+#### Link
 
-```txt
-backstage.io/managed-by-location    url:https://github.com/roadiehq/example
-backstage.io/techdocs-ref          dir:.
-example.com/owner                  team-a
-example.com/priority               high
+You can use the Link component to create links to other pages.
+
+```tsx
+<Link to="/catalog">Catalog List</Link>
+```
+
+#### Chip
+
+You can use the Chip component to display a label.
+
+```tsx
+<Chip label="Small" size="small" />
+<Chip label="Medium" size="medium" />
+```
+
+#### List
+
+You can use the List component to display a list of items.
+
+```tsx
+<List>
+  {Object.entries(props.entity.metadata.annotations).map(([key, value]) => (
+    <ListItem>{key} - {value}</ListItem>
+  ))}
+</List>
 ```
