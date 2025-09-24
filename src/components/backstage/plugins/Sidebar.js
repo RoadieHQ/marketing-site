@@ -7,7 +7,6 @@ import pick from 'lodash/pick';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import ContentLoader from 'react-content-loader';
 import {
-  EditOnGitHubLink,
   NpmChip,
   GitHubChip,
   RoadieDocsChip,
@@ -236,7 +235,7 @@ const parseNpmData = (npmData) => {
   };
 };
 
-const Sidebar = ({ plugin, siteMetadata }) => {
+const Sidebar = ({ plugin }) => {
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
 
@@ -244,27 +243,27 @@ const Sidebar = ({ plugin, siteMetadata }) => {
     (async () => {
       setNpmDataLoadingState('loading');
       const { status, data } = await fetchNpmDataByName({
-        packageName: plugin.frontmatter.npmjsPackage,
+        packageName: plugin.npmPackageName,
       });
       setNpmDataLoadingState(status);
       setNpmData(parseNpmData(data));
     })();
-  }, [plugin.frontmatter.npmjsPackage]);
+  }, [plugin.npmPackageName]);
 
   return (
     <div>
       <div className="mb-10">
         <div className="mb-3">
           <RoadieDocsChip
-            availableOnRoadie={plugin.frontmatter.availableOnRoadie} 
-            roadieDocsPath={plugin.frontmatter.roadieDocsPath}
+            availableOnRoadie={plugin.availableOnRoadie} 
+            roadieDocsPath={plugin.roadieDocsPath}
           />
         </div>
 
         <div className="mb-3">
-          <GitHubChip codeLocation={plugin.frontmatter.codeLocation} />
+          <GitHubChip codeLocation={plugin.codeLocation} />
         </div>
-        <NpmChip npmjsPackage={plugin.frontmatter.npmjsPackage} />
+        <NpmChip npmjsPackage={plugin.npmPackageName} />
       </div>
 
       <div className="mb-10">
@@ -273,17 +272,6 @@ const Sidebar = ({ plugin, siteMetadata }) => {
 
       <div className="mb-10">
         <MaintainersList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
-      </div>
-
-      <div>
-        <p className="prose prose-primary my-10">
-          Found a mistake on this page?{' '}
-          <EditOnGitHubLink
-            siteMetadata={siteMetadata}
-            plugin={plugin}
-            text="Open a pull request"
-          />.
-        </p>
       </div>
     </div>
   );

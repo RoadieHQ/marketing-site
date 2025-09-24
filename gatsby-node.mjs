@@ -73,13 +73,16 @@ export const createPages = async ({ graphql, actions }) => {
     resultName: 'plugins.edges',
     actions,
     graphql,
-    processor: ({ node }, component) => ({
-      path: `/backstage/plugins/${node.slug}/`,
-      component,
-      context: {
-        slug: node.slug,
-      },
-    }),
+    processor: ({ node }, component) => {
+      console.log('create page', node);
+      return {
+        path: `/backstage/plugins/${node.slug}/`,
+        component,
+        context: {
+          slug: node.slug,
+        },
+      };
+    },
   });
 
   await createPagesFromQuery({
