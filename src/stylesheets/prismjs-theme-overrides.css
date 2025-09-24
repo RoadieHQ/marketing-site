@@ -1,6 +1,21 @@
+/*
+ * Use the mono version of our default typeface for all code blocks
+ */
 code[class*="language-"], pre[class*="language-"] {
   font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
+
+/*
+ * Removes a weird background from colon chars on syntax highlihted code
+ */
+.token.operator {
+  background: none;
+}
+
+/*
+ * CSS for the copy button in code blocks.
+ * More info: https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs-copy-button/
+ */
 
 .gatsby-remark-prismjs-copy-button-container {
   left: 0;
