@@ -9,7 +9,8 @@ const Header = ({
     humanName,
     logoImage,
     heading,
-    attributionText,
+    attributionText: text,
+    attributionUrl: href,
   },
 }) => (
   <div className="mx-auto max-w-7xl">
@@ -32,7 +33,7 @@ const Header = ({
         <div className="mb-1">
           <Headline size="small">{heading}</Headline>
         </div>
-        <Attribution attribution={{ text: attributionText, href: 'http://example.com' }} />
+        <Attribution attribution={{ text, href }} />
       </div>
     </header>
   </div>

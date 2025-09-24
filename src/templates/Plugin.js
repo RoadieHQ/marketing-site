@@ -142,6 +142,7 @@ export const pageQuery = graphql`
       heading
       codeLocation
       attributionText
+      attributionUrl
       availableOnRoadie
       lead
 

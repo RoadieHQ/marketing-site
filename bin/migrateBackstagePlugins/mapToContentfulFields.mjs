@@ -62,6 +62,10 @@ export default async function mapToContentfulFields(
     notes: processedNotes
   };
 
+  if (frontmatter.attribution?.href) {
+    fields.attributionUrl = frontmatter.attribution?.href;
+  }
+
   // Add logo asset reference if provided
   if (logoAssetId) {
     fields.logoImage = logoAssetId;

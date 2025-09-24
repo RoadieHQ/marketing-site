@@ -86,6 +86,7 @@ export const pageQuery = graphql`
             gatsbyImageData(layout: FIXED, width: 140)
           }
           attributionText
+          attributionUrl
         }
       }
     }
