@@ -88,7 +88,7 @@ You can use the List component to display a list of items.
 ```tsx
 <List>
   {Object.entries(props.entity.metadata.annotations).map(([key, value]) => (
-    <ListItem>{key} - {value}</ListItem>
+    <ListItem key={key}>{key} - {value}</ListItem>
   ))}
 </List>
 ```
