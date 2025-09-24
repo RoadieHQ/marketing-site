@@ -16,10 +16,10 @@ Roadie has the capability to automatically ingest resources from AWS. This is do
 This guide describes how to set up Roadie to access your specific AWS resources and automatically ingest them.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+|                            |                                                                                                  |
+|---------------------------:|--------------------------------------------------------------------------------------------------|
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Configuring connectivity to AWS
@@ -32,20 +32,9 @@ Navigate to `Administration > Settings > AWS Resources` and make a note of the R
 
 Follow the steps [here](/docs/details/accessing-aws-resources) to create the role. 
 
-The role needs to follow this naming convention `arn:aws:iam::*:role/[your-tenant-name]-roadie-read-only-role` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
+You'll need to attach policies to the role to be able to retrieve information about the resources you want ingested. The supported resources and their policies are listed in a table at the end of this page. You can use the same role for multiple resource types as long as the needed permissions are granted to it.
 
-<div role="alert">
-  <div class="docs-cta__tip_title">Defining the correct AWS role</div>
-  <div  class="docs-cta__tip_message">
-    <p>⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text <code>[tenant-name]-roadie-</code>. If other naming conventions are used, the role assumption is blocked by security measures.
-    </p>
-  </div>
-</div>
-
-
-You'll need to attach policies to the role to be able to retrieve information about the resources you want ingested. The supported resources and their needed policies are listed in a table at the end of this page. You can use the same role for multiple resource types as long as the needed permissions are granted to it.
-
-For quick experimentation, you can use `AWS<ResourceType>ReadOnlyAccess` policies provided by AWS, but the best practice is to allow only specific needed operations. You can see the needed policies in a table at the end of this page.
+For quick experimentation, you can use `AWS<ResourceType>ReadOnlyAccess` policies provided by AWS, but the best practice is to allow only specific operations. You can see the needed policies in a table at the end of this page.
 
 ### Step 3: Configure external id
 
@@ -104,7 +93,7 @@ The values `123456789012` and `demo-role-abcdABCD` can be replaced with the valu
 On the AWS Resources settings page `Administration > Settings > AWS Resources` in Roadie click `Add Item`. 
 Here you can define the role (created in step 2 above) to be used to ingest these resources, as well as the AWS region to use and the optional External ID configured for the role.
 
-After the role configuration is done, you can click the 'Test Role' button to check if the role is assumable by Roadie. Finally,  you can select the types of resources you want to be ingested. The possible options are listed in the table at the bottom of the page.
+After the role configuration is done, you can click the 'Test Role' button to check if the role is assumable by Roadie. Finally, you can select the types of resources you want to be ingested. The possible options are listed in the table at the bottom of the page.
 
 You can add multiple integrations towards multiple AWS accounts or regions.
 
