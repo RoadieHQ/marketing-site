@@ -14195,6 +14195,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-remark-prismjs-copy-button@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "gatsby-remark-prismjs-copy-button@npm:0.4.0"
+  peerDependencies:
+    gatsby: ^3.0.0 || ^4.0.0 || ^5.0.0
+  checksum: 10c0/9065dc73c41d10a0c51cd604e85111f44dd0416db29947652dc094b4e6014cb001507b2cf98c6ae412f3a414e0a6275188c5926f896c55e138654c46a474b899
+  languageName: node
+  linkType: hard
+
 "gatsby-remark-prismjs@npm:^7.14.0":
   version: 7.15.0
   resolution: "gatsby-remark-prismjs@npm:7.15.0"
@@ -23537,6 +23546,7 @@ __metadata:
     gatsby-remark-external-links: "npm:^0.0.4"
     gatsby-remark-images: "npm:^7.14.0"
     gatsby-remark-prismjs: "npm:^7.14.0"
+    gatsby-remark-prismjs-copy-button: "npm:^0.4.0"
     gatsby-remark-responsive-iframe: "npm:^6.14.0"
     gatsby-remark-smartypants: "npm:^6.14.0"
     gatsby-source-contentful: "npm:^8.15.0"
