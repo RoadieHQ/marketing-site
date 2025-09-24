@@ -19,20 +19,22 @@ import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-yaml';
 
-const Body = ({ plugin, siteMetadata }) => {
-  if (plugin.frontmatter.gettingStarted) {
+const Body = ({ plugin }) => {
+  if (plugin.installationInstructions) {
     return (
       <>
         <Intro plugin={plugin} />
 
         <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
 
+        {/*
         <InstallationSteps plugin={plugin} />
+        */}
       </>
     );
   }
 
-  return <PlaceholderBody plugin={plugin} siteMetadata={siteMetadata} />;
+  return <PlaceholderBody plugin={plugin} />;
 }
 
 const hasExitIntentModalBeenShownBefore = () => {
@@ -46,7 +48,6 @@ const recordExitIntentModalHasBeenShown = () => {
 const PluginTemplate = ({ data }) => {
   const {
     plugin,
-    site: { siteMetadata },
   } = data;
 
   console.log(data);
@@ -91,15 +92,13 @@ const PluginTemplate = ({ data }) => {
         <div className="relative max-w-7xl mx-auto">
           <div className="grid grid-cols-3 gap-20">
             <article className="col-span-3 lg:col-span-2">
-            {/*
-              <Body plugin={plugin} siteMetadata={siteMetadata} />
-            */}
+              <Body plugin={plugin} />
               <Notes plugin={plugin} />
               <PluginCTA plugin={plugin} />
             </article>
 
             <aside className="hidden lg:block lg:col-span-1">
-              <Sidebar plugin={plugin} siteMetadata={siteMetadata} />
+              <Sidebar plugin={plugin} />
             </aside>
           </div>
         </div>
@@ -116,7 +115,6 @@ export const pageQuery = graphql`
   query PluginBySlug($slug: String!) {
     site {
       siteMetadata {
-        sourceCodeUrl
         social {
           twitter
           linkedin

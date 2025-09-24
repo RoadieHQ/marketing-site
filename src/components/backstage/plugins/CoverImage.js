@@ -2,11 +2,11 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const CoverImage = ({ plugin, className = 'max-w-full max-h-full shadow-small' }) => {
-  if (!plugin.frontmatter.coverImage) return null;
+  if (!plugin.coverImage) return null;
   return (
     <GatsbyImage
-      image={plugin.frontmatter.coverImage.childImageSharp.gatsbyImageData}
-      alt={plugin.frontmatter.coverImageAlt}
+      image={plugin.coverImage.gatsbyImageData}
+      alt={plugin.coverImageAlt}
       className={className}
     />
   );
