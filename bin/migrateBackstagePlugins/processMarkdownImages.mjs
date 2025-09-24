@@ -62,28 +62,19 @@ export default async function processMarkdownImages(markdownContent, humanName) 
       const assetReference = await uploadImageAsset(
         image.imagePath, 
         humanName, 
-        image.altText || 'Image' // Use alt text as asset title
+        image.altText || 'Image',
+        true,
       );
 
       if (assetReference) {
-        // Get the asset ID from the reference
-        const assetId = assetReference.sys.id;
-        
-        // We need to wait for the asset to be processed and get the actual file URL
-        // For now, we'll use the asset ID pattern that Contentful uses
-        // The actual CDN URL will be available after processing
-        const spaceId = process.env.CONTENTFUL_SPACE_ID;
-        const contentfulUrl = `//images.ctfassets.net/${spaceId}/${assetId}`;
-        
-        // Replace the image reference in the markdown
-        const newImageReference = `![${image.altText}](${contentfulUrl})`;
+        const newImageReference = `![${image.altText}](${assetReference.url})`;
         
         // Update the content by replacing the original reference
         updatedContent = updatedContent.substring(0, image.index) + 
                         newImageReference + 
                         updatedContent.substring(image.index + image.fullMatch.length);
         
-        console.log(`  ✓ Replaced image reference with Contentful URL: ${contentfulUrl}`);
+        console.log(`  ✓ Replaced image reference with Contentful URL: ${assetReference.url}`);
         
         // Adjust indices for remaining images since we changed the string length
         const lengthDifference = newImageReference.length - image.fullMatch.length;
