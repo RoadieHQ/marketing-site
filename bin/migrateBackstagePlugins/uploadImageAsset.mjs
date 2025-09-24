@@ -21,7 +21,7 @@ function getMimeType(filePath) {
 
 //
 // Upload file to Contentful and create asset (generic function)
-export default async function uploadImageAsset(imagePath, humanName, assetType = 'Logo') {
+export default async function uploadImageAsset(imagePath, humanName, assetType = 'Logo', waitForProcessing = false) {
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const accessToken = process.env.CONTENTFUL_CONTENT_MANAGEMENT_API_TOKEN;
   const environmentId = process.env.CONTENTFUL_ENVIRONMENT_ID || 'master';
@@ -89,7 +89,7 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
       }
     };
 
-    const assetResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets`, {
+    const assetUploadResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${accessToken}`,
@@ -98,43 +98,90 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
       body: JSON.stringify(assetData)
     });
 
-    if (!assetResponse.ok) {
-      const errorText = await assetResponse.text();
-      throw new Error(`Failed to create asset: ${assetResponse.status} ${assetResponse.statusText}\n${errorText}`);
+    if (!assetUploadResponse.ok) {
+      const errorText = await assetUploadResponse.text();
+      throw new Error(`Failed to create asset: ${assetUploadResponse.status} ${assetUploadResponse.statusText}\n${errorText}`);
     }
 
-    const asset = await assetResponse.json();
-    console.log(`  ✓ Asset created with ID: ${asset.sys.id}`);
+    const assetUpload = await assetUploadResponse.json();
+
+    console.log(`  ✓ Asset created with ID: ${assetUpload.sys.id}`);
 
     // Step 3: Process the asset (required to make it available)
-    console.log(`  Processing ${assetType.toLowerCase()} asset...`);
-    const processResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets/${asset.sys.id}/files/en-US/process`, {
+    console.log(`  Sending ${assetType.toLowerCase()} asset for processing...`);
+    const processResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets/${assetUpload.sys.id}/files/en-US/process`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${accessToken}`,
-        'X-Contentful-Version': asset.sys.version
+        'X-Contentful-Version': assetUpload.sys.version
       }
     });
 
     if (!processResponse.ok) {
       const errorText = await processResponse.text();
-      throw new Error(`Failed to process asset: ${processResponse.status} ${processResponse.statusText}\n${errorText}`);
+      throw new Error(`Failed to send asset: ${processResponse.status} ${processResponse.statusText}\n${errorText} for processing.`);
     }
 
-    console.log(`  ✓ ${assetType} asset processed successfully`);
+    if (!waitForProcessing) {
+      console.log(`  ✓ ${assetType} asset sent for processing successfully. Not waiting for processing to finish.`);
+      return {
+        sys: {
+          type: 'Link',
+          linkType: 'Asset',
+          id: assetUpload.sys.id,
+        }
+      };
+    }
 
-    // Return asset reference for linking
-    return {
-      sys: {
-        type: 'Link',
-        linkType: 'Asset',
-        id: asset.sys.id
+    const retries = 3
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      await new Promise(resolve => setTimeout(resolve, 10000 * attempt));
+
+      try {
+        const assetResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets/${assetUpload.sys.id}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/vnd.contentful.management.v1+json'
+          },
+        });
+
+        if (!assetResponse.ok) {
+          throw new Error(`Failed to find asset: ${assetUpload.sys.id} after procssing.`);
+        }
+
+        const asset = await assetResponse.json();
+
+        if (!asset.fields.file) {
+          throw new Error(`Asset: ${assetUpload.sys.id} has not finished processing.`);
+        }
+        console.log(`  ✓ Asset processed successfully: ${asset.fields.file.url}`);
+
+        // Return asset reference for linking
+        return {
+          sys: {
+            type: 'Link',
+            linkType: 'Asset',
+            id: asset.sys.id,
+            url: asset.fields.file.url,
+          }
+        };
+      } catch (error) {
+        console.log(`  ⏳ Attempt ${attempt} failed with error: ${error.message}`);
       }
-    };
+
+      if (attempt < retries) {
+        console.log("Retrying...");
+      }
+    }
+    
+    throw new Error(`All ${retries} attempts failed`);
+
+    // Wait for the asset to process.
 
   } catch (error) {
     if (error.code === 'ENOENT') {
-      console.log(`  ⚠ ${assetType} file not found: ${fullImagePath}`);
+      console.log(`  🚫 ${assetType} file not found: ${fullImagePath}`);
       return null;
     }
     throw error;
