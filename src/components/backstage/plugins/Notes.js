@@ -1,8 +1,6 @@
 import React from 'react';
 import { Title } from 'components';
 
-import HostTabs from './HostTabs';
-
 const Notes = ({ plugin }) => {
   if (!plugin.notes || plugin.notes === '') return null;
   return (
@@ -12,10 +10,6 @@ const Notes = ({ plugin }) => {
           ? `${plugin.frontmatter.thingsToKnowTitle}`
           : 'Things to know'}
       </Title>
-
-      {plugin.frontmatter.thingsToKnowHostDependant && (
-        <HostTabs docsLink={`${plugin.frontmatter.thingsToKnowOnRoadie}`} />
-      )}
 
       <div
         className="prose prose-primary max-w-none"

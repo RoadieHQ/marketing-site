@@ -134,8 +134,6 @@ export const pageQuery = graphql`
         availableOnRoadie
         roadieDocsPath
         thingsToKnowTitle
-        thingsToKnowHostDependant
-        thingsToKnowOnRoadie
 
         attribution {
           href
