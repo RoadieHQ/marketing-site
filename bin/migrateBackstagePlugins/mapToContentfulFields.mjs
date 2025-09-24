@@ -57,11 +57,12 @@ export default async function mapToContentfulFields(
     attributionText: frontmatter.attribution?.text,
     introduction: processedIntroduction,
     seoTitle: frontmatter.seo?.title,
-    seoDescription: frontmatter.seo?.description,
+    // Strips out newlines in the seo description and replaces thenwith a single whitespace.
+    seoDescription: frontmatter.seo?.description?.replace(/\s*\n\s*/g, ' '),
     availableOnRoadie: frontmatter.availableOnRoadie,
     roadieDocsPath: frontmatter.roadieDocsPath,
     installationInstructions: installationInstructions,
-    notes: processedNotes
+    notes: processedNotes,
   };
 
   if (frontmatter.attribution?.href) {

@@ -4,7 +4,7 @@ heading: 'Backstage Snyk Plugin'
 lead: 'Correlate services with problems in production'
 attribution:
   text: Snyk
-  href: https://spotify.com
+  href: https://snyk.io
 
 seo:
   title: 'Backstage Snyk Plugin | Roadie'
