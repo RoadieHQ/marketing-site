@@ -22,14 +22,11 @@ code[class*="language-"], pre[class*="language-"] {
   padding-right: 8px;
 }
 
-.gatsby-remark-prismjs-copy-button:hover {
-  background: none;
-}
-
 .gatsby-remark-prismjs-copy-button {
   color: #515359;
 }
 
 .gatsby-remark-prismjs-copy-button:hover {
+  background: none;
   color: black;
 }
