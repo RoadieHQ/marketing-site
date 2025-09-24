@@ -10,7 +10,7 @@ To add the cards you can add either the MdxPluginHomepageCard to the homepage or
 
 You are given option to enter a list of named data fetchers, then you can refer to the responses from them using the specified names.
 
-The MdxPluginCard that appears on the entity page allows using data from the entity to confiure the API url. e.g. the following API url will be filled out with the entity name, namespace and kind: `/entities/by-name/{{ entity.kind }}/{{ entity.metadata.namespace }}/{{ entity.metadata.name }}`
+The MdxPluginCard that appears on the entity page allows using data from the entity to configure the API url. e.g. the following API url will be filled out with the entity name, namespace and kind: `/entities/by-name/{{ entity.kind }}/{{ entity.metadata.namespace }}/{{ entity.metadata.name }}`
 
 In the template you can access variables from the response using props, e.g. if you have a data fetcher called entities, you can access the response using props.entities.
 
