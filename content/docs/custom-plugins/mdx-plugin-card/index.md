@@ -8,7 +8,7 @@ The MdxPluginCard and MdxPluginHomepageCard retrieves data from a set of target 
 
 To add the cards you can add either the MdxPluginHomepageCard to the homepage or the MdxPluginCard to the entity pages.
 
-You are given option to enter a list of named data fetchers, then you can refer to the responses from them using the specified names.
+You are given then option to enter a list of named data fetchers, then you can refer to the responses from them using the specified names.
 
 The MdxPluginCard that appears on the entity page allows using data from the entity to configure the API url. e.g. the following API url will be filled out with the entity name, namespace and kind: `/entities/by-name/{{ entity.kind }}/{{ entity.metadata.namespace }}/{{ entity.metadata.name }}`
 
