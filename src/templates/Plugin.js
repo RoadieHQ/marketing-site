@@ -1,35 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import usePageLeave from 'react-use/lib/usePageLeave';
-import Prism from 'prismjs';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
+import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal, Title } from 'components';
 import {
   Header,
   Intro,
   PluginCTA,
   CoverImage,
-  InstallationSteps,
   PlaceholderBody,
   Notes,
   Sidebar,
+  HostTabs,
 } from 'components/backstage/plugins';
-
-// All the languages used in the plugin installation instructions need to be listed here.
-import 'prismjs/components/prism-typescript';
-import 'prismjs/components/prism-bash';
-import 'prismjs/components/prism-yaml';
 
 const Body = ({ plugin }) => {
   if (plugin.installationInstructions) {
     return (
       <>
-        <Intro plugin={plugin} />
+        <div className="mb-10">
+          <Intro plugin={plugin} />
+        </div>
 
-        <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
+        <div className="mb-10">
+          <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
+        </div>
 
-        {/*
-        <InstallationSteps plugin={plugin} />
-        */}
+        <div className="mb-4">
+          <Title>Installation steps</Title>
+        </div>
+
+        <HostTabs docsLink={`/docs${plugin.roadieDocsPath}`} />
+
+        {plugin.installationInstructions && (
+          <div className="mb-10">
+            <div
+              className="mb-4 mt-0 prose prose-primary max-w-none"
+              dangerouslySetInnerHTML={{
+                __html: plugin.installationInstructions.childMarkdownRemark.html,
+              }}
+            />
+          </div>
+        )}
+
+        <div className="mb-4">
+          <Title>Things to know</Title>
+        </div>
+
+        <Notes plugin={plugin} />
       </>
     );
   }
@@ -50,8 +67,6 @@ const PluginTemplate = ({ data }) => {
     plugin,
   } = data;
 
-  console.log(data);
-
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
   const handleOpenExitIntentModal = () => {
@@ -64,10 +79,6 @@ const PluginTemplate = ({ data }) => {
   const handleCloseExitIntentModal = () => {
     setExitIntentModalOpen(false);
   };
-
-  // useEffect(() => {
-  //   Prism.highlightAll();
-  // });
 
   usePageLeave(() => {
     handleOpenExitIntentModal();
@@ -93,7 +104,6 @@ const PluginTemplate = ({ data }) => {
           <div className="grid grid-cols-3 gap-20">
             <article className="col-span-3 lg:col-span-2">
               <Body plugin={plugin} />
-              <Notes plugin={plugin} />
               <PluginCTA plugin={plugin} />
             </article>
 

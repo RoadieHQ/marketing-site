@@ -66,8 +66,6 @@ export default async function processMarkdownImages(markdownContent, humanName) 
         true,
       );
 
-      console.log('assetReference', assetReference);
-
       if (assetReference) {
         const newImageReference = `![${image.altText}](${assetReference.sys.url})`;
         
