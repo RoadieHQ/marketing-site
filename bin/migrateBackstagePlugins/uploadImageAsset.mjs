@@ -134,8 +134,10 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
     }
 
     const retries = 3
+    const backoffTime = 10000;
+    console.log(`  ✓ ${assetType} asset sent for processing successfully. Waiting up to 50 seconds for processing to complete.`);
     for (let attempt = 1; attempt <= retries; attempt++) {
-      await new Promise(resolve => setTimeout(resolve, 10000 * attempt));
+      await new Promise(resolve => setTimeout(resolve, backoffTime * attempt));
 
       try {
         const assetResponse = await fetch(`https://api.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets/${assetUpload.sys.id}`, {
@@ -155,7 +157,7 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
         if (!asset.fields.file) {
           throw new Error(`Asset: ${assetUpload.sys.id} has not finished processing.`);
         }
-        console.log(`  ✓ Asset processed successfully: ${asset.fields.file.url}`);
+        console.log(`  ✓ Asset processed successfully: ${asset.fields.file['en-US'].url}`);
 
         // Return asset reference for linking
         return {
@@ -163,7 +165,7 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
             type: 'Link',
             linkType: 'Asset',
             id: asset.sys.id,
-            url: asset.fields.file.url,
+            url: asset.fields.file['en-US'].url,
           }
         };
       } catch (error) {

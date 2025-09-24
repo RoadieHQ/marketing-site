@@ -66,15 +66,17 @@ export default async function processMarkdownImages(markdownContent, humanName) 
         true,
       );
 
+      console.log('assetReference', assetReference);
+
       if (assetReference) {
-        const newImageReference = `![${image.altText}](${assetReference.url})`;
+        const newImageReference = `![${image.altText}](${assetReference.sys.url})`;
         
         // Update the content by replacing the original reference
         updatedContent = updatedContent.substring(0, image.index) + 
                         newImageReference + 
                         updatedContent.substring(image.index + image.fullMatch.length);
         
-        console.log(`  ✓ Replaced image reference with Contentful URL: ${assetReference.url}`);
+        console.log(`  ✓ Replaced image reference with Contentful URL: ${assetReference.sys.url}`);
         
         // Adjust indices for remaining images since we changed the string length
         const lengthDifference = newImageReference.length - image.fullMatch.length;
