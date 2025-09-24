@@ -1,57 +1,84 @@
 import React, { useState } from 'react';
 import usePageLeave from 'react-use/lib/usePageLeave';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal, Title } from 'components';
 import {
   Header,
-  Intro,
   PluginCTA,
-  CoverImage,
   PlaceholderBody,
-  Notes,
   Sidebar,
   HostTabs,
 } from 'components/backstage/plugins';
 
-const Body = ({ plugin }) => {
-  if (plugin.installationInstructions) {
+const Body = ({
+  plugin: {
+    installationInstructions,
+    introduction,
+    roadieDocsPath,
+    coverImage,
+    notes,
+    humanName,
+  }
+}) => {
+  if (installationInstructions) {
     return (
       <>
-        <div className="mb-10">
-          <Intro plugin={plugin} />
-        </div>
-
-        <div className="mb-10">
-          <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
-        </div>
-
-        <div className="mb-4">
-          <Title>Installation steps</Title>
-        </div>
-
-        <HostTabs docsLink={`/docs${plugin.roadieDocsPath}`} />
-
-        {plugin.installationInstructions && (
+        {introduction && (
           <div className="mb-10">
             <div
               className="mb-4 mt-0 prose prose-primary max-w-none"
-              dangerouslySetInnerHTML={{
-                __html: plugin.installationInstructions.childMarkdownRemark.html,
-              }}
+              dangerouslySetInnerHTML={{ __html: introduction.childMarkdownRemark.html }}
             />
           </div>
         )}
 
-        <div className="mb-4">
-          <Title>Things to know</Title>
-        </div>
+        {coverImage && (
+          <div className="mb-10">
+            <GatsbyImage
+              image={coverImage.gatsbyImageData}
+              alt={coverImage.description}
+              className="max-w-full max-h-full shadow-small"
+            />
+          </div>
+        )}
 
-        <Notes plugin={plugin} />
+        {installationInstructions && (
+          <>
+            <div className="mb-4">
+              <Title>Installation steps</Title>
+            </div>
+
+            <HostTabs docsLink={`/docs${roadieDocsPath}`} />
+
+            <div className="mb-10">
+              <div
+                className="mb-4 mt-0 prose prose-primary max-w-none"
+                dangerouslySetInnerHTML={{
+                  __html: installationInstructions.childMarkdownRemark.html,
+                }}
+              />
+            </div>
+          </>
+        )}
+
+        {notes && (
+          <>
+            <div className="mb-4">
+              <Title>Things to know</Title>
+            </div>
+
+            <div
+              className="prose prose-primary max-w-none"
+              dangerouslySetInnerHTML={{ __html: notes.childMarkdownRemark.html }}
+            />
+          </>
+        )}
       </>
     );
   }
 
-  return <PlaceholderBody plugin={plugin} />;
+  return <PlaceholderBody humanName={humanName} />;
 }
 
 const hasExitIntentModalBeenShownBefore = () => {

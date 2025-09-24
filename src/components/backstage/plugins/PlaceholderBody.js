@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlaceholderBody = ({ plugin }) => {
+const PlaceholderBody = ({ humanName }) => {
   return (
     <>
       <div>
@@ -13,7 +13,7 @@ const PlaceholderBody = ({ plugin }) => {
         <p className="prose prose-primary my-10 max-w-none">
           There&apos;s a lot of plugins and it&apos;s taking some time to get them all cataloged.
           We haven&apos;t gotten around to fleshing out this page for the 
-          Backstage {plugin.humanName} plugin.
+          Backstage {humanName} plugin.
         </p>
       </div>
     </>
