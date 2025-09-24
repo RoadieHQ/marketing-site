@@ -21,7 +21,7 @@ function getMimeType(filePath) {
 
 //
 // Upload file to Contentful and create asset (generic function)
-export default async function uploadImageAsset(imagePath, humanName, assetType = 'Logo', waitForProcessing = false) {
+export default async function uploadImageAsset(imagePath, humanName, assetType = 'Logo', waitForProcessing = false, assetDescription = '') {
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const accessToken = process.env.CONTENTFUL_CONTENT_MANAGEMENT_API_TOKEN;
   const environmentId = process.env.CONTENTFUL_ENVIRONMENT_ID || 'master';
@@ -67,11 +67,14 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
     const assetTitle = (assetType === 'Logo' || assetType === 'Cover Image') 
       ? `${humanName} Plugin ${assetType}`
       : assetType; // For content images, assetType is the alt text
-    
+
     const assetData = {
       fields: {
         title: {
           'en-US': assetTitle
+        },
+        description: {
+          'en-US': assetDescription,
         },
         file: {
           'en-US': {
@@ -134,8 +137,8 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
     }
 
     const retries = 3
-    const backoffTime = 10000;
-    console.log(`  ✓ ${assetType} asset sent for processing successfully. Waiting up to 50 seconds for processing to complete.`);
+    const backoffTime = 5000;
+    console.log(`  ✓ ${assetType} asset sent for processing successfully. Waiting up to 30 seconds for processing to complete.`);
     for (let attempt = 1; attempt <= retries; attempt++) {
       await new Promise(resolve => setTimeout(resolve, backoffTime * attempt));
 

@@ -16,8 +16,8 @@ async function uploadLogoAsset(logoImagePath, humanName) {
 }
 
 // Upload cover image asset  
-async function uploadCoverImageAsset(coverImagePath, humanName) {
-  return uploadImageAsset(coverImagePath, humanName, 'Cover Image');
+async function uploadCoverImageAsset(coverImagePath, humanName, altText) {
+  return uploadImageAsset(coverImagePath, humanName, 'Cover Image', false, altText);
 }
 
 export default async function processPlugin(pluginName) {
@@ -40,18 +40,18 @@ export default async function processPlugin(pluginName) {
         console.log(`✓ Logo uploaded and linked`);
       }
     }
-
+    
     // Handle cover image upload if present
     let coverImageAssetId = null;
     if (frontmatter.coverImage) {
       console.log(`Processing cover image: ${frontmatter.coverImage}`);
-      coverImageAssetId = await uploadCoverImageAsset(frontmatter.coverImage, frontmatter.humanName);
+      coverImageAssetId = await uploadCoverImageAsset(frontmatter.coverImage, frontmatter.humanName, frontmatter.coverImageAlt);
       if (coverImageAssetId) {
         console.log(`✓ Cover image uploaded and linked`);
       }
     }
 
-    const contentfulFields = await mapToContentfulFields(frontmatter, body, logoAssetId, coverImageAssetId);
+    const contentfulFields = await mapToContentfulFields(frontmatter, body, logoAssetId, coverImageAssetId, pluginName);
 
     console.log(`Creating Contentful entry for ${pluginName}...`);
     const entry = await createContentfulEntry(contentfulFields);

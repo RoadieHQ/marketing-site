@@ -29,7 +29,8 @@ export default async function mapToContentfulFields(
   frontmatter,
   body,
   logoAssetId = null,
-  coverImageAssetId = null
+  coverImageAssetId = null,
+  slug,
 ) {
   const installationInstructions = frontmatter.gettingStarted 
     ? convertGettingStartedToMarkdown(frontmatter.gettingStarted)
@@ -48,6 +49,7 @@ export default async function mapToContentfulFields(
     
   const fields = {
     humanName: frontmatter.humanName,
+    slug,
     heading: frontmatter.heading,
     lead: frontmatter.lead,
     npmPackageName: frontmatter.npmjsPackage,

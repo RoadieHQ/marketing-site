@@ -165,6 +165,7 @@ export const pageQuery = graphql`
       }
 
       coverImage {
+        description
         gatsbyImageData(layout: FULL_WIDTH)
       }
 

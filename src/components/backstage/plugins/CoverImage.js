@@ -6,7 +6,7 @@ const CoverImage = ({ plugin, className = 'max-w-full max-h-full shadow-small' }
   return (
     <GatsbyImage
       image={plugin.coverImage.gatsbyImageData}
-      alt={plugin.coverImageAlt}
+      alt={plugin.coverImage.description}
       className={className}
     />
   );
