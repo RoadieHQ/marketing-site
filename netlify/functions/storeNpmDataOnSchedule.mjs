@@ -11,4 +11,8 @@ const storeNpmData = async () => {
   }));
 };
 
+export const config = {
+  schedule: '0 */6 * * *',
+};
+
 export default storeNpmData;
