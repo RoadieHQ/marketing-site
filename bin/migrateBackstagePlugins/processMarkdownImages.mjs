@@ -1,4 +1,5 @@
 import uploadImageAsset from './uploadImageAsset.mjs';
+import path from 'node:path';
 
 // Parse markdown content for image references
 function parseMarkdownImages(markdownContent) {
@@ -24,7 +25,7 @@ function parseMarkdownImages(markdownContent) {
 }
 
 // Upload images and replace references in markdown
-export default async function processMarkdownImages(markdownContent, humanName) {
+export default async function processMarkdownImages(markdownContent, humanName, absMarkdownFilePath) {
   if (!markdownContent) {
     return markdownContent;
   }
@@ -45,22 +46,25 @@ export default async function processMarkdownImages(markdownContent, humanName) 
     
     // Skip external URLs (http/https)
     if (image.imagePath.startsWith('http://') || image.imagePath.startsWith('https://')) {
-      console.log(`  ⚠ Skipping external image: ${image.imagePath}`);
+      console.log(`  ⚠️ Skipping external image: ${image.imagePath}`);
       continue;
     }
 
     // Skip URLs that are already Contentful assets
     if (image.imagePath.includes('images.ctfassets.net')) {
-      console.log(`  ⚠ Skipping existing Contentful asset: ${image.imagePath}`);
+      console.log(`  ⚠️ Skipping existing Contentful asset: ${image.imagePath}`);
       continue;
     }
 
     try {
       console.log(`  Processing image: ${image.imagePath} (alt: "${image.altText}")`);
+
+      const baseDir = path.dirname(absMarkdownFilePath);
+      const absoluteImagePath = path.resolve(baseDir, image.imagePath);
       
       // Upload image to Contentful
       const assetReference = await uploadImageAsset(
-        image.imagePath, 
+        absoluteImagePath,
         humanName, 
         image.altText || 'Image',
         true,
@@ -87,11 +91,11 @@ export default async function processMarkdownImages(markdownContent, humanName) 
           }
         }
       } else {
-        console.log(`  ⚠ Failed to upload image, keeping original reference: ${image.imagePath}`);
+        console.log(`  🚫 Failed to upload image, keeping original reference: ${image.imagePath}`);
       }
 
     } catch (error) {
-      console.log(`  ⚠ Error processing image ${image.imagePath}: ${error.message}`);
+      console.log(`  🚫 Error processing image ${image.imagePath}: ${error.message}`);
     }
   }
 

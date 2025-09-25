@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import path from 'node:path';
 
 import parseFrontmatter from './parseFrontmatter.mjs';
 import uploadImageAsset from './uploadImageAsset.mjs';
@@ -35,7 +36,9 @@ export default async function processPlugin(pluginName) {
     let logoAssetId = null;
     if (frontmatter.logoImage) {
       console.log(`Processing logo image: ${frontmatter.logoImage}`);
-      logoAssetId = await uploadLogoAsset(frontmatter.logoImage, frontmatter.humanName);
+      const baseDir = path.dirname(markdownPath);
+      const absoluteImagePath = path.resolve(baseDir, frontmatter.logoImage);
+      logoAssetId = await uploadLogoAsset(absoluteImagePath, frontmatter.humanName);
       if (logoAssetId) {
         console.log(`✓ Logo uploaded and linked`);
       }
@@ -45,13 +48,15 @@ export default async function processPlugin(pluginName) {
     let coverImageAssetId = null;
     if (frontmatter.coverImage) {
       console.log(`Processing cover image: ${frontmatter.coverImage}`);
-      coverImageAssetId = await uploadCoverImageAsset(frontmatter.coverImage, frontmatter.humanName, frontmatter.coverImageAlt);
+      const baseDir = path.dirname(markdownPath);
+      const absoluteImagePath = path.resolve(baseDir, frontmatter.coverImage);
+      coverImageAssetId = await uploadCoverImageAsset(absoluteImagePath, frontmatter.humanName, frontmatter.coverImageAlt);
       if (coverImageAssetId) {
         console.log(`✓ Cover image uploaded and linked`);
       }
     }
 
-    const contentfulFields = await mapToContentfulFields(frontmatter, body, logoAssetId, coverImageAssetId, pluginName);
+    const contentfulFields = await mapToContentfulFields(frontmatter, body, logoAssetId, coverImageAssetId, pluginName, markdownPath);
 
     console.log(`Creating Contentful entry for ${pluginName}...`);
     const entry = await createContentfulEntry(contentfulFields);
@@ -62,7 +67,7 @@ export default async function processPlugin(pluginName) {
     
     return { success: true, pluginName, entryId: entry.sys.id };
   } catch (error) {
-    console.error(`✗ Failed to process ${pluginName}: ${error.message}`);
+    console.error(`🚫 Failed to process ${pluginName}: ${error.message}`);
     return { success: false, pluginName, error: error.message };
   }
 }

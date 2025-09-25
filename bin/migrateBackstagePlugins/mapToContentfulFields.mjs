@@ -31,6 +31,7 @@ export default async function mapToContentfulFields(
   logoAssetId = null,
   coverImageAssetId = null,
   slug,
+  absMarkdownPath,
 ) {
   const installationInstructions = frontmatter.gettingStarted 
     ? convertGettingStartedToMarkdown(frontmatter.gettingStarted)
@@ -42,10 +43,10 @@ export default async function mapToContentfulFields(
   
   // Process images in introduction and notes content
   console.log('Processing images in introduction...');
-  const processedIntroduction = await processMarkdownImages(normalizedIntroduction, frontmatter.humanName);
+  const processedIntroduction = await processMarkdownImages(normalizedIntroduction, frontmatter.humanName, absMarkdownPath);
   
   console.log('Processing images in notes...');  
-  const processedNotes = await processMarkdownImages(normalizedNotes, frontmatter.humanName);
+  const processedNotes = await processMarkdownImages(normalizedNotes, frontmatter.humanName, absMarkdownPath);
     
   const fields = {
     humanName: frontmatter.humanName,

@@ -1,9 +1,5 @@
 import { readFileSync } from 'fs';
-import { dirname, join, extname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { extname } from 'path';
 
 // Get MIME type from file extension
 function getMimeType(filePath) {
@@ -30,15 +26,11 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
     throw new Error('Missing required environment variables for Contentful');
   }
 
-  // Resolve the full path to the image
-  const imagePathFromRoot = imagePath.split('/').slice(2);
-  const fullImagePath = join(__dirname, '..', '..', 'content', ...imagePathFromRoot);
-  
   try {
     // Read the file
-    const fileBuffer = readFileSync(fullImagePath);
+    const fileBuffer = readFileSync(imagePath);
     const fileName = imagePath.split('/').pop();
-    const mimeType = getMimeType(fullImagePath);
+    const mimeType = getMimeType(imagePath);
 
     // Step 1: Upload file to Contentful
     console.log(`  Uploading ${assetType.toLowerCase()} file: ${fileName}`);
@@ -186,7 +178,7 @@ export default async function uploadImageAsset(imagePath, humanName, assetType =
 
   } catch (error) {
     if (error.code === 'ENOENT') {
-      console.log(`  🚫 ${assetType} file not found: ${fullImagePath}`);
+      console.log(`  🚫 ${assetType} file not found: ${imagePath}`);
       return null;
     }
     throw error;

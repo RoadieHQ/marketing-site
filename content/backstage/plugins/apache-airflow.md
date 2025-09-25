@@ -16,9 +16,6 @@ seo:
 
 logoImage: '../../assets/logos/apache-airflow/apache-airflow-logo.webp'
 
-coverImage: '../../assets/apache-airflow-plugin.pmg'
-coverImageAlt: 'A list of DAGs in a table along with instance versioning and status.'
-
 availableOnRoadie: true
 roadieDocsPath: /integrations/apache-airflow/
 
