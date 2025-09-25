@@ -8,11 +8,9 @@ attribution:
   text: Roadie
   href: https://roadie.io
 intro: |
-  [Jira](https://www.atlassian.com/software/jira) is Atlassian's flagship issue tracking and agile project management platform used by thousands of engineering teams worldwide to plan, track, and manage software development projects. Whether you're running Scrum sprints, managing Kanban boards, or tracking bugs across complex systems, Jira provides the structure and visibility teams need to deliver quality software efficiently.
+  Jira is Atlassian's flagship issue tracking and agile project management platform used by thousands of engineering teams worldwide to plan, track, and manage software development projects.
 
-  As a software engineer working in a microservices environment, you likely interact with multiple Jira projects daily—checking sprint progress, reviewing bug reports, and tracking feature development across different teams and services. The challenge is that this information often lives in isolation from your development workflow, requiring constant context switching between Backstage, your code repositories, and Jira's interface.
-
-  **The Jira Backstage plugin eliminates this friction by surfacing critical project information directly in your developer portal.** Originally developed by Roadie and now widely adopted across the Backstage ecosystem, this plugin connects your Backstage entities to their corresponding Jira projects, providing real-time visibility into development progress without leaving your service catalog.
+  The Jira Backstage plugin brings tickets into Backstage by surfacing project information directly in your developer portal. Originally developed by Roadie and now widely adopted across the Backstage ecosystem, this plugin connects your Backstage entities to their corresponding Jira projects, providing real-time visibility into development progress without leaving your service catalog.
 
   ### What the plugin provides
 
@@ -26,13 +24,7 @@ intro: |
 
   ### Why use this plugin
 
-  Instead of maintaining separate workflows for checking project status in Jira's interface, your developers can access this information directly alongside service documentation, dependencies, and deployment status in Backstage. This unified view reduces context switching and provides a complete picture of your service's development lifecycle.
-
-  The plugin is particularly valuable for:
-  - **Platform engineering teams** who want to provide developers with project visibility without requiring deep Jira expertise
-  - **Development teams practicing agile methodologies** who need quick access to sprint status and issue tracking during development
-  - **Organizations with multiple Jira projects** who want centralized visibility across services and teams
-  - **Teams using GitOps workflows** who want to correlate deployment status with development progress
+  Developers can access Jira information directly alongside service documentation, dependencies, and deployment status in Backstage. This unified view reduces context switching and provides a complete picture of your service's development lifecycle.
 
   Major organizations like **[John Lewis & Partners](https://medium.com/john-lewis-software-engineering/weve-gone-backstage-this-is-how-we-use-it-on-our-digital-platform-b299cd4acb24)** have successfully integrated Jira data into their Backstage deployments, with John Lewis noting: "We use Backstage with data aggregated from key applications such as Gitlab, Pagerduty, JIRA, Kubecost and Google Cloud, serving that data via Big Query to specific Backstage panels."
 
