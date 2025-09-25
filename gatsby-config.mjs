@@ -189,6 +189,7 @@ const config = {
 
           'gatsby-remark-autolink-headers',
           `gatsby-remark-external-links`,
+          `gatsby-remark-prismjs-copy-button`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
