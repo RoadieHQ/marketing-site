@@ -31,7 +31,7 @@ const ListItem = ({
     }
     style={{ height: 350 }}
   >
-    <ListItemHeader slug={slug} logoImage={logoImage} humanName={humanName} />
+    <ListItemHeader slug={slug} logoImage={logoImage.childImageSharp} humanName={humanName} />
     <Chip label={integrationType} />
   </div>
 );
