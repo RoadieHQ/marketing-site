@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import usePageLeave from 'react-use/lib/usePageLeave';
+import isEmpty from 'lodash/isEmpty';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal, Title } from 'components';
@@ -21,64 +22,67 @@ const Body = ({
     humanName,
   }
 }) => {
-  if (installationInstructions) {
-    return (
-      <>
-        {introduction && (
+  const introHtml = introduction?.childMarkdownRemark?.html;
+  const installHtml = installationInstructions?.childMarkdownRemark?.html;
+  const notesHtml = notes?.childMarkdownRemark?.html;
+  return (
+    <>
+      {!isEmpty(introHtml) && (
+        <div className="mb-10">
+          <div
+            className="mb-4 mt-0 prose prose-primary max-w-none"
+            dangerouslySetInnerHTML={{ __html: introduction.childMarkdownRemark.html }}
+          />
+        </div>
+      )}
+
+      {coverImage && (
+        <div className="mb-10">
+          <GatsbyImage
+            image={coverImage.gatsbyImageData}
+            alt={coverImage.description}
+            className="max-w-full max-h-full shadow-small"
+          />
+        </div>
+      )}
+
+      {!isEmpty(installHtml) && (
+        <>
+          <div className="mb-4">
+            <Title>Installation steps</Title>
+          </div>
+
+          <HostTabs docsLink={`/docs${roadieDocsPath}`} />
+
           <div className="mb-10">
             <div
               className="mb-4 mt-0 prose prose-primary max-w-none"
-              dangerouslySetInnerHTML={{ __html: introduction.childMarkdownRemark.html }}
+              dangerouslySetInnerHTML={{
+                __html: installationInstructions.childMarkdownRemark.html,
+              }}
             />
           </div>
-        )}
+        </>
+      )}
 
-        {coverImage && (
-          <div className="mb-10">
-            <GatsbyImage
-              image={coverImage.gatsbyImageData}
-              alt={coverImage.description}
-              className="max-w-full max-h-full shadow-small"
-            />
+      {!isEmpty(notesHtml) && (
+        <>
+          <div className="mb-4">
+            <Title>Things to know</Title>
           </div>
-        )}
 
-        {installationInstructions && (
-          <>
-            <div className="mb-4">
-              <Title>Installation steps</Title>
-            </div>
+          <div
+            className="prose prose-primary max-w-none"
+            dangerouslySetInnerHTML={{ __html: notes.childMarkdownRemark.html }}
+          />
+        </>
+      )}
 
-            <HostTabs docsLink={`/docs${roadieDocsPath}`} />
-
-            <div className="mb-10">
-              <div
-                className="mb-4 mt-0 prose prose-primary max-w-none"
-                dangerouslySetInnerHTML={{
-                  __html: installationInstructions.childMarkdownRemark.html,
-                }}
-              />
-            </div>
-          </>
-        )}
-
-        {notes && (
-          <>
-            <div className="mb-4">
-              <Title>Things to know</Title>
-            </div>
-
-            <div
-              className="prose prose-primary max-w-none"
-              dangerouslySetInnerHTML={{ __html: notes.childMarkdownRemark.html }}
-            />
-          </>
-        )}
-      </>
-    );
-  }
-
-  return <PlaceholderBody humanName={humanName} />;
+      {isEmpty(installHtml) && isEmpty(notesHtml) && (
+        <PlaceholderBody humanName={humanName} />
+      )}
+    </>
+  );
 }
 
 const hasExitIntentModalBeenShownBefore = () => {
