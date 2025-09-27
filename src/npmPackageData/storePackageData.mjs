@@ -4,9 +4,13 @@ import isArray from 'lodash/isArray.js';
 import getRoadieStore from './getRoadieStore.mjs';
 import retrievePackageNames from './retrievePackageNames.mjs';
 import stripPackageData from './stripPackageData.mjs';
+import { ALL_PACKAGE_DATA_STORE_KEY } from './constants.mjs';
 
 const NPM_REGISTRY_HOSTNAME = 'https://registry.npmjs.org/';
-const ALL_PACKAGE_DATA_STORE_KEY = `all-backstage-plugin-package-data`;
+
+const extraStripPackageData = (strippedData) => ({
+  latestVersionPublishedTime: strippedData.time[strippedData.latestVersion],
+});
 
 const storePackageData = async () => {
   let listOfNpmPackages = await retrievePackageNames();
@@ -26,7 +30,7 @@ const storePackageData = async () => {
   const strippedNpmData = npmData.map((data) => stripPackageData(data));
 
   const dataAsObject = reduce(strippedNpmData, (obj, packageData) => {
-    obj[packageData.name] = packageData;
+    obj[packageData.name] = extraStripPackageData(packageData);
     obj.roadieLastUpdated = new Date().toISOString();
     return obj;
   }, {});

@@ -11,9 +11,7 @@ const Logo = ({ gatsbyImageData, alt, minHeight = 200 }) => {
   }
 
   return (
-    <div
-      className="flex justify-center items-center"
-      style={{ height, visibility: gatsbyImageData ? 'visible' : 'hidden' }} >
+    <div style={{ height, visibility: gatsbyImageData ? 'visible' : 'hidden' }}>
       {image}
     </div>
   );
