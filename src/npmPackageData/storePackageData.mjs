@@ -5,10 +5,17 @@ import find from 'lodash/find.js';
 import getRoadieStore from './getRoadieStore.mjs';
 import retrievePackageNames from './retrievePackageNames.mjs';
 import stripPackageData from './stripPackageData.mjs';
+import { ALL_PACKAGE_DATA_STORE_KEY } from './constants.mjs';
 
 const NPM_REGISTRY_HOSTNAME = 'https://registry.npmjs.org/';
-const ALL_PACKAGE_DATA_STORE_KEY = `all-backstage-plugin-package-data`;
 const NPM_REGISTRY_API = 'https://api.npmjs.org/'
+
+// We want to store as little data as possible to use on /backstage/plugins/ so that the 
+// page renderes as quickly as possible. The more data we store, the more we have to download
+// to the browser.
+const extraStripPackageData = (strippedData) => ({
+  latestVersionPublishedTime: strippedData.time[strippedData.latestVersion],
+});
 
 const storePackageData = async () => {
   let listOfNpmPackages = await retrievePackageNames();
@@ -49,7 +56,7 @@ const storePackageData = async () => {
     });
 
   const dataAsObject = reduce(strippedNpmData, (obj, packageData) => {
-    obj[packageData.name] = packageData;
+    obj[packageData.name] = extraStripPackageData(packageData);
     obj.roadieLastUpdated = new Date().toISOString();
     return obj;
   }, {});
