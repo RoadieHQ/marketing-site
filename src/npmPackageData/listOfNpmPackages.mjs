@@ -2,7 +2,7 @@ import reduce from 'lodash/reduce.js';
 
 import { PLUGINS_QUERY } from '../queries/gatsbyNodeQueries.mjs';
 
-const listOfNpmPackagesFromFiles = async ({ graphql }) => {
+const listOfNpmPackages = async ({ graphql }) => {
   const { data, errors } = await graphql(PLUGINS_QUERY);
 
   if (errors) {
@@ -17,4 +17,4 @@ const listOfNpmPackagesFromFiles = async ({ graphql }) => {
   }, []);
 };
 
-export default listOfNpmPackagesFromFiles;
+export default listOfNpmPackages;
