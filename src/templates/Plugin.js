@@ -201,7 +201,11 @@ export const pageQuery = graphql`
       }
 
       logoImage {
-        gatsbyImageData(layout: FIXED, width: 80)
+        gatsbyImageData(
+          layout: FIXED,
+          width: 80,
+          placeholder: DOMINANT_COLOR,
+        )
       }
     }
   }
