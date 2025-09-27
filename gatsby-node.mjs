@@ -20,19 +20,23 @@ import {
 } from './src/pageCreation/index.mjs';
 import storePackageNames from './src/npmPackageData/storePackageNames.mjs';
 import storePackageData from './src/npmPackageData/storePackageData.mjs';
-import listOfNpmPackagesFromFiles from './src/npmPackageData/listOfNpmPackagesFromFiles.mjs';
+import listOfNpmPackages from './src/npmPackageData/listOfNpmPackages.mjs';
 
 export const createPages = async ({ graphql, actions }) => {
-  // This function iterates over the backstage plugins in the plugins directory, gets the name
+  // This function iterates over the backstage plugins in contentful, gets the name
   // of the NPM package associated with each one, and uploads all the names in a big array
-  // to Netlify Blob storage. Then it goes out to NPM and fetches the API data for each package
-  // and stores that in the blob store.
+  // to Netlify Blob storage. 
   //
   // We don't necessarily need this to happen every time we start the local dev server, so
   // a Netlify plugin that runs on deploy time might be a better place to do that. I've
   // never created a Netlify plugin before though so I'm leaving it here for the moment [DT].
-  const listOfNpmPackages = await listOfNpmPackagesFromFiles({ graphql });
-  await storePackageNames(listOfNpmPackages);
+  const npmPackages = await listOfNpmPackages({ graphql });
+  await storePackageNames(npmPackages);
+  // Then we pull back in that list of names from the blob store and iterate over it to
+  // fetch the detailed NPM data for each package. We do it this way, rather than fetching
+  // the list of files from contentful inside storePackageData directly, because gatsby
+  // graphql queries are evaluated at compile time, but storePackageData needs to run inside
+  // a scheduled Netlify function where the graphql scaffolding is not available.
   await storePackageData();
 
   await createPagesFromQuery({
