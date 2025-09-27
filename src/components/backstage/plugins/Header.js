@@ -6,12 +6,11 @@ import Attribution from './Attribution';
 
 const Header = ({
   plugin: {
-    frontmatter: {
-      humanName,
-      logoImage,
-      heading,
-      attribution,
-    },
+    humanName,
+    logoImage,
+    heading,
+    attributionText: text,
+    attributionUrl: href,
   },
 }) => (
   <div className="mx-auto max-w-7xl">
@@ -25,7 +24,7 @@ const Header = ({
       <div className="bg-gray-100 mr-8">
         <Logo
           minHeight={80}
-          sharpImage={logoImage.childImageSharp}
+          gatsbyImageData={logoImage.gatsbyImageData}
           alt={`${humanName} logo`}
         />
       </div>
@@ -34,7 +33,7 @@ const Header = ({
         <div className="mb-1">
           <Headline size="small">{heading}</Headline>
         </div>
-        <Attribution attribution={attribution} />
+        <Attribution attribution={{ text, href }} />
       </div>
     </header>
   </div>

@@ -28,8 +28,6 @@ coverImageAlt: 'A screenshot of the Pulumi plugin.'
 
 availableOnRoadie: false
 
-thingsToKnowTitle: How to get a Pulumi Access Token
-
 gettingStarted:
   - intro: Install the plugin.
     language: bash

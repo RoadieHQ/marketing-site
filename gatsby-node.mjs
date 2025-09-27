@@ -74,10 +74,10 @@ export const createPages = async ({ graphql, actions }) => {
     actions,
     graphql,
     processor: ({ node }, component) => ({
-      path: node.fields.slug,
+      path: `/backstage/plugins/${node.slug}/`,
       component,
       context: {
-        slug: node.fields.slug,
+        slug: node.slug,
       },
     }),
   });

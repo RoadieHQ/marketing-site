@@ -13,9 +13,12 @@ seo:
   # Don't forget to end with "| Roadie"
   title: 'Backstage Scaffolder Actions - HTTP Requests Plugin | Roadie'
   description: |
-    The Backstage HTTP request scaffolder actions plugin integrates with the pre-existing scaffolder actions. It extends them and allows you to send arbitrary http requests to your Backstage instance.
+    Send arbitrary HTTP requests from the Backstage scaffolder.
 
-    The http:backstage:request action allows the task to call any of the backstage APIs available to the user that triggers it. The action takes care of passing the authentication token of the user to the task execution so that the action can perform actions on behalf of the user that triggers it.
+intro: |
+  The Backstage HTTP request scaffolder actions plugin integrates with the pre-existing scaffolder actions. It extends them and allows you to send arbitrary http requests to your Backstage instance.
+
+  The http:backstage:request action allows the task to call any of the backstage APIs available to the user that triggers it. The action takes care of passing the authentication token of the user to the task execution so that the action can perform actions on behalf of the user that triggers it.
 
 logoImage: '../../assets/logos/scaffolder-http/http.webp'
 

@@ -19,7 +19,7 @@ const BackstagePlugins = ({ data }) => {
     filteredPlugins = plugins.edges;
   } else {
     filteredPlugins = plugins.edges.filter(({ node }) => {
-      return node.frontmatter.humanName.toLowerCase().includes(query.toLowerCase());
+      return node.humanName.toLowerCase().includes(query.toLowerCase());
     });
   }
 
@@ -57,8 +57,8 @@ const BackstagePlugins = ({ data }) => {
         </div>
 
         <div className="grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-          {filteredPlugins.map(({ node: { fields, frontmatter } }) => (
-            <ListItem frontmatter={frontmatter} fields={fields} key={fields.slug} />
+          {filteredPlugins.map(({ node }) => (
+            <ListItem key={node.slug} {...node} />
           ))}
         </div>
       </Page>
@@ -77,30 +77,16 @@ export const pageQuery = graphql`
       }
     }
 
-    plugins: allMarkdownRemark(
-      sort: { frontmatter: { humanName: ASC } }
-      filter: { fileAbsolutePath: { regex: "/.+/content/backstage/plugins/.+/" } }
-    ) {
+    plugins: allContentfulBackstagePlugin(sort: {humanName: ASC}) {
       edges {
         node {
-          fields {
-            slug
+          slug
+          humanName
+          logoImage {
+            gatsbyImageData(layout: FIXED, width: 140)
           }
-
-          frontmatter {
-            humanName
-
-            logoImage {
-              childImageSharp {
-                gatsbyImageData(layout: FIXED, width: 140)
-              }
-            }
-
-            attribution {
-              text
-              href
-            }
-          }
+          attributionText
+          attributionUrl
         }
       }
     }

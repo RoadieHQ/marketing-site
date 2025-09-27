@@ -33,8 +33,6 @@ coverImageAlt: 'A screenshot of the Jenkins plugin.'
 availableOnRoadie: true
 roadieDocsPath: /integrations/jenkins/
 
-thingsToKnowTitle: How to get a Jenkins API token
-
 gettingStarted:
   - intro: Install the plugin.
     language: bash

@@ -22,11 +22,15 @@ code[class*="language-"], pre[class*="language-"] {
   padding-right: 8px;
 }
 
+/*
+ * Fixing some ugly styling on the code copy button
+ */
+
 .gatsby-remark-prismjs-copy-button {
-  color: #515359;
+  color: #515359 !important;
 }
 
 .gatsby-remark-prismjs-copy-button:hover {
-  background: none;
-  color: black;
+  background: none !important;
+  color: black !important;
 }

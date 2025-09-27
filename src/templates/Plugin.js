@@ -1,38 +1,88 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import usePageLeave from 'react-use/lib/usePageLeave';
-import Prism from 'prismjs';
+import isEmpty from 'lodash/isEmpty';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal } from 'components';
+import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal, Title } from 'components';
 import {
   Header,
-  Intro,
   PluginCTA,
-  CoverImage,
-  InstallationSteps,
   PlaceholderBody,
-  Notes,
   Sidebar,
+  HostTabs,
 } from 'components/backstage/plugins';
 
-// All the languages used in the plugin installation instructions need to be listed here.
-import 'prismjs/components/prism-typescript';
-import 'prismjs/components/prism-bash';
-import 'prismjs/components/prism-yaml';
-
-const Body = ({ plugin, siteMetadata }) => {
-  if (plugin.frontmatter.gettingStarted) {
-    return (
-      <>
-        <Intro plugin={plugin} />
-
-        <CoverImage plugin={plugin} className="max-w-full max-h-full shadow-small mb-12" />
-
-        <InstallationSteps plugin={plugin} />
-      </>
-    );
+const Body = ({
+  plugin: {
+    installationInstructions,
+    introduction,
+    roadieDocsPath,
+    coverImage,
+    notes,
+    humanName,
   }
+}) => {
+  const introHtml = introduction?.childMarkdownRemark?.html;
+  const installHtml = installationInstructions?.childMarkdownRemark?.html;
+  const notesHtml = notes?.childMarkdownRemark?.html;
+  return (
+    <>
+      {!isEmpty(introHtml) && (
+        <div className="mb-10">
+          <div
+            className="mb-4 mt-0 prose prose-primary max-w-none"
+            dangerouslySetInnerHTML={{ __html: introduction.childMarkdownRemark.html }}
+          />
+        </div>
+      )}
 
-  return <PlaceholderBody plugin={plugin} siteMetadata={siteMetadata} />;
+      {coverImage && (
+        <div className="mb-10">
+          <GatsbyImage
+            image={coverImage.gatsbyImageData}
+            alt={coverImage.description}
+            className="max-w-full max-h-full shadow-small"
+          />
+        </div>
+      )}
+
+      {!isEmpty(installHtml) && (
+        <>
+          <div className="mb-4">
+            <Title>Installation steps</Title>
+          </div>
+
+          <HostTabs docsLink={`/docs${roadieDocsPath}`} />
+
+          <div className="mb-10">
+            <div
+              className="mb-4 mt-0 prose prose-primary max-w-none"
+              dangerouslySetInnerHTML={{
+                __html: installationInstructions.childMarkdownRemark.html,
+              }}
+            />
+          </div>
+        </>
+      )}
+
+      {!isEmpty(notesHtml) && (
+        <>
+          <div className="mb-4">
+            <Title>Things to know</Title>
+          </div>
+
+          <div
+            className="prose prose-primary max-w-none"
+            dangerouslySetInnerHTML={{ __html: notes.childMarkdownRemark.html }}
+          />
+        </>
+      )}
+
+      {isEmpty(installHtml) && isEmpty(notesHtml) && (
+        <PlaceholderBody humanName={humanName} />
+      )}
+    </>
+  );
 }
 
 const hasExitIntentModalBeenShownBefore = () => {
@@ -46,7 +96,6 @@ const recordExitIntentModalHasBeenShown = () => {
 const PluginTemplate = ({ data }) => {
   const {
     plugin,
-    site: { siteMetadata },
   } = data;
 
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
@@ -62,17 +111,13 @@ const PluginTemplate = ({ data }) => {
     setExitIntentModalOpen(false);
   };
 
-  useEffect(() => {
-    Prism.highlightAll();
-  });
-
   usePageLeave(() => {
     handleOpenExitIntentModal();
   });
 
   return (
     <>
-      <SEO title={plugin.frontmatter.seo.title} description={plugin.frontmatter.seo.description} />
+      <SEO title={plugin.seoTitle} description={plugin.seoDescription} />
 
       <ExitIntentModal
         modalOpen={exitIntentModalOpen}
@@ -89,13 +134,12 @@ const PluginTemplate = ({ data }) => {
         <div className="relative max-w-7xl mx-auto">
           <div className="grid grid-cols-3 gap-20">
             <article className="col-span-3 lg:col-span-2">
-              <Body plugin={plugin} siteMetadata={siteMetadata} />
-              <Notes plugin={plugin} />
+              <Body plugin={plugin} />
               <PluginCTA plugin={plugin} />
             </article>
 
             <aside className="hidden lg:block lg:col-span-1">
-              <Sidebar plugin={plugin} siteMetadata={siteMetadata} />
+              <Sidebar plugin={plugin} />
             </aside>
           </div>
         </div>
@@ -112,7 +156,6 @@ export const pageQuery = graphql`
   query PluginBySlug($slug: String!) {
     site {
       siteMetadata {
-        sourceCodeUrl
         social {
           twitter
           linkedin
@@ -120,50 +163,45 @@ export const pageQuery = graphql`
       }
     }
 
-    plugin: markdownRemark(fields: { slug: { eq: $slug } }) {
-      notes: html
-      fileAbsolutePath
+    plugin: contentfulBackstagePlugin(slug: { eq: $slug }) {
+      humanName
+      slug
+      npmPackageName
+      roadieDocsPath
+      seoDescription
+      seoTitle
+      heading
+      codeLocation
+      attributionText
+      attributionUrl
+      availableOnRoadie
+      lead
 
-      frontmatter {
-        humanName
-        lead
-        heading
-        intro
-        codeLocation
-        npmjsPackage
-        availableOnRoadie
-        roadieDocsPath
-        thingsToKnowTitle
-
-        attribution {
-          href
-          text
+      notes {
+        childMarkdownRemark {
+          html
         }
+      }
 
-        logoImage {
-          childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 80)
-          }
+      introduction {
+        childMarkdownRemark {
+          html
         }
+      }
 
-        coverImage {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
+      installationInstructions {
+        childMarkdownRemark {
+          html
         }
-        coverImageAlt
+      }
 
-        seo {
-          title
-          description
-        }
+      coverImage {
+        description
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
 
-        gettingStarted {
-          intro
-          code
-          language
-          sectionId
-        }
+      logoImage {
+        gatsbyImageData(layout: FIXED, width: 80)
       }
     }
   }

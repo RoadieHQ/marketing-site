@@ -21,11 +21,18 @@ logoImage: '../../assets/logos/scaffolder-templates/sst.webp'
 
 ### Getting Started
 
-The template can be found here https://github.com/roadie-demo/scaffolder-examples/blob/main/create-aws-serverless-backend/template.yaml
+The template can be found [on GitHub](https://github.com/roadie-demo/scaffolder-examples/blob/main/create-aws-serverless-backend/template.yaml).
 
 To Use the template
-  1. Create the following secrets in your GitHub Organizations secrets AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY ![AWS Credentials](aws-credentials.webp)
+
+  1. Create the following secrets in your GitHub Organizations secrets `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+
+     ![AWS Credentials](./aws-credentials.webp)
     
-  2. Load the template into Backstage. ![Load Template](./load-scaffolder-template.webp)
+  2. Load the template into Backstage.
+
+     ![Load Template](./load-scaffolder-template.webp)
     
-  3. Run the template by clicking choose on the Create Component Page ![Run the Template](create-serverless-backend.webp)
+  3. Run the template by clicking choose on the Create Component Page
+    
+     ![Run the Template](./create-serverless-backend.webp)

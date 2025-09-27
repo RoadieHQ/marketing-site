@@ -17,7 +17,7 @@ const PluginCTA = ({ plugin }) => (
         link={true}
         color="primary"
         size="large"
-        to={`${PAGE_PATHS.requestDemo}?utm_source=roadie-marketplace&utm_campaign=${plugin.frontmatter.humanName}`}
+        to={`${PAGE_PATHS.requestDemo}?utm_source=roadie-marketplace&utm_campaign=${plugin.humanName}`}
         text="Get a demo"
       />
     </div>
