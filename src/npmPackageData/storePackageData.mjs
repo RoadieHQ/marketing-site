@@ -38,7 +38,7 @@ const storePackageData = async () => {
     .map((data) => stripPackageData(data))
     .map((data) => {
       const statsDataForPackage = find(statsData, { package: data.name });
-      if (statsDataForPackage) data.lastMonthDownloads = statsData.downloads;
+      if (statsDataForPackage) data.lastMonthDownloads = statsDataForPackage.downloads;
       return data;
     });
 

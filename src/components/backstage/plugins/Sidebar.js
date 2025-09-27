@@ -131,6 +131,10 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
             value={npmData.latestVersion}
           />
           <DetailsListItem
+            label="Downloads in last month"
+            value={npmData.lastMonthDownloads}
+          />
+          <DetailsListItem
             label="Last published"
             value={npmData.latestVersionPublishedAgo}
             title={npmData.latestVersionPublishedTime}
@@ -182,6 +186,8 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
         <rect x="220" y="160" rx="3" ry="3" width="150" height="24" /> 
         <rect x="0" y="200" rx="3" ry="3" width="150" height="24" /> 
         <rect x="220" y="200" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="240" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="240" rx="3" ry="3" width="150" height="24" /> 
       </ContentLoader>
     );
   }
@@ -219,10 +225,12 @@ const parseNpmData = (npmData) => {
     maintainersHelpText += `...along with ${extraMaintainers} others. `
   }
 
+  const numberOfVersions = npmData.numberOfVersions?.toLocaleString();
+  const lastMonthDownloads = npmData.lastMonthDownloads?.toLocaleString();
+
   return {
     ...pick(npmData, [
         'latestVersion',
-        'numberOfVersions',
         'license',
         'maintainers',
       ]),
@@ -231,11 +239,20 @@ const parseNpmData = (npmData) => {
     latestVersionPublishedAgo,
     firstPublishedAgo,
     lastSyncedAgo,
+    lastMonthDownloads,
+    numberOfVersions,
     maintainersHelpText,
   };
 };
 
-const Sidebar = ({ plugin }) => {
+const Sidebar = ({
+  plugin: {
+    availableOnRoadie,
+    roadieDocsPath,
+    npmPackageName,
+    codeLocation,
+  },
+}) => {
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
 
@@ -243,27 +260,27 @@ const Sidebar = ({ plugin }) => {
     (async () => {
       setNpmDataLoadingState('loading');
       const { status, data } = await fetchNpmDataByName({
-        packageName: plugin.npmPackageName,
+        packageName: npmPackageName,
       });
       setNpmDataLoadingState(status);
       setNpmData(parseNpmData(data));
     })();
-  }, [plugin.npmPackageName]);
+  }, [npmPackageName]);
 
   return (
     <div>
       <div className="mb-10">
         <div className="mb-3">
           <RoadieDocsChip
-            availableOnRoadie={plugin.availableOnRoadie} 
-            roadieDocsPath={plugin.roadieDocsPath}
+            availableOnRoadie={availableOnRoadie} 
+            roadieDocsPath={roadieDocsPath}
           />
         </div>
 
         <div className="mb-3">
-          <GitHubChip codeLocation={plugin.codeLocation} />
+          <GitHubChip codeLocation={codeLocation} />
         </div>
-        <NpmChip npmjsPackage={plugin.npmPackageName} />
+        <NpmChip npmjsPackage={npmPackageName} />
       </div>
 
       <div className="mb-10">
