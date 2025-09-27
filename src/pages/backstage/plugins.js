@@ -61,12 +61,17 @@ const BackstagePlugins = ({ data }) => {
     })();
   }, []);
 
+  const hydratedPlugins = plugins.edges.map(({ node }) => {
+    node.npmData = npmData[node.npmPackageName] || {};
+    return node;
+  });
+
   let filteredPlugins = [];
   if (query === '') {
-    filteredPlugins = plugins.edges;
+    filteredPlugins = hydratedPlugins;
   } else {
-    filteredPlugins = plugins.edges.filter(({ node }) => {
-      return node.humanName.toLowerCase().includes(query.toLowerCase());
+    filteredPlugins = hydratedPlugins.filter(({ humanName }) => {
+      return humanName.toLowerCase().includes(query.toLowerCase());
     });
   }
 
@@ -104,11 +109,11 @@ const BackstagePlugins = ({ data }) => {
         </div>
 
         <div className="grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-          {filteredPlugins.map(({ node }) => (
+          {filteredPlugins.map(({ slug, ...plugin }) => (
             <ListItem
-              key={node.slug}
-              {...node}
-              npmData={npmData[node.npmPackageName] || {}}
+              key={slug}
+              slug={slug}
+              {...plugin}
               npmDataLoadingState={npmDataLoadingState}
             />
           ))}
