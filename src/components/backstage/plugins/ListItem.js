@@ -66,7 +66,7 @@ const ListItem = ({
 }) => {
   return (
     <div className="border-2 hover:border-gray-500">
-      <Link to={`/backstage/plugins/${slug}/`} className="underline-none capitalize">
+      <Link to={`/backstage/plugins/${slug}/`} className="underline-none">
         <div className="flex flex-col place-content-between" style={{ height: 240 }}>
           <div>
               <div className="flex p-4 mb-2">
@@ -77,13 +77,13 @@ const ListItem = ({
                     minHeight={80}
                   />
                 </div>
-                <div className="pt-2">
+                <div className="pt-2 capitalize">
                   <Title>{humanName}</Title>
                   <Attribution attribution={{ text }} />
                 </div>
               </div>
 
-            <p className="px-4 text-sm mb-4">{lead}</p>
+            <p className="px-4 text-sm mb-4 text-gray-600">{lead}</p>
           </div>
 
           <div className="px-2 pt-2 mb-2 border-t-2">
