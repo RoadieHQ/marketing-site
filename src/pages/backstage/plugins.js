@@ -55,7 +55,6 @@ const BackstagePlugins = ({ data }) => {
   useEffect(() => {
     (async () => {
       setNpmDataLoadingState('loading');
-      console.log('fetching');
       const { status, data } = await fetchNpmDataForList();
       setNpmDataLoadingState(status);
       setNpmData(data);
@@ -106,7 +105,12 @@ const BackstagePlugins = ({ data }) => {
 
         <div className="grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
           {filteredPlugins.map(({ node }) => (
-            <ListItem key={node.slug} {...node} npmData={npmData[node.npmPackageName] || {}} />
+            <ListItem
+              key={node.slug}
+              {...node}
+              npmData={npmData[node.npmPackageName] || {}}
+              npmDataLoadingState={npmDataLoadingState}
+            />
           ))}
         </div>
       </Page>
