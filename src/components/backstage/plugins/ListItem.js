@@ -60,36 +60,37 @@ const ListItem = ({
   logoImage,
   humanName,
   attributionText: text,
-  attributionUrl: href,
   npmData,
   lead,
   npmDataLoadingState,
 }) => {
   return (
-    <div className="border-2 flex flex-col place-content-between" style={{ height: 240 }}>
-      <div>
-        <Link to={`/backstage/plugins/${slug}/`} className="underline-none capitalize">
-          <div className="flex p-4 mb-2">
-            <div className="mr-4">
-              <Logo
-                gatsbyImageData={logoImage.gatsbyImageData}
-                alt={`${humanName} logo`}
-                minHeight={80}
-              />
-            </div>
-            <div className="pt-2">
-              <Title>{humanName}</Title>
-              <Attribution attribution={{ text, href }} />
-            </div>
+    <div className="border-2 hover:border-gray-500">
+      <Link to={`/backstage/plugins/${slug}/`} className="underline-none capitalize">
+        <div className="flex flex-col place-content-between" style={{ height: 240 }}>
+          <div>
+              <div className="flex p-4 mb-2">
+                <div className="mr-4">
+                  <Logo
+                    gatsbyImageData={logoImage.gatsbyImageData}
+                    alt={`${humanName} logo`}
+                    minHeight={80}
+                  />
+                </div>
+                <div className="pt-2">
+                  <Title>{humanName}</Title>
+                  <Attribution attribution={{ text }} />
+                </div>
+              </div>
+
+            <p className="px-4 text-sm mb-4">{lead}</p>
           </div>
-        </Link>
 
-        <p className="px-4 text-sm mb-4">{lead}</p>
-      </div>
-
-      <div className="px-2 pt-2 mb-2 border-t-2">
-        <FooterInner npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
-      </div>
+          <div className="px-2 pt-2 mb-2 border-t-2">
+            <FooterInner npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };
