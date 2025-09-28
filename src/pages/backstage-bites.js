@@ -69,7 +69,7 @@ const BackstageBites = ({ data: { site, playlist } }) => {
           description={playlist.description.childMarkdownRemark.rawMarkdownBody}
         />
 
-        <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
           {playlist.videos.map((video) => (
             <VideoSummary key={video.slug} video={video} />
           ))}

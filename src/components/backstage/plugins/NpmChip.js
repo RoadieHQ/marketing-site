@@ -8,10 +8,12 @@ import theme from '../../../theme';
 
 const NpmChip = ({ npmjsPackage }) => {
   const [length, setLength] = useState(20);
+  const isMD = useMedia(`(min-width: ${theme.BREAKPOINTS_MD})`);
   const isLG = useMedia(`(min-width: ${theme.BREAKPOINTS_LG})`);
   const isXL = useMedia(`(min-width: ${theme.BREAKPOINTS_XL})`);
 
   useEffect(() => {
+    if (isMD) setLength(20);
     if (isLG) setLength(30);
     if (isXL) setLength(40);
   }, [isLG, isXL]);

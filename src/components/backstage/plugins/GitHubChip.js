@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import truncate from 'lodash/truncate';
+import useMedia from 'react-use/lib/useMedia';
 
 import { Chip, Link } from 'components';
 import { GitHubIcon } from 'components/icons';
+import theme from '../../../theme';
 
-const labelFromCodeLocation = (codeLocation) => {
+const labelFromCodeLocation = (codeLocation, length) => {
   try {
     const { pathname } = new URL(codeLocation);
     const segments = pathname.split('/').filter(Boolean);
-    return segments[1] || 'GitHub';
+    return truncate(segments[1], { length }) || 'GitHub';
   } catch (err) {
     // The only error seen in the wold here is the 'new URL' constructor blowing up because
     // the URL is invalid because of a typo or something else. This will throw a TypeError
@@ -19,9 +22,20 @@ const labelFromCodeLocation = (codeLocation) => {
 };
 
 const GitHubChip = ({ codeLocation }) => {
+  const [length, setLength] = useState(20);
+  const isMD = useMedia(`(min-width: ${theme.BREAKPOINTS_MD})`);
+  const isLG = useMedia(`(min-width: ${theme.BREAKPOINTS_LG})`);
+  const isXL = useMedia(`(min-width: ${theme.BREAKPOINTS_XL})`);
+
+  useEffect(() => {
+    if (isMD) setLength(20);
+    if (isLG) setLength(30);
+    if (isXL) setLength(40);
+  }, [isLG, isXL]);
+
   if (!codeLocation) return null;
 
-  const label = labelFromCodeLocation(codeLocation);
+  const label = labelFromCodeLocation(codeLocation, length);
   if (!label) return null;
 
   return (

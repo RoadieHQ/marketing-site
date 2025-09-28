@@ -83,7 +83,7 @@ const BackstagePlugins = ({ data }) => {
       />
 
       <Page titleDivide={true}>
-        <div className="lg:flex justify-between items-center">
+        <div className="lg:flex justify-between items-center mb-6">
           <div className="lg:mr-8">
             <div className="mb-4">
               <Headline>Backstage plugins</Headline>
@@ -108,7 +108,7 @@ const BackstagePlugins = ({ data }) => {
           </div>
         </div>
 
-        <div className="grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+        <div className="pt-6 grid gap-4 md:gap-8 md:grid-cols-2 lg:gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
           {filteredPlugins.map(({ slug, ...plugin }) => (
             <ListItem
               key={slug}

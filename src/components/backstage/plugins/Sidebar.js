@@ -269,7 +269,7 @@ const Sidebar = ({
 
   return (
     <div>
-      <div className="mb-10">
+      <div className="mb-10 pt-2">
         <div className="mb-3">
           <RoadieDocsChip
             availableOnRoadie={availableOnRoadie} 

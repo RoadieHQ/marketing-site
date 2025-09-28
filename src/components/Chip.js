@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 const Chip = ({ label, icon, color = 'primary' }) => {
-  const defaultClasses = 'px-3 py-1 rounded-full text-sm font-medium mr-2';
+  const defaultClasses = 'px-3 py-1 rounded-full text-sm font-medium mr-2 whitespace-nowrap';
 
   let colorClasses;
   if (color === 'primary') colorClasses = 'border border-primary-800';
