@@ -4,7 +4,7 @@ import map from 'lodash/map';
 import kebabCase from 'lodash/kebabCase';
 import get from 'lodash/get';
 import pick from 'lodash/pick';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 import ContentLoader from 'react-content-loader';
 import {
   NpmChip,
@@ -210,13 +210,13 @@ const parseNpmData = (npmData) => {
 
   let latestVersionPublishedAgo, firstPublishedAgo, lastSyncedAgo;
   if (latestVersionPublishedTime) {
-    latestVersionPublishedAgo = `${formatDistanceToNow(Date.parse(latestVersionPublishedTime))} ago`;
+    latestVersionPublishedAgo = `${formatDistanceToNowStrict(Date.parse(latestVersionPublishedTime))} ago`;
   }
   if (firstPublishedTime) {
-    firstPublishedAgo = `${formatDistanceToNow(Date.parse(npmData.time.created))} ago`;
+    firstPublishedAgo = `${formatDistanceToNowStrict(Date.parse(npmData.time.created))} ago`;
   }
   if (lastSyncedTime) {
-    lastSyncedAgo = `${formatDistanceToNow(Date.parse(lastSyncedTime))} ago`;
+    lastSyncedAgo = `${formatDistanceToNowStrict(Date.parse(lastSyncedTime))} ago`;
   }
 
   let maintainersHelpText = `Maintainer images come from Gravatar.`;
@@ -269,7 +269,7 @@ const Sidebar = ({
 
   return (
     <div>
-      <div className="mb-10">
+      <div className="mb-10 pt-2">
         <div className="mb-3">
           <RoadieDocsChip
             availableOnRoadie={availableOnRoadie} 

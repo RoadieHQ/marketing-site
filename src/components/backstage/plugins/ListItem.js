@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Title } from 'components';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 import InboxInIcon from '@heroicons/react/outline/InboxInIcon';
 import ChartBarIcon from '@heroicons/react/outline/ChartBarIcon';
 import ContentLoader from 'react-content-loader';
@@ -19,7 +19,8 @@ const FooterInner = ({
 
   let latestVersionPublishedAgo;
   if (latestVersionPublishedTime) {
-    latestVersionPublishedAgo = `${formatDistanceToNow(Date.parse(latestVersionPublishedTime))} ago`;
+    latestVersionPublishedAgo =
+      `${formatDistanceToNowStrict(Date.parse(latestVersionPublishedTime))} ago`;
   }
 
   const downloadCount = lastMonthDownloads?.toLocaleString();
@@ -28,17 +29,16 @@ const FooterInner = ({
     return (
       <div className="flex place-content-between text-xs text-gray-500">
         {latestVersionPublishedTime && (
-          <div title={latestVersionPublishedTime}>
+          <div title={latestVersionPublishedTime} className="flex mr-6">
             <span>
               <InboxInIcon className="inline-block w-4 mr-1" />
             </span>
-            <span>Updated </span>
-            <span>{latestVersionPublishedAgo}</span>
+            <span>Updated {latestVersionPublishedAgo}</span>
           </div>
         )}
 
         {downloadCount && (
-          <div>
+          <div className="flex">
               <span>
                 <ChartBarIcon className="inline-block w-4 mr-1" />
               </span>
@@ -75,7 +75,7 @@ const ListItem = ({
   return (
     <div className="border-2 hover:border-gray-500">
       <Link to={`/backstage/plugins/${slug}/`} className="underline-none">
-        <div className="flex flex-col place-content-between" style={{ height: 250 }}>
+        <div className="flex flex-col place-content-between md:h-[250px] lg:h-[280px] xl:h-[250px]">
           <div>
               <div className="flex p-4 mb-2">
                 <div className="mr-4">

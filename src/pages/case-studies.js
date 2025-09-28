@@ -85,7 +85,7 @@ const CaseStudiesIndex = ({ data: { caseStudies, site } }) => {
           }
         />
 
-        <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+        <div className="mt-12 mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none">
           {caseStudies.edges.map(({ node }) => (
             <CaseStudySummary key={node.slug} study={node} />
           ))}

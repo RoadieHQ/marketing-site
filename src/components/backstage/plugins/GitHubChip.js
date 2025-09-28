@@ -1,13 +1,15 @@
 import React from 'react';
+import truncate from 'lodash/truncate';
+import useResponsiveTruncation from '../../../hooks/useResponsiveTruncation';
 
 import { Chip, Link } from 'components';
 import { GitHubIcon } from 'components/icons';
 
-const labelFromCodeLocation = (codeLocation) => {
+const labelFromCodeLocation = (codeLocation, length) => {
   try {
     const { pathname } = new URL(codeLocation);
     const segments = pathname.split('/').filter(Boolean);
-    return segments[1] || 'GitHub';
+    return truncate(segments[1], { length }) || 'GitHub';
   } catch (err) {
     // The only error seen in the wold here is the 'new URL' constructor blowing up because
     // the URL is invalid because of a typo or something else. This will throw a TypeError
@@ -19,9 +21,10 @@ const labelFromCodeLocation = (codeLocation) => {
 };
 
 const GitHubChip = ({ codeLocation }) => {
+  const length = useResponsiveTruncation();
   if (!codeLocation) return null;
 
-  const label = labelFromCodeLocation(codeLocation);
+  const label = labelFromCodeLocation(codeLocation, length);
   if (!label) return null;
 
   return (

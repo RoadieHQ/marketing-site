@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import truncate from 'lodash/truncate';
-import useMedia from 'react-use/lib/useMedia';
+import useResponsiveTruncation from '../../../hooks/useResponsiveTruncation';
 
 import { Chip, Link } from 'components';
 import { NpmIcon } from 'components/icons';
-import theme from '../../../theme';
 
 const NpmChip = ({ npmjsPackage }) => {
-  const [length, setLength] = useState(20);
-  const isLG = useMedia(`(min-width: ${theme.BREAKPOINTS_LG})`);
-  const isXL = useMedia(`(min-width: ${theme.BREAKPOINTS_XL})`);
-
-  useEffect(() => {
-    if (isLG) setLength(30);
-    if (isXL) setLength(40);
-  }, [isLG, isXL]);
+  const length = useResponsiveTruncation();
 
   if (!npmjsPackage) return null;
 
