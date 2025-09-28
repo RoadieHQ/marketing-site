@@ -21,8 +21,8 @@ const labelFromCodeLocation = (codeLocation, length) => {
 };
 
 const GitHubChip = ({ codeLocation }) => {
-  if (!codeLocation) return null;
   const length = useResponsiveTruncation();
+  if (!codeLocation) return null;
 
   const label = labelFromCodeLocation(codeLocation, length);
   if (!label) return null;
