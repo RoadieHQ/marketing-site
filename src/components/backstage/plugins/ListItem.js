@@ -1,19 +1,106 @@
 import React from 'react';
+import { Link, Title } from 'components';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import InboxInIcon from '@heroicons/react/outline/InboxInIcon';
+import ChartBarIcon from '@heroicons/react/outline/ChartBarIcon';
+import ContentLoader from 'react-content-loader';
 
 import Attribution from './Attribution';
-import ListItemHeader from './ListItemHeader';
+import Logo from './Logo';
+
+const FooterInner = ({
+  npmData: {
+    latestVersionPublishedTime,
+    lastMonthDownloads,
+  },
+  npmDataLoadingState,
+}) => {
+  if (npmDataLoadingState === 'error') return null;
+
+  let latestVersionPublishedAgo;
+  if (latestVersionPublishedTime) {
+    latestVersionPublishedAgo = `${formatDistanceToNow(Date.parse(latestVersionPublishedTime))} ago`;
+  }
+
+  const downloadCount = lastMonthDownloads?.toLocaleString();
+
+  if (npmDataLoadingState === 'loaded') {
+    return (
+      <div className="flex place-content-between text-xs text-gray-500">
+        {latestVersionPublishedTime && (
+          <div title={latestVersionPublishedTime}>
+            <span>
+              <InboxInIcon className="inline-block w-4 mr-1" />
+            </span>
+            <span>Updated </span>
+            <span>{latestVersionPublishedAgo}</span>
+          </div>
+        )}
+
+        {downloadCount && (
+          <div>
+              <span>
+                <ChartBarIcon className="inline-block w-4 mr-1" />
+              </span>
+              <span>{downloadCount} monthly downloads</span>
+          </div>
+        )}
+      </div>
+    );
+  } else {
+    return (
+      <ContentLoader 
+        speed={2}
+        className="w-full"
+        height={20}
+        backgroundColor="#f3f3f3"
+        foregroundColor="#ecebeb"
+      >
+        <rect x="0" y="0" rx="3" ry="3" width="150" height="20" /> 
+        <rect x="230" y="0" rx="3" ry="3" width="300" height="20" /> 
+      </ContentLoader>
+    );
+  }
+};
 
 const ListItem = ({
   slug,
   logoImage,
   humanName,
   attributionText: text,
-  attributionUrl: href,
-}) => (
-  <div className="border-2 py-4 px-12 text-center" style={{ height: 350 }}>
-    <ListItemHeader slug={slug} logoImage={logoImage} humanName={humanName} />
-    <Attribution attribution={{ text, href }} />
-  </div>
-);
+  npmData,
+  lead,
+  npmDataLoadingState,
+}) => {
+  return (
+    <div className="border-2 hover:border-gray-500">
+      <Link to={`/backstage/plugins/${slug}/`} className="underline-none">
+        <div className="flex flex-col place-content-between" style={{ height: 250 }}>
+          <div>
+              <div className="flex p-4 mb-2">
+                <div className="mr-4">
+                  <Logo
+                    gatsbyImageData={logoImage.gatsbyImageData}
+                    alt={`${humanName} logo`}
+                    minHeight={80}
+                  />
+                </div>
+                <div className="pt-2 capitalize">
+                  <Title>{humanName}</Title>
+                  <Attribution attribution={{ text }} />
+                </div>
+              </div>
+
+            <p className="px-4 text-sm mb-4 text-gray-600">{lead}</p>
+          </div>
+
+          <div className="px-2 pt-2 mb-2 border-t-2">
+            <FooterInner npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+};
 
 export default ListItem;

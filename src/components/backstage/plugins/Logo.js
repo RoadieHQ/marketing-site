@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-const Logo = ({ gatsbyImageData, alt, minHeight = 200 }) => {
+const Logo = ({ gatsbyImageData, alt, className, minHeight = 200 }) => {
   let image = <img src="https://placehold.jp/140x140.png" alt="Placeholder" />;
   let height = minHeight;
 
@@ -12,8 +12,9 @@ const Logo = ({ gatsbyImageData, alt, minHeight = 200 }) => {
 
   return (
     <div
-      className="flex justify-center items-center"
-      style={{ height, visibility: gatsbyImageData ? 'visible' : 'hidden' }} >
+      style={{ height, visibility: gatsbyImageData ? 'visible' : 'hidden' }}
+      className={className}
+    >
       {image}
     </div>
   );

@@ -1,8 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 
 import { Page, SEO, Headline, Input, Lead, TextLink as Link } from 'components';
 import ListItem from 'components/backstage/plugins/ListItem';
+
+async function fetchNpmDataForList () {
+  let response;
+
+  try {
+    response = await fetch( '/.netlify/functions/fetchNpmDataForList');
+
+    if (!response.ok) {
+      return {
+        status: 'error',
+        data: {},
+      };
+    }
+  } catch (err) {
+    console.error(err);
+    return {
+      status: 'error',
+      data: {},
+    };
+  }
+
+  try {
+    const json = await response.json();
+    return {
+      status: 'loaded',
+      data: json.data,
+    };
+  } catch (err) {
+    console.warn(`Unparsable JSON returned from Netlify function. It's likely not available in this environment.`);
+    return {
+      status: 'error',
+      data: {},
+    };
+  }
+}
+
 
 const BackstagePlugins = ({ data }) => {
   const {
@@ -13,13 +49,29 @@ const BackstagePlugins = ({ data }) => {
   } = data;
 
   const [query, setQuery] = useState('');
+  const [npmData, setNpmData] = useState({});
+  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+
+  useEffect(() => {
+    (async () => {
+      setNpmDataLoadingState('loading');
+      const { status, data } = await fetchNpmDataForList();
+      setNpmDataLoadingState(status);
+      setNpmData(data);
+    })();
+  }, []);
+
+  const hydratedPlugins = plugins.edges.map(({ node }) => {
+    node.npmData = npmData[node.npmPackageName] || {};
+    return node;
+  });
 
   let filteredPlugins = [];
   if (query === '') {
-    filteredPlugins = plugins.edges;
+    filteredPlugins = hydratedPlugins;
   } else {
-    filteredPlugins = plugins.edges.filter(({ node }) => {
-      return node.humanName.toLowerCase().includes(query.toLowerCase());
+    filteredPlugins = hydratedPlugins.filter(({ humanName }) => {
+      return humanName.toLowerCase().includes(query.toLowerCase());
     });
   }
 
@@ -57,8 +109,13 @@ const BackstagePlugins = ({ data }) => {
         </div>
 
         <div className="grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-          {filteredPlugins.map(({ node }) => (
-            <ListItem key={node.slug} {...node} />
+          {filteredPlugins.map(({ slug, ...plugin }) => (
+            <ListItem
+              key={slug}
+              slug={slug}
+              {...plugin}
+              npmDataLoadingState={npmDataLoadingState}
+            />
           ))}
         </div>
       </Page>
@@ -67,7 +124,6 @@ const BackstagePlugins = ({ data }) => {
 };
 
 export default BackstagePlugins;
-
 
 export const pageQuery = graphql`
   query {
@@ -82,11 +138,18 @@ export const pageQuery = graphql`
         node {
           slug
           humanName
+          npmPackageName
           logoImage {
-            gatsbyImageData(layout: FIXED, width: 140)
+            gatsbyImageData(
+              height: 80,
+              width: 80,
+              placeholder: DOMINANT_COLOR,
+              resizingBehavior: PAD,
+            )
           }
           attributionText
           attributionUrl
+          lead
         }
       }
     }

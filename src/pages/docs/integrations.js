@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideFooter, Headline, Input, Lead, TextLink, Chip, TabInner } from 'components';
+import { SEO, SitewideFooter, Headline, Input, Lead, TextLink, Chip, TabInner, Link, Title } from 'components';
 import classnames from 'classnames';
 
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
-import ListItemHeader from 'components/backstage/plugins/ListItemHeader';
 import customPluginsLogoImagePath from '../../../content/assets/logos/code/code.png';
+import Logo from 'components/backstage/plugins/Logo';
 
 const INTEGRATION_TYPE_FILTERS = Object.freeze({
   OSS_PLUGIN: 'oss plugin',
@@ -31,7 +31,17 @@ const ListItem = ({
     }
     style={{ height: 350 }}
   >
-    <ListItemHeader slug={slug} logoImage={logoImage.childImageSharp} humanName={humanName} />
+    <Link to={slug} className="underline-none capitalize">
+      <Logo
+        className="flex justify-center items-center"
+        gatsbyImageData={logoImage.childImageSharp.gatsbyImageData}
+        alt={`${humanName} logo`}
+      />
+
+      <div className="pb-4">
+        <Title>{humanName}</Title>
+      </div>
+    </Link>
     <Chip label={integrationType} />
   </div>
 );
