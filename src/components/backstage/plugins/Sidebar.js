@@ -37,7 +37,20 @@ const MaintainersList = ({ npmData, npmDataLoadingState }) => {
   if (npmDataLoadingState === 'error') return null;
   let inner;
 
-  if (npmDataLoadingState === 'loading') {
+  if (npmDataLoadingState === 'loaded') {
+    inner = (
+      <>
+        <ul className="grid grid-cols-4 gap-3 pb-1">
+          {map(npmData.maintainers, ({ name, email }) => (
+            <Maintainer name={name} email={email} key={email} />
+          ))}
+        </ul>
+        <p className="italic text-gray-400">
+          {npmData.maintainersHelpText}
+        </p>
+      </>
+    );
+  } else {
     inner = (
       <ContentLoader 
         speed={2}
@@ -53,19 +66,6 @@ const MaintainersList = ({ npmData, npmDataLoadingState }) => {
         <circle cx="330" cy="35" r="35" />
         <circle cx="35" cy="125" r="35" />
       </ContentLoader>
-    );
-  } else {
-    inner = (
-      <>
-        <ul className="grid grid-cols-4 gap-3 pb-1">
-          {map(npmData.maintainers, ({ name, email }) => (
-            <Maintainer name={name} email={email} key={email} />
-          ))}
-        </ul>
-        <p className="italic text-gray-400">
-          {npmData.maintainersHelpText}
-        </p>
-      </>
     );
   }
 
@@ -122,38 +122,17 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
   if (npmDataLoadingState === 'error') return null;
   let inner;
 
-  if (npmDataLoadingState === 'loading') {
-    inner = (
-      <ContentLoader 
-        speed={2}
-        width={400}
-        height={240}
-        viewBox="0 0 400 240"
-        backgroundColor="#f3f3f3"
-        foregroundColor="#ecebeb"
-      >
-        <rect x="0" y="0" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="0" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="40" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="40" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="80" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="80" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="120" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="120" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="160" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="160" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="200" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="200" rx="3" ry="3" width="150" height="24" /> 
-      </ContentLoader>
-    );
-  } else {
-
+  if (npmDataLoadingState === 'loaded') {
     inner = (
       <div>
         <ul className="mb-3">
           <DetailsListItem
             label="Version"
             value={npmData.latestVersion}
+          />
+          <DetailsListItem
+            label="Downloads in last month"
+            value={npmData.lastMonthDownloads}
           />
           <DetailsListItem
             label="Last published"
@@ -183,6 +162,33 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
           <span>{npmData.lastSyncedAgo}</span>
         </span>
       </div>
+    );
+
+  } else {
+    inner = (
+      <ContentLoader 
+        speed={2}
+        width={400}
+        height={240}
+        viewBox="0 0 400 240"
+        backgroundColor="#f3f3f3"
+        foregroundColor="#ecebeb"
+      >
+        <rect x="0" y="0" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="0" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="40" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="40" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="80" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="80" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="120" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="120" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="160" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="160" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="200" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="200" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="240" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="220" y="240" rx="3" ry="3" width="150" height="24" /> 
+      </ContentLoader>
     );
   }
 
@@ -219,10 +225,12 @@ const parseNpmData = (npmData) => {
     maintainersHelpText += `...along with ${extraMaintainers} others. `
   }
 
+  const numberOfVersions = npmData.numberOfVersions?.toLocaleString();
+  const lastMonthDownloads = npmData.lastMonthDownloads?.toLocaleString();
+
   return {
     ...pick(npmData, [
         'latestVersion',
-        'numberOfVersions',
         'license',
         'maintainers',
       ]),
@@ -231,11 +239,20 @@ const parseNpmData = (npmData) => {
     latestVersionPublishedAgo,
     firstPublishedAgo,
     lastSyncedAgo,
+    lastMonthDownloads,
+    numberOfVersions,
     maintainersHelpText,
   };
 };
 
-const Sidebar = ({ plugin }) => {
+const Sidebar = ({
+  plugin: {
+    availableOnRoadie,
+    roadieDocsPath,
+    npmPackageName,
+    codeLocation,
+  },
+}) => {
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
 
@@ -243,27 +260,27 @@ const Sidebar = ({ plugin }) => {
     (async () => {
       setNpmDataLoadingState('loading');
       const { status, data } = await fetchNpmDataByName({
-        packageName: plugin.npmPackageName,
+        packageName: npmPackageName,
       });
       setNpmDataLoadingState(status);
       setNpmData(parseNpmData(data));
     })();
-  }, [plugin.npmPackageName]);
+  }, [npmPackageName]);
 
   return (
     <div>
       <div className="mb-10">
         <div className="mb-3">
           <RoadieDocsChip
-            availableOnRoadie={plugin.availableOnRoadie} 
-            roadieDocsPath={plugin.roadieDocsPath}
+            availableOnRoadie={availableOnRoadie} 
+            roadieDocsPath={roadieDocsPath}
           />
         </div>
 
         <div className="mb-3">
-          <GitHubChip codeLocation={plugin.codeLocation} />
+          <GitHubChip codeLocation={codeLocation} />
         </div>
-        <NpmChip npmjsPackage={plugin.npmPackageName} />
+        <NpmChip npmjsPackage={npmPackageName} />
       </div>
 
       <div className="mb-10">

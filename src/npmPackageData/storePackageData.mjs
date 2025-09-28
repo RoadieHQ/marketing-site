@@ -1,5 +1,6 @@
 import reduce from 'lodash/reduce.js';
 import isArray from 'lodash/isArray.js';
+import find from 'lodash/find.js';
 
 import getRoadieStore from './getRoadieStore.mjs';
 import retrievePackageNames from './retrievePackageNames.mjs';
@@ -7,6 +8,7 @@ import stripPackageData from './stripPackageData.mjs';
 
 const NPM_REGISTRY_HOSTNAME = 'https://registry.npmjs.org/';
 const ALL_PACKAGE_DATA_STORE_KEY = `all-backstage-plugin-package-data`;
+const NPM_REGISTRY_API = 'https://api.npmjs.org/'
 
 const storePackageData = async () => {
   let listOfNpmPackages = await retrievePackageNames();
@@ -18,12 +20,33 @@ const storePackageData = async () => {
 
   console.log('Retrieved', listOfNpmPackages.length, 'packages names from blob store.');
 
+  // Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md
   const npmResponses = await Promise.all(listOfNpmPackages.map((packageName) => (
     fetch(`${NPM_REGISTRY_HOSTNAME}${packageName}`)
   )));
 
   const npmData = await Promise.all(npmResponses.map((resp) => resp.json()));
-  const strippedNpmData = npmData.map((data) => stripPackageData(data));
+
+  // Docs: https://github.com/npm/registry/blob/main/docs/download-counts.md
+  //
+  // It's possible to send a comma separated list of packages to this endpoint to get
+  // download stats for all of them, but it doesn't support namespaced packages at the 
+  // moment. Many backstage packages are namespaced, like @roadie... or @backstage...
+  //
+  // This will get rate limited at some point as the plugins directory grows.
+  const statsResponses = await Promise.all(listOfNpmPackages.map((packageName) => (
+    fetch(`${NPM_REGISTRY_API}downloads/point/last-month/${packageName}`)
+  )));
+
+  const statsData = await Promise.all(statsResponses.map((resp) => resp.json()));
+
+  const strippedNpmData = npmData
+    .map((data) => stripPackageData(data))
+    .map((data) => {
+      const statsDataForPackage = find(statsData, { package: data.name });
+      if (statsDataForPackage) data.lastMonthDownloads = statsDataForPackage.downloads;
+      return data;
+    });
 
   const dataAsObject = reduce(strippedNpmData, (obj, packageData) => {
     obj[packageData.name] = packageData;

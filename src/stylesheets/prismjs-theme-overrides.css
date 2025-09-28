@@ -23,8 +23,15 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 /*
- * Fixing some ugly styling on the code copy button
+ * Overriding some ugly styling on the code copy button. The default styles are here:
+ * https://github.com/thundermiracle/gatsby-remark-prismjs-copy-button/blob/main/src/styles.css
  */
+
+@media (max-width: 600px) {
+  .gatsby-remark-prismjs-copy-button {
+    background: none !important;
+  }
+}
 
 .gatsby-remark-prismjs-copy-button {
   color: #515359 !important;
