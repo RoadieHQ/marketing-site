@@ -11,32 +11,40 @@ import Logo from './Logo';
 const FooterInner = ({
   npmData: {
     latestVersionPublishedTime,
+    lastMonthDownloads,
   },
   npmDataLoadingState,
 }) => {
   if (npmDataLoadingState === 'error') return null;
+
   let latestVersionPublishedAgo;
   if (latestVersionPublishedTime) {
     latestVersionPublishedAgo = `${formatDistanceToNow(Date.parse(latestVersionPublishedTime))} ago`;
   }
 
+  const downloadCount = lastMonthDownloads?.toLocaleString();
+
   if (npmDataLoadingState === 'loaded') {
     return (
       <div className="flex place-content-between text-xs text-gray-500">
-        <div title={latestVersionPublishedTime}>
-          <span>
-            <InboxInIcon className="inline-block w-4 mr-1" />
-          </span>
-          <span>Updated </span>
-          <span>{latestVersionPublishedAgo}</span>
-        </div>
+        {latestVersionPublishedTime && (
+          <div title={latestVersionPublishedTime}>
+            <span>
+              <InboxInIcon className="inline-block w-4 mr-1" />
+            </span>
+            <span>Updated </span>
+            <span>{latestVersionPublishedAgo}</span>
+          </div>
+        )}
 
-        <div>
-          <span>
-            <ChartBarIcon className="inline-block w-4 mr-1" />
-          </span>
-          <span>45 monthly downloads</span>
-        </div>
+        {downloadCount && (
+          <div>
+              <span>
+                <ChartBarIcon className="inline-block w-4 mr-1" />
+              </span>
+              <span>{downloadCount} monthly downloads</span>
+          </div>
+        )}
       </div>
     );
   } else {
@@ -67,7 +75,7 @@ const ListItem = ({
   return (
     <div className="border-2 hover:border-gray-500">
       <Link to={`/backstage/plugins/${slug}/`} className="underline-none">
-        <div className="flex flex-col place-content-between" style={{ height: 240 }}>
+        <div className="flex flex-col place-content-between" style={{ height: 250 }}>
           <div>
               <div className="flex p-4 mb-2">
                 <div className="mr-4">

@@ -13,8 +13,9 @@ const NPM_REGISTRY_API = 'https://api.npmjs.org/'
 // We want to store as little data as possible to use on /backstage/plugins/ so that the 
 // page renderes as quickly as possible. The more data we store, the more we have to download
 // to the browser.
-const extraStripPackageData = (strippedData) => ({
-  latestVersionPublishedTime: strippedData.time[strippedData.latestVersion],
+const extraStripPackageData = ({ time, latestVersion, lastMonthDownloads, }) => ({
+  latestVersionPublishedTime: time[latestVersion],
+  lastMonthDownloads,
 });
 
 const storePackageData = async () => {
