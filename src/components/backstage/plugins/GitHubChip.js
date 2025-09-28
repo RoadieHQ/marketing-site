@@ -3,12 +3,26 @@ import React from 'react';
 import { Chip, Link } from 'components';
 import { GitHubIcon } from 'components/icons';
 
+const labelFromCodeLocation = (codeLocation) => {
+  try {
+    const { pathname } = new URL(codeLocation);
+    const segments = pathname.split('/').filter(Boolean);
+    return segments[1] || 'GitHub';
+  } catch (err) {
+    // The only error seen in the wold here is the 'new URL' constructor blowing up because
+    // the URL is invalid because of a typo or something else. This will throw a TypeError
+    // if it happens. There's no point trying to render a GitHUb chip for an invalid URL so we
+    // should just render nothing if that happens.
+    console.log(err);
+    return null;
+  }
+};
+
 const GitHubChip = ({ codeLocation }) => {
   if (!codeLocation) return null;
 
-  const { pathname } = new URL(codeLocation);
-  const segments = pathname.split('/').filter(Boolean);
-  const label = segments[1] || 'GitHub';
+  const label = labelFromCodeLocation(codeLocation);
+  if (!label) return null;
 
   return (
     <Link to={codeLocation} className="inline-block">

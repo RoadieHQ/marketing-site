@@ -28,6 +28,12 @@ const storePackageData = async () => {
   const npmData = await Promise.all(npmResponses.map((resp) => resp.json()));
 
   // Docs: https://github.com/npm/registry/blob/main/docs/download-counts.md
+  //
+  // It's possible to send a comma separated list of packages to this endpoint to get
+  // download stats for all of them, but it doesn't support namespaced packages at the 
+  // moment. Many backstage packages are namespaced, like @roadie... or @backstage...
+  //
+  // This will get rate limited at some point as the plugins directory grows.
   const statsResponses = await Promise.all(listOfNpmPackages.map((packageName) => (
     fetch(`${NPM_REGISTRY_API}downloads/point/last-month/${packageName}`)
   )));
