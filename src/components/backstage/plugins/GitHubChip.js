@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import truncate from 'lodash/truncate';
-import useMedia from 'react-use/lib/useMedia';
+import useResponsiveTruncation from '../../../hooks/useResponsiveTruncation';
 
 import { Chip, Link } from 'components';
 import { GitHubIcon } from 'components/icons';
-import theme from '../../../theme';
 
 const labelFromCodeLocation = (codeLocation, length) => {
   try {
@@ -22,18 +21,8 @@ const labelFromCodeLocation = (codeLocation, length) => {
 };
 
 const GitHubChip = ({ codeLocation }) => {
-  const [length, setLength] = useState(20);
-  const isMD = useMedia(`(min-width: ${theme.BREAKPOINTS_MD})`);
-  const isLG = useMedia(`(min-width: ${theme.BREAKPOINTS_LG})`);
-  const isXL = useMedia(`(min-width: ${theme.BREAKPOINTS_XL})`);
-
-  useEffect(() => {
-    if (isMD) setLength(20);
-    if (isLG) setLength(30);
-    if (isXL) setLength(40);
-  }, [isLG, isXL]);
-
   if (!codeLocation) return null;
+  const length = useResponsiveTruncation();
 
   const label = labelFromCodeLocation(codeLocation, length);
   if (!label) return null;
