@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import sortBy from 'lodash/sortBy';
+import classnames from 'classnames';
 
-import { Page, SEO, Headline, Input, Lead, TextLink as Link } from 'components';
+import { Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
 import ListItem from 'components/backstage/plugins/ListItem';
 
 const SORT_ORDERS = [{
@@ -64,6 +65,34 @@ const hydratePlugin = (plugin, npmData) => {
   return plugin;
 };
 
+const filterPlugins = ({
+  plugins,
+  query,
+  sortOrder,
+  npmDataLoadingState,
+}) => {
+  let filteredPlugins = [];
+  if (query === '') {
+    filteredPlugins = plugins;
+  } else {
+    filteredPlugins = plugins.filter(({ humanName }) => {
+      return humanName.toLowerCase().includes(query.toLowerCase());
+    });
+  }
+
+  if (npmDataLoadingState === 'loaded') {
+    if (sortOrder.value === 'name') {
+      filteredPlugins = sortBy(filteredPlugins, ['humanName']);
+    } else if (sortOrder.value === 'popularity') {
+      filteredPlugins = sortBy(filteredPlugins, ['npmData.lastMonthDownloads']).reverse();
+    } else if (sortOrder.value === 'recent') {
+      filteredPlugins = sortBy(filteredPlugins, ['npmData.latestVersionPublishedTime']).reverse();
+    }
+  } 
+
+  return filteredPlugins;
+};
+
 const BackstagePlugins = ({ data }) => {
   const {
     plugins,
@@ -86,35 +115,16 @@ const BackstagePlugins = ({ data }) => {
     })();
   }, []);
 
-  function onSortOrderInputChange(e) {
-    const newSortOrder = { ...SORT_ORDERS.find(({ value }) => value === e.target.value) };
-    setSortOrder(newSortOrder);
-  }
-
   const hydratedPlugins = plugins.edges.map(({ node }) => (
     hydratePlugin(node, npmData)
   ));
 
-  console.log('hydratedPlugins', hydratedPlugins);
-
-  let filteredPlugins = [];
-  if (query === '') {
-    filteredPlugins = hydratedPlugins;
-  } else {
-    filteredPlugins = hydratedPlugins.filter(({ humanName }) => {
-      return humanName.toLowerCase().includes(query.toLowerCase());
-    });
-  }
-
-  if (npmDataLoadingState === 'loaded') {
-    if (sortOrder.value === 'name') {
-      filteredPlugins = sortBy(filteredPlugins, ['humanName']);
-    } else if (sortOrder.value === 'popularity') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.lastMonthDownloads']).reverse();
-    } else if (sortOrder.value === 'recent') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.latestVersionPublishedTime']).reverse();
-    }
-  } 
+  const filteredPlugins = filterPlugins({
+    plugins: hydratedPlugins,
+    query,
+    sortOrder,
+    npmDataLoadingState,
+  });
 
   return (
     <>
@@ -148,24 +158,26 @@ const BackstagePlugins = ({ data }) => {
                 />
               </div>
 
-              {npmDataLoadingState === 'loaded' && (
-                <div className="text-right">
-                  <label htmlFor="sort-order" className="mr-2">
-                    Sort by:
-                  </label>
+              <div className={classnames('text-right', {
+                'visible': npmDataLoadingState === 'loaded',
+                'invisible': npmDataLoadingState !== 'loaded',
+              })}>
+                <label htmlFor="sort-order" className="mr-2">
+                  Sort by:
+                </label>
 
-                  <select
-                    value={sortOrder.value}
-                    onChange={onSortOrderInputChange}
-                    name="sort-order"
-                    className="rounded-md shadow-sm"
-                  >
-                    {SORT_ORDERS.map(({ value, label }) => (
-                      <option value={value} key={value}>{label}</option>
-                    ))}
-                  </select>
-                </div>
-              )}
+                <Select
+                  value={sortOrder.value}
+                  onChange={setSortOrder}
+                  options={SORT_ORDERS}
+                  name="sort-order"
+                  fullWidth={false}
+                >
+                  {SORT_ORDERS.map(({ value, label }) => (
+                    <option value={value} key={value}>{label}</option>
+                  ))}
+                </Select>
+              </div>
             </form>
           </div>
         </div>

@@ -84,6 +84,7 @@ const RequestDemo = ({ data, location }) => {
                 }}
               />
             </div>
+
             <div className="mt-5 p-5 lg:pl-10 lg:mt-10">
               <picture>
                 <source srcSet={snykLogo} type="image/webp" />
