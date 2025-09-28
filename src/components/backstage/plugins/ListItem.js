@@ -17,32 +17,24 @@ const FooterInner = ({
 }) => {
   if (npmDataLoadingState === 'error') return null;
 
-  let latestVersionPublishedAgo;
-  if (latestVersionPublishedTime) {
-    latestVersionPublishedAgo =
-      `${formatDistanceToNowStrict(Date.parse(latestVersionPublishedTime))} ago`;
-  }
-
-  const downloadCount = lastMonthDownloads?.toLocaleString();
-
   if (npmDataLoadingState === 'loaded') {
     return (
       <div className="flex place-content-between text-xs text-gray-500">
         {latestVersionPublishedTime && (
-          <div title={latestVersionPublishedTime} className="flex mr-6">
+          <div title={latestVersionPublishedTime.toISOString()} className="flex mr-6">
             <span>
               <InboxInIcon className="inline-block w-4 mr-1" />
             </span>
-            <span>Updated {latestVersionPublishedAgo}</span>
+            <span>Updated {formatDistanceToNowStrict(latestVersionPublishedTime)} ago</span>
           </div>
         )}
 
-        {downloadCount && (
+        {lastMonthDownloads && (
           <div className="flex">
-              <span>
-                <ChartBarIcon className="inline-block w-4 mr-1" />
-              </span>
-              <span>{downloadCount} monthly downloads</span>
+            <span>
+              <ChartBarIcon className="inline-block w-4 mr-1" />
+            </span>
+            <span>{lastMonthDownloads.toLocaleString()} monthly downloads</span>
           </div>
         )}
       </div>

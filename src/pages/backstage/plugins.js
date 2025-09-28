@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
+import sortBy from 'lodash/sortBy';
 
 import { Page, SEO, Headline, Input, Lead, TextLink as Link } from 'components';
 import ListItem from 'components/backstage/plugins/ListItem';
+
+const SORT_ORDERS = [{
+  label: 'Name',
+  value: 'name',
+}, {
+  label: 'Popularity',
+  value: 'popularity',
+}, {
+  label: 'Recently Updated',
+  value: 'recent',
+}];
 
 async function fetchNpmDataForList () {
   let response;
@@ -39,6 +51,18 @@ async function fetchNpmDataForList () {
   }
 }
 
+const hydratePlugin = (plugin, npmData) => {
+  const pluginNpmData = npmData[plugin.npmPackageName];
+  if (pluginNpmData) {
+    plugin.npmData = {
+      lastMonthDownloads: pluginNpmData.lastMonthDownloads,
+      latestVersionPublishedTime: new Date(Date.parse(pluginNpmData.latestVersionPublishedTime)),
+    };
+  } else {
+    plugin.npmData = {};
+  }
+  return plugin;
+};
 
 const BackstagePlugins = ({ data }) => {
   const {
@@ -49,6 +73,7 @@ const BackstagePlugins = ({ data }) => {
   } = data;
 
   const [query, setQuery] = useState('');
+  const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
 
@@ -61,10 +86,16 @@ const BackstagePlugins = ({ data }) => {
     })();
   }, []);
 
-  const hydratedPlugins = plugins.edges.map(({ node }) => {
-    node.npmData = npmData[node.npmPackageName] || {};
-    return node;
-  });
+  function onSortOrderInputChange(e) {
+    const newSortOrder = { ...SORT_ORDERS.find(({ value }) => value === e.target.value) };
+    setSortOrder(newSortOrder);
+  }
+
+  const hydratedPlugins = plugins.edges.map(({ node }) => (
+    hydratePlugin(node, npmData)
+  ));
+
+  console.log('hydratedPlugins', hydratedPlugins);
 
   let filteredPlugins = [];
   if (query === '') {
@@ -74,6 +105,16 @@ const BackstagePlugins = ({ data }) => {
       return humanName.toLowerCase().includes(query.toLowerCase());
     });
   }
+
+  if (npmDataLoadingState === 'loaded') {
+    if (sortOrder.value === 'name') {
+      filteredPlugins = sortBy(filteredPlugins, ['humanName']);
+    } else if (sortOrder.value === 'popularity') {
+      filteredPlugins = sortBy(filteredPlugins, ['npmData.lastMonthDownloads']).reverse();
+    } else if (sortOrder.value === 'recent') {
+      filteredPlugins = sortBy(filteredPlugins, ['npmData.latestVersionPublishedTime']).reverse();
+    }
+  } 
 
   return (
     <>
@@ -96,14 +137,35 @@ const BackstagePlugins = ({ data }) => {
 
           <div className="mb-2">
             <form className="lg:w-96">
-              <Input
-                type="text"
-                onChange={setQuery}
-                value={query}
-                aria-label="Search"
-                placeholder="Search"
-                fullWidth
-              />
+              <div className="mb-2">
+                <Input
+                  type="text"
+                  onChange={setQuery}
+                  value={query}
+                  aria-label="Search"
+                  placeholder="Search"
+                  fullWidth
+                />
+              </div>
+
+              {npmDataLoadingState === 'loaded' && (
+                <div className="text-right">
+                  <label htmlFor="sort-order" className="mr-2">
+                    Sort by:
+                  </label>
+
+                  <select
+                    value={sortOrder.value}
+                    onChange={onSortOrderInputChange}
+                    name="sort-order"
+                    className="rounded-md shadow-sm"
+                  >
+                    {SORT_ORDERS.map(({ value, label }) => (
+                      <option value={value} key={value}>{label}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
             </form>
           </div>
         </div>
