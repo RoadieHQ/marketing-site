@@ -175,7 +175,7 @@ const RequestDemoCallToAction = ({
         </div>
 
         <div className="lg:flex mb-10">
-          <div className="lg:w-1/2 mr-4">
+          <div className="mb-10 lg:mb-0 lg:w-1/2 lg:mr-4">
             <EmailField
               label="Work email address*"
               type="email"
@@ -187,7 +187,7 @@ const RequestDemoCallToAction = ({
             />
           </div>
 
-          <div className="lg:w-1/2 mt-4 ml-4">
+          <div className="lg:w-1/2 lg:mt-4 lg:ml-4">
             <ScmToolSelect
               label="Primary source code host*"
               onChange={setScmTool}

@@ -8,6 +8,6 @@ export { default as HelpText } from './HelpText';
 export { EmailField } from './EmailField';
 export { default as SubscribeToNewsletterSwitch } from './SubscribeToNewsletterSwitch';
 export { default as ScmToolRadioGroup } from './ScmToolRadioGroup';
-export { default as NumberOfEngineers } from './NumberOfEngineers';
 export { default as Recaptcha } from './Recaptcha';
+export { default as Select } from './Select';
 export { INPUT_COLORS as INPUT_COLORS } from './input-colors';
