@@ -89,7 +89,7 @@ spec:
 
 Once this YAML file is committed and available on GitHub, you can make Roadie Backstage aware of it using the catalog importer.
 
-Copy the URL of the YAML spec on GitHub, paste it into the catalog importer at `https://your-company.roadie.so/import/entity` and click Analyze.
+Copy the URL of the YAML spec on GitHub, paste it into the catalog importer at `https://<tenant-name>.roadie.so/import/entity` and click Analyze.
 
 ![an input with a GitHub URL pasted into it. There is a button labelled analyze](./catalog-import-select-url.webp)
 

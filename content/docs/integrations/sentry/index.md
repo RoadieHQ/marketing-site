@@ -53,7 +53,7 @@ Copy the token that Sentry displays.
 
 ### Step 3: Add the token to Roadie
 
-Visit `https://your-company.roadie.so/administration/sentry` and add the token to the `SENTRY_TOKEN` secret. 
+Visit `https://<tenant-name>.roadie.so/administration/sentry` and add the token to the `SENTRY_TOKEN` secret. 
 
 Wait a few moments for the secret to be applied.
 
