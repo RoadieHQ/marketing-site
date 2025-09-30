@@ -7,6 +7,7 @@ const HostTabs = ({ docsLink }) => (
     <span className="inline-block p-4 text-blueroadie font-bold bg-gray-elusivegray border-2 border-gray-200 border-b-elusivegray rounded-t-lg mb-[-2px]">
       Self-hosted Backstage
     </span>
+
     {docsLink && !docsLink.includes('null') && (
       <Link
         to={docsLink}

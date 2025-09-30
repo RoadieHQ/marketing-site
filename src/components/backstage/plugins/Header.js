@@ -26,6 +26,7 @@ const Header = ({
           minHeight={80}
           gatsbyImageData={logoImage.gatsbyImageData}
           alt={`${humanName} logo`}
+          className="flex items-center"
         />
       </div>
 

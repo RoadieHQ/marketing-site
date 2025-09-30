@@ -75,6 +75,7 @@ const ListItem = ({
                     gatsbyImageData={logoImage.gatsbyImageData}
                     alt={`${humanName} logo`}
                     minHeight={80}
+                    className="flex items-center"
                   />
                 </div>
                 <div className="pt-2 capitalize">
