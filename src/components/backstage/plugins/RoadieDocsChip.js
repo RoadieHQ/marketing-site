@@ -3,6 +3,8 @@ import React from 'react';
 import { Chip, Link } from 'components';
 import { RoadieRacksIcon } from 'components/icons';
 
+export const fullRoadieDocsPath = ({ roadieDocsPath }) => `/docs${roadieDocsPath}`;
+
 const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
   if (!availableOnRoadie) return null;
 
@@ -15,7 +17,7 @@ const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
 
   if (!roadieDocsPath) return chip;
   return (
-    <Link to={`/docs${roadieDocsPath}`} className="inline-block">
+    <Link to={fullRoadieDocsPath(roadieDocsPath)} className="inline-block">
       {chip}
     </Link>
   );
