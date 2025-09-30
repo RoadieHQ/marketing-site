@@ -25,7 +25,7 @@ Create a [personal access token](https://docs.github.com/en/authentication/keepi
 
 Go to the secrets configuration page in Backstage:
 
-`https://<your-tenant>.roadie.so/administration/settings/secrets`
+`https://<tenant-name>.roadie.so/administration/settings/secrets`
 
 And add the secrets for `GHE_TOKEN`, `GHE_CLIENT_ID` and `GHE_CLIENT_SECRET`.
 

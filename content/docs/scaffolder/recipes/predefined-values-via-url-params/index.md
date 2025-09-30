@@ -9,7 +9,7 @@ If you have the need to more strictly control which values template users can in
 ### Structure
 
 The full URL using query parameters in Roadie Scaffolder is as follows: 
-* `https://<your-tenant>.roadie.so/templates/templates/default/<template name>?formData={"title"%3A"query-param-title"}`
+* `https://<tenant-name>.roadie.so/templates/templates/default/<template name>?formData={"title"%3A"query-param-title"}`
 
 The query parameters `?formData={"title"%3A"Title from query params"}` in the end of the URL allow you to automatically fill in values of the form. Please see the below table for explanation of individual tokens in the query param.
 

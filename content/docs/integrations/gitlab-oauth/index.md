@@ -28,7 +28,7 @@ This guide covers setting up GitLab OAuth authentication, including creating the
 2. Click **Add new application**
 3. Fill in the application details:
    - **Name**: Enter a descriptive name like "Roadie OAuth"
-   - **Redirect URI**: Enter your Roadie callback URL: `https://<your-tenant>.roadie.so/api/auth/gitlab/handler/frame`
+   - **Redirect URI**: Enter your Roadie callback URL: `https://<tenant-name>.roadie.so/api/auth/gitlab/handler/frame`
    - **Scopes**: Select the following scopes:
      - `api` - Full read/write access to the API
      - `read_api` - Read access to the API
@@ -44,7 +44,7 @@ This guide covers setting up GitLab OAuth authentication, including creating the
 
 ## Step 2: Configure Secrets in Roadie
 
-1. Navigate to your Roadie secrets page: `https://<your-tenant>.roadie.so/administration/settings/secrets`
+1. Navigate to your Roadie secrets page: `https://<tenant-name>.roadie.so/administration/settings/secrets`
 
 2. Locate and update the following secrets:
    - **AUTH_GITLAB_CLIENT_ID**: Click the edit icon and enter the Application ID from Step 1
@@ -58,7 +58,7 @@ This guide covers setting up GitLab OAuth authentication, including creating the
 
 If you're using a self-hosted GitLab instance, you need to configure the hostname to use:
 
-1. Navigate to your Roadie GitLab integration settings: `https://<your-tenant>.roadie.so/administration/settings/integrations/gitlab`
+1. Navigate to your Roadie GitLab integration settings: `https://<tenant-name>.roadie.so/administration/settings/integrations/gitlab`
 
 2. In the **GitLab OAuth Configuration** section, locate the **GitLab Host** field
 
@@ -81,7 +81,7 @@ If you're using a self-hosted GitLab instance, you need to configure the hostnam
 ### Common Issues
 
 **"Invalid redirect URI" error**
-- Ensure the redirect URI in your GitLab OAuth app matches: `https://<your-tenant>.roadie.so/api/auth/gitlab/handler/frame` replacing `<your-tenant>` with your tenant name.
+- Ensure the redirect URI in your GitLab OAuth app matches: `https://<tenant-name>.roadie.so/api/auth/gitlab/handler/frame` replacing `<your-tenant>` with your tenant name.
 - Remove any trailing slashes
 - Verify the tenant name is correct
 

@@ -53,7 +53,7 @@ This way Roadie does not need to have knowledge or access of your infrastructure
 
 ## Setup Broker Server
 
-1. Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/broker` and enter the CIDR range of the system you wish to connect your Roadie Tenant’s Broker Server to. Next enter the Broker Token you wish to use to authenticate the connection. This token will be used in your `accept.json` file at Client configuration.
+1. Navigate to `https://<tenant-name>.roadie.so/administration/settings/integrations/broker` and enter the CIDR range of the system you wish to connect your Roadie Tenant’s Broker Server to. Next enter the Broker Token you wish to use to authenticate the connection. This token will be used in your `accept.json` file at Client configuration.
 
 > Note: configuration is case insensitive and will automatically be normalised, so avoid uppercase characters. For example, if 'testRoadie' is used that token name will be constructed in the broker server as test-roadie, without clear error reporting. Full documentation can be found here: https://github.com/snyk/broker/blob/master/README.npm.md#configuration
 
@@ -92,7 +92,7 @@ docker run \\
   --env CA_CERT=/var/lib/certs/ca.cert \\
   --env K8S_SERVICE_ACCOUNT_TOKEN=service-account-token \\
   --env BROKER_TOKEN=kube-api \\
-  --env BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \\
+  --env BROKER_SERVER_URL=https://<tenant-name>.broker.roadie.so \\
   roadiehq/broker:kubernetes
 ```
 
@@ -110,7 +110,7 @@ npm install --global snyk-broker
 
 ```bash
 BROKER_TOKEN=test \\
-BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \\
+BROKER_SERVER_URL=https://<tenant-name>.broker.roadie.so \\
 PREFLIGHT_CHECKS_ENABLED=false \\
 npx snyk-broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 
@@ -123,7 +123,7 @@ In order to do something meaningful with the broker client you will need to conf
 ```bash
 ACCEPT=accept.json
 BROKER_TOKEN=test \\
-BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \\
+BROKER_SERVER_URL=https://<tenant-name>.broker.roadie.so \\
 PREFLIGHT_CHECKS_ENABLED=false \\
 broker --disableBodyVarsSubstitution --disableHeaderVarsSubstitution
 

@@ -101,7 +101,7 @@ The AWS Cost Insights implementation uses the same AWS credential chain as other
 
 ![aws-accounts-config.png](aws-accounts-config.png)
 
-Note that Roadie dictates that the assumable role must have a name starting with `roadie-<your-tenant-name>` for security reasons. 
+Note that Roadie dictates that the assumable role must have a name starting with `roadie-<tenant-name>` for security reasons. 
 
 
 The needed policy for the role should contain at least the following permissions:

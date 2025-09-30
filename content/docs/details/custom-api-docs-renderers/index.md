@@ -43,7 +43,7 @@ export {
 
 Navigate to the custom plugins page `/administration/custom-plugins` and click "Add new plugin". Then enter your plugin's
 details.
-- The plugin package should match the name in your plugin's package.json matching this convention `@<tenant>-roadie/<your plugin>`.
+- The plugin package should match the name in your plugin's package.json matching this convention `@<tenant-name>-roadie/<your plugin>`.
 - The plugin name should be the name of the exported plugin variable (e.g. customApiDefinitionPlugin above)
 
 Then click "Add Component" and set the type to ApiDocsWidget and the name to the name of the exported custom renderer

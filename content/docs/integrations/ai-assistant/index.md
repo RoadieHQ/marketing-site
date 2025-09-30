@@ -57,7 +57,7 @@ To enable the AI Assistant to use the desired LLM provider and language model, c
 
 ## Step 3: Indexing Catalog and Technical Documents
 
-The AI Assistant requires access to specific entities and documentation to provide context-aware answers. Currently no entities or documentation is automatically indexed. You can index tech-docs either manually within the docs main page (`https://<your-tenant>.roadie.so/docs`) or via selecting the wanted entities using the entity filter within the configuration section. 
+The AI Assistant requires access to specific entities and documentation to provide context-aware answers. Currently no entities or documentation is automatically indexed. You can index tech-docs either manually within the docs main page (`https://<tenant-name>.roadie.so/docs`) or via selecting the wanted entities using the entity filter within the configuration section. 
 
 ### 3.1 Select type of content to be indexed
 

@@ -40,13 +40,13 @@ In your Azure DevOps navigate to the User Settings > Tokens page in `https://dev
 
 ##  Step 3: Store Azure access token as a secret in Roadie
 
-Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` and locate a secret with a name `AZURE_TOKEN`. Update the value of this secret with the token created in the step above.
+Navigate to `https://<tenant-name>.roadie.so/administration/settings/secrets` and locate a secret with a name `AZURE_TOKEN`. Update the value of this secret with the token created in the step above.
 
 The updating of secrets within the Roadie application takes a few minutes. You will see the status of the secret change when it becomes available.
 
 ##  Step 4: Configure your Roadie instance to use Azure DevOps as a source to retrieve entities
 
-Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/azure`.
+Navigate to `https://<tenant-name>.roadie.so/administration/settings/integrations/azure`.
    ![Azure Autodiscovery options](./azure-autodiscovery.webp)
 
 Add a provider configuration pointing to your entities within your Azure DevOps organization and project. The updating of provider configurations within the Roadie application takes a few minutes. When the update cycle is complete, you should be able to find your discovered entities in the catalog and the [locations log](/docs/details/location-management/#managing-locations).
