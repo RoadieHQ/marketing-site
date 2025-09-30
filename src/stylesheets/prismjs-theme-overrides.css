@@ -3,6 +3,8 @@
  */
 code[class*="language-"], pre[class*="language-"] {
   font-family: Soehne-Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  /* Make code block font about the same size as prose. */
+  font-size: 0.9rem;
 }
 
 /*
