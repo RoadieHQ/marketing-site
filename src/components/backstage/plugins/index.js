@@ -9,4 +9,3 @@ export { default as RoadieDocsChip } from './RoadieDocsChip';
 export { default as GitHubChip } from './GitHubChip';
 export { default as NpmChip } from './NpmChip';
 export { default as GravatarImage } from './GravatarImage';
-export { default as HostTabs } from './HostTabs';

@@ -16,26 +16,26 @@ import {
   PluginCTA,
   PlaceholderBody,
   Sidebar,
-  HostTabs,
 } from 'components/backstage/plugins';
 import { fullRoadieDocsPath } from 'components/backstage/plugins/RoadieDocsChip';
 
 const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
   const disclaimer = 'These instructions apply to self-hosted Backsgage only.';
+
   if (availableOnRoadie && roadieDocsPath) {
     return (
       <p className="prose prose-primary max-w-none">
-        {disclaimer}
-      </p>
-    );
-  } else {
-    return (
-      <p className="prose prose-primary max-w-none">
-        {disclaimer} To use this plugin on Roadie,
-        <Link to={fullRoadieDocsPath(roadieDocsPath)}>visit the docs.</Link>
+        {disclaimer} To use this plugin on Roadie,{' '}
+        <Link color="primary" to={fullRoadieDocsPath(roadieDocsPath)}>visit the docs</Link>.
       </p>
     );
   }
+
+  return (
+    <p className="prose prose-primary max-w-none">
+      {disclaimer}
+    </p>
+  );
 }
 
 const Body = ({
@@ -79,10 +79,12 @@ const Body = ({
             <Title>Installation steps</Title>
           </div>
 
-          <RoadieDocsLink
-            availableOnRoadie={availableOnRoadie}
-            roadieDocsPath={roadieDocsPath}
-          />
+          <div className="mb-4">
+            <RoadieDocsLink
+              availableOnRoadie={availableOnRoadie}
+              roadieDocsPath={roadieDocsPath}
+            />
+          </div>
 
           <div className="mb-10">
             <div
