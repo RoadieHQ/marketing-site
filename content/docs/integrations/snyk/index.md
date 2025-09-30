@@ -42,7 +42,7 @@ This can be found under the settings page that is visible when you login to Snyk
 
 ### Step 1: Add the token to Roadie
 
-Visit `https://your-company.roadie.so/administration/settings/secrets`.
+Visit `https://<tenant-name>.roadie.so/administration/settings/secrets`.
 
 Click the pencil icon beside `SNYK_TOKEN`. Enter it into the input in the dialog that pops up (See above for retrieving token).
 
@@ -59,7 +59,7 @@ This means you will not have to add a `snyk.io/org-id` annotation manually for e
 
 You can set this up in Settings page:
 
-Visit `https://your-company.roadie.so/administration/settings/snyk`.
+Visit `https://<tenant-name>.roadie.so/administration/settings/snyk`.
 
 ![A text field with snyk org name.](./snyk-organisation-name-settings.webp)
 
