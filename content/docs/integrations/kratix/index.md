@@ -32,7 +32,7 @@ Kratix allows platform teams to define "Promises" which are custom resources tha
 
 ### Plugin Configuration
 
-The Kratix plugin can be configured through the Roadie UI. Kratix configuration needs to be on two places within the Roadie application. First you need to setup a Kubernetes configuration to be able to connect to your cluster where your Kratix installation is running. Navigate to `https://<your-tenant>.roadie.so/administration/settings/plugins/kubernetes` and set up a Service Account type Kubernetes connection to your cluster. 
+The Kratix plugin can be configured through the Roadie UI. Kratix configuration needs to be on two places within the Roadie application. First you need to setup a Kubernetes configuration to be able to connect to your cluster where your Kratix installation is running. Navigate to `https://<tenant-name>.roadie.so/administration/settings/plugins/kubernetes` and set up a Service Account type Kubernetes connection to your cluster. 
 
 Note that only Service Account type configuration is supported with the Syntasso Kratix plugin.
 

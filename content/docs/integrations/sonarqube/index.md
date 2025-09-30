@@ -77,7 +77,7 @@ If you are contacting SonarQube via a brokered connection, you need to run the d
 docker run \
   --env SONARQUBE_INSTANCE_URL=https://<sonarqube> \
   --env BROKER_TOKEN=sonarqube \
-  --env BROKER_SERVER_URL=https://<TENANT_NAME>.broker.roadie.so \
+  --env BROKER_SERVER_URL=https://<tenant-name>.broker.roadie.so \
   roadiehq/broker:sonarqube
 ```
 

@@ -30,7 +30,7 @@ Navigate to `Administration > Settings > Plugins > Proxy (Sigv4)` and make a not
 
 Follow the steps [here](/docs/details/accessing-aws-resources) to create the role.
 
-The role needs to follow this naming convention `arn:aws:iam::*:role/<your-tenant-name>-roadie-<your-role-name>` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
+The role needs to follow this naming convention `arn:aws:iam::*:role/<tenant-name>-roadie-<your-role-name>` where <tenant-name> matches your organisation's name used in the url of your Roadie instance.
 
 You'll need to set a trusted relantionship in your new role so that Roadie can assume it. And then attach any permission policy that you need to the role.
 

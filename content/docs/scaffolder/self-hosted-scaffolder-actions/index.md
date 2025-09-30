@@ -15,7 +15,7 @@ Roadie provides the possibility to run self-hosted, custom scaffolder actions as
 The scaffolder actions will need connectivity back to the Roadie infrastructure in order to share files, output etc. As such you will need to ensure that the following hosts are accessible:
 
 ```
-<yourtenant>.broker.roadie.so
+<tenant-name>.broker.roadie.so
 roadie-scaffolder-shared-workspace.s3.eu-west-1.amazonaws.com
 ```
 

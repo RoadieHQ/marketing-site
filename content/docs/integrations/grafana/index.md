@@ -55,7 +55,7 @@ docker run \
   -e GRAFANA_TOKEN=<your grafana token> \
   -e GRAFANA_URL=http://<your grafana backend api> \
   -e "BROKER_TOKEN=grafana" \
-  -e "BROKER_SERVER_URL=https://<your tenant name>.broker.roadie.so" roadiehq/broker:grafana
+  -e "BROKER_SERVER_URL=https://<tenant-name>.broker.roadie.so" roadiehq/broker:grafana
 ```
 
 In `Administration -> Settings -> Grafana`, set the Frontend url to the URL at which the Grafana UI is available your users. Set the Backend URL to broker://grafana. You should leave the `GRAFANA_API_KEY` blank.

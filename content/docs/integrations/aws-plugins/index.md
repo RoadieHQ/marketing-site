@@ -32,7 +32,7 @@ Navigate to `Administration > Settings > AWS Resources` and make a note of the R
 
 Follow the steps [here](/docs/details/accessing-aws-resources) to create the role. 
 
-The role needs to follow this naming convention `arn:aws:iam::*:role/<your-tenant-name>-roadie-read-only-role` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
+The role needs to follow this naming convention `arn:aws:iam::*:role/<tenant-name>-roadie-read-only-role` where <tenant-name> matches your organisation's name used in the url of your Roadie instance.
 
 You'll need to attach policies to the role to be able to retrieve information about the resources you want ingested. The supported resources and their needed policies are listed in a table at the end of this page. You can use the same role for multiple resource types as long as the needed permissions are granted to it.
 

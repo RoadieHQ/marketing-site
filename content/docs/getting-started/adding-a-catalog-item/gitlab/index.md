@@ -102,7 +102,7 @@ In your GitLab instance navigate to your User Settings > Access Tokens page. In 
 
 ### Store GitLab token as a secret in Roadie
 
-Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` and locate a secret with a name `GITLAB_TOKEN`. Update the value of this secret with the token created in the step above.
+Navigate to `https://<tenant-name>.roadie.so/administration/settings/secrets` and locate a secret with a name `GITLAB_TOKEN`. Update the value of this secret with the token created in the step above.
 
 ### Create a catalog file in code repository
 
@@ -112,7 +112,7 @@ In one of the GitLab repos in your project create a `catalog-info.yaml` with the
 
 Copy the URL of the catalog file you created by visiting the file in your browser and copying the url from the location bar. The URL may look like this: `https://gitlab.com/<group-name>/<project-name>/-/blob/main/catalog-info.yaml?ref_type=heads`.
 
-Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
+Visit the import page in Roadie. `https://<tenant-name>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
 
 ![import.webp](import.webp)
 

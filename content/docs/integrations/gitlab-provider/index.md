@@ -35,13 +35,13 @@ In your GitLab instance navigate to your User Settings > Access Tokens page. In 
 
 ##  Step 2: Store GitLab access token as a secret in Roadie
 
-Navigate to `https://<your-tenant>.roadie.so/administration/settings/secrets` and locate a secret with a name `GITLAB_TOKEN`. Update the value of this secret with the token created in the step above.
+Navigate to `https://<tenant-name>.roadie.so/administration/settings/secrets` and locate a secret with a name `GITLAB_TOKEN`. Update the value of this secret with the token created in the step above.
 
 The updating of secrets within the Roadie application takes a few minutes. You will see the status of the secret change when it becomes available.
 
 ##  Step 3: Configure your Roadie instance to use GitLab as a source to retrieve entities
 
-Navigate to `https://<your-tenant>.roadie.so/administration/settings/integrations/gitlab`.
+Navigate to `https://<tenant-name>.roadie.so/administration/settings/integrations/gitlab`.
 
 Within this page you can add configuration values to identify the URL of your GitLab instance and add necessary provider configuration to automatically discover and retrieve entities from your SCM. 
 

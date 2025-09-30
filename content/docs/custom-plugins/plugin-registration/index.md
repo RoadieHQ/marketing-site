@@ -14,7 +14,7 @@ The components registered on the ‘Custom Plugins’ page are immediately avail
 
 1. Identify the URL where your plugin will be hosted.
    * In development mode this will usually be `http://localhost:7043`
-   * If you are hosting the plugin on Roadie infrastructure, the URL will be similar to `https://static-assets.roadie.so/<your-tenant-name>/<your-plugin-name>`
+   * If you are hosting the plugin on Roadie infrastructure, the URL will be similar to `https://static-assets.roadie.so/<tenant-name>/<your-plugin-name>`
 2. Identify the 'scope' of the plugin. Scope is the name of the plugin normalized to a registration compatible form
 3. Identify the components that your plugin exposes
    * These are usually the 'Component' or 'Routable' extensions that are registered in to the plugin

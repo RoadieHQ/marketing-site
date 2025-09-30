@@ -15,7 +15,7 @@ For more information about locations and troubleshooting Catalog ingestion issue
 
 ## Setting up autodiscovery
 
-Roadie supports autodiscovery for integrations configured in the application. The configuration of an autodiscovery entry can be done at the same time as integration is configured to start automatic polling of entities. You can navigate to `https://<your-tenant>.roadie.so/administration/settings/` to find configuration options for each supported autodiscovery target
+Roadie supports autodiscovery for integrations configured in the application. The configuration of an autodiscovery entry can be done at the same time as integration is configured to start automatic polling of entities. You can navigate to `https://<tenant-name>.roadie.so/administration/settings/` to find configuration options for each supported autodiscovery target
 
 ### GitHub Autodiscovery and Organization Autodiscovery
 
@@ -153,11 +153,11 @@ The autodiscovery kicks in shortly after the save action and automatically refre
 
 ## Managing Locations
 
-A list of all configured locations is located in URL `https://<your-tenant>.roadie.so/administration/locations/management`.
+A list of all configured locations is located in URL `https://<tenant-name>.roadie.so/administration/locations/management`.
 
 ![Location management table](./location_mgmt.webp)
 
-The list contains an entry for all locations added as an autodiscovery configuration within each integration, as well as locations imported using the Catalog Import functionality within `https://<your-tenant>.roadie.so/import/entity`.
+The list contains an entry for all locations added as an autodiscovery configuration within each integration, as well as locations imported using the Catalog Import functionality within `https://<tenant-name>.roadie.so/import/entity`.
 
 Note that deleting a location via the administration UI (either at the location management page or at the individual integration page) does not automatically remove individual entities that have been found from that location. If the desired effect is to remove all items from a particular location, it is better to find that location via the catalog and[ unregister it from there.](/docs/details/unregister-components)
 

@@ -93,7 +93,7 @@ Navigate to `Administration > Settings > AWS S3` and make a note of the Roadie b
 
 Follow the steps [here](/docs/details/accessing-aws-resources) to create the role.
 
-The role needs to follow this naming convention `arn:aws:iam::*:role/<your-tenant-name>-roadie-read-only-role` where <your-tenant-name> matches your organisation's name used in the url of your Roadie instance.
+The role needs to follow this naming convention `arn:aws:iam::*:role/<tenant-name>-roadie-read-only-role` where <tenant-name> matches your organisation's name used in the url of your Roadie instance.
 
 You'll need to attach a policy which allows access to the required S3 buckets such as `AmazonS3ReadOnlyAccess`. This policy grants roadie read access to all buckets.
 If you do not want to grant this access you can [create your own policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html)
@@ -146,7 +146,7 @@ In the S3 bucket create a `catalog-info.yaml` file with the contents shown in th
 
 Copy the Object URL of the catalog file you created by visiting the file in S3 in the properties tab. The URL looks like: `https://<bucket name>.s3.<region>.amazonaws.com/<object file path>`
 
-Visit the import page in Roadie. `https://<your tenant>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
+Visit the import page in Roadie. `https://<tenant-name>.roadie.so/import/entity`, and paste the URL into the box. Click analyze and then import.
 
 ![Import](./import.webp)
 

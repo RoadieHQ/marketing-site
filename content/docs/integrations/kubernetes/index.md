@@ -94,7 +94,7 @@ The [Broker](/docs/integrations/broker) can be used to securely access your Kube
 
 #### Step 1: Configure the Broker in Roadie
 
-The Broker server runs on Roadie’s infrastructure and is secured by allow listing the customer’s IP addresses. You need to add your outbound IP addresses to the allow list in the settings page at `https://<your-tenant>.roadie.so/administration/settings/integrations/broker`. That will allow the Broker client (running on your VPC) to establish the connection to the server running on our side. After that connection is established, Roadie can use it to send requests back to Kubernetes.
+The Broker server runs on Roadie’s infrastructure and is secured by allow listing the customer’s IP addresses. You need to add your outbound IP addresses to the allow list in the settings page at `https://<tenant-name>.roadie.so/administration/settings/integrations/broker`. That will allow the Broker client (running on your VPC) to establish the connection to the server running on our side. After that connection is established, Roadie can use it to send requests back to Kubernetes.
 
 ℹ️ NB: The IP addresses used by Roadie for requests to your Broker client are [listed here](/docs/details/allowlisting-roadie-traffic/).
 
