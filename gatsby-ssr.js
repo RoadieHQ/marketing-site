@@ -43,6 +43,22 @@ const onRenderBody = ({ setPostBodyComponents, setHeadComponents }) => {
       type="font/woff2"
       crossOrigin="anonymous"
     />,
+    <link
+      key="montserrat-bold"
+      rel="preload"
+      href="/fonts/montserrat/Montserrat-Bold"
+      as="font"
+      type="font/ttf"
+      crossOrigin="anonymous"
+    />,
+    <link
+      key="montserrat-bold"
+      rel="preload"
+      href="/fonts/montserrat/Montserrat-BoldItalic"
+      as="font"
+      type="font/ttf"
+      crossOrigin="anonymous"
+    />
   ]);
 };
 

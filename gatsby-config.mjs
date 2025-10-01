@@ -302,13 +302,6 @@ const config = {
       resolve: `gatsby-source-contentful`,
       options: getContentfulOptions(),
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Montserrat:ital,wght@0,700`],
-        display: 'swap',
-      },
-    },
   ],
 };
 
