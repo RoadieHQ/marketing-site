@@ -44,7 +44,7 @@ This Google OAuth client will allow Backstage to authenticate your user using yo
 
 ### Step 2: Adding secrets to backstage
 
-1. Navigate to ”https://<tenant-name>.roadie.so/administration/settings/secrets”
+1. Navigate to ”https://<tenant-name>.roadie.so/administration/secrets”
 
 2. Using the Secret from step 1, click the pencil marker for the following field `GOOGLE_CLIENT_SECRET` and save.
 

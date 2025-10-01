@@ -102,7 +102,7 @@ In your GitLab instance navigate to your User Settings > Access Tokens page. In 
 
 ### Store GitLab token as a secret in Roadie
 
-Navigate to `https://<tenant-name>.roadie.so/administration/settings/secrets` and locate a secret with a name `GITLAB_TOKEN`. Update the value of this secret with the token created in the step above.
+Navigate to `https://<tenant-name>.roadie.so/administration/secrets` and locate a secret with a name `GITLAB_TOKEN`. Update the value of this secret with the token created in the step above.
 
 ### Create a catalog file in code repository
 

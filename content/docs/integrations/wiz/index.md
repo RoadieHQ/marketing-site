@@ -36,7 +36,7 @@ This plugin is [certified by Wiz](https://www.wiz.io/integrations?q=roadie).
 
 #### 1: Store the credentials in Roadie.
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the Client ID value from above into `WIZ_CLIENT_ID`.
+Visit `https://<tenant-name>.roadie.so/administration/secrets` and enter the Client ID value from above into `WIZ_CLIENT_ID`.
 
 Enter Client Secret into `WIZ_CLIENT_SECRET` on the same page.
 

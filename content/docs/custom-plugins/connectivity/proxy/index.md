@@ -32,7 +32,7 @@ Click save and Apply and Restart.
 
 #### Step 2 Configure the API secret
 
-Next visit the secrets configuration page `/administration/settings/secrets`. Click the edit icon beside `CUSTOMER_TOKEN_1` and set a value for the token and press "Save".
+Next visit the secrets configuration page `/administration/secrets`. Click the edit icon beside `CUSTOMER_TOKEN_1` and set a value for the token and press "Save".
 
 ![customer-token-1-save.webp](customer-token-1-save.webp)
 

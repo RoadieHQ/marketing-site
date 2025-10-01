@@ -49,7 +49,7 @@ Then you will need to add a [Personal Access Token](https://docs.microsoft.com/e
 This is set within Roadie at the following URL or via Settings under the Secrets section:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/secrets
 ```
 
 ### Annotations

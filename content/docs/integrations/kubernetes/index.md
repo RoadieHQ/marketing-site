@@ -225,7 +225,7 @@ In order to use the Kubernetes plugin using a service account, Roadie needs:
 
 #### Step 1: Add a Service Account token
 
-Get a token from a Service Account in your cluster for use by Roadie. Then navigate to ”https://[tenant-name].roadie.so/administration/settings/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token fro your cluster. Alternatively, if you are configuring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`.
+Get a token from a Service Account in your cluster for use by Roadie. Then navigate to ”https://[tenant-name].roadie.so/administration/secrets" and set the `K8S_SERVICE_ACCOUNT_TOKEN` secret to the service account token fro your cluster. Alternatively, if you are configuring multiple clusters, you can use one of `CUSTOMER_TOKEN_1`, `CUSTOMER_TOKEN_2` or `CUSTOMER_TOKEN_3`.
 
 #### Step 2: Create the Cluster Role and Binding
 

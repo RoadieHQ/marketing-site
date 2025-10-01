@@ -40,7 +40,7 @@ In your Azure DevOps navigate to the User Settings > Tokens page in `https://dev
 
 ##  Step 3: Store Azure access token as a secret in Roadie
 
-Navigate to `https://<tenant-name>.roadie.so/administration/settings/secrets` and locate a secret with a name `AZURE_TOKEN`. Update the value of this secret with the token created in the step above.
+Navigate to `https://<tenant-name>.roadie.so/administration/secrets` and locate a secret with a name `AZURE_TOKEN`. Update the value of this secret with the token created in the step above.
 
 The updating of secrets within the Roadie application takes a few minutes. You will see the status of the secret change when it becomes available.
 

@@ -15,7 +15,7 @@ In order to use the Rootly plugin, Roadie needs an API token to communicate with
 These are set within backstage at the following url:
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/secrets
 ```
 
 This page describes how to create and set up the API token.

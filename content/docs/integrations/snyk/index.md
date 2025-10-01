@@ -42,7 +42,7 @@ This can be found under the settings page that is visible when you login to Snyk
 
 ### Step 1: Add the token to Roadie
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets`.
+Visit `https://<tenant-name>.roadie.so/administration/secrets`.
 
 Click the pencil icon beside `SNYK_TOKEN`. Enter it into the input in the dialog that pops up (See above for retrieving token).
 
