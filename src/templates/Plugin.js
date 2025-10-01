@@ -3,19 +3,46 @@ import usePageLeave from 'react-use/lib/usePageLeave';
 import isEmpty from 'lodash/isEmpty';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, ExitIntentModal, Title } from 'components';
+import {
+  SEO,
+  SitewideHeader,
+  SitewideFooter,
+  ExitIntentModal,
+  Title,
+  TextLink as Link,
+} from 'components';
 import {
   Header,
   PluginCTA,
   PlaceholderBody,
   Sidebar,
-  HostTabs,
 } from 'components/backstage/plugins';
+import { fullRoadieDocsPath } from 'components/backstage/plugins/RoadieDocsChip';
+
+const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
+  const disclaimer = 'These instructions apply to self-hosted Backsgage only.';
+
+  if (availableOnRoadie && roadieDocsPath) {
+    return (
+      <p className="prose prose-primary max-w-none">
+        {disclaimer} To use this plugin on Roadie,{' '}
+        <Link color="primary" to={fullRoadieDocsPath(roadieDocsPath)}>visit the docs</Link>.
+      </p>
+    );
+  }
+
+  return (
+    <p className="prose prose-primary max-w-none">
+      {disclaimer}
+    </p>
+  );
+}
 
 const Body = ({
   plugin: {
     installationInstructions,
     introduction,
+    availableOnRoadie,
     roadieDocsPath,
     coverImage,
     notes,
@@ -52,7 +79,12 @@ const Body = ({
             <Title>Installation steps</Title>
           </div>
 
-          <HostTabs docsLink={`/docs${roadieDocsPath}`} />
+          <div className="mb-4">
+            <RoadieDocsLink
+              availableOnRoadie={availableOnRoadie}
+              roadieDocsPath={roadieDocsPath}
+            />
+          </div>
 
           <div className="mb-10">
             <div
