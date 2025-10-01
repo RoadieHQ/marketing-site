@@ -24,7 +24,7 @@ This is set within backstage at the following url:
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ```text
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/secrets
 ```
 
 This page describes how to create and set up the Busnag Personal Access (API) token.
@@ -43,7 +43,7 @@ On the modal window you can give the token a description so you can recognize it
 
 ### Step 2: Store the token in Roadie
 
-Visit `https://<tenant-name>.roadie.so/administration/settings/secrets` and enter the token value from above into `BUGSNAG_PERSONAL_TOKEN`.
+Visit `https://<tenant-name>.roadie.so/administration/secrets` and enter the token value from above into `BUGSNAG_PERSONAL_TOKEN`.
 
 ### Step 3: Add the annotation to each Backstage Component
 

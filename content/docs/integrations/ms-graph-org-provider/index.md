@@ -31,7 +31,7 @@ Azure AD discovery use Client ID and secret from App registration to authenticat
 
 ##  Step 2: Store App Registration credentials as a secret in Roadie
 
-Navigate to `https://<tenant-name>.roadie.so/administration/settings/secrets` and locate secrets `AZURE_CLIENT_ID` and `AZURE_CLIENT_SECRET`. Add the App Registration Client ID from the registration created above into the `AZURE_CLIENT_ID` secret. Within the 'Certificates & secrets' section of your App Registration in Azure create a new Client Secret. Store the value from the created secret in to `AZURE_CLIENT_SECRET` in Roadie.
+Navigate to `https://<tenant-name>.roadie.so/administration/secrets` and locate secrets `AZURE_CLIENT_ID` and `AZURE_CLIENT_SECRET`. Add the App Registration Client ID from the registration created above into the `AZURE_CLIENT_ID` secret. Within the 'Certificates & secrets' section of your App Registration in Azure create a new Client Secret. Store the value from the created secret in to `AZURE_CLIENT_SECRET` in Roadie.
 
 ##  Step 3: Configure your Microsoft Graph Org ingestion Provider
 

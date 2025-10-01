@@ -13,7 +13,7 @@ Many Backstage plugins require authentication to work. This tutorial shows you h
 The secrets page is available in your Backstage instance at:
 
 ```
-https://<tenant-name>.roadie.so/administration/settings/secrets
+https://<tenant-name>.roadie.so/administration/secrets
 ```
 
 To navigate to this page, follow these steps:

@@ -46,7 +46,7 @@ Then add it to Roadie at `https://<tenant-name>.roadie.so/administration/setting
 
 ![dx-secret](./dx-secret.png)
 
-or by entering token value under `DX_API_TOKEN` on `https://<tenant-name>.roadie.so/administration/settings/secrets`
+or by entering token value under `DX_API_TOKEN` on `https://<tenant-name>.roadie.so/administration/secrets`
 
 ### Enable and configure the plugin
 

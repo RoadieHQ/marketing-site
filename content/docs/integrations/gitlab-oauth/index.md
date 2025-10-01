@@ -44,7 +44,7 @@ This guide covers setting up GitLab OAuth authentication, including creating the
 
 ## Step 2: Configure Secrets in Roadie
 
-1. Navigate to your Roadie secrets page: `https://<tenant-name>.roadie.so/administration/settings/secrets`
+1. Navigate to your Roadie secrets page: `https://<tenant-name>.roadie.so/administration/secrets`
 
 2. Locate and update the following secrets:
    - **AUTH_GITLAB_CLIENT_ID**: Click the edit icon and enter the Application ID from Step 1

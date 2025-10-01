@@ -12,7 +12,7 @@ integrationType: Catalog data source
 ## Introduction
 
 This Google Cloud Platform (GCP) client in Roadie may be used to periodically to collect Roadie catalog information from Google Cloud
-Storage. These settings are configured in `https://<tenant-name>.roadie.so/administration/settings/secrets`.
+Storage. These settings are configured in `https://<tenant-name>.roadie.so/administration/secrets`.
 
 This page describes how to get the client id and private key for GCP.
 
@@ -43,7 +43,7 @@ This will download a JSON file containing the credentials needed for next step.
 ### Step 2. Enter the credentials into Roadie
 
 1. Copy the client email and the private key from the downloaded JSON file.
-2. Visit the page `https://<tenant-name>.roadie.so/administration/settings/secrets`
+2. Visit the page `https://<tenant-name>.roadie.so/administration/secrets`
 3. Enter the details you have copied into `GCP_CLIENT_EMAIL` and `GCP_PRIVATE_KEY`
 
 ## Conclusion
