@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Chip, Link } from 'components';
 import { RoadieRacksIcon } from 'components/icons';
-
-export const fullRoadieDocsPath = ({ roadieDocsPath }) => `/docs${roadieDocsPath}`;
+import fullRoadieDocsPath from 'components/backstage/plugins/fullRoadieDocsPath';
 
 const RoadieDocsChip = ({ availableOnRoadie, roadieDocsPath }) => {
   if (!availableOnRoadie) return null;

@@ -17,7 +17,7 @@ import {
   PlaceholderBody,
   Sidebar,
 } from 'components/backstage/plugins';
-import { fullRoadieDocsPath } from 'components/backstage/plugins/RoadieDocsChip';
+import fullRoadieDocsPath from 'components/backstage/plugins/fullRoadieDocsPath';
 
 const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
   const disclaimer = 'These instructions apply to self-hosted Backsgage only.';
