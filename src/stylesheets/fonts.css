@@ -28,7 +28,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src: url(/fonts/montserrat/Montserrat-Bold) format('ttf');
+  src: url(/fonts/montserrat/Montserrat-Bold.ttf) format('truetype');
 }
 
 
@@ -37,5 +37,5 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src: url(/fonts/montserrat/Montserrat-BoldItalic) format('ttf');
+  src: url(/fonts/montserrat/Montserrat-BoldItalic.ttf) format('truetype');
 }

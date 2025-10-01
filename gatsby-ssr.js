@@ -46,19 +46,19 @@ const onRenderBody = ({ setPostBodyComponents, setHeadComponents }) => {
     <link
       key="montserrat-bold"
       rel="preload"
-      href="/fonts/montserrat/Montserrat-Bold"
+      href="/fonts/montserrat/Montserrat-Bold.ttf"
       as="font"
       type="font/ttf"
       crossOrigin="anonymous"
     />,
     <link
-      key="montserrat-bold"
+      key="montserrat-bolditalic"
       rel="preload"
-      href="/fonts/montserrat/Montserrat-BoldItalic"
+      href="/fonts/montserrat/Montserrat-BoldItalic.ttf"
       as="font"
       type="font/ttf"
       crossOrigin="anonymous"
-    />
+    />,
   ]);
 };
 
