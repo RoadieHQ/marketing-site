@@ -81,28 +81,25 @@ const PluginFeedbackModal = ({ isVisible, onClose, pluginSlug, pluginName }) => 
     setFeedbackText('');
   };
 
-  if (!isVisible) return null;
-
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 pointer-events-none px-4 pb-4">
+    <div className="fixed inset-x-0 -bottom-16 z-50 pointer-events-none px-4 pb-4">
       <div className="max-w-7xl mx-auto">
         <div
           className={classnames(
-            'pointer-events-auto max-w-md transition-transform duration-300 ease-out',
-            'bg-gray-900 shadow-2xl rounded border border-gray-700',
+            'pointer-events-auto max-w-md duration-300 transition-transform ease-out',
+            'bg-white shadow-2xl rounded border border-gray-700',
             'mx-auto md:mx-0 md:mr-auto md:ml-2.5',
             {
-              'translate-y-0': isVisible,
-              'translate-y-full': !isVisible,
+              '-translate-y-14': isVisible,
             }
           )}
         >
           {stage === 'initial' && (
             <div className="px-3 py-1.5 flex items-center gap-2">
-              <span className="text-xs text-gray-300 flex-1">Did these instructions help?</span>
+              <span className="text-sm text-gray-700 flex-1">Did these instructions help?</span>
               <button
                 onClick={handleYes}
-                className="bg-green-600 hover:bg-green-500 text-white p-1 rounded transition-colors duration-200 flex items-center justify-center"
+                className="hover:bg-green-200 text-white p-1 rounded transition-colors duration-200 flex items-center justify-center"
                 aria-label="Yes, helpful"
                 title="Yes, helpful"
               >
@@ -110,7 +107,7 @@ const PluginFeedbackModal = ({ isVisible, onClose, pluginSlug, pluginName }) => 
               </button>
               <button
                 onClick={handleNo}
-                className="bg-red-600 hover:bg-red-500 text-white p-1 rounded transition-colors duration-200 flex items-center justify-center"
+                className="hover:bg-red-200 text-white p-1 rounded transition-colors duration-200 flex items-center justify-center"
                 aria-label="No, not helpful"
                 title="Not helpful"
               >
@@ -118,7 +115,7 @@ const PluginFeedbackModal = ({ isVisible, onClose, pluginSlug, pluginName }) => 
               </button>
               <button
                 onClick={handleDismiss}
-                className="text-gray-400 hover:text-gray-300 p-0.5"
+                className="text-gray-600 hover:text-gray-900 p-0.5"
                 aria-label="Close"
               >
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
@@ -135,13 +132,16 @@ const PluginFeedbackModal = ({ isVisible, onClose, pluginSlug, pluginName }) => 
           {stage === 'feedback' && (
             <div className="p-3">
               <form onSubmit={handleSubmitFeedback}>
+                {/* eslint-disable jsx-a11y/no-autofocus */}
                 <textarea
                   value={feedbackText}
+                  autoFocus
                   onChange={(e) => setFeedbackText(e.target.value)}
                   placeholder="Tell us what was unclear or missing..."
-                  className="w-full px-2 py-1.5 bg-gray-800 border border-gray-700 rounded text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none text-xs"
+                  className="w-full px-2 py-1.5 border border-gray-200 rounded text-gray-700 placeholder-gray-400 focus:ring-blueroadie focus:border-blueroadie resize-none text-sm"
                   rows="3"
                 />
+                {/* eslint-enable jsx-a11y/no-autofocus */}
 
                 <div className="flex gap-2 mt-2">
                   <button

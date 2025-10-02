@@ -145,7 +145,7 @@ const PluginTemplate = ({ data }) => {
 
   // Show feedback modal when user scrolls to installation section
   const { hasScrolledTo } = useScrollToElement('installation-steps', {
-    threshold: 0.2,
+    threshold: 0.1,
     once: true,
   });
 

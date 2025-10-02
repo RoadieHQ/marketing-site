@@ -33,11 +33,11 @@ const pluginFeedback = async (req) => {
 
     if (helpful) {
       slackMessage = {
-        text: `✅ Positive Plugin Feedback for <${pageUrl}|${pluginName}>`,
+        text: `✅ Positive Plugin Directory feedback for <${pageUrl}|${pluginName}>`,
       };
     } else {
       slackMessage = {
-        text: '⚠️ Plugin Feedback Issue',
+        text: '⚠️ Plugin Directory Issue flagged',
         blocks: [
           {
             type: 'section',
