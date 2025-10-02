@@ -1,4 +1,4 @@
-import './src/stylesheets/soehne.css';
+import './src/stylesheets/fonts.css';
 import './src/stylesheets/tailwind.css';
 import './src/stylesheets/table-of-contents-sidebar.css';
 
