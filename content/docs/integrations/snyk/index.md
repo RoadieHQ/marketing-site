@@ -1,8 +1,8 @@
 ---
 title: Snyk
 publishedDate: '2021-07-21T21:00:00.0Z'
-lastValidated: '2021-07-21T21:00:00.0Z'
-description: How to create a Snyk Token with permissions for use in Backstage and apply it to Roadie.
+lastValidated: '2025-10-02T21:00:00.0Z'
+description: Configuration of the Roadie plugin for Snyk.
 
 humanName: Snyk
 logoImage: '../../../assets/logos/snyk/snyk-avatar.webp'
