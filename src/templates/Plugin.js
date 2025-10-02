@@ -11,13 +11,10 @@ import {
   Title,
   TextLink as Link,
 } from 'components';
-import {
-  Header,
-  PluginCTA,
-  PlaceholderBody,
-  Sidebar,
-} from 'components/backstage/plugins';
+import { Header, PluginCTA, PlaceholderBody, Sidebar } from 'components/backstage/plugins';
 import fullRoadieDocsPath from 'components/backstage/plugins/fullRoadieDocsPath';
+import PluginFeedbackModal from '../components/PluginFeedbackModal';
+import useScrollToElement from '../hooks/useScrollToElement';
 
 const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
   const disclaimer = 'These instructions apply to self-hosted Backsgage only.';
@@ -26,17 +23,16 @@ const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
     return (
       <p className="prose prose-primary max-w-none">
         {disclaimer} To use this plugin on Roadie,{' '}
-        <Link color="primary" to={fullRoadieDocsPath(roadieDocsPath)}>visit the docs</Link>.
+        <Link color="primary" to={fullRoadieDocsPath(roadieDocsPath)}>
+          visit the docs
+        </Link>
+        .
       </p>
     );
   }
 
-  return (
-    <p className="prose prose-primary max-w-none">
-      {disclaimer}
-    </p>
-  );
-}
+  return <p className="prose prose-primary max-w-none">{disclaimer}</p>;
+};
 
 const Body = ({
   plugin: {
@@ -47,7 +43,7 @@ const Body = ({
     coverImage,
     notes,
     humanName,
-  }
+  },
 }) => {
   const introHtml = introduction?.childMarkdownRemark?.html;
   const installHtml = installationInstructions?.childMarkdownRemark?.html;
@@ -75,15 +71,12 @@ const Body = ({
 
       {!isEmpty(installHtml) && (
         <>
-          <div className="mb-4">
+          <div className="mb-4" id="installation-steps">
             <Title>Installation steps</Title>
           </div>
 
           <div className="mb-4">
-            <RoadieDocsLink
-              availableOnRoadie={availableOnRoadie}
-              roadieDocsPath={roadieDocsPath}
-            />
+            <RoadieDocsLink availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
           </div>
 
           <div className="mb-10">
@@ -110,12 +103,10 @@ const Body = ({
         </>
       )}
 
-      {isEmpty(installHtml) && isEmpty(notesHtml) && (
-        <PlaceholderBody humanName={humanName} />
-      )}
+      {isEmpty(installHtml) && isEmpty(notesHtml) && <PlaceholderBody humanName={humanName} />}
     </>
   );
-}
+};
 
 const hasExitIntentModalBeenShownBefore = () => {
   return localStorage.getItem('exitIntentModalHasBeenShown') || false;
@@ -126,11 +117,11 @@ const recordExitIntentModalHasBeenShown = () => {
 };
 
 const PluginTemplate = ({ data }) => {
-  const {
-    plugin,
-  } = data;
+  const { plugin } = data;
 
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
+  const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
+  const [feedbackModalDismissed, setFeedbackModalDismissed] = useState(false);
 
   const handleOpenExitIntentModal = () => {
     if (!hasExitIntentModalBeenShownBefore()) {
@@ -143,9 +134,30 @@ const PluginTemplate = ({ data }) => {
     setExitIntentModalOpen(false);
   };
 
+  const handleCloseFeedbackModal = () => {
+    setFeedbackModalOpen(false);
+    setFeedbackModalDismissed(true);
+  };
+
   usePageLeave(() => {
     handleOpenExitIntentModal();
   });
+
+  // Show feedback modal when user scrolls to installation section
+  const { hasScrolledTo } = useScrollToElement('installation-steps', {
+    threshold: 0.1,
+    once: true,
+  });
+
+  // Delay showing the modal by 2 seconds after scrolling to the section
+  React.useEffect(() => {
+    if (hasScrolledTo && !feedbackModalDismissed) {
+      const timer = setTimeout(() => {
+        setFeedbackModalOpen(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasScrolledTo, feedbackModalDismissed]);
 
   return (
     <>
@@ -154,6 +166,13 @@ const PluginTemplate = ({ data }) => {
       <ExitIntentModal
         modalOpen={exitIntentModalOpen}
         handleCloseModal={handleCloseExitIntentModal}
+      />
+
+      <PluginFeedbackModal
+        isVisible={feedbackModalOpen}
+        onClose={handleCloseFeedbackModal}
+        pluginSlug={plugin.slug}
+        pluginName={plugin.humanName}
       />
 
       <SitewideHeader />
@@ -233,11 +252,7 @@ export const pageQuery = graphql`
       }
 
       logoImage {
-        gatsbyImageData(
-          layout: FIXED,
-          width: 80,
-          placeholder: DOMINANT_COLOR,
-        )
+        gatsbyImageData(layout: FIXED, width: 80, placeholder: DOMINANT_COLOR)
       }
     }
   }
