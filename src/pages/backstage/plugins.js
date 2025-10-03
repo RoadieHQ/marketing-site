@@ -115,6 +115,8 @@ const BackstagePlugins = ({ data }) => {
     })();
   }, []);
 
+  const allPLuginsCount = plugins.edges.length;
+
   const hydratedPlugins = plugins.edges.map(({ node }) => (
     hydratePlugin(node, npmData)
   ));
@@ -140,7 +142,7 @@ const BackstagePlugins = ({ data }) => {
               <Headline>Backstage plugins</Headline>
             </div>
             <div className="mb-10">
-              <Lead>Descriptions, guides and installation instructions for popular open-source Backstage plugins.</Lead>
+              <Lead>Descriptions, installation instructions, and changelogs for {allPLuginsCount.toLocaleString()} open-source Backstage plugins.</Lead>
               <Lead>Using Roadie? Visit our <Link to="/docs/integrations/" color="primary">integrations list</Link> instead.</Lead>
             </div>
           </div>
