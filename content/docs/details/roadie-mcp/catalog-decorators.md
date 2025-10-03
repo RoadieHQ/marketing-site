@@ -26,11 +26,13 @@ Fragments are partial entity data that are "decorated" onto an existing entity i
 Retrieve a list of all entity fragments with optional filtering capabilities.
 
 **Parameters:**
+
 - `entityRef` (string, optional): Filter fragments for a specific entity
 - `limit` (number, optional): Maximum number of results to return (default: 100)
 - `offset` (number, optional): Pagination offset for results (default: 0)
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/user-service",
@@ -40,6 +42,7 @@ Retrieve a list of all entity fragments with optional filtering capabilities.
 ```
 
 **Alternative Usage (List All):**
+
 ```json
 {
   "limit": 100
@@ -47,12 +50,14 @@ Retrieve a list of all entity fragments with optional filtering capabilities.
 ```
 
 **Returns:** List of fragments including:
+
 - Fragment identifiers and metadata
 - Associated entity references
 - Fragment content and specifications
 - Creation and modification timestamps
 
 **Return Schema:**
+
 ```typescript
 {
   fragments: {
@@ -72,6 +77,7 @@ Retrieve a list of all entity fragments with optional filtering capabilities.
 ```
 
 #### Required Permissions:
+
 - **Fragment entity read** - `roadie.entity-fragment.read` - Permission to view entity fragments
 
 ### Create Fragment
@@ -79,10 +85,12 @@ Retrieve a list of all entity fragments with optional filtering capabilities.
 Create a new fragment to decorate a catalog entity with additional metadata and specifications.
 
 **Parameters:**
+
 - `entityRef` (string): Target entity reference to decorate
 - `fragment` (object): Fragment data containing metadata and spec information
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/payment-service",
@@ -109,6 +117,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ```
 
 **Fragment Schema:**
+
 ```typescript
 {
   entityRef: string, // Target entity reference
@@ -125,26 +134,30 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ```
 
 **Returns:** Created fragment information including:
+
 - Fragment ID and entity reference
 - Confirmation of applied decorations
 - Any validation warnings or notes
 
 #### Required Permissions:
-- **Fragment entity create** - `roadie.entity-fragment.create` - Permission to create and modify entity fragments
 
+- **Fragment entity create** - `roadie.entity-fragment.create` - Permission to create and modify entity fragments
 
 ## Common Use Cases
 
 ### Fragment Discovery and Management
+
 - "What fragments exist for the payment-service component?"
 - "List all fragments in the system"
 - "Find fragments that have been modified recently"
 
 ### Entity Enhancement
+
 - "Update the decription of the user-service to say ..."
 - "Add prometheus monitoring annotations to the user-service component"
 
 ### Bulk Operations and Analysis
+
 - "Show me all fragments that modify descriptions"
 - "List fragments that enhance entities with monitoring configurations"
 - "Find all custom specifications added to payment-related services"
@@ -152,6 +165,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ## Fragment Use Cases
 
 ### Adding Team Responsibility Information
+
 ```json
 {
   "entityRef": "component:default/user-service",
@@ -167,6 +181,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ```
 
 ### Enhancing with Deployment Information
+
 ```json
 {
   "entityRef": "resource:default/payment-gateway",
@@ -188,6 +203,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ```
 
 ### Adding Monitoring and Observability
+
 ```json
 {
   "entityRef": "api:default/orders-api",
@@ -219,6 +235,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 **User:** "I want to add team ownership information to all payment services"
 
 **AI Response using MCP:**
+
 1. Uses `list-fragments` to find existing fragments for payment services
 2. Identifies services that need team ownership information
 3. Uses `create-fragment` to add responsible team annotations
@@ -229,6 +246,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 **User:** "Show me all custom monitoring configurations added to our services"
 
 **AI Response using MCP:**
+
 1. Uses `list-fragments` to retrieve all fragments
 2. Filters fragments containing monitoring-related specifications
 3. Analyzes monitoring patterns and configurations
@@ -239,6 +257,7 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 **User:** "Add deployment strategy labels to all components in the production namespace"
 
 **AI Response using MCP:**
+
 1. Uses entity search to find all production components
 2. Uses `list-fragments` to check existing decorations
 3. Uses `create-fragment` to add deployment strategy information
@@ -247,20 +266,24 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ## Best Practices
 
 ### Fragment Design
+
 - **Specific Purpose**: Create fragments for specific enhancement purposes (monitoring, ownership, deployment info)
-- **Update the source YAML file if possible**: Fragments allow easier updates to entity data and allow updates to entities not defined in YAML, but its always preferable to update the source entity of it comes from a YAML file in an SCM. 
+- **Update the source YAML file if possible**: Fragments allow easier updates to entity data and allow updates to entities not defined in YAML, but its always preferable to update the source entity of it comes from a YAML file in an SCM.
 
 ### Entity Reference Management
+
 - **Precise References**: Use exact entity references (kind:namespace/name format)
 - **Validation**: Verify target entities exist before creating fragments
-- **Confirmation** Creating a fragment successfully does not mean it necessarily has been applied if there was an error. You can check if a Fragment was actually applied to an entity using the Get Entity MCP tool. 
+- **Confirmation** Creating a fragment successfully does not mean it necessarily has been applied if there was an error. You can check if a Fragment was actually applied to an entity using the Get Entity MCP tool.
 
 ## Security Considerations
 
 ### Fragment Permissions
+
 - Fragment mutations requires appropriate write permissions of `roadie.entity-fragment.create`
 
 ### Data Validation
+
 - Fragment content is validated against entity schemas
 - Malformed fragments are rejected with clear error messages
 
@@ -269,10 +292,12 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
 ### Common Issues
 
 1. **Permission Errors**:
+
    - Verify you have the relevant `roadie.entity-fragment.<action>` permission
    - Ensure access to target entities before creating fragments
 
 2. **Entity Reference Issues**:
+
    - Use exact entity reference format: `kind:namespace/name`
    - Verify target entities exist in the catalog
    - Check for typos in entity names or namespaces
@@ -281,5 +306,3 @@ Create a new fragment to decorate a catalog entity with additional metadata and 
    - Ensure fragment content follows expected schemas
    - Validate JSON structure and data types
    - Check that required fields are provided
-
-

@@ -16,10 +16,11 @@ The [Backstage Humanitec plugin](https://github.com/humanitec/humanitec-backstag
 ![humanitec.webp](humanitec.webp)
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add Humanitec to one of your components
@@ -29,6 +30,7 @@ The [Backstage Humanitec plugin](https://github.com/humanitec/humanitec-backstag
 The Humanitec plugin enables 2 usable annotations that are available to correctly identify the deployments.
 
 The available annotation can be seen below on the example catalog-info.yaml file:
+
 ```yaml
 metadata:
   annotations:
@@ -54,4 +56,3 @@ The `HumanitecCardComponent` card can be added to the overview page of an entity
 ## References
 
 - [Humanitec Plugin Documentation](https://github.com/humanitec/humanitec-backstage-plugins/tree/main/plugins/humanitec)
-

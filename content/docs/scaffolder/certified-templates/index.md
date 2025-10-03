@@ -32,4 +32,3 @@ metadata:
 spec:
 ...
 ```
-

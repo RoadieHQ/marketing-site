@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sidebar, SidebarSectionList } from 'components/Sidebar';
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline';
 import Button from 'components/forms/Button';
 import useMedia from 'react-use/lib/useMedia';
 import classnames from 'classnames';
@@ -30,9 +30,9 @@ const DocSidebar = ({ location }) => {
   const docToggleButtonIcon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
   const docNavClassNames = classnames('overflow-y-hidden', { 'h-0': !isOpen, 'h-full': isOpen });
 
-  const sidebarNavItemGroups = DOCS_LAYOUTS.find(({ isActiveMatch }) => (
+  const sidebarNavItemGroups = DOCS_LAYOUTS.find(({ isActiveMatch }) =>
     location.pathname.match(isActiveMatch)
-  )).sidebarNavItemGroups;
+  ).sidebarNavItemGroups;
 
   return (
     <Sidebar side="left">
@@ -51,20 +51,18 @@ const DocSidebar = ({ location }) => {
       </div>
 
       <nav className={docNavClassNames}>
-        {
-          sidebarNavItemGroups.map((_k, v) => {
-            const [[sectionHeader, sectionItems]] = Object.entries(sidebarNavItemGroups[v]);
+        {sidebarNavItemGroups.map((_k, v) => {
+          const [[sectionHeader, sectionItems]] = Object.entries(sidebarNavItemGroups[v]);
 
-            return (
-              <SidebarSectionList
-                key={sectionHeader}
-                title={sidebarNavItemGroups.length > 1 && sectionHeader}
-                items={sectionItems}
-                location={location}
-              />
-            );
-          })
-        }
+          return (
+            <SidebarSectionList
+              key={sectionHeader}
+              title={sidebarNavItemGroups.length > 1 && sectionHeader}
+              items={sectionItems}
+              location={location}
+            />
+          );
+        })}
       </nav>
     </Sidebar>
   );

@@ -17,10 +17,9 @@ This plugin helps teams share architectural decisions that have been documented 
 
 ### Step 1: Add the ADR Tab
 
-The ADR plugin is available as a tab on entity pages in Roadie. 
+The ADR plugin is available as a tab on entity pages in Roadie.
 
 ![adr-tab.png](adr-tab.png)
-
 
 ### Step 2: Annotate your entities
 
@@ -53,7 +52,6 @@ repo-root/
 
 1. Verify that the `backstage.io/adr-location` annotation is correctly set on your entity
 2. Ensure the `backstage.io/adr-location` annotation refers to an ADR directory path that is correct relative to your `catalog-info.yaml` file
-
 
 ## References
 

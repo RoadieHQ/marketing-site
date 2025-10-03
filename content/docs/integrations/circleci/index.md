@@ -14,10 +14,11 @@ integrationType: OSS plugin
 The Backstage Circle CI plugin integrates with Circle CI to show your build information inside Backstage where it can be associated with your services.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Using the Plugin
@@ -42,8 +43,7 @@ spec:
 # ...
 ```
 
-4. Add the CircleCi plugin to one of your entities with the correct annotation in Roadie as a new tab. 
-
+4. Add the CircleCi plugin to one of your entities with the correct annotation in Roadie as a new tab.
 
 ## Creating a token
 
@@ -62,7 +62,6 @@ In order to make requests to the CircleCI API, you must provide Roadie with an A
 4. Circleci will print the token that Backstage needs.
 
 5. Follow the instructions on how to share the API Token with Roadie.
-
 
 ## References
 

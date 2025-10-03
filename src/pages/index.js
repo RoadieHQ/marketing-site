@@ -349,11 +349,7 @@ export default Home;
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allContentfulBlogPost(
-      sort: { date: DESC }
-      filter: { tags: { ne: "newsletter" } }
-      limit: 3
-    ) {
+    allContentfulBlogPost(sort: { date: DESC }, filter: { tags: { ne: "newsletter" } }, limit: 3) {
       edges {
         node {
           description {

@@ -37,8 +37,7 @@ const Thumbnail = ({ video }) => {
 };
 
 const VideoSummary = ({ video, className }) => (
-  <div
-    className={classnames('flex flex-col rounded-lg shadow-lg overflow-hidden', className)}>
+  <div className={classnames('flex flex-col rounded-lg shadow-lg overflow-hidden', className)}>
     <div className="flex-shrink-0 relative">
       <Link to={`/backstage-bites/${video.slug}/`}>
         <Thumbnail video={video} />
@@ -83,7 +82,7 @@ export default BackstageBites;
 
 export const pageQuery = graphql`
   query BackstageBites {
-    playlist: contentfulPlaylist(contentfulid: {eq: 1}) {
+    playlist: contentfulPlaylist(contentfulid: { eq: 1 }) {
       title
       contentfulid
       description {

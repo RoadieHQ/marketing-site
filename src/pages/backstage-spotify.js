@@ -1,46 +1,51 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import {
-  SEO,
-  SitewideHeader,
-  SitewideFooter,
-  Headline,
-  TextLink as Link,
-} from 'components';
+import { SEO, SitewideHeader, SitewideFooter, Headline, TextLink as Link } from 'components';
 import { getSrc } from 'gatsby-plugin-image';
 
 import BackstageB from '../../content/assets/logos/backstage/b-stack.png';
 
-const tableOfContentItems = [{
-  to: '/backstage-spotify#what-spotify-backstage-is',
-  text: 'What it is',
-}, {
-  to: '/backstage-spotify#adopters',
-  text: 'Adopters',
-}, {
-  to: '/backstage-spotify#the-origins-of-spotify-backstage',
-  text: 'The origins',
-}, {
-  to: '/backstage-spotify#problems-tackled-by-spotify-backstage',
-  text: 'The problems it helps solve',
-}, {
-  to: '/backstage-spotify#the-main-features-of-backstage-by-spotify',
-  text: 'The main features',
-}, {
-  to: '/backstage-spotify#the-use-cases-of-spotify-backstage',
-  text: 'The use cases',
-}, {
-  to: '/backstage-spotify#how-to-get-started-with-spotify-backstage',
-  text: 'How to get started',
-}, {
-  to: '/backstage-spotify#more-learning-resources',
-  text: 'More learning resources'
-}];
+const tableOfContentItems = [
+  {
+    to: '/backstage-spotify#what-spotify-backstage-is',
+    text: 'What it is',
+  },
+  {
+    to: '/backstage-spotify#adopters',
+    text: 'Adopters',
+  },
+  {
+    to: '/backstage-spotify#the-origins-of-spotify-backstage',
+    text: 'The origins',
+  },
+  {
+    to: '/backstage-spotify#problems-tackled-by-spotify-backstage',
+    text: 'The problems it helps solve',
+  },
+  {
+    to: '/backstage-spotify#the-main-features-of-backstage-by-spotify',
+    text: 'The main features',
+  },
+  {
+    to: '/backstage-spotify#the-use-cases-of-spotify-backstage',
+    text: 'The use cases',
+  },
+  {
+    to: '/backstage-spotify#how-to-get-started-with-spotify-backstage',
+    text: 'How to get started',
+  },
+  {
+    to: '/backstage-spotify#more-learning-resources',
+    text: 'More learning resources',
+  },
+];
 
 const TableOfContentItem = ({ to, text }) => (
   <li className="px-2">
-    <Link to={to} color="primary">{text}</Link>
+    <Link to={to} color="primary">
+      {text}
+    </Link>
   </li>
 );
 
@@ -55,7 +60,7 @@ const BackstageUltimateGuide = ({ data: { page, site } }) => {
         headerImage={getSrc(page.cover)}
         ogImageAlt={page.cover.title}
         meta={{
-          revised: page.lastValidated
+          revised: page.lastValidated,
         }}
       />
 
@@ -86,12 +91,11 @@ const BackstageUltimateGuide = ({ data: { page, site } }) => {
               </p>
 
               <p className="mb-3">
-                If you want to understand the problems it can solve, the features it has, or use cases it can address, you&apos;re in the right place.
+                If you want to understand the problems it can solve, the features it has, or use
+                cases it can address, you&apos;re in the right place.
               </p>
 
-              <p className="mb-3">
-                Let&apos;s dive right in...
-              </p>
+              <p className="mb-3">Let&apos;s dive right in...</p>
             </div>
           </div>
         </div>

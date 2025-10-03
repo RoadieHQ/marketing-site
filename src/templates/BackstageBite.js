@@ -2,14 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
-import {
-  SEO,
-  SitewideHeader,
-  SitewideFooter,
-  Headline,
-  Lead,
-  TextLink as Link,
-} from 'components';
+import { SEO, SitewideHeader, SitewideFooter, Headline, Lead, TextLink as Link } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
@@ -56,9 +49,7 @@ const BackstageBiteTemplate = ({ data: { site, video } }) => {
               {video.title}
             </Headline>
 
-            <Lead>
-              {video.shortDescription.childMarkdownRemark.rawMarkdownBody}
-            </Lead>
+            <Lead>{video.shortDescription.childMarkdownRemark.rawMarkdownBody}</Lead>
           </div>
 
           <div className="relative mb-8" style={{ padding: '80.06% 0 0 0' }}>
@@ -82,11 +73,7 @@ const BackstageBiteTemplate = ({ data: { site, video } }) => {
         </div>
 
         <div className="relative max-w-lg mx-auto lg:max-w-xl">
-          <SubscribeToNewsletterCTA
-            setModalOpen={setModalOpen}
-            email={email}
-            setEmail={setEmail}
-          />
+          <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
         </div>
       </main>
 
@@ -110,7 +97,7 @@ export const pageQuery = graphql`
       }
     }
 
-    video: contentfulVideo(slug: {eq: $slug}) {
+    video: contentfulVideo(slug: { eq: $slug }) {
       title
       shortDescription {
         childMarkdownRemark {

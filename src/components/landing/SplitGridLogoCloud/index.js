@@ -1,16 +1,10 @@
 import React from 'react';
 import { Headline, TextLink as Link } from 'components';
 
-const SubTitle = ({ text }) => (
-  <p className="mt-3 max-w-3xl text-lg text-gray-500">
-    {text}
-  </p>
-);
+const SubTitle = ({ text }) => <p className="mt-3 max-w-3xl text-lg text-gray-500">{text}</p>;
 
 const LogoItem = ({ src }) => (
-  <div className="col-span-1 flex justify-center items-center py-8 px-8 bg-gray-50">
-    {src}
-  </div>
+  <div className="col-span-1 flex justify-center items-center py-8 px-8 bg-gray-50">{src}</div>
 );
 
 const SplitGridOnRight = ({ content }) => (
@@ -18,11 +12,15 @@ const SplitGridOnRight = ({ content }) => (
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-32 lg:px-8">
       <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
         <div>
-          <Headline el="h2" size="medium">{content.title}</Headline>
+          <Headline el="h2" size="medium">
+            {content.title}
+          </Headline>
           <SubTitle text={content.subTitle} />
           {content.link && (
             <div className="mt-4">
-              <Link to={content.link.to} color="primary" className="font-bold text-xl">{content.link.text}  &rarr;</Link>
+              <Link to={content.link.to} color="primary" className="font-bold text-xl">
+                {content.link.text} &rarr;
+              </Link>
             </div>
           )}
         </div>

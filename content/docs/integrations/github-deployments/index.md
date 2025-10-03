@@ -10,17 +10,17 @@ integrationType: OSS plugin
 ---
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |<ul><li>The [Roadie Github App installed](/docs/getting-started/adding-a-catalog-item)</li><li>A `github.com/project-slug` annotation present in your `catalog-info.yaml` file</li></ul> |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
-The Github Deployments plugin will display a table of deployments for this repo made through Github Actions. 
+|                            |                                                                                                                                                                                          |
+| -------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|          **Prerequisites** | <ul><li>The [Roadie Github App installed](/docs/getting-started/adding-a-catalog-item)</li><li>A `github.com/project-slug` annotation present in your `catalog-info.yaml` file</li></ul> |
+|         **Considerations** |                                                                                                                                                                                          |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                                         |
+
+The Github Deployments plugin will display a table of deployments for this repo made through Github Actions.
 
 ![github-deployments-screenshot](./screenshot.webp)
 Credit: [Andrew Johnson](https://github.com/anderoo)
-
 
 ## Adding the Plugin
 

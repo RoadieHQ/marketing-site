@@ -3,26 +3,27 @@ title: Accessing AWS Services
 publishedDate: '2022-03-23T14:00:00.0Z'
 description: How to configure permissions so that Roadie can access AWS resources in your account.
 ---
+
 ## Prerequisites
 
-* The Roadie account ID.
-* The Roadie backend role.
-* (optional) An aws permissions policy name to associate with the role. 
+- The Roadie account ID.
+- The Roadie backend role.
+- (optional) An aws permissions policy name to associate with the role.
 
 The above are accessible via `Administration > Settings > AWS S3`.
 
 ## Introduction
 
-You may want Roadie to be able to access AWS services such as EKS or S3 in your account to use the associated Backstage 
-plugins that require access to infrastructure or resources hosted by AWS. In order to do this you must provide us with 
-an identity in your account which we can assume. We use roles for this purpose. This document will describe how to create 
+You may want Roadie to be able to access AWS services such as EKS or S3 in your account to use the associated Backstage
+plugins that require access to infrastructure or resources hosted by AWS. In order to do this you must provide us with
+an identity in your account which we can assume. We use roles for this purpose. This document will describe how to create
 such a role.
 
 To learn more about the AWS concepts used below, you can read the following AWS documentation pages:
 
-* [Assuming Role](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
-* [Cross Account Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
-* [Trust relationship](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
+- [Assuming Role](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
+- [Cross Account Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
+- [Trust relationship](https://aws.amazon.com/en/blogs/security/how-to-use-trust-policies-with-iam-roles/)
 
 ## Step 1: Creating the cross account federation role
 
@@ -47,7 +48,8 @@ To learn more about the AWS concepts used below, you can read the following AWS 
 8. For the ”Role Name” enter: `<tenant-name>-roadie-read-only-role`
 
 `<tenant-name>` should be replaced by the lower cased value of your company (e.g. "mycompany-roadie-read-only-role") .
-> ⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text `<tenant-name>-roadie-`. If other naming conventions are used, the role assumption is blocked by security measures. 
+
+> ⚠️ The enforced naming convention for acceptable assumable roles dictates that the role name needs to start with text `<tenant-name>-roadie-`. If other naming conventions are used, the role assumption is blocked by security measures.
 
 9. For the ”Role description” enter a description such as:
 
@@ -73,16 +75,14 @@ You should see a page like this
 
 3. Click on ”Trust Relationships”, then ”Edit relationship” and add the text below filling in the values:
 
-``` json
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": [
-          "<ROADIE ACCOUNT ID>"
-        ]
+        "AWS": ["<ROADIE ACCOUNT ID>"]
       },
       "Action": "sts:AssumeRole",
       "Condition": {
@@ -90,9 +90,7 @@ You should see a page like this
           "sts:ExternalId": "<EXTERNAL ID AS CONFIGURED ABOVE>"
         },
         "StringLike": {
-          "aws:PrincipalArn": [
-            "*<ROADIE BACKEND ROLE>*"
-          ]
+          "aws:PrincipalArn": ["*<ROADIE BACKEND ROLE>*"]
         }
       }
     }
@@ -100,6 +98,6 @@ You should see a page like this
 }
 ```
 
-ℹ️  The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
+ℹ️ The PrincipalArn might be something like `*mycompany-roadie-read-only-role*`
 
 4. Save the changes.

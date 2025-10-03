@@ -6,22 +6,26 @@ import classnames from 'classnames';
 import { Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
 import ListItem from 'components/backstage/plugins/ListItem';
 
-const SORT_ORDERS = [{
-  label: 'Name',
-  value: 'name',
-}, {
-  label: 'Popularity',
-  value: 'popularity',
-}, {
-  label: 'Recently Updated',
-  value: 'recent',
-}];
+const SORT_ORDERS = [
+  {
+    label: 'Name',
+    value: 'name',
+  },
+  {
+    label: 'Popularity',
+    value: 'popularity',
+  },
+  {
+    label: 'Recently Updated',
+    value: 'recent',
+  },
+];
 
-async function fetchNpmDataForList () {
+async function fetchNpmDataForList() {
   let response;
 
   try {
-    response = await fetch( '/.netlify/functions/fetchNpmDataForList');
+    response = await fetch('/.netlify/functions/fetchNpmDataForList');
 
     if (!response.ok) {
       return {
@@ -44,7 +48,9 @@ async function fetchNpmDataForList () {
       data: json.data,
     };
   } catch (err) {
-    console.warn(`Unparsable JSON returned from Netlify function. It's likely not available in this environment.`);
+    console.warn(
+      `Unparsable JSON returned from Netlify function. It's likely not available in this environment.`
+    );
     return {
       status: 'error',
       data: {},
@@ -65,12 +71,7 @@ const hydratePlugin = (plugin, npmData) => {
   return plugin;
 };
 
-const filterPlugins = ({
-  plugins,
-  query,
-  sortOrder,
-  npmDataLoadingState,
-}) => {
+const filterPlugins = ({ plugins, query, sortOrder, npmDataLoadingState }) => {
   let filteredPlugins = [];
   if (query === '') {
     filteredPlugins = plugins;
@@ -88,7 +89,7 @@ const filterPlugins = ({
     } else if (sortOrder.value === 'recent') {
       filteredPlugins = sortBy(filteredPlugins, ['npmData.latestVersionPublishedTime']).reverse();
     }
-  } 
+  }
 
   return filteredPlugins;
 };
@@ -115,11 +116,8 @@ const BackstagePlugins = ({ data }) => {
     })();
   }, []);
 
-  const allPLuginsCount = plugins.edges.length;
-
-  const hydratedPlugins = plugins.edges.map(({ node }) => (
-    hydratePlugin(node, npmData)
-  ));
+  const allPluginsCount = plugins.edges.length;
+  const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, npmData));
 
   const filteredPlugins = filterPlugins({
     plugins: hydratedPlugins,
@@ -142,8 +140,17 @@ const BackstagePlugins = ({ data }) => {
               <Headline>Backstage plugins</Headline>
             </div>
             <div className="mb-10">
-              <Lead>Descriptions, installation instructions, and changelogs for {allPLuginsCount.toLocaleString()} open-source Backstage plugins.</Lead>
-              <Lead>Using Roadie? Visit our <Link to="/docs/integrations/" color="primary">integrations list</Link> instead.</Lead>
+              <Lead>
+                Descriptions, installation instructions, and changelogs for {allPluginsCount.toLocaleString()} open-source Backstage 
+                plugins.
+              </Lead>
+              <Lead>
+                Using Roadie? Visit our{' '}
+                <Link to="/docs/integrations/" color="primary">
+                  integrations list
+                </Link>{' '}
+                instead.
+              </Lead>
             </div>
           </div>
 
@@ -160,10 +167,12 @@ const BackstagePlugins = ({ data }) => {
                 />
               </div>
 
-              <div className={classnames('text-right', {
-                'visible': npmDataLoadingState === 'loaded',
-                'invisible': npmDataLoadingState !== 'loaded',
-              })}>
+              <div
+                className={classnames('text-right', {
+                  visible: npmDataLoadingState === 'loaded',
+                  invisible: npmDataLoadingState !== 'loaded',
+                })}
+              >
                 <label htmlFor="sort-order" className="mr-2">
                   Sort by:
                 </label>
@@ -176,7 +185,9 @@ const BackstagePlugins = ({ data }) => {
                   fullWidth={false}
                 >
                   {SORT_ORDERS.map(({ value, label }) => (
-                    <option value={value} key={value}>{label}</option>
+                    <option value={value} key={value}>
+                      {label}
+                    </option>
                   ))}
                 </Select>
               </div>
@@ -209,7 +220,7 @@ export const pageQuery = graphql`
       }
     }
 
-    plugins: allContentfulBackstagePlugin(sort: {humanName: ASC}) {
+    plugins: allContentfulBackstagePlugin(sort: { humanName: ASC }) {
       edges {
         node {
           slug
@@ -217,10 +228,10 @@ export const pageQuery = graphql`
           npmPackageName
           logoImage {
             gatsbyImageData(
-              height: 80,
-              width: 80,
-              placeholder: DOMINANT_COLOR,
-              resizingBehavior: PAD,
+              height: 80
+              width: 80
+              placeholder: DOMINANT_COLOR
+              resizingBehavior: PAD
             )
           }
           attributionText

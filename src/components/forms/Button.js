@@ -14,7 +14,8 @@ const Button = ({
   postfixIcon,
   ...props
 }) => {
-  const baseClassName = 'flex items-center justify-center border border-transparent text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-900';
+  const baseClassName =
+    'flex items-center justify-center border border-transparent text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-900';
   const buttonBaseClassName = 'shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2';
   const primaryBaseClass = 'text-white font-bold tracking-wide bg-primary-700 hover:bg-primary-600';
   const secondaryBaseClass = 'text-blueroadie bg-white hover:bg-gray-50';
@@ -41,8 +42,10 @@ const Button = ({
         })}
       >
         <Link
-          className={
-            classnames(className, baseClassName, {
+          className={classnames(
+            className,
+            baseClassName,
+            {
               [primaryBaseClass]: color === 'primary',
               [secondaryBaseClass]: color === 'secondary',
               [insetBaseClass]: color === 'inset',
@@ -50,8 +53,9 @@ const Button = ({
               [mediumBaseClass]: size === 'medium',
               [largeBaseClass]: size === 'large',
               'w-full': fullWidth === true,
-            }, className.root)
-          }
+            },
+            className.root
+          )}
           {...props}
         >
           {prefixIcon}
@@ -64,15 +68,21 @@ const Button = ({
 
   return (
     <button
-      className={classnames(className, baseClassName, buttonBaseClassName, {
-        [`${primaryBaseClass} focus:ring-primary-500`]: color === 'primary',
-        [secondaryBaseClass]: color === 'secondary',
-        [insetBaseClass]: color === 'inset',
-        [smallBaseClass]: size === 'small',
-        [mediumBaseClass]: size === 'medium',
-        [largeBaseClass]: size === 'large',
-        'w-full': fullWidth === true,
-      }, className.root)}
+      className={classnames(
+        className,
+        baseClassName,
+        buttonBaseClassName,
+        {
+          [`${primaryBaseClass} focus:ring-primary-500`]: color === 'primary',
+          [secondaryBaseClass]: color === 'secondary',
+          [insetBaseClass]: color === 'inset',
+          [smallBaseClass]: size === 'small',
+          [mediumBaseClass]: size === 'medium',
+          [largeBaseClass]: size === 'large',
+          'w-full': fullWidth === true,
+        },
+        className.root
+      )}
       {...props}
     >
       {prefixIcon}

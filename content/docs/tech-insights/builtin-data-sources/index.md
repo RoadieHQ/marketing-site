@@ -34,21 +34,21 @@ Imports data from Datadog which can be used to create Tech Insights checks.
 
 **Annotations used:**
 
-* `datadoghq.com/slo_tag` for retrieving SLOs
-* `datadoghq.com/monitor_tags` for retrieving monitors
+- `datadoghq.com/slo_tag` for retrieving SLOs
+- `datadoghq.com/monitor_tags` for retrieving monitors
 
 #### Authentication
 
 Authentication is done via
 
-* `DD_API_TOKEN` [Read more](https://docs.datadoghq.com/api/latest/)
-* `DD_APP_TOKEN` [Read more](https://docs.datadoghq.com/api/latest/)
+- `DD_API_TOKEN` [Read more](https://docs.datadoghq.com/api/latest/)
+- `DD_APP_TOKEN` [Read more](https://docs.datadoghq.com/api/latest/)
 
 <details>
 <summary><b> Facts </b></summary>
 
 | Name          | Description                                                                             |
-|---------------|-----------------------------------------------------------------------------------------|
+| ------------- | --------------------------------------------------------------------------------------- |
 | Slo Count     | Number of SLOs configured in datadog matched based on the annotated tag                 |
 | Monitor Count | Number of monitors configured in datadog with tags matching the monitor_tags annotation |
 
@@ -72,7 +72,7 @@ installed the GitHub app, we will check for `GITHUB TOKEN` which is used to auth
 <summary><b> Facts </b></summary>
 
 | Name                                | Description                                                                               |
-|-------------------------------------|-------------------------------------------------------------------------------------------|
+| ----------------------------------- | ----------------------------------------------------------------------------------------- |
 | Open Alerts                         | Number of Dependabot alerts with state "open"                                             |
 | Dismissed Alerts                    | Number of Dependabot alerts with state "dismissed"                                        |
 | Dismissed Without Reason Alerts     | Number of Dependabot alerts with state "dismissed" that don\'t have dismissed_reason set  |
@@ -105,7 +105,7 @@ Generates facts for entities you have loaded into Backstage based on the data de
 <summary> <b>Facts</b> </summary>
 
 | Name                | Description                                 |
-|---------------------|---------------------------------------------|
+| ------------------- | ------------------------------------------- |
 | Has Title           | The entity has a title in metadata          |
 | Has Description     | The entity has a description in metadata    |
 | Has Relationship    | Has relationships defined to other entities |
@@ -136,7 +136,7 @@ Generates facts which indicate the quality of data in the spec.owner field.
 <summary> <b>Facts</b> </summary>
 
 | Name             | Description                                                                                     |
-|------------------|-------------------------------------------------------------------------------------------------|
+| ---------------- | ----------------------------------------------------------------------------------------------- |
 | Has Owner        | The spec.owner field is set                                                                     |
 | Has Group Owner  | The spec.owner field is set and refers to a group                                               |
 | Has Relationship | Has relationships defined to other entities                                                     |
@@ -167,7 +167,7 @@ apis [read more](/docs/integrations/github-token/).
 <summary><b> Facts </b> </summary>
 
 | Name                                    | Description                                           |
-|-----------------------------------------|-------------------------------------------------------|
+| --------------------------------------- | ----------------------------------------------------- |
 | Amount Of Open Pull Requests            | Number of GitHub open pull requests for this entity   |
 | Amount Of Pull Requests                 | Number of all GitHub pull requests for this entity    |
 | Amount Of Merged Pull Requests          | Number of merged GitHub pull requests for this entity |
@@ -183,7 +183,7 @@ apis [read more](/docs/integrations/github-token/).
 | Amount Of Merged PR Last Month          | Number of pull requests merged last month             |
 | Amount Of Closed Issues Last Month      | Number of closed issues for the last month            |
 | Latest Merged PR Author                 | Author of the last merged pull request                |
-| Latest Merged PR Title                  | Title of  the last merged pull request                |
+| Latest Merged PR Title                  | Title of the last merged pull request                 |
 
 </details>
 
@@ -204,7 +204,7 @@ apis [read more](/docs/integrations/github-token/).
 <summary><b> Facts </b> </summary>
 
 | Name                            | Description                                        |
-|---------------------------------|----------------------------------------------------|
+| ------------------------------- | -------------------------------------------------- |
 | Branch Protection               | Branch protection is enabled on the default branch |
 | Enforce Admins                  | Default branch is admin enforced                   |
 | Allow Deletions                 | Default branch allows deletions                    |
@@ -234,13 +234,13 @@ to identify applicable entities.
 
 Authentication is done via
 
-* `PAGERDUTY_TOKEN` [Read more](/docs/integrations/pagerduty/)
+- `PAGERDUTY_TOKEN` [Read more](/docs/integrations/pagerduty/)
 
 <details>
 <summary> <b>Facts</b> </summary>
 
 | Name                              | Description                                                                                                                                                                                                                                                                                                 |
-|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Mean Assignment Count             | Mean count of instances where responders were assigned an incident (including through reassignment or escalation) or accepted a responder request.                                                                                                                                                          |
 | Mean Engaged Seconds              | Mean engaged time across all responders for incidents that match the given filters. Engaged time is measured from the time a user engages with an incident (by acknowledging or accepting a responder request) until the incident is resolved. This may include periods in which the incidents was snoozed. |
 | Mean Engaged User Count           | Mean number of users who engaged with an incident. Engaged is defined as acknowledging an incident or accepting a responder request in it.                                                                                                                                                                  |
@@ -269,13 +269,13 @@ Retrieves service information from PagerDuty. Uses annotation "pagerduty.com/ser
 
 Authentication is done via
 
-* `PAGERDUTY_TOKEN` [Read more](/docs/integrations/pagerduty/)
+- `PAGERDUTY_TOKEN` [Read more](/docs/integrations/pagerduty/)
 
 <details>
 <summary> <b>Facts</b> </summary>
 
 | Name                  | Description                                                                                                                                                                                      |
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Has Scheduled Actions | A Boolean indicating if the service has automatic scheduled actions configured                                                                                                                   |
 | Has Description       | A Boolean indicating if the service has a description                                                                                                                                            |
 | Has Support Hours Set | A Boolean indicating if the service has at least one day of the week of support hours assigned to it in PagerDuty                                                                                |
@@ -293,13 +293,13 @@ Generates fact data about Snyk projects configured for the entity.
 
 **Annotations used:**
 
-* `snyk.io/org-name`, if omitted, globally configured Snyk org is used
-* `snyk.io/target-id`, specify a single target by name or ID
-* `snyk.io/targets`, specify one or more targets, by name or ID
-* `snyk.io/project-ids`, are the project ID (see slug in url or ID in project settings) If multiple projects (like
+- `snyk.io/org-name`, if omitted, globally configured Snyk org is used
+- `snyk.io/target-id`, specify a single target by name or ID
+- `snyk.io/targets`, specify one or more targets, by name or ID
+- `snyk.io/project-ids`, are the project ID (see slug in url or ID in project settings) If multiple projects (like
   multiple package.json or pom files, add them with increasing number), add them comma separated
-* `github.com/project-slug`, to identify the target based on its GitHub repository name
-* `snyk.io/exclude-project-ids`, to exclude specific projects you might not want.
+- `github.com/project-slug`, to identify the target based on its GitHub repository name
+- `snyk.io/exclude-project-ids`, to exclude specific projects you might not want.
 
 The data source follows the same annotation structure as the
 official [Snyk Backstage plugin](https://github.com/snyk-tech-services/backstage-plugin-snyk#getting-started). It is
@@ -311,13 +311,13 @@ concepts [here](https://docs.snyk.io/snyk-admin/introduction-to-snyk-projects).
 
 Authentication is done via
 
-* `SNYK_TOKEN` [Read more](/docs/integrations/snyk/)
+- `SNYK_TOKEN` [Read more](/docs/integrations/snyk/)
 
 <details>
 <summary> <b>Facts</b> </summary>
 
 | Name                                   | Description                                                                                                                      |
-|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Amount of Projects                     | Number of Snyk projects configured for this entity                                                                               |
 | Test Frequencies                       | A collection of test frequencies configured for the projects of the entity. Individual values can be 'daily', 'weekly or 'never' |
 | Monitored Statuses                     | A collection of monitored statuses for the projects of the entity. Individual values can be either true or false                 |
@@ -344,7 +344,7 @@ Generates facts related to the completeness of techdocs configuration for entiti
 <summary> <b>Facts</b> </summary>
 
 | Name                                     | Description                                    |
-|------------------------------------------|------------------------------------------------|
+| ---------------------------------------- | ---------------------------------------------- |
 | Has Annotation Backstage Io Techdocs Ref | The entity has a TechDocs reference annotation |
 
 </details>

@@ -28,18 +28,19 @@ This data provider provides connectivity via [Roadie proxies](/docs/custom-plugi
 
 The supported response types for HTTP data sources are JSON structures.
 
-**Available Metadata** 
+**Available Metadata**
 
 HTTP via Proxy Data Provider exposes the following metadata:
 
 | Metadata name | description                             | Example value                            |
-|---------------|-----------------------------------------|------------------------------------------|
+| ------------- | --------------------------------------- | ---------------------------------------- |
 | status        | HTTP Status code for the API call       | 200                                      |
 | headers       | A dictionary of header and their values | `{ "content-type": "application/json" }` |
 
-Example usage: 
-* Get response status: `$metadata('status')`
-* Get header value for content-type: `$metadata('headers.content-type')`
+Example usage:
+
+- Get response status: `$metadata('status')`
+- Get header value for content-type: `$metadata('headers.content-type')`
 
 ### GitHub API
 
@@ -58,12 +59,12 @@ Component repository file provider reaches out to the source location of an enti
 HTTP via Proxy Data Provider exposes the following metadata:
 
 | Metadata name | description                                            | Example values                                                                               | Note                                                                                        |
-|---------------|--------------------------------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| ------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | error         | Error structure containing information about the error | `{ "name": "NotFoundError", "message": "Attempted to retrieve a file which was not found" }` | The error shape is returned only if the Data Provider is unable to retrieve the wanted file |
 
-
 Example usage:
-* Assert that file was not found: `$metadata('error.name') = 'NotFoundError`
+
+- Assert that file was not found: `$metadata('error.name') = 'NotFoundError`
 
 ### Entity Definition
 
@@ -115,27 +116,27 @@ Roadie provides few extension functions to standard JSONata functionality that c
 
 **$parseYaml**
 
-
 If you want to parse YAML content from plain strings, for example from an API Entity's `spec.definition` field, you can use the `$parseYaml` function for that purpose. An example query could be like the following (identifying OpenAPI version):
-* Data Provider Type: Entity Definition
-* Fact Name: OpenAPI Spec Version
-* JSONata query: `$parseYaml(spec.definition).openapi`
-* Type: String
+
+- Data Provider Type: Entity Definition
+- Fact Name: OpenAPI Spec Version
+- JSONata query: `$parseYaml(spec.definition).openapi`
+- Type: String
 
 **$getEntityData**
 
 If you want to get entity information in the JSONata context you can use the `$getEntityData` function. An example query could be like the following:
-* Data Provider Type: Entity Definition, HTTP Data Source
-* Fact Name: Entities part of entity
-* JSONata query: `$getEntityData('relations')[type='partOf']`
-* Type: JSON Object
+
+- Data Provider Type: Entity Definition, HTTP Data Source
+- Fact Name: Entities part of entity
+- JSONata query: `$getEntityData('relations')[type='partOf']`
+- Type: JSON Object
 
 **$metadata**
 
 In case you want to capture status codes or headers from the received response, Roadie Tech Insights includes an extension function for JSONata parser that allows you to read _metadata_ from these responses. Metadata function is supported for a subset of Data Provider types. The supported types and their respective available metadata can be found from the individual [Data Provider](#setting-up-data-provider) section above.
 
-The `$metadata` function takes in a **string** which points to the available metadata key. For example if you want to get metadata information about an error name which happened in a file data source, you would use the following function call `$metadata('error.name')`. Please note that the `'` (quotation) characters are necessary to be included when using this functionality. 
-
+The `$metadata` function takes in a **string** which points to the available metadata key. For example if you want to get metadata information about an error name which happened in a file data source, you would use the following function call `$metadata('error.name')`. Please note that the `'` (quotation) characters are necessary to be included when using this functionality.
 
 Below are few commonly used recipes that could be helpful.
 
@@ -214,10 +215,6 @@ API response:
 - The percentage of successful checks: `results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].success / (results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].success + results.$[entity = $lowercase('{{ kind }}:{{metadata.namespace}}/{{metadata.name}}')].failing) * 100`
 
 </details>
-
-
-
-
 
 ### Example configuration steps
 

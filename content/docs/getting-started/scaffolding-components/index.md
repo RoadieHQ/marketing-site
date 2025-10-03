@@ -14,7 +14,7 @@ A Scaffolder template is then run on demand by the users of Backstage to execute
 
 **You can find detailed docs on writing all kinds of Scaffolder templates [here](/docs/details/scaffolder/).**
 
-## Example: Adding a component to the Catalog using the Scaffolder 
+## Example: Adding a component to the Catalog using the Scaffolder
 
 As an example of what the Scaffodler can do, let's to create a basic scaffolder template in Backstage.
 
@@ -28,13 +28,13 @@ You can either follow the text or the video, or both.
 
 ### Step 1. Enable and set up the Scaffolder
 
-Visit the `Administration > Settings > Scaffolder` and make sure the enabled check box is selected, press save and apply and restart. 
+Visit the `Administration > Settings > Scaffolder` and make sure the enabled check box is selected, press save and apply and restart.
 
 Optionally you can also use the grouping functionality of Scaffolder templates from these settings. The Scaffolder templates are grouped together if they contain tags defined in this section of settings.
 
 ### Step 2. Create a template.yaml file in a repository
 
-You can either create the following file in your own repository or [use the public example](https://github.com/RoadieHQ/sample-service/blob/main/demo_template.yaml) we prepared. 
+You can either create the following file in your own repository or [use the public example](https://github.com/RoadieHQ/sample-service/blob/main/demo_template.yaml) we prepared.
 
 <details>
   <summary>Expand here to see an example template.yaml</summary>
@@ -70,7 +70,7 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: "Hello, ${{ parameters.name }}"
+        message: 'Hello, ${{ parameters.name }}'
 ```
 
 </details>
@@ -104,7 +104,7 @@ After a couple of seconds you should see the "Task Activity" page with the outpu
 
 ![task-activity.webp](./task-activity.webp)
 
-## Next steps 
+## Next steps
 
 You can see the full list of Scaffolder Tasks that we support at Roadie by visiting `https://<tenant-name>.roadie.so/templates/actions`
 

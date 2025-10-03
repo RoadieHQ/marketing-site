@@ -4,10 +4,7 @@ import { Link } from 'components';
 import { PAGE_PATHS } from '../../contactFormConstants';
 
 const PragmaticEngineerNewsletter = () => (
-  <Link
-    to={PAGE_PATHS.requestDemo}
-    className="text-white underline-none hover:underline"
-  >
+  <Link to={PAGE_PATHS.requestDemo} className="text-white underline-none hover:underline">
     <img
       src={logo}
       alt="The Pragmatic Engineer logo. Three orange columns ordered tallest to shortest."

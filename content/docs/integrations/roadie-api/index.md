@@ -18,10 +18,11 @@ Before you start you will first need to [get an API key](/docs/api/authorization
 You can either manage entities as a full set of entities, or create and delete entities one by one. You would use entity sets if you want to create a batch of entities and manage them on an ongoing basis in an idempotent manner. For example, you might want to run a script once a week that lists resources from your internal system and creates relevant entities in Roadie. Then when resources are added and removed, the entities are added and removed.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Entity Sets

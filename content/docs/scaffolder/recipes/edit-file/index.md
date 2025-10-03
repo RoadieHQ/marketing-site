@@ -5,6 +5,7 @@ description: How to change content in a repository file
 ---
 
 We have scaffolder actions that allow you do a number of "editing" actions on a file:
+
 - [Append some content to a file using](#append-to-a-file) - `roadiehq:utils:fs:append`
 - [Merge values in a json file using](#merge-new-json-into-a-file) - `roadiehq:utils:json:merge`
 - [Replace a file with new content using](#overwrite-a-file) - `roadiehq:utils:fs:write`
@@ -66,7 +67,7 @@ spec:
             rows: 10
           ui:help: 'Make sure it is valid by checking the schema at `/tools/entity-preview`'
           ui:placeholder: |
-            
+
             ---
             apiVersion: backstage.io/v1alpha1
               kind: Component
@@ -94,7 +95,7 @@ spec:
       action: publish:github:pull-request
       input:
         repoUrl: github.com?repo=${{ parameters.repository }}&owner=${{ parameters.org }}
-        branchName:  ${{ parameters.pr_branch }}
+        branchName: ${{ parameters.pr_branch }}
         title: Add entity to ${{ parameters.path }}
         description: PR created from Roadie Backstage scaffolder
     - id: log-message
@@ -102,7 +103,6 @@ spec:
       action: debug:log
       input:
         message: 'PR url: ${{ steps["publish-pr"].output.remoteUrl }}'
-
 ```
 
 ## Merge new json into a file
@@ -162,12 +162,12 @@ spec:
       name: Log PR URL
       action: debug:log
       input:
-        message: "Fetching repo from https://github.com/${{ parameters.org }}/${{ parameters.repository }}"
+        message: 'Fetching repo from https://github.com/${{ parameters.org }}/${{ parameters.repository }}'
     - id: fetch-repo
       name: Fetch repo
       action: fetch:plain
       input:
-        url: "https://github.com/${{ parameters.org }}/${{ parameters.repository }}"
+        url: 'https://github.com/${{ parameters.org }}/${{ parameters.repository }}'
     - id: merge
       name: Merge json
       action: roadiehq:utils:json:merge
@@ -271,7 +271,7 @@ spec:
       action: publish:github:pull-request
       input:
         repoUrl: github.com?repo=${{ parameters.repository }}&owner=${{ parameters.org }}
-        branchName:  ${{ parameters.pr_branch }}
+        branchName: ${{ parameters.pr_branch }}
         title: Overwrite content for ${{ parameters.path }}
         description: This PR was created by a Roadie Backstage scaffolder task
     - id: log-message

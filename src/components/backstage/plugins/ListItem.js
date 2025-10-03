@@ -9,10 +9,7 @@ import Attribution from './Attribution';
 import Logo from './Logo';
 
 const FooterInner = ({
-  npmData: {
-    latestVersionPublishedTime,
-    lastMonthDownloads,
-  },
+  npmData: { latestVersionPublishedTime, lastMonthDownloads },
   npmDataLoadingState,
 }) => {
   if (npmDataLoadingState === 'error') return null;
@@ -41,15 +38,15 @@ const FooterInner = ({
     );
   } else {
     return (
-      <ContentLoader 
+      <ContentLoader
         speed={2}
         className="w-full"
         height={20}
         backgroundColor="#f3f3f3"
         foregroundColor="#ecebeb"
       >
-        <rect x="0" y="0" rx="3" ry="3" width="150" height="20" /> 
-        <rect x="230" y="0" rx="3" ry="3" width="300" height="20" /> 
+        <rect x="0" y="0" rx="3" ry="3" width="150" height="20" />
+        <rect x="230" y="0" rx="3" ry="3" width="300" height="20" />
       </ContentLoader>
     );
   }
@@ -69,20 +66,20 @@ const ListItem = ({
       <Link to={`/backstage/plugins/${slug}/`} className="underline-none">
         <div className="flex flex-col place-content-between md:h-[250px] lg:h-[280px] xl:h-[250px]">
           <div>
-              <div className="flex p-4 mb-2">
-                <div className="mr-4">
-                  <Logo
-                    gatsbyImageData={logoImage.gatsbyImageData}
-                    alt={`${humanName} logo`}
-                    minHeight={80}
-                    className="flex items-center"
-                  />
-                </div>
-                <div className="pt-2 capitalize">
-                  <Title>{humanName}</Title>
-                  <Attribution attribution={{ text }} />
-                </div>
+            <div className="flex p-4 mb-2">
+              <div className="mr-4">
+                <Logo
+                  gatsbyImageData={logoImage.gatsbyImageData}
+                  alt={`${humanName} logo`}
+                  minHeight={80}
+                  className="flex items-center"
+                />
               </div>
+              <div className="pt-2 capitalize">
+                <Title>{humanName}</Title>
+                <Attribution attribution={{ text }} />
+              </div>
+            </div>
 
             <p className="px-4 text-sm mb-4 text-gray-600">{lead}</p>
           </div>

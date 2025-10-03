@@ -2,12 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { ChevronRightIcon } from '@heroicons/react/solid';
-import {
-  SEO,
-  SitewideHeader,
-  SitewideFooter,
-  TextLink as Link,
-} from 'components';
+import { SEO, SitewideHeader, SitewideFooter, TextLink as Link } from 'components';
 import {
   CodeIcon,
   BookOpenIcon,

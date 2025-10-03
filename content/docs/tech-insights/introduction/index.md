@@ -10,12 +10,10 @@ You can create Scorecards to track the things that matter about your assets in t
 
 Therefore, in order to create [Scorecards](/docs/tech-insights/scorecards), you will need to add [Data Sources](/docs/tech-insights/data-sources) and define [Checks](/docs/tech-insights/checks) on such data. Roadie provides a user interface to build all three of these, this page describes how to set each one of them.
 
-
 ## Prerequisites
 
 - Roadie Tech Insights is a paid add-on. If you are not sure about whether or not you have it or would like to include it, please reach out to our sales team.
 - You must be an administrator for your Roadie instance to enable and manage Tech Insights. See [access section](#users-access) for more details.
-
 
 ## Read Only Access
 
@@ -25,7 +23,6 @@ If you want to hide Tech Insights for non-admin users such as when initially set
 
 ![Admin Only View](./admin-only-settings.webp)
 
-
 ## Write Access
 
 Anyone who is assigned the `tech-insights-admin` role in Roadie will have write access to Tech Insights.
@@ -33,7 +30,6 @@ Anyone who is assigned the `tech-insights-admin` role in Roadie will have write 
 ## Disabling Roadie Tech Insights
 
 To disable Roadie Tech Insights and remove it from your sidebar, please reach out to Roadie support.
-
 
 ## First steps
 

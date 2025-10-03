@@ -16,17 +16,19 @@ GitLab OAuth authentication allows users to sign in to your Roadie instance usin
 This guide covers setting up GitLab OAuth authentication, including creating the OAuth application in GitLab, configuring secrets in Roadie, and setting up custom audience URLs for self-hosted GitLab instances.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** | <ul><li>Access to your GitLab instance (GitLab.com or self-hosted)</li><li>Admin access to your Roadie instance</li><li>Your Roadie tenant URL (e.g., `https://yourcompany.roadie.so`)</li></ul> |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
+|                            |                                                                                                                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** | <ul><li>Access to your GitLab instance (GitLab.com or self-hosted)</li><li>Admin access to your Roadie instance</li><li>Your Roadie tenant URL (e.g., `https://yourcompany.roadie.so`)</li></ul> |
+|         **Considerations** |                                                                                                                                                                                                  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                                                 |
 
 ## Step 1: Create a GitLab OAuth Application
 
 1. Navigate to your GitLab user settings at `https://gitlab.com/-/user_settings/applications`. For self-hosted gitlab, use your internal instance rather than gitlab.com.
 2. Click **Add new application**
 3. Fill in the application details:
+
    - **Name**: Enter a descriptive name like "Roadie OAuth"
    - **Redirect URI**: Enter your Roadie callback URL: `https://<tenant-name>.roadie.so/api/auth/gitlab/handler/frame`
    - **Scopes**: Select the following scopes:
@@ -47,6 +49,7 @@ This guide covers setting up GitLab OAuth authentication, including creating the
 1. Navigate to your Roadie secrets page: `https://<tenant-name>.roadie.so/administration/secrets`
 
 2. Locate and update the following secrets:
+
    - **AUTH_GITLAB_CLIENT_ID**: Click the edit icon and enter the Application ID from Step 1
    - **AUTH_GITLAB_CLIENT_ID**: Click the edit icon and enter the Secret from Step 1
 
@@ -81,19 +84,23 @@ If you're using a self-hosted GitLab instance, you need to configure the hostnam
 ### Common Issues
 
 **"Invalid redirect URI" error**
+
 - Ensure the redirect URI in your GitLab OAuth app matches: `https://<tenant-name>.roadie.so/api/auth/gitlab/handler/frame` replacing `<your-tenant>` with your tenant name.
 - Remove any trailing slashes
 - Verify the tenant name is correct
 
 **"Client ID not found" error**
+
 - Verify the GITLAB_CLIENT_ID secret is correctly set in Roadie
 - Check that the Application ID was copied correctly from GitLab
 
 **"Invalid client secret" error**
+
 - Verify the GITLAB_CLIENT_SECRET secret is correctly set in Roadie
 - Ensure the secret was copied correctly from GitLab (it's only shown once)
 
 **Self-hosted GitLab authentication fails**
+
 - Verify the audience URL is correctly configured
 - Ensure your self-hosted GitLab instance is accessible from your browser
 - Check that the OAuth application was created in the correct GitLab instance
@@ -101,4 +108,4 @@ If you're using a self-hosted GitLab instance, you need to configure the hostnam
 ## References
 
 - [GitLab OAuth Provider Documentation](https://backstage.io/docs/auth/gitlab/provider/)
-- [Roadie GitLab Integration Guide](/docs/integrations/gitlab-provider/) 
+- [Roadie GitLab Integration Guide](/docs/integrations/gitlab-provider/)

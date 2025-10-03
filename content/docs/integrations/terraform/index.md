@@ -14,10 +14,11 @@ integrationType: Plugin
 The Terraform plugin integrates [Terraform](https://www.terraform.io/) with Roadie, allowing you to visualize, track, and manage your infrastructure as code directly from your Backstage instance. This plugin helps platform teams and developers to gain visibility into their infrastructure resources, track changes, and understand dependencies between different components.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Overview
@@ -32,13 +33,11 @@ The Terraform plugin for Roadie provides the following capabilities:
 
 ## Configuration
 
-
 ### Plugin Configuration
 
 The Terraform plugin can be configured through the Roadie UI. Navigate to `Administration > Settings > Terraform` to set up the plugin.
 
 ![Terraform Configuration](./terraform-configuration.webp)
-
 
 ## Using the Terraform Plugin
 
@@ -55,16 +54,15 @@ The plugin can be added as a tab to entity pages that have Terraform resources a
 
 ### Terraform Workspace Health card
 
-The plugin also exposes a health dashboard which can be used to identify the overall health of Terraform deployments within the workspace. 
+The plugin also exposes a health dashboard which can be used to identify the overall health of Terraform deployments within the workspace.
 ![Terraform Health Dashboard](./terraform-health-dashboard.webp)
-
 
 ### Linking Catalog Entities to Terraform Resources
 
 To associate Terraform resources with your catalog entities, you can add annotations to your entity's YAML file:
 
 ```yaml
-  # ...
+# ...
 metadata:
   name: example-service
   annotations:
@@ -73,8 +71,6 @@ metadata:
   # ...
 ```
 
-
-
 ## Additional Information
 
-* For specific information about the Terraform plugin for Backstage, see the [plugin repository](https://github.com/globallogicuki/globallogic-backstage-plugins/tree/main/plugins/terraform).
+- For specific information about the Terraform plugin for Backstage, see the [plugin repository](https://github.com/globallogicuki/globallogic-backstage-plugins/tree/main/plugins/terraform).

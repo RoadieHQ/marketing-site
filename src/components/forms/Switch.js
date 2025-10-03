@@ -1,14 +1,8 @@
 import React from 'react';
-import { Switch as HeadlessSwitch } from '@headlessui/react'
+import { Switch as HeadlessSwitch } from '@headlessui/react';
 import classnames from 'classnames';
 
-const Switch = ({
-  checked,
-  onChange,
-  srTitle,
-  name,
-  ...rest
-}) => (
+const Switch = ({ checked, onChange, srTitle, name, ...rest }) => (
   <HeadlessSwitch
     checked={checked}
     onChange={onChange}

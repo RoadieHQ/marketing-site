@@ -13,32 +13,36 @@ const searchClient = algoliasearch(
 );
 
 const getSources = ({ query }) => {
-  return [{
-    sourceId: 'docs',
-    getItemUrl({ item }) {
-      return item.slug;
-    },
-    getItems() {
-      return getAlgoliaResults({
-        searchClient,
-        queries: [{
-          indexName: 'docs',
-          query,
-          params: {
-            attributesToSnippet: ['title:10', 'excerpt:35'],
-          },
-        }],
-      });
-    },
-    templates: {
-      item({ item, components }) {
-        return <SearchResult hit={item} components={components} />;
+  return [
+    {
+      sourceId: 'docs',
+      getItemUrl({ item }) {
+        return item.slug;
       },
-      noResults() {
-        return <p>No results for this query.</p>;
+      getItems() {
+        return getAlgoliaResults({
+          searchClient,
+          queries: [
+            {
+              indexName: 'docs',
+              query,
+              params: {
+                attributesToSnippet: ['title:10', 'excerpt:35'],
+              },
+            },
+          ],
+        });
       },
-    }
-  }];
+      templates: {
+        item({ item, components }) {
+          return <SearchResult hit={item} components={components} />;
+        },
+        noResults() {
+          return <p>No results for this query.</p>;
+        },
+      },
+    },
+  ];
 };
 
 const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
@@ -59,8 +63,8 @@ const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
 
     search = autocomplete({
       container: searchBoxRef.current,
-      renderer: { createElement, Fragment, render: () => {}, },
-      render({ children, }, root) {
+      renderer: { createElement, Fragment, render: () => {} },
+      render({ children }, root) {
         if (!panelRootRef.current || rootRef.current !== root) {
           rootRef.current = root;
 

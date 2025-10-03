@@ -8,12 +8,12 @@ Entity metadata such, as the title and description, is pretty much necessary to 
 
 For example, you can create a check with the following attributes to find services which are missing the title metadata:
 
-| Field | Input |
-| --- | --- |
-| Name | Ensure titles are present on Backstage entities. |
-| Description | A title is a human readable name for the Backstage component. |
-| Data source | Entity Metadata (built-in). |
-| Fact | Has Title |
-| Fact operator | Is True |
+| Field         | Input                                                         |
+| ------------- | ------------------------------------------------------------- |
+| Name          | Ensure titles are present on Backstage entities.              |
+| Description   | A title is a human readable name for the Backstage component. |
+| Data source   | Entity Metadata (built-in).                                   |
+| Fact          | Has Title                                                     |
+| Fact operator | Is True                                                       |
 
-Roadie provides other metadata values to check for, such as the description, tags, lifecycle, namespace, and owner. 
+Roadie provides other metadata values to check for, such as the description, tags, lifecycle, namespace, and owner.

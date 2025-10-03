@@ -1,1 +1,1457 @@
-{"_id":"@backstage-community/plugin-apache-airflow","_rev":"16-168ba048fbaa4b7b5e60298de6084eb2","name":"@backstage-community/plugin-apache-airflow","dist-tags":{"latest":"0.11.0"},"versions":{"0.2.25":{"name":"@backstage-community/plugin-apache-airflow","version":"0.2.25","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.2.25","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"2343ba44d84f89be4d1a1fbdaf526b99d73498d1","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.25.tgz","fileCount":15,"integrity":"sha512-lUNYbrhFqL6hzrcQbpLnHqBsBcBx6CEj+etvCGSlEO/UVizO5KqpeCnNauShQi1D8YnL7abPapGhB3s690EymQ==","signatures":[{"sig":"MEYCIQCdhdAen1Ho3gZ8ebQuBWO0npIqjW/gDBHFhp34Fk/dYwIhAONEbdZPaXDrMRULAYw/wo4KKiEguOnHLwBB2v7owQS4","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":99081},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"8ff5c0817cde30165c4d2ee514e5fe258475f48b","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin"},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","cross-fetch":"^4.0.0","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.14.4","@backstage/core-plugin-api":"^1.9.2"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.26.3","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.0.31","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.5.4","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.12.4","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.2.25_1713517922489_0.441747968097419","host":"s3://npm-registry-packages"}},"0.2.26":{"name":"@backstage-community/plugin-apache-airflow","version":"0.2.26","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.2.26","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"ec3572077a78e3d536bb58d55834c5e19780278c","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.26.tgz","fileCount":15,"integrity":"sha512-ezadGoGApObLGJJceaqUyLcjRPQdPrJh/nf7L4WNWr5HMnZYWHeetlUymy2YKvrvEZPNXfVPtEYk45T4O7aaAQ==","signatures":[{"sig":"MEQCIDYB4n3OxFxtc4FDAJxHo5nQlAc08iMa/S0h0w3DkcjoAiADdKjquq0oFPnb8WJ1iGGWV4TqzlaFz/qEyE5cmhrdfg==","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":99581},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"750cffe7283f7c5879228ecaf86aef62c6a587d0","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin"},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.14.4","@backstage/core-plugin-api":"^1.9.2"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.26.3","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.0.31","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.5.4","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.12.4","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.2.26_1715587262829_0.31653184692425995","host":"s3://npm-registry-packages"}},"0.2.27":{"name":"@backstage-community/plugin-apache-airflow","version":"0.2.27","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.2.27","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"06e746b36e034f8ab87937c15a2e73369a5a56b4","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.27.tgz","fileCount":31,"integrity":"sha512-FH5cB0ffHCFzWFDdJWbeOWQZ8e6qelHD3VFiUWbxsHj9+OBGHVQuLfDY0vrNopqNqhflXPPTlTy8ewash3I8YA==","signatures":[{"sig":"MEQCIDsjHuQnUyqWzQfgEowFBbYxPc3My0Nwm4ntp/XCD+wCAiAXS2pVSP27+LOGr6kBXgAdP0CUYWZGv/sVUwal1hUAYA==","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":100168},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"bf96c259f61bde8108e59fe9f91918df71dd065b","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.14.9","@backstage/core-plugin-api":"^1.9.3"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.26.11","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.0.35","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.5.8","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.14.0","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.2.27_1721419930003_0.6102816638639057","host":"s3://npm-registry-packages"}},"0.2.28":{"name":"@backstage-community/plugin-apache-airflow","version":"0.2.28","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.2.28","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"d7021694c7b587a9ec96219c2bf04795fd8cf8ba","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.28.tgz","fileCount":31,"integrity":"sha512-brzFMT/9+WWS+Kvm63Nj79VJfwUEgBmC21f7NL1oW+avaJopowSeF4y57vRtpBez0qaJDk7QkYX99lqsRvwgYQ==","signatures":[{"sig":"MEQCICbbZNRMtiRh576s4eVIB8gLYVbuhksTtp0o3gvgB/XKAiBg1+g5+538rFtoi5VhoaV9WtVdTKgMLZgL7dsNYiswEA==","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":100245},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"96a59357cdebe38ec0c692945d87f81440442e67","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.14.10","@backstage/core-plugin-api":"^1.9.3"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.27.0","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.0.37","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.5.10","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.14.2","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.2.28_1724781169211_0.9193497232274492","host":"s3://npm-registry-packages"}},"0.2.29":{"name":"@backstage-community/plugin-apache-airflow","version":"0.2.29","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.2.29","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"fbc67e926efba3598c1d0bc5491ca1d8398ce780","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.29.tgz","fileCount":31,"integrity":"sha512-jYIzy+5E0Um2a24/VJ/NwlNW04tB/iwiC0wTZ2sLHSzB7gPIEUz3qNtU7Xq/WGyvzZtO1HA2MzIhhuMyCrymEw==","signatures":[{"sig":"MEUCIQDjQISyyJ66F84oyx2mn4pG0wLi8n+6e2c+I0cjE4MQBgIgU1RvBVlTvEir355exQpasqQ99uDea9BZtQgYoJuqpHg=","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":100318},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"d9688bd2a3f41ee91d8b22439b1fef4bcddde667","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.15.0","@backstage/core-plugin-api":"^1.9.4"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.27.1","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.1","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.6.0","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.15.0","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.2.29_1727520114296_0.05241064706638676","host":"s3://npm-registry-packages"}},"0.2.30":{"name":"@backstage-community/plugin-apache-airflow","version":"0.2.30","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.2.30","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"3524fb9ee2beffa1e6d40abda3fdc87e1174cced","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.30.tgz","fileCount":31,"integrity":"sha512-cHf05u7gjBSccJZbiVRhn1olo/w5sOcWS1zrTiElZzzemp7qxbB61x3cem2V24vVPZcEZCY04xIc7AYHi2d+PQ==","signatures":[{"sig":"MEYCIQC/uOsNRRmLV9RxRj7Y6hR8ys6ZAnJ8jKeU//tZJxbJEwIhAJEdBXq2KLVxwiDrdVy5WwfsUSNDkDyzTL0nz9PfWsDZ","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":100395},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"456029458b06b321fcd5bcff1d93ac75e9896ea6","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.15.1","@backstage/core-plugin-api":"^1.10.0"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.28.0","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.2","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.0","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.15.1","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.2.30_1729299269799_0.044901594256072874","host":"s3://npm-registry-packages"}},"0.3.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.3.0","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.3.0","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"a9360323fd1316105efe67a7dbbef4f57068b8c9","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.3.0.tgz","fileCount":31,"integrity":"sha512-xhn6DZ6RfkSEDaqQOnhrgAB1pdRWTDOLHDRnA9QOn9Z/gk9Ybj5DmfCzuUr8C0Vsbf/WjNyRMD6xycSBXsQ+fQ==","signatures":[{"sig":"MEUCIAm7HYEUVwxRIYcV9qBwFZ1Ir8k0IQOdJFOe6LfHm92kAiEA4AQ4pef1a4y0EaR+JLm5RSwzdpL5VPTayj0mJviUfBU=","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":99523},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"43271ae94a2f8cc754306d03cd184b09afc2b452","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.16.2","@backstage/core-plugin-api":"^1.10.2"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"typesVersions":{"*":{"index":["dist/index.d.ts"]}},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.29.4","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.5","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.3","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.15.3","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.3.0_1734970065743_0.5411215023826133","host":"s3://npm-registry-packages-npm-production"}},"0.4.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.4.0","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.4.0","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"8aeb314841d17a3c3f468b22587046d3e5562cdd","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.4.0.tgz","fileCount":31,"integrity":"sha512-PFLnCUzroHky1GmWLyPMDhSQlISptelF1faFLpXMHpKxFmIBVf1TvegRTgnNvD/zFUsEJrxM5rRcS75TW7ZNmg==","signatures":[{"sig":"MEQCIB264WZWW94IJGj2bCH8Ki0WGe6hoT78Nl98LDwhe+GAAiBpufuXCmXgtfk/JEs99MnOlOMbLeR0NoDFmaNoPjyUOQ==","keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"}],"unpackedSize":99598},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"00a728f7cfc89e69149ce7e8bb98cd26a80307fa","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.16.3","@backstage/core-plugin-api":"^1.10.3"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"typesVersions":{"*":{"index":["dist/index.d.ts"]}},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.29.6","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.6","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.4","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.15.4","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.4.0_1738434170350_0.8924484823406142","host":"s3://npm-registry-packages-npm-production"}},"0.5.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.5.0","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.5.0","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"74eb9c37650e911a37e92e9edfa57253bab01ac2","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.5.0.tgz","fileCount":31,"integrity":"sha512-d+iTvJ8EhHE2zBc9KrzqkeBiWxM4Ve4J5M4Kn2XUW3pyqSA7IhhpRGvkrCgM00VhzR0HUHrIYzcoGKNcQzaeaQ==","signatures":[{"sig":"MEUCIAZj71drzr2qg+WcdvUkXnARYn7dAZzI6WzGuC6j37axAiEA0I4gsBC/IlFeWQkgef1ZC95q6gdDnHY//Pkvhbxf49I=","keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"}],"unpackedSize":99673},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"485c71520939defd2244d185c623aac5a9f4fd4b","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.16.4","@backstage/core-plugin-api":"^1.10.4"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"typesVersions":{"*":{"index":["dist/index.d.ts"]}},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.30.0","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.7","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.5","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.15.5","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.5.0_1740786059383_0.613229108677092","host":"s3://npm-registry-packages-npm-production"}},"0.6.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.6.0","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.6.0","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"0517d9e5c27dbe51c74a93a61f7f5020e05b7020","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.6.0.tgz","fileCount":31,"integrity":"sha512-OV8XT+fhVZyDAywl7UFwAbP7rD+ftZNY7AxsikBy8Bc4RtUIz4fBRcvdfPj3Zj5zEVqWx6xwxoYi8044+inczA==","signatures":[{"sig":"MEYCIQDaA3ABgIUhK0yU6rng9is+s6CUl22+iBWb5pNKeZstTgIhAKFOYcLFvOEv5jzul0/RsgydosNfwaBD01FU4s0DEbKT","keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"}],"unpackedSize":99654},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"6dce3f5a446951ce4ee6d2100edf60c94a2b3b1c","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.17.0","@backstage/core-plugin-api":"^1.10.5"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","canvas":"^2.11.2","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.31.0","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.8","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.6","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.16.0","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.6.0_1742667008665_0.3909816711975209","host":"s3://npm-registry-packages-npm-production"}},"0.6.1":{"name":"@backstage-community/plugin-apache-airflow","version":"0.6.1","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.6.1","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"164dd170416e4152cbd1aa9d5c8097e48d117231","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.6.1.tgz","fileCount":31,"integrity":"sha512-RMn9mNzkZgRYugbxYH3HAqhGYYCrqy9rSVUQnjIL8de8+T72wY2UOGdhHtoRLVN2GsqAIraO2/VFeLuqmkh19w==","signatures":[{"sig":"MEQCIAQU6BFizUB6OieFQ7v63qUK/8LUIqgbs4h3+OO6/xcmAiBE7Okg4Qzda9Q9nQcXnbRyZaDGjviPg6LEv3MZaGLplA==","keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"}],"unpackedSize":99707},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"418c3a892d141dd2aa7fe567c9352925ed1c15f9","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.17.0","@backstage/core-plugin-api":"^1.10.5"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.31.0","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.8","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.6","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.16.0","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.6.1_1744385223217_0.11830811402534192","host":"s3://npm-registry-packages-npm-production"}},"0.7.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.7.0","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.7.0","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"facd04841f8ef7a3d6b2983c1f9de6f4bd62e285","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.7.0.tgz","fileCount":31,"integrity":"sha512-EYBaHk9FCMXtRno1WzeA34j/Qnar9DdS9b+H6PjS5Vo2dn7RlPMnxXEcjmjoFX6asGN5JrJmnaJJrrQoM2foog==","signatures":[{"sig":"MEYCIQC/xQfBNBACpxuSUXdkGT0oivCwzOgjbSbvF3EOpaeWnAIhAK7o6+hLyLXoPQzM7eHuHi0eEVc0qednC/pmRmDh8Po/","keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"}],"unpackedSize":99122},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"60954ef2949d44495b4c6c0c32fe764a913e3c84","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.17.1","@backstage/core-plugin-api":"^1.10.6"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"typesVersions":{"*":{"package.json":["package.json"]}},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.32.0","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.9","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.7","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.16.1","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.7.0_1744937881304_0.0903014217809972","host":"s3://npm-registry-packages-npm-production"}},"0.8.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.8.0","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.8.0","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"93065a0ae2ff8c410b59e78d74e3f1c23ab8eb1a","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.8.0.tgz","fileCount":31,"integrity":"sha512-/g3kz78vMuFZjYrMLjVI88l8a/nYIAF0ZD/7LoHSnCyayz34mIo10T4peCu8Kz+wle4DuayctYZdOA/A+MN8BQ==","signatures":[{"sig":"MEUCIQD7p31sW4OWxlzEKgwEmgvejSHSnO8pjMK8/s/LltZHVgIgWe2Eqf017PGcTPupdwEQjjZT6ax15gggx2jW2n3oA9k=","keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"}],"unpackedSize":99198},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"6762b40d6903e817dc4dc160ce73e3f6ee60db45","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.17.2","@backstage/core-plugin-api":"^1.10.7"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"typesVersions":{"*":{"package.json":["package.json"]}},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.32.1","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.10","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.8","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.17.0","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.8.0_1748634634144_0.5607232215288074","host":"s3://npm-registry-packages-npm-production"}},"0.9.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.9.0","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.9.0","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"244a0a90071aa3fa5c2118c8c0e82cb8f0ece3ae","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.9.0.tgz","fileCount":31,"integrity":"sha512-Yc5VLKBdPJC8b0U/AB8BbRIxJZVsK0rjx+8LgB1pfBu+t2kB/e5ZKLdCIw+XlKqRrxNaam0/3iQTfBAwHfvbNg==","signatures":[{"sig":"MEYCIQC1FrbR1e2fMT+/UHwwPPxN+JX8B+GtAhSzaiB+Ir9gxQIhAMTmv9IIYLREOP2pKjJfEvNaUj0td1xAXb6I9nnTiqpz","keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"}],"attestations":{"url":"https://registry.npmjs.org/-/npm/v1/attestations/@backstage-community%2fplugin-apache-airflow@0.9.0","provenance":{"predicateType":"https://slsa.dev/provenance/v1"}},"unpackedSize":99273},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"287042d749fe2e98b6d30241af1f0a5941bc5c9b","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","actor":{"name":"patriko","type":"user","email":"patriko@spotify.com"},"email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.17.3","@backstage/core-plugin-api":"^1.10.8"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"typesVersions":{"*":{"package.json":["package.json"]}},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.33.0","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.11","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.9","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.17.1","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.9.0_1751579650224_0.5595885135314977","host":"s3://npm-registry-packages-npm-production"}},"0.10.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.10.0","license":"Apache-2.0","_id":"@backstage-community/plugin-apache-airflow@0.10.0","maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"homepage":"https://backstage.io","dist":{"shasum":"469d7749b9bac505325033551854e671bf395ab4","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.10.0.tgz","fileCount":31,"integrity":"sha512-6bpBkb9F4NdcLwtx8k4hn9xTbzacRUwLXwjRkKDst8exaxzK2qDqFHmwF8W1qXRBN+sGt64EZBp3grNxWv1jCw==","signatures":[{"sig":"MEUCIFBF80SxEQZD2UobqnbDULK1ZDiAe3UusmfYsS8Z4r/gAiEAmh5Vo9FoL+ul3M2yclQSRf9UcldudoG66cr97ekgpCA=","keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"}],"attestations":{"url":"https://registry.npmjs.org/-/npm/v1/attestations/@backstage-community%2fplugin-apache-airflow@0.10.0","provenance":{"predicateType":"https://slsa.dev/provenance/v1"}},"unpackedSize":99351},"main":"dist/index.esm.js","types":"dist/index.d.ts","module":"./dist/index.esm.js","gitHead":"a5d9b51e67c1cbf3d0734f4a5681aeb2e49c93a9","scripts":{"lint":"backstage-cli package lint","test":"backstage-cli package test","build":"backstage-cli package build","clean":"backstage-cli package clean","start":"backstage-cli package start","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack"},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"repository":{"url":"https://github.com/backstage/community-plugins","type":"git","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"directories":{},"sideEffects":false,"configSchema":"config.d.ts","dependencies":{"qs":"^6.10.1","react-use":"^17.2.4","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","@material-ui/lab":"4.0.0-alpha.61","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@backstage/core-components":"^0.17.4","@backstage/core-plugin-api":"^1.10.9"},"publishConfig":{"main":"dist/index.esm.js","types":"dist/index.d.ts","access":"public"},"typesVersions":{"*":{"package.json":["package.json"]}},"_hasShrinkwrap":false,"devDependencies":{"msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","@backstage/cli":"^0.33.1","@types/react-dom":"^18.2.19","react-router-dom":"6.0.0-beta.0 || ^6.3.0","@backstage/dev-utils":"^1.1.12","@testing-library/dom":"^10.0.0","@backstage/test-utils":"^1.7.10","@testing-library/react":"^15.0.0","@backstage/core-app-api":"^1.18.0","@testing-library/jest-dom":"^6.0.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"_npmOperationalInternal":{"tmp":"tmp/plugin-apache-airflow_0.10.0_1753358902734_0.5297264084277411","host":"s3://npm-registry-packages-npm-production"}},"0.11.0":{"name":"@backstage-community/plugin-apache-airflow","version":"0.11.0","backstage":{"role":"frontend-plugin","pluginId":"apache-airflow","pluginPackages":["@backstage-community/plugin-apache-airflow"]},"publishConfig":{"access":"public","main":"dist/index.esm.js","types":"dist/index.d.ts"},"homepage":"https://backstage.io","repository":{"type":"git","url":"https://github.com/backstage/community-plugins","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"license":"Apache-2.0","sideEffects":false,"main":"dist/index.esm.js","types":"dist/index.d.ts","scripts":{"build":"backstage-cli package build","clean":"backstage-cli package clean","lint":"backstage-cli package lint","prepack":"backstage-cli package prepack","postpack":"backstage-cli package postpack","start":"backstage-cli package start","test":"backstage-cli package test"},"dependencies":{"@backstage/core-components":"^0.17.5","@backstage/core-plugin-api":"^1.10.9","@material-ui/core":"^4.12.2","@material-ui/icons":"^4.9.1","@material-ui/lab":"4.0.0-alpha.61","@types/react":"^16.13.1 || ^17.0.0 || ^18.0.0","qs":"^6.10.1","react-use":"^17.2.4"},"devDependencies":{"@backstage/cli":"^0.34.1","@backstage/core-app-api":"^1.18.0","@backstage/dev-utils":"^1.1.13","@backstage/test-utils":"^1.7.11","@testing-library/dom":"^10.0.0","@testing-library/jest-dom":"^6.0.0","@testing-library/react":"^15.0.0","@types/react-dom":"^18.2.19","msw":"^1.0.0","react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"peerDependencies":{"react":"^16.13.1 || ^17.0.0 || ^18.0.0","react-dom":"^16.13.1 || ^17.0.0 || ^18.0.0","react-router-dom":"6.0.0-beta.0 || ^6.3.0"},"configSchema":"config.d.ts","typesVersions":{"*":{"package.json":["package.json"]}},"module":"./dist/index.esm.js","_id":"@backstage-community/plugin-apache-airflow@0.11.0","gitHead":"3b1db01f03ccb987e42d7d48ae50c9762606e9a5","dist":{"shasum":"2ee21e97b855e5ac231f068e3380ce36916d1a2e","integrity":"sha512-pAHeVQQJuc75YUCbaGS8ZOsnBHDrPOTNECDBvRnZKoVvRSPHMkRcaehLnRM8AfxHqekO9oYs/eC+Koo2enxyjg==","tarball":"https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.11.0.tgz","fileCount":31,"unpackedSize":99427,"attestations":{"url":"https://registry.npmjs.org/-/npm/v1/attestations/@backstage-community%2fplugin-apache-airflow@0.11.0","provenance":{"predicateType":"https://slsa.dev/provenance/v1"}},"signatures":[{"keyid":"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U","sig":"MEUCIQDL0y66l1Cv51DzSVhbpwc854S37kM1jzXsGelRvKjzHAIgaJrpSJIBq03ZN3Zn9Ph4vkXbE5H1hvIKDoFFtCduUJY="}]},"_npmUser":{"name":"patriko","email":"patriko@spotify.com"},"directories":{},"maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"_npmOperationalInternal":{"host":"s3://npm-registry-packages-npm-production","tmp":"tmp/plugin-apache-airflow_0.11.0_1756585327816_0.1428832262325923"},"_hasShrinkwrap":false}},"time":{"created":"2024-04-19T09:12:01.780Z","modified":"2025-08-30T20:22:08.456Z","0.2.25":"2024-04-19T09:12:02.698Z","0.2.26":"2024-05-13T08:01:03.020Z","0.2.27":"2024-07-19T20:12:10.259Z","0.2.28":"2024-08-27T17:52:49.372Z","0.2.29":"2024-09-28T10:41:54.512Z","0.2.30":"2024-10-19T00:54:30.008Z","0.3.0":"2024-12-23T16:07:45.939Z","0.4.0":"2025-02-01T18:22:50.583Z","0.5.0":"2025-02-28T23:40:59.573Z","0.6.0":"2025-03-22T18:10:08.878Z","0.6.1":"2025-04-11T15:27:03.415Z","0.7.0":"2025-04-18T00:58:01.496Z","0.8.0":"2025-05-30T19:50:34.321Z","0.9.0":"2025-07-03T21:54:10.417Z","0.10.0":"2025-07-24T12:08:22.909Z","0.11.0":"2025-08-30T20:22:07.999Z"},"license":"Apache-2.0","homepage":"https://backstage.io","repository":{"type":"git","url":"https://github.com/backstage/community-plugins","directory":"workspaces/apache-airflow/plugins/apache-airflow"},"maintainers":[{"name":"patriko","email":"patriko@spotify.com"}],"readme":"","readmeFilename":""}
+{
+  "_id": "@backstage-community/plugin-apache-airflow",
+  "_rev": "16-168ba048fbaa4b7b5e60298de6084eb2",
+  "name": "@backstage-community/plugin-apache-airflow",
+  "dist-tags": { "latest": "0.11.0" },
+  "versions": {
+    "0.2.25": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.2.25",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.2.25",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "2343ba44d84f89be4d1a1fbdaf526b99d73498d1",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.25.tgz",
+        "fileCount": 15,
+        "integrity": "sha512-lUNYbrhFqL6hzrcQbpLnHqBsBcBx6CEj+etvCGSlEO/UVizO5KqpeCnNauShQi1D8YnL7abPapGhB3s690EymQ==",
+        "signatures": [
+          {
+            "sig": "MEYCIQCdhdAen1Ho3gZ8ebQuBWO0npIqjW/gDBHFhp34Fk/dYwIhAONEbdZPaXDrMRULAYw/wo4KKiEguOnHLwBB2v7owQS4",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ],
+        "unpackedSize": 99081
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "8ff5c0817cde30165c4d2ee514e5fe258475f48b",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": { "role": "frontend-plugin" },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "cross-fetch": "^4.0.0",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.14.4",
+        "@backstage/core-plugin-api": "^1.9.2"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.26.3",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.0.31",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.5.4",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.12.4",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.2.25_1713517922489_0.441747968097419",
+        "host": "s3://npm-registry-packages"
+      }
+    },
+    "0.2.26": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.2.26",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.2.26",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "ec3572077a78e3d536bb58d55834c5e19780278c",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.26.tgz",
+        "fileCount": 15,
+        "integrity": "sha512-ezadGoGApObLGJJceaqUyLcjRPQdPrJh/nf7L4WNWr5HMnZYWHeetlUymy2YKvrvEZPNXfVPtEYk45T4O7aaAQ==",
+        "signatures": [
+          {
+            "sig": "MEQCIDYB4n3OxFxtc4FDAJxHo5nQlAc08iMa/S0h0w3DkcjoAiADdKjquq0oFPnb8WJ1iGGWV4TqzlaFz/qEyE5cmhrdfg==",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ],
+        "unpackedSize": 99581
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "750cffe7283f7c5879228ecaf86aef62c6a587d0",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": { "role": "frontend-plugin" },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.14.4",
+        "@backstage/core-plugin-api": "^1.9.2"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.26.3",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.0.31",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.5.4",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.12.4",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.2.26_1715587262829_0.31653184692425995",
+        "host": "s3://npm-registry-packages"
+      }
+    },
+    "0.2.27": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.2.27",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.2.27",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "06e746b36e034f8ab87937c15a2e73369a5a56b4",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.27.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-FH5cB0ffHCFzWFDdJWbeOWQZ8e6qelHD3VFiUWbxsHj9+OBGHVQuLfDY0vrNopqNqhflXPPTlTy8ewash3I8YA==",
+        "signatures": [
+          {
+            "sig": "MEQCIDsjHuQnUyqWzQfgEowFBbYxPc3My0Nwm4ntp/XCD+wCAiAXS2pVSP27+LOGr6kBXgAdP0CUYWZGv/sVUwal1hUAYA==",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ],
+        "unpackedSize": 100168
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "bf96c259f61bde8108e59fe9f91918df71dd065b",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.14.9",
+        "@backstage/core-plugin-api": "^1.9.3"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.26.11",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.0.35",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.5.8",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.14.0",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.2.27_1721419930003_0.6102816638639057",
+        "host": "s3://npm-registry-packages"
+      }
+    },
+    "0.2.28": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.2.28",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.2.28",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "d7021694c7b587a9ec96219c2bf04795fd8cf8ba",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.28.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-brzFMT/9+WWS+Kvm63Nj79VJfwUEgBmC21f7NL1oW+avaJopowSeF4y57vRtpBez0qaJDk7QkYX99lqsRvwgYQ==",
+        "signatures": [
+          {
+            "sig": "MEQCICbbZNRMtiRh576s4eVIB8gLYVbuhksTtp0o3gvgB/XKAiBg1+g5+538rFtoi5VhoaV9WtVdTKgMLZgL7dsNYiswEA==",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ],
+        "unpackedSize": 100245
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "96a59357cdebe38ec0c692945d87f81440442e67",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.14.10",
+        "@backstage/core-plugin-api": "^1.9.3"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.27.0",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.0.37",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.5.10",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.14.2",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.2.28_1724781169211_0.9193497232274492",
+        "host": "s3://npm-registry-packages"
+      }
+    },
+    "0.2.29": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.2.29",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.2.29",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "fbc67e926efba3598c1d0bc5491ca1d8398ce780",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.29.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-jYIzy+5E0Um2a24/VJ/NwlNW04tB/iwiC0wTZ2sLHSzB7gPIEUz3qNtU7Xq/WGyvzZtO1HA2MzIhhuMyCrymEw==",
+        "signatures": [
+          {
+            "sig": "MEUCIQDjQISyyJ66F84oyx2mn4pG0wLi8n+6e2c+I0cjE4MQBgIgU1RvBVlTvEir355exQpasqQ99uDea9BZtQgYoJuqpHg=",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ],
+        "unpackedSize": 100318
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "d9688bd2a3f41ee91d8b22439b1fef4bcddde667",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.15.0",
+        "@backstage/core-plugin-api": "^1.9.4"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.27.1",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.1",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.6.0",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.15.0",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.2.29_1727520114296_0.05241064706638676",
+        "host": "s3://npm-registry-packages"
+      }
+    },
+    "0.2.30": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.2.30",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.2.30",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "3524fb9ee2beffa1e6d40abda3fdc87e1174cced",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.2.30.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-cHf05u7gjBSccJZbiVRhn1olo/w5sOcWS1zrTiElZzzemp7qxbB61x3cem2V24vVPZcEZCY04xIc7AYHi2d+PQ==",
+        "signatures": [
+          {
+            "sig": "MEYCIQC/uOsNRRmLV9RxRj7Y6hR8ys6ZAnJ8jKeU//tZJxbJEwIhAJEdBXq2KLVxwiDrdVy5WwfsUSNDkDyzTL0nz9PfWsDZ",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ],
+        "unpackedSize": 100395
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "456029458b06b321fcd5bcff1d93ac75e9896ea6",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.15.1",
+        "@backstage/core-plugin-api": "^1.10.0"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.28.0",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.2",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.0",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.15.1",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.2.30_1729299269799_0.044901594256072874",
+        "host": "s3://npm-registry-packages"
+      }
+    },
+    "0.3.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.3.0",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.3.0",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "a9360323fd1316105efe67a7dbbef4f57068b8c9",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.3.0.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-xhn6DZ6RfkSEDaqQOnhrgAB1pdRWTDOLHDRnA9QOn9Z/gk9Ybj5DmfCzuUr8C0Vsbf/WjNyRMD6xycSBXsQ+fQ==",
+        "signatures": [
+          {
+            "sig": "MEUCIAm7HYEUVwxRIYcV9qBwFZ1Ir8k0IQOdJFOe6LfHm92kAiEA4AQ4pef1a4y0EaR+JLm5RSwzdpL5VPTayj0mJviUfBU=",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ],
+        "unpackedSize": 99523
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "43271ae94a2f8cc754306d03cd184b09afc2b452",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.16.2",
+        "@backstage/core-plugin-api": "^1.10.2"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "typesVersions": { "*": { "index": ["dist/index.d.ts"] } },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.29.4",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.5",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.3",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.15.3",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.3.0_1734970065743_0.5411215023826133",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.4.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.4.0",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.4.0",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "8aeb314841d17a3c3f468b22587046d3e5562cdd",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.4.0.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-PFLnCUzroHky1GmWLyPMDhSQlISptelF1faFLpXMHpKxFmIBVf1TvegRTgnNvD/zFUsEJrxM5rRcS75TW7ZNmg==",
+        "signatures": [
+          {
+            "sig": "MEQCIB264WZWW94IJGj2bCH8Ki0WGe6hoT78Nl98LDwhe+GAAiBpufuXCmXgtfk/JEs99MnOlOMbLeR0NoDFmaNoPjyUOQ==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 99598
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "00a728f7cfc89e69149ce7e8bb98cd26a80307fa",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.16.3",
+        "@backstage/core-plugin-api": "^1.10.3"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "typesVersions": { "*": { "index": ["dist/index.d.ts"] } },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.29.6",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.6",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.4",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.15.4",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.4.0_1738434170350_0.8924484823406142",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.5.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.5.0",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.5.0",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "74eb9c37650e911a37e92e9edfa57253bab01ac2",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.5.0.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-d+iTvJ8EhHE2zBc9KrzqkeBiWxM4Ve4J5M4Kn2XUW3pyqSA7IhhpRGvkrCgM00VhzR0HUHrIYzcoGKNcQzaeaQ==",
+        "signatures": [
+          {
+            "sig": "MEUCIAZj71drzr2qg+WcdvUkXnARYn7dAZzI6WzGuC6j37axAiEA0I4gsBC/IlFeWQkgef1ZC95q6gdDnHY//Pkvhbxf49I=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 99673
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "485c71520939defd2244d185c623aac5a9f4fd4b",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.16.4",
+        "@backstage/core-plugin-api": "^1.10.4"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "typesVersions": { "*": { "index": ["dist/index.d.ts"] } },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.30.0",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.7",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.5",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.15.5",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.5.0_1740786059383_0.613229108677092",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.6.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.6.0",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.6.0",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "0517d9e5c27dbe51c74a93a61f7f5020e05b7020",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.6.0.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-OV8XT+fhVZyDAywl7UFwAbP7rD+ftZNY7AxsikBy8Bc4RtUIz4fBRcvdfPj3Zj5zEVqWx6xwxoYi8044+inczA==",
+        "signatures": [
+          {
+            "sig": "MEYCIQDaA3ABgIUhK0yU6rng9is+s6CUl22+iBWb5pNKeZstTgIhAKFOYcLFvOEv5jzul0/RsgydosNfwaBD01FU4s0DEbKT",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 99654
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "6dce3f5a446951ce4ee6d2100edf60c94a2b3b1c",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.17.0",
+        "@backstage/core-plugin-api": "^1.10.5"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "canvas": "^2.11.2",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.31.0",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.8",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.6",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.16.0",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.6.0_1742667008665_0.3909816711975209",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.6.1": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.6.1",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.6.1",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "164dd170416e4152cbd1aa9d5c8097e48d117231",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.6.1.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-RMn9mNzkZgRYugbxYH3HAqhGYYCrqy9rSVUQnjIL8de8+T72wY2UOGdhHtoRLVN2GsqAIraO2/VFeLuqmkh19w==",
+        "signatures": [
+          {
+            "sig": "MEQCIAQU6BFizUB6OieFQ7v63qUK/8LUIqgbs4h3+OO6/xcmAiBE7Okg4Qzda9Q9nQcXnbRyZaDGjviPg6LEv3MZaGLplA==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 99707
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "418c3a892d141dd2aa7fe567c9352925ed1c15f9",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.17.0",
+        "@backstage/core-plugin-api": "^1.10.5"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.31.0",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.8",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.6",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.16.0",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.6.1_1744385223217_0.11830811402534192",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.7.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.7.0",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.7.0",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "facd04841f8ef7a3d6b2983c1f9de6f4bd62e285",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.7.0.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-EYBaHk9FCMXtRno1WzeA34j/Qnar9DdS9b+H6PjS5Vo2dn7RlPMnxXEcjmjoFX6asGN5JrJmnaJJrrQoM2foog==",
+        "signatures": [
+          {
+            "sig": "MEYCIQC/xQfBNBACpxuSUXdkGT0oivCwzOgjbSbvF3EOpaeWnAIhAK7o6+hLyLXoPQzM7eHuHi0eEVc0qednC/pmRmDh8Po/",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 99122
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "60954ef2949d44495b4c6c0c32fe764a913e3c84",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.17.1",
+        "@backstage/core-plugin-api": "^1.10.6"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "typesVersions": { "*": { "package.json": ["package.json"] } },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.32.0",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.9",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.7",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.16.1",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.7.0_1744937881304_0.0903014217809972",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.8.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.8.0",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.8.0",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "93065a0ae2ff8c410b59e78d74e3f1c23ab8eb1a",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.8.0.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-/g3kz78vMuFZjYrMLjVI88l8a/nYIAF0ZD/7LoHSnCyayz34mIo10T4peCu8Kz+wle4DuayctYZdOA/A+MN8BQ==",
+        "signatures": [
+          {
+            "sig": "MEUCIQD7p31sW4OWxlzEKgwEmgvejSHSnO8pjMK8/s/LltZHVgIgWe2Eqf017PGcTPupdwEQjjZT6ax15gggx2jW2n3oA9k=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 99198
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "6762b40d6903e817dc4dc160ce73e3f6ee60db45",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.17.2",
+        "@backstage/core-plugin-api": "^1.10.7"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "typesVersions": { "*": { "package.json": ["package.json"] } },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.32.1",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.10",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.8",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.17.0",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.8.0_1748634634144_0.5607232215288074",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.9.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.9.0",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.9.0",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "244a0a90071aa3fa5c2118c8c0e82cb8f0ece3ae",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.9.0.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-Yc5VLKBdPJC8b0U/AB8BbRIxJZVsK0rjx+8LgB1pfBu+t2kB/e5ZKLdCIw+XlKqRrxNaam0/3iQTfBAwHfvbNg==",
+        "signatures": [
+          {
+            "sig": "MEYCIQC1FrbR1e2fMT+/UHwwPPxN+JX8B+GtAhSzaiB+Ir9gxQIhAMTmv9IIYLREOP2pKjJfEvNaUj0td1xAXb6I9nnTiqpz",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/@backstage-community%2fplugin-apache-airflow@0.9.0",
+          "provenance": { "predicateType": "https://slsa.dev/provenance/v1" }
+        },
+        "unpackedSize": 99273
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "287042d749fe2e98b6d30241af1f0a5941bc5c9b",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": {
+        "name": "patriko",
+        "actor": { "name": "patriko", "type": "user", "email": "patriko@spotify.com" },
+        "email": "patriko@spotify.com"
+      },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.17.3",
+        "@backstage/core-plugin-api": "^1.10.8"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "typesVersions": { "*": { "package.json": ["package.json"] } },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.33.0",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.11",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.9",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.17.1",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.9.0_1751579650224_0.5595885135314977",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.10.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.10.0",
+      "license": "Apache-2.0",
+      "_id": "@backstage-community/plugin-apache-airflow@0.10.0",
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "homepage": "https://backstage.io",
+      "dist": {
+        "shasum": "469d7749b9bac505325033551854e671bf395ab4",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.10.0.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-6bpBkb9F4NdcLwtx8k4hn9xTbzacRUwLXwjRkKDst8exaxzK2qDqFHmwF8W1qXRBN+sGt64EZBp3grNxWv1jCw==",
+        "signatures": [
+          {
+            "sig": "MEUCIFBF80SxEQZD2UobqnbDULK1ZDiAe3UusmfYsS8Z4r/gAiEAmh5Vo9FoL+ul3M2yclQSRf9UcldudoG66cr97ekgpCA=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/@backstage-community%2fplugin-apache-airflow@0.10.0",
+          "provenance": { "predicateType": "https://slsa.dev/provenance/v1" }
+        },
+        "unpackedSize": 99351
+      },
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "module": "./dist/index.esm.js",
+      "gitHead": "a5d9b51e67c1cbf3d0734f4a5681aeb2e49c93a9",
+      "scripts": {
+        "lint": "backstage-cli package lint",
+        "test": "backstage-cli package test",
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "start": "backstage-cli package start",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack"
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "repository": {
+        "url": "https://github.com/backstage/community-plugins",
+        "type": "git",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "directories": {},
+      "sideEffects": false,
+      "configSchema": "config.d.ts",
+      "dependencies": {
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@backstage/core-components": "^0.17.4",
+        "@backstage/core-plugin-api": "^1.10.9"
+      },
+      "publishConfig": {
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts",
+        "access": "public"
+      },
+      "typesVersions": { "*": { "package.json": ["package.json"] } },
+      "_hasShrinkwrap": false,
+      "devDependencies": {
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "@backstage/cli": "^0.33.1",
+        "@types/react-dom": "^18.2.19",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0",
+        "@backstage/dev-utils": "^1.1.12",
+        "@testing-library/dom": "^10.0.0",
+        "@backstage/test-utils": "^1.7.10",
+        "@testing-library/react": "^15.0.0",
+        "@backstage/core-app-api": "^1.18.0",
+        "@testing-library/jest-dom": "^6.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "_npmOperationalInternal": {
+        "tmp": "tmp/plugin-apache-airflow_0.10.0_1753358902734_0.5297264084277411",
+        "host": "s3://npm-registry-packages-npm-production"
+      }
+    },
+    "0.11.0": {
+      "name": "@backstage-community/plugin-apache-airflow",
+      "version": "0.11.0",
+      "backstage": {
+        "role": "frontend-plugin",
+        "pluginId": "apache-airflow",
+        "pluginPackages": ["@backstage-community/plugin-apache-airflow"]
+      },
+      "publishConfig": {
+        "access": "public",
+        "main": "dist/index.esm.js",
+        "types": "dist/index.d.ts"
+      },
+      "homepage": "https://backstage.io",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/backstage/community-plugins",
+        "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+      },
+      "license": "Apache-2.0",
+      "sideEffects": false,
+      "main": "dist/index.esm.js",
+      "types": "dist/index.d.ts",
+      "scripts": {
+        "build": "backstage-cli package build",
+        "clean": "backstage-cli package clean",
+        "lint": "backstage-cli package lint",
+        "prepack": "backstage-cli package prepack",
+        "postpack": "backstage-cli package postpack",
+        "start": "backstage-cli package start",
+        "test": "backstage-cli package test"
+      },
+      "dependencies": {
+        "@backstage/core-components": "^0.17.5",
+        "@backstage/core-plugin-api": "^1.10.9",
+        "@material-ui/core": "^4.12.2",
+        "@material-ui/icons": "^4.9.1",
+        "@material-ui/lab": "4.0.0-alpha.61",
+        "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "qs": "^6.10.1",
+        "react-use": "^17.2.4"
+      },
+      "devDependencies": {
+        "@backstage/cli": "^0.34.1",
+        "@backstage/core-app-api": "^1.18.0",
+        "@backstage/dev-utils": "^1.1.13",
+        "@backstage/test-utils": "^1.7.11",
+        "@testing-library/dom": "^10.0.0",
+        "@testing-library/jest-dom": "^6.0.0",
+        "@testing-library/react": "^15.0.0",
+        "@types/react-dom": "^18.2.19",
+        "msw": "^1.0.0",
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+        "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+      },
+      "configSchema": "config.d.ts",
+      "typesVersions": { "*": { "package.json": ["package.json"] } },
+      "module": "./dist/index.esm.js",
+      "_id": "@backstage-community/plugin-apache-airflow@0.11.0",
+      "gitHead": "3b1db01f03ccb987e42d7d48ae50c9762606e9a5",
+      "dist": {
+        "shasum": "2ee21e97b855e5ac231f068e3380ce36916d1a2e",
+        "integrity": "sha512-pAHeVQQJuc75YUCbaGS8ZOsnBHDrPOTNECDBvRnZKoVvRSPHMkRcaehLnRM8AfxHqekO9oYs/eC+Koo2enxyjg==",
+        "tarball": "https://registry.npmjs.org/@backstage-community/plugin-apache-airflow/-/plugin-apache-airflow-0.11.0.tgz",
+        "fileCount": 31,
+        "unpackedSize": 99427,
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/@backstage-community%2fplugin-apache-airflow@0.11.0",
+          "provenance": { "predicateType": "https://slsa.dev/provenance/v1" }
+        },
+        "signatures": [
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEUCIQDL0y66l1Cv51DzSVhbpwc854S37kM1jzXsGelRvKjzHAIgaJrpSJIBq03ZN3Zn9Ph4vkXbE5H1hvIKDoFFtCduUJY="
+          }
+        ]
+      },
+      "_npmUser": { "name": "patriko", "email": "patriko@spotify.com" },
+      "directories": {},
+      "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages-npm-production",
+        "tmp": "tmp/plugin-apache-airflow_0.11.0_1756585327816_0.1428832262325923"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2024-04-19T09:12:01.780Z",
+    "modified": "2025-08-30T20:22:08.456Z",
+    "0.2.25": "2024-04-19T09:12:02.698Z",
+    "0.2.26": "2024-05-13T08:01:03.020Z",
+    "0.2.27": "2024-07-19T20:12:10.259Z",
+    "0.2.28": "2024-08-27T17:52:49.372Z",
+    "0.2.29": "2024-09-28T10:41:54.512Z",
+    "0.2.30": "2024-10-19T00:54:30.008Z",
+    "0.3.0": "2024-12-23T16:07:45.939Z",
+    "0.4.0": "2025-02-01T18:22:50.583Z",
+    "0.5.0": "2025-02-28T23:40:59.573Z",
+    "0.6.0": "2025-03-22T18:10:08.878Z",
+    "0.6.1": "2025-04-11T15:27:03.415Z",
+    "0.7.0": "2025-04-18T00:58:01.496Z",
+    "0.8.0": "2025-05-30T19:50:34.321Z",
+    "0.9.0": "2025-07-03T21:54:10.417Z",
+    "0.10.0": "2025-07-24T12:08:22.909Z",
+    "0.11.0": "2025-08-30T20:22:07.999Z"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://backstage.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/backstage/community-plugins",
+    "directory": "workspaces/apache-airflow/plugins/apache-airflow"
+  },
+  "maintainers": [{ "name": "patriko", "email": "patriko@spotify.com" }],
+  "readme": "",
+  "readmeFilename": ""
+}

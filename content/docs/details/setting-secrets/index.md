@@ -30,7 +30,6 @@ To navigate to this page, follow these steps:
 
 ![A link that says "Secrets"](./secrets-link.webp)
 
-
 ## Step 2: Edit the secret you need
 
 1. Find the secret name in the table. For example: `PAGERDUTY_TOKEN`.

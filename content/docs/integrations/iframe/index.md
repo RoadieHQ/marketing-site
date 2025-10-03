@@ -14,10 +14,11 @@ integrationType: OSS plugin
 This is a plugin that renders an Iframe card that can be added to your component/homepage.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add IFrame card to your HomePage
@@ -59,7 +60,7 @@ Then enter the following props.
 
 ![](props.webp)
 
-``` json
+```json
 {
   "src": "<your src>",
   "title": "<card title>"
@@ -100,14 +101,15 @@ It works in the same way as the Homepage IFrame card except that it can take the
 
 - `src` is url location of the iframe
 - `srcFromAnnotation` is a refernce to an entity annotation containing a source url for the iframe.
-- 
+-
+
 ## Add IFrame Page as a link to your sidebar
 
 1.  In Roadie, click the 'Edit Sidebar' link in the sidebar
 2.  Click the plus sign to add a new Page.
 3.  Select `IFramePage` from the list.
 4.  Define your link title, URL and select the icon you want to use
-5.  Set up props like shown below 
+5.  Set up props like shown below
 
     Click add.
 
@@ -117,28 +119,30 @@ It works in the same way as the Homepage IFrame card except the props it expects
 
 Top level "title" prop defines the title of the page itself.
 Props encapsulated into an "iframe" object define properties for the iframe. Possible options are
-* `src`, required
-* `height`, optional. Either pixels or percentages (800px/100%). Defaults to 100%
-* `width`, optional. Either pixels or percentages (800px/100%). Defaults to 100%
-* `title`, optional. 
+
+- `src`, required
+- `height`, optional. Either pixels or percentages (800px/100%). Defaults to 100%
+- `width`, optional. Either pixels or percentages (800px/100%). Defaults to 100%
+- `title`, optional.
 
 ## Note
 
 ### Authentication
+
 This plugin does **not** support authenticated methods. You can alternatively embed credentials in the url like so
+
 ```
 https://username:password@yourdomain.com
 ```
 
 ### CSP
+
 Content Security Policy (CSP) is a layer of security added to web applications to avoid certain attacks like Cross site scripting (XSS). This is done by returning a header `Content-Security-Policy` on the server side. It restricts the access to the WebApp by adding a policy. This policy is then validated on the browser to ensure that no malicious attacks can occur on the domain.
 
 Since this is controlled by the WebPage Admins, it may happen that you are unable to load the content you wish in your IFrame. This is a limitation of this plugin.
-
 
 For more information on this plugin, please visit [here](https://github.com/RoadieHQ/roadie-backstage-plugins/blob/main/plugins/frontend/backstage-plugin-iframe/README.md).
 
 ## References
 
 - [Content Security Policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
-

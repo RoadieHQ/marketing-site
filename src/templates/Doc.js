@@ -30,7 +30,7 @@ const Doc = ({
       <article className="px-2 md:px-6 md:pt-7 md:flex-1">
         <div className="mb-8">
           <ContentHeader frontmatter={doc.frontmatter} dateKey="publishedDate" />
-          
+
           {!isEmpty(doc.frontmatter.integrationType) && (
             <Chip label={doc.frontmatter.integrationType} />
           )}
@@ -50,7 +50,10 @@ const Doc = ({
         </footer>
       </article>
 
-      <NestedTableOfContentsSidebar tableOfContents={doc.tableOfContents} className='self-start sticky top-0' />
+      <NestedTableOfContentsSidebar
+        tableOfContents={doc.tableOfContents}
+        className="self-start sticky top-0"
+      />
     </main>
 
     <SitewideFooter maxWidth="full" />
@@ -72,7 +75,6 @@ export const pageQuery = graphql`
       }
     }
 
-        
     doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
@@ -81,11 +83,7 @@ export const pageQuery = graphql`
         id
         value
       }
-      tableOfContents(
-        absolute: false
-        pathToSlugField: "frontmatter.title"
-        maxDepth: 5
-      )
+      tableOfContents(absolute: false, pathToSlugField: "frontmatter.title", maxDepth: 5)
       frontmatter {
         description
         title

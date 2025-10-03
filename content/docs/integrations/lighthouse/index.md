@@ -16,24 +16,25 @@ Google's Lighthouse auditing tool for websites is a great open-source resource f
 This plugin allows you to trigger Lighthouse audits on websites and track them.
 
 - Track multiple websites' audit performance over time using the main metrics that Lighthouse outputs:
-![audits-overview-page.webp](./audits-overview-page.webp)
+  ![audits-overview-page.webp](./audits-overview-page.webp)
 
 - Travel back and forth through your audit history
-![audit-view.webp](./audit-view.webp)
+  ![audit-view.webp](./audit-view.webp)
 
 - Trigger a fresh audit directly from Backstage
-![create-audit.webp](./create-audit.webp)
+  ![create-audit.webp](./create-audit.webp)
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Prerequisites
 
-In order to use the Lighthouse plugin, you need to have a running version of Spotify's Lighthouse Audit Service and a 
+In order to use the Lighthouse plugin, you need to have a running version of Spotify's Lighthouse Audit Service and a
 publicly accessible url for it.
 
 ## Adding the plugin

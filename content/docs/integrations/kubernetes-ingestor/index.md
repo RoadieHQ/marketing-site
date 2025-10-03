@@ -7,20 +7,19 @@ description: How to configure and use the TeraSky kubernetes ingestor & Crosspla
 humanName: Crossplane kubernetes Ingestor
 logoImage: '../../../assets/logos/crossplane/crossplane.webp'
 integrationType: OSS plugin
---- 
+---
 
 ## Introduction
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** | Access to this plugin is enabled by a feature flag. Ask Roadie to enable this for you if you want to use it.<br />Before configuring the kubernetes ingestor, you must first set up Kubernetes access in Roadie. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access. |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
+|                            |                                                                                                                                                                                                                                                                                                                              |
+| -------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|          **Prerequisites** | Access to this plugin is enabled by a feature flag. Ask Roadie to enable this for you if you want to use it.<br />Before configuring the kubernetes ingestor, you must first set up Kubernetes access in Roadie. Please follow the [Kubernetes setup guide](/docs/integrations/kubernetes) to configure your cluster access. |
+|         **Considerations** |                                                                                                                                                                                                                                                                                                                              |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                                                                                                                                                                             |
 
 # Prerequisites
-
-
 
 ## Required RBAC Permissions
 
@@ -35,14 +34,14 @@ kind: ClusterRole
 metadata:
   name: backstage-crd-viewer
 rules:
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - customresourcedefinitions
-  verbs:
-  - get
-  - list
-  - watch
+  - apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    verbs:
+      - get
+      - list
+      - watch
 ```
 
 # Plugin Features
@@ -59,7 +58,7 @@ The plugin ingests Crossplane Composite Resource Definitions (XRDs) and converts
 
 ## Template Updates
 
-The plugin supports updating existing manifests after creation. 
+The plugin supports updating existing manifests after creation.
 
 ## Crossplane Claims Visualization
 
@@ -83,6 +82,7 @@ To configure the plugin, you'll need to:
 3. Click "save" then "apply and restart". It will take a few minutes for the entity provider to run and start importing entities.
 4. If you're importing claims you can add UI components from the crossplane plugin. In the catalog select "components" and filter by type "crossplane-claim". You can then add the following components, the CrossplaneResourcesGraph tab, the CrossplaneResourcesTable tab and the CrossplaneOverviewCard. (See docs on [how to add components](../../details/updating-the-ui/))
 5. If you want to update claim manifests created through the templates you'll need to [create a template](../../docs/getting-started/scaffolding-components/) with the following content ([source](https://github.com/TeraSky-OSS/backstage-plugins/blob/main/plugins/gitops-manifest-updater/templates/sample.yaml)):
+
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
@@ -131,7 +131,7 @@ spec:
       name: Get Annotation URL
       action: roadiehq:utils:jsonata
       input:
-        data: 
+        data:
           annotations: ${{ steps['get-entity'].output.entity.metadata.annotations }}
         expression: |
           annotations."terasky.backstage.io/source-file-url"
@@ -140,7 +140,7 @@ spec:
       name: Resolve URL
       action: roadiehq:utils:jsonata
       input:
-        data: 
+        data:
           sourceFileUrl: ${{ parameters.sourceFileUrl }}
           annotationUrl: ${{ steps['get-annotation-url'].output.result }}
         expression: |
@@ -229,4 +229,4 @@ spec:
 
 # See Also
 
-* [TeraSky Backstage Plugins repository](https://github.com/TeraSky-OSS/backstage-plugins). 
+- [TeraSky Backstage Plugins repository](https://github.com/TeraSky-OSS/backstage-plugins).

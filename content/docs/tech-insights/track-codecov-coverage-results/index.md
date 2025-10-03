@@ -30,7 +30,6 @@ Let’s get started.
 
    ![proxy configuration for code coverage results](./Prereq_Code_Coverage_Proxy.webp)
 
-
 ## Record the Codecov Reposotory Coverage
 
 So that we can track our catalog entity code coverage, we must obtain information related to the status (active and activated) and coverage %. We will do this by creating a Data Source to pull the information from Codecov for each entity.
@@ -46,51 +45,52 @@ So that we can track our catalog entity code coverage, we must obtain informatio
    ![About section input fields](./Data_About_Section.webp)
 
 3. Set the Data Provider to:
-    | Field Name | Value |
-    | --- | --- |
-    | Type | HTTP |
-    | Proxy | /codecov |
-    | Path Extension | `github/{{ metadata.annotations['github.com/owner'] }}/repos/{{ metadata.annotations['github.com/repo'] }}` |
-    | HTTP Method | GET |
+   | Field Name | Value |
+   | --- | --- |
+   | Type | HTTP |
+   | Proxy | /codecov |
+   | Path Extension | `github/{{ metadata.annotations['github.com/owner'] }}/repos/{{ metadata.annotations['github.com/repo'] }}` |
+   | HTTP Method | GET |
 
-    Select a value for **Select Entity to test data source against** and press **TEST**.
+   Select a value for **Select Entity to test data source against** and press **TEST**.
 
-    ![Data Provider section input fields](./Data_Provider_Section.webp)
+   ![Data Provider section input fields](./Data_Provider_Section.webp)
 
 4. Test results are displayed.
 
-    ![Data Provider test results displayed](./Data_Test_Results_Section.webp)
+   ![Data Provider test results displayed](./Data_Test_Results_Section.webp)
 
 5. Create multiple Facts:
-    1. Set **Extractor** to `JSON with JSONata syntax`.
-    2. Set the first Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | Coverage |
-        | JSONata query | `$.totals.coverage` |
-        | Type | Number |
-    3. Set the second Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | Active |
-        | JSONata query | `$.active` |
-        | Type | Boolean |
-    4. Set the third Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | Activated |
-        | JSONata query | `$.activated` |
-        | Type | Boolean |
 
-    ![Data Facts section input fields](./Data_Facts_Section.webp)
+   1. Set **Extractor** to `JSON with JSONata syntax`.
+   2. Set the first Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | Coverage |
+      | JSONata query | `$.totals.coverage` |
+      | Type | Number |
+   3. Set the second Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | Active |
+      | JSONata query | `$.active` |
+      | Type | Boolean |
+   4. Set the third Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | Activated |
+      | JSONata query | `$.activated` |
+      | Type | Boolean |
+
+   ![Data Facts section input fields](./Data_Facts_Section.webp)
 
 6. Press **CHECK FACTS**.
 
-    ![Data Facts results displayed](./Data_Facts_Results_Section.webp)
+   ![Data Facts results displayed](./Data_Facts_Results_Section.webp)
 
-7. Use the **Applies to** filter to target this data source at some components which you expect to have Node.js. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.  
+7. Use the **Applies to** filter to target this data source at some components which you expect to have Node.js. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
+   ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
 
 8. Press **SAVE**.
 
@@ -102,37 +102,38 @@ We have a data source providing Active and Activated, let's create a check to re
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.webp)
+   ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
    ![About section input fields](./Defined_Check_About_Section.webp)
 
 3. Create a check:
-    1. Set the first condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | Codecov Repository Coverage |
-        | Fact | Active |
-        | Fact operator | Is True |
-    1. Set the second condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | Codecov Repository Coverage |
-        | Fact | Activated |
-        | Fact operator | Is True |
 
-    ![Check Condition section fields](./Defined_Check_Conditions_Section.webp)
+   1. Set the first condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | Codecov Repository Coverage |
+      | Fact | Active |
+      | Fact operator | Is True |
+   1. Set the second condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | Codecov Repository Coverage |
+      | Fact | Activated |
+      | Fact operator | Is True |
+
+   ![Check Condition section fields](./Defined_Check_Conditions_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to resolve the Codecov configuration.
 
-    ![Check Fix section displayed](./Check_Fix_Section.webp)
+   ![Check Fix section displayed](./Check_Fix_Section.webp)
 
-6. Use the **Applies to** filter to target this data source at some components which you expect to have Code Coverage configured. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
+6. Use the **Applies to** filter to target this data source at some components which you expect to have Code Coverage configured. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
+   ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
 
 7. Press **SAVE**.
 
@@ -146,7 +147,6 @@ The results of this check tell us who we need to reach out to ensure Codecov is 
 
 Since we already know the owners of these components, it’s easy to reach out and ask them to configure Codecov for their catalog entity.
 
-
 ## Create a Check that shows Minimum Code Coverage Threshold is Met
 
 We have a data source telling us what the coverage is, let's create a check to ensure minimum coverage is met.
@@ -155,32 +155,33 @@ We have a data source telling us what the coverage is, let's create a check to e
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.webp)
+   ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
    ![About section input fields](./Coverage_Check_About_Section.webp)
 
 3. Create a check:
-    1. Set the first condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | Codecov Repository Coverage |
-        | Fact | Coverage |
-        | Fact operator | Greater than inclusive |
-        | Value | 80 |
 
-    ![Check Condition section fields](./Coverage_Check_Conditions_Section.webp)
+   1. Set the first condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | Codecov Repository Coverage |
+      | Fact | Coverage |
+      | Fact operator | Greater than inclusive |
+      | Value | 80 |
+
+   ![Check Condition section fields](./Coverage_Check_Conditions_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to resolve the Codecov configuration.
 
-    ![Check Fix section displayed](./Check_Fix_Section.webp)
+   ![Check Fix section displayed](./Check_Fix_Section.webp)
 
-6. Use the **Applies to** filter to target this data source at some components which you expect to have Code Coverage configured. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
+6. Use the **Applies to** filter to target this data source at some components which you expect to have Code Coverage configured. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
+   ![About Data Source section displayed](./Refined_Applies_To_Section.webp)
 
 7. Press **SAVE**.
 

@@ -5,7 +5,7 @@ const HeadRssLink = () => (
   <Helmet>
     <link
       rel="alternate"
-      type="application/rss+xml" 
+      type="application/rss+xml"
       title="Subscribe to the Roadie blog"
       href="/blog/rss.xml"
     />

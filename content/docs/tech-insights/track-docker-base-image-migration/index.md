@@ -61,22 +61,21 @@ These are the steps to set that up.
 
    In the example above, the base image comes from a directory called `roadie-main` in the Google Cloud Artifact Registry (gcr.io). It’s based on ubuntu 20. Any digits and underscores after the colon are the part we want to record.
 
-    ```
-    FROM gcr.io\/roadie-main\/ubuntu-20.*:([\d\._]+)
-    ```
+   ```
+   FROM gcr.io\/roadie-main\/ubuntu-20.*:([\d\._]+)
+   ```
 
    This regular expression will successfully match a base image version directive in a Dockerfile.
 
-    ```
-    FROM gcr.io/roadie-main/ubuntu-20:0.9.8
-    ```
+   ```
+   FROM gcr.io/roadie-main/ubuntu-20:0.9.8
+   ```
 
    You will need to tweak the regular expression to successfully capture your base image version. We recommend iterating on your regular expression in a third-party tool like [RegExr](https://regexr.com/).
 
 7. Once you feel like you have the right regular expression, you can test it against the Dockerfile you fetched earlier. Click the CHECK FACTS button.
 
-
-    ![](./ds-field-extraction-results.webp)
+   ![](./ds-field-extraction-results.webp)
 
 8. Use the “Applies to” filter to target this data source at some components which you expect to have Dockerfiles. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. We’re using a “demo” tag to accomplish this.
 
@@ -126,31 +125,29 @@ Let’s write a check to combine both of these properties.
 
    ![](./check-conditions-empty.webp)
 
-
 4. In the first set of condition inputs, use the following values.
 
-   | Input name | Value |
-   | --- | --- |
-   | Data Source | Repository Files Data Source |
-   | Fact | List of files |
-   | Fact operator | Does not contain |
-   | Value | Dockerfile |
+   | Input name    | Value                        |
+   | ------------- | ---------------------------- |
+   | Data Source   | Repository Files Data Source |
+   | Fact          | List of files                |
+   | Fact operator | Does not contain             |
+   | Value         | Dockerfile                   |
 
 5. In the second set of condition inputs, use these values.
 
+   | Input name    | Value                      |
+   | ------------- | -------------------------- |
+   | Data Source   | Dockerfile facts           |
+   | Fact          | Base image version         |
+   | Fact operator | Satisfies semantic version |
+   | Value         | 1.0.0                      |
 
-    | Input name | Value |
-    | --- | --- |
-    | Data Source | Dockerfile facts |
-    | Fact | Base image version |
-    | Fact operator | Satisfies semantic version |
-    | Value | 1.0.0 |
-    
-    We now have a set of conditions which pass when a component is using the latest base image (`1.0.0`), and fail when they are not.
-    
-    ![](./check-conditions-filled.webp)
-    
-    You can use the “DRY RUN” button to test these conditions against some Components in your catalog, ensure they operate the way you would expect, and return the correct pass or fail result.
+   We now have a set of conditions which pass when a component is using the latest base image (`1.0.0`), and fail when they are not.
+
+   ![](./check-conditions-filled.webp)
+
+   You can use the “DRY RUN” button to test these conditions against some Components in your catalog, ensure they operate the way you would expect, and return the correct pass or fail result.
 
 6. Use the filters to target this check at the same set of components as the Data Sources target.
 

@@ -8,9 +8,7 @@ import get from 'lodash/get';
 const ChangeSetPage = ({
   data: {
     site: {
-      siteMetadata: {
-        title: siteTitle,
-      },
+      siteMetadata: { title: siteTitle },
     },
 
     changeSet,

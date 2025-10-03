@@ -25,9 +25,11 @@ The Tech Insights Facts Server provides AI assistants with access to operational
 Retrieve GitHub-related metrics including pull request performance, repository activity, and contributor data.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/user-service"
@@ -35,6 +37,7 @@ Retrieve GitHub-related metrics including pull request performance, repository a
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   avgMergeTimeHours?: number,
@@ -47,7 +50,8 @@ Retrieve GitHub-related metrics including pull request performance, repository a
 ```
 
 #### Required Permissions:
-- **Catalog entity read (*)** - Access to catalog entities
+
+- **Catalog entity read (\*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
 ### Get Security Metrics
@@ -55,9 +59,11 @@ Retrieve GitHub-related metrics including pull request performance, repository a
 Access security-related metrics from Snyk vulnerability scans and Dependabot alerts.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/payment-service"
@@ -65,6 +71,7 @@ Access security-related metrics from Snyk vulnerability scans and Dependabot ale
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   snykIssues?: {
@@ -84,7 +91,8 @@ Access security-related metrics from Snyk vulnerability scans and Dependabot ale
 ```
 
 #### Required Permissions:
-- **Catalog entity read (*)** - Access to catalog entities
+
+- **Catalog entity read (\*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
 ### Get PagerDuty Metrics
@@ -92,9 +100,11 @@ Access security-related metrics from Snyk vulnerability scans and Dependabot ale
 Retrieve incident metrics and service configuration from PagerDuty integration.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/auth-service"
@@ -102,6 +112,7 @@ Retrieve incident metrics and service configuration from PagerDuty integration.
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   incidentMetrics?: {
@@ -122,7 +133,8 @@ Retrieve incident metrics and service configuration from PagerDuty integration.
 ```
 
 #### Required Permissions:
-- **Catalog entity read (*)** - Access to catalog entities
+
+- **Catalog entity read (\*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
 ### Get Datadog Metrics
@@ -130,9 +142,11 @@ Retrieve incident metrics and service configuration from PagerDuty integration.
 Access Service Level Objective (SLO) data and monitoring information from Datadog.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/inventory-api"
@@ -140,6 +154,7 @@ Access Service Level Objective (SLO) data and monitoring information from Datado
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   sloCount: number,
@@ -148,7 +163,8 @@ Access Service Level Objective (SLO) data and monitoring information from Datado
 ```
 
 #### Required Permissions:
-- **Catalog entity read (*)** - Access to catalog entities
+
+- **Catalog entity read (\*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
 ### Get Entity Compliance
@@ -156,9 +172,11 @@ Access Service Level Objective (SLO) data and monitoring information from Datado
 Evaluate entity metadata completeness and compliance with organizational standards.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/user-service"
@@ -166,6 +184,7 @@ Evaluate entity metadata completeness and compliance with organizational standar
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   metadata: {
@@ -186,7 +205,8 @@ Evaluate entity metadata completeness and compliance with organizational standar
 ```
 
 #### Required Permissions:
-- **Catalog entity read (*)** - Access to catalog entities
+
+- **Catalog entity read (\*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
 ### Get Repository Info
@@ -194,9 +214,11 @@ Evaluate entity metadata completeness and compliance with organizational standar
 Analyze repository structure and catalog configuration status.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/payment-service"
@@ -204,6 +226,7 @@ Analyze repository structure and catalog configuration status.
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   filePaths: string[],
@@ -221,27 +244,32 @@ Analyze repository structure and catalog configuration status.
 ```
 
 #### Required Permissions:
-- **Catalog entity read (*)** - Access to catalog entities
+
+- **Catalog entity read (\*)** - Access to catalog entities
 - **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
 
 ## Common Use Cases
 
 ### Performance Analysis
+
 - "How long does it take to merge PRs for user-service?"
 - "What's the incident rate for payment-service?"
 - "Show me the SLO compliance for auth-api"
 
 ### Security Assessment
+
 - "What security vulnerabilities does user-service have?"
 - "Are there any Dependabot alerts for payment-service?"
 - "What's the security posture of our inventory system?"
 
 ### Compliance Monitoring
+
 - "How complete is the metadata for auth-service?"
 - "Which services need better documentation?"
 - "What's the compliance score for our payment components?"
 
 ### Operational Insights
+
 - "Which services have the most incidents?"
 - "What's the GitHub activity like for user-service?"
 - "Show me the monitoring status for all payment services"
@@ -265,6 +293,7 @@ The module automatically fetches data from all configured Tech Insights data sou
 **User:** "What's the security posture of our payment services?"
 
 **AI Response using MCP:**
+
 1. Uses `get-security-metrics` for all payment-related components
 2. Aggregates vulnerability data across services
 3. Identifies critical security issues requiring attention
@@ -275,6 +304,7 @@ The module automatically fetches data from all configured Tech Insights data sou
 **User:** "How are our services performing?"
 
 **AI Response using MCP:**
+
 1. Combines `get-github-metrics` with `get-pagerduty-metrics`
 2. Analyzes development velocity and operational stability
 3. Identifies services with concerning trends
@@ -289,4 +319,4 @@ The module automatically fetches data from all configured Tech Insights data sou
 
 ## Data Availability
 
-Metric availability depends on your configured Tech Insights data sources. If a metric shows as unavailable, ensure the corresponding integration is properly configured in your Roadie instance. 
+Metric availability depends on your configured Tech Insights data sources. If a metric shows as unavailable, ensure the corresponding integration is properly configured in your Roadie instance.

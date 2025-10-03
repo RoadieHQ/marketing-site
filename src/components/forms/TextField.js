@@ -4,14 +4,7 @@ import { INPUT_COLORS } from './input-colors';
 
 import Input from './Input';
 
-const TextField = ({
-  id,
-  label,
-  helpText,
-  helpTextState,
-  color = 'primary',
-  ...rest
-}) => {
+const TextField = ({ id, label, helpText, helpTextState, color = 'primary', ...rest }) => {
   const htmlId = id ? id : Math.random().toString(36).slice(2);
   let { label: labelStyle } = INPUT_COLORS[color];
 

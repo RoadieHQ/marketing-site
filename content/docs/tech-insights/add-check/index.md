@@ -39,7 +39,7 @@ Select an entity that you want to test your check against.
 
 ### Fix Link
 
-You can provide an optional link to some documentation that explains to your users how to make this check pass. 
+You can provide an optional link to some documentation that explains to your users how to make this check pass.
 
 These links can be dynamically generated from the entity that the fact relates to like so `/docs/{{metadata.namespace}}/{{kind}}/{{metadata.name}}` or you can use annotation values to complete links for external services, for instance a link to the GitHub source editor for a YAML file like so `https://github.com/{{ metadata.annotations['github.com/project-slug'] }}/edit/main/catalog-info.yaml`.
 

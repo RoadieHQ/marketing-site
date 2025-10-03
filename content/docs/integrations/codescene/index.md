@@ -14,15 +14,14 @@ integrationType: OSS Plugin
 This page describes how to set up the CodeScene plugin on Roadie.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** | You'll need a CodeScene account and a basic Auth token. |
-| **Considerations** | <ul><li>Basic API Token</li></ul> |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** | You'll need a CodeScene account and a basic Auth token.                                          |
+|         **Considerations** | <ul><li>Basic API Token</li></ul>                                                                |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Prerequisites
-
-
 
 ## Step 1: Configure the CodeScene API token
 
@@ -31,10 +30,9 @@ enter your basic auth token.
 
 ![Set Auth](./credentials.webp)
 
-
 ## Step 2: Configure the CodeScene Instance URL
 
-Navigate to `/administration/codescene` and enter your CodeScene instance url then click "save" and then "Apply & restart". 
+Navigate to `/administration/codescene` and enter your CodeScene instance url then click "save" and then "Apply & restart".
 
 ![Set Config](./config.webp)
 
@@ -50,4 +48,4 @@ on the secrets page.
 
 ## More information:
 
-* [CodeScene plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/codescene/plugins/codescene)
+- [CodeScene plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/codescene/plugins/codescene)

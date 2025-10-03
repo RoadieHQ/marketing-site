@@ -21,10 +21,11 @@ https://<tenant-name>.roadie.so/administration/travis-ci
 This page describes how to create and set up the Travis CI API.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
@@ -35,10 +36,10 @@ Start by visiting the account settings page in [Travis](https://www.travis-ci.co
 
 Click on the "Copy token" button under the API settings section.
 
-   ![Travis CI TOKEN](./copy-token.webp)
-
+![Travis CI TOKEN](./copy-token.webp)
 
 ### Step 2: Store the token in Roadie
+
 Visit:
 
 ```text
@@ -68,7 +69,6 @@ You should now see something like this:
 
 ![Travis card](./travis-card.webp)
 
-
 ### Step 4: Adding travis tab
 
 Navigate to the catalog entity you want to add the travis tab to.
@@ -80,8 +80,6 @@ Click on the `+` icon on the tabs bar (top right of the page)
 You should now see something like this:
 
 ![Travis tab](./travis-tab.webp)
-
-
 
 ## References
 

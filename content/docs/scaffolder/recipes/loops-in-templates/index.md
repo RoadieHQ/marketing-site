@@ -23,40 +23,40 @@ You can check the available actions if you visit `/create/actions`.
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-   name: loop-template-example
-   title: Loop through items in a template
-   description: This scaffolder takes user input and loops through those into a template file.
+  name: loop-template-example
+  title: Loop through items in a template
+  description: This scaffolder takes user input and loops through those into a template file.
 spec:
-   owner: roadie
-   type: service
-   parameters:
-      properties:
-         things:
-            title: List of things
-            type: array
-            items:
-               type: string
-               title: A thing
-   steps:
-      - id: fetch-template
-        name: Fetch catalog-info file template
-        action: fetch:template
-        input:
-           url: ./skeleton
-           replace: true
-           values:
-              things: ${{ parameters.things }}
-      - id: parse
-        name: Parse file
-        action: roadiehq:utils:fs:parse
-        input:
-           path: 'file.md'
+  owner: roadie
+  type: service
+  parameters:
+    properties:
+      things:
+        title: List of things
+        type: array
+        items:
+          type: string
+          title: A thing
+  steps:
+    - id: fetch-template
+      name: Fetch catalog-info file template
+      action: fetch:template
+      input:
+        url: ./skeleton
+        replace: true
+        values:
+          things: ${{ parameters.things }}
+    - id: parse
+      name: Parse file
+      action: roadiehq:utils:fs:parse
+      input:
+        path: 'file.md'
 
-      - id: log-message
-        name: Log Parsed Contents
-        action: debug:log
-        input:
-           message: "contents: ${{ steps['parse'].output.content }}!"
+    - id: log-message
+      name: Log Parsed Contents
+      action: debug:log
+      input:
+        message: "contents: ${{ steps['parse'].output.content }}!"
 ```
 
 ## Breakdown
@@ -68,41 +68,41 @@ This section configures the frontend for your template. Essentially these values
 This renders a list of input fields where you can input a string value. The value of these string is stored into an array which is called `things`
 
 ```yaml
-   things:
-      title: List of things
-      type: array
-      items:
-         type: string
-         title: A thing
+things:
+  title: List of things
+  type: array
+  items:
+    type: string
+    title: A thing
 ```
 
 ### Steps
 
 #### fetch:template
 
-The `fetch:template` action retrieves a folder from the location `./skeleton`, which resides in the same repository as the template. It passes on the parameters defined in the template as an array of strings to the template. The values passed in to the template are usable under a value called `things`. 
+The `fetch:template` action retrieves a folder from the location `./skeleton`, which resides in the same repository as the template. It passes on the parameters defined in the template as an array of strings to the template. The values passed in to the template are usable under a value called `things`.
 
 ```yaml
 - id: fetch-template
   name: Fetch catalog-info file template
   action: fetch:template
   input:
-     url: ./skeleton
-     replace: true
-     values:
-        things: ${{ parameters.things }}
+    url: ./skeleton
+    replace: true
+    values:
+      things: ${{ parameters.things }}
 ```
 
 #### roadiehq:utils:fs:parse
 
-Parses the contents of a file called `file.md` from the workspace. The contents are stored into an output value called `content`. 
+Parses the contents of a file called `file.md` from the workspace. The contents are stored into an output value called `content`.
 
 ```yaml
 - id: parse
   name: Parse file
   action: roadiehq:utils:fs:parse
   input:
-     path: 'file.md'
+    path: 'file.md'
 ```
 
 #### debug:log
@@ -114,21 +114,21 @@ Logs the contents of the file which was parsed in the previous steps. Uses the o
   name: Log Parsed Contents
   action: debug:log
   input:
-     message: "contents: ${{ steps['parse'].output.content }}!"
+    message: "contents: ${{ steps['parse'].output.content }}!"
 ```
 
 ### The skeleton folder
 
 The skeleton folder contains a single file called `file.md`. The contents of this file are as follows:
-```md
 
+```md
 {%- if(values.things.length) %}
 A List of items
-  {%- for thing in values.things %}
-  - ${{ thing }}
-  {%- endfor %}
-{%- endif %}
+{%- for thing in values.things %}
 
+- ${{ thing }}
+  {%- endfor %}
+  {%- endif %}
 ```
 
 The file is a Nunjucks template file which expects a collection of `things` to be passed into it. If the passed in value exists and has a length (larger than 0), it will loop over the passed in values and list them out in a markdown list format.

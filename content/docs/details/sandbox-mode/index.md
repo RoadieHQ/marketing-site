@@ -26,7 +26,6 @@ To navigate to this page, follow these steps:
 
 ![A link that says "Sandbox"](./sandbox-link.webp)
 
-
 ## Step 2: Create new sandbox page
 
 1. Click the button saying "New Sandbox Page" on the top right of the Sandbox table
@@ -39,15 +38,13 @@ To navigate to this page, follow these steps:
 
 > Note that the path within the sandbox mode is allowing restricted entries only. All paths must start with `/admin-sandbox`.
 
-
 ## Navigate to Sandbox pages and test out their configurations
 
 ![A table displaying already created Sandbox pages](./sandbox-table.webp)
 
 Sandbox pages are visible to all users by default, if they are able to navigate to the configured URLs. The pages are not linked to from anywhere apart from the Admin Sandbox area, which is only visible to administrators.
 
-
-> Note that all sandbox pages by default receive an extra prop called `Layout Name`. This should be present *only* in Sandbox mode and should not be copied to the actual pages 
+> Note that all sandbox pages by default receive an extra prop called `Layout Name`. This should be present _only_ in Sandbox mode and should not be copied to the actual pages
 
 The Sandbox area is purely for testing purposes, meaning that the actual final sidebar pages will need to be created manually after the correct configuration patterns have been found in the sandbox.
 

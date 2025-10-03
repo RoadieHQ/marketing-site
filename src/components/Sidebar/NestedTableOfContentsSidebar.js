@@ -4,9 +4,7 @@ import classnames from 'classnames';
 import Sidebar from './Sidebar';
 import { SidebarSection } from './Section';
 
-const numberOfContentsItems = (tableOfContents) => (
-  (tableOfContents.match(/<li>/g) || []).length
-);
+const numberOfContentsItems = (tableOfContents) => (tableOfContents.match(/<li>/g) || []).length;
 
 // This allows the sidebar to scroll without scrolling the whole page. No idea how it works.
 // https://stackoverflow.com/a/13337664/574190

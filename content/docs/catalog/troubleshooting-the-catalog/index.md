@@ -6,10 +6,10 @@ description: How to resolve issues getting data into the catalog
 
 ## Debug what's happened to an entity
 
-The Backstage catalog maps entities you add to the place where they were added from using "Location" entities to point to the external sources. Roadie will generally 
+The Backstage catalog maps entities you add to the place where they were added from using "Location" entities to point to the external sources. Roadie will generally
 update your entities in Backstage whenever one of the repositories defined in a location is updated.
 
-Location entities are generally considered internal to the workings of Backstage and not part of your catalog (though you may 
+Location entities are generally considered internal to the workings of Backstage and not part of your catalog (though you may
 need to create locations directly in some use cases).
 
 The locations log provides information on the scheduling of the catalog refresh cycle and surfaces any errors.
@@ -43,7 +43,6 @@ table by this column by clicking on the column header to view rows with errors.
 Viewing a particular entry you can view the list of errors, the raw entity data and also the processed entity (if available).
 You can use this information to diagnose and fix errors with catalog info YAML files.
 
-
 ## Common Issues
 
 ### Entity stopped updating after moved/renamed catalog file
@@ -68,7 +67,6 @@ If you changed the name of your repository, Backstage by default relies on GitHu
 This means it will not update the repository URL associated with your entity.
 
 You can clean this up by [deleting the entity](/docs/catalog/unregister-components/#manually-ingested-entities) and re-importing it manually using the new URL.
-
 
 ### Processor BuiltinKindsEntityProcessor threw an error while validating the entity
 

@@ -16,8 +16,9 @@ Roadie has the capability to automatically ingest resources from AWS. This is do
 This guide describes how to set up Roadie to access your specific AWS resources and automatically ingest them.
 
 ## At a Glance
+
 |                            |                                                                                                  |
-|---------------------------:|--------------------------------------------------------------------------------------------------|
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
 |          **Prerequisites** |                                                                                                  |
 |         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
@@ -30,7 +31,7 @@ Navigate to `Administration > Settings > AWS Resources` and make a note of the R
 
 ### Step 2: Create a federated role in your account for Roadie
 
-Follow the steps [here](/docs/details/accessing-aws-resources) to create the role. 
+Follow the steps [here](/docs/details/accessing-aws-resources) to create the role.
 
 You'll need to attach policies to the role to be able to retrieve information about the resources you want ingested. The supported resources and their policies are listed in a table at the end of this page. You can use the same role for multiple resource types as long as the needed permissions are granted to it.
 
@@ -38,26 +39,25 @@ For quick experimentation, you can use `AWS<ResourceType>ReadOnlyAccess` policie
 
 ### Step 3: Configure external id
 
-It is best practice (and mandatory for `autodiscovery` configuration) to configure an external id for your assumable role. 
+It is best practice (and mandatory for `autodiscovery` configuration) to configure an external id for your assumable role.
 
 **(A)**
 
-For Autodiscovery configuration, you are able to define **an external id prefix within the Roadie application**. The final external id will be constructed based on this prefix, a delimiter character of `-` and the AWS account number in question, encoded into a **base64** string. 
-
+For Autodiscovery configuration, you are able to define **an external id prefix within the Roadie application**. The final external id will be constructed based on this prefix, a delimiter character of `-` and the AWS account number in question, encoded into a **base64** string.
 
 For example if you have defined external id prefix `roadie` and the account id is `123456789012` the final external id will be `cm9hZGllLTEyMzQ1Njc4OTAxMg==`. The preferred way for these is naturally creating the roles and their configurations using infrastructure as code tools. The following approaches can be used for specific tools:
-* Terraform: `base64encode("roadie-123456789012")`
-* Pulumi (JS/TS): `Buffer.from('roadie-123456789012').toString('base64')`
-* Bash: `echo -n 'roadie-123456789012' | base64`
-* Browser Devtools: `btoa("roadie-123456789012")`
 
+- Terraform: `base64encode("roadie-123456789012")`
+- Pulumi (JS/TS): `Buffer.from('roadie-123456789012').toString('base64')`
+- Bash: `echo -n 'roadie-123456789012' | base64`
+- Browser Devtools: `btoa("roadie-123456789012")`
 
-**(B)** 
+**(B)**
 
-For standalone configurations this can be any string conforming to regular expression pattern `[\w+=,.@:\/-]*`.  
-
+For standalone configurations this can be any string conforming to regular expression pattern `[\w+=,.@:\/-]*`.
 
 ### Example trust policy
+
 ```json
 {
   "Version": "2012-10-17",
@@ -83,14 +83,13 @@ For standalone configurations this can be any string conforming to regular expre
 
 The values `123456789012` and `demo-role-abcdABCD` can be replaced with the values found within your Roadie instance, the external id is the value from step 3.
 
-
-##  Configuring your Roadie instance to discover AWS resources
+## Configuring your Roadie instance to discover AWS resources
 
 ### Option 1 - Standalone AWS account configuration
 
 ![AWS Resources config](aws-resources-config.webp)
 
-On the AWS Resources settings page `Administration > Settings > AWS Resources` in Roadie click `Add Item`. 
+On the AWS Resources settings page `Administration > Settings > AWS Resources` in Roadie click `Add Item`.
 Here you can define the role (created in step 2 above) to be used to ingest these resources, as well as the AWS region to use and the optional External ID configured for the role.
 
 After the role configuration is done, you can click the 'Test Role' button to check if the role is assumable by Roadie. Finally, you can select the types of resources you want to be ingested. The possible options are listed in the table at the bottom of the page.
@@ -115,26 +114,25 @@ In here you define 2 pieces of information:
 
 #### 1. AWS role with access to AWS organizations information
 
-The AWS Organizations Management role is used to retrieve a list of AWS accounts within your AWS organization. This role should have access to the following policies:  
-* `organizations:ListAccounts`
-* `organizations:ListTagsForResource`
+The AWS Organizations Management role is used to retrieve a list of AWS accounts within your AWS organization. This role should have access to the following policies:
 
+- `organizations:ListAccounts`
+- `organizations:ListTagsForResource`
 
 #### 2. Default settings to be used for each AWS account
 
 The default settings for role assumption are the configurations that are used to assume a role on each of the AWS accounts that are discovered with the AWS Organizations Management Role. Within this settings section you can configure the regions to retrieve resources from, as well as all the resource types that should be ingested. The role name set in here must be present in each of the AWS accounts and it should have access to read the relevant chosen resources in the configured regions. You can see the needed permissions at the table in the end of this page.
 
-The external id prefix is the same, but the external id will be different for each AWS account. Note the process on how to determine the external id from the above documentation. 
+The external id prefix is the same, but the external id will be different for each AWS account. Note the process on how to determine the external id from the above documentation.
 
-For the moment all discovered AWS accounts are using the same role name and regions. if there is a need to divert from this pattern, you can add additional standalone AWS account configurations. 
-
+For the moment all discovered AWS accounts are using the same role name and regions. if there is a need to divert from this pattern, you can add additional standalone AWS account configurations.
 
 #### 3. Configure individual accounts with different regions and resources
 
-The autodiscovery option of AWS resources ingestion uses AWS organization account tags to override global configurations set up on the roadie system. With these tags you can configure more fine-grained approaches on which resources, from which regions, to ingest from specific accounts. The supported tags are as follows: 
+The autodiscovery option of AWS resources ingestion uses AWS organization account tags to override global configurations set up on the roadie system. With these tags you can configure more fine-grained approaches on which resources, from which regions, to ingest from specific accounts. The supported tags are as follows:
 
 | Tag Key           | Example values            | Description                                                                                                   |
-|-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
+| ----------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `resources`       | `eks-cluster s3-bucket`   | **Space separated** list of resources to ingest from this account. See available resources in the table below |
 | `regions`         | `eu-west-1 eu-central-1`  | **Space separated** AWS region codes to ingest resources from                                                 |
 | `roadie-excluded` | (Empty value) / any value | The presence of this tag indicates to skip this specific AWS account from being ingested                      |
@@ -168,11 +166,11 @@ To use custom templates for AWS resource mapping:
 
 Each resource type provides three main variables for use in your templates:
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `accountId` | The AWS account ID | `"123456789012"` |
-| `region` | The AWS region | `"eu-west-1"` |
-| `data` | Resource-specific properties from AWS APIs | `{{ data.name }}`, `{{ data.arn }}` |
+| Variable    | Description                                | Example                             |
+| ----------- | ------------------------------------------ | ----------------------------------- |
+| `accountId` | The AWS account ID                         | `"123456789012"`                    |
+| `region`    | The AWS region                             | `"eu-west-1"`                       |
+| `data`      | Resource-specific properties from AWS APIs | `{{ data.name }}`, `{{ data.arn }}` |
 
 ### Template Structure
 
@@ -185,12 +183,12 @@ metadata:
   namespace: default
   annotations:
     # Custom annotations using template variables
-    amazon.com/account-id: "{{ accountId }}"
-    amazon.com/region: "{{ region }}"
+    amazon.com/account-id: '{{ accountId }}'
+    amazon.com/region: '{{ region }}'
     # Resource-specific annotations
-    amazon.com/eks-cluster-arn: "{{ data.arn }}"
-  name: "{{ data.name }}"
-  title: "{{ accountId }}:{{ region }}:{{ data.name }}"
+    amazon.com/eks-cluster-arn: '{{ data.arn }}'
+  name: '{{ data.name }}'
+  title: '{{ accountId }}:{{ region }}:{{ data.name }}'
   labels:
     # Custom labels
     environment: "{{ data.tags.Environment or 'unknown' }}"
@@ -199,7 +197,7 @@ spec:
   type: eks-cluster
   # Custom relationships
   dependsOn:
-    - "resource:default/{{ data.vpc }}"
+    - 'resource:default/{{ data.vpc }}'
 ```
 
 ### Resource-Specific Data Properties
@@ -207,54 +205,59 @@ spec:
 Each AWS resource type provides different properties in the `data` variable. Here are some examples:
 
 #### EKS Cluster
+
 ```yaml
 # Available data properties include:
-# data.name, data.version, data.arn, data.endpoint, data.status, 
+# data.name, data.version, data.arn, data.endpoint, data.status,
 # data.roleArn, data.securityGroupId, etc.
 annotations:
-  kubernetes.io/api-server: "{{ data.endpoint }}"
-  amazon.com/eks-cluster-version: "{{ data.version }}"
+  kubernetes.io/api-server: '{{ data.endpoint }}'
+  amazon.com/eks-cluster-version: '{{ data.version }}'
 ```
 
 #### Lambda Function
+
 ```yaml
 # Available data properties include:
 # data.FunctionName, data.FunctionArn, data.Runtime, data.Handler,
 # data.Role, data.Environment.Variables, etc.
 annotations:
-  amazon.com/lambda-runtime: "{{ data.Runtime }}"
-  amazon.com/lambda-handler: "{{ data.Handler }}"
+  amazon.com/lambda-runtime: '{{ data.Runtime }}'
+  amazon.com/lambda-handler: '{{ data.Handler }}'
 labels:
-  runtime: "{{ data.Runtime }}"
+  runtime: '{{ data.Runtime }}'
 ```
 
 #### S3 Bucket
+
 ```yaml
 # Available data properties include:
 # data.Name, data.CreationDate, data.LocationConstraint,
 # data.VersioningStatus, data.Tags, etc.
 annotations:
-  amazon.com/s3-bucket-versioning: "{{ data.VersioningStatus }}"
+  amazon.com/s3-bucket-versioning: '{{ data.VersioningStatus }}'
 labels:
-  environment: "{{ data.Tags[0].Value }}"
+  environment: '{{ data.Tags[0].Value }}'
 ```
 
-*For complete data property references, see the AWS API documentation links provided for each resource type in the permissions table above.*
+_For complete data property references, see the AWS API documentation links provided for each resource type in the permissions table above._
 
 ### Advanced Templating Examples
 
 #### Conditional Logic
+
 ```yaml
 # Use conditional statements for optional properties
 annotations:
-  amazon.com/kms-key: "{% if data.KmsKeyId %}{{ data.KmsKeyId }}{% endif %}"
-  
+  amazon.com/kms-key: '{% if data.KmsKeyId %}{{ data.KmsKeyId }}{% endif %}'
+
 labels:
   # Set default values for missing tags
   environment: "{{ data.Tags | selectattr('Key', 'equalto', 'Environment') | first | attr('Value') or 'development' }}"
 ```
 
 #### Custom Relationships
+
 ```yaml
 spec:
   # Establish relationships based on AWS resource properties
@@ -270,12 +273,13 @@ spec:
 ```
 
 #### Dynamic Naming
+
 ```yaml
 metadata:
   # Custom naming conventions
   name: "{{ region }}-{{ data.name | lower | replace('_', '-') }}"
   title: "{{ data.name }} ({{ accountId }}/{{ region }})"
-  
+
   # Generate labels from AWS tags
   labels:
     {% for tag in data.Tags -%}
@@ -284,11 +288,12 @@ metadata:
 ```
 
 #### Multi-Environment Support
+
 ```yaml
 metadata:
   # Different namespace based on environment tag
   namespace: "{{ data.Tags | selectattr('Key', 'equalto', 'Environment') | first | attr('Value') | lower or 'default' }}"
-  
+
   annotations:
     # Add cost center information
     amazon.com/cost-center: "{{ data.Tags | selectattr('Key', 'equalto', 'CostCenter') | first | attr('Value') or 'unknown' }}"
@@ -324,7 +329,7 @@ If you encounter template errors:
 The table below lists the permissions required of the assumable role in order for the Catalog to ingest those resource types.
 
 | Resource             | Description                                  | AWS Policy Action(s)                                                              |
-|----------------------|----------------------------------------------|-----------------------------------------------------------------------------------|
+| -------------------- | -------------------------------------------- | --------------------------------------------------------------------------------- |
 | lambda-function      | AWS Lambda Functions                         | `lambda:ListFunctions`, `lambda:ListTags`                                         |
 | eks-cluster          | AWS Elastic Kubernetes Service Clusters      | `eks:ListClusters`, `eks:DescribeCluster`                                         |
 | s3-bucket            | AWS Simple Storage Service Buckets           | `s3:ListBucket`, `s3:ListAllMyBuckets`, `s3:GetBucketTagging`                     |
@@ -343,8 +348,6 @@ The table below lists the permissions required of the assumable role in order fo
 | vpc                  | AWS VPC                                      | `ec2:DescribeVpcs`, `ec2:DescribeDhcpOptions`                                     |
 | ecr-repository       | AWS Elastic Container Registry               | `ecr:DescribeRepositories`, `ecr:ListTagsForResource`                             |
 
-
-
 You can expand the code snippet below to show an example policy document for the AWS role. You can add additional statement blocks into the policy document where multiple role policy actions are required.
 
 <details>
@@ -358,30 +361,26 @@ You can expand the code snippet below to show an example policy document for the
     {
       "Sid": "RoadieAllowPolicy",
       "Effect": "Allow",
-      "Action": [
-        "lambda:ListFunctions"
-      ],
+      "Action": ["lambda:ListFunctions"],
       "Resource": "*"
     }
   ]
 }
 ```
-</details>
 
+</details>
 
 ## Additional information
 
-The resource providers enhance their functionality to allow additional metadata inclusion to the provided entities. This is done by using tags within the AWS resource. 
+The resource providers enhance their functionality to allow additional metadata inclusion to the provided entities. This is done by using tags within the AWS resource.
 The tagging functionality of AWS is used to determine the owner of each resource. By default, Roadie uses tag with a key `owner` to determine what value to use for the owner field of the generated entity.
 
 You can additionally use the following tags to indicate relationships within the catalog:
 `system` -> To indicate that this AWS resources is part of a system (expected value: fully qualified name)
 `domain` -> To indicate that this AWS resources is part of a domain (expected value: fully qualified name)
-`dependsOn`  -> To indicate that the resource depends on something (expected value: comma separated list of fully qualified names)
-`dependencyOf` -> To indicate that the resource is a dependency of something  (expected value: comma separated list of fully qualified names)
-
+`dependsOn` -> To indicate that the resource depends on something (expected value: comma separated list of fully qualified names)
+`dependencyOf` -> To indicate that the resource is a dependency of something (expected value: comma separated list of fully qualified names)
 
 For EKS Cluster ingestion you are also able to specify the `spec.type` value to use when these resource entities are ingested. The default value is `eks-cluster`, other popular value that could be more descriptive is `kubernetes-cluster`.
-
 
 See more information about relationships in [Backstage docs](https://backstage.io/docs/features/software-catalog/well-known-relations).

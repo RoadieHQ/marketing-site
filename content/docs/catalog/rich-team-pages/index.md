@@ -22,13 +22,13 @@ With decorators, you can easily display links to Slack, Confluence, or any other
 
 1. Click the three dots in the top right corner of your team page. Choose Decorate Entity.
 2. Click the ADD LINK button.
-    
-    ![link-decorate.webp](./link-decorate.webp)
-    
+
+   ![link-decorate.webp](./link-decorate.webp)
+
 3. Fill out the 4 fields with sensible values.
-    
-    ![sensible-values.webp](./sensible-values.webp)
-    
+
+   ![sensible-values.webp](./sensible-values.webp)
+
 4. Click SAVE
 5. After a second or two, you should see your link show up on your team page.
 
@@ -43,11 +43,11 @@ Decorators can help you add a Team Charter, or any other markdown content to you
 1. Add the `MarkdownCard` card to the layout for Group pages on Roadie. You may need to ask a Roadie Backstage admin to do this for you.
 2. Create a markdown file on GitHub, or a source control system of your choice. Add some content that you wish to be displayed on Roadie.
 3. Copy the URL of the markdown file. On GitHub, it should look like this:
-    
-    ```
-    https://github.com/RoadieHQ/sample-service/blob/main/team-charter.md
-    ```
-    
+
+   ```
+   https://github.com/RoadieHQ/sample-service/blob/main/team-charter.md
+   ```
+
 4. Click the three dots in the top right corner of your entity page. Choose Decorate Entity.
 5. In annotations, add the `roadie.io/markdown-content` annotation. Paste the copied URL into the field labeled Value.
 6. Click SAVE

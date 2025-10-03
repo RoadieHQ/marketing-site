@@ -16,10 +16,11 @@ The [Backstage DX plugin](https://github.com/get-dx/backstage-plugin) is a Backs
 It includes the [Backstage DX Frontend Plugin](https://github.com/get-dx/backstage-plugin), which displays DX data and [Backstage DX Backend Plugin](https://github.com/get-dx/backstage-backend-plugin/) which enables automatic synchronization of Backstage data with the DX Data Cloud.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add DX to your components

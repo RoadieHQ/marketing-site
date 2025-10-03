@@ -32,14 +32,14 @@ You can use Tech Insights to find components which do not meet the minimum requi
 
 Imagine you wanted `tier` and `region` to be mandatory. To get a list of components wihch have not added the `tier` label, you would create a check with the following attributes:
 
-| Field | Input |
-| --- | --- |
-| Name | Mandatory Backstage labels |
-| Description | Adding these labels will help other people in the company understand how to find and interact with your component. |
-| Data source | Entity Metadata (this is built-in). |
-| Fact | Label keys (this returns a list of all of the label keys on an entity) |
-| Fact operator | Contains |
-| Value | tier,region |
+| Field         | Input                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Name          | Mandatory Backstage labels                                                                                         |
+| Description   | Adding these labels will help other people in the company understand how to find and interact with your component. |
+| Data source   | Entity Metadata (this is built-in).                                                                                |
+| Fact          | Label keys (this returns a list of all of the label keys on an entity)                                             |
+| Fact operator | Contains                                                                                                           |
+| Value         | tier,region                                                                                                        |
 
 With this check in place, we can now get a list of all services which have not added the `tier` and `region` labels.
 
@@ -53,13 +53,13 @@ In order to find duplicate labels, the best practice is to establish and maintai
 
 To get a list of components wihch have added unallowed label, you would create a check with the following attributes:
 
-| Field | Input |
-| --- | --- |
-| Name | Allowed Backstage labels |
-| Description |  |
-| Data source | Entity Metadata (this is built-in). |
-| Fact | Label keys (this returns a list of all of the label keys on an entity) |
-| Fact operator | Contains |
-| Value | tier,region |
+| Field         | Input                                                                  |
+| ------------- | ---------------------------------------------------------------------- |
+| Name          | Allowed Backstage labels                                               |
+| Description   |                                                                        |
+| Data source   | Entity Metadata (this is built-in).                                    |
+| Fact          | Label keys (this returns a list of all of the label keys on an entity) |
+| Fact operator | Contains                                                               |
+| Value         | tier,region                                                            |
 
 To change the list of allowable labels, simple edit the check and add to the Value field.

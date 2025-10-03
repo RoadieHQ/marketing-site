@@ -12,10 +12,7 @@ const ExplainingTheVision = () => (
           aria-hidden="true"
           className="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen"
         >
-
-          <div
-            className="absolute inset-y-0 right-1/2 w-full bg-gray-50 rounded-r-3xl lg:right-72"
-          />
+          <div className="absolute inset-y-0 right-1/2 w-full bg-gray-50 rounded-r-3xl lg:right-72" />
 
           <DotPattern
             className="absolute top-8 left-1/2 -ml-3 lg:-right-8 lg:left-auto lg:top-12"
@@ -44,13 +41,19 @@ const ExplainingTheVision = () => (
 
           <div className="mt-6 text-gray-500 space-y-6">
             <p className="text-lg">
-              Every industry has more software than ever before. From communications, to transportation, to green energy. 
+              Every industry has more software than ever before. From communications, to
+              transportation, to green energy.
             </p>
             <p className="text-base leading-7">
-              The number of developers in the world is estimated to be 26.9 million, and is projected to grow to 45 million by 2030. <Link to="https://slashdata-website-cms.s3.amazonaws.com/sample_reports/EiWEyM5bfZe1Kug_.pdf">[source]</Link>
+              The number of developers in the world is estimated to be 26.9 million, and is
+              projected to grow to 45 million by 2030.{' '}
+              <Link to="https://slashdata-website-cms.s3.amazonaws.com/sample_reports/EiWEyM5bfZe1Kug_.pdf">
+                [source]
+              </Link>
             </p>
             <p className="text-base leading-7">
-              By making each of these developers more effective, we believe Roadie can have a huge positive influence on the world.
+              By making each of these developers more effective, we believe Roadie can have a huge
+              positive influence on the world.
             </p>
           </div>
         </div>

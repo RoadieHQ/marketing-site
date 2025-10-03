@@ -16,11 +16,12 @@ The [Backstage Grafana plugin](https://www.npmjs.com/package/@k-phoen/backstage-
 ![grafana-overview.webp](./grafana-overview.webp)
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>API Key</li><li>Grafana Frontend URL</li><li>Grafana Backend URL</li></ul> **Component Annotations:** <ul><li>Tag Selector / Dashboard Selector</li></ul> |
-| **Considerations** |  |
-| **Supported Environments** | ☒ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
+|                            |                                                                                                                                                                                           |
+| -------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|          **Prerequisites** | **Configuration Data:** <ul><li>API Key</li><li>Grafana Frontend URL</li><li>Grafana Backend URL</li></ul> **Component Annotations:** <ul><li>Tag Selector / Dashboard Selector</li></ul> |
+|         **Considerations** |                                                                                                                                                                                           |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                                          |
 
 ## Adding the plugin
 
@@ -36,13 +37,13 @@ You can choose to configure Grafana in one of two ways:
 Configure the Grafana endpoints to use via `Administration -> Settings -> Grafana`. If you're using grafana.net your
 frontend and backend endpoints should be the same e.g. `https://<your-company>.grafana.net/`. If you're using hosting
 Grafana yourself you'll need to specify a url to the frontend which is used by backstage to generate links and an API
-endpoint which the plugin uses to query alerts and dashboards. 
+endpoint which the plugin uses to query alerts and dashboards.
 
 ![grafana-config.webp](./grafana-config.webp)
 
 ##### Add the Grafana API Key
 
-Set the Grafana Frontend URL, Backend URL and the `GRAFANA_API_KEY` in same page at `/administration/grafana`. 
+Set the Grafana Frontend URL, Backend URL and the `GRAFANA_API_KEY` in same page at `/administration/grafana`.
 
 NB: You'll need to wait for the secret to be marked as "Available" before you can use the Grafana plugin.
 
@@ -71,14 +72,12 @@ list dashboards and alerts respectively.
 ### Set the Grafana annotation on entities
 
 The Grafana plugin uses an annotation to link entities in the Backstage catalog to data in Grafana. This annotation should
-have a tag in Grafana as its value. Any alerts or dashboards with this tag will be displayed once the annotation is set and 
+have a tag in Grafana as its value. Any alerts or dashboards with this tag will be displayed once the annotation is set and
 the components added to the UI.
 
 Make a PR to the following to your catalog-info.yaml file:
+
 ```yaml
 annotations:
-  grafana/tag-selector: "my-grafana-tag"
+  grafana/tag-selector: 'my-grafana-tag'
 ```
-
-
-

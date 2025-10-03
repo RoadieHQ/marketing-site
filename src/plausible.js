@@ -9,7 +9,7 @@ import { currentlyExecutingGitBranch } from './environment';
 // redirect is configured in the netlify.toml file.
 const trackPlausibleEvent = (eventName, opts = {}) => {
   const options = set(opts, 'path.branch', currentlyExecutingGitBranch());
-  
+
   if (!isUndefined(window.plausible)) {
     window.plausible(eventName, options);
   }

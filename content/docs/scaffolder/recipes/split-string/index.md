@@ -21,25 +21,25 @@ You can check the available actions if you visit `/create/actions`.
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-   name: split-string-example
-   title: Split comma-separated string and process each value
-   description: This scaffolder takes a comma-separated string input and processes each value individually.
+  name: split-string-example
+  title: Split comma-separated string and process each value
+  description: This scaffolder takes a comma-separated string input and processes each value individually.
 spec:
-   owner: roadie
-   type: service
-   parameters:
-      properties:
-         things:
-            title: Comma-separated list of things
-            type: string
-            description: Enter items separated by commas (e.g., "item1,item2,item3")
-   steps:
-      - id: log-each-string
-        name: Log each string
-        action: debug:log
-        each: ${{ parameters.things | split(",") }}
-        input:
-           message: ${{ each.value }}
+  owner: roadie
+  type: service
+  parameters:
+    properties:
+      things:
+        title: Comma-separated list of things
+        type: string
+        description: Enter items separated by commas (e.g., "item1,item2,item3")
+  steps:
+    - id: log-each-string
+      name: Log each string
+      action: debug:log
+      each: ${{ parameters.things | split(",") }}
+      input:
+        message: ${{ each.value }}
 ```
 
 ## Breakdown
@@ -49,10 +49,10 @@ spec:
 This section configures the frontend for your template. The user provides a single string input that contains multiple values separated by commas.
 
 ```yaml
-   things:
-      title: Comma-separated list of things
-      type: string
-      description: Enter items separated by commas (e.g., "item1,item2,item3")
+things:
+  title: Comma-separated list of things
+  type: string
+  description: Enter items separated by commas (e.g., "item1,item2,item3")
 ```
 
 ### Steps
@@ -84,6 +84,7 @@ The `split(",")` filter takes the input string and splits it at each comma, crea
 ## Use Cases
 
 This pattern is useful for:
+
 - Processing lists of repository names, service names, or component names
 - Creating multiple resources based on a simple string input
 - Converting user-friendly comma-separated input into actionable data

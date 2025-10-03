@@ -28,11 +28,12 @@ Let’s get started.
 ## Configure a Component with its Sonarcloud project key
 
 1. First identify the project key for the catalog Component.
-You can find this in the SonarCloud dashboard. Find the project, click Administration -> Update key and copy the "Project Key"
-2. Next edit the catalog YAML file for the Component 
-The easiest way to do this is to find the component in the Roadie catalog and click the edit pencil in the top right hand side of the About Card.
+   You can find this in the SonarCloud dashboard. Find the project, click Administration -> Update key and copy the "Project Key"
+2. Next edit the catalog YAML file for the Component
+   The easiest way to do this is to find the component in the Roadie catalog and click the edit pencil in the top right hand side of the About Card.
 3. Edit and save the YAML file to include the `sonarqube.org/project-key` annotation.
-e.g.
+   e.g.
+
 ```yaml
 ---
 apiVersion: backstage.io/v1alpha1
@@ -46,7 +47,7 @@ metadata:
 ## Configure the SonarCloud API token in Roadie secrets
 
 1. First generate a new token in the SonarCloud dashboard
-Click on your profile in the top right of the application, click My Account. Then click Security. Enter a token name and click "Generate Token". Copy the token value.
+   Click on your profile in the top right of the application, click My Account. Then click Security. Enter a token name and click "Generate Token". Copy the token value.
 2. In Roadie click Administration -> Settings -> Secrets and save the token to the secret named SONARCLOUD_API_TOKEN.
 
 ## Configure a proxy in Roadie so that it can communicate with the SonarCloud API
@@ -70,10 +71,10 @@ Click on your profile in the top right of the application, click My Account. The
 ![Edit Data Source](edit-datasource.webp)
 
 7. Next you can select the fields to extract from the API.
-In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, `$count($.issues[status != "CLOSED"])` as the JSONata query, and select "Integer" type. Add a second fact by clicking "Add Fact", enter "debtTotal", `$.debtTotal` and select "Integer" again.
+   In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, `$count($.issues[status != "CLOSED"])` as the JSONata query, and select "Integer" type. Add a second fact by clicking "Add Fact", enter "debtTotal", `$.debtTotal` and select "Integer" again.
 
 8. Test the Data Source fact extraction by clicking "Check Facts". You should see something like the following.
-![Field Extraction](field-extraction.webp)
+   ![Field Extraction](field-extraction.webp)
 
 9. In the Applies to selection, set the "Has Annotation" field to "sonarqube.org/project-key"
 10. Click Save.
@@ -91,10 +92,10 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 ![Edit Hotspots Data Source](edit-hotspots-datasource.webp)
 
 7. Next you can select the fields to extract from the API.
-In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, "$.paging.total" as the JSONata query, and select "Integer" type.
+   In the Field extraction section select the "JSON with JSONata syntax" extractor. Then enter "count" as the fact name, "$.paging.total" as the JSONata query, and select "Integer" type.
 
 8. Test the Data Source fact extraction by clicking "Check Facts". You should see something like the following.
-![Hotspot Field Extraction](hotspot-field-extraction.webp)
+   ![Hotspot Field Extraction](hotspot-field-extraction.webp)
 
 9. In the Applies to selection, set the "Has Annotation" field to "sonarqube.org/project-key"
 10. Click Save.
@@ -119,7 +120,7 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 2. Enter the name "Has Sonarcloud Annotation"
 3. Select the "Entity Metadata" Data Source and the "Annotation Keys" fact
 4. Use the contains operator and "sonarqube.org/project-key" as the value.
-![Annotation Check](annotation-check.webp)
+   ![Annotation Check](annotation-check.webp)
 5. Select the list of "Applies to" filter to match the list of entities you want to comply with your Sonarcloud checks.
 6. Click Save and then "Reload Check Data"
 
@@ -128,7 +129,7 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 1. In Tech Insights click Scorecards and "Add Scorecard"
 2. Name the scorecard "Sonarcloud Compliance"
 3. Add all of the checks we created earlier
-![Add checks to scorecard](add-checks-to-scorecard.webp)
+   ![Add checks to scorecard](add-checks-to-scorecard.webp)
 4. In the "Applies to" filter, select the items that you want to comply to this Scorecard
 5. Select an owner and optionally an Executive sponsor
 6. Click Save.
@@ -141,4 +142,4 @@ In the Field extraction section select the "JSON with JSONata syntax" extractor.
 3. Click "Add to entity page"
 4. Navigate to the entity we configured with the SonarCloud annotation earlier.
 5. You should see a card like the following
-![Entity Scorecard](entity-scorecard.webp)
+   ![Entity Scorecard](entity-scorecard.webp)

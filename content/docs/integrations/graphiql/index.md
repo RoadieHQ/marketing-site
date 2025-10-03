@@ -10,10 +10,11 @@ integrationType: Integration
 ---
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** | You'll need your GraphQL endpoint URLs. |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** | You'll need your GraphQL endpoint URLs.                                                          |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Introduction

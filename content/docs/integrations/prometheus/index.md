@@ -9,10 +9,11 @@ integrationType: OSS plugin
 ---
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Introduction
@@ -67,7 +68,7 @@ The 'rule' annotation expects a comma separated list of queries or recording rul
 The annotation supports individual metrics, promQL queries or references to a name of a recording rule. For complex queries a recording rule is the preferred option, since annotation parsing prevents the usage of characters `,` and `|` in queries.
 
 Example annotation:
-```prometheus.io/rule: memUsage|component,node_memory_active_bytes|instance,sum by (instance) (node_cpu_seconds_total)```
+`prometheus.io/rule: memUsage|component,node_memory_active_bytes|instance,sum by (instance) (node_cpu_seconds_total)`
 
 Produces the following graphs:
 
@@ -90,14 +91,14 @@ Produces the following graphs:
 The 'alert' annotation expects a comma separated list of predefined alert names from the Prometheus server. These are iterated and displayed in a table, displaying state, value, labels, evaluation time and annotations. To display all alerts configured in Prometheus a magic annotation `prometheus.io/alert: all` can be used.
 
 Example annotation:
-```prometheus.io/alert: 'Excessive Memory Usage'```
+`prometheus.io/alert: 'Excessive Memory Usage'`
 
 Produces the following table.
 ![Alert table](./prom_alert.webp)
 
 ### Step 3: Configure UI components for your Roadie instance
 
-You must be an admin to edit the UI layout. You can follow [this guide](/docs/getting-started/updating-the-ui/) to add new Cards and Tabs into your Roadie instance. There are 3 different components available for you to configure. 
+You must be an admin to edit the UI layout. You can follow [this guide](/docs/getting-started/updating-the-ui/) to add new Cards and Tabs into your Roadie instance. There are 3 different components available for you to configure.
 
 #### EntityPrometheusContent (Tab)
 
@@ -109,19 +110,19 @@ The follow options will give a line graph showing the last hour of data.
 
 ```json
 {
-   "step": 28,
-   "range": {
-      "hours": 1
-   },
-   "graphType": "line"
+  "step": 28,
+  "range": {
+    "hours": 1
+  },
+  "graphType": "line"
 }
 ```
 
-| Option               | Description            | Schema                                     | Default           | Example           |
-|----------------------|------------------------|--------------------------------------------|-------------------|-------------------|
-| step (optional)      | The graph step         | `number`                                   | `14`              | `28`              |
-| range (optional)     | The range of the graph | ```{ hours?: number, minutes?: number }``` | `{ "hours": 1 }`  | `{ "hours": 2 }`  |
-| graphType (optional) | Type of graph to use   | `'line' \| 'area'`                         | `line`            | `line`            |
+| Option               | Description            | Schema                                 | Default          | Example          |
+| -------------------- | ---------------------- | -------------------------------------- | ---------------- | ---------------- |
+| step (optional)      | The graph step         | `number`                               | `14`             | `28`             |
+| range (optional)     | The range of the graph | `{ hours?: number, minutes?: number }` | `{ "hours": 1 }` | `{ "hours": 2 }` |
+| graphType (optional) | Type of graph to use   | `'line' \| 'area'`                     | `line`           | `line`           |
 
 #### EntityPrometheusAlertCard (Card)
 
@@ -137,28 +138,28 @@ The follow options will give a line graph showing the last hour of data.
 
 ```json
 {
-   "step": 28,
-   "range": {
-      "hours": 1
-   },
-   "graphType": "line"
+  "step": 28,
+  "range": {
+    "hours": 1
+  },
+  "graphType": "line"
 }
 ```
 
-| Option                           | Description                                 | Schema                                     | Default          | Example                           |
-|----------------------------------|---------------------------------------------|--------------------------------------------|------------------|-----------------------------------|
-| step (optional)                  | The graph step                              | `number`                                   | `14`             | `28`                              |
-| range (optional)                 | The range of the graph                      | ```{ hours?: number, minutes?: number }``` | `{ "hours": 1 }` | `{ "hours": 2 }`                  |
-| graphType (optional)             | Type of graph to use                        | `'line' \| 'area'`                         | `line`           | `line`                            |
-| query (optional)                 | The query to use                            | `string`                                   | `undefined`      | `max by (host) (my_metric_name)`  |
-| enableQueryTemplating (optional) | To enable query templating from entity data | `boolean`                                  | `false`          | `true`                            |
+| Option                           | Description                                 | Schema                                 | Default          | Example                          |
+| -------------------------------- | ------------------------------------------- | -------------------------------------- | ---------------- | -------------------------------- |
+| step (optional)                  | The graph step                              | `number`                               | `14`             | `28`                             |
+| range (optional)                 | The range of the graph                      | `{ hours?: number, minutes?: number }` | `{ "hours": 1 }` | `{ "hours": 2 }`                 |
+| graphType (optional)             | Type of graph to use                        | `'line' \| 'area'`                     | `line`           | `line`                           |
+| query (optional)                 | The query to use                            | `string`                               | `undefined`      | `max by (host) (my_metric_name)` |
+| enableQueryTemplating (optional) | To enable query templating from entity data | `boolean`                              | `false`          | `true`                           |
 
 Query templating allows a query to be written that includes data from an entity. e.g. you can use the following options:
 
 ```json
 {
-   "enableQueryTemplating": true,
-   "query": "max by (host) (my_metric{kuberenetes_namespace=\"{{ metadata.name }}\"})"
+  "enableQueryTemplating": true,
+  "query": "max by (host) (my_metric{kuberenetes_namespace=\"{{ metadata.name }}\"})"
 }
 ```
 

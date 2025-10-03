@@ -18,12 +18,7 @@ const SidebarTestimonial = ({
         <source srcSet={companyLogo} type="image/webp" />
         <source srcSet={companyLogoPng} type="image/png" />
 
-        <img
-          src={companyLogoPng}
-          alt={companyLogoAlt}
-          height="33"
-          width="160"
-        />
+        <img src={companyLogoPng} alt={companyLogoAlt} height="33" width="160" />
       </picture>
     </div>
 
@@ -31,9 +26,7 @@ const SidebarTestimonial = ({
       <div className="relative text-lg font-medium text-white md:flex-grow">
         <QuoteIcon />
 
-        <p className="relative">
-          {quote}
-        </p>
+        <p className="relative">{quote}</p>
       </div>
 
       <footer className="mt-8">

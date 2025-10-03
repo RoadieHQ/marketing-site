@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideFooter, Headline, Input, Lead, TextLink, Chip, TabInner, Link, Title } from 'components';
+import {
+  SEO,
+  SitewideFooter,
+  Headline,
+  Input,
+  Lead,
+  TextLink,
+  Chip,
+  TabInner,
+  Link,
+  Title,
+} from 'components';
 import classnames from 'classnames';
 
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
@@ -16,19 +27,13 @@ const INTEGRATION_TYPE_FILTERS = Object.freeze({
 
 const ListItem = ({
   fields: { slug },
-  frontmatter: {
-    logoImage,
-    humanName,
-    integrationType,
-  },
-  dashed = false
+  frontmatter: { logoImage, humanName, integrationType },
+  dashed = false,
 }) => (
   <div
-    className={
-      classnames('border-2 p-4 text-center', {
-        'border-dashed': dashed,
-      })
-    }
+    className={classnames('border-2 p-4 text-center', {
+      'border-dashed': dashed,
+    })}
     style={{ height: 350 }}
   >
     <Link to={slug} className="underline-none capitalize">
@@ -59,8 +64,21 @@ const Header = ({ count }) => (
     <div className="mb-2">
       <Headline size="small">Plugins & Integrations</Headline>
     </div>
-    <Lead>Roadie supports {count} plugins and integrations out of the box. If we&apos;re missing something, <TextLink to="/docs/details/requesting-plugins/" color="primary">request it</TextLink>.</Lead>
-    <Lead>Growth plan customers can <TextLink color="primary" to="/docs/custom-plugins/">write their own plugins</TextLink>.</Lead>
+    <Lead>
+      Roadie supports {count} plugins and integrations out of the box. If we&apos;re missing
+      something,{' '}
+      <TextLink to="/docs/details/requesting-plugins/" color="primary">
+        request it
+      </TextLink>
+      .
+    </Lead>
+    <Lead>
+      Growth plan customers can{' '}
+      <TextLink color="primary" to="/docs/custom-plugins/">
+        write their own plugins
+      </TextLink>
+      .
+    </Lead>
   </header>
 );
 
@@ -145,10 +163,7 @@ const DocsIntegrations = ({
   const [query, setQuery] = useState('');
   const [integrationTypeFilter, setIntegrationTypeFilter] = useState(INTEGRATION_TYPE_FILTERS.ALL);
 
-  const allIntegrations = [
-    ...integrations.nodes,
-    CUSTOM_PLUGIN_PLACEHOLDER,
-  ];
+  const allIntegrations = [...integrations.nodes, CUSTOM_PLUGIN_PLACEHOLDER];
 
   const count = integrations.nodes.length;
 
@@ -172,7 +187,7 @@ const DocsIntegrations = ({
       setIntegrationTypeFilter(INTEGRATION_TYPE_FILTERS.ALL);
     }
     setQuery(queryValue);
-  }
+  };
 
   return (
     <>
@@ -194,7 +209,6 @@ const DocsIntegrations = ({
               query={query}
             />
           </div>
-
 
           <section className="grid gap-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-12">
             {filteredIntegrations.map(({ fields, frontmatter, dashed }) => (
@@ -225,7 +239,7 @@ export const pageQuery = graphql`
     }
 
     integrations: allMarkdownRemark(
-      sort: { frontmatter: { humanName: ASC } },
+      sort: { frontmatter: { humanName: ASC } }
       filter: { fileAbsolutePath: { regex: "/.+/content/docs/integrations/.+/" } }
     ) {
       nodes {

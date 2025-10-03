@@ -30,8 +30,8 @@ spec:
     - $yaml: './constants/log.yaml'
 ```
 
-
 ./constants/log.yaml
+
 ```yaml
 id: log-message
 action: debug:log
@@ -56,8 +56,8 @@ spec:
     - $yaml: 'https://github.com/RoadieHQ/software-templates/tree/main/scaffolder-templates/steps/log.yaml'
 ```
 
-
 https://github.com/RoadieHQ/software-templates/tree/main/scaffolder-templates/steps/log.yaml
+
 ```yaml
 id: log-message
 action: debug:log

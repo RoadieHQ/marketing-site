@@ -21,27 +21,27 @@ You can check the available actions if you visit `/create/actions`.
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-   name: loop-template-example
-   title: Loop through items to repeat a scaffolder step
-   description: This scaffolder takes user input and loops through those into a log output.
+  name: loop-template-example
+  title: Loop through items to repeat a scaffolder step
+  description: This scaffolder takes user input and loops through those into a log output.
 spec:
-   owner: roadie
-   type: service
-   parameters:
-      properties:
-         things:
-            title: List of things
-            type: array
-            items:
-               type: string
-               title: A thing
-   steps:
-      - id: log-message
-        name: Log Parsed Contents
-        each: ${{ parameters.things }}
-        action: debug:log
-        input:
-           message: "contents: ${{ each.value }}!"
+  owner: roadie
+  type: service
+  parameters:
+    properties:
+      things:
+        title: List of things
+        type: array
+        items:
+          type: string
+          title: A thing
+  steps:
+    - id: log-message
+      name: Log Parsed Contents
+      each: ${{ parameters.things }}
+      action: debug:log
+      input:
+        message: 'contents: ${{ each.value }}!'
 ```
 
 ## Breakdown
@@ -53,12 +53,12 @@ This section configures the frontend for your template. Essentially these values
 This renders a list of input fields where you can input a string value. The value of these string is stored into an array which is called `things`
 
 ```yaml
-   things:
-      title: List of things
-      type: array
-      items:
-         type: string
-         title: A thing
+things:
+  title: List of things
+  type: array
+  items:
+    type: string
+    title: A thing
 ```
 
 ### Steps
@@ -73,7 +73,7 @@ Logs the contents of the file which was parsed in the previous steps. Uses the f
   each: ${{ parameters.things }}
   action: debug:log
   input:
-    message: "contents: ${{ each.value }}!"
+    message: 'contents: ${{ each.value }}!'
 ```
 
 ## Further reading

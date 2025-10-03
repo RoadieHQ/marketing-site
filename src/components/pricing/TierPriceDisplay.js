@@ -6,10 +6,7 @@ const CURRENCY_SYMBOL = {
   USD: '$',
 };
 
-const TierPriceDisplay = ({
-  currentlySetCurrency,
-  tier,
-}) => {
+const TierPriceDisplay = ({ currentlySetCurrency, tier }) => {
   let cost = 'Custom';
   if (!tier.customPricing) {
     const costPerDevPerMonth = tier[`${currentlySetCurrency.toLowerCase()}CentCostPerDevPerMonth`];
@@ -29,7 +26,7 @@ const TierPriceDisplay = ({
           <span className="text-base text-gray-500">{tier.costQualifier}</span>
         )}
       </div>
-  
+
       <div className="mb-10 min-h-6">
         <p>{tier.pricingCondition}</p>
       </div>

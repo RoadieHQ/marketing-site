@@ -16,13 +16,11 @@ In order to access the decorator page, navigate to component page and select 'De
 
 This will navigate you to the page where you can decorate your component with links and annotations, without a need to manually edit YAML files in your version control system. All of this is done via UI, in specifically designated sections.
 
-
 A visual representation of the YAML structure of the component, is shown in Existing Entity section of the page.
 
 ![Existing component](./existing_entity.webp)
 
-
-Adding links is done via 'Add link' button in 'Links' section. 
+Adding links is done via 'Add link' button in 'Links' section.
 
 ![Add link](./add_link.webp)
 
@@ -32,7 +30,7 @@ Adding annotations is done via 'Add annotation' button in 'Annotations' section.
 
 ![Add annotation](./add_annotation.webp)
 
-New annotation properties need to follow [annotation properties types](https://backstage.io/docs/features/software-catalog/descriptor-format#annotations-optional). 
+New annotation properties need to follow [annotation properties types](https://backstage.io/docs/features/software-catalog/descriptor-format#annotations-optional).
 
 You will find all existing annotations used in components across the catalog in a dropdown list.
 

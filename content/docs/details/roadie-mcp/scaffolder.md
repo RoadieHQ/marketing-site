@@ -25,9 +25,11 @@ The Scaffolder Server enables AI assistants to discover, validate, and execute B
 Search for available scaffolder templates using queries that match template names, descriptions, and tags.
 
 **Parameters:**
+
 - `queryString` (string): Search term for finding templates
 
 **Example Usage:**
+
 ```json
 {
   "queryString": "react frontend"
@@ -35,6 +37,7 @@ Search for available scaffolder templates using queries that match template name
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   results: {
@@ -57,17 +60,19 @@ Search for available scaffolder templates using queries that match template name
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog template entities
+- **Catalog entity read (\*)** - Access to catalog template entities
 
 ### Retrieve Scaffolder Template
 
 Get detailed information about a specific template, including parameters, steps, and requirements.
 
 **Parameters:**
+
 - `name` (string): Template name
 - `namespace` (string, optional): Template namespace (defaults to "default")
 
 **Example Usage:**
+
 ```json
 {
   "name": "microservice-template",
@@ -76,6 +81,7 @@ Get detailed information about a specific template, including parameters, steps,
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   entityRef: string,
@@ -85,17 +91,19 @@ Get detailed information about a specific template, including parameters, steps,
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog template entities
+- **Catalog entity read (\*)** - Access to catalog template entities
 
 ### Validate Template Values
 
 Check if your input values meet the template's parameter requirements before execution, preventing common errors.
 
 **Parameters:**
+
 - `templateRef` (string): Template reference (e.g., "template:default/my-template")
 - `values` (object): Parameter values to validate
 
 **Example Usage:**
+
 ```json
 {
   "templateRef": "template:default/react-app",
@@ -108,6 +116,7 @@ Check if your input values meet the template's parameter requirements before exe
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   valid: boolean, // Whether the values are valid
@@ -118,19 +127,21 @@ Check if your input values meet the template's parameter requirements before exe
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog entities
+- **Catalog entity read (\*)** - Access to catalog entities
 
 ### Run Scaffolder Template
 
 Execute a scaffolder template with the provided values and optional secrets.
 
 **Parameters:**
+
 - `templateRef` (string): Template reference
 - `values` (object): Required parameter values
 - `secrets` (object, optional): Secrets needed by the template
 - `skipValidation` (boolean, optional): Skip validation step
 
 **Example Usage:**
+
 ```json
 {
   "templateRef": "template:default/microservice",
@@ -147,6 +158,7 @@ Execute a scaffolder template with the provided values and optional secrets.
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   id: string, // The created task ID
@@ -163,9 +175,11 @@ Execute a scaffolder template with the provided values and optional secrets.
 Monitor the status and progress of template execution.
 
 **Parameters:**
+
 - `id` (string): Task ID returned from template execution
 
 **Example Usage:**
+
 ```json
 {
   "id": "abc123def456"
@@ -176,27 +190,29 @@ Monitor the status and progress of template execution.
 
 - **Scaffolder task read** - Allows a user to view scaffolder runs
 
-
 ## Common Use Cases
 
 ### Guided Project Creation
+
 - "Create a new React application for the frontend team"
 - "Set up a microservice with PostgreSQL database"
 - "Generate a new API service with authentication"
 
 ### Template Exploration
+
 - "What templates are available for Node.js services?"
 - "Show me the requirements for the mobile app template"
 - "What parameters does the library template need?"
 
 ### Automated Workflows
+
 - Validate inputs before execution to prevent failures
 - Execute templates with proper error handling
 - Monitor progress and provide status updates
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to template definitions
+- **Catalog entity read (\*)** - Access to template definitions
 - **Scaffolder execute** - Permission to run templates and create projects
 
 ## Example Workflows
@@ -214,6 +230,7 @@ Monitor the status and progress of template execution.
 **User:** "Create a new React frontend application"
 
 **AI Response using MCP:**
+
 1. Searches for React templates using `find-scaffolder-templates`
 2. Shows available templates and their requirements
 3. Guides user through providing necessary parameters
@@ -233,4 +250,4 @@ Monitor the status and progress of template execution.
 
 - All operations require proper authentication tokens
 - Template execution respects Roadie's permission model
-- Task monitoring is limited to tasks you have access to 
+- Task monitoring is limited to tasks you have access to

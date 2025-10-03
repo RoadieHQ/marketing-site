@@ -5,7 +5,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 const Pagination = ({ pageContext, basePath = '/changelog/' }) => {
   const isFirst = pageContext.currentPage === 1;
   const isLast = pageContext.currentPage === pageContext.numPages;
-  const prevPage = pageContext.currentPage === 2 ? basePath : `${basePath}${pageContext.currentPage - 1}/`;
+  const prevPage =
+    pageContext.currentPage === 2 ? basePath : `${basePath}${pageContext.currentPage - 1}/`;
   const nextPage = `${basePath}${pageContext.currentPage}/`;
 
   if (isFirst && isLast) return null;
@@ -13,7 +14,7 @@ const Pagination = ({ pageContext, basePath = '/changelog/' }) => {
   return (
     <nav className="mt-5 sm:flex sm:justify-center lg:justify-end md:mt-8">
       <span className="mr-2">
-        {!isFirst&& (
+        {!isFirst && (
           <Button
             link={true}
             to={prevPage}

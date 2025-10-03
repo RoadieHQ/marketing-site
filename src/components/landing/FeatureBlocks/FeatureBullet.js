@@ -6,12 +6,10 @@ const FeatureBulletPoint = ({ item, boxedIcons = true }) => (
   <div className="relative">
     <dt>
       <div
-        className={
-          classnames('absolute flex items-center justify-center', {
-            'h-12 w-12 rounded-md bg-primary-600 text-white': boxedIcons === true,
-            'text-primary-600': boxedIcons === false,
-          })
-        }
+        className={classnames('absolute flex items-center justify-center', {
+          'h-12 w-12 rounded-md bg-primary-600 text-white': boxedIcons === true,
+          'text-primary-600': boxedIcons === false,
+        })}
       >
         <item.icon
           className={classnames({

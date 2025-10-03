@@ -37,15 +37,15 @@ spec:
         message: 'Selected product: ${{ parameters.product }}'
 ```
 
-
 ./constants/products.yaml
+
 ```yaml
 title: Select Product
 properties:
   product:
     title: Product
     type: string
-    enum: ["Search", "CRM", "Onboarding"]
+    enum: ['Search', 'CRM', 'Onboarding']
 ```
 
 ### External File
@@ -72,13 +72,13 @@ spec:
         message: 'Selected product: ${{ parameters.product }}'
 ```
 
-
 https://github.com/RoadieHQ/software-templates/tree/main/scaffolder-templates/parameters/products.yaml
+
 ```yaml
 title: Select Product
 properties:
   product:
     title: Product
     type: string
-    enum: ["Search", "CRM", "Onboarding"]
+    enum: ['Search', 'CRM', 'Onboarding']
 ```

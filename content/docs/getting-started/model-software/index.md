@@ -14,11 +14,11 @@ Each catalog item in Roadie is referred to as an "entity". You can find all the 
 
 ### Kinds
 
-Roadie supports a few main `kinds` of entity: 
+Roadie supports a few main `kinds` of entity:
 
 **Business** or 'ecosystem' kinds, which model the organisational context in which software is created:
 
-- Domain -  a collection of entities and Systems that form some distinct part of your organisation; 
+- Domain - a collection of entities and Systems that form some distinct part of your organisation;
 - System - a collection of different entities that have a set function.
 - Product - a collection of different entities that constitute a product.
 
@@ -34,7 +34,7 @@ And **ownership** kinds, which model
 - Users - a person
 - Groups - a team, an interest group, or a part of the organisation that you wish to demarcate.
 
-There is also a special kind called **Locations** which provides a reference by which Backstage looks for catalog data. 
+There is also a special kind called **Locations** which provides a reference by which Backstage looks for catalog data.
 
 ## Relations
 
@@ -92,7 +92,7 @@ More details can be found in the [Backstage docs](https://backstage.io/docs/feat
 
 ### Adding your own data
 
-The metadata object is currently left open for extension. This often allows the storing of useful information about a given entity that can then be rendered in the Roadie UI. For example, 
+The metadata object is currently left open for extension. This often allows the storing of useful information about a given entity that can then be rendered in the Roadie UI. For example,
 
 ```
 {
@@ -103,3 +103,4 @@ The metadata object is currently left open for extension. This often allows the 
     // ...
   }
 }
+```

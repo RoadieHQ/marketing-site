@@ -77,7 +77,9 @@ const Home = ({ data }) => {
 
       <section className="bg-white mx-auto max-w-7xl xl:rounded-lg lg:flex items-center">
         <div className="lg:w-1/2 p-4 lg:px-10 lg:py-16">
-          <strong className="block uppercase mb-8 text-xl font-highlight">Roadie’s Scaffolder</strong>
+          <strong className="block uppercase mb-8 text-xl font-highlight">
+            Roadie’s Scaffolder
+          </strong>
           <Headline size="medium">
             <span className="text-orange-600">Self-service:</span> accelerate your delivery teams,
             save DevOps from mundane tasks
@@ -96,7 +98,6 @@ const Home = ({ data }) => {
             className="font-bold tracking-wide mt-6"
             text="Try Roadie's Scaffolder"
           />
-
         </div>
         <div className="lg:w-1/2 py-4 pb-[1px] lg:py-16 lg:px-[2px]">
           <img src={ScaffolderScreenshotImg} alt="" className="webkit-optimize-image-rendering" />

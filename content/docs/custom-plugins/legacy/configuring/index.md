@@ -30,26 +30,26 @@ You can navigate to h<gatsbyhack>tt</gatsbyhack>ps://your-company.roadie.so/admi
 
 ### Form
 
-You can create a new custom plugin definition by clicking "Add New Plugin" floating button. 
+You can create a new custom plugin definition by clicking "Add New Plugin" floating button.
 ![custom_plugin_form](custom_plugin_form.webp)
 
 The required values are as follows:
 
 ##### **Package name**
+
 Package field corresponds to the name of the NPM package. This can be a public NPM package hosted in npmjs.com or a private package securely hosted in Roadie Artifactory. If the package is hosted in Roadie Artifactory, the name of the package needs to start with `@<your-company>-roadie/`.
 
-
 ##### **Plugin name**
+
 The name of the plugin. This field **needs to match the exported name of a component from the plugin entrypoint**. This will be used when adding components from the plugin to Roadie as Cards, Tabs or Pages.
 
-
 ##### **Plugin version**
+
 Semantic versioning definition for the plugin to use. This can be defined with standard NPM semantic versioning range identifiers like `^` or `~`, as well as keywords like `latest`.
 
-
 ##### **Components**
-List of components that the plugin exposes. These are defined as a type and name pair. The type is a piece of metadata which determines where the component can be inserted in the UI (e.g. Card, Page etc). The name needs to match the component name in code that is exported from the plugin package.
 
+List of components that the plugin exposes. These are defined as a type and name pair. The type is a piece of metadata which determines where the component can be inserted in the UI (e.g. Card, Page etc). The name needs to match the component name in code that is exported from the plugin package.
 
 ### Step 2. Installing
 
@@ -63,13 +63,10 @@ After the application has been updated you will have your custom plugins ready t
 
 ## Additional information
 
-
 Components from custom plugins are available in the list of dynamic
 UI components with their current status within the application. To
 refresh the status of these components from custom plugins you can
 click the refresh icon next to the component selection dropdown. Below is a listing of component statuses that are displayed in the drop down list
-
-
 
 ### Component statuses
 
@@ -78,7 +75,6 @@ click the refresh icon next to the component selection dropdown. Below is a list
 Plugin and its components have been configured in the application
 but they are not yet usable. This status will be changed when the
 application is rebuilt.
-
 
 #### Pending Deletion
 
@@ -91,14 +87,13 @@ the next refresh event.
 Component has been successfully installed in the application and can
 be used as part of the UI.
 
-
 ### Notifications and logs
 
 Build notifications are sent onto a Slack channel where you can see the time that the build took, as well as possible versions of the plugins that have been installed to your Roadie instance.
 
 ## Next Steps
 
-* If you haven't already [publish your plugin](/docs/custom-plugins/legacy/artifactory/) to our artifactory.
-* After a successful installation you will be able to [add components](/docs/details/updating-the-ui) from your custom plugin into the Roadie instance. Components can be added as Cards, Tabs or Pages into component pages or to the sidebar.
+- If you haven't already [publish your plugin](/docs/custom-plugins/legacy/artifactory/) to our artifactory.
+- After a successful installation you will be able to [add components](/docs/details/updating-the-ui) from your custom plugin into the Roadie instance. Components can be added as Cards, Tabs or Pages into component pages or to the sidebar.
 
 [backstage-plugin-documentation]: https://backstage.io/docs/plugins/create-a-plugin

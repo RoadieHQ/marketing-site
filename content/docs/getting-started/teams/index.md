@@ -7,6 +7,7 @@ description: How to represent users and groups in Backstage and make ownership w
 ## Prerequisites
 
 You should already have a knowledge of how to add entities to the Backstage catalog as described [here](/docs/getting-started/adding-a-catalog-item/).
+
 ## Introduction
 
 Users logged in to Backstage have an identity that can be used to determine if a user has ownership over any entity. This is done using User and Group entities in Backstage. This page describes how to configure Backstage to work with ownership.
@@ -30,8 +31,8 @@ You can always inspect the Backstage Identity for the logged in user by going to
 
 Now that you know how Roadie is associating the logged in user with Backstage entities you can start creating users and groups. Roadie currently provides two ways to create users and groups. You can use GitHub Teams or create Users and Group configuration manually.
 
-
 ### Manually creating users and groups
+
 If you need to learn about how to add components to Backstage, you can see that [here](/docs/getting-started/adding-a-catalog-item/).
 
 You will start by creating a user. This user must be in the `default` namespace and be named based on the userId described in the Backstage Identity mentioned above.
@@ -59,15 +60,15 @@ Next you can create a groups to represent the structure of the organization for 
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-   namespace: default
-   name: engineering
+  namespace: default
+  name: engineering
 spec:
-   type: team
-   profile:
-      displayName: engineering
-      picture: https://blah.com/engineering
-   children: []
-   parent: technology
+  type: team
+  profile:
+    displayName: engineering
+    picture: https://blah.com/engineering
+  children: []
+  parent: technology
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
@@ -113,5 +114,5 @@ Roadie provides the ability to set the owner of entities from GitHub based on th
 ```yaml
 metadata:
   annotations:
-    roadie.io/use-codeowners: "true"
+    roadie.io/use-codeowners: 'true'
 ```

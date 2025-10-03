@@ -20,10 +20,7 @@ const CaseStudyTemplate = ({ data: { site, caseStudy } }) => {
 
   return (
     <>
-      <SEO
-        title={`${caseStudy.title} | ${siteTitle}`}
-        description={caseStudy.description}
-      />
+      <SEO title={`${caseStudy.title} | ${siteTitle}`} description={caseStudy.description} />
 
       <SitewideHeader />
 
@@ -42,7 +39,8 @@ const CaseStudyTemplate = ({ data: { site, caseStudy } }) => {
                 title: caseStudy.title,
                 date: caseStudy.date,
                 author: caseStudy.author,
-              }} />
+              }}
+            />
           </div>
 
           <section
@@ -52,23 +50,18 @@ const CaseStudyTemplate = ({ data: { site, caseStudy } }) => {
         </article>
 
         <div className="relative max-w-lg mx-auto lg:max-w-2xl">
-          <SubscribeToNewsletterCTA
-            setModalOpen={setModalOpen}
-            email={email}
-            setEmail={setEmail}
-          />
+          <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
         </div>
       </main>
 
-      <div className="pt-4 pb-8 px-4 md:mb-24">
-      </div>
+      <div className="pt-4 pb-8 px-4 md:mb-24"></div>
 
       <SitewideFooter />
     </>
   );
 };
 
-export default CaseStudyTemplate; 
+export default CaseStudyTemplate;
 
 export const pageQuery = graphql`
   query CaseStudyBySlug($slug: String!) {

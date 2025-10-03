@@ -14,10 +14,11 @@ integrationType: OSS plugin
 The Backstage Apache Airflow plugin serves as frontend to the REST API exposed by Apache Airflow to show Apache Airflow's information inside Backstage.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Using the Plugin
@@ -38,10 +39,8 @@ In order to make requests to your Apache Airflow API, you must provide Roadie wi
 
 1. The basic authorization token is the base64 encoding of the username and password of your instance.
 
-    example:
-        `echo -n "airflow:airflow" | base64 -w0`
-
-
+   example:
+   `echo -n "airflow:airflow" | base64 -w0`
 
 ## References
 

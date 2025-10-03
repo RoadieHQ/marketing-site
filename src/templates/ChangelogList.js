@@ -18,14 +18,10 @@ import { isPreviewSite } from '../environment';
 const Changelog = ({
   data: {
     site: {
-      siteMetadata: {
-        title: siteTitle,
-      },
+      siteMetadata: { title: siteTitle },
     },
 
-    changeSets: {
-      edges: changeSets,
-    },
+    changeSets: { edges: changeSets },
   },
 
   pageContext,
@@ -45,7 +41,18 @@ const Changelog = ({
         <SimpleCenteredHeading
           headline="What's new in Roadie"
           lead={
-            <span>This is the changelog for Roadie. It lists new and updated features so you can get a quick overview of what&apos;s new. Subscribe via <Link color="primary" to="/changelog/rss.xml">RSS</Link> or follow us on <Link color="primary" to="https://x.com/roadiehq">X</Link> for more updates.</span>
+            <span>
+              This is the changelog for Roadie. It lists new and updated features so you can get a
+              quick overview of what&apos;s new. Subscribe via{' '}
+              <Link color="primary" to="/changelog/rss.xml">
+                RSS
+              </Link>{' '}
+              or follow us on{' '}
+              <Link color="primary" to="https://x.com/roadiehq">
+                X
+              </Link>{' '}
+              for more updates.
+            </span>
           }
           headlineSize="small"
         />
@@ -74,15 +81,8 @@ const Changelog = ({
 export default Changelog;
 
 export const pageQuery = graphql`
-  query Changelog(
-    $limit: Int!
-    $skip: Int!
-  ) {
-    changeSets: allContentfulChangeSet(
-      sort: {releasedAt: DESC}
-      limit: $limit
-      skip: $skip
-    ) {
+  query Changelog($limit: Int!, $skip: Int!) {
+    changeSets: allContentfulChangeSet(sort: { releasedAt: DESC }, limit: $limit, skip: $skip) {
       edges {
         node {
           title

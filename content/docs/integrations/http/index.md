@@ -14,14 +14,17 @@ integrationType: Catalog data source
 You may choose to load entities from an HTTP server hosted on the public Internet. In order to enable this, you will need to tell Roadie in advance the allowed URLs.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
+
 ### Host an entity yaml file
+
 You will need to host a YAML file with the correct Backstage entity schema on a HTTP server that is available to Roadie.
 
 ### Configure your Roadie instance to trust this server

@@ -16,11 +16,12 @@ You must be an admin to edit the UI layout. Please complete [this guide](/docs/g
 
 Backstage is a plugin based application where each plugin provides a certain piece of functionality. A plugin may
 integrate with some external system such as GitHub to display information for a certain Entity e.g. Show pull request
-information for a particular service. 
+information for a particular service.
 
 You can read more about Backstage plugins [here](https://backstage.io/docs/plugins/).
 
 Backstage plugins can provide [three different types](https://backstage.io/docs/plugins/composability#naming-patterns) of UI elements:
+
 1. Card - These are tiles which can be arranged into dashboards in the software catalog. E.g. The About card.
 2. Content - These are tabs which can be integrated with the catalog. E.g. The TechDocs tab.
 3. Page - These are top-level pages in Backstage, outside of the catalog. Accessible via links in the sidebar. E.g. The catalog itself is a Page.
@@ -43,7 +44,7 @@ Then select the component to add via the autocomplete and give the tab a display
 
 NB: When choosing a name please make sure it starts with something unique. (There is currently a
 [bug in opensource backstage](https://github.com/backstage/backstage/issues/7741) which means that if you create a new
-component that shares the same initial name as an existing one (i.e. `Api` and `Api Visualiser`), you will not be able 
+component that shares the same initial name as an existing one (i.e. `Api` and `Api Visualiser`), you will not be able
 to select the new component.)
 
 ![Add tab dialog](./add-tab-screen.jpg)
@@ -52,7 +53,7 @@ To rearrange or delete tabs select the "pencil" edit icon on the far right of th
 
 ![Edit tab layout](./edit-tab-layout.jpg)
 
-Then drag and drop to rearrange or click the "x" icon to remove a tab then *click the save icon* on the right hand side.
+Then drag and drop to rearrange or click the "x" icon to remove a tab then _click the save icon_ on the right hand side.
 
 ![Move tab](./move-tab.jpg)
 
@@ -62,7 +63,7 @@ To edit a dashboard click the cog icon on the top right of the dashboard below t
 
 ![Edit Dashboard Button](./edit-grid-button.jpg)
 
-This will switch the dashboard into an edit view. You can drag and drop to rearrange or click the dustbin icon to remove a card. 
+This will switch the dashboard into an edit view. You can drag and drop to rearrange or click the dustbin icon to remove a card.
 
 ![Edit dashboard view](./move-card.jpg)
 
@@ -78,7 +79,7 @@ You can adjust the position of the new card as above. When you're finished don't
 
 ![Save layout button](./save-layout-button.jpg)
 
-Entities will have one "Overview" dashboard by default but you can add others. Simply create a tab selecting "Dashboard" as the component to add. 
+Entities will have one "Overview" dashboard by default but you can add others. Simply create a tab selecting "Dashboard" as the component to add.
 
 ![Add a dashboard](./add-dashboard.jpg)
 
@@ -100,7 +101,7 @@ To edit the home page click the cog icon on the top right of the dashboard below
 
 ![Edit Home Page Button](./edit-home-page-button.webp)
 
-This will switch the home page into an edit view. You can drag and drop to rearrange or resize, click the dust-bin icon 
+This will switch the home page into an edit view. You can drag and drop to rearrange or resize, click the dust-bin icon
 to remove a card then click the save icon.
 
 ![Edit home page view](./edit-home-page-view.webp)
@@ -128,7 +129,3 @@ Currently, it is necessary to provide props **as JSON**. Once you have entered y
 again in the dashboard menu to save the layout.
 
 ![Save props button](./save-props-button.webp)
-
-
-
-

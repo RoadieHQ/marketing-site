@@ -34,8 +34,8 @@ const Sources = ({ sources }) => {
   };
 
   return (
-    <section className='mt-4'>
-      <div className='mb-4'>
+    <section className="mt-4">
+      <div className="mb-4">
         {sources.map((it) => {
           return (
             <button key={it.id} onClick={() => handleChange(it)}>
@@ -44,19 +44,28 @@ const Sources = ({ sources }) => {
           );
         })}
       </div>
-      <div className=''>
-        <div className='mb-6'>
-        <CodeBlock language='html' intro={sources.find((it) => it.id === typeFilter).html} introClassNames='max-w-3xl' />
+      <div className="">
+        <div className="mb-6">
+          <CodeBlock
+            language="html"
+            intro={sources.find((it) => it.id === typeFilter).html}
+            introClassNames="max-w-3xl"
+          />
         </div>
       </div>
     </section>
   );
 };
 
-const ProxyPage = ({ data, location}) => {
-  const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).filter((item => item.frontmatter.category === 'proxy-type')).sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
+const ProxyPage = ({ data, location }) => {
+  const sources = data.allMarkdownRemark.edges
+    .map((edge) => edge.node)
+    .filter((item) => item.frontmatter.category === 'proxy-type')
+    .sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
   const examples = data.examplesList.edges.map((edge) => edge.node);
-  const header = data.allMarkdownRemark.edges.map((edge) => edge.node).find((item => item.frontmatter.category === 'header'));
+  const header = data.allMarkdownRemark.edges
+    .map((edge) => edge.node)
+    .find((item) => item.frontmatter.category === 'header');
 
   return (
     <>
@@ -64,19 +73,19 @@ const ProxyPage = ({ data, location}) => {
 
       <SEO
         title={`Creating a Proxy`}
-        description='This tutorial will guide you through the steps required to create a proxy in Roadie.'
+        description="This tutorial will guide you through the steps required to create a proxy in Roadie."
       />
 
-      <main className='md:flex pt-4 md:pt-0'>
+      <main className="md:flex pt-4 md:pt-0">
         <Sidebar location={location} />
 
         {!isEmpty(sources) && (
-          <article className='px-2 md:px-6 md:pt-7 md:flex-1'>
-            <Headline size='small' className="mb-1 mt-0">
+          <article className="px-2 md:px-6 md:pt-7 md:flex-1">
+            <Headline size="small" className="mb-1 mt-0">
               {header.frontmatter.title}
             </Headline>
 
-            <CodeBlock language='html' intro={header.html} introClassNames='max-w-3xl' />
+            <CodeBlock language="html" intro={header.html} introClassNames="max-w-3xl" />
 
             <Sources sources={sources} />
           </article>
@@ -94,9 +103,7 @@ export default ProxyPage;
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/.+/content/docs/details/create-proxy/.+/" }
-      }
+      filter: { fileAbsolutePath: { regex: "/.+/content/docs/details/create-proxy/.+/" } }
     ) {
       edges {
         node {
@@ -117,9 +124,7 @@ export const pageQuery = graphql`
     }
 
     examplesList: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/.+/content/docs/details/create-proxy/examples/.+/" }
-      }
+      filter: { fileAbsolutePath: { regex: "/.+/content/docs/details/create-proxy/examples/.+/" } }
     ) {
       edges {
         node {

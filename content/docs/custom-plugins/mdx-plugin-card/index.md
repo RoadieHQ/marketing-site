@@ -16,7 +16,7 @@ In the template you can access variables from the response using props, e.g. if 
 
 ```tsx
 <code>
-Displaying {props.entities.items.length} of {props.entities.totalItems} entities.
+  Displaying {props.entities.items.length} of {props.entities.totalItems} entities.
 </code>
 ```
 
@@ -25,7 +25,6 @@ That will display the number of entities and the total number of entities.
 ```text
 Displaying 5 of 493 entities.
 ```
-
 
 ### Available Components
 
@@ -36,28 +35,28 @@ You can display tabular data from response
 e.g. This will display the annotations for the entity.
 
 ```tsx
-  <Table
+<Table
   options={{
     search: false,
     showTitle: true,
     toolbar: false,
-    loadingType: "linear",
+    loadingType: 'linear',
     header: true,
-    padding: "dense",
+    padding: 'dense',
     pageSize: 4,
     paging: Object.entries(props.entity.metadata.annotations).length > 4,
     actionsColumnIndex: -1,
   }}
   columns={[
-    { title: "Key", field: "key" },
-    { title: "Value", field: "value" },
+    { title: 'Key', field: 'key' },
+    { title: 'Value', field: 'value' },
   ]}
   data={Object.entries(props.entity.metadata.annotations).map(([key, value]) => ({
     key,
     value,
   }))}
   subtitle={`${Object.entries(props.entity.metadata.annotations).length} item${
-    Object.entries(props.entity.metadata.annotations).length === 1 ? "" : "s"
+    Object.entries(props.entity.metadata.annotations).length === 1 ? '' : 's'
   }`}
   emptyContent={<span>No annotations found.</span>}
   onStateChange={() => {}}
@@ -88,7 +87,9 @@ You can use the List component to display a list of items.
 ```tsx
 <List>
   {Object.entries(props.entity.metadata.annotations).map(([key, value]) => (
-    <ListItem key={key}>{key} - {value}</ListItem>
+    <ListItem key={key}>
+      {key} - {value}
+    </ListItem>
   ))}
 </List>
 ```

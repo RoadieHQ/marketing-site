@@ -7,10 +7,7 @@ import { PAGE_PATHS } from '../../contactFormConstants';
 import CatalogScreenshot from '../../../content/assets/home/illustrations/home-product-screenshot.svg';
 import theme from '../../theme';
 
-const ExitIntentModal = ({
-  modalOpen,
-  handleCloseModal,
-}) => {
+const ExitIntentModal = ({ modalOpen, handleCloseModal }) => {
   const isWide = useMedia(`(min-width: ${theme.BREAKPOINTS_LG})`);
 
   if (!isWide) {
@@ -22,13 +19,11 @@ const ExitIntentModal = ({
       isOpen={modalOpen}
       contentLabel="Modal"
       onRequestClose={handleCloseModal}
-      style={
-        modalStyles({
-          maxWidth: theme.BREAKPOINTS_LG,
-          marginTop: '20%',
-          overlayOpacity: 0.8,
-        })
-      }
+      style={modalStyles({
+        maxWidth: theme.BREAKPOINTS_LG,
+        marginTop: '20%',
+        overlayOpacity: 0.8,
+      })}
     >
       <div className="flex">
         <div
@@ -42,9 +37,15 @@ const ExitIntentModal = ({
           </div>
 
           <div className="mb-12">
-            <p className="mb-4">Roadie is a fully customizable Backstage-based developer portal. It includes all of the plugins you need out-of-the-box.</p>
+            <p className="mb-4">
+              Roadie is a fully customizable Backstage-based developer portal. It includes all of
+              the plugins you need out-of-the-box.
+            </p>
 
-            <p>Roadie has scorecards, RBAC, support and upgrades... so you can spend your time using Backstage, rather than building it.</p>
+            <p>
+              Roadie has scorecards, RBAC, support and upgrades... so you can spend your time using
+              Backstage, rather than building it.
+            </p>
           </div>
 
           <div className="text-center">

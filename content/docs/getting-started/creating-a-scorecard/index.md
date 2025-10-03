@@ -25,10 +25,9 @@ To track adoption of something like CODEOWNERS, we need three building blocks:
 
 There are several useful Data Sources that come built-in to Tech Insights.
 
-One is the **GitHub Repository Settings Data Source**. This gives us access to several facts that we can use to construct our Check, including `Uses Codeowners` which indicates whether a services has CodeOwners enabled. It uses the `github.com/project-slug` annotation on each services catalog-info file to identify the releveant underlying repository. 
+One is the **GitHub Repository Settings Data Source**. This gives us access to several facts that we can use to construct our Check, including `Uses Codeowners` which indicates whether a services has CodeOwners enabled. It uses the `github.com/project-slug` annotation on each services catalog-info file to identify the releveant underlying repository.
 
 [Authentication is required](/docs/tech-insights/builtin-data-sources/#authentication-3) but if you have the GitHub App installed then access will be granted based on permissions granted for that app.
-
 
 You can also create your own [custom Data Source](/docs/tech-insights/define-custom-data-sources/) to consume data by calling an API or reading from external data like a CSV.
 
@@ -48,7 +47,7 @@ Scorecards are for higher-level objectives, like security or compliance. We can 
 
 - [Creating a Scorecard](/docs/tech-insights/add-scorecard/)
 
-## Next steps 
+## Next steps
 
 - To learn more about Tech Insights on Roadie, please visit our [in-depth Tech Insights documentation](/docs/tech-insights/introduction/).
 - To learn about other, more complex Checks, review our [Tech Insights recipes](/docs/tech-insights/track-docker-base-image-migration/) to understand how to track a variety of different facets of your software.

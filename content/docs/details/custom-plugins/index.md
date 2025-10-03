@@ -48,5 +48,4 @@ export const ExampleComponent = () => (
 
 ![Create policy](create-policy.png)
 
-
 4. Assign the Policy to a role.

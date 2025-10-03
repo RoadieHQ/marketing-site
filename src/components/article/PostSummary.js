@@ -27,8 +27,7 @@ const CoverImage = ({ post }) => {
 };
 
 const PostSummary = ({ post, className }) => (
-  <div
-    className={classnames('flex flex-col rounded-lg shadow-lg overflow-hidden', className)}>
+  <div className={classnames('flex flex-col rounded-lg shadow-lg overflow-hidden', className)}>
     <div className="flex-shrink-0 relative">
       <CoverImage post={post} />
     </div>

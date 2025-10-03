@@ -6,7 +6,7 @@ description: Creating a proxy.
 category: header
 ---
 
-Accessing your own self-hosted solutions and third party product APIs securely from Roadie is crucial in ensuring security of data and systems. Roadie provides two kinds of proxy services to handle these scenarios. 
+Accessing your own self-hosted solutions and third party product APIs securely from Roadie is crucial in ensuring security of data and systems. Roadie provides two kinds of proxy services to handle these scenarios.
 
 With the Proxy feature, there’s an easier way. In this tutorial, we’re going to:
 

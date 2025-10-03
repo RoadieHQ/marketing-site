@@ -68,4 +68,4 @@ After running the command, you can find the Catalog item in the Roadie UI by vis
 
 ### Next Steps
 
-* [Write a scaffolder template](/docs/scaffolder/writing-templates/) to create or update software projects.
+- [Write a scaffolder template](/docs/scaffolder/writing-templates/) to create or update software projects.

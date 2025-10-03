@@ -24,7 +24,7 @@ Roadie currently provides six MCP servers that enable AI assistants to interact 
   - https://api.roadie.so/api/mcp/v1/catalog-decorators
 - **[Rich Catalog Entity Server](rich-catalog-entity)** - Access catalog entity data, relationships, and documentation
   - https://api.roadie.so/api/mcp/v1/rich-catalog-entity
-- **[Scaffolder Server](scaffolder)** - Find, validate, and execute Backstage scaffolder templates  
+- **[Scaffolder Server](scaffolder)** - Find, validate, and execute Backstage scaffolder templates
   - https://api.roadie.so/api/mcp/v1/scaffolder-use
 - **[Tech Insights Facts Server](tech-insights-facts)** - Access operational metrics, security data, and compliance information
   - https://api.roadie.so/api/mcp/v1/tech-insights-facts
@@ -42,7 +42,7 @@ Roadie currently provides six MCP servers that enable AI assistants to interact 
 <details>
 <summary><strong>VS Code with Copilot</strong></summary>
 
-VS Code supports [MCP servers](https://code.visualstudio.com/docs/copilot/chat/mcp-servers). 
+VS Code supports [MCP servers](https://code.visualstudio.com/docs/copilot/chat/mcp-servers).
 
 Here's how to configure Roadie's for use with Copilot:
 
@@ -102,20 +102,21 @@ Add the following configuration to your settings (`~/.vscode/mcp.json`):
 
 #### Check your Settings
 
-- In settings, ensure `chat.mcp.enabled` is set to `enabled`. 
+- In settings, ensure `chat.mcp.enabled` is set to `enabled`.
 - Occassionally your organisation will manage these settings (you will see something like "managed by organization" next to a given setting). If this is the case and `chat.mcp.enabled` is not set to enabled you will need to talk to whomever manages those settings.
 
 #### Test the Integration
 
 Open VS Code and try asking Copilot questions like:
+
 - "What APIs are available for user management?"
 - "Who owns the payment-service component?"
 - "Create a fragment to add team ownership to the auth-service"
 
 #### Skipping steps
 
-- VSCode omits some information-only steps and/or auto-completes various actions our MCP tools request. That is due to a permissive interpretation of the protocols `readOnlyHint: true` flag, which is best practice to use on MCP servers [based on the protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations). The flag represents non-destructive tools which only return information and do not alter the MCP clients environment. VSCode interprets `readOnlyHints` as default permissable to execute, whereas most other MCP clients require user consent or a flag to be set in config before they autocomplete. 
-- More information can be found here [https://code.visualstudio.com/updates/v1_100#_mcp-tool-annotations](https://code.visualstudio.com/updates/v1_100#_mcp-tool-annotations)
+- VSCode omits some information-only steps and/or auto-completes various actions our MCP tools request. That is due to a permissive interpretation of the protocols `readOnlyHint: true` flag, which is best practice to use on MCP servers [based on the protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations). The flag represents non-destructive tools which only return information and do not alter the MCP clients environment. VSCode interprets `readOnlyHints` as default permissable to execute, whereas most other MCP clients require user consent or a flag to be set in config before they autocomplete.
+- More information can be found here [https://code.visualstudio.com/updates/v1_100#\_mcp-tool-annotations](https://code.visualstudio.com/updates/v1_100#_mcp-tool-annotations)
 
 </details>
 
@@ -178,6 +179,7 @@ After configuring the MCP servers, restart Cursor to load the new configuration.
 #### Test Integration
 
 Use Cursor's AI chat to test the integration:
+
 - "Show me security metrics for user-service"
 - "What scaffolder templates are available?"
 - "Find APIs related to payment processing"
@@ -244,6 +246,7 @@ Restart the application to load the new MCP server configuration.
 #### Test Functionality
 
 Test with queries like:
+
 - "What documentation exists for auth-service?"
 - "Show me GitHub metrics for all payment services"
 - "Add monitoring annotations to the user-service component"
@@ -258,19 +261,23 @@ You will need an API token for your user to connect with these MCP servers. See 
 
 **Common Issues:**
 
-1. **Authentication Errors**: 
+1. **Authentication Errors**:
+
    - Verify your API token is correct and not expired
    - Check that the token has appropriate permissions
 
 2. **Connection Failures**:
+
    - Verify network connectivity to your Roadie instance
    - Check that the MCP API endpoints are accessible
 
 3. **Permission Denied**:
+
    - Review your API token permissions
    - Contact your Roadie administrator for access
 
 4. **MCP Server Configuration Issues**:
+
    - Verify the URL format is correct: `https://api.roadie.so/api/mcp/v1/<server-name>`
    - Check that all required headers are included in the configuration
    - Ensure environment variables are properly set
@@ -278,7 +285,6 @@ You will need an API token for your user to connect with these MCP servers. See 
 5. **Global IDE Settings can Block MCP Server Access**:
    - Verify that access to remote authenticated MCP servers is enabled. For example, in VSCode the setting `chat.mcp.enabled` should be set to `enabled`.
    - Occassionally your organisation will manage these settings and if they are not enabled you will need to talk to your support team or whomever manages those settings. For example, in VSCode you will see something like "managed by organization".
-
 
 ## Best Practices
 
@@ -303,14 +309,17 @@ You will need an API token for your user to connect with these MCP servers. See 
 ### Common Issues
 
 **Authentication Errors**
+
 - Verify your Roadie API credentials are configured correctly
 - Ensure your MCP client is properly authenticated
 
 **Permission Denied**
+
 - Check that you have the necessary permissions for catalog access and scaffolder execution
 - Contact your Roadie administrator if you need additional permissions
 
 **Template Execution Failures**
+
 - Use `validate-template-values` to check inputs before execution
 - Review template requirements and ensure all parameters are provided
 - Check `get-scaffolder-task` for detailed error information

@@ -8,13 +8,13 @@ The `spec.lifecycle` of a component can be a useful indicator of the maturity of
 
 You can enforce a small number of valid values with the following check:
 
-| Field | Input |
-| --- | --- |
-| Name | Backstage component metadata lifecycle should be valid |
-| Description | Only a small number of lifecycles are supported. |
-| Data source | Entity Metadata (this is built-in). |
-| Fact | Lifecycle |
-| Fact operator | Is One Of |
-| Value | production,deprecated,experimental |
+| Field         | Input                                                  |
+| ------------- | ------------------------------------------------------ |
+| Name          | Backstage component metadata lifecycle should be valid |
+| Description   | Only a small number of lifecycles are supported.       |
+| Data source   | Entity Metadata (this is built-in).                    |
+| Fact          | Lifecycle                                              |
+| Fact operator | Is One Of                                              |
+| Value         | production,deprecated,experimental                     |
 
 Make sure to adapt the Value field according to the lifecycles you want to support.

@@ -17,11 +17,11 @@ This plugin supports viewing flags for individual contexts, comparing flags acro
 
 ![launchdarkly-plugin-card.webp](launchdarkly-plugin-card.webp)
 
-| | |
-|---: | --- |
-| **Prerequisites** | <ol><li>You must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).</li><li>You must have the correct permissions assigned in LaunchDarkly to be able to create a read only API token</li></ol><br />**Configuration Data:** <ul><li>API Token</li></ul> |
-| **Considerations** | Requires read-only API token with appropriate permissions in LaunchDarkly. Multiple UI components available for different use cases. |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+|                            |                                                                                                                                                                                                                                                                                                                              |
+| -------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|          **Prerequisites** | <ol><li>You must be an admin in Roadie. Learn how to designate certain users as admins [here](/docs/getting-started/assigning-admins/).</li><li>You must have the correct permissions assigned in LaunchDarkly to be able to create a read only API token</li></ol><br />**Configuration Data:** <ul><li>API Token</li></ul> |
+|         **Considerations** | Requires read-only API token with appropriate permissions in LaunchDarkly. Multiple UI components available for different use cases.                                                                                                                                                                                         |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                                                                                                                                                                             |
 
 ## LaunchDarkly Entity Configuration
 
@@ -68,7 +68,6 @@ metadata:
     launchdarkly.com/filter-query: 'dark-mode'
 ```
 
-
 ### Step 4: Add UI Components
 
 The LaunchDarkly plugin provides multiple UI components that can be added to entity pages:
@@ -89,11 +88,10 @@ Displays LaunchDarkly flags across multiple environments with column toggling ca
 
 This card can be [added to component dashboards](/docs/details/updating-the-ui/#updating-dashboards).
 
-
 ## Annotation Reference
 
 | Annotation                         | Description                      | Required | Example                                              |
-|------------------------------------|----------------------------------|----------|------------------------------------------------------|
+| ---------------------------------- | -------------------------------- | -------- | ---------------------------------------------------- |
 | `launchdarkly.com/project-key`     | LaunchDarkly project identifier  | Yes      | `default`                                            |
 | `launchdarkly.com/environment-key` | Environment within the project   | Yes      | `production`                                         |
 | `launchdarkly.com/context`         | JSON context for flag evaluation | No       | `'{"kind":"tenant","key":"roadie","name":"roadie"}'` |
@@ -106,11 +104,13 @@ This card can be [added to component dashboards](/docs/details/updating-the-ui/#
 ### Feature flags not appearing
 
 1. **Verify API token configuration**
+
    - Check that `LAUNCHDARKLY_API_KEY` is correctly set in Roadie secrets
    - Ensure the API token has not expired
    - Verify the token has appropriate read permissions
 
 2. **Check entity annotations**
+
    - Confirm `launchdarkly.com/project-key` matches your LaunchDarkly project
    - Verify `launchdarkly.com/environment-key` exists in your project
    - Ensure JSON context format is valid if using context annotation
@@ -123,6 +123,7 @@ This card can be [added to component dashboards](/docs/details/updating-the-ui/#
 ### UI components not displaying
 
 1. **Check component availability**
+
    - Verify the LaunchDarkly plugin is enabled in your Roadie instance
    - Ensure UI components are properly configured on entity pages
    - Check browser console for JavaScript errors
@@ -133,6 +134,7 @@ This card can be [added to component dashboards](/docs/details/updating-the-ui/#
 ### Filtering not working
 
 1. **Verify filter syntax**
+
    - Ensure `filter-tags` is a valid JSON array
    - Check that tag names match exactly with LaunchDarkly flag tags
    - Verify `filter-query` syntax matches [LaunchDarkly search capabilities](https://launchdarkly.com/docs/api/feature-flags/get-feature-flags#filtering-flags).

@@ -16,6 +16,7 @@ The Tech Docs feature of Roadie Backstage allows markdown files written alongsid
 Under the hood, Backstage uses the popular [MkDocs library](https://www.mkdocs.org/) to render documentation.
 
 ## Prerequisites
+
 In order to write and view changes to docs you will need to install:
 
 - NodeJS: You will need an active [LTS release of NodeJS](https://nodejs.org/en/about/releases/).
@@ -24,14 +25,13 @@ In order to write and view changes to docs you will need to install:
 
 ### Step 1: Add the MkDocs configuration file
 
-Create a file called `mkdocs.yml` in the root of a component you want to document in Backstage. Inside that YAML file, add the following content, replacing `{component-name}` with the human name of your component. 
+Create a file called `mkdocs.yml` in the root of a component you want to document in Backstage. Inside that YAML file, add the following content, replacing `{component-name}` with the human name of your component.
 
 ```yaml
 site_name: '{component-name}'
 
 plugins:
   - techdocs-core
-
 # Uncomment to add extensions if desired
 #markdown_extensions:
 #  - markdown_inline_mermaid
@@ -65,7 +65,7 @@ Ensure you publish this new content to GitHub.
 
 We can use the `catalog-info.yaml` file of our component to tell Backstage where to find the documentation.
 
-To do this, add the `backstage.io/techdocs-ref` annotation to the list of annotations. 
+To do this, add the `backstage.io/techdocs-ref` annotation to the list of annotations.
 
 If your docs are in the root of the repo, as described above, you can set the tech docs annotation to this:
 
@@ -90,9 +90,10 @@ spec:
   lifecycle: experimental
 ```
 
-⚠️  The GitHub URL **must** be prefixed with `url:` or the documentation will not render in Backstage.
+⚠️ The GitHub URL **must** be prefixed with `url:` or the documentation will not render in Backstage.
 
 ### Step 4: Test your documentation
+
 You can generate / serve your docs locally to view what they would look like when they are deployed to Roadie.
 
 To generate the docs to the site directory of the project you can run the following command:
@@ -102,6 +103,7 @@ npx @roadiehq/techdocs-cli generate
 ```
 
 To start a local server at port 3000 containing the generated docs, you can run the following command:
+
 ```bash
 npx @roadiehq/techdocs-cli serve
 ```
@@ -131,7 +133,7 @@ a short period of time.
 
 ![a new page called local development with a code block and some navigation](./local-development-docs-backstage.webp)
 
-By default, the structure of the docs pages will mirror that of the file system. You can also explicitly describe your 
+By default, the structure of the docs pages will mirror that of the file system. You can also explicitly describe your
 page structure using the `nav` object in your `mkdocs.yaml`. Both approaches are described [here](https://www.mkdocs.org/user-guide/writing-your-docs/#file-layout).
 
 Similarly, MkDocs will determine a title for your document according to [these rules](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data).
