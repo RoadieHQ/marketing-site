@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Title } from 'components';
+import { Title, Link } from 'components';
 import map from 'lodash/map';
 import kebabCase from 'lodash/kebabCase';
 import get from 'lodash/get';
@@ -251,6 +251,10 @@ const Sidebar = ({
     roadieDocsPath,
     npmPackageName,
     codeLocation,
+    introduction,
+    notes,
+    installationInstructions,
+    changelog,
   },
 }) => {
   const [npmData, setNpmData] = useState({});
@@ -270,6 +274,32 @@ const Sidebar = ({
   return (
     <div>
       <div className="mb-10 pt-2">
+        <div className="mb-4">
+          <Title>Table of Contents</Title>
+        </div>
+        <ul className="pl-6">
+          {introduction && (
+            <li className="list-disc"><Link to="#introduction">Introduction</Link></li>
+          )}
+          {installationInstructions && (
+            <li className="list-disc">
+              <Link to="#installation-instructions">Installation Instructions</Link>
+            </li>
+          )}
+          {notes && (
+            <li className="list-disc"><Link to="#notes">Things to Know</Link></li>
+          )}
+          {changelog && (
+            <li className="list-disc"><Link to="#changelog">Changelog</Link></li>
+          )}
+        </ul>
+      </div>
+
+      <div className="mb-10">
+        <div className="mb-4">
+          <Title>Links</Title>
+        </div>
+
         <div className="mb-3">
           <RoadieDocsChip
             availableOnRoadie={availableOnRoadie} 
