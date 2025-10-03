@@ -242,20 +242,13 @@ const TableOfContents = ({ plugin, pageSections }) => {
         <Title>Table of Contents</Title>
       </div>
 
-      <ul className="pl-6">
-        {listItems}
-      </ul>
+      <ul className="pl-6">{listItems}</ul>
     </>
   );
 };
 
 const Sidebar = ({ plugin, pageSections }) => {
-  const {
-    availableOnRoadie,
-    roadieDocsPath,
-    npmPackageName,
-    codeLocation,
-  } = plugin;
+  const { availableOnRoadie, roadieDocsPath, npmPackageName, codeLocation } = plugin;
 
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');

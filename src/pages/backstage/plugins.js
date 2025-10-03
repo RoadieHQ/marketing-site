@@ -141,8 +141,8 @@ const BackstagePlugins = ({ data }) => {
             </div>
             <div className="mb-10">
               <Lead>
-                Descriptions, installation instructions, and changelogs for {allPluginsCount.toLocaleString()} open-source Backstage 
-                plugins.
+                Descriptions, installation instructions, and changelogs for{' '}
+                {allPluginsCount.toLocaleString()} open-source Backstage plugins.
               </Lead>
               <Lead>
                 Using Roadie? Visit our{' '}

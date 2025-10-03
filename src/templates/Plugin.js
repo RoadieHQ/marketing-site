@@ -11,7 +11,7 @@ import {
   Title,
   TextLink as Link,
 } from 'components';
-import { Header, PluginCTA, PlaceholderBody, Sidebar } from 'components/backstage/plugins';
+import { Header, PluginCTA, Sidebar } from 'components/backstage/plugins';
 import fullRoadieDocsPath from 'components/backstage/plugins/fullRoadieDocsPath';
 import PluginFeedbackModal from '../components/PluginFeedbackModal';
 import useScrollToElement from '../hooks/useScrollToElement';
@@ -38,7 +38,6 @@ const PAGE_SECTIONS = {
     label: 'Changelog',
   },
 };
-
 
 const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
   const disclaimer = 'These instructions apply to self-hosted Backsgage only.';
@@ -155,8 +154,6 @@ const Body = ({
           />
         </>
       )}
-
-      {isEmpty(installHtml) && isEmpty(notesHtml) && <PlaceholderBody humanName={humanName} />}
     </>
   );
 };
