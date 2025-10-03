@@ -4,16 +4,15 @@ publishedDate: '2022-02-24T09:00:00.0Z'
 description: List of required metadata for each plugin.
 ---
 
-In order to use some plugins you may need to add metadata to entities. Generally, this means adding an annotation but 
-it could also mean adding a link or label.  
+In order to use some plugins you may need to add metadata to entities. Generally, this means adding an annotation but
+it could also mean adding a link or label.
 
 ## Annotations
 
 Below, in the table, you will find a list of the plugins and required annotations you may need to add. You can read more about annotations and what they represent in [Backstage documentations](https://backstage.io/docs/features/software-catalog/well-known-annotations).
 
-
 | Package                                         | Plugin name          | Required Annotations                                       |
-|-------------------------------------------------|----------------------|------------------------------------------------------------|
+| ----------------------------------------------- | -------------------- | ---------------------------------------------------------- |
 | @roadiehq/backstage-plugin-argo-cd              | Argo CD              | argocd/app-name or argocd/project-name                     |
 | @roadiehq/backstage-plugin-aws-lambda           | AWS Lambda           | aws.com/lambda-function-name                               |
 | @roadiehq/backstage-plugin-bugsnag              | Bugsnag              | bugsnag.com/project-key                                    |
@@ -42,10 +41,10 @@ Below, in the table, you will find a list of the plugins and required annotation
 ## Links & Labels
 
 The catalog plugin provides cards to display metadata to users if the relevant metadata isn't there then the card is hidden.
-For example, the EntityLinksCard requires [links](https://backstage.io/docs/features/software-catalog/descriptor-format/#links-optional) 
+For example, the EntityLinksCard requires [links](https://backstage.io/docs/features/software-catalog/descriptor-format/#links-optional)
 to be set and similarly the EntityLabelsCard requires [labels](https://backstage.io/docs/features/software-catalog/descriptor-format/#labels-optional) to be set.
 
 ## Further Reading
 
-* To update entities without definitions in YAML such as users and groups imported via autodiscovery you can use [decorators.](/docs/details/decorating-components/)
-* [The Backstage entity format](https://backstage.io/docs/features/software-catalog/descriptor-format/)
+- To update entities without definitions in YAML such as users and groups imported via autodiscovery you can use [decorators.](/docs/details/decorating-components/)
+- [The Backstage entity format](https://backstage.io/docs/features/software-catalog/descriptor-format/)

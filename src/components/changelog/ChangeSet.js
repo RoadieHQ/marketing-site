@@ -37,7 +37,7 @@ const CollapsiblePart = ({ description, isOpen, isCollapsible, slug }) => {
   let className = 'mt-6 prose max-w-none';
   if (isCollapsible) {
     className = classnames(className, {
-        'h-0 hidden': !isOpen,
+      'h-0 hidden': !isOpen,
     });
   }
 
@@ -55,13 +55,11 @@ const CollapsiblePart = ({ description, isOpen, isCollapsible, slug }) => {
 };
 
 const Wrapper = ({ children, isCollapsible }) => {
-  if (isCollapsible) { 
+  if (isCollapsible) {
     return (
       <>
         <hr className="w-full bg-gray-100 my-8" style={{ height: 1 }} />
-        <li className="mt-6 list-reset lg:flex items-start">
-          {children}
-        </li>
+        <li className="mt-6 list-reset lg:flex items-start">{children}</li>
       </>
     );
   }
@@ -69,13 +67,7 @@ const Wrapper = ({ children, isCollapsible }) => {
   return children;
 };
 
-const ChangeSet = ({
-  releasedAt,
-  description,
-  title,
-  isCollapsible = true,
-  slug,
-}) => {
+const ChangeSet = ({ releasedAt, description, title, isCollapsible = true, slug }) => {
   const [isOpen, setOpen] = useState(false);
 
   const toggleOpen = () => setOpen(!isOpen);

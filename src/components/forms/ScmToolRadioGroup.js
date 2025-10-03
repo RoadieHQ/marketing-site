@@ -27,9 +27,7 @@ const ScmToolRadioGroup = ({
       ))}
 
       <div className="mt-3">
-        <HelpText
-          message={SCM_SUPPORT_HELP_TEXT}
-        />
+        <HelpText message={SCM_SUPPORT_HELP_TEXT} />
       </div>
     </div>
   </fieldset>

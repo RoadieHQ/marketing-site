@@ -14,7 +14,7 @@ The TODO plugin helps you track and manage TODO comments in your source code dir
 ## At a Glance
 
 |                            |                                                                                                           |
-|---------------------------:|-----------------------------------------------------------------------------------------------------------|
+| -------------------------: | --------------------------------------------------------------------------------------------------------- |
 |         **Considerations** | Supports TODO and FIXME tags in multiple programming languages. Uses Leasot parser for comment detection. |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted          |
 
@@ -29,18 +29,21 @@ The TODO plugin is available as a tab on entity pages in Roadie. Take a look [Cu
 The plugin uses the [Leasot](https://github.com/pgilad/leasot) parser, which supports a wide range of programming languages and comment formats. By default, it recognizes the following patterns:
 
 ### Basic TODO Comments
+
 ```javascript
 // TODO: Ideally this would be working
 // FIXME: Nobody knows why this is here
 ```
 
 ### TODO Comments with Author
+
 ```javascript
 // TODO(username): Not sure why this works, investigate
 // @todo: This worked last Monday /username
 ```
 
 ### Supported Tags
+
 - `TODO` - General tasks or improvements needed
 - `FIXME` - Issues that need to be fixed
 - `@todo` - Alternative TODO format with @ prefix
@@ -48,16 +51,19 @@ The plugin uses the [Leasot](https://github.com/pgilad/leasot) parser, which sup
 ## Plugin Behavior
 
 ### What Gets Scanned
+
 - All source code files in your repositories
 - Comments in supported programming languages
 - TODO and FIXME tags with various formats
 
 ### What Gets Ignored
+
 - Dot-files and dot-directories (e.g., `.git/`, `.vscode/`)
 - Trailing comments (comments at the end of code lines)
 - Binary files and non-text files
 
 ### Example of Ignored Format
+
 ```javascript
 function reverse(str: string) {
   return str.reverse(); // TODO: optimize - This will NOT be detected

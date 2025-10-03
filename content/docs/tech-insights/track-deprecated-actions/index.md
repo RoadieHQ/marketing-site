@@ -35,53 +35,54 @@ In order to track the deprecation notices from GitHub, we are going to create a 
 
    ![About section input fields](./Data_About_Section.webp)
 
-3. Set the Data Provider **Type** to `HTTP`, **Proxy** to `/github/api`, **Path Extension** to `graphql`, **HTTP Method** to POST, and **Body** to the below. 
+3. Set the Data Provider **Type** to `HTTP`, **Proxy** to `/github/api`, **Path Extension** to `graphql`, **HTTP Method** to POST, and **Body** to the below.
 
-    ```
-    {"query": "query ChecksQuery ($owner: String!, $repo: String!) { repository(owner: $owner, name: $repo) { pullRequests(orderBy: {field: UPDATED_AT, direction: DESC}, first: 3) { nodes { number mergeCommit { message checkSuites(first: 10) { nodes { id checkRuns(first: 15, filterBy: {checkType: LATEST}) { nodes { id name annotations(first: 15) { nodes { message } } } } } } } } } } }",
-    "operationName": "ChecksQuery",
-    "variables": {"owner": "{{ metadata.annotations['github.com/owner'] }}", "repo": "{{ metadata.annotations['github.com/repo'] }}"}
-    }
-    ```
+   ```
+   {"query": "query ChecksQuery ($owner: String!, $repo: String!) { repository(owner: $owner, name: $repo) { pullRequests(orderBy: {field: UPDATED_AT, direction: DESC}, first: 3) { nodes { number mergeCommit { message checkSuites(first: 10) { nodes { id checkRuns(first: 15, filterBy: {checkType: LATEST}) { nodes { id name annotations(first: 15) { nodes { message } } } } } } } } } } }",
+   "operationName": "ChecksQuery",
+   "variables": {"owner": "{{ metadata.annotations['github.com/owner'] }}", "repo": "{{ metadata.annotations['github.com/repo'] }}"}
+   }
+   ```
 
-    Select a value for **Select Entity to test data source against** and press **TEST**.
+   Select a value for **Select Entity to test data source against** and press **TEST**.
 
-    ![Data Provider section input fields](./Data_Provider_Section.webp)
+   ![Data Provider section input fields](./Data_Provider_Section.webp)
 
 4. Test results are displayed.
 
-    ![Data Provider test results displayed](./Data_Test_Results_Section.webp)
+   ![Data Provider test results displayed](./Data_Test_Results_Section.webp)
 
 5. Create multiple Facts:
-    1. Set **Extractor** to `JSON with JSONata syntax`.
-    2. Set the first Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | Node Deprecated Actions |
-        | JSONata query | `$distinct($reduce($map($filter(data.repository.pullRequests.nodes.mergeCommit.checkSuites.nodes.checkRuns.nodes.annotations.nodes.message, function($v, $i, $a) {  $contains($v, "Please update the following actions to use Node.js")}), function($v) {    $split($split($split($v, ": ", 2)[1], ". For")[0], ", ")}), $append))` |
-        | Type | Set |
-    3. Set the second Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | Node Past Deprecated Actions |
-        | JSONata query | `$distinct($reduce($map($filter(data.repository.pullRequests.nodes.mergeCommit.checkSuites.nodes.checkRuns.nodes.annotations.nodes.message, function($v, $i, $a) {  $contains($v, "deprecated and will be forced to run")}), function($v) {    $split($split($split($v, ": ", 2)[1], ". For")[0], ", ")}), $append))` |
-        | Type | Set |
-    4. Set the third Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | Deprecated Command |
-        | JSONata query | `$distinct($reduce($filter(data.repository.pullRequests.nodes.mergeCommit.checkSuites.nodes.checkRuns.nodes.annotations.nodes.message, function($v) {  $contains($v, "command is deprecated")}), $append))` |
-        | Type | Set |
 
-    ![Data Facts section input fields](./Data_Facts_Section.webp)
+   1. Set **Extractor** to `JSON with JSONata syntax`.
+   2. Set the first Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | Node Deprecated Actions |
+      | JSONata query | `$distinct($reduce($map($filter(data.repository.pullRequests.nodes.mergeCommit.checkSuites.nodes.checkRuns.nodes.annotations.nodes.message, function($v, $i, $a) { $contains($v, "Please update the following actions to use Node.js")}), function($v) { $split($split($split($v, ": ", 2)[1], ". For")[0], ", ")}), $append))` |
+      | Type | Set |
+   3. Set the second Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | Node Past Deprecated Actions |
+      | JSONata query | `$distinct($reduce($map($filter(data.repository.pullRequests.nodes.mergeCommit.checkSuites.nodes.checkRuns.nodes.annotations.nodes.message, function($v, $i, $a) { $contains($v, "deprecated and will be forced to run")}), function($v) { $split($split($split($v, ": ", 2)[1], ". For")[0], ", ")}), $append))` |
+      | Type | Set |
+   4. Set the third Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | Deprecated Command |
+      | JSONata query | `$distinct($reduce($filter(data.repository.pullRequests.nodes.mergeCommit.checkSuites.nodes.checkRuns.nodes.annotations.nodes.message, function($v) { $contains($v, "command is deprecated")}), $append))` |
+      | Type | Set |
+
+   ![Data Facts section input fields](./Data_Facts_Section.webp)
 
 6. Press **CHECK FACTS**.
 
-    ![Data Facts results displayed](./Data_Facts_Results_Section.webp)
+   ![Data Facts results displayed](./Data_Facts_Results_Section.webp)
 
-7. Use the **Applies to** filter to target this data source at some components which you expect to have Node.js. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.  
+7. Use the **Applies to** filter to target this data source at some components which you expect to have Node.js. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./Applies_To_Section.webp)
+   ![About Data Source section displayed](./Applies_To_Section.webp)
 
 8. Press **SAVE**.
 
@@ -93,46 +94,47 @@ We have a data source telling us what deprecation actions and commands are prese
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.webp)
+   ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
    ![About section input fields](./Check_About_Section.webp)
 
 3. Create a check:
-    1. Set the first condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | GitHub Deprecated Actions and Commands |
-        | Fact | Node Deprecated Actions |
-        | Fact operator | Does not contain RegExp |
-        | Value | .+ |
-    1. Set the second condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | GitHub Deprecated Actions and Commands |
-        | Fact | Node Past Deprecated Actions |
-        | Fact operator | Does not contain RegExp |
-        | Value | .+ |
-    1. Set the third condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | GitHub Deprecated Actions and Commands |
-        | Fact | Deprecated Command |
-        | Fact operator | Does not contain RegExp |
-        | Value | command is deprecated |
 
-    ![Check Condition section fields](./Check_Conditions_Section.webp)
+   1. Set the first condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | GitHub Deprecated Actions and Commands |
+      | Fact | Node Deprecated Actions |
+      | Fact operator | Does not contain RegExp |
+      | Value | .+ |
+   1. Set the second condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | GitHub Deprecated Actions and Commands |
+      | Fact | Node Past Deprecated Actions |
+      | Fact operator | Does not contain RegExp |
+      | Value | .+ |
+   1. Set the third condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | GitHub Deprecated Actions and Commands |
+      | Fact | Deprecated Command |
+      | Fact operator | Does not contain RegExp |
+      | Value | command is deprecated |
+
+   ![Check Condition section fields](./Check_Conditions_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to resolve the deprecated action or command in the component.
 
-    ![Check Fix section displayed](./Check_Fix_Section.webp)
+   ![Check Fix section displayed](./Check_Fix_Section.webp)
 
-6. Use the **Applies to** filter to target this data source at some components which you expect to have Node.js. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
+6. Use the **Applies to** filter to target this data source at some components which you expect to have Node.js. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./Applies_To_Section.webp)
+   ![About Data Source section displayed](./Applies_To_Section.webp)
 
 7. Press **SAVE**.
 

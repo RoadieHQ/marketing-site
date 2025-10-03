@@ -9,6 +9,7 @@ description: How repositories are modelled and ingested into the catalog
 Repositories are modelled in the Roadie Backstage catalog using the Repository Kind.
 
 ### Catalog Completeness
+
 <div role="alert">
   <div class="docs-cta__warning_title">Beta Feature</div>
   <div  class="docs-cta__warning_message">
@@ -18,18 +19,20 @@ Repositories are modelled in the Roadie Backstage catalog using the Repository K
 </div>
 Repositories allow us to effectively measure the completeness of your catalog - that is, whether all the software in your organisation is represented by entities in the catalog.
 
-Once your Repositories are added, Admins will be able to see a graph of catalog completeness in the Administration section of Roadie. 
+Once your Repositories are added, Admins will be able to see a graph of catalog completeness in the Administration section of Roadie.
 
 If you are a Tech Insights user, you will also find built-in completeness Scorecards, Checks and a Data Source to use to build your own Checks and Scorecards from the same data.
 
 ![Catalog Completeness Page](./catalog-completeness-graph.webp)
 
 ### Autodiscovery
+
 They will be automatically ingested for you from any GitHub integrations you have set up in Roadie.
 
 By default in Roadie this data will be populated for you and refreshed every 12 hours or whenever a change is made to a repository assuming you have [GitHub Autodiscovery](/docs/catalog/location-management/#setting-up-autodiscovery) set up for your GitHub organisations.
 
 ### Ingesting from non-GitHub Sources
+
 You can use the [Roadie Entity Push API](/docs/api/authorization/) to add repositories from other SCMs other than GitHub via a script.
 
 This would look something like the following:
@@ -43,6 +46,7 @@ curl https://api.roadie.so/api/catalog/roadie-entities/sets/1 \
 ```
 
 ### Schema
+
 Repositories follow a unique schema that has a lot of metadata fields designed to help identify what repositories are active or important, who owns the repository, and what entities are connected to it.
 
 NB: They use a new `apiVersion` of `roadie.io/v1` and `Kind` of `Repository`.
@@ -133,10 +137,10 @@ NB: They use a new `apiVersion` of `roadie.io/v1` and `Kind` of `Repository`.
 ```
 
 ### Ownership
-Roadie will suggest ownership using a `metadata.proposedOwners` field and let you set an owner in a few clicks in the catalog table. Assigning ownership to Repository entities will become valuable to you if 
+
+Roadie will suggest ownership using a `metadata.proposedOwners` field and let you set an owner in a few clicks in the catalog table. Assigning ownership to Repository entities will become valuable to you if
 you want to use these in Tech Insights or to understand catalog completeness in your organisation.
 
-NB: The proposed owners field population is currently only available for GitHub ingested repositories. It generates a list of teams by looking first at participation data, 
-identifying the teams in GitHub that have the highest access level to the repository and matching those to Groups in the catalog. If none are found it will look at most frequent contributors 
-and try to associate them with a User and then Groups in the catalog that User is part of. It will then select the Groups that have no child Groups themselves. 
-
+NB: The proposed owners field population is currently only available for GitHub ingested repositories. It generates a list of teams by looking first at participation data,
+identifying the teams in GitHub that have the highest access level to the repository and matching those to Groups in the catalog. If none are found it will look at most frequent contributors
+and try to associate them with a User and then Groups in the catalog that User is part of. It will then select the Groups that have no child Groups themselves.

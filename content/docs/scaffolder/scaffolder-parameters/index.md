@@ -36,7 +36,7 @@ This page lists some examples from React Json Schema Form in YAML format for how
 
 ### Testing and iterating
 
-You can test the core RJSF parameters live in Roadie at `/create/tools` -> `Template Form Preview`. 
+You can test the core RJSF parameters live in Roadie at `/create/tools` -> `Template Form Preview`.
 
 ![parameters-preview](./parameters-preview.webp)
 
@@ -125,9 +125,10 @@ properties:
     enum: ['Tom', 'Bob']
 ```
 
-Enums render by default with a select dropdown. 
+Enums render by default with a select dropdown.
 
 ##### Radio and Checkboxes
+
 You can use a radio or checkbox by adding the widget field:
 
 ```yaml
@@ -136,7 +137,7 @@ properties:
     title: Name
     type: string
     enum: ['Tom', 'Bob']
-    ui:widget: "RadioWidget"
+    ui:widget: 'RadioWidget'
 ```
 
 ```yaml
@@ -145,10 +146,11 @@ properties:
     title: Name
     type: string
     enum: ['Tom', 'Bob']
-    ui:widget: "CheckboxesWidget"
+    ui:widget: 'CheckboxesWidget'
 ```
 
 ##### Multi select
+
 Multi select can be achieved using the array type:
 
 ```yaml
@@ -156,10 +158,10 @@ properties:
   names:
     title: Names
     type: array
-    ui:widget: "CheckboxesWidget"
+    ui:widget: 'CheckboxesWidget'
     uniqueItems: true
     items:
-      enum: 
+      enum:
         - Tom
         - Bob
 ```
@@ -173,7 +175,7 @@ properties:
   city:
     title: City
     type: string
-    enumNames: 
+    enumNames:
       - New York
       - Amsterdam
       - Hong Kong
@@ -190,7 +192,7 @@ properties:
   city:
     title: City
     type: string
-    enumNames: 
+    enumNames:
       - New York
       - Amsterdam
       - Hong Kong
@@ -233,12 +235,12 @@ parameters:
         name: '1-8 alphanumeric tokens (first starts with letter) delimited by -'
 ```
 
-
 ### Multi Page Forms
 
 You can choose to break up the parameters into form pages or collect all the parameters in one single page.
 
 **Single Page:**
+
 ```yaml
 parameters:
   properties:
@@ -259,6 +261,7 @@ parameters:
 ```
 
 **Multi Page:**
+
 ```yaml
 parameters:
   - title: Provide some info about yourself
@@ -286,12 +289,11 @@ parameters:
 
 In a multipage form, each parameter page must contain `title` and `properties`
 
-
 ### Complex Form Fields (Builtin Custom Fields)
 
-The following items are enhanced form fields that can be used out of the box to build richer forms for your templates. 
+The following items are enhanced form fields that can be used out of the box to build richer forms for your templates.
 
-Roadie allows you to [create your own custom React form components](#adding-custom-parameters) and use them in the same way if you have special use cases. 
+Roadie allows you to [create your own custom React form components](#adding-custom-parameters) and use them in the same way if you have special use cases.
 
 #### Entity picker
 
@@ -377,14 +379,14 @@ This returns a variable in the format `group:<namespace>/<group-or-user-name>`. 
 
 #### Picker from external API source
 
-This custom scaffolder field, makes an API call to the Backstage backend and allows the result to be rendered to a list. 
+This custom scaffolder field, makes an API call to the Backstage backend and allows the result to be rendered to a list.
 
 <div role="alert">
   <div class="docs-cta__info_title">Field Conflicts</div>
   <div  class="docs-cta__info_message">
     <p><code>labelSelector</code> and <code>labelTemplate</code> are mutually exclusive and cannot both be used in a single property field.</p>
   </div>
-</div> 
+</div>
 
 ```yaml
 parameters:
@@ -416,7 +418,6 @@ parameters:
 
           # (Optional) This selects the fields in the array to use for the label of each select item with Nunjucks templating format.
           labelTemplate: '{{ item.value }}:{{ item.count }}'
-
 ```
 
 Some of the `SelectFieldFromApi` options allow using parameters from earlier parameter pages to be used to template the options. The templated options are `params`, `path`, `valueSelector` and `labelSelector`. e.g.
@@ -445,11 +446,11 @@ parameters:
         description: Entity Selector
         ui:field: SelectFieldFromApi
         ui:options:
-          path: "catalog/entities"
+          path: 'catalog/entities'
           params:
-            filter: "kind={{ parameters.kind }}"
-          valueSelector: "metadata.name"
-          labelSelector: "metadata.description"
+            filter: 'kind={{ parameters.kind }}'
+          valueSelector: 'metadata.name'
+          labelSelector: 'metadata.description'
 ```
 
 ### Integration and Plugin specific parameters
@@ -471,13 +472,13 @@ parameters:
       ui:options:
         # You can either use an entity annotation to provide the manifest URL
         # or allow the user to input it directly in the form
-        manifestSourceType: "entityAnnotation" # or "manualInput"
-        
+        manifestSourceType: 'entityAnnotation' # or "manualInput"
+
         # If using entityAnnotation, specify which annotation contains the URL
-        sourceAnnotation: "terasky.backstage.io/source-manifest-url"
-        
+        sourceAnnotation: 'terasky.backstage.io/source-manifest-url'
+
         # Alternatively, provide a default URL when using manualInput
-        defaultManifestUrl: "https://github.com/example/repo/path/to/manifest.yaml"
+        defaultManifestUrl: 'https://github.com/example/repo/path/to/manifest.yaml'
 ```
 
 You can find a [full example here](https://github.com/TeraSky-OSS/backstage-plugins/blob/main/plugins/gitops-manifest-updater/templates/sample.yaml)
@@ -489,7 +490,6 @@ This field extension is particularly useful for:
 - Creating pull requests to modify existing Kubernetes manifests with schema validation
 
 The plugin generates a dynamic form based on the OpenAPI schema of the resource, populates it with current values from the Git repository, and creates a PR with the changes when submitted.
-
 
 ## Adding custom parameters
 
@@ -504,7 +504,6 @@ Field extensions are react form components that can be imported dynamically into
 Scaffolder Field Extensions are automatically registered to be usable within Scaffolder Templates, once they have been registered as a [Custom Plugin component](/docs/custom-plugins/overview/) in the Roadie application. You can do this by navigating to the `Administration` -> `Custom Plugins` page and registering your Custom Plugin bundle, including a component of type `ScaffolderFieldExtension`.
 
 ![Custom plugin registration form](custom_plugin_registration_form.webp)
-
 
 ## Re-using Parameter Pages
 
@@ -532,19 +531,18 @@ spec:
         message: 'Selected product: ${{ parameters.product }}'
 ```
 
-
 ./constants/products.yaml
+
 ```yaml
 title: Select Product
 properties:
   product:
     title: Product
     type: string
-    enum: ["Search", "CRM", "Onboarding"]
+    enum: ['Search', 'CRM', 'Onboarding']
 ```
 
-**NB:** This only works for top level parameters objects and not for sections within a form page. 
-
+**NB:** This only works for top level parameters objects and not for sections within a form page.
 
 ### Using Parameters In Actions
 
@@ -587,9 +585,10 @@ steps:
 
 #### Using logic in Parameter references
 
-Inliine logic can be used in these references also via pipe functions using [Nunjucks templating syntax](https://mozilla.github.io/nunjucks/templating.html#builtin-filters). 
+Inliine logic can be used in these references also via pipe functions using [Nunjucks templating syntax](https://mozilla.github.io/nunjucks/templating.html#builtin-filters).
 
 i.e.
+
 ```yaml
 steps:
   - id: log-message
@@ -600,7 +599,6 @@ steps:
 ```
 
 Available filters are listed in [Nunjucks documentation here](https://mozilla.github.io/nunjucks/templating.html#builtin-filters).
-
 
 ### Default values
 
@@ -615,6 +613,7 @@ parameters:
 ```
 
 ### Field display options
+
 You can display a more human description to a field value by using `title` and `description`
 
 ```yaml
@@ -627,7 +626,7 @@ parameters:
 ```
 
 ## Links
+
 - [React Json Schema Form](https://rjsf-team.github.io/react-jsonschema-form/
 - [Official Backstage docs](https://backstage.io/docs/features/software-templates/writing-templates).
 - [Nunjucks templating docs](https://mozilla.github.io/nunjucks/templating.html)
-

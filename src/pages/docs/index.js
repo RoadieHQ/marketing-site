@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Button, SEO, SitewideFooter, Headline, Lead, TextLink } from 'components';
-import { ChevronRightIcon, LockClosedIcon, TerminalIcon } from '@heroicons/react/outline'
+import { ChevronRightIcon, LockClosedIcon, TerminalIcon } from '@heroicons/react/outline';
 
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
 import developerPortalIllustrationPng from '../../../content/assets/docs/illustrations/developer-portal.png';
@@ -13,10 +13,7 @@ const Doc = ({
   location,
 }) => (
   <>
-    <SEO
-      title={`Docs | ${siteMetadata.title}`}
-      description="Learn how to use Roadie"
-    />
+    <SEO title={`Docs | ${siteMetadata.title}`} description="Learn how to use Roadie" />
     <DocsHeader location={location} />
 
     <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">
@@ -31,11 +28,15 @@ const Doc = ({
         <section className="md:border-b-2 md:border-gray-100 flex mb-24">
           <div>
             <div className="mb-2">
-              <Headline el="h2" size="xs">Developer portal</Headline>
+              <Headline el="h2" size="xs">
+                Developer portal
+              </Headline>
             </div>
 
             <div className="mb-6">
-              <Lead size="small">Increase discoverability with a service catalog and developer portal.</Lead>
+              <Lead size="small">
+                Increase discoverability with a service catalog and developer portal.
+              </Lead>
             </div>
 
             <Button
@@ -62,7 +63,9 @@ const Doc = ({
               <div className="mb-2">
                 <TerminalIcon className="h-10" style={{ marginLeft: -4 }} />
               </div>
-              <Headline el="h2" size="xs">Custom plugins</Headline>
+              <Headline el="h2" size="xs">
+                Custom plugins
+              </Headline>
             </div>
 
             <div className="mb-6">
@@ -73,8 +76,7 @@ const Doc = ({
                 </Lead>
               </div>
               <Lead size="small">
-                Once published, these plugins can be used just like any other
-                Backstage plugins.
+                Once published, these plugins can be used just like any other Backstage plugins.
               </Lead>
             </div>
 
@@ -90,13 +92,13 @@ const Doc = ({
               <div className="mb-2">
                 <LockClosedIcon className="h-10" style={{ marginLeft: -4 }} />
               </div>
-              <Headline el="h2" size="xs">Security</Headline>
+              <Headline el="h2" size="xs">
+                Security
+              </Headline>
             </div>
 
             <div className="mb-6">
-              <Lead size="small">
-                Roadie has gained SOC2 Type 2 compliance.
-              </Lead>
+              <Lead size="small">Roadie has gained SOC2 Type 2 compliance.</Lead>
             </div>
 
             <ul className="list-disc pl-4">

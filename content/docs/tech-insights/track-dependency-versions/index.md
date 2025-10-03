@@ -41,41 +41,43 @@ In order to track the React versions used in the catalog, we are going to create
 
 3. Set the Data Provider **Type** to `Component Repository File`, **Location** to `package.json`. Select a value for **Select Entity to test data source against** and press **TEST**.
 
-    ![Data Provider section input fields](./react/React_Data_Provider_Section.webp)
+   ![Data Provider section input fields](./react/React_Data_Provider_Section.webp)
 
 4. Test results are displayed.
 
-    ![Data Provider test results displayed](./react/React_Data_Test_Results_Section.webp)
+   ![Data Provider test results displayed](./react/React_Data_Test_Results_Section.webp)
 
 5. Create multiple Facts:
-    1. Set **Parser** to `JSON with JSONata syntax`.
-    2. Set the first Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | React version |
-        | JSONata query | $exists(resolutions."@types/react") ? resolutions."@types/react" : $exists(dependencies.react) ? dependencies.react : "" |
-        | Type | String |
 
-    3. Press **ADD FACT** and set the second Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | Has React dependency |
-        | JSONata query | $exists(resolutions."@types/react") ? $boolean(resolutions."@types/react") : $exists(dependencies.react) ? $boolean(dependencies.react) : false |
-        | Type | Boolean | 
+   1. Set **Parser** to `JSON with JSONata syntax`.
+   2. Set the first Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | React version |
+      | JSONata query | $exists(resolutions."@types/react") ? resolutions."@types/react" : $exists(dependencies.react) ? dependencies.react : "" |
+      | Type | String |
 
-    ![Data Facts section input fields](./react/React_Data_Facts_Section.webp)
+   3. Press **ADD FACT** and set the second Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | Has React dependency |
+      | JSONata query | $exists(resolutions."@types/react") ? $boolean(resolutions."@types/react") : $exists(dependencies.react) ? $boolean(dependencies.react) : false |
+      | Type | Boolean |
+
+   ![Data Facts section input fields](./react/React_Data_Facts_Section.webp)
 
 6. Press **CHECK FACTS**.
 
-    ![Data Facts results displayed](./react/React_Data_Facts_Results_Section.webp)
+   ![Data Facts results displayed](./react/React_Data_Facts_Results_Section.webp)
 
-7. Use the **Applies to** filter to target this data source at some components which you expect to have React versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
+7. Use the **Applies to** filter to target this data source at some components which you expect to have React versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./react/React_Applies_To_Section.webp)
+   ![About Data Source section displayed](./react/React_Applies_To_Section.webp)
 
 8. Press **SAVE**.
 
 ## Visualise the distribution of React versions being used
+
 Data Source comes with a built-in visualisation panel which lets us get an overview of the React versions being used. When viewing a Data Source, expand the “Facts visualization” section to see it.
 
 ![Data Visualisation results displayed](./react/React_Data_Visualization_Section.webp)
@@ -100,47 +102,48 @@ Let’s write a check to combine both of these properties.
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.webp)
+   ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
    ![About section input fields](./react/React_Check_About_Section.webp)
 
 3. Create a compound check:
-    1. Set **Type** to `Or`.
-    2. Set the first condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | GitHub repository file list |
-        | Fact | List of files |
-        | Fact operator | Does not contain |
-        | Value | package.json |
 
-    2. Press **+ADD CONDITION** and set the second condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | Package JSON information |
-        | Fact | React version |
-        | Fact operator | Greater than semantic version |
-        | Value | 16.0.0 |
-    3. Press **+ADD CONDITION** and set the third condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | Package JSON information |
-        | Fact | Has React dependency |
-        | Fact operator | Is False |
+   1. Set **Type** to `Or`.
+   2. Set the first condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | GitHub repository file list |
+      | Fact | List of files |
+      | Fact operator | Does not contain |
+      | Value | package.json |
 
-    ![Check Condition section fields](./react/React_Check_Condition_Section.webp)
+   3. Press **+ADD CONDITION** and set the second condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | Package JSON information |
+      | Fact | React version |
+      | Fact operator | Greater than semantic version |
+      | Value | 16.0.0 |
+   4. Press **+ADD CONDITION** and set the third condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | Package JSON information |
+      | Fact | Has React dependency |
+      | Fact operator | Is False |
+
+   ![Check Condition section fields](./react/React_Check_Condition_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to update the React version in the component. You can also add a link to a scaffolder template that automatically achieves this fix.
 
-    ![Check Fix section displayed](./Check_Fix_Section.webp)
+   ![Check Fix section displayed](./Check_Fix_Section.webp)
 
-6. Use the **Applies to** filter to target this data source at some components which you expect to have React versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
+6. Use the **Applies to** filter to target this data source at some components which you expect to have React versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./react/React_Applies_To_Section.webp)
+   ![About Data Source section displayed](./react/React_Applies_To_Section.webp)
 
 7. Press **SAVE**.
 
@@ -178,34 +181,36 @@ In order to track the .NET Framework versions used in the catalog, we are going 
 
 3. Set the Data Provider **Type** to `Component Repository File`, and **Location** to `{{metadata.name}}.csproj`. Select a value for **Select Entity to test data source against** and press **TEST**.
 
-    ![Data Provider section input fields](./dot-net/DotNet_Data_Provider_Section.webp)
+   ![Data Provider section input fields](./dot-net/DotNet_Data_Provider_Section.webp)
 
 4. Test results are displayed.
 
-    ![Data Provider test results displayed](./dot-net/DotNet_Data_Test_Results_Section.webp)
+   ![Data Provider test results displayed](./dot-net/DotNet_Data_Test_Results_Section.webp)
 
 5. Create multiple Facts:
-    1. Set **Parser** to `REGEX`.
-    2. Set the first Fact to:
-        | Field Name | Value |
-        | --- | --- |
-        | Fact Name | DotNet Framework version |
-        | DotNet Framework Version | TargetFramework>net(...+?) |
-        | Type | String |
 
-    ![Data Facts section input fields](./dot-net/DotNet_Data_Facts_Section.webp)
+   1. Set **Parser** to `REGEX`.
+   2. Set the first Fact to:
+      | Field Name | Value |
+      | --- | --- |
+      | Fact Name | DotNet Framework version |
+      | DotNet Framework Version | TargetFramework>net(...+?) |
+      | Type | String |
+
+   ![Data Facts section input fields](./dot-net/DotNet_Data_Facts_Section.webp)
 
 6. Press **CHECK FACTS**.
 
-    ![Data Facts results displayed](./dot-net/DotNet_Data_Facts_Results_Section.webp)
+   ![Data Facts results displayed](./dot-net/DotNet_Data_Facts_Results_Section.webp)
 
-7. Use the **Applies to** filter to target this data source at some components which you expect to have .NET Framework versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
+7. Use the **Applies to** filter to target this data source at some components which you expect to have .NET Framework versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./dot-net/DotNet_Applies_To_Section.webp)
+   ![About Data Source section displayed](./dot-net/DotNet_Applies_To_Section.webp)
 
 8. Press **SAVE**.
 
 ## Visualise the distribution of .NET Framework versions being used
+
 Data Source comes with a built-in visualisation panel which lets us get an overview of the .NET Framework versions being used. When viewing a Data Source, expand the "Facts visualization" section to see it.
 
 ![Data Visualisation results displayed](./dot-net/DotNet_Data_Visualization_Section.webp)
@@ -230,32 +235,33 @@ Let’s write a check to combine both of these properties.
 
 1. Visit Tech Insights, select the **Checks** tab, and press **ADD CHECK**.
 
-    ![Add Check button](./Add_Check.webp)
+   ![Add Check button](./Add_Check.webp)
 
 2. Enter a descriptive **Name** and **Description**.
 
    ![About section input fields](./dot-net/DotNet_Check_About_Section.webp)
 
 3. Create a check:
-    1. Set the first condition to:
-        | Field Name | Value |
-        | --- | --- |
-        | Data Source | CSProject File Information |
-        | Fact | DotNet Framework Version |
-        | Fact operator | Greater than semantic version |
-        | Value | ^6.0 |
 
-    ![Check Condition section fields](./dot-net/DotNet_Check_Condition_Section.webp)
+   1. Set the first condition to:
+      | Field Name | Value |
+      | --- | --- |
+      | Data Source | CSProject File Information |
+      | Fact | DotNet Framework Version |
+      | Fact operator | Greater than semantic version |
+      | Value | ^6.0 |
+
+   ![Check Condition section fields](./dot-net/DotNet_Check_Condition_Section.webp)
 
 4. Press **DRY RUN**
 
 5. (Optional) Add a URL to documentation outlining the steps to update the .NET Framework version in the component.
 
-    ![Check Fix section displayed](./Check_Fix_Section.webp)
+   ![Check Fix section displayed](./Check_Fix_Section.webp)
 
-6. Use the **Applies to** filter to target this data source at some components which you expect to have .NET Framework versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results. 
+6. Use the **Applies to** filter to target this data source at some components which you expect to have .NET Framework versions. We recommend starting with a highly targeted filter for initial experimentation and iteration. You can widen the filter later to capture more results.
 
-    ![About Data Source section displayed](./dot-net/DotNet_Applies_To_Section.webp)
+   ![About Data Source section displayed](./dot-net/DotNet_Applies_To_Section.webp)
 
 7. Press **SAVE**.
 

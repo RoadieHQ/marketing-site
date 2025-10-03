@@ -9,8 +9,7 @@ import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogP
 const BlogIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
 
-  const posts = data.allContentfulBlogPost.edges
-    .map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
+  const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
 
   return (
     <>
@@ -40,10 +39,7 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query BlogIndex {
-    allContentfulBlogPost(
-      sort: {date: DESC}
-      filter: {tags: {ne: "newsletter"}}
-    ) {
+    allContentfulBlogPost(sort: { date: DESC }, filter: { tags: { ne: "newsletter" } }) {
       edges {
         node {
           description {

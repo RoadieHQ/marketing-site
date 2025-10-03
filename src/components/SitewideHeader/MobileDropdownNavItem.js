@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import classnames from 'classnames';
 import { Link } from 'components';
 
@@ -13,10 +13,9 @@ const MobileDropdownNavItem = ({ item, isActive }) => (
     )}
 
     <span
-      className={
-        classnames('text-base font-medium', {
-          'text-gray-900': !isActive,
-          'text-primary-600': isActive,
+      className={classnames('text-base font-medium', {
+        'text-gray-900': !isActive,
+        'text-primary-600': isActive,
       })}
     >
       {item.name}

@@ -2,34 +2,34 @@ import React from 'react';
 
 import { ChevronRightIcon } from '@heroicons/react/solid';
 import { TextLink as Link, Lead } from 'components';
-import {
-  BookOpenIcon,
-  ChatIcon,
-  ShieldCheckIcon,
-  AcademicCapIcon,
-} from '@heroicons/react/outline';
+import { BookOpenIcon, ChatIcon, ShieldCheckIcon, AcademicCapIcon } from '@heroicons/react/outline';
 
-const LINKS = [{
-  title: 'Documentation',
-  description: 'Set up your Roadie Backstage experience.',
-  to: '/docs/',
-  icon: AcademicCapIcon,
-}, {
-  title: 'Blog',
-  description: 'Read our posts on Backstage and Roadie.',
-  to: '/blog/',
-  icon: BookOpenIcon,
-}, {
-  title: 'Case Studies',
-  description: 'How organisations succeed with Backstage',
-  to: '/case-studies/',
-  icon: ShieldCheckIcon,
-}, {
-  title: 'Chat with us on Discord',
-  description: 'Get support or provide feedback.',
-  to: 'https://discord.gg/W3qEMhmx4f',
-  icon: ChatIcon,
-}];
+const LINKS = [
+  {
+    title: 'Documentation',
+    description: 'Set up your Roadie Backstage experience.',
+    to: '/docs/',
+    icon: AcademicCapIcon,
+  },
+  {
+    title: 'Blog',
+    description: 'Read our posts on Backstage and Roadie.',
+    to: '/blog/',
+    icon: BookOpenIcon,
+  },
+  {
+    title: 'Case Studies',
+    description: 'How organisations succeed with Backstage',
+    to: '/case-studies/',
+    icon: ShieldCheckIcon,
+  },
+  {
+    title: 'Chat with us on Discord',
+    description: 'Get support or provide feedback.',
+    to: 'https://discord.gg/W3qEMhmx4f',
+    icon: ChatIcon,
+  },
+];
 
 const NavigationListItem = ({ link }) => (
   <li className="relative py-6 flex items-start space-x-4">

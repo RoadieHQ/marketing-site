@@ -12,7 +12,7 @@ The Entity Validator is enabled automatically when you install the Roadie GitHub
 
 ## Configuration
 
-The validator has a configuration file option to optionally exclude Backstage descriptor files from validation. The validator included in Roadie GitHub app reads a file called `.roadierc` from the repository root and determines configuration based on that. The format of the `.roadierc` file is yaml. 
+The validator has a configuration file option to optionally exclude Backstage descriptor files from validation. The validator included in Roadie GitHub app reads a file called `.roadierc` from the repository root and determines configuration based on that. The format of the `.roadierc` file is yaml.
 
 If you want to exclude files from validation you can use a glob pattern of file definitions to exclude. An example configuration would look like something like below:
 
@@ -23,10 +23,10 @@ validator:
 ```
 
 ## Schemas
-The validator is based on the published [Backstage schemas](https://backstage.io/docs/features/software-catalog/descriptor-format) which can be referred to in the Backstage docs along with two additional Kinds - [Repository](../repositories) and Product. A list of Kinds available in Roadie can be [found here](../modeling-entities). 
+
+The validator is based on the published [Backstage schemas](https://backstage.io/docs/features/software-catalog/descriptor-format) which can be referred to in the Backstage docs along with two additional Kinds - [Repository](../repositories) and Product. A list of Kinds available in Roadie can be [found here](../modeling-entities).
 
 ## Further reading
 
 1. The [Backstage Entity Validator repository](https://github.com/RoadieHQ/backstage-entity-validator).
 2. [Backstage Entity Schemas](https://backstage.io/docs/features/software-catalog/descriptor-format)
-

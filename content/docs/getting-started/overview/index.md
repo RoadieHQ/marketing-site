@@ -4,7 +4,6 @@ publishedDate: '2024-04-26T16:00:00.0Z'
 description: How to begin onboarding on to Roadie.
 ---
 
-
 ## Introduction
 
 Learn how to build your internal developer portal with Roadie:
@@ -16,7 +15,7 @@ Learn how to build your internal developer portal with Roadie:
 
 ## 1. [Setting up your catalog](/docs/getting-started/adding-a-catalog-item/)
 
-We provide various ways to populate and model your software catalog. 
+We provide various ways to populate and model your software catalog.
 
 Generally you will store entity files in a code repository and then provide Roadie with the URL of that file for it to be imported as a catalog entry. However you may also import a catalog item via the Roadie CLI or API.
 
@@ -29,7 +28,7 @@ Generally you will store entity files in a code repository and then provide Road
 
 ## 2. [Adding users](/docs/getting-started/user-management/)
 
-- [Invite](/docs/getting-started/user-management/) members of your team who will be responsible for Roadie. 
+- [Invite](/docs/getting-started/user-management/) members of your team who will be responsible for Roadie.
 - Designate [admins](/docs/getting-started/assigning-admins/) who will be responsible for configuring the Roadie system.
 - [Model users, groups and teams](/docs/getting-started/teams/) to build concepts of ownership into the catalog from the start.
 
@@ -43,7 +42,7 @@ Roadie allows you to configure which plugins you want to use via our UI. This gu
 
 ## 5. [Creating a scorecard](/docs/getting-started/creating-a-scorecard/)
 
-Roadie Tech Insights helps you keep track of all of your software assets and make sure they meet your quality and compliance targets. You can create Scorecards to track the things that matter about your assets in the Backstage catalog. 
+Roadie Tech Insights helps you keep track of all of your software assets and make sure they meet your quality and compliance targets. You can create Scorecards to track the things that matter about your assets in the Backstage catalog.
 
 ## 6. [Creating a template](/docs/getting-started/scaffolding-components/)
 

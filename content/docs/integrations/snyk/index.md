@@ -14,18 +14,19 @@ integrationType: OSS plugin
 In order to use the Backstage Snyk plugin with Roadie, you must securely provide Roadie with an API token which it can use to access the Snyk API.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Connect Roadie to Snyk
 
 To get an API token, you need to sign up for a Snyk account. Within this account, you will need to obtain the following:
 
- * API token
- * Organization Name
+- API token
+- Organization Name
 
 #### API Token
 
@@ -38,7 +39,6 @@ This can be found by clicking your name in the top right-hand corner and going t
 This can be found under the settings page that is visible when you login to Snyk.
 
 ![Organization Name Snyk.](./org.webp)
-
 
 ### Step 1: Add the token to Roadie
 
@@ -54,7 +54,7 @@ Wait a few moments for the secret to be applied.
 
 ### Step 2: Add the Organization name to Roadie
 
-Components need `snyk.io/org-id` annotation set in order to work properly. Setting the correct organisation name will automatically retrieve organization id and use it as a value for this annotation. 
+Components need `snyk.io/org-id` annotation set in order to work properly. Setting the correct organisation name will automatically retrieve organization id and use it as a value for this annotation.
 This means you will not have to add a `snyk.io/org-id` annotation manually for each component but it will be internally retrieved by Roadie using your organisation name.
 
 You can set this up in Settings page:
@@ -71,9 +71,9 @@ The first one is `snyk.io/org-id` which identifies your Snyk organization. As de
 
 ![Organization Name Snyk.](./org.webp)
 
-Additionally, the Snyk plugin uses `github.com/project-slug` annotation to automatically match projects from GitHub to their corresponding Snyk targets. 
+Additionally, the Snyk plugin uses `github.com/project-slug` annotation to automatically match projects from GitHub to their corresponding Snyk targets.
 
-For cases where it is not possible to use the GitHub, you can also use `snyk.io/target-id` annotation. Unfortunately, Snyk doesn't provide a UI currently to identify Target Ids but you can find them by inspecting the network requests on the Snyk Projects pages. 
+For cases where it is not possible to use the GitHub, you can also use `snyk.io/target-id` annotation. Unfortunately, Snyk doesn't provide a UI currently to identify Target Ids but you can find them by inspecting the network requests on the Snyk Projects pages.
 
 Edit the `catalog-info.yaml` for the component you wish to associate with this Snyk project and add the `github.com/project-slug` and `snyk.io/target-id` annotation.
 

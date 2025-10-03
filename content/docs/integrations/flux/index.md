@@ -11,20 +11,21 @@ integrationType: OSS plugin
 
 ## Introduction
 
-The Flux plugin allows you to view and manage your Flux controlled workloads directly via the Roadie UI. The plugin exposes multiple _Card_ components which can be combined into a rich dashboard of information. 
+The Flux plugin allows you to view and manage your Flux controlled workloads directly via the Roadie UI. The plugin exposes multiple _Card_ components which can be combined into a rich dashboard of information.
 
 ![Two cards from Flux plugin displaying information](./two-flux-cards.webp)
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Configuration
 
-The base configuration of the plugin is handled by the Kubernetes plugin, so make sure you have configured a working Kubernetes connection first. You can find instructions on how to do that from the [Kubernetes plugin documentation.](/docs/integrations/kubernetes/)  
+The base configuration of the plugin is handled by the Kubernetes plugin, so make sure you have configured a working Kubernetes connection first. You can find instructions on how to do that from the [Kubernetes plugin documentation.](/docs/integrations/kubernetes/)
 
 To complement the base configuration, the Flux plugin also needs additional permissions to be able to query the correct resources from within the Kubernetes cluster. These permissions can be added to complement the same, already configured, Kubernetes roles and bindings.
 
@@ -32,18 +33,18 @@ There are two sets of permissions that can be configured for the plugin, "view" 
 
 ```yaml
 rules:
- - apiGroups:
-    - notification.toolkit.fluxcd.io
-    - source.toolkit.fluxcd.io
-    - helm.toolkit.fluxcd.io
-    - image.toolkit.fluxcd.io
-    - kustomize.toolkit.fluxcd.io
-   resources:
-    - "*"
-   verbs:
-    - get
-    - list
-    - watch
+  - apiGroups:
+      - notification.toolkit.fluxcd.io
+      - source.toolkit.fluxcd.io
+      - helm.toolkit.fluxcd.io
+      - image.toolkit.fluxcd.io
+      - kustomize.toolkit.fluxcd.io
+    resources:
+      - '*'
+    verbs:
+      - get
+      - list
+      - watch
 ```
 
 The permission rules for the "sync" role are:
@@ -51,7 +52,7 @@ The permission rules for the "sync" role are:
 ```yaml
 rules:
   - apiGroups:
-     - source.toolkit.fluxcd.io
+      - source.toolkit.fluxcd.io
     resources:
       - buckets
       - helmcharts
@@ -74,17 +75,14 @@ rules:
       - patch
 ```
 
-
 You can find a full configuration options from the [plugin documentation.](https://github.com/weaveworks/weaveworks-backstage/tree/main/plugins/backstage-plugin-flux#readme).
-
-
 
 ## Adding Flux Cards to Roadie
 
 The Flux plugin exposes multiple different _Card_ type components that can be added to your Roadie instance. The recommended way to display a god amount of information about your Flux configurations related to your entity is to create a new "Dashboard" tab and add the wanted cards in there. The available card components are as follows:
 
 | Component                        | Description                                                               |
-|----------------------------------|---------------------------------------------------------------------------|
+| -------------------------------- | ------------------------------------------------------------------------- |
 | `EntityFluxDeploymentsCard`      | Displays associated Kustomizations and HelmReleases                       |
 | `EntityFluxSourcesCard`          | Displays associated GitRepositories, OCIRepositories and HelmRepositories |
 | `EntityFluxHelmReleasesCard`     | Shows HelmReleases associated to the Entity                               |
@@ -94,12 +92,12 @@ The Flux plugin exposes multiple different _Card_ type components that can be ad
 | `EntityFluxHelmRepositoriesCard` | Shows HelmRepositories associated to the Entity                           |
 | `EntityFluxImagePoliciesCard`    | Shows ImagePolicies associated to the Entity                              |
 
-
 ## Configuring your entities
 
 The Flux plugin reuses the already existing `Kubernetes` plugin annotations. The available annotations for an entity are:
-* `backstage.io/kubernetes-id: something` - Identify the kubernetes resource having the matching label
-* `backstage.io/kubernetes-namespace: roadie` - To configure the namespace where to look resources from
+
+- `backstage.io/kubernetes-id: something` - Identify the kubernetes resource having the matching label
+- `backstage.io/kubernetes-namespace: roadie` - To configure the namespace where to look resources from
 
 ## Configuring your Kubernetes resources
 
@@ -124,8 +122,8 @@ spec:
   interval: 1m0s
 ```
 
-
 ### References
-* [Weaveworks Flux plugin documentation](https://github.com/weaveworks/weaveworks-backstage/tree/main/plugins/backstage-plugin-flux#readme)
-* [Backstage Kubernetes plugin docs](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
-* [Broker Configuration documentation](/docs/integrations/broker)
+
+- [Weaveworks Flux plugin documentation](https://github.com/weaveworks/weaveworks-backstage/tree/main/plugins/backstage-plugin-flux#readme)
+- [Backstage Kubernetes plugin docs](https://backstage.io/docs/features/kubernetes/configuration#common-backstageiokubernetes-id-label)
+- [Broker Configuration documentation](/docs/integrations/broker)

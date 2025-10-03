@@ -1,6 +1,5 @@
 import fullRoadieDocsPath from './fullRoadieDocsPath';
 
-
 describe('#fullRoadieDocsPath', () => {
   test('transforms paths as expected', () => {
     const tests = [

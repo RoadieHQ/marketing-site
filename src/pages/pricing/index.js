@@ -13,9 +13,7 @@ import { FAQs } from 'components/landing';
 const Pricing = ({
   data: {
     site: {
-      siteMetadata: {
-        title: siteTitle,
-      },
+      siteMetadata: { title: siteTitle },
     },
   },
 }) => {
@@ -41,7 +39,9 @@ const Pricing = ({
             />
           </div>
 
-          <div className={`mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-${TIERS.length} sm:gap-6 lg:max-w-4xl lg:mx-auto`}>
+          <div
+            className={`mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-${TIERS.length} sm:gap-6 lg:max-w-4xl lg:mx-auto`}
+          >
             {TIERS.map((tier) => (
               <Tier tier={tier} currentlySetCurrency={currentlySetCurrency} key={tier.name} />
             ))}
@@ -50,13 +50,15 @@ const Pricing = ({
 
         <div className="max-w-4xl mx-auto py-16 sm:py-24 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <Headline el="h2" size="small">Feature comparison</Headline>
+            <Headline el="h2" size="small">
+              Feature comparison
+            </Headline>
           </div>
           <FeatureComparisonTable />
         </div>
       </div>
 
-      <FAQs/>
+      <FAQs />
 
       <SitewideFooter />
     </>

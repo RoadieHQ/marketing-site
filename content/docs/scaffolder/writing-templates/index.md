@@ -112,8 +112,6 @@ parameters:
       type: string
 ```
 
-
-
 ## `steps`
 
 Steps define the actions that are taken by the scaffolder template when it is run as a task. The scaffolder initially creates a temporary directory referred to as the _workspace_, in which files are downloaded, generated, updated and pushed to some external system. Each step that is defined is run in order.
@@ -138,6 +136,7 @@ steps:
 If the parameter id does not contain a special character you can also refer to it using the dot syntax `${{ parameters.name }}`
 
 #### Outputs from previous steps
+
 You can refer to the output of a previous step using the following syntax:
 
 ```yaml
@@ -155,12 +154,12 @@ ${{ steps.publish.output.repoContentsUrl }}
 You can use array type form inputs or step outputs to repeat action steps multiple times. e.g.
 
 ```yaml
-    - id: log-description
-      name: Log Message
-      each: ['Brian', 'Ian']
-      action: debug:log
-      input:
-        message: 'Hello, ${{ each.value }}!'
+- id: log-description
+  name: Log Message
+  each: ['Brian', 'Ian']
+  action: debug:log
+  input:
+    message: 'Hello, ${{ each.value }}!'
 ```
 
 #### Accessing the logged in user
@@ -188,7 +187,6 @@ ${{ user.entity.spec.profile.email }}
 You can find all the available actions to your Roadie instance by visiting the following page from within Roadie:
 
 `https://<tenant-name>.roadie.so/create/actions`
-
 
 ### Conditional Steps
 
@@ -271,7 +269,6 @@ spec:
 
 NB: This can only be done for a single step as the re-usable section must be valid yaml.
 
-
 ### Using a user's Github Token to execute template steps
 
 You can use the user that runs the scaffolder template to open a PR or other Github based actions rather than opening it on behalf of the Roadie Github App by specifying the token field.
@@ -293,7 +290,7 @@ parameters:
             secretsKey: USER_OAUTH_TOKEN
             additionalScopes:
               github:
-              # - admin:org # Needed if you want to create a repo
+                # - admin:org # Needed if you want to create a repo
                 - workflow
           allowedHosts:
             - github.com
@@ -311,6 +308,7 @@ steps:
 ```
 
 Alternatively, if you don't need to build a repo URL you can use the `OauthSecret` field to intiate login only. The token is stored in a secret value in the same way as above.
+
 ```
   parameters:
     - title: User Login

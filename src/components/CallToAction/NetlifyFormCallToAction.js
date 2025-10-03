@@ -48,7 +48,6 @@ export const submitEmailToNetlifyForms = async ({
 
     trackPlausibleEvent(netlifyFormName, { email });
     trackSubscribe({ email });
-
   } catch (error) {
     console.error('Submission failed', error, resp);
     return Promise.reject();

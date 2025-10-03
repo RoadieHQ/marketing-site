@@ -13,14 +13,14 @@ integrationType: OSS plugin
 
 In order to use the Bugsnag plugin, Roadie needs an API token to communicate with Bugsnag APIs.
 
-
 This is set within backstage at the following url:
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ```text
@@ -37,7 +37,7 @@ Start by visiting the account settings page in Bugsnag : https://app.bugsnag.com
 
 Click on the "Generate new token" button.
 
-   ![Personal Tokens screen in Bugsnag with no tokens defined](./generate-api-token.webp)
+![Personal Tokens screen in Bugsnag with no tokens defined](./generate-api-token.webp)
 
 On the modal window you can give the token a description so you can recognize it later, e.g. "Roadie Backstage" and finally Bugsnag will show you the API token once. Make note of this token, you will only be able to see it once.
 
@@ -55,9 +55,7 @@ bugsnag.com/project-key: <organization-name>/<project-notifier-api-key>
 
 Both values can be found in the Bugsnag settings dashboard, under organization and project settings.
 
-⚠️  The `<organization-name>` value is case-sensitive. Incorrect casing will cause the plugin to display an error saying "Organization not found".
-
-
+⚠️ The `<organization-name>` value is case-sensitive. Incorrect casing will cause the plugin to display an error saying "Organization not found".
 
 ## References
 

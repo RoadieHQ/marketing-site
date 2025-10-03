@@ -16,7 +16,8 @@ const SideBySideHero = () => {
         </Headline>
 
         <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-          Easier, scalable and zero-maintenance. With security, scorecards and customizability built-in.
+          Easier, scalable and zero-maintenance. With security, scorecards and customizability
+          built-in.
         </h2>
 
         <Button

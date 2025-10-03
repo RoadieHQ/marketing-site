@@ -21,10 +21,11 @@ https://<tenant-name>.roadie.so/administration/secrets
 This page describes how to create and set up the API token.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
@@ -41,7 +42,7 @@ Visit `https://<tenant-name>.roadie.so/administration/rootly` and enter the toke
 
 ### Step 3: Annotate your entities
 
-If you want to link entities in Roadie with data in Rootly you'll need to [add an annotation](https://github.com/rootlyhq/backstage-plugin/tree/master?tab=readme-ov-file#annotations). For example, for a Service component entity you would annotate with either `rootly.com/service-slug` or `rootly.com/service-id`. 
+If you want to link entities in Roadie with data in Rootly you'll need to [add an annotation](https://github.com/rootlyhq/backstage-plugin/tree/master?tab=readme-ov-file#annotations). For example, for a Service component entity you would annotate with either `rootly.com/service-slug` or `rootly.com/service-id`.
 
 ### Step 4: (Optional) Configure Additional Organizations
 

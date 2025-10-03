@@ -4,9 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 import PubDate from './PubDate';
 
-const hasAvatar = (author) => (
-  has(author, 'avatar.childImageSharp.gatsbyImageData')
-);
+const hasAvatar = (author) => has(author, 'avatar.childImageSharp.gatsbyImageData');
 
 const AuthorAvatar = ({ author }) => {
   if (!hasAvatar(author)) return null;
@@ -26,11 +24,7 @@ const AuthorAvatar = ({ author }) => {
 const AuthorName = ({ author }) => {
   if (!author) return null;
 
-  return (
-    <p className="text-sm font-medium text-gray-900">
-      {author.name}
-    </p>
-  );
+  return <p className="text-sm font-medium text-gray-900">{author.name}</p>;
 };
 
 const ReadInfo = ({ post }) => {

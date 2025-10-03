@@ -6,12 +6,7 @@ import get from 'lodash/get';
 import pick from 'lodash/pick';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 import ContentLoader from 'react-content-loader';
-import {
-  NpmChip,
-  GitHubChip,
-  RoadieDocsChip,
-  GravatarImage,
-} from 'components/backstage/plugins';
+import { NpmChip, GitHubChip, RoadieDocsChip, GravatarImage } from 'components/backstage/plugins';
 
 const DetailsListItem = ({ label, value, ...props }) => {
   return (
@@ -45,14 +40,12 @@ const MaintainersList = ({ npmData, npmDataLoadingState }) => {
             <Maintainer name={name} email={email} key={email} />
           ))}
         </ul>
-        <p className="italic text-gray-400">
-          {npmData.maintainersHelpText}
-        </p>
+        <p className="italic text-gray-400">{npmData.maintainersHelpText}</p>
       </>
     );
   } else {
     inner = (
-      <ContentLoader 
+      <ContentLoader
         speed={2}
         width={400}
         height={200}
@@ -75,14 +68,12 @@ const MaintainersList = ({ npmData, npmDataLoadingState }) => {
         <Title>Maintainers</Title>
       </div>
 
-      <div>
-        {inner}
-      </div>
+      <div>{inner}</div>
     </>
   );
 };
 
-async function fetchNpmDataByName ({ packageName }) {
+async function fetchNpmDataByName({ packageName }) {
   const funcUrl = '/.netlify/functions/fetchNpmDataByName';
   let response;
 
@@ -110,7 +101,9 @@ async function fetchNpmDataByName ({ packageName }) {
       data: json.data,
     };
   } catch (err) {
-    console.warn(`Unparsable JSON returned from Netlify function. It's likely not available in this environment.`);
+    console.warn(
+      `Unparsable JSON returned from Netlify function. It's likely not available in this environment.`
+    );
     return {
       status: 'error',
       data: {},
@@ -126,14 +119,8 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
     inner = (
       <div>
         <ul className="mb-3">
-          <DetailsListItem
-            label="Version"
-            value={npmData.latestVersion}
-          />
-          <DetailsListItem
-            label="Downloads in last month"
-            value={npmData.lastMonthDownloads}
-          />
+          <DetailsListItem label="Version" value={npmData.latestVersion} />
+          <DetailsListItem label="Downloads in last month" value={npmData.lastMonthDownloads} />
           <DetailsListItem
             label="Last published"
             value={npmData.latestVersionPublishedAgo}
@@ -144,14 +131,8 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
             value={npmData.firstPublishedAgo}
             title={npmData.firstPublishedTime}
           />
-          <DetailsListItem
-            label="Number of versions"
-            value={npmData.numberOfVersions}
-          />
-          <DetailsListItem
-            label="License"
-            value={npmData.license}
-          />
+          <DetailsListItem label="Number of versions" value={npmData.numberOfVersions} />
+          <DetailsListItem label="License" value={npmData.license} />
         </ul>
 
         <span
@@ -163,10 +144,9 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
         </span>
       </div>
     );
-
   } else {
     inner = (
-      <ContentLoader 
+      <ContentLoader
         speed={2}
         width={400}
         height={240}
@@ -174,20 +154,20 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
         backgroundColor="#f3f3f3"
         foregroundColor="#ecebeb"
       >
-        <rect x="0" y="0" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="0" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="40" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="40" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="80" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="80" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="120" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="120" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="160" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="160" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="200" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="200" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="0" y="240" rx="3" ry="3" width="150" height="24" /> 
-        <rect x="220" y="240" rx="3" ry="3" width="150" height="24" /> 
+        <rect x="0" y="0" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="0" rx="3" ry="3" width="150" height="24" />
+        <rect x="0" y="40" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="40" rx="3" ry="3" width="150" height="24" />
+        <rect x="0" y="80" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="80" rx="3" ry="3" width="150" height="24" />
+        <rect x="0" y="120" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="120" rx="3" ry="3" width="150" height="24" />
+        <rect x="0" y="160" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="160" rx="3" ry="3" width="150" height="24" />
+        <rect x="0" y="200" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="200" rx="3" ry="3" width="150" height="24" />
+        <rect x="0" y="240" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="240" rx="3" ry="3" width="150" height="24" />
       </ContentLoader>
     );
   }
@@ -210,7 +190,9 @@ const parseNpmData = (npmData) => {
 
   let latestVersionPublishedAgo, firstPublishedAgo, lastSyncedAgo;
   if (latestVersionPublishedTime) {
-    latestVersionPublishedAgo = `${formatDistanceToNowStrict(Date.parse(latestVersionPublishedTime))} ago`;
+    latestVersionPublishedAgo = `${formatDistanceToNowStrict(
+      Date.parse(latestVersionPublishedTime)
+    )} ago`;
   }
   if (firstPublishedTime) {
     firstPublishedAgo = `${formatDistanceToNowStrict(Date.parse(npmData.time.created))} ago`;
@@ -222,18 +204,14 @@ const parseNpmData = (npmData) => {
   let maintainersHelpText = `Maintainer images come from Gravatar.`;
   if (npmData.maintainers && npmData.numberOfMaintainers > npmData.maintainers.length) {
     const extraMaintainers = npmData.numberOfMaintainers - npmData.maintainers.length;
-    maintainersHelpText += `...along with ${extraMaintainers} others. `
+    maintainersHelpText += `...along with ${extraMaintainers} others. `;
   }
 
   const numberOfVersions = npmData.numberOfVersions?.toLocaleString();
   const lastMonthDownloads = npmData.lastMonthDownloads?.toLocaleString();
 
   return {
-    ...pick(npmData, [
-        'latestVersion',
-        'license',
-        'maintainers',
-      ]),
+    ...pick(npmData, ['latestVersion', 'license', 'maintainers']),
     latestVersionPublishedTime,
     lastSyncedTime,
     latestVersionPublishedAgo,
@@ -279,7 +257,9 @@ const Sidebar = ({
         </div>
         <ul className="pl-6">
           {introduction && (
-            <li className="list-disc"><Link to="#introduction">Introduction</Link></li>
+            <li className="list-disc">
+              <Link to="#introduction">Introduction</Link>
+            </li>
           )}
           {installationInstructions && (
             <li className="list-disc">
@@ -287,10 +267,14 @@ const Sidebar = ({
             </li>
           )}
           {notes && (
-            <li className="list-disc"><Link to="#notes">Things to Know</Link></li>
+            <li className="list-disc">
+              <Link to="#notes">Things to Know</Link>
+            </li>
           )}
           {changelog && (
-            <li className="list-disc"><Link to="#changelog">Changelog</Link></li>
+            <li className="list-disc">
+              <Link to="#changelog">Changelog</Link>
+            </li>
           )}
         </ul>
       </div>
@@ -301,10 +285,7 @@ const Sidebar = ({
         </div>
 
         <div className="mb-3">
-          <RoadieDocsChip
-            availableOnRoadie={availableOnRoadie} 
-            roadieDocsPath={roadieDocsPath}
-          />
+          <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
         </div>
 
         <div className="mb-3">

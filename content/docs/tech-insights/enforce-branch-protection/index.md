@@ -9,9 +9,8 @@ Branch protection can bring an extra layer of security to your organization by e
 Roadie automatically collects this information and you can view reports or create checks about that data.
 In this tutorial, we’re going to:
 
-1. Learn how to create a check which requires GitHub repositories associated with component entities to have branch protection  
+1. Learn how to create a check which requires GitHub repositories associated with component entities to have branch protection
 2. visualize data within an existing Data Source.
-
 
 ## Prerequisites
 
@@ -27,21 +26,20 @@ In this tutorial, we’re going to:
 
 3. In the Conditions section, set the check condition to the following values:
 
-    | Input name | Value |
-    | --- | --- |
-    | Data Source | GitHub Settings Data Source |
-    | Fact | Branch Protection |
-    | Fact operator | Is True |
+   | Input name    | Value                       |
+   | ------------- | --------------------------- |
+   | Data Source   | GitHub Settings Data Source |
+   | Fact          | Branch Protection           |
+   | Fact operator | Is True                     |
 
-  We now have a condition which passes when a Component has branch protection enabled on the default branch.
-    
-  You can use the “DRY RUN” button to test these conditions against some Components in your catalog to ensure that they operate in the way you would expect and return the correct pass or fail result.
-    
-  ![compound-conditions.webp](branch-protection-condition.webp)
+We now have a condition which passes when a Component has branch protection enabled on the default branch.
 
-7. Use the filters to target this check at appropriate Components. For example, you might only want to target components with lifecycle "production". 
+You can use the “DRY RUN” button to test these conditions against some Components in your catalog to ensure that they operate in the way you would expect and return the correct pass or fail result.
+
+![compound-conditions.webp](branch-protection-condition.webp)
+
+7. Use the filters to target this check at appropriate Components. For example, you might only want to target components with lifecycle "production".
 8. Save the check by clicking “SAVE”. If you’re not quite ready to go live yet, you can use the “SAVE AS DRAFT” button to save the check but ensure only admins can see it.
-
 
 ## Visualise the percentage of Components with branch protection
 

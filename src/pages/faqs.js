@@ -4,15 +4,11 @@ import { FAQs } from 'components/landing';
 
 const Faqs = () => (
   <>
-    <SEO
-      title={`FAQs | Roadie`}
-      description="Frequently asked questions"
-    />
+    <SEO title={`FAQs | Roadie`} description="Frequently asked questions" />
     <SitewideHeader />
-    <FAQs/>
+    <FAQs />
     <SitewideFooter />
   </>
 );
 
 export default Faqs;
-

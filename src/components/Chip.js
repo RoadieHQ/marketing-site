@@ -13,9 +13,7 @@ const Chip = ({ label, icon, color = 'primary' }) => {
   return (
     <span className={classnames(defaultClasses, colorClasses)}>
       {icon}
-      <span>
-        {label}
-      </span>
+      <span>{label}</span>
     </span>
   );
 };

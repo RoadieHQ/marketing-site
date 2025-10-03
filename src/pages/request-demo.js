@@ -16,9 +16,7 @@ const SEO_TITLE = 'Request a demo of Roadie';
 
 const SubmissionSuccessPositiveBody = () => (
   <>
-    <p>
-      Thank you for requesting a demo of Roadie. We&apos;ll be in touch via the email provided.
-    </p>
+    <p>Thank you for requesting a demo of Roadie. We&apos;ll be in touch via the email provided.</p>
   </>
 );
 
@@ -69,7 +67,8 @@ const RequestDemo = ({ data, location }) => {
           </h2>
 
           <p>
-            Ask us about security, costs, customization, integrations, or anything else you want to know.
+            Ask us about security, costs, customization, integrations, or anything else you want to
+            know.
           </p>
 
           <div className="relative z-10 lg:grid lg:grid-cols-3 mt-10">

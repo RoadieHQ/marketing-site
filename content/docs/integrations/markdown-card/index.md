@@ -14,12 +14,12 @@ integrationType: OSS plugin
 Roadie provides two different versions of Markdown Card plugins that can be used to display content on either the [Home page](/docs/integrations/home-page/) or [Catalog dashboard pages](/docs/details/updating-the-ui/#updating-dashboards).
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted | 
 
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 #### OAuth Home Page Markdown Card
 
@@ -30,9 +30,9 @@ To be able to see the rendered content make sure you are logged into GitHub.
 
 #### Roadie Markdown Card
 
-The Roadie Markdown Card provides the possibility to retrieve and display markdown content from sources that you have configured integrations for on your Roadie instance. To see available integrations, take a look at the integrations section on the [plugins page](/docs/integrations/). 
+The Roadie Markdown Card provides the possibility to retrieve and display markdown content from sources that you have configured integrations for on your Roadie instance. To see available integrations, take a look at the integrations section on the [plugins page](/docs/integrations/).
 
-Roadie Markdown Card can be enabled on both the Home Page as well as individual entity pages. 
+Roadie Markdown Card can be enabled on both the Home Page as well as individual entity pages.
 
 ### Setup
 
@@ -64,7 +64,7 @@ To configure the Roadie Home Page Markdown Card to point to your desired locatio
 
 1.  Click on the `wrench` icon to edit the props of the component.
     ![](props.webp)
-    Add the following JSON as props. The `path` prop supports URLs from integrations that you have configured on your Roadie instance. 
+    Add the following JSON as props. The `path` prop supports URLs from integrations that you have configured on your Roadie instance.
 
     ```json
     {
@@ -76,7 +76,6 @@ To configure the Roadie Home Page Markdown Card to point to your desired locatio
 2.  Click Save
 
     Now it should load and render the markdown file you provided the path for.
- 
 
 #### OAuth Markdown Card - Configure plugin via props
 
@@ -109,7 +108,6 @@ To configure the OAuth Markdown card to point to your desired location, you need
 
 To add Roadie Markdown Card to entity pages, you can follow similar steps as outlined above for the Homepage version. The Entity Markdown Card expects a single optional prop called `title` to display a title for the card.
 
-
 The path of the Markdown file itself is configured in the entity as an annotation. To do this, add an annotation called `roadie.io/markdown-content` to the entity manifest. This annotation should point to a full, non-relative, path of a Markdown file.
 
 <div role="alert">
@@ -117,6 +115,4 @@ The path of the Markdown file itself is configured in the entity as an annotatio
   <div  class="docs-cta__tip_message">
     <p>If you are attempting to import markdown files from branches containing `/` (forward slashes), that is unfortunately not possible.</p>
   </div>
-</div> 
-
-
+</div>

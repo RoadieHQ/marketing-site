@@ -1,4 +1,3 @@
-
 // This works around a bug where the search dialog is not properly removed from the
 // page because we are working with Gatsby's client side refreshes. The search dialog
 // expects a page refresh to occur when navigating.

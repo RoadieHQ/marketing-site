@@ -13,9 +13,7 @@ import {
 const NotFoundPage = ({
   data: {
     site: {
-      siteMetadata: {
-        title,
-      },
+      siteMetadata: { title },
     },
   },
 }) => (
@@ -30,10 +28,12 @@ const NotFoundPage = ({
           <div className="text-center">
             <p className="text-sm font-semibold text-indigo-600 uppercase tracking-wide">
               404 error
-           </p>
+            </p>
 
             <div className="mt-2">
-              <Headline size="medium" el="h2">This page does not exist</Headline>
+              <Headline size="medium" el="h2">
+                This page does not exist
+              </Headline>
             </div>
           </div>
 

@@ -126,10 +126,7 @@ export default BackstageWeekly;
 
 export const pageQuery = graphql`
   query BackstageWeekly {
-    allContentfulBlogPost(
-      sort: { date: DESC }
-      filter: { tags: { eq: "newsletter" } }
-    ) {
+    allContentfulBlogPost(sort: { date: DESC }, filter: { tags: { eq: "newsletter" } }) {
       edges {
         node {
           description {

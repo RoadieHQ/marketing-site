@@ -38,19 +38,23 @@ const navigation = {
     { name: 'Cookies', href: '/legal-notices/cookies-policy/' },
   ],
 
-  social: [{
-    name: 'Linkedin',
-    href: 'https://www.linkedin.com/company/43197350',
-    icon: LinkedinIcon,
-  }, {
-    name: 'GitHub',
-    href: 'https://github.com/RoadieHQ',
-    icon: GitHubIcon,
-  }, {
-    name: 'Backstage',
-    href: 'https://backstage.io',
-    icon: BackstageIcon,
-  }],
+  social: [
+    {
+      name: 'Linkedin',
+      href: 'https://www.linkedin.com/company/43197350',
+      icon: LinkedinIcon,
+    },
+    {
+      name: 'GitHub',
+      href: 'https://github.com/RoadieHQ',
+      icon: GitHubIcon,
+    },
+    {
+      name: 'Backstage',
+      href: 'https://backstage.io',
+      icon: BackstageIcon,
+    },
+  ],
 };
 
 const NavItem = ({ name, href }) => (
@@ -77,7 +81,7 @@ const TitledLinkList = ({ title, linkListKey = camelCase(title) }) => (
     <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">{title}</h3>
     <ul className="mt-4 space-y-4">
       {navigation[linkListKey].map((item) => (
-        <NavItem {...item } key={item.name} />
+        <NavItem {...item} key={item.name} />
       ))}
     </ul>
   </>
@@ -101,9 +105,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
           <div className="space-y-4 xl:col-span-1">
             <RoadieRacksIcon fill={theme.COLORS_GRAY_500} />
 
-            <p className="text-gray-500 text-base">
-              SaaS Backstage
-            </p>
+            <p className="text-gray-500 text-base">SaaS Backstage</p>
 
             <div className="flex space-x-6">
               {navigation.social.map((item) => (

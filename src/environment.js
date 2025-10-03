@@ -13,7 +13,6 @@ export const newsletterRecaptchaEnabled = () => {
   return true;
 };
 
-
 export const funnelRecaptchaEnabled = () => {
   if (process.env.GATSBY_FUNNEL_RECAPTCHA_ENABLED === 'false') return false;
   return true;

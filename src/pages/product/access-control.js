@@ -22,20 +22,20 @@ const PRODUCT = {
         alt: '',
       },
       paragraphs: [
-        'Whether for privacy, compliance or secrecy reason, or simply because not all users need to see everything in your catalog, Role-based Access Control within Roadie provides the control you need to select who can and cannot see items, execute tasks or make changes.'
+        'Whether for privacy, compliance or secrecy reason, or simply because not all users need to see everything in your catalog, Role-based Access Control within Roadie provides the control you need to select who can and cannot see items, execute tasks or make changes.',
       ],
     },
     {
-        title: 'Customisable roles for easy management',
-        description: 'Roadie helps you configure roles that match your organisation',
-        illustration: {
-          png: RbacRoleManagement,
-          alt: '',
-        },
-        paragraphs: [
-          'Roadie’s fine-grained management features allow customisable permissions policies and roles to help you model your own rules around information sharing to the configuration of your catalog. Only show the each type of user information that is pertinent and relevant.',
-        ],
+      title: 'Customisable roles for easy management',
+      description: 'Roadie helps you configure roles that match your organisation',
+      illustration: {
+        png: RbacRoleManagement,
+        alt: '',
       },
+      paragraphs: [
+        'Roadie’s fine-grained management features allow customisable permissions policies and roles to help you model your own rules around information sharing to the configuration of your catalog. Only show the each type of user information that is pertinent and relevant.',
+      ],
+    },
     {
       title: 'Integrated with your identity provider',
       description: 'Roadie lets you import roles from whichever Identity Provider you are using',
@@ -48,16 +48,16 @@ const PRODUCT = {
       ],
     },
     {
-        title: 'Avoiding unnecessary distractions',
-        description: 'Roadie helps you configure a distraction-free environment for your teams',
-        illustration: {
-          png: RbacScaffolder,
-          alt: '',
-        },
-        paragraphs: [
-          'From gating specific actions in a template to hiding individual items in your Catalog if the user does not have reqiured upstream permissions, RBAC can help reduce lost time when a system outside the Catalog is not accessible.',
-        ],
+      title: 'Avoiding unnecessary distractions',
+      description: 'Roadie helps you configure a distraction-free environment for your teams',
+      illustration: {
+        png: RbacScaffolder,
+        alt: '',
       },
+      paragraphs: [
+        'From gating specific actions in a template to hiding individual items in your Catalog if the user does not have reqiured upstream permissions, RBAC can help reduce lost time when a system outside the Catalog is not accessible.',
+      ],
+    },
   ],
 };
 
@@ -76,11 +76,13 @@ const Home = ({ data }) => {
             Roadie’s role-based Access Control
           </strong>
           <Headline size="medium" className="text-white">
-            <span className="text-orange-600">Access Control:</span> fine-grained control to reduce cognitive load for teams
+            <span className="text-orange-600">Access Control:</span> fine-grained control to reduce
+            cognitive load for teams
           </Headline>
 
           <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-            Roadie’s role-based Access Control lets you configure precise subsets of features and information that you want to present to any given team or user.
+            Roadie’s role-based Access Control lets you configure precise subsets of features and
+            information that you want to present to any given team or user.
           </h2>
 
           <Button
@@ -91,7 +93,6 @@ const Home = ({ data }) => {
             className="font-bold bg-orange-600 tracking-wide mt-6"
             text="Try Roadie's RBAC"
           />
-
         </div>
         <div className="lg:w-1/2 py-4 pb-[1px] lg:py-16 lg:px-[2px]">
           <img

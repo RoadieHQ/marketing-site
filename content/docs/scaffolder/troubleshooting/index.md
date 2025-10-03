@@ -6,7 +6,6 @@ description: A collection of troubleshooting tips when working with Scaffolder t
 
 Scaffolder templates are a powerful tool to create software, configurations and modify existing services. Below we have listed common error scenarios that we have encountered when building complex Scaffolder templates using the available actions.
 
-
 ## Testing
 
 Testing of templates is not well supported in Backstage currently, mostly due to the fact that many Scaffolder actions perform side-effects.
@@ -18,7 +17,6 @@ You can find these features at `/create/tools`.
 It is also possible to test templates by changing the name and namespace of the template to indicate that it is a preview or test version, then adding it to the catalog via `/import/entity` using the version on a published feature branch.
 This preview template will show up in the list of templates however so it is important to remove the entity after testing to avoid duplication, and also to make sure the title/description indicates that it is a temporary test.
 
-
 ## Troubleshooting
 
 Writing templates can be a little cumbersome at times. We have compiled a list of errors that we have seen in the past, that might help you determine the cause of your issue.
@@ -29,7 +27,7 @@ Template YAML input forms can also be tested at `/create/tools` using a live tem
 
 ### Resource not accessible by integration
 
-This error is referring to actions that interact with GitHub. It means that the Roadie GitHub app is unable to read, create or update the resource/s that are being touched by the Scaffolder step. 
+This error is referring to actions that interact with GitHub. It means that the Roadie GitHub app is unable to read, create or update the resource/s that are being touched by the Scaffolder step.
 There can be multiple different reasons for this generic error message that GitHub responds with. Unfortunately the errors returned from GitHub don't provide a lot more information about the specific resources that are being access but below are some cases where it is common to encounter this message.
 
 #### Attempting to create/amend a repository and add collaborators/owners
@@ -41,16 +39,16 @@ GitHub expects a specific format for the teams/users that are added to be owners
   name: Publish
   action: publish:github
   input:
-    allowedHosts: [ 'github.com' ]
+    allowedHosts: ['github.com']
     description: ${{parameters.description}}
     repoUrl: ${{parameters.repoUrl}}
     defaultBranch: main
     access: roadiehq/${{ parameters.owner | parseEntityRef | pick('name') }}
     deleteBranchOnMerge: true
     collaborators:
-      - user: "Xantier"
+      - user: 'Xantier'
         access: admin
-      - team: "marketing"
+      - team: 'marketing'
         access: pull
       - team: roadiehq/${{ parameters.owner | parseEntityRef | pick('name') }}
         access: admin
@@ -58,7 +56,7 @@ GitHub expects a specific format for the teams/users that are added to be owners
 
 Within this scaffolder template snippet we see 3 different approaches on adding users and teams into a repository. The GitHub API expects a user to be a plain string, identifying the username in GitHub. The team can be either a plain string to a GitHub team, that is in the same organization as the GitHub App is installed in, or a `prefix/team-name` format where the prefix is the name of the organization. Note that the GitHub app _needs_ to have access to these users/teams, so it is not possible to assign teams from arbitrary organizations to be collaborators to your repositories.
 
-If using the OwnerPicker result directly, you can use the snippet `${{ parameters.owner | parseEntityRef | pick('name') }}` to grab the plain team name only from the picked OwnerPicker result. 
+If using the OwnerPicker result directly, you can use the snippet `${{ parameters.owner | parseEntityRef | pick('name') }}` to grab the plain team name only from the picked OwnerPicker result.
 
 #### Lacking permissions on the approved GitHub app/GitHub Token
 
@@ -83,7 +81,7 @@ steps:
     input:
       url: "${{ steps['backstage_request'].output.body.metadata.annotations['backstage.io/managed-by-origin-location'] | replace('url:', '') | replace('catalog-info.yaml', '') }}"
       targetPath: 'fetch-folder'
-      
+
   - id: move-manifest-to-workbench
     name: Move files to a workbench location
     action: fs:rename

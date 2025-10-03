@@ -10,7 +10,7 @@ Role-based access control in Roadie allows rules to be set about which users hav
 
 This can be set at a coarse level (i.e. whole features of the application) or at a fine-grain level (i.e. the ability to view specific entities within the catalog).
 
-A good example of a permission is the ability to allow users to see a Scaffolder template. Let's say this template has the ability to change a cloud budget for a given service. Not everyone within an organisation may have that ability. A permissions attached to that Template would allow the team governing Roadie to limit access to that template. 
+A good example of a permission is the ability to allow users to see a Scaffolder template. Let's say this template has the ability to change a cloud budget for a given service. Not everyone within an organisation may have that ability. A permissions attached to that Template would allow the team governing Roadie to limit access to that template.
 
 ## Features
 
@@ -24,8 +24,8 @@ A good example of a permission is the ability to allow users to see a Scaffolder
 Role-based access control in Roadie is made up:
 
 - **Users**: users have Roles which grant them permissions to execute certain tasks within Roadie or view certain information
-- **Roles**: which are attached to users. They are groups of policies. 
-- **Policies**: which are groups of permissions, rolled up into Roles. 
+- **Roles**: which are attached to users. They are groups of policies.
+- **Policies**: which are groups of permissions, rolled up into Roles.
 - **Permissions**: granular code-level gates that evaluate whether an individual users has access to a given piece of functionality.
 
 ## Backstage Permissions Framework

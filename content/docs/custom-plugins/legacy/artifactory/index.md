@@ -10,7 +10,6 @@ description: How to add a custom Backstage plugin to Roadie
 
 ---
 
-
 ## Introduction
 
 Custom plugins are a feature of the [Growth Plan](/pricing/).
@@ -26,14 +25,14 @@ Contact us to get added to our private and secure plugin artefact repository.
 
 ### Step 1. Get credentials
 
-Get your credentials for the npm registry. 
+Get your credentials for the npm registry.
 
 Follow [this link][forgot-password] and click "Forgot password?" to reset your password. The username is
 `<your-company>-roadie`. This will send a reset link to the email we have associated with your account. You can
-change this email as you wish. 
+change this email as you wish.
 
 When you follow the link in this email you will be asked to enter the new password. Then you will be asked to configure
-MFA. This is only required using the web interface. While the Artifactory UI suggests you must use Google Authenticator 
+MFA. This is only required using the web interface. While the Artifactory UI suggests you must use Google Authenticator
 other applications are accepted. We have tested with 1Password for example.
 
 ### Step 2. Configure NPM
@@ -81,7 +80,7 @@ minutes.
 Once the steps above have been completed successfully and you have been notified that your plugin is ready to use, you
 should be able to log into your Backstage instance and use the plugin just like any other plugin.
 
-You can update your plugin at will and modify its versions if needed in the [custom plugin configuration page](/docs/custom-plugins/legacy/configuring/). Using the version keyword `latest` will always update plugins automatically with the latest version when new plugin is published to Artifactory. 
+You can update your plugin at will and modify its versions if needed in the [custom plugin configuration page](/docs/custom-plugins/legacy/configuring/). Using the version keyword `latest` will always update plugins automatically with the latest version when new plugin is published to Artifactory.
 
 [forgot-password]: https://roadiehq.jfrog.io/ui/login/forgot-password
 [form]: https://docs.google.com/forms/d/e/1FAIpQLSdSNr4Ps_RpKEx0V2QbxWaKLb3-DKi0W7U09Wth0SXHQoPyXQ/viewform

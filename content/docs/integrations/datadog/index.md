@@ -14,34 +14,34 @@ integrationType: OSS plugin
 With this plugin, you can embed Datadog graphs and dashboards into Roadie Backstage. Datadog is a monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services through a SaaS-based data analytics platform.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** | **Configuration Data:** <ul><li>Graph Embed Token</li><li>Dashboard URL</li><li>Datadog instance domain</li></ul> |
-| **Considerations** | ⚠️ Due to the limitation of Datadog sharing, the dashboard or graph must be publicly accessible in order for the plug-in to display the data. Make sure you do not share these URLs with untrusted actors. |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+
+|                            |                                                                                                                                                                                                            |
+| -------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|          **Prerequisites** | **Configuration Data:** <ul><li>Graph Embed Token</li><li>Dashboard URL</li><li>Datadog instance domain</li></ul>                                                                                          |
+|         **Considerations** | ⚠️ Due to the limitation of Datadog sharing, the dashboard or graph must be publicly accessible in order for the plug-in to display the data. Make sure you do not share these URLs with untrusted actors. |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                                                           |
 
 ## How to embed a datadog dashboard in Roadie
 
 ### Obtain the dashboard URL from Datadog that you will need for your metadata.
 
-* Login to your Datadog account.
+- Login to your Datadog account.
 
 ### Get the dashboard URL.
 
-* Navigate to the dashboards list by hovering over dashboards on the page's left-hand side and selecting the dashboard list.
+- Navigate to the dashboards list by hovering over dashboards on the page's left-hand side and selecting the dashboard list.
 
-* Select a dashboard from this list.
+- Select a dashboard from this list.
 
-* Within the dashboard you have chosen, click the settings cog on the screen's right-hand side, circled in red.
+- Within the dashboard you have chosen, click the settings cog on the screen's right-hand side, circled in red.
 
 ![dashboard](./dd-dashboard.webp)
 
-* Copy the URL from the Sharing textbox.
+- Copy the URL from the Sharing textbox.
 
-* This URL is the value you need for the `datadoghq.com/dashboard-url` annotation.
+- This URL is the value you need for the `datadoghq.com/dashboard-url` annotation.
 
 ![dashboard share](./dd-dashboard-share.webp)
-
 
 ### Adding the annotations and the values from Datadog to your component's metadata file.
 
@@ -58,19 +58,19 @@ metadata:
 
 ## How to embed a datadog graph in Roadie
 
-* Login to your Datadog account.
+- Login to your Datadog account.
 
 ### Get the graph token.
 
-* Click on the graph pencil, circled in red, from your dashboard.
+- Click on the graph pencil, circled in red, from your dashboard.
 
 ![dashboard](./dd-dashboard-2.webp)
 
-* Click on the Share tab, choose a timeframe, graph size and legend. Click generate the embedded code.
+- Click on the Share tab, choose a timeframe, graph size and legend. Click generate the embedded code.
 
-* Copy the token value that is highlighted in the red square.
+- Copy the token value that is highlighted in the red square.
 
-* this token is the value you need for the `datadoghq.com/graph-token` annotation
+- this token is the value you need for the `datadoghq.com/graph-token` annotation
 
 ![dashboard](./dd-graph-share.webp)
 
@@ -78,13 +78,13 @@ metadata:
 
 In order to customize size of the graph you may specify datadoghq.com/graph-size annotations and specify one of the following options:
 
-* 'small'
+- 'small'
 
-* 'medium'
+- 'medium'
 
-* 'large'
+- 'large'
 
-* 'x-large';
+- 'x-large';
 
 If not specified, your graph will be 'medium' size per default.
 
@@ -101,7 +101,6 @@ metadata:
     datadoghq.com/graph-token: <<TOKEN>
 ```
 
-
 ## Adding UI components
 
 The Datadog plugin exposes two different component that can be used in your Roadie application:
@@ -109,14 +108,11 @@ The Datadog plugin exposes two different component that can be used in your Road
 1. EntityDatadogGraphCard, a card component that can be added as a widget to Overview and dashboard tabs
 2. EntityDatadogContent, acomponent that can be used as a standalone tab
 
-
 The `EntityDatadogGraphCard` uses `datadoghq.com/graph-token` annotation and displays individual graphs on your dashboard.
 For more information how to add card components to Roadie take a look at [the documentation on how to update dashboards.](/docs/details/updating-the-ui/#updating-dashboards).
 
-
 The `EntityDatadogContent` uses `datadoghq.com/dashboard-url` annotation as displays Datadog dashboards.
 This component can be [added as a tab](/docs/getting-started/updating-the-ui#updating-tabs) to component layouts.
-
 
 ### Add a Datadog card to the overview tab of the Entity Page
 
@@ -128,7 +124,6 @@ Click the cog icon on the top right of a component page. Then click add card.
 Select the datadog graph card from the drop down and Click add. Press save to submit.
 
 ![select_datadog.webp](./select_datadog.webp)
-
 
 ## Specify datadog domain
 
@@ -146,4 +141,3 @@ metadata:
   annotations:
     datadoghq.com/site: datadoghq.com
 ```
-

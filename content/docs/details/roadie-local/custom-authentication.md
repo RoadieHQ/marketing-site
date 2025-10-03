@@ -26,7 +26,7 @@ oauth:
   user_info_url: <oidc user info url>
   end_session_endpoint: <oidc end session url>
   preferredDomain: <login email domain>
-  
+
   # The following settings should be left in place for roadie-local to work
   callback_url: '{{ .Protocol }}://{{ if .Hostname }}vouch.{{ .Hostname }}{{ else }}localhost:9090{{ end }}/auth'
 ```

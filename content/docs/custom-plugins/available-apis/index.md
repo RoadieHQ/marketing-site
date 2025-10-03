@@ -8,21 +8,21 @@ Backstage and Roadie provide many in-built custom APIs which are useful when dev
 
 ### useEntity
 
-`useEntity` [React hook](https://react.dev/reference/react) provides the ability for plugin developers to easily get the Entity information when developing plugins to Roadie. The hook can be called within Roadie plugins that are exposed within the *Entity pages*, namely `Card` and `Content` component types.
+`useEntity` [React hook](https://react.dev/reference/react) provides the ability for plugin developers to easily get the Entity information when developing plugins to Roadie. The hook can be called within Roadie plugins that are exposed within the _Entity pages_, namely `Card` and `Content` component types.
 
 The hook returns an object with an `entity` property, which contains the whole entity definition. This is useful for cases where you would for example need to identify and locate an annotation from the entity, so you can use the annotation value in subsequent requests to third party services.
 
 An example usage to retrieve and display all entity information in a 'dump-like' fashion:
 
 ```tsx
-import React, { useEffect } from "react";
-import { StructuredMetadataTable } from "@backstage/core-components";
-import { useEntity } from "@backstage/plugin-catalog-react";
+import React, { useEffect } from 'react';
+import { StructuredMetadataTable } from '@backstage/core-components';
+import { useEntity } from '@backstage/plugin-catalog-react';
 
 export const MyPluginContentComponent = () => {
-    const { entity } = useEntity();
-    return <StructuredMetadataTable metadata={entity} />;
-}
+  const { entity } = useEntity();
+  return <StructuredMetadataTable metadata={entity} />;
+};
 ```
 
 The code above would produce a view like this:
@@ -37,28 +37,30 @@ The code above would produce a view like this:
 `discoveryApi` provides connectivity to the Roadie backend APIs. The API can be used to identify the correct endpoints to call when, for example, integrating with third party services via the Roadie proxy.
 
 ```tsx
-import React, { useCallback, useState } from "react";
-import { useEntity } from "@backstage/plugin-catalog-react";
-import { discoveryApiRef, useApi } from "@backstage/core-plugin-api";
-import { StructuredMetadataTable } from "@backstage/core-components";
+import React, { useCallback, useState } from 'react';
+import { useEntity } from '@backstage/plugin-catalog-react';
+import { discoveryApiRef, useApi } from '@backstage/core-plugin-api';
+import { StructuredMetadataTable } from '@backstage/core-components';
 
 export const MyComponent = () => {
-   const discoveryApi = useApi(discoveryApiRef);
-   const { entity } = useEntity();
-   const [myEndPointInfo, setMyEndpointInfo] = useState<object | undefined>();
+  const discoveryApi = useApi(discoveryApiRef);
+  const { entity } = useEntity();
+  const [myEndPointInfo, setMyEndpointInfo] = useState<object | undefined>();
 
-   const btnClicked = useCallback(async () => {
-      const proxyUrl = await discoveryApi.getBaseUrl('proxy');
-      const url = `${proxyUrl}/my-proxy`;
-      const uid = entity.metadata.uid;
-      const res = await fetch(`${url}/get-info/${uid!}`);
-      setMyEndpointInfo(await res.json())
-   }, [discoveryApi]);
+  const btnClicked = useCallback(async () => {
+    const proxyUrl = await discoveryApi.getBaseUrl('proxy');
+    const url = `${proxyUrl}/my-proxy`;
+    const uid = entity.metadata.uid;
+    const res = await fetch(`${url}/get-info/${uid!}`);
+    setMyEndpointInfo(await res.json());
+  }, [discoveryApi]);
 
-   return <div>
+  return (
+    <div>
       <Button onClick={btnClicked}>Get info from my endpoint</Button>
-      {myEndPointInfo && <StructuredMetadataTable metadata={myEndPointInfo}/>}
-   </div>
+      {myEndPointInfo && <StructuredMetadataTable metadata={myEndPointInfo} />}
+    </div>
+  );
 };
 ```
 
@@ -67,30 +69,38 @@ export const MyComponent = () => {
 `identifyApi` provides information about the currently logged in user. This API can be used to target individuals or decorate requests with relevant user information.
 
 ```tsx
-import React, {useState} from "react";
-import useAsync from "react-use/lib/useAsync";
-import { BackstageUserIdentity, ProfileInfo, identityApiRef, useApi } from "@backstage/core-plugin-api";
-import { StructuredMetadataTable } from "@backstage/core-components";
+import React, { useState } from 'react';
+import useAsync from 'react-use/lib/useAsync';
+import {
+  BackstageUserIdentity,
+  ProfileInfo,
+  identityApiRef,
+  useApi,
+} from '@backstage/core-plugin-api';
+import { StructuredMetadataTable } from '@backstage/core-components';
 
 export const MyPluginContentComponent = () => {
-   const identityApi = useApi(identityApiRef);
+  const identityApi = useApi(identityApiRef);
 
-   const [userInfo, setUserInfo] = useState<BackstageUserIdentity | undefined>();
-   const [profileInfo, setProfileInfo] = useState<ProfileInfo | undefined>();
+  const [userInfo, setUserInfo] = useState<BackstageUserIdentity | undefined>();
+  const [profileInfo, setProfileInfo] = useState<ProfileInfo | undefined>();
 
-   useAsync(async () => {
-      const userInfo = await identityApi.getBackstageIdentity();
-      const profileInfo = await identityApi.getProfileInfo();
-      setUserInfo(userInfo);
-      setProfileInfo(profileInfo);
-   }, [identityApi])
+  useAsync(async () => {
+    const userInfo = await identityApi.getBackstageIdentity();
+    const profileInfo = await identityApi.getProfileInfo();
+    setUserInfo(userInfo);
+    setProfileInfo(profileInfo);
+  }, [identityApi]);
 
-   return <div>
+  return (
+    <div>
       {userInfo && <StructuredMetadataTable metadata={userInfo} />}
       {profileInfo && <StructuredMetadataTable metadata={profileInfo} />}
-   </div>
-}
+    </div>
+  );
+};
 ```
+
 ![A dump of information displaying currently logged in user](userinfo_identityApi_dump.webp)
 
 #### errorApi
@@ -105,7 +115,7 @@ export const MyComponent = () => {
   const errorApi = useApi(errorApiRef);
 
   // Signal to the app that something went wrong, and display the error to the user.
-  const handleError = error => {
+  const handleError = (error) => {
     errorApi.post(error);
   };
 
@@ -122,18 +132,18 @@ import React from 'react';
 import { alertApiRef, useApi } from '@backstage/core-plugin-api';
 
 export const MyComponent = () => {
-   const alertApi = useApi(alertApiRef);
+  const alertApi = useApi(alertApiRef);
 
-   // Display a notification to the user that something good has happened
-   const notifySuccess = () => {
-      alertApi.post({
-         message: 'New climate neutral aviation fuel has been invented!',
-         severity: 'success',
-         display: 'transient',
-      });
-   };
+  // Display a notification to the user that something good has happened
+  const notifySuccess = () => {
+    alertApi.post({
+      message: 'New climate neutral aviation fuel has been invented!',
+      severity: 'success',
+      display: 'transient',
+    });
+  };
 
-   // the rest of the component ...
+  // the rest of the component ...
 };
 ```
 
@@ -144,26 +154,29 @@ export const MyComponent = () => {
 ```tsx
 import React, { useCallback } from 'react';
 import { analyticsApi, useApi } from '@backstage/core-plugin-api';
-import { Button } from "@material-ui/core";
+import { Button } from '@material-ui/core';
 
 export const MyComponent = () => {
-   const analyticsApi = useApi(analyticsApiRef);
+  const analyticsApi = useApi(analyticsApiRef);
 
-   const btnClicked = useCallback(() => {
-      analyticsApi.captureEvent({
-         attributes: {component: "MyComponent"},
-         subject: "test-subject",
-         value: 1,
-         action: "button-click",
-         context: {
-            extension: "my-custom-plugin",
-            pluginId: "my-custom-plugin",
-            routeRef: "myPluginRouteRef",
-         },
-      });
-   }, [analyticsApi]);
+  const btnClicked = useCallback(() => {
+    analyticsApi.captureEvent({
+      attributes: { component: 'MyComponent' },
+      subject: 'test-subject',
+      value: 1,
+      action: 'button-click',
+      context: {
+        extension: 'my-custom-plugin',
+        pluginId: 'my-custom-plugin',
+        routeRef: 'myPluginRouteRef',
+      },
+    });
+  }, [analyticsApi]);
 
-   return <div><Button onClick={btnClicked}>Click me!</Button></div>
+  return (
+    <div>
+      <Button onClick={btnClicked}>Click me!</Button>
+    </div>
+  );
 };
-
 ```

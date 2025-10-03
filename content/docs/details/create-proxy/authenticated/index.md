@@ -40,7 +40,7 @@ Click save and Apply and Restart and wait for the restart. It can take up to abo
 You can call this API from the Roadie window context in a browser via a Custom Roadie plugin:
 
 ```javascript
-fetch('/api/authenticated-proxy/my-api')
+fetch('/api/authenticated-proxy/my-api');
 ```
 
 #### Step 3 Authenticate the Request

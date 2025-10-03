@@ -16,10 +16,11 @@ The [Announcements](https://github.com/backstage/community-plugins/tree/main/wor
 ![announcements-plugin-overview.png](announcements-plugin-overview.png)
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Functionality and Components
@@ -27,7 +28,8 @@ The [Announcements](https://github.com/backstage/community-plugins/tree/main/wor
 The announcements plugin exposes multiple components and extensive functionality to inform your Roadie users with messages and important information. All of these components can be configured using the [Roadie UI customization](/docs/getting-started/configure-ui/) functionality.
 
 ### Management
-To configure the plugin you must first add the `AnnouncementPage` component [to the sidebar](/docs/pdating-the-ui/#updating-the-sidebar). 
+
+To configure the plugin you must first add the `AnnouncementPage` component [to the sidebar](/docs/pdating-the-ui/#updating-the-sidebar).
 
 The `AnnouncementsPage` provides some information to configure the Announcements plugin, specifically:
 
@@ -41,21 +43,17 @@ The `AnnouncementsPage` provides some information to configure the Announcements
 \
 
 ### Display
+
 `AnnouncementsCard` is a component that can be added to both home and entity pages to display information. The card can be configured to show announcements from only specific categories or for example only active announcements. Within Roadie you can easily configure these properties using the builtin props form functionality.
 
 The plugin additionally introduces an `AnnouncementsTimeline` card which can be used to show a timeline of messages in a succinct format.
 
-
 ![announcements-cards.png](announcements-cards.png)
-
 
 To keep users informed about latest announcements, you can use the `NewAnnouncementBanner` which can be configured to the homepage to display new, unseen announcements.
 
 ![announcement-banner.png](announcement-banner.png)
 
-
-
 ## References
 
-- [The announcements Backstage plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/announcements) 
-
+- [The announcements Backstage plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/announcements)

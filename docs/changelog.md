@@ -13,7 +13,7 @@ The changelog has an RSS feed which can be found at https://roadie.io/changelog/
 
 ## Notifications to customer slack channels
 
-New updates to the changelog are automatically posted to the shared Slack channels 
+New updates to the changelog are automatically posted to the shared Slack channels
 that we use to communicate with our customers and free trials.
 
 These automatic updates look like this:

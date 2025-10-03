@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextLink as Link, Button, Title } from 'components';
-import { ExternalLinkIcon, XIcon } from '@heroicons/react/outline'
+import { ExternalLinkIcon, XIcon } from '@heroicons/react/outline';
 import Modal, { modalStyles } from 'components/Modal';
 import { PAGE_PATHS } from '../../contactFormConstants';
 
@@ -35,7 +35,7 @@ const LinkedinInner = ({ siteMetadata }) => (
     <Link to={siteMetadata.social.linkedin} color="primary">
       Follow Roadie on Linkedin{' '}
     </Link>
-     to stay up to date with our latest features.
+    to stay up to date with our latest features.
   </p>
 );
 
@@ -115,7 +115,7 @@ const FormSubmissionModal = ({
       <div className="p-4">
         <div className="mb-4 pb-4 flex items-center justify-between">
           <Title>
-            {titleText}{' '}{titleEmoji}
+            {titleText} {titleEmoji}
           </Title>
 
           <button onClick={handleCloseModal}>
@@ -127,9 +127,7 @@ const FormSubmissionModal = ({
           {bodyText}
         </div>
 
-        <div className="prose prose-primary max-w-none mb-4">
-          {followOnContent}
-        </div>
+        <div className="prose prose-primary max-w-none mb-4">{followOnContent}</div>
       </div>
     </Modal>
   );

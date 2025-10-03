@@ -13,21 +13,11 @@ const FooterCTA = () => (
 
       <div className="mt-8 flex justify-center">
         <div className="inline-flex">
-          <Button
-            link={true}
-            to={PAGE_PATHS.freeTrial}
-            color="primary"
-            text="Try it free"
-          />
+          <Button link={true} to={PAGE_PATHS.freeTrial} color="primary" text="Try it free" />
         </div>
 
         <div className="ml-3 inline-flex">
-          <Button
-            link={true}
-            to={PAGE_PATHS.requestDemo}
-            color="inset"
-            text="Request a demo"
-          />
+          <Button link={true} to={PAGE_PATHS.requestDemo} color="inset" text="Request a demo" />
         </div>
       </div>
     </div>

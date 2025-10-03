@@ -17,11 +17,7 @@ const ContentHeader = ({ frontmatter, showLastValidated = true, dateKey }) => (
       </div>
     )}
 
-    <Byline
-      frontmatter={frontmatter}
-      showLastValidated={showLastValidated}
-      dateKey={dateKey}
-    />
+    <Byline frontmatter={frontmatter} showLastValidated={showLastValidated} dateKey={dateKey} />
   </header>
 );
 

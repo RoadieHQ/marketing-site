@@ -10,7 +10,7 @@ Roadie can autodiscover and ingest entities from a variety of sources.
 
 ### Setting up autodiscovery
 
-Select a source of truth for your entities to learn more. You can (and likely will) use more than one of these services to provide entities for your catalog. 
+Select a source of truth for your entities to learn more. You can (and likely will) use more than one of these services to provide entities for your catalog.
 
 - [AWS Resources](/docs/integrations/aws-resources/)
 - [AWS S3](/docs/integrations/aws-s3/)

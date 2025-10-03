@@ -25,9 +25,11 @@ The Rich Catalog Entity Server provides AI assistants with comprehensive access 
 Retrieve basic entity information including name, description, owner, lifecycle stage, and metadata.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference (e.g., "component:default/my-service")
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/user-service"
@@ -35,6 +37,7 @@ Retrieve basic entity information including name, description, owner, lifecycle 
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   name: string,
@@ -54,16 +57,18 @@ Retrieve basic entity information including name, description, owner, lifecycle 
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog entities
+- **Catalog entity read (\*)** - Access to catalog entities
 
 ### Get Entity Relationships
 
 Discover entity relationships including dependencies, what the entity provides, and connected services.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/payment-service"
@@ -71,6 +76,7 @@ Discover entity relationships including dependencies, what the entity provides, 
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   // Core relationships
@@ -110,17 +116,19 @@ Discover entity relationships including dependencies, what the entity provides, 
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog entities
+- **Catalog entity read (\*)** - Access to catalog entities
 
 ### Get TechDocs
 
 Search and retrieve TechDocs documentation content for specific entities.
 
 **Parameters:**
+
 - `entityRef` (string): Entity reference
 - `query` (string, optional): Search term within the documentation
 
 **Example Usage:**
+
 ```json
 {
   "entityRef": "component:default/auth-service",
@@ -129,6 +137,7 @@ Search and retrieve TechDocs documentation content for specific entities.
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   totalPages: number,
@@ -143,19 +152,21 @@ Search and retrieve TechDocs documentation content for specific entities.
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog entities and their docs
+- **Catalog entity read (\*)** - Access to catalog entities and their docs
 
 ### Search Entities
 
 Discover and find entities when you don't know the exact entity name or want to explore available entities.
 
 **Parameters:**
+
 - `searchTerm` (string): Search term to find entities by name, title, or other attributes
 - `kind` (string, optional): Filter by entity kind (e.g., "component", "api", "system")
 - `namespace` (string, optional): Filter by specific namespace
 - `limit` (number, optional): Maximum number of results to return (default: 10)
 
 **Example Usage:**
+
 ```json
 {
   "searchTerm": "payment",
@@ -165,6 +176,7 @@ Discover and find entities when you don't know the exact entity name or want to 
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   totalFound: number,
@@ -185,17 +197,19 @@ Discover and find entities when you don't know the exact entity name or want to 
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog entities
+- **Catalog entity read (\*)** - Access to catalog entities
 
 ### Search TechDocs
 
 Search TechDocs documentation content across all entities in the catalog to find relevant information without knowing which specific entity contains it.
 
 **Parameters:**
+
 - `searchQuery` (string): Search query to find documentation content across all entities
 - `pageLimit` (number, optional): Maximum number of results to return (default: 100)
 
 **Example Usage:**
+
 ```json
 {
   "searchQuery": "API design patterns",
@@ -204,6 +218,7 @@ Search TechDocs documentation content across all entities in the catalog to find
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   totalResults: number,
@@ -221,6 +236,7 @@ Search TechDocs documentation content across all entities in the catalog to find
 ```
 
 **Usage Examples:**
+
 - "Find documentation about API design patterns for my organisation"
 - "What deployment patterns are used in my organisation"
 - "How is Kubernetes used in my organisation? Are there any best practices?"
@@ -228,6 +244,7 @@ Search TechDocs documentation content across all entities in the catalog to find
 - "How are database migrations done in my organisation?"
 
 **Key Benefits:**
+
 - Discovers relevant documentation across entities you might not know about
 - Useful when you don't know which specific entity contains the information
 - Helps find patterns and best practices documented across multiple services
@@ -235,7 +252,7 @@ Search TechDocs documentation content across all entities in the catalog to find
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog entities and their documentation
+- **Catalog entity read (\*)** - Access to catalog entities and their documentation
 - **TechDocs read** - Access to technical documentation
 
 ### User Group Listing
@@ -243,11 +260,13 @@ Search TechDocs documentation content across all entities in the catalog to find
 List users or groups and their relationships to understand organizational structure and team relationships.
 
 **Parameters:**
+
 - `entityType` (enum): Type of entities to list - "user" for User entities or "group" for Group entities
 - `namespace` (string, optional): Optional filter by namespace. This is typically the SCM organisation, especially in the case of users and groups
 - `limit` (number, optional): Maximum number of results to return (if not specified, returns all entities)
 
 **Example Usage:**
+
 ```json
 {
   "entityType": "user",
@@ -257,6 +276,7 @@ List users or groups and their relationships to understand organizational struct
 ```
 
 **Return Schema:**
+
 ```typescript
 {
   totalFound: number,
@@ -273,6 +293,7 @@ List users or groups and their relationships to understand organizational struct
 ```
 
 **Usage Examples:**
+
 - "Which users are part of more than one group"
 - "Are there any users not assigned to a group"
 - "List all engineering team members"
@@ -280,6 +301,7 @@ List users or groups and their relationships to understand organizational struct
 - "List users in the platform namespace"
 
 **Key Benefits:**
+
 - Shows team membership relationships (users in groups, group hierarchies)
 - Provides organizational structure overview for answering team-related questions
 - Returns minimal fields to reduce payload size and improve performance
@@ -287,26 +309,30 @@ List users or groups and their relationships to understand organizational struct
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to catalog entities
+- **Catalog entity read (\*)** - Access to catalog entities
 
 ## Common Use Cases
 
 ### Entity Exploration
+
 - "Who owns the user-service component?"
 - "What is the lifecycle stage of payment-api?"
 - "Show me the description and metadata for auth-service"
 
 ### Dependency Analysis
+
 - "What services does payment-service depend on?"
 - "Which components use the user-api?"
 - "Show me all the relationships for the auth-service"
 
 ### Documentation Discovery
+
 - "What documentation exists for the payment-service?"
 - "Search for authentication information in user-service docs"
 - "Show me the getting started guide for inventory-api"
 
 ### Entity Discovery
+
 - "Find entities related to payment processing"
 - "Search for all user management services"
 - "What APIs are available for authentication?"
@@ -334,7 +360,7 @@ The Rich Catalog Entity Server includes intelligent entity resolution that makes
 
 ## Required Permissions
 
-- **Catalog entity read (*)** - Access to all catalog entities
+- **Catalog entity read (\*)** - Access to all catalog entities
 - **TechDocs read** - Access to technical documentation (for TechDocs functionality)
 
 ## Example Workflows
@@ -344,6 +370,7 @@ The Rich Catalog Entity Server includes intelligent entity resolution that makes
 **User:** "I need to understand our payment infrastructure"
 
 **AI Response using MCP:**
+
 1. Uses `search-entities` to find all payment-related entities
 2. Retrieves entity information for each discovered service
 3. Maps relationships between payment components
@@ -355,6 +382,7 @@ The Rich Catalog Entity Server includes intelligent entity resolution that makes
 **User:** "What does the user-service depend on?"
 
 **AI Response using MCP:**
+
 1. Uses `get-entity-relationships` to map all dependencies
 2. Identifies direct and indirect dependencies
 3. Explains the purpose of each dependency
@@ -365,4 +393,4 @@ The Rich Catalog Entity Server includes intelligent entity resolution that makes
 - Use search functionality when you don't know exact entity names
 - Combine entity information with relationship data for comprehensive analysis
 - Leverage TechDocs search to find specific documentation topics
-- Use filters (kind, namespace) to narrow search results when needed 
+- Use filters (kind, namespace) to narrow search results when needed

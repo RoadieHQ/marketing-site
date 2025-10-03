@@ -112,22 +112,25 @@ const sections = [
       {
         name: 'Docs from Markdown',
         competitor: { Roadie: true, Backstage: true },
-      }, {
+      },
+      {
         name: 'Extensibility via plugins',
         competitor: { Roadie: true, Backstage: true },
-      }, {
+      },
+      {
         name: 'Mermaid support',
         competitor: { Roadie: true, Backstage: true },
-      }, {
+      },
+      {
         name: 'PlantUML support',
         competitor: { Roadie: true, Backstage: true },
-      }, {
+      },
+      {
         name: 'Auto rebuild docs in background',
         competitor: { Roadie: true, Backstage: false },
       },
     ],
   },
-
 
   {
     name: 'Other plugins and extensions',
@@ -222,7 +225,7 @@ const sections = [
       },
       {
         name: 'Automatic monthly upgrades',
-        competitor: { Roadie: true, Backstage: 'DIY'},
+        competitor: { Roadie: true, Backstage: 'DIY' },
       },
       {
         name: 'Usage analytics',

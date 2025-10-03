@@ -1,5 +1,5 @@
 ---
-title: Make a PR in Azure DevOps 
+title: Make a PR in Azure DevOps
 publishedDate: '2024-04-25'
 description: Clone a repo in Azure DevOps make changes, push and create a PR.
 ---
@@ -15,7 +15,7 @@ For more information on these actions and others visit `/create/actions` in your
 
 ## Template
 
-You can create a template with this content or import [from here](https://github.com/roadie-demo/scaffolder-examples/blob/main/azure-actions/template.yaml). 
+You can create a template with this content or import [from here](https://github.com/roadie-demo/scaffolder-examples/blob/main/azure-actions/template.yaml).
 
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
@@ -52,7 +52,7 @@ spec:
       name: Clone Azure Repo
       action: azure:repo:clone
       input:
-        remoteUrl: "https://roadie-demo@dev.azure.com/roadie-demo/Sample-Services/_git/sample-service"
+        remoteUrl: 'https://roadie-demo@dev.azure.com/roadie-demo/Sample-Services/_git/sample-service'
         branch: ${{ parameters.sourceBranch }}
         targetPath: ./sub-directory
 
@@ -78,7 +78,7 @@ spec:
       action: azure:repo:pr
       input:
         sourceBranch: ${{ parameters.remoteBranch }}
-        targetBranch: "master"
+        targetBranch: 'master'
         repoId: sample-service
         title: ${{ parameters.name }}
         project: Sample-Services
@@ -88,8 +88,9 @@ spec:
   output:
     links:
       - title: Pull Request
-        url: "https://dev.azure.com/roadie-demo/Sample-Services/_git/sample-service/pullrequest/${{ outputs.pullRequestAzureRepo.pullRequestId}}"
+        url: 'https://dev.azure.com/roadie-demo/Sample-Services/_git/sample-service/pullrequest/${{ outputs.pullRequestAzureRepo.pullRequestId}}'
 ```
 
 ## Further Reading
-* The Azure actions [docs](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories)
+
+- The Azure actions [docs](https://github.com/Parfuemerie-Douglas/scaffolder-backend-module-azure-repositories)

@@ -85,11 +85,11 @@ examples:
         owner: artist-relations-team
 ---
 
-##  Get the roadie IAM details
+## Get the roadie IAM details
 
 Navigate to `Administration > Settings > AWS S3` and make a note of the Roadie backend role ARN and account ID. This is mentioned on the title text of the AWS S3 integration settings page.
 
-##  Create a federated role in your account for Roadie
+## Create a federated role in your account for Roadie
 
 Follow the steps [here](/docs/details/accessing-aws-resources) to create the role.
 
@@ -98,7 +98,6 @@ The role needs to follow this naming convention `arn:aws:iam::*:role/<tenant-nam
 You'll need to attach a policy which allows access to the required S3 buckets such as `AmazonS3ReadOnlyAccess`. This policy grants roadie read access to all buckets.
 If you do not want to grant this access you can [create your own policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html)
 which restricts access to only certain buckets. An example minimal policy needed to retrieve files from S3 buckets is below
-
 
 <details>
 
@@ -110,25 +109,21 @@ which restricts access to only certain buckets. An example minimal policy needed
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": [
-        "s3:GetObject"
-      ],
+      "Action": ["s3:GetObject"],
       "Resource": "arn:aws:s3:::my-bucket/*"
     },
     {
       "Effect": "Allow",
-      "Action": [
-        "s3:ListBucket"
-      ],
+      "Action": ["s3:ListBucket"],
       "Resource": "arn:aws:s3:::my-bucket"
     }
   ]
 }
 ```
+
 </details>
 
-
-##  Configure your Roadie instance to use the new role
+## Configure your Roadie instance to use the new role
 
 On the AWS S3 settings page `Administration > Settings > Aws S3` in Roadie click `Add Item` and enter the newly created
 role ARN and external ID. The S3 host is only required if you're using different roles for different buckets.
@@ -136,7 +131,6 @@ role ARN and external ID. The S3 host is only required if you're using different
 After the role configuration is done, you can click the 'Test Role' button to check if integration configuration has succeeded.
 
 ![Role Details](./role-details.webp)
-
 
 ### Create a catalog file in code repository
 
@@ -154,5 +148,5 @@ Now you can click on the entity link to visit the entity that you have just crea
 
 ### Next Steps
 
-* [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
-* [Write a scaffolder template](/docs/scaffolder/writing-templates/) to create or update software projects.
+- [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
+- [Write a scaffolder template](/docs/scaffolder/writing-templates/) to create or update software projects.

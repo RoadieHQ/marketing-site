@@ -1,4 +1,3 @@
-
 const fullRoadieDocsPath = (roadieDocsPath) => {
   if (!roadieDocsPath) return '/docs/integrations/';
 

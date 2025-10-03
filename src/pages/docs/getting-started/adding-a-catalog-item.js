@@ -40,66 +40,71 @@ const Sources = ({ sources }) => {
   };
 
   return (
-      <section className='sm:grid md:grid-cols-1 sm:gap-6 lg:grid-cols-2 mt-4'>
-        <div>
-          <div className='mb-6'>
-            {sources.map((it) => {
-              return (
-                <button key={it.id} onClick={() => handleChange(it)}>
-                  <Chip label={it.frontmatter.humanName} isActive={typeFilter === it.id} />
-                </button>
-              );
-            })}
-          </div>
-          <CodeBlock language='html' intro={sources.find((it) => it.id === typeFilter).html} />
+    <section className="sm:grid md:grid-cols-1 sm:gap-6 lg:grid-cols-2 mt-4">
+      <div>
+        <div className="mb-6">
+          {sources.map((it) => {
+            return (
+              <button key={it.id} onClick={() => handleChange(it)}>
+                <Chip label={it.frontmatter.humanName} isActive={typeFilter === it.id} />
+              </button>
+            );
+          })}
         </div>
-        <div className='grid lg:visible md:invisible'>
-          {allExamples && !isEmpty(allExamples) && (
-            <div className='self-start sticky top-0'>
-              <div className='mb-6'>
-                {!isEmpty(allExamples) &&
-                  displayedKindChips.map((k) => {
-                    return (
-                      <button key={k.name} onClick={() => setKind(k.name)}>
-                        <Chip label={k.name} isActive={kindFilter === k.name} />
-                      </button>
-                    );
-                  })}
-              </div>
-              <div className='mb-6'>
-                <CodeBlock
-                  language={allExamples.find((kind) => kind.name === kindFilter).language}
-                  code={allExamples.find((kind) => kind.name === kindFilter).content}
-                />
-              </div>
+        <CodeBlock language="html" intro={sources.find((it) => it.id === typeFilter).html} />
+      </div>
+      <div className="grid lg:visible md:invisible">
+        {allExamples && !isEmpty(allExamples) && (
+          <div className="self-start sticky top-0">
+            <div className="mb-6">
+              {!isEmpty(allExamples) &&
+                displayedKindChips.map((k) => {
+                  return (
+                    <button key={k.name} onClick={() => setKind(k.name)}>
+                      <Chip label={k.name} isActive={kindFilter === k.name} />
+                    </button>
+                  );
+                })}
             </div>
-          )}
-        </div>
-      </section>
+            <div className="mb-6">
+              <CodeBlock
+                language={allExamples.find((kind) => kind.name === kindFilter).language}
+                code={allExamples.find((kind) => kind.name === kindFilter).content}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
   );
 };
 
 const AddCatalogItemPage = ({ data, location }) => {
-  const sources = data.allMarkdownRemark.edges.map((edge) => edge.node).filter((item => item.frontmatter.category === 'catalog-source')).sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
-  const header = data.allMarkdownRemark.edges.map((edge) => edge.node).find((item => item.frontmatter.category === 'header'));
+  const sources = data.allMarkdownRemark.edges
+    .map((edge) => edge.node)
+    .filter((item) => item.frontmatter.category === 'catalog-source')
+    .sort((item1, item2) => item1.frontmatter.order - item2.frontmatter.order);
+  const header = data.allMarkdownRemark.edges
+    .map((edge) => edge.node)
+    .find((item) => item.frontmatter.category === 'header');
   return (
     <>
       <DocsHeader location={location} />
 
       <SEO
         title={`Adding a catalog item`}
-        description='This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog.'
+        description="This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog."
       />
 
-      <main className='md:flex pt-4 md:pt-0'>
+      <main className="md:flex pt-4 md:pt-0">
         <Sidebar location={location} />
         {!isEmpty(sources) && (
-          <article className='px-2 md:px-6 md:pt-7 md:flex-1'>
-            <Headline size='small' className="mb-1 mt-0">
+          <article className="px-2 md:px-6 md:pt-7 md:flex-1">
+            <Headline size="small" className="mb-1 mt-0">
               {header.frontmatter.title}
             </Headline>
 
-            <CodeBlock language='html' intro={header.html} />
+            <CodeBlock language="html" intro={header.html} />
             <Sources sources={sources} />
           </article>
         )}

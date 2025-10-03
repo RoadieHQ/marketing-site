@@ -12,4 +12,3 @@ Permission must be obtained from each customer before their logo is used on the 
 6. Export the image as a `1x png` file and move it into the `content/assets/home/customer-logos` directory of the marketing site.
 7. Upload the png image to https://convertio.co/png-webp/, download the resulting `.webp` version and place it in the same folder.
 8. Edit the code in `src/components/landing/CustomerLogoCloud.js` to add the logo.
-

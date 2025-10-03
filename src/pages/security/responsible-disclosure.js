@@ -8,10 +8,7 @@ const SecurityResponsibleDisclosure = ({ data: { site, page } }) => {
 
   return (
     <>
-      <SEO
-        title={`${page.title} | ${siteTitle}`}
-        description={page.seoDescription}
-      />
+      <SEO title={`${page.title} | ${siteTitle}`} description={page.seoDescription} />
 
       <SitewideHeader />
 

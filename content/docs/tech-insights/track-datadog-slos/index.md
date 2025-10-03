@@ -40,11 +40,11 @@ In order to collect the Datadog SLO count from each component, the Datadog integ
 
 1. Go to _Administration → Settings → Datadog_ and set the hostname of your Datadog app.
 
-2. Go to _Administration → Settings → Secrets_  and set the `Datadog API Token` and `Datadog APP Token` in so your Roadie instance to contact your Datadog app.
-| Key          | Token             |
-| ------------ | ----------------- |
-| DD_API_TOKEN | Datadog API Token |
-| DD_APP_TOKEN | Datadog APP Token |
+2. Go to _Administration → Settings → Secrets_ and set the `Datadog API Token` and `Datadog APP Token` in so your Roadie instance to contact your Datadog app.
+   | Key | Token |
+   | ------------ | ----------------- |
+   | DD_API_TOKEN | Datadog API Token |
+   | DD_APP_TOKEN | Datadog APP Token |
 
 ## 2 - Record the SLO count for each component
 

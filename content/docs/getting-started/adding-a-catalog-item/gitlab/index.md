@@ -91,7 +91,7 @@ examples:
         owner: artist-relations-team
 ---
 
-###  Generate GitLab personal access token (PAT)
+### Generate GitLab personal access token (PAT)
 
 In your GitLab instance navigate to your User Settings > Access Tokens page. In GitLab cloud the URL is `https://gitlab.com/-/user_settings/personal_access_tokens`. Within this page you can generate a token to grant Roadie access to read your entity manifest files.
 
@@ -119,7 +119,8 @@ Visit the import page in Roadie. `https://<tenant-name>.roadie.so/import/entity`
 Now you can click on the entity link to visit the entity that you have just created.
 
 ### Next Steps
-* At this point you may want to enable [auto discovery](/docs/integrations/gitlab-provider/) using GitLab, this allows Roadie to discover new catalog files as they are created.
-* [Explore the Getting Started Repo](https://gitlab.com/roadie-demo/getting-started) for examples of scaffolder templates.
-* [Use a scaffolder template](https://gitlab.com/roadie-demo/getting-started/-/tree/main/scaffolder/register-new-component?ref_type=heads) to give users a streamlined interface that they can use to generate the YAML file you used earlier in this tutorial.
-* [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
+
+- At this point you may want to enable [auto discovery](/docs/integrations/gitlab-provider/) using GitLab, this allows Roadie to discover new catalog files as they are created.
+- [Explore the Getting Started Repo](https://gitlab.com/roadie-demo/getting-started) for examples of scaffolder templates.
+- [Use a scaffolder template](https://gitlab.com/roadie-demo/getting-started/-/tree/main/scaffolder/register-new-component?ref_type=heads) to give users a streamlined interface that they can use to generate the YAML file you used earlier in this tutorial.
+- [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.

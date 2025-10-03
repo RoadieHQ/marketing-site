@@ -6,11 +6,11 @@ description: The Backstage backend restricts what resources can be fetched by de
 
 ## Introduction
 
-The Backstage backend restricts what resources can be fetched by default. 
-This guide describes how to configure this list. This would allow you to do something like 
+The Backstage backend restricts what resources can be fetched by default.
+This guide describes how to configure this list. This would allow you to do something like
 fetch a public API definition in a catalog info file.
 
-By default only *.example.com and *.mozilla.org are allowed.
+By default only _.example.com and _.mozilla.org are allowed.
 
 ## Configuration
 
@@ -23,5 +23,5 @@ If you want to restrict access further you can add a list of paths and only reso
 
 ## See Also
 
- - [FetchUrlReader](https://backstage.io/docs/reference/backend-common.fetchurlreader#properties)
- - [Substitutions In The Descriptor Format](https://backstage.io/docs/features/software-catalog/descriptor-format#substitutions-in-the-descriptor-format)
+- [FetchUrlReader](https://backstage.io/docs/reference/backend-common.fetchurlreader#properties)
+- [Substitutions In The Descriptor Format](https://backstage.io/docs/features/software-catalog/descriptor-format#substitutions-in-the-descriptor-format)

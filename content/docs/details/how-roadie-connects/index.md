@@ -32,7 +32,7 @@ This connection is between Google and the user’s browser directly. No informat
 
 ### Option 2: The Proxy
 
-The proxy runs on the Roadie backend. It accepts incoming requests, modifies them — usually to add authentication headers — and forwards them on to a third-party SaaS API. 
+The proxy runs on the Roadie backend. It accepts incoming requests, modifies them — usually to add authentication headers — and forwards them on to a third-party SaaS API.
 
 The proxy code lives in the [proxy-backend plugin](https://github.com/backstage/backstage/tree/master/plugins/proxy-backend) in the Backstage OSS project. Under the hood, Backstage delegates proxying responsibilities to the popular and battle-tested [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) package.
 
@@ -69,7 +69,7 @@ For APIs which are only available on the customer’s internal network, we use a
 The broker is a Node.js service that you run inside your infrastructure to provide a secure tunnel for Roadie traffic. It was originally created by dev-first security company, **[Snyk](https://docs.snyk.io/features/snyk-broker/broker-introduction)**. The code is open-source. We are actively using it with existing customers for Kubernetes API access and other Backstage and Roadie plugins. You don’t need to be a Snyk user to use the broker.
 
 ![An architecture diagram from the Snyk docs. It shows how the broker is used to securely connect to an on-prem GitHub or Jira instance.](./broker-arch.webp)
-*Image credit: snyk.com*
+_Image credit: snyk.com_
 
 The benefits of the broker include:
 

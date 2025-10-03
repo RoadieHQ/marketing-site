@@ -11,25 +11,17 @@ const HoneypotField = ({ onChange, value }) => {
     <div className="hidden">
       <label htmlFor={HONEYPOT_FIELD_NAME}>
         <Input
-            name={HONEYPOT_FIELD_NAME}
-            id={HONEYPOT_FIELD_NAME}
-            value={value}
-            onChange={onChange}
-          />
+          name={HONEYPOT_FIELD_NAME}
+          id={HONEYPOT_FIELD_NAME}
+          value={value}
+          onChange={onChange}
+        />
       </label>
-      
     </div>
   );
 };
 
-const Form = ({
-  buttonText,
-  name,
-  children,
-  onHoneypotChange,
-  honeypotValue,
-  ...rest
-}) => (
+const Form = ({ buttonText, name, children, onHoneypotChange, honeypotValue, ...rest }) => (
   <>
     <form
       method="post"

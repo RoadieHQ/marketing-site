@@ -48,7 +48,6 @@ To test the installation, ensure this command displays help text.
 
 ## Getting Started
 
-
 1. Initialize the environment and enter your license key
 
 ```bash
@@ -74,7 +73,7 @@ Roadie is available to access at http://localhost:8080
 The following users are hard-coded to get you started.
 
 | Username   | Password |
-|------------|----------|
+| ---------- | -------- |
 | admin      | roadie   |
 | maintainer | roadie   |
 | reader     | roadie   |

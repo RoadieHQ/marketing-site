@@ -13,14 +13,13 @@ Harbor is an open-source container image registry that secures images with polic
 
 The Harbor plugin allows you to view information about your Docker images stored in Harbor directly within Backstage. This plugin provides both a dedicated Harbor tab and a widget that can be displayed on entity overview pages, giving you quick access to container image details, vulnerabilities, and other Harbor-specific information.
 
-
 ![harbor-tab.webp](harbor-tab.webp)
 ![harbor-card.webp](harbor-card.webp)
 
 ## At a Glance
 
 |                            |                                                                                                                                                                        |
-|---------------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |          **Prerequisites** | **Configuration Data:** <ul><li>Harbor Base URL</li><li>Harbor Username</li><li>Harbor Password</li></ul> **Component Annotations:** <ul><li>Repository Slug</li></ul> |
 | **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                       |
 
@@ -28,7 +27,7 @@ The Harbor plugin allows you to view information about your Docker images stored
 
 ### Step 1: Add the Harbor Tab and Widget
 
-The Harbor plugin is available as both a tab and widget on entity pages in Roadie. 
+The Harbor plugin is available as both a tab and widget on entity pages in Roadie.
 
 ### Step 2: Annotate your entities
 
@@ -41,10 +40,12 @@ metadata:
 ```
 
 The value for `goharbor.io/repository-slug` should be in the format `project/repository` where:
+
 - `project` is your Harbor project name
 - `repository` is your repository name within that project
 
 For example:
+
 ```yaml
 metadata:
   annotations:
@@ -61,10 +62,10 @@ You need to configure the following:
 
 - **Base URL**: The URL of your Harbor instance (e.g., `https://harbor.yourdomain.com`)
 
-For secrets you need to set 
+For secrets you need to set
+
 - **HARBOR_USERNAME**: Harbor username with appropriate permissions
 - **HARBOR_PASSWORD**: Harbor password or access token
-
 
 ## Troubleshooting
 

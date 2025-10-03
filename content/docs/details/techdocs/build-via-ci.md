@@ -16,14 +16,14 @@ Roadie hosts TechDocs in a dedicated AWS S3 bucket. To be able to generate and p
 
 ### Building all docs or only some docs via CI
 
-You can choose to switch wholesale to build all your TechDocs via CI (the recommended approach as this gives the best user experience once the CI job is added). 
+You can choose to switch wholesale to build all your TechDocs via CI (the recommended approach as this gives the best user experience once the CI job is added).
 
-Or you can use an annotation to only build specific docs via CI and leave the others to build on viewing. 
+Or you can use an annotation to only build specific docs via CI and leave the others to build on viewing.
 
 ```yaml
-metadata: 
+metadata:
   ...
-  annotations: 
+  annotations:
     roadie.io/techdocs-builder: 'ci'
 ...
 ```
@@ -31,11 +31,12 @@ metadata:
 ### Connecting to Roadie
 
 You can generate and publish TechDocs with the techdocs-cli using one of two ways:
-* (Preferred) Assuming a role on our AWS account
+
+- (Preferred) Assuming a role on our AWS account
   - For us to grant access to you to assume this role we need you to provide the AWS account id you would be using to publish TechDocs
   - We will generate a role you can assume using your AWS credentials from the account you provided to publish TechDocs to your Roadie instance.
-* (In case role assumption can't work for you) We can provide you an access key and secret
-  - To get credentials you can contact support 
+- (In case role assumption can't work for you) We can provide you an access key and secret
+  - To get credentials you can contact support
   - Add the environment variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to your CI workflow for use by the CLI.
 
 If you are running the CI job in your own AWS account and assuming a role in the Roadie environment, you don't need to set up the above variables.
@@ -43,8 +44,8 @@ If you are running the CI job in your own AWS account and assuming a role in the
 Additionally, you need to defined the correct AWS region to be used when publishing TechDocs to Roadie. This can be done using an environment variable as well. Currently the region is eu-west-1:
 `AWS_REGION=eu-west-1`
 
-
 ### Publishing with TechDocs CLI
+
 The publishing procedure follows the structure of the techdocs-cli.
 
 ```bash

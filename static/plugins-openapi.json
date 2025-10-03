@@ -1,1 +1,74 @@
-{"openapi":"3.0.3","info":{"title":"Plugins API","description":"API specs for Backstage backend plugins exposed by Roadie","version":"1.0.0"},"servers":[{"url":"https://api.roadie.so/api/"}],"security":[{"bearerAuth":[]}],"tags":[{"name":"Code Coverage","description":"Code Coverage plugin endpoints"}],"paths":{"/code-coverage/report":{"post":{"tags":["Code Coverage"],"description":"Upload a code-coverage report for an entity","parameters":[{"in":"query","required":true,"name":"entity","schema":{"type":"string"},"description":"EntityRef","example":"component:default/entity-name"},{"in":"query","required":true,"name":"coverageType","schema":{"type":"string","enum":["lcov","jacoco","cobertura"]},"description":"The report type","example":"lcov"}],"requestBody":{"description":"The report you want to upload","required":true,"content":{"text/xml":{},"text/plain":{}}},"responses":{"200":{"description":"Successfully uploaded"},"400":{"$ref":"#/components/responses/ErrorResponse"},"500":{"$ref":"#/components/responses/ErrorResponse"}}}}},"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}},"responses":{"ErrorResponse":{"description":"Common Error response","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"object","properties":{"message":{"type":"string"},"name":{"type":"string"},"stack":{"type":"string"}}}}}}}}}}}
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Plugins API",
+    "description": "API specs for Backstage backend plugins exposed by Roadie",
+    "version": "1.0.0"
+  },
+  "servers": [{ "url": "https://api.roadie.so/api/" }],
+  "security": [{ "bearerAuth": [] }],
+  "tags": [{ "name": "Code Coverage", "description": "Code Coverage plugin endpoints" }],
+  "paths": {
+    "/code-coverage/report": {
+      "post": {
+        "tags": ["Code Coverage"],
+        "description": "Upload a code-coverage report for an entity",
+        "parameters": [
+          {
+            "in": "query",
+            "required": true,
+            "name": "entity",
+            "schema": { "type": "string" },
+            "description": "EntityRef",
+            "example": "component:default/entity-name"
+          },
+          {
+            "in": "query",
+            "required": true,
+            "name": "coverageType",
+            "schema": { "type": "string", "enum": ["lcov", "jacoco", "cobertura"] },
+            "description": "The report type",
+            "example": "lcov"
+          }
+        ],
+        "requestBody": {
+          "description": "The report you want to upload",
+          "required": true,
+          "content": { "text/xml": {}, "text/plain": {} }
+        },
+        "responses": {
+          "200": { "description": "Successfully uploaded" },
+          "400": { "$ref": "#/components/responses/ErrorResponse" },
+          "500": { "$ref": "#/components/responses/ErrorResponse" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": { "type": "http", "scheme": "bearer", "bearerFormat": "JWT" }
+    },
+    "responses": {
+      "ErrorResponse": {
+        "description": "Common Error response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string" },
+                    "name": { "type": "string" },
+                    "stack": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

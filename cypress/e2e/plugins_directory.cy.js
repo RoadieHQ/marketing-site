@@ -1,46 +1,49 @@
 describe('Plugins directory', () => {
   const npmData = {
-    _id: "@roadiehq/backstage-plugin-argo-cd",
-    _rev: "146-56e841ce37f8b7cfbaf7f6a070ef29e1",
-    name: "@roadiehq/backstage-plugin-argo-cd",
-    license: "Apache-2.0",
+    _id: '@roadiehq/backstage-plugin-argo-cd',
+    _rev: '146-56e841ce37f8b7cfbaf7f6a070ef29e1',
+    name: '@roadiehq/backstage-plugin-argo-cd',
+    license: 'Apache-2.0',
     repository: {
-      type: "git",
-      url: "github:RoadieHQ/roadie-backstage-plugins",
-      directory: "plugins/frontend/backstage-plugin-argo-cd"
+      type: 'git',
+      url: 'github:RoadieHQ/roadie-backstage-plugins',
+      directory: 'plugins/frontend/backstage-plugin-argo-cd',
     },
     time: {
-      created: "2020-12-07T02:46:53.764Z",
-      modified: "2025-08-28T07:10:36.321Z",
-      '2.11.0': "2025-08-28T07:10:36.025Z"
+      created: '2020-12-07T02:46:53.764Z',
+      modified: '2025-08-28T07:10:36.321Z',
+      '2.11.0': '2025-08-28T07:10:36.025Z',
     },
-    homepage: "https://roadie.io/backstage/plugins/argo-cd/",
+    homepage: 'https://roadie.io/backstage/plugins/argo-cd/',
     bugs: {
-      url: "https://github.com/RoadieHQ/roadie-backstage-plugins/issues",
-      email: "support@roadie.io"
+      url: 'https://github.com/RoadieHQ/roadie-backstage-plugins/issues',
+      email: 'support@roadie.io',
     },
     backstage: {
-      role: "frontend-plugin",
-      pluginId: "argocd",
+      role: 'frontend-plugin',
+      pluginId: 'argocd',
       pluginPackages: [
-        "@roadiehq/backstage-plugin-argo-cd",
-        "@roadiehq/backstage-plugin-argo-cd-backend"
+        '@roadiehq/backstage-plugin-argo-cd',
+        '@roadiehq/backstage-plugin-argo-cd-backend',
       ],
       features: {
-        './alpha': "@backstage/FrontendPlugin"
-      }
+        './alpha': '@backstage/FrontendPlugin',
+      },
     },
-    maintainers: [{
-      name: "roadiehq-david",
-      email: "david@roadie.io"
-    }, {
-      name: "samnixon87",
-      email: "sam.nixon@roadie.io"
-    }],
+    maintainers: [
+      {
+        name: 'roadiehq-david',
+        email: 'david@roadie.io',
+      },
+      {
+        name: 'samnixon87',
+        email: 'sam.nixon@roadie.io',
+      },
+    ],
     numberOfMaintainers: 2,
     numberOfVersions: 125,
-    latestVersion: "2.11.0",
-    roadieLastUpdated: "2025-09-22T12:45:23.839Z"
+    latestVersion: '2.11.0',
+    roadieLastUpdated: '2025-09-22T12:45:23.839Z',
   };
   const netlifyFnPath = '/.netlify/functions/fetchNpmDataByName';
   const BASE_URL = Cypress.config('baseUrl');

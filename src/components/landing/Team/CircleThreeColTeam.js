@@ -44,9 +44,7 @@ const CircleThreeColTeam = ({ headline, lead, people }) => (
           </div>
         </div>
 
-        <ul
-          className="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl"
-        >
+        <ul className="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl">
           {people.map((person) => (
             <Person key={person.name} person={person} />
           ))}

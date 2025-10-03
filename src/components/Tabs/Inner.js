@@ -3,8 +3,8 @@ import classnames from 'classnames';
 
 const TabInner = ({ label, isActive }) => {
   const chipClassName = classnames('bg-primary-600 h-1 right-0 left-0 bottom-0', {
-    'absolute': isActive,
-    'hidden': !isActive,
+    absolute: isActive,
+    hidden: !isActive,
   });
 
   return (

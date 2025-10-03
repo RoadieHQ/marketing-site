@@ -21,11 +21,11 @@ The PagerDuty Backstage plugin allows Roadie Backstage users to:
 
 ## At a Glance
 
-| | |
-|---: | --- |
-| Prerequisites | **Configuration Data:** <ul><li>API Token or OAuth Client Id and Secret</li><li>PagerDuty subdomain and region</li></ul> **Component Annotations:** <ul><li>Integration Key</li><li>Service Id</li></ul> |
-| Considerations |  |
-| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
+|                            |                                                                                                                                                                                                          |
+| -------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|              Prerequisites | **Configuration Data:** <ul><li>API Token or OAuth Client Id and Secret</li><li>PagerDuty subdomain and region</li></ul> **Component Annotations:** <ul><li>Integration Key</li><li>Service Id</li></ul> |
+|             Considerations |                                                                                                                                                                                                          |
+| **Supported Environments** | ☒ Private Network via Broker <br /> ☒ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted                                                                                                         |
 
 ### Setting up the plugin:
 

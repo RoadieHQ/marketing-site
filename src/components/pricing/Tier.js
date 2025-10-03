@@ -7,10 +7,7 @@ import TierDescription from './TierDescription';
 import TierPriceDisplay from './TierPriceDisplay';
 import { Button, HelpText } from 'components';
 
-const GrowthTier = ({ 
-  tier,
-  currentlySetCurrency,
-}) => (
+const GrowthTier = ({ tier, currentlySetCurrency }) => (
   <TierContainer>
     <div className="p-6">
       <TierName name={tier.name} />
@@ -18,13 +15,7 @@ const GrowthTier = ({
       <TierPriceDisplay tier={tier} currentlySetCurrency={currentlySetCurrency} />
 
       <div className="mb-5">
-        <Button
-          text={tier.ctaLabel}
-          link={true}
-          color="primary"
-          to={tier.ctaLinkTo}
-          fullWidth
-        />
+        <Button text={tier.ctaLabel} link={true} color="primary" to={tier.ctaLinkTo} fullWidth />
       </div>
 
       {tier.ctaHelpText && (
@@ -34,10 +25,7 @@ const GrowthTier = ({
       )}
     </div>
 
-      <TierBulletsSection
-        heading={tier.benefits.heading}
-        bullets={tier.benefits.bullets}
-      />
+    <TierBulletsSection heading={tier.benefits.heading} bullets={tier.benefits.bullets} />
   </TierContainer>
 );
 

@@ -3,10 +3,10 @@ import { Headline, Lead } from 'components';
 
 const RecruiteeJobsList = () => {
   useEffect(() => {
-    const rtscript = document.createElement('script'); 
-    rtscript.type = 'text/javascript';  
-    rtscript.onload = function() { 
-      new window.RTWidget({ 
+    const rtscript = document.createElement('script');
+    rtscript.type = 'text/javascript';
+    rtscript.onload = function () {
+      new window.RTWidget({
         companies: [61772],
         detailsMode: 'popup',
         language: 'en',
@@ -26,15 +26,15 @@ const RecruiteeJobsList = () => {
           groupByLocation: false,
           groupByDepartment: false,
           groupByCompany: false,
-        }
+        },
       });
-    }
+    };
     rtscript.src = 'https://d10zminp1cyta8.cloudfront.net/widget.js';
     document.body.appendChild(rtscript);
 
     return () => {
       document.body.removeChild(rtscript);
-    }
+    };
   }, []);
 
   return (

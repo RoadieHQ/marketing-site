@@ -12,7 +12,7 @@ environment: default
 environments:
   default:
     version: 0.4.0
-    
+
     # Config these two
     protocol: https
     domain: your.roadie.domain
@@ -32,14 +32,15 @@ your.roadie.domain
 
 ### DNS Configuration
 
-You will need to add DNS routing in your infrastructure to make sure requests to all these 3 endpoints are routed to your roadie-local service on port 80. 
+You will need to add DNS routing in your infrastructure to make sure requests to all these 3 endpoints are routed to your roadie-local service on port 80.
 
 This means you will likely need DNS entries for:
+
 - A <your.domain> -> <your-roadie-local-ip>:80
 - CNAME vouch.<your.domain> -> <your.domain>
 - CNAME keycloak.<your.domain> -> <your.domain>
 
-Of course, you will likely want to use https, which means you will need to do SSL termination before the request reaches roadie-local. 
+Of course, you will likely want to use https, which means you will need to do SSL termination before the request reaches roadie-local.
 
 Typically you might want to use a load balancer to do the SSL termination. This might look like so:
 

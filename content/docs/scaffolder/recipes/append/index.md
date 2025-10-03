@@ -15,7 +15,6 @@ description: How to append some user defined content to a file and create a new 
 
 You can check the available actions if you visit `/create/actions`.
 
-
 ```yaml
 ---
 apiVersion: scaffolder.backstage.io/v1beta3
@@ -85,7 +84,7 @@ spec:
       action: publish:github:pull-request
       input:
         repoUrl: github.com?repo=${{ parameters.repository }}&owner=${{ parameters.org }}
-        branchName:  ${{ parameters.pr_branch }}
+        branchName: ${{ parameters.pr_branch }}
         title: Add entity to ${{ parameters.path }}
         description: PR created from Roadie Backstage scaffolder
     - id: log-message

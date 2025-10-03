@@ -84,7 +84,8 @@ const Home = ({ data }) => {
           </Headline>
 
           <h2 className="mt-5 text-white text-lg sm:mt-8 lg:text-xl xl:text-xl xl:mr-6">
-            Roadie’s TechDocs lets developers write docs alongside code, but read them in their Internal Developer Portal
+            Roadie’s TechDocs lets developers write docs alongside code, but read them in their
+            Internal Developer Portal
           </h2>
 
           <Button
@@ -95,7 +96,6 @@ const Home = ({ data }) => {
             className="font-bold bg-orange-600 tracking-wide mt-6"
             text="Try Roadie's Docs"
           />
-
         </div>
         <div className="lg:w-1/2 py-4 pb-[1px] lg:py-16 lg:px-[2px]">
           <img
@@ -116,9 +116,7 @@ const Home = ({ data }) => {
       <section className="text-center bg-white py-20 mt-5">
         <figure className="max-w-2xl px-4 mx-auto mb-5">
           <img src={SnykImg} alt="Snyk logo" className="block mx-auto mb-10" />
-          <blockquote
-            className="text-2xl font-bold tracking-wide"
-          >
+          <blockquote className="text-2xl font-bold tracking-wide">
             “We started moving all of our documentation into Backstage through Roadie. I totally
             recommend them. They’re great to work with and super responsive and helpful.”
           </blockquote>

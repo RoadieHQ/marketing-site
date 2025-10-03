@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Button, Headline } from 'components';
 import { PlayIcon } from 'components/icons';
 import { PAGE_PATHS } from '../../../contactFormConstants';
@@ -16,7 +16,8 @@ const Title = () => (
 const SubTitle = () => (
   <div className="sm:max-w-lg lg:max-w-xl mx-auto">
     <p className="text-center text-gray-500 lg:text-lg">
-      The fully customizable Internal Developer Portal built on Backstage. Scorecards, RBAC, and secure on-prem access included.
+      The fully customizable Internal Developer Portal built on Backstage. Scorecards, RBAC, and
+      secure on-prem access included.
     </p>
   </div>
 );
@@ -67,7 +68,7 @@ const ProductImage = () => (
 );
 
 const ScreenshotVideoPlayer = ({ openModal }) => (
-  <div className="relative sm:max-w-lg md:max-w-xl sm:mx-auto"> 
+  <div className="relative sm:max-w-lg md:max-w-xl sm:mx-auto">
     <PlayButton openModal={openModal}>
       <span className="sr-only">Watch our video to learn more</span>
       <ProductImage />
@@ -93,10 +94,7 @@ const VideoHero = () => {
 
   return (
     <>
-      <IntroToRoadieModal
-        setModalOpen={setModalOpen}
-        modalOpen={modalOpen}
-      />
+      <IntroToRoadieModal setModalOpen={setModalOpen} modalOpen={modalOpen} />
 
       <div className="relative bg-white">
         <div className="pt-0 pb-12 px-4">

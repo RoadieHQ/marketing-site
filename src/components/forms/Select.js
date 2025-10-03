@@ -4,14 +4,7 @@ import classnames from 'classnames';
 import { INPUT_COLORS } from '.';
 const CLASSES = 'appearance-none py-3 shadow-sm rounded-md';
 
-const Select = ({
-  options,
-  onChange,
-  children,
-  color = 'primary',
-  fullWidth = true,
-  ...props
-}) => {
+const Select = ({ options, onChange, children, color = 'primary', fullWidth = true, ...props }) => {
   const { accent, border, placeholder, background, text } = INPUT_COLORS[color];
   const inputColors = `${background} ${text} ${accent} ${border} ${placeholder}`;
 

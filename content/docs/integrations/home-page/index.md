@@ -11,24 +11,24 @@ integrationType: OSS plugin
 
 ## Introduction
 
-
-The [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) provides a framework for building a dashboard style home page for Roadie. 
+The [Backstage Home plugin](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) provides a framework for building a dashboard style home page for Roadie.
 
 A home page can be composed of many cards from various plugins much like the overview tab for entities. Roadie provides an interface to build such a home page interactively in the UI.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
-| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted | 
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
+| **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Customize the UI
 
 To view the home page navigate to `Home` via the sidebar.
 
 Editing the home page is very similar to editing component dashboards. Click the cog icon to enter edit mode. To add
-components click the "plus" icon or drag cards to reposition them. Read [this guide](/docs/getting-started/updating-the-ui#updating-the-home-page) 
+components click the "plus" icon or drag cards to reposition them. Read [this guide](/docs/getting-started/updating-the-ui#updating-the-home-page)
 for more details.
 
 ![Edit Home Page Button](./edit-home-page-button.webp)

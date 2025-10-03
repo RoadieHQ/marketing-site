@@ -27,17 +27,13 @@ describe('Byline', function () {
   describe('when showLastValidated=false', function () {
     describe('and relative=false', function () {
       it('should say the date', function () {
-        const { container } = render(
-          <Byline frontmatter={{ date: publishDateString }} />
-        );
+        const { container } = render(<Byline frontmatter={{ date: publishDateString }} />);
 
         expect(container).toHaveTextContent('Published on May 10th, 2021');
       });
 
       it('should say the date and author when available', function () {
-        const { container } = render(
-          <Byline frontmatter={{ date: publishDateString, author }} />
-        );
+        const { container } = render(<Byline frontmatter={{ date: publishDateString, author }} />);
 
         expect(container).toHaveTextContent('Published on May 10th, 2021 by Jimmy Joe');
       });
@@ -68,7 +64,7 @@ describe('Byline', function () {
         const { container } = render(
           <Byline
             frontmatter={{
-              date: publishDateString ,
+              date: publishDateString,
               lastValidated: validationDateString,
             }}
             showLastValidated={true}
@@ -76,14 +72,15 @@ describe('Byline', function () {
         );
 
         expect(container).toHaveTextContent(
-          'Last validated on May 22nd, 2021 • Originally published on May 10th, 2021');
+          'Last validated on May 22nd, 2021 • Originally published on May 10th, 2021'
+        );
       });
 
       it('should say the dates and the author if available', function () {
         const { container } = render(
           <Byline
             frontmatter={{
-              date: publishDateString ,
+              date: publishDateString,
               lastValidated: validationDateString,
               author,
             }}
@@ -92,7 +89,8 @@ describe('Byline', function () {
         );
 
         expect(container).toHaveTextContent(
-          'Last validated on May 22nd, 2021 • Originally published on May 10th, 2021 by Jimmy Joe');
+          'Last validated on May 22nd, 2021 • Originally published on May 10th, 2021 by Jimmy Joe'
+        );
       });
     });
 
@@ -110,7 +108,8 @@ describe('Byline', function () {
         );
 
         expect(container).toHaveTextContent(
-          'Last validated 15 days ago • Originally published 27 days ago');
+          'Last validated 15 days ago • Originally published 27 days ago'
+        );
       });
     });
   });

@@ -5,13 +5,7 @@ import Logo from './Logo';
 import Attribution from './Attribution';
 
 const Header = ({
-  plugin: {
-    humanName,
-    logoImage,
-    heading,
-    attributionText: text,
-    attributionUrl: href,
-  },
+  plugin: { humanName, logoImage, heading, attributionText: text, attributionUrl: href },
 }) => (
   <div className="mx-auto max-w-7xl">
     <div className="px-4 xl:px-0 mb-10">

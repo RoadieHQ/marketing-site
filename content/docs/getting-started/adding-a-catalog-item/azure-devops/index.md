@@ -91,7 +91,7 @@ examples:
         owner: artist-relations-team
 ---
 
-###  Generate Azure DevOps personal access token (PAT)
+### Generate Azure DevOps personal access token (PAT)
 
 In your Azure DevOps navigate to the User Settings > Tokens page in `https://dev.azure.com/<your-organization>/_usersSettings/tokens`. Within this page you can generate a token to grant Roadie access to read your entity manifest files.
 
@@ -119,5 +119,6 @@ Visit the import page in Roadie. `https://<tenant-name>.roadie.so/import/entity`
 Now you can click on the entity link to visit the entity that you have just created.
 
 ### Next Steps
-* At this point you may want to enable [auto discovery](/docs/integrations/azure-devops-provider/) using Azure DevOps, this allows Roadie to discover new catalog files as they are created.
-* [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.
+
+- At this point you may want to enable [auto discovery](/docs/integrations/azure-devops-provider/) using Azure DevOps, this allows Roadie to discover new catalog files as they are created.
+- [Add a TechDocs page](/docs/getting-started/technical-documentation/) to the component you now have in the catalog.

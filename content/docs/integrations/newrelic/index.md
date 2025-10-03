@@ -10,15 +10,16 @@ integrationType: OSS plugin
 ---
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Introduction
 
-In order to make requests to the NewRelic API, you must provide Roadie with an API key. Roadie provides two different New Relic plugins within the installation, providing both page and individual entity page functionality. 
+In order to make requests to the NewRelic API, you must provide Roadie with an API key. Roadie provides two different New Relic plugins within the installation, providing both page and individual entity page functionality.
 
 ## Steps
 
@@ -38,30 +39,29 @@ In order to make requests to the NewRelic API, you must provide Roadie with an A
 
 7. It can take up to 2 minutes for the API key and configuration to be applied.
 
-
 ### Add New Relic plugin components to the application
 
-
 1. Sidebar component
-  *  Hover over the sidebar on the left and click the "Edit Sidebar" icon
 
-  ![edit-sidebar.webp](./edit-sidebar.webp)
-   
-  * Click "Add Card"
+- Hover over the sidebar on the left and click the "Edit Sidebar" icon
 
-  ![add-card.webp](./add-card.webp)
+![edit-sidebar.webp](./edit-sidebar.webp)
 
-  * Select the option "@backstage/plugin-newrelic: NewRelicPage", pick a name for the menu item the path, and an Icon. Click Add.
+- Click "Add Card"
 
-  ![select-component.webp](./select-component.webp)
+![add-card.webp](./add-card.webp)
 
-  * You should see a new item in the sidebar for NewRelic, click the sidebar save button.
+- Select the option "@backstage/plugin-newrelic: NewRelicPage", pick a name for the menu item the path, and an Icon. Click Add.
 
-  ![save-sidebar.webp](./save-sidebar.webp)
+![select-component.webp](./select-component.webp)
 
+- You should see a new item in the sidebar for NewRelic, click the sidebar save button.
+
+![save-sidebar.webp](./save-sidebar.webp)
 
 2. Card and Content Components
-  * Navigate to Entity page in the catalog to add a Content or Card type components into your Roadie instance
-  * You can find instructions how to add these components from the [Updating The UI guide](/docs/details/updating-the-ui/)
-  * The available components are called `EntityNewRelicDashboardContent` for the tab component and `EntityNewRelicDashboardCard` for the Card component
-  * Add an annotation to your entity in the format `newrelic.com/dashboard-guid: <dashboard_guid>`. You can find the `dashboard_guid` value from New Relic by looking at the metadata of your Dashboard.
+
+- Navigate to Entity page in the catalog to add a Content or Card type components into your Roadie instance
+- You can find instructions how to add these components from the [Updating The UI guide](/docs/details/updating-the-ui/)
+- The available components are called `EntityNewRelicDashboardContent` for the tab component and `EntityNewRelicDashboardCard` for the Card component
+- Add an annotation to your entity in the format `newrelic.com/dashboard-guid: <dashboard_guid>`. You can find the `dashboard_guid` value from New Relic by looking at the metadata of your Dashboard.

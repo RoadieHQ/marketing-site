@@ -32,7 +32,7 @@ describe('The free trial page', () => {
   it('warns gmail users', () => {
     cy.visit(PAGE_PATHS.freeTrial);
 
-    cy.get('#get-instance-email-input').type('test@gmail.com', { delay: 200 })
+    cy.get('#get-instance-email-input').type('test@gmail.com', { delay: 200 });
     cy.contains('Please use your work email');
   });
 });

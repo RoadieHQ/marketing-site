@@ -27,13 +27,13 @@ spec:
 If your OpenAPI specs are located in the same repository as the catalog metadata file, you also need to additionally tell the `$openapi` resolver the basepath where to find files from. You can do that by adding an annotation like below:
 
 ```yaml
-  annotations:
-    openapi/ref-basepath: ./
+annotations:
+  openapi/ref-basepath: ./
 ```
 
 </details>
 
-NB: You can also use `$openapi` or `$asyncapi` as the resolver - they are aliases for the same parser.   
+NB: You can also use `$openapi` or `$asyncapi` as the resolver - they are aliases for the same parser.
 
 ## Introduction
 
@@ -75,15 +75,13 @@ The `spec.definition.$openapi` property can point to a remote URL or it can be a
 
 _Note that if you are hosting your OpenAPI specs in GitHub and referencing them with the $openapi property, the link must point to the URL starting with `https://github.com` and not `https://raw.githubusercontent.com`._
 
-
 If you want to connect towards internal specs via [the broker connection](../../integrations/broker/index.md), you can use the protocol `broker://` to do that. For example:
+
 ```
 spec:
   definition:
     $text: broker://<my-broker-token>/my-open-api-spec.json
 ```
-    
-
 
 ### Step 2: Add the API to Backstage
 

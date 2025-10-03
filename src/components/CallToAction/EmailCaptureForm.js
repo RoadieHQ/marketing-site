@@ -31,7 +31,7 @@ const EmailCaptureForm = ({
     disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
 
-// Removed unnecessary debug logging statements.
+  // Removed unnecessary debug logging statements.
 
   /* eslint-disable jsx-a11y/no-autofocus */
   return (
@@ -89,8 +89,8 @@ const EmailCaptureForm = ({
         </div>
       </Form>
     </>
-    );
-    /* eslint-enable jsx-a11y/no-autofocus */
-  };
+  );
+  /* eslint-enable jsx-a11y/no-autofocus */
+};
 
 export default EmailCaptureForm;

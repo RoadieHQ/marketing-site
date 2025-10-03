@@ -1,11 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import {
-  SEO,
-  ContentHeader,
-  SitewideHeader,
-  SitewideFooter,
-} from 'components';
+import { SEO, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
 import { NestedTableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/legal-notice';
 
@@ -57,11 +52,7 @@ export const pageQuery = graphql`
       id
       html
 
-      tableOfContents(
-        absolute: false
-        pathToSlugField: "frontmatter.title"
-        maxDepth: 3
-      )
+      tableOfContents(absolute: false, pathToSlugField: "frontmatter.title", maxDepth: 3)
 
       frontmatter {
         description

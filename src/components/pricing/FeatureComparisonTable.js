@@ -7,112 +7,149 @@ import isString from 'lodash/isString';
 
 import { TIERS } from './tiers';
 
-const sections = [{
-  name: 'Scale',
-  features: [{
-    name: 'Minimum seats',
-    tiers: TIERS.reduce((collection, tier) => ({
-      [tier.name]: tier.minSeats.toString(),
-      ...collection,
-    }), {}),
-  }],
-
-}, {
-  name: 'Catalog',
-  features: [{
-    name: 'Software components',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'API Specs',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'TechDocs technical documentation',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Self-service automation templates',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Infrastructure',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Teams & Users',
-    tiers: { Teams: true, Growth: true, },
-  }],
-
-}, {
-  name: 'Features',
-  features: [{
-    name: 'Automatic Backstage upgrades',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Open-source Backstage plugins',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Scorecards',
-    tiers: { Teams: 'plus', Growth: 'plus', },
-  }, {
-    name: 'RAG AI & MCP Server Access (beta)',
-    tiers: { Growth: true, },
-  }, {
-    name: 'REST API access',
-    tiers: { Growth: true, },
-  }, {
-    name: 'Search Engine',
-    tiers: { Teams: 'PostgreSQL', Growth: 'OpenSearch', }
-  }],
-
-}, {
-  name: 'Support',
-  features: [{
-    name: 'In-app chat',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Slack & MS Teams support',
-    tiers: { Growth: true, },
-  }, {
-    name: 'SLA',
-    tiers: { Growth: true, },
-  }, {
-    name: 'Usage analytics dashboard',
-    tiers: { Growth: true, },
-  }],
-
-}, {
-  name: 'Security & Authorization',
-  features: [{
-    name: 'Single Sign-On',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Custom RBAC',
-    tiers: { Teams: false, Growth: true, },
-  }],
-
-}, {
-  name: 'Customization',
-  features: [{
-    name: 'Customizable theme',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Customizable catalog',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Customizable navigation',
-    tiers: { Teams: true, Growth: true, },
-  }, {
-    name: 'Multiple tenants',
-    tiers: { Teams: 'plus', Growth: 'plus', },
-  }, {
-    name: 'Custom, private Backstage plugins',
-    tiers: { Growth: true, },
-  }],
-
-}, {
-  name: 'Connect to on-prem infra',
-  features: [{
-    name: 'Secure on-prem connection',
-    tiers: { Growth: true, },
-  }],
-}];
+const sections = [
+  {
+    name: 'Scale',
+    features: [
+      {
+        name: 'Minimum seats',
+        tiers: TIERS.reduce(
+          (collection, tier) => ({
+            [tier.name]: tier.minSeats.toString(),
+            ...collection,
+          }),
+          {}
+        ),
+      },
+    ],
+  },
+  {
+    name: 'Catalog',
+    features: [
+      {
+        name: 'Software components',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'API Specs',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'TechDocs technical documentation',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Self-service automation templates',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Infrastructure',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Teams & Users',
+        tiers: { Teams: true, Growth: true },
+      },
+    ],
+  },
+  {
+    name: 'Features',
+    features: [
+      {
+        name: 'Automatic Backstage upgrades',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Open-source Backstage plugins',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Scorecards',
+        tiers: { Teams: 'plus', Growth: 'plus' },
+      },
+      {
+        name: 'RAG AI & MCP Server Access (beta)',
+        tiers: { Growth: true },
+      },
+      {
+        name: 'REST API access',
+        tiers: { Growth: true },
+      },
+      {
+        name: 'Search Engine',
+        tiers: { Teams: 'PostgreSQL', Growth: 'OpenSearch' },
+      },
+    ],
+  },
+  {
+    name: 'Support',
+    features: [
+      {
+        name: 'In-app chat',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Slack & MS Teams support',
+        tiers: { Growth: true },
+      },
+      {
+        name: 'SLA',
+        tiers: { Growth: true },
+      },
+      {
+        name: 'Usage analytics dashboard',
+        tiers: { Growth: true },
+      },
+    ],
+  },
+  {
+    name: 'Security & Authorization',
+    features: [
+      {
+        name: 'Single Sign-On',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Custom RBAC',
+        tiers: { Teams: false, Growth: true },
+      },
+    ],
+  },
+  {
+    name: 'Customization',
+    features: [
+      {
+        name: 'Customizable theme',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Customizable catalog',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Customizable navigation',
+        tiers: { Teams: true, Growth: true },
+      },
+      {
+        name: 'Multiple tenants',
+        tiers: { Teams: 'plus', Growth: 'plus' },
+      },
+      {
+        name: 'Custom, private Backstage plugins',
+        tiers: { Growth: true },
+      },
+    ],
+  },
+  {
+    name: 'Connect to on-prem infra',
+    features: [
+      {
+        name: 'Secure on-prem connection',
+        tiers: { Growth: true },
+      },
+    ],
+  },
+];
 
 const FeatureNameHeaderCell = ({ feature }) => (
   <th className="py-5 px-4 lg:px-6 text-sm font-normal text-gray-500 text-left" scope="row">
@@ -120,7 +157,7 @@ const FeatureNameHeaderCell = ({ feature }) => (
   </th>
 );
 
-const FeatureTierIndicatorCell = ({ tier, featureTier}) => {
+const FeatureTierIndicatorCell = ({ tier, featureTier }) => {
   let inner;
 
   if (featureTier === true) {
@@ -142,7 +179,9 @@ const FeatureTierIndicatorCell = ({ tier, featureTier}) => {
       </>
     );
   } else if (isString(featureTier)) {
-    inner = <span className="block text-sm text-gray-700 text-right lg:text-left">{featureTier}</span>;
+    inner = (
+      <span className="block text-sm text-gray-700 text-right lg:text-left">{featureTier}</span>
+    );
   } else {
     inner = (
       <>
@@ -154,11 +193,7 @@ const FeatureTierIndicatorCell = ({ tier, featureTier}) => {
     );
   }
 
-  return (
-    <td className="py-5 pr-4 lg:px-6">
-      {inner}
-    </td>
-  );
+  return <td className="py-5 pr-4 lg:px-6">{inner}</td>;
 };
 
 const FeatureRow = ({ feature, tier }) => (
@@ -187,11 +222,7 @@ const SectionTable = ({ section, tier, tierIndex }) => (
 
     <tbody className="divide-y divide-gray-200">
       {section.features.map((feature) => (
-        <FeatureRow
-          feature={feature}
-          key={`${tierIndex}-${feature.name}`}
-          tier={tier}
-        />
+        <FeatureRow feature={feature} key={`${tierIndex}-${feature.name}`} tier={tier} />
       ))}
     </tbody>
   </table>
@@ -279,7 +310,10 @@ const FeatureComparisonTable = () => {
 
           <tbody className="border-t border-gray-200 divide-y divide-gray-200">
             <tr>
-              <th className="py-8 px-6 text-sm font-medium text-gray-900 text-left align-top" scope="row">
+              <th
+                className="py-8 px-6 text-sm font-medium text-gray-900 text-left align-top"
+                scope="row"
+              >
                 Get started
               </th>
 
@@ -300,7 +334,7 @@ const FeatureComparisonTable = () => {
         </table>
       </div>
     </>
-  )
+  );
 };
 
 export default FeatureComparisonTable;

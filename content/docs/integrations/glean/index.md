@@ -11,9 +11,7 @@ integrationType: OSS plugin
 
 The Glean plugin allows you to pull your Roadie data into Glean to enable unified search capabilities across your organization. This integration makes your Roadie catalog and tech docs searchable from Glean.
 
-
 ## Basic Configuration
-
 
 ### API Index URL
 
@@ -21,7 +19,7 @@ The index URL of the Glean API. This is the endpoint where Roadie will send your
 
 ### Data Source
 
-The data source of the Glean API to use. This identifies which data source in Glean should receive the Roadie data. 
+The data source of the Glean API to use. This identifies which data source in Glean should receive the Roadie data.
 
 For more information about data sources, see: [Glean Data Sources Documentation](https://support.glean.com/hc/en-us/articles/30038992119451-Data-Sources)
 

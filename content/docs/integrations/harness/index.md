@@ -16,19 +16,20 @@ The [Backstage Harness plugin](https://github.com/harness/backstage-plugins/tree
 ![harness-exec-history.webp](harness-exec-history.webp)
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Add Harness to one of your components
 
 ### Add the needed Harness annotation(s)
 
-The Harness plugin enables 3 usable annotations that are available to correctly identify the Harness pipelines. 
+The Harness plugin enables 3 usable annotations that are available to correctly identify the Harness pipelines.
 
-The main annotations can be seen below on the example catalog-info.yaml file: 
+The main annotations can be seen below on the example catalog-info.yaml file:
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
@@ -36,12 +37,11 @@ kind: Component
 metadata:
   # ...
   annotations:
-    
     # optional annotation
     harness.io/pipelines: |
       labelA: <harness_pipeline_url>
       labelB: <harness_pipeline_url>
-    # here labelA / labelB denotes the value you will see in dropdown in execution list. 
+    # here labelA / labelB denotes the value you will see in dropdown in execution list.
     harness.io/services: |
       labelA: <harness_service_url>
       labelB: <harness_service_url>
@@ -49,14 +49,12 @@ spec:
   type: service
   # ...
 ```
-Note that the annotations needs to be formatted as displayed above. A `pipe` character indicating a multiline string and then key-value pairs of pipeline/service configurations. 
 
+Note that the annotations needs to be formatted as displayed above. A `pipe` character indicating a multiline string and then key-value pairs of pipeline/service configurations.
 
-The plugin also allows users to use an older legacy annotation called `harness.io/project-url: <harness_project_url>` 
-
+The plugin also allows users to use an older legacy annotation called `harness.io/project-url: <harness_project_url>`
 
 To find the correct values to use for annotations, refer to the [official plugin documentation in their GitHub repository](https://github.com/harness/backstage-plugins/blob/main/plugins/harness-ci-cd/PluginConfiguation.md).
-
 
 ### Create and add an API Key
 
@@ -80,10 +78,8 @@ Select the `EntityHarnessCiCdContent` card from the drop-down and click Create.
 
 You should now see your Harness pipeline runs inside Roadie!
 
-
 ## References
 
 - [Harness Plugin Documentation](https://github.com/harness/backstage-plugins/tree/main/plugins/harness-ci-cd)
 - [Harness Plugin Configuration Options](https://github.com/harness/backstage-plugins/blob/main/plugins/harness-ci-cd/PluginConfiguation.md)
 - [Harness Documentation to generate API keys](https://developer.harness.io/docs/platform/role-based-access-control/add-and-manage-api-keys/)
-

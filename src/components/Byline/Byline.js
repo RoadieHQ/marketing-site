@@ -4,12 +4,7 @@ import formatDistance from 'date-fns/formatDistance';
 import has from 'lodash/has';
 import upperFirst from 'lodash/upperFirst';
 
-const Byline = ({
-  frontmatter,
-  relative = false,
-  showLastValidated = false,
-  dateKey = 'date',
-}) => {
+const Byline = ({ frontmatter, relative = false, showLastValidated = false, dateKey = 'date' }) => {
   const FORMAT_TOKEN = 'MMMM do, yyyy';
   if (!has(frontmatter, dateKey)) return null;
   const date = frontmatter[dateKey];

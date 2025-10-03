@@ -17,10 +17,11 @@ Storage. These settings are configured in `https://<tenant-name>.roadie.so/admin
 This page describes how to get the client id and private key for GCP.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Steps
@@ -49,4 +50,4 @@ This will download a JSON file containing the credentials needed for next step.
 ## Conclusion
 
 After adding the credentials for GCP your Roadie instance will be able to authenticate against Google and fetch data
-for components registered in GCS locations.  
+for components registered in GCS locations.

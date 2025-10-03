@@ -6,7 +6,7 @@ description: How to add and configre Backstage plugins in Roadie
 
 ## Introduction
 
-Roadie supports many open-source Backstage plugins out of the box. 
+Roadie supports many open-source Backstage plugins out of the box.
 
 See the [Plugins & Integrations](/docs/integrations/) page for a full list of supported plugins, and dedicated instructions for each one. The list of available plugins is also visible to admins in the Administration area.
 

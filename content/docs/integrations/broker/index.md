@@ -14,10 +14,11 @@ integrationType: Integration
 The Broker connection is designed to connect Roadie and its plugins to integration targets that are located on self-hosted infrastructure and therefore not publicly available via the internet.
 
 ## At a Glance
-| | |
-|---: | --- |
-| **Prerequisites** |  |
-| **Considerations** |  |
+
+|                            |                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------ |
+|          **Prerequisites** |                                                                                                  |
+|         **Considerations** |                                                                                                  |
 | **Supported Environments** | ☐ Private Network via Broker <br /> ☐ Internet Accessible via IP Whitelist <br /> ☒ Cloud Hosted |
 
 ## Overview
@@ -219,7 +220,6 @@ If you want to continue using self-signed certificates and are not comfortable d
 1. Either generate (or re-purpose) a ConfigMap with the private Root & Intermediate CA
 
    - ```yaml
-
      ---
      volumes:
        - name: trusted-ca-bundle
@@ -239,14 +239,15 @@ If you want to continue using self-signed certificates and are not comfortable d
    - This will be mount the `trusted-ca-bundle` volumen into `/private/` folder of the pod, and the name of the file will be the name of the key in the ConfigMap
 
 3. Configure the environment variable for Node.JS - see below.
-   - ```yaml
 
+   - ```yaml
      ---
      - env:
      ---
      - name: NODE_EXTRA_CA_CERTS
        value: '/private/ca-bundle.pem'
      ```
+
    - The key in the ConfigMap is named ca-bundle.pem and the ConfigMap itself is named ca-bundle
 
 ### Debugging
