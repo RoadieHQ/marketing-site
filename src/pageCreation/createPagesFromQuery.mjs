@@ -16,9 +16,17 @@ const createPagesFromQuery = async ({
     throw errors;
   }
 
-  get(data, resultName).map((edge, index) =>
-    createPage(processor(edge, component, get(data, resultName), index))
-  );
+  get(data, resultName).map((edge, index) => {
+    const entry = get(data, resultName);
+    // console.log('creating page for ', entry);
+    try {
+      const pageData = processor(edge, component, entry, index);
+      // console.log('passing data to page', pageData);
+      return createPage(pageData)
+    } catch (error) {
+      console.error('Unable to create page for', entry, error);
+    }
+  });
 };
 
 export default createPagesFromQuery;

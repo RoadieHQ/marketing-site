@@ -16,6 +16,30 @@ import fullRoadieDocsPath from 'components/backstage/plugins/fullRoadieDocsPath'
 import PluginFeedbackModal from '../components/PluginFeedbackModal';
 import useScrollToElement from '../hooks/useScrollToElement';
 
+const PAGE_SECTIONS = {
+  INTRODUCTION: {
+    key: 'introduction',
+    fragment: 'introduction',
+    label: 'Introduction',
+  },
+  INSTALLATION_INSTRUCTIONS: {
+    key: 'installationInstructions',
+    fragment: 'installation-instructions',
+    label: 'Installation Instructions',
+  },
+  NOTES: {
+    key: 'notes',
+    fragment: 'notes',
+    label: 'Things to Know',
+  },
+  CHANGELOG: {
+    key: 'changelog',
+    fragment: 'changelog',
+    label: 'Changelog',
+  },
+};
+
+
 const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
   const disclaimer = 'These instructions apply to self-hosted Backsgage only.';
 
@@ -55,7 +79,7 @@ const Body = ({
   return (
     <>
       {!isEmpty(introHtml) && (
-        <div className="mb-10" id="#introduction">
+        <div className="mb-10" id={PAGE_SECTIONS.INTRODUCTION.fragment}>
           <div
             className="mb-4 mt-0 prose prose-primary max-w-none"
             dangerouslySetInnerHTML={{ __html: introduction.childMarkdownRemark.html }}
@@ -75,8 +99,8 @@ const Body = ({
 
       {!isEmpty(installHtml) && (
         <>
-          <div className="mb-4" id="installation-instructions">
-            <Title className="text-3xl">Installation Instructions</Title>
+          <div className="mb-4" id={PAGE_SECTIONS.INSTALLATION_INSTRUCTIONS.fragment}>
+            <Title className="text-3xl">{PAGE_SECTIONS.INSTALLATION_INSTRUCTIONS.label}</Title>
           </div>
 
           <div className="mb-4">
@@ -96,8 +120,8 @@ const Body = ({
 
       {!isEmpty(notesHtml) && (
         <>
-          <div className="mb-4" id="notes">
-            <Title className="text-3xl">Things to Know</Title>
+          <div className="mb-4" id={PAGE_SECTIONS.NOTES.fragment}>
+            <Title className="text-3xl">{PAGE_SECTIONS.INSTALLATION_INSTRUCTIONS.label}</Title>
           </div>
 
           <div
@@ -109,8 +133,8 @@ const Body = ({
 
       {!isEmpty(changelog) && (
         <>
-          <div className="mb-4" id="changelog">
-            <Title className="text-3xl">Changelog</Title>
+          <div className="mb-4" id={PAGE_SECTIONS.CHANGELOG.fragment}>
+            <Title className="text-3xl">{PAGE_SECTIONS.CHANGELOG.label}</Title>
           </div>
 
           <div className="prose prose-primary max-w-none mb-4">
@@ -172,8 +196,9 @@ const PluginTemplate = ({ data }) => {
     handleOpenExitIntentModal();
   });
 
+  const scrollToElement = PAGE_SECTIONS.INSTALLATION_INSTRUCTIONS.fragment;
   // Show feedback modal when user scrolls to installation section
-  const { hasScrolledTo } = useScrollToElement('installation-instructions', {
+  const { hasScrolledTo } = useScrollToElement(scrollToElement, {
     threshold: 0.1,
     once: true,
   });
@@ -219,7 +244,7 @@ const PluginTemplate = ({ data }) => {
             </article>
 
             <aside className="hidden md:block md:col-span-1">
-              <Sidebar plugin={plugin} />
+              <Sidebar plugin={plugin} pageSections={PAGE_SECTIONS} />
             </aside>
           </div>
         </div>
