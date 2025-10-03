@@ -116,7 +116,12 @@ const BackstagePlugins = ({ data }) => {
     })();
   }, []);
 
+  const allPLuginsCount = plugins.edges.length;
   const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, npmData));
+
+  const hydratedPlugins = plugins.edges.map(({ node }) => (
+    hydratePlugin(node, npmData)
+  ));
 
   const filteredPlugins = filterPlugins({
     plugins: hydratedPlugins,
@@ -140,7 +145,7 @@ const BackstagePlugins = ({ data }) => {
             </div>
             <div className="mb-10">
               <Lead>
-                Descriptions, guides and installation instructions for popular open-source Backstage
+                Descriptions, installation instructions, and changelogs for {allPLuginsCount.toLocaleString()} open-source Backstage 
                 plugins.
               </Lead>
               <Lead>
