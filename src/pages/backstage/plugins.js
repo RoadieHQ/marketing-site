@@ -137,8 +137,8 @@ const BackstagePlugins = ({ data }) => {
       />
 
       <Page titleDivide={true}>
-        <div className="lg:flex justify-between items-center mb-6">
-          <div className="lg:mr-8">
+        <div className="mb-6">
+          <div>
             <div className="mb-4">
               <Headline>Backstage plugins</Headline>
             </div>
@@ -158,15 +158,15 @@ const BackstagePlugins = ({ data }) => {
           </div>
 
           <div className="mb-2">
-            <form className="lg:w-96">
-              <div className="mb-2">
+            <form className="lg:flex lg:justify-between">
+              <div className="mb-4 lg:mb-0">
                 <Input
                   type="text"
                   onChange={setQuery}
                   value={query}
                   aria-label="Search"
                   placeholder="Search"
-                  fullWidth
+                  fullWidth={true}
                 />
               </div>
 
