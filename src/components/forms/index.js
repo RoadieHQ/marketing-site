@@ -10,4 +10,5 @@ export { default as SubscribeToNewsletterSwitch } from './SubscribeToNewsletterS
 export { default as ScmToolRadioGroup } from './ScmToolRadioGroup';
 export { default as Recaptcha } from './Recaptcha';
 export { default as Select } from './Select';
+export { default as Typeahead } from './Typeahead';
 export { INPUT_COLORS as INPUT_COLORS } from './input-colors';

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import sortBy from 'lodash/sortBy';
 import classnames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
 
-import { Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
+import { Typeahead, Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
 import ListItem from 'components/backstage/plugins/ListItem';
 
 const SORT_ORDERS = [
@@ -71,7 +72,13 @@ const hydratePlugin = (plugin, npmData) => {
   return plugin;
 };
 
-const filterPlugins = ({ plugins, query, sortOrder, npmDataLoadingState }) => {
+const filterPlugins = ({
+  plugins,
+  query,
+  sortOrder,
+  category,
+  npmDataLoadingState,
+}) => {
   let filteredPlugins = [];
   if (query === '') {
     filteredPlugins = plugins;
@@ -83,6 +90,16 @@ const filterPlugins = ({ plugins, query, sortOrder, npmDataLoadingState }) => {
       );
     });
   }
+
+  if (!isEmpty(category)) {
+    console.log('filtering', category);
+    filteredPlugins = filteredPlugins.filter(({ category: pluginCategory }) => {
+      return pluginCategory?.name === category.name;
+    });
+  }
+
+  console.log('filteredPlugins', filteredPlugins);
+
 
   if (npmDataLoadingState === 'loaded') {
     if (sortOrder.value === 'name') {
@@ -100,6 +117,7 @@ const filterPlugins = ({ plugins, query, sortOrder, npmDataLoadingState }) => {
 const BackstagePlugins = ({ data }) => {
   const {
     plugins,
+    pluginCategories,
     site: {
       siteMetadata: { title },
     },
@@ -109,6 +127,7 @@ const BackstagePlugins = ({ data }) => {
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const [category, setCategory] = useState({});
 
   useEffect(() => {
     (async () => {
@@ -126,6 +145,7 @@ const BackstagePlugins = ({ data }) => {
     plugins: hydratedPlugins,
     query,
     sortOrder,
+    category,
     npmDataLoadingState,
   });
 
@@ -159,15 +179,26 @@ const BackstagePlugins = ({ data }) => {
 
           <div className="mb-2">
             <form className="lg:flex lg:justify-between">
-              <div className="mb-4 lg:mb-0">
-                <Input
-                  type="text"
-                  onChange={setQuery}
-                  value={query}
-                  aria-label="Search"
-                  placeholder="Search"
-                  fullWidth={true}
-                />
+              <div className="flex">
+                <div className="mb-4 lg:mb-0 lg:mr-4">
+                  <Input
+                    type="text"
+                    onChange={setQuery}
+                    value={query}
+                    aria-label="Search"
+                    placeholder="Search"
+                    fullWidth={true}
+                  />
+                </div>
+
+                <div className="mb-4 lg:mb-0">
+                  <Typeahead
+                    onChange={setCategory}
+                    value={category}
+                    options={pluginCategories.edges.map(({ node }) => node)}
+                    fullWidth
+                  />
+                </div>
               </div>
 
               <div
@@ -223,6 +254,17 @@ export const pageQuery = graphql`
       }
     }
 
+    pluginCategories: allContentfulBackstagePluginCategory(sort: {
+      name: ASC
+    }) {
+      edges {
+        node {
+          name
+          description
+        }
+      }
+    }
+
     plugins: allContentfulBackstagePlugin(sort: { humanName: ASC }) {
       edges {
         node {
@@ -240,6 +282,10 @@ export const pageQuery = graphql`
           attributionText
           attributionUrl
           lead
+
+          category {
+            name
+          }
         }
       }
     }

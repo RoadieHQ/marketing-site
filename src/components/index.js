@@ -1,4 +1,5 @@
 export {
+  Typeahead,
   Switch,
   Radio,
   Input,
