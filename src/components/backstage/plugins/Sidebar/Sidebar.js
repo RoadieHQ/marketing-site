@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Title } from 'components';
+import { Title, Chip } from 'components';
 import { NpmChip, GitHubChip, RoadieDocsChip } from 'components/backstage/plugins';
 
 import MaintainersList from './MaintainersList';
@@ -9,7 +9,7 @@ import parseNpmData from './parseNpmData';
 import fetchNpmDataByName from './fetchNpmDataByName';
 
 const Sidebar = ({ plugin, pageSections }) => {
-  const { availableOnRoadie, roadieDocsPath, npmPackageName, codeLocation } = plugin;
+  const { availableOnRoadie, roadieDocsPath, npmPackageName, codeLocation, category } = plugin;
 
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
@@ -32,6 +32,19 @@ const Sidebar = ({ plugin, pageSections }) => {
       </div>
 
       <div className="mb-10">
+        <NpmDetailsList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+      </div>
+
+      {category && (
+        <div className="mb-10">
+          <div className="mb-4">
+            <Title>Category</Title>
+          </div>
+          <Chip label={category.name} title={category.description} />
+        </div>
+      )}
+
+      <div className="mb-10">
         <div className="mb-4">
           <Title>Links</Title>
         </div>
@@ -46,9 +59,6 @@ const Sidebar = ({ plugin, pageSections }) => {
         <NpmChip npmjsPackage={npmPackageName} />
       </div>
 
-      <div className="mb-10">
-        <NpmDetailsList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
-      </div>
 
       <div className="mb-10">
         <MaintainersList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />

@@ -99,6 +99,11 @@ export const pageQuery = graphql`
       availableOnRoadie
       lead
 
+      category {
+        name
+        description
+      }
+
       notes {
         childMarkdownRemark {
           html
