@@ -40,7 +40,7 @@ const PAGE_SECTIONS = {
 };
 
 const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
-  const disclaimer = 'These instructions apply to self-hosted Backsgage only.';
+  const disclaimer = 'These instructions apply to self-hosted Backstage only.';
 
   if (availableOnRoadie && roadieDocsPath) {
     return (
