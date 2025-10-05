@@ -76,8 +76,11 @@ const filterPlugins = ({ plugins, query, sortOrder, npmDataLoadingState }) => {
   if (query === '') {
     filteredPlugins = plugins;
   } else {
-    filteredPlugins = plugins.filter(({ humanName }) => {
-      return humanName.toLowerCase().includes(query.toLowerCase());
+    filteredPlugins = plugins.filter(({ humanName, attributionText }) => {
+      return (
+        humanName.toLowerCase().includes(query.toLowerCase()) ||
+        attributionText.toLowerCase().includes(query.toLowerCase())
+      );
     });
   }
 
