@@ -19,7 +19,7 @@ const createPagesFromQuery = async ({
   get(data, resultName).map((edge, index) => {
     const entry = get(data, resultName);
     const pageData = processor(edge, component, entry, index);
-    return createPage(pageData)
+    return createPage(pageData);
   });
 };
 
