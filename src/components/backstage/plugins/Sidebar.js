@@ -225,9 +225,9 @@ const parseNpmData = (npmData) => {
 
 const TableOfContents = ({ plugin, pageSections }) => {
   const listItems = Object.keys(pageSections).map((sectionName) => {
-    const { key, fragment, label } = pageSections[sectionName];
+    const { key, existsKey, fragment, label } = pageSections[sectionName];
 
-    if (!plugin[key]) return null;
+    if (!plugin[existsKey]) return null;
 
     return (
       <li key={key} className="list-disc underline">
