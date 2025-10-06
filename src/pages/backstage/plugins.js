@@ -76,8 +76,11 @@ const filterPlugins = ({ plugins, query, sortOrder, npmDataLoadingState }) => {
   if (query === '') {
     filteredPlugins = plugins;
   } else {
-    filteredPlugins = plugins.filter(({ humanName }) => {
-      return humanName.toLowerCase().includes(query.toLowerCase());
+    filteredPlugins = plugins.filter(({ humanName, attributionText }) => {
+      return (
+        humanName.toLowerCase().includes(query.toLowerCase()) ||
+        attributionText.toLowerCase().includes(query.toLowerCase())
+      );
     });
   }
 
@@ -141,8 +144,8 @@ const BackstagePlugins = ({ data }) => {
             </div>
             <div className="mb-10">
               <Lead>
-                Descriptions, installation instructions, and changelogs for {allPluginsCount.toLocaleString()} open-source Backstage 
-                plugins.
+                Descriptions, installation instructions, and changelogs for{' '}
+                {allPluginsCount.toLocaleString()} open-source Backstage plugins.
               </Lead>
               <Lead>
                 Using Roadie? Visit our{' '}

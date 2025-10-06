@@ -223,18 +223,33 @@ const parseNpmData = (npmData) => {
   };
 };
 
-const Sidebar = ({
-  plugin: {
-    availableOnRoadie,
-    roadieDocsPath,
-    npmPackageName,
-    codeLocation,
-    introduction,
-    notes,
-    installationInstructions,
-    changelog,
-  },
-}) => {
+const TableOfContents = ({ plugin, pageSections }) => {
+  const listItems = Object.keys(pageSections).map((sectionName) => {
+    const { key, existsKey, fragment, label } = pageSections[sectionName];
+
+    if (!plugin[existsKey]) return null;
+
+    return (
+      <li key={key} className="list-disc underline">
+        <Link to={`#${fragment}`}>{label}</Link>
+      </li>
+    );
+  });
+
+  return (
+    <>
+      <div className="mb-4">
+        <Title>Table of Contents</Title>
+      </div>
+
+      <ul className="pl-6">{listItems}</ul>
+    </>
+  );
+};
+
+const Sidebar = ({ plugin, pageSections }) => {
+  const { availableOnRoadie, roadieDocsPath, npmPackageName, codeLocation } = plugin;
+
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
 
@@ -252,31 +267,7 @@ const Sidebar = ({
   return (
     <div>
       <div className="mb-10 pt-2">
-        <div className="mb-4">
-          <Title>Table of Contents</Title>
-        </div>
-        <ul className="pl-6">
-          {introduction && (
-            <li className="list-disc">
-              <Link to="#introduction">Introduction</Link>
-            </li>
-          )}
-          {installationInstructions && (
-            <li className="list-disc">
-              <Link to="#installation-instructions">Installation Instructions</Link>
-            </li>
-          )}
-          {notes && (
-            <li className="list-disc">
-              <Link to="#notes">Things to Know</Link>
-            </li>
-          )}
-          {changelog && (
-            <li className="list-disc">
-              <Link to="#changelog">Changelog</Link>
-            </li>
-          )}
-        </ul>
+        <TableOfContents plugin={plugin} pageSections={pageSections} />
       </div>
 
       <div className="mb-10">

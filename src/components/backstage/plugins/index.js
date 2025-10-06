@@ -3,7 +3,6 @@ export { default as Logo } from './Logo';
 export { default as ListItem } from './ListItem';
 export { default as Header } from './Header';
 export { default as PluginCTA } from './PluginCTA';
-export { default as PlaceholderBody } from './PlaceholderBody';
 export { default as Sidebar } from './Sidebar';
 export { default as RoadieDocsChip } from './RoadieDocsChip';
 export { default as GitHubChip } from './GitHubChip';

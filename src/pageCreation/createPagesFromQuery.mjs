@@ -16,9 +16,11 @@ const createPagesFromQuery = async ({
     throw errors;
   }
 
-  get(data, resultName).map((edge, index) =>
-    createPage(processor(edge, component, get(data, resultName), index))
-  );
+  get(data, resultName).map((edge, index) => {
+    const entry = get(data, resultName);
+    const pageData = processor(edge, component, entry, index);
+    return createPage(pageData);
+  });
 };
 
 export default createPagesFromQuery;
