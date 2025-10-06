@@ -31,11 +31,12 @@ const parseNpmData = (npmData) => {
 
   return {
     ...pick(npmData, ['latestVersion', 'license', 'maintainers']),
-    latestVersionPublishedTime,
     lastSyncedTime,
-    latestVersionPublishedAgo,
-    firstPublishedAgo,
     lastSyncedAgo,
+    latestVersionPublishedTime,
+    latestVersionPublishedAgo,
+    firstPublishedTime,
+    firstPublishedAgo,
     lastMonthDownloads,
     numberOfVersions,
     maintainersHelpText,

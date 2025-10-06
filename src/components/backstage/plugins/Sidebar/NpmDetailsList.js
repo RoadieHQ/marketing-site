@@ -17,34 +17,46 @@ const DetailsListItem = ({ label, value, ...props }) => {
 
 const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
   if (npmDataLoadingState === 'error') return null;
+  const {
+    latestVersion,
+    lastMonthDownloads,
+    latestVersionPublishedAgo,
+    latestVersionPublishedTime,
+    firstPublishedAgo,
+    firstPublishedTime,
+    numberOfVersions,
+    license,
+    lastSyncedTime,
+    lastSyncedAgo,
+  } = npmData;
   let inner;
 
   if (npmDataLoadingState === 'loaded') {
     inner = (
       <div>
         <ul className="mb-3">
-          <DetailsListItem label="Version" value={npmData.latestVersion} />
-          <DetailsListItem label="Downloads in last month" value={npmData.lastMonthDownloads} />
+          <DetailsListItem label="Version" value={latestVersion} />
+          <DetailsListItem label="Downloads in last month" value={lastMonthDownloads} />
           <DetailsListItem
             label="Last published"
-            value={npmData.latestVersionPublishedAgo}
-            title={npmData.latestVersionPublishedTime}
+            value={latestVersionPublishedAgo}
+            title={latestVersionPublishedTime}
           />
           <DetailsListItem
             label="First published"
-            value={npmData.firstPublishedAgo}
-            title={npmData.firstPublishedTime}
+            value={firstPublishedAgo}
+            title={firstPublishedTime}
           />
-          <DetailsListItem label="Number of versions" value={npmData.numberOfVersions} />
-          <DetailsListItem label="License" value={npmData.license} />
+          <DetailsListItem label="Number of versions" value={numberOfVersions} />
+          <DetailsListItem label="License" value={license} />
         </ul>
 
         <span
           className="flex place-content-between text-gray-400"
-          title={npmData.roadieLastUpdated}
+          title={lastSyncedTime}
         >
           <span className="italic">Last synced with NPM:</span>
-          <span>{npmData.lastSyncedAgo}</span>
+          <span>{lastSyncedAgo}</span>
         </span>
       </div>
     );
