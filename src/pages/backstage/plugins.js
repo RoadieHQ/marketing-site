@@ -92,7 +92,6 @@ const filterPlugins = ({
   }
 
   if (!isEmpty(category)) {
-    console.log('filtering', category);
     filteredPlugins = filteredPlugins.filter(({ category: pluginCategory }) => {
       return pluginCategory?.name === category.name;
     });
