@@ -1,41 +1,65 @@
 import React from 'react'
+import isEmpty from 'lodash/isEmpty';
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
+import XIcon from '@heroicons/react/solid/XIcon'
 import { INPUT_COLORS } from './input-colors';
-import classnames from 'classnames';
 
 export default function Typeahead({
   onChange,
   value,
   options,
-  fullWidth = false,
   color = 'primary',
+  placeholderText = 'Choose...',
 }) {
+  console.log('Typeahead', value, options);
   const { accent, border, placeholder, background, text } = INPUT_COLORS[color];
+  const btnClass = `w-full rounded-md shadow-sm py-3 px-4 text-left border ${background} ${text} ${accent} ${border}`;
+  const placeholderTextColor = placeholder.replace('placeholder-', '');
+
+  const handleClear = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onChange({});
+  };
 
   return (
     <Listbox value={value} onChange={onChange}>
-      <div className="relative w-72">
-        <ListboxButton className={classnames(
-          `rounded-md shadow-sm py-3 px-4 text-left border ${background} ${text} ${accent} ${border} ${placeholder}`, {
-            'w-full': fullWidth,
-          })}>
-          {value?.name ? value.name : 'Categories'}
+      <div className="relative w-full">
+        <ListboxButton className={btnClass}>
+          <span className={`block truncate pr-6`}>
+            {value?.name ?
+              value.name :
+              <span className={placeholderTextColor}>{placeholderText}</span>
+            }
+          </span>
         </ListboxButton>
 
+        {!isEmpty(value) && (
+          <button
+            onClick={handleClear}
+            className="absolute inset-y-0 right-0 flex items-center pr-3 hover:opacity-70"
+            aria-label="Clear selection"
+            data-headlessui-ignore-button
+            type="button"
+          >
+            <XIcon className="h-5 w-5" />
+          </button>
+        )}
+
         <ListboxOptions className="absolute mt-1 w-full rounded-md bg-white shadow-lg ring-1 ring-black/10 focus:outline-none z-10">
-          {options.map((category) => (
+          {options.map((option) => (
             <ListboxOption
-              key={category.name}
-              value={category}
+              key={option.name}
+              value={option}
               className={({ focus, selected }) =>
                 [
                   "cursor-pointer select-none py-2 px-3 text-gray-700",
-                  focus ? "bg-blue-100" : "",
-                  selected ? "bg-blue-200 font-medium" : ""
+                  focus ? "bg-primary-100" : "",
+                  selected ? "bg-primary-200 font-medium" : ""
                 ].join(" ")
               }
             >
-              {category.name}
+              {option.name}
             </ListboxOption>
           ))}
         </ListboxOptions>

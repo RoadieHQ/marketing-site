@@ -90,8 +90,8 @@ const BackstagePlugins = ({ data }) => {
 
           <div className="mb-2">
             <form className="lg:flex lg:justify-between">
-              <div className="flex">
-                <div className="mb-4 lg:mb-0 lg:mr-4">
+              <div className="sm:flex">
+                <div className="mb-4 lg:mb-0 sm:mr-4 w-full lg:w-72">
                   <Input
                     type="text"
                     onChange={setQuery}
@@ -102,12 +102,12 @@ const BackstagePlugins = ({ data }) => {
                   />
                 </div>
 
-                <div className="mb-4 lg:mb-0">
+                <div className="mb-4 lg:mb-0 w-full lg:w-96">
                   <Typeahead
                     onChange={setCategory}
                     value={category}
                     options={pluginCategories.edges.map(({ node }) => node)}
-                    fullWidth
+                    placeholderText="Categories"
                   />
                 </div>
               </div>

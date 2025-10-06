@@ -26,9 +26,6 @@ const filterPlugins = ({
     });
   }
 
-  console.log('filteredPlugins', filteredPlugins);
-
-
   if (npmDataLoadingState === 'loaded') {
     if (sortOrder.value === 'name') {
       filteredPlugins = sortBy(filteredPlugins, ['humanName']);
