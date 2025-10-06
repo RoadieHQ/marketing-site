@@ -10,3 +10,6 @@ export { default as NpmChip } from './NpmChip';
 export { default as GravatarImage } from './GravatarImage';
 export { default as Body } from './Body';
 export { default as PAGE_SECTIONS } from './pageSections';
+export { default as fetchNpmDataForList } from './fetchNpmDataForList';
+export { default as filterPlugins } from './filterPlugins';
+export { default as hydratePlugin } from './hydratePlugin';

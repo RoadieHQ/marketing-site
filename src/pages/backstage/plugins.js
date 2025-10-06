@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
-import sortBy from 'lodash/sortBy';
 import classnames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
 
 import { Typeahead, Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
-import ListItem from 'components/backstage/plugins/ListItem';
+import {
+  ListItem,
+  fetchNpmDataForList,
+  filterPlugins,
+  hydratePlugin,
+} from 'components/backstage/plugins';
 
 const SORT_ORDERS = [
   {
@@ -21,97 +24,6 @@ const SORT_ORDERS = [
     value: 'recent',
   },
 ];
-
-async function fetchNpmDataForList() {
-  let response;
-
-  try {
-    response = await fetch('/.netlify/functions/fetchNpmDataForList');
-
-    if (!response.ok) {
-      return {
-        status: 'error',
-        data: {},
-      };
-    }
-  } catch (err) {
-    console.error(err);
-    return {
-      status: 'error',
-      data: {},
-    };
-  }
-
-  try {
-    const json = await response.json();
-    return {
-      status: 'loaded',
-      data: json.data,
-    };
-  } catch (err) {
-    console.warn(
-      `Unparsable JSON returned from Netlify function. It's likely not available in this environment.`
-    );
-    return {
-      status: 'error',
-      data: {},
-    };
-  }
-}
-
-const hydratePlugin = (plugin, npmData) => {
-  const pluginNpmData = npmData[plugin.npmPackageName];
-  if (pluginNpmData) {
-    plugin.npmData = {
-      lastMonthDownloads: pluginNpmData.lastMonthDownloads,
-      latestVersionPublishedTime: new Date(Date.parse(pluginNpmData.latestVersionPublishedTime)),
-    };
-  } else {
-    plugin.npmData = {};
-  }
-  return plugin;
-};
-
-const filterPlugins = ({
-  plugins,
-  query,
-  sortOrder,
-  category,
-  npmDataLoadingState,
-}) => {
-  let filteredPlugins = [];
-  if (query === '') {
-    filteredPlugins = plugins;
-  } else {
-    filteredPlugins = plugins.filter(({ humanName, attributionText }) => {
-      return (
-        humanName.toLowerCase().includes(query.toLowerCase()) ||
-        attributionText.toLowerCase().includes(query.toLowerCase())
-      );
-    });
-  }
-
-  if (!isEmpty(category)) {
-    filteredPlugins = filteredPlugins.filter(({ category: pluginCategory }) => {
-      return pluginCategory?.name === category.name;
-    });
-  }
-
-  console.log('filteredPlugins', filteredPlugins);
-
-
-  if (npmDataLoadingState === 'loaded') {
-    if (sortOrder.value === 'name') {
-      filteredPlugins = sortBy(filteredPlugins, ['humanName']);
-    } else if (sortOrder.value === 'popularity') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.lastMonthDownloads']).reverse();
-    } else if (sortOrder.value === 'recent') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.latestVersionPublishedTime']).reverse();
-    }
-  }
-
-  return filteredPlugins;
-};
 
 const BackstagePlugins = ({ data }) => {
   const {
