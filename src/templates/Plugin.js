@@ -13,8 +13,6 @@ import {
 } from 'components';
 import { Header, PluginCTA, Sidebar } from 'components/backstage/plugins';
 import fullRoadieDocsPath from 'components/backstage/plugins/fullRoadieDocsPath';
-import PluginFeedbackModal from '../components/PluginFeedbackModal';
-import useScrollToElement from '../hooks/useScrollToElement';
 
 const PAGE_SECTIONS = {
   INTRODUCTION: {
@@ -189,10 +187,7 @@ const recordExitIntentModalHasBeenShown = () => {
 
 const PluginTemplate = ({ data }) => {
   const { plugin } = data;
-
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
-  const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
-  const [feedbackModalDismissed, setFeedbackModalDismissed] = useState(false);
 
   const handleOpenExitIntentModal = () => {
     if (!hasExitIntentModalBeenShownBefore()) {
@@ -205,31 +200,9 @@ const PluginTemplate = ({ data }) => {
     setExitIntentModalOpen(false);
   };
 
-  const handleCloseFeedbackModal = () => {
-    setFeedbackModalOpen(false);
-    setFeedbackModalDismissed(true);
-  };
-
   usePageLeave(() => {
     handleOpenExitIntentModal();
   });
-
-  const scrollToElement = PAGE_SECTIONS.INSTALLATION_INSTRUCTIONS.fragment;
-  // Show feedback modal when user scrolls to installation section
-  const { hasScrolledTo } = useScrollToElement(scrollToElement, {
-    threshold: 0.1,
-    once: true,
-  });
-
-  // Delay showing the modal by 2 seconds after scrolling to the section
-  React.useEffect(() => {
-    if (hasScrolledTo && !feedbackModalDismissed) {
-      const timer = setTimeout(() => {
-        setFeedbackModalOpen(true);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [hasScrolledTo, feedbackModalDismissed]);
 
   return (
     <>
@@ -238,13 +211,6 @@ const PluginTemplate = ({ data }) => {
       <ExitIntentModal
         modalOpen={exitIntentModalOpen}
         handleCloseModal={handleCloseExitIntentModal}
-      />
-
-      <PluginFeedbackModal
-        isVisible={feedbackModalOpen}
-        onClose={handleCloseFeedbackModal}
-        pluginSlug={plugin.slug}
-        pluginName={plugin.humanName}
       />
 
       <SitewideHeader />
