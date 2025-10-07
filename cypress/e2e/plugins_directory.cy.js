@@ -36,9 +36,9 @@ describe('Plugins directory', () => {
       cy.visit('/backstage/plugins/');
 
       cy.wait('@fetchNpmData').then(() => {
-        cy.get('div[data-test-id="plugin-api-docs"]')
+        cy.get('div[data-testid="plugin-api-docs"]')
           .contains('14,550');
-        cy.get('div[data-test-id="plugin-api-docs"]')
+        cy.get('div[data-testid="plugin-api-docs"]')
           .contains('Updated 11 days ago');
       });
     });
@@ -66,7 +66,7 @@ describe('Plugins directory', () => {
       const startingOrder = ['AI Assistant', 'API Docs'];
       const expectedOrder = ['API Docs', 'AI Assistant'];
 
-      cy.get('div[data-test-id^="plugin-"] h2').then(($els) => {
+      cy.get('div[data-testid^="plugin-"] h2').then(($els) => {
         const texts = [...$els].map(el => el.innerText.trim()).filter((text) => (
           testCasePluginTitles.includes(text)
         ));
@@ -75,7 +75,7 @@ describe('Plugins directory', () => {
 
       cy.get('button[name="sort-order-button"]').click();
       cy.get('div[role="option"]').contains('Popularity').click();
-      cy.get('div[data-test-id^="plugin-"] h2').then(($els) => {
+      cy.get('div[data-testid^="plugin-"] h2').then(($els) => {
         const texts = [...$els].map(el => el.innerText.trim()).filter((text) => (
           testCasePluginTitles.includes(text)
         ));

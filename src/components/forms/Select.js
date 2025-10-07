@@ -58,8 +58,8 @@ const Select = ({
                 className={({ focus, selected }) =>
                   [
                     "cursor-pointer select-none py-2 px-3 text-gray-700",
-                    focus ? "bg-primary-100" : "",
-                    selected ? "bg-primary-200 font-medium" : ""
+                    focus ? 'bg-gray-200' : "",
+                    selected ? 'bg-primary-200 font-medium' : ""
                   ].join(" ")
                 }
               >
