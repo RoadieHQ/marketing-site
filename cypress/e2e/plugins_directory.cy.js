@@ -79,7 +79,6 @@ describe('Plugins directory', () => {
         const texts = [...$els].map(el => el.innerText.trim()).filter((text) => (
           testCasePluginTitles.includes(text)
         ));
-        console.log('texts', texts);
         expect(texts).to.deep.equal(expectedOrder);
       });
     });
