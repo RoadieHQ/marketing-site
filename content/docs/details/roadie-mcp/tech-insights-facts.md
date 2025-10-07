@@ -1,7 +1,7 @@
 ---
 title: Tech Insights Facts Server
-publishedDate: '2025-07-22T15:00:00.0Z'
-description: Access operational metrics, security data, and compliance information
+publishedDate: '2025-10-07T15:00:00.0Z'
+description: Access data from external integrations and the Roadie about entities
 ---
 
 ## Overview
@@ -12,11 +12,14 @@ The Tech Insights Facts Server provides AI assistants with access to operational
 
 ## Capabilities
 
-- **GitHub Metrics**: PR merge times, repository activity, contributor information
+- **Data Source Discovery**: Dynamically discover available Tech Insights data sources and their fact schemas
+- **GitHub Metrics**: PR merge times, repository activity, contributor information, branch protection settings, code review policies
 - **Security Metrics**: Vulnerability data from Snyk, Dependabot alerts, branch protection status
-- **Monitoring Data**: PagerDuty incident metrics, Datadog SLO information
-- **Compliance Scoring**: Entity metadata completeness and compliance scores
-- **Repository Analysis**: File structure analysis and catalog status
+- **Monitoring Data**: PagerDuty incident metrics, mean time to resolve, Datadog SLO and monitor counts
+- **Compliance Scoring**: Entity metadata completeness, ownership verification, TechDocs configuration
+- **Repository Analysis**: File structure analysis, catalog status, codebase composition
+- **Custom Facts**: Access any configured Tech Insights data source for specialized metrics
+- **Bulk Operations**: Query facts across all entities from specific data sources with filtering
 
 ## Available Tools
 
