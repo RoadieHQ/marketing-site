@@ -51,7 +51,7 @@ describe('Plugins directory', () => {
       cy.contains('AI Assistant').should('not.exist');
     });
 
-    it('can be filterd by category', () => {
+    it('can be filtered by category', () => {
       cy.visit('/backstage/plugins/');
 
       cy.get('input[name="filter-categories-input"]').type('Know');
