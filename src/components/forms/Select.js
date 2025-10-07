@@ -5,8 +5,6 @@ import kebabCase from 'lodash/kebabCase';
 
 import { INPUT_COLORS } from '.';
 
-// TODO: Render the options at the same width as the button
-
 const Select = ({
   options,
   onChange,
@@ -49,7 +47,7 @@ const Select = ({
 
           <ListboxOptions
             anchor="bottom"
-            className="absolute mt-1 rounded-md bg-white shadow-lg ring-1 ring-black/10 focus:outline-none z-10"
+            className="absolute mt-1 rounded-md bg-white shadow-lg ring-1 ring-black/10 focus:outline-none z-10 max-h-60 overflow-y-auto min-w-[var(--button-width)]"
           >
             {options.map((option) => (
               <ListboxOption

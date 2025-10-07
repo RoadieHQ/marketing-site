@@ -82,7 +82,7 @@ export default function Typeahead({
             </button>
           )}
 
-          <ComboboxOptions className="absolute mt-1 w-full rounded-md bg-white shadow-lg ring-1 ring-black/10 focus:outline-none z-10 max-h-60 overflow-y-auto">
+          <ComboboxOptions className="absolute mt-1 w-full rounded-md bg-white shadow-lg ring-1 ring-black/10 focus:outline-none z-10 max-h-60 overflow-y-auto min-w-[var(--button-width)]">
             {filteredOptions.map((option) => (
               <ComboboxOption
                 key={option[optionKey]}
