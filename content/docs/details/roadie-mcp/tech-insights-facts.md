@@ -20,15 +20,308 @@ The Tech Insights Facts Server provides AI assistants with access to operational
 
 ## Available Tools
 
+### Get Data Source Discovery
+
+Discovers available Tech Insights data sources and the fact data they provide.
+
+**Parameters:**
+- None required
+
+**Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-data-source-discovery",
+      "arguments": {}
+    },
+    "id": 1
+  }'
+```
+
+**Return Schema:**
+```typescript
+{
+  dataSources: Array<{
+    id: string,
+    title: string,
+    description?: string,
+    cadence?: string,
+    lifecycle?: any,
+    createdAt?: string,
+    updatedAt?: string,
+    handlerDefinition?: {
+      type: 'builtin' | string,
+      config: {
+        id: string,
+        builtinId?: string
+      }
+    },
+    timeout?: any,
+    draft?: boolean,
+    version?: string,
+    entityFilter?: any,
+    schema?: Record<string, {
+      type: 'integer' | 'float' | 'string' | 'boolean' | 'datetime' | 'set' | 'object',
+      description?: string,
+      metadata?: {
+        key?: string
+      }
+    }>
+  }>,
+  totalCount: number,
+  builtinCount: number,
+  customCount: number
+}
+```
+
+**Workflow:**
+```
+User Query → get-data-source-discovery → Tech Insights API → List of Data Sources + Schemas
+```
+
+This tool helps you understand what data sources are available and what facts they provide:
+1. Call `get-data-source-discovery` to retrieve all available data sources
+2. Receive a list of all data sources with their IDs, titles, descriptions, and fact schemas
+3. Use the data source IDs to query specific facts using `get-entity-facts` or `get-all-entities-facts`
+
+**Usage Examples:**
+- "What data sources are available?"
+- "What facts can I query about Rootly incidents?"
+- "Show me the facts available for components in the catalog"
+- "What is the average time to resolve for Rootly incidents on my-component?"
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
+- **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
+
+### Get Entity Facts
+
+Gets Tech Insights facts for a specific data source and entity combination.
+
+**Parameters:**
+- `dataSourceId` (string): The ID of the data source to query facts from
+- `name` (string): The name of the catalog entity
+- `namespace` (string, optional): The entity namespace (defaults to "default")
+- `kind` (string, optional): The entity kind (defaults to "component")
+
+**Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-entity-facts",
+      "arguments": {
+        "dataSourceId": "github-stats",
+        "name": "user-service"
+      }
+    },
+    "id": 1
+  }'
+```
+
+**Example Usage with Full Parameters:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-entity-facts",
+      "arguments": {
+        "dataSourceId": "1234",
+        "name": "payment-api",
+        "namespace": "production",
+        "kind": "api"
+      }
+    },
+    "id": 1
+  }'
+```
+
+**Return Schema:**
+```typescript
+{
+  dataSourceId: string,
+  dataSourceTitle?: string,
+  entityRef: string,
+  facts: Record<string, any>,
+  timestamp?: string
+}
+```
+
+**Workflow:**
+```
+User Query → get-entity-facts → fetchEnrichedEntityData() → Tech Insights API → Raw Facts
+```
+
+Get facts for a specific entity from a data source:
+1. First, use the data source discovery tool to find available data sources and their IDs
+2. Call `get-entity-facts` with the data source ID and entity information
+3. Receive all raw facts from that data source for the specified entity
+4. Works with both builtin and custom data sources
+
+**Usage Examples:**
+- "Get facts from data source 'github-stats' for user-service"
+- "What are the custom-security-check facts for payment-api?"
+- "Show me all facts from data source ID '1234' for auth-service"
+- "Fetch the techdocs facts for my-component"
+
+**Key Benefits:**
+- Dynamic fact retrieval for any configured data source
+- Returns raw fact data with all available metrics
+- Useful for exploratory analysis and custom integrations
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
+- **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
+
+### Get All Entities Facts
+
+Get facts for all entities from a specific data source with optional filtering by kind and namespace (defaults to component entities).
+
+**Parameters:**
+- `dataSourceId` (string): The ID of the data source to query facts from
+- `kind` (string, optional): Filter by entity kind (e.g., "component", "api"). **Defaults to "component".**
+- `namespace` (string, optional): Filter by namespace (e.g., "default", "production")
+
+**Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-all-entities-facts",
+      "arguments": {
+        "dataSourceId": "7e6a974c-f0ec-473f-9cc1-21c2752780a0"
+      }
+    },
+    "id": 1
+  }'
+```
+
+**Example Usage with Filters:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-all-entities-facts",
+      "arguments": {
+        "dataSourceId": "7e6a974c-f0ec-473f-9cc1-21c2752780a0",
+        "kind": "api",
+        "namespace": "production"
+      }
+    },
+    "id": 1
+  }'
+```
+
+**Return Schema:**
+```typescript
+{
+  dataSourceId: string,
+  dataSourceTitle?: string,
+  entities: Array<{
+    entityRef: string,
+    facts: Record<string, any>,
+    timestamp?: string
+  }>
+}
+```
+
+**Workflow:**
+```
+User Query → get-all-entities-facts → Tech Insights API → Facts for All Entities
+```
+
+Get facts for all entities from a specific data source:
+1. First, use the data source discovery tool to find available data sources and their IDs
+2. Call `get-all-entities-facts` with the data source ID
+3. By default, returns only component entities (the most common use case)
+4. Optionally override the kind filter or add namespace filtering
+5. Receive facts for all matching entities tracked by that data source
+6. Works with both builtin and custom data sources
+
+**Available Filters:**
+- **kind**: Filter by entity kind (e.g., "component", "api"). **Defaults to "component".**
+- **namespace**: Filter by namespace (e.g., "default", "production")
+
+**Usage Examples:**
+- "Get all facts from data source 'github-stats'"
+- "Get facts for all APIs from security metric data sources"
+- "Show me all entities regardless of kind from github data source"
+- "Get component facts in the production namespace"
+
+**Example Workflow:**
+```
+1. "What data sources are available?" 
+   → Returns list including data source "7e6a974c-f0ec-473f-9cc1-21c2752780a0" (GitHub Data Source)
+
+2. "Get facts from data source 7e6a974c-f0ec-473f-9cc1-21c2752780a0 for sample-service-3"
+   → Use get-entity-facts to return all GitHub facts for sample-service-3
+
+3. "Get all facts from data source 7e6a974c-f0ec-473f-9cc1-21c2752780a0"
+   → Use get-all-entities-facts to return all GitHub facts for all entities tracked by that data source
+```
+
+**Note:** 
+- The default kind filter of "component" covers most use cases. To see all entity kinds, explicitly specify a different kind or omit the filter.
+- For filtering by `type` or `owner`, you'll need to use other tools or process the results client-side, as the v1 API endpoint prioritizes efficiency and doesn't return full entity metadata.
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
+- **Roadie Tech Insights Data Source Read** - Access to Tech Insights data
+
 ### Get GitHub Metrics
 
 Retrieve GitHub-related metrics including pull request performance, repository activity, and contributor data.
 
 **Parameters:**
+- `name` (string): The name of the catalog entity
+- `namespace` (string, optional): The entity namespace (defaults to "default")
+- `kind` (string, optional): The entity kind (defaults to "component")
 
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-github-metrics",
+      "arguments": {
+        "name": "user-service"
+      }
+    },
+    "id": 1
+  }'
 
 ```json
 {
@@ -49,6 +342,13 @@ Retrieve GitHub-related metrics including pull request performance, repository a
 }
 ```
 
+**Usage Examples:**
+- "How long does it take to merge PRs for user-service?"
+- "Show me GitHub metrics for payment-api"
+- "What's the PR activity for auth-service?"
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -59,10 +359,29 @@ Retrieve GitHub-related metrics including pull request performance, repository a
 Access security-related metrics from Snyk vulnerability scans and Dependabot alerts.
 
 **Parameters:**
+- `name` (string): The name of the catalog entity
+- `namespace` (string, optional): The entity namespace (defaults to "default")
+- `kind` (string, optional): The entity kind (defaults to "component")
 
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-security-metrics",
+      "arguments": {
+        "name": "payment-service"
+      }
+    },
+    "id": 1
+  }'
 
 ```json
 {
@@ -90,6 +409,13 @@ Access security-related metrics from Snyk vulnerability scans and Dependabot ale
 }
 ```
 
+**Usage Examples:**
+- "What security vulnerabilities does payment-service have?"
+- "Are there any Dependabot alerts for user-service?"
+- "Is branch protection enabled for auth-service?"
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -100,10 +426,29 @@ Access security-related metrics from Snyk vulnerability scans and Dependabot ale
 Retrieve incident metrics and service configuration from PagerDuty integration.
 
 **Parameters:**
+- `name` (string): The name of the catalog entity
+- `namespace` (string, optional): The entity namespace (defaults to "default")
+- `kind` (string, optional): The entity kind (defaults to "component")
 
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-pagerduty-metrics",
+      "arguments": {
+        "name": "auth-service"
+      }
+    },
+    "id": 1
+  }'
 
 ```json
 {
@@ -132,6 +477,13 @@ Retrieve incident metrics and service configuration from PagerDuty integration.
 }
 ```
 
+**Usage Examples:**
+- "How many incidents does auth-service have?"
+- "What's the MTTR for payment-service?"
+- "Show me PagerDuty metrics for user-service"
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -142,10 +494,29 @@ Retrieve incident metrics and service configuration from PagerDuty integration.
 Access Service Level Objective (SLO) data and monitoring information from Datadog.
 
 **Parameters:**
+- `name` (string): The name of the catalog entity
+- `namespace` (string, optional): The entity namespace (defaults to "default")
+- `kind` (string, optional): The entity kind (defaults to "component")
 
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-datadog-metrics",
+      "arguments": {
+        "name": "inventory-api"
+      }
+    },
+    "id": 1
+  }'
 
 ```json
 {
@@ -162,6 +533,13 @@ Access Service Level Objective (SLO) data and monitoring information from Datado
 }
 ```
 
+**Usage Examples:**
+- "How many SLOs does inventory-api have?"
+- "Show me Datadog metrics for payment-service"
+- "What monitors are configured for auth-service?"
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -172,10 +550,29 @@ Access Service Level Objective (SLO) data and monitoring information from Datado
 Evaluate entity metadata completeness and compliance with organizational standards.
 
 **Parameters:**
+- `name` (string): The name of the catalog entity
+- `namespace` (string, optional): The entity namespace (defaults to "default")
+- `kind` (string, optional): The entity kind (defaults to "component")
 
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-entity-compliance",
+      "arguments": {
+        "name": "user-service"
+      }
+    },
+    "id": 1
+  }'
 
 ```json
 {
@@ -204,6 +601,13 @@ Evaluate entity metadata completeness and compliance with organizational standar
 }
 ```
 
+**Usage Examples:**
+- "How complete is the metadata for user-service?"
+- "Is payment-api properly documented?"
+- "Does auth-service have proper ownership assigned?"
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -214,10 +618,28 @@ Evaluate entity metadata completeness and compliance with organizational standar
 Analyze repository structure and catalog configuration status.
 
 **Parameters:**
+- `name` (string): The name of the catalog entity
+- `namespace` (string, optional): The entity namespace (defaults to "default")
 
 - `entityRef` (string): Entity reference
 
 **Example Usage:**
+```bash
+curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "get-repository-info",
+      "arguments": {
+        "name": "payment-service"
+      }
+    },
+    "id": 1
+  }'
 
 ```json
 {
@@ -243,6 +665,13 @@ Analyze repository structure and catalog configuration status.
 }
 ```
 
+**Usage Examples:**
+- "What files are in the payment-service repository?"
+- "Is user-service properly cataloged?"
+- "Show me the file structure for auth-service"
+
+**Required Permissions:**
+- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
