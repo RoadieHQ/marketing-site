@@ -12,6 +12,7 @@ export default function Typeahead({
   color = 'primary',
   placeholderText = 'Choose...',
   optionKey = 'name',
+  name = '',
 }) {
   const [query, setQuery] = useState('');
   const inputRef = useRef(null)
@@ -53,6 +54,7 @@ export default function Typeahead({
             displayValue={(option) => option && option[optionKey]}
             placeholder={placeholderText}
             ref={inputRef}
+            name={[name, 'input'].join('-')}
             onChange={(e) => {
               setQuery(e.target.value);
             }}

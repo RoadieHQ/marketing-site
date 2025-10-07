@@ -86,11 +86,12 @@ const BackstagePlugins = ({ data }) => {
           </div>
 
           <div className="mb-2">
-            <form className="lg:flex lg:justify-between">
+            <div className="lg:flex lg:justify-between">
               <div className="sm:flex">
                 <div className="mb-4 lg:mb-0 sm:mr-4 w-full lg:w-72">
                   <Input
                     type="text"
+                    name="search"
                     onChange={setQuery}
                     value={query}
                     aria-label="Search"
@@ -105,6 +106,7 @@ const BackstagePlugins = ({ data }) => {
                     value={category}
                     options={pluginCategories.edges.map(({ node }) => node)}
                     placeholderText="Categories"
+                    name="filter-categories"
                   />
                 </div>
               </div>
@@ -129,7 +131,7 @@ const BackstagePlugins = ({ data }) => {
                   />
                 </div>
               </Field>
-            </form>
+            </div>
           </div>
         </div>
 
