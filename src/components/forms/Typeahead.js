@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import isEmpty from 'lodash/isEmpty';
 import { Combobox, ComboboxInput, ComboboxOptions, ComboboxOption } from '@headlessui/react'
 import XIcon from '@heroicons/react/solid/XIcon'
@@ -14,6 +14,8 @@ export default function Typeahead({
   optionKey = 'name',
 }) {
   const [query, setQuery] = useState('');
+  const inputRef = useRef(null)
+
   console.log('Typeahead', value, options);
   const { accent, border, placeholder, background, text } = INPUT_COLORS[color];
   const inputClass = `w-full rounded-md shadow-sm py-3 px-4 text-left border ${background} ${text} ${accent} ${border} truncate overflow-hidden whitespace-nowrap`;
@@ -32,6 +34,12 @@ export default function Typeahead({
     onChange({});
   };
 
+  const openCombobox = () => {
+    if (inputRef.current) {
+      inputRef.current.focus()   // focusing opens it
+    }
+  }
+
   return (
     <Combobox
       immediate
@@ -45,15 +53,22 @@ export default function Typeahead({
             className={inputClass}
             displayValue={(option) => option && option[optionKey]}
             placeholder={placeholderText}
+            ref={inputRef}
             onChange={(e) => {
               setQuery(e.target.value);
             }}
           />
 
-          {!open && (
-            <span className={`absolute inset-y-0 right-0 flex items-center pr-3 ${placeholderTextColor}`}>
+          {!open && isEmpty(value) && (
+            <button
+              className={`absolute inset-y-0 right-0 flex items-center pr-3 ${placeholderTextColor}`}
+              onClick={openCombobox}
+              aria-label="Open combobox"
+              tabIndex={-1}
+              type="button"
+            >
               <ChevronDownIcon className="h-5 w-5" />
-            </span>
+            </button>
           )}
 
           {!isEmpty(value) && (
@@ -61,7 +76,6 @@ export default function Typeahead({
               onClick={handleClear}
               className="absolute inset-y-0 right-0 flex items-center pr-3 hover:opacity-70"
               aria-label="Clear selection"
-              data-headlessui-ignore-button
               type="button"
               tabIndex={-1}
             >
