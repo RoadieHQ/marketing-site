@@ -1,28 +1,76 @@
-import React from 'react';
-import classnames from 'classnames';
+import React, { useRef } from 'react';
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
+import ChevronDownIcon from '@heroicons/react/solid/ChevronDownIcon';
+import kebabCase from 'lodash/kebabCase';
 
 import { INPUT_COLORS } from '.';
-const CLASSES = 'appearance-none py-3 shadow-sm rounded-md';
 
-const Select = ({ options, onChange, children, color = 'primary', fullWidth = true, ...props }) => {
-  const { accent, border, placeholder, background, text } = INPUT_COLORS[color];
-  const inputColors = `${background} ${text} ${accent} ${border} ${placeholder}`;
+// TODO: Render the options at the same width as the button
 
-  function onInputChange(e) {
-    const newValue = { ...options.find(({ value }) => value === e.target.value) };
-    onChange(newValue);
+const Select = ({
+  options,
+  onChange,
+  value,
+  color = 'primary',
+  optionKey = 'name',
+  optionIdPrefix = '',
+}) => {
+  const inputRef = useRef(null)
+  const { accent, border, background, text } = INPUT_COLORS[color];
+  const btnClass = `w-full rounded-md shadow-sm py-3 px-4 text-left border ${background} ${text} ${accent} ${border}`;
+
+  const openSelect = () => {
+    if (inputRef.current) {
+      inputRef.current.click();   // click the button to open the select
+    }
   }
 
   return (
-    <select
-      className={classnames(CLASSES, inputColors, {
-        'w-full': fullWidth,
-      })}
-      onChange={onInputChange}
-      {...props}
-    >
-      {children}
-    </select>
+    <Listbox value={value} onChange={onChange}>
+      {({ open }) => (
+        <div className="relative w-full">
+          <ListboxButton className={btnClass} ref={inputRef}>
+            <span className="block truncate pr-6">
+              {value && value[optionKey]}
+            </span>
+          </ListboxButton>
+
+          {!open && (
+            <button
+              className="absolute inset-y-0 right-0 flex items-center pr-3"
+              onClick={openSelect}
+              aria-label="Open select input"
+              tabIndex={-1}
+              type="button"
+            >
+              <ChevronDownIcon className="h-5 w-5" />
+            </button>
+          )}
+
+          <ListboxOptions
+            anchor="bottom"
+            className="absolute mt-1 rounded-md bg-white shadow-lg ring-1 ring-black/10 focus:outline-none z-10"
+          >
+            {options.map((option) => (
+              <ListboxOption
+                key={kebabCase(option[optionKey])}
+                value={option}
+                id={[optionIdPrefix, kebabCase(option[optionKey])].join('-')}
+                className={({ focus, selected }) =>
+                  [
+                    "cursor-pointer select-none py-2 px-3 text-gray-700",
+                    focus ? "bg-primary-100" : "",
+                    selected ? "bg-primary-200 font-medium" : ""
+                  ].join(" ")
+                }
+              >
+                {option[optionKey]}
+              </ListboxOption>
+            ))}
+          </ListboxOptions>
+        </div>
+      )}
+    </Listbox>
   );
 };
 

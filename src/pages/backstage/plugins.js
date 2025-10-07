@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import classnames from 'classnames';
+import { Field, Label } from '@headlessui/react';
 
 import { Typeahead, Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
 import {
@@ -10,20 +11,16 @@ import {
   hydratePlugin,
 } from 'components/backstage/plugins';
 
-const SORT_ORDERS = [
-  {
-    label: 'Name',
-    value: 'name',
-  },
-  {
-    label: 'Popularity',
-    value: 'popularity',
-  },
-  {
-    label: 'Recently Updated',
-    value: 'recent',
-  },
-];
+const SORT_ORDERS = [{
+  label: 'Name',
+  value: 'name',
+}, {
+  label: 'Popularity',
+  value: 'popularity',
+}, {
+  label: 'Recently Updated',
+  value: 'recent',
+}];
 
 const BackstagePlugins = ({ data }) => {
   const {
@@ -112,30 +109,26 @@ const BackstagePlugins = ({ data }) => {
                 </div>
               </div>
 
-              <div
-                className={classnames('text-right', {
+              <Field
+                className={classnames('text-right w-full flex items-center justify-end', {
                   visible: npmDataLoadingState === 'loaded',
                   invisible: npmDataLoadingState !== 'loaded',
                 })}
               >
-                <label htmlFor="sort-order" className="mr-2">
+                <Label className="mr-2 whitespace-nowrap">
                   Sort by:
-                </label>
+                </Label>
 
-                <Select
-                  value={sortOrder.value}
-                  onChange={setSortOrder}
-                  options={SORT_ORDERS}
-                  name="sort-order"
-                  fullWidth={false}
-                >
-                  {SORT_ORDERS.map(({ value, label }) => (
-                    <option value={value} key={value}>
-                      {label}
-                    </option>
-                  ))}
-                </Select>
-              </div>
+                <div className="w-48">
+                  <Select
+                    value={sortOrder}
+                    onChange={setSortOrder}
+                    options={SORT_ORDERS}
+                    name="sort-order"
+                    optionKey="label"
+                  />
+                </div>
+              </Field>
             </form>
           </div>
         </div>

@@ -16,7 +16,6 @@ export default function Typeahead({
   const [query, setQuery] = useState('');
   const inputRef = useRef(null)
 
-  console.log('Typeahead', value, options);
   const { accent, border, placeholder, background, text } = INPUT_COLORS[color];
   const inputClass = `w-full rounded-md shadow-sm py-3 px-4 text-left border ${background} ${text} ${accent} ${border} truncate overflow-hidden whitespace-nowrap`;
   const placeholderTextColor = placeholder.replace('placeholder-', '');
@@ -36,7 +35,7 @@ export default function Typeahead({
 
   const openCombobox = () => {
     if (inputRef.current) {
-      inputRef.current.focus()   // focusing opens it
+      inputRef.current.focus(); // focussing opens the dropdown
     }
   }
 
