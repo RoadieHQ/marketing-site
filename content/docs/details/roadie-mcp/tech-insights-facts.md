@@ -81,10 +81,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 ```
 
 **Workflow:**
-```
-User Query → get-data-source-discovery → Tech Insights API → List of Data Sources + Schemas
-```
-
 This tool helps you understand what data sources are available and what facts they provide:
 1. Call `get-data-source-discovery` to retrieve all available data sources
 2. Receive a list of all data sources with their IDs, titles, descriptions, and fact schemas
@@ -144,7 +140,7 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
       "arguments": {
         "dataSourceId": "1234",
         "name": "payment-api",
-        "namespace": "production",
+        "namespace": "acmeinc",
         "kind": "api"
       }
     },
@@ -164,20 +160,15 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 ```
 
 **Workflow:**
-```
-User Query → get-entity-facts → fetchEnrichedEntityData() → Tech Insights API → Raw Facts
-```
-
 Get facts for a specific entity from a data source:
 1. First, use the data source discovery tool to find available data sources and their IDs
 2. Call `get-entity-facts` with the data source ID and entity information
 3. Receive all raw facts from that data source for the specified entity
-4. Works with both builtin and custom data sources
 
 **Usage Examples:**
-- "Get facts from data source 'github-stats' for user-service"
+- "Get all information available from Rootly about user-service"
 - "What are the custom-security-check facts for payment-api?"
-- "Show me all facts from data source ID '1234' for auth-service"
+- "Show me all facts from data source '1234' for auth-service"
 - "Fetch the techdocs facts for my-component"
 
 **Key Benefits:**
@@ -252,43 +243,25 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 ```
 
 **Workflow:**
-```
-User Query → get-all-entities-facts → Tech Insights API → Facts for All Entities
-```
-
 Get facts for all entities from a specific data source:
 1. First, use the data source discovery tool to find available data sources and their IDs
 2. Call `get-all-entities-facts` with the data source ID
 3. By default, returns only component entities (the most common use case)
 4. Optionally override the kind filter or add namespace filtering
 5. Receive facts for all matching entities tracked by that data source
-6. Works with both builtin and custom data sources
 
 **Available Filters:**
 - **kind**: Filter by entity kind (e.g., "component", "api"). **Defaults to "component".**
-- **namespace**: Filter by namespace (e.g., "default", "production")
+- **namespace**: Filter by namespace (e.g., "default", "acmeinc")
 
 **Usage Examples:**
 - "Get all facts from data source 'github-stats'"
 - "Get facts for all APIs from security metric data sources"
 - "Show me all entities regardless of kind from github data source"
-- "Get component facts in the production namespace"
-
-**Example Workflow:**
-```
-1. "What data sources are available?" 
-   → Returns list including data source "7e6a974c-f0ec-473f-9cc1-21c2752780a0" (GitHub Data Source)
-
-2. "Get facts from data source 7e6a974c-f0ec-473f-9cc1-21c2752780a0 for sample-service-3"
-   → Use get-entity-facts to return all GitHub facts for sample-service-3
-
-3. "Get all facts from data source 7e6a974c-f0ec-473f-9cc1-21c2752780a0"
-   → Use get-all-entities-facts to return all GitHub facts for all entities tracked by that data source
-```
+- "Get component facts in the acmeinc namespace"
 
 **Note:** 
 - The default kind filter of "component" covers most use cases. To see all entity kinds, explicitly specify a different kind or omit the filter.
-- For filtering by `type` or `owner`, you'll need to use other tools or process the results client-side, as the v1 API endpoint prioritizes efficiency and doesn't return full entity metadata.
 
 **Required Permissions:**
 - **Catalog entity read (*)** - Access to catalog entities
@@ -333,12 +306,55 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 
 ```typescript
 {
-  avgMergeTimeHours?: number,
-  latestMergedPR?: string,
-  latestMergedPRAuthor?: string,
-  totalPRs?: number,
-  mergedPRs?: number,
-  openPRs?: number
+  pullRequests: {
+    total: number | 'unknown',
+    merged: number | 'unknown',
+    open: number | 'unknown',
+    mergedPercentage: number | 'unknown',
+    mergedLastMonth: number | 'unknown'
+  },
+  mergeTime: {
+    avgHours: number | 'unknown',
+    avgLastMonthHours: number | 'unknown',
+    minHours: number | 'unknown',
+    maxHours: number | 'unknown',
+    minLastMonthHours: number | 'unknown',
+    maxLastMonthHours: number | 'unknown'
+  },
+  issues: {
+    total: number | 'unknown',
+    open: number | 'unknown',
+    closed: number | 'unknown',
+    closedLastMonth: number | 'unknown'
+  },
+  latestMergedPR: {
+    title: string | 'unknown',
+    author: string | 'unknown'
+  },
+  collaboration: {
+    languages: string[],
+    collaborators: string[],
+    collaboratorCount: number | 'unknown'
+  },
+  branchProtection: {
+    enabled: boolean | 'unknown',
+    enforceAdmins: boolean | 'unknown',
+    allowDeletions: boolean | 'unknown',
+    requiredLinearHistory: boolean | 'unknown',
+    allowForcePushes: boolean | 'unknown',
+    blockCreations: boolean | 'unknown',
+    requiredSignatures: boolean | 'unknown'
+  },
+  codeReview: {
+    dismissStaleReviews: boolean | 'unknown',
+    requireCodeOwnerReviews: boolean | 'unknown',
+    requireLastPushApproval: boolean | 'unknown',
+    requiredApprovingReviewCount: number | 'unknown',
+    strictRequiredStatusChecks: boolean | 'unknown',
+    usesCodeowners: boolean | 'unknown',
+    codeownersErrorCount: number | 'unknown',
+    codeownersHasErrors: boolean | 'unknown'
+  }
 }
 ```
 
@@ -347,8 +363,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 - "Show me GitHub metrics for payment-api"
 - "What's the PR activity for auth-service?"
 
-**Required Permissions:**
-- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -414,8 +428,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 - "Are there any Dependabot alerts for user-service?"
 - "Is branch protection enabled for auth-service?"
 
-**Required Permissions:**
-- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -482,8 +494,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 - "What's the MTTR for payment-service?"
 - "Show me PagerDuty metrics for user-service"
 
-**Required Permissions:**
-- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -538,8 +548,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 - "Show me Datadog metrics for payment-service"
 - "What monitors are configured for auth-service?"
 
-**Required Permissions:**
-- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -606,8 +614,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 - "Is payment-api properly documented?"
 - "Does auth-service have proper ownership assigned?"
 
-**Required Permissions:**
-- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
@@ -670,8 +676,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 - "Is user-service properly cataloged?"
 - "Show me the file structure for auth-service"
 
-**Required Permissions:**
-- **Catalog entity read (*)** - Access to catalog entities
 #### Required Permissions:
 
 - **Catalog entity read (\*)** - Access to catalog entities
