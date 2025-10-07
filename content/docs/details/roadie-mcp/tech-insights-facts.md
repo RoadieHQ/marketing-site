@@ -442,8 +442,6 @@ Retrieve incident metrics and service configuration from PagerDuty integration.
 - `namespace` (string, optional): The entity namespace (defaults to "default")
 - `kind` (string, optional): The entity kind (defaults to "component")
 
-- `entityRef` (string): Entity reference
-
 **Example Usage:**
 ```bash
 curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
@@ -461,12 +459,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
     },
     "id": 1
   }'
-
-```json
-{
-  "entityRef": "component:default/auth-service"
-}
-```
 
 **Return Schema:**
 
@@ -492,7 +484,7 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
 **Usage Examples:**
 - "How many incidents does auth-service have?"
 - "What's the MTTR for payment-service?"
-- "Show me PagerDuty metrics for user-service"
+- "Show me PagerDuty metrics for api:acmeinc/user-service"
 
 #### Required Permissions:
 
@@ -507,8 +499,6 @@ Access Service Level Objective (SLO) data and monitoring information from Datado
 - `name` (string): The name of the catalog entity
 - `namespace` (string, optional): The entity namespace (defaults to "default")
 - `kind` (string, optional): The entity kind (defaults to "component")
-
-- `entityRef` (string): Entity reference
 
 **Example Usage:**
 ```bash
@@ -527,12 +517,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
     },
     "id": 1
   }'
-
-```json
-{
-  "entityRef": "component:default/inventory-api"
-}
-```
 
 **Return Schema:**
 
@@ -562,8 +546,6 @@ Evaluate entity metadata completeness and compliance with organizational standar
 - `namespace` (string, optional): The entity namespace (defaults to "default")
 - `kind` (string, optional): The entity kind (defaults to "component")
 
-- `entityRef` (string): Entity reference
-
 **Example Usage:**
 ```bash
 curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
@@ -581,12 +563,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
     },
     "id": 1
   }'
-
-```json
-{
-  "entityRef": "component:default/user-service"
-}
-```
 
 **Return Schema:**
 
@@ -627,8 +603,6 @@ Analyze repository structure and catalog configuration status.
 - `name` (string): The name of the catalog entity
 - `namespace` (string, optional): The entity namespace (defaults to "default")
 
-- `entityRef` (string): Entity reference
-
 **Example Usage:**
 ```bash
 curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
@@ -646,12 +620,6 @@ curl -s -X POST https://api.roadie.so/api/mcp/v1/tech-insights-facts \
     },
     "id": 1
   }'
-
-```json
-{
-  "entityRef": "component:default/payment-service"
-}
-```
 
 **Return Schema:**
 
