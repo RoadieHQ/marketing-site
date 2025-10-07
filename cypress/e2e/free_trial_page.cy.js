@@ -12,7 +12,8 @@ describe('The free trial page', () => {
     cy.visit(PAGE_PATHS.freeTrial);
 
     cy.get('#get-instance-email-input').type('test@example.com');
-    cy.get('#scm').select('GitHub On-prem');
+    cy.get('button[name="select-button"]').click();
+    cy.get('div[role="option"]').contains('GitHub On-prem').click();
     cy.get('#reported-attribution').type('Newsletter');
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
@@ -23,7 +24,8 @@ describe('The free trial page', () => {
     cy.visit(PAGE_PATHS.freeTrial);
 
     cy.get('#get-instance-email-input').type('test@example.com');
-    cy.get('#scm').select('Other');
+    cy.get('button[name="select-button"]').click();
+    cy.get('div[role="option"]').contains('Other').click();
     cy.get('button[data-testid="agree-to-policies"]').click();
     cy.contains('Request a trial').click();
     cy.contains(`be in touch to learn more`);

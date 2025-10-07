@@ -192,7 +192,7 @@ const RequestDemoCallToAction = ({
               label="Primary source code host*"
               onChange={setScmTool}
               currentValue={scmTool}
-              idPrefix="request-demo-"
+              idPrefix="request-demo"
               color="primary"
               showProductPrompts={showProductPrompts}
             />

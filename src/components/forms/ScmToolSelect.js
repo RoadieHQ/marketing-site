@@ -29,7 +29,7 @@ export const ScmToolSelect = ({
           options={SCM_TOOLS}
           onChange={onChange}
           optionKey="label"
-          optionIdPrefix={`${idPrefix}scm`}
+          optionIdPrefix={[idPrefix, 'scm'].join('-')}
         />
       </div>
 

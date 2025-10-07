@@ -171,10 +171,10 @@ const ExtendedGetInstanceCallToAction = ({
 
         <div className="sm:col-span-2">
           <ScmToolSelect
-            label="Primary source code host"
+            label="Primary source code host*"
             onChange={setScmTool}
             currentValue={scmTool}
-            idPrefix="get-instance-"
+            idPrefix="get-instance"
             color="primary"
             showProductPrompts={showProductPrompts}
           />

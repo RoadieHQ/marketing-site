@@ -12,6 +12,7 @@ const Select = ({
   color = 'primary',
   optionKey = 'name',
   optionIdPrefix = '',
+  name = 'select',
 }) => {
   const inputRef = useRef(null)
   const { accent, border, background, text } = INPUT_COLORS[color];
@@ -27,7 +28,7 @@ const Select = ({
     <Listbox value={value} onChange={onChange}>
       {({ open }) => (
         <div className="relative w-full">
-          <ListboxButton className={btnClass} ref={inputRef}>
+          <ListboxButton className={btnClass} ref={inputRef} name={[name, 'button'].join('-')}>
             <span className="block truncate pr-6">
               {value && value[optionKey]}
             </span>
