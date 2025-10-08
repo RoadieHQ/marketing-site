@@ -73,7 +73,7 @@ describe('Plugins directory', () => {
         expect(texts).to.deep.equal(startingOrder);
       });
 
-      cy.get('button[name="sort-order-button"]').click();
+      cy.get('button[name="sort-order-select-button"]').click();
       cy.get('div[role="option"]').contains('Popularity').click();
       cy.get('div[data-testid^="plugin-"] h2').then(($els) => {
         const texts = [...$els].map(el => el.innerText.trim()).filter((text) => (

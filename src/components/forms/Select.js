@@ -35,7 +35,7 @@ const Select = ({
           <ListboxButton
             className={btnClass}
             ref={inputRef}
-            name={name && [name, 'button'].join('-')}
+            name={name && [name, 'select-button'].join('-')}
           >
             <span className="block truncate pr-6">
               {value[displayKey]}

@@ -24,7 +24,7 @@ describe('The Roadie Local page', () => {
 
     cy.get('#request-roadie-local-name-input').type('Mary Mac');
     cy.get('#request-roadie-local-email-input').type('test@example.com');
-    cy.get('button[name="select-button"]').click();
+    cy.get('button[name="scm-select-button"]').click();
     cy.get('div[role="option"]').contains('Other').click();
     cy.contains('button', 'Request access', { timeout: 10000 }).should('not.be.disabled').click();
     cy.contains(`be in touch to learn more`);

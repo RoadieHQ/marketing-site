@@ -24,7 +24,7 @@ describe('The landing page', () => {
 
     cy.get('#request-demo-name-input').type('Mary Mac');
     cy.get('#request-demo-email-input').type('test@example.com');
-    cy.get('button[name="select-button"]').click();
+    cy.get('button[name="scm-select-button"]').click();
     cy.get('div[role="option"]').contains('Other').click();
     cy.get('#reported-attribution').type('Newsletter');
     cy.contains('Request a demo').click();
