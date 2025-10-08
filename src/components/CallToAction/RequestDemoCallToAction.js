@@ -30,6 +30,8 @@ const submitToNetlifyForms = async ({
 }) => {
   const branch = currentlyExecutingGitBranch();
 
+  console.log('submit', scmTool);
+
   const formData = new FormData();
   formData.append('form-name', netlifyFormName);
   formData.append('name', name);
@@ -194,6 +196,7 @@ const RequestDemoCallToAction = ({
               currentValue={scmTool}
               idPrefix="request-demo"
               color="primary"
+              name="scm"
               showProductPrompts={showProductPrompts}
             />
           </div>

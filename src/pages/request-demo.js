@@ -30,7 +30,7 @@ const SubmissionSuccessNegativeBody = () => (
 const RequestDemo = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [modalOpen, setModalOpen] = useState(false);
-  const [scmTool, setScmTool] = useState([...SCM_TOOLS][0]);
+  const [scmTool, setScmTool] = useState(SCM_TOOLS[0]);
 
   const handleCloseModal = () => {
     setModalOpen(false);

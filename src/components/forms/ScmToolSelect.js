@@ -14,6 +14,7 @@ export const ScmToolSelect = ({
   color = 'primary',
   helpText = SCM_SUPPORT_HELP_TEXT,
   showProductPrompts = true,
+  name = 'scm',
 }) => {
   const { label: labelStyle } = INPUT_COLORS[color];
 
@@ -28,8 +29,8 @@ export const ScmToolSelect = ({
           value={currentValue}
           options={SCM_TOOLS}
           onChange={onChange}
-          optionKey="label"
           optionIdPrefix={[idPrefix, 'scm'].join('-')}
+          name={name}
         />
       </div>
 

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
 import ChevronDownIcon from '@heroicons/react/solid/ChevronDownIcon';
 import kebabCase from 'lodash/kebabCase';
+import classnames from 'classnames';
 
 import { INPUT_COLORS } from '.';
 
@@ -10,9 +11,12 @@ const Select = ({
   onChange,
   value,
   color = 'primary',
-  optionKey = 'name',
+  displayKey = 'label',
+  valueKey = 'value',
   optionIdPrefix = '',
-  name = 'select',
+  // Passing the name has certain effects on the Listbox
+  // https://headlessui.com/react/listbox#using-with-html-forms
+  name,
 }) => {
   const inputRef = useRef(null)
   const { accent, border, background, text } = INPUT_COLORS[color];
@@ -25,12 +29,16 @@ const Select = ({
   }
 
   return (
-    <Listbox value={value} onChange={onChange}>
+    <Listbox value={value[valueKey]} onChange={onChange} name={name}>
       {({ open }) => (
         <div className="relative w-full">
-          <ListboxButton className={btnClass} ref={inputRef} name={[name, 'button'].join('-')}>
+          <ListboxButton
+            className={btnClass}
+            ref={inputRef}
+            name={name && [name, 'button'].join('-')}
+          >
             <span className="block truncate pr-6">
-              {value && value[optionKey]}
+              {value[displayKey]}
             </span>
           </ListboxButton>
 
@@ -52,18 +60,17 @@ const Select = ({
           >
             {options.map((option) => (
               <ListboxOption
-                key={kebabCase(option[optionKey])}
+                key={kebabCase(option[valueKey])}
                 value={option}
-                id={[optionIdPrefix, kebabCase(option[optionKey])].join('-')}
-                className={({ focus, selected }) =>
-                  [
-                    "cursor-pointer select-none py-2 px-3 text-gray-700",
-                    focus ? 'bg-gray-200' : "",
-                    selected ? 'bg-primary-200 font-medium' : ""
-                  ].join(" ")
-                }
+                id={[optionIdPrefix, kebabCase(option[valueKey])].join('-')}
+                className={({ focus, selected }) => (
+                  classnames('cursor-pointer select-none py-2 px-3 text-gray-700', {
+                    'bg-gray-200': focus,
+                    'bg-primary-200 font-medium': selected,
+                  })
+                )}
               >
-                {option[optionKey]}
+                {option[displayKey]}
               </ListboxOption>
             ))}
           </ListboxOptions>
