@@ -124,7 +124,6 @@ const RequestRoadieLocal = ({ data, location }) => {
                 location={location}
                 scmTool={scmTool}
                 setScmTool={setScmTool}
-                showProductPrompts={false}
                 onSuccess={() => {
                   setModalOpen(true);
                 }}

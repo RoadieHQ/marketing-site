@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Radio from './Radio';
-import HelpText from './HelpText';
-import { SCM_TOOLS, SCM_SUPPORT_HELP_TEXT } from '../../contactFormConstants';
+import { SCM_TOOLS } from '../../contactFormConstants';
 
 const ScmToolRadioGroup = ({
   onChange,
@@ -25,10 +24,6 @@ const ScmToolRadioGroup = ({
           id={`${idPrefix}scm-${value}-input`}
         />
       ))}
-
-      <div className="mt-3">
-        <HelpText message={SCM_SUPPORT_HELP_TEXT} />
-      </div>
     </div>
   </fieldset>
 );

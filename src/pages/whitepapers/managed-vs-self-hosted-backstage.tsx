@@ -77,7 +77,6 @@ const RequestTrial = ({ data, location }) => {
                     scmTool={scmTool}
                     setScmTool={setScmTool}
                     buttonText="Get Whitepaper"
-                    showProductPrompts={false}
                     onSuccess={() => {
                       setFormSent(true);
                     }}

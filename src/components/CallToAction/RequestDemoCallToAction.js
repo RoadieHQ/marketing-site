@@ -88,7 +88,6 @@ const RequestDemoCallToAction = ({
   scmTool,
   setScmTool,
   buttonText = 'Request a demo',
-  showProductPrompts = true,
 }) => {
   // Provides a way to automatically populate the email input via the URL.
   const params = new URLSearchParams(location.search);
@@ -196,7 +195,6 @@ const RequestDemoCallToAction = ({
               currentValue={scmTool}
               idPrefix="request-demo"
               color="primary"
-              showProductPrompts={showProductPrompts}
             />
           </div>
         </div>
