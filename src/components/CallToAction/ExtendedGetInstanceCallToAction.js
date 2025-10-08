@@ -176,7 +176,6 @@ const ExtendedGetInstanceCallToAction = ({
             currentValue={scmTool}
             idPrefix="get-instance"
             color="primary"
-            name="scm"
             showProductPrompts={showProductPrompts}
           />
         </div>

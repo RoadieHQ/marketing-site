@@ -12,8 +12,6 @@ export default function Typeahead({
   color = 'primary',
   placeholderText = 'Choose...',
   optionKey = 'name',
-  // Passing the name has certain effects on the Combobox
-  // https://headlessui.com/react/listbox#using-with-html-forms
   name,
 }) {
   const [query, setQuery] = useState('');
@@ -48,7 +46,6 @@ export default function Typeahead({
       value={value}
       onChange={onChange}
       onClose={() => setQuery('')}
-      name={name}
     >
       {({ open }) => (
         <div className="relative w-full">

@@ -14,8 +14,6 @@ const Select = ({
   displayKey = 'label',
   valueKey = 'value',
   optionIdPrefix = '',
-  // Passing the name has certain effects on the Listbox
-  // https://headlessui.com/react/listbox#using-with-html-forms
   name,
 }) => {
   const inputRef = useRef(null)
@@ -35,6 +33,7 @@ const Select = ({
           <ListboxButton
             className={btnClass}
             ref={inputRef}
+            name={name && [name, 'select-button'].join('-')}
           >
             <span className="block truncate pr-6">
               {value[displayKey]}
