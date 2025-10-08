@@ -8,7 +8,6 @@ export {
   Button,
   HelpText,
   SubscribeToNewsletterSwitch,
-  ScmToolRadioGroup,
   Recaptcha,
   EmailField,
   Select,
