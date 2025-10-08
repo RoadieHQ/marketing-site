@@ -196,7 +196,6 @@ const RequestDemoCallToAction = ({
               currentValue={scmTool}
               idPrefix="request-demo"
               color="primary"
-              name="scm"
               showProductPrompts={showProductPrompts}
             />
           </div>
