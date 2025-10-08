@@ -29,13 +29,12 @@ const Select = ({
   }
 
   return (
-    <Listbox value={value[valueKey]} onChange={onChange} name={name}>
+    <Listbox value={value[valueKey]} onChange={onChange}>
       {({ open }) => (
         <div className="relative w-full">
           <ListboxButton
             className={btnClass}
             ref={inputRef}
-            name={name && [name, 'select-button'].join('-')}
           >
             <span className="block truncate pr-6">
               {value[displayKey]}

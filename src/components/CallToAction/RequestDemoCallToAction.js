@@ -47,6 +47,9 @@ const submitToNetlifyForms = async ({
     formData.append('g-recaptcha-response', recaptchaResponse);
   }
 
+  const body = new URLSearchParams(formData).toString();
+  console.log('body', body);
+
   let resp;
   try {
     resp = await fetch('/', {
@@ -54,7 +57,7 @@ const submitToNetlifyForms = async ({
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: new URLSearchParams(formData).toString(),
+      body,
     });
 
     trackRequestDemo({
@@ -198,6 +201,7 @@ const RequestDemoCallToAction = ({
               color="primary"
               showProductPrompts={showProductPrompts}
             />
+            <input type="hidden" name="scm" value={scmTool.value} />
           </div>
         </div>
 
