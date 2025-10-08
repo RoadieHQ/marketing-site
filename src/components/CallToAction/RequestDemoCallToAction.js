@@ -45,6 +45,8 @@ const submitToNetlifyForms = async ({
     formData.append('g-recaptcha-response', recaptchaResponse);
   }
 
+  const body = new URLSearchParams(formData).toString();
+
   let resp;
   try {
     resp = await fetch('/', {
@@ -52,7 +54,7 @@ const submitToNetlifyForms = async ({
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: new URLSearchParams(formData).toString(),
+      body,
     });
 
     trackRequestDemo({
@@ -192,7 +194,7 @@ const RequestDemoCallToAction = ({
               label="Primary source code host*"
               onChange={setScmTool}
               currentValue={scmTool}
-              idPrefix="request-demo-"
+              idPrefix="request-demo"
               color="primary"
               showProductPrompts={showProductPrompts}
             />

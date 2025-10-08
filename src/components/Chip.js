@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const Chip = ({ label, icon, color = 'primary' }) => {
+const Chip = ({ label, icon, color = 'primary', ...rest }) => {
   const defaultClasses = 'px-3 py-1 rounded-full text-sm font-medium mr-2 whitespace-nowrap';
 
   let colorClasses;
@@ -11,7 +11,7 @@ const Chip = ({ label, icon, color = 'primary' }) => {
   if (color === 'black') colorClasses = 'border border-black';
 
   return (
-    <span className={classnames(defaultClasses, colorClasses)}>
+    <span className={classnames(defaultClasses, colorClasses)} {...rest}>
       {icon}
       <span>{label}</span>
     </span>

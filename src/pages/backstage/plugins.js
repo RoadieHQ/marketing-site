@@ -1,105 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
-import sortBy from 'lodash/sortBy';
 import classnames from 'classnames';
+import { Field, Label } from '@headlessui/react';
 
-import { Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
-import ListItem from 'components/backstage/plugins/ListItem';
+import { Typeahead, Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
+import {
+  ListItem,
+  fetchNpmDataForList,
+  filterPlugins,
+  hydratePlugin,
+} from 'components/backstage/plugins';
 
-const SORT_ORDERS = [
-  {
-    label: 'Name',
-    value: 'name',
-  },
-  {
-    label: 'Popularity',
-    value: 'popularity',
-  },
-  {
-    label: 'Recently Updated',
-    value: 'recent',
-  },
-];
-
-async function fetchNpmDataForList() {
-  let response;
-
-  try {
-    response = await fetch('/.netlify/functions/fetchNpmDataForList');
-
-    if (!response.ok) {
-      return {
-        status: 'error',
-        data: {},
-      };
-    }
-  } catch (err) {
-    console.error(err);
-    return {
-      status: 'error',
-      data: {},
-    };
-  }
-
-  try {
-    const json = await response.json();
-    return {
-      status: 'loaded',
-      data: json.data,
-    };
-  } catch (err) {
-    console.warn(
-      `Unparsable JSON returned from Netlify function. It's likely not available in this environment.`
-    );
-    return {
-      status: 'error',
-      data: {},
-    };
-  }
-}
-
-const hydratePlugin = (plugin, npmData) => {
-  const pluginNpmData = npmData[plugin.npmPackageName];
-  if (pluginNpmData) {
-    plugin.npmData = {
-      lastMonthDownloads: pluginNpmData.lastMonthDownloads,
-      latestVersionPublishedTime: new Date(Date.parse(pluginNpmData.latestVersionPublishedTime)),
-    };
-  } else {
-    plugin.npmData = {};
-  }
-  return plugin;
-};
-
-const filterPlugins = ({ plugins, query, sortOrder, npmDataLoadingState }) => {
-  let filteredPlugins = [];
-  if (query === '') {
-    filteredPlugins = plugins;
-  } else {
-    filteredPlugins = plugins.filter(({ humanName, attributionText }) => {
-      return (
-        humanName.toLowerCase().includes(query.toLowerCase()) ||
-        attributionText.toLowerCase().includes(query.toLowerCase())
-      );
-    });
-  }
-
-  if (npmDataLoadingState === 'loaded') {
-    if (sortOrder.value === 'name') {
-      filteredPlugins = sortBy(filteredPlugins, ['humanName']);
-    } else if (sortOrder.value === 'popularity') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.lastMonthDownloads']).reverse();
-    } else if (sortOrder.value === 'recent') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.latestVersionPublishedTime']).reverse();
-    }
-  }
-
-  return filteredPlugins;
-};
+const SORT_ORDERS = [{
+  label: 'Name',
+  value: 'name',
+}, {
+  label: 'Popularity',
+  value: 'popularity',
+}, {
+  label: 'Recently Updated',
+  value: 'recent',
+}];
 
 const BackstagePlugins = ({ data }) => {
   const {
     plugins,
+    pluginCategories,
     site: {
       siteMetadata: { title },
     },
@@ -109,6 +35,7 @@ const BackstagePlugins = ({ data }) => {
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const [category, setCategory] = useState({});
 
   useEffect(() => {
     (async () => {
@@ -126,6 +53,7 @@ const BackstagePlugins = ({ data }) => {
     plugins: hydratedPlugins,
     query,
     sortOrder,
+    category,
     npmDataLoadingState,
   });
 
@@ -137,8 +65,8 @@ const BackstagePlugins = ({ data }) => {
       />
 
       <Page titleDivide={true}>
-        <div className="lg:flex justify-between items-center mb-6">
-          <div className="lg:mr-8">
+        <div className="mb-6">
+          <div>
             <div className="mb-4">
               <Headline>Backstage plugins</Headline>
             </div>
@@ -158,43 +86,52 @@ const BackstagePlugins = ({ data }) => {
           </div>
 
           <div className="mb-2">
-            <form className="lg:w-96">
-              <div className="mb-2">
-                <Input
-                  type="text"
-                  onChange={setQuery}
-                  value={query}
-                  aria-label="Search"
-                  placeholder="Search"
-                  fullWidth
-                />
+            <div className="lg:flex lg:justify-between">
+              <div className="sm:flex">
+                <div className="mb-4 lg:mb-0 sm:mr-4 w-full lg:w-72">
+                  <Input
+                    type="text"
+                    name="search"
+                    onChange={setQuery}
+                    value={query}
+                    aria-label="Search"
+                    placeholder="Search"
+                    fullWidth={true}
+                  />
+                </div>
+
+                <div className="mb-4 lg:mb-0 w-full lg:w-96">
+                  <Typeahead
+                    onChange={setCategory}
+                    value={category}
+                    options={pluginCategories.edges.map(({ node }) => node)}
+                    placeholderText="Categories"
+                    name="filter-categories"
+                  />
+                </div>
               </div>
 
-              <div
-                className={classnames('text-right', {
+              <Field
+                className={classnames('text-right w-full flex items-center justify-end', {
                   visible: npmDataLoadingState === 'loaded',
                   invisible: npmDataLoadingState !== 'loaded',
                 })}
               >
-                <label htmlFor="sort-order" className="mr-2">
+                <Label className="mr-2 whitespace-nowrap">
                   Sort by:
-                </label>
+                </Label>
 
-                <Select
-                  value={sortOrder.value}
-                  onChange={setSortOrder}
-                  options={SORT_ORDERS}
-                  name="sort-order"
-                  fullWidth={false}
-                >
-                  {SORT_ORDERS.map(({ value, label }) => (
-                    <option value={value} key={value}>
-                      {label}
-                    </option>
-                  ))}
-                </Select>
-              </div>
-            </form>
+                <div className="w-48">
+                  <Select
+                    value={sortOrder}
+                    onChange={setSortOrder}
+                    options={SORT_ORDERS}
+                    name="sort-order"
+                    optionKey="label"
+                  />
+                </div>
+              </Field>
+            </div>
           </div>
         </div>
 
@@ -223,6 +160,17 @@ export const pageQuery = graphql`
       }
     }
 
+    pluginCategories: allContentfulBackstagePluginCategory(sort: {
+      name: ASC
+    }) {
+      edges {
+        node {
+          name
+          description
+        }
+      }
+    }
+
     plugins: allContentfulBackstagePlugin(sort: { humanName: ASC }) {
       edges {
         node {
@@ -240,6 +188,10 @@ export const pageQuery = graphql`
           attributionText
           attributionUrl
           lead
+
+          category {
+            name
+          }
         }
       }
     }
