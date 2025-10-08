@@ -1,7 +1,6 @@
 export {
   Typeahead,
   Switch,
-  Radio,
   Input,
   Form,
   TextField,
