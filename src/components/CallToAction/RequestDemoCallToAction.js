@@ -201,7 +201,7 @@ const RequestDemoCallToAction = ({
               color="primary"
               showProductPrompts={showProductPrompts}
             />
-            <input readOnly type="hidden" name="scm" value={scmTool.value} />
+            <input readOnly hidden type="hidden" name="scm" value={scmTool.value} />
           </div>
         </div>
 
