@@ -66,9 +66,4 @@ export const SCM_TOOLS = [
   },
 ];
 
-export const SCM_SUPPORT_HELP_TEXT =
-  'Roadie has limited support for non-GitHub SCMs. Are you ok with beta testing?';
-export const SCM_NO_GITLAB_TEXT =
-  "Roadie does not support GitLab yet. Submit the form and we'll notify you.";
-
 export const SCM_SUPPORT_FAQ_TEXT = `We support GitHub Cloud and on-prem, GitLab Cloud and on-prem, BitBucket Cloud and Server, and Azure DevOps`;

@@ -1,10 +1,9 @@
 import React from 'react';
-import isEmpty from 'lodash/isEmpty';
 import { Field, Label } from '@headlessui/react';
 
 import { INPUT_COLORS } from '.';
-import { SCM_TOOLS, SCM_SUPPORT_HELP_TEXT, SCM_NO_GITLAB_TEXT } from '../../contactFormConstants';
-import { HelpText, Select } from 'components';
+import { SCM_TOOLS } from '../../contactFormConstants';
+import { Select } from 'components';
 
 export const ScmToolSelect = ({
   onChange,
@@ -12,8 +11,6 @@ export const ScmToolSelect = ({
   label = 'Primary source code host',
   idPrefix = '',
   color = 'primary',
-  helpText = SCM_SUPPORT_HELP_TEXT,
-  showProductPrompts = true,
   name = 'scm',
 }) => {
   const { label: labelStyle } = INPUT_COLORS[color];
@@ -41,16 +38,6 @@ export const ScmToolSelect = ({
         it in sync */}
         <input readOnly hidden type="hidden" name={name} value={currentValue.value} />
       </div>
-
-      {!isEmpty(helpText) && !isEmpty(currentValue.value) && showProductPrompts && (
-        <>
-          {currentValue.value.includes('gitlab') && (
-            <div className="mt-3">
-              <HelpText message={SCM_NO_GITLAB_TEXT} />
-            </div>
-          )}
-        </>
-      )}
     </Field>
   );
 };

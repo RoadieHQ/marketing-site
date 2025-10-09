@@ -86,7 +86,6 @@ const ExtendedGetInstanceCallToAction = ({
   scmTool,
   setScmTool,
   location,
-  showProductPrompts = true,
 }) => {
   const [attribution, setAttribution] = useState('');
   const [subToNewsletter, setSubToNewsletter] = useState(true);
@@ -176,7 +175,6 @@ const ExtendedGetInstanceCallToAction = ({
             currentValue={scmTool}
             idPrefix="get-instance"
             color="primary"
-            showProductPrompts={showProductPrompts}
           />
         </div>
 

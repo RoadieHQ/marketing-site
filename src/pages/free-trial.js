@@ -57,7 +57,7 @@ const RequestTrial = ({ data, location }) => {
         positiveTitle="We'll be in touch!"
         positiveBody={<SubmissionSuccessPositiveBody />}
         negativeTitle="We'll be in touch!"
-        negativeBody={<SubmissionSuccessNegativeBody scmTool={scmTool} />}
+        negativeBody={<SubmissionSuccessNegativeBody />}
       />
 
       <div className="min-h-screen bg-white">
@@ -85,7 +85,6 @@ const RequestTrial = ({ data, location }) => {
                 scmTool={scmTool}
                 setScmTool={setScmTool}
                 location={location}
-                showProductPrompts={false}
               />
             </div>
             <div className="mt-5 p-5 lg:pl-10 lg:mt-16">

@@ -86,7 +86,6 @@ const RequestRoadieLocalCallToAction = ({
   scmTool,
   setScmTool,
   buttonText = 'Request access',
-  showProductPrompts = true,
 }) => {
   // Provides a way to automatically populate the email input via the URL.
   const params = new URLSearchParams(location.search);
@@ -194,7 +193,6 @@ const RequestRoadieLocalCallToAction = ({
               currentValue={scmTool}
               idPrefix="request-roadie-local-scm"
               color="primary"
-              showProductPrompts={showProductPrompts}
             />
           </div>
         </div>

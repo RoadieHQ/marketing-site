@@ -51,7 +51,7 @@ const RequestDemo = ({ data, location }) => {
         positiveTitle="We'll be in touch!"
         positiveBody={<SubmissionSuccessPositiveBody />}
         negativeTitle="We'll be in touch!"
-        negativeBody={<SubmissionSuccessNegativeBody scmTool={scmTool} />}
+        negativeBody={<SubmissionSuccessNegativeBody />}
       />
 
       <div className="min-h-screen">
@@ -77,7 +77,6 @@ const RequestDemo = ({ data, location }) => {
                 location={location}
                 scmTool={scmTool}
                 setScmTool={setScmTool}
-                showProductPrompts={false}
                 onSuccess={() => {
                   setModalOpen(true);
                 }}
