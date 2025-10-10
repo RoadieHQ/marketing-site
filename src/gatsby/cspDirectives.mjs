@@ -35,6 +35,8 @@ const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
     'https://app.intercom.io',
     'https://widget.intercom.io',
     'https://js.intercomcdn.com',
+
+    'https://plausible.io',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
@@ -182,6 +184,8 @@ const CSP_CONNECT_SRC_DIRECTIVES = [
   'https://uploads.intercomcdn.eu',
   'https://uploads.au.intercomcdn.com',
   'https://uploads.intercomusercontent.com',
+
+  'https://plausible.io',
 ].join(' ');
 
 const CSP_FONT_SRC_DIRECTIVES = [
