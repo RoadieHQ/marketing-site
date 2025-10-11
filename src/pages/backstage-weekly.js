@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
+import format from 'date-fns/format';
 
-import { SEO, Page, Headline, Lead } from 'components';
-import { TitleAndDescription, PubDate } from 'components/article';
+import { SEO, Page, Headline, Lead, Link } from 'components';
 import {
   NetlifyFormCallToAction,
   SubscribeToNewsletterSuccessModal,
 } from 'components/CallToAction';
 
 import { FORM_NAMES } from '../contactFormConstants';
-import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
 import CoverImage from '../../content/assets/blog/list-cover-image-1.png';
 
-const ImageIssue = ({ post }) => (
+const ImageIssue = ({ issue }) => (
   <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div className="flex-shrink-0 relative">
       <img
@@ -21,43 +20,55 @@ const ImageIssue = ({ post }) => (
         alt="Nightclub scene with spotlights and crowd"
       />
       <div className="absolute bottom-0 right-px text-white text-8xl">
-        {post.frontmatter.issueNumber}
+        {issue.issueNumber}
       </div>
     </div>
 
     <div className="flex-1 bg-white p-6 flex flex-col justify-between">
       <div className="flex-1">
-        <TitleAndDescription post={post} />
+        <Link to={`/backstage-weekly${issue.slug}`} className="block mt-4">
+          <p className="text-xl font-semibold text-gray-900">{issue.title}</p>
+          <p className="mt-3 text-base text-gray-500">
+            {issue.description?.childMarkdownRemark?.rawMarkdownBody}
+          </p>
+        </Link>
       </div>
 
       <div className="mt-6 flex items-center">
-        <PubDate post={post} />
+        <time dateTime={issue.publishDate}>
+          {format(Date.parse(issue.publishDate), 'MMMM do, yyyy' )}
+        </time>
       </div>
     </div>
   </div>
 );
 
-const extractNewsletterDetailsFromPost = ({ node: { frontmatter, ...rest } }) => {
-  const mainTitle = frontmatter.title.replace(/Backstage Weekly \d\d\d? - /, '');
-  const matchedIssueNumber = frontmatter.title.match(/Backstage Weekly (\d\d\d?)/);
+const extractNewsletterDetailsFromPost = ({ node: { title, ...rest } }) => {
+  const mainTitle = title.replace(/Backstage Weekly \d\d\d? - /, '');
+  const matchedIssueNumber = title.match(/Backstage Weekly (\d\d\d?)/);
   const issueNumber = matchedIssueNumber && matchedIssueNumber[1];
 
   return {
     node: {
-      frontmatter: {
-        ...frontmatter,
-        title: mainTitle,
-        issueNumber,
-      },
-      ...rest,
+      title: mainTitle,
+      issueNumber,
+    ...rest,
     },
   };
 };
 
 const BackstageWeekly = ({ data }) => {
-  const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
-  const siteTitle = data.site.siteMetadata.title;
-  const postsWithExtractedInfo = posts.map(extractNewsletterDetailsFromPost);
+  const {
+    issues: {
+      edges: issues,
+    },
+    site: {
+      siteMetadata: {
+        title: siteTitle,
+      },
+    }
+  } = data;
+  const issuesWithExtractedInfo = issues.map(extractNewsletterDetailsFromPost);
   const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -113,8 +124,8 @@ const BackstageWeekly = ({ data }) => {
         </div>
 
         <div className="pt-10 mx-auto grid gap-5 md:grid-cols-2 lg:gap-12 lg:grid-cols-3 lg:max-w-none">
-          {postsWithExtractedInfo.map(({ node }) => (
-            <ImageIssue key={node.fields.slug} post={node} />
+          {issuesWithExtractedInfo.map(({ node }) => (
+            <ImageIssue key={node.slug} issue={node} />
           ))}
         </div>
       </Page>
@@ -126,25 +137,18 @@ export default BackstageWeekly;
 
 export const pageQuery = graphql`
   query BackstageWeekly {
-    allContentfulBlogPost(sort: { date: DESC }, filter: { tags: { eq: "newsletter" } }) {
+    issues: allContentfulBackstageWeekly(sort: { publishDate: DESC }) {
       edges {
         node {
-          description {
+          lead {
             childMarkdownRemark {
               rawMarkdownBody
             }
           }
-          date
-          author {
-            name
-            avatar {
-              gatsbyImageData(layout: FIXED, width: 40)
-            }
-          }
+          issueNumber
+          publishDate
           slug
-          tags
           title
-          lastValidated
           body {
             childMarkdownRemark {
               timeToRead

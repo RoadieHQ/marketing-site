@@ -11,6 +11,7 @@ import {
   CASE_STUDIES_QUERY,
   CHANGELOG_QUERY,
   BACKSTAGE_BITES_QUERY,
+  BACKSTAGE_WEEKLY_QUERY,
 } from './src/queries/gatsbyNodeQueries.mjs';
 import {
   createLatestLegalNotices,
@@ -38,6 +39,23 @@ export const createPages = async ({ graphql, actions }) => {
   // graphql queries are evaluated at compile time, but storePackageData needs to run inside
   // a scheduled Netlify function where the graphql scaffolding is not available.
   await storePackageData();
+
+  await createPagesFromQuery({
+    templatePath: './src/templates/BackstageWeekly.js',
+    query: BACKSTAGE_WEEKLY_QUERY,
+    resultName: 'issues.edges',
+    actions,
+    graphql,
+    processor: ({ node }, component) => {
+      return {
+      path: `/backstage-weekly${node.slug}`,
+        component,
+        context: {
+          slug: node.slug,
+        },
+      };
+    },
+  });
 
   await createPagesFromQuery({
     templatePath: './src/templates/BlogPost.js',
