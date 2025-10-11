@@ -23,5 +23,7 @@ Sentry.init({
 
   environment: getSentryEnvironment(),
 
+  silent: true,
+
   integrations: [],
 });

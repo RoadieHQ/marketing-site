@@ -296,6 +296,9 @@ const config = {
 
     {
       resolve: '@sentry/gatsby',
+      options: {
+        silent: true,
+      },
     },
 
     {
