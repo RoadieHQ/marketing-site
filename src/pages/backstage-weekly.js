@@ -43,20 +43,6 @@ const ImageIssue = ({ issue }) => (
   </div>
 );
 
-const extractNewsletterDetailsFromPost = ({ node: { title, ...rest } }) => {
-  const mainTitle = title.replace(/Backstage Weekly \d\d\d? - /, '');
-  const matchedIssueNumber = title.match(/Backstage Weekly (\d\d\d?)/);
-  const issueNumber = matchedIssueNumber && matchedIssueNumber[1];
-
-  return {
-    node: {
-      title: mainTitle,
-      issueNumber,
-    ...rest,
-    },
-  };
-};
-
 const BackstageWeekly = ({ data }) => {
   const {
     issues: {
@@ -68,7 +54,6 @@ const BackstageWeekly = ({ data }) => {
       },
     }
   } = data;
-  const issuesWithExtractedInfo = issues.map(extractNewsletterDetailsFromPost);
   const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -124,7 +109,7 @@ const BackstageWeekly = ({ data }) => {
         </div>
 
         <div className="pt-10 mx-auto grid gap-5 md:grid-cols-2 lg:gap-12 lg:grid-cols-3 lg:max-w-none">
-          {issuesWithExtractedInfo.map(({ node }) => (
+          {issues.map(({ node }) => (
             <ImageIssue key={node.slug} issue={node} />
           ))}
         </div>
