@@ -3,7 +3,6 @@ import { graphql, Link } from 'gatsby';
 import format from 'date-fns/format';
 
 import { SEO, Headline, SitewideHeader, SitewideFooter } from 'components';
-import HeadRssLink from 'components/article/HeadRssLink';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
@@ -36,8 +35,6 @@ const BackstageWeeklyTemplate = ({ data }) => {
         title={`${title} | ${siteTitle}`}
         description={lead.childMarkdownRemark.rawMarkdownBody}
       />
-
-      <HeadRssLink />
 
       <SitewideHeader borderBottom={false} />
 
