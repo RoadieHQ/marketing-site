@@ -39,7 +39,7 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query BlogIndex {
-    allContentfulBlogPost(sort: { date: DESC }, filter: { tags: { ne: "newsletter" } }) {
+    allContentfulBlogPost(sort: { date: DESC }) {
       edges {
         node {
           description {

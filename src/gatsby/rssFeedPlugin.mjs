@@ -20,7 +20,6 @@ const blogFeed = {
     query AllBlogPostsForRss {
       blogs: allContentfulBlogPost(
         sort: {date: DESC}
-        filter: {tags: {ne: "newsletter"}}
       ) {
         edges {
           node {
