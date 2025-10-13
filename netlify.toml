@@ -250,35 +250,35 @@
   force = true
 
 [[redirects]]
-  from = "/blog/roadies-backstage-weekly-49-new-version-search-v1-new-apollo-plugin-cfp"
-  to = "/backstage-weekly/49-new-version-search-v1-new-apollo-plugin-cfp"
+  from = "/blog/backstage-weekly-4-cost-insights/"
+  to = "/backstage-weekly/4-cost-insights/"
   force = true
 
 [[redirects]]
-  from = "/blog/roadies-backstage-weekly-50-new-backstage-users-unconference-active-page-in"
-  to = "/backstage-weekly/50-new-backstage-users-unconference-active-page-in"
+  from = "/blog/backstage-weekly-5-lighthouse/"
+  to = "/backstage-weekly/5-lighthouse/"
   force = true
 
 [[redirects]]
-  from = "/blog/ga4-support-new-backend-going-ga/"
-  to = "/backstage-weekly/86-ga4-support-new-backend-going-ga/"
+  from = "/blog/backstage-weekly-6-kubernetes-plugin/"
+  to = "/backstage-weekly/6-kubernetes-plugin/"
   force = true
 
 [[redirects]]
-  from = "/blog/what-a-holistic-idp-looks-like/"
-  to = "/backstage-weekly/87-what-a-holistic-idp-looks-like/"
+  from = "/blog/backstage-weekly-7-open-governance/"
+  to = "/backstage-weekly/7-open-governance/"
   force = true
 
-# Auto-generated
+[[redirects]]
+  from = "/blog/backstage-weekly-8-search/"
+  to = "/backstage-weekly/8-search/"
+  force = true
+
+# Issue 9 was never added to the website in the first place, so it doesn't need a redirect.
 
 [[redirects]]
   from = "/blog/backstage-weekly-10-catalog-importer/"
   to = "/backstage-weekly/10-catalog-importer/"
-  force = true
-
-[[redirects]]
-  from = "/blog/backstage-weekly-100-new-backend-migration-guide-uplight-case-study/"
-  to = "/backstage-weekly/100-new-backend-migration-guide-uplight-case-study/"
   force = true
 
 [[redirects]]
@@ -342,13 +342,15 @@
   force = true
 
 [[redirects]]
-  from = "/blog/backstage-weekly-23-code-coverage-plugin/"
-  to = "/backstage-weekly/23-code-coverage-plugin/"
-  force = true
-
-[[redirects]]
   from = "/blog/backstage-weekly-23-composability-api/"
   to = "/backstage-weekly/23-composability-api/"
+  force = true
+
+# Issue 24 was posted with the wrong issue number in the URL. We're retaining the mistake in
+# this redirect for posterity.
+[[redirects]]
+  from = "/blog/backstage-weekly-23-code-coverage-plugin/"
+  to = "/backstage-weekly/23-code-coverage-plugin/"
   force = true
 
 [[redirects]]
@@ -375,6 +377,8 @@
   from = "/blog/backstage-weekly-29-search-v1-alpha/"
   to = "/backstage-weekly/29-search-v1-alpha/"
   force = true
+
+# 30, 31 and 32 were never on the website, so no redirect is needed.
 
 [[redirects]]
   from = "/blog/backstage-weekly-32-community-contributions/"
@@ -414,11 +418,6 @@
 [[redirects]]
   from = "/blog/backstage-weekly-38-new-roadmap/"
   to = "/backstage-weekly/38-new-roadmap/"
-  force = true
-
-[[redirects]]
-  from = "/blog/backstage-weekly-4-cost-insights/"
-  to = "/backstage-weekly/4-cost-insights/"
   force = true
 
 [[redirects]]
@@ -467,9 +466,15 @@
   force = true
 
 [[redirects]]
-  from = "/blog/backstage-weekly-5-lighthouse/"
-  to = "/backstage-weekly/5-lighthouse/"
+  from = "/blog/roadies-backstage-weekly-49-new-version-search-v1-new-apollo-plugin-cfp"
+  to = "/backstage-weekly/49-new-version-search-v1-new-apollo-plugin-cfp"
   force = true
+
+[[redirects]]
+  from = "/blog/roadies-backstage-weekly-50-new-backstage-users-unconference-active-page-in"
+  to = "/backstage-weekly/50-new-backstage-users-unconference-active-page-in"
+  force = true
+
 
 [[redirects]]
   from = "/blog/backstage-weekly-51-improved-tech-docs-for-monorepos-multiple-sonarqube"
@@ -517,11 +522,6 @@
   force = true
 
 [[redirects]]
-  from = "/blog/backstage-weekly-6-kubernetes-plugin/"
-  to = "/backstage-weekly/6-kubernetes-plugin/"
-  force = true
-
-[[redirects]]
   from = "/blog/backstage-weekly-60-breaking-change-in-the-permissions-framework-per-page"
   to = "/backstage-weekly/60-breaking-change-in-the-permissions-framework-per-page"
   force = true
@@ -546,10 +546,8 @@
   to = "/backstage-weekly/64-rce-vulnerability-events-api-incremental-entities"
   force = true
 
-[[redirects]]
-  from = "/blog/backstage-weekly-64-rce-vulnerability-events-api-incremental-entities/"
-  to = "/backstage-weekly/64-rce-vulnerability-events-api-incremental-entities/"
-  force = true
+# Issue 65 was incorrectly publushed with the same slug as issue 64. So we never had an issue 65
+# on the website in the first place. Therefore it needs no redirect.
 
 [[redirects]]
   from = "/blog/backstage-weekly-66-entity-peek-ahead-github-webhooks-support-for-users-and/"
@@ -569,11 +567,6 @@
 [[redirects]]
   from = "/blog/backstage-weekly-69-next-backend-teasers-new-gitlab-plugin/"
   to = "/backstage-weekly/69-next-backend-teasers-new-gitlab-plugin/"
-  force = true
-
-[[redirects]]
-  from = "/blog/backstage-weekly-7-open-governance/"
-  to = "/backstage-weekly/7-open-governance/"
   force = true
 
 [[redirects]]
@@ -626,9 +619,11 @@
   to = "/backstage-weekly/79-go-sdk-with-cli-access-fixed-stack-overflow-plugin/"
   force = true
 
+# Issue 80 was incorrectly published with '90' in the URL. I presume it was a typo at the time
+# the post was written. Reproducing here for posterity.
 [[redirects]]
-  from = "/blog/backstage-weekly-8-search/"
-  to = "/backstage-weekly/8-search/"
+  from = "/blog/backstage-weekly-90-automatic-orphaned-cleanup-scaffolder-permissions/"
+  to = "/backstage-weekly/90-automatic-orphaned-cleanup-scaffolder-permissions/"
   force = true
 
 [[redirects]]
@@ -657,6 +652,16 @@
   force = true
 
 [[redirects]]
+  from = "/blog/ga4-support-new-backend-going-ga/"
+  to = "/backstage-weekly/86-ga4-support-new-backend-going-ga/"
+  force = true
+
+[[redirects]]
+  from = "/blog/what-a-holistic-idp-looks-like/"
+  to = "/backstage-weekly/87-what-a-holistic-idp-looks-like/"
+  force = true
+
+[[redirects]]
   from = "/blog/backstage-weekly-88-new-release-1-16-scaffolder-interview/"
   to = "/backstage-weekly/88-new-release-1-16-scaffolder-interview/"
   force = true
@@ -664,11 +669,6 @@
 [[redirects]]
   from = "/blog/backstage-weekly-89-traits-of-successful-adopters-cfp-last-days/"
   to = "/backstage-weekly/89-traits-of-successful-adopters-cfp-last-days/"
-  force = true
-
-[[redirects]]
-  from = "/blog/backstage-weekly-90-automatic-orphaned-cleanup-scaffolder-permissions/"
-  to = "/backstage-weekly/90-automatic-orphaned-cleanup-scaffolder-permissions/"
   force = true
 
 [[redirects]]
@@ -722,6 +722,7 @@
   force = true
 
 [[redirects]]
-  from = "/blog/backstage-weekly-99/"
-  to = "/backstage-weekly/99/"
+  from = "/blog/backstage-weekly-100-new-backend-migration-guide-uplight-case-study/"
+  to = "/backstage-weekly/100-new-backend-migration-guide-uplight-case-study/"
   force = true
+
