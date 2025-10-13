@@ -275,12 +275,12 @@
 # This handles 2 special cases where we published a Backstage Weekly issue inder the slug:
 #   "blog/roadies-backstage-weekly-[N]-[rest of slug]"
 [[redirects]]
-  from = "/blog/roadies-backstge-weekly-*"
-  to = "/backstage-weekly/:splat:"
+  from = "/blog/roadies-backstage-weekly-*"
+  to = "/backstage-weekly/:splat"
   force = true
 
 # This handles all other Backstage Weekly redirects.
 [[redirects]]
-  from = "/blog/backstge-weekly-*"
+  from = "/blog/backstage-weekly-*"
   to = "/backstage-weekly/:splat"
   force = true
