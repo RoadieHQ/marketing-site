@@ -28,11 +28,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
   };
 
   const { author, title, publishDate, lead, issueNumber } = issue;
-
-  const FORMAT_TOKEN = 'MMMM do, yyyy';
-  const dateTimestamp = Date.parse(publishDate);
-
-  let formattedDate = format(dateTimestamp, FORMAT_TOKEN);
+  const formattedDate = format(Date.parse(publishDate),  'MMMM do, yyyy');
 
   return (
     <>
