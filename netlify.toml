@@ -452,38 +452,38 @@
 
 [[redirects]]
   from = "/blog/backstage-weekly-46-openapi-usdref-node-support-policy"
-  to = "/backstage-weekly/46-openapi-usdref-node-support-policy"
+  to = "/backstage-weekly/46-openapi-usdref-node-support-policy/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-47-backstage-in-vscode-search-highlights-advanced-filtering"
-  to = "/backstage-weekly/47-backstage-in-vscode-search-highlights-advanced-filtering"
+  to = "/backstage-weekly/47-backstage-in-vscode-search-highlights-advanced-filtering/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-48-upcoming-backend-apis-eks-clusters-in-the-catalog"
-  to = "/backstage-weekly/48-upcoming-backend-apis-eks-clusters-in-the-catalog"
+  to = "/backstage-weekly/48-upcoming-backend-apis-eks-clusters-in-the-catalog/"
   force = true
 
 [[redirects]]
   from = "/blog/roadies-backstage-weekly-49-new-version-search-v1-new-apollo-plugin-cfp"
-  to = "/backstage-weekly/49-new-version-search-v1-new-apollo-plugin-cfp"
+  to = "/backstage-weekly/49-new-version-search-v1-new-apollo-plugin-cfp/"
   force = true
 
 [[redirects]]
   from = "/blog/roadies-backstage-weekly-50-new-backstage-users-unconference-active-page-in"
-  to = "/backstage-weekly/50-new-backstage-users-unconference-active-page-in"
+  to = "/backstage-weekly/50-new-backstage-users-unconference-active-page-in/"
   force = true
 
 
 [[redirects]]
   from = "/blog/backstage-weekly-51-improved-tech-docs-for-monorepos-multiple-sonarqube"
-  to = "/backstage-weekly/51-improved-tech-docs-for-monorepos-multiple-sonarqube"
+  to = "/backstage-weekly/51-improved-tech-docs-for-monorepos-multiple-sonarqube/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-52-community-milestone-new-github-issues-plugin"
-  to = "/backstage-weekly/52-community-milestone-new-github-issues-plugin"
+  to = "/backstage-weekly/52-community-milestone-new-github-issues-plugin/"
   force = true
 
 [[redirects]]
@@ -493,37 +493,37 @@
 
 [[redirects]]
   from = "/blog/backstage-weekly-54-upcoming-backstagecon-agenda-and-cfp-results"
-  to = "/backstage-weekly/54-upcoming-backstagecon-agenda-and-cfp-results"
+  to = "/backstage-weekly/54-upcoming-backstagecon-agenda-and-cfp-results/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-55-backstage-security-audit-upcoming-events-paginated-pull"
-  to = "/backstage-weekly/55-backstage-security-audit-upcoming-events-paginated-pull"
+  to = "/backstage-weekly/55-backstage-security-audit-upcoming-events-paginated-pull/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-56-filter-github-repos-entity-validation-oss-summit"
-  to = "/backstage-weekly/56-filter-github-repos-entity-validation-oss-summit"
+  to = "/backstage-weekly/56-filter-github-repos-entity-validation-oss-summit/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-57-backstage-1-6-entities-playlists-azure-resources"
-  to = "/backstage-weekly/57-backstage-1-6-entities-playlists-azure-resources"
+  to = "/backstage-weekly/57-backstage-1-6-entities-playlists-azure-resources/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-58-scaffolder-custom-functions-and-links-in-your-templates"
-  to = "/backstage-weekly/58-scaffolder-custom-functions-and-links-in-your-templates"
+  to = "/backstage-weekly/58-scaffolder-custom-functions-and-links-in-your-templates/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-59-upcoming-backstage-talks"
-  to = "/backstage-weekly/59-upcoming-backstage-talks"
+  to = "/backstage-weekly/59-upcoming-backstage-talks/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-60-breaking-change-in-the-permissions-framework-per-page"
-  to = "/backstage-weekly/60-breaking-change-in-the-permissions-framework-per-page"
+  to = "/backstage-weekly/60-breaking-change-in-the-permissions-framework-per-page/"
   force = true
 
 [[redirects]]
@@ -538,12 +538,12 @@
 
 [[redirects]]
   from = "/blog/backstage-weekly-63-backstage-1-7-import-emails-from-github"
-  to = "/backstage-weekly/63-backstage-1-7-import-emails-from-github"
+  to = "/backstage-weekly/63-backstage-1-7-import-emails-from-github/"
   force = true
 
 [[redirects]]
   from = "/blog/backstage-weekly-64-rce-vulnerability-events-api-incremental-entities"
-  to = "/backstage-weekly/64-rce-vulnerability-events-api-incremental-entities"
+  to = "/backstage-weekly/64-rce-vulnerability-events-api-incremental-entities/"
   force = true
 
 # Issue 65 was incorrectly publushed with the same slug as issue 64. So we never had an issue 65
