@@ -1,6 +1,6 @@
 export const BLOGS_QUERY = `
 {
-  blogs: allContentfulBlogPost(sort: {date: DESC}, filter: { tags: { ne: "newsletter" }}) {
+  blogs: allContentfulBlogPost(sort: {date: DESC}) {
     edges {
       node {
         slug
