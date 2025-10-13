@@ -1,6 +1,18 @@
 export const BLOGS_QUERY = `
 {
-  blogs: allContentfulBlogPost(sort: {date: DESC}) {
+  blogs: allContentfulBlogPost(sort: {date: DESC}, filter: { tags: { ne: "newsletter" }}) {
+    edges {
+      node {
+        slug
+      }
+    }
+  }
+}
+`;
+
+export const BACKSTAGE_WEEKLY_QUERY = `
+{
+  issues: allContentfulBackstageWeekly(sort: {publishDate: DESC}) {
     edges {
       node {
         slug
