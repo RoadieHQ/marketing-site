@@ -282,5 +282,5 @@
 # This handles all other Backstage Weekly redirects.
 [[redirects]]
   from = "/blog/backstge-weekly-*"
-  to = "/backstage-weekly/:splat:"
+  to = "/backstage-weekly/:splat"
   force = true
