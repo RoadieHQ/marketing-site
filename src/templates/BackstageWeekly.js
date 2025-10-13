@@ -112,7 +112,6 @@ export const pageQuery = graphql`
         name
       }
       slug
-      title
       body {
         childMarkdownRemark {
           html

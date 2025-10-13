@@ -231,7 +231,7 @@
   to = "/request-demo"
   force = true
 
-# ~100 rediredcts resulting from moving Backstage Weekly issues out of /blog/ and over
+# ~100 redirects resulting from moving Backstage Weekly issues out of /blog/ and over
 # to /backstage-weekly/
 
 [[redirects]]

@@ -29,7 +29,7 @@ const ImageIssue = ({ issue }) => (
         <Link to={`/backstage-weekly${issue.slug}`} className="block mt-4">
           <p className="text-xl font-semibold text-gray-900">{issue.title}</p>
           <p className="mt-3 text-base text-gray-500">
-            {issue.description?.childMarkdownRemark?.rawMarkdownBody}
+            {issue.lead?.childMarkdownRemark?.rawMarkdownBody}
           </p>
         </Link>
       </div>
