@@ -479,4 +479,274 @@ describe('#storePackageData', () => {
       expect(nock.isDone()).toBe(true);
     });
   });
+
+  describe('error handling and resilience', () => {
+    it('should handle HTTP 404 errors for individual packages gracefully', async () => {
+      const packageNames = ['@backstage/existing-package', 'non-existent-package'];
+      mockRetrievePackageNames.mockResolvedValue(packageNames);
+
+      // Mock successful package
+      const npmPackageData = {
+        name: '@backstage/existing-package',
+        'dist-tags': { latest: '1.0.0' },
+        versions: {
+          '1.0.0': {
+            name: '@backstage/existing-package',
+            version: '1.0.0',
+          },
+        },
+        time: {
+          created: '2024-01-01T00:00:00Z',
+          modified: '2024-06-01T00:00:00Z',
+          '1.0.0': '2024-06-01T00:00:00Z',
+        },
+        maintainers: [{ name: 'test', email: 'test@example.com' }],
+      };
+
+      nock('https://registry.npmjs.org')
+        .get('/@backstage/existing-package')
+        .reply(200, npmPackageData);
+
+      // Mock 404 for non-existent package
+      nock('https://registry.npmjs.org')
+        .get('/non-existent-package')
+        .reply(404, { error: 'Not found' });
+
+      nock('https://api.npmjs.org')
+        .get('/downloads/point/last-month/@backstage/existing-package')
+        .reply(200, { package: '@backstage/existing-package', downloads: 100 });
+
+      nock('https://api.npmjs.org')
+        .get('/downloads/point/last-month/non-existent-package')
+        .reply(404, { error: 'Not found' });
+
+      const result = await storePackageData();
+
+      // Should still succeed with the valid package
+      expect(result).toEqual({ modified: '2025-01-01T00:00:00Z', etag: 'test-etag' });
+
+      // Should store the successful package
+      expect(mockStore.setJSON).toHaveBeenCalledWith(
+        '@backstage/existing-package',
+        expect.objectContaining({
+          name: '@backstage/existing-package',
+          latestVersion: '1.0.0',
+        })
+      );
+
+      // Should have stored: 1 for all-packages + 1 individual = 2 total
+      expect(mockStore.setJSON).toHaveBeenCalledTimes(2);
+    });
+
+    it('should handle HTTP 429 rate limiting with retry', async () => {
+      const packageNames = ['rate-limited-package'];
+      mockRetrievePackageNames.mockResolvedValue(packageNames);
+
+      const npmPackageData = {
+        name: 'rate-limited-package',
+        'dist-tags': { latest: '1.0.0' },
+        versions: {
+          '1.0.0': {
+            name: 'rate-limited-package',
+            version: '1.0.0',
+          },
+        },
+        time: {
+          created: '2024-01-01T00:00:00Z',
+          modified: '2024-06-01T00:00:00Z',
+          '1.0.0': '2024-06-01T00:00:00Z',
+        },
+        maintainers: [{ name: 'test', email: 'test@example.com' }],
+      };
+
+      // First attempt returns 429, second attempt succeeds
+      nock('https://registry.npmjs.org')
+        .get('/rate-limited-package')
+        .reply(429, { error: 'Too Many Requests' })
+        .get('/rate-limited-package')
+        .reply(200, npmPackageData);
+
+      nock('https://api.npmjs.org')
+        .get('/downloads/point/last-month/rate-limited-package')
+        .reply(200, { package: 'rate-limited-package', downloads: 50 });
+
+      const result = await storePackageData();
+
+      expect(result).toEqual({ modified: '2025-01-01T00:00:00Z', etag: 'test-etag' });
+
+      // Should have successfully stored the package after retry
+      expect(mockStore.setJSON).toHaveBeenCalledWith(
+        'rate-limited-package',
+        expect.objectContaining({
+          name: 'rate-limited-package',
+          latestVersion: '1.0.0',
+          lastMonthDownloads: 50,
+        })
+      );
+    });
+
+    it('should handle network errors and continue with successful packages', async () => {
+      const packageNames = ['failing-package', 'successful-package'];
+      mockRetrievePackageNames.mockResolvedValue(packageNames);
+
+      // Mock network error for first package (all retries fail)
+      nock('https://registry.npmjs.org')
+        .get('/failing-package')
+        .replyWithError('Network error')
+        .get('/failing-package')
+        .replyWithError('Network error')
+        .get('/failing-package')
+        .replyWithError('Network error');
+
+      // Mock successful package
+      const npmPackageData = {
+        name: 'successful-package',
+        'dist-tags': { latest: '1.0.0' },
+        versions: {
+          '1.0.0': {
+            name: 'successful-package',
+            version: '1.0.0',
+          },
+        },
+        time: {
+          created: '2024-01-01T00:00:00Z',
+          modified: '2024-06-01T00:00:00Z',
+          '1.0.0': '2024-06-01T00:00:00Z',
+        },
+        maintainers: [{ name: 'test', email: 'test@example.com' }],
+      };
+
+      nock('https://registry.npmjs.org').get('/successful-package').reply(200, npmPackageData);
+
+      // Mock stats (both may fail for stats, which is acceptable)
+      nock('https://api.npmjs.org')
+        .get('/downloads/point/last-month/failing-package')
+        .replyWithError('Network error')
+        .get('/downloads/point/last-month/failing-package')
+        .replyWithError('Network error')
+        .get('/downloads/point/last-month/failing-package')
+        .replyWithError('Network error');
+
+      nock('https://api.npmjs.org')
+        .get('/downloads/point/last-month/successful-package')
+        .reply(200, { package: 'successful-package', downloads: 200 });
+
+      const result = await storePackageData();
+
+      // Should still succeed with the successful package
+      expect(result).toEqual({ modified: '2025-01-01T00:00:00Z', etag: 'test-etag' });
+
+      // Should only store the successful package
+      expect(mockStore.setJSON).toHaveBeenCalledWith(
+        'successful-package',
+        expect.objectContaining({
+          name: 'successful-package',
+          latestVersion: '1.0.0',
+          lastMonthDownloads: 200,
+        })
+      );
+
+      // Should have stored: 1 for all-packages + 1 individual = 2 total
+      expect(mockStore.setJSON).toHaveBeenCalledTimes(2);
+    }, 10000); // Increase timeout to 10s due to retry delays
+
+    it('should handle HTTP 500 server errors with retry', async () => {
+      const packageNames = ['server-error-package'];
+      mockRetrievePackageNames.mockResolvedValue(packageNames);
+
+      const npmPackageData = {
+        name: 'server-error-package',
+        'dist-tags': { latest: '1.0.0' },
+        versions: {
+          '1.0.0': {
+            name: 'server-error-package',
+            version: '1.0.0',
+          },
+        },
+        time: {
+          created: '2024-01-01T00:00:00Z',
+          modified: '2024-06-01T00:00:00Z',
+          '1.0.0': '2024-06-01T00:00:00Z',
+        },
+        maintainers: [{ name: 'test', email: 'test@example.com' }],
+      };
+
+      // First attempt returns 500, second attempt succeeds
+      nock('https://registry.npmjs.org')
+        .get('/server-error-package')
+        .reply(500, { error: 'Internal Server Error' })
+        .get('/server-error-package')
+        .reply(200, npmPackageData);
+
+      nock('https://api.npmjs.org')
+        .get('/downloads/point/last-month/server-error-package')
+        .reply(200, { package: 'server-error-package', downloads: 75 });
+
+      const result = await storePackageData();
+
+      expect(result).toEqual({ modified: '2025-01-01T00:00:00Z', etag: 'test-etag' });
+
+      // Should have successfully stored the package after retry
+      expect(mockStore.setJSON).toHaveBeenCalledWith(
+        'server-error-package',
+        expect.objectContaining({
+          name: 'server-error-package',
+          latestVersion: '1.0.0',
+          lastMonthDownloads: 75,
+        })
+      );
+    });
+
+    it('should continue even if all stats requests fail', async () => {
+      const packageNames = ['package-without-stats'];
+      mockRetrievePackageNames.mockResolvedValue(packageNames);
+
+      const npmPackageData = {
+        name: 'package-without-stats',
+        'dist-tags': { latest: '1.0.0' },
+        versions: {
+          '1.0.0': {
+            name: 'package-without-stats',
+            version: '1.0.0',
+          },
+        },
+        time: {
+          created: '2024-01-01T00:00:00Z',
+          modified: '2024-06-01T00:00:00Z',
+          '1.0.0': '2024-06-01T00:00:00Z',
+        },
+        maintainers: [{ name: 'test', email: 'test@example.com' }],
+      };
+
+      nock('https://registry.npmjs.org').get('/package-without-stats').reply(200, npmPackageData);
+
+      // Stats endpoint fails completely
+      nock('https://api.npmjs.org')
+        .get('/downloads/point/last-month/package-without-stats')
+        .replyWithError('Stats service unavailable')
+        .get('/downloads/point/last-month/package-without-stats')
+        .replyWithError('Stats service unavailable')
+        .get('/downloads/point/last-month/package-without-stats')
+        .replyWithError('Stats service unavailable');
+
+      const result = await storePackageData();
+
+      expect(result).toEqual({ modified: '2025-01-01T00:00:00Z', etag: 'test-etag' });
+
+      // Should store the package without download stats
+      expect(mockStore.setJSON).toHaveBeenCalledWith(
+        'package-without-stats',
+        expect.objectContaining({
+          name: 'package-without-stats',
+          latestVersion: '1.0.0',
+        })
+      );
+
+      // The package should not have lastMonthDownloads
+      const storedPackageData = mockStore.setJSON.mock.calls.find(
+        (call) => call[0] === 'package-without-stats'
+      )[1];
+      expect(storedPackageData.lastMonthDownloads).toBeUndefined();
+    }, 10000); // Increase timeout to 10s due to retry delays
+  });
 });
