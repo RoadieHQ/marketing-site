@@ -25,11 +25,24 @@ const EmailCaptureForm = ({
   className,
   honeypotValue,
   setHoneypotText,
+  showRecaptcha,
+  setShowRecaptcha,
 }) => {
   let disabled = submitting || !email || email === '';
   if (newsletterRecaptchaEnabled()) {
     disabled = disabled || !recaptchaResponse || recaptchaResponse === '' || recaptchaExpired;
   }
+
+  const handleEmailChange = (value) => {
+    setEmail(value);
+    if (newsletterRecaptchaEnabled()) {
+      if (value && value.length > 0) {
+        setShowRecaptcha(true);
+      } else {
+        setShowRecaptcha(false);
+      }
+    }
+  };
 
   // Removed unnecessary debug logging statements.
 
@@ -51,14 +64,14 @@ const EmailCaptureForm = ({
         data-netlify-recaptcha={newsletterRecaptchaEnabled() ? 'true' : undefined}
       >
         <div className={classnames('flex flex-col', className)}>
-          <div className="mb-12">
+          <div className="mb-4">
             <TextField
               type="email"
               name="email"
               id={emailInputId}
               aria-label="Work email address"
               placeholder={placeholderText}
-              onChange={setEmail}
+              onChange={handleEmailChange}
               value={email}
               autoFocus={autoFocus}
               color="primary"
@@ -69,14 +82,21 @@ const EmailCaptureForm = ({
           </div>
 
           {newsletterRecaptchaEnabled() && (
-            <Recaptcha
-              onChange={setRecaptchaResponse}
-              wrapperClassName="mb-4 flex justify-center"
-              setRecaptchaExpired={setRecaptchaExpired}
-            />
+            <div
+              className={classnames(
+                'mb-4 overflow-hidden transition-all duration-500 ease-in-out',
+                showRecaptcha ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              )}
+            >
+              <Recaptcha
+                onChange={setRecaptchaResponse}
+                wrapperClassName="flex justify-center"
+                setRecaptchaExpired={setRecaptchaExpired}
+              />
+            </div>
           )}
 
-          <div className="md:ml-1 mt-4">
+          <div className="md:ml-1">
             <Button
               text={buttonText}
               disabled={disabled}

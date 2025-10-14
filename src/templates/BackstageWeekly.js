@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
-import format from 'date-fns/format';
 
 import { SEO, Headline, SitewideHeader, SitewideFooter } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
+import { PublishDate } from 'components/backstage-weekly';
 
 const BackstageWeeklyTemplate = ({ data }) => {
   const {
@@ -26,8 +26,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
     setEmail('');
   };
 
-  const { author, title, publishDate, lead, issueNumber } = issue;
-  const formattedDate = format(Date.parse(publishDate),  'MMMM do, yyyy');
+  const { author, title, lead, issueNumber } = issue;
 
   return (
     <>
@@ -59,7 +58,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
             </Headline>
             <strong>{author && author.name && <>By {author.name}</>}</strong>
             {` • `}
-            {formattedDate}
+            <PublishDate issue={issue} />
           </div>
         </header>
 
