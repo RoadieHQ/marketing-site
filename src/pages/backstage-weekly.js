@@ -6,7 +6,7 @@ import {
   NetlifyFormCallToAction,
   SubscribeToNewsletterSuccessModal,
 } from 'components/CallToAction';
-import { PublishDate } from 'components/backstage-weekly';
+import { PubDate } from 'components/article';
 
 import { FORM_NAMES } from '../contactFormConstants';
 import CoverImage from '../../content/assets/blog/list-cover-image-1.png';
@@ -35,7 +35,7 @@ const ImageIssue = ({ issue }) => (
       </div>
 
       <div className="mt-6 flex items-center">
-        <PublishDate issue={issue} />
+        <PubDate date={issue.publishDate} />
       </div>
     </div>
   </div>

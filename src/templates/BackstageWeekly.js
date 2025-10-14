@@ -6,7 +6,7 @@ import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
-import { PublishDate } from 'components/backstage-weekly';
+import { PubDate } from 'components/article';
 
 const BackstageWeeklyTemplate = ({ data }) => {
   const {
@@ -26,7 +26,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
     setEmail('');
   };
 
-  const { author, title, lead, issueNumber } = issue;
+  const { author, title, lead, publishDate, issueNumber } = issue;
 
   return (
     <>
@@ -58,7 +58,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
             </Headline>
             <strong>{author && author.name && <>By {author.name}</>}</strong>
             {` • `}
-            <PublishDate issue={issue} />
+            <PubDate date={publishDate} />
           </div>
         </header>
 
