@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 
-import { SEO, Headline, SitewideHeader, SitewideFooter } from 'components';
+import { SEO, Headline, SitewideHeader, SitewideFooter, Title } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
@@ -26,7 +26,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
     setEmail('');
   };
 
-  const { author, title, lead, publishDate, issueNumber } = issue;
+  const { author, title, lead, publishDate, issueNumber, body, backstageChangelog, ecosystemChangelog } = issue;
 
   return (
     <>
@@ -45,27 +45,65 @@ const BackstageWeeklyTemplate = ({ data }) => {
       />
 
       <article className="relative">
-        <header className="bg-white mx-auto max-w-7xl mb-5 px-4 py-10 xl:rounded-lg lg:flex lg:px-0 lg:mb-10 items-center">
-          <div className="lg:w-1/2 px-4 lg:px-10">
-            <Link
-              to="/backstage-weekly/"
-              className="block uppercase mb-8 text-xl font-highlight text-orange-600 font-bold"
-            >
-              Backstage Weekly
-            </Link>
-            <Headline size="medium" className="mb-10">
-              Backstage Weekly {issueNumber} - {title}
-            </Headline>
-            <strong>{author && author.name && <>By {author.name}</>}</strong>
+        <div className="mx-auto max-w-3xl px-2">
+          <header className="mb-5 py-6 border-solid border-b-2">
+            <div className="mb-10">
+              <Link to="/backstage-weekly/" className="font-bold text-blueroadie">
+                <span className="text-orange-500">←</span> More Backstage Weekly issues
+              </Link>
+            </div>
+
+            <div className="mb-6">
+              <Headline size="medium">
+                Backstage Weekly {issueNumber} - {title}
+              </Headline>
+            </div>
+
+            {lead && (
+              <div
+                className="prose prose-primary max-w-none mb-2"
+                dangerouslySetInnerHTML={{ __html: lead.childMarkdownRemark.rawMarkdownBody }}
+
+              />
+            )}
+            <strong>{author?.name && <>By {author.name}</>}</strong>
             {` • `}
             <PubDate date={publishDate} />
-          </div>
-        </header>
+          </header>
 
-        <section
-          className="prose prose-primary max-w-none max-w-lg mx-auto lg:max-w-3xl mb-24 p-2"
-          dangerouslySetInnerHTML={{ __html: issue.body.childMarkdownRemark.html }}
-        />
+          {body && (
+            <div className="mb-12 pb-12 border-solid border-b-2">
+              <section
+                className="prose prose-primary max-w-none"
+                dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
+              />
+            </div>
+          )}
+
+          {backstageChangelog && (
+            <div className="mb-12 pb-12 border-solid border-b-2">
+              <div className="mb-4">
+                <Title>What{"'"}s happening in Backstage core</Title>
+              </div>
+              <section
+                className="prose prose-primary max-w-none mb-24"
+                dangerouslySetInnerHTML={{ __html: backstageChangelog.childMarkdownRemark.html }}
+              />
+            </div>
+          )}
+
+          {ecosystemChangelog && (
+            <div className="mb-12 pb-12 border-solid border-b-2">
+              <div className="mb-4">
+                <Title>What{"'"}s happening in the plugin ecosystem</Title>
+              </div>
+              <section
+                className="prose prose-primary max-w-none mb-24"
+                dangerouslySetInnerHTML={{ __html: backstageChangelog.childMarkdownRemark.html }}
+              />
+            </div>
+          )}
+        </div>
       </article>
 
       <div className="relative max-w-lg mx-auto lg:max-w-xl mb-10 p-2">
@@ -105,6 +143,16 @@ export const pageQuery = graphql`
       }
       slug
       body {
+        childMarkdownRemark {
+          html
+        }
+      }
+      backstageChangelog {
+        childMarkdownRemark {
+          html
+        }
+      }
+      ecosystemChangelog {
         childMarkdownRemark {
           html
         }
