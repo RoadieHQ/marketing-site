@@ -34,7 +34,7 @@ const BackstageChangelog = ({ issue }) => {
           <Title>{PAGE_SECTIONS.BACKSTAGE_CHANGELOG.label}</Title>
         </div>
         <p className="prose prose-primary max-w-none">
-          A quick look at the changes that have been merged into Backstge in the past week.
+          A quick look at changes that have been merged into Backstage in the past week.
         </p>
       </div>
 
