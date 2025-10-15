@@ -1,4 +1,3 @@
-
 const PAGE_SECTIONS = {
   NEWS: {
     key: 'news',
