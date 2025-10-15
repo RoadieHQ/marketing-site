@@ -1,7 +1,7 @@
 import React from 'react';
 import format from 'date-fns/format';
 
-const PubDate = ({ date, formatToken =  'MMMM do, yyyy' }) => {
+const PubDate = ({ date, formatToken = 'MMMM do, yyyy' }) => {
   if (!date) {
     return <span className="text-gray-600">Draft</span>;
   }
