@@ -11,7 +11,13 @@ const Author = ({ issue }) => {
   
   let avatar = null;
   if (has(author, 'avatar.gatsbyImageData')) {
-    avatar = <GatsbyImage image={author.avatar.gatsbyImageData} className="rounded-full mr-1" />;
+    avatar = (
+      <GatsbyImage
+        image={author.avatar.gatsbyImageData}
+        className="rounded-full mr-1"
+        alt={author.avatar.description}
+      />
+    );
   }
 
   return (

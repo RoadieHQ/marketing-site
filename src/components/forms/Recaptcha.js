@@ -12,7 +12,7 @@ const Recaptcha = ({ wrapperClassName = 'sm:col-span-2 mt-4', setRecaptchaExpire
     <div className={wrapperClassName}>
       <GoogleRecaptcha
         sitekey={siteRecaptchaKey()}
-        onRecaptchaExpired={onRecaptchaExpired}
+        onExpired={onRecaptchaExpired}
         {...props}
       />
     </div>

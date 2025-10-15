@@ -106,6 +106,7 @@ export const pageQuery = graphql`
         name
         avatar {
           gatsbyImageData(layout: FIXED, height: 40, placeholder: DOMINANT_COLOR)
+          description
         }
       }
       slug
