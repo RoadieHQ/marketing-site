@@ -65,6 +65,7 @@ const NetlifyFormCallToAction = ({
   autoFocus = false,
   email,
   setEmail,
+  color = 'primary',
   ...rest
 }) => {
   const [submitting, setSubmitting] = useState(false);
@@ -112,6 +113,7 @@ const NetlifyFormCallToAction = ({
     placeholderText,
     email,
     buttonText,
+    color,
     autoFocus,
     netlifyFormName,
     honeypotValue: honeypotText,

@@ -14,9 +14,9 @@ const TextField = ({ id, label, helpText, helpTextState, color = 'primary', ...r
         {label}
       </label>
       <div className="mt-1.5 relative">
-        <Input id={htmlId} color={color} {...rest} />
+        <Input id={htmlId} {...rest} />
         <div className="mt-3">
-          <HelpText message={helpText} state={helpTextState} />
+          <HelpText message={helpText} color={color} state={helpTextState} />
         </div>
       </div>
     </div>

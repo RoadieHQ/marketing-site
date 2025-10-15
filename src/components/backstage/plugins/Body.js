@@ -25,7 +25,6 @@ const RoadieDocsLink = ({ availableOnRoadie, roadieDocsPath }) => {
   return <p className="prose prose-primary max-w-none">{disclaimer}</p>;
 };
 
-
 const Body = ({ plugin, }) => {
   const {
     installationInstructions,

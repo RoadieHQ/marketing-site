@@ -26,7 +26,7 @@ const Sidebar = ({ plugin, pageSections }) => {
   }, [npmPackageName]);
 
   return (
-    <div>
+    <div className="p-6 bg-gray-100 rounded-lg">
       <div className="mb-10 pt-2">
         <TableOfContents plugin={plugin} pageSections={pageSections} />
       </div>

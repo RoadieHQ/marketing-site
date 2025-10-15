@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { SEO, Headline, SitewideHeader, SitewideFooter, Title } from 'components';
+import { SEO, SitewideHeader, SitewideFooter } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
-import { PubDate } from 'components/article';
+import { Header, Body, Sidebar } from 'components/backstage-weekly';
 
 const BackstageWeeklyTemplate = ({ data }) => {
   const {
@@ -26,7 +26,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
     setEmail('');
   };
 
-  const { author, title, lead, publishDate, issueNumber, body, backstageChangelog, ecosystemChangelog } = issue;
+  const { title, lead } = issue;
 
   return (
     <>
@@ -35,8 +35,6 @@ const BackstageWeeklyTemplate = ({ data }) => {
         description={lead.childMarkdownRemark.rawMarkdownBody}
       />
 
-      <SitewideHeader borderBottom={false} />
-
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
@@ -44,71 +42,37 @@ const BackstageWeeklyTemplate = ({ data }) => {
         email={email}
       />
 
-      <article className="relative">
-        <div className="mx-auto max-w-3xl px-2">
-          <header className="mb-5 py-6 border-solid border-b-2">
-            <div className="mb-10">
-              <Link to="/backstage-weekly/" className="font-bold text-blueroadie">
-                <span className="text-orange-500">←</span> More Backstage Weekly issues
-              </Link>
-            </div>
-
-            <div className="mb-6">
-              <Headline size="medium">
-                Backstage Weekly {issueNumber} - {title}
-              </Headline>
-            </div>
-
-            {lead && (
-              <div
-                className="prose prose-primary max-w-none mb-2"
-                dangerouslySetInnerHTML={{ __html: lead.childMarkdownRemark.rawMarkdownBody }}
-
-              />
-            )}
-            <strong>{author?.name && <>By {author.name}</>}</strong>
-            {` • `}
-            <PubDate date={publishDate} />
-          </header>
-
-          {body && (
-            <div className="mb-12 pb-12 border-solid border-b-2">
-              <section
-                className="prose prose-primary max-w-none"
-                dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
-              />
-            </div>
-          )}
-
-          {backstageChangelog && (
-            <div className="mb-12 pb-12 border-solid border-b-2">
-              <div className="mb-4">
-                <Title>What{"'"}s happening in Backstage core</Title>
-              </div>
-              <section
-                className="prose prose-primary max-w-none mb-24"
-                dangerouslySetInnerHTML={{ __html: backstageChangelog.childMarkdownRemark.html }}
-              />
-            </div>
-          )}
-
-          {ecosystemChangelog && (
-            <div className="mb-12 pb-12 border-solid border-b-2">
-              <div className="mb-4">
-                <Title>What{"'"}s happening in the plugin ecosystem</Title>
-              </div>
-              <section
-                className="prose prose-primary max-w-none mb-24"
-                dangerouslySetInnerHTML={{ __html: backstageChangelog.childMarkdownRemark.html }}
-              />
-            </div>
-          )}
-        </div>
-      </article>
-
-      <div className="relative max-w-lg mx-auto lg:max-w-xl mb-10 p-2">
-        <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
+      <div className="mb-4">
+        <SitewideHeader />
       </div>
+
+      <div className="mb-12">
+        <Header issue={issue} />
+      </div>
+
+      <main className="pb-8 px-4 lg:pb-28">
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 md:gap-12 lg:gap-20">
+            <article className="col-span-3 md:col-span-2">
+              <Body issue={issue} />
+              <SubscribeToNewsletterCTA
+                setModalOpen={setModalOpen}
+                email={email}
+                setEmail={setEmail}
+              />
+            </article>
+
+            <aside className="hidden md:block md:col-span-1">
+              <Sidebar
+                issue={issue}
+                email={email}
+                setEmail={setEmail}
+                setModalOpen={setModalOpen}
+              />
+            </aside>
+          </div>
+        </div>
+      </main>
 
       <SitewideFooter />
     </>
@@ -140,6 +104,9 @@ export const pageQuery = graphql`
       issueNumber
       author {
         name
+        avatar {
+          gatsbyImageData(layout: FIXED, height: 40, placeholder: DOMINANT_COLOR)
+        }
       }
       slug
       body {

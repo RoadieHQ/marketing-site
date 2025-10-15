@@ -27,6 +27,7 @@ const EmailCaptureForm = ({
   setHoneypotText,
   showRecaptcha,
   setShowRecaptcha,
+  color = 'primary',
 }) => {
   let disabled = submitting || !email || email === '';
   if (newsletterRecaptchaEnabled()) {
@@ -74,7 +75,7 @@ const EmailCaptureForm = ({
               onChange={handleEmailChange}
               value={email}
               autoFocus={autoFocus}
-              color="primary"
+              color={color}
               helpText={subForm.message}
               helpTextState={subForm.state}
               fullWidth
@@ -103,7 +104,7 @@ const EmailCaptureForm = ({
               prefixIcon={<PaperAirplaneIcon />}
               id={buttonId}
               fullWidth
-              color="primary"
+              color={color}
             />
           </div>
         </div>
