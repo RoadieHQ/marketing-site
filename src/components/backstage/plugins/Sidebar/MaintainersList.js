@@ -19,7 +19,7 @@ const MaintainersList = ({ npmData, npmDataLoadingState }) => {
   if (npmDataLoadingState === 'loaded') {
     inner = (
       <>
-        <ul className="grid grid-cols-4 gap-3 pb-1">
+        <ul className="grid grid-cols-4 gap-3 pb-1 mb-2">
           {map(npmData.maintainers, ({ name, email }) => (
             <Maintainer name={name} email={email} key={email} />
           ))}
@@ -47,13 +47,13 @@ const MaintainersList = ({ npmData, npmDataLoadingState }) => {
   }
 
   return (
-    <>
+    <div className="p-6 bg-gray-100 rounded-lg mb-10">
       <div className="mb-4">
         <Title>Maintainers</Title>
       </div>
 
       <div>{inner}</div>
-    </>
+    </div>
   );
 };
 

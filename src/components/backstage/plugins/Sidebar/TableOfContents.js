@@ -15,13 +15,13 @@ const TableOfContents = ({ plugin, pageSections }) => {
   });
 
   return (
-    <>
+    <div className="p-6 bg-gray-100 rounded-lg mb-6">
       <div className="mb-4">
         <Title>Table of Contents</Title>
       </div>
 
       <ul className="pl-6">{listItems}</ul>
-    </>
+    </div>
   );
 };
 

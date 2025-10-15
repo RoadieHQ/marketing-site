@@ -37,3 +37,4 @@ export { default as SensibleNavList } from './SensibleNavList';
 export { default as TabInner } from './Tabs/Inner';
 export { Page } from './layouts';
 export { default as ExitIntentModal } from './ExitIntentModal';
+export { default as SidebarTableOfContents } from './SidebarTableOfContents';
