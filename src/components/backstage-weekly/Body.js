@@ -9,7 +9,7 @@ const News = ({ issue }) => {
 
   return (
     <div className="mb-16 pb-16 border-solid border-b-2" id={PAGE_SECTIONS.NEWS.fragment}>
-      <div className="mb-4">
+      <div className="mb-6">
         <Title>{PAGE_SECTIONS.NEWS.label}</Title>
       </div>
       <section
@@ -29,7 +29,7 @@ const BackstageChangelog = ({ issue }) => {
       className="mb-16 pb-16 border-solid border-b-2"
       id={PAGE_SECTIONS.BACKSTAGE_CHANGELOG.fragment}
     >
-      <div className="mb-4">
+      <div className="mb-6">
         <div className="mb-1">
           <Title>{PAGE_SECTIONS.BACKSTAGE_CHANGELOG.label}</Title>
         </div>
@@ -55,7 +55,7 @@ const EcosystemChangelog = ({ issue }) => {
       className="mb-16 pb-16 border-solid border-b-2"
       id={PAGE_SECTIONS.ECOSYSTEM_CHANGELOG.fragment}
     >
-      <div className="mb-4">
+      <div className="mb-6">
         <div className="mb-1">
           <Title>{PAGE_SECTIONS.ECOSYSTEM_CHANGELOG.label}</Title>
         </div>
