@@ -8,7 +8,6 @@ import { PubDate } from 'components/article';
 const Author = ({ issue }) => {
   const { author } = issue;
   if (!author) return null;
-  
   let avatar = null;
   if (has(author, 'avatar.gatsbyImageData')) {
     avatar = (
