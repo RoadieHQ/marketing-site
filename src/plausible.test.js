@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import trackPlausibleEvent from './plausible';
 import { currentlyExecutingGitBranch } from './environment';
 
