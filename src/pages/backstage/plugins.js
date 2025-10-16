@@ -76,12 +76,16 @@ const BackstagePlugins = ({ data, location }) => {
     npmDataLoadingState,
   });
 
+  let seoTitle = `Backstage Plugins Directory - All plugins | ${title}`;
+  let seoDescription = 'All Backstage plugins. Screenshots, installation instructions, changelogs & NPM data. Sort by popularity.';
+  if (!isEmpty(category)) {
+    seoTitle = `Backstage Plugins - ${category.name} | ${title}`;
+    seoDescription = `${category.name} Backstage plugins. Screenshots, installation instructions, changelogs & NPM data. Sort by popularity.`;
+  }
+
   return (
     <>
-      <SEO
-        title={`Backstage Plugins Directory - All plugins | ${title}`}
-        description="All Backstage plugins. Screenshots, installation instructions, changelogs & NPM data. Sort by popularity."
-      />
+      <SEO title={seoTitle} description={seoDescription} />
 
       <Page titleDivide={true}>
         <div className="mb-6">
