@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import format from 'date-fns/format';
 
 import { SEO, Page, Headline, Lead, Link } from 'components';
 import {
   NetlifyFormCallToAction,
   SubscribeToNewsletterSuccessModal,
 } from 'components/CallToAction';
+import { PubDate } from 'components/article';
 
 import { FORM_NAMES } from '../contactFormConstants';
 import CoverImage from '../../content/assets/blog/list-cover-image-1.png';
@@ -35,9 +35,7 @@ const ImageIssue = ({ issue }) => (
       </div>
 
       <div className="mt-6 flex items-center">
-        <time dateTime={issue.publishDate}>
-          {format(Date.parse(issue.publishDate), 'MMMM do, yyyy' )}
-        </time>
+        <PubDate date={issue.publishDate} />
       </div>
     </div>
   </div>

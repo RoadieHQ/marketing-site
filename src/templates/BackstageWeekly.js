@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { graphql, Link } from 'gatsby';
-import format from 'date-fns/format';
+import { graphql } from 'gatsby';
 
-import { SEO, Headline, SitewideHeader, SitewideFooter } from 'components';
+import { SEO, SitewideHeader, SitewideFooter } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
 } from 'components/CallToAction/SubscribeToNewsletter';
+import { Header, Body, Sidebar } from 'components/backstage-weekly';
 
 const BackstageWeeklyTemplate = ({ data }) => {
   const {
@@ -26,8 +26,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
     setEmail('');
   };
 
-  const { author, title, publishDate, lead, issueNumber } = issue;
-  const formattedDate = format(Date.parse(publishDate),  'MMMM do, yyyy');
+  const { title, lead } = issue;
 
   return (
     <>
@@ -36,8 +35,6 @@ const BackstageWeeklyTemplate = ({ data }) => {
         description={lead.childMarkdownRemark.rawMarkdownBody}
       />
 
-      <SitewideHeader borderBottom={false} />
-
       <SubscribeToNewsletterSuccessModal
         modalOpen={modalOpen}
         handleCloseModal={handleCloseModal}
@@ -45,33 +42,37 @@ const BackstageWeeklyTemplate = ({ data }) => {
         email={email}
       />
 
-      <article className="relative">
-        <header className="bg-white mx-auto max-w-7xl mb-5 px-4 py-10 xl:rounded-lg lg:flex lg:px-0 lg:mb-10 items-center">
-          <div className="lg:w-1/2 px-4 lg:px-10">
-            <Link
-              to="/backstage-weekly/"
-              className="block uppercase mb-8 text-xl font-highlight text-orange-600 font-bold"
-            >
-              Backstage Weekly
-            </Link>
-            <Headline size="medium" className="mb-10">
-              Backstage Weekly {issueNumber} - {title}
-            </Headline>
-            <strong>{author && author.name && <>By {author.name}</>}</strong>
-            {` • `}
-            {formattedDate}
-          </div>
-        </header>
-
-        <section
-          className="prose prose-primary max-w-none max-w-lg mx-auto lg:max-w-3xl mb-24 p-2"
-          dangerouslySetInnerHTML={{ __html: issue.body.childMarkdownRemark.html }}
-        />
-      </article>
-
-      <div className="relative max-w-lg mx-auto lg:max-w-xl mb-10 p-2">
-        <SubscribeToNewsletterCTA setModalOpen={setModalOpen} email={email} setEmail={setEmail} />
+      <div className="mb-4">
+        <SitewideHeader />
       </div>
+
+      <div className="mb-12">
+        <Header issue={issue} />
+      </div>
+
+      <main className="pb-8 px-4 lg:pb-28">
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 md:gap-12 lg:gap-20">
+            <article className="col-span-3 md:col-span-2">
+              <Body issue={issue} />
+              <SubscribeToNewsletterCTA
+                setModalOpen={setModalOpen}
+                email={email}
+                setEmail={setEmail}
+              />
+            </article>
+
+            <aside className="hidden md:block md:col-span-1">
+              <Sidebar
+                issue={issue}
+                email={email}
+                setEmail={setEmail}
+                setModalOpen={setModalOpen}
+              />
+            </aside>
+          </div>
+        </div>
+      </main>
 
       <SitewideFooter />
     </>
@@ -103,9 +104,23 @@ export const pageQuery = graphql`
       issueNumber
       author {
         name
+        avatar {
+          gatsbyImageData(layout: FIXED, height: 40, placeholder: DOMINANT_COLOR)
+          description
+        }
       }
       slug
       body {
+        childMarkdownRemark {
+          html
+        }
+      }
+      backstageChangelog {
+        childMarkdownRemark {
+          html
+        }
+      }
+      ecosystemChangelog {
         childMarkdownRemark {
           html
         }

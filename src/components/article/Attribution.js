@@ -31,7 +31,7 @@ const ReadInfo = ({ post }) => {
   if (!post.timeToRead || post.timeToRead === '') return null;
   return (
     <div className="flex space-x-1 text-sm text-gray-500">
-      <PubDate post={post} />
+      <PubDate date={post.date} />
       <span aria-hidden="true">&middot;</span>
       <span>{post.timeToRead} min read</span>
     </div>

@@ -71,31 +71,31 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
         foregroundColor="#ecebeb"
       >
         <rect x="0" y="0" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="0" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="0" rx="3" ry="3" width="100" height="24" />
         <rect x="0" y="40" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="40" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="40" rx="3" ry="3" width="100" height="24" />
         <rect x="0" y="80" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="80" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="80" rx="3" ry="3" width="100" height="24" />
         <rect x="0" y="120" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="120" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="120" rx="3" ry="3" width="100" height="24" />
         <rect x="0" y="160" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="160" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="160" rx="3" ry="3" width="100" height="24" />
         <rect x="0" y="200" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="200" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="200" rx="3" ry="3" width="100" height="24" />
         <rect x="0" y="240" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="240" rx="3" ry="3" width="150" height="24" />
+        <rect x="220" y="240" rx="3" ry="3" width="100" height="24" />
       </ContentLoader>
     );
   }
 
   return (
-    <>
+    <div className="p-6 bg-gray-100 rounded-lg mb-6">
       <div className="mb-4">
         <Title>Plugin details</Title>
       </div>
 
       {inner}
-    </>
+    </div>
   );
 };
 

@@ -51,7 +51,7 @@ html {
 .prose-primary h3 {
   @apply font-highlight;
   @apply font-bold;
-  @apply text-2xl;
+  @apply text-xl;
 }
 
 .prose-primary h2 {
