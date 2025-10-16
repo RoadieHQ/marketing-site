@@ -102,6 +102,7 @@ export const pageQuery = graphql`
       category {
         name
         description
+        searchParam
       }
 
       notes {

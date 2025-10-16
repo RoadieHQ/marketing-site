@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Title, Chip, Button, SidebarTableOfContents } from 'components';
+import { Title, Chip, Button, SidebarTableOfContents, Link } from 'components';
 import { NpmChip, GitHubChip, RoadieDocsChip } from 'components/backstage/plugins';
 
 import { PAGE_PATHS } from '../../../../contactFormConstants';
@@ -36,7 +36,9 @@ const Category = ({ plugin }) => {
       <div className="mb-4">
         <Title>Category</Title>
       </div>
-      <Chip label={category.name} title={category.description} />
+      <Link to={`/backstage/plugins/?category=${category.searchParam}`} className="inline-block">
+        <Chip label={category.name} title={category.description} />
+      </Link>
     </div>
   );
 };
