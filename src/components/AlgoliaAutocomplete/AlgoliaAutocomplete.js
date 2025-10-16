@@ -53,6 +53,7 @@ const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
 
   const openSearchOnHotkeyPress = useCallback((event) => {
     if (event.key === '/') {
+      event.preventDefault();
       search.setIsOpen(true);
       search.refresh();
     }
