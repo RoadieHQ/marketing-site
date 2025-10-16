@@ -39,10 +39,10 @@ const BackstagePlugins = ({ data, location }) => {
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
-  const initalCategory = pluginCategories.edges
+  const initialCategory = pluginCategories.edges
     .map(({ node }) => node)
     .find(({ searchParam }) => searchParam === categoryParam);
-  const [category, setCategory] = useState(initalCategory || {});
+  const [category, setCategory] = useState(initialCategory || {});
 
   useEffect(() => {
     (async () => {
