@@ -31,7 +31,7 @@ You can use the `now` function to get the current time in milliseconds since epo
       name: Log Message
       action: debug:log
       input:
-        message: "Current time in Milliseconds since epoch: ${{ '' | now }}"
+        message: "Current time in Milliseconds since epoch: ${{ now() }}"
 ```
 
 ### roadie.tenant
