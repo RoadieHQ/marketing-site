@@ -24,14 +24,11 @@ const GitHubChip = ({ codeLocation, label, color = 'black', ...rest }) => {
   const length = useResponsiveTruncation();
   if (!codeLocation) return null;
 
-  if (!label) {
-    label = labelFromCodeLocation(codeLocation, length);
-  }
-
+  const finalLabel = label || labelFromCodeLocation(codeLocation, length);
   return (
     <Link to={codeLocation} className="inline-block">
       <Chip
-        label={label}
+        label={finalLabel}
         icon={<GitHubIcon className="h-[1.2rem] w-[1.2rem] inline mr-1" />}
         color={color}
         {...rest}
