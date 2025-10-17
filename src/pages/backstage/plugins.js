@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import classnames from 'classnames';
 import { Field, Label } from '@headlessui/react';
+import isEmpty from 'lodash/isEmpty';
 
 import { Typeahead, Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
 import {
@@ -22,7 +23,7 @@ const SORT_ORDERS = [{
   value: 'recent',
 }];
 
-const BackstagePlugins = ({ data }) => {
+const BackstagePlugins = ({ data, location }) => {
   const {
     plugins,
     pluginCategories,
@@ -31,11 +32,17 @@ const BackstagePlugins = ({ data }) => {
     },
   } = data;
 
+  const searchParams = new URLSearchParams(location.search);
+  const categoryParam = searchParams.get('category');
+
   const [query, setQuery] = useState('');
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
-  const [category, setCategory] = useState({});
+  const initialCategory = pluginCategories.edges
+    .map(({ node }) => node)
+    .find(({ searchParam }) => searchParam === categoryParam);
+  const [category, setCategory] = useState(initialCategory || {});
 
   useEffect(() => {
     (async () => {
@@ -45,6 +52,18 @@ const BackstagePlugins = ({ data }) => {
       setNpmData(data);
     })();
   }, []);
+
+  const handleCategoryChange = (newCategory) => {
+    setCategory(newCategory);
+
+    const params = new URLSearchParams(location.search);
+    if (isEmpty(newCategory)) {
+      params.delete('category');
+    } else {
+      params.set('category', newCategory.searchParam);
+    }
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+  };
 
   const allPluginsCount = plugins.edges.length;
   const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, npmData));
@@ -57,12 +76,16 @@ const BackstagePlugins = ({ data }) => {
     npmDataLoadingState,
   });
 
+  let seoTitle = `Backstage Plugins Directory - All plugins | ${title}`;
+  let seoDescription = 'All Backstage plugins. Screenshots, installation instructions, changelogs & NPM data. Sort by popularity.';
+  if (!isEmpty(category)) {
+    seoTitle = `Backstage Plugins - ${category.name} | ${title}`;
+    seoDescription = `${category.name} Backstage plugins. Screenshots, installation instructions, changelogs & NPM data. Sort by popularity.`;
+  }
+
   return (
     <>
-      <SEO
-        title={`Backstage Plugins Directory - All plugins | ${title}`}
-        description="A comprehensive list of Backstage plugins. With screenshots, installation instructions and usage guides."
-      />
+      <SEO title={seoTitle} description={seoDescription} />
 
       <Page titleDivide={true}>
         <div className="mb-6">
@@ -102,7 +125,7 @@ const BackstagePlugins = ({ data }) => {
 
                 <div className="mb-4 lg:mb-0 w-full lg:w-96">
                   <Typeahead
-                    onChange={setCategory}
+                    onChange={handleCategoryChange}
                     value={category}
                     options={pluginCategories.edges.map(({ node }) => node)}
                     placeholderText="Categories"
@@ -167,6 +190,7 @@ export const pageQuery = graphql`
         node {
           name
           description
+          searchParam
         }
       }
     }
