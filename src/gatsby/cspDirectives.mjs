@@ -154,13 +154,11 @@ const CSP_STYLE_SRC_DIRECTIVES = [
 
 const CSP_CONNECT_SRC_DIRECTIVES = [
   "'self'",
-  'https://*.ingest.sentry.io',
   'https://*.google-analytics.com',
   'https://*.analytics.google.com',
   'https://stats.g.doubleclick.net',
   'ws://*.intercom.io',
   'https://career.recruitee.com',
-  'https://sentry.io',
   'https://*.algolia.net',
   'https://*.algolianet.com',
 

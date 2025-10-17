@@ -295,10 +295,6 @@ const config = {
     },
 
     {
-      resolve: '@sentry/gatsby',
-    },
-
-    {
       resolve: `gatsby-source-contentful`,
       options: getContentfulOptions(),
     },
