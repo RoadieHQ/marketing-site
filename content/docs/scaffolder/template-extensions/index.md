@@ -1,5 +1,5 @@
 ---
-title: Tempate Extensions
+title: Template Extensions
 publishedDate: '2025-10-17T10:53:00.0Z'
 description: Nunjucks template extensions for the Roadie Scaffolder
 ---
