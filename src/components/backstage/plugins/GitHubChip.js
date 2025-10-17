@@ -20,7 +20,7 @@ const labelFromCodeLocation = (codeLocation, length) => {
   }
 };
 
-const GitHubChip = ({ codeLocation, label, ...rest }) => {
+const GitHubChip = ({ codeLocation, label, color = 'black', ...rest }) => {
   const length = useResponsiveTruncation();
   if (!codeLocation) return null;
 
@@ -33,6 +33,7 @@ const GitHubChip = ({ codeLocation, label, ...rest }) => {
       <Chip
         label={label}
         icon={<GitHubIcon className="h-[1.2rem] w-[1.2rem] inline mr-1" />}
+        color={color}
         {...rest}
       />
     </Link>

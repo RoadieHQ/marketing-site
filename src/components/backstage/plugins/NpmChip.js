@@ -5,7 +5,7 @@ import useResponsiveTruncation from '../../../hooks/useResponsiveTruncation';
 import { Chip, Link } from 'components';
 import { NpmIcon } from 'components/icons';
 
-const NpmChip = ({ npmjsPackage, label, ...rest }) => {
+const NpmChip = ({ npmjsPackage, label, color = 'npm-red', ...rest }) => {
   const length = useResponsiveTruncation();
   if (!npmjsPackage) return null;
 
@@ -18,6 +18,7 @@ const NpmChip = ({ npmjsPackage, label, ...rest }) => {
       <Chip
         label={label}
         icon={<NpmIcon className="h-[1.5rem] w-[1.5rem] inline mr-1" />}
+        color={color}
         {...rest}
       />
     </Link>
