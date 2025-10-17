@@ -1,28 +1,12 @@
 import React from 'react';
 import { NpmChip, GitHubChip, RoadieDocsChip } from 'components/backstage/plugins';
 import { Title } from 'components';
-import isEmpty from 'lodash/isEmpty';
 
 const Links = ({ plugin }) => {
-  const { 
-    availableOnRoadie,
-    roadieDocsPath,
-    npmPackageName,
-    codeLocation,
-    packages,
-  } = plugin;
+  const { availableOnRoadie, roadieDocsPath, packages, } = plugin;
+  let packageList = null;
 
-  let packageList;
-  if (isEmpty(packages)) {
-    packageList = (
-      <>
-        <div className="mb-3">
-          <GitHubChip codeLocation={codeLocation} />
-        </div>
-        <NpmChip npmjsPackage={npmPackageName} />
-      </>
-    );
-  } else if (packages.length === 1) {
+  if (packages.length === 1) {
     const { codeLocation, npmPackageName } = packages[0];
     packageList = (
       <>

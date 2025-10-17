@@ -88,12 +88,10 @@ export const pageQuery = graphql`
     plugin: contentfulBackstagePlugin(slug: { eq: $slug }) {
       humanName
       slug
-      npmPackageName
       roadieDocsPath
       seoDescription
       seoTitle
       heading
-      codeLocation
       attributionText
       attributionUrl
       availableOnRoadie
