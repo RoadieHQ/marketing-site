@@ -11,7 +11,7 @@ const labelFromCodeLocation = (codeLocation, length) => {
     const segments = pathname.split('/').filter(Boolean);
     return truncate(segments[1], { length }) || 'GitHub';
   } catch (err) {
-    // The only error seen in the wold here is the 'new URL' constructor blowing up because
+    // The only error seen in the wild here is the 'new URL' constructor blowing up because
     // the URL is invalid because of a typo or something else. This will throw a TypeError
     // if it happens. There's no point trying to render a GitHUb chip for an invalid URL so we
     // should just render nothing if that happens.
@@ -20,19 +20,20 @@ const labelFromCodeLocation = (codeLocation, length) => {
   }
 };
 
-const GitHubChip = ({ codeLocation }) => {
+const GitHubChip = ({ codeLocation, label, ...rest }) => {
   const length = useResponsiveTruncation();
   if (!codeLocation) return null;
 
-  const label = labelFromCodeLocation(codeLocation, length);
-  if (!label) return null;
+  if (!label) {
+    label = labelFromCodeLocation(codeLocation, length);
+  }
 
   return (
     <Link to={codeLocation} className="inline-block">
       <Chip
         label={label}
-        color="black"
         icon={<GitHubIcon className="h-[1.2rem] w-[1.2rem] inline mr-1" />}
+        {...rest}
       />
     </Link>
   );

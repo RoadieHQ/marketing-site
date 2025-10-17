@@ -201,6 +201,11 @@ export const pageQuery = graphql`
           slug
           humanName
           npmPackageName
+
+          packages {
+            npmPackageName
+          }
+
           logoImage {
             gatsbyImageData(
               height: 80

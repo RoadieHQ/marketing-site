@@ -9,6 +9,7 @@ const Chip = ({ label, icon, color = 'primary', ...rest }) => {
   if (color === 'green') colorClasses = 'border border-green-800';
   if (color === 'npm-red') colorClasses = 'border border-npm-red';
   if (color === 'black') colorClasses = 'border border-black';
+  if (color === 'none') colorClasses = '';
 
   return (
     <span className={classnames(defaultClasses, colorClasses)} {...rest}>

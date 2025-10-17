@@ -62,6 +62,11 @@ export const PLUGINS_QUERY = `
       node {
         slug
         npmPackageName
+
+        packages {
+          type
+          npmPackageName
+        }
       }
     }
   }
