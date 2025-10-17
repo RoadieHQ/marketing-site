@@ -61,7 +61,6 @@ export const PLUGINS_QUERY = `
     edges {
       node {
         slug
-        npmPackageName
 
         packages {
           type

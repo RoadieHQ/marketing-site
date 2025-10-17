@@ -200,7 +200,6 @@ export const pageQuery = graphql`
         node {
           slug
           humanName
-          npmPackageName
 
           packages {
             npmPackageName

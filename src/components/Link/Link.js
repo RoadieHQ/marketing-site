@@ -90,7 +90,7 @@ const Link = ({
     if (
       internalTo.includes(PAGE_PATHS.freeTrial) ||
       internalTo.includes(PAGE_PATHS.requestDemo) ||
-      internalTo.includes(PAGE_PATHS.requestRoadieLocal)
+      internalTo.includes(PAGE_PATHS.getRoadieLocal)
     ) {
       internalTo = appendSearchParam(internalTo, {
         referringPathname: kebabCasePathname(location.pathname),
