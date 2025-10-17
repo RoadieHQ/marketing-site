@@ -16,7 +16,7 @@ const FooterInner = ({
 
   if (npmDataLoadingState === 'loaded') {
     return (
-      <div className="flex place-content-between text-xs text-gray-500">
+      <div className="flex justify-between text-xs text-gray-500">
         {latestVersionPublishedTime && (
           <div title={latestVersionPublishedTime.toISOString()} className="flex mr-6">
             <span>
@@ -64,7 +64,7 @@ const ListItem = ({
   return (
     <div className="border-2 hover:border-gray-500" data-testid={`plugin-${slug}`}>
       <Link to={`/backstage/plugins/${slug}/`} className="underline-none">
-        <div className="flex flex-col place-content-between md:h-[250px] lg:h-[280px] xl:h-[250px]">
+        <div className="flex flex-col justify-between md:h-[250px] lg:h-[280px] xl:h-[250px]">
           <div>
             <div className="flex p-4 mb-2">
               <div className="mr-4">
