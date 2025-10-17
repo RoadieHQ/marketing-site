@@ -99,6 +99,12 @@ export const pageQuery = graphql`
       availableOnRoadie
       lead
 
+      packages {
+        codeLocation
+        npmPackageName
+        type
+      }
+
       category {
         name
         description

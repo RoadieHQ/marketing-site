@@ -1,32 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Title, Chip, Button, SidebarTableOfContents, Link } from 'components';
-import { NpmChip, GitHubChip, RoadieDocsChip } from 'components/backstage/plugins';
 
 import { PAGE_PATHS } from '../../../../contactFormConstants';
 import MaintainersList from './MaintainersList';
 import NpmDetailsList from './NpmDetailsList';
+import Links from './Links';
 import parseNpmData from './parseNpmData';
 import fetchNpmDataByName from './fetchNpmDataByName';
-
-const Links = ({ plugin }) => {
-  const { availableOnRoadie, roadieDocsPath, npmPackageName, codeLocation } = plugin;
-  return (
-    <div className="p-6 bg-gray-100 rounded-lg mb-6">
-      <div className="mb-4">
-        <Title>Links</Title>
-      </div>
-
-      <div className="mb-3">
-        <RoadieDocsChip availableOnRoadie={availableOnRoadie} roadieDocsPath={roadieDocsPath} />
-      </div>
-
-      <div className="mb-3">
-        <GitHubChip codeLocation={codeLocation} />
-      </div>
-      <NpmChip npmjsPackage={npmPackageName} />
-    </div>
-  );
-};
+import pluginNpmPackageNameForStats from '../../../../npmPackageData/pluginNpmPackageNameForStats.mjs';
 
 const Category = ({ plugin }) => {
   const { category } = plugin;
@@ -44,7 +25,7 @@ const Category = ({ plugin }) => {
 };
 
 const Sidebar = ({ plugin, pageSections }) => {
-  const { npmPackageName } = plugin;
+  const npmPackageName = pluginNpmPackageNameForStats(plugin);
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
 

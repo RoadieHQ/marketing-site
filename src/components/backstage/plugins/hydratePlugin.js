@@ -1,5 +1,9 @@
+import pluginNpmPackageNameForStats from "../../../npmPackageData/pluginNpmPackageNameForStats.mjs";
+
 const hydratePlugin = (plugin, npmData) => {
-  const pluginNpmData = npmData[plugin.npmPackageName];
+  const npmPackageName = pluginNpmPackageNameForStats(plugin);
+
+  const pluginNpmData = npmData[npmPackageName];
   if (pluginNpmData) {
     plugin.npmData = {
       lastMonthDownloads: pluginNpmData.lastMonthDownloads,

@@ -6,7 +6,7 @@ import ContentLoader from 'react-content-loader';
 const DetailsListItem = ({ label, value, ...props }) => {
   return (
     <li
-      className="border-b border-gray-200 py-2 flex place-content-between"
+      className="border-b border-gray-200 py-2 flex justify-between"
       id={`npm-detail-${kebabCase(label)}`}
       {...props}
     >
@@ -51,13 +51,13 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
           <DetailsListItem label="License" value={license} />
         </ul>
 
-        <span
-          className="flex place-content-between text-gray-400"
+        <div
+          className="flex justify-between text-gray-400"
           title={lastSyncedTime}
         >
           <span className="italic">Last synced with NPM:</span>
           <span>{lastSyncedAgo}</span>
-        </span>
+        </div>
       </div>
     );
   } else {
