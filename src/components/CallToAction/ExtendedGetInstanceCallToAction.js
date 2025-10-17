@@ -54,23 +54,22 @@ const submitToNetlifyForms = async ({
       body: formData,
     });
 
-    trackRequestTrial({
-      name,
-      email,
-      locationSearch,
-    });
-    trackPlausibleEvent(netlifyFormName, {
-      name,
-      email,
-      locationSearch,
-    });
-
-    if (subToNewsletter) {
-      trackSubscribe({
-        name,
+    if (resp.ok) {
+      trackRequestTrial({
         email,
         locationSearch,
       });
+      trackPlausibleEvent(netlifyFormName, {
+        email,
+        locationSearch,
+      });
+
+      if (subToNewsletter) {
+        trackSubscribe({
+          email,
+          locationSearch,
+        });
+      }
     }
   } catch (error) {
     console.error('Submission failed', error, resp);

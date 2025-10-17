@@ -55,23 +55,25 @@ const submitToNetlifyForms = async ({
       body: new URLSearchParams(formData).toString(),
     });
 
-    trackRequestRoadieLocal({
-      name,
-      email,
-      locationSearch: locationSearch,
-    });
-    trackPlausibleEvent(netlifyFormName, {
-      name,
-      email,
-      locationSearch: locationSearch,
-    });
-
-    if (subToNewsletter) {
-      trackSubscribe({
+    if (resp.ok) {
+      trackRequestRoadieLocal({
         name,
         email,
         locationSearch: locationSearch,
       });
+      trackPlausibleEvent(netlifyFormName, {
+        name,
+        email,
+        locationSearch: locationSearch,
+      });
+
+      if (subToNewsletter) {
+        trackSubscribe({
+          name,
+          email,
+          locationSearch: locationSearch,
+        });
+      }
     }
   } catch (error) {
     console.error('Submission failed', error, resp, formData);
