@@ -6,7 +6,7 @@ description: Nunjucks template extensions for the Roadie Scaffolder
 
 ## Overview
 
-The Roadie Scaffolder supports a number of template extensions that allow you to customize the behaviour of the Scaffolder.
+The Roadie Scaffolder supports a number of template extensions that allow you to customize the behavior of the Scaffolder.
 
 ### uuidv4
 
