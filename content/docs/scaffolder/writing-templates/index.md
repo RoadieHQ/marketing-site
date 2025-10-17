@@ -229,7 +229,7 @@ steps:
 
 ### Escaping syntax
 
-If you need to pass variable substitution syntax through without it being interpreted you can escape the syntax by wrapping it like so `${{ '${{ parameters.something }}' }}`.
+If you need to pass variable substitution syntax through without it being interpreted, you can escape the syntax by wrapping it like so `${{ '${{ parameters.something }}' }}`.
 
 ### Creating re-usable snippets
 

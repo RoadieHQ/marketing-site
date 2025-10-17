@@ -163,6 +163,7 @@ nav:
       - Parameters: '/docs/scaffolder/scaffolder-parameters/'
       - Custom Parameters: '/docs/scaffolder/custom-fields/'
       - Organising Templates: '/docs/scaffolder/certified-templates/'
+      - Template Extensions: '/docs/scaffolder/template-extensions/'
       - Recipes:
           - Create RFC: '/docs/scaffolder/recipes/create-rfc/'
           - Debug template: '/docs/scaffolder/recipes/debug-template/'
