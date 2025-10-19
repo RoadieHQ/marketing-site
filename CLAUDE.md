@@ -164,7 +164,6 @@ Different environments use different Contentful hosts:
 - **ESLint**: `.eslintrc.js` for linting rules
 - **Prettier**: `.prettierrc` for formatting
 - **Husky**: Pre-commit hooks run linter and formatter on staged files
-- **Sentry**: Error tracking configured in `sentry.config.js`
 
 ## Important Notes
 
