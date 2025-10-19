@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import React from 'react';
 
 const Title = ({ text, children, id, el = 'h2', className }) => {
@@ -6,7 +6,7 @@ const Title = ({ text, children, id, el = 'h2', className }) => {
   return React.createElement(
     el,
     {
-      className: classNames(className, 'font-highlight mb-0 text-2xl font-bold tracking-tight'),
+      className: classnames(className, 'font-highlight mb-0 text-2xl font-bold tracking-tight'),
       id,
     },
     inner

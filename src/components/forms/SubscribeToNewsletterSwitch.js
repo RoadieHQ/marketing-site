@@ -1,10 +1,10 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import React from 'react';
 
 import Switch from './Switch';
 
 const SubscribeToNewsletterSwitch = ({ checked, onChange, className }) => (
-  <div className={classNames('sm:col-span-2 mt-4', className)}>
+  <div className={classnames('sm:col-span-2 mt-4', className)}>
     <div className="flex items-start">
       <div className="flex-shrink-0">
         <Switch
