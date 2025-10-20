@@ -11,7 +11,7 @@ import GitHubBotImg from '../../../content/assets/product-pages/techinsights-git
 import Logi4jImg from '../../../content/assets/product-pages/techinsights-logi4j.svg';
 
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 const SEO_TITLE = 'Tech Insights: scorecards for Backstage';
 const LEAD = `Establish engineering standards and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.`;
@@ -74,7 +74,7 @@ const UsecaseTabs = () => {
   const tabBase = 'inline-block p-4 rounded-t-lg';
   const activeTabClass =
     'text-orange-600 border-orange-600 hover:text-orange-600 hover:border-orange-600';
-  const inactiveTabClass = classnames(
+  const inactiveTabClass = classNames(
     tabBase,
     'text-lg font-bold text-blueroadie  border-b-2 border-transparent  hover:text-gray-600 hover:border-gray-300 cursor-pointer'
   );

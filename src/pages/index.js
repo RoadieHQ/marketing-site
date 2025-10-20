@@ -12,7 +12,7 @@ import {
   CustomerLogoCloud,
 } from 'components/landing';
 import Title from '../components/Title';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import Button from '../components/forms/Button';
 import { PostSummary } from 'components/article';
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
@@ -256,7 +256,7 @@ const Home = ({ data }) => {
 
       <section className="backstage-background text-white max-w-xl mx-auto p-4 mt-5 sm:px-10 md:rounded-lg lg:max-w-6xl lg:grid lg:grid-cols-8 lg:items-center lg:gap-8 lg:grid-flow-row-dense">
         <div className="lg:col-start-4 lg:col-span-5">
-          <Title el="h3" className={classnames('xl:text-2xl xl:tracking-tight')}>
+          <Title el="h3" className={classNames('xl:text-2xl xl:tracking-tight')}>
             Leading architectural change through <nobr>Roadie Backstage</nobr>
           </Title>
           <p className="text-xl mt-5">
