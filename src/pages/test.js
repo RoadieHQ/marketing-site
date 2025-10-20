@@ -1,5 +1,8 @@
+// import classnames from 'classnames';
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
+
+// console.log('CLASSNAMES', classnames);
+console.log('USEEFFECT', useEffect);
 
 const Test = () => {
   const [isClient, setIsClient] = useState(false);
@@ -10,12 +13,12 @@ const Test = () => {
   }, []);
 
   if (!isClient) {
-    return <span id="test" className={classNames('server')}>Server</span>;
+    return <span id="test">Server</span>;
   }
 
   return (
     <div>
-      <span id="test" className={classNames('client')}>Client</span>
+      <span id="test">Client</span>
     </div>
   );
 }
