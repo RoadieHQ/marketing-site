@@ -26,7 +26,7 @@ import listOfNpmPackages from './src/npmPackageData/listOfNpmPackages.mjs';
 export const createPages = async ({ graphql, actions }) => {
   // This function iterates over the backstage plugins in contentful, gets the name
   // of the NPM package associated with each one, and uploads all the names in a big array
-  // to Netlify Blob storage. 
+  // to Netlify Blob storage.
   //
   // We don't necessarily need this to happen every time we start the local dev server, so
   // a Netlify plugin that runs on deploy time might be a better place to do that. I've
@@ -48,7 +48,7 @@ export const createPages = async ({ graphql, actions }) => {
     graphql,
     processor: ({ node }, component) => {
       return {
-      path: `/backstage-weekly${node.slug}`,
+        path: `/backstage-weekly${node.slug}`,
         component,
         context: {
           slug: node.slug,
@@ -216,11 +216,19 @@ export const onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-// Enables source maps in production. Without this, importing classnames breaks useEffect.
-export const onCreateWebpackConfig = ({ actions, stage }) => {
+// Fix for classnames/useEffect bug: disable code splitting to prevent async chunk loading issues
+export const onCreateWebpackConfig = ({ getConfig, actions, stage }) => {
   if (stage === 'build-javascript') {
-    actions.setWebpackConfig({
-      devtool: 'hidden-source-map',
-    });
+    const config = getConfig();
+
+    // Disable splitChunks completely to force all modules inline
+    config.optimization.splitChunks = {
+      cacheGroups: {
+        default: false,
+        vendors: false,
+      },
+    };
+
+    actions.replaceWebpackConfig(config);
   }
 };
