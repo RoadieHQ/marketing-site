@@ -215,3 +215,35 @@ export const onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+// Fix for classnames/useEffect bug: disable code splitting to prevent async chunk loading issues
+export const onCreateWebpackConfig = ({ getConfig, actions, stage }) => {
+  if (stage === 'build-javascript') {
+    const config = getConfig();
+
+    // Disable splitChunks completely to force all modules inline
+    config.optimization.splitChunks = {
+      chunks: 'async',
+      minSize: 20000,
+      minRemainingSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    };
+
+    actions.replaceWebpackConfig(config);
+  }
+};
