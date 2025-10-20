@@ -215,3 +215,12 @@ export const onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+// Enables source maps in production. Without this, importing classnames breaks useEffect.
+export const onCreateWebpackConfig = ({ actions, stage }) => {
+  if (stage === 'build-javascript') {
+    actions.setWebpackConfig({
+      devtool: 'hidden-source-map',
+    });
+  }
+};
