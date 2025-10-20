@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { graphql, navigate } from 'gatsby';
 import classnames from 'classnames';
-import { Field, Label } from '@headlessui/react';
+// import { Field, Label } from '@headlessui/react';
 import isEmpty from 'lodash/isEmpty';
 
 import { Typeahead, Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
@@ -134,6 +134,7 @@ const BackstagePlugins = ({ data, location }) => {
                 </div>
               </div>
 
+              {/*
               <Field
                 className={classnames('text-right w-full flex items-center justify-end', {
                   visible: npmDataLoadingState === 'loaded',
@@ -154,6 +155,7 @@ const BackstagePlugins = ({ data, location }) => {
                   />
                 </div>
               </Field>
+              */}
             </div>
           </div>
         </div>

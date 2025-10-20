@@ -9,7 +9,7 @@ import {
 } from 'components';
 import { Helmet } from 'react-helmet';
 
-import { ScmToolSelect } from '../forms/ScmToolSelect';
+import ScmToolSelect from '../forms/ScmToolSelect';
 
 import trackPlausibleEvent from '../../plausible';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';

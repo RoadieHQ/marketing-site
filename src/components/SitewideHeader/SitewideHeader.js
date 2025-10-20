@@ -1,6 +1,6 @@
 import React from 'react';
-import { Popover } from '@headlessui/react';
-import classnames from 'classnames';
+// import { Popover } from '@headlessui/react';
+// import classnames from 'classnames';
 import {
   CodeIcon,
   BookOpenIcon,
@@ -13,16 +13,16 @@ import {
   CheckCircleIcon,
   LockClosedIcon,
 } from '@heroicons/react/outline';
-import { Button } from 'components';
-import { PAGE_PATHS } from '../../contactFormConstants';
-
-import Logo from '../Logo';
-import TopNavItem from './TopNavItem';
-import OpenMenuButton from './OpenMenuButton';
-import TopNavDropdownItem from './TopNavDropdownItem';
-import DrawerMenu from './DrawerMenu';
-import TopBanner from 'components/TopBanner';
-import McpServers from '../TopBanner/McpServers';
+// import { Button } from 'components';
+// import { PAGE_PATHS } from '../../contactFormConstants';
+// 
+// import Logo from '../Logo';
+// import TopNavItem from './TopNavItem';
+// import OpenMenuButton from './OpenMenuButton';
+// import TopNavDropdownItem from './TopNavDropdownItem';
+// import DrawerMenu from './DrawerMenu';
+// import TopBanner from 'components/TopBanner';
+// import McpServers from '../TopBanner/McpServers';
 
 const features = [
   {
@@ -102,50 +102,52 @@ const learn = [
   },
 ];
 
-const SitewideHeader = ({
-  maxWidth = '7xl',
-  borderBottom = true,
-  ctaTo = PAGE_PATHS.requestDemo,
-  ctaText = 'Get a Demo',
-}) => (
-  <>
-    <Popover as={React.Fragment}>
-      <>
-        <TopBanner>
-          <McpServers />
-        </TopBanner>
-        <header
-          className={classnames(
-            ` max-w-${maxWidth} mx-auto px-2 py-6 sm:px-6 xl:py-8 flex justify-between items-center  md:justify-start md:space-x-10`,
-            {
-              'border-b-2 border-gray-100': borderBottom,
-            }
-          )}
-        >
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Logo />
-          </div>
+// const SitewideHeader = ({
+//   maxWidth = '7xl',
+//   borderBottom = true,
+//   ctaTo = PAGE_PATHS.requestDemo,
+//   ctaText = 'Get a Demo',
+// }) => (
+//   <>
+//     <Popover as={React.Fragment}>
+//       <>
+//         <TopBanner>
+//           <McpServers />
+//         </TopBanner>
+//         <header
+//           className={classnames(
+//             ` max-w-${maxWidth} mx-auto px-2 py-6 sm:px-6 xl:py-8 flex justify-between items-center  md:justify-start md:space-x-10`,
+//             {
+//               'border-b-2 border-gray-100': borderBottom,
+//             }
+//           )}
+//         >
+//           <div className="flex justify-start lg:w-0 lg:flex-1">
+//             <Logo />
+//           </div>
+// 
+//           <div className="-mr-2 -my-2 md:hidden">
+//             <OpenMenuButton />
+//           </div>
+// 
+//           <Popover.Group as="nav" className="hidden md:flex space-x-10">
+//             <TopNavDropdownItem text="Product" subItems={features} />
+//             <TopNavItem to="/backstage-comparison/" text="Roadie vs Backstage" />
+//             <TopNavItem to="/pricing/" text="Pricing" />
+//             <TopNavDropdownItem text="Resources" subItems={learn} />
+//           </Popover.Group>
+// 
+//           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+//             <Button link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
+//           </div>
+//         </header>
+// 
+//         <DrawerMenu />
+//       </>
+//     </Popover>
+//   </>
+// );
 
-          <div className="-mr-2 -my-2 md:hidden">
-            <OpenMenuButton />
-          </div>
-
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
-            <TopNavDropdownItem text="Product" subItems={features} />
-            <TopNavItem to="/backstage-comparison/" text="Roadie vs Backstage" />
-            <TopNavItem to="/pricing/" text="Pricing" />
-            <TopNavDropdownItem text="Resources" subItems={learn} />
-          </Popover.Group>
-
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Button link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
-          </div>
-        </header>
-
-        <DrawerMenu />
-      </>
-    </Popover>
-  </>
-);
+const SitewideHeader = () => (<div />);
 
 export default SitewideHeader;
