@@ -216,12 +216,18 @@ export const onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-// Fix for classnames/useEffect bug: disable code splitting to prevent async chunk loading issues
 export const onCreateWebpackConfig = ({ getConfig, actions, stage }) => {
   if (stage === 'build-javascript') {
     const config = getConfig();
 
-    // Disable splitChunks completely to force all modules inline
+    // This is the default webpack splitChunks config from the webpack docs.
+    // https://webpack.js.org/plugins/split-chunks-plugin/
+    // This is here to fix a problem where simply adding imports to a file could cause useEffect
+    // and other standard client side hooks to never execute. This issues was likely in the
+    // codebase for a long time, but was being hidden by @sentry/gatsby which was doing it's
+    // own modification to the webpack config. We don't actually understand fully what the 
+    // problem was, but directly specifying the webpack config seems to fix it.
+    // The problem is described here: https://roadiehq.slack.com/archives/C03MRPZ2JAH/p1760959942141299
     config.optimization.splitChunks = {
       chunks: 'async',
       minSize: 20000,
