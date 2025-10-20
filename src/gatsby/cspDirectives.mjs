@@ -3,7 +3,9 @@ import get from 'lodash/get.js';
 const CSP_SCRIPT_SRC_DIRECTIVES = (() => {
   const directives = [
     "'self'",
+
     'https://www.googletagmanager.com',
+    'https://www.google.com',
 
     // Required for tag manager preview mode.
     'https://tagmanager.google.com',
@@ -126,6 +128,9 @@ const CSP_FRAME_SRC_DIRECTIVES = (() => {
 
     // Embedded tweets
     'https://platform.twitter.com',
+
+    // Required for Google Analytics 4
+    'https://www.googletagmanager.com/',
   ];
 
   if (get(process.env, 'CONTEXT') === 'deploy-preview') {
