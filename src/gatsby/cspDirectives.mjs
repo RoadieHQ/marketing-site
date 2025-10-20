@@ -162,6 +162,7 @@ const CSP_CONNECT_SRC_DIRECTIVES = [
   'https://*.ingest.sentry.io',
   'https://*.google-analytics.com',
   'https://*.analytics.google.com',
+  'https://*.google.com',
   'https://stats.g.doubleclick.net',
   'ws://*.intercom.io',
   'https://career.recruitee.com',
