@@ -228,71 +228,71 @@ const config = {
       },
     },
 
-    // {
-    //   resolve: 'gatsby-plugin-sitemap',
-    //   options: {
-    //     excludes: DISLALLOW_LIST,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: DISLALLOW_LIST,
+      },
+    },
 
-    // {
-    //   resolve: 'gatsby-plugin-robots-txt',
-    //   options: {
-    //     host: getSiteUrl(),
-    //     sitemap: `${getSiteUrl()}/sitemap-index.xml`,
-    //     policy: [
-    //       {
-    //         userAgent: '*',
-    //         disallow: shouldCrawl() ? DISLALLOW_LIST : '/',
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: getSiteUrl(),
+        sitemap: `${getSiteUrl()}/sitemap-index.xml`,
+        policy: [
+          {
+            userAgent: '*',
+            disallow: shouldCrawl() ? DISLALLOW_LIST : '/',
+          },
+        ],
+      },
+    },
 
-    // {
-    //   resolve: 'gatsby-plugin-react-svg',
-    //   options: {
-    //     rule: {
-    //       include: /\.inline\.svg/,
-    //     },
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg/,
+        },
+      },
+    },
 
     'gatsby-plugin-twitter',
     'gatsby-plugin-image',
     'gatsby-plugin-postcss',
 
-    // {
-    //   resolve: 'gatsby-plugin-csp',
-    //   options: {
-    //     // The default is true.
-    //     disableOnDev: true,
-    //     // This plugin does correctly add hashes to the 'style-src' directive. However, it doesn't
-    //     // seem to identify all of the required hashes, so the unsafe-inline keyword is still
-    //     // required. The 'unsafe-inline' keyword is ignored by browsers if any hashes are found,
-    //     // so we need to turn off hash inclusion to have it recognised.
-    //     mergeStyleHashes: false,
-    //     // Same thing with script hashes.
-    //     mergeScriptHashes: false,
-    //     directives: GATSBY_PLUGIN_CSP_DIRECTIVES,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-csp',
+      options: {
+        // The default is true.
+        disableOnDev: true,
+        // This plugin does correctly add hashes to the 'style-src' directive. However, it doesn't
+        // seem to identify all of the required hashes, so the unsafe-inline keyword is still
+        // required. The 'unsafe-inline' keyword is ignored by browsers if any hashes are found,
+        // so we need to turn off hash inclusion to have it recognised.
+        mergeStyleHashes: false,
+        // Same thing with script hashes.
+        mergeScriptHashes: false,
+        directives: GATSBY_PLUGIN_CSP_DIRECTIVES,
+      },
+    },
 
-    // {
-    //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-    //   options: {
-    //     disable: skipWebpackAnalyzer,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        disable: skipWebpackAnalyzer,
+      },
+    },
 
-    // ...rssFeedPlugin,
+    ...rssFeedPlugin,
 
-    // {
-    //   resolve: `gatsby-plugin-google-gtag`,
-    //   options: {
-    //     trackingIds: ['G-FJ7VX25TGT'],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['G-FJ7VX25TGT'],
+      },
+    },
 
     {
       resolve: `gatsby-source-contentful`,
