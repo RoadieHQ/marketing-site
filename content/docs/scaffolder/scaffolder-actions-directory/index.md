@@ -10,10 +10,17 @@ Roadie comes bundled with a select set of actions to use out of the box. If you 
 
 If you want to add an action to this list, please [raise an issue on our repo](https://github.com/RoadieHQ/marketing-site/issues) or contribute a PR with the addition.
 
-**NB:**
-
-- A subset of available actions in Roadie can also be **found at the following page inside your Roadie app**: `https://<tenant-name>.roadie.so/create/actions`
-- We do not list actions created for hackathons and talks that are not maintained or intended for widespread use.
+<div role="alert">
+  <div class="docs-cta__warning_title">Please Note</div>
+  <div  class="docs-cta__warning_message">
+    <p>
+      <ul>
+        <li>A subset of available actions in Roadie can also be **found at the following page inside your Roadie app**: `https://<tenant-name>.roadie.so/create/actions`</li>
+        <li>We do not list actions created for hackathons and talks that are not maintained or intended for widespread use.</li>
+      </ul>
+    </p>
+  </div>
+</div>
 
 ## Actions Summary Table
 
@@ -60,7 +67,6 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 |                           |
 | Other Utils               | [uuid:v4:gen:plus](#uuidv4genplus)                                          | Generates a list of UUIDv4 values, allowing users to specify the number of UUIDs to generate.                                                                             |                        |
 | Other Utils               | [roadiehq:utils:sleep](#roadiehqutilssleep)                                 | Halts the scaffolding process for the given amount of seconds.                                                                                                            | ✅️                    |
-
 | Other Utils | [vars:plus](#varsplus) | Handles and logs input variables, returning the same input as the output in a formatted structure. | |
 
 **Backstage Specific:**
@@ -76,8 +82,7 @@ If you want to add an action to this list, please [raise an issue on our repo](h
 | Catalog  | [catalog:timestamping](#catalogtimestamping)       | Adds the `backstage.io/createdAt` annotation containing the current timestamp to your entity object.     |                        |
 | Catalog  | [catalog:scaffolded-from](#catalogscaffolded-from) | Adds `scaffoldedFrom` spec containing the template entityRef to your entity object.                      |                        |
 | Catalog  | [catalog:annotate](#catalogannotate)               | Allows you to annotate your entity object with specified label(s), annotation(s) and spec property(ies). |                        |
-
-|  
+|            |
 | Notifications | [notification:send](#varsplus) | Sends notifications via the Backstage Notification Service. | |
 
 **Language / protocol / infrastructure:**
