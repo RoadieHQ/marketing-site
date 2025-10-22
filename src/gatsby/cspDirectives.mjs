@@ -109,6 +109,9 @@ const CSP_IMG_SRC_DIRECTIVES = [
 
   // Used in some logo components to generate a placeholder
   'https://placehold.jp',
+
+  // Allows embedding github hosted images in places like the changelogs and backstage weekly
+  'https://github.com',
 ].join(' ');
 
 const CSP_FRAME_SRC_DIRECTIVES = (() => {
