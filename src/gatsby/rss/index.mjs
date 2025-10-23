@@ -1,6 +1,6 @@
-import blogFeed from './blogFeed';
-import backstageWeeklyFeed from './backstageWeeklyFeed';
-import blogChangelogFeed from './blogChangelogFeed';
+import blogFeed from './blogFeed.mjs';
+import backstageWeeklyFeed from './backstageWeeklyFeed.mjs';
+import blogChangelogFeed from './blogChangelogFeed.mjs';
 
 export default [{
   resolve: 'gatsby-plugin-feed',
