@@ -11,13 +11,13 @@ Roadie comes bundled with a select set of actions to use out of the box. If you 
 If you want to add an action to this list, please [raise an issue on our repo](https://github.com/RoadieHQ/marketing-site/issues) or contribute a PR with the addition.
 
 <div role="alert">
-  <div class="docs-cta__warning_title">Please Note</div>
-  <div  class="docs-cta__warning_message">
+  <div class="docs-cta__info_title">Please Note</div>
+  <div  class="docs-cta__info_message">
     <p>
-      <ul>
-        <li>A subset of available actions in Roadie can also be **found at the following page inside your Roadie app**: `https://<tenant-name>.roadie.so/create/actions`</li>
-        <li>We do not list actions created for hackathons and talks that are not maintained or intended for widespread use.</li>
-      </ul>
+      A subset of available actions in Roadie can also be <strong>found at the following page inside your Roadie app</strong>: <code>https://[tenant-name].roadie.so/create/actions</code>. 
+    </p>
+    <p>
+      We do not list actions created for hackathons and talks that are not maintained or intended for widespread use.
     </p>
   </div>
 </div>
