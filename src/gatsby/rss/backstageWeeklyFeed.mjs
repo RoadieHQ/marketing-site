@@ -18,7 +18,7 @@ const backstageWeeklyContent = (node) => {
   }
 
   if (ecosystemChangelog && ecosystemChangelog !== '') {
-    content += `<h2>EcosystemChangelog Changelog</h2>`;
+    content += `<h2>Ecosystem Changelog</h2>`;
     content += `<p>Learn which plugins have received new features, bugfixes and breaking changes in the past week.</p>`;
     content += htmlForFeeds(ecosystemChangelog);
   }
