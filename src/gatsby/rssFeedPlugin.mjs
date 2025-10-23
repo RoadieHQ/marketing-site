@@ -114,7 +114,7 @@ const blogChangelogFeed = {
 
             body {
               childMarkdownRemark {
-                html
+                rawMarkdownBody
               }
             }
 
@@ -192,19 +192,16 @@ const backstageWeeklyFeed = {
             title
             body {
               childMarkdownRemark {
-                html
                 rawMarkdownBody
               }
             }
             backstageChangelog {
               childMarkdownRemark {
-                html
                 rawMarkdownBody
               }
             }
             ecosystemChangelog {
               childMarkdownRemark {
-                html
                 rawMarkdownBody
               }
             }
