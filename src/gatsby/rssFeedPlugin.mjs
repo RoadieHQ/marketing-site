@@ -48,48 +48,6 @@ const blogFeed = {
   title: 'Roadie Blog',
 };
 
-const changelogFeed = {
-  serialize: ({ query: { site, changeSets } }) => {
-    return changeSets.edges.map(({ node }) => ({
-      title: node.title,
-      date: node.releasedAt,
-      // This is plain so we can push it out in Slack messages, which do not support HTML
-      // or markdown.
-      description: get(node, 'description.childMarkdownRemark.excerpt'),
-      url: site.siteMetadata.siteUrl + `/changelog/${node.slug}/`,
-      guid: site.siteMetadata.siteUrl + `/changelog/${node.slug}/`,
-      custom_elements: [{
-        'content:encoded': get(node, 'description.childMarkdownRemark.html'),
-      }],
-    }));
-  },
-
-  query: `
-    query ChangelogForRss {
-      changeSets: allContentfulChangeSet(
-        sort: {releasedAt: DESC}
-      ) {
-        edges {
-          node {
-            title
-            slug
-            releasedAt
-            description {
-              childMarkdownRemark {
-                html
-                excerpt(pruneLength: 160, format: PLAIN)
-              }
-            }
-          }
-        }
-      }
-    }
-  `,
-
-  output: '/changelog/rss.xml',
-  title: 'Roadie Changelog (legacy)',
-};
-
 const blogChangelogFeed = {
   serialize: ({ query: { site, blogs } }) => {
     return blogs.edges.map(({ node }) => {
@@ -154,6 +112,6 @@ export default [{
       }
     `,
 
-    feeds: [blogFeed, changelogFeed, blogChangelogFeed],
+    feeds: [blogFeed, blogChangelogFeed],
   },
 }];

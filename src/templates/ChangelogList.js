@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, TextLink as Link, SitewideHeader, SitewideFooter } from 'components';
-import { SimpleCenteredHeading } from 'components/landing';
+import { SEO, TextLink as Link, SitewideHeader, SitewideFooter, Headline, Lead } from 'components';
 import { ChangeSet, Pagination } from 'components/changelog';
 
 // In the code below, this is used to prevent the changelog from being collapsed on the preview
@@ -15,6 +14,8 @@ import { ChangeSet, Pagination } from 'components/changelog';
 // nowhere else.
 import { isPreviewSite } from '../environment';
 
+// This page is deprecated. Changelog posts are now published on our blog and tagged with 
+// 'changelog'
 const Changelog = ({
   data: {
     site: {
@@ -28,34 +29,31 @@ const Changelog = ({
 }) => (
   <>
     <SEO
-      title={`Changelog | ${siteTitle}`}
-      description={`
-        A list of all new and updated features so you can get a quick overview of what has changed in the product.
-      `}
+      title={`Changelog (Legacy) | ${siteTitle}`}
+      description={`Product improvements are now published on our blog.`}
     />
 
     <SitewideHeader />
 
     <main className="max-w-5xl sm:max-w-4xl mx-auto px-8 pb-20 lg:pt-8 lg:pb-28">
       <div className="bg-white">
-        <SimpleCenteredHeading
-          headline="What's new in Roadie"
-          lead={
-            <span>
-              This is the changelog for Roadie. It lists new and updated features so you can get a
-              quick overview of what&apos;s new. Subscribe via{' '}
-              <Link color="primary" to="/changelog/rss.xml">
-                RSS
-              </Link>{' '}
-              or follow us on{' '}
-              <Link color="primary" to="https://x.com/roadiehq">
-                X
-              </Link>{' '}
-              for more updates.
-            </span>
-          }
-          headlineSize="small"
-        />
+
+        <div className="max-w-4xl mx-auto py-16 px-4 sm:py-12 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="mt-1">
+              <Headline size="medium">
+                <span className="line-through">What&apos;s new in Roadie</span><span> (Legacy)</span>
+              </Headline>
+            </div>
+            <div className="mt-5">
+              <Lead>
+                <span>
+                  Product improvements are now listed <Link to="/tags/changelog/" color="primary">on our blog</Link> and are also available via <Link to="/blog-changelog/rss.xml" color="primary">RSS</Link>. This changelog remains for posterity and will not be updated.
+                </span>
+              </Lead>
+            </div>
+          </div>
+        </div>
       </div>
 
       <ul className="container mt-12 mb-8">

@@ -21,7 +21,7 @@ const navigation = {
     { name: 'Case Studies', href: '/case-studies/' },
     { name: 'Backstage Plugins', href: '/backstage/plugins/' },
     { name: 'FAQs', href: '/faqs/' },
-    { name: 'Changelog', href: '/changelog/' },
+    { name: 'Changelog', href: '/tags/changelog/', },
     { name: 'Backstage Bites', href: '/backstage-bites/' },
     { name: 'Backstage Weekly', href: '/backstage-weekly/' },
   ],
