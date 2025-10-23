@@ -1,4 +1,28 @@
 import get from 'lodash/get.js';
+import remark from 'remark';
+import remarkHTML from 'remark-html';
+
+const toHtml = remark().use(remarkHTML);
+
+// We transform the rawMarkdownBody to HTML here, rather than querying 'html' in the 
+// graphql query, because we want basic HTML in an RSS feed. If we query 'html' on the 
+// graphql then plugins like gatsby-remark-autolink-headers will inject links and icons into
+// the headers, and gatsby-remark-prismjs-copy-button will inject a copy button into the
+// code blocks. These things won't work in RSS so let's keep them out,
+const transformMarkdowntoHtml = (markdown) => {
+  return toHtml.processSync(markdown).toString();
+};
+
+const blogContent = (node) => {
+  let content = '';
+  const body = get(node, 'body.childMarkdownRemark.rawMarkdownBody');
+
+  if (body && body !== '') {
+    content += transformMarkdowntoHtml(body);
+  }
+
+  return content;
+};
 
 const blogFeed = {
   serialize: ({ query: { site, blogs } }) => {
@@ -10,7 +34,7 @@ const blogFeed = {
         url: site.siteMetadata.siteUrl + node.slug,
         guid: site.siteMetadata.siteUrl + node.slug,
         custom_elements: [{
-          'content:encoded': get(node, 'body.childMarkdownRemark.html'),
+          'content:encoded': blogContent,
         }],
       };
     });
@@ -29,7 +53,7 @@ const blogFeed = {
 
             body {
               childMarkdownRemark {
-                html
+                rawMarkdownBody
               }
             }
 
@@ -48,6 +72,18 @@ const blogFeed = {
   title: 'Roadie Blog',
 };
 
+
+const blogChangelogContent = (node) => {
+  let content = '';
+  const body = get(node, 'body.childMarkdownRemark.rawMarkdownBody');
+
+  if (body && body !== '') {
+    content += transformMarkdowntoHtml(body);
+  }
+
+  return content;
+};
+
 const blogChangelogFeed = {
   serialize: ({ query: { site, blogs } }) => {
     return blogs.edges.map(({ node }) => {
@@ -58,7 +94,7 @@ const blogChangelogFeed = {
         url: site.siteMetadata.siteUrl + node.slug,
         guid: site.siteMetadata.siteUrl + node.slug,
         custom_elements: [{
-          'content:encoded': get(node, 'body.childMarkdownRemark.html'),
+          'content:encoded': blogChangelogContent(node),
         }],
       };
     });
@@ -98,23 +134,28 @@ const blogChangelogFeed = {
 
 
 const backstageWeeklyContent = (node) => {
-  let body = get(node, 'body.childMarkdownRemark.html');
-  const backstageChangelog = get(node, 'backstageChangelog.childMarkdownRemark.html');
-  const ecosystemChangelog = get(node, 'ecosystemChangelog.childMarkdownRemark.html');
+  let content = '';
+  const body = get(node, 'body.childMarkdownRemark.rawMarkdownBody');
+  const backstageChangelog = get(node, 'backstageChangelog.childMarkdownRemark.rawMarkdownBody');
+  const ecosystemChangelog = get(node, 'ecosystemChangelog.childMarkdownRemark.rawMarkdownBody');
+
+  if (body && body !== '') {
+    content += transformMarkdowntoHtml(body);
+  }
 
   if (backstageChangelog && backstageChangelog !== '') {
-    body += `<h2>Backstage Changelog</h2>`;
-    body += `<p>A quick look at changes that have been merged into Backstage in the past week.</p>`;
-    body += backstageChangelog;
+    content += `<h2>Backstage Changelog</h2>`;
+    content += `<p>A quick look at changes that have been merged into Backstage in the past week.</p>`;
+    content += transformMarkdowntoHtml(backstageChangelog);
   }
 
   if (ecosystemChangelog && ecosystemChangelog !== '') {
-    body += `<h2>EcosystemChangelog Changelog</h2>`;
-    body += `<p>Learn which plugins have received new features, bugfixes and breaking changes in the past week.</p>`;
-    body += ecosystemChangelog;
+    content += `<h2>EcosystemChangelog Changelog</h2>`;
+    content += `<p>Learn which plugins have received new features, bugfixes and breaking changes in the past week.</p>`;
+    content += transformMarkdowntoHtml(ecosystemChangelog);
   }
 
-  return body;
+  return content;
 };
 
 const backstageWeeklyFeed = {
@@ -152,16 +193,19 @@ const backstageWeeklyFeed = {
             body {
               childMarkdownRemark {
                 html
+                rawMarkdownBody
               }
             }
             backstageChangelog {
               childMarkdownRemark {
                 html
+                rawMarkdownBody
               }
             }
             ecosystemChangelog {
               childMarkdownRemark {
                 html
+                rawMarkdownBody
               }
             }
           }
@@ -173,7 +217,6 @@ const backstageWeeklyFeed = {
   output: '/backstage-weekly/rss.xml',
   title: 'Backstage Weekly',
 };
-
 
 export default [{
   resolve: 'gatsby-plugin-feed',
