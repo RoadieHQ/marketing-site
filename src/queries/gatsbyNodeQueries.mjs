@@ -56,12 +56,12 @@ export const CASE_STUDIES_QUERY = `
 export const PLUGINS_QUERY = `
 {
   plugins: allContentfulBackstagePlugin(
-    limit: 1000,
+    limit: 1000
+    filter: {packages: {elemMatch: {registry: {eq: "npm"}}}}
   ) {
     edges {
       node {
         slug
-
         packages {
           type
           npmPackageName
