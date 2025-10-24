@@ -63,7 +63,12 @@ const ListItem = ({
 }) => {
   return (
     <div className="border-2 hover:border-gray-500" data-testid={`plugin-${slug}`}>
-      <Link to={`/backstage/plugins/${slug}/`} className="underline-none">
+      <Link
+        to={`/backstage/plugins/${slug}/`}
+        className="underline-none"
+        conversionEventName="conversion_event_page_view_1"
+        conversionEventParams={{ slug }}
+      >
         <div className="flex flex-col justify-between md:h-[250px] lg:h-[280px] xl:h-[250px]">
           <div>
             <div className="flex p-4 mb-2">

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link as GatsbyLink } from 'gatsby';
+import { Link as GatsbyLink, navigate } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import kebabCase from 'lodash/kebabCase';
 
 import { PAGE_PATHS } from '../../contactFormConstants';
+import { trackConversionEvent } from '../../googleAnalytics';
 
 const isRelativeTo = (to) => to.startsWith('/') || to.startsWith('#');
 
@@ -71,9 +72,30 @@ const Link = ({
   activeStyle,
   partiallyActive,
   forceOpenInSameTab = false,
+  conversionEventName,
+  conversionEventTimeout = 1000,
+  conversionEventParams = {},
   ...rest
 }) => {
   const location = useLocation();
+
+  const handleConversionClick = (e) => {
+    if (!conversionEventName) {
+      return;
+    }
+
+    e.preventDefault();
+
+    const callback = () => {
+      if (isRelativeTo(to)) {
+        navigate(to);
+      } else {
+        window.location.href = to;
+      }
+    };
+
+    trackConversionEvent(conversionEventName, callback, conversionEventTimeout, conversionEventParams);
+  };
 
   if (isRelativeTo(to)) {
     let internalTo = to;
@@ -103,6 +125,7 @@ const Link = ({
         activeClassName={activeClassName}
         activeStyle={activeStyle}
         partiallyActive={partiallyActive}
+        onClick={handleConversionClick}
         {...rest}
       >
         {children}
@@ -112,14 +135,14 @@ const Link = ({
 
   if (forceOpenInSameTab) {
     return (
-      <OutboundLink href={to} {...rest}>
+      <OutboundLink href={to} onClick={handleConversionClick} {...rest}>
         {children}
       </OutboundLink>
     );
   }
 
   return (
-    <OutboundLink href={to} target="_blank" rel="noopener noreferrer" {...rest}>
+    <OutboundLink href={to} target="_blank" rel="noopener noreferrer" onClick={handleConversionClick} {...rest}>
       {children}
     </OutboundLink>
   );
