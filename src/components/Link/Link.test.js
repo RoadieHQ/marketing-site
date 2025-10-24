@@ -366,5 +366,184 @@ describe('Link', () => {
 
       expect(navigate).toHaveBeenCalledWith('/blog/');
     });
+
+    describe('modifier key handling', () => {
+      test('does not prevent default for Ctrl+click', async () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog">
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        const event = new MouseEvent('click', { bubbles: true, cancelable: true, ctrlKey: true });
+        const preventDefaultSpy = jest.spyOn(event, 'preventDefault');
+
+        fireEvent(link, event);
+
+        expect(preventDefaultSpy).not.toHaveBeenCalled();
+      });
+
+      test('does not prevent default for Cmd+click (metaKey)', async () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog">
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        const event = new MouseEvent('click', { bubbles: true, cancelable: true, metaKey: true });
+        const preventDefaultSpy = jest.spyOn(event, 'preventDefault');
+
+        fireEvent(link, event);
+
+        expect(preventDefaultSpy).not.toHaveBeenCalled();
+      });
+
+      test('does not prevent default for Shift+click', async () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog">
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        const event = new MouseEvent('click', { bubbles: true, cancelable: true, shiftKey: true });
+        const preventDefaultSpy = jest.spyOn(event, 'preventDefault');
+
+        fireEvent(link, event);
+
+        expect(preventDefaultSpy).not.toHaveBeenCalled();
+      });
+
+      test('does not prevent default for Alt+click', async () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog">
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        const event = new MouseEvent('click', { bubbles: true, cancelable: true, altKey: true });
+        const preventDefaultSpy = jest.spyOn(event, 'preventDefault');
+
+        fireEvent(link, event);
+
+        expect(preventDefaultSpy).not.toHaveBeenCalled();
+      });
+
+      test('does not prevent default for middle mouse button', async () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog">
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        const event = new MouseEvent('click', { bubbles: true, cancelable: true, button: 1 });
+        const preventDefaultSpy = jest.spyOn(event, 'preventDefault');
+
+        fireEvent(link, event);
+
+        expect(preventDefaultSpy).not.toHaveBeenCalled();
+      });
+
+      test('still tracks event for Ctrl+click but without callback', async () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog">
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        fireEvent.click(link, { ctrlKey: true });
+
+        expect(googleAnalytics.trackGoogleAnalyticsEvent).toHaveBeenCalledWith('view_blog', {
+          // No event_callback or event_timeout when modifier keys are used
+        });
+      });
+
+      test('still tracks event for metaKey+click but without callback', async () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog">
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        fireEvent.click(link, { metaKey: true });
+
+        expect(googleAnalytics.trackGoogleAnalyticsEvent).toHaveBeenCalledWith('view_blog', {
+          // No event_callback or event_timeout when modifier keys are used
+        });
+      });
+
+      test('includes custom params even with modifier keys', async () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        const customParams = { value: 100, currency: 'USD' };
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="purchase" conversionEventParams={customParams}>
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        fireEvent.click(link, { ctrlKey: true });
+
+        expect(googleAnalytics.trackGoogleAnalyticsEvent).toHaveBeenCalledWith('purchase', {
+          value: 100,
+          currency: 'USD',
+          // No event_callback or event_timeout when modifier keys are used
+        });
+      });
+    });
   });
 });

@@ -84,6 +84,24 @@ const Link = ({
       return;
     }
 
+    // Don't prevent default behavior for special clicks that should open in new tab/window
+    // - Middle mouse button (button === 1)
+    // - Ctrl+click or Cmd+click (metaKey for Mac, ctrlKey for Windows/Linux)
+    // - Shift+click (opens in new window)
+    // - Alt+click (download link)
+    const isModifiedClick =
+      e.button !== 0 || e.metaKey || e.altKey || e.ctrlKey || e.shiftKey;
+
+    if (isModifiedClick) {
+      // Let the browser handle the special click behavior, but still track the event
+      trackGoogleAnalyticsEvent(conversionEventName, {
+        ...conversionEventParams,
+        // No callback needed - the browser will handle navigation
+      });
+      return;
+    }
+
+    // For normal clicks, prevent default and track with callback
     e.preventDefault();
 
     const callback = () => {

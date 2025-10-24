@@ -13,7 +13,6 @@ export const CONVERSION_EVENTS = {
  * @returns {boolean} - false when callback is provided, true otherwise
  */
 export const trackGoogleAnalyticsEvent = (eventName, eventParams = {}) => {
-  // Handle null or undefined eventParams
   const params = eventParams || {};
   const { event_callback, event_timeout, ...otherParams } = params;
 
