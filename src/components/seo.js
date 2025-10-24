@@ -5,7 +5,14 @@ import get from 'lodash/get';
 
 import roadieLogo from '../../content/assets/logos/roadie/roadie-racks-og-image.png';
 
-const SEO = ({ title, description = '', lang = 'en', headerImage = '', meta = [] }) => {
+const SEO = ({
+  title,
+  description = '',
+  lang = 'en',
+  headerImage = '',
+  meta = [],
+  children,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -96,6 +103,7 @@ const SEO = ({ title, description = '', lang = 'en', headerImage = '', meta = []
       meta={defaultMeta.concat(meta)}
     >
       <link rel="canonical" href={canonicalUrl} />
+      {children}
     </Helmet>
   );
 };

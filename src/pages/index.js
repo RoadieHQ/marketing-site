@@ -238,9 +238,22 @@ const PLUGINS_SUPPORTED = {
 
 const Home = ({ data }) => {
   const posts = data.allContentfulBlogPost.edges.map(mapContentfulBlogPostToMarkdownRemarkBlogPost);
+  const { title: siteName, siteUrl } = data.site.siteMetadata;
+
+  // Added to try to get Google to call us Roadie in search results, not Roadie.io.
+  const websiteStructuredData = JSON.stringify({
+    '@context': "https://schema.org",
+    '@type': 'WebSite',
+    name: siteName,
+    alternateName: 'Roadie.io',
+    url: siteUrl,
+  });
+
   return (
     <>
-      <SEO title={SEO_TITLE} description={LEAD} />
+      <SEO title={SEO_TITLE} description={LEAD}>
+        <script type="application/ld+json">{websiteStructuredData}</script>
+      </SEO>
 
       <SitewideHeader borderBottom={false} />
 
@@ -381,9 +394,11 @@ export const pageQuery = graphql`
         }
       }
     }
+
     site {
       siteMetadata {
         title
+        siteUrl
         social {
           twitter
           linkedin
