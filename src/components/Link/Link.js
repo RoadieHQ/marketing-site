@@ -5,7 +5,7 @@ import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import kebabCase from 'lodash/kebabCase';
 
 import { PAGE_PATHS } from '../../contactFormConstants';
-import { trackConversionEvent } from '../../googleAnalytics';
+import { trackGoogleAnalyticsEvent } from '../../googleAnalytics';
 
 const isRelativeTo = (to) => to.startsWith('/') || to.startsWith('#');
 
@@ -94,7 +94,11 @@ const Link = ({
       }
     };
 
-    trackConversionEvent(conversionEventName, callback, conversionEventTimeout, conversionEventParams);
+    trackGoogleAnalyticsEvent(conversionEventName, {
+      ...conversionEventParams,
+      event_callback: callback,
+      event_timeout: conversionEventTimeout,
+    });
   };
 
   if (isRelativeTo(to)) {

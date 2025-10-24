@@ -18,7 +18,7 @@ jest.mock('gatsby', () => ({
 }));
 
 jest.mock('../../googleAnalytics', () => ({
-  trackConversionEvent: jest.fn(),
+  trackGoogleAnalyticsEvent: jest.fn(),
 }));
 
 describe('Link', () => {
@@ -218,12 +218,10 @@ describe('Link', () => {
       const link = screen.getByRole('link');
       fireEvent.click(link);
 
-      expect(googleAnalytics.trackConversionEvent).toHaveBeenCalledWith(
-        'view_blog',
-        expect.any(Function),
-        1000,
-        {}
-      );
+      expect(googleAnalytics.trackGoogleAnalyticsEvent).toHaveBeenCalledWith('view_blog', {
+        event_callback: expect.any(Function),
+        event_timeout: 1000,
+      });
     });
 
     test('tracks conversion event with custom timeout', async () => {
@@ -242,12 +240,10 @@ describe('Link', () => {
       const link = screen.getByRole('link');
       fireEvent.click(link);
 
-      expect(googleAnalytics.trackConversionEvent).toHaveBeenCalledWith(
-        'view_blog',
-        expect.any(Function),
-        2000,
-        {}
-      );
+      expect(googleAnalytics.trackGoogleAnalyticsEvent).toHaveBeenCalledWith('view_blog', {
+        event_callback: expect.any(Function),
+        event_timeout: 2000,
+      });
     });
 
     test('tracks conversion event with custom params', async () => {
@@ -268,12 +264,12 @@ describe('Link', () => {
       const link = screen.getByRole('link');
       fireEvent.click(link);
 
-      expect(googleAnalytics.trackConversionEvent).toHaveBeenCalledWith(
-        'purchase',
-        expect.any(Function),
-        1000,
-        customParams
-      );
+      expect(googleAnalytics.trackGoogleAnalyticsEvent).toHaveBeenCalledWith('purchase', {
+        value: 100,
+        currency: 'USD',
+        event_callback: expect.any(Function),
+        event_timeout: 1000,
+      });
     });
 
     test('tracks conversion event on external link click', async () => {
@@ -292,12 +288,10 @@ describe('Link', () => {
       const link = screen.getByRole('link');
       fireEvent.click(link);
 
-      expect(googleAnalytics.trackConversionEvent).toHaveBeenCalledWith(
-        'external_click',
-        expect.any(Function),
-        1000,
-        {}
-      );
+      expect(googleAnalytics.trackGoogleAnalyticsEvent).toHaveBeenCalledWith('external_click', {
+        event_callback: expect.any(Function),
+        event_timeout: 1000,
+      });
     });
 
     test('does not track conversion event when conversionEventName is not provided', async () => {
@@ -317,7 +311,7 @@ describe('Link', () => {
       const link = screen.getByRole('link');
       fireEvent.click(link);
 
-      expect(googleAnalytics.trackConversionEvent).not.toHaveBeenCalled();
+      expect(googleAnalytics.trackGoogleAnalyticsEvent).not.toHaveBeenCalled();
 
       // Cleanup
       delete global.___navigate;
@@ -350,8 +344,10 @@ describe('Link', () => {
       const source = createMemorySource(route);
       const history = createHistory(source);
 
-      googleAnalytics.trackConversionEvent.mockImplementation((eventName, callback) => {
-        callback();
+      googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((eventName, params) => {
+        if (params.event_callback) {
+          params.event_callback();
+        }
       });
 
       render(
@@ -365,8 +361,8 @@ describe('Link', () => {
       const link = screen.getByRole('link');
       fireEvent.click(link);
 
-      const [[, callback]] = googleAnalytics.trackConversionEvent.mock.calls;
-      callback();
+      const [[, params]] = googleAnalytics.trackGoogleAnalyticsEvent.mock.calls;
+      params.event_callback();
 
       expect(navigate).toHaveBeenCalledWith('/blog/');
     });

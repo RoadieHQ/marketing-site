@@ -1,8 +1,38 @@
-const trackGoogleAnalyticsEvent = (eventName, eventParams) => {
+export const CONVERSION_EVENTS = {
+  PAGE_VIEW_1: 'conversion_event_page_view_1',
+};
+
+/**
+ * Track a Google Analytics event.
+ *
+ * When a callback is provided, this function ensures the callback executes after the event
+ * is sent (or after a timeout). This is useful for tracking events before navigation occurs.
+ *
+ * @param {string} eventName - The name of the event to track
+ * @param {Object} eventParams - Event parameters (can include event_callback and event_timeout)
+ * @returns {boolean} - false when callback is provided, true otherwise
+ */
+const trackGoogleAnalyticsEvent = (eventName, eventParams = {}) => {
+  const { event_callback, event_timeout, ...otherParams } = eventParams;
+
   if (typeof window === 'undefined' || typeof window.gtag === 'undefined') {
+    // If gtag is not available and there's a callback, execute it immediately
+    if (typeof event_callback === 'function') {
+      event_callback();
+    }
     return false;
   }
-  return window.gtag('event', eventName, eventParams);
+
+  const params = { ...otherParams };
+
+  // Add callback and timeout if provided
+  if (typeof event_callback === 'function') {
+    params.event_callback = event_callback;
+    params.event_timeout = event_timeout || 1000;
+  }
+
+  window.gtag('event', eventName, params);
+  return typeof event_callback === 'function' ? false : true;
 };
 
 export const trackRequestDemo = (opts = {}) => trackGoogleAnalyticsEvent('request_demo', opts);
@@ -12,31 +42,5 @@ export const trackSubscribe = (opts = {}) =>
 export const trackRequestRoadieLocal = (opts = {}) =>
   trackGoogleAnalyticsEvent('request_roadie_local', opts);
 
-/**
- * Track a conversion event with a callback that executes after the event is sent.
- * This is useful for ensuring analytics events are tracked before navigation occurs.
- *
- * @param {string} eventName - The name of the conversion event to track
- * @param {Function} callback - Function to execute after the event is sent
- * @param {number} timeout - Maximum time to wait for event to send (in milliseconds)
- * @param {Object} eventParams - Additional event parameters
- * @returns {boolean} - false to prevent default link behavior
- */
-export const trackConversionEvent = (eventName, callback, timeout = 1000, eventParams = {}) => {
-  if (typeof window === 'undefined' || typeof window.gtag === 'undefined') {
-    // If gtag is not available, execute callback immediately
-    if (typeof callback === 'function') {
-      callback();
-    }
-    return false;
-  }
-
-  const params = {
-    ...eventParams,
-    event_callback: callback,
-    event_timeout: timeout,
-  };
-
-  window.gtag('event', eventName, params);
-  return false;
-};
+// Export the main function for use in components
+export { trackGoogleAnalyticsEvent };
