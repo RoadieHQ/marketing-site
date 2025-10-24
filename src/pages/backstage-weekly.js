@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
+import RssIcon from '@heroicons/react/outline/RssIcon';
 
 import { SEO, Page, Headline, Lead, Link } from 'components';
 import {
@@ -100,13 +101,19 @@ const BackstageWeekly = ({ data }) => {
           />
         </div>
 
-        <div>
+        <div className="flex items-center justify-between border-b-2 pb-2">
           <Headline el="h3" size="small">
             Previous issues
           </Headline>
+
+          <span title="RSS">
+            <Link to="rss.xml">
+              <RssIcon className="h-6 w-6 text-gray-500" aria-hidden="true" />
+            </Link>
+          </span>
         </div>
 
-        <div className="pt-10 mx-auto grid gap-5 md:grid-cols-2 lg:gap-12 lg:grid-cols-3 lg:max-w-none">
+        <div className="pt-4 mx-auto grid gap-5 md:grid-cols-2 lg:gap-12 lg:grid-cols-3 lg:max-w-none">
           {issues.map(({ node }) => (
             <ImageIssue key={node.slug} issue={node} />
           ))}

@@ -1,7 +1,7 @@
 import has from 'lodash/has.js';
 import get from 'lodash/get.js';
 import agoliaQueries from './src/queries/agolia.mjs';
-import rssFeedPlugin from './src/gatsby/rssFeedPlugin.mjs';
+import rssFeedPlugin from './src/gatsby/rss/index.mjs';
 import theme from './src/theme.mjs';
 import GATSBY_PLUGIN_CSP_DIRECTIVES from './src/gatsby/cspDirectives.mjs';
 import { dirname } from "path";
