@@ -15,19 +15,29 @@ const Select = ({
   valueKey = 'value',
   optionIdPrefix = '',
   name,
+  disabled = false,
 }) => {
   const inputRef = useRef(null)
   const { accent, border, background, text } = INPUT_COLORS[color];
-  const btnClass = `w-full rounded-md shadow-sm py-3 px-4 text-left border ${background} ${text} ${accent} ${border}`;
+  const btnClass = classnames(
+    'w-full rounded-md shadow-sm py-3 px-4 text-left border',
+    {
+      [background]: !disabled,
+      [text]: !disabled,
+      [accent]: !disabled,
+      [border]: !disabled,
+      'bg-gray-100 text-gray-400 border-gray-300 cursor-not-allowed': disabled,
+    }
+  );
 
   const openSelect = () => {
-    if (inputRef.current) {
+    if (inputRef.current && !disabled) {
       inputRef.current.click();   // click the button to open the select
     }
   }
 
   return (
-    <Listbox value={value[valueKey]} onChange={onChange}>
+    <Listbox value={value[valueKey]} onChange={onChange} disabled={disabled}>
       {({ open }) => (
         <div className="relative w-full">
           <ListboxButton
@@ -42,13 +52,23 @@ const Select = ({
 
           {!open && (
             <button
-              className="absolute inset-y-0 right-0 flex items-center pr-3"
+              className={classnames(
+                'absolute inset-y-0 right-0 flex items-center pr-3',
+                {
+                  'cursor-not-allowed': disabled,
+                }
+              )}
               onClick={openSelect}
               aria-label="Open select input"
               tabIndex={-1}
               type="button"
+              disabled={disabled}
             >
-              <ChevronDownIcon className="h-5 w-5" />
+              <ChevronDownIcon
+                className={classnames('h-5 w-5', {
+                  'text-gray-400': disabled,
+                })}
+              />
             </button>
           )}
 
