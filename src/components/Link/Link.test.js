@@ -10,14 +10,14 @@ import { createMemorySource, createHistory, LocationProvider } from '@reach/rout
 import { navigate } from 'gatsby';
 
 import Link from './Link';
-import * as googleAnalytics from '../../googleAnalytics';
+import * as googleAnalytics from '../../google-analytics/trackGoogleAnalyticsEvent';
 
 jest.mock('gatsby', () => ({
   ...jest.requireActual('gatsby'),
   navigate: jest.fn(),
 }));
 
-jest.mock('../../googleAnalytics', () => ({
+jest.mock('../../google-analytics/trackGoogleAnalyticsEvent', () => ({
   trackGoogleAnalyticsEvent: jest.fn(),
 }));
 

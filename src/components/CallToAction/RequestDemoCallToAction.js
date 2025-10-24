@@ -14,7 +14,7 @@ import { ScmToolSelect } from '../forms/ScmToolSelect';
 import trackPlausibleEvent from '../../plausible';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch, funnelRecaptchaEnabled } from '../../environment';
-import { trackRequestDemo, trackSubscribe } from '../../googleAnalytics';
+import { trackRequestDemo, trackSubscribe } from '../../google-analytics/trackGoogleAnalyticsEvent';
 
 const submitToNetlifyForms = async ({
   name,

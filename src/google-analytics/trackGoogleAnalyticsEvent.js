@@ -12,8 +12,10 @@ export const CONVERSION_EVENTS = {
  * @param {Object} eventParams - Event parameters (can include event_callback and event_timeout)
  * @returns {boolean} - false when callback is provided, true otherwise
  */
-const trackGoogleAnalyticsEvent = (eventName, eventParams = {}) => {
-  const { event_callback, event_timeout, ...otherParams } = eventParams;
+export const trackGoogleAnalyticsEvent = (eventName, eventParams = {}) => {
+  // Handle null or undefined eventParams
+  const params = eventParams || {};
+  const { event_callback, event_timeout, ...otherParams } = params;
 
   if (typeof window === 'undefined' || typeof window.gtag === 'undefined') {
     // If gtag is not available and there's a callback, execute it immediately
@@ -23,15 +25,15 @@ const trackGoogleAnalyticsEvent = (eventName, eventParams = {}) => {
     return false;
   }
 
-  const params = { ...otherParams };
+  const gtagParams = { ...otherParams };
 
   // Add callback and timeout if provided
   if (typeof event_callback === 'function') {
-    params.event_callback = event_callback;
-    params.event_timeout = event_timeout || 1000;
+    gtagParams.event_callback = event_callback;
+    gtagParams.event_timeout = event_timeout !== undefined ? event_timeout : 1000;
   }
 
-  window.gtag('event', eventName, params);
+  window.gtag('event', eventName, gtagParams);
   return typeof event_callback === 'function' ? false : true;
 };
 
@@ -41,6 +43,3 @@ export const trackSubscribe = (opts = {}) =>
   trackGoogleAnalyticsEvent('subscribe_newsletter', opts);
 export const trackRequestRoadieLocal = (opts = {}) =>
   trackGoogleAnalyticsEvent('request_roadie_local', opts);
-
-// Export the main function for use in components
-export { trackGoogleAnalyticsEvent };

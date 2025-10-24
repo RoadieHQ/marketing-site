@@ -7,7 +7,7 @@ import ContentLoader from 'react-content-loader';
 
 import Attribution from './Attribution';
 import Logo from './Logo';
-import { CONVERSION_EVENTS } from '../../../googleAnalytics';
+import { CONVERSION_EVENTS } from '../../../google-analytics/trackGoogleAnalyticsEvent';
 
 const FooterInner = ({
   npmData: { latestVersionPublishedTime, lastMonthDownloads },

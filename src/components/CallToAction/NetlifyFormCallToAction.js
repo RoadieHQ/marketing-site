@@ -4,7 +4,7 @@ import trackPlausibleEvent from '../../plausible';
 import EmailCaptureForm from './EmailCaptureForm';
 import { FORM_NAMES, HONEYPOT_FIELD_NAME } from '../../contactFormConstants';
 import { currentlyExecutingGitBranch, newsletterRecaptchaEnabled } from '../../environment';
-import { trackSubscribe } from '../../googleAnalytics';
+import { trackSubscribe } from '../../google-analytics/trackGoogleAnalyticsEvent';
 
 export const encode = (data) => {
   const formData = new FormData();
