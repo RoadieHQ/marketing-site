@@ -8,6 +8,7 @@ const Chip = ({ label, icon, color = 'primary', ...rest }) => {
   if (color === 'primary') colorClasses = 'border border-primary-800';
   if (color === 'green') colorClasses = 'border border-green-800';
   if (color === 'npm-red') colorClasses = 'border border-npm-red';
+  if (color === 'terraform-purple') colorClasses = 'border border-terraform-purple';
   if (color === 'black') colorClasses = 'border border-black';
   if (color === 'none') colorClasses = '';
 

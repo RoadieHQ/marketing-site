@@ -5,102 +5,47 @@ import find from 'lodash/find.js';
 import getRoadieStore from './getRoadieStore.mjs';
 import retrievePackageNames from './retrievePackageNames.mjs';
 import stripPackageData from './stripPackageData.mjs';
-import { ALL_PACKAGE_DATA_STORE_KEY } from './constants.mjs';
+import { fetchMultipleTerraformProviders } from './fetchTerraformData.mjs';
+import { ALL_PACKAGE_DATA_STORE_KEY, getVersionedPackageKey } from './constants.mjs';
+import {
+  fetchWithRetry,
+  promiseAllWithConcurrency,
+  MAX_CONCURRENT_REQUESTS
+} from './fetchUtils.mjs';
 
 const NPM_REGISTRY_HOSTNAME = 'https://registry.npmjs.org/';
 const NPM_REGISTRY_API = 'https://api.npmjs.org/';
 
-// Rate limiting configuration
-const MAX_CONCURRENT_REQUESTS = 10; // Limit concurrent requests to avoid rate limiting
-const RETRY_ATTEMPTS = 3;
-const RETRY_DELAY_MS = 1000; // 1 second base delay
-
-/**
- * Rate-limited Promise.all that processes promises in batches
- * @param {Array} items - Items to process
- * @param {Function} fn - Async function to apply to each item
- * @param {number} concurrency - Max number of concurrent operations
- * @returns {Promise<Array>} Results array
- */
-const promiseAllWithConcurrency = async (items, fn, concurrency = MAX_CONCURRENT_REQUESTS) => {
-  const results = [];
-  const executing = [];
-
-  for (const [index, item] of items.entries()) {
-    const promise = fn(item, index).then((result) => {
-      executing.splice(executing.indexOf(promise), 1);
-      return result;
-    });
-
-    results.push(promise);
-    executing.push(promise);
-
-    if (executing.length >= concurrency) {
-      await Promise.race(executing);
-    }
-  }
-
-  return Promise.all(results);
-};
-
-/**
- * Fetch with retry logic and exponential backoff
- * @param {string} url - URL to fetch
- * @param {number} attempts - Number of retry attempts
- * @returns {Promise<Response>} Fetch response
- */
-const fetchWithRetry = async (url, attempts = RETRY_ATTEMPTS) => {
-  for (let i = 0; i < attempts; i++) {
-    try {
-      const response = await fetch(url);
-
-      // If rate limited (429) or server error (5xx), retry
-      if (response.status === 429 || response.status >= 500) {
-        if (i < attempts - 1) {
-          const delay = RETRY_DELAY_MS * Math.pow(2, i); // Exponential backoff
-          console.log(
-            `Rate limited or error for ${url}, retrying in ${delay}ms (attempt ${
-              i + 1
-            }/${attempts})`
-          );
-          await new Promise((resolve) => setTimeout(resolve, delay));
-          continue;
-        }
-      }
-
-      return response;
-    } catch (error) {
-      if (i < attempts - 1) {
-        const delay = RETRY_DELAY_MS * Math.pow(2, i);
-        console.log(
-          `Network error for ${url}, retrying in ${delay}ms (attempt ${i + 1}/${attempts}):`,
-          error.message
-        );
-        await new Promise((resolve) => setTimeout(resolve, delay));
-      } else {
-        console.error(`Failed to fetch ${url} after ${attempts} attempts:`, error.message);
-        throw error;
-      }
-    }
-  }
-};
-
 // We want to store as little data as possible to use on /backstage/plugins/ so that the
 // page renderes as quickly as possible. The more data we store, the more we have to download
 // to the browser.
-const extraStripPackageData = ({ time, latestVersion, lastMonthDownloads }) => ({
+const extraStripPackageData = ({ time, latestVersion, downloadCount, downloadCountPeriod }) => ({
   latestVersionPublishedTime: time[latestVersion],
-  lastMonthDownloads,
+  downloadCount,
+  downloadCountPeriod,
 });
 
 const storePackageData = async () => {
-  let listOfNpmPackages = await retrievePackageNames();
+  let listOfPackages = await retrievePackageNames();
 
-  if (!isArray(listOfNpmPackages)) {
-    console.log(`No package names found in store. Receive:`, listOfNpmPackages);
-    listOfNpmPackages = [];
+  if (!isArray(listOfPackages)) {
+    console.log(`No package names found in store. Received:`, listOfPackages);
+    listOfPackages = [];
   }
 
+  // Separate npm and terraform packages
+  const npmPackages = listOfPackages
+    .filter((pkg) => pkg.registry === 'npm')
+    .map((pkg) => pkg.packageName);
+  const terraformPackages = listOfPackages
+    .filter((pkg) => pkg.registry === 'terraform')
+    .map((pkg) => pkg.packageName);
+
+  console.log(
+    `Found ${npmPackages.length} npm packages and ${terraformPackages.length} terraform packages`
+  );
+
+  // Fetch npm packages
   // if error, returns:
   //   [{packageName: '...', error: 'HTTP: sdds', data: null},
   //    {packageName: '...', error: null, data: {...}]
@@ -108,10 +53,10 @@ const storePackageData = async () => {
   // Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md
   // Fetch package metadata with rate limiting and error handling
   console.log(
-    `Fetching package metadata for ${listOfNpmPackages.length} packages with concurrency limit of ${MAX_CONCURRENT_REQUESTS}...`
+    `Fetching package metadata for ${npmPackages.length} npm packages with concurrency limit of ${MAX_CONCURRENT_REQUESTS}...`
   );
 
-  const npmDataResults = await promiseAllWithConcurrency(listOfNpmPackages, async (packageName) => {
+  const npmDataResults = await promiseAllWithConcurrency(npmPackages, async (packageName) => {
     try {
       const response = await fetchWithRetry(`${NPM_REGISTRY_HOSTNAME}${packageName}`);
 
@@ -143,17 +88,22 @@ const storePackageData = async () => {
     );
   }
 
+  // Fetch Terraform providers
+  console.log(`Fetching ${terraformPackages.length} terraform providers...`);
+  const terraformData = await fetchMultipleTerraformProviders(terraformPackages);
+  console.log('terraformData', terraformData);
+
   // Docs: https://github.com/npm/registry/blob/main/docs/download-counts.md
   //
   // It's possible to send a comma separated list of packages to this endpoint to get
   // download stats for all of them, but it doesn't support namespaced packages at the
   // moment. Many backstage packages are namespaced, like @roadie... or @backstage...
   console.log(
-    `Fetching download stats for ${listOfNpmPackages.length} packages with concurrency limit of ${MAX_CONCURRENT_REQUESTS}...`
+    `Fetching download stats for ${npmPackages.length} npm packages with concurrency limit of ${MAX_CONCURRENT_REQUESTS}...`
   );
 
   const statsDataResults = await promiseAllWithConcurrency(
-    listOfNpmPackages,
+    npmPackages,
     async (packageName) => {
       try {
         const response = await fetchWithRetry(
@@ -192,12 +142,18 @@ const storePackageData = async () => {
     .map((data) => stripPackageData(data))
     .map((data) => {
       const statsDataForPackage = find(statsData, { package: data.name });
-      if (statsDataForPackage) data.lastMonthDownloads = statsDataForPackage.downloads;
+      if (statsDataForPackage) {
+        data.downloadCount = statsDataForPackage.downloads;
+        data.downloadCountPeriod = 'LAST_MONTH';
+      }
       return data;
     });
 
+  // Combine npm and terraform data
+  const allPackageData = [...strippedNpmData, ...terraformData];
+
   const dataAsObject = reduce(
-    strippedNpmData,
+    allPackageData,
     (obj, packageData) => {
       obj[packageData.name] = extraStripPackageData(packageData);
       obj.roadieLastUpdated = new Date().toISOString();
@@ -219,15 +175,20 @@ const storePackageData = async () => {
   //    particular plugin. This will be faster.
   const { modified, etag } = await store.setJSON(ALL_PACKAGE_DATA_STORE_KEY, dataAsObject);
   await Promise.all(
-    strippedNpmData.map((packageData) => {
-      return store.setJSON(packageData.name, {
+    allPackageData.map((packageData) => {
+      const versionedKey = getVersionedPackageKey(packageData.name);
+      return store.setJSON(versionedKey, {
         ...packageData,
         roadieLastUpdated: new Date().toISOString(),
       });
     })
   );
 
-  console.log('Stored backstage plugin npm package data.', modified, etag);
+  console.log(
+    `Stored ${npmPackages.length} npm and ${terraformPackages.length} terraform package data.`,
+    modified,
+    etag
+  );
   return { modified, etag };
 };
 

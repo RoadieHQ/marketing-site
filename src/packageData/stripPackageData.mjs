@@ -14,7 +14,6 @@ const stripPackageData = (data) => {
       'name',
       'license',
       'repository',
-      'time',
       'homepage',
       'description',
       'bugs',
@@ -29,6 +28,7 @@ const stripPackageData = (data) => {
     numberOfMaintainers: data.maintainers.length,
     numberOfVersions: Object.keys(data.versions).length,
     latestVersion: data['dist-tags'].latest,
+    registry: 'npm',
   };
 };
 

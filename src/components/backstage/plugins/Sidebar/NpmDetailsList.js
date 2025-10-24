@@ -15,39 +15,56 @@ const DetailsListItem = ({ label, value, ...props }) => {
   );
 };
 
+const DownloadCountListItem = ({ npmData }) => {
+  const { downloadCount, downloadCountPeriod } = npmData;
+  if (downloadCountPeriod === 'THIS_YEAR') {
+    return <DetailsListItem label="Downloads this year" value={downloadCount} />;
+  }
+  return <DetailsListItem label="Downloads in last month" value={downloadCount} />;
+};
+
+const FirstPublishedListItem = ({ npmData }) => {
+  const { firstPublishedAgo, firstPublishedTime } = npmData;
+  if (!firstPublishedTime) {
+    return <DetailsListItem label="First published" value="Unknown" />;
+  }
+
+  return (
+    <DetailsListItem
+      label="First published"
+      value={firstPublishedAgo}
+      title={firstPublishedTime}
+    />
+  );
+}
+
 const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
   if (npmDataLoadingState === 'error') return null;
   const {
     latestVersion,
-    lastMonthDownloads,
     latestVersionPublishedAgo,
     latestVersionPublishedTime,
-    firstPublishedAgo,
-    firstPublishedTime,
     numberOfVersions,
     license,
     lastSyncedTime,
     lastSyncedAgo,
   } = npmData;
   let inner;
+  
 
   if (npmDataLoadingState === 'loaded') {
     inner = (
       <div>
         <ul className="mb-3">
           <DetailsListItem label="Version" value={latestVersion} />
-          <DetailsListItem label="Downloads in last month" value={lastMonthDownloads} />
+          <DownloadCountListItem npmData={npmData} />
           <DetailsListItem
             label="Last published"
             value={latestVersionPublishedAgo}
             title={latestVersionPublishedTime}
           />
-          <DetailsListItem
-            label="First published"
-            value={firstPublishedAgo}
-            title={firstPublishedTime}
-          />
           <DetailsListItem label="Number of versions" value={numberOfVersions} />
+          <FirstPublishedListItem npmData={npmData} />
           <DetailsListItem label="License" value={license} />
         </ul>
 
@@ -91,7 +108,7 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
   return (
     <div className="p-6 bg-gray-100 rounded-lg mb-6">
       <div className="mb-4">
-        <Title>Plugin details</Title>
+        <Title>Package details</Title>
       </div>
 
       {inner}

@@ -6,8 +6,8 @@ import MaintainersList from './MaintainersList';
 import NpmDetailsList from './NpmDetailsList';
 import Links from './Links';
 import parseNpmData from './parseNpmData';
-import fetchNpmDataByName from './fetchNpmDataByName';
-import pluginNpmPackageNameForStats from '../../../../npmPackageData/pluginNpmPackageNameForStats.mjs';
+import fetchPackageDataByName from './fetchPackageDataByName';
+import pluginPackageNameForStats from '../../../../packageData/pluginPackageNameForStats.mjs';
 
 const Category = ({ plugin }) => {
   const { category } = plugin;
@@ -25,20 +25,20 @@ const Category = ({ plugin }) => {
 };
 
 const Sidebar = ({ plugin, pageSections }) => {
-  const npmPackageName = pluginNpmPackageNameForStats(plugin);
+  const { packageName } = pluginPackageNameForStats(plugin);
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
 
   useEffect(() => {
     (async () => {
       setNpmDataLoadingState('loading');
-      const { status, data } = await fetchNpmDataByName({
-        packageName: npmPackageName,
+      const { status, data } = await fetchPackageDataByName({
+        packageName,
       });
       setNpmDataLoadingState(status);
       setNpmData(parseNpmData(data));
     })();
-  }, [npmPackageName]);
+  }, [packageName]);
 
   return (
     <>

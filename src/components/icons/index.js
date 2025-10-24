@@ -8,3 +8,4 @@ export { default as RoadieRacksAndWordIcon } from './RoadieRacksAndWordIcon';
 export { default as RoadieRacksIcon } from './RoadieRacksIcon';
 export { default as RoadieDocsIcon } from './RoadieDocsIcon';
 export { default as NpmIcon } from './NpmIcon';
+export { default as TerraformIcon } from './TerraformIcon';

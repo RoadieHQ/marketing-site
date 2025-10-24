@@ -27,17 +27,17 @@ const parseNpmData = (npmData) => {
   }
 
   const numberOfVersions = npmData.numberOfVersions?.toLocaleString();
-  const lastMonthDownloads = npmData.lastMonthDownloads?.toLocaleString();
+  const downloadCount = npmData.downloadCount?.toLocaleString();
 
   return {
-    ...pick(npmData, ['latestVersion', 'license', 'maintainers']),
+    ...pick(npmData, ['latestVersion', 'license', 'maintainers', 'downloadCountPeriod']),
     lastSyncedTime,
     lastSyncedAgo,
     latestVersionPublishedTime,
     latestVersionPublishedAgo,
     firstPublishedTime,
     firstPublishedAgo,
-    lastMonthDownloads,
+    downloadCount,
     numberOfVersions,
     maintainersHelpText,
   };

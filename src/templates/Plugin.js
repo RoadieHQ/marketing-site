@@ -101,6 +101,7 @@ export const pageQuery = graphql`
         codeLocation
         npmPackageName
         type
+        registry
       }
 
       category {

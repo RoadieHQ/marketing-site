@@ -1,9 +1,9 @@
 import reduce from 'lodash/reduce.js';
 
 import { PLUGINS_QUERY } from '../queries/gatsbyNodeQueries.mjs';
-import pluginNpmPackageNameForStats from './pluginNpmPackageNameForStats.mjs';
+import pluginPackageNameForStats from './pluginPackageNameForStats.mjs';
 
-const listOfNpmPackages = async ({ graphql }) => {
+const listOfPackages = async ({ graphql }) => {
   const { data, errors } = await graphql(PLUGINS_QUERY);
 
   if (errors) {
@@ -11,14 +11,14 @@ const listOfNpmPackages = async ({ graphql }) => {
   }
 
   return reduce(data.plugins.edges, (list, { node }) => {
-    const npmPackageName = pluginNpmPackageNameForStats(node);
+    const packageInfo = pluginPackageNameForStats(node);
 
-    if (npmPackageName) {
-      list.push(npmPackageName);
+    if (packageInfo) {
+      list.push(packageInfo);
     }
 
     return list;
   }, []);
 };
 
-export default listOfNpmPackages;
+export default listOfPackages;

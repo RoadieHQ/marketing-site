@@ -1,5 +1,6 @@
 import React from 'react';
 import map from 'lodash/map';
+import isEmpty from 'lodash/isEmpty';
 import { Title } from 'components';
 import ContentLoader from 'react-content-loader';
 import { GravatarImage } from 'components/backstage/plugins';
@@ -14,6 +15,7 @@ const Maintainer = ({ name, email }) => {
 
 const MaintainersList = ({ npmData, npmDataLoadingState }) => {
   if (npmDataLoadingState === 'error') return null;
+  if (isEmpty(npmData.maintainers)) return null;
   let inner;
 
   if (npmDataLoadingState === 'loaded') {

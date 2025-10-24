@@ -15,11 +15,13 @@ describe('Plugins directory', () => {
       data: {
         '@roadiehq/rag-ai': {
           latestVersionPublishedTime: '2025-09-29T07:47:32.822Z',
-          lastMonthDownloads: 13619
+          downloadCount: 13619,
+          downloadCountPeriod: 'LAST_MONTH',
         },
         '@backstage/plugin-api-docs': {
           latestVersionPublishedTime: '2025-10-03T18:27:13.597Z',
-          lastMonthDownloads: 14550
+          downloadCount: 14550,
+          downloadCountPeriod: 'LAST_MONTH',
         },
         roadieLastUpdated: '2025-10-07T12:25:06.368Z'
       }

@@ -30,7 +30,7 @@ const filterPlugins = ({
     if (sortOrder.value === 'name') {
       filteredPlugins = sortBy(filteredPlugins, ['humanName']);
     } else if (sortOrder.value === 'popularity') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.lastMonthDownloads']).reverse();
+      filteredPlugins = sortBy(filteredPlugins, ['npmData.downloadCount']).reverse();
     } else if (sortOrder.value === 'recent') {
       filteredPlugins = sortBy(filteredPlugins, ['npmData.latestVersionPublishedTime']).reverse();
     }

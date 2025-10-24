@@ -4,11 +4,12 @@ import classnames from 'classnames';
 import { Field, Label } from '@headlessui/react';
 import isEmpty from 'lodash/isEmpty';
 import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
+import find from 'lodash/find';
 
 import { Typeahead, Page, SEO, Headline, Search, Lead, Select, TextLink as Link } from 'components';
 import {
   ListItem,
-  fetchNpmDataForList,
+  fetchPackageDataForList,
   filterPlugins,
   hydratePlugin,
 } from 'components/backstage/plugins';
@@ -52,7 +53,9 @@ const BackstagePlugins = ({ data, location }) => {
   useEffect(() => {
     (async () => {
       setNpmDataLoadingState('loading');
-      const { status, data } = await fetchNpmDataForList();
+      const { status, data } = await fetchPackageDataForList();
+      console.log('all data', data['datolabs-io/backstage']);
+      console.log('data', { ...find(data, { slug: 'terraform-provider' }) });
       setNpmDataLoadingState(status);
       setNpmData(data);
     })();
@@ -91,6 +94,7 @@ const BackstagePlugins = ({ data, location }) => {
 
   const allPluginsCount = plugins.edges.length;
   const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, npmData));
+  console.log('hydratePlugin', { ...find(hydratedPlugins, { slug: 'terraform-provider' }) });
 
   const filteredPlugins = filterPlugins({
     plugins: hydratedPlugins,
@@ -243,6 +247,7 @@ export const pageQuery = graphql`
 
           packages {
             npmPackageName
+            registry
           }
 
           logoImage {

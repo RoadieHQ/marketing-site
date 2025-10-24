@@ -65,6 +65,7 @@ export const PLUGINS_QUERY = `
         packages {
           type
           npmPackageName
+          registry
         }
       }
     }

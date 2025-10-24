@@ -10,10 +10,25 @@ import Attribution from './Attribution';
 import Logo from './Logo';
 import { CONVERSION_EVENTS } from '../../../google-analytics/trackGoogleAnalyticsEvent';
 
-const FooterInner = ({
-  npmData: { latestVersionPublishedTime, lastMonthDownloads },
-  npmDataLoadingState,
-}) => {
+const DownloadCount = ({ npmData }) => {
+  const { downloadCount, downloadCountPeriod } = npmData;
+  if (!downloadCount) return null;
+  let textPeriod = 'monthly downloads';
+  if (downloadCountPeriod === 'THIS_YEAR') {
+    textPeriod = 'downloads this year';
+  }
+  return (
+    <div className="flex">
+      <span>
+        <ChartBarIcon className="inline-block w-4 mr-1" />
+      </span>
+      <span>{downloadCount.toLocaleString()} {textPeriod}</span>
+    </div>
+  );
+};
+
+const FooterInner = ({ npmData, npmDataLoadingState }) => {
+  const { latestVersionPublishedTime } = npmData;
   if (npmDataLoadingState === 'error') return null;
 
   let inner;
@@ -29,14 +44,7 @@ const FooterInner = ({
           </div>
         )}
 
-        {lastMonthDownloads && (
-          <div className="flex">
-            <span>
-              <ChartBarIcon className="inline-block w-4 mr-1" />
-            </span>
-            <span>{lastMonthDownloads.toLocaleString()} monthly downloads</span>
-          </div>
-        )}
+        <DownloadCount npmData={npmData} />
       </div>
     );
   } else {

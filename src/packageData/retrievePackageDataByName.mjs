@@ -1,4 +1,5 @@
 import getRoadieStore from './getRoadieStore.mjs';
+import { getVersionedPackageKey } from './constants.mjs';
 
 const retrievePackageDataByName = async ({
   packageName,
@@ -10,7 +11,8 @@ const retrievePackageDataByName = async ({
   }
 
   const store = getRoadieStore();
-  return store.get(packageName, { type: 'json' });
+  const versionedKey = getVersionedPackageKey(packageName);
+  return store.get(versionedKey, { type: 'json' });
 };
 
 export default retrievePackageDataByName;

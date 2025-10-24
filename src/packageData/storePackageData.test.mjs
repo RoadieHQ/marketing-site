@@ -1,6 +1,6 @@
 import { jest } from '@jest/globals';
 import nock from 'nock';
-import { ALL_PACKAGE_DATA_STORE_KEY } from './constants.mjs';
+import { ALL_PACKAGE_DATA_STORE_KEY, getVersionedPackageKey } from './constants.mjs';
 
 // Mock the dependencies before importing them
 const mockStore = {
@@ -53,7 +53,10 @@ describe('#storePackageData', () => {
 
   describe('successful data retrieval and storage', () => {
     it('should fetch package data from NPM registry and stats from NPM API', async () => {
-      const packageNames = ['@backstage/plugin-test', 'regular-package'];
+      const packageNames = [
+        { packageName: '@backstage/plugin-test', registry: 'npm' },
+        { packageName: 'regular-package', registry: 'npm' }
+      ];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       // Mock NPM registry responses for package metadata
@@ -144,34 +147,40 @@ describe('#storePackageData', () => {
         expect.objectContaining({
           '@backstage/plugin-test': expect.objectContaining({
             latestVersionPublishedTime: '2024-06-01T00:00:00Z',
-            lastMonthDownloads: 12345,
+            downloadCount: 12345,
+            downloadCountPeriod: 'LAST_MONTH',
           }),
           'regular-package': expect.objectContaining({
             latestVersionPublishedTime: '2024-06-01T00:00:00Z',
-            lastMonthDownloads: 67890,
+            downloadCount: 67890,
+            downloadCountPeriod: 'LAST_MONTH',
           }),
           roadieLastUpdated: expect.any(String),
         })
       );
 
-      // Subsequent calls: storing each package individually
+      // Subsequent calls: storing each package individually with versioned keys
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        '@backstage/plugin-test',
+        getVersionedPackageKey('@backstage/plugin-test'),
         expect.objectContaining({
           name: '@backstage/plugin-test',
           latestVersion: '1.0.0',
-          lastMonthDownloads: 12345,
+          downloadCount: 12345,
+          downloadCountPeriod: 'LAST_MONTH',
           backstage: { role: 'frontend-plugin' },
+          registry: 'npm',
           roadieLastUpdated: expect.any(String),
         })
       );
 
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        'regular-package',
+        getVersionedPackageKey('regular-package'),
         expect.objectContaining({
           name: 'regular-package',
           latestVersion: '2.0.0',
-          lastMonthDownloads: 67890,
+          downloadCount: 67890,
+          downloadCountPeriod: 'LAST_MONTH',
+          registry: 'npm',
           roadieLastUpdated: expect.any(String),
         })
       );
@@ -184,7 +193,7 @@ describe('#storePackageData', () => {
     });
 
     it('should handle packages with missing download stats', async () => {
-      const packageNames = ['@backstage/plugin-no-stats'];
+      const packageNames = [{ packageName: '@backstage/plugin-no-stats', registry: 'npm' }];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       const npmPackageData = {
@@ -221,23 +230,24 @@ describe('#storePackageData', () => {
 
       // Verify the package was stored without download stats
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        '@backstage/plugin-no-stats',
+        getVersionedPackageKey('@backstage/plugin-no-stats'),
         expect.objectContaining({
           name: '@backstage/plugin-no-stats',
           latestVersion: '1.0.0',
+          registry: 'npm',
           roadieLastUpdated: expect.any(String),
         })
       );
 
-      // The stored data should not have lastMonthDownloads property
+      // The stored data should not have downloadCount property
       const storedPackageData = mockStore.setJSON.mock.calls.find(
-        (call) => call[0] === '@backstage/plugin-no-stats'
+        (call) => call[0] === getVersionedPackageKey('@backstage/plugin-no-stats')
       )[1];
-      expect(storedPackageData.lastMonthDownloads).toBeUndefined();
+      expect(storedPackageData.downloadCount).toBeUndefined();
     });
 
     it('should strip unnecessary data from NPM packages', async () => {
-      const packageNames = ['minimal-package'];
+      const packageNames = [{ packageName: 'minimal-package', registry: 'npm' }];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       const npmPackageData = {
@@ -281,7 +291,7 @@ describe('#storePackageData', () => {
 
       // Verify the stored data has been stripped appropriately
       const storedPackageData = mockStore.setJSON.mock.calls.find(
-        (call) => call[0] === 'minimal-package'
+        (call) => call[0] === getVersionedPackageKey('minimal-package')
       )[1];
 
       // Should only have 3 time entries (created, modified, and latest version)
@@ -335,7 +345,7 @@ describe('#storePackageData', () => {
     });
 
     it('should handle packages with minimal required fields only', async () => {
-      const packageNames = ['bare-minimum'];
+      const packageNames = [{ packageName: 'bare-minimum', registry: 'npm' }];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       const npmPackageData = {
@@ -367,17 +377,19 @@ describe('#storePackageData', () => {
 
       // Verify it stored successfully
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        'bare-minimum',
+        getVersionedPackageKey('bare-minimum'),
         expect.objectContaining({
           name: 'bare-minimum',
           latestVersion: '1.0.0',
-          lastMonthDownloads: 5,
+          downloadCount: 5,
+          downloadCountPeriod: 'LAST_MONTH',
+          registry: 'npm',
         })
       );
     });
 
     it('should include roadieLastUpdated timestamp in all stored data', async () => {
-      const packageNames = ['timestamp-test'];
+      const packageNames = [{ packageName: 'timestamp-test', registry: 'npm' }];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       const npmPackageData = {
@@ -420,7 +432,7 @@ describe('#storePackageData', () => {
 
       // Check the individual package store call
       const individualPackageCall = mockStore.setJSON.mock.calls.find(
-        (call) => call[0] === 'timestamp-test'
+        (call) => call[0] === getVersionedPackageKey('timestamp-test')
       );
       expect(individualPackageCall[1].roadieLastUpdated).toBeDefined();
       const individualTimestamp = individualPackageCall[1].roadieLastUpdated;
@@ -431,11 +443,15 @@ describe('#storePackageData', () => {
     });
 
     it('should handle multiple packages in parallel', async () => {
-      const packageNames = ['package-1', 'package-2', 'package-3'];
+      const packageNames = [
+        { packageName: 'package-1', registry: 'npm' },
+        { packageName: 'package-2', registry: 'npm' },
+        { packageName: 'package-3', registry: 'npm' }
+      ];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       // Mock all NPM registry responses
-      packageNames.forEach((packageName, index) => {
+      packageNames.forEach(({ packageName }, index) => {
         const npmPackageData = {
           name: packageName,
           'dist-tags': { latest: `${index + 1}.0.0` },
@@ -467,11 +483,12 @@ describe('#storePackageData', () => {
       // Verify all packages were stored
       expect(mockStore.setJSON).toHaveBeenCalledTimes(4); // 1 for all + 3 individual
 
-      packageNames.forEach((packageName) => {
+      packageNames.forEach(({ packageName }) => {
         expect(mockStore.setJSON).toHaveBeenCalledWith(
-          packageName,
+          getVersionedPackageKey(packageName),
           expect.objectContaining({
             name: packageName,
+            registry: 'npm',
           })
         );
       });
@@ -482,7 +499,10 @@ describe('#storePackageData', () => {
 
   describe('error handling and resilience', () => {
     it('should handle HTTP 404 errors for individual packages gracefully', async () => {
-      const packageNames = ['@backstage/existing-package', 'non-existent-package'];
+      const packageNames = [
+        { packageName: '@backstage/existing-package', registry: 'npm' },
+        { packageName: 'non-existent-package', registry: 'npm' }
+      ];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       // Mock successful package
@@ -527,7 +547,7 @@ describe('#storePackageData', () => {
 
       // Should store the successful package
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        '@backstage/existing-package',
+        getVersionedPackageKey('@backstage/existing-package'),
         expect.objectContaining({
           name: '@backstage/existing-package',
           latestVersion: '1.0.0',
@@ -539,7 +559,7 @@ describe('#storePackageData', () => {
     });
 
     it('should handle HTTP 429 rate limiting with retry', async () => {
-      const packageNames = ['rate-limited-package'];
+      const packageNames = [{ packageName: 'rate-limited-package', registry: 'npm' }];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       const npmPackageData = {
@@ -576,17 +596,21 @@ describe('#storePackageData', () => {
 
       // Should have successfully stored the package after retry
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        'rate-limited-package',
+        getVersionedPackageKey('rate-limited-package'),
         expect.objectContaining({
           name: 'rate-limited-package',
           latestVersion: '1.0.0',
-          lastMonthDownloads: 50,
+          downloadCount: 50,
+          downloadCountPeriod: 'LAST_MONTH',
         })
       );
     });
 
     it('should handle network errors and continue with successful packages', async () => {
-      const packageNames = ['failing-package', 'successful-package'];
+      const packageNames = [
+        { packageName: 'failing-package', registry: 'npm' },
+        { packageName: 'successful-package', registry: 'npm' }
+      ];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       // Mock network error for first package (all retries fail)
@@ -638,11 +662,12 @@ describe('#storePackageData', () => {
 
       // Should only store the successful package
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        'successful-package',
+        getVersionedPackageKey('successful-package'),
         expect.objectContaining({
           name: 'successful-package',
           latestVersion: '1.0.0',
-          lastMonthDownloads: 200,
+          downloadCount: 200,
+          downloadCountPeriod: 'LAST_MONTH',
         })
       );
 
@@ -651,7 +676,7 @@ describe('#storePackageData', () => {
     }, 10000); // Increase timeout to 10s due to retry delays
 
     it('should handle HTTP 500 server errors with retry', async () => {
-      const packageNames = ['server-error-package'];
+      const packageNames = [{ packageName: 'server-error-package', registry: 'npm' }];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       const npmPackageData = {
@@ -688,17 +713,18 @@ describe('#storePackageData', () => {
 
       // Should have successfully stored the package after retry
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        'server-error-package',
+        getVersionedPackageKey('server-error-package'),
         expect.objectContaining({
           name: 'server-error-package',
           latestVersion: '1.0.0',
-          lastMonthDownloads: 75,
+          downloadCount: 75,
+          downloadCountPeriod: 'LAST_MONTH',
         })
       );
     });
 
     it('should continue even if all stats requests fail', async () => {
-      const packageNames = ['package-without-stats'];
+      const packageNames = [{ packageName: 'package-without-stats', registry: 'npm' }];
       mockRetrievePackageNames.mockResolvedValue(packageNames);
 
       const npmPackageData = {
@@ -735,18 +761,18 @@ describe('#storePackageData', () => {
 
       // Should store the package without download stats
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        'package-without-stats',
+        getVersionedPackageKey('package-without-stats'),
         expect.objectContaining({
           name: 'package-without-stats',
           latestVersion: '1.0.0',
         })
       );
 
-      // The package should not have lastMonthDownloads
+      // The package should not have downloadCount
       const storedPackageData = mockStore.setJSON.mock.calls.find(
-        (call) => call[0] === 'package-without-stats'
+        (call) => call[0] === getVersionedPackageKey('package-without-stats')
       )[1];
-      expect(storedPackageData.lastMonthDownloads).toBeUndefined();
+      expect(storedPackageData.downloadCount).toBeUndefined();
     }, 10000); // Increase timeout to 10s due to retry delays
   });
 });
