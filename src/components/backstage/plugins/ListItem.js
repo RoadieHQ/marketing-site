@@ -7,6 +7,7 @@ import ContentLoader from 'react-content-loader';
 
 import Attribution from './Attribution';
 import Logo from './Logo';
+import { CONVERSION_EVENTS } from '../../../google-analytics/trackGoogleAnalyticsEvent';
 
 const FooterInner = ({
   npmData: { latestVersionPublishedTime, lastMonthDownloads },
@@ -63,7 +64,12 @@ const ListItem = ({
 }) => {
   return (
     <div className="border-2 hover:border-gray-500" data-testid={`plugin-${slug}`}>
-      <Link to={`/backstage/plugins/${slug}/`} className="underline-none">
+      <Link
+        to={`/backstage/plugins/${slug}/`}
+        className="underline-none"
+        conversionEventName={CONVERSION_EVENTS.PAGE_VIEW_1}
+        conversionEventParams={{ slug }}
+      >
         <div className="flex flex-col justify-between md:h-[250px] lg:h-[280px] xl:h-[250px]">
           <div>
             <div className="flex p-4 mb-2">
