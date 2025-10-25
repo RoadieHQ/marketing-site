@@ -132,3 +132,17 @@ export const CHANGELOG_QUERY = `
   }
 }
 `;
+
+export const SCAFFOLDER_ACTIONS_QUERY = `
+{
+  actions: allContentfulBackstageScaffolderAction(
+    limit: 1000
+  ) {
+    edges {
+      node {
+        slug
+      }
+    }
+  }
+}
+`;

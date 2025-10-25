@@ -39,7 +39,7 @@ const ListItem = ({
   return (
     <div className="border-2 hover:border-gray-500 p-4" data-testid={`action-${slug}`}>
       <Link
-        to={`/backstage/scaffolder-actions/${slug}/`}
+        to={`/backstage/scaffolder-actions${slug}`}
         className="underline-none"
       >
         <div className="flex justify-between">

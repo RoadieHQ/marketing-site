@@ -12,6 +12,7 @@ import {
   CHANGELOG_QUERY,
   BACKSTAGE_BITES_QUERY,
   BACKSTAGE_WEEKLY_QUERY,
+  SCAFFOLDER_ACTIONS_QUERY,
 } from './src/queries/gatsbyNodeQueries.mjs';
 import {
   createLatestLegalNotices,
@@ -97,6 +98,21 @@ export const createPages = async ({ graphql, actions }) => {
     graphql,
     processor: ({ node }, component) => ({
       path: `/backstage/plugins/${node.slug}/`,
+      component,
+      context: {
+        slug: node.slug,
+      },
+    }),
+  });
+
+  await createPagesFromQuery({
+    templatePath: './src/templates/ScaffolderAction.js',
+    query: SCAFFOLDER_ACTIONS_QUERY,
+    resultName: 'actions.edges',
+    actions,
+    graphql,
+    processor: ({ node }, component) => ({
+      path: `/backstage/scaffolder-actions${node.slug}`,
       component,
       context: {
         slug: node.slug,
