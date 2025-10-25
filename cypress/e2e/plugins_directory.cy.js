@@ -82,6 +82,108 @@ describe('Plugins directory', () => {
         expect(texts).to.deep.equal(expectedOrder);
       });
     });
+
+    it('preserves search query when using browser back button', () => {
+      cy.visit('/backstage/plugins/');
+
+      // Filter the list
+      cy.get('input[name="search"]').type('API');
+
+      // Verify URL has the query param
+      cy.url().should('include', '?q=API');
+
+      // Verify filtered results
+      cy.contains('API Docs');
+      cy.contains('AI Assistant').should('not.exist');
+
+      // Click on a plugin
+      cy.get('div[data-testid="plugin-api-docs"]').click();
+      cy.url().should('include', '/backstage/plugins/api-docs/');
+
+      // Go back using browser back button
+      cy.go('back');
+
+      // Verify we're back on the plugins page with the query preserved
+      cy.url().should('include', '/backstage/plugins/');
+      cy.url().should('include', '?q=API');
+
+      // Verify the search input still has the value
+      cy.get('input[name="search"]').should('have.value', 'API');
+
+      // Verify filtered results are still showing
+      cy.contains('API Docs');
+      cy.contains('AI Assistant').should('not.exist');
+    });
+
+    it('preserves search query when clicking back link from plugin page', () => {
+      cy.visit('/backstage/plugins/');
+
+      // Filter the list
+      cy.get('input[name="search"]').type('API');
+
+      // Verify URL has the query param
+      cy.url().should('include', '?q=API');
+
+      // Verify filtered results
+      cy.contains('API Docs');
+      cy.contains('AI Assistant').should('not.exist');
+
+      // Click on a plugin
+      cy.get('div[data-testid="plugin-api-docs"]').click();
+      cy.url().should('include', '/backstage/plugins/api-docs/');
+
+      // Click the back link
+      cy.contains('← Backstage Plugins Guides').click();
+
+      // Verify we're back on the plugins page with the query preserved
+      cy.url().should('include', '/backstage/plugins/');
+      cy.url().should('include', '?q=API');
+
+      // Verify the search input still has the value
+      cy.get('input[name="search"]').should('have.value', 'API');
+
+      // Verify filtered results are still showing
+      cy.contains('API Docs');
+      cy.contains('AI Assistant').should('not.exist');
+    });
+
+    it('preserves both search query and category when navigating back', () => {
+      cy.visit('/backstage/plugins/');
+
+      // Filter by search
+      cy.get('input[name="search"]').type('AI');
+
+      // Filter by category
+      cy.get('input[name="filter-categories-input"]').type('Know');
+      cy.get('div[role="option"]').contains('Knowledge Sharing & Curation').click();
+
+      // Verify URL has both query params
+      cy.url().should('include', '?q=AI');
+      cy.url().should('include', 'category=knowledge');
+
+      // Verify filtered results
+      cy.contains('AI Assistant');
+      cy.contains('API Docs').should('not.exist');
+
+      // Click on a plugin
+      cy.get('div[data-testid="plugin-ai-assistant-rag-ai"]').click();
+      cy.url().should('include', '/backstage/plugins/ai-assistant-rag-ai/');
+
+      // Click the back link
+      cy.contains('← Backstage Plugins Guides').click();
+
+      // Verify we're back with both filters preserved
+      cy.url().should('include', '/backstage/plugins/');
+      cy.url().should('include', '?q=AI');
+      cy.url().should('include', 'category=knowledge');
+
+      // Verify the search input still has the value
+      cy.get('input[name="search"]').should('have.value', 'AI');
+
+      // Verify filtered results are still showing
+      cy.contains('AI Assistant');
+      cy.contains('API Docs').should('not.exist');
+    });
   });
 
   describe('show page', () => {
