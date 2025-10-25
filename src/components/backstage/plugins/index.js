@@ -4,7 +4,7 @@ export { default as ListItem } from './ListItem';
 export { default as Header } from './Header';
 export { default as PluginCTA } from './PluginCTA';
 export { Sidebar } from './Sidebar';
-export { default as RoadieDocsChip } from './RoadieDocsChip';
+export { default as RoadieDocsChip } from '../RoadieDocsChip';
 export { default as GitHubChip } from './GitHubChip';
 export { default as NpmChip } from './NpmChip';
 export { default as TerraformChip } from './TerraformChip';
