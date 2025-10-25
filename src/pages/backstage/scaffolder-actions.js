@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
+import sortBy from 'lodash/sortBy';
 
 import { Page, SEO, Headline, Input, Lead } from 'components';
-import { ListItem, filterActions } from 'components/backstage/scaffolder-actions';
+import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
 
 const BackstageScaffolderActions = ({ data }) => {
   const {
@@ -21,6 +22,19 @@ const BackstageScaffolderActions = ({ data }) => {
     actions: actionsList,
     query,
   });
+
+  // Group actions by package
+  const groupedActions = filteredActions.reduce((groups, action) => {
+    const packageName = action.containedInPackage?.npmPackageName || 'Uncategorized';
+    if (!groups[packageName]) {
+      groups[packageName] = [];
+    }
+    groups[packageName].push(action);
+    return groups;
+  }, {});
+
+  // Sort packages alphabetically
+  const sortedPackageNames = sortBy(Object.keys(groupedActions));
 
   const seoTitle = `Backstage Scaffolder Actions Directory | ${title}`;
   const seoDescription = 'Browse Backstage scaffolder actions. View descriptions, schemas, code locations, and availability information.';
@@ -44,7 +58,6 @@ const BackstageScaffolderActions = ({ data }) => {
           </div>
 
           <div className="mb-2">
-            {/* Search Input */}
             <div className="mb-4 w-full lg:w-72">
               <Input
                 type="text"
@@ -59,17 +72,17 @@ const BackstageScaffolderActions = ({ data }) => {
           </div>
         </div>
 
-        <div className="pt-6 grid gap-4 lg:gap-8 lg:grid-cols-2">
-          {filteredActions.map(({ slug, ...action }) => (
-            <ListItem
-              key={slug}
-              slug={slug}
-              {...action}
-            />
+        <div className="pt-6 grid gap-2 lg:gap-4 lg:grid-cols-2">
+          {sortedPackageNames.map((packageName) => (
+            <React.Fragment key={packageName}>
+              <PackageHeader packageName={packageName} />
+              {groupedActions[packageName].map(({ slug, ...action }) => (
+                <ListItem key={slug} slug={slug} {...action} />
+              ))}
+            </React.Fragment>
           ))}
         </div>
 
-        {/* No Results Message */}
         {filteredActions.length === 0 && (
           <div className="text-center py-12 text-gray-500">
             No scaffolder actions found matching your filters.
@@ -113,6 +126,9 @@ export const pageQuery = graphql`
           supportsDryRun
           codeLocation
           availableOnRoadie
+          containedInPackage {
+            npmPackageName
+          }
         }
       }
     }
