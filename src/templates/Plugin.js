@@ -18,7 +18,7 @@ const recordExitIntentModalHasBeenShown = () => {
   return localStorage.setItem('exitIntentModalHasBeenShown', true);
 };
 
-const PluginTemplate = ({ data, location }) => {
+const PluginTemplate = ({ data }) => {
   const { plugin } = data;
   const [exitIntentModalOpen, setExitIntentModalOpen] = useState(false);
 
@@ -49,7 +49,7 @@ const PluginTemplate = ({ data, location }) => {
       <SitewideHeader />
 
       <div className="mt-4">
-        <Header plugin={plugin} location={location} />
+        <Header plugin={plugin} />
       </div>
 
       <main className="pb-8 px-4 lg:pb-28">
