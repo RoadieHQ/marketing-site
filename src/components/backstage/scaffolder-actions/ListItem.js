@@ -1,5 +1,4 @@
 import React from 'react';
-import { CheckIcon } from '@heroicons/react/solid';
 import { Link, Title, Chip } from 'components';
 import RoadieDocsChip from 'components/backstage/RoadieDocsChip';
 
@@ -31,7 +30,6 @@ const ListItem = ({
   slug,
   actionId,
   description,
-  supportsDryRun,
   availableOnRoadie,
   inputSchema,
   outputSchema,
@@ -62,16 +60,6 @@ const ListItem = ({
             <div className="mb-1">
               <RoadieDocsChip availableOnRoadie={availableOnRoadie} />
             </div>
-
-            {supportsDryRun && (
-              <div className="mb-1">
-                <Chip
-                  label="Dry Run"
-                  icon={<CheckIcon className="h-[1rem] w-[1rem] inline mr-1" />}
-                  color="green"
-                />
-              </div>
-            )}
           </div>
         </div>
       </Link>

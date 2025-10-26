@@ -65,7 +65,7 @@ const BackstageScaffolderActions = ({ data }) => {
                 onChange={setQuery}
                 value={query}
                 aria-label="Search"
-                placeholder="Search"
+                placeholder="Filter"
                 fullWidth={true}
               />
             </div>

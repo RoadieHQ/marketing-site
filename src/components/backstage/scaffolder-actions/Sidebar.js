@@ -23,7 +23,7 @@ const Links = ({ action }) => {
   );
 };
 
-const Availability = ({ action }) => {
+const Info = ({ action }) => {
   const { availableOnRoadie, supportsDryRun } = action;
 
   // Only show section if there's something to display
@@ -32,7 +32,7 @@ const Availability = ({ action }) => {
   return (
     <div className="p-6 bg-gray-100 rounded-lg mb-6">
       <div className="mb-4">
-        <Title>Availability</Title>
+        <Title>Info</Title>
       </div>
 
       <div className="mb-3">
@@ -56,7 +56,7 @@ const Sidebar = ({ action }) => {
   return (
     <>
       <Links action={action} />
-      <Availability action={action} />
+      <Info action={action} />
 
       <div className="p-6 bg-gray-700 rounded-lg sticky top-10">
         <p className="text-white text-base mb-3">
