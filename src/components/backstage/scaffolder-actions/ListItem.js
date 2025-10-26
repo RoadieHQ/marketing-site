@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Title, Chip } from 'components';
+import { Link, Title } from 'components';
 import RoadieDocsChip from 'components/backstage/RoadieDocsChip';
 
 const getPropertyCount = (schema) => {

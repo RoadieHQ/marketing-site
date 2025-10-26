@@ -73,14 +73,19 @@ const BackstageScaffolderActions = ({ data }) => {
         </div>
 
         <div className="pt-6 grid gap-2 lg:gap-4 lg:grid-cols-2">
-          {sortedPackageNames.map((packageName) => (
-            <React.Fragment key={packageName}>
-              <PackageHeader packageName={packageName} />
-              {groupedActions[packageName].map(({ slug, ...action }) => (
-                <ListItem key={slug} slug={slug} {...action} />
-              ))}
-            </React.Fragment>
-          ))}
+          {sortedPackageNames.map((packageName) => {
+            const actionsInPackage = groupedActions[packageName];
+            const logoImage = actionsInPackage[0]?.containedInPackage?.logoImage;
+
+            return (
+              <React.Fragment key={packageName}>
+                <PackageHeader packageName={packageName} logoImage={logoImage} />
+                {actionsInPackage.map(({ slug, ...action }) => (
+                  <ListItem key={slug} slug={slug} {...action} />
+                ))}
+              </React.Fragment>
+            );
+          })}
         </div>
 
         {filteredActions.length === 0 && (
@@ -128,6 +133,14 @@ export const pageQuery = graphql`
           availableOnRoadie
           containedInPackage {
             npmPackageName
+            logoImage {
+              gatsbyImageData(
+                height: 80
+                width: 80
+                placeholder: DOMINANT_COLOR
+                resizingBehavior: PAD
+              )
+            }
           }
         }
       }
