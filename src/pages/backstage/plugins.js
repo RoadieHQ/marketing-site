@@ -151,6 +151,7 @@ const BackstagePlugins = ({ data, location }) => {
                     options={SORT_ORDERS}
                     name="sort-order"
                     optionKey="label"
+                    disabled={npmDataLoadingState === 'error'}
                   />
                 </div>
               </Field>

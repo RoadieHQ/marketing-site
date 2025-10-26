@@ -4,6 +4,7 @@ import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 import InboxInIcon from '@heroicons/react/outline/InboxInIcon';
 import ChartBarIcon from '@heroicons/react/outline/ChartBarIcon';
 import ContentLoader from 'react-content-loader';
+import classnames from 'classnames';
 
 import Attribution from './Attribution';
 import Logo from './Logo';
@@ -15,8 +16,9 @@ const FooterInner = ({
 }) => {
   if (npmDataLoadingState === 'error') return null;
 
+  let inner;
   if (npmDataLoadingState === 'loaded') {
-    return (
+    inner = (
       <div className="flex justify-between text-xs text-gray-500">
         {latestVersionPublishedTime && (
           <div title={latestVersionPublishedTime.toISOString()} className="flex mr-6">
@@ -38,7 +40,7 @@ const FooterInner = ({
       </div>
     );
   } else {
-    return (
+    inner = (
       <ContentLoader
         speed={2}
         className="w-full"
@@ -51,6 +53,12 @@ const FooterInner = ({
       </ContentLoader>
     );
   }
+
+  return (
+    <div className="px-2 pt-2 mb-2 border-t-2">
+      {inner}
+    </div>
+  );
 };
 
 const ListItem = ({
@@ -62,6 +70,11 @@ const ListItem = ({
   lead,
   npmDataLoadingState,
 }) => {
+  const heightClasses = classnames({
+    'md:h-[250px] lg:h-[280px] xl:h-[250px]': npmDataLoadingState === 'loaded',
+    'md:h-[230px] lg:h-[260px] xl:h-[230px]': npmDataLoadingState !== 'loaded',
+  });
+
   return (
     <div className="border-2 hover:border-gray-500" data-testid={`plugin-${slug}`}>
       <Link
@@ -70,7 +83,7 @@ const ListItem = ({
         conversionEventName={CONVERSION_EVENTS.PAGE_VIEW_1}
         conversionEventParams={{ slug }}
       >
-        <div className="flex flex-col justify-between md:h-[250px] lg:h-[280px] xl:h-[250px]">
+        <div className={classnames('flex flex-col justify-between', heightClasses)}>
           <div>
             <div className="flex p-4 mb-2">
               <div className="mr-4">
@@ -90,9 +103,7 @@ const ListItem = ({
             <p className="px-4 text-sm mb-4 text-gray-600">{lead}</p>
           </div>
 
-          <div className="px-2 pt-2 mb-2 border-t-2">
-            <FooterInner npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
-          </div>
+          <FooterInner npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
         </div>
       </Link>
     </div>

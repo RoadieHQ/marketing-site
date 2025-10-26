@@ -15,19 +15,29 @@ const Select = ({
   valueKey = 'value',
   optionIdPrefix = '',
   name,
+  disabled = false,
 }) => {
   const inputRef = useRef(null)
   const { accent, border, background, text } = INPUT_COLORS[color];
-  const btnClass = `w-full rounded-md shadow-sm py-3 px-4 text-left border ${background} ${text} ${accent} ${border}`;
+  const btnClass = classnames(
+    'w-full rounded-md shadow-sm py-3 px-4 text-left border',
+    background,
+    text,
+    accent,
+    border,
+    {
+      'opacity-50 cursor-not-allowed': disabled,
+    }
+  );
 
   const openSelect = () => {
-    if (inputRef.current) {
+    if (inputRef.current && !disabled) {
       inputRef.current.click();   // click the button to open the select
     }
   }
 
   return (
-    <Listbox value={value[valueKey]} onChange={onChange}>
+    <Listbox value={value[valueKey]} onChange={onChange} disabled={disabled}>
       {({ open }) => (
         <div className="relative w-full">
           <ListboxButton
@@ -47,6 +57,7 @@ const Select = ({
               aria-label="Open select input"
               tabIndex={-1}
               type="button"
+              disabled={disabled}
             >
               <ChevronDownIcon className="h-5 w-5" />
             </button>
