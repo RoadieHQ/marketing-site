@@ -95,7 +95,7 @@ const learn = [{
   }, {
     name: 'Backstage Scaffolder Actions',
     description: 'Descriptions, schemas and usage examples.',
-    to: '/backstage/plugins/',
+    to: '/backstage/scaffolder-actions/',
     icon: CodeIcon,
   }, {
     name: 'Backstage Bites',
