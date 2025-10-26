@@ -586,7 +586,7 @@ describe('Link', () => {
         expect(navigate).toHaveBeenCalledTimes(1);
       });
 
-      test('fallback timeout is cleared when gtag callback fires normally', async () => {
+      test('fallback timeout is cleared when gtag callback fires normally', () => {
         const route = '/';
         const source = createMemorySource(route);
         const history = createHistory(source);
