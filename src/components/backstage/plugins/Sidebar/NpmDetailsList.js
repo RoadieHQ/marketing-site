@@ -15,16 +15,16 @@ const DetailsListItem = ({ label, value, ...props }) => {
   );
 };
 
-const DownloadCountListItem = ({ npmData }) => {
-  const { downloadCount, downloadCountPeriod } = npmData;
+const DownloadCountListItem = ({ packageData }) => {
+  const { downloadCount, downloadCountPeriod } = packageData;
   if (downloadCountPeriod === 'THIS_YEAR') {
     return <DetailsListItem label="Downloads this year" value={downloadCount} />;
   }
   return <DetailsListItem label="Downloads in last month" value={downloadCount} />;
 };
 
-const FirstPublishedListItem = ({ npmData }) => {
-  const { firstPublishedAgo, firstPublishedTime } = npmData;
+const FirstPublishedListItem = ({ packageData }) => {
+  const { firstPublishedAgo, firstPublishedTime } = packageData;
   if (!firstPublishedTime) {
     return <DetailsListItem label="First published" value="Unknown" />;
   }
@@ -38,8 +38,8 @@ const FirstPublishedListItem = ({ npmData }) => {
   );
 }
 
-const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
-  if (npmDataLoadingState === 'error') return null;
+const NpmDetailsList = ({ packageData, packageDataLoadingState }) => {
+  if (packageDataLoadingState === 'error') return null;
   const {
     latestVersion,
     latestVersionPublishedAgo,
@@ -48,23 +48,23 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
     license,
     lastSyncedTime,
     lastSyncedAgo,
-  } = npmData;
+  } = packageData;
   let inner;
   
 
-  if (npmDataLoadingState === 'loaded') {
+  if (packageDataLoadingState === 'loaded') {
     inner = (
       <div>
         <ul className="mb-3">
           <DetailsListItem label="Version" value={latestVersion} />
-          <DownloadCountListItem npmData={npmData} />
+          <DownloadCountListItem packageData={packageData} />
           <DetailsListItem
             label="Last published"
             value={latestVersionPublishedAgo}
             title={latestVersionPublishedTime}
           />
           <DetailsListItem label="Number of versions" value={numberOfVersions} />
-          <FirstPublishedListItem npmData={npmData} />
+          <FirstPublishedListItem packageData={packageData} />
           <DetailsListItem label="License" value={license} />
         </ul>
 

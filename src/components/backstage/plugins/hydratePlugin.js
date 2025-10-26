@@ -5,7 +5,7 @@ const hydratePlugin = (plugin, packageData) => {
   const packageInfo = pluginPackageNameForStats(plugin);
 
   if (!packageInfo) {
-    plugin.npmData = {};
+    plugin.packageData = {};
     plugin.packageRegistry = null;
     return plugin;
   }
@@ -15,12 +15,12 @@ const hydratePlugin = (plugin, packageData) => {
   console.log('date', packageData.latestVersionPublishedTime);
 
   if (pluginPackageData) {
-    plugin.npmData = {
+    plugin.packageData = {
       ...pick(pluginPackageData, ['downloadCount', 'downloadCountPeriod']),
       latestVersionPublishedTime: new Date(Date.parse(pluginPackageData.latestVersionPublishedTime)),
     };
   } else {
-    plugin.npmData = {};
+    plugin.packageData = {};
   }
 
   // Store registry info for later use in components

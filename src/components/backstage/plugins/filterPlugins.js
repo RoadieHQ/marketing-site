@@ -6,7 +6,7 @@ const filterPlugins = ({
   query,
   sortOrder,
   category,
-  npmDataLoadingState,
+  packageDataLoadingState,
 }) => {
   let filteredPlugins = [];
   if (query === '') {
@@ -26,13 +26,13 @@ const filterPlugins = ({
     });
   }
 
-  if (npmDataLoadingState === 'loaded') {
+  if (packageDataLoadingState === 'loaded') {
     if (sortOrder.value === 'name') {
       filteredPlugins = sortBy(filteredPlugins, ['humanName']);
     } else if (sortOrder.value === 'popularity') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.downloadCount']).reverse();
+      filteredPlugins = sortBy(filteredPlugins, ['packageData.downloadCount']).reverse();
     } else if (sortOrder.value === 'recent') {
-      filteredPlugins = sortBy(filteredPlugins, ['npmData.latestVersionPublishedTime']).reverse();
+      filteredPlugins = sortBy(filteredPlugins, ['packageData.latestVersionPublishedTime']).reverse();
     }
   }
 

@@ -43,8 +43,8 @@ const BackstagePlugins = ({ data, location }) => {
 
   const [query, setQuery] = useState(queryParam || '');
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
-  const [npmData, setPackageData] = useState({});
-  const [npmDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
+  const [packageData, setPackageData] = useState({});
+  const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
   const initialCategory = pluginCategories.edges
     .map(({ node }) => node)
     .find(({ searchParam }) => searchParam === categoryParam);
@@ -93,7 +93,7 @@ const BackstagePlugins = ({ data, location }) => {
   };
 
   const allPluginsCount = plugins.edges.length;
-  const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, npmData));
+  const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, packageData));
   console.log('hydratePlugin', { ...find(hydratedPlugins, { slug: 'terraform-provider' }) });
 
   const filteredPlugins = filterPlugins({
@@ -101,7 +101,7 @@ const BackstagePlugins = ({ data, location }) => {
     query,
     sortOrder,
     category,
-    npmDataLoadingState,
+    packageDataLoadingState,
   });
 
   let seoTitle = `Backstage Plugins Directory - All plugins | ${title}`;
@@ -162,11 +162,11 @@ const BackstagePlugins = ({ data, location }) => {
 
               <Field
                 className="text-right w-full flex items-center justify-end"
-                disabled={npmDataLoadingState !== 'loaded'}
+                disabled={packageDataLoadingState !== 'loaded'}
               >
                 <Label
                   className={classnames('mr-2 whitespace-nowrap', {
-                    'text-gray-400': npmDataLoadingState !== 'loaded',
+                    'text-gray-400': packageDataLoadingState !== 'loaded',
                   })}
                 >
                   Sort by:
@@ -179,7 +179,7 @@ const BackstagePlugins = ({ data, location }) => {
                     options={SORT_ORDERS}
                     name="sort-order"
                     optionKey="label"
-                    disabled={npmDataLoadingState !== 'loaded'}
+                    disabled={packageDataLoadingState !== 'loaded'}
                     showIcon={true}
                   />
                 </div>
@@ -204,7 +204,7 @@ const BackstagePlugins = ({ data, location }) => {
                 key={slug}
                 slug={slug}
                 {...plugin}
-                npmDataLoadingState={npmDataLoadingState}
+                packageDataLoadingState={packageDataLoadingState}
               />
             ))}
           </div>

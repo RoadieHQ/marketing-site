@@ -10,8 +10,8 @@ import Attribution from './Attribution';
 import Logo from './Logo';
 import { CONVERSION_EVENTS } from '../../../google-analytics/trackGoogleAnalyticsEvent';
 
-const DownloadCount = ({ npmData }) => {
-  const { downloadCount, downloadCountPeriod } = npmData;
+const DownloadCount = ({ packageData }) => {
+  const { downloadCount, downloadCountPeriod } = packageData;
   if (!downloadCount) return null;
   let textPeriod = 'monthly downloads';
   if (downloadCountPeriod === 'THIS_YEAR') {
@@ -27,12 +27,12 @@ const DownloadCount = ({ npmData }) => {
   );
 };
 
-const FooterInner = ({ npmData, npmDataLoadingState }) => {
-  const { latestVersionPublishedTime } = npmData;
-  if (npmDataLoadingState === 'error') return null;
+const FooterInner = ({ packageData, packageDataLoadingState }) => {
+  const { latestVersionPublishedTime } = packageData;
+  if (packageDataLoadingState === 'error') return null;
 
   let inner;
-  if (npmDataLoadingState === 'loaded') {
+  if (packageDataLoadingState === 'loaded') {
     inner = (
       <div className="flex justify-between text-xs text-gray-500">
         {latestVersionPublishedTime && (
@@ -44,7 +44,7 @@ const FooterInner = ({ npmData, npmDataLoadingState }) => {
           </div>
         )}
 
-        <DownloadCount npmData={npmData} />
+        <DownloadCount packageData={packageData} />
       </div>
     );
   } else {
@@ -74,13 +74,13 @@ const ListItem = ({
   logoImage,
   humanName,
   attributionText: text,
-  npmData,
+  packageData,
   lead,
-  npmDataLoadingState,
+  packageDataLoadingState,
 }) => {
   const heightClasses = classnames({
-    'md:h-[250px] lg:h-[280px] xl:h-[250px]': npmDataLoadingState === 'loaded',
-    'md:h-[230px] lg:h-[260px] xl:h-[230px]': npmDataLoadingState !== 'loaded',
+    'md:h-[250px] lg:h-[280px] xl:h-[250px]': packageDataLoadingState === 'loaded',
+    'md:h-[230px] lg:h-[260px] xl:h-[230px]': packageDataLoadingState !== 'loaded',
   });
 
   return (
@@ -111,7 +111,7 @@ const ListItem = ({
             <p className="px-4 text-sm mb-4 text-gray-600">{lead}</p>
           </div>
 
-          <FooterInner npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+          <FooterInner packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
         </div>
       </Link>
     </div>

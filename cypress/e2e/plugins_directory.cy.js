@@ -11,7 +11,7 @@ describe('Plugins directory', () => {
 
   describe('list page', () => {
     const netlifyFnPath = '/.netlify/functions/fetchPackageDataForList';
-    const npmData = {
+    const packageData = {
       data: {
         '@roadiehq/rag-ai': {
           latestVersionPublishedTime: '2025-09-29T07:47:32.822Z',
@@ -30,7 +30,7 @@ describe('Plugins directory', () => {
     beforeEach(() => {
       cy.intercept('GET', `${BASE_URL}${netlifyFnPath}`, {
         statusCode: 200,
-        body: npmData,
+        body: packageData,
       }).as('fetchPackageData');
     });
 
@@ -189,7 +189,7 @@ describe('Plugins directory', () => {
   });
 
   describe('show page', () => {
-    const npmData = {
+    const packageData = {
       _id: '@roadiehq/backstage-plugin-argo-cd',
       _rev: '146-56e841ce37f8b7cfbaf7f6a070ef29e1',
       name: '@roadiehq/backstage-plugin-argo-cd',
@@ -238,23 +238,23 @@ describe('Plugins directory', () => {
     const netlifyFnPath = '/.netlify/functions/fetchPackageDataByName';
 
     it('renders NPM info', () => {
-      cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
+      cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${packageData.name}`, {
         statusCode: 200,
         body: {
-          data: npmData,
+          data: packageData,
         },
       }).as('fetchPackageData');
 
       cy.visit('/backstage/plugins/argo-cd/');
 
       cy.wait('@fetchPackageData').then(() => {
-        cy.get('#npm-detail-version').contains(npmData.latestVersion);
+        cy.get('#npm-detail-version').contains(packageData.latestVersion);
         cy.get('#npm-detail-last-published').contains('25 days ago');
       });
     });
 
     it('should not show the NPM panels but should show the rest of the content', () => {
-      cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
+      cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${packageData.name}`, {
         statusCode: 500,
       }).as('fetchPackageData');
 

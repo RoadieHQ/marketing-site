@@ -26,8 +26,8 @@ const Category = ({ plugin }) => {
 
 const Sidebar = ({ plugin, pageSections }) => {
   const { packageName } = pluginPackageNameForStats(plugin);
-  const [npmData, setPackageData] = useState({});
-  const [npmDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
+  const [packageData, setPackageData] = useState({});
+  const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
   useEffect(() => {
     (async () => {
@@ -43,10 +43,10 @@ const Sidebar = ({ plugin, pageSections }) => {
   return (
     <>
       <SidebarTableOfContents content={plugin} pageSections={pageSections} />
-      <NpmDetailsList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+      <NpmDetailsList packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
       <Links plugin={plugin} />
       <Category plugin={plugin} />
-      <MaintainersList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+      <MaintainersList packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
 
       <div className="p-6 bg-gray-700 rounded-lg sticky top-10">
         <p className="text-white text-base mb-3">
