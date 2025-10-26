@@ -556,7 +556,7 @@ describe('Link', () => {
         jest.useRealTimers();
       });
 
-      test('fallback timeout triggers navigation if gtag callback never fires', async () => {
+      test('fallback timeout triggers navigation if gtag callback never fires', () => {
         const route = '/';
         const source = createMemorySource(route);
         const history = createHistory(source);
