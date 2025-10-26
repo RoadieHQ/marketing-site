@@ -135,12 +135,14 @@ const BackstagePlugins = ({ data, location }) => {
               </div>
 
               <Field
-                className={classnames('text-right w-full flex items-center justify-end', {
-                  visible: npmDataLoadingState === 'loaded',
-                  invisible: npmDataLoadingState !== 'loaded',
-                })}
+                className="text-right w-full flex items-center justify-end"
+                disabled={npmDataLoadingState !== 'loaded'}
               >
-                <Label className="mr-2 whitespace-nowrap">
+                <Label
+                  className={classnames('mr-2 whitespace-nowrap', {
+                    'text-gray-400': npmDataLoadingState !== 'loaded',
+                  })}
+                >
                   Sort by:
                 </Label>
 
@@ -151,7 +153,7 @@ const BackstagePlugins = ({ data, location }) => {
                     options={SORT_ORDERS}
                     name="sort-order"
                     optionKey="label"
-                    disabled={npmDataLoadingState === 'error'}
+                    disabled={npmDataLoadingState !== 'loaded'}
                   />
                 </div>
               </Field>
