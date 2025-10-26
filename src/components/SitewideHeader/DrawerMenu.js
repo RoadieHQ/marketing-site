@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Popover, Transition } from '@headlessui/react';
+import { Transition, PopoverPanel } from '@headlessui/react';
 import {
   CodeIcon,
   BookOpenIcon,
@@ -7,7 +7,6 @@ import {
   AcademicCapIcon,
   PlusCircleIcon,
   NewspaperIcon,
-  BriefcaseIcon,
   CheckCircleIcon,
   LockClosedIcon,
 } from '@heroicons/react/outline';
@@ -16,63 +15,60 @@ import MobileFreeTrialButton from './MobileFreeTrialButton';
 import MobileDropdownNavItem from './MobileDropdownNavItem';
 import DrawerMenuHeader from './DrawerMenuHeader';
 
-const subItems = [
-  {
+const subItems = [{
+  category: 'Product',
+  items: [{
     name: 'Roadie’s Catalog: software, teams & resources',
     to: '/product/catalog/',
     icon: NewspaperIcon,
-  },
-  {
+  }, {
     name: 'Roadie’s Scaffolder: create and expand',
     to: '/product/scaffolder/',
     icon: PlusCircleIcon,
-  },
-  {
+  }, {
     name: 'Tech Docs: centralized yet distributed',
     to: '/product/documentation/',
     icon: BookOpenIcon,
-  },
-  {
+  }, {
     name: 'Tech Insights: Scorecards for Backstage',
     to: '/product/tech-insights/',
     icon: CheckCircleIcon,
-  },
-  {
+  }, {
     name: 'Access Control: fine-grained control of your catalog',
     to: '/product/access-control/',
     icon: LockClosedIcon,
-  },
-  {
-    name: 'Backstage Plugins Directory',
-    to: '/backstage/plugins/',
-    icon: CodeIcon,
-  },
-  {
-    name: 'Backstage Weekly Newsletter',
-    to: '/backstage-weekly/',
-    icon: NewspaperIcon,
-  },
-  {
+  }],
+}, {
+  category: 'Roadie',
+  items: [{
     name: 'Blog',
     to: '/blog/',
     icon: BookOpenIcon,
-  },
-  {
+  }, {
     name: 'Case Studies',
     to: '/case-studies/',
     icon: ShieldCheckIcon,
-  },
-  {
+  }, {
     name: 'Documentation',
     to: '/docs/',
     icon: AcademicCapIcon,
-  },
-  {
-    name: 'Careers',
-    to: 'https://careers.roadie.io',
-    icon: BriefcaseIcon,
-  },
-];
+  }],
+}, {
+  category: 'Backstage',
+  items: [{
+    name: 'Backstage Weekly Newsletter',
+    to: '/backstage-weekly/',
+    icon: NewspaperIcon,
+  }, {
+    name: 'Backstage Plugins Directory',
+    to: '/backstage/plugins/',
+    icon: CodeIcon,
+  }, {
+    name: 'Backstage Scaffolder Actions',
+    to: '/backstage/scaffolder-actions/',
+    icon: CodeIcon,
+  }],
+}];
 
 const DrawerMenu = () => (
   <Transition
@@ -84,7 +80,7 @@ const DrawerMenu = () => (
     leaveFrom="opacity-100 scale-100"
     leaveTo="opacity-0 scale-95"
   >
-    <Popover.Panel
+    <PopoverPanel
       focus
       className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-20"
     >
@@ -93,9 +89,18 @@ const DrawerMenu = () => (
           <DrawerMenuHeader />
 
           <div className="mt-6">
-            <nav className="grid gap-y-8">
-              {subItems.map((item) => (
-                <MobileDropdownNavItem item={item} key={item.name} />
+            <nav className="space-y-6">
+              {subItems.map((categoryGroup) => (
+                <div key={categoryGroup.category}>
+                  <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+                    {categoryGroup.category}
+                  </h3>
+                  <div className="grid gap-y-6">
+                    {categoryGroup.items.map((item) => (
+                      <MobileDropdownNavItem item={item} key={item.name} />
+                    ))}
+                  </div>
+                </div>
               ))}
             </nav>
           </div>
@@ -107,7 +112,7 @@ const DrawerMenu = () => (
           </div>
         </div>
       </div>
-    </Popover.Panel>
+    </PopoverPanel>
   </Transition>
 );
 

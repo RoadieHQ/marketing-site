@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popover } from '@headlessui/react';
+import { Popover, PopoverGroup } from '@headlessui/react';
 import classnames from 'classnames';
 import {
   CodeIcon,
@@ -57,50 +57,53 @@ const features = [
   },
 ];
 
-const learn = [
-  {
-    name: 'Backstage Bites',
-    description: 'Short videos to teach Backstage concepts.',
-    to: '/backstage-bites/',
-    icon: PlayIcon,
-  },
-  {
-    name: 'Backstage Plugins',
-    description: 'Browse our Backstage plugin marketplace.',
-    to: '/backstage/plugins/',
-    icon: CodeIcon,
-  },
-  {
-    name: 'Backstage Weekly',
-    description: 'Read our weekly Backstage newsletter.',
-    to: '/backstage-weekly/',
-    icon: NewspaperIcon,
-  },
-  {
+const learn = [{
+  category: 'Roadie',
+  items: [{
     name: 'Blog',
-    description: 'Read our posts on Backstage and Roadie.',
+    description: 'New features and thoughts on IDPs.',
     to: '/blog/',
     icon: BookOpenIcon,
-  },
-  {
+  }, {
     name: 'Case Studies',
-    description: 'How organisations succeed with Backstage',
+    description: 'Learn how our customers use Roadie.',
     to: '/case-studies/',
     icon: ShieldCheckIcon,
-  },
-  {
+  }, {
+    name: 'Documentation',
+    description: 'Set up your Roadie Backstage quickly.',
+    to: '/docs/',
+    icon: AcademicCapIcon,
+  }, {
     name: 'Chat with us on Discord',
     description: 'Get support or provide feedback.',
     to: 'https://discord.gg/W3qEMhmx4f',
     icon: ChatIcon,
-  },
-  {
-    name: 'Documentation',
-    description: 'Set up your Roadie Backstage experience.',
-    to: '/docs/',
-    icon: AcademicCapIcon,
-  },
-];
+  }],
+}, {
+  category: 'Backstage',
+  items: [{
+    name: 'Backstage Weekly',
+    description: 'Stay up to date with the latest news.',
+    to: '/backstage-weekly/',
+    icon: NewspaperIcon,
+  }, {
+    name: 'Backstage Plugins',
+    description: 'Installation instructions, changelogs & data.',
+    to: '/backstage/plugins/',
+    icon: CodeIcon,
+  }, {
+    name: 'Backstage Scaffolder Actions',
+    description: 'Descriptions, schemas and usage examples.',
+    to: '/backstage/plugins/',
+    icon: CodeIcon,
+  }, {
+    name: 'Backstage Bites',
+    description: 'Short videos to teach Backstage concepts.',
+    to: '/backstage-bites/',
+    icon: PlayIcon,
+  }],
+}];
 
 const SitewideHeader = ({
   maxWidth = '7xl',
@@ -130,12 +133,12 @@ const SitewideHeader = ({
             <OpenMenuButton />
           </div>
 
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
+          <PopoverGroup as="nav" className="hidden md:flex space-x-10">
             <TopNavDropdownItem text="Product" subItems={features} />
             <TopNavItem to="/backstage-comparison/" text="Roadie vs Backstage" />
             <TopNavItem to="/pricing/" text="Pricing" />
             <TopNavDropdownItem text="Resources" subItems={learn} />
-          </Popover.Group>
+          </PopoverGroup>
 
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <Button link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
