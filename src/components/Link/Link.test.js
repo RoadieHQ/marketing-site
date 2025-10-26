@@ -661,7 +661,7 @@ describe('Link', () => {
         expect(navigate).toHaveBeenCalledTimes(1);
       });
 
-      test('fallback timeout respects custom timeout value', async () => {
+      test('fallback timeout respects custom timeout value', () => {
         const route = '/';
         const source = createMemorySource(route);
         const history = createHistory(source);
