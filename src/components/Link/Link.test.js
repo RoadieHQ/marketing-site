@@ -620,7 +620,7 @@ describe('Link', () => {
         expect(navigate).toHaveBeenCalledTimes(1);
       });
 
-      test('navigation only happens once even if both mechanisms try to fire', async () => {
+      test('navigation only happens once even if both mechanisms try to fire', () => {
         const route = '/';
         const source = createMemorySource(route);
         const history = createHistory(source);
