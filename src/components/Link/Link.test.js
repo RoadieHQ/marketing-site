@@ -545,5 +545,153 @@ describe('Link', () => {
         });
       });
     });
+
+    describe('fallback timeout handling', () => {
+      beforeEach(() => {
+        jest.useFakeTimers();
+      });
+
+      afterEach(() => {
+        jest.runOnlyPendingTimers();
+        jest.useRealTimers();
+      });
+
+      test('fallback timeout triggers navigation if gtag callback never fires', () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        // Mock gtag to never call the callback (simulating failure)
+        googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation(() => {
+          // Do nothing - callback never fires
+        });
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog" conversionEventTimeout={1000}>
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        fireEvent.click(link);
+
+        expect(navigate).not.toHaveBeenCalled();
+
+        // Fast-forward time to just after the fallback timeout (1000 + 100 = 1100ms)
+        jest.advanceTimersByTime(1100);
+
+        expect(navigate).toHaveBeenCalledWith('/blog/');
+        expect(navigate).toHaveBeenCalledTimes(1);
+      });
+
+      test('fallback timeout is cleared when gtag callback fires normally', () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        // Mock gtag to call the callback immediately (normal behavior)
+        googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((eventName, params) => {
+          if (params.event_callback) {
+            params.event_callback();
+          }
+        });
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog" conversionEventTimeout={1000}>
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        fireEvent.click(link);
+
+        // GA callback should have triggered navigation immediately
+        expect(navigate).toHaveBeenCalledWith('/blog/');
+        expect(navigate).toHaveBeenCalledTimes(1);
+
+        // Fast-forward past the fallback timeout
+        jest.advanceTimersByTime(1100);
+
+        // Navigation should still only have been called once (fallback was cleared)
+        expect(navigate).toHaveBeenCalledTimes(1);
+      });
+
+      test('navigation only happens once even if both mechanisms try to fire', () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        let storedCallback;
+
+        // Mock gtag to store the callback but delay calling it
+        googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((eventName, params) => {
+          if (params.event_callback) {
+            storedCallback = params.event_callback;
+          }
+        });
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog" conversionEventTimeout={1000}>
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        fireEvent.click(link);
+
+        expect(navigate).not.toHaveBeenCalled();
+
+        // Simulate gtag calling the callback after a delay
+        jest.advanceTimersByTime(500);
+        storedCallback();
+
+        expect(navigate).toHaveBeenCalledWith('/blog/');
+        expect(navigate).toHaveBeenCalledTimes(1);
+
+        // Fast-forward past when the fallback would have fired
+        jest.advanceTimersByTime(700);
+
+        // Navigation should still only have been called once
+        expect(navigate).toHaveBeenCalledTimes(1);
+      });
+
+      test('fallback timeout respects custom timeout value', () => {
+        const route = '/';
+        const source = createMemorySource(route);
+        const history = createHistory(source);
+
+        // Mock gtag to never call the callback (simulating failure)
+        googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation(() => {
+          // Do nothing - callback never fires
+        });
+
+        render(
+          <LocationProvider history={history}>
+            <Link to="/blog/" conversionEventName="view_blog" conversionEventTimeout={500}>
+              Blog
+            </Link>
+          </LocationProvider>
+        );
+
+        const link = screen.getByRole('link');
+        fireEvent.click(link);
+
+        expect(navigate).not.toHaveBeenCalled();
+
+        // Fast-forward to just before fallback timeout (500 + 100 = 600ms)
+        jest.advanceTimersByTime(599);
+        expect(navigate).not.toHaveBeenCalled();
+
+        // Advance the final millisecond to trigger the fallback
+        jest.advanceTimersByTime(1);
+        expect(navigate).toHaveBeenCalledWith('/blog/');
+      });
+    });
   });
 });
