@@ -72,7 +72,7 @@ const getRoadieStore = ({
       const store = getDeployStore({ name });
       logConnectionSuccess(name, true);
       return store;
-    } catch(err) {
+    } catch (err) {
       if (err.name === 'MissingBlobsEnvironmentError') {
         logAuthFallback(name, true);
         return getDeployStore({
@@ -91,7 +91,7 @@ const getRoadieStore = ({
     const store = getStore(opts);
     logConnectionSuccess(name, false);
     return store;
-  } catch(err) {
+  } catch (err) {
     if (err.name === 'MissingBlobsEnvironmentError') {
       logAuthFallback(name, false);
       opts.token = process.env.NETLIFY_API_TOKEN;
