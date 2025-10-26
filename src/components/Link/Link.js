@@ -104,12 +104,27 @@ const Link = ({
     // For normal clicks, prevent default and track with callback
     e.preventDefault();
 
-    const callback = () => {
+    let hasNavigated = false;
+
+    const performNavigation = () => {
+      if (hasNavigated) return;
+      hasNavigated = true;
+
       if (isRelativeTo(to)) {
         navigate(to);
       } else {
         window.location.href = to;
       }
+    };
+
+    // Manual fallback timeout - guarantees navigation even if gtag fails completely
+    // This is especially important for Firefox for Android where gtag's event_timeout
+    // may not work reliably in production builds
+    const fallbackTimeout = setTimeout(performNavigation, conversionEventTimeout + 100);
+
+    const callback = () => {
+      clearTimeout(fallbackTimeout);
+      performNavigation();
     };
 
     trackGoogleAnalyticsEvent(conversionEventName, {
