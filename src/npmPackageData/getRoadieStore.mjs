@@ -71,16 +71,18 @@ const getRoadieStore = ({
   // Use getDeployStore for deploy previews (automatic isolation per deploy)
   if (isDeployPreview) {
     try {
-      const store = getDeployStore({
-        name,
-        token: process.env.NETLIFY_API_TOKEN,
-        deployID: process.env.DEPLOY_ID
-      });
+      const store = getDeployStore({ name });
       logConnectionSuccess(name, true);
       return store;
     } catch (err) {
       if (err.name === 'MissingBlobsEnvironmentError') {
         logAuthFallback(name, true);
+        return getDeployStore({
+          name,
+          siteID,
+          token: process.env.NETLIFY_API_TOKEN,
+          deployID: process.env.DEPLOY_ID
+        });
       }
       throw err;
     }
