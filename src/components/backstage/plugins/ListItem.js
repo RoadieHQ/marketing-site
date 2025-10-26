@@ -70,10 +70,10 @@ const ListItem = ({
   lead,
   npmDataLoadingState,
 }) => {
-  const mdH = npmDataLoadingState === 'loaded' ? 250 : 230;
-  const lgH = npmDataLoadingState === 'loaded' ? 280 : 260;
-  const xlH = npmDataLoadingState === 'loaded' ? 250 : 230;
-  const heightClasses = `md:h-[${mdH}px] lg:h-[${lgH}px] xl:h-[${xlH}px]`;
+  const heightClasses = classnames({
+    'md:h-[250px] lg:h-[280px] xl:h-[250px]': npmDataLoadingState === 'loaded',
+    'md:h-[230px] lg:h-[260px] xl:h-[230px]': npmDataLoadingState !== 'loaded',
+  });
 
   return (
     <div className="border-2 hover:border-gray-500" data-testid={`plugin-${slug}`}>
