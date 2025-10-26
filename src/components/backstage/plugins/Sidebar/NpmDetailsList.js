@@ -72,7 +72,7 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
           className="flex justify-between text-gray-400"
           title={lastSyncedTime}
         >
-          <span className="italic">Last synced with NPM:</span>
+          <span className="italic">Last synced:</span>
           <span>{lastSyncedAgo}</span>
         </div>
       </div>
