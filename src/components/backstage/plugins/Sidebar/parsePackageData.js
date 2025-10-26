@@ -2,7 +2,7 @@ import get from 'lodash/get';
 import pick from 'lodash/pick';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 
-const parseNpmData = (npmData) => {
+const parsePackageData = (npmData) => {
   const latestVersionPublishedTime = get(npmData, `time['${npmData.latestVersion}']`);
   const firstPublishedTime = get(npmData, 'time.created');
   const lastSyncedTime = npmData.roadieLastUpdated;
@@ -43,4 +43,4 @@ const parseNpmData = (npmData) => {
   };
 };
 
-export default parseNpmData;
+export default parsePackageData;

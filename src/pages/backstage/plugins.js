@@ -43,8 +43,8 @@ const BackstagePlugins = ({ data, location }) => {
 
   const [query, setQuery] = useState(queryParam || '');
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
-  const [npmData, setNpmData] = useState({});
-  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const [npmData, setPackageData] = useState({});
+  const [npmDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
   const initialCategory = pluginCategories.edges
     .map(({ node }) => node)
     .find(({ searchParam }) => searchParam === categoryParam);
@@ -52,12 +52,12 @@ const BackstagePlugins = ({ data, location }) => {
 
   useEffect(() => {
     (async () => {
-      setNpmDataLoadingState('loading');
+      setPackageDataLoadingState('loading');
       const { status, data } = await fetchPackageDataForList();
       console.log('all data', data['datolabs-io/backstage']);
       console.log('data', { ...find(data, { slug: 'terraform-provider' }) });
-      setNpmDataLoadingState(status);
-      setNpmData(data);
+      setPackageDataLoadingState(status);
+      setPackageData(data);
     })();
   }, []);
 

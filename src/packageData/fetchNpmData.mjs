@@ -110,7 +110,7 @@ export const fetchMultipleNpmPackages = async (packageNames) => {
     );
   }
 
-  const strippedNpmData = npmData
+  const strippedPackageData = npmData
     .map((data) => stripPackageData(data))
     .map((data) => {
       const statsDataForPackage = find(statsData, { package: data.name });
@@ -121,7 +121,7 @@ export const fetchMultipleNpmPackages = async (packageNames) => {
       return data;
     });
 
-  return strippedNpmData;
+  return strippedPackageData;
 };
 
 export default fetchNpmPackage;

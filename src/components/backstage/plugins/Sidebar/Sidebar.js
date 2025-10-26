@@ -5,7 +5,7 @@ import { PAGE_PATHS } from '../../../../contactFormConstants';
 import MaintainersList from './MaintainersList';
 import NpmDetailsList from './NpmDetailsList';
 import Links from './Links';
-import parseNpmData from './parseNpmData';
+import parsePackageData from './parsePackageData';
 import fetchPackageDataByName from './fetchPackageDataByName';
 import pluginPackageNameForStats from '../../../../packageData/pluginPackageNameForStats.mjs';
 
@@ -26,17 +26,17 @@ const Category = ({ plugin }) => {
 
 const Sidebar = ({ plugin, pageSections }) => {
   const { packageName } = pluginPackageNameForStats(plugin);
-  const [npmData, setNpmData] = useState({});
-  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const [npmData, setPackageData] = useState({});
+  const [npmDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
   useEffect(() => {
     (async () => {
-      setNpmDataLoadingState('loading');
+      setPackageDataLoadingState('loading');
       const { status, data } = await fetchPackageDataByName({
         packageName,
       });
-      setNpmDataLoadingState(status);
-      setNpmData(parseNpmData(data));
+      setPackageDataLoadingState(status);
+      setPackageData(parsePackageData(data));
     })();
   }, [packageName]);
 
