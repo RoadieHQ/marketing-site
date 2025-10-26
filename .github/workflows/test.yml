@@ -9,6 +9,9 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [electron, firefox]
 
     env:
       CI: true
@@ -55,18 +58,19 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           start: yarn serve --port 8888
+          browser: ${{ matrix.browser }}
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots
+          name: cypress-screenshots-${{ matrix.browser }}
           path: cypress/screenshots
 
       - name: Upload videos
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos
+          name: cypress-videos-${{ matrix.browser }}
           path: cypress/videos
 
