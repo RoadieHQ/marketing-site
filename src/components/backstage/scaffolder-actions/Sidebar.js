@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckIcon } from '@heroicons/react/solid';
 import { Title, Chip, Button } from 'components';
 import { GitHubChip } from 'components/backstage/plugins';
 import RoadieDocsChip from 'components/backstage/RoadieDocsChip';
 import { PAGE_PATHS } from '../../../contactFormConstants';
+import NpmDetailsList from '../../backstage/plugins/Sidebar/NpmDetailsList';
+import MaintainersList from '../../backstage/plugins/Sidebar/MaintainersList';
+import parseNpmData from '../../backstage/plugins/Sidebar/parseNpmData';
+import fetchNpmDataByName from '../../backstage/plugins/Sidebar/fetchNpmDataByName';
+import scaffolderActionNpmPackageName from '../../../npmPackageData/scaffolderActionNpmPackageName.mjs';
 
 const Links = ({ action }) => {
   const { codeLocation } = action;
@@ -53,10 +58,32 @@ const Info = ({ action }) => {
 };
 
 const Sidebar = ({ action }) => {
+  const npmPackageName = scaffolderActionNpmPackageName(action);
+  const [npmData, setNpmData] = useState({});
+  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+
+  useEffect(() => {
+    if (!npmPackageName) {
+      setNpmDataLoadingState('error');
+      return;
+    }
+
+    (async () => {
+      setNpmDataLoadingState('loading');
+      const { status, data } = await fetchNpmDataByName({
+        packageName: npmPackageName,
+      });
+      setNpmDataLoadingState(status);
+      setNpmData(parseNpmData(data));
+    })();
+  }, [npmPackageName]);
+
   return (
     <>
+      <NpmDetailsList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
       <Links action={action} />
       <Info action={action} />
+      <MaintainersList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
 
       <div className="p-6 bg-gray-700 rounded-lg sticky top-10">
         <p className="text-white text-base mb-3">

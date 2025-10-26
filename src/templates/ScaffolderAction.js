@@ -73,6 +73,9 @@ export const pageQuery = graphql`
       codeLocation
       availableOnRoadie
       supportsDryRun
+      containedInPackage {
+        npmPackageName
+      }
     }
   }
 `;

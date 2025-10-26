@@ -141,6 +141,9 @@ export const SCAFFOLDER_ACTIONS_QUERY = `
     edges {
       node {
         slug
+        containedInPackage {
+          npmPackageName
+        }
       }
     }
   }
