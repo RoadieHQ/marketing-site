@@ -3,6 +3,7 @@ import isEmpty from 'lodash/isEmpty';
 import { Combobox, ComboboxInput, ComboboxOptions, ComboboxOption } from '@headlessui/react'
 import XIcon from '@heroicons/react/solid/XIcon'
 import ChevronDownIcon from '@heroicons/react/solid/ChevronDownIcon'
+import { CollectionIcon } from '@heroicons/react/outline';
 import { INPUT_COLORS } from './input-colors';
 
 export default function Typeahead({
@@ -18,7 +19,7 @@ export default function Typeahead({
   const inputRef = useRef(null)
 
   const { accent, border, placeholder, background, text } = INPUT_COLORS[color];
-  const inputClass = `w-full rounded-md shadow-sm py-3 px-4 text-left border ${background} ${text} ${accent} ${border} truncate overflow-hidden whitespace-nowrap`;
+  const inputClass = `w-full rounded-md shadow-sm py-3 pl-10 pr-4 text-left border ${background} ${text} ${accent} ${border} truncate overflow-hidden whitespace-nowrap`;
   const placeholderTextColor = placeholder.replace('placeholder-', '');
 
   const filteredOptions =
@@ -49,6 +50,9 @@ export default function Typeahead({
     >
       {({ open }) => (
         <div className="relative w-full">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <CollectionIcon className="h-5 w-5 text-gray-400" />
+          </div>
           <ComboboxInput
             className={inputClass}
             displayValue={(option) => option && option[optionKey]}

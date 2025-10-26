@@ -3,8 +3,9 @@ import { graphql, navigate } from 'gatsby';
 import classnames from 'classnames';
 import { Field, Label } from '@headlessui/react';
 import isEmpty from 'lodash/isEmpty';
+import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
 
-import { Typeahead, Page, SEO, Headline, Input, Lead, Select, TextLink as Link } from 'components';
+import { Typeahead, Page, SEO, Headline, Search, Lead, Select, TextLink as Link } from 'components';
 import {
   ListItem,
   fetchNpmDataForList,
@@ -15,12 +16,15 @@ import {
 const SORT_ORDERS = [{
   label: 'Name',
   value: 'name',
+  icon: IdentificationIcon,
 }, {
   label: 'Popularity',
   value: 'popularity',
+  icon: ChartBarIcon,
 }, {
   label: 'Recently Updated',
   value: 'recent',
+  icon: CalendarIcon,
 }];
 
 const BackstagePlugins = ({ data, location }) => {
@@ -34,8 +38,9 @@ const BackstagePlugins = ({ data, location }) => {
 
   const searchParams = new URLSearchParams(location.search);
   const categoryParam = searchParams.get('category');
+  const queryParam = searchParams.get('q');
 
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(queryParam || '');
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
   const [npmData, setNpmData] = useState({});
   const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
@@ -53,6 +58,13 @@ const BackstagePlugins = ({ data, location }) => {
     })();
   }, []);
 
+  useEffect(() => {
+    // Save search params to sessionStorage so we can restore them when returning from a plugin page
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('pluginsPageSearchParams', location.search);
+    }
+  }, [location.search]);
+
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
 
@@ -61,6 +73,18 @@ const BackstagePlugins = ({ data, location }) => {
       params.delete('category');
     } else {
       params.set('category', newCategory.searchParam);
+    }
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+  };
+
+  const handleQueryChange = (newQuery) => {
+    setQuery(newQuery);
+
+    const params = new URLSearchParams(location.search);
+    if (!newQuery || newQuery.trim() === '') {
+      params.delete('q');
+    } else {
+      params.set('q', newQuery);
     }
     navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   };
@@ -112,14 +136,12 @@ const BackstagePlugins = ({ data, location }) => {
             <div className="lg:flex lg:justify-between">
               <div className="sm:flex">
                 <div className="mb-4 lg:mb-0 sm:mr-4 w-full lg:w-72">
-                  <Input
-                    type="text"
+                  <Search
                     name="search"
-                    onChange={setQuery}
+                    onChange={handleQueryChange}
                     value={query}
                     aria-label="Search"
-                    placeholder="Search"
-                    fullWidth={true}
+                    placeholder="Filter"
                   />
                 </div>
 
@@ -154,6 +176,7 @@ const BackstagePlugins = ({ data, location }) => {
                     name="sort-order"
                     optionKey="label"
                     disabled={npmDataLoadingState !== 'loaded'}
+                    showIcon={true}
                   />
                 </div>
               </Field>
@@ -161,16 +184,27 @@ const BackstagePlugins = ({ data, location }) => {
           </div>
         </div>
 
-        <div className="pt-6 grid gap-4 md:gap-8 md:grid-cols-2 lg:gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-          {filteredPlugins.map(({ slug, ...plugin }) => (
-            <ListItem
-              key={slug}
-              slug={slug}
-              {...plugin}
-              npmDataLoadingState={npmDataLoadingState}
-            />
-          ))}
-        </div>
+        {filteredPlugins.length === 0 ? (
+          <div className="pt-6 text-center">
+            <p className="text-gray-600 text-lg">
+              No plugins match your filter settings.
+            </p>
+            <p className="text-gray-500 mt-2">
+              Try adjusting your search query or category filter.
+            </p>
+          </div>
+        ) : (
+          <div className="pt-6 grid gap-4 md:gap-8 md:grid-cols-2 lg:gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+            {filteredPlugins.map(({ slug, ...plugin }) => (
+              <ListItem
+                key={slug}
+                slug={slug}
+                {...plugin}
+                npmDataLoadingState={npmDataLoadingState}
+              />
+            ))}
+          </div>
+        )}
       </Page>
     </>
   );

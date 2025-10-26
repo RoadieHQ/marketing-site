@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Title } from 'components';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
-import InboxInIcon from '@heroicons/react/outline/InboxInIcon';
+import CalendarIcon from '@heroicons/react/outline/CalendarIcon';
 import ChartBarIcon from '@heroicons/react/outline/ChartBarIcon';
 import ContentLoader from 'react-content-loader';
 import classnames from 'classnames';
@@ -23,7 +23,7 @@ const FooterInner = ({
         {latestVersionPublishedTime && (
           <div title={latestVersionPublishedTime.toISOString()} className="flex mr-6">
             <span>
-              <InboxInIcon className="inline-block w-4 mr-1" />
+              <CalendarIcon className="inline-block w-4 mr-1" />
             </span>
             <span>Updated {formatDistanceToNowStrict(latestVersionPublishedTime)} ago</span>
           </div>
