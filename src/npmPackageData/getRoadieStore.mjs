@@ -66,6 +66,8 @@ const getRoadieStore = ({
   const context = process.env.CONTEXT;
   const isDeployPreview = context === 'deploy-preview';
 
+  console.log('Netlify data', process.env.CONTEXT, typeof process.env.NETLIFY_API_TOKEN, process.env.DEPLOY_ID);
+
   // Use getDeployStore for deploy previews (automatic isolation per deploy)
   if (isDeployPreview) {
     try {
