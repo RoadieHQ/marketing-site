@@ -79,7 +79,8 @@ const ListItem = ({
     <div className="border-2 hover:border-gray-500" data-testid={`plugin-${slug}`}>
       <Link
         to={`/backstage/plugins/${slug}/`}
-        className="underline-none"
+        className="underline-none cursor-pointer"
+        style={{ touchAction: 'manipulation' }}
         conversionEventName={CONVERSION_EVENTS.PAGE_VIEW_1}
         conversionEventParams={{ slug }}
       >
