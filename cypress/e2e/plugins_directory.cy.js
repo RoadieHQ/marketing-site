@@ -10,7 +10,7 @@ describe('Plugins directory', () => {
   });
 
   describe('list page', () => {
-    const netlifyFnPath = '/.netlify/functions/fetchNpmDataForList';
+    const netlifyFnPath = '/.netlify/functions/fetchPackageDataForList';
     const npmData = {
       data: {
         '@roadiehq/rag-ai': {
@@ -31,13 +31,13 @@ describe('Plugins directory', () => {
       cy.intercept('GET', `${BASE_URL}${netlifyFnPath}`, {
         statusCode: 200,
         body: npmData,
-      }).as('fetchNpmData');
+      }).as('fetchPackageData');
     });
 
     it('renders NPM info', () => {
       cy.visit('/backstage/plugins/');
 
-      cy.wait('@fetchNpmData').then(() => {
+      cy.wait('@fetchPackageData').then(() => {
         cy.get('div[data-testid="plugin-api-docs"]')
           .contains('14,550');
         cy.get('div[data-testid="plugin-api-docs"]')
@@ -235,7 +235,7 @@ describe('Plugins directory', () => {
       latestVersion: '2.11.0',
       roadieLastUpdated: '2025-09-22T12:45:23.839Z',
     };
-    const netlifyFnPath = '/.netlify/functions/fetchNpmDataByName';
+    const netlifyFnPath = '/.netlify/functions/fetchPackageDataByName';
 
     it('renders NPM info', () => {
       cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
@@ -243,11 +243,11 @@ describe('Plugins directory', () => {
         body: {
           data: npmData,
         },
-      }).as('fetchNpmData');
+      }).as('fetchPackageData');
 
       cy.visit('/backstage/plugins/argo-cd/');
 
-      cy.wait('@fetchNpmData').then(() => {
+      cy.wait('@fetchPackageData').then(() => {
         cy.get('#npm-detail-version').contains(npmData.latestVersion);
         cy.get('#npm-detail-last-published').contains('25 days ago');
       });
@@ -256,11 +256,11 @@ describe('Plugins directory', () => {
     it('should not show the NPM panels but should show the rest of the content', () => {
       cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
         statusCode: 500,
-      }).as('fetchNpmData');
+      }).as('fetchPackageData');
 
       cy.visit('/backstage/plugins/argo-cd/');
 
-      cy.wait('@fetchNpmData').then(() => {
+      cy.wait('@fetchPackageData').then(() => {
         cy.contains('Created by Roadie, in collaboration with American Airlines');
         cy.get('#npm-detail-last-published').should('not.exist');
       });
