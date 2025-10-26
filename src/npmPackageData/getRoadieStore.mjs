@@ -75,7 +75,11 @@ const getRoadieStore = ({
     } catch(err) {
       if (err.name === 'MissingBlobsEnvironmentError') {
         logAuthFallback(name, true);
-        return getDeployStore({ name, token: process.env.NETLIFY_API_TOKEN });
+        return getDeployStore({
+          name,
+          token: process.env.NETLIFY_API_TOKEN,
+          deployID: process.env.DEPLOY_ID
+        });
       }
       throw err;
     }
