@@ -80,7 +80,11 @@ const Sidebar = ({ action }) => {
 
   return (
     <>
-      <NpmDetailsList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+      <NpmDetailsList
+        npmData={npmData}
+        npmDataLoadingState={npmDataLoadingState}
+        title="Package details"
+      />
       <Links action={action} />
       <Info action={action} />
       <MaintainersList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />

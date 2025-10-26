@@ -38,7 +38,7 @@ const FirstPublishedListItem = ({ packageData }) => {
   );
 }
 
-const NpmDetailsList = ({ packageData, packageDataLoadingState }) => {
+const NpmDetailsList = ({ packageData, packageDataLoadingState, title = 'Package details' }) => {
   if (packageDataLoadingState === 'error') return null;
   const {
     latestVersion,
@@ -108,7 +108,7 @@ const NpmDetailsList = ({ packageData, packageDataLoadingState }) => {
   return (
     <div className="p-6 bg-gray-100 rounded-lg mb-6">
       <div className="mb-4">
-        <Title>Package details</Title>
+        <Title>{title}</Title>
       </div>
 
       {inner}
