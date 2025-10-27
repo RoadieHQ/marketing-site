@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import classnames from 'classnames';
 import { Field, Label } from '@headlessui/react';
 import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
@@ -34,7 +34,7 @@ const AVAILABILITY_FILTERS = [{
   checkedTextColor: 'text-white',
 }];
 
-const BackstageScaffolderActions = ({ data }) => {
+const BackstageScaffolderActions = ({ data, location }) => {
   const {
     actions,
     site: {
@@ -42,9 +42,16 @@ const BackstageScaffolderActions = ({ data }) => {
     },
   } = data;
 
-  const [query, setQuery] = useState('');
+  const searchParams = new URLSearchParams(location.search);
+  const queryParam = searchParams.get('q');
+  const availabilityParam = searchParams.get('availability');
+
+  const [query, setQuery] = useState(queryParam || '');
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
-  const [availabilityFilter, setAvailabilityFilter] = useState(AVAILABILITY_FILTERS[0]);
+  const initialAvailabilityFilter = AVAILABILITY_FILTERS.find(
+    filter => filter.value === availabilityParam
+  ) || AVAILABILITY_FILTERS[0];
+  const [availabilityFilter, setAvailabilityFilter] = useState(initialAvailabilityFilter);
   const [packageData, setPackageData] = useState({});
   const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
@@ -56,6 +63,37 @@ const BackstageScaffolderActions = ({ data }) => {
       setPackageData(data);
     })();
   }, []);
+
+  useEffect(() => {
+    // Save search params to sessionStorage so we can restore them when returning from an action page
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('actionsPageSearchParams', location.search);
+    }
+  }, [location.search]);
+
+  const handleQueryChange = (newQuery) => {
+    setQuery(newQuery);
+
+    const params = new URLSearchParams(location.search);
+    if (!newQuery || newQuery.trim() === '') {
+      params.delete('q');
+    } else {
+      params.set('q', newQuery);
+    }
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+  };
+
+  const handleAvailabilityFilterChange = (newFilter) => {
+    setAvailabilityFilter(newFilter);
+
+    const params = new URLSearchParams(location.search);
+    if (newFilter.value === 'all') {
+      params.delete('availability');
+    } else {
+      params.set('availability', newFilter.value);
+    }
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+  };
 
   const allActionsCount = actions.edges.length;
   const actionsList = actions.edges.map(({ node }) => node);
@@ -126,7 +164,7 @@ const BackstageScaffolderActions = ({ data }) => {
               <div className="mb-4 lg:mb-0 w-full lg:w-72">
                 <Search
                   name="search"
-                  onChange={setQuery}
+                  onChange={handleQueryChange}
                   value={query}
                   aria-label="Search"
                   placeholder="Filter"
@@ -137,7 +175,7 @@ const BackstageScaffolderActions = ({ data }) => {
                 <div className="w-full lg:w-auto">
                   <SegmentedControl
                     value={availabilityFilter}
-                    onChange={setAvailabilityFilter}
+                    onChange={handleAvailabilityFilterChange}
                     options={AVAILABILITY_FILTERS}
                     name="availability-filter"
                   />

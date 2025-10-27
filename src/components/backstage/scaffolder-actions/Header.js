@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ClipboardCopyIcon, CheckIcon } from '@heroicons/react/outline';
 import { Headline, Link } from 'components';
 
 const Header = ({ action }) => {
   const [copied, setCopied] = useState(false);
+  const [backLink, setBackLink] = useState('/backstage/scaffolder-actions/');
   const packageName = action.containedInPackage?.npmPackageName;
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedSearchParams = sessionStorage.getItem('actionsPageSearchParams');
+      if (savedSearchParams) {
+        setBackLink(`/backstage/scaffolder-actions/${savedSearchParams}`);
+      }
+    }
+  }, []);
 
   const handleCopy = async () => {
     if (!packageName) return;
@@ -21,7 +31,7 @@ const Header = ({ action }) => {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="px-4 xl:px-0 mb-10">
-        <Link to="/backstage/scaffolder-actions/" className="font-bold text-blueroadie">
+        <Link to={backLink} className="font-bold text-blueroadie">
           <span className="text-orange-500">←</span> Backstage Scaffolder Actions
         </Link>
       </div>
