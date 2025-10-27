@@ -15,6 +15,7 @@ import {
 import MobileFreeTrialButton from './MobileFreeTrialButton';
 import MobileDropdownNavItem from './MobileDropdownNavItem';
 import DrawerMenuHeader from './DrawerMenuHeader';
+import DarkModeToggle from '../DarkModeToggle';
 
 const subItems = [
   {
@@ -88,7 +89,7 @@ const DrawerMenu = () => (
       focus
       className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-20"
     >
-      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 dark:ring-gray-700 bg-white dark:bg-gray-800 divide-y-2 divide-gray-50 dark:divide-gray-700">
         <div className="pt-5 pb-6 px-5">
           <DrawerMenuHeader />
 
@@ -102,8 +103,9 @@ const DrawerMenu = () => (
         </div>
 
         <div className="py-6 px-5 space-y-6">
-          <div>
+          <div className="flex items-center justify-between">
             <MobileFreeTrialButton />
+            <DarkModeToggle />
           </div>
         </div>
       </div>

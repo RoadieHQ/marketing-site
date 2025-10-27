@@ -8,12 +8,12 @@ const DropdownNavItem = ({ item }) => (
   <Link
     key={item.name}
     to={item.to}
-    className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
+    className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
   >
-    <item.icon className="flex-shrink-0 h-6 w-6 text-primary-600" aria-hidden="true" />
+    <item.icon className="flex-shrink-0 h-6 w-6 text-primary-600 dark:text-primary-500" aria-hidden="true" />
     <div className="ml-4">
-      <p className="text-base font-bold tracking-wide text-gray-900">{item.name}</p>
-      <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+      <p className="text-base font-bold tracking-wide text-gray-900 dark:text-gray-100">{item.name}</p>
+      <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{item.description}</p>
     </div>
   </Link>
 );
@@ -24,13 +24,13 @@ const TopNavDropdownItem = ({ text, subItems }) => (
       <>
         <Popover.Button
           className={classnames(
-            'group bg-white rounded-md inline-flex items-center font-bold tracking-wide hover:text-blueroadie focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500',
-            { 'text-gray-900': !open, 'text-gray-500': open }
+            'group bg-white dark:bg-gray-900 rounded-md inline-flex items-center font-bold tracking-wide hover:text-blueroadie dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500',
+            { 'text-gray-900 dark:text-gray-200': !open, 'text-gray-500 dark:text-gray-400': open }
           )}
         >
           <span>{text}</span>
           <ChevronDownIcon
-            className={classnames('ml-2 h-5 w-5 group-hover:text-gray-500 text-blueroadie')}
+            className={classnames('ml-2 h-5 w-5 group-hover:text-gray-500 text-blueroadie dark:text-gray-200')}
             aria-hidden="true"
           />
         </Popover.Button>
@@ -45,8 +45,8 @@ const TopNavDropdownItem = ({ text, subItems }) => (
           leaveTo="opacity-0 translate-y-1"
         >
           <Popover.Panel className="absolute z-50 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-sm sm:px-0">
-            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-              <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 dark:ring-gray-700 overflow-hidden">
+              <div className="relative grid gap-6 bg-white dark:bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
                 {subItems.map((item) => (
                   <DropdownNavItem item={item} key={item.name} />
                 ))}

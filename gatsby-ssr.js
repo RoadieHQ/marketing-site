@@ -4,6 +4,19 @@ const onRenderBody = ({ setPostBodyComponents, setHeadComponents }) => {
   const INTERCOM_APP_ID = 'qegbmsy6';
   const INTERCOM_HIDE_LAUNCHER = process.env.NODE_ENV === 'production' ? true : false;
 
+  // Dark mode script to prevent flash of unstyled content
+  const darkModeScript = `
+    (function() {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var shouldBeDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+      
+      if (shouldBeDark) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  `;
+
   const intercomMessengerHTML = `
     window.intercomSettings = {
       api_base: "https://api-iam.eu.intercom.io",
@@ -19,6 +32,7 @@ const onRenderBody = ({ setPostBodyComponents, setHeadComponents }) => {
   ]);
 
   setHeadComponents([
+    <script key="dark-mode-init" dangerouslySetInnerHTML={{ __html: darkModeScript }} />,
     <link
       key="soehne-web-buch"
       rel="preload"

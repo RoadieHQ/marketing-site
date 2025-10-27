@@ -20,7 +20,12 @@ html {
   html {
     @apply text-blueroadie;
     @apply bg-elusivegray;
-  } 
+  }
+
+  html.dark {
+    @apply text-gray-100;
+    @apply bg-gray-900;
+  }
 }
 
 .landing-hero-background {
