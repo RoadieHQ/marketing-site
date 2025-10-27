@@ -7,7 +7,7 @@ import NpmDetailsList from './NpmDetailsList';
 import Links from './Links';
 import parsePackageData from './parsePackageData';
 import fetchPackageDataByName from './fetchPackageDataByName';
-import pluginPackageNameForStats from '../../../../packageData/pluginPackageNameForStats.mjs';
+import pluginPackageNameForStats from '../../../../packageData/pluginPackageForStats.mjs';
 
 const Category = ({ plugin }) => {
   const { category } = plugin;

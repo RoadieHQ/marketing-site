@@ -8,7 +8,7 @@ import NpmDetailsList from '../../backstage/plugins/Sidebar/NpmDetailsList';
 import MaintainersList from '../../backstage/plugins/Sidebar/MaintainersList';
 import parsePackageData from '../../backstage/plugins/Sidebar/parsePackageData';
 import fetchPackageDataByName from '../../backstage/plugins/Sidebar/fetchPackageDataByName';
-import scaffolderActionPackageName from '../../../packageData/scaffolderActionPackageName.mjs';
+import scaffolderActionPackageForStats from '../../../packageData/scaffolderActionPackageForStats.mjs';
 
 const Links = ({ action }) => {
   const { codeLocation } = action;
@@ -58,12 +58,12 @@ const Info = ({ action }) => {
 };
 
 const Sidebar = ({ action }) => {
-  const npmPackageName = scaffolderActionPackageName(action);
+  const { packageName } = scaffolderActionPackageForStats(action);
   const [packageData, setPackageData] = useState({});
   const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
   useEffect(() => {
-    if (!npmPackageName) {
+    if (!packageName) {
       setPackageDataLoadingState('error');
       return;
     }
@@ -71,12 +71,12 @@ const Sidebar = ({ action }) => {
     (async () => {
       setPackageDataLoadingState('loading');
       const { status, data } = await fetchPackageDataByName({
-        packageName: npmPackageName,
+        packageName,
       });
       setPackageDataLoadingState(status);
       setPackageData(parsePackageData(data));
     })();
-  }, [npmPackageName]);
+  }, [packageName]);
 
   return (
     <>

@@ -1,8 +1,8 @@
-import pluginPackageNameForStats from "../../../packageData/pluginPackageNameForStats.mjs";
+import pluginPackageForStats from "../../../packageData/pluginPackageForStats.mjs";
 import pick from 'lodash/pick';
 
 const hydratePlugin = (plugin, packageData) => {
-  const packageInfo = pluginPackageNameForStats(plugin);
+  const packageInfo = pluginPackageForStats(plugin);
 
   if (!packageInfo) {
     plugin.packageData = {};

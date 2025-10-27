@@ -2,8 +2,8 @@ import reduce from 'lodash/reduce.js';
 import uniq from 'lodash/uniq.js';
 
 import { PLUGINS_QUERY, SCAFFOLDER_ACTIONS_QUERY } from '../queries/gatsbyNodeQueries.mjs';
-import pluginPackageNameForStats from './pluginPackageNameForStats.mjs';
-import scaffolderActionPackageName from './scaffolderActionPackageName.mjs';
+import pluginPackageForStats from './pluginPackageForStats.mjs';
+import scaffolderActionPackageForStats from './scaffolderActionPackageForStats.mjs';
 
 const listOfPackages = async ({ graphql }) => {
   // Fetch plugins
@@ -20,18 +20,18 @@ const listOfPackages = async ({ graphql }) => {
 
   // Extract package names from plugins
   const pluginPackages = reduce(pluginsResult.data.plugins.edges, (list, { node }) => {
-    const packageName = pluginPackageNameForStats(node);
-    if (packageName) {
-      list.push(packageName);
+    const pluginPackage = pluginPackageForStats(node);
+    if (pluginPackage) {
+      list.push(pluginPackage);
     }
     return list;
   }, []);
 
   // Extract package names from scaffolder actions
   const actionPackages = reduce(actionsResult.data.actions.edges, (list, { node }) => {
-    const npmPackageName = scaffolderActionPackageName(node);
-    if (npmPackageName) {
-      list.push(npmPackageName);
+    const actionPackage = scaffolderActionPackageForStats(node);
+    if (actionPackage) {
+      list.push(actionPackage);
     }
     return list;
   }, []);

@@ -20,7 +20,6 @@ const SchemaSummary = ({ inputSchema, outputSchema }) => {
   const outputCount = getPropertyCount(outputSchema);
   const formattedInputCount = inputCount !== 0 &&`${inputCount} input${inputCount !== 1 ? 's' : ''}`;
   const formattedOutputCount = outputCount !== 0 && `${outputCount} output${outputCount !== 1 ? 's' : ''}`;
-  console.log(formattedInputCount, formattedOutputCount);
   const text = [formattedInputCount, formattedOutputCount].filter(Boolean).join(', ');
 
   return <div className="text-sm text-gray-600">{text}</div>;
