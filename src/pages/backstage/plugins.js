@@ -238,7 +238,6 @@ export const pageQuery = graphql`
 
     plugins: allContentfulBackstagePlugin(
       sort: { humanName: ASC }
-      filter: {packages: {elemMatch: {registry: {eq: "npm"}}}}
     ) {
       edges {
         node {
