@@ -5,11 +5,11 @@ import ContentLoader from 'react-content-loader';
 
 import Logo from '../plugins/Logo';
 
-const NpmDataDisplay = ({ npmData, npmDataLoadingState }) => {
-  if (npmDataLoadingState === 'error') return null;
+const PackageDataDisplay = ({ packageData, packageDataLoadingState }) => {
+  if (packageDataLoadingState === 'error') return null;
 
-  if (npmDataLoadingState === 'loaded') {
-    const { latestVersionPublishedTime, lastMonthDownloads } = npmData;
+  if (packageDataLoadingState === 'loaded') {
+    const { latestVersionPublishedTime, lastMonthDownloads } = packageData;
 
     return (
       <div className="flex text-xs text-gray-500 gap-4">
@@ -45,7 +45,7 @@ const NpmDataDisplay = ({ npmData, npmDataLoadingState }) => {
   );
 };
 
-const PackageHeader = ({ packageName, logoImage, npmData, npmDataLoadingState }) => {
+const PackageHeader = ({ packageName, logoImage, packageData, packageDataLoadingState }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -89,7 +89,7 @@ const PackageHeader = ({ packageName, logoImage, npmData, npmDataLoadingState })
         </button>
       </div>
 
-      <NpmDataDisplay npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+      <PackageDataDisplay packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
     </div>
   );
 };

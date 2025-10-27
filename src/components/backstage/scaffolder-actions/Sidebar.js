@@ -6,9 +6,9 @@ import RoadieDocsChip from 'components/backstage/RoadieDocsChip';
 import { PAGE_PATHS } from '../../../contactFormConstants';
 import NpmDetailsList from '../../backstage/plugins/Sidebar/NpmDetailsList';
 import MaintainersList from '../../backstage/plugins/Sidebar/MaintainersList';
-import parseNpmData from '../../backstage/plugins/Sidebar/parseNpmData';
-import fetchNpmDataByName from '../../backstage/plugins/Sidebar/fetchNpmDataByName';
-import scaffolderActionNpmPackageName from '../../../npmPackageData/scaffolderActionNpmPackageName.mjs';
+import parsePackageData from '../../backstage/plugins/Sidebar/parsePackageData';
+import fetchPackageDataByName from '../../backstage/plugins/Sidebar/fetchPackageDataByName';
+import scaffolderActionPackageName from '../../../packageData/scaffolderActionPackageName.mjs';
 
 const Links = ({ action }) => {
   const { codeLocation } = action;
@@ -58,36 +58,36 @@ const Info = ({ action }) => {
 };
 
 const Sidebar = ({ action }) => {
-  const npmPackageName = scaffolderActionNpmPackageName(action);
-  const [npmData, setNpmData] = useState({});
-  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const npmPackageName = scaffolderActionPackageName(action);
+  const [packageData, setPackageData] = useState({});
+  const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
   useEffect(() => {
     if (!npmPackageName) {
-      setNpmDataLoadingState('error');
+      setPackageDataLoadingState('error');
       return;
     }
 
     (async () => {
-      setNpmDataLoadingState('loading');
-      const { status, data } = await fetchNpmDataByName({
+      setPackageDataLoadingState('loading');
+      const { status, data } = await fetchPackageDataByName({
         packageName: npmPackageName,
       });
-      setNpmDataLoadingState(status);
-      setNpmData(parseNpmData(data));
+      setPackageDataLoadingState(status);
+      setPackageData(parsePackageData(data));
     })();
   }, [npmPackageName]);
 
   return (
     <>
       <NpmDetailsList
-        npmData={npmData}
-        npmDataLoadingState={npmDataLoadingState}
+        packageData={packageData}
+        packageDataLoadingState={packageDataLoadingState}
         title="Package details"
       />
       <Links action={action} />
       <Info action={action} />
-      <MaintainersList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+      <MaintainersList packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
 
       <div className="p-6 bg-gray-700 rounded-lg sticky top-10">
         <p className="text-white text-base mb-3">

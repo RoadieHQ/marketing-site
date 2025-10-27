@@ -4,7 +4,7 @@ import sortBy from 'lodash/sortBy';
 
 import { Page, SEO, Headline, Input, Lead } from 'components';
 import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
-import { fetchNpmDataForList } from 'components/backstage/plugins';
+import { fetchPackageDataForList } from 'components/backstage/plugins';
 
 const BackstageScaffolderActions = ({ data }) => {
   const {
@@ -15,15 +15,15 @@ const BackstageScaffolderActions = ({ data }) => {
   } = data;
 
   const [query, setQuery] = useState('');
-  const [npmData, setNpmData] = useState({});
-  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const [packageData, setPackageData] = useState({});
+  const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
   useEffect(() => {
     (async () => {
-      setNpmDataLoadingState('loading');
-      const { status, data } = await fetchNpmDataForList();
-      setNpmDataLoadingState(status);
-      setNpmData(data);
+      setPackageDataLoadingState('loading');
+      const { status, data } = await fetchPackageDataForList();
+      setPackageDataLoadingState(status);
+      setPackageData(data);
     })();
   }, []);
 
@@ -88,15 +88,15 @@ const BackstageScaffolderActions = ({ data }) => {
           {sortedPackageNames.map((packageName) => {
             const actionsInPackage = groupedActions[packageName];
             const logoImage = actionsInPackage[0]?.containedInPackage?.logoImage;
-            const packageNpmData = npmData[packageName] || {};
+            const packagePackageData = packageData[packageName] || {};
 
             return (
               <React.Fragment key={packageName}>
                 <PackageHeader
                   packageName={packageName}
                   logoImage={logoImage}
-                  npmData={packageNpmData}
-                  npmDataLoadingState={npmDataLoadingState}
+                  packageData={packagePackageData}
+                  packageDataLoadingState={packageDataLoadingState}
                 />
                 {actionsInPackage.map(({ slug, ...action }) => (
                   <ListItem key={slug} slug={slug} {...action} />
