@@ -1,8 +1,6 @@
 import { convertUrlsToAbsolute } from './convertUrlsToAbsolute.mjs';
 
 describe('convertUrlsToAbsolute', () => {
-  const baseUrl = 'https://roadie.io';
-
   describe('markdown links', () => {
     it('should convert single relative link to absolute', () => {
       const input = '[something](/hello)';

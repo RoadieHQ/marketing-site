@@ -1,9 +1,12 @@
+const isCI = process.env.CI === 'true';
+
 module.exports = {
   env: {
     browser: true,
     es2020: true,
     // Some files like gatsby-node.js run in the node env.
     node: true,
+    jest: true,
   },
 
   extends: [
@@ -13,6 +16,7 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:jsx-a11y/recommended',
     'plugin:cypress/recommended',
+    'plugin:jest/recommended',
   ],
 
   globals: {
@@ -28,11 +32,22 @@ module.exports = {
     sourceType: 'module',
   },
 
-  plugins: ['react'],
+  plugins: ['react', 'jest'],
 
   rules: {
     'react/prop-types': 0,
   },
+
+  overrides: [
+    {
+      // Apply Jest rules to all test files (both Jest and Cypress)
+      files: ['**/*.test.js', '**/*.test.mjs', '**/*.spec.js', 'cypress/**/*.js'],
+      rules: {
+        // Fail on focused tests (.only) in CI, warn locally
+        'jest/no-focused-tests': isCI ? 'error' : 'warn',
+      },
+    },
+  ],
 
   settings: {
     react: {
