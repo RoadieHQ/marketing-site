@@ -5,7 +5,7 @@ import getRoadieStore from './getRoadieStore.mjs';
 import retrievePackageNames from './retrievePackageNames.mjs';
 import { fetchMultipleTerraformProviders } from './fetchTerraformData.mjs';
 import { fetchMultipleNpmPackages } from './fetchNpmData.mjs';
-import { ALL_PACKAGE_DATA_STORE_KEY, getVersionedPackageKey } from './constants.mjs';
+import { ALL_PACKAGE_DATA_STORE_KEY } from './constants.mjs';
 
 // We want to store as little data as possible to use on /backstage/plugins/ so that the
 // page renderes as quickly as possible. The more data we store, the more we have to download
@@ -71,8 +71,7 @@ const storePackageData = async () => {
   const { modified, etag } = await store.setJSON(ALL_PACKAGE_DATA_STORE_KEY, dataAsObject);
   await Promise.all(
     allPackageData.map((packageData) => {
-      const versionedKey = getVersionedPackageKey(packageData.name);
-      return store.setJSON(versionedKey, {
+      return store.setJSON(packageData.name, {
         ...packageData,
         roadieLastUpdated: new Date().toISOString(),
       });

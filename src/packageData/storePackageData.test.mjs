@@ -1,6 +1,6 @@
 import { jest } from '@jest/globals';
 import nock from 'nock';
-import { ALL_PACKAGE_DATA_STORE_KEY, getVersionedPackageKey } from './constants.mjs';
+import { ALL_PACKAGE_DATA_STORE_KEY } from './constants.mjs';
 
 // Mock the dependencies before importing them
 const mockStore = {
@@ -161,7 +161,7 @@ describe('#storePackageData', () => {
 
       // Subsequent calls: storing each package individually with versioned keys
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('@backstage/plugin-test'),
+        '@backstage/plugin-test',
         expect.objectContaining({
           name: '@backstage/plugin-test',
           latestVersion: '1.0.0',
@@ -174,7 +174,7 @@ describe('#storePackageData', () => {
       );
 
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('regular-package'),
+        'regular-package',
         expect.objectContaining({
           name: 'regular-package',
           latestVersion: '2.0.0',
@@ -230,7 +230,7 @@ describe('#storePackageData', () => {
 
       // Verify the package was stored without download stats
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('@backstage/plugin-no-stats'),
+        '@backstage/plugin-no-stats',
         expect.objectContaining({
           name: '@backstage/plugin-no-stats',
           latestVersion: '1.0.0',
@@ -241,7 +241,7 @@ describe('#storePackageData', () => {
 
       // The stored data should not have downloadCount property
       const storedPackageData = mockStore.setJSON.mock.calls.find(
-        (call) => call[0] === getVersionedPackageKey('@backstage/plugin-no-stats')
+        (call) => call[0] === '@backstage/plugin-no-stats'
       )[1];
       expect(storedPackageData.downloadCount).toBeUndefined();
     });
@@ -291,7 +291,7 @@ describe('#storePackageData', () => {
 
       // Verify the stored data has been stripped appropriately
       const storedPackageData = mockStore.setJSON.mock.calls.find(
-        (call) => call[0] === getVersionedPackageKey('minimal-package')
+        (call) => call[0] === 'minimal-package'
       )[1];
 
       // Should only have 3 time entries (created, modified, and latest version)
@@ -377,7 +377,7 @@ describe('#storePackageData', () => {
 
       // Verify it stored successfully
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('bare-minimum'),
+        'bare-minimum',
         expect.objectContaining({
           name: 'bare-minimum',
           latestVersion: '1.0.0',
@@ -432,7 +432,7 @@ describe('#storePackageData', () => {
 
       // Check the individual package store call
       const individualPackageCall = mockStore.setJSON.mock.calls.find(
-        (call) => call[0] === getVersionedPackageKey('timestamp-test')
+        (call) => call[0] === 'timestamp-test'
       );
       expect(individualPackageCall[1].roadieLastUpdated).toBeDefined();
       const individualTimestamp = individualPackageCall[1].roadieLastUpdated;
@@ -485,7 +485,7 @@ describe('#storePackageData', () => {
 
       packageNames.forEach(({ packageName }) => {
         expect(mockStore.setJSON).toHaveBeenCalledWith(
-          getVersionedPackageKey(packageName),
+          packageName,
           expect.objectContaining({
             name: packageName,
             registry: 'npm',
@@ -547,7 +547,7 @@ describe('#storePackageData', () => {
 
       // Should store the successful package
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('@backstage/existing-package'),
+        '@backstage/existing-package',
         expect.objectContaining({
           name: '@backstage/existing-package',
           latestVersion: '1.0.0',
@@ -596,7 +596,7 @@ describe('#storePackageData', () => {
 
       // Should have successfully stored the package after retry
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('rate-limited-package'),
+        'rate-limited-package',
         expect.objectContaining({
           name: 'rate-limited-package',
           latestVersion: '1.0.0',
@@ -662,7 +662,7 @@ describe('#storePackageData', () => {
 
       // Should only store the successful package
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('successful-package'),
+        'successful-package',
         expect.objectContaining({
           name: 'successful-package',
           latestVersion: '1.0.0',
@@ -713,7 +713,7 @@ describe('#storePackageData', () => {
 
       // Should have successfully stored the package after retry
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('server-error-package'),
+        'server-error-package',
         expect.objectContaining({
           name: 'server-error-package',
           latestVersion: '1.0.0',
@@ -761,7 +761,7 @@ describe('#storePackageData', () => {
 
       // Should store the package without download stats
       expect(mockStore.setJSON).toHaveBeenCalledWith(
-        getVersionedPackageKey('package-without-stats'),
+        'package-without-stats',
         expect.objectContaining({
           name: 'package-without-stats',
           latestVersion: '1.0.0',
@@ -770,7 +770,7 @@ describe('#storePackageData', () => {
 
       // The package should not have downloadCount
       const storedPackageData = mockStore.setJSON.mock.calls.find(
-        (call) => call[0] === getVersionedPackageKey('package-without-stats')
+        (call) => call[0] === 'package-without-stats'
       )[1];
       expect(storedPackageData.downloadCount).toBeUndefined();
     }, 10000); // Increase timeout to 10s due to retry delays
