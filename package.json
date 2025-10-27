@@ -114,7 +114,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "cypress run",
-    "lint": "eslint --ext .js,.jsx,.mjs,.cjs src",
+    "lint": "eslint --ext .js,.jsx,.mjs,.cjs src netlify/functions cypress gatsby-*",
     "preview": "yarn run build && netlify deploy --dir public",
     "test:unit": "node --experimental-vm-modules $(yarn bin jest) --silent",
     "prepare": "node_modules/.bin/husky install"
