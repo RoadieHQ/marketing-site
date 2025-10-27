@@ -5,7 +5,7 @@ import pick from 'lodash/pick.js';
 // data because the storage overhead would be large, and it would take too long to fetch the
 // blobs of data to the browser. So, we strip out any properties we don't need before we
 // store the data.
-const stripPackageData = (data) => {
+const stripNpmPackageData = (data) => {
   const latestVersionNumber = data['dist-tags'].latest;
   return {
     ...pick(data, [
@@ -32,4 +32,4 @@ const stripPackageData = (data) => {
   };
 };
 
-export default stripPackageData;
+export default stripNpmPackageData;

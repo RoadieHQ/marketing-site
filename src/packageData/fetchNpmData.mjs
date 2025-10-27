@@ -1,6 +1,6 @@
 import find from 'lodash/find.js';
 
-import stripPackageData from './stripPackageData.mjs';
+import stripNpmPackageData from './stripNpmPackageData.mjs';
 import {
   fetchWithRetry,
   promiseAllWithConcurrency,
@@ -111,7 +111,7 @@ export const fetchMultipleNpmPackages = async (packageNames) => {
   }
 
   const strippedPackageData = npmData
-    .map((data) => stripPackageData(data))
+    .map((data) => stripNpmPackageData(data))
     .map((data) => {
       const statsDataForPackage = find(statsData, { package: data.name });
       if (statsDataForPackage) {
