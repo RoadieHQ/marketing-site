@@ -17,7 +17,7 @@ const filterActions = ({
     filteredActions = filteredActions.filter(({ actionId, humanName, description, containedInPackage }) => {
       // Extract plain text from HTML for searching
       const descriptionText = description?.childMarkdownRemark?.html
-        ? description.childMarkdownRemark.html.replace(/<[^>]*>/g, '')
+        ? description.childMarkdownRemark.html.replace(/<[^>]{0,1000}>/g, '')
         : '';
 
       const searchableActionId = actionId?.toLowerCase() || '';
