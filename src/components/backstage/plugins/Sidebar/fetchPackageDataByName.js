@@ -25,7 +25,7 @@ export default async function fetchPackageDataByName({ packageName }) {
       status: 'loaded',
       data: json.data,
     };
-  } catch (err) {
+  } catch (_err) {
     console.warn(
       `Unparsable JSON returned from Netlify function. It's likely not available in this environment.`
     );
