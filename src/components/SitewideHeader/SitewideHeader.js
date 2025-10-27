@@ -23,6 +23,7 @@ import TopNavDropdownItem from './TopNavDropdownItem';
 import DrawerMenu from './DrawerMenu';
 import TopBanner from 'components/TopBanner';
 import McpServers from '../TopBanner/McpServers';
+import DarkModeToggle from '../DarkModeToggle';
 
 const features = [
   {
@@ -137,7 +138,8 @@ const SitewideHeader = ({
             <TopNavDropdownItem text="Resources" subItems={learn} />
           </Popover.Group>
 
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-2">
+            <DarkModeToggle />
             <Button link={true} color="primary" size="small" to={ctaTo} text={ctaText} />
           </div>
         </header>
