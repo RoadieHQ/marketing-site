@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { Field, Label } from '@headlessui/react';
 import isEmpty from 'lodash/isEmpty';
 import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
-import find from 'lodash/find';
 
 import { Typeahead, Page, SEO, Headline, Search, Lead, Select, TextLink as Link } from 'components';
 import {
