@@ -13,8 +13,8 @@ const ScaffolderActionTemplate = ({ data }) => {
   return (
     <>
       <SEO
-        title={`${action.actionId} - Backstage Scaffolder Action`}
-        description={action.description?.childMarkdownRemark?.excerpt || `Documentation for the ${action.actionId} Backstage scaffolder action.`}
+        title={`${action.humanName || action.actionId} - Backstage Scaffolder Action`}
+        description={action.description?.childMarkdownRemark?.excerpt || `Documentation for the ${action.humanName || action.actionId} Backstage scaffolder action.`}
       />
 
       <SitewideHeader />
@@ -49,6 +49,7 @@ export const pageQuery = graphql`
     action: contentfulBackstageScaffolderAction(slug: { eq: $slug }) {
       slug
       actionId
+      humanName
       description {
         childMarkdownRemark {
           html

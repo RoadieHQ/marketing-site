@@ -84,7 +84,7 @@ const BackstageScaffolderActions = ({ data }) => {
           </div>
         </div>
 
-        <div className="pt-6 grid gap-2 lg:gap-4 lg:grid-cols-2">
+        <div className="pt-6 grid gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
           {sortedPackageNames.map((packageName) => {
             const actionsInPackage = groupedActions[packageName];
             const logoImage = actionsInPackage[0]?.containedInPackage?.logoImage;
@@ -131,6 +131,7 @@ export const pageQuery = graphql`
         node {
           slug
           actionId
+          humanName
           description {
             childMarkdownRemark {
               html

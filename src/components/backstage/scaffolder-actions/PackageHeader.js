@@ -75,10 +75,12 @@ const PackageHeader = ({ packageName, logoImage, packageData, packageDataLoading
           </div>
         )}
 
-        <div>
-          <div className="flex items-center mb-2">
-            <h3 className="text-2xl font-bold text-gray-600 truncate">{packageName}</h3>
-            <CopyToClipboardButotn textToCopy={packageName} />
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-2 mb-2">
+            <h3 className="text-2xl font-bold text-gray-600 truncate min-w-0 flex-1">{packageName}</h3>
+            <div className="flex-shrink-0">
+              <CopyToClipboardButotn textToCopy={packageName} />
+            </div>
           </div>
           <PackageDataDisplay packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
         </div>

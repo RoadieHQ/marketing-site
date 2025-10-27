@@ -27,7 +27,11 @@ const Header = ({ action }) => {
       </div>
 
       <header className="px-4 xl:px-0 mb-10">
-        <Headline size="small">{action.actionId}</Headline>
+        <Headline size="small">{action.humanName || action.actionId}</Headline>
+
+        <div className="text-base text-gray-600 mt-2">
+          <code className="bg-gray-100 px-2 py-1 rounded">{action.actionId}</code>
+        </div>
 
         {packageName && (
           <div className="group flex items-center gap-2 mt-2 min-w-0">

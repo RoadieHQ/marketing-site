@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, Title } from 'components';
-import RoadieDocsChip from 'components/backstage/RoadieDocsChip';
 
 const getPropertyCount = (schema) => {
   if (!schema?.internal?.content) return 0;
@@ -28,8 +27,8 @@ const SchemaSummary = ({ inputSchema, outputSchema }) => {
 const ListItem = ({
   slug,
   actionId,
+  humanName,
   description,
-  availableOnRoadie,
   inputSchema,
   outputSchema,
 }) => {
@@ -42,7 +41,10 @@ const ListItem = ({
         <div className="flex justify-between">
           <div className="max-w-2xl mr-4">
             <div className="mb-1">
-              <Title className="text-xl">{actionId}</Title>
+              <Title className="text-xl">{humanName || actionId}</Title>
+              <div className="text-sm text-gray-600 mt-1">
+                <code className="bg-gray-100 px-1.5 py-0.5 rounded">{actionId}</code>
+              </div>
             </div>
 
             {description?.childMarkdownRemark?.html && (
@@ -53,12 +55,6 @@ const ListItem = ({
             )}
 
             <SchemaSummary inputSchema={inputSchema} outputSchema={outputSchema} />
-          </div>
-
-          <div className="flex flex-col justify-center min-w-48">
-            <div className="mb-1">
-              <RoadieDocsChip availableOnRoadie={availableOnRoadie} />
-            </div>
           </div>
         </div>
       </Link>
