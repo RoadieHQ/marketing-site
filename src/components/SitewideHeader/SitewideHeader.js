@@ -119,7 +119,7 @@ const SitewideHeader = ({
           className={classnames(
             ` max-w-${maxWidth} mx-auto px-2 py-6 sm:px-6 xl:py-8 flex justify-between items-center  md:justify-start md:space-x-10`,
             {
-              'border-b-2 border-gray-100': borderBottom,
+              'border-b-2 border-gray-100 dark:border-gray-800': borderBottom,
             }
           )}
         >

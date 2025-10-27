@@ -62,7 +62,7 @@ const NavItem = ({ name, href }) => (
     <Link
       to={href}
       id={`sitewide-footer-${name.toLowerCase()}`}
-      className="text-base text-gray-500 hover:text-gray-900"
+      className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
     >
       {name}
     </Link>
@@ -70,7 +70,7 @@ const NavItem = ({ name, href }) => (
 );
 
 const SocialItem = ({ item }) => (
-  <Link key={item.name} to={item.href} className="text-gray-400 hover:text-gray-500">
+  <Link key={item.name} to={item.href} className="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-300">
     <span className="sr-only">{item.name}</span>
     <item.icon className="h-6 w-6" aria-hidden="true" />
   </Link>
@@ -78,7 +78,7 @@ const SocialItem = ({ item }) => (
 
 const TitledLinkList = ({ title, linkListKey = camelCase(title) }) => (
   <>
-    <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">{title}</h3>
+    <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">{title}</h3>
     <ul className="mt-4 space-y-4">
       {navigation[linkListKey].map((item) => (
         <NavItem {...item} key={item.name} />
@@ -88,14 +88,14 @@ const TitledLinkList = ({ title, linkListKey = camelCase(title) }) => (
 );
 
 const CopyrightNotice = () => (
-  <p className="text-base text-gray-400 xl:text-center">
+  <p className="text-base text-gray-400 dark:text-gray-500 xl:text-center">
     &copy; {new Date().getFullYear()} Larder Software Limited. All rights reserved.
   </p>
 );
 
 const SitewideFooter = ({ maxWidth = '7xl' }) => {
   return (
-    <footer className="border-t-2 border-gray-100" aria-labelledby="footer-heading">
+    <footer className="border-t-2 border-gray-100 dark:border-gray-800" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -105,7 +105,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
           <div className="space-y-4 xl:col-span-1">
             <RoadieRacksIcon fill={theme.COLORS_GRAY_500} />
 
-            <p className="text-gray-500 text-base">SaaS Backstage</p>
+            <p className="text-gray-500 dark:text-gray-400 text-base">SaaS Backstage</p>
 
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -119,7 +119,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
                 className="mr-2 h-8 w-8"
                 alt="AICPA seal. Blue circle with the name AICPA inside."
               />
-              <p className="text-base text-gray-500">Roadie has gained SOC2 Type 2 compliance</p>
+              <p className="text-base text-gray-500 dark:text-gray-400">Roadie has gained SOC2 Type 2 compliance</p>
             </div>
           </div>
 
@@ -146,7 +146,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-200 pt-8">
+        <div className="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
           <CopyrightNotice />
         </div>
       </div>
