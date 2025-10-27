@@ -29,6 +29,7 @@ const AVAILABILITY_FILTERS = [{
   checkedTextColor: 'text-white',
 }, {
   label: 'Available on Roadie',
+  shortLabel: 'Roadie',
   value: 'roadie',
   checkedBgColor: 'bg-orange-600',
   checkedTextColor: 'text-white',
@@ -161,18 +162,18 @@ const BackstageScaffolderActions = ({ data, location }) => {
 
           <div className="mb-2">
             <div className="lg:flex lg:justify-between lg:items-center gap-4">
-              <div className="mb-4 lg:mb-0 w-full lg:w-72">
-                <Search
-                  name="search"
-                  onChange={handleQueryChange}
-                  value={query}
-                  aria-label="Search"
-                  placeholder="Filter"
-                />
-              </div>
+              <div className="lg:flex lg:gap-4 lg:items-center mb-4 lg:mb-0 w-full lg:flex-1">
+                <div className="mb-4 lg:mb-0 w-full lg:w-72">
+                  <Search
+                    name="search"
+                    onChange={handleQueryChange}
+                    value={query}
+                    aria-label="Search"
+                    placeholder="Filter"
+                  />
+                </div>
 
-              <div className="mb-4 lg:mb-0 flex justify-center w-full lg:w-auto">
-                <div className="w-full lg:w-auto">
+                <div className="flex-shrink-0">
                   <SegmentedControl
                     value={availabilityFilter}
                     onChange={handleAvailabilityFilterChange}
@@ -183,7 +184,7 @@ const BackstageScaffolderActions = ({ data, location }) => {
               </div>
 
               <Field
-                className="text-right w-full flex items-center justify-end"
+                className="text-right flex items-center justify-end flex-shrink-0"
                 disabled={packageDataLoadingState !== 'loaded'}
               >
                 <Label
@@ -194,7 +195,7 @@ const BackstageScaffolderActions = ({ data, location }) => {
                   Sort by:
                 </Label>
 
-                <div className="w-48">
+                <div className="w-32 lg:w-48">
                   <Select
                     value={sortOrder}
                     onChange={setSortOrder}

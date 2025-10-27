@@ -91,7 +91,7 @@ describe('Scaffolder Actions directory', () => {
       cy.contains('Azure').should('not.exist');
 
       // Click on an action
-      cy.get('div[data-testid="action-/acme-example/"]').click();
+      cy.get('div[data-testid="action-/acme-example/"]').find('a').click();
       cy.url().should('include', '/backstage/scaffolder-actions/acme-example/');
 
       // Go back using browser back button
@@ -123,7 +123,7 @@ describe('Scaffolder Actions directory', () => {
       cy.contains('Azure').should('not.exist');
 
       // Click on an action
-      cy.get('div[data-testid="action-/acme-example/"]').click();
+      cy.get('div[data-testid="action-/acme-example/"]').find('a').click();
       cy.url().should('include', '/backstage/scaffolder-actions/acme-example/');
 
       // Click the back link
@@ -151,7 +151,7 @@ describe('Scaffolder Actions directory', () => {
       cy.contains('Run Example Action');
 
       // Click on an action
-      cy.get('div[data-testid="action-/acme-example/"]').click();
+      cy.get('div[data-testid="action-/acme-example/"]').find('a').click();
       cy.url().should('include', '/backstage/scaffolder-actions/acme-example/');
 
       // Click the back link
