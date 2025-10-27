@@ -7,6 +7,7 @@ import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react
 import { Page, SEO, Headline, Search, Lead, Select, SegmentedControl } from 'components';
 import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
 import { fetchPackageDataForList } from 'components/backstage/plugins';
+import { RoadieRacksIcon } from 'components/icons';
 
 const SORT_ORDERS = [{
   label: 'Name',
@@ -31,8 +32,11 @@ const AVAILABILITY_FILTERS = [{
   label: 'Available on Roadie',
   shortLabel: 'Roadie',
   value: 'roadie',
+  icon: RoadieRacksIcon,
   checkedBgColor: 'bg-orange-600',
   checkedTextColor: 'text-white',
+  checkedIconColor: '#ffffff',
+  uncheckedIconColor: '#ea580c',
 }];
 
 const BackstageScaffolderActions = ({ data, location }) => {

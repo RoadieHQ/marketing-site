@@ -11,6 +11,7 @@ const SegmentedControl = ({ value, onChange, options }) => {
         const checkedTextColor = option.checkedTextColor || 'text-white';
         const uncheckedBgColor = option.uncheckedBgColor || 'bg-white';
         const uncheckedTextColor = option.uncheckedTextColor || 'text-gray-700';
+        const Icon = option.icon;
 
         return (
           <Radio
@@ -31,24 +32,34 @@ const SegmentedControl = ({ value, onChange, options }) => {
               )
             }
           >
-            {({ checked }) => (
-              <span className="flex items-center">
-                <span
-                  className={classnames(
-                    'text-base font-medium',
-                    checked ? checkedTextColor : uncheckedTextColor
+            {({ checked }) => {
+              const iconFillColor = checked ? option.checkedIconColor : option.uncheckedIconColor;
+
+              return (
+                <span className="flex items-center gap-2">
+                  {Icon && (
+                    <Icon
+                      className="h-4 w-4"
+                      fill={iconFillColor}
+                    />
                   )}
-                >
-                  {option.shortLabel && (
-                    <>
-                      <span className="lg:hidden">{option.shortLabel}</span>
-                      <span className="hidden lg:inline">{option.label}</span>
-                    </>
-                  )}
-                  {!option.shortLabel && option.label}
+                  <span
+                    className={classnames(
+                      'text-base font-medium',
+                      checked ? checkedTextColor : uncheckedTextColor
+                    )}
+                  >
+                    {option.shortLabel && (
+                      <>
+                        <span className="lg:hidden">{option.shortLabel}</span>
+                        <span className="hidden lg:inline">{option.label}</span>
+                      </>
+                    )}
+                    {!option.shortLabel && option.label}
+                  </span>
                 </span>
-              </span>
-            )}
+              );
+            }}
           </Radio>
         );
       })}
