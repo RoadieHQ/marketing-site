@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
-import sortBy from 'lodash/sortBy';
 import classnames from 'classnames';
 import { Field, Label } from '@headlessui/react';
 import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
 
-import { Page, SEO, Headline, Search, Lead, Select } from 'components';
+import { Page, SEO, Headline, Search, Lead, Select, SegmentedControl } from 'components';
 import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
 import { fetchPackageDataForList } from 'components/backstage/plugins';
 
@@ -23,6 +22,18 @@ const SORT_ORDERS = [{
   icon: CalendarIcon,
 }];
 
+const AVAILABILITY_FILTERS = [{
+  label: 'All',
+  value: 'all',
+  checkedBgColor: 'bg-tealbackstage',
+  checkedTextColor: 'text-white',
+}, {
+  label: 'Available on Roadie',
+  value: 'roadie',
+  checkedBgColor: 'bg-orange-600',
+  checkedTextColor: 'text-white',
+}];
+
 const BackstageScaffolderActions = ({ data }) => {
   const {
     actions,
@@ -33,6 +44,7 @@ const BackstageScaffolderActions = ({ data }) => {
 
   const [query, setQuery] = useState('');
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
+  const [availabilityFilter, setAvailabilityFilter] = useState(AVAILABILITY_FILTERS[0]);
   const [packageData, setPackageData] = useState({});
   const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
@@ -51,6 +63,7 @@ const BackstageScaffolderActions = ({ data }) => {
   const filteredActions = filterActions({
     actions: actionsList,
     query,
+    availabilityFilter,
   });
 
   // Group actions by package
@@ -109,7 +122,7 @@ const BackstageScaffolderActions = ({ data }) => {
           </div>
 
           <div className="mb-2">
-            <div className="lg:flex lg:justify-between">
+            <div className="lg:flex lg:justify-between lg:items-center gap-4">
               <div className="mb-4 lg:mb-0 w-full lg:w-72">
                 <Search
                   name="search"
@@ -118,6 +131,17 @@ const BackstageScaffolderActions = ({ data }) => {
                   aria-label="Search"
                   placeholder="Filter"
                 />
+              </div>
+
+              <div className="mb-4 lg:mb-0 flex justify-center w-full lg:w-auto">
+                <div className="w-full lg:w-auto">
+                  <SegmentedControl
+                    value={availabilityFilter}
+                    onChange={setAvailabilityFilter}
+                    options={AVAILABILITY_FILTERS}
+                    name="availability-filter"
+                  />
+                </div>
               </div>
 
               <Field

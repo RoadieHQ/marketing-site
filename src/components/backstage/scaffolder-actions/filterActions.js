@@ -1,8 +1,16 @@
 const filterActions = ({
   actions,
   query,
+  availabilityFilter,
 }) => {
   let filteredActions = actions;
+
+  // Availability filter
+  if (availabilityFilter && availabilityFilter.value === 'roadie') {
+    filteredActions = filteredActions.filter(({ availableOnRoadie }) => {
+      return availableOnRoadie === true;
+    });
+  }
 
   // Text search filter
   if (query !== '') {
