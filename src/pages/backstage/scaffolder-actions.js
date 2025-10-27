@@ -89,7 +89,6 @@ const BackstageScaffolderActions = ({ data }) => {
             const actionsInPackage = groupedActions[packageName];
             const logoImage = actionsInPackage[0]?.containedInPackage?.logoImage;
             const packagePackageData = packageData[packageName] || {};
-
             return (
               <React.Fragment key={packageName}>
                 <PackageHeader
@@ -98,8 +97,8 @@ const BackstageScaffolderActions = ({ data }) => {
                   packageData={packagePackageData}
                   packageDataLoadingState={packageDataLoadingState}
                 />
-                {actionsInPackage.map(({ slug, ...action }) => (
-                  <ListItem key={slug} slug={slug} {...action} />
+                {actionsInPackage.map((action) => (
+                  <ListItem key={action.slug} action={action} />
                 ))}
               </React.Fragment>
             );
