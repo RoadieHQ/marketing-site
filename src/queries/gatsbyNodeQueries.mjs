@@ -51,13 +51,10 @@ export const CASE_STUDIES_QUERY = `
 }
 `;
 
-// frontmatter is required in this query because they are server side rendered so
-// that we can pull data from the npmjs API before the page is rendered.
 export const PLUGINS_QUERY = `
 {
   plugins: allContentfulBackstagePlugin(
     limit: 1000
-    filter: {packages: {elemMatch: {registry: {eq: "npm"}}}}
   ) {
     edges {
       node {
@@ -65,6 +62,7 @@ export const PLUGINS_QUERY = `
         packages {
           type
           npmPackageName
+          registry
         }
       }
     }

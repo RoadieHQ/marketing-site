@@ -8,7 +8,7 @@ import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react
 import { Typeahead, Page, SEO, Headline, Search, Lead, Select, TextLink as Link } from 'components';
 import {
   ListItem,
-  fetchNpmDataForList,
+  fetchPackageDataForList,
   filterPlugins,
   hydratePlugin,
 } from 'components/backstage/plugins';
@@ -42,8 +42,8 @@ const BackstagePlugins = ({ data, location }) => {
 
   const [query, setQuery] = useState(queryParam || '');
   const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
-  const [npmData, setNpmData] = useState({});
-  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const [packageData, setPackageData] = useState({});
+  const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
   const initialCategory = pluginCategories.edges
     .map(({ node }) => node)
     .find(({ searchParam }) => searchParam === categoryParam);
@@ -51,10 +51,10 @@ const BackstagePlugins = ({ data, location }) => {
 
   useEffect(() => {
     (async () => {
-      setNpmDataLoadingState('loading');
-      const { status, data } = await fetchNpmDataForList();
-      setNpmDataLoadingState(status);
-      setNpmData(data);
+      setPackageDataLoadingState('loading');
+      const { status, data } = await fetchPackageDataForList();
+      setPackageDataLoadingState(status);
+      setPackageData(data);
     })();
   }, []);
 
@@ -90,14 +90,14 @@ const BackstagePlugins = ({ data, location }) => {
   };
 
   const allPluginsCount = plugins.edges.length;
-  const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, npmData));
+  const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, packageData));
 
   const filteredPlugins = filterPlugins({
     plugins: hydratedPlugins,
     query,
     sortOrder,
     category,
-    npmDataLoadingState,
+    packageDataLoadingState,
   });
 
   let seoTitle = `Backstage Plugins Directory - All plugins | ${title}`;
@@ -158,11 +158,11 @@ const BackstagePlugins = ({ data, location }) => {
 
               <Field
                 className="text-right w-full flex items-center justify-end"
-                disabled={npmDataLoadingState !== 'loaded'}
+                disabled={packageDataLoadingState !== 'loaded'}
               >
                 <Label
                   className={classnames('mr-2 whitespace-nowrap', {
-                    'text-gray-400': npmDataLoadingState !== 'loaded',
+                    'text-gray-400': packageDataLoadingState !== 'loaded',
                   })}
                 >
                   Sort by:
@@ -175,7 +175,7 @@ const BackstagePlugins = ({ data, location }) => {
                     options={SORT_ORDERS}
                     name="sort-order"
                     optionKey="label"
-                    disabled={npmDataLoadingState !== 'loaded'}
+                    disabled={packageDataLoadingState !== 'loaded'}
                     showIcon={true}
                   />
                 </div>
@@ -200,7 +200,7 @@ const BackstagePlugins = ({ data, location }) => {
                 key={slug}
                 slug={slug}
                 {...plugin}
-                npmDataLoadingState={npmDataLoadingState}
+                packageDataLoadingState={packageDataLoadingState}
               />
             ))}
           </div>
@@ -234,7 +234,6 @@ export const pageQuery = graphql`
 
     plugins: allContentfulBackstagePlugin(
       sort: { humanName: ASC }
-      filter: {packages: {elemMatch: {registry: {eq: "npm"}}}}
     ) {
       edges {
         node {
@@ -243,6 +242,7 @@ export const pageQuery = graphql`
 
           packages {
             npmPackageName
+            registry
           }
 
           logoImage {

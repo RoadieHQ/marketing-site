@@ -1,8 +1,8 @@
-export default async function fetchNpmDataForList() {
+export default async function fetchPackageDataForList() {
   let response;
 
   try {
-    response = await fetch('/.netlify/functions/fetchNpmDataForList');
+    response = await fetch('/.netlify/functions/fetchPackageDataForList');
 
     if (!response.ok) {
       return {

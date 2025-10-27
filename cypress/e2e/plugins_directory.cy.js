@@ -10,16 +10,18 @@ describe('Plugins directory', () => {
   });
 
   describe('list page', () => {
-    const netlifyFnPath = '/.netlify/functions/fetchNpmDataForList';
-    const npmData = {
+    const netlifyFnPath = '/.netlify/functions/fetchPackageDataForList';
+    const packageData = {
       data: {
         '@roadiehq/rag-ai': {
           latestVersionPublishedTime: '2025-09-29T07:47:32.822Z',
-          lastMonthDownloads: 13619
+          downloadCount: 13619,
+          downloadCountPeriod: 'LAST_MONTH',
         },
         '@backstage/plugin-api-docs': {
           latestVersionPublishedTime: '2025-10-03T18:27:13.597Z',
-          lastMonthDownloads: 14550
+          downloadCount: 14550,
+          downloadCountPeriod: 'LAST_MONTH',
         },
         roadieLastUpdated: '2025-10-07T12:25:06.368Z'
       }
@@ -28,14 +30,14 @@ describe('Plugins directory', () => {
     beforeEach(() => {
       cy.intercept('GET', `${BASE_URL}${netlifyFnPath}`, {
         statusCode: 200,
-        body: npmData,
-      }).as('fetchNpmData');
+        body: packageData,
+      }).as('fetchPackageData');
     });
 
     it('renders NPM info', () => {
       cy.visit('/backstage/plugins/');
 
-      cy.wait('@fetchNpmData').then(() => {
+      cy.wait('@fetchPackageData').then(() => {
         cy.get('div[data-testid="plugin-api-docs"]')
           .contains('14,550');
         cy.get('div[data-testid="plugin-api-docs"]')
@@ -187,7 +189,7 @@ describe('Plugins directory', () => {
   });
 
   describe('show page', () => {
-    const npmData = {
+    const packageData = {
       _id: '@roadiehq/backstage-plugin-argo-cd',
       _rev: '146-56e841ce37f8b7cfbaf7f6a070ef29e1',
       name: '@roadiehq/backstage-plugin-argo-cd',
@@ -233,32 +235,32 @@ describe('Plugins directory', () => {
       latestVersion: '2.11.0',
       roadieLastUpdated: '2025-09-22T12:45:23.839Z',
     };
-    const netlifyFnPath = '/.netlify/functions/fetchNpmDataByName';
+    const netlifyFnPath = '/.netlify/functions/fetchPackageDataByName';
 
     it('renders NPM info', () => {
-      cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
+      cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${packageData.name}`, {
         statusCode: 200,
         body: {
-          data: npmData,
+          data: packageData,
         },
-      }).as('fetchNpmData');
+      }).as('fetchPackageData');
 
       cy.visit('/backstage/plugins/argo-cd/');
 
-      cy.wait('@fetchNpmData').then(() => {
-        cy.get('#npm-detail-version').contains(npmData.latestVersion);
+      cy.wait('@fetchPackageData').then(() => {
+        cy.get('#npm-detail-version').contains(packageData.latestVersion);
         cy.get('#npm-detail-last-published').contains('25 days ago');
       });
     });
 
     it('should not show the NPM panels but should show the rest of the content', () => {
-      cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${npmData.name}`, {
+      cy.intercept('GET', `${BASE_URL}${netlifyFnPath}?packageName=${packageData.name}`, {
         statusCode: 500,
-      }).as('fetchNpmData');
+      }).as('fetchPackageData');
 
       cy.visit('/backstage/plugins/argo-cd/');
 
-      cy.wait('@fetchNpmData').then(() => {
+      cy.wait('@fetchPackageData').then(() => {
         cy.contains('Created by Roadie, in collaboration with American Airlines');
         cy.get('#npm-detail-last-published').should('not.exist');
       });

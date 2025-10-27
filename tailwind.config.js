@@ -26,6 +26,7 @@ module.exports = {
         elusivegray: '#FDFDFD',
         tealbackstage: '#00a58c',
         'npm-red': '#cb3837',
+        'terraform-purple': '#7B42BC',
       },
     },
   },

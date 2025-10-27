@@ -1,6 +1,6 @@
-import storePackageData from '../../src/npmPackageData/storePackageData.mjs';
+import storePackageData from '../../src/packageData/storePackageData.mjs';
 
-const storeNpmData = async () => {
+const storePackageDataOnSchedule = async () => {
   const { modified, etag } = await storePackageData();
 
   return new Response(JSON.stringify({
@@ -15,4 +15,4 @@ export const config = {
   schedule: '0 */6 * * *',
 };
 
-export default storeNpmData;
+export default storePackageDataOnSchedule;

@@ -5,9 +5,9 @@ import { PAGE_PATHS } from '../../../../contactFormConstants';
 import MaintainersList from './MaintainersList';
 import NpmDetailsList from './NpmDetailsList';
 import Links from './Links';
-import parseNpmData from './parseNpmData';
-import fetchNpmDataByName from './fetchNpmDataByName';
-import pluginNpmPackageNameForStats from '../../../../npmPackageData/pluginNpmPackageNameForStats.mjs';
+import parsePackageData from './parsePackageData';
+import fetchPackageDataByName from './fetchPackageDataByName';
+import pluginPackageNameForStats from '../../../../packageData/pluginPackageNameForStats.mjs';
 
 const Category = ({ plugin }) => {
   const { category } = plugin;
@@ -25,28 +25,28 @@ const Category = ({ plugin }) => {
 };
 
 const Sidebar = ({ plugin, pageSections }) => {
-  const npmPackageName = pluginNpmPackageNameForStats(plugin);
-  const [npmData, setNpmData] = useState({});
-  const [npmDataLoadingState, setNpmDataLoadingState] = useState('unloaded');
+  const { packageName } = pluginPackageNameForStats(plugin);
+  const [packageData, setPackageData] = useState({});
+  const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
   useEffect(() => {
     (async () => {
-      setNpmDataLoadingState('loading');
-      const { status, data } = await fetchNpmDataByName({
-        packageName: npmPackageName,
+      setPackageDataLoadingState('loading');
+      const { status, data } = await fetchPackageDataByName({
+        packageName,
       });
-      setNpmDataLoadingState(status);
-      setNpmData(parseNpmData(data));
+      setPackageDataLoadingState(status);
+      setPackageData(parsePackageData(data));
     })();
-  }, [npmPackageName]);
+  }, [packageName]);
 
   return (
     <>
       <SidebarTableOfContents content={plugin} pageSections={pageSections} />
-      <NpmDetailsList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+      <NpmDetailsList packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
       <Links plugin={plugin} />
       <Category plugin={plugin} />
-      <MaintainersList npmData={npmData} npmDataLoadingState={npmDataLoadingState} />
+      <MaintainersList packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
 
       <div className="p-6 bg-gray-700 rounded-lg sticky top-10">
         <p className="text-white text-base mb-3">

@@ -15,39 +15,56 @@ const DetailsListItem = ({ label, value, ...props }) => {
   );
 };
 
-const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
-  if (npmDataLoadingState === 'error') return null;
+const DownloadCountListItem = ({ packageData }) => {
+  const { downloadCount, downloadCountPeriod } = packageData;
+  if (downloadCountPeriod === 'THIS_YEAR') {
+    return <DetailsListItem label="Downloads this year" value={downloadCount} />;
+  }
+  return <DetailsListItem label="Downloads in last month" value={downloadCount} />;
+};
+
+const FirstPublishedListItem = ({ packageData }) => {
+  const { firstPublishedAgo, firstPublishedTime } = packageData;
+  if (!firstPublishedTime) {
+    return <DetailsListItem label="First published" value="Unknown" />;
+  }
+
+  return (
+    <DetailsListItem
+      label="First published"
+      value={firstPublishedAgo}
+      title={firstPublishedTime}
+    />
+  );
+}
+
+const NpmDetailsList = ({ packageData, packageDataLoadingState }) => {
+  if (packageDataLoadingState === 'error') return null;
   const {
     latestVersion,
-    lastMonthDownloads,
     latestVersionPublishedAgo,
     latestVersionPublishedTime,
-    firstPublishedAgo,
-    firstPublishedTime,
     numberOfVersions,
     license,
     lastSyncedTime,
     lastSyncedAgo,
-  } = npmData;
+  } = packageData;
   let inner;
+  
 
-  if (npmDataLoadingState === 'loaded') {
+  if (packageDataLoadingState === 'loaded') {
     inner = (
       <div>
         <ul className="mb-3">
           <DetailsListItem label="Version" value={latestVersion} />
-          <DetailsListItem label="Downloads in last month" value={lastMonthDownloads} />
+          <DownloadCountListItem packageData={packageData} />
           <DetailsListItem
             label="Last published"
             value={latestVersionPublishedAgo}
             title={latestVersionPublishedTime}
           />
-          <DetailsListItem
-            label="First published"
-            value={firstPublishedAgo}
-            title={firstPublishedTime}
-          />
           <DetailsListItem label="Number of versions" value={numberOfVersions} />
+          <FirstPublishedListItem packageData={packageData} />
           <DetailsListItem label="License" value={license} />
         </ul>
 
@@ -55,7 +72,7 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
           className="flex justify-between text-gray-400"
           title={lastSyncedTime}
         >
-          <span className="italic">Last synced with NPM:</span>
+          <span className="italic">Last synced:</span>
           <span>{lastSyncedAgo}</span>
         </div>
       </div>
@@ -91,7 +108,7 @@ const NpmDetailsList = ({ npmData, npmDataLoadingState }) => {
   return (
     <div className="p-6 bg-gray-100 rounded-lg mb-6">
       <div className="mb-4">
-        <Title>Plugin details</Title>
+        <Title>Package details</Title>
       </div>
 
       {inner}

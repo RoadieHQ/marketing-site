@@ -1,5 +1,5 @@
-export default async function fetchNpmDataByName({ packageName }) {
-  const funcUrl = '/.netlify/functions/fetchNpmDataByName';
+export default async function fetchPackageDataByName({ packageName }) {
+  const funcUrl = '/.netlify/functions/fetchPackageDataByName';
   let response;
 
   try {

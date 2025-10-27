@@ -1,5 +1,6 @@
 import React from 'react';
 import map from 'lodash/map';
+import isEmpty from 'lodash/isEmpty';
 import { Title } from 'components';
 import ContentLoader from 'react-content-loader';
 import { GravatarImage } from 'components/backstage/plugins';
@@ -12,19 +13,20 @@ const Maintainer = ({ name, email }) => {
   );
 };
 
-const MaintainersList = ({ npmData, npmDataLoadingState }) => {
-  if (npmDataLoadingState === 'error') return null;
+const MaintainersList = ({ packageData, packageDataLoadingState }) => {
+  if (packageDataLoadingState === 'error') return null;
+  if (isEmpty(packageData.maintainers)) return null;
   let inner;
 
-  if (npmDataLoadingState === 'loaded') {
+  if (packageDataLoadingState === 'loaded') {
     inner = (
       <>
         <ul className="grid grid-cols-4 gap-3 pb-1 mb-2">
-          {map(npmData.maintainers, ({ name, email }) => (
+          {map(packageData.maintainers, ({ name, email }) => (
             <Maintainer name={name} email={email} key={email} />
           ))}
         </ul>
-        <p className="italic text-gray-400">{npmData.maintainersHelpText}</p>
+        <p className="italic text-gray-400">{packageData.maintainersHelpText}</p>
       </>
     );
   } else {

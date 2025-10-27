@@ -19,9 +19,9 @@ import {
   createListPagesFromQuery,
   transformPageFrontmatter,
 } from './src/pageCreation/index.mjs';
-import storePackageNames from './src/npmPackageData/storePackageNames.mjs';
-import storePackageData from './src/npmPackageData/storePackageData.mjs';
-import listOfNpmPackages from './src/npmPackageData/listOfNpmPackages.mjs';
+import storePackageNames from './src/packageData/storePackageNames.mjs';
+import storePackageData from './src/packageData/storePackageData.mjs';
+import listOfPackages from './src/packageData/listOfPackages.mjs';
 
 export const createPages = async ({ graphql, actions }) => {
   // This function iterates over the backstage plugins in contentful, gets the name
@@ -31,7 +31,7 @@ export const createPages = async ({ graphql, actions }) => {
   // We don't necessarily need this to happen every time we start the local dev server, so
   // a Netlify plugin that runs on deploy time might be a better place to do that. I've
   // never created a Netlify plugin before though so I'm leaving it here for the moment [DT].
-  const npmPackages = await listOfNpmPackages({ graphql });
+  const npmPackages = await listOfPackages({ graphql });
   await storePackageNames(npmPackages);
   // Then we pull back in that list of names from the blob store and iterate over it to
   // fetch the detailed NPM data for each package. We do it this way, rather than fetching
