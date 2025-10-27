@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import sortBy from 'lodash/sortBy';
 
-import { Page, SEO, Headline, Input, Lead } from 'components';
+import { Page, SEO, Headline, Search, Lead } from 'components';
 import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
 import { fetchPackageDataForList } from 'components/backstage/plugins';
 
@@ -71,14 +71,12 @@ const BackstageScaffolderActions = ({ data }) => {
 
           <div className="mb-2">
             <div className="mb-4 w-full lg:w-72">
-              <Input
-                type="text"
+              <Search
                 name="search"
                 onChange={setQuery}
                 value={query}
                 aria-label="Search"
                 placeholder="Filter"
-                fullWidth={true}
               />
             </div>
           </div>
