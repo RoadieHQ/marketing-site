@@ -54,8 +54,6 @@ const BackstagePlugins = ({ data, location }) => {
     (async () => {
       setPackageDataLoadingState('loading');
       const { status, data } = await fetchPackageDataForList();
-      console.log('all data', data['datolabs-io/backstage']);
-      console.log('data', { ...find(data, { slug: 'terraform-provider' }) });
       setPackageDataLoadingState(status);
       setPackageData(data);
     })();
@@ -94,7 +92,6 @@ const BackstagePlugins = ({ data, location }) => {
 
   const allPluginsCount = plugins.edges.length;
   const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, packageData));
-  console.log('hydratePlugin', { ...find(hydratedPlugins, { slug: 'terraform-provider' }) });
 
   const filteredPlugins = filterPlugins({
     plugins: hydratedPlugins,
