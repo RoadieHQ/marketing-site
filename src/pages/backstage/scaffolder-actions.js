@@ -1,10 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import sortBy from 'lodash/sortBy';
+import classnames from 'classnames';
+import { Field, Label } from '@headlessui/react';
+import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
 
-import { Page, SEO, Headline, Search, Lead } from 'components';
+import { Page, SEO, Headline, Search, Lead, Select } from 'components';
 import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
 import { fetchPackageDataForList } from 'components/backstage/plugins';
+
+const SORT_ORDERS = [{
+  label: 'Name',
+  value: 'name',
+  icon: IdentificationIcon,
+}, {
+  label: 'Popularity',
+  value: 'popularity',
+  icon: ChartBarIcon,
+}, {
+  label: 'Recently Updated',
+  value: 'recent',
+  icon: CalendarIcon,
+}];
 
 const BackstageScaffolderActions = ({ data }) => {
   const {
@@ -15,6 +32,7 @@ const BackstageScaffolderActions = ({ data }) => {
   } = data;
 
   const [query, setQuery] = useState('');
+  const [sortOrder, setSortOrder] = useState(SORT_ORDERS[0]);
   const [packageData, setPackageData] = useState({});
   const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
@@ -39,14 +57,35 @@ const BackstageScaffolderActions = ({ data }) => {
   const groupedActions = filteredActions.reduce((groups, action) => {
     const packageName = action.containedInPackage?.npmPackageName || 'Uncategorized';
     if (!groups[packageName]) {
-      groups[packageName] = [];
+      groups[packageName] = {
+        actions: [],
+        packageData: packageData[packageName],
+      };
     }
-    groups[packageName].push(action);
+    groups[packageName].actions.push(action);
     return groups;
   }, {});
 
-  // Sort packages alphabetically
-  const sortedPackageNames = sortBy(Object.keys(groupedActions));
+  // Sort packages based on selected sort order
+  const sortedPackageNames = Object.keys(groupedActions).sort((a, b) => {
+    const aData = groupedActions[a].packageData || {};
+    const bData = groupedActions[b].packageData || {};
+
+    if (sortOrder.value === 'popularity') {
+      // Sort by download count (descending)
+      const aDownloads = aData.downloadCount || 0;
+      const bDownloads = bData.downloadCount || 0;
+      return bDownloads - aDownloads;
+    } else if (sortOrder.value === 'recent') {
+      // Sort by latest version published time (most recent first)
+      const aTime = aData.latestVersionPublishedTime ? new Date(aData.latestVersionPublishedTime).getTime() : 0;
+      const bTime = bData.latestVersionPublishedTime ? new Date(bData.latestVersionPublishedTime).getTime() : 0;
+      return bTime - aTime;
+    } else {
+      // Sort by name (alphabetically)
+      return a.localeCompare(b);
+    }
+  });
 
   const seoTitle = `Backstage Scaffolder Actions Directory | ${title}`;
   const seoDescription = 'Browse Backstage scaffolder actions. View descriptions, schemas, code locations, and availability information.';
@@ -70,23 +109,51 @@ const BackstageScaffolderActions = ({ data }) => {
           </div>
 
           <div className="mb-2">
-            <div className="mb-4 w-full lg:w-72">
-              <Search
-                name="search"
-                onChange={setQuery}
-                value={query}
-                aria-label="Search"
-                placeholder="Filter"
-              />
+            <div className="lg:flex lg:justify-between">
+              <div className="mb-4 lg:mb-0 w-full lg:w-72">
+                <Search
+                  name="search"
+                  onChange={setQuery}
+                  value={query}
+                  aria-label="Search"
+                  placeholder="Filter"
+                />
+              </div>
+
+              <Field
+                className="text-right w-full flex items-center justify-end"
+                disabled={packageDataLoadingState !== 'loaded'}
+              >
+                <Label
+                  className={classnames('mr-2 whitespace-nowrap', {
+                    'text-gray-400': packageDataLoadingState !== 'loaded',
+                  })}
+                >
+                  Sort by:
+                </Label>
+
+                <div className="w-48">
+                  <Select
+                    value={sortOrder}
+                    onChange={setSortOrder}
+                    options={SORT_ORDERS}
+                    name="sort-order"
+                    optionKey="label"
+                    disabled={packageDataLoadingState !== 'loaded'}
+                    showIcon={true}
+                  />
+                </div>
+              </Field>
             </div>
           </div>
         </div>
 
         <div className="pt-6 grid gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
           {sortedPackageNames.map((packageName) => {
-            const actionsInPackage = groupedActions[packageName];
+            const packageGroup = groupedActions[packageName];
+            const actionsInPackage = packageGroup.actions;
             const logoImage = actionsInPackage[0]?.containedInPackage?.logoImage;
-            const packagePackageData = packageData[packageName] || {};
+            const packagePackageData = packageGroup.packageData || {};
             return (
               <React.Fragment key={packageName}>
                 <PackageHeader
