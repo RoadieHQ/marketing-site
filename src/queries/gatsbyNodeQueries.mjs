@@ -143,6 +143,7 @@ export const SCAFFOLDER_ACTIONS_QUERY = `
         slug
         containedInPackage {
           npmPackageName
+          registry
         }
       }
     }

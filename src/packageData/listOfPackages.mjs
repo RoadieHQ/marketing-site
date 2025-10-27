@@ -3,7 +3,7 @@ import uniq from 'lodash/uniq.js';
 
 import { PLUGINS_QUERY, SCAFFOLDER_ACTIONS_QUERY } from '../queries/gatsbyNodeQueries.mjs';
 import pluginPackageNameForStats from './pluginPackageNameForStats.mjs';
-import scaffolderActionNpmPackageName from './scaffolderActionNpmPackageName.mjs';
+import scaffolderActionPackageName from './scaffolderActionPackageName.mjs';
 
 const listOfPackages = async ({ graphql }) => {
   // Fetch plugins
@@ -29,7 +29,7 @@ const listOfPackages = async ({ graphql }) => {
 
   // Extract package names from scaffolder actions
   const actionPackages = reduce(actionsResult.data.actions.edges, (list, { node }) => {
-    const npmPackageName = scaffolderActionNpmPackageName(node);
+    const npmPackageName = scaffolderActionPackageName(node);
     if (npmPackageName) {
       list.push(npmPackageName);
     }
