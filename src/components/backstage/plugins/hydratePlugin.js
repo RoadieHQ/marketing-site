@@ -12,7 +12,6 @@ const hydratePlugin = (plugin, packageData) => {
 
   const { packageName, registry } = packageInfo;
   const pluginPackageData = packageData[packageName];
-  console.log('date', packageData.latestVersionPublishedTime);
 
   if (pluginPackageData) {
     plugin.packageData = {
