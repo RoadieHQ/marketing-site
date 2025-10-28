@@ -30,9 +30,22 @@ If you are using self-hosted SonarQube plugin or want more control over the Sona
 
 ## SonarQube entity configuration
 
-### Step 1: Add the Sonar Card
+### Step 1: Add SonarQube UI Components
 
-Add the EntitySonarQubeCard component [to the catalog](/docs/getting-started/updating-the-ui).
+The SonarQube plugin provides two UI components you can add [to your entity pages](/docs/getting-started/updating-the-ui):
+
+#### EntitySonarQubeCard
+
+Displays SonarQube metrics such as coverage, bugs, and vulnerabilities for a single component. Add this to component pages.
+
+#### SonarQube Related Entities Overview
+
+A content page that displays different information depending on the entity type:
+
+- **Group or System pages**: Lists all Components owned by that entity that have the `sonarqube.org/project-key` annotation.
+- **Component pages**: Lists the component's owning Group/System using a catalog lookup (`/api/catalog/entities/by-refs`). This view does not query SonarQube directly.
+
+**Note:** For detailed metrics on component pages, use the `EntitySonarQubeCard` instead.
 
 ### Step 2: Annotate your entities
 
