@@ -42,8 +42,8 @@ Displays SonarQube metrics such as coverage, bugs, and vulnerabilities for a sin
 
 A content page that displays different information depending on the entity type:
 
-- **Group or System pages**: Lists all Components owned by that entity that have the `sonarqube.org/project-key` annotation.
-- **Component pages**: Lists the component's owning Group/System using a catalog lookup (`/api/catalog/entities/by-refs`). This view does not query SonarQube directly.
+- **Group or System pages**: Lists all catalog entities owned by that entity that have the `sonarqube.org/project-key` annotation.
+- **Component pages**: Lists the component's owning Group/System that have the `sonarqube.org/project-key` annotation.
 
 **Note:** For detailed metrics on component pages, use the `EntitySonarQubeCard` instead.
 
