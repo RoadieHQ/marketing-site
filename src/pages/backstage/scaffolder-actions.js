@@ -188,20 +188,32 @@ const BackstageScaffolderActions = ({ data, location }) => {
             </div>
           </div>
 
-          <div className="mb-2">
-            <div className="lg:flex lg:justify-between lg:items-center gap-4">
-              <div className="lg:flex lg:gap-4 lg:items-center mb-4 lg:mb-0 w-full lg:flex-1">
-                <div className="mb-4 lg:mb-0 w-full lg:w-72">
-                  <Search
-                    name="search"
-                    onChange={handleQueryChange}
-                    value={query}
-                    aria-label="Search"
-                    placeholder="Filter"
-                  />
-                </div>
+          <div className="mb-2 xl:flex xl:items-center">
+            <div className="md:mb-2 md:flex md:items-center md:gap-2 xl:mb-0">
+              <div className="mb-2 md:mb-0 md:w-full lg:w-full xl:mr-2">
+                <Search
+                  name="search"
+                  onChange={handleQueryChange}
+                  value={query}
+                  aria-label="Search"
+                  placeholder="Filter"
+                />
+              </div>
 
-                <div className="mb-4 lg:mb-0 w-full lg:w-96">
+              <div className="mb-2 md:mb-0 md:w-full lg:hidden mx:mr-2">
+                <Typeahead
+                  onChange={handleCategoryChange}
+                  value={category}
+                  options={actionCategories.edges.map(({ node }) => node)}
+                  placeholderText="Categories"
+                  name="filter-categories"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-wrap justify-between items-center gap-2 lg:justify-between xl:flex-grow">
+              <div className="lg:flex lg:items-center">
+                <div className="hidden lg:block lg:w-96 xl:w-auto xl:flex-shrink-0 lg:mr-2 mx:mr-2 xl:w-72">
                   <Typeahead
                     onChange={handleCategoryChange}
                     value={category}
@@ -222,7 +234,7 @@ const BackstageScaffolderActions = ({ data, location }) => {
               </div>
 
               <Field
-                className="text-right flex items-center justify-end flex-shrink-0"
+                className="text-right flex items-center justify-end flex-shrink-0 xl:ml-auto"
                 disabled={packageDataLoadingState !== 'loaded'}
               >
                 <Label
@@ -230,7 +242,7 @@ const BackstageScaffolderActions = ({ data, location }) => {
                     'text-gray-400': packageDataLoadingState !== 'loaded',
                   })}
                 >
-                  Sort by:
+                  Sort:
                 </Label>
 
                 <div className="w-32 lg:w-48">
@@ -248,6 +260,12 @@ const BackstageScaffolderActions = ({ data, location }) => {
             </div>
           </div>
         </div>
+
+        {filteredActions.length === 0 && (
+          <div className="text-center py-12 text-gray-500">
+            No scaffolder actions found matching your filters.
+          </div>
+        )}
 
         <div className="pt-6 grid gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
           {sortedPackageNames.map((packageName) => {
@@ -270,12 +288,6 @@ const BackstageScaffolderActions = ({ data, location }) => {
             );
           })}
         </div>
-
-        {filteredActions.length === 0 && (
-          <div className="text-center py-12 text-gray-500">
-            No scaffolder actions found matching your filters.
-          </div>
-        )}
       </Page>
     </>
   );
