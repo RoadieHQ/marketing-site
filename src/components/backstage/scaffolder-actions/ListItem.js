@@ -37,7 +37,9 @@ const FooterInner = ({ action }) => {
   return (
     <div className="px-4 py-2 flex items-center">
       <div className="flex gap-4 text-xs text-gray-500">
-        <SchemaSummary inputSchema={inputSchema} outputSchema={outputSchema} />
+        <div className="lg:hidden xl:block">
+          <SchemaSummary inputSchema={inputSchema} outputSchema={outputSchema} />
+        </div>
 
         {availableOnRoadie && (
           <div className="flex items-center gap-1">

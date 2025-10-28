@@ -89,6 +89,12 @@ const BackstagePlugins = ({ data, location }) => {
     navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   };
 
+  const clearFilters = () => {
+    setQuery('');
+    setCategory({});
+    navigate(location.pathname, { replace: true });
+  };
+
   const allPluginsCount = plugins.edges.length;
   const hydratedPlugins = plugins.edges.map(({ node }) => hydratePlugin(node, packageData));
 
@@ -190,7 +196,12 @@ const BackstagePlugins = ({ data, location }) => {
               No plugins match your filter settings.
             </p>
             <p className="text-gray-500 mt-2">
-              Try adjusting your search query or category filter.
+              <button
+                onClick={clearFilters}
+                className="text-primary-600 hover:text-primary-700 underline"
+              >
+                Clear all filters
+              </button>
             </p>
           </div>
         ) : (

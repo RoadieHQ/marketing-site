@@ -119,6 +119,13 @@ const BackstageScaffolderActions = ({ data, location }) => {
     navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   };
 
+  const clearFilters = () => {
+    setQuery('');
+    setCategory({});
+    setAvailabilityFilter(AVAILABILITY_FILTERS[0]);
+    navigate(location.pathname, { replace: true });
+  };
+
   const allActionsCount = actions.edges.length;
   const actionsList = actions.edges.map(({ node }) => node);
 
@@ -262,8 +269,18 @@ const BackstageScaffolderActions = ({ data, location }) => {
         </div>
 
         {filteredActions.length === 0 && (
-          <div className="text-center py-12 text-gray-500">
-            No scaffolder actions found matching your filters.
+          <div className="text-center py-12">
+            <p className="text-gray-600 text-lg">
+              No scaffolder actions found matching your filters.
+            </p>
+            <p className="text-gray-500 mt-2">
+              <button
+                onClick={clearFilters}
+                className="text-primary-600 hover:text-primary-700 underline"
+              >
+                Clear all filters
+              </button>
+            </p>
           </div>
         )}
 
