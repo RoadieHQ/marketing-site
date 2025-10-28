@@ -21,13 +21,13 @@ const ScaffolderActionTemplate = ({ data }) => {
   return (
     <>
       <SEO
-        title={`${action.humanName || action.actionId} - Backstage Scaffolder Action`}
-        description={action.description?.childMarkdownRemark?.excerpt || `Documentation for the ${action.humanName || action.actionId} Backstage scaffolder action.`}
+        title={`${action.humanName} - Backstage Scaffolder Action | Roadie`}
+        description={`${action.description}. With schemas, usage examples and popularity data.`}
       />
 
       <SitewideHeader />
 
-      <div className="mt-4">
+      <div className="mt-4 mb-2">
         <Header action={action} />
       </div>
 

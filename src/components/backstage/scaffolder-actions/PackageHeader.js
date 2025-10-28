@@ -2,7 +2,7 @@ import React from 'react';
 import { CalendarIcon, ChartBarIcon } from '@heroicons/react/outline';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 import ContentLoader from 'react-content-loader';
-import { CopyToClipboardButotn } from 'components';
+import { CopyToClipboardButton } from 'components';
 
 import Logo from '../plugins/Logo';
 
@@ -76,10 +76,10 @@ const PackageHeader = ({ packageName, logoImage, packageData, packageDataLoading
         )}
 
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2 mb-2">
-            <h3 className="text-2xl font-bold text-gray-600 truncate min-w-0 flex-1">{packageName}</h3>
-            <div className="flex-shrink-0">
-              <CopyToClipboardButotn textToCopy={packageName} />
+          <div className="flex items-center mb-2">
+            <h3 className="text-lg md:text-2xl font-bold text-gray-600 truncate mr-2">{packageName}</h3>
+            <div>
+              <CopyToClipboardButton textToCopy={packageName} />
             </div>
           </div>
           <PackageDataDisplay packageData={packageData} packageDataLoadingState={packageDataLoadingState} />

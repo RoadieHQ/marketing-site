@@ -171,10 +171,10 @@ const BackstageScaffolderActions = ({ data, location }) => {
   });
 
   let seoTitle = `Backstage Scaffolder Actions Directory | ${title}`;
-  let seoDescription = 'Browse Backstage scaffolder actions. View descriptions, schemas, code locations, and availability information.';
+  let seoDescription = 'Browse Backstage scaffolder actions. View descriptions, schemas, usage examples, and popularity data.';
   if (!isEmpty(category)) {
     seoTitle = `Backstage Scaffolder Actions - ${category.name} | ${title}`;
-    seoDescription = `${category.name} Backstage scaffolder actions. View descriptions, schemas, code locations, and availability information.`;
+    seoDescription = `${category.name} Backstage scaffolder actions. View descriptions, schemas, usage examples, and popularity data.`;
   }
 
   return (

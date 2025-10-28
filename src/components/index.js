@@ -39,4 +39,4 @@ export { default as TabInner } from './Tabs/Inner';
 export { Page } from './layouts';
 export { default as ExitIntentModal } from './ExitIntentModal';
 export { default as SidebarTableOfContents } from './SidebarTableOfContents';
-export { default as CopyToClipboardButotn } from './CopyToClipboardButton';
+export { default as CopyToClipboardButton } from './CopyToClipboardButton';

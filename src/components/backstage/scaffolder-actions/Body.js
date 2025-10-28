@@ -12,6 +12,9 @@ const Body = ({ action }) => {
     <>
       {!isEmpty(descriptionHtml) && (
         <div className="mb-12" id="description">
+          <div>
+            <strong>Description</strong>
+          </div>
           <div
             className="prose prose-primary max-w-none"
             dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }}
