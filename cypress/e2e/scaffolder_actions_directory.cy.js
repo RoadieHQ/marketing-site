@@ -264,11 +264,19 @@ describe('Scaffolder Actions directory', () => {
     it('displays category in sidebar when action has a category', () => {
       cy.visit('/backstage/scaffolder-actions/acme-example/');
 
+      // Scroll down to ensure the category section is visible (it's in the sidebar which may be below the fold)
+      cy.scrollTo(0, 500);
+
       // Check if category section exists (conditional based on action having a category)
       cy.get('body').then(($body) => {
         if ($body.text().includes('Category')) {
+          // Scroll the Category heading into view before checking for the link
+          cy.contains('Category').scrollIntoView();
+
           // Verify category is clickable and links to filtered list
+          // The link is a sibling of the Title's parent div, so we need to go up two levels
           cy.contains('Category')
+            .parent()
             .parent()
             .within(() => {
               cy.get('a[href*="/backstage/scaffolder-actions/?category="]').should('exist');
