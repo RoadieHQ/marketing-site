@@ -4,11 +4,19 @@ import {
   SEO,
   SitewideHeader,
   SitewideFooter,
+  Title,
 } from 'components';
-import { Header, Body, Sidebar } from 'components/backstage/scaffolder-actions';
+import { Header, Body, Sidebar, ListItem } from 'components/backstage/scaffolder-actions';
 
 const ScaffolderActionTemplate = ({ data }) => {
   const { action } = data;
+
+  // Get related actions from the same package, excluding the current action
+  const relatedActions = action.containedInPackage?.relatedActions?.filter(
+    (relatedAction) => relatedAction.slug !== action.slug
+  ) || [];
+
+  const packageName = action.containedInPackage?.npmPackageName;
 
   return (
     <>
@@ -34,6 +42,19 @@ const ScaffolderActionTemplate = ({ data }) => {
               <Sidebar action={action} />
             </aside>
           </div>
+
+          {relatedActions.length > 0 && (
+            <div className="mt-16">
+              <div className="mb-6">
+                <Title className="text-3xl">Other actions in {packageName}</Title>
+              </div>
+              <div className="grid gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {relatedActions.map((relatedAction) => (
+                  <ListItem key={relatedAction.slug} action={relatedAction} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </main>
 
@@ -76,6 +97,28 @@ export const pageQuery = graphql`
       supportsDryRun
       containedInPackage {
         npmPackageName
+        relatedActions: backstage_scaffolder_action {
+          slug
+          actionId
+          humanName
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+          inputSchema {
+            internal {
+              content
+            }
+          }
+          outputSchema {
+            internal {
+              content
+            }
+          }
+          supportsDryRun
+          availableOnRoadie
+        }
       }
     }
   }

@@ -279,7 +279,6 @@ export const pageQuery = graphql`
             }
           }
           supportsDryRun
-          codeLocation
           availableOnRoadie
           containedInPackage {
             npmPackageName
