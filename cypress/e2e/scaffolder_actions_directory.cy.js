@@ -282,8 +282,9 @@ describe('Scaffolder Actions directory', () => {
     it('can be filtered by category', () => {
       cy.visit('/backstage/scaffolder-actions/');
 
-      // Get the category typeahead
-      cy.get('input[name="filter-categories"]').should('exist');
+      // Get the category typeahead - the Typeahead component appends '-input' to the name
+      // There are two instances (one for mobile, one for desktop) so check at least one exists
+      cy.get('input[name="filter-categories-input"]').should('have.length.at.least', 1);
 
       // The typeahead should be present but we can't easily test it without knowing available categories
       // Just verify URL parameter handling works

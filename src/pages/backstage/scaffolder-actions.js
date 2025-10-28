@@ -33,7 +33,6 @@ const AVAILABILITY_FILTERS = [{
   checkedTextColor: 'text-white',
 }, {
   label: 'Available on Roadie',
-  shortLabel: 'Roadie',
   value: 'roadie',
   icon: RoadieRacksIcon,
   checkedBgColor: 'bg-orange-600',
@@ -186,7 +185,7 @@ const BackstageScaffolderActions = ({ data, location }) => {
 
             <div className="flex flex-wrap justify-between items-center gap-2 lg:justify-between xl:flex-grow">
               <div className="lg:flex lg:items-center">
-                <div className="hidden lg:block lg:w-96 xl:w-auto xl:flex-shrink-0 lg:mr-2 mx:mr-2 xl:w-72">
+                <div className="hidden lg:block lg:w-96 xl:w-auto xl:flex-shrink-0 lg:mr-2 mx:mr-2 xl:w-80">
                   <Typeahead
                     onChange={handleCategoryChange}
                     value={category}

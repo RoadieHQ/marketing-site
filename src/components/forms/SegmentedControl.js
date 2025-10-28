@@ -49,13 +49,7 @@ const SegmentedControl = ({ value, onChange, options }) => {
                       checked ? checkedTextColor : uncheckedTextColor
                     )}
                   >
-                    {option.shortLabel && (
-                      <>
-                        <span className="lg:hidden">{option.shortLabel}</span>
-                        <span className="hidden lg:inline">{option.label}</span>
-                      </>
-                    )}
-                    {!option.shortLabel && option.label}
+                    {option.label}
                   </span>
                 </span>
               );

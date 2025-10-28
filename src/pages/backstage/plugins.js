@@ -148,7 +148,7 @@ const BackstagePlugins = ({ data, location }) => {
                     'text-gray-400': packageDataLoadingState !== 'loaded',
                   })}
                 >
-                  Sort by:
+                  Sort:
                 </Label>
 
                 <div className="w-48">
