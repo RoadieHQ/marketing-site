@@ -9,7 +9,11 @@ import MaintainersList from '../../backstage/plugins/Sidebar/MaintainersList';
 import parsePackageData from '../../backstage/plugins/Sidebar/parsePackageData';
 import fetchPackageDataByName from '../../backstage/plugins/Sidebar/fetchPackageDataByName';
 import scaffolderActionPackageForStats from '../../../packageData/scaffolderActionPackageForStats.mjs';
-import Category from './Category';
+import Category from '../Category';
+
+const ScaffolderActionCategory = ({ action }) => {
+  return <Category item={action} basePath="/backstage/scaffolder-actions" />;
+};
 
 const Links = ({ action }) => {
   const { codeLocation } = action;
@@ -88,7 +92,7 @@ const Sidebar = ({ action, pageSections }) => {
         title="Package details"
       />
       <Links action={action} />
-      <Category action={action} />
+      <ScaffolderActionCategory action={action} />
       <Info action={action} />
       <MaintainersList packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
 
