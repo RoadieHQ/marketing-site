@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Headline, Link, CopyToClipboardButton } from 'components';
+import { useBackLinkWithSearchParams } from 'hooks/useSearchParamsStorage';
 
 const Header = ({ action }) => {
-  const [backLink, setBackLink] = useState('/backstage/scaffolder-actions/');
+  const backLink = useBackLinkWithSearchParams('actionsPageSearchParams', '/backstage/scaffolder-actions/');
   const packageName = action.containedInPackage?.npmPackageName;
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedSearchParams = sessionStorage.getItem('actionsPageSearchParams');
-      if (savedSearchParams) {
-        setBackLink(`/backstage/scaffolder-actions/${savedSearchParams}`);
-      }
-    }
-  }, []);
 
   return (
     <div className="mx-auto max-w-7xl">

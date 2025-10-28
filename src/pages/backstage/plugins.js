@@ -13,6 +13,7 @@ import {
   hydratePlugin,
 } from 'components/backstage/plugins';
 import { useCategoryFilter, useQueryFilter } from 'hooks/useUrlFilterState';
+import { useSaveSearchParams } from 'hooks/useSearchParamsStorage';
 
 const SORT_ORDERS = [{
   label: 'Name',
@@ -53,6 +54,9 @@ const BackstagePlugins = ({ data, location }) => {
   const handleCategoryChange = useCategoryFilter(location, setCategory);
   const handleQueryChange = useQueryFilter(location, setQuery);
 
+  // Save search params to sessionStorage so we can restore them when returning from a plugin page
+  useSaveSearchParams('pluginsPageSearchParams', location.search);
+
   useEffect(() => {
     (async () => {
       setPackageDataLoadingState('loading');
@@ -61,13 +65,6 @@ const BackstagePlugins = ({ data, location }) => {
       setPackageData(data);
     })();
   }, []);
-
-  useEffect(() => {
-    // Save search params to sessionStorage so we can restore them when returning from a plugin page
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('pluginsPageSearchParams', location.search);
-    }
-  }, [location.search]);
 
   const clearFilters = () => {
     setQuery('');

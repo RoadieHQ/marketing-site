@@ -10,6 +10,7 @@ import { ListItem, filterActions, PackageHeader } from 'components/backstage/sca
 import { fetchPackageDataForList } from 'components/backstage/plugins';
 import { RoadieRacksIcon } from 'components/icons';
 import { useCategoryFilter, useQueryFilter, useAvailabilityFilter } from 'hooks/useUrlFilterState';
+import { useSaveSearchParams } from 'hooks/useSearchParamsStorage';
 
 const SORT_ORDERS = [{
   label: 'Name',
@@ -72,6 +73,9 @@ const BackstageScaffolderActions = ({ data, location }) => {
   const handleQueryChange = useQueryFilter(location, setQuery);
   const handleAvailabilityFilterChange = useAvailabilityFilter(location, setAvailabilityFilter);
 
+  // Save search params to sessionStorage so we can restore them when returning from an action page
+  useSaveSearchParams('actionsPageSearchParams', location.search);
+
   useEffect(() => {
     (async () => {
       setPackageDataLoadingState('loading');
@@ -80,13 +84,6 @@ const BackstageScaffolderActions = ({ data, location }) => {
       setPackageData(data);
     })();
   }, []);
-
-  useEffect(() => {
-    // Save search params to sessionStorage so we can restore them when returning from an action page
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('actionsPageSearchParams', location.search);
-    }
-  }, [location.search]);
 
   const clearFilters = () => {
     setQuery('');
