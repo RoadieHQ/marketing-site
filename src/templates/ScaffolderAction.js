@@ -6,7 +6,7 @@ import {
   SitewideFooter,
   Title,
 } from 'components';
-import { Header, Body, Sidebar, ListItem } from 'components/backstage/scaffolder-actions';
+import { Header, Body, Sidebar, ListItem, PAGE_SECTIONS } from 'components/backstage/scaffolder-actions';
 
 const ScaffolderActionTemplate = ({ data }) => {
   const { action } = data;
@@ -39,7 +39,7 @@ const ScaffolderActionTemplate = ({ data }) => {
             </article>
 
             <aside className="hidden md:block md:col-span-1">
-              <Sidebar action={action} />
+              <Sidebar action={action} pageSections={PAGE_SECTIONS} />
             </aside>
           </div>
 

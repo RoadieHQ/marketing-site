@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CheckIcon } from '@heroicons/react/solid';
-import { Title, Chip, Button } from 'components';
+import { Title, Chip, Button, SidebarTableOfContents } from 'components';
 import { GitHubChip } from 'components/backstage/plugins';
 import RoadieDocsChip from 'components/backstage/RoadieDocsChip';
 import { PAGE_PATHS } from '../../../contactFormConstants';
@@ -57,7 +57,7 @@ const Info = ({ action }) => {
   );
 };
 
-const Sidebar = ({ action }) => {
+const Sidebar = ({ action, pageSections }) => {
   const { packageName } = scaffolderActionPackageForStats(action);
   const [packageData, setPackageData] = useState({});
   const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
@@ -80,6 +80,7 @@ const Sidebar = ({ action }) => {
 
   return (
     <>
+      <SidebarTableOfContents content={action} pageSections={pageSections} />
       <NpmDetailsList
         packageData={packageData}
         packageDataLoadingState={packageDataLoadingState}

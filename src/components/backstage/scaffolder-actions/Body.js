@@ -11,7 +11,7 @@ const Body = ({ action }) => {
   return (
     <>
       {!isEmpty(descriptionHtml) && (
-        <div className="mb-12">
+        <div className="mb-12" id="description">
           <div
             className="prose prose-primary max-w-none"
             dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }}
@@ -19,14 +19,14 @@ const Body = ({ action }) => {
         </div>
       )}
 
-      <div className="mb-12">
+      <div className="mb-12" id="input-schema">
         <div className="mb-4">
           <Title className="text-3xl">Input Schema</Title>
         </div>
         <SchemaTable schema={inputSchema} title="Input Schema" />
       </div>
 
-      <div className="mb-12">
+      <div className="mb-12" id="output-schema">
         <div className="mb-4">
           <Title className="text-3xl">Output Schema</Title>
         </div>
@@ -34,7 +34,7 @@ const Body = ({ action }) => {
       </div>
 
       {!isEmpty(usageExamplesHtml) && (
-        <div className="mb-12">
+        <div className="mb-12" id="usage-examples">
           <div className="mb-4">
             <Title className="text-3xl">Usage Examples</Title>
           </div>
