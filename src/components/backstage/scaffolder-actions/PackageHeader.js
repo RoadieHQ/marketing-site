@@ -26,8 +26,6 @@ const DownloadCount = ({ packageData }) => {
 const PackageDataDisplay = ({ packageData, packageDataLoadingState }) => {
   if (packageDataLoadingState === 'error') return null;
 
-  console.log('packageData', packageData);
-
   if (packageDataLoadingState === 'loaded') {
     const { latestVersionPublishedTime } = packageData;
 
