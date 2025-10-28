@@ -2,8 +2,16 @@ const filterActions = ({
   actions,
   query,
   availabilityFilter,
+  category,
 }) => {
   let filteredActions = actions;
+
+  // Category filter
+  if (category && category.name) {
+    filteredActions = filteredActions.filter(({ category: actionCategory }) => {
+      return actionCategory?.name === category.name;
+    });
+  }
 
   // Availability filter
   if (availabilityFilter && availabilityFilter.value === 'roadie') {

@@ -95,6 +95,11 @@ export const pageQuery = graphql`
       codeLocation
       availableOnRoadie
       supportsDryRun
+      category {
+        name
+        description
+        searchParam
+      }
       containedInPackage {
         npmPackageName
         relatedActions: backstage_scaffolder_action {

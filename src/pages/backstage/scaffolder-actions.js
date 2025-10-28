@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { graphql, navigate } from 'gatsby';
 import classnames from 'classnames';
 import { Field, Label } from '@headlessui/react';
+import isEmpty from 'lodash/isEmpty';
 import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
 
-import { Page, SEO, Headline, Search, Lead, Select, SegmentedControl } from 'components';
+import { Typeahead, Page, SEO, Headline, Search, Lead, Select, SegmentedControl } from 'components';
 import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
 import { fetchPackageDataForList } from 'components/backstage/plugins';
 import { RoadieRacksIcon } from 'components/icons';
@@ -42,12 +43,14 @@ const AVAILABILITY_FILTERS = [{
 const BackstageScaffolderActions = ({ data, location }) => {
   const {
     actions,
+    actionCategories,
     site: {
       siteMetadata: { title },
     },
   } = data;
 
   const searchParams = new URLSearchParams(location.search);
+  const categoryParam = searchParams.get('category');
   const queryParam = searchParams.get('q');
   const availabilityParam = searchParams.get('availability');
 
@@ -57,6 +60,10 @@ const BackstageScaffolderActions = ({ data, location }) => {
     filter => filter.value === availabilityParam
   ) || AVAILABILITY_FILTERS[0];
   const [availabilityFilter, setAvailabilityFilter] = useState(initialAvailabilityFilter);
+  const initialCategory = actionCategories.edges
+    .map(({ node }) => node)
+    .find(({ searchParam }) => searchParam === categoryParam);
+  const [category, setCategory] = useState(initialCategory || {});
   const [packageData, setPackageData] = useState({});
   const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
@@ -75,6 +82,18 @@ const BackstageScaffolderActions = ({ data, location }) => {
       sessionStorage.setItem('actionsPageSearchParams', location.search);
     }
   }, [location.search]);
+
+  const handleCategoryChange = (newCategory) => {
+    setCategory(newCategory);
+
+    const params = new URLSearchParams(location.search);
+    if (isEmpty(newCategory)) {
+      params.delete('category');
+    } else {
+      params.set('category', newCategory.searchParam);
+    }
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+  };
 
   const handleQueryChange = (newQuery) => {
     setQuery(newQuery);
@@ -107,6 +126,7 @@ const BackstageScaffolderActions = ({ data, location }) => {
     actions: actionsList,
     query,
     availabilityFilter,
+    category,
   });
 
   // Group actions by package
@@ -143,8 +163,12 @@ const BackstageScaffolderActions = ({ data, location }) => {
     }
   });
 
-  const seoTitle = `Backstage Scaffolder Actions Directory | ${title}`;
-  const seoDescription = 'Browse Backstage scaffolder actions. View descriptions, schemas, code locations, and availability information.';
+  let seoTitle = `Backstage Scaffolder Actions Directory | ${title}`;
+  let seoDescription = 'Browse Backstage scaffolder actions. View descriptions, schemas, code locations, and availability information.';
+  if (!isEmpty(category)) {
+    seoTitle = `Backstage Scaffolder Actions - ${category.name} | ${title}`;
+    seoDescription = `${category.name} Backstage scaffolder actions. View descriptions, schemas, code locations, and availability information.`;
+  }
 
   return (
     <>
@@ -174,6 +198,16 @@ const BackstageScaffolderActions = ({ data, location }) => {
                     value={query}
                     aria-label="Search"
                     placeholder="Filter"
+                  />
+                </div>
+
+                <div className="mb-4 lg:mb-0 w-full lg:w-96">
+                  <Typeahead
+                    onChange={handleCategoryChange}
+                    value={category}
+                    options={actionCategories.edges.map(({ node }) => node)}
+                    placeholderText="Categories"
+                    name="filter-categories"
                   />
                 </div>
 
@@ -257,6 +291,18 @@ export const pageQuery = graphql`
       }
     }
 
+    actionCategories: allContentfulBackstageScaffolderActionCategory(sort: {
+      name: ASC
+    }) {
+      edges {
+        node {
+          name
+          description
+          searchParam
+        }
+      }
+    }
+
     actions: allContentfulBackstageScaffolderAction(sort: { actionId: ASC }) {
       edges {
         node {
@@ -280,6 +326,11 @@ export const pageQuery = graphql`
           }
           supportsDryRun
           availableOnRoadie
+          category {
+            name
+            description
+            searchParam
+          }
           containedInPackage {
             npmPackageName
             logoImage {
