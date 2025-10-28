@@ -12,6 +12,7 @@ import {
   filterPlugins,
   hydratePlugin,
 } from 'components/backstage/plugins';
+import { useCategoryFilter, useQueryFilter } from 'hooks/useUrlFilterState';
 
 const SORT_ORDERS = [{
   label: 'Name',
@@ -49,6 +50,9 @@ const BackstagePlugins = ({ data, location }) => {
     .find(({ searchParam }) => searchParam === categoryParam);
   const [category, setCategory] = useState(initialCategory || {});
 
+  const handleCategoryChange = useCategoryFilter(location, setCategory);
+  const handleQueryChange = useQueryFilter(location, setQuery);
+
   useEffect(() => {
     (async () => {
       setPackageDataLoadingState('loading');
@@ -64,30 +68,6 @@ const BackstagePlugins = ({ data, location }) => {
       sessionStorage.setItem('pluginsPageSearchParams', location.search);
     }
   }, [location.search]);
-
-  const handleCategoryChange = (newCategory) => {
-    setCategory(newCategory);
-
-    const params = new URLSearchParams(location.search);
-    if (isEmpty(newCategory)) {
-      params.delete('category');
-    } else {
-      params.set('category', newCategory.searchParam);
-    }
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
-  };
-
-  const handleQueryChange = (newQuery) => {
-    setQuery(newQuery);
-
-    const params = new URLSearchParams(location.search);
-    if (!newQuery || newQuery.trim() === '') {
-      params.delete('q');
-    } else {
-      params.set('q', newQuery);
-    }
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
-  };
 
   const clearFilters = () => {
     setQuery('');

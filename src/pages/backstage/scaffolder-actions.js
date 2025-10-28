@@ -9,6 +9,7 @@ import { Typeahead, Page, SEO, Headline, Search, Lead, Select, SegmentedControl 
 import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
 import { fetchPackageDataForList } from 'components/backstage/plugins';
 import { RoadieRacksIcon } from 'components/icons';
+import { useCategoryFilter, useQueryFilter, useAvailabilityFilter } from 'hooks/useUrlFilterState';
 
 const SORT_ORDERS = [{
   label: 'Name',
@@ -67,6 +68,10 @@ const BackstageScaffolderActions = ({ data, location }) => {
   const [packageData, setPackageData] = useState({});
   const [packageDataLoadingState, setPackageDataLoadingState] = useState('unloaded');
 
+  const handleCategoryChange = useCategoryFilter(location, setCategory);
+  const handleQueryChange = useQueryFilter(location, setQuery);
+  const handleAvailabilityFilterChange = useAvailabilityFilter(location, setAvailabilityFilter);
+
   useEffect(() => {
     (async () => {
       setPackageDataLoadingState('loading');
@@ -82,42 +87,6 @@ const BackstageScaffolderActions = ({ data, location }) => {
       sessionStorage.setItem('actionsPageSearchParams', location.search);
     }
   }, [location.search]);
-
-  const handleCategoryChange = (newCategory) => {
-    setCategory(newCategory);
-
-    const params = new URLSearchParams(location.search);
-    if (isEmpty(newCategory)) {
-      params.delete('category');
-    } else {
-      params.set('category', newCategory.searchParam);
-    }
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
-  };
-
-  const handleQueryChange = (newQuery) => {
-    setQuery(newQuery);
-
-    const params = new URLSearchParams(location.search);
-    if (!newQuery || newQuery.trim() === '') {
-      params.delete('q');
-    } else {
-      params.set('q', newQuery);
-    }
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
-  };
-
-  const handleAvailabilityFilterChange = (newFilter) => {
-    setAvailabilityFilter(newFilter);
-
-    const params = new URLSearchParams(location.search);
-    if (newFilter.value === 'all') {
-      params.delete('availability');
-    } else {
-      params.set('availability', newFilter.value);
-    }
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
-  };
 
   const clearFilters = () => {
     setQuery('');
