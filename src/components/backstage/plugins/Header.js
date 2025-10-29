@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Headline, Link } from 'components';
+import { useBackLinkWithSearchParams } from 'hooks/useSearchParamsStorage';
 
 import Logo from './Logo';
 import Attribution from './Attribution';
@@ -7,16 +8,7 @@ import Attribution from './Attribution';
 const Header = ({
   plugin: { humanName, logoImage, heading, attributionText: text, attributionUrl: href },
 }) => {
-  const [backLink, setBackLink] = useState('/backstage/plugins/');
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedSearchParams = sessionStorage.getItem('pluginsPageSearchParams');
-      if (savedSearchParams) {
-        setBackLink(`/backstage/plugins/${savedSearchParams}`);
-      }
-    }
-  }, []);
+  const backLink = useBackLinkWithSearchParams('pluginsPageSearchParams', '/backstage/plugins/');
 
   return (
     <div className="mx-auto max-w-7xl">

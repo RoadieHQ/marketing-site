@@ -11,6 +11,7 @@ export {
   EmailField,
   Select,
   Search,
+  SegmentedControl,
 } from './forms';
 export { SitewideHeader } from './SitewideHeader';
 export { default as Lead } from './Lead';
@@ -38,3 +39,4 @@ export { default as TabInner } from './Tabs/Inner';
 export { Page } from './layouts';
 export { default as ExitIntentModal } from './ExitIntentModal';
 export { default as SidebarTableOfContents } from './SidebarTableOfContents';
+export { default as CopyToClipboardButton } from './CopyToClipboardButton';

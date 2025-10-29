@@ -42,7 +42,6 @@ const storePackageData = async () => {
   // Fetch Terraform providers
   console.log(`Fetching ${terraformPackages.length} terraform providers...`);
   const terraformData = await fetchMultipleTerraformProviders(terraformPackages);
-  console.log('terraformData', terraformData);
 
   // Combine npm and terraform data
   const allPackageData = [...strippedNpmData, ...terraformData];

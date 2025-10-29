@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Title, Chip, Button, SidebarTableOfContents, Link } from 'components';
+import { Button, SidebarTableOfContents } from 'components';
 
 import { PAGE_PATHS } from '../../../../contactFormConstants';
 import MaintainersList from './MaintainersList';
@@ -7,21 +7,11 @@ import NpmDetailsList from './NpmDetailsList';
 import Links from './Links';
 import parsePackageData from './parsePackageData';
 import fetchPackageDataByName from './fetchPackageDataByName';
-import pluginPackageNameForStats from '../../../../packageData/pluginPackageNameForStats.mjs';
+import pluginPackageNameForStats from '../../../../packageData/pluginPackageForStats.mjs';
+import Category from '../../Category';
 
-const Category = ({ plugin }) => {
-  const { category } = plugin;
-  if (!category) return null;
-  return (
-    <div className="p-6 bg-gray-100 rounded-lg mb-6">
-      <div className="mb-4">
-        <Title>Category</Title>
-      </div>
-      <Link to={`/backstage/plugins/?category=${category.searchParam}`} className="inline-block">
-        <Chip label={category.name} title={category.description} />
-      </Link>
-    </div>
-  );
+const PluginCategory = ({ plugin }) => {
+  return <Category item={plugin} basePath="/backstage/plugins" />;
 };
 
 const Sidebar = ({ plugin, pageSections }) => {
@@ -45,7 +35,7 @@ const Sidebar = ({ plugin, pageSections }) => {
       <SidebarTableOfContents content={plugin} pageSections={pageSections} />
       <NpmDetailsList packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
       <Links plugin={plugin} />
-      <Category plugin={plugin} />
+      <PluginCategory plugin={plugin} />
       <MaintainersList packageData={packageData} packageDataLoadingState={packageDataLoadingState} />
 
       <div className="p-6 bg-gray-700 rounded-lg sticky top-10">

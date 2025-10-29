@@ -19,9 +19,10 @@ const navigation = {
   support: [
     { name: 'Documentation', href: '/docs/' },
     { name: 'Case Studies', href: '/case-studies/' },
-    { name: 'Backstage Plugins', href: '/backstage/plugins/' },
     { name: 'FAQs', href: '/faqs/' },
     { name: 'Changelog', href: '/tags/changelog/', },
+    { name: 'Backstage Plugins', href: '/backstage/plugins/' },
+    { name: 'Scaffolder Actions', href: '/backstage/scaffolder-actions/' },
     { name: 'Backstage Bites', href: '/backstage-bites/' },
     { name: 'Backstage Weekly', href: '/backstage-weekly/' },
   ],
@@ -119,7 +120,7 @@ const SitewideFooter = ({ maxWidth = '7xl' }) => {
                 className="mr-2 h-8 w-8"
                 alt="AICPA seal. Blue circle with the name AICPA inside."
               />
-              <p className="text-base text-gray-500">Roadie has gained SOC2 Type 2 compliance</p>
+              <p className="text-base text-gray-500">SOC2 Type 2 compliant</p>
             </div>
           </div>
 

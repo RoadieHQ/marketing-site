@@ -10,4 +10,5 @@ export { default as Recaptcha } from './Recaptcha';
 export { default as Select } from './Select';
 export { default as Typeahead } from './Typeahead';
 export { default as Search } from './Search';
+export { default as SegmentedControl } from './SegmentedControl';
 export { INPUT_COLORS as INPUT_COLORS } from './input-colors';

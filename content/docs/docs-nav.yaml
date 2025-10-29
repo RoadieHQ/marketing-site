@@ -158,7 +158,9 @@ nav:
           - Publishing Plugins: '/docs/custom-plugins/legacy/artifactory/'
   - Scaffolder:
       - Overview: '/docs/scaffolder/writing-templates/'
-      - Actions Directory: '/docs/scaffolder/scaffolder-actions-directory/'
+      - Actions Directory:
+          linkTo: '/backstage/scaffolder-actions/'
+          external: true
       - Custom Actions: '/docs/scaffolder/self-hosted-scaffolder-actions/'
       - Parameters: '/docs/scaffolder/scaffolder-parameters/'
       - Custom Parameters: '/docs/scaffolder/custom-fields/'

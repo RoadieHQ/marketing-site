@@ -284,3 +284,12 @@
   from = "/blog/backstage-weekly-*"
   to = "/backstage-weekly/:splat"
   force = true
+
+#########
+# https://app.shortcut.com/larder/story/29735/improve-scaffolder-actions-directory
+########
+
+[[redirects]]
+  from = "/docs/scaffolder/scaffolder-actions-directory/"
+  to = "/backstage/scaffolder-actions/"
+  force = true

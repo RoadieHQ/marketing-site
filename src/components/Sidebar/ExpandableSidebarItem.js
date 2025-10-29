@@ -5,7 +5,17 @@ import classnames from 'classnames';
 import SidebarItem from './Item';
 
 const ExpandableSidebarItem = ({ text, subItems, location }) => {
-  const isOpenOnPageLoad = subItems.map(Object.values).flat().includes(location.pathname);
+  // Extract paths from subItems, handling both old string format and new object format
+  const paths = subItems.map((item) => {
+    const [[, pathOrConfig]] = Object.entries(item);
+    // If it's an object with linkTo property, extract linkTo; otherwise use the value directly
+    if (typeof pathOrConfig === 'object' && pathOrConfig !== null && 'linkTo' in pathOrConfig) {
+      return pathOrConfig.linkTo;
+    }
+    return pathOrConfig;
+  });
+
+  const isOpenOnPageLoad = paths.includes(location.pathname);
   const [isOpen, setIsOpen] = useState(isOpenOnPageLoad);
   const subMenuButtonIcon = isOpen ? (
     <ChevronDownIcon className="h-4" />
@@ -22,9 +32,16 @@ const ExpandableSidebarItem = ({ text, subItems, location }) => {
   };
 
   const itemComponents = subItems.map((item) => {
-    const [[text, path]] = Object.entries(item);
+    const [[text, pathOrConfig]] = Object.entries(item);
 
-    return <SidebarItem key={path} text={text} to={path} className="pl-10" />;
+    // Handle new object format: { linkTo: string, external?: boolean }
+    if (typeof pathOrConfig === 'object' && pathOrConfig !== null && 'linkTo' in pathOrConfig) {
+      const { linkTo, external = false } = pathOrConfig;
+      return <SidebarItem key={linkTo} text={text} to={linkTo} external={external} className="pl-10" />;
+    }
+
+    // Handle old string format: direct path string
+    return <SidebarItem key={pathOrConfig} text={text} to={pathOrConfig} className="pl-10" />;
   });
 
   return (

@@ -12,6 +12,8 @@ import {
   filterPlugins,
   hydratePlugin,
 } from 'components/backstage/plugins';
+import { useCategoryFilter, useQueryFilter } from 'hooks/useUrlFilterState';
+import { useSaveSearchParams } from 'hooks/useSearchParamsStorage';
 
 const SORT_ORDERS = [{
   label: 'Name',
@@ -49,6 +51,12 @@ const BackstagePlugins = ({ data, location }) => {
     .find(({ searchParam }) => searchParam === categoryParam);
   const [category, setCategory] = useState(initialCategory || {});
 
+  const handleCategoryChange = useCategoryFilter(location, setCategory);
+  const handleQueryChange = useQueryFilter(location, setQuery);
+
+  // Save search params to sessionStorage so we can restore them when returning from a plugin page
+  useSaveSearchParams('pluginsPageSearchParams', location.search);
+
   useEffect(() => {
     (async () => {
       setPackageDataLoadingState('loading');
@@ -58,35 +66,10 @@ const BackstagePlugins = ({ data, location }) => {
     })();
   }, []);
 
-  useEffect(() => {
-    // Save search params to sessionStorage so we can restore them when returning from a plugin page
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('pluginsPageSearchParams', location.search);
-    }
-  }, [location.search]);
-
-  const handleCategoryChange = (newCategory) => {
-    setCategory(newCategory);
-
-    const params = new URLSearchParams(location.search);
-    if (isEmpty(newCategory)) {
-      params.delete('category');
-    } else {
-      params.set('category', newCategory.searchParam);
-    }
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
-  };
-
-  const handleQueryChange = (newQuery) => {
-    setQuery(newQuery);
-
-    const params = new URLSearchParams(location.search);
-    if (!newQuery || newQuery.trim() === '') {
-      params.delete('q');
-    } else {
-      params.set('q', newQuery);
-    }
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+  const clearFilters = () => {
+    setQuery('');
+    setCategory({});
+    navigate(location.pathname, { replace: true });
   };
 
   const allPluginsCount = plugins.edges.length;
@@ -165,7 +148,7 @@ const BackstagePlugins = ({ data, location }) => {
                     'text-gray-400': packageDataLoadingState !== 'loaded',
                   })}
                 >
-                  Sort by:
+                  Sort:
                 </Label>
 
                 <div className="w-48">
@@ -190,7 +173,12 @@ const BackstagePlugins = ({ data, location }) => {
               No plugins match your filter settings.
             </p>
             <p className="text-gray-500 mt-2">
-              Try adjusting your search query or category filter.
+              <button
+                onClick={clearFilters}
+                className="text-primary-600 hover:text-primary-700 underline"
+              >
+                Clear all filters
+              </button>
             </p>
           </div>
         ) : (

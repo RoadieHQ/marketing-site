@@ -4,7 +4,7 @@
 // package name in the list to fetch the download count.
 //
 // Returns an object with { packageName, registry } where registry defaults to 'npm' if not specified.
-const pluginPackageNameForStats = (plugin) => {
+const pluginPackageForStats = (plugin) => {
   if (!plugin.packages || plugin.packages.length === 0) {
     return null;
   }
@@ -16,4 +16,4 @@ const pluginPackageNameForStats = (plugin) => {
   };
 }
 
-export default pluginPackageNameForStats;
+export default pluginPackageForStats;

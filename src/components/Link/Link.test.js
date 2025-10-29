@@ -344,7 +344,7 @@ describe('Link', () => {
       const source = createMemorySource(route);
       const history = createHistory(source);
 
-      googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((eventName, params) => {
+      googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((_eventName, params) => {
         if (params.event_callback) {
           params.event_callback();
         }
@@ -592,7 +592,7 @@ describe('Link', () => {
         const history = createHistory(source);
 
         // Mock gtag to call the callback immediately (normal behavior)
-        googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((eventName, params) => {
+        googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((_eventName, params) => {
           if (params.event_callback) {
             params.event_callback();
           }
@@ -628,7 +628,7 @@ describe('Link', () => {
         let storedCallback;
 
         // Mock gtag to store the callback but delay calling it
-        googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((eventName, params) => {
+        googleAnalytics.trackGoogleAnalyticsEvent.mockImplementation((_eventName, params) => {
           if (params.event_callback) {
             storedCallback = params.event_callback;
           }

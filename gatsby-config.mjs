@@ -224,6 +224,7 @@ const config = {
         root: './src',
         aliases: {
           components: './components',
+          hooks: './hooks',
         },
       },
     },
