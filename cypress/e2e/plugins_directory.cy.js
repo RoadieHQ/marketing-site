@@ -92,7 +92,7 @@ describe('Plugins directory', () => {
       cy.get('input[name="search"]').type('API');
 
       // Verify URL has the query param
-      cy.url().should('include', '?q=API');
+      cy.location('search').should('include', 'q=API');
 
       // Verify filtered results
       cy.contains('API Docs');
@@ -100,14 +100,14 @@ describe('Plugins directory', () => {
 
       // Click on a plugin
       cy.get('div[data-testid="plugin-api-docs"]').click();
-      cy.url().should('include', '/backstage/plugins/api-docs/');
+      cy.location('pathname').should('include', '/backstage/plugins/api-docs/');
 
       // Go back using browser back button
       cy.go('back');
 
       // Verify we're back on the plugins page with the query preserved
-      cy.url().should('include', '/backstage/plugins/');
-      cy.url().should('include', '?q=API');
+      cy.location('pathname').should('include', '/backstage/plugins/');
+      cy.location('search').should('include', 'q=API');
 
       // Verify the search input still has the value
       cy.get('input[name="search"]').should('have.value', 'API');
@@ -124,7 +124,7 @@ describe('Plugins directory', () => {
       cy.get('input[name="search"]').type('API');
 
       // Verify URL has the query param
-      cy.url().should('include', '?q=API');
+      cy.location('search').should('include', 'q=API');
 
       // Verify filtered results
       cy.contains('API Docs');
@@ -132,14 +132,14 @@ describe('Plugins directory', () => {
 
       // Click on a plugin
       cy.get('div[data-testid="plugin-api-docs"]').click();
-      cy.url().should('include', '/backstage/plugins/api-docs/');
+      cy.location('pathname').should('include', '/backstage/plugins/api-docs/');
 
       // Click the back link
       cy.contains('← Backstage Plugins Guides').click();
 
       // Verify we're back on the plugins page with the query preserved
-      cy.url().should('include', '/backstage/plugins/');
-      cy.url().should('include', '?q=API');
+      cy.location('pathname').should('include', '/backstage/plugins/');
+      cy.location('search').should('include', 'q=API');
 
       // Verify the search input still has the value
       cy.get('input[name="search"]').should('have.value', 'API');
@@ -160,8 +160,8 @@ describe('Plugins directory', () => {
       cy.get('div[role="option"]').contains('Knowledge Sharing & Curation').click();
 
       // Verify URL has both query params
-      cy.url().should('include', '?q=AI');
-      cy.url().should('include', 'category=knowledge');
+      cy.location('search').should('include', 'q=AI');
+      cy.location('search').should('include', 'category=knowledge');
 
       // Verify filtered results
       cy.contains('AI Assistant');
@@ -169,15 +169,15 @@ describe('Plugins directory', () => {
 
       // Click on a plugin
       cy.get('div[data-testid="plugin-ai-assistant-rag-ai"]').click();
-      cy.url().should('include', '/backstage/plugins/ai-assistant-rag-ai/');
+      cy.location('pathname').should('include', '/backstage/plugins/ai-assistant-rag-ai/');
 
       // Click the back link
       cy.contains('← Backstage Plugins Guides').click();
 
       // Verify we're back with both filters preserved
-      cy.url().should('include', '/backstage/plugins/');
-      cy.url().should('include', '?q=AI');
-      cy.url().should('include', 'category=knowledge');
+      cy.location('pathname').should('include', '/backstage/plugins/');
+      cy.location('search').should('include', 'q=AI');
+      cy.location('search').should('include', 'category=knowledge');
 
       // Verify the search input still has the value
       cy.get('input[name="search"]').should('have.value', 'AI');
