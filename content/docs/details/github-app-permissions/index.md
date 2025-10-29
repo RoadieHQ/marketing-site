@@ -18,25 +18,27 @@ Some plugins also make use of a temporary personal OAuth2 token via prompting us
 | Permission | Roadie Backstage Lite | Roadie Backstage | Reason |
 | --- | --- | --- | --- |
 | Actions | Read | Read & Write | Enables the Backstage plugin that renders Github workflow actions on the component page. |
-| Actions Variables | Not used | Read & Write | Allows the Github app to create Variables into GitHub Actions Workflows. This functionality can be used by the Scaffolder. |
 | Administration | Read | Read & Write | Allows the scaffolder feature to create new projects in GitHub |
 | Checks | Read & Write | Read & Write | Allows the Github app to run checks on your backstage repositories |
+| Code Scanning Alerts | Read | Read | Allows the Github app to read code scanning alerts on your backstage repositories |
 | Commit statuses | Read | Read | Allows Backstage to read GitHub urls pointing to reasources referenced by commit sha |
+| Contents | Read | Read & Write | This allows Backstage to render a security insights plugin on the component page. |
 | Dependabot alerts | Read | Read | Required by the GitHub Dependabot plugin. |
 | Deployments | Not Used | Read & Write | Required by the `github:environment:create` scaffolder action to create or update deployment environments (e.g., `repos.createOrUpdateEnvironment`). |
 | Environments | Not Used | Read & Write | Required by the `github:environment:create` scaffolder action to create or update deployment environments (e.g., `repos.createOrUpdateEnvironment`). |
 | Issues | Read | Read & Write | Required by the `github:issues:label` action to add labels and the `publish:github:pull-request` action to assign issues. Also allows Backstage to read issue stats. |
 | Metadata | Read | Read | This gives Roadie read only access to various pieces of metadata about the GitHub organisation used only in order to enable functionality. This permission is mandatory for all GitHub apps. |
 | Pages | Not Used | Read & Write | Required by the `github:pages:enable` scaffolder action to enable and configure GitHub Pages for a repository. |
-| Repository Projects | Not Used | Read | Allows the Github app to run checks on your backstage repositories |
-| Pull requests | Read | Read & Write | Required for the GitHub Pull Requests plugin and to open pull requests to create `catalog-info.yaml` files. |
+| Projects | Not Used | Read | Allows the Github app to run checks on your backstage repositories. |
+| Pull Requests | Read | Read & Write | Required for the GitHub Pull Requests plugin and to open pull requests to create files. |
 | Secrets | Not Used | Read & Write | Allows the Github app to create Secrets and manage them for GitHub Actions Workflows. This functionality is used by some Scaffolder actions also - `publish:github`, `github:repo:create` and `github:deployKey:create`. |
-| Security events | Read | Read | This allows Backstage to render a security insights plugin on the component page. |
+| Security Events | Read | Read | This allows Backstage to render a security insights plugin on the component page. |
+| Webhooks | Read & Write | Read & Write | Allows the Github app to create webhooks on your backstage repositories. |
 | Workflows | Not Used | Read & Write | Allows the scaffolder feature to create workflows for new projects it creates in GitHub |
-| Repository Hooks | Not Used | Read & Write | Allows the `github:repo:create` scaffolder action to add repository hooks to repositories. |
+| Variables | Not Used | Read & Write | Allows the Github app to create Variables into GitHub Actions Workflows. This functionality can be used by the Scaffolder. |
 
 ### Organization Permissions
 | Permission | Roadie Backstage Lite | Roadie Backstage | Reason |
 | --- | --- | --- | --- |
+| Administration | Read | Read & Write | Allows Roadie to read GitHub teams to understand how users are organized. Also allows the scaffolder feature to create new projects in GitHub. |
 | Members | Read | Read | This allows Backstage to authenticate users of your Github org and ensure only users of your organisation can access it. It also allows for ownership to be assigned and displayed for each service. |
-| Organization Administration | Read & Write | Read & Write | Allows Roadie to read GitHub teams to understand how users are organized. Also allows the scaffolder feature to create new projects in GitHub. |
