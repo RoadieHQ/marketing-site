@@ -25,7 +25,7 @@ const useUrlFilterState = ({ location, setState, paramName, shouldDelete, getPar
       params.set(paramName, getParamValue(newValue));
     }
 
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true, preventScrollReset: true });
   }, [location, setState, paramName, shouldDelete, getParamValue]);
 };
 

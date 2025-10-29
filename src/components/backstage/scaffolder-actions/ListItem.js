@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Title } from 'components';
 import { CheckCircleIcon } from '@heroicons/react/outline';
 import { RoadieRacksIcon } from 'components/icons';
+import classnames from 'classnames';
 
 const getPropertyCount = (schema) => {
   if (!schema?.internal?.content) return 0;
@@ -16,9 +17,7 @@ const getPropertyCount = (schema) => {
   }
 };
 
-const SchemaSummary = ({ inputSchema, outputSchema }) => {
-  const inputCount = getPropertyCount(inputSchema);
-  const outputCount = getPropertyCount(outputSchema);
+const SchemaSummary = ({ inputCount, outputCount }) => {
   const formattedInputCount = `${inputCount} input${inputCount !== 1 ? 's' : ''}`;
   const formattedOutputCount = `${outputCount} output${outputCount !== 1 ? 's' : ''}`;
   const text = [formattedInputCount, formattedOutputCount].join(', ');
@@ -34,11 +33,23 @@ const FooterInner = ({ action }) => {
     outputSchema,
   } = action;
 
+  const inputCount = getPropertyCount(inputSchema);
+  const outputCount = getPropertyCount(outputSchema);
+  // used to hide a field if there's lots of info to show but we're on a very narrow screen.
+  const fieldCount = [
+    inputCount,
+    outputCount,
+    availableOnRoadie,
+    supportsDryRun
+  ].filter(Boolean).length;
+
   return (
     <div className="px-4 py-2 flex items-center">
       <div className="flex gap-4 text-xs text-gray-500">
-        <div className="lg:hidden xl:block">
-          <SchemaSummary inputSchema={inputSchema} outputSchema={outputSchema} />
+        <div className={classnames('lg:hidden xl:block', {
+          'hidden sm:block': fieldCount > 2,
+        })}>
+          <SchemaSummary inputCount={inputCount} outputCount={outputCount} />
         </div>
 
         {availableOnRoadie && (

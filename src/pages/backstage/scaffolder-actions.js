@@ -33,6 +33,7 @@ const AVAILABILITY_FILTERS = [{
   checkedTextColor: 'text-white',
 }, {
   label: 'Available on Roadie',
+  shortLabel: 'Roadie',
   value: 'roadie',
   icon: RoadieRacksIcon,
   checkedBgColor: 'bg-orange-600',

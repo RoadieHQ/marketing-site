@@ -18,7 +18,7 @@ const CopyToClipboardButotn = ({ textToCopy }) => {
     <button
       onClick={handleCopy}
       className={`inline-flex items-center p-1 rounded hover:bg-gray-100 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 flex-shrink-0 ${
-        copied ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+        copied ? 'opacity-100' : 'opacity-100 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100'
       }`}
       title={copied ? 'Copied!' : 'Copy package name'}
     >
