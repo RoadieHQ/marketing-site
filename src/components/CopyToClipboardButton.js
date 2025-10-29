@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ClipboardCopyIcon, CheckIcon } from '@heroicons/react/outline';
 
-const CopyToClipboardButotn = ({ textToCopy }) => {
+const CopyToClipboardButton = ({ textToCopy }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -31,4 +31,4 @@ const CopyToClipboardButotn = ({ textToCopy }) => {
   );
 };
 
-export default CopyToClipboardButotn;
+export default CopyToClipboardButton;

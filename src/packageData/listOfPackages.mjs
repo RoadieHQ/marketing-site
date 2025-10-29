@@ -1,5 +1,5 @@
 import reduce from 'lodash/reduce.js';
-import uniq from 'lodash/uniq.js';
+import uniqBy from 'lodash/uniqBy.js';
 
 import { PLUGINS_QUERY, SCAFFOLDER_ACTIONS_QUERY } from '../queries/gatsbyNodeQueries.mjs';
 import pluginPackageForStats from './pluginPackageForStats.mjs';
@@ -37,7 +37,8 @@ const listOfPackages = async ({ graphql }) => {
   }, []);
 
   // Combine and deduplicate (some packages contain both plugins and actions)
-  return uniq([...pluginPackages, ...actionPackages]);
+  // Use packageName + registry as the unique key since the same package name could exist in different registries
+  return uniqBy([...pluginPackages, ...actionPackages], (pkg) => `${pkg.packageName}:${pkg.registry}`);
 };
 
 export default listOfPackages;
