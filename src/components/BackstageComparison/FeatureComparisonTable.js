@@ -340,6 +340,7 @@ const LargeFeatureRow = ({ feature }) => (
 const LargeCompetitorHeaderCell = ({ competitor }) => (
   <th
     key={competitor.name}
+    id={`competitor-${competitor.name.toLowerCase().replace(/\s+/g, '-')}`}
     className="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left"
     scope="col"
   >
@@ -348,7 +349,10 @@ const LargeCompetitorHeaderCell = ({ competitor }) => (
 );
 
 const LargeCompetitorCta = ({ competitor }) => (
-  <td className="h-full py-8 px-6 align-top">
+  <td
+    className="h-full py-8 px-6 align-top"
+    headers={`get-started competitor-${competitor.name.toLowerCase().replace(/\s+/g, '-')}`}
+  >
     <div className="relative h-full table">
       <TextLink color="primary" to={competitor.ctaLinkTo}>
         {competitor.ctaLabel}
@@ -426,6 +430,7 @@ const FeatureComparisonTable = () => {
           <tbody className="border-t border-gray-200 divide-y divide-gray-200">
             <tr>
               <th
+                id="get-started"
                 className="py-8 px-6 text-sm font-medium text-gray-900 text-left align-top"
                 scope="row"
               >
