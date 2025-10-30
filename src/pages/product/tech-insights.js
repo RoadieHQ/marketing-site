@@ -13,7 +13,7 @@ import Logi4jImg from '../../../content/assets/product-pages/techinsights-logi4j
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import classNames from 'classnames';
 
-const Seo_TITLE = 'Tech Insights: scorecards for Backstage';
+const SEO_TITLE = 'Tech Insights: scorecards for Backstage';
 const LEAD = `Establish engineering standards and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.`;
 
 const PRODUCT = {
@@ -192,7 +192,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <Seo title={`${Seo_TITLE} | ${siteTitle}`} description={LEAD} />
+      <Seo title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 

@@ -9,7 +9,7 @@ import RbacScaffolder from '../../../content/assets/product-pages/rbac-scaffolde
 import RbacDenied from '../../../content/assets/product-pages/rbac-denied.svg';
 import RbacRoleManagement from '../../../content/assets/product-pages/rbac-role-management.svg';
 
-const Seo_TITLE = 'Centralized RBAC: fine-grained control of your Backstage software catalog';
+const SEO_TITLE = 'Centralized RBAC: fine-grained control of your Backstage software catalog';
 const LEAD = `Roadie’s Backstage-based RBAC lets you secure your software catalog and reduce cognitive load for your team.`;
 
 const PRODUCT = {
@@ -66,7 +66,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <Seo title={`${Seo_TITLE} | ${siteTitle}`} description={LEAD} />
+      <Seo title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 

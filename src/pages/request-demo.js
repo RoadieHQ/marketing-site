@@ -12,7 +12,7 @@ import snykLogo from '../../content/assets/home/testimonial/crystal-snyk/snyk-mo
 import snykLogoPng from '../../content/assets/home/testimonial/crystal-snyk/snyk-monochrome.png';
 import Avatar from '../components/landing/Testimonials/Avatar';
 
-const Seo_TITLE = 'Request a demo of Roadie';
+const SEO_TITLE = 'Request a demo of Roadie';
 
 const SubmissionSuccessPositiveBody = () => (
   <>
@@ -39,7 +39,7 @@ const RequestDemo = ({ data, location }) => {
   return (
     <>
       <Seo
-        title={`${Seo_TITLE} | ${siteTitle}`}
+        title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get a demo of the SaaS Backstage experience from Roadie."
       />
 

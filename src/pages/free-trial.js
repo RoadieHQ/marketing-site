@@ -12,7 +12,7 @@ import enriqueAvatarPng from '../../content/assets/home/testimonial/enrique-cont
 import contentfulLogo from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome.webp';
 import contentfulLogoPng from '../../content/assets/home/testimonial/enrique-contentful/contentful-monochrome.png';
 
-const Seo_TITLE = 'Try Roadie for free';
+const SEO_TITLE = 'Try Roadie for free';
 
 const SubmissionSuccessPositiveBody = () => (
   <p>
@@ -45,7 +45,7 @@ const RequestTrial = ({ data, location }) => {
   return (
     <>
       <Seo
-        title={`${Seo_TITLE} | ${siteTitle}`}
+        title={`${SEO_TITLE} | ${siteTitle}`}
         description="We handle hosting and maintenance and let you get back to your customers. No credit card required."
       />
 

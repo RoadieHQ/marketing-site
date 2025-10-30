@@ -18,7 +18,7 @@ import CatalogImg from '../../content/assets/home/illustrations/home-service-cat
 import TemplatesImg from '../../content/assets/home/illustrations/home-templates.png';
 import ExtensibleImg from '../../content/assets/home/illustrations/home-extensible.png';
 
-const Seo_TITLE = 'Request access to Roadie Local: on-prem Roadie';
+const SEO_TITLE = 'Request access to Roadie Local: on-prem Roadie';
 
 const PRODUCT = {
   features: [
@@ -86,7 +86,7 @@ const RequestRoadieLocal = ({ data, location }) => {
   return (
     <>
       <Seo
-        title={`${Seo_TITLE} | ${siteTitle}`}
+        title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get access to a Roadie-fied version of Backstage, complete with RBAC and Scorecards, deployable on your infrastructure."
       />
 

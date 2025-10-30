@@ -5,7 +5,7 @@ import { RequestDemoCallToAction } from '../../components/CallToAction';
 import { SCM_TOOLS } from '../../contactFormConstants';
 import { ArrowCircleDownIcon } from '@heroicons/react/outline';
 
-const Seo_TITLE = '[Whitepaper] Self-hosted Backstage vs Managed Backstage';
+const SEO_TITLE = '[Whitepaper] Self-hosted Backstage vs Managed Backstage';
 
 const RequestTrial = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -18,7 +18,7 @@ const RequestTrial = ({ data, location }) => {
   return (
     <>
       <Seo
-        title={`${Seo_TITLE} | ${siteTitle}`}
+        title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get a better understanding of the advantages and disadvantages of self-hosting a Backstage instance vs hosting it through Roadie"
       />
 

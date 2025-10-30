@@ -12,7 +12,7 @@ import SnykImg from '../../../content/assets/product-pages/docs-snyk-logo.png';
 
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 
-const Seo_TITLE = 'Centralized Documentation: everyone’s docs in a single place';
+const SEO_TITLE = 'Centralized Documentation: everyone’s docs in a single place';
 const LEAD = `Roadie’s Backstage-based Documenation lets you put docs where your developers are.`;
 
 const PRODUCT = {
@@ -69,7 +69,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <Seo title={`${Seo_TITLE} | ${siteTitle}`} description={LEAD} />
+      <Seo title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 

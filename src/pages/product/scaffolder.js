@@ -13,7 +13,7 @@ import { PAGE_PATHS } from '../../contactFormConstants';
 
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 
-const Seo_TITLE = 'Scaffolder: self-service for Cloud Native teams';
+const SEO_TITLE = 'Scaffolder: self-service for Cloud Native teams';
 const LEAD = `Roadie’s Backstage-based Scaffolder lets you package best practices for your developers to grab with a few clicks.`;
 
 const PRODUCT = {
@@ -71,7 +71,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <Seo title={`${Seo_TITLE} | ${siteTitle}`} description={LEAD} />
+      <Seo title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 
