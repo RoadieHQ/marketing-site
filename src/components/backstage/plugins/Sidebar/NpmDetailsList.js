@@ -1,7 +1,6 @@
 import React from 'react';
 import kebabCase from 'lodash/kebabCase';
 import { Title } from 'components';
-import ContentLoader from 'react-content-loader';
 
 const DetailsListItem = ({ label, value, ...props }) => {
   return (
@@ -79,29 +78,21 @@ const NpmDetailsList = ({ packageData, packageDataLoadingState, title = 'Package
     );
   } else {
     inner = (
-      <ContentLoader
-        speed={2}
-        width={400}
-        height={240}
-        viewBox="0 0 400 240"
-        backgroundColor="#f3f3f3"
-        foregroundColor="#ecebeb"
-      >
-        <rect x="0" y="0" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="0" rx="3" ry="3" width="100" height="24" />
-        <rect x="0" y="40" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="40" rx="3" ry="3" width="100" height="24" />
-        <rect x="0" y="80" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="80" rx="3" ry="3" width="100" height="24" />
-        <rect x="0" y="120" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="120" rx="3" ry="3" width="100" height="24" />
-        <rect x="0" y="160" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="160" rx="3" ry="3" width="100" height="24" />
-        <rect x="0" y="200" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="200" rx="3" ry="3" width="100" height="24" />
-        <rect x="0" y="240" rx="3" ry="3" width="150" height="24" />
-        <rect x="220" y="240" rx="3" ry="3" width="100" height="24" />
-      </ContentLoader>
+      <div>
+        <ul className="mb-3">
+          {['Version', 'Downloads', 'Last published', 'Number of versions', 'First published', 'License'].map(label => (
+            <li key={label} className="border-b border-gray-200 py-2 flex justify-between">
+              <span className="text-gray-400">{label}</span>
+              <div className="h-5 w-20 bg-gray-200 rounded animate-pulse" />
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex justify-between text-gray-400">
+          <span className="italic">Last synced:</span>
+          <div className="h-4 w-16 bg-gray-200 rounded animate-pulse" />
+        </div>
+      </div>
     );
   }
 

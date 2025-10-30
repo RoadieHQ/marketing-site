@@ -2,7 +2,6 @@ import React from 'react';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
 import { Title } from 'components';
-import ContentLoader from 'react-content-loader';
 import { GravatarImage } from 'components/backstage/plugins';
 
 const Maintainer = ({ name, email }) => {
@@ -31,20 +30,13 @@ const MaintainersList = ({ packageData, packageDataLoadingState }) => {
     );
   } else {
     inner = (
-      <ContentLoader
-        speed={2}
-        width={400}
-        height={200}
-        viewBox="0 0 400 200"
-        backgroundColor="#f3f3f3"
-        foregroundColor="#ecebeb"
-      >
-        <circle cx="35" cy="35" r="35" />
-        <circle cx="130" cy="35" r="35" />
-        <circle cx="230" cy="35" r="35" />
-        <circle cx="330" cy="35" r="35" />
-        <circle cx="35" cy="125" r="35" />
-      </ContentLoader>
+      <ul className="grid grid-cols-4 gap-3 pb-1 mb-2">
+        {[...Array(5)].map((_, i) => (
+          <li key={i}>
+            <div className="w-16 h-16 bg-gray-200 rounded-full animate-pulse" />
+          </li>
+        ))}
+      </ul>
     );
   }
 
