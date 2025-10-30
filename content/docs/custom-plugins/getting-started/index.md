@@ -118,7 +118,7 @@ If you have an already existing plugin that you want to convert to Roadie compat
 
 #### 1. Initialize a new Backstage app using the Backstage CLI (optional)
 
-If you've got an existing Backstage app navigate to the application root. 
+If you have an existing Backstage app then navigate to the application root. 
 
 If not, you'll need to create a new Backstage app for your plugins using the following command:
 
