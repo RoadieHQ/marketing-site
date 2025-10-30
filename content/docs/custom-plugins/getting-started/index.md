@@ -116,13 +116,21 @@ You can see a demo of this approach in a quick video below.
 
 If you have an already existing plugin that you want to convert to Roadie compatible version, you can use the Roadie CLI directly. We'll start this example by creating a standard Backstage plugin using the Backstage CLI.
 
-#### 1. Find a place for the plugins
+#### 1. Initialize a new Backstage app using the Backstage CLI (optional)
 
-Either navigate to the directory where your already existing plugins are, or create a new directory for your plugins
+If you have an existing Backstage app then navigate to the application root. 
+
+If not, you'll need to create a new Backstage app for your plugins using the following command:
+
+```bash
+npx @backstage/create-app@0.6.0
+```
+
+ℹ️ &nbsp; If you're using your own app which was created using a more recent version than 0.6.0 you will need to add `import React from 'react'` at the top of .tsx files.
 
 #### 2. Initialize a new Backstage plugin using the Backstage CLI
 
-Navigate to the directory you created and run `npx @backstage/cli new plugin`. This command will install [Backstage CLI](https://backstage.io/docs/local-dev/cli-commands/) and generate a new plugin. It may take some time (2-5 minutes) depending on your internet connection speed. The tool will ask you few questions, pick a 'Backstage plugin' and name your plugin how you want.
+To create a plugin from the Backstage app root run `npx @backstage/cli new plugin --select=frontend-plugin`. This command will install [Backstage CLI](https://backstage.io/docs/local-dev/cli-commands/) and generate a new plugin. It may take some time (2-5 minutes) depending on your internet connection speed. The tool will ask you few questions, pick a 'Backstage plugin' and name your plugin how you want.
 
 ![creating_a_backstage_plugin.gif](creating_a_backstage_plugin.gif)
 
