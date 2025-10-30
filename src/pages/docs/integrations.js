@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import {
-  SEO,
+  Seo,
   SitewideFooter,
   Headline,
   Input,
@@ -191,7 +191,7 @@ const DocsIntegrations = ({
 
   return (
     <>
-      <SEO
+      <Seo
         title={`Backstage plugins & integrations docs | ${siteMetadata.title}`}
         description="Learn how to add Backstage plugins and other integrations to your Roadie Backstage experience."
       />

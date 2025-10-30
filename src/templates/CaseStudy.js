@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
+import { Seo, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
@@ -20,7 +20,7 @@ const CaseStudyTemplate = ({ data: { site, caseStudy } }) => {
 
   return (
     <>
-      <SEO title={`${caseStudy.title} | ${siteTitle}`} description={caseStudy.description} />
+      <Seo title={`${caseStudy.title} | ${siteTitle}`} description={caseStudy.description} />
 
       <SitewideHeader />
 

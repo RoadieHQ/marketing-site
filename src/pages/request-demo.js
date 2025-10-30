@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
+import { Headline, Seo, SitewideHeader, SitewideFooter, DotPattern } from 'components';
 import { FAQs, CustomerLogoCloud } from 'components/landing';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
@@ -12,7 +12,7 @@ import snykLogo from '../../content/assets/home/testimonial/crystal-snyk/snyk-mo
 import snykLogoPng from '../../content/assets/home/testimonial/crystal-snyk/snyk-monochrome.png';
 import Avatar from '../components/landing/Testimonials/Avatar';
 
-const SEO_TITLE = 'Request a demo of Roadie';
+const Seo_TITLE = 'Request a demo of Roadie';
 
 const SubmissionSuccessPositiveBody = () => (
   <>
@@ -38,8 +38,8 @@ const RequestDemo = ({ data, location }) => {
 
   return (
     <>
-      <SEO
-        title={`${SEO_TITLE} | ${siteTitle}`}
+      <Seo
+        title={`${Seo_TITLE} | ${siteTitle}`}
         description="Get a demo of the SaaS Backstage experience from Roadie."
       />
 

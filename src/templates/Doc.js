@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, TextLink, ContentHeader, Chip, SitewideFooter } from 'components';
+import { Seo, TextLink, ContentHeader, Chip, SitewideFooter } from 'components';
 
 import { NestedTableOfContentsSidebar } from 'components/Sidebar/index';
 import { Sidebar } from 'components/doc';
@@ -18,7 +18,7 @@ const Doc = ({
   location,
 }) => (
   <>
-    <SEO
+    <Seo
       title={`${doc.frontmatter.title} | ${siteMetadata.title}`}
       description={doc.frontmatter.description}
     />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, SitewideHeader, SitewideFooter } from 'components';
+import { Seo, SitewideHeader, SitewideFooter } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
@@ -30,7 +30,7 @@ const BackstageWeeklyTemplate = ({ data }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${title} | ${siteTitle}`}
         description={lead.childMarkdownRemark.rawMarkdownBody}
       />

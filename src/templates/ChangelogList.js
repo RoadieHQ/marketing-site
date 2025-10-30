@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, TextLink as Link, SitewideHeader, SitewideFooter, Headline, Lead } from 'components';
+import { Seo, TextLink as Link, SitewideHeader, SitewideFooter, Headline, Lead } from 'components';
 import { ChangeSet, Pagination } from 'components/changelog';
 
 // In the code below, this is used to prevent the changelog from being collapsed on the preview
@@ -28,7 +28,7 @@ const Changelog = ({
   pageContext,
 }) => (
   <>
-    <SEO
+    <Seo
       title={`Changelog (Legacy) | ${siteTitle}`}
       description={`Product improvements are now published on our blog.`}
     />

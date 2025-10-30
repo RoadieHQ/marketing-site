@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import usePageLeave from 'react-use/lib/usePageLeave';
 import { graphql } from 'gatsby';
 import {
-  SEO,
+  Seo,
   SitewideHeader,
   SitewideFooter,
   ExitIntentModal,
@@ -39,7 +39,7 @@ const PluginTemplate = ({ data }) => {
 
   return (
     <>
-      <SEO title={plugin.seoTitle} description={plugin.seoDescription} />
+      <Seo title={plugin.seoTitle} description={plugin.seoDescription} />
 
       <ExitIntentModal
         modalOpen={exitIntentModalOpen}

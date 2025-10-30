@@ -57,7 +57,7 @@ const kebabCasePathname = (pathname) => {
  * rewrite the URL to add the trailing slash.
  *
  * Google analytics treats both /blog and /blog/ as two separate pages. This can cause stats
- * problems and SEO penalties.
+ * problems and Seo penalties.
  *
  * Resources:
  *   1. https://blog.maximeheckel.com/posts/seo-mistakes-i-have-made-and-how-i-fixed-them

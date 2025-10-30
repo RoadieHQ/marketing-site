@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, Headline, Link } from 'components';
+import { Seo, SitewideHeader, SitewideFooter, Headline, Link } from 'components';
 import { SectionHeader, FeatureComparisonTable } from 'components/BackstageComparison';
 import { FAQs } from 'components/landing';
 import RoadieBackstageLogos from '../../../content/assets/roadie-backstage-logos.svg';
@@ -14,7 +14,7 @@ const Comparison = ({
 }) => {
   return (
     <>
-      <SEO
+      <Seo
         title={`Roadie vs Backstage | ${siteTitle}`}
         description="Hosted Backstage from Roadie vs self-hosting open source Backstage. Which IDP fits your needs?"
       />

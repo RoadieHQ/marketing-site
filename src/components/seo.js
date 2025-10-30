@@ -5,7 +5,7 @@ import get from 'lodash/get';
 
 import roadieLogo from '../../content/assets/logos/roadie/roadie-racks-og-image.png';
 
-const SEO = ({
+const Seo = ({
   title,
   description = '',
   lang = 'en',
@@ -108,4 +108,4 @@ const SEO = ({
   );
 };
 
-export default SEO;
+export default Seo;

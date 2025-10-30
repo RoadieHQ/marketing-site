@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
+import { Seo, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
 import { NestedTableOfContentsSidebar } from 'components/Sidebar';
 import { Sidebar } from 'components/legal-notice';
 
 const LegalNotice = ({ data: { notice, site } }) => (
   <>
-    <SEO
+    <Seo
       title={`${notice.frontmatter.title} | ${site.siteMetadata.title}`}
       description={notice.frontmatter.description}
     />

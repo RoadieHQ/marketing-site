@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import has from 'lodash/has';
 
-import { SEO, Page, TextLink as Link } from 'components';
+import { Seo, Page, TextLink as Link } from 'components';
 import { Attribution, TitleAndDescription, ListHeader } from 'components/article';
 
 const EmptyLogoImage = (props) => <div {...props} />;
@@ -68,7 +68,7 @@ const CaseStudiesIndex = ({ data: { caseStudies, site } }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`Roadie Backstage case studies | ${siteTitle}`}
         description={`
           Learn how engineereing organizations are adopting Spotify Backstage. Through Roadie or natively.

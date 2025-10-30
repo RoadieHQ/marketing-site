@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
+import { Seo, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import Title from '../../components/Title';
 
@@ -12,7 +12,7 @@ import YotpoImg from '../../../content/assets/product-pages/catalog-yotpo-logo.s
 
 import { PAGE_PATHS } from '../../contactFormConstants';
 
-const SEO_TITLE = 'Catalog: discoverability for your services, resources, and teams';
+const Seo_TITLE = 'Catalog: discoverability for your services, resources, and teams';
 const LEAD = `Roadie’s Catalog lets you organize all your software assets, track ownership, and foster an Inner Source culture.`;
 
 const PRODUCT = {
@@ -75,7 +75,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
+      <Seo title={`${Seo_TITLE} | ${siteTitle}`} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 

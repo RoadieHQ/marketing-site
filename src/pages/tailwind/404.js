@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { ChevronRightIcon } from '@heroicons/react/solid';
-import { SEO, SitewideHeader, SitewideFooter, TextLink as Link } from 'components';
+import { Seo, SitewideHeader, SitewideFooter, TextLink as Link } from 'components';
 import {
   CodeIcon,
   BookOpenIcon,
@@ -49,7 +49,7 @@ const NotFoundPage = ({ data }) => {
 
   return (
     <>
-      <SEO title={`404: Not Found | ${siteTitle}`} />
+      <Seo title={`404: Not Found | ${siteTitle}`} />
       <SitewideHeader />
       <div className="bg-white">
         <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">

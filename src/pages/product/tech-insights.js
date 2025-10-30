@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideFooter, SitewideHeader, Button, Headline, Title } from 'components';
+import { Seo, SitewideFooter, SitewideHeader, Button, Headline, Title } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import { PAGE_PATHS } from '../../contactFormConstants';
 
@@ -13,7 +13,7 @@ import Logi4jImg from '../../../content/assets/product-pages/techinsights-logi4j
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import classNames from 'classnames';
 
-const SEO_TITLE = 'Tech Insights: scorecards for Backstage';
+const Seo_TITLE = 'Tech Insights: scorecards for Backstage';
 const LEAD = `Establish engineering standards and automatically ensure software is meeting expectations around security, operations, compliance, deployment and more.`;
 
 const PRODUCT = {
@@ -192,7 +192,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
+      <Seo title={`${Seo_TITLE} | ${siteTitle}`} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 

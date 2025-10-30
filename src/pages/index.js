@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideFooter, SitewideHeader, Link } from 'components';
+import { Seo, SitewideFooter, SitewideHeader, Link } from 'components';
 import {
   AlternatingFeatureBlock,
   AlternatingFeatureWrapper,
@@ -46,7 +46,7 @@ import PagerDutyLogo from '../../content/assets/logos/pagerduty/pagerduty.inline
 import ArgoLogo from '../../content/assets/logos/argo-cd/argo.inline.svg';
 import JiraSoftwareLogo from '../../content/assets/logos/jira/jira.inline.svg';
 
-const SEO_TITLE = 'Roadie - Internal Developer Portal built on Backstage';
+const Seo_TITLE = 'Roadie - Internal Developer Portal built on Backstage';
 const LEAD = `Roadie is the most customizable Internal Developer Portal with built-in best practices, automated workflows, actionable insights built on Backstage`;
 
 const PRODUCT = {
@@ -251,9 +251,9 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <SEO title={SEO_TITLE} description={LEAD}>
+      <Seo title={Seo_TITLE} description={LEAD}>
         <script type="application/ld+json">{websiteStructuredData}</script>
-      </SEO>
+      </Seo>
 
       <SitewideHeader borderBottom={false} />
 

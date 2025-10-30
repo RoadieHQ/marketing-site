@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import get from 'lodash/get';
 import has from 'lodash/has';
 
-import { SEO, Page, Link } from 'components';
+import { Seo, Page, Link } from 'components';
 import { ListHeader } from 'components/article';
 
 const TitleAndDescription = ({ video }) => (
@@ -57,7 +57,7 @@ const BackstageBites = ({ data: { site, playlist } }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${playlist.title} | ${siteTitle}`}
         description={playlist.description.childMarkdownRemark.rawMarkdownBody}
       />

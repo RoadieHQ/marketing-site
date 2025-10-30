@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, Page } from 'components';
+import { Seo, Page } from 'components';
 import { PostSummary, ListHeader, HeadRssLink } from 'components/article';
 
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
@@ -13,7 +13,7 @@ const BlogIndex = ({ data }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`All blog posts | ${siteTitle}`}
         description={`
           Backstage content. Everything from technical how-tos to recaps of community sessions and 

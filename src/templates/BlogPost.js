@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import format from 'date-fns/format';
 import isEmpty from 'lodash/isEmpty';
 
-import { SEO, Headline, SitewideHeader, SitewideFooter } from 'components';
+import { Seo, Headline, SitewideHeader, SitewideFooter } from 'components';
 import HeadRssLink from 'components/article/HeadRssLink';
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
 import {
@@ -43,7 +43,7 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${post.frontmatter.title} | ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt}
         headerImage={getSrc(post.coverImage)}

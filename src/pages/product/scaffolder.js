@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
+import { Seo, SitewideFooter, SitewideHeader, Button, Headline } from 'components';
 import { AlternatingFeatureBlock, AlternatingFeatureWrapper } from 'components/landing';
 import Title from '../../components/Title';
 
@@ -13,7 +13,7 @@ import { PAGE_PATHS } from '../../contactFormConstants';
 
 import NoLockInImg from '../../../content/assets/product-pages/catalog-no-lock-in.png';
 
-const SEO_TITLE = 'Scaffolder: self-service for Cloud Native teams';
+const Seo_TITLE = 'Scaffolder: self-service for Cloud Native teams';
 const LEAD = `Roadie’s Backstage-based Scaffolder lets you package best practices for your developers to grab with a few clicks.`;
 
 const PRODUCT = {
@@ -71,7 +71,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <SEO title={`${SEO_TITLE} | ${siteTitle}`} description={LEAD} />
+      <Seo title={`${Seo_TITLE} | ${siteTitle}`} description={LEAD} />
 
       <SitewideHeader borderBottom={false} />
 

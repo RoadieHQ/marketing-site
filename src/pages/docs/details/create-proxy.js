@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideFooter, CodeBlock, Headline } from 'components';
+import { Seo, SitewideFooter, CodeBlock, Headline } from 'components';
 
 import { ExamplesSidebar } from 'components/Sidebar/index';
 import Sidebar from 'components/doc/Sidebar';
@@ -71,7 +71,7 @@ const ProxyPage = ({ data, location }) => {
     <>
       <DocsHeader location={location} />
 
-      <SEO
+      <Seo
         title={`Creating a Proxy`}
         description="This tutorial will guide you through the steps required to create a proxy in Roadie."
       />
