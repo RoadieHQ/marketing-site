@@ -130,7 +130,7 @@ npx @backstage/create-app@0.6.0
 
 #### 2. Initialize a new Backstage plugin using the Backstage CLI
 
-To create a plugin from the Backstage app root run `npx @backstage/cli new plugin`. This command will install [Backstage CLI](https://backstage.io/docs/local-dev/cli-commands/) and generate a new plugin. It may take some time (2-5 minutes) depending on your internet connection speed. The tool will ask you few questions, pick a 'Backstage plugin' and name your plugin how you want.
+To create a plugin from the Backstage app root run `npx @backstage/cli new plugin --select=frontend-plugin`. This command will install [Backstage CLI](https://backstage.io/docs/local-dev/cli-commands/) and generate a new plugin. It may take some time (2-5 minutes) depending on your internet connection speed. The tool will ask you few questions, pick a 'Backstage plugin' and name your plugin how you want.
 
 ![creating_a_backstage_plugin.gif](creating_a_backstage_plugin.gif)
 
