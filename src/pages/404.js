@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import {
-  SEO,
+  Seo,
   SitewideHeader,
   SitewideFooter,
   TextLink as Link,
@@ -18,7 +18,7 @@ const NotFoundPage = ({
   },
 }) => (
   <>
-    <SEO title={`404: Not Found | ${title}`} />
+    <Seo title={`404: Not Found | ${title}`} />
 
     <SitewideHeader />
 

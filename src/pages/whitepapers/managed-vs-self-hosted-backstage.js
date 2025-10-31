@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from '../../components';
+import { Headline, Seo, SitewideHeader, SitewideFooter, DotPattern } from '../../components';
 import { RequestDemoCallToAction } from '../../components/CallToAction';
 import { SCM_TOOLS } from '../../contactFormConstants';
 import { ArrowCircleDownIcon } from '@heroicons/react/outline';
@@ -17,7 +17,7 @@ const RequestTrial = ({ data, location }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get a better understanding of the advantages and disadvantages of self-hosting a Backstage instance vs hosting it through Roadie"
       />

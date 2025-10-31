@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import {
-  SEO,
+  Seo,
   SitewideHeader,
   SitewideFooter,
   Title,
@@ -20,7 +20,7 @@ const ScaffolderActionTemplate = ({ data }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${action.humanName} - Backstage Scaffolder Action | Roadie`}
         description={`${action.description}. With schemas, usage examples and popularity data.`}
       />

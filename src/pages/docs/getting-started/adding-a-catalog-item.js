@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useEffect } from 'react';
-import { CodeBlock, Headline, SitewideFooter, SEO } from 'components';
+import { CodeBlock, Headline, SitewideFooter, Seo } from 'components';
 import classnames from 'classnames';
 import Sidebar from 'components/doc/Sidebar';
 import isEmpty from 'lodash/isEmpty';
@@ -91,7 +91,7 @@ const AddCatalogItemPage = ({ data, location }) => {
     <>
       <DocsHeader location={location} />
 
-      <SEO
+      <Seo
         title={`Adding a catalog item`}
         description="This tutorial will guide you through the steps required to connect Roadie to your Data source and import the items into the Roadie catalog."
       />

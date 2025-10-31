@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
+import { Headline, Seo, SitewideHeader, SitewideFooter, DotPattern } from 'components';
 import { ExtendedGetInstanceCallToAction } from 'components/CallToAction';
 import { SCM_TOOLS } from '../contactFormConstants';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
@@ -44,7 +44,7 @@ const RequestTrial = ({ data, location }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${SEO_TITLE} | ${siteTitle}`}
         description="We handle hosting and maintenance and let you get back to your customers. No credit card required."
       />

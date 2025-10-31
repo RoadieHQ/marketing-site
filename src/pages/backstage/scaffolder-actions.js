@@ -5,7 +5,7 @@ import { Field, Label } from '@headlessui/react';
 import isEmpty from 'lodash/isEmpty';
 import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
 
-import { Typeahead, Page, SEO, Headline, Search, Lead, Select, SegmentedControl } from 'components';
+import { Typeahead, Page, Seo, Headline, Search, Lead, Select, SegmentedControl } from 'components';
 import { ListItem, filterActions, PackageHeader } from 'components/backstage/scaffolder-actions';
 import { fetchPackageDataForList } from 'components/backstage/plugins';
 import { RoadieRacksIcon } from 'components/icons';
@@ -145,7 +145,7 @@ const BackstageScaffolderActions = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={seoTitle} description={seoDescription} />
+      <Seo title={seoTitle} description={seoDescription} />
 
       <Page titleDivide={true}>
         <div className="mb-6">

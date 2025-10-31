@@ -49,20 +49,20 @@ const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
   const searchBoxRef = useRef();
   const rootRef = useRef();
   const panelRootRef = useRef();
-  let search = null;
+  const searchRef = useRef(null);
 
   const openSearchOnHotkeyPress = useCallback((event) => {
     if (event.key === '/') {
       event.preventDefault();
-      search.setIsOpen(true);
-      search.refresh();
+      searchRef.current?.setIsOpen(true);
+      searchRef.current?.refresh();
     }
   }, []);
 
   useEffect(() => {
     if (!searchBoxRef.current) return undefined;
 
-    search = autocomplete({
+    searchRef.current = autocomplete({
       container: searchBoxRef.current,
       renderer: { createElement, Fragment, render: () => {} },
       render({ children }, root) {
@@ -91,10 +91,10 @@ const AlgoliaAutocomplete = ({ as = 'div', className, ...rest }) => {
     document.addEventListener('keydown', openSearchOnHotkeyPress, false);
 
     return () => {
-      search.destroy();
+      searchRef.current?.destroy();
       document.removeEventListener('keydown', openSearchOnHotkeyPress, false);
     };
-  }, [rest]);
+  }, [openSearchOnHotkeyPress, rest]);
 
   return React.createElement(as, { ref: searchBoxRef, className });
 };

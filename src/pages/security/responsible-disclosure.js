@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
+import { Seo, ContentHeader, SitewideHeader, SitewideFooter } from 'components';
 
 const SecurityResponsibleDisclosure = ({ data: { site, page } }) => {
   const siteTitle = site.siteMetadata.title;
 
   return (
     <>
-      <SEO title={`${page.title} | ${siteTitle}`} description={page.seoDescription} />
+      <Seo title={`${page.title} | ${siteTitle}`} description={page.seoDescription} />
 
       <SitewideHeader />
 

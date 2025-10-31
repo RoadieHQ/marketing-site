@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { SEO, SitewideHeader, SitewideFooter, Headline, TextLink as Link } from 'components';
+import { Seo, SitewideHeader, SitewideFooter, Headline, TextLink as Link } from 'components';
 import { getSrc } from 'gatsby-plugin-image';
 
 import BackstageB from '../../content/assets/logos/backstage/b-stack.png';
@@ -54,7 +54,7 @@ const BackstageUltimateGuide = ({ data: { page, site } }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${page.title} | ${siteTitle}`}
         description={page.seoDescription}
         headerImage={getSrc(page.cover)}

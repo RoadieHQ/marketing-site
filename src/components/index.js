@@ -31,7 +31,7 @@ export { default as ContentHeader } from './ContentHeader';
 export { default as SitewideFooter } from './SitewideFooter';
 export { default as Tags } from './Tags';
 // Including here for convenience when importing
-export { default as SEO } from './seo';
+export { default as Seo } from './seo';
 export { default as Link } from './Link';
 export { default as Chip } from './Chip';
 export { default as SensibleNavList } from './SensibleNavList';

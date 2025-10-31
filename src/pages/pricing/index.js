@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, Headline } from 'components';
+import { Seo, SitewideHeader, SitewideFooter, Headline } from 'components';
 import {
   Tier,
   SectionHeader,
@@ -21,7 +21,7 @@ const Pricing = ({
 
   return (
     <>
-      <SEO
+      <Seo
         title={`Pricing | ${siteTitle}`}
         description="Hosted Backstage solution pricing from Roadie. Simple, flexible pricing options to fit your Backstage needs. Free Trial."
       />

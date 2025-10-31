@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { Headline, SEO, SitewideHeader, SitewideFooter, DotPattern } from 'components';
+import { Headline, Seo, SitewideHeader, SitewideFooter, DotPattern } from 'components';
 import { FAQs, CustomerLogoCloud } from 'components/landing';
 import { RequestDemoCallToAction } from 'components/CallToAction';
 import { SubmissionSuccessModal } from 'components/FormSubmissionModal';
@@ -38,7 +38,7 @@ const RequestDemo = ({ data, location }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get a demo of the SaaS Backstage experience from Roadie."
       />

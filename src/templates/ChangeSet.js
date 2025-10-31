@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, TextLink as Link } from 'components';
+import { Seo, SitewideHeader, SitewideFooter, TextLink as Link } from 'components';
 import { ChangeSet } from 'components/changelog';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 import get from 'lodash/get';
@@ -15,7 +15,7 @@ const ChangeSetPage = ({
   },
 }) => (
   <>
-    <SEO
+    <Seo
       title={`Release: ${changeSet.title} | ${siteTitle}`}
       description={get(changeSet, 'description.childMarkdownRemark.excerpt', 'Read the changelog')}
     />

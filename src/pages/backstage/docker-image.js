@@ -5,7 +5,7 @@ import Prism from 'prismjs';
 import { PAGE_PATHS } from '../../contactFormConstants';
 
 import {
-  SEO,
+  Seo,
   SitewideFooter,
   SitewideHeader,
   ContentHeader,
@@ -22,7 +22,7 @@ const BackstageDocker = ({ data }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`Backstage docker image | ${siteTitle}`}
         description={`
           Want to try out Backstage without any setup? Use our Backstage Docker image to get started quickly.

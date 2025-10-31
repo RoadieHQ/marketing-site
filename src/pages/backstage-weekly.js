@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import RssIcon from '@heroicons/react/outline/RssIcon';
 
-import { SEO, Page, Headline, Lead, Link } from 'components';
+import { Seo, Page, Headline, Lead, Link } from 'components';
 import {
   NetlifyFormCallToAction,
   SubscribeToNewsletterSuccessModal,
@@ -63,7 +63,7 @@ const BackstageWeekly = ({ data }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`Backstage Weekly Newsletter | ${siteTitle}`}
         description={`
           Get the latest Backstage news in your inbox. Keep up to date with the latest

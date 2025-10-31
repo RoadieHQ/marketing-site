@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { Headline, SEO, SitewideHeader, SitewideFooter } from 'components';
+import { Headline, Seo, SitewideHeader, SitewideFooter } from 'components';
 import {
   CustomerLogoCloud,
   AlternatingFeatureBlock,
@@ -85,7 +85,7 @@ const RequestRoadieLocal = ({ data, location }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${SEO_TITLE} | ${siteTitle}`}
         description="Get access to a Roadie-fied version of Backstage, complete with RBAC and Scorecards, deployable on your infrastructure."
       />

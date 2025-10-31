@@ -5,7 +5,7 @@ import { Field, Label } from '@headlessui/react';
 import isEmpty from 'lodash/isEmpty';
 import { ChartBarIcon, CalendarIcon, IdentificationIcon } from '@heroicons/react/outline';
 
-import { Typeahead, Page, SEO, Headline, Search, Lead, Select, TextLink as Link } from 'components';
+import { Typeahead, Page, Seo, Headline, Search, Lead, Select, TextLink as Link } from 'components';
 import {
   ListItem,
   fetchPackageDataForList,
@@ -92,7 +92,7 @@ const BackstagePlugins = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={seoTitle} description={seoDescription} />
+      <Seo title={seoTitle} description={seoDescription} />
 
       <Page titleDivide={true}>
         <div className="mb-6">

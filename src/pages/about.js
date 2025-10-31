@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import RecruiteeJobsList from 'components/RecruiteeJobsList';
 
-import { SEO, SitewideFooter, SitewideHeader } from 'components';
+import { Seo, SitewideFooter, SitewideHeader } from 'components';
 
 import {
   CircleThreeColTeam as Team,
@@ -14,7 +14,7 @@ import {
 
 const About = ({ data: { team } }) => (
   <>
-    <SEO title={`About us | Roadie`} description="Who we are and what we care about." />
+    <Seo title={`About us | Roadie`} description="Who we are and what we care about." />
 
     <SitewideHeader />
 

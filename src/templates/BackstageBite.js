@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
-import { SEO, SitewideHeader, SitewideFooter, Headline, Lead, TextLink as Link } from 'components';
+import { Seo, SitewideHeader, SitewideFooter, Headline, Lead, TextLink as Link } from 'components';
 import {
   SubscribeToNewsletterSuccessModal,
   SubscribeToNewsletterCTA,
@@ -21,7 +21,7 @@ const BackstageBiteTemplate = ({ data: { site, video } }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`${video.title} | ${siteTitle}`}
         description={video.shortDescription.childMarkdownRemark.rawMarkdownBody}
       />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Button, SEO, SitewideFooter, Headline, Lead, TextLink } from 'components';
+import { Button, Seo, SitewideFooter, Headline, Lead, TextLink } from 'components';
 import { ChevronRightIcon, LockClosedIcon, TerminalIcon } from '@heroicons/react/outline';
 
 import DocsHeader from 'components/SitewideHeader/DocsHeader';
@@ -13,7 +13,7 @@ const Doc = ({
   location,
 }) => (
   <>
-    <SEO title={`Docs | ${siteMetadata.title}`} description="Learn how to use Roadie" />
+    <Seo title={`Docs | ${siteMetadata.title}`} description="Learn how to use Roadie" />
     <DocsHeader location={location} />
 
     <main className="pt-4 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-28">

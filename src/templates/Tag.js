@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { SEO, SitewideHeader, SitewideFooter, Headline } from 'components';
+import { Seo, SitewideHeader, SitewideFooter, Headline } from 'components';
 import { PostSummary } from 'components/article';
 
 import mapContentfulBlogPostToMarkdownRemarkBlogPost from '../mapContentfulBlogPostToMarkdownRemarkBlogPost';
@@ -13,7 +13,7 @@ const BlogTag = ({ pageContext, data }) => {
 
   return (
     <>
-      <SEO
+      <Seo
         title={`All ${tag} blog posts | ${siteTitle}`}
         description={`
           Blog posts relating to the Backstage service catalog which are tagged with ${tag}.
