@@ -22583,15 +22583,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-content-loader@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "react-content-loader@npm:7.1.1"
-  peerDependencies:
-    react: ">=16.0.0"
-  checksum: 10c0/322e0d097ac8ca66a3b22d1cf21c1d3a995b7a80deb87b46c21ae5834fbac60950d56b90b79f40f5a07ca1486a36dc6eaddad8ced177106b274859c1fb2aaead
-  languageName: node
-  linkType: hard
-
 "react-copy-to-clipboard@npm:5.1.0":
   version: 5.1.0
   resolution: "react-copy-to-clipboard@npm:5.1.0"
@@ -23746,7 +23737,6 @@ __metadata:
     prismjs: "npm:^1.24.0"
     react: "npm:^18.0.0"
     react-burger-menu: "npm:^3.0.6"
-    react-content-loader: "npm:^7.1.1"
     react-dom: "npm:^18.0.0"
     react-google-recaptcha: "npm:^2.1.0"
     react-helmet: "npm:^6.1.0"

@@ -1,7 +1,6 @@
 import React from 'react';
 import { CalendarIcon, ChartBarIcon } from '@heroicons/react/outline';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
-import ContentLoader from 'react-content-loader';
 import { CopyToClipboardButton } from 'components';
 
 import Logo from '../plugins/Logo';
@@ -45,16 +44,10 @@ const PackageDataDisplay = ({ packageData, packageDataLoadingState }) => {
 
   // Loading state
   return (
-    <ContentLoader
-      speed={2}
-      width={400}
-      height={16}
-      backgroundColor="#f3f3f3"
-      foregroundColor="#ecebeb"
-    >
-      <rect x="0" y="0" rx="3" ry="3" width="120" height="16" />
-      <rect x="140" y="0" rx="3" ry="3" width="150" height="16" />
-    </ContentLoader>
+    <div className="flex text-xs text-gray-500 gap-4">
+      <div className="h-4 w-28 bg-gray-200 rounded animate-pulse" />
+      <div className="h-4 w-36 bg-gray-200 rounded animate-pulse" />
+    </div>
   );
 };
 

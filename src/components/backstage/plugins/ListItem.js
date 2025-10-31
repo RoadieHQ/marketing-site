@@ -3,7 +3,6 @@ import { Link, Title } from 'components';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 import CalendarIcon from '@heroicons/react/outline/CalendarIcon';
 import ChartBarIcon from '@heroicons/react/outline/ChartBarIcon';
-import ContentLoader from 'react-content-loader';
 import classnames from 'classnames';
 
 import Attribution from './Attribution';
@@ -49,16 +48,10 @@ const FooterInner = ({ packageData, packageDataLoadingState }) => {
     );
   } else {
     inner = (
-      <ContentLoader
-        speed={2}
-        className="w-full"
-        height={20}
-        backgroundColor="#f3f3f3"
-        foregroundColor="#ecebeb"
-      >
-        <rect x="0" y="0" rx="3" ry="3" width="150" height="20" />
-        <rect x="230" y="0" rx="3" ry="3" width="300" height="20" />
-      </ContentLoader>
+      <div className="flex justify-between text-xs text-gray-500">
+        <div className="h-5 w-32 bg-gray-200 rounded animate-pulse" />
+        <div className="h-5 w-40 bg-gray-200 rounded animate-pulse" />
+      </div>
     );
   }
 
