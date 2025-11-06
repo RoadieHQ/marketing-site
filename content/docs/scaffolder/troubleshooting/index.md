@@ -39,7 +39,6 @@ GitHub expects a specific format for the teams/users that are added to be owners
   name: Publish
   action: publish:github
   input:
-    allowedHosts: ['github.com']
     description: ${{parameters.description}}
     repoUrl: ${{parameters.repoUrl}}
     defaultBranch: main
