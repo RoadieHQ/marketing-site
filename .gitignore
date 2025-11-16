@@ -83,6 +83,7 @@ cypress/videos
 cypress/screenshots
 
 static/downloads/roadie-local/*
+static/downloads/roadie-local-docker-compose/*
 static/catalog-openapi.json
 static/scaffolder-openapi.json
 static/tech-insights-openapi.json
